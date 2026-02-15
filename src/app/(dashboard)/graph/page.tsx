@@ -1,30 +1,42 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { Map, Info } from 'lucide-react';
 import { Card, CardBody } from '@/components/ui/Card';
 import { GraphSkeleton } from '@/components/ui/Skeleton';
+import { KnowledgeGraph } from '@/components/features/KnowledgeGraph';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 
 const SPECIALTIES = [
   { value: '', label: '全部專科' },
-  { value: 'IM', label: '內科' },
-  { value: 'SURG', label: '外科' },
-  { value: 'DERM', label: '皮膚科' },
   { value: 'CARDIO', label: '心臟科' },
+  { value: 'IM', label: '內科' },
+  { value: 'DERM', label: '皮膚科' },
+  { value: 'SURG', label: '外科' },
   { value: 'NEURO', label: '神經科' },
   { value: 'ONCO', label: '腫瘤科' },
+  { value: 'ECC', label: '急診加護' },
+  { value: 'CPATH', label: '臨床病理' },
 ] as const;
 
 export default function GraphPage() {
-  const { nodes, isLoading, setFilters } = useKnowledgeStore();
+  const { nodes, edges, isLoading, setFilters } = useKnowledgeStore();
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
+  const router = useRouter();
 
   function handleSpecialtyChange(e: React.ChangeEvent<HTMLSelectElement>): void {
     const value = e.target.value;
     setSelectedSpecialty(value);
     setFilters({ specialty: value || null });
   }
+
+  const handleNodeClick = useCallback(
+    (nodeId: string) => {
+      router.push(`/nodes/${nodeId}`);
+    },
+    [router]
+  );
 
   return (
     <div className="space-y-6">
@@ -62,12 +74,12 @@ export default function GraphPage() {
           <p className="text-gray-500">尚無知識節點資料，請先由管理員匯入內容。</p>
         </div>
       ) : (
-        <div className="h-[600px] rounded-xl border border-gray-200 bg-white p-4">
-          {/* KnowledgeGraph component placeholder */}
-          <p className="flex h-full items-center justify-center text-gray-400">
-            KnowledgeGraph 元件將在此渲染（共 {nodes.length} 個節點）
-          </p>
-        </div>
+        <KnowledgeGraph
+          nodes={nodes}
+          edges={edges}
+          onNodeClick={handleNodeClick}
+          className="h-[600px]"
+        />
       )}
     </div>
   );

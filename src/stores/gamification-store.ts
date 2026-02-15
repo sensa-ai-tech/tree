@@ -17,6 +17,7 @@ interface GamificationState {
   setShowLevelUpModal: (show: boolean) => void;
   setExperience: (exp: UserExperience) => void;
   setAchievements: (achievements: UserAchievement[]) => void;
+  setRecentXPEvents: (events: XPEvent[]) => void;
 }
 
 const defaultExperience: UserExperience = {
@@ -93,4 +94,5 @@ export const useGamificationStore = create<GamificationState>((set, get) => ({
   setShowLevelUpModal: (show) => set({ showLevelUpModal: show }),
   setExperience: (experience) => set({ experience }),
   setAchievements: (achievements) => set({ achievements }),
+  setRecentXPEvents: (events) => set({ recentXPEvents: events }),
 }));

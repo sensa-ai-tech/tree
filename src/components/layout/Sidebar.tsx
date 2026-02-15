@@ -27,10 +27,10 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { href: '/', label: '首頁', icon: <Home className="h-5 w-5" /> },
-  { href: '/knowledge-graph', label: '知識圖譜', icon: <Map className="h-5 w-5" /> },
-  { href: '/learning-paths', label: '學習路徑', icon: <Route className="h-5 w-5" /> },
-  { href: '/daily-review', label: '每日複習', icon: <RotateCcw className="h-5 w-5" /> },
-  { href: '/case-challenges', label: '病例挑戰', icon: <Briefcase className="h-5 w-5" /> },
+  { href: '/graph', label: '知識圖譜', icon: <Map className="h-5 w-5" /> },
+  { href: '/paths', label: '學習路徑', icon: <Route className="h-5 w-5" /> },
+  { href: '/review', label: '每日複習', icon: <RotateCcw className="h-5 w-5" /> },
+  { href: '/cases', label: '病例挑戰', icon: <Briefcase className="h-5 w-5" /> },
   { href: '/achievements', label: '成就', icon: <Trophy className="h-5 w-5" /> },
   { href: '/profile', label: '個人資料', icon: <User className="h-5 w-5" /> },
   { href: '/admin', label: 'Admin', icon: <Settings className="h-5 w-5" />, adminOnly: true },
@@ -79,7 +79,9 @@ export function Sidebar({ className }: SidebarProps) {
       {/* Navigation */}
       <nav className="flex-1 space-y-1 px-2">
         {visibleItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = item.href === '/'
+            ? pathname === '/'
+            : pathname.startsWith(item.href);
           return (
             <Link
               key={item.href}

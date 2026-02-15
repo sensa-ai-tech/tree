@@ -1,0 +1,56 @@
+import type { LearningPath } from '@/types/knowledge';
+
+export const NEURO_PATHS: LearningPath[] = [
+  {
+    id: 'PATH-NEURO-FOUNDATION',
+    title: '神經科基礎入門路徑',
+    description: '從神經解剖到 IVDD 與癲癇的診斷治療，涵蓋神經科最核心的知識體系。特別強調神經定位診斷的臨床推理能力。適合實習獸醫及住院獸醫。',
+    specialty: 'NEURO',
+    target_audience: '實習獸醫、住院獸醫',
+    estimated_hours: 10,
+    path_nodes: [
+      { node_id: 'NEURO-L0-001', is_required: true, phase: '基礎概念', learning_note: '起點：了解神經科全貌' },
+      { node_id: 'NEURO-L1-001', is_required: true, phase: '基礎概念', learning_note: '神經定位的解剖基礎' },
+      { node_id: 'NEURO-L1-002', is_required: true, phase: '基礎概念', learning_note: null },
+      { node_id: 'NEURO-L1-003', is_required: false, phase: '基礎概念', learning_note: '選修但建議閱讀，與 CSF 分析相關' },
+      { node_id: 'NEURO-L2-001', is_required: true, phase: '病理機轉', learning_note: '癲癇的病理基礎' },
+      { node_id: 'NEURO-L2-002', is_required: true, phase: '病理機轉', learning_note: 'IVDD 的病理基礎' },
+      { node_id: 'NEURO-L3-001', is_required: true, phase: '臨床應用', learning_note: '核心疾病節點：癲癇' },
+      { node_id: 'NEURO-L3-002', is_required: true, phase: '臨床應用', learning_note: '核心疾病節點：IVDD' },
+      { node_id: 'NEURO-L3-004', is_required: false, phase: '臨床應用', learning_note: '常見急診表現' },
+      { node_id: 'NEURO-L4-001', is_required: true, phase: '診斷技能', learning_note: null },
+      { node_id: 'NEURO-L4-004', is_required: true, phase: '診斷技能', learning_note: '核心技能：神經定位推理' },
+      { node_id: 'NEURO-L4-003', is_required: false, phase: '診斷技能', learning_note: '了解 MRI/CT 在神經科的應用' },
+      { node_id: 'NEURO-L5-001', is_required: true, phase: '治療管理', learning_note: '路徑終點之一：抗癲癇藥物' },
+      { node_id: 'NEURO-L5-003', is_required: false, phase: '治療管理', learning_note: '術後復健的基礎概念' },
+    ],
+    milestones: [
+      {
+        id: 'MS-NEURO-01',
+        title: '基礎過關',
+        description: '完成神經科基礎概念與解剖節點',
+        required_nodes: ['NEURO-L0-001', 'NEURO-L1-001', 'NEURO-L1-002'],
+        checkpoint_type: 'quiz',
+        pass_criteria: '測驗正確率 >= 70%',
+      },
+      {
+        id: 'MS-NEURO-02',
+        title: '疾病與定位',
+        description: '完成癲癇、IVDD 與神經定位診斷節點',
+        required_nodes: ['NEURO-L3-001', 'NEURO-L3-002', 'NEURO-L4-004'],
+        checkpoint_type: 'quiz',
+        pass_criteria: '測驗正確率 >= 80%',
+      },
+      {
+        id: 'MS-NEURO-03',
+        title: '路徑完成',
+        description: '完成所有必修節點並通過 IVDD 病例挑戰',
+        required_nodes: ['NEURO-L5-001'],
+        checkpoint_type: 'case',
+        pass_criteria: '病例挑戰得分 >= 70%',
+      },
+    ],
+    has_certificate: true,
+    status: 'published',
+  },
+];

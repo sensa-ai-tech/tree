@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useMemo, useState } from 'react';
+import { use, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, BookOpen, Stethoscope, Search } from 'lucide-react';
@@ -12,6 +12,7 @@ import { showToast } from '@/components/ui/Toast';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
+import { SEED_NODE_CONTENTS } from '@/data/seed';
 
 interface NodeDetailPageProps {
   params: Promise<{ nodeId: string }>;
@@ -20,13 +21,26 @@ interface NodeDetailPageProps {
 export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   const { nodeId } = use(params);
   const router = useRouter();
-  const { getNodeById, selectedNodeContent } = useKnowledgeStore();
+  const { getNodeById, selectedNodeContent, setNodeContent } = useKnowledgeStore();
   const { getStatus, completeNode, startNode } = useLearningStore();
   const { addXP } = useGamificationStore();
   const [isCompleting, setIsCompleting] = useState(false);
 
   const node = useMemo(() => getNodeById(nodeId), [getNodeById, nodeId]);
   const status = getStatus(nodeId);
+
+  // 自動從 seed 載入內容（當 store 尚未設定時）
+  useEffect(() => {
+    if (!selectedNodeContent || selectedNodeContent.node_id !== nodeId) {
+      const seedContent = SEED_NODE_CONTENTS.get(nodeId);
+      if (seedContent) {
+        setNodeContent(seedContent);
+      } else {
+        setNodeContent(null);
+      }
+    }
+  }, [nodeId, selectedNodeContent, setNodeContent]);
+
   const content = selectedNodeContent;
 
   if (!node) {

@@ -1,0 +1,52 @@
+import type { LearningPath } from '@/types/knowledge';
+
+export const CARDIO_PATHS: LearningPath[] = [
+  {
+    id: 'PATH-CARDIO-FOUNDATION',
+    title: '心臟科基礎入門路徑',
+    description: '從心臟解剖到 MMVD 診斷治療，涵蓋心臟科最核心的知識體系。適合實習獸醫及住院獸醫。',
+    specialty: 'CARDIO',
+    target_audience: '實習獸醫、住院獸醫',
+    estimated_hours: 8,
+    path_nodes: [
+      { node_id: 'CARDIO-L0-001', is_required: true, phase: '基礎概念', learning_note: '起點：了解心臟科全貌' },
+      { node_id: 'CARDIO-L1-001', is_required: true, phase: '基礎概念', learning_note: null },
+      { node_id: 'CARDIO-L1-002', is_required: true, phase: '基礎概念', learning_note: null },
+      { node_id: 'CARDIO-L1-003', is_required: false, phase: '基礎概念', learning_note: '選修但建議閱讀' },
+      { node_id: 'CARDIO-L2-001', is_required: true, phase: '病理機轉', learning_note: null },
+      { node_id: 'CARDIO-L3-001', is_required: true, phase: '臨床應用', learning_note: '核心疾病節點' },
+      { node_id: 'CARDIO-L4-001', is_required: true, phase: '臨床應用', learning_note: null },
+      { node_id: 'CARDIO-L4-002', is_required: true, phase: '臨床應用', learning_note: null },
+      { node_id: 'CARDIO-L4-004', is_required: false, phase: '臨床應用', learning_note: null },
+      { node_id: 'CARDIO-L5-001', is_required: true, phase: '臨床應用', learning_note: '路徑終點：掌握治療方案' },
+    ],
+    milestones: [
+      {
+        id: 'MS-CARDIO-01',
+        title: '基礎過關',
+        description: '完成心臟科基礎概念三節點',
+        required_nodes: ['CARDIO-L0-001', 'CARDIO-L1-001', 'CARDIO-L1-002'],
+        checkpoint_type: 'quiz',
+        pass_criteria: '測驗正確率 >= 70%',
+      },
+      {
+        id: 'MS-CARDIO-02',
+        title: '疾病與診斷',
+        description: '完成 MMVD 與心臟聽診節點',
+        required_nodes: ['CARDIO-L3-001', 'CARDIO-L4-001'],
+        checkpoint_type: 'quiz',
+        pass_criteria: '測驗正確率 >= 80%',
+      },
+      {
+        id: 'MS-CARDIO-03',
+        title: '路徑完成',
+        description: '完成所有必修節點並通過最終評估',
+        required_nodes: ['CARDIO-L5-001'],
+        checkpoint_type: 'case',
+        pass_criteria: '病例挑戰得分 >= 70%',
+      },
+    ],
+    has_certificate: true,
+    status: 'published',
+  },
+];

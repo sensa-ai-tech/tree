@@ -1,0 +1,127 @@
+import type { ReviewQuestion } from '@/types/quiz';
+
+export const CARDIO_QUESTIONS: ReviewQuestion[] = [
+  // MCQ 1-8
+  {
+    id: 'Q-MMVD-001', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: 'MMVD 在 ACVIM 分期中，何時建議開始給予 pimobendan？',
+    options: ['Stage A', 'Stage B1', 'Stage B2', 'Stage C'],
+    correct_answer: 'Stage B2',
+    explanation: '根據 EPIC 研究，Stage B2（有心臟重塑但尚未出現臨床症狀）開始 pimobendan 可延緩進入充血性心衰竭約 15 個月。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'staging', 'treatment'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-002', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: '下列哪個品種對 MMVD 有最明確的遺傳易感性？',
+    options: ['德國牧羊犬', '騎士查理王小獵犬', '拉布拉多', '哈士奇'],
+    correct_answer: '騎士查理王小獵犬',
+    explanation: 'CKCS 對 MMVD 有明確的遺傳易感性，發病年齡也較其他品種早。幾乎所有 CKCS 在 10 歲前都會出現某種程度的 MMVD。',
+    difficulty: 2, spaced_rep: true, tags: ['MMVD', 'signalment'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-003', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: 'MMVD Stage C 的標準三合一療法包含以下何者？',
+    options: [
+      'Pimobendan + Furosemide + ACE inhibitor',
+      'Pimobendan + Spironolactone + Digoxin',
+      'Atenolol + Diltiazem + ACE inhibitor',
+      'Furosemide + Digoxin + Spironolactone',
+    ],
+    correct_answer: 'Pimobendan + Furosemide + ACE inhibitor',
+    explanation: 'Stage C 的標準治療為三合一：Pimobendan（正性肌力+血管擴張）、Furosemide（利尿劑）、ACE inhibitor（如 Enalapril 或 Benazepril，抑制 RAAS）。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'treatment', 'pharmacology'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-004', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: '評估犬心臟大小時，胸腔 X 光 VHS（Vertebral Heart Score）正常值上限為？',
+    options: ['8.5', '9.7', '10.5', '11.5'],
+    correct_answer: '10.5',
+    explanation: '犬的 VHS 正常值約 9.7 ± 0.5 個椎體長度。VHS > 10.5 通常提示心臟擴大。但需注意品種差異，某些品種（如 CKCS）的正常 VHS 可能較高。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'radiology', 'VHS'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-005', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: 'MMVD 患犬居家監測中，sleeping RR 超過多少次/分應立即就醫？',
+    options: ['15 次/分', '20 次/分', '30 次/分', '40 次/分'],
+    correct_answer: '30 次/分',
+    explanation: '正常犬的 sleeping RR 通常 < 25 次/分。當 sleeping RR 持續 > 30 次/分，高度提示充血性心衰竭惡化或即將發生，應立即就醫評估。',
+    difficulty: 2, spaced_rep: true, tags: ['MMVD', 'monitoring', 'owner_education'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-006', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: '心臟超音波中，LA/Ao 比值多少以上提示左心房擴大？',
+    options: ['1.0', '1.2', '1.6', '2.0'],
+    correct_answer: '1.6',
+    explanation: '左心房/主動脈根部比值（LA/Ao ratio）正常 < 1.6。LA/Ao ≥ 1.6 是 ACVIM 定義 Stage B2（心臟重塑）的關鍵指標之一。',
+    difficulty: 4, spaced_rep: true, tags: ['MMVD', 'echocardiography', 'staging'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-007', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: 'Pimobendan 的主要藥理機轉為何？',
+    options: [
+      'Beta 受體阻斷',
+      '鈣離子通道阻斷',
+      '磷酸二酯酶 III 抑制 + 鈣敏化',
+      'ACE 抑制',
+    ],
+    correct_answer: '磷酸二酯酶 III 抑制 + 鈣敏化',
+    explanation: 'Pimobendan 是一種 inodilator：透過 PDE III 抑制增加 cAMP 濃度（正性肌力+血管擴張），同時具有鈣敏化作用（增強肌絲對鈣離子的反應性），在不顯著增加心肌耗氧量的情況下增強收縮力。',
+    difficulty: 4, spaced_rep: true, tags: ['pharmacology', 'pimobendan'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-008', node_id: 'CARDIO-L3-001', question_type: 'mcq',
+    question: '下列何者不是 MMVD 的常見鑑別診斷？',
+    options: ['擴張型心肌病', '感染性心內膜炎', '肥厚型心肌病', '先天性二尖瓣發育不良'],
+    correct_answer: '肥厚型心肌病',
+    explanation: 'HCM 主要好發於貓，犬極為少見。MMVD 的主要鑑別診斷包括 DCM（大型犬）、感染性心內膜炎、先天性瓣膜異常等。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'differential'], image_placeholder: null,
+  },
+  // True/False 9-10
+  {
+    id: 'Q-MMVD-009', node_id: 'CARDIO-L3-001', question_type: 'true_false',
+    question: 'MMVD 心雜音的等級（Grade）與疾病嚴重度總是正相關。',
+    options: ['正確', '錯誤'],
+    correct_answer: '錯誤',
+    explanation: '心雜音等級不一定與疾病嚴重度正相關。Grade II 的雜音可能已有顯著心臟重塑（B2），而 Grade V 的雜音可能維持穩定多年。應以影像學（心超+X光）作為分期依據。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'auscultation'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-010', node_id: 'CARDIO-L3-001', question_type: 'true_false',
+    question: 'EPIC 研究證實，在 MMVD Stage B1 即開始 pimobendan 可顯著延緩疾病進展。',
+    options: ['正確', '錯誤'],
+    correct_answer: '錯誤',
+    explanation: 'EPIC 研究的納入標準為 Stage B2（有心臟重塑的證據）。對於 Stage B1 患犬，目前尚無強烈證據支持使用 pimobendan。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'evidence_based'], image_placeholder: null,
+  },
+  // Fill blank 11-12
+  {
+    id: 'Q-MMVD-011', node_id: 'CARDIO-L3-001', question_type: 'fill_blank',
+    question: 'Pimobendan 的標準口服劑量為 _____ mg/kg，每日 _____ 次。',
+    options: null,
+    correct_answer: '0.25-0.3 mg/kg，每日 2 次（BID）',
+    explanation: 'Pimobendan 標準劑量為 0.25-0.3 mg/kg PO BID（每 12 小時一次），建議空腹給藥以提高吸收率。',
+    difficulty: 3, spaced_rep: true, tags: ['pharmacology', 'dosage'], image_placeholder: null,
+  },
+  {
+    id: 'Q-MMVD-012', node_id: 'CARDIO-L3-001', question_type: 'fill_blank',
+    question: 'ACVIM 將 MMVD 分為 _____ 個分期（Stage _____ 至 Stage _____）。',
+    options: null,
+    correct_answer: '4 個分期（Stage A 至 Stage D）',
+    explanation: 'ACVIM 2019 共識將 MMVD 分為 A、B1、B2、C、D 共五個分期（四個主分期，B 分為 B1 和 B2）。',
+    difficulty: 2, spaced_rep: true, tags: ['MMVD', 'staging'], image_placeholder: null,
+  },
+  // Case-based 13
+  {
+    id: 'Q-MMVD-013', node_id: 'CARDIO-L3-001', question_type: 'case_based',
+    question: '一隻 9 歲已絕育馬爾濟斯母犬因近一週夜間咳嗽頻率增加就診。理學檢查發現左心尖區 Grade IV/VI 收縮期雜音，呼吸速率 36 次/分。胸腔 X 光顯示 VHS 12.0，肺野有間質性到肺泡性浸潤。最可能的診斷與建議分期為何？',
+    options: [
+      'MMVD Stage B2，開始 pimobendan',
+      'MMVD Stage C，開始三合一療法',
+      'DCM Stage C，開始 pimobendan',
+      'MMVD Stage D，考慮加強治療',
+    ],
+    correct_answer: 'MMVD Stage C，開始三合一療法',
+    explanation: '老年小型犬 + 高等級收縮期雜音 + VHS 12.0（明顯擴大）+ 肺浸潤（提示肺水腫）= MMVD Stage C（出現充血性心衰竭臨床症狀）。應開始三合一療法：Pimobendan + Furosemide + ACE inhibitor，並考慮住院氧氣支持。',
+    difficulty: 4, spaced_rep: true, tags: ['MMVD', 'clinical_reasoning', 'staging'], image_placeholder: null,
+  },
+];

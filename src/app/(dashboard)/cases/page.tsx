@@ -7,9 +7,10 @@ import { Card, CardBody, CardFooter } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { CardSkeleton } from '@/components/ui/Skeleton';
 import type { CaseChallenge } from '@/types/case';
+import { SEED_CASE } from '@/data/seed';
 
-// Mock data for demonstration
-const MOCK_CASES: CaseChallenge[] = [];
+// Seed cases for demonstration (all specialties)
+const MOCK_CASES: CaseChallenge[] = [SEED_CASE];
 
 const DIFFICULTY_LABELS: Record<number, string> = {
   1: '入門',
@@ -47,9 +48,13 @@ export default function CasesPage() {
           className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
         >
           <option value="">全部專科</option>
+          <option value="CARDIO">心臟科</option>
           <option value="IM">內科</option>
-          <option value="SURG">外科</option>
           <option value="DERM">皮膚科</option>
+          <option value="SURG">外科</option>
+          <option value="NEURO">神經科</option>
+          <option value="ONCO">腫瘤科</option>
+          <option value="ECC">急診加護</option>
         </select>
         <select
           value={selectedDifficulty ?? ''}
