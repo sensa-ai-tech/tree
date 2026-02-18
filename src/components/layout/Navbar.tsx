@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Search, Bell, User, BookOpen } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { useAuthStore } from '@/stores/auth-store';
+import { useKnowledgeStore } from '@/stores/knowledge-store';
 import Link from 'next/link';
 
 interface NavbarProps {
@@ -12,12 +14,15 @@ interface NavbarProps {
 
 export function Navbar({ className }: NavbarProps) {
   const { user } = useAuthStore();
+  const { setFilters } = useKnowledgeStore();
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
 
   function handleSearchSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // TODO: integrate with search functionality
+      setFilters({ search: searchQuery.trim() });
+      router.push('/graph');
     }
   }
 

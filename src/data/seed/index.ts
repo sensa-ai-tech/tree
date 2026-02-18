@@ -29,7 +29,11 @@ import { CARDIO_PATHS } from './cardio/paths';
 
 // ─── CPATH (共用臨床病理) ───
 import { CPATH_NODES } from './cpath/nodes';
+import { CPATH_EDGES } from './cpath/edges';
 import { CPATH_CONTENTS } from './cpath/contents';
+import { CPATH_QUESTIONS } from './cpath/questions';
+import { CPATH_CASES } from './cpath/cases';
+import { CPATH_PATHS } from './cpath/paths';
 
 // ─── IM (內科) ───
 import { IM_NODES } from './im/nodes';
@@ -105,6 +109,7 @@ const ALL_NODES: KnowledgeNode[] = [
 /** 所有邊合併（科內 + 跨科） */
 const ALL_EDGES: KnowledgeEdge[] = [
   ...CARDIO_EDGES,
+  ...CPATH_EDGES,
   ...IM_EDGES,
   ...DERM_EDGES,
   ...SURG_EDGES,
@@ -129,6 +134,7 @@ export const SEED_NODE_CONTENTS: Map<string, NodeContent> = new Map<string, Node
 /** 所有複習題合併 */
 export const SEED_QUESTIONS: ReviewQuestion[] = [
   ...CARDIO_QUESTIONS,
+  ...CPATH_QUESTIONS,
   ...IM_QUESTIONS,
   ...DERM_QUESTIONS,
   ...SURG_QUESTIONS,
@@ -140,6 +146,7 @@ export const SEED_QUESTIONS: ReviewQuestion[] = [
 /** 所有病例合併 */
 const ALL_CASES: CaseChallenge[] = [
   ...CARDIO_CASES,
+  ...CPATH_CASES,
   ...IM_CASES,
   ...DERM_CASES,
   ...SURG_CASES,
@@ -151,6 +158,7 @@ const ALL_CASES: CaseChallenge[] = [
 /** 所有學習路徑合併 */
 const ALL_PATHS: LearningPath[] = [
   ...CARDIO_PATHS,
+  ...CPATH_PATHS,
   ...IM_PATHS,
   ...DERM_PATHS,
   ...SURG_PATHS,

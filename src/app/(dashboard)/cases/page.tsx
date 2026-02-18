@@ -7,10 +7,10 @@ import { Card, CardBody, CardFooter } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { CardSkeleton } from '@/components/ui/Skeleton';
 import type { CaseChallenge } from '@/types/case';
-import { SEED_CASE } from '@/data/seed';
+import { ALL_CASES } from '@/data/seed/case-lookup';
 
 // Seed cases for demonstration (all specialties)
-const MOCK_CASES: CaseChallenge[] = [SEED_CASE];
+const MOCK_CASES: CaseChallenge[] = ALL_CASES;
 
 const DIFFICULTY_LABELS: Record<number, string> = {
   1: '入門',

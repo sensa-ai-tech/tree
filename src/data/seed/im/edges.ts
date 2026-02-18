@@ -41,4 +41,21 @@ export const IM_EDGES: KnowledgeEdge[] = [
 
   // L3 complications
   { id: 'IM-E-027', source_node_id: 'IM-L3-010', target_node_id: 'IM-L3-005', relation_type: 'complication', weight: 0.8, description: '壁蝨感染可繼發 IMHA', bidirectional: false, unlock_condition: null },
+
+  // Addison's (IM-L3-011) edges
+  { id: 'IM-E-028', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-011', relation_type: 'clinical_apply', weight: 0.9, description: '內分泌失調機轉導致 Addison\'s', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-029', source_node_id: 'IM-L3-011', target_node_id: 'IM-L4-001', relation_type: 'clinical_apply', weight: 1.0, description: 'Addison\'s 需內分泌檢驗（ACTH 刺激試驗）確診', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-030', source_node_id: 'IM-L3-011', target_node_id: 'IM-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: 'Addison\'s 需礦物皮質素與糖皮質素替代治療', bidirectional: false, unlock_condition: null },
+
+  // PLE (IM-L3-012) edges
+  { id: 'IM-E-031', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-012', relation_type: 'clinical_apply', weight: 0.9, description: '免疫/發炎機轉導致蛋白質流失性腸病', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-032', source_node_id: 'IM-L3-012', target_node_id: 'IM-L4-004', relation_type: 'clinical_apply', weight: 1.0, description: 'PLE 需消化道影像與內視鏡切片診斷', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-033', source_node_id: 'IM-L3-012', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'PLE 需飲食調整與免疫抑制治療', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-034', source_node_id: 'IM-L3-007', target_node_id: 'IM-L3-012', relation_type: 'differential', weight: 0.8, description: 'IBD 與 PLE 需鑑別（嚴重 IBD 可繼發 PLE）', bidirectional: true, unlock_condition: null },
+
+  // 酸鹼平衡障礙 (IM-L2-005) edges
+  { id: 'IM-E-035', source_node_id: 'IM-L1-004', target_node_id: 'IM-L2-005', relation_type: 'builds_on', weight: 0.9, description: '呼吸生理是酸鹼平衡障礙的基礎', bidirectional: false, unlock_condition: null },
+
+  // Cushing's vs Addison's differential
+  { id: 'IM-E-036', source_node_id: 'IM-L3-001', target_node_id: 'IM-L3-011', relation_type: 'differential', weight: 0.8, description: 'Cushing\'s 與 Addison\'s 為腎上腺功能亢進/低下需鑑別', bidirectional: true, unlock_condition: null },
 ];
