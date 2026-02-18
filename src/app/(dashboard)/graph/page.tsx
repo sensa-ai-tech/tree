@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Map, Info } from 'lucide-react';
 import { Card, CardBody } from '@/components/ui/Card';
@@ -21,9 +21,17 @@ const SPECIALTIES = [
 ] as const;
 
 export default function GraphPage() {
-  const { nodes, edges, isLoading, setFilters } = useKnowledgeStore();
+  const { nodes, edges, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore();
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const router = useRouter();
+
+  // 根據篩選條件過濾 nodes 和 edges
+  const filteredNodes = useMemo(() => getFilteredNodes(), [getFilteredNodes, nodes, selectedSpecialty]);
+  const filteredNodeIds = useMemo(() => new Set(filteredNodes.map((n) => n.id)), [filteredNodes]);
+  const filteredEdges = useMemo(
+    () => edges.filter((e) => filteredNodeIds.has(e.source_node_id) && filteredNodeIds.has(e.target_node_id)),
+    [edges, filteredNodeIds]
+  );
 
   function handleSpecialtyChange(e: React.ChangeEvent<HTMLSelectElement>): void {
     const value = e.target.value;
@@ -69,14 +77,16 @@ export default function GraphPage() {
 
       {isLoading ? (
         <GraphSkeleton />
-      ) : nodes.length === 0 ? (
+      ) : filteredNodes.length === 0 ? (
         <div className="flex h-96 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
-          <p className="text-gray-500">尚無知識節點資料，請先由管理員匯入內容。</p>
+          <p className="text-gray-500">
+            {selectedSpecialty ? '此專科尚無知識節點資料。' : '尚無知識節點資料，請先由管理員匯入內容。'}
+          </p>
         </div>
       ) : (
         <KnowledgeGraph
-          nodes={nodes}
-          edges={edges}
+          nodes={filteredNodes}
+          edges={filteredEdges}
           onNodeClick={handleNodeClick}
           className="h-[600px]"
         />

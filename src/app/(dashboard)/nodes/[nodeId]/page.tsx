@@ -3,12 +3,16 @@
 import { use, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle, BookOpen, Stethoscope, Search } from 'lucide-react';
+import { ArrowLeft, CheckCircle, BookOpen, Stethoscope, Search, Lightbulb, AlertTriangle } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { showToast } from '@/components/ui/Toast';
+import { DiseaseContent } from '@/components/features/DiseaseContent';
+import { DiagnosticContent } from '@/components/features/DiagnosticContent';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
@@ -21,12 +25,13 @@ interface NodeDetailPageProps {
 export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   const { nodeId } = use(params);
   const router = useRouter();
-  const { getNodeById, selectedNodeContent, setNodeContent } = useKnowledgeStore();
+  const { nodes, getNodeById, selectedNodeContent, setNodeContent } = useKnowledgeStore();
   const { getStatus, completeNode, startNode } = useLearningStore();
   const { addXP } = useGamificationStore();
   const [isCompleting, setIsCompleting] = useState(false);
 
-  const node = useMemo(() => getNodeById(nodeId), [getNodeById, nodeId]);
+  // 依賴 nodes 以便 DemoDataProvider 注入資料後重新計算
+  const node = useMemo(() => getNodeById(nodeId), [getNodeById, nodeId, nodes]);
   const status = getStatus(nodeId);
 
   // 自動從 seed 載入內容（當 store 尚未設定時）
@@ -42,6 +47,17 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   }, [nodeId, selectedNodeContent, setNodeContent]);
 
   const content = selectedNodeContent;
+
+  // nodes 尚未載入時顯示 loading（DemoDataProvider 注入需要時間）
+  if (nodes.length === 0) {
+    return (
+      <div className="flex h-64 flex-col items-center justify-center gap-4">
+        <Skeleton variant="text" width="40%" />
+        <Skeleton variant="rectangular" height={200} />
+        <p className="text-sm text-gray-400">知識節點載入中...</p>
+      </div>
+    );
+  }
 
   if (!node) {
     return (
@@ -116,12 +132,9 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
       {content ? (
         <div className="space-y-6">
           {/* Summary */}
-          <Card>
-            <CardHeader>
-              <h2 className="font-semibold text-gray-900">摘要</h2>
-            </CardHeader>
+          <Card className="border-indigo-100 bg-indigo-50/50">
             <CardBody>
-              <p className="text-sm text-gray-700">{content.summary}</p>
+              <p className="text-sm leading-relaxed text-indigo-900">{content.summary}</p>
             </CardBody>
           </Card>
 
@@ -129,7 +142,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           {content.learning_objectives.length > 0 && (
             <Card>
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">學習目標</h2>
+                <h2 className="font-semibold text-gray-900">🎯 學習目標</h2>
               </CardHeader>
               <CardBody>
                 <ul className="list-inside list-disc space-y-1 text-sm text-gray-700">
@@ -141,62 +154,108 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
             </Card>
           )}
 
-          {/* Disease-specific Content */}
+          {/* Disease-specific Content — 完整 Accordion */}
           {node.node_type === 'disease' && content.disease_data && (
             <Card>
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">疾病資料</h2>
+                <h2 className="font-semibold text-gray-900">🩺 疾病詳細資料</h2>
               </CardHeader>
-              <CardBody className="space-y-3 text-sm text-gray-700">
-                <div>
-                  <strong>好發動物：</strong>{content.disease_data.signalment}
-                </div>
-                <div>
-                  <strong>病因：</strong>{content.disease_data.etiology}
-                </div>
-                <div>
-                  <strong>預後：</strong>{content.disease_data.prognosis}
-                </div>
+              <CardBody>
+                <DiseaseContent data={content.disease_data} />
               </CardBody>
             </Card>
           )}
 
-          {/* Diagnostic-specific Content */}
+          {/* Diagnostic-specific Content — Tab 介面 */}
           {node.node_type === 'diagnostic' && content.diagnostic_data && (
             <Card>
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">診斷方法</h2>
+                <h2 className="font-semibold text-gray-900">🔬 診斷方法詳細</h2>
               </CardHeader>
-              <CardBody className="space-y-3 text-sm text-gray-700">
-                <div>
-                  <strong>適應症：</strong>
-                  {content.diagnostic_data.indication.join('、')}
-                </div>
-                <div>
-                  <strong>技術：</strong>{content.diagnostic_data.technique}
+              <CardBody>
+                <DiagnosticContent data={content.diagnostic_data} />
+              </CardBody>
+            </Card>
+          )}
+
+          {/* Body content — Markdown 渲染 */}
+          {content.body && (
+            <Card>
+              <CardHeader>
+                <h2 className="font-semibold text-gray-900">📖 詳細內容</h2>
+              </CardHeader>
+              <CardBody>
+                <div className="prose prose-sm max-w-none text-gray-700 prose-headings:text-gray-900 prose-a:text-indigo-600 prose-strong:text-gray-900 prose-table:text-sm">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {content.body}
+                  </ReactMarkdown>
                 </div>
               </CardBody>
             </Card>
           )}
 
-          {/* Body content */}
-          <Card>
-            <CardHeader>
-              <h2 className="font-semibold text-gray-900">詳細內容</h2>
-            </CardHeader>
-            <CardBody>
-              <div className="prose prose-sm max-w-none text-gray-700">
-                {content.body}
-              </div>
-            </CardBody>
-          </Card>
+          {/* Key Points */}
+          {content.key_points && content.key_points.length > 0 && (
+            <Card className="border-green-200 bg-green-50">
+              <CardBody>
+                <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-green-800">
+                  <CheckCircle className="h-4 w-4" />
+                  重點整理
+                </h3>
+                <ul className="space-y-1">
+                  {content.key_points.map((point, i) => (
+                    <li key={i} className="text-sm text-green-700">&bull; {point}</li>
+                  ))}
+                </ul>
+              </CardBody>
+            </Card>
+          )}
 
           {/* Clinical Pearl */}
           {content.clinical_pearl && (
             <Card className="border-amber-200 bg-amber-50">
               <CardBody>
-                <p className="text-sm font-medium text-amber-800">臨床小提醒</p>
-                <p className="mt-1 text-sm text-amber-700">{content.clinical_pearl}</p>
+                <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-amber-800">
+                  <Lightbulb className="h-4 w-4" />
+                  臨床珍珠
+                </h3>
+                <p className="text-sm text-amber-700">{content.clinical_pearl}</p>
+              </CardBody>
+            </Card>
+          )}
+
+          {/* Common Mistakes */}
+          {content.common_mistakes && content.common_mistakes.length > 0 && (
+            <Card className="border-red-200 bg-red-50">
+              <CardBody>
+                <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-red-800">
+                  <AlertTriangle className="h-4 w-4" />
+                  常見錯誤
+                </h3>
+                <ul className="space-y-1">
+                  {content.common_mistakes.map((mistake, i) => (
+                    <li key={i} className="text-sm text-red-700">&bull; {mistake}</li>
+                  ))}
+                </ul>
+              </CardBody>
+            </Card>
+          )}
+
+          {/* References */}
+          {content.references && content.references.length > 0 && (
+            <Card>
+              <CardHeader>
+                <h2 className="font-semibold text-gray-900">📚 參考文獻</h2>
+              </CardHeader>
+              <CardBody>
+                <ol className="list-decimal list-inside space-y-2 text-xs text-gray-500">
+                  {content.references.map((ref, i) => (
+                    <li key={i}>
+                      <span className="text-gray-700">{ref.citation}</span>
+                      {ref.relevance && <span className="ml-1 text-gray-400">— {ref.relevance}</span>}
+                    </li>
+                  ))}
+                </ol>
               </CardBody>
             </Card>
           )}
