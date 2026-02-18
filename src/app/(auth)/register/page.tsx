@@ -21,7 +21,7 @@ export default function RegisterPage() {
   // 已登入使用者直接導向首頁
   useEffect(() => {
     if (_hasHydrated && user) {
-      router.replace('/');
+      router.replace('/graph');
     }
   }, [user, _hasHydrated, router]);
 
@@ -50,7 +50,7 @@ export default function RegisterPage() {
     const currentError = useAuthStore.getState().error;
     if (!currentError) {
       showToast.success('註冊成功');
-      router.push('/');
+      router.push('/graph');
     } else {
       showToast.error(currentError);
     }

@@ -1,7 +1,12 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Map, Stethoscope, Gamepad2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
+import { useAuthStore } from '@/stores/auth-store';
 
 const FEATURES = [
   {
@@ -22,6 +27,29 @@ const FEATURES = [
 ] as const;
 
 export default function HomePage() {
+  const router = useRouter();
+  const { user, _hasHydrated } = useAuthStore();
+  const [redirecting, setRedirecting] = useState(false);
+
+  // 已登入使用者自動導向 Dashboard
+  useEffect(() => {
+    if (_hasHydrated && user) {
+      setRedirecting(true);
+      router.replace('/graph');
+    }
+  }, [user, _hasHydrated, router]);
+
+  if (!_hasHydrated || redirecting) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-600" />
+          <p className="text-sm text-gray-500">載入中...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white">
       {/* Hero */}

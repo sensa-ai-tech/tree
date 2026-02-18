@@ -19,7 +19,7 @@ export default function LoginPage() {
   // 已登入使用者直接導向首頁
   useEffect(() => {
     if (_hasHydrated && user) {
-      router.replace('/');
+      router.replace('/graph');
     }
   }, [user, _hasHydrated, router]);
 
@@ -37,7 +37,7 @@ export default function LoginPage() {
     const currentError = useAuthStore.getState().error;
     if (!currentError) {
       showToast.success('登入成功');
-      router.push('/');
+      router.push('/graph');
     } else {
       showToast.error(currentError);
     }
