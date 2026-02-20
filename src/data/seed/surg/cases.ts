@@ -1015,7 +1015,7 @@ export const SURG_CASES: CaseChallenge[] = [
     title: '犬前肢骨折固定選擇',
     specialty: 'SURG',
     cross_specialties: ['ECC'],
-    required_nodes: ['SURG-L3-007', 'SURG-L4-003', 'SURG-L5-005'],
+    required_nodes: ['SURG-L3-007', 'SURG-L4-003', 'SURG-L5-002'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -1211,7 +1211,7 @@ export const SURG_CASES: CaseChallenge[] = [
         '術後過早自由活動導致植入物失敗',
       ],
     },
-    related_nodes_for_review: ['SURG-L3-007', 'SURG-L4-003', 'SURG-L5-005', 'ECC-L3-001', 'ECC-L4-002'],
+    related_nodes_for_review: ['SURG-L3-007', 'SURG-L4-003', 'SURG-L5-002', 'ECC-L3-001', 'ECC-L4-002'],
     tags: ['骨折', '骨板固定', '車禍', '急診骨科', 'Robert Jones', 'case_challenge'],
   },
   {
@@ -1219,7 +1219,7 @@ export const SURG_CASES: CaseChallenge[] = [
     title: '犬會陰疝氣手術',
     specialty: 'SURG',
     cross_specialties: ['IM', 'CPATH'],
-    required_nodes: ['SURG-L3-008', 'SURG-L4-004', 'SURG-L5-006'],
+    required_nodes: ['SURG-L3-008', 'SURG-L4-002', 'SURG-L5-001'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -1417,7 +1417,7 @@ export const SURG_CASES: CaseChallenge[] = [
         '術後未使用軟便劑導致修補失敗',
       ],
     },
-    related_nodes_for_review: ['SURG-L3-008', 'SURG-L4-004', 'SURG-L5-006', 'IM-L3-010'],
+    related_nodes_for_review: ['SURG-L3-008', 'SURG-L4-002', 'SURG-L5-001', 'IM-L3-010'],
     tags: ['會陰疝氣', 'perineal hernia', '去勢', 'BPH', '軟組織外科', 'case_challenge'],
   },
 ];

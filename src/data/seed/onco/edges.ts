@@ -45,4 +45,33 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   // L5 internal: drug_related
   { id: 'ONCO-E-026', source_node_id: 'ONCO-L5-001', target_node_id: 'ONCO-L5-005', relation_type: 'drug_related', weight: 0.8, description: '節拍式化療為傳統化療的替代方案', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-027', source_node_id: 'ONCO-L2-003', target_node_id: 'ONCO-L5-005', relation_type: 'clinical_apply', weight: 0.7, description: '抗藥機轉促使考慮節拍式化療', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: missing L1/L2 → L3 prerequisite edges ---
+  { id: 'ONCO-E-028', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-002', relation_type: 'prerequisite', weight: 0.9, description: '腫瘤生物學為 MCT 細胞增殖/分級的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-029', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-005', relation_type: 'clinical_apply', weight: 0.9, description: '口腔黑色素瘤具高度局部侵襲與轉移特性', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-030', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-006', relation_type: 'prerequisite', weight: 0.8, description: '腫瘤生物學為乳腺腫瘤良惡性分類的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-031', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-007', relation_type: 'clinical_apply', weight: 0.8, description: 'TCC 具局部侵犯與遠端轉移特性', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-032', source_node_id: 'ONCO-L1-002', target_node_id: 'ONCO-L3-008', relation_type: 'prerequisite', weight: 0.8, description: '腫瘤免疫學與 FISS 免疫介導致瘤機轉相關', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: missing L3 → L4 clinical_apply edges ---
+  { id: 'ONCO-E-033', source_node_id: 'ONCO-L3-003', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '骨肉瘤可藉 FNA 細胞學初步診斷', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-034', source_node_id: 'ONCO-L3-003', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 1, description: '骨肉瘤需胸腔 X 光等分期檢查排除肺轉移', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-035', source_node_id: 'ONCO-L3-004', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '血管肉瘤可藉腹腔液細胞學輔助診斷', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-036', source_node_id: 'ONCO-L3-004', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '血管肉瘤需腹部超音波及胸腔 X 光分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-037', source_node_id: 'ONCO-L3-005', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '口腔黑色素瘤需 FNA 細胞學確認色素細胞', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-038', source_node_id: 'ONCO-L3-005', target_node_id: 'ONCO-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: '口腔黑色素瘤使用 WHO TNM 分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-039', source_node_id: 'ONCO-L3-006', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '乳腺腫瘤需 FNA 細胞學區分良惡性', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-040', source_node_id: 'ONCO-L3-006', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '乳腺腫瘤需胸腔 X 光及淋巴結評估分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-041', source_node_id: 'ONCO-L3-007', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: 'TCC 可藉尿液沉渣細胞學輔助診斷', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-042', source_node_id: 'ONCO-L3-007', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'TCC 需腹部超音波及 X 光進行分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-043', source_node_id: 'ONCO-L3-008', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: 'FISS 需 FNA 細胞學初步評估腫瘤類型', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-044', source_node_id: 'ONCO-L3-008', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: 'FISS 需 CT/影像評估腫瘤邊界及轉移', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: additional missing L3 → L5 treatment edges ---
+  { id: 'ONCO-E-045', source_node_id: 'ONCO-L3-003', target_node_id: 'ONCO-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '骨肉瘤截肢後需輔助化療（carboplatin/doxorubicin）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-046', source_node_id: 'ONCO-L3-004', target_node_id: 'ONCO-L5-001', relation_type: 'clinical_apply', weight: 0.7, description: '血管肉瘤脾切後以 doxorubicin 化療為主', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-047', source_node_id: 'ONCO-L3-006', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '乳腺腫瘤以外科切除為首選治療', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-048', source_node_id: 'ONCO-L3-008', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: 'FISS 需廣切手術（≥3 cm 邊界）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-049', source_node_id: 'ONCO-L3-007', target_node_id: 'ONCO-L5-005', relation_type: 'clinical_apply', weight: 0.8, description: 'TCC 常用 piroxicam ± 節拍式化療', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-050', source_node_id: 'ONCO-L3-008', target_node_id: 'ONCO-L5-004', relation_type: 'clinical_apply', weight: 0.7, description: 'FISS 不完全切除後可考慮放射治療', bidirectional: false, unlock_condition: null },
 ];

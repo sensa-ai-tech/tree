@@ -628,7 +628,7 @@ export const ONCO_CASES: CaseChallenge[] = [
     title: '大型犬跛行（骨肉瘤診斷截肢決策）',
     specialty: 'ONCO',
     cross_specialties: ['SURG', 'CPATH'],
-    required_nodes: ['ONCO-L3-003', 'ONCO-L4-001', 'ONCO-L4-004', 'ONCO-L5-003'],
+    required_nodes: ['ONCO-L3-003', 'ONCO-L4-001', 'ONCO-L4-002', 'ONCO-L5-003'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -824,7 +824,7 @@ export const ONCO_CASES: CaseChallenge[] = [
         '化療結束後未定期胸 X 光追蹤',
       ],
     },
-    related_nodes_for_review: ['ONCO-L3-003', 'ONCO-L4-001', 'ONCO-L4-004', 'ONCO-L5-003', 'ONCO-L2-003'],
+    related_nodes_for_review: ['ONCO-L3-003', 'ONCO-L4-001', 'ONCO-L4-002', 'ONCO-L5-003', 'ONCO-L2-003'],
     tags: ['骨肉瘤', 'OSA', '截肢', 'Carboplatin', '大丹犬', '肺轉移', 'case_challenge'],
   },
   {
@@ -832,7 +832,7 @@ export const ONCO_CASES: CaseChallenge[] = [
     title: '老年犬脾臟腫塊（HSA vs 血腫）',
     specialty: 'ONCO',
     cross_specialties: ['SURG', 'ECC', 'CPATH'],
-    required_nodes: ['ONCO-L3-004', 'ONCO-L4-001', 'ONCO-L4-005', 'ONCO-L5-004'],
+    required_nodes: ['ONCO-L3-004', 'ONCO-L4-001', 'ONCO-L4-003', 'ONCO-L5-004'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -1028,7 +1028,7 @@ export const ONCO_CASES: CaseChallenge[] = [
         '過度樂觀向飼主描述預後',
       ],
     },
-    related_nodes_for_review: ['ONCO-L3-004', 'ONCO-L4-001', 'ONCO-L4-005', 'ONCO-L5-004', 'ONCO-L2-004', 'ECC-L3-002'],
+    related_nodes_for_review: ['ONCO-L3-004', 'ONCO-L4-001', 'ONCO-L4-003', 'ONCO-L5-004', 'ONCO-L2-003', 'ECC-L3-002'],
     tags: ['血管肉瘤', 'HSA', '脾臟腫塊', 'hemoabdomen', 'Doxorubicin', '德國牧羊犬', 'case_challenge'],
   },
   {
@@ -1240,7 +1240,7 @@ export const ONCO_CASES: CaseChallenge[] = [
     title: '犬口腔黑色素瘤 TNM 分期',
     specialty: 'ONCO',
     cross_specialties: ['SURG', 'CPATH'],
-    required_nodes: ['ONCO-L3-006', 'ONCO-L4-001', 'ONCO-L4-006', 'ONCO-L5-006'],
+    required_nodes: ['ONCO-L3-006', 'ONCO-L4-001', 'ONCO-L4-003', 'ONCO-L5-002'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -1435,7 +1435,7 @@ export const ONCO_CASES: CaseChallenge[] = [
         '未進行 CT 即手術（骨侵犯範圍不明）',
       ],
     },
-    related_nodes_for_review: ['ONCO-L3-006', 'ONCO-L4-001', 'ONCO-L4-006', 'ONCO-L5-006', 'ONCO-L2-006'],
+    related_nodes_for_review: ['ONCO-L3-006', 'ONCO-L4-001', 'ONCO-L4-003', 'ONCO-L5-002', 'ONCO-L2-003'],
     tags: ['黑色素瘤', '口腔腫瘤', 'TNM', 'mandibulectomy', 'Oncept', '免疫治療', 'case_challenge'],
   },
 ];

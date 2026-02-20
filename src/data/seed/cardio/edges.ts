@@ -31,4 +31,17 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
 
   // 心絲蟲 → X 光
   { id: 'CARDIO-E-015', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L4-004', relation_type: 'clinical_apply', weight: 0.8, description: '心絲蟲需 X 光評估肺動脈變化', bidirectional: false, unlock_condition: null },
+
+  // 補充 prerequisite 邊（L1 → L3）
+  { id: 'CARDIO-E-016', source_node_id: 'CARDIO-L1-001', target_node_id: 'CARDIO-L3-004', relation_type: 'prerequisite', weight: 0.8, description: '心臟解剖是理解心包膜積液的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-017', source_node_id: 'CARDIO-L1-003', target_node_id: 'CARDIO-L3-005', relation_type: 'prerequisite', weight: 0.8, description: '心絲蟲影響血流動力學', bidirectional: false, unlock_condition: null },
+
+  // 補充 clinical_apply 邊（L3 → L4）
+  { id: 'CARDIO-E-018', source_node_id: 'CARDIO-L3-002', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'DCM 需心超確診（FS、LVIDDN）', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-019', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'HCM 需心超確診（LVPWd、IVSd）', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-020', source_node_id: 'CARDIO-L3-005', target_node_id: 'CARDIO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '心絲蟲聽診可聞肺動脈區分裂 S2', bidirectional: false, unlock_condition: null },
+
+  // 補充 clinical_apply 邊（L2 → L5, L3 → L5）
+  { id: 'CARDIO-E-021', source_node_id: 'CARDIO-L2-003', target_node_id: 'CARDIO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '心律不整機轉是抗心律不整藥物的理論基礎', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-022', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '心包膜積液需心包膜穿刺術治療', bidirectional: false, unlock_condition: null },
 ];

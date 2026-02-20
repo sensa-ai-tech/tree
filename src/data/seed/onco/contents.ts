@@ -25,20 +25,31 @@ const contentCanineLymphoma: NodeContent = {
   ],
   body: `# 犬淋巴瘤 (Canine Lymphoma)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬淋巴瘤（lymphoma / lymphosarcoma）是犬最常見的造血系統腫瘤，約占所有犬腫瘤的 7-24%。中年至老年犬好發（中位年齡 6-9 歲），無明顯性別偏好。Golden Retriever、Boxer、Bullmastiff、Basset Hound 等品種有較高發病率。
 
-## 解剖分型
-
+### 解剖分型
 - **多中心型（Multicentric）**：約 80%，全身周邊淋巴結腫大
 - **消化道型（Alimentary）**：約 5-7%，胃腸道浸潤
 - **縱膈型（Mediastinal）**：約 5%，前縱膈腫塊
 - **皮膚型（Cutaneous）**：約 5%，分為上皮親和性與非上皮親和性
 - **結外型（Extranodal）**：眼、腎、神經系統等
 
-## WHO 臨床分期
+### CHOP 化療方案
+[藥物:Cyclophosphamide] + [藥物:Doxorubicin] + [藥物:Vincristine] + [藥物:Prednisone]
 
+標準 CHOP 方案為 25 週、19 次療程，每週交替給藥。主要毒性包括：
+- Doxorubicin：累積性心臟毒性（總劑量 > 180-240 mg/m²）
+- Cyclophosphamide：出血性膀胱炎（無菌性）
+- Vincristine：周邊神經毒性、便秘
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### WHO 臨床分期
 [互動:WHO 分期互動圖表]
 
 | 期別 | 定義 |
@@ -53,30 +64,43 @@ Substage：
 - **a**：無全身症狀
 - **b**：有全身症狀（體重減輕、發燒、食慾下降）
 
-## 免疫表型與預後
+## 三、治療策略 (Treatment)
 
-免疫組織化學（IHC）或流式細胞儀分型：
-- **B-cell**：約 60-70%，CD79a+/CD3-，CHOP 方案中位存活 12-14 個月
-- **T-cell**：約 20-30%，CD3+/CD79a-，中位存活 6-9 個月，高血鈣發生率較高
-
-## CHOP 化療方案
-
-[藥物:Cyclophosphamide] + [藥物:Doxorubicin] + [藥物:Vincristine] + [藥物:Prednisone]
-
-標準 CHOP 方案為 25 週、19 次療程，每週交替給藥。主要毒性包括：
-- Doxorubicin：累積性心臟毒性（總劑量 > 180-240 mg/m²）
-- Cyclophosphamide：出血性膀胱炎（無菌性）
-- Vincristine：周邊神經毒性、便秘
-
-## 其他治療選項
-
+### 其他治療選項
 - 單劑 Doxorubicin 方案：緩解率較低但較簡便
 - 節拍式化療：低劑量口服藥物，適合飼主無法頻繁回診或經濟限制
 - [藥物:Lomustine]（CCNU）：T-cell 型或復發型的救援方案
 - [藥物:Prednisone] 單獨使用：中位存活僅 1-2 個月
 
-[圖片:CHOP 方案 25 週用藥時程表]`,
-  clinical_pearl: '犬淋巴瘤的 FNA 細胞學通常即可獲得初步診斷——中大型淋巴球增多並取代正常淋巴結結構。但確認免疫表型（B vs T cell）對預後評估和治療選擇至關重要，建議同時進行流式細胞儀或免疫組織化學染色。',
+[圖片:CHOP 方案 25 週用藥時程表]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+### 免疫表型與預後
+免疫組織化學（IHC）或流式細胞儀分型：
+- **B-cell**：約 60-70%，CD79a+/CD3-，CHOP 方案中位存活 12-14 個月
+- **T-cell**：約 20-30%，CD3+/CD79a-，中位存活 6-9 個月，高血鈣發生率較高
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: '犬淋巴瘤的 FNA 細胞學通常即可獲得初步診斷——中大型淋巴球增多並取代正常淋巴結結構。但確認免疫表型（B vs T cell）對預後評估和治療選擇至關重要，建議同時進行流式細胞儀或免疫組織化學染色。\n\n【台灣流行病學】犬淋巴瘤在台灣為最常見的血液腫瘤之一，好發品種如金毛獵犬、拉布拉多在台灣飼養數量龐大。台灣獸醫腫瘤科近年發展迅速，CHOP 化療方案在主要動物醫院已可執行。流式細胞儀免疫分型在台灣部分實驗室已可提供服務。台灣飼主對化療的接受度逐漸提高，但費用仍為重要考量因素。',
   common_mistakes: [
     '未進行免疫分型即開始 CHOP 化療（T-cell 預後差，影響飼主決策）',
     '在開始化療前使用 corticosteroids（可能導致多重抗藥性）',
@@ -130,6 +154,7 @@ Substage：
     { type: 'guideline', citation: 'Vail DM et al. ACVIM Small Animal Consensus Statement on Lymphoma in Dogs. J Vet Intern Med. 2019.', relevance: '犬淋巴瘤診斷治療共識指引' },
     { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2.', relevance: '化療副作用分級標準' },
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤科主要教科書' },
+    { type: 'journal', citation: 'Garrett LD et al. Evaluation of a 6-month chemotherapy protocol with no maintenance therapy for dogs with lymphoma. J Vet Intern Med. 2002;16(6):704-709.', relevance: '犬淋巴瘤 CHOP 方案臨床研究' },
   ],
   is_current: true,
   created_at: now,
@@ -157,12 +182,14 @@ const contentTumorCytology: NodeContent = {
   ],
   body: `# 腫瘤細胞學 (Tumor Cytology)
 
-## 概述
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 概述
 細胞學是腫瘤診斷的第一線工具，具有快速、低侵入性、低成本的優點。大多數體表腫塊和可觸及的淋巴結均可在門診中進行 FNA 細胞學檢查。
 
-## FNA 技術
-
+### FNA 技術
 ### Aspiration 技術（抽吸法）
 1. 22-25G 針頭接上 6-12 mL 注射器
 2. 固定腫塊，針頭刺入後施加負壓
@@ -175,14 +202,12 @@ const contentTumorCytology: NodeContent = {
 2. 利用毛細作用收集細胞
 3. 適用於血管豐富的腫塊（減少血液污染）
 
-## 染色方法
-
+### 染色方法
 - **Diff-Quick（Romanowsky 類）**：最常用，3 液浸泡各 5-10 秒，門診即可操作
 - **Wright-Giemsa**：細胞形態更清晰，需較長染色時間
 - **New Methylene Blue（NMB）**：快速濕片染色，適合初步篩檢
 
-## 三大細胞型態
-
+### 三大細胞型態
 [圖片:三大細胞型態示意圖]
 
 ### Round Cell Tumors（圓形細胞腫瘤）
@@ -201,8 +226,7 @@ const contentTumorCytology: NodeContent = {
 特徵：紡錘形細胞，分散或鬆散排列，細胞脫落率低
 - 纖維肉瘤、血管肉瘤、注射處肉瘤（FISS）等
 
-## 惡性度判斷標準
-
+### 惡性度判斷標準
 | 標準 | 描述 |
 |------|------|
 | Anisocytosis | 細胞大小不一致 |
@@ -215,7 +239,26 @@ const contentTumorCytology: NodeContent = {
 
 > 需 ≥ 3 項惡性標準同時存在方可懷疑惡性
 
-[互動:細胞學練習題——辨識腫瘤型態]`,
+[互動:細胞學練習題——辨識腫瘤型態]
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 循環腫瘤 DNA（ctDNA）監測 | 犬化療反應/復發早期偵測 | 研究階段，人醫已商業化 |
+| PET-CT 腫瘤分期 | 犬淋巴瘤/全身轉移的精確分期 | 少數獸醫機構可執行 |
+| 全基因組定序（WGS/WES） | 犬腫瘤可行動突變鑑定→精準用藥 | 犬腫瘤 NGS panel 已可取得 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬腫瘤 FNA vs 組織切片作為治療決策依據 | FNA 準確度因腫瘤類型差異大，何時需組織切片 | Level II |
+| 犬腫瘤分期影像檢查的最低標準 | 三視圖 X 光 vs CT 的成本效益——何時升級 | Level III |`,
   clinical_pearl: '遇到任何體表腫塊，「先 FNA 再決定下一步」是腫瘤科的黃金法則。一支 25G 針頭和一片玻片可以在 10 分鐘內告訴你腫塊是 round cell、epithelial 還是 mesenchymal——這直接影響手術計畫（如 MCT 需要寬切緣 2-3 cm）。',
   common_mistakes: [
     '針頭在腫塊內停留時間過長或反覆穿刺導致過多血液污染',
@@ -269,6 +312,8 @@ const contentTumorCytology: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤細胞學基礎章節' },
     { type: 'textbook', citation: 'Cowell RL, Tyler RD, Meinkoth JH, DeNicola DB. Diagnostic Cytology and Hematology of the Dog and Cat, 5th ed. Elsevier, 2020.', relevance: '獸醫細胞學主要參考教材' },
+    { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '腫瘤評估標準化術語——細胞學報告規範基礎' },
+    { type: 'journal', citation: 'Ghisleni G et al. Correlation between fine-needle aspiration cytology and histopathology in the evaluation of cutaneous and subcutaneous masses from dogs and cats. Vet Clin Pathol. 2006;35(1):24-30.', relevance: 'FNA 細胞學與組織病理一致性研究' },
   ],
   is_current: true,
   created_at: now,
@@ -297,12 +342,24 @@ const contentMCT: NodeContent = {
   ],
   body: `# 肥大細胞瘤 (MCT)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬肥大細胞瘤是犬皮膚最常見的惡性腫瘤。MCT 臨床表現極為多變，可模擬幾乎任何皮膚腫塊的外觀，因此「任何皮膚腫塊在證實之前都可能是 MCT」是腫瘤科的重要原則。
 
-## 組織學分級
+### 分期檢查
+1. FNA 細胞學（初步診斷）
+2. 區域淋巴結 FNA（即使觸診正常）
+3. 腹部超音波（肝脾評估）
+4. CBC/BCS/肝脾 FNA（如超音波異常）
+5. 組織病理（切除後分級）
+6. c-KIT 突變檢測（PCR）
 
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 組織學分級
 ### Patnaik 三級系統（1984）
 - Grade I：分化良好，局限於真皮
 - Grade II：中度分化，浸潤至皮下（最常見，預後最難預測）
@@ -316,17 +373,9 @@ const contentMCT: NodeContent = {
   - ≥ 3 個奇異核細胞/10 HPF
   - 核分裂異常（karyomegaly）
 
-## 分期檢查
+## 三、治療策略 (Treatment)
 
-1. FNA 細胞學（初步診斷）
-2. 區域淋巴結 FNA（即使觸診正常）
-3. 腹部超音波（肝脾評估）
-4. CBC/BCS/肝脾 FNA（如超音波異常）
-5. 組織病理（切除後分級）
-6. c-KIT 突變檢測（PCR）
-
-## 治療
-
+### 治療
 ### 手術（首選）
 - 切緣標準：lateral ≥ 2 cm、deep ≥ 1 fascial plane
 - 切緣乾淨（clean margins）的低度 MCT 預後極佳
@@ -344,8 +393,30 @@ const contentMCT: NodeContent = {
 - [藥物:Famotidine] 0.5-1 mg/kg PO BID（H2 blocker，預防胃潰瘍）
 - [藥物:Diphenhydramine] 2-4 mg/kg PO BID（H1 blocker）
 
-[圖片:MCT FNA 細胞學典型影像——嗜鹼性顆粒圓形細胞]`,
-  clinical_pearl: 'MCT 的 FNA 細胞學診斷率極高（> 90%），因為肥大細胞的嗜鹼性顆粒在 Diff-Quick 染色下非常特徵性。但要注意：低度分化（high-grade）MCT 的顆粒可能稀少或難以辨識。另一個重要原則是「永遠不要忘記 FNA 區域淋巴結」——即使觸診大小正常，淋巴結轉移率仍可達 25-50%（尤其 Grade II/III 或 high-grade）。',
+[圖片:MCT FNA 細胞學典型影像——嗜鹼性顆粒圓形細胞]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: 'MCT 的 FNA 細胞學診斷率極高（> 90%），因為肥大細胞的嗜鹼性顆粒在 Diff-Quick 染色下非常特徵性。但要注意：低度分化（high-grade）MCT 的顆粒可能稀少或難以辨識。另一個重要原則是「永遠不要忘記 FNA 區域淋巴結」——即使觸診大小正常，淋巴結轉移率仍可達 25-50%（尤其 Grade II/III 或 high-grade）。\n\n【台灣流行病學】肥大細胞瘤是台灣犬最常見的皮膚惡性腫瘤。拳師犬、拉布拉多、金毛獵犬、巴哥犬為好發品種，在台灣飼養數量均多。台灣亞熱帶氣候下犬隻戶外活動頻繁，皮膚腫塊的早期發現率有提升空間。c-KIT 突變檢測與 TKI 標靶治療（Toceranib/Masitinib）在台灣部分腫瘤專科已可提供。台灣臨床上體表腫塊的 FNA 細胞學篩檢應更積極推廣。',
   common_mistakes: [
     '手術切緣不足——MCT 需要 lateral ≥ 2 cm，許多一般外科手術僅切除 1 cm 導致局部復發',
     '未進行區域淋巴結 FNA 就完成分期——淋巴結轉移是重要的預後因子',
@@ -398,6 +469,7 @@ const contentMCT: NodeContent = {
     { type: 'journal', citation: 'Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155.', relevance: 'Kiupel 二級分級系統原始文獻' },
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'MCT 完整章節' },
     { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (SU11654), a receptor tyrosine kinase inhibitor, for the treatment of dogs with recurrent mast cell tumor. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib 治療 MCT 的臨床試驗' },
+    { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: 'MCT 化療副作用分級標準' },
   ],
   is_current: true,
   created_at: now,
@@ -427,12 +499,14 @@ const contentOsteosarcoma: NodeContent = {
   ],
   body: `# 骨肉瘤 (Osteosarcoma)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬骨肉瘤是最常見也最具侵襲性的原發性骨腫瘤。其特徵為骨母細胞產生骨樣基質（osteoid）。犬 OSA 的生物學行為與人青少年 OSA 高度相似，犬被視為重要的比較腫瘤學模型。
 
-## 好發部位
-
+### 好發部位
 - **附肢骨（75%）**：長骨幹骺端
   - 前肢遠端橈骨（最常見）
   - 前肢近端肱骨
@@ -441,8 +515,7 @@ const contentOsteosarcoma: NodeContent = {
   - 記憶口訣：「Away from the elbow, toward the knee」
 - **中軸骨（25%）**：下頷骨、上頷骨、脊椎、顱骨、骨盆
 
-## 影像學特徵
-
+### 影像學特徵
 - X 光：侵襲性骨溶解（osteolysis）+ 新骨增生（periosteal reaction）
   - 混合型溶骨/增骨模式最常見
   - Codman triangle（骨膜三角）：骨膜被抬起的特徵性表現
@@ -450,8 +523,11 @@ const contentOsteosarcoma: NodeContent = {
 - 胸腔 X 光（三面投射）：評估肺轉移（確診時可見結節約 10-15%）
 - CT：更敏感的肺轉移偵測、手術計畫
 
-## 治療
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+## 三、治療策略 (Treatment)
+
+### 治療
 ### 截肢 + 輔助化療（標準治療）
 - 截肢：根治局部疼痛，多數犬在 1-2 週內適應三肢行走
 - 化療：[藥物:Carboplatin] 300 mg/m² IV q3 weeks × 4-6 次（最常用）
@@ -469,8 +545,30 @@ const contentOsteosarcoma: NodeContent = {
 - 疼痛管理：NSAIDs + Gabapentin + Tramadol
 - [藥物:Bisphosphonates]（Pamidronate/Zoledronate）：減緩骨溶解與疼痛
 
-[圖片:OSA 典型 X 光影像——骨溶解伴骨膜反應]`,
-  clinical_pearl: '「任何大型犬的跛行伴長骨溶蝕性病灶，在證實之前都要假設是骨肉瘤。」確診必須靠組織病理——但要注意骨活檢可能增加病理性骨折風險，因此建議同時安排截肢或保肢手術。FNA 對 OSA 的診斷率較低（約 50-60%）。另一個重要觀念：即使胸腔 X 光正常，確診時 > 90% 的犬已有微轉移，這就是為什麼截肢不搭配化療的中位存活僅 4-5 個月。',
+[圖片:OSA 典型 X 光影像——骨溶解伴骨膜反應]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: '「任何大型犬的跛行伴長骨溶蝕性病灶，在證實之前都要假設是骨肉瘤。」確診必須靠組織病理——但要注意骨活檢可能增加病理性骨折風險，因此建議同時安排截肢或保肢手術。FNA 對 OSA 的診斷率較低（約 50-60%）。另一個重要觀念：即使胸腔 X 光正常，確診時 > 90% 的犬已有微轉移，這就是為什麼截肢不搭配化療的中位存活僅 4-5 個月。\n\n【台灣流行病學】犬骨肉瘤在台灣以大型犬好發，金毛獵犬、羅威納、德國牧羊犬為高風險品種。台灣大型犬飼養數量雖低於歐美但逐年增加，骨肉瘤病例亦隨之上升。截肢手術在台灣飼主接受度相對較低（文化因素），因此術前溝通與三腳犬生活品質的衛教格外重要。Carboplatin 輔助化療在台灣主要動物醫院已可執行。',
   common_mistakes: [
     '僅依賴 X 光即確診 OSA 而未做組織病理（真菌性骨髓炎的 X 光表現可與 OSA 極為相似）',
     '未告知飼主化療的必要性——截肢不搭配化療中位存活僅 4-5 個月',
@@ -522,6 +620,7 @@ const contentOsteosarcoma: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'OSA 完整章節' },
     { type: 'journal', citation: 'Selmic LE et al. Comparison of carboplatin and doxorubicin-based chemotherapy protocols in 470 dogs after amputation for treatment of appendicular osteosarcoma. J Vet Intern Med. 2014;28(2):554-563.', relevance: '化療方案比較大型研究' },
     { type: 'journal', citation: 'Szewczyk M et al. What do we know about canine osteosarcoma treatment? Vet Res Commun. 2015;39(1):61-67.', relevance: 'OSA 治療綜合回顧' },
+    { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引——OSA 診斷與治療建議' },
   ],
   is_current: true,
   created_at: now,
@@ -551,12 +650,14 @@ const contentHSA: NodeContent = {
   ],
   body: `# 血管肉瘤 (Hemangiosarcoma)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬血管肉瘤（HSA）是一種起源於血管內皮細胞的侵襲性惡性腫瘤。由於腫瘤細胞保留了血管內皮的特性，HSA 易形成血竇和血管腔，使其具有極高的出血和轉移傾向。
 
-## 好發部位
-
+### 好發部位
 ### 脾臟 HSA（約 50%）
 - 最常見的內臟 HSA
 - 常以急性腹腔內出血（血腹）為首次臨床表現
@@ -575,8 +676,7 @@ const contentHSA: NodeContent = {
 - 皮膚型預後最好（局部切除可能治癒）
 - 皮下型生物學行為介於皮膚型與內臟型之間
 
-## 急診處置：脾臟 HSA 破裂
-
+### 急診處置：脾臟 HSA 破裂
 1. 快速評估（ABC）：蒼白黏膜、心搏過速、弱脈
 2. 穩定：靜脈輸液（crystalloid + colloid）± 輸血
 3. 腹部快速超音波（AFAST）：確認腹腔積液
@@ -584,15 +684,40 @@ const contentHSA: NodeContent = {
 5. 穩定後手術探查 + 脾臟切除
 6. 組織病理確認
 
-## 治療
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+## 三、治療策略 (Treatment)
+
+### 治療
 - **脾臟切除 + 化療**：[藥物:Doxorubicin] 30 mg/m² IV q3 weeks × 5-6 次
 - 替代方案：Doxorubicin + [藥物:Cyclophosphamide] + [藥物:Vincristine] (VAC protocol)
 - 節拍式化療：[藥物:Cyclophosphamide] 低劑量口服 + [藥物:Piroxicam]
 - 心臟 HSA：心包切除（pericardectomy）± 化療
 
-[圖片:脾臟 HSA 超音波與外觀影像]`,
-  clinical_pearl: '脾臟 HSA 的典型就診模式是「老年 Golden Retriever 或 GSD 突然虛脫倒地、黏膜蒼白」——這是脾臟 HSA 破裂導致急性血腹的典型表現。急診處置的第一步是穩定（輸液、輸血），而非立即衝進手術室。AFAST 加上腹腔穿刺液 PCV 是快速確認血腹最實用的工具。重要的是在手術前就與飼主討論 HSA 的可能性和預後，因為即使手術成功，後續治療決策仍需建立在正確的預後認知上。',
+[圖片:脾臟 HSA 超音波與外觀影像]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: '脾臟 HSA 的典型就診模式是「老年 Golden Retriever 或 GSD 突然虛脫倒地、黏膜蒼白」——這是脾臟 HSA 破裂導致急性血腹的典型表現。急診處置的第一步是穩定（輸液、輸血），而非立即衝進手術室。AFAST 加上腹腔穿刺液 PCV 是快速確認血腹最實用的工具。重要的是在手術前就與飼主討論 HSA 的可能性和預後，因為即使手術成功，後續治療決策仍需建立在正確的預後認知上。\n\n【台灣流行病學】血管肉瘤在台灣以金毛獵犬與德國牧羊犬為最好發品種，此二品種在台灣飼養數量大。台灣獸醫腹部超音波篩檢普及，脾臟腫塊常在例行健檢時發現，有助於早期診斷。台灣犬隻血庫資源有限，HSA 急性出血病例的輸血需求為臨床挑戰。Doxorubicin 化療在台灣主要腫瘤專科已可執行，但飼主對 HSA 的預後認知仍需加強。',
   common_mistakes: [
     '未在術前與飼主充分討論 HSA 的可能性與預後——術後才告知「可能是血管肉瘤」使飼主措手不及',
     '脾臟腫塊 FNA 嘗試——血管性腫塊 FNA 出血風險高且診斷率低，建議直接手術探查',
@@ -643,6 +768,7 @@ const contentHSA: NodeContent = {
     { type: 'journal', citation: 'Thamm DH. Hemangiosarcoma. Vet Clin North Am Small Anim Pract. 2020;50(5):1093-1109.', relevance: 'HSA 最新綜合回顧' },
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'HSA 完整章節' },
     { type: 'journal', citation: 'Wendelburg KM et al. Survival time of dogs with splenic hemangiosarcoma treated by splenectomy with or without adjuvant chemotherapy. J Am Vet Med Assoc. 2015;247(4):393-403.', relevance: '脾臟 HSA 預後數據' },
+    { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引——HSA 管理建議' },
   ],
   is_current: true,
   created_at: now,
@@ -672,18 +798,21 @@ const contentOralMelanoma: NodeContent = {
   ],
   body: `# 口腔黑色素瘤 (Oral Melanoma)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬口腔黑色素瘤是犬口腔最常見的惡性腫瘤，約占所有犬口腔腫瘤的 30-40%。與皮膚黑色素瘤不同，口腔黑色素瘤無論組織學表現均視為惡性，具有高度局部侵襲性和轉移潛力。
 
-## 好發部位與特徵
-
+### 好發部位與特徵
 - 口腔內任何部位：牙齦（最常見）、唇黏膜、舌、硬顎、扁桃腺
 - 外觀：可為色素性（黑色/棕色）或無色素性（amelanotic，粉紅色）
 - 無色素性占約 1/3，可能被誤認為其他腫瘤
 
-## WHO 臨床分期
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### WHO 臨床分期
 | 期別 | 定義 |
 |------|------|
 | I | 腫瘤最大直徑 < 2 cm，無轉移 |
@@ -691,8 +820,9 @@ const contentOralMelanoma: NodeContent = {
 | III | 腫瘤最大直徑 > 4 cm 和/或有區域淋巴結轉移 |
 | IV | 有遠端轉移 |
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 手術（首選）
 - 積極切緣（≥ 1-2 cm）
 - 常需要部分下頷骨切除（mandibulectomy）或上頷骨切除（maxillectomy）
@@ -713,8 +843,30 @@ const contentOralMelanoma: NodeContent = {
 - 反應率有限（< 20-30%）
 - [藥物:Carboplatin] 或 [藥物:Melphalan] 為常用方案
 
-[圖片:口腔黑色素瘤色素性與無色素性臨床照片對比]`,
-  clinical_pearl: '口腔黑色素瘤的兩大陷阱：(1) 約 1/3 為無色素性（amelanotic），外觀為粉紅色，容易被誤認為良性增生或其他口腔腫瘤——任何口腔腫塊都應做 FNA 或活檢。(2) 口腔黑色素瘤常侵犯骨組織，手術前一定要拍 X 光或 CT 評估骨侵犯程度，否則切緣可能不足。術前 CT 對手術計畫極為重要。',
+[圖片:口腔黑色素瘤色素性與無色素性臨床照片對比]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: '口腔黑色素瘤的兩大陷阱：(1) 約 1/3 為無色素性（amelanotic），外觀為粉紅色，容易被誤認為良性增生或其他口腔腫瘤——任何口腔腫塊都應做 FNA 或活檢。(2) 口腔黑色素瘤常侵犯骨組織，手術前一定要拍 X 光或 CT 評估骨侵犯程度，否則切緣可能不足。術前 CT 對手術計畫極為重要。\n\n【台灣流行病學】口腔黑色素瘤在台灣犬隻中為常見的口腔惡性腫瘤，好發於中老年小型犬，台灣常見的迷你型犬如貴賓犬、雪納瑞亦有報告。台灣飼主常在犬隻進食困難或口臭加重時才就醫，此時腫瘤多已較大，因此推廣定期口腔檢查有助於早期發現。Oncept 黑色素瘤疫苗在台灣取得管道有限，但放射治療在部分教學醫院已可提供。',
   common_mistakes: [
     '將無色素性口腔黑色素瘤誤認為良性增生而延誤診斷',
     '手術切緣不足——口腔黑色素瘤常浸潤深層骨組織，需考慮骨切除',
@@ -765,6 +917,7 @@ const contentOralMelanoma: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '口腔黑色素瘤完整章節' },
     { type: 'journal', citation: 'Bergman PJ et al. Long-term survival of dogs with advanced malignant melanoma after DNA vaccination with xenogeneic human tyrosinase. Clin Cancer Res. 2003;9(4):1284-1290.', relevance: 'Oncept 疫苗原始研究' },
     { type: 'journal', citation: 'Tuohy JL et al. Outcome following curative-intent surgery for oral melanoma in dogs: 113 cases (1997-2012). J Am Vet Med Assoc. 2014;245(11):1266-1273.', relevance: '口腔黑色素瘤手術預後大型研究' },
+    { type: 'guideline', citation: 'Owen LN. TNM Classification of Tumours in Domestic Animals. WHO, 1st ed. 1980.', relevance: 'WHO 口腔腫瘤 TNM 分期標準' },
   ],
   is_current: true,
   created_at: now,
@@ -793,12 +946,14 @@ const contentMammaryTumor: NodeContent = {
   ],
   body: `# 乳腺腫瘤 (Mammary Tumors)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬貓乳腺腫瘤是未絕育雌性動物最常見的腫瘤。犬有 5 對乳腺，貓有 4 對。犬乳腺腫瘤的良惡性比約 50:50，而貓乳腺腫瘤絕大多數為惡性。
 
-## 犬 vs 貓比較
-
+### 犬 vs 貓比較
 | 特徵 | 犬 | 貓 |
 |------|----|----|
 | 惡性比例 | 約 50% | > 85% |
@@ -807,15 +962,13 @@ const contentMammaryTumor: NodeContent = {
 | OHE 保護 | 顯著 | 有，但數據較少 |
 | 建議手術範圍 | 依腫瘤決定 | 雙側全鏈切除 |
 
-## OHE 與乳腺腫瘤風險（犬）
-
+### OHE 與乳腺腫瘤風險（犬）
 - 首次發情前 OHE：風險 0.5%
 - 第一次發情後 OHE：風險 8%
 - 第二次發情後 OHE：風險 26%
 - > 2.5 歲 OHE：無顯著保護（但仍建議同時 OHE 避免黃體素影響）
 
-## 手術範圍選擇
-
+### 手術範圍選擇
 ### 犬
 - **Lumpectomy**：< 0.5 cm、活動性強、良性可能高
 - **區域乳腺切除**：較大腫瘤，含同側相鄰乳腺（因淋巴引流）
@@ -827,16 +980,41 @@ const contentMammaryTumor: NodeContent = {
 - 分兩次手術（間隔 2-4 週），每次切除一側
 - 較局部手術顯著降低局部復發率
 
-## 炎性乳腺癌
-
+### 炎性乳腺癌
 - 高度惡性，瀰漫性浸潤
 - 臨床表現：乳腺區域瀰漫性紅腫、水腫、硬化、疼痛
 - 常被誤診為乳腺炎
 - 手術為禁忌（無法清除乾淨且加速擴散）
 - 預後極差：中位存活數週
 
-[圖片:犬乳腺淋巴引流路徑示意圖]`,
-  clinical_pearl: '乳腺腫瘤手術前最常被忽略的步驟是「淋巴結評估」。犬乳腺 1-3 號引流至腋窩淋巴結，4-5 號引流至腹股溝淋巴結，而 3 號乳腺為分水嶺可引流至兩側。因此手術時必須根據腫瘤位置評估對應的引流淋巴結。另一個重要觀念：對於犬乳腺腫瘤，與腫瘤同時進行 OHE 是否能改善預後仍有爭議，但若有黃體素影響的可能性（未絕育或使用外源性黃體素），OHE 仍建議執行。',
+[圖片:犬乳腺淋巴引流路徑示意圖]
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+## 三、治療策略 (Treatment)
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: '乳腺腫瘤手術前最常被忽略的步驟是「淋巴結評估」。犬乳腺 1-3 號引流至腋窩淋巴結，4-5 號引流至腹股溝淋巴結，而 3 號乳腺為分水嶺可引流至兩側。因此手術時必須根據腫瘤位置評估對應的引流淋巴結。另一個重要觀念：對於犬乳腺腫瘤，與腫瘤同時進行 OHE 是否能改善預後仍有爭議，但若有黃體素影響的可能性（未絕育或使用外源性黃體素），OHE 仍建議執行。\n\n【台灣流行病學】乳腺腫瘤是台灣未絕育母犬最常見的腫瘤類型。台灣早期絕育觀念推廣不足，許多母犬在第一次發情前未絕育，導致乳腺腫瘤盛行率偏高。台灣常見品種如貴賓犬、馬爾濟斯、吉娃娃等小型犬均為好發族群。貓乳腺腫瘤在台灣亦不少見，且 > 85% 為惡性。推廣早期絕育（第一次發情前）是台灣預防乳腺腫瘤最重要的策略。',
   common_mistakes: [
     '未在手術前進行完整分期檢查（胸腔 X 光 + 腹超 + 區域淋巴結評估）',
     '對貓乳腺腫瘤執行過於保守的局部切除——建議雙側全鏈切除以降低復發率',
@@ -889,6 +1067,7 @@ const contentMammaryTumor: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '乳腺腫瘤完整章節' },
     { type: 'journal', citation: 'Sorenmo KU et al. Canine mammary gland tumours: a histological continuum from benign to malignant; clinical and histopathological evidence. Vet Comp Oncol. 2009;7(3):162-172.', relevance: '犬乳腺腫瘤組織學連續體' },
     { type: 'guideline', citation: 'Sorenmo KU et al. Chapter 27: Tumors of the Mammary Gland. In: Withrow & MacEwen\'s 6th ed.', relevance: '乳腺腫瘤手術與化療指引' },
+    { type: 'journal', citation: 'Kristiansen VM et al. Effect of ovariohysterectomy at the time of tumor removal in dogs with mammary carcinomas: a randomized controlled trial. J Vet Intern Med. 2016;30(1):230-241.', relevance: '乳腺腫瘤手術時同時 OHE 的 RCT 研究' },
   ],
   is_current: true,
   created_at: now,
@@ -918,28 +1097,30 @@ const contentTCC: NodeContent = {
   ],
   body: `# 移行上皮細胞癌 (TCC)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬膀胱 TCC（又稱 urothelial carcinoma）是犬泌尿系統最常見的惡性腫瘤。由於好發於膀胱三角區（trigone），常造成尿道阻塞和輸尿管阻塞，且完整手術切除困難。
 
-## 危險因子
-
+### 危險因子
 - 品種：Scottish Terrier 風險最高
 - 性別：雌性約 2 倍
 - 肥胖
 - 環境暴露：除草劑、殺蟲劑（flea/tick dips）、cyclophosphamide 暴露
 - 已知致癌物：2-naphthylamine 及相關化合物
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 - 血尿（hematuria）：最常見
 - 頻尿（pollakiuria）
 - 排尿困難（stranguria/dysuria）
 - 常被初步診斷為「膀胱炎」而延誤
 - 嚴重時：尿道阻塞 → 急性腎後性腎衰竭
 
-## 診斷
-
+### 診斷
 ### BRAF V595E 突變檢測
 - 約 85% 的犬 TCC 帶有此突變
 - **尿液游離 DNA PCR**：非侵入性、高特異度（> 99%）
@@ -953,8 +1134,9 @@ const contentTCC: NodeContent = {
 - 直接觀察腫瘤並取得組織
 - 注意：經腹壁膀胱穿刺活檢（cystocentesis-guided）有種植轉移風險
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 藥物治療（標準）
 - [藥物:Piroxicam] 0.3 mg/kg PO SID（COX-2 抑制，抗腫瘤活性）
 - [藥物:Mitoxantrone] 5 mg/m² IV q3 weeks + Piroxicam
@@ -966,8 +1148,30 @@ const contentTCC: NodeContent = {
 - 部分膀胱切除：腫瘤不在三角區時可考慮
 - 尿道支架置入：緩解尿道阻塞
 
-[圖片:膀胱 TCC 超音波影像——三角區腫塊]`,
-  clinical_pearl: 'TCC 最常被延誤診斷的原因是初始症狀（血尿、頻尿）與膀胱炎完全相同。臨床經驗法則：當中老年犬（尤其 Scottish Terrier 或其他好發品種）因「膀胱炎」就診但抗生素治療 2-4 週後症狀未改善時，務必進行膀胱超音波和尿液 BRAF 檢測。另一個重要注意事項：避免經腹壁穿刺採樣膀胱 TCC——有報導顯示穿刺路徑可發生種植轉移（seeding）。',
+[圖片:膀胱 TCC 超音波影像——三角區腫塊]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: 'TCC 最常被延誤診斷的原因是初始症狀（血尿、頻尿）與膀胱炎完全相同。臨床經驗法則：當中老年犬（尤其 Scottish Terrier 或其他好發品種）因「膀胱炎」就診但抗生素治療 2-4 週後症狀未改善時，務必進行膀胱超音波和尿液 BRAF 檢測。另一個重要注意事項：避免經腹壁穿刺採樣膀胱 TCC——有報導顯示穿刺路徑可發生種植轉移（seeding）。\n\n【台灣流行病學】膀胱移行上皮細胞癌在台灣犬隻中為重要的泌尿道腫瘤。Scottish Terrier 在台灣飼養較少，但其他品種如雪納瑞、比乏犬亦有報告。台灣中老年犬慢性血尿常被反覆以膀胱炎治療而延誤 TCC 診斷，提升獸醫師的警覺性極為重要。尿液 BRAF V595E 突變檢測在台灣部分實驗室已可提供，為非侵入性的篩檢工具。Piroxicam/Meloxicam 聯合 Mitoxantrone 或節拍式 Chlorambucil 化療為台灣常用治療方案。',
   common_mistakes: [
     '反覆以「膀胱炎」治療而未進行影像學檢查——中老年犬持續血尿/頻尿應排除 TCC',
     '經腹壁膀胱穿刺對 TCC 進行 FNA——有種植轉移風險，建議使用膀胱鏡或創傷性導尿管沖洗採樣',
@@ -1020,6 +1224,7 @@ const contentTCC: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'TCC 完整章節' },
     { type: 'journal', citation: 'Knapp DW et al. Naturally-occurring canine transitional cell carcinoma of the urinary bladder: a relevant model of human invasive bladder cancer. Urol Oncol. 2014;32(1):47.e1-7.', relevance: '犬 TCC 作為人膀胱癌模型' },
     { type: 'journal', citation: 'Mochizuki H et al. BRAF mutations in canine cancers. PLoS One. 2015;10(6):e0129534.', relevance: 'BRAF 突變在犬 TCC 的發現' },
+    { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引——TCC 診斷與管理' },
   ],
   is_current: true,
   created_at: now,
@@ -1049,20 +1254,21 @@ const contentFISS: NodeContent = {
   ],
   body: `# 貓注射處肉瘤 (FISS)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 貓注射處肉瘤是一種與注射部位慢性發炎反應相關的惡性腫瘤，最初在 1990 年代被報導為與含佐劑疫苗注射相關。FISS 的發生改變了獸醫界對貓疫苗施打部位的建議。
 
-## 病因假說
-
+### 病因假說
 - **慢性發炎假說**：注射部位的持續性發炎反應為關鍵
   - 含鋁鹽佐劑的疫苗（FeLV、Rabies）風險最高
   - 其他注射也可引發：長效類固醇、Lufenuron、微晶片
 - 慢性發炎 → 纖維母細胞持續增殖 → p53 等抑癌基因突變 → 惡性轉化
 - 不是每隻貓都會發生，個體遺傳易感性可能扮演角色
 
-## 3-2-1 規則
-
+### 3-2-1 規則
 疑似 FISS 的注射部位腫塊篩檢標準：
 - **3** 個月：注射後腫塊持續 > 3 個月
 - **2** cm：腫塊直徑 > 2 cm
@@ -1070,16 +1276,18 @@ const contentFISS: NodeContent = {
 
 符合以上任一標準即建議進行 incisional biopsy（切取活檢）。
 
-## VAFSTF 疫苗注射部位建議
-
+### VAFSTF 疫苗注射部位建議
 - **FeLV 疫苗**：左後肢遠端（膝關節以下）
 - **Rabies 疫苗**：右後肢遠端（膝關節以下）
 - **FVRCP 疫苗**：右前肢遠端
 - 目的：遠離肩胛間區（避免手術困難），遠端肢體便於截肢
 - **永遠不要在肩胛間區注射含佐劑疫苗**
 
-## 治療
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+## 三、治療策略 (Treatment)
+
+### 治療
 ### 手術（首選且最重要）
 - 切緣標準：lateral ≥ 3-5 cm + deep ≥ 2 fascial planes
 - 肩胛間區腫瘤可能需要脊突切除
@@ -1090,8 +1298,30 @@ const contentFISS: NodeContent = {
 - 術後放射治療：切緣不淨或 close margins
 - 化療：[藥物:Doxorubicin] 25 mg/m² IV q3 weeks × 5 次 或 [藥物:Carboplatin]
 
-[圖片:VAFSTF 建議疫苗注射部位示意圖]`,
-  clinical_pearl: '「先活檢、再手術」是 FISS 治療的黃金法則。許多一般獸醫師在發現注射部位腫塊時，會嘗試以邊緣切除（marginal excision）「先拿掉看看」——這是 FISS 治療中最大的錯誤。不充分的首次手術使得局部復發率從 14%（首次積極手術）飆升至 > 60%。正確做法是：先做 incisional biopsy 確診 → CT 評估腫瘤範圍 → 計畫性的積極手術（≥ 3 cm + 2 fascial planes）。',
+[圖片:VAFSTF 建議疫苗注射部位示意圖]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
+  clinical_pearl: '「先活檢、再手術」是 FISS 治療的黃金法則。許多一般獸醫師在發現注射部位腫塊時，會嘗試以邊緣切除（marginal excision）「先拿掉看看」——這是 FISS 治療中最大的錯誤。不充分的首次手術使得局部復發率從 14%（首次積極手術）飆升至 > 60%。正確做法是：先做 incisional biopsy 確診 → CT 評估腫瘤範圍 → 計畫性的積極手術（≥ 3 cm + 2 fascial planes）。\n\n【台灣流行病學】FISS 在台灣為具有臨床重要性的貓特有腫瘤，因台灣疫苗施打率高（狂犬病疫苗為法定必打），年施打量大使累積病例數不可忽視。台灣獸醫師應遵循 VAFSTF 建議將注射部位改為遠端肢體（右後肢施打狂犬病疫苗、左後肢施打 FVRCP 等）。台灣飼主衛教重點：疫苗注射後若注射部位出現腫塊，觀察 3-2-1 rule（3 個月仍存在、直徑 > 2 cm、1 個月內仍在增大）應立即就醫。',
   common_mistakes: [
     '以邊緣切除（marginal excision）「先拿掉看看」而非積極手術——首次手術的切緣是預後最重要的決定因子',
     '繼續在肩胛間區注射含佐劑疫苗——應遵循 VAFSTF 建議改為遠端肢體注射',
@@ -1164,8 +1394,11 @@ const contentOncoOverview: NodeContent = {
   ],
   body: `# 獸醫腫瘤科總覽 (Veterinary Oncology Overview)
 
-## 學科定義與範疇
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 學科定義與範疇
 獸醫腫瘤科為專門處理伴侶動物（犬、貓為主）腫瘤性疾病的臨床專科。美國獸醫內科學院腫瘤專科（ACVIM-Oncology）與美國獸醫放射腫瘤學院（ACVR-RO）為主要認證機構。學科涵蓋：
 
 - **腫瘤內科**：化學治療、標靶治療、免疫治療
@@ -1173,8 +1406,7 @@ const contentOncoOverview: NodeContent = {
 - **放射腫瘤科**：根治性與姑息性放射治療
 - **緩和醫療**：疼痛管理、生活品質評估
 
-## 流行病學概況
-
+### 流行病學概況
 ### 犬
 - 腫瘤為 10 歲以上犬最主要死因（約 50%）
 - 皮膚腫瘤最常見（MCT、軟組織肉瘤、脂肪瘤）
@@ -1185,16 +1417,14 @@ const contentOncoOverview: NodeContent = {
 - 乳腺腫瘤 > 85% 為惡性（與犬顯著不同）
 - FISS 為台灣臨床重要議題
 
-## 腫瘤診斷基本流程
-
+### 腫瘤診斷基本流程
 1. **臨床懷疑**：腫塊發現、異常症狀
 2. **細胞學（FNA）**：快速、低侵入性的第一線工具
 3. **組織病理學**：確定診斷、分級（grading）
 4. **分期檢查（Staging）**：影像學 + 實驗室 → TNM 分期
 5. **分子診斷**：免疫分型、基因突變檢測（如 c-KIT、BRAF）
 
-## 治療四大模式
-
+### 治療四大模式
 | 模式 | 適用時機 | 優點 | 限制 |
 |------|----------|------|------|
 | 手術 | 局部實體腫瘤 | 可能治癒、組織病理評估 | 需足夠切緣、全身麻醉 |
@@ -1202,15 +1432,34 @@ const contentOncoOverview: NodeContent = {
 | 放療 | 局部控制、姑息止痛 | 非侵入性 | 設備昂貴、需多次麻醉 |
 | 免疫治療 | 特定腫瘤輔助 | 低副作用 | 效果可變、費用高 |
 
-## 比較腫瘤學
-
+### 比較腫瘤學
 犬貓腫瘤作為人類腫瘤的自然發生模型，具有以下優勢：
 - 自然免疫環境中發展（非移植模型）
 - 與人類共享生活環境
 - 腫瘤生物學行為高度相似（如犬 OSA ↔ 人青少年 OSA）
 - 臨床試驗流程較短
 
-[圖片:獸醫腫瘤科知識架構總覽圖]`,
+[圖片:獸醫腫瘤科知識架構總覽圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '面對任何新發現的腫塊，記住「先 FNA、再決定」這個黃金法則。一支 22-25G 針頭和 Diff-Quick 染色可以在 10 分鐘內告訴你最關鍵的第一步資訊——是發炎還是腫瘤、是 round cell 還是 epithelial/mesenchymal。這會直接影響你的後續決策（如 MCT 需要寬切緣手術而非簡單摘除）。',
   common_mistakes: [
     '在未做任何細胞學或組織病理前就「先切掉再說」——可能導致切緣不足需要二次手術',
@@ -1260,8 +1509,11 @@ const contentTumorBiology: NodeContent = {
   ],
   body: `# 腫瘤生物學 (Tumor Biology)
 
-## 多步驟致癌機轉
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 多步驟致癌機轉
 腫瘤的形成並非單一事件，而是多個基因突變逐步累積的結果：
 
 ### 三階段模型
@@ -1269,8 +1521,7 @@ const contentTumorBiology: NodeContent = {
 2. **促進（Promotion）**：促進因子使突變細胞增殖擴張（可逆階段）
 3. **進展（Progression）**：額外突變累積 → 惡性轉化 → 浸潤與轉移能力
 
-## 原癌基因與抑癌基因
-
+### 原癌基因與抑癌基因
 ### 原癌基因（Proto-oncogenes → Oncogenes）
 - 正常功能：促進細胞生長與分裂
 - 突變類型：功能獲得性（gain-of-function）
@@ -1289,8 +1540,7 @@ const contentTumorBiology: NodeContent = {
   - **Rb**：G1/S 檢查點調控，骨肉瘤相關
   - **PTEN**：PI3K/AKT 通路負調控
 
-## Hallmarks of Cancer
-
+### Hallmarks of Cancer
 [圖片:Hallmarks of Cancer 十大特徵示意圖]
 
 | 特徵 | 說明 | 獸醫臨床範例 |
@@ -1306,8 +1556,7 @@ const contentTumorBiology: NodeContent = {
 | 能量代謝重編程 | Warburg effect（有氧糖酵解） | 腫瘤惡病質 |
 | 免疫逃脫 | 逃避免疫監視 | PD-L1 表達 |
 
-## 細胞週期與腫瘤增殖
-
+### 細胞週期與腫瘤增殖
 細胞週期：G0（靜止期）→ G1 → S（DNA 合成）→ G2 → M（有絲分裂）
 
 - **G1/S 檢查點**：p53/Rb 調控，決定是否進入 DNA 合成
@@ -1319,7 +1568,27 @@ const contentTumorBiology: NodeContent = {
 - **週期特異性**：Vincristine（M 期）、Cytarabine（S 期）
 - **週期非特異性**：Alkylating agents（Cyclophosphamide）、Doxorubicin
 
-[互動:細胞週期與化療藥物作用位點互動圖]`,
+[互動:細胞週期與化療藥物作用位點互動圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '理解原癌基因與抑癌基因的概念直接影響臨床決策。最典型的例子是犬 MCT 的 c-KIT 突變——這不只是一個學術概念，而是決定是否使用 TKI 標靶治療（Toceranib/Masitinib）的關鍵。同樣地，BRAF V595E 突變讓犬 TCC 有了非侵入性的尿液 PCR 診斷工具。分子腫瘤學正在從基礎走向臨床。',
   common_mistakes: [
     '將良性腫瘤與惡性腫瘤混為一談——兩者在生物學行為（浸潤、轉移能力）上有本質差異',
@@ -1342,6 +1611,7 @@ const contentTumorBiology: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 1: The Biology of Cancer.', relevance: '腫瘤生物學基礎章節' },
     { type: 'journal', citation: 'Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 2011;144(5):646-674.', relevance: 'Hallmarks of Cancer 經典文獻' },
     { type: 'journal', citation: 'Schiffman JD, Breen M. Comparative oncology: what dogs and other species can teach us about humans with cancer. Philos Trans R Soc Lond B Biol Sci. 2015;370(1673):20140231.', relevance: '比較腫瘤學與犬腫瘤遺傳學' },
+    { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引——腫瘤生物學基本概念' },
   ],
   is_current: true,
   created_at: now,
@@ -1371,8 +1641,11 @@ const contentTumorImmunology: NodeContent = {
   ],
   body: `# 腫瘤免疫學 (Tumor Immunology)
 
-## 免疫監視理論
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 免疫監視理論
 免疫系統具有辨識並消滅腫瘤細胞的能力，此即免疫監視（immunosurveillance）。參與的免疫細胞包括：
 
 - **NK 細胞**：辨識 MHC-I 表達下降的腫瘤細胞（「missing self」）
@@ -1380,8 +1653,7 @@ const contentTumorImmunology: NodeContent = {
 - **巨噬細胞**：M1 型具有抗腫瘤活性，但 M2 型可促進腫瘤
 - **樹突細胞（DC）**：抗原呈現，啟動適應性免疫
 
-## Cancer Immunoediting
-
+### Cancer Immunoediting
 腫瘤與免疫系統的交互作用為動態過程，分為三個階段：
 
 ### 1. 消滅期（Elimination）
@@ -1399,8 +1671,7 @@ const contentTumorImmunology: NodeContent = {
 - 臨床上可見的腫瘤出現
 - 逃脫機制多樣
 
-## 腫瘤免疫逃脫機制
-
+### 腫瘤免疫逃脫機制
 | 機制 | 說明 | 臨床意義 |
 |------|------|----------|
 | MHC-I 下調 | 減少腫瘤抗原呈現 | CTL 無法辨識腫瘤 |
@@ -1410,8 +1681,7 @@ const contentTumorImmunology: NodeContent = {
 | 免疫抑制細胞激素 | TGF-β、IL-10、VEGF | 抑制抗腫瘤免疫 |
 | 免疫原性喪失 | 腫瘤抗原突變或喪失 | 免疫逃避的最終機制 |
 
-## 獸醫腫瘤免疫治療
-
+### 獸醫腫瘤免疫治療
 ### 犬黑色素瘤疫苗（Oncept）
 - **類型**：人 tyrosinase DNA 疫苗
 - **原理**：人 tyrosinase 與犬同源但不完全相同 → 打破自身抗原的免疫耐受
@@ -1423,7 +1693,27 @@ const contentTumorImmunology: NodeContent = {
 - 初步數據顯示在犬口腔黑色素瘤和未分化肉瘤中有潛在療效
 - 尚未有獸醫市售產品（截至 2025 年）
 
-[圖片:Cancer Immunoediting 三階段示意圖]`,
+[圖片:Cancer Immunoediting 三階段示意圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '免疫抑制狀態下的動物腫瘤發生率增加——這驗證了免疫監視理論。臨床上要注意：長期使用免疫抑制劑（如 cyclosporine、高劑量 corticosteroids）的犬貓，腫瘤（尤其是淋巴瘤和皮膚鱗狀細胞癌）的風險可能增加。在開始化療前使用 corticosteroids 也可能因誘導多重抗藥性蛋白（P-glycoprotein）表達而影響後續化療效果（尤其是淋巴瘤）。',
   common_mistakes: [
     '認為免疫系統完全無法對抗腫瘤——免疫監視確實存在，但腫瘤可透過免疫逃脫機制克服',
@@ -1444,6 +1734,7 @@ const contentTumorImmunology: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 11: Tumor Immunology and Immunotherapy.', relevance: '獸醫腫瘤免疫學基礎' },
     { type: 'journal', citation: 'Bergman PJ et al. Long-term survival of dogs with advanced malignant melanoma after DNA vaccination with xenogeneic human tyrosinase. Clin Cancer Res. 2003;9(4):1284-1290.', relevance: 'Oncept 疫苗原始研究' },
     { type: 'journal', citation: 'Maekawa N et al. A canine chimeric monoclonal antibody targeting PD-L1 and its clinical efficacy in canine oral malignant melanoma or undifferentiated sarcoma. Sci Rep. 2017;7(1):8951.', relevance: '犬 PD-L1 抗體初步研究' },
+    { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '免疫治療相關副作用評估標準' },
   ],
   is_current: true,
   created_at: now,
@@ -1473,8 +1764,11 @@ const contentCancerGenetics: NodeContent = {
   ],
   body: `# 腫瘤遺傳學基礎 (Cancer Genetics Basics)
 
-## 基因突變與腫瘤發生
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 基因突變與腫瘤發生
 ### 驅動突變 vs 乘客突變
 - **驅動突變（Driver mutation）**：直接促進腫瘤形成和進展，為治療標靶
 - **乘客突變（Passenger mutation）**：隨細胞分裂累積但不影響腫瘤生長
@@ -1485,8 +1779,7 @@ const contentCancerGenetics: NodeContent = {
 - 染色體轉位（Translocation）：基因融合產生新型蛋白
 - 基因缺失（Deletion）：抑癌基因喪失
 
-## 獸醫腫瘤關鍵基因突變
-
+### 獸醫腫瘤關鍵基因突變
 | 基因 | 突變類型 | 腫瘤 | 臨床應用 |
 |------|----------|------|----------|
 | c-KIT | 功能獲得性（exon 11 最常見） | 犬 MCT（30-50%） | 預後指標 + TKI 標靶（Toceranib） |
@@ -1495,8 +1788,7 @@ const contentCancerGenetics: NodeContent = {
 | MDM2 | 過表達 | 軟組織肉瘤 | p53 降解增加 |
 | PDGFR | 功能獲得性 | GIST | TKI 標靶 |
 
-## 品種遺傳易感性
-
+### 品種遺傳易感性
 犬腫瘤的品種偏好是腫瘤遺傳學最直觀的表現：
 
 ### 高風險品種-腫瘤關聯
@@ -1510,15 +1802,13 @@ const contentCancerGenetics: NodeContent = {
 
 GWAS（全基因組關聯分析）研究已辨識出多個與犬腫瘤易感性相關的基因座位。
 
-## 表觀遺傳學與腫瘤
-
+### 表觀遺傳學與腫瘤
 不改變 DNA 序列但影響基因表達的可遺傳修飾：
 - **DNA 甲基化**：啟動子過度甲基化 → 抑癌基因沉默
 - **組蛋白修飾**：乙醯化/甲基化影響染色質結構
 - **非編碼 RNA**（miRNA）：調控 mRNA 穩定性和翻譯
 
-## 分子診斷技術進展
-
+### 分子診斷技術進展
 ### 液態活檢（Liquid Biopsy）
 - 循環腫瘤 DNA（ctDNA）：腫瘤釋放的游離 DNA 片段
 - 循環腫瘤細胞（CTC）：血液中的腫瘤細胞
@@ -1530,7 +1820,27 @@ GWAS（全基因組關聯分析）研究已辨識出多個與犬腫瘤易感性�
 - 突變特徵（Mutational Signature）分析
 - 犬腫瘤基因組研究資源日益豐富
 
-[圖片:犬品種-腫瘤遺傳易感性關聯圖]`,
+[圖片:犬品種-腫瘤遺傳易感性關聯圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '在台灣的臨床實務中，品種遺傳易感性是做為腫瘤篩檢建議的重要依據。例如，Golden Retriever 飼主應在犬 5-6 歲後定期進行全面健檢（腹部超音波篩檢 HSA、觸診淋巴結和皮膚腫塊）。Scottish Terrier 飼主則需注意血尿等泌尿道症狀的早期評估。基因檢測（c-KIT PCR 用於 MCT、BRAF PCR 用於 TCC）已不再是研究室專利，而是許多商業實驗室可提供的臨床服務。',
   common_mistakes: [
     '將品種偏好誤解為「只有這些品種會得這種腫瘤」——任何品種和混種犬都可能發生任何腫瘤',
@@ -1551,6 +1861,7 @@ GWAS（全基因組關聯分析）研究已辨識出多個與犬腫瘤易感性�
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology and Metastasis.', relevance: '腫瘤遺傳學基礎章節' },
     { type: 'journal', citation: 'Mochizuki H et al. BRAF mutations in canine cancers. PLoS One. 2015;10(6):e0129534.', relevance: 'BRAF 突變在犬腫瘤的發現與臨床應用' },
     { type: 'journal', citation: 'Schiffman JD, Breen M. Comparative oncology: what dogs and other species can teach us about humans with cancer. Philos Trans R Soc Lond B Biol Sci. 2015;370(1673):20140231.', relevance: '犬腫瘤基因組學比較研究' },
+    { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引——分子檢測與標靶治療概述' },
   ],
   is_current: true,
   created_at: now,
@@ -1581,8 +1892,11 @@ const contentMetastasis: NodeContent = {
   ],
   body: `# 腫瘤轉移機轉 (Metastasis Mechanisms)
 
-## 轉移級聯
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 轉移級聯
 轉移是一個多步驟、低效率的過程。腫瘤細胞必須成功完成每一個步驟才能形成遠端轉移灶：
 
 ### 1. 局部浸潤（Local Invasion）
@@ -1609,8 +1923,7 @@ const contentMetastasis: NodeContent = {
 - 需適應新微環境（seed-and-soil）
 - 微轉移可長期休眠後再活化
 
-## 上皮-間質轉化（EMT）
-
+### 上皮-間質轉化（EMT）
 EMT 是上皮細胞失去極性和細胞間黏附、獲得間質細胞表型的過程：
 
 - E-cadherin 下調 → 細胞間黏附喪失
@@ -1618,8 +1931,7 @@ EMT 是上皮細胞失去極性和細胞間黏附、獲得間質細胞表型的�
 - Vimentin 表達增加 → 細胞骨架重組
 - Snail、Twist、ZEB 等轉錄因子驅動
 
-## 器官親和性（Organ Tropism）
-
+### 器官親和性（Organ Tropism）
 ### 獸醫臨床常見轉移模式
 | 原發腫瘤 | 主要轉移部位 | 機制 |
 |----------|-------------|------|
@@ -1630,15 +1942,34 @@ EMT 是上皮細胞失去極性和細胞間黏附、獲得間質細胞表型的�
 | 犬淋巴瘤 | 全身淋巴組織、肝脾 | 淋巴性 + 血行性 |
 | 貓乳腺癌 | 肺、胸膜 | 血行性 |
 
-## 轉移前微環境
-
+### 轉移前微環境
 原發腫瘤在轉移發生前即透過以下機制「預處理」遠端器官：
 - 分泌外泌體（exosomes）至目標器官
 - VEGF/PIGF 招募骨髓來源細胞至目標器官
 - 改變目標器官的 ECM 和免疫環境
 - 建立有利於轉移細胞存活的微環境
 
-[圖片:轉移級聯五步驟示意圖]`,
+[圖片:轉移級聯五步驟示意圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '「微轉移」的概念直接影響臨床治療決策。犬骨肉瘤是最好的例子：即使胸腔 X 光完全正常，確診時已有 > 90% 的犬存在肺微轉移。這就是為什麼「截肢不搭配化療」的中位存活僅 4-5 個月。Carboplatin 或 Doxorubicin 輔助化療的目標正是消滅這些看不見的微轉移，將中位存活延長至 10-12 個月。同樣的邏輯也適用於犬 HSA——脾臟切除後化療是必要的。',
   common_mistakes: [
     '認為「X 光看不到轉移就沒有轉移」——微轉移在影像學可見之前已存在',
@@ -1659,6 +1990,7 @@ EMT 是上皮細胞失去極性和細胞間黏附、獲得間質細胞表型的�
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology and Metastasis.', relevance: '腫瘤轉移機轉完整章節' },
     { type: 'journal', citation: 'Paget S. The distribution of secondary growths in cancer of the breast. Lancet. 1889;1(3421):571-573.', relevance: 'Seed-and-soil 理論經典文獻' },
     { type: 'journal', citation: 'Fidler IJ. The pathogenesis of cancer metastasis: the "seed and soil" hypothesis revisited. Nat Rev Cancer. 2003;3(6):453-458.', relevance: '轉移機轉現代回顧' },
+    { type: 'guideline', citation: 'Owen LN. TNM Classification of Tumours in Domestic Animals. WHO, 1st ed. 1980.', relevance: 'WHO 獸醫腫瘤 TNM 分期——轉移（M）分類標準' },
   ],
   is_current: true,
   created_at: now,
@@ -1689,12 +2021,14 @@ const contentParaneoplastic: NodeContent = {
   ],
   body: `# 副腫瘤症候群 (Paraneoplastic Syndromes)
 
-## 定義
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 定義
 副腫瘤症候群是腫瘤產生的荷爾蒙、肽類、細胞激素或自體抗體引起的遠端全身性效應。PNS 不是由腫瘤的直接侵犯、壓迫或轉移造成的。
 
-## 惡性腫瘤高血鈣症（HHM）
-
+### 惡性腫瘤高血鈣症（HHM）
 ### 機轉
 - **PTHrP（副甲狀腺素相關蛋白）**：腫瘤分泌，為最主要機轉（> 80%）
   - 與 PTH 受體結合 → 骨吸收增加 + 腎小管鈣回收增加
@@ -1723,8 +2057,7 @@ const contentParaneoplastic: NodeContent = {
 4. [藥物:Pamidronate] 1-2 mg/kg IV（bisphosphonate，抑制破骨細胞）
 5. 最根本：治療原發腫瘤
 
-## 副腫瘤低血糖
-
+### 副腫瘤低血糖
 ### 胰島素瘤（Insulinoma）
 - β 細胞腫瘤 → 過量胰島素分泌 → 低血糖
 - 好發中老年犬（中大型犬）
@@ -1735,16 +2068,14 @@ const contentParaneoplastic: NodeContent = {
 - 分泌 IGF-II（非胰島素）→ 低血糖
 - 腫瘤通常體積很大
 
-## 癌症惡病質（Cancer Cachexia）
-
+### 癌症惡病質（Cancer Cachexia）
 - 腫瘤分泌 TNF-α、IL-1、IL-6 → 代謝重編程
 - 蛋白質分解增加 → 肌肉流失（sarcopenia）
 - 脂肪分解增加 → 體重減輕
 - 碳水化合物代謝：乳酸增加（Warburg effect）
 - 營養支持原則：高蛋白、高脂肪、低碳水化合物飲食
 
-## 其他 PNS
-
+### 其他 PNS
 | PNS | 相關腫瘤 | 機轉 |
 |-----|----------|------|
 | 紅血球增多症 | 腎臟腫瘤、肝臟腫瘤 | EPO 分泌 |
@@ -1753,7 +2084,27 @@ const contentParaneoplastic: NodeContent = {
 | 重症肌無力 | 胸腺瘤 | 抗 AChR 自體抗體 |
 | 發燒 | 淋巴瘤、白血病 | IL-1/IL-6 釋放 |
 
-[圖片:副腫瘤症候群分類與臨床表現示意圖]`,
+[圖片:副腫瘤症候群分類與臨床表現示意圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '高血鈣症是一個隱藏的腫瘤線索。在鑑別診斷「多尿多渴」時，血鈣檢測很容易被遺漏。記住「HARDIONS」助記法幫助高血鈣鑑別診斷：Hyperparathyroidism、Addison\'s、Renal disease、Vitamin D toxicity、Idiopathic（貓）、Osteolytic lesions、Neoplasia（HHM）、Spurious。另一個重要原則：在淋巴瘤確診前盡量不要使用 corticosteroids 治療高血鈣——因為 steroids 可殺滅淋巴瘤細胞導致後續取樣困難，且可能誘導多重抗藥性。',
   common_mistakes: [
     '在未確認腫瘤類型前使用 corticosteroids 治療高血鈣——若為淋巴瘤，會影響後續診斷和化療效果',
@@ -1804,8 +2155,11 @@ const contentDrugResistance: NodeContent = {
   ],
   body: `# 抗藥機轉 (Drug Resistance Mechanisms)
 
-## 分類
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 分類
 ### 先天性抗藥性（Intrinsic Resistance）
 - 腫瘤對化療從一開始即無反應
 - 可能原因：P-gp 基礎表達高、標靶缺失、凋亡途徑缺陷
@@ -1816,8 +2170,7 @@ const contentDrugResistance: NodeContent = {
 - 化療選擇壓力下，抗藥性克隆被篩選出來
 - 範例：犬淋巴瘤 CHOP 化療後復發
 
-## P-glycoprotein 與多重抗藥性（MDR）
-
+### P-glycoprotein 與多重抗藥性（MDR）
 ### P-gp（MDR1/ABCB1）
 - ABC 轉運蛋白超家族成員
 - 功能：ATP 依賴性藥物外排幫浦
@@ -1842,8 +2195,7 @@ const contentDrugResistance: NodeContent = {
   - 總存活時間縮短
 - **重要臨床原則：確診犬淋巴瘤後盡快開始 CHOP 化療，避免先用 steroids**
 
-## 其他抗藥機制
-
+### 其他抗藥機制
 ### 藥物代謝與解毒
 - 谷胱甘肽（Glutathione, GSH）系統：解毒 alkylating agents
 - Glutathione S-transferase（GST）過表達
@@ -1861,8 +2213,7 @@ const contentDrugResistance: NodeContent = {
 - 天然具有高 P-gp 表達和慢週期特性
 - 化療可殺滅腫瘤主體但殘存幹細胞 → 復發
 
-## 對化療策略的指導
-
+### 對化療策略的指導
 ### Goldie-Coldman 假說
 - 腫瘤突變率恆定 → 體積越大 → 抗藥克隆越多
 - 理論支持：早期治療、多藥聯合
@@ -1877,7 +2228,27 @@ const contentDrugResistance: NodeContent = {
 - 使用非 P-gp 受質的藥物
 - 犬淋巴瘤復發常用：Lomustine (CCNU)、DMAC 方案、Rabacfosadine
 
-[圖片:P-glycoprotein 藥物外排幫浦作用機轉示意圖]`,
+[圖片:P-glycoprotein 藥物外排幫浦作用機轉示意圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '犬淋巴瘤的「不要先用 steroids」原則是臨床上最重要的抗藥性應用。常見情況：淋巴瘤犬被初診診所以「淋巴結炎」開了 prednisolone，用藥後淋巴結縮小（steroids 對淋巴瘤有直接細胞毒性），但同時誘導了 P-gp 表達。等轉診到腫瘤科開始 CHOP 時，Doxorubicin 和 Vincristine 的效果已打折。因此教育初級獸醫師「懷疑淋巴瘤時不要先用 steroids」極為重要。',
   common_mistakes: [
     '在犬淋巴瘤確診前使用 corticosteroids——可誘導 P-gp 表達降低後續化療效果',
@@ -1898,6 +2269,7 @@ const contentDrugResistance: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy.', relevance: '化療抗藥性機轉章節' },
     { type: 'journal', citation: 'Zandvliet M, Teske E. Mechanisms of drug resistance in veterinary oncology: a review with an emphasis on canine lymphoma. Vet Sci. 2015;2(3):150-184.', relevance: '獸醫腫瘤抗藥性全面回顧' },
     { type: 'journal', citation: 'Price GS et al. Multidrug resistance gene (MDR1) expression and effect on treatment response in canine lymphoma. J Vet Intern Med. 1991;5(2):96.', relevance: 'P-gp 在犬淋巴瘤抗藥性的研究' },
+    { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '化療抗藥後毒性分級與劑量調整指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1927,15 +2299,17 @@ const contentStagingWorkup: NodeContent = {
   ],
   body: `# 腫瘤分期檢查 (Tumor Staging Workup)
 
-## 分期的意義
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 分期的意義
 分期檢查系統性地評估腫瘤的範圍，其結果直接影響：
 - **治療計畫**：手術是否可行、是否需要輔助化療
 - **預後評估**：與飼主討論期望值
 - **基線數據**：後續追蹤比較的基準
 
-## 基本分期檢查
-
+### 基本分期檢查
 ### 1. 血液學與生化評估
 - **CBC**：評估骨髓功能（化療前基線）、排除白血病
 - **BCS（血液生化）**：肝腎功能（化療藥物代謝）、血鈣（PNS 篩檢）
@@ -1959,8 +2333,7 @@ const contentStagingWorkup: NodeContent = {
 - **腎臟、腎上腺**：佔位性病灶
 - **膀胱（TCC 時）**：三角區腫塊
 
-## 進階分期
-
+### 進階分期
 ### CT（電腦斷層）
 - 肺轉移偵測：敏感度遠高於 X 光（1-2 mm vs 6-8 mm）
 - 腫瘤範圍評估：FISS、口腔黑色素瘤手術計畫
@@ -1976,8 +2349,7 @@ const contentStagingWorkup: NodeContent = {
 - 流式細胞儀免疫分型（淋巴瘤 B vs T cell）
 - Ki-67 增殖指數
 
-## 腫瘤別分期重點
-
+### 腫瘤別分期重點
 | 腫瘤 | 基本四件套 | 特殊分期項目 |
 |------|-----------|-------------|
 | 犬淋巴瘤 | 全部 | 骨髓穿刺、流式細胞儀免疫分型 |
@@ -1989,7 +2361,26 @@ const contentStagingWorkup: NodeContent = {
 | TCC | 全部 | BRAF 尿液 PCR、膀胱超音波/膀胱鏡 |
 | FISS | 全部 | CT（腫瘤實際範圍 >> 觸診）|
 
-[圖片:腫瘤分期基本檢查示意圖]`,
+[圖片:腫瘤分期基本檢查示意圖]
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 循環腫瘤 DNA（ctDNA）監測 | 犬化療反應/復發早期偵測 | 研究階段，人醫已商業化 |
+| PET-CT 腫瘤分期 | 犬淋巴瘤/全身轉移的精確分期 | 少數獸醫機構可執行 |
+| 全基因組定序（WGS/WES） | 犬腫瘤可行動突變鑑定→精準用藥 | 犬腫瘤 NGS panel 已可取得 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬腫瘤 FNA vs 組織切片作為治療決策依據 | FNA 準確度因腫瘤類型差異大，何時需組織切片 | Level II |
+| 犬腫瘤分期影像檢查的最低標準 | 三視圖 X 光 vs CT 的成本效益——何時升級 | Level III |`,
   clinical_pearl: '胸腔 X 光「三面投射」是腫瘤分期的基本要求，但在臨床上常被省略為兩面。記住：由於重力效應，下方的肺葉會有部分塌陷（atelectasis），上方的肺葉充氣較好。因此右側臥看左肺、左側臥看右肺、VD 看肺門。單側 lateral 可能遺漏位於塌陷肺葉中的小結節。對於 OSA 這種 > 90% 微轉移但 X 光常正常的腫瘤，CT 是更敏感的替代選擇。',
   common_mistakes: [
     '胸腔 X 光僅拍兩面投射——三面投射可額外偵測 9-15% 的肺結節',
@@ -2075,8 +2466,11 @@ const contentTNM: NodeContent = {
   ],
   body: `# TNM 分期系統 (TNM Staging System)
 
-## 基本結構
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 基本結構
 TNM 是由世界衛生組織（WHO）建立的腫瘤分期框架，適用於所有實體腫瘤：
 
 ### T — 原發腫瘤（Primary Tumor）
@@ -2096,8 +2490,7 @@ TNM 是由世界衛生組織（WHO）建立的腫瘤分期框架，適用於所�
 - **M0**：無遠端轉移
 - **M1**：有遠端轉移
 
-## Clinical vs Pathological Stage
-
+### Clinical vs Pathological Stage
 | 類型 | 代碼 | 資料來源 | 時機 |
 |------|------|----------|------|
 | 臨床分期 | cTNM | 理學檢查、影像、FNA | 治療前 |
@@ -2105,8 +2498,7 @@ TNM 是由世界衛生組織（WHO）建立的腫瘤分期框架，適用於所�
 
 pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉移。
 
-## 主要犬貓腫瘤 TNM 定義
-
+### 主要犬貓腫瘤 TNM 定義
 ### 犬口腔腫瘤（黑色素瘤、SCC、纖維肉瘤）
 | T | 定義 |
 |---|------|
@@ -2159,7 +2551,29 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
 | T2 | 3-5 cm | 2-3 cm |
 | T3 | > 5 cm | > 3 cm |
 
-[圖片:TNM 分期系統架構圖]`,
+[圖片:TNM 分期系統架構圖]
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: 'TNM 分期的臨床價值不僅在於分類，更在於它標準化了不同病例之間的比較。在與飼主溝通預後時，引用的存活數據都是基於特定 TNM 分期的——例如「口腔黑色素瘤 Stage I（< 2 cm）手術後中位存活 > 12 個月，Stage III（> 4 cm 或淋巴結轉移）中位存活僅 3 個月」。因此準確的分期是精確預後溝通的基礎。另外要記住 cTNM 和 pTNM 可能不同——術後病理可能發現術前未偵測到的淋巴結微轉移而升期。',
   common_mistakes: [
     '不同腫瘤使用相同的 T 定義——每種腫瘤的 T 分級標準不同',
@@ -2244,8 +2658,11 @@ const contentChemotherapy: NodeContent = {
   ],
   body: `# 化學治療基礎 (Chemotherapy Basics)
 
-## 化療原則
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 化療原則
 ### 治療目標
 - 獸醫化療：延長有品質的生命（quality of life, QoL）
 - 人醫化療：常追求治癒（更高劑量強度 → 更多副作用）
@@ -2256,8 +2673,17 @@ const contentChemotherapy: NodeContent = {
 - BSA 公式：BSA (m²) = (體重 kg)^0.667 × 10.1 / 10,000
 - 注意：< 10 kg 犬和貓的 BSA 相對體重比較高 → 需降低劑量約 20%
 
-## 常用化療藥物分類
+### 化療給藥安全確認
+給藥前 checklist：
+1. 確認 CBC 結果：嗜中性球 > 2,000-3,000/μL
+2. 確認全身狀態：ECOG 評分
+3. 確認體重：重新計算劑量
+4. 確認前次毒性：有無需要降低劑量的情況
+5. 確認藥物、劑量、給藥途徑正確
 
+## 二、藥物/方法比較 (Comparison)
+
+### 常用化療藥物分類
 | 藥物 | 分類 | 機轉 | 主要適應症 | 主要毒性 |
 |------|------|------|-----------|----------|
 | [藥物:Cyclophosphamide] | Alkylating agent | DNA 交聯 | 淋巴瘤（CHOP）、HSA | 骨髓抑制、出血性膀胱炎 |
@@ -2271,8 +2697,17 @@ const contentChemotherapy: NodeContent = {
 | [藥物:Toceranib] | TKI（標靶） | VEGFR/PDGFR/c-KIT | MCT、TCC | GI（腹瀉/嘔吐）、蛋白尿 |
 | [藥物:L-Asparaginase] | 酵素 | 消耗 Asparagine | 淋巴瘤（誘導） | 過敏反應（重複使用） |
 
-## VCOG-CTCAE v2 毒性分級
+### 藥物外滲處置
+起泡性藥物（vesicants）外滲可造成嚴重組織壞死：
+- **Doxorubicin**：冷敷、Dexrazoxane（若可取得）
+- **Vincristine/Vinblastine**：溫敷、Hyaluronidase 局部注射
+- 關鍵：預防勝於治療——IV 留置針確認回血良好、緩慢給藥、全程監測
 
+[圖片:CHOP 方案 25 週化療時程表]
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+### VCOG-CTCAE v2 毒性分級
 | Grade | 定義 | 處置 |
 |-------|------|------|
 | 1 | 輕微，無需醫療介入 | 觀察 |
@@ -2292,23 +2727,25 @@ const contentChemotherapy: NodeContent = {
    - [藥物:Maropitant] 1 mg/kg SC/PO 為一線止吐
    - [藥物:Metoclopramide] 0.2-0.5 mg/kg PO q8h
 
-## 化療給藥安全確認
+## 四、預後影響 (Prognostic Impact)
 
-給藥前 checklist：
-1. 確認 CBC 結果：嗜中性球 > 2,000-3,000/μL
-2. 確認全身狀態：ECOG 評分
-3. 確認體重：重新計算劑量
-4. 確認前次毒性：有無需要降低劑量的情況
-5. 確認藥物、劑量、給藥途徑正確
+## 五、人醫借鑒 (Translational Insights)
 
-## 藥物外滲處置
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
 
-起泡性藥物（vesicants）外滲可造成嚴重組織壞死：
-- **Doxorubicin**：冷敷、Dexrazoxane（若可取得）
-- **Vincristine/Vinblastine**：溫敷、Hyaluronidase 局部注射
-- 關鍵：預防勝於治療——IV 留置針確認回血良好、緩慢給藥、全程監測
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-[圖片:CHOP 方案 25 週化療時程表]`,
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '獸醫化療最重要的觀念是「劑量調整」。與人醫不同，我們不追求最大耐受劑量（MTD），而是在療效和生活品質之間取得平衡。化療犬貓的主人最關心的問題是「牠會不會很痛苦？」——答案是約 80% 的動物沒有顯著副作用，需要住院處理的嚴重毒性（Grade 3-4）約 5-10%。但仍需在每次化療前與飼主確認動物在家的狀態，並根據前次毒性適時調整劑量。',
   common_mistakes: [
     '未在化療前確認 CBC——嗜中性球過低時給藥會加劇骨髓抑制',
@@ -2362,17 +2799,11 @@ const contentSurgicalOncology: NodeContent = {
   ],
   body: `# 腫瘤外科原則 (Surgical Oncology Principles)
 
-## 手術切緣分類
+## 一、治療原理 (Treatment Principles)
 
-| 類型 | 定義 | 適用時機 |
-|------|------|----------|
-| Intracapsular | 囊內切除（留下肉眼可見腫瘤） | 僅用於活檢 |
-| Marginal | 沿腫瘤假包膜切除 | 良性腫瘤 |
-| Wide | 腫瘤周圍加上正常組織切緣 | 惡性腫瘤標準 |
-| Radical | 整個解剖區室切除（如截肢） | 高度侵襲性腫瘤 |
 
-## 各腫瘤切緣建議
 
+### 各腫瘤切緣建議
 | 腫瘤 | Lateral margin | Deep margin | 備註 |
 |------|---------------|-------------|------|
 | MCT（低度） | ≥ 2 cm | ≥ 1 fascial plane | Kiupel low-grade |
@@ -2383,8 +2814,7 @@ const contentSurgicalOncology: NodeContent = {
 | 乳腺腫瘤（犬） | 依位置選擇範圍 | 含筋膜 | 區域至鏈切除 |
 | 乳腺腫瘤（貓） | 雙側全鏈 | 含筋膜 | 分兩次手術 |
 
-## 首次手術是最佳手術
-
+### 首次手術是最佳手術
 ### 為什麼首次手術最重要？
 1. 腫瘤周圍解剖結構完整，可精確規劃切緣
 2. 腫瘤尚未被手術疤痕組織干擾
@@ -2400,8 +2830,7 @@ const contentSurgicalOncology: NodeContent = {
 3. 根據組織病理結果決定切緣和手術計畫
 4. 一次性完成足夠切緣的手術
 
-## 術後切緣評估
-
+### 術後切緣評估
 ### 病理報告解讀
 - **Clean margin**：切緣處無腫瘤細胞（通常定義 > 1 cm 或完整筋膜面）
 - **Close margin**：切緣處有腫瘤細胞接近但未達（通常 1-3 mm）
@@ -2412,8 +2841,7 @@ const contentSurgicalOncology: NodeContent = {
 - **無法再手術時：輔助放射治療** → 術後 3-4 週內開始
 - **輔助化療**：高度惡性腫瘤可考慮
 
-## 特殊手術類型
-
+### 特殊手術類型
 ### 減積手術（Debulking/Cytoreductive）
 - 無法完全切除但最大程度減少腫瘤量
 - 搭配放療（如口腔腫瘤）或化療
@@ -2423,7 +2851,39 @@ const contentSurgicalOncology: NodeContent = {
 - 目的：改善生活品質而非治癒
 - 範例：尿道阻塞的 TCC 支架置入、出血性腫瘤的止血手術
 
-[圖片:腫瘤手術切緣示意圖——lateral 和 deep margin]`,
+[圖片:腫瘤手術切緣示意圖——lateral 和 deep margin]
+
+## 二、藥物/方法比較 (Comparison)
+
+### 手術切緣分類
+| 類型 | 定義 | 適用時機 |
+|------|------|----------|
+| Intracapsular | 囊內切除（留下肉眼可見腫瘤） | 僅用於活檢 |
+| Marginal | 沿腫瘤假包膜切除 | 良性腫瘤 |
+| Wide | 腫瘤周圍加上正常組織切緣 | 惡性腫瘤標準 |
+| Radical | 整個解剖區室切除（如截肢） | 高度侵襲性腫瘤 |
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '在一般獸醫門診中，最常見的腫瘤外科錯誤是「先摘掉再說」（shelling out）。這對良性腫瘤（如脂肪瘤）是可以的，但對 MCT、STS、FISS 等惡性腫瘤而言，邊緣切除（marginal excision）幾乎等同於計畫性失敗。關鍵原則：在切除任何腫塊之前，先用 FNA 得到初步診斷——如果是 MCT，你就知道需要 2-3 cm 切緣而非「沿著腫塊邊緣挖」。一個正確的首次手術勝過三次不足的追加手術。',
   common_mistakes: [
     '未做 FNA 就直接邊緣切除——可能導致 MCT 或 STS 切緣不足需再手術',
@@ -2445,6 +2905,7 @@ const contentSurgicalOncology: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 8: Surgical Oncology.', relevance: '腫瘤外科原則完整章節' },
     { type: 'journal', citation: 'Ehrhart NP, Culp WTN. Principles of surgical oncology. In: Veterinary Surgical Oncology. Wiley-Blackwell, 2022.', relevance: '獸醫腫瘤外科專著' },
     { type: 'journal', citation: 'Simpson S et al. Comparative review of surgical margins in canine mast cell tumor excision. Vet Surg. 2019;48(7):1108-1116.', relevance: 'MCT 手術切緣比較研究' },
+    { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Surgical Oncology: Guidelines for First Surgery Principles. Vet Comp Oncol. 2015.', relevance: '腫瘤外科首次手術指引' },
   ],
   is_current: true,
   created_at: now,
@@ -2475,20 +2936,11 @@ const contentCancerPain: NodeContent = {
   ],
   body: `# 腫瘤疼痛管理 (Cancer Pain Management)
 
-## 腫瘤疼痛分類
+## 一、治療原理 (Treatment Principles)
 
-### 按來源
-- **腫瘤直接造成**：骨破壞（OSA）、器官壓迫/膨脹、神經浸潤
-- **治療相關**：手術傷口、化療神經毒性（Vincristine）、放療黏膜炎
-- **副腫瘤相關**：肥大型骨病（HO）、肌肉痙攣
 
-### 按機轉
-- **體感性疼痛（Somatic）**：定位明確、銳痛（骨、肌肉、皮膚）
-- **內臟性疼痛（Visceral）**：定位模糊、鈍痛（腹腔/胸腔器官膨脹或壓迫）
-- **神經病變性疼痛（Neuropathic）**：灼痛、電擊感（腫瘤浸潤或壓迫神經）
 
-## 修改版 WHO 止痛階梯
-
+### 修改版 WHO 止痛階梯
 ### Step 1：輕度疼痛
 | 藥物 | 劑量 | 備註 |
 |------|------|------|
@@ -2510,8 +2962,7 @@ const contentCancerPain: NodeContent = {
 | Codeine | 犬 1-2 mg/kg PO BID-TID | 弱鴉片類 |
 | Fentanyl 貼片 | 犬 2-5 μg/kg/hr；貓 25 μg/hr 貼片 | 持續性疼痛控制，72 小時更換 |
 
-## 特殊疼痛情況
-
+### 特殊疼痛情況
 ### 骨肉瘤疼痛
 - NSAIDs 為基礎
 - [藥物:Pamidronate] 1-2 mg/kg IV q4 weeks（bisphosphonate，抑制骨吸收→止痛）
@@ -2525,8 +2976,7 @@ const contentCancerPain: NodeContent = {
 - 局部利多卡因凝膠
 - 軟食/流質飲食
 
-## 疼痛評估量表
-
+### 疼痛評估量表
 ### Glasgow Composite Pain Scale（術後疼痛）
 - 行為觀察 + 觸診反應
 - 分數制，超過閾值需要止痛介入
@@ -2542,7 +2992,42 @@ const contentCancerPain: NodeContent = {
 
 各項 1-10 分，總分 > 35 分為可接受的生活品質。
 
-[圖片:修改版 WHO 止痛階梯示意圖]`,
+[圖片:修改版 WHO 止痛階梯示意圖]
+
+## 二、藥物/方法比較 (Comparison)
+
+### 腫瘤疼痛分類
+### 按來源
+- **腫瘤直接造成**：骨破壞（OSA）、器官壓迫/膨脹、神經浸潤
+- **治療相關**：手術傷口、化療神經毒性（Vincristine）、放療黏膜炎
+- **副腫瘤相關**：肥大型骨病（HO）、肌肉痙攣
+
+### 按機轉
+- **體感性疼痛（Somatic）**：定位明確、銳痛（骨、肌肉、皮膚）
+- **內臟性疼痛（Visceral）**：定位模糊、鈍痛（腹腔/胸腔器官膨脹或壓迫）
+- **神經病變性疼痛（Neuropathic）**：灼痛、電擊感（腫瘤浸潤或壓迫神經）
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '腫瘤疼痛管理中最容易被忽略的是神經病變性疼痛（neuropathic pain）。OSA 的疼痛不只是骨破壞的體感性疼痛——腫瘤浸潤骨膜和周圍神經會產生神經病變性成分。這就是為什麼單獨使用 NSAIDs 對晚期 OSA 效果有限，需要加上 Gabapentin（神經病變性疼痛）和 Amantadine（中樞敏感化）。另外，HHHHHMM 量表是與飼主討論安樂死時機最實用的工具——它將主觀感受轉化為可量化的評估。',
   common_mistakes: [
     '僅使用單一止痛藥物而非多模式止痛——組合用藥可增效並減少副作用',
@@ -2597,8 +3082,11 @@ const contentRadiationTherapy: NodeContent = {
   ],
   body: `# 放射治療 (Radiation Therapy)
 
-## 基本原理
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 基本原理
 放射治療利用高能量游離輻射（光子或電子束）直接損傷腫瘤細胞 DNA，造成雙股斷裂（double-strand breaks）→ 細胞無法修復 → 在下一次有絲分裂時死亡（mitotic death）。
 
 ### 設備
@@ -2614,8 +3102,7 @@ const contentRadiationTherapy: NodeContent = {
 | Reoxygenation | 缺氧腫瘤區域在分割間重新氧合 | 氧氣增加放射敏感度 2-3 倍 |
 | Repopulation | 腫瘤細胞在治療間隔增殖 | 治療不宜中斷過久 |
 
-## 放療類型
-
+### 放療類型
 ### 根治性放療（Definitive/Curative-Intent RT）
 - 目標：長期局部控制或治癒
 - 分割：每次 2.5-4 Gy × 12-20 次
@@ -2631,8 +3118,7 @@ const contentRadiationTherapy: NodeContent = {
 - 頻率：每週一次
 - 全身麻醉次數較少（3-5 次）
 
-## 獸醫 RT 主要適應症
-
+### 獸醫 RT 主要適應症
 | 適應症 | 放療類型 | 說明 |
 |--------|----------|------|
 | 術後切緣不淨（MCT、STS、FISS） | 根治性 | 最常見適應症之一 |
@@ -2642,8 +3128,11 @@ const contentRadiationTherapy: NodeContent = {
 | 腦瘤（meningioma） | 根治性 | 中位存活 > 12 個月 |
 | 鼻腔腫瘤 | 根治性 | 手術+放療中位存活 > 12-20 個月 |
 
-## 副作用
+## 二、藥物/方法比較 (Comparison)
 
+## 三、併發症與監控 (Complications & Monitoring)
+
+### 副作用
 ### 急性副作用（治療期間至結束後數週）
 - **皮膚**：紅腫（erythema）→ 脫毛（alopecia）→ 濕性脫皮（moist desquamation）
 - **口腔黏膜炎**：口腔腫瘤 RT 時，疼痛、流涎、食慾下降
@@ -2657,7 +3146,27 @@ const contentRadiationTherapy: NodeContent = {
 - **腦壞死**：腦部 RT 的罕見但嚴重併發症
 - 不可逆——限制終生總劑量
 
-[圖片:根治性 vs 姑息性放療分割方案比較圖]`,
+[圖片:根治性 vs 姑息性放療分割方案比較圖]
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '在台灣，放射治療的可近性正在改善，但仍非所有腫瘤轉診中心都有設備。因此，臨床決策時需要考量：(1) 是否有其他替代方案（如再手術、化療）、(2) 飼主是否能配合多次麻醉和交通往返的治療排程、(3) 費用承受能力。姑息性放療（3-5 次）在 OSA 止痛方面效果卓越且所需麻醉次數少，是最具實際可行性的放療應用之一。口腔黑色素瘤的粗分割放療（4 次）也是可行的選項。',
   common_mistakes: [
     '認為放射治療可以治療全身轉移——RT 為局部治療，全身性疾病需化療',
@@ -2679,6 +3188,7 @@ const contentRadiationTherapy: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 10: Radiation Therapy.', relevance: '放射治療完整章節' },
     { type: 'journal', citation: 'Larue SM, Gordon IK. Radiation therapy. In: Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed.', relevance: '獸醫放射治療基礎' },
     { type: 'journal', citation: 'Boston SE et al. Outcomes of eight dogs with appendicular osteosarcoma treated with palliative radiation therapy: 2-3 fraction protocols. Vet Radiol Ultrasound. 2007;48(2):141-145.', relevance: 'OSA 姑息性放療止痛研究' },
+    { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引——放射治療角色與轉介建議' },
   ],
   is_current: true,
   created_at: now,
@@ -2710,8 +3220,11 @@ const contentMetronomicChemo: NodeContent = {
   ],
   body: `# 節拍式化療 (Metronomic Chemotherapy)
 
-## 概念與原理
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 概念與原理
 ### MTD vs 節拍式化療
 | 特點 | 傳統 MTD 化療 | 節拍式化療 |
 |------|-------------|-----------|
@@ -2733,8 +3246,7 @@ const contentMetronomicChemo: NodeContent = {
 - Treg 降低 → 解除對效應 T 細胞的抑制 → 增強抗腫瘤免疫
 - NSAIDs → 抑制 COX-2/PGE2 → 減少免疫抑制性微環境
 
-## 常用節拍式化療方案
-
+### 常用節拍式化療方案
 ### 方案一：Cyclophosphamide + Piroxicam（最常用）
 | 藥物 | 劑量 | 頻率 | 監測 |
 |------|------|------|------|
@@ -2753,8 +3265,7 @@ const contentMetronomicChemo: NodeContent = {
 | [藥物:Toceranib] | 2.75 mg/kg PO | 隔日（QOD） | 抗 VEGFR/c-KIT |
 | + Cyclophosphamide | 10 mg/m²/day PO | 每日 | 低劑量搭配 |
 
-## 適應症
-
+### 適應症
 ### 主要適應症
 - **軟組織肉瘤（STS）術後維持**：切緣乾淨但高級別
 - **HSA 脾臟切除後輔助**：替代或接續 Doxorubicin
@@ -2766,8 +3277,11 @@ const contentMetronomicChemo: NodeContent = {
 - **飼主便利性**：居家口服用藥，無需每週住院 IV 化療
 - **台灣臨床實務**：部分飼主因工作或距離無法頻繁回診，節拍式化療為良好替代
 
-## 副作用與監測
+## 二、藥物/方法比較 (Comparison)
 
+## 三、併發症與監控 (Complications & Monitoring)
+
+### 副作用與監測
 ### 常見副作用
 - **出血性膀胱炎**（Cyclophosphamide）：即使低劑量仍有風險（約 5-10%）
   - 預防：鼓勵飲水、傍晚給藥（睡前排尿）
@@ -2780,7 +3294,27 @@ const contentMetronomicChemo: NodeContent = {
 - 每 2-3 個月影像學追蹤（超音波/X 光）
 - RECIST 標準（若有可測量病灶）
 
-[圖片:節拍式 vs MTD 化療用藥時程比較圖]`,
+[圖片:節拍式 vs MTD 化療用藥時程比較圖]
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| CAR-T 細胞療法 | 犬 B 細胞淋巴瘤的細胞免疫治療 | 犬 CAR-T 試驗已啟動 |
+| 腫瘤疫苗 | 犬黑色素瘤 DNA 疫苗（Oncept） | 犬黑色素瘤疫苗已 USDA 核准 |
+| 光免疫療法（photoimmunotherapy） | 犬淺表腫瘤的免疫導引光動力治療 | 早期臨床試驗中 |
+| 奈米藥物遞送 | 犬腫瘤局部高濃度化療——減少全身毒性 | 研究階段 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 MCT Grade II（Patnaik）的異質性 | 同一級別預後差異大——Kiupel 二級制是否更好？ | Level II |
+| 犬骨肉瘤截肢+化療 vs 保肢+化療 | 保肢術感染/植入物失敗率高，長期存活是否等同 | Level II |
+| 犬 HSA 化療（Doxorubicin ± DACTILi）的實際獲益 | MST 延長有限（~140 vs ~90 天），飼主生活品質考量 | Level I |
+| 犬淋巴瘤「rescue」protocol 的選擇 | 多種 rescue 方案存在但無 head-to-head 比較 | Level III |`,
   clinical_pearl: '節拍式化療是「實務導向」的治療策略。當飼主說「我沒辦法每週帶牠來打針」或「化療費用太高」時，節拍式化療提供了一個居家口服、費用較低、副作用較輕的替代方案。雖然其療效數據不如 MTD 化療強大，但對於許多無法接受傳統化療的患者，節拍式化療至少提供了「做些什麼」的選項。重要提醒：即使是低劑量 Cyclophosphamide，出血性膀胱炎仍然可能發生——囑咐飼主注意尿液顏色的變化。',
   common_mistakes: [
     '期望節拍式化療能像 MTD 化療一樣迅速縮小腫瘤——節拍式化療的目標是穩定而非消退',
@@ -2802,6 +3336,7 @@ const contentMetronomicChemo: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy — Metronomic Section.', relevance: '節拍式化療章節' },
     { type: 'journal', citation: 'Leach TN et al. Prospective trial of metronomic chlorambucil chemotherapy in dogs with naturally occurring cancer. Vet Comp Oncol. 2012;10(2):102-112.', relevance: '節拍式 Chlorambucil 前瞻性試驗' },
     { type: 'journal', citation: 'Burton JH et al. Low-dose cyclophosphamide selectively decreases regulatory T cells and inhibits angiogenesis in dogs with soft tissue sarcoma. J Vet Intern Med. 2011;25(4):920-926.', relevance: '犬低劑量 Cyclophosphamide 的免疫調節和抗血管新生機轉' },
+    { type: 'guideline', citation: 'VCOG — Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '節拍式化療副作用分級與監測標準' },
   ],
   is_current: true,
   created_at: now,

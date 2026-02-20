@@ -273,7 +273,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '致死劑量，催吐+活性炭',
         ],
         feedback_correct: '190 mg/kg 遠超致死劑量。apomorphine 0.03 mg/kg IV 催吐，給活性炭 1-2 g/kg。',
-        feedback_incorrect: '190 mg/kg 可致痙放、心律不整、死亡。必須立即處置。',
+        feedback_incorrect: '190 mg/kg 可致痙攣、心律不整、死亡。必須立即處置。',
         key_learning_points: [
           'LD50 100-300 mg/kg',
           '催吐：apomorphine 0.03mg/kg IV 或 3%H2O2 1-2mL/kg',
@@ -291,7 +291,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '每2h重複活性炭',
           'atropine 治心搏過速',
           '全身麻醉控制興奮',
-          'diazepam 預防痙放',
+          'diazepam 預防痙攣',
         ],
         correct_actions: [
           '持續 ECG 監測',
@@ -429,7 +429,7 @@ export const ECC_CASES: CaseChallenge[] = [
         available_actions: [
           '環境溫度與暴露時間',
           '是否有運動或在車內',
-          '先前是否有嗝吐/腹瀉/痙放',
+          '先前是否有嘔吐/腹瀉/痙攣',
           '過去是否有中暑病史',
           '食慕與飲水狀況',
           '最近是否接種疫苗',
@@ -437,9 +437,9 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           '環境溫度與暴露時間',
           '是否有運動或在車內',
-          '先前是否有嗝吐/腹瀉/痙放',
+          '先前是否有嘔吐/腹瀉/痙攣',
         ],
-        feedback_correct: '環境溫度和暴露時間確認中暑風險。運動性 vs 非運動性中暑治療策略不同。嗝吐/腹瀉/痙放提示器官損傷。',
+        feedback_correct: '環境溫度和暴露時間確認中暑風險。運動性 vs 非運動性中暑治療策略不同。嘔吐/腹瀉/痙攣提示器官損傷。',
         feedback_incorrect: '中暑病史重點：環境+活動+症狀進展。短頭種、肥胖、高溫環境是主要風險因子。',
         key_learning_points: [
           '中暑風險因子：短頭種/肥胖/高溫/運動/密閉空間',
@@ -609,7 +609,7 @@ export const ECC_CASES: CaseChallenge[] = [
     species: '犬',
     scenario: {
       signalment: '8 歲已絕育雌性賞貴犬，5.5 kg',
-      chief_complaint: '3 天嗝吐不食多尿多渴',
+      chief_complaint: '3 天嘔吐不食多尿多渴',
       brief_history: '糖尿病 2 年，用 NPH insulin。近週食慕下降，飼主停 insulin 3 天。極度沉鬱脱水。',
     },
     steps: [
@@ -621,7 +621,7 @@ export const ECC_CASES: CaseChallenge[] = [
         available_actions: [
           'insulin 用藥與停藥原因',
           '最近血糖値',
-          '嗝吐頻率',
+          '嘔吐頻率',
           '同時疾病',
           '飲食變化',
           '活動量',
@@ -629,9 +629,9 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           'insulin 用藥與停藥原因',
           '最近血糖値',
-          '嗝吐頻率',
+          '嘔吐頻率',
         ],
-        feedback_correct: 'insulin 停藥是 DKA 最常見誘因。血糖判斷控制狀況。嗝吐反映嚴重度。',
+        feedback_correct: 'insulin 停藥是 DKA 最常見誘因。血糖判斷控制狀況。嘔吐反映嚴重度。',
         feedback_incorrect: 'DKA 病史重點：insulin 依從性、誘因搜尋、症狀嚴重度。',
         key_learning_points: [
           'DKA 誘因：insulin 停藥/不足、感染、胰臟炎',
@@ -801,8 +801,8 @@ export const ECC_CASES: CaseChallenge[] = [
     species: '犬',
     scenario: {
       signalment: '6 歲混種犬，18 kg，山區飼養',
-      chief_complaint: '右前肊劇烈腫脹，發現時旁有蛇',
-      brief_history: '台灣山區，犬在草叢突然嘆叫，右前肊快速腫脹，旁見百步蛇。約 1h 前發生。',
+      chief_complaint: '右前肢劇烈腫脹，發現時旁有蛇',
+      brief_history: '台灣山區，犬在草叢突然嚎叫，右前肢快速腫脹，旁見百步蛇。約 1h 前發生。',
     },
     steps: [
       {
@@ -835,7 +835,7 @@ export const ECC_CASES: CaseChallenge[] = [
         step_number: 2,
         step_type: 'physical_examination',
         title: '理學檢查',
-        prompt: '右前肊腫脹，兩牙痕，局部瘀斑。關鍵發現？選 3 項。',
+        prompt: '右前肢腫脹，兩牙痕，局部瘀斑。關鍵發現？選 3 項。',
         available_actions: [
           '兩牙痕(確認毒蛇)',
           '快速腫脹',
@@ -991,8 +991,8 @@ export const ECC_CASES: CaseChallenge[] = [
     species: '犬',
     scenario: {
       signalment: '5 歲已絕育雄性柴犬，10 kg',
-      chief_complaint: '注射疫苗後 15 分鐘突然嘆息、面部腫脹、崩潰',
-      brief_history: '在院內施打常規疫苗後 15 分鐘，犬突然出現嘆息加劇、面部與眼瞼腫脹、薙麻疹，隨後倒下。過去無過敏史。',
+      chief_complaint: '注射疫苗後 15 分鐘突然喘息、面部腫脹、崩潰',
+      brief_history: '在院內施打常規疫苗後 15 分鐘，犬突然出現喘息加劇、面部與眼瞼腫脹、薙麻疹，隨後倒下。過去無過敏史。',
     },
     steps: [
       {

@@ -32,4 +32,10 @@ export const CPATH_EDGES: KnowledgeEdge[] = [
 
   // L4-003 → L4-013: same_system（細胞學在感染診斷中的角色）
   { id: 'CPATH-E-018', source_node_id: 'CPATH-L4-003', target_node_id: 'CPATH-L4-013', relation_type: 'same_system', weight: 0.7, description: '細胞學可輔助感染性病原的形態學辨識', bidirectional: false, unlock_condition: null },
+
+  // L1-002 → L4-006: prerequisite（臨床化學基礎 → 體液分析）
+  { id: 'CPATH-E-019', source_node_id: 'CPATH-L1-002', target_node_id: 'CPATH-L4-006', relation_type: 'prerequisite', weight: 0.9, description: '臨床化學基礎是體液分析判讀的前置', bidirectional: false, unlock_condition: null },
+
+  // L2-001 → L4-006: builds_on（分析前誤差與品質控管影響體液分析）
+  { id: 'CPATH-E-020', source_node_id: 'CPATH-L2-001', target_node_id: 'CPATH-L4-006', relation_type: 'builds_on', weight: 0.7, description: '體液分析需注意採集與保存的分析前品管', bidirectional: false, unlock_condition: null },
 ];

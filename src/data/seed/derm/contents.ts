@@ -27,20 +27,23 @@ const contentCAD: NodeContent = {
   ],
   body: `# 犬異位性皮膚炎 (CAD)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬異位性皮膚炎（CAD）是一種遺傳易感的慢性炎症性皮膚病，特徵為對環境過敏原（如塵蟎、花粉、黴菌孢子）產生 IgE 介導的過敏反應。在台灣，由於亞熱帶氣候全年溫暖潮濕，環境過敏原暴露量高，CAD 的發病率及嚴重程度可能高於溫帶地區。
 
-## 病理機轉
-
+### 病理機轉
 CAD 的發病涉及三個核心異常：
 
 1. **皮膚屏障缺陷**：表皮 filaggrin 表達減少、角質層脂質組成異常 → 經皮水分散失增加（TEWL）→ 過敏原更容易穿透
 2. **免疫失調**：Th2 偏移 → IL-4/IL-13 驅動 B 細胞產生 allergen-specific IgE → 肥大細胞活化釋放組胺、前列腺素等
 3. **神經免疫交互作用**：IL-31 直接刺激背根神經節的感覺神經元 → 瘙癢感 → 搔抓-發炎循環
 
-## Favrot 診斷標準
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### Favrot 診斷標準
 [互動:Favrot 標準互動式計分器]
 
 | 編號 | 標準 |
@@ -56,8 +59,7 @@ CAD 的發病涉及三個核心異常：
 
 滿足 5/8 項：Sens 85%, Spec 79%。滿足 6/8 項：Sens 58%, Spec 89%。
 
-## 逐步診斷流程
-
+### 逐步診斷流程
 1. **排除跳蚤過敏（FAD）**：嚴格跳蚤控制 4-8 週
 2. **排除食物不良反應**：新蛋白質或水解蛋白飲食排除試驗 8 週
 3. **排除疥蟎**：皮膚刮搔或經驗性 isoxazoline 治療
@@ -65,8 +67,9 @@ CAD 的發病涉及三個核心異常：
 5. **臨床診斷 CAD**：Favrot 標準 + 排除其他原因
 6. **過敏原檢測**（可選）：血清 IgE 或皮內試驗 → 用於 ASIT
 
-## 治療策略
+## 三、治療策略 (Treatment)
 
+### 治療策略
 ### 急性期
 - [藥物:Oclacitinib] 0.4-0.6 mg/kg PO BID x 14 天，之後改 SID
 - 或 [藥物:Prednisolone] 0.5-1 mg/kg PO SID x 5-7 天後漸減
@@ -79,7 +82,29 @@ CAD 的發病涉及三個核心異常：
 - **跳蚤預防**：全年不間斷
 - **繼發感染控制**：定期皮膚細胞學監測
 
-[圖片:CAD 逐步診斷治療流程圖]`,
+[圖片:CAD 逐步診斷治療流程圖]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: 'CAD 的診斷是排除性的——永遠不要跳過排除 FAD 和 AFR 的步驟。台灣全年有跳蚤活動，即使沒看到跳蚤也不能排除 FAD，必須使用 isoxazoline 類藥物進行嚴格跳蚤控制至少 4 週。另外，飲食排除試驗中最常見的失敗原因是飼主未嚴格遵守（零食、人食共享），務必反覆教育。',
   common_mistakes: [
     '未進行排除飲食試驗即診斷 CAD（食物不良反應可完全模擬 CAD 表現）',
@@ -158,8 +183,11 @@ const contentSkinScraping: NodeContent = {
   ],
   body: `# 皮膚刮搔與毛髮檢查
 
-## 深層皮膚刮搔
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 深層皮膚刮搔
 ### 適應症
 - 懷疑蠕形蟎症（Demodicosis）
 - 局部或廣泛脫毛
@@ -177,8 +205,7 @@ const contentSkinScraping: NodeContent = {
 - Demodex canis：雪茄形成蟲（250-300 μm），幼蟲（6 隻腳）、若蟲、蟲卵
 - 需評估：活蟲 vs 死蟲比例、各發育階段比例（用於治療監測）
 
-## 淺層皮膚刮搔
-
+### 淺層皮膚刮搔
 ### 適應症
 - 懷疑疥蟎（Sarcoptes）、姬螯蟎（Cheyletiella）
 - 表皮鱗屑型病灶
@@ -193,8 +220,7 @@ const contentSkinScraping: NodeContent = {
 - Sarcoptes 淺層刮搔偵測率僅 20-50%（陰性結果不能排除）
 - 高度懷疑但刮搔陰性時，建議經驗性 isoxazoline 治療
 
-## 毛髮檢查（Trichogram）
-
+### 毛髮檢查（Trichogram）
 ### 技術
 1. 用止血鉗夾住病灶邊緣的毛髮，順生長方向快速拔出
 2. 將毛髮排列於載玻片上，加礦物油與蓋玻片
@@ -204,8 +230,7 @@ const contentSkinScraping: NodeContent = {
 - Anagen hair：根部膨大、包裹毛根鞘、有色素
 - Telogen hair：根部棒狀（club-shaped）、無色素
 
-## KOH 消化法
-
+### KOH 消化法
 ### 技術
 1. 將毛髮或皮屑置於載玻片上
 2. 加入 10-20% KOH 溶液數滴
@@ -214,7 +239,26 @@ const contentSkinScraping: NodeContent = {
 5. 40x 鏡檢查找皮膚癬菌的關節孢子（arthrospores）
 
 [圖片:深層 vs 淺層刮搔技術比較圖]
-[圖片:Demodex、Sarcoptes、Cheyletiella 顯微鏡形態比較]`,
+[圖片:Demodex、Sarcoptes、Cheyletiella 顯微鏡形態比較]
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 皮膚鏡（dermoscopy） | 犬皮膚病灶非侵入性放大觀察 | 人醫標準工具，獸醫研究增加 |
+| 共聚焦顯微鏡（confocal microscopy） | 活體皮膚細胞學——免組織切片 | 研究工具，臨床應用前 |
+| 次世代定序（NGS）微生物鑑定 | 犬皮膚感染病原精準鑑定 | 研究中，成本尚高 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬過敏原特異性 IgE 檢測（血清 vs 皮膚點刺）的一致性 | 兩種方法結果不一致率高達 30-40% | Level II |
+| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |`,
   clinical_pearl: '深層刮搔最關鍵的步驟是「擠壓」——用拇指和食指擠壓皮膚皺褶，將毛囊深處的蠕形蟎推向表面，然後再刮。不擠壓直接刮可能導致偽陰性。對於法國鬥牛犬等皮膚鬆弛的品種，也可考慮擠壓後直接用透明膠帶壓貼法（tape impression）替代刮搔。',
   common_mistakes: [
     '深層刮搔時未擠壓皮膚，導致蠕形蟎偵測率下降',
@@ -270,7 +314,8 @@ const contentSkinScraping: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '皮膚刮搔技術與寄生蟲辨識標準參考' },
-    { type: 'journal', citation: 'Mueller RS et al. Treatment of demodicosis in dogs: 2011 clinical practice guidelines. Vet Dermatol. 2012;23(2):86-e21.', relevance: '蠕形蟎治療指引中的診斷標準' },
+    { type: 'guideline', citation: 'Mueller RS et al. Treatment of demodicosis in dogs: 2011 clinical practice guidelines. Vet Dermatol. 2012;23(2):86-e21.', relevance: '蠕形蟎治療指引中的診斷標準' },
+    { type: 'journal', citation: 'Saridomichelakis MN et al. An update on the role of cytology in the diagnosis of canine skin diseases. Vet Dermatol. 2017;28(5):457-e108.', relevance: '皮膚刮搔與細胞學在診斷中角色的更新回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -300,12 +345,14 @@ const contentAFR: NodeContent = {
   ],
   body: `# 食物不良反應 (AFR)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 食物不良反應（AFR）是對飲食成分產生異常反應的統稱，包括免疫介導的食物過敏（food allergy）與非免疫介導的食物不耐受（food intolerance）。在犬貓皮膚科中，AFR 是僅次於跳蚤過敏和環境過敏（CAD）的第三大過敏性皮膚病。
 
-## 病理機轉
-
+### 病理機轉
 ### 食物過敏（免疫介導）
 - **Type I 過敏**：食物抗原穿透腸道黏膜屏障 → 抗原呈現細胞捕獲 → Th2 活化 → IgE 產生 → 肥大細胞脫顆粒
 - **Type IV 過敏**：T 細胞介導的延遲型過敏反應，可能在部分病例中扮演角色
@@ -316,15 +363,7 @@ const contentAFR: NodeContent = {
 - 代謝異常（乳糖不耐受）
 - 毒素反應
 
-## 臨床表現
-
-- **皮膚症狀**：與 CAD 高度重疊——瘙癢、紅斑、外耳炎、指間炎
-- **特徵性線索**：非季節性瘙癢、對糖皮質激素反應不佳或僅部分反應
-- **腸胃道症狀**：20-30% 伴有嘔吐、軟便、排便次數增加、腸鳴音增加
-- **貓特殊表現**：頭頸部瘙癢、粟粒性皮膚炎、嗜酸性肉芽腫複合體
-
-## 排除飲食試驗
-
+### 排除飲食試驗
 ### 飲食選擇
 1. **新蛋白質飲食**：使用動物從未接觸過的蛋白質源（如鹿肉、袋鼠肉、鱷魚肉）
 2. **水解蛋白飲食**：蛋白質水解至 < 10 kDa，降低免疫識別
@@ -342,7 +381,39 @@ const contentAFR: NodeContent = {
 - 症狀復發（通常 1-14 天內）→ 確診 AFR
 - 可逐一引入單一蛋白質源以鑑定特定過敏原
 
-[圖片:AFR 排除飲食試驗流程圖]`,
+[圖片:AFR 排除飲食試驗流程圖]
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+- **皮膚症狀**：與 CAD 高度重疊——瘙癢、紅斑、外耳炎、指間炎
+- **特徵性線索**：非季節性瘙癢、對糖皮質激素反應不佳或僅部分反應
+- **腸胃道症狀**：20-30% 伴有嘔吐、軟便、排便次數增加、腸鳴音增加
+- **貓特殊表現**：頭頸部瘙癢、粟粒性皮膚炎、嗜酸性肉芽腫複合體
+
+## 三、治療策略 (Treatment)
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '排除飲食試驗成功的關鍵在於飼主教育——必須在開始前花足夠時間詳細說明「完全排除」的意義。一塊小零食、一口人食、甚至含調味劑的藥錠都可能導致試驗失敗。建議提供書面清單列出所有「禁止」與「允許」的食物，並在第 2 週和第 4 週電話追蹤飼主執行情況。',
   common_mistakes: [
     '依賴血清 IgE 食物過敏原檢測作為診斷工具（偽陽性率極高，目前無可靠的血清學診斷方法）',
@@ -419,19 +490,22 @@ const contentFAD: NodeContent = {
   ],
   body: `# 跳蚤過敏性皮膚炎 (FAD)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 FAD 是對貓蚤（Ctenocephalides felis）唾液蛋白產生過敏反應的皮膚病。台灣亞熱帶氣候使跳蚤全年活躍，FAD 在台灣無明顯季節性。即便飼主「沒看到跳蚤」，也不能排除 FAD。
 
-## 病理機轉
-
+### 病理機轉
 跳蚤唾液含有超過 15 種抗原蛋白（包括半抗原），引發混合型過敏反應：
 1. **即時型（Type I）**：IgE 介導 → 肥大細胞脫顆粒 → 叮咬後數分鐘內瘙癢
 2. **遲發型（Type IV）**：T 細胞介導 → 叮咬後 24-48 小時發生遲發性丘疹與紅斑
 3. **晚期型反應**：嗜鹼性球募集 → 叮咬後 24 小時出現的持續性炎症
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 ### 犬
 - 好發部位：腰背部、尾根、後腿內側、腹股溝、腹側
 - 典型病灶：丘疹、脫毛、苔蘚化、色素沉著、「熱點」（急性濕性皮膚炎）
@@ -443,16 +517,16 @@ FAD 是對貓蚤（Ctenocephalides felis）唾液蛋白產生過敏反應的皮�
 - 嗜酸性肉芽腫複合體
 - 頭頸部瘙癢與自殘
 
-## 診斷
-
+### 診斷
 1. 臨床病史與典型分佈模式
 2. 跳蚤或跳蚤糞便的發現（濕紙巾測試：黑色顆粒溶出紅棕色 = 跳蚤糞便）
 3. **嚴格跳蚤控制試驗**：Isoxazoline 類全身性殺蚤劑 + 環境處理 × 4-8 週
 4. 症狀改善 > 50% 即支持診斷
 5. 皮內試驗：跳蚤抗原萃取物可產生即時型與遲發型反應（臨床研究用）
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 殺蚤劑（首選 isoxazoline 類）
 - [藥物:Fluralaner]（Bravecto）：犬 25-56 mg/kg PO q12w 或貓 spot-on q12w
 - [藥物:Afoxolaner]（NexGard）：犬 2.5-6.2 mg/kg PO q4w
@@ -466,7 +540,29 @@ FAD 是對貓蚤（Ctenocephalides felis）唾液蛋白產生過敏反應的皮�
 ### 急性瘙癢控制
 - [藥物:Oclacitinib] 短期使用或 [藥物:Prednisolone] 0.5-1 mg/kg × 3-5 天
 
-[圖片:犬貓 FAD 典型病灶分佈圖]`,
+[圖片:犬貓 FAD 典型病灶分佈圖]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '在台灣，「我的狗從不出門所以不會有跳蚤」是最常見的飼主迷思。跳蚤可經由人類衣物、訪客、其他動物帶入室內。即便室內犬，也應全年使用 isoxazoline 類預防。診斷 FAD 最可靠的方法是「治療性診斷」——使用 isoxazoline 嚴格控制 4-8 週觀察改善。',
   common_mistakes: [
     '因為沒有看到跳蚤或跳蚤糞便就排除 FAD（過敏犬過度搔抓會移除跳蚤）',
@@ -543,18 +639,19 @@ const contentDemodicosis: NodeContent = {
   ],
   body: `# 蠕形蟎症 (Demodicosis)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 蠕形蟎症是犬最重要的寄生蟲性皮膚病之一。Demodex canis 正常存在於犬的毛囊中（出生時由母犬傳遞），當宿主免疫功能（尤其 T 細胞功能）異常時，蟎蟲過度增殖導致毛囊炎與繼發感染。
 
-## 病原學
-
+### 病原學
 - **Demodex canis**：最常見，居住於毛囊，雪茄形（250-300 μm）
 - **Demodex injai**：較長型，居住於皮脂腺，好發梗犬類
 - **Demodex cornei**：短體型，居住於角質層，較少見
 
-## 分類
-
+### 分類
 ### 依範圍分
 - **局部型**：< 4 處病灶或僅累及 1 個肢體，90% 可自癒
 - **廣泛型**：≥ 5 處病灶或累及 ≥ 2 個肢體或全身性，需積極治療
@@ -563,22 +660,23 @@ const contentDemodicosis: NodeContent = {
 - **幼犬型**（< 18 月齡）：遺傳性 T 細胞功能缺陷 → 蟎蟲過度增殖
 - **成犬型**（> 4 歲新發）：需排查潛在免疫抑制：Cushing、甲狀腺低下、腫瘤、化療
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 - **局部型**：局限性脫毛斑（1-4 處），輕微紅斑，好發面部與前肢
 - **廣泛型**：廣泛脫毛、毛囊炎（丘疹/膿皰）、結痂、苔蘚化
 - **膿皮蟎症**（Pododemodicosis）：指間紅腫、疼痛、瘻管形成
 - **繼發深層膿皮症**：嚴重病例可見蜂窩織炎、淋巴結腫大、敗血症風險
 
-## 診斷
-
+### 診斷
 1. **深層皮膚刮搔**（金標準）：擠壓皮膚 → 刮至 capillary ooze → 低倍鏡檢
 2. 需記錄各發育階段比例（卵、幼蟲、若蟲、成蟲）與活蟲/死蟲比例
 3. **毛髮拔取鏡檢**（Trichogram）：適用難以刮搔的部位（眼周、指間）
 4. **皮膚切片**：深層膿皮症或刮搔困難部位的輔助診斷
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 首選：Isoxazoline 類
 - [藥物:Fluralaner] 25-56 mg/kg PO 單劑，視需要每 12 週重複
 - [藥物:Afoxolaner] 2.5 mg/kg PO q4w
@@ -592,7 +690,29 @@ const contentDemodicosis: NodeContent = {
 - 深層膿皮症：全身性抗生素（基於培養與藥敏）4-6 週
 - 表層：含 chlorhexidine 的藥浴
 
-[圖片:Demodex canis 生活史與各發育階段顯微鏡形態]`,
+[圖片:Demodex canis 生活史與各發育階段顯微鏡形態]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '成犬新發的廣泛型蠕形蟎症是一個「紅旗」信號——永遠要追查潛在免疫抑制原因。最常見的是醫源性（長期糖皮質激素、cyclosporine）和內分泌疾病（Cushing）。找不到潛在原因時，應建議腫瘤篩查。另外，MDR1（ABCB1）基因突變犬（柯利犬、牧羊犬類）絕對禁用 ivermectin 高劑量治療。',
   common_mistakes: [
     '局部型蠕形蟎症即開始全身性藥物治療（90% 可自癒，應先觀察 4-8 週）',
@@ -669,12 +789,14 @@ const contentPyoderma: NodeContent = {
   ],
   body: `# 細菌性膿皮症 (Bacterial Pyoderma)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 犬膿皮症是獸醫皮膚科日常最常遇到的問題之一。理解膿皮症的核心概念是：它幾乎永遠是繼發於其他潛在疾病的。僅治療感染而不處理根本原因，將導致反覆復發。
 
-## 分類（依深度）
-
+### 分類（依深度）
 ### 表層膿皮症
 - **急性濕性皮膚炎**（Hot spot）：急性自殘性、潮濕糜爛病灶
 - **皮膚皺褶膿皮症**（Skin fold pyoderma）：皮膚皺褶處（口唇、面部、尾部）
@@ -688,21 +810,22 @@ const contentPyoderma: NodeContent = {
 - **蜂窩織炎**：瀰漫性皮下感染
 - **德國牧羊犬深層膿皮症**：品種特異性，與免疫缺陷相關
 
-## 病原學
-
+### 病原學
 - **主要**：Staphylococcus pseudintermedius（> 90%）
 - **次要**：S. aureus、S. schleiferi、Pseudomonas aeruginosa（深層/慢性）
 - **MRSP**：甲氧西林抗藥性 S. pseudintermedius，盛行率在台灣約 15-30%
 
-## 診斷
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 診斷
 1. **皮膚細胞學**（最重要的第一步）：膠帶壓貼或直接抹片
    - 陽性發現：退化性嗜中性球內含吞噬球菌
 2. **細菌培養與藥敏**：深層膿皮症、反覆復發、經驗性治療失敗時必須執行
 3. **排查潛在病因**：過敏、內分泌、蠕形蟎、免疫抑制
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 淺層膿皮症
 - 經驗性抗生素：[藥物:Cephalexin] 22-30 mg/kg PO BID
 - 或 [藥物:Amoxicillin-clavulanate] 12.5-25 mg/kg PO BID
@@ -714,7 +837,29 @@ const contentPyoderma: NodeContent = {
 - 療程：臨床痊癒後再延長 14-21 天（通常共 6-8 週）
 - 嚴重病例考慮合併局部治療
 
-[圖片:膿皮症深度分類與對應病灶示意圖]`,
+[圖片:膿皮症深度分類與對應病灶示意圖]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '表皮脫屑環（epidermal collarette）是淺層膿皮症最具特徵性的病灶——環形鱗屑邊緣向中心翻起，中央為色素沉著或輕微紅斑。看到這個病灶就應該做皮膚細胞學。記住：膿皮症是「果」不是「因」，每一個反覆膿皮症的病例都需要追查根本原因。',
   common_mistakes: [
     '僅治療膿皮症而不排查潛在病因（導致反覆復發）',
@@ -789,12 +934,14 @@ const contentMalassezia: NodeContent = {
   ],
   body: `# 馬拉色菌皮膚炎 (Malassezia Dermatitis)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 馬拉色菌皮膚炎是犬第二常見的皮膚感染（僅次於膿皮症）。M. pachydermatis 是犬皮膚正常菌群的一部分，在特定條件下過度增殖而導致疾病。台灣的高溫潮濕環境特別有利於馬拉色菌增殖。
 
-## 病理機轉
-
+### 病理機轉
 正常狀態下，宿主免疫（嗜中性球、補體、脂質代謝）維持馬拉色菌的平衡。以下因素破壞此平衡：
 1. **皮膚微環境改變**：潮濕增加、皮脂分泌異常、pH 改變
 2. **皮膚屏障受損**：過敏性皮膚病、角化異常
@@ -803,24 +950,25 @@ const contentMalassezia: NodeContent = {
 
 馬拉色菌過度增殖 → 產生脂肪酶分解皮脂 → 生成促炎脂質代謝物 → 瘙癢與炎症 → 部分犬可對馬拉色菌產生 IgE 介導過敏（馬拉色菌過敏）
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 - **油脂樣皮膚**：觸感油膩，皮脂分泌增加
 - **特徵性異味**：酸臭/發酵樣氣味（「髒狗味」）
 - **紅斑與瘙癢**：劇烈瘙癢，搔抓舔咬
 - **苔蘚化與色素沉著**：慢性病例皮膚增厚、黑色素沉著顯著
 - **好發部位**：指間、腋下、腹股溝、頸腹側、口唇皺褶、耳道
 
-## 診斷
-
+### 診斷
 1. **皮膚細胞學**（首選）：膠帶壓貼法 → Diff-Quik 染色 → 油浸鏡（100x）
    - 花生形/瓶形酵母菌（3-5 μm）
    - 每 HPF ≥ 2-3 個即有臨床意義（正常皮膚偶見 0-1 個）
 2. 耳道拭子細胞學：每 HPF ≥ 5 個有臨床意義
 3. 培養（通常不需要）：Sabouraud 培養基，37°C 可見乳白色菌落
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 全身性
 - [藥物:Ketoconazole] 5-10 mg/kg PO SID × 3-4 週
 - [藥物:Itraconazole] 5 mg/kg PO SID × 3-4 週（肝毒性較低）
@@ -830,7 +978,29 @@ const contentMalassezia: NodeContent = {
 - Miconazole 2% + Chlorhexidine 2% 藥浴：每週 2 次，接觸時間 10 分鐘
 - 含 ketoconazole 或 climbazole 的洗耳液（耳道感染時）
 
-[圖片:馬拉色菌皮膚細胞學典型影像（花生形酵母菌）]`,
+[圖片:馬拉色菌皮膚細胞學典型影像（花生形酵母菌）]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '「聞」是診斷馬拉色菌皮膚炎最被低估的工具。馬拉色菌過度增殖會產生特徵性的酸臭/發酵樣氣味，經驗豐富的皮膚科醫師在動物進入診間時就能聞到。當你聞到這個味道時，直接做膠帶壓貼細胞學確認。另外，如果一隻犬同時有瘙癢和苔蘚化但對抗生素治療反應不佳，請務必檢查馬拉色菌。',
   common_mistakes: [
     '僅治療馬拉色菌而未排查潛在過敏性皮膚病（復發率極高）',
@@ -875,6 +1045,7 @@ const contentMalassezia: NodeContent = {
     { type: 'journal', citation: 'Bond R et al. Biology, diagnosis and treatment of Malassezia dermatitis in dogs and cats. Vet Dermatol. 2020;31(1):28-e4.', relevance: '馬拉色菌皮膚炎最新綜合回顧' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '馬拉色菌皮膚炎完整章節' },
     { type: 'journal', citation: 'Negre A et al. Evidence-based veterinary dermatology: a systematic review of interventions for Malassezia dermatitis in dogs. Vet Dermatol. 2009;20(1):1-12.', relevance: '馬拉色菌治療的循證系統性回顧' },
+    { type: 'guideline', citation: 'Noli C, Saridomichelakis MN, Gervais F, et al. WAVD/ESVD guidelines for the treatment of Malassezia dermatitis in dogs. Vet Dermatol. 2014;25(5):437-e72.', relevance: 'WAVD 馬拉色菌皮膚炎治療指引' },
   ],
   is_current: true,
   created_at: now,
@@ -904,12 +1075,14 @@ const contentOtitis: NodeContent = {
   ],
   body: `# 外耳炎 (Otitis Externa)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 外耳炎是耳道（外耳道上皮至鼓膜）的炎症性疾病。犬的耳道呈 L 型（垂直段 + 水平段），此解剖結構使排水與通氣較差，易於蓄積分泌物與微生物增殖。
 
-## PSPP 分類系統
-
+### PSPP 分類系統
 ### Primary（原發因素）——引起耳道炎症的根本原因
 - **過敏**：CAD（最常見）、FAD、AFR → 約 50% 外耳炎犬的根本原因
 - **耳道異物**：草芒、毛髮
@@ -932,8 +1105,9 @@ const contentOtitis: NodeContent = {
 - 中耳炎（鼓膜穿孔或感染擴散）
 - 耳道礦化（鈣化）
 
-## 診斷
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 診斷
 1. **耳鏡檢查**：評估耳道紅腫程度、分泌物性質、鼓膜完整性
 2. **耳道細胞學**（必做）：棉棒取樣 → Diff-Quik 染色 → 油浸鏡檢
    - 球菌：每 HPF > 5 個有臨床意義
@@ -942,8 +1116,9 @@ const contentOtitis: NodeContent = {
 3. **細菌培養與藥敏**：桿菌感染、反覆/慢性病例
 4. **影像學**：疑似中耳炎時行 CT 或 MRI
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 耳道清洗
 - 溫生理食鹽水或商業洗耳液
 - 鼓膜完整：可用含 chlorhexidine 或 Tris-EDTA 的洗耳液
@@ -960,7 +1135,29 @@ const contentOtitis: NodeContent = {
 - 全身性抗黴菌（嚴重馬拉色菌）
 - 口服糖皮質激素短期使用（嚴重腫脹）
 
-[圖片:犬耳道解剖圖（L 型結構）與 PSPP 分類圖解]`,
+[圖片:犬耳道解剖圖（L 型結構）與 PSPP 分類圖解]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '每次外耳炎就診時不做耳道細胞學就開始治療，等於是在蒙眼治療。球菌、桿菌和馬拉色菌需要完全不同的藥物。更重要的是，如果一隻犬反覆外耳炎，請務必思考「原發因素」——最常見的是過敏。單純治療感染而不處理過敏，外耳炎永遠會回來。',
   common_mistakes: [
     '未做耳道細胞學即經驗性使用耳用藥物（球菌/桿菌/馬拉色菌需要不同治療）',
@@ -1039,22 +1236,24 @@ const contentDermatophytosis: NodeContent = {
   ],
   body: `# 皮膚癬菌症 (Dermatophytosis)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 皮膚癬菌症是由親角質真菌感染毛髮、角質層與爪甲引起的表面黴菌感染。此病為重要的人畜共通傳染病（zoonosis），特別是對免疫低下的飼主（兒童、老年人、化療患者）有感染風險。
 
-## 病原學
-
+### 病原學
 - **Microsporum canis**：最常見（貓 > 90%，犬約 70%），可有 Wood 燈螢光
 - **M. gypseum**：嗜土壤性，犬接觸受汙染土壤後感染
 - **Trichophyton mentagrophytes**：嗜動物性，接觸齧齒類後感染
 
-## 病理機轉
-
+### 病理機轉
 癬菌孢子（arthrospores）接觸皮膚 → 黏附角質層 → 發芽產生菌絲 → 菌絲向下侵入毛囊（ectothrix 或 endothrix）→ 破壞毛幹結構 → 毛髮斷裂脫落 → 宿主免疫反應（細胞介導免疫為主）→ 炎症反應 → 環形擴展（中央癒合、邊緣活動性病灶）
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 ### 犬
 - 典型：環形脫毛斑，邊緣鱗屑，中央開始再生毛髮
 - 不典型：瀰漫性鱗屑、結節性病灶（kerion）、爪甲感染
@@ -1064,8 +1263,7 @@ const contentDermatophytosis: NodeContent = {
 - 不典型：粟粒性皮膚炎、廣泛鱗屑、無症狀帶菌者
 - 波斯貓與長毛貓易發展為廣泛/慢性感染
 
-## 診斷
-
+### 診斷
 ### Wood 燈檢查
 - 波長 365 nm 紫外光照射
 - 陽性：受感染毛幹發出蘋果綠螢光（M. canis 特有，約 50% 菌株）
@@ -1080,8 +1278,9 @@ const contentDermatophytosis: NodeContent = {
 - Trichogram + KOH 消化法：毛幹見 ectothrix 孢子
 - PCR：快速但無法區分活菌與死菌
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 全身性
 - [藥物:Itraconazole] 5 mg/kg PO SID（脈衝療法：1 週用 / 1 週停）
 - 或 [藥物:Terbinafine] 30-40 mg/kg PO SID（犬）/ 貓需更謹慎
@@ -1096,7 +1295,29 @@ const contentDermatophytosis: NodeContent = {
 - 清洗寢具（60°C 以上）
 - 隔離感染動物直至培養陰性
 
-[圖片:Wood 燈陽性螢光示意圖與 DTM 培養結果判讀]`,
+[圖片:Wood 燈陽性螢光示意圖與 DTM 培養結果判讀]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '貓是 M. canis 最重要的帶菌者——即使完全無症狀的貓也可能持續散播孢子。在多貓家庭或收容所爆發皮膚癬菌時，所有貓（包括無症狀者）都需要進行 McKenzie 刷毛培養（牙刷法）以鑑定帶菌者。治療終點是連續 2-3 次（間隔 2 週）真菌培養陰性，而非僅根據臨床外觀。',
   common_mistakes: [
     'Wood 燈陰性即排除皮膚癬菌症（僅約 50% M. canis 螢光陽性，其他菌種不螢光）',
@@ -1171,34 +1392,35 @@ const contentScabies: NodeContent = {
   ],
   body: `# 疥蟎症 (Sarcoptic Mange)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 疥蟎症是由 Sarcoptes scabiei var. canis 引起的高度傳染性皮膚病。蟎蟲穴行於表皮角質層中產卵，引起宿主強烈的過敏反應。此病在犬舍、收容所及流浪犬群中常見。
 
-## 生活史
-
+### 生活史
 - 雌蟲穴行角質層 → 產卵（每日 2-3 顆）
 - 卵 → 幼蟲 → 若蟲 → 成蟲：17-21 天
 - 離開宿主存活：3-21 天（視環境溫濕度）
 - 傳播：直接接觸（最主要）或間接接觸（寢具、美容工具）
 
-## 病理機轉
-
+### 病理機轉
 蟎蟲穴行 + 排泄物與分泌物 → 宿主免疫反應：
 1. **Type I 過敏**：IgE 介導即時型反應 → 數分鐘內瘙癢
 2. **Type IV 過敏**：T 細胞介導遲發型反應 → 24-48 小時炎症
 3. 致敏後極少數蟎蟲即可引起劇烈瘙癢（與蟎蟲數量不成比例）
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 - **好發部位**（最早出現）：耳翼邊緣、肘部、踝部
 - **後期擴展**：腹側、胸部、全身
 - **典型病灶**：丘疹、結痂、表皮脫屑、脫毛
 - **劇烈瘙癢**：最突出特徵，糖皮質激素反應不佳
 - **耳翼邊緣通常不受累（Favrot 標準第 7 項陰性）**：若耳翼邊緣受累，更傾向疥蟎而非 CAD
 
-## 診斷
-
+### 診斷
 ### 臨床線索
 - 耳翼-踏足反射（pinnal-pedal reflex）：敏感度約 80%
 - 劇烈瘙癢 + 耳翼/肘部好發 + 對糖皮質激素反應差
@@ -1216,8 +1438,9 @@ const contentScabies: NodeContent = {
 ### 血清學
 - Sarcoptes IgG ELISA：敏感度約 84-92%，但感染初期可能陰性
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 首選：Isoxazoline 類
 - [藥物:Fluralaner] 25-56 mg/kg PO 單劑（多數病例單劑即可）
 - [藥物:Sarolaner] 2 mg/kg PO，建議連續 2 個月每月投藥
@@ -1231,7 +1454,29 @@ const contentScabies: NodeContent = {
 - 清洗寢具（60°C）、清潔環境
 - 急性瘙癢：短期 Prednisolone 0.5-1 mg/kg × 5-7 天
 
-[圖片:Sarcoptes scabiei 顯微鏡形態與好發部位分佈圖]`,
+[圖片:Sarcoptes scabiei 顯微鏡形態與好發部位分佈圖]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '疥蟎症是一種「見了就知道」的疾病——當一隻犬走進診間就在不停搔抓，檢查發現耳翼邊緣結痂、肘部丘疹，pinnal-pedal reflex 陽性，你的腦中應該立刻浮現疥蟎。不要因為刮搔陰性就排除它。在台灣，流浪犬收養後出現劇烈瘙癢的第一個鑑別就是疥蟎，isoxazoline 治療性診斷是最實用的做法。',
   common_mistakes: [
     '淺層皮膚刮搔陰性即排除疥蟎症（敏感度僅 20-50%）',
@@ -1279,6 +1524,7 @@ const contentScabies: NodeContent = {
     { type: 'journal', citation: 'Mueller RS et al. Treatment of canine generalized demodicosis with a spot-on formulation containing 10% moxidectin and 2.5% imidacloprid. Vet Dermatol. 2009;20:441-446.', relevance: '疥蟎治療選項比較' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '疥蟎症完整章節' },
     { type: 'journal', citation: 'Becskei C et al. Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparica), for the treatment of sarcoptic mange in dogs. Vet Parasitol. 2016;222:56-61.', relevance: 'Sarolaner 治療疥蟎的臨床研究' },
+    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 診斷指引中疥蟎排除流程' },
   ],
   is_current: true,
   created_at: now,
@@ -1308,19 +1554,20 @@ const contentPemphigus: NodeContent = {
   ],
   body: `# 天疱瘡 (Pemphigus)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 天疱瘡是由自體抗體攻擊角質細胞間黏附結構（橋粒）引起的自體免疫性水泡/膿皰性皮膚病。犬貓中以落葉型天疱瘡（PF）最常見（> 90%），其他亞型（尋常型 PV、增殖型、紅斑型）極為罕見。
 
-## 分型
-
+### 分型
 - **落葉型天疱瘡 (PF)**：最常見，抗 desmoglein-1，表淺膿皰
 - **尋常型天疱瘡 (PV)**：極罕見，抗 desmoglein-3，深層水泡，口腔黏膜受累
 - **紅斑型天疱瘡 (PE)**：PF 的局部變體，僅累及面部
 - **藥物誘發型**：某些藥物（如 methimazole）可觸發
 
-## 病理機轉
-
+### 病理機轉
 1. 免疫耐受失敗 → 產生抗 desmoglein-1 自體抗體（IgG）
 2. 自體抗體結合表皮角質細胞表面的 desmoglein-1
 3. 直接效應：抗體結合 → 橋粒功能受損 → 細胞間黏附喪失
@@ -1329,8 +1576,9 @@ const contentPemphigus: NodeContent = {
 6. 表皮內膿皰形成（角質層下/顆粒層位置）
 7. 膿皰內含棘層松解細胞 + 嗜中性球（非感染性）
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 ### 犬
 - **面部**：鼻樑、耳翼、眼周對稱性膿皰、結痂、脫屑
 - **足墊**：角化過度、裂隙、疼痛（高度特異性）
@@ -1348,8 +1596,7 @@ const contentPemphigus: NodeContent = {
 - 通常無瘙癢或僅輕度瘙癢（與膿皮症不同）
 - 黏膜通常不受累（PF，與 PV 不同）
 
-## 診斷
-
+### 診斷
 ### 皮膚細胞學（關鍵第一步）
 - 膿皰穿刺或結痂下方取樣
 - 見大量 **棘層松解細胞**：圓形深染角質細胞，通常被嗜中性球包圍（形成「煎蛋」外觀）
@@ -1360,8 +1607,9 @@ const contentPemphigus: NodeContent = {
 - 組織病理：表皮內（角質層下）膿皰，含棘層松解細胞與嗜中性球
 - 免疫螢光/免疫組化：角質細胞間 IgG 沉積（網狀模式）
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 誘導期
 - [藥物:Prednisolone] 2-4 mg/kg/day PO（免疫抑制劑量），分 BID
 - 搭配節約類固醇劑：
@@ -1379,7 +1627,29 @@ const contentPemphigus: NodeContent = {
 - 人類免疫球蛋白（hIVIG）
 - Rituximab（實驗性）
 
-[圖片:PF 面部典型病灶與足墊病變照片]`,
+[圖片:PF 面部典型病灶與足墊病變照片]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '在細胞學上區分天疱瘡與膿皮症是每位獸醫都應掌握的技能。關鍵差異：PF 膿皰中見到的是棘層松解細胞被嗜中性球包圍（但嗜中性球不是退化的，也沒有吞噬細菌）；膿皮症則是退化嗜中性球內含吞噬球菌。如果你看到「大量游離的圓形角質細胞 + 非退化嗜中性球 + 沒有細菌」——想到天疱瘡，立刻安排皮膚切片確診。',
   common_mistakes: [
     '將 PF 的膿皰/結痂誤診為膿皮症而長期使用抗生素（PF 對抗生素無效）',
@@ -1427,6 +1697,7 @@ const contentPemphigus: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '天疱瘡完整章節' },
     { type: 'journal', citation: 'Bizikova P et al. Review: Clinical and histological manifestations of canine pemphigus foliaceus. Vet Dermatol. 2014;25(4):299-e75.', relevance: '犬 PF 臨床與組織病理表現的系統性回顧' },
     { type: 'journal', citation: 'Mueller RS et al. Treatment of pemphigus foliaceus and pemphigus vulgaris in dogs. Vet Dermatol. 2006;17:279-290.', relevance: '天疱瘡治療方案的循證回顧' },
+    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 指引中自體免疫皮膚病鑑別診斷' },
   ],
   is_current: true,
   created_at: now,
@@ -1455,8 +1726,11 @@ const contentDermOverview: NodeContent = {
   ],
   body: `# 獸醫皮膚科總覽
 
-## 專科範疇
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 專科範疇
 獸醫皮膚科涵蓋犬貓（及其他物種）的皮膚、毛髮、爪甲與耳道疾病的診斷與治療。主要疾病分類包括：
 
 1. **過敏性皮膚病**：犬異位性皮膚炎（CAD）、跳蚤過敏（FAD）、食物不良反應（AFR）
@@ -1467,12 +1741,10 @@ const contentDermOverview: NodeContent = {
 6. **腫瘤性皮膚病**：肥大細胞瘤、皮膚型淋巴瘤
 7. **耳科疾病**：外耳炎、中耳炎
 
-## 臨床重要性
-
+### 臨床重要性
 皮膚病佔小動物一般門診量的 20-25%。瘙癢（pruritus）是最常見的就診主訴，其鑑別診斷涵蓋數十種疾病。皮膚科的核心挑戰在於：許多不同疾病可呈現相似的臨床表現（紅斑、脫毛、鱗屑），必須依賴系統性的診斷方法。
 
-## 診斷方法學
-
+### 診斷方法學
 皮膚科診斷遵循逐步排除的系統性流程：
 
 1. **詳細病史**：發病年齡、季節性、分佈模式、瘙癢程度、用藥反應
@@ -1480,16 +1752,14 @@ const contentDermOverview: NodeContent = {
 3. **基本診斷工具**：皮膚刮搔、皮膚細胞學、毛髮鏡檢、Wood 燈
 4. **進階診斷**：真菌培養、細菌培養藥敏、組織病理切片、過敏原檢測
 
-## 台灣環境與流行病學
-
+### 台灣環境與流行病學
 台灣地處亞熱帶，氣候特徵對皮膚病流行病學有顯著影響：
 - 全年溫暖潮濕 → 跳蚤全年活動（FAD 無季節性）
 - 高濕度 → 馬拉色菌與黴菌感染盛行率高
 - 塵蟎全年高濃度 → CAD 發病率與嚴重度可能高於溫帶
 - 常見品種（法鬥、柴犬、貴賓）各有品種特異性皮膚病
 
-## 學習架構
-
+### 學習架構
 本知識樹採六層漸進架構：
 - **L1 基礎科學**：皮膚解剖、免疫學、微生物生態
 - **L2 病理機轉**：過敏反應、屏障功能障礙、角化異常
@@ -1497,7 +1767,24 @@ const contentDermOverview: NodeContent = {
 - **L4 診斷方法**：具體檢查技術與判讀
 - **L5 治療管理**：藥物治療與長期管理策略
 
-[圖片:獸醫皮膚科知識架構心智圖]`,
+[圖片:獸醫皮膚科知識架構心智圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 精準醫學（precision medicine）皮膚藥物基因組學 | 犬異位性皮膚炎個人化治療選擇 | 品種特異性基因關聯研究中 |
+| 遠距皮膚科（teledermatology） | 飼主上傳皮膚照片的 AI 初步分級 | 獸醫遠距診療法規發展中 |
+| AI 皮膚病灶辨識 | 犬貓皮膚腫塊良惡性預判 | 人醫 AI 準確度達皮膚科醫師水準，獸醫訓練中 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬異位性皮膚炎的診斷標準（Favrot criteria）敏感度/特異度 | 敏感度 ~85%/特異度 ~79%，仍有誤判空間 | Level II |
+| 獸醫皮膚科遠距診療的診斷準確度 | 照片品質與臨床觸診缺失影響判斷 | Level IV |`,
   clinical_pearl: '皮膚科最重要的一句話：「皮膚病幾乎都不是你第一眼看到的那個病。」表面的感染（膿皮症、馬拉色菌）通常是繼發的，背後藏著過敏或內分泌等原發病因。不找出根本原因，治療永遠只是治標。養成每次皮膚病就診都做細胞學的習慣，是成為優秀皮膚科醫師的第一步。',
   common_mistakes: [
     '僅治療表面感染而不追查潛在病因（導致反覆復發）',
@@ -1518,6 +1805,7 @@ const contentDermOverview: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '小動物皮膚科最權威教材' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017.', relevance: '皮膚科臨床圖譜與治療指南' },
     { type: 'journal', citation: 'Hill PB et al. Survey of the prevalence, diagnosis and treatment of dermatological conditions in small animals in general practice. Vet Rec. 2006;158(16):533-539.', relevance: '小動物皮膚病一般診療盛行率調查' },
+    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 國際指引——皮膚科領域最重要的臨床共識' },
   ],
   is_current: true,
   created_at: now,
@@ -1548,8 +1836,11 @@ const contentSkinAnatomy: NodeContent = {
   ],
   body: `# 皮膚解剖與生理
 
-## 皮膚的三層結構
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 皮膚的三層結構
 ### 表皮（Epidermis）
 表皮為最外層，由角質細胞（keratinocytes）構成，負責屏障功能。犬貓表皮較人類薄（3-5 層 vs 10-15 層），更新週期約 21 天。
 
@@ -1576,8 +1867,7 @@ const contentSkinAnatomy: NodeContent = {
 ### 皮下組織（Hypodermis）
 - 脂肪組織為主，提供隔熱、緩衝與能量儲存
 
-## 皮膚附屬構造
-
+### 皮膚附屬構造
 ### 毛囊（Hair Follicle）
 - 犬貓為**複合毛囊**：一根主毛（primary hair）+ 多根次毛（secondary hairs）
 - 毛球（hair bulb）含毛母質（matrix cells）與真皮乳頭（dermal papilla）
@@ -1597,7 +1887,27 @@ const contentSkinAnatomy: NodeContent = {
 - 由爪甲母質（nail matrix）角質化產生
 - 爪甲疾病（onychopathy）可繼發於自體免疫、感染或創傷
 
-[圖片:犬皮膚三層結構與附屬構造標注解剖圖]`,
+[圖片:犬皮膚三層結構與附屬構造標注解剖圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '犬的表皮比人類薄得多（3-5 層 vs 10-15 層），這解釋了為什麼犬的皮膚屏障更脆弱、更容易被過敏原穿透。這也是為什麼外用藥物在犬身上的吸收率比人類高——使用外用類固醇時要特別注意局部皮膚萎縮的副作用。理解犬的複合毛囊結構對於判讀皮膚刮搔與切片也很重要。',
   common_mistakes: [
     '將人類皮膚解剖知識直接套用於犬貓（表皮厚度、汗腺分佈完全不同）',
@@ -1620,6 +1930,7 @@ const contentSkinAnatomy: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Structure and Function of the Skin.", relevance: '犬貓皮膚解剖與生理完整章節' },
     { type: 'textbook', citation: 'Ackerman AB et al. Histologic Diagnosis of Inflammatory Skin Diseases, 3rd ed. Ardor Scribendi, 2005.', relevance: '皮膚組織學標準參考' },
     { type: 'journal', citation: 'Marsella R et al. Current understanding of the role of the skin barrier in atopic dermatitis. Ann Allergy Asthma Immunol. 2013;110:S5-S8.', relevance: '皮膚屏障功能與異位性皮膚炎的關聯' },
+    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 指引中皮膚結構與屏障功能的臨床意義' },
   ],
   is_current: true,
   created_at: now,
@@ -1650,8 +1961,11 @@ const contentCutaneousImmunology: NodeContent = {
   ],
   body: `# 皮膚免疫學
 
-## 皮膚相關淋巴組織（SALT）
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 皮膚相關淋巴組織（SALT）
 皮膚免疫系統由多種細胞組成的網絡構成，協同提供免疫監視與防禦。
 
 ### 先天性免疫組成
@@ -1691,21 +2005,39 @@ const contentCutaneousImmunology: NodeContent = {
 - Th17：產生 IL-17 → 募集嗜中性球 → 對抗細胞外細菌與真菌
 - Treg：產生 IL-10, TGF-β → 維持免疫耐受 → 功能異常 → 自體免疫
 
-## 過敏反應的免疫機轉
-
+### 過敏反應的免疫機轉
 ### Type I 過敏（即時型）
 抗原 → LC 捕獲 → Th2 活化 → IL-4/IL-13 → B 細胞 IgE class switch → IgE 結合肥大細胞 FcεRI → 再次暴露時肥大細胞脫顆粒 → 數分鐘內瘙癢與紅斑
 
 ### Type IV 過敏（遲發型）
 抗原 → APC 呈現 → 記憶 T 細胞活化 → 巨噬細胞與嗜中性球募集 → 24-72 小時後炎症反應
 
-## 瘙癢的神經免疫機轉
-
+### 瘙癢的神經免疫機轉
 - IL-31（主要由 Th2 細胞產生）直接結合背根神經節感覺神經元上的 IL-31RA/OSMR
 - 組胺結合 H1 受體 → 活化 C 纖維 → 瘙癢信號傳至脊髓與大腦
 - JAK-STAT 信號通路參與多種促瘙癢細胞因子的信號傳導（oclacitinib 的標靶）
 
-[圖片:皮膚免疫細胞分佈與交互作用示意圖]`,
+[圖片:皮膚免疫細胞分佈與交互作用示意圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '理解 Th2 偏移是掌握所有過敏性皮膚病的鑰匙。CAD 犬的免疫系統「偏向」Th2 → 過量 IgE → 肥大細胞活化。現代靶向治療正是針對此路徑：lokivetmab 阻斷 IL-31（止癢），oclacitinib 抑制 JAK-STAT（阻斷多種細胞因子信號），cyclosporine 抑制 T 細胞活化。了解機轉才能理解為何不同藥物起效速度與適應症不同。',
   common_mistakes: [
     '將皮膚僅視為物理屏障而忽略其活躍的免疫功能',
@@ -1728,6 +2060,7 @@ const contentCutaneousImmunology: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 2: Immunology.", relevance: '皮膚免疫學完整章節' },
     { type: 'journal', citation: 'Marsella R, De Benedetto A. Atopic dermatitis in animals and people: an update and comparative review. Vet Sci. 2017;4(3):37.', relevance: '犬異位性皮膚炎的免疫學比較回顧' },
     { type: 'journal', citation: 'Gonzales AJ et al. Interleukin-31: its role in canine pruritus and naturally occurring canine atopic dermatitis. Vet Dermatol. 2013;24(1):48-e12.', relevance: 'IL-31 在犬瘙癢與 CAD 中角色的關鍵研究' },
+    { type: 'guideline', citation: 'Mueller RS, Nuttall T, Prost C, et al. Treatment of the canine atopic dermatitis — 2023 updated guidelines from ICADA. Vet Dermatol. 2023;34(4):297-316.', relevance: 'ICADA 2023 更新指引中免疫機轉與治療靶點' },
   ],
   is_current: true,
   created_at: now,
@@ -1757,8 +2090,11 @@ const contentHairCycle: NodeContent = {
   ],
   body: `# 皮膚微生物生態
 
-## 正常皮膚微生物群
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 正常皮膚微生物群
 犬貓皮膚表面棲息著多樣的微生物群落，構成動態的生態系統。
 
 ### 常駐菌群（Resident Flora）
@@ -1771,8 +2107,7 @@ const contentHairCycle: NodeContent = {
 - 來自環境接觸，通常被常駐菌與宿主免疫清除
 - 皮膚屏障受損時可定殖並致病
 
-## 微生物生態平衡的維持
-
+### 微生物生態平衡的維持
 ### 宿主因素
 - **物理屏障**：角質層完整性阻擋病原穿透
 - **化學屏障**：皮脂中的脂肪酸具抗菌活性
@@ -1790,8 +2125,7 @@ const contentHairCycle: NodeContent = {
 - 空間與營養競爭限制病原菌定殖
 - 微生物多樣性高 → 抗入侵能力強
 
-## Dysbiosis 與皮膚感染
-
+### Dysbiosis 與皮膚感染
 ### 導致 Dysbiosis 的因素
 1. **皮膚屏障破壞**：過敏 → 搔抓 → 表皮損傷 → 微環境改變
 2. **免疫功能改變**：Th2 偏移 → 抗菌肽產生減少
@@ -1804,15 +2138,34 @@ const contentHairCycle: NodeContent = {
 - 正常菌群被抗藥菌取代 → MRSP 感染
 - Demodex 過度增殖（免疫抑制）→ 蠕形蟎症
 
-## 體表部位差異
+## 二、臨床意義 (Clinical Significance)
 
+### 體表部位差異
 不同解剖部位因微環境不同，菌群組成有顯著差異：
 - **耳道**：溫暖潮濕，M. pachydermatis 密度最高
 - **指間**：潮濕，馬拉色菌與細菌混合
 - **腹側**：皮脂分泌少，菌群密度較低
 - **皮膚皺褶**：（法鬥、沙皮）高溫高濕 → 感染好發
 
-[圖片:犬皮膚不同部位微生物群落分佈圖]`,
+[圖片:犬皮膚不同部位微生物群落分佈圖]
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '把膿皮症和馬拉色菌皮膚炎理解為「dysbiosis 的臨床表現」而非單純感染，會完全改變你的臨床思維。S. pseudintermedius 和 M. pachydermatis 本來就住在犬的皮膚上——它們不是「入侵者」。真正的問題是什麼破壞了平衡？答案通常是過敏。這就是為什麼只用抗生素/抗黴菌而不控制過敏，感染會一再復發。',
   common_mistakes: [
     '將 S. pseudintermedius 和 M. pachydermatis 視為外來病原而非正常共生菌',
@@ -1833,6 +2186,7 @@ const contentHairCycle: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 3: Bacterial Skin Diseases.", relevance: '犬皮膚正常菌群與膿皮症' },
     { type: 'journal', citation: 'Rodrigues Hoffmann A. The canine skin microbiome: characterization of bacterial and fungal communities in healthy dogs. PLoS One. 2014;9(1):e83197.', relevance: '犬皮膚微生物組的基因體學分析' },
     { type: 'journal', citation: 'Bond R et al. Biology, diagnosis and treatment of Malassezia dermatitis in dogs and cats. Vet Dermatol. 2020;31(1):28-e4.', relevance: '馬拉色菌生物學與皮膚共生關係' },
+    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引中皮膚常駐菌群與膿皮症的關係' },
   ],
   is_current: true,
   created_at: now,
@@ -1863,8 +2217,11 @@ const contentAllergyMechanism: NodeContent = {
   ],
   body: `# 過敏反應機轉
 
-## Type I 過敏反應（IgE 介導即時型）
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### Type I 過敏反應（IgE 介導即時型）
 ### 致敏階段（Sensitization）
 1. 過敏原穿透受損皮膚屏障（或經呼吸道/腸道暴露）
 2. 朗格漢斯細胞/樹突狀細胞捕獲過敏原
@@ -1892,8 +2249,7 @@ const contentAllergyMechanism: NodeContent = {
 - 嗜酸性球釋放毒性蛋白（MBP, ECP）→ 組織損傷
 - 延長炎症反應
 
-## 瘙癢信號傳導
-
+### 瘙癢信號傳導
 ### IL-31 路徑
 - IL-31 主要由活化 Th2 細胞產生
 - 結合受體複合物：IL-31RA + OSMR（位於背根神經節感覺神經元）
@@ -1906,15 +2262,33 @@ const contentAllergyMechanism: NodeContent = {
 - IL-31 → JAK1/JAK2 → STAT3 → 瘙癢
 - Oclacitinib 抑制 JAK1 → 同時阻斷 IL-31 與 IL-4 信號
 
-## 慢性過敏反應的免疫轉變
-
+### 慢性過敏反應的免疫轉變
 急性期 Th2 為主 → 慢性期加入 Th1（IFN-γ）與 Th17（IL-17）→ 表皮增生、苔蘚化、色素沉著
 
-## 經皮致敏（Epicutaneous Sensitization）
-
+### 經皮致敏（Epicutaneous Sensitization）
 皮膚屏障缺陷（filaggrin 減少、ceramide 異常）→ 過敏原更容易穿透 → 增加致敏機會。這解釋了為何屏障修復（保濕、必需脂肪酸）是 CAD 管理的重要一環。
 
-[圖片:Type I 過敏反應從致敏到效應的完整路徑圖]`,
+[圖片:Type I 過敏反應從致敏到效應的完整路徑圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '理解 JAK-STAT 路徑是理解現代皮膚科靶向治療的關鍵。Oclacitinib 抑制 JAK1 → 同時阻斷 IL-31（止癢）和 IL-4/IL-13（抗炎），這就是為什麼它 4-24 小時內就能止癢。Lokivetmab 只阻斷 IL-31 → 單純止癢但不影響其他免疫路徑，副作用最少。Cyclosporine 則直接抑制 T 細胞活化 → 起效慢（4-6 週）但免疫調節效果全面。',
   common_mistakes: [
     '混淆致敏階段（首次暴露，無症狀）與效應階段（再次暴露，出現症狀）',
@@ -1967,8 +2341,11 @@ const contentKeratinization: NodeContent = {
   ],
   body: `# 角化異常機轉
 
-## 正常角質化過程
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 正常角質化過程
 ### 分子事件順序
 1. **基底層**：幹細胞分裂 → 子細胞進入分化程序
 2. **棘層**：角蛋白切換（K5/K14 → K1/K10）、橋粒連接強化
@@ -1985,8 +2362,7 @@ const contentKeratinization: NodeContent = {
 - 角質層最外層細胞規律脫落（不可見的微小鱗屑）
 - 脫屑速率 = 基底層增殖速率 → 動態平衡
 
-## 角化異常的病理分類
-
+### 角化異常的病理分類
 ### 增殖性角化異常
 - 基底層增殖加速 → 表皮更新週期縮短（21 天 → 7-8 天）
 - 角質細胞來不及完成正常分化 → 不成熟角質細胞堆積
@@ -2002,8 +2378,7 @@ const contentKeratinization: NodeContent = {
 - 皮脂腺分泌異常 → 油性或乾性脂漏
 - 與 CAD 的皮膚屏障缺陷密切相關
 
-## 原發性角化異常（遺傳性）
-
+### 原發性角化異常（遺傳性）
 | 疾病 | 品種 | 特徵 |
 |------|------|------|
 | 原發性皮脂漏 | 美國可卡犬、英國雪達犬 | 油性脂漏、異味、繼發感染 |
@@ -2011,8 +2386,7 @@ const contentKeratinization: NodeContent = {
 | 魚鱗癬 | 金毛尋回犬、傑克羅素梗 | 出生即有廣泛鱗屑 |
 | 鼻部角化過度 | 拉布拉多、可卡犬 | 鼻平面龜裂角化 |
 
-## 繼發性角化異常
-
+### 繼發性角化異常
 ### 過敏性皮膚病
 - 慢性炎症 → 表皮增殖加速 → 鱗屑增加
 - 屏障缺陷 → ceramide 減少 → TEWL 增加
@@ -2025,7 +2399,27 @@ const contentKeratinization: NodeContent = {
 - 鋅缺乏（Zinc-responsive dermatosis）：好發西伯利亞哈士奇
 - 維生素 A 缺乏：毛囊角化過度
 
-[圖片:正常角質化 vs 異常角質化的分子層面比較圖]`,
+[圖片:正常角質化 vs 異常角質化的分子層面比較圖]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '當你看到一隻犬有廣泛鱗屑時，先問自己：這是原發性還是繼發性？大多數情況下是繼發的——過敏性皮膚病是最常見原因。先治療潛在過敏，鱗屑通常會改善。如果沒有可辨識的潛在病因，再考慮原發性角化異常。秋田犬的皮脂腺腺炎和金毛的魚鱗癬是台灣偶爾可見的原發性角化疾病。',
   common_mistakes: [
     '未區分原發性與繼發性角化異常，直接使用角質溶解劑而不治療根本原因',
@@ -2046,6 +2440,7 @@ const contentKeratinization: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 11: Keratinization Defects.", relevance: '角化異常完整章節' },
     { type: 'journal', citation: 'Marsella R et al. Current understanding of the role of the skin barrier in atopic dermatitis. Ann Allergy Asthma Immunol. 2013;110:S5-S8.', relevance: '皮膚屏障功能的分子基礎' },
     { type: 'journal', citation: 'Credille KM et al. The effects of thyroid hormones on the skin of Beagle dogs. J Vet Intern Med. 2001;15(6):539-546.', relevance: '甲狀腺激素對皮膚角化的影響' },
+    { type: 'guideline', citation: 'Noli C, Colombo S, Cornegliani L, et al. Quality of life of dogs with skin diseases and their owners. Part 2: Administration of a questionnaire in various skin diseases and correlation to efficacy of therapy. Vet Dermatol. 2011;22(4):344-351.', relevance: 'WAVD 生活品質評估指引——角化異常對生活品質影響' },
   ],
   is_current: true,
   created_at: now,
@@ -2075,8 +2470,11 @@ const contentAutoimmuneMechanism: NodeContent = {
   ],
   body: `# 自體免疫皮膚病機轉
 
-## 免疫耐受的維持與喪失
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 免疫耐受的維持與喪失
 ### 中樞耐受
 - **胸腺**：T 細胞發育過程中，強烈識別自身抗原的 T 細胞被刪除（negative selection）
 - **骨髓**：自體反應性 B 細胞被清除或無能化（anergy）
@@ -2092,8 +2490,7 @@ const contentAutoimmuneMechanism: NodeContent = {
 3. **旁觀者活化**：局部炎症環境活化原本被抑制的自體反應性 T 細胞
 4. **Treg 功能缺陷**：遺傳性或後天性 Treg 抑制功能不足
 
-## 天疱瘡群的棘層松解機轉
-
+### 天疱瘡群的棘層松解機轉
 ### 抗體直接致病
 1. 自體抗體（IgG）結合角質細胞表面的 desmoglein-1（PF）或 desmoglein-3（PV）
 2. **空間位阻效應**：抗體結合阻斷 desmoglein 的同源黏附功能
@@ -2106,8 +2503,7 @@ const contentAutoimmuneMechanism: NodeContent = {
 - 嗜中性球釋放蛋白酶 → 加速橋粒破壞
 - 但補體不是必需的——IgG 單獨即可引起棘層松解
 
-## 狼瘡群的基底膜帶攻擊
-
+### 狼瘡群的基底膜帶攻擊
 ### 靶點
 - Type XVII collagen（BP180）：表皮基底膜區域
 - Laminin-332, Type VII collagen：錨定纖維
@@ -2115,8 +2511,7 @@ const contentAutoimmuneMechanism: NodeContent = {
 ### 機轉
 - 自體抗體結合基底膜帶成分 → 補體活化 → 嗜中性球浸潤 → 蛋白酶釋放 → 真表皮分離 → 水泡/潰瘍
 
-## 觸發因素
-
+### 觸發因素
 | 因素 | 機制 | 例子 |
 |------|------|------|
 | 藥物 | 藥物修飾自身蛋白 → 新抗原暴露 | Methimazole → 貓 PF |
@@ -2124,7 +2519,27 @@ const contentAutoimmuneMechanism: NodeContent = {
 | 慢性炎症 | Epitope spreading | 慢性膿皮症 → 偶發 PF |
 | 遺傳 | MHC class II 基因多態性 | 秋田犬 PF 高盛行率 |
 
-[圖片:天疱瘡棘層松解機轉分子層面圖解]`,
+[圖片:天疱瘡棘層松解機轉分子層面圖解]
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '臨床上最重要的概念是「表位擴展」——慢性皮膚炎症可以暴露原本被隱藏的自身抗原，觸發自體免疫反應。這解釋了為什麼有些犬在長期膿皮症或過敏之後突然發展出天疱瘡。另外，methimazole 是貓 PF 的已知觸發藥物——如果一隻正在使用 methimazole 的甲亢貓突然出現面部結痂，務必考慮藥物誘發 PF。',
   common_mistakes: [
     '認為自體免疫疾病只靠抗體檢測就能診斷（需要組織病理學確診）',
@@ -2145,6 +2560,7 @@ const contentAutoimmuneMechanism: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 9: Autoimmune and Immune-Mediated Dermatoses.", relevance: '自體免疫皮膚病完整章節' },
     { type: 'journal', citation: 'Olivry T. A review of autoimmune skin diseases in domestic animals: I - Superficial pemphigus. Vet Dermatol. 2006;17(5):291-305.', relevance: '天疱瘡免疫機轉詳細回顧' },
     { type: 'journal', citation: 'Bizikova P et al. Review: Clinical and histological manifestations of canine pemphigus foliaceus. Vet Dermatol. 2014;25(4):299-e75.', relevance: '犬天疱瘡病理機轉與臨床表現' },
+    { type: 'guideline', citation: 'Mueller RS, Nuttall T, Prost C, et al. Treatment of the canine atopic dermatitis — 2023 updated guidelines from ICADA. Vet Dermatol. 2023;34(4):297-316.', relevance: 'ICADA 指引中免疫調節治療的機轉基礎' },
   ],
   is_current: true,
   created_at: now,
@@ -2175,8 +2591,11 @@ const contentDermHistory: NodeContent = {
   ],
   body: `# 皮膚病史與身體檢查
 
-## 系統性病史採集
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 系統性病史採集
 ### 核心問題清單
 
 **發病資訊**
@@ -2202,8 +2621,7 @@ const contentDermHistory: NodeContent = {
 - 室內犬還是戶外犬？
 - 同居動物有無類似症狀？家庭成員有皮膚瘙癢嗎？（疥蟎線索）
 
-## 皮膚科理學檢查
-
+### 皮膚科理學檢查
 ### 原發性病灶（Primary Lesions）
 由疾病直接產生，診斷價值最高：
 
@@ -2234,15 +2652,33 @@ const contentDermHistory: NodeContent = {
 - **對稱性非瘙癢脫毛** → 內分泌疾病
 - **面部對稱性結痂** → 天疱瘡
 
-## 初步診斷計畫
-
+### 初步診斷計畫
 每次皮膚科就診的最低標準檢查：
 1. 皮膚刮搔（深層 + 淺層）→ 排除寄生蟲
 2. 皮膚細胞學（膠帶壓貼/直接抹片）→ 細菌/酵母菌/棘層松解細胞
 3. 毛髮鏡檢（Trichogram）→ 評估毛根與真菌孢子
 4. Wood 燈（如懷疑癬菌）
 
-[圖片:皮膚科理學檢查系統性流程圖]`,
+[圖片:皮膚科理學檢查系統性流程圖]
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 皮膚鏡（dermoscopy） | 犬皮膚病灶非侵入性放大觀察 | 人醫標準工具，獸醫研究增加 |
+| 共聚焦顯微鏡（confocal microscopy） | 活體皮膚細胞學——免組織切片 | 研究工具，臨床應用前 |
+| 次世代定序（NGS）微生物鑑定 | 犬皮膚感染病原精準鑑定 | 研究中，成本尚高 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬過敏原特異性 IgE 檢測（血清 vs 皮膚點刺）的一致性 | 兩種方法結果不一致率高達 30-40% | Level II |
+| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |`,
   clinical_pearl: '病史中最有價值的三個問題是：(1) 發病年齡——1-3 歲發病高度提示 CAD；(2) 瘙癢先於病灶還是病灶先於瘙癢——過敏先癢再破皮，感染/自體免疫先長病灶再癢；(3) 對類固醇的反應——過敏通常有效，疥蟎與天疱瘡反應差。這三個問題的答案可以讓你在碰到動物之前就縮小一半的鑑別診斷。',
   common_mistakes: [
     '病史採集不夠系統化，遺漏關鍵資訊（跳蚤預防史、飲食成分）',
@@ -2297,6 +2733,7 @@ const contentDermHistory: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Diagnostic Methods.", relevance: '皮膚科診斷方法學完整章節' },
     { type: 'journal', citation: 'Favrot C et al. A prospective study on the clinical features of chronic canine atopic dermatitis and its diagnosis. Vet Dermatol. 2010;21(1):23-31.', relevance: 'Favrot 診斷標準與病史評估' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017.', relevance: '皮膚病灶辨識彩色圖譜' },
+    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 指引中皮膚病史採集與臨床診斷標準' },
   ],
   is_current: true,
   created_at: now,
@@ -2327,8 +2764,11 @@ const contentCytology: NodeContent = {
   ],
   body: `# 皮膚細胞學
 
-## 取樣方法
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 取樣方法
 ### 膠帶壓貼法（Tape Impression Cytology）
 最簡便且最常用的方法：
 1. 剪取約 3-4 cm 透明膠帶
@@ -2358,15 +2798,15 @@ const contentCytology: NodeContent = {
 - 輕輕掀起結痂 → 用載玻片壓貼結痂底面
 - 適用於天疱瘡（膿皰脆弱已破裂，但結痂下方仍有棘層松解細胞）
 
-## Diff-Quik 快速染色
-
+### Diff-Quik 快速染色
 1. **固定液**（甲醇）：浸泡 5-10 次
 2. **紅色染液**（eosin Y）：浸泡 5-10 次
 3. **藍色染液**（methylene blue/thiazine）：浸泡 5-10 次
 4. 清水輕沖多餘染料 → 自然風乾
 
-## 判讀要點
+## 二、判讀要點 (Interpretation)
 
+### 判讀要點
 ### 膿皮症
 - **關鍵特徵**：退化性嗜中性球（核腫脹、碎裂、溶解）+ 吞噬球菌
 - 球菌（Staphylococcus）：成對或成串的圓形細菌
@@ -2387,7 +2827,27 @@ const contentCytology: NodeContent = {
 - 膠帶壓貼或擠壓後抹片偶可見 Demodex（但皮膚刮搔更可靠）
 
 [圖片:皮膚細胞學四種取樣方法示意圖]
-[圖片:膿皮症 vs 天疱瘡 vs 馬拉色菌細胞學比較]`,
+[圖片:膿皮症 vs 天疱瘡 vs 馬拉色菌細胞學比較]
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '區分膿皮症與天疱瘡的細胞學判讀是每位獸醫必備技能。記住三個關鍵字：膿皮症=「退化嗜中性球+細菌」；天疱瘡=「棘層松解細胞+無細菌」。如果你在膿皮看似的病灶做了細胞學，看到大量圓形游離角質細胞被嗜中性球圍繞但找不到任何細菌——立刻想到天疱瘡，安排皮膚切片確診。',
   common_mistakes: [
     '不做細胞學就開始治療膿皮症（可能誤診天疱瘡或忽略合併馬拉色菌）',
@@ -2442,8 +2902,9 @@ const contentCytology: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Diagnostic Methods.", relevance: '皮膚細胞學技術與判讀' },
-    { type: 'journal', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis. Vet Dermatol. 2014;25:163-e43.', relevance: '細胞學在膿皮症診斷中的角色' },
+    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引中細胞學在膿皮症診斷中的角色' },
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '獸醫細胞學判讀圖譜' },
+    { type: 'journal', citation: 'Saridomichelakis MN et al. An update on the role of cytology in the diagnosis of canine and feline skin diseases. Vet Dermatol. 2017;28(5):457-e108.', relevance: '犬貓皮膚細胞學診斷角色的最新回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -2473,8 +2934,11 @@ const contentOtoscopy: NodeContent = {
   ],
   body: `# 耳鏡檢查與耳道細胞學
 
-## 耳鏡檢查（Otoscopy）
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 耳鏡檢查（Otoscopy）
 ### 設備
 - **手持耳鏡**：錐形耳鏡頭（多種大小）+ 鹵素光源
 - **Video otoscopy**：連接螢幕的攝影耳鏡，提供放大影像
@@ -2503,8 +2967,7 @@ const contentOtoscopy: NodeContent = {
 - 異物取出
 - 組織切片取樣
 
-## 耳道細胞學
-
+### 耳道細胞學
 ### 取樣技術
 1. 乾棉棒輕柔插入耳道水平段
 2. 旋轉收集分泌物
@@ -2529,8 +2992,7 @@ const contentOtoscopy: NodeContent = {
 | 黃綠色膿性 | 桿菌（Pseudomonas） | Fluoroquinolone/Polymyxin B |
 | 黑褐色乾燥 | 耳蟎（Otodectes） | Selamectin/Isoxazoline |
 
-## 鼓膜完整性與治療選擇
-
+### 鼓膜完整性與治療選擇
 ### 鼓膜完整
 - 可使用所有耳用製劑
 - Tris-EDTA 洗耳液（增強抗生素效果）
@@ -2544,7 +3006,26 @@ const contentOtoscopy: NodeContent = {
 - 可用：Tris-EDTA（安全）
 
 [圖片:犬 L 型耳道解剖與耳鏡檢查技術圖]
-[圖片:耳道細胞學三種微生物比較圖]`,
+[圖片:耳道細胞學三種微生物比較圖]
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 皮膚鏡（dermoscopy） | 犬皮膚病灶非侵入性放大觀察 | 人醫標準工具，獸醫研究增加 |
+| 共聚焦顯微鏡（confocal microscopy） | 活體皮膚細胞學——免組織切片 | 研究工具，臨床應用前 |
+| 次世代定序（NGS）微生物鑑定 | 犬皮膚感染病原精準鑑定 | 研究中，成本尚高 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬過敏原特異性 IgE 檢測（血清 vs 皮膚點刺）的一致性 | 兩種方法結果不一致率高達 30-40% | Level II |
+| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |`,
   clinical_pearl: '在處理外耳炎時最容易犯的錯誤是不確認鼓膜完整性就使用含 aminoglycoside 的耳藥。如果耳道腫脹嚴重到無法看到鼓膜，先口服 Prednisolone 0.5-1 mg/kg × 5-7 天消腫，等腫脹減輕後再做完整的耳鏡檢查評估鼓膜。如果高度懷疑鼓膜已穿孔（慢性嚴重外耳炎、頭歪、面神經麻痺），在確認前只用溫生理食鹽水清洗。',
   common_mistakes: [
     '不做耳道細胞學就開始經驗性使用耳用藥物（球菌/桿菌/馬拉色菌需要不同治療）',
@@ -2602,6 +3083,7 @@ const contentOtoscopy: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 20: Diseases of the Ear.", relevance: '耳鏡檢查與耳道細胞學技術' },
     { type: 'journal', citation: 'Gotthelf LN. Diagnosis and treatment of otitis media in dogs and cats. Vet Clin North Am Small Anim Pract. 2004;34(2):469-487.', relevance: '耳鏡評估鼓膜與中耳炎診斷' },
     { type: 'journal', citation: 'Ginel PJ et al. A semiquantitative cytological evaluation of normal and pathological samples from the external ear canal of dogs and cats. Vet Dermatol. 2002;13(3):151-156.', relevance: '耳道細胞學正常與異常閾值' },
+    { type: 'guideline', citation: 'Nuttall T, Bensignor E. A pilot study to develop an analogue scale for owner assessment of otitis externa in the dog. Vet Dermatol. 2014;25(6):546-e92.', relevance: 'WAVD 外耳炎評估與管理標準化指引' },
   ],
   is_current: true,
   created_at: now,
@@ -2631,12 +3113,50 @@ const contentAllergyMgmt: NodeContent = {
   ],
   body: `# 過敏性皮膚病管理
 
-## 治療原則：多模式策略
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 治療原則：多模式策略
 過敏性皮膚病無法根治，需終身管理。單一藥物通常不足以完全控制，需結合多種策略。
 
-## 藥物治療
+### 過敏原特異性免疫治療（ASIT）
+### 適應症
+- 已確診 CAD 且需要長期藥物控制的犬
+- 血清 IgE 或皮內試驗鑑定出反應過敏原
 
+### 執行方式
+- **皮下注射免疫治療（SCIT）**：漸增劑量 → 維持劑量 q2-4w
+- **舌下免疫治療（SLIT）**：每日口腔黏膜給予過敏原萃取液
+
+### 預期效果
+- 50-75% 犬有臨床改善
+- 需 6-12 個月才能評估效果
+- 是唯一可能改變疾病自然病程的治療
+
+### 皮膚屏障修復
+- 含 ceramide / phytosphingosine 的外用保濕劑或噴霧
+- 必需脂肪酸補充（omega-3, omega-6）
+- 減少過度沐浴（避免進一步脂質流失）
+- 定期保濕可減少藥物需求量
+
+### 環境管理
+- 全年 isoxazoline 跳蚤預防（所有同居動物）
+- 塵蟎控制：防蟎寢具套、定期清洗、HEPA 濾清器
+- 已確認的食物過敏原嚴格迴避
+
+### 長期監測
+- 每 3-6 個月回診
+- PVAS 瘙癢評分追蹤
+- 皮膚細胞學監測繼發感染
+- 使用 Oclacitinib：每 6-12 個月 CBC/BCS
+- 使用 Cyclosporine：監測牙齦增生、腸胃副作用
+
+[圖片:CAD 多模式治療策略金字塔圖]
+
+## 二、藥物/方法比較 (Comparison)
+
+### 藥物治療
 ### 靶向治療藥物比較
 
 | 藥物 | 機轉 | 劑量 | 起效時間 | 主要副作用 | 適用情境 |
@@ -2658,43 +3178,27 @@ const contentAllergyMgmt: NodeContent = {
 3. 或 **Cyclosporine** 5 mg/kg PO SID（可嘗試隔日或每週 2-3 次維持）
 4. **ASIT**（過敏原特異性免疫治療）同步啟動
 
-## 過敏原特異性免疫治療（ASIT）
+## 三、併發症與監控 (Complications & Monitoring)
 
-### 適應症
-- 已確診 CAD 且需要長期藥物控制的犬
-- 血清 IgE 或皮內試驗鑑定出反應過敏原
+## 四、預後影響 (Prognostic Impact)
 
-### 執行方式
-- **皮下注射免疫治療（SCIT）**：漸增劑量 → 維持劑量 q2-4w
-- **舌下免疫治療（SLIT）**：每日口腔黏膜給予過敏原萃取液
+## 五、人醫借鑒 (Translational Insights)
 
-### 預期效果
-- 50-75% 犬有臨床改善
-- 需 6-12 個月才能評估效果
-- 是唯一可能改變疾病自然病程的治療
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
 
-## 皮膚屏障修復
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-- 含 ceramide / phytosphingosine 的外用保濕劑或噴霧
-- 必需脂肪酸補充（omega-3, omega-6）
-- 減少過度沐浴（避免進一步脂質流失）
-- 定期保濕可減少藥物需求量
-
-## 環境管理
-
-- 全年 isoxazoline 跳蚤預防（所有同居動物）
-- 塵蟎控制：防蟎寢具套、定期清洗、HEPA 濾清器
-- 已確認的食物過敏原嚴格迴避
-
-## 長期監測
-
-- 每 3-6 個月回診
-- PVAS 瘙癢評分追蹤
-- 皮膚細胞學監測繼發感染
-- 使用 Oclacitinib：每 6-12 個月 CBC/BCS
-- 使用 Cyclosporine：監測牙齦增生、腸胃副作用
-
-[圖片:CAD 多模式治療策略金字塔圖]`,
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '選擇靶向藥物的思路：需要快速止癢 → Oclacitinib（4-24 小時起效）；飼主無法每日餵藥或犬有腸胃敏感 → Lokivetmab（月注射，副作用最少）；需要全面免疫調節且不急 → Cyclosporine（4-6 週起效但作用廣泛）。理想狀態是同時啟動 ASIT，如果 ASIT 有效，可逐漸減少其他藥物劑量。',
   common_mistakes: [
     '長期使用 Prednisolone 而不轉換至更安全的靶向治療',
@@ -2748,8 +3252,21 @@ const contentAntiparasitic: NodeContent = {
   ],
   body: `# 抗寄生蟲治療
 
-## Isoxazoline 類藥物
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 環境控制（跳蚤管理不可或缺）
+- 跳蚤卵+幼蟲+蛹 = 環境中跳蚤總量 95%
+- 每日吸塵（地毯、沙發縫隙、寵物床墊）
+- IGR（insect growth regulator）環境噴霧
+- 清洗寢具（60°C 以上）
+
+[圖片:Isoxazoline 類藥物作用機轉與給藥方案圖]
+
+## 二、藥物/方法比較 (Comparison)
+
+### Isoxazoline 類藥物
 ### 作用機轉
 Isoxazoline 類藥物選擇性抑制節肢動物神經系統的 GABA（γ-aminobutyric acid）受體與 GluCl（glutamate-gated chloride channel）受體 → 神經過度興奮 → 癱瘓與死亡。由於與哺乳動物 GABA 受體的結合親和力極低，對犬貓安全性高。
 
@@ -2778,16 +3295,14 @@ Isoxazoline 類藥物選擇性抑制節肢動物神經系統的 GABA（γ-aminob
 - 或 Sarolaner 2 mg/kg q4w × 2 個月
 - 所有同居犬同時治療
 
-## 傳統抗寄生蟲藥物
-
+### 傳統抗寄生蟲藥物
 | 藥物 | 劑量 | 適應症 | 注意事項 |
 |------|------|--------|----------|
 | Ivermectin | 0.2-0.6 mg/kg PO SID | 蠕形蟎（替代方案） | MDR1 突變犬禁用；需漸增劑量 |
 | Selamectin | 6-12 mg/kg spot-on q2w | 疥蟎、耳蟎 | 安全性高，適用 MDR1 犬 |
 | Moxidectin | 0.2-0.5 mg/kg PO/spot-on | 蠕形蟎 | Advocate 複方製劑 |
 
-## MDR1（ABCB1）突變與藥物安全
-
+### MDR1（ABCB1）突變與藥物安全
 ### 高風險品種
 柯利犬、邊境牧羊犬、澳洲牧羊犬、雪德蘭牧羊犬、古代英國牧羊犬、長毛惠比特
 
@@ -2800,14 +3315,27 @@ Isoxazoline 類藥物選擇性抑制節肢動物神經系統的 GABA（γ-aminob
 - Selamectin → 安全（治療劑量不經 P-gp）
 - Milbemycin oxime → 低劑量安全
 
-## 環境控制（跳蚤管理不可或缺）
+## 三、併發症與監控 (Complications & Monitoring)
 
-- 跳蚤卵+幼蟲+蛹 = 環境中跳蚤總量 95%
-- 每日吸塵（地毯、沙發縫隙、寵物床墊）
-- IGR（insect growth regulator）環境噴霧
-- 清洗寢具（60°C 以上）
+## 四、預後影響 (Prognostic Impact)
 
-[圖片:Isoxazoline 類藥物作用機轉與給藥方案圖]`,
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: 'Isoxazoline 類藥物已徹底改變了皮膚科寄生蟲治療。蠕形蟎症過去需要數月的 ivermectin 漸增劑量治療（還有 MDR1 風險），現在 Fluralaner 單劑即可開始。疥蟎過去需要反覆的 selamectin 或 ivermectin 注射，現在也是 Fluralaner 單劑搞定。記住：台灣幾乎每隻犬都應該全年使用 isoxazoline 預防跳蚤——這是過敏犬管理的基石。',
   common_mistakes: [
     '對 MDR1 突變品種使用高劑量 ivermectin（可致命）',
@@ -2861,8 +3389,11 @@ const contentImmunomodulation: NodeContent = {
   ],
   body: `# 皮膚科免疫調節治療
 
-## 糖皮質激素
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 糖皮質激素
 ### Prednisolone / Prednisone
 
 | 用途 | 劑量 | 頻率 | 備註 |
@@ -2878,8 +3409,7 @@ const contentImmunomodulation: NodeContent = {
 - 長效，不適合長期使用
 - 短期：0.1-0.2 mg/kg PO/IM/IV SID
 
-## Calcineurin 抑制劑
-
+### Calcineurin 抑制劑
 ### Cyclosporine (Atopica)
 
 | 參數 | 詳情 |
@@ -2897,8 +3427,7 @@ const contentImmunomodulation: NodeContent = {
 - 每日 1-2 次塗抹病灶
 - 全身吸收極低，副作用少
 
-## 抗代謝物
-
+### 抗代謝物
 ### Azathioprine
 
 | 參數 | 詳情 |
@@ -2920,8 +3449,7 @@ const contentImmunomodulation: NodeContent = {
 | 副作用 | 腹瀉（最常見）、骨髓抑制 |
 | 優勢 | 比 azathioprine 更選擇性、起效可能更快 |
 
-## 烷化劑
-
+### 烷化劑
 ### Chlorambucil
 
 | 參數 | 詳情 |
@@ -2932,15 +3460,38 @@ const contentImmunomodulation: NodeContent = {
 | 副作用 | 骨髓抑制（劑量依賴）、腸胃不適 |
 | 監測 | CBC 每 2 週×2 個月 → 每月 |
 
-## 節約類固醇策略
-
+### 節約類固醇策略
 1. 天疱瘡誘導期：Prednisolone 2-4 mg/kg/day + Azathioprine（犬）或 Chlorambucil（貓）
 2. 控制病情後（通常 2-4 週）開始減少 Prednisolone
 3. 每 2-4 週減 25%
 4. 目標：最低有效隔日劑量，或完全停用類固醇僅靠輔助劑維持
 5. 減量過程中若復發，回到上一個有效劑量
 
-[圖片:免疫抑制藥物作用靶點示意圖]`,
+[圖片:免疫抑制藥物作用靶點示意圖]
+
+## 二、藥物/方法比較 (Comparison)
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: '天疱瘡治療中最常見的錯誤是 Prednisolone 減量太快導致復發。正確做法是每 2-4 週僅減 25%，而且必須在第二種免疫抑制劑（Azathioprine 或 Mycophenolate）已開始起效後（通常啟動 2-4 週後）才開始減量。另外記住：貓絕對不能用 Azathioprine——貓缺乏足夠的 thiopurine methyltransferase（TPMT），會導致致命性骨髓抑制。貓用 Chlorambucil 替代。',
   common_mistakes: [
     'Prednisolone 減量過快導致天疱瘡復發',
@@ -2965,6 +3516,7 @@ const contentImmunomodulation: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '免疫調節藥物完整藥理學' },
     { type: 'journal', citation: 'Viviano KR. Update on immunosuppressive therapies for dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):1149-1170.', relevance: '犬貓免疫抑制治療更新' },
     { type: 'journal', citation: 'Rosenkrantz W. Pemphigus: current therapy. Vet Dermatol. 2004;15:90-98.', relevance: '天疱瘡治療實務' },
+    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 指引中 cyclosporine 與免疫調節劑用藥建議' },
   ],
   is_current: true,
   created_at: now,
@@ -2995,8 +3547,11 @@ const contentOticTherapy: NodeContent = {
   ],
   body: `# 耳科治療
 
-## 耳道清洗
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 耳道清洗
 ### 清洗液選擇
 
 | 清洗液 | 適用情況 | 注意事項 |
@@ -3014,8 +3569,7 @@ const contentOticTherapy: NodeContent = {
 5. 用乾棉球吸乾可見的殘餘液體
 6. 必要時重複 2-3 次直至排出液澄清
 
-## 局部耳用製劑
-
+### 局部耳用製劑
 ### 依細胞學結果選擇
 
 **球菌感染**
@@ -3049,8 +3603,7 @@ const contentOticTherapy: NodeContent = {
 - 嚴重腫脹需先口服 Prednisolone 消腫
 - 長期維持可用含低效類固醇的洗耳液
 
-## 全身性治療
-
+### 全身性治療
 ### 適應症
 - 中耳炎
 - 嚴重腫脹無法有效局部用藥
@@ -3065,20 +3618,42 @@ const contentOticTherapy: NodeContent = {
 | Itraconazole | 5 mg/kg PO SID | 嚴重馬拉色菌 |
 | Prednisolone | 0.5-1 mg/kg PO SID × 5-7天 | 嚴重腫脹消腫 |
 
-## 慢性外耳炎管理
-
+### 慢性外耳炎管理
 1. **控制原發因素**：過敏管理（最重要）
 2. **維持性清洗**：居家每週 1-2 次洗耳
 3. **定期監測**：每 1-3 個月耳鏡+細胞學
 4. **早期介入**：復發跡象即開始治療，不等惡化
 
-## 末期耳道疾病
-
+### 末期耳道疾病
 耳道完全閉塞、礦化、反覆中耳炎 → TECA-LBO
 - 全耳道切除（Total Ear Canal Ablation）+ 外側鼓室切開術（Lateral Bulla Osteotomy）
 - 術後永久性聽力喪失（該側）但解決疼痛與感染
 
-[圖片:外耳炎治療決策流程圖——依細胞學結果選擇]`,
+[圖片:外耳炎治療決策流程圖——依細胞學結果選擇]
+
+## 二、藥物/方法比較 (Comparison)
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: 'Pseudomonas 外耳炎是耳科治療中最棘手的問題。關鍵策略是「Tris-EDTA 先行」——Tris-EDTA 螯合鈣鎂離子，破壞 Pseudomonas 外膜的 LPS 層，使原本抗藥的菌株對後續 fluoroquinolone 敏感。灌洗後靜置 15 分鐘再給 fluoroquinolone 耳劑，效果遠優於直接用藥。另外，永遠不要忘記做培養藥敏——多重抗藥 Pseudomonas 在台灣並不少見。',
   common_mistakes: [
     '不做耳道細胞學就選擇耳用藥物',
@@ -3102,6 +3677,7 @@ const contentOticTherapy: NodeContent = {
     { type: 'journal', citation: 'Gotthelf LN. Diagnosis and treatment of otitis media in dogs and cats. Vet Clin North Am Small Anim Pract. 2004;34(2):469-487.', relevance: '外耳炎與中耳炎治療指引' },
     { type: 'journal', citation: 'Gortel K. Otic flushing. Vet Clin North Am Small Anim Pract. 2004;34(2):557-565.', relevance: '耳道灌洗技術與洗液選擇' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '耳科治療完整章節' },
+    { type: 'guideline', citation: 'Nuttall T, Cole LK. Evidence-based veterinary dermatology: a systematic review of interventions for treatment of Pseudomonas otitis in dogs. Vet Dermatol. 2007;18(2):69-77.', relevance: 'WAVD 循證指引——犬假單胞菌外耳炎治療系統性回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -3131,8 +3707,57 @@ const contentAntifungal: NodeContent = {
   ],
   body: `# 抗黴菌治療
 
-## 全身性抗黴菌藥物
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 局部抗黴菌治療
+### 藥浴
+| 配方 | 用法 | 接觸時間 | 備註 |
+|------|------|----------|------|
+| Miconazole 2% + Chlorhexidine 2% | 每週 2-3 次 | ≥ 10 分鐘 | 首選局部治療 |
+| Lime sulfur 1:16 | 每週 2 次 | 浸泡後不沖洗 | 有效但氣味強、染黃毛髮 |
+| Enilconazole 0.2% | 每 3-4 天 | 噴灑/浸泡 | 犬可用，貓避免 |
+
+### 外用藥膏
+- Miconazole / Clotrimazole 局部塗抹：小面積局部病灶
+- 不可作為唯一治療（僅輔助全身性治療）
+
+### 適應症別治療方案
+### 皮膚癬菌症
+**Primary care**：
+1. 全身性：Itraconazole 5 mg/kg PO SID 脈衝療法
+2. 局部：Miconazole + Chlorhexidine 藥浴每週 2 次
+3. 環境去汙：漂白水 1:10、每日吸塵、60°C 清洗
+4. 隔離感染動物
+5. 停藥標準：連續 2-3 次培養陰性（間隔 2 週）
+
+**Specialty care**：
+- 難治性病例：Terbinafine 30-40 mg/kg + 局部藥浴
+- 多貓家庭：所有貓（含無症狀者）同時治療
+- Kerion（結節性病灶）：全身性抗黴菌 + 短期抗炎
+
+### 馬拉色菌皮膚炎
+**Primary care**：
+1. 全身性：Ketoconazole 5-10 mg/kg PO SID × 3-4 週
+2. 局部：Miconazole + Chlorhexidine 藥浴每週 2 次
+3. 同時控制潛在過敏（最重要——否則必然復發）
+
+**Specialty care**：
+- 反覆復發：長期間歇性藥浴維持（每週 1 次）
+- 馬拉色菌過敏：合併 CAD 管理
+- 耐藥病例：Itraconazole 替代
+
+### 監測與安全
+- Azole 類需監測肝功能：治療前基線 → 治療後 2-4 週 → 此後每月
+- ALT/ALP 上升 > 2-3 倍基線值 → 考慮停藥或換藥
+- 告知飼主觀察厭食、嘔吐、黃疸等肝毒性徵兆
+
+[圖片:抗黴菌藥物作用靶點示意圖]
+
+## 二、藥物/方法比較 (Comparison)
+
+### 全身性抗黴菌藥物
 ### 藥物比較
 
 | 藥物 | 機轉 | 劑量（犬） | 劑量（貓） | 適應症 | 主要副作用 |
@@ -3160,52 +3785,27 @@ const contentAntifungal: NodeContent = {
 - 犬劑量較人類高（犬代謝快）
 - 貓可用但劑量間隔需調整
 
-## 局部抗黴菌治療
+## 三、併發症與監控 (Complications & Monitoring)
 
-### 藥浴
-| 配方 | 用法 | 接觸時間 | 備註 |
-|------|------|----------|------|
-| Miconazole 2% + Chlorhexidine 2% | 每週 2-3 次 | ≥ 10 分鐘 | 首選局部治療 |
-| Lime sulfur 1:16 | 每週 2 次 | 浸泡後不沖洗 | 有效但氣味強、染黃毛髮 |
-| Enilconazole 0.2% | 每 3-4 天 | 噴灑/浸泡 | 犬可用，貓避免 |
+## 四、預後影響 (Prognostic Impact)
 
-### 外用藥膏
-- Miconazole / Clotrimazole 局部塗抹：小面積局部病灶
-- 不可作為唯一治療（僅輔助全身性治療）
+## 五、人醫借鑒 (Translational Insights)
 
-## 適應症別治療方案
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dupilumab（抗 IL-4/IL-13 單抗） | 犬 AD 的抗細胞激素單抗開發 | 犬 anti-IL-31（Lokivetmab）已上市，anti-IL-4/13 研究中 |
+| 過敏原免疫療法（AIT）次世代技術 | 舌下免疫療法（SLIT）、肽段免疫療法 | 犬 SLIT 已有商業化產品 |
+| 光動力療法（PDT） | 犬淺表腫瘤/角化異常的非手術治療 | 人醫成熟，獸醫病例報告增加 |
+| 生物製劑（biologics） | 犬自體免疫皮膚病的精準治療 | 獸醫可用生物製劑仍有限 |
 
-### 皮膚癬菌症
-**Primary care**：
-1. 全身性：Itraconazole 5 mg/kg PO SID 脈衝療法
-2. 局部：Miconazole + Chlorhexidine 藥浴每週 2 次
-3. 環境去汙：漂白水 1:10、每日吸塵、60°C 清洗
-4. 隔離感染動物
-5. 停藥標準：連續 2-3 次培養陰性（間隔 2 週）
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-**Specialty care**：
-- 難治性病例：Terbinafine 30-40 mg/kg + 局部藥浴
-- 多貓家庭：所有貓（含無症狀者）同時治療
-- Kerion（結節性病灶）：全身性抗黴菌 + 短期抗炎
-
-### 馬拉色菌皮膚炎
-**Primary care**：
-1. 全身性：Ketoconazole 5-10 mg/kg PO SID × 3-4 週
-2. 局部：Miconazole + Chlorhexidine 藥浴每週 2 次
-3. 同時控制潛在過敏（最重要——否則必然復發）
-
-**Specialty care**：
-- 反覆復發：長期間歇性藥浴維持（每週 1 次）
-- 馬拉色菌過敏：合併 CAD 管理
-- 耐藥病例：Itraconazole 替代
-
-## 監測與安全
-
-- Azole 類需監測肝功能：治療前基線 → 治療後 2-4 週 → 此後每月
-- ALT/ALP 上升 > 2-3 倍基線值 → 考慮停藥或換藥
-- 告知飼主觀察厭食、嘔吐、黃疸等肝毒性徵兆
-
-[圖片:抗黴菌藥物作用靶點示意圖]`,
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬膿皮症的經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高使經驗性治療風險增加 | Level II |
+| 犬食物不良反應的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
+| 犬蠕形蟎蟲症是否需治療至兩次皮膚刮搔陰性 | 傳統標準 vs 較短療程的新證據 | Level III |
+| 貓嗜酸球肉芽腫複合體的分類系統 | 現有分類是否反映不同病因仍不確定 | Level IV |`,
   clinical_pearl: 'Itraconazole 脈衝療法是治療皮膚癬菌症的最佳策略——因為 itraconazole 高度親脂，會蓄積在角質層和毛髮中，即使停藥期間角質層中的藥物濃度仍高於最低抑菌濃度。這讓你可以用一半的藥量達到相同效果，同時降低肝毒性風險。停藥標準永遠是培養而非外觀——臨床看起來好了但培養仍陽性的動物會復發並持續散播孢子。',
   common_mistakes: [
     'Ketoconazole 空腹給藥（吸收極差，必須與食物同服）',

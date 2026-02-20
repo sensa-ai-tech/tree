@@ -250,7 +250,7 @@ export const IM_CASES: CaseChallenge[] = [
   },
   // --- CASE-IM-004: 犬急性 IMHA ---
   {
-    id: 'CASE-IM-004', title: '柯乘犬急性免疫介導性溶血性貧血', specialty: 'IM', cross_specialties: ['ECC', 'CPATH'], required_nodes: ['IM-L3-005', 'IM-L2-003', 'IM-L5-003'], difficulty: 4, species: '犬',
+    id: 'CASE-IM-004', title: '柯基犬急性免疫介導性溶血性貧血', specialty: 'IM', cross_specialties: ['ECC', 'CPATH'], required_nodes: ['IM-L3-005', 'IM-L2-003', 'IM-L5-003'], difficulty: 4, species: '犬',
     scenario: { signalment: '5 歲已絕育雌性美國可卡犬，體重 12 kg', chief_complaint: '急性虛弱、黏膜蒼白黃疸、尿液呈暗紅色', brief_history: '昨日開始食慾下降、活力差。今日早上發現黏膜偏黃蒼白，尿液呈暗紅色。無外傷、無毒物接觸、無近期用藥。疫苗驅蟲皆定期。' },
     steps: [
       { step_number: 1, step_type: 'diagnostic_plan', title: '緊急檢查', prompt: '急性貧血 + 黃疸 + 暗紅色尿，第一線檢查？選擇 3 項。', available_actions: ['PCV/TS 管 + 血液抹片（含 saline agglutination test）', 'CBC 含 reticulocyte count', '血清生化（含 T-Bil）+ 凝血功能', 'Coombs test', '腹部超音波', '血型鑑定'], correct_actions: ['PCV/TS 管 + 血液抹片（含 saline agglutination test）', 'CBC 含 reticulocyte count', '血清生化（含 T-Bil）+ 凝血功能'], feedback_correct: '正確！PCV/TS 管最快速評估貧血程度 + 黃疸（血漿黃色）。血液抹片找 spherocytes + saline agglutination test 是 IMHA 的 point-of-care 確認。CBC reticulocyte 分類再生性。凝血排除 DIC。', feedback_incorrect: '急性溶血的緊急評估：(1) PCV/TS + 抹片（最快速）、(2) CBC + reticulocyte（確認再生性）、(3) 生化 + 凝血（併發症評估）。Coombs 是二線確認。', key_learning_points: ['PCV/TS 管是最快的貧血評估工具', 'Saline agglutination test：1 滴血 + 4 滴 saline，鏡下看凝集', '真正 agglutination vs rouleaux formation 的區分', 'Spherocytes 是 IMHA 的特徵性發現'] },

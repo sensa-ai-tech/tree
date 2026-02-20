@@ -44,4 +44,14 @@ export const SURG_EDGES: KnowledgeEdge[] = [
 
   // Cross-specialty hint
   { id: 'SURG-E-028', source_node_id: 'SURG-L3-005', target_node_id: 'SURG-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: 'IVDD 需脊椎影像判讀（MRI 為金標準）', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: missing L1/L2 → L3 prerequisite edges ---
+  { id: 'SURG-E-029', source_node_id: 'SURG-L2-002', target_node_id: 'SURG-L3-005', relation_type: 'prerequisite', weight: 0.8, description: '骨關節病理為椎間盤疾病(IVDD)的病理基礎', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: missing L3 → L4 clinical_apply edges ---
+  { id: 'SURG-E-030', source_node_id: 'SURG-L3-002', target_node_id: 'SURG-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '脾臟腫瘤需術前超音波/X 光影像評估', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-031', source_node_id: 'SURG-L3-003', target_node_id: 'SURG-L4-001', relation_type: 'clinical_apply', weight: 1, description: '腸道異物需腹部 X 光/超音波確診', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-032', source_node_id: 'SURG-L3-006', target_node_id: 'SURG-L4-001', relation_type: 'clinical_apply', weight: 0.7, description: '會陰疝氣需影像評估膀胱/前列腺位移', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-033', source_node_id: 'SURG-L3-008', target_node_id: 'SURG-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: '膝蓋骨脫位需骨科 X 光確認分級', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-034', source_node_id: 'SURG-L3-009', target_node_id: 'SURG-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '子宮蓄膿需超音波確認子宮積液', bidirectional: false, unlock_condition: null },
 ];

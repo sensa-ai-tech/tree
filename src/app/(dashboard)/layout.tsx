@@ -1,16 +1,19 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/layout/Navbar';
 import { Sidebar } from '@/components/layout/Sidebar';
+import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { DemoDataProvider } from '@/components/providers/DemoDataProvider';
 import { useAuthStore } from '@/stores/auth-store';
+import { cn } from '@/lib/utils/cn';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const { user, _hasHydrated } = useAuthStore();
   const [isChecking, setIsChecking] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (!_hasHydrated) return;
@@ -21,6 +24,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       setIsChecking(false);
     }
   }, [user, _hasHydrated, router]);
+
+  const handleOpenSidebar = useCallback(() => {
+    setSidebarOpen(true);
+  }, []);
+
+  const handleCloseSidebar = useCallback(() => {
+    setSidebarOpen(false);
+  }, []);
 
   // 等待 hydration 完成 + auth check
   if (!_hasHydrated || isChecking) {
@@ -37,11 +48,36 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <DemoDataProvider>
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
+        <Navbar onMenuClick={handleOpenSidebar} />
         <div className="flex">
-          <Sidebar />
-          <main className="flex-1 p-6 lg:p-8">{children}</main>
+          {/* 手機 overlay backdrop */}
+          {sidebarOpen && (
+            <div
+              className="fixed inset-0 z-40 bg-black/50 transition-opacity md:hidden"
+              onClick={handleCloseSidebar}
+              aria-hidden="true"
+            />
+          )}
+
+          {/* Sidebar: 手機 off-canvas drawer, 桌面 static */}
+          <Sidebar
+            className={cn(
+              'fixed inset-y-0 left-0 z-50 transition-transform duration-200 md:sticky md:top-14 md:z-auto md:h-[calc(100vh-3.5rem)]',
+              sidebarOpen
+                ? 'translate-x-0'
+                : '-translate-x-full md:translate-x-0'
+            )}
+            onClose={handleCloseSidebar}
+          />
+
+          {/* 主要內容區 — 手機底部留空給 bottom nav */}
+          <main className="min-w-0 flex-1 p-4 pb-20 md:p-6 md:pb-6 lg:p-8 lg:pb-8">
+            {children}
+          </main>
         </div>
+
+        {/* 手機底部導航 */}
+        <MobileBottomNav />
       </div>
     </DemoDataProvider>
   );

@@ -53,4 +53,37 @@ export const ECC_EDGES: KnowledgeEdge[] = [
 
   // 急診營養支持 (ECC-L5-005) edges
   { id: 'ECC-E-029', source_node_id: 'ECC-L2-002', target_node_id: 'ECC-L5-005', relation_type: 'clinical_apply', weight: 0.8, description: 'MODS 患者需早期營養支持', bidirectional: false, unlock_condition: null },
+
+  // ─── 審查補齊：L3 節點缺失的 prerequisite/builds_on (L1/L2→L3) 與 clinical_apply (L3→L4) 邊 ───
+
+  // ECC-L3-002 (DKA) — 缺 L3→L4
+  { id: 'ECC-E-030', source_node_id: 'ECC-L3-002', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: 'DKA 病例需 ABCDE 快速分診評估脫水與意識狀態', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-003 (中暑) — 缺 L3→L4
+  { id: 'ECC-E-031', source_node_id: 'ECC-L3-003', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '中暑病例需 ABCDE 分診評估循環與神經狀態', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-032', source_node_id: 'ECC-L3-003', target_node_id: 'ECC-L4-002', relation_type: 'clinical_apply', weight: 0.7, description: 'AFAST/TFAST 評估中暑是否併發腹腔積液或胸腔積液', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-005 (中毒急診) — 缺 L1/L2→L3 與 L3→L4
+  { id: 'ECC-E-033', source_node_id: 'ECC-L1-002', target_node_id: 'ECC-L3-005', relation_type: 'prerequisite', weight: 0.9, description: '中毒可導致嚴重體液與電解質失衡，需掌握基礎生理', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-034', source_node_id: 'ECC-L1-003', target_node_id: 'ECC-L3-005', relation_type: 'prerequisite', weight: 0.8, description: '中毒常引發代謝性酸中毒，需理解酸鹼平衡', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-035', source_node_id: 'ECC-L3-005', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 1, description: '中毒急診需 ABCDE 快速分診穩定生命徵象', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-006 (癲癇重積狀態) — 缺 L1/L2→L3 與 L3→L4
+  { id: 'ECC-E-036', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-006', relation_type: 'prerequisite', weight: 0.8, description: '癲癇重積可導致腦缺氧與休克，需理解休克生理學', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-037', source_node_id: 'ECC-L2-001', target_node_id: 'ECC-L3-006', relation_type: 'builds_on', weight: 0.7, description: '持續癲癇可觸發全身性發炎反應(SIRS)', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-038', source_node_id: 'ECC-L3-006', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '癲癇重積需 ABCDE 評估呼吸道通暢與循環穩定', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-007 (常見中毒各論) — 缺 L1/L2→L3
+  { id: 'ECC-E-039', source_node_id: 'ECC-L1-002', target_node_id: 'ECC-L3-007', relation_type: 'prerequisite', weight: 0.8, description: '各類中毒影響體液電解質平衡（如木糖醇致低血糖、百合致腎衰竭）', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-040', source_node_id: 'ECC-L2-002', target_node_id: 'ECC-L3-007', relation_type: 'builds_on', weight: 0.7, description: '嚴重中毒可進展為多重器官功能障礙', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-008 (蛇咬傷與蟾蜍中毒) — 缺 L1/L2→L3
+  { id: 'ECC-E-041', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-008', relation_type: 'prerequisite', weight: 0.9, description: '蛇毒可導致分布性休克與低血壓，需理解休克生理學', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-042', source_node_id: 'ECC-L1-002', target_node_id: 'ECC-L3-008', relation_type: 'prerequisite', weight: 0.8, description: '蛇咬傷液體復甦需掌握體液與電解質平衡', bidirectional: false, unlock_condition: null },
+
+  // ─── 補強：既有 L3 節點的額外臨床關聯邊 ───
+
+  // ECC-L3-004 (貓尿道阻塞) — 補充酸鹼平衡 prerequisite 與 ABCDE 分診
+  { id: 'ECC-E-043', source_node_id: 'ECC-L1-003', target_node_id: 'ECC-L3-004', relation_type: 'prerequisite', weight: 0.9, description: '貓尿道阻塞致高血鉀與代謝性酸中毒，需理解酸鹼平衡', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-044', source_node_id: 'ECC-L3-004', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '貓尿道阻塞需 ABCDE 評估心律與循環狀態（高血鉀致心律不整）', bidirectional: false, unlock_condition: null },
 ];

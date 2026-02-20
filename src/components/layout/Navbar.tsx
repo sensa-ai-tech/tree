@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, Bell, User, BookOpen } from 'lucide-react';
+import { Search, Bell, User, BookOpen, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { useAuthStore } from '@/stores/auth-store';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
@@ -10,9 +10,11 @@ import Link from 'next/link';
 
 interface NavbarProps {
   className?: string;
+  /** 手機端漢堡按鈕觸發 sidebar 開啟 */
+  onMenuClick?: () => void;
 }
 
-export function Navbar({ className }: NavbarProps) {
+export function Navbar({ className, onMenuClick }: NavbarProps) {
   const { user } = useAuthStore();
   const { setFilters } = useKnowledgeStore();
   const router = useRouter();
@@ -33,11 +35,23 @@ export function Navbar({ className }: NavbarProps) {
         className
       )}
     >
-      {/* Logo */}
-      <Link href="/" className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 transition-colors">
-        <BookOpen className="h-6 w-6" />
-        <span className="hidden sm:inline text-lg font-bold tracking-tight">VetKnowledgeTree</span>
-      </Link>
+      {/* Left: 漢堡按鈕 (手機) + Logo */}
+      <div className="flex items-center gap-2">
+        {onMenuClick && (
+          <button
+            type="button"
+            onClick={onMenuClick}
+            className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors md:hidden"
+            aria-label="開啟選單"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        )}
+        <Link href="/" className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 transition-colors">
+          <BookOpen className="h-6 w-6" />
+          <span className="hidden sm:inline text-lg font-bold tracking-tight">VetKnowledgeTree</span>
+        </Link>
+      </div>
 
       {/* Search */}
       <form onSubmit={handleSearchSubmit} className="mx-4 flex-1 max-w-md">

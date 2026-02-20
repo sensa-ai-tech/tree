@@ -40,4 +40,15 @@ export const NEURO_EDGES: KnowledgeEdge[] = [
 
   // L1 CSF → L4 CSF: same_system
   { id: 'NEURO-E-026', source_node_id: 'NEURO-L1-003', target_node_id: 'NEURO-L4-002', relation_type: 'same_system', weight: 0.8, description: 'CSF 生理與 CSF 分析同系統', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: missing L1/L2 → L3 prerequisite edges ---
+  { id: 'NEURO-E-027', source_node_id: 'NEURO-L1-003', target_node_id: 'NEURO-L3-003', relation_type: 'prerequisite', weight: 0.8, description: 'CSF 生理為 GME（腦脊髓液蛋白升高）的基礎概念', bidirectional: false, unlock_condition: null },
+
+  // --- Audit fix: missing L3 → L4 clinical_apply edges ---
+  { id: 'NEURO-E-028', source_node_id: 'NEURO-L3-004', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '前庭疾病需神經學檢查區分中樞 vs 周邊性', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-029', source_node_id: 'NEURO-L3-005', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '多發性神經根炎需神經學檢查評估下運動神經元徵象', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-030', source_node_id: 'NEURO-L3-006', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '重症肌無力需神經學檢查（Tensilon test）輔助診斷', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-031', source_node_id: 'NEURO-L3-007', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '退化性脊髓病變需神經學檢查排除可治療病因', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-032', source_node_id: 'NEURO-L3-004', target_node_id: 'NEURO-L4-003', relation_type: 'clinical_apply', weight: 0.7, description: '中樞性前庭疾病需 MRI 排除結構性病變', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-033', source_node_id: 'NEURO-L3-003', target_node_id: 'NEURO-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: 'GME 需 MRI 評估腦部病灶分布', bidirectional: false, unlock_condition: null },
 ];

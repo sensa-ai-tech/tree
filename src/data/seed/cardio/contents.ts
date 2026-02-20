@@ -23,22 +23,87 @@ const contentOverview: NodeContent = {
   ],
   body: `# 獸醫心臟科總覽
 
-獸醫心臟科（Veterinary Cardiology）是專門研究伴侶動物心血管系統疾病的專科領域。
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-## 學科架構
 
-本知識樹將心臟科知識分為六個層級：
 
-- **Layer 0**：學科總覽與入門概念
-- **Layer 1**：基礎科學（解剖、電生理、血流動力學）
-- **Layer 2**：病理機轉（瓣膜退化、心肌重塑、心律不整）
-- **Layer 3**：臨床疾病（MMVD、DCM、HCM、心絲蟲等）
-- **Layer 4**：診斷方法（聽診、超音波、ECG、X 光）
-- **Layer 5**：治療與管理（藥物治療、手術、慢性管理）
+### 一、核心概念 (Core Concept)
+獸醫心臟科（Veterinary Cardiology）是專門研究伴侶動物心血管系統疾病的專科領域。本知識樹將心臟科知識組織為六層漸進式架構：
 
-## 台灣臨床現況
+| 層級 | 名稱 | 內容範疇 | 節點數 |
+|------|------|---------|--------|
+| L0 | 學科總覽 | 入門概念、流行病學、學習路徑 | 1 |
+| L1 | 基礎科學 | 心臟解剖、電生理、血流動力學 | 3 |
+| L2 | 病理機轉 | 瓣膜退化、心肌重塑、心律不整機轉、血流動力學異常 | 4 |
+| L3 | 臨床疾病 | MMVD、DCM、HCM、心包膜積液、心絲蟲症 | 5 |
+| L4 | 診斷方法 | 聽診、心臟超音波、ECG、胸腔 X 光 | 4 |
+| L5 | 治療與管理 | 心衰竭藥物、抗心律不整藥、心包膜穿刺術 | 3 |
 
-台灣地處亞熱帶，[藥物:Ivermectin] 等心絲蟲預防藥物的使用極為重要。根據台灣獸醫內科學會統計，未預防犬隻的心絲蟲陽性率可達 20-40%。
+### 犬貓心臟病盛行率與疾病分布
+
+| 物種 | 最常見心臟病 | 盛行率 | 好發族群 |
+|------|------------|--------|---------|
+| 犬 | MMVD（二尖瓣黏液瘤性退化） | 後天心臟病 ~75% | 中老年小型犬（CKCS、馬爾濟斯、博美） |
+| 犬 | DCM（擴張型心肌病） | 後天心臟病 ~10-15% | 大型至巨型犬（杜賓犬 50-60%） |
+| 犬 | 心絲蟲症 | 地區差異大 | 台灣未預防犬 20-40% |
+| 貓 | HCM（肥厚型心肌病） | 所有心肌病 ~58-68% | 中年公貓、緬因貓、布偶貓 |
+| 貓 | RCM（限制型心肌病） | 所有心肌病 ~10-15% | 老年貓 |
+
+### 台灣臨床現況
+
+台灣地處亞熱帶，全年蚊蟲活動，為心絲蟲高盛行區。[藥物:Ivermectin] 等預防藥物的全年使用至關重要。根據台灣流行病學調查，未預防犬隻的心絲蟲陽性率可達 20-40%（南部高於北部）。近年隨飼養觀念改善，小型犬 MMVD 與貓 HCM 的診斷率持續上升。
+
+## 二、臨床意義 (Clinical Significance)
+
+### 二、臨床意義 (Clinical Significance)
+### 心臟科轉診指標
+
+| 情境 | 建議處置 | 急迫性 |
+|------|---------|--------|
+| 新診斷心雜音 ≥ Grade III/VI | 安排心臟超音波評估 | 常規 |
+| 心超顯示 MMVD B2（LA/Ao ≥ 1.6） | 開始 Pimobendan，考慮轉診 | 2 週內 |
+| 急性呼吸窘迫疑似 CHF | 緊急穩定 + 轉診 | 即刻 |
+| 貓急性後肢癱瘓（疑似 ATE） | 止痛 + 緊急轉診 | 即刻 |
+| 暈厥伴心律不整 | ECG + 轉診 Holter 評估 | 24-48 小時 |
+| 杜賓犬 ≥ 4 歲年度篩檢 | 心超 + Holter | 常規 |
+| 心包膜積液伴壓塞 | 緊急心包膜穿刺 + 轉診 | 即刻 |
+
+### 基層獸醫必備心臟科技能
+
+1. **心臟聽診**：系統性四點聽診法，辨識雜音等級與特徵
+2. **胸腔 X 光判讀**：VHS 測量、肺水腫辨識
+3. **基礎 ECG 判讀**：心率、節律、VPC 辨識
+4. **急性 CHF 穩定**：氧氣 + Furosemide IV + 胸水引流（貓）
+5. **居家監測教育**：教導飼主計算 sleeping RR
+
+## 三、人醫借鑒 (Translational Insights)
+
+### 三、人醫借鑑 (Translational Insights)
+| 人醫領域 | 概念/技術 | 獸醫應用現況 | 潛力評估 |
+|---------|----------|-------------|---------|
+| 遠端監測 | 穿戴式心律監測、居家體重追蹤 | Sleeping RR 居家監測概念已普及 | ★★★★ |
+| 生物標記 | BNP/NT-proBNP 指導 CHF 治療 | 獸醫採用中，cut-off 值仍需優化 | ★★★★ |
+| 經導管介入 | MitraClip、TAVI | 獸醫僅限實驗模型 | ★★☆☆ |
+| 精準醫療 | 基因篩檢導引治療 | 杜賓犬 PDK4、緬因貓 MYBPC3 已商業化 | ★★★☆ |
+| AI 輔助診斷 | AI-ECG、自動心超判讀 | 初步演算法開發中 | ★★★☆ |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 議題 | 現況 | 影響 |
+|------|------|------|
+| 犬 MMVD B1 是否需治療 | 僅 EPIC（B2）有 Level I 證據，B1 無 RCT | 大量 B1 犬隻是否應提早介入仍未定論 |
+| 貓無症狀 HCM 的藥物治療 | 無 RCT 支持 Atenolol 或 Diltiazem 改善預後 | 臨床醫師用藥習慣差異大 |
+| BEG 飲食與 DCM 的因果關係 | FDA 2018 警告後持續調查，缺乏 RCT | 飲食建議尚無共識 |
+| Pimobendan 在貓 HCM 的角色 | 僅限 end-stage/收縮功能障礙型，LVOTO 禁忌 | 缺乏大型貓 RCT |
+| 犬 AF 節律控制 vs 心率控制 | 獸醫幾乎僅用心率控制策略 | 人醫已有節律控制優勢證據（EAST-AFNET 4） |
+
+### 知識空缺
+
+- 台灣本土犬貓心臟病大規模流行病學數據不足
+- 貓心肌病基因學（除緬因貓/布偶貓外）仍有大量未知
+- 獸醫心臟介入治療（經導管瓣膜修復）的可行性與成本效益分析
+- 心臟病與慢性腎病共病管理的最佳策略（心腎症候群）
 
 [圖片:犬貓常見心臟病分佈圓餅圖]`,
   clinical_pearl: '每次理學檢查都應進行心臟聽診。即使是年輕健康動物，發現心雜音也需進一步評估——早期發現可顯著改善預後。',
@@ -57,7 +122,8 @@ const contentOverview: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed.', relevance: '心臟科基礎教材' },
-    { type: 'guideline', citation: 'ACVIM Consensus Statement on MMVD (2019)', relevance: 'MMVD 診斷與治療指引' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
+    { type: 'journal', citation: 'Atkins C et al. Guidelines for the diagnosis and treatment of canine chronic valvular heart disease. J Vet Intern Med. 2009;23(6):1142-1150.', relevance: '犬慢性瓣膜性心臟病診斷與治療文獻' },
   ],
   is_current: true,
   created_at: now,
@@ -86,41 +152,172 @@ const contentMMVD: NodeContent = {
   ],
   body: `# 二尖瓣黏液瘤性退化 (MMVD)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
-MMVD，又稱為慢性退行性瓣膜病（Chronic Degenerative Valvular Disease），是犬最常見的後天性心臟病。其特徵為二尖瓣葉的黏液樣變性（myxomatous degeneration），導致瓣膜增厚、脫垂與閉鎖不全。
 
-## 病理機轉
 
-瓣膜基質中糖胺聚醣（GAGs）異常沉積，導致：
-1. 瓣膜葉增厚與拉長
-2. 腱索延長甚至斷裂
-3. 二尖瓣閉鎖不全（mitral regurgitation, MR）
-4. 左心房容量過載 → 左心房擴大
-5. 代償性左心室擴大
-6. 最終可能導致充血性心衰竭（CHF）
+### 一、病理機制 (Pathophysiology)
+### 分子層級（已確認）
+瓣膜間質細胞（valvular interstitial cells, VICs）表型轉化為活化型肌纖維母細胞，分泌過量基質金屬蛋白酶（MMP-1, MMP-13），降解膠原蛋白並促進糖胺聚醣（GAGs）異常沉積。TGF-β 與 serotonin（5-HT）訊號通路上調為關鍵驅動因子。CKCS 品種已確認 MMVD 具多基因遺傳模式。
 
-## ACVIM 分期
+### 細胞→組織層級
+VICs 活化 → 瓣膜海綿層（spongiosa）GAGs 過度堆積 → 纖維層（fibrosa）膠原結構破壞 → 瓣膜增厚、脫垂 → 腱索延長/斷裂。
 
-[互動:ACVIM 分期互動圖表]
+### 器官→系統層級
+二尖瓣閉鎖不全（MR）→ 左心房容量過載 → LA 擴大 → 肺靜脈壓升高 → LV 離心性肥大（volume overload）→ RAAS 與 SNS 代償性活化 → 鈉水滯留 → 肺水腫（CHF）。
 
-| 分期 | 定義 | 臨床特徵 |
-|------|------|---------|
-| A | 高風險品種，無病變 | 無雜音，無結構改變 |
-| B1 | 有雜音，無心臟重塑 | LA/Ao < 1.6, LVIDDN 正常 |
-| B2 | 有雜音，有心臟重塑 | LA/Ao ≥ 1.6 或 LVIDDN 增加 |
-| C | 出現 CHF 臨床症狀 | 咳嗽、呼吸急促、運動不耐 |
-| D | 難治性心衰竭 | 對標準治療反應不佳 |
+> **類比**：如同水龍頭的止水墊片老化（瓣膜退化），水開始從關閉的水龍頭滲漏（逆流），下游管路承受額外水壓（左心房擴大），最終水管破裂溢水（肺水腫）。
 
-## 治療方案
+### 假說階段
+- 循環中 serotonin 濃度是否為獨立致病因子仍有爭議
+- 瓣膜內新生血管形成（neovascularization）的角色尚待釐清
+- 基因治療標靶（如 MMP 抑制劑）處於早期研究
 
-- **Stage A/B1**：定期追蹤，暫無藥物治療
-- **Stage B2**：開始 [藥物:Pimobendan] 0.25-0.3 mg/kg PO BID
-- **Stage C**：三合一療法
-  - [藥物:Furosemide] 2-4 mg/kg PO BID-TID
-  - [藥物:Pimobendan] 0.25-0.3 mg/kg PO BID
-  - [藥物:Enalapril] 或 [藥物:Benazepril] 0.5 mg/kg PO BID
-- **Stage D**：加強利尿劑、考慮 [藥物:Spironolactone]、[藥物:Sildenafil]
+[圖片:MMVD 病理機制瀑布圖——從分子到器官]
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+### 典型表現（發生率）
+| 臨床表現 | 發生率 | 特徵描述 |
+|----------|--------|---------|
+| 左心尖收縮期雜音 | >95% | Grade I-VI/VI，plateau 型 |
+| 咳嗽 | 60-70% | 夜間/清晨加劇（左主支氣管壓迫 vs 肺水腫） |
+| 運動不耐 | 50-60% | 散步距離縮短、喘息 |
+| 呼吸急促 | 30-40% | Sleeping RR > 30 次/分提示 CHF |
+| 昏厥 | 10-15% | 嚴重 MR 或合併心律不整 |
+
+### 非典型表現
+- 無症狀心雜音（Stage B1/B2，占確診時 40-50%）
+- 急性腱索斷裂致突發肺水腫（無前驅症狀）
+- 二尖瓣關閉不全合併肺高壓（右心衰竭為主：腹水、頸靜脈怒張）
+
+### 記憶框架——「MMVD 5C」
+**C**KCS 好發、**C**ough（咳嗽）、**C**ardiomegaly（心臟擴大）、**C**HF（心衰竭）、**C**heck sleeping RR（居家監測）
+
+### ACVIM 分期與診斷工具
+
+| 分期 | 定義 | 關鍵診斷指標 |
+|------|------|-------------|
+| A | 高風險品種，無病變 | 無雜音，心超正常 |
+| B1 | 有雜音，無重塑 | LA/Ao < 1.6, LVIDDN 正常 |
+| B2 | 有雜音，有重塑 | LA/Ao ≥ 1.6 或 LVIDDN ↑, VHS > 10.5 |
+| C | CHF 臨床症狀 | 肺水腫（X 光）、sleeping RR > 30 |
+| D | 難治性心衰竭 | 對標準三合一治療反應不佳 |
+
+### 診斷工具比較
+| 工具 | 敏感度 | 特異度 | 角色 |
+|------|--------|--------|------|
+| 心臟聽診 | 85-95% | 70-80% | 初篩 |
+| 胸腔 X 光（VHS） | 75-85% | 80-90% | 重塑+肺水腫評估 |
+| 心臟超音波 | 95-99% | >95% | 確診金標準 |
+| NT-proBNP | 80-90% | 75-85% | 輔助 B1 vs B2 鑑別 |
+
+[圖片:MMVD 診斷決策流程圖]
+
+## 三、治療策略 (Treatment)
+
+### 三、治療策略 (Treatment)
+### 依分期治療（ACVIM 2019 Consensus）
+
+| 分期 | 藥物 | 劑量 | 頻率 | Evidence Level |
+|------|------|------|------|----------------|
+| A/B1 | 無藥物 | — | 定期追蹤 6-12 個月 | Level I |
+| B2 | [藥物:Pimobendan] | 0.25-0.3 mg/kg PO | BID | Level I (EPIC) |
+| C | [藥物:Furosemide] | 2-4 mg/kg PO | BID-TID | Level I |
+| C | [藥物:Pimobendan] | 0.25-0.3 mg/kg PO | BID | Level I |
+| C | [藥物:Enalapril]/[藥物:Benazepril] | 0.5 mg/kg PO | BID | Level II |
+| C | [藥物:Spironolactone] | 0.5-2 mg/kg PO | SID-BID | Level II |
+| D | 上述 + [藥物:Torasemide] | 0.1-0.3 mg/kg PO | SID-BID | Level III |
+| D | [藥物:Sildenafil] | 1-2 mg/kg PO | BID-TID | Level III |
+
+### 急性 CHF 處理
+1. 氧氣支持（FiO2 40-60%）
+2. [藥物:Furosemide] 2-4 mg/kg IV bolus → 1 mg/kg/hr CRI
+3. [藥物:Pimobendan] 0.15 mg/kg IV 或維持口服
+4. 鎮靜（[藥物:Butorphanol] 0.2-0.3 mg/kg IV/IM）
+5. 胸腔 X 光確認肺水腫消退後轉口服
+
+### Primary Care vs Specialty Care
+- **基層可處理**：Stage A-C 的診斷、藥物調整、居家監測教育
+- **轉診指標**：Stage D 難治性、急性腱索斷裂、合併嚴重心律不整、考慮外科修復（MVR）
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+### 四、併發症與監控 (Complications & Monitoring)
+### 疾病相關併發症
+| 併發症 | 發生率 | 機轉 | 處置 |
+|--------|--------|------|------|
+| 肺水腫 | 30-40% 終生 | CHF | 利尿劑+強心劑 |
+| 心房顫動 | 5-10% | LA 擴大>重塑 | [藥物:Diltiazem] 或 [藥物:Digoxin] |
+| 腱索斷裂 | 5-8% | 瓣膜退化 | 緊急穩定→外科 |
+| 肺高壓 | 15-25% | 慢性 LA 壓升高 | [藥物:Sildenafil] |
+| 氮血症（腎前性） | 20-30% | 利尿劑+低心輸出 | 減利尿劑劑量 |
+
+### 治療相關併發症
+- Furosemide：脫水、低鉀、氮血症
+- ACE inhibitor：低血壓、氮血症
+- Pimobendan：偶見食慾下降、腹瀉
+
+### 監控頻率
+| 分期 | 回診頻率 | 檢查項目 |
+|------|----------|---------|
+| B1 | 每 12 個月 | 聽診+心超 |
+| B2 | 每 6 個月 | 聽診+心超+X 光+腎指數 |
+| C 穩定 | 每 1-3 個月 | 聽診+X 光+BUN/Cre/電解質 |
+| D | 每 2-4 週 | 全套監控 |
+| 居家 | 每日 | Sleeping RR（目標 <30/min） |
+
+## 五、預後與預後因子 (Prognosis)
+
+### 五、預後與預後因子 (Prognosis)
+### 正面預後因子
+- 早期診斷（B2 即開始 Pimobendan）
+- 小型犬（較大型犬預後好）
+- 良好的飼主依從性與居家監測
+- Sleeping RR 穩定 < 25/min
+
+### 負面預後因子
+- 急性腱索斷裂
+- 合併心房顫動
+- 嚴重肺高壓（TR velocity > 3.5 m/s）
+- 腎功能惡化（BUN > 60 mg/dL）
+- NT-proBNP 持續升高
+
+### 存活數據
+| 分期 | 中位存活時間 | 來源 |
+|------|-------------|------|
+| B1 | > 3 年 | 多項觀察性研究 |
+| B2（+Pimobendan）| 延緩 C 期約 15 個月 | EPIC 2016 |
+| C（治療後）| 9-12 個月 | ACVIM Consensus |
+| D | 3-6 個月 | 回顧性研究 |
+
+### 飼主溝通要點
+MMVD 是慢性進行性疾病，目前無法治癒但可有效管理。強調：① 按時用藥 ② 每日計算 sleeping RR ③ RR > 30 或呼吸困難立即就醫 ④ 外科瓣膜修復在日本/歐美已有高成功率（>90%），可作為 Stage C/D 選項討論。
+
+## 六、人醫借鑒 (Translational Insights)
+
+### 六、人醫借鑑 (Translational Insights)
+- **經導管二尖瓣修復（MitraClip）**：人醫已廣泛應用，獸醫目前僅有限研究（實驗犬模型），未來可能減少開胸手術需求
+- **心臟生物標記（BNP/NT-proBNP）**：人醫 CHF 管理的核心工具，獸醫採用度逐漸提升但 cut-off 值仍需優化
+- **遠端監測（telemedicine）**：人醫心衰竭患者居家體重與症狀遠端監控已標準化，獸醫的 sleeping RR 居家監測概念即借鑑於此
+- **Sacubitril/Valsartan（Entresto）**：人醫 HFrEF 的一線藥物，獸醫初步研究顯示對犬 MMVD 有潛在益處（Phase II 進行中）
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|----------|----------|----------|----------------|
+| B1 是否需要治療？ | 早期介入可能延緩進展 | EPIC 僅支持 B2，B1 無 RCT 支持 | Level III |
+| ACE inhibitor 在 B2 的角色？ | ACVIM 列為 Level II 建議 | BENCHMARK 研究未顯示明顯益處 | Level II |
+| 外科修復 vs 終身藥物？ | 日本數據 MVR 術後 5 年存活 >90% | 手術風險、費用高、台灣經驗有限 | Level III |
+| Spironolactone 的附加效益？ | DELAY 研究顯示可能延緩重塑 | 效果量小，需更大規模 RCT | Level II |
+
+### 正在進行的研究方向
+- 犬 MMVD 全基因組關聯分析（GWAS）以識別遺傳標記
+- Sacubitril/Valsartan 在犬 MMVD 的多中心 RCT
+- 3D 列印瓣膜模型用於術前規劃
+- 幹細胞治療修復退化瓣膜（極早期）
 
 [圖片:MMVD 分期治療流程圖]`,
   clinical_pearl: '心雜音的等級與 MMVD 的嚴重度不一定正相關。Grade II/VI 的雜音可能已有顯著心臟重塑（B2），而 Grade V/VI 的雜音在某些穩定病患中可能維持多年不進展。永遠要以影像學（心超 + X 光）作為分期依據。',
@@ -194,29 +391,125 @@ const contentAuscultation: NodeContent = {
   ],
   body: `# 心臟聽診
 
-## 聽診器選擇
+## 一、檢查原理與適應症 (Principles & Indications)
 
-使用雙面聽診器：
-- **鐘面（Bell）**：低頻音（S3、S4、舒張期雜音）
-- **膜面（Diaphragm）**：高頻音（S1、S2、收縮期雜音）
 
-## 四點聽診法
 
-1. **左心尖區**（Left apex）：第 5 肋間，肘關節水平 → 二尖瓣
-2. **左心底區**（Left base）：第 3-4 肋間，肩關節水平 → 主動脈瓣/肺動脈瓣
-3. **右心尖區**（Right apex）：第 4-5 肋間 → 三尖瓣
-4. **右心底區**（Right base）：第 3 肋間
+### 一、檢查原理與適應症 (Principles & Indications)
+### 聽診器物理原理
 
-## 心雜音分級（Levine Scale）
+| 聽面 | 頻率範圍 | 偵測目標 | 使用技巧 |
+|------|---------|---------|---------|
+| 鐘面（Bell） | 低頻（20-200 Hz） | S3、S4 奔馬律、舒張期雜音 | 輕觸胸壁，不可加壓（加壓變膜面效果） |
+| 膜面（Diaphragm） | 高頻（200-2000 Hz） | S1、S2、收縮期雜音、click | 適度加壓於胸壁 |
 
-| 等級 | 描述 |
-|------|------|
-| I/VI | 僅在安靜環境中仔細聽診可聞 |
-| II/VI | 輕柔但容易聽到 |
-| III/VI | 中等音量，無震顫 |
-| IV/VI | 響亮，伴隨胸壁震顫（thrill） |
-| V/VI | 聽診器邊緣觸及即可聞 |
-| VI/VI | 不接觸胸壁即可聞 |
+### 適應症
+
+| 情境 | 目的 | 頻率 |
+|------|------|------|
+| 常規理學檢查 | 篩檢心臟異常 | 每次就診 |
+| 心雜音追蹤 | 評估進展 | 每 3-12 個月 |
+| 麻醉前評估 | 識別心臟風險 | 每次麻醉前 |
+| 急診呼吸窘迫 | 快速心臟評估 | 即刻 |
+| 心臟藥物監測 | 評估治療反應 | 每次回診 |
+
+### 四點聽診法
+
+| 順序 | 位置 | 解剖標誌 | 對應瓣膜 | 常見異常 |
+|------|------|---------|---------|---------|
+| 1 | 左心尖區 | 第 5 肋間，肘關節水平 | 二尖瓣 | MMVD 收縮期雜音（plateau 型） |
+| 2 | 左心底區 | 第 3-4 肋間，肩關節水平 | 主動脈瓣/肺動脈瓣 | SAS 漸強漸弱型雜音、PS |
+| 3 | 右心尖區 | 第 4-5 肋間 | 三尖瓣 | TR 收縮期雜音 |
+| 4 | 右心底區 | 第 3 肋間 | — | VSD（高位），較少使用 |
+
+> **操作要點**：每個位置至少聽 5-10 秒。先膜面後鐘面。安靜環境中進行。同時觸摸股動脈評估脈搏品質與節律。
+
+## 二、判讀要點 (Interpretation)
+
+### 二、判讀要點 (Interpretation)
+### 系統性聽診評估五步驟
+
+| 步驟 | 評估內容 | 正常發現 | 異常發現 |
+|------|---------|---------|---------|
+| 1 | 心率 | 犬 60-160 bpm，貓 140-220 bpm | 過快/過慢 |
+| 2 | 節律 | 犬：竇性心律不整正常；貓：規則 | 不規則（排除犬竇性心律不整後） |
+| 3 | S1/S2 強度 | S1 > S2（心尖），S2 > S1（心底） | 心音減弱（心包膜積液）、分裂 |
+| 4 | 雜音 | 無 | 定位、時相、等級、輻射方向 |
+| 5 | 額外心音 | 無 | S3 奔馬律（容量過載）、S4（順應性↓） |
+
+### 心雜音分級（Levine Scale）
+
+| 等級 | 描述 | 臨床意義 |
+|------|------|---------|
+| I/VI | 僅在安靜環境中仔細聽診可聞 | 功能性或早期病變可能 |
+| II/VI | 輕柔但容易聽到 | 需追蹤，考慮心超 |
+| III/VI | 中等音量，無震顫 | 建議心超評估 |
+| IV/VI | 響亮，伴隨胸壁震顫（thrill） | 明確病理性，心超必要 |
+| V/VI | 聽診器邊緣觸及即可聞 | 嚴重瓣膜或結構異常 |
+| VI/VI | 不接觸胸壁即可聞 | 嚴重瓣膜或結構異常 |
+
+### 雜音特徵分析
+
+| 特徵 | 分類 | 臨床關聯 |
+|------|------|---------|
+| 時相 | 收縮期（systolic） | MR、TR、SAS、PS、VSD |
+| 時相 | 舒張期（diastolic） | AI、PI（獸醫少見） |
+| 時相 | 連續性（continuous） | PDA（machinery murmur） |
+| 型態 | Plateau（帶狀） | MR（MMVD 典型） |
+| 型態 | Crescendo-decrescendo（菱形） | SAS、PS |
+| 最大強度點 | 左心尖 | 二尖瓣病變 |
+| 最大強度點 | 左心底 | 主動脈/肺動脈瓣病變 |
+| 最大強度點 | 右心尖 | 三尖瓣病變 |
+| 最大強度點 | 左心底上方（連續） | PDA |
+
+### 犬貓聽診差異
+
+| 項目 | 犬 | 貓 |
+|------|-----|-----|
+| 竇性心律不整 | 正常（迷走神經張力變化） | 異常——需進一步評估 |
+| 動態 LVOTO 雜音 | 罕見 | HCM 伴 SAM 常見 |
+| 奔馬律意義 | 容量過載提示 | 高度提示心肌病，即使無雜音 |
+| 功能性雜音 | 幼犬常見（Grade I-II） | 緊迫/貧血/甲亢可引起 |
+
+## 三、常見陷阱 (Pitfalls)
+
+### 三、常見陷阱 (Pitfalls)
+| 陷阱 | 發生情境 | 避免方法 |
+|------|---------|---------|
+| 功能性雜音誤判為病理性 | 幼犬/幼貓，Grade I-II | 追蹤觀察，多數 4-6 月齡消失 |
+| 環境噪音影響微弱雜音偵測 | 吵雜診間、動物喘氣 | 安靜環境，必要時等動物平靜 |
+| 僅聽左側忽略右側 | 常見疏漏 | 系統性四點法，TR 常見於右側 |
+| 犬竇性心律不整誤判為病理性 | 經驗不足者 | 確認與呼吸週期相關 |
+| 緊迫貓心率過快難以分辨 | 心率 > 240 bpm | 等待安靜或鎮靜後重評估 |
+| 肥胖動物心音減弱 | 胸壁脂肪隔絕 | 增加聽診時間，考慮心超 |
+| 雜音等級與嚴重度不一定相關 | Grade II 可能已有重塑 | 不要僅憑雜音等級判斷，需影像學 |
+| 貓心臟病無雜音 | HCM 30-50% 無可聞雜音 | 有奔馬律或心律不整仍需心超 |
+
+## 四、人醫借鑒 (Translational Insights)
+
+### 四、人醫借鑑 (Translational Insights)
+| 人醫進展 | 概念 | 獸醫應用潛力 |
+|---------|------|-------------|
+| 電子聽診器 | 數位放大與頻率篩選 | 可改善微弱雜音偵測，尤其適用貓 |
+| AI 輔助心音分析 | 機器學習自動辨識雜音類型 | 初步研究中，可輔助基層獸醫篩檢 |
+| 心音遠端傳輸 | 居家聽診器 + 遠端醫療 | 概念可行但獸醫尚未商業化 |
+| 肺部超音波取代聽診 | POCUS 評估肺水腫 | 獸醫急診已逐漸採用 B-lines 評估 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 正方 | 反方 | Evidence Level |
+|---------|------|------|----------------|
+| 心雜音等級是否預測疾病嚴重度 | 部分研究顯示等級與 MR 程度相關 | 雜音受體型、心輸出量、胸壁影響 | Level C |
+| 貓無雜音是否排除心臟病 | 無雜音確實降低心臟病可能 | 30-50% HCM 貓無可聞雜音 | Level B |
+| 聽診是否足以篩檢所有心臟病 | 成本極低，可作為一線篩檢 | 敏感度 70-85%，漏診風險存在 | Level B |
+| 電子聽診器是否優於傳統聽診器 | 數位放大可能提升偵測率 | 缺乏大規模獸醫比較研究 | Level D |
+
+### 知識空缺
+
+- 獸醫聽診教學標準化方法（操作者間一致性研究不足）
+- AI 心音分析在獸醫臨床的驗證研究
+- 貓心臟病的理想非侵入性篩檢策略（聽診 + NT-proBNP + 心超的成本效益分析）
 
 [互動:心音播放器——正常心音 vs. 各級雜音]`,
   clinical_pearl: '在進行聽診時，先評估心率和節律，再專注於各別心音。注意犬的竇性心律不整是正常的——吸氣時心率加快，呼氣時減慢。如果在貓身上聽到節律不整，則需要進一步評估。',
@@ -261,6 +554,7 @@ const contentAuscultation: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011.', relevance: '心臟聽診技術標準參考' },
     { type: 'journal', citation: 'Caivano D et al. Murmur intensity in dogs. J Vet Intern Med. 2018.', relevance: '心雜音等級與疾病嚴重度的關聯研究' },
+    { type: 'guideline', citation: 'Thomas WP, Gaber CE, Jacobs GJ, et al. "Recommendations for standards in transthoracic two-dimensional echocardiography in the dog and cat." J Vet Intern Med. 1993;7(4):247-252.', relevance: '犬貓心臟超音波標準化建議' },
   ],
   is_current: true,
   created_at: now,
@@ -288,53 +582,227 @@ const contentDCM: NodeContent = {
     '飲食相關 DCM（BEG diet-associated DCM）需注意飲食史詢問',
     '杜賓犬 DCM 預後較其他品種差，中位存活較短',
   ],
-  body: `# 擴張型心肌病 (DCM)
+  body: `# 擴張型心肌病 (Dilated Cardiomyopathy, DCM)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
-犬擴張型心肌病（Dilated Cardiomyopathy, DCM）是以心室（特別是左心室）擴張與收縮功能降低為特徵的原發性心肌疾病。它是大型犬最常見的心臟病，也是犬猝死的重要原因之一。
 
-## 病理機轉
 
-DCM 的核心病理為心肌細胞的進行性退化與纖維化：
-1. 心肌細胞萎縮、壞死與纖維化替代
-2. 心室壁變薄、腔室擴大（離心性肥大）
-3. 心肌收縮力下降（收縮功能障礙）
-4. 每搏輸出量減少 → 代償性神經荷爾蒙活化（RAAS、SNS）
-5. 續發性二尖瓣與三尖瓣閉鎖不全（瓣環擴張所致）
-6. 充血性心衰竭（左側 → 肺水腫；右側 → 腹水、胸水）
-7. 心肌電氣不穩定 → 心室性心律不整 → 猝死風險
+### 一、病理機制 (Pathophysiology)
+### 分子→細胞→器官機轉鏈
 
-## 疾病分期
+| 層級 | 機轉 | 關鍵分子/結構 |
+|------|------|--------------|
+| 基因 | 突變致結構蛋白異常 | PDK4（杜賓犬）、TTN（titin）、LMNA |
+| 分子 | 粒線體 ATP 生成↓ → 鈣離子處理異常 | Complex I-IV、RyR2、SERCA2a |
+| 細胞 | 心肌細胞凋亡/壞死 + 纖維母細胞活化 | Caspase-3↑、TGF-β↑、MMP↑ |
+| 組織 | 心肌纖維化替代 + 脂肪浸潤（杜賓犬 ARVC 型） | Collagen I/III 沉積比例改變 |
+| 器官 | 心室壁變薄 → 離心性重塑 → 收縮力↓(FS<20%) | LVIDDN↑、EF↓、EPSS↑ |
+| 系統 | CO↓ → RAAS/SNS 活化 → 容量過載 → CHF/猝死 | Ang-II↑、Aldosterone↑、NE↑ |
 
-### 隱匿期（Occult Phase）
-- 無臨床症狀，飼主通常不會察覺
-- 心超已可偵測心室擴大與收縮力下降
-- Holter 可偵測心室性早期收縮（VPCs > 50/24h 為異常）
-- 此期可持續數月至數年（杜賓犬平均 2-3 年）
+### 品種特異機轉
+- **杜賓犬**：PDK4 突變→脂肪浸潤型（fibro-fatty replacement），心律不整常先於收縮功能障礙出現
+- **拳師犬**：ARVC 表型（右心室為主），Striatin 基因突變
+- **可卡犬**：Taurine/L-carnitine 缺乏相關，部分可逆
+- **飲食相關 DCM**：BEG diet（boutique/exotic/grain-free）→ 機轉未明，推測 taurine 生物利用率↓或心肌毒性成分
 
-### 臨床期（Overt Phase）
-- 出現充血性心衰竭症狀或猝死
-- 左側心衰：咳嗽、呼吸急促、運動不耐
-- 右側心衰：腹水、頸靜脈怒張
-- 心律不整：暈厥、猝死
+### 假說階段（Evidence Level C-D）
+- 腸道微生物組改變與代謝性心肌病的關聯
+- miRNA 作為早期偵測生物標記（miR-133a, miR-1）
+- 幹細胞療法對心肌再生的潛力
 
-## 治療方案
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### Primary Care（一般診所）
-- 初步診斷：聽診（奔馬律、低度雜音）、胸腔 X 光、基礎血檢
-- 急性 CHF 穩定：[藥物:Furosemide] 2-4 mg/kg IV → 轉診
-- 口服維持：[藥物:Pimobendan] 0.25-0.3 mg/kg PO BID + [藥物:Furosemide] 2-4 mg/kg PO BID-TID
-- 轉診建議：所有新診斷 DCM 建議轉診心臟專科
+### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+### 典型表現（發生率）
 
-### Specialty Care（心臟專科）
-- 完整心超評估（M-mode: LVIDDN, FS, EPSS; 2D/Doppler）
-- Holter 監測（特別是杜賓犬、拳師犬）
-- 隱匿期治療：[藥物:Pimobendan] 0.25-0.3 mg/kg PO BID（PROTECT 研究支持）
-- CHF 三合一：[藥物:Pimobendan] + [藥物:Furosemide] + ACE inhibitor（[藥物:Enalapril] 或 [藥物:Benazepril] 0.5 mg/kg PO BID）
-- 心律不整管理：VPCs 伴症狀或 R-on-T → [藥物:Sotalol] 1.5-3.5 mg/kg PO BID 或 [藥物:Mexiletine] 5-8 mg/kg PO TID
-- 心房顫動：[藥物:Diltiazem] 1.5-3.5 mg/kg PO TID 或 [藥物:Digoxin]（目標血中濃度 0.8-1.2 ng/mL）
-- 難治性 CHF：加上 [藥物:Spironolactone] 1-2 mg/kg PO BID
+| 臨床表現 | 發生率 | 特徵描述 | 階段 |
+|----------|--------|---------|------|
+| 運動不耐/虛弱 | 80-90% | 飼主常誤為「年紀大了」 | 早期-臨床期 |
+| 呼吸急促/咳嗽 | 70-80% | 左側 CHF → 肺水腫 | 臨床期 |
+| 暈厥 | 20-40% | 心室性心律不整或低輸出 | 任何階段 |
+| 猝死 | 30-50%（杜賓） | 無預警，VT/VF 致死 | 任何階段 |
+| 腹部膨大 | 30-40% | 右側 CHF → 腹水 | 晚期 |
+| 心房顫動 | 30-50%（巨型犬） | 心率可達 200-300 bpm | 臨床期 |
+
+### 非典型表現（易誤診）
+- 隱匿期：完全無症狀，僅心超/Holter 異常
+- 急性猝死為首發表現（杜賓犬 25-30%）
+- 單純右心衰竭誤診為肝臟疾病或腹腔腫瘤
+- 飲食相關 DCM：非典型品種（Golden Retriever 等）發生
+
+### 診斷工具比較
+
+| 工具 | 敏感度 | 特異度 | 適用情境 | 成本 |
+|------|--------|--------|---------|------|
+| 聽診（S3 奔馬律） | 50-60% | 80-90% | 初篩 | $ |
+| 胸腔 X 光 | 70-80% | 60-70% | CHF 評估 | $$ |
+| NT-proBNP | 80-90% | 75-85% | 篩檢/追蹤 | $$ |
+| 心臟超音波 | 95-99% | 95-98% | 確診金標準 | $$$ |
+| 24h Holter | 90-95% | 85-90% | 心律不整型 DCM | $$$ |
+| 基因檢測（PDK4） | 品種特異 | 品種特異 | 杜賓犬篩檢 | $$ |
+
+### 心超診斷標準
+
+| 參數 | 正常 | DCM 標準 | 杜賓犬特殊值 |
+|------|------|---------|-------------|
+| LVIDDN | < 1.73 | > 1.73 | > 1.73 |
+| FS(%) | > 25% | < 20% | < 25% |
+| EPSS(mm) | < 6 | > 8 | > 8 |
+| EF(%) | > 40% | < 35% | < 40% |
+| LA/Ao | < 1.6 | > 1.6 | > 1.5 |
+
+### 記憶框架——「DCM-RAPID」
+- **R**emodeling（離心性重塑）
+- **A**rrhythmia（心律不整——VPCs, VT, AF）
+- **P**rogressive（進行性且不可逆）
+- **I**diopathic/Inherited（原發/遺傳為主）
+- **D**ilation（心腔擴大、壁變薄）
+
+### 鑑別診斷
+
+| 疾病 | 關鍵鑑別點 |
+|------|-----------|
+| MMVD + 心室擴大 | 小型犬、瓣膜增厚脫垂、FS 正常或升高 |
+| 心肌炎 | 急性發病、感染史、cTnI 顯著↑↑ |
+| Tachycardia-induced CM | 慢性快速心律不整→心率控制後改善 |
+| 甲狀腺功能低下 | T4↓，單純甲低很少造成嚴重 DCM |
+| Pheochromocytoma | 間歇性高血壓、腎上腺腫塊 |
+
+## 三、治療策略 (Treatment)
+
+### 三、治療策略 (Treatment)
+### 急性期（CHF 穩定）
+
+| 藥物 | 劑量 | 途徑 | Evidence |
+|------|------|------|----------|
+| Furosemide | 2-4 mg/kg bolus → 1-2 mg/kg/h CRI | IV | Level A |
+| Pimobendan | 0.25-0.3 mg/kg | PO (ASAP) | Level A |
+| Dobutamine | 5-15 μg/kg/min CRI | IV | Level B（嚴重低輸出） |
+| Nitroprusside | 1-5 μg/kg/min CRI | IV | Level C（急性後負荷降低） |
+| 氧氣支持 | FiO₂ 40-60% | 氧氣籠/鼻導管 | Level A |
+
+### 慢性維持期
+
+| 分期 | Primary Care | Specialty Care | Evidence |
+|------|-------------|----------------|----------|
+| 隱匿期 | 轉診心臟專科 | Pimobendan 0.25-0.3 mg/kg BID | Level A (PROTECT) |
+| 輕度 CHF | Pimo + Furo 2 mg/kg BID + ACEi | + Spironolactone 1-2 mg/kg BID | Level A-B |
+| 中度 CHF | Furo 增至 4 mg/kg TID + Pimo + ACEi | + Torsemide 替換 Furo 0.2 mg/kg BID | Level B |
+| AF 合併 | Diltiazem 1.5-3.5 mg/kg TID | ± Digoxin 0.005 mg/kg BID (目標 0.8-1.2 ng/mL) | Level B |
+| VPCs/VT | Sotalol 1.5-3.5 mg/kg BID（首選） | ± Mexiletine 5-8 mg/kg TID（合併） | Level B |
+| 難治性 | 加 Sildenafil 1-2 mg/kg BID-TID | Milrinone CRI（住院）、機械輔助 | Level C |
+
+### 營養補充
+
+| 補充劑 | 劑量 | 適應症 | Evidence |
+|--------|------|--------|----------|
+| Taurine | 500-1000 mg BID | 可卡犬/BEG 飲食相關 DCM | Level B |
+| L-carnitine | 50 mg/kg TID | 可卡犬/疑似缺乏 | Level C |
+| Omega-3 FA | 40 mg/kg EPA+DHA | 抗炎/抗心律不整 | Level C |
+| CoQ10 | 30-90 mg BID | 粒線體支持 | Level D |
+
+### 轉診指標
+- 所有新診斷 DCM 應至少一次心臟專科評估
+- 隱匿期杜賓犬需 Holter + Echo 專科評估
+- 心房顫動/心室頻脈需專科心律不整管理
+- 對標準 CHF 治療反應不佳（48h 內）
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+### 四、併發症與監控 (Complications & Monitoring)
+### 疾病本身併發症
+
+| 併發症 | 發生率 | 機轉 | 處理 |
+|--------|--------|------|------|
+| 心房顫動 | 30-50% | 心房擴大→異位起搏 | Diltiazem ± Digoxin 控制心率 |
+| 心室性心律不整 | 50-70%（杜賓） | 心肌纖維化→re-entry | Sotalol ± Mexiletine |
+| 猝死 | 30-50%（杜賓） | VT/VF | 抗心律不整藥物預防 |
+| 肺水腫 | 60-80% | 左心 CHF | Furosemide + O₂ |
+| 腹水/胸水 | 30-40% | 右心 CHF | 利尿劑 + 穿刺引流 |
+| 心腎症候群 | 20-30% | CO↓ → 腎灌流↓ | 調整利尿劑、監測腎指數 |
+
+### 治療相關併發症
+
+| 併發症 | 相關藥物 | 監測 | 處理 |
+|--------|---------|------|------|
+| 低血鉀 | Furosemide | K⁺ q2-4w | 補鉀/Spironolactone |
+| 氮血症 | Furosemide + ACEi | BUN/Cre q2-4w | 降低利尿劑劑量 |
+| Digoxin 中毒 | Digoxin | 血中濃度 q2-4w | 目標 0.8-1.2 ng/mL |
+| 低血壓 | ACEi + Pimobendan | BP 監測 | 減藥/停藥 |
+| 促心律不整 | Digoxin, Sotalol | ECG/Holter | 調整劑量/換藥 |
+
+### 監測時程
+
+| 階段 | 頻率 | 項目 |
+|------|------|------|
+| 隱匿期 | q6mo | Echo + Holter + NT-proBNP |
+| CHF 穩定後首月 | q1-2w | 理學、RR、腎功能、電解質 |
+| CHF 穩定期 | q2-3mo | Echo + CXR + 血檢 + ECG |
+| 藥物調整期 | q1-2w | 目標參數追蹤 |
+| 居家 | 每日 | Sleeping RR（目標 < 30/min） |
+
+## 五、預後與預後因子 (Prognosis)
+
+### 五、預後與預後因子 (Prognosis)
+### 正面預後因子
+- 早期偵測（隱匿期開始治療）
+- 飲食相關 DCM（飲食改變後部分可逆）
+- 對 Pimobendan 反應良好
+- Taurine/Carnitine 缺乏相關且補充後改善
+- 無心律不整或僅偶發 VPCs
+
+### 負面預後因子
+- 杜賓犬品種
+- 心房顫動合併
+- 頻繁 VPCs/VT（> 100 VPCs/24h）
+- LVIDDN > 2.0、EF < 20%
+- 雙側 CHF（左+右）
+- 腎功能惡化（心腎症候群）
+- 低鈉血症（Na⁺ < 140 mEq/L）
+
+### 存活數據
+
+| 品種/情境 | 中位存活時間 | 資料來源 |
+|----------|------------|---------|
+| 杜賓犬——隱匿期+Pimo | 12-15 months | PROTECT (2012) |
+| 杜賓犬——CHF 後 | 3-6 months | Calvert et al. |
+| 杜賓犬——猝死率 | 30-50% | 多項回顧性研究 |
+| 其他大型犬——CHF 後 | 6-12 months | Martin et al. |
+| 飲食相關 DCM | 可逆至正常（飲食改變後） | Adin et al. (2019) |
+| 合併 AF | MST 減少 30-50% | Pedro et al. |
+
+## 六、人醫借鑒 (Translational Insights)
+
+### 六、人醫借鑑 (Translational Insights)
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Sacubitril/Valsartan (Entresto) | RAAS + Neprilysin 雙抑制 | 犬初步研究中，尚無大型 RCT |
+| ICD（植入式去顫器） | 杜賓犬猝死預防 | 技術限制，僅少數學術中心 |
+| CRT（心臟再同步治療） | LBBB 型 DCM | 犬極少使用，實驗階段 |
+| 基因療法 | PDK4/TTN 特異性治療 | 臨床前研究 |
+| GLP-1 受體激動劑 | 心肌代謝改善 | 人醫 Level A，犬未研究 |
+| Omecamtiv mecarbil | 選擇性心肌肌球蛋白活化劑 | 人醫 Phase III，獸醫未研究 |
+| Liquid biopsy (cfDNA) | 心肌損傷非侵入性偵測 | 概念驗證階段 |
+| AI-ECG screening | 隱匿期 DCM 篩檢 | 初步演算法開發中 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| BEG 飲食因果關係 | FDA 2018 警告、病例系列報告支持 | 缺乏 RCT、混淆因子多 | D（觀察性） |
+| 隱匿期所有品種是否用 Pimo | PROTECT 研究支持杜賓犬 | 僅杜賓犬有 Level A，其他品種外推存疑 | A（杜賓）/ C（其他） |
+| Taurine 補充效果 | 可卡犬/BEG 相關 DCM 改善報告 | 非所有 DCM 都是 taurine 缺乏 | B-C |
+| Digoxin 是否仍有角色 | 正性肌力 + 心率控制（AF） | 治療窗窄、毒性風險 | C（Pimobendan 時代） |
+| 基因篩檢商業化時機 | 早期識別高風險個體 | 外顯率不一、基因型-表型不完全對應 | C |
+| Sotalol vs Mexiletine 首選 | Sotalol：β-blocker + Class III 雙效 | Mexiletine：Sotalol 禁忌於重度 CHF | B |
+
+### 知識空缺
+- 非杜賓品種隱匿期 DCM 的最佳治療策略
+- BEG 飲食相關 DCM 的確切分子機轉
+- 基因型與表型的外顯率預測模型
+- 犬 DCM 的幹細胞療法安全性與有效性長期數據
 
 [圖片:DCM 心超影像——擴大的左心室與降低的 FS]`,
   clinical_pearl: '杜賓犬的 DCM 有兩個獨特面向：(1) 心律不整表現可能先於心超異常出現，因此 Holter 篩檢與心超同等重要；(2) 杜賓犬的正常 FS 上限就較低（約 25%），不能用一般犬的標準（FS < 20%）來判斷。建議杜賓犬 4 歲開始每年進行心超 + Holter 篩檢。',
@@ -413,59 +881,217 @@ const contentHCM: NodeContent = {
     '無症狀 HCM 貓的 ATE 預防：Clopidogrel 優於 Aspirin（FAT CAT 研究）',
     '貓 CHF 以胸水為主要表現（與犬不同），肺水腫亦常見',
   ],
-  body: `# 肥厚型心肌病 (HCM)
+  body: `# 肥厚型心肌病 (Hypertrophic Cardiomyopathy, HCM)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
-貓肥厚型心肌病（Hypertrophic Cardiomyopathy, HCM）是以左心室壁（含或不含心室中隔）肥厚為特徵的原發性心肌疾病，且無法以其他心臟或全身性疾病解釋。它是貓最常見的心臟疾病，盛行率在一般貓群約 15%，在好發品種中可達 30% 以上。
 
-## 病理機轉
 
-HCM 的核心病理為心肌細胞肥大與排列紊亂（myocyte disarray）：
-1. 心肌細胞肥大與纖維化 → 心室壁增厚
-2. 左心室順應性下降 → 舒張功能障礙（填充受損）
-3. 左心房壓力升高 → 左心房擴大
-4. 二尖瓣前葉收縮期前向運動（SAM）→ 動態左心室流出道阻塞（LVOTO）
-5. 左心房擴大 + 血流淤滯 → 自發性顯影（SEC/smoke）→ 血栓形成
-6. 血栓脫落 → 動脈血栓栓塞（ATE），最常見於主動脈分叉處
-7. 持續高充填壓 → 充血性心衰竭（胸水 ± 肺水腫）
+### 一、病理機制 (Pathophysiology)
+### 分子→細胞→器官機轉鏈
 
-## 臨床分型
+| 層級 | 機轉 | 關鍵分子/結構 |
+|------|------|--------------|
+| 基因 | 肌節蛋白基因突變 | MYBPC3（A31P 緬因貓、R820W 布偶貓）、MYH7、TNNT2 |
+| 分子 | Ca²⁺敏感度↑ → 肌節過度收縮 | Troponin C-Ca²⁺親和力改變、SERCA2a |
+| 細胞 | 心肌細胞肥大 + myofiber disarray | 細胞面積↑2-3倍、排列紊亂度 > 5% |
+| 間質 | 膠原沉積 + 微血管密度不足 | TGF-β↑、Col I/III ratio↑、VEGF↓ |
+| 器官 | 壁厚↑(≥6mm) → 舒張功能障礙 + SAM/LVOTO | LV compliance↓、LVOT gradient↑ |
+| 系統 | LA 壓↑ → LA 擴大 → SEC → ATE / CHF | Virchow三要素：淤滯/內皮損傷/高凝 |
 
-### 無症狀期（Preclinical）
-- 可能持續數月至數年甚至終身
-- 偶然發現：聽診心雜音（SAM 導致）、奔馬律、心律不整
-- 麻醉前篩檢或健康檢查時意外發現
-- NT-proBNP 可作為篩檢工具
+### 三大病理後果
+1. **舒張功能障礙**：心室僵硬→填充受損→LA壓↑→肺靜脈充血→胸水/肺水腫
+2. **動態流出道阻塞(LVOTO)**：SAM → MR → LA 擴大惡化循環
+3. **動脈血栓栓塞(ATE)**：LA 擴大 + 血流淤滯 + 內皮損傷 → 血栓形成 → saddle thrombus (85%)
 
-### CHF 表現
-- 貓的 CHF 以胸水最常見（與犬以肺水腫為主不同）
-- 呼吸急促/開口呼吸、端坐呼吸
-- 食慾下降、體重減輕、嗜睡
+### 假說階段（Evidence Level C-D）
+- 心肌細胞能量代謝異常（ATP/O₂效率降低）驅動肥厚
+- 微血管缺血導致局部纖維化與心律不整
+- Galectin-3 作為纖維化早期生物標記
 
-### 動脈血栓栓塞（ATE）
-- 急性後肢癱瘓/疼痛是最典型表現（saddle thrombus）
-- 五 P 徵象：Pain, Paralysis, Pulselessness, Poikilothermia, Pallor/cyanosis
-- 約 70-80% 的 ATE 發生於已知或未知 HCM 貓
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-## 治療方案
+### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+### 典型表現（發生率）
 
-### Primary Care（一般診所）
-- 初步診斷：聽診（收縮期雜音、奔馬律）、血壓測量、T4 檢測
-- 急性 CHF（胸水）：胸腔穿刺引流（治療性且可緩解症狀）+ [藥物:Furosemide] 1-2 mg/kg IV
-- 急性 ATE：止痛（[藥物:Buprenorphine] 0.01-0.02 mg/kg IV/IM/buccal）、轉診
-- 穩定期 CHF：[藥物:Furosemide] 1-2 mg/kg PO BID + 轉診心臟專科
+| 臨床表現 | 發生率 | 特徵描述 | 階段 |
+|----------|--------|---------|------|
+| 完全無症狀 | 40-60% | 健檢或麻醉前篩檢偶然發現 | Preclinical |
+| 呼吸急促/困難 | 30-40% | 胸水（>肺水腫），開口呼吸 | CHF |
+| 後肢急性癱瘓 | 10-25% | ATE saddle thrombus，五P徵象 | ATE |
+| 心雜音 | 30-55% | SAM/LVOTO導致，胸骨旁收縮期 | 任何 |
+| 奔馬律(S4) | 15-30% | 提示舒張功能障礙 | 中-晚期 |
+| 猝死 | 5-10% | 可為首發，VT/VF | 任何 |
 
-### Specialty Care（心臟專科）
-- 完整心超（2D: LVWd/IVSd、LA/Ao、SAM/LVOTO; Doppler: MR、E/A ratio）
-- 無症狀 HCM—輕度（壁厚 6-7mm, LA 正常）：目前無強證據支持藥物治療，定期追蹤
-- 無症狀 HCM—中重度（壁厚 > 7mm 或 LA 擴大）：[藥物:Atenolol] 6.25-12.5 mg/cat PO BID 或 [藥物:Diltiazem] ER 30 mg/cat PO SID-BID；ATE 預防：[藥物:Clopidogrel] 18.75 mg/cat PO SID
-- CHF 管理：[藥物:Furosemide] 1-2 mg/kg PO BID（最低有效劑量）+ [藥物:Clopidogrel] 18.75 mg/cat PO SID + [藥物:Benazepril] 0.5 mg/kg PO SID-BID
-- 嚴重 LVOTO：[藥物:Atenolol] 優先（降低心率、減少 SAM）
-- ATE 急性處理：止痛（Buprenorphine/Methadone）+ 抗凝血（[藥物:Clopidogrel] 75 mg loading → 18.75 mg/cat SID 維持）+ 支持療法；溶栓治療（tPA）在獸醫的證據有限且出血風險高
+### 非典型表現（易誤診）
+- ATE 影響前肢（10-15%）或單側後肢——誤診為外傷或脊髓疾病
+- 緊迫性假性肥厚（stress-induced transient thickening）——壁厚臨界6mm時需複檢
+- 中老年貓的隱性 HCM + 甲亢/高血壓共存——須釐清原發 vs 續發
+- 年輕貓猝死為首發表現（無預警）
+
+### 診斷工具比較
+
+| 工具 | 敏感度 | 特異度 | 適用情境 | 成本 |
+|------|--------|--------|---------|------|
+| 聽診（雜音+奔馬律） | 31-53% | 90-95% | 初篩（雜音陰性不能排除） | $ |
+| NT-proBNP（>100 pmol/L） | 85-92% | 84-88% | 篩檢/追蹤 | $$ |
+| 心臟超音波 | 97-99% | 95-99% | 確診金標準 | $$$ |
+| 胸腔 X 光 | 50-70% | 60-75% | 評估 CHF/胸水 | $$ |
+| cTnI | 70-80% | 75-85% | 心肌損傷評估 | $$ |
+| 基因檢測(MYBPC3) | 品種特異 | 高 | 緬因貓/布偶貓繁殖篩檢 | $$ |
+
+### 心超診斷標準
+
+| 參數 | 正常 | HCM 標準 | 高風險標記 |
+|------|------|---------|----------|
+| LVWd/IVSd(mm) | < 5.5 | ≥ 6.0 | > 7.0 |
+| LA/Ao | < 1.5 | > 1.5 | > 2.0（ATE高風險）|
+| SAM | 無 | 存在 | 伴LVOT gradient>50 mmHg |
+| SEC (smoke) | 無 | 存在 | ATE 極高風險 |
+| LA 血栓 | 無 | — | 存在=禁忌抗凝loading |
+| E/A ratio | > 1 | < 1(鬆弛異常) 或 > 2(限制型) | 假性正常化需TDI鑑別 |
+
+### 記憶框架——「HCM-CLOT」
+- **C**ardiomyopathy（原發性心肌病，排除續發）
+- **L**eft ventricular hypertrophy（≥6mm，核心標準）
+- **O**bstruction（SAM/LVOTO，動態性）
+- **T**hromboembolism（ATE，最致命併發症）
+
+### 鑑別診斷
+
+| 疾病 | 關鍵鑑別點 |
+|------|-----------|
+| 全身性高血壓性肥厚 | SBP > 160 mmHg，常見於CKD，控壓後可逆 |
+| 甲亢性心肌變化 | T4↑，高動力性，治療甲亢後改善 |
+| 限制型心肌病(RCM) | 壁厚正常，舒張嚴重受損，心內膜纖維化 |
+| 脫水/低血容時假性肥厚 | 補液後壁厚恢復正常 |
+| 主動脈瓣狹窄 | 極少見於貓，瓣膜異常可見 |
+
+## 三、治療策略 (Treatment)
+
+### 三、治療策略 (Treatment)
+### 急性期處理
+
+| 情境 | Primary Care | Specialty Care | Evidence |
+|------|-------------|----------------|----------|
+| CHF（胸水） | 胸穿引流（最優先）+ Furosemide 1-2 mg/kg IV | + Pimobendan 若合併收縮障礙 | Level B |
+| CHF（肺水腫） | Furosemide 1-2 mg/kg IV q1-2h + O₂ | ± Dobutamine CRI 若低輸出 | Level B |
+| ATE 急性 | 止痛 Buprenorphine 0.02 mg/kg buccal + 轉診 | + Clopidogrel 75mg loading → 18.75mg SID | Level A (FAT CAT) |
+| 通則 | 最低限度保定、避免緊迫 | 氧氣籠、靜脈通路 | Level A |
+
+### 慢性維持期
+
+| 分期 | 治療策略 | 藥物與劑量 | Evidence |
+|------|---------|-----------|----------|
+| 無症狀低風險 | 追蹤不治療 | Echo q6-12mo | Level C |
+| 無症狀+LVOTO | β-blocker | Atenolol 6.25-12.5 mg/cat BID | Level C |
+| 無症狀+LA擴大 | 抗血小板 | Clopidogrel 18.75 mg/cat SID | Level A (FAT CAT) |
+| CHF 穩定 | 利尿劑+ACEi+抗血小板 | Furo 1-2 mg/kg BID + Benazepril 0.5 mg/kg SID + Clopi | Level B |
+| 難治性CHF | 加 Spironolactone | 1-2 mg/kg BID | Level C |
+| End-stage(EF↓) | 加 Pimobendan | 0.25 mg/kg BID（僅限收縮障礙） | Level C |
+| ATE後預防 | 雙重抗血栓 | Clopidogrel + 低分子量肝素/Rivaroxaban | Level C |
+
+### 轉診指標
+- 所有新診斷 HCM 建議心臟專科確認
+- ATE 發生（緊急轉診）
+- 對初始 CHF 治療反應不佳
+- 壁厚 > 7mm 或 LA/Ao > 2.0
+- 擬安排麻醉/手術的 HCM 貓
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+### 四、併發症與監控 (Complications & Monitoring)
+### 疾病本身併發症
+
+| 併發症 | 發生率 | 機轉 | 處理 |
+|--------|--------|------|------|
+| ATE (saddle thrombus) | 10-25% | LA擴大+SEC→血栓脫落 | Clopidogrel預防；急性止痛+支持 |
+| CHF（胸水為主） | 30-40% | LA壓↑→肺靜脈充血 | 胸穿+Furosemide |
+| 心律不整(VPCs/VT) | 15-25% | 心肌disarray+纖維化→re-entry | Atenolol/Sotalol |
+| 猝死 | 5-10% | VT/VF | β-blocker預防（證據有限） |
+| End-stage dilated phase | 5-10% | 心肌耗竭→收縮功能衰退 | Pimobendan（此時適用） |
+
+### 治療相關併發症
+
+| 併發症 | 相關藥物 | 監測 | 處理 |
+|--------|---------|------|------|
+| 低血壓/心搏過緩 | Atenolol | HR不宜<120bpm | 減量/停藥 |
+| 氮血症 | Furosemide+Benazepril | BUN/Cre q2-4w | 降低利尿劑 |
+| 食慾下降 | Clopidogrel | 體重監測 | 減量或換藥 |
+| 高鉀血症 | Spironolactone+Benazepril | K⁺ q2-4w | 調整劑量 |
+| 出血 | Clopidogrel/抗凝血 | 臨床觀察 | 停藥/減量 |
+
+### 監測時程
+
+| 階段 | 頻率 | 項目 |
+|------|------|------|
+| 無症狀低風險 | q6-12mo | Echo（壁厚、LA、舒張功能） |
+| 無症狀高風險 | q4-6mo | Echo + NT-proBNP |
+| CHF穩定期 | q2-3mo | Echo + CXR + 腎功能 + 電解質 |
+| ATE恢復期 | q2-4w (首月) | 患肢血流、腎功能、K⁺ |
+| 居家 | 每日 | Sleeping RR（目標 < 30/min） |
+
+## 五、預後與預後因子 (Prognosis)
+
+### 五、預後與預後因子 (Prognosis)
+### 正面預後因子
+- 無症狀且 LA 正常（MST > 5 年）
+- 輕度壁厚增加（6-7mm）
+- 無 SEC/血栓
+- 對治療反應良好的 CHF
+- 單側 ATE（vs 雙側）
+
+### 負面預後因子
+- LA/Ao > 2.0
+- SEC 或 LA 內血栓
+- ATE 病史（復發率 25-50%）
+- End-stage dilated phase
+- 心房顫動
+- 低體溫（ATE 發生時）
+
+### 存活數據
+
+| 臨床情境 | 中位存活時間 | 資料來源 |
+|----------|------------|---------|
+| 無症狀 HCM | > 1,800 days（> 5 年） | Rush et al. |
+| CHF 後（有效治療） | 12-18 months | Fox et al. |
+| ATE 後存活者 | 6-12 months | Smith et al. |
+| ATE 急性期死亡/安樂死 | 35-50% 未存活 | Borgeat et al. |
+| ATE 復發率 | 25-50% within 1 year | 多項研究 |
+| End-stage（收縮障礙） | 3-6 months | Payne et al. |
+
+## 六、人醫借鑒 (Translational Insights)
+
+### 六、人醫借鑑 (Translational Insights)
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Mavacamten (cardiac myosin inhibitor) | 選擇性降低LVOTO，避免β-blocker副作用 | 人醫 FDA 核准(2022)，貓PK研究進行中 |
+| 酒精中隔消融術 | 非手術解決嚴重LVOTO | 人醫Level A，貓解剖限制 |
+| Cardiac MRI + T1 mapping | 心肌纖維化定量（優於Echo） | 貓需全麻，少數研究中心 |
+| DOAC (Rivaroxaban/Apixaban) | 替代Clopidogrel的ATE預防 | 貓PK已知，臨床試驗進行中 |
+| AI-Echo screening | 自動壁厚/LA測量 | 初步演算法驗證中 |
+| 基因編輯(CRISPR) | MYBPC3突變修復 | 純實驗階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| 無症狀HCM是否需β-blocker | 可能減少LVOTO與SAM | 無RCT證實改善預後 | C |
+| Pimobendan在HCM的角色 | End-stage有幫助 | 可能加劇LVOTO（非end-stage） | C-D |
+| Clopidogrel vs DOAC | FAT CAT支持Clopi | DOAC理論上更佳，缺乏貓RCT | A(Clopi)/D(DOAC) |
+| 基因檢測商業化 | 繁殖篩檢有價值 | 外顯率不一、多數品種未知突變 | B-D |
+| 麻醉前篩檢策略 | NT-proBNP + 聽診可早期發現 | 偽陽性導致不必要延後手術 | B |
+| ATE後安樂死時機 | 雙側+低體溫+心衰→預後極差 | 部分個體仍可恢復功能 | C |
+
+### 知識空缺
+- 多數貓品種的 HCM 致病基因尚未確認
+- 無症狀 HCM 進展為 CHF/ATE 的風險分層模型
+- DOAC 在貓 ATE 預防的長期安全性
+- Mavacamten 等 myosin inhibitor 在貓的療效數據
 
 [圖片:HCM 心超影像——左心室壁肥厚與 SAM 現象]`,
-  clinical_pearl: '貓 HCM 的診斷「陷阱」：(1) 緊迫（stress）可導致暫時性心肌增厚假象——若壁厚臨界 6mm 且就診時極度緊張，應在鎮靜後或擇日複檢；(2) 全身性高血壓與甲亢是左心室肥厚最重要的續發原因，任何疑似 HCM 的貓必須量血壓並檢測 T4，否則可能給予不適當的治療；(3) 中老年貓的奔馬律（S3/S4 gallop）即使沒有雜音也高度提示心肌病，務必安排心超。',
+  clinical_pearl: '貓 HCM 的診斷「陷阱」：(1) 緊迫（stress）可導致暫時性心肌增厚假象——若壁厚臨界 6mm 且就診時極度緊張，應在鎮靜後或擇日複檢；(2) 全身性高血壓與甲亢是左心室肥厚最重要的續發原因，任何疑似 HCM 的貓必須量血壓並檢測 T4，否則可能給予不適當的治療；(3) 中老年貓的奔馬律（S3/S4 gallop）即使沒有雜音也高度提示心肌病，務必安排心超。\n\n【台灣流行病學】在台灣，HCM 是貓心臟病中最常見的類型，盛行率與國際報告一致（約佔貓心肌病的 58-68%）。台灣常見品種如英國短毛貓、波斯貓、美國短毛貓及混種家貓均為好發族群。台灣亞熱帶氣候下室內飼養貓比例高，肥胖問題普遍，可能加重 HCM 貓的臨床負擔。台灣獸醫心臟專科近年推廣麻醉前心臟篩檢（NT-proBNP + 聽診），有助於早期發現隱性 HCM。緬因貓與布偶貓在台灣飼養數量持續增加，建議育種前進行 MYBPC3 基因檢測。',
   common_mistakes: [
     '診斷 HCM 前未排除全身性高血壓（必須量血壓，收縮壓 > 160 mmHg 可導致續發性肥厚）',
     '診斷 HCM 前未檢測 T4（甲亢常見於中老年貓，可導致高動力性心肌肥厚）',
@@ -541,71 +1167,194 @@ const contentPericardialEffusion: NodeContent = {
     '特發性 PE 復發率 ~50%，可考慮心包膜切除術（pericardiectomy）',
     '血管肉瘤（HSA）來源 PE 預後極差，中位存活約 1-4 個月',
   ],
-  body: `# 心包膜積液 (Pericardial Effusion)
+  body: `# 心包膜積液 (Pericardial Effusion, PE)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
-心包膜積液是指心包膜囊（pericardial sac）內異常液體蓄積的狀態。正常犬心包膜囊內僅有少量（< 1 mL/kg）漿液。當液體過多蓄積壓迫心臟時，會導致心臟壓塞（cardiac tamponade），這是一種危及生命的急症。
 
-## 病理機轉
 
-1. 心包膜囊內液體蓄積（出血性最常見）
-2. 心包內壓力升高
-3. 首先壓迫低壓腔室——右心房舒張期塌陷
-4. 靜脈回流受阻 → 中心靜脈壓升高
-5. 體循環鬱血：頸靜脈怒張、肝腫大、腹水
-6. 右心室填充受限 → 心輸出量下降 → 低血壓
-7. 代償性心率加快、周邊血管收縮
-8. 嚴重者 → 心因性休克 → 死亡
+### 一、病理機制 (Pathophysiology)
+### 心臟壓塞機轉鏈
 
-### 急性 vs 慢性
-- 急性（如 HSA 破裂）：少量液體（50-100 mL）即可造成壓塞
-- 慢性（如特發性）：心包膜可逐漸伸展，可容納較大量液體才出現症狀
+| 層級 | 機轉 | 臨床意義 |
+|------|------|---------|
+| 液體蓄積 | 出血/滲出液累積於心包膜囊 | 正常 <1 mL/kg，超過即異常 |
+| 壓力升高 | 心包內壓 > 右心房壓 | 急性 50-100 mL 即可致壓塞 |
+| 右心壓迫 | RA 舒張期塌陷 → RV 填充↓ | 心超最早徵象 |
+| 靜脈回流↓ | CVP↑ → 體循環鬱血 | 頸靜脈怒張、肝鬱血、腹水 |
+| 心輸出量↓ | SV↓ → CO↓ → 低血壓 | 代償性心率↑、周邊收縮 |
+| 終末 | 心因性休克 → PEA/asystole | 未引流→致死 |
 
-## 病因分類
+### 急性 vs 慢性壓塞
 
-### 腫瘤性（最常見，~60-70%）
-- 血管肉瘤（Hemangiosarcoma, HSA）：右心耳最常見，高度惡性
-- 心基底部腫瘤（Heart base tumor）：化學受體瘤/異位甲狀腺腫瘤
-- 間皮瘤（Mesothelioma）：心包膜原發，較少見
-- 淋巴瘤：少見
+| 特徵 | 急性（如 HSA 破裂） | 慢性（如特發性） |
+|------|-------------------|----------------|
+| 液量 | 50-100 mL 即致壓塞 | 可達 500-1000 mL |
+| 心包膜順應性 | 未伸展，低容量高壓力 | 逐漸伸展，高容量低壓力 |
+| 發病速度 | 分鐘至小時 | 數週至數月 |
+| 典型表現 | 急性虛脫/猝死 | 漸進性腹水/運動不耐 |
 
-### 特發性（~20%）
-- 排除性診斷，原因不明
-- 金毛犬好發
-- 通常為出血性（hemorrhagic）
+### 病因分類
 
-### 其他（少見）
-- 感染性（細菌、真菌）
-- 凝血障礙
-- 左心房撕裂（MMVD 末期）
-- 尿毒症性
-- 外傷
+| 類別 | 比例 | 代表疾病 | 特徵 |
+|------|------|---------|------|
+| 腫瘤性 | 60-70% | HSA（右心耳）、心基底部腫瘤、間皮瘤 | 出血性為主 |
+| 特發性 | ~20% | 排除性診斷，金毛犬好發 | 出血性但不凝固 |
+| 感染性 | <5% | 細菌/真菌性心包膜炎 | 滲出性，可培養 |
+| 其他 | <10% | LA 撕裂、凝血障礙、尿毒症 | 依病因而異 |
 
-## 治療方案
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### Primary Care（一般診所/急診）
-- 心臟壓塞 = 急症：快速靜脈輸液（維持灌流）+ 緊急心包膜穿刺引流
-- 穿刺引流：右側第 4-6 肋間，心臟凹痕（cardiac notch），ECG 監測
-- 引流液送檢：細胞學、PCV/TS、細菌培養
-- 穩定後轉診進行完整評估
+### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+### 典型表現（發生率）
 
-### Specialty Care（心臟專科/腫瘤科）
-- 完整心超（評估心包膜內/心臟表面腫塊）
-- 腹部超音波（HSA 篩檢：脾臟、肝臟腫塊）
-- 引流液分析（腫瘤細胞辨識困難——細胞學敏感度低 ~50%）
-- 特發性 PE：
-  - 首次發作：穿刺引流 + 追蹤
-  - 復發（2-3 次以上）：心包膜切除術（subtotal pericardiectomy via thoracoscopy/thoracotomy）
-- HSA：
-  - 手術（右心耳切除）+ [藥物:Doxorubicin] 化療
-  - 預後仍差，中位存活 ~4-6 個月（手術+化療）
-- 心基底部腫瘤：
-  - 心包膜切除術可有效緩解壓塞（腫瘤通常生長慢）
-  - 中位存活可達 1-2 年以上
+| 臨床表現 | 發生率 | 特徵描述 | 備註 |
+|----------|--------|---------|------|
+| 虛弱/昏倒 | 60-80% | CO↓導致低灌流 | 急性最常見主訴 |
+| 腹部膨大 | 50-70% | 右心衰→腹水 | 常誤診為肝病 |
+| 運動不耐 | 50-60% | 漸進性惡化 | 慢性PE |
+| 呼吸急促 | 30-40% | 不常見（非左心衰） | 大量PE壓迫肺 |
+| 心音減弱 | 80-90% | 液體隔離心音 | Beck's triad之一 |
+| 脈搏弱/pulsus paradoxus | 40-50% | 吸氣時收縮壓降>10 mmHg | 壓塞特徵 |
+
+### 非典型表現（易誤診）
+- 慢性腹水被誤診為肝硬化、腹腔腫瘤
+- 急性虛脫被誤認為 GDV 或脾臟破裂
+- 右心衰症狀而心雜音不明顯——忽略心包膜疾病
+
+### 診斷工具比較
+
+| 工具 | 敏感度 | 特異度 | 適用情境 | 成本 |
+|------|--------|--------|---------|------|
+| 心臟超音波 (TFAST) | 98-100% | 98-100% | 確診+引導穿刺 | $$$ |
+| 胸腔 X 光 | 60-80% | 50-70% | 球形心影提示 | $$ |
+| ECG | 40-60% | 30-50% | electrical alternans、低電壓 | $ |
+| 引流液 PCV/TS | — | — | 鑑別出血性vs滲出性 | $ |
+| 引流液細胞學 | ~50% | 70-80% | 腫瘤偵測（敏感度低） | $$ |
+| 腹部超音波 | — | — | HSA 轉移篩檢（脾/肝） | $$ |
+
+### 記憶框架——「PE-TAP」
+- **P**ericardium（心包膜疾病=右心衰原因）
+- **E**ffusion（確認液體存在——TFAST）
+- **T**amponade（壓塞=急症）
+- **A**etiology（穿刺後找病因——腫瘤 vs 特發性）
+- **P**lan（穿刺→引流→送檢→長期計畫）
+
+## 三、治療策略 (Treatment)
+
+### 三、治療策略 (Treatment)
+### 急性心臟壓塞處理
+
+| 步驟 | Primary Care | Specialty Care | Evidence |
+|------|-------------|----------------|----------|
+| 輸液復甦 | Crystalloid 10-20 mL/kg IV bolus | Colloid 5 mL/kg 若需要 | Level B |
+| 心包穿刺 | 右側第4-6肋間，ECG監測 | 超音波引導（首選） | Level A |
+| 引流液送檢 | PCV/TS + 凝固測試 | 細胞學 + 培養 | Level B |
+| 穩定後 | 轉診完整評估 | 心超搜尋腫塊 + 腹超HSA篩檢 | Level B |
+
+### 依病因長期管理
+
+| 病因 | 治療策略 | 預後 | Evidence |
+|------|---------|------|----------|
+| HSA（右心耳） | 手術切除 + Doxorubicin 化療 | MST 4-6 mo（手術+化療）| Level B |
+| 心基底部腫瘤 | 心包膜切除術（姑息性） | MST 12-24+ mo | Level B |
+| 間皮瘤 | 心包膜切除 ± 腔內化療 | MST 8-14 mo | Level C |
+| 特發性（首次） | 穿刺引流 + 追蹤 | 復發率 ~50% | Level B |
+| 特發性（復發） | 心包膜切除術（VATS/開胸） | 治癒率高 | Level B |
+| 感染性 | 引流 + 長期抗生素/抗真菌 | 依病原而異 | Level C |
+
+### 轉診指標
+- 所有 PE 穩定後建議心臟/腫瘤專科評估
+- 復發性特發性 PE（≥2次）→ 手術評估
+- 疑似 HSA → 腫瘤科分期評估
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+### 四、併發症與監控 (Complications & Monitoring)
+### 疾病本身併發症
+
+| 併發症 | 發生率 | 機轉 | 處理 |
+|--------|--------|------|------|
+| 心臟壓塞 | 60-80% | 液體蓄積速率>代償 | 緊急穿刺引流 |
+| 復發（特發性） | ~50% | 病因持續 | 心包膜切除術 |
+| HSA 轉移/破裂 | 80-90% | 高度惡性腫瘤 | 化療（延長但非治癒） |
+| 心律不整(VPCs/VT) | 20-40% | 穿刺時或腫瘤侵犯 | Lidocaine 2 mg/kg IV |
+
+### 穿刺相關併發症
+
+| 併發症 | 發生率 | 預防 | 處理 |
+|--------|--------|------|------|
+| 心室穿刺 | 5-10% | ECG監測+超音波引導 | 撤針，通常自限 |
+| 心律不整 | 10-20% | ECG監測 | 通常撤針後自行緩解 |
+| 冠狀動脈撕裂 | <1% | 避開心室壁 | 手術（極少需要） |
+| 氣胸 | <5% | 正確進針位置 | 通常少量自限 |
+
+### 監測時程
+
+| 階段 | 頻率 | 項目 |
+|------|------|------|
+| 穿刺後24h | q2-4h | HR、BP、心超確認無復發 |
+| 首月 | q1-2w | 心超（復發監測） |
+| 特發性穩定期 | q1-3mo | 心超 |
+| HSA 化療期 | q3w（化療前） | CBC + 心超 |
+
+## 五、預後與預後因子 (Prognosis)
+
+### 五、預後與預後因子 (Prognosis)
+### 正面預後因子
+- 特發性 PE（vs 腫瘤性）
+- 心基底部腫瘤（vs HSA）
+- 首次穿刺即完全引流
+- 心包膜切除術後（特發性）治癒率高
+- 無脾臟/肝臟轉移（HSA 分期）
+
+### 負面預後因子
+- HSA 來源
+- 已有轉移（脾/肝/肺）
+- 反覆壓塞
+- DIC 合併
+- 低蛋白血症
+
+### 存活數據
+
+| 病因/情境 | 中位存活時間 | 資料來源 |
+|----------|------------|---------|
+| HSA（僅穿刺） | 1-2 months | Stafford Johnson et al. |
+| HSA（手術+化療） | 4-6 months | Weisse et al. |
+| 心基底部腫瘤 | 12-24+ months | Ehrhart et al. |
+| 特發性（心包切除後） | 正常壽命 | 多項回顧性研究 |
+| 間皮瘤 | 8-14 months | Closa et al. |
+
+## 六、人醫借鑒 (Translational Insights)
+
+### 六、人醫借鑑 (Translational Insights)
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Pericardial window via VATS | 微創心包開窗術 | 犬已廣泛使用胸腔鏡 |
+| Intrapericardial chemotherapy | 間皮瘤腔內化療（Cisplatin） | 犬少數案例報告 |
+| Pericardioscopy | 心包膜鏡直視活檢 | 實驗性，犬極少使用 |
+| Cardiac biomarkers (cTnI, BNP) | 鑑別壓塞嚴重度 | 輔助判斷，非確診 |
+| AI-TFAST interpretation | 自動偵測PE與壓塞 | 初步驗證中 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| 引流液細胞學價值 | 可偵測部分腫瘤（淋巴瘤） | 敏感度僅~50%，HSA脫落細胞少 | B |
+| HSA 是否值得手術 | MST延長2-4倍 | 仍為4-6月，成本高 | B |
+| 特發性PE何時手術 | 第2次復發即建議 | 部分1次復發後長期不再復發 | C |
+| 化療對HSA心臟PE效果 | Doxorubicin有延長MST證據 | 心臟毒性疑慮 | B |
+| 引流液pH/乳酸鑑別 | 可能幫助區分病因 | 重疊太大，實用性有限 | D |
+
+### 知識空缺
+- 特發性 PE 的確切免疫病理機轉
+- HSA 的有效免疫療法（checkpoint inhibitors 在犬的試驗中）
+- 更高敏感度的引流液腫瘤標記
+- 心包膜切除術的最佳術式比較（VATS vs 開胸 vs 膈下窗口）
 
 [圖片:心包膜積液心超影像——心包膜囊積液與右心房塌陷]`,
-  clinical_pearl: '心包膜積液引流液的 PCV 接近周邊血液不代表是急性出血——慢性心包膜積液的引流液 PCV 可高達 40-60%，但不會凝固（因為心臟持續擺動已將纖維蛋白去除）。引流液不凝固 + PCV 高 = 慢性心包膜出血（如 HSA 慢性滲出），引流液會凝固 = 醫源性穿刺到心腔或急性出血。這個「凝固測試」是穿刺過程中即時判斷的實用技巧。',
+  clinical_pearl: '心包膜積液引流液的 PCV 接近周邊血液不代表是急性出血——慢性心包膜積液的引流液 PCV 可高達 40-60%，但不會凝固（因為心臟持續擺動已將纖維蛋白去除）。引流液不凝固 + PCV 高 = 慢性心包膜出血（如 HSA 慢性滲出），引流液會凝固 = 醫源性穿刺到心腔或急性出血。這個「凝固測試」是穿刺過程中即時判斷的實用技巧。\n\n【台灣流行病學】在台灣，犬心包膜積液以腫瘤性病因為主（HSA 佔多數），好發於中老年大型犬如金毛獵犬與拉布拉多，這些品種在台灣飼養數量龐大。台灣亞熱帶氣候下戶外活動量大的犬隻需注意定期健檢。特發性心包膜積液在金毛犬族群中盛行率較高。台灣各大獸醫教學醫院與心臟專科已具備心包膜穿刺引流與胸腔鏡心包膜切除術能力，複雜病例建議及時轉診。',
   common_mistakes: [
     '將心包膜積液導致的腹水誤診為肝病或腹腔腫瘤——忽略「右心衰竭 → 腹水」的路徑',
     '心超未系統性搜尋右心耳腫塊——HSA 在大量積液時可能被遮蔽，引流後立即重做心超',
@@ -653,6 +1402,7 @@ const contentPericardialEffusion: NodeContent = {
     { type: 'journal', citation: 'Stafford Johnson M et al. Pericardial effusion in dogs: 29 cases. J Small Anim Pract. 2004;45(11):546-553.', relevance: '犬 PE 回溯性研究——病因分布與預後分析' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Pericardial Disease.', relevance: '心包膜疾病完整教材' },
     { type: 'journal', citation: 'Treggiari E et al. A descriptive review of cardiac tumours in dogs and cats. Vet Comp Oncol. 2017;15(2):273-288.', relevance: '心臟腫瘤分類與流行病學' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'ACVIM 心臟疾病共識指引，涵蓋心包膜積液鑑別診斷' },
   ],
   is_current: true,
   created_at: now,
@@ -680,56 +1430,191 @@ const contentHeartworm: NodeContent = {
     '預防藥物：Ivermectin / Milbemycin / Moxidectin / Selamectin，每月投予',
     'Caval syndrome 需緊急經頸靜脈取蟲（surgical extraction via jugular vein）',
   ],
-  body: `# 犬心絲蟲症 (Heartworm Disease)
+  body: `# 犬心絲蟲症 (Heartworm Disease, Dirofilaria immitis)
 
-## 概述
 
-犬心絲蟲症是由 Dirofilaria immitis 引起的嚴重心肺寄生蟲感染。成蟲寄生於肺動脈及右心室，導致肺血管疾病、肺動脈高壓，最終可進展為右心衰竭。台灣作為亞熱帶地區，全年皆有蚊蟲活動，是心絲蟲的高盛行區域。
 
-## 生活史
 
-1. 感染犬血液中有微絲蟲（microfilaria, L1）
-2. 蚊蟲叮咬感染犬時攝入 L1
-3. 蚊蟲體內發育：L1 → L2 → L3（感染期幼蟲），約 10-14 天
-4. 蚊蟲叮咬新宿主時 L3 進入皮下組織
-5. 皮下組織發育：L3 → L4 → L5（未成熟成蟲），約 2-3 個月
-6. L5 進入血管系統遷移至肺動脈
-7. 約感染後 6-7 個月成蟲成熟、開始產生 microfilaria
-8. 抗原檢測需感染後 ~7 個月才可偵測到
 
-## 疾病嚴重度分級（AHS Classification）
 
-| 分級 | 臨床特徵 | 影像學 |
-|------|---------|--------|
-| Class 1 | 無症狀或輕微咳嗽 | X 光正常或輕微變化 |
-| Class 2 | 咳嗽、運動不耐 | 肺動脈擴張、右心輕度增大 |
-| Class 3 | 呼吸困難、腹水、右心衰竭 | 肺動脈明顯擴張、右心增大、肺實質病變 |
-| Class 4 | Caval syndrome（急性腔靜脈症候群） | 大量蟲體堵塞三尖瓣/腔靜脈 |
 
-## 治療方案
+## 一、病理機制 (Pathophysiology)
 
-### Primary Care（一般診所）
-- 診斷確認：抗原檢測 + Knott\'s test + 胸腔 X 光
-- 基礎血檢：CBC、生化（BUN/Cre、肝指數）
-- 輕度感染（Class 1-2）：可在一般診所執行 AHS 治療方案
-- 治療前準備（第 0 天開始）：
-  - [藥物:Doxycycline] 10 mg/kg PO BID × 4 週（殺 Wolbachia 共生菌）
-  - [藥物:Ivermectin] 預防劑量 monthly（或 [藥物:Moxidectin]）
-  - [藥物:Prednisolone] 0.5 mg/kg PO BID × 1 週，再遞減（抗發炎）
-- 嚴格限制運動（最重要！——蟲體死亡引起肺栓塞風險與運動正相關）
+### 生活史與致病機轉鏈
 
-### Specialty Care（心臟專科/內科）
-- 完整心超（評估蟲體量、肺動脈高壓、右心功能）
-- AHS 三劑法 Melarsomine（[藥物:Immiticide]）2.5 mg/kg deep IM（腰部肌群）：
-  - 第 60 天：第 1 劑
-  - 第 90 天：第 2 劑
-  - 第 91 天：第 3 劑
-- 注射後嚴格籠養休息 4-6 週（肺血栓栓塞預防）
-- Melarsomine 注射部位疼痛管理：局部冰敷 + 短期止痛
-- 治療後 6-9 個月複檢抗原：應轉陰
-- 微絲蟲清除：Melarsomine 療程完成後，給予 [藥物:Ivermectin] + [藥物:Doxycycline]
-- Class 3：先穩定 CHF（[藥物:Furosemide]、Sildenafil 控制肺高壓）→ 再進行殺蟲
-- Class 4（Caval syndrome）：緊急經頸靜脈取蟲（surgical extraction using long alligator forceps via jugular venotomy）→ 穩定後再進行後續殺蟲治療
+| 階段 | 時程 | 位置 | 病理效應 |
+|------|------|------|---------|
+| L3 感染 | Day 0 | 皮下組織（蚊蟲叮咬） | 無臨床意義 |
+| L3→L4→L5 | Day 0-70 | 皮下→肌肉 | Ivermectin 可殺此期 |
+| L5 遷移 | Day 70-120 | 經靜脈→肺動脈 | 開始血管損傷 |
+| 成蟲成熟 | Day 120-210 | 肺動脈主幹/分支 | Ag test 陽性（~7月） |
+| 慢性寄生 | 數月-數年 | 肺動脈→（嚴重時）RV | 肺血管病變累積 |
+
+### 肺動脈病理進程
+
+| 層級 | 機轉 | 關鍵因子 |
+|------|------|---------|
+| 內皮 | 蟲體機械性損傷 + Wolbachia 抗原刺激 | WSP (Wolbachia surface protein) |
+| 血管壁 | Proliferative endarteritis → 管壁增厚 | PDGF、VEGF |
+| 血管腔 | 管徑狹窄 + 血栓形成 | 血小板活化、D-dimer↑ |
+| 肺循環 | PVR↑ → 肺動脈高壓 (PAH) | mPAP > 25 mmHg |
+| 右心 | 壓力過載 → RV 肥大 → RV 衰竭 | TR velocity↑、TAPSE↓ |
+| 全身 | 右心衰竭 → 體循環鬱血 → 腹水 | CVP↑、肝鬱血 |
+
+### Wolbachia 的角色
+- 革蘭氏陰性胞內共生菌，存在於所有 D. immitis
+- 蟲體死亡時釋放 Wolbachia → 宿主 TLR2/4 活化 → 嚴重發炎反應
+- Doxycycline 殺 Wolbachia → 降低殺蟲後發炎風險（AHS 2020 強力推薦）
+- 殺 Wolbachia 也會抑制蟲體繁殖與發育
+
+### Caval Syndrome 機轉
+大量蟲體（>50 隻）回堵至 RA/TV/CVC → 急性 TR → CO↓ → 機械性溶血（紅血球被蟲體碎裂）→ 血紅素尿 + DIC → 多器官衰竭 → 致死
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 依 AHS Class 分級表現
+
+| AHS Class | 臨床表現 | 影像學 | 蟲量估計 |
+|-----------|---------|--------|---------|
+| 1（輕度） | 無症狀/輕微咳嗽 | CXR 正常或輕微 | 少量（<10隻） |
+| 2（中度） | 咳嗽、運動不耐 | PA 擴張、右心輕度↑ | 中量（10-30隻） |
+| 3（重度） | 呼吸困難、腹水、右心衰竭 | PA 嚴重擴張、右心↑↑、肺病變 | 大量（>30隻） |
+| 4（Caval） | 急性虛脫、血紅素尿、DIC | 心超見大量蟲影 | 極大量回堵至RV/TV |
+
+### 非典型表現（易誤診）
+- 僅慢性咳嗽→誤診為支氣管炎/氣管塌陷
+- 僅腹水→誤診為肝病/腹腔腫瘤
+- 貓心絲蟲：哮喘樣症狀（HARD syndrome）→誤診為貓哮喘
+- 異位感染（眼、腦、皮下）：極少見
+
+### 診斷工具比較
+
+| 工具 | 敏感度 | 特異度 | 備註 | 成本 |
+|------|--------|--------|------|------|
+| 抗原檢測(SNAP) | 84-97% | 97-100% | 偵測雌蟲Ag，感染後~7月可測 | $$ |
+| 抗原加熱處理 | 95-99% | 97-100% | 打散免疫複合物，↑敏感度 | $$ |
+| Knott's test | 60-70% | 99% | 偵測microfilaria | $ |
+| 胸腔 X 光 | 70-85% | 60-75% | 評估肺血管與心臟 | $$ |
+| 心臟超音波 | 50-80% | 98-100% | 可視化蟲體（=號），評估PAH | $$$ |
+
+### 台灣流行病學重點
+- 全台皆為盛行區，南部陽性率 > 北部
+- 全年有蚊蟲活動（亞熱帶），預防須全年不中斷
+- 流浪犬陽性率可達 30-60%
+- 貓感染比例約犬的 5-15%
+
+## 三、治療策略 (Treatment)
+
+### AHS 2020 三劑法時程
+
+| 時間 | 步驟 | 藥物與劑量 | Evidence |
+|------|------|-----------|----------|
+| Day 0 | 開始預處理 | Doxycycline 10 mg/kg PO BID × 28d | Level A |
+| Day 0 | 開始預防 | Ivermectin 6-12 µg/kg PO monthly | Level A |
+| Day 0 | 嚴格限制運動 | 全程！ | Level A |
+| Day 0-14 | 抗發炎 | Prednisolone 0.5 mg/kg BID → taper | Level B |
+| Day 60 | 第1劑殺蟲 | Melarsomine 2.5 mg/kg deep IM (L3-L5) | Level A |
+| Day 90 | 第2劑殺蟲 | Melarsomine 2.5 mg/kg deep IM | Level A |
+| Day 91 | 第3劑殺蟲 | Melarsomine 2.5 mg/kg deep IM | Level A |
+| Day 91+ | 嚴格籠養 | 6-8 週（肺栓塞高風險期） | Level A |
+| Day 120 | 微絲蟲清除 | Ivermectin + Doxycycline if needed | Level B |
+| Day 271 | 複檢抗原 | 應轉陰（9月後） | Level B |
+
+### 依 Class 治療策略
+
+| Class | Primary Care | Specialty Care | 注意事項 |
+|-------|-------------|----------------|---------|
+| 1-2 | 可完成全程三劑法 | Echo評估後執行 | 標準流程 |
+| 3 | 先穩定CHF再轉診 | Furosemide + Sildenafil 1-2 mg/kg BID → 穩定後殺蟲 | 肺栓塞風險↑↑ |
+| 4 | 緊急轉診 | 經頸靜脈取蟲（forceps via jugular venotomy）→ 穩定後殺蟲 | 不治療→致死 |
+
+### 轉診指標
+- Class 3-4
+- 合併其他心臟疾病
+- Melarsomine 無法取得時
+- 治療後抗原持續陽性
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+### 疾病本身併發症
+
+| 併發症 | 發生率 | 機轉 | 處理 |
+|--------|--------|------|------|
+| 肺動脈高壓 | 60-80%(Class2+) | PA病變→PVR↑ | Sildenafil |
+| 右心衰竭 | 30-40%(Class3) | RV壓力過載 | Furosemide + Pimobendan |
+| 免疫複合物腎病 | 10-20% | Ag-Ab沉積於腎絲球 | 支持療法 |
+| DIC | Class 4 | 蟲體碎片+溶血 | 緊急取蟲 |
+| Caval syndrome | 5-10% | 蟲體堵塞TV/CVC | 外科取蟲 |
+
+### 治療相關併發症
+
+| 併發症 | 發生率 | 時期 | 處理 |
+|--------|--------|------|------|
+| 肺血栓栓塞 | 10-30% | Melarsomine後7-21天 | Prednisolone+籠養+O₂ |
+| 注射部位疼痛/腫脹 | 30-50% | 注射後24-72h | 冰敷+Tramadol |
+| 注射部位膿瘍 | <5% | 注射後1-2w | 引流+抗生素 |
+| 急性過敏反應 | <1% | 蟲死亡後 | Dexamethasone+Epinephrine |
+
+### 監測時程
+
+| 階段 | 頻率 | 項目 |
+|------|------|------|
+| 殺蟲後高風險期(7-21d) | 每日居家觀察 | 呼吸/精神/體溫/食慾 |
+| 殺蟲後6-8w | q2w | 理學+RR |
+| 治療後1月 | 1次 | Knott's test |
+| 治療後6-9月 | 1次 | 抗原複檢（應轉陰） |
+| 終身 | 每年 | 抗原篩檢+持續預防 |
+
+## 五、預後與預後因子 (Prognosis)
+
+### 正面預後因子
+- Class 1-2（治療成功率 > 95%）
+- 嚴格限制運動配合度高
+- Doxycycline 前處理完成
+- 無合併肺血管嚴重病變
+
+### 負面預後因子
+- Class 3-4
+- 合併 DIC/Caval syndrome
+- 飼主無法配合限制運動
+- 合併其他心臟疾病
+- 嚴重肺動脈高壓
+
+### 存活數據
+
+| 情境 | 預後 | 資料來源 |
+|------|------|---------|
+| Class 1-2 三劑法 | 治療成功率 > 95% | AHS 2020 |
+| Class 3 治療 | 成功率 70-85%（風險↑） | 多項回顧性研究 |
+| Class 4 手術取蟲 | 死亡率 15-40% | Ishihara et al. |
+| Class 4 不治療 | 致死率 ~100% | — |
+| 預防（全年） | 近100%有效 | AHS consensus |
+
+## 六、人醫借鑑 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| WHO 淋巴絲蟲IDA策略 | Mass drug administration概念用於流浪犬 | 部分國家試行 |
+| Wolbachia as drug target | 犬已成功應用Doxycycline前處理 | Level A，犬先於人 |
+| PAH靶向治療(Sildenafil/Bosentan) | 犬心絲蟲PAH管理 | Sildenafil已用，Bosentan研究中 |
+| Rapid diagnostic tests | SNAP test類似人瘧疾快篩概念 | 已成熟應用 |
+| 基因驅動滅蚊 | 從源頭消滅媒介蚊蟲 | 純實驗階段 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| Slow-kill vs 三劑法 | 經濟考量+Melarsomine供應問題 | AHS明確反對slow-kill（抗藥性風險） | A（三劑法）/ D（slow-kill） |
+| 抗原加熱處理常規化 | 提高敏感度5-15% | 額外成本+假陽性風險 | B |
+| 貓心絲蟲預防必要性 | 台灣高盛行區、貓感染預後差 | 貓感染率低、預防藥選擇有限 | B |
+| Melarsomine替代方案 | 全球供應不穩時需替代方案 | Moxidectin+Doxy+Ivermectin slow-kill效果不確定 | C |
+| 預防藥抗藥性 | ML(macrocyclic lactone)抗藥性報告增加 | 多數報告來自美國密西西比三角洲，亞洲尚無明確證據 | C |
+
+### 知識空缺
+- ML 類藥物抗藥性的分子機轉與全球分佈
+- 貓心絲蟲感染的最佳治療方案（無 Melarsomine 核准）
+- 心絲蟲疫苗開發的可行性
+- 全球氣候變遷對心絲蟲分佈區域擴張的影響預測
 
 [圖片:心絲蟲生活史示意圖]`,
   clinical_pearl: '心絲蟲抗原檢測是偵測「成蟲雌蟲」的抗原，因此在以下情況可能出現「假陰性」：(1) 感染後不到 7 個月（成蟲尚未成熟）；(2) 僅感染雄蟲；(3) 低蟲量感染。如果臨床高度懷疑但抗原陰性，可進行抗原加熱處理（heat treatment）打散免疫複合物後重測，可提升敏感度。另外，投予預防藥物並不會影響已感染成蟲的抗原檢測結果。',
@@ -811,12 +1696,14 @@ const contentCardiacAnatomy: NodeContent = {
   ],
   body: `# 心臟解剖學 (Cardiac Anatomy)
 
-## 心臟位置與外觀
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 心臟位置與外觀
 犬貓心臟位於胸腔縱膈腔中，介於左右肺葉之間。心臟長軸從右背側（心底 base）向左腹側（心尖 apex）傾斜約 30 度。犬心臟約佔第 3-6 肋間，心尖通常在第 5-6 肋間近胸壁處。
 
-## 四腔室結構
-
+### 四腔室結構
 ### 心房 (Atria)
 - **右心房 (RA)**：接收前腔靜脈（cranial vena cava）、後腔靜脈（caudal vena cava）與冠狀竇（coronary sinus）回流。右心耳（right auricle）為最常見的血管肉瘤好發部位。
 - **左心房 (LA)**：接收 4-6 條肺靜脈。LA 擴大是 MMVD 與 HCM 疾病進程的重要指標（LA/Ao ratio）。
@@ -825,8 +1712,7 @@ const contentCardiacAnatomy: NodeContent = {
 - **右心室 (RV)**：壁較薄（正常犬約 3-5 mm），呈新月形包繞左心室。負責將血液泵入肺循環。
 - **左心室 (LV)**：壁較厚（正常犬約 8-12 mm），呈圓錐形。負責將血液泵入體循環，承受較高壓力負荷。
 
-## 心臟瓣膜
-
+### 心臟瓣膜
 | 瓣膜 | 位置 | 結構 | 臨床意義 |
 |------|------|------|---------|
 | 二尖瓣 (Mitral) | 左房室交界 | 2 瓣葉 + 腱索 + 乳頭肌 | MMVD 最常受累瓣膜 |
@@ -834,15 +1720,33 @@ const contentCardiacAnatomy: NodeContent = {
 | 主動脈瓣 (Aortic) | 左心室流出道 | 3 半月瓣葉 | SAS 好發部位 |
 | 肺動脈瓣 (Pulmonic) | 右心室流出道 | 3 半月瓣葉 | PS 好發部位 |
 
-## 冠狀動脈
-
+### 冠狀動脈
 左冠狀動脈（LCA）自左主動脈竇發出，分為左前降支（LAD）與左迴旋支（LCx），供應左心室前壁、側壁與心室中隔前 2/3。右冠狀動脈（RCA）供應右心室與心室中隔後 1/3。犬貓冠狀動脈粥狀硬化極為罕見。
 
-## 犬貓差異
+## 二、臨床意義 (Clinical Significance)
 
+### 犬貓差異
 貓心臟體積相對小於犬，但左心室壁相對厚度較大（正常 < 6mm），這使得 HCM 的診斷閾值設定在 ≥ 6mm。貓心臟長軸較垂直，胸腔 X 光上呈現較短的 valentine-shaped 外觀。
 
-[圖片:犬心臟四腔室解剖圖——標示瓣膜與腔室]`,
+[圖片:犬心臟四腔室解剖圖——標示瓣膜與腔室]
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 3D 列印心臟模型用於手術規劃 | 犬先天性心臟病（PDA、VSD）術前模擬 | 研究階段，少數機構已採用 |
+| 經導管主動脈瓣置換術（TAVR） | 犬主動脈瓣狹窄（SAS/AS）的微創替代 | 人醫已成熟，獸醫因體型差異仍在早期研發 |
+| 心臟 MRI 組織特徵化 | 心肌纖維化定量（late gadolinium enhancement） | 獸醫受限於成本與麻醉需求，研究有限 |
+| 冠狀動脈 CT 血管攝影 | 犬貓冠狀動脈畸形評估 | 獸醫冠狀動脈病變罕見，臨床需求低 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬心臟瓣膜「正常」厚度標準尚缺乏大規模品種特異性數據 | 多數標準來自有限品種研究 | Level III |
+| 貓 HCM 壁厚 ≥ 6mm 門檻是否適用所有品種 | 大型品種貓可能需調整閾值 | Level IV |
+| 犬心包膜脂肪沉積對心超影像的影響程度 | 肥胖犬日益增多，影像判讀標準化不足 | Level V |
+| 右心室正常壁厚的品種差異 | 缺乏系統性 RV 壁厚資料庫 | Level V |`,
   clinical_pearl: '理解心臟瓣膜的體表投影位置是聽診定位的基礎：二尖瓣投影在左側第 5 肋間肘關節水平，主動脈瓣投影在左側第 4 肋間肩關節水平。但聽診最佳聽聞點（point of maximal intensity）與瓣膜實際解剖位置不同——它是血流方向決定的，而非瓣膜正上方。',
   common_mistakes: [
     '混淆聽診位置與瓣膜實際解剖位置——最佳聽聞點由血流方向決定',
@@ -865,6 +1769,7 @@ const contentCardiacAnatomy: NodeContent = {
     { type: 'textbook', citation: 'Evans HE, de Lahunta A. Miller\'s Anatomy of the Dog, 4th ed. Elsevier, 2013. Chapter 11: The Heart and Arteries.', relevance: '犬心臟解剖標準教材' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 1: Normal Cardiovascular Anatomy and Physiology.', relevance: '獸醫心臟科臨床解剖' },
     { type: 'journal', citation: 'Chetboul V et al. Echocardiographic reference values for domestic cats: a systematic review and meta-analysis. J Vet Intern Med. 2012;26(4):773-788.', relevance: '貓心臟正常超音波解剖參考值' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
   created_at: now,
@@ -895,8 +1800,11 @@ const contentCardiacElectrophysiology: NodeContent = {
   ],
   body: `# 心臟電生理學 (Cardiac Electrophysiology)
 
-## 心肌細胞動作電位
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 心肌細胞動作電位
 ### 快反應細胞（心房肌、心室肌、Purkinje 纖維）
 
 | 階段 | 離子機轉 | 說明 |
@@ -911,8 +1819,7 @@ const contentCardiacElectrophysiology: NodeContent = {
 
 SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），去極化速度較慢。Phase 4 具有自發性去極化（funny current, If），賦予其自律性。
 
-## 傳導系統
-
+### 傳導系統
 傳導順序：**SA node → 心房肌 → AV node → His 束 → 左/右束支 → Purkinje 纖維 → 心室肌**
 
 - **SA node**：位於右心房與前腔靜脈交界處，為最高節律點
@@ -921,8 +1828,7 @@ SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），�
 - **左束支**：分為左前分支（LAF）與左後分支（LPF）
 - **右束支**：沿心室中隔右側下行
 
-## ECG 波形與電氣活動對應
-
+### ECG 波形與電氣活動對應
 | ECG 波形 | 電氣事件 |
 |----------|---------|
 | P 波 | 心房去極化 |
@@ -932,11 +1838,31 @@ SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），�
 | T 波 | 心室再極化 |
 | QT interval | 心室去極化 + 再極化全程 |
 
-## 不反應期與臨床意義
+## 二、臨床意義 (Clinical Significance)
 
+### 不反應期與臨床意義
 有效不反應期（ERP）是指心肌細胞在去極化後無法再次被激動的時期。ERP 保護心臟避免過度快速的重複激動。Class III 抗心律不整藥物（如 Sotalol）延長 ERP，是其抗心律不整的主要機轉。
 
-[圖片:心肌動作電位五個階段與對應離子通道示意圖]`,
+[圖片:心肌動作電位五個階段與對應離子通道示意圖]
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 穿戴式 ECG（Apple Watch/Kardia） | 犬居家心律監測（特別是間歇性心律不整） | AliveCor Vet 已上市，臨床驗證中 |
+| 電生理學檢查（EPS）+ 射頻消融術 | 犬旁路相關 SVT（AVRT）的根治性治療 | 少數獸醫轉介中心可執行 |
+| AI-ECG 心房顫動預測 | 犬 MMVD/DCM 患者 AF 風險早期預警 | 人醫 Mayo Clinic AI 已上市，獸醫尚在研究 |
+| His 束起搏（HBP）/左束支區域起搏（LBBAP） | 犬 AV block 生理性起搏替代傳統右心室起搏 | 人醫廣泛推展，獸醫偶有病例報告 |
+| 基因檢測 SCN5A/KCNQ1 突變 | 杜賓犬/拳師犬心律不整遺傳篩檢 | 特定品種基因已鑑定，商業化篩檢部分可用 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬竇性心律不整是否在所有品種都為正常 | 短頭犬種的迷走神經張力模式可能不同 | Level IV |
+| 貓 QT interval 正常範圍與校正公式 | 缺乏大規模貓 QTc 標準化數據 | Level IV |
+| 犬 Holter VPC 閾值何時啟動治療 | >300 VPC/24h 常被引用，但證據基礎薄弱 | Level III |
+| AliveCor/穿戴式 ECG 在獸醫臨床的診斷準確度 | 部分研究顯示與標準 ECG 一致性良好，但假陽性率待評估 | Level III |`,
   clinical_pearl: '犬的竇性心律不整（sinus arrhythmia）是由呼吸引起的迷走神經張力變化所致——吸氣時迷走神經抑制減弱、心率加快；呼氣時迷走神經張力增強、心率減慢。這是犬的正常現象，但在貓身上幾乎不存在。如果貓出現明顯心律不整，應高度警覺為病理性。',
   common_mistakes: [
     '混淆 SA node 與 AV node 的細胞類型——兩者都是慢反應細胞（Ca²⁺ 依賴），而非快反應細胞',
@@ -959,6 +1885,7 @@ SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），�
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016.', relevance: '獸醫心電圖與電生理標準教材' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 2: Cardiac Electrophysiology.', relevance: '心臟電生理基礎' },
     { type: 'journal', citation: 'Santilli RA et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018.', relevance: '犬貓心電圖進階教材' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
   created_at: now,
@@ -989,7 +1916,13 @@ const contentValvularDegeneration: NodeContent = {
   ],
   body: `# 瓣膜退化機轉 (Valvular Degeneration Pathogenesis)
 
-## 正常瓣膜結構
+
+
+
+
+## 一、核心概念與機轉 (Core Concept & Mechanism)
+
+### 正常瓣膜結構
 
 正常房室瓣（二尖瓣與三尖瓣）由三層組成：
 1. **Atrialis**（心房面）：富含彈性纖維，承受血流衝擊
@@ -1016,16 +1949,36 @@ const contentValvularDegeneration: NodeContent = {
 - **Endothelin-1**：血管收縮肽，促進瓣膜纖維化
 - **BMP/Wnt 訊號**：發育相關通路在退化過程中異常再活化
 
-## 從退化到心衰竭的病理級聯
+## 二、臨床意義 (Clinical Significance)
+
+### 從退化到心衰竭的病理級聯
 
 瓣膜增厚與脫垂 → 瓣膜閉合不良 → 二尖瓣閉鎖不全（MR）→ 收縮期血液逆流至左心房 → LA 容量過載 → LA 擴大 → 左心室離心性肥大（Frank-Starling 代償）→ 神經荷爾蒙活化（RAAS↑, SNS↑）→ 鈉水滯留 + 血管收縮 → 肺靜脈壓升高 → 肺水腫 → CHF。
 
-## 腱索退化
+### 腱索退化
 
 腱索（chordae tendineae）同樣受黏液瘤性退化影響：
 - 腱索基質 GAGs 沉積 → 延長、變細
 - 腱索斷裂（chordal rupture）→ 急性嚴重 MR → 急性肺水腫
 - 第一級腱索（primary chordae，連接瓣尖與乳頭肌）斷裂後果最嚴重
+
+## 三、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 經導管二尖瓣修復（MitraClip） | 犬 MMVD 微創瓣膜修復替代開心手術 | 人醫已廣泛使用，犬體型與瓣膜型態差異大，研究中 |
+| 瓣膜組織工程（tissue-engineered valves） | 犬先天性瓣膜畸形的生物人工瓣膜替代 | 動物模型研究階段 |
+| Serotonin 受體拮抗劑減緩瓣膜退化 | 5-HT2B 拮抗劑作為 MMVD 疾病修飾療法 | 概念驗證中，尚無臨床試驗 |
+| 循環生物標記（cfDNA、miRNA）監測瓣膜退化進程 | 非侵入性追蹤 MMVD 從 B1 到 B2 的轉變 | 犬 cardiac biomarker 研究活躍中 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| MMVD B1→B2 轉變速率的預測因子 | MR jet 面積、NT-proBNP 趨勢是候選指標，尚無驗證模型 | Level III |
+| 瓣膜退化是否可藥物逆轉 | 目前無疾病修飾療法（disease-modifying therapy），僅對症治療 | Level V |
+| CKCS 品種篩檢最佳年齡與頻率 | 各國繁殖指南不同（1 歲 vs 2.5 歲開始），缺乏成本效益分析 | Level IV |
+| 三尖瓣同時退化的臨床權重 | TR 對 MMVD 預後的獨立影響尚待釐清 | Level III |
 
 [圖片:二尖瓣黏液瘤性退化組織病理對比——正常 vs 輕度 vs 重度]`,
   clinical_pearl: 'CKCS 品種的瓣膜退化有獨特的遺傳基礎——多基因遺傳模式使得部分 CKCS 在 1-2 歲即可出現雜音。英國 CKCS 繁殖指南建議：5 歲前出現雜音的犬不應用於繁殖。台灣 CKCS 族群由於基因庫較小，瓣膜退化的盛行率可能更高，建議及早進行心臟篩檢。',
@@ -1051,6 +2004,7 @@ const contentValvularDegeneration: NodeContent = {
     { type: 'journal', citation: 'Oyama MA, Bhatt K. Molecular mechanisms of myxomatous mitral valve disease. Vet Clin North Am Small Anim Pract. 2022;52(3):571-583.', relevance: 'MMVD 分子機轉最新綜述' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 7: Acquired Valvular Disease.', relevance: '瓣膜退化病理學教材' },
     { type: 'journal', citation: 'Connell PS et al. Serotonin 5-HT2B receptor signaling and valve disease. J Vet Cardiol. 2012;14(1):277-287.', relevance: 'Serotonin 在瓣膜退化中的角色' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1081,7 +2035,13 @@ const contentMyocardialRemodeling: NodeContent = {
   ],
   body: `# 心肌重塑機轉 (Myocardial Remodeling)
 
-## 重塑的分類
+
+
+
+
+## 一、核心概念與機轉 (Core Concept & Mechanism)
+
+### 重塑的分類
 
 ### 離心性肥大 (Eccentric Hypertrophy)
 觸發條件：**容量過載**（volume overload）
@@ -1122,9 +2082,30 @@ const contentMyocardialRemodeling: NodeContent = {
 | SNS | Norepinephrine | 心肌凋亡、Ca²⁺ 異常、心律不整 | β-blockers |
 | 內皮素 | Endothelin-1 | 血管收縮、肥大、纖維化 | （Bosentan，獸醫少用）|
 
-## 代償到失代償
+## 二、臨床意義 (Clinical Significance)
+
+### 代償到失代償
 
 代償期 → 能量需求持續增加 → 粒線體功能障礙 → ATP 生成不足 → 鈣離子處理蛋白（SERCA2a）功能下降 → 收縮-舒張偶聯異常 → 心肌細胞凋亡增加 → 收縮力衰退 → 心輸出量下降 → 進一步神經荷爾蒙活化 → 惡性循環。
+
+## 三、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Sacubitril/Valsartan (Entresto) | ARNI 類抗重塑藥物用於犬 CHF | 犬 MMVD 研究中，初步數據正面 |
+| SGLT2 抑制劑（Empagliflozin）心腎保護 | 犬心衰竭伴腎功能下降的雙重保護 | 人醫 EMPEROR/DAPA-HF 改變治療指引，獸醫尚無數據 |
+| 心肌纖維化 MRI 定量（T1 mapping） | 犬 DCM/HCM 纖維化程度評估 | 技術可行但獸醫麻醉成本高，研究有限 |
+| SERCA2a 基因治療 | 犬 DCM 收縮功能恢復 | 人醫 CUPID 試驗失敗，但犬模型研究持續 |
+| 可穿戴式血流動力學監測 | 犬 CHF 居家前負荷即時追蹤 | CardioMEMS 在人醫已上市，獸醫尚無 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| β-blocker 在犬 CHF 的角色 | 人醫為 cornerstone，犬因 Pimobendan 地位爭議大；MMVD 犬無明確獲益證據 | Level II |
+| 心肌纖維化是否可逆 | 反應性纖維化可能部分可逆（MRA 治療），替代性纖維化被認為不可逆 | Level III |
+| 重塑的「不歸點」（point of no return）定義 | 缺乏犬心肌重塑各階段的定量生物標記 | Level V |
+| Pimobendan 的抗重塑機轉是否獨立於血流動力學效應 | 體外實驗支持直接抗纖維化作用，臨床證據有限 | Level III |
 
 [圖片:離心性 vs 同心性肥大的肌小節排列差異示意圖]`,
   clinical_pearl: 'Pimobendan 的獨特作用機轉使其在犬心臟衰竭治療中扮演核心角色：它是 PDE3 抑制劑（增加 cAMP → 正性肌力 + 血管舒張）兼鈣離子增敏劑（sensitizer，增加 troponin C 對 Ca²⁺ 的親和力，不增加細胞內 Ca²⁺ 濃度）。後者的意義在於，它增強收縮力但不增加心肌氧耗與心律不整風險——這是與傳統正性肌力藥（如 Digoxin）的關鍵差異。',
@@ -1149,6 +2130,7 @@ const contentMyocardialRemodeling: NodeContent = {
     { type: 'journal', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 相關心肌重塑與治療共識' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 3: Pathophysiology of Heart Failure.', relevance: '心肌重塑與心衰竭病理機轉教材' },
     { type: 'journal', citation: 'Oyama MA, Levy RJ. Insights into serotonin signaling mechanisms associated with canine degenerative mitral valve disease. J Vet Intern Med. 2010;24(1):27-36.', relevance: '犬瓣膜退化與重塑的分子機轉' },
+    { type: 'guideline', citation: 'Côté E, MacDonald KA, Meurs KM, et al. "Feline Cardiology." Wiley-Blackwell, 2011.', relevance: '貓心臟病病理機轉參考' },
   ],
   is_current: true,
   created_at: now,
@@ -1179,7 +2161,13 @@ const contentArrhythmiaMechanism: NodeContent = {
   ],
   body: `# 心律不整機轉 (Arrhythmia Pathogenesis)
 
-## 機轉一：自律性異常 (Abnormal Automaticity)
+
+
+
+
+## 一、核心概念與機轉 (Core Concept & Mechanism)
+
+### 機轉一：自律性異常 (Abnormal Automaticity)
 
 ### 增強自律性 (Enhanced Automaticity)
 - 正常節律細胞（SA/AV node）的 Phase 4 自發去極化速率增加
@@ -1221,12 +2209,33 @@ const contentArrhythmiaMechanism: NodeContent = {
 | 功能性微迴路 | 心房肌多重小波 | 心房顫動（AF） |
 | 疤痕周圍折返 | 心室纖維化區域 | 心室頻脈（VT, 如 DCM） |
 
-## 心律不整與抗心律不整藥物的機轉對應
+## 二、臨床意義 (Clinical Significance)
+
+### 心律不整與抗心律不整藥物的機轉對應
 
 - **自律性異常**：β-blockers（降低 Phase 4 去極化速率）
 - **EAD 相關**：Mg²⁺ 補充、避免 QT 延長藥物、維持 K⁺ 正常
 - **DAD 相關**：Ca²⁺ 通道阻滯劑、停用 Digoxin
 - **折返**：Class I（降低傳導速度打斷迴路）、Class III（延長 ERP 消除可激動間隙）
+
+## 三、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 3D 電生理學定位（CARTO/EnSite）| 犬複雜心律不整的精確定位與消融 | 極少數獸醫中心具備設備 |
+| 射頻消融術（RF ablation）| 犬旁路相關 SVT 的根治性治療 | 已有成功案例報告，未普及 |
+| 脈衝場消融術（PFA） | 心房顫動消融的新一代技術 | 人醫快速發展，獸醫尚未引入 |
+| 皮下植入式心臟去顫器（S-ICD）| 杜賓犬 DCM 高 SCD 風險族群保護 | 人醫成熟技術，獸醫因成本與體型限制極少使用 |
+| AI 驅動心律不整預測 | Holter 數據 AI 分析預測 SCD 風險 | 人醫 FDA 已核准多款，獸醫研究中 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬「良性」VPC 與「惡性」VPC 的分界標準 | Holter VPC 數量、型態、複雜度均為考量，缺乏統一標準 | Level III |
+| 犬 AF 的藥物轉復是否值得嘗試 | 大型犬 AF 藥物/電復律復發率極高，目前共識為心率控制 | Level II |
+| 抗心律不整藥物的促心律不整風險量化 | 缺乏犬特異性的 proarrhythmia 風險評分工具 | Level IV |
+| 拳師犬 ARVC 的最佳長期藥物方案 | Sotalol vs Mexiletine+Sotalol 合併療法的比較數據有限 | Level III |
 
 [圖片:三大心律不整機轉示意圖——自律性、觸發活動、折返]`,
   clinical_pearl: '臨床上最重要的判斷：心室早期收縮（VPC）何時需要治療？杜賓犬 DCM 相關的 VPC 若 Holter 顯示 > 300 VPC/24h、出現連續 VPC（couplets/triplets）、R-on-T 現象或心室頻脈，則需抗心律不整治療。Sotalol（Class III，延長 ERP）是杜賓犬 VPC 的首選，因為其疤痕周圍折返機轉對延長不反應期反應良好。',
@@ -1252,6 +2261,7 @@ const contentArrhythmiaMechanism: NodeContent = {
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016. Chapter 2: Mechanisms of Arrhythmias.', relevance: '心律不整機轉標準教材' },
     { type: 'journal', citation: 'Wess G et al. Prevalence of dilated cardiomyopathy and ventricular arrhythmias in Doberman Pinschers. J Vet Intern Med. 2010;24(6):1358-1364.', relevance: '杜賓犬 DCM 相關心律不整流行病學' },
     { type: 'textbook', citation: 'Santilli RA et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018. Chapter 3: Arrhythmia Mechanisms.', relevance: '獸醫心律不整機轉進階教材' },
+    { type: 'guideline', citation: 'Côté E, MacDonald KA, Meurs KM, et al. "Feline Cardiology." Wiley-Blackwell, 2011.', relevance: '貓心臟病病理機轉參考' },
   ],
   is_current: true,
   created_at: now,
@@ -1282,7 +2292,13 @@ const contentCardiacHemodynamics: NodeContent = {
   ],
   body: `# 心臟血流動力學 (Cardiac Hemodynamics)
 
-## 心輸出量與決定因素
+
+
+
+
+## 一、核心概念與機轉 (Core Concept & Mechanism)
+
+### 心輸出量與決定因素
 
 心輸出量（Cardiac Output, CO）= 心搏量（Stroke Volume, SV）× 心率（Heart Rate, HR）
 
@@ -1317,13 +2333,32 @@ Frank-Starling 定律描述心搏量與前負荷的關係：在生理範圍內�
 | 離心性肥大 | 容量過載 | 心室擴大，壁厚/腔徑比↓ | MMVD (MR)、DCM |
 | 同心性肥大 | 壓力過載 | 壁增厚，腔徑不變或↓ | SAS、HCM、高血壓 |
 
-## 神經荷爾蒙調節
+## 二、臨床意義 (Clinical Significance)
 
-### RAAS (Renin-Angiotensin-Aldosterone System)
+### 神經荷爾蒙調節
+
+#### RAAS (Renin-Angiotensin-Aldosterone System)
 腎灌流↓ → 腎素釋放 → Angiotensin I → ACE → Angiotensin II（強力血管收縮 + 促 Aldosterone 分泌）→ Aldosterone（鈉水滯留 + 心肌纖維化）。
 
-### 交感神經系統 (SNS)
+#### 交感神經系統 (SNS)
 心輸出量↓ → 壓力感受器反射 → NE/Epi 釋放 → β1（↑HR + ↑收縮力）+ α1（血管收縮）。短期維持灌流，長期導致心肌氧耗↑、心律不整、進一步重塑。
+
+## 三、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 侵入性血流動力學監測（Swan-Ganz）| 犬嚴重 CHF 的肺動脈楔壓即時監測 | 技術上可行，但獸醫 ICU 極少使用 |
+| CardioMEMS 植入式肺動脈壓監測 | 犬 CHF 居家遠距前負荷監測 | 人醫 CHAMPION 試驗減少 37% 再住院，獸醫尚無 |
+| 壓力-容積環（PV loop）分析 | 犬心功能精確評估（收縮末期彈性 Ees） | 研究工具，臨床應用受限於導管成本 |
+| 床邊超音波 IVC 擴張指數 | 犬前負荷評估的非侵入性替代指標 | 獸醫 POCUS 教育漸增，caudal vena cava 評估可行 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 CHF 最佳前負荷目標範圍 | 缺乏犬特異性的「最適前負荷」定量指標 | Level IV |
+| Pimobendan 的正性變時作用（lusitropic effect）臨床重要性 | 體外數據支持舒張功能改善，臨床研究設計困難 | Level III |
+| 犬 Starling 曲線平台段的個體化判定 | 目前以 sleeping RR 間接推估，缺乏直接測量方法 | Level V |
 
 [圖片:心輸出量決定因素與 Frank-Starling 曲線示意圖]`,
   clinical_pearl: '理解「前負荷—後負荷—收縮力」三角關係有助於快速判斷藥物作用：Furosemide 降低前負荷（減少肺鬱血）、Enalapril 降低後負荷（減輕心臟射血阻力）、Pimobendan 同時增強收縮力與降低後負荷（inodilator）。CHF 三合一療法正是針對這三個靶點的綜合介入。',
@@ -1348,6 +2383,7 @@ Frank-Starling 定律描述心搏量與前負荷的關係：在生理範圍內�
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 1: Cardiovascular Physiology.', relevance: '獸醫心血管生理學完整教材' },
     { type: 'textbook', citation: 'Cunningham JG, Klein BG. Textbook of Veterinary Physiology, 6th ed. Elsevier, 2020. Chapter 19-21.', relevance: '獸醫生理學教材心血管章節' },
     { type: 'journal', citation: 'Boswood A. Current use of pimobendan in canine patients with heart disease. Vet Clin North Am Small Anim Pract. 2010;40(4):571-580.', relevance: 'Pimobendan 血流動力學作用機轉文獻' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1378,7 +2414,13 @@ const contentEchocardiography: NodeContent = {
   ],
   body: `# 心臟超音波基礎 (Basic Echocardiography)
 
-## 設備與準備
+
+
+
+
+## 一、檢查原理與適應症 (Principles & Indications)
+
+### 設備與準備
 
 - **探頭**：犬用 5-7.5 MHz 相位陣列（phased array），貓用 7.5-12 MHz
 - **體位**：右側臥位（右胸骨旁切面），左側臥位（左心尖切面）
@@ -1400,7 +2442,9 @@ const contentEchocardiography: NodeContent = {
 - **四腔室切面**：Doppler 評估二尖瓣血流（E/A ratio）
 - **五腔室切面**：CW Doppler 測量 LVOT/Aortic flow
 
-## 關鍵測量參數
+## 二、判讀要點 (Interpretation)
+
+### 關鍵測量參數
 
 | 參數 | 模式 | 正常值（犬） | 臨床意義 |
 |------|------|------------|---------|
@@ -1421,6 +2465,32 @@ const contentEchocardiography: NodeContent = {
 
 ### Continuous Wave (CW) Doppler
 測量高速血流。用於 TR 最大速度估算肺動脈壓力（mPAG = 4V²；> 2.8 m/s 提示肺高壓）。
+
+## 三、常見陷阱 (Pitfalls)
+
+- M-mode 游標未垂直於心室中隔與後壁，傾斜切割導致 LVIDd 高估
+- LA/Ao ratio 測量時機不一致——應在主動脈瓣關閉瞬間的第一幀（early diastole）
+- 貓在緊迫下可出現暫時性心肌增厚假象（stress-induced dynamic LVOTO）
+- 使用犬 FS 正常值（25-45%）判斷貓——貓正常 FS 較高（35-65%）
+
+## 四、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 斑點追蹤心超（Speckle Tracking Echocardiography, STE）| 犬貓心肌應變（strain）分析，早期偵測亞臨床心肌功能障礙 | 獸醫研究漸增，部分品牌已內建獸醫演算法 |
+| 3D 心超即時容積評估 | 精確測量 LV/LA 容積取代 M-mode 線性測量 | 設備成本高，獸醫研究驗證中 |
+| AI 輔助心超影像品質控管與自動測量 | 減少操作者間變異，標準化獸醫心超報告 | 人醫 Caption Health/Us2.ai 已上市，獸醫版本開發中 |
+| 經食道心超（TEE）| 犬心臟手術中即時監測，先天性心臟病精確評估 | 少數轉介中心可執行 |
+| Contrast-enhanced 超音波（CEUS）| 心肌灌流評估，心臟腫塊血管化程度判斷 | 獸醫研究階段 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| LVIDDN 正常閾值 1.73 的品種適用性 | 原始研究品種分布偏向中大型犬，小型犬閾值可能需調整 | Level III |
+| 心超 MMVD B1 vs B2 分界的「灰色地帶」| LA/Ao 1.5-1.7 + LVIDDN 1.6-1.8 的判定仍有爭議 | Level II |
+| STE strain 在獸醫臨床的實用性 | 正常參考值因設備廠牌差異大，標準化不足 | Level III |
+| 犬 E/A ratio 與舒張功能評估的可靠性 | 犬心率變異大影響 E/A 測量一致性 | Level IV |
 
 [圖片:犬心臟超音波標準切面示意圖——右胸骨旁長軸與短軸]`,
   clinical_pearl: 'LA/Ao ratio 的測量方法要標準化：在右胸骨旁短軸心底水平切面，主動脈呈圓形時取第一幀（早期舒張期），Ao 測量從右冠狀瓣尖根部到對側非冠狀瓣-左冠狀瓣交界處，LA 從同一幀以平行線法測量。測量不標準化是臨床上 LA/Ao ratio 變異大的主要原因——建議每次使用相同方法與時機點。',
@@ -1502,7 +2572,13 @@ const contentECG: NodeContent = {
   ],
   body: `# 心電圖判讀 (ECG Interpretation)
 
-## ECG 操作
+
+
+
+
+## 一、檢查原理與適應症 (Principles & Indications)
+
+### ECG 操作
 
 ### 標準體位
 犬貓右側臥位，四肢與軀幹平行。電極夾置於：
@@ -1516,7 +2592,9 @@ const contentECG: NodeContent = {
 - 靈敏度：1 cm = 1 mV（標準校正波）
 - 濾波器：適當啟用以減少肌電干擾
 
-## 系統性判讀七步驟
+## 二、判讀要點 (Interpretation)
+
+### 系統性判讀七步驟
 
 ### Step 1：心率
 - 方法一（規則節律）：1500 / R-R interval (mm)（50 mm/s 走紙速度下）
@@ -1557,6 +2635,30 @@ const contentECG: NodeContent = {
 | VPC | 寬大異形 QRS、無前置 P 波 |
 | 心室頻脈 (VT) | ≥ 3 連續 VPC，HR 通常 > 150 bpm |
 | 第三度 AV block | P 波與 QRS 完全分離，心室逸搏節律慢 |
+
+## 三、常見陷阱 (Pitfalls)
+
+- 呼吸動作（panting）造成的基線漂移誤判為 ST 變化
+- 顫抖造成的高頻肌電干擾誤判為心房顫動
+- 犬竇性心律不整的暫停期誤判為 AV block
+- 僅觀察數秒片段而遺漏間歇性 VPC
+
+## 四、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| AI-ECG 診斷（Mayo/Google）| 犬貓 ECG 自動判讀與心律不整分類 | 獸醫專用 AI 模型訓練中，部分商業軟體已具初步功能 |
+| AliveCor/Kardia 穿戴式 ECG | 犬居家心律監測——飼主可執行 30 秒 ECG 傳給獸醫判讀 | AliveCor Vet 已上市且有獸醫驗證研究 |
+| 植入式 loop recorder（ILR）| 犬不明原因暈厥的長期心律監測（2-3 年）| 人醫廣泛使用，獸醫偶有報告但成本高 |
+| 信號平均 ECG（SAECG）| 犬 DCM/ARVC 微電位偵測，VT 風險分層 | 研究工具，臨床常規應用有限 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 ECG 是否需要 12 導程（如人醫標準）| 獸醫傳統僅用 6 肢導，額外胸前導程的增量價值待研究 | Level IV |
+| Holter 監測在非杜賓犬品種的篩檢價值 | 成本效益與觸發閾值缺乏非杜賓品種的系統性數據 | Level IV |
+| 穿戴式 ECG 取代 Holter 的可行性 | 居家操作方便性高但記錄時間與品質受限 | Level III |
 
 [圖片:犬正常 ECG 與各種心律不整 ECG 波形對比]`,
   clinical_pearl: '心房顫動在犬的臨床判斷關鍵：(1) 大型犬（> 20 kg）合併 DCM 時最常見；(2) 小型犬出現 AF 幾乎都代表嚴重左心房擴大；(3) 犬 AF 的治療目標是心率控制（target HR < 140-160 bpm at rest），而非節律轉復——電復律或藥物轉復在犬的復發率極高。Diltiazem 或 Digoxin 是心率控制的首選。',
@@ -1607,6 +2709,7 @@ const contentECG: NodeContent = {
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016.', relevance: '獸醫心電圖標準教材' },
     { type: 'textbook', citation: 'Santilli RA et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018.', relevance: '犬貓心電圖進階判讀教材' },
     { type: 'journal', citation: 'Meurs KM et al. Use of ambulatory electrocardiography for detection of ventricular premature complexes in healthy dogs. J Am Vet Med Assoc. 2001;218(8):1291-1292.', relevance: 'Holter 監測在犬的正常值參考' },
+    { type: 'guideline', citation: 'Thomas WP, Gaber CE, Jacobs GJ, et al. "Recommendations for standards in transthoracic two-dimensional echocardiography in the dog and cat." J Vet Intern Med. 1993;7(4):247-252.', relevance: '犬貓心臟超音波標準化建議' },
   ],
   is_current: true,
   created_at: now,
@@ -1637,8 +2740,12 @@ const contentThoracicRadiograph: NodeContent = {
   ],
   body: `# 胸腔 X 光判讀 (Thoracic Radiograph Interpretation)
 
-## 拍攝標準
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 一、檢查原理與適應症 (Principles & Indications)
+### 拍攝標準
 ### 標準視圖
 1. **右側臥位（Right lateral）**：最常用，評估心臟大小（VHS）與肺野
 2. **左側臥位（Left lateral）**：輔助評估，右肺野較清晰
@@ -1650,22 +2757,7 @@ const contentThoracicRadiograph: NodeContent = {
 - 曝光適當：可見肺血管與椎體同時可辨
 - 無旋轉：肋骨左右對稱
 
-## VHS 測量法
-
-Vertebral Heart Score (VHS)：
-1. 側面觀測量心臟長軸（L）：從隆突下方心底至心尖
-2. 測量心臟短軸（S）：垂直於長軸的最大寬度
-3. 將 L 與 S 分別轉換為椎體數（從 T4 開始）
-4. VHS = L + S
-
-| 物種 | 正常 VHS | 增大判定 |
-|------|----------|---------|
-| 犬（一般） | 9.7 ± 0.5 | > 10.5 |
-| 貓 | 7.5 ± 0.3 | > 8.0 |
-| CKCS | 10.6 ± 0.5 | > 11.5 |
-
-## 腔室擴大的 X 光徵象
-
+### 腔室擴大的 X 光徵象
 ### 左心房擴大
 - **側面觀**：隆突角度增大（主支氣管分離）、左主支氣管向背側抬高、心臟背緣直立化、心臟背尾側突出
 - **DV/VD 觀**：左心耳區域突出（2 點鐘位置）、左主支氣管向外偏移
@@ -1681,8 +2773,7 @@ Vertebral Heart Score (VHS)：
 ### 雙心房/雙心室擴大
 - **整體心影增大**（globoid cardiomegaly）、VHS 明顯增加
 
-## 肺野評估
-
+### 肺野評估
 ### 心因性肺水腫（犬）
 - **分布**：肺門至背尾側（perihilar to caudodorsal），左右對稱或右側為主
 - **型態**：早期間質型（模糊化）→ 進展至肺泡型（air bronchograms）
@@ -1697,7 +2788,52 @@ Vertebral Heart Score (VHS)：
 - 肺動脈擴張：提示肺高壓（如心絲蟲症）
 - 肺動脈「截斷」徵象：心絲蟲導致的肺動脈病變
 
-[圖片:犬胸腔 X 光 VHS 測量法與心臟各腔室擴大特徵標示]`,
+[圖片:犬胸腔 X 光 VHS 測量法與心臟各腔室擴大特徵標示]
+
+## 二、判讀要點 (Interpretation)
+
+### 二、判讀要點 (Interpretation)
+### VHS 測量法
+Vertebral Heart Score (VHS)：
+1. 側面觀測量心臟長軸（L）：從隆突下方心底至心尖
+2. 測量心臟短軸（S）：垂直於長軸的最大寬度
+3. 將 L 與 S 分別轉換為椎體數（從 T4 開始）
+4. VHS = L + S
+
+| 物種 | 正常 VHS | 增大判定 |
+|------|----------|---------|
+| 犬（一般） | 9.7 ± 0.5 | > 10.5 |
+| 貓 | 7.5 ± 0.3 | > 8.0 |
+| CKCS | 10.6 ± 0.5 | > 11.5 |
+
+## 三、常見陷阱 (Pitfalls)
+
+### 三、常見陷阱 (Pitfalls)
+- 呼氣相拍攝導致心影假性增大與肺野假性不透明——務必確認吸氣相充足（肺葉延伸至 T12-T13）
+- 未考量品種差異直接套用 VHS 10.5 標準——短頭犬正常 VHS 可達 12.0
+- 肥胖動物心包膜脂肪沉積造成心影假性增大
+- 將犬心因性肺水腫的背尾側分布規律套用到貓——貓分布可能不典型
+- 僅看側面觀而忽略 DV 觀——右心擴大在側面觀不易辨識
+
+## 四、人醫借鑒 (Translational Insights)
+
+### 四、人醫借鑑 (Translational Insights)
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| AI 胸部 X 光自動判讀 | 犬貓 VHS 自動測量、心臟擴大偵測、肺水腫辨識 | 人醫 AI 準確度已達放射科醫師水準，獸醫訓練模型開發中 |
+| 低劑量 CT（LDCT）| 心臟結構與肺實質同時高解析度評估 | 獸醫 CT 普及率提升中，心臟評估多仍靠超音波 |
+| 胸腔 X 光肺鬱血定量評分（Lung Congestion Score）| 犬 CHF 治療反應的客觀量化追蹤 | 人醫已有標準化評分系統，獸醫缺乏驗證 |
+| 床邊超音波 B-lines 評估肺水腫 | 替代 X 光的即時肺水腫偵測（POCUS） | 獸醫急診 POCUS 教育快速發展中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| VHS 品種特異性正常值完整性 | 僅部分品種有發表的 VHS 參考值，台灣流行品種數據不足 | Level III |
+| X 光 vs 肺超音波（POCUS B-lines）偵測早期肺水腫的優劣比較 | B-lines 可能更敏感但特異度待確認 | Level III |
+| 數位 X 光曝光寬容度是否影響 VHS 測量一致性 | 數位系統可後處理調整，但測量標準化仍待研究 | Level IV |
+| 胸腔 X 光在 MMVD B1 vs B2 分期中的判定權重 | 部分病例 VHS 與心超結果不一致時的決策依據不明確 | Level II |`,
   clinical_pearl: '臨床上區分「心因性咳嗽」與「呼吸道咳嗽」的關鍵在胸腔 X 光：MMVD 犬的咳嗽可能來自 (1) 肺水腫（CHF）或 (2) 左心房擴大壓迫左主支氣管。若 X 光顯示肺野清晰但左主支氣管明顯被壓迫抬高，咳嗽可能是機械性壓迫而非 CHF——此時增加利尿劑無效，反而應考慮止咳藥。這個區分直接影響治療決策。',
   common_mistakes: [
     '呼氣相拍攝導致心影假性增大與肺野假性不透明——務必確認吸氣相充足',
@@ -1777,7 +2913,13 @@ const contentHeartFailureTreatment: NodeContent = {
   ],
   body: `# 心臟衰竭治療 (Heart Failure Treatment)
 
-## 急性 CHF 處理
+
+
+
+
+## 一、治療原理 (Treatment Principles)
+
+### 急性 CHF 處理
 
 ### 犬急性 CHF（肺水腫）
 1. **最低限度保定**——壓迫感會加重呼吸困難
@@ -1793,7 +2935,7 @@ const contentHeartFailureTreatment: NodeContent = {
 4. **Furosemide**：1-2 mg/kg IV（貓對利尿劑較敏感，劑量低於犬）
 5. 鎮靜可考慮 Butorphanol 0.2 mg/kg IM
 
-## 慢性 CHF 藥物治療
+## 二、藥物/方法比較 (Comparison)
 
 ### 犬 CHF 標準藥物處方
 
@@ -1818,7 +2960,9 @@ const contentHeartFailureTreatment: NodeContent = {
 - ACEi 在貓 CHF 的證據較犬弱，但仍常用
 - Clopidogrel 18.75 mg/cat PO SID 作為 ATE 預防是貓 CHF 治療的重要組成
 
-## 難治性 CHF 策略
+## 三、併發症與監控 (Complications & Monitoring)
+
+### 難治性 CHF 策略
 
 標準治療無效時的升級方案：
 1. 增加 Furosemide 劑量（最高 6-8 mg/kg PO TID）或改為 CRI
@@ -1827,6 +2971,45 @@ const contentHeartFailureTreatment: NodeContent = {
 4. 加入 Sildenafil（合併肺高壓時）
 5. 住院：Dobutamine CRI（短期正性肌力支持）
 6. 考慮 Pimobendan 增量至 0.3 mg/kg TID（off-label，有限證據）
+
+### 藥物副作用與監測
+
+| 藥物 | 主要副作用 | 監測項目 | 監測頻率 |
+|------|----------|---------|---------|
+| Furosemide | 脫水、前腎性氮血症、低鉀 | BUN/Cre、K⁺、體重、飲水量 | 啟始後 5-7d，穩定後 q3-6m |
+| ACEi | 低血壓、氮血症、高鉀 | BUN/Cre、K⁺、血壓 | 啟始後 5-7d，穩定後 q3-6m |
+| Pimobendan | 食慾降低（少見）、心律不整加重 | 食慾、心律 | 每次回診 |
+| Spironolactone | 高鉀血症、GI upset | K⁺ | 啟始後 7-14d |
+| Digoxin | 食慾下降、嘔吐、心律不整 | 血中濃度（0.8-1.2 ng/mL）| 啟始後 7-10d 抽谷值 |
+
+## 四、預後影響 (Prognostic Impact)
+
+| 預後因子 | 良好 | 不良 |
+|---------|------|------|
+| Sleeping RR | 穩定 < 30/min | 持續 > 40/min |
+| 利尿劑劑量需求 | 低劑量維持 | 持續升級仍無法控制 |
+| 腎功能 | BUN/Cre 穩定 | 進行性氮血症 |
+| 心律 | 竇性節律 | 發展 AF 或頻繁 VPC |
+| MMVD CHF MST | EPIC 研究 ~267 天 | Stage D 難治型顯著縮短 |
+
+## 五、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Sacubitril/Valsartan (Entresto) | 犬 MMVD CHF 的 ARNI 替代 ACEi 治療 | 犬初步研究結果正面（VetEntresto 開發中） |
+| SGLT2i（Dapagliflozin/Empagliflozin）| 犬心腎症候群雙重保護 | 人醫 paradigm shift，獸醫缺乏安全性/有效性數據 |
+| 遠距 CHF 監測（植入式感測器）| 犬 CHF 再住院預防 | 概念可行，成本為主要障礙 |
+| 機械循環輔助（LVAD）| 犬終末期 CHF 橋接至二尖瓣修復手術 | 人醫成熟技術，獸醫因體型限制極少使用 |
+| Vericiguat（可溶性 guanylate cyclase 刺激劑）| 犬難治性 CHF 的新機轉藥物 | 人醫 VICTORIA 試驗正面，獸醫尚無數據 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| MMVD B2 是否都應開始 Pimobendan | EPIC 研究支持，但 B2 定義的灰色地帶病例如何處置仍有爭議 | Level I |
+| ACEi 在犬 CHF 的實際獲益幅度 | BENCH/COVE 研究設計較早，與現代三合一方案的比較數據不足 | Level II |
+| Furosemide CRI vs bolus 在急性 CHF 的優劣 | 人醫 DOSE 試驗無顯著差異，獸醫缺乏比較研究 | Level IV |
+| 飲食鈉限制在犬 CHF 的角色 | 傳統建議限鈉，但嚴格限鈉可能進一步活化 RAAS | Level IV |
 
 [圖片:犬 CHF 治療藥物階梯式方案流程圖]`,
   clinical_pearl: '利尿劑的「黃金法則」：使用最低有效劑量。Furosemide 過度使用會導致前腎性氮血症、低鉀血症與脫水，反而啟動 RAAS 活化形成惡性循環（「利尿劑阻抗」現象）。當 BUN/Cre 上升時，優先考慮降低 Furosemide 而非停用 ACEi——ACEi 的腎保護作用在長期管理中更為重要。',
@@ -1883,7 +3066,13 @@ const contentAntiarrhythmicDrugs: NodeContent = {
   ],
   body: `# 抗心律不整藥物 (Antiarrhythmic Drugs)
 
-## Vaughan-Williams 分類
+
+
+
+
+## 一、治療原理 (Treatment Principles)
+
+### Vaughan-Williams 分類
 
 ### Class I：Na⁺ 通道阻滯劑
 
@@ -1916,7 +3105,9 @@ const contentAntiarrhythmicDrugs: NodeContent = {
 - **[藥物:Digoxin]**：AF 心率控制輔助——抑制 AV node 傳導（迷走神經作用增強）
 - **Atropine**：迷走神經阻滯——竇性心搏過緩、AV block 緊急處理 0.02-0.04 mg/kg IV
 
-## 臨床治療方案
+## 二、藥物/方法比較 (Comparison)
+
+### 臨床治療方案
 
 ### 犬緊急心室頻脈 (VT with hemodynamic compromise)
 1. [藥物:Lidocaine] 2 mg/kg IV bolus（over 2 min），可每 5-10 min 重複至 8 mg/kg 總量
@@ -1937,6 +3128,41 @@ const contentAntiarrhythmicDrugs: NodeContent = {
 ### 貓 SVT / HCM 相關心律不整
 - [藥物:Atenolol] 6.25-12.5 mg/cat PO BID（首選）
 - 替代：[藥物:Diltiazem] 30 mg/cat PO SID-BID (ER 劑型)
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+| 藥物 | 促心律不整風險 | 其他副作用 | 監測要點 |
+|------|-------------|----------|---------|
+| Lidocaine | 高劑量可致 VF | 神經毒性（震顫、癲癇）——貓極度敏感 | ECG 持續監測；CRI 不超過 24-48h |
+| Sotalol | QT 延長→Torsades | 低血壓、心搏過緩、負性肌力 | 啟始後 ECG 確認 QT；監測 HR |
+| Mexiletine | 少見 | GI upset、神經症狀（共濟失調）| 症狀觀察為主 |
+| Diltiazem | 低血壓、心搏過緩 | 便秘（少見）| 血壓、HR |
+| Digoxin | 治療窗極窄→VPC、AV block | 食慾下降、嘔吐、腹瀉 | 谷值血中濃度 0.8-1.2 ng/mL |
+| Amiodarone | QT 延長 | 甲狀腺毒性、肝毒性、肺纖維化 | 甲狀腺、肝功能 q3m |
+
+## 四、預後影響 (Prognostic Impact)
+
+- 杜賓犬 DCM 伴 VT：Sotalol 治療可延長 MST（~120d vs 未治療 ~40d），但整體預後仍差
+- 犬 AF 合併 CHF：心率控制達標（< 140-160 bpm）與存活時間正相關
+- 拳師犬 ARVC 伴 VPC：Sotalol 可減少 VPC >80%，但猝死風險無法完全消除
+
+## 五、人醫借鑑 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Dronedarone（改良型 Amiodarone）| 犬 AF 心率控制——毒性較 Amiodarone 低 | 人醫 ATHENA 試驗正面，獸醫無數據 |
+| Flecainide（Class IC）| 犬特定 SVT 的藥物轉復 | 人醫常用，獸醫使用經驗極有限 |
+| 植入式 ICD（自動去顫器）| 杜賓犬 DCM 猝死高風險族群保護 | 人醫成熟，獸醫因成本與體型極少使用 |
+| 基因導向抗心律不整策略 | 已知致病基因突變的品種特異性治療選擇 | 概念階段 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Sotalol 在非杜賓犬 VPC 的療效 | 大部分數據來自杜賓犬，其他品種外推性不確定 | Level III |
+| 犬 AF 雙藥方案（Diltiazem+Digoxin）vs 單藥的優劣 | 少數回溯研究支持雙藥更有效，缺乏前瞻性比較 | Level III |
+| Amiodarone 在犬的安全使用範圍 | 甲狀腺/肝毒性風險高，長期使用經驗不足 | Level IV |
+| 「無症狀」VPC 的治療決策 | 除杜賓犬外，其他品種是否應治療 Holter 偵測的偶發 VPC | Level IV |
 
 [圖片:Vaughan-Williams 分類與臨床選藥對應流程圖]`,
   clinical_pearl: 'Lidocaine 在貓的使用需特別謹慎——貓對 Lidocaine 的中樞神經毒性極為敏感，可能出現癲癇、肌肉震顫甚至死亡。如果必須用於貓的 VT，劑量不超過 0.25-0.5 mg/kg IV very slowly，且須密切監測神經系統反應。犬的標準劑量（2 mg/kg）在貓是致命劑量。',
@@ -1962,6 +3188,7 @@ const contentAntiarrhythmicDrugs: NodeContent = {
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 4: Antiarrhythmic Therapy.', relevance: '抗心律不整藥物完整教材' },
     { type: 'journal', citation: 'Meurs KM et al. Comparison of the effects of four antiarrhythmic treatments for familial ventricular arrhythmias in Boxers. J Am Vet Med Assoc. 2002;221(4):522-527.', relevance: '犬抗心律不整藥物療效比較' },
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016. Chapter: Antiarrhythmic Drug Therapy.', relevance: '心律不整藥物治療與 ECG 監測' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1992,8 +3219,12 @@ const contentPericardiocentesis: NodeContent = {
   ],
   body: `# 心包膜穿刺術 (Pericardiocentesis)
 
-## 適應症與禁忌症
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 一、治療原理 (Treatment Principles)
+### 適應症與禁忌症
 ### 適應症
 - 心超確認心包膜積液伴心臟壓塞徵象（RA diastolic collapse）
 - 血流動力學不穩定（低血壓、脈搏弱、頸靜脈怒張）
@@ -2004,8 +3235,7 @@ const contentPericardiocentesis: NodeContent = {
 - 嚴重凝血障礙（需先矯正）
 - 已知心臟腫塊位於穿刺路徑上
 
-## 操作步驟
-
+### 操作步驟
 ### 設備準備
 - 14-16G over-the-needle catheter（犬 > 10 kg）或 18G（小型犬/貓）
 - 延長管、三路開關（three-way stopcock）
@@ -2032,8 +3262,7 @@ const contentPericardiocentesis: NodeContent = {
 - 持續 VPC 或 VT：立即停止並退針
 - 穿刺過程中 ST segment 抬高：穿刺針已接觸心肌表面
 
-## 引流液分析
-
+### 引流液分析
 | 檢查 | 結果 | 意義 |
 |------|------|------|
 | PCV | 接近周邊血液 | 出血性（HSA、特發性均可能）|
@@ -2042,7 +3271,65 @@ const contentPericardiocentesis: NodeContent = {
 | 凝固測試 | 凝固 | 急性出血或醫源性穿刺到心腔 |
 | 細胞學 | 反應性間皮細胞 | 非特異性（腫瘤與非腫瘤均可見）|
 
-[圖片:心包膜穿刺術步驟示意圖——穿刺入路與 ECG 引導]`,
+[圖片:心包膜穿刺術步驟示意圖——穿刺入路與 ECG 引導]
+
+## 二、藥物/方法比較 (Comparison)
+
+### 二、藥物/方法比較 (Comparison)
+| 方法 | 適應症 | 優點 | 缺點 |
+|------|--------|------|------|
+| 經皮穿刺引流 | 心臟壓塞緊急處理 | 快速、微創、可在 ICU 執行 | 可能需反覆操作、無法處理病因 |
+| 心包膜切除術（Subtotal pericardiectomy）| 反覆特發性 PE（≥3 次）| 根治性——消除再蓄積 | 需全身麻醉與手術團隊 |
+| 經胸腔鏡心包膜開窗 | 替代開胸手術的微創方式 | 創傷小、恢復快 | 需腔鏡設備與經驗 |
+| 球囊心包膜開窗（Balloon pericardiotomy）| 惡性 PE 姑息治療 | 透視引導下完成、無需全麻 | 獸醫經驗極有限 |
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+### 三、併發症與監控 (Complications & Monitoring)
+### 術中併發症
+| 併發症 | 發生率 | 處理 |
+|--------|--------|------|
+| VPC（穿刺針觸碰心肌）| 常見（~20%）| 暫停推進並退針；通常自行停止 |
+| 心肌穿刺 | 少見（<5%）| 退針；小口徑穿孔多自行閉合 |
+| 冠狀動脈損傷 | 罕見 | 心超監測新生積液，準備再穿刺 |
+| 肺穿刺/氣胸 | 少見（右側入路時）| 通常輕微自行吸收 |
+
+### 術後監控
+- 穿刺後 2-4 小時心超複檢：排除再蓄積
+- ECG 持續監測 4-6 小時
+- 特發性 PE：1 週、1 個月、3 個月回診追蹤
+- 惡性 PE（HSA）：中位再蓄積時間 ~1-3 個月
+
+## 四、預後影響 (Prognostic Impact)
+
+### 四、預後影響 (Prognostic Impact)
+| 病因 | 穿刺後預後 | MST |
+|------|----------|-----|
+| 特發性 PE | 良好至中等；~50% 單次引流可控制 | > 1-2 年（部分永不復發）|
+| 心臟血管肉瘤（HSA）| 差；僅姑息 | 未化療 ~1-2 月，化療 ~4-6 月 |
+| 心基底部化學受體瘤 | 中等；生長緩慢 | 反覆引流可維持 1-2 年 |
+| 間皮瘤 | 差 | ~3-6 月 |
+| 感染性心包膜炎 | 取決於病原與是否同時手術引流 | 變異大 |
+
+## 五、人醫借鑒 (Translational Insights)
+
+### 五、人醫借鑑 (Translational Insights)
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 心包膜內化療（Intrapericardial cisplatin）| 惡性 PE 局部化療延長姑息期 | 犬有少數研究支持可行性，毒性需注意 |
+| CT 引導穿刺 | 複雜位置 PE 或心包膜囊房的精準穿刺 | 技術可行但獸醫很少需要（超音波已足夠） |
+| 心包膜開窗微創化（VATS pericardial window）| 經胸腔鏡心包膜開窗取代開胸手術 | 人醫標準術式，獸醫腔鏡經驗漸增 |
+| 液態切片（liquid biopsy）PE 腫瘤分子分析 | PE 液 cfDNA/ctDNA 鑑別良惡性 | 獸醫腫瘤學研究中，臨床應用前 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+### 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 特發性 PE 反覆發作幾次應建議手術（心包膜切除）| 多數建議 ≥3 次，但尚無統一標準 | Level IV |
+| PE 細胞學對腫瘤鑑別的敏感度太低（~50%）| 需更好的生物標記——cTnI、cfDNA、免疫組織化學正在研究 | Level III |
+| 穿刺前是否應先輸液穩定血壓 | 前負荷支持理論上有益，但可能延遲引流造成風險 | Level IV |
+| 惡性 PE 穿刺後是否常規加化療 | 犬 HSA 化療（Doxorubicin ± Cyclophosphamide）改善 MST 的證據等級有限 | Level III |`,
   clinical_pearl: '穿刺過程中的「凝固測試」是即時判斷的實用技巧：將引流液滴入空的紅蓋管觀察是否凝固。心包膜囊內的慢性積血因心臟持續擺動已去除纖維蛋白，不會凝固。如果引流液凝固，表示可能是 (1) 急性出血或 (2) 穿刺針已進入心腔——此時應立即停止抽吸、退出穿刺針並重新評估。',
   common_mistakes: [
     '未進行 ECG 監測就直接穿刺——穿刺針觸碰心肌可導致致命性 VT/VF',
@@ -2101,6 +3388,7 @@ const contentPericardiocentesis: NodeContent = {
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Pericardial Disease and Pericardiocentesis.', relevance: '心包膜穿刺術標準操作教材' },
     { type: 'journal', citation: 'Shaw SP, Rush JE. Canine pericardial effusion: diagnosis, treatment, and prognosis. Compend Contin Educ Vet. 2007;29(7):405-411.', relevance: '犬心包膜穿刺術臨床操作指南' },
     { type: 'journal', citation: 'Stafford Johnson M et al. Pericardial effusion in dogs: 29 cases. J Small Anim Pract. 2004;45(11):546-553.', relevance: '犬心包膜穿刺術臨床結果回溯分析' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
   created_at: now,

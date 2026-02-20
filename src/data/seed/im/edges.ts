@@ -58,4 +58,21 @@ export const IM_EDGES: KnowledgeEdge[] = [
 
   // Cushing's vs Addison's differential
   { id: 'IM-E-036', source_node_id: 'IM-L3-001', target_node_id: 'IM-L3-011', relation_type: 'differential', weight: 0.8, description: 'Cushing\'s 與 Addison\'s 為腎上腺功能亢進/低下需鑑別', bidirectional: true, unlock_condition: null },
+
+  // ─── 審計補齊：缺失邊 ───
+
+  // IM-L3-010 缺少 prerequisite/builds_on 從 L1/L2
+  { id: 'IM-E-037', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-010', relation_type: 'clinical_apply', weight: 0.9, description: '免疫/發炎機轉與壁蝨媒介疾病的免疫病理相關', bidirectional: false, unlock_condition: null },
+
+  // IM-L3-002 缺少 L3→L4 clinical_apply
+  { id: 'IM-E-038', source_node_id: 'IM-L3-002', target_node_id: 'IM-L4-001', relation_type: 'clinical_apply', weight: 1.0, description: '犬甲低需內分泌檢驗（T4/TSH）確診', bidirectional: false, unlock_condition: null },
+
+  // IM-L3-003 缺少 L3→L4 clinical_apply
+  { id: 'IM-E-039', source_node_id: 'IM-L3-003', target_node_id: 'IM-L4-001', relation_type: 'clinical_apply', weight: 1.0, description: '貓甲亢需內分泌檢驗（T4）確診', bidirectional: false, unlock_condition: null },
+
+  // IM-L3-006 缺少 L3→L4 clinical_apply
+  { id: 'IM-E-040', source_node_id: 'IM-L3-006', target_node_id: 'IM-L4-001', relation_type: 'clinical_apply', weight: 1.0, description: '糖尿病需內分泌檢驗（血糖/果糖胺）確診與監測', bidirectional: false, unlock_condition: null },
+
+  // IM-L3-009 缺少 L3→L4 clinical_apply
+  { id: 'IM-E-041', source_node_id: 'IM-L3-009', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: '貓肝臟脂肪變性需腹腔超音波評估肝臟', bidirectional: false, unlock_condition: null },
 ];

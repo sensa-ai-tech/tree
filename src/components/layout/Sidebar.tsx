@@ -1,46 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, createElement } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  Home,
-  Map,
-  Route,
-  RotateCcw,
-  Briefcase,
-  Trophy,
-  User,
-  Settings,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { useAuthStore } from '@/stores/auth-store';
-
-interface NavItem {
-  href: string;
-  label: string;
-  icon: React.ReactNode;
-  adminOnly?: boolean;
-}
-
-const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: '首頁', icon: <Home className="h-5 w-5" /> },
-  { href: '/graph', label: '知識圖譜', icon: <Map className="h-5 w-5" /> },
-  { href: '/paths', label: '學習路徑', icon: <Route className="h-5 w-5" /> },
-  { href: '/review', label: '每日複習', icon: <RotateCcw className="h-5 w-5" /> },
-  { href: '/cases', label: '病例挑戰', icon: <Briefcase className="h-5 w-5" /> },
-  { href: '/achievements', label: '成就', icon: <Trophy className="h-5 w-5" /> },
-  { href: '/profile', label: '個人資料', icon: <User className="h-5 w-5" /> },
-  { href: '/admin', label: 'Admin', icon: <Settings className="h-5 w-5" />, adminOnly: true },
-];
+import { NAV_ITEMS } from '@/lib/constants/navigation';
 
 interface SidebarProps {
   className?: string;
+  /** 手機 drawer 模式下關閉 callback */
+  onClose?: () => void;
 }
 
-export function Sidebar({ className }: SidebarProps) {
+export function Sidebar({ className, onClose }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
   const pathname = usePathname();
   const { user } = useAuthStore();
@@ -56,28 +30,45 @@ export function Sidebar({ className }: SidebarProps) {
     setCollapsed((prev) => !prev);
   }
 
+  function handleNavClick(): void {
+    // 手機 drawer 模式：點擊導航項目後自動關閉
+    onClose?.();
+  }
+
   return (
     <aside
       className={cn(
-        'flex flex-col border-r border-gray-200 bg-white transition-all duration-200',
+        'flex h-screen flex-col border-r border-gray-200 bg-white transition-all duration-200',
         collapsed ? 'w-16' : 'w-56',
         className
       )}
     >
-      {/* Toggle button */}
-      <div className="flex justify-end p-2">
-        <button
-          type="button"
-          onClick={handleToggleCollapse}
-          className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
-          aria-label={collapsed ? '展開側邊欄' : '收合側邊欄'}
-        >
-          {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
-        </button>
+      {/* Header: 手機顯示關閉按鈕，桌面顯示 collapse toggle */}
+      <div className="flex items-center justify-between p-2">
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors md:hidden"
+            aria-label="關閉側邊欄"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        )}
+        <div className="hidden md:flex md:ml-auto">
+          <button
+            type="button"
+            onClick={handleToggleCollapse}
+            className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+            aria-label={collapsed ? '展開側邊欄' : '收合側邊欄'}
+          >
+            {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+          </button>
+        </div>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 px-2">
+      <nav className="flex-1 space-y-1 px-2 overflow-y-auto">
         {visibleItems.map((item) => {
           const isActive = item.href === '/'
             ? pathname === '/'
@@ -86,6 +77,7 @@ export function Sidebar({ className }: SidebarProps) {
             <Link
               key={item.href}
               href={item.href}
+              onClick={handleNavClick}
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                 isActive
@@ -94,7 +86,9 @@ export function Sidebar({ className }: SidebarProps) {
               )}
               title={collapsed ? item.label : undefined}
             >
-              <span className="flex-shrink-0">{item.icon}</span>
+              <span className="flex-shrink-0">
+                {createElement(item.icon, { className: 'h-5 w-5' })}
+              </span>
               {!collapsed && <span>{item.label}</span>}
             </Link>
           );

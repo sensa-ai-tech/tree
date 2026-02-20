@@ -24,12 +24,14 @@ const contentCBC: NodeContent = {
   ],
   body: `# 全血球計數 (CBC) 判讀
 
-## 概述
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 概述
 CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系列與血小板的定量資訊。
 
-## 紅血球評估
-
+### 紅血球評估
 ### 貧血分類
 - **再生性貧血**：reticulocyte count 升高（犬 > 60,000/μL），提示溶血或失血
 - **非再生性貧血**：reticulocyte count 正常或降低，提示骨髓問題或慢性疾病
@@ -41,8 +43,7 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
 | 正球性 | 正常 | 慢性疾病、急性失血 |
 | 大球性 | 升高 | 再生性貧血、FeLV、藥物 |
 
-## 白血球評估
-
+### 白血球評估
 ### 白血球分類計數
 - 嗜中性球：犬 3000-11,500/μL，貓 2500-12,500/μL
 - 淋巴球：犬 1000-4800/μL，貓 1500-7000/μL
@@ -52,11 +53,30 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
 ### Stress leukogram（皮質醇反應）
 - 嗜中性球增多 + 淋巴球減少 + 嗜酸性球減少 + 單核球增多
 
-## 血小板評估
-
+### 血小板評估
 - 正常：犬 175,000-500,000/μL，貓 175,000-600,000/μL
 - < 50,000/μL：自發出血風險
-- EDTA 偽性血小板減少症（貓常見）：需用枸櫞酸管複驗`,
+- EDTA 偽性血小板減少症（貓常見）：需用枸櫞酸管複驗
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '永遠不要只看數值——血液抹片是 CBC 判讀的「第六感」。自動分析儀可能將有核紅血球（nRBC）計為白血球，或將血小板聚集誤判為血小板減少。每份 CBC 報告都應搭配抹片確認。',
   common_mistakes: [
     '僅看自動分析儀數據而不確認血液抹片',
@@ -103,6 +123,7 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: 'CBC 判讀標準參考教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '血液學異常的臨床意義' },
     { type: 'journal', citation: 'Tvedten H. "Laboratory and Clinical Diagnosis of Anemia." In: Weiss DJ, Wardrop KJ, eds. Schalm\'s Veterinary Hematology, 6th ed. 2010:152-161.', relevance: '貧血分類與診斷流程' },
+    { type: 'guideline', citation: 'ASVCP Quality Assurance and Laboratory Standards Committee. "Principles of quality assurance and standards for veterinary clinical pathology." Vet Clin Pathol. 2009;38(2):141-149.', relevance: 'ASVCP 獸醫實驗室品質保證指引——CBC 品管標準' },
   ],
   is_current: true,
   created_at: now,
@@ -133,15 +154,17 @@ const contentHemaBasics: NodeContent = {
   ],
   body: `# 血液學基礎 (Hematology Basics)
 
-## 造血系統概述
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 造血系統概述
 造血（hematopoiesis）主要發生在成年動物的骨髓中。造血幹細胞（hematopoietic stem cell, HSC）具有自我更新與多能分化能力，分化為兩大譜系：
 
 - **骨髓系（myeloid lineage）**：紅血球、顆粒球（嗜中性球、嗜酸性球、嗜鹼性球）、單核球、血小板
 - **淋巴系（lymphoid lineage）**：T 淋巴球、B 淋巴球、NK 細胞
 
-## 紅血球系列
-
+### 紅血球系列
 ### 正常紅血球生成
 紅血球生成受腎臟分泌的 erythropoietin（EPO）調控。低氧刺激 EPO 釋放，促進骨髓紅血球前驅細胞增殖與成熟。
 
@@ -155,13 +178,28 @@ const contentHemaBasics: NodeContent = {
 
 貓的網狀紅血球分為聚集型（aggregate）與點狀型（punctate），臨床上以聚集型計數評估再生反應。
 
-## 白血球系列
-
+### 白血球系列
 嗜中性球為犬貓最豐富的白血球。犬的嗜中性球壽命在組織中約 1-4 天，循環池與邊緣池比例約 1:1。貓的邊緣池較大（邊緣池:循環池 ≈ 3:1），因此貓更容易因興奮或壓力出現假性白血球增多。
 
-## 血小板系列
+### 血小板系列
+血小板由骨髓巨核細胞（megakaryocyte）的胞質碎裂而來，受 thrombopoietin（TPO）調控。犬血小板直徑 3-5 μm；貓血小板可較大且變異性高，容易與小紅血球混淆。
 
-血小板由骨髓巨核細胞（megakaryocyte）的胞質碎裂而來，受 thrombopoietin（TPO）調控。犬血小板直徑 3-5 μm；貓血小板可較大且變異性高，容易與小紅血球混淆。`,
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 質譜分析（mass spectrometry） | 犬貓藥物/毒物精確定量 | 人醫臨床常規，獸醫限於參考實驗室 |
+| 流式細胞術（flow cytometry） | 犬淋巴瘤免疫表型分型 | 獸醫已有商業服務 |
+| 分子診斷（PCR/NGS） | 犬貓感染性疾病精準病原鑑定 | 獸醫 PCR panel 已普及 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓參考區間的品種特異性 | 灰狗、秋田犬、緬甸貓等品種有顯著差異，通用參考區間不適用 | Level II |
+| 溶血/脂血/黃疸對化學分析的干擾程度 | 不同分析平台的干擾程度不同，需了解各平台限制 | Level II |`,
   clinical_pearl: '貓的邊緣池白血球數量是循環池的 3 倍，因此僅因壓力或興奮就可能使 WBC 升高 2-3 倍。採血時貓掙扎造成的「假性白血球增多」是臨床最常見的判讀陷阱之一。',
   common_mistakes: [
     '忽略犬貓血液學參數的物種差異，用犬的參考範圍判讀貓的結果',
@@ -184,6 +222,8 @@ const contentHemaBasics: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '血液學基礎核心教材' },
     { type: 'textbook', citation: 'Weiss DJ, Wardrop KJ. Schalm\'s Veterinary Hematology, 6th ed. Wiley-Blackwell, 2010.', relevance: '造血系統與血球形態學權威參考' },
     { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. Elsevier, 2012.', relevance: '血球形態辨識圖譜' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 免疫介導溶血性貧血診斷共識——血液學基礎應用' },
+    { type: 'journal', citation: 'Knoll JS, Rowell SL. Clinical hematology: In-clinic analysis, quality assurance, and clinical decision-making. Vet Clin North Am Small Anim Pract. 2012;42(1):1-11.', relevance: '臨床血液學品管與決策制定' },
   ],
   is_current: true,
   created_at: now,
@@ -214,12 +254,14 @@ const contentChemBasics: NodeContent = {
   ],
   body: `# 臨床化學基礎 (Clinical Chemistry Basics)
 
-## 概述
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 概述
 臨床化學（clinical chemistry）利用血清或血漿中的酵素活性、代謝產物濃度來評估器官功能與代謝狀態。正確判讀需先了解各指標的組織來源與生理意義。
 
-## 肝臟相關指標
-
+### 肝臟相關指標
 ### 肝細胞損傷酵素（Hepatocellular leakage enzymes）
 - **ALT（alanine aminotransferase）**：犬肝細胞高度特異性，貓特異性略低。半衰期犬約 60 小時，貓約 3.5 小時。
 - **AST（aspartate aminotransferase）**：肝臟與肌肉均含。需搭配 CK 區分來源。
@@ -228,23 +270,37 @@ const contentChemBasics: NodeContent = {
 - **ALP（alkaline phosphatase）**：犬有三種同功酶（肝、骨、皮質醇誘導型），因此犬 ALP 升高需綜合判斷。貓 ALP 半衰期僅約 6 小時，因此貓 ALP 升高的臨床意義更大。
 - **GGT（gamma-glutamyl transferase）**：肝內膽管上皮。貓 GGT 對膽道疾病的敏感度高於 ALP。
 
-## 腎臟相關指標
-
+### 腎臟相關指標
 | 指標 | 來源 | GFR 下降多少時升高 | 備註 |
 |------|------|-------------------|------|
 | BUN | 肝臟合成 | ~75% | 受飲食、脫水影響 |
 | Creatinine | 肌肉代謝 | ~75% | 受肌肉量影響 |
 | SDMA | 全身細胞甲基化代謝 | ~25-40% | 較少受肌肉量影響 |
 
-## 蛋白質
-
+### 蛋白質
 - **Total protein（TP）**= albumin + globulin
 - Albumin 僅肝臟合成，是評估肝臟合成功能與營養狀態的重要指標
 - Globulin 升高需考慮：慢性發炎、感染、腫瘤（多發性骨髓瘤）
 
-## 電解質與礦物質
+### 電解質與礦物質
+常規生化中的 Na⁺、K⁺、Cl⁻、Ca²⁺、P 與酸鹼平衡和多種疾病相關。Addison's disease 經典表現為 Na/K ratio < 27。
 
-常規生化中的 Na⁺、K⁺、Cl⁻、Ca²⁺、P 與酸鹼平衡和多種疾病相關。Addison's disease 經典表現為 Na/K ratio < 27。`,
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 質譜分析（mass spectrometry） | 犬貓藥物/毒物精確定量 | 人醫臨床常規，獸醫限於參考實驗室 |
+| 流式細胞術（flow cytometry） | 犬淋巴瘤免疫表型分型 | 獸醫已有商業服務 |
+| 分子診斷（PCR/NGS） | 犬貓感染性疾病精準病原鑑定 | 獸醫 PCR panel 已普及 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓參考區間的品種特異性 | 灰狗、秋田犬、緬甸貓等品種有顯著差異，通用參考區間不適用 | Level II |
+| 溶血/脂血/黃疸對化學分析的干擾程度 | 不同分析平台的干擾程度不同，需了解各平台限制 | Level II |`,
   clinical_pearl: '貓的 ALP 半衰期僅約 6 小時（犬約 70 小時），因此貓即使輕度 ALP 升高（如 2-3 倍）也代表顯著的膽道疾病，千萬不要因為數值「看起來不高」而輕忽。',
   common_mistakes: [
     '忽略犬 ALP 有皮質醇誘導型同功酶，將類固醇引起的 ALP 升高誤判為肝病',
@@ -268,6 +324,7 @@ const contentChemBasics: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '臨床化學基礎核心教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '器官相關生化指標臨床意義' },
     { type: 'journal', citation: 'Nabity MB et al. "IRIS Canine GFR Working Group — SDMA as a biomarker." J Vet Intern Med 2015;29(4):1036-1044.', relevance: 'SDMA 作為早期腎功能指標的實證' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS CKD 分期指引——腎功能生化指標臨床應用標準' },
   ],
   is_current: true,
   created_at: now,
@@ -298,16 +355,18 @@ const contentPreAnalytical: NodeContent = {
   ],
   body: `# 分析前誤差與品質控管 (Pre-analytical Errors & QC)
 
-## 實驗室誤差的三階段
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 實驗室誤差的三階段
 | 階段 | 佔比 | 常見來源 |
 |------|------|---------|
 | 分析前（pre-analytical） | 60-70% | 採樣、處理、運送 |
 | 分析中（analytical） | 10-15% | 儀器校正、試劑問題 |
 | 分析後（post-analytical） | 20-25% | 資料轉錄、判讀錯誤 |
 
-## 分析前誤差
-
+### 分析前誤差
 ### 採樣相關
 - **採血管選擇**：EDTA（紫頭）→ CBC；枸櫞酸鈉（藍頭）→ 凝血；肝素（綠頭）→ 急診生化；無添加劑（紅頭）/分離膠（黃頭）→ 血清生化
 - **採血量不足**：凝血管需精確 9:1（血液:抗凝劑）比例
@@ -318,8 +377,7 @@ const contentPreAnalytical: NodeContent = {
 - **I（Icterus 黃疸）**：高 bilirubin 干擾比色法
 - **L（Lipemia 脂血）**：光散射干擾 → 多項目不準確，可用高速離心或脂肪酶前處理
 
-## 品質控管基本原理
-
+### 品質控管基本原理
 ### 內部品管（IQC）
 每日運行已知濃度的品管檢體，繪製 Levey-Jennings chart 追蹤平均值與標準差。
 
@@ -328,12 +386,27 @@ const contentPreAnalytical: NodeContent = {
 - **1-3s 拒絕**：一個 QC 值超過 ±3SD → 批次拒絕
 - **2-2s 拒絕**：連續兩個 QC 值同側超過 ±2SD → 系統性偏移
 
-## 參考範圍的建立與限制
-
+### 參考範圍的建立與限制
 參考範圍取 120 頭以上健康動物中間 95% 的數值範圍。因此：
 - 每 20 頭健康動物中，約有 1 頭會有某項目「異常」
 - 同時檢測 20 個項目時，健康動物至少有一項「異常」的機率高達 64%
-- 需結合臨床表現判讀，不能僅憑單一數值異常下診斷`,
+- 需結合臨床表現判讀，不能僅憑單一數值異常下診斷
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 全自動尿液分析系統 | 犬貓尿沉渣 AI 辨識標準化 | 人醫自動化成熟，獸醫引入中 |
+| 血氣分析 POCT 整合 | 犬貓急診床邊即時血氣+電解質+乳酸 | 獸醫急診 iSTAT 等設備普及 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 CRP/SAA 等急性期蛋白的臨床決策價值 | 具有發炎指標價值，但疾病特異度低 | Level III |
+| 犬尿蛋白/肌酸酐比值（UPC）的採樣標準化 | 單次 vs 池尿的差異、禁食狀態影響 | Level III |`,
   clinical_pearl: '當你同時檢測 20 個生化項目時，即使完全健康的動物也有 64% 機率至少出現一項「超出參考範圍」。因此單一輕度異常如果沒有臨床症狀佐證，很可能是統計上的正常變異而非真正的病理改變。',
   common_mistakes: [
     '採血時先抽 EDTA 管再抽生化管，導致 EDTA 汙染使 Ca²⁺ 假性降低',
@@ -387,12 +460,11 @@ const contentBiochem: NodeContent = {
   ],
   body: `# 血清生化判讀 (Serum Biochemistry Interpretation)
 
-## 系統性判讀流程
+## 一、檢查原理與適應症 (Principles & Indications)
 
-建議依器官系統逐步判讀：肝臟 → 腎臟 → 胰臟 → 蛋白質 → 電解質 → 其他。
 
-## 肝臟評估
 
+### 肝臟評估
 ### 肝細胞損傷模式
 - ALT ↑↑ + AST ↑ + ALP 正常或輕微↑ → 急性肝細胞損傷
 - ALT 持續輕度↑ → 慢性肝病、腫瘤浸潤
@@ -405,8 +477,7 @@ const contentBiochem: NodeContent = {
 - Albumin ↓ + BUN ↓ + Glucose ↓ + Cholesterol ↓ → 肝功能衰竭
 - Bile acids（膽汁酸）：空腹 > 25 μmol/L 或餐後 > 25 μmol/L 提示肝功能障礙或門體分流
 
-## 腎臟評估
-
+### 腎臟評估
 | 類型 | BUN | Crea | USG | SDMA |
 |------|-----|------|-----|------|
 | Prerenal | ↑ | ↑ | > 1.030(犬)/1.035(貓) | 正常 |
@@ -415,16 +486,37 @@ const contentBiochem: NodeContent = {
 
 IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
 
-## 胰臟評估
-
+### 胰臟評估
 - Spec cPL（犬）> 400 μg/L 或 fPL（貓）> 5.4 μg/L 支持胰臟炎診斷
 - 傳統 amylase/lipase 對犬貓胰臟炎敏感度與特異度均不佳
 
-## 電解質
-
+### 電解質
 - **高鉀血症**：腎衰竭、尿道阻塞、Addison disease、組織損傷
 - **低鉀血症**：嘔吐、慢性腎病（貓）、胰島素治療
-- **高鈣血症**：惡性腫瘤（lymphoma）、Addison、腎衰竭、維生素 D 中毒`,
+- **高鈣血症**：惡性腫瘤（lymphoma）、Addison、腎衰竭、維生素 D 中毒
+
+## 二、判讀要點 (Interpretation)
+
+### 系統性判讀流程
+建議依器官系統逐步判讀：肝臟 → 腎臟 → 胰臟 → 蛋白質 → 電解質 → 其他。
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '犬 ALP 升高最常見的原因是類固醇誘導（exogenous 或 endogenous），而非肝病。但貓完全沒有皮質醇誘導型 ALP 同功酶，所以貓 ALP 哪怕僅升高 2 倍也必須認真追查膽道/肝臟疾病。',
   common_mistakes: [
     '貓壓力性高血糖（stress hyperglycemia）誤診為糖尿病——需搭配果糖胺確認',
@@ -474,6 +566,7 @@ IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '血清生化判讀核心教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '器官功能評估的臨床應用' },
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD." iris-kidney.com, 2023.', relevance: 'CKD 分期與腎功能評估標準' },
+    { type: 'journal', citation: 'Vaden SL, Elliott J. Management of proteinuria in dogs and cats with chronic kidney disease. Vet Clin North Am Small Anim Pract. 2016;46(6):1115-1130.', relevance: '腎功能生化指標與蛋白尿管理' },
   ],
   is_current: true,
   created_at: now,
@@ -504,8 +597,11 @@ const contentCytology: NodeContent = {
   ],
   body: `# 細胞學基本原則 (Basic Cytology Principles)
 
-## FNA 操作技術
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### FNA 操作技術
 ### 非抽吸技術（Non-aspiration / Woodpecker technique）
 適合血管豐富的組織，減少血液汙染：
 1. 使用 22-25G 針頭，不接注射器
@@ -518,8 +614,30 @@ const contentCytology: NodeContent = {
 - **Starfish / pull-apart technique**：適合液態樣本
 - **Line smear**：適合液態樣本的濃縮
 
-## 系統性判讀流程
+### 細胞學模式分類
+| 模式 | 主要細胞 | 提示 |
+|------|---------|------|
+| 化膿性發炎 | 退化嗜中性球 | 細菌感染 |
+| 肉芽腫性發炎 | 巨噬細胞為主 | 黴菌、分枝桿菌、異物 |
+| 上皮性腫瘤 | 細胞團簇、高 N:C ratio | Carcinoma |
+| 間質性腫瘤 | 梭形細胞、個別分散 | Sarcoma |
+| 圓細胞腫瘤 | 均勻圓形/卵圓形 | Lymphoma, MCT 等 |
 
+### 惡性標準（Criteria of Malignancy）
+### 一般標準
+- 細胞多形性（pleomorphism）
+- N:C ratio 增大
+- 有絲分裂像增多或異常有絲分裂
+
+### 核的標準（最重要）
+- 核仁大小不一（anisokaryosis）
+- 核仁數量增多或形狀不規則
+- 染色質粗糙或分布不均
+- 核膜不規則
+
+## 二、判讀要點 (Interpretation)
+
+### 系統性判讀流程
 ### Step 1：低倍（4x-10x）
 - 評估細胞量（cellularity）
 - 辨識整體細胞排列模式
@@ -530,28 +648,22 @@ const contentCytology: NodeContent = {
 - 惡性標準評估
 - 特殊結構辨識（如 mast cell granules）
 
-## 細胞學模式分類
+## 三、常見陷阱 (Pitfalls)
 
-| 模式 | 主要細胞 | 提示 |
-|------|---------|------|
-| 化膿性發炎 | 退化嗜中性球 | 細菌感染 |
-| 肉芽腫性發炎 | 巨噬細胞為主 | 黴菌、分枝桿菌、異物 |
-| 上皮性腫瘤 | 細胞團簇、高 N:C ratio | Carcinoma |
-| 間質性腫瘤 | 梭形細胞、個別分散 | Sarcoma |
-| 圓細胞腫瘤 | 均勻圓形/卵圓形 | Lymphoma, MCT 等 |
+## 四、人醫借鑒 (Translational Insights)
 
-## 惡性標準（Criteria of Malignancy）
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 自動化血液分析儀整合 AI 判讀 | 犬貓 CBC 自動複檢減少人工覆核 | 人醫已有 AI 血液抹片判讀，獸醫開發中 |
+| 即時檢驗（POCT）品質管理 | 獸醫院內 POCT 結果一致性確保 | 人醫 ISO 22870 標準，獸醫標準化進展中 |
+| 分析前品質指標自動化監測 | 檢體品質自動評估（溶血/脂血/黃疸指數） | 現代自動化儀器多已內建 |
 
-### 一般標準
-- 細胞多形性（pleomorphism）
-- N:C ratio 增大
-- 有絲分裂像增多或異常有絲分裂
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 核的標準（最重要）
-- 核仁大小不一（anisokaryosis）
-- 核仁數量增多或形狀不規則
-- 染色質粗糙或分布不均
-- 核膜不規則`,
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 獸醫臨床病理品質管理標準 | ASVCP 有建議但非強制——各實驗室 QC 落差大 | Level III |
+| POCT vs 中央實驗室結果的一致性 | 部分項目差異顯著（如白血球分類計數），需了解設備限制 | Level II |`,
   clinical_pearl: '圓細胞腫瘤（round cell tumors）是細胞學最能準確診斷的腫瘤類型。Lymphoma 的 FNA 準確率可達 90% 以上。相反地，間質性腫瘤（sarcoma）的 FNA 常因細胞量不足或細胞分散而難以確診，需要組織病理學。',
   common_mistakes: [
     '在血管豐富的腫塊使用抽吸技術導致血液嚴重汙染（hemodilution）',
@@ -598,6 +710,7 @@ const contentCytology: NodeContent = {
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '細胞學判讀權威教材與圖譜' },
     { type: 'textbook', citation: 'Cowell RL et al. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. Elsevier, 2014.', relevance: '犬貓細胞學診斷教材' },
     { type: 'journal', citation: 'Ghisleni G et al. "Correlation between fine-needle aspiration cytology and histopathology in the evaluation of cutaneous and subcutaneous masses from dogs and cats." Vet Clin Pathol 2006;35(1):24-30.', relevance: '細胞學與組織病理的相關性研究' },
+    { type: 'guideline', citation: 'ASVCP Guidelines Committee. "Guidelines for cytologic preparation techniques and criteria for evaluation of samples." Vet Clin Pathol. 2017;46(1):15-28.', relevance: 'ASVCP 細胞學樣本製備與品質評估指引' },
   ],
   is_current: true,
   created_at: now,
@@ -628,34 +741,25 @@ const contentCoagulation: NodeContent = {
   ],
   body: `# 凝血功能檢查 (Coagulation Testing)
 
-## 止血機制概述
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 止血機制概述
 ### 初級止血（Primary hemostasis）
 血管損傷 → 血小板黏附（vWF 介導）→ 血小板活化與聚集 → 初級止血栓
 
 ### 次級止血（Secondary hemostasis）
 凝血因子瀑布啟動 → 凝血酶（thrombin）生成 → 纖維蛋白（fibrin）形成 → 穩固止血栓
 
-## 凝血篩檢三角
-
+### 凝血篩檢三角
 | 檢查 | 評估對象 | 正常值 |
 |------|---------|--------|
 | PT | 外源性 + 共同途徑 | 犬 6-10 sec，貓 8-14 sec |
 | aPTT | 內源性 + 共同途徑 | 犬 10-16 sec，貓 12-18 sec |
 | PLT count | 初級止血 | 犬 175-500K，貓 175-600K |
 
-## 異常模式判讀
-
-| PT | aPTT | PLT | 可能診斷 |
-|----|------|-----|---------|
-| ↑ | N | N | 早期 rodenticide 中毒（Factor VII 半衰期最短 ~6h） |
-| N | ↑ | N | 內源性因子缺乏（hemophilia A/B）、lupus anticoagulant |
-| ↑ | ↑ | N | 晚期 rodenticide 中毒、嚴重肝病、共同途徑缺乏 |
-| ↑ | ↑ | ↓ | DIC、嚴重肝病合併門脈高壓 |
-| N | N | ↓ | ITP、骨髓抑制、Ehrlichia |
-
-## DIC 診斷
-
+### DIC 診斷
 DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
 - 血小板持續下降
 - PT/aPTT 延長
@@ -664,9 +768,36 @@ DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
 - 血液抹片見 schistocytes（紅血球碎片）
 - Antithrombin（AT）降低
 
-## 抗凝劑（Rodenticide）中毒
+### 抗凝劑（Rodenticide）中毒
+第二代抗凝血劑（brodifacoum, bromadiolone）抑制 vitamin K epoxide reductase，阻斷 vitamin K 依賴性因子（II, VII, IX, X）的活化。Factor VII 半衰期最短（犬 ~6h），因此 PT 最先延長。
 
-第二代抗凝血劑（brodifacoum, bromadiolone）抑制 vitamin K epoxide reductase，阻斷 vitamin K 依賴性因子（II, VII, IX, X）的活化。Factor VII 半衰期最短（犬 ~6h），因此 PT 最先延長。`,
+## 二、判讀要點 (Interpretation)
+
+### 異常模式判讀
+| PT | aPTT | PLT | 可能診斷 |
+|----|------|-----|---------|
+| ↑ | N | N | 早期 rodenticide 中毒（Factor VII 半衰期最短 ~6h） |
+| N | ↑ | N | 內源性因子缺乏（hemophilia A/B）、lupus anticoagulant |
+| ↑ | ↑ | N | 晚期 rodenticide 中毒、嚴重肝病、共同途徑缺乏 |
+| ↑ | ↑ | ↓ | DIC、嚴重肝病合併門脈高壓 |
+| N | N | ↓ | ITP、骨髓抑制、Ehrlichia |
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 自動化血液分析儀整合 AI 判讀 | 犬貓 CBC 自動複檢減少人工覆核 | 人醫已有 AI 血液抹片判讀，獸醫開發中 |
+| 即時檢驗（POCT）品質管理 | 獸醫院內 POCT 結果一致性確保 | 人醫 ISO 22870 標準，獸醫標準化進展中 |
+| 分析前品質指標自動化監測 | 檢體品質自動評估（溶血/脂血/黃疸指數） | 現代自動化儀器多已內建 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 獸醫臨床病理品質管理標準 | ASVCP 有建議但非強制——各實驗室 QC 落差大 | Level III |
+| POCT vs 中央實驗室結果的一致性 | 部分項目差異顯著（如白血球分類計數），需了解設備限制 | Level II |`,
   clinical_pearl: 'Rodenticide 中毒時 Factor VII 半衰期最短（犬約 6 小時），所以 PT 會比 aPTT 更早延長。如果犬出現不明原因出血且 PT 延長但 aPTT 仍正常，rodenticide 中毒應列為首要鑑別。治療用 Vitamin K1 而非 K3。',
   common_mistakes: [
     '凝血管採血量不足（< 90% 填充），導致枸櫞酸鈉過量，PT/aPTT 假性延長',
@@ -714,6 +845,7 @@ DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '凝血功能檢查判讀教材' },
     { type: 'textbook', citation: 'Brooks MB, Catalfamo JL. "Coagulopathies and Thrombosis." In: Weiss DJ, Wardrop KJ, eds. Schalm\'s Veterinary Hematology, 6th ed. 2010:612-628.', relevance: '凝血疾病的血液學參考' },
     { type: 'journal', citation: 'Wiinberg B et al. "Tissue factor activated thromboelastography correlates to clinical signs of bleeding in dogs." Vet J 2009;179(1):121-129.', relevance: '凝血功能檢查與臨床出血的相關性' },
+    { type: 'guideline', citation: 'deLaforcade A, Bacek L, Bhatt S, et al. ACVIM consensus statement: 2022 update on the diagnosis of immune-mediated hemolytic anemia and immune-mediated thrombocytopenia in dogs. J Vet Intern Med. 2022;36(6):1895-1913.', relevance: 'ACVIM 免疫介導血小板減少與凝血異常診斷共識' },
   ],
   is_current: true,
   created_at: now,
@@ -744,8 +876,23 @@ const contentBloodGas: NodeContent = {
   ],
   body: `# 血液氣體分析 (Blood Gas Analysis)
 
-## 系統性五步驟判讀法
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 靜脈血氣 vs 動脈血氣
+| 項目 | 靜脈血氣 | 動脈血氣 |
+|------|---------|---------|
+| pH | 低 0.02-0.05 | 金標準 |
+| pCO₂ | 高 3-8 mmHg | 金標準 |
+| HCO₃⁻ | 相近 | 金標準 |
+| PaO₂ | 不能評估 | 必須用動脈 |
+
+臨床上靜脈血氣足以評估酸鹼狀態；但評估氧合必須使用動脈血氣或脈衝式血氧儀。
+
+## 二、判讀要點 (Interpretation)
+
+### 系統性五步驟判讀法
 ### Step 1：看 pH
 - < 7.35 → acidemia
 - > 7.45 → alkalemia
@@ -778,16 +925,23 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
 - P/F ratio < 200 → ARDS
 - A-a gradient = [(FiO₂ × 713) - (PaCO₂/0.8)] - PaO₂
 
-## 靜脈血氣 vs 動脈血氣
+## 三、常見陷阱 (Pitfalls)
 
-| 項目 | 靜脈血氣 | 動脈血氣 |
-|------|---------|---------|
-| pH | 低 0.02-0.05 | 金標準 |
-| pCO₂ | 高 3-8 mmHg | 金標準 |
-| HCO₃⁻ | 相近 | 金標準 |
-| PaO₂ | 不能評估 | 必須用動脈 |
+## 四、人醫借鑒 (Translational Insights)
 
-臨床上靜脈血氣足以評估酸鹼狀態；但評估氧合必須使用動脈血氣或脈衝式血氧儀。`,
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '急診時不必等動脈血氣——靜脈血氣的 pH 和 HCO₃⁻ 與動脈極為接近（差異 < 0.05 和 < 2 mEq/L），足以快速判斷酸鹼狀態並啟動治療。只有在需要評估氧合功能（如呼吸窘迫）時才必須採動脈血。',
   common_mistakes: [
     '樣本中有氣泡未排出，導致 pO₂ 假性升高、pCO₂ 假性降低',
@@ -837,6 +991,7 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
     { type: 'textbook', citation: 'DiBartola SP. Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice, 4th ed. Elsevier, 2012.', relevance: '酸鹼平衡核心教材' },
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 2nd ed. Elsevier, 2015.', relevance: '急診血氣判讀與臨床應用' },
     { type: 'journal', citation: 'Hopper K et al. "Assessment of the effect of dilution of blood samples with sodium heparin on blood gas, electrolyte, and lactate measurements in dogs." Am J Vet Res 2005;66(4):656-660.', relevance: '肝素稀釋對血氣結果的影響研究' },
+    { type: 'guideline', citation: 'ASVCP Quality Assurance and Laboratory Standards Committee. "Principles of quality assurance and standards for veterinary clinical pathology (blood gas analysis)." Vet Clin Pathol. 2009;38(2):141-149.', relevance: 'ASVCP 血氣分析品質保證標準' },
   ],
   is_current: true,
   created_at: now,
@@ -867,8 +1022,11 @@ const contentBodyFluid: NodeContent = {
   ],
   body: `# 體液分析 (Body Fluid Analysis)
 
-## 體腔積液分類
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 體腔積液分類
 | 類型 | TP (g/dL) | TNCC (/μL) | 常見原因 |
 |------|-----------|------------|---------|
 | Pure transudate | < 2.5 | < 1500 | 低白蛋白、早期門脈高壓 |
@@ -877,8 +1035,7 @@ const contentBodyFluid: NodeContent = {
 | Exudate（化膿性） | > 3.0 | > 7000 | 細菌感染（pyothorax/peritonitis） |
 | Hemorrhagic | > 3.0 | 類似血液 | 創傷、腫瘤出血、凝血障礙 |
 
-## 特殊體液類型
-
+### 特殊體液類型
 ### Chylothorax（乳糜胸）
 - 外觀乳白色
 - Triglyceride（胸水）> 血清 triglyceride
@@ -891,24 +1048,42 @@ const contentBodyFluid: NodeContent = {
 ### Bile peritonitis（膽汁性腹膜炎）
 - 腹水 bilirubin / 血清 bilirubin > 2:1
 
-## 貓 FIP 積液特徵
+### 貓 FIP 積液特徵
 - 高蛋白（> 3.5 g/dL），黏稠、淡黃色
 - 低細胞數（以巨噬細胞/嗜中性球為主）
 - A:G ratio < 0.4（高度提示 FIP）
 - Rivalta test 陽性（1 滴積液於 8% 醋酸中不溶解）
 
-## 腦脊髓液（CSF）分析
+## 二、判讀要點 (Interpretation)
 
+### 腦脊髓液（CSF）分析
 | 參數 | 正常 | 異常提示 |
 |------|------|---------|
 | TP | < 25 mg/dL | 升高：發炎、腫瘤 |
 | TNCC | < 5/μL | 升高：meningitis/encephalitis |
 | 細胞型態 | 小淋巴球為主 | 嗜中性球↑=化膿性；單核球↑=肉芽腫性/病毒性 |
 
-## 關節液分析
+### 關節液分析
 - 正常：TNCC < 3000/μL，黏稠度高，透明
 - 非感染性關節炎：TNCC 3000-50,000，非退化嗜中性球
-- Septic arthritis：TNCC > 50,000，退化嗜中性球 ± 細胞內細菌`,
+- Septic arthritis：TNCC > 50,000，退化嗜中性球 ± 細胞內細菌
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 自動化血液分析儀整合 AI 判讀 | 犬貓 CBC 自動複檢減少人工覆核 | 人醫已有 AI 血液抹片判讀，獸醫開發中 |
+| 即時檢驗（POCT）品質管理 | 獸醫院內 POCT 結果一致性確保 | 人醫 ISO 22870 標準，獸醫標準化進展中 |
+| 分析前品質指標自動化監測 | 檢體品質自動評估（溶血/脂血/黃疸指數） | 現代自動化儀器多已內建 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 獸醫臨床病理品質管理標準 | ASVCP 有建議但非強制——各實驗室 QC 落差大 | Level III |
+| POCT vs 中央實驗室結果的一致性 | 部分項目差異顯著（如白血球分類計數），需了解設備限制 | Level II |`,
   clinical_pearl: '判斷腹水是否為 uroabdomen 時，腹水 creatinine 與血清 creatinine 的比值 > 2:1 是最可靠的確診依據。但要注意，剛發生膀胱破裂時腹水可能尚未充分平衡，早期比值可能低於預期——如臨床高度懷疑應隔 1-2 小時重採。',
   common_mistakes: [
     '僅依據外觀顏色就分類體液，未做 TP 與 TNCC 的定量分析',
@@ -956,6 +1131,7 @@ const contentBodyFluid: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '體液分析核心教材' },
     { type: 'textbook', citation: 'Cowell RL et al. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. Elsevier, 2014.', relevance: '體液細胞學判讀參考' },
     { type: 'journal', citation: 'Dempsey SM, Ewing PJ. "A review of the pathophysiology, classification, and analysis of canine and feline cavitary effusions." J Am Anim Hosp Assoc 2011;47(1):1-11.', relevance: '體腔積液分類的病理生理學回顧' },
+    { type: 'guideline', citation: 'WSAVA Liver Standardization Group. "WSAVA Standards for Clinical and Histological Diagnosis of Canine and Feline Liver Diseases." J Comp Pathol. 2006;134(Suppl 2):S1-S36.', relevance: 'WSAVA 肝臟疾病標準化指引——腹水分析在肝病中的應用' },
   ],
   is_current: true,
   created_at: now,
@@ -986,16 +1162,18 @@ const contentBoneMarrow: NodeContent = {
   ],
   body: `# 骨髓抹片判讀 (Bone Marrow Evaluation)
 
-## 適應症
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 適應症
 - 持續性非再生性貧血（> 3-5 天）
 - 不明原因的持續性白血球減少或血小板減少
 - 周邊血液出現異常幼稚細胞（blast cells）
 - 不明原因發熱合併血球減少（bicytopenia/pancytopenia）
 - 高鈣血症伴不明原因（疑似多發性骨髓瘤）
 
-## 採樣與抹片製作
-
+### 採樣與抹片製作
 ### 採樣部位
 - **肱骨近端（proximal humerus）**：犬最常用，大型犬尤其方便
 - **髂骨翼（iliac crest）**：犬貓均可，貓最常用
@@ -1006,8 +1184,14 @@ const contentBoneMarrow: NodeContent = {
 2. **Core biopsy**：評估整體細胞量、纖維化、architecture
 3. **Particle crush prep**：骨髓顆粒壓片，兼具兩者優點
 
-## 系統性判讀
+### 鐵質評估
+- Prussian blue 染色評估儲存鐵
+- 缺鐵：儲存鐵消失 + 小球性低色素性貧血
+- 慢性疾病貧血：儲存鐵正常或增加
 
+## 二、判讀要點 (Interpretation)
+
+### 系統性判讀
 ### Step 1：評估樣本品質
 - 顆粒（particle）是否充足
 - 是否有血液稀釋（hemodilution）
@@ -1032,10 +1216,23 @@ const contentBoneMarrow: NodeContent = {
 - 異常顆粒、雙核、環形鐵母細胞 → 骨髓增生異常症候群（MDS）
 - 轉移性腫瘤細胞：成團的非造血細胞
 
-## 鐵質評估
-- Prussian blue 染色評估儲存鐵
-- 缺鐵：儲存鐵消失 + 小球性低色素性貧血
-- 慢性疾病貧血：儲存鐵正常或增加`,
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '骨髓 aspiration 的最大陷阱是血液稀釋（hemodilution）——如果抽吸量超過 0.5 mL，周邊血液會大量混入，使骨髓評估失準。正確做法是快速抽吸 0.3-0.5 mL 即停，立刻製作抹片。如果 aspiration 失敗（dry tap），core biopsy 更顯重要。',
   common_mistakes: [
     '骨髓抽吸量過多（> 1 mL）導致嚴重血液稀釋，M:E ratio 不可靠',
@@ -1084,6 +1281,7 @@ const contentBoneMarrow: NodeContent = {
     { type: 'textbook', citation: 'Weiss DJ, Wardrop KJ. Schalm\'s Veterinary Hematology, 6th ed. Wiley-Blackwell, 2010.', relevance: '骨髓判讀權威參考教材' },
     { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. Elsevier, 2012.', relevance: '骨髓細胞形態辨識圖譜' },
     { type: 'journal', citation: 'Raskin RE. "Bone marrow cytologic and histologic biopsies: indications, technique, and evaluation." Vet Clin North Am Small Anim Pract 2012;42(1):23-42.', relevance: '骨髓採樣技術與判讀指引' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 共識——骨髓評估在免疫介導血球減少的角色' },
   ],
   is_current: true,
   created_at: now,
@@ -1114,8 +1312,11 @@ const contentBloodTyping: NodeContent = {
   ],
   body: `# 血液分型與交叉試驗 (Blood Typing & Crossmatch)
 
-## 犬血型系統
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 犬血型系統
 ### DEA（Dog Erythrocyte Antigen）
 - **DEA 1.1**：最重要，決定輸血相容性
   - DEA 1.1(+)：犬可接受 1.1(+) 或 1.1(-) 血液
@@ -1127,8 +1328,7 @@ const contentBloodTyping: NodeContent = {
 - 首次輸血：DEA 1.1 配對為佳，但急診可先不配對（因無天然抗體）
 - 第二次以後輸血：**必須**血型配對 + 交叉試驗
 
-## 貓血型系統
-
+### 貓血型系統
 ### AB 系統
 | 血型 | 台灣盛行率 | 天然抗體 | 臨床意義 |
 |------|-----------|---------|---------|
@@ -1141,8 +1341,7 @@ const contentBloodTyping: NodeContent = {
 - B 型貓接受 A 型血的致死率極高
 - 新生兒同種免疫溶血（neonatal isoerythrolysis, NI）：B 型母貓 × A 型公貓
 
-## 交叉試驗
-
+### 交叉試驗
 ### Major crossmatch（主交叉）
 受血者血清 + 供血者紅血球 → 37°C 孵育 15-30 分鐘 → 觀察凝集/溶血
 
@@ -1154,14 +1353,33 @@ const contentBloodTyping: NodeContent = {
 - **不相容**：可見凝集或溶血 → 不可輸血
 - 自體對照（patient serum + patient RBC）排除 autoagglutination
 
-## 輸血反應分類
-
+### 輸血反應分類
 | 類型 | 時間 | 症狀 |
 |------|------|------|
 | 急性溶血反應 | 數分鐘-數小時 | 發燒、嘔吐、震顫、血紅素尿、休克 |
 | 延遲性溶血反應 | 3-14 天 | PCV 緩慢下降、bilirubinemia |
 | 發熱性非溶血反應 | 輸血中 | 發燒、顫抖 |
-| 過敏反應 | 輸血中 | 蕁麻疹、血管性水腫、過敏性休克 |`,
+| 過敏反應 | 輸血中 | 蕁麻疹、血管性水腫、過敏性休克 |
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '貓的 B 型血雖然台灣盛行率僅 3-8%，但 B 型貓體內含有極強的天然抗 A 抗體。即使是首次輸血，B 型貓接受 A 型血就可能在數分鐘內發生致命性急性溶血反應。因此貓的血型檢測絕非可選——而是輸血前的強制項目。',
   common_mistakes: [
     '認為貓首次輸血可以不配對——貓 B 型的天然抗體使首次即可致命',
@@ -1237,21 +1455,22 @@ const contentUrinalysis: NodeContent = {
   ],
   body: `# 尿液分析完整判讀 (Complete Urinalysis)
 
-## 採尿方式
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 採尿方式
 | 方式 | 適用 | 注意 |
 |------|------|------|
 | Cystocentesis | 培養、細胞學 | 金標準，最少汙染 |
 | Catheterization | 阻塞解除、大量採集 | 可能引入少量下泌尿道細胞 |
 | Voided（free catch） | 篩檢、USG 測量 | 最多汙染，不適合培養 |
 
-## 第一部分：物理性狀
-
+### 第一部分：物理性狀
 - **顏色**：正常淡黃至琥珀色；紅色提示血尿/血紅素尿/肌紅蛋白尿
 - **透明度**：正常透明；混濁提示感染、結晶、細胞碎片
 
-## 第二部分：化學試紙（Dipstick）
-
+### 第二部分：化學試紙（Dipstick）
 | 項目 | 犬貓注意事項 |
 |------|-------------|
 | pH | 犬正常 5.5-7.5；貓正常 6.0-7.0 |
@@ -1261,8 +1480,7 @@ const contentUrinalysis: NodeContent = {
 | WBC esterase | **犬不可靠**（犬嗜中性球不含此酵素） |
 | Nitrite | 犬貓不可靠（尿液在膀胱停留時間短） |
 
-## 第三部分：尿沉渣（Sediment）
-
+### 第三部分：尿沉渣（Sediment）
 ### 正常範圍（40x HPF，cystocentesis 樣本）
 - WBC：< 5/HPF
 - RBC：< 5/HPF
@@ -1284,11 +1502,30 @@ const contentUrinalysis: NodeContent = {
 - **Waxy cast**：慢性腎小管損傷
 - **Cellular cast**：RBC/WBC cast 提示腎絲球/腎小管發炎
 
-## USG 與腎功能整合
-
+### USG 與腎功能整合
 USG 需搭配水合狀態與 azotemia 判讀：
 - Azotemia + USG > 1.030（犬）/ > 1.035（貓） → prerenal
-- Azotemia + USG < 1.030（犬）/ < 1.035（貓） → renal（腎臟無法適當濃縮）`,
+- Azotemia + USG < 1.030（犬）/ < 1.035（貓） → renal（腎臟無法適當濃縮）
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '犬尿液試紙上的 leukocyte esterase（白血球酯酶）項目對犬完全不可靠，因為犬的嗜中性球不含此酵素。許多獸醫習慣看這格來判斷是否有 UTI，但正確做法是看尿沉渣的 WBC 計數。同樣地，nitrite 在犬貓也不可靠。',
   common_mistakes: [
     '用犬尿液試紙的 leukocyte esterase 和 nitrite 判斷 UTI——兩者對犬貓均不可靠',
@@ -1336,6 +1573,7 @@ USG 需搭配水合狀態與 azotemia 判讀：
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '尿液分析判讀核心教材' },
     { type: 'textbook', citation: 'Rizzi TE et al. Atlas of Canine and Feline Urinalysis. ASVCP, 2017.', relevance: '犬貓尿液分析圖譜' },
     { type: 'journal', citation: 'Callens AJ, Bartges JW. "Urinalysis." Vet Clin North Am Small Anim Pract 2015;45(4):621-637.', relevance: '尿液分析完整判讀指引' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS 指引——尿液分析在 CKD 分期中的角色（UPC 與 USG）' },
   ],
   is_current: true,
   created_at: now,
@@ -1366,8 +1604,11 @@ const contentEndocrine: NodeContent = {
   ],
   body: `# 內分泌功能檢測判讀 (Endocrine Function Testing)
 
-## 甲狀腺功能
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 甲狀腺功能
 ### 犬 Hypothyroidism 診斷流程
 1. **Total T4**：正常（> 1.5 μg/dL）→ 排除；低（< 1.0 μg/dL）→ 疑似
 2. **Free T4（ED）**：最準確的單一指標，低值支持診斷
@@ -1379,8 +1620,7 @@ const contentEndocrine: NodeContent = {
 - Total T4 borderline（2.5-4.0）→ 2 週後重複或做 free T4
 - 早期病例 T4 可能正常波動 → 需要多次測量
 
-## 腎上腺功能
-
+### 腎上腺功能
 ### Cushing（Hyperadrenocorticism）診斷
 
 | 檢測 | 用途 | 判讀 |
@@ -1395,8 +1635,7 @@ const contentEndocrine: NodeContent = {
 - Pre-ACTH cortisol < 2 μg/dL 且 post-ACTH cortisol < 2 μg/dL → 確診
 - 生化線索：Na/K < 27、prerenal azotemia、低血糖、高鈣
 
-## 糖尿病監測
-
+### 糖尿病監測
 ### 血糖曲線（Blood glucose curve）
 - 每 2 小時測血糖 × 12-24 小時
 - 評估 nadir（最低值，目標 80-150 mg/dL）與持續時間
@@ -1406,13 +1645,32 @@ const contentEndocrine: NodeContent = {
 - > 400 → 過去 2-3 週血糖控制不佳
 - 不受採樣當下壓力或進食影響
 
-## 干擾因素
+### 干擾因素
 | 藥物/狀態 | 影響 |
 |----------|------|
 | Glucocorticoids | T4↓、cortisol↑ |
 | Phenobarbital | Total T4↓，free T4 通常正常 |
 | Sick euthyroid | T4↓，不代表甲低 |
-| 貓壓力性高血糖 | 血糖可達 300-400，fructosamine 不受影響 |`,
+| 貓壓力性高血糖 | 血糖可達 300-400，fructosamine 不受影響 |
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 自動化血液分析儀整合 AI 判讀 | 犬貓 CBC 自動複檢減少人工覆核 | 人醫已有 AI 血液抹片判讀，獸醫開發中 |
+| 即時檢驗（POCT）品質管理 | 獸醫院內 POCT 結果一致性確保 | 人醫 ISO 22870 標準，獸醫標準化進展中 |
+| 分析前品質指標自動化監測 | 檢體品質自動評估（溶血/脂血/黃疸指數） | 現代自動化儀器多已內建 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 獸醫臨床病理品質管理標準 | ASVCP 有建議但非強制——各實驗室 QC 落差大 | Level III |
+| POCT vs 中央實驗室結果的一致性 | 部分項目差異顯著（如白血球分類計數），需了解設備限制 | Level II |`,
   clinical_pearl: '犬 LDDS test 的敏感度（~95%）遠優於 ACTH stim test（~80%），因此 LDDS 是 Cushing 的首選篩檢。但若患犬正在使用外源性 glucocorticoids，LDDS 無法判讀（會假陽性），此時 ACTH stim test 才是正確選擇（用來偵測 iatrogenic Cushing）。',
   common_mistakes: [
     '在全身性疾病（sick euthyroid）期間測 T4 並診斷 hypothyroidism——應待病情穩定後複檢',
@@ -1491,8 +1749,33 @@ const contentLNTumorCyto: NodeContent = {
   ],
   body: `# 淋巴結與腫瘤細胞學 (Lymph Node & Tumor Cytology)
 
-## 淋巴結細胞學判讀
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 犬五大圓細胞腫瘤
+| 腫瘤 | 特徵 | 好發 |
+|------|------|------|
+| Lymphoma | 大型單一形態淋巴球 | 中老年犬，多中心型 |
+| Mast cell tumor | 嗜鹼性/異染性顆粒 | 中老年犬，皮膚 |
+| Histiocytoma | 均勻圓形，淡藍胞質 | 年輕犬（< 3 歲），頭部/耳翼 |
+| TVT | 胞質空泡排成一列 | 流浪犬，外生殖器 |
+| Plasmacytoma | 偏心核 + 核旁透明帶 | 中老年犬，皮膚/口腔 |
+
+### 惡性標準在腫瘤細胞學的應用
+### 核標準（最重要）
+- **Anisokaryosis**：核大小不一（> 2 倍變異）
+- **核仁異常**：大小/數量/形狀不規則
+- **異常有絲分裂**：三極或多極分裂
+
+### 何時需要組織病理確認？
+- Low-grade lymphoma vs 反應性增生 → flow cytometry 或 PARR（PCR for antigen receptor rearrangement）
+- MCT → 組織病理學分級（Patnaik/Kiupel）指導預後
+- 間質性腫瘤 → 細胞學分級困難，需要組織病理
+
+## 二、判讀要點 (Interpretation)
+
+### 淋巴結細胞學判讀
 ### 正常淋巴結
 - 小淋巴球 > 90%
 - 少量中淋巴球、大淋巴球
@@ -1520,27 +1803,23 @@ const contentLNTumorCyto: NodeContent = {
 | 漿細胞 | 增多 | 通常少 |
 | Tingible body macrophages | 常見 | 少見 |
 
-## 犬五大圓細胞腫瘤
+## 三、常見陷阱 (Pitfalls)
 
-| 腫瘤 | 特徵 | 好發 |
-|------|------|------|
-| Lymphoma | 大型單一形態淋巴球 | 中老年犬，多中心型 |
-| Mast cell tumor | 嗜鹼性/異染性顆粒 | 中老年犬，皮膚 |
-| Histiocytoma | 均勻圓形，淡藍胞質 | 年輕犬（< 3 歲），頭部/耳翼 |
-| TVT | 胞質空泡排成一列 | 流浪犬，外生殖器 |
-| Plasmacytoma | 偏心核 + 核旁透明帶 | 中老年犬，皮膚/口腔 |
+## 四、人醫借鑒 (Translational Insights)
 
-## 惡性標準在腫瘤細胞學的應用
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
 
-### 核標準（最重要）
-- **Anisokaryosis**：核大小不一（> 2 倍變異）
-- **核仁異常**：大小/數量/形狀不規則
-- **異常有絲分裂**：三極或多極分裂
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 何時需要組織病理確認？
-- Low-grade lymphoma vs 反應性增生 → flow cytometry 或 PARR（PCR for antigen receptor rearrangement）
-- MCT → 組織病理學分級（Patnaik/Kiupel）指導預後
-- 間質性腫瘤 → 細胞學分級困難，需要組織病理`,
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '區分淋巴結反應性增生與 low-grade lymphoma 是細胞學最困難的判讀之一。關鍵在於：反應性增生是「多形態」的（各成熟階段都有），而淋巴瘤是「單一形態」的。若仍無法確定，flow cytometry（CD3/CD79a）或 PARR 是最佳的下一步。',
   common_mistakes: [
     '反應性增生中中/大淋巴球增多 → 誤判為淋巴瘤（應評估是否仍為多形態分布）',
@@ -1586,6 +1865,7 @@ const contentLNTumorCyto: NodeContent = {
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '淋巴結與腫瘤細胞學判讀圖譜' },
     { type: 'journal', citation: 'Avery PR et al. "Flow cytometric characterization and clinical outcome of CD4+ T-cell lymphoma in dogs." J Vet Intern Med 2014;28(2):538-546.', relevance: 'Flow cytometry 在犬淋巴瘤分型的應用' },
     { type: 'journal', citation: 'Caniatti M et al. "Diagnosis of canine lymphoma by fine-needle aspiration cytology." Vet Clin Pathol 2019;48(Suppl 1):63-77.', relevance: '犬淋巴瘤細胞學診斷的系統性回顧' },
+    { type: 'guideline', citation: 'Valli VE, Kass PH, San Myint M, et al. ACVP/STP guidelines for canine cutaneous and subcutaneous lymphoma classification. Vet Pathol. 2013;50(2):256-268.', relevance: 'ACVP 犬淋巴瘤分類指引——細胞學在分型中的角色' },
   ],
   is_current: true,
   created_at: now,
@@ -1616,8 +1896,11 @@ const contentDermCyto: NodeContent = {
   ],
   body: `# 皮膚細胞學與刮搔判讀 (Dermatologic Cytology & Skin Scraping)
 
-## 採樣技術
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 採樣技術
 ### 壓印抹片（Impression smear）
 - 適用：滲出性、糜爛性、潰瘍性病灶
 - 技術：載玻片直接壓在病灶上 → 風乾 → 染色
@@ -1634,8 +1917,7 @@ const contentDermCyto: NodeContent = {
 | 淺層 | 表皮角質層 | Sarcoptes, Cheyletiella | 刀片平行刮數次 |
 | 深層 | 真皮乳頭層（出血點） | Demodex | 擠壓皮膚 → 刀片深刮至微出血 |
 
-## 常見感染原辨識
-
+### 常見感染原辨識
 ### 細菌
 - **球菌（cocci）**：成對或四聯排列，最常見為 Staphylococcus pseudintermedius
 - **桿菌（rods）**：需警惕 Pseudomonas 等多重抗藥性菌
@@ -1650,8 +1932,7 @@ const contentDermCyto: NodeContent = {
 - **Demodex gatoi**：較短型（< 200 μm），貓表面性，淺刮即可偵測
 - **Sarcoptes scabiei**：卵圓形，短足，深層刮搔敏感度僅 ~50%（陰性不能排除）
 
-## 皮膚腫塊 FNA
-
+### 皮膚腫塊 FNA
 | 腫瘤 | 細胞學特徵 |
 |------|-----------|
 | 脂肪瘤 | 大量透明脂肪細胞，低細胞量 |
@@ -1660,10 +1941,29 @@ const contentDermCyto: NodeContent = {
 | 鱗狀上皮細胞癌 | 角化異常的上皮細胞，核仁明顯 |
 | Histiocytoma | 均勻圓形細胞，淡藍胞質 |
 
-## 耳道細胞學
+### 耳道細胞學
 - 正常：少量角質化上皮，偶見少量 Malassezia
 - 細菌性外耳炎：大量嗜中性球 + 球菌或桿菌
-- Malassezia 外耳炎：> 5 Malassezia/oil field`,
+- Malassezia 外耳炎：> 5 Malassezia/oil field
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 自動化血液分析儀整合 AI 判讀 | 犬貓 CBC 自動複檢減少人工覆核 | 人醫已有 AI 血液抹片判讀，獸醫開發中 |
+| 即時檢驗（POCT）品質管理 | 獸醫院內 POCT 結果一致性確保 | 人醫 ISO 22870 標準，獸醫標準化進展中 |
+| 分析前品質指標自動化監測 | 檢體品質自動評估（溶血/脂血/黃疸指數） | 現代自動化儀器多已內建 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 獸醫臨床病理品質管理標準 | ASVCP 有建議但非強制——各實驗室 QC 落差大 | Level III |
+| POCT vs 中央實驗室結果的一致性 | 部分項目差異顯著（如白血球分類計數），需了解設備限制 | Level II |`,
   clinical_pearl: 'Sarcoptes scabiei 刮搔的敏感度僅約 50%，也就是一半的疥癬患犬刮搔是陰性的。因此如果臨床高度懷疑（劇烈搔癢、耳翼邊緣反射陽性、典型分布），即使刮搔陰性仍應進行試驗性治療（trial therapy with isoxazoline）。',
   common_mistakes: [
     '深層刮搔未刮到出血點就停止，遺漏深層毛囊內的 Demodex',
@@ -1711,6 +2011,7 @@ const contentDermCyto: NodeContent = {
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '皮膚細胞學判讀圖譜' },
     { type: 'textbook', citation: 'Miller WH, Griffin CE, Campbell KL. Muller & Kirk\'s Small Animal Dermatology, 7th ed. Elsevier, 2013.', relevance: '皮膚科診斷方法學教材' },
     { type: 'journal', citation: 'Saridomichelakis MN et al. "Skin cytology in dogs and cats: a comprehensive review." Vet Dermatol 2017;28(5):457-e108.', relevance: '犬貓皮膚細胞學系統性回顧' },
+    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引——皮膚細胞學在膿皮症診斷中的標準' },
   ],
   is_current: true,
   created_at: now,
@@ -1741,8 +2042,11 @@ const contentInfectiousDx: NodeContent = {
   ],
   body: `# 感染性疾病實驗室診斷 (Infectious Disease Lab Diagnosis)
 
-## 檢測方法比較
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 檢測方法比較
 | 方法 | 偵測對象 | 優點 | 缺點 |
 |------|---------|------|------|
 | PCR | 病原核酸 | 極高敏感度、早期偵測 | 不區分活菌/死菌、成本高 |
@@ -1751,8 +2055,7 @@ const contentInfectiousDx: NodeContent = {
 | 培養 | 活病原體 | 金標準 + 藥敏 | 耗時、特殊培養需求 |
 | 顯微鏡直接觀察 | 型態辨識 | 即時、低成本 | 敏感度低、需經驗 |
 
-## 犬常見感染性疾病檢測
-
+### 犬常見感染性疾病檢測
 ### 4Dx Plus 快篩（院內 SNAP test）
 | 項目 | 偵測方式 | 台灣意義 |
 |------|---------|---------|
@@ -1769,8 +2072,7 @@ const contentInfectiousDx: NodeContent = {
 - Distemper virus：結膜/血液 PCR
 - Canine influenza：鼻拭子 PCR
 
-## 貓常見感染性疾病檢測
-
+### 貓常見感染性疾病檢測
 ### FeLV/FIV 快篩
 | 項目 | 偵測方式 | 注意事項 |
 |------|---------|---------|
@@ -1787,20 +2089,7 @@ const contentInfectiousDx: NodeContent = {
 - Calicivirus（FCV）：PCR 或病毒分離
 - 健康帶菌者也可能 PCR 陽性——需結合臨床症狀
 
-## PCR 判讀要點
-
-### Ct Value（Cycle threshold）
-- Ct < 25：高病原量，臨床意義明確
-- Ct 25-35：中等病原量，需結合臨床
-- Ct > 35：極低量，可能為汙染或殘存核酸
-
-### 重要注意
-- PCR 陽性 ≠ 現行活動性感染（可能偵測到死菌 DNA）
-- PCR 陰性在採樣不當或 window period 可能假陰性
-- 定量 PCR（qPCR）比定性 PCR 提供更多臨床資訊
-
-## 培養與藥敏（C&S）
-
+### 培養與藥敏（C&S）
 ### 何時需要培養？
 - 深層膿皮症或反覆感染
 - 泌尿道感染（cystocentesis 採樣）
@@ -1811,7 +2100,38 @@ const contentInfectiousDx: NodeContent = {
 ### 採樣原則
 - 在開始抗生素前採樣
 - 無菌操作採集
-- 適當培養基與運送條件`,
+- 適當培養基與運送條件
+
+## 二、判讀要點 (Interpretation)
+
+### PCR 判讀要點
+### Ct Value（Cycle threshold）
+- Ct < 25：高病原量，臨床意義明確
+- Ct 25-35：中等病原量，需結合臨床
+- Ct > 35：極低量，可能為汙染或殘存核酸
+
+### 重要注意
+- PCR 陽性 ≠ 現行活動性感染（可能偵測到死菌 DNA）
+- PCR 陰性在採樣不當或 window period 可能假陰性
+- 定量 PCR（qPCR）比定性 PCR 提供更多臨床資訊
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 數位病理學（digital pathology） | 犬貓組織切片遠距判讀與 AI 輔助 | 人醫快速發展，獸醫數位病理服務增加 |
+| 液態切片腫瘤標記 | 犬腫瘤 ctDNA/CTC 非侵入性監測 | 研究階段 |
+| MALDI-TOF 微生物鑑定 | 犬貓感染病原快速鑑定（分鐘級） | 人醫臨床常規，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬貓 FNA 細胞學 vs 組織病理的一致性 | 因組織類型差異大——淋巴結 FNA 準確度高、脾臟/肝臟較低 | Level II |
+| 犬骨髓抹片判讀標準化 | 不同判讀者間一致性待提升 | Level IV |
+| 犬貓內分泌功能檢測結果在不同平台間的比較性 | T4/cortisol 等結果因分析方法差異可能不可直接比較 | Level III |`,
   clinical_pearl: '台灣是 Ehrlichia canis 的高盛行區，而 4Dx 偵測的是抗體而非抗原。感染初期（acute phase，前 1-3 週）抗體可能尚未產生，此時 SNAP 可能假陰性。如果臨床高度懷疑（血小板減少 + 壁蝨暴露史 + 發燒），應直接送 PCR 或先行經驗性治療（doxycycline），不要等抗體轉陽。',
   common_mistakes: [
     'FIV 抗體快篩在 < 6 月齡幼貓陽性就診斷 FIV——可能是母源抗體',

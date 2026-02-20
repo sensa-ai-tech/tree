@@ -1,10 +1,12 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import ReactFlow, {
   Background,
   Controls,
   MarkerType,
+  ReactFlowProvider,
+  useReactFlow,
   type Node,
   type Edge,
   type NodeMouseHandler,
@@ -27,6 +29,10 @@ interface KnowledgeGraphProps {
 
 const LAYER_Y_OFFSET = 150;
 const NODE_X_SPACING = 220;
+
+// 在元件外部定義，避免每次渲染創建新物件觸發 React Flow 警告
+const DEFAULT_NODE_TYPES = {};
+const DEFAULT_EDGE_TYPES = {};
 
 function buildFlowNodes(
   knowledgeNodes: KnowledgeNode[],
@@ -85,6 +91,49 @@ function buildFlowEdges(knowledgeEdges: KnowledgeEdge[]): Edge[] {
     },
     markerEnd: edge.bidirectional ? undefined : { type: MarkerType.ArrowClosed },
   }));
+}
+
+/** Inner component that uses useReactFlow to auto-fitView on node changes */
+function KnowledgeGraphInner({
+  flowNodes,
+  flowEdges,
+  onNodeClick,
+}: {
+  flowNodes: Node[];
+  flowEdges: Edge[];
+  onNodeClick?: NodeMouseHandler;
+}) {
+  const { fitView } = useReactFlow();
+  const prevNodeCountRef = useRef(flowNodes.length);
+
+  useEffect(() => {
+    if (flowNodes.length !== prevNodeCountRef.current) {
+      prevNodeCountRef.current = flowNodes.length;
+      // Delay to let ReactFlow update internal node positions
+      const timer = setTimeout(() => {
+        fitView({ padding: 0.2, duration: 300 });
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [flowNodes.length, fitView]);
+
+  return (
+    <ReactFlow
+      nodes={flowNodes}
+      edges={flowEdges}
+      onNodeClick={onNodeClick}
+      nodeTypes={DEFAULT_NODE_TYPES}
+      edgeTypes={DEFAULT_EDGE_TYPES}
+      fitView
+      fitViewOptions={{ padding: 0.2 }}
+      minZoom={0.2}
+      maxZoom={2}
+      attributionPosition="bottom-left"
+    >
+      <Background color="#e5e7eb" gap={20} />
+      <Controls />
+    </ReactFlow>
+  );
 }
 
 export function KnowledgeGraph({
@@ -148,19 +197,13 @@ export function KnowledgeGraph({
 
   return (
     <div className={cn('h-[500px] w-full rounded-xl border border-gray-200 bg-white', className)}>
-      <ReactFlow
-        nodes={flowNodes}
-        edges={flowEdges}
-        onNodeClick={handleNodeClick}
-        fitView
-        fitViewOptions={{ padding: 0.2 }}
-        minZoom={0.2}
-        maxZoom={2}
-        attributionPosition="bottom-left"
-      >
-        <Background color="#e5e7eb" gap={20} />
-        <Controls />
-      </ReactFlow>
+      <ReactFlowProvider>
+        <KnowledgeGraphInner
+          flowNodes={flowNodes}
+          flowEdges={flowEdges}
+          onNodeClick={handleNodeClick}
+        />
+      </ReactFlowProvider>
     </div>
   );
 }

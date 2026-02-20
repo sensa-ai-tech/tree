@@ -851,7 +851,7 @@ export const NEURO_CASES: CaseChallenge[] = [
     title: '急性四肢無力（多發性神經根炎 vs MG）',
     specialty: 'NEURO',
     cross_specialties: ['IM', 'CPATH', 'ECC'],
-    required_nodes: ['NEURO-L3-005', 'NEURO-L4-001', 'NEURO-L4-005', 'NEURO-L2-005'],
+    required_nodes: ['NEURO-L3-005', 'NEURO-L4-001', 'NEURO-L4-004', 'NEURO-L2-003'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -1055,7 +1055,7 @@ export const NEURO_CASES: CaseChallenge[] = [
         '過早停止護理和復健導致肌肉攣縮',
       ],
     },
-    related_nodes_for_review: ['NEURO-L3-005', 'NEURO-L4-001', 'NEURO-L4-005', 'NEURO-L2-005', 'NEURO-L1-004'],
+    related_nodes_for_review: ['NEURO-L3-005', 'NEURO-L4-001', 'NEURO-L4-004', 'NEURO-L2-003', 'NEURO-L1-003'],
     tags: ['多發性神經根炎', 'Coonhound paralysis', 'LMN', '重症肌無力鑑別', '支持性治療', 'case_challenge'],
   },
   {
@@ -1063,7 +1063,7 @@ export const NEURO_CASES: CaseChallenge[] = [
     title: '幼犬進行性共濟失調',
     specialty: 'NEURO',
     cross_specialties: ['IM', 'CPATH'],
-    required_nodes: ['NEURO-L3-006', 'NEURO-L4-001', 'NEURO-L4-002', 'NEURO-L2-006'],
+    required_nodes: ['NEURO-L3-006', 'NEURO-L4-001', 'NEURO-L4-002', 'NEURO-L2-004'],
     difficulty: 4,
     species: '犬',
     scenario: {
@@ -1267,7 +1267,7 @@ export const NEURO_CASES: CaseChallenge[] = [
         '過早安樂或拖延至嚴重影響生活品質',
       ],
     },
-    related_nodes_for_review: ['NEURO-L3-006', 'NEURO-L4-001', 'NEURO-L4-002', 'NEURO-L2-006', 'NEURO-L1-003'],
+    related_nodes_for_review: ['NEURO-L3-006', 'NEURO-L4-001', 'NEURO-L4-002', 'NEURO-L2-004', 'NEURO-L1-003'],
     tags: ['小腦退化', '幼犬', '遺傳病', '傑克羅素㹴', '共濟失調', 'case_challenge'],
   },
   {
@@ -1275,7 +1275,7 @@ export const NEURO_CASES: CaseChallenge[] = [
     title: '貓後肢無力（糖尿病神經病變 vs ATE）',
     specialty: 'NEURO',
     cross_specialties: ['IM', 'CARDIO', 'ECC'],
-    required_nodes: ['NEURO-L3-007', 'NEURO-L4-001', 'NEURO-L4-005', 'NEURO-L2-005'],
+    required_nodes: ['NEURO-L3-007', 'NEURO-L4-001', 'NEURO-L4-004', 'NEURO-L2-003'],
     difficulty: 4,
     species: '貓',
     scenario: {
@@ -1478,7 +1478,7 @@ export const NEURO_CASES: CaseChallenge[] = [
         '忽略心臟評估',
       ],
     },
-    related_nodes_for_review: ['NEURO-L3-007', 'NEURO-L4-001', 'NEURO-L4-005', 'NEURO-L2-005', 'IM-L3-008'],
+    related_nodes_for_review: ['NEURO-L3-007', 'NEURO-L4-001', 'NEURO-L4-004', 'NEURO-L2-003', 'IM-L3-008'],
     tags: ['糖尿病神經病變', '貓', 'plantigrade stance', 'ATE鑑別', '胰島素', 'case_challenge'],
   },
 ];

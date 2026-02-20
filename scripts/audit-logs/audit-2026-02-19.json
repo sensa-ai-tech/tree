@@ -1,0 +1,399 @@
+{
+  "timestamp": "2026-02-19T20:19:56.454Z",
+  "totalScore": 100,
+  "specialties": [
+    {
+      "key": "CARDIO",
+      "label": "心臟科",
+      "nodeCount": 19,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "IM",
+      "label": "內科",
+      "nodeCount": 30,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "DERM",
+      "label": "皮膚科",
+      "nodeCount": 26,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "SURG",
+      "label": "外科",
+      "nodeCount": 24,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "NEURO",
+      "label": "神經科",
+      "nodeCount": 22,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "ONCO",
+      "label": "腫瘤科",
+      "nodeCount": 23,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "ECC",
+      "label": "急診加護",
+      "nodeCount": 22,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    },
+    {
+      "key": "CPATH",
+      "label": "臨床病理",
+      "nodeCount": 16,
+      "dimensions": {
+        "structure": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "contentDepth": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "edgeIntegrity": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "references": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "questionCoverage": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "caseQuality": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "pathCompleteness": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        },
+        "taiwanRelevance": {
+          "score": 100,
+          "maxScore": 100,
+          "issues": []
+        }
+      },
+      "totalScore": 100
+    }
+  ],
+  "allIssues": [],
+  "summary": {
+    "totalNodes": 182,
+    "totalEdges": 311,
+    "totalQuestions": 1461,
+    "totalCases": 56,
+    "totalPaths": 29,
+    "crossSpecialtyEdges": 34
+  }
+}

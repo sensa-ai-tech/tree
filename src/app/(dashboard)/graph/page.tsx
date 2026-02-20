@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Map, Info } from 'lucide-react';
 import { Card, CardBody } from '@/components/ui/Card';
@@ -21,12 +21,14 @@ const SPECIALTIES = [
 ] as const;
 
 export default function GraphPage() {
-  const { nodes, edges, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore();
-  const [selectedSpecialty, setSelectedSpecialty] = useState('');
+  const { nodes, edges, filters, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore();
   const router = useRouter();
 
+  // 直接從 Zustand store 讀取 specialty，避免雙重狀態
+  const selectedSpecialty = filters.specialty ?? '';
+
   // 根據篩選條件過濾 nodes 和 edges
-  const filteredNodes = useMemo(() => getFilteredNodes(), [getFilteredNodes, nodes, selectedSpecialty]);
+  const filteredNodes = useMemo(() => getFilteredNodes(), [getFilteredNodes, nodes, filters.specialty]);
   const filteredNodeIds = useMemo(() => new Set(filteredNodes.map((n) => n.id)), [filteredNodes]);
   const filteredEdges = useMemo(
     () => edges.filter((e) => filteredNodeIds.has(e.source_node_id) && filteredNodeIds.has(e.target_node_id)),
@@ -35,7 +37,6 @@ export default function GraphPage() {
 
   function handleSpecialtyChange(e: React.ChangeEvent<HTMLSelectElement>): void {
     const value = e.target.value;
-    setSelectedSpecialty(value);
     setFilters({ specialty: value || null });
   }
 
@@ -88,7 +89,7 @@ export default function GraphPage() {
           nodes={filteredNodes}
           edges={filteredEdges}
           onNodeClick={handleNodeClick}
-          className="h-[600px]"
+          className="h-[calc(100vh-220px)] min-h-[400px]"
         />
       )}
     </div>

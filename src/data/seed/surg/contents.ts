@@ -25,12 +25,14 @@ const contentGDV: NodeContent = {
   ],
   body: `# 胃擴張扭轉 (GDV)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 胃擴張扭轉（GDV）是犬科最嚴重的外科急診之一，若未及時處理，死亡率可達 100%。此病以大型及巨型深胸犬種最常見，年發生率在高風險品種中約 6%。
 
-## 病理生理
-
+### 病理生理
 GDV 的核心病理包括三個層面：
 
 1. **機械性阻塞**：胃順時針扭轉（從術者觀察尾端）220-270 度，幽門移至左側，導致胃入口與出口同時阻塞
@@ -39,22 +41,7 @@ GDV 的核心病理包括三個層面：
 
 脾臟因與胃的韌帶連接而隨胃移位，可能發生扭轉或血管撕裂。
 
-## 臨床表現
-
-[圖片:典型 GDV 犬的腹部外觀——腹部明顯膨脹]
-
-急性發作通常在進食後 2-4 小時內：
-- 非生產性嘔吐（retching without vomiting）為最典型表現
-- 腹部急性膨脹，叩診呈鼓音
-- 流涎、不安、無法舒適躺下
-- 進展至休克表現：蒼白黏膜、CRT 延長、心搏過速、弱脈
-
-## 診斷
-
-右側臥位腹部 X 光可見特徵性 **「雙氣泡」** 或 **「Popeye arm sign」**：幽門軟組織密度帶將胃分隔為兩個充氣腔室。
-
-## 急診處理
-
+### 急診處理
 [互動:GDV 急診處理流程決策圖]
 
 1. **積極輸液復甦**：兩條大口徑靜脈導管，晶體液 shock dose（60-90 mL/kg/hr 第一小時）
@@ -63,15 +50,52 @@ GDV 的核心病理包括三個層面：
 4. **血液檢查**：lactate、電解質、CBC、凝血功能
 5. **Lactate 判讀**：< 6.0 mmol/L 預後較佳，> 6.0 mmol/L 提示胃壁壞死風險升高
 
-## 手術
-
+### 手術
 麻醉穩定後進行正中開腹：
 1. 胃 derotation（將幽門從左側推回右側）
 2. 評估胃壁與脾臟活性——壞死區域需切除（partial gastrectomy / splenectomy）
 3. **右側 incisional gastropexy**：將胃幽門竇漿膜層縫合至右腹壁，為預防復發的關鍵步驟
 
-[圖片:Incisional gastropexy 手術步驟示意圖]`,
-  clinical_pearl: '術前 lactate 是 GDV 最實用的預後指標。Lactate > 6.0 mmol/L 的犬，胃壁壞死的可能性顯著增加，應在術前告知飼主可能需要 partial gastrectomy 甚至安樂死。術後 lactate 如果在 12 小時內未下降至正常，也是預後不良的重要訊號。',
+[圖片:Incisional gastropexy 手術步驟示意圖]
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+[圖片:典型 GDV 犬的腹部外觀——腹部明顯膨脹]
+
+急性發作通常在進食後 2-4 小時內：
+- 非生產性嘔吐（retching without vomiting）為最典型表現
+- 腹部急性膨脹，叩診呈鼓音
+- 流涎、不安、無法舒適躺下
+- 進展至休克表現：蒼白黏膜、CRT 延長、心搏過速、弱脈
+
+### 診斷
+右側臥位腹部 X 光可見特徵性 **「雙氣泡」** 或 **「Popeye arm sign」**：幽門軟組織密度帶將胃分隔為兩個充氣腔室。
+
+## 三、治療策略 (Treatment)
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '術前 lactate 是 GDV 最實用的預後指標。Lactate > 6.0 mmol/L 的犬，胃壁壞死的可能性顯著增加，應在術前告知飼主可能需要 partial gastrectomy 甚至安樂死。術後 lactate 如果在 12 小時內未下降至正常，也是預後不良的重要訊號。\n\n【台灣流行病學】GDV 在台灣以大型犬與深胸犬好發，德國牧羊犬、大丹犬、標準型貴賓犬為高風險品種。雖然台灣大型犬飼養比例低於歐美，但近年大型犬飼養數量增加，GDV 病例亦隨之上升。台灣亞熱帶高溫環境下犬隻運動後大量飲水可能為誘發因素之一。台灣各獸醫教學醫院與大型動物醫院已具備 GDV 緊急手術能力，建議大型犬飼主了解 GDV 緊急徵象。',
   common_mistakes: [
     '僅做胃擴張減壓而未進行 gastropexy（復發率高達 54-80%）',
     '在血流動力學未穩定前急於手術，增加麻醉風險',
@@ -147,20 +171,21 @@ const contentPyometra: NodeContent = {
   ],
   body: `# 子宮蓄膿 (Pyometra)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 子宮蓄膿是未絕育母犬最常見的子宮疾病之一，在 10 歲前的未絕育母犬中約有 25% 會發生。雖然貓也可發生，但犬的盛行率遠高於貓。此病為外科急診，延遲治療可導致子宮破裂、腹膜炎與敗血症死亡。
 
-## 病理生理
-
+### 病理生理
 1. **黃體期影響**：發情後 progesterone 升高 → 促進子宮內膜增生（cystic endometrial hyperplasia, CEH）→ 子宮防禦力下降
 2. **細菌感染**：發情期子宮頸開放時細菌上行感染 → E. coli 為最常見致病菌 → 細菌在 progesterone 抑制的子宮環境中大量增殖
 3. **子宮頸狀態**：
    - **開放型**：子宮頸持續開放，膿液可排出 → 全身中毒較輕
    - **封閉型**：子宮頸關閉，膿液蓄積 → 子宮極度擴張 → 全身中毒嚴重
 
-## CEH-Pyometra Complex
-
+### CEH-Pyometra Complex
 子宮蓄膿被認為是 CEH-Pyometra Complex 的終末表現，可分四個階段：
 
 | 階段 | 特徵 |
@@ -170,8 +195,9 @@ const contentPyometra: NodeContent = {
 | III | CEH + 急性子宮內膜炎 |
 | IV | CEH + 慢性子宮內膜炎 → 子宮蓄膿 |
 
-## 診斷
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 診斷
 - **血液學**：WBC 升高伴嗜中性球左移（典型值 30,000-100,000/uL），但也可能正常或降低（骨髓耗竭）
 - **生化學**：BUN/Cre 升高（腎前性或 E. coli 內毒素引起的腎損傷）、ALT/ALP 輕度升高、低白蛋白血症
 - **腹部超音波**：子宮角擴張（直徑 > 1-2 cm），充滿均質或不均質液體，金標準診斷工具
@@ -179,8 +205,9 @@ const contentPyometra: NodeContent = {
 
 [圖片:子宮蓄膿腹部超音波影像——擴張的子宮角]
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 手術治療（OHE）— 確定性治療
 - 適用於所有病例，為首選治療方式
 - 術前穩定化：積極輸液、矯正電解質、廣效抗生素（[藥物:Ampicillin] + [藥物:Enrofloxacin] 或 [藥物:Metronidazole]）
@@ -194,8 +221,30 @@ const contentPyometra: NodeContent = {
 - 復發率：約 20-25% 在下次黃體期
 - 建議在下次發情時配種，配種成功後不再使用
 
-[互動:治療決策樹——手術 vs 內科治療適應症判斷]`,
-  clinical_pearl: '子宮蓄膿犬的 WBC 計數可能出現「paradoxical leukopenia」——當感染過於嚴重時，骨髓嗜中性球儲備耗竭，導致周邊 WBC 正常甚至偏低，但 band neutrophils 比例升高（degenerative left shift）。這類病例往往比 WBC 明顯升高的病例預後更差，需要更積極的術前穩定化。',
+[互動:治療決策樹——手術 vs 內科治療適應症判斷]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '子宮蓄膿犬的 WBC 計數可能出現「paradoxical leukopenia」——當感染過於嚴重時，骨髓嗜中性球儲備耗竭，導致周邊 WBC 正常甚至偏低，但 band neutrophils 比例升高（degenerative left shift）。這類病例往往比 WBC 明顯升高的病例預後更差，需要更積極的術前穩定化。\n\n【台灣流行病學】子宮蓄膿在台灣為極常見的外科急症，與台灣未絕育母犬比例仍偏高有關。台灣流浪犬 TNR（捕捉-絕育-回置）計畫推廣下，獸醫師對 OVH 技術經驗豐富。然而家犬未絕育比例仍高，尤其飼養貴賓犬、馬爾濟斯、吉娃娃等小型犬的飼主常因體型小而延遲絕育。台灣亞熱帶氣候下子宮蓄膿全年均可發生，建議未繁殖犬儘早絕育預防。',
   common_mistakes: [
     '將開放型子宮蓄膿的陰道分泌物誤判為正常發情出血',
     '封閉型子宮蓄膿未行超音波而誤診為其他急性腹症',
@@ -243,6 +292,7 @@ const contentPyometra: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 26: Surgery of the Reproductive and Genital Systems.', relevance: '子宮蓄膿手術技術標準教材' },
     { type: 'journal', citation: 'Hagman R. Pyometra in Small Animals. Vet Clin North Am Small Anim Pract. 2018;48(2):339-372.', relevance: '子宮蓄膿最新綜述文章' },
     { type: 'journal', citation: 'Gobello C et al. A study of two protocols combining aglepristone and cloprostenol to treat open cervix pyometra in the bitch. Theriogenology. 2003;60(5):901-908.', relevance: '內科治療方案（Aglepristone + PG）的臨床研究' },
+    { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021. Chapter: Uterine Surgery.', relevance: '子宮蓄膿 OHE 手術實務指引' },
   ],
   is_current: true,
   created_at: now,
@@ -272,38 +322,21 @@ const contentSplenicNeoplasia: NodeContent = {
   ],
   body: `# 脾臟腫瘤 (Splenic Neoplasia)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 脾臟腫塊是犬腹腔手術中最常見的適應症之一。雖然統計上約 2/3 為惡性，但良性病變（血腫、結節性增生）也相當常見。由於超音波無法可靠區分良惡性，所有有意義的脾臟腫塊均建議手術切除並送病理檢查。
 
-## 病因分類
-
+### 病因分類
 | 類別 | 常見病因 | 占比 |
 |------|---------|------|
 | 惡性腫瘤 | 血管肉瘤（HSA）、纖維肉瘤、淋巴瘤、肥大細胞腫瘤 | ~65% |
 | 良性腫瘤 | 血管瘤、脂肪瘤 | ~10% |
 | 非腫瘤性 | 血腫、結節性增生、脾扭轉 | ~25% |
 
-## 臨床表現
-
-[圖片:脾臟腫塊破裂犬的急診外觀——腹部膨脹蒼白黏膜]
-
-臨床表現取決於腫塊是否破裂：
-- **未破裂**：可能無症狀，偶然在健康檢查或其他原因超音波時發現
-- **破裂出血**：急性虛弱、蒼白黏膜、心搏過速、腹部膨脹、CRT 延長、低血壓
-
-## 診斷
-
-- **AFAST**：急診快速評估腹腔積液，陽性提示腹腔出血
-- **腹部超音波**：評估脾臟腫塊大小、回音特徵、是否有肝臟轉移
-- **胸腔 X 光**：評估肺轉移（HSA 肺轉移率高）
-- **CBC/生化/凝血**：評估貧血程度、DIC 指標
-- **心臟超音波**：HSA 可能同時侵犯右心房（約 25%）
-
-⚠ 超音波上脾臟腫塊的回音特徵無法可靠區分良惡性，FNA 對 HSA 的診斷準確率也有限。
-
-## 手術——脾臟切除術
-
+### 手術——脾臟切除術
 [互動:脾臟切除術步驟流程]
 
 1. 正中開腹，腹腔探查
@@ -313,13 +346,54 @@ const contentSplenicNeoplasia: NodeContent = {
 5. 腹腔探查肝臟與其他臟器有無轉移病灶
 6. 所有切除組織送病理
 
-## 術後管理
-
+### 術後管理
 - ECG 監測（HSA 可能合併心律不整）
 - PCV/TS 每 4-6 小時追蹤
 - 輸血支持（目標 PCV > 25%）
-- 病理結果回報後決定後續治療`,
-  clinical_pearl: '「double 2/3 rule」是脾臟腫塊的實用記憶法：犬脾臟腫塊約 2/3 為惡性，而惡性腫塊中約 2/3 為 HSA。但這個比例在不同研究系列中有差異（某些系列良性比例可達 50%），因此不應在術前僅憑統計數據放棄手術——許多犬的脾臟腫塊為可治癒的良性病變。',
+- 病理結果回報後決定後續治療
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+[圖片:脾臟腫塊破裂犬的急診外觀——腹部膨脹蒼白黏膜]
+
+臨床表現取決於腫塊是否破裂：
+- **未破裂**：可能無症狀，偶然在健康檢查或其他原因超音波時發現
+- **破裂出血**：急性虛弱、蒼白黏膜、心搏過速、腹部膨脹、CRT 延長、低血壓
+
+### 診斷
+- **AFAST**：急診快速評估腹腔積液，陽性提示腹腔出血
+- **腹部超音波**：評估脾臟腫塊大小、回音特徵、是否有肝臟轉移
+- **胸腔 X 光**：評估肺轉移（HSA 肺轉移率高）
+- **CBC/生化/凝血**：評估貧血程度、DIC 指標
+- **心臟超音波**：HSA 可能同時侵犯右心房（約 25%）
+
+⚠ 超音波上脾臟腫塊的回音特徵無法可靠區分良惡性，FNA 對 HSA 的診斷準確率也有限。
+
+## 三、治療策略 (Treatment)
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '「double 2/3 rule」是脾臟腫塊的實用記憶法：犬脾臟腫塊約 2/3 為惡性，而惡性腫塊中約 2/3 為 HSA。但這個比例在不同研究系列中有差異（某些系列良性比例可達 50%），因此不應在術前僅憑統計數據放棄手術——許多犬的脾臟腫塊為可治癒的良性病變。\n\n【台灣流行病學】脾臟腫塊在台灣中老年大型犬中並不罕見，好發品種如金毛獵犬、德國牧羊犬在台灣飼養數量多。台灣獸醫腹部超音波篩檢普及率高，脾臟腫塊常在健檢時偶然發現。台灣臨床上脾臟 HSA 的比例與國際報告相近，建議中老年大型犬定期腹部超音波追蹤。',
   common_mistakes: [
     '僅憑超音波外觀判斷良惡性而放棄手術（超音波無法可靠區分）',
     '脾臟破裂出血病例未先穩定化即急於手術（需先輸液/輸血穩定血壓）',
@@ -395,12 +469,14 @@ const contentGIForeignBody: NodeContent = {
   ],
   body: `# 腸道異物 (GI Foreign Body)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 消化道異物在犬貓臨床實務中極為常見，犬占急診手術的重要比例。幼犬因好奇心旺盛、咀嚼行為頻繁而為最高風險群。貓的線狀異物則是獸醫外科獨特且危險的病態。
 
-## 異物分類
-
+### 異物分類
 | 類型 | 常見物品 | 好發物種 |
 |------|---------|---------|
 | 不透光 | 骨頭、金屬、石頭 | 犬 |
@@ -408,8 +484,7 @@ const contentGIForeignBody: NodeContent = {
 | 線狀 | 縫線、毛線、聖誕飾品 | 貓 > 犬 |
 | 食物性 | 玉米芯、水果核、栗子 | 犬 |
 
-## 病理機轉
-
+### 病理機轉
 異物依停留位置產生不同效應：
 1. **食道異物**：黏膜壓迫壞死 → 食道穿孔 → 縱隔炎/膿胸
 2. **胃異物**：幽門阻塞 → 持續嘔吐 → 脫水與電解質異常（低氯低鉀代謝性鹼中毒）
@@ -418,15 +493,17 @@ const contentGIForeignBody: NodeContent = {
 
 [圖片:線狀異物導致腸道 plication 示意圖]
 
-## 診斷
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 診斷
 - **三視角腹部 X 光**：不透光異物直接可見；阻塞性模式（近端腸道擴張、遠端氣體減少）；游離腹腔氣體提示穿孔
 - **腹部超音波**：偵測非透光異物的反射影、腸道擴張、腸壁增厚、腹腔積液
 - **線狀異物超音波特徵**：腸道皺縮（plication）、「accordion sign」
 - **對比攝影**：液態 barium 或水溶性對比劑可輔助診斷（但疑似穿孔時禁用 barium）
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 內視鏡取出
 適用於食道異物與部分胃異物（光滑、非尖銳、大小可通過食道）
 
@@ -446,8 +523,30 @@ const contentGIForeignBody: NodeContent = {
 - 切除壞死腸段，兩端以單層全層端對端吻合
 - 確保吻合處無張力且血供良好
 
-[互動:腸道活性評估決策——切開 vs 切除吻合]`,
-  clinical_pearl: '線狀異物是最危險的消化道異物類型。檢查時務必翻開貓的舌頭看舌下——線狀異物常在舌根繞結。發現線狀異物時絕對不可從口腔端拉出，因為線體已造成腸壁鋸切，拉動會加重穿孔。手術中可能需要多處腸切開（multiple enterotomies）沿線體逐段移除。',
+[互動:腸道活性評估決策——切開 vs 切除吻合]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '線狀異物是最危險的消化道異物類型。檢查時務必翻開貓的舌頭看舌下——線狀異物常在舌根繞結。發現線狀異物時絕對不可從口腔端拉出，因為線體已造成腸壁鋸切，拉動會加重穿孔。手術中可能需要多處腸切開（multiple enterotomies）沿線體逐段移除。\n\n【台灣流行病學】消化道異物在台灣為常見外科急症，尤其好發於幼犬與好奇心強的品種（如拉布拉多、法國鬥牛犬）。台灣飼主居家環境中常見的異物來源包括塑膠袋、橡膠玩具、骨頭碎片、線狀物（貓尤其好發）。貓的線狀異物在台灣臨床極為常見，與室內飼養貓接觸縫線、橡皮筋等有關。台灣獸醫院內視鏡取物技術日趨成熟，但腸道穿孔病例仍需緊急開腹手術。',
   common_mistakes: [
     '僅拍一張 X 光——需三視角（VD + 兩側臥位）完整評估',
     '非透光異物（布料、塑膠）X 光正常就排除異物——應追加超音波',
@@ -524,12 +623,14 @@ const contentCCLD: NodeContent = {
   ],
   body: `# 十字韌帶斷裂 (CCLD)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億美元的獸醫費用。與人類 ACL 損傷不同，犬的 CCLD 主要為慢性退化性病變，雖然急性惡化可能被誤認為創傷事件。
 
-## 病理機轉
-
+### 病理機轉
 犬 CCLD 的發展為多因子過程：
 1. **韌帶退化**：免疫介導性關節炎、遺傳易感性 → 韌帶纖維退化
 2. **生物力學因素**：後脛骨平台角（TPA）過陡 → 脛骨前推力增加
@@ -541,8 +642,9 @@ CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億�
 - 關節不穩定 → 慢性骨關節炎
 - 內側半月板夾擠損傷（bucket-handle tear）
 
-## 診斷
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 診斷
 [圖片:Cranial drawer test 與 tibial thrust test 操作示意圖]
 
 ### 理學檢查
@@ -555,8 +657,9 @@ CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億�
 - X 光：關節積液、骨關節炎變化、脛骨平台角測量
 - CT/MRI：可用於確認部分斷裂與半月板損傷（但通常不需要）
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 手術治療（中大型犬首選）
 
 **TPLO（Tibial Plateau Leveling Osteotomy）**：
@@ -577,8 +680,30 @@ CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億�
 - 僅適用於 < 10 kg 且配合度良好的病例
 - 限制活動 8-12 週 + NSAIDs + 減重 + 復健
 
-[互動:CCLD 術式選擇決策樹]`,
-  clinical_pearl: '執行 cranial drawer test 時，部分斷裂的病例在完全伸展位可能是陰性的，但在屈曲 20-30 度時會出現陽性——這是因為完全伸展時內側副韌帶與關節囊提供部分穩定。同時注意 tibial thrust test 在肥胖犬或肌肉緊張的犬中比 drawer test 更容易偵測到不穩定。',
+[互動:CCLD 術式選擇決策樹]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '執行 cranial drawer test 時，部分斷裂的病例在完全伸展位可能是陰性的，但在屈曲 20-30 度時會出現陽性——這是因為完全伸展時內側副韌帶與關節囊提供部分穩定。同時注意 tibial thrust test 在肥胖犬或肌肉緊張的犬中比 drawer test 更容易偵測到不穩定。\n\n【台灣流行病學】前十字韌帶疾病（CCLD）在台灣大型犬中為常見骨科問題，拉布拉多與黃金獵犬為好發品種。近年台灣 TPLO 手術技術推廣迅速，多家專科動物醫院已具備 TPLO 能力。台灣小型犬 CCLD 常合併膝蓋骨內側脫位（MPL），需一併評估處理。犬隻肥胖在台灣盛行，為 CCLD 的重要風險因子。',
   common_mistakes: [
     '將犬 CCLD 視為單純創傷而非退化性疾病（影響飼主衛教與對側膝關節預防）',
     '未在鎮靜下確認 drawer sign（肌肉緊張的病例清醒下可能假陰性）',
@@ -654,12 +779,14 @@ const contentIVDD: NodeContent = {
   ],
   body: `# 椎間盤疾病 (IVDD)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 IVDD 是犬最常見的脊髓疾病，佔所有犬脊髓疾病的 2%，但在軟骨營養不良型品種（如臘腸犬）中發生率極高。此疾病同時是外科（手術減壓）與神經科的跨科疾病。
 
-## 病理分類
-
+### 病理分類
 ### Hansen Type I（急性突出）
 - 椎間盤核髓（nucleus pulposus）軟骨樣變性（chondroid metaplasia）
 - 核髓脫水鈣化 → 纖維環破裂 → 核髓急性脫出至椎管 → 脊髓急性壓迫
@@ -670,8 +797,17 @@ IVDD 是犬最常見的脊髓疾病，佔所有犬脊髓疾病的 2%，但在軟
 - 纖維環漸進性膨出 → 脊髓慢性壓迫
 - 好發於大型非軟骨營養不良型品種
 
-## 神經學分級
+### 神經定位
+[圖片:脊髓節段神經定位檢查流程圖]
 
+- **C1-C5**：四肢上運動神經元（UMN）徵象，頸部疼痛
+- **C6-T2**：前肢下運動神經元（LMN）+ 後肢 UMN
+- **T3-L3**：前肢正常 + 後肢 UMN（最常見 IVDD 位置）
+- **L4-S3**：後肢 LMN，膀胱功能障礙
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 神經學分級
 | Grade | 臨床表現 | 治療傾向 |
 |-------|---------|---------|
 | 1 | 僅疼痛，神經功能正常 | 保守 |
@@ -680,25 +816,16 @@ IVDD 是犬最常見的脊髓疾病，佔所有犬脊髓疾病的 2%，但在軟
 | 4 | 癱瘓，無自主動作，深層痛覺保留 | 緊急手術 |
 | 5 | 癱瘓，深層痛覺喪失 | 緊急手術（預後保守） |
 
-## 神經定位
-
-[圖片:脊髓節段神經定位檢查流程圖]
-
-- **C1-C5**：四肢上運動神經元（UMN）徵象，頸部疼痛
-- **C6-T2**：前肢下運動神經元（LMN）+ 後肢 UMN
-- **T3-L3**：前肢正常 + 後肢 UMN（最常見 IVDD 位置）
-- **L4-S3**：後肢 LMN，膀胱功能障礙
-
-## 診斷
-
+### 診斷
 - **神經學檢查**：精確定位病灶脊髓節段
 - **X 光**：可見椎間盤間隙狹窄或鈣化，但無法評估脊髓壓迫程度
 - **MRI**：金標準——直接顯示脊髓壓迫位置、程度與脊髓訊號變化
 - **CT**：可偵測鈣化椎間盤物質，快速且常不需要對比劑
 - **脊髓造影（Myelography）**：MRI/CT 不可用時的替代方案
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 保守治療（Grade 1-2，首次發作）
 - 嚴格籠休 4-6 週
 - 疼痛管理：[藥物:Gabapentin] 5-10 mg/kg PO BID-TID + NSAIDs
@@ -716,8 +843,30 @@ IVDD 是犬最常見的脊髓疾病，佔所有犬脊髓疾病的 2%，但在軟
 - 從椎體腹側鑽入椎管
 - 直接移除腹側突出的椎間盤物質
 
-[互動:IVDD 治療決策——保守 vs 手術]`,
-  clinical_pearl: '深層痛覺（DPP）的正確測試方法至關重要：使用止血鉗夾壓趾骨，觀察的不是肢體的屈曲反射（withdrawal reflex）——這是脊髓反射弧，即使脊髓橫斷也可存在——而是要觀察有意識的疼痛反應，如轉頭看向刺激源、哭叫或試圖咬人。DPP 喪失超過 48 小時的病例恢復率極低，但精確的喪失時間往往難以確定。',
+[互動:IVDD 治療決策——保守 vs 手術]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '深層痛覺（DPP）的正確測試方法至關重要：使用止血鉗夾壓趾骨，觀察的不是肢體的屈曲反射（withdrawal reflex）——這是脊髓反射弧，即使脊髓橫斷也可存在——而是要觀察有意識的疼痛反應，如轉頭看向刺激源、哭叫或試圖咬人。DPP 喪失超過 48 小時的病例恢復率極低，但精確的喪失時間往往難以確定。\n\n【台灣流行病學】椎間盤疾病（IVDD）在台灣為常見的外科神經急症，臘腸犬為台灣最具代表性的好發品種（盛行率可達 19-24%），其他好發品種如法國鬥牛犬、柯乩犬（Corgi）、比乏犬（Beagle）在台灣飼養數量亦多。台灣各大獸醫教學醫院與神經外科專科已具備半椎板切除術與 ventral slot 手術能力。MRI 設備在台灣分佈日趨普及，提升了術前精確定位的能力。',
   common_mistakes: [
     '將屈曲反射（withdrawal reflex）誤判為深層痛覺陽性——DPP 需觀察有意識的疼痛反應',
     '僅靠 X 光判斷 IVDD 位置與嚴重度（X 光無法評估脊髓壓迫程度）',
@@ -794,12 +943,14 @@ const contentPerinealHernia: NodeContent = {
   ],
   body: `# 會陰疝氣 (Perineal Hernia)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 會陰疝氣是中老年未絕育雄犬特有的外科疾病，由骨盆隔膜（pelvic diaphragm）肌肉萎縮弱化導致。此病雖非立即威脅生命，但膀胱疝入時可造成急性尿路阻塞，成為外科急診。
 
-## 解剖學基礎
-
+### 解剖學基礎
 骨盆隔膜由以下肌肉構成：
 - **提肛肌（levator ani）**：最常萎縮的肌肉
 - **尾骨肌（coccygeus）**
@@ -807,8 +958,9 @@ const contentPerinealHernia: NodeContent = {
 
 雄性激素（testosterone 與 relaxin 受體）促進這些肌肉退化萎縮，導致骨盆腔與會陰間出現缺口。
 
-## 臨床表現
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### 臨床表現
 [圖片:會陰疝氣外觀——會陰部單側或雙側膨脹]
 
 - **會陰部膨脹**：可還原性腫脹，提高後軀或擠壓腹部時更明顯
@@ -818,15 +970,15 @@ const contentPerinealHernia: NodeContent = {
 
 ⚠ **膀胱後翻急診**：觸診會陰腫脹內含充盈膀胱，無法正常排尿。需緊急導尿或膀胱穿刺減壓後安排手術。
 
-## 診斷
-
+### 診斷
 - **直腸指診**：可感覺骨盆隔膜缺損、直腸偏位方向
 - **腹部/會陰超音波**：確認疝入內容物（膀胱？前列腺？腸道？）
 - **X 光**：含對比劑的膀胱造影可確認膀胱位置
 - **血液檢查**：膀胱後翻時需評估腎功能（BUN/Cre）與電解質（高血鉀！）
 
-## 手術治療
+## 三、治療策略 (Treatment)
 
+### 手術治療
 ### Internal Obturator Muscle Transposition（首選術式）
 1. 會陰部切開，辨識疝氣缺口邊界
 2. 將疝出內容物回納至骨盆腔
@@ -839,8 +991,30 @@ const contentPerinealHernia: NodeContent = {
 - 去勢可降低復發率從 40-50% 至 10-15%
 - 減少前列腺對骨盆腔的空間佔據
 
-[互動:會陰疝氣手術步驟流程]`,
-  clinical_pearl: '會陰疝氣術後最令飼主困擾的併發症是暫時性大便失禁（fecal incontinence）。術中操作靠近肛門括約肌與支配神經（pudendal nerve），可能導致短期排便控制異常。術前須充分告知飼主此併發症通常是暫時性的（1-4 週內改善），但少數病例可能較久。避免過度牽拉外肛門括約肌可降低此風險。',
+[互動:會陰疝氣手術步驟流程]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '會陰疝氣術後最令飼主困擾的併發症是暫時性大便失禁（fecal incontinence）。術中操作靠近肛門括約肌與支配神經（pudendal nerve），可能導致短期排便控制異常。術前須充分告知飼主此併發症通常是暫時性的（1-4 週內改善），但少數病例可能較久。避免過度牽拉外肛門括約肌可降低此風險。\n\n【台灣流行病學】會陰疝氣在台灣以未去勢中老年公犬好發，與台灣仍有相當比例飼主未為公犬去勢有關。台灣流浪犬 TNR 計畫主要針對母犬絕育，公犬去勢率相對較低。台灣常見品種如臘腸犬、波士頓梗、混種犬為好發族群。同時去勢手術應與會陰疝氣修補同步進行以降低復發率。',
   common_mistakes: [
     '未同時去勢——復發率從 10-15% 上升至 40-50%',
     '膀胱後翻時未先解除尿路阻塞即急於手術（需先穩定高血鉀與氮血症）',
@@ -887,6 +1061,7 @@ const contentPerinealHernia: NodeContent = {
     { type: 'journal', citation: 'Bellenger CR, Canfield RB. Perineal hernia. In: Slatter D, ed. Textbook of Small Animal Surgery, 3rd ed. Saunders, 2003:487-498.', relevance: '會陰疝氣完整外科參考' },
     { type: 'journal', citation: 'Szabo S et al. Perineal hernia in the dog: a review of 104 cases. Vet Surg. 2007;36(7):E14.', relevance: '會陰疝氣大型回顧性研究' },
     { type: 'journal', citation: 'Grand JG et al. Use of the internal obturator muscle for perineal herniorrhaphy in the dog. Vet Surg. 2013;42(6):652-659.', relevance: '閉孔內肌翻轉術技術與結果研究' },
+    { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021. Chapter: Perineal Surgery.', relevance: '會陰手術最佳實務指引' },
   ],
   is_current: true,
   created_at: now,
@@ -916,12 +1091,14 @@ const contentFractureStabilization: NodeContent = {
   ],
   body: `# 創傷性骨折穩定
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 骨折是犬貓急診中最常見的創傷之一，常見原因包括車禍、高處墜落、咬傷與踩踏。骨折處理的最高原則是「先保命，再保肢」——必須先完成全身性創傷評估與穩定化，再處理骨折。
 
-## 骨折分類
-
+### 骨折分類
 ### 依開放/閉合
 - **閉合性骨折**：皮膚完整
 - **開放性骨折**：
@@ -938,8 +1115,7 @@ const contentFractureStabilization: NodeContent = {
 | 螺旋 (Spiral) | 旋轉力導致 | 不穩定 |
 | 粉碎 (Comminuted) | ≥ 3 碎片 | 高度不穩定 |
 
-## 急診處理
-
+### 急診處理
 [圖片:創傷動物急診評估流程圖]
 
 1. **Primary survey（ABCDE）**：氣道、呼吸、循環、神經、暴露
@@ -948,8 +1124,7 @@ const contentFractureStabilization: NodeContent = {
 4. **暫時性固定**：Robert Jones bandage 或 splint——防止骨折端進一步移位與軟組織損傷
 5. **開放性骨折**：傷口覆蓋濕敷料、廣效抗生素（[藥物:Cefazolin] 22 mg/kg IV TID）
 
-## 固定方式
-
+### 固定方式
 ### 骨板螺絲（Plate-Screw）
 - 最常用的確定性固定方式
 - 提供剛性穩定（rigid fixation）
@@ -969,14 +1144,39 @@ const contentFractureStabilization: NodeContent = {
 
 [互動:骨折固定方式選擇決策圖]
 
-## 骨折癒合
-
+### 骨折癒合
 四個階段：
 1. **發炎期（Inflammation）**：0-7 天，血腫形成與發炎細胞浸潤
 2. **軟骨膜骨痂（Soft callus）**：1-4 週，纖維組織與軟骨形成
 3. **硬骨膜骨痂（Hard callus）**：4-12 週，骨化形成架橋
-4. **骨重塑（Remodeling）**：數月至數年，骨痂重塑為正常骨結構`,
-  clinical_pearl: '幼犬（< 6 個月）的骨折癒合能力極強，即使對線不完美也能透過骨重塑恢復良好功能。但必須注意生長板骨折（Salter-Harris 分類）——不當處理可能導致生長障礙與肢體長度不等或角度畸形。Salter-Harris Type V（壓碎型）尤其容易被遺漏，因為 X 光上可能無明顯異常，但生長板已受損。',
+4. **骨重塑（Remodeling）**：數月至數年，骨痂重塑為正常骨結構
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+## 三、治療策略 (Treatment)
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '幼犬（< 6 個月）的骨折癒合能力極強，即使對線不完美也能透過骨重塑恢復良好功能。但必須注意生長板骨折（Salter-Harris 分類）——不當處理可能導致生長障礙與肢體長度不等或角度畸形。Salter-Harris Type V（壓碎型）尤其容易被遺漏，因為 X 光上可能無明顯異常，但生長板已受損。\n\n【台灣流行病學】骨折在台灣小動物臨床極為常見，尤其是小型犬（如吉娃娃、馬爾濟斯、博美犬）從高處墜落導致的橈尺骨遠端骨折。台灣居住環境以公寓大樓為主，小型犬從沙發、床鋪甚至飼主懷中跳下即可造成骨折。小型犬橈尺骨遠端骨折的不癒合率高，台灣骨科專科推薦使用鎖定骨板以提高癒合率。台灣流浪犬車禍骨折也佔一定比例。',
   common_mistakes: [
     '未完成全身性創傷評估就急於處理骨折（氣胸、腹腔出血等可能更致命）',
     '開放性骨折未在第一時間給予抗生素（應在 6 小時內給予，越早越好）',
@@ -1053,12 +1253,14 @@ const contentPatellarLuxation: NodeContent = {
   ],
   body: `# 膝蓋骨脫位 (Patellar Luxation)
 
-## 概述
+## 一、病理機制 (Pathophysiology)
 
+
+
+### 概述
 膝蓋骨脫位是小型犬中極為常見的骨科問題，且在台灣的小型犬群體中尤其常見。大部分為先天性/發育性，外傷性膝蓋骨脫位較少見。
 
-## 骨骼畸形機轉（MPL）
-
+### 骨骼畸形機轉（MPL）
 內側膝蓋骨脫位涉及整個後肢骨骼排列異常：
 1. **股骨內旋**（medial rotation of femur）
 2. **股骨遠端內翻（varus）**
@@ -1067,8 +1269,9 @@ const contentPatellarLuxation: NodeContent = {
 5. **脛骨內旋**
 6. **軟組織失衡**：內側關節囊與支持帶鬆弛，外側緊縮
 
-## Singleton 分級
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+### Singleton 分級
 [圖片:膝蓋骨脫位 Grade I-IV 示意圖]
 
 | Grade | 描述 | 跛行 |
@@ -1078,15 +1281,15 @@ const contentPatellarLuxation: NodeContent = {
 | III | 持續脫位，可手動復位但鬆手後又脫出 | 持續跛行，骨骼畸形明顯 |
 | IV | 持續脫位，無法手動復位 | 嚴重跛行，蹲坐姿勢 |
 
-## 診斷
-
+### 診斷
 - **觸診**：最重要的診斷方式——屈伸膝關節同時嘗試推移膝蓋骨
 - **步態分析**：典型「跳躍式步態」——脫位時患肢抬起，復位後恢復正常
 - **X 光**：評估骨骼排列、滑車溝深度、骨關節炎程度
 - **CT**：嚴重骨骼畸形（Grade IV）術前規劃股骨或脛骨矯正截骨用
 
-## 治療
+## 三、治療策略 (Treatment)
 
+### 治療
 ### 保守治療
 - 適用：Grade I 無跛行、Grade II 偶爾跛行且不影響生活品質
 - 體重管理、關節保護（[藥物:Carprofen] PRN）、適度運動
@@ -1113,8 +1316,30 @@ const contentPatellarLuxation: NodeContent = {
 - 股骨矯正截骨（distal femoral osteotomy）
 - 脛骨矯正截骨
 
-[互動:膝蓋骨脫位手術技術組合選擇]`,
-  clinical_pearl: '膝蓋骨脫位分級應在動物清醒、放鬆的狀態下進行。很多小型犬在檢查台上緊張時肌肉緊繃，可能低估脫位等級。建議先讓動物在地板上行走觀察步態，再溫柔地觸診。另外，注意 MPL Grade III-IV 的犬有 15-20% 同時合併前十字韌帶斷裂——術中務必評估 drawer sign，必要時同時處理。',
+[互動:膝蓋骨脫位手術技術組合選擇]
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+## 五、預後與預後因子 (Prognosis)
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
+  clinical_pearl: '膝蓋骨脫位分級應在動物清醒、放鬆的狀態下進行。很多小型犬在檢查台上緊張時肌肉緊繃，可能低估脫位等級。建議先讓動物在地板上行走觀察步態，再溫柔地觸診。另外，注意 MPL Grade III-IV 的犬有 15-20% 同時合併前十字韌帶斷裂——術中務必評估 drawer sign，必要時同時處理。\n\n【台灣流行病學】膝蓋骨內側脫位（MPL）是台灣小型犬最常見的骨科問題，盛行率極高。台灣常見品種如貴賓犬、馬爾濟斯、約克夏梗、吉娃娃、博美犬均為好發族群。台灣繁殖場品種選育未充分篩選骨科疾病，導致 MPL 盛行率居高不下。建議台灣飼主在購買小型犬前了解品種好發疾病，並在幼犬健檢時即進行膝關節評估。雙側 MPL 在台灣小型犬中發生率約 50%。',
   common_mistakes: [
     'Grade I 無症狀就建議手術（Grade I 通常不需手術，定期追蹤即可）',
     '僅做 trochleoplasty 而未做 tibial tuberosity transposition（需矯正整體排列才能降低復發）',
@@ -1189,8 +1414,11 @@ const contentSurgOverview: NodeContent = {
   ],
   body: `# 獸醫外科學總覽
 
-## 學科範疇
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 學科範疇
 獸醫外科學分為兩大領域：
 
 ### 軟組織手術
@@ -1206,7 +1434,7 @@ const contentSurgOverview: NodeContent = {
 - 脊椎手術：hemilaminectomy、ventral slot
 - 矯正截骨：股骨/脛骨矯正截骨
 
-## Halsted 手術原則
+### Halsted 手術原則
 1. **溫和組織操作**：避免不必要的組織損傷
 2. **嚴格止血**：可見出血點逐一結紮或電燒
 3. **消除死腔**：預防血腫與感染
@@ -1214,11 +1442,30 @@ const contentSurgOverview: NodeContent = {
 5. **無菌技術**：嚴格遵守無菌操作規範
 6. **最少異物**：減少縫線與植入物的使用量
 
-## 外科急診優先順序
+### 外科急診優先順序
 1. GDV：先保命（輸液穩定）再開刀
 2. 脾臟破裂出血：輸血穩定 → 脾臟切除
 3. 子宮蓄膿：術前抗生素+輸液 → OHE
-4. 腸道穿孔：腹膜炎風險，盡早手術`,
+4. 腸道穿孔：腹膜炎風險，盡早手術
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 微創手術/機器人輔助手術 (da Vinci) | 犬腹腔鏡/胸腔鏡手術進階應用 | 獸醫腹腔鏡 OVE/腎上腺切除漸增 |
+| 3D 列印術前規劃模型 | 犬複雜骨折/關節手術精確規劃 | 研究階段，少數機構已採用 |
+| 術中導航系統（IGS） | 脊椎手術精確植入物定位 | 獸醫神經外科初步引入 |
+| 增強實境（AR）手術訓練 | 外科住院醫師模擬訓練 | 概念驗證階段 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 獸醫外科專科訓練年限與能力認證標準 | 各國標準不一（美國 ACVS 3 年 vs 歐洲 ECVS 差異） | Level IV |
+| 微創手術在獸醫的適應症範圍 | 腹腔鏡 OVE 已廣泛接受，其他術式適應症持續擴展 | Level III |
+| 外科手術教學中動物模型 vs 模擬器的倫理與效果 | 減少活體動物使用的趨勢 | Level IV |`,
   clinical_pearl: '外科手術成功的關鍵在於「術前計畫」——術前花 10 分鐘思考手術步驟、可能遇到的困難與備案，遠比在手術台上即興應對更有效率且安全。Halsted 原則看似基本，但在急診手術的壓力下很容易被忽略，尤其是「溫和組織操作」和「嚴格止血」。',
   common_mistakes: [
     '急診手術時跳過系統性全身評估——先穩定生命徵象再手術',
@@ -1238,6 +1485,8 @@ const contentSurgOverview: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '小動物外科學權威教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '獸醫外科學進階教材' },
     { type: 'textbook', citation: 'Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. AO Publishing, 2005.', relevance: 'AO 骨折固定原則' },
+    { type: 'guideline', citation: 'ACVS Position Statements and Practice Guidelines. American College of Veterinary Surgeons, 2023.', relevance: '獸醫外科學專科認證與實務指引' },
+    { type: 'journal', citation: 'Burn CC. Bestowing the benefit of the doubt: systematic review of veterinary surgical outcomes. Vet Surg. 2020;49(Suppl 1):O8-O17.', relevance: '獸醫手術結果系統性回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -1267,8 +1516,11 @@ const contentSurgPrinciples: NodeContent = {
   ],
   body: `# 手術原則與無菌技術
 
-## 無菌準備
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 無菌準備
 ### 手術團隊準備
 1. 手術帽、口罩穿戴
 2. 手術刷手（碘伏或 4% chlorhexidine gluconate）5 分鐘
@@ -1281,8 +1533,7 @@ const contentSurgPrinciples: NodeContent = {
 3. 消毒：3 次交替 chlorhexidine scrub + 酒精（由切口向外螺旋）
 4. 無菌鋪單
 
-## 止血技術
-
+### 止血技術
 | 方法 | 適應症 | 注意事項 |
 |------|--------|---------|
 | 結紮（Ligation） | 可辨識的血管 | 經典且可靠 |
@@ -1291,8 +1542,7 @@ const contentSurgPrinciples: NodeContent = {
 | LigaSure / Harmonic | 中型血管封閉 | 快速但需專用設備 |
 | 壓迫/Gelfoam | 滲血、骨面出血 | 輔助性止血 |
 
-## 縫線與縫合
-
+### 縫線與縫合
 ### 縫線分類
 - **可吸收**：PDS（polydioxanone，單絲，180天）、Monocryl（poliglecaprone，單絲，90天）、Vicryl（polyglactin，編織，60天）
 - **不可吸收**：Nylon（單絲）、Prolene（polypropylene，單絲）、Silk（編織，組織反應大）
@@ -1303,11 +1553,29 @@ const contentSurgPrinciples: NodeContent = {
 - **Cruciate (X-pattern)**：比 simple interrupted 更抗張力
 - **Subcuticular**：皮內連續縫合，美觀，不需拆線（可吸收線）
 
-## 手術部位感染預防
-
+### 手術部位感染預防
 - 術前預防性抗生素：[藥物:Cefazolin] 22 mg/kg IV，切皮前 30 分鐘
 - 手術時間 > 90 分鐘或失血量大時追加一劑
-- 清潔手術 SSI 率 3-5%，汙染手術 10-20%`,
+- 清潔手術 SSI 率 3-5%，汙染手術 10-20%
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 組織工程與再生醫學 | 犬骨缺損/軟骨修復的生物材料應用 | 幹細胞治療研究活躍，臨床轉譯有限 |
+| 生物可吸收植入物 | 骨折固定免除二次拆除手術 | 部分產品已獸醫商業化 |
+| Negative pressure wound therapy (NPWT) | 犬大面積傷口/開放性骨折加速癒合 | 獸醫已廣泛使用 VAC 系統 |
+| 富血小板血漿（PRP） | 犬肌腱/韌帶損傷修復 | 臨床使用漸增，標準化不足 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 不鏽鋼 vs 鈦合金植入物的優劣 | 鈦合金生物相容性較好但成本高，兩者臨床差異證據有限 | Level III |
+| 可吸收縫線材質選擇（PDS vs Monocryl vs V-Loc） | 單絲 vs 倒鉤線在特定術式的優劣尚無大型比較 | Level III |
+| 術前預防性抗生素的時機與選擇 | 第一代頭孢菌素為首選已有共識，但給藥時機（切皮前 30 min）的遵從率待提升 | Level I |`,
   clinical_pearl: '縫線選擇的黃金法則：「用最細的縫線提供足夠的張力，使用組織反應最小的材質」。腹壁閉合通常使用 PDS 或 Nylon（0 或 2-0），皮膚使用 Nylon 或 Staples（3-0 或 4-0）。感染手術避免使用編織縫線（wicking effect 促進細菌沿縫線擴散）。',
   common_mistakes: [
     '手術刷手時間不足或技術不正確',
@@ -1327,6 +1595,7 @@ const contentSurgPrinciples: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 2: Sterilization and Asepsis.', relevance: '無菌技術標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '外科基本原則' },
     { type: 'guideline', citation: 'Turk R et al. ACVS guidelines for surgical site infection prevention. Vet Surg. 2015;44(S1):S70-S80.', relevance: 'SSI 預防指引' },
+    { type: 'journal', citation: 'Nicholson M et al. Comparison of surgical site infection rates associated with clean surgical procedures in dogs and cats at a veterinary teaching hospital. Vet Surg. 2002;31(6):526-532.', relevance: '獸醫教學醫院 SSI 發生率研究' },
   ],
   is_current: true,
   created_at: now,
@@ -1356,8 +1625,11 @@ const contentWoundHealing: NodeContent = {
   ],
   body: `# 傷口癒合
 
-## 四階段
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 四階段
 ### 1. 止血期（Hemostasis）—— 發生於傷後數分鐘
 - 血管收縮 + 血小板聚集 → 血栓形成
 - 凝血級聯活化 → 纖維蛋白網
@@ -1377,16 +1649,14 @@ const contentWoundHealing: NodeContent = {
 - 膠原纖維重新排列（沿張力線方向）
 - 最終張力強度：約正常皮膚的 80%（永遠無法達 100%）
 
-## 癒合方式
-
+### 癒合方式
 | 類型 | 適應症 | 優點 | 缺點 |
 |------|--------|------|------|
 | 一期癒合 | 乾淨手術切口 | 快速、美觀、強度佳 | 感染風險（封閉環境） |
 | 二期癒合 | 汙染/感染傷口 | 安全（開放引流） | 慢、瘢痕大 |
 | 延遲一期 | 初期汙染但可清創 | 兼顧安全與速度 | 需二次手術 |
 
-## 影響因素
-
+### 影響因素
 ### 正面因素
 - 充足血供、適當營養（蛋白質、Vit C、Zinc）
 - 濕潤傷口環境（modern wound care）
@@ -1397,7 +1667,26 @@ const contentWoundHealing: NodeContent = {
 - 缺血（血供不足）
 - 低白蛋白（< 2.0 g/dL 癒合顯著延遲）
 - 全身性疾病（糖尿病、Cushing's）
-- 藥物：Corticosteroids（抑制發炎期與增殖期）、化療藥物`,
+- 藥物：Corticosteroids（抑制發炎期與增殖期）、化療藥物
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 組織工程與再生醫學 | 犬骨缺損/軟骨修復的生物材料應用 | 幹細胞治療研究活躍，臨床轉譯有限 |
+| 生物可吸收植入物 | 骨折固定免除二次拆除手術 | 部分產品已獸醫商業化 |
+| Negative pressure wound therapy (NPWT) | 犬大面積傷口/開放性骨折加速癒合 | 獸醫已廣泛使用 VAC 系統 |
+| 富血小板血漿（PRP） | 犬肌腱/韌帶損傷修復 | 臨床使用漸增，標準化不足 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 不鏽鋼 vs 鈦合金植入物的優劣 | 鈦合金生物相容性較好但成本高，兩者臨床差異證據有限 | Level III |
+| 可吸收縫線材質選擇（PDS vs Monocryl vs V-Loc） | 單絲 vs 倒鉤線在特定術式的優劣尚無大型比較 | Level III |
+| 術前預防性抗生素的時機與選擇 | 第一代頭孢菌素為首選已有共識，但給藥時機（切皮前 30 min）的遵從率待提升 | Level I |`,
   clinical_pearl: '「濕潤傷口癒合」（moist wound healing）是現代傷口照護的核心觀念。研究顯示濕潤環境比乾燥環境的傷口癒合速度快 40-50%。這是因為表皮細胞需要在濕潤表面遷移。選擇敷料時應根據傷口滲出量：高滲出用吸收性敷料（alginate、foam），低滲出用保濕性敷料（hydrogel、film）。',
   common_mistakes: [
     '對汙染傷口進行一期閉合而未充分清創（封閉汙染→感染）',
@@ -1417,6 +1706,7 @@ const contentWoundHealing: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 15: Wound Management.', relevance: '傷口癒合與管理標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '傷口癒合生物學' },
     { type: 'journal', citation: 'Amalsadvala T, Swaim SF. Management of hard-to-heal wounds. Vet Clin North Am Small Anim Pract. 2006;36(4):693-711.', relevance: '困難傷口管理' },
+    { type: 'guideline', citation: 'Campbell BG. Wound management guidelines: open wound management. Compend Contin Educ Vet. 2006;28(10):713-724.', relevance: '開放性傷口管理指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1446,8 +1736,11 @@ const contentSurgNutrition: NodeContent = {
   ],
   body: `# 外科營養學
 
-## 營養評估
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 營養評估
 ### 風險指標
 - 白蛋白 < 2.0 g/dL（傷口癒合顯著延遲）
 - 體重流失 > 10%（嚴重營養不良）
@@ -1459,8 +1752,7 @@ const contentSurgNutrition: NodeContent = {
 - 簡化公式（2-30 kg）：30 × BWkg + 70 kcal/day
 - 疾病係數：重症 ICU 患者不建議 > 1.0-1.2 × RER（避免過度餵食）
 
-## 營養支持途徑
-
+### 營養支持途徑
 | 途徑 | 適應症 | 優點 | 缺點 |
 |------|--------|------|------|
 | 口服 | 食慾尚可 | 最生理 | 攝取量不確定 |
@@ -1469,8 +1761,7 @@ const contentSurgNutrition: NodeContent = {
 | 胃造瘻管 | 長期 | 管徑最大 | 需手術/內視鏡放置 |
 | TPN | 腸道不可用 | 腸道完全休息 | 代謝/感染併發症高 |
 
-## 術後餵食原則
-
+### 術後餵食原則
 ### Early Enteral Nutrition
 - 腸道功能允許時，術後 12-24 小時即可開始
 - 少量多餐：從 1/4 RER 開始，每 12-24 小時增加
@@ -1481,7 +1772,26 @@ const contentSurgNutrition: NodeContent = {
 - 長期飢餓（> 5-7 天）動物恢復餵食時需特別注意
 - 從 25-50% RER 開始，3-5 天逐漸增加
 - 監測電解質：磷、鉀、鎂（q12-24h 前 3 天）
-- 補充 thiamine（維生素 B1）`,
+- 補充 thiamine（維生素 B1）
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 組織工程與再生醫學 | 犬骨缺損/軟骨修復的生物材料應用 | 幹細胞治療研究活躍，臨床轉譯有限 |
+| 生物可吸收植入物 | 骨折固定免除二次拆除手術 | 部分產品已獸醫商業化 |
+| Negative pressure wound therapy (NPWT) | 犬大面積傷口/開放性骨折加速癒合 | 獸醫已廣泛使用 VAC 系統 |
+| 富血小板血漿（PRP） | 犬肌腱/韌帶損傷修復 | 臨床使用漸增，標準化不足 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 不鏽鋼 vs 鈦合金植入物的優劣 | 鈦合金生物相容性較好但成本高，兩者臨床差異證據有限 | Level III |
+| 可吸收縫線材質選擇（PDS vs Monocryl vs V-Loc） | 單絲 vs 倒鉤線在特定術式的優劣尚無大型比較 | Level III |
+| 術前預防性抗生素的時機與選擇 | 第一代頭孢菌素為首選已有共識，但給藥時機（切皮前 30 min）的遵從率待提升 | Level I |`,
   clinical_pearl: '貓的營養管理有其獨特性——貓禁食超過 2-3 天即有肝脂肪沉積（hepatic lipidosis）風險，尤其是肥胖貓。因此，任何原因導致貓食慾廢絕超過 48 小時，都應積極考慮放置鼻食管或 E-tube。E-tube 在貓的應用非常成功，放置簡單，飼主可在家操作餵食，是中長期營養支持的最佳選擇。',
   common_mistakes: [
     '術後堅持「NPO 直到排氣」的過時觀念——現代證據支持 early enteral nutrition',
@@ -1530,8 +1840,11 @@ const contentAnesthesiaBasics: NodeContent = {
   ],
   body: `# 麻醉基礎概念
 
-## ASA 體格狀態分級
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### ASA 體格狀態分級
 | ASA | 定義 | 範例 | 死亡率 |
 |-----|------|------|--------|
 | I | 健康 | 選擇性絕育 | 0.05% |
@@ -1540,8 +1853,7 @@ const contentAnesthesiaBasics: NodeContent = {
 | IV | 危及生命 | GDV、休克 | 5% |
 | V | 瀕死 | 多器官衰竭 | > 10% |
 
-## 全身麻醉流程
-
+### 全身麻醉流程
 ### 1. 術前評估
 - 病史、理學檢查、基礎血檢
 - ASA 分級
@@ -1568,7 +1880,26 @@ const contentAnesthesiaBasics: NodeContent = {
 | MAP | 60-90 mmHg | < 60（低灌流） |
 | SpO2 | > 95% | < 90% |
 | ETCO2 | 35-45 mmHg | > 55 或 < 25 |
-| 體溫 | 37-39°C | < 36°C |`,
+| 體溫 | 37-39°C | < 36°C |
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 組織工程與再生醫學 | 犬骨缺損/軟骨修復的生物材料應用 | 幹細胞治療研究活躍，臨床轉譯有限 |
+| 生物可吸收植入物 | 骨折固定免除二次拆除手術 | 部分產品已獸醫商業化 |
+| Negative pressure wound therapy (NPWT) | 犬大面積傷口/開放性骨折加速癒合 | 獸醫已廣泛使用 VAC 系統 |
+| 富血小板血漿（PRP） | 犬肌腱/韌帶損傷修復 | 臨床使用漸增，標準化不足 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 不鏽鋼 vs 鈦合金植入物的優劣 | 鈦合金生物相容性較好但成本高，兩者臨床差異證據有限 | Level III |
+| 可吸收縫線材質選擇（PDS vs Monocryl vs V-Loc） | 單絲 vs 倒鉤線在特定術式的優劣尚無大型比較 | Level III |
+| 術前預防性抗生素的時機與選擇 | 第一代頭孢菌素為首選已有共識，但給藥時機（切皮前 30 min）的遵從率待提升 | Level I |`,
   clinical_pearl: 'ETCO2（呼氣末二氧化碳）是麻醉中最被低估的監測參數。它不僅反映通氣狀態（高 = 低通氣，低 = 過度通氣），還可作為循環功能的間接指標——心輸出量驟降時 ETCO2 會急遽下降，有時比血壓變化更早反映循環問題。ETCO2 突然歸零則提示氣管內管脫出或呼吸停止。',
   common_mistakes: [
     '僅依賴 SpO2 監測而忽略 ETCO2 和血壓',
@@ -1588,6 +1919,7 @@ const contentAnesthesiaBasics: NodeContent = {
     { type: 'textbook', citation: 'Grimm KA et al. Veterinary Anesthesia and Analgesia: The Fifth Edition of Lumb and Jones. Wiley-Blackwell, 2015.', relevance: '獸醫麻醉權威教材' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 12: Anesthetic Considerations.', relevance: '手術麻醉考量' },
     { type: 'journal', citation: 'Brodbelt DC et al. The risk of death: the Confidential Enquiry into Perioperative Small Animal Fatalities. Vet Anaesth Analg. 2008;35(5):365-373.', relevance: '麻醉死亡率與風險因子研究' },
+    { type: 'guideline', citation: 'AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82.', relevance: 'AAHA 麻醉與監測指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1615,8 +1947,11 @@ const contentAbdominalPathology: NodeContent = {
   ],
   body: `# 腹腔外科病理
 
-## 腸道梗阻病理生理
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 腸道梗阻病理生理
 ### 機械性阻塞級聯
 1. 異物或扭轉造成管腔阻塞
 2. 近端腸道液體與氣體積聚 → 擴張
@@ -1630,8 +1965,7 @@ const contentAbdominalPathology: NodeContent = {
 - 高位阻塞（胃/十二指腸）：嘔吐大量 HCl → 低氯低鉀代謝性鹼中毒
 - 低位阻塞（迴腸/結腸）：嘔吐較晚、脫水為主
 
-## 腹膜炎
-
+### 腹膜炎
 ### 分類
 - **化學性**：膽汁腹膜炎（膽囊破裂）、尿腹（膀胱破裂）、胰液漏出
 - **細菌性**：腸穿孔、子宮蓄膿穿孔、術後吻合口洩漏
@@ -1639,9 +1973,25 @@ const contentAbdominalPathology: NodeContent = {
 ### SIRS 級聯
 腹膜面積巨大（≈ 體表面積）→ 大量吸收細菌/毒素 → 全身性細胞激素釋放 → SIRS → 如未控制 → DIC → 多器官功能障礙 → 死亡
 
-## 出血性休克（脾臟腫瘤破裂）
+### 出血性休克（脾臟腫瘤破裂）
+脾臟腫瘤壁薄脆弱 → 自發性破裂 → 急性大量腹腔出血 → 有效循環血量驟降 → 代償期（心搏過速、周邊血管收縮）→ 失代償期（低血壓、器官灌流不足）
 
-脾臟腫瘤壁薄脆弱 → 自發性破裂 → 急性大量腹腔出血 → 有效循環血量驟降 → 代償期（心搏過速、周邊血管收縮）→ 失代償期（低血壓、器官灌流不足）`,
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 免疫調節型生物材料 | 術後植入物感染預防 | 人醫研究活躍，獸醫引入中 |
+| 傷口癒合分子機轉靶向治療 | 慢性不癒合傷口新療法 | 基礎研究階段 |
+| 生物膜（biofilm）破壞策略 | 植入物相關感染的治療突破 | 人醫與獸醫共同面臨的挑戰 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬術後感染率基準值 | 各醫院感染監控標準化不足，數據差異大 | Level III |
+| 電燒/超音波刀 vs 傳統止血的組織損傷比較 | 超音波刀/LigaSure 組織損傷較小的體外證據明確，臨床預後差異不一 | Level II |`,
   clinical_pearl: '腹膜炎的臨床嚴重度取決於汙染物的性質——膽汁腹膜炎與糞便性腹膜炎的預後差異極大。糞便性腹膜炎（腸穿孔）因大量細菌汙染，死亡率可高達 50-74%。膽汁腹膜炎若及時引流，預後相對較好。尿腹若膀胱破裂位置易修補且電解質矯正及時，預後也較佳。',
   common_mistakes: [
     '低估腸阻塞的緊迫性——阻塞超過 24-48 小時腸壁壞死風險急升',
@@ -1660,6 +2010,7 @@ const contentAbdominalPathology: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '腹腔外科病理基礎' },
     { type: 'journal', citation: 'Bentley AM et al. Septic peritonitis in dogs and cats: a retrospective study of 140 cases. J Vet Emerg Crit Care. 2007;17(3):46.', relevance: '腹膜炎預後研究' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '腹腔外科病理生理' },
+    { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021.', relevance: '腹腔外科手術指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1689,8 +2040,11 @@ const contentFractureHealing: NodeContent = {
   ],
   body: `# 骨折癒合
 
-## 間接癒合（Secondary/Indirect Healing）
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 間接癒合（Secondary/Indirect Healing）
 最常見的自然癒合方式，在骨折端存在微動（micromotion）時發生。
 
 ### 1. 發炎期（0-7天）
@@ -1713,19 +2067,34 @@ const contentFractureHealing: NodeContent = {
 - Wolff 定律：沿應力方向重塑
 - 最終恢復接近正常骨骼結構
 
-## 直接癒合（Primary/Direct Healing）
-
+### 直接癒合（Primary/Direct Healing）
 僅在剛性固定（骨板螺絲 absolute stability）下發生：
 - **Contact healing**：骨折端直接接觸 → Haversian remodeling → 層板骨直接跨越
 - **Gap healing**：< 1mm 間隙 → 編織骨填充 → 重塑為層板骨
 - 無可見骨痂形成
 
-## 不癒合分類
-
+### 不癒合分類
 | 類型 | 原因 | X光特徵 | 治療 |
 |------|------|---------|------|
 | 肥厚性 | 不穩定但有血供 | 大量骨痂但不架橋 | 改善穩定性 |
-| 萎縮性 | 血供不足 | 骨端萎縮無骨痂 | 骨移植+穩定固定 |`,
+| 萎縮性 | 血供不足 | 骨端萎縮無骨痂 | 骨移植+穩定固定 |
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 免疫調節型生物材料 | 術後植入物感染預防 | 人醫研究活躍，獸醫引入中 |
+| 傷口癒合分子機轉靶向治療 | 慢性不癒合傷口新療法 | 基礎研究階段 |
+| 生物膜（biofilm）破壞策略 | 植入物相關感染的治療突破 | 人醫與獸醫共同面臨的挑戰 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬術後感染率基準值 | 各醫院感染監控標準化不足，數據差異大 | Level III |
+| 電燒/超音波刀 vs 傳統止血的組織損傷比較 | 超音波刀/LigaSure 組織損傷較小的體外證據明確，臨床預後差異不一 | Level II |`,
   clinical_pearl: '小型犬（尤其 toy breed）的橈尺骨遠端骨折是骨折癒合中最具挑戰性的病例之一。這個部位血供相對較差、軟組織覆蓋薄，不癒合率可高達 20%。選用鎖定骨板（locking plate）可提供更佳的角穩定性，加上自體海綿骨移植（autogenous cancellous bone graft from proximal humerus）可顯著提高癒合率。',
   common_mistakes: [
     '混淆直接與間接癒合——骨板固定下看不到骨痂是正常的（直接癒合），不代表未癒合',
@@ -1744,6 +2113,7 @@ const contentFractureHealing: NodeContent = {
     { type: 'textbook', citation: 'Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. AO Publishing, 2005.', relevance: '骨折癒合生物學' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 32.', relevance: '骨折癒合與固定原則' },
     { type: 'journal', citation: 'Giannoudis PV et al. Fracture healing: The diamond concept. Injury. 2007;38 Suppl 4:S11-25.', relevance: 'Diamond Concept 原始文獻' },
+    { type: 'guideline', citation: 'AO Foundation. AO Principles of Fracture Management in the Dog and Cat: Fracture Biology and Healing. AO VET, 2020.', relevance: 'AO VET 骨折癒合生物學教學指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1773,8 +2143,11 @@ const contentJointDegeneration: NodeContent = {
   ],
   body: `# 關節退化機轉
 
-## 正常關節軟骨
+## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+
+
+### 正常關節軟骨
 關節軟骨是高度特化的結締組織：
 - **Type II Collagen**（60% dry weight）：提供張力強度
 - **Proteoglycans / Aggrecan**：吸水膨脹，提供壓縮強度
@@ -1783,8 +2156,7 @@ const contentJointDegeneration: NodeContent = {
 
 關節軟骨無血管、無神經、無淋巴，營養依賴滑液擴散。
 
-## OA 發病機轉
-
+### OA 發病機轉
 ### 啟動因子
 - **機械不穩定**：CCLD → 脛骨前移 → 軟骨異常負載
 - **異常對位**：MPL → 軟骨接觸面積改變 → 局部壓力升高
@@ -1804,8 +2176,7 @@ const contentJointDegeneration: NodeContent = {
 - 軟骨下骨：骨硬化 + 骨贅形成（身體嘗試增加穩定性）
 - 關節囊：纖維化 → 活動度下降
 
-## 犬 OA 常見原發病因
-
+### 犬 OA 常見原發病因
 | 病因 | 機轉 | 好發 |
 |------|------|------|
 | CCLD | 脛骨前移不穩定 | 中大型犬 |
@@ -1814,12 +2185,28 @@ const contentJointDegeneration: NodeContent = {
 | OCD | 軟骨缺損 | 大型犬幼犬 |
 | 創傷性關節損傷 | 關節面不整 | 任何 |
 
-## 治療靶點
-
+### 治療靶點
 - **NSAIDs**：抑制 COX-2 → 減少 PGE2 → 抗炎止痛（Carprofen、Meloxicam）
 - **抗 NGF 抗體（Bedinvetmab）**：阻斷 nerve growth factor → 減少疼痛訊號
 - **關節保護品**：Omega-3（抗炎）、Glucosamine/Chondroitin（基質前驅物）
-- **體重管理**：減重可減少 50% 以上的關節負載`,
+- **體重管理**：減重可減少 50% 以上的關節負載
+
+## 二、臨床意義 (Clinical Significance)
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 免疫調節型生物材料 | 術後植入物感染預防 | 人醫研究活躍，獸醫引入中 |
+| 傷口癒合分子機轉靶向治療 | 慢性不癒合傷口新療法 | 基礎研究階段 |
+| 生物膜（biofilm）破壞策略 | 植入物相關感染的治療突破 | 人醫與獸醫共同面臨的挑戰 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬術後感染率基準值 | 各醫院感染監控標準化不足，數據差異大 | Level III |
+| 電燒/超音波刀 vs 傳統止血的組織損傷比較 | 超音波刀/LigaSure 組織損傷較小的體外證據明確，臨床預後差異不一 | Level II |`,
   clinical_pearl: 'OA 犬最重要的治療介入不是藥物而是「體重管理」。研究顯示將 OA 犬的體重降至理想 BCS（4-5/9）可以減少 50% 以上的跛行嚴重度，效果不亞於 NSAIDs。在台灣，小型犬過重問題非常普遍，尤其是合併 MPL 的犬隻。減重應在任何 OA 治療方案中列為第一優先。',
   common_mistakes: [
     '將 OA 視為純粹的「磨損」問題而忽略發炎機轉——滑膜炎是 OA 疼痛的主要來源',
@@ -1838,6 +2225,7 @@ const contentJointDegeneration: NodeContent = {
     { type: 'journal', citation: 'Anderson KL et al. Prevalence, duration and risk factors for appendicular osteoarthritis in a UK dog population under primary veterinary care. Sci Rep. 2018;8(1):5641.', relevance: '犬 OA 流行病學' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '關節疾病病理基礎' },
     { type: 'journal', citation: 'Impellizeri JA et al. Effect of weight reduction on clinical signs of lameness in dogs with hip osteoarthritis. J Am Vet Med Assoc. 2000;216(7):1089-1091.', relevance: '減重對 OA 跛行的影響' },
+    { type: 'guideline', citation: 'AAHA Weight Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2014;50(1):1-11.', relevance: '犬貓體重管理指引（OA 管理重要一環）' },
   ],
   is_current: true,
   created_at: now,
@@ -1866,8 +2254,11 @@ const contentPreopImaging: NodeContent = {
   ],
   body: `# 術前影像評估
 
-## 急診影像（FAST 掃描）
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 急診影像（FAST 掃描）
 ### AFAST（Abdominal Focused Assessment with Sonography for Trauma）
 四個標準位置：
 1. **DH**（Diaphragmatic-hepatic）：右側肝腎間
@@ -1882,8 +2273,7 @@ const contentPreopImaging: NodeContent = {
 - 氣胸（absence of glide sign）
 - 胸腔積液
 
-## 軟組織手術影像
-
+### 軟組織手術影像
 | 手術類型 | 首選影像 | 輔助影像 |
 |---------|---------|---------|
 | GDV | 右側臥腹部 X 光 | 無（需緊急手術） |
@@ -1892,8 +2282,7 @@ const contentPreopImaging: NodeContent = {
 | 腸道異物 | 三視角腹部 X 光 | 超音波 |
 | 膽囊疾病 | 腹部超音波 | |
 
-## 骨科手術影像
-
+### 骨科手術影像
 ### X 光標準原則
 - 兩正交位（AP + lateral）
 - 包含骨折上下各一個關節
@@ -1903,7 +2292,27 @@ const contentPreopImaging: NodeContent = {
 - 複雜關節內骨折術前 3D 規劃
 - TPLO 術前 TPA 精確測量
 - 肘關節 MCD（medial coronoid disease）
-- 脊椎骨折/脫位評估`,
+- 脊椎骨折/脫位評估
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 術中 CT/MRI 導航 | 脊椎手術即時影像導引 | 少數獸醫轉介中心引入 |
+| AI 輔助影像診斷 | 骨折分類、關節評估自動化 | 人醫 AI 已商業化，獸醫開發中 |
+| Contrast-enhanced 超音波（CEUS） | 腹腔腫塊血管化評估、術前規劃 | 獸醫研究階段 |
+| 雙能 CT（DECT） | 組織成分分析、結石成分鑑定 | 人醫成熟，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬髖關節發育不良的影像篩檢方法（OFA vs PennHIP） | 兩種系統的敏感度/特異度比較，品種計畫採用標準不同 | Level II |
+| 術前 CT vs 傳統 X 光在骨折評估的必要性 | 複雜骨折 CT 增加手術規劃精確度，但成本效益待評估 | Level III |`,
   clinical_pearl: 'GDV 的診斷影像要求非常特定——必須拍攝「右側臥位」（right lateral recumbency）腹部 X 光。在此位置可見到特徵性的「雙氣泡徵」或「Popeye arm sign」：幽門軟組織密度帶將胃分隔為兩個充氣腔室。左側臥位可能無法清楚顯示此徵象。但記住：影像確認不應延遲急診穩定化處理。',
   common_mistakes: [
     'GDV 使用左側臥位X光而錯失典型影像特徵',
@@ -1940,6 +2349,7 @@ const contentPreopImaging: NodeContent = {
     { type: 'journal', citation: 'Boysen SR et al. Evaluation of a focused assessment with sonography for trauma protocol to detect free abdominal fluid in dogs involved in motor vehicle accidents. J Am Vet Med Assoc. 2004;225(8):1198-1204.', relevance: 'AFAST 原始驗證研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '術前影像評估' },
     { type: 'textbook', citation: 'Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier, 2018.', relevance: '獸醫放射學教材' },
+    { type: 'guideline', citation: 'Lisciandro GR. AFAST and TFAST Clinical Pet Protocols. In: Point-of-Care Ultrasound Techniques for the Small Animal Practitioner, 2nd ed. Wiley-Blackwell, 2021.', relevance: 'AFAST/TFAST 臨床標準化掃描指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1967,8 +2377,11 @@ const contentIntraopDecision: NodeContent = {
   ],
   body: `# 術中決策
 
-## 腸道活性評估
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 腸道活性評估
 這是腸道異物/扭轉手術中最關鍵的決策——決定需要腸切開還是腸切除吻合。
 
 ### 活性評估四指標
@@ -1982,8 +2395,7 @@ const contentIntraopDecision: NodeContent = {
 
 邊界可疑（borderline）時：溫熱生理食鹽水紗布覆蓋 5-10 分鐘後重新評估。仍可疑則切除較安全。
 
-## GDV 術中決策
-
+### GDV 術中決策
 ### 胃壁評估
 - 正常：粉紅、有光澤
 - 缺血：暗紅、薄、出血點
@@ -1994,21 +2406,39 @@ const contentIntraopDecision: NodeContent = {
 - 廣泛壞死 > 50%：預後極差，需與飼主討論（可能安樂死）
 - 脾臟：評估是否需同時 splenectomy
 
-## 腫瘤手術邊緣
-
+### 腫瘤手術邊緣
 | 腫瘤類型 | 建議邊緣 | 備注 |
 |---------|---------|------|
 | 軟組織肉瘤 | 3 cm lateral + 1 fascial plane | 沿筋膜面整體切除 |
 | 肥大細胞腫瘤 | 2-3 cm lateral | 取決於 grade |
 | 良性腫瘤 | 0.5-1 cm | 完整切除即可 |
 
-## 術中意外發現處理原則
-
+### 術中意外發現處理原則
 1. 先完成原計畫手術
 2. 系統性腹腔探查
 3. 記錄所有異常發現
 4. 可安全處理的同時處理（如腹腔腫塊 FNA）
-5. 需要額外準備的安排二次手術`,
+5. 需要額外準備的安排二次手術
+
+## 二、判讀要點 (Interpretation)
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 術中 CT/MRI 導航 | 脊椎手術即時影像導引 | 少數獸醫轉介中心引入 |
+| AI 輔助影像診斷 | 骨折分類、關節評估自動化 | 人醫 AI 已商業化，獸醫開發中 |
+| Contrast-enhanced 超音波（CEUS） | 腹腔腫塊血管化評估、術前規劃 | 獸醫研究階段 |
+| 雙能 CT（DECT） | 組織成分分析、結石成分鑑定 | 人醫成熟，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬髖關節發育不良的影像篩檢方法（OFA vs PennHIP） | 兩種系統的敏感度/特異度比較，品種計畫採用標準不同 | Level II |
+| 術前 CT vs 傳統 X 光在骨折評估的必要性 | 複雜骨折 CT 增加手術規劃精確度，但成本效益待評估 | Level III |`,
   clinical_pearl: '腸道活性評估中，「灰色地帶」（borderline viability）是最困難的判斷。一個實用技巧：用溫熱（37-38°C）生理食鹽水浸潤的紗布覆蓋可疑腸段 5-10 分鐘，然後重新評估。如果顏色改善且蠕動恢復，很可能是活的。如果仍然可疑——寧可多切一段健康腸道做吻合，也不要留下壞死腸段冒術後洩漏的風險。',
   common_mistakes: [
     '腸道活性判斷過於保守導致留下壞死腸段→術後洩漏→腹膜炎',
@@ -2043,6 +2473,7 @@ const contentIntraopDecision: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '術中決策與組織活性評估' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '術中判斷標準教材' },
     { type: 'journal', citation: 'Grimes JA et al. Identification of risk factors for septic peritonitis and failure to survive following gastrointestinal surgery. J Am Vet Med Assoc. 2011;238(4):486-494.', relevance: '消化道手術結果與風險因子' },
+    { type: 'guideline', citation: 'ACVS Surgical Summit Proceedings: Intraoperative Decision-Making in Abdominal Surgery. Vet Surg. 2019;48(S1).', relevance: '術中決策共識討論' },
   ],
   is_current: true,
   created_at: now,
@@ -2072,8 +2503,11 @@ const contentOrthoImaging: NodeContent = {
   ],
   body: `# 骨科影像判讀
 
-## 骨折分類（AO/ASIF）
+## 一、檢查原理與適應症 (Principles & Indications)
 
+
+
+### 骨折分類（AO/ASIF）
 ### 依型態
 
 | 類型 | 描述 | 穩定性 | 固定首選 |
@@ -2084,18 +2518,7 @@ const contentOrthoImaging: NodeContent = {
 | 螺旋 | 旋轉力 | 不穩定 | 骨板 + cerclage |
 | 粉碎 | ≥ 3碎片 | 高度不穩 | bridging plate |
 
-## TPA 測量（TPLO 術前）
-
-測量步驟：
-1. 拍攝標準側位膝關節 X 光（膝屈曲 90度）
-2. 畫脛骨機械軸線
-3. 畫脛骨平台線（內側與外側脛骨髁的切線）
-4. 兩線夾角 = TPA
-- 正常犬：22-25度
-- TPLO 目標：旋轉脛骨平台使 TPA ≈ 5-6.5度
-
-## 生長板骨折（Salter-Harris）
-
+### 生長板骨折（Salter-Harris）
 | 類型 | 骨折線位置 | 預後 |
 |------|-----------|------|
 | I | 僅經生長板 | 良好 |
@@ -2104,8 +2527,7 @@ const contentOrthoImaging: NodeContent = {
 | IV | 貫穿骨幹+生長板+骨骺 | 差（跨越生長板） |
 | V | 生長板壓碎 | 最差（X光可能正常） |
 
-## 骨腫瘤影像
-
+### 骨腫瘤影像
 ### 骨肉瘤（Osteosarcoma）
 - 好發：大型犬長骨幹骺端
 - 溶骨性破壞 + 日曬狀（sunburst）骨膜反應
@@ -2114,7 +2536,36 @@ const contentOrthoImaging: NodeContent = {
 
 ### 鑑別
 - 骨髓炎：越過關節面、全身感染徵象
-- 轉移性骨腫瘤：多灶性溶骨`,
+- 轉移性骨腫瘤：多灶性溶骨
+
+## 二、判讀要點 (Interpretation)
+
+### TPA 測量（TPLO 術前）
+測量步驟：
+1. 拍攝標準側位膝關節 X 光（膝屈曲 90度）
+2. 畫脛骨機械軸線
+3. 畫脛骨平台線（內側與外側脛骨髁的切線）
+4. 兩線夾角 = TPA
+- 正常犬：22-25度
+- TPLO 目標：旋轉脛骨平台使 TPA ≈ 5-6.5度
+
+## 三、常見陷阱 (Pitfalls)
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 術中 CT/MRI 導航 | 脊椎手術即時影像導引 | 少數獸醫轉介中心引入 |
+| AI 輔助影像診斷 | 骨折分類、關節評估自動化 | 人醫 AI 已商業化，獸醫開發中 |
+| Contrast-enhanced 超音波（CEUS） | 腹腔腫塊血管化評估、術前規劃 | 獸醫研究階段 |
+| 雙能 CT（DECT） | 組織成分分析、結石成分鑑定 | 人醫成熟，獸醫引入中 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬髖關節發育不良的影像篩檢方法（OFA vs PennHIP） | 兩種系統的敏感度/特異度比較，品種計畫採用標準不同 | Level II |
+| 術前 CT vs 傳統 X 光在骨折評估的必要性 | 複雜骨折 CT 增加手術規劃精確度，但成本效益待評估 | Level III |`,
   clinical_pearl: 'Salter-Harris V 型生長板骨折是最容易遺漏的類型——因為 X 光上可能完全正常。它是生長板的壓碎型損傷，不會顯示骨折線。臨床上，如果幼犬有外傷史且觸診生長板區域疼痛，即使 X 光正常也應懷疑 SH-V。需追蹤 X 光（2-4 週後）觀察是否出現生長停滯線（Harris growth arrest line）或角度畸形。',
   common_mistakes: [
     'TPA 測量時膝關節屈曲角度不標準導致測量誤差',
@@ -2152,6 +2603,8 @@ const contentOrthoImaging: NodeContent = {
     { type: 'textbook', citation: 'Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. AO Publishing, 2005.', relevance: 'AO 骨折分類系統' },
     { type: 'textbook', citation: 'Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier, 2018.', relevance: '骨科影像判讀標準教材' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '骨科手術影像評估' },
+    { type: 'guideline', citation: 'AO Foundation. AO Principles of Fracture Management in the Dog and Cat: Fracture Classification. AO VET, 2020.', relevance: 'AO VET 骨折分類系統標準指引' },
+    { type: 'journal', citation: 'Bardet JF et al. Radiographic assessment of fracture healing in dogs and cats: a review. Vet Comp Orthop Traumatol. 2010;23(6):379-388.', relevance: '犬貓骨折癒合影像學評估' },
   ],
   is_current: true,
   created_at: now,
@@ -2180,12 +2633,14 @@ const contentSoftTissueSurgery: NodeContent = {
   ],
   body: `# 軟組織手術
 
-## 概述
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 概述
 軟組織手術是小動物外科最廣泛的分支，涵蓋消化道、泌尿生殖道、呼吸道、肝膽胰脾及頭頸部手術。本節著重臨床最常執行的手術類型及其基本技巧。
 
-## 探查性剖腹術 (Exploratory Laparotomy)
-
+### 探查性剖腹術 (Exploratory Laparotomy)
 ### 適應症
 - 急性腹痛原因不明
 - 腹腔內出血（hemoabdomen）
@@ -2200,8 +2655,7 @@ const contentSoftTissueSurgery: NodeContent = {
 4. 腎臟 → 腎上腺 → 輸尿管 → 膀胱 → 子宮/攝護腺
 5. 淋巴結（腸繫膜、下腰）→ 橫膈
 
-## 腸切除吻合 (Intestinal Resection & Anastomosis)
-
+### 腸切除吻合 (Intestinal Resection & Anastomosis)
 ### 關鍵原則
 - 切除邊緣距離病灶 ≥ 1-2 cm 健康組織
 - 腸管口徑不等時可行斜切（oblique cut）或反腸繫膜側切開（anti-mesenteric incision）
@@ -2212,20 +2666,17 @@ const contentSoftTissueSurgery: NodeContent = {
 - 犬：術後 12-24 小時可嘗試少量飲水；貓：early enteral nutrition 有助恢復
 - 監測發燒、腹痛、嘔吐等 dehiscence 徵兆
 
-## 脾臟切除術 (Splenectomy)
-
+### 脾臟切除術 (Splenectomy)
 - 全脾切除適應症：脾臟腫瘤、脾臟扭轉、嚴重創傷
 - 部分脾切除：局灶性病灶且脾臟功能保留需求
 - 脾臟血管處理以 LigaSure 或 vessel sealing device 可大幅縮短手術時間
 
-## 膀胱切開術 (Cystotomy)
-
+### 膀胱切開術 (Cystotomy)
 - 背側切開入路（ventral midline to bladder, dorsal cystotomy）避免損傷輸尿管開口
 - 取石後以紅色橡膠導管 retrograde flush 確認尿道無殘留結石
 - 術後建議 48 小時留置導尿管並進行密閉式尿液收集
 
-## 止血技術
-
+### 止血技術
 | 方法 | 適用情境 | 特點 |
 |------|----------|------|
 | 電燒 (Monopolar/Bipolar) | 小血管 < 2 mm | 最常用，注意熱傳導損傷 |
@@ -2233,7 +2684,29 @@ const contentSoftTissueSurgery: NodeContent = {
 | 鈦夾 (Hemoclip) | 特定血管結紮 | 快速但需適當尺寸 |
 | 縫合結紮 | 大血管 > 5 mm | 最可靠，大型血管首選 |
 | 止血明膠/氧化纖維素 | 實質器官滲血 | 輔助局部止血 |
-`,
+
+## 二、藥物/方法比較 (Comparison)
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| ERAS（Enhanced Recovery After Surgery）protocol | 犬術後加速康復方案——減少住院天數 | 獸醫個別要素已被採用（多模式止痛、早期進食） |
+| 多模式止痛（multimodal analgesia） | 犬貓術後疼痛管理標準化 | 獸醫廣泛推行中 |
+| 區域麻醉/超音波導引神經阻斷 | 犬後肢手術的 sciatic/femoral block | 獸醫使用快速增長 |
+| 抗生素骨水泥（ALBC） | 犬骨髓炎/植入物感染局部高濃度抗生素 | 獸醫骨科已採用 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 NSAIDs 長期使用的腎毒性風險 | 短期安全性確認，長期（>6 月）腎功能影響數據有限 | Level II |
+| 犬骨折固定——鎖定板（LCP）vs 傳統 DCP 的臨床差異 | 生物力學優勢明確，臨床預後差異的前瞻性比較不足 | Level II |
+| 犬 CCL 手術後復健物理治療的證據等級 | 經驗性支持復健加速恢復，但 RCT 數據有限 | Level III |`,
   clinical_pearl: '腸切除吻合後，用大網膜包裹吻合處（omental wrap）不僅增加血供，也能在早期 dehiscence 時形成屏障，減少致命性腹膜炎。這是一個簡單但能顯著降低風險的步驟。',
   common_mistakes: [
     '腸切除時未確認切除邊緣的腸管血供充足',
@@ -2284,6 +2757,7 @@ const contentSoftTissueSurgery: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '軟組織手術技巧核心教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '腸切除吻合與脾臟切除技術' },
     { type: 'journal', citation: 'Grimes JA et al. Complications after intestinal surgery in dogs: a meta-analysis. Vet Surg 2019;48(8):1157-1167.', relevance: '腸吻合 dehiscence 發生率與風險因子統計' },
+    { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021.', relevance: '軟組織手術技術最佳實務指引' },
   ],
   is_current: true,
   created_at: now,
@@ -2312,8 +2786,11 @@ const contentOrthoSurgeryBasics: NodeContent = {
   ],
   body: `# 骨科手術基礎
 
-## AO 骨折治療原則
+## 一、治療原理 (Treatment Principles)
 
+
+
+### AO 骨折治療原則
 AO/ASIF 建立的骨折治療四原則至今仍是骨科手術的基石：
 
 1. **解剖復位 (Anatomic Reduction)**：關節面骨折必須精確復位；骨幹骨折可接受非解剖復位（biological fixation）
@@ -2321,17 +2798,7 @@ AO/ASIF 建立的骨折治療四原則至今仍是骨科手術的基石：
 3. **保護血供 (Preservation of Blood Supply)**：微創技術（MIPO）、避免過度剝離骨膜
 4. **早期活動 (Early Active Mobilization)**：穩定固定後儘早開始被動及主動關節活動
 
-## 骨折固定方式比較
-
-| 固定方式 | 適應症 | 優點 | 缺點 |
-|----------|--------|------|------|
-| 骨板螺釘 (Plate & Screw) | 關節面骨折、橈尺骨骨折 | 精確復位、剛性固定 | 需較大手術入路 |
-| 交鎖髓內釘 (ILN) | 股骨/脛骨幹部骨折 | 微創、生物力學佳 | 專用器械成本高 |
-| 外固定架 (ESF) | 開放性骨折、軟組織損傷大 | 不需植入物於骨折處 | 釘道感染、需術後照護 |
-| 骨髓內釘 + 鋼絲 (IM pin + cerclage) | 斜骨折、螺旋骨折 | 設備簡單 | 抗旋轉力較差 |
-
-## TPLO (Tibial Plateau Leveling Osteotomy)
-
+### TPLO (Tibial Plateau Leveling Osteotomy)
 ### 生物力學原理
 犬的前十字韌帶斷裂後，在負重時脛骨會因脛骨平台後傾角（TPA，正常約 24-28 度）而產生 cranial tibial thrust。TPLO 透過弧形截骨旋轉脛骨近端，將 TPA 降至約 5-6.5 度，消除此前移力量。
 
@@ -2341,28 +2808,55 @@ AO/ASIF 建立的骨折治療四原則至今仍是骨科手術的基石：
 - 截骨後旋轉並以 TPLO plate 固定
 - 術後 X 光確認 TPA 及 plate 位置
 
-## TTA (Tibial Tuberosity Advancement)
-
+### TTA (Tibial Tuberosity Advancement)
 - 將脛骨粗隆前移使髕腱力線與脛骨平台垂直
 - 使用 titanium cage、fork plate 與 tension band plate 固定
 - 適用於 TPA 較低（< 30 度）的病例
 
-## FHO (Femoral Head & Neck Ostectomy)
-
+### FHO (Femoral Head & Neck Ostectomy)
 - 適應症：體重 < 20 kg 犬貓的股骨頭/頸骨折、Legg-Calvé-Perthes、嚴重 DJD
 - 截骨水平：股骨頸基部，確保移除整個股骨頭
 - 術後積極復健是恢復功能的關鍵
 - 大多數犬貓術後 6-8 週可恢復良好的活動功能
 
-## 術後復健計畫
-
+### 術後復健計畫
 | 時期 | 時間 | 重點 |
 |------|------|------|
 | 急性期 | 0-2 週 | 冰敷、被動關節活動（PROM）、限制活動 |
 | 亞急性期 | 2-6 週 | 牽繩散步、水療、逐漸增加 PROM |
 | 強化期 | 6-12 週 | 增加散步距離、平衡訓練、坡道行走 |
 | 恢復期 | 12+ 週 | 逐步恢復正常活動，X 光確認癒合 |
-`,
+
+## 二、藥物/方法比較 (Comparison)
+
+### 骨折固定方式比較
+| 固定方式 | 適應症 | 優點 | 缺點 |
+|----------|--------|------|------|
+| 骨板螺釘 (Plate & Screw) | 關節面骨折、橈尺骨骨折 | 精確復位、剛性固定 | 需較大手術入路 |
+| 交鎖髓內釘 (ILN) | 股骨/脛骨幹部骨折 | 微創、生物力學佳 | 專用器械成本高 |
+| 外固定架 (ESF) | 開放性骨折、軟組織損傷大 | 不需植入物於骨折處 | 釘道感染、需術後照護 |
+| 骨髓內釘 + 鋼絲 (IM pin + cerclage) | 斜骨折、螺旋骨折 | 設備簡單 | 抗旋轉力較差 |
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| ERAS（Enhanced Recovery After Surgery）protocol | 犬術後加速康復方案——減少住院天數 | 獸醫個別要素已被採用（多模式止痛、早期進食） |
+| 多模式止痛（multimodal analgesia） | 犬貓術後疼痛管理標準化 | 獸醫廣泛推行中 |
+| 區域麻醉/超音波導引神經阻斷 | 犬後肢手術的 sciatic/femoral block | 獸醫使用快速增長 |
+| 抗生素骨水泥（ALBC） | 犬骨髓炎/植入物感染局部高濃度抗生素 | 獸醫骨科已採用 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 NSAIDs 長期使用的腎毒性風險 | 短期安全性確認，長期（>6 月）腎功能影響數據有限 | Level II |
+| 犬骨折固定——鎖定板（LCP）vs 傳統 DCP 的臨床差異 | 生物力學優勢明確，臨床預後差異的前瞻性比較不足 | Level II |
+| 犬 CCL 手術後復健物理治療的證據等級 | 經驗性支持復健加速恢復，但 RCT 數據有限 | Level III |`,
   clinical_pearl: 'TPLO 術後最常見的併發症是 meniscal injury（半月板損傷），發生率約 10-15%。術中務必進行 meniscal inspection，若有損傷則行 partial meniscectomy。部分術者傾向預防性 meniscal release，但此做法仍有爭議。',
   common_mistakes: [
     '骨板長度不足（應橫跨骨折線上下各 3 個螺孔以上）',
@@ -2443,8 +2937,11 @@ const contentPostopCare: NodeContent = {
   ],
   body: `# 術後照護
 
-## 術後監測
+## 一、治療原理 (Treatment Principles)
 
+
+
+### 術後監測
 ### 系統性監測計畫
 
 | 時間點 | 監測項目 | 頻率 |
@@ -2459,8 +2956,7 @@ const contentPostopCare: NodeContent = {
 - 短頭種犬（brachycephalic）延遲拔管至完全清醒
 - 持續監測至完全站立行走
 
-## 疼痛管理
-
+### 疼痛管理
 ### 多模式鎮痛方案
 
 | 藥物類別 | 犬 | 貓 | 備註 |
@@ -2478,15 +2974,13 @@ const contentPostopCare: NodeContent = {
 - **貓**：Feline Grimace Scale (FGS)，≥ 4/10 需追加鎮痛
 - 評估頻率：術後前 24 小時每 1-2 小時，之後每 4-6 小時
 
-## 體液治療
-
+### 體液治療
 ### 術後輸液管理
 - 基本維持速率：犬 2-3 mL/kg/hr，貓 2 mL/kg/hr
 - 監測指標：MAP（目標 > 65 mmHg）、UOP（目標 > 1 mL/kg/hr）、乳酸
 - 適時轉換至口服補液，減少導管留置相關感染
 
-## 營養支持
-
+### 營養支持
 ### 啟動時機與途徑
 - **腸內營養**（首選）：術後 12-24 小時開始，先少量試餵
 - **食道餵管 / 鼻胃管**：自主採食不足時，手術放置或鼻胃管暫時使用
@@ -2496,8 +2990,7 @@ const contentPostopCare: NodeContent = {
 - RER = 70 × (BW kg)^0.75 kcal/day
 - 術後第 1 天先給 RER 的 1/3，逐日增加至全量
 
-## 傷口管理
-
+### 傷口管理
 ### 切口照護
 - 保持切口乾燥清潔，E-collar 持續佩戴
 - 正常癒合：輕微腫脹與發紅於 3-5 天消退
@@ -2506,7 +2999,30 @@ const contentPostopCare: NodeContent = {
 ### 引流管管理
 - 主動引流（Jackson-Pratt）：記錄引流量與性質，量 < 0.2 mL/kg/day 可移除
 - 被動引流（Penrose）：保持引流出口通暢，通常 3-5 天移除
-`,
+
+## 二、藥物/方法比較 (Comparison)
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
   clinical_pearl: '貓的疼痛評估特別困難，因為貓傾向隱藏疼痛。Feline Grimace Scale（FGS）是目前最實用的工具，重點觀察耳朵位置（向外展開 = 疼痛）、眼眶緊縮、鬍鬚位置（向前集中 = 疼痛）、頭部位置（低於肩膀 = 疼痛）。如果不確定，寧可給予鎮痛，觀察反應。',
   common_mistakes: [
     '術後疼痛評估不足，過度依賴「看起來還好」的主觀判斷',
@@ -2561,17 +3077,11 @@ const contentPerioperativeAntimicrobial: NodeContent = {
   ],
   body: `# 圍手術期抗菌策略
 
-## 手術傷口分類
+## 一、治療原理 (Treatment Principles)
 
-| 分類 | 定義 | 範例 | SSI 風險 |
-|------|------|------|----------|
-| Clean (I) | 無感染、非外傷、未進入呼吸/消化/泌尿道 | 選擇性骨科手術、gastropexy、OVH（健康） | 2-5% |
-| Clean-contaminated (II) | 有控制地進入呼吸/消化/泌尿道 | 腸切除吻合、膀胱切開、膽囊切除 | 5-10% |
-| Contaminated (III) | 開放性新鮮外傷、消化道內容物溢出 | 腸穿孔手術、開放性骨折 < 6 hr | 10-20% |
-| Dirty (IV) | 已有感染、壞死組織、穿孔 > 6 hr | 腹膜炎、膿瘍引流、感染性關節 | > 20% |
 
-## 預防性抗生素使用
 
+### 預防性抗生素使用
 ### 藥物選擇
 
 | 手術類型 | 首選藥物 | 劑量 | 備註 |
@@ -2591,8 +3101,7 @@ const contentPerioperativeAntimicrobial: NodeContent = {
 - Cefazolin（t1/2 ≈ 45 min in dogs）：每 90 分鐘追加一次
 - 大量失血（> 1500 mL 或 > 15% estimated blood volume）後追加
 
-## 術後抗生素使用
-
+### 術後抗生素使用
 ### 根據傷口分類的建議
 
 | 傷口分類 | 術後抗生素 | 建議療程 |
@@ -2608,8 +3117,7 @@ Clean 手術術後繼續使用抗生素 5-7 天是最常見的不當使用，研
 - 增加醫療成本
 - 增加藥物副作用風險
 
-## SSI 風險因子與預防
-
+### SSI 風險因子與預防
 ### 患者因素
 - 肥胖（脂肪組織血供差）
 - 內分泌疾病（糖尿病、庫興氏症）
@@ -2628,8 +3136,17 @@ Clean 手術術後繼續使用抗生素 5-7 天是最常見的不當使用，研
 3. Halsted 組織處理原則：輕柔處理、精確止血、消除死腔
 4. 無菌技術的嚴格維護
 
-## 抗菌藥物管理 (Antimicrobial Stewardship)
+## 二、藥物/方法比較 (Comparison)
 
+### 手術傷口分類
+| 分類 | 定義 | 範例 | SSI 風險 |
+|------|------|------|----------|
+| Clean (I) | 無感染、非外傷、未進入呼吸/消化/泌尿道 | 選擇性骨科手術、gastropexy、OVH（健康） | 2-5% |
+| Clean-contaminated (II) | 有控制地進入呼吸/消化/泌尿道 | 腸切除吻合、膀胱切開、膽囊切除 | 5-10% |
+| Contaminated (III) | 開放性新鮮外傷、消化道內容物溢出 | 腸穿孔手術、開放性骨折 < 6 hr | 10-20% |
+| Dirty (IV) | 已有感染、壞死組織、穿孔 > 6 hr | 腹膜炎、膿瘍引流、感染性關節 | > 20% |
+
+### 抗菌藥物管理 (Antimicrobial Stewardship)
 ### 核心原則
 - 選擇最窄譜有效的抗菌藥物
 - 盡可能依據培養與藥敏結果（culture-directed therapy）
@@ -2642,7 +3159,28 @@ Clean 手術術後繼續使用抗生素 5-7 天是最常見的不當使用，研
 - Carbapenems（多重抗藥性 Gram-negative）
 - Linezolid（VRE）
 - 使用前需感染科/臨床藥師諮詢
-`,
+
+## 三、併發症與監控 (Complications & Monitoring)
+
+## 四、預後影響 (Prognostic Impact)
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 腹腔鏡/內視鏡微創手術 | 犬 GDV 預防性胃固定術腹腔鏡化 | 獸醫微創外科快速發展中 |
+| 術中血管吻合技術（如 OPSI shunt） | 門靜脈分流手術的微創化趨勢 | 少數轉介中心可執行 |
+| 生物補片（biologic mesh） | 犬腹壁缺損/會陰疝修復的生物材料替代合成 | 獸醫使用經驗增加中 |
+| 手術部位感染（SSI）監控 bundle | 獸醫外科感染率追蹤與品質改善 | 人醫 WHO SSI bundle 廣泛推行，獸醫開始建立 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 犬 TPLO vs TTA vs 側副韌帶穩定術治療 CCL 斷裂 | 大型犬 TPLO 為主流但 TTA 同等級證據，小型犬側副韌帶穩定術仍有支持者 | Level I |
+| 犬 GDV 預防性胃固定術適應症 | 大型犬/深胸犬是否應常規預防性胃固定仍有爭議 | Level III |
+| 犬脾臟腫塊的術前活檢價值 | 脾臟 FNA 的診斷敏感度/出血風險的風險效益分析 | Level III |
+| 犬貓 OVE vs OVH | 歐洲傾向 OVE（微創、術後疼痛少），美洲傳統 OVH——長期子宮殘端併發症證據不足 | Level II |`,
   clinical_pearl: '在台灣的獸醫臨床，MRSP（Methicillin-resistant Staphylococcus pseudintermedius）的分離率逐年升高，Clean 手術的 SSI 一旦培養出 MRSP，治療選擇非常有限。因此嚴格執行無菌技術與合理的抗生素使用比什麼都重要——預防永遠優於治療。',
   common_mistakes: [
     '預防性抗生素在切皮後才給予，錯失組織濃度達峰的時機',
@@ -2668,6 +3206,7 @@ Clean 手術術後繼續使用抗生素 5-7 天是最常見的不當使用，研
     { type: 'journal', citation: 'Turk R et al. Antimicrobial prophylaxis in small animal surgery: a systematic review and meta-analysis. Vet Surg 2015;44(4):385-396.', relevance: '小動物手術抗菌預防系統性回顧' },
     { type: 'guideline', citation: 'Weese JS et al. ACVIM Consensus Statement: Antimicrobial Use Guidelines for Treatment of Urinary Tract Disease in Dogs and Cats. J Vet Intern Med 2019;33(1):11-21.', relevance: '抗菌藥物管理原則（泌尿道部分適用）' },
     { type: 'journal', citation: 'Hsieh YC et al. Prevalence of methicillin-resistant Staphylococcus pseudintermedius in dogs in Taiwan. Taiwan Vet J 2021;47(2):89-97.', relevance: '台灣 MRSP 盛行率' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 10: Surgical Infections and Antibiotic Selection.', relevance: '圍手術期抗菌策略標準教材' },
   ],
   is_current: true,
   created_at: now,
