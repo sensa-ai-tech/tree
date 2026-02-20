@@ -89,7 +89,11 @@ const contentEpilepsy: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤犬特發性癲癇患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+犬特發性癲癇的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -231,7 +235,6 @@ const contentIVDD: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療策略
 ### 保守治療（Grade I-II）
 - 嚴格籠內休息 4-6 週
 - 疼痛管理：[藥物:Gabapentin] 5-10 mg/kg PO TID + [藥物:Tramadol] 2-5 mg/kg PO BID-TID
@@ -248,7 +251,11 @@ const contentIVDD: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤椎間盤疾病患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+椎間盤疾病的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -377,7 +384,6 @@ const contentGME: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 依病灶位置而異：
 - **前腦**：癲癇發作、行為異常、對側威脅反應缺失、盲目轉圈
 - **腦幹**：意識改變、腦神經缺損（面癱、吞嚥困難）、步態異常
@@ -398,7 +404,6 @@ const contentGME: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 免疫抑制方案
 - [藥物:Prednisolone] 1-2 mg/kg PO BID × 2-4 週，之後逐漸減量至最低有效劑量
 - 加入二線免疫抑制劑以減少類固醇副作用：
@@ -411,7 +416,11 @@ const contentGME: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤肉芽腫性腦膜腦炎 / MUO患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+肉芽腫性腦膜腦炎 / MUO的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -551,11 +560,19 @@ const contentVestibular: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+前庭症候群的診斷需結合病史、理學檢查與適當的輔助檢查，並排除其他鑑別診斷。
+
 ## 三、治療策略 (Treatment)
+
+前庭症候群的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤前庭症候群患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+前庭症候群的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -665,7 +682,6 @@ const contentPolyradiculoneuritis: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 - 急性發作（24-72 小時內進展至最嚴重）
 - **上行性 LMN 癱瘓**：後肢先發 → 擴展至前肢 → 可能影響呼吸肌
 - 所有四肢反射減弱至消失
@@ -683,7 +699,6 @@ const contentPolyradiculoneuritis: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 - **支持性照護為核心**：
   - 每 4-6 小時翻身防褥瘡
   - 膀胱管理（手動擠壓或間歇導尿）
@@ -698,7 +713,11 @@ const contentPolyradiculoneuritis: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤多發性神經根炎患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+多發性神經根炎的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -837,7 +856,6 @@ const contentMG: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 - [藥物:Pyridostigmine] 0.5-3 mg/kg PO BID-TID（抗膽鹼酯酶基礎治療）
 - 巨食道管理：直立餵食（Bailey chair）、小量多餐、高卡路里
 - 吸入性肺炎預防與治療：為最主要的致死原因
@@ -848,7 +866,11 @@ const contentMG: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤重症肌無力患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+重症肌無力的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -998,9 +1020,15 @@ const contentDM: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
+退化性脊髓病變的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤退化性脊髓病變患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+退化性脊髓病變的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1165,7 +1193,11 @@ const contentLocalization: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -1298,6 +1330,8 @@ const contentNeuroOverview: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1404,6 +1438,8 @@ const contentNeuroanatomy: NodeContent = {
 - **LMN**：脊髓腹角 α 運動神經元 → 腹根 → 脊神經 → 周邊神經 → NMJ → 骨骼肌
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1522,6 +1558,8 @@ const contentNeurophysiology: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1625,6 +1663,8 @@ BBB 由腦微血管內皮細胞緊密接合構成，限制極性與大分子藥�
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1725,6 +1765,8 @@ const contentNeurodegeneration: NodeContent = {
 | 興奮毒性 | 脊髓挫傷繼發損傷 | IVDD 後脊髓水腫惡化 |
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1829,6 +1871,8 @@ const contentSpinalCompression: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1927,6 +1971,8 @@ const contentEncephalitisMechanism: NodeContent = {
 腦炎 → 血管性水腫（BBB 漏出）+ 細胞毒性水腫（細胞損傷）→ 腦容積增加 → Monroe-Kellie 原則：腦組織 + CSF + 血液的總容積固定 → 代償機制耗盡時 ICP 急升 → 腦灌流壓下降 → 腦缺血 → 可能腦疝（herniation）
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2039,6 +2085,8 @@ const contentPeripheralNeuropathy: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -2144,7 +2192,11 @@ const contentNeuroExam: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2286,6 +2338,8 @@ const contentCSFAnalysis: NodeContent = {
 | RBC | 0 | 穿刺汙染 vs 蛛網膜下腔出血（離心後上清液黃染 = 出血） |
 
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2431,7 +2485,11 @@ const contentNeuroImaging: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2585,7 +2643,11 @@ const contentAEDTherapy: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -2700,7 +2762,11 @@ const contentSpinalSurgery: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -2822,9 +2888,15 @@ const contentNeuroRehab: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
+不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 

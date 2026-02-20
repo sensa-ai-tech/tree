@@ -69,7 +69,6 @@ CAD 的發病涉及三個核心異常：
 
 ## 三、治療策略 (Treatment)
 
-### 治療策略
 ### 急性期
 - [藥物:Oclacitinib] 0.4-0.6 mg/kg PO BID x 14 天，之後改 SID
 - 或 [藥物:Prednisolone] 0.5-1 mg/kg PO SID x 5-7 天後漸減
@@ -86,7 +85,11 @@ CAD 的發病涉及三個核心異常：
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤犬異位性皮膚炎患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+犬異位性皮膚炎的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -243,7 +246,11 @@ const contentSkinScraping: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -385,7 +392,6 @@ const contentAFR: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 - **皮膚症狀**：與 CAD 高度重疊——瘙癢、紅斑、外耳炎、指間炎
 - **特徵性線索**：非季節性瘙癢、對糖皮質激素反應不佳或僅部分反應
 - **腸胃道症狀**：20-30% 伴有嘔吐、軟便、排便次數增加、腸鳴音增加
@@ -393,9 +399,15 @@ const contentAFR: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
+食物不良反應的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤食物不良反應患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+食物不良反應的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -505,7 +517,6 @@ FAD 是對貓蚤（Ctenocephalides felis）唾液蛋白產生過敏反應的皮�
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 ### 犬
 - 好發部位：腰背部、尾根、後腿內側、腹股溝、腹側
 - 典型病灶：丘疹、脫毛、苔蘚化、色素沉著、「熱點」（急性濕性皮膚炎）
@@ -526,7 +537,6 @@ FAD 是對貓蚤（Ctenocephalides felis）唾液蛋白產生過敏反應的皮�
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 殺蚤劑（首選 isoxazoline 類）
 - [藥物:Fluralaner]（Bravecto）：犬 25-56 mg/kg PO q12w 或貓 spot-on q12w
 - [藥物:Afoxolaner]（NexGard）：犬 2.5-6.2 mg/kg PO q4w
@@ -544,7 +554,11 @@ FAD 是對貓蚤（Ctenocephalides felis）唾液蛋白產生過敏反應的皮�
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤跳蚤過敏性皮膚炎患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+跳蚤過敏性皮膚炎的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -662,7 +676,6 @@ const contentDemodicosis: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 - **局部型**：局限性脫毛斑（1-4 處），輕微紅斑，好發面部與前肢
 - **廣泛型**：廣泛脫毛、毛囊炎（丘疹/膿皰）、結痂、苔蘚化
 - **膿皮蟎症**（Pododemodicosis）：指間紅腫、疼痛、瘻管形成
@@ -676,7 +689,6 @@ const contentDemodicosis: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 首選：Isoxazoline 類
 - [藥物:Fluralaner] 25-56 mg/kg PO 單劑，視需要每 12 週重複
 - [藥物:Afoxolaner] 2.5 mg/kg PO q4w
@@ -694,7 +706,11 @@ const contentDemodicosis: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤蠕形蟎症患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+蠕形蟎症的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -817,7 +833,6 @@ const contentPyoderma: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 診斷
 1. **皮膚細胞學**（最重要的第一步）：膠帶壓貼或直接抹片
    - 陽性發現：退化性嗜中性球內含吞噬球菌
 2. **細菌培養與藥敏**：深層膿皮症、反覆復發、經驗性治療失敗時必須執行
@@ -825,7 +840,6 @@ const contentPyoderma: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 淺層膿皮症
 - 經驗性抗生素：[藥物:Cephalexin] 22-30 mg/kg PO BID
 - 或 [藥物:Amoxicillin-clavulanate] 12.5-25 mg/kg PO BID
@@ -841,7 +855,11 @@ const contentPyoderma: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤細菌性膿皮症患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+細菌性膿皮症的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -952,7 +970,6 @@ const contentMalassezia: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 - **油脂樣皮膚**：觸感油膩，皮脂分泌增加
 - **特徵性異味**：酸臭/發酵樣氣味（「髒狗味」）
 - **紅斑與瘙癢**：劇烈瘙癢，搔抓舔咬
@@ -968,7 +985,6 @@ const contentMalassezia: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 全身性
 - [藥物:Ketoconazole] 5-10 mg/kg PO SID × 3-4 週
 - [藥物:Itraconazole] 5 mg/kg PO SID × 3-4 週（肝毒性較低）
@@ -982,7 +998,11 @@ const contentMalassezia: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤馬拉色菌皮膚炎患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+馬拉色菌皮膚炎的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1107,7 +1127,6 @@ const contentOtitis: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 診斷
 1. **耳鏡檢查**：評估耳道紅腫程度、分泌物性質、鼓膜完整性
 2. **耳道細胞學**（必做）：棉棒取樣 → Diff-Quik 染色 → 油浸鏡檢
    - 球菌：每 HPF > 5 個有臨床意義
@@ -1118,7 +1137,6 @@ const contentOtitis: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 耳道清洗
 - 溫生理食鹽水或商業洗耳液
 - 鼓膜完整：可用含 chlorhexidine 或 Tris-EDTA 的洗耳液
@@ -1139,7 +1157,11 @@ const contentOtitis: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤外耳炎患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+外耳炎的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1253,7 +1275,6 @@ const contentDermatophytosis: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 ### 犬
 - 典型：環形脫毛斑，邊緣鱗屑，中央開始再生毛髮
 - 不典型：瀰漫性鱗屑、結節性病灶（kerion）、爪甲感染
@@ -1280,7 +1301,6 @@ const contentDermatophytosis: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 全身性
 - [藥物:Itraconazole] 5 mg/kg PO SID（脈衝療法：1 週用 / 1 週停）
 - 或 [藥物:Terbinafine] 30-40 mg/kg PO SID（犬）/ 貓需更謹慎
@@ -1299,7 +1319,11 @@ const contentDermatophytosis: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤皮膚癬菌症患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+皮膚癬菌症的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1413,7 +1437,6 @@ const contentScabies: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 - **好發部位**（最早出現）：耳翼邊緣、肘部、踝部
 - **後期擴展**：腹側、胸部、全身
 - **典型病灶**：丘疹、結痂、表皮脫屑、脫毛
@@ -1440,7 +1463,6 @@ const contentScabies: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 首選：Isoxazoline 類
 - [藥物:Fluralaner] 25-56 mg/kg PO 單劑（多數病例單劑即可）
 - [藥物:Sarolaner] 2 mg/kg PO，建議連續 2 個月每月投藥
@@ -1458,7 +1480,11 @@ const contentScabies: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤疥蟎症患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+疥蟎症的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1578,7 +1604,6 @@ const contentPemphigus: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 ### 犬
 - **面部**：鼻樑、耳翼、眼周對稱性膿皰、結痂、脫屑
 - **足墊**：角化過度、裂隙、疼痛（高度特異性）
@@ -1609,7 +1634,6 @@ const contentPemphigus: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 誘導期
 - [藥物:Prednisolone] 2-4 mg/kg/day PO（免疫抑制劑量），分 BID
 - 搭配節約類固醇劑：
@@ -1631,7 +1655,11 @@ const contentPemphigus: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤天疱瘡患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+天疱瘡的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1771,6 +1799,8 @@ const contentDermOverview: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1890,6 +1920,8 @@ const contentSkinAnatomy: NodeContent = {
 [圖片:犬皮膚三層結構與附屬構造標注解剖圖]
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2020,6 +2052,8 @@ const contentCutaneousImmunology: NodeContent = {
 [圖片:皮膚免疫細胞分佈與交互作用示意圖]
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2272,6 +2306,8 @@ const contentAllergyMechanism: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -2403,6 +2439,8 @@ const contentKeratinization: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -2522,6 +2560,8 @@ const contentAutoimmuneMechanism: NodeContent = {
 [圖片:天疱瘡棘層松解機轉分子層面圖解]
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2663,7 +2703,11 @@ const contentDermHistory: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2806,7 +2850,6 @@ const contentCytology: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-### 判讀要點
 ### 膿皮症
 - **關鍵特徵**：退化性嗜中性球（核腫脹、碎裂、溶解）+ 吞噬球菌
 - 球菌（Staphylococcus）：成對或成串的圓形細菌
@@ -2830,6 +2873,8 @@ const contentCytology: NodeContent = {
 [圖片:膿皮症 vs 天疱瘡 vs 馬拉色菌細胞學比較]
 
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3010,7 +3055,11 @@ const contentOtoscopy: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3180,7 +3229,11 @@ const contentAllergyMgmt: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3317,7 +3370,11 @@ Isoxazoline 類藥物選擇性抑制節肢動物神經系統的 GABA（γ-aminob
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3471,9 +3528,15 @@ const contentImmunomodulation: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
+不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
+持續監控治療反應與可能的併發症，根據臨床表現調整後續管理策略。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3633,9 +3696,15 @@ const contentOticTherapy: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
+不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
+持續監控治療反應與可能的併發症，根據臨床表現調整後續管理策略。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3787,7 +3856,11 @@ const contentAntifungal: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 

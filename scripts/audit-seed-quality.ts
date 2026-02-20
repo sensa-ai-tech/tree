@@ -1,7 +1,7 @@
 /**
  * VetKnowledgeTree 品質審計腳本
  *
- * 8 維度自動評分系統，用於迭代品質審核迴圈 (Phase A)。
+ * 10 維度自動評分系統，用於迭代品質審核迴圈 (Phase A)。
  * 執行方式：npx tsx --tsconfig tsconfig.json scripts/audit-seed-quality.ts
  */
 
@@ -105,6 +105,8 @@ interface SpecialtyReport {
     caseQuality: DimensionScore;
     pathCompleteness: DimensionScore;
     taiwanRelevance: DimensionScore;
+    bodySections: DimensionScore;
+    diseaseDataFields: DimensionScore;
   };
   totalScore: number;
 }
@@ -487,6 +489,201 @@ function auditTaiwanRelevance(sp: SpecialtyData): DimensionScore {
   return { score, maxScore: 100, issues };
 }
 
+/** 維度 9：Body 章節完整性（僅 L3 節點） */
+function auditBodySections(sp: SpecialtyData): DimensionScore {
+  const issues: string[] = [];
+  const l3Nodes = sp.nodes.filter((n) => n.layer === 3);
+
+  if (l3Nodes.length === 0) {
+    return { score: 100, maxScore: 100, issues };
+  }
+
+  let totalDeductions = 0;
+  let nodeCount = 0;
+
+  for (const node of l3Nodes) {
+    const content = sp.contents.get(node.id);
+    if (!content || !content.body) {
+      issues.push(`[${sp.key}] ${node.id} — L3 節點缺少 body 內容`);
+      totalDeductions += 100; // full penalty for missing body
+      nodeCount++;
+      continue;
+    }
+
+    nodeCount++;
+    let nodeDeductions = 0;
+
+    // Split body by ## headers only (ignore ### sub-headers for section completeness)
+    // A ## section's content = everything from that ## to the next ##, including any ### sub-headers
+    const h2Pattern = /^##\s+[^#].+$/gm;
+    const h2Headers: { title: string; index: number }[] = [];
+    let match: RegExpExecArray | null;
+    while ((match = h2Pattern.exec(content.body)) !== null) {
+      h2Headers.push({ title: match[0].trim(), index: match.index });
+    }
+
+    // Check content between consecutive ## headers
+    for (let i = 0; i < h2Headers.length - 1; i++) {
+      const startIdx = h2Headers[i].index + h2Headers[i].title.length;
+      const endIdx = h2Headers[i + 1].index;
+      // Strip out any ### sub-header lines that are just repeats of the ## title
+      const rawContent = content.body.slice(startIdx, endIdx);
+      // Remove duplicate ### with same section number (e.g., ### 一、... when ## 一、... exists)
+      const cleanedContent = rawContent
+        .replace(/^###\s+.+$/gm, (line) => {
+          // Keep the ### line's text in content calculation only if it adds info
+          return line;
+        })
+        .trim();
+
+      // Meaningful content = everything minus header-like lines, counting actual text
+      const textOnly = cleanedContent
+        .replace(/^#{1,3}\s+.+$/gm, '') // remove all header lines
+        .replace(/\[圖片:[^\]]*\]/g, '') // remove image placeholders
+        .trim();
+
+      if (textOnly.length < 10) {
+        issues.push(`[${sp.key}] ${node.id} — Body 空章節: "${h2Headers[i].title}" (僅 ${textOnly.length} chars 實質內容)`);
+        nodeDeductions += 5;
+      }
+    }
+
+    // Check last ## header section (from last header to end of body)
+    if (h2Headers.length > 0) {
+      const lastHeader = h2Headers[h2Headers.length - 1];
+      const lastRaw = content.body.slice(lastHeader.index + lastHeader.title.length);
+      const lastText = lastRaw
+        .replace(/^#{1,3}\s+.+$/gm, '')
+        .replace(/\[圖片:[^\]]*\]/g, '')
+        .trim();
+      if (lastText.length < 10) {
+        issues.push(`[${sp.key}] ${node.id} — Body 空章節: "${lastHeader.title}" (僅 ${lastText.length} chars 實質內容)`);
+        nodeDeductions += 5;
+      }
+    }
+
+    totalDeductions += Math.min(nodeDeductions, 100); // cap per node at 100
+  }
+
+  const avgDeduction = nodeCount > 0 ? totalDeductions / nodeCount : 0;
+  const score = Math.max(0, Math.round(100 - avgDeduction));
+  return { score, maxScore: 100, issues };
+}
+
+/** 維度 10：疾病資料欄位完整性（僅 disease 類型節點） */
+function auditDiseaseDataFields(sp: SpecialtyData): DimensionScore {
+  const issues: string[] = [];
+  const diseaseNodes = sp.nodes.filter((n) => n.node_type === 'disease');
+
+  if (diseaseNodes.length === 0) {
+    return { score: 100, maxScore: 100, issues };
+  }
+
+  let totalPassed = 0;
+  let totalChecked = 0;
+
+  for (const node of diseaseNodes) {
+    const content = sp.contents.get(node.id);
+    if (!content || !content.disease_data) {
+      issues.push(`[${sp.key}] ${node.id} — disease 節點缺少 disease_data`);
+      totalChecked += 11;
+      continue;
+    }
+
+    const dd = content.disease_data;
+
+    // signalment: >=20 chars
+    totalChecked++;
+    if ((dd.signalment?.length ?? 0) >= 20) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.signalment 過短 (${dd.signalment?.length ?? 0}/20 chars)`);
+    }
+
+    // etiology: >=30 chars
+    totalChecked++;
+    if ((dd.etiology?.length ?? 0) >= 30) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.etiology 過短 (${dd.etiology?.length ?? 0}/30 chars)`);
+    }
+
+    // pathogenesis: >=30 chars
+    totalChecked++;
+    if ((dd.pathogenesis?.length ?? 0) >= 30) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.pathogenesis 過短 (${dd.pathogenesis?.length ?? 0}/30 chars)`);
+    }
+
+    // clinical_signs: >=3 items
+    totalChecked++;
+    if ((dd.clinical_signs?.length ?? 0) >= 3) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.clinical_signs < 3 (${dd.clinical_signs?.length ?? 0})`);
+    }
+
+    // staging: null is OK (skip)
+    if (dd.staging !== null) {
+      totalChecked++;
+      totalPassed++; // If non-null, it exists — count as passed
+    }
+    // When null, skip entirely (not counted)
+
+    // differential_diagnosis: >=2 items
+    totalChecked++;
+    if ((dd.differential_diagnosis?.length ?? 0) >= 2) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.differential_diagnosis < 2 (${dd.differential_diagnosis?.length ?? 0})`);
+    }
+
+    // diagnostic_workup: >=50 chars
+    totalChecked++;
+    if ((dd.diagnostic_workup?.length ?? 0) >= 50) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.diagnostic_workup 過短 (${dd.diagnostic_workup?.length ?? 0}/50 chars)`);
+    }
+
+    // treatment_protocol: >=50 chars
+    totalChecked++;
+    if ((dd.treatment_protocol?.length ?? 0) >= 50) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.treatment_protocol 過短 (${dd.treatment_protocol?.length ?? 0}/50 chars)`);
+    }
+
+    // prognosis: >=20 chars
+    totalChecked++;
+    if ((dd.prognosis?.length ?? 0) >= 20) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.prognosis 過短 (${dd.prognosis?.length ?? 0}/20 chars)`);
+    }
+
+    // monitoring: >=20 chars
+    totalChecked++;
+    if ((dd.monitoring?.length ?? 0) >= 20) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.monitoring 過短 (${dd.monitoring?.length ?? 0}/20 chars)`);
+    }
+
+    // owner_communication: >=20 chars
+    totalChecked++;
+    if ((dd.owner_communication?.length ?? 0) >= 20) {
+      totalPassed++;
+    } else {
+      issues.push(`[${sp.key}] ${node.id} — disease_data.owner_communication 過短 (${dd.owner_communication?.length ?? 0}/20 chars)`);
+    }
+  }
+
+  const score = totalChecked > 0 ? Math.round((totalPassed / totalChecked) * 100) : 100;
+  return { score, maxScore: 100, issues };
+}
+
 // ═══════════════════════════════════════════
 // 主程式
 // ═══════════════════════════════════════════
@@ -501,6 +698,8 @@ function auditSpecialty(sp: SpecialtyData): SpecialtyReport {
     caseQuality: auditCaseQuality(sp),
     pathCompleteness: auditPathCompleteness(sp),
     taiwanRelevance: auditTaiwanRelevance(sp),
+    bodySections: auditBodySections(sp),
+    diseaseDataFields: auditDiseaseDataFields(sp),
   };
 
   const scores = Object.values(dimensions).map((d) => d.score);
@@ -551,6 +750,8 @@ function run(): void {
       caseQuality: '病例品質  ',
       pathCompleteness: '學習路徑  ',
       taiwanRelevance: '台灣在地化',
+      bodySections: 'Body章節完整',
+      diseaseDataFields: '疾病資料完整',
     };
 
     for (const [dimKey, dimScore] of Object.entries(report.dimensions)) {

@@ -48,6 +48,17 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
 
   const content = selectedNodeContent;
 
+  /**
+   * 過濾空白 Markdown 章節（安全網）：
+   * 若 body 中存在 `## 標題\n\n## 下一標題` 這類空章節，將其移除避免畫面出現空白標題。
+   */
+  const filteredBody = useMemo(() => {
+    if (!content?.body) return '';
+    return content.body
+      .replace(/^(##\s+[^\n]+)\n{1,3}(?=##\s+)/gm, '')
+      .trim();
+  }, [content?.body]);
+
   // nodes 尚未載入時顯示 loading（DemoDataProvider 注入需要時間）
   if (nodes.length === 0) {
     return (
@@ -187,7 +198,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
               <CardBody>
                 <div className="prose prose-sm max-w-none text-gray-700 prose-headings:text-gray-900 prose-a:text-indigo-600 prose-strong:text-gray-900 prose-table:text-sm">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {content.body}
+                    {filteredBody}
                   </ReactMarkdown>
                 </div>
               </CardBody>

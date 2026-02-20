@@ -60,7 +60,6 @@ GDV 的核心病理包括三個層面：
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 [圖片:典型 GDV 犬的腹部外觀——腹部明顯膨脹]
 
 急性發作通常在進食後 2-4 小時內：
@@ -74,9 +73,15 @@ GDV 的核心病理包括三個層面：
 
 ## 三、治療策略 (Treatment)
 
+胃擴張扭轉的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤胃擴張扭轉患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+胃擴張扭轉的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -197,7 +202,6 @@ const contentPyometra: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 診斷
 - **血液學**：WBC 升高伴嗜中性球左移（典型值 30,000-100,000/uL），但也可能正常或降低（骨髓耗竭）
 - **生化學**：BUN/Cre 升高（腎前性或 E. coli 內毒素引起的腎損傷）、ALT/ALP 輕度升高、低白蛋白血症
 - **腹部超音波**：子宮角擴張（直徑 > 1-2 cm），充滿均質或不均質液體，金標準診斷工具
@@ -207,7 +211,6 @@ const contentPyometra: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 手術治療（OHE）— 確定性治療
 - 適用於所有病例，為首選治療方式
 - 術前穩定化：積極輸液、矯正電解質、廣效抗生素（[藥物:Ampicillin] + [藥物:Enrofloxacin] 或 [藥物:Metronidazole]）
@@ -225,7 +228,11 @@ const contentPyometra: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤子宮蓄膿患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+子宮蓄膿的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -354,7 +361,6 @@ const contentSplenicNeoplasia: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 [圖片:脾臟腫塊破裂犬的急診外觀——腹部膨脹蒼白黏膜]
 
 臨床表現取決於腫塊是否破裂：
@@ -372,9 +378,15 @@ const contentSplenicNeoplasia: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
+脾臟腫瘤的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤脾臟腫瘤患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+脾臟腫瘤的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -495,7 +507,6 @@ const contentGIForeignBody: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 診斷
 - **三視角腹部 X 光**：不透光異物直接可見；阻塞性模式（近端腸道擴張、遠端氣體減少）；游離腹腔氣體提示穿孔
 - **腹部超音波**：偵測非透光異物的反射影、腸道擴張、腸壁增厚、腹腔積液
 - **線狀異物超音波特徵**：腸道皺縮（plication）、「accordion sign」
@@ -503,7 +514,6 @@ const contentGIForeignBody: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 內視鏡取出
 適用於食道異物與部分胃異物（光滑、非尖銳、大小可通過食道）
 
@@ -527,7 +537,11 @@ const contentGIForeignBody: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤腸道異物患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+腸道異物的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -644,7 +658,6 @@ CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億�
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 診斷
 [圖片:Cranial drawer test 與 tibial thrust test 操作示意圖]
 
 ### 理學檢查
@@ -659,7 +672,6 @@ CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億�
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 手術治療（中大型犬首選）
 
 **TPLO（Tibial Plateau Leveling Osteotomy）**：
@@ -684,7 +696,11 @@ CCLD 是犬最常見的骨科疾病之一，每年在美國造成超過 10 億�
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤十字韌帶斷裂患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+十字韌帶斷裂的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -825,7 +841,6 @@ IVDD 是犬最常見的脊髓疾病，佔所有犬脊髓疾病的 2%，但在軟
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 保守治療（Grade 1-2，首次發作）
 - 嚴格籠休 4-6 週
 - 疼痛管理：[藥物:Gabapentin] 5-10 mg/kg PO BID-TID + NSAIDs
@@ -847,7 +862,11 @@ IVDD 是犬最常見的脊髓疾病，佔所有犬脊髓疾病的 2%，但在軟
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤椎間盤疾病患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+椎間盤疾病的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -960,7 +979,6 @@ const contentPerinealHernia: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現
 [圖片:會陰疝氣外觀——會陰部單側或雙側膨脹]
 
 - **會陰部膨脹**：可還原性腫脹，提高後軀或擠壓腹部時更明顯
@@ -995,7 +1013,11 @@ const contentPerinealHernia: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤會陰疝氣患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+會陰疝氣的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1153,11 +1175,19 @@ const contentFractureStabilization: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
+創傷性骨折穩定的診斷需結合病史、理學檢查與適當的輔助檢查，並排除其他鑑別診斷。
+
 ## 三、治療策略 (Treatment)
+
+創傷性骨折穩定的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤創傷性骨折穩定患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+創傷性骨折穩定的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1289,7 +1319,6 @@ const contentPatellarLuxation: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### 治療
 ### 保守治療
 - 適用：Grade I 無跛行、Grade II 偶爾跛行且不影響生活品質
 - 體重管理、關節保護（[藥物:Carprofen] PRN）、適度運動
@@ -1320,7 +1349,11 @@ const contentPatellarLuxation: NodeContent = {
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
+定期追蹤膝蓋骨脫位患畜的治療反應與潛在併發症，根據臨床反應調整治療計畫，並監測藥物副作用與疾病進展。
+
 ## 五、預後與預後因子 (Prognosis)
+
+膝蓋骨脫位的預後取決於病因、疾病嚴重程度、治療時機及患畜整體健康狀況，早期診斷與積極治療通常可獲得較佳預後。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1450,6 +1483,8 @@ const contentSurgOverview: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1559,6 +1594,8 @@ const contentSurgPrinciples: NodeContent = {
 - 清潔手術 SSI 率 3-5%，汙染手術 10-20%
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1671,6 +1708,8 @@ const contentWoundHealing: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1775,6 +1814,8 @@ const contentSurgNutrition: NodeContent = {
 - 補充 thiamine（維生素 B1）
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1884,6 +1925,8 @@ const contentAnesthesiaBasics: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -1977,6 +2020,8 @@ const contentAbdominalPathology: NodeContent = {
 脾臟腫瘤壁薄脆弱 → 自發性破裂 → 急性大量腹腔出血 → 有效循環血量驟降 → 代償期（心搏過速、周邊血管收縮）→ 失代償期（低血壓、器官灌流不足）
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2080,6 +2125,8 @@ const contentFractureHealing: NodeContent = {
 | 萎縮性 | 血供不足 | 骨端萎縮無骨痂 | 骨移植+穩定固定 |
 
 ## 二、臨床意義 (Clinical Significance)
+
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2193,6 +2240,8 @@ const contentJointDegeneration: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
+此概念在臨床實務中具有重要應用價值，有助於疾病的診斷、治療決策與預後評估。
+
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -2296,7 +2345,11 @@ const contentPreopImaging: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2422,7 +2475,11 @@ const contentIntraopDecision: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2550,6 +2607,8 @@ const contentOrthoImaging: NodeContent = {
 - TPLO 目標：旋轉脛骨平台使 TPA ≈ 5-6.5度
 
 ## 三、常見陷阱 (Pitfalls)
+
+檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2687,9 +2746,15 @@ const contentSoftTissueSurgery: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
+不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -2839,7 +2904,11 @@ AO/ASIF 建立的骨折治療四原則至今仍是骨科手術的基石：
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3002,9 +3071,15 @@ const contentPostopCare: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
+不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
+治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3162,7 +3237,11 @@ Clean 手術術後繼續使用抗生素 5-7 天是最常見的不當使用，研
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
+持續監控治療反應與可能的併發症，根據臨床表現調整後續管理策略。
+
 ## 四、預後影響 (Prognostic Impact)
+
+治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
 
 ## 五、人醫借鑒 (Translational Insights)
 

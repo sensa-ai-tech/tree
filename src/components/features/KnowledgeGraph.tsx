@@ -16,6 +16,9 @@ import type { KnowledgeNode, KnowledgeEdge } from '@/types/knowledge';
 import { LAYER_COLORS, type Layer } from '@/types/knowledge';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { cn } from '@/lib/utils/cn';
+import { KnowledgeNodeComponent } from './KnowledgeNodeComponent';
+import type { KnowledgeNodeData } from './KnowledgeNodeComponent';
+import { getLayoutedElements } from '@/lib/utils/dagre-layout';
 
 interface KnowledgeGraphProps {
   nodes: KnowledgeNode[];
@@ -27,55 +30,31 @@ interface KnowledgeGraphProps {
   className?: string;
 }
 
-const LAYER_Y_OFFSET = 150;
-const NODE_X_SPACING = 220;
-
 // 在元件外部定義，避免每次渲染創建新物件觸發 React Flow 警告
-const DEFAULT_NODE_TYPES = {};
+const NODE_TYPES = { knowledge: KnowledgeNodeComponent };
 const DEFAULT_EDGE_TYPES = {};
 
 function buildFlowNodes(
   knowledgeNodes: KnowledgeNode[],
   highlightPath: string[]
-): Node[] {
-  const nodesByLayer = new Map<number, KnowledgeNode[]>();
-  for (const node of knowledgeNodes) {
-    const layerNodes = nodesByLayer.get(node.layer) ?? [];
-    layerNodes.push(node);
-    nodesByLayer.set(node.layer, layerNodes);
-  }
+): Node<KnowledgeNodeData>[] {
+  return knowledgeNodes.map((node) => {
+    const isHighlighted = highlightPath.includes(node.id);
+    const color = LAYER_COLORS[node.layer as Layer] ?? '#6b7280';
 
-  const flowNodes: Node[] = [];
-
-  for (const [layer, layerNodes] of nodesByLayer) {
-    layerNodes.forEach((node, index) => {
-      const isHighlighted = highlightPath.includes(node.id);
-      const color = LAYER_COLORS[layer as Layer] ?? '#6b7280';
-
-      flowNodes.push({
-        id: node.id,
-        position: {
-          x: index * NODE_X_SPACING,
-          y: layer * LAYER_Y_OFFSET,
-        },
-        data: { label: node.title },
-        style: {
-          background: isHighlighted ? color : `${color}33`,
-          color: isHighlighted ? '#ffffff' : '#1f2937',
-          border: `2px solid ${color}`,
-          borderRadius: '8px',
-          padding: '8px 12px',
-          fontSize: '12px',
-          fontWeight: isHighlighted ? 600 : 400,
-          minWidth: '120px',
-          textAlign: 'center' as const,
-          boxShadow: isHighlighted ? `0 0 12px ${color}66` : 'none',
-        },
-      });
-    });
-  }
-
-  return flowNodes;
+    return {
+      id: node.id,
+      type: 'knowledge',
+      // 初始位置 (0,0)，dagre 會覆寫
+      position: { x: 0, y: 0 },
+      data: {
+        label: node.title,
+        color,
+        isHighlighted,
+        layer: node.layer,
+      },
+    };
+  });
 }
 
 function buildFlowEdges(knowledgeEdges: KnowledgeEdge[]): Edge[] {
@@ -89,7 +68,9 @@ function buildFlowEdges(knowledgeEdges: KnowledgeEdge[]): Edge[] {
       stroke: edge.relation_type === 'prerequisite' ? '#6366f1' : '#9ca3af',
       strokeWidth: Math.max(1, edge.weight),
     },
-    markerEnd: edge.bidirectional ? undefined : { type: MarkerType.ArrowClosed },
+    markerEnd: edge.bidirectional
+      ? undefined
+      : { type: MarkerType.ArrowClosed },
   }));
 }
 
@@ -99,7 +80,7 @@ function KnowledgeGraphInner({
   flowEdges,
   onNodeClick,
 }: {
-  flowNodes: Node[];
+  flowNodes: Node<KnowledgeNodeData>[];
   flowEdges: Edge[];
   onNodeClick?: NodeMouseHandler;
 }) {
@@ -109,10 +90,10 @@ function KnowledgeGraphInner({
   useEffect(() => {
     if (flowNodes.length !== prevNodeCountRef.current) {
       prevNodeCountRef.current = flowNodes.length;
-      // Delay to let ReactFlow update internal node positions
+      // Delay to let ReactFlow update internal node positions (increased from 50ms to 200ms)
       const timer = setTimeout(() => {
         fitView({ padding: 0.2, duration: 300 });
-      }, 50);
+      }, 200);
       return () => clearTimeout(timer);
     }
   }, [flowNodes.length, fitView]);
@@ -122,13 +103,19 @@ function KnowledgeGraphInner({
       nodes={flowNodes}
       edges={flowEdges}
       onNodeClick={onNodeClick}
-      nodeTypes={DEFAULT_NODE_TYPES}
+      nodeTypes={NODE_TYPES}
       edgeTypes={DEFAULT_EDGE_TYPES}
       fitView
       fitViewOptions={{ padding: 0.2 }}
-      minZoom={0.2}
+      minZoom={0.1}
       maxZoom={2}
       attributionPosition="bottom-left"
+      onInit={() => {
+        // 備援 fitView：onInit 時也觸發一次，確保首次載入正確
+        setTimeout(() => {
+          fitView({ padding: 0.2, duration: 300 });
+        }, 300);
+      }}
     >
       <Background color="#e5e7eb" gap={20} />
       <Controls />
@@ -145,15 +132,25 @@ export function KnowledgeGraph({
   error = null,
   className,
 }: KnowledgeGraphProps) {
-  const flowNodes = useMemo(
-    () => buildFlowNodes(knowledgeNodes, highlightPath),
-    [knowledgeNodes, highlightPath]
-  );
+  // 使用 dagre 佈局計算節點位置
+  const { layoutedNodes, layoutedEdges } = useMemo(() => {
+    const rawNodes = buildFlowNodes(knowledgeNodes, highlightPath);
+    const rawEdges = buildFlowEdges(knowledgeEdges);
 
-  const flowEdges = useMemo(
-    () => buildFlowEdges(knowledgeEdges),
-    [knowledgeEdges]
-  );
+    if (rawNodes.length === 0) {
+      return { layoutedNodes: rawNodes, layoutedEdges: rawEdges };
+    }
+
+    const { nodes: ln, edges: le } = getLayoutedElements(rawNodes, rawEdges, {
+      direction: 'TB',
+      nodeWidth: 180,
+      nodeHeight: 56,
+      rankSep: 80,
+      nodeSep: 40,
+    });
+
+    return { layoutedNodes: ln, layoutedEdges: le };
+  }, [knowledgeNodes, knowledgeEdges, highlightPath]);
 
   const handleNodeClick: NodeMouseHandler = useCallback(
     (_event, node) => {
@@ -174,9 +171,16 @@ export function KnowledgeGraph({
   // Error state
   if (error) {
     return (
-      <div className={cn('flex h-96 items-center justify-center rounded-xl border border-red-200 bg-red-50', className)}>
+      <div
+        className={cn(
+          'flex h-96 items-center justify-center rounded-xl border border-red-200 bg-red-50',
+          className
+        )}
+      >
         <div className="text-center">
-          <p className="text-sm font-medium text-red-700">載入知識圖譜時發生錯誤</p>
+          <p className="text-sm font-medium text-red-700">
+            載入知識圖譜時發生錯誤
+          </p>
           <p className="mt-1 text-xs text-red-500">{error}</p>
         </div>
       </div>
@@ -186,21 +190,33 @@ export function KnowledgeGraph({
   // Empty state
   if (knowledgeNodes.length === 0) {
     return (
-      <div className={cn('flex h-96 items-center justify-center rounded-xl border border-gray-200 bg-gray-50', className)}>
+      <div
+        className={cn(
+          'flex h-96 items-center justify-center rounded-xl border border-gray-200 bg-gray-50',
+          className
+        )}
+      >
         <div className="text-center">
           <p className="text-sm font-medium text-gray-500">尚無知識節點</p>
-          <p className="mt-1 text-xs text-gray-400">新增節點後即可看到知識圖譜</p>
+          <p className="mt-1 text-xs text-gray-400">
+            新增節點後即可看到知識圖譜
+          </p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={cn('h-[500px] w-full rounded-xl border border-gray-200 bg-white', className)}>
+    <div
+      className={cn(
+        'h-[500px] w-full rounded-xl border border-gray-200 bg-white',
+        className
+      )}
+    >
       <ReactFlowProvider>
         <KnowledgeGraphInner
-          flowNodes={flowNodes}
-          flowEdges={flowEdges}
+          flowNodes={layoutedNodes}
+          flowEdges={layoutedEdges}
           onNodeClick={handleNodeClick}
         />
       </ReactFlowProvider>
