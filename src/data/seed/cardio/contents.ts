@@ -26,8 +26,6 @@ const contentOverview: NodeContent = {
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
 
-
-### 一、核心概念 (Core Concept)
 獸醫心臟科（Veterinary Cardiology）是專門研究伴侶動物心血管系統疾病的專科領域。本知識樹將心臟科知識組織為六層漸進式架構：
 
 | 層級 | 名稱 | 內容範疇 | 節點數 |
@@ -54,8 +52,6 @@ const contentOverview: NodeContent = {
 台灣地處亞熱帶，全年蚊蟲活動，為心絲蟲高盛行區。[藥物:Ivermectin] 等預防藥物的全年使用至關重要。根據台灣流行病學調查，未預防犬隻的心絲蟲陽性率可達 20-40%（南部高於北部）。近年隨飼養觀念改善，小型犬 MMVD 與貓 HCM 的診斷率持續上升。
 
 ## 二、臨床意義 (Clinical Significance)
-
-### 二、臨床意義 (Clinical Significance)
 ### 心臟科轉診指標
 
 | 情境 | 建議處置 | 急迫性 |
@@ -77,8 +73,6 @@ const contentOverview: NodeContent = {
 5. **居家監測教育**：教導飼主計算 sleeping RR
 
 ## 三、人醫借鑒 (Translational Insights)
-
-### 三、人醫借鑑 (Translational Insights)
 | 人醫領域 | 概念/技術 | 獸醫應用現況 | 潛力評估 |
 |---------|----------|-------------|---------|
 | 遠端監測 | 穿戴式心律監測、居家體重追蹤 | Sleeping RR 居家監測概念已普及 | ★★★★ |
@@ -88,8 +82,6 @@ const contentOverview: NodeContent = {
 | AI 輔助診斷 | AI-ECG、自動心超判讀 | 初步演算法開發中 | ★★★☆ |
 
 ## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 議題 | 現況 | 影響 |
 |------|------|------|
 | 犬 MMVD B1 是否需治療 | 僅 EPIC（B2）有 Level I 證據，B1 無 RCT | 大量 B1 犬隻是否應提早介入仍未定論 |
@@ -155,8 +147,6 @@ const contentMMVD: NodeContent = {
 ## 一、病理機制 (Pathophysiology)
 
 
-
-### 一、病理機制 (Pathophysiology)
 ### 分子層級（已確認）
 瓣膜間質細胞（valvular interstitial cells, VICs）表型轉化為活化型肌纖維母細胞，分泌過量基質金屬蛋白酶（MMP-1, MMP-13），降解膠原蛋白並促進糖胺聚醣（GAGs）異常沉積。TGF-β 與 serotonin（5-HT）訊號通路上調為關鍵驅動因子。CKCS 品種已確認 MMVD 具多基因遺傳模式。
 
@@ -176,8 +166,6 @@ VICs 活化 → 瓣膜海綿層（spongiosa）GAGs 過度堆積 → 纖維層（
 [圖片:MMVD 病理機制瀑布圖——從分子到器官]
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
-
-### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 ### 典型表現（發生率）
 | 臨床表現 | 發生率 | 特徵描述 |
 |----------|--------|---------|
@@ -216,8 +204,6 @@ VICs 活化 → 瓣膜海綿層（spongiosa）GAGs 過度堆積 → 纖維層（
 [圖片:MMVD 診斷決策流程圖]
 
 ## 三、治療策略 (Treatment)
-
-### 三、治療策略 (Treatment)
 ### 依分期治療（ACVIM 2019 Consensus）
 
 | 分期 | 藥物 | 劑量 | 頻率 | Evidence Level |
@@ -243,8 +229,6 @@ VICs 活化 → 瓣膜海綿層（spongiosa）GAGs 過度堆積 → 纖維層（
 - **轉診指標**：Stage D 難治性、急性腱索斷裂、合併嚴重心律不整、考慮外科修復（MVR）
 
 ## 四、併發症與監控 (Complications & Monitoring)
-
-### 四、併發症與監控 (Complications & Monitoring)
 ### 疾病相關併發症
 | 併發症 | 發生率 | 機轉 | 處置 |
 |--------|--------|------|------|
@@ -269,8 +253,6 @@ VICs 活化 → 瓣膜海綿層（spongiosa）GAGs 過度堆積 → 纖維層（
 | 居家 | 每日 | Sleeping RR（目標 <30/min） |
 
 ## 五、預後與預後因子 (Prognosis)
-
-### 五、預後與預後因子 (Prognosis)
 ### 正面預後因子
 - 早期診斷（B2 即開始 Pimobendan）
 - 小型犬（較大型犬預後好）
@@ -296,16 +278,12 @@ VICs 活化 → 瓣膜海綿層（spongiosa）GAGs 過度堆積 → 纖維層（
 MMVD 是慢性進行性疾病，目前無法治癒但可有效管理。強調：① 按時用藥 ② 每日計算 sleeping RR ③ RR > 30 或呼吸困難立即就醫 ④ 外科瓣膜修復在日本/歐美已有高成功率（>90%），可作為 Stage C/D 選項討論。
 
 ## 六、人醫借鑒 (Translational Insights)
-
-### 六、人醫借鑑 (Translational Insights)
 - **經導管二尖瓣修復（MitraClip）**：人醫已廣泛應用，獸醫目前僅有限研究（實驗犬模型），未來可能減少開胸手術需求
 - **心臟生物標記（BNP/NT-proBNP）**：人醫 CHF 管理的核心工具，獸醫採用度逐漸提升但 cut-off 值仍需優化
 - **遠端監測（telemedicine）**：人醫心衰竭患者居家體重與症狀遠端監控已標準化，獸醫的 sleeping RR 居家監測概念即借鑑於此
 - **Sacubitril/Valsartan（Entresto）**：人醫 HFrEF 的一線藥物，獸醫初步研究顯示對犬 MMVD 有潛在益處（Phase II 進行中）
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
 |----------|----------|----------|----------------|
 | B1 是否需要治療？ | 早期介入可能延緩進展 | EPIC 僅支持 B2，B1 無 RCT 支持 | Level III |
@@ -394,8 +372,6 @@ const contentAuscultation: NodeContent = {
 ## 一、檢查原理與適應症 (Principles & Indications)
 
 
-
-### 一、檢查原理與適應症 (Principles & Indications)
 ### 聽診器物理原理
 
 | 聽面 | 頻率範圍 | 偵測目標 | 使用技巧 |
@@ -425,8 +401,6 @@ const contentAuscultation: NodeContent = {
 > **操作要點**：每個位置至少聽 5-10 秒。先膜面後鐘面。安靜環境中進行。同時觸摸股動脈評估脈搏品質與節律。
 
 ## 二、判讀要點 (Interpretation)
-
-### 二、判讀要點 (Interpretation)
 ### 系統性聽診評估五步驟
 
 | 步驟 | 評估內容 | 正常發現 | 異常發現 |
@@ -472,8 +446,6 @@ const contentAuscultation: NodeContent = {
 | 功能性雜音 | 幼犬常見（Grade I-II） | 緊迫/貧血/甲亢可引起 |
 
 ## 三、常見陷阱 (Pitfalls)
-
-### 三、常見陷阱 (Pitfalls)
 | 陷阱 | 發生情境 | 避免方法 |
 |------|---------|---------|
 | 功能性雜音誤判為病理性 | 幼犬/幼貓，Grade I-II | 追蹤觀察，多數 4-6 月齡消失 |
@@ -486,8 +458,6 @@ const contentAuscultation: NodeContent = {
 | 貓心臟病無雜音 | HCM 30-50% 無可聞雜音 | 有奔馬律或心律不整仍需心超 |
 
 ## 四、人醫借鑒 (Translational Insights)
-
-### 四、人醫借鑑 (Translational Insights)
 | 人醫進展 | 概念 | 獸醫應用潛力 |
 |---------|------|-------------|
 | 電子聽診器 | 數位放大與頻率篩選 | 可改善微弱雜音偵測，尤其適用貓 |
@@ -496,8 +466,6 @@ const contentAuscultation: NodeContent = {
 | 肺部超音波取代聽診 | POCUS 評估肺水腫 | 獸醫急診已逐漸採用 B-lines 評估 |
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方 | 反方 | Evidence Level |
 |---------|------|------|----------------|
 | 心雜音等級是否預測疾病嚴重度 | 部分研究顯示等級與 MR 程度相關 | 雜音受體型、心輸出量、胸壁影響 | Level C |
@@ -587,8 +555,6 @@ const contentDCM: NodeContent = {
 ## 一、病理機制 (Pathophysiology)
 
 
-
-### 一、病理機制 (Pathophysiology)
 ### 分子→細胞→器官機轉鏈
 
 | 層級 | 機轉 | 關鍵分子/結構 |
@@ -612,8 +578,6 @@ const contentDCM: NodeContent = {
 - 幹細胞療法對心肌再生的潛力
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
-
-### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 ### 典型表現（發生率）
 
 | 臨床表現 | 發生率 | 特徵描述 | 階段 |
@@ -670,8 +634,6 @@ const contentDCM: NodeContent = {
 | Pheochromocytoma | 間歇性高血壓、腎上腺腫塊 |
 
 ## 三、治療策略 (Treatment)
-
-### 三、治療策略 (Treatment)
 ### 急性期（CHF 穩定）
 
 | 藥物 | 劑量 | 途徑 | Evidence |
@@ -709,8 +671,6 @@ const contentDCM: NodeContent = {
 - 對標準 CHF 治療反應不佳（48h 內）
 
 ## 四、併發症與監控 (Complications & Monitoring)
-
-### 四、併發症與監控 (Complications & Monitoring)
 ### 疾病本身併發症
 
 | 併發症 | 發生率 | 機轉 | 處理 |
@@ -743,8 +703,6 @@ const contentDCM: NodeContent = {
 | 居家 | 每日 | Sleeping RR（目標 < 30/min） |
 
 ## 五、預後與預後因子 (Prognosis)
-
-### 五、預後與預後因子 (Prognosis)
 ### 正面預後因子
 - 早期偵測（隱匿期開始治療）
 - 飲食相關 DCM（飲食改變後部分可逆）
@@ -773,8 +731,6 @@ const contentDCM: NodeContent = {
 | 合併 AF | MST 減少 30-50% | Pedro et al. |
 
 ## 六、人醫借鑒 (Translational Insights)
-
-### 六、人醫借鑑 (Translational Insights)
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
 | Sacubitril/Valsartan (Entresto) | RAAS + Neprilysin 雙抑制 | 犬初步研究中，尚無大型 RCT |
@@ -787,8 +743,6 @@ const contentDCM: NodeContent = {
 | AI-ECG screening | 隱匿期 DCM 篩檢 | 初步演算法開發中 |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
 |---------|---------|---------|---------------|
 | BEG 飲食因果關係 | FDA 2018 警告、病例系列報告支持 | 缺乏 RCT、混淆因子多 | D（觀察性） |
@@ -886,8 +840,6 @@ const contentHCM: NodeContent = {
 ## 一、病理機制 (Pathophysiology)
 
 
-
-### 一、病理機制 (Pathophysiology)
 ### 分子→細胞→器官機轉鏈
 
 | 層級 | 機轉 | 關鍵分子/結構 |
@@ -910,8 +862,6 @@ const contentHCM: NodeContent = {
 - Galectin-3 作為纖維化早期生物標記
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
-
-### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 ### 典型表現（發生率）
 
 | 臨床表現 | 發生率 | 特徵描述 | 階段 |
@@ -968,8 +918,6 @@ const contentHCM: NodeContent = {
 | 主動脈瓣狹窄 | 極少見於貓，瓣膜異常可見 |
 
 ## 三、治療策略 (Treatment)
-
-### 三、治療策略 (Treatment)
 ### 急性期處理
 
 | 情境 | Primary Care | Specialty Care | Evidence |
@@ -999,8 +947,6 @@ const contentHCM: NodeContent = {
 - 擬安排麻醉/手術的 HCM 貓
 
 ## 四、併發症與監控 (Complications & Monitoring)
-
-### 四、併發症與監控 (Complications & Monitoring)
 ### 疾病本身併發症
 
 | 併發症 | 發生率 | 機轉 | 處理 |
@@ -1032,8 +978,6 @@ const contentHCM: NodeContent = {
 | 居家 | 每日 | Sleeping RR（目標 < 30/min） |
 
 ## 五、預後與預後因子 (Prognosis)
-
-### 五、預後與預後因子 (Prognosis)
 ### 正面預後因子
 - 無症狀且 LA 正常（MST > 5 年）
 - 輕度壁厚增加（6-7mm）
@@ -1061,8 +1005,6 @@ const contentHCM: NodeContent = {
 | End-stage（收縮障礙） | 3-6 months | Payne et al. |
 
 ## 六、人醫借鑒 (Translational Insights)
-
-### 六、人醫借鑑 (Translational Insights)
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
 | Mavacamten (cardiac myosin inhibitor) | 選擇性降低LVOTO，避免β-blocker副作用 | 人醫 FDA 核准(2022)，貓PK研究進行中 |
@@ -1073,8 +1015,6 @@ const contentHCM: NodeContent = {
 | 基因編輯(CRISPR) | MYBPC3突變修復 | 純實驗階段 |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
 |---------|---------|---------|---------------|
 | 無症狀HCM是否需β-blocker | 可能減少LVOTO與SAM | 無RCT證實改善預後 | C |
@@ -1172,8 +1112,6 @@ const contentPericardialEffusion: NodeContent = {
 ## 一、病理機制 (Pathophysiology)
 
 
-
-### 一、病理機制 (Pathophysiology)
 ### 心臟壓塞機轉鏈
 
 | 層級 | 機轉 | 臨床意義 |
@@ -1204,8 +1142,6 @@ const contentPericardialEffusion: NodeContent = {
 | 其他 | <10% | LA 撕裂、凝血障礙、尿毒症 | 依病因而異 |
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
-
-### 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 ### 典型表現（發生率）
 
 | 臨床表現 | 發生率 | 特徵描述 | 備註 |
@@ -1241,8 +1177,6 @@ const contentPericardialEffusion: NodeContent = {
 - **P**lan（穿刺→引流→送檢→長期計畫）
 
 ## 三、治療策略 (Treatment)
-
-### 三、治療策略 (Treatment)
 ### 急性心臟壓塞處理
 
 | 步驟 | Primary Care | Specialty Care | Evidence |
@@ -1269,8 +1203,6 @@ const contentPericardialEffusion: NodeContent = {
 - 疑似 HSA → 腫瘤科分期評估
 
 ## 四、併發症與監控 (Complications & Monitoring)
-
-### 四、併發症與監控 (Complications & Monitoring)
 ### 疾病本身併發症
 
 | 併發症 | 發生率 | 機轉 | 處理 |
@@ -1299,8 +1231,6 @@ const contentPericardialEffusion: NodeContent = {
 | HSA 化療期 | q3w（化療前） | CBC + 心超 |
 
 ## 五、預後與預後因子 (Prognosis)
-
-### 五、預後與預後因子 (Prognosis)
 ### 正面預後因子
 - 特發性 PE（vs 腫瘤性）
 - 心基底部腫瘤（vs HSA）
@@ -1326,8 +1256,6 @@ const contentPericardialEffusion: NodeContent = {
 | 間皮瘤 | 8-14 months | Closa et al. |
 
 ## 六、人醫借鑒 (Translational Insights)
-
-### 六、人醫借鑑 (Translational Insights)
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
 | Pericardial window via VATS | 微創心包開窗術 | 犬已廣泛使用胸腔鏡 |
@@ -1337,8 +1265,6 @@ const contentPericardialEffusion: NodeContent = {
 | AI-TFAST interpretation | 自動偵測PE與壓塞 | 初步驗證中 |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
 |---------|---------|---------|---------------|
 | 引流液細胞學價值 | 可偵測部分腫瘤（淋巴瘤） | 敏感度僅~50%，HSA脫落細胞少 | B |
@@ -2743,8 +2669,6 @@ const contentThoracicRadiograph: NodeContent = {
 ## 一、檢查原理與適應症 (Principles & Indications)
 
 
-
-### 一、檢查原理與適應症 (Principles & Indications)
 ### 拍攝標準
 ### 標準視圖
 1. **右側臥位（Right lateral）**：最常用，評估心臟大小（VHS）與肺野
@@ -2791,8 +2715,6 @@ const contentThoracicRadiograph: NodeContent = {
 [圖片:犬胸腔 X 光 VHS 測量法與心臟各腔室擴大特徵標示]
 
 ## 二、判讀要點 (Interpretation)
-
-### 二、判讀要點 (Interpretation)
 ### VHS 測量法
 Vertebral Heart Score (VHS)：
 1. 側面觀測量心臟長軸（L）：從隆突下方心底至心尖
@@ -2807,8 +2729,6 @@ Vertebral Heart Score (VHS)：
 | CKCS | 10.6 ± 0.5 | > 11.5 |
 
 ## 三、常見陷阱 (Pitfalls)
-
-### 三、常見陷阱 (Pitfalls)
 - 呼氣相拍攝導致心影假性增大與肺野假性不透明——務必確認吸氣相充足（肺葉延伸至 T12-T13）
 - 未考量品種差異直接套用 VHS 10.5 標準——短頭犬正常 VHS 可達 12.0
 - 肥胖動物心包膜脂肪沉積造成心影假性增大
@@ -2816,8 +2736,6 @@ Vertebral Heart Score (VHS)：
 - 僅看側面觀而忽略 DV 觀——右心擴大在側面觀不易辨識
 
 ## 四、人醫借鑒 (Translational Insights)
-
-### 四、人醫借鑑 (Translational Insights)
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
 | AI 胸部 X 光自動判讀 | 犬貓 VHS 自動測量、心臟擴大偵測、肺水腫辨識 | 人醫 AI 準確度已達放射科醫師水準，獸醫訓練模型開發中 |
@@ -2826,8 +2744,6 @@ Vertebral Heart Score (VHS)：
 | 床邊超音波 B-lines 評估肺水腫 | 替代 X 光的即時肺水腫偵測（POCUS） | 獸醫急診 POCUS 教育快速發展中 |
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | VHS 品種特異性正常值完整性 | 僅部分品種有發表的 VHS 參考值，台灣流行品種數據不足 | Level III |
@@ -3222,8 +3138,6 @@ const contentPericardiocentesis: NodeContent = {
 ## 一、治療原理 (Treatment Principles)
 
 
-
-### 一、治療原理 (Treatment Principles)
 ### 適應症與禁忌症
 ### 適應症
 - 心超確認心包膜積液伴心臟壓塞徵象（RA diastolic collapse）
@@ -3274,8 +3188,6 @@ const contentPericardiocentesis: NodeContent = {
 [圖片:心包膜穿刺術步驟示意圖——穿刺入路與 ECG 引導]
 
 ## 二、藥物/方法比較 (Comparison)
-
-### 二、藥物/方法比較 (Comparison)
 | 方法 | 適應症 | 優點 | 缺點 |
 |------|--------|------|------|
 | 經皮穿刺引流 | 心臟壓塞緊急處理 | 快速、微創、可在 ICU 執行 | 可能需反覆操作、無法處理病因 |
@@ -3284,8 +3196,6 @@ const contentPericardiocentesis: NodeContent = {
 | 球囊心包膜開窗（Balloon pericardiotomy）| 惡性 PE 姑息治療 | 透視引導下完成、無需全麻 | 獸醫經驗極有限 |
 
 ## 三、併發症與監控 (Complications & Monitoring)
-
-### 三、併發症與監控 (Complications & Monitoring)
 ### 術中併發症
 | 併發症 | 發生率 | 處理 |
 |--------|--------|------|
@@ -3301,8 +3211,6 @@ const contentPericardiocentesis: NodeContent = {
 - 惡性 PE（HSA）：中位再蓄積時間 ~1-3 個月
 
 ## 四、預後影響 (Prognostic Impact)
-
-### 四、預後影響 (Prognostic Impact)
 | 病因 | 穿刺後預後 | MST |
 |------|----------|-----|
 | 特發性 PE | 良好至中等；~50% 單次引流可控制 | > 1-2 年（部分永不復發）|
@@ -3312,8 +3220,6 @@ const contentPericardiocentesis: NodeContent = {
 | 感染性心包膜炎 | 取決於病原與是否同時手術引流 | 變異大 |
 
 ## 五、人醫借鑒 (Translational Insights)
-
-### 五、人醫借鑑 (Translational Insights)
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
 | 心包膜內化療（Intrapericardial cisplatin）| 惡性 PE 局部化療延長姑息期 | 犬有少數研究支持可行性，毒性需注意 |
@@ -3322,8 +3228,6 @@ const contentPericardiocentesis: NodeContent = {
 | 液態切片（liquid biopsy）PE 腫瘤分子分析 | PE 液 cfDNA/ctDNA 鑑別良惡性 | 獸醫腫瘤學研究中，臨床應用前 |
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
-
-### 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 特發性 PE 反覆發作幾次應建議手術（心包膜切除）| 多數建議 ≥3 次，但尚無統一標準 | Level IV |

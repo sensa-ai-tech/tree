@@ -359,7 +359,6 @@ const contentUrinalysis: NodeContent = {
 
 
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 監測指標 | 頻率 | 適用情境 |
 |---------|------|---------|
 | USG | 每次回診 | CKD 追蹤、PU/PD 鑑別 |
@@ -371,7 +370,6 @@ const contentUrinalysis: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-### 二、臨床表現與診斷判讀 (Clinical Signs & Diagnostic Interpretation)
 ### 尿液分析三部曲
 
 **1. 物理性質**
@@ -420,7 +418,6 @@ const contentUrinalysis: NodeContent = {
 
 ## 四、人醫借鑒 (Translational Insights)
 
-### 六、人醫借鑑 (Translational Insights)
 - 人醫 **albumin-to-creatinine ratio (ACR)** 為蛋白尿篩檢標準——獸醫使用 UPC 作為對應
 - 人醫 **urine NGAL** 和 **urine KIM-1** 作為 AKI 早期標記——獸醫研究中
 - 人醫 **automated urine sediment analyzers** 已取代大部分手動鏡檢——獸醫仍以手動鏡檢為主
@@ -428,7 +425,6 @@ const contentUrinalysis: NodeContent = {
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | UPC 的生物變異 | 單次 UPC 可能波動大 | Level II | 連續取樣的最佳策略 |
@@ -3347,7 +3343,6 @@ const contentEndocrineTests: NodeContent = {
 
 
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 檢測相關風險 | 監測 | 處理 |
 |-------------|------|------|
 | Trilostane 過度抑制 (Post <1.45) | ACTH stim q10-14d 起始 | 減量或暫停 |
@@ -3359,7 +3354,6 @@ const contentEndocrineTests: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-### 二、臨床表現與診斷判讀 (Clinical Signs & Diagnostic Interpretation)
 ### 腎上腺功能檢測
 
 **LDDST（Low-Dose Dexamethasone Suppression Test）**
@@ -3404,7 +3398,6 @@ const contentEndocrineTests: NodeContent = {
 
 ## 四、人醫借鑒 (Translational Insights)
 
-### 六、人醫借鑑 (Translational Insights)
 - 人醫 **midnight salivary cortisol** 為 Cushing 篩檢常規——獸醫無對應（犬貓唾液取樣困難）
 - 人醫 **TSH 為甲狀腺篩檢首選**（人醫 TSH assay 高度可靠）；獸醫犬 TSH 敏感度僅 ~75%
 - 人醫 **HbA1c** 反映 2-3 月血糖控制；獸醫 Fructosamine 僅反映 2-3 週——需更頻繁監測
@@ -3412,7 +3405,6 @@ const contentEndocrineTests: NodeContent = {
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | Pre-Trilostane cortisol vs ACTH stim | ACTH stim 為標準，pre-pill cortisol 可能有用 | Level III | 兩者的頭對頭比較 |
@@ -3501,7 +3493,6 @@ const contentAbdoUS: NodeContent = {
 
 
 
-### 二、臨床表現與影像診斷 (Clinical Signs & Imaging Diagnosis)
 ### 系統性掃描方法
 標準順序：肝膽→脾臟→左腎/左腎上腺→胃/胰臟→十二指腸→空腸→右腎/右腎上腺→膀胱→前列腺/子宮→腹腔淋巴結
 
@@ -3537,7 +3528,6 @@ const contentAbdoUS: NodeContent = {
 
 **胰臟炎超音波**：胰臟腫脹低回聲 + 周圍脂肪高回聲 (saponification) + 腹腔游離液。犬敏感度 ~68%，貓 35-67%。
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 監測指標 | 頻率 | 適用情境 |
 |---------|------|---------|
 | 腎臟大小與回聲 | q3-6 月 | CKD 追蹤 |
@@ -3554,7 +3544,6 @@ const contentAbdoUS: NodeContent = {
 
 ## 四、人醫借鑒 (Translational Insights)
 
-### 六、人醫借鑑 (Translational Insights)
 - 人醫 **contrast-enhanced ultrasound (CEUS)** 評估組織灌流和腫瘤特徵——獸醫應用增加中
 - 人醫 **shear-wave elastography** 評估肝臟纖維化（取代部分肝臟切片）——獸醫初步研究中
 - 人醫 **point-of-care ultrasound (POCUS)** 在急診的 FAST protocol 已被獸醫廣泛採用（AFAST/TFAST）
@@ -3562,7 +3551,6 @@ const contentAbdoUS: NodeContent = {
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | 超音波 vs CT 在胰臟炎 | CT 敏感度可能更高 | Level III | 頭對頭比較研究 |
@@ -3649,7 +3637,6 @@ const contentGIEndoscopy: NodeContent = {
 
 
 
-### 二、臨床表現與診斷 (Clinical Signs & Diagnostic Application)
 ### 消化道影像診斷
 
 **腹部 X 光**
@@ -3691,7 +3678,6 @@ const contentGIEndoscopy: NodeContent = {
 ### 貓 IBD vs 小細胞淋巴瘤鑑別
 兩者組織學極相似→需免疫組織化學（CD3/CD20）+ Clonality analysis（PARR）。多克隆=IBD；單克隆=淋巴瘤。
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 風險 | 機轉 | 預防/處理 |
 |------|------|---------|
 | 穿孔（充氣相關） | 過度充氣/病變組織脆弱 | 控制充氣量、避免疑似穿孔時內視鏡 |
@@ -3707,7 +3693,6 @@ const contentGIEndoscopy: NodeContent = {
 
 ## 四、人醫借鑒 (Translational Insights)
 
-### 六、人醫借鑑 (Translational Insights)
 - 人醫 **capsule endoscopy** 可評估全段小腸——獸醫犬用膠囊內視鏡有限度報告但尚未普及
 - 人醫 **confocal laser endomicroscopy** 可在內視鏡時即時組織學評估——獸醫未應用
 - 人醫 **narrow-band imaging (NBI)** 增強黏膜微血管可視化——獸醫設備限制
@@ -3715,7 +3700,6 @@ const contentGIEndoscopy: NodeContent = {
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | 內視鏡切片是否足夠診斷 PLE | 敏感度有限，全層更佳 | Level II | 內視鏡技術改進？ |
@@ -3801,7 +3785,6 @@ const contentCKDManagement: NodeContent = {
 
 
 
-### 三、治療策略 (Treatment)
 ### IRIS 分期治療策略
 
 **Stage 1（非氮血症）**
@@ -3848,7 +3831,6 @@ const contentCKDManagement: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 併發症 | 處理 | 監測 |
 |--------|------|------|
 | 高磷血症 | 限磷飲食 + 磷結合劑 | 血磷 |
@@ -3862,7 +3844,6 @@ const contentCKDManagement: NodeContent = {
 
 ## 四、預後影響 (Prognostic Impact)
 
-### 五、預後與預後因子 (Prognosis)
 | IRIS 分期 | 犬中位存活 | 貓中位存活 |
 |----------|----------|----------|
 | Stage 1-2 | > 400 天 | > 600 天 |
@@ -3885,7 +3866,6 @@ const contentCKDManagement: NodeContent = {
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | SGLT2i 在貓 CKD | 人醫有效，獸醫尚無定論 | Level V | 貓藥動學安全性試驗 |
@@ -3948,7 +3928,6 @@ const contentEndocrineTherapy: NodeContent = {
 
 
 
-### 三、治療策略 (Treatment)
 ### Cushing (HAC) 治療
 
 | 類型 | 治療 | 藥物/方法 | 劑量 | 證據等級 |
@@ -3987,7 +3966,6 @@ const contentEndocrineTherapy: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 疾病 | 併發症 | 監測 | 處理 |
 |------|--------|------|------|
 | Cushing/Trilostane | 醫源性 Addison | ACTH stim | 停藥 + 類固醇 |
@@ -4001,7 +3979,6 @@ const contentEndocrineTherapy: NodeContent = {
 
 ## 四、預後影響 (Prognostic Impact)
 
-### 五、預後與預後因子 (Prognosis)
 | 疾病 | 治療 | 預後 | 中位存活 |
 |------|------|------|---------|
 | PDH + Trilostane | 藥物 | 佳 | ~2-2.5 年 |
@@ -4024,7 +4001,6 @@ const contentEndocrineTherapy: NodeContent = {
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | Trilostane SID vs BID | SID 起始 | Level II | 最佳給藥頻率 |
@@ -4086,7 +4062,6 @@ const contentImmunosuppression: NodeContent = {
 
 
 
-### 三、治療策略 (Treatment)
 ### IMHA 免疫抑制方案
 
 | 層級 | 藥物 | 劑量 | 角色 | 證據等級 |
@@ -4131,7 +4106,6 @@ const contentImmunosuppression: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 藥物 | 主要副作用 | 監測 | 頻率 |
 |------|----------|------|------|
 | Prednisolone | PU/PD、多食、皮膚變薄、UTI | 臨床+尿培養 | 每次回診 |
@@ -4146,7 +4120,6 @@ const contentImmunosuppression: NodeContent = {
 
 ## 四、預後影響 (Prognostic Impact)
 
-### 五、預後與預後因子 (Prognosis)
 | 疾病 | 預後 | 關鍵因子 |
 |------|------|---------|
 | IMHA 急性存活 >2 週 | 長期預後改善 | 復發率 ~15-20% |
@@ -4168,7 +4141,6 @@ const contentImmunosuppression: NodeContent = {
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | IMHA 單藥 vs 雙藥 | ACVIM 不反對但非必須 | Level III | 前瞻性 RCT |
@@ -4230,7 +4202,6 @@ const contentGITherapy: NodeContent = {
 
 
 
-### 三、治療策略 (Treatment)
 ### 慢性腸病 (CE) 階梯式治療
 
 | 層級 | 治療 | 方法 | 適應症 | 證據等級 |
@@ -4272,7 +4243,6 @@ const contentGITherapy: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-### 四、併發症與監控 (Complications & Monitoring)
 | 疾病 | 併發症 | 監測 | 頻率 |
 |------|--------|------|------|
 | CE/PLE | Cobalamin 缺乏 | 血清 Cobalamin | q3-6 月 |
@@ -4286,7 +4256,6 @@ const contentGITherapy: NodeContent = {
 
 ## 四、預後影響 (Prognostic Impact)
 
-### 五、預後與預後因子 (Prognosis)
 | 疾病/亞型 | 預後 | 關鍵因子 |
 |----------|------|---------|
 | FRE | 極佳 | 飲食控制下長期緩解 |
@@ -4310,7 +4279,6 @@ const contentGITherapy: NodeContent = {
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
-### 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | FMT 最佳方案 | 有效但標準化不足 | Level III | 供體/頻率/途徑 |
