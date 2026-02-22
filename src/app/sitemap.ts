@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1.0,
     },
-    ...['/login', '/register', '/graph', '/cases', '/paths', '/review', '/achievements'].map(
+    ...['/login', '/register', '/graph', '/cases', '/paths', '/review', '/achievements', '/privacy', '/terms'].map(
       (route) => ({
         url: `${BASE_URL}${route}`,
         lastModified: new Date(),
