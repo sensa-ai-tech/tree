@@ -14,9 +14,13 @@ const mockNodes: KnowledgeNode[] = [
     estimated_minutes: 15,
     clinical_relevance: 1,
     exam_relevance: 1,
-    prerequisite_ids: [],
-    keywords: ['test'],
-    species: [],
+    status: 'published',
+    version: 1,
+    tags: ['test'],
+    encyclopedia_link: null,
+    cross_specialty_notes: null,
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-01-01T00:00:00Z',
   },
   {
     id: 'TEST-L3-001',
@@ -29,19 +33,26 @@ const mockNodes: KnowledgeNode[] = [
     estimated_minutes: 30,
     clinical_relevance: 5,
     exam_relevance: 4,
-    prerequisite_ids: ['TEST-L0-001'],
-    keywords: ['test', 'disease'],
-    species: ['canine'],
+    status: 'published',
+    version: 1,
+    tags: ['test', 'disease'],
+    encyclopedia_link: null,
+    cross_specialty_notes: null,
+    created_at: '2026-01-01T00:00:00Z',
+    updated_at: '2026-01-01T00:00:00Z',
   },
 ];
 
 const mockEdges: KnowledgeEdge[] = [
   {
     id: 'TEST-E-001',
-    source_id: 'TEST-L0-001',
-    target_id: 'TEST-L3-001',
-    relationship: 'prerequisite',
+    source_node_id: 'TEST-L0-001',
+    target_node_id: 'TEST-L3-001',
+    relation_type: 'prerequisite',
     weight: 1.0,
+    description: null,
+    bidirectional: false,
+    unlock_condition: null,
   },
 ];
 
@@ -77,7 +88,7 @@ describe('knowledge-store', () => {
     useKnowledgeStore.getState().setEdges(mockEdges);
     const state = useKnowledgeStore.getState();
     expect(state.edges).toHaveLength(1);
-    expect(state.edges[0].relationship).toBe('prerequisite');
+    expect(state.edges[0].relation_type).toBe('prerequisite');
   });
 
   it('should get node by id', () => {
@@ -98,7 +109,7 @@ describe('knowledge-store', () => {
     useKnowledgeStore.getState().setEdges(mockEdges);
     const edges = useKnowledgeStore.getState().getEdgesForNode('TEST-L0-001');
     expect(edges).toHaveLength(1);
-    expect(edges[0].target_id).toBe('TEST-L3-001');
+    expect(edges[0].target_node_id).toBe('TEST-L3-001');
   });
 
   it('should filter nodes by specialty', () => {

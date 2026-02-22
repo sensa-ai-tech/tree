@@ -1,13 +1,11 @@
 import { cn } from '@/lib/utils/cn';
 
-interface CardProps {
-  className?: string;
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  onClick?: () => void;
   hoverable?: boolean;
 }
 
-export function Card({ className, children, onClick, hoverable }: CardProps) {
+export function Card({ className, children, onClick, hoverable, ...rest }: CardProps) {
   return (
     <div
       className={cn(
@@ -17,9 +15,10 @@ export function Card({ className, children, onClick, hoverable }: CardProps) {
         className
       )}
       onClick={onClick}
-      role={onClick ? 'button' : undefined}
+      role={onClick ? 'button' : rest.role ?? undefined}
       tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => { if (e.key === 'Enter') onClick(); } : undefined}
+      onKeyDown={onClick ? (e) => { if (e.key === 'Enter') onClick(e as unknown as React.MouseEvent<HTMLDivElement>); } : undefined}
+      {...rest}
     >
       {children}
     </div>
