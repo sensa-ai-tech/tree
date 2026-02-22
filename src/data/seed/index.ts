@@ -94,8 +94,8 @@ import { SEED_EXPERIENCE, SEED_ACHIEVEMENTS, SEED_XP_EVENTS } from './seed-gamif
 // Merged Collections
 // ═══════════════════════════════════════════
 
-/** 所有專科節點合併 */
-const ALL_NODES: KnowledgeNode[] = [
+/** 所有專科節點合併（export 供 SEO metadata 和 sitemap 使用） */
+export const ALL_NODES: KnowledgeNode[] = [
   ...CARDIO_NODES,
   ...CPATH_NODES,
   ...IM_NODES,

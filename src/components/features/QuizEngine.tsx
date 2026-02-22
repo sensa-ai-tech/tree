@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import type { ReviewQuestion, QuizResult, AnswerRecord } from '@/types/quiz';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
@@ -20,16 +20,59 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [focusedIndex, setFocusedIndex] = useState<number>(0);
   const [state, setState] = useState<QuizState>(questions.length === 0 ? 'empty' : 'answering');
   const [startTime] = useState(() => Date.now());
   const [questionStartTime, setQuestionStartTime] = useState(() => Date.now());
+  const optionsRef = useRef<HTMLDivElement>(null);
 
   const currentQuestion = questions[currentIndex] as ReviewQuestion | undefined;
+  const options = currentQuestion?.options ?? [];
+
+  // 重設 focusedIndex 當題目變化
+  useEffect(() => {
+    setFocusedIndex(0);
+  }, [currentIndex]);
 
   const handleSelectOption = useCallback((option: string): void => {
     if (state !== 'answering') return;
     setSelectedOption(option);
   }, [state]);
+
+  /** 鍵盤導航：ArrowUp/Down 切換選項、Enter/Space 選擇 */
+  const handleKeyDown = useCallback((e: React.KeyboardEvent): void => {
+    if (state !== 'answering') return;
+
+    switch (e.key) {
+      case 'ArrowDown':
+      case 'ArrowRight':
+        e.preventDefault();
+        setFocusedIndex((prev) => {
+          const next = (prev + 1) % options.length;
+          const buttons = optionsRef.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]');
+          buttons?.[next]?.focus();
+          return next;
+        });
+        break;
+      case 'ArrowUp':
+      case 'ArrowLeft':
+        e.preventDefault();
+        setFocusedIndex((prev) => {
+          const next = (prev - 1 + options.length) % options.length;
+          const buttons = optionsRef.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]');
+          buttons?.[next]?.focus();
+          return next;
+        });
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (options[focusedIndex]) {
+          handleSelectOption(options[focusedIndex]);
+        }
+        break;
+    }
+  }, [state, options, focusedIndex, handleSelectOption]);
 
   const handleSubmitAnswer = useCallback((): void => {
     if (!selectedOption || !currentQuestion) return;
@@ -125,23 +168,36 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
 
   if (!currentQuestion) return null;
 
-  const options = currentQuestion.options ?? [];
   const isReviewing = state === 'reviewing';
 
   return (
-    <Card className={cn('mx-auto max-w-lg', className)}>
+    <Card className={cn('mx-auto max-w-lg', className)} role="region" aria-label="測驗區域">
       <CardBody className="space-y-4">
         {/* Progress */}
         <div className="flex items-center justify-between text-xs text-gray-500">
-          <span>第 {currentIndex + 1} / {questions.length} 題</span>
-          <Progress value={currentIndex + 1} max={questions.length} size="sm" className="w-32" />
+          <span aria-live="polite">第 {currentIndex + 1} / {questions.length} 題</span>
+          <Progress
+            value={currentIndex + 1}
+            max={questions.length}
+            size="sm"
+            className="w-32"
+            aria-label={`進度：第 ${currentIndex + 1} 題，共 ${questions.length} 題`}
+          />
         </div>
 
         {/* Question */}
-        <p className="text-sm font-medium text-gray-900 leading-relaxed">{currentQuestion.question}</p>
+        <p id={`question-${currentIndex}`} className="text-sm font-medium text-gray-900 leading-relaxed">
+          {currentQuestion.question}
+        </p>
 
-        {/* Options */}
-        <div className="space-y-2">
+        {/* Options — ARIA radiogroup + keyboard navigation */}
+        <div
+          ref={optionsRef}
+          role="radiogroup"
+          aria-labelledby={`question-${currentIndex}`}
+          className="space-y-2"
+          onKeyDown={handleKeyDown}
+        >
           {options.map((option, i) => {
             const letter = String.fromCharCode(65 + i);
             const isSelected = selectedOption === option;
@@ -160,11 +216,15 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
               <button
                 key={i}
                 type="button"
+                role="radio"
+                aria-checked={isSelected}
+                aria-label={`選項 ${letter}: ${option}`}
+                tabIndex={i === focusedIndex ? 0 : -1}
                 onClick={() => handleSelectOption(option)}
                 disabled={isReviewing}
                 className={cn(
                   'flex w-full items-start gap-3 rounded-lg border p-3 text-left text-sm transition-colors',
-                  'disabled:cursor-default',
+                  'disabled:cursor-default focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1',
                   optionStyle
                 )}
               >
