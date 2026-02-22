@@ -92,7 +92,7 @@ function KnowledgeGraphInner({
       prevNodeCountRef.current = flowNodes.length;
       // Delay to let ReactFlow update internal node positions (increased from 50ms to 200ms)
       const timer = setTimeout(() => {
-        fitView({ padding: 0.2, duration: 300 });
+        fitView({ padding: 0.15, duration: 300 });
       }, 200);
       return () => clearTimeout(timer);
     }
@@ -106,14 +106,14 @@ function KnowledgeGraphInner({
       nodeTypes={NODE_TYPES}
       edgeTypes={DEFAULT_EDGE_TYPES}
       fitView
-      fitViewOptions={{ padding: 0.2 }}
+      fitViewOptions={{ padding: 0.15 }}
       minZoom={0.1}
-      maxZoom={2}
+      maxZoom={3}
       attributionPosition="bottom-left"
       onInit={() => {
         // 備援 fitView：onInit 時也觸發一次，確保首次載入正確
         setTimeout(() => {
-          fitView({ padding: 0.2, duration: 300 });
+          fitView({ padding: 0.15, duration: 300 });
         }, 300);
       }}
     >
@@ -143,10 +143,10 @@ export function KnowledgeGraph({
 
     const { nodes: ln, edges: le } = getLayoutedElements(rawNodes, rawEdges, {
       direction: 'TB',
-      nodeWidth: 180,
-      nodeHeight: 56,
-      rankSep: 80,
-      nodeSep: 40,
+      nodeWidth: 220,
+      nodeHeight: 72,
+      rankSep: 100,
+      nodeSep: 50,
     });
 
     return { layoutedNodes: ln, layoutedEdges: le };

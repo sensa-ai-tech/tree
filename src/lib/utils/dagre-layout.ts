@@ -18,10 +18,10 @@ interface LayoutOptions {
 
 const DEFAULT_OPTIONS: Required<LayoutOptions> = {
   direction: 'TB',
-  nodeWidth: 180,
-  nodeHeight: 56,
-  rankSep: 80,
-  nodeSep: 40,
+  nodeWidth: 220,
+  nodeHeight: 72,
+  rankSep: 100,
+  nodeSep: 50,
 };
 
 /**

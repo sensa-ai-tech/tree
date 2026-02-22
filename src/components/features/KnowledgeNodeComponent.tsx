@@ -37,18 +37,19 @@ function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
       <Handle
         type="target"
         position={Position.Top}
-        style={{ background: color, width: 6, height: 6, border: 'none' }}
+        style={{ background: color, width: 8, height: 8, border: 'none' }}
       />
 
       {/* 節點本體 */}
       <div
+        className="knowledge-node-body"
         style={{
           background: isHighlighted ? color : `${color}22`,
           border: `2px solid ${color}`,
-          borderRadius: '10px',
-          padding: '8px 14px',
-          minWidth: '120px',
-          maxWidth: '180px',
+          borderRadius: '12px',
+          padding: '12px 18px',
+          minWidth: '160px',
+          maxWidth: '220px',
           textAlign: 'center',
           boxShadow: isHighlighted
             ? `0 2px 12px ${color}44`
@@ -61,16 +62,16 @@ function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
         <div
           style={{
             position: 'absolute',
-            top: -8,
-            right: -6,
+            top: -10,
+            right: -8,
             background: color,
             color: '#fff',
-            fontSize: '9px',
+            fontSize: '11px',
             fontWeight: 700,
-            padding: '1px 5px',
-            borderRadius: '6px',
+            padding: '2px 7px',
+            borderRadius: '8px',
             letterSpacing: '0.5px',
-            lineHeight: '14px',
+            lineHeight: '16px',
           }}
         >
           {LAYER_SHORT[layer] ?? `L${layer}`}
@@ -80,9 +81,9 @@ function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
         <div
           style={{
             color: isHighlighted ? '#ffffff' : '#1f2937',
-            fontSize: '12px',
-            fontWeight: isHighlighted ? 600 : 500,
-            lineHeight: '1.3',
+            fontSize: '14px',
+            fontWeight: isHighlighted ? 700 : 600,
+            lineHeight: '1.4',
             overflowWrap: 'break-word',
             wordBreak: 'break-word',
             whiteSpace: 'normal',
@@ -96,7 +97,7 @@ function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
       <Handle
         type="source"
         position={Position.Bottom}
-        style={{ background: color, width: 6, height: 6, border: 'none' }}
+        style={{ background: color, width: 8, height: 8, border: 'none' }}
       />
     </>
   );

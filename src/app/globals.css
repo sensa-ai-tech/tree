@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 知識圖譜節點 hover 效果 */
+.knowledge-node-body:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 手機端 React Flow 控制按鈕放大（觸控目標 ≥ 44px） */
+@media (max-width: 767px) {
+  .react-flow__controls-button {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* 隱藏水平捲軸（用於 pill 篩選器） */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

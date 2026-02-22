@@ -40,6 +40,10 @@ export default function GraphPage() {
     setFilters({ specialty: value || null });
   }
 
+  function handlePillClick(value: string): void {
+    setFilters({ specialty: value || null });
+  }
+
   const handleNodeClick = useCallback(
     (nodeId: string) => {
       router.push(`/nodes/${nodeId}`);
@@ -48,16 +52,18 @@ export default function GraphPage() {
   );
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
+      {/* 標題 + 桌面版篩選器 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Map className="h-6 w-6 text-indigo-600" />
-          <h1 className="text-2xl font-bold text-gray-900">知識圖譜</h1>
+          <Map className="h-5 w-5 text-indigo-600 md:h-6 md:w-6" />
+          <h1 className="text-xl font-bold text-gray-900 md:text-2xl">知識圖譜</h1>
         </div>
+        {/* 桌面版：下拉選單 */}
         <select
           value={selectedSpecialty}
           onChange={handleSpecialtyChange}
-          className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="hidden rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 md:block"
         >
           {SPECIALTIES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -67,7 +73,26 @@ export default function GraphPage() {
         </select>
       </div>
 
-      <Card className="border-blue-100 bg-blue-50">
+      {/* 手機版：水平捲動 pill 篩選器 */}
+      <div className="scrollbar-hide -mx-1 flex gap-2 overflow-x-auto px-1 pb-1 md:hidden">
+        {SPECIALTIES.map((s) => (
+          <button
+            key={s.value}
+            type="button"
+            onClick={() => handlePillClick(s.value)}
+            className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+              selectedSpecialty === s.value
+                ? 'bg-indigo-600 text-white shadow-sm'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            {s.label}
+          </button>
+        ))}
+      </div>
+
+      {/* 提示卡片：手機隱藏，節省垂直空間 */}
+      <Card className="hidden border-blue-100 bg-blue-50 md:block">
         <CardBody className="flex items-start gap-2">
           <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
           <p className="text-sm text-blue-700">
@@ -89,7 +114,7 @@ export default function GraphPage() {
           nodes={filteredNodes}
           edges={filteredEdges}
           onNodeClick={handleNodeClick}
-          className="h-[calc(100vh-220px)] min-h-[400px]"
+          className="h-[calc(100vh-180px)] min-h-[350px] md:h-[calc(100vh-220px)] md:min-h-[400px]"
         />
       )}
     </div>
