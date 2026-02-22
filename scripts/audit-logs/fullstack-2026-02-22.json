@@ -1,0 +1,265 @@
+{
+  "timestamp": "2026-02-22T15:24:13.108Z",
+  "version": "2.0.0",
+  "dimensions": [
+    {
+      "dimension": "D11: Security Headers",
+      "expert": "🔒 網路安全工程師",
+      "score": 20,
+      "maxScore": 20,
+      "percent": 100,
+      "grade": "A",
+      "checks": [
+        {
+          "name": "CSP Header",
+          "pass": true,
+          "detail": "CSP header configured (middleware)",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "HSTS Header",
+          "pass": true,
+          "detail": "HSTS configured",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "X-Frame-Options",
+          "pass": true,
+          "detail": "X-Frame-Options present",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "X-Content-Type-Options",
+          "pass": true,
+          "detail": "X-Content-Type-Options present",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "Permissions-Policy",
+          "pass": true,
+          "detail": "Permissions-Policy present",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "Mermaid Security Level",
+          "pass": true,
+          "detail": "Mermaid uses strict mode",
+          "points": 3,
+          "maxPoints": 3
+        }
+      ]
+    },
+    {
+      "dimension": "D12: Error Handling",
+      "expert": "🧑‍💻 專案工程師",
+      "score": 20,
+      "maxScore": 20,
+      "percent": 100,
+      "grade": "A",
+      "checks": [
+        {
+          "name": "global-error.tsx",
+          "pass": true,
+          "detail": "Global error boundary exists",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "Root error.tsx",
+          "pass": true,
+          "detail": "Root error boundary exists",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "not-found.tsx",
+          "pass": true,
+          "detail": "Not found page exists",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "Graph error.tsx",
+          "pass": true,
+          "detail": "Graph route error boundary",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "Node detail error.tsx",
+          "pass": true,
+          "detail": "Node detail error boundary",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "Dashboard loading.tsx",
+          "pass": true,
+          "detail": "Dashboard loading state",
+          "points": 2,
+          "maxPoints": 2
+        },
+        {
+          "name": "Graph loading.tsx",
+          "pass": true,
+          "detail": "Graph page loading state",
+          "points": 2,
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "dimension": "D13: Accessibility",
+      "expert": "🎨 UI/UX 設計師",
+      "score": 20,
+      "maxScore": 20,
+      "percent": 100,
+      "grade": "A",
+      "checks": [
+        {
+          "name": "QuizEngine ARIA radiogroup",
+          "pass": true,
+          "detail": "QuizEngine uses radiogroup pattern",
+          "points": 5,
+          "maxPoints": 5
+        },
+        {
+          "name": "QuizEngine keyboard nav",
+          "pass": true,
+          "detail": "Keyboard navigation implemented",
+          "points": 5,
+          "maxPoints": 5
+        },
+        {
+          "name": "Components with ARIA (≥3)",
+          "pass": true,
+          "detail": "6 components have ARIA attributes",
+          "points": 5,
+          "maxPoints": 5
+        },
+        {
+          "name": "Focus ring styles",
+          "pass": true,
+          "detail": "Focus ring styles present",
+          "points": 5,
+          "maxPoints": 5
+        }
+      ]
+    },
+    {
+      "dimension": "D14: SEO",
+      "expert": "👤 使用者代言人",
+      "score": 20,
+      "maxScore": 20,
+      "percent": 100,
+      "grade": "A",
+      "checks": [
+        {
+          "name": "sitemap.ts exists",
+          "pass": true,
+          "detail": "Sitemap configuration exists",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "sitemap includes dynamic nodes",
+          "pass": true,
+          "detail": "Sitemap includes all knowledge nodes",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "robots.ts exists",
+          "pass": true,
+          "detail": "Robots configuration exists",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "robots blocks /api/",
+          "pass": true,
+          "detail": "Robots blocks /api/",
+          "points": 2,
+          "maxPoints": 2
+        },
+        {
+          "name": "metadataBase configured",
+          "pass": true,
+          "detail": "metadataBase set in root layout",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "JSON-LD structured data",
+          "pass": true,
+          "detail": "JSON-LD present",
+          "points": 3,
+          "maxPoints": 3
+        },
+        {
+          "name": "Dynamic node metadata",
+          "pass": true,
+          "detail": "Node pages have dynamic metadata",
+          "points": 2,
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "dimension": "D15: Test Coverage",
+      "expert": "🧪 程式驗證設計師",
+      "score": 20,
+      "maxScore": 20,
+      "percent": 100,
+      "grade": "A",
+      "checks": [
+        {
+          "name": "Unit tests (≥5 files)",
+          "pass": true,
+          "detail": "8 unit test files",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "Integration tests (≥2 files)",
+          "pass": true,
+          "detail": "3 integration test files",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "E2E tests (≥2 files)",
+          "pass": true,
+          "detail": "3 E2E test files",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "Store tests exist",
+          "pass": true,
+          "detail": "Zustand store tests present",
+          "points": 4,
+          "maxPoints": 4
+        },
+        {
+          "name": "Total test files (≥12)",
+          "pass": true,
+          "detail": "Total: 14 test files",
+          "points": 4,
+          "maxPoints": 4
+        }
+      ]
+    }
+  ],
+  "seedScore": 100,
+  "engineeringScore": 100,
+  "totalScore": 200,
+  "totalMax": 200,
+  "overallPercent": 100,
+  "overallGrade": "A"
+}

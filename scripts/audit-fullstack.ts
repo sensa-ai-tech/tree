@@ -115,13 +115,17 @@ function check(name: string, pass: boolean, detail: string, maxPoints: number): 
 
 function auditSecurityHeaders(): DimensionResult {
   const nextConfig = readFileContent('next.config.ts');
+  const middlewareFile = readFileContent('src/middleware.ts');
   const mermaidFile = readFileContent('src/components/features/MermaidRenderer.tsx');
+
+  // CSP can be in next.config.ts OR middleware.ts (Vercel strips CSP from next.config headers)
+  const hasCSP = nextConfig.includes('Content-Security-Policy') || middlewareFile.includes('Content-Security-Policy');
 
   const checks: CheckResult[] = [
     check(
       'CSP Header',
-      nextConfig.includes('Content-Security-Policy'),
-      nextConfig.includes('Content-Security-Policy') ? 'CSP header configured' : 'Missing CSP header',
+      hasCSP,
+      hasCSP ? 'CSP header configured (middleware)' : 'Missing CSP header',
       4
     ),
     check(
