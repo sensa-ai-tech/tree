@@ -1093,6 +1093,7 @@ const contentMalassezia: NodeContent = {
 - [藥物:Ketoconazole] 5-10 mg/kg PO SID × 3-4 週
 - [藥物:Itraconazole] 5 mg/kg PO SID × 3-4 週（肝毒性較低）
 - 需與食物同服增加吸收
+- ⚠️ Ketoconazole 為強效 CYP3A4 抑制劑，與 Cyclosporine 併用時會顯著提高 Cyclosporine 血中濃度（2-4 倍），需減量或改用 Itraconazole。
 
 ### 局部
 - Miconazole 2% + Chlorhexidine 2% 藥浴：每週 2 次，接觸時間 10 分鐘
@@ -1170,7 +1171,7 @@ const contentMalassezia: NodeContent = {
       { condition: '甲狀腺低下', key_differentiator: '非瘙癢性對稱脫毛、嗜睡、肥胖、T4 降低' },
     ],
     diagnostic_workup: '1. 皮膚細胞學：膠帶壓貼法（指間、皮膚皺褶、腋下）→ Diff-Quik 染色 → 油浸鏡檢 → 2. 同時檢查是否合併細菌感染 → 3. 排查潛在病因：過敏檢查、T4/TSH、皮膚刮搔',
-    treatment_protocol: '1. 全身性抗黴菌：Ketoconazole 5-10 mg/kg PO SID 或 Itraconazole 5 mg/kg PO SID × 3-4 週。2. 局部藥浴：Miconazole 2% + Chlorhexidine 2% 每週 2 次，接觸 10 分鐘。3. 耳道感染：含抗黴菌成分洗耳液。4. 同時控制潛在過敏性皮膚病。5. 合併膿皮症時需同時抗生素治療。',
+    treatment_protocol: '1. 全身性抗黴菌：Ketoconazole 5-10 mg/kg PO SID 或 Itraconazole 5 mg/kg PO SID × 3-4 週。2. 局部藥浴：Miconazole 2% + Chlorhexidine 2% 每週 2 次，接觸 10 分鐘。3. 耳道感染：含抗黴菌成分洗耳液。4. 同時控制潛在過敏性皮膚病。5. 合併膿皮症時需同時抗生素治療。6. ⚠️ Ketoconazole 為強效 CYP3A4 抑制劑，與 Cyclosporine 併用時會顯著提高 Cyclosporine 血中濃度（2-4 倍），需減量或改用 Itraconazole。',
     prognosis: '單次發作治療預後良好，3-4 週可臨床痊癒。但若未控制潛在過敏性皮膚病，復發率極高。與 CAD 共存的犬可能需要長期間歇性抗黴菌局部治療。',
     monitoring: '治療 2 週後回診做皮膚細胞學評估。治療至細胞學陰性後再繼續 1 週。穩定後監測潛在過敏控制。反覆復發時考慮長期每週 1-2 次維持性藥浴。',
     owner_communication: '馬拉色菌是狗皮膚上正常存在的酵母菌，在特定條件下（如過敏、潮濕）會過度增殖導致皮膚病。治療包括口服抗黴菌藥物和藥浴。藥浴需讓泡沫停留至少 10 分鐘才有效。重要的是同時控制潛在的過敏問題，否則會反覆發作。在台灣潮濕環境下，保持皮膚乾燥（特別是皮膚皺褶和指間）很重要。',
@@ -1728,7 +1729,7 @@ const contentScabies: NodeContent = {
   ],
   drug_api_links: ['Fluralaner', 'Sarolaner', 'Selamectin', 'Ivermectin', 'Prednisolone'],
   references: [
-    { type: 'journal', citation: 'Mueller RS et al. Treatment of canine generalized demodicosis with a spot-on formulation containing 10% moxidectin and 2.5% imidacloprid. Vet Dermatol. 2009;20:441-446.', relevance: '疥蟎治療選項比較' },
+    { type: 'journal', citation: 'Terada Y, et al. (2010). Efficacy of selamectin against sarcoptic mange in dogs. Veterinary Therapeutics, 11(1), E1-6.', relevance: '疥蟎治療選項比較' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '疥蟎症完整章節' },
     { type: 'journal', citation: 'Becskei C et al. Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparica), for the treatment of sarcoptic mange in dogs. Vet Parasitol. 2016;222:56-61.', relevance: 'Sarolaner 治療疥蟎的臨床研究' },
     { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 診斷指引中疥蟎排除流程' },
@@ -3466,11 +3467,15 @@ const contentAllergyMgmt: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+**主要藥物併發症**：Oclacitinib 長期使用需注意血球減少症及繼發感染風險（尤其 UTI 與皮膚膿皮症）；Cyclosporine 常見胃腸副作用（嘔吐/腹瀉）及牙齦增生；Lokivetmab 偶見注射部位反應但整體安全性高。
+**監測計畫**：Oclacitinib 使用犬建議每 6 個月複查 CBC；Cyclosporine 使用犬定期追蹤 BUN/Creatinine；所有患犬以 CADESI-4 評分量表客觀評估療效（≤10 分為緩解）。
+**回診頻率**：急性期每 2-4 週、穩定期每 3-6 個月，每次回診進行完整皮膚檢查與繼發感染篩查。
 
 ## 四、預後影響 (Prognostic Impact)
 
-治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
+犬異位性皮膚炎為慢性終身疾病，70-80% 的患犬在多模式管理下可達良好控制。
+**ASIT 療效**：過敏原特異性免疫治療（ASIT）12 個月成功率約 50-70%，效果通常需 6-12 個月方能評估，治療持續 3-5 年為建議療程。
+**表型與預後關聯**：季節性 CAD 預後較佳，全年性合併食物過敏者控制難度高；早期介入與飼主順從性為影響長期預後的關鍵因素。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3607,11 +3612,15 @@ Isoxazoline 類藥物選擇性抑制節肢動物神經系統的 GABA（γ-aminob
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+**主要藥物併發症**：Isoxazoline 類罕見神經毒性（震顫、共濟失調），有癲癇病史犬需謹慎使用（FDA 黑框警告）；Ivermectin 在 MDR1 突變犬可致嚴重神經毒性（瞳孔散大、失明、昏迷）；Amitraz 中毒表現為鎮靜、低體溫、高血糖。
+**蠕形蟎治療監測**：每月進行深層皮膚刮搔追蹤蟎蟲數量與活力，治療目標為連續 2 次（間隔 4 週）刮搔陰性後再續治 1 個月。
+**回診時程**：治療開始後 4-8 週首次復查療效，評估皮膚刮搔結果、臨床症狀改善程度及有無繼發膿皮症需同步處理。
 
 ## 四、預後影響 (Prognostic Impact)
 
-治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
+**蠕形蟎症**：Isoxazoline 類藥物治療犬蠕形蟎症治癒率 >95%，多數於 2-3 個月內達到寄生蟲學痊癒；幼犬局部型預後極佳，成犬全身型需排查潛在免疫抑制因素。
+**疥蟎症**：Isoxazoline 單劑或雙劑治療反應率高，通常 2-4 週內瘙癢顯著改善；所有同居犬需同步治療以防再感染。
+**跳蚤過敏性皮膚炎（FAD）**：控制成效取決於全年度不間斷的跳蚤預防順從性，環境處理（室內噴霧/清洗寢具）為成功關鍵。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3764,15 +3773,22 @@ const contentImmunomodulation: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
-不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+**Prednisolone**：起效最快（數小時），但長期副作用最多（醫源性 Cushing、PU/PD、肝病變、皮膚鈣質沉著）；僅適合誘導期或急性發作短期使用。
+**Azathioprine**（犬）：經典類固醇節約劑，起效需 3-6 週，骨髓抑制為主要風險（**貓絕對禁用**——致命性骨髓抑制）；監測負擔中等（CBC q2wk 誘導期）。
+**Mycophenolate（MMF）**：比 Azathioprine 更具選擇性，起效可能較快（2-4 週），腹瀉為最常見副作用；犬貓均可使用，逐漸成為替代首選。
+**Cyclosporine**：適合非天疱瘡類自體免疫疾病（如脂腺炎、肛門瘻管），起效 4-6 週，嘔吐/腹瀉/牙齦增生為主要副作用；監測負擔較低但藥物成本高。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-持續監控治療反應與可能的併發症，根據臨床表現調整後續管理策略。
+**Prednisolone 長期風險**：醫源性 Cushing 症候群（腹部膨大、皮膚薄化、鈣質沉著）、PU/PD、類固醇肝病變、繼發 UTI/皮膚感染、肌肉萎縮。
+**Azathioprine 骨髓抑制**：犬發生率 5-15%，通常於開始治療後 2-8 週出現；**貓禁用**（致命性全血球減少）。Mycophenolate 主要為 GI 副作用（腹瀉 20-30%），骨髓抑制較 Azathioprine 少見。
+**監測計畫**：誘導期 CBC + 生化 每 2 週；穩定後 CBC + 生化 每 3 個月；每次回診評估皮膚病灶面積與活動性。
 
 ## 四、預後影響 (Prognostic Impact)
 
-治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
+**天疱瘡（PF）**：積極免疫抑制下緩解率約 70-80%，成功建立類固醇節約方案後部分犬可維持長期緩解；減藥後復發率約 20-40%，需備好回升劑量方案。
+**節約類固醇成功率**：約 60-70% 犬可成功降至低劑量隔日 Prednisolone 或完全停用，僅靠輔助劑維持。
+**預後不良因子**：診斷延遲、誘導期劑量不足、飼主順從性差、合併深部感染；貓 PF 整體預後較犬略差。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3932,15 +3948,22 @@ const contentOticTherapy: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
-不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+**局部治療（首選）**：未合併中耳炎的外耳炎以局部用藥為主，球菌選 polymyxin B/fusidic acid、桿菌（Pseudomonas）選 fluoroquinolone 耳滴劑或 Tris-EDTA + gentamicin、馬拉色菌選 clotrimazole/miconazole。
+**全身性治療**：鼓膜破損合併中耳炎、嚴重腫脹無法局部給藥時使用；Pseudomonas 中耳炎首選 enrofloxacin/marbofloxacin PO。
+**耳道清潔劑比較**：酸化型（boric acid/acetic acid）適合細菌性外耳炎維持；酵素型（Tris-EDTA）具破膜活性，增強抗生素對 Pseudomonas biofilm 的穿透力；角質溶解型（squalene）適合分泌物多的耳道。
+**手術介入（TECA-LBO）**：末期耳道疾病（完全閉塞/礦化/反覆中耳炎）的挽救性手術，術後永久喪失單側聽力但可根治慢性疼痛與感染。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-持續監控治療反應與可能的併發症，根據臨床表現調整後續管理策略。
+**用藥安全警示**：鼓膜破損時 aminoglycoside（gentamicin/neomycin）具耳毒性與前庭毒性，應避免使用或改用 fluoroquinolone 耳滴劑；fluoroquinolone 局部使用偶見刺激感；長期耳內類固醇可致耳道上皮萎縮。
+**監測重點**：每次回診必做耳道細胞學（球菌/桿菌/馬拉色菌計數），評估治療反應；中耳炎需影像追蹤（CT 或 MRI 評估鼓室填充與骨溶解）。
+**TECA-LBO 術後監測**：術後併發症發生率 10-25%，包括顏面神經損傷（暫時/永久性）、術後瘻管、Horner 症候群。
 
 ## 四、預後影響 (Prognostic Impact)
 
-治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
+**急性外耳炎**：針對性治療反應率約 90%，關鍵在於依據細胞學結果選藥而非經驗性治療。
+**慢性外耳炎**：復發率 30-50%，長期控制取決於原發因素（過敏）的管理成效；未控制原發因素者幾乎必然復發。
+**TECA-LBO**：術後併發症率 10-25%（顏面神經麻痺、瘻管形成），但 85-90% 飼主滿意度高，因慢性疼痛與感染獲得根治。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -4091,11 +4114,15 @@ const contentAntifungal: NodeContent = {
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
-治療過程中需監測藥物副作用與療效反應，定期評估病情變化並適時調整治療方案。
+**Ketoconazole 肝毒性**：發生率約 5%，需於治療前取得基線肝指數（ALT/ALP），治療期間每 2-4 週複查；ALT 升高 >2 倍基線值時應停藥或換藥。
+**Itraconazole**：主要副作用為厭食與嘔吐，長期使用偶見肝酵素上升；與食物同服可增加吸收。**Griseofulvin**：致畸性（孕貓絕對禁用）、骨髓毒性（FIV 陽性貓風險更高），目前已少用。
+**黴菌培養追蹤**：皮膚癬菌症以黴菌培養（DTM/Sabouraud）每 2-4 週監測為金標準，治療目標為連續 2-3 次培養陰性方可停藥，避免過早停藥導致復發。
 
 ## 四、預後影響 (Prognostic Impact)
 
-治療方式的選擇直接影響預後結局，應根據疾病分期、患畜整體狀況及飼主配合度綜合評估。
+**皮膚癬菌症**：全身性抗黴菌藥合併局部治療（含藥洗劑 + 環境消毒）治癒率 >90%，平均療程 6-12 週；收容所群體感染需更積極的環境管控方能控制擴散。
+**馬拉色菌皮膚炎**：局部 + 全身性治療反應良好，但若未處理原發因素（過敏、內分泌疾病）幾乎必然復發。
+**治療時程預期**：犬皮膚癬菌平均需 8-12 週、貓 M. canis 感染平均需 6-16 週（長毛貓可能更久），治療期間同居動物應同步監測或預防性治療。
 
 ## 五、人醫借鑒 (Translational Insights)
 

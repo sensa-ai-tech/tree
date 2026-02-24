@@ -894,7 +894,7 @@ const contentAddisons: NodeContent = {
 | 步驟 | 措施 | 劑量 |
 |------|------|------|
 | 1 | 0.9% NaCl IV 輸液 | 休克劑量 60-90 mL/kg/hr |
-| 2 | [藥物:Dexamethasone] SP IV | 0.5-2 mg/kg（不干擾 cortisol 測量） |
+| 2 | [藥物:Dexamethasone] SP IV | 0.25-0.5 mg/kg（不干擾 cortisol 測量） |
 | 3 | 高鉀急救：10% Calcium gluconate IV | 0.5-1.5 mL/kg 緩慢推注（ECG 監測） |
 | 4 | Regular insulin + Dextrose | 0.1-0.25 U/kg IV + 50% dextrose |
 
@@ -971,7 +971,7 @@ const contentAddisons: NodeContent = {
       { condition: '重複器官疾病（胸水、腹水）', key_differentiator: '低鈉可見於嚴重第三空間流失，但 ACTH stim 正常' },
     ],
     diagnostic_workup: '1. CBC（可見嗜酸性球增多——在壓力反應中不正常升高，以及淋巴球增多）→ 2. 生化（Na/K 比值 < 27、BUN/Cre 升高、低血糖、低白蛋白）→ 3. ECG（高血鉀心電圖變化：peaked T, wide QRS）→ 4. Basal cortisol（< 2 μg/dL 高度提示，> 2 μg/dL 可排除）→ 5. ACTH stimulation test（金標準）：Pre-cortisol + Cosyntropin 5 μg/kg IV → 1 hr Post-cortisol。Pre 和 Post 均 < 2 μg/dL 確診 → 6. 內源性 ACTH 測量（區分原發性 vs 繼發性）',
-    treatment_protocol: '急性危象：0.9% NaCl 快速輸液（80-90 mL/kg/hr 第一小時）→ 高血鉀處理（Calcium gluconate 10% 0.5-1.0 mL/kg slow IV + Regular insulin 0.1-0.25 U/kg IV with Dextrose）→ Dexamethasone SP 0.1-0.2 mg/kg IV（不干擾 ACTH stim test）。長期治療：DOCP (Percorten-V) 2.2 mg/kg IM q25 天（首選鹽皮質素替代）+ Prednisolone 0.1-0.2 mg/kg PO SID（糖皮質素替代）。壓力時劑量加倍（手術、住院、搬家）。替代方案：Fludrocortisone 0.02 mg/kg PO SID-BID（同時提供鹽皮質素和部分糖皮質素活性）。',
+    treatment_protocol: '急性危象：0.9% NaCl 快速輸液（80-90 mL/kg/hr 第一小時）→ 高血鉀處理（Calcium gluconate 10% 0.5-1.0 mL/kg slow IV + Regular insulin 0.1-0.25 U/kg IV with Dextrose）→ Dexamethasone SP 0.25-0.5 mg/kg IV（不干擾 ACTH stim test）。長期治療：DOCP (Percorten-V) 2.2 mg/kg IM q25 天（首選鹽皮質素替代）+ Prednisolone 0.1-0.2 mg/kg PO SID（糖皮質素替代）。壓力時劑量加倍（手術、住院、搬家）。替代方案：Fludrocortisone 0.02 mg/kg PO SID-BID（同時提供鹽皮質素和部分糖皮質素活性）。',
     prognosis: '一旦確診並開始適當替代治療，預後極佳。多數犬可維持正常壽命和良好生活品質。Addisonian crisis 若未及時辨識和處理，死亡率高。醫源性 Addison\'s（Trilostane 導致）預後取決於腎上腺恢復程度——部分犬可自行恢復。',
     monitoring: '確診後第一個月：每 2 週追蹤電解質（Na/K）和腎功能。穩定後：每 3-4 個月追蹤。DOCP 注射前測電解質以調整劑量和間隔。Prednisolone 劑量依臨床症狀調整（使用最低有效劑量）。注意體重、食慾、活動力變化。',
     owner_communication: 'Addison\'s disease 是需要終生治療的疾病，但只要按時用藥，狗狗可以過完全正常的生活。最重要的是不能漏藥。壓力情境（手術、生病、旅行）時需要增加糖皮質素劑量——請事先與醫師討論。隨身攜帶注射用 Dexamethasone 以備急用。定期追蹤電解質確保藥物劑量適當。',
@@ -1145,7 +1145,7 @@ const contentPLE: NodeContent = {
       { condition: '外分泌胰臟機能不全（EPI）', key_differentiator: 'TLI 低、體重減輕但低蛋白血症不如 PLE 顯著' },
     ],
     diagnostic_workup: '1. CBC/生化全套（Albumin、Globulin、Cholesterol、Calcium、淋巴球計數）→ 2. UPC ratio（排除 PLN）→ 3. 膽汁酸（排除肝臟合成不足）→ 4. 腹腔超音波（腸壁厚度、分層、淋巴結、腹水）→ 5. Ionized calcium 測量 → 6. 腸道組織學確診：內視鏡多部位切片 或 全層外科切片（淋巴管擴張需全層切片）→ 7. 免疫組織化學（排除淋巴瘤）→ 8. Cobalamin（Vitamin B12）和 Folate 測量',
-    treatment_protocol: '飲食管理（核心）：淋巴管擴張型需超低脂飲食（脂肪 < 10% DM）+ MCT oil；IBD 型需水解蛋白或新型蛋白飲食。藥物治療（一般照護）：Prednisolone 1-2 mg/kg PO BID 漸減 + Cobalamin（B12）補充 250-1500 μg SC q1wk × 6 → q2wk × 6 → q1mo。專科照護：Chlorambucil 4-6 mg/m² PO q48h（二線免疫抑制），或 Mycophenolate 10 mg/kg PO BID，或 Cyclosporine 5 mg/kg PO BID。併發症管理：Albumin < 1.5 g/dL → Clopidogrel 2 mg/kg PO SID 抗血栓。低 ionized calcium → Calcitriol 20-30 ng/kg/day PO + Calcium carbonate。嚴重低白蛋白 → Fresh frozen plasma 或 human albumin 25%（慎用）。',
+    treatment_protocol: '飲食管理（核心）：淋巴管擴張型需超低脂飲食（脂肪 < 10% DM）+ MCT oil；IBD 型需水解蛋白或新型蛋白飲食。藥物治療（一般照護）：Prednisolone 1-2 mg/kg PO SID（嚴重病例可暫時 BID），8-12 週漸減 + Cobalamin（B12）補充 250-1500 μg SC q1wk × 6 → q2wk × 6 → q1mo。專科照護：Chlorambucil 4-6 mg/m² PO q48h（二線免疫抑制），或 Mycophenolate 10 mg/kg PO BID，或 Cyclosporine 5 mg/kg PO BID。併發症管理：Albumin < 1.5 g/dL → Clopidogrel 2 mg/kg PO SID 抗血栓。低 ionized calcium → Calcitriol 20-30 ng/kg/day PO + Calcium carbonate。嚴重低白蛋白 → Fresh frozen plasma 或 human albumin 25%（慎用）。',
     prognosis: '預後高度取決於潛在病因和治療反應。單純淋巴管擴張：飲食管理反應良好者中位存活 > 2 年。IBD 型 PLE：免疫抑制治療反應良好者預後中等至佳。腸道淋巴瘤型 PLE：預後較差（中位存活 3-6 個月）。不良預後指標：Albumin < 1.0 g/dL、體腔積液、血栓栓塞事件、對治療無反應。',
     monitoring: '確診後每 2-4 週追蹤 Albumin、體重、糞便品質。穩定後每 2-3 個月追蹤。監測 ionized calcium（每月至穩定）。使用免疫抑制劑時監測 CBC（Chlorambucil 骨髓抑制）。Cobalamin 補充後追蹤血清濃度。長期監測體腔積液和血栓徵兆。',
     owner_communication: 'PLE 是需要長期管理的慢性疾病。飲食管理是治療基石——嚴格遵守處方飲食非常重要。不能給高脂零食或餐桌食物。需要定期回診追蹤蛋白指數。部分病患需要長期免疫抑制藥物。當白蛋白很低時有血栓風險，需要使用抗凝血藥物。整體而言，許多犬在適當治療下可維持良好的生活品質。',
@@ -1807,7 +1807,7 @@ const contentIMHA: NodeContent = {
 | [藥物:Prednisolone] | 2 mg/kg/day PO (ACVIM 建議) | 一線基石 | Level I |
 | [藥物:Mycophenolate mofetil] | 10 mg/kg PO BID | 常用二線 | Level II |
 | [藥物:Azathioprine] (僅犬) | 2 mg/kg PO SID→隔日 | 經典二線 | Level II |
-| [藥物:Cyclosporine] | 5 mg/kg PO BID | 難治性替代 | Level III |
+| [藥物:Cyclosporine] | 5 mg/kg PO BID（部分文獻支持最高 10 mg/kg） | 難治性替代 | Level III |
 | Human IV immunoglobulin (hIVIG) | 0.5-1.5 g/kg IV over 6-12h | 急救（Fc blockade） | Level III |
 
 **注意**：ACVIM 2019 建議 Prednisolone 起始 2 mg/kg/day（非更高），以減少副作用和血栓風險。
@@ -1818,7 +1818,7 @@ const contentIMHA: NodeContent = {
 |------|------|------|---------|
 | [藥物:Clopidogrel] | 2 mg/kg PO SID | 抗血小板 | Level II |
 | [藥物:Unfractionated heparin] | 150-300 U/kg SC TID | 急性期 | Level III |
-| Low-molecular-weight heparin | Enoxaparin 0.8 mg/kg SC BID | 替代 UFH | Level III |
+| Low-molecular-weight heparin | Enoxaparin 0.8 mg/kg SC q6h（治療劑量）或 BID（預防劑量） | 替代 UFH | Level III |
 
 **所有 IMHA 犬均應接受抗血栓治療**——ACVIM 強烈建議。
 
@@ -1905,7 +1905,7 @@ const contentIMHA: NodeContent = {
       { condition: '再生性缺鐵性貧血/出血性貧血', key_differentiator: '無球形紅血球、無自凝集、Coombs 陰性；可能有明顯出血灶' },
     ],
     diagnostic_workup: '1. CBC + 血液抹片（PCV、網織紅血球、球形紅血球、schistocytes、nRBC、polychromasia）→ 2. Saline agglutination test（載玻片法）→ 3. 若自凝集陰性：Coombs test → 4. 生化（Total bilirubin、ALT、BUN/Cre）→ 5. 凝血功能（PT/aPTT、Fibrinogen、D-dimer — 排除 DIC）→ 6. 尿液分析（hemoglobinuria、bilirubinuria）→ 7. 排除繼發原因：SNAP 4Dx + Babesia/Mycoplasma PCR + 腹腔超音波（腫瘤、脾臟）+ 胸腔 X 光（腫瘤、PTE）→ 8. 血型和交叉配血（若需輸血）',
-    treatment_protocol: 'Primary care — 免疫抑制一線：Prednisolone 2 mg/kg/day PO 分 BID（急性期可用 Dexamethasone 0.2-0.3 mg/kg IV if vomiting）。抗血栓（所有 IMHA 犬均需）：Clopidogrel 2 mg/kg PO SID。輸血指標：PCV < 12-15% 或有組織缺氧臨床徵象（心跳過速不反應、嗜睡加劇）→ pRBC 10-15 mL/kg IV over 4 hr。Specialty care — 二線免疫抑制（Prednisolone 48-72 hr 反應不佳時加入）：Mycophenolate (MMF) 10 mg/kg PO BID（ACVIM 2019 首選二線）或 Cyclosporine 5-10 mg/kg PO BID 或 Azathioprine 2 mg/kg PO SID × 14 天 → 1 mg/kg q48h（禁用於貓）。抗凝血加強：Enoxaparin 0.8 mg/kg SC q6h 或 UFH 150-300 U/kg SC TID。急性穩定：hIVIG 0.5-1.5 g/kg IV over 6-12 hr（阻斷 Fc receptor）。減量時程：PCV 穩定 > 30% 持續 2 週後開始，Prednisolone 每 2-4 週減 25%，總減量至少 3-6 個月。',
+    treatment_protocol: 'Primary care — 免疫抑制一線：Prednisolone 2 mg/kg/day PO 分 BID（急性期可用 Dexamethasone 0.2-0.3 mg/kg IV if vomiting）。抗血栓（所有 IMHA 犬均需）：Clopidogrel 2 mg/kg PO SID。輸血指標：PCV < 12-15% 或有組織缺氧臨床徵象（心跳過速不反應、嗜睡加劇）→ pRBC 10-15 mL/kg IV over 4 hr。Specialty care — 二線免疫抑制（Prednisolone 48-72 hr 反應不佳時加入）：Mycophenolate (MMF) 10 mg/kg PO BID（ACVIM 2019 首選二線）或 Cyclosporine 5 mg/kg PO BID（部分文獻支持最高 10 mg/kg） 或 Azathioprine 2 mg/kg PO SID × 14 天 → 1 mg/kg q48h（禁用於貓）。抗凝血加強：Enoxaparin 0.8 mg/kg SC q6h 或 UFH 150-300 U/kg SC TID。急性穩定：hIVIG 0.5-1.5 g/kg IV over 6-12 hr（阻斷 Fc receptor）。減量時程：PCV 穩定 > 30% 持續 2 週後開始，Prednisolone 每 2-4 週減 25%，總減量至少 3-6 個月。',
     prognosis: '住院死亡率 30-50%，多發生在前 14 天（血栓栓塞和嚴重貧血為主要死因）。存活過 2 週者長期預後明顯改善。1 年存活率約 60-70%。復發率 15-20%（通常在免疫抑制劑減量時）。不良預後指標：自凝集陽性（比 Coombs-only 更嚴重）、血管內溶血（hemoglobinemia/hemoglobinuria）、極度貧血（PCV < 10%）、DIC、中度至重度血小板減少（Evans syndrome：IMHA + ITP）。',
     monitoring: '住院期間：每 6-12 小時 PCV/TS + 血液抹片。每 24 小時：CBC、Bilirubin、vital signs。輸血後：30 分鐘和 1 小時監測輸血反應。出院後：每週 PCV/TS 直至穩定 > 30%。穩定後：每 2-4 週 CBC + 生化。減量期間：每 2-4 週 PCV 確認穩定。長期：每 3 個月追蹤 CBC。停藥後至少追蹤 6-12 個月（監測復發）。',
     owner_communication: 'IMHA 是一種嚴重的免疫系統疾病。坦白說，即使積極治療，仍有約三成到五成的犬無法存活（主要因為血栓併發症）。但如果能撐過前兩週的危險期，長期預後會好很多。治療需要長期免疫抑制藥物，通常需要 3-6 個月以上才能慢慢減量。藥物不能突然停止。居家需注意牙齦顏色（蒼白或黃染惡化需立即就醫）、呼吸狀況和活動力變化。',
@@ -2215,7 +2215,7 @@ const contentCE: NodeContent = {
 | 第二層 | [藥物:Tylosin] 25 mg/kg PO BID | ARE 替代選項 | Level II |
 | 第三層 | [藥物:Prednisolone] 1-2 mg/kg PO SID → 漸減 | IRE/IBD 確診後 | Level I |
 | 第三層+ | [藥物:Chlorambucil] 4-6 mg/m2 q48h | 類固醇反應不佳 | Level II |
-| 第三層+ | [藥物:Cyclosporine] 5 mg/kg PO SID | 替代免疫抑制 | Level II |
+| 第三層+ | [藥物:Cyclosporine] 5 mg/kg PO SID（難治型可考慮 BID） | 替代免疫抑制 | Level II |
 | 營養 | [藥物:Cobalamin] 補充（B12 低時必須） | 所有 CE | Level I |
 | 新興 | 糞便微生物移植 (FMT) | 難治性 CE | Level III |
 
@@ -2303,7 +2303,7 @@ const contentCE: NodeContent = {
       { condition: 'Addison\'s disease', key_differentiator: '間歇性嘔吐腹瀉但有 Na:K < 27、ACTH stimulation test 可鑑別' },
     ],
     diagnostic_workup: '1. 糞便檢查（浮游法 × 3 + Giardia SNAP/PCR）→ 2. 基礎血檢：CBC/生化/T4（貓）→ 3. 特殊檢測：TLI（排除 EPI）、Cobalamin/Folate、cPLI/fPLI → 4. 尿液分析 → 5. SNAP 4Dx（犬，台灣排除壁蝨媒介疾病）→ 6. 腹腔超音波（腸壁厚度、分層、淋巴結、其他器官）→ 7. 飲食排除試驗 2-4 週 → 8. 若飲食無反應：可嘗試抗生素試驗 2-4 週 → 9. 若仍無反應：上下消化道內視鏡 + 多部位切片（每部位 6-8 個）→ 10. 組織學 WSAVA 分級 + 免疫組織化學（排除淋巴瘤）',
-    treatment_protocol: 'Primary care — 階梯式治療。Step 1 飲食試驗：水解蛋白飲食或新型蛋白飲食，嚴格執行 2-4 週（理想 6-8 週）。所有 CE 犬貓均測 Cobalamin 並補充（若 < 300 ng/L）。Step 2 抗生素試驗（飲食無反應時）：Metronidazole 10-15 mg/kg PO BID × 2-4 週 或 Tylosin 25 mg/kg PO BID × 2-4 週。Step 3 益生菌和腸道支持：Visbiome 或 Fortiflora，效果證據尚不充分但安全。Specialty care — 免疫抑制（IRE/IBD，組織學確診後）：Prednisolone 1-2 mg/kg PO SID（犬）或 1-2 mg/kg PO SID（貓），2-4 週後依反應每 2-4 週減 25%。貓替代：Budesonide 1-3 mg PO SID。二線免疫抑制：Chlorambucil 4-6 mg/m² PO q48h（貓首選二線）+ Azathioprine 1-2 mg/kg PO SID → q48h（犬only）+ Cyclosporine 5 mg/kg PO BID。PLE 合併症：見 PLE 專題（抗血栓、低白蛋白管理）。',
+    treatment_protocol: 'Primary care — 階梯式治療。Step 1 飲食試驗：水解蛋白飲食或新型蛋白飲食，嚴格執行 2-4 週（理想 6-8 週）。所有 CE 犬貓均測 Cobalamin 並補充（若 < 300 ng/L）。Step 2 抗生素試驗（飲食無反應時）：Metronidazole 10-15 mg/kg PO BID × 2-4 週 或 Tylosin 25 mg/kg PO BID × 2-4 週。Step 3 益生菌和腸道支持：Visbiome 或 Fortiflora，效果證據尚不充分但安全。Specialty care — 免疫抑制（IRE/IBD，組織學確診後）：Prednisolone 1-2 mg/kg PO SID（犬）或 1-2 mg/kg PO SID（貓），2-4 週後依反應每 2-4 週減 25%。貓替代：Budesonide 1-3 mg PO SID。二線免疫抑制：Chlorambucil 4-6 mg/m² PO q48h（貓首選二線）+ Azathioprine 1-2 mg/kg PO SID → q48h（犬only）+ Cyclosporine 5 mg/kg PO SID（難治型可考慮 BID）。PLE 合併症：見 PLE 專題（抗血栓、低白蛋白管理）。',
     prognosis: 'FRE（食物反應性）：預後極佳，飲食管理可長期控制。ARE：預後良好，但復發常見。IRE/IBD：CCECAI < 10 且對治療有反應者預後中等至佳。CCECAI ≥ 10、低白蛋白（< 2.0 g/dL）、低 Cobalamin 為不良預後指標。貓小細胞淋巴瘤：Prednisolone + Chlorambucil 中位存活 1.5-2 年以上。整體而言，CE 的預後取決於亞型和治療反應。',
     monitoring: '飲食試驗期間：每 2 週評估臨床症狀、體重、CCECAI 分數。免疫抑制治療：每 2-4 週追蹤 CBC（Azathioprine/Chlorambucil 骨髓毒性）+ Albumin + CCECAI。Cobalamin 補充後 1 個月追蹤血清濃度。穩定後每 3 個月追蹤。貓 IRE：每 3-6 個月追蹤超音波（監測淋巴結和腸壁變化，排除淋巴瘤進展）。',
     owner_communication: '慢性腸病是一組需要系統性診斷和長期管理的疾病。好消息是超過一半的犬只需要換飲食就能控制。飲食試驗期間的嚴格配合是成功的關鍵——這段時間只能吃處方飲食，不能給任何零食或其他食物。如果飲食和簡單藥物無效，我們需要進一步做內視鏡檢查確認診斷。部分犬貓需要長期免疫抑制藥物，但多數可以控制到很好的生活品質。定期回診追蹤是長期管理的基石。',

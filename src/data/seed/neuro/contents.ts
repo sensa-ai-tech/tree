@@ -84,7 +84,7 @@ const contentEpilepsy: NodeContent = {
 |------|------|------|--------|
 | Phenobarbital (PB) | 2-5 mg/kg PO BID | GABA-A 受體促效 | 鎮靜、多飲多食、肝毒性 |
 | Potassium Bromide (KBr) | 20-30 mg/kg PO SID | Cl⁻ 通道穩定 | 腸胃不適、後肢無力、嗜睡 |
-| Levetiracetam (LEV) | 20 mg/kg PO TID | SV2A 蛋白結合 | 鎮靜（通常輕微且暫時） |
+| Levetiracetam (LEV) | 20-60 mg/kg PO TID | SV2A 蛋白結合 | 鎮靜（通常輕微且暫時） |
 | Zonisamide (ZNS) | 5-10 mg/kg PO BID | Na⁺/Ca²⁺ 通道阻斷 | 鎮靜、食慾下降、少見肝毒性 |
 
 ## 四、併發症與監控 (Complications & Monitoring)
@@ -3087,7 +3087,7 @@ const contentNeuroRehab: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
-不同治療方式各有其適應症與限制，應根據個案情況選擇最適合的治療方案。
+比較水療(浮力減重) vs 陸上運動(本體感覺訓練) vs 電刺激(NMES肌肉再教育) — 適應症依神經損傷類型而異：IVDD 術後首選水療，DM 首選步態訓練，ACP 首選被動 ROM + 站立訓練。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 

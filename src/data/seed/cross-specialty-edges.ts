@@ -368,4 +368,246 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: false,
     unlock_condition: null,
   },
+
+  // ─── Phase 3 DDx 強化：專家審查後新增跨科邊 (20 條) ───
+
+  // DERM ↔ NEURO（慢性外耳炎 → 前庭症候群）
+  {
+    id: 'CROSS-DERM-NEURO-001',
+    source_node_id: 'DERM-L3-007',   // 外耳炎
+    target_node_id: 'NEURO-L3-004',  // 前庭症候群
+    relation_type: 'complication',
+    weight: 0.8,
+    description: '慢性外耳炎可進展為中耳炎/內耳炎，導致周邊前庭症候群',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ONCO ↔ CARDIO（HSA → 心包積液）
+  {
+    id: 'CROSS-ONCO-CARDIO-001',
+    source_node_id: 'ONCO-L3-004',   // HSA
+    target_node_id: 'CARDIO-L3-004', // 心包積液
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '右心耳 HSA 為犬心包積液最常見的腫瘤性病因（~60%）',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // ONCO ↔ ECC（HSA 血腹 → 急診穩定）
+  {
+    id: 'CROSS-ONCO-ECC-001',
+    source_node_id: 'ONCO-L3-004',   // HSA
+    target_node_id: 'ECC-L1-001',    // 休克
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: 'HSA 腹腔破裂導致急性血腹，需急診休克復甦',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM ↔ ECC（Addison 危象 → 急診處置）
+  {
+    id: 'CROSS-IM-ECC-003',
+    source_node_id: 'IM-L3-011',     // Addison's
+    target_node_id: 'ECC-L1-001',    // 休克
+    relation_type: 'complication',
+    weight: 0.9,
+    description: 'Addison 危象表現為低血容量性休克（低鈉高鉀），需急診輸液與糖皮質素',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM ↔ ONCO（IMHA 繼發於淋巴瘤/HSA）
+  {
+    id: 'CROSS-IM-ONCO-001',
+    source_node_id: 'IM-L3-005',     // IMHA
+    target_node_id: 'ONCO-L3-001',   // 淋巴瘤
+    relation_type: 'complication',
+    weight: 0.7,
+    description: '淋巴瘤/HSA 可觸發繼發性 IMHA，需排查腫瘤病因',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // NEURO ↔ ONCO（focal MUO vs 腦瘤）
+  {
+    id: 'CROSS-NEURO-ONCO-001',
+    source_node_id: 'NEURO-L3-003',  // GME/MUO
+    target_node_id: 'ONCO-L2-001',   // 腫瘤生物學
+    relation_type: 'differential',
+    weight: 0.8,
+    description: '局灶型 MUO 在 MRI 上可模擬腦腫瘤，需 CSF 與進階影像鑑別',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // NEURO ↔ IM（甲低神經病 → 前庭/顏面神經）
+  {
+    id: 'CROSS-NEURO-IM-001',
+    source_node_id: 'NEURO-L3-004',  // 前庭症候群
+    target_node_id: 'IM-L3-002',     // 甲低
+    relation_type: 'differential',
+    weight: 0.7,
+    description: '甲低可導致前庭神經炎/顏面神經麻痺，需列入周邊前庭 DDx',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // NEURO ↔ IM（MG → 巨食道）
+  {
+    id: 'CROSS-NEURO-IM-002',
+    source_node_id: 'NEURO-L3-006',  // MG
+    target_node_id: 'IM-L3-007',     // CE/IBD (GI tract)
+    relation_type: 'complication',
+    weight: 0.8,
+    description: 'MG 局灶型常導致巨食道症，吸入性肺炎為主要死因',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // SURG ↔ ECC（GDV 術後心律不整）
+  {
+    id: 'CROSS-SURG-CARDIO-001',
+    source_node_id: 'SURG-L3-001',   // GDV
+    target_node_id: 'CARDIO-L2-003', // 心律不整
+    relation_type: 'complication',
+    weight: 0.9,
+    description: 'GDV 術後 24-72 小時常發生心室早期收縮（VPCs），需 Lidocaine 處置',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // SURG ↔ ECC（子宮蓄膿 → 敗血症）
+  {
+    id: 'CROSS-SURG-ECC-003',
+    source_node_id: 'SURG-L3-009',   // 子宮蓄膿
+    target_node_id: 'ECC-L2-001',    // SIRS/敗血症
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '閉鎖型子宮蓄膿可導致敗血症/SIRS，E. coli 內毒素損傷腎臟',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ONCO ↔ SURG（OSA → 病理性骨折）
+  {
+    id: 'CROSS-ONCO-SURG-005',
+    source_node_id: 'ONCO-L3-003',   // OSA
+    target_node_id: 'SURG-L3-007',   // 骨折
+    relation_type: 'differential',
+    weight: 0.8,
+    description: '骨肉瘤可導致病理性骨折，成年大型犬長骨骨折需排除腫瘤',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // ONCO ↔ CPATH（淋巴瘤 → 流式細胞術免疫分型）
+  {
+    id: 'CROSS-ONCO-CPATH-002',
+    source_node_id: 'ONCO-L3-001',   // 淋巴瘤
+    target_node_id: 'CPATH-L4-003',  // 細胞學
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '淋巴瘤需流式細胞術或 IHC 進行 B/T cell 免疫分型以決定化療方案',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM ↔ CPATH（壁蝨病 → CBC 血小板減少）
+  {
+    id: 'CROSS-IM-CPATH-001',
+    source_node_id: 'IM-L3-010',     // Ehrlichia/Babesia
+    target_node_id: 'CPATH-L4-001',  // CBC
+    relation_type: 'clinical_apply',
+    weight: 0.8,
+    description: '壁蝨媒介疾病常以 CBC 異常首先被發現（血小板減少、全血球減少）',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // IM ↔ IM (Cushing → DM co-morbidity) — internal IM cross-disease edge
+  {
+    id: 'CROSS-IM-IM-001',
+    source_node_id: 'IM-L3-001',     // Cushing's
+    target_node_id: 'IM-L3-006',     // DM
+    relation_type: 'complication',
+    weight: 0.8,
+    description: 'Cushing 胰島素拮抗導致繼發性糖尿病（~10% 共病率），需同時監控兩病',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // IM ↔ IM (Pancreatitis → DM trigger)
+  {
+    id: 'CROSS-IM-IM-002',
+    source_node_id: 'IM-L3-008',     // 胰臟炎
+    target_node_id: 'IM-L3-006',     // DM
+    relation_type: 'complication',
+    weight: 0.8,
+    description: '慢性胰臟炎破壞胰島β細胞可導致糖尿病，犬尤其常見',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // CARDIO ↔ IM（心絲蟲 → 腎絲球病）
+  {
+    id: 'CROSS-CARDIO-IM-005',
+    source_node_id: 'CARDIO-L3-005', // 心絲蟲
+    target_node_id: 'IM-L3-004',     // CKD
+    relation_type: 'complication',
+    weight: 0.7,
+    description: '心絲蟲免疫複合物可導致腎絲球腎炎，進展為蛋白尿與 CKD',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ECC ↔ IM（熱射病 → DIC）
+  {
+    id: 'CROSS-ECC-IM-001',
+    source_node_id: 'ECC-L3-003',    // 熱射病
+    target_node_id: 'ECC-L2-001',    // SIRS/DIC
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '重度熱射病常繼發 DIC，死亡率顯著上升',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // DERM ↔ CPATH（皮膚膿皮症 → 細胞學判讀）
+  {
+    id: 'CROSS-DERM-CPATH-002',
+    source_node_id: 'DERM-L3-005',   // 膿皮症
+    target_node_id: 'CPATH-L4-012',  // 皮膚細胞學與刮搔判讀
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '膿皮症每次回診須做皮膚細胞學評估感染菌種與治療反應',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // SURG ↔ ONCO（脾臟腫瘤 FNA 爭議）
+  {
+    id: 'CROSS-SURG-CPATH-002',
+    source_node_id: 'SURG-L3-002',   // 脾臟腫瘤
+    target_node_id: 'CPATH-L4-003',  // 細胞學
+    relation_type: 'clinical_apply',
+    weight: 0.7,
+    description: '脾臟腫塊術前 FNA 細胞學可協助區分良性與惡性，但存在假陰性風險',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM ↔ ECC（PLE → 血栓風險）
+  {
+    id: 'CROSS-IM-ECC-004',
+    source_node_id: 'IM-L3-012',     // PLE
+    target_node_id: 'ECC-L2-003',    // 凝血病變
+    relation_type: 'complication',
+    weight: 0.8,
+    description: 'PLE 低白蛋白致 AT-III 流失，血栓栓塞風險顯著增加（肺栓塞/門脈血栓）',
+    bidirectional: false,
+    unlock_condition: null,
+  },
 ];
