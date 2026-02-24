@@ -70,9 +70,7 @@ export function Sidebar({ className, onClose }: SidebarProps) {
       {/* Navigation */}
       <nav className="flex-1 space-y-1 px-2 overflow-y-auto">
         {visibleItems.map((item) => {
-          const isActive = item.href === '/'
-            ? pathname === '/'
-            : pathname.startsWith(item.href);
+          const isActive = pathname === item.href || (item.href !== '/home' && pathname.startsWith(item.href));
           return (
             <Link
               key={item.href}

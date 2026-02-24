@@ -47,9 +47,9 @@ function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
           background: isHighlighted ? color : `${color}22`,
           border: `2px solid ${color}`,
           borderRadius: '12px',
-          padding: '12px 18px',
-          minWidth: '160px',
-          maxWidth: '220px',
+          padding: '14px 20px',
+          minWidth: '180px',
+          maxWidth: '260px',
           textAlign: 'center',
           boxShadow: isHighlighted
             ? `0 2px 12px ${color}44`
@@ -81,7 +81,7 @@ function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
         <div
           style={{
             color: isHighlighted ? '#ffffff' : '#1f2937',
-            fontSize: '14px',
+            fontSize: '15px',
             fontWeight: isHighlighted ? 700 : 600,
             lineHeight: '1.4',
             overflowWrap: 'break-word',

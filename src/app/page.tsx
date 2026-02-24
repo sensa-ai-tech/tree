@@ -35,7 +35,7 @@ export default function HomePage() {
   useEffect(() => {
     if (_hasHydrated && user) {
       setRedirecting(true);
-      router.replace('/graph');
+      router.replace('/home');
     }
   }, [user, _hasHydrated, router]);
 

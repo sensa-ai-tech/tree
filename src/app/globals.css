@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
@@ -46,4 +47,28 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Prose 表格響應式捲動 */
+.prose table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* 手機端表格字體調整 */
+@media (max-width: 767px) {
+  .prose table {
+    font-size: 0.8125rem;
+  }
+}
+
+/* 隱藏 React Flow 浮水印 (已購買 Pro 授權替代方案：attribution 設為 bottom-left) */
+.react-flow__attribution {
+  opacity: 0.3;
+  font-size: 9px;
+}
+
+/* 平滑捲動（TOC 錨點跳轉） */
+html {
+  scroll-behavior: smooth;
 }

@@ -143,10 +143,10 @@ export function KnowledgeGraph({
 
     const { nodes: ln, edges: le } = getLayoutedElements(rawNodes, rawEdges, {
       direction: 'TB',
-      nodeWidth: 220,
-      nodeHeight: 72,
-      rankSep: 100,
-      nodeSep: 50,
+      nodeWidth: 260,
+      nodeHeight: 80,
+      rankSep: 120,
+      nodeSep: 60,
     });
 
     return { layoutedNodes: ln, layoutedEdges: le };
@@ -162,7 +162,7 @@ export function KnowledgeGraph({
   // Loading state
   if (isLoading) {
     return (
-      <div className={cn('space-y-4', className)}>
+      <div aria-busy="true" aria-label="知識圖譜載入中" className={cn('space-y-4', className)}>
         <Skeleton variant="rectangular" height={400} />
       </div>
     );
@@ -208,6 +208,8 @@ export function KnowledgeGraph({
 
   return (
     <div
+      role="region"
+      aria-label="知識圖譜 — 點擊節點查看詳情"
       className={cn(
         'h-[500px] w-full rounded-xl border border-gray-200 bg-white',
         className

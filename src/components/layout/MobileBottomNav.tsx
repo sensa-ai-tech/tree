@@ -17,9 +17,7 @@ export function MobileBottomNav() {
     <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white md:hidden">
       <div className="flex items-center justify-around">
         {MOBILE_NAV_ITEMS.map((item) => {
-          const isActive = item.href === '/'
-            ? pathname === '/'
-            : pathname.startsWith(item.href);
+          const isActive = pathname === item.href || (item.href !== '/home' && pathname.startsWith(item.href));
           return (
             <Link
               key={item.href}

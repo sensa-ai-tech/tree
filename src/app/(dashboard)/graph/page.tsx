@@ -1,15 +1,15 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
-import { Map, Info } from 'lucide-react';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Map, Info, X, ArrowLeft } from 'lucide-react';
 import { Card, CardBody } from '@/components/ui/Card';
 import { GraphSkeleton } from '@/components/ui/Skeleton';
 import { KnowledgeGraph } from '@/components/features/KnowledgeGraph';
+import { SpecialtyGrid } from '@/components/features/SpecialtyGrid';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 
 const SPECIALTIES = [
-  { value: '', label: '全部專科' },
   { value: 'CARDIO', label: '心臟科' },
   { value: 'IM', label: '內科' },
   { value: 'DERM', label: '皮膚科' },
@@ -23,25 +23,41 @@ const SPECIALTIES = [
 export default function GraphPage() {
   const { nodes, edges, filters, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
-  // 直接從 Zustand store 讀取 specialty，避免雙重狀態
+  // 從 URL query param 初始化專科篩選（供 /home 專科卡片連結使用）
+  useEffect(() => {
+    const urlSpecialty = searchParams.get('specialty');
+    if (urlSpecialty && urlSpecialty !== filters.specialty) {
+      setFilters({ specialty: urlSpecialty });
+    }
+  }, [searchParams, setFilters, filters.specialty]);
+
   const selectedSpecialty = filters.specialty ?? '';
 
+  // 計算各專科節點數
+  const nodeCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const node of nodes) {
+      counts[node.specialty] = (counts[node.specialty] ?? 0) + 1;
+    }
+    return counts;
+  }, [nodes]);
+
   // 根據篩選條件過濾 nodes 和 edges
-  const filteredNodes = useMemo(() => getFilteredNodes(), [getFilteredNodes, nodes, filters.specialty]);
+  const filteredNodes = useMemo(() => getFilteredNodes(), [getFilteredNodes, nodes, filters.specialty, filters.search]);
   const filteredNodeIds = useMemo(() => new Set(filteredNodes.map((n) => n.id)), [filteredNodes]);
   const filteredEdges = useMemo(
     () => edges.filter((e) => filteredNodeIds.has(e.source_node_id) && filteredNodeIds.has(e.target_node_id)),
     [edges, filteredNodeIds]
   );
 
-  function handleSpecialtyChange(e: React.ChangeEvent<HTMLSelectElement>): void {
-    const value = e.target.value;
+  function handleSpecialtySelect(value: string): void {
     setFilters({ specialty: value || null });
   }
 
-  function handlePillClick(value: string): void {
-    setFilters({ specialty: value || null });
+  function handleClearSpecialty(): void {
+    setFilters({ specialty: null, search: '' });
   }
 
   const handleNodeClick = useCallback(
@@ -51,71 +67,129 @@ export default function GraphPage() {
     [router]
   );
 
+  // 目前選中專科的中文名稱
+  const selectedSpecLabel = SPECIALTIES.find((s) => s.value === selectedSpecialty)?.label ?? '';
+
   return (
     <div className="space-y-4 md:space-y-6">
-      {/* 標題 + 桌面版篩選器 */}
+      {/* 標題列 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Map className="h-5 w-5 text-indigo-600 md:h-6 md:w-6" />
           <h1 className="text-xl font-bold text-gray-900 md:text-2xl">知識圖譜</h1>
         </div>
-        {/* 桌面版：下拉選單 */}
-        <select
-          value={selectedSpecialty}
-          onChange={handleSpecialtyChange}
-          className="hidden rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 md:block"
-        >
-          {SPECIALTIES.map((s) => (
-            <option key={s.value} value={s.value}>
-              {s.label}
-            </option>
-          ))}
-        </select>
       </div>
-
-      {/* 手機版：水平捲動 pill 篩選器 */}
-      <div className="scrollbar-hide -mx-1 flex gap-2 overflow-x-auto px-1 pb-1 md:hidden">
-        {SPECIALTIES.map((s) => (
-          <button
-            key={s.value}
-            type="button"
-            onClick={() => handlePillClick(s.value)}
-            className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
-              selectedSpecialty === s.value
-                ? 'bg-indigo-600 text-white shadow-sm'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
-          >
-            {s.label}
-          </button>
-        ))}
-      </div>
-
-      {/* 提示卡片：手機隱藏，節省垂直空間 */}
-      <Card className="hidden border-blue-100 bg-blue-50 md:block">
-        <CardBody className="flex items-start gap-2">
-          <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
-          <p className="text-sm text-blue-700">
-            知識圖譜以互動方式展現各知識節點間的關聯。點選節點可檢視詳細內容，拖拉可移動視圖。
-          </p>
-        </CardBody>
-      </Card>
 
       {isLoading ? (
         <GraphSkeleton />
-      ) : filteredNodes.length === 0 ? (
-        <div className="flex h-96 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
-          <p className="text-gray-500">
-            {selectedSpecialty ? '此專科尚無知識節點資料。' : '尚無知識節點資料，請先由管理員匯入內容。'}
-          </p>
-        </div>
-      ) : (
-        <KnowledgeGraph
-          nodes={filteredNodes}
-          edges={filteredEdges}
-          onNodeClick={handleNodeClick}
-          className="h-[calc(100vh-180px)] min-h-[350px] md:h-[calc(100vh-220px)] md:min-h-[400px]"
+      ) : !selectedSpecialty && !filters.search ? (
+        /* ===== 未選專科：顯示專科選擇卡片 ===== */
+        <SpecialtyGrid
+          nodeCounts={nodeCounts}
+          onSelect={handleSpecialtySelect}
         />
+      ) : (
+        /* ===== 已選專科：顯示該專科圖譜 ===== */
+        <>
+          {/* 專科切換列 */}
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            {/* 左側：返回 + 當前專科 */}
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handleClearSpecialty}
+                className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span className="hidden sm:inline">所有專科</span>
+              </button>
+              <span className="text-gray-300">/</span>
+              <span className="text-base font-bold text-indigo-700">
+                {selectedSpecLabel || '搜尋結果'}
+              </span>
+              <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-medium text-indigo-600">
+                {filteredNodes.length} 節點
+              </span>
+            </div>
+
+            {/* 右側：專科快速切換 pill */}
+            <div className="scrollbar-hide -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1">
+              {SPECIALTIES.map((s) => {
+                const isActive = selectedSpecialty === s.value;
+                const count = nodeCounts[s.value] ?? 0;
+                return (
+                  <button
+                    key={s.value}
+                    type="button"
+                    onClick={() => handleSpecialtySelect(s.value)}
+                    className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
+                      isActive
+                        ? 'bg-indigo-600 text-white shadow-sm ring-2 ring-indigo-300'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
+                    {s.label}
+                    <span className={`ml-1 ${isActive ? 'text-indigo-200' : 'text-gray-400'}`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 搜尋清除提示 */}
+          {filters.search && (
+            <div className="flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+              <p className="text-sm text-amber-700">
+                搜尋「<strong>{filters.search}</strong>」的結果
+              </p>
+              <button
+                type="button"
+                onClick={() => setFilters({ search: '' })}
+                className="ml-auto rounded-full p-1 text-amber-500 hover:bg-amber-100"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          )}
+
+          {/* 提示卡片 */}
+          <Card className="hidden border-blue-100 bg-blue-50 md:block">
+            <CardBody className="flex items-start gap-2">
+              <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
+              <p className="text-sm text-blue-700">
+                點選節點查看詳細內容。拖拉可移動視圖，滾輪可縮放。
+              </p>
+            </CardBody>
+          </Card>
+
+          {filteredNodes.length === 0 ? (
+            <div className="flex h-96 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
+              <div className="text-center">
+                <p className="text-gray-500">
+                  {filters.search ? `找不到符合「${filters.search}」的節點` : '此專科尚無知識節點資料。'}
+                </p>
+                {filters.search && (
+                  <button
+                    type="button"
+                    onClick={() => setFilters({ search: '' })}
+                    className="mt-2 text-sm text-indigo-600 hover:underline"
+                  >
+                    清除搜尋
+                  </button>
+                )}
+              </div>
+            </div>
+          ) : (
+            <KnowledgeGraph
+              nodes={filteredNodes}
+              edges={filteredEdges}
+              onNodeClick={handleNodeClick}
+              className="h-[calc(100vh-260px)] min-h-[350px] md:h-[calc(100vh-280px)] md:min-h-[400px]"
+            />
+          )}
+        </>
       )}
     </div>
   );

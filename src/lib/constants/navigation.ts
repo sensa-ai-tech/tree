@@ -23,7 +23,7 @@ export interface NavItem {
  * icon 儲存元件參考，各消費端自行 createElement 指定 className。
  */
 export const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: '首頁', icon: Home },
+  { href: '/home', label: '首頁', icon: Home },
   { href: '/graph', label: '知識圖譜', icon: Map },
   { href: '/paths', label: '學習路徑', icon: Route },
   { href: '/review', label: '每日複習', icon: RotateCcw },
