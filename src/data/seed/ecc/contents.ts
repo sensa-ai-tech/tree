@@ -95,18 +95,19 @@ CPR 併發症包括：肋骨骨折（尤其小型犬/貓）、氣胸（胸外按
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 目標導向體液治療（GDFT） | 犬休克復甦的個人化輸液策略 | 人醫 GDFT 已改變實踐，獸醫引入中 |
-| 高流量鼻導管氧氣（HFNC） | 犬呼吸窘迫的非侵入性氧氣支持 | 人醫廣泛使用，獸醫經驗增加 |
-| 抗蛇毒血清精製化 | 台灣特有蛇種抗毒血清改進 | 疾管署持續更新，F(ab')2 製劑研究中 |
-| 脂質乳劑療法（ILE/Intralipid） | 犬局部麻醉劑/脂溶性毒物中毒的解毒 | 獸醫急診已廣泛採用 |
+| 機械式胸外按壓裝置（LUCAS/AutoPulse） | 減少按壓者疲勞，維持一致的按壓品質 | 人醫已廣泛使用，獸醫因體型差異大尚無商用產品 |
+| 體外心肺復甦（ECPR/ECMO） | 對傳統 CPR 無反應的病例提供體外循環支持 | 人醫心臟停止的 ECPR 存活率可達 30%，獸醫僅少數教學醫院報告 |
+| 目標體溫管理（TTM，32-36°C） | ROSC 後神經保護性低體溫治療 | 人醫 TTM 已列入 AHA 指引，獸醫犬 ROSC 後低體溫研究極有限 |
+| Point-of-care 超音波（POCUS）導向 CPR | CPR 期間即時超音波評估心臟活動與可逆因子（4H4T） | 人醫急診已整合 POCUS 至 CPR 流程，獸醫 RECOVER 2024 開始推薦 |
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬休克的晶體液 vs 膠體液選擇 | 人醫大型 RCT 不支持膠體液優勢，獸醫 HES 安全性疑慮增加 | Level I |
-| 犬急性疼痛管理——Opioid 劑量個體化 | 犬對 opioid 反應個體差異大，固定劑量方案不一定適合所有病患 | Level III |
-| 犬 DKA 的 insulin CRI protocol（0.05 vs 0.1 U/kg/h） | 低劑量方案減少低血糖風險但血糖控制速度較慢 | Level III |`,
+| 高劑量 Epinephrine（0.1 mg/kg）vs 標準劑量（0.01 mg/kg） | 高劑量短期可提高 ROSC 率但無證據改善神經學預後，RECOVER 不推薦常規使用 | Level II |
+| Vasopressin（0.8 U/kg）替代或合併 Epinephrine | 人醫 AHA 2020 已移除推薦，獸醫證據有限但部分中心仍使用 | Level III |
+| 開胸式 CPR（Open-chest CPR）的適應症 | 胸腔穿透傷、大型犬胸外按壓無效時可考慮，但需外科即時能力，決策困難 | Level IV |
+| ROSC 後最佳神經保護策略 | 獸醫 ROSC 後照護缺乏標準化指引，目標體溫管理、血壓目標等尚需更多研究 | Level IV |`,
   clinical_pearl: '胸外按壓品質是 CPR 成功最關鍵的因素。按壓者每 2 分鐘必須輪換——研究顯示即使自覺尚可，按壓品質在 2 分鐘後即顯著下降。ETCO2 是唯一可即時反映按壓品質的客觀指標，務必在 CPR 期間持續監測。',
   common_mistakes: [
     '按壓速率過慢或中斷時間過長（hands-off time 應 < 10 秒）',
@@ -506,6 +507,7 @@ const contentAnaphylaxis: NodeContent = {
       { condition: '氣喘急性發作（貓）', key_differentiator: '慢性病史，無過敏原急性暴露，無全身性血管症狀' },
       { condition: '急性胰臟炎', key_differentiator: '嘔吐腹痛但無低血壓/蕁麻疹，cPLI 升高' },
       { condition: '腸扭轉/GDV', key_differentiator: '腹部膨脹、非生產性嘔吐，X 光可確認' },
+      { condition: '肥大細胞腫瘤脫顆粒（MCT degranulation）', key_differentiator: '已知或未知皮膚 MCT 病灶，腫瘤操作後引發組織胺大量釋放，低血壓伴 GI 症狀，病史與腫瘤觸診可鑑別' },
     ],
     diagnostic_workup: '1. ABCDE 初級評估 → 2. 建立 IV 通路與血壓監測 → 3. 快速問診（暴露史）→ 4. 基礎血檢（PCV/TP、血糖、電解質）→ 5. 血氣分析 → 6. ECG → 7. 穩定後：CBC/生化/凝血功能評估 DIC 風險',
     treatment_protocol: '【Primary care — 穩定/初步處置】Epinephrine 0.01 mg/kg IM 為第一線，同時建立 IV 通路快速晶體液復甦（犬 20-30 mL/kg bolus），氧氣支持。穩定後給予 Diphenhydramine 1-2 mg/kg IM + Famotidine 0.5-1 mg/kg IV + Dexamethasone SP 0.1-0.2 mg/kg IV。【Specialty care — ICU 管理】持續血壓監測與升壓劑支持（Dopamine 5-10 mcg/kg/min 或 Norepinephrine 0.1-1 mcg/kg/min CRI），連續 ECG 監測，監測凝血功能與 DIC 指標，24-48 小時觀察二相性反應。貓：加 Terbutaline 0.01 mg/kg SC 解除支氣管痙攣。',
@@ -840,6 +842,7 @@ const contentHeatStroke: NodeContent = {
       { condition: '發燒（感染性）', key_differentiator: '體溫較少超過 41 C，有感染灶，對退燒藥有反應（中暑對 NSAIDs 無效）' },
       { condition: '癲癇重積導致高體溫', key_differentiator: '先有癲癇再體溫上升（vs 中暑先高溫再 CNS 症狀），有癲癇病史' },
       { condition: '惡性高熱', key_differentiator: '麻醉中發生，與揮發性麻醉劑相關，肌肉僵直明顯' },
+      { condition: '藥物性高體溫', key_differentiator: '近期藥物使用史（Serotonin syndrome: Tramadol+SSRIs、Metaldehyde 中毒、Amphetamine），藥物特異性徵象可鑑別' },
     ],
     diagnostic_workup: '1. 肛溫測量 → 2. ABCDE + 同時開始降溫 → 3. 建立 IV，採血：CBC、生化全套、凝血功能（PT/aPTT/fibrinogen/D-dimer）、血氣/電解質 → 4. 尿液分析（肌球蛋白尿、管型）→ 5. ECG → 6. 4-6 小時後重複凝血功能與腎/肝指數',
     treatment_protocol: '【Primary care — 穩定/初步處置】立即積極降溫：室溫水淋全身 + 風扇吹拂，降至 39.5 C 停止。建立 IV，晶體液 20-30 mL/kg bolus 評估灌流。採血送檢。GI 保護。轉診至可提供 ICU 監測的醫院。飼主在家先淋水極為重要。【Specialty care — ICU 管理】持續體溫、血壓、尿量監測。凝血功能 q4-6h 追蹤，DIC 給予 FFP 10-15 mL/kg。AKI 管理（輸液支持、利尿劑挑戰）。癲癇控制。48-72 小時密集監測。呼吸支持（ARDS 需正壓通氣）。',

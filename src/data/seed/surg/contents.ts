@@ -75,6 +75,9 @@ GDV 的核心病理包括三個層面：
 
 胃擴張扭轉的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
 
+### 術後促動力藥物
+術後胃排空延遲常見，可考慮 [藥物:Metoclopramide] 1-2 mg/kg/day CRI 或 0.2-0.5 mg/kg SC TID 促進胃排空（**注意：僅限胃已成功 derotation 且無機械性阻塞後使用，GDV 未減壓前禁用**）。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
@@ -144,6 +147,7 @@ GDV 的核心病理包括三個層面：
       { condition: '脾臟扭轉', key_differentiator: '腹部超音波可見脾臟腫大與血流異常，X 光無典型 GDV 徵象' },
       { condition: '腸道異物或腸套疊', key_differentiator: '嘔吐通常為生產性（可嘔出），腹部 X 光可見異物或腸阻塞影像' },
       { condition: '腹腔出血（如脾臟 HSA 破裂）', key_differentiator: '腹部膨脹但無鼓音，AFAST 可見腹腔積液，PCV/TS 下降' },
+      { condition: '腸繫膜扭轉（Mesenteric volvulus）', key_differentiator: '急性腹痛伴血性腹瀉、快速休克，X 光可見小腸瀰漫性擴張但無典型胃「雙氣泡」徵象，超音波見腸壁水腫與腸繫膜血流異常' },
     ],
     diagnostic_workup: '1. 立即靜脈留置與輸液 → 2. 右側臥位腹部 X 光（確認「雙氣泡」徵象）→ 3. 血液學：lactate、電解質（低血鉀常見）、血氣分析、CBC、凝血功能 → 4. ECG（心室心律不整偵測）→ 5. 嘗試口胃管減壓 → 6. 確診後準備急診手術',
     treatment_protocol: '急診穩定化：雙靜脈通路、晶體液 shock dose、胃減壓。手術：正中開腹 → derotation → 評估胃壁及脾臟活性 → 壞死組織切除 → 右側 incisional gastropexy。術後 ICU 監測：ECG（VPCs 好發 12-72 小時）、電解質、lactate 追蹤、NPO 12-24 小時後少量多餐流質食物。心律不整嚴重時使用 [藥物:Lidocaine] CRI 50-80 mcg/kg/min。',
@@ -234,6 +238,7 @@ const contentPyometra: NodeContent = {
 ### 手術治療（OHE）— 確定性治療
 - 適用於所有病例，為首選治療方式
 - 術前穩定化：積極輸液、矯正電解質、廣效抗生素（[藥物:Ampicillin] + [藥物:Enrofloxacin] 或 [藥物:Metronidazole]）
+  - **⚠️ 貓注意**：Enrofloxacin 於貓之劑量不可超過 5 mg/kg/day，高劑量可致急性視網膜變性與失明（不可逆），貓首選以 Marbofloxacin 2 mg/kg SID 替代
 - 手術在穩定化後盡早進行（通常 4-12 小時內）
 - 術中注意避免子宮破裂造成腹腔汙染
 
@@ -319,7 +324,7 @@ const contentPyometra: NodeContent = {
       { condition: '腹腔腫瘤', key_differentiator: '影像學特徵不同，子宮蓄膿呈管狀擴張而非團塊狀' },
     ],
     diagnostic_workup: '1. 病史確認（發情週期、未絕育狀態）→ 2. CBC 含白血球分類計數 → 3. 生化學（BUN/Cre/ALT/ALP/TP/Albumin/Glucose）→ 4. 腹部超音波（金標準）→ 5. 腹部 X 光（輔助評估子宮大小）→ 6. 尿液分析（評估腎臟濃縮能力）→ 7. 嚴重病例追加凝血功能與血氣分析',
-    treatment_protocol: '首選 OHE。術前穩定化：靜脈輸液（shock dose 如有休克）、廣效抗生素（Ampicillin-Sulbactam 30 mg/kg IV TID + Enrofloxacin 5 mg/kg IV SID）。手術目標：完整移除雙側卵巢與子宮體，避免子宮破裂。術後繼續抗生素 7-14 天（依培養結果調整）。內科治療僅限穩定開放型且有繁殖需求：Aglepristone 10 mg/kg SC Day 1, 2, 8 +/- PGF2alpha 0.1-0.25 mg/kg SC。',
+    treatment_protocol: '首選 OHE。術前穩定化：靜脈輸液（shock dose 如有休克）、廣效抗生素（Ampicillin-Sulbactam 30 mg/kg IV TID + Enrofloxacin 5 mg/kg IV SID）。**貓注意：Enrofloxacin 劑量不可超過 5 mg/kg/day，高劑量有急性視網膜變性風險（不可逆失明），貓建議以 Marbofloxacin 2 mg/kg SID 替代。** 手術目標：完整移除雙側卵巢與子宮體，避免子宮破裂。術後繼續抗生素 7-14 天（依培養結果調整）。內科治療僅限穩定開放型且有繁殖需求：Aglepristone 10 mg/kg SC Day 1, 2, 8 +/- PGF2alpha 0.1-0.25 mg/kg SC。',
     prognosis: 'OHE 手術成功率 > 95%，大部分犬在術後 48-72 小時明顯改善。併發 DIC 或 AKI 的病例死亡率 4-20%。子宮破裂合併腹膜炎死亡率最高。內科治療成功率約 75-90%（開放型），但復發率 20-25%。',
     monitoring: '術後 24-48 小時密切監測：體溫、心率、血壓、尿量。術後 48-72 小時追蹤 WBC 與腎功能。確認手術切口癒合良好。長期：腎功能追蹤（E. coli 內毒素可能造成永久性腎損傷）。內科治療病例需每 2-4 週超音波追蹤子宮大小。',
     owner_communication: '子宮蓄膿是嚴重且可能致命的疾病。OHE 是最安全有效的治療方式。術前需告知：手術風險因全身毒血症而比一般 OHE 高、可能需要 ICU 住院 1-3 天、費用估算。若飼主有繁殖需求且病例穩定，可討論內科治療方案，但需充分告知復發風險。最重要的預防方式是早期絕育。',
