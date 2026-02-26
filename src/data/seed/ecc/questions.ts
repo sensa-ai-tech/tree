@@ -2159,4 +2159,270 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     explanation: '重症狀態下代謝呈現高分解代謝（hypercatabolic state）：肌肉蛋白質分解加速提供 gluconeogenesis 基質，加上急性期蛋白合成需求增加。蛋白質需求：犬 4-6 g/100 kcal（or 25-30% calories from protein），貓更高（6-8 g/100 kcal）。蛋白質不足會延遲傷口癒合、免疫力下降、肌肉耗損。唯一限制蛋白質的情況為嚴重肝腦病變（hepatic encephalopathy）。',
     difficulty: 3, spaced_rep: true, tags: ['營養', '蛋白質', '重症'], image_placeholder: null,
   },
+
+  // ============================================================
+  // ECC-L2-004 創傷與出血病生理 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L2-004-001', node_id: 'ECC-L2-004', question_type: 'mcq',
+    question: '「創傷致死三角（trauma triad of death）」包含下列哪三項？',
+    options: [
+      '低血壓、心搏過速、意識喪失',
+      '低體溫、酸血症、凝血功能障礙',
+      '低血糖、高血鉀、代謝性鹼血症',
+      '低血氧、高碳酸血症、呼吸性酸血症',
+    ],
+    correct_answer: '低體溫、酸血症、凝血功能障礙',
+    explanation: '創傷致死三角（lethal triad）由低體溫（hypothermia）、酸血症（acidosis）與凝血功能障礙（coagulopathy）三者組成，三者之間互相惡化形成惡性循環。低體溫抑制凝血酶活性→加重出血→灌流不足→乳酸堆積→酸血症→心輸出量下降→加劇低體溫。打斷此惡性循環是創傷急診的核心目標。',
+    difficulty: 3, spaced_rep: true, tags: ['創傷', '致死三角', '病生理'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L2-004-002', node_id: 'ECC-L2-004', question_type: 'true_false',
+    question: '根據 ATLS 出血分類，第 III 級出血（Class III hemorrhage）代表失血量約為血液總量的 30-40%，臨床上會出現心搏過速、低血壓與意識改變。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'ATLS 出血分類：Class I（< 15%，幾乎無症狀）、Class II（15-30%，心搏過速但血壓正常）、Class III（30-40%，心搏過速+低血壓+意識改變+尿量減少）、Class IV（> 40%，致命性，需立即輸血）。Class III 是需要積極液體復甦與考慮輸血的關鍵閾值。犬血液總量約 80-90 mL/kg，貓約 60-70 mL/kg。',
+    difficulty: 3, spaced_rep: true, tags: ['創傷', '出血分類', 'ATLS'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L2-004-003', node_id: 'ECC-L2-004', question_type: 'case_based',
+    question: '一隻 25 kg 犬車禍後送至急診，理學檢查：心率 180 bpm、血壓 70/40 mmHg、黏膜蒼白、CRT 4 秒、體溫 36.5°C、PCV 急降至 18%。AFAST 顯示大量腹腔積液。最符合的出血分級與初始處置為？',
+    options: [
+      'Class II 出血；等張晶體液快速輸注即可',
+      'Class III 出血；等張晶體液 + 考慮輸血 + 保溫',
+      'Class IV 出血；僅使用膠體液復甦',
+      'Class I 出血；觀察即可',
+    ],
+    correct_answer: 'Class III 出血；等張晶體液 + 考慮輸血 + 保溫',
+    explanation: '該犬呈現嚴重低血壓（MAP < 60）、心搏過速、黏膜蒼白、CRT 延長，加上 PCV 急降至 18% 與 AFAST 陽性，符合 Class III-IV 出血。初始處置需同時：(1) 等張晶體液 bolus 20 mL/kg 評估反應；(2) PCV < 20% 需考慮 pRBC 輸血（目標 PCV 25-30%）；(3) 積極保溫打斷致死三角。單純晶體液無法維持攜氧能力。',
+    difficulty: 4, spaced_rep: true, tags: ['創傷', '出血', '輸血', '病例推理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // ECC-L3-009 腹腔出血 Hemoabdomen (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L3-009-001', node_id: 'ECC-L3-009', question_type: 'mcq',
+    question: '犬腹腔出血的 AFAST（Abdominal Focused Assessment with Sonography for Trauma）檢查中，最先偵測到積液的位置為？',
+    options: [
+      '膀胱頂部（cystocolic view）',
+      '肝腎間隙（hepatorenal view）',
+      '脾腎間隙（splenorenal view）',
+      '膀胱左側（left lateral bladder view）',
+    ],
+    correct_answer: '膀胱頂部（cystocolic view）',
+    explanation: '在犬，重力效應使少量腹腔積液最先累積在膀胱頂部（cystocolic view，又稱 AFAST site 5/DH view）。AFAST 4 點掃描依序為：膀胱左右兩側（site 1, 2）、肝腎間隙（site 3）、脾腎間隙（site 4）。其中膀胱頂部最敏感，少至 5 mL/kg 的積液即可偵測。AFAST fluid scoring system（AFS 0-4）用於量化與追蹤積液量變化。',
+    difficulty: 3, spaced_rep: true, tags: ['AFAST', '腹腔出血', '超音波'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-009-002', node_id: 'ECC-L3-009', question_type: 'true_false',
+    question: '犬腹腔出血（hemoabdomen）最常見的非創傷性原因為脾臟血管肉瘤（splenic hemangiosarcoma, HSA）。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '犬非創傷性腹腔出血中，脾臟腫瘤佔最大比例，其中約 2/3 為血管肉瘤（hemangiosarcoma, HSA）。HSA 是高度惡性的血管內皮腫瘤，好發於大型犬（German Shepherd、Golden Retriever、Labrador），平均年齡 9-12 歲。其他非創傷性原因包括：肝臟腫瘤破裂、凝血障礙（如鼠藥中毒）、脾臟扭轉等。腹腔穿刺液 PCV 接近或高於周邊血液 PCV 即確認為血腹。',
+    difficulty: 3, spaced_rep: true, tags: ['腹腔出血', '脾臟', 'HSA', '犬'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-009-003', node_id: 'ECC-L3-009', question_type: 'case_based',
+    question: '10 歲 Golden Retriever，急性虛弱倒地。理學檢查：黏膜蒼白、心率 190 bpm、腹部膨脹。AFAST AFS = 4。腹腔穿刺液為不凝固血液，PCV 35%（周邊 PCV 25%）。最可能診斷與最適當的初始穩定策略為？',
+    options: [
+      '脾臟腫瘤破裂出血；晶體液小量復甦 + 自體輸血 + 緊急外科諮詢',
+      '胃扭轉；立即胃減壓',
+      '膀胱破裂；導尿減壓',
+      '腹膜炎；廣效抗生素',
+    ],
+    correct_answer: '脾臟腫瘤破裂出血；晶體液小量復甦 + 自體輸血 + 緊急外科諮詢',
+    explanation: '老年大型犬 + 急性虛弱 + 腹腔大量積血（AFS 4）+ 腹腔穿刺 PCV > 周邊 PCV = 高度疑似脾臟腫瘤（最常見 HSA）破裂出血。初始穩定：(1) 目標導向液體復甦（permissive hypotension，MAP 60-70），避免過度稀釋凝血因子；(2) 自體輸血（autotransfusion）可回收腹腔血液暫時改善攜氧能力；(3) 緊急外科脾臟切除是根治出血源的唯一方法。最終確診需病理組織學。',
+    difficulty: 4, spaced_rep: true, tags: ['腹腔出血', '脾臟腫瘤', '自體輸血', '外科'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // ECC-L3-010 氣胸 Pneumothorax (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L3-010-001', node_id: 'ECC-L3-010', question_type: 'mcq',
+    question: '張力性氣胸（tension pneumothorax）與簡單性氣胸的關鍵區別在於？',
+    options: [
+      '張力性氣胸僅發生在創傷後',
+      '張力性氣胸存在單向活瓣效應，氣體僅進不出，縱隔腔偏移',
+      '簡單性氣胸一定需要手術修補',
+      '張力性氣胸不會影響心輸出量',
+    ],
+    correct_answer: '張力性氣胸存在單向活瓣效應，氣體僅進不出，縱隔腔偏移',
+    explanation: '張力性氣胸（tension pneumothorax）的關鍵特徵是存在單向活瓣機制（one-way valve）：吸氣時空氣進入胸腔但呼氣時無法排出，導致胸腔內壓力持續升高。這會造成：(1) 縱隔腔偏移至對側；(2) 壓迫對側肺臟；(3) 大靜脈回流受阻→心輸出量急降→心因性休克。是氣胸中最危急的型態，需立即胸腔穿刺減壓（needle thoracocentesis），不應等待影像學確認。',
+    difficulty: 3, spaced_rep: true, tags: ['氣胸', '張力性氣胸', '急診'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-010-002', node_id: 'ECC-L3-010', question_type: 'true_false',
+    question: 'TFAST（Thoracic Focused Assessment with Sonography for Trauma）中，正常肺滑動徵（lung sliding sign / glide sign）的消失高度提示該側存在氣胸。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '正常情況下，TFAST 可見臟層胸膜與壁層胸膜間的相對滑動（lung sliding / glide sign）。當氣胸發生時，氣體將兩層胸膜分隔，導致 lung sliding 消失。在 M-mode 下，正常肺表現為「seashore sign（海岸線徵）」，氣胸則呈現「barcode sign / stratosphere sign（條碼徵）」。TFAST 診斷氣胸的敏感度（> 95%）優於仰臥位 X 光。此外，lung point（滑動與非滑動的交界點）可幫助估計氣胸範圍。',
+    difficulty: 3, spaced_rep: true, tags: ['TFAST', '氣胸', '超音波', 'lung sliding'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-010-003', node_id: 'ECC-L3-010', question_type: 'case_based',
+    question: '3 歲犬車禍後呼吸困難，呼吸速率 60 次/分，右側胸壁聽診肺音消失，叩診過度共鳴。TFAST 右側無 lung sliding。胸腔穿刺抽出大量空氣後症狀暫時改善，但 30 分鐘後再次惡化。最適當的下一步處置為？',
+    options: [
+      '重複胸腔穿刺',
+      '放置胸管（chest tube）並接持續抽吸',
+      '立即開胸手術',
+      '給予高流量氧氣觀察',
+    ],
+    correct_answer: '放置胸管（chest tube）並接持續抽吸',
+    explanation: '胸腔穿刺後暫時改善但迅速復發（持續氣體漏出），代表存在持續性氣漏（persistent air leak），單次穿刺無法解決。此時需放置胸管（chest tube，14-16 Fr）並接持續抽吸裝置（continuous suction）。胸管放置位置為患側第 7-9 肋間上 1/3 處。若胸管持續抽吸 48 小時後氣漏仍未停止，則需考慮開胸探查手術（exploratory thoracotomy）修補漏氣源。',
+    difficulty: 4, spaced_rep: true, tags: ['氣胸', '胸管', '持續氣漏', '創傷'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // ECC-L3-011 敗血症臨床處置 Clinical Sepsis (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L3-011-001', node_id: 'ECC-L3-011', question_type: 'mcq',
+    question: '根據目前的敗血症存活運動（Surviving Sepsis Campaign）原則，敗血症確認後抗生素的建議給予時限為？',
+    options: [
+      '確認後 6 小時內',
+      '確認後 1 小時內',
+      '血液培養結果出來後再給',
+      '僅在出現敗血性休克時才給',
+    ],
+    correct_answer: '確認後 1 小時內',
+    explanation: '敗血症存活運動強調「Hour-1 Bundle」：辨識敗血症後 1 小時內給予廣效抗生素（empiric broad-spectrum antibiotics）。每延遲 1 小時，死亡率增加約 7-8%。應在抗生素之前（或同時）抽取血液培養，但「不可因等待培養結果而延遲抗生素」。經驗性抗生素選擇需覆蓋最可能的感染源（如腹腔感染：ampicillin-sulbactam + fluoroquinolone 或 metronidazole）。',
+    difficulty: 3, spaced_rep: true, tags: ['敗血症', '抗生素', 'SSC', 'Hour-1 Bundle'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-011-002', node_id: 'ECC-L3-011', question_type: 'true_false',
+    question: '犬敗血症中，血中乳酸（lactate）濃度 > 2.5 mmol/L 與預後不良相關，且可作為液體復甦是否充分的監測指標。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '血中乳酸是組織灌流不足的標誌物。犬正常乳酸 < 2.5 mmol/L。敗血症中乳酸升高反映組織低氧、無氧代謝增加。乳酸 > 2.5 mmol/L 與器官功能障礙及死亡率上升相關。更重要的是「乳酸清除率（lactate clearance）」：治療後 6 小時內乳酸下降 ≥ 20% 提示復甦充分，若持續上升則提示治療無效或灌流仍不足，需重新評估治療策略。Norepinephrine 為敗血性休克液體無反應時的首選升壓藥。',
+    difficulty: 3, spaced_rep: true, tags: ['敗血症', '乳酸', '監測', '預後'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-011-003', node_id: 'ECC-L3-011', question_type: 'case_based',
+    question: '7 歲犬子宮蓄膿術後 12 小時，體溫 40.2°C、心率 180 bpm、呼吸速率 40 次/分、黏膜磚紅色注射、CRT < 1 秒、血壓 MAP 55 mmHg、乳酸 5.8 mmol/L。已給予 30 mL/kg 等張晶體液但血壓仍低。下一步最適當的處置為？',
+    options: [
+      '繼續大量輸液直到 MAP > 80 mmHg',
+      '開始 Norepinephrine CRI 0.1-0.5 μg/kg/min',
+      '給予 Dopamine 低劑量（2 μg/kg/min）',
+      '僅加用 Dexamethasone 抗炎',
+    ],
+    correct_answer: '開始 Norepinephrine CRI 0.1-0.5 μg/kg/min',
+    explanation: '該犬呈現典型 hyperdynamic 敗血性休克：高動力循環（磚紅色黏膜、CRT < 1 秒）但 MAP < 65 mmHg（液體無反應性低血壓），乳酸顯著升高。液體復甦 30 mL/kg 後仍低血壓 = 液體無反應（fluid-unresponsive），需開始升壓藥。Norepinephrine（NE）為敗血性休克的首選升壓藥（強 α-1 + 中等 β-1），目標 MAP ≥ 65 mmHg。低劑量 dopamine 已不推薦。類固醇僅用於升壓藥無法維持血壓時（refractory septic shock）。',
+    difficulty: 4, spaced_rep: true, tags: ['敗血症', '敗血性休克', 'Norepinephrine', '升壓藥'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // ECC-L3-012 多發性創傷 Polytrauma (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L3-012-001', node_id: 'ECC-L3-012', question_type: 'mcq',
+    question: '多發性創傷的初級評估（primary survey）使用 ABCDE 系統，其中 "C" 代表？',
+    options: [
+      'Consciousness（意識）',
+      'Circulation（循環）',
+      'Cervical spine（頸椎）',
+      'Cranial nerves（腦神經）',
+    ],
+    correct_answer: 'Circulation（循環）',
+    explanation: '多發性創傷初級評估 ABCDE 系統：A = Airway（氣道）、B = Breathing（呼吸）、C = Circulation（循環）、D = Disability/Dysfunction（神經功能）、E = Exposure/Examination（全身暴露檢查）。C 評估包括：心率、脈搏品質、黏膜顏色、CRT、血壓、明顯外出血控制。另一個常用的獸醫創傷記憶法為 CRASH PLAN：Cardiopulmonary, Respiratory, Abdomen, Spine, Head, Pelvis, Limbs, Arteries/veins, Nerves。',
+    difficulty: 2, spaced_rep: true, tags: ['創傷', 'ABCDE', '初級評估'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-012-002', node_id: 'ECC-L3-012', question_type: 'true_false',
+    question: '動物創傷分診評分（Animal Trauma Triage score, ATT score）涵蓋 6 個身體系統的評估，每項 0-3 分，總分越高代表預後越差。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'ATT score（Animal Trauma Triage score）由 Rockar 等人（1994）提出，評估 6 個身體系統：灌流（perfusion）、心臟（cardiac）、呼吸（respiratory）、眼/肌肉/外皮（eye/muscle/integument）、骨骼（skeletal）、神經（neurologic）。每項 0（正常）至 3（嚴重），總分 0-18。ATT score ≥ 5 的犬死亡率顯著增加，≥ 8 則極高。此評分系統有助於快速評估創傷嚴重度、分配資源與預後溝通。',
+    difficulty: 3, spaced_rep: true, tags: ['創傷', 'ATT score', '分診', '預後'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-012-003', node_id: 'ECC-L3-012', question_type: 'case_based',
+    question: '3 歲混種犬被車撞後送至急診。ABCDE 評估：A 氣道通暢、B 呼吸速率 50 但右側肺音減弱、C 心率 200 bpm 黏膜蒼白 MAP 55 mmHg、D 意識清醒但後肢無感覺、E 右大腿開放性骨折出血中。根據「damage control resuscitation」原則，最優先的處置順序為？',
+    options: [
+      '先固定骨折 → 再處理呼吸 → 最後輸液',
+      '止血 + 液體復甦 → 胸腔穿刺評估 → 神經評估 → 骨折暫時固定',
+      '先做全身 X 光 → 根據結果決定手術順序',
+      '先處理脊椎問題 → 再處理呼吸與循環',
+    ],
+    correct_answer: '止血 + 液體復甦 → 胸腔穿刺評估 → 神經評估 → 骨折暫時固定',
+    explanation: 'Damage control resuscitation（DCR）原則：先處理致命威脅，延後確定性治療。(1) C 最先處理：開放性骨折出血直接加壓止血 + 快速輸液復甦（permissive hypotension）；(2) B：右側肺音減弱提示可能氣胸或血胸，TFAST 評估後可能需胸腔穿刺；(3) D：後肢無感覺提示脊椎損傷，穩定後再進一步評估；(4) 開放性骨折暫時固定（Robert Jones 繃帶），確定性手術待全身穩定後。不應在不穩定的病患上進行冗長的影像學檢查。',
+    difficulty: 4, spaced_rep: true, tags: ['多發性創傷', 'damage control', 'ABCDE', '病例推理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // ECC-L3-013 急性呼吸窘迫 Acute Respiratory Distress (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L3-013-001', node_id: 'ECC-L3-013', question_type: 'mcq',
+    question: '區分犬上呼吸道（upper airway）與下呼吸道（lower airway）阻塞的最關鍵臨床特徵為？',
+    options: [
+      '上呼吸道阻塞以吸氣性喘鳴（inspiratory stridor）為主，下呼吸道阻塞以呼氣性哮鳴（expiratory wheeze）為主',
+      '上呼吸道阻塞黏膜發紺，下呼吸道阻塞黏膜正常',
+      '上呼吸道阻塞心率正常，下呼吸道阻塞心率增快',
+      '上呼吸道阻塞無法催吐，下呼吸道阻塞可催吐',
+    ],
+    correct_answer: '上呼吸道阻塞以吸氣性喘鳴（inspiratory stridor）為主，下呼吸道阻塞以呼氣性哮鳴（expiratory wheeze）為主',
+    explanation: '呼吸音型態是區分上下呼吸道問題的最重要線索。上呼吸道（鼻腔、咽喉、氣管近端）阻塞時，吸氣相因負壓使管腔更塌陷，產生吸氣性喘鳴（inspiratory stridor）。下呼吸道（支氣管、細支氣管）問題在呼氣相因氣道正壓壓迫而更明顯，產生呼氣性哮鳴（expiratory wheeze）。此區分直接影響處置：上呼吸道阻塞可能需緊急氣管插管/切開；下呼吸道問題需支氣管擴張劑。',
+    difficulty: 3, spaced_rep: true, tags: ['呼吸窘迫', '上呼吸道', '下呼吸道', '聽診'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-013-002', node_id: 'ECC-L3-013', question_type: 'true_false',
+    question: '呼吸窘迫犬貓的氧氣補充中，flow-by oxygen（管口供氧）提供的吸入氧濃度（FiO₂）約為 25-40%，是最快速且壓力最小的初始供氧方式。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'Flow-by oxygen 是將氧氣管口置於動物鼻口前方 1-2 cm，流量 2-3 L/min，可提供 FiO₂ 約 25-40%。優點：(1) 操作簡單快速；(2) 對動物限制最少，不增加壓力；(3) 適合極度緊迫不耐受處理的動物。其他供氧方式：氧氣面罩（FiO₂ 40-60%）、氧氣籠（FiO₂ 可達 40-60%）、鼻導管（FiO₂ 30-50% at 50-100 mL/kg/min）。注意：FiO₂ > 60% 持續 > 24 小時可能導致氧中毒（oxygen toxicity）。',
+    difficulty: 2, spaced_rep: true, tags: ['氧氣治療', 'flow-by', 'FiO₂', '供氧方式'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L3-013-003', node_id: 'ECC-L3-013', question_type: 'case_based',
+    question: '5 歲英國鬥牛犬，夏天外出後出現嚴重吸氣性喘鳴、黏膜發紺、體溫 41°C。給予 flow-by oxygen 後仍嚴重呼吸困難。最適當的下一步緊急處置為？',
+    options: [
+      '立即胸腔 X 光檢查',
+      'Butorphanol 0.2 mg/kg IV 鎮靜 + 準備氣管插管',
+      '給予 Dexamethasone 2 mg/kg IV 後觀察',
+      '僅持續供氧並等待自行改善',
+    ],
+    correct_answer: 'Butorphanol 0.2 mg/kg IV 鎮靜 + 準備氣管插管',
+    explanation: '短頭犬種（brachycephalic）+ 高溫 + 嚴重吸氣性喘鳴 + 發紺 = 上呼吸道嚴重阻塞危機。焦慮與掙扎會惡化氣道腫脹並增加氧耗，形成惡性循環。Butorphanol 0.2 mg/kg IV 可快速鎮靜、降低焦慮與呼吸努力，同時有輕度呼吸抑制減少吸氣負壓（減少氣道塌陷）。同時準備氣管插管設備，若鎮靜後仍嚴重阻塞則需誘導麻醉後插管確保氣道。X 光在不穩定的呼吸窘迫病患不應優先。',
+    difficulty: 4, spaced_rep: true, tags: ['呼吸窘迫', '短頭犬', 'Butorphanol', '氣道管理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // ECC-L5-006 機械通氣與氧氣治療 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-ECC-L5-006-001', node_id: 'ECC-L5-006', question_type: 'mcq',
+    question: '下列何者是犬貓開始間歇正壓通氣（IPPV / mechanical ventilation）的適應症？',
+    options: [
+      '輕度鼻塞導致打鼾',
+      'PaO₂ < 60 mmHg 或 PaCO₂ > 60 mmHg 經氧氣補充無改善',
+      '輕度心搏過速',
+      '術後例行性使用',
+    ],
+    correct_answer: 'PaO₂ < 60 mmHg 或 PaCO₂ > 60 mmHg 經氧氣補充無改善',
+    explanation: '機械通氣的主要適應症：(1) 難治性低血氧（refractory hypoxemia）：PaO₂ < 60 mmHg 或 SpO₂ < 90%，即使 FiO₂ > 60% 仍無改善；(2) 通氣衰竭（ventilatory failure）：PaCO₂ > 60 mmHg，代表肺泡通氣不足（如神經肌肉疾病、藥物過量、嚴重胸壁損傷）；(3) 預期性插管：如嚴重上呼吸道水腫、全身麻醉。機械通氣需 24 小時專人監護，是 ICU 最高級別的呼吸支持。',
+    difficulty: 4, spaced_rep: true, tags: ['機械通氣', 'IPPV', '適應症', 'ICU'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L5-006-002', node_id: 'ECC-L5-006', question_type: 'true_false',
+    question: '呼吸器設定中，PEEP（Positive End-Expiratory Pressure，呼氣末正壓）的主要功能是防止肺泡在呼氣末塌陷，改善功能性肺餘容量（FRC）與氧合。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'PEEP 在呼氣末維持一定正壓（通常起始 5 cmH₂O），防止肺泡塌陷（atelectasis），使更多肺泡參與氣體交換。PEEP 的效益：(1) 增加 FRC（功能性肺餘容量）；(2) 改善 V/Q 配對；(3) 降低肺內分流（intrapulmonary shunt）；(4) 改善氧合（可降低 FiO₂ 需求）。但過高 PEEP（> 10-15 cmH₂O）可能導致：靜脈回流減少→心輸出量下降、肺泡過度膨脹（barotrauma/volutrauma）。初始設定：PEEP 5 cmH₂O，根據氧合反應逐步調整。',
+    difficulty: 4, spaced_rep: true, tags: ['PEEP', '機械通氣', '呼吸器設定'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-L5-006-003', node_id: 'ECC-L5-006', question_type: 'case_based',
+    question: '4 歲犬因嚴重吸入性肺炎接受機械通氣。目前設定：VT 10 mL/kg、RR 20 bpm、PEEP 5 cmH₂O、FiO₂ 80%。動脈血氣：PaO₂ 55 mmHg、PaCO₂ 38 mmHg。SpO₂ 85%。下一步最適當的呼吸器調整為？',
+    options: [
+      '增加潮氣量（VT）至 15 mL/kg',
+      '增加 PEEP 至 8-10 cmH₂O',
+      '增加 FiO₂ 至 100%',
+      '增加呼吸頻率至 30 bpm',
+    ],
+    correct_answer: '增加 PEEP 至 8-10 cmH₂O',
+    explanation: '此犬的主要問題是低血氧（PaO₂ 55 mmHg，目標 > 80）而 PaCO₂ 正常（38 mmHg），代表氧合問題而非通氣問題。在 FiO₂ 已高達 80% 的情況下，進一步提高 FiO₂ 效益有限且增加氧中毒風險。增加 PEEP（5→8-10 cmH₂O）可打開更多塌陷肺泡、改善 V/Q 配對、降低肺內分流，有效改善氧合並可能讓後續降低 FiO₂。增加 VT 至 15 mL/kg 過高可致肺損傷（lung-protective ventilation 建議 VT 6-10 mL/kg）。增加 RR 主要改善 PaCO₂，對氧合幫助有限。',
+    difficulty: 5, spaced_rep: true, tags: ['機械通氣', 'PEEP', '呼吸器調整', '血氣判讀'], image_placeholder: null,
+  },
 ];

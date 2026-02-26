@@ -38,4 +38,33 @@ export const CPATH_EDGES: KnowledgeEdge[] = [
 
   // L2-001 → L4-006: builds_on（分析前誤差與品質控管影響體液分析）
   { id: 'CPATH-E-020', source_node_id: 'CPATH-L2-001', target_node_id: 'CPATH-L4-006', relation_type: 'builds_on', weight: 0.7, description: '體液分析需注意採集與保存的分析前品管', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 1 擴展邊 ───
+  // L0-001 → L1: prerequisite（總覽 → 基礎科學）
+  { id: 'CPATH-E-021', source_node_id: 'CPATH-L0-001', target_node_id: 'CPATH-L1-001', relation_type: 'prerequisite', weight: 0.8, description: '臨床病理總覽引導至血液學基礎', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-022', source_node_id: 'CPATH-L0-001', target_node_id: 'CPATH-L1-002', relation_type: 'prerequisite', weight: 0.8, description: '臨床病理總覽引導至臨床化學基礎', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-023', source_node_id: 'CPATH-L0-001', target_node_id: 'CPATH-L1-003', relation_type: 'prerequisite', weight: 0.7, description: '臨床病理總覽引導至免疫學基礎', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-024', source_node_id: 'CPATH-L0-001', target_node_id: 'CPATH-L1-004', relation_type: 'prerequisite', weight: 0.7, description: '臨床病理總覽引導至微生物學基礎', bidirectional: false, unlock_condition: null },
+
+  // L1-003 → L4: prerequisite（免疫學基礎 → 相關診斷）
+  { id: 'CPATH-E-025', source_node_id: 'CPATH-L1-003', target_node_id: 'CPATH-L4-008', relation_type: 'prerequisite', weight: 0.8, description: '免疫學基礎是血型交叉試驗的理論基礎', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-026', source_node_id: 'CPATH-L1-003', target_node_id: 'CPATH-L4-013', relation_type: 'prerequisite', weight: 0.8, description: '免疫學基礎是感染性疾病血清學檢測的前置', bidirectional: false, unlock_condition: null },
+
+  // L1-004 → L4-013: prerequisite（微生物學 → 感染性疾病診斷）
+  { id: 'CPATH-E-027', source_node_id: 'CPATH-L1-004', target_node_id: 'CPATH-L4-013', relation_type: 'prerequisite', weight: 0.9, description: '微生物學基礎是感染性疾病實驗室診斷的前置', bidirectional: false, unlock_condition: null },
+
+  // L2-002 → L4: builds_on（分析方法學 → 所有 L4 診斷方法）
+  { id: 'CPATH-E-028', source_node_id: 'CPATH-L2-002', target_node_id: 'CPATH-L4-001', relation_type: 'builds_on', weight: 0.7, description: '理解阻抗法/光學法才能正確判讀 CBC', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-029', source_node_id: 'CPATH-L2-002', target_node_id: 'CPATH-L4-002', relation_type: 'builds_on', weight: 0.7, description: '理解光度法/乾式化學才能正確判讀生化', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-030', source_node_id: 'CPATH-L2-002', target_node_id: 'CPATH-L4-014', relation_type: 'builds_on', weight: 0.9, description: '分析方法學是理解 POCT 限制的關鍵', bidirectional: false, unlock_condition: null },
+
+  // L4-014 → L5-001: builds_on（POCT 判讀 → 整合判讀）
+  { id: 'CPATH-E-031', source_node_id: 'CPATH-L4-014', target_node_id: 'CPATH-L5-001', relation_type: 'builds_on', weight: 0.7, description: 'POCT 結果需整合至完整判讀', bidirectional: false, unlock_condition: null },
+
+  // 所有 L4 → L5-001: builds_on（各診斷方法 → 整合判讀）
+  { id: 'CPATH-E-032', source_node_id: 'CPATH-L4-001', target_node_id: 'CPATH-L5-001', relation_type: 'builds_on', weight: 0.9, description: 'CBC 是整合判讀的基本元素', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-033', source_node_id: 'CPATH-L4-002', target_node_id: 'CPATH-L5-001', relation_type: 'builds_on', weight: 0.9, description: '生化是整合判讀的基本元素', bidirectional: false, unlock_condition: null },
+
+  // L1-003 ↔ L1-004: same_system（免疫 ↔ 微生物互為基礎）
+  { id: 'CPATH-E-034', source_node_id: 'CPATH-L1-003', target_node_id: 'CPATH-L1-004', relation_type: 'same_system', weight: 0.7, description: '免疫反應與微生物感染密切相關', bidirectional: true, unlock_condition: null },
 ];

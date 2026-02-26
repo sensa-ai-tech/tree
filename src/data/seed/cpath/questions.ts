@@ -1660,4 +1660,262 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     explanation: 'Leishmania 的 amastigotes（無鞭毛體）在巨噬細胞胞漿內呈現小型圓形蟲體，含有 nucleus 與 kinetoplast（兩個紫色點狀結構）。在淋巴結、骨髓、脾臟 FNA 或皮膚病灶抹片中直接觀察到是最具特異性的直接證據。血清學敏感度高但可能有交叉反應。高球蛋白血症與貧血是常見但非特異性的支持性發現。PCR 也是高敏感度的確認工具。',
     difficulty: 4, spaced_rep: true, tags: ['感染', 'Leishmania', 'amastigote', '診斷'], image_placeholder: null,
   },
+
+  // ============================================================
+  // CPATH-L0-001 臨床病理學總覽 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CPATH-043', node_id: 'CPATH-L0-001', question_type: 'mcq',
+    question: '臨床病理學（clinical pathology）在獸醫實務中的核心角色為何？',
+    options: [
+      '僅負責手術後的組織病理切片判讀',
+      '透過體液與組織樣本的實驗室分析，輔助臨床診斷、監測治療與評估預後',
+      '僅限於微生物培養與抗藥性試驗',
+      '專門處理影像學檢查的判讀',
+    ],
+    correct_answer: '透過體液與組織樣本的實驗室分析，輔助臨床診斷、監測治療與評估預後',
+    explanation: '臨床病理學涵蓋血液學、臨床化學、細胞學、尿液分析、體液分析等多個子領域，透過對體液與組織樣本的系統性分析，協助臨床獸醫師建立診斷、監測疾病進程與治療反應、以及評估預後。組織病理切片判讀屬於解剖病理學（anatomic pathology）的範疇。',
+    difficulty: 1, spaced_rep: true, tags: ['總覽', '臨床病理', '基礎'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-044', node_id: 'CPATH-L0-001', question_type: 'mcq',
+    question: '下列哪個檢驗項目不屬於臨床病理學的傳統範疇？',
+    options: [
+      '全血球計數（CBC）',
+      '血清生化學分析',
+      '組織切片的 H&E 染色與判讀',
+      '尿液沉渣顯微鏡檢查',
+    ],
+    correct_answer: '組織切片的 H&E 染色與判讀',
+    explanation: '臨床病理學（clinical pathology）主要處理液體樣本與細胞學標本，包括 CBC、血清生化、尿液分析、體液分析、細胞學等。組織切片的 H&E 染色與組織學判讀屬於解剖病理學（anatomic/surgical pathology）的領域。兩者雖同屬獸醫病理學，但在訓練、方法學與專業認證上有明確區分。',
+    difficulty: 1, spaced_rep: true, tags: ['總覽', '臨床病理', '解剖病理'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-045', node_id: 'CPATH-L0-001', question_type: 'mcq',
+    question: '一位獸醫師想評估一隻老年犬的整體健康狀態作為麻醉前評估，最合理的初步臨床病理檢查組合為？',
+    options: [
+      '僅做血液抹片檢查',
+      'CBC + 血清生化（肝腎指標、血糖、電解質）+ 尿液分析',
+      '僅做凝血功能檢查',
+      '骨髓穿刺 + 體液分析',
+    ],
+    correct_answer: 'CBC + 血清生化（肝腎指標、血糖、電解質）+ 尿液分析',
+    explanation: '麻醉前評估需要全面了解動物的血液學狀態（CBC 排除貧血與感染）、器官功能（生化學評估肝腎功能）以及泌尿系統狀態（尿液分析評估腎功能與有無感染）。這個組合稱為最低資料庫（minimum database），是臨床病理學在日常實務中最基礎且最常使用的應用情境。',
+    difficulty: 1, spaced_rep: true, tags: ['總覽', '最低資料庫', '麻醉前'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CPATH-L1-003 免疫學基礎 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CPATH-046', node_id: 'CPATH-L1-003', question_type: 'mcq',
+    question: '在犬的免疫系統中，負責產生抗體（immunoglobulin）的細胞為？',
+    options: [
+      'CD8+ 細胞毒性 T 細胞（cytotoxic T cell）',
+      '漿細胞（plasma cell），由活化的 B 淋巴球分化而來',
+      '嗜中性球（neutrophil）',
+      '自然殺手細胞（NK cell）',
+    ],
+    correct_answer: '漿細胞（plasma cell），由活化的 B 淋巴球分化而來',
+    explanation: '體液免疫（humoral immunity）的效應細胞為漿細胞（plasma cell），它由 B 淋巴球經抗原刺激後活化、增殖並分化而成，專門大量分泌抗體（immunoglobulin）。CD8+ T 細胞負責細胞介導性免疫中的直接殺傷作用，嗜中性球為先天免疫的吞噬細胞，NK cell 則參與先天免疫中的非特異性殺傷。',
+    difficulty: 2, spaced_rep: true, tags: ['免疫學', '抗體', 'B細胞', '漿細胞'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-047', node_id: 'CPATH-L1-003', question_type: 'mcq',
+    question: '犬貓的 II 型過敏反應（Type II hypersensitivity）中，抗體攻擊自身細胞表面抗原導致細胞破壞。下列何種疾病屬於此類型？',
+    options: [
+      '異位性皮膚炎（atopic dermatitis）',
+      '免疫介導性溶血性貧血（IMHA）',
+      '全身性過敏反應（anaphylaxis）',
+      '接觸性皮膚炎（contact dermatitis）',
+    ],
+    correct_answer: '免疫介導性溶血性貧血（IMHA）',
+    explanation: 'II 型過敏反應（細胞毒性型）的機制為 IgG 或 IgM 抗體與細胞表面抗原結合，透過補體活化或抗體依賴性細胞毒性（ADCC）導致標的細胞破壞。IMHA 中自體抗體攻擊紅血球表面抗原正是此機制的經典範例。I 型（過敏反應/異位性皮膚炎/過敏性休克）由 IgE 介導，IV 型（接觸性皮膚炎）由 T 細胞介導。',
+    difficulty: 2, spaced_rep: true, tags: ['免疫學', '過敏反應', 'IMHA', 'II型'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-048', node_id: 'CPATH-L1-003', question_type: 'mcq',
+    question: '補體系統（complement system）活化後形成的膜攻擊複合體（membrane attack complex, MAC）的主要功能為？',
+    options: [
+      '促進抗體的產生',
+      '在標的細胞膜上形成孔洞，導致細胞裂解',
+      '抑制發炎反應',
+      '促進 T 細胞的增殖',
+    ],
+    correct_answer: '在標的細胞膜上形成孔洞，導致細胞裂解',
+    explanation: '補體系統活化的最終產物為 C5b-C9 組成的膜攻擊複合體（MAC），它插入標的細胞（如細菌或被抗體標記的細胞）的細胞膜，形成跨膜孔洞，導致離子與水分湧入，最終造成細胞滲透性裂解。此外，補體活化過程中的中間產物也有重要功能：C3a/C5a 為過敏毒素（促發炎）、C3b 為調理素（促進吞噬）。',
+    difficulty: 2, spaced_rep: true, tags: ['免疫學', '補體', 'MAC', '先天免疫'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CPATH-L1-004 微生物學基礎 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CPATH-049', node_id: 'CPATH-L1-004', question_type: 'mcq',
+    question: '在犬貓臨床微生物學中，革蘭氏染色（Gram stain）的主要臨床價值為何？',
+    options: [
+      '可以精確鑑定到菌種層級',
+      '在培養結果回報前快速區分革蘭氏陽性與陰性菌，指引經驗性抗生素選擇',
+      '僅用於學術研究，臨床上不實用',
+      '可直接判定細菌的抗藥性模式',
+    ],
+    correct_answer: '在培養結果回報前快速區分革蘭氏陽性與陰性菌，指引經驗性抗生素選擇',
+    explanation: '革蘭氏染色根據細菌細胞壁結構差異（肽聚糖厚度），將細菌分為陽性（紫色，厚肽聚糖層）與陰性（粉紅色，薄肽聚糖層+外膜）。在臨床上，培養結果通常需要 24-72 小時，而革蘭氏染色可在數分鐘內提供初步資訊，幫助臨床獸醫師在等待培養結果期間選擇適當的經驗性抗生素治療方案。',
+    difficulty: 2, spaced_rep: true, tags: ['微生物學', '革蘭氏染色', '抗生素'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-050', node_id: 'CPATH-L1-004', question_type: 'mcq',
+    question: '下列關於需氧培養（aerobic culture）與厭氧培養（anaerobic culture）的敘述，何者正確？',
+    options: [
+      '所有臨床感染僅需做需氧培養即可',
+      '厭氧菌感染常與深層膿瘍、壞死組織、咬傷有關，此類樣本應同時送需氧與厭氧培養',
+      '厭氧培養結果通常 24 小時內即可回報',
+      '厭氧菌只存在於環境中，不會感染動物',
+    ],
+    correct_answer: '厭氧菌感染常與深層膿瘍、壞死組織、咬傷有關，此類樣本應同時送需氧與厭氧培養',
+    explanation: '厭氧菌（如 Bacteroides, Fusobacterium, Clostridium）在缺氧環境中繁殖，常見於深層膿瘍、壞死組織、腹膜炎、咬傷感染與牙周病。這類樣本應同時送需氧與厭氧培養以避免遺漏致病菌。厭氧培養需要特殊運送條件（密封、隔絕空氣）與較長培養時間（通常 48-96 小時或更久）。',
+    difficulty: 2, spaced_rep: true, tags: ['微生物學', '培養', '厭氧菌'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-051', node_id: 'CPATH-L1-004', question_type: 'mcq',
+    question: '犬貓的黴菌感染診斷中，DTM（Dermatophyte Test Medium）培養基顏色由黃色變為紅色代表什麼？',
+    options: [
+      '培養基已過期失效',
+      '代表有皮黴菌（dermatophyte）生長，因其優先代謝蛋白質產生鹼性代謝物',
+      '代表所有黴菌均為致病性',
+      '代表有細菌汙染',
+    ],
+    correct_answer: '代表有皮黴菌（dermatophyte）生長，因其優先代謝蛋白質產生鹼性代謝物',
+    explanation: 'DTM 培養基含有 pH 指示劑（酚紅），皮黴菌（Microsporum, Trichophyton）優先代謝蛋白質產生鹼性代謝物，使培養基 pH 上升、顏色從黃色轉為紅色。重要的是，顏色變化應在菌落生長同時或之前出現才有意義；某些腐生菌晚期也可能產生鹼性代謝物造成偽陽性。因此需結合菌落形態與顯微鏡觀察大分生孢子型態確認。',
+    difficulty: 2, spaced_rep: true, tags: ['微生物學', '黴菌', 'DTM', '皮黴菌'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CPATH-L2-002 分析方法學與儀器原理 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CPATH-052', node_id: 'CPATH-L2-002', question_type: 'mcq',
+    question: '自動化血液分析儀使用電阻抗法（impedance method）計數血球時，其基本原理為何？',
+    options: [
+      '利用雷射光散射偵測細胞大小',
+      '血球通過微孔時造成電阻改變，每次電阻脈衝代表一個細胞，脈衝高度與細胞體積成正比',
+      '利用螢光標記抗體辨識不同血球類型',
+      '根據細胞的磁性特徵進行分離',
+    ],
+    correct_answer: '血球通過微孔時造成電阻改變，每次電阻脈衝代表一個細胞，脈衝高度與細胞體積成正比',
+    explanation: '電阻抗法（Coulter principle）是最經典的血球計數原理：稀釋後的血液通過微孔，不導電的血球取代導電液體造成瞬間電阻上升，產生電脈衝。脈衝數量 = 細胞數目，脈衝高度 = 細胞體積。此原理是 MCV 測量的基礎。但電阻抗法對白血球五分類的辨識能力有限，先進儀器會結合雷射散射與螢光標記以提高分類準確度。',
+    difficulty: 3, spaced_rep: true, tags: ['方法學', '電阻抗', '血球計數', '儀器'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-053', node_id: 'CPATH-L2-002', question_type: 'mcq',
+    question: '獸醫臨床化學分析中，比色法（colorimetric assay）的基本原理為何？應用 Beer-Lambert 定律時，吸光度與何者成正比？',
+    options: [
+      '吸光度與溶液溫度成正比',
+      '吸光度與待測物濃度及光程長度成正比',
+      '吸光度與溶液體積成正比',
+      '吸光度與入射光強度成正比',
+    ],
+    correct_answer: '吸光度與待測物濃度及光程長度成正比',
+    explanation: 'Beer-Lambert 定律（A = εlc）指出：吸光度（A）與莫耳吸光係數（ε）、光程長度（l）及待測物濃度（c）成正比。大部分臨床化學項目（ALT、BUN、creatinine、glucose 等）均以比色法或酵素動力學法為基礎，讓待測物與試劑反應產生有色產物，再以分光光度計測量吸光度換算濃度。溶血、脂血、黃疸會干擾光度測量，是最常見的分析干擾因素。',
+    difficulty: 3, spaced_rep: true, tags: ['方法學', '比色法', 'Beer-Lambert', '生化'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-054', node_id: 'CPATH-L2-002', question_type: 'mcq',
+    question: '免疫分析法（immunoassay）中，ELISA（enzyme-linked immunosorbent assay）的「sandwich」格式是如何偵測目標抗原的？',
+    options: [
+      '用單一抗體直接與抗原結合並測量螢光',
+      '以捕捉抗體固定抗原，再以酵素標記的偵測抗體結合，加入受質後產生顏色變化',
+      '利用電泳分離蛋白質後以抗體探測',
+      '直接測量抗原的電化學活性',
+    ],
+    correct_answer: '以捕捉抗體固定抗原，再以酵素標記的偵測抗體結合，加入受質後產生顏色變化',
+    explanation: 'Sandwich ELISA 的步驟：(1) 捕捉抗體（capture antibody）固定於微孔盤上；(2) 加入樣本，目標抗原與捕捉抗體結合；(3) 加入酵素標記的偵測抗體（detection antibody）與抗原另一表位結合，形成「三明治」結構；(4) 加入酵素受質產生顯色反應，顏色深度與抗原濃度成正比。此方法廣泛應用於獸醫快篩（如 SNAP tests 偵測心絲蟲抗原、FeLV p27 等）。',
+    difficulty: 3, spaced_rep: true, tags: ['方法學', 'ELISA', '免疫分析', '快篩'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CPATH-L4-014 即時檢驗（POCT） (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CPATH-055', node_id: 'CPATH-L4-014', question_type: 'mcq',
+    question: '與大型參考實驗室相比，即時檢驗（POCT）設備在臨床上的最大優勢為何？',
+    options: [
+      '精確度（precision）總是優於參考實驗室',
+      '能在數分鐘內於診間獲得結果，對急診決策與即時治療調整至關重要',
+      '完全不需要品質管控程序',
+      '所有項目的正常參考範圍與參考實驗室完全相同',
+    ],
+    correct_answer: '能在數分鐘內於診間獲得結果，對急診決策與即時治療調整至關重要',
+    explanation: 'POCT（如 IDEXX Catalyst、iSTAT、Abaxis VetScan）最大的臨床價值是快速回報（turnaround time 數分鐘），這在急診情境（如 DKA 的電解質監測、急性腎損傷的即時評估）中至關重要。但 POCT 的精確度可能不如大型實驗室，且仍需定期品管（QC 校正液、比對試驗）。不同平台的參考範圍可能有差異，應使用各平台專屬的參考值。',
+    difficulty: 3, spaced_rep: true, tags: ['POCT', '急診', '即時檢驗'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-056', node_id: 'CPATH-L4-014', question_type: 'mcq',
+    question: '使用 iSTAT 等攜帶型血氣分析儀時，下列哪項分析前因素最可能導致檢測結果不準確？',
+    options: [
+      '在室溫下操作儀器',
+      '樣本中混入氣泡未排除，導致 pO2 假性升高與 pCO2 假性降低',
+      '使用肝素鋰（lithium heparin）抗凝管',
+      '分析前輕搖混勻樣本',
+    ],
+    correct_answer: '樣本中混入氣泡未排除，導致 pO2 假性升高與 pCO2 假性降低',
+    explanation: '血氣分析最關鍵的分析前要求是避免氣泡混入：空氣中 pO2 約 150 mmHg，遠高於靜脈血（約 40 mmHg），氣泡會導致 pO2 假性升高、pCO2 假性降低（因 CO2 從血液逸散至氣泡中）。採樣後應立即排除氣泡並密封注射器，盡快分析（理想在 15-30 分鐘內，冰浴保存可延長至 1 小時）。',
+    difficulty: 4, spaced_rep: true, tags: ['POCT', '血氣', 'iSTAT', '分析前'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-057', node_id: 'CPATH-L4-014', question_type: 'mcq',
+    question: '臨床上使用 POCT 乳酸測定儀（lactate meter）監測一隻休克犬的治療反應。初始乳酸 8.0 mmol/L，輸液復甦 2 小時後降至 3.5 mmol/L。此乳酸變化趨勢最佳的解讀為？',
+    options: [
+      '乳酸仍偏高，治療完全無效應立即更換方案',
+      '乳酸清除率（lactate clearance）> 50%，提示組織灌流改善，治療方向正確但需持續監測',
+      '乳酸值已正常，可停止輸液',
+      '乳酸下降僅代表採樣誤差',
+    ],
+    correct_answer: '乳酸清除率（lactate clearance）> 50%，提示組織灌流改善，治療方向正確但需持續監測',
+    explanation: '乳酸清除率（lactate clearance）= (初始值 - 後續值) / 初始值 × 100%。此犬 = (8.0 - 3.5) / 8.0 = 56.25%，> 50% 的清除率在人醫與獸醫研究中均與較好的預後相關。犬正常乳酸 < 2.5 mmol/L，3.5 mmol/L 仍偏高但下降趨勢正確。POCT 乳酸測定是急診中評估組織灌流與治療反應的重要即時工具，建議每 2-4 小時連續監測。',
+    difficulty: 4, spaced_rep: true, tags: ['POCT', '乳酸', '休克', '治療監測'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CPATH-L5-001 整合判讀與報告撰寫 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CPATH-058', node_id: 'CPATH-L5-001', question_type: 'mcq',
+    question: '一隻 10 歲犬的血檢顯示 BUN 85 mg/dL（↑）、creatinine 4.2 mg/dL（↑）、phosphorus 9.8 mg/dL（↑）、USG 1.012（等張尿）、非再生性貧血。整合判讀時，這些結果最支持下列哪個診斷？',
+    options: [
+      '腎前性氮血症（脫水）',
+      '慢性腎病（CKD）合併腎功能喪失',
+      '腎後性阻塞（尿路結石）',
+      '急性肝衰竭',
+    ],
+    correct_answer: '慢性腎病（CKD）合併腎功能喪失',
+    explanation: '整合判讀的關鍵在於將多項檢驗結果串聯成一致的臨床圖像：氮血症（BUN↑+Cre↑）+ 高磷血症 + 等張尿（腎臟失去濃縮能力）+ 非再生性貧血（EPO 產生不足）= 慢性腎病。腎前性氮血症的 USG 應 > 1.030（腎臟仍有濃縮能力），且不會有非再生性貧血。這說明整合判讀比單看個別數值更能準確定位病因。',
+    difficulty: 4, spaced_rep: true, tags: ['整合判讀', 'CKD', '氮血症', '報告'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-059', node_id: 'CPATH-L5-001', question_type: 'mcq',
+    question: '撰寫臨床病理報告時，下列哪種做法最能提升報告的臨床實用性？',
+    options: [
+      '僅列出異常數值，不做任何解讀',
+      '將異常結果依器官系統歸類，提供鑑別診斷建議，並指出建議的後續檢查',
+      '逐項抄錄所有正常與異常值，不加任何評論',
+      '僅給出最終診斷，不列出推理過程',
+    ],
+    correct_answer: '將異常結果依器官系統歸類，提供鑑別診斷建議，並指出建議的後續檢查',
+    explanation: '高品質的臨床病理報告應具備：(1) 依器官系統整合異常發現（如肝膽系統：ALT↑+ALP↑+膽紅素↑）；(2) 提供鑑別診斷的優先排序；(3) 建議後續確認檢查（如腹部超音波、膽汁酸等）。這種結構化的判讀與報告方式能幫助臨床獸醫師快速理解結果的臨床意義並做出治療決策，而非僅羅列數字或給出過於武斷的結論。',
+    difficulty: 4, spaced_rep: true, tags: ['報告撰寫', '整合判讀', '溝通'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-060', node_id: 'CPATH-L5-001', question_type: 'mcq',
+    question: '在整合判讀中，當不同檢查結果出現看似矛盾的情況（如臨床懷疑甲狀腺功能低下但 tT4 正常偏低、TSH 正常），最適當的處理方式為？',
+    options: [
+      '直接排除甲狀腺功能低下的診斷',
+      '考慮非甲狀腺疾病（NTI）的干擾效應，建議治療原發病後追蹤複測，或進行 Free T4 by ED 確認',
+      '立即開始甲狀腺補充治療作為試驗性治療',
+      '認定儀器故障，重新抽血',
+    ],
+    correct_answer: '考慮非甲狀腺疾病（NTI）的干擾效應，建議治療原發病後追蹤複測，或進行 Free T4 by ED 確認',
+    explanation: '整合判讀的核心能力之一是辨識與處理矛盾結果。tT4 受非甲狀腺疾病（euthyroid sick syndrome / NTI）、藥物（glucocorticoids, NSAIDs）與品種（視覺獵犬天然偏低）影響。當臨床表現與實驗室結果不一致時，應考慮干擾因素、建議進階檢查（Free T4 by ED 較不受 NTI 影響）、或待原發病穩定後追蹤。報告中應清楚說明此不一致性與建議。',
+    difficulty: 4, spaced_rep: true, tags: ['整合判讀', '矛盾結果', '甲狀腺', 'NTI'], image_placeholder: null,
+  },
 ];

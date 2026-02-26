@@ -1758,4 +1758,295 @@ export const CARDIO_QUESTIONS: ReviewQuestion[] = [
     explanation: 'Subtotal pericardiectomy（保留心臟基底部心包膜，切除心尖側心包膜）可讓積液引流入胸腔被胸膜吸收，有效防止再次填塞。可經胸骨正中切開或胸腔鏡進行。特發性心包積液術後預後良好（> 90% 長期存活）。不建議全切除術因基底部心包膜有重要支撐功能。',
     difficulty: 5, spaced_rep: true, tags: ['穿刺', '手術', '心包切除', '特發性'], image_placeholder: null,
   },
+
+  // ============================================================
+  // CARDIO-L2-004 先天性心臟發育異常機轉 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-CONG-001', node_id: 'CARDIO-L2-004', question_type: 'mcq',
+    question: '胎兒期動脈導管（ductus arteriosus）的維持開放主要依賴哪種前列腺素？',
+    options: ['Prostaglandin E1 (PGE1)', 'Prostaglandin F2α (PGF2α)', 'Thromboxane A2 (TXA2)', 'Prostacyclin (PGI2)'],
+    correct_answer: 'Prostaglandin E1 (PGE1)',
+    explanation: '胎兒期動脈導管的開放由循環中的 PGE1 及 PGE2 維持。出生後 PGE 濃度下降加上血氧分壓上升，導致導管平滑肌收縮並在數天內功能性關閉。PDA 的發生與此關閉機制失敗有關。',
+    difficulty: 3, spaced_rep: true, tags: ['先天性', '胚胎學', 'PDA', '前列腺素'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-CONG-002', node_id: 'CARDIO-L2-004', question_type: 'mcq',
+    question: '犬主動脈瓣下狹窄（SAS）的病理組織學特徵為何？',
+    options: [
+      '瓣膜葉增厚鈣化',
+      '左心室流出道下方纖維性或纖維肌性環',
+      '主動脈根部動脈瘤',
+      '二尖瓣前葉收縮期前向運動（SAM）',
+    ],
+    correct_answer: '左心室流出道下方纖維性或纖維肌性環',
+    explanation: 'SAS 的典型病理特徵為左心室流出道（LVOT）主動脈瓣下方形成纖維性或纖維肌性隆起/環狀結構，造成固定性狹窄。此結構並非出生即完全形成，而是在出生後數週至數月漸進發展，因此新生幼犬可能初次檢查正常。',
+    difficulty: 3, spaced_rep: true, tags: ['先天性', 'SAS', '病理學', 'LVOT'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-CONG-003', node_id: 'CARDIO-L2-004', question_type: 'case_based',
+    question: '一隻 3 個月齡拳師犬幼犬初次疫苗時未聽到心雜音，但 6 個月齡時發現右心基底部 Grade IV/VI 收縮期噴射性雜音。此現象最可能反映哪種先天性心臟病的發育特性？',
+    options: [
+      '肺動脈瓣狹窄（PS）——瓣膜發育不良型',
+      '主動脈瓣下狹窄（SAS）——纖維環漸進發展',
+      '心室中隔缺損（VSD）——缺損漸進擴大',
+      '開放性動脈導管（PDA）——導管再開放',
+    ],
+    correct_answer: '主動脈瓣下狹窄（SAS）——纖維環漸進發展',
+    explanation: 'SAS 的纖維/纖維肌性環在出生後漸進形成，因此幼犬可能在 3-4 月齡前聽診正常，之後才出現雜音且等級漸增。拳師犬和黃金獵犬是 SAS 好發品種。此特性強調好發品種應在 6 月齡後重新評估心臟聽診。注意：雖然題目描述右心基底部，但 SAS 的雜音最大點通常在左心基底部；此處考驗學生辨識 SAS 漸進發展的特性。',
+    difficulty: 3, spaced_rep: true, tags: ['先天性', 'SAS', '品種', '發育', '臨床推理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CARDIO-L3-006 先天性心臟病 PDA/PS/SAS (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-CHD-001', node_id: 'CARDIO-L3-006', question_type: 'mcq',
+    question: '關於犬肺動脈瓣狹窄（PS）的治療，下列何者正確？',
+    options: [
+      '所有 PS 患犬均需手術治療',
+      '壓力梯度 > 80 mmHg 的重度 PS 建議球囊瓣膜成形術（BV）',
+      'Beta blocker 可治癒 PS',
+      '壓力梯度 < 50 mmHg 的 PS 應立即手術',
+    ],
+    correct_answer: '壓力梯度 > 80 mmHg 的重度 PS 建議球囊瓣膜成形術（BV）',
+    explanation: 'PS 治療依壓力梯度分級：輕度（< 50 mmHg）通常不需介入；中度（50-80 mmHg）視症狀決定；重度（> 80 mmHg）建議球囊瓣膜成形術（balloon valvuloplasty, BV）。BV 成功率高（尤其 Type A 瓣膜融合型），可顯著降低壓力梯度。Type B（瓣膜發育不良型，好發英國鬥牛犬）對 BV 反應較差。',
+    difficulty: 3, spaced_rep: true, tags: ['先天性', 'PS', '球囊成形術', '治療'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-CHD-002', node_id: 'CARDIO-L3-006', question_type: 'case_based',
+    question: '一隻 5 個月齡黃金獵犬於聽診發現左心基底部 Grade V/VI 收縮期噴射性雜音，股動脈脈搏偏弱。心臟超音波顯示主動脈瓣下纖維環，LVOT 峰值流速 5.5 m/s。最適當的處置為何？',
+    options: [
+      '僅限制運動與定期追蹤',
+      '球囊擴張術',
+      '限制運動 + Atenolol + 告知猝死風險 + 討論手術選項',
+      '手術切除纖維環是唯一治療',
+    ],
+    correct_answer: '限制運動 + Atenolol + 告知猝死風險 + 討論手術選項',
+    explanation: '峰值流速 5.5 m/s 換算壓力梯度約 121 mmHg（4V²），屬重度 SAS。重度 SAS 猝死風險顯著增加。治療包括：(1) 限制激烈運動；(2) Atenolol 降低心率、減少心肌耗氧、抑制心律不整；(3) 與飼主充分溝通猝死風險。球囊擴張對 SAS 效果有限且無法降低猝死風險。開胸手術切除雖可行但風險高，需專科中心評估。',
+    difficulty: 4, spaced_rep: true, tags: ['先天性', 'SAS', '治療', '猝死風險', '臨床推理'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-CHD-003', node_id: 'CARDIO-L3-006', question_type: 'mcq',
+    question: '下列關於犬 PDA 的 Eisenmenger 化（右到左分流）敘述，何者正確？',
+    options: [
+      '手術閉合 PDA 可逆轉 Eisenmenger',
+      '後肢差異性發紺（differential cyanosis）是典型表現',
+      '所有未治療的 PDA 最終都會 Eisenmenger 化',
+      'Eisenmenger 化的 PDA 患犬預後良好',
+    ],
+    correct_answer: '後肢差異性發紺（differential cyanosis）是典型表現',
+    explanation: 'PDA Eisenmenger 化時肺動脈壓超過主動脈壓，血流從肺動脈經 PDA 流入降主動脈（右到左分流），導致後半身接收去氧血、前半身正常→後肢差異性發紺。此時禁忌閉合 PDA（會導致急性右心衰竭）。並非所有 PDA 都會 Eisenmenger 化。治療以 Sildenafil 等肺動脈高壓藥物為主，預後謹慎。',
+    difficulty: 4, spaced_rep: true, tags: ['先天性', 'PDA', 'Eisenmenger', '差異性發紺'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CARDIO-L3-007 心律不整各論 SVT/VT/AF/SSS (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-ARR-001', node_id: 'CARDIO-L3-007', question_type: 'case_based',
+    question: '一隻 7 歲愛爾蘭獵狼犬因虛弱就診。ECG 顯示不規則的基線（無 P 波）、心室率 180 bpm、QRS 波窄且 RR 間距完全不規則。最可能的診斷與首選治療為何？',
+    options: [
+      '心房顫動（AF）——Diltiazem 控制心室率',
+      '上心室頻脈（SVT）——迷走神經刺激術',
+      '竇性心搏過速——找出根本原因',
+      '心室頻脈（VT）——Lidocaine IV',
+    ],
+    correct_answer: '心房顫動（AF）——Diltiazem 控制心室率',
+    explanation: '無 P 波 + 完全不規則 RR 間距 + 窄 QRS = 心房顫動（AF）。大型/巨型犬 AF 常與 DCM 或結構性心臟病相關。治療目標為控制心室率（rate control）而非節律轉復。Diltiazem（鈣通道阻斷劑）是犬 AF 心率控制的首選藥物，可單用或合併 Digoxin。愛爾蘭獵狼犬是 AF 和 DCM 的好發品種。',
+    difficulty: 4, spaced_rep: true, tags: ['心律不整', 'AF', 'ECG', 'Diltiazem', '臨床推理'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-ARR-002', node_id: 'CARDIO-L3-007', question_type: 'mcq',
+    question: '犬心室頻脈（VT）的 ECG 特徵，下列何者正確？',
+    options: [
+      'QRS 波窄且規則',
+      'QRS 波寬且型態異常，連續 ≥ 3 個 VPCs',
+      'P 波與 QRS 波 1:1 傳導',
+      '完全不規則的 RR 間距伴隨纖維化波（f wave）',
+    ],
+    correct_answer: 'QRS 波寬且型態異常，連續 ≥ 3 個 VPCs',
+    explanation: 'VT 定義為連續 ≥ 3 個心室早期複合波（VPCs）。ECG 特徵：QRS 波寬（> 0.06 秒）且型態異常、T 波方向與 QRS 主波相反、P 波與 QRS 無關（AV dissociation）。持續性 VT（> 30 秒）比非持續性 VT 更危險，可能惡化為心室顫動。',
+    difficulty: 4, spaced_rep: true, tags: ['心律不整', 'VT', 'ECG', 'VPC'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-ARR-003', node_id: 'CARDIO-L3-007', question_type: 'case_based',
+    question: '一隻 10 歲迷你雪納瑞因反覆暈厥就診。ECG 顯示竇性心搏過緩（HR 40 bpm），有長時間竇性停頓（> 3 秒），偶有短暫的上心室頻脈發作。此心律不整最可能的診斷為何？',
+    options: [
+      '第三度房室傳導阻滯（complete AV block）',
+      '病竇症候群（Sick Sinus Syndrome, SSS）',
+      '心房顫動伴緩慢心室率',
+      '高迷走神經張力（vagal tone）',
+    ],
+    correct_answer: '病竇症候群（Sick Sinus Syndrome, SSS）',
+    explanation: 'SSS 的特徵是竇房結功能異常，表現為：竇性心搏過緩、竇性停頓/竇房阻滯、交替出現快速上心室心律不整（tachycardia-bradycardia syndrome）。迷你雪納瑞、臘腸犬和 West Highland White Terrier 是好發品種。症狀性 SSS（暈厥、虛弱）需要永久性心臟節律器植入。Atropine 反應試驗可協助診斷。',
+    difficulty: 4, spaced_rep: true, tags: ['心律不整', 'SSS', '暈厥', '心臟節律器', '臨床推理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CARDIO-L3-008 感染性心內膜炎 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-IE-001', node_id: 'CARDIO-L3-008', question_type: 'mcq',
+    question: '犬感染性心內膜炎（IE）最常侵犯的瓣膜為何？',
+    options: ['二尖瓣', '主動脈瓣', '三尖瓣', '肺動脈瓣'],
+    correct_answer: '主動脈瓣',
+    explanation: '犬 IE 最常侵犯主動脈瓣（約 50-65%），其次為二尖瓣（約 30-35%），兩瓣同時受累約 20%。主動脈瓣因承受高速血流衝擊，內皮損傷風險較高。中大型犬公犬好發。最常見致病菌為 Staphylococcus spp.、Streptococcus spp. 和 E. coli。',
+    difficulty: 4, spaced_rep: true, tags: ['感染性心內膜炎', '流行病學', '瓣膜'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-IE-002', node_id: 'CARDIO-L3-008', question_type: 'case_based',
+    question: '一隻 6 歲未絕育雄性德國牧羊犬因反覆發燒（39.8-40.5°C）、跛行（多關節腫脹）及新出現的舒張期心雜音就診。CBC 顯示白血球增多伴左移。最可能的診斷及必須安排的檢查為何？',
+    options: [
+      '感染性心內膜炎——血液培養（至少 3 組）+ 心臟超音波',
+      '免疫媒介性多發關節炎——關節液分析 + ANA',
+      '嗜組織基質胞漿菌症——胸腔 X 光 + 血清學',
+      'SAS 合併關節炎——心臟超音波即可',
+    ],
+    correct_answer: '感染性心內膜炎——血液培養（至少 3 組）+ 心臟超音波',
+    explanation: '反覆發燒 + 新出現心雜音 + 多關節炎（免疫複合物沉積）+ 白血球增多 = 高度懷疑 IE。Duke criteria 改良版用於診斷：主標準包括陽性血培養與心超見贅生物（vegetation）。血液培養建議在不同時間點抽取至少 3 組（好氧 + 厭氧），於抗生素使用前取得。新出現的舒張期雜音提示主動脈瓣受累。',
+    difficulty: 4, spaced_rep: true, tags: ['感染性心內膜炎', '診斷', 'Duke criteria', '臨床推理'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-IE-003', node_id: 'CARDIO-L3-008', question_type: 'mcq',
+    question: '犬感染性心內膜炎的抗生素治療原則，下列何者正確？',
+    options: [
+      '口服抗生素 7-10 天即可',
+      '靜脈注射殺菌性抗生素 1-2 週，後轉口服共 6-8 週',
+      '依感受性使用抑菌性抗生素 2 週',
+      '不需抗生素，手術清創即可',
+    ],
+    correct_answer: '靜脈注射殺菌性抗生素 1-2 週，後轉口服共 6-8 週',
+    explanation: 'IE 治療需要長期殺菌性（bactericidal）抗生素，因贅生物（vegetation）內部血流灌注差、細菌代謝率低。標準方案：IV 殺菌性抗生素（如 Ampicillin + Enrofloxacin）1-2 週後轉口服，總療程 6-8 週。必須依據血液培養藥敏結果調整。抑菌性抗生素（如 Doxycycline 單用）效果不佳。',
+    difficulty: 4, spaced_rep: true, tags: ['感染性心內膜炎', '治療', '抗生素'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CARDIO-L3-009 肺動脈高壓 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-PH-001', node_id: 'CARDIO-L3-009', question_type: 'mcq',
+    question: '犬肺動脈高壓（PH）的心臟超音波診斷，最常用的估算指標為何？',
+    options: [
+      '左心房/主動脈比值（LA/Ao）',
+      '三尖瓣逆流峰值流速（TR Vmax）估算右心室收縮壓',
+      '二尖瓣 E/A 比值',
+      '左心室射出分率（EF）',
+    ],
+    correct_answer: '三尖瓣逆流峰值流速（TR Vmax）估算右心室收縮壓',
+    explanation: '利用三尖瓣逆流（TR）的峰值流速，透過簡化 Bernoulli 方程式（ΔP = 4V²）估算右心室-右心房壓力梯度，加上估計的右心房壓力即可推算肺動脈收縮壓。TR Vmax > 2.8 m/s（估算 ΔP > 31 mmHg）提示 PH 可能。> 3.5 m/s 為中度，> 4.5 m/s 為重度。',
+    difficulty: 4, spaced_rep: true, tags: ['肺動脈高壓', '超音波', 'TR', 'Bernoulli'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-PH-002', node_id: 'CARDIO-L3-009', question_type: 'mcq',
+    question: '下列何者不是犬肺動脈高壓（PH）的常見病因？',
+    options: [
+      '心絲蟲感染',
+      '左心疾病（MMVD Stage C/D）',
+      '慢性呼吸道疾病（氣管塌陷、慢性支氣管炎）',
+      '主動脈瓣狹窄（AS）',
+    ],
+    correct_answer: '主動脈瓣狹窄（AS）',
+    explanation: '犬 PH 依 WHO 分類：Group 1（肺動脈本身，如心絲蟲、原發性 PH）、Group 2（左心疾病，如 MMVD、DCM）、Group 3（肺部/低氧，如慢性呼吸道疾病、高海拔）、Group 4（血栓栓塞）、Group 5（多因素）。主動脈瓣狹窄是左心流出道問題，不直接導致肺動脈高壓。',
+    difficulty: 4, spaced_rep: true, tags: ['肺動脈高壓', '病因', 'WHO 分類'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-PH-003', node_id: 'CARDIO-L3-009', question_type: 'case_based',
+    question: '一隻 11 歲博美犬有 MMVD Stage C 病史，目前三合一療法控制中。近期出現運動不耐加劇、暈厥。心超顯示 TR Vmax 4.2 m/s，右心室擴大。除了現有治療外，最適合加入的藥物為何？',
+    options: [
+      'Sildenafil（PDE-5 抑制劑）',
+      'Digoxin（強心配醣體）',
+      'Amlodipine（全身性血管擴張劑）',
+      'Doxycycline（抗 Wolbachia）',
+    ],
+    correct_answer: 'Sildenafil（PDE-5 抑制劑）',
+    explanation: 'TR Vmax 4.2 m/s 估算 ΔP ≈ 71 mmHg，為中重度 PH。此案為 MMVD 繼發的 Group 2 PH。Sildenafil 透過抑制 PDE-5 增加 cGMP，選擇性擴張肺動脈血管，是犬 PH 的主要治療藥物（1-2 mg/kg PO BID-TID）。全身性血管擴張劑（如 Amlodipine）無肺動脈選擇性，可能導致全身低血壓。',
+    difficulty: 4, spaced_rep: true, tags: ['肺動脈高壓', 'Sildenafil', 'MMVD', '治療', '臨床推理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CARDIO-L3-010 貓 ATE (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-ATE-001', node_id: 'CARDIO-L3-010', question_type: 'mcq',
+    question: '貓動脈血栓栓塞症（ATE）中，血栓最常見的栓塞位置為何？',
+    options: [
+      '腎動脈分叉處',
+      '主動脈三分叉處（saddle thrombus）',
+      '頸動脈分叉處',
+      '腸繫膜動脈',
+    ],
+    correct_answer: '主動脈三分叉處（saddle thrombus）',
+    explanation: '約 90-95% 的貓 ATE 發生在腹主動脈三分叉處（iliac trifurcation），形成所謂的鞍狀血栓（saddle thrombus），導致雙後肢急性缺血。約 10-15% 發生在前肢（右前肢多於左前肢）。腎臟、腸繫膜和腦血管也可能受累但較少見。',
+    difficulty: 4, spaced_rep: true, tags: ['ATE', '血栓', '貓', '解剖'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-ATE-002', node_id: 'CARDIO-L3-010', question_type: 'mcq',
+    question: '根據 FAT CAT 研究，貓 ATE 長期預防用藥的建議為何？',
+    options: [
+      'Aspirin 81 mg PO 每 72 小時',
+      'Clopidogrel 18.75 mg PO SID',
+      'Warfarin 調整 INR 2-3',
+      '低分子量肝素（LMWH）終身注射',
+    ],
+    correct_answer: 'Clopidogrel 18.75 mg PO SID',
+    explanation: 'FAT CAT 研究（2015）比較 Clopidogrel vs Aspirin 用於貓 ATE 二級預防。結果顯示 Clopidogrel 組 ATE 復發率顯著低於 Aspirin 組（49% vs 75%），中位復發時間更長（443 天 vs 192 天）。因此 Clopidogrel 18.75 mg PO SID 目前為貓 ATE 預防的首選藥物。',
+    difficulty: 4, spaced_rep: true, tags: ['ATE', 'Clopidogrel', 'FAT CAT', '實證醫學'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-ATE-003', node_id: 'CARDIO-L3-010', question_type: 'case_based',
+    question: '一隻 8 歲已絕育雄性英國短毛貓因突發後肢癱瘓 2 小時就診。理學檢查發現雙後肢無脈搏、肉墊發紺冰冷。K⁺ 7.2 mEq/L，直腸溫 36.5°C。下列何者是最需要立即處理的問題？',
+    options: [
+      '後肢缺血——嘗試 tPA 溶栓',
+      '高血鉀——10% Calcium gluconate IV + 胰島素/葡萄糖',
+      '低體溫——積極保溫',
+      '疼痛——口服 NSAID',
+    ],
+    correct_answer: '高血鉀——10% Calcium gluconate IV + 胰島素/葡萄糖',
+    explanation: 'K⁺ 7.2 是致死性高血鉀，可導致心搏停止，是 ATE 急診中最緊急的代謝問題。處理順序：(1) Calcium gluconate IV 穩定心肌膜電位（cardioprotective，不降鉀但保護心臟）；(2) Regular insulin + Dextrose 將鉀驅入細胞內。tPA 在貓的死亡率高達 50% 不建議使用。疼痛管理重要但不如高血鉀緊急，且應用 opioid（非 NSAID）。',
+    difficulty: 4, spaced_rep: true, tags: ['ATE', '高血鉀', '急診', '貓', '臨床推理'], image_placeholder: null,
+  },
+
+  // ============================================================
+  // CARDIO-L5-004 心臟病分期與長期管理 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-CARDIO-LTM-001', node_id: 'CARDIO-L5-004', question_type: 'mcq',
+    question: '關於犬 MMVD 各分期的治療建議，下列配對何者正確？',
+    options: [
+      'Stage A：開始 Pimobendan',
+      'Stage B1：三合一療法',
+      'Stage B2：Pimobendan（EPIC Study 支持）',
+      'Stage C：僅 Furosemide 即可',
+    ],
+    correct_answer: 'Stage B2：Pimobendan（EPIC Study 支持）',
+    explanation: 'ACVIM 2019 共識：Stage A 不需藥物；Stage B1 不需藥物（定期監測）；Stage B2 開始 Pimobendan（EPIC Study 證實可延緩進入 CHF 約 15 個月）；Stage C 三合一療法（Pimobendan + Furosemide + ACE inhibitor）。正確辨識各分期的治療起點是臨床決策的關鍵。',
+    difficulty: 4, spaced_rep: true, tags: ['分期', 'ACVIM', 'EPIC', '治療'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-LTM-002', node_id: 'CARDIO-L5-004', question_type: 'case_based',
+    question: '一隻 MMVD Stage C 犬穩定控制 3 個月後回診。Sleeping RR 維持 18-22 次/分，活力食慾良好。BUN 32，Cre 1.6（較前次 1.2 上升）。最適當的處置為何？',
+    options: [
+      '立即停用 Furosemide 與 ACE inhibitor',
+      '維持目前治療，密切追蹤腎功能（2-4 週後再驗）',
+      '加倍 Furosemide 劑量',
+      '轉為 Stage D 治療',
+    ],
+    correct_answer: '維持目前治療，密切追蹤腎功能（2-4 週後再驗）',
+    explanation: 'Cre 輕度上升（1.2→1.6）在 Furosemide + ACE inhibitor 使用下常見（功能性腎前性氮血症）。若臨床症狀控制良好（sleeping RR 正常、活力食慾佳），不需立即停藥。正確做法是短期內追蹤腎功能趨勢。Cre 上升 > 30% 或持續惡化才需考慮減藥。突然停用利尿劑可能導致急性 CHF 復發。',
+    difficulty: 4, spaced_rep: true, tags: ['長期管理', '心腎症候群', '腎功能', '臨床推理'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-LTM-003', node_id: 'CARDIO-L5-004', question_type: 'mcq',
+    question: '關於心臟病犬的營養管理，下列何者正確？',
+    options: [
+      '所有心臟病犬應嚴格限鈉飲食',
+      'Stage C/D 應適度限鈉，但不可過度限制蛋白質',
+      '心臟病犬應補充高劑量維生素 C',
+      'Taurine 補充對所有 DCM 犬有效',
+    ],
+    correct_answer: 'Stage C/D 應適度限鈉，但不可過度限制蛋白質',
+    explanation: '心臟病犬的營養管理：(1) Stage A/B 不需嚴格限鈉；(2) Stage C/D 適度限鈉（避免高鈉零食、人食），但過度限鈉可能啟動 RAAS 反而有害；(3) 維持足夠蛋白質攝取（心臟惡病質 cardiac cachexia 預防）；(4) Omega-3 脂肪酸可能有抗炎益處；(5) Taurine 補充僅對 taurine 缺乏型 DCM 有效（美國可卡、黃金獵犬需評估）。',
+    difficulty: 4, spaced_rep: true, tags: ['長期管理', '營養', '限鈉', 'cachexia'], image_placeholder: null,
+  },
 ];

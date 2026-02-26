@@ -27,4 +27,21 @@ export const CPATH_NODES: KnowledgeNode[] = [
   { id: 'CPATH-L4-011', specialty: 'CPATH', title: '淋巴結與腫瘤細胞學', title_en: 'Lymph Node & Tumor Cytology', layer: 4, node_type: 'diagnostic', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['細胞學', '淋巴結', 'FNA'], encyclopedia_link: null, cross_specialty_notes: 'ONCO - 腫瘤初步診斷', created_at: now, updated_at: now },
   { id: 'CPATH-L4-012', specialty: 'CPATH', title: '皮膚細胞學與刮搔判讀', title_en: 'Dermatologic Cytology & Skin Scraping', layer: 4, node_type: 'diagnostic', difficulty: 3, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['皮膚', '細胞學', '刮搔'], encyclopedia_link: null, cross_specialty_notes: 'DERM - 皮膚疾病初步診斷', created_at: now, updated_at: now },
   { id: 'CPATH-L4-013', specialty: 'CPATH', title: '感染性疾病實驗室診斷', title_en: 'Infectious Disease Laboratory Diagnosis', layer: 4, node_type: 'diagnostic', difficulty: 3, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['PCR', '培養', '血清學', '快篩'], encyclopedia_link: null, cross_specialty_notes: 'IM - 感染科確診', created_at: now, updated_at: now },
+
+  // ─── Phase 1 擴展（6 nodes）───
+  // Layer 0: 學科總覽
+  { id: 'CPATH-L0-001', specialty: 'CPATH', title: '臨床病理學總覽', title_en: 'Clinical Pathology Overview', layer: 0, node_type: 'concept', difficulty: 1, estimated_minutes: 15, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['總覽', '臨床病理'], encyclopedia_link: null, cross_specialty_notes: 'ALL specialties - 臨床病理是全科基礎', created_at: now, updated_at: now },
+
+  // Layer 1: 基礎科學（擴充）
+  { id: 'CPATH-L1-003', specialty: 'CPATH', title: '免疫學基礎', title_en: 'Basic Immunology', layer: 1, node_type: 'concept', difficulty: 2, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 4, status: 'published', version: 1, tags: ['免疫學', '基礎', '抗體', '補體'], encyclopedia_link: null, cross_specialty_notes: 'ALL specialties - 免疫反應是疾病機轉核心', created_at: now, updated_at: now },
+  { id: 'CPATH-L1-004', specialty: 'CPATH', title: '微生物學基礎', title_en: 'Basic Microbiology', layer: 1, node_type: 'concept', difficulty: 2, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 4, status: 'published', version: 1, tags: ['微生物學', '細菌', '黴菌', '病毒'], encyclopedia_link: null, cross_specialty_notes: 'ALL specialties - 感染性疾病共用知識', created_at: now, updated_at: now },
+
+  // Layer 2: 病理機轉（擴充）
+  { id: 'CPATH-L2-002', specialty: 'CPATH', title: '分析方法學與儀器原理', title_en: 'Analytical Methodology & Instrumentation', layer: 2, node_type: 'mechanism', difficulty: 3, estimated_minutes: 25, clinical_relevance: 3, exam_relevance: 3, status: 'published', version: 1, tags: ['方法學', '儀器', '光度法', '阻抗法'], encyclopedia_link: null, cross_specialty_notes: 'ALL specialties - 理解儀器原理才能正確判讀結果', created_at: now, updated_at: now },
+
+  // Layer 4: 診斷方法（擴充）
+  { id: 'CPATH-L4-014', specialty: 'CPATH', title: '即時檢驗判讀', title_en: 'Point-of-Care Testing (POCT)', layer: 4, node_type: 'diagnostic', difficulty: 3, estimated_minutes: 20, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['POCT', '即時檢驗', 'IDEXX', 'iSTAT'], encyclopedia_link: null, cross_specialty_notes: 'ECC/ALL - 急診與一般門診即時判讀', created_at: now, updated_at: now },
+
+  // Layer 5: 治療與管理
+  { id: 'CPATH-L5-001', specialty: 'CPATH', title: '整合判讀與報告撰寫', title_en: 'Integrated Interpretation & Report Writing', layer: 5, node_type: 'concept', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['整合判讀', '報告', '跨科溝通'], encyclopedia_link: null, cross_specialty_notes: 'ALL specialties - 檢驗結果整合是臨床決策基礎', created_at: now, updated_at: now },
 ];

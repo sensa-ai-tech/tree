@@ -303,4 +303,310 @@ export const CPATH_CASES: CaseChallenge[] = [
     related_nodes_for_review: ['CPATH-L4-006', 'CPATH-L4-003', 'CPATH-L1-002', 'CPATH-L4-002'],
     tags: ['胸水', '體液分析', '改良型漏出液', '間皮瘤', '穿刺', 'case_challenge'],
   },
+  // --- CASE-CPATH-008: 老年貓的綜合檢驗異常 ---
+  {
+    id: 'CASE-CPATH-008',
+    title: '老年貓的綜合檢驗異常：甲狀腺亢進掩蓋慢性腎病',
+    specialty: 'CPATH',
+    cross_specialties: ['IM', 'ECC'],
+    required_nodes: ['CPATH-L4-001', 'CPATH-L4-002', 'CPATH-L4-009', 'CPATH-L5-001'],
+    difficulty: 4,
+    species: '貓',
+    scenario: {
+      signalment: '12 歲已去勢雄性家庭短毛貓（DSH），體重 3.8 kg（六個月前 4.5 kg）',
+      chief_complaint: '例行健康篩檢發現多項檢驗異常',
+      brief_history: '飼主帶貓進行年度健康篩檢。近三個月體重漸減但食慾反增（多食）、活動力尚可但偶爾煩躁不安。飲水量略增、排尿量略增。無嘔吐腹瀉。毛質稍粗糙。定期施打疫苗與驅蟲。無近期用藥史。',
+    },
+    steps: [
+      {
+        step_number: 1,
+        step_type: 'history_collection',
+        title: '病史採集',
+        prompt: '面對老年貓例行篩檢出現多項異常，你需要進一步釐清哪些問題？請選擇最重要的 3 項。',
+        available_actions: [
+          '詢問多食/多渴/多尿的具體時間與程度',
+          '詢問是否有心跳加速、喘息或活動後疲倦',
+          '詢問排便型態（腹瀉或便量改變）',
+          '詢問是否有嘔吐或反胃',
+          '詢問居家環境是否有壓力源（搬家、新寵物）',
+          '詢問是否有接觸戶外環境或毒物',
+        ],
+        correct_actions: [
+          '詢問多食/多渴/多尿的具體時間與程度',
+          '詢問是否有心跳加速、喘息或活動後疲倦',
+          '詢問排便型態（腹瀉或便量改變）',
+        ],
+        feedback_correct: '很好！老年貓體重下降伴多食（polyphagia with weight loss）是甲狀腺亢進（hyperthyroidism）的經典表現。多渴多尿（PU/PD）可能與甲狀腺亢進或腎臟疾病相關。心血管症狀（心搏過速、喘息）是甲亢的常見併發症。腸胃症狀（腹瀉、軟便）也常見於甲亢貓。',
+        feedback_incorrect: '老年貓體重下降 + 食慾增加的組合高度提示甲狀腺亢進。需要詢問 PU/PD 嚴重度（腎臟 vs 甲亢）、心血管症狀（甲亢性心肌病）、以及 GI 症狀（甲亢常見）來完整評估。',
+        key_learning_points: [
+          '老年貓多食伴體重下降的首要鑑別：甲狀腺亢進',
+          '甲亢貓 PU/PD 機轉：甲狀腺素增加腎絲球過濾率（GFR），可能掩蓋潛在 CKD',
+          '甲亢心血管影響：竇性心搏過速、肥大性心肌病、高血壓',
+          '台灣老年貓甲亢盛行率約 6-10%',
+        ],
+      },
+      {
+        step_number: 2,
+        step_type: 'physical_examination',
+        title: '理學檢查',
+        prompt: '病史補充：多食多渴多尿約 2-3 個月。偶爾心跳很快但無明顯喘息。排便正常偏軟。請選擇最重要的理學檢查發現。',
+        available_actions: [
+          '頸部觸診雙側甲狀腺可觸及結節（甲狀腺腫大）',
+          '心率 240 bpm（竇性心搏過速），可聞及奔馬律（gallop rhythm）',
+          '體態評分 BCS 3/9（偏瘦），肌肉流失（muscle wasting）',
+          '血壓 185 mmHg（收縮壓偏高）',
+          '被毛粗糙但無明顯皮膚病灶',
+          '腹部觸診雙腎大小正常偏小',
+        ],
+        correct_actions: [
+          '頸部觸診雙側甲狀腺可觸及結節（甲狀腺腫大）',
+          '心率 240 bpm（竇性心搏過速），可聞及奔馬律（gallop rhythm）',
+          '體態評分 BCS 3/9（偏瘦），肌肉流失（muscle wasting）',
+        ],
+        feedback_correct: '正確！甲狀腺結節觸診陽性（約 80-90% 甲亢貓可觸及）是最直接的理學線索。竇性心搏過速 + 奔馬律提示甲亢性心肌病。體重下降合併肌肉流失反映甲狀腺素誘導的高代謝狀態。這三項發現高度支持甲狀腺亢進的初步臨床診斷。',
+        feedback_incorrect: '甲亢貓的三大理學特徵：(1) 頸部甲狀腺結節（最直接）、(2) 心搏過速 ± 奔馬律（心血管影響）、(3) 消瘦與肌肉流失（高代謝）。高血壓也常見但需血壓計確認。',
+        key_learning_points: [
+          '貓甲狀腺觸診技巧：從喉部沿氣管向胸腔入口滑動',
+          '貓正常甲狀腺不可觸及，可觸及 = 腫大',
+          '奔馬律（gallop rhythm）在貓是心肌病的重要聽診發現',
+          '甲亢導致高代謝：蛋白質分解增加 → 肌肉流失',
+        ],
+      },
+      {
+        step_number: 3,
+        step_type: 'result_interpretation',
+        title: '實驗室結果判讀',
+        prompt: `例行健康篩檢結果如下，請系統性判讀並找出關鍵異常：
+- CBC：HCT 38%（正常）、WBC 12,000（stress leukogram 模式）、PLT 正常
+- 生化：BUN 38 mg/dL（↑）、Cr 2.1 mg/dL（↑）、SDMA 18 ug/dL（↑）、Phos 5.2（正常高限）、ALT 125（↑）、ALP 45（正常）、T4 8.5 ug/dL（↑↑，正常 1.0-4.0）、Glucose 正常、Albumin 正常
+- 尿液分析：USG 1.018（不適當低）、UPC 0.3、沉渣無活性沉積物
+
+請選擇最正確的整合判讀。`,
+        available_actions: [
+          'T4 顯著升高確認甲狀腺亢進；氮血症 + USG 1.018 提示腎功能受損，但甲亢可能掩蓋 CKD 真實嚴重度',
+          '單純甲狀腺亢進，氮血症為甲亢導致的前腎性',
+          '原發性 CKD 合併偶然發現的 T4 升高',
+          '肝臟疾病為主（ALT 升高），甲狀腺次要',
+        ],
+        correct_actions: [
+          'T4 顯著升高確認甲狀腺亢進；氮血症 + USG 1.018 提示腎功能受損，但甲亢可能掩蓋 CKD 真實嚴重度',
+        ],
+        feedback_correct: '正確！這是老年貓臨床病理最重要的整合判讀挑戰之一。T4 8.5 明確確認甲亢。關鍵陷阱：甲亢會增加 GFR（腎絲球過濾率），使 BUN/Cr 看起來「沒那麼高」——實際腎功能可能比目前數值顯示的更差。USG 1.018 在貓屬不適當低（貓正常 > 1.035），支持腎臟濃縮能力受損。ALT 輕度升高是甲亢的常見肝臟影響（非原發肝病）。SDMA 18 已超出正常（> 14），進一步支持腎功能受損。',
+        feedback_incorrect: '核心概念：甲亢增加 GFR → BUN/Cr 被「稀釋」→ 腎病嚴重度被低估。治療甲亢後 GFR 正常化，BUN/Cr 可能進一步升高，揭露隱藏的 CKD。這是甲亢 + CKD 並存時最常見的臨床病理陷阱。',
+        key_learning_points: [
+          '甲亢增加 GFR 的機轉：增加心輸出 + 降低腎血管阻力 → 腎絲球過度灌流',
+          '甲亢掩蓋 CKD：治療前 Cr 看似輕度升高，治療後可能顯著惡化',
+          'SDMA 比 Cr 更早偵測腎功能下降，在甲亢貓中也可能被低估',
+          '貓 USG < 1.035 在脫水或氮血症時 = 濃縮能力不適當',
+          'ALT 輕度升高是甲亢常見的次要發現（甲狀腺素對肝細胞的直接影響）',
+        ],
+      },
+      {
+        step_number: 4,
+        step_type: 'treatment_plan',
+        title: '整合評估與治療策略',
+        prompt: '確認甲亢合併疑似潛在 CKD 的老年貓，治療策略與後續監測計畫？選擇最適當的 2 項。',
+        available_actions: [
+          '先以 Methimazole 低劑量試驗性治療甲亢，2-4 週後追蹤腎功能（BUN/Cr/SDMA/USG）評估隱藏 CKD 嚴重度',
+          '直接進行甲狀腺切除術徹底根治',
+          '僅治療甲亢不需監測腎功能',
+          '追蹤尿液 UPC 與血壓，評估腎臟與心血管目標器官損傷',
+          '放射性碘治療（I-131）作為第一線',
+          '不治療甲亢以維持腎臟灌流',
+        ],
+        correct_actions: [
+          '先以 Methimazole 低劑量試驗性治療甲亢，2-4 週後追蹤腎功能（BUN/Cr/SDMA/USG）評估隱藏 CKD 嚴重度',
+          '追蹤尿液 UPC 與血壓，評估腎臟與心血管目標器官損傷',
+        ],
+        feedback_correct: '正確！Methimazole 試驗性治療（trial therapy）是甲亢合併腎功能異常的標準策略。低劑量開始（1.25-2.5 mg PO BID），2-4 週後追蹤 T4 + BUN/Cr/SDMA：若腎指數穩定 → 可考慮根治性治療；若 Cr 顯著上升（> 30%）→ 需要調整 Methimazole 劑量維持甲亢在「輕度未控制」狀態以保護腎灌流。UPC 與血壓監測評估 CKD 分期（IRIS staging）與高血壓（甲亢 + CKD 雙重風險）。',
+        feedback_incorrect: '甲亢 + CKD 的管理核心：先用可逆性藥物（Methimazole）測試腎功能反應，而非直接根治（不可逆）。追蹤腎功能與血壓是評估整體預後的關鍵。不治療甲亢不是選項——長期甲亢會導致心肌病和惡病質。',
+        key_learning_points: [
+          'Methimazole 試驗性治療是甲亢 + CKD 的黃金標準策略',
+          '治療後 Cr 升高 > 30% 提示嚴重潛在 CKD',
+          'IRIS CKD 分期需在甲亢控制後重新評估才準確',
+          '臨床病理在此扮演治療決策的核心角色：反覆監測 T4 + 腎指數指導劑量調整',
+          '血壓監測：甲亢性高血壓與 CKD 性高血壓可並存',
+        ],
+      },
+    ],
+    expert_pathway: {
+      reasoning: '老年貓多食體重下降 + PU/PD → 理學觸及甲狀腺結節 + 心搏過速 → 篩檢 T4 顯著升高確認甲亢 → 同時發現氮血症 + 低 USG → 甲亢掩蓋 CKD 的可能 → Methimazole 試驗治療 + 追蹤腎功能揭露真實 CKD 分期。',
+      key_decisions: [
+        '辨識甲亢掩蓋 CKD 的臨床病理陷阱',
+        '整合 CBC + 生化 + UA + T4 為一致的臨床敘事',
+        '選擇可逆性治療先評估腎功能反應',
+        '規劃系統性追蹤監測計畫',
+      ],
+      common_pitfalls: [
+        '僅看 T4 升高就直接根治，忽略潛在 CKD',
+        '認為氮血症輕微（Cr 2.1）不需擔心——甲亢可能掩蓋真實值',
+        '忽略 USG 1.018 在貓的意義（應 > 1.035）',
+        '未追蹤治療後腎功能變化',
+        'ALT 升高誤判為原發肝病而非甲亢次要影響',
+      ],
+    },
+    related_nodes_for_review: [
+      'CPATH-L4-001',
+      'CPATH-L4-002',
+      'CPATH-L4-009',
+      'CPATH-L4-010',
+      'CPATH-L5-001',
+    ],
+    tags: ['甲狀腺亢進', 'CKD', '老年貓', '整合判讀', 'T4', '腎功能', 'Methimazole', 'case_challenge'],
+  },
+  // --- CASE-CPATH-009: POCT vs 外送檢驗的差異判讀 ---
+  {
+    id: 'CASE-CPATH-009',
+    title: 'POCT 與外送檢驗結果差異的臨床判讀',
+    specialty: 'CPATH',
+    cross_specialties: ['ECC'],
+    required_nodes: ['CPATH-L4-014', 'CPATH-L2-002', 'CPATH-L5-001'],
+    difficulty: 3,
+    species: '犬',
+    scenario: {
+      signalment: '5 歲已絕育雌性法國鬥牛犬，體重 11 kg',
+      chief_complaint: '急診就診：嚴重嘔吐與腹瀉 2 天，脫水與虛弱',
+      brief_history: '兩天前突發嚴重嘔吐（> 10 次/天）與水樣腹瀉。食慾完全喪失、精神極差。飼主今晨發現犬站不穩遂送急診。理學檢查：脫水約 8%、黏膜乾燥偏粉紅、CRT 3 秒、HR 160 bpm、體溫 38.2°C。急診立即進行院內 POCT 檢驗。',
+    },
+    steps: [
+      {
+        step_number: 1,
+        step_type: 'result_interpretation',
+        title: 'POCT 即時結果判讀',
+        prompt: `急診 POCT（院內血液氣體分析儀 + 快篩生化）結果：
+- Na+ 128 mEq/L（↓）、K+ 6.8 mEq/L（↑↑ 危急值）、Cl- 95 mEq/L（↓）
+- BUN 45 mg/dL（↑）、Cr 3.8 mg/dL（↑）、Glucose 68 mg/dL（偏低）
+- 血氣：pH 7.22（↓）、HCO3- 14（↓）、Lactate 5.2 mmol/L（↑）
+- PCV（微量離心）：48%、TP（折射儀）：8.5 g/dL（↑）
+
+面對 K+ 6.8 這個危急值，臨床上應如何處理？請選擇 2 項。`,
+        available_actions: [
+          '立即做心電圖（ECG）監測高鉀血症的心臟毒性',
+          '啟動高鉀血症急救處置（IV Regular Insulin + Dextrose / IV Calcium gluconate）',
+          '等待外送檢驗確認再處理',
+          '口服 Kayexalate 降鉀',
+          '立即進行血液透析',
+          '僅補充生理食鹽水即可',
+        ],
+        correct_actions: [
+          '立即做心電圖（ECG）監測高鉀血症的心臟毒性',
+          '啟動高鉀血症急救處置（IV Regular Insulin + Dextrose / IV Calcium gluconate）',
+        ],
+        feedback_correct: '正確！K+ 6.8 是危急值（critical value），無論 POCT 或外送結果，危急值必須立即處理，不可等待確認。ECG 監測是首要——高鉀導致心律不整（帳篷狀 T 波 → P 波消失 → QRS 增寬 → 心室顫動）。Calcium gluconate 心肌保護 + Insulin/Dextrose 將鉀推入細胞內是急救標準。這展示了 POCT 最大價值：急診快速決策。',
+        feedback_incorrect: 'POCT 的核心價值就在此：危急值的即時偵測。K+ > 6.5 mEq/L 有心臟毒性風險，必須立即處理——不等外送確認。ECG + 急救處置是標準流程。',
+        key_learning_points: [
+          'POCT 核心價值：急診危急值即時偵測，分鐘級決策',
+          '高鉀血症危急值 > 6.5 mEq/L：需立即 ECG 監測 + 急救',
+          'Calcium gluconate：保護心肌（不降鉀）；Insulin + Dextrose：促進鉀進入細胞內',
+          'POCT 危急值不等外送確認——先治療、同時送確認',
+        ],
+      },
+      {
+        step_number: 2,
+        step_type: 'result_interpretation',
+        title: '外送檢驗結果比對',
+        prompt: `隔天收到外送參考實驗室結果（血液與 POCT 同時採集送出）：
+- Na+ 132 mEq/L（POCT 128）、K+ 5.2 mEq/L（POCT 6.8）、Cl- 98 mEq/L（POCT 95）
+- BUN 42 mg/dL（POCT 45）、Cr 3.5 mg/dL（POCT 3.8）
+- Glucose 75 mg/dL（POCT 68）
+- CBC（外送）：WBC 18,500、HCT 52%、PLT 220,000
+
+K+ 差異最大（6.8 vs 5.2），可能原因？請選擇最可能的 2 項。`,
+        available_actions: [
+          '體外溶血（in vitro hemolysis）：採樣或處理過程中紅血球破裂釋出鉀',
+          '檢體凝塊（clotting in EDTA tube）：血小板活化釋放鉀',
+          'POCT 儀器校正偏差（calibration drift）',
+          '真正的鉀離子濃度在數小時內從 6.8 降至 5.2（患犬自行恢復）',
+          '外送實驗室結果錯誤',
+          '血氣分析儀測量鉀的方法本質上就不準',
+        ],
+        correct_actions: [
+          '體外溶血（in vitro hemolysis）：採樣或處理過程中紅血球破裂釋出鉀',
+          '檢體凝塊（clotting in EDTA tube）：血小板活化釋放鉀',
+        ],
+        feedback_correct: '正確！K+ 是最常見的 POCT vs 外送差異項目之一。主要原因是分析前誤差（pre-analytical error）：(1) 體外溶血——急診採血困難（脫水血管塌陷 + 小號針頭 + 困難採血）導致紅血球破裂，RBC 內 K+ 濃度是血漿的 25-40 倍，少量溶血即可顯著升高結果。(2) EDTA 管內微小凝塊——血小板活化時釋放 K+。這是臨床病理品管（QC）的經典教案。',
+        feedback_incorrect: '鉀離子是分析前誤差最敏感的項目。溶血是最常見原因——急診困難採血常導致。凝塊也會釋放鉀。POCT 儀器本身測量鉀通常是準確的（離子選擇電極法），問題出在檢體品質。',
+        key_learning_points: [
+          '鉀離子：分析前誤差最敏感的檢驗項目',
+          '體外溶血使 K+ 假性升高（RBC 內鉀濃度 >> 血漿）',
+          '急診困難採血是溶血高風險情境',
+          '凝塊釋放鉀：EDTA 管未充分混合時常見',
+          '臨床判斷：若 K+ 結果與臨床表現不符，需考慮分析前誤差',
+        ],
+      },
+      {
+        step_number: 3,
+        step_type: 'diagnostic_plan',
+        title: '根本原因分析',
+        prompt: '除了 K+ 外，其他項目（Na+、BUN、Cr、Glucose）也有小幅差異。這些差異的可能原因？請選擇最完整的解釋。',
+        available_actions: [
+          '方法學差異（methodology difference）：POCT 用離子選擇電極（ISE 直接法）vs 外送用分光光度法或 ISE 間接法，加上全血 vs 血清/血漿基質差異',
+          '兩台儀器其中一台壞了',
+          '檢體混淆（sample mix-up）',
+          '所有差異都是分析前誤差',
+          '差異在可接受範圍內無需理會',
+          '外送檢驗一律比 POCT 準確',
+        ],
+        correct_actions: [
+          '方法學差異（methodology difference）：POCT 用離子選擇電極（ISE 直接法）vs 外送用分光光度法或 ISE 間接法，加上全血 vs 血清/血漿基質差異',
+        ],
+        feedback_correct: '正確！POCT 與外送實驗室使用不同分析方法，會產生系統性的小幅差異（method bias）。(1) 電解質：POCT ISE 直接法測量全血活性離子；外送 ISE 間接法先稀釋血清，受蛋白/脂質影響（此犬 TP 偏高）。(2) BUN/Cr/Glucose：POCT 用乾式化學或電極法；外送用濕式化學（分光光度法），反應原理不同導致小幅數值差異。(3) 全血 vs 血清基質差異：POCT 測全血，外送測血清，水分含量不同。這些差異通常在 ±10-15% 內是可接受的。',
+        feedback_incorrect: 'POCT 與外送實驗室使用不同分析方法（ISE 直接法 vs 間接法、乾式 vs 濕式化學）和不同檢體基質（全血 vs 血清），會產生可預期的系統性小幅差異。了解這些差異的來源是正確判讀的基礎。',
+        key_learning_points: [
+          'ISE 直接法（POCT）vs ISE 間接法（外送）：高蛋白/高脂血症時差異更大',
+          '全血 vs 血清基質差異：全血含紅血球佔體積，離子活性計算不同',
+          'POCT 與外送 ±10-15% 差異通常可接受',
+          '了解方法學差異才能正確判讀——不是「誰比較準」而是「為何不同」',
+          '臨床病理品管概念：method bias vs random error vs pre-analytical error',
+        ],
+      },
+      {
+        step_number: 4,
+        step_type: 'case_summary',
+        title: '臨床決策：何時信任哪個結果',
+        prompt: '整合本案例，POCT 與外送檢驗在臨床決策中的角色？請選擇最正確的原則。',
+        available_actions: [
+          'POCT 用於急診即時決策（危急值、趨勢監測）；外送用於精確診斷與分期。兩者互補非互斥。差異過大時需評估分析前因素。',
+          'POCT 不可靠，所有決策應等外送結果',
+          '外送檢驗已過時，POCT 可完全取代',
+          '兩者結果不同時一律以外送為準',
+        ],
+        correct_actions: [
+          'POCT 用於急診即時決策（危急值、趨勢監測）；外送用於精確診斷與分期。兩者互補非互斥。差異過大時需評估分析前因素。',
+        ],
+        feedback_correct: '正確！這是 POCT 臨床應用的核心原則：(1) POCT 優勢：速度（分鐘 vs 小時/天）、急診危急值即時偵測、趨勢監測（serial monitoring）、少量檢體。(2) POCT 限制：精確度略遜外送、無血液抹片、項目有限。(3) 外送優勢：方法經過嚴格認證、參考範圍更可靠、項目齊全。(4) 互補策略：急診先用 POCT 決策 + 同時送外送確認。差異過大時先檢查分析前因素。',
+        feedback_incorrect: 'POCT 與外送檢驗是互補關係。POCT 的速度在急診不可取代（本例高鉀危急值即是例證）；外送的精確度與完整性對確診和分期不可或缺。臨床獸醫需理解兩者的優勢與限制。',
+        key_learning_points: [
+          'POCT 核心優勢：速度、床邊即時、少量檢體、趨勢監測',
+          'POCT 核心限制：精確度、參考範圍、項目數',
+          '外送實驗室：精確度高、品管嚴格、參考範圍經驗證',
+          '互補原則：急診 POCT 決策 + 外送確認；差異過大查分析前因素',
+          '臨床病理師的角色：幫助臨床獸醫理解兩者差異、避免誤判',
+        ],
+      },
+    ],
+    expert_pathway: {
+      reasoning: '急診脫水犬 → POCT 發現 K+ 6.8 危急值 → 立即急救 → 隔天外送 K+ 5.2 → 差異分析：分析前誤差（溶血/凝塊）最可能 → 其他小幅差異為方法學差異 → 建立 POCT vs 外送互補判讀框架。',
+      key_decisions: [
+        '危急值立即處理不等外送確認',
+        '辨識 K+ 差異最可能原因為分析前誤差',
+        '理解方法學差異導致的可接受偏差',
+        '建立 POCT 與外送互補臨床判讀原則',
+      ],
+      common_pitfalls: [
+        '等待外送確認而延誤危急值處置',
+        '不考慮溶血等分析前因素，認為 POCT 不準就不信任',
+        '不了解方法學差異，對小幅偏差過度反應',
+        '一律以外送結果否定 POCT（忽略 POCT 的即時價值）',
+        '忽略採血技術對急診 POCT 結果的影響',
+      ],
+    },
+    related_nodes_for_review: [
+      'CPATH-L4-014',
+      'CPATH-L2-002',
+      'CPATH-L2-001',
+      'CPATH-L5-001',
+    ],
+    tags: ['POCT', '即時檢驗', '分析前誤差', '方法學差異', '危急值', '高鉀血症', '急診', 'case_challenge'],
+  },
 ];

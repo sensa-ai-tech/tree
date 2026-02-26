@@ -75,4 +75,38 @@ export const IM_EDGES: KnowledgeEdge[] = [
 
   // IM-L3-009 缺少 L3→L4 clinical_apply
   { id: 'IM-E-041', source_node_id: 'IM-L3-009', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: '貓肝臟脂肪變性需腹腔超音波評估肝臟', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 2C 擴展邊 ───
+  // L2-006 → L3: clinical_apply（免疫介導機轉 → 免疫疾病）
+  { id: 'IM-E-042', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-005', relation_type: 'clinical_apply', weight: 1, description: '免疫介導機轉是 IMHA 的核心病理', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-043', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-015', relation_type: 'clinical_apply', weight: 1, description: '免疫介導機轉是 IMT 的核心病理', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-044', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-014', relation_type: 'clinical_apply', weight: 0.8, description: '免疫複合物沉積可導致 PLN', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-045', source_node_id: 'IM-L2-003', target_node_id: 'IM-L2-006', relation_type: 'builds_on', weight: 0.9, description: '發炎與免疫調節是免疫介導疾病機轉的基礎', bidirectional: false, unlock_condition: null },
+
+  // L2-001 → L3-013: clinical_apply（腎損傷 → AKI）
+  { id: 'IM-E-046', source_node_id: 'IM-L2-001', target_node_id: 'IM-L3-013', relation_type: 'clinical_apply', weight: 1, description: '腎損傷機轉直接導致 AKI', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-047', source_node_id: 'IM-L2-001', target_node_id: 'IM-L3-014', relation_type: 'clinical_apply', weight: 0.8, description: '腎損傷機轉包含 PLN 的腎絲球病變', bidirectional: false, unlock_condition: null },
+
+  // L3 新節點 → L4: clinical_apply
+  { id: 'IM-E-048', source_node_id: 'IM-L3-013', target_node_id: 'IM-L4-002', relation_type: 'clinical_apply', weight: 1, description: 'AKI 需尿液分析與腎功能評估', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-049', source_node_id: 'IM-L3-014', target_node_id: 'IM-L4-002', relation_type: 'clinical_apply', weight: 1, description: 'PLN 需 UPC 定量蛋白尿', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-050', source_node_id: 'IM-L3-016', target_node_id: 'IM-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: 'Leptospirosis 需腎功能與尿液評估', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-051', source_node_id: 'IM-L3-017', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: 'FIP 需腹腔超音波評估腹水', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-052', source_node_id: 'IM-L3-018', target_node_id: 'IM-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'FLUTD 需尿液分析評估', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-053', source_node_id: 'IM-L3-019', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: '膽管炎需腹腔超音波評估肝膽', bidirectional: false, unlock_condition: null },
+
+  // L3 新節點 → L5: clinical_apply
+  { id: 'IM-E-054', source_node_id: 'IM-L3-013', target_node_id: 'IM-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: 'AKI 可進展至 CKD 需長期管理', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-055', source_node_id: 'IM-L3-014', target_node_id: 'IM-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: 'PLN 管理屬 CKD 管理範疇', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-056', source_node_id: 'IM-L3-015', target_node_id: 'IM-L5-003', relation_type: 'clinical_apply', weight: 1, description: 'IMT 需免疫抑制治療', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-057', source_node_id: 'IM-L3-019', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: '膽管炎治療含抗生素與利膽藥', bidirectional: false, unlock_condition: null },
+
+  // L3 新節點之間: differential
+  { id: 'IM-E-058', source_node_id: 'IM-L3-013', target_node_id: 'IM-L3-004', relation_type: 'differential', weight: 0.9, description: 'AKI vs CKD 急性 vs 慢性腎病鑑別', bidirectional: true, unlock_condition: null },
+  { id: 'IM-E-059', source_node_id: 'IM-L3-005', target_node_id: 'IM-L3-015', relation_type: 'complication', weight: 0.8, description: 'IMHA 與 IMT 可合併（Evans syndrome）', bidirectional: true, unlock_condition: null },
+  { id: 'IM-E-060', source_node_id: 'IM-L3-016', target_node_id: 'IM-L3-013', relation_type: 'complication', weight: 0.9, description: 'Leptospirosis 常導致 AKI', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-061', source_node_id: 'IM-L3-019', target_node_id: 'IM-L3-008', relation_type: 'complication', weight: 0.8, description: '膽管炎常合併胰臟炎（三合症）', bidirectional: true, unlock_condition: null },
+
+  // L2-004 → L3-019: clinical_apply（肝膽病理 → 膽管炎）
+  { id: 'IM-E-062', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-019', relation_type: 'clinical_apply', weight: 0.9, description: '肝膽病理機轉是膽管炎的基礎', bidirectional: false, unlock_condition: null },
 ];

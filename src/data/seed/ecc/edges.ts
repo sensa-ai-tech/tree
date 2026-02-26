@@ -86,4 +86,48 @@ export const ECC_EDGES: KnowledgeEdge[] = [
   // ECC-L3-004 (貓尿道阻塞) — 補充酸鹼平衡 prerequisite 與 ABCDE 分診
   { id: 'ECC-E-043', source_node_id: 'ECC-L1-003', target_node_id: 'ECC-L3-004', relation_type: 'prerequisite', weight: 0.9, description: '貓尿道阻塞致高血鉀與代謝性酸中毒，需理解酸鹼平衡', bidirectional: false, unlock_condition: null },
   { id: 'ECC-E-044', source_node_id: 'ECC-L3-004', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '貓尿道阻塞需 ABCDE 評估心律與循環狀態（高血鉀致心律不整）', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 2D 擴展邊 ───
+  // ECC-L2-004（創傷與出血病生理）
+  { id: 'ECC-E-045', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L2-004', relation_type: 'builds_on', weight: 0.9, description: '休克生理學是創傷出血機轉的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-046', source_node_id: 'ECC-L2-003', target_node_id: 'ECC-L2-004', relation_type: 'same_system', weight: 0.8, description: '凝血障礙與創傷出血互為因果（創傷性凝血病變）', bidirectional: true, unlock_condition: null },
+
+  // ECC-L3-009（腹腔出血）
+  { id: 'ECC-E-047', source_node_id: 'ECC-L2-004', target_node_id: 'ECC-L3-009', relation_type: 'clinical_apply', weight: 1, description: '創傷出血機轉直接導致腹腔出血', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-048', source_node_id: 'ECC-L3-009', target_node_id: 'ECC-L4-002', relation_type: 'clinical_apply', weight: 1, description: 'AFAST 是腹腔出血的首要診斷工具', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-049', source_node_id: 'ECC-L3-009', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 1, description: '腹腔出血需積極液體復甦', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-050', source_node_id: 'ECC-L3-009', target_node_id: 'ECC-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '嚴重腹腔出血常需輸血治療', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-010（氣胸）
+  { id: 'ECC-E-051', source_node_id: 'ECC-L2-004', target_node_id: 'ECC-L3-010', relation_type: 'clinical_apply', weight: 0.8, description: '創傷是氣胸最常見原因', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-052', source_node_id: 'ECC-L3-010', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 1, description: '氣胸需 ABCDE 評估呼吸狀態', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-053', source_node_id: 'ECC-L3-010', target_node_id: 'ECC-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'TFAST 快速偵測氣胸（滑行徵消失）', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-011（敗血症臨床處置）
+  { id: 'ECC-E-054', source_node_id: 'ECC-L2-001', target_node_id: 'ECC-L3-011', relation_type: 'clinical_apply', weight: 1, description: 'SIRS/敗血症機轉是臨床處置的理論基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-055', source_node_id: 'ECC-L3-011', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '敗血症需 ABCDE 快速評估', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-056', source_node_id: 'ECC-L3-011', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 1, description: '敗血症液體復甦是核心治療', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-057', source_node_id: 'ECC-L3-011', target_node_id: 'ECC-L2-002', relation_type: 'complication', weight: 0.9, description: '敗血症可進展為 MODS', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-058', source_node_id: 'ECC-L3-011', target_node_id: 'ECC-L2-003', relation_type: 'complication', weight: 0.8, description: '敗血症可繼發 DIC', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-012（多發性創傷）
+  { id: 'ECC-E-059', source_node_id: 'ECC-L2-004', target_node_id: 'ECC-L3-012', relation_type: 'clinical_apply', weight: 1, description: '創傷病生理直接應用於多發創傷', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-060', source_node_id: 'ECC-L3-012', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 1, description: '多發創傷需 ABCDE 系統性評估', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-061', source_node_id: 'ECC-L3-012', target_node_id: 'ECC-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'AFAST/TFAST 評估創傷後體腔出血', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-062', source_node_id: 'ECC-L3-012', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 1, description: '多發創傷需積極液體復甦', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-063', source_node_id: 'ECC-L3-012', target_node_id: 'ECC-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: '多發創傷需多模式止痛', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-013（急性呼吸窘迫）
+  { id: 'ECC-E-064', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-013', relation_type: 'prerequisite', weight: 0.8, description: '呼吸窘迫可導致休克', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-065', source_node_id: 'ECC-L3-013', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 1, description: '呼吸窘迫需 ABCDE 優先評估呼吸道', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-066', source_node_id: 'ECC-L3-013', target_node_id: 'ECC-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: 'TFAST 鑑別心因性與非心因性呼吸窘迫', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-067', source_node_id: 'ECC-L3-013', target_node_id: 'ECC-L5-006', relation_type: 'clinical_apply', weight: 1, description: '嚴重呼吸窘迫可能需機械通氣', bidirectional: false, unlock_condition: null },
+
+  // ECC-L5-006（機械通氣與氧氣治療）
+  { id: 'ECC-E-068', source_node_id: 'ECC-L3-010', target_node_id: 'ECC-L5-006', relation_type: 'clinical_apply', weight: 0.8, description: '張力性氣胸引流後可能需正壓通氣', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-069', source_node_id: 'ECC-L3-011', target_node_id: 'ECC-L5-006', relation_type: 'clinical_apply', weight: 0.8, description: '敗血症合併 ARDS 需機械通氣', bidirectional: false, unlock_condition: null },
+
+  // 跨層連結
+  { id: 'ECC-E-070', source_node_id: 'ECC-L3-009', target_node_id: 'ECC-L3-012', relation_type: 'same_system', weight: 0.8, description: '腹腔出血常為多發創傷的一部分', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-071', source_node_id: 'ECC-L3-010', target_node_id: 'ECC-L3-012', relation_type: 'same_system', weight: 0.8, description: '氣胸常為多發創傷的一部分', bidirectional: false, unlock_condition: null },
 ];

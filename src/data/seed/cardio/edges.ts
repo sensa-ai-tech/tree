@@ -44,4 +44,46 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
   // 補充 clinical_apply 邊（L2 → L5, L3 → L5）
   { id: 'CARDIO-E-021', source_node_id: 'CARDIO-L2-003', target_node_id: 'CARDIO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '心律不整機轉是抗心律不整藥物的理論基礎', bidirectional: false, unlock_condition: null },
   { id: 'CARDIO-E-022', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '心包膜積液需心包膜穿刺術治療', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 2A 擴展邊 ───
+  // L2-004 → L3-006: clinical_apply（先天心病機轉 → 先天心病）
+  { id: 'CARDIO-E-023', source_node_id: 'CARDIO-L2-004', target_node_id: 'CARDIO-L3-006', relation_type: 'clinical_apply', weight: 1, description: '先天性心臟發育異常機轉直接導致 PDA/PS/SAS', bidirectional: false, unlock_condition: null },
+  // L1-001 → L2-004: builds_on（心臟解剖 → 先天心病機轉）
+  { id: 'CARDIO-E-024', source_node_id: 'CARDIO-L1-001', target_node_id: 'CARDIO-L2-004', relation_type: 'builds_on', weight: 0.9, description: '心臟解剖是先天心病機轉的基礎', bidirectional: false, unlock_condition: null },
+
+  // L2-003 → L3-007: clinical_apply（心律不整機轉 → 心律不整各論）
+  { id: 'CARDIO-E-025', source_node_id: 'CARDIO-L2-003', target_node_id: 'CARDIO-L3-007', relation_type: 'clinical_apply', weight: 1, description: '心律不整機轉是臨床心律不整的理論基礎', bidirectional: false, unlock_condition: null },
+  // L3-007 → L5-002: clinical_apply（心律不整 → 抗心律不整藥物）
+  { id: 'CARDIO-E-026', source_node_id: 'CARDIO-L3-007', target_node_id: 'CARDIO-L5-002', relation_type: 'clinical_apply', weight: 1, description: '心律不整需抗心律不整藥物治療', bidirectional: false, unlock_condition: null },
+  // L3-007 → L4-003: clinical_apply（心律不整 → ECG）
+  { id: 'CARDIO-E-027', source_node_id: 'CARDIO-L3-007', target_node_id: 'CARDIO-L4-003', relation_type: 'clinical_apply', weight: 1, description: '心律不整以 ECG 為主要診斷工具', bidirectional: false, unlock_condition: null },
+
+  // L3-006 → L4-002: clinical_apply（先天心病 → 心臟超音波）
+  { id: 'CARDIO-E-028', source_node_id: 'CARDIO-L3-006', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '先天心病需心超確診與評估嚴重度', bidirectional: false, unlock_condition: null },
+  // L3-006 → L4-001: clinical_apply（先天心病 → 聽診）
+  { id: 'CARDIO-E-029', source_node_id: 'CARDIO-L3-006', target_node_id: 'CARDIO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: 'PDA/PS/SAS 各有特徵性雜音', bidirectional: false, unlock_condition: null },
+
+  // L3-008 → L4-002: clinical_apply（心內膜炎 → 心超）
+  { id: 'CARDIO-E-030', source_node_id: 'CARDIO-L3-008', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '心超觀察贅生物（vegetation）是心內膜炎關鍵', bidirectional: false, unlock_condition: null },
+
+  // L3-009 → L4-002: clinical_apply（肺高壓 → 心超）
+  { id: 'CARDIO-E-031', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '心超評估三尖瓣逆流速度估算肺動脈壓', bidirectional: false, unlock_condition: null },
+  // L3-009 → L4-004: clinical_apply（肺高壓 → 胸 X 光）
+  { id: 'CARDIO-E-032', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L4-004', relation_type: 'clinical_apply', weight: 0.8, description: '胸 X 光評估肺動脈擴大與右心擴大', bidirectional: false, unlock_condition: null },
+  // L3-005 → L3-009: complication（心絲蟲 → 肺高壓）
+  { id: 'CARDIO-E-033', source_node_id: 'CARDIO-L3-005', target_node_id: 'CARDIO-L3-009', relation_type: 'complication', weight: 0.9, description: '心絲蟲是犬肺高壓最常見原因', bidirectional: false, unlock_condition: null },
+
+  // L3-003 → L3-010: complication（HCM → ATE）
+  { id: 'CARDIO-E-034', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L3-010', relation_type: 'complication', weight: 1, description: 'HCM 是貓 ATE 最常見基礎心臟病', bidirectional: false, unlock_condition: null },
+  // L3-010 → L4-002: clinical_apply（ATE → 心超）
+  { id: 'CARDIO-E-035', source_node_id: 'CARDIO-L3-010', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: 'ATE 需心超評估基礎心臟病', bidirectional: false, unlock_condition: null },
+
+  // L3 新節點 → L5-001: clinical_apply（新疾病 → CHF 治療）
+  { id: 'CARDIO-E-036', source_node_id: 'CARDIO-L3-006', target_node_id: 'CARDIO-L5-001', relation_type: 'clinical_apply', weight: 0.7, description: '先天心病可進展至 CHF', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-037', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '肺高壓可導致右心衰竭', bidirectional: false, unlock_condition: null },
+
+  // L3 → L5-004: clinical_apply（各疾病 → 分期與長期管理）
+  { id: 'CARDIO-E-038', source_node_id: 'CARDIO-L3-001', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 1, description: 'MMVD ACVIM 分期是長期管理基礎', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-039', source_node_id: 'CARDIO-L3-002', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'DCM 需長期追蹤與藥物調整', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-040', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'HCM 需長期監控與抗血栓預防', bidirectional: false, unlock_condition: null },
 ];

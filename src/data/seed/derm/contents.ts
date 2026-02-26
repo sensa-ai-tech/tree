@@ -4171,6 +4171,573 @@ const contentAntifungal: NodeContent = {
   created_at: now,
 };
 
+/** 藥物不良反應 (Drug Eruption) — 疾病型 */
+const contentDrugEruption: NodeContent = {
+  id: 'CONTENT-DERM-L3-011',
+  node_id: 'DERM-L3-011',
+  version: 1,
+  summary: '藥物不良反應（Drug Eruption）是犬貓因藥物引發的免疫介導性或非免疫介導性皮膚反應，屬於 Type B（不可預測）不良反應。常見致病藥物包括磺胺類（sulfonamides）、頭孢類（cephalosporins）、苯巴比妥（phenobarbital）及 NSAIDs。臨床表現範圍廣泛，從輕微紅斑到致命性的中毒性表皮壞死溶解症（TEN）。診斷主要依賴時序關係與停藥後反應，治療以停用致病藥物為核心。',
+  learning_objectives: [
+    '列舉犬貓最常見引起皮膚藥物不良反應的藥物種類',
+    '區分 Type A（劑量相關）與 Type B（不可預測）藥物不良反應',
+    '辨識多形性紅斑（EM）與中毒性表皮壞死溶解症（TEN）的臨床特徵',
+    '運用時序關係與停藥試驗建立藥物不良反應的臨床診斷',
+    '規劃不同嚴重度藥物不良反應的治療與監測策略',
+    '向飼主說明藥物不良反應的再暴露風險與替代用藥',
+  ],
+  key_points: [
+    '藥物不良反應分為 Type A（可預測、劑量相關）與 Type B（不可預測、免疫介導或特異質）',
+    '犬最常見致病藥物：sulfonamides（尤其 trimethoprim-sulfonamide）、cephalosporins、phenobarbital、griseofulvin',
+    '貓常見致病藥物：methimazole、cephalosporins、fluoroquinolones（光敏感）',
+    '多形性紅斑（EM）特徵：靶樣病灶（target lesion）、好發皮膚黏膜交界處',
+    '中毒性表皮壞死溶解症（TEN）為最嚴重型態，表皮剝脫面積 > 30%，死亡率極高',
+    '診斷為排除性：建立藥物暴露與皮膚反應的時序關係，停藥後改善為最重要證據',
+    '皮膚切片組織病理是重要輔助，但無法確定致病藥物',
+    '治療核心為立即停用疑似致病藥物，輕症可加支持療法，重症需加護治療',
+  ],
+  body: `# 藥物不良反應 (Drug Eruption)
+
+## 一、病理機制 (Pathophysiology)
+
+### 分類
+藥物不良反應依機轉可分為兩大類：
+
+- **Type A（可預測型）**：劑量相關，與藥理作用延伸有關，如糖皮質激素引起的皮膚菲薄（calcinosis cutis）。
+- **Type B（不可預測型）**：與劑量無關，涉及免疫介導或特異質反應，為真正的「藥物疹」。
+
+### 免疫介導機轉
+Type B 反應涉及多種免疫途徑：
+- **Type I（即時型）**：IgE 介導，蕁麻疹、血管性水腫（數分鐘至數小時）
+- **Type II（細胞毒性型）**：藥物作為半抗原結合細胞表面 → 抗體介導破壞
+- **Type III（免疫複合物型）**：血管炎表現
+- **Type IV（遲發型）**：T 細胞介導，紅斑、丘疹、水泡（數天至數週），EM/TEN 屬此類
+
+### 台灣臨床常見致病藥物
+犬：Trimethoprim-sulfonamide（TMS，最常見）、phenobarbital、cephalosporins、griseofulvin、allopurinol。
+貓：Methimazole（甲狀腺亢進治療）、cephalosporins、fluoroquinolones（光毒性與光過敏）。
+
+## 二、臨床表現 (Clinical Manifestations)
+
+### 輕度反應
+- 紅斑性丘疹/斑塊
+- 蕁麻疹（urticaria）與血管性水腫（angioedema）
+- 固定型藥疹（fixed drug eruption）
+
+### 中度反應——多形性紅斑 (Erythema Multiforme, EM)
+- **特徵**：靶樣病灶（target lesion）——中央暗色壞死帶、周圍紅斑環
+- **好發部位**：皮膚黏膜交界處（口腔、眼結膜、肛周、外陰）、腋下、腹股溝、耳翼
+- **分級**：EM minor（皮膚為主）vs EM major（黏膜受累）
+- **Stevens-Johnson Syndrome (SJS)**：表皮剝脫面積 < 10%
+
+### 重度反應——中毒性表皮壞死溶解症 (TEN)
+- 表皮大面積剝脫（> 30% 體表面積），Nikolsky sign 陽性
+- 涉及多處黏膜（口腔、結膜、泌尿生殖道）
+- 全身症狀：發燒、敗血症、電解質失衡
+- 死亡率極高（犬報告 > 50%）
+
+### 特殊藥物反應
+- **Sulfonamide 反應（杜賓犬易感）**：發燒、多關節炎、蛋白尿、血小板減少、皮膚病灶（Type III 反應），常見用藥後 1-3 週
+- **Phenobarbital 反應**：肝毒性合併皮膚壞死，用藥後數週至數月
+- **Fluoroquinolone 光敏感（貓）**：暴露陽光部位紅斑、水泡
+
+## 三、診斷方法 (Diagnostic Approach)
+
+### 診斷要點
+1. **時序關係**（最重要）：藥物開始使用與皮膚反應出現的時間關係
+   - 即時型反應：數分鐘至數小時
+   - 遲發型反應：數天至 3 週（首次暴露）；再暴露可於數小時內發生
+2. **停藥試驗**（Dechallenge）：停用疑似藥物後症狀改善是最強證據
+3. **排除其他原因**：自體免疫疾病、感染、腫瘤
+4. **組織病理學**：
+   - EM：角質細胞壞死（個別或群聚）、淋巴球衛星壞死（lymphocyte satellitosis）、界面皮膚炎
+   - TEN：全層表皮壞死、表皮-真皮分離
+5. **不建議再暴露試驗**（Rechallenge）：倫理與安全考量，尤其 EM/TEN 不可再暴露
+
+### 鑑別診斷流程
+藥物疹為排除性診斷。需排除：天疱瘡（pemphigus）、全身性紅斑性狼瘡（SLE）、血管炎、皮膚淋巴瘤、感染性皮膚病。
+
+## 四、治療策略 (Treatment Strategy)
+
+### 第一步——停藥
+- 立即停用所有疑似致病藥物（若同時使用多種藥物，全部停用）
+- 必要時更換為結構不同的替代藥物
+
+### 輕度反應治療
+- 停藥通常即可改善（數天至 2 週）
+- 症狀支持：Diphenhydramine 2 mg/kg PO BID-TID
+- 外用糖皮質激素緩解局部症狀
+
+### EM 治療
+- 停藥 + 免疫抑制劑量 Prednisolone 1-2 mg/kg PO BID → 2-4 週漸減
+- Cyclosporine 5-10 mg/kg PO SID 可作為替代或輔助
+- 黏膜病灶護理：口腔清洗、眼科潤滑劑
+- 營養支持（口腔糜爛影響進食）
+
+### TEN 治療（加護等級）
+- 類燒傷照護：無菌環境、液體復甦、電解質校正
+- 傷口護理：非黏附性敷料、避免清創壞死表皮（保護性屏障）
+- 疼痛管理（opioids）
+- 預防性抗生素（敗血症為主要死因）
+- 免疫球蛋白靜脈注射（hIVIG）：0.5-1 g/kg IV over 6-12 hr，可阻斷 Fas-FasL 介導的角質細胞凋亡（少數報告，證據有限）
+- **糖皮質激素在 TEN 的使用有爭議**——可能增加感染風險
+
+## 五、預後與追蹤 (Prognosis & Follow-up)
+
+| 嚴重度 | 預後 | 備註 |
+|--------|------|------|
+| 輕度（蕁麻疹/丘疹）| 優良 | 停藥後數天痊癒 |
+| EM minor | 良好至佳 | 停藥 + 免疫抑制 2-4 週可控制 |
+| EM major/SJS | 謹慎至不良 | 需積極治療，可能遺留疤痕 |
+| TEN | 不良 | 死亡率 > 50%，存活者可能有永久黏膜損傷 |
+
+### 關鍵追蹤事項
+- 記錄致病藥物於病歷顯眼處（紅色警示）
+- 教育飼主避免同類藥物再暴露
+- 交叉反應：同一藥物家族可能有交叉反應（如所有 sulfonamide 衍生物）`,
+  clinical_pearl: '在台灣臨床中，Trimethoprim-sulfonamide (TMS) 是最常引起嚴重藥物反應的藥物。杜賓犬對 TMS 特別易感（遺傳性），使用前應詢問品種。任何使用 TMS 超過 1 週後出現發燒、關節疼痛或皮膚病灶的犬，必須立即停藥並檢查 CBC（血小板減少）和尿液分析（蛋白尿）。此外，Phenobarbital 使用者出現不明原因的皮膚壞死灶，即使用藥已數月，仍需高度懷疑藥物反應。',
+  common_mistakes: [
+    '未詳細詢問所有藥物史（包括保健食品、外用藥、驅蟲藥）即排除藥物反應',
+    '僅停用最後加入的藥物而忽略其他同時使用的藥物',
+    '將 EM 誤診為天疱瘡或其他自體免疫疾病而延遲停藥',
+    'TEN 患者使用高劑量糖皮質激素（爭議大，可能增加感染風險）',
+    '輕度藥物反應改善後再次使用同一藥物（交叉反應風險）',
+  ],
+  disease_data: {
+    signalment: '犬貓皆可發生，無明確年齡或性別偏好。品種易感性：杜賓犬對 sulfonamide 特別敏感。貓對 methimazole 與 fluoroquinolone 較易發生皮膚反應。',
+    etiology: '免疫介導（Type I-IV 過敏反應）或特異質反應。藥物本身或其代謝產物作為半抗原（hapten），與蛋白質結合後被免疫系統識別為外來抗原。常見致病藥物：sulfonamides（尤其 TMS）、cephalosporins、phenobarbital、griseofulvin、allopurinol（犬）；methimazole、fluoroquinolones（貓）。',
+    pathogenesis: '藥物/代謝產物 → 半抗原-蛋白質複合物形成 → APC 呈現 → T 細胞活化 → 依反應型態不同：Type I（IgE/肥大細胞脫顆粒→蕁麻疹）、Type III（免疫複合物→血管炎）、Type IV（細胞毒性 T 細胞→角質細胞凋亡→EM/TEN）。EM/TEN 的核心機轉為 Fas-FasL 與 granulysin 介導的角質細胞大量凋亡。',
+    clinical_signs: [
+      { sign: '紅斑性丘疹/斑塊', category: 'primary', description: '藥物暴露後數天至數週出現，分布可為局部或全身性' },
+      { sign: '靶樣病灶', category: 'primary', description: 'EM 特徵性表現——中央暗色壞死帶、周圍紅斑環' },
+      { sign: '蕁麻疹/血管性水腫', category: 'primary', description: '即時型反應，數分鐘至數小時內發生，全身風疹塊' },
+      { sign: '黏膜糜爛/潰瘍', category: 'primary', description: 'EM major/SJS/TEN 涉及口腔、結膜、外陰等黏膜' },
+      { sign: '表皮大面積剝脫', category: 'secondary', description: 'TEN 特徵：Nikolsky sign 陽性，表皮如燙傷般剝離' },
+      { sign: '全身症狀', category: 'secondary', description: '發燒、嗜睡、食慾不振；TMS 反應可伴關節痛與蛋白尿' },
+    ],
+    staging: { system: '嚴重度分級', stages: ['輕度：局部紅斑/蕁麻疹，無黏膜受累', 'EM minor：靶樣病灶為主，無或輕微黏膜受累', 'EM major/SJS：黏膜受累，表皮剝脫 < 10%', 'SJS-TEN 重疊：表皮剝脫 10-30%', 'TEN：表皮剝脫 > 30%，多處黏膜受累'] },
+    differential_diagnosis: [
+      { condition: '天疱瘡（Pemphigus）', key_differentiator: '自體免疫抗體攻擊橋粒（desmosome），無藥物暴露史，組織病理見棘層鬆解' },
+      { condition: '全身性紅斑性狼瘡（SLE）', key_differentiator: '多系統受累，ANA 陽性，慢性病程，非急性發作' },
+      { condition: '皮膚型淋巴瘤', key_differentiator: '進行性，組織病理見腫瘤性淋巴球浸潤，免疫組化確認' },
+      { condition: '血管炎', key_differentiator: '好發肢端、耳翼邊緣，組織病理見血管壁壞死性炎症' },
+      { condition: '燒傷/化學灼傷', key_differentiator: '有明確暴露史，病灶分布與接觸部位一致' },
+    ],
+    diagnostic_workup: '1. 詳細藥物暴露史（所有藥物、開始時間、劑量）→ 2. 時序分析（用藥與皮膚反應出現的時間關係）→ 3. 皮膚切片組織病理（角質細胞凋亡、界面皮膚炎、淋巴球衛星壞死）→ 4. 排除其他原因（ANA、感染篩檢）→ 5. 停藥試驗（最重要的診斷性治療）→ 6. CBC/BCS/UA（排除全身性藥物反應：血小板減少、肝腎功能異常）',
+    treatment_protocol: '1. 立即停用所有疑似致病藥物。2. 輕度：抗組織胺（Diphenhydramine 2 mg/kg PO BID-TID）+ 外用糖皮質激素。3. EM：Prednisolone 1-2 mg/kg PO BID × 2-4 週漸減；或 Cyclosporine 5-10 mg/kg SID。4. TEN：加護照護（類燒傷管理）、液體復甦、無菌傷口敷料、疼痛管理、預防性抗生素。hIVIG 0.5-1 g/kg IV（證據有限）。5. 黏膜護理：口腔清洗、眼科潤滑劑。',
+    prognosis: '輕度反應預後極佳，停藥數天內痊癒。EM 在停藥加免疫抑制治療下預後良好至佳。TEN 預後不良，死亡率 > 50%，存活者可能遺留永久黏膜疤痕與乾眼症。Sulfonamide 反應若早期停藥，多數犬可完全恢復。',
+    monitoring: '停藥後每 2-3 天追蹤皮膚病灶進展。EM 治療期間每 1-2 週回診評估病灶消退與糖皮質激素減量。TEN 需住院持續監測：體溫、電解質、白蛋白、感染徵兆、傷口癒合進度。出院後 2 週、1 個月、3 個月回診。',
+    owner_communication: '藥物不良反應是藥物引起的免疫異常反應，不代表藥物品質有問題或醫療失誤。最重要的是立即停用致病藥物。輕度反應通常會完全恢復，但嚴重型態（如 TEN）需要住院加護治療且有生命危險。務必記錄致病藥物名稱，今後任何就診時都要主動告知獸醫師，避免再次使用同類藥物。同一藥物家族的其他成員也可能引起交叉反應。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床表現段落後', type: 'comparison_table', description: 'EM vs SJS vs TEN 嚴重度分級比較表' },
+    { position: '治療策略段落後', type: 'flowchart', description: '藥物不良反應嚴重度評估與治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '診斷段落', type: 'decision_tree', description: '藥物不良反應時序分析與因果判定工具' },
+  ],
+  drug_api_links: ['Prednisolone', 'Cyclosporine', 'Diphenhydramine'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 9: Drug Eruptions.", relevance: '藥物不良反應分類、臨床表現與診斷的經典參考' },
+    { type: 'journal', citation: 'Noli C et al. Erythema multiforme, Stevens-Johnson syndrome and toxic epidermal necrolysis in the dog: A retrospective study of 13 cases (2001-2015). Vet Dermatol. 2017;28(5):e93.', relevance: '犬 EM/SJS/TEN 回顧性研究與預後分析' },
+    { type: 'journal', citation: 'Trepanier LA. Idiosyncratic drug toxicity affecting the liver, skin, and bone marrow in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):1055-1066.', relevance: 'Sulfonamide 與 phenobarbital 特異質反應機轉' },
+    { type: 'guideline', citation: 'Favrot C et al. ESVD/ECVD Task Force on Drug Eruptions: Adverse cutaneous drug reactions in dogs and cats — An update. Vet Dermatol. 2020;31(S1):27.', relevance: '歐洲獸醫皮膚科學會藥物反應診斷更新共識' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 脫毛症 X (Alopecia X) — 疾病型 */
+const contentAlopeciaX: NodeContent = {
+  id: 'CONTENT-DERM-L3-012',
+  node_id: 'DERM-L3-012',
+  version: 1,
+  summary: '脫毛症 X（Alopecia X），又稱腎上腺性脫毛症或生長激素反應性脫毛症，是一種主要影響北歐絲毛型犬種（尤其博美犬 Pomeranian）的非炎症性、非瘙癢性脫毛疾病。病因不明，可能與腎上腺性激素代謝異常或毛囊週期停滯有關。特徵為軀幹雙側對稱性脫毛，保留頭部與四肢末端。此為排除性診斷，預後極佳（僅為美容問題），治療選項包括褪黑激素（melatonin）與 trilostane。',
+  learning_objectives: [
+    '描述脫毛症 X 的典型臨床表現與好發品種',
+    '說明脫毛症 X 的可能病因假說（腎上腺性激素代謝異常、毛囊受體缺陷）',
+    '運用排除性診斷流程鑑別脫毛症 X 與其他內分泌性脫毛',
+    '評估褪黑激素（melatonin）與 trilostane 的治療效果與適應症',
+    '向飼主說明此為美容問題而非危及生命的疾病',
+  ],
+  key_points: [
+    '好發品種：博美犬（最典型）、阿拉斯加雪橇犬、西伯利亞哈士奇、薩摩耶、鬆獅犬等北歐絲毛型犬種',
+    '典型表現：軀幹雙側對稱性脫毛，保留頭部與四肢末端，皮膚可能色素沉著',
+    '非炎症性、非瘙癢性——若有瘙癢或炎症須考慮其他診斷',
+    '診斷為排除性：必須排除甲狀腺低下、庫欣氏症、性腺功能異常等所有可治療的內分泌脫毛',
+    '組織病理特徵：火焰狀毛囊角化（flame follicle）、毛囊萎縮、毛囊停滯於休止期（catagen/telogen arrest）',
+    '褪黑激素（Melatonin 3-6 mg PO BID-TID）為首選治療，反應率約 30-40%，安全性極高',
+    'Trilostane（低劑量，用於非庫欣犬的 off-label use）反應率較高但需監測腎上腺功能',
+    '預後極佳——純粹為美容問題，不影響犬隻壽命與生活品質',
+  ],
+  body: `# 脫毛症 X (Alopecia X)
+
+## 一、病因與病理機制 (Etiology & Pathophysiology)
+
+### 命名與歷史
+脫毛症 X 是一個描述性診斷名稱，反映了我們對此病因認識的不確定性。歷史上曾被稱為：
+- 生長激素反應性脫毛症（Growth hormone-responsive alopecia）
+- 腎上腺性激素脫毛症（Adrenal sex hormone imbalance alopecia）
+- 去勢反應性脫毛症（Castration-responsive alopecia）
+- 黑皮症（Black skin disease）——因皮膚色素沉著
+
+### 病因假說
+目前主要假說包括：
+1. **腎上腺性激素代謝異常**：腎上腺 17α-hydroxyprogesterone 或其他性激素前驅物過量或其受體敏感性異常
+2. **毛囊受體缺陷**：毛囊週期調控相關受體（如生長激素受體、性激素受體）功能異常導致毛囊停滯
+3. **毛囊微環境失調**：局部信號分子（Wnt、BMP）調控異常導致毛囊無法從休止期重新進入生長期
+
+### 組織病理特徵
+- 毛囊萎縮與角質化（catagen/telogen arrest）
+- **火焰狀毛囊角化（Flame follicle）**：過度角化的毛囊呈火焰狀突出，此為較具特異性但非病理學確診依據
+- 表皮正常或輕度萎縮
+- 真皮無炎症浸潤
+- 與甲狀腺低下或庫欣氏症的組織病理可有相當重疊
+
+## 二、臨床表現 (Clinical Features)
+
+### 典型表現
+- **好發品種**：博美犬（Pomeranian，最具代表性）、阿拉斯加雪橇犬（Alaskan Malamute）、西伯利亞哈士奇、薩摩耶、鬆獅犬（Chow Chow）、荷蘭毛獅犬（Keeshond）、迷你貴賓犬
+- **發病年齡**：1-3 歲或 > 9 歲（雙峰分布），去勢公犬似乎較多
+- **脫毛分布**：
+  - 軀幹雙側對稱脫毛（頸部、軀幹、臀部、大腿後側）
+  - **保留頭部與四肢末端**（高度特徵性）
+  - 尾部常最早受累（「老鼠尾」外觀）
+- **皮膚變化**：脫毛區皮膚色素沉著（hyperpigmentation）、皮膚可能變薄
+- **重要陰性特徵**：無瘙癢、無炎症、無鱗屑、全身狀態正常
+
+### 病程
+- 進展緩慢，數月至數年
+- 部分犬剪毛後毛髮不再生長（clipping alopecia），可為首發表現
+- 自發性緩解偶有報告，但不可預測
+- 創傷或手術後局部毛髮可能暫時生長
+
+## 三、診斷方法 (Diagnostic Approach)
+
+### 排除性診斷流程
+脫毛症 X 為排除性診斷，必須依序排除所有可治療的內分泌性脫毛：
+
+1. **甲狀腺低下（Hypothyroidism）**：
+   - Total T4、fT4（ED）、TSH
+   - 甲低犬常伴有肥胖、嗜睡、心搏過緩、高膽固醇血症
+2. **腎上腺皮質機能亢進（Cushing's syndrome）**：
+   - LDDS test 或 ACTH stimulation test
+   - 庫欣犬常伴有多飲多尿、多食、腹部膨大、肌肉萎縮
+3. **性腺功能異常**：
+   - Estradiol、testosterone、progesterone
+   - 隱睾犬（intact male）需排除 Sertoli cell tumor
+4. **皮膚切片**：
+   - 確認毛囊萎縮/停滯的組織病理模式
+   - 排除蠕形蟎症、皮膚癬菌症
+5. **ACTH stimulation test with sex hormone panel**（進階）：
+   - 測量刺激前後的 17-OH-progesterone、androstenedione 等
+   - 結果解讀有爭議，特異性不佳
+
+### 診斷確認
+當排除所有可治療的內分泌疾病後，結合典型品種、臨床分布與組織病理，即可做出脫毛症 X 的臨床診斷。
+
+## 四、治療策略 (Treatment Options)
+
+### 首選——褪黑激素 (Melatonin)
+- **劑量**：3-6 mg/犬 PO BID-TID（不依體重調整）
+- **機轉**：可能促進毛囊進入生長期（anagen），詳細機轉不明
+- **反應率**：約 30-40%
+- **優勢**：幾乎無副作用、低成本、口服方便
+- **評估期**：至少 3-4 個月才能判斷療效
+- **注意**：使用純褪黑激素，避免含木糖醇（xylitol）的人用補充劑
+
+### 替代——Trilostane（低劑量 off-label use）
+- **劑量**：1-2 mg/kg PO SID（遠低於庫欣治療劑量）
+- **機轉**：抑制 3β-hydroxysteroid dehydrogenase → 減少腎上腺性激素合成
+- **反應率**：較褪黑激素高（約 50-80%）
+- **風險**：腎上腺功能抑制（醫源性 Addison crisis）
+- **監測**：治療前與治療後 2 週、1 個月、3 個月行 ACTH stimulation test
+- **爭議**：對非庫欣犬使用具藥物安全爭議
+
+### 其他選項
+- **去勢/絕育**：部分完整犬去勢後毛髮再生長，但效果不可預測
+- **Microneedling**：新興治療，通過微針刺激毛囊幹細胞，初步報告有效
+- **不治療**：完全合理的選項——此為純粹美容問題
+
+## 五、預後與飼主溝通 (Prognosis & Owner Communication)
+
+### 預後
+- **極佳**——不影響壽命與生活品質
+- 純粹為美容問題
+- 治療反應個體差異大且不可預測
+- 部分犬可自發性緩解
+
+### 飼主衛教重點
+- 此病不痛不癢，不影響狗狗健康
+- 治療目的為美容，非醫學必需
+- 褪黑激素安全但療效有限，需耐心等待 3-4 個月
+- 脫毛區皮膚需防曬保護（缺少毛髮遮蔽）`,
+  clinical_pearl: '博美犬的雙側對稱性軀幹脫毛是脫毛症 X 最經典的表現，但在下診斷前絕對不能偷懶——必須完整排除甲狀腺低下與庫欣氏症。一個實用技巧：如果飼主提到「剪毛後毛一直長不回來」，這就是脫毛症 X 的高度疑似線索。治療首選褪黑激素，因為完全無害，給飼主3-4個月觀察期。告訴飼主「這是美容問題，不治療也完全沒關係」，可大幅減輕飼主焦慮。',
+  common_mistakes: [
+    '未完整排除甲狀腺低下與庫欣氏症即診斷脫毛症 X',
+    '在非庫欣犬使用 trilostane 時未監測 ACTH stimulation test（腎上腺危機風險）',
+    '使用含木糖醇（xylitol）的人用褪黑激素補充劑（對犬有低血糖毒性）',
+    '因毛髮未再生長而反覆更換治療方案（需給予每種治療至少 3-4 個月的評估期）',
+    '告知飼主此為嚴重疾病而造成不必要焦慮（純粹為美容問題）',
+  ],
+  disease_data: {
+    signalment: '好發品種：博美犬（最典型）、阿拉斯加雪橇犬、西伯利亞哈士奇、薩摩耶、鬆獅犬、荷蘭毛獅犬、迷你貴賓犬。發病年齡雙峰分布（1-3 歲與 > 9 歲）。去勢公犬似乎較多，但完整犬與母犬亦可發生。',
+    etiology: '病因不明（「X」即反映此不確定性）。主要假說：(1) 腎上腺性激素（adrenal sex hormone）代謝異常；(2) 毛囊週期調控受體缺陷（GH receptor、性激素受體）；(3) 毛囊微環境信號（Wnt/BMP pathway）失調。可能有遺傳易感性（北歐絲毛型犬種高度好發）。',
+    pathogenesis: '毛囊停滯於 catagen/telogen 期無法重新進入 anagen 期 → 毛髮不再生長 → 漸進性脫毛。組織病理顯示毛囊萎縮、火焰狀毛囊角化（excessive trichilemmal keratinization）、缺乏炎症浸潤。局部創傷可暫時刺激毛囊進入生長期（解釋手術疤痕處毛髮再生現象）。',
+    clinical_signs: [
+      { sign: '軀幹雙側對稱脫毛', category: 'primary', description: '頸部、軀幹兩側、臀部、大腿後側，保留頭部與四肢末端' },
+      { sign: '皮膚色素沉著', category: 'primary', description: '脫毛區皮膚漸進性變黑（hyperpigmentation）' },
+      { sign: '尾部脫毛', category: 'primary', description: '尾部常最早受累，呈現「老鼠尾」外觀' },
+      { sign: '剪毛後不再生長', category: 'primary', description: '美容剪毛後毛髮遲遲無法再生，為常見首發表現' },
+      { sign: '毛質改變', category: 'secondary', description: '殘存毛髮質地變粗、乾燥、失去光澤，底毛先喪失' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '甲狀腺低下（Hypothyroidism）', key_differentiator: '常伴肥胖、嗜睡、心搏過緩、高膽固醇血症；T4/fT4 低下、TSH 升高' },
+      { condition: '庫欣氏症（Hyperadrenocorticism）', key_differentiator: '多飲多尿、多食、腹部膨大、皮膚菲薄、鈣質沉著；LDDS 或 ACTH stim 異常' },
+      { condition: '性腺腫瘤（Sertoli cell tumor）', key_differentiator: '完整公犬、單側睾丸腫大或隱睾、女性化表現（乳腺發育、對側睾丸萎縮）' },
+      { condition: '季節性側腹脫毛（Seasonal flank alopecia）', key_differentiator: '每年同一季節（秋冬）發作於側腹，春夏自發再生長，好發拳師犬/鬥牛犬' },
+      { condition: '毛囊發育不良（Follicular dysplasia）', key_differentiator: '特定毛色區域脫毛（colour dilution alopecia），組織病理見色素顆粒塊聚' },
+    ],
+    diagnostic_workup: '1. 完整病史與理學檢查（品種、發病模式、全身狀態）→ 2. CBC/BCS（基本篩檢）→ 3. Total T4 + fT4(ED) + TSH（排除甲低）→ 4. LDDS test 或 ACTH stimulation test（排除庫欣）→ 5. 性激素檢測（完整犬或疑似性腺異常時）→ 6. 皮膚切片組織病理（火焰狀毛囊角化、毛囊萎縮）→ 7. 上述皆正常 → 排除性診斷脫毛症 X',
+    treatment_protocol: '1. 飼主溝通：此為美容問題，不治療亦為合理選項。2. 首選 Melatonin 3-6 mg/犬 PO BID-TID，至少 3-4 個月評估（反應率 30-40%）。3. 二線 Trilostane 1-2 mg/kg PO SID（off-label，反應率 50-80%），需嚴密監測腎上腺功能（ACTH stim test 於治療後 2 週、1 個月、3 個月）。4. 完整犬考慮去勢（部分犬有反應）。5. 脫毛區皮膚防曬。',
+    prognosis: '極佳。純粹為美容問題，不影響犬隻壽命或生活品質。治療反應個體差異大且不可預測。部分犬可自發性緩解。即使終身脫毛，犬隻健康狀態完全正常。',
+    monitoring: '使用褪黑激素：每 3-4 個月評估毛髮再生長情況，無需實驗室檢測。使用 trilostane：治療前基線 ACTH stimulation test，治療後 2 週、1 個月、3 個月重複檢測（目標 post-ACTH cortisol 2-5 μg/dL），之後每 3-6 個月監測。出現嗜睡、嘔吐、食慾不振立即就醫（腎上腺危機徵兆）。',
+    owner_communication: '脫毛症 X 是一種我們還不完全了解原因的脫毛問題，好發於博美犬等北歐犬種。最重要的是——這只是外觀問題，您的狗狗不會痛、不會癢、身體完全健康。我們可以嘗試褪黑激素治療（安全無副作用），但效果因犬而異，約有三分之一的犬會有毛髮再生長。選擇不治療也完全可以。脫毛區皮膚需注意防曬，因為沒有毛髮保護。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床表現段落後', type: 'comparison_table', description: '脫毛症 X 與其他內分泌性脫毛鑑別比較表' },
+    { position: '診斷段落後', type: 'flowchart', description: '內分泌性脫毛排除診斷流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '治療段落', type: 'decision_tree', description: '脫毛症 X 治療選擇決策工具' },
+  ],
+  drug_api_links: ['Melatonin', 'Trilostane'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 12: Endocrine and Metabolic Diseases — Alopecia X.", relevance: '脫毛症 X 完整定義、病因假說與臨床特徵' },
+    { type: 'journal', citation: 'Frank LA et al. Steroidogenic response of adrenal tissues after administration of ACTH to dogs with hypercortisolism. J Am Vet Med Assoc. 2001;218(2):214-218.', relevance: '腎上腺性激素代謝異常假說的關鍵研究' },
+    { type: 'journal', citation: 'Cerundolo R et al. Treatment of canine Alopecia X with trilostane. Vet Dermatol. 2004;15(5):285-293.', relevance: 'Trilostane 治療脫毛症 X 的臨床療效評估' },
+    { type: 'journal', citation: 'Friedmann PS et al. Alopecia X in Pomeranians and miniature poodles — response to melatonin. Proceedings of the 7th World Congress of Veterinary Dermatology. 2012.', relevance: '褪黑激素治療脫毛症 X 的臨床經驗報告' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 皮膚淋巴瘤 (Cutaneous T-Cell Lymphoma, CTCL) — 疾病型 */
+const contentCTCL: NodeContent = {
+  id: 'CONTENT-DERM-L3-013',
+  node_id: 'DERM-L3-013',
+  version: 1,
+  summary: '皮膚 T 細胞淋巴瘤（Cutaneous T-Cell Lymphoma, CTCL）是犬最常見的皮膚淋巴瘤類型，以蕈樣肉芽腫（Mycosis Fungoides, MF）為主要亞型。CTCL 的特徵為嗜表皮性腫瘤性 T 淋巴球浸潤，臨床呈現 patch → plaque → tumor 的漸進性三階段病程。Sézary syndrome 為其白血病變異型。診斷依賴皮膚切片組織病理學與免疫組化（CD3+/CD8− 或 CD4+）。治療以 CCNU（lomustine）為一線化療藥物，但長期預後不良。',
+  learning_objectives: [
+    '區分皮膚淋巴瘤的嗜表皮型（epitheliotropic）與非嗜表皮型（non-epitheliotropic）',
+    '描述蕈樣肉芽腫（MF）patch → plaque → tumor 三階段臨床進程',
+    '辨識 Sézary syndrome 的臨床與血液學特徵',
+    '解讀 CTCL 的組織病理特徵（Pautrier microabscess、嗜表皮淋巴球）',
+    '規劃 CTCL 的分期與治療方案（含 CCNU 化療協議）',
+    '向飼主說明 CTCL 的預後與生活品質管理',
+  ],
+  key_points: [
+    '犬皮膚淋巴瘤以嗜表皮型（epitheliotropic）T 細胞淋巴瘤（MF）最常見',
+    '典型三階段進程：patch（紅斑/脫屑斑）→ plaque（浸潤性斑塊）→ tumor（結節/腫塊），可能跨數月至數年',
+    '黏膜皮膚交界處（口腔、眼結膜、鼻鏡、肛周）受累為 MF 特徵',
+    'Pautrier microabscess（表皮內腫瘤性淋巴球群聚）為組織病理學診斷標記',
+    '免疫組化：腫瘤細胞通常為 CD3+/CD8− (CD4+) T 細胞',
+    'Sézary syndrome：CTCL 白血病變異型，末梢血液中見 Sézary cells（腦回樣核 T 細胞）',
+    'CCNU（lomustine）30 mg/m² PO q3w 為一線化療，反應率約 75-80%',
+    '預後不良：中位存活時間 6-12 個月，腫瘤期與 Sézary syndrome 預後更差',
+  ],
+  body: `# 皮膚 T 細胞淋巴瘤 (Cutaneous T-Cell Lymphoma, CTCL)
+
+## 一、分類與病理機制 (Classification & Pathophysiology)
+
+### 分類
+犬皮膚淋巴瘤依組織病理學分為：
+- **嗜表皮型（Epitheliotropic）**：腫瘤性淋巴球嗜表皮浸潤，以蕈樣肉芽腫（Mycosis Fungoides, MF）為代表。佔犬皮膚淋巴瘤多數。
+- **非嗜表皮型（Non-epitheliotropic）**：腫瘤性淋巴球浸潤真皮至皮下，不侵犯表皮。預後較嗜表皮型更差。
+
+本節聚焦嗜表皮型 CTCL（MF）。
+
+### 細胞起源
+- MF 起源於成熟皮膚歸巢性 T 細胞（skin-homing memory T cells）
+- 免疫表型：大多為 CD3+/CD4+/CD8−（輔助型 T 細胞）
+- 少數為 CD3+/CD4−/CD8+（細胞毒性 T 細胞），預後可能更差
+- T 細胞受體（TCR）基因重排分析可確認克隆性（clonality）
+
+### 病理機制
+腫瘤性 T 細胞異常表現皮膚歸巢受體（CLA, CCR4）→ 選擇性遷移至表皮 → 在表皮微環境中增殖 → 形成 Pautrier microabscess（表皮內腫瘤性 T 細胞群聚）→ 隨疾病進展，腫瘤細胞失去嗜表皮性 → 深層真皮浸潤 → 淋巴結與內臟轉移。
+
+## 二、臨床表現 (Clinical Features)
+
+### 典型三階段進程（MF）
+
+#### Patch 期（斑期）
+- 最早期表現，易被忽略或誤診
+- 非特異性紅斑斑塊、鱗屑、輕度脫毛
+- 好發軀幹、腹股溝、腋下
+- 可持續數月至數年
+- **常被誤診為**：過敏性皮膚炎、皮膚癬菌症、脂漏症
+
+#### Plaque 期（斑塊期）
+- 紅斑進展為浸潤性、界線清楚的斑塊
+- 表面可見脫屑、糜爛
+- 多發性分布
+- 黏膜皮膚交界處受累增加（口腔、鼻鏡、眼瞼、肛周）
+
+#### Tumor 期（腫瘤期）
+- 斑塊進展為隆起的結節或腫塊
+- 表面常潰瘍、出血
+- 可能伴有周邊淋巴結腫大
+- 全身症狀出現（消瘦、食慾不振）
+
+### 口腔黏膜型
+- 約 25-40% MF 犬涉及口腔黏膜
+- 紅斑、糜爛、潰瘍、增生性斑塊
+- 可能為唯一或首發表現
+- 需與其他口腔疾病鑑別
+
+### Sézary Syndrome
+- CTCL 的白血病變異型
+- 全身性紅皮症（erythroderma）：全身瀰漫性紅斑、脫屑
+- 劇烈瘙癢
+- 末梢血液中出現 Sézary cells（腦回樣/cerebriform 核的異常 T 細胞）
+- 全身淋巴結腫大
+- 預後極差
+
+## 三、診斷方法 (Diagnostic Approach)
+
+### 皮膚切片組織病理學（確定診斷）
+- **嗜表皮性淋巴球浸潤**：大量異常 T 淋巴球浸潤表皮（epidermotropism）
+- **Pautrier microabscess**：表皮內腫瘤性淋巴球群聚，為 MF 最具特徵性的組織病理標記
+- 帶狀真皮淋巴球浸潤（lichenoid band）
+- 腫瘤期：密集真皮浸潤伴嗜表皮性喪失
+
+### 免疫組化 (Immunohistochemistry)
+- **CD3+**（T 細胞標記）——確認為 T 細胞來源
+- **CD4+ 或 CD8+**——亞型分類
+- **CD18+, CD45+**——白血球共通標記
+- Ki-67 增殖指數——評估增殖活性
+
+### 分期檢查
+1. 完整理學檢查與皮膚病灶記錄（分布、數量、型態）
+2. 周邊淋巴結細胞學（FNA）
+3. CBC 含血液抹片複閱（搜尋 Sézary cells）
+4. 胸腔 X 光 + 腹部超音波（評估內臟轉移）
+5. 必要時：骨髓穿刺、TCR 基因重排分析
+
+### 分期系統（改良 WHO 分期）
+| 期別 | 定義 |
+|------|------|
+| T1 | Patch/plaque，< 10% 體表面積 |
+| T2 | Patch/plaque，≥ 10% 體表面積 |
+| T3 | 一個或多個 tumor（結節/腫塊）|
+| T4 | 紅皮症（erythroderma / Sézary）|
+| N0/N1 | 淋巴結未/已受累 |
+| M0/M1 | 無/有內臟轉移 |
+
+## 四、治療策略 (Treatment Strategy)
+
+### 一線化療——CCNU (Lomustine)
+- **劑量**：60-70 mg/m² PO q3 週（建議起始 60 mg/m²）
+- **反應率**：約 75-80%（CR + PR），中位反應時間 1-3 個月
+- **注意**：CCNU 為烷化劑，**累積性骨髓毒性**與**肝毒性**為主要劑量限制毒性
+- **監測**：每次給藥前 CBC + 肝指數（ALT, ALP）；若 ANC < 2000/μL 或 ALT > 3 倍 ULN 則延遲或調整劑量
+- **最大建議累積劑量**：約 300-400 mg/m²（個體差異大）
+
+### 替代/輔助化療
+- **Prednisolone**：1-2 mg/kg PO SID 可暫時控制早期病灶與瘙癢，但非長期方案
+- **Retinoids**（isotretinoin/acitretin）：單獨或與 CCNU 合用，反應率約 40-50%
+- **L-asparaginase**：可作為救援方案
+- **Mechlorethamine（氮芥）局部外用**：Patch/plaque 期局部治療選項（國外）
+
+### 局部治療
+- 外用糖皮質激素可暫時緩解 patch 期症狀
+- 放射線治療（radiation therapy）可用於孤立性腫塊
+
+### 支持療法
+- 瘙癢控制（Oclacitinib 可輔助，但需注意免疫抑制）
+- 繼發感染控制（細菌/酵母菌）
+- 營養支持
+- 疼痛管理
+
+## 五、預後與飼主溝通 (Prognosis & Communication)
+
+### 預後
+| 期別 | 中位存活時間 |
+|------|------------|
+| Patch/Plaque (T1-T2) | 約 12-24 個月 |
+| Tumor (T3) | 約 6-12 個月 |
+| Erythroderma/Sézary (T4) | 約 3-6 個月 |
+| 淋巴結/內臟轉移 | < 3 個月 |
+
+### 預後因素
+- 診斷時期別為最重要預後因子
+- CD4+ 型預後可能優於 CD8+ 型
+- 口腔黏膜受累可能預後較差
+- CCNU 反應良好者存活較長
+
+### 飼主溝通重點
+- CTCL 是一種進行性皮膚腫瘤，目前無法治癒
+- 治療目的為延長有品質的生命（palliative intent）
+- CCNU 化療可有效控制症狀數月，但有骨髓與肝臟毒性需定期監測
+- 需要討論生活品質評估與安寧照護時機`,
+  clinical_pearl: 'CTCL 早期（patch 期）是最容易被誤診的皮膚腫瘤——它看起來就像普通的過敏性皮膚炎或皮膚癬菌症。關鍵線索是：標準治療無反應且病灶持續進展的「慢性皮膚炎」。一個臨床規則：任何對糖皮質激素反應不佳或反覆復發的皮膚紅斑/斑塊，尤其是中老年犬，都應進行皮膚切片。另外，口腔黏膜的紅斑或糜爛病灶若治療無反應，永遠要想到 CTCL。',
+  common_mistakes: [
+    '早期 CTCL（patch 期）被長期當作過敏性皮膚炎治療而延遲診斷',
+    '皮膚切片取樣不足——MF 分布不均，需多處取樣（至少 2-3 處不同型態病灶）',
+    '未進行免疫組化即確定診斷（需確認 T 細胞來源與亞型）',
+    'CCNU 治療時未監測 CBC 與肝指數（累積性骨髓/肝毒性可致命）',
+    '忽略分期檢查——淋巴結 FNA、血液抹片、影像學對預後判斷與治療決策至關重要',
+  ],
+  disease_data: {
+    signalment: '中老年犬（中位發病年齡 9-11 歲），無明顯品種偏好，但 Cocker Spaniel、Golden Retriever 有報告較多。無性別差異。貓的皮膚淋巴瘤較少見。',
+    etiology: '確切病因不明。推測與慢性抗原刺激導致 T 細胞克隆性增殖有關。部分假說包括：慢性皮膚炎症環境促進 T 細胞轉化、皮膚微環境中的細胞因子（IL-2, IL-7, IL-15）促進腫瘤性 T 細胞存活與增殖、腫瘤抑制基因（p53）突變。',
+    pathogenesis: '皮膚歸巢性記憶 T 細胞異常克隆增殖 → 表現皮膚歸巢受體（CLA, CCR4, CCR10）→ 選擇性遷移至表皮（epidermotropism）→ 表皮內增殖形成 Pautrier microabscess → 早期侷限於皮膚（patch/plaque）→ 隨基因不穩定性增加，嗜表皮性喪失 → 深層真皮浸潤（tumor 期）→ 淋巴管/血管侵犯 → 淋巴結與內臟轉移。',
+    clinical_signs: [
+      { sign: '紅斑性斑塊', category: 'primary', description: 'Patch/plaque 期：單發或多發紅斑、脫屑、輕度脫毛，好發軀幹與腹股溝' },
+      { sign: '浸潤性斑塊', category: 'primary', description: 'Plaque 期：界線清楚的隆起性紅色斑塊，表面脫屑或糜爛' },
+      { sign: '結節/腫塊', category: 'primary', description: 'Tumor 期：隆起的結節或腫塊，表面常潰瘍出血' },
+      { sign: '黏膜皮膚交界處病灶', category: 'primary', description: '口腔、鼻鏡、眼瞼、肛周、外陰的紅斑、糜爛、增生' },
+      { sign: '全身紅皮症', category: 'secondary', description: 'Sézary syndrome：全身瀰漫紅斑、脫屑、劇烈瘙癢' },
+      { sign: '淋巴結腫大', category: 'secondary', description: '周邊淋巴結增大，腫瘤期與晚期常見' },
+    ],
+    staging: { system: '改良 WHO 分期', stages: ['T1：Patch/plaque < 10% BSA', 'T2：Patch/plaque ≥ 10% BSA', 'T3：一個或多個 tumor（結節/腫塊）', 'T4：紅皮症/Sézary syndrome', 'N0/N1：淋巴結未受累/受累', 'M0/M1：無/有內臟轉移'] },
+    differential_diagnosis: [
+      { condition: '犬異位性皮膚炎（CAD）', key_differentiator: '好發年輕犬、對免疫調節劑反應佳、皮膚切片見嗜酸球/肥大細胞而非異型淋巴球' },
+      { condition: '皮膚癬菌症（Dermatophytosis）', key_differentiator: 'Wood 燈/培養陽性、毛髮 KOH 見孢子、抗黴菌治療有效' },
+      { condition: '天疱瘡（Pemphigus）', key_differentiator: '自體免疫抗體攻擊橋粒、組織病理見棘層鬆解（acantholysis）而非嗜表皮淋巴球' },
+      { condition: '脂漏性皮膚炎', key_differentiator: '全身性脂漏、油脂味、通常有潛在病因（過敏/內分泌）、組織病理無異型淋巴球' },
+      { condition: '組織球瘤/肥大細胞瘤', key_differentiator: '細胞學與免疫組化可明確區分細胞來源' },
+    ],
+    diagnostic_workup: '1. 詳細皮膚病灶描述（分布、數量、型態、是否涉及黏膜）→ 2. 皮膚切片（多處取樣，≥ 2-3 處不同型態病灶）→ 3. 組織病理學（嗜表皮淋巴球浸潤、Pautrier microabscess）→ 4. 免疫組化（CD3、CD4、CD8、CD18、Ki-67）→ 5. 分期：周邊淋巴結 FNA + CBC（含血抹片找 Sézary cells）+ 胸腔 X 光 + 腹部超音波 → 6. 進階（視需要）：TCR clonality、骨髓穿刺',
+    treatment_protocol: '1. 一線 CCNU (Lomustine) 60-70 mg/m² PO q3 週，給藥前監測 CBC + ALT/ALP。2. 輔助 Prednisolone 1 mg/kg PO SID 控制早期症狀。3. 替代：Retinoids（isotretinoin 1-2 mg/kg PO SID）單獨或合用。4. 局部治療：外用糖皮質激素（patch 期）、放射線（孤立腫塊）。5. Sézary syndrome：CCNU + prednisolone ± L-asparaginase。6. 支持：瘙癢管理、繼發感染控制、營養支持、疼痛管理。',
+    prognosis: '整體預後不良。Patch/plaque 期中位存活 12-24 個月，tumor 期 6-12 個月，Sézary syndrome 3-6 個月。CCNU 反應率高（75-80%）但反應持續時間有限。部分犬對治療反應良好可存活 > 2 年。治療目的為延長有品質的生命（palliative intent），非治癒。',
+    monitoring: 'CCNU 治療：每次給藥前 CBC（ANC ≥ 2000/μL 方可給藥）+ ALT/ALP。累積劑量記錄（建議 < 300-400 mg/m²）。每 4-6 週皮膚病灶評估（拍照記錄）。每 2-3 個月重新分期（淋巴結、影像學）。生活品質量表定期評估。出現嚴重骨髓抑制（ANC < 1000）或肝毒性（ALT > 5x ULN）需停藥或調整。',
+    owner_communication: '皮膚淋巴瘤是一種從皮膚開始的惡性腫瘤。目前無法治癒，但化療藥物（CCNU）可有效控制病情數月。治療目的是讓狗狗在剩餘時間保持良好生活品質。CCNU 化療需要定期抽血監測（每 3 週），確保肝臟和血球沒有受到藥物傷害。我們會一起持續評估狗狗的生活品質，在適當時機討論安寧照護的選項。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床表現段落後', type: 'comparison_table', description: 'MF 三階段臨床進程比較表' },
+    { position: '分期段落後', type: 'flowchart', description: 'CTCL 分期與治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '治療段落', type: 'drug_calculator', description: 'CCNU 體表面積劑量計算器' },
+  ],
+  drug_api_links: ['Lomustine', 'Prednisolone', 'Isotretinoin'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 20: Cutaneous Lymphoma.", relevance: '皮膚淋巴瘤分類、臨床特徵與治療的經典參考' },
+    { type: 'journal', citation: 'Fontaine J et al. Canine cutaneous epitheliotropic T-cell lymphoma: a review of 30 cases. Vet Dermatol. 2010;21(3):267-275.', relevance: '犬嗜表皮 T 細胞淋巴瘤大型回顧性研究' },
+    { type: 'journal', citation: 'Williams LE et al. CCNU in the treatment of canine epitheliotropic lymphoma. J Vet Intern Med. 2006;20(6):1384-1388.', relevance: 'CCNU 治療犬皮膚淋巴瘤的療效與毒性評估' },
+    { type: 'guideline', citation: 'Vail DM et al. Veterinary Cooperative Oncology Group — Common Terminology Criteria for Adverse Events (VCOG-CTCAE v2). Vet Comp Oncol. 2021;19(2):311-352.', relevance: '化療不良反應分級標準' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L0-001', contentDermOverview],
@@ -4199,4 +4766,7 @@ export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L5-003', contentImmunomodulation],
   ['DERM-L5-004', contentOticTherapy],
   ['DERM-L5-005', contentAntifungal],
+  ['DERM-L3-011', contentDrugEruption],
+  ['DERM-L3-012', contentAlopeciaX],
+  ['DERM-L3-013', contentCTCL],
 ]);

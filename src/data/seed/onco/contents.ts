@@ -3429,6 +3429,1040 @@ const contentMetronomicChemo: NodeContent = {
   created_at: now,
 };
 
+/** 腫瘤微環境 — 機轉型 */
+const contentTME: NodeContent = {
+  id: 'CONTENT-ONCO-L2-004',
+  node_id: 'ONCO-L2-004',
+  version: 1,
+  summary: '腫瘤微環境（Tumor Microenvironment, TME）是指腫瘤細胞周圍由免疫細胞、纖維母細胞、血管內皮細胞、細胞外基質及可溶性因子所構成的複雜生態系統。TME 不僅支持腫瘤生長與轉移，更透過免疫抑制機轉幫助腫瘤逃脫宿主免疫監控。理解 TME 是當代免疫治療（如 PD-1/PD-L1 免疫檢查點抑制劑）和抗血管新生治療的理論基礎。',
+  learning_objectives: [
+    '描述腫瘤微環境的主要細胞組成及其功能角色',
+    '說明腫瘤相關巨噬細胞（TAM）的 M1/M2 極化及其對腫瘤進展的影響',
+    '解釋癌症相關纖維母細胞（CAF）如何促進腫瘤生長與轉移',
+    '列出免疫檢查點分子（PD-1/PD-L1、CTLA-4）在 TME 免疫逃脫中的角色',
+    '說明腫瘤血管新生（angiogenesis）的機轉與 VEGF 信號通路',
+    '比較「冷腫瘤」與「熱腫瘤」的 TME 特徵及其對免疫治療反應的影響',
+  ],
+  key_points: [
+    'TME 由腫瘤細胞、免疫細胞（T 細胞、TAM、MDSC、Treg）、CAF、血管內皮細胞和 ECM 組成',
+    'TAM 以 M2 極化為主（促腫瘤表型）：分泌 IL-10、TGF-β → 抑制抗腫瘤免疫 + 促進血管新生',
+    'CAF 分泌生長因子（HGF、FGF）和 ECM 重塑酶（MMP）→ 促進腫瘤浸潤和轉移',
+    '免疫檢查點：PD-1（T 細胞）與 PD-L1（腫瘤細胞/APC）結合 → T 細胞耗竭（exhaustion）→ 免疫逃脫',
+    'VEGF 驅動腫瘤血管新生：新生血管結構異常（高通透性、無周皮細胞覆蓋）→ 缺氧 + 免疫細胞浸潤受阻',
+    'Treg 和 MDSC 在 TME 中累積 → 抑制效應 T 細胞功能 → 免疫抑制微環境',
+    '犬腫瘤 PD-L1 表達已被證實：犬口腔黑色素瘤、MCT、乳腺癌等均有報告',
+    '「熱腫瘤」（T 細胞浸潤多）對免疫治療反應較好；「冷腫瘤」（免疫荒漠）需策略性活化',
+  ],
+  body: `# 腫瘤微環境 (Tumor Microenvironment, TME)
+
+## 一、核心概念 (Core Concept)
+
+腫瘤不僅是癌細胞的集合體，更是一個由多種細胞和非細胞成分構成的複雜「器官」。腫瘤微環境（TME）涵蓋了腫瘤細胞周圍所有的基質細胞（stromal cells）、免疫細胞、血管系統、細胞外基質（ECM）和可溶性因子（細胞激素、趨化因子、生長因子）。TME 與腫瘤細胞之間存在持續的雙向溝通（crosstalk），共同決定腫瘤的生長速率、侵襲能力、轉移潛力和治療反應。
+
+## 二、TME 的主要細胞組成
+
+### 1. 腫瘤相關巨噬細胞（Tumor-Associated Macrophages, TAM）
+TAM 是 TME 中數量最多的免疫細胞。在腫瘤的影響下，TAM 以 M2 極化（促腫瘤表型）為主：
+
+- **M1 表型**（抗腫瘤）：分泌 TNF-α、IL-12、iNOS → 殺傷腫瘤細胞
+- **M2 表型**（促腫瘤）：分泌 IL-10、TGF-β、VEGF → 免疫抑制 + 血管新生 + ECM 重塑
+
+TAM 密度高與多種犬貓腫瘤的不良預後相關，包括犬乳腺腫瘤和口腔黑色素瘤。
+
+### 2. 癌症相關纖維母細胞（Cancer-Associated Fibroblasts, CAF）
+CAF 是 TME 中主要的基質細胞，由正常纖維母細胞在腫瘤信號的作用下活化而來：
+
+- 分泌生長因子：HGF、FGF、SDF-1 → 促進腫瘤細胞增殖和遷移
+- ECM 重塑：分泌膠原蛋白、纖維連接蛋白和 MMP → 形成有利於浸潤的基質
+- 促進 EMT：透過 TGF-β 等信號促進腫瘤細胞上皮-間質轉化
+- 免疫排斥：形成緻密的纖維化屏障阻止 T 細胞浸潤（desmoplastic reaction）
+
+### 3. 調節性 T 細胞（Treg）與骨髓來源抑制細胞（MDSC）
+- **Treg**（CD4+CD25+FoxP3+）：在 TME 中被腫瘤來源 TGF-β 和 IDO 招募並擴增，抑制 CD8+ 效應 T 細胞
+- **MDSC**：異質性骨髓細胞群，透過 arginase-1、iNOS 和 ROS 產生 → 抑制 T 細胞活化和增殖
+
+### 4. 血管內皮細胞與腫瘤血管新生
+腫瘤透過 VEGF/VEGFR 信號通路驅動新血管生成（angiogenesis）。腫瘤新生血管結構異常：
+- 血管壁不完整、缺乏周皮細胞覆蓋 → 高通透性 → 組織間隙壓力升高
+- 血流紊亂 → 缺氧微環境 → HIF-1α 上調 → 更多 VEGF 分泌（惡性循環）
+- 免疫細胞進入困難 → 「免疫冷」表型
+
+## 三、免疫逃脫機轉 (Immune Evasion)
+
+### 免疫檢查點（Immune Checkpoints）
+- **PD-1/PD-L1 軸**：活化 T 細胞表達 PD-1，腫瘤細胞和 TAM 上調 PD-L1 → PD-1/PD-L1 結合 → T 細胞功能耗竭
+- **CTLA-4**：與 CD28 競爭結合 B7（CD80/CD86）→ 抑制 T 細胞初始活化
+- **LAG-3、TIM-3、TIGIT**：新興免疫檢查點，在犬腫瘤中的表達已有初步報告
+
+犬口腔黑色素瘤的 PD-L1 表達已被多項研究證實，成為犬免疫治療的重要靶點。日本 Kindred Biosciences 已開發犬 PD-1 抗體（c4G12）進入臨床試驗。
+
+### 免疫抑制性代謝微環境
+- **IDO（indoleamine 2,3-dioxygenase）**：消耗色胺酸 → T 細胞增殖受抑
+- **腺苷 A2A 受體**：TME 中 ATP 降解產生腺苷 → 抑制 T 細胞和 NK 細胞
+- **乳酸堆積**：Warburg 效應 → TME 酸化 → T 細胞功能受損
+
+## 四、獸醫臨床意義 (Veterinary Clinical Relevance)
+
+### 犬腫瘤 TME 研究進展
+| 腫瘤類型 | TME 特徵 | 臨床意義 |
+|---------|----------|---------|
+| 犬口腔黑色素瘤 | PD-L1 高表達，TIL 浸潤 | 犬 PD-1 抗體臨床試驗 |
+| 犬 MCT | TAM 浸潤，c-KIT 驅動的 VEGF | TKI（Toceranib）抗血管新生 |
+| 犬 OSA | 免疫抑制性 TME，低 TIL | 免疫治療挑戰性高 |
+| 犬 HSA | 高度血管化，VEGF 驅動 | Toceranib 輔助治療 |
+| 犬乳腺腫瘤 | TAM 密度與分級相關 | TAM 作為預後生物標記 |
+
+### 治療策略中的 TME 靶向
+1. **抗血管新生**：Toceranib（VEGFR-TKI）已 FDA 核准用於犬 MCT，同時抑制腫瘤血管新生
+2. **免疫檢查點抑制**：犬 PD-1 抗體、犬 CTLA-4 抗體——多個獸醫免疫治療臨床試驗進行中
+3. **節拍式化療**：低劑量 cyclophosphamide 可選擇性減少 Treg + 抗血管新生效應
+4. **腫瘤疫苗**：犬口腔黑色素瘤 DNA 疫苗（ONCEPT）——USDA 條件性核准
+
+## 五、「熱腫瘤」vs「冷腫瘤」
+
+免疫腫瘤學的核心概念是將腫瘤分為：
+- **熱腫瘤（Hot tumor）**：T 細胞浸潤豐富、PD-L1 表達高 → 免疫檢查點抑制劑反應率高
+- **冷腫瘤（Cold tumor）**：T 細胞浸潤少（免疫荒漠）→ 免疫治療反應差
+- **免疫排斥型（Immune-excluded）**：T 細胞被困在腫瘤邊緣無法進入 → 需破壞基質屏障
+
+[圖片:TME 細胞組成與交互作用示意圖]
+
+## 六、人醫借鑒與展望 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| PD-1/PD-L1 抑制劑（Nivolumab/Pembrolizumab） | 犬 PD-1 抗體用於口腔黑色素瘤等 | 犬 c4G12 臨床試驗中（日本） |
+| CAR-T 細胞療法 | 犬腫瘤的過繼性細胞免疫治療 | 犬 CD20-CAR-T 淋巴瘤試驗中 |
+| 腫瘤突變負荷（TMB）預測免疫治療反應 | 犬腫瘤 TMB 與免疫治療反應的相關性 | 犬腫瘤 WES 數據累積中 |
+| 雙特異性抗體（BiTE） | 犬腫瘤的 T 細胞導向免疫療法 | 概念驗證階段 |`,
+  clinical_pearl: '理解 TME 的臨床重要性：Toceranib（Palladia）的療效不僅來自直接抑制腫瘤細胞的受體酪胺酸激酶，更透過 VEGFR 抑制阻斷腫瘤血管新生和調節 TME 中的免疫反應。這解釋了為何 Toceranib 對不帶 c-KIT 突變的腫瘤仍可能有效——其抗 TME 效應是廣譜的。同樣地，節拍式化療的抗腫瘤機轉也主要作用於 TME（抗血管新生 + Treg 減少），而非直接殺傷腫瘤細胞。',
+  common_mistakes: [
+    '將腫瘤視為單純的癌細胞集合體而忽略 TME 的角色——TME 決定了治療反應和預後',
+    '認為所有免疫浸潤都是抗腫瘤的——TAM（M2）和 Treg 實際上促進腫瘤進展',
+    '不理解 TKI（如 Toceranib）的多靶點作用——其療效部分來自 TME 調節而非僅靶向腫瘤細胞',
+    '忽略缺氧微環境對治療的影響——腫瘤缺氧降低放射線治療和化療的效果',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'TME 細胞組成段落後', type: 'animated_diagram', description: 'TME 細胞組成與交互作用動態圖' },
+    { position: '免疫檢查點段落後', type: 'flowchart', description: 'PD-1/PD-L1 免疫逃脫機轉圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Toceranib', 'Cyclophosphamide'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology — Tumor Microenvironment Section.', relevance: '腫瘤微環境基礎章節' },
+    { type: 'journal', citation: 'Maekawa N et al. A canine chimeric monoclonal antibody targeting PD-L1 and its clinical efficacy in canine oral malignant melanoma or undifferentiated sarcoma. Sci Rep. 2017;7(1):8951.', relevance: '犬 PD-L1 抗體臨床效果' },
+    { type: 'journal', citation: 'Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 2011;144(5):646-674.', relevance: '癌症標誌——腫瘤微環境作為新興標誌' },
+    { type: 'guideline', citation: 'Bergman PJ et al. Development of a xenogeneic DNA vaccine program for canine malignant melanoma at the Animal Medical Center. Vaccine. 2006;24(21):4582-4585.', relevance: '犬黑色素瘤 DNA 疫苗——TME 免疫調節策略' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 軟組織肉瘤 — 疾病型 */
+const contentSTS: NodeContent = {
+  id: 'CONTENT-ONCO-L3-009',
+  node_id: 'ONCO-L3-009',
+  version: 1,
+  summary: '軟組織肉瘤（Soft Tissue Sarcoma, STS）是一群源自間葉組織的惡性腫瘤，包括纖維肉瘤、血管外膜細胞瘤、神經鞘瘤、脂肪肉瘤和黏液肉瘤等。STS 共同特徵為局部侵襲性高但轉移率相對低（Grade I/II < 20%）。組織學分級（Grade I/II/III）是最重要的預後因子。手術治療需廣泛切緣（lateral ≥ 3 cm + deep ≥ 1 fascial plane），切緣不足是局部復發的首要原因。',
+  learning_objectives: [
+    '列出 STS 所涵蓋的主要組織學亞型',
+    '說明 STS 三級組織學分級系統（Kuntz et al.）及其預後意義',
+    '描述 STS 廣泛手術切緣的標準與原理',
+    '比較 STS 的局部復發率與遠端轉移率',
+    '擬定 STS 的完整分期與治療計畫',
+  ],
+  key_points: [
+    'STS 為一群間葉來源腫瘤的統稱，包括纖維肉瘤、血管外膜細胞瘤（perivascular wall tumor）、周邊神經鞘瘤、脂肪肉瘤、黏液肉瘤等',
+    '共同特性：局部侵襲性高（假性包膜外有腫瘤細胞浸潤）但轉移率相對低',
+    '三級分級：Grade I（低度，有絲分裂指數 < 9/10 HPF）、Grade II（中度）、Grade III（高度，≥ 20/10 HPF）——分級為最重要預後因子',
+    'Grade I/II 轉移率 < 20%；Grade III 轉移率可達 40-50%',
+    '手術切緣標準：lateral ≥ 3 cm + deep ≥ 1 fascial plane（比 MCT 更寬）',
+    '不完全切除後局部復發率約 30-75%，完全切除後降至 7-15%',
+    '好發於四肢和軀幹的皮下組織，中大型犬較常見',
+    'FNA 細胞學診斷率低（間葉細胞剝離性差），常需切開或切除活檢確認',
+  ],
+  body: `# 軟組織肉瘤 (Soft Tissue Sarcoma, STS)
+
+## 一、概述 (Overview)
+
+軟組織肉瘤是一群源自間葉組織（mesenchymal tissue）的惡性腫瘤統稱。之所以將這些組織學亞型歸為一組，是因為它們具有相似的生物行為：**局部侵襲性高但遠端轉移率相對低**。STS 約占犬所有皮膚及皮下腫瘤的 15%，好發部位為四肢和軀幹。
+
+### 主要組織學亞型
+- **纖維肉瘤（Fibrosarcoma）**：最常見亞型之一
+- **血管外膜細胞瘤（Perivascular wall tumor / Hemangiopericytoma）**：現已重新分類
+- **周邊神經鞘瘤（Peripheral nerve sheath tumor, PNST）**
+- **脂肪肉瘤（Liposarcoma）**
+- **黏液肉瘤（Myxosarcoma）**
+- **間葉瘤（Mesenchymoma）**
+- **未分化肉瘤（Undifferentiated sarcoma）**
+
+## 二、臨床表現 (Clinical Signs)
+
+STS 典型表現為緩慢生長的皮下腫塊，觸診質地堅實，通常與皮下組織黏連但表面皮膚可能正常。腫塊常被飼主忽略直到相當大才就診。
+
+關鍵臨床特徵：
+- 好發於四肢（尤其遠端）和軀幹
+- 緩慢生長（數週至數月）
+- 觸診堅實、邊界不清
+- 通常無疼痛（除非壓迫神經——PNST 可致跛行）
+- 表面皮膚可能潰瘍（大型或快速生長者）
+
+## 三、分級系統 (Grading)
+
+### 三級組織學分級（Kuntz et al. / McSporran）
+STS 的組織學分級是**最重要的預後因子**：
+
+| 項目 | Grade I（低度） | Grade II（中度） | Grade III（高度） |
+|------|----------------|-----------------|------------------|
+| 分化程度 | 良好 | 中等 | 差 |
+| 有絲分裂指數 | < 9/10 HPF | 10-19/10 HPF | ≥ 20/10 HPF |
+| 壞死 | < 10% | 10-50% | > 50% |
+| 局部復發率 | 7-15%（完全切除） | 20-35% | 35-75% |
+| 轉移率 | < 15% | 15-20% | 40-50% |
+
+## 四、診斷 (Diagnosis)
+
+### FNA 細胞學的限制
+STS 的 FNA 細胞學**診斷率較低**（約 50-60%），因為：
+- 間葉細胞剝離性差，取得細胞量少
+- 細胞學下紡錘形細胞的惡性度難以判斷
+- 無法準確區分亞型或分級
+
+因此，**組織活檢（incisional biopsy 或 excisional biopsy）是確診和分級的必要步驟**。
+
+### 分期檢查
+1. 切開活檢或楔形活檢（術前規劃切除範圍）
+2. 區域淋巴結評估（FNA——STS 淋巴結轉移率低但仍需評估）
+3. 胸腔三面 X 光（肺轉移篩檢）
+4. 腹部超音波（視腫瘤位置）
+5. CT/MRI（四肢腫塊——評估浸潤深度、與血管神經的關係，手術規劃必備）
+
+## 五、治療 (Treatment)
+
+### 手術：治療核心
+- **廣泛切除**：lateral ≥ 3 cm + deep ≥ 1 fascial plane
+- 假性包膜（pseudocapsule）不是真正的邊界——外側仍有腫瘤細胞浸潤
+- 四肢遠端：切緣受限時考慮截肢
+- **術前 CT/MRI 是四肢 STS 手術規劃的關鍵**
+
+### 輔助放射線治療
+- 切緣不完全（dirty margin）或切緣狹窄（close margin）：術後放療可降低局部復發率至 15-20%
+- 術前放療：縮小腫瘤體積，改善手術切除範圍
+- 等效果為 16-19 次分次照射，總劑量 48-57 Gy
+
+### 化療
+- Grade I/II：切緣完全時通常不需化療
+- Grade III：考慮輔助化療（Doxorubicin ± Cyclophosphamide）降低轉移風險
+- 節拍式化療：Cyclophosphamide + Piroxicam 可作為姑息或維持選項
+
+## 六、預後 (Prognosis)
+
+- Grade I + 完全切除：中位存活 > 3 年，局部復發率 7-15%
+- Grade II + 完全切除：中位存活 2-3 年
+- Grade III + 完全切除：中位存活約 1 年，轉移率 40-50%
+- 不完全切除不加放療：局部復發率 30-75%（視分級而定）
+- 截肢：四肢 STS 截肢後局部控制率極高（> 95%）
+
+## 七、監控 (Monitoring)
+
+- 術後每 3 個月追蹤手術部位和區域淋巴結（共 2 年）
+- 胸腔 X 光：Grade III 每 3 個月、Grade I/II 每 6 個月
+- 局部復發最常在術後 1 年內發生
+- 影像學追蹤評估軟組織腫塊復發（超音波或 CT）
+
+[圖片:STS 手術切緣示意圖——假性包膜與真正切緣的差異]`,
+  clinical_pearl: '切勿沿假性包膜（pseudocapsule）進行「剝離式」（shell-out）切除——這是 STS 局部復發的首要原因。假性包膜由壓迫性纖維組織構成，但外側仍有浸潤性腫瘤細胞。術前影像學（CT/MRI）評估浸潤範圍是規劃廣泛切緣的關鍵。另外，FNA 細胞學見到「紡錘形細胞」不等於 STS——反應性纖維增生、肉芽組織、甚至紡錘形 MCT 都可能有類似表現，切開活檢才能確定診斷和分級。\n\n【台灣流行病學】STS 在台灣犬為常見的皮下惡性腫瘤。四肢 STS 因切緣受限常需截肢，台灣飼主對截肢的接受度因文化因素可能較低，術前充分溝通至關重要。CT 術前規劃在台灣大型動物醫院已可執行。輔助放射線治療在台灣可及性有限，需轉診至設有放療設備的教學醫院。',
+  common_mistakes: [
+    '沿假性包膜剝離切除（shell-out / marginal excision）而非廣泛切緣——局部復發率顯著增加',
+    '僅憑 FNA 細胞學「紡錘形細胞」即診斷 STS 而未進行組織活檢分級',
+    '未做術前影像學（CT/MRI）即進行手術——無法準確規劃切除範圍',
+    '對 Grade I/II STS 不必要地進行化療——完全切除即可治癒大部分低度 STS',
+    '忽略 Grade III STS 的轉移風險而僅處理局部問題',
+  ],
+  disease_data: {
+    signalment: '中老年犬（中位年齡 9-11 歲），中大型犬較常見。無明顯品種或性別偏好，但大型犬因體表面積大而報告數較多。',
+    etiology: '確切病因不明。大多數 STS 為自發性。注射部位肉瘤（vaccine-associated / injection-site sarcoma）在貓較為人知，犬偶有報告。慢性異物反應、輻射暴露可能為潛在風險因子。',
+    pathogenesis: '間葉幹細胞或分化的間葉細胞 → 基因突變（p53、Rb 等抑癌基因失活）→ 克隆性增殖 → 形成假性包膜（壓迫性纖維，非真正邊界）→ 腫瘤細胞沿筋膜面和組織間隙浸潤 → 局部侵襲擴大 → Grade III 者可經血行轉移至肺。',
+    clinical_signs: [
+      { sign: '皮下堅實腫塊', category: 'primary', description: '緩慢生長，觸診堅實，邊界不清，與深層組織黏連，好發於四肢和軀幹' },
+      { sign: '腫塊無疼痛', category: 'primary', description: '多數 STS 不會引起疼痛，除非壓迫神經（PNST）或生長至相當大小' },
+      { sign: '跛行', category: 'secondary', description: '四肢 STS 壓迫神經或侵犯關節時可出現，PNST 尤其常見' },
+      { sign: '表面潰瘍', category: 'secondary', description: '大型或快速生長的 STS 可能導致表面皮膚壞死潰瘍' },
+      { sign: '運動受限', category: 'secondary', description: '大型四肢 STS 影響關節活動度' },
+    ],
+    staging: {
+      system: 'STS Histologic Grading System (Kuntz et al.)',
+      stages: [
+        'Grade I（低度）：分化良好，有絲分裂 < 9/10 HPF，壞死 < 10%',
+        'Grade II（中度）：中度分化，有絲分裂 10-19/10 HPF，壞死 10-50%',
+        'Grade III（高度）：分化不良，有絲分裂 ≥ 20/10 HPF，壞死 > 50%',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '脂肪瘤', key_differentiator: '觸診柔軟可移動，FNA 見脂肪細胞；浸潤性脂肪瘤可模擬 STS 但 FNA/組織學可區分' },
+      { condition: '肥大細胞瘤（MCT）', key_differentiator: 'FNA 見嗜鹼性顆粒之圓形細胞，非紡錘形細胞；紡錘形 MCT 罕見但存在' },
+      { condition: '注射部位反應/肉芽腫', key_differentiator: '注射部位病史，通常 < 2 cm 且在 3 個月內消退；持續增大需活檢排除' },
+      { condition: '血管肉瘤（Cutaneous HSA）', key_differentiator: '皮膚/皮下出血性腫塊，FNA 常見大量血液；組織學見異型血管腔' },
+      { condition: '黑色素瘤', key_differentiator: 'FNA 見含黑色素顆粒之圓形/紡錘形細胞，Melan-A/PNL-2 免疫染色陽性' },
+    ],
+    diagnostic_workup: '1. FNA 細胞學（初步——但診斷率僅 50-60%）→ 2. 切開活檢（incisional biopsy）確診及分級 → 3. 胸腔三面 X 光（肺轉移篩檢）→ 4. 區域淋巴結 FNA → 5. CT/MRI（四肢 STS 手術規劃必備——評估浸潤範圍與血管神經關係）',
+    treatment_protocol: '手術為治療核心：廣泛切除 lateral ≥ 3 cm + deep ≥ 1 fascial plane。四肢遠端切緣不足時考慮截肢。不完全切除：術後放療（48-57 Gy / 16-19 次分次）可降低復發率。Grade III：考慮 Doxorubicin ± Cyclophosphamide 輔助化療。姑息性：節拍式 Cyclophosphamide + Piroxicam。',
+    prognosis: 'Grade I + 完全切除：中位存活 > 3 年，局部復發率 7-15%。Grade II + 完全切除：中位存活約 2-3 年。Grade III：中位存活約 1 年，轉移率 40-50%。不完全切除（不加放療）：局部復發率 30-75%。手術切緣狀態是局部控制的最關鍵因子。',
+    monitoring: '術後每 3 個月回診評估手術部位（觸診 + 超音波）和區域淋巴結，共 2 年。胸腔 X 光：Grade III 每 3 個月、Grade I/II 每 6 個月追蹤肺轉移。局部復發最常在術後 6-12 個月內發生。',
+    owner_communication: 'STS 的好消息是轉移率相對低（尤其 Grade I/II），手術切除乾淨的治癒率高。壞消息是需要非常寬的切緣，四肢腫瘤可能需要截肢。術前影像學規劃可幫助判斷是否能保肢。若切緣不足，放射線治療是有效的輔助手段。建議在術前充分討論所有治療選項和費用預估。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分級系統表格後', type: 'comparison_table', description: 'STS Grade I/II/III 預後比較圖' },
+    { position: '手術段落後', type: 'annotated_image', description: 'STS 手術切緣示意圖（假性包膜 vs 廣泛切緣）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Doxorubicin', 'Cyclophosphamide', 'Piroxicam'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 21: Soft Tissue Sarcomas.', relevance: 'STS 完整章節' },
+    { type: 'journal', citation: 'Kuntz CA et al. Prognostic factors for surgical treatment of soft-tissue sarcomas in dogs: 75 cases (1986-1996). J Am Vet Med Assoc. 1997;211(9):1147-1151.', relevance: 'STS 分級與預後經典文獻' },
+    { type: 'journal', citation: 'McSporran KD. Histologic grade predicts recurrence for marginally excised canine subcutaneous soft tissue sarcomas. Vet Pathol. 2009;46(5):928-933.', relevance: 'STS 切緣與復發的關係' },
+    { type: 'guideline', citation: 'Ehrhart NP et al. Principles of Musculoskeletal Oncology in Dogs and Cats. In: Johnston SA, Tobias KM. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: 'STS 手術原則與切緣建議' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 肛囊腺癌 — 疾病型 */
+const contentASAC: NodeContent = {
+  id: 'CONTENT-ONCO-L3-010',
+  node_id: 'ONCO-L3-010',
+  version: 1,
+  summary: '犬肛囊腺癌（Anal Sac Adenocarcinoma, ASAC / Apocrine Gland Adenocarcinoma of the Anal Sac）是犬肛囊腺頂泌腺體的惡性腫瘤。約 25-50% 的病例在確診時伴有副腫瘤性高血鈣。腹下淋巴結（sublumbar lymph node）轉移率高（約 50-96% 確診時已有），是重要的預後因子。手術切除為治療首選，術後輔助化療或放療可延長存活時間，中位存活約 12-18 個月。',
+  learning_objectives: [
+    '說明 ASAC 副腫瘤性高血鈣的發生機轉與臨床表現',
+    '描述腹下淋巴結轉移在 ASAC 分期中的重要性',
+    '擬定 ASAC 的完整分期檢查流程',
+    '比較 ASAC 單純手術與手術加輔助治療的預後差異',
+    '辨識 ASAC 與其他肛門區腫瘤的鑑別診斷',
+  ],
+  key_points: [
+    'ASAC 起源於肛囊的頂泌腺體（apocrine gland），為犬肛門區域最常見的惡性腫瘤',
+    '副腫瘤性高血鈣發生率 25-50%：腫瘤分泌 PTHrP → 高血鈣 → 多尿多渴、食慾下降、嗜睡',
+    '腹下淋巴結（sublumbar / medial iliac）轉移率極高——確診時 50-96% 已有轉移',
+    '直腸觸診可觸及肛囊腫塊和/或腹下淋巴結腫大',
+    '手術切除（肛囊腫塊 ± 腹下淋巴結）為治療首選',
+    '手術 + 化療（Carboplatin 或 Mitoxantrone）可延長存活至 15-24 個月',
+    '腫瘤大小、淋巴結轉移和高血鈣是主要預後因子',
+    '好發於中老年犬（中位年齡 10-11 歲），英國可卡犬和德國牧羊犬等有較高發病率',
+  ],
+  body: `# 肛囊腺癌 (Anal Sac Adenocarcinoma, ASAC)
+
+## 一、概述 (Overview)
+
+犬肛囊腺癌源自肛囊壁的頂泌腺體（apocrine gland），是犬肛門區域最重要的惡性腫瘤。雖然發病率不算最高，但因其高轉移率和副腫瘤症候群的特殊性而在臨床上備受重視。許多病例是在例行直腸觸診或因高血鈣症狀就診時意外發現。
+
+## 二、臨床表現 (Clinical Signs)
+
+### 局部症狀
+- 肛門區腫塊（可能僅在直腸觸診時發現）
+- 排便困難（tenesmus）——腫塊壓迫直腸
+- 排便帶血或黏液
+- 肛門區舔舐增加
+- 會陰部腫脹
+
+### 副腫瘤性高血鈣（Paraneoplastic Hypercalcemia）
+ASAC 是犬高血鈣最常見的腫瘤原因之一（僅次於淋巴瘤），發生率約 25-50%：
+- 腫瘤分泌**副甲狀腺素相關蛋白（PTHrP）**→ 破骨細胞活化 + 腎臟鈣重吸收增加
+- 臨床表現：**多尿多渴（PU/PD）**、食慾下降、嗜睡、肌肉無力
+- 嚴重時：心律不整、急性腎損傷
+- 血鈣 > 18 mg/dL（> 4.5 mmol/L）為緊急狀態
+
+### 腹下淋巴結轉移
+- 確診時 50-96% 已有腹下淋巴結轉移
+- 腹下淋巴結極度腫大可壓迫結腸 → 排便困難
+- 壓迫輸尿管 → 腎後性阻塞（少見但嚴重）
+
+## 三、分期 (Staging)
+
+### Modified WHO Staging
+| 期別 | 定義 |
+|------|------|
+| T1 | 腫瘤 < 2.5 cm |
+| T2 | 腫瘤 2.5-5 cm |
+| T3 | 腫瘤 > 5 cm |
+| N0 | 無區域淋巴結轉移 |
+| N1 | 區域淋巴結轉移（sublumbar LN < 4.5 cm） |
+| N2 | 區域淋巴結轉移（sublumbar LN ≥ 4.5 cm） |
+| M0 | 無遠端轉移 |
+| M1 | 有遠端轉移（肺、肝、脾等） |
+
+## 四、診斷 (Diagnosis)
+
+1. **直腸觸診**：最重要的初步檢查——觸診肛囊區腫塊和腹下淋巴結
+2. **FNA 細胞學**：肛囊腫塊和/或腹下淋巴結
+3. **血液學**：CBC + 全套生化（**特別注意血鈣和 ionized Ca²⁺**）
+4. **腹部超音波**：腹下淋巴結評估（大小、形態）+ 肝脾檢查
+5. **胸腔 X 光**：肺轉移篩檢
+6. **腹部 CT**：精確評估腹下淋巴結範圍，手術規劃
+
+## 五、治療 (Treatment)
+
+### 手術
+- **肛囊切除術**：完整切除肛囊及腫瘤
+- **腹下淋巴結切除術**：腫大的淋巴結應同時切除——多項研究顯示淋巴結切除可延長存活
+- 手術技術：肛囊腫塊需避免傷及肛門括約肌；腹下淋巴結切除為腹部手術
+
+### 輔助治療
+- **化療**：Carboplatin（300 mg/m² IV q3 weeks × 4-6 cycles）或 Mitoxantrone + Cyclophosphamide
+- **放射線治療**：術後對腹下淋巴結區域放療——可用於無法完全切除的淋巴結
+- **Toceranib（Palladia）**：部分案例報告顯示對 ASAC 有反應
+
+### 高血鈣的緊急處理
+- 生理食鹽水靜脈輸液（優先——矯正脫水 + 促進鈣排泄）
+- Furosemide（利尿排鈣）
+- Dexamethasone / Prednisone（抑制 PTHrP 作用——但注意若淋巴瘤未排除則可能影響診斷）
+- Bisphosphonates（Pamidronate / Zoledronate）——嚴重高血鈣的輔助
+
+## 六、預後 (Prognosis)
+
+- 手術單獨：中位存活 12-18 個月
+- 手術 + 化療：中位存活 15-24 個月
+- 手術 + 放療：部分研究報告中位存活 > 20 個月
+- **腫瘤大小 < 2.5 cm 預後顯著較好**（中位存活 > 24 個月）
+- 淋巴結未轉移的病例預後優於已轉移者
+- 高血鈣本身不一定代表預後差（手術後常可恢復正常）
+
+## 七、監控 (Monitoring)
+
+- 術後每 3 個月：直腸觸診 + 血鈣 + 腹部超音波（腹下淋巴結追蹤）
+- 胸腔 X 光每 3-6 個月
+- 血鈣恢復正常後再次升高 → 高度懷疑復發或轉移
+- 化療期間每次治療前 CBC + BCS
+
+[圖片:ASAC 解剖位置與腹下淋巴結轉移示意圖]`,
+  clinical_pearl: '直腸觸診是發現 ASAC 最重要的第一步——許多 ASAC 在腫瘤仍小時無明顯外部症狀，但透過例行直腸觸診可早期發現。建議對所有中老年犬（尤其好發品種）在年度健康檢查時納入直腸觸診。另一個臨床要點：當犬出現不明原因的高血鈣時（PU/PD + 高血鈣），即使無明顯肛門症狀，也務必進行直腸觸診和腹部超音波——ASAC 和淋巴瘤是犬副腫瘤性高血鈣的兩大原因。\n\n【台灣流行病學】ASAC 在台灣犬並非罕見，但因早期症狀不明顯常被延誤診斷。台灣獸醫師應更積極地在中老年犬健檢中納入直腸觸診。英國可卡犬在台灣飼養數量不少，為好發品種之一。台灣的化療和手術治療可在主要動物醫院執行，但腹下淋巴結切除需要較高的外科技術。',
+  common_mistakes: [
+    '未在中老年犬年度健檢時進行直腸觸診——ASAC 的早期發現依賴觸診',
+    '將 ASAC 引起的高血鈣歸因於其他原因而延誤診斷',
+    '手術切除肛囊腫塊但忽略腹下淋巴結的評估和切除',
+    '認為有腹下淋巴結轉移就不能手術——即使有淋巴結轉移，手術仍可顯著延長存活',
+    '對高血鈣緊急病例直接給予 corticosteroids 而未先排除淋巴瘤——steroids 可影響淋巴瘤的後續診斷',
+  ],
+  disease_data: {
+    signalment: '中老年犬（中位年齡 10-11 歲），好發品種：英國可卡犬（English Cocker Spaniel）、德國牧羊犬、英國史賓格犬（English Springer Spaniel）、Cavalier King Charles Spaniel。曾認為母犬較好發，但近期研究顯示無顯著性別差異。',
+    etiology: '確切病因不明。起源於肛囊壁的頂泌腺體（apocrine gland）。有品種易感性但具體遺傳機轉尚未確定。與肛囊炎或肛囊阻塞無已知因果關係。',
+    pathogenesis: '肛囊頂泌腺體上皮惡性轉化 → 局部浸潤性生長 → 淋巴引流至腹下淋巴結（medial iliac lymph node）→ 淋巴結轉移（50-96%）→ 遠端轉移（肺、肝）。腫瘤細胞可分泌 PTHrP → 破骨細胞活化 + 腎臟鈣重吸收增加 → 副腫瘤性高血鈣（25-50%）。',
+    clinical_signs: [
+      { sign: '肛門區腫塊', category: 'primary', description: '直腸觸診可及肛囊內堅實腫塊，小型腫瘤可能僅在觸診時發現' },
+      { sign: '排便困難/裡急後重', category: 'primary', description: '腫塊壓迫直腸或腹下淋巴結極度腫大壓迫結腸' },
+      { sign: '多尿多渴', category: 'primary', description: '副腫瘤性高血鈣（PTHrP 分泌）→ 腎臟濃縮能力下降' },
+      { sign: '食慾下降/嗜睡', category: 'secondary', description: '高血鈣的全身性症狀，也可能與腫瘤進展相關' },
+      { sign: '肛門區舔舐', category: 'secondary', description: '局部刺激或不適' },
+    ],
+    staging: {
+      system: 'Modified WHO Staging for Canine ASAC',
+      stages: [
+        'T1N0M0：腫瘤 < 2.5 cm，無淋巴結轉移，無遠端轉移',
+        'T2N0-1M0：腫瘤 2.5-5 cm，± 淋巴結轉移',
+        'T3N0-2M0：腫瘤 > 5 cm，± 淋巴結轉移',
+        'Any T, Any N, M1：有遠端轉移',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '肛囊炎/肛囊膿瘍', key_differentiator: '通常伴隨急性疼痛、分泌物，觸診為液態或波動感而非堅實腫塊' },
+      { condition: '肛周腺瘤（Perianal adenoma）', key_differentiator: '好發於未結紮公犬，位於肛門皮膚而非肛囊內，通常為良性' },
+      { condition: '肛周腺癌（Perianal adenocarcinoma）', key_differentiator: '起源於肛周腺而非肛囊腺，需組織學區分；肛周腺癌不分泌 PTHrP' },
+      { condition: '淋巴瘤（引起高血鈣）', key_differentiator: '直腸觸診無肛囊腫塊，全身淋巴結腫大，FNA 見均質淋巴球' },
+    ],
+    diagnostic_workup: '1. 直腸觸診（必備——觸及肛囊腫塊 + 腹下淋巴結）→ 2. FNA 細胞學（肛囊腫塊 ± 腹下淋巴結）→ 3. CBC + 全套生化（特別注意總鈣 + ionized Ca²⁺）→ 4. 腹部超音波（腹下淋巴結大小、肝脾）→ 5. 胸腔三面 X 光 → 6. 腹部 CT（手術規劃——評估腹下淋巴結範圍）',
+    treatment_protocol: '手術為首選：肛囊切除 ± 腹下淋巴結切除。輔助化療：Carboplatin 300 mg/m² IV q3w × 4-6 cycles，或 Mitoxantrone 5-5.5 mg/m² IV q3w + Cyclophosphamide。輔助放療：針對無法完全切除的腹下淋巴結。Toceranib 2.75 mg/kg PO QOD 可作為替代或維持選項。高血鈣急救：0.9% NaCl 輸液 + Furosemide ± Pamidronate。',
+    prognosis: '手術單獨：中位存活 12-18 個月。手術 + 化療：15-24 個月。腫瘤 < 2.5 cm：中位存活 > 24 個月。腫瘤 > 10 cm 或已有遠端轉移：中位存活 < 6 個月。腹下淋巴結切除可延長存活——即使已有轉移仍建議手術。高血鈣在腫瘤切除後通常可恢復正常。',
+    monitoring: '術後每 3 個月：直腸觸診 + 血鈣（total + ionized）+ 腹部超音波（腹下淋巴結追蹤）+ 胸腔 X 光。血鈣恢復正常後再升高高度懷疑復發。化療期間每次治療前 CBC + BCS。',
+    owner_communication: 'ASAC 是需要積極治療的惡性腫瘤，但手術加化療可提供有意義的存活時間。即使有淋巴結轉移，手術仍有幫助。高血鈣是可以控制的，通常在腫瘤切除後就會改善。建議飼主了解需要定期追蹤（每 3 個月），及早發現復發可以及時處理。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分期表格後', type: 'annotated_image', description: 'ASAC 解剖位置與腹下淋巴結轉移示意圖' },
+    { position: '治療段落後', type: 'flowchart', description: 'ASAC 治療決策流程圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Carboplatin', 'Mitoxantrone', 'Cyclophosphamide', 'Toceranib', 'Furosemide', 'Pamidronate'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 24: Tumors of the Gastrointestinal Tract — Anal Sac Section.', relevance: 'ASAC 完整章節' },
+    { type: 'journal', citation: 'Williams LE et al. Carcinoma of the apocrine glands of the anal sac in dogs: 113 cases (1985-1995). J Am Vet Med Assoc. 2003;223(6):825-831.', relevance: 'ASAC 大型回顧性研究——預後因子分析' },
+    { type: 'journal', citation: 'Polton GA et al. Optimising the approach to the diagnosis of anal sac gland carcinoma in dogs. J Small Anim Pract. 2006;47(10):583-588.', relevance: 'ASAC 診斷流程與分期建議' },
+    { type: 'guideline', citation: 'Hobson HP et al. Surgery of the anal sacs. In: Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '肛囊切除手術技術參考' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 鼻腔腫瘤 — 疾病型 */
+const contentNasalTumor: NodeContent = {
+  id: 'CONTENT-ONCO-L3-011',
+  node_id: 'ONCO-L3-011',
+  version: 1,
+  summary: '鼻腔腫瘤約占犬所有腫瘤的 1-2%，以上皮來源（腺癌、鱗狀細胞癌）和間葉來源（軟骨肉瘤、纖維肉瘤）為主。犬鼻腔腫瘤約 2/3 為惡性，貓則以淋巴瘤最常見。鼻出血（epistaxis）是最常見的初始症狀。CT 引導活檢為確診標準，Modified Adams 分期系統用於評估侵犯範圍。放射線治療是犬鼻腔腫瘤的治療首選（中位存活 12-18 個月），手術單獨效果不佳。',
+  learning_objectives: [
+    '列出犬和貓鼻腔腫瘤的常見組織學類型差異',
+    '說明犬鼻腔腫瘤的 Modified Adams 分期系統',
+    '描述 CT 引導活檢在鼻腔腫瘤診斷中的關鍵角色',
+    '比較放射線治療、手術和化療在鼻腔腫瘤中的療效',
+    '辨識鼻腔腫瘤與慢性鼻炎、鼻黴菌症的鑑別診斷',
+  ],
+  key_points: [
+    '犬鼻腔腫瘤約 2/3 為上皮來源（腺癌最常見），1/3 為間葉來源（軟骨肉瘤、纖維肉瘤）',
+    '貓鼻腔腫瘤以淋巴瘤最常見——對化療反應良好，預後與犬不同',
+    '鼻出血（epistaxis）為最常見初始症狀，常被誤為慢性鼻炎而延誤診斷',
+    '確診必需 CT + CT 引導活檢——鼻鏡檢查和盲目活檢準確性不足',
+    'Modified Adams 分期：Stage I（單側鼻腔）→ II（雙側/篩板侵犯）→ III（眼眶/皮下侵犯）→ IV（腦部侵犯）',
+    '放射線治療為犬鼻腔腫瘤的治療首選：中位存活 12-18 個月（vs 手術單獨 3-6 個月）',
+    '手術（鼻甲骨切除術 rhinotomy）單獨效果差，但可減瘤後接放療',
+    '遠端轉移率在確診時相對低（< 10%），但局部侵犯和腦部浸潤是致死主因',
+  ],
+  body: `# 鼻腔腫瘤 (Nasal Tumors)
+
+## 一、概述 (Overview)
+
+鼻腔腫瘤約占犬所有腫瘤的 1-2%，雖然發病率不高，但因位置特殊（靠近腦部和眼眶）、局部侵襲性強且早期症狀容易被誤診，臨床上具有重要意義。犬和貓的鼻腔腫瘤在組織學類型和治療策略上有顯著差異。
+
+### 犬鼻腔腫瘤組織學分類
+**上皮來源（約 2/3）**
+- 腺癌（Adenocarcinoma）——最常見
+- 鱗狀細胞癌（Squamous cell carcinoma）
+- 移行上皮癌（Transitional carcinoma）
+
+**間葉來源（約 1/3）**
+- 軟骨肉瘤（Chondrosarcoma）——間葉來源中預後最好
+- 纖維肉瘤（Fibrosarcoma）
+- 骨肉瘤（Osteosarcoma）
+- 未分化肉瘤
+
+### 貓鼻腔腫瘤
+- **淋巴瘤最常見**（約 40-50%）——對化療（CHOP 或 COP）反應良好
+- 鱗狀細胞癌
+- 腺癌
+
+## 二、臨床表現 (Clinical Signs)
+
+犬鼻腔腫瘤的典型臨床表現為漸進性、單側或雙側鼻症狀：
+
+- **鼻出血（Epistaxis）**：最常見，初期為單側、間歇性
+- **鼻分泌物**：漿液性 → 黏液膿性 → 血性
+- **打噴嚏/反向打噴嚏**
+- **面部變形**：鼻梁腫脹、不對稱（提示腫瘤侵犯骨壁）
+- **眼球突出（Exophthalmos）**：腫瘤侵犯眼眶
+- **神經症狀**：癲癇、行為改變、視力喪失（腫瘤穿過篩板侵犯腦部）
+
+**重要臨床規則**：單側鼻出血在中老年犬應高度懷疑鼻腔腫瘤，直到證實不是。
+
+## 三、分期 (Staging)
+
+### Modified Adams 臨床分期
+| 期別 | CT 影像特徵 |
+|------|-----------|
+| Stage I | 腫瘤限於單側鼻腔，無骨質破壞 |
+| Stage II | 腫瘤雙側鼻腔侵犯或單側伴篩板侵蝕 |
+| Stage III | 腫瘤侵犯眼眶或皮下軟組織 |
+| Stage IV | 腫瘤穿過篩板侵犯腦部（cribriform plate destruction） |
+
+分期對預後和治療規劃至關重要：Stage I/II 放療預後明顯優於 Stage III/IV。
+
+## 四、診斷 (Diagnosis)
+
+### CT 是診斷和分期的金標準
+- 精確評估腫瘤範圍、骨質破壞程度、篩板完整性
+- 區分腫瘤組織與阻塞性分泌物/黏液
+- **CT 引導活檢**：避免盲目活檢的低準確率
+- 評估區域淋巴結（下頷、咽後淋巴結）
+
+### 鼻鏡檢查
+- 可直視腫塊並進行切片
+- 但僅能看到鼻腔前段，後段和篩板區域無法評估
+- 需在全身麻醉下進行
+
+### 組織活檢
+- **CT 引導活檢**優於盲目活檢
+- 活檢前需確認凝血功能正常（鼻腔腫瘤常伴出血）
+- 需取足夠深度組織——表層常為壞死或發炎組織
+
+## 五、治療 (Treatment)
+
+### 放射線治療（Treatment of Choice for Dogs）
+- **根治性放療（Definitive RT）**：18-21 次分次照射，總劑量 48-57 Gy
+- 中位存活：12-18 個月（Stage I/II 可達 18-24 個月）
+- 急性副作用：口腔黏膜炎、鼻炎、結膜炎（通常 2-3 週自行緩解）
+- 晚期副作用：白內障、骨壞死、腦壞死（少見）
+
+### 姑息性放療
+- 4-5 次大分次（8-10 Gy/次）
+- 中位存活：6-8 個月
+- 副作用較輕，適合無法接受長期多次治療的病例
+
+### 手術
+- 鼻甲骨切除術（Rhinotomy）單獨：中位存活僅 3-6 個月
+- 手術用於減瘤後接放療（debulking + RT）——可能改善放療反應
+
+### 化療
+- 犬鼻腔癌對化療反應有限
+- Carboplatin 或 Doxorubicin 可作為輔助或姑息選項
+- **貓鼻腔淋巴瘤例外**：CHOP 方案反應率 > 70%，中位存活 12-24 個月
+
+## 六、預後 (Prognosis)
+
+| 治療方式 | 中位存活時間 |
+|---------|------------|
+| 不治療 | 3-5 個月 |
+| 手術單獨 | 3-6 個月 |
+| 放療（根治性） | 12-18 個月 |
+| 放療（姑息性） | 6-8 個月 |
+| 手術 + 放療 | 14-20 個月 |
+| 貓淋巴瘤（化療） | 12-24 個月 |
+
+預後因子：Stage（最重要）、組織學類型（軟骨肉瘤 > 腺癌 > 鱗狀細胞癌）、腫瘤體積。
+
+## 七、監控 (Monitoring)
+
+- 放療後每 3 個月進行 CT 追蹤（評估腫瘤反應和復發）
+- 鼻症狀評估（鼻出血、分泌物、打噴嚏頻率）
+- 神經學檢查（篩板侵犯風險）
+- 眼科檢查（放療後白內障監測）
+
+[圖片:犬鼻腔 CT 影像——Modified Adams 各分期示意]`,
+  clinical_pearl: '「中老年犬的單側鼻出血應被視為鼻腔腫瘤直到證實不是。」這是腫瘤科的重要格言。許多犬鼻腔腫瘤因初期症狀類似慢性鼻炎而被經驗性治療（抗生素、抗黴菌藥）數月才轉診，延誤了最佳治療時機。CT 是不可或缺的——它不僅用於診斷，更用於分期和治療規劃。另外，貓的鼻腔腫瘤治療策略與犬截然不同——貓鼻腔淋巴瘤對化療反應極好，不需放療也能有不錯的存活時間。\n\n【台灣流行病學】鼻腔腫瘤在台灣犬並非罕見，長鼻品種（如柯利犬、牧羊犬）有較高風險。台灣的放射線治療可及性有限（僅少數教學醫院和大型醫院配備），多數病例可能僅能接受姑息性治療或化療。CT 在台灣大型動物醫院已普及，應積極用於鼻腔疾病的診斷。',
+  common_mistakes: [
+    '將中老年犬單側鼻出血當作「鼻炎」經驗性治療數月而延誤鼻腔腫瘤診斷',
+    '僅做 X 光而未做 CT——X 光無法精確評估鼻腔腫瘤範圍和篩板完整性',
+    '進行盲目鼻腔活檢而非 CT 引導活檢——表層組織常為壞死/發炎，假陰性率高',
+    '對犬鼻腔腫瘤選擇手術單獨治療——放射線治療效果顯著優於手術',
+    '將犬和貓鼻腔腫瘤的治療策略混為一談——貓淋巴瘤用化療，犬上皮腫瘤用放療',
+  ],
+  disease_data: {
+    signalment: '犬：中老年（中位年齡 10 歲），長鼻品種（dolichocephalic）風險較高：Collie、Shetland Sheepdog、German Shepherd、Labrador。貓：中老年貓，無明顯品種偏好。犬貓均無顯著性別差異。',
+    etiology: '確切病因不明。犬可能與都市環境的空氣汙染暴露有關（早期流行病學研究）。二手菸暴露在貓鼻腔淋巴瘤中被提出為可能風險因子。長鼻品種可能因鼻腔黏膜面積較大而暴露風險增加。',
+    pathogenesis: '犬：鼻腔黏膜上皮或間葉組織惡性轉化 → 局部侵襲性生長 → 鼻甲骨破壞 → 侵犯對側鼻腔和篩板 → 眼眶或腦部浸潤。遠端轉移率在確診時相對低（< 10%），但在疾病後期可達 40-50%。貓：鼻腔淋巴瘤為淋巴組織克隆性增殖。',
+    clinical_signs: [
+      { sign: '鼻出血（Epistaxis）', category: 'primary', description: '最常見初始症狀，初期常為單側、間歇性，後期可為雙側、持續性' },
+      { sign: '鼻分泌物', category: 'primary', description: '漿液性 → 黏液膿性 → 血性鼻分泌物，初期常為單側' },
+      { sign: '打噴嚏/反向打噴嚏', category: 'primary', description: '腫瘤刺激鼻腔黏膜，可伴隨黏液或血液排出' },
+      { sign: '面部變形', category: 'secondary', description: '鼻梁腫脹或面部不對稱，提示腫瘤侵犯鼻骨' },
+      { sign: '眼球突出', category: 'secondary', description: '腫瘤侵犯眼眶，可伴隨結膜充血和視力受損' },
+      { sign: '神經症狀', category: 'secondary', description: '癲癇、行為改變、轉圈——提示腫瘤穿過篩板侵犯腦部' },
+    ],
+    staging: {
+      system: 'Modified Adams Clinical Staging for Canine Nasal Tumors (CT-based)',
+      stages: [
+        'Stage I：腫瘤限於單側鼻腔，無骨質破壞',
+        'Stage II：腫瘤侵犯雙側鼻腔或單側伴篩板侵蝕',
+        'Stage III：腫瘤侵犯眼眶或皮下軟組織',
+        'Stage IV：腫瘤穿過篩板侵犯腦部（cribriform plate destruction）',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '慢性鼻炎（淋巴球-漿細胞性）', key_differentiator: '通常雙側鼻分泌物，CT 見鼻甲骨破壞較少或無軟組織腫塊' },
+      { condition: '鼻黴菌症（Aspergillosis）', key_differentiator: '鼻鏡見黴菌斑塊（fungal plaque），CT 見鼻甲骨破壞但額竇受累明顯，血清學/PCR 可輔助' },
+      { condition: '鼻腔異物', key_differentiator: '急性發作，鼻鏡可見異物，通常為單側' },
+      { condition: '牙根膿瘍', key_differentiator: '口腔檢查見上頷齒異常，X 光或 CT 見齒根病灶和鼻口瘻管' },
+    ],
+    diagnostic_workup: '1. 口腔檢查（排除齒源性疾病）→ 2. 頭部 CT（必備——分期、活檢規劃、評估篩板完整性）→ 3. CT 引導活檢或鼻鏡活檢 → 4. 組織病理確診 → 5. 胸腔三面 X 光（肺轉移篩檢）→ 6. 區域淋巴結 FNA（下頷、咽後）→ 7. 凝血功能檢測（活檢前）',
+    treatment_protocol: '犬上皮/間葉腫瘤：根治性放療（18-21 次，48-57 Gy）為首選。姑息性放療（4-5 次，32-40 Gy）用於無法接受完整療程者。手術（rhinotomy）單獨效果差（MST 3-6 個月），但可結合放療。化療（Carboplatin）可作為輔助。貓鼻腔淋巴瘤：CHOP 或 COP 化療為首選，反應率 > 70%。',
+    prognosis: '犬放療（根治性）：中位存活 12-18 個月，1 年存活率 50-60%。犬放療（姑息性）：中位存活 6-8 個月。犬手術單獨：3-6 個月。Stage I/II 預後明顯優於 Stage III/IV。軟骨肉瘤預後最好（MST > 24 個月）。貓鼻腔淋巴瘤化療：中位存活 12-24 個月。',
+    monitoring: '放療後每 3 個月頭部 CT 追蹤腫瘤反應。每月評估鼻症狀（出血、分泌物）。神經學檢查每次回診執行。眼科檢查（放療後白內障風險）。胸腔 X 光每 6 個月。',
+    owner_communication: '鼻腔腫瘤的治療目標為控制疾病進展和維持生活品質。放射線治療是目前最有效的方法，但需要多次全身麻醉。治療期間可能有鼻炎加重和口腔黏膜炎的急性副作用，通常可在 2-3 週內緩解。貓鼻腔淋巴瘤的預後較犬上皮腫瘤好，化療反應率高。建議飼主在決策時充分了解治療過程和預期效果。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'Modified Adams 分期表格後', type: 'annotated_image', description: '犬鼻腔 CT 影像各分期比較' },
+    { position: '治療段落後', type: 'flowchart', description: '犬 vs 貓鼻腔腫瘤治療決策流程圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Carboplatin', 'Doxorubicin', 'Cyclophosphamide', 'Vincristine', 'Prednisone'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 22: Tumors of the Respiratory System — Nasal Tumors Section.', relevance: '鼻腔腫瘤完整章節' },
+    { type: 'journal', citation: 'Adams WM et al. Radiotherapy of malignant nasal tumors in 67 dogs. J Am Vet Med Assoc. 1987;191(3):311-315.', relevance: '犬鼻腔腫瘤放療經典文獻——Adams 分期原始資料' },
+    { type: 'journal', citation: 'Theon AP et al. Megavoltage irradiation of neoplasms of the nasal and paranasal cavities in 77 dogs. J Am Vet Med Assoc. 1993;202(9):1469-1475.', relevance: '犬鼻腔腫瘤放療預後因子分析' },
+    { type: 'guideline', citation: 'Sfiligoi G et al. Outcome of dogs with nasal tumors treated with intensity-modulated radiation therapy. Vet Radiol Ultrasound. 2007;48(4):370-375.', relevance: 'IMRT 用於犬鼻腔腫瘤的現代放療技術' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 組織球肉瘤 — 疾病型 */
+const contentHistiocyticSarcoma: NodeContent = {
+  id: 'CONTENT-ONCO-L3-012',
+  node_id: 'ONCO-L3-012',
+  version: 1,
+  summary: '犬組織球肉瘤（Histiocytic Sarcoma, HS）是源自樹突狀細胞（DC）或巨噬細胞系的高度侵襲性惡性腫瘤。分為局部型（localized）和播散型（disseminated / hemophagocytic）兩種形式。伯恩山犬（Bernese Mountain Dog）和平毛獵犬（Flat-Coated Retriever）有極高的品種易感性。Lomustine（CCNU）為主的化療方案是目前的標準治療，但整體預後不良（中位存活 3-6 個月）。',
+  learning_objectives: [
+    '區分局部型與播散型組織球肉瘤的臨床特徵與預後差異',
+    '說明伯恩山犬和平毛獵犬的品種易感性及遺傳背景',
+    '描述組織球肉瘤的免疫組織化學診斷標記（CD18、CD11d、MHCII）',
+    '擬定組織球肉瘤的分期檢查流程和治療方案',
+    '辨識組織球肉瘤與其他組織球增生性疾病的鑑別診斷',
+  ],
+  key_points: [
+    '組織球肉瘤源自樹突狀細胞（DC-origin）或巨噬細胞（macrophage-origin）',
+    '兩種形式：局部型（四肢關節周圍、皮膚、肺等）和播散型（多器官同時受累）',
+    '伯恩山犬 HS 終生風險高達 25%——CDKN2A/B、MTAP 基因缺失為已知風險位點',
+    '平毛獵犬也是高風險品種，HS 為此品種最常見的致死性腫瘤',
+    '免疫組織化學診斷：CD18+、CD11d+、MHCII+、E-cadherin-（區分於 Langerhans 細胞組織球瘤）',
+    '噬血細胞性組織球肉瘤（Hemophagocytic HS）：源自紅脾髓巨噬細胞，伴隨嚴重貧血和血小板低下',
+    'Lomustine（CCNU）60-90 mg/m² PO q3w 為主要化療方案——反應率約 40-50%',
+    '預後不良：局部型中位存活 4-6 個月（有治療），播散型 < 3 個月',
+  ],
+  body: `# 組織球肉瘤 (Histiocytic Sarcoma, HS)
+
+## 一、概述 (Overview)
+
+組織球肉瘤是犬特有的高度侵襲性惡性腫瘤，源自樹突狀細胞或巨噬細胞系統。這是一種在特定品種（伯恩山犬、平毛獵犬）中發病率極高的腫瘤，也是獸醫腫瘤學中預後最差的腫瘤類型之一。
+
+### 組織球增生性疾病分類
+| 疾病 | 細胞起源 | 生物行為 |
+|------|---------|---------|
+| 皮膚組織球瘤（Cutaneous histiocytoma） | Langerhans 細胞 | 良性，常自發消退 |
+| 反應性組織球症（Reactive histiocytosis） | 樹突狀細胞 | 非腫瘤性增殖 |
+| 局部型組織球肉瘤 | 樹突狀細胞 | 局部侵襲性惡性腫瘤 |
+| 播散型組織球肉瘤 | 樹突狀細胞 | 多器官惡性腫瘤 |
+| 噬血細胞性組織球肉瘤 | 脾紅髓巨噬細胞 | 極度侵襲性，伴噬血現象 |
+
+## 二、臨床表現 (Clinical Signs)
+
+### 局部型 HS
+- 好發部位：四肢關節周圍（尤其肘關節、膝關節）、皮膚/皮下、肺、脾臟
+- 皮膚/皮下：快速生長的堅實腫塊
+- 四肢關節周圍：跛行、關節腫脹，常被誤診為骨關節炎或韌帶損傷
+- 肺原發：咳嗽、呼吸困難
+
+### 播散型 HS
+- 多器官同時受累：肺、肝、脾、骨髓、淋巴結
+- 全身症狀嚴重：體重急速減輕、厭食、嗜睡、發燒
+- 肺浸潤：呼吸困難、咳嗽
+- 肝脾腫大：腹部膨大
+
+### 噬血細胞性 HS（Hemophagocytic HS）
+- 源自脾臟紅髓巨噬細胞
+- 嚴重再生性或非再生性貧血（Coombs 陰性溶血性貧血）
+- 血小板嚴重低下
+- 低蛋白血症
+- 臨床表現類似免疫介導性溶血性貧血（IMHA），但對免疫抑制治療無反應
+
+## 三、分期 (Staging)
+
+目前無統一的 WHO 分期系統，臨床上依侵犯範圍分類：
+
+- **局部型**：腫瘤限於單一解剖部位（可切除性）
+- **區域轉移**：原發部位 + 區域淋巴結
+- **播散型**：≥ 2 個不相鄰的器官受累
+- **噬血細胞型**：脾臟起源 + 噬血現象 + 全身性血液學異常
+
+## 四、診斷 (Diagnosis)
+
+### 免疫組織化學（IHC）是確診關鍵
+細胞學見大型多形性組織球樣細胞，但確認需 IHC：
+- **CD18+**（泛組織球標記）
+- **CD11d+**（DC/巨噬細胞）
+- **MHCII+**
+- **E-cadherin-**（排除 Langerhans 細胞組織球瘤）
+- **CD11c 和 CD1a 可進一步區分亞型**
+
+### 分期檢查
+1. 原發部位組織活檢 + IHC
+2. 全身 CBC + 生化（注意貧血、血小板低下）
+3. 胸腔 X 光（肺浸潤/轉移）
+4. 腹部超音波（肝脾、淋巴結）
+5. 骨髓穿刺（播散型/噬血細胞型）
+6. 全身 CT（評估完整侵犯範圍）
+
+## 五、治療 (Treatment)
+
+### 局部型 HS
+- **手術**：可切除的局部型 HS 應積極手術——完全切除是延長存活的關鍵
+- **術後化療**：Lomustine (CCNU) 60-90 mg/m² PO q3w × 4-6 cycles
+- 手術 + Lomustine 可將中位存活延長至 12-18 個月（vs 手術單獨 4-6 個月）
+
+### 播散型/不可切除 HS
+- **Lomustine (CCNU)**：60-90 mg/m² PO q3w——反應率約 40-50%
+- **Lomustine + Doxorubicin**：部分報告反應率可能更高
+- **Toceranib**：對部分 HS 有反應，可作為替代或聯合用藥
+- 反應者中位存活約 3-6 個月
+
+### 噬血細胞型 HS
+- 預後極差，中位存活 < 7 週
+- 化療反應率極低
+- 支持療法（輸血、營養支持）為主
+- 脾臟切除（如脾臟為主要病灶）可暫時改善
+
+### Lomustine 注意事項
+- 延遲性骨髓抑制（nadir 第 3-4 週）——需在給藥後 3 週查 CBC
+- 肝毒性（累積性）——每次給藥前查肝指數（ALT、ALP）
+- ALT > 3x 正常上限考慮停藥或減量
+
+## 六、預後 (Prognosis)
+
+| 類型 | 治療 | 中位存活 |
+|------|------|---------|
+| 局部型（手術 + Lomustine） | 積極治療 | 12-18 個月 |
+| 局部型（手術單獨） | 手術 | 4-6 個月 |
+| 播散型（Lomustine） | 化療 | 3-6 個月 |
+| 噬血細胞型 | 支持/化療 | < 7 週 |
+
+品種影響預後：伯恩山犬的 HS 預後可能比其他品種更差。
+
+## 七、監控 (Monitoring)
+
+- Lomustine 化療：給藥後第 3 週 CBC（延遲性骨髓抑制）+ 每次給藥前肝指數
+- 每月觸診和影像追蹤（胸腔 X 光 + 腹超）
+- 體重和生活品質評估
+- 噬血細胞型：每週 CBC 監測貧血和血小板
+
+[圖片:犬組織球增生性疾病分類鑑別圖]`,
+  clinical_pearl: '組織球肉瘤的診斷陷阱：四肢關節周圍的局部型 HS 常被誤診為骨關節炎或韌帶損傷，延誤數月。伯恩山犬或平毛獵犬出現不明原因跛行伴關節腫脹時，應將 HS 列入鑑別診斷並進行影像學和活檢。另一個常見陷阱是噬血細胞型 HS 被誤診為 IMHA——兩者都表現為 Coombs 陰性溶血性貧血，但 HS 對免疫抑制治療無反應。脾臟超音波和骨髓穿刺是區分的關鍵。\n\n【台灣流行病學】伯恩山犬和平毛獵犬在台灣飼養數量雖不如歐美多，但仍有一定族群。Lomustine 在台灣獸醫市場可取得性需確認。組織球肉瘤的 IHC 確診在台灣需送至配備免疫組化服務的病理實驗室。台灣臨床應提高對中大型犬不明原因跛行或多器官病變時 HS 的警覺性。',
+  common_mistakes: [
+    '將四肢關節周圍的 HS 誤診為骨關節炎或韌帶損傷——伯恩山犬/平毛獵犬跛行需考慮 HS',
+    '未進行 IHC 即以細胞學「組織球樣細胞」診斷——需 CD18/CD11d/MHCII 確認',
+    '將噬血細胞型 HS 誤診為 IMHA 並長期使用免疫抑制治療',
+    '對播散型 HS 過度積極治療而忽略生活品質評估——預後極差時姑息照護可能更適當',
+    '未在 Lomustine 治療的第 3 週監測 CBC——延遲性骨髓抑制可致命',
+  ],
+  disease_data: {
+    signalment: '中年至老年犬（中位年齡 7-9 歲）。高風險品種：伯恩山犬（Bernese Mountain Dog，終生風險約 25%）、平毛獵犬（Flat-Coated Retriever）。Golden Retriever、Labrador、Rottweiler 也有較高發病率。無顯著性別差異。',
+    etiology: '確切病因不明，但有強烈的遺傳背景。伯恩山犬中 CDKN2A/B 和 MTAP 基因座的缺失已被確認為風險位點。平毛獵犬的 HS 發病率極高，被認為有複雜的多基因遺傳模式。',
+    pathogenesis: '樹突狀細胞或巨噬細胞惡性轉化 → CDKN2A（p16）/CDKN2B（p15）腫瘤抑制基因失活 → 不受控增殖 → 局部型：單一部位浸潤性生長 → 播散型：多器官轉移（肺、肝、脾、骨髓）。噬血細胞型：脾臟紅髓巨噬細胞惡性增殖 → 噬血現象 → 溶血性貧血、血小板低下、低蛋白血症。',
+    clinical_signs: [
+      { sign: '四肢跛行/關節腫脹', category: 'primary', description: '局部型好發於關節周圍（肘、膝），常被誤診為骨關節炎' },
+      { sign: '快速生長的腫塊', category: 'primary', description: '皮膚/皮下局部型，堅實、浸潤性' },
+      { sign: '體重減輕/厭食/嗜睡', category: 'primary', description: '播散型的全身症狀，常為就診主訴' },
+      { sign: '呼吸困難/咳嗽', category: 'secondary', description: '肺原發或肺轉移，X 光見瀰漫性肺浸潤' },
+      { sign: '嚴重貧血/黏膜蒼白', category: 'secondary', description: '噬血細胞型導致溶血性貧血和血小板低下' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '皮膚組織球瘤（Histiocytoma）', key_differentiator: '好發幼犬（< 3 歲），單發小結節，多數自發消退，IHC 為 E-cadherin+（Langerhans 細胞來源）' },
+      { condition: '反應性組織球症', key_differentiator: '非腫瘤性增殖，多灶性但對免疫調節治療有反應，IHC 相似但無明顯異型性' },
+      { condition: '淋巴瘤', key_differentiator: '全身淋巴結腫大為主要表現，FNA 見均質淋巴球，IHC 為 CD3/CD79a+' },
+      { condition: '免疫介導性溶血性貧血（IMHA）', key_differentiator: '與噬血細胞型 HS 鑑別：IMHA 通常 Coombs 陽性，對免疫抑制有反應；HS 需影像+活檢確認' },
+    ],
+    diagnostic_workup: '1. 原發部位 FNA/活檢 → 2. 免疫組織化學（CD18、CD11d、MHCII、E-cadherin）→ 3. CBC + 全套生化 → 4. 胸腔 X 光 → 5. 腹部超音波（肝脾、淋巴結）→ 6. 骨髓穿刺（播散型/噬血細胞型）→ 7. 全身 CT（手術規劃）',
+    treatment_protocol: '局部型：手術（完全切除）+ Lomustine (CCNU) 60-90 mg/m² PO q3w × 4-6 cycles。播散型/不可切除：Lomustine 單獨或 Lomustine + Doxorubicin 聯合。Toceranib 可作為替代。噬血細胞型：預後極差，以支持療法（輸血）為主。Lomustine 需監測延遲性骨髓抑制（第 3 週 CBC）和肝毒性。',
+    prognosis: '局部型（手術 + Lomustine）：中位存活 12-18 個月。局部型（手術單獨）：4-6 個月。播散型（Lomustine）：3-6 個月。噬血細胞型：< 7 週。整體而言 HS 預後不良，尤其播散型和噬血細胞型。品種和是否完全手術切除為關鍵預後因子。',
+    monitoring: 'Lomustine 化療：第 3 週 CBC（nadir 監測）+ 每次給藥前肝指數（ALT、ALP）。每月影像追蹤（胸腔 X 光 + 腹超）。體重和生活品質評估每次回診。噬血細胞型：每週 CBC。',
+    owner_communication: '組織球肉瘤是一種侵襲性高的腫瘤，尤其在伯恩山犬和平毛獵犬中有遺傳傾向。局部型如果能完全手術切除並配合化療，可以獲得有意義的存活時間。播散型的預後較差，治療目標為控制症狀和維持生活品質。化療藥物 Lomustine 需要定期驗血監測副作用。建議飼主在了解預後的前提下做出符合家庭和毛孩最佳利益的決定。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '組織球疾病分類表後', type: 'comparison_table', description: '組織球增生性疾病分類與鑑別比較表' },
+    { position: '治療段落後', type: 'flowchart', description: 'HS 治療決策流程圖（局部型 vs 播散型 vs 噬血細胞型）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Lomustine', 'Doxorubicin', 'Toceranib'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 31: Histiocytic Diseases.', relevance: '組織球肉瘤完整章節' },
+    { type: 'journal', citation: 'Affolter VK, Moore PF. Localized and disseminated histiocytic sarcoma of dendritic cell origin in dogs. Vet Pathol. 2002;39(1):74-83.', relevance: '組織球肉瘤 DC 起源分類的經典文獻' },
+    { type: 'journal', citation: 'Skorupski KA et al. CCNU for the treatment of dogs with histiocytic sarcoma. J Vet Intern Med. 2007;21(1):121-126.', relevance: 'Lomustine 治療 HS 的臨床研究' },
+    { type: 'journal', citation: 'Abadie J et al. Epidemiology, pathology, and genetics of histiocytic sarcoma in the Bernese mountain dog — a review. Vet Pathol. 2009;46(3):385-397.', relevance: '伯恩山犬 HS 流行病學、病理和遺傳學回顧' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 甲狀腺癌 — 疾病型 */
+const contentThyroidCarcinoma: NodeContent = {
+  id: 'CONTENT-ONCO-L3-013',
+  node_id: 'ONCO-L3-013',
+  version: 1,
+  summary: '犬甲狀腺癌（Thyroid Carcinoma）為犬甲狀腺腫瘤中最常見的惡性類型，多數為非功能性（不分泌甲狀腺素），但約 10-20% 可能具功能性。腫瘤的「可移動性（freely movable）」vs「固定性（fixed）」是決定手術可切除性的關鍵臨床指標。貓甲狀腺癌罕見（約 2-3% 的甲狀腺機能亢進為惡性），但一旦確診為癌症預後差。犬可移動甲狀腺腫塊手術切除後中位存活可達 20-36 個月。',
+  learning_objectives: [
+    '比較犬與貓甲狀腺腫瘤的生物行為差異',
+    '說明「freely movable」vs「fixed」甲狀腺腫塊的臨床意義和手術決策',
+    '描述犬甲狀腺癌的分期檢查流程',
+    '列出甲狀腺癌的治療選項（手術、放射性碘、化療）',
+    '擬定甲狀腺功能監測計畫',
+  ],
+  key_points: [
+    '犬甲狀腺腫塊約 90% 為惡性（腺癌），但多數為非功能性（euthyroid 或 hypothyroid）',
+    '犬甲狀腺癌 10-20% 為功能性（分泌 T4）→ 甲狀腺機能亢進症狀',
+    '「Freely movable」腫塊：通常可手術完全切除，預後較好（MST 20-36 個月）',
+    '「Fixed」腫塊：侵犯周圍組織（頸動脈、食道、氣管），手術困難，預後較差',
+    '貓甲狀腺癌罕見（約 2-3% 的甲亢為惡性）：若甲狀腺腫塊 > 3 cm 或甲巰咪唑治療反應差需懷疑',
+    '遠端轉移（肺）率約 30-40%——確診時需胸腔 X 光篩檢',
+    '放射性碘（¹³¹I）可用於不可切除或功能性甲狀腺癌',
+    '甲狀腺閃爍掃描（scintigraphy）：評估腫瘤功能狀態和異位組織',
+  ],
+  body: `# 甲狀腺癌 (Thyroid Carcinoma)
+
+## 一、概述 (Overview)
+
+甲狀腺腫瘤在犬約占所有腫瘤的 1-4%。犬甲狀腺腫塊的一個重要特點是：**約 90% 為惡性（腺癌或髓質癌）**，這與人類甲狀腺結節多為良性的情況截然不同。然而，犬甲狀腺癌多數為非功能性（不造成甲亢），因此常以頸部腫塊為主要就診原因。
+
+### 犬 vs 貓的關鍵差異
+| 特徵 | 犬 | 貓 |
+|------|----|----|
+| 腫瘤性質 | 約 90% 惡性 | 約 97-98% 良性（腺瘤/增生） |
+| 功能狀態 | 多數非功能性 | 多數功能性（甲亢） |
+| 惡性比例 | 甲狀腺腫塊幾乎都是癌 | 僅 2-3% 的甲亢為惡性 |
+| 臨床表現 | 頸部腫塊為主 | 甲亢症狀為主 |
+
+## 二、臨床表現 (Clinical Signs)
+
+### 犬甲狀腺癌
+- **頸部腫塊**：腹頸部（ventral neck）可觸及腫塊，通常為單側
+- 腫塊觸診分類：
+  - **Freely movable**：腫塊可在皮下自由移動（通常 < 5 cm），與周圍組織無黏連
+  - **Fixed**：腫塊固定不動，與頸動脈、氣管或食道黏連
+- 吞嚥困難（dysphagia）：大型腫塊壓迫食道
+- 呼吸困難：壓迫或侵犯氣管
+- 聲音改變（voice change）：侵犯喉返神經
+- 甲亢症狀（10-20%）：多尿多渴、體重減輕、心搏過速、焦躁不安
+
+### 貓甲狀腺癌
+- 難以與良性甲亢區分
+- 懷疑指標：甲狀腺腫塊 **> 3 cm**、甲巰咪唑治療後 T4 控制不佳、腫塊快速增大
+- 肺轉移率高
+
+## 三、分期 (Staging)
+
+### WHO TNM 分期
+| 分期 | 定義 |
+|------|------|
+| T0 | 觸診無腫塊 |
+| T1 | 腫瘤 ≤ 2 cm，可移動 |
+| T2 | 腫瘤 2-5 cm，可移動 |
+| T3 | 腫瘤 > 5 cm，或任何大小但固定 |
+| N0 | 無區域淋巴結轉移 |
+| N1 | 同側淋巴結轉移 |
+| M0 | 無遠端轉移 |
+| M1 | 有遠端轉移 |
+
+「Freely movable」vs「fixed」是手術決策的關鍵分水嶺。
+
+## 四、診斷 (Diagnosis)
+
+### 診斷流程
+1. **觸診**：評估腫塊大小、可移動性、雙側 vs 單側
+2. **FNA 細胞學**：可初步判斷為甲狀腺來源——但區分良惡性困難（甲狀腺 FNA 可能出血多）
+3. **血液學**：CBC + 生化 + **T4/fT4**（評估功能狀態）+ **TSH**
+4. **胸腔三面 X 光**：肺轉移篩檢（轉移率 30-40%）
+5. **頸部超音波**：評估腫塊大小、血流、與頸動脈/頸靜脈的關係
+6. **頸部 CT（造影）**：手術規劃必備——精確評估血管侵犯和切除可能性
+7. **甲狀腺閃爍掃描（⁹⁹ᵐTc / ¹²³I）**：評估功能狀態、對側甲狀腺、異位組織、轉移灶攝取
+
+### 重要注意事項
+- FNA 時須避免穿刺頸動脈——超音波引導推薦
+- 組織活檢（Tru-cut）優於 FNA 在區分良惡性的準確度
+- 功能性甲狀腺癌：T4 升高 + 甲狀腺腫塊 → 需排除良性甲亢（犬良性甲亢極罕見）
+
+## 五、治療 (Treatment)
+
+### 手術（Freely Movable Tumors）
+- **甲狀腺切除術（Thyroidectomy）**是 freely movable 腫瘤的治療首選
+- 手術需仔細分離腫塊與頸動脈、頸靜脈、喉返神經
+- **副甲狀腺保存**：盡可能保留對側甲狀腺和至少一個副甲狀腺
+- 術後低血鈣風險：雙側甲狀腺切除後需監測 ionized Ca²⁺
+
+### Fixed Tumors 的處理
+- 手術困難且出血風險極高
+- 術前放療或化療（neoadjuvant）可能縮小腫瘤使其變為可切除
+- 放射性碘（¹³¹I）：功能性固定腫瘤的良好選擇
+
+### 放射性碘（¹³¹I）
+- 功能性甲狀腺癌的理想治療
+- 非功能性腫瘤攝取碘能力低，效果不佳
+- 需核醫學設施，治療後需隔離（通常 1-2 週）
+
+### 化療
+- Doxorubicin：對甲狀腺癌有一定反應率
+- Toceranib（Palladia）：部分甲狀腺癌有反應
+- 化療通常用於不可切除、已轉移或術後輔助
+
+### 外照射放療（External Beam RT）
+- 不可切除腫瘤的局部控制
+- 術後切緣不淨的輔助治療
+- 姑息性放療用於症狀控制
+
+## 六、預後 (Prognosis)
+
+| 情境 | 中位存活 |
+|------|---------|
+| Freely movable + 手術完全切除 | 20-36 個月 |
+| Freely movable + 手術 + 化療 | 可能 > 36 個月 |
+| Fixed tumor + 姑息治療 | 6-12 個月 |
+| 功能性 + ¹³¹I | 24-30 個月 |
+| 已有肺轉移 | 3-6 個月 |
+| 貓甲狀腺癌 | 預後差（數據有限） |
+
+腫瘤大小（< 5 cm 較好）、可移動性、組織學亞型（濾泡型 > 乳頭型 > 髓質型 > 未分化型）和是否有轉移為主要預後因子。
+
+## 七、監控 (Monitoring)
+
+- 術後 1 週：ionized Ca²⁺ 監測（低血鈣風險）
+- 術後第 1 個月：T4 + 甲狀腺功能評估
+- 每 3 個月：頸部超音波（局部復發）+ 胸腔 X 光（肺轉移）+ T4
+- 功能性腫瘤：T4 是監測復發的敏感指標
+- 雙側切除後：終生甲狀腺素補充（Levothyroxine）
+
+[圖片:犬甲狀腺癌 freely movable vs fixed 觸診示意圖]`,
+  clinical_pearl: '「觸診甲狀腺腫塊的可移動性」是犬甲狀腺癌治療決策的第一步，也是最重要的一步。Freely movable 腫塊手術切除的預後出奇地好（MST 20-36 個月），而 fixed 腫塊因侵犯大血管使手術風險大增。另一個實用的臨床要點：犬甲狀腺機能亢進極為罕見（與貓不同），因此犬若出現甲亢症狀加上頸部腫塊，幾乎可以確定是功能性甲狀腺癌，而非良性甲亢。\n\n【台灣流行病學】犬甲狀腺癌在台灣並不少見，中大型犬（Golden Retriever、Beagle、Boxer）為好發品種。台灣獸醫師應在年度健檢時養成觸診頸部的習慣。放射性碘治療在台灣的可及性受核醫設施限制。手術需熟練的軟組織外科技術，術前 CT 造影是手術規劃的關鍵。',
+  common_mistakes: [
+    '未觸診評估甲狀腺腫塊的可移動性就進行手術——fixed tumor 手術出血風險極高',
+    '將犬甲狀腺腫塊當作良性結節觀察——犬甲狀腺腫塊約 90% 為惡性',
+    '雙側甲狀腺切除後未監測血鈣——低血鈣可致命（副甲狀腺損傷）',
+    '未做術前 CT 造影即手術——無法評估腫塊與頸動脈的關係',
+    '對非功能性甲狀腺癌使用放射性碘——非功能性腫瘤攝碘能力低，效果不佳',
+  ],
+  disease_data: {
+    signalment: '犬：中老年（中位年齡 9-11 歲），好發品種：Boxer、Beagle、Golden Retriever、Siberian Husky。中大型犬較常見。無顯著性別差異。貓：老年貓（> 10 歲），甲狀腺癌僅占甲狀腺疾病的 2-3%。',
+    etiology: '確切病因不明。犬甲狀腺癌為自發性，可能涉及 TSH 長期刺激（甲低症犬的代償性增生理論）。RAS 和 RET 基因突變在人醫甲狀腺癌已知，犬中的研究有限。貓甲狀腺癌可能與長期甲亢的腺瘤惡性轉化有關。',
+    pathogenesis: '犬：甲狀腺濾泡上皮或旁濾泡 C 細胞惡性轉化 → 局部浸潤性生長 → 侵犯周圍組織（fixed tumor：頸動脈、食道、氣管、喉返神經）→ 淋巴轉移（頸部淋巴結）和血行轉移（肺，30-40%）。功能性腫瘤（10-20%）：自主分泌 T4/T3 → 甲狀腺機能亢進。',
+    clinical_signs: [
+      { sign: '頸部腫塊', category: 'primary', description: '腹頸部可觸及腫塊，通常單側，大小和可移動性為關鍵評估指標' },
+      { sign: '吞嚥困難', category: 'secondary', description: '大型腫塊壓迫或侵犯食道' },
+      { sign: '呼吸困難/喘鳴', category: 'secondary', description: '腫塊壓迫或侵犯氣管' },
+      { sign: '聲音改變', category: 'secondary', description: '喉返神經侵犯導致聲帶麻痺' },
+      { sign: '甲亢症狀', category: 'secondary', description: '功能性腫瘤（10-20%）：多尿多渴、體重減輕、心搏過速、焦躁' },
+    ],
+    staging: {
+      system: 'WHO TNM Staging for Canine Thyroid Carcinoma',
+      stages: [
+        'T1：腫瘤 ≤ 2 cm，可移動',
+        'T2：腫瘤 2-5 cm，可移動',
+        'T3：腫瘤 > 5 cm，或任何大小但固定不可移動',
+        'N0/N1：無/有區域淋巴結轉移',
+        'M0/M1：無/有遠端轉移（肺轉移率 30-40%）',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '甲狀腺良性結節/腺瘤', key_differentiator: '犬中罕見（< 10%），通常較小且可移動，但臨床觸診無法可靠區分——組織學確認必要' },
+      { condition: '頸部淋巴結腫大', key_differentiator: '位置偏外側而非腹側中線，FNA 見淋巴細胞，超音波結構不同' },
+      { condition: '頸部軟組織腫瘤', key_differentiator: '非甲狀腺來源，超音波可定位腫塊與甲狀腺的關係' },
+      { condition: '甲狀舌管囊腫（Thyroglossal duct cyst）', key_differentiator: '通常為年輕犬，囊性結構，超音波見液態內容' },
+    ],
+    diagnostic_workup: '1. 觸診（大小、可移動性、單側/雙側）→ 2. 頸部超音波（腫塊特徵、血流、與血管關係）→ 3. FNA 細胞學（超音波引導，注意出血風險）→ 4. 血液學（CBC + 生化 + T4/fT4 + TSH）→ 5. 胸腔三面 X 光（肺轉移）→ 6. 頸部 CT 造影（手術規劃——血管侵犯評估）→ 7. 甲狀腺閃爍掃描（功能性腫瘤/¹³¹I 治療規劃）',
+    treatment_protocol: 'Freely movable：甲狀腺切除術為首選（MST 20-36 個月）。Fixed tumor：術前化療或放療嘗試縮小後手術，或放射性碘（¹³¹I，功能性者）。輔助化療：Doxorubicin 30 mg/m² IV q3w 或 Toceranib 2.75 mg/kg PO QOD。外照射放療：不可切除者的局部控制。雙側切除後需終生 Levothyroxine 補充。',
+    prognosis: 'Freely movable + 完全切除：中位存活 20-36 個月，3 年存活率約 50%。Fixed tumor（姑息治療）：6-12 個月。功能性 + ¹³¹I：24-30 個月。已有肺轉移：3-6 個月。濾泡型/乳頭型較好，髓質型/未分化型較差。貓甲狀腺癌預後差，數據有限。',
+    monitoring: '術後第 1 週：ionized Ca²⁺（每 12-24 小時，低血鈣風險）。術後 1 個月：T4 + TSH。每 3 個月：頸部超音波 + 胸腔 X 光 + T4。功能性腫瘤：T4 為復發監測指標。雙側切除後：Levothyroxine 劑量調整依 T4 監測。',
+    owner_communication: '犬甲狀腺腫塊幾乎都是惡性的，但如果腫塊可以自由移動（freely movable），手術切除的預後非常好，很多犬可以存活 2-3 年以上。手術前需要做 CT 確認腫塊與血管的關係。如果腫塊固定不動，治療較為困難但仍有化療和放射性碘等選項。術後需要定期追蹤血液檢查和影像學。若雙側甲狀腺都需切除，需終生補充甲狀腺素。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '犬貓比較表後', type: 'comparison_table', description: '犬 vs 貓甲狀腺腫瘤特徵比較圖' },
+    { position: '治療段落後', type: 'flowchart', description: '甲狀腺癌治療決策流程圖（freely movable vs fixed）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Doxorubicin', 'Toceranib', 'Levothyroxine'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 23: Tumors of the Endocrine System — Thyroid Section.', relevance: '甲狀腺癌完整章節' },
+    { type: 'journal', citation: 'Theon AP et al. Prognostic factors and patterns of treatment failure in dogs with unresectable differentiated thyroid carcinomas treated with megavoltage irradiation. J Am Vet Med Assoc. 2000;216(11):1775-1779.', relevance: '犬甲狀腺癌放療預後因子' },
+    { type: 'journal', citation: 'Worth AJ et al. Thyroidectomy as a treatment for canine thyroid carcinoma: 12 cases. N Z Vet J. 2005;53(4):228-233.', relevance: '犬甲狀腺切除術臨床結果' },
+    { type: 'guideline', citation: 'Campos M et al. Thyroid tumours in dogs and cats. In: BSAVA Manual of Canine and Feline Oncology, 4th ed. BSAVA, 2024.', relevance: '犬貓甲狀腺腫瘤臨床指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const ONCO_CONTENTS = new Map<string, NodeContent>([
   // Layer 0
@@ -3441,6 +4475,7 @@ export const ONCO_CONTENTS = new Map<string, NodeContent>([
   ['ONCO-L2-001', contentMetastasis],
   ['ONCO-L2-002', contentParaneoplastic],
   ['ONCO-L2-003', contentDrugResistance],
+  ['ONCO-L2-004', contentTME],
   // Layer 3
   ['ONCO-L3-001', contentCanineLymphoma],
   ['ONCO-L3-002', contentMCT],
@@ -3450,6 +4485,11 @@ export const ONCO_CONTENTS = new Map<string, NodeContent>([
   ['ONCO-L3-006', contentMammaryTumor],
   ['ONCO-L3-007', contentTCC],
   ['ONCO-L3-008', contentFISS],
+  ['ONCO-L3-009', contentSTS],
+  ['ONCO-L3-010', contentASAC],
+  ['ONCO-L3-011', contentNasalTumor],
+  ['ONCO-L3-012', contentHistiocyticSarcoma],
+  ['ONCO-L3-013', contentThyroidCarcinoma],
   // Layer 4
   ['ONCO-L4-001', contentTumorCytology],
   ['ONCO-L4-002', contentStagingWorkup],

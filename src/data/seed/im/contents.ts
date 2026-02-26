@@ -4314,6 +4314,1199 @@ const contentGITherapy: NodeContent = {
   created_at: now,
 };
 
+/** 免疫介導疾病機轉 — L2 機轉型 */
+const contentImmuneMediated: NodeContent = {
+  id: 'CONTENT-IM-L2-006',
+  node_id: 'IM-L2-006',
+  version: 1,
+  summary: '免疫介導疾病的核心機轉涉及 Type II（抗體介導細胞破壞）和 Type III（免疫複合體沉積）超敏反應。Type II 機轉驅動 IMHA、IMT 和 IMPA，而 Type III 機轉導致腎小球腎炎和 SLE。藥物誘發的免疫反應與分子模仿為重要觸發因子。',
+  learning_objectives: [
+    '區分 Type II 與 Type III 超敏反應在不同免疫介導疾病中的角色',
+    '說明補體活化（classical 與 alternative pathway）在免疫介導細胞破壞中的機轉',
+    '解釋自體抗體形成的機轉（分子模仿、交叉反應、表位擴展）',
+    '描述藥物誘發免疫反應（hapten-mediated, neoantigen formation）的機轉',
+    '說明 SLE 中多器官損傷的免疫複合體沉積機轉',
+  ],
+  key_points: [
+    'Type II 超敏反應：自體抗體（IgG/IgM）結合細胞表面抗原 → Fc receptor 介導吞噬（血管外破壞）或補體 MAC（血管內破壞）',
+    'IMHA：抗紅血球抗體 → 球形紅血球（部分吞噬）+ 血管內溶血（IgM + 補體）；IMT：抗血小板抗體 → 血小板破壞/清除加速',
+    'IMPA（免疫介導多發性關節炎）：免疫複合體沉積於滑膜 → 補體活化 → 嗜中性球浸潤 → 非侵蝕性關節炎',
+    'Type III 超敏反應：Ab-Ag 免疫複合體形成 → 沉積在腎小球基底膜/血管壁 → 補體 C3a/C5a 趨化嗜中性球 → 蛋白酶釋放 → 組織損傷',
+    'SLE：多種自體抗體（ANA、anti-dsDNA）→ 多器官免疫複合體沉積（腎/皮膚/關節/血液）→ 全身性疾病',
+    '藥物誘發免疫反應：Hapten 模式（藥物結合細胞表面蛋白 → 新抗原 → 抗體產生）；Trimethoprim-sulfonamide 為犬最常見誘因',
+    '分子模仿（molecular mimicry）：病原抗原結構類似自身抗原 → 抗病原免疫交叉攻擊自身組織',
+    '補體活化路徑：Classical（Ab-Ag 複合體 → C1q）vs Alternative（C3 tick-over）→ 兩者匯聚於 C3 → C5b-9 MAC',
+  ],
+  body: `# 免疫介導疾病機轉 (Immune-Mediated Disease Pathogenesis)
+
+## 一、Type II 超敏反應：抗體介導細胞破壞
+
+### 核心機轉
+
+自體抗體（IgG/IgM）結合目標細胞表面抗原，透過以下途徑清除細胞：
+
+| 途徑 | 機轉 | 臨床對應 | 速度 |
+|------|------|---------|------|
+| Fc receptor 介導吞噬 | IgG-opsonized 細胞被脾臟/肝臟巨噬細胞辨識吞噬 | IMHA（血管外溶血）、IMT | 數天 |
+| 補體依賴性裂解 | IgM 活化 classical pathway → C5b-9 MAC 形成 → 細胞裂解 | IMHA（血管內溶血） | 數小時 |
+| ADCC | NK 細胞 Fc receptor 辨識 IgG → 釋放穿孔素/顆粒酶 | 較少見 | 數天 |
+
+### 各疾病的 Type II 機轉
+
+**IMHA**：抗紅血球表面抗原抗體 → 球形紅血球（部分吞噬後殘留）→ 再生性溶血性貧血 + 高凝血狀態（phosphatidylserine 暴露→凝血因子活化→血栓栓塞）
+
+**IMT**：抗血小板膜醣蛋白（GPIIb/IIIa, GPIb）抗體 → 脾臟巨噬細胞加速清除血小板 → 血小板 < 50,000/μL → 瘀斑/黏膜出血。骨髓代償性巨核球增生。
+
+**IMPA**：Type II/III 混合機轉 → 免疫複合體沉積於關節滑膜 → 補體活化 → 嗜中性球浸潤 → 非侵蝕性多發性關節炎
+
+## 二、Type III 超敏反應：免疫複合體疾病
+
+### 免疫複合體形成與沉積
+
+Ab-Ag 複合體 → 小型複合體較易沉積在腎小球基底膜（高流量/高壓力濾過區域）→ 補體活化（C3a/C5a 為趨化因子）→ 嗜中性球浸潤 → 蛋白酶/自由基釋放 → 基底膜損傷 → 蛋白尿
+
+| 疾病 | 沉積部位 | 自體抗體 | 病理特徵 |
+|------|---------|---------|---------|
+| 免疫複合體腎小球腎炎 | 腎小球基底膜 | 多種 | 膜性/膜增殖性腎病 |
+| SLE 腎炎 | 腎小球、皮膚、關節 | ANA, anti-dsDNA | WHO class I-V |
+| 類澱粉沉著症 | 腎小球（犬）、髓質（貓） | SAA 片段 | 剛果紅染色陽性 |
+
+### SLE 的多器官損傷
+
+SLE 為同時涉及 Type II + Type III 機轉的全身性自體免疫疾病：
+
+- **血液**：抗紅血球 Ab（IMHA）+ 抗血小板 Ab（IMT）→ Evans syndrome
+- **腎臟**：anti-dsDNA 免疫複合體沉積 → 蛋白流失性腎病
+- **關節**：免疫複合體 → 非侵蝕性多發性關節炎
+- **皮膚**：免疫複合體 → 真皮/表皮交界損傷 → 蝶形紅斑
+
+## 三、自體抗體形成機轉
+
+| 機轉 | 說明 | 範例 |
+|------|------|------|
+| 分子模仿 | 病原抗原結構類似自身抗原 | Babesia → 紅血球表面抗原修飾 → IMHA |
+| 交叉反應 | 抗感染抗體與自身抗原交叉反應 | 鏈球菌 → 心臟瓣膜交叉反應 |
+| 表位擴展 | 初始損傷暴露隱藏抗原 → 擴大免疫攻擊 | IMHA 治療後擴展至 IMT（Evans） |
+| Hapten 形成 | 藥物結合細胞表面蛋白形成新抗原 | TMP-SMX → 藥物性 IMHA |
+| Neoantigen | 藥物修飾自身蛋白結構 | Cephalosporins → 紅血球表面修飾 |
+
+## 四、補體活化系統
+
+Classical pathway（C1q 辨識 Ab-Ag → C4b2a → C3 convertase）與 Alternative pathway（C3 自發水解 → Factor B/D → C3bBb）匯聚於 C3 → C5 → C5b-9 MAC（membrane attack complex）。
+
+**臨床意義**：血管內溶血的嚴重度取決於補體活化效率；IgM 活化補體能力 >> IgG；DAF (CD55) 和 CD59 為紅血球表面補體調節蛋白。
+
+## 五、藥物誘發免疫反應
+
+| 藥物 | 機轉 | 臨床表現 | 頻率 |
+|------|------|---------|------|
+| TMP-Sulfonamide | Hapten/neoantigen | 貧血、血小板低、關節炎 | 犬最常見 |
+| Cephalosporins | 紅血球表面修飾 | Coombs 陽性溶血 | 偶見 |
+| Methimazole | 免疫複合體 | 貓 ANA 陽性、血球減少 | 少見 |
+| Propylthiouracil | 免疫介導 | 貓嚴重血球減少（已少用） | 高 |`,
+  clinical_pearl: '在犬 IMHA 診斷中，約 25-40% 為繼發性。台灣最重要的繼發原因是壁蝨媒介疾病（Babesia, Ehrlichia）和藥物（TMP-Sulfonamide）。在啟動免疫抑制治療前，必須排除感染性觸發因子——否則免疫抑制可能加重感染。SNAP 4Dx Plus 和 PCR 應列入所有 IMHA 犬的基本檢查。',
+  common_mistakes: [
+    '混淆 Type II（細胞表面抗體）與 Type III（免疫複合體沉積）機轉的臨床對應',
+    '忽略藥物誘發免疫反應的可能性——未詳細詢問用藥史',
+    '不理解 Evans syndrome（IMHA + IMT 並存）為表位擴展的臨床表現',
+    '將 SLE 簡化為單一型別的超敏反應——實際為 Type II + Type III 混合',
+    '忽略補體活化在血管內溶血（IgM 介導）與血管外溶血（IgG 介導）中的差異',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'Type II 超敏反應表後', type: 'flowchart', description: 'Type II vs Type III 超敏反應機轉比較流程圖' },
+    { position: '補體活化段落後', type: 'flowchart', description: '補體 Classical vs Alternative pathway 匯聚圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Prednisolone', 'Mycophenolate', 'Cyclosporine', 'Azathioprine', 'Trimethoprim-Sulfonamide'],
+  references: [
+    { type: 'guideline', citation: 'Garden OA et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334.', relevance: 'IMHA 免疫機轉與診斷共識' },
+    { type: 'textbook', citation: 'Tizard IR. Veterinary Immunology: An Introduction, 10th ed. Elsevier, 2018. Chapters 30-32: Type II, III Hypersensitivity and Autoimmunity.', relevance: '獸醫免疫學超敏反應教材' },
+    { type: 'journal', citation: 'Trepanier LA. "Idiosyncratic toxicity associated with potentiated sulfonamides in the dog." J Vet Pharmacol Ther. 2004;27(3):129-138.', relevance: '藥物誘發免疫反應機轉' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 86: Immune-Mediated Diseases.', relevance: '免疫介導疾病臨床教材' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 急性腎損傷 (AKI) — 疾病型 */
+const contentAKI: NodeContent = {
+  id: 'CONTENT-IM-L3-013',
+  node_id: 'IM-L3-013',
+  version: 1,
+  summary: '急性腎損傷（AKI）為腎功能突然惡化，以急性氮血症和尿量異常為特徵。IRIS AKI 分級系統分為 Grade I-V。常見病因包括腎毒素（百合花中毒於貓、葡萄/葡萄乾於犬、乙二醇、NSAIDs）、腎缺血及感染。早期積極輸液治療是關鍵。',
+  learning_objectives: [
+    '運用 IRIS AKI 分級系統（Grade I-V）正確評估 AKI 嚴重度',
+    '區分腎前性、腎性與腎後性 AKI 的病因與診斷策略',
+    '列舉犬貓最常見的腎毒素並說明各自的損傷機轉',
+    '制定 AKI 的積極輸液治療與尿量監測方案',
+    '說明腎臟替代療法（RRT）的適應症與時機',
+  ],
+  key_points: [
+    'IRIS AKI 分級：Grade I（非氮血症但有 AKI 證據）、Grade II（輕度氮血症 Cre 1.6-2.5 犬/1.6-2.8 貓）、Grade III（中度）、Grade IV（重度）、Grade V（Cre > 10）',
+    '病因三分類：腎前性（低血容量/低血壓）、腎性（腎毒素/腎炎/缺血）、腎後性（尿路阻塞）',
+    '貓常見腎毒素：百合花（所有部位均有毒，微量即可致命）、乙二醇、NSAIDs',
+    '犬常見腎毒素：葡萄/葡萄乾（機轉不明，個體差異大）、乙二醇、NSAIDs、Aminoglycosides',
+    '急性 vs 慢性鑑別：腎臟大小（AKI 正常或增大 vs CKD 萎縮）、貧血（CKD 非再生性）、腎臟結構',
+    '治療核心：積極靜脈輸液（糾正脫水 + 維持尿量 > 1-2 mL/kg/hr）',
+    'RRT 適應症：少尿/無尿對利尿劑無反應、高鉀血症 > 8 mEq/L、嚴重酸中毒、尿毒症合併神經症狀',
+  ],
+  body: `# 急性腎損傷 (Acute Kidney Injury, AKI)
+
+## 一、病理機制 (Pathophysiology)
+
+AKI 核心為**腎小管上皮細胞急性損傷**，機轉依病因而異：
+
+**腎毒素損傷**：毒物經腎小管濃縮→直接損傷腎小管上皮細胞→細胞壞死/凋亡→管腔阻塞（脫落細胞+碎片形成管型）→腎小管反向滲漏→GFR 急降
+
+**缺血性損傷**：腎臟灌注不足→S3 近端小管（外髓質）最易受損（高代謝需求+邊緣血供）→ATP 耗竭→Na-K ATPase 極性喪失→細胞腫脹壞死
+
+| 毒素 | 物種 | 損傷機轉 | 特徵 |
+|------|------|---------|------|
+| 百合花（Lilium/Hemerocallis） | 貓 | 近端腎小管直接毒性 | 所有部位有毒，花粉亦可 |
+| 葡萄/葡萄乾 | 犬 | 不明（tartaric acid 假說） | 個體差異極大 |
+| 乙二醇 | 犬貓 | 草酸鈣結晶沉積 → 小管阻塞 | 12-24 hr 內治療關鍵 |
+| NSAIDs | 犬貓 | 抑制 PGE2 → 入球小動脈收縮 → 髓質缺血 | 劑量相關 |
+| Aminoglycosides | 犬貓 | 溶酶體磷脂蓄積 → 近端小管壞死 | 累積劑量毒性 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | 說明 | 鑑別意義 |
+|---------|------|---------|
+| 急性食慾廢絕/嘔吐 | 尿毒素蓄積 | 突發性（vs CKD 漸進） |
+| 少尿/無尿 | 尿量 < 1 mL/kg/hr | 嚴重 AKI 指標 |
+| 多尿 | 恢復期或部分 AKI | 需監測電解質流失 |
+| 腹痛 | 腎腫脹或中毒 | 乙二醇中毒常見 |
+| 口腔潰瘍 | 嚴重尿毒症 | 較晚期表現 |
+
+### IRIS AKI 分級系統
+
+| Grade | 血清肌酐 | 臨床意義 | 處置等級 |
+|-------|---------|---------|---------|
+| I | < 1.6 mg/dL（有 AKI 證據） | 非氮血症期 AKI | 積極輸液 + 監測 |
+| II | 1.6-2.5 犬 / 1.6-2.8 貓 | 輕度氮血症 | 積極輸液 + 利尿劑考慮 |
+| III | 2.6-5.0 犬 / 2.9-5.0 貓 | 中度氮血症 | ICU 監護 |
+| IV | 5.1-10.0 | 重度氮血症 | 考慮 RRT |
+| V | > 10.0 | 極重度 | RRT 強烈建議 |
+
+**亞分級**：依尿量（O: oliguria < 1 mL/kg/hr, NO: non-oliguric, A: anuric）
+
+### 腎前/腎/腎後鑑別
+
+| 類別 | USG | BUN:Cre | 輸液反應 | 超音波 |
+|------|-----|---------|---------|--------|
+| 腎前性 | > 1.030 犬/1.035 貓 | > 20:1 | 12-24 hr 改善 | 正常 |
+| 腎性 | < 1.025 | 10-15:1 | 無顯著改善 | 腎腫大/皮髓質交界模糊 |
+| 腎後性 | 變異 | 變異 | 無改善 | 腎盂積水/膀胱破裂 |
+
+## 三、治療策略 (Treatment)
+
+| 階段 | 處置 | 藥物與劑量 |
+|------|------|-----------|
+| 初始復甦 | 糾正脫水 + 恢復灌注 | 等張晶體液（LRS/0.9% NaCl）脫水量於 4-6 hr 補回 |
+| 維持輸液 | 維持尿量 > 1-2 mL/kg/hr | 維持量 + 損失量 + 持續損失 |
+| 利尿劑 | 補液充足後仍少尿 | [藥物:Furosemide] 2-6 mg/kg IV bolus 或 CRI 0.5-1 mg/kg/hr |
+| 甘露醇 | 乙二醇中毒早期 | [藥物:Mannitol] 0.5-1 g/kg IV over 20 min |
+| 高鉀處理 | K > 6.5 mEq/L | Regular insulin 0.25-0.5 U/kg IV + Dextrose；Calcium gluconate 10% 0.5-1 mL/kg slow IV |
+| 止吐 | 尿毒症噁心 | [藥物:Maropitant] 1 mg/kg SC SID |
+
+**乙二醇解毒劑**：[藥物:Fomepizole] 犬 20 mg/kg IV 首劑→後續 15-5 mg/kg；貓效果差（貓改用 Ethanol 20% 5 mL/kg IV q6h）
+
+**RRT 適應症**：無尿 > 6-12 hr 不反應利尿劑、K > 8 mEq/L、嚴重代謝性酸中毒（pH < 7.1）、volume overload、尿毒症神經症狀
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+| 併發症 | 機轉 | 監測 | 處理 |
+|--------|------|------|------|
+| 高鉀血症 | 腎臟排鉀功能喪失 | ECG + 血鉀 q4-6h | Insulin-dextrose, Ca gluconate |
+| Volume overload | 過度輸液 + 少尿 | 體重 BID、呼吸速率 | 降低輸液速率、利尿劑 |
+| 代謝性酸中毒 | 酸排泄↓ | 血氣分析 | NaHCO3 補充 |
+| 高磷血症 | 磷排泄↓ | 血磷 | 磷結合劑 |
+
+**尿量監測**：留置導尿管 + 封閉式集尿系統、每 1-4 hr 記錄尿量、目標 > 1-2 mL/kg/hr`,
+  clinical_pearl: '百合花中毒是貓 AKI 最重要的可預防病因。所有百合屬（Lilium）和萱草屬（Hemerocallis）植物對貓均有腎毒性——包括花瓣、葉片、花粉甚至花瓶水。貓只要舔到少量花粉即可導致致命性 AKI。治療窗口為接觸後 18 小時內開始積極輸液。飼主教育是最重要的預防措施。',
+  common_mistakes: [
+    '未區分腎前性與腎性 AKI——脫水犬的高 BUN/Cre 可能單純為腎前性（補液後迅速改善）',
+    '在尚未充分補液的情況下使用利尿劑（加重腎臟缺血）',
+    '忽略尿量監測——少尿/無尿是 AKI 預後的關鍵指標',
+    '乙二醇中毒超過 12-24 小時才開始治療（此時腎損傷多已不可逆）',
+    '貓百合花中毒未在 18 小時內啟動積極輸液',
+  ],
+  disease_data: {
+    signalment: '任何年齡、品種犬貓均可發生。幼年動物較常見中毒性 AKI（好奇心強、誤食毒物）。老年動物因 NSAIDs 使用和麻醉後低血壓較常見缺血性 AKI。貓百合花中毒無品種偏好。',
+    etiology: '腎前性：脫水、出血、心輸出量不足、麻醉低血壓。腎性：腎毒素（百合花、葡萄/葡萄乾、乙二醇、NSAIDs、Aminoglycosides）、鉤端螺旋體、腎盂腎炎、缺血再灌注損傷。腎後性：尿道阻塞、膀胱破裂、輸尿管結石。',
+    pathogenesis: '腎毒素/缺血 → 腎小管上皮細胞壞死 → 管腔阻塞（管型形成）+ 反向滲漏 → GFR 急降 → 氮血症 + 電解質/酸鹼異常。嚴重者發展為少尿/無尿性腎衰竭。可逆性取決於損傷程度與治療時機。',
+    clinical_signs: [
+      { sign: '急性嘔吐/厭食', category: 'primary', description: '尿毒素蓄積引起噁心，突發性發作' },
+      { sign: '少尿/無尿', category: 'primary', description: '尿量 < 1 mL/kg/hr 為嚴重指標' },
+      { sign: '嗜睡/虛弱', category: 'primary', description: '尿毒症與電解質失衡' },
+      { sign: '腹痛', category: 'secondary', description: '腎腫脹或中毒性腹膜刺激' },
+      { sign: '多尿', category: 'secondary', description: '恢復期或非少尿型 AKI' },
+      { sign: '口腔潰瘍', category: 'secondary', description: '嚴重尿毒症晚期表現' },
+    ],
+    staging: { system: 'IRIS AKI Grading System', stages: ['Grade I：Cre < 1.6，有 AKI 證據（病史/影像/生物標記）', 'Grade II：Cre 1.6-2.5 犬 / 1.6-2.8 貓', 'Grade III：Cre 2.6-5.0 犬 / 2.9-5.0 貓', 'Grade IV：Cre 5.1-10.0', 'Grade V：Cre > 10.0'] },
+    differential_diagnosis: [
+      { condition: 'CKD', key_differentiator: '腎臟萎縮、非再生性貧血、病程漸進；AKI 腎臟正常或增大' },
+      { condition: '腎前性氮血症', key_differentiator: 'USG > 1.030、BUN:Cre > 20:1、補液後 12-24 hr 改善' },
+      { condition: '腎後性阻塞', key_differentiator: '超音波見腎盂積水/膀胱極度膨脹/尿道阻塞' },
+      { condition: 'CKD 急性惡化（AKI on CKD）', key_differentiator: '有 CKD 病史但 Cre 急遽升高，腎臟可能萎縮' },
+    ],
+    diagnostic_workup: '1. 詳細病史（毒物接觸？藥物？）→ 2. 血檢（BUN/Cre/SDMA/電解質/血氣）→ 3. 尿液分析（USG/沉渣/管型/草酸鈣結晶）→ 4. 腹腔超音波（腎臟大小/結構/腎盂）→ 5. 留置導尿管監測尿量 → 6. 必要時乙二醇快篩 → 7. Leptospira PCR（考慮時）',
+    treatment_protocol: '立即：積極靜脈輸液（等張晶體液，糾正脫水後維持 2-3 倍維持量）。少尿時：先確認充分水合→ Furosemide 2-6 mg/kg IV。高鉀 > 6.5：Calcium gluconate + Insulin-Dextrose。乙二醇中毒：Fomepizole（犬）或 Ethanol（貓）。止吐：Maropitant。嚴重者轉介 RRT。',
+    prognosis: '非少尿型 AKI 經積極治療：預後良好（存活率 > 50-60%）。少尿/無尿型：預後謹慎至不良（存活率 20-40%）。乙二醇中毒 > 24 hr 才治療：預後極差。百合花中毒 < 18 hr 治療：預後較佳。AKI 存活者約 30% 可能發展為 CKD。',
+    monitoring: '前 24-48 hr：每 4-6 hr 監測尿量、電解質、血氣。穩定後 q8-12h。每日監測體重（評估水分平衡）。Cre/BUN 每 12-24 hr。出院後每 1-2 週追蹤腎功能至穩定。長期追蹤評估是否進展為 CKD。',
+    owner_communication: 'AKI 是緊急狀況，需要住院加護治療。治療費用可能較高（尤其需要 RRT 時）。早期治療預後較佳。部分 AKI 可完全恢復，但有些可能轉為慢性腎病。家中應移除所有對寵物有害的毒物（百合花、乙二醇、人用 NSAIDs）。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'IRIS AKI 分級表後', type: 'flowchart', description: 'AKI 診斷與分級決策流程圖' },
+    { position: '腎前/腎/腎後鑑別表後', type: 'comparison_table', description: '腎前/腎/腎後性 AKI 鑑別比較圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Furosemide', 'Mannitol', 'Fomepizole', 'Maropitant', 'Calcium gluconate'],
+  references: [
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Grading of Acute Kidney Injury. Available at: http://www.iris-kidney.com/', relevance: 'AKI 分級標準' },
+    { type: 'journal', citation: 'Langston C. "Acute uremia." In: Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. pp 1969-1985.', relevance: 'AKI 診斷與治療教材' },
+    { type: 'journal', citation: 'Segev G et al. "Consensus recommendations for immunosuppressive treatment of dogs with glomerular disease based on established pathology." J Vet Intern Med. 2013;27 Suppl 1:S44-54.', relevance: '腎臟疾病治療共識' },
+    { type: 'journal', citation: 'Bennett SL, Abraham LA. "Treatment of acute kidney injury." Vet Clin North Am Small Anim Pract. 2022;52(3):601-612.', relevance: 'AKI 治療最新回顧' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 蛋白質流失性腎病 (PLN) — 疾病型 */
+const contentPLN: NodeContent = {
+  id: 'CONTENT-IM-L3-014',
+  node_id: 'IM-L3-014',
+  version: 1,
+  summary: '蛋白質流失性腎病（PLN）以持續性腎小球蛋白尿（UPC > 2.0）為特徵，最常見病因為免疫複合體腎小球腎炎和類澱粉沉著症。Soft-coated Wheaten Terrier 和 Bernese Mountain Dog 有遺傳傾向。腎臟切片（光學/免疫螢光/電子顯微鏡）為確診金標準。治療包括 ACEi/ARB 抗蛋白尿、免疫抑制（免疫複合體型）及抗血栓預防。',
+  learning_objectives: [
+    '定義 PLN 並說明 UPC > 2.0 作為診斷標準的意義',
+    '區分免疫複合體腎小球腎炎與類澱粉沉著症的病理與治療差異',
+    '說明腎臟切片三聯染色（光學/免疫螢光/電子顯微鏡）在 PLN 診斷中的角色',
+    '列舉 PLN 遺傳傾向犬種並描述其遺傳機轉',
+    '制定 PLN 的抗蛋白尿、免疫抑制與抗血栓治療方案',
+  ],
+  key_points: [
+    'PLN 定義：持續性腎小球蛋白尿 UPC > 2.0（排除腎前性和腎後性蛋白尿）',
+    '主要病因：免疫複合體腎小球腎炎（膜性/膜增殖性）、類澱粉沉著症、遺傳性腎病',
+    '遺傳傾向：Soft-coated Wheaten Terrier（PLN/PLE 綜合症）、Bernese Mountain Dog（膜增殖性 GN）、Shar-Pei（類澱粉沉著）',
+    '腎切片三聯檢查：光學顯微鏡（形態學）+ 免疫螢光（IgG/IgM/C3 沉積模式）+ 電子顯微鏡（沉積物位置）',
+    'IRIS 蛋白尿亞分期：UPC < 0.2 非蛋白尿 / 0.2-0.5 犬邊緣 / > 0.5 犬蛋白尿',
+    '治療三柱：(1) ACEi/ARB 抗蛋白尿 (2) 免疫抑制（免疫複合體型）(3) 抗血栓預防（Albumin < 2.0 時）',
+    '抗血栓重要性：PLN 合併低白蛋白血症時血栓栓塞風險極高（抗凝血因子 III 經尿流失）',
+  ],
+  body: `# 蛋白質流失性腎病 (Protein-Losing Nephropathy, PLN)
+
+## 一、病理機制 (Pathophysiology)
+
+### 腎小球蛋白尿機轉
+
+正常腎小球濾過屏障由三層組成：內皮細胞窗孔 + 腎小球基底膜（GBM）+ 足細胞裂隙隔膜。三者共同構成大小選擇性與電荷選擇性屏障。
+
+**免疫複合體腎小球腎炎**：循環免疫複合體或原位免疫複合體沉積於 GBM → 補體活化 → C5a 趨化嗜中性球/巨噬細胞 → 蛋白酶與氧化物釋放 → GBM 損傷 + 足細胞足突融合 → 大分子蛋白（白蛋白）濾出
+
+**類澱粉沉著症**：慢性炎症→SAA 蛋白持續升高→SAA 片段錯誤折疊→不溶性纖維沉積於腎小球（犬）或髓質間質（貓）→ 物理性阻塞濾過屏障→蛋白尿
+
+| 病理類型 | IF 特徵 | EM 特徵 | 好發品種 |
+|---------|---------|---------|---------|
+| 膜性腎病 | IgG + C3 顆粒狀 | 上皮下沉積 | 多品種 |
+| 膜增殖性 GN | IgG + IgM + C3 | 內皮下 + 系膜沉積 | Bernese Mountain Dog |
+| 類澱粉沉著 | 陰性 | 纖維狀沉積 | Shar-Pei, Beagle |
+| 局灶節段硬化 | 陰性 | 足突融合 | 遺傳性 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | 機轉 | 嚴重度 |
+|---------|------|--------|
+| 蛋白尿（UPC > 2.0） | 腎小球屏障損傷 | 主要發現 |
+| 低白蛋白血症 | 尿液蛋白流失 > 肝臟合成 | Albumin < 2.0 g/dL |
+| 肢端水腫/腹水 | 血漿膠體滲透壓下降 | Albumin < 1.5 g/dL |
+| 血栓栓塞 | AT-III 流失 + 高凝狀態 | 肺/腎/腸系膜血管 |
+| 漸進性氮血症 | 腎小球硬化 | 晚期 |
+| 高血壓 | RAAS 活化 + 鈉滯留 | 常見併發症 |
+
+### 診斷流程
+
+1. **篩檢**：UPC > 0.5（犬）持續 > 2 次 → 確認腎小球蛋白尿
+2. **排除**：感染（Leptospira, Ehrlichia, Borrelia）、腫瘤、Cushing's、高血壓
+3. **評估**：Cre/SDMA（IRIS 分期）+ 血壓 + 膽固醇 + AT-III + Albumin
+4. **確診**：腎臟切片（超音波引導 Tru-Cut 或手術切片）→ 三聯染色
+
+| 檢查 | 目的 | 臨床意義 |
+|------|------|---------|
+| UPC | 蛋白尿定量 | > 2.0 強烈提示腎小球疾病 |
+| 血清白蛋白 | 流失嚴重度 | < 2.0 需抗血栓；< 1.5 需膠體 |
+| AT-III 活性 | 血栓風險 | < 75% 血栓風險顯著增加 |
+| 膽固醇 | 腎病症候群 | 高膽固醇 + 低白蛋白 + 蛋白尿 |
+
+## 三、治療策略 (Treatment)
+
+| 治療目標 | 藥物 | 劑量 | 證據等級 |
+|---------|------|------|---------|
+| 抗蛋白尿 | [藥物:Benazepril] (ACEi) | 0.5 mg/kg PO SID-BID | Level I |
+| 抗蛋白尿 | [藥物:Telmisartan] (ARB) | 1 mg/kg PO SID | Level I |
+| 免疫抑制（IC-GN） | [藥物:Mycophenolate] | 10 mg/kg PO BID | Level III |
+| 抗血栓（Alb < 2.0） | [藥物:Clopidogrel] | 2 mg/kg PO SID | Level II |
+| 抗血栓（高風險） | 低劑量 Aspirin 追加 | 1-2 mg/kg PO SID | Level III |
+| 抗高血壓 | [藥物:Amlodipine] | 0.1-0.25 mg/kg PO SID | Level II |
+
+**IRIS 蛋白尿亞分期指導治療**：UPC 0.5-1.0 → ACEi/ARB 單藥；UPC 1.0-2.0 → ACEi + ARB 合併；UPC > 2.0 → 上述 + 腎切片考慮免疫抑制
+
+**類澱粉沉著症**：無有效治療。控制基礎炎症源、支持性治療、ACEi/ARB 延緩蛋白尿。預後不良。
+
+## 四、遺傳性 PLN
+
+| 品種 | 病理 | 遺傳模式 | 基因檢測 |
+|------|------|---------|---------|
+| Soft-coated Wheaten Terrier | PLN + PLE 綜合症 | 多基因 | 可用（NPHS1 等） |
+| Bernese Mountain Dog | 膜增殖性 GN | 不明 | 研究中 |
+| English Cocker Spaniel | 遺傳性腎病 | 常染色體隱性 | COL4A4 |
+| Shar-Pei | 腎類澱粉沉著 | 與家族性 Shar-Pei Fever 相關 | HAS2 |`,
+  clinical_pearl: '在 PLN 犬中，UPC > 3.5 合併低白蛋白血症 < 2.0 g/dL 時，血栓栓塞風險極高。AT-III 經尿液流失導致抗凝能力下降，同時低白蛋白血症促進肝臟合成凝血因子。最常見的血栓部位是肺動脈。因此，所有 Albumin < 2.0 的 PLN 犬均應啟動抗血栓預防（Clopidogrel ± 低劑量 Aspirin），不需等到血栓事件發生。',
+  common_mistakes: [
+    '未區分腎小球蛋白尿與腎小管/腎後性蛋白尿——UPC > 2.0 幾乎確定為腎小球疾病',
+    '未進行腎臟切片就直接開始免疫抑制——類澱粉沉著症對免疫抑制無效',
+    '忽略抗血栓治療——低白蛋白 PLN 犬死於血栓的比例遠高於死於腎衰竭',
+    '單純依靠 ACEi 而忽略 UPC 追蹤——治療目標是 UPC 下降 > 50% 或降至 < 0.5',
+    'Soft-coated Wheaten Terrier 未同時篩檢 PLE（PLN + PLE 常並存）',
+  ],
+  disease_data: {
+    signalment: '中大型犬較常見。遺傳傾向品種：Soft-coated Wheaten Terrier（PLN/PLE 綜合症）、Bernese Mountain Dog、English Cocker Spaniel、Shar-Pei。中年至老年犬。貓 PLN 較少見但可發生（類澱粉沉著於 Abyssinian/Siamese）。',
+    etiology: '免疫複合體腎小球腎炎（最常見，50-70%）：感染抗原（Ehrlichia, Borrelia, Leishmania, Dirofilaria）、腫瘤抗原、自體免疫。類澱粉沉著症（10-20%）：慢性炎症 → SAA 蛋白沉積。遺傳性腎小球疾病（品種特異）。特發性（10-20%）。',
+    pathogenesis: '免疫複合體沉積於腎小球基底膜 → 補體活化 + 發炎細胞浸潤 → 腎小球損傷 + 足細胞足突融合 → 蛋白濾出 → 蛋白尿 → 低白蛋白血症 → 水腫/血栓 → 腎小球硬化 → 進行性 CKD。',
+    clinical_signs: [
+      { sign: '蛋白尿', category: 'primary', description: 'UPC > 2.0，常為偶然發現' },
+      { sign: '肢端水腫/腹水', category: 'primary', description: 'Albumin < 1.5 g/dL 時出現' },
+      { sign: '體重減輕', category: 'primary', description: '蛋白質流失與食慾下降' },
+      { sign: '血栓栓塞', category: 'secondary', description: '肺血栓最常見，呼吸急促/猝死' },
+      { sign: '高血壓', category: 'secondary', description: 'RAAS 活化，可致視網膜病變' },
+    ],
+    staging: { system: 'IRIS CKD Staging + Proteinuria Sub-staging', stages: ['非蛋白尿：UPC < 0.2', '邊緣蛋白尿：UPC 0.2-0.5（犬）/ 0.2-0.4（貓）', '蛋白尿：UPC > 0.5（犬）/ > 0.4（貓）', '腎小球蛋白尿：UPC > 2.0（強烈提示腎小球疾病）'] },
+    differential_diagnosis: [
+      { condition: 'CKD（腎小管性蛋白尿）', key_differentiator: 'UPC 通常 < 2.0；腎小管標記蛋白升高' },
+      { condition: 'PLE（蛋白流失性腸病）', key_differentiator: '低白蛋白但 UPC 正常；同時低球蛋白' },
+      { condition: '肝臟合成不足', key_differentiator: '低白蛋白但 UPC 正常；膽汁酸/NH3 異常' },
+      { condition: '感染性腎炎', key_differentiator: '鉤端螺旋體/萊姆病血清學/PCR 陽性' },
+    ],
+    diagnostic_workup: '1. 確認持續性蛋白尿（≥2 次 UPC > 0.5）→ 2. 排除感染（Leptospira, Ehrlichia, Borrelia PCR/血清學）→ 3. 排除 Cushing/腫瘤 → 4. 血壓/膽固醇/AT-III/白蛋白 → 5. IRIS 分期 → 6. 腎臟超音波 → 7. 腎臟切片三聯染色（光學/IF/EM）',
+    treatment_protocol: '基礎：ACEi (Benazepril 0.5 mg/kg SID-BID) 或 ARB (Telmisartan 1 mg/kg SID)。UPC > 2.0 + 免疫複合體型：加 Mycophenolate 10 mg/kg BID。Albumin < 2.0：Clopidogrel 2 mg/kg SID 抗血栓。高血壓：Amlodipine。腎臟處方飲食。類澱粉沉著：支持性治療為主。',
+    prognosis: '免疫複合體 GN 經免疫抑制 + 抗蛋白尿治療：UPC 下降 > 50% 者預後較佳（中位存活 > 1 年）。類澱粉沉著：預後不良（中位存活數月）。血栓栓塞事件發生後預後急劇惡化。遺傳性 PLN 多為進行性。',
+    monitoring: '治療開始後 2-4 週追蹤 UPC（目標下降 > 50%）。每 1-3 個月追蹤 UPC + Cre/SDMA + 白蛋白 + 血壓。免疫抑制治療中監測 CBC。穩定後每 3-6 個月追蹤。',
+    owner_communication: 'PLN 是嚴重的腎臟蛋白流失疾病。需要長期藥物治療與定期監測。血栓栓塞是最危險的併發症——抗血栓藥物非常重要。遺傳傾向品種建議育種前篩檢。治療目標是減少蛋白尿、延緩腎功能惡化。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病理類型表後', type: 'comparison_table', description: '腎小球疾病病理分類與免疫螢光特徵比較表' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Benazepril', 'Telmisartan', 'Mycophenolate', 'Clopidogrel', 'Amlodipine'],
+  references: [
+    { type: 'guideline', citation: 'IRIS Glomerular Disease Study Group. "Consensus recommendations for immunosuppressive treatment of dogs with glomerular disease." J Vet Intern Med. 2013;27 Suppl 1:S44-54.', relevance: '腎小球疾病免疫抑制治療共識' },
+    { type: 'journal', citation: 'Littman MP et al. "Glomerulopathy and mutations in NPHS1 and KIRREL2 in Soft-Coated Wheaten Terrier dogs." J Vet Intern Med. 2013;27 Suppl 1:S62-67.', relevance: 'SCWT 遺傳性 PLN 研究' },
+    { type: 'guideline', citation: 'Lees GE et al. "Assessment and management of proteinuria in dogs and cats: 2004 ACVIM Forum Consensus Statement (Updated)." J Vet Intern Med. 2005;19(3):377-385.', relevance: '蛋白尿評估與管理共識' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 313: Glomerular Disease.', relevance: '腎小球疾病教材' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 免疫介導血小板減少症 (IMT) — 疾病型 */
+const contentIMT: NodeContent = {
+  id: 'CONTENT-IM-L3-015',
+  node_id: 'IM-L3-015',
+  version: 1,
+  summary: '免疫介導血小板減少症（IMT）是犬最常見的嚴重血小板減少原因，以自體抗體加速血小板破壞為特徵。分為原發性（特發性）和繼發性。Evans syndrome 為 IMT 合併 IMHA。血小板 < 50,000/μL 時出現瘀斑與黏膜出血。治療以免疫抑制為核心。',
+  learning_objectives: [
+    '區分原發性與繼發性 IMT 的病因與臨床意義',
+    '說明 Evans syndrome（IMT + IMHA）的診斷與治療特殊性',
+    '制定 IMT 的階梯式免疫抑制治療方案',
+    '解釋骨髓穿刺在 IMT 診斷中的角色（巨核球增生 vs 減少）',
+    '說明 Vincristine 在難治性 IMT 中的作用機轉與使用時機',
+  ],
+  key_points: [
+    '原發性 IMT（60-70%）：自體抗體（anti-GPIIb/IIIa, anti-GPIb）結合血小板 → 脾臟加速清除',
+    '繼發性 IMT（30-40%）：感染（Ehrlichia, Babesia, Anaplasma）、藥物、腫瘤、疫苗觸發',
+    '診斷標準：血小板 < 50,000/μL + 排除其他原因 + 骨髓巨核球數正常或增加',
+    'Evans syndrome：IMT + IMHA 並存（表位擴展機轉），預後較單純 IMT 差',
+    '一線治療：Prednisolone 2 mg/kg/day（分 BID）→ 反應後 2-4 週開始緩慢減量',
+    '二線藥物：Mycophenolate 10 mg/kg BID 或 Cyclosporine 5 mg/kg BID',
+    'Vincristine：0.02 mg/kg IV 單次，難治性 IMT 的救援藥物（促進血小板從巨核球釋放）',
+    '避免不必要的靜脈穿刺和手術——嚴重血小板減少時出血風險極高',
+  ],
+  body: `# 免疫介導血小板減少症 (Immune-Mediated Thrombocytopenia, IMT)
+
+## 一、病理機制 (Pathophysiology)
+
+**Type II 超敏反應**：自體抗體（IgG 為主）結合血小板膜醣蛋白（GPIIb/IIIa 或 GPIb-IX-V 複合體）→ 脾臟邊緣區巨噬細胞 Fcγ receptor 辨識 → 吞噬血小板（血管外清除為主）→ 血小板壽命從 5-7 天縮短至數小時
+
+**代償機轉**：血小板破壞加速 → 骨髓巨核球反應性增生 → 血小板產生增加（但仍不足以代償破壞速度）→ 巨核球本身也可被自體抗體攻擊（amegakaryocytic thrombocytopenia，預後差）
+
+**Evans syndrome 機轉**：初始 IMT 或 IMHA → 組織損傷暴露新抗原（表位擴展）→ 免疫反應擴展至紅血球和/或血小板 → 兩系同時受攻擊
+
+| 類型 | 機轉 | 血小板計數 | 骨髓巨核球 | 預後 |
+|------|------|-----------|-----------|------|
+| 原發性 IMT（破壞型） | 抗體介導脾臟清除 | < 30,000 | 增加 | 良好（反應率 > 80%） |
+| Evans syndrome | IMT + IMHA | < 50,000 + 貧血 | 增加 | 謹慎 |
+| 繼發性 IMT | 感染/藥物/腫瘤觸發 | 變異 | 正常或增加 | 取決於基礎病因 |
+| Amegakaryocytic | 抗巨核球抗體 | 極低 | 減少 | 不良 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | PLT 閾值 | 描述 |
+|---------|---------|------|
+| 瘀斑 (petechiae) | < 50,000/μL | 皮膚、口腔黏膜紫紅色針尖大點狀出血 |
+| 紫斑 (ecchymoses) | < 30,000/μL | 較大面積皮下出血 |
+| 黏膜出血 | < 20,000/μL | 牙齦/鼻腔/結膜/泌尿生殖道 |
+| 眼前房出血 | < 20,000/μL | 需眼科檢查 |
+| 致命性出血 | < 5,000/μL | 肺/腦/消化道出血 |
+
+### 診斷流程
+
+| 步驟 | 檢查 | 目的 |
+|------|------|------|
+| 1 | CBC + 血液抹片 | 確認真正血小板減少（排除 EDTA 假性血小板低下/血小板凝集） |
+| 2 | 血液抹片巨血小板 | 有巨血小板提示骨髓代償性增生 |
+| 3 | Coombs test + 自凝集 | 排除/確認 Evans syndrome |
+| 4 | SNAP 4Dx + PCR | 排除壁蝨媒介疾病 |
+| 5 | 影像學 | 排除脾臟腫瘤、淋巴瘤 |
+| 6 | 骨髓穿刺（選擇性） | 巨核球增生確認 IMT vs 骨髓疾病 |
+
+## 三、治療策略 (Treatment)
+
+| 層級 | 藥物 | 劑量 | 適應症 |
+|------|------|------|--------|
+| 一線 | [藥物:Prednisolone] | 2 mg/kg/day PO 分 BID | 所有 IMT |
+| 二線 | [藥物:Mycophenolate] | 10 mg/kg PO BID | Pred 48-72 hr 無反應或減量復發 |
+| 二線替代 | [藥物:Cyclosporine] | 5 mg/kg PO BID | Mycophenolate 不耐受時 |
+| 救援 | [藥物:Vincristine] | 0.02 mg/kg IV 單次 | 危及生命的出血 |
+| 救援 | hIVIG | 0.5-1 g/kg IV over 6-12 hr | 難治性、等待 Pred 起效 |
+
+**Vincristine 機轉**：(1) 促進骨髓巨核球碎裂→加速釋放血小板（24-48 hr 見效）；(2) 干擾巨噬細胞微管→降低吞噬功能
+
+**減量策略**：血小板恢復 > 150,000/μL 後 2-4 週開始。每 2-4 週減 25%。最少持續 3-6 個月。復發率約 20-30%。
+
+## 四、併發症與監控
+
+| 併發症 | 機轉 | 處理 |
+|--------|------|------|
+| 消化道出血 | 黏膜完整性依賴血小板 | 止酸 + 黏膜保護 + 輸血小板（暫時性） |
+| 免疫抑制副作用 | Pred: PU/PD/多食；MMF: 腹瀉 | 調整劑量 |
+| Evans syndrome 發展 | 表位擴展 | 加強免疫抑制 |
+| 復發 | 減量太快或停藥 | 回升至有效劑量 |
+
+**監測頻率**：治療開始每 3-5 天追蹤 CBC 至血小板 > 100,000 → 每 1-2 週至穩定 → 減量期每 2-4 週 → 停藥後每月追蹤 3 個月`,
+  clinical_pearl: '在疑似 IMT 犬中，第一步是確認血小板真的減少——EDTA 抗凝管可引起犬的假性血小板減少（EDTA-dependent platelet clumping）。務必檢查血液抹片，看是否有血小板凝集。如果有凝集，改用 citrate 管重抽。此外，Cavalier King Charles Spaniel 品種有生理性巨血小板症（macrothrombocytopenia），自動計數器會低估血小板數量——需手動計數。',
+  common_mistakes: [
+    'EDTA 假性血小板減少誤診為 IMT（未確認血液抹片）',
+    '未排除壁蝨媒介疾病就開始免疫抑制（Ehrlichia/Babesia 可引起繼發性 IMT）',
+    '在嚴重血小板減少時進行不必要的靜脈穿刺或侵入性檢查（增加出血風險）',
+    '血小板恢復後太快停藥（需緩慢減量 3-6 個月以上）',
+    '忽略 Evans syndrome 的可能性（IMT 犬應同時監測 PCV/Coombs）',
+  ],
+  disease_data: {
+    signalment: '犬為主，中年母犬略多。好發品種：Cocker Spaniel、Old English Sheepdog、Poodle。貓 IMT 較少見。繼發性 IMT 無品種偏好。',
+    etiology: '原發性/特發性（60-70%）：自體免疫機轉。繼發性（30-40%）：壁蝨媒介感染（Ehrlichia, Babesia, Anaplasma）、藥物（TMP-SMX, Cephalosporins）、腫瘤（淋巴瘤、血管肉瘤）、疫苗後（罕見）。',
+    pathogenesis: '自體抗體（anti-GPIIb/IIIa）結合血小板膜 → 脾臟巨噬細胞 Fcγ receptor 辨識 → 加速吞噬清除 → 血小板壽命縮短至數小時 → 骨髓代償性巨核球增生但不足以代償 → 嚴重血小板減少。',
+    clinical_signs: [
+      { sign: '瘀斑 (petechiae)', category: 'primary', description: '皮膚、口腔黏膜紫紅色針尖大出血點' },
+      { sign: '紫斑 (ecchymoses)', category: 'primary', description: '較大面積皮下出血斑' },
+      { sign: '黏膜出血', category: 'primary', description: '牙齦、鼻腔、結膜出血' },
+      { sign: '黑便/血尿', category: 'secondary', description: '消化道或泌尿道黏膜出血' },
+      { sign: '嗜睡', category: 'secondary', description: '出血性貧血或全身炎症' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'EDTA 假性血小板減少', key_differentiator: '血液抹片見血小板凝集，Citrate 管重抽正常' },
+      { condition: 'DIC', key_differentiator: 'PT/aPTT 延長、FDP/D-dimer 升高、fibrinogen 低' },
+      { condition: '骨髓疾病', key_differentiator: '骨髓穿刺巨核球減少、多系受累' },
+      { condition: '壁蝨媒介疾病', key_differentiator: 'SNAP 4Dx/PCR 陽性、可能合併其他血球異常' },
+      { condition: '脾臟腫瘤/血管肉瘤', key_differentiator: '影像學脾臟腫塊、可能合併腹腔出血' },
+    ],
+    diagnostic_workup: '1. CBC + 血液抹片（確認真正血小板減少 + 巨血小板 + 排除凝集）→ 2. 凝血功能（PT/aPTT 排除 DIC）→ 3. Coombs test / 自凝集（排除 Evans syndrome）→ 4. SNAP 4Dx + PCR（排除壁蝨媒介疾病）→ 5. 腹腔超音波（排除脾臟腫瘤）→ 6. 骨髓穿刺（選擇性，若多系受累或治療無反應）',
+    treatment_protocol: '一線：Prednisolone 2 mg/kg/day PO（分 BID）。48-72 hr 無反應：加 Mycophenolate 10 mg/kg PO BID 或 Cyclosporine 5 mg/kg PO BID。危及生命出血：Vincristine 0.02 mg/kg IV 單次。血小板恢復後 2-4 週開始減量，每 2-4 週減 25%，最少持續 3-6 個月。',
+    prognosis: '原發性 IMT：免疫抑制反應率 > 80%，多數 3-7 天血小板開始回升。住院死亡率 5-10%。復發率 20-30%。Evans syndrome：預後較差（死亡率 30-40%）。Amegakaryocytic IMT：預後不良。繼發性 IMT：取決於基礎病因控制。',
+    monitoring: '治療初期每 3-5 天追蹤 CBC 至 PLT > 100,000/μL。穩定後每 1-2 週。減量期每 2-4 週 CBC。同時監測 PCV（排除 Evans syndrome 發展）。免疫抑制藥物副作用監測。停藥後每月追蹤 3 個月。',
+    owner_communication: 'IMT 是免疫系統攻擊自身血小板的疾病。大多數犬對藥物反應良好，但需要長期服藥（至少 3-6 個月）。停藥後有復發風險。治療期間避免劇烈活動。觀察皮膚出血點、牙齦出血、黑便等異常。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '治療層級表後', type: 'flowchart', description: 'IMT 階梯式治療決策流程圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Prednisolone', 'Mycophenolate', 'Cyclosporine', 'Vincristine'],
+  references: [
+    { type: 'guideline', citation: 'Swann JW, Skelly BJ. "Systematic review of prognostic factors for canine immune-mediated thrombocytopenia." J Vet Intern Med. 2016;30(4):1141-1150.', relevance: 'IMT 預後因子系統性回顧' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 87: Disorders of Hemostasis.', relevance: 'IMT 診斷與治療教材' },
+    { type: 'journal', citation: 'O\'Marra SK et al. "Treatment and predictors of outcome in dogs with immune-mediated thrombocytopenia." J Am Vet Med Assoc. 2011;238(3):346-352.', relevance: 'IMT 治療結果與預後預測因子' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 286: Platelet Disorders.', relevance: '血小板疾病教材' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 鉤端螺旋體病 (Leptospirosis) — 疾病型 */
+const contentLepto: NodeContent = {
+  id: 'CONTENT-IM-L3-016',
+  node_id: 'IM-L3-016',
+  version: 1,
+  summary: '鉤端螺旋體病（Leptospirosis）由 Leptospira interrogans 感染引起，為重要人畜共通傳染病。犬主要受影響的血清型包括 Canicola、Icterohaemorrhagiae、Pomona 和 Grippotyphosa。臨床表現為急性腎衰竭合併肝損傷和血管炎。台灣為鉤端螺旋體流行區域。',
+  learning_objectives: [
+    '列舉犬主要感染的鉤端螺旋體血清型及其臨床特徵',
+    '說明鉤端螺旋體的傳播途徑與致病機轉（血管炎與器官損傷）',
+    '正確判讀 MAT（顯微凝集試驗）結果並理解其限制',
+    '制定鉤端螺旋體的急性期與清除期抗生素治療方案',
+    '說明鉤端螺旋體的人畜共通風險與預防措施',
+  ],
+  key_points: [
+    '病原：Leptospira interrogans，>250 血清型，犬主要為 Canicola, Icterohaemorrhagiae, Pomona, Grippotyphosa',
+    '傳播：接觸受感染動物尿液或汙染水源 → 經黏膜/皮膚傷口進入 → 螺旋體血症 → 肝/腎/肺定殖',
+    '臨床三聯：急性腎衰竭 + 肝損傷（黃疸）+ 血管炎（出血傾向）',
+    '診斷金標準：MAT（Microscopic Agglutination Test）≥ 1:800 或配對血清 4 倍升高；PCR 用於急性期',
+    '治療兩階段：急性期 Ampicillin 22 mg/kg IV q8h → 穩定後 Doxycycline 5 mg/kg PO BID × 14 天（清除腎臟帶原）',
+    '⚠️ 人畜共通：處理疑似感染犬時需戴手套，避免接觸尿液',
+    '台灣流行病學：亞熱帶氣候+颱風季節洪水 → 高風險。犬四價疫苗可用。',
+  ],
+  body: `# 鉤端螺旋體病 (Leptospirosis)
+
+## 一、病理機制 (Pathophysiology)
+
+**感染路徑**：汙染水源/尿液 → 經黏膜（結膜、口腔）或皮膚傷口進入 → 螺旋體血症（leptospiremia，持續 4-12 天）→ 全身散布至靶器官
+
+**血管炎為核心機轉**：Leptospira 直接損傷血管內皮細胞 → 血管壁通透性增加 → 組織水腫與出血 → 同時激活凝血/纖溶系統
+
+| 靶器官 | 損傷機轉 | 臨床表現 |
+|--------|---------|---------|
+| 腎臟 | 腎小管上皮直接毒性 + 間質腎炎 | 急性腎衰竭（AKI Grade III-V）|
+| 肝臟 | 肝細胞損傷 + 膽管內膽汁淤積 | 黃疸、ALT/ALP↑ |
+| 肺臟 | 肺泡出血（leptospiral pulmonary hemorrhage syndrome, LPHS） | 呼吸困難、咳血 |
+| 凝血系統 | 血管炎 + DIC | 瘀斑、出血 |
+
+### 血清型與臨床表現
+
+| 血清型 | 保毒宿主 | 主要靶器官 | 台灣相關性 |
+|--------|---------|-----------|-----------|
+| Canicola | 犬 | 腎臟 | 常見 |
+| Icterohaemorrhagiae | 鼠 | 肝臟（黃疸） | 常見 |
+| Pomona | 豬/牛 | 腎 + 肝 | 農村地區 |
+| Grippotyphosa | 小型齧齒類 | 腎 + 肝 | 較少見 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 表現 | 頻率 | 描述 |
+|------|------|------|
+| 急性腎衰竭 | 85-90% | AKI Grade II-V，少尿或多尿 |
+| 嘔吐/厭食 | 80-90% | 尿毒症 + 肝損傷 |
+| 黃疸 | 40-70% | Icterohaemorrhagiae 型較常見 |
+| 發燒 | 40-60% | 急性期，可能自行退熱 |
+| 肌肉疼痛 | 30-50% | 肌肉內螺旋體 + 炎症 |
+| 出血 | 20-40% | 血管炎 + DIC |
+| 呼吸困難 | 10-20% | LPHS，預後不良指標 |
+
+### 診斷工具
+
+| 檢查 | 敏感度 | 特異度 | 最佳時機 | 備註 |
+|------|--------|--------|---------|------|
+| MAT | 高（配對血清） | 高 | 感染 7-10 天後 | 金標準；≥1:800 或 4 倍升高 |
+| PCR（血液） | 高 | 極高 | 螺旋體血症期（前 10 天） | 抗生素前採檢 |
+| PCR（尿液） | 中-高 | 極高 | 感染 7-14 天後 | 排菌期 |
+| IgM ELISA | 中 | 中 | 急性期 | 快篩用，需 MAT 確認 |
+
+**注意**：疫苗接種可導致低效價 MAT 陽性（通常 < 1:400）；需配對血清比較。
+
+## 三、治療策略 (Treatment)
+
+| 階段 | 藥物 | 劑量 | 療程 | 目的 |
+|------|------|------|------|------|
+| 急性期（住院） | [藥物:Ampicillin] | 22 mg/kg IV q8h | 至臨床改善 | 殺死螺旋體、控制螺旋體血症 |
+| 清除期 | [藥物:Doxycycline] | 5 mg/kg PO BID | 14 天 | 清除腎臟帶原、防止持續排菌 |
+| 替代（嘔吐無法口服） | [藥物:Penicillin G] | 25,000-40,000 U/kg IV q12h | 急性期 | Ampicillin 替代 |
+
+**支持療法**：
+- 積極靜脈輸液（AKI 管理同前）
+- 止吐：Maropitant 1 mg/kg SC SID
+- 高鉀處理：Calcium gluconate + Insulin-Dextrose
+- 嚴重少尿/無尿：考慮血液透析
+- DIC 管理：FFP + 支持性
+
+## 四、併發症與監控
+
+| 併發症 | 頻率 | 處理 |
+|--------|------|------|
+| 慢性腎病（AKI → CKD） | 30-40% | 長期腎臟追蹤 |
+| 肺出血（LPHS） | 10-20% | 氧氣支持、嚴重者機械通氣 |
+| DIC | 10-15% | FFP + 支持性治療 |
+| 慢性肝炎 | 少見 | 肝臟支持 |
+
+**監測**：治療中每 24-48 hr 腎功能 + 肝功能 + 電解質。出院後每 1-2 週追蹤至穩定。3-6 個月後評估是否發展為 CKD。
+
+## 五、預防與公共衛生
+
+**犬疫苗**：四價疫苗（Canicola, Icterohaemorrhagiae, Pomona, Grippotyphosa），年度接種。保護力約 12 個月。不能 100% 預防但降低臨床疾病嚴重度。
+
+**人畜共通風險**：
+- 感染犬的尿液含活螺旋體（可排菌數週至數月）
+- 獸醫/畜主處理時需戴手套
+- 環境消毒（10% 漂白水有效）
+- 台灣為法定傳染病——需通報`,
+  clinical_pearl: '在台灣，颱風/暴雨後 2-4 週是鉤端螺旋體病的高峰期。洪水中混合了老鼠尿液中的螺旋體，犬隻涉水後經黏膜感染。任何犬出現急性腎衰竭 + 肝指數升高，尤其在雨季後，都應將鉤端螺旋體列為首要鑑別。不要等 MAT 結果——在採血/尿 PCR 後即可開始經驗性 Ampicillin 治療。延遲治療顯著增加死亡率。',
+  common_mistakes: [
+    '等待 MAT 結果才開始治療（MAT 需 7-10 天才轉陽，延遲治療增加死亡率）',
+    '僅用 Doxycycline 而未先用 Ampicillin 靜脈注射控制急性螺旋體血症',
+    'Doxycycline 療程不足 14 天（未能完全清除腎臟帶原，犬持續排菌感染人類）',
+    '忽略人畜共通風險——未告知飼主防護措施',
+    '疫苗接種犬就排除鉤端螺旋體（疫苗非 100% 保護，且可能感染疫苗未涵蓋的血清型）',
+  ],
+  disease_data: {
+    signalment: '任何年齡、品種犬均可感染。大型犬、戶外犬、工作犬、農村犬風險較高。台灣南部/東部洪水頻繁區域風險更高。貓感染罕見但可帶原。',
+    etiology: 'Leptospira interrogans（革蘭氏陰性螺旋體）。主要血清型：Canicola, Icterohaemorrhagiae, Pomona, Grippotyphosa。傳播途徑：接觸受汙染水源或感染動物尿液，經黏膜或皮膚傷口進入。保毒宿主：鼠、豬、牛、其他犬。',
+    pathogenesis: '螺旋體經黏膜/皮膚進入 → 螺旋體血症（4-12 天）→ 全身血管內皮損傷 → 血管炎 + 器官定殖（腎/肝/肺）→ 腎小管直接毒性 → AKI + 肝細胞損傷 → 黃疸 + 肺泡出血（嚴重者）。免疫複合體沉積加重腎損傷。',
+    clinical_signs: [
+      { sign: '急性腎衰竭', category: 'primary', description: 'AKI Grade II-V，少尿或多尿' },
+      { sign: '嘔吐/厭食', category: 'primary', description: '尿毒症與肝損傷' },
+      { sign: '黃疸', category: 'primary', description: 'Icterohaemorrhagiae 型較常見，膽紅素升高' },
+      { sign: '發燒', category: 'secondary', description: '急性期 39.5-41°C' },
+      { sign: '肌肉疼痛/跛行', category: 'secondary', description: '肌肉內螺旋體與炎症' },
+      { sign: '呼吸困難', category: 'secondary', description: 'LPHS，預後不良指標' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '其他 AKI 病因', key_differentiator: '無肝損傷合併、無流行病學暴露' },
+      { condition: '急性肝炎/膽管炎', key_differentiator: '腎功能正常、無血管炎' },
+      { condition: '免疫介導溶血性貧血', key_differentiator: '球形紅血球/Coombs 陽性、腎功能通常正常' },
+      { condition: '鼠藥中毒（抗凝血劑）', key_differentiator: 'PT 極度延長、維生素 K 反應性出血' },
+    ],
+    diagnostic_workup: '1. CBC + 生化（BUN/Cre/肝指數/膽紅素/電解質）→ 2. 尿液分析（糖尿 + 管型）→ 3. 凝血功能 → 4. MAT + PCR（血液與尿液）→ 5. 腹腔超音波（腎臟大小/皮髓質交界/腎盂）→ 6. 胸腔 X 光（排除 LPHS）',
+    treatment_protocol: '急性期：Ampicillin 22 mg/kg IV q8h 至臨床改善。穩定後轉 Doxycycline 5 mg/kg PO BID × 14 天。支持療法：積極 IV 輸液、止吐（Maropitant）、高鉀處理。嚴重少尿/無尿考慮血液透析。LPHS 需氧氣支持。',
+    prognosis: '早期積極治療：存活率 80-90%。延遲治療或出現 LPHS/DIC：存活率 50-60%。AKI 存活者約 30% 發展為 CKD。Icterohaemorrhagiae 型預後較 Canicola 型差。',
+    monitoring: '住院期：每 24-48 hr 腎功能/肝功能/電解質。尿量 q4-6h。出院後每 1-2 週追蹤至穩定。3-6 個月後評估 CKD 發展。Doxycycline 完成後可考慮 PCR 確認清除。',
+    owner_communication: '鉤端螺旋體為人畜共通傳染病。治療期間避免直接接觸犬的尿液（戴手套）。環境消毒用 10% 漂白水。建議年度疫苗接種。颱風/洪水後避免讓犬接觸積水。如飼主出現發燒/肌肉痛應就醫告知寵物感染史。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '血清型表後', type: 'comparison_table', description: '鉤端螺旋體血清型與臨床表現對照表' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Ampicillin', 'Doxycycline', 'Penicillin G', 'Maropitant'],
+  references: [
+    { type: 'guideline', citation: 'Sykes JE et al. "2010 ACVIM Small Animal Consensus Statement on Leptospirosis: Diagnosis, Epidemiology, Treatment, and Prevention." J Vet Intern Med. 2011;25(1):1-13.', relevance: '鉤端螺旋體診斷與治療共識' },
+    { type: 'journal', citation: 'Reagan KL, Sykes JE. "Diagnosis of canine leptospirosis." Vet Clin North Am Small Anim Pract. 2019;49(4):719-731.', relevance: '鉤端螺旋體診斷最新回顧' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 94: Leptospirosis.', relevance: '鉤端螺旋體病教材' },
+    { type: 'journal', citation: 'Schuller S et al. "European consensus statement on leptospirosis in dogs and cats." J Small Anim Pract. 2015;56(3):159-179.', relevance: '歐洲鉤端螺旋體共識' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 貓傳染性腹膜炎 (FIP) — 疾病型 */
+const contentFIP: NodeContent = {
+  id: 'CONTENT-IM-L3-017',
+  node_id: 'IM-L3-017',
+  version: 1,
+  summary: '貓傳染性腹膜炎（FIP）由貓冠狀病毒（FCoV）突變為高致病力型所引起。分為濕型（滲出型）和乾型（肉芽腫型）。過去被認為幾乎 100% 致命，現在 GS-441524 等抗病毒藥物已使 FIP 成為可治癒疾病。治療標準為 GS-441524 皮下注射 84 天。',
+  learning_objectives: [
+    '說明 FCoV 突變為 FIPV 的機轉與免疫病理',
+    '區分 FIP 濕型與乾型的臨床表現與診斷策略',
+    '正確判讀 Rivalta test 並解釋其診斷意義',
+    '制定 GS-441524 抗病毒治療方案（劑量、療程、監測）',
+    '評估 FIP 治療後的預後與復發風險',
+  ],
+  key_points: [
+    'FCoV（貓腸道冠狀病毒）普遍存在（多貓家庭 40-80% 感染率），僅 5-10% 突變為 FIPV',
+    '突變關鍵：FCoV 在巨噬細胞內有效複製能力 → 全身性感染 → 免疫複合體血管炎',
+    '濕型（effusive）：高蛋白、低細胞數滲出液，Rivalta test 陽性，A/G ratio < 0.4',
+    '乾型（granulomatous）：肉芽腫侵犯腎、肝、CNS、眼，診斷較困難',
+    'GS-441524（核苷酸類似物）：4 mg/kg SC SID（濕型）或 6-10 mg/kg（乾型/神經/眼型）× 84 天',
+    'Molnupiravir：替代藥物，20 mg/kg PO BID × 84 天，口服便利但突變風險',
+    '治療成功率：濕型 > 80%，乾型/眼型約 60-70%，神經型約 50-60%',
+  ],
+  body: `# 貓傳染性腹膜炎 (Feline Infectious Peritonitis, FIP)
+
+## 一、病理機制 (Pathophysiology)
+
+### FCoV → FIPV 突變
+
+貓腸道冠狀病毒（FCoV）為普遍存在的腸道病毒（多貓環境感染率 40-80%）。極少數（5-10%）在宿主體內發生關鍵突變（主要在 spike protein 和 3c gene）→ 獲得在巨噬細胞內高效複製能力 → FIPV
+
+**免疫病理**：FIPV 感染巨噬細胞 → 病毒血症 → 感染的巨噬細胞黏附血管壁 → 補體活化 + 免疫複合體沉積 → 血管周圍肉芽腫性炎症（pyogranulomatous vasculitis）
+
+**免疫決定結局**：
+- 強細胞免疫（CMI）→ 控制感染 → 不發病
+- 強體液免疫但弱 CMI → 抗體依賴性增強（ADE）→ 加重感染 → 濕型 FIP
+- 部分 CMI → 肉芽腫形成但無法清除 → 乾型 FIP
+
+| 型態 | 免疫反應 | 病理 | 預後（未治療） |
+|------|---------|------|--------------|
+| 濕型 | 強體液/弱 CMI | 高蛋白滲出液 + 血管炎 | 數天至數週 |
+| 乾型 | 部分 CMI | 肉芽腫（腎/肝/CNS/眼） | 數週至數月 |
+| 混合型 | 過渡 | 兩者特徵 | 變異 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 濕型 FIP
+
+| 表現 | 頻率 | 描述 |
+|------|------|------|
+| 腹腔積液 | 70-80% | 黃色、黏稠、高蛋白 |
+| 胸腔積液 | 20-30% | 呼吸困難 |
+| 發燒（不退） | > 80% | 對抗生素無反應 |
+| 體重減輕 | > 70% | 進行性消瘦 |
+| 黃疸 | 30-50% | 肝臟受累 |
+
+### 乾型 FIP
+
+| 靶器官 | 表現 | 頻率 |
+|--------|------|------|
+| 眼 | 前葡萄膜炎、角膜沉澱物（mutton fat KP） | 30-40% |
+| CNS | 共濟失調、癲癇、後肢輕癱 | 30-40% |
+| 腎 | 腎腫大、腎表面肉芽腫 | 20-30% |
+| 肝 | 肝腫大、黃疸 | 20-30% |
+| 腸系膜淋巴結 | 觸診可觸及腫大淋巴結 | 常見 |
+
+### 診斷工具
+
+| 檢查 | 濕型 | 乾型 | 備註 |
+|------|------|------|------|
+| Rivalta test | 陽性（敏感度 91%） | 不適用 | 滲出液一滴入醋酸→不消散 |
+| 滲出液分析 | TP > 3.5 g/dL, 低細胞 | — | A/G < 0.4 高度提示 FIP |
+| 血液 A/G ratio | < 0.4 | < 0.6 | 非特異但有支持價值 |
+| 滲出液 FCoV RT-PCR | 敏感度高 | — | 陽性高度支持但非確診 |
+| 組織免疫組化（IHC） | 金標準 | 金標準 | FCoV 抗原在巨噬細胞內 |
+| 血清 FCoV 抗體 | 非診斷性 | 非診斷性 | 陽性僅代表 FCoV 接觸 |
+
+**Rivalta test 操作**：試管中放 8 mL 蒸餾水 + 1 滴冰醋酸→滲出液一滴輕放液面→FIP 滲出液不消散、下沉形成水母狀。非 FIP 滲出液迅速消散。
+
+## 三、治療策略 (Treatment)
+
+### GS-441524 抗病毒治療
+
+| 型態 | 劑量 | 途徑 | 療程 |
+|------|------|------|------|
+| 濕型 | 4 mg/kg SID | SC 注射 | 84 天 |
+| 乾型 | 6 mg/kg SID | SC 注射 | 84 天 |
+| 眼型 | 8 mg/kg SID | SC 注射 | 84 天 |
+| 神經型 | 10 mg/kg SID | SC 注射 | 84 天（或更長） |
+
+**GS-441524 機轉**：核苷酸類似物 → 被細胞激酶磷酸化為活性三磷酸形式 → 嵌入病毒 RNA 鏈 → 終止 RNA 合成 → 抑制冠狀病毒 RdRp
+
+### 替代藥物
+
+| 藥物 | 劑量 | 優勢 | 劣勢 |
+|------|------|------|------|
+| Molnupiravir | 20 mg/kg PO BID × 84 天 | 口服、較便宜 | 致突變風險、經驗較少 |
+| GC376（蛋白酶抑制劑） | 15 mg/kg SC BID | 早期研究有效 | 口瘡副作用、取得困難 |
+
+### 治療監測
+
+| 時間點 | 監測項目 | 預期變化 |
+|--------|---------|---------|
+| 第 1-2 週 | 體重、食慾、發燒 | 食慾改善、退燒 |
+| 第 2-4 週 | 球蛋白、A/G ratio | 球蛋白下降 |
+| 第 4-8 週 | 滲出液消退、CBC | 滲出液完全消退 |
+| 第 84 天 | 全面評估 | 臨床緩解 |
+| 停藥後 3 個月 | 復發監測 | 體重/A:G ratio 穩定 |
+
+## 四、預後
+
+| 型態 | 治療成功率 | 復發率 | 備註 |
+|------|-----------|--------|------|
+| 濕型 | > 80% | 10-15% | 預後最佳 |
+| 乾型（非神經） | 60-70% | 15-20% | 療程可能需延長 |
+| 眼型 | 60-70% | 15-20% | 部分視力損傷不可逆 |
+| 神經型 | 50-60% | 20-30% | 需高劑量 + 延長療程 |`,
+  clinical_pearl: 'FIP 的診斷在乾型中仍然是臨床挑戰。單一檢查無法確診——需要「拼圖式」診斷：年輕貓 + 不明原因發燒 + 高球蛋白血症（A/G < 0.6）+ 影像學異常（腎/肝肉芽腫、腸系膜淋巴結腫大）。血清 FCoV 抗體效價僅代表曾接觸 FCoV，不能確診 FIP。確診需組織免疫組化，但在治療年代，臨床診斷加上抗病毒治療反應常作為替代確診標準。',
+  common_mistakes: [
+    '以血清 FCoV 抗體陽性就診斷 FIP（40-80% 多貓家庭貓有抗體，僅代表接觸過 FCoV）',
+    '忽略 Rivalta test 的簡便性與高敏感度——在資源有限的情況下是最佳初篩工具',
+    '神經型 FIP 使用濕型劑量（4 mg/kg 不足以穿透 BBB，需 10 mg/kg）',
+    '治療未滿 84 天就停藥（復發風險顯著增加）',
+    '仍告知飼主 FIP 為不治之症（GS-441524 已改變預後，治癒率 > 80%）',
+  ],
+  disease_data: {
+    signalment: '好發於 3 個月至 3 歲年輕貓。純種貓（Abyssinian, Bengal, Birman, Ragdoll）風險較高。多貓家庭/收容所貓 FCoV 感染率高。公貓略多於母貓。免疫功能不全（FeLV/FIV 合併感染）增加風險。',
+    etiology: '貓冠狀病毒（Feline Coronavirus, FCoV）在宿主體內突變為高致病力 FIPV。突變位點主要在 spike protein（S gene）和 accessory gene 3c。突變為隨機事件，與病毒量和宿主免疫狀態相關。',
+    pathogenesis: 'FCoV 腸道感染 → 體內突變獲得巨噬細胞嗜性 → FIPV → 感染巨噬細胞全身散布 → 免疫複合體沉積 + 補體活化 → 血管周圍肉芽腫性炎症 → 體液免疫強/CMI 弱 → 濕型（滲出）；部分 CMI → 乾型（肉芽腫）。',
+    clinical_signs: [
+      { sign: '腹腔/胸腔積液', category: 'primary', description: '濕型主要表現，黃色高蛋白滲出液' },
+      { sign: '不明原因持續發燒', category: 'primary', description: '對抗生素無反應的 >39.5°C 發燒' },
+      { sign: '進行性消瘦', category: 'primary', description: '食慾下降與蛋白流失' },
+      { sign: '前葡萄膜炎', category: 'secondary', description: '乾型/眼型，mutton fat KP、虹膜色變' },
+      { sign: '神經症狀', category: 'secondary', description: '共濟失調、癲癇、後肢輕癱（神經型）' },
+      { sign: '黃疸', category: 'secondary', description: '肝臟肉芽腫浸潤' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '細菌性腹膜炎', key_differentiator: '滲出液嗜中性球為主、細菌培養陽性、Rivalta 可陽性但細胞學不同' },
+      { condition: '淋巴瘤', key_differentiator: '滲出液細胞學見淋巴母細胞、流式細胞儀' },
+      { condition: '右心衰竭', key_differentiator: '滲出液蛋白較低（漏出液）、心臟超音波異常' },
+      { condition: '肝病性腹水', key_differentiator: '低蛋白漏出液、膽汁酸異常' },
+    ],
+    diagnostic_workup: '1. CBC + 生化（高球蛋白、A/G < 0.6、淋巴球減少）→ 2. 滲出液分析（TP > 3.5, 低細胞, A/G < 0.4）+ Rivalta test → 3. 滲出液 FCoV RT-PCR → 4. 超音波（腹腔積液、腎表面不規則、淋巴結腫大）→ 5. 眼科檢查 → 6. 確診：組織免疫組化（IHC）或臨床診斷 + 治療反應',
+    treatment_protocol: 'GS-441524：濕型 4 mg/kg SC SID、乾型 6 mg/kg、眼型 8 mg/kg、神經型 10 mg/kg，共 84 天。替代：Molnupiravir 20 mg/kg PO BID × 84 天。支持療法：食慾促進（Mirtazapine）、止吐、營養支持。治療中監測 CBC + 生化 + 體重。',
+    prognosis: '濕型（GS-441524 治療）：緩解率 > 80%。乾型/眼型：60-70%。神經型：50-60%。復發率 10-20%，多在停藥後 3 個月內。未治療：100% 致死。早期診斷與治療顯著改善預後。',
+    monitoring: '治療中每 2 週：體重、食慾、體溫。每月：CBC + 生化（球蛋白/A:G ratio 趨勢）。滲出液消退時間追蹤。停藥後每月追蹤 3 個月，之後每 3 個月。注意復發徵兆（發燒、球蛋白回升、體重下降）。',
+    owner_communication: 'FIP 過去被認為是絕症，但現在有抗病毒藥物可以治癒。GS-441524 治療需要 84 天每日皮下注射。治療費用依體重而異。大多數濕型貓治療反應良好。定期追蹤非常重要以監測復發。多貓家庭中其他貓可能帶有 FCoV 但不一定會發展為 FIP。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '免疫決定結局段落後', type: 'flowchart', description: 'FCoV 感染後免疫反應與 FIP 發展決策樹' },
+    { position: '診斷工具表後', type: 'flowchart', description: 'FIP 診斷決策流程圖（濕型 vs 乾型）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['GS-441524', 'Molnupiravir', 'GC376', 'Mirtazapine'],
+  references: [
+    { type: 'journal', citation: 'Pedersen NC et al. "Efficacy and safety of the nucleoside analog GS-441524 for treatment of cats with naturally occurring feline infectious peritonitis." J Feline Med Surg. 2019;21(4):271-281.', relevance: 'GS-441524 治療 FIP 原始研究' },
+    { type: 'journal', citation: 'Tasker S. "Diagnosis of feline infectious peritonitis: Update on evidence supporting available tests." J Feline Med Surg. 2018;20(3):228-243.', relevance: 'FIP 診斷方法更新' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 95: Feline Infectious Peritonitis.', relevance: 'FIP 教材' },
+    { type: 'journal', citation: 'Jones S et al. "Antiviral treatment of feline infectious peritonitis using GS-441524: A retrospective study of 30 cats." J Feline Med Surg. 2021;23(12):1103-1111.', relevance: 'GS-441524 回顧性治療研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 貓下泌尿道疾病 (FLUTD) — 疾病型 */
+const contentFLUTD: NodeContent = {
+  id: 'CONTENT-IM-L3-018',
+  node_id: 'IM-L3-018',
+  version: 1,
+  summary: '貓下泌尿道疾病（FLUTD）為一組以排尿困難、血尿和頻尿為特徵的症候群。貓特發性膀胱炎（FIC）為最常見病因（55-69%），壓力為重要觸發因子。公貓尿道阻塞為急診狀況。治療以多模式環境改善（MEMO）和壓力管理為核心。',
+  learning_objectives: [
+    '列舉 FLUTD 的主要病因並說明各自的占比與特徵',
+    '區分貓特發性膀胱炎（FIC）與其他 FLUTD 病因的診斷策略',
+    '說明壓力作為 FIC 觸發因子的神經內分泌機轉',
+    '制定多模式環境改善（MEMO）方案',
+    '說明公貓尿道阻塞的緊急處理流程（ECC crossover）',
+  ],
+  key_points: [
+    'FLUTD 病因分布：FIC 55-69%、尿路結石 15-22%、尿道栓子 10-21%、UTI < 5%（年輕貓）、腫瘤 < 2%',
+    'FIC 核心機轉：壓力 → HPA 軸 + SAM 系統異常 → 膀胱 GAG 層缺損 → 神經源性炎症 → 疼痛/頻尿',
+    '結晶尿：Struvite（磷酸銨鎂，可溶解）vs CaOx（草酸鈣，不可溶解，需手術）',
+    '公貓尿道阻塞 ⚠️ 急診：高鉀血症 → 心律不整 → 死亡。立即導尿 + 電解質矯正',
+    'MEMO（Multimodal Environmental Modification）：增加水源/濕食、乾淨貓砂盆（N+1 規則）、環境豐富化、減少壓力源',
+    '飲食：Struvite 溶解用處方飲食（酸化 + 限鎂）；CaOx 預防用非酸化飲食',
+    '復發性尿道阻塞公貓：考慮會陰尿道造口術（perineal urethrostomy, PU）',
+  ],
+  body: `# 貓下泌尿道疾病 (Feline Lower Urinary Tract Disease, FLUTD)
+
+## 一、病理機制 (Pathophysiology)
+
+### 貓特發性膀胱炎 (FIC) — 最常見病因
+
+**神經內分泌失調模型**：
+
+壓力事件 → 中樞交感神經系統過度活化 → 去甲腎上腺素 (NE) 釋放增加 → 膀胱壁感覺神經 C-fiber 活化 → Substance P 釋放 → 肥大細胞脫顆粒 → 組胺/5-HT 釋放 → 黏膜下水腫/疼痛
+
+**GAG 層缺損**：正常膀胱表面有 glycosaminoglycan (GAG) 層保護上皮 → FIC 貓 GAG 分泌減少 → 尿液中刺激物質直接接觸上皮 → 炎症循環
+
+| 病因 | 占比 | 機轉 | 復發率 |
+|------|------|------|--------|
+| FIC | 55-69% | 神經源性炎症 + GAG 缺損 | 40-50% |
+| Struvite 結石/結晶 | 15-22% | 鹼性尿 + 高鎂 + 高磷 | 飲食控制可預防 |
+| CaOx 結石 | 5-10% | 高鈣尿 + 低 citrate | 手術移除、預防復發 |
+| 尿道栓子 | 10-21% | 結晶 + 蛋白質基質 + 炎症碎片 | 中等 |
+| UTI（細菌性） | < 5%（年輕）、> 50%（>10y） | 細菌上行感染 | 治療可根治 |
+
+### 公貓尿道阻塞
+
+公貓尿道解剖（遠端尿道直徑僅 ~1 mm）→ 結晶/栓子/炎症碎片/尿道痙攣 → 阻塞 → 膀胱過度膨脹 → 腎後性 AKI → 高鉀血症 → 心律不整（心搏過緩 → VF → 心跳停止）
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | 描述 | 緊急程度 |
+|---------|------|---------|
+| 頻尿 (pollakiuria) | 頻繁進出貓砂盆 | 非緊急 |
+| 排尿困難 (dysuria) | 蹲踞用力、哀叫 | 中等 |
+| 血尿 (hematuria) | 粉紅色至紅色尿液 | 非緊急 |
+| 不當排尿 | 貓砂盆外排尿 | 非緊急 |
+| 無法排尿 | ⚠️ 阻塞徵兆 | **急診** |
+| 嘔吐/嗜睡 | ⚠️ 阻塞合併尿毒症 | **急診** |
+
+### 診斷流程
+
+| 步驟 | 檢查 | 目的 |
+|------|------|------|
+| 1 | 觸診膀胱 | 阻塞？（膀胱極度膨脹、不可壓迫）|
+| 2 | 尿液分析 + 沉渣 | 結晶、細菌、血球 |
+| 3 | 尿液培養 | > 10 歲貓、反覆發作、膿尿時 |
+| 4 | 血檢 | 阻塞時：Cre/K/血氣 |
+| 5 | 腹腔 X 光/超音波 | 結石（CaOx 射線不透光、Struvite 變異）|
+
+### FIC vs 其他病因鑑別
+
+| 特徵 | FIC | 結石 | UTI |
+|------|-----|------|-----|
+| 年齡 | 1-10 歲 | 任何 | > 10 歲多 |
+| 病程 | 自限性（3-7 天）| 持續 | 持續 |
+| 壓力觸發 | 常見 | 無 | 無 |
+| 結晶 | 可有可無 | 常見 | 可有 |
+| 細菌 | 陰性 | 通常陰性 | 陽性 |
+| 影像 | 膀胱壁增厚 | 結石 | 通常正常 |
+
+## 三、治療策略 (Treatment)
+
+### FIC 管理——MEMO
+
+| 策略 | 具體措施 | 證據等級 |
+|------|---------|---------|
+| 增加水攝取 | 濕食、多水碗、流動飲水機 | Level I |
+| 貓砂盆優化 | N+1 規則（貓數+1 個砂盆）、每日清理、不加蓋 | Level II |
+| 環境豐富化 | 垂直空間、藏匿處、互動遊戲、窗邊觀景台 | Level II |
+| 壓力減輕 | 避免環境改變、Feliway（合成臉部費洛蒙） | Level II-III |
+| 止痛 | [藥物:Buprenorphine] 0.01-0.03 mg/kg SL q8-12h（急性期） | Level III |
+
+### 尿道阻塞急診處理
+
+| 步驟 | 處置 | 優先序 |
+|------|------|--------|
+| 1 | ECG + 血鉀 | 立即 |
+| 2 | 高鉀處理 | K > 6.5：Calcium gluconate 10% 0.5-1 mL/kg slow IV |
+| 3 | IV 輸液 | LRS（不含鉀！用 0.9% NaCl）開始 |
+| 4 | 導尿 | 鎮靜 → 3.5F 紅色橡膠導管 → 生理食鹽水沖洗 |
+| 5 | 封閉式導尿系統 | 留置 24-48 hr，監測尿量 |
+| 6 | 阻塞後利尿 | 監測多尿期電解質流失 |
+
+### 結石管理
+
+| 結石類型 | 治療 | 飲食 | 預防 |
+|---------|------|------|------|
+| Struvite | 飲食溶解（2-4 週） | 酸化 + 限鎂處方飲食 | 濕食 + 酸化飲食 |
+| CaOx | 手術移除（不可溶解） | 非酸化飲食 + 增加水攝取 | 濕食 + 增加水攝取 |
+| 混合型 | 結石分析後決定 | 依主要成分 | 個別化 |
+
+**會陰尿道造口術 (PU)**：適應症為反覆尿道阻塞（≥ 2-3 次）。手術目的為擴大尿道開口。併發症包括尿道狹窄（5-10%）和反覆 UTI 風險增加。`,
+  clinical_pearl: 'FIC 最重要的治療不是藥物——是環境改善（MEMO）。研究顯示 MEMO 可降低 FIC 復發率 70-80%，效果優於任何藥物。最關鍵的介入是增加水攝取（改為全濕食）和減少環境壓力。FIC 是自限性疾病（通常 3-7 天自行緩解），但如不處理壓力源，40-50% 會在 6-12 個月內復發。GAG 補充劑（pentosan polysulfate, glucosamine）證據不足。',
+  common_mistakes: [
+    '年輕貓的 FLUTD 給予抗生素——< 10 歲貓 UTI < 5%，多數為 FIC 不需要抗生素',
+    '忽略公貓尿道阻塞的高鉀血症危機——未先矯正高鉀就嘗試導尿',
+    '未做結石分析就選擇飲食治療——CaOx 不可溶解，酸化飲食反而促進 CaOx 形成',
+    'FIC 治療僅靠藥物不改善環境——MEMO 是最重要且證據最強的介入',
+    '導尿後太早拔除導尿管（建議留置 24-48 hr 以確保尿道腫脹消退）',
+  ],
+  disease_data: {
+    signalment: '犬貓均可發生，但 FLUTD 以貓為主。好發年齡 1-10 歲。公貓尿道阻塞風險遠高於母貓（解剖差異）。室內貓、肥胖貓、多貓家庭、壓力環境為 FIC 風險因子。',
+    etiology: 'FIC（55-69%）：壓力觸發的神經源性膀胱炎。尿路結石（15-22%）：Struvite 或 CaOx。尿道栓子（10-21%）：結晶 + 蛋白基質。UTI（< 5% 年輕貓、> 50% 老年貓）：細菌感染。腫瘤（< 2%）：移行上皮癌。',
+    pathogenesis: 'FIC：壓力 → SAM/HPA 軸異常 → 膀胱 C-fiber 過度活化 → Substance P/SP 釋放 → 肥大細胞脫顆粒 → 神經源性炎症 + GAG 層缺損 → 疼痛循環。阻塞：結晶/栓子/水腫阻塞遠端尿道 → 腎後性 AKI → 高鉀 → 心律不整。',
+    clinical_signs: [
+      { sign: '頻尿/排尿困難', category: 'primary', description: '頻繁進出貓砂盆、蹲踞用力' },
+      { sign: '血尿', category: 'primary', description: '粉紅至紅色尿液' },
+      { sign: '不當排尿', category: 'primary', description: '貓砂盆外排尿，常被誤認為行為問題' },
+      { sign: '無法排尿（阻塞）', category: 'secondary', description: '⚠️ 急診！膀胱膨脹、疼痛、嘔吐' },
+      { sign: '嗜睡/嘔吐（阻塞）', category: 'secondary', description: '尿毒症與高鉀血症' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '行為性不當排尿', key_differentiator: '無血尿/排尿困難、正常尿量、壓力/領域相關' },
+      { condition: '慢性腎病', key_differentiator: '多尿/多渴為主、USG 低、氮血症' },
+      { condition: '糖尿病', key_differentiator: '多尿/多渴/多食、高血糖、糖尿' },
+      { condition: '甲狀腺機能亢進', key_differentiator: '> 10 歲貓、體重減輕、多食、T4 升高' },
+    ],
+    diagnostic_workup: '1. 觸診膀胱（阻塞評估）→ 2. 如阻塞：立即 ECG + 血鉀 + 導尿 → 3. 尿液分析 + 沉渣（結晶/細菌/血球）→ 4. 腹腔 X 光（結石）+ 超音波（膀胱壁/結石/腫塊）→ 5. > 10 歲或反覆發作：尿液培養 → 6. 結石分析（手術移除時）',
+    treatment_protocol: 'FIC：MEMO（環境改善）為核心 + 急性疼痛：Buprenorphine 0.01-0.03 mg/kg SL。阻塞：高鉀矯正 → 鎮靜導尿 → 留置 24-48 hr → 阻塞後利尿期監測。Struvite：處方飲食溶解 2-4 週。CaOx：手術移除。UTI：依培養敏感性抗生素。復發性阻塞：PU 手術。',
+    prognosis: 'FIC：自限性但復發率 40-50%（MEMO 可降至 10-20%）。尿道阻塞：及時治療存活率 > 90%。延遲治療（> 48-72 hr）：高鉀致死風險。結石：治療後預後良好但復發率 Struvite 30-50%、CaOx 30-70% 五年。PU 術後 UTI 風險增加。',
+    monitoring: 'FIC：急性發作後 2 週追蹤。MEMO 實施後 1-3 個月評估效果。阻塞後：拔管後 24-48 hr 監測排尿。結石溶解飲食：每 2-4 週 X 光追蹤直到消失。長期：體重管理、飲水量、尿液 pH。',
+    owner_communication: 'FLUTD 在貓非常常見。FIC 是最常見病因——不是感染，是壓力相關。環境改善（更多水、好的貓砂盆、減壓）比藥物更重要。公貓若無法排尿是緊急狀況——必須立即就醫。改全濕食可有效增加水攝取降低復發。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'FLUTD 病因分布表後', type: 'flowchart', description: 'FLUTD 診斷與病因鑑別流程圖' },
+    { position: '尿道阻塞處理表後', type: 'flowchart', description: '公貓尿道阻塞急診處理流程圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Buprenorphine', 'Calcium gluconate', 'Prazosin', 'Maropitant'],
+  references: [
+    { type: 'guideline', citation: 'Westropp JL et al. "Evaluation of the effects of stress in cats with idiopathic cystitis." ISFM Guidelines on FLUTD. J Feline Med Surg. 2019;21(2):134-150.', relevance: 'FIC 與壓力管理指引' },
+    { type: 'journal', citation: 'Buffington CA. "Idiopathic cystitis in domestic cats—beyond the lower urinary tract." J Vet Intern Med. 2011;25(4):784-796.', relevance: 'FIC 神經內分泌機轉回顧' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 46: Feline Lower Urinary Tract Disease.', relevance: 'FLUTD 教材' },
+    { type: 'journal', citation: 'Defauw PAM et al. "Risk factors and clinical presentation of cats with feline idiopathic cystitis." J Feline Med Surg. 2011;13(12):967-975.', relevance: 'FIC 風險因子研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 貓膽管炎與三合症 (Feline Cholangitis & Triaditis) — 疾病型 */
+const contentCholangitis: NodeContent = {
+  id: 'CONTENT-IM-L3-019',
+  node_id: 'IM-L3-019',
+  version: 1,
+  summary: '貓膽管炎分為嗜中性球型（化膿性）和淋巴球型兩大類。三合症（Triaditis）指膽管炎、胰臟炎與發炎性腸病（IBD）同時存在，反映貓獨特的膽胰管解剖。嗜中性球型以上行性細菌感染為主（E. coli），淋巴球型可能為免疫介導。肝臟切片為確診金標準。',
+  learning_objectives: [
+    '區分嗜中性球型與淋巴球型膽管炎的病因、病理與治療差異',
+    '說明 Triaditis 的解剖學基礎與三器官交互影響機轉',
+    '制定膽管炎的診斷流程（影像學、FNA、肝切片）',
+    '正確選擇膽管炎的抗生素與免疫抑制治療方案',
+    '說明 Ursodiol 和 SAMe 在貓肝膽疾病中的輔助角色',
+  ],
+  key_points: [
+    '嗜中性球型（Neutrophilic/Suppurative）：上行性細菌感染（E. coli, Enterococcus），急性表現，需抗生素',
+    '淋巴球型（Lymphocytic）：慢性、可能免疫介導，門脈區小膽管周圍淋巴球浸潤，需 Prednisolone',
+    'Triaditis 解剖基礎：貓的總膽管與胰管在十二指腸乳頭共同開口 → 腸道細菌/炎症可同時波及膽道與胰管',
+    '診斷：超音波（膽囊壁增厚/膽泥/膽管擴張）+ 超音波引導 FNA + 肝臟切片（金標準）',
+    '嗜中性球型治療：Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID × 4-6 週 + Ursodiol + SAMe',
+    '淋巴球型治療：Prednisolone 1-2 mg/kg/day + Ursodiol + SAMe',
+    'Ursodiol（利膽酸）：10-15 mg/kg PO SID，促進膽汁流動 + 細胞保護 + 抗炎',
+  ],
+  body: `# 貓膽管炎與三合症 (Feline Cholangitis & Triaditis)
+
+## 一、病理機制 (Pathophysiology)
+
+### 解剖基礎
+
+**貓獨特解剖**：貓的總膽管（common bile duct）與主胰管（major pancreatic duct）在十二指腸主乳頭（major duodenal papilla）**共同開口**。此解剖特徵使得腸道細菌可上行感染膽道與胰管，解釋了 Triaditis 的高發生率。
+
+### 嗜中性球型膽管炎
+
+**上行性感染機轉**：腸道細菌（E. coli, Enterococcus, Clostridium, Bacteroides）→ 經十二指腸乳頭上行 → 膽管感染 → 急性嗜中性球浸潤 → 化膿性膽管炎 → 嚴重者膽管壁壞死 + 膽管周圍膿瘍
+
+**促發因子**：膽管結石/膽泥 → 膽汁滯留 → 細菌繁殖；IBD → 腸道屏障崩解 → 細菌移位
+
+### 淋巴球型膽管炎
+
+**免疫介導機轉（推測）**：門脈區小膽管上皮慢性免疫損傷 → 小型淋巴球 + 漿細胞浸潤 → 慢性非化膿性炎症 → 膽管破壞性病變 → 長期可發展為膽管纖維化
+
+**與人醫比較**：類似人類原發性膽汁性膽管炎（PBC）或原發性硬化性膽管炎（PSC），均為免疫介導的膽管破壞
+
+### Triaditis
+
+| 組成 | 機轉 | 交互影響 |
+|------|------|---------|
+| 膽管炎 | 細菌上行/免疫介導 | 膽汁酸毒性損傷胰管 |
+| 胰臟炎 | 胰管阻塞/炎症擴散 | 胰管水腫阻塞膽管 |
+| IBD | 腸道屏障崩解 | 細菌移位 → 膽管 + 胰管感染 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 表現 | 嗜中性球型 | 淋巴球型 |
+|------|-----------|---------|
+| 發病 | 急性 | 慢性/漸進 |
+| 發燒 | 常見 | 少見 |
+| 黃疸 | 常見（50-70%） | 變異（30-50%） |
+| 嘔吐 | 常見 | 間歇性 |
+| 厭食 | 嚴重 | 輕度至中度 |
+| 腹痛 | 可能 | 少見 |
+| 肝腫大 | 可能 | 少見 |
+
+### 實驗室檢查
+
+| 指標 | 嗜中性球型 | 淋巴球型 |
+|------|-----------|---------|
+| ALP/GGT | 明顯升高 | 輕度升高 |
+| ALT | 中度升高 | 輕-中度升高 |
+| Total bilirubin | 升高（膽汁滯留） | 變異 |
+| WBC | 嗜中性球升高 ± 左移 | 通常正常 |
+| fPLI | 可能升高（合併胰臟炎） | 可能升高 |
+| Cobalamin (B12) | 可能低（合併 IBD） | 可能低 |
+
+### 影像學
+
+| 超音波發現 | 意義 |
+|-----------|------|
+| 膽囊壁增厚 > 1 mm | 膽管炎 |
+| 膽泥/膽石 | 促發因子 |
+| 總膽管擴張 > 5 mm | 膽管阻塞 |
+| 胰臟低回音 + 周圍脂肪高回音 | 合併胰臟炎 |
+| 小腸壁層次模糊 | 合併 IBD |
+
+### 確診
+
+| 方法 | 優勢 | 限制 |
+|------|------|------|
+| 超音波引導 FNA | 微創、快速 | 取樣偏差、無法評估結構 |
+| 肝臟切片（手術/腹腔鏡） | 金標準、可分型 | 侵入性、需麻醉 |
+| 膽汁培養 | 確認細菌 + 藥敏 | 需超音波引導膽囊穿刺 |
+
+## 三、治療策略 (Treatment)
+
+### 嗜中性球型
+
+| 治療 | 藥物 | 劑量 | 療程 |
+|------|------|------|------|
+| 抗生素 | [藥物:Amoxicillin-Clavulanate] | 12.5-25 mg/kg PO BID | 4-6 週 |
+| 利膽 | [藥物:Ursodiol] | 10-15 mg/kg PO SID | 長期 |
+| 肝保護 | [藥物:SAMe] | 90 mg/cat PO SID（空腹） | 長期 |
+| 厭氧菌覆蓋（嚴重者） | [藥物:Metronidazole] | 10 mg/kg PO BID | 2-4 週 |
+| 止吐 | [藥物:Maropitant] | 1 mg/kg SC SID | 急性期 |
+
+**嚴重者**：住院 IV 輸液 + Ampicillin-Sulbactam 30 mg/kg IV q8h → 穩定後轉口服
+
+### 淋巴球型
+
+| 治療 | 藥物 | 劑量 | 療程 |
+|------|------|------|------|
+| 免疫抑制 | [藥物:Prednisolone] | 1-2 mg/kg/day PO | 起始 2-4 週→緩慢減量 |
+| 利膽 | [藥物:Ursodiol] | 10-15 mg/kg PO SID | 長期 |
+| 肝保護 | [藥物:SAMe] | 90 mg/cat PO SID（空腹） | 長期 |
+| 二線免疫抑制 | [藥物:Chlorambucil] | 2 mg/cat PO q48-72h | Pred 無反應時 |
+
+### Triaditis 綜合管理
+
+同時處理三個組成部分：膽管炎治療（如上）+ 胰臟炎管理（止痛 + 止吐 + 早期營養）+ IBD 管理（飲食試驗 + 必要時 Prednisolone）。Cobalamin 補充（250 μg SC q1wk × 6 週）。
+
+## 四、輔助藥物詳解
+
+| 藥物 | 機轉 | 劑量 | 注意事項 |
+|------|------|------|---------|
+| Ursodiol | 取代毒性膽汁酸 + 促進膽汁流動 + 免疫調節 + 抗凋亡 | 10-15 mg/kg SID | 膽管完全阻塞時禁用 |
+| SAMe | 穀胱甘肽前驅物 → 抗氧化 + 甲基化反應 | 90 mg/cat SID（空腹） | 需空腹給予以確保吸收 |
+| Vitamin E | 脂溶性抗氧化劑 | 10 IU/kg/day | 膽汁滯留影響吸收 |
+| Cobalamin (B12) | Triaditis 合併 IBD 時常缺乏 | 250 μg SC q1wk | 口服吸收不穩定 |`,
+  clinical_pearl: '貓的膽管炎診斷中，ALP 升高比 ALT 更有意義——貓 ALP 半衰期僅 6 小時（犬為 72 小時），因此貓 ALP 即使輕度升高（> 2 倍）都有臨床意義。此外，Triaditis 的貓常同時有胰臟炎——但 fPLI 正常不能排除胰臟炎（敏感度約 60-80%）。超音波見胰臟低回音 + 周圍脂肪高回音更有診斷價值。',
+  common_mistakes: [
+    '未區分嗜中性球型與淋巴球型膽管炎（治療方向完全不同：一個需要抗生素、一個需要免疫抑制）',
+    '淋巴球型膽管炎使用抗生素而非 Prednisolone（無效且延誤治療）',
+    'SAMe 與食物同時給予（需空腹以確保吸收，建議餐前 1 小時）',
+    '忽略 Triaditis 的可能性——僅治療膽管炎而未同時處理胰臟炎和 IBD',
+    '膽管完全阻塞時使用 Ursodiol（可加重膽汁淤積損傷）',
+  ],
+  disease_data: {
+    signalment: '貓為主。嗜中性球型：任何年齡，中年多見。淋巴球型：中老年貓。波斯貓可能有品種傾向。公母比無明顯差異。Triaditis 常見於中老年貓。',
+    etiology: '嗜中性球型：腸道細菌上行感染（E. coli, Enterococcus, Clostridium, Bacteroides）→ 膽管化膿性炎症。淋巴球型：推測為免疫介導（類似人類 PBC/PSC），確切病因不明。Triaditis：膽管炎 + 胰臟炎 + IBD 三者經共同膽胰管開口互相影響。',
+    pathogenesis: '嗜中性球型：腸道細菌經十二指腸乳頭上行 → 膽管急性嗜中性球浸潤 → 化膿性炎症 → 膽管壁損傷。淋巴球型：小膽管周圍免疫性淋巴球 + 漿細胞浸潤 → 慢性膽管破壞 → 纖維化。Triaditis：三器官經共同管道互相傳遞炎症。',
+    clinical_signs: [
+      { sign: '黃疸', category: 'primary', description: '膽汁滯留，嗜中性球型更常見' },
+      { sign: '嘔吐/厭食', category: 'primary', description: '急性（嗜中性球型）或慢性（淋巴球型）' },
+      { sign: '體重減輕', category: 'primary', description: '慢性進行性，淋巴球型和 Triaditis 常見' },
+      { sign: '發燒', category: 'secondary', description: '嗜中性球型常見，淋巴球型少見' },
+      { sign: '腹痛', category: 'secondary', description: '急性膽管炎或合併胰臟炎' },
+      { sign: '腹瀉', category: 'secondary', description: '合併 IBD 時（Triaditis）' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '貓肝臟脂肪沉積症', key_differentiator: '肥胖貓突然厭食、嚴重黃疸、肝臟 FNA 脂肪空泡' },
+      { condition: '肝臟淋巴瘤', key_differentiator: '肝腫大、FNA/切片見淋巴母細胞、流式細胞儀' },
+      { condition: '膽管阻塞（結石/腫瘤）', key_differentiator: '超音波見膽管明顯擴張 > 5 mm、膽石' },
+      { condition: '貓肝臟類澱粉沉著', key_differentiator: '肝切片剛果紅染色陽性，好發 Siamese/Abyssinian' },
+    ],
+    diagnostic_workup: '1. CBC + 生化（肝指數/膽紅素/白蛋白）+ fPLI → 2. 腹腔超音波（膽囊壁/膽管/胰臟/小腸）→ 3. 超音波引導膽囊穿刺（培養 + 細胞學）→ 4. 超音波引導肝臟 FNA → 5. 確診：肝臟切片（手術或腹腔鏡，組織病理分型）→ 6. Cobalamin + Folate（評估 IBD）',
+    treatment_protocol: '嗜中性球型：Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID × 4-6 週 + Ursodiol 10-15 mg/kg SID + SAMe 90 mg/cat SID（空腹）。淋巴球型：Prednisolone 1-2 mg/kg/day → 緩慢減量 + Ursodiol + SAMe。Triaditis：同時處理三組成。支持：止吐、食慾促進、Cobalamin 補充。',
+    prognosis: '嗜中性球型（急性、適當抗生素）：預後良好至謹慎。嚴重化膿性/膽管壞死：預後謹慎。淋巴球型：慢性病程，適當管理可存活數月至數年。Triaditis：取決於三組成各自嚴重度。早期診斷與治療改善預後。長期可能發展為膽管纖維化/硬化。',
+    monitoring: '治療開始後 2-4 週追蹤肝指數 + 膽紅素。嗜中性球型：抗生素完成後 1 週追蹤。淋巴球型：Pred 減量期每 2-4 週追蹤。長期每 2-3 個月追蹤肝功能。Triaditis：同時監測 fPLI 和腸道症狀。體重追蹤。',
+    owner_communication: '貓膽管炎有兩種類型，治療方向不同。嗜中性球型需要完整療程的抗生素。淋巴球型可能需要長期低劑量類固醇。Triaditis 表示膽管、胰臟和腸道同時發炎——需要綜合管理。Ursodiol 和 SAMe 為重要的肝臟保護輔助用藥。定期追蹤肝功能非常重要。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'Triaditis 表後', type: 'flowchart', description: '貓膽管炎分型與 Triaditis 三器官交互關係圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Amoxicillin-Clavulanate', 'Ursodiol', 'SAMe', 'Prednisolone', 'Metronidazole', 'Chlorambucil', 'Maropitant', 'Cobalamin'],
+  references: [
+    { type: 'guideline', citation: 'Rothuizen J et al. "WSAVA Standards for Clinical and Histological Diagnosis of Canine and Feline Liver Diseases." WSAVA Liver Standardization Group. 2006.', relevance: '肝臟疾病組織病理分類標準' },
+    { type: 'journal', citation: 'Callahan Clark JE et al. "Feline cholangitis: a necropsy study of 44 cats (1986-2008)." J Feline Med Surg. 2011;13(8):570-576.', relevance: '貓膽管炎病理研究' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 37: Hepatobiliary Diseases in the Cat.', relevance: '貓肝膽疾病教材' },
+    { type: 'journal', citation: 'Marolf AJ et al. "Ultrasonographic findings of feline cholangitis." J Am Anim Hosp Assoc. 2012;48(1):36-42.', relevance: '貓膽管炎超音波診斷' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
@@ -4329,6 +5522,7 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L2-003', contentGIInflammation],
   ['IM-L2-004', contentHepaticInjury],
   ['IM-L2-005', contentAcidBase],
+  ['IM-L2-006', contentImmuneMediated],
   // L3 Clinical Diseases
   ['IM-L3-001', contentCushings],
   ['IM-L3-002', contentHypothyroidism],
@@ -4342,6 +5536,13 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L3-010', contentTickBorne],
   ['IM-L3-011', contentAddisons],
   ['IM-L3-012', contentPLE],
+  ['IM-L3-013', contentAKI],
+  ['IM-L3-014', contentPLN],
+  ['IM-L3-015', contentIMT],
+  ['IM-L3-016', contentLepto],
+  ['IM-L3-017', contentFIP],
+  ['IM-L3-018', contentFLUTD],
+  ['IM-L3-019', contentCholangitis],
   // L4 Diagnostics
   ['IM-L4-001', contentEndocrineTests],
   ['IM-L4-002', contentUrinalysis],

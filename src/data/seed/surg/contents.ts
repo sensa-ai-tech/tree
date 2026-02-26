@@ -3537,6 +3537,1254 @@ Clean 手術術後繼續使用抗生素 5-7 天是最常見的不當使用，研
   created_at: now,
 };
 
+/** 微創手術原理 (Minimally Invasive Surgery) — 機轉型 */
+const contentMIS: NodeContent = {
+  id: 'CONTENT-SURG-L2-004',
+  node_id: 'SURG-L2-004',
+  version: 1,
+  summary: '微創手術（Minimally Invasive Surgery, MIS）透過小切口或自然開口操作內視鏡與專用器械，減少組織創傷。腹腔鏡（laparoscopy）利用 CO2 氣腹（12-15 mmHg）建立操作空間，結合高畫質影像系統與能量裝置進行腹腔內手術。胸腔鏡輔助手術（VATS）則用於胸腔病灶。MIS 的核心優勢為術後疼痛減輕、恢復期縮短與傷口併發症降低，但需要專門設備與較長的學習曲線。',
+  learning_objectives: [
+    '說明 CO2 氣腹的建立原理與生理效應',
+    '描述腹腔鏡 trocar 放置的標準位置與技術',
+    '比較常用能量裝置（電燒、超音波刀、雙極血管封合器）的原理與適應症',
+    '列舉 VATS 在小動物外科的應用範圍',
+    '評估微創手術相較於開放手術的優缺點與局限性',
+  ],
+  key_points: [
+    'CO2 氣腹壓力維持 8-12 mmHg（犬）或 6-8 mmHg（貓），過高壓力（> 15 mmHg）可導致靜脈回流減少與高碳酸血症',
+    'Veress needle 或 Hasson（開放式）技術建立初始通道，Hasson 技術較安全但耗時略長',
+    'Trocar 放置遵循三角配置原則：camera port + 2 working ports，間距至少 5 cm 以避免器械衝突',
+    '能量裝置選擇：單極電燒適合切割與表層止血、雙極血管封合器（LigaSure/Enseal）可封合 ≤ 7 mm 血管、超音波刀（Harmonic）同時切割與凝固且熱擴散最小',
+    'VATS 應用：肺葉切除、心包切開、胸腔腫瘤切片、持續性右主動脈弓（PRAA）矯正、乳糜胸胸管結紮',
+    'MIS 優勢：術後疼痛評分降低 50-70%、住院天數縮短、傷口感染率更低、美觀效果佳',
+    '主要限制：設備成本高（塔組 + 器械）、觸覺回饋缺失、學習曲線陡峭（需 40-60 例熟練）、緊急情況需能轉換為開放手術',
+  ],
+  body: `# 微創手術原理 (Minimally Invasive Surgery)
+
+## 一、核心概念與機轉 (Core Concept & Mechanism)
+
+
+
+### CO2 氣腹 (Pneumoperitoneum)
+微創腹腔手術的基礎是建立人工氣腹以創造操作空間：
+
+1. **氣體選擇**：CO2 為標準氣體——不助燃、血液溶解度高、代謝排出快、成本低
+2. **壓力設定**：犬 8-12 mmHg、貓 6-8 mmHg（體型越小壓力越低）
+3. **流量**：初始 1-2 L/min 緩慢充氣，維持 2-5 L/min
+
+### 生理效應
+| 系統 | 效應 | 臨床意義 |
+|------|------|---------|
+| 心血管 | 腹內壓↑ → IVC 壓迫 → 靜脈回流↓ → CO↓ | 壓力 > 15 mmHg 時明顯，需監測 MAP |
+| 呼吸 | 橫膈上推 → FRC↓ → 肺順應性↓；CO2 吸收 → PaCO2↑ | 需調整呼吸器 RR/TV，監測 ETCO2 |
+| 腎臟 | 腎靜脈壓↑ → GFR↓ → 暫時性少尿 | 術後通常自行恢復，注意輸液量 |
+| 神經 | 頭低腳高位（Trendelenburg）→ ICP↑ | 青光眼或顱內病變動物需注意 |
+
+### Trocar 放置與三角原則
+- **Camera port**：臍部或臍旁，10-12 mm
+- **Working ports**：camera 兩側，距目標器官成等腰三角形，5-12 mm
+- 器械角度以 30-60 度交叉為最佳操作範圍
+- 避免「fencing（劍擊）」效應：器械平行入射影響操作
+
+### 能量裝置比較
+| 裝置 | 原理 | 封合能力 | 熱擴散 | 適應症 |
+|------|------|---------|--------|--------|
+| 單極電燒 | 電流通過組織到接地板 | 小血管 (< 2 mm) | 大（5-10 mm） | 切割、表層止血 |
+| 雙極封合器 | 電流在鉗夾間通過 | ≤ 7 mm 血管 | 中等（2-4 mm） | 血管蒂封合、OVE |
+| 超音波刀 | 超高頻機械振動 | ≤ 5 mm 血管 | 最小（1-3 mm） | 精細解剖、實質器官切割 |
+
+### VATS (Video-Assisted Thoracoscopic Surgery)
+胸腔鏡手術透過肋間小切口（通常 3 ports）配合單肺通氣或低壓 CO2 氣胸操作：
+- 肺葉切除（周邊腫瘤、肺葉扭轉）
+- 心包切開術（心包積液引流窗）
+- PRAA 矯正（韌帶結紮）
+- 胸管結紮（乳糜胸）
+- 胸腔腫瘤或淋巴結切片
+
+## 二、臨床意義 (Clinical Significance)
+
+- **腹腔鏡 OVE（卵巢切除術）**為最常見的獸醫微創手術——術後疼痛評分較傳統開腹 OHE 降低約 50%，活動恢復時間縮短至 1-3 天
+- **腹腔鏡預防性 gastropexy**已成為高風險品種犬的標準預防 GDV 手術，可結合腹腔鏡 OVE 同時進行
+- **腹腔鏡肝臟活體切片**較超音波導引 Tru-cut 切片取得更大且更具診斷價值的樣本，且可直接加壓止血
+- **腹腔鏡隱睪摘除**可精確定位腹腔內滯留睪丸，避免傳統手術的盲目探查與大切口
+- **VATS 心包切開**較開胸創傷小、恢復快，特發性心包積液復發率低
+
+## 三、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 機器人輔助手術（da Vinci） | 精密度更高的獸醫微創手術 | 成本極高，獸醫領域僅研究報告 |
+| 單孔腹腔鏡（SILS/LESS） | 犬貓單一臍部切口完成手術 | 技術挑戰高，獸醫個案報告中 |
+| 螢光導航（ICG 近紅外線） | 術中組織灌流評估、淋巴結定位 | 人醫廣泛使用，獸醫腫瘤學開始引入 |
+| 自然孔道手術（NOTES） | 經胃或陰道完成腹腔手術 | 實驗階段，臨床應用遙遠 |
+
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 腹腔鏡 OVE vs 傳統 OHE——長期腫瘤風險 | 保留子宮是否增加子宮蓄膿或子宮腫瘤風險，長期追蹤資料有限 | Level III |
+| 犬貓最佳氣腹壓力——更低壓力是否同樣有效 | 低壓氣腹（≤ 8 mmHg）理論上血流動力學影響更小，但操作空間受限 | Level III |
+| 微創手術學習曲線的標準化評估 | 獸醫缺乏統一的 MIS 能力評估工具，多依賴主觀判斷 | Level IV |`,
+  clinical_pearl: '微創手術最大的安全原則是「低門檻轉換開放手術」——當視野不清、出血無法控制或解剖結構不確定時，立即 convert 不是失敗，而是最安全的決定。所有微創手術前都必須準備好開放手術器械包。\n\n【台灣現況】台灣獸醫微創手術近年快速發展，台大、中興等教學醫院及部分大型專科醫院已常規執行腹腔鏡 OVE、gastropexy 與腹腔臟器切片。設備成本仍是主要門檻，但二手翻新塔組與國產器械逐漸降低進入門檻。VATS 在台灣獸醫的應用仍較少，主要限於教學醫院。',
+  common_mistakes: [
+    '氣腹壓力設定過高（> 15 mmHg），導致血流動力學不穩定與高碳酸血症',
+    'Veress needle 穿刺未確認正確位置（drop test / aspiration test）即開始充氣',
+    'Trocar 放置間距不足導致器械互相干擾（fencing effect）',
+    '遇到出血時執著於微創處理而延遲轉換開放手術，增加失血與風險',
+    '術中忽略監測 ETCO2，未及時調整呼吸器設定',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'trocar-placement', type: 'annotated_image', description: '犬腹腔鏡標準 trocar 放置位置示意圖' },
+    { position: 'energy-devices', type: 'comparison_chart', description: '能量裝置比較圖表' },
+  ],
+  interactive_placeholders: [
+    { position: 'pneumoperitoneum', type: 'interactive_overlay', description: '氣腹壓力與生理效應互動模擬' },
+  ],
+  drug_api_links: [],
+  references: [
+    { type: 'textbook', citation: 'Fransson BA, Mayhew PD. Small Animal Laparoscopy and Thoracoscopy. Wiley-Blackwell, 2015.', relevance: '小動物微創手術專著' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 28: Minimally Invasive Surgery.', relevance: '微創手術原理標準教材' },
+    { type: 'journal', citation: 'Devitt CM et al. Duration, complications, stress, and pain of open ovariohysterectomy versus a simple method of laparoscopic-assisted ovariohysterectomy in dogs. J Am Vet Med Assoc 2005;227(6):921-927.', relevance: '腹腔鏡 vs 傳統 OHE 疼痛比較' },
+    { type: 'journal', citation: 'Mayhew PD et al. Comparison of three techniques for ovariectomy in dogs. Vet Surg 2012;41(5):629-634.', relevance: '不同微創卵巢切除技術比較' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 短頭種呼吸道阻塞症候群 (BOAS) — 疾病型 */
+const contentBOAS: NodeContent = {
+  id: 'CONTENT-SURG-L3-010',
+  node_id: 'SURG-L3-010',
+  version: 1,
+  summary: '短頭種呼吸道阻塞症候群（Brachycephalic Obstructive Airway Syndrome, BOAS）是短頭犬種因顱骨縮短而導致上呼吸道多處解剖異常的複合病症。主要異常包括狹窄性鼻孔（stenotic nares）、軟腭過長（elongated soft palate）、喉室外翻（everted laryngeal saccules）與氣管發育不全（hypoplastic trachea）。長期氣道阻力增加可引發繼發性變化如喉塌陷。手術矯正包含鼻翼整形術（alarplasty）、軟腭截短術（staphylectomy/folded flap palatoplasty）與喉室切除術（sacculectomy）。術後氣道監測至關重要。',
+  learning_objectives: [
+    '列舉 BOAS 的原發性與繼發性解剖異常',
+    '描述 BOAS 的功能性分級系統與嚴重度評估',
+    '說明各項矯正手術的技術原理與適應症',
+    '制定 BOAS 術後氣道監測與併發症處理計畫',
+    '辨識需要緊急氣管插管或暫時性氣管造口的情境',
+  ],
+  key_points: [
+    '好發品種：法國鬥牛犬、英國鬥牛犬、巴哥犬、北京犬、波士頓梗',
+    '原發異常（先天性）：狹窄性鼻孔、軟腭過長過厚、氣管發育不全、鼻甲骨肥大',
+    '繼發異常（慢性負壓）：喉室外翻、喉水腫、喉塌陷（分 3 級，第 3 級不可逆）',
+    '功能分級：Grade I（輕度，僅運動時喘鳴）→ Grade II（中度，日常有噪音）→ Grade III（重度，安靜時呼吸困難、發紺）',
+    '手術時機：建議 1-2 歲儘早矯正，避免繼發性變化進展',
+    '鼻翼整形（alarplasty/wedge resection）：切除鼻翼外側楔形組織擴大鼻孔通道',
+    '軟腭截短（staphylectomy）：截除超過會厭尖端的多餘軟腭組織，或採用 folded flap palatoplasty 減少軟腭厚度',
+    '術後關鍵：拔管後密切觀察 24 小時，準備再插管設備與緊急氣管造口包',
+  ],
+  body: `# 短頭種呼吸道阻塞症候群 (BOAS)
+
+## 一、病理機制 (Pathophysiology)
+
+
+
+### 概述
+BOAS 是短頭犬種因人為選育導致顱骨軸向縮短，但軟組織未等比例縮小所造成的上呼吸道阻塞症候群。過量的軟組織擠壓在縮短的骨性通道中，產生多處氣流阻力增加點。
+
+### 原發性異常
+1. **狹窄性鼻孔 (Stenotic nares)**：鼻翼軟骨內彎，鼻孔開口面積減少 50-70%
+2. **軟腭過長過厚 (Elongated/thickened soft palate)**：軟腭遠端超過會厭尖端，吸氣時被吸入喉入口
+3. **氣管發育不全 (Hypoplastic trachea)**：氣管直徑/胸廓入口比（TD/TI ratio）< 0.16（英國鬥牛犬尤其嚴重）
+4. **鼻甲骨肥大 (Aberrant nasal turbinates)**：鼻道內異常增生的鼻甲骨組織進一步阻塞鼻腔氣流
+
+### 繼發性變化
+長期上呼吸道阻力增加 → 吸氣負壓升高 → 軟組織被吸入氣道：
+- **喉室外翻 (Everted laryngeal saccules)**：第一階段繼發變化
+- **喉水腫 (Laryngeal edema)**：黏膜慢性發炎腫脹
+- **喉塌陷 (Laryngeal collapse)**：
+  - Stage I：杓狀軟骨楔突（cuneiform process）內陷
+  - Stage II：杓狀軟骨角突（corniculate process）內陷
+  - Stage III：杓狀軟骨完全塌陷，聲門幾乎閉合（**不可逆，預後差**）
+
+### BOAS 功能分級
+| 分級 | 臨床表現 | 處理建議 |
+|------|---------|---------|
+| Grade 0 | 無明顯呼吸異常 | 監測 |
+| Grade I | 運動或興奮時有喘鳴音（stridor） | 考慮早期手術 |
+| Grade II | 日常活動時有明顯呼吸噪音、運動不耐 | 建議手術 |
+| Grade III | 安靜時呼吸困難、發紺、睡眠呼吸中止 | 需要手術 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 典型臨床表現
+- 吸氣性喘鳴音（inspiratory stridor）——最典型表現
+- 打鼾（尤其睡眠時）
+- 運動不耐、運動後需長時間恢復
+- 高溫環境下呼吸困難加劇（散熱障礙）
+- 嘔吐/反流（gastrointestinal component of BOAS）——發生率 70-90%
+- 發紺（嚴重病例）
+- 暈厥（極嚴重病例）
+
+### 診斷
+1. **理學檢查**：聽診上呼吸道雜音、觀察鼻孔型態、評估呼吸模式
+2. **BOAS 功能評估**：3 分鐘運動激發試驗（exercise tolerance test）
+3. **頸部/胸部 X 光**：評估氣管直徑（TD/TI ratio）、排除氣管塌陷
+4. **CT**：鼻腔結構、鼻甲骨異常的金標準評估
+5. **喉鏡檢查（輕度鎮靜下）**：評估軟腭長度、喉室狀態、喉塌陷分級
+
+## 三、手術治療 (Surgical Treatment)
+
+### Alarplasty（鼻翼整形術）
+- **Wedge resection**：切除鼻翼外側楔形組織，4-0/5-0 可吸收線縫合
+- **Trader's technique（alar fold resection）**：切除鼻翼皺褶，效果類似
+
+### Staphylectomy（軟腭截短術）
+- 截除超過會厭尖端的軟腭組織
+- 傳統剪刀/電燒截除 vs CO2 雷射
+- **Folded flap palatoplasty**：將軟腭折疊縫合，同時減少長度與厚度，術後腫脹較少
+
+### Sacculectomy（喉室切除術）
+- 外翻喉室以杯狀鉗或剪刀切除
+- 出血通常自限，避免過度電燒導致喉水腫
+
+### 術後管理關鍵
+- 拔管後觀察 **≥ 12-24 小時**，呼吸道腫脹高峰在 6-12 小時
+- 頭高位（30 度），減少呼吸道水腫
+- [藥物:Dexamethasone] 0.1-0.2 mg/kg IV 術前/術後減少喉水腫
+- 準備再插管設備與 **緊急氣管造口包**
+- 嚴重腫脹時可考慮暫時性氣管造口（temporary tracheostomy）
+
+## 四、併發症 (Complications)
+
+### 常見術後併發症
+- **呼吸道腫脹**：最常見，術後 6-24 小時高峰
+- **吸入性肺炎**：短頭犬種本身反流風險高，術後麻醉恢復期更易發生
+- **軟腭截除過多**：鼻咽逆流（nasopharyngeal reflux），進食時食物從鼻腔流出
+- **軟腭截除不足**：症狀改善不明顯，可能需二次手術
+- **喉痙攣**：拔管時刺激可誘發，需立即 propofol 加深或再插管
+
+## 五、預後 (Prognosis)
+
+- 早期手術（1-2 歲）矯正原發異常：預後良好，85-95% 飼主滿意度
+- 已有 Stage II 喉塌陷：預後中等偏佳，手術仍有顯著改善
+- Stage III 喉塌陷：預後差，可能需永久性氣管造口或考慮安樂死
+- 氣管發育不全（TD/TI < 0.12）為獨立預後不良因子
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 睡眠多導圖 (Polysomnography) | 犬 BOAS 嚴重度的客觀量化評估 | 人醫 OSA 診斷標準，獸醫研究中 |
+| 藥物誘導睡眠內視鏡 (DISE) | 動態評估犬軟腭與喉部阻塞位點 | 人醫 DISE 廣泛使用，獸醫已有改良應用 |
+| 3D 列印氣道模型 | 術前規劃與飼主衛教 | 人醫已常規，獸醫教學應用開始 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Folded flap palatoplasty vs 傳統 staphylectomy 長期療效 | FFP 理論上減少厚度+長度效果更佳，但大樣本長期比較研究有限 | Level III |
+| 鼻甲骨雷射消融（LATE）的效益 | Cambridge BOAS 研究團隊推薦用於嚴重鼻腔阻塞，但侵入性與成本較高 | Level III |
+| 短頭犬種的繁殖倫理 | 育種選擇應以呼吸功能而非外觀為優先，但品種標準改革緩慢 | Expert opinion |`,
+  clinical_pearl: 'BOAS 手術最常見的失誤是「做得太少」而非「做得太多」。軟腭截短術中，寧可稍多截除 1-2 mm（但不超過會厭尾端），也不要保留過長——截除不足的病例症狀改善不明顯，需要二次手術。此外，術前務必告知飼主 BOAS 是「改善」而非「治癒」——氣管發育不全無法手術改變。\n\n【台灣流行病學】法國鬥牛犬在台灣極受歡迎，連續多年位居註冊犬種前五名，BOAS 就診量持續上升。台灣夏季高溫高濕環境對短頭犬種尤為危險——散熱障礙加上環境溫度高，中暑風險遠高於溫帶國家。建議台灣短頭犬飼主夏季避免戶外活動、維持室內空調環境。',
+  common_mistakes: [
+    '僅做鼻翼整形而忽略軟腭過長——需同時評估並矯正所有原發異常',
+    '軟腭截短不足，術後症狀改善不明顯',
+    '術後過早拔管或拔管後未充分觀察，錯過呼吸道腫脹高峰',
+    '未準備緊急氣管造口設備——BOAS 術後呼吸道危機可在數分鐘內致命',
+    '忽略 BOAS 的消化道症狀（反流、嘔吐），未進行相關評估與治療',
+  ],
+  disease_data: {
+    signalment: '好發於短頭犬種：法國鬥牛犬、英國鬥牛犬、巴哥犬、北京犬、波士頓梗、西施犬、拳師犬。法國鬥牛犬與英國鬥牛犬最嚴重。發病年齡通常 1-4 歲開始出現臨床症狀，但解剖異常自出生即存在。雄犬症狀可能略嚴重（體重較大、軟組織量更多）。肥胖顯著加重症狀。',
+    etiology: '先天性顱骨軸向縮短（人為選育所致），軟組織未等比例縮小導致上呼吸道多處阻塞。原發異常：狹窄性鼻孔（鼻翼軟骨發育不良）、軟腭過長過厚（延伸超過會厭尖端）、鼻甲骨肥大（aberrant turbinates）、氣管發育不全（軟骨環發育不全）。',
+    pathogenesis: '鼻孔狹窄+鼻甲骨肥大+軟腭過長 → 上呼吸道阻力↑ → 吸氣時產生過大負壓 → 軟組織被吸入氣道 → 喉室外翻（Stage I）→ 持續負壓 → 喉水腫 → 杓狀軟骨內陷（Stage II-III 喉塌陷）→ 氣道進一步狹窄 → 惡性循環。併發消化道問題：持續吸氣負壓 → 食道下括約肌功能障礙 → 胃食道反流 → 吸入性肺炎風險。',
+    clinical_signs: [
+      { sign: '吸氣性喘鳴 (Inspiratory stridor)', category: 'primary', description: '最典型表現，運動或興奮時加劇，嚴重者安靜時亦可聞及' },
+      { sign: '打鼾 (Stertor/Snoring)', category: 'primary', description: '睡眠時明顯的鼻咽部噪音，短頭犬飼主常誤認為「正常」' },
+      { sign: '運動不耐 (Exercise intolerance)', category: 'primary', description: '短距離運動即喘，需長時間恢復，高溫環境下加劇' },
+      { sign: '嘔吐/反流', category: 'secondary', description: '70-90% BOAS 犬有消化道症狀，與食道功能障礙相關' },
+      { sign: '發紺 (Cyanosis)', category: 'secondary', description: '嚴重氣道阻塞時黏膜發紫，提示需緊急介入' },
+      { sign: '暈厥 (Syncope)', category: 'secondary', description: '極嚴重病例因低血氧而暈厥，常在運動或高度興奮時發生' },
+    ],
+    staging: {
+      system: 'BOAS Functional Grading',
+      stages: [
+        'Grade 0：無呼吸異常',
+        'Grade I：運動/興奮時輕度喘鳴，安靜時正常',
+        'Grade II：日常活動時呼吸噪音明顯，中度運動不耐',
+        'Grade III：安靜時呼吸困難、發紺、睡眠呼吸中止',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '氣管塌陷 (Tracheal collapse)', key_differentiator: '好發小型犬而非短頭犬，呈陣發性「鵝鳴」咳嗽，X 光/透視可見氣管動態塌陷' },
+      { condition: '喉麻痺 (Laryngeal paralysis)', key_differentiator: '好發老年大型犬，吸氣性喘鳴伴聲音改變，喉鏡可見杓狀軟骨運動減弱或消失' },
+      { condition: '喉部腫瘤', key_differentiator: '進行性惡化，喉鏡可見腫塊，組織學確診' },
+      { condition: '鼻腔異物', key_differentiator: '急性發作，單側噴嚏/鼻涕，鼻鏡或 CT 可見異物' },
+    ],
+    diagnostic_workup: '1. 理學檢查：視診鼻孔型態、聽診上呼吸道雜音 → 2. 頸部/胸部 X 光：評估氣管直徑（TD/TI ratio < 0.16 提示發育不全）→ 3. BOAS 功能評估（3 分鐘步行測試 + 呼吸模式評分）→ 4. CT（評估鼻腔結構、鼻甲骨異常——金標準）→ 5. 輕度鎮靜下喉鏡檢查：評估軟腭長度、喉室狀態、喉塌陷分級',
+    treatment_protocol: '手術矯正為主要治療。1. Alarplasty（鼻翼整形）：wedge resection 擴大鼻孔 → 2. Staphylectomy（軟腭截短術）或 folded flap palatoplasty：截除/折疊超過會厭尖端的軟腭 → 3. Sacculectomy（喉室切除）：外翻喉室如存在則切除。術後：[藥物:Dexamethasone] 0.1-0.2 mg/kg IV 減少喉水腫、頭高位、氧氣支持、12-24 小時呼吸道密切觀察。內科輔助：[藥物:Omeprazole] 1 mg/kg PO BID 處理反流、體重管理。',
+    prognosis: '早期手術（1-2 歲）矯正原發異常，85-95% 飼主滿意度報告症狀顯著改善。已有 Stage I-II 喉塌陷者手術仍可改善但效果不如單純原發異常矯正。Stage III 喉塌陷預後差，可能需永久性氣管造口。氣管嚴重發育不全（TD/TI < 0.12）為獨立預後不良因子。英國鬥牛犬整體預後較法國鬥牛犬差（氣管更窄、體型更大）。',
+    monitoring: '術後 0-24 小時：持續呼吸監測（呼吸頻率、SpO2、黏膜顏色），拔管後每 15-30 分鐘評估。術後 1-2 週回診：傷口癒合、呼吸改善評估。術後 1-3 個月：功能性評估（運動耐受度、飼主問卷）。長期：體重控制、避免高溫環境、年度評估。',
+    owner_communication: '向飼主說明：(1) BOAS 是改善而非治癒——手術可顯著改善呼吸但解剖限制（尤其氣管發育不全）無法完全改變 (2) 術後 24 小時為最危險期，可能需要再插管或緊急氣管造口 (3) 體重管理極為重要——肥胖顯著加重症狀 (4) 高溫環境（台灣夏季）需特別注意——避免正午散步、提供空調環境 (5) 手術建議儘早（1-2 歲），延遲治療導致繼發性變化（喉塌陷）進展後手術效果下降。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '鼻孔段落', type: 'annotated_image', description: '正常犬 vs 狹窄性鼻孔比較照片' },
+    { position: '喉鏡段落', type: 'annotated_image', description: '喉鏡下軟腭過長與喉室外翻影像' },
+    { position: '手術段落', type: 'flowchart', description: 'BOAS 手術決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '分級段落', type: 'interactive_overlay', description: 'BOAS 功能分級互動評估工具' },
+  ],
+  drug_api_links: ['Dexamethasone', 'Omeprazole'],
+  references: [
+    { type: 'journal', citation: 'Liu NC et al. Whole-body barometric plethysmography characterizes upper airway obstruction in 3 brachycephalic breeds of dogs. J Vet Intern Med 2016;30(3):853-865.', relevance: 'BOAS 功能評估方法學' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 31: Surgery of the Upper Respiratory System.', relevance: 'BOAS 手術技術標準教材' },
+    { type: 'journal', citation: 'Findji L, Dupré G. Folded flap palatoplasty for treatment of elongated soft palates in 55 dogs. Wien Tierarztl Monatsschr 2008;95:56-63.', relevance: 'Folded flap 技術原始研究' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 29: Surgery of the Upper Respiratory System.', relevance: 'BOAS 診斷與手術概述' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 門體分流 (Portosystemic Shunt, PSS) — 疾病型 */
+const contentPSS: NodeContent = {
+  id: 'CONTENT-SURG-L3-011',
+  node_id: 'SURG-L3-011',
+  version: 1,
+  summary: '門體分流（Portosystemic Shunt, PSS）是門脈血液繞過肝臟直接匯入全身循環的血管異常。先天性 PSS 分為肝外型（好發小型犬與貓，通常單一血管）與肝內型（好發大型犬，胚胎靜脈導管未閉合）。門脈血中的氨、內毒素等物質未經肝臟代謝直接進入全身循環，導致肝性腦病（HE）、尿酸銨結石與發育遲緩。診斷依賴餐前/餐後膽汁酸與 CT 血管造影。手術治療以 ameroid constrictor 或 cellophane banding 逐步閉合分流血管為主。',
+  learning_objectives: [
+    '區分先天性（單一肝外/肝內）與後天性（多發性）門體分流的病理機轉',
+    '描述肝性腦病的神經毒素機轉與臨床分級',
+    '運用膽汁酸測試與 CT 血管造影進行 PSS 診斷',
+    '比較 ameroid constrictor、cellophane banding 與急性結紮的手術原理與風險',
+    '制定 PSS 術後監測與併發症處理計畫',
+  ],
+  key_points: [
+    '先天性肝外型 PSS：好發小型犬（約克夏、馬爾濟斯、迷你雪納瑞）與貓，通常為單一血管',
+    '先天性肝內型 PSS：好發大型犬（愛爾蘭獵狼犬、金毛獵犬、拉布拉多），源自胎兒靜脈導管未閉',
+    '後天性多發 PSS：續發於門脈高壓（肝纖維化/硬化），多條細小側枝循環，不適合手術',
+    '肝性腦病（HE）機轉：腸道細菌產生 NH3 → 未經肝臟 urea cycle 代謝 → 穿過 BBB → 星狀膠質細胞腫脹 → 腦水腫',
+    '膽汁酸測試：餐前正常 / 餐後顯著升高（> 100 μmol/L）高度提示 PSS',
+    'CT 血管造影（CTA）為金標準影像診斷——定位分流血管走向與型態',
+    'Ameroid constrictor：內層 casein 吸水膨脹，2-5 週逐步閉合分流血管',
+    'Cellophane banding：引發血管外纖維化反應，4-8 週逐步狹窄血管',
+    '急性完全結紮風險：門脈高壓（portal hypertension）→ 腸道充血 → 致命性低血壓',
+  ],
+  body: `# 門體分流 (Portosystemic Shunt, PSS)
+
+## 一、病理機制 (Pathophysiology)
+
+
+
+### 概述
+門體分流（PSS）是門脈系統與全身靜脈循環之間存在異常血管通道，使腸道吸收的物質（氨、吲哚、硫醇、短鏈脂肪酸、細菌產物）繞過肝臟解毒直接進入全身循環。
+
+### 分類
+| 類型 | 先天性肝外 | 先天性肝內 | 後天性多發 |
+|------|----------|----------|----------|
+| 好發動物 | 小型犬、貓 | 大型犬 | 任何品種 |
+| 血管數量 | 單一 | 單一（靜脈導管未閉） | 多條側枝 |
+| 機轉 | 胚胎卵黃靜脈發育異常 | 胎兒 ductus venosus 出生後未閉合 | 門脈高壓代償 |
+| 手術適應性 | 佳 | 可行但技術難度高 | 不適合手術 |
+
+### 肝內型亞分類
+- **左分裂型 (Left divisional)**：最常見，源自 ductus venosus，位於肝左葉
+- **右分裂型 (Right divisional)**：較少見，位於肝右葉
+- **中央型 (Central)**：最少見，複雜度最高
+
+### 病理生理
+門脈血繞過肝臟 → 多重後果：
+1. **肝臟萎縮**：門脈血流是肝細胞生長因子的主要來源，缺乏門脈灌流 → 肝臟發育不良
+2. **肝性腦病 (HE)**：NH3 與其他神經毒素未代謝 → 穿過 BBB → 影響神經傳導
+3. **尿酸銨結石**：肝臟無法將尿酸轉化為尿囊素，血中尿酸↑ → 腎臟/膀胱結石
+4. **凝血功能障礙**：肝臟合成凝血因子不足
+5. **低白蛋白血症**：肝臟蛋白合成功能下降
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+[圖片:PSS 動物典型體型——體型矮小、發育不良]
+
+### 典型臨床表現
+- 發育遲緩、體型明顯小於同窩幼犬
+- 肝性腦病症狀：餐後呆滯、漫無目的行走、撞牆、壓頭（head pressing）、流涎、暫時性失明、癲癇發作
+- 多飲多尿（PU/PD）
+- 嘔吐、腹瀉、食慾不振
+- 泌尿道症狀：血尿、頻尿（尿酸銨結石）
+- 麻醉後恢復延遲
+- 貓特有：金銅色虹膜（copper-colored irises）
+
+### 診斷流程
+1. **基礎血液學**：微小紅血球症（MCV↓）、BUN 偏低、低白蛋白、肝指數可能正常或輕度升高
+2. **餐前/餐後膽汁酸**：餐前可能正常，餐後 > 100 μmol/L 高度提示
+3. **血氨 (NH3)**：升高（但受採樣與保存影響大）
+4. **腹部超音波**：可見異常血管、肝臟偏小、腎臟偏大（腎臟代償排毒）
+5. **CT 血管造影 (CTA)**：金標準——精確定位分流血管走向、型態與數量
+
+## 三、治療策略 (Treatment)
+
+### 手術治療
+#### Ameroid Constrictor
+- 不鏽鋼環內含 casein 層，植入後吸收體液膨脹
+- **2-5 週** 逐步閉合分流血管
+- 優勢：避免急性門脈高壓
+- 風險：閉合速度無法完全控制，偶有急性血栓形成
+
+#### Cellophane Banding（薄膜纏繞術）
+- 以 cellophane strip 包繞分流血管
+- 引發血管外纖維化反應 → **4-8 週** 逐步狹窄
+- 優勢：閉合速度更緩、可調節鬆緊
+- 近年證據顯示 cellophane banding 長期效果與 ameroid 相當
+
+#### 急性結紮
+- 術中利用門脈壓力監測決定結紮程度
+- 門脈壓力上升 > 10 cmH2O 或 > 20 cmH2O 絕對值時需停止結紮
+- 風險最高——門脈高壓 → 腸道充血 → 致命性休克
+
+### 內科管理
+適用於手術前穩定化或不適合手術的病例：
+- [藥物:Lactulose] 0.5 mL/kg PO TID：酸化腸道環境，將 NH3 轉化為 NH4+（不被吸收）
+- 低蛋白飲食：減少腸道氨生成
+- [藥物:Metronidazole] 7.5 mg/kg PO BID 或 [藥物:Amoxicillin] 20 mg/kg PO BID：抑制產氨腸道細菌
+
+## 四、併發症與監控 (Complications & Monitoring)
+
+### 術後併發症
+- **術後癲癇**：5-18% 肝外 PSS 術後發生，可能致命，機轉不明（benzodiazepine-like substances 理論）
+- **門脈高壓**：急性閉合過快導致，監測腸色澤、胰臟充血
+- **分流血管血栓**：ameroid 放置後急性血栓形成
+- **持續性分流**：部分閉合不完全，需長期內科管理
+
+### 術後監控
+| 時間點 | 監測項目 | 目標 |
+|--------|---------|------|
+| 術後 0-72 hr | 神經狀態（癲癇警戒）、體溫、血糖 | 無癲癇、正常體溫、血糖穩定 |
+| 術後 1-2 週 | 食慾、體重、肝功能 | 食慾恢復、開始增重 |
+| 術後 4-8 週 | 餐後膽汁酸、腹部超音波 | 膽汁酸下降趨勢、肝臟體積增加 |
+| 術後 3 個月 | CTA 或超音波評估分流閉合 | 分流完全閉合或顯著狹窄 |
+| 長期 | 年度膽汁酸追蹤 | 膽汁酸正常化 |
+
+## 五、預後 (Prognosis)
+
+- 先天性肝外單一 PSS 手術預後良好——85-90% 臨床症狀顯著改善
+- 先天性肝內 PSS 手術技術難度較高，預後中等偏佳
+- 術後癲癇死亡率 20-50%，為最嚴重併發症
+- 單純內科管理：約 33% 犬可存活 > 2 年，但生活品質受限
+- 後天性多發 PSS 預後差——需治療基礎肝臟疾病
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 經頸靜脈肝內門體分流術（TIPS）逆向概念 | 獸醫理解門脈血流動力學 | 人醫建立分流；獸醫相反需閉合分流 |
+| 血氨即時監測 (Point-of-care ammonia) | 犬貓 HE 嚴重度即時評估 | 攜帶型血氨機已可用但穩定性仍待改善 |
+| 肝臟彈性成像 (Fibroscan) | PSS 相關肝纖維化的非侵入評估 | 人醫常規，獸醫研究驗證中 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Ameroid vs Cellophane banding 的長期療效比較 | 多數回顧性研究顯示臨床結果相當，缺乏前瞻性 RCT | Level III |
+| 術後癲癇的預防——術前 levetiracetam 是否有效 | 部分研究建議術前預防性給予 levetiracetam，但證據不一致 | Level III |
+| 貓 PSS 的最佳手術方式 | 貓肝外 PSS ameroid 放置風險較高（血管較細），cellophane banding 可能更安全 | Level IV |`,
+  clinical_pearl: 'PSS 術後最危險的併發症是癲癇——通常發生在術後 24-72 小時，一旦發生死亡率高達 20-50%。目前機轉不明，但可能與長期暴露於 benzodiazepine-like substances 的神經元突然失去這些物質有關。建議術後 72 小時內密切監測神經狀態，部分外科醫師會預防性給予 [藥物:Levetiracetam]。\n\n【台灣流行病學】台灣小型犬飼養比例極高，約克夏、馬爾濟斯、迷你雪納瑞均為常見品種，PSS 臨床病例並不罕見。臨床上常因「幼犬發育遲緩」或「麻醉後恢復延遲」而被發現。台灣各大教學醫院已具備 CT 血管造影與 ameroid/cellophane 手術能力，建議疑似病例及早轉診。',
+  common_mistakes: [
+    '將 HE 症狀（呆滯、漫無目的走動）誤診為行為問題或原發性癲癇',
+    '僅依賴基礎肝指數（ALT/ALP）正常而排除 PSS——PSS 肝指數可能完全正常',
+    '未做餐前/餐後膽汁酸配對測試，僅測空腹膽汁酸可能漏診',
+    '急性完全結紮分流血管導致致命性門脈高壓',
+    '術後未監測癲癇——錯過最佳介入時機',
+  ],
+  disease_data: {
+    signalment: '先天性肝外型：好發小型犬（約克夏梗、馬爾濟斯、迷你雪納瑞、凱恩梗、哈瓦那犬）與貓。先天性肝內型：好發大型犬（愛爾蘭獵狼犬、金毛獵犬、拉布拉多、澳洲牧牛犬）。通常在 1 歲以內因發育遲緩或 HE 症狀被發現。無明顯性別偏向。',
+    etiology: '先天性 PSS：胚胎期卵黃靜脈或臍靜脈發育異常導致異常血管通道持續存在。肝外型為卵黃靜脈系統異常，肝內型為 ductus venosus（胎兒分流正常靜脈循環）出生後未閉合。後天性 PSS：門脈高壓（慢性肝炎、肝纖維化、肝硬化）導致門脈壓力升高，被動開啟多條側枝循環通道。',
+    pathogenesis: '門脈血繞過肝臟 → (1) 肝臟缺乏門脈營養因子 → 肝臟萎縮、發育不良 → 代謝功能下降 (2) 腸道毒素（NH3、吲哚、硫醇）直接進入全身循環 → 穿過 BBB → 星狀膠質細胞谷氨醯胺合成酶將 NH3+glutamate → glutamine → 細胞滲透壓↑ → 腦水腫（肝性腦病）(3) 尿酸未經肝臟轉化為尿囊素 → 高尿酸血症 → 尿酸銨結石',
+    clinical_signs: [
+      { sign: '肝性腦病 (HE)', category: 'primary', description: '餐後加劇的神經症狀：呆滯、漫無目的走動、撞牆、壓頭、流涎、暫時性失明、嚴重時癲癇' },
+      { sign: '發育遲緩', category: 'primary', description: '體型明顯小於同窩幼犬，體重不增或增長緩慢' },
+      { sign: '多飲多尿 (PU/PD)', category: 'primary', description: '門脈血中的物質影響腎臟濃縮功能' },
+      { sign: '泌尿道症狀', category: 'secondary', description: '尿酸銨結石導致血尿、頻尿、排尿困難' },
+      { sign: '嘔吐/腹瀉', category: 'secondary', description: '非特異性消化道症狀，可能與毒素刺激相關' },
+      { sign: '麻醉恢復延遲', category: 'secondary', description: '肝臟藥物代謝能力下降，常在其他手術（如絕育）時意外發現' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '原發性癲癇', key_differentiator: '無餐後加重趨勢，膽汁酸正常，無發育遲緩' },
+      { condition: '先天性腎發育不良', key_differentiator: '以氮質血症與等比重尿為主，超音波見腎臟小且不規則' },
+      { condition: '肝微血管發育不良 (MVD)', key_differentiator: '膽汁酸輕度升高但影像無可見分流血管，需肝臟活體切片確診' },
+      { condition: '先天性尿素循環異常', key_differentiator: '極罕見，高氨血症但膽汁酸正常，影像無分流' },
+    ],
+    diagnostic_workup: '1. CBC/生化：微小紅血球症（MCV↓）、BUN 偏低、低白蛋白、肝指數可能正常 → 2. 尿液分析：尿酸銨結晶 → 3. 餐前/餐後膽汁酸配對測試（餐後 > 100 μmol/L 高度提示）→ 4. 血氨（升高但不穩定）→ 5. 腹部超音波：肝臟偏小、腎臟代償性增大、可能見到異常血管 → 6. CT 血管造影 (CTA)：金標準定位分流血管',
+    treatment_protocol: '手術治療：(1) Ameroid constrictor 放置——適用於肝外型，2-5 週逐步閉合 (2) Cellophane banding——適用於肝外型與部分肝內型，4-8 週逐步閉合 (3) 急性部分結紮——需術中門脈壓力監測。術前內科穩定化：[藥物:Lactulose] 0.5 mL/kg PO TID + 低蛋白飲食 + [藥物:Metronidazole] 7.5 mg/kg PO BID。術後：持續內科管理 4-8 週直到分流閉合。',
+    prognosis: '先天性肝外單一 PSS ameroid/cellophane 手術：85-90% 臨床改善顯著，60-80% 膽汁酸正常化。術後癲癇發生率 5-18%，死亡率 20-50%。先天性肝內 PSS 手術技術更複雜，預後中等。後天性多發 PSS：預後取決於基礎肝臟疾病，手術不適合。純內科管理的先天性 PSS：約 33% 存活 > 2 年但生活品質受限。',
+    monitoring: '術後 0-72 小時：密切監測神經狀態（癲癇警戒）、體溫、血糖、血壓。術後 1-2 週：食慾、體重、肝功能、腎功能。術後 4-8 週：餐後膽汁酸、腹部超音波評估肝臟體積變化。術後 3 個月：CTA 或超音波確認分流閉合程度。長期：每 6 個月膽汁酸追蹤直到正常化，之後年度追蹤。',
+    owner_communication: '向飼主說明：(1) PSS 是先天性血管異常，不是傳染病 (2) 手術目的是逐步閉合異常血管，讓血液重新流經肝臟 (3) 最嚴重併發症是術後癲癇（5-18%），需住院 72 小時密切監測 (4) 術前需 2-4 週內科管理穩定神經症狀 (5) 手術後大部分動物臨床症狀顯著改善，但可能需要持續低蛋白飲食與定期追蹤 (6) 少數病例分流未完全閉合，需長期內科管理。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分類段落', type: 'annotated_image', description: '肝外型 vs 肝內型 PSS 解剖示意圖' },
+    { position: '診斷段落', type: 'annotated_image', description: 'CT 血管造影 PSS 影像標註' },
+    { position: '手術段落', type: 'flowchart', description: 'PSS 治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '病理生理段落', type: 'decision_tree', description: 'PSS 分類與治療選擇互動決策樹' },
+  ],
+  drug_api_links: ['Lactulose', 'Metronidazole', 'Amoxicillin', 'Levetiracetam'],
+  references: [
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 23: Portosystemic Shunts.', relevance: 'PSS 手術標準教材' },
+    { type: 'journal', citation: 'Berent AC, Tobias KM. Portosystemic vascular anomalies. Vet Clin North Am Small Anim Pract 2009;39(3):513-541.', relevance: 'PSS 綜合回顧' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 21: Surgery of the Liver.', relevance: 'PSS 診斷與手術概述' },
+    { type: 'journal', citation: 'Falls EL et al. Outcome after surgical ameroid ring constrictor placement for single congenital extrahepatic portosystemic shunts in dogs: Portal pressure, portal scintigraphy, and bile acids. Vet Surg 2013;42(8):911-919.', relevance: 'Ameroid 手術預後研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 喉麻痺 (Laryngeal Paralysis) — 疾病型 */
+const contentLarPar: NodeContent = {
+  id: 'CONTENT-SURG-L3-012',
+  node_id: 'SURG-L3-012',
+  version: 1,
+  summary: '喉麻痺（Laryngeal Paralysis, LP）是杓狀軟骨因喉返神經功能障礙無法正常外展，導致吸氣時聲門開口不足的上呼吸道阻塞疾病。最常見的形式為老年大型犬的「老年發作性喉麻痺多發神經病變」（GOLPP, Geriatric Onset Laryngeal Paralysis Polyneuropathy），認為 LP 為全身性多發神經病變的早期表現。典型表現為吸氣性喘鳴、聲音改變與運動不耐。確診需輕度鎮靜下喉鏡檢查確認杓狀軟骨運動。手術以單側杓狀軟骨側向固定術（unilateral arytenoid lateralization, tie-back）為標準治療。吸入性肺炎為最重要的術後併發症。',
+  learning_objectives: [
+    '描述喉返神經解剖路徑與其病變導致杓狀軟骨麻痺的機轉',
+    '說明 GOLPP 的概念及其與全身性多發神經病變的關係',
+    '列舉喉鏡檢查在 LP 診斷中的關鍵判讀要點',
+    '描述單側杓狀軟骨側向固定術（tie-back）的原理與技術要點',
+    '制定 LP 術後吸入性肺炎的預防與監測策略',
+  ],
+  key_points: [
+    '好發動物：老年大型犬（拉布拉多 > 10 歲最常見）、聖伯納、愛爾蘭塞特犬',
+    'GOLPP 概念：LP 非單純喉部疾病，而是全身性多發神經退化的最早臨床表現',
+    'GOLPP 進展：喉麻痺 → 後肢肌力下降 → 食道功能障礙 → 廣泛性神經退化（數月至數年）',
+    '確診：輕度鎮靜下喉鏡檢查——正常犬吸氣時杓狀軟骨應外展開啟聲門；LP 犬杓狀軟骨呈現順應性運動（paradoxical movement）或完全不動',
+    '鎮靜藥物選擇至關重要：doxapram 可刺激呼吸增加杓狀軟骨運動幅度，協助判斷；過度鎮靜抑制喉部功能導致偽陽性',
+    '手術：unilateral（左側）arytenoid lateralization——以縫線將杓狀軟骨固定在外展位置',
+    '嚴禁雙側手術——雙側側向固定導致聲門過度開放，吸入性肺炎風險急劇上升',
+    '吸入性肺炎為術後最重要併發症——終生風險 10-30%，為主要長期死因',
+  ],
+  body: `# 喉麻痺 (Laryngeal Paralysis)
+
+## 一、病理機制 (Pathophysiology)
+
+
+
+### 概述
+喉的開閉由喉返神經（recurrent laryngeal nerve）支配的內喉肌控制。杓狀軟骨的外展（abduction）由背側環杓肌（cricoarytenoideus dorsalis, CAD）負責，是唯一的聲門開啟肌。當喉返神經退化或受損，CAD 去神經化後萎縮，杓狀軟骨無法在吸氣時外展，導致吸氣性上呼吸道阻塞。
+
+### GOLPP (Geriatric Onset Laryngeal Paralysis Polyneuropathy)
+近年研究發現老年犬 LP 並非單純的喉部局部疾病：
+- 是全身性退行性多發神經病變（polyneuropathy）的早期臨床表現
+- 喉返神經為體內最長的周邊神經之一（尤其左側），因此最早出現退化症狀
+- 進展時序：**喉返神經退化 → 後肢本體感覺下降 → 食道蠕動減弱 → 廣泛肌力下降**
+- 類似人類的 ALS（漸凍症）但進展速度慢得多
+
+### 病因分類
+| 類型 | 說明 | 佔比 |
+|------|------|------|
+| 後天性特發性 (GOLPP) | 老年大型犬退行性多發神經病變 | > 90% |
+| 先天性 | Bouvier des Flandres、大麥町（3-6 月齡發病） | < 5% |
+| 醫源性 | 甲狀腺/頸部手術損傷喉返神經 | 罕見 |
+| 腫瘤性 | 頸部/縱膈腫瘤壓迫或浸潤喉返神經 | 罕見 |
+| 甲狀腺低下相關 | 爭議性——因果關係不確定 | 不確定 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+- **吸氣性喘鳴 (Inspiratory stridor)**：最典型，運動或興奮時加劇
+- **聲音改變**：吠叫聲嘶啞或變弱
+- **運動不耐**：高溫環境下尤其明顯（喘氣散熱效率下降）
+- **喘氣時吸氣延長且費力**
+- 嚴重病例：發紺、呼吸困難危機（急性上呼吸道阻塞）
+- GOLPP 後期：後肢無力、步態異常、巨食道/反流
+
+### 診斷
+#### 喉鏡檢查（輕度鎮靜下）
+- 鎮靜方案：低劑量 propofol（至下頷鬆弛但保留自主呼吸與吞嚥反射）
+- 正常：吸氣時雙側杓狀軟骨同步外展
+- LP：杓狀軟骨無主動外展，呈順應性運動（被吸氣負壓被動拉向中線）
+- 輔助：[藥物:Doxapram] 1-2 mg/kg IV 刺激呼吸加深以增強杓狀軟骨運動觀察
+
+#### 其他檢查
+1. 頸部/胸部 X 光：排除腫瘤、評估有無吸入性肺炎
+2. 甲狀腺功能（T4/fT4/TSH）：排除甲低（雖因果不確定）
+3. 胸部 X 光：評估食道擴張（megaesophagus）
+4. EMG（研究場域）：確認多發神經病變範圍
+
+## 三、手術治療 (Surgical Treatment)
+
+### 單側杓狀軟骨側向固定術 (Unilateral Arytenoid Lateralization, "Tie-Back")
+- 標準術式：**左側** 杓狀軟骨側向固定
+- 經左側頸部切口暴露甲狀軟骨與杓狀軟骨
+- 切斷環杓關節背側關節囊
+- 以不可吸收縫線（2-0 nylon 或 polypropylene）連接杓狀軟骨肌突（muscular process）至環狀軟骨
+- 固定程度：杓狀軟骨外展至聲門面積正常的 **50-60%**（非完全開放！）
+- 助手同時經口觀察聲門開度以指引縫線拉緊程度
+
+### 關鍵原則
+- **僅做單側**——雙側側向固定導致聲門保護功能喪失，吸入性肺炎風險不可接受
+- 外展程度適中——過度開放增加吸入風險，不足則改善不明顯
+- 術中喉鏡確認適當開度後再打結
+
+### 術後管理
+- 術後 24 小時觀察呼吸改善情況
+- 進食前確認吞嚥功能：先少量水測試
+- 餐食改為泥狀/球狀（減少碎屑吸入風險）
+- 頭高位進食，進食後維持 10-15 分鐘
+- 避免游泳（終生）——水可經開放的聲門進入氣管
+
+## 四、併發症 (Complications)
+
+### 吸入性肺炎——最重要併發症
+- 終生發生率 **10-30%**
+- 機轉：單側杓狀軟骨固定在開放位置 → 該側聲門關閉不完全 → 食物/液體可能進入氣管
+- 預防：餐食型態改變、避免游泳、控制反流
+- 治療：廣效性抗生素（[藥物:Amoxicillin-Clavulanate] + [藥物:Enrofloxacin]）、氧氣支持
+
+### 其他併發症
+- 手術失敗（縫線鬆脫）：症狀未改善，需再次手術
+- 喉軟骨骨折（縫線拉穿）：手術中過度拉緊
+- 術後喉痙攣：罕見但可致命
+- 漿液腫（seroma）：頸部手術部位
+
+## 五、預後 (Prognosis)
+
+- Tie-back 手術整體效果良好——**90%+ 飼主報告呼吸改善**
+- 中位存活時間：術後約 1-2 年（但多數死於 GOLPP 進展或無關疾病）
+- 吸入性肺炎為長期主要死因
+- GOLPP 進展導致的後肢無力/巨食道最終可能影響生活品質
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 喉部肌電圖 (Laryngeal EMG) | 犬 LP 嚴重度量化與手術預後預測 | 人醫聲帶麻痺標準評估，獸醫研究場域 |
+| 喉神經再支配手術 (Reinnervation) | 犬 LP 的病因治療而非症狀緩解 | 人醫有報告，獸醫實驗階段 |
+| 喉步調器 (Laryngeal pacemaker) | 電刺激杓狀軟骨外展 | 人醫實驗中，獸醫為動物模型 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 甲狀腺低下是否為 LP 的真正病因 | 多數學者認為僅為巧合共病（老年大型犬兩者皆常見），甲狀腺補充後 LP 改善的可靠證據不足 | Level IV |
+| Tie-back 的最佳外展程度 | 缺乏客觀量化標準，多依賴術者經驗判斷 | Level IV |
+| GOLPP 犬的手術時機——早期介入 vs 等待症狀惡化 | 早期手術呼吸改善佳但暴露於吸入性肺炎風險更長時間，最佳時機仍有爭議 | Level IV |`,
+  clinical_pearl: 'LP 喉鏡檢查最容易犯的錯誤是「鎮靜過深」導致偽陽性——正常犬在深度鎮靜下杓狀軟骨運動也會顯著減弱。關鍵是維持「剛好足夠」的鎮靜深度：下頷放鬆、張口無抵抗、但仍保有自主呼吸與吞嚥反射。Propofol 滴定式給藥是目前最常用方案。Doxapram 1-2 mg/kg IV 可刺激呼吸加深以協助判讀。\n\n【台灣流行病學】拉布拉多與黃金獵犬為台灣最常見大型犬種，老年 LP（GOLPP）在臨床上並不罕見。台灣夏季高溫環境下 LP 犬的呼吸困難危機風險增加——喘氣效率下降加上高溫，容易誘發急性上呼吸道阻塞。建議飼主夏季限制戶外活動時間並維持涼爽環境。',
+  common_mistakes: [
+    '喉鏡檢查鎮靜過深導致偽陽性——正常犬深度鎮靜下杓狀軟骨運動也會減弱',
+    '將 LP 的吸氣性喘鳴誤診為氣管塌陷的呼氣性咳嗽',
+    '執行雙側 tie-back 手術——吸入性肺炎風險不可接受',
+    '術後忽略飲食管理衛教——未改變餐食型態與進食姿勢導致吸入性肺炎',
+    '僅關注喉部症狀而忽略 GOLPP 全身性神經退化的監測',
+  ],
+  disease_data: {
+    signalment: '後天性特發性（GOLPP）：好發老年大型犬（> 10 歲），拉布拉多為最常見品種，其次為黃金獵犬、聖伯納、愛爾蘭塞特犬。雄犬略多於雌犬。先天性：Bouvier des Flandres、大麥町等特定品種，3-6 月齡發病。',
+    etiology: '後天性特發性（> 90%）：全身性退行性多發神經病變（GOLPP）——喉返神經為最長周邊神經之一，最早出現退化。先天性：遺傳性喉肌發育不全或神經發育異常。醫源性：甲狀腺或頸部手術損傷。腫瘤性：頸部/縱膈腫瘤壓迫喉返神經。',
+    pathogenesis: '喉返神經退化（Wallerian degeneration）→ 背側環杓肌（CAD, 唯一聲門外展肌）去神經化 → CAD 萎縮與纖維化 → 杓狀軟骨無法在吸氣時主動外展 → 吸氣時杓狀軟骨被負壓被動拉向中線（paradoxical movement）→ 聲門開口面積↓ → 吸氣氣流阻力↑ → 上呼吸道阻塞。GOLPP 時序：喉返神經 → 後肢坐骨神經 → 食道迷走神經 → 廣泛性',
+    clinical_signs: [
+      { sign: '吸氣性喘鳴 (Inspiratory stridor)', category: 'primary', description: '最典型表現——吸氣時高頻喘鳴音，運動/興奮/高溫時加劇' },
+      { sign: '聲音改變', category: 'primary', description: '吠叫聲嘶啞、變弱或消失' },
+      { sign: '運動不耐', category: 'primary', description: '輕度運動即喘，高溫環境下散熱障礙加劇' },
+      { sign: '後肢無力（GOLPP 進展期）', category: 'secondary', description: '步態不穩、本體感覺下降、起立困難' },
+      { sign: '反流/嘔吐', category: 'secondary', description: '食道運動障礙（迷走神經退化），增加吸入性肺炎風險' },
+      { sign: '發紺/暈厥', category: 'secondary', description: '嚴重阻塞時急性缺氧，高溫環境下可迅速惡化至呼吸危機' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'BOAS（短頭種呼吸道阻塞）', key_differentiator: '好發短頭犬種而非老年大型犬，有典型品種與年輕發病年齡' },
+      { condition: '氣管塌陷', key_differentiator: '好發小型犬，呼氣性「鵝鳴」咳嗽為主（LP 為吸氣性喘鳴），透視可見動態塌陷' },
+      { condition: '喉部腫瘤', key_differentiator: '進行性惡化、單側為主，喉鏡可見腫塊佔位' },
+      { condition: '氣管異物', key_differentiator: '急性發作、有異物吸入史，X 光或支氣管鏡可確認' },
+    ],
+    diagnostic_workup: '1. 病史與理學檢查：老年大型犬 + 吸氣性喘鳴 + 聲音改變 → 高度懷疑 → 2. 頸部/胸部 X 光：排除腫瘤、評估食道（megaesophagus）、排除吸入性肺炎 → 3. 甲狀腺功能（T4/fT4）：排除甲低 → 4. 輕度鎮靜下喉鏡檢查（金標準）：評估杓狀軟骨運動，必要時 [藥物:Doxapram] 輔助 → 5. 神經學檢查：評估後肢本體感覺（GOLPP 進展指標）',
+    treatment_protocol: '手術：左側 unilateral arytenoid lateralization（tie-back）——以 2-0 nylon 將杓狀軟骨肌突固定至環狀軟骨，外展至聲門面積約 50-60%。僅做單側。術後：24 小時呼吸觀察、吞嚥功能測試後才開始進食。長期管理：泥狀/球狀餐食、頭高位進食、避免游泳、控制體重。急性呼吸危機處理：氧氣、鎮靜（[藥物:Acepromazine] 0.01-0.02 mg/kg IM）、降溫、嚴重時緊急氣管插管。',
+    prognosis: 'Tie-back 手術後 90%+ 飼主報告呼吸症狀顯著改善。中位存活時間：術後 12-24 個月（多數死於 GOLPP 進展相關併發症或無關疾病，非手術本身）。吸入性肺炎終生風險 10-30%，為長期主要死因。GOLPP 進展（後肢無力、巨食道）最終可能影響生活品質而需安樂死評估。',
+    monitoring: '術後 24 小時：呼吸監測、確認喘鳴改善。術後 2 週：傷口、吞嚥功能、呼吸評估。術後 1 個月：運動耐受度、飲食適應。長期（每 3-6 個月）：呼吸功能、後肢神經學檢查（GOLPP 進展評估）、胸部 X 光（吸入性肺炎篩檢）。任何發燒/咳嗽/呼吸急促需立即就醫（吸入性肺炎警訊）。',
+    owner_communication: '向飼主說明：(1) LP 在老年大型犬通常是全身神經退化（GOLPP）的一部分，手術改善呼吸但疾病仍會緩慢進展 (2) 手術後呼吸會明顯改善但吸入性肺炎風險終生存在（10-30%）(3) 飲食管理至關重要：泥狀食物、頭高位進食、避免碎屑 (4) 終生禁止游泳——水經開放聲門直入氣管 (5) 注意後肢無力進展——這是疾病進展的指標 (6) 任何發燒、急促呼吸或咳嗽需立即就醫。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '喉鏡段落', type: 'annotated_image', description: '正常犬 vs LP 犬喉鏡下杓狀軟骨比較' },
+    { position: '手術段落', type: 'annotated_image', description: 'Tie-back 手術解剖與縫線放置示意圖' },
+  ],
+  interactive_placeholders: [
+    { position: '診斷段落', type: 'interactive_overlay', description: '喉鏡檢查判讀互動模擬' },
+  ],
+  drug_api_links: ['Doxapram', 'Acepromazine', 'Amoxicillin-Clavulanate', 'Enrofloxacin'],
+  references: [
+    { type: 'journal', citation: 'Stanley BJ et al. Canine idiopathic laryngeal paralysis as one sign of a diffuse polyneuropathy: an observational study of 90 cases. Vet Surg 2010;39(8):1-8.', relevance: 'GOLPP 概念的奠基研究' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 31: Surgery of the Upper Respiratory System.', relevance: 'LP 手術標準教材' },
+    { type: 'journal', citation: 'MacPhail CM, Monnet E. Outcome of and postoperative complications in dogs undergoing surgical treatment of laryngeal paralysis: 140 cases. J Am Vet Med Assoc 2001;218(12):1949-1956.', relevance: 'Tie-back 手術大樣本預後研究' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 29: Surgery of the Upper Respiratory System.', relevance: 'LP 診斷與手術概述' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 膈疝 (Diaphragmatic Hernia) — 疾病型 */
+const contentDiaphragmaticHernia: NodeContent = {
+  id: 'CONTENT-SURG-L3-013',
+  node_id: 'SURG-L3-013',
+  version: 1,
+  summary: '膈疝（Diaphragmatic Hernia）是橫膈膜破裂或先天性缺損導致腹腔臟器進入胸腔的疾病。外傷性膈疝（最常見，多為車禍）造成橫膈急性破裂，肝臟、胃、腸道等臟器疝入胸腔壓迫肺臟導致呼吸窘迫。先天性膈疝以腹膜心包膈疝（PPDH, Peritoneopericardial Diaphragmatic Hernia）最常見，腹腔臟器經先天性缺損進入心包腔。診斷依賴胸部 X 光（橫膈輪廓消失）。治療以手術修補橫膈為主，術前穩定化與術中正壓通氣為成功關鍵。慢性病例可能有組織沾黏增加手術難度。',
+  learning_objectives: [
+    '區分外傷性膈疝與先天性膈疝（PPDH）的病因與病理',
+    '描述腹腔臟器疝入胸腔對呼吸與循環的影響機轉',
+    '辨識胸部 X 光上膈疝的典型影像特徵',
+    '說明膈疝手術修補的要點與術中正壓通氣的必要性',
+    '評估慢性膈疝病例的手術風險與特殊考量',
+  ],
+  key_points: [
+    '外傷性膈疝佔 85-90%，車禍（HBC）為最常見原因',
+    '外傷性破裂好發於肌肉部分（尤其左側），肌腱中心較少',
+    '疝入臟器最常見：肝臟 > 小腸 > 胃 > 脾臟 > 大網膜',
+    'PPDH 為最常見先天性膈疝——腹腔臟器疝入心包腔，好發威瑪獵犬與波斯貓',
+    '診斷：胸部 X 光見橫膈輪廓消失、胸腔內出現軟組織密度/充氣腸管、心臟輪廓消失（PPDH）',
+    '術前穩定原則：氧氣支持 > 胸腔穿刺排氣/排液 > 輸液復甦 > 止痛 → 穩定後再手術',
+    '手術修補：正中開腹、將臟器回納腹腔、直接縫合橫膈缺損（如組織不足可用網膜或合成補片）',
+    '術中必須正壓通氣——打開胸腔（修補橫膈時）導致開放性氣胸',
+    '慢性病例（> 2 週）臟器可能與肺臟/胸膜嚴重沾黏，分離時出血風險高',
+  ],
+  body: `# 膈疝 (Diaphragmatic Hernia)
+
+## 一、病理機制 (Pathophysiology)
+
+
+
+### 概述
+橫膈膜是分隔胸腔與腹腔的主要呼吸肌。當橫膈完整性受損（外傷或先天缺損），腹腔臟器在腹腔正壓與胸腔負壓的壓力梯度驅動下進入胸腔，壓迫肺臟導致換氣障礙。
+
+### 分類
+
+#### 外傷性膈疝（85-90%）
+- **車禍（HBC）** 最常見——腹腔壓力驟升衝破橫膈
+- 跌落傷、踢傷、咬傷亦可造成
+- 破裂通常位於肌肉部分（尤其左側肌肉腳），肌腱中心較少受損
+- 常合併其他創傷：肺挫傷、氣胸、肋骨骨折、膀胱破裂
+
+#### 先天性膈疝
+- **PPDH（腹膜心包膈疝）**：最常見先天性類型
+  - 胚胎 septum transversum 發育不全 → 腹膜腔與心包腔直接相通
+  - 好發：威瑪獵犬、波斯貓
+  - 常伴隨其他先天異常（胸骨缺損、心臟缺損、臍疝）
+- **Pleuroperitoneal hernia**：罕見，腹腔直接通入胸膜腔
+- **Hiatal hernia（食道裂孔疝）**：胃經食道裂孔疝入胸腔
+
+### 病理生理
+臟器疝入胸腔 → 多重效應：
+1. **肺壓迫**：疝入臟器佔據胸腔空間 → 肺塌陷 → 有效通氣面積↓ → 低血氧
+2. **縱膈偏移**：大量臟器疝入一側 → 縱膈推向對側 → 對側肺亦受壓
+3. **胃擴張**：胃疝入胸腔後可能扭轉或幽門阻塞 → 胃擴張 → 更嚴重的肺壓迫
+4. **肝靜脈扭曲**：肝臟疝入時肝靜脈受壓 → 肝充血、胸腔積液
+5. **心臟壓迫（PPDH）**：臟器進入心包腔直接壓迫心臟 → 心輸出量↓
+
+### 再擴張性肺水腫
+**重要警告**：慢性膈疝修復後，長期塌陷的肺葉快速再擴張可導致 **再擴張性肺水腫（re-expansion pulmonary edema）**——表面活性物質不足 + 缺血再灌流 → 肺泡滲出 → 嚴重呼吸窘迫。
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+**急性外傷性**：
+- 呼吸急促、呼吸困難（tachypnea, dyspnea）
+- 腹式呼吸減弱（橫膈功能喪失）
+- 胸部聽診心音減弱或移位、腸音在胸腔
+- 腹部觸診空虛感（臟器已疝入胸腔）
+- 合併創傷：肋骨疼痛、腹壁擦傷
+
+**慢性/先天性 (PPDH)**：
+- 可能無症狀多年，偶然發現
+- 間歇性呼吸困難、運動不耐
+- 非特異性消化道症狀（嘔吐、食慾不振）
+- 心音減弱（PPDH 心包內有臟器）
+
+### 影像診斷
+1. **胸部 X 光**（最重要初步檢查）：
+   - 橫膈輪廓消失（loss of diaphragmatic silhouette）——最典型
+   - 胸腔內出現充氣腸管或軟組織密度團塊
+   - 肺塌陷、胸腔積液
+   - PPDH：心影異常增大且形狀不規則
+2. **超音波**：可見胸腔內腹腔臟器回聲、PPDH 心包內可見肝臟實質
+3. **上消化道造影**：疑似時口服鋇劑可確認胃/腸道是否在胸腔
+4. **CT**：複雜病例的金標準——精確評估疝入臟器與沾黏程度
+
+## 三、手術治療 (Surgical Treatment)
+
+### 術前穩定化
+1. **氧氣支持**：鼻導管、面罩或氧氣籠
+2. **胸腔穿刺**：大量胸腔積液或氣胸時需先穿刺排液/排氣
+3. **輸液復甦**：外傷性常合併休克
+4. **止痛**：[藥物:Methadone] 0.2-0.3 mg/kg IV 或 [藥物:Buprenorphine] 0.02 mg/kg IV
+5. **避免腹部加壓**：不要用力觸診腹部（可能推更多臟器入胸腔）
+
+### 手術要點
+- **切口**：正中開腹（可向前延伸至胸骨）
+- **正壓通氣**：修補橫膈時胸腔開放，必須由麻醉師維持正壓通氣
+- **臟器回納**：溫和牽引疝入臟器回腹腔，評估臟器活性
+- **沾黏處理**（慢性）：鈍性分離 + 電燒/結紮止血，避免損傷肺臟
+- **橫膈修補**：
+  - 小缺損：單層簡單連續或間斷縫合（2-0/3-0 PDS 或 nylon）
+  - 大缺損/組織缺失：大網膜瓣修補或 polypropylene mesh 補片
+- **排氣**：縫合最後幾針前放置胸管或以注射器排除殘餘胸腔空氣
+- **術後胸管**：嚴重病例放置胸管持續監測
+
+## 四、併發症 (Complications)
+
+- **再擴張性肺水腫**：慢性病例最嚴重風險，修復後 24-48 小時內發生
+- **氣胸**：術後持續漏氣（縫合不完全或肺損傷）
+- **臟器壞死**：長時間絞窄的臟器在回納後可能壞死（需術中評估活性）
+- **腹腔間室症候群**：大量臟器回納腹腔後腹內壓過高（罕見，大量疝入病例）
+- **胃擴張**：疝入胸腔的胃在回納前未先減壓可造成困難
+
+## 五、預後 (Prognosis)
+
+- 外傷性膈疝及時手術：**存活率 80-90%**
+- 術後 24 小時為最危險期——再擴張性肺水腫與合併傷為主要死因
+- 慢性膈疝（> 2 週）：手術可行但沾黏增加手術難度與風險
+- PPDH：手術預後良好（**存活率 > 95%**），因心包腔臟器通常無絞窄
+- 合併嚴重肺挫傷或多器官創傷者預後較差
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 先天性膈疝的產前超音波診斷 | 犬貓無產前篩檢，但概念可用於理解胚胎學 | 人醫常規產前篩檢 |
+| ECMO 支持先天性膈疝新生兒 | 獸醫尚無法使用 ECMO | 人醫新生兒重症標準 |
+| 腹腔鏡膈疝修補 | 犬慢性膈疝的微創修補 | 人醫已常規，獸醫個案報告 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 外傷性膈疝的最佳手術時機——即刻 vs 穩定後 24-48 小時 | 目前共識先穩定再手術，但重度呼吸窘迫且穩定化無效時需緊急手術 | Level III |
+| 慢性膈疝（> 1 年）是否值得手術 | 長期無症狀 PPDH 是否必須手術仍有爭議，部分學者認為手術風險可能大於益處 | Level IV |
+| 再擴張性肺水腫的預防策略 | 緩慢再擴張（不完全排氣讓肺逐步膨脹）理論上有益但缺乏獸醫 RCT | Level IV |`,
+  clinical_pearl: '外傷性膈疝最容易被忽略的情境是「延遲就診」——車禍後飼主可能只注意外傷，而膈疝可能數天至數週後才因呼吸困難被發現。關鍵線索：任何外傷病史的犬貓出現呼吸困難，務必拍攝胸部 X 光！另外，修復慢性膈疝時，「不要追求一次完美復位」——嚴重沾黏的臟器強行分離可能導致不可控出血，有時部分網膜留在胸腔比強行剝離更安全。\n\n【台灣流行病學】台灣流浪動物車禍外傷比例仍高，外傷性膈疝為急診常見手術。家犬家貓因車禍或高樓墜落（貓）也是常見病因。PPDH 在台灣以混種犬貓診斷較多，可能與純種犬飼養比例不同有關。台灣各獸醫教學醫院與急診醫院均具備膈疝修復能力。',
+  common_mistakes: [
+    '外傷犬貓未拍胸部 X 光——膈疝可能被其他明顯外傷掩蓋',
+    '呼吸窘迫犬貓強行仰臥拍 X 光——應允許最舒適姿勢（站立或胸臥位）拍攝',
+    '術中未維持正壓通氣——打開橫膈修補時無正壓通氣導致致命性氣胸',
+    '慢性病例術中強行分離嚴重沾黏導致不可控出血',
+    '忽略再擴張性肺水腫風險——慢性肺塌陷快速膨脹後未密切監測',
+  ],
+  disease_data: {
+    signalment: '外傷性：任何年齡、品種、性別的犬貓均可發生，以年輕、戶外活動的動物較常見（車禍風險高）。PPDH（先天性）：好發威瑪獵犬、波斯貓，出生即存在但可能數月至數年才出現症狀或偶然發現。犬略多於貓。',
+    etiology: '外傷性（85-90%）：車禍（HBC）為最常見原因，其他包括高處墜落（尤其貓）、踢傷、咬傷。腹腔壓力驟升衝破橫膈肌肉部分（肌腱中心較堅韌）。先天性：胚胎 septum transversum 發育不全。PPDH 為 pleuroperitoneal membrane 與 septum transversum 融合缺陷，腹膜腔與心包腔直接相通。',
+    pathogenesis: '橫膈破裂/缺損 → 腹腔正壓與胸腔負壓的壓力梯度 → 腹腔臟器通過缺損進入胸腔 → (1) 肺壓迫 → 有效通氣面積↓ → V/Q mismatch → 低血氧 (2) 縱膈偏移 → 對側肺受壓 (3) 胃疝入可能扭轉/擴張 → 更嚴重壓迫 (4) 肝臟疝入 → 肝靜脈扭曲 → 肝充血、胸腔積液 (5) PPDH → 臟器壓迫心臟 → 心輸出量↓',
+    clinical_signs: [
+      { sign: '呼吸急促/呼吸困難', category: 'primary', description: '肺壓迫導致，嚴重度取決於疝入臟器量與速度' },
+      { sign: '腹式呼吸減弱', category: 'primary', description: '橫膈功能喪失，呼吸以胸壁運動為主' },
+      { sign: '胸部聽診異常', category: 'primary', description: '心音減弱或移位、胸腔內可聞及腸蠕動音（borborygmi in thorax）' },
+      { sign: '腹部空虛感', category: 'secondary', description: '觸診腹部發現臟器「缺失」感——器官已疝入胸腔' },
+      { sign: '合併外傷徵象', category: 'secondary', description: '肋骨疼痛、腹壁擦傷、四肢骨折（外傷性病例）' },
+      { sign: '消化道症狀（PPDH/慢性）', category: 'secondary', description: '間歇性嘔吐、食慾不振，可能數月至數年' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '氣胸', key_differentiator: 'X 光見肺臟邊界回縮、胸膜腔透亮度增加，但橫膈輪廓完整' },
+      { condition: '胸腔積液', key_differentiator: '超音波見均勻液體而非實質臟器，胸腔穿刺可確認' },
+      { condition: '肺腫瘤', key_differentiator: 'X 光見肺實質內團塊，橫膈輪廓通常完整' },
+      { condition: '心包積液', key_differentiator: '超音波見心包腔液體，PPDH 則見心包內實質臟器（肝臟回聲）' },
+      { condition: '食道裂孔疝 (Hiatal hernia)', key_differentiator: '胃經食道裂孔部分疝入，X 光見後縱膈軟組織密度，非橫膈輪廓消失' },
+    ],
+    diagnostic_workup: '1. 胸部 X 光（最重要）：DV 或站立 VD view — 橫膈輪廓消失、胸腔內充氣腸管或軟組織密度、心影異常（PPDH）→ 2. 超音波：確認胸腔/心包內臟器 → 3. 上消化道造影（可選）：口服鋇劑確認胃/腸位置 → 4. CT（複雜病例）：精確評估疝入臟器與沾黏 → 5. 基礎血液學：評估創傷程度、酸鹼狀態、器官功能',
+    treatment_protocol: '術前穩定：氧氣支持 + 胸腔穿刺（大量積液/氣胸時）+ 輸液復甦 + 止痛（[藥物:Methadone] 0.2-0.3 mg/kg IV）。手術：正中開腹 → 溫和回納疝入臟器（評估活性，壞死則切除）→ 直接縫合橫膈缺損（2-0/3-0 PDS 簡單連續或間斷）→ 大缺損用網膜瓣或 mesh 補片。術中正壓通氣必須。術後：放置胸管（嚴重病例）→ 排除殘餘氣胸 → 呼吸監測 24-48 小時。',
+    prognosis: '外傷性膈疝及時手術存活率 80-90%。PPDH 手術存活率 > 95%（無絞窄）。術後 24 小時為最危險期——再擴張性肺水腫與合併創傷為主要死因。慢性膈疝（> 2 週）因沾黏手術難度增加但仍可行。合併嚴重肺挫傷、多器官創傷或 DIC 者預後明顯較差。',
+    monitoring: '術後 0-24 小時：呼吸頻率、SpO2、胸管引流量（如放置）、血壓。術後 24-48 小時：再擴張性肺水腫監測（呼吸急促、SpO2 下降）。術後 1-2 週：胸部 X 光追蹤、傷口評估。術後 1 個月：確認肺完全擴張、活動度恢復。',
+    owner_communication: '向飼主說明：(1) 膈疝需要手術將器官從胸腔放回腹腔並修補橫膈 (2) 外傷性膈疝的動物可能有其他合併傷需同時處理 (3) 術後 24 小時為最危險期，需住院密切監測 (4) 慢性膈疝手術可行但因組織沾黏難度更高 (5) PPDH 手術預後良好 (6) 術後需限制活動 2-4 週讓橫膈癒合。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分類段落', type: 'annotated_image', description: '外傷性膈疝 vs PPDH 解剖示意圖' },
+    { position: '影像段落', type: 'annotated_image', description: '膈疝胸部 X 光——橫膈輪廓消失、胸腔內腸管' },
+  ],
+  interactive_placeholders: [
+    { position: '治療段落', type: 'decision_tree', description: '膈疝急診穩定化與手術決策流程' },
+  ],
+  drug_api_links: ['Methadone', 'Buprenorphine'],
+  references: [
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 30: Surgery of the Lower Respiratory System: Pleural Cavity and Diaphragm.', relevance: '膈疝手術標準教材' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 34: Diaphragm.', relevance: '膈疝分類與手術技術' },
+    { type: 'journal', citation: 'Gibson TWG et al. Peritoneopericardial diaphragmatic hernia in dogs and cats: 33 cases (1988-2005). J Am Vet Med Assoc 2005;226(7):1137-1142.', relevance: 'PPDH 大樣本回顧研究' },
+    { type: 'journal', citation: 'Schmiedt CW et al. Traumatic diaphragmatic hernia in cats: 34 cases (1991-2001). J Am Vet Med Assoc 2003;222(9):1237-1240.', relevance: '貓外傷性膈疝預後研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 全耳道切除暨側面鼓室泡骨切開術 (TECA-LBO) — 疾病型 */
+const contentTECA: NodeContent = {
+  id: 'CONTENT-SURG-L3-014',
+  node_id: 'SURG-L3-014',
+  version: 1,
+  summary: '全耳道切除暨側面鼓室泡骨切開術（Total Ear Canal Ablation with Lateral Bulla Osteotomy, TECA-LBO）是末期慢性外耳炎/中耳炎的根治性手術。當耳道因反覆感染、增生與纖維化而不可逆改變時，藥物治療無法控制感染與疼痛，TECA-LBO 為最終手術選項。手術完整切除整個外耳道上皮並清理鼓室泡內感染物質。術前 CT 評估鼓室泡狀態至關重要。主要併發症為顏面神經麻痺與 Horner 氏症候群。好發品種包括可卡犬（Cocker Spaniel）、沙皮犬（Shar-Pei）。',
+  learning_objectives: [
+    '描述末期耳道疾病的病理特徵與 TECA-LBO 的手術適應症',
+    '說明術前 CT 在評估鼓室泡與規劃手術中的重要性',
+    '列舉 TECA-LBO 手術中顏面神經保護的關鍵步驟',
+    '辨識 TECA-LBO 術後併發症（顏面神經麻痺、Horner 氏症候群）的臨床表現',
+    '制定 TECA-LBO 術後傷口照護與長期追蹤計畫',
+  ],
+  key_points: [
+    '適應症：末期不可逆外耳道增生/狹窄/鈣化、慢性中耳炎藥物治療失敗、耳道腫瘤（ceruminous gland adenocarcinoma）',
+    '好發品種：可卡犬（耳道分泌旺盛+垂耳）、沙皮犬（耳道狹窄）、拉布拉多、巴吉度',
+    '術前 CT 必要：評估鼓室泡壁厚度、泡內物質密度（液體/軟組織/骨化）、對側耳狀態',
+    '手術核心：完整切除外耳道上皮至鼓室泡開口，LBO 打開鼓室泡清理感染物質',
+    '顏面神經走行於水平耳道腹側——手術中解剖至關重要，避免電燒靠近神經',
+    '顏面神經麻痺發生率 30-50%（多為暫時性，6-8 週內恢復），永久性 5-10%',
+    'Horner 氏症候群發生率 50-80%（鼓室泡刮除時損傷交感神經節後纖維），多數 4-6 週恢復',
+    '術後感染率 5-10%，需長期追蹤——殘留上皮組織可形成膿瘻管',
+  ],
+  body: `# 全耳道切除暨側面鼓室泡骨切開術 (TECA-LBO)
+
+## 一、病理機制 (Pathophysiology)
+
+
+
+### 概述
+慢性外耳炎/中耳炎的「末期耳道疾病」（end-stage ear disease）是指耳道因長期反覆感染、發炎導致不可逆的結構改變——上皮增生、腺體增生、纖維化、耳道軟骨鈣化/骨化。此時局部藥物無法有效滲透至感染部位，系統性抗生素也因血管供應不足而藥物濃度不夠。TECA-LBO 切除整個病變耳道並清理中耳感染，為根治性手術。
+
+### 耳道疾病進展
+1. **急性外耳炎**：過敏（異位性皮膚炎最常見主因）→ 耳道發炎
+2. **慢性外耳炎**：反覆感染 → 上皮增生、腺體增生（ceruminous glands）
+3. **耳道狹窄**：增生組織+分泌物 → 耳道管腔逐漸狹窄
+4. **軟骨鈣化/骨化**：長期發炎 → 耳道軟骨礦化變硬
+5. **中耳炎**：感染向深處蔓延穿過鼓膜進入鼓室泡
+6. **末期耳道**：不可逆改變，藥物無法控制 → **TECA-LBO 適應症**
+
+### 與中耳炎的關係
+- 82% 需要 TECA-LBO 的犬同時有中耳炎
+- 鼓膜可能完整（中耳炎經血行或鼓膜微破損感染）
+- 中耳炎持續存在是 TECA 術後感染復發的主要原因 → **必須同時做 LBO**
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+- 慢性耳朵疼痛：甩頭、搔耳、頭歪向患側
+- 惡臭耳分泌物（黃色、棕色至黑色）
+- 耳道觸診硬結（軟骨鈣化）
+- 耳鏡無法進入（耳道狹窄/閉鎖）
+- 聽力下降（多為雙側病例飼主才注意到）
+- 頭歪（中耳炎影響前庭）
+- 顏面神經症狀（中耳炎侵犯面神經：眼瞼無法閉合、嘴唇下垂）
+
+### 術前影像——CT 為金標準
+| CT 評估項目 | 意義 |
+|------------|------|
+| 耳道壁厚度與鈣化程度 | 評估手術切除難度 |
+| 鼓室泡壁增厚/骨溶解 | 感染範圍與 LBO 範圍規劃 |
+| 泡內物質密度 | 液體（積膿）vs 軟組織（增生/cholesteatoma）vs 骨化 |
+| 對側耳狀態 | 是否需要雙側手術規劃 |
+| 鼻咽/聽泡管 | 感染延伸至鼻咽的風險 |
+
+### 細菌培養
+- 術前培養（中耳取樣）指導抗生素選擇
+- 常見菌：*Pseudomonas aeruginosa*、*Staphylococcus pseudintermedius*（含 MRSP）、*Proteus*、*E. coli*
+- 抗藥性高——培養+藥敏試驗至關重要
+
+## 三、手術技術 (Surgical Technique)
+
+### TECA（全耳道切除）
+1. T 形或倒 T 形皮膚切口環繞耳道開口
+2. 沿耳道外周解剖分離——**嚴格沿耳道軟骨外壁剝離**
+3. 垂直耳道 → 水平耳道依序剝離至鼓室泡開口
+4. **顏面神經保護**：走行於水平耳道腹側，剝離時需辨識並保護
+5. 整段耳道連同鼓膜完整切除
+
+### LBO（側面鼓室泡骨切開）
+1. 以骨鑿（rongeur）打開鼓室泡側壁（lateral bulla osteotomy）
+2. 以 curette 刮除泡內感染物質、增生上皮、分泌物
+3. 注意保護鼓室泡深處的交感神經纖維（promontory 內側走行）
+4. 大量生理食鹽水沖洗
+5. 取樣送培養
+
+### 傷口閉合
+- 皮下放置 Penrose drain 或主動引流管
+- 分層閉合皮下組織與皮膚
+- 頭部繃帶固定 24-48 小時
+
+## 四、併發症 (Complications)
+
+### 顏面神經麻痺
+- 暫時性發生率 **30-50%**（水腫導致）：眼瞼無法完全閉合（需人工淚液保護角膜）、嘴唇下垂
+- 永久性 **5-10%**（神經切斷或嚴重牽拉傷）
+- 多數在 **4-8 週** 內恢復
+
+### Horner 氏症候群
+- 發生率 **50-80%**
+- 鼓室泡刮除時損傷節後交感纖維
+- 表現：瞳孔縮小（miosis）、眼裂變小（ptosis）、第三眼瞼突出、眼球內陷
+- 多數 **4-6 週** 自行恢復
+
+### 其他
+- **術後感染/膿瘻管**：殘留上皮組織增生，發生率 5-10%，可能需二次手術
+- **聽力喪失**：TECA 移除外耳道後氣導聽力喪失（骨導仍保留部分）
+- **出血**：retroauricular 靜脈損傷
+- **傷口裂開**：張力過大或感染
+
+## 五、預後 (Prognosis)
+
+- 飼主滿意度高——**> 90%** 報告術後生活品質顯著改善（疼痛消除為主要改善）
+- 術後感染率 5-10%——需長期追蹤
+- 顏面神經永久麻痺 5-10%——需終生人工淚液保護角膜
+- 雙側 TECA-LBO 後犬仍保有部分聽覺能力（骨傳導），但明顯下降
+- 耳道腫瘤切除後預後取決於腫瘤類型與分期
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 中耳內視鏡 (Otoendoscopy) | 犬中耳炎的微創評估與治療 | 人醫常規，獸醫 video-otoscopy 已普及 |
+| 聽覺腦幹反應 (BAER) 術前評估 | TECA-LBO 前客觀評估聽力損失程度 | 人醫標準，獸醫可用但費用高 |
+| 3D 列印鼓室泡模型 | TECA-LBO 術前規劃與教學 | 獸醫教學應用開始 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| VBO (Ventral Bulla Osteotomy) vs LBO 清理效果比較 | VBO 可能對鼓室泡腹側隔室清理更徹底，但需額外腹側切口，TECA 同時做 LBO 較方便 | Level III |
+| TECA 後殘留上皮導致膿瘻管的預防 | 術中徹底刮除所有上皮殘留是關鍵，但 100% 清除困難，CO2 雷射燒灼殘留上皮可能有助益 | Level IV |
+| 單側 vs 分期雙側 TECA-LBO | 同時雙側手術可行但術後恢復較辛苦且雙側顏面神經風險，多數建議分期（間隔 4-6 週） | Level IV |`,
+  clinical_pearl: 'TECA-LBO 術前 CT 不是「可選」而是「必要」。CT 可揭示 X 光無法顯示的重要資訊：鼓室泡內 cholesteatoma（需更徹底刮除）、骨溶解範圍（影響手術入路）、泡壁骨質增生程度（影響 rongeur 使用難度）。此外，術中最重要的步驟是「保護顏面神經」——在水平耳道腹側剝離時，使用鈍性分離而非電燒，辨識到神經後以彈性血管帶輕柔牽引保護。\n\n【台灣流行病學】台灣可卡犬、沙皮犬、拉布拉多為慢性耳炎常見品種。台灣高溫高濕環境加劇耳道微環境惡化，慢性外耳炎進展至末期耳道的比例可能高於溫帶國家。部分飼主因經濟考量或對手術的恐懼而延遲治療，使得就診時往往已是嚴重的末期耳道疾病。',
+  common_mistakes: [
+    '未做術前 CT——低估鼓室泡感染範圍或錯過 cholesteatoma',
+    '僅做 TECA 而未做 LBO——殘留中耳感染導致術後膿瘻管',
+    '術中使用電燒靠近顏面神經——應以鈍性分離保護神經',
+    '鼓室泡刮除不徹底——感染復發或膿瘻管形成',
+    '術後未給予足夠療程的抗生素——依術中培養藥敏結果，通常需 4-6 週',
+  ],
+  disease_data: {
+    signalment: '好發品種：可卡犬（美國/英國可卡）——耳道分泌旺盛+垂耳通風差；沙皮犬——先天耳道狹窄；拉布拉多——過敏性耳炎常見；巴吉度獵犬——大垂耳。中老年犬為主（慢性耳炎進展需時），但嚴重品種犬可能 3-5 歲即需手術。貓較少見，但波斯貓、蘇格蘭折耳貓偶有。',
+    etiology: '末期耳道疾病的根本原因通常是長期未控制的原發性耳炎——最常見為異位性皮膚炎導致的過敏性耳炎。繼發細菌（Pseudomonas、Staphylococcus）與酵母菌（Malassezia）反覆感染。長期使用耳藥但未處理原發病因。耳道腫瘤（ceruminous gland adenocarcinoma/adenoma）也是 TECA 適應症。',
+    pathogenesis: '異位性皮膚炎/食物過敏 → 耳道發炎 → 上皮增生+腺體增生 → 分泌物增加+耳道狹窄 → 微環境改變（溫度↑/濕度↑/pH 改變）→ 細菌/酵母反覆感染 → 耳道軟骨鈣化/骨化 → 耳道不可逆狹窄/閉鎖 → 感染穿過鼓膜→ 中耳炎 → 藥物無法有效控制 → 末期耳道（End-stage ear disease）→ TECA-LBO 適應症',
+    clinical_signs: [
+      { sign: '慢性耳痛', category: 'primary', description: '甩頭、搔耳、觸碰耳朵時躲避或攻擊性反應' },
+      { sign: '惡臭耳分泌物', category: 'primary', description: '黃色至棕黑色膿性分泌物，Pseudomonas 感染有特殊甜腥味' },
+      { sign: '耳道觸診硬結', category: 'primary', description: '軟骨鈣化導致耳道觸診呈硬管狀而非正常軟彈性' },
+      { sign: '頭歪 (Head tilt)', category: 'secondary', description: '中耳炎影響前庭功能，頭歪向患側' },
+      { sign: '顏面神經症狀', category: 'secondary', description: '中耳炎侵犯面神經：眼瞼無法閉合、嘴唇下垂' },
+      { sign: '聽力下降', category: 'secondary', description: '雙側嚴重病例飼主可能注意到犬對聲音反應遲鈍' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '可控制的慢性外耳炎', key_differentiator: '耳道軟骨尚有彈性、管腔仍可視診、局部藥物仍可滲透——尚不需 TECA' },
+      { condition: '耳道腫瘤', key_differentiator: '耳鏡或 CT 可見腫塊佔位，組織學確診，但仍以 TECA-LBO 為手術選擇' },
+      { condition: '原發性中耳炎（無外耳道疾病）', key_differentiator: '外耳道正常但有中耳症狀（頭歪、Horner），僅需 VBO 而非 TECA' },
+      { condition: '耳血腫', key_differentiator: '耳翼（pinna）腫脹而非耳道問題，通常續發於搔耳' },
+    ],
+    diagnostic_workup: '1. 理學檢查：耳道觸診硬結程度、分泌物性狀、疼痛程度、神經學（顏面神經、Horner）→ 2. 耳鏡檢查（如管腔仍可進入）：評估鼓膜完整性 → 3. 頭部 CT（金標準）：評估耳道鈣化、鼓室泡狀態、骨溶解、對側耳 → 4. 細菌培養+藥敏：中耳取樣（經鼓膜穿刺或 CT 導引）→ 5. 組織病理學：排除耳道腫瘤（ceruminous gland neoplasia）',
+    treatment_protocol: 'TECA-LBO 手術：(1) T 形皮膚切口環繞耳道 → (2) 沿軟骨外壁剝離垂直+水平耳道（保護顏面神經）→ (3) 整段耳道切除 → (4) Rongeur 打開鼓室泡側壁（LBO）→ (5) Curette 刮除泡內感染物+取樣培養 → (6) 大量沖洗 → (7) 放置引流管 → (8) 分層閉合。術後抗生素：依培養藥敏結果，通常 [藥物:Amoxicillin-Clavulanate] 或 [藥物:Enrofloxacin]，療程 4-6 週。',
+    prognosis: '飼主滿意度 > 90%——術後疼痛消除為最大改善。手術成功率高但併發症常見：暫時性顏面神經麻痺 30-50%（多數 4-8 週恢復）、永久性 5-10%。Horner 氏症候群 50-80%（多數 4-6 週恢復）。術後感染/膿瘻管 5-10%。雙側 TECA-LBO 後犬仍有部分聽覺（骨傳導）但明顯下降。',
+    monitoring: '術後 24-48 小時：引流量、顏面神經功能、眼角膜保護（無法閉眼時需人工淚液）。術後 2 週：拆線、傷口評估、培養結果指導抗生素調整。術後 4-6 週：神經功能恢復評估、抗生素療程完成。術後 3 個月：CT 追蹤確認鼓室泡癒合。長期：年度檢查監測膿瘻管徵象（術區腫脹、滲出）。',
+    owner_communication: '向飼主說明：(1) TECA-LBO 是根治末期耳道疾病的最佳方法——長期耳痛終於可以解決 (2) 手術後耳朵外觀會改變（外耳道消失）但耳翼保留 (3) 顏面神經麻痺常見但多數暫時性，恢復前需點人工淚液保護眼角膜 (4) 需持續使用抗生素 4-6 週 (5) 手術後犬的生活品質通常顯著提升——疼痛消除、不再需要每日耳藥 (6) 如需雙側手術，建議分期進行。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '解剖段落', type: 'annotated_image', description: '犬外耳道解剖與顏面神經走行示意圖' },
+    { position: 'CT 段落', type: 'annotated_image', description: '末期耳道 CT 影像——鈣化耳道與鼓室泡病變' },
+    { position: '手術段落', type: 'flowchart', description: 'TECA-LBO 手術步驟流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '併發症段落', type: 'interactive_overlay', description: 'TECA-LBO 併發症辨識與處理互動指南' },
+  ],
+  drug_api_links: ['Amoxicillin-Clavulanate', 'Enrofloxacin'],
+  references: [
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 19: Surgery of the Ear.', relevance: 'TECA-LBO 手術標準教材' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 30: Surgery of the Ear.', relevance: 'TECA-LBO 技術與併發症' },
+    { type: 'journal', citation: 'Smeak DD, DeHoff WD. Total ear canal ablation: clinical results in the dog and cat. Vet Surg 1986;15(2):161-170.', relevance: 'TECA 臨床結果經典研究' },
+    { type: 'journal', citation: 'Devitt CM et al. Passive drainage versus active suction drainage after total ear canal ablation–lateral bulla osteotomy in dogs: 27 cases (2002–2008). Vet Surg 2013;42(5):530-535.', relevance: 'TECA-LBO 術後引流方式比較' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 腸切除吻合術 (Intestinal Resection & Anastomosis) — 疾病型 */
+const contentIntestinalRA: NodeContent = {
+  id: 'CONTENT-SURG-L3-015',
+  node_id: 'SURG-L3-015',
+  version: 1,
+  summary: '腸切除吻合術（Intestinal Resection and Anastomosis, R&A）是切除不可逆損傷或病變的腸段後重新吻合腸道連續性的核心外科手術。適應症包括線性異物導致的腸穿孔、腸壁壞死（腸套疊、腸繫膜扭轉）、腸道腫瘤與嚴重外傷。手術成功的關鍵在於術中腸管活性評估（顏色、蠕動、動脈出血）、正確的吻合技術（appositional simple interrupted sutures）與無張力吻合原則。吻合口口徑不匹配（> 3:1）時需使用 tapering 或 spatulation 技術。術後最嚴重併發症為吻合口裂開（dehiscence），發生率 5-15%，導致腹膜炎，死亡率極高。',
+  learning_objectives: [
+    '列舉腸切除吻合術的常見適應症',
+    '描述術中腸管活性評估的標準方法與判斷依據',
+    '說明 appositional simple interrupted 吻合技術的原理與要點',
+    '解釋口徑不匹配時 tapering 與 spatulation 的操作方法',
+    '辨識術後吻合口裂開的早期徵象並制定處理計畫',
+  ],
+  key_points: [
+    '適應症：線性異物（貓最常見）致腸穿孔、腸壁壞死（腸套疊無法復位、腸繫膜血管栓塞）、腸道腫瘤、嚴重外傷',
+    '術中活性評估三要素：(1) 顏色（粉紅=活、灰/黑=壞死）(2) 蠕動（活組織有節律收縮）(3) 切緣出血（動脈性出血=血供良好）',
+    '切除範圍：壞死區域向兩端各延伸 1-2 cm 至明確健康組織',
+    '吻合技術：full-thickness appositional simple interrupted sutures——縫合間距 2-3 mm、邊距 2-3 mm',
+    '縫線選擇：3-0 或 4-0 單絲可吸收線（PDS/Monocryl），避免多絲線（感染風險）',
+    'Appositional（對合）而非 inverting（內翻）——內翻增加管腔狹窄風險',
+    '口徑不匹配 > 2:1 時：小口徑端 antimesenteric 側切開（spatulation）擴大；> 3:1 時需 tapering 大口徑端',
+    'Leak test：吻合完成後以生理食鹽水注入腸管，輕壓觀察有無滲漏',
+    '吻合口裂開率 5-15%——多發生於術後 3-5 天，低白蛋白血症為主要風險因子',
+    '大網膜覆蓋吻合口（omental wrapping）可促進血供與密封',
+  ],
+  body: `# 腸切除吻合術 (Intestinal Resection & Anastomosis)
+
+## 一、適應症與病理 (Indications & Pathology)
+
+
+
+### 常見適應症
+1. **線性異物 (Linear foreign body)**：貓最常見（線、繩、絲帶、縫線），固定於舌下或幽門 → 腸管沿異物鋸齒狀皺縮 → 腸繫膜側多處穿孔
+2. **腸壁壞死**：
+   - 腸套疊（intussusception）無法手動復位或復位後腸壁已壞死
+   - 腸繫膜扭轉（mesenteric volvulus）——大範圍腸壁缺血壞死，預後差
+   - 腸絞窄（incarcerated hernia）
+3. **腸道腫瘤**：淋巴瘤（貓最常見）、腺癌（犬）、平滑肌肉瘤
+4. **嚴重外傷**：穿透性腹部外傷導致腸壁破裂
+
+### 線性異物的特殊考量
+- 線的一端固定（舌下/幽門）→ 蠕動拉扯 → 腸管皺縮成手風琴狀
+- 穿孔通常在 **腸繫膜側**（血管進入處較薄弱）
+- 多處穿孔可能需要多段切除
+- **絕對禁止拉扯異物！**——強行拉扯導致更多穿孔
+
+## 二、手術技術 (Surgical Technique)
+
+### 術前準備
+- 輸液復甦、電解質校正
+- 廣效性抗生素（[藥物:Cefazolin] 22 mg/kg IV + [藥物:Metronidazole] 15 mg/kg IV）
+- 腹部 X 光/超音波確認病變位置
+
+### 腸管活性評估
+| 指標 | 活性良好 | 活性不佳（需切除） |
+|------|---------|-----------------|
+| 顏色 | 粉紅色 | 灰色、暗紫色、黑色 |
+| 蠕動 | 輕觸即有節律收縮 | 無蠕動、管壁鬆弛 |
+| 漿膜面 | 光滑有光澤 | 暗沉、纖維素沉積 |
+| 切緣出血 | 鮮紅色動脈性出血 | 暗色靜脈性滲血或不出血 |
+| 腸繫膜動脈搏動 | 可見/可觸及 | 無搏動 |
+
+**進階評估**：fluorescein 染色 + Wood lamp 照射（螢光=灌流良好）或 ICG 近紅外線影像
+
+### 切除與吻合步驟
+1. **隔離腸段**：以 Doyen 腸夾或助手手指溫和阻斷近端與遠端腸管（防止腸內容物汙染）
+2. **結紮腸繫膜血管**：以 3-0 吸收線結紮供應切除段的小動脈與靜脈
+3. **斜角切割**：以刀片斜切（約 60 度）腸壁——antimesenteric border 切多一點以增加吻合口面積
+4. **吻合**：
+   - **First throw**：腸繫膜側（血供最關鍵處）先下第一針
+   - Full-thickness **appositional simple interrupted** sutures
+   - 3-0 或 4-0 **單絲可吸收線**（PDS / Monocryl）
+   - 縫合間距 **2-3 mm**、邊距 **2-3 mm**
+   - 打結在 **漿膜面**（結在管腔外）
+5. **口徑不匹配處理**：
+   - 輕度（< 2:1）：斜角切割即可補償
+   - 中度（2:1-3:1）：小口徑端 antimesenteric 側縱切（spatulation）擴大
+   - 重度（> 3:1）：大口徑端部分閉合（tapering）縮小，或使用 side-to-side functional end-to-end（stapler）
+6. **Leak test**：以 22G 針頭注入生理食鹽水至吻合段腸管，輕壓觀察縫合線間有無滲漏——有漏則加針
+7. **大網膜覆蓋**：將大網膜覆蓋吻合口（omental wrapping）促進血供與密封
+8. **腸繫膜裂孔閉合**：以可吸收線閉合腸繫膜缺損，避免術後腸管嵌入
+
+### 關鍵原則
+- **Appositional（對合）** 而非 inverting（內翻）——黏膜面對黏膜面、漿膜面對漿膜面
+- **無張力**——張力過大為裂開主因之一
+- **良好血供**——切除至出血活躍的健康組織
+- **避免汙染**——嚴格隔離、吸引腸內容物、更換手套與器械
+
+## 三、術後管理 (Postoperative Care)
+
+- NPO **12-24 小時**，之後少量水 → 流質 → 軟食（逐步恢復）
+- 輸液維持至可自主進食
+- 止痛：[藥物:Methadone] 0.2-0.3 mg/kg IV q4h 或 fentanyl CRI
+- 抗生素：依術中汙染程度決定療程（clean 24 小時 vs contaminated 3-5 天 vs septic 7-14 天）
+- 監測體溫、白血球、腹部觸診
+
+## 四、併發症 (Complications)
+
+### 吻合口裂開 (Dehiscence)——最嚴重
+- 發生率 **5-15%**
+- 多發生於 **術後 3-5 天**（膠原蛋白最弱期）
+- 風險因子：低白蛋白血症（< 2.0 g/dL）、腹膜炎、縫合張力過大、血供不足、腫瘤病灶吻合
+- 臨床徵象：術後 3-5 天突然精神沉鬱、發燒、腹痛、嘔吐 → 敗血性腹膜炎
+- 處理：**緊急再次手術**——探查、腹腔灌洗、重新吻合或造口
+
+### 其他併發症
+- **管腔狹窄 (Stricture)**：吻合口瘢痕收縮，通常術後 2-4 週出現嘔吐或阻塞症狀
+- **短腸症候群 (Short bowel syndrome)**：切除 > 70% 小腸後吸收不良、慢性腹瀉
+- **腸繫膜裂孔嵌頓**：未閉合的腸繫膜缺損導致腸管嵌入
+- **腹腔沾黏**：術後腸管間沾黏可能導致日後阻塞
+
+## 五、預後 (Prognosis)
+
+- 單純異物切除+吻合（無嚴重汙染）：存活率 **> 90%**
+- 線性異物合併多處穿孔但及時手術：存活率 **75-85%**
+- 腫瘤切除：預後取決於腫瘤類型——犬腸腺癌中位存活 10-15 個月，貓腸淋巴瘤化療反應佳者可存活 > 2 年
+- 腸繫膜扭轉：預後差——大範圍壞死，死亡率 > 50%
+- 吻合口裂開若發展為敗血性腹膜炎：死亡率 **50-74%**
+- 低白蛋白血症（< 2.0 g/dL）為最重要的術後併發症獨立風險因子
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 吻合器 (GIA/EEA stapler) | 犬貓腸道 side-to-side functional end-to-end anastomosis | 獸醫已有使用，但成本高且口徑限制 |
+| ICG 近紅外線灌流評估 | 術中精確判斷腸管活性切除範圍 | 人醫標準，獸醫研究開始引入 |
+| ERAS (Enhanced Recovery After Surgery) | 犬腸道手術後加速康復——早期進食、積極止痛 | 人醫已標準化，獸醫開始制定類似方案 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Simple interrupted vs simple continuous 吻合——強度與裂開率比較 | 理論上 interrupted 裂開僅限局部、continuous 一處鬆脫全段裂開，但部分研究顯示 continuous 同樣安全且速度更快 | Level III |
+| 術後何時開始進食——NPO 12-24 hr vs 早期進食（6 小時） | 人醫 ERAS 證據支持早期進食可促進癒合，獸醫前瞻性研究有限 | Level III |
+| Serosal patching 是否能有效預防裂開 | 大網膜覆蓋（omental wrapping）廣泛使用，但 serosal patch 的額外效益不確定 | Level IV |`,
+  clinical_pearl: '腸切除吻合術成功的最大關鍵不在吻合技術（技術正確前提下），而在 **「切到對的位置」** ——切除範圍必須到達血供良好的健康組織。最常見的失誤是「捨不得切」——為了保留腸道長度而在血供不確定的區域做吻合，結果裂開。寧可多切 1 cm 到明確有動脈噴血的健康腸壁，也不要在灰色邊緣區域冒險吻合。\n\n另一個重要提醒：術前白蛋白 < 2.0 g/dL 的病例裂開風險顯著升高，應考慮術前輸漿或膠體液支持，術後更密切監測。\n\n【台灣流行病學】台灣貓飼養數量快速增加，線性異物（縫線、橡皮筋、緞帶）是貓最常見的腸道異物原因。節慶期間（尤其農曆新年）包裝緞帶導致的線性異物就診量明顯增加。犬則以骨頭碎片、果核、玩具碎片較常見。台灣各動物醫院普遍具備腸切除吻合能力，為基本外科技能之一。',
+  common_mistakes: [
+    '切除範圍不足——「捨不得切」導致在血供不佳的區域吻合，裂開風險升高',
+    '使用 inverting suture pattern（如 Cushing/Lembert）——犬貓腸壁薄，內翻導致管腔狹窄',
+    '縫合間距過大（> 4 mm）或過密（< 1.5 mm）——過大滲漏、過密缺血',
+    '強行拉扯線性異物——導致更多腸穿孔',
+    '忘記閉合腸繫膜裂孔——術後腸管嵌頓風險',
+  ],
+  disease_data: {
+    signalment: '線性異物：貓為主（年輕、好奇），犬也可發生。腸套疊：幼犬/幼貓（寄生蟲相關）。腸道腫瘤：中老年犬貓——犬腺癌好發中段小腸與結腸，貓腸淋巴瘤好發空腸與迴腸。腸繫膜扭轉：任何年齡犬，德國牧羊犬報告較多。無明顯性別偏向。',
+    etiology: '線性異物：貓吞食線、繩、緞帶、縫線；固定於舌下或幽門後蠕動拉扯導致腸皺縮穿孔。腸壁壞死：腸套疊（回結腸套疊最常見）無法復位、腸繫膜扭轉（血管完全阻塞）、嵌頓性疝氣。腸道腫瘤：腺癌、淋巴瘤、平滑肌肉瘤佔位阻塞或穿孔。外傷：穿透性腹部創傷。',
+    pathogenesis: '(1) 線性異物：固定端不動 + 蠕動拉扯 → 腸管沿異物鋸齒狀皺縮（plication）→ 腸繫膜側張力最大 → 多處穿孔 → 腹膜炎。(2) 腸壁壞死：血供中斷（套疊壓迫/扭轉/嵌頓）→ 黏膜先壞死 → 全層壞死 → 穿孔 → 腹膜炎。(3) 腫瘤：佔位增大 → 部分阻塞 → 完全阻塞或穿孔。',
+    clinical_signs: [
+      { sign: '嘔吐', category: 'primary', description: '頻繁嘔吐為最常見表現，線性異物可能嘔出部分線頭' },
+      { sign: '食慾廢絕', category: 'primary', description: '完全阻塞或腹膜炎時完全無食慾' },
+      { sign: '腹痛', category: 'primary', description: '觸診腹部疼痛、緊張，可能出現祈禱姿勢' },
+      { sign: '腹瀉或排便停止', category: 'secondary', description: '完全阻塞時無排便，部分阻塞可能腹瀉' },
+      { sign: '脫水與精神沉鬱', category: 'secondary', description: '持續嘔吐與 NPO 導致脫水，敗血症時精神極差' },
+      { sign: '發燒（腹膜炎時）', category: 'secondary', description: '腸穿孔導致腹膜炎時可見發燒（> 39.5°C）或末期低體溫' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '單純腸道異物（非穿透性）', key_differentiator: '阻塞但未穿孔，可能經腸切開取出而不需切除——術中評估腸壁活性決定' },
+      { condition: '急性胰臟炎', key_differentiator: '嚴重腹痛+嘔吐但影像學無腸阻塞，cPLI/Spec fPL 升高' },
+      { condition: '腸套疊', key_differentiator: '超音波見典型「靶心」徵象（target sign），可能手動復位或需 R&A' },
+      { condition: '腸繫膜扭轉', key_differentiator: '急性劇烈腹痛+血性腹瀉+快速休克，超音波見大範圍腸壁水腫+腸繫膜血流消失' },
+    ],
+    diagnostic_workup: '1. 腹部 X 光：腸阻塞影像（近端擴張/遠端空虛）、線性異物見「串珠狀」或「皺縮」腸管、自由氣體（穿孔）→ 2. 腹部超音波：異物定位、腸壁厚度/層次（壞死時分層消失）、腹腔積液 → 3. 血液學：CBC（嗜中性球升高+左移）、生化（低白蛋白、電解質、腎功能）、lactate → 4. 腹水分析（如有腹腔積液）：glucose 差 > 20 mg/dL 提示敗血性腹膜炎',
+    treatment_protocol: '手術：正中開腹 → 全腸道探查 → 隔離病變腸段 → 腸管活性評估 → 結紮腸繫膜血管 → 斜角切除（壞死+兩端各延伸 1-2 cm）→ full-thickness appositional simple interrupted 吻合（3-0/4-0 PDS/Monocryl）→ leak test → omental wrapping → 腸繫膜裂孔閉合 → 腹腔灌洗（如有腹膜炎）。術前抗生素：[藥物:Cefazolin] 22 mg/kg IV + [藥物:Metronidazole] 15 mg/kg IV。術後：NPO 12-24 小時 → 少量流質 → 軟食逐步恢復。',
+    prognosis: '單純異物切除+R&A（無嚴重汙染）存活率 > 90%。線性異物合併多處穿孔但及時手術 75-85%。吻合口裂開率 5-15%，裂開導致敗血性腹膜炎死亡率 50-74%。低白蛋白血症（< 2.0 g/dL）為裂開最重要風險因子。腸道腫瘤預後取決於類型與分期。腸繫膜扭轉預後差（死亡率 > 50%）。',
+    monitoring: '術後 0-24 小時：體溫、心率、血壓、腹部觸診（腹膜炎徵象）、嘔吐。術後 24-72 小時：進食耐受度、排便恢復、白血球趨勢。術後 3-5 天（裂開高風險期）：密切監測——任何精神突然沉鬱+發燒+腹痛需立即影像評估。術後 2 週：傷口拆線、飲食恢復正常。',
+    owner_communication: '向飼主說明：(1) 手術將切除壞死或病變腸段並重新接合——大部分犬貓可以良好恢復 (2) 最危險的併發症是術後 3-5 天接合處裂開（5-15%），一旦裂開需緊急再手術 (3) 術後需住院觀察至少 2-3 天 (4) 回家後觀察重點：食慾、精神、有無嘔吐或腹痛，異常立即就醫 (5) 線性異物預防：貓的環境需移除線、繩、緞帶等危險物品 (6) 如果是腫瘤切除，後續可能需要化療。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '活性評估段落', type: 'annotated_image', description: '腸管活性評估——正常 vs 壞死腸壁比較照片' },
+    { position: '吻合段落', type: 'annotated_image', description: 'Simple interrupted appositional 吻合技術步驟示意圖' },
+    { position: '口徑不匹配段落', type: 'flowchart', description: 'Spatulation 與 tapering 技術圖解' },
+  ],
+  interactive_placeholders: [
+    { position: '適應症段落', type: 'decision_tree', description: '腸道手術決策——腸切開 vs 切除吻合 vs 造口' },
+  ],
+  drug_api_links: ['Cefazolin', 'Metronidazole', 'Methadone'],
+  references: [
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 20: Surgery of the Digestive System — Small Intestine.', relevance: '腸切除吻合標準教材' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 22: Intestinal Surgery.', relevance: '腸道手術技術與併發症' },
+    { type: 'journal', citation: 'Ralphs SC et al. Risk factors for leakage following intestinal anastomosis in dogs and cats: 115 cases (1991-2000). J Am Vet Med Assoc 2003;223(1):73-77.', relevance: '吻合口裂開風險因子關鍵研究' },
+    { type: 'journal', citation: 'Grimes JA et al. Identification of risk factors for septic peritonitis and failure to survive following gastrointestinal surgery in dogs. J Am Vet Med Assoc 2011;238(4):486-494.', relevance: '腸道術後敗血性腹膜炎風險因子' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L0-001', contentSurgOverview],
@@ -3547,6 +4795,7 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L2-001', contentAbdominalPathology],
   ['SURG-L2-002', contentFractureHealing],
   ['SURG-L2-003', contentJointDegeneration],
+  ['SURG-L2-004', contentMIS],
   ['SURG-L3-001', contentGDV],
   ['SURG-L3-002', contentSplenicNeoplasia],
   ['SURG-L3-003', contentGIForeignBody],
@@ -3556,6 +4805,12 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L3-007', contentFractureStabilization],
   ['SURG-L3-008', contentPatellarLuxation],
   ['SURG-L3-009', contentPyometra],
+  ['SURG-L3-010', contentBOAS],
+  ['SURG-L3-011', contentPSS],
+  ['SURG-L3-012', contentLarPar],
+  ['SURG-L3-013', contentDiaphragmaticHernia],
+  ['SURG-L3-014', contentTECA],
+  ['SURG-L3-015', contentIntestinalRA],
   ['SURG-L4-001', contentPreopImaging],
   ['SURG-L4-002', contentIntraopDecision],
   ['SURG-L4-003', contentOrthoImaging],

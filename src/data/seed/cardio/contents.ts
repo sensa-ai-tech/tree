@@ -3298,6 +3298,1391 @@ const contentPericardiocentesis: NodeContent = {
   created_at: now,
 };
 
+/** 先天性心臟發育異常機轉 — 機轉型 */
+const contentCongenitalMechanism: NodeContent = {
+  id: 'CONTENT-L2-004',
+  node_id: 'CARDIO-L2-004',
+  version: 1,
+  summary: '先天性心臟缺陷（Congenital Heart Defects, CHD）源於胚胎期心臟發育異常，涵蓋中隔缺損（VSD/ASD）、大血管異常（PDA、PRAA）與流出道阻塞（PS、SAS）。犬先天性心臟病盛行率約 0.5-0.8%，品種基因遺傳為最主要風險因子。理解心臟胚胎學與發育異常機轉是診斷與治療先天性心臟病的基礎。',
+  learning_objectives: [
+    '描述心臟胚胎發育的關鍵時期與主要事件（心管形成、心環形成、中隔分隔、瓣膜形成）',
+    '解釋心室中隔缺損（VSD）與心房中隔缺損（ASD）的胚胎學成因',
+    '說明動脈導管未閉（PDA）的正常閉鎖機轉與未閉病理',
+    '描述肺動脈瓣狹窄（PS）與主動脈下狹窄（SAS）的發育異常機轉',
+    '列舉常見先天性心臟病的品種遺傳傾向',
+  ],
+  key_points: [
+    '心臟胚胎發育關鍵期：犬妊娠第 17-25 天為心臟中隔形成期，此階段最易受致畸因子影響',
+    'VSD 最常見位置：膜周部（perimembranous），源於心內膜墊（endocardial cushion）與肌性中隔融合不全',
+    'PDA 機轉：動脈導管（ductus arteriosus）出生後應因血氧升高與前列腺素下降而收縮閉鎖，PDA 為此過程失敗',
+    'PS 機轉：肺動脈瓣發育不全（瓣葉融合/增厚/發育不良），英國鬥牛犬多為瓣膜發育不良型（dysplastic type）',
+    'SAS 機轉：左心室流出道（LVOT）下方纖維肌性環或隆起，多為遺傳性（多基因模式）',
+    'PRAA（持續性右主動脈弓）：第四主動脈弓左右發育異常，右弓持續→食道/氣管受血管環壓迫',
+    '品種遺傳：PDA（馬爾濟斯、博美、德國牧羊犬）、PS（英國鬥牛犬、拳師犬）、SAS（金毛、紐芬蘭、拳師犬）',
+  ],
+  body: `# 先天性心臟發育異常機轉 (Congenital Heart Defect Pathogenesis)
+
+## 一、核心概念與機轉 (Core Concept & Mechanism)
+
+### 心臟胚胎發育概論
+
+心臟是哺乳動物胚胎中最早發育的功能器官。犬胚胎心臟發育的關鍵時程如下：
+
+| 階段 | 犬妊娠天數 | 發育事件 | 臨床關聯 |
+|------|-----------|---------|---------|
+| 心管形成 | 第 14-16 天 | 心臟前體細胞形成原始心管 | 嚴重缺陷多致胚胎死亡 |
+| 心環形成 | 第 16-18 天 | 心管右旋（D-looping）形成 S 形 | Dextrocardia 為此階段異常 |
+| 中隔分隔 | 第 18-25 天 | 房室中隔、心內膜墊形成 | VSD/ASD 的關鍵窗口期 |
+| 瓣膜形成 | 第 20-28 天 | 半月瓣與房室瓣分化 | PS/SAS 瓣膜異常 |
+| 大血管重塑 | 第 22-30 天 | 主動脈弓系統選擇性退化 | PDA/PRAA |
+| 中隔完成 | 第 25-35 天 | 卵圓孔形成、中隔完全分隔 | ASD（卵圓孔未閉） |
+
+### 中隔缺損機轉
+
+#### 心室中隔缺損 (VSD)
+心室中隔由四個組成部分融合形成：(1) 肌性中隔（由下向上生長）、(2) 心內膜墊（endocardial cushion，由上向下生長）、(3) 漏斗部中隔（conotruncal septum）、(4) 膜性部分（最後閉合）。
+
+| VSD 類型 | 佔比 | 胚胎學成因 | 臨床意義 |
+|---------|------|----------|---------|
+| 膜周部（perimembranous） | 70-80% | 心內膜墊與肌性中隔融合不全 | 最常見，可能自發縮小 |
+| 肌性（muscular） | 5-10% | 肌性中隔發育空洞 | 多為小型，血流動力學影響輕微 |
+| 漏斗部（outlet/supracristal） | 5-10% | 漏斗部中隔對齊不良 | 可合併主動脈瓣脫垂 |
+| 心內膜墊型（inlet） | <5% | 心內膜墊完全缺失 | 可合併 ASD（AVSD/心內膜墊缺損） |
+
+血流動力學影響：左→右分流 → 肺血流增加 → 肺動脈壓升高 → 右心容量過載。大型 VSD 長期可導致 Eisenmenger syndrome（肺高壓→分流逆轉→發紺）。
+
+#### 心房中隔缺損 (ASD)
+原發孔 ASD（primum type）：心內膜墊缺損的一部分。繼發孔 ASD（secundum type）：卵圓孔區域的 septum primum 過度吸收或 septum secundum 發育不足。犬以繼發孔型較常見。
+
+### 大血管異常機轉
+
+#### 動脈導管未閉 (PDA)
+動脈導管在胎兒期連接肺動脈幹與降主動脈，分流血液繞過未充氣肺臟。出生後正常閉鎖過程：
+
+出生 → 肺泡擴張 → PaO₂ 上升 → 導管平滑肌收縮（O₂ 敏感性收縮）→ 功能性閉鎖（出生後 12-72 小時）→ 內膜增生 + 纖維化 → 解剖性閉鎖（動脈韌帶形成）。
+
+PDA 病理：導管壁平滑肌對氧氣收縮反應異常 + 內膜增生不足 → 持續性開放 → 主動脈→肺動脈持續左→右分流 → 肺過度灌流 + 左心容量過載。
+
+遺傳模式：多基因遺傳，品種好發性高度提示遺傳因素。
+
+#### 持續性右主動脈弓 (PRAA)
+正常胚胎發育中，左側第四主動脈弓發育為主動脈弓，右側退化。PRAA 為右側第四弓持續發育為主動脈弓 → 主動脈弓在右側 + 動脈韌帶在左側 → 食道與氣管被血管環包圍壓迫 → 食道阻塞。好發品種：德國牧羊犬、愛爾蘭蹲獵犬、大丹犬。
+
+### 流出道阻塞機轉
+
+#### 肺動脈瓣狹窄 (PS)
+兩種主要型態：
+
+| 型態 | 病理特徵 | 好發品種 | 治療反應 |
+|------|---------|---------|---------|
+| 瓣膜融合型（Type A） | 瓣葉薄但交界處融合，開口受限 | 比格犬、可卡犬 | 球囊擴張術效果佳 |
+| 瓣膜發育不良型（Type B） | 瓣葉增厚、不動、瓣環小 | 英國鬥牛犬、拳師犬 | 球囊擴張效果差，可能需手術 |
+
+胚胎學：半月瓣由心臟膠質（cardiac jelly）內的間質細胞分化形成。Type A 為瓣葉融合過程異常；Type B 為間質細胞分化與重塑不良導致瓣葉增厚僵硬。
+
+#### 主動脈下狹窄 (SAS)
+離散型纖維環（discrete fibrous ring）或隧道型狹窄（tunnel-like stenosis）位於主動脈瓣下方的左心室流出道（LVOT）。
+
+病理發生假說：出生後 LVOT 異常血流模式 → 內皮損傷 → 纖維組織增生 → 環形狹窄逐漸加重。SAS 在出生時可能不存在或輕微，隨成長而惡化——這支持出生後進展性假說（postnatal progressive hypothesis）。
+
+遺傳模式：金毛犬、紐芬蘭犬為多基因遺傳模式。
+
+## 二、判讀要點 (Interpretation Essentials)
+
+### 先天性心臟病的品種遺傳地圖
+
+| 缺陷 | 高風險品種 | 遺傳模式 | 台灣流行病學 |
+|------|----------|---------|------------|
+| PDA | 馬爾濟斯、博美、德國牧羊犬、CKCS | 多基因 | 台灣小型犬飼養密度高，PDA 為最常見 CHD |
+| PS | 英國鬥牛犬、法國鬥牛犬、拳師犬 | 多基因 | 短頭犬種近年飼養量增加 |
+| SAS | 金毛犬、紐芬蘭犬、拳師犬、德國牧羊犬 | 多基因 | 金毛為台灣常見大型犬 |
+| VSD | 英國鬥牛犬、西高地白梗 | 不確定 | 單獨 VSD 可能輕微而漏診 |
+| PRAA | 德國牧羊犬、愛爾蘭蹲獵犬 | 不確定 | 以嘔吐/反流就診，需早期手術 |
+
+### 血流動力學分類框架
+
+| 類型 | 代表疾病 | 病理生理 | 臨床特徵 |
+|------|---------|---------|---------|
+| 左→右分流 | PDA、VSD、ASD | 肺過度灌流、左心容量過載 | 連續性/收縮期雜音、運動不耐 |
+| 流出道阻塞 | PS、SAS | 壓力過載、同心性肥大 | 收縮期噴射雜音、暈厥風險 |
+| 血管環 | PRAA | 食道/氣管受壓 | 離乳後嘔吐/反流、巨食道 |
+
+## 三、常見陷阱 (Common Pitfalls)
+
+- 輕度 SAS 的心雜音可能被誤認為「功能性雜音（innocent murmur）」——在好發品種中，任何收縮期雜音都應進一步心超評估
+- PDA 的連續性雜音在嚴重肺高壓時可能僅剩收縮期成分——失去舒張期成分反而代表病情更嚴重
+- 英國鬥牛犬的呼吸困難容易歸因於短頭症候群而忽略 PS 的貢獻——兩者常共存
+- VSD 小缺損的雜音反而比大缺損響亮（高速噴射流）——雜音強度與缺損嚴重度不成正比
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 胎兒心臟超音波篩檢 | 犬繁殖前遺傳篩檢 + 胎兒評估 | 人醫常規，獸醫研究階段 |
+| 3D 列印心臟模型用於術前規劃 | 複雜 CHD 手術規劃 | 人醫已商業化，獸醫實驗報告 |
+| 經導管 VSD 封堵（Amplatzer device） | 犬膜周部 VSD 介入封堵 | 犬已有成功案例報告 |
+| 基因面板篩檢 CHD 易感性 | 品種 CHD 遺傳風險評估 | 犬遺傳學研究進行中但尚無臨床基因面板 |
+
+## 五、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| SAS 繁殖限制建議 | 確診犬不應繁殖（OFA 建議） | 輕度 SAS 與功能性雜音鑑別困難，可能過度限制 | Level III |
+| PS dysplastic type 的球囊擴張 | 即使效果有限仍值得嘗試 | 手術（patch graft valvuloplasty）效果更可預期 | Level III |
+| 輕度 VSD 是否需要長期追蹤 | 監測肺高壓發展與心內膜炎風險 | 小型限制性 VSD 長期預後良好，過度追蹤不符成本效益 | Level IV |
+| PDA 手術最佳時機 | 越早越好（<6 月齡）避免不可逆重塑 | 待動物稍大（>2 kg）手術風險更低 | Level III |
+
+[圖片:心臟胚胎發育時序與常見先天性缺陷對應圖]`,
+  clinical_pearl: '先天性心臟病的早期診斷至關重要：PDA 犬若在出現心衰竭前接受手術閉合（外科結紮或 ACDO 導管封堵），預後與正常犬幾乎無異。然而一旦發展至 Eisenmenger syndrome（肺高壓→右→左分流→發紺），手術即為禁忌。因此，所有幼犬在首次疫苗就診時的仔細心臟聽診是篩檢先天性心臟病的關鍵——PDA 的連續性「機械樣」雜音（continuous "machinery" murmur）在左腋下聽診最為明顯，一旦辨識出應立即轉診心臟專科。\n\n【台灣臨床現況】台灣小型犬飼養比例高，PDA 為最常見的先天性心臟病。近年多家教學醫院已引進 ACDO（Amplatz Canine Duct Occluder）導管封堵技術，為 PDA 治療提供微創選項。PS 的球囊擴張術亦已普遍開展。',
+  common_mistakes: [
+    '將先天性心雜音歸類為「功能性」而未安排心臟超音波——在好發品種中，收縮期雜音需排除 SAS/PS',
+    '忽略 PDA 發紺型（reverse PDA）的存在——差異性發紺（後肢 PaO₂ < 前肢）是 reverse PDA 的特徵',
+    '對英國鬥牛犬的 PS 一律建議球囊擴張——dysplastic type 對球囊擴張反應差，需先以心超確認型態',
+    'PRAA 術後忽略巨食道的長期管理——即使手術解除血管環壓迫，部分犬的食道擴張為永久性',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '胚胎發育段落', type: 'timeline', description: '心臟胚胎發育時序與各階段先天性缺陷對應圖' },
+    { position: '血流動力學段落', type: 'animated_diagram', description: '左→右分流與流出道阻塞的血流動態比較示意圖' },
+  ],
+  interactive_placeholders: [
+    { position: '品種遺傳段落', type: 'interactive_overlay', description: '輸入品種名稱查詢先天性心臟病風險圖譜' },
+  ],
+  drug_api_links: [],
+  references: [
+    { type: 'textbook', citation: 'Schrope DP. Prevalence of congenital heart disease in 76,301 mixed-breed dogs and 57,025 mixed-breed cats. J Vet Cardiol. 2015;17(3):192-202.', relevance: '犬貓先天性心臟病盛行率與類型分布' },
+    { type: 'textbook', citation: 'Tobias AH, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter: Congenital Heart Disease.', relevance: '先天性心臟病外科治療教材' },
+    { type: 'guideline', citation: 'Bussadori C, Amberger C, Le Bobinnec G, Lombard CW. Guidelines for the echocardiographic studies of suspected subaortic and pulmonic stenosis. J Vet Cardiol. 2000;2(1):15-22.', relevance: 'SAS 與 PS 超音波診斷指引' },
+    { type: 'journal', citation: 'Oliveira P et al. Retrospective review of congenital heart disease in 976 dogs. J Vet Intern Med. 2011;25(3):477-483.', relevance: '犬先天性心臟病回溯性流行病學研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 先天性心臟病 — 疾病型 */
+const contentCongenitalHD: NodeContent = {
+  id: 'CONTENT-L3-006',
+  node_id: 'CARDIO-L3-006',
+  version: 1,
+  summary: '犬先天性心臟病以動脈導管未閉（PDA）、肺動脈瓣狹窄（PS）與主動脈下狹窄（SAS）為三大最常見缺陷。PDA 為持續性左→右分流導致左心容量過載，特徵為左腋下連續性「機械樣」雜音，外科結紮或 ACDO 導管封堵為治療標準。PS 以收縮期噴射雜音表現，嚴重者（壓力梯度 > 80 mmHg）建議球囊擴張術。SAS 預後最差，目前以 atenolol 控制心率與降低猝死風險為主。',
+  learning_objectives: [
+    '辨識 PDA、PS、SAS 各自的特徵性心雜音位置與性質',
+    '描述 PDA 手術與介入治療的適應症與預期結果',
+    '應用壓力梯度分級系統評估 PS 嚴重度並制定治療計畫',
+    '說明 SAS 的預後不良因子與長期管理策略',
+    '制定先天性心臟病幼犬的轉診與追蹤計畫',
+  ],
+  key_points: [
+    'PDA 是犬最常見的先天性心臟病（佔 CHD 約 25-30%），好發品種：馬爾濟斯、博美、德國牧羊犬、CKCS',
+    'PDA 特徵：左腋下連續性「機械樣」雜音（continuous machinery murmur）、跳躍脈（bounding pulse）',
+    'PDA 治療首選：ACDO 導管封堵（微創，成功率 >95%）或外科結紮；未治療者 60% 在 1 歲前死於 CHF',
+    'PS 嚴重度分級：輕度（梯度 <50 mmHg）→ 追蹤；中度（50-80）→ 個別化；重度（>80）→ 球囊擴張術',
+    'PS 好發品種：英國鬥牛犬（多為 dysplastic type）、拳師犬、法國鬥牛犬、比格犬',
+    'SAS 好發品種：金毛犬、紐芬蘭犬、拳師犬；離散型纖維環為最常見型態',
+    'SAS 治療：Atenolol 0.5-1 mg/kg PO BID（降低心率、減少心肌氧需求、降低猝死風險），球囊擴張效果有限且短暫',
+    'SAS 預後：重度（梯度 >80 mmHg）中位存活約 19 個月；輕度長期預後良好',
+  ],
+  body: `# 先天性心臟病：PDA / PS / SAS (Congenital Heart Disease)
+
+## 一、病理機制與臨床表現 (Pathophysiology & Clinical Signs)
+
+### 動脈導管未閉 (Patent Ductus Arteriosus, PDA)
+
+#### 病理生理
+動脈導管未閉 → 主動脈壓 > 肺動脈壓 → 持續性左→右分流 → 肺血流增加 → 肺靜脈回流↑ → 左心房擴大 → 左心室容量過載（離心性肥大）→ 左心衰竭（肺水腫）。
+
+未治療自然病程：約 60% 在 1 歲前發展充血性心衰竭（CHF），中位存活時間顯著縮短。
+
+| 臨床表現 | 發生率 | 特徵 |
+|---------|--------|------|
+| 連續性「機械樣」雜音 | >95% | 左腋下最響，Grade IV-VI/VI |
+| 跳躍脈 (bounding pulse) | 80-90% | 舒張期分流致脈壓差增大 |
+| 運動不耐 | 50-70% | 左心容量過載，心輸出量儲備下降 |
+| 呼吸急促/肺水腫 | 30-50% | CHF 表現，晚期出現 |
+| 心房顫動 | 10-20% | 嚴重 LA 擴大合併症 |
+
+#### 好發品種與信號
+雌性犬發生率約為雄性的 2-3 倍。好發品種：馬爾濟斯、博美、玩具貴賓犬、德國牧羊犬、CKCS、喜樂蒂牧羊犬。通常在首次疫苗就診時發現心雜音。
+
+#### Reverse PDA（逆向 PDA）
+長期肺過度灌流 → Eisenmenger syndrome → 肺動脈壓 > 主動脈壓 → 右→左分流 → 差異性發紺（differential cyanosis：後肢 PaO₂ < 前肢）。Reverse PDA 為手術絕對禁忌——閉合導管將導致急性右心衰竭。
+
+### 肺動脈瓣狹窄 (Pulmonic Stenosis, PS)
+
+#### 病理生理
+肺動脈瓣狹窄 → 右心室收縮期壓力過載 → 右心室同心性肥大 → 舒張功能障礙 → 嚴重者右心衰竭（腹水、頸靜脈怒張）。
+
+| 嚴重度分級 | 壓力梯度 | 臨床意義 | 處置建議 |
+|-----------|---------|---------|---------|
+| 輕度 | < 50 mmHg | 通常無症狀，預後良好 | 每 12 個月心超追蹤 |
+| 中度 | 50-80 mmHg | 可能運動不耐 | 個別化評估，考慮介入 |
+| 重度 | > 80 mmHg | 暈厥、運動不耐、猝死風險 | 球囊擴張術（BV） |
+
+#### 臨床表現
+
+| 臨床表現 | 特徵 |
+|---------|------|
+| 收縮期噴射雜音 | 左心基部（第 2-4 肋間），Grade III-VI/VI |
+| 暈厥 | 運動或興奮誘發，嚴重阻塞所致 |
+| 腹水 | 右心衰竭表現，晚期 |
+| 發紺 | 伴隨 ASD/卵圓孔未閉時右→左分流 |
+
+好發品種：英國鬥牛犬（多為 dysplastic type B）、法國鬥牛犬、拳師犬、比格犬、可卡犬、迷你雪納瑞。
+
+### 主動脈下狹窄 (Subaortic Stenosis, SAS)
+
+#### 病理生理
+LVOT 纖維環或隧道型狹窄 → 收縮期壓力過載 → 左心室同心性肥大 → 心肌缺血（肥厚心肌氧需求↑ + 冠狀動脈灌注相對不足）→ 心律不整基質 → 猝死風險。
+
+SAS 為犬先天性心臟病中猝死風險最高者。
+
+| 臨床表現 | 特徵 |
+|---------|------|
+| 收縮期噴射雜音 | 左心基部，向右心基部與頸動脈放射 |
+| 暈厥 | 運動誘發最常見 |
+| 猝死 | 可為首發表現，尤其重度者 |
+| CHF | 晚期左心衰竭，較少見 |
+
+好發品種：金毛犬、紐芬蘭犬、拳師犬、德國牧羊犬、羅威那。
+
+## 二、診斷與鑑別 (Diagnosis & DDx)
+
+### 診斷工具比較
+
+| 工具 | PDA | PS | SAS |
+|------|-----|-----|-----|
+| 聽診 | 連續性雜音（左腋下） | 收縮期噴射雜音（左基部） | 收縮期噴射雜音（左基部→右） |
+| 胸腔 X 光 | 心臟擴大、肺過度灌流 | 主肺動脈突出、右心擴大 | 左心擴大（輕度） |
+| 心臟超音波 | LA/LV 擴大、PDA 可視化 | 瓣膜融合/增厚、壓力梯度 | LVOT 纖維環、壓力梯度 |
+| 心導管/血管攝影 | 確認分流與 ACDO sizing | 非常規需要 | 非常規需要 |
+
+### 鑑別診斷
+
+| 缺陷 | 容易混淆的疾病 | 關鍵鑑別 |
+|------|-------------|---------|
+| PDA | 主動脈—肺動脈窗 | 極罕見，心超可區分 |
+| PDA | 動靜脈瘺 | 周邊位置，非心臟來源 |
+| PS | 功能性雜音（幼犬） | PS 雜音通常 ≥ Grade III/VI + 心超可確診 |
+| PS | ASD | 右心擴大但 ASD 雜音常為 Grade I-II |
+| SAS | 功能性雜音 | SAS 雜音向頸部放射 + 心超確診 |
+| SAS | 主動脈瓣狹窄（valvular AS） | 犬極罕見，心超可區分瓣下 vs 瓣膜 |
+
+## 三、治療策略 (Treatment)
+
+### PDA 治療
+
+| 方法 | 適應症 | 成功率 | 優劣 |
+|------|--------|--------|------|
+| ACDO 導管封堵 | 體重 > 2.5 kg，導管型態合適 | >95% | 微創、恢復快、併發症低 |
+| 外科結紮 | ACDO 不可行或經費限制 | >90% | 開胸手術，風險稍高 |
+| Coil embolization | 小型 PDA | 85-90% | 較早技術，已被 ACDO 取代為主流 |
+
+ACDO（Amplatz Canine Duct Occluder）操作要點：經股動脈入路→血管攝影確認導管尺寸與型態→選擇合適 ACDO 尺寸→釋放→即時血管攝影確認無殘餘分流。
+
+術後預後：早期閉合（CHF 前）預後極佳，心臟可逆性重塑，壽命接近正常。已有 CHF 者閉合後仍可顯著改善，但可能需持續心臟藥物。
+
+### PS 治療——球囊擴張術 (Balloon Valvuloplasty, BV)
+
+適應症：壓力梯度 > 80 mmHg，或 50-80 mmHg 伴臨床症狀。
+
+操作要點：經頸靜脈或股靜脈入路→右心導管測壓→球囊尺寸選擇（瓣環直徑 × 1.2-1.5）→跨瓣膜擴張→重測梯度。
+
+療效：Type A（瓣膜融合型）效果佳（梯度下降 50-60%），Type B（dysplastic 型）效果差（可能僅下降 20-30%）。
+
+### SAS 治療
+
+| 策略 | 內容 | 證據 |
+|------|------|------|
+| 藥物（首選） | [藥物:Atenolol] 0.5-1 mg/kg PO BID | Level III |
+| 球囊擴張 | 僅暫時降低梯度，6-12 月復發 | Level III |
+| 外科切除 | 開心手術切除纖維環，高風險 | Level IV |
+| 運動限制 | 避免激烈運動降低猝死風險 | Level V |
+
+Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈灌注；(2) 降低心肌氧需求；(3) 減少心律不整風險。Corcoran et al. 研究顯示 atenolol 可能延長重度 SAS 犬的存活時間，但缺乏前瞻性 RCT。
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| 經導管 PDA 封堵（人醫標準治療） | ACDO 為犬改良版，成功率 >95% | 已成熟，台灣多家醫院可執行 |
+| 經導管主動脈瓣置換（TAVI） | 犬 SAS 的潛在微創治療 | 實驗階段，成本極高 |
+| Ross 手術（肺動脈瓣→主動脈位） | 犬嚴重 SAS 的外科選項 | 極少案例報告 |
+| 基因篩檢面板（新生兒 CHD 篩檢） | 品種繁殖前遺傳風險評估 | 犬遺傳研究進行中 |
+
+## 五、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| SAS 球囊擴張的價值 | 即使短期改善也減少症狀 | 梯度復發快、不改變猝死風險、併發症風險 | Level III |
+| 輕度 SAS 的繁殖限制 | OFA 建議確診即不繁殖 | 輕度 SAS 與功能性雜音鑑別困難 | Level III |
+| PDA 犬術後是否需終身追蹤 | 早期閉合且重塑良好者可解除 | 偶見遲發性併發症（如 hemolysis） | Level IV |
+| PS Type B 是否仍應嘗試 BV | 部分案例有改善 | 效果不可預期，可能加重瓣膜關閉不全 | Level III |
+
+[圖片:PDA/PS/SAS 心臟超音波特徵比較圖]`,
+  clinical_pearl: 'PDA 的「1-2-3 法則」有助於快速臨床判斷：(1) 1 個特徵性雜音——連續性機械樣雜音（continuous machinery murmur）在左腋下最響，(2) 2 個觸診發現——跳躍脈（bounding pulse）+ 心前區搏動增強（hyperdynamic precordium），(3) 3 個月內應完成治療——越早閉合 PDA，心臟重塑可逆性越高。對於馬爾濟斯、博美等台灣常見小型犬品種，獸醫在幼犬首次就診時發現左腋下連續性雜音，應高度懷疑 PDA 並立即轉診。ACDO 導管封堵在台灣已有多家教學醫院可執行，成功率高且恢復快。',
+  common_mistakes: [
+    'PDA 的連續性雜音誤聽為「收縮期+舒張期分開的雜音」——實際為不間斷的連續雜音，高峰在 S2 附近',
+    'SAS 犬僅依賴聽診追蹤——心雜音強度與壓力梯度相關性有限，必須定期心超測量梯度',
+    'PS 球囊擴張後未追蹤——梯度可能在數月內回升，需 3-6 個月心超重新評估',
+    'Reverse PDA 誤行手術閉合——肺高壓已不可逆時閉合導管會導致致命性右心衰竭',
+    '對所有 SAS 犬推薦球囊擴張——目前證據不支持 BV 改善 SAS 犬的長期預後',
+  ],
+  disease_data: {
+    signalment: 'PDA：好發小型犬（馬爾濟斯、博美、玩具貴賓、CKCS、德國牧羊犬），雌性為雄性 2-3 倍。PS：好發英國鬥牛犬、法國鬥牛犬、拳師犬、比格犬、可卡犬。SAS：好發金毛犬、紐芬蘭犬、拳師犬、德國牧羊犬。通常在幼犬期（<1 歲）因心雜音被發現。',
+    etiology: 'PDA：動脈導管平滑肌對氧氣收縮反應異常+內膜增生不足，多基因遺傳。PS：肺動脈瓣發育不全（瓣葉融合或增厚/發育不良），遺傳性。SAS：左心室流出道纖維肌性環或隧道型狹窄，多基因遺傳，出生後可能進展。',
+    pathogenesis: 'PDA：持續性主動脈→肺動脈左→右分流→肺過度灌流→左心房擴大→左心室離心性肥大→充血性心衰竭。PS：右心室收縮期壓力過載→同心性肥大→舒張功能障礙→嚴重者右心衰竭。SAS：左心室流出道阻塞→左心室同心性肥大→心肌缺血→心律不整→猝死風險。',
+    clinical_signs: [
+      { sign: 'PDA 連續性機械樣雜音', category: 'primary', description: '左腋下最響，Grade IV-VI/VI，不間斷貫穿收縮與舒張期' },
+      { sign: 'PDA 跳躍脈', category: 'primary', description: '舒張期分流致脈壓差增大，周邊脈搏搏動明顯增強' },
+      { sign: 'PS 收縮期噴射雜音', category: 'primary', description: '左心基部（第 2-4 肋間），Grade III-VI/VI' },
+      { sign: 'SAS 收縮期噴射雜音', category: 'primary', description: '左心基部向右心基部與頸動脈放射' },
+      { sign: '運動不耐', category: 'secondary', description: '三種缺陷均可見，嚴重度與梯度/分流量相關' },
+      { sign: '暈厥', category: 'secondary', description: 'PS 重度與 SAS 最常見，運動或興奮誘發' },
+    ],
+    staging: { system: 'Severity grading', stages: ['Mild (gradient <50 mmHg)', 'Moderate (50-80 mmHg)', 'Severe (>80 mmHg)'] },
+    differential_diagnosis: [
+      { condition: '功能性雜音（Innocent murmur）', key_differentiator: '幼犬常見，Grade I-II/VI，成長後消失，心超正常' },
+      { condition: '主動脈瓣狹窄（Valvular AS）', key_differentiator: '犬極罕見，心超可區分瓣膜 vs 瓣下阻塞' },
+      { condition: '心室中隔缺損（VSD）', key_differentiator: '右側心雜音較明顯，心超可直接顯示中隔缺損' },
+      { condition: '二尖瓣發育不良', key_differentiator: '年輕犬的收縮期雜音，心超瓣膜形態異常但非流出道阻塞' },
+    ],
+    diagnostic_workup: '1. 理學檢查（聽診特徵、脈搏品質、黏膜色澤）→ 2. 胸腔 X 光（心臟大小、肺血管紋路）→ 3. 心臟超音波（確診：直接觀察缺陷+杜卜勒測量壓力梯度/分流量）→ 4. ECG（評估心律不整風險，SAS 尤其重要）→ 5. 血管攝影（PDA ACDO 術前 sizing 必需）',
+    treatment_protocol: '【PDA】ACDO 導管封堵（首選，體重 >2.5 kg，成功率 >95%）或外科結紮。越早治療越好，CHF 前閉合預後最佳。已有 CHF 者先穩定再閉合。Reverse PDA 為手術禁忌。\n\n【PS】輕度（<50 mmHg）：追蹤。中度（50-80）：個別化。重度（>80）：球囊擴張術（BV），Type A 效果佳，Type B 效果有限。\n\n【SAS】[藥物:Atenolol] 0.5-1 mg/kg PO BID 為主要治療。運動限制。球囊擴張僅暫時效果，不推薦為常規治療。重度者建議 Holter 評估心律不整風險。',
+    prognosis: 'PDA：早期閉合（CHF 前）預後極佳，壽命接近正常；未治療者 60% 在 1 歲前死於 CHF。PS：輕度預後良好；重度 BV 後多可維持良好生活品質。SAS：輕度預後良好；重度中位存活約 19 個月，猝死為主要死因；Atenolol 可能延長存活但缺乏 RCT 證據。',
+    monitoring: 'PDA 術後：24-48h 心超確認無殘餘分流，1 個月、6 個月、12 個月回診心超追蹤心臟重塑。PS BV 後：3 個月心超重測梯度。SAS：每 6 個月心超追蹤梯度變化 + 年度 Holter（重度者）。所有先天性心臟病犬建議不繁殖。',
+    owner_communication: '先天性心臟病的關鍵訊息：(1) PDA——早期治療預後極佳，手術/介入是治癒性的；(2) PS——重度需介入治療，術後多可維持良好生活品質；(3) SAS——誠實告知預後，重度者有猝死風險，藥物治療以改善生活品質為目標。所有先天性心臟病犬強烈建議不繁殖以減少下一代發生率。台灣 ACDO 技術已成熟，費用雖較高但效果確切。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床表現段落', type: 'comparison_table', description: 'PDA/PS/SAS 臨床特徵比較表' },
+    { position: '治療段落', type: 'animated_diagram', description: 'ACDO 導管封堵術操作動態示意圖' },
+  ],
+  interactive_placeholders: [
+    { position: '嚴重度分級段落', type: 'interactive_staging', description: '輸入壓力梯度自動分級並推薦治療方案' },
+  ],
+  drug_api_links: ['Atenolol', 'Sildenafil'],
+  references: [
+    { type: 'journal', citation: 'Schrope DP. Prevalence of congenital heart disease in 76,301 mixed-breed dogs and 57,025 mixed-breed cats. J Vet Cardiol. 2015;17(3):192-202.', relevance: '犬先天性心臟病盛行率與類型分布大規模研究' },
+    { type: 'journal', citation: 'Bussadori C, DeMadron E, Santilli RA, Borgarelli M. Balloon valvuloplasty in 30 dogs with pulmonic stenosis: effect of valve morphology and annular size on initial and 1-year outcome. J Vet Intern Med. 2009;23(4):867-874.', relevance: 'PS 球囊擴張術療效與瓣膜型態關聯' },
+    { type: 'textbook', citation: 'Tobias AH, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter: Congenital Heart Disease.', relevance: '先天性心臟病外科與介入治療教材' },
+    { type: 'journal', citation: 'Corcoran BM, Martin MW, Darke PG, et al. Atenolol in the treatment of congenital subaortic stenosis in the dog. J Small Anim Pract. 2002;43(12):533-536.', relevance: 'Atenolol 治療犬 SAS 的臨床研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 心律不整各論 — 疾病型 */
+const contentClinicalArrhythmias: NodeContent = {
+  id: 'CONTENT-L3-007',
+  node_id: 'CARDIO-L3-007',
+  version: 1,
+  summary: '臨床心律不整包含上心室性頻脈（SVT）、心室頻脈（VT）、心房顫動（AF）與病竇症候群（SSS）。犬 VT 以杜賓犬 DCM 與拳師犬 ARVC 最具臨床意義，緊急處理以 IV lidocaine 為首選。AF 好發於大型犬合併 DCM，以 diltiazem + digoxin 心率控制為主。SSS 好發迷你雪納瑞與西高地白梗，嚴重者需永久性心律調節器。',
+  learning_objectives: [
+    '辨識 SVT、VT、AF、SSS 的 ECG 特徵與臨床表現',
+    '制定犬急性 VT 的緊急處理步驟（Lidocaine protocol）',
+    '設計犬 AF 的心率控制方案（Diltiazem + Digoxin）',
+    '說明 SSS 的臨床意義與心律調節器植入適應症',
+    '比較各心律不整的預後與長期管理策略',
+  ],
+  key_points: [
+    'SVT：窄 QRS 複合波（<70 ms 犬）、心率 >250 bpm、迷走神經手法可終止——首選眼球壓迫或頸動脈竇按摩',
+    'SVT 藥物轉復：IV diltiazem 0.15-0.25 mg/kg slowly（over 5 min），可重複；替代 IV esmolol 0.05-0.1 mg/kg',
+    'VT：寬 QRS 複合波（>70 ms 犬）、AV dissociation、fusion beats——血流動力學不穩定時為緊急狀況',
+    'VT 緊急處理：IV lidocaine 2 mg/kg bolus（over 2 min），可每 5-10 min 重複至 8 mg/kg 總量；有效後 CRI 40-80 µg/kg/min',
+    'AF：不規則不規則心律（irregularly irregular）、f waves 取代 P waves、心率常 >160 bpm（犬）',
+    'AF 心率控制：diltiazem ER 3-5 mg/kg PO BID + digoxin 0.005 mg/kg PO BID，目標靜息心率 <140-160 bpm',
+    'SSS：竇性心搏過緩（<60 bpm）與竇性停頓交替、brady-tachy syndrome 常見',
+    'SSS 治療：有症狀者（暈厥）→ 永久性心律調節器植入；無症狀者 → 密切監測',
+  ],
+  body: `# 心律不整各論 (Clinical Arrhythmias: SVT / VT / AF / SSS)
+
+## 一、分類與病理機制 (Classification & Pathophysiology)
+
+### 上心室性頻脈 (Supraventricular Tachycardia, SVT)
+
+#### 定義與機轉
+SVT 為源於 His 束以上（心房或 AV node/junction）的快速心律不整。主要機轉：
+- **AV nodal re-entrant tachycardia (AVNRT)**：AV node 內雙路徑形成迴路
+- **Accessory pathway-mediated (AVRT)**：房室旁路（如 WPW syndrome）
+- **Atrial tachycardia**：心房異位灶自動性增強
+
+| ECG 特徵 | 描述 |
+|---------|------|
+| QRS 寬度 | 窄（<70 ms 犬，<40 ms 貓），除非伴 BBB |
+| 心率 | >250 bpm（犬），>300 bpm（貓） |
+| P waves | 常看不到（隱藏在 T 波中）或逆行 P |
+| 規律性 | 規律 |
+| 迷走神經反應 | 可能突然終止（AVNRT/AVRT） |
+
+#### 臨床表現
+- 多數為陣發性，可能無症狀或僅有心悸
+- 持續性 SVT 可導致頻脈性心肌病（tachycardia-induced cardiomyopathy）
+- 血流動力學不穩定少見（除非心率極高或原有心臟病）
+
+### 心室頻脈 (Ventricular Tachycardia, VT)
+
+#### 定義與機轉
+VT 為源於 His 束以下（心室）的連續三個以上心室早期收縮（VPC），心率 >100 bpm。主要機轉：
+- **Re-entry**：心肌疤痕/纖維化區域造成傳導延遲形成迴路（最常見）
+- **Enhanced automaticity**：缺血或電解質異常致心室肌自動性增加
+- **Triggered activity**：EAD/DAD（early/delayed afterdepolarization）
+
+| 分類 | 定義 | 臨床意義 |
+|------|------|---------|
+| 非持續性 (NSVT) | <30 秒自行終止 | 可能無症狀，需 Holter 評估 |
+| 持續性 (Sustained VT) | ≥30 秒或血流動力學受損 | 緊急狀況，需立即處理 |
+| 單形 (Monomorphic) | QRS 形態一致 | 多為 re-entry |
+| 多形 (Polymorphic) | QRS 形態多變 | 預後更差，可退化為 VF |
+
+#### ECG 特徵
+- 寬 QRS（犬 >70 ms）
+- AV dissociation（心房與心室各自節律）
+- Fusion beats（正常傳導與 VPC 混合的複合波）
+- Capture beats（偶爾正常窄 QRS 穿插）
+
+#### 臨床重要族群
+- **杜賓犬 DCM**：約 50-60% 發展 VT/VPC，Holter 顯示 >50 VPC/24h 為異常
+- **拳師犬 ARVC**：右心室纖維脂肪浸潤 → VPC/VT（左束支傳導阻滯型態）
+- **德國牧羊犬**：遺傳性 VT（inherited ventricular arrhythmia）
+
+### 心房顫動 (Atrial Fibrillation, AF)
+
+#### 定義與機轉
+心房多處微型迴路（multiple wavelet hypothesis）或肺靜脈焦點灶（focal firing from pulmonary veins）→ 心房失去有組織的收縮 → 心室對 f waves 不規則反應 → irregularly irregular 心律。
+
+| ECG 特徵 | 描述 |
+|---------|------|
+| P waves | 消失，取代為 f waves（基線不規則振動） |
+| R-R 間距 | 完全不規則（irregularly irregular） |
+| QRS 寬度 | 通常窄（除非伴 BBB 或 VPC） |
+| 心率 | 犬常 >160-200 bpm（未控制） |
+
+#### 臨床意義
+- **犬**：AF 幾乎都與嚴重心臟病相關（DCM、嚴重 MMVD + LA 擴大）；大/巨型犬（Irish Wolfhound、Great Dane）可有「孤立性 AF（lone AF）」
+- **貓**：AF 在貓極少見（因心房較小），發生時通常代表嚴重心臟病
+
+### 病竇症候群 (Sick Sinus Syndrome, SSS)
+
+#### 定義與機轉
+竇房結功能障礙 → 竇性心搏過緩、竇性停頓（sinus arrest）或竇房阻滯（SA block），常合併交替的快速心律不整（brady-tachy syndrome：竇性停頓 + 突發 AF 或 SVT）。
+
+病理基礎：竇房結與心房組織纖維化 → 節律產生與傳導功能衰退。
+
+| 好發品種 | 特徵 |
+|---------|------|
+| 迷你雪納瑞 | 最常見品種，多為老年犬 |
+| 西高地白梗 | 中老年好發 |
+| 可卡犬 | 偶見報告 |
+| 臘腸犬 | 偶見報告 |
+
+#### 臨床表現
+- 間歇性暈厥（最常見主訴）
+- 運動不耐
+- 虛弱/嗜睡
+- Brady-tachy 轉換時症狀最明顯（長停頓後暈厥）
+
+## 二、診斷與判讀要點 (Diagnosis & Interpretation)
+
+### ECG 鑑別診斷流程
+
+寬 QRS 頻脈（心率 >100 bpm）的鑑別：
+1. 規律 + 寬 QRS → 考慮 VT（最常見）vs SVT 伴 BBB
+2. AV dissociation / fusion beats / capture beats → 確認 VT
+3. 迷走神經手法可終止 → 提示 SVT（但不絕對）
+4. 不確定時按 VT 處理（較安全的預設）
+
+### 24 小時 Holter 監測適應症
+- 杜賓犬 ≥4 歲年度篩檢（DCM occult 期 VPC 偵測）
+- 拳師犬疑似 ARVC
+- 暈厥原因不明
+- 抗心律不整藥物療效評估
+- SSS 嚴重度分級
+
+## 三、治療策略 (Treatment)
+
+### SVT 急性處理
+
+| 步驟 | 方法 | 細節 |
+|------|------|------|
+| 1. 迷走神經手法 | 眼球壓迫 10-15 秒或頸動脈竇按摩 | AVNRT/AVRT 可能即刻終止 |
+| 2. Diltiazem IV | 0.15-0.25 mg/kg slowly (over 5 min) | 可每 15 min 重複一次，最多 3 次 |
+| 3. Esmolol IV（替代） | 0.05-0.1 mg/kg slowly | 超短效 β-blocker |
+| 4. 穩定後口服維持 | [藥物:Diltiazem] PO 或 [藥物:Atenolol] PO | 預防復發 |
+
+### VT 急性處理
+
+| 步驟 | 方法 | 細節 |
+|------|------|------|
+| 1. Lidocaine IV bolus | 2 mg/kg IV over 2 min | 可每 5-10 min 重複，總量 ≤8 mg/kg |
+| 2. Lidocaine CRI | 40-80 µg/kg/min | 有效後維持 24-48h |
+| 3. 無效替代 | [藥物:Procainamide] 6-8 mg/kg IV slowly | 或 CRI 25-50 µg/kg/min |
+| 4. 轉口服維持 | [藥物:Sotalol] 1.5-3.5 mg/kg PO BID | ± [藥物:Mexiletine] 5-8 mg/kg PO TID |
+
+**貓的注意事項**：Lidocaine 在貓的中樞神經毒性極高，犬標準劑量在貓可致死。貓 VT 若必須使用，劑量不超過 0.25-0.5 mg/kg IV very slowly。
+
+### AF 心率控制
+
+| 藥物 | 劑量 | 目標 |
+|------|------|------|
+| [藥物:Diltiazem] ER | 3-5 mg/kg PO BID | 靜息心率 <140-160 bpm |
+| [藥物:Digoxin] | 0.005 mg/kg PO BID | 輔助 AV node 阻滯 |
+| 監測 | Digoxin 谷值 0.8-1.2 ng/mL | 治療窗極窄 |
+
+巨型犬「孤立性 AF」若心率已自然 <140 bpm，可能不需要積極治療——追蹤即可。
+
+### SSS 治療
+
+| 嚴重度 | 處置 |
+|--------|------|
+| 無症狀竇性心搏過緩 | 觀察追蹤 |
+| 偶發暈厥 | 考慮 Theophylline 10 mg/kg PO BID（效果有限） |
+| 頻繁暈厥/嚴重停頓 | **永久性心律調節器植入（pacemaker）** |
+
+心律調節器植入：經頸靜脈入路，電極置於右心室心尖，脈衝產生器植入頸部皮下。犬使用 VVI 或 VVIR 模式為主。
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| AF 肺靜脈隔離術（catheter ablation） | 犬 AF 根治性治療 | 人醫成熟，獸醫研究中但常規使用困難 |
+| ICD（植入式心臟去顫器） | 杜賓犬 VT 猝死預防 | 人醫標準治療，獸醫因成本/體型限制極少使用 |
+| Leadless pacemaker（無導線心律調節器）| 犬 SSS 微創治療 | 人醫已上市（Micra），獸醫個案報告 |
+| 穿戴式 ECG patch（連續監測）| 犬心律不整長期監測替代 Holter | 概念可行，獸醫產品開發中 |
+
+## 五、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| 犬 AF 是否應嘗試電擊轉復 | 偶有維持竇律報告 | 犬 AF 幾乎 100% 復發，電擊風險不值得 | Level III |
+| 杜賓犬 occult DCM 偵測到 VPC 是否治療 | 早期 Sotalol 可能延緩進展 | 無症狀 VPC 治療的 RCT 證據不足 | Level III |
+| SSS 犬 Theophylline 的價值 | 可增加竇房結自動性 | 效果不穩定且可能誘發快速心律 | Level IV |
+| 拳師犬 ARVC 的 Sotalol vs Mexiletine+Sotalol | 單藥方案較簡單 | 合併用藥可能更有效控制 VPC | Level III |
+
+[圖片:四種心律不整 ECG 特徵比較圖——SVT/VT/AF/SSS]`,
+  clinical_pearl: 'VT 的「穩定 vs 不穩定」快速評估決定處理急迫性：血流動力學不穩定（低血壓、蒼白黏膜、意識改變、脈搏弱）= 緊急給予 Lidocaine IV。血流動力學穩定的 VT 仍需處理，但可有更多時間準備——先確認電解質（低鉀、低鎂加重心律不整）、評估心率（犬 VT 心率 <180 bpm 較穩定），再決定 IV 或直接口服 Sotalol。「不確定 SVT 或 VT 時按 VT 處理」是安全的臨床原則。\n\n【台灣臨床現況】台灣多家教學醫院已可執行永久性心律調節器植入。杜賓犬在台灣飼養量相對較少，但 DCM 篩檢意識正在提升。Holter 監測在台灣已有數家專科醫院提供租借服務。',
+  common_mistakes: [
+    '將寬 QRS 頻脈自動歸類為 SVT 伴 BBB——預設應按 VT 處理，除非有明確證據支持 SVT',
+    'AF 嘗試藥物轉復（rhythm control）——犬 AF 幾乎都是永久性，應以心率控制為治療目標',
+    'SSS 使用 atropine 長期治療——atropine 僅為暫時性測試（atropine response test），不適合長期使用',
+    '使用犬劑量 Lidocaine 於貓——貓對 Lidocaine 極度敏感，2 mg/kg 在貓可致命',
+    '忽略電解質矯正——低鉀血症是心律不整惡化的常見可矯正因素',
+  ],
+  disease_data: {
+    signalment: 'SVT：各品種與年齡均可發生。VT：杜賓犬（DCM 相關，中年以上）、拳師犬（ARVC）、德國牧羊犬（遺傳性 VT）。AF：大型至巨型犬（Irish Wolfhound、Great Dane、Doberman）合併 DCM 或嚴重 MMVD。SSS：迷你雪納瑞、西高地白梗，中老年好發。',
+    etiology: 'SVT：AV node 雙路徑（AVNRT）、房室旁路（AVRT）、心房異位灶。VT：心肌纖維化/疤痕（re-entry）、缺血、電解質異常、遺傳性通道病。AF：嚴重心房擴大（MMVD/DCM）、心房纖維化。SSS：竇房結與心房組織進行性纖維化，可能為退化性或遺傳性。',
+    pathogenesis: 'SVT：His 束以上的快速節律→心室經 AV node 快速傳導→持續高心率→可能導致頻脈性心肌病。VT：心室異常自律性或迴路→不同步收縮→心輸出量下降→血流動力學不穩→可退化為心室顫動（VF）致死。AF：心房多處微型迴路→有效心房收縮喪失→心房貢獻心輸出量（15-25%）消失→加上快速心室反應→心輸出量下降。SSS：竇房結功能衰退→心搏過緩/停頓→腦灌流不足→暈厥。',
+    clinical_signs: [
+      { sign: '暈厥', category: 'primary', description: 'VT、SSS 最常見表現；突發意識喪失後自行恢復' },
+      { sign: '運動不耐', category: 'primary', description: '各型心律不整均可見，因心輸出量無法配合需求' },
+      { sign: '虛弱/嗜睡', category: 'primary', description: 'SSS 與持續性 VT/AF 的慢性表現' },
+      { sign: '不規則心律', category: 'secondary', description: 'AF 的 irregularly irregular 為特徵；VPC 為不規則插入的早搏' },
+      { sign: '脈搏弱/缺脈', category: 'secondary', description: 'VT 與快速 AF 可見脈搏與心跳不一致（pulse deficit）' },
+      { sign: '猝死', category: 'secondary', description: 'VT 退化為 VF 或 SSS 長停頓可致猝死，為首發表現' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '癲癇', key_differentiator: '暈厥通常無強直-陣攣期、恢復快、可能伴脈搏異常；ECG/Holter 可區分' },
+      { condition: '竇性心搏過緩（生理性）', key_differentiator: '運動犬或高迷走張力犬可見靜息心率 <60 bpm，atropine 測試可區分' },
+      { condition: '房室傳導阻滯（AVB）', key_differentiator: 'ECG 可辨識 P-QRS 關係異常，2nd/3rd degree AVB 有獨特 ECG 型態' },
+      { condition: '心因性暈厥（其他原因）', key_differentiator: '需系統性排除：SAS/PS（血流動力學性）、心包膜壓塞、肺高壓等' },
+    ],
+    diagnostic_workup: '1. ECG（6 導程）→ 辨識心律不整類型與急性度 → 2. 24h Holter → 評估頻率、類型、日間變異（尤其杜賓犬/拳師犬篩檢）→ 3. 心臟超音波 → 結構性心臟病評估（DCM/MMVD/HCM）→ 4. 血液檢查 → 電解質（K⁺、Mg²⁺、Ca²⁺）、甲狀腺功能（T4）、cTnI → 5. Atropine response test（SSS 評估）→ 0.04 mg/kg IV → 正常應使心率 >150 bpm，SSS 常反應不足',
+    treatment_protocol: '【SVT】迷走神經手法（眼球壓迫 10-15 秒）→ IV [藥物:Diltiazem] 0.15-0.25 mg/kg slowly → 穩定後口服 Diltiazem 或 [藥物:Atenolol] 預防復發。\n\n【VT（血流動力學不穩定）】IV [藥物:Lidocaine] 2 mg/kg bolus（可重複至 8 mg/kg）→ CRI 40-80 µg/kg/min → 穩定後口服 [藥物:Sotalol] 1.5-3.5 mg/kg BID ± [藥物:Mexiletine] 5-8 mg/kg TID。Lidocaine 無效替代：[藥物:Procainamide] 6-8 mg/kg IV slowly。\n\n【AF】心率控制：[藥物:Diltiazem] ER 3-5 mg/kg PO BID + [藥物:Digoxin] 0.005 mg/kg PO BID。目標靜息心率 <140-160 bpm。\n\n【SSS】有症狀暈厥→永久性心律調節器植入（VVI/VVIR）。輕微症狀可試 Theophylline 10 mg/kg PO BID。',
+    prognosis: 'SVT：一般預後良好，藥物控制或消融術可有效管理。VT：杜賓犬 DCM 伴 VT 預後差（Sotalol 治療 MST ~120 天 vs 未治療 ~40 天），拳師犬 ARVC 伴 VPC Sotalol 可減少 VPC >80% 但猝死風險無法完全消除。AF：犬 AF 預後取決於基礎心臟病——DCM 伴 AF 預後差，心率控制達標與存活時間正相關。SSS：心律調節器植入後預後良好，中位存活 >3 年。',
+    monitoring: 'SVT：口服藥物啟始後 1 週回診 ECG。VT：口服 Sotalol 啟始後 ECG 確認 QT 間距，2 週後 Holter 評估（目標 VPC 減少 >80%），之後每 3-6 月 Holter。AF：啟始治療後 1 週 ECG 確認心率控制，Digoxin 7-10 天後抽谷值血中濃度。SSS 心律調節器術後 1 週、1 月、3 月回診 ECG + 調節器功能檢測。',
+    owner_communication: '心律不整的嚴重度差異很大。SVT 通常可藥物控制且預後好。VT 需要認真面對——告知飼主杜賓犬 DCM 的猝死風險，藥物可改善但無法完全消除風險。AF 多伴隨嚴重心臟病，藥物以控制心率為目標而非恢復正常節律。SSS 嚴重者心律調節器植入後效果良好，但需定期回診檢測調節器功能。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'ECG 特徵段落', type: 'waveform', description: 'SVT/VT/AF/SSS 四種心律不整的典型 ECG 波形對照圖' },
+    { position: '治療段落', type: 'flowchart', description: '寬 QRS vs 窄 QRS 頻脈鑑別與治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: 'ECG 段落', type: 'interactive_overlay', description: '互動式 ECG 判讀練習——辨識心律不整類型' },
+  ],
+  drug_api_links: ['Lidocaine', 'Diltiazem', 'Sotalol', 'Digoxin', 'Procainamide', 'Atenolol'],
+  references: [
+    { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016.', relevance: '小動物 ECG 判讀與心律不整診斷完整教材' },
+    { type: 'journal', citation: 'Meurs KM et al. Comparison of the effects of four antiarrhythmic treatments for familial ventricular arrhythmias in Boxers. J Am Vet Med Assoc. 2002;221(4):522-527.', relevance: '拳師犬心律不整治療比較研究' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Cardiac Arrhythmias.', relevance: '臨床心律不整診斷與治療教材' },
+    { type: 'journal', citation: 'Calvert CA, Hall G, Jacobs G, Pickus C. Clinical and pathologic findings in Doberman Pinschers with occult cardiomyopathy that died suddenly or developed congestive heart failure: 54 cases (1984-2004). J Am Vet Med Assoc. 2006;228(11):1723-1730.', relevance: '杜賓犬 DCM 伴心律不整的臨床病理研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 感染性心內膜炎 — 疾病型 */
+const contentEndocarditis: NodeContent = {
+  id: 'CONTENT-L3-008',
+  node_id: 'CARDIO-L3-008',
+  version: 1,
+  summary: '感染性心內膜炎（Infective Endocarditis, IE）是心臟瓣膜或心內膜表面的微生物感染，以主動脈瓣與二尖瓣最常受侵犯。犬好發於中大型犬（德國牧羊犬為高風險品種），貓極罕見。診斷依賴血液培養（3 組不同部位取樣）與心臟超音波偵測贅生物（vegetation）。治療需長期靜脈注射抗生素（4-6 週），預後不良。',
+  learning_objectives: [
+    '描述感染性心內膜炎的病理生理機轉與易感因子',
+    '列舉犬 IE 最常見的致病菌與感染來源',
+    '執行標準血液培養取樣程序（3 組不同部位）',
+    '辨識心臟超音波上贅生物的典型表現',
+    '制定長期抗生素治療方案與監測計畫',
+  ],
+  key_points: [
+    '犬 IE 好發於中大型犬，德國牧羊犬為高風險品種，雄性略多於雌性',
+    '主動脈瓣（~60%）> 二尖瓣（~30%）> 三尖瓣/肺動脈瓣（<10%）',
+    '最常見致病菌：Staphylococcus spp.、Streptococcus spp.、E. coli、Bartonella spp.（新興病原）',
+    '感染來源：口腔感染、泌尿道感染、皮膚傷口、椎間盤炎、前列腺炎',
+    '診斷三要素：(1) 血培養 3 組不同部位取樣 (2) 心超偵測贅生物 (3) 臨床表現（發燒+新雜音+栓塞現象）',
+    '治療：長期靜脈抗生素 4-6 週（經驗性：Ampicillin + Enrofloxacin，依培養結果調整）',
+    '預後不良：中位存活約 3-6 個月，主動脈瓣受侵犯與嚴重瓣膜破壞預後更差',
+  ],
+  body: `# 感染性心內膜炎 (Infective Endocarditis, IE)
+
+## 一、病理機制 (Pathophysiology)
+
+### 發病機轉
+
+| 步驟 | 機轉 | 臨床關聯 |
+|------|------|---------|
+| 內皮損傷 | 瓣膜表面內皮受損（血流紊亂、退化性變化） | SAS 犬主動脈瓣受高速噴射流損傷 → IE 風險↑ |
+| 血小板-纖維蛋白沉積 | 受損內皮上形成無菌血栓（NBTE） | 黏附細菌的「著陸平台」 |
+| 菌血症 | 口腔/皮膚/泌尿道等感染灶細菌進入血流 | 牙科處置、泌尿道感染為常見前因 |
+| 細菌附著 | 細菌黏附於 NBTE 上的纖維蛋白基質 | 細菌表面黏附素（adhesins）決定親和力 |
+| 贅生物形成 | 細菌+血小板+纖維蛋白+發炎細胞 = vegetation | 心超可偵測，為診斷關鍵 |
+| 瓣膜破壞 | 感染侵蝕瓣膜組織 → 穿孔/撕裂/脫垂 | 急性瓣膜關閉不全 → CHF |
+| 栓塞 | 贅生物碎片脫落 → 遠端栓塞 | 腎/脾/腦/肢端梗塞 |
+
+### 易感因子
+- SAS（主動脈瓣受高速噴射流損傷——IE 風險顯著增加）
+- 免疫抑制（長期類固醇、化療）
+- 長期留置靜脈導管
+- 椎間盤炎/前列腺炎/泌尿道感染（持續菌血症來源）
+
+### 致病菌分布
+
+| 病原 | 佔比 | 特徵 |
+|------|------|------|
+| Staphylococcus spp. | 20-30% | 皮膚來源，急性進展 |
+| Streptococcus spp. | 15-25% | 口腔來源，亞急性進展 |
+| E. coli | 15-20% | 泌尿道來源 |
+| Bartonella spp. | 10-30% | 培養陰性IE重要病因，需PCR/血清學 |
+| Enterococcus spp. | 5-10% | 腸道/泌尿道來源 |
+| 培養陰性 | 20-30% | 抗生素預先使用或 Bartonella |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 典型表現
+
+| 臨床表現 | 發生率 | 特徵 |
+|---------|--------|------|
+| 發燒（波動性） | 60-80% | 間歇性高燒，可能被先前抗生素壓制 |
+| 新出現或改變的心雜音 | 50-70% | 急性主動脈瓣關閉不全雜音（舒張期） |
+| 跛行/關節痛 | 30-40% | 免疫複合物沉積性多發性關節炎 |
+| 腎功能異常 | 30-50% | 腎梗塞或免疫複合物腎絲球腎炎 |
+| 脾腫大 | 20-30% | 脾梗塞或反應性脾腫 |
+
+### 非典型表現（易誤診）
+- 不明原因發燒（FUO）——IE 應列入鑑別
+- 急性後肢跛行（栓塞至髂動脈）
+- 急性神經症狀（腦栓塞）
+- 急性腹痛（腎/脾梗塞）
+
+### 診斷標準
+
+改良 Duke 準則（人醫，獸醫參考使用）：
+
+主要準則：(1) 血培養陽性（典型 IE 病原 ≥2 組陽性）(2) 心超偵測贅生物或新瓣膜關閉不全
+
+次要準則：(1) 易感因子（SAS/免疫抑制）(2) 發燒 >39.5°C (3) 血管現象（栓塞/梗塞）(4) 免疫現象（腎絲球腎炎/關節炎）(5) 1 組血培養陽性
+
+確定 IE = 2 主要 / 1 主要+3 次要 / 5 次要
+
+### 血培養取樣要點
+- **3 組**不同部位靜脈穿刺（減少污染假陽性）
+- 每組含需氧+厭氧培養瓶
+- 取樣間隔 30-60 分鐘（亞急性）或立即連續取樣（急性重症）
+- 發燒高峰期取樣可提高陽性率
+- 培養前盡量不使用抗生素（已使用者仍應取樣）
+
+## 三、治療策略 (Treatment)
+
+### 抗生素治療
+
+| 階段 | 方案 | 細節 |
+|------|------|------|
+| 經驗性（培養結果前）| [藥物:Ampicillin] 22 mg/kg IV q6-8h + [藥物:Enrofloxacin] 10 mg/kg IV q24h | 涵蓋 Gram+/Gram- |
+| 培養結果後 | 依藥敏試驗調整 | 選擇殺菌性抗生素（bactericidal） |
+| Bartonella 疑似 | Azithromycin 5 mg/kg PO q24h ± Doxycycline | PCR/血清學確認 |
+| 總療程 | 至少 4-6 週靜脈注射 | 後段可轉口服（部分情況） |
+
+### 併發症管理
+
+| 併發症 | 處置 |
+|--------|------|
+| CHF（瓣膜破壞） | Furosemide + Pimobendan 標準 CHF 治療 |
+| 腎功能異常 | 輸液支持，監測 BUN/Cre |
+| 血栓栓塞 | 止痛 + 支持療法 |
+| DIC | 新鮮冷凍血漿 + 低分子肝素 |
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| Duke 診斷準則 | 獸醫參考使用，尚無獸醫專屬版本 | 直接沿用人醫準則 |
+| 牙科處置前抗生素預防 | SAS 犬牙科前是否預防性抗生素 | 無獸醫 RCT，參考人醫建議 |
+| 外科瓣膜置換 | IE 伴嚴重瓣膜破壞的根治性治療 | 人醫成熟，獸醫極少執行 |
+| 分子診斷（16S rRNA PCR） | 培養陰性 IE 的病原鑑定 | 獸醫實驗室逐漸提供 |
+
+## 五、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| SAS 犬牙科前預防性抗生素 | 降低 IE 風險（類比人醫建議） | 無獸醫 RCT 支持，可能增加抗藥性 | Level V |
+| 培養陰性 IE 的治療方向 | 經驗性涵蓋 Bartonella（台灣為流行區） | PCR/血清學確認後再針對治療 | Level IV |
+| 治療終點判斷 | 臨床症狀+CRP/白血球正常化 4-6 週 | 缺乏明確生物標記定義治癒 | Level IV |
+
+[圖片:感染性心內膜炎心超贅生物影像與瓣膜破壞示意圖]`,
+  clinical_pearl: '感染性心內膜炎的診斷陷阱：血培養陰性率高達 20-30%，主要原因為 (1) 抗生素已先使用 (2) Bartonella spp. 為難培養病原。台灣為 Bartonella 流行區（跳蚤媒介），對於「培養陰性 IE」應積極以 PCR 或血清學排除 Bartonella。此外，心超贅生物偵測有限制——小於 2-3 mm 的贅生物可能無法偵測，早期 IE 心超可能正常。因此「心超正常不排除 IE」——臨床高度懷疑時應重複心超並持續血培養。',
+  common_mistakes: [
+    '僅取 1 組血培養即下結論——需 3 組不同部位取樣以區分真正菌血症與皮膚污染',
+    '使用抑菌性而非殺菌性抗生素——IE 治療必須使用殺菌性抗生素（bactericidal）才能穿透贅生物',
+    '治療不足 4 週即停藥——過早停藥復發率極高',
+    '忽略 SAS 犬為 IE 高風險族群——SAS 犬出現不明原因發燒應優先考慮 IE',
+    '將免疫複合物性多發性關節炎誤診為原發性關節炎——忽略尋找感染灶',
+  ],
+  disease_data: {
+    signalment: '好發中大型犬，德國牧羊犬為高風險品種。雄性略多於雌性。中年至老年犬（平均 4-8 歲）。SAS 犬為特別高風險。貓極罕見。',
+    etiology: '微生物感染心臟瓣膜或心內膜。最常見致病菌：Staphylococcus spp.、Streptococcus spp.、E. coli、Bartonella spp.。感染來源：口腔感染（牙周病）、泌尿道感染、皮膚傷口、椎間盤炎、前列腺炎。瓣膜內皮損傷為細菌附著的先決條件。',
+    pathogenesis: '瓣膜內皮損傷→無菌血栓形成（NBTE）→菌血症時細菌附著→贅生物形成（細菌+血小板+纖維蛋白）→瓣膜組織侵蝕與破壞→急性瓣膜關閉不全→CHF。贅生物碎片脫落→遠端栓塞（腎/脾/腦/肢端梗塞）。免疫複合物沉積→腎絲球腎炎、多發性關節炎。',
+    clinical_signs: [
+      { sign: '波動性發燒', category: 'primary', description: '間歇性高燒 >39.5°C，可能被抗生素暫時壓制' },
+      { sign: '新出現或改變的心雜音', category: 'primary', description: '急性主動脈瓣關閉不全舒張期雜音最具特異性' },
+      { sign: '跛行/多發性關節炎', category: 'primary', description: '免疫複合物沉積性，非化膿性，多關節受累' },
+      { sign: '虛弱/食慾下降/體重減輕', category: 'secondary', description: '慢性感染全身性症狀' },
+      { sign: '血尿/蛋白尿', category: 'secondary', description: '腎梗塞或免疫複合物腎絲球腎炎' },
+      { sign: '急性神經症狀', category: 'secondary', description: '腦栓塞導致，較少見但預後極差' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'MMVD（退化性瓣膜病）', key_differentiator: '慢性進展、不伴發燒或全身感染徵象、心超無贅生物' },
+      { condition: '免疫介導性多發性關節炎（IMPA）', key_differentiator: '需排除感染灶；IE 伴隨的 IMPA 治療為抗生素而非免疫抑制劑' },
+      { condition: '不明原因發燒（FUO）', key_differentiator: 'IE 為 FUO 重要鑑別診斷之一，需系統性評估心臟' },
+      { condition: '全身性紅斑性狼瘡（SLE）', key_differentiator: 'Libman-Sacks endocarditis 為無菌性，血培養陰性，抗核抗體陽性' },
+    ],
+    diagnostic_workup: '1. 血液檢查（CBC：白血球增多伴左移；生化：低白蛋白、高球蛋白、腎指數異常；CRP 升高）→ 2. 尿液分析（血尿、蛋白尿、細菌尿）→ 3. 血液培養 × 3 組（不同部位取樣，需氧+厭氧）→ 4. 心臟超音波（贅生物偵測、瓣膜破壞評估、新瓣膜關閉不全）→ 5. Bartonella PCR/血清學（培養陰性時）→ 6. 腹部超音波（脾/腎梗塞篩檢）→ 7. 關節液分析（多發性關節炎時）',
+    treatment_protocol: '經驗性抗生素（培養結果前）：[藥物:Ampicillin] 22 mg/kg IV q6-8h + [藥物:Enrofloxacin] 10 mg/kg IV q24h。培養結果後依藥敏調整為最佳殺菌性方案。總療程 4-6 週靜脈注射（穩定後部分轉口服）。Bartonella 確認時：Azithromycin 5 mg/kg PO q24h + Doxycycline 5 mg/kg PO BID。併發 CHF：加入 Furosemide + Pimobendan 標準治療。嚴重瓣膜破壞考慮轉診外科評估（獸醫可行性極有限）。',
+    prognosis: '整體預後不良。中位存活約 3-6 個月。主動脈瓣受侵犯預後較二尖瓣差。影響預後因子：(1) 瓣膜破壞嚴重度（急性嚴重關閉不全→急性 CHF）(2) 栓塞併發症（腎/腦梗塞）(3) 致病菌種（Staphylococcus 預後較差）(4) 治療反應（血培養持續陽性代表治療失敗）。長期存活者需終身心臟病管理。',
+    monitoring: '治療期間：每日體溫監測。第 3-5 天重複血培養（確認抗生素有效）。每週 CBC + CRP 追蹤感染指標。每 1-2 週心超追蹤贅生物大小與瓣膜功能。腎功能每週監測。治療結束後 1 週重複血培養確認根除。出院後每月回診 × 3 個月，之後每 3 個月。',
+    owner_communication: '感染性心內膜炎是嚴重疾病，需誠實告知預後不良。治療需長期住院（靜脈抗生素 4-6 週），費用可觀。即使治療成功清除感染，瓣膜破壞可能為永久性，需長期心臟病管理。部分犬可能因嚴重瓣膜破壞、栓塞併發症或感染無法控制而預後極差。及早發現與積極治療是改善預後的關鍵。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病理機轉段落', type: 'flowchart', description: 'IE 發病機轉級聯反應圖——從內皮損傷到贅生物形成' },
+    { position: '診斷段落', type: 'annotated_image', description: '心超贅生物典型影像與判讀標註' },
+  ],
+  interactive_placeholders: [
+    { position: '診斷準則段落', type: 'decision_tree', description: '改良 Duke 準則互動式評分——輸入臨床發現自動判定 IE 可能性' },
+  ],
+  drug_api_links: ['Ampicillin', 'Enrofloxacin', 'Metronidazole'],
+  references: [
+    { type: 'journal', citation: 'Sykes JE, Kittleson MD, Pesavento PA, et al. Evaluation of the relationship between causative organisms and clinical characteristics of infective endocarditis in dogs: 71 cases (1992-2005). J Am Vet Med Assoc. 2006;228(11):1723-1734.', relevance: '犬 IE 大規模回溯研究——致病菌與臨床特徵關聯' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Infective Endocarditis.', relevance: 'IE 診斷與治療完整教材' },
+    { type: 'journal', citation: 'MacDonald KA, Chomel BB, Kittleson MD, et al. A prospective study of canine infective endocarditis in northern California (1999-2001): emergence of Bartonella as a prevalent etiologic agent. J Vet Intern Med. 2004;18(1):56-64.', relevance: 'Bartonella 作為犬 IE 新興病原的重要研究' },
+    { type: 'guideline', citation: 'Habib G et al. 2015 ESC Guidelines for the management of infective endocarditis. Eur Heart J. 2015;36(44):3075-3128.', relevance: '人醫 IE 治療指引——獸醫參考使用' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 肺動脈高壓 — 疾病型 */
+const contentPulmonaryHTN: NodeContent = {
+  id: 'CONTENT-L3-009',
+  node_id: 'CARDIO-L3-009',
+  version: 1,
+  summary: '肺動脈高壓（Pulmonary Hypertension, PH）是肺動脈壓力持續升高（估計收縮壓 >30 mmHg 或三尖瓣逆流速度 >2.8 m/s）的病理狀態。ACVIM 共識將 PH 分為六大病因群（前毛細管性、後毛細管性、合併型等）。台灣因亞熱帶氣候，心絲蟲症為 PH 最常見原因之一。Sildenafil（PDE5 inhibitor）1-2 mg/kg BID-TID 為目前主要治療藥物。',
+  learning_objectives: [
+    '描述肺動脈高壓的 ACVIM 病因分類系統',
+    '列舉犬貓 PH 的常見病因（心絲蟲、左心疾病、呼吸道疾病）',
+    '運用三尖瓣逆流速度（TRV）估算肺動脈收縮壓',
+    '制定 Sildenafil 為主的 PH 治療方案',
+    '說明 PH 的預後因子與長期監測計畫',
+  ],
+  key_points: [
+    'PH 定義：肺動脈收縮壓估計值 >30 mmHg 或 TRV >2.8 m/s',
+    '嚴重度分級：輕度（TRV 2.8-3.5 m/s）、中度（3.5-4.3 m/s）、重度（>4.3 m/s）',
+    '最常見病因：左心疾病（MMVD/DCM 合併 PH，後毛細管性）、心絲蟲症（前毛細管性）、慢性呼吸道疾病',
+    '台灣流行病學：心絲蟲為 PH 最重要的前毛細管性病因，預防醫學至關重要',
+    '心超診斷關鍵：TRV 測量（modified Bernoulli equation：ΔP = 4V²）+ 右心擴大/肥大評估',
+    'Sildenafil（PDE5 抑制劑）1-2 mg/kg PO BID-TID 為一線治療——選擇性擴張肺血管',
+    '替代/輔助藥物：Pimobendan（改善右心功能）、Tadalafil（長效 PDE5i）',
+  ],
+  body: `# 肺動脈高壓 (Pulmonary Hypertension, PH)
+
+## 一、分類與病理機制 (Classification & Pathophysiology)
+
+### ACVIM 共識分類（2020）
+
+| 群組 | 類型 | 代表病因 | 機轉 |
+|------|------|---------|------|
+| Group 1 | 肺動脈性 PH（PAH） | 原發性/特發性 | 肺小動脈重塑（中膜肥厚+內膜增生） |
+| Group 2 | 左心疾病（後毛細管性） | MMVD、DCM、HCM | 左心房壓↑→肺靜脈壓↑→被動性肺動脈壓↑ |
+| Group 3 | 呼吸道疾病/缺氧 | 慢性支氣管炎、肺纖維化 | 缺氧性肺血管收縮（HPV） |
+| Group 4 | 肺血管阻塞 | 心絲蟲症、肺血栓栓塞 | 血管腔物理性阻塞 |
+| Group 5 | 寄生蟲相關 | Dirofilaria immitis | 蟲體+免疫反應→血管內膜損傷 |
+| Group 6 | 多因子/不明 | 先天性分流（PDA/VSD Eisenmenger） | 肺過度灌流→血管重塑 |
+
+### 病理生理核心
+
+肺動脈壓升高 → 右心室壓力過載 → 右心室同心性肥大 → 右心室舒張功能障礙 → 右心衰竭（三尖瓣逆流、腹水、肝鬱血、頸靜脈怒張）。
+
+後毛細管性 PH（Group 2）機轉：左心房壓升高 → 肺靜脈壓升高 → 被動性肺動脈壓升高。長期可導致肺血管反應性重塑（reactive PH），成為合併前+後毛細管性。
+
+缺氧性肺血管收縮（HPV）：肺泡 PO₂ 下降 → 局部肺小動脈收縮 → 減少無效灌流。但慢性缺氧下 HPV 持續 → 肺動脈壓力持續升高 + 血管重塑。
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+
+| 表現 | 發生率 | 機轉 |
+|------|--------|------|
+| 運動不耐 | 60-80% | 心輸出量下降 |
+| 咳嗽 | 40-60% | 肺動脈擴大壓迫氣管或合併呼吸道疾病 |
+| 呼吸困難 | 30-50% | 右心衰竭或合併肺水腫 |
+| 暈厥 | 20-30% | 運動時心輸出量驟降 |
+| 腹水 | 20-40% | 右心衰竭 |
+| 發紺 | 10-20% | 嚴重低氧血症（右→左分流或 V/Q 不匹配） |
+
+### 心超診斷
+
+三尖瓣逆流速度（TRV）是估算肺動脈收縮壓的關鍵指標：
+
+PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
+
+| 嚴重度 | TRV (m/s) | 估計 PASP (mmHg) | 臨床意義 |
+|--------|-----------|-----------------|---------|
+| 正常 | <2.8 | <36 | 無 PH |
+| 輕度 | 2.8-3.5 | 36-55 | 可能無症狀 |
+| 中度 | 3.5-4.3 | 55-79 | 症狀出現 |
+| 重度 | >4.3 | >79 | 右心衰竭風險高 |
+
+其他心超指標：右心室擴大/肥大、心室中隔平坦化（D-sign）、肺動脈幹擴大、主肺動脈與主動脈比（PA/Ao）升高。
+
+### 病因追查
+
+| 檢查 | 目的 |
+|------|------|
+| 心絲蟲抗原/抗體檢測 | 排除心絲蟲感染（台灣必檢） |
+| 胸腔 X 光 | 肺部疾病、心臟大小、肺動脈擴大 |
+| 動脈血氧分析 | 缺氧程度評估 |
+| D-dimer + CT 血管攝影 | 肺血栓栓塞評估 |
+| 左心評估（心超） | MMVD/DCM 分期 |
+
+## 三、治療策略 (Treatment)
+
+### 藥物治療
+
+| 藥物 | 劑量 | 機轉 | 適用群組 |
+|------|------|------|---------|
+| [藥物:Sildenafil] | 1-2 mg/kg PO BID-TID | PDE5 抑制→cGMP↑→肺血管舒張 | 所有群組（前毛細管為主） |
+| [藥物:Tadalafil] | 1 mg/kg PO SID | 長效 PDE5 抑制 | Sildenafil 替代 |
+| [藥物:Pimobendan] | 0.25-0.3 mg/kg PO BID | 改善右心收縮功能 | 合併右心功能障礙 |
+| Furosemide | 2-4 mg/kg PO BID-TID | 容量控制（右心衰腹水） | 合併右心衰竭 |
+
+### 病因導向治療
+
+| 病因 | 特異性治療 |
+|------|----------|
+| 心絲蟲症 | 成蟲殺滅（melarsomine）+ 限制運動 |
+| 左心疾病 | 標準 MMVD/DCM 治療（控制 LA 壓） |
+| 慢性呼吸道疾病 | 支氣管擴張劑、氧氣支持 |
+| 肺血栓栓塞 | 抗凝血治療 |
+
+### 治療要點
+- Group 2（左心疾病）PH：優先治療基礎左心疾病——降低 LA 壓可有效緩解 PH
+- Group 4/5（心絲蟲）：Sildenafil 在心絲蟲殺滅前可暫時緩解症狀
+- 氧氣支持：短期可緩解 HPV，但長期不切實際
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| Endothelin receptor antagonist（Bosentan） | 犬 PAH 輔助治療 | 人醫一線，獸醫成本過高限制使用 |
+| Prostacyclin analogue（Treprostinil） | 犬嚴重 PAH | 人醫成熟，獸醫極少使用 |
+| Riociguat（sGC 刺激劑） | 犬 CTEPH 新機轉治療 | 人醫已上市，獸醫無數據 |
+| 右心導管直接測壓 | PH 確診金標準 | 人醫常規，獸醫少數專科可執行 |
+
+## 五、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| Sildenafil 在 Group 2 PH 的角色 | 可能緩解合併的反應性 PH 成分 | 基礎左心疾病治療才是根本 | Level III |
+| Sildenafil 劑量上限 | 部分犬需 3 mg/kg TID 才有效 | 高劑量全身性低血壓風險 | Level IV |
+| PH 犬運動建議 | 適度活動可維持心肺功能 | 嚴重 PH 運動可誘發暈厥/猝死 | Level V |
+
+[圖片:肺動脈高壓心超 TRV 測量與右心評估示意圖]`,
+  clinical_pearl: '台灣臨床實務中，PH 的病因追查第一步應為心絲蟲抗原/抗體檢測——台灣為心絲蟲高流行區，即使有良好預防史的犬也不應遺漏。心絲蟲導致的 PH（Group 4/5）在殺蟲治療後可能改善，但嚴重肺血管損傷可能為永久性。\n\n判讀技巧：TRV 測量需確保取得最佳三尖瓣逆流血流訊號（最高速度方向應與超音波光束平行）。低估 TRV 是最常見錯誤——TRV < 2.8 m/s 不代表無 PH，可能是取角度不佳或逆流量太小。其他右心指標（RV 擴大、中隔平坦化）可輔助判斷。',
+  common_mistakes: [
+    '忽略在台灣犬 PH 中排除心絲蟲——心絲蟲為台灣最重要的前毛細管性 PH 病因',
+    'TRV 測量角度不佳導致低估肺動脈壓——需多切面嘗試取得最高 TRV 值',
+    '對 Group 2（左心疾病）PH 僅使用 Sildenafil 而未治療基礎左心疾病——本末倒置',
+    '將 PH 犬的運動限制放鬆——嚴重 PH 犬運動時心輸出量無法增加，可誘發暈厥或猝死',
+  ],
+  disease_data: {
+    signalment: '犬各品種與年齡均可發生，病因不同則好發族群不同。心絲蟲相關 PH：台灣未預防犬。左心疾病相關 PH：MMVD 好發品種老年犬。呼吸道疾病相關 PH：短頭犬種、慢性支氣管炎老年犬。貓 PH 少見但可發生於 HCM 或心絲蟲感染。',
+    etiology: 'Group 1（肺動脈性）：原發性/特發性，犬極罕見。Group 2（左心疾病）：MMVD、DCM 合併 LA 壓升高，最常見。Group 3（呼吸道/缺氧）：慢性支氣管炎、肺纖維化、氣管塌陷。Group 4/5（血管阻塞/寄生蟲）：心絲蟲症為台灣最重要病因。Group 6（多因子）：先天性左→右分流（PDA/VSD）長期肺過度灌流。',
+    pathogenesis: '肺動脈壓持續升高→右心室壓力過載→同心性肥大→舒張功能障礙→進展為收縮功能障礙→三尖瓣逆流惡化→右心衰竭（腹水、肝鬱血、頸靜脈怒張）。Group 2 特殊路徑：LA 壓↑→肺靜脈壓↑→被動性肺動脈壓↑→長期可誘發反應性血管重塑（合併前+後毛細管性）。',
+    clinical_signs: [
+      { sign: '運動不耐', category: 'primary', description: '心輸出量下降最常見表現，活動力明顯衰退' },
+      { sign: '咳嗽', category: 'primary', description: '擴大肺動脈壓迫左主支氣管或合併呼吸道疾病' },
+      { sign: '暈厥', category: 'primary', description: '運動時心輸出量無法增加，腦灌流不足' },
+      { sign: '呼吸困難', category: 'secondary', description: '右心衰竭或合併左心疾病肺水腫' },
+      { sign: '腹水', category: 'secondary', description: '右心衰竭導致體循環鬱血' },
+      { sign: '發紺', category: 'secondary', description: '嚴重 V/Q 不匹配或右→左分流（Eisenmenger）' },
+    ],
+    staging: { system: 'ACVIM PH severity (TRV-based)', stages: ['Normal: TRV <2.8 m/s', 'Mild: TRV 2.8-3.5 m/s (PASP 36-55 mmHg)', 'Moderate: TRV 3.5-4.3 m/s (PASP 55-79 mmHg)', 'Severe: TRV >4.3 m/s (PASP >79 mmHg)'] },
+    differential_diagnosis: [
+      { condition: '右心衰竭（其他原因）', key_differentiator: '三尖瓣發育不良、右心心肌病——TRV 可能不升高（逆流量大但壓力不高）' },
+      { condition: '心包膜積液', key_differentiator: '心超直接可見心包膜積液，右心壓迫為外因性' },
+      { condition: '腹腔疾病伴腹水', key_differentiator: '肝硬化、腹腔腫瘤——心臟評估正常' },
+      { condition: '呼吸道疾病（無 PH）', key_differentiator: '咳嗽原因需鑑別——心超 TRV 正常排除 PH 貢獻' },
+    ],
+    diagnostic_workup: '1. 心臟超音波（核心）→ TRV 測量 + 右心型態評估 + 左心評估 → 2. 心絲蟲抗原/抗體檢測（台灣必檢）→ 3. 胸腔 X 光（心臟大小、肺部疾病、肺動脈擴大）→ 4. CBC + 生化 + 尿液（全身評估）→ 5. 動脈血氧分析（缺氧程度）→ 6. NT-proBNP（輔助嚴重度評估）→ 7. 進階：D-dimer、CT 血管攝影（肺栓塞疑慮時）',
+    treatment_protocol: '一線治療：[藥物:Sildenafil] 1-2 mg/kg PO BID-TID（從低劑量開始，每 3-5 天遞增，監測血壓）。替代：[藥物:Tadalafil] 1 mg/kg PO SID（長效，依從性較佳）。輔助治療：[藥物:Pimobendan] 0.25-0.3 mg/kg PO BID（改善右心功能）。右心衰竭時加 Furosemide + Spironolactone。\n\n病因導向：心絲蟲→殺蟲治療 + 限制運動；左心疾病→標準 MMVD/DCM 治療；呼吸道疾病→支氣管擴張劑 + 氧氣。運動限制：中重度 PH 避免激烈運動。',
+    prognosis: '取決於基礎病因與嚴重度。左心疾病相關 PH：治療基礎疾病可改善 PH，預後取決於 MMVD/DCM 分期。心絲蟲相關 PH：成功殺蟲後可能改善，但嚴重血管損傷為永久性。嚴重 PH（TRV >4.3 m/s）預後較差。Sildenafil 可改善症狀與生活品質，但長期存活數據有限。Kellihan HB 研究顯示 Sildenafil 治療犬中位存活約 8-14 個月（依病因而異）。',
+    monitoring: 'Sildenafil 啟始後 1-2 週回診：臨床症狀改善？血壓（排除低血壓）。1 個月後心超重測 TRV 評估治療反應。穩定後每 3-6 個月心超追蹤。右心衰竭犬同時監測腹水量、體重變化、腎功能。居家監測：睡眠呼吸次數、活動力、食慾。',
+    owner_communication: '肺動脈高壓是慢性進行性疾病，治療目標為改善症狀與生活品質而非治癒。Sildenafil 是目前最主要的治療藥物，需長期服用。找出並治療根本原因（如心絲蟲、左心疾病）是最重要的。中重度 PH 犬需限制激烈運動以降低暈厥與猝死風險。藥物費用（Sildenafil）在台灣已有學名藥選項，相對可負擔。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分類段落', type: 'comparison_table', description: 'ACVIM PH 六大群組病因分類比較表' },
+    { position: '診斷段落', type: 'annotated_image', description: '心超 TRV 測量操作與右心評估標註圖' },
+  ],
+  interactive_placeholders: [
+    { position: '嚴重度分級段落', type: 'interactive_staging', description: '輸入 TRV 值自動計算 PASP 並分級嚴重度' },
+  ],
+  drug_api_links: ['Sildenafil', 'Pimobendan', 'Tadalafil'],
+  references: [
+    { type: 'guideline', citation: 'Reinero C, Visser LC, Kellihan HB, et al. ACVIM consensus statement guidelines for the diagnosis, classification, treatment, and monitoring of pulmonary hypertension in dogs. J Vet Intern Med. 2020;34(2):549-573.', relevance: 'ACVIM PH 診斷治療共識指引' },
+    { type: 'journal', citation: 'Kellihan HB, Waller KR, Pinkos A, et al. Acute resolution of pulmonary alveolar infiltrates in 10 dogs with pulmonary hypertension treated with sildenafil citrate: 2005-2014. J Vet Cardiol. 2015;17(3):182-191.', relevance: 'Sildenafil 治療犬 PH 臨床研究' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Pulmonary Hypertension.', relevance: 'PH 診斷與治療完整教材' },
+    { type: 'journal', citation: 'Johnson LR, Stern JA. Clinical features and outcome in 25 dogs with respiratory-associated pulmonary hypertension treated with sildenafil. J Vet Intern Med. 2020;34(1):65-73.', relevance: '呼吸道疾病相關 PH 的 Sildenafil 治療結果' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 貓動脈血栓栓塞症 — 疾病型 */
+const contentFelineATE: NodeContent = {
+  id: 'CONTENT-L3-010',
+  node_id: 'CARDIO-L3-010',
+  version: 1,
+  summary: '貓動脈血栓栓塞症（Feline Arterial Thromboembolism, FATE/ATE）是貓心肌病最嚴重的併發症，約 90% 與心肌病相關（HCM 最常見）。血栓最常阻塞於主動脈分叉處（saddle thrombus），導致急性後肢癱瘓。臨床表現為 5 Ps（Pain、Pulselessness、Pallor、Paralysis、Poikilothermia）。存活出院率僅 30-40%。Clopidogrel 18.75 mg/cat PO SID 為二級預防首選。',
+  learning_objectives: [
+    '描述貓 ATE 的血栓形成機轉（Virchow triad 在貓心肌病的體現）',
+    '辨識 ATE 的 5 Ps 臨床特徵與急性評估要點',
+    '制定 ATE 急性期的止痛與支持療法',
+    '比較 Clopidogrel vs Aspirin 在 ATE 預防的證據（FAT CAT study）',
+    '評估 ATE 的預後因子與飼主溝通策略',
+  ],
+  key_points: [
+    '~90% ATE 與心肌病相關——HCM 最常見，其次 UCM/RCM/DCM',
+    '約 25% ATE 為貓心肌病的首發表現（之前未診斷）',
+    'Saddle thrombus（主動脈分叉處）佔 70-75%，前肢（腋動脈/肱動脈）佔 10-15%',
+    '5 Ps：Pain（劇痛——瞳孔放大、嚎叫）、Pulselessness（股動脈脈搏消失）、Pallor（肉墊蒼白/發紺）、Paralysis（後肢癱瘓/LMN signs）、Poikilothermia（患肢冰涼）',
+    '急性管理重點：止痛（Methadone/Buprenorphine）+ 輸液支持 + 抗凝血（低分子肝素或普通肝素）',
+    '存活出院率僅 30-40%，復發率約 30-50%',
+    '二級預防：Clopidogrel 18.75 mg/cat PO SID（FAT CAT 研究證實優於 Aspirin）',
+    '安樂死討論時機：雙側 ATE、低體溫 <37°C、嚴重 CHF 合併、飼主無法提供密集照護',
+  ],
+  body: `# 貓動脈血栓栓塞症 (Feline Arterial Thromboembolism, ATE)
+
+## 一、病理機制 (Pathophysiology)
+
+### Virchow Triad 在貓心肌病的體現
+
+| 要素 | 貓心肌病中的表現 | 機轉 |
+|------|----------------|------|
+| 血流淤滯 | 左心房擴大→心耳內血流速度下降→自發性回聲（smoke） | LA/Ao ≥ 2.0 時風險顯著增加 |
+| 內皮損傷 | 心房壁內皮功能障礙 | 心肌病相關內皮活化 |
+| 高凝血狀態 | 血小板過度活化+凝血因子異常 | 貓天生血小板高反應性 |
+
+### 血栓形成與栓塞路徑
+
+左心房（尤其左心耳）血栓形成 → 脫落進入主動脈血流 → 栓塞至主動脈分叉（saddle thrombus，70-75%）或前肢動脈（10-15%）→ 遠端組織急性缺血 → 缺血-再灌流損傷。
+
+### 栓塞部位分布
+
+| 部位 | 比例 | 臨床表現 |
+|------|------|---------|
+| 主動脈分叉（saddle） | 70-75% | 雙側後肢急性癱瘓 |
+| 單側髂動脈 | 10-15% | 單側後肢跛行/癱瘓 |
+| 前肢（腋/肱動脈） | 10-15% | 單前肢跛行/癱瘓 |
+| 腎動脈 | 3-5% | 急性腎損傷 |
+| 腸系膜動脈 | <3% | 急腹症 |
+| 腦動脈 | <2% | 急性神經症狀 |
+
+### 缺血-再灌流損傷
+
+急性缺血 → 組織 ATP 耗竭 → 細胞損傷/壞死 → 鉀離子與肌紅蛋白釋放。再灌流時（若血栓自溶或溶栓治療）→ 活性氧族（ROS）大量產生 → 進一步組織損傷 → 高鉀血症 + 肌紅蛋白尿 + 代謝性酸中毒 → 再灌流致死（reperfusion injury/death）。
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 5 Ps 評估
+
+| P | 評估方法 | 發現 |
+|---|---------|------|
+| Pain（疼痛） | 行為觀察 | 嚎叫、瞳孔放大、過度換氣、觸摸患肢激烈反應 |
+| Pulselessness（無脈搏） | 股動脈觸診 | 患肢股動脈脈搏消失或顯著減弱 |
+| Pallor（蒼白） | 肉墊/趾甲床顏色 | 蒼白或發紺（對比健側粉紅色） |
+| Paralysis（癱瘓） | 神經學檢查 | 患肢 LMN signs：無反射、肌肉鬆弛、無深痛覺 |
+| Poikilothermia（體溫隨環境） | 患肢溫度 | 患肢觸感冰涼（對比健側溫暖） |
+
+### 鑑別診斷
+
+| 疾病 | 鑑別要點 |
+|------|---------|
+| 脊髓損傷/椎間盤疾病 | 有深痛覺（通常）、脈搏正常、肢端溫暖 |
+| 髂股動脈血栓（犬） | 犬罕見，更可能與凝血異常相關 |
+| 脊髓梗塞（FCE） | 犬較常見，非疼痛性，脈搏正常 |
+| 創傷性骨折/脫臼 | 病史+X光可區分 |
+
+### 確診流程
+1. 理學檢查——5 Ps 評估
+2. 心臟超音波——確認心肌病存在+LA 擴大+左心耳血栓/smoke
+3. 血液檢查——CK 顯著升高（肌肉壞死）、高鉀血症、代謝性酸中毒、氮血症
+4. 杜卜勒超音波（可選）——確認動脈血流中斷
+
+## 三、治療策略 (Treatment)
+
+### 急性管理（前 24-72 小時）
+
+| 優先級 | 處置 | 細節 |
+|--------|------|------|
+| 第一 | **止痛** | Methadone 0.1-0.3 mg/kg IV/IM q4-6h 或 Buprenorphine 0.02 mg/kg IV/buccal q6-8h |
+| 第二 | **氧氣支持** | 合併 CHF 肺水腫時 |
+| 第三 | **輸液治療** | 謹慎！合併 CHF 時需限量；監測 K⁺ |
+| 第四 | **抗凝血** | [藥物:Heparin] (UFH) 250-300 IU/kg IV bolus → 150-200 IU/kg SC q6-8h；或低分子肝素 Dalteparin 100-150 IU/kg SC q12-24h |
+| 第五 | **CHF 管理** | Furosemide 1-2 mg/kg IV（合併肺水腫時） |
+| 第六 | **高鉀處理** | Calcium gluconate 10% 0.5-1 mL/kg IV slowly + Regular insulin + Dextrose（K⁺ > 7 mEq/L） |
+
+### 不建議的治療
+- **溶栓藥物**（tPA, streptokinase）：再灌流損傷致死風險高，研究未顯示存活率改善
+- **外科取栓**：併發症高、成功率低，不推薦
+
+### 長期預防（二級預防）
+
+| 藥物 | 劑量 | 證據 |
+|------|------|------|
+| [藥物:Clopidogrel] | 18.75 mg/cat PO SID | FAT CAT 研究（2015）：Clopidogrel 顯著優於 Aspirin（復發中位時間 443d vs 192d） |
+| [藥物:Aspirin]（替代） | 81 mg/cat PO q72h（低劑量） | 效果不如 Clopidogrel，但仍有部分保護 |
+| [藥物:Heparin]（橋接） | 出院前過渡至口服 Clopidogrel | 住院期間抗凝血 |
+
+### 一級預防（有心肌病但未發生 ATE）
+
+LA 擴大（LA/Ao ≥ 2.0）或左心耳 smoke/血栓 → 開始 Clopidogrel 18.75 mg/cat PO SID。ACVIM 2020 共識支持高風險貓的一級預防。
+
+## 四、預後評估 (Prognosis)
+
+### 存活數據
+- 整體存活出院率：33-39%
+- 出院後中位存活：77-223 天（取決於基礎心肌病嚴重度）
+- ATE 復發率：約 30-50%
+
+### 預後因子
+
+| 因子 | 較好預後 | 較差預後 |
+|------|---------|---------|
+| 受侵肢體數 | 單側 | 雙側 |
+| 直腸體溫 | >37.2°C | <37°C（低體溫） |
+| CHF 狀態 | 無 CHF | 合併嚴重 CHF |
+| 運動功能恢復 | 48-72h 內出現改善 | 72h 無改善 |
+| 基礎心肌病 | 輕度 LA 擴大 | 嚴重 LA 擴大 + 收縮功能障礙 |
+
+### 安樂死考量時機
+- 雙側後肢 + 低體溫 <37°C + 嚴重 CHF → 存活機會極低
+- 飼主無法提供 3-5 天密集住院照護
+- 反覆 ATE 發作且基礎心肌病持續惡化
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| DOAC（直接口服抗凝血劑，如 Rivaroxaban） | 貓 ATE 預防替代 Clopidogrel | 安全性/劑量研究中，初步PK數據發表 |
+| 機械取栓（Aspiration thrombectomy） | 貓主動脈血栓微創移除 | 技術上可行但體型限制大 |
+| Dual antiplatelet therapy | Clopidogrel + Aspirin 合併使用 | 出血風險增加，獸醫證據不足 |
+| 左心耳封堵術 | 減少血栓來源 | 人醫 AF 患者使用，貓不適用（太小） |
+
+## 六、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| ATE 是否應積極治療 vs 安樂死 | 30-40% 可存活出院，值得嘗試 | 治療過程痛苦、費用高、復發率高 | Level II |
+| 溶栓治療（tPA）的角色 | 理論上可溶解血栓恢復灌流 | 再灌流損傷致死風險高，研究無存活改善 | Level III |
+| 一級預防何時開始 | LA/Ao ≥ 2.0 + smoke → 立即開始 | 低風險貓長期用藥的成本效益不確定 | Level III |
+| DOAC vs Clopidogrel | DOAC 同時抗凝+抗血小板 | 貓的安全劑量尚未確立 | Level IV |
+
+[圖片:貓 ATE 5 Ps 臨床評估圖——肉墊顏色比較與脈搏觸診]`,
+  clinical_pearl: '貓 ATE 的急診「30 分鐘規則」：到院後 30 分鐘內必須完成 (1) 止痛——ATE 是極度疼痛的急症，止痛為第一優先 (2) 5 Ps 快速評估 (3) 初步預後判斷（單側 vs 雙側、體溫、是否合併 CHF）。許多飼主在知道預後後會選擇安樂死——不要在未充分止痛的情況下進行冗長的討論。先止痛，再討論。\n\n【台灣臨床現況】台灣貓飼養量持續增長，HCM 為最常見貓心肌病。Clopidogrel 在台灣可取得人用劑型（75 mg），需分切為 1/4 錠（18.75 mg/cat）。FAT CAT 研究已改變臨床實務，Clopidogrel 已取代 Aspirin 成為 ATE 預防首選。',
+  common_mistakes: [
+    '未將止痛列為第一優先——ATE 是貓急診中最痛的疾病之一，止痛延遲等同於虐待',
+    '使用溶栓藥物——tPA/streptokinase 在貓 ATE 不改善存活率且再灌流損傷致死風險高',
+    '合併 CHF 時過度輸液——貓 ATE 常合併 CHF，輸液過量加重肺水腫',
+    '使用 Aspirin 而非 Clopidogrel 作為二級預防——FAT CAT 研究已證實 Clopidogrel 顯著優於 Aspirin',
+    '忽略高鉀血症的致命風險——ATE 後肌肉壞死釋放 K⁺，再灌流時可致致命性高鉀血症',
+  ],
+  disease_data: {
+    signalment: '貓，各品種均可發生。雄性略多於雌性。中年至老年（平均 8-12 歲），但年輕 HCM 貓亦可發生。好發品種：緬因貓、布偶貓、英國短毛貓（HCM 好發品種）。約 25% ATE 貓之前未診斷心肌病。',
+    etiology: '~90% 與心肌病相關：HCM（最常見，~67%）、UCM（~12%）、RCM（~8%）、DCM（~3%）。非心臟性原因（~10%）：肺腫瘤、甲狀腺亢進、全身感染。血栓主要在左心房（尤其左心耳）形成後脫落栓塞至周邊動脈。',
+    pathogenesis: 'Virchow triad：(1) 血流淤滯（LA 擴大→心耳血流速↓）+ (2) 內皮損傷（心肌病相關）+ (3) 高凝血狀態（貓血小板高反應性）→ 左心房血栓形成 → 脫落 → 栓塞至主動脈分叉（70-75%，saddle thrombus）→ 遠端組織急性缺血 → 肌肉壞死（CK↑）+ 高鉀血症 + 代謝性酸中毒。再灌流時 ROS 大量產生→進一步組織損傷。',
+    clinical_signs: [
+      { sign: '急性後肢癱瘓', category: 'primary', description: '突發雙側後肢無法行走，LMN signs（無反射、肌肉鬆弛）' },
+      { sign: '劇烈疼痛', category: 'primary', description: '嚎叫、瞳孔放大、過度換氣、觸摸患肢激烈反應' },
+      { sign: '股動脈脈搏消失', category: 'primary', description: '觸診患側股動脈無脈搏或顯著減弱' },
+      { sign: '肉墊蒼白/發紺', category: 'secondary', description: '患肢肉墊/趾甲床蒼白或發紺，對比健側粉紅色' },
+      { sign: '患肢冰涼', category: 'secondary', description: '觸診患肢溫度明顯低於健側（poikilothermia）' },
+      { sign: '呼吸困難', category: 'secondary', description: '合併 CHF 肺水腫或胸水時出現' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '脊髓損傷/椎間盤疾病', key_differentiator: '脈搏正常、肢端溫暖有色、通常有深痛覺、X光/MRI 可區分' },
+      { condition: '脊髓梗塞（FCE）', key_differentiator: '犬較常見，非疼痛性（急性後轉為無痛），脈搏正常' },
+      { condition: '主動脈狹窄/損傷', key_differentiator: '貓極罕見，影像學可區分' },
+      { condition: '創傷性損傷', key_differentiator: '病史（創傷史）+ X 光可排除骨折/脫臼' },
+    ],
+    diagnostic_workup: '1. 理學檢查——5 Ps 快速評估（股動脈脈搏、肉墊顏色/溫度、神經學檢查）→ 2. 血液檢查——CK（顯著升高，通常 >10,000 U/L）、K⁺（高鉀風險）、BUN/Cre、Lactate、血氣（代謝性酸中毒）→ 3. 心臟超音波——確認心肌病（HCM/UCM/RCM/DCM）、LA 大小、左心耳血栓/smoke → 4. 胸腔 X 光——心臟大小、肺水腫/胸水評估 → 5. 杜卜勒超音波（可選）——確認動脈血流中斷位置',
+    treatment_protocol: '急性管理（第一優先=止痛）：Methadone 0.1-0.3 mg/kg IV/IM q4-6h 或 Buprenorphine 0.02 mg/kg IV/buccal q6-8h。抗凝血：[藥物:Heparin] (UFH) 250-300 IU/kg IV bolus → SC 150-200 IU/kg q6-8h；或低分子肝素 Dalteparin 100-150 IU/kg SC q12-24h。合併 CHF：Furosemide 1-2 mg/kg IV + 氧氣 + 胸水引流（若有）。謹慎輸液。高鉀血症（K⁺ >7 mEq/L）：Calcium gluconate 10% 0.5-1 mL/kg IV slowly。\n\n二級預防：[藥物:Clopidogrel] 18.75 mg/cat PO SID（終身）。替代：[藥物:Aspirin] 81 mg/cat PO q72h。一級預防（高風險貓 LA/Ao ≥2.0）：Clopidogrel 18.75 mg/cat PO SID。溶栓藥物（tPA）不推薦——再灌流損傷致死風險高且無存活改善證據。',
+    prognosis: '整體預後不良。存活出院率 33-39%。出院後中位存活：77-223 天（取決於基礎心肌病嚴重度）。ATE 復發率約 30-50%。較好預後因子：單側、體溫 >37.2°C、無 CHF、48-72h 內出現運動功能恢復。較差預後因子：雙側、低體溫 <37°C、嚴重 CHF、72h 無功能恢復。',
+    monitoring: '急性期：q2-4h 監測心率、呼吸、體溫、K⁺。每日 CK 追蹤（下降趨勢為正面指標）。每日評估患肢功能恢復。住院期間心超評估基礎心肌病。出院後：Clopidogrel 終身服用。每 1-3 個月回診心超追蹤心肌病進展。飼主教育：觀察呼吸次數（sleeping RR <30）、活動力、患肢功能。',
+    owner_communication: 'ATE 是貓心肌病最嚴重的併發症之一。需誠實告知：(1) 存活出院率約 1/3 (2) 即使存活，復發率高達 30-50% (3) 治療過程需 3-5 天密集住院、費用可觀 (4) 基礎心肌病為終身管理。尊重飼主選擇安樂死的決定——尤其雙側 ATE + 低體溫 + 嚴重 CHF 的情況下，安樂死是合理的人道選擇。若選擇治療，強調 Clopidogrel 終身預防的重要性與定期回診追蹤。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '5 Ps 段落', type: 'annotated_image', description: '貓 ATE 5 Ps 臨床評估圖——肉墊顏色比較與股動脈觸診位置' },
+    { position: '栓塞部位段落', type: 'animated_diagram', description: '血栓從左心房脫落至主動脈分叉的動態路徑示意圖' },
+  ],
+  interactive_placeholders: [
+    { position: '預後段落', type: 'decision_tree', description: '輸入臨床參數（體溫、單/雙側、CHF 狀態）自動評估預後等級' },
+  ],
+  drug_api_links: ['Clopidogrel', 'Heparin', 'Aspirin'],
+  references: [
+    { type: 'journal', citation: 'Hogan DF, Fox PR, Jacob K, et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: The double-blind, randomized, positive-controlled feline arterial thromboembolism; clopidogrel vs. aspirin trial (FAT CAT). J Vet Cardiol. 2015;17(Suppl 1):S306-S317.', relevance: 'FAT CAT 研究——Clopidogrel vs Aspirin 二級預防 RCT' },
+    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(1):3-32.', relevance: 'ACVIM 貓心肌病共識——包含 ATE 預防建議' },
+    { type: 'journal', citation: 'Smith SA, Tobias AH, Jacob KA, et al. Arterial thromboembolism in cats: acute crisis in 127 cases (1992-2001) and long-term management with low-dose aspirin in 24 cases. J Vet Intern Med. 2003;17(1):73-83.', relevance: '貓 ATE 大規模回溯研究——臨床表現與預後分析' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Thromboembolic Disease.', relevance: '血栓栓塞疾病診斷與治療教材' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 心臟病分期與長期管理 — 治療型 */
+const contentCardiacStaging: NodeContent = {
+  id: 'CONTENT-L5-004',
+  node_id: 'CARDIO-L5-004',
+  version: 1,
+  summary: '心臟病分期系統是指導治療決策與飼主溝通的核心工具。ACVIM 分期系統（Stage A-D）適用於犬 MMVD 與 DCM，貓心肌病則依 ACVIM 2020 共識分為 preclinical/clinical/ATE 三階段。長期管理涵蓋藥物調整、居家監測（sleeping RR）、飲食建議（低鈉）、運動建議、定期追蹤計畫與飼主預後溝通。',
+  learning_objectives: [
+    '應用 ACVIM 分期系統對犬 MMVD 與 DCM 進行正確分期',
+    '描述貓心肌病的分期與管理框架',
+    '制定各分期的追蹤時程與監測項目',
+    '教導飼主居家監測技巧（sleeping RR、體重、食慾記錄）',
+    '進行基於分期的預後溝通與生活品質評估',
+  ],
+  key_points: [
+    'ACVIM MMVD 分期：A（高風險無病變）→ B1（雜音但無重塑）→ B2（有重塑）→ C（臨床CHF）→ D（難治性CHF）',
+    'B1 vs B2 關鍵指標：LA/Ao ≥1.6 或 LVIDDN ↑ 或 VHS >10.5 → B2',
+    'B2 開始 Pimobendan（EPIC 研究，Level I 證據），B1 無需藥物治療',
+    'DCM 分期：Occult（Holter + 心超篩檢）→ Overt（CHF 發生）→ 犬種特異性篩檢建議',
+    'HCM 監測要點：LV 壁厚追蹤 + LA 大小 + Clopidogrel 預防 ATE（LA/Ao ≥2.0）',
+    'Sleeping RR <30 次/分是最簡單且最早偵測 CHF 復發的居家指標',
+    '飲食建議：Stage C 以上適度限鈉，但嚴格限鈉可能反向活化 RAAS',
+    '生活品質評估工具（QoL scoring）輔助安樂死時機討論',
+  ],
+  body: `# 心臟病分期與長期管理 (Cardiac Disease Staging & Long-term Management)
+
+## 一、分期系統 (Staging Systems)
+
+### 犬 MMVD — ACVIM 分期（2019 Consensus）
+
+| 分期 | 定義 | 診斷標準 | 管理 |
+|------|------|---------|------|
+| A | 高風險品種，無病變 | 好發品種，無雜音，心超正常 | 年度聽診篩檢 |
+| B1 | 有雜音，無心臟重塑 | 雜音+心超 LA/Ao <1.6, LVIDDN 正常 | 每 12 月心超追蹤 |
+| B2 | 有雜音，有心臟重塑 | LA/Ao ≥1.6 或 LVIDDN↑ 或 VHS >10.5 | Pimobendan 開始；每 6 月追蹤 |
+| C | 臨床心衰竭 | 肺水腫（X光）± sleeping RR >30 | 三合一治療；每 1-3 月追蹤 |
+| D | 難治性心衰竭 | 標準三合一治療反應不佳 | 藥物升級；每 2-4 週追蹤 |
+
+### B1 vs B2 鑑別要點
+
+| 指標 | B1 | B2 | 備註 |
+|------|-----|-----|------|
+| LA/Ao | <1.6 | ≥1.6 | 右胸骨旁短軸切面 |
+| LVIDDN | <1.7（<20 kg 犬） | ≥1.7 | 品種校正正常化內徑 |
+| VHS | <10.5 | >10.5 | 胸腔 X 光（品種差異需注意） |
+| NT-proBNP | 通常 <900 pmol/L | 通常 >900 pmol/L | 輔助，非決定性 |
+
+### 犬 DCM — 篩檢與分期
+
+| 階段 | 定義 | 篩檢方法 | 建議 |
+|------|------|---------|------|
+| Occult DCM | 無症狀但已有心肌變化 | Holter（VPC >50/24h）+ 心超（EF↓, ESVI↑） | 杜賓犬 ≥4 歲年度篩檢 |
+| Overt DCM | CHF 症狀出現 | X 光肺水腫 + 心超確認 | 三合一 + Sotalol（如有 VT） |
+
+杜賓犬 Occult DCM 篩檢建議：
+- ≥4 歲開始年度 Holter + 心超
+- Holter 異常（VPC >50/24h）但心超正常 → arrhythmic form → 開始 Sotalol
+- 心超異常（FS <25%, ESVI >80 mL/m²）→ 開始 Pimobendan
+
+### 貓心肌病 — ACVIM 2020 分期框架
+
+| 階段 | 定義 | 管理 |
+|------|------|------|
+| Preclinical（無症狀） | 心超異常但無臨床症狀 | 追蹤；LA↑ → Clopidogrel 預防 ATE |
+| Clinical（有症狀） | CHF（肺水腫/胸水）或 ATE | Furosemide ± Pimobendan（非 LVOTO）|
+| End-stage | 收縮功能下降 + 難治性 CHF | 強化支持療法；QoL 評估 |
+
+HCM 特殊考量：
+- **Atenolol**：有 SAM（收縮期前移運動）+ LVOTO 時使用
+- **Pimobendan 禁忌**：HCM 伴 LVOTO（可能加重阻塞）；僅用於 end-stage 收縮功能下降
+- **Clopidogrel 預防 ATE**：LA/Ao ≥2.0 或 LA 內有 smoke/血栓 → 啟動一級預防
+
+## 二、長期監測計畫 (Long-term Monitoring)
+
+### 居家監測——三大核心指標
+
+| 指標 | 目標 | 方法 | 異常處置 |
+|------|------|------|---------|
+| Sleeping RR | <30 次/分 | 睡眠中計數 15 秒 ×4 | >40/min 持續 → 立即就醫 |
+| 體重 | 穩定 | 每週同一時間秤重 | 急速下降→食慾/惡病質；急速上升→水腫 |
+| 食慾/活動力 | 穩定 | 飼主日誌記錄 | 明顯下降 → 回診評估 |
+
+### 回診追蹤時程
+
+| 分期 | 頻率 | 檢查項目 |
+|------|------|---------|
+| B1 | 每 12 個月 | 聽診 + 心超 |
+| B2 | 每 6 個月 | 聽診 + 心超 + X 光 + BUN/Cre |
+| C 穩定 | 每 1-3 個月 | 聽診 + X 光 + BUN/Cre/K⁺ + BP |
+| D | 每 2-4 週 | 全套監控（心超+X光+血檢+BP） |
+| 貓 HCM 穩定 | 每 6-12 個月 | 心超 + T4（老年貓排除甲亢） |
+| ATE 後存活貓 | 每 1-3 個月 | 心超 + 患肢功能評估 |
+
+### 藥物監測
+
+| 藥物 | 監測項目 | 頻率 |
+|------|---------|------|
+| Furosemide | BUN/Cre/K⁺/體重 | 啟始 5-7 天，穩定後 q3-6m |
+| ACEi | BUN/Cre/K⁺/BP | 啟始 5-7 天，穩定後 q3-6m |
+| Digoxin | 血中谷值濃度 0.8-1.2 ng/mL | 啟始 7-10 天，穩定後 q6m |
+| Sotalol | ECG（QT 間距） | 啟始後 + 每次調量 |
+| Clopidogrel | 無常規監測 | 臨床觀察出血傾向 |
+
+## 三、飲食與運動建議 (Diet & Exercise)
+
+### 飲食
+
+| 分期 | 鈉限制 | 其他建議 |
+|------|--------|---------|
+| B1-B2 | 不需嚴格限鈉 | 維持良好營養 |
+| C | 適度限鈉（<100 mg Na/100 kcal） | 避免高鈉零食 |
+| D | 低鈉飲食 | 心臟處方飼料可考慮 |
+| 惡病質 | 高蛋白高熱量 > 限鈉 | 心臟惡病質比高鈉更危險 |
+
+爭議：嚴格限鈉可能反向活化 RAAS，目前建議為「適度限制」而非「嚴格低鈉」。
+
+### 運動
+
+| 分期 | 運動建議 |
+|------|---------|
+| B1-B2 | 正常活動，無需限制 |
+| C 穩定 | 輕度活動（短距散步），避免激烈運動 |
+| D | 嚴格限制運動 |
+| SAS 重度 | 避免激烈運動（猝死風險） |
+| 心絲蟲治療期 | 嚴格限制運動 4-6 週 |
+
+## 四、飼主溝通與預後討論 (Client Communication)
+
+### 分期別預後溝通框架
+
+| 分期 | 溝通要點 | 常見飼主問題 |
+|------|---------|------------|
+| B1 | 「目前無需治療，但需定期追蹤」 | 多久會惡化？→ 可能數年 |
+| B2 | 「開始藥物可延緩惡化」 | 可以不吃藥嗎？→ 不建議，EPIC 研究證據 |
+| C | 「可有效管理但無法治癒」 | 還能活多久？→ 中位 9-12 月，個體差異大 |
+| D | 「坦誠討論生活品質」 | 什麼時候該放手？→ QoL 評估工具 |
+
+### 生活品質評估 (QoL Assessment)
+
+五項核心評估維度：
+
+| 維度 | 評估內容 | 良好 | 不良 |
+|------|---------|------|------|
+| 疼痛/不適 | 呼吸困難頻率 | 偶發，可控 | 頻繁，藥物難控 |
+| 食慾/營養 | 進食意願與體重 | 主動進食 | 拒食、持續消瘦 |
+| 活動力 | 移動意願 | 仍有互動 | 不願移動 |
+| 衛生 | 自我清潔能力 | 維持 | 無法維持 |
+| 快樂 | 與家人互動 | 有正向互動 | 冷漠或焦慮 |
+
+### 安樂死討論原則
+1. 不要主動建議安樂死，而是引導飼主評估 QoL
+2. 使用「好日子 vs 壞日子」框架——當壞日子多於好日子時
+3. 強調安樂死是「最後一份愛的禮物」而非放棄
+4. 提供充足時間讓飼主做決定
+5. 討論寵物安寧照護（hospice care）的選項
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| NYHA/AHA 分期系統 | ACVIM 分期即參考 AHA A-D 系統 | 已整合 |
+| 居家血流動力學監測（CardioMEMS） | 犬 CHF 再住院預防 | 概念可行，成本為障礙 |
+| 心臟復健計畫 | 犬心臟病適度運動處方 | 概念階段，獸醫證據極少 |
+| 共同決策（shared decision-making） | 飼主參與治療決策 | 獸醫溝通學逐漸重視 |
+| 緩和醫療（palliative care） | 寵物安寧照護 | 台灣逐漸發展中 |
+
+## 六、臨床爭議 (Clinical Controversies)
+
+| 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
+|---------|---------|---------|---------------|
+| B2 開始 ACEi 的必要性 | ACVIM 列為 Level II 建議 | BENCHMARK 未顯示明確獲益 | Level II |
+| 限鈉飲食的程度 | 心臟處方飼料有明確鈉含量控制 | 嚴格限鈉可活化 RAAS，適度即可 | Level IV |
+| 貓 HCM 無症狀期是否需要 Atenolol | 降低心率+減少 SAM | 無 RCT 證實改善預後 | Level III |
+| 生活品質評估的標準化 | 結構化 QoL 工具有助客觀判斷 | 個體差異大，工具難以涵蓋所有面向 | Level V |
+
+[圖片:ACVIM 分期流程決策圖——從診斷到治療管理]`,
+  clinical_pearl: '「Sleeping RR 比任何血液檢查都能更早偵測 CHF 復發」——這是臨床心臟科最重要的居家監測訊息。教導飼主：(1) 每天在貓/犬深睡時計數 15 秒胸壁起伏次數 ×4 = RR/min (2) 記錄在日誌或手機 App (3) 基線值通常 15-25/min (4) 連續 2 次 >30/min → 立即就醫。這個簡單指標在 EPIC 研究與多項臨床驗證中被證實為最敏感的 CHF 早期復發指標，且完全免費、無需專業設備、飼主依從性佳。\n\n【台灣臨床現況】台灣飼主對心臟病用藥依從性整體良好，但「何時該放手」的溝通仍是獸醫面臨的最大挑戰。建議引入結構化 QoL 評估表，將主觀判斷轉化為可追蹤的數據，幫助飼主與獸醫共同做出更好的決定。',
+  common_mistakes: [
+    'B1 即開始 Pimobendan——EPIC 研究僅支持 B2 以上，B1 不需要藥物治療',
+    '忽略 sleeping RR 的教育——許多飼主不知道如何在家監測，錯失 CHF 早期復發的黃金處理時間',
+    '對 HCM 貓常規使用 Pimobendan——伴 LVOTO 時禁忌，可能加重動態阻塞',
+    '嚴格限鈉而導致食慾下降——心臟惡病質比高鈉更危險，營養攝取優先於限鈉',
+    '避免討論安樂死——延遲 QoL 對話可能導致動物在不適中受苦更久',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分期段落', type: 'flowchart', description: 'ACVIM 分期決策流程圖——從診斷到各分期治療管理' },
+    { position: '監測段落', type: 'comparison_table', description: '各分期追蹤時程與檢查項目比較表' },
+  ],
+  interactive_placeholders: [
+    { position: '分期段落', type: 'interactive_staging', description: '輸入心超與 X 光數據自動判定 MMVD 分期' },
+    { position: 'QoL 段落', type: 'decision_tree', description: '互動式生活品質評估問卷——自動產生 QoL 評分' },
+  ],
+  drug_api_links: ['Pimobendan', 'Furosemide', 'Enalapril', 'Benazepril', 'Spironolactone', 'Clopidogrel', 'Atenolol', 'Sotalol'],
+  references: [
+    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD ACVIM 分期與治療共識指引' },
+    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(1):3-32.', relevance: '貓心肌病分期與管理共識' },
+    { type: 'journal', citation: 'Boswood A et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease and cardiomegaly: the EPIC study. J Vet Intern Med. 2016;30(6):1765-1779.', relevance: 'Pimobendan B2 期治療關鍵證據與 sleeping RR 監測' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Chronic Management of Heart Disease.', relevance: '心臟病長期管理教材' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const CARDIO_CONTENTS = new Map<string, NodeContent>([
   ['CARDIO-L0-001', contentOverview],
@@ -3307,11 +4692,17 @@ export const CARDIO_CONTENTS = new Map<string, NodeContent>([
   ['CARDIO-L2-001', contentValvularDegeneration],
   ['CARDIO-L2-002', contentMyocardialRemodeling],
   ['CARDIO-L2-003', contentArrhythmiaMechanism],
+  ['CARDIO-L2-004', contentCongenitalMechanism],
   ['CARDIO-L3-001', contentMMVD],
   ['CARDIO-L3-002', contentDCM],
   ['CARDIO-L3-003', contentHCM],
   ['CARDIO-L3-004', contentPericardialEffusion],
   ['CARDIO-L3-005', contentHeartworm],
+  ['CARDIO-L3-006', contentCongenitalHD],
+  ['CARDIO-L3-007', contentClinicalArrhythmias],
+  ['CARDIO-L3-008', contentEndocarditis],
+  ['CARDIO-L3-009', contentPulmonaryHTN],
+  ['CARDIO-L3-010', contentFelineATE],
   ['CARDIO-L4-001', contentAuscultation],
   ['CARDIO-L4-002', contentEchocardiography],
   ['CARDIO-L4-003', contentECG],
@@ -3319,4 +4710,5 @@ export const CARDIO_CONTENTS = new Map<string, NodeContent>([
   ['CARDIO-L5-001', contentHeartFailureTreatment],
   ['CARDIO-L5-002', contentAntiarrhythmicDrugs],
   ['CARDIO-L5-003', contentPericardiocentesis],
+  ['CARDIO-L5-004', contentCardiacStaging],
 ]);

@@ -74,4 +74,35 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   { id: 'ONCO-E-048', source_node_id: 'ONCO-L3-008', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: 'FISS 需廣切手術（≥3 cm 邊界）', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-049', source_node_id: 'ONCO-L3-007', target_node_id: 'ONCO-L5-005', relation_type: 'clinical_apply', weight: 0.8, description: 'TCC 常用 piroxicam ± 節拍式化療', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-050', source_node_id: 'ONCO-L3-008', target_node_id: 'ONCO-L5-004', relation_type: 'clinical_apply', weight: 0.7, description: 'FISS 不完全切除後可考慮放射治療', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 2F 擴展邊 ───
+  // ONCO-L2-004（腫瘤微環境）
+  { id: 'ONCO-E-051', source_node_id: 'ONCO-L1-002', target_node_id: 'ONCO-L2-004', relation_type: 'builds_on', weight: 0.9, description: '腫瘤免疫學是微環境的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-052', source_node_id: 'ONCO-L2-004', target_node_id: 'ONCO-L2-003', relation_type: 'same_system', weight: 0.7, description: '腫瘤微環境促進抗藥性', bidirectional: false, unlock_condition: null },
+
+  // ONCO-L3-009（STS）
+  { id: 'ONCO-E-053', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-009', relation_type: 'clinical_apply', weight: 0.8, description: 'STS 局部侵犯性高但轉移率相對低', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-054', source_node_id: 'ONCO-L3-009', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: 'STS 需 FNA 細胞學評估', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-055', source_node_id: 'ONCO-L3-009', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 1, description: 'STS 以廣切手術為首選', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-056', source_node_id: 'ONCO-L3-009', target_node_id: 'ONCO-L3-008', relation_type: 'differential', weight: 0.7, description: 'STS 與 FISS 同為皮下肉瘤鑑別', bidirectional: true, unlock_condition: null },
+
+  // ONCO-L3-010（ASAC）
+  { id: 'ONCO-E-057', source_node_id: 'ONCO-L2-002', target_node_id: 'ONCO-L3-010', relation_type: 'clinical_apply', weight: 0.9, description: 'ASAC 常伴高鈣血症（副腫瘤）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-058', source_node_id: 'ONCO-L3-010', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'ASAC 需完整分期（淋巴結/胸腹腔）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-059', source_node_id: 'ONCO-L3-010', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 1, description: 'ASAC 手術切除肛囊', bidirectional: false, unlock_condition: null },
+
+  // ONCO-L3-011（鼻腔腫瘤）
+  { id: 'ONCO-E-060', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-011', relation_type: 'clinical_apply', weight: 0.8, description: '鼻腔腫瘤局部侵犯性強', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-061', source_node_id: 'ONCO-L3-011', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 1, description: '鼻腔腫瘤需 CT 分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-062', source_node_id: 'ONCO-L3-011', target_node_id: 'ONCO-L5-004', relation_type: 'clinical_apply', weight: 1, description: '鼻腔腫瘤以放射治療為首選', bidirectional: false, unlock_condition: null },
+
+  // ONCO-L3-012（組織球肉瘤）
+  { id: 'ONCO-E-063', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-012', relation_type: 'clinical_apply', weight: 1, description: '組織球肉瘤高度侵犯與轉移', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-064', source_node_id: 'ONCO-L3-012', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '組織球肉瘤需特殊免疫組化確診', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-065', source_node_id: 'ONCO-L3-012', target_node_id: 'ONCO-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '組織球肉瘤可嘗試 CCNU 化療', bidirectional: false, unlock_condition: null },
+
+  // ONCO-L3-013（甲狀腺癌）
+  { id: 'ONCO-E-066', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-013', relation_type: 'prerequisite', weight: 0.8, description: '腫瘤生物學是甲狀腺癌的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-067', source_node_id: 'ONCO-L3-013', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '甲狀腺癌需 FNA 細胞學', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-068', source_node_id: 'ONCO-L3-013', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '犬甲狀腺癌可手術切除', bidirectional: false, unlock_condition: null },
 ];

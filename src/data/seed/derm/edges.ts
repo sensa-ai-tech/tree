@@ -71,4 +71,20 @@ export const DERM_EDGES: KnowledgeEdge[] = [
 
   // DERM-L3-010 (天疱瘡) 缺少 L3→L4
   { id: 'DERM-E-033', source_node_id: 'DERM-L3-010', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 1.0, description: '天疱瘡需皮膚細胞學（棘層鬆解細胞）與組織病理確診', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 2G 補強邊 ───
+  // DERM-L3-011（藥物不良反應）
+  { id: 'DERM-E-034', source_node_id: 'DERM-L1-002', target_node_id: 'DERM-L3-011', relation_type: 'prerequisite', weight: 0.8, description: '皮膚免疫學是藥物反應機轉的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-035', source_node_id: 'DERM-L3-011', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: '藥物反應需皮膚細胞學/組織病理輔助', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-036', source_node_id: 'DERM-L3-011', target_node_id: 'DERM-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '藥物反應需詳細用藥史', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-012（脫毛症 X）
+  { id: 'DERM-E-037', source_node_id: 'DERM-L1-003', target_node_id: 'DERM-L3-012', relation_type: 'prerequisite', weight: 0.9, description: '毛髮生長週期異常是脫毛症 X 的核心', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-038', source_node_id: 'DERM-L3-012', target_node_id: 'DERM-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: '脫毛症 X 需毛髮檢查排除其他脫毛原因', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-039', source_node_id: 'DERM-L3-012', target_node_id: 'DERM-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '脫毛症 X 需排除內分泌疾病', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-013（皮膚淋巴瘤）
+  { id: 'DERM-E-040', source_node_id: 'DERM-L2-003', target_node_id: 'DERM-L3-013', relation_type: 'clinical_apply', weight: 0.7, description: '自體免疫機轉與 CTCL 免疫失調相關', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-041', source_node_id: 'DERM-L3-013', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 1, description: 'CTCL 需皮膚細胞學/組織病理確診', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-042', source_node_id: 'DERM-L3-013', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 0.8, description: 'CTCL 需免疫調節治療', bidirectional: false, unlock_condition: null },
 ];

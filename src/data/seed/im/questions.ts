@@ -2003,4 +2003,214 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     explanation: 'IRIS 血壓亞分期：<140 mmHg = 正常（minimal risk）、140-159 = 低度（low risk）、160-179 = 中度（moderate risk）、≥180 = 高度（high risk）。收縮壓 ≥180 mmHg 有高風險的標靶器官損傷（target organ damage, TOD）：視網膜剝離/出血（最常見）、心臟（LVH）、腎臟（腎絲球損傷加劇蛋白尿）、腦（HE 樣症狀、癲癇）。需緊急降壓治療。',
     difficulty: 3, spaced_rep: true, tags: ['CKD', 'IRIS', '血壓', '高血壓'], image_placeholder: null,
   },
+
+  // ===== Phase 2C: 8 New IM Nodes =====
+
+  // ===== IM-L2-006 免疫介導疾病機轉 — 3 questions =====
+  {
+    id: 'Q-IM-L2-006-001', node_id: 'IM-L2-006', question_type: 'mcq',
+    question: '免疫介導疾病中，Type II 超敏反應（抗體介導細胞毒殺）的典型代表疾病為何？',
+    options: ['異位性皮膚炎（Type I）', '免疫介導性溶血性貧血 IMHA（Type II）', '全身性紅斑狼瘡腎炎（Type III）', '肉芽腫性腸炎（Type IV）'],
+    correct_answer: '免疫介導性溶血性貧血 IMHA（Type II）',
+    explanation: 'Type II 超敏反應是抗體（IgG/IgM）結合於細胞表面抗原，透過補體活化或 ADCC 機制破壞標靶細胞。IMHA 中自體抗體結合紅血球表面導致溶血，是最經典的 Type II 超敏反應疾病。IMT 也屬此類。',
+    difficulty: 2, spaced_rep: true, tags: ['免疫學', '超敏反應', 'Type II', 'IMHA'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L2-006-002', node_id: 'IM-L2-006', question_type: 'true_false',
+    question: '免疫介導疾病的發生需要遺傳易感性與環境觸發因子的共同作用，疫苗接種或感染是已知的潛在觸發因子之一。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '免疫介導疾病的發病機轉涉及免疫耐受性（immune tolerance）的破壞，通常需要遺傳易感性（如特定品種傾向）加上環境觸發因子。已知觸發因子包括感染、疫苗接種、藥物和環境毒素。這解釋了為何某些品種好發特定免疫疾病。',
+    difficulty: 2, spaced_rep: true, tags: ['免疫學', '免疫耐受', '觸發因子'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L2-006-003', node_id: 'IM-L2-006', question_type: 'case_based',
+    question: '一隻 4 歲柯卡犬在疫苗接種後 2 週出現黏膜蒼白、黃疸和暗紅色尿液。血液抹片可見大量球形紅血球。此病的免疫病理機轉最可能涉及？',
+    options: ['Type I 超敏反應（IgE 介導）', 'Type II 超敏反應（自體抗體結合紅血球表面）', 'Type III 超敏反應（免疫複合體沉積）', 'Type IV 超敏反應（T 細胞介導）'],
+    correct_answer: 'Type II 超敏反應（自體抗體結合紅血球表面）',
+    explanation: '此為疫苗接種後觸發的 IMHA，屬於 Type II 超敏反應。自體抗體（IgG/IgM）結合紅血球表面 → 脾臟巨噬細胞部分吞噬形成球形紅血球 → 血管外溶血為主。疫苗是已知觸發因子之一，柯卡犬為好發品種。',
+    difficulty: 3, spaced_rep: true, tags: ['免疫學', 'IMHA', '疫苗', '超敏反應', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-013 急性腎損傷 AKI — 3 questions =====
+  {
+    id: 'Q-IM-L3-013-001', node_id: 'IM-L3-013', question_type: 'mcq',
+    question: '下列何者是貓急性腎損傷（AKI）最常見的腎毒性病因？',
+    options: ['NSAIDs 過量', '百合花（Lilium spp.）攝入', '巧克力中毒', '洋蔥中毒'],
+    correct_answer: '百合花（Lilium spp.）攝入',
+    explanation: '百合花（包括 Easter lily、Tiger lily、Asiatic lily 等 Lilium 屬和 Hemerocallis 屬）是貓最重要的腎毒性物質，所有部位（花瓣、花粉、葉片、水）均有毒。攝入後 24-72 小時可導致急性腎小管壞死和寡尿性 AKI，致死率極高。NSAIDs 也可致腎損傷但百合為貓特有且最常見。',
+    difficulty: 3, spaced_rep: true, tags: ['AKI', '貓', '百合', '腎毒性'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-013-002', node_id: 'IM-L3-013', question_type: 'true_false',
+    question: 'IRIS AKI 分級系統共分 5 級（Grade I-V），主要以血清肌酐的升高幅度和對輸液治療的反應來分級。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'IRIS AKI 分級系統分為 Grade I-V。Grade I 為非氮血症性 AKI（有 AKI 病史/風險但 Cre 正常或 < 1.6 mg/dL）。Grade II-V 依據 Cre 升高幅度遞增。每個 Grade 還根據對治療的反應（volume responsive、volume non-responsive、需要 RRT）進一步亞分級。',
+    difficulty: 3, spaced_rep: true, tags: ['AKI', 'IRIS', '分級'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-013-003', node_id: 'IM-L3-013', question_type: 'case_based',
+    question: '一隻 3 歲家貓被發現啃咬 Easter lily 約 6 小時前。目前精神尚可，血檢 Cre 1.2 mg/dL（正常），尿量正常。最適當的處置為？',
+    options: ['觀察即可，Cre 正常表示無腎損傷', '催吐（若未超過 6 小時）+ 活性碳 + 積極 48-72 小時靜脈輸液治療並監測尿量與腎功能', '僅給予皮下輸液並 24 小時後回診', '給予 NAC（N-acetylcysteine）即可保護腎臟'],
+    correct_answer: '催吐（若未超過 6 小時）+ 活性碳 + 積極 48-72 小時靜脈輸液治療並監測尿量與腎功能',
+    explanation: '百合中毒的治療關鍵是早期積極介入。即使 Cre 目前正常，腎損傷通常在 24-72 小時後才顯現。6 小時內催吐仍可考慮。積極 IV 輸液（2-3 倍維持量）維持 48-72 小時是核心治療，目的是維持腎灌注並促進毒素排泄。必須密切監測尿量——寡尿是預後不良指標。',
+    difficulty: 4, spaced_rep: true, tags: ['AKI', '百合中毒', '貓', '去污染', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-014 蛋白質流失性腎病 PLN — 3 questions =====
+  {
+    id: 'Q-IM-L3-014-001', node_id: 'IM-L3-014', question_type: 'mcq',
+    question: '犬蛋白質流失性腎病（PLN）的診斷中，UPC（尿蛋白/肌酐比值）大於多少被認為有顯著腎絲球蛋白尿？',
+    options: ['UPC > 0.2', 'UPC > 0.5', 'UPC > 2.0', 'UPC > 5.0'],
+    correct_answer: 'UPC > 2.0',
+    explanation: 'IRIS 蛋白尿分級：犬 UPC < 0.2 為非蛋白尿、0.2-0.5 為邊緣性、> 0.5 為蛋白尿。但 UPC > 2.0 通常代表腎絲球來源的蛋白尿（glomerular proteinuria），高度提示腎絲球疾病如 PLN。UPC > 3.5 更是嚴重腎絲球蛋白尿，常伴隨低白蛋白血症和血栓風險。',
+    difficulty: 3, spaced_rep: true, tags: ['PLN', 'UPC', '蛋白尿', '腎絲球'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-014-002', node_id: 'IM-L3-014', question_type: 'true_false',
+    question: '軟毛小麥梗犬（Soft-Coated Wheaten Terrier）具有遺傳性蛋白質流失性腎病的品種傾向，建議定期篩檢 UPC。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '軟毛小麥梗犬有遺傳性 PLN/PLE 傾向，與腎絲球基底膜缺陷有關。其他好發品種包括伯恩山犬、英國可卡犬和灰狗。ACVIM 建議高風險品種從 2-3 歲起每年篩檢 UPC、Albumin 和 BUN/Cre。早期發現可及時開始 ACEI/ARB 治療延緩進展。',
+    difficulty: 3, spaced_rep: true, tags: ['PLN', '品種傾向', '篩檢', 'Wheaten'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-014-003', node_id: 'IM-L3-014', question_type: 'case_based',
+    question: '一隻 5 歲軟毛小麥梗犬年度健檢發現 UPC 3.8、Albumin 1.8 g/dL、Cre 1.5 mg/dL。身體狀況良好，無明顯臨床症狀。下一步最適當的處置為？',
+    options: ['UPC 偏高但 Cre 正常，繼續觀察即可', '開始 Telmisartan/Benazepril 抗蛋白尿 + 考慮腎臟切片確定病因 + 低劑量 Aspirin 預防血栓', '直接開始 Prednisolone 免疫抑制治療', '限制蛋白質飲食即可控制蛋白尿'],
+    correct_answer: '開始 Telmisartan/Benazepril 抗蛋白尿 + 考慮腎臟切片確定病因 + 低劑量 Aspirin 預防血栓',
+    explanation: 'UPC 3.8 = 嚴重腎絲球蛋白尿。Albumin 1.8 = 低白蛋白血症 → 血栓風險增加（Alb < 2.0 時血栓風險顯著上升）。治療：(1) ACEI/ARB 降低腎絲球內壓減少蛋白尿、(2) 腎臟切片確定腎絲球病變類型（免疫複合體性、類澱粉沉著等）以決定是否需要免疫抑制、(3) 抗血栓預防。即使 Cre 正常也需積極處置。',
+    difficulty: 4, spaced_rep: true, tags: ['PLN', 'Wheaten', '抗蛋白尿', '血栓', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-015 免疫介導血小板減少症 IMT — 3 questions =====
+  {
+    id: 'Q-IM-L3-015-001', node_id: 'IM-L3-015', question_type: 'mcq',
+    question: '犬原發性免疫介導血小板減少症（IMT）的血小板計數通常低於多少？',
+    options: ['< 200,000/μL', '< 100,000/μL', '< 50,000/μL，常 < 20,000/μL', '< 150,000/μL'],
+    correct_answer: '< 50,000/μL，常 < 20,000/μL',
+    explanation: '原發性 IMT 典型表現為嚴重血小板減少，通常 < 50,000/μL，且多數病例 < 20,000/μL。自發性出血（瘀點、瘀斑、黏膜出血）通常在 < 30,000/μL 時出現。輕度血小板減少（50,000-100,000/μL）更常見於感染或繼發性原因。',
+    difficulty: 3, spaced_rep: true, tags: ['IMT', '血小板', '嚴重度'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-015-002', node_id: 'IM-L3-015', question_type: 'true_false',
+    question: 'Evans syndrome 是指免疫介導性溶血性貧血（IMHA）和免疫介導血小板減少症（IMT）同時存在的狀態，預後較單純 IMHA 或 IMT 更差。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'Evans syndrome 定義為 IMHA + IMT 同時發生，反映更廣泛的免疫失調。預後較單純 IMHA 或 IMT 差，死亡率更高。治療需同時控制溶血和血小板破壞，通常需要更積極的免疫抑制方案。血小板極低加上貧血使出血風險更高。',
+    difficulty: 3, spaced_rep: true, tags: ['Evans syndrome', 'IMHA', 'IMT', '預後'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-015-003', node_id: 'IM-L3-015', question_type: 'case_based',
+    question: '一隻 6 歲柯卡犬因全身瘀點和牙齦出血就診。血小板 8,000/μL，PCV 42%（正常），凝血功能正常，壁蝨快篩陰性。Prednisolone 治療 5 天後血小板仍 < 10,000/μL。此時最適當的輔助治療為？',
+    options: ['增加 Prednisolone 至 4 mg/kg/day', '加入 Vincristine 0.02 mg/kg IV 單次', '立即脾臟切除', '輸注血小板濃厚液'],
+    correct_answer: '加入 Vincristine 0.02 mg/kg IV 單次',
+    explanation: 'Vincristine 可快速提升血小板（24-72 小時內），機制為抑制巨噬細胞吞噬被抗體覆蓋的血小板，同時刺激巨核細胞釋放血小板。適用於 Prednisolone 反應不佳的急性期 IMT。血小板輸注效果極短暫（數小時內即被破壞），僅用於危及生命的出血。脾臟切除為最後手段。',
+    difficulty: 4, spaced_rep: true, tags: ['IMT', 'Vincristine', '治療', '類固醇反應不良', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-016 鉤端螺旋體病 Leptospirosis — 3 questions =====
+  {
+    id: 'Q-IM-L3-016-001', node_id: 'IM-L3-016', question_type: 'mcq',
+    question: '犬鉤端螺旋體病（Leptospirosis）的確診金標準血清學檢查為何？',
+    options: ['SNAP 4Dx 快篩', '顯微凝集試驗（MAT）', '犬布魯氏桿菌快篩', '全血 PCR'],
+    correct_answer: '顯微凝集試驗（MAT）',
+    explanation: 'MAT（Microscopic Agglutination Test）是鉤端螺旋體病的血清學金標準。需檢測多種血清型（serovars），急性期與恢復期雙份血清抗體效價上升 ≥4 倍最具診斷價值。單次 MAT ≥ 1:800 結合臨床表現也可支持診斷。PCR 可用於早期（抗體未產生時）檢測血液或尿液中的 DNA。',
+    difficulty: 3, spaced_rep: true, tags: ['Leptospirosis', 'MAT', '診斷', '血清學'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-016-002', node_id: 'IM-L3-016', question_type: 'true_false',
+    question: '犬鉤端螺旋體病是重要的人畜共通傳染病（zoonosis），獸醫團隊在處理疑似病例時應配戴手套並避免接觸患犬尿液。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '鉤端螺旋體經由感染動物的尿液排出，人類可經由皮膚傷口、黏膜或污染水源接觸感染。獸醫處理疑似病例時必須做好個人防護：戴手套、避免尿液飛濺、消毒環境。住院犬的尿液應妥善處理。這是重要的職業安全考量。',
+    difficulty: 3, spaced_rep: true, tags: ['Leptospirosis', '人畜共通', '防護', '職業安全'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-016-003', node_id: 'IM-L3-016', question_type: 'case_based',
+    question: '一隻 4 歲拉布拉多犬，常在戶外水域活動。主訴急性嘔吐、厭食、黃疸 2 天。血檢：BUN 85、Cre 5.2、T-Bil 8.5、ALP 480、ALT 350。尿液 USG 1.012。MAT 初步結果：L. icterohaemorrhagiae 1:1600。最適當的初始治療為？',
+    options: ['Amoxicillin IV（殺菌期）→ 穩定後轉 Doxycycline PO 完成 14 天療程', 'Metronidazole 單獨使用', 'Enrofloxacin 14 天', '僅支持療法等待 MAT 雙份血清確認'],
+    correct_answer: 'Amoxicillin IV（殺菌期）→ 穩定後轉 Doxycycline PO 完成 14 天療程',
+    explanation: '鉤端螺旋體病的標準治療分兩階段：(1) 殺菌期——Ampicillin/Amoxicillin IV（嚴重患犬無法口服時）或 Penicillin G IV；(2) 消除腎臟帶菌期——Doxycycline 5 mg/kg PO BID × 14 天。Doxycycline 是唯一能清除腎臟帶菌的藥物。不應等待雙份血清確認才開始治療——MAT 1:1600 加上典型臨床表現已足夠支持治療。',
+    difficulty: 4, spaced_rep: true, tags: ['Leptospirosis', 'Doxycycline', 'Amoxicillin', '治療', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-017 貓傳染性腹膜炎 FIP — 3 questions =====
+  {
+    id: 'Q-IM-L3-017-001', node_id: 'IM-L3-017', question_type: 'mcq',
+    question: '貓傳染性腹膜炎（FIP）的滲出液 Rivalta test 陽性代表什麼？',
+    options: ['純漏出液（pure transudate）', '修正漏出液（modified transudate）', '高蛋白質含量的滲出液（exudate），支持 FIP 診斷', '感染性膿液'],
+    correct_answer: '高蛋白質含量的滲出液（exudate），支持 FIP 診斷',
+    explanation: 'Rivalta test 是簡單的 point-of-care 檢查：將一滴體腔液滴入含冰醋酸的蒸餾水中，若液滴維持形狀緩慢下沉（陽性）= 高蛋白質含量滲出液。FIP 滲出液典型為高蛋白（> 3.5 g/dL）、低細胞性。Rivalta test 敏感度約 91-100%，特異度約 81%，陰性幾乎可排除濕型 FIP。',
+    difficulty: 3, spaced_rep: true, tags: ['FIP', 'Rivalta', '體腔液', '診斷'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-017-002', node_id: 'IM-L3-017', question_type: 'true_false',
+    question: 'GS-441524 是目前治療 FIP 最有效的抗病毒藥物，在多項研究中治癒率超過 80%。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'GS-441524 是一種核苷類似物（nucleoside analog），可抑制冠狀病毒 RNA 依賴性 RNA 聚合酶（RdRp）。多項研究（UC Davis Pedersen 團隊）顯示治療 12 週的治癒率達 80-90%。FIP 從過去近乎 100% 致死的疾病變為可治療的疾病，是獸醫學近年最重大的突破之一。',
+    difficulty: 3, spaced_rep: true, tags: ['FIP', 'GS-441524', '抗病毒', '治療'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-017-003', node_id: 'IM-L3-017', question_type: 'case_based',
+    question: '一隻 10 個月大 DSH 幼貓，來自多貓家庭。主訴腹部逐漸膨大 2 週、間歇性發燒（39.8-40.2°C）。血檢：A/G ratio 0.4（低）、高球蛋白血症。腹部超音波：大量腹水。腹水分析：蛋白 5.2 g/dL、Rivalta 陽性、低細胞性。最可能的診斷為？',
+    options: ['心臟疾病導致的腹水', '肝臟疾病（低白蛋白血症）', '濕型 FIP', '細菌性腹膜炎'],
+    correct_answer: '濕型 FIP',
+    explanation: '典型濕型 FIP 表現：幼貓（< 2 歲）+ 多貓環境 + 反覆發燒 + 腹水 + A/G ratio < 0.6 + 高球蛋白 + 腹水 Rivalta 陽性 + 高蛋白低細胞。A/G ratio < 0.4 對 FIP 的陽性預測值極高。腹水外觀典型為稻草色、黏稠。下一步可做免疫螢光染色或 RT-PCR 確認 FCoV。',
+    difficulty: 3, spaced_rep: true, tags: ['FIP', '濕型', '幼貓', 'A/G ratio', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-018 貓下泌尿道疾病 FLUTD — 3 questions =====
+  {
+    id: 'Q-IM-L3-018-001', node_id: 'IM-L3-018', question_type: 'mcq',
+    question: '貓下泌尿道疾病（FLUTD）中，最常見的病因為何？',
+    options: ['尿路感染（UTI）', '尿路結石', '貓自發性膀胱炎（FIC, Feline Idiopathic Cystitis）', '膀胱腫瘤'],
+    correct_answer: '貓自發性膀胱炎（FIC, Feline Idiopathic Cystitis）',
+    explanation: 'FIC 佔年輕至中年貓 FLUTD 病因的 55-69%，是最常見的病因。其次為結石（15-21%）和尿道栓子（10-21%）。UTI 在年輕貓中其實少見（< 5%），但在老年貓中比例增加。FIC 的病理機轉涉及膀胱黏膜 GAG 層缺損、神經內分泌失調和環境壓力。',
+    difficulty: 3, spaced_rep: true, tags: ['FLUTD', 'FIC', '貓', '病因'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-018-002', node_id: 'IM-L3-018', question_type: 'true_false',
+    question: '貓的尿路結石中，struvite（鳥糞石）與 calcium oxalate（草酸鈣）的發生率目前已接近相等，且草酸鈣結石無法透過飲食溶解。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '過去 struvite 結石佔多數，但隨著酸化飲食的普及，calcium oxalate（CaOx）比例逐年上升，目前兩者發生率接近。關鍵差異：struvite 可透過處方飲食（酸化 + 低鎂）溶解（4-6 週），但 CaOx 結石無法飲食溶解，必須手術移除。因此結石類型鑑定（影像特徵 + 尿液分析）對治療決策至關重要。',
+    difficulty: 3, spaced_rep: true, tags: ['FLUTD', 'struvite', 'CaOx', '結石'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-018-003', node_id: 'IM-L3-018', question_type: 'case_based',
+    question: '一隻 4 歲已絕育室內公貓，反覆血尿和頻尿已第 3 次發作（6 個月內）。尿液培養陰性、超音波未見結石、尿液 pH 6.5。獸醫診斷為反覆發作的 FIC。MEMO 環境管理方案中最重要的措施為何？',
+    options: ['長期給予抗生素預防感染', '增加貓砂盆數量、提供多個水源與環境豐富化（MEMO：Multimodal Environmental Modification）', '限制飲水量', '長期給予 Prednisolone'],
+    correct_answer: '增加貓砂盆數量、提供多個水源與環境豐富化（MEMO：Multimodal Environmental Modification）',
+    explanation: 'FIC 的核心治療是 MEMO（多模式環境調整）：(1) 貓砂盆規則（n+1 個砂盆、清潔頻率、位置）、(2) 增加飲水（噴泉式飲水器、多個水源、濕食轉換）、(3) 環境豐富化（垂直空間、隱蔽處、玩具、費洛蒙 Feliway）、(4) 減少壓力源。抗生素對 FIC 無效。研究顯示 MEMO 可減少 70-80% 的復發。',
+    difficulty: 4, spaced_rep: true, tags: ['FLUTD', 'FIC', 'MEMO', '環境管理', '病例'], image_placeholder: null,
+  },
+
+  // ===== IM-L3-019 貓膽管炎與三合症 — 3 questions =====
+  {
+    id: 'Q-IM-L3-019-001', node_id: 'IM-L3-019', question_type: 'mcq',
+    question: '貓的中性球膽管炎（neutrophilic cholangitis）和淋巴球膽管炎（lymphocytic cholangitis）的主要區分特徵為何？',
+    options: ['前者為急性感染性、後者為慢性免疫介導性', '前者為慢性、後者為急性', '兩者病理完全相同', '前者僅見於幼貓、後者僅見於老年貓'],
+    correct_answer: '前者為急性感染性、後者為慢性免疫介導性',
+    explanation: '中性球膽管炎（急性）：通常為上行性細菌感染（來自腸道），常見 E. coli 等腸道菌。表現為急性發燒、黃疸、腹痛。治療為抗生素。淋巴球膽管炎（慢性）：被認為是免疫介導性，常見於波斯貓。進展緩慢，最終可能導致膽道纖維化。治療為 Prednisolone ± Ursodiol。兩者需要肝臟切片區分。',
+    difficulty: 3, spaced_rep: true, tags: ['膽管炎', '中性球', '淋巴球', '貓'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-019-002', node_id: 'IM-L3-019', question_type: 'true_false',
+    question: '貓的「三合症（Triaditis）」是指膽管炎、胰臟炎和發炎性腸病（IBD）同時存在，其解剖學基礎是貓的膽管與胰管共同開口於十二指腸。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '貓的膽管和胰管在進入十二指腸前合併為共同管道（common channel），這與犬不同（犬的膽管和胰管分別開口）。此解剖特點使得腸道感染可同時上行感染膽道和胰臟，形成三合症。臨床上約 50-56% 的膽管炎貓同時有胰臟炎和/或 IBD。',
+    difficulty: 3, spaced_rep: true, tags: ['三合症', 'Triaditis', '解剖', '貓'], image_placeholder: null,
+  },
+  {
+    id: 'Q-IM-L3-019-003', node_id: 'IM-L3-019', question_type: 'case_based',
+    question: '一隻 8 歲波斯貓，慢性間歇性嘔吐和體重減輕 3 個月。血檢：ALP 380、ALT 280、GGT 45（升高）、T-Bil 4.2。Spec fPL 輕度升高。超音波：膽囊壁增厚、膽管擴張、胰臟周圍低回音。肝臟切片：門脈區大量淋巴球浸潤。最適當的治療方案為？',
+    options: ['Amoxicillin-clavulanate 長期抗生素治療', 'Prednisolone + Ursodiol + 同步處理胰臟炎與 IBD', '僅使用 Ursodiol 即可', '手術切除膽囊'],
+    correct_answer: 'Prednisolone + Ursodiol + 同步處理胰臟炎與 IBD',
+    explanation: '此為淋巴球膽管炎合併三合症（膽管炎 + 胰臟炎 + 可能的 IBD）。治療：(1) Prednisolone（免疫調節，針對淋巴球膽管炎和 IBD）、(2) Ursodiol（利膽保肝、抗炎、抗纖維化）、(3) 止吐和腸胃保護（胰臟炎支持療法）、(4) 營養支持和 B12 補充。波斯貓為淋巴球膽管炎好發品種。需長期追蹤肝指數和超音波。',
+    difficulty: 4, spaced_rep: true, tags: ['膽管炎', '三合症', 'Ursodiol', 'Prednisolone', '病例'], image_placeholder: null,
+  },
 ];

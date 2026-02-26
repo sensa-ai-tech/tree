@@ -1915,4 +1915,298 @@ export const NEURO_QUESTIONS: ReviewQuestion[] = [
     explanation: 'Photobiomodulation（PBM / LLLT）有動物研究和初步臨床證據支持在：(1) 促進周邊神經再生（可能加速軸突再生和髓鞘修復）、(2) 減輕神經性疼痛（調節炎症介質和疼痛傳導）、(3) 減少手術部位水腫和炎症。但證據等級仍為中低度，需要更多大規模隨機對照試驗。常作為復健計畫的輔助項目而非單獨治療。',
     difficulty: 3, spaced_rep: true, tags: ['神經復健', '雷射', 'PBM', '神經再生'], image_placeholder: null,
   },
+  // ============================================================
+  // NEURO-L2-005: 顱內壓升高機轉 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L2-005-001', node_id: 'NEURO-L2-005', question_type: 'mcq',
+    question: '根據 Monro-Kellie 假說，顱腔內三大組成成分為何？',
+    options: [
+      '腦組織、血液、腦脊髓液（CSF）',
+      '腦組織、脂肪、血液',
+      '血液、CSF、骨骼',
+      '腦組織、肌肉、CSF',
+    ],
+    correct_answer: '腦組織、血液、腦脊髓液（CSF）',
+    explanation: 'Monro-Kellie 假說指出顱腔為半剛性密閉空間，內含腦組織（約 80%）、血液（約 10%）、CSF（約 10%）三大成分，三者總體積恆定。當其中任一成分體積增加時，必須有其他成分被代償性排出（如 CSF 移至脊椎管、靜脈血排出），否則顱內壓（ICP）將急速上升。代償機制耗盡後，ICP 呈指數型上升。',
+    difficulty: 3, spaced_rep: true, tags: ['ICP', 'Monro-Kellie', '顱內壓'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L2-005-002', node_id: 'NEURO-L2-005', question_type: 'mcq',
+    question: '下列哪項是顱內壓升高（ICP↑）最早出現的臨床徵兆？',
+    options: [
+      '意識狀態改變（嗜睡、遲鈍）',
+      '瞳孔放大固定（mydriasis）',
+      '庫欣反射（Cushing reflex）',
+      '角弓反張（opisthotonus）',
+    ],
+    correct_answer: '意識狀態改變（嗜睡、遲鈍）',
+    explanation: '顱內壓升高的臨床徵兆依嚴重度遞進：(1) 早期：意識狀態改變（嗜睡→昏迷）、行為異常、頭痛表現（犬貓可能表現為頭部壓牆）。(2) 中期：瞳孔變化（先縮後放大）、姿勢反應缺損。(3) 晚期：Cushing reflex（高血壓 + 心搏過緩 + 呼吸異常）、去腦僵直姿勢。瞳孔放大固定和 Cushing reflex 為腦幹受壓的晚期徵兆。',
+    difficulty: 3, spaced_rep: true, tags: ['ICP', '臨床徵兆', '意識評估'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L2-005-003', node_id: 'NEURO-L2-005', question_type: 'mcq',
+    question: '使用 Mannitol 降低顱內壓的主要作用機轉為何？',
+    options: [
+      '滲透性利尿——在完整血腦屏障區域產生滲透壓梯度，將水分從腦組織引入血管',
+      '直接抑制 CSF 生成',
+      '擴張腦血管增加灌流',
+      '降低腦組織代謝率',
+    ],
+    correct_answer: '滲透性利尿——在完整血腦屏障區域產生滲透壓梯度，將水分從腦組織引入血管',
+    explanation: 'Mannitol（0.5-1.5 g/kg IV over 15-20 min）為滲透性利尿劑，在血腦屏障（BBB）完整的區域產生滲透壓梯度，將水分從腦實質移入血管腔，降低腦水腫和 ICP。起效時間約 15-30 分鐘，持續 2-5 小時。注意：(1) BBB 破壞區域無效甚至可能加重水腫（rebound effect）。(2) 重複使用需監測血清滲透壓（目標 < 320 mOsm/kg）。(3) 高濃度鹽水（HTS 3-7.5%）為替代選擇。',
+    difficulty: 3, spaced_rep: true, tags: ['ICP', 'Mannitol', '滲透性治療'], image_placeholder: null,
+  },
+  // ============================================================
+  // NEURO-L3-008: 顱內腫瘤 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L3-008-001', node_id: 'NEURO-L3-008', question_type: 'mcq',
+    question: '犬最常見的原發性顱內腫瘤為何？',
+    options: [
+      '腦膜瘤（Meningioma）',
+      '膠質瘤（Glioma）',
+      '脈絡叢乳頭狀瘤（Choroid plexus papilloma）',
+      '室管膜瘤（Ependymoma）',
+    ],
+    correct_answer: '腦膜瘤（Meningioma）',
+    explanation: '犬最常見的原發性腦腫瘤為腦膜瘤（Meningioma），約佔所有原發性腦腫瘤的 40-50%。好發於長頭型（dolichocephalic）中老年大型犬（> 7 歲）。特徵：(1) 軸外（extra-axial）腫塊，通常有 dural tail sign。(2) MRI 特徵為均勻強化、邊界清楚。(3) 相較於膠質瘤，手術可及性較佳。(4) 貓的腦膜瘤通常預後較犬更好（多為良性）。膠質瘤好發於短頭型品種（Boxer、Boston Terrier）。',
+    difficulty: 4, spaced_rep: true, tags: ['腦腫瘤', '腦膜瘤', '犬'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-008-002', node_id: 'NEURO-L3-008', question_type: 'mcq',
+    question: '顱內腫瘤犬的 MRI 影像上出現 "dural tail sign" 最可能提示哪種腫瘤？',
+    options: [
+      '腦膜瘤（Meningioma）',
+      '膠質瘤（Glioma）',
+      '淋巴瘤（Lymphoma）',
+      '轉移性腫瘤',
+    ],
+    correct_answer: '腦膜瘤（Meningioma）',
+    explanation: 'Dural tail sign 是指 MRI T1W+C 上腫瘤旁硬腦膜增厚並強化的徵象，為腦膜瘤的典型影像特徵（雖非 100% 特異性）。腦膜瘤的 MRI 特徵還包括：(1) 軸外腫塊（extra-axial）伴周圍腦組織受壓。(2) T1W 等至低訊號、T2W 等至高訊號。(3) 均勻強烈造影增強。(4) 可見寬基底附著於硬腦膜。膠質瘤為軸內（intra-axial）腫塊，通常強化不均勻且邊界模糊。',
+    difficulty: 4, spaced_rep: true, tags: ['腦腫瘤', 'MRI', 'dural tail'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-008-003', node_id: 'NEURO-L3-008', question_type: 'mcq',
+    question: '犬顱內腫瘤合併癲癇發作時，最適當的初始處理策略為何？',
+    options: [
+      '抗癲癇藥物控制發作 + 影像診斷（MRI）+ 評估手術/放射治療可行性',
+      '僅給予抗癲癇藥物，觀察 6 個月',
+      '立即開顱手術不需影像',
+      '僅使用類固醇治療',
+    ],
+    correct_answer: '抗癲癇藥物控制發作 + 影像診斷（MRI）+ 評估手術/放射治療可行性',
+    explanation: '顱內腫瘤合併癲癇的處理策略：(1) 急性發作控制：Diazepam/Midazolam + 開始長期 AED（Phenobarbital 或 Levetiracetam）。(2) MRI + CSF 分析確認腫瘤類型與位置。(3) 評估多模式治療：手術切除（腦膜瘤首選）、放射治療（SRT/SRS 或傳統分次放療）、化療（lomustine 用於膠質瘤）。(4) Prednisolone（1-2 mg/kg/day）可暫時減少瘤周水腫。類固醇可緩解症狀但非根本治療。',
+    difficulty: 4, spaced_rep: true, tags: ['腦腫瘤', '癲癇', '治療策略'], image_placeholder: null,
+  },
+  // ============================================================
+  // NEURO-L3-009: Wobbler Syndrome (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L3-009-001', node_id: 'NEURO-L3-009', question_type: 'mcq',
+    question: '犬 Wobbler Syndrome（頸椎脊髓病變，CSM）最常見的兩種好發族群為何？',
+    options: [
+      '年輕大丹犬（骨骼型）與中老年杜賓犬（椎間盤型）',
+      '年輕臘腸犬與年輕柯基犬',
+      '老年小型犬與年輕貓',
+      '年輕 Labrador 與老年 Beagle',
+    ],
+    correct_answer: '年輕大丹犬（骨骼型）與中老年杜賓犬（椎間盤型）',
+    explanation: 'Wobbler Syndrome（Cervical Spondylomyelopathy, CSM）有兩種主要表現型：(1) 骨骼型（osseous-associated）：好發年輕大丹犬（< 2 歲），椎體畸形/關節突肥大造成脊髓壓迫，好發 C3-C5。(2) 椎間盤型（disc-associated）：好發中老年杜賓犬（5-9 歲），椎間盤突出 + 韌帶肥厚造成壓迫，好發 C5-C7。兩者共同特徵為慢性漸進性四肢共濟失調，後肢通常比前肢嚴重。',
+    difficulty: 4, spaced_rep: true, tags: ['Wobbler', 'CSM', '品種好發'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-009-002', node_id: 'NEURO-L3-009', question_type: 'mcq',
+    question: 'Wobbler Syndrome 犬的典型步態表現為何？',
+    options: [
+      '後肢明顯共濟失調寬步態（UMN），前肢短步僵硬步態（LMN/UMN 混合），兩階段步態',
+      '後肢 LMN 跛行，前肢正常',
+      '四肢均為 LMN 癱瘓',
+      '僅前肢跛行',
+    ],
+    correct_answer: '後肢明顯共濟失調寬步態（UMN），前肢短步僵硬步態（LMN/UMN 混合），兩階段步態',
+    explanation: 'Wobbler 的經典步態為 "two-engine gait"（兩階段步態）：(1) 後肢：明顯共濟失調、寬基步態、交叉（crossing over）、指節翻轉（knuckling），為 UMN 徵象。(2) 前肢：短步、僵硬、"floating" 步態，因頸膨大（C6-T2）的 LMN 損傷 + 上方脊髓 UMN 路徑損傷共同影響。後肢症狀通常比前肢明顯且更早出現，因長傳導路徑對壓迫更敏感。頸部疼痛可有可無。',
+    difficulty: 4, spaced_rep: true, tags: ['Wobbler', '步態', '共濟失調'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-009-003', node_id: 'NEURO-L3-009', question_type: 'mcq',
+    question: 'Wobbler Syndrome 的動態 MRI 或脊髓攝影中，頸部屈曲（flexion）和伸展（extension）的目的為何？',
+    options: [
+      '評估脊髓壓迫是否為動態性（位置依賴性）以決定手術方式',
+      '僅為了評估疼痛反應',
+      '評估血流速度',
+      '評估 CSF 壓力',
+    ],
+    correct_answer: '評估脊髓壓迫是否為動態性（位置依賴性）以決定手術方式',
+    explanation: '動態影像（dynamic MRI 或 stress myelography）在 Wobbler 診斷中至關重要：(1) 頸部屈曲（flexion）：可減輕腹側壓迫（椎間盤型）但加重背側壓迫（韌帶/關節突型）。(2) 頸部伸展（extension）：可加重腹側壓迫。(3) 臨床意義：靜態壓迫→手術減壓（ventral slot）；動態壓迫→可能需要融合固定（distraction-fusion）。(4) 若 traction 可減輕壓迫，提示牽引融合術可能有效。動態評估直接影響手術決策。',
+    difficulty: 4, spaced_rep: true, tags: ['Wobbler', 'MRI', '動態影像'], image_placeholder: null,
+  },
+  // ============================================================
+  // NEURO-L3-010: FCE 纖維軟骨栓塞性脊髓病變 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L3-010-001', node_id: 'NEURO-L3-010', question_type: 'mcq',
+    question: '纖維軟骨栓塞性脊髓病變（FCE）最具特徵性的臨床表現為何？',
+    options: [
+      '超急性發作（數分鐘至數小時內）、不對稱脊髓徵兆、發作後不再進展、通常無痛',
+      '慢性漸進性對稱脊髓損傷',
+      '急性對稱性劇痛',
+      '反覆發作的脊髓壓迫',
+    ],
+    correct_answer: '超急性發作（數分鐘至數小時內）、不對稱脊髓徵兆、發作後不再進展、通常無痛',
+    explanation: 'FCE 四大臨床特徵：(1) 超急性發作：常在劇烈運動或輕微外傷後數分鐘內發生，迅速達到最嚴重程度。(2) 不對稱（lateralized）：典型為一側比另一側嚴重，因栓塞通常影響脊髓單側血管供應。(3) 不進展（non-progressive）：發作後 24 小時內穩定或開始改善。(4) 無痛（non-painful）：初始可能有瞬間疼痛，但隨後無脊柱疼痛表現。好發中大型犬，尤其 Miniature Schnauzer 和 Shetland Sheepdog 也有報告。',
+    difficulty: 3, spaced_rep: true, tags: ['FCE', '臨床特徵', '超急性'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-010-002', node_id: 'NEURO-L3-010', question_type: 'mcq',
+    question: 'FCE 的 MRI 特徵性表現為何？',
+    options: [
+      '脊髓實質內（intramedullary）T2W 高訊號病灶，無明顯壓迫性病變，對應血管分佈區域',
+      '明顯的椎間盤突出伴脊髓壓迫',
+      '多發性腦膜強化',
+      'MRI 完全正常',
+    ],
+    correct_answer: '脊髓實質內（intramedullary）T2W 高訊號病灶，無明顯壓迫性病變，對應血管分佈區域',
+    explanation: 'FCE 的 MRI 特徵：(1) T2W 高訊號：脊髓實質內（intramedullary），通常為不對稱性。(2) 無壓迫性病變：與 IVDD 不同，無椎間盤突出或軸外壓迫。(3) 血管分佈對應：病灶範圍對應脊髓動脈供血區域。(4) T1W 等至低訊號，輕度至無造影增強。(5) 急性期可能有輕度脊髓腫脹。注意：超急性期（< 6-12 小時）MRI 可能尚未出現明顯變化。確診需排除 IVDD（Hansen Type III）等。',
+    difficulty: 3, spaced_rep: true, tags: ['FCE', 'MRI', '影像特徵'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-010-003', node_id: 'NEURO-L3-010', question_type: 'mcq',
+    question: 'FCE 的治療方式主要為何？',
+    options: [
+      '支持性治療 + 積極復健——無手術適應症',
+      '緊急手術減壓',
+      '長期免疫抑制治療',
+      '長期抗生素',
+    ],
+    correct_answer: '支持性治療 + 積極復健——無手術適應症',
+    explanation: 'FCE 為非壓迫性（non-compressive）脊髓損傷，無手術適應症。治療以：(1) 急性期支持性照護：疼痛管理（若有）、膀胱管理（若有尿滯留）、防止褥瘡。(2) 積極復健：物理治療、水中跑步機、PROM、NMES 等。(3) 預後良好：多數犬在 2-6 週內顯著改善，深痛覺存在者預後佳（恢復率 > 80%）。(4) 不良預後因子：深痛覺喪失、大面積脊髓損傷、LMN 徵象為主。早期開始復健可改善預後。',
+    difficulty: 3, spaced_rep: true, tags: ['FCE', '治療', '復健'], image_placeholder: null,
+  },
+  // ============================================================
+  // NEURO-L3-011: 椎間盤炎 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L3-011-001', node_id: 'NEURO-L3-011', question_type: 'mcq',
+    question: '犬椎間盤炎（Discospondylitis）最常見的致病菌為何？',
+    options: [
+      'Staphylococcus pseudintermedius',
+      'Escherichia coli',
+      'Brucella canis',
+      'Aspergillus spp.',
+    ],
+    correct_answer: 'Staphylococcus pseudintermedius',
+    explanation: '犬椎間盤炎最常見致病菌為 Staphylococcus pseudintermedius（約 50-70%），其次為 Streptococcus spp.、E. coli 等。重要鑑別：Brucella canis 在流行地區為重要病因（台灣需考慮），診斷需做 Brucella 血清學檢測。真菌性（Aspergillus）在德國牧羊犬為已知好發。感染途徑：(1) 血行性播散最常見（來自 UTI、皮膚感染、心內膜炎等）。(2) 直接感染（手術後、穿刺傷）。(3) 鄰近組織擴散。',
+    difficulty: 3, spaced_rep: true, tags: ['椎間盤炎', '細菌', 'Staphylococcus'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-011-002', node_id: 'NEURO-L3-011', question_type: 'mcq',
+    question: '犬椎間盤炎的典型 X 光變化為何？',
+    options: [
+      '受累椎體終板溶解（lysis）+ 椎間隙狹窄或塌陷 + 反應性硬化（sclerosis）',
+      '椎體壓迫性骨折',
+      '椎間隙增寬',
+      'X 光完全正常',
+    ],
+    correct_answer: '受累椎體終板溶解（lysis）+ 椎間隙狹窄或塌陷 + 反應性硬化（sclerosis）',
+    explanation: '椎間盤炎 X 光特徵（注意：早期 2-4 週內可能正常）：(1) 椎體終板溶解（endplate lysis）：受累相鄰椎體終板不規則破壞。(2) 椎間隙狹窄或塌陷。(3) 反應性硬化（sclerosis）：慢性期周圍骨質密度增加。(4) 腹側骨增生（ventral spondylosis）：慢性時可見。好發部位：L7-S1 最常見，其次為 T-L 交界處。早期 X 光陰性時，MRI 為金標準（可在 3-5 天內偵測到早期變化）。',
+    difficulty: 3, spaced_rep: true, tags: ['椎間盤炎', 'X光', '影像'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-011-003', node_id: 'NEURO-L3-011', question_type: 'mcq',
+    question: '犬椎間盤炎的治療原則為何？',
+    options: [
+      '長期抗生素（≥ 6-8 週）+ 疼痛管理 + 活動限制 + 影像追蹤',
+      '短期抗生素（7 天）+ 手術',
+      '僅止痛即可，不需抗生素',
+      '類固醇為首選治療',
+    ],
+    correct_answer: '長期抗生素（≥ 6-8 週）+ 疼痛管理 + 活動限制 + 影像追蹤',
+    explanation: '椎間盤炎治療原則：(1) 理想做法為先培養（血培養/CT 引導穿刺活檢），根據藥敏選擇抗生素。(2) 經驗性抗生素：Amoxicillin-clavulanate 或 Cephalosporin 第一代，療程 ≥ 6-8 週（至 X 光顯示骨質癒合）。(3) 疼痛管理：NSAIDs 或 Gabapentin。(4) 活動限制：籠養休息 4-6 週。(5) 手術適應症：脊髓壓迫致嚴重神經功能缺損、內科治療失敗、脊椎不穩定。(6) 必須排除 Brucella（治療方案不同且有人畜共通風險）。',
+    difficulty: 3, spaced_rep: true, tags: ['椎間盤炎', '抗生素', '治療'], image_placeholder: null,
+  },
+  // ============================================================
+  // NEURO-L3-012: 水腦症 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L3-012-001', node_id: 'NEURO-L3-012', question_type: 'mcq',
+    question: '先天性水腦症（Congenital Hydrocephalus）最常見於哪些犬種？',
+    options: [
+      '吉娃娃（Chihuahua）、約克夏、馬爾濟斯、博美等小型/玩賞犬種',
+      '德國牧羊犬、拉布拉多、黃金獵犬',
+      '大丹犬、愛爾蘭獵狼犬',
+      '臘腸犬、柯基犬',
+    ],
+    correct_answer: '吉娃娃（Chihuahua）、約克夏、馬爾濟斯、博美等小型/玩賞犬種',
+    explanation: '先天性水腦症好發於小型/玩賞犬種和短頭型犬種：吉娃娃（發生率最高）、約克夏、馬爾濟斯、博美、英國鬥牛犬、波士頓梗。病因：(1) 中腦導水管狹窄（最常見）。(2) 腦室系統發育異常。(3) 宮內感染。臨床徵兆通常在 < 1 歲出現：圓頂頭（dome-shaped skull）、開放囟門（persistent fontanelle）、腹外斜視（ventrolateral strabismus）、發育遲緩、癲癇、行為異常。輕度病例可能無症狀或症狀輕微。',
+    difficulty: 3, spaced_rep: true, tags: ['水腦症', '先天性', '小型犬'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-012-002', node_id: 'NEURO-L3-012', question_type: 'mcq',
+    question: '水腦症犬的腦部超音波（經囟門掃描）最典型的發現為何？',
+    options: [
+      '側腦室明顯擴張，腦室/腦半球比值（V/B ratio）增加',
+      '腦室正常大小',
+      '腦實質內腫塊',
+      '腦萎縮但腦室正常',
+    ],
+    correct_answer: '側腦室明顯擴張，腦室/腦半球比值（V/B ratio）增加',
+    explanation: '水腦症的診斷方法：(1) 經囟門超音波（幼犬有開放囟門時首選）：可見側腦室擴張，V/B ratio > 0.6 為異常。優點：非侵入性、不需麻醉。(2) MRI（金標準）：精確評估腦室擴張程度、阻塞位置、腦實質損傷。可測量 V/B ratio。(3) CT：替代 MRI。注意：部分小型犬可有輕度腦室擴張而無臨床症狀（incidental ventriculomegaly），需結合臨床徵兆判斷是否需要治療。',
+    difficulty: 3, spaced_rep: true, tags: ['水腦症', '超音波', '診斷'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-012-003', node_id: 'NEURO-L3-012', question_type: 'mcq',
+    question: '水腦症犬的內科治療首選藥物為何？',
+    options: [
+      'Omeprazole（質子泵抑制劑，減少 CSF 生成）+ Prednisolone（減少 CSF 生成和腦水腫）',
+      'Mannitol 長期口服',
+      'Phenobarbital 為唯一治療',
+      'Furosemide 單一療法',
+    ],
+    correct_answer: 'Omeprazole（質子泵抑制劑，減少 CSF 生成）+ Prednisolone（減少 CSF 生成和腦水腫）',
+    explanation: '水腦症內科治療：(1) Omeprazole（0.5-1 mg/kg PO BID）：質子泵抑制劑，有證據顯示可減少脈絡叢 CSF 生成。(2) Prednisolone（0.25-0.5 mg/kg/day，漸減至最低有效劑量）：減少 CSF 生成、減輕腦水腫。(3) Acetazolamide 或 Furosemide：減少 CSF 生成（效果有限，副作用多）。(4) 抗癲癇藥物：若有癲癇發作。手術治療：VP shunt（ventriculoperitoneal shunt）適用於內科治療反應差或進展性神經惡化的病例，但併發症率高（30-50%）。',
+    difficulty: 3, spaced_rep: true, tags: ['水腦症', 'Omeprazole', '治療'], image_placeholder: null,
+  },
+  // ============================================================
+  // NEURO-L3-013: 腰薦椎疾病 (3 questions)
+  // ============================================================
+  {
+    id: 'Q-NEURO-L3-013-001', node_id: 'NEURO-L3-013', question_type: 'mcq',
+    question: '犬腰薦椎疾病（Lumbosacral Disease / DLSS）最好發的品種和年齡層為何？',
+    options: [
+      '中老年大型犬，尤其德國牧羊犬',
+      '幼年小型犬',
+      '年輕貓',
+      '中年臘腸犬',
+    ],
+    correct_answer: '中老年大型犬，尤其德國牧羊犬',
+    explanation: '退化性腰薦椎狹窄症（Degenerative Lumbosacral Stenosis, DLSS）好發於中老年（> 5 歲）大型犬，德國牧羊犬佔壓倒性多數。其他好發品種包括 Labrador、Rottweiler 等工作犬。病因：L7-S1 椎間盤退化突出 + 周圍軟組織（韌帶、關節囊）肥厚 + 骨質增生 → 馬尾（cauda equina）壓迫。高風險因子：工作犬（警犬、軍犬）、過度運動。與人類的腰椎管狹窄症類似。',
+    difficulty: 3, spaced_rep: true, tags: ['腰薦椎', 'DLSS', '德國牧羊犬'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-013-002', node_id: 'NEURO-L3-013', question_type: 'mcq',
+    question: '犬腰薦椎疾病的最典型臨床表現為何？',
+    options: [
+      '腰薦部疼痛（直接壓迫或尾巴上提時加劇）、後肢跛行、不願跳躍或爬樓梯',
+      '急性四肢癱瘓',
+      '前肢跛行為主',
+      '純粹的排尿障礙無疼痛',
+    ],
+    correct_answer: '腰薦部疼痛（直接壓迫或尾巴上提時加劇）、後肢跛行、不願跳躍或爬樓梯',
+    explanation: '犬 DLSS 臨床表現以 L7-S1 馬尾壓迫為主：(1) 疼痛：腰薦部按壓痛、lordosis test（腰椎伸展 + 腰薦按壓）陽性、尾巴上提疼痛。(2) 運動障礙：後肢跛行（可單側或雙側）、不願跳躍/爬樓梯、起身困難。(3) 神經功能缺損（進展期）：後肢 LMN 徵兆（坐骨神經壓迫）、尾巴下垂無力（薦神經壓迫）、肛門反射減弱、尿/糞失禁（晚期）。(4) 肌肉萎縮：後肢和臀部肌群。常被誤診為髖關節疾病。',
+    difficulty: 3, spaced_rep: true, tags: ['腰薦椎', '臨床表現', '馬尾壓迫'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-L3-013-003', node_id: 'NEURO-L3-013', question_type: 'mcq',
+    question: '犬腰薦椎疾病的進階影像診斷首選為何？',
+    options: [
+      'MRI（可同時評估軟組織壓迫、神經根受壓、椎間盤狀態）',
+      '單純 X 光即可確診',
+      '超音波',
+      '血液檢查',
+    ],
+    correct_answer: 'MRI（可同時評估軟組織壓迫、神經根受壓、椎間盤狀態）',
+    explanation: '腰薦椎疾病的影像診斷：(1) X 光：可見腰薦椎間隙狹窄、腹側骨增生（spondylosis deformans）、終板硬化，但無法評估軟組織壓迫且特異性低（老年犬正常退化也可見類似變化）。(2) MRI（首選）：評估椎間盤突出、韌帶肥厚、神經根受壓、馬尾壓迫程度。動態 MRI（屈曲/伸展）可揭示動態壓迫。(3) CT：骨骼細節優於 MRI，可評估關節突和椎管狹窄程度。(4) CT myelography：當 MRI 不可得時的替代。確診需影像 + 臨床相符。',
+    difficulty: 3, spaced_rep: true, tags: ['腰薦椎', 'MRI', '影像診斷'], image_placeholder: null,
+  },
 ];

@@ -610,4 +610,270 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: false,
     unlock_condition: null,
   },
+
+  // ─── Phase 3 擴展：Phase 2 新增節點跨科邊 (25 條) ───
+
+  // CARDIO 新節點跨科邊
+  {
+    id: 'CROSS-CARDIO-ECC-003',
+    source_node_id: 'CARDIO-L3-010', // ATE
+    target_node_id: 'ECC-L1-001',    // 休克
+    relation_type: 'complication',
+    weight: 1.0,
+    description: '貓 ATE 為急性缺血性急診，需急診休克復甦與止痛',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CARDIO-SURG-001',
+    source_node_id: 'CARDIO-L3-006', // 先天心病（PDA/PS/SAS）
+    target_node_id: 'SURG-L5-001',   // 軟組織手術
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: 'PDA 結紮/閉鎖術與 PS 球囊擴張為先天心病的外科治療選項',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CARDIO-ECC-004',
+    source_node_id: 'CARDIO-L3-009', // 肺高壓
+    target_node_id: 'ECC-L3-013',    // 急性呼吸窘迫
+    relation_type: 'complication',
+    weight: 0.8,
+    description: '嚴重肺高壓可導致急性右心衰竭與呼吸窘迫',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // NEURO 新節點跨科邊
+  {
+    id: 'CROSS-NEURO-ONCO-002',
+    source_node_id: 'NEURO-L3-008',  // 顱內腫瘤
+    target_node_id: 'ONCO-L4-002',   // 腫瘤分期檢查
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '腦腫瘤需完整腫瘤分期（胸腹影像）排除轉移性來源',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-NEURO-SURG-002',
+    source_node_id: 'NEURO-L3-009',  // Wobbler
+    target_node_id: 'SURG-L5-002',   // 骨科手術
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: 'Wobbler 內科治療無效時可考慮腹側減壓/固定手術',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-NEURO-SURG-003',
+    source_node_id: 'NEURO-L3-013',  // Cauda equina
+    target_node_id: 'SURG-L5-002',   // 骨科手術
+    relation_type: 'clinical_apply',
+    weight: 0.8,
+    description: '腰薦椎疾病（DLSS）嚴重神經壓迫需手術減壓',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-NEURO-ECC-003',
+    source_node_id: 'NEURO-L2-005',  // 顱內壓升高
+    target_node_id: 'ECC-L5-001',    // 靜脈液體治療
+    relation_type: 'clinical_apply',
+    weight: 0.8,
+    description: '顱內壓升高需急診高張食鹽水/Mannitol 降壓治療',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM 新節點跨科邊
+  {
+    id: 'CROSS-IM-ECC-005',
+    source_node_id: 'IM-L3-013',     // AKI
+    target_node_id: 'ECC-L5-001',    // 靜脈液體治療
+    relation_type: 'clinical_apply',
+    weight: 1.0,
+    description: 'AKI 首要治療為積極靜脈輸液以恢復腎灌流',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-ECC-006',
+    source_node_id: 'IM-L3-018',     // FLUTD
+    target_node_id: 'ECC-L3-004',    // 貓尿道阻塞
+    relation_type: 'complication',
+    weight: 1.0,
+    description: 'FLUTD 結晶/栓子可導致貓尿道阻塞急診',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-ECC-007',
+    source_node_id: 'IM-L3-016',     // Leptospirosis
+    target_node_id: 'ECC-L3-011',    // 敗血症
+    relation_type: 'complication',
+    weight: 0.8,
+    description: '嚴重鉤端螺旋體可導致敗血症/SIRS 與多重器官衰竭',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-CPATH-002',
+    source_node_id: 'IM-L3-013',     // AKI
+    target_node_id: 'CPATH-L4-014',  // 尿液分析
+    relation_type: 'clinical_apply',
+    weight: 1.0,
+    description: 'AKI 診斷與監控需尿液分析（比重、尿沉渣、UPC）',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-CPATH-003',
+    source_node_id: 'IM-L3-017',     // FIP
+    target_node_id: 'CPATH-L4-015',  // 體腔滲出液分析
+    relation_type: 'clinical_apply',
+    weight: 1.0,
+    description: 'FIP 滲出型需體腔液分析（Rivalta test、高蛋白、A:G ratio）',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-CPATH-004',
+    source_node_id: 'IM-L3-014',     // PLN
+    target_node_id: 'CPATH-L4-014',  // 尿液分析
+    relation_type: 'clinical_apply',
+    weight: 1.0,
+    description: 'PLN 以 UPC ratio > 2.0 為診斷核心，需連續尿液監控',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-ECC-008',
+    source_node_id: 'IM-L3-015',     // IMT
+    target_node_id: 'ECC-L5-003',    // 輸血醫學
+    relation_type: 'clinical_apply',
+    weight: 0.8,
+    description: '嚴重 IMT（血小板 < 10,000/μL）伴活動性出血可能需血小板輸注',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ECC 新節點跨科邊
+  {
+    id: 'CROSS-ECC-ONCO-002',
+    source_node_id: 'ECC-L3-009',    // 腹腔出血
+    target_node_id: 'ONCO-L3-004',   // HSA
+    relation_type: 'differential',
+    weight: 0.9,
+    description: '犬非外傷性血腹首要排除脾臟 HSA（占非外傷性血腹 ~50%）',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-ECC-CARDIO-003',
+    source_node_id: 'ECC-L3-013',    // 急性呼吸窘迫
+    target_node_id: 'CARDIO-L5-001', // CHF 治療
+    relation_type: 'differential',
+    weight: 0.9,
+    description: '急性呼吸窘迫需鑑別心因性肺水腫 vs 非心因性原因',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-ECC-SURG-003',
+    source_node_id: 'ECC-L3-012',    // 多發性創傷
+    target_node_id: 'SURG-L3-007',   // 骨折
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '多發性創傷常伴隨骨折，穩定後需骨科手術修復',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-ECC-CPATH-002',
+    source_node_id: 'ECC-L3-011',    // 敗血症
+    target_node_id: 'CPATH-L4-004',  // 凝血功能
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '敗血症需監控凝血功能（PT/aPTT/D-dimer）評估 DIC 風險',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // SURG 新節點跨科邊
+  {
+    id: 'CROSS-SURG-ECC-004',
+    source_node_id: 'SURG-L3-010',   // BOAS
+    target_node_id: 'ECC-L3-013',    // 急性呼吸窘迫
+    relation_type: 'complication',
+    weight: 0.9,
+    description: 'BOAS 急性惡化（高溫/興奮）可導致上呼吸道阻塞急診',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-SURG-ECC-005',
+    source_node_id: 'SURG-L3-013',   // 膈疝
+    target_node_id: 'ECC-L3-013',    // 急性呼吸窘迫
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '外傷性膈疝導致腹腔臟器進入胸腔，造成急性呼吸窘迫',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-SURG-DERM-001',
+    source_node_id: 'SURG-L3-014',   // TECA-LBO
+    target_node_id: 'DERM-L3-007',   // 外耳炎
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '終末期慢性外耳炎（纖維化/鈣化）內科無效時需 TECA-LBO',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-SURG-CPATH-003',
+    source_node_id: 'SURG-L3-011',   // PSS
+    target_node_id: 'CPATH-L4-002',  // 生化
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: 'PSS 以膽汁酸耐受試驗（空腹 + 餐後）為關鍵篩檢指標',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ONCO 新節點跨科邊
+  {
+    id: 'CROSS-ONCO-SURG-006',
+    source_node_id: 'ONCO-L3-009',   // STS
+    target_node_id: 'SURG-L5-001',   // 軟組織手術
+    relation_type: 'clinical_apply',
+    weight: 1.0,
+    description: 'STS 需寬切緣手術（≥3 cm 側方 + 1 筋膜面深層），首次手術品質決定預後',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-ONCO-IM-002',
+    source_node_id: 'ONCO-L3-013',   // 甲狀腺癌
+    target_node_id: 'IM-L3-003',     // 甲狀腺疾病（貓甲亢）
+    relation_type: 'differential',
+    weight: 0.8,
+    description: '貓甲狀腺腫塊需鑑別良性腺瘤（>97%）vs 甲狀腺癌（<3%）',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // DERM 新節點跨科邊
+  {
+    id: 'CROSS-DERM-ONCO-001',
+    source_node_id: 'DERM-L3-013',   // CTCL
+    target_node_id: 'ONCO-L3-001',   // 淋巴瘤
+    relation_type: 'same_system',
+    weight: 0.9,
+    description: '皮膚淋巴瘤（CTCL）為淋巴瘤的皮膚表現型，治療原則交叉',
+    bidirectional: true,
+    unlock_condition: null,
+  },
 ];
