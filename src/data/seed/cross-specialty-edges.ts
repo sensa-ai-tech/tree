@@ -1087,7 +1087,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
 
   // ONCO-L3-016 HCC ↔ SURG: 軟組織手術（肝葉切除）
   {
-    id: 'CROSS-ONCO-SURG-003',
+    id: 'CROSS-ONCO-SURG-007',
     source_node_id: 'ONCO-L3-016',   // HCC
     target_node_id: 'SURG-L5-001',   // 軟組織手術
     relation_type: 'clinical_apply',
@@ -1099,7 +1099,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
 
   // ONCO-L3-017 Multiple Myeloma ↔ CPATH: 骨髓穿刺/SPE
   {
-    id: 'CROSS-ONCO-CPATH-002',
+    id: 'CROSS-ONCO-CPATH-003',
     source_node_id: 'ONCO-L3-017',   // Multiple Myeloma
     target_node_id: 'CPATH-L0-001',  // 臨床病理總覽（骨髓穿刺/SPE 判讀）
     relation_type: 'clinical_apply',
@@ -1123,7 +1123,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
 
   // ECC-L3-016 Addisonian Crisis ↔ IM: Addison disease
   {
-    id: 'CROSS-ECC-IM-001',
+    id: 'CROSS-ECC-IM-012',
     source_node_id: 'ECC-L3-016',    // 艾迪森危象
     target_node_id: 'IM-L3-011',     // 犬腎上腺皮質機能低下 (Addison's)
     relation_type: 'complication',
@@ -1141,6 +1141,86 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     relation_type: 'clinical_apply',
     weight: 0.8,
     description: '輸血反應預防依賴臨床病理實驗室的血型鑑定和交叉配血測試',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ─── Phase 5: DERM 跨科連結強化（解決 DERM 僅 9 條跨科邊的孤島問題）───
+
+  // DERM ↔ IM: 甲低引發皮膚症狀
+  {
+    id: 'CROSS-DERM-IM-004',
+    source_node_id: 'DERM-L3-012',   // Alopecia X
+    target_node_id: 'IM-L3-002',     // 犬甲狀腺機能低下
+    relation_type: 'differential',
+    weight: 0.85,
+    description: 'Alopecia X 需與甲低鑑別：甲低脫毛常對稱但伴有皮膚肥厚、色素沉著、bradycardia',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  // DERM ↔ IM: Cushing 引發皮膚感染
+  {
+    id: 'CROSS-DERM-IM-005',
+    source_node_id: 'DERM-L3-005',   // 膿皮症
+    target_node_id: 'IM-L3-001',     // Cushing's
+    relation_type: 'complication',
+    weight: 0.8,
+    description: '反覆膿皮症是 Cushing 的常見皮膚表現，內分泌篩檢為必要步驟',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // DERM ↔ ONCO: MCT 皮膚型 → 腫瘤科分期
+  {
+    id: 'CROSS-DERM-ONCO-002',
+    source_node_id: 'DERM-L3-014',   // MCT
+    target_node_id: 'ONCO-L4-001',   // 腫瘤分期
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '皮膚型肥大細胞瘤需腫瘤科完整分期：區域淋巴結 FNA、腹腔超音波、Patnaik/Kiupel 分級',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // DERM ↔ CPATH: 皮膚細胞學
+  {
+    id: 'CROSS-DERM-CPATH-003',
+    source_node_id: 'DERM-L4-002',   // 皮膚刮片與培養
+    target_node_id: 'CPATH-L4-006',  // 細胞學判讀
+    relation_type: 'builds_on',
+    weight: 0.85,
+    description: '皮膚細胞學（impression smear、FNA）判讀需臨床病理學基礎',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // DERM ↔ ECC: 嚴重藥物反應
+  {
+    id: 'CROSS-DERM-ECC-001',
+    source_node_id: 'DERM-L3-011',   // Drug Eruption
+    target_node_id: 'ECC-L3-001',    // 過敏性休克
+    relation_type: 'complication',
+    weight: 0.75,
+    description: '嚴重藥物不良反應可從皮膚症狀（蕁麻疹、紅斑）進展至全身過敏性休克',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // DERM ↔ NEURO: 自殘性皮膚病
+  {
+    id: 'CROSS-DERM-NEURO-002',
+    source_node_id: 'DERM-L3-001',   // CAD (犬異位性皮膚炎)
+    target_node_id: 'NEURO-L3-016',  // CDS
+    relation_type: 'differential',
+    weight: 0.6,
+    description: '老年犬過度舔舐/搔抓行為需鑑別：過敏性皮膚病 vs 認知功能障礙的刻板行為',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  // DERM ↔ SURG: 皮膚腫瘤切除
+  {
+    id: 'CROSS-DERM-SURG-001',
+    source_node_id: 'DERM-L3-014',   // MCT
+    target_node_id: 'SURG-L5-001',   // 軟組織手術
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: 'MCT 手術切除需 2-3 cm lateral margin + 1 fascial plane deep，外科執行為治癒關鍵',
     bidirectional: false,
     unlock_condition: null,
   },
