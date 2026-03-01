@@ -175,4 +175,32 @@ export const IM_EDGES: KnowledgeEdge[] = [
   { id: 'IM-E-091', source_node_id: 'IM-L3-022', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: 'FeLV/FIV 需腹腔超音波評估腸系膜淋巴結腫大與臟器浸潤', bidirectional: false, unlock_condition: null },
   // L3 → L4: clinical_apply（CPV → 腹腔超音波）
   { id: 'IM-E-092', source_node_id: 'IM-L3-023', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.7, description: 'CPV 需腹腔超音波評估腸壁增厚、腸蠕動減少及腸套疊', bidirectional: false, unlock_condition: null },
+
+  // ─── GI/Hepatobiliary 擴展邊 ───
+  // EPI (IM-L3-024) edges
+  { id: 'IM-E-093', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-024', relation_type: 'clinical_apply', weight: 0.9, description: '肝膽/胰臟病理機轉與 EPI 的腺泡萎縮相關', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-094', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-024', relation_type: 'prerequisite', weight: 0.8, description: '消化系統生理（胰臟外分泌功能）是理解 EPI 的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-095', source_node_id: 'IM-L3-024', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.7, description: 'EPI 需腹腔超音波評估胰臟萎縮', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-096', source_node_id: 'IM-L3-024', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 1.0, description: 'EPI 需消化系統治療（胰酶補充、飲食調整、Cobalamin 補充）', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-097', source_node_id: 'IM-L3-008', target_node_id: 'IM-L3-024', relation_type: 'differential', weight: 0.8, description: '慢性胰臟炎可繼發 EPI；兩者需鑑別', bidirectional: true, unlock_condition: null },
+  { id: 'IM-E-098', source_node_id: 'IM-L3-007', target_node_id: 'IM-L3-024', relation_type: 'differential', weight: 0.7, description: '慢性腸病（CE/IBD）與 EPI 皆致慢性腹瀉需鑑別', bidirectional: true, unlock_condition: null },
+
+  // Gallbladder Mucocele (IM-L3-025) edges
+  { id: 'IM-E-099', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-025', relation_type: 'clinical_apply', weight: 1.0, description: '肝膽病理機轉是膽囊黏液囊腫形成的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-100', source_node_id: 'IM-L3-025', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 1.0, description: '膽囊黏液囊腫需腹腔超音波（kiwi fruit sign）確診', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-101', source_node_id: 'IM-L3-001', target_node_id: 'IM-L3-025', relation_type: 'complication', weight: 0.7, description: 'Cushing 高脂血症為膽囊黏液囊腫危險因子', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-102', source_node_id: 'IM-L3-002', target_node_id: 'IM-L3-025', relation_type: 'complication', weight: 0.7, description: '甲低合併高脂血症為膽囊黏液囊腫危險因子', bidirectional: false, unlock_condition: null },
+
+  // Canine Chronic Hepatitis (IM-L3-026) edges
+  { id: 'IM-E-103', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-026', relation_type: 'clinical_apply', weight: 1.0, description: '肝膽病理機轉是犬慢性肝炎的核心病理基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-104', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-026', relation_type: 'clinical_apply', weight: 0.8, description: '免疫介導發炎機轉與免疫介導型慢性肝炎相關', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-105', source_node_id: 'IM-L3-026', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.9, description: '犬慢性肝炎需腹腔超音波評估肝臟與引導肝切片', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-106', source_node_id: 'IM-L3-026', target_node_id: 'IM-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '免疫介導型慢性肝炎需免疫抑制治療（prednisolone + azathioprine）', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-107', source_node_id: 'IM-L3-009', target_node_id: 'IM-L3-026', relation_type: 'differential', weight: 0.7, description: '貓肝臟脂肪變性與犬慢性肝炎需鑑別（不同物種好發之肝病）', bidirectional: true, unlock_condition: null },
+
+  // Megaesophagus (IM-L3-027) edges
+  { id: 'IM-E-108', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-027', relation_type: 'prerequisite', weight: 0.8, description: '消化系統生理（食道運動功能）是理解巨食道症的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-109', source_node_id: 'IM-L3-027', target_node_id: 'IM-L4-004', relation_type: 'clinical_apply', weight: 0.9, description: '巨食道症需消化系統影像（胸腔 X 光/鋇劑造影/螢光透視）確診', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-110', source_node_id: 'IM-L3-027', target_node_id: 'IM-L3-021', relation_type: 'complication', weight: 0.9, description: '巨食道症常併發吸入性肺炎（逆流誤吸）', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-111', source_node_id: 'IM-L3-027', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: '巨食道症需消化系統治療（姿勢進食、飲食調整、止吐）', bidirectional: false, unlock_condition: null },
 ];

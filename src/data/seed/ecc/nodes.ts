@@ -55,4 +55,9 @@ export const ECC_NODES: KnowledgeNode[] = [
 
   // ─── Phase 3: 急性腹部 ───
   { id: 'ECC-L3-014', specialty: 'ECC', title: '急性腹部', title_en: 'Acute Abdomen', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['急性腹部', '腹膜炎', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'SURG - GDV/腸穿孔/脾扭轉手術決策; IM - 胰臟炎鑑別', created_at: now, updated_at: now },
+
+  // ─── Phase 4: VetPro 百科擴展 ───
+  { id: 'ECC-L3-015', specialty: 'ECC', title: '低血糖急診', title_en: 'Hypoglycemic Emergency', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['低血糖', '急診', '犬貓', 'toy_breed'], encyclopedia_link: null, cross_specialty_notes: 'IM - 胰島素瘤; ONCO - insulinoma; CPATH - 血糖判讀', created_at: now, updated_at: now },
+  { id: 'ECC-L3-016', specialty: 'ECC', title: '艾迪森危象', title_en: 'Addisonian Crisis', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['Addison', '腎上腺', '低鈉高鉀', '犬'], encyclopedia_link: null, cross_specialty_notes: 'IM - Addison disease 內科管理; CPATH - 電解質判讀', created_at: now, updated_at: now },
+  { id: 'ECC-L3-017', specialty: 'ECC', title: '輸血反應', title_en: 'Transfusion Reactions', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['輸血', '反應', '溶血', '犬貓', 'DEA'], encyclopedia_link: null, cross_specialty_notes: 'CPATH - 血型/交叉配血; IM - IMHA 鑑別', created_at: now, updated_at: now },
 ];

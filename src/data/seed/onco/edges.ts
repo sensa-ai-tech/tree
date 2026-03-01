@@ -132,4 +132,18 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   { id: 'ONCO-E-082', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L5-006', relation_type: 'builds_on', weight: 0.9, description: '腫瘤生物學（VEGFR/PDGFR/KIT 訊號通路）是靶向治療的理論基礎', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-083', source_node_id: 'ONCO-L3-002', target_node_id: 'ONCO-L5-006', relation_type: 'clinical_apply', weight: 1, description: 'MCT 為 TKI（Toceranib/Masitinib）的首要適應症，尤其 c-KIT 突變型', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-084', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L5-006', relation_type: 'clinical_apply', weight: 0.7, description: 'SCC 可嘗試 COX-2 抑制劑合併 TKI 的多靶點治療策略', bidirectional: false, unlock_condition: null },
+
+  // ─── ONCO-L3-016（肝細胞癌 HCC）───
+  { id: 'ONCO-E-085', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-016', relation_type: 'prerequisite', weight: 0.8, description: '肝細胞癌轉移機轉——massive 型轉移率低，diffuse 型高度侵犯', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-086', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: 'HCC 需 FNA 細胞學輔助診斷（但肝臟 FNA 有出血風險）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-087', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 1, description: 'HCC 需腹部超音波及 CT 評估腫瘤型態與分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-088', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 1, description: 'Massive HCC 以肝葉切除為首選治療', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-089', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L5-006', relation_type: 'clinical_apply', weight: 0.6, description: 'Toceranib 2.5 mg/kg EOD 可作為 HCC 的緩和治療', bidirectional: false, unlock_condition: null },
+
+  // ─── ONCO-L3-017（多發性骨髓瘤）───
+  { id: 'ONCO-E-090', source_node_id: 'ONCO-L2-002', target_node_id: 'ONCO-L3-017', relation_type: 'prerequisite', weight: 1, description: '副腫瘤症候群（高鈣血症、高黏滯度症候群）為骨髓瘤核心表現', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-091', source_node_id: 'ONCO-L3-017', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '骨髓瘤需骨髓穿刺細胞學確診（漿細胞 > 20%）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-092', source_node_id: 'ONCO-L3-017', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '骨髓瘤需全身骨骼 X 光及蛋白電泳分期', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-093', source_node_id: 'ONCO-L3-017', target_node_id: 'ONCO-L5-001', relation_type: 'clinical_apply', weight: 1, description: '骨髓瘤以 Melphalan + Prednisone 化療為首選', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-094', source_node_id: 'ONCO-L3-017', target_node_id: 'ONCO-L3-001', relation_type: 'differential', weight: 0.7, description: '骨髓瘤與淋巴瘤為造血系統腫瘤的鑑別', bidirectional: true, unlock_condition: null },
 ];

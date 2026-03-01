@@ -141,4 +141,31 @@ export const DERM_EDGES: KnowledgeEdge[] = [
 
   // 角化異常 → 膿皮症（審計補齊缺失邊）
   { id: 'DERM-E-058', source_node_id: 'DERM-L2-002', target_node_id: 'DERM-L3-005', relation_type: 'clinical_apply', weight: 0.8, description: '角化異常導致皮膚屏障破壞，為細菌性膿皮症的誘因', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 4: DERM-L3-015 (EGC) / DERM-L3-016 (SA) / DERM-L3-017 (DLE) ───
+
+  // DERM-L3-015 (貓嗜酸性肉芽腫複合症) — prerequisite / clinical_apply
+  { id: 'DERM-E-059', source_node_id: 'DERM-L2-001', target_node_id: 'DERM-L3-015', relation_type: 'prerequisite', weight: 0.9, description: '80%+ EGC 有過敏基礎，過敏反應機轉為核心前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-060', source_node_id: 'DERM-L1-002', target_node_id: 'DERM-L3-015', relation_type: 'prerequisite', weight: 0.8, description: '嗜酸球與肥大細胞在皮膚免疫中的角色是理解 EGC 的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-061', source_node_id: 'DERM-L3-015', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 1.0, description: 'EGC 細胞學可見嗜酸球為主的炎症，輔助區分三型', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-062', source_node_id: 'DERM-L3-015', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 0.9, description: 'EGC 組織病理確診（嗜酸球浸潤、膠原退化）', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-063', source_node_id: 'DERM-L3-015', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 1.0, description: 'EGC 治療核心為免疫調節（糖皮質激素/cyclosporine）', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-016 (脂腺炎) — prerequisite / clinical_apply
+  { id: 'DERM-E-064', source_node_id: 'DERM-L1-001', target_node_id: 'DERM-L3-016', relation_type: 'prerequisite', weight: 0.9, description: '皮膚解剖（皮脂腺結構與功能）是理解脂腺炎的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-065', source_node_id: 'DERM-L2-002', target_node_id: 'DERM-L3-016', relation_type: 'prerequisite', weight: 0.8, description: '角化異常機轉與脂腺炎導致的繼發角化異常相關', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-066', source_node_id: 'DERM-L3-016', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: '脂腺炎確診必須依賴組織病理（皮脂腺肉芽腫性破壞）', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-067', source_node_id: 'DERM-L3-016', target_node_id: 'DERM-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '脂腺炎需病史與身體檢查評估毛囊鑄型與脫毛分布', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-068', source_node_id: 'DERM-L3-016', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '脂腺炎治療包含 cyclosporine 免疫調節', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-017 (盤狀紅斑性狼瘡 DLE) — prerequisite / clinical_apply
+  { id: 'DERM-E-069', source_node_id: 'DERM-L2-003', target_node_id: 'DERM-L3-017', relation_type: 'prerequisite', weight: 1.0, description: '自體免疫皮膚病機轉是理解 DLE 界面皮膚炎的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-070', source_node_id: 'DERM-L3-017', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: 'DLE 確診依賴組織病理（界面皮膚炎、基底膜帶免疫複合物沉積）', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-071', source_node_id: 'DERM-L3-017', target_node_id: 'DERM-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: 'DLE 需詳細鼻部檢查與紫外線暴露史', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-072', source_node_id: 'DERM-L3-017', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 1.0, description: 'DLE 治療核心為免疫調節（tacrolimus/doxycycline-niacinamide）', bidirectional: false, unlock_condition: null },
+
+  // Differential edges
+  { id: 'DERM-E-073', source_node_id: 'DERM-L3-017', target_node_id: 'DERM-L3-010', relation_type: 'differential', weight: 0.9, description: 'DLE 與天疱瘡鑑別：皆好發鼻面部但組織病理截然不同（interface vs acantholysis）', bidirectional: true, unlock_condition: null },
+  { id: 'DERM-E-074', source_node_id: 'DERM-L3-015', target_node_id: 'DERM-L3-014', relation_type: 'differential', weight: 0.7, description: 'EGC 嗜酸性斑塊需與 MCT 鑑別（兩者皆含嗜酸球）', bidirectional: true, unlock_condition: null },
+  { id: 'DERM-E-075', source_node_id: 'DERM-L3-016', target_node_id: 'DERM-L3-012', relation_type: 'differential', weight: 0.7, description: '脂腺炎與脫毛症 X 鑑別：皆為非瘙癢性脫毛但脂腺炎有毛囊鑄型', bidirectional: true, unlock_condition: null },
 ];

@@ -139,4 +139,24 @@ export const ECC_EDGES: KnowledgeEdge[] = [
 
   // ─── Phase 3: 審計缺失邊補齊 ───
   { id: 'ECC-E-076', source_node_id: 'ECC-L4-001', target_node_id: 'ECC-L4-002', relation_type: 'builds_on', weight: 0.8, description: 'ABCDE 分診後以 AFAST/TFAST 進行快速影像評估（ABCDE builds to POCUS）', bidirectional: false, unlock_condition: null },
+
+  // ─── ECC-L3-015（低血糖急診）───
+  { id: 'ECC-E-077', source_node_id: 'ECC-L1-002', target_node_id: 'ECC-L3-015', relation_type: 'prerequisite', weight: 0.9, description: '低血糖涉及體液電解質與代謝平衡', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-078', source_node_id: 'ECC-L3-015', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '低血糖急診需 ABCDE 評估神經狀態', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-079', source_node_id: 'ECC-L3-015', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '低血糖急診需 dextrose 靜脈輸液', bidirectional: false, unlock_condition: null },
+
+  // ─── ECC-L3-016（艾迪森危象）───
+  { id: 'ECC-E-080', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-016', relation_type: 'prerequisite', weight: 1, description: '艾迪森危象可導致低血容性休克', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-081', source_node_id: 'ECC-L1-002', target_node_id: 'ECC-L3-016', relation_type: 'prerequisite', weight: 1, description: '艾迪森危象核心病理為嚴重電解質失衡（低鈉高鉀）', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-082', source_node_id: 'ECC-L3-016', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 1, description: '艾迪森危象需 ABCDE 評估循環與心律', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-083', source_node_id: 'ECC-L3-016', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 1, description: '艾迪森危象需積極等張晶體液復甦', bidirectional: false, unlock_condition: null },
+
+  // ─── ECC-L3-017（輸血反應）───
+  { id: 'ECC-E-084', source_node_id: 'ECC-L2-003', target_node_id: 'ECC-L3-017', relation_type: 'prerequisite', weight: 0.8, description: '凝血功能障礙和 DIC 與輸血反應相關', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-085', source_node_id: 'ECC-L3-017', target_node_id: 'ECC-L5-003', relation_type: 'clinical_apply', weight: 1, description: '輸血反應是輸血醫學的核心併發症', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-086', source_node_id: 'ECC-L3-017', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '輸血反應需 ABCDE 評估呼吸與循環', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-087', source_node_id: 'ECC-L3-017', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '急性溶血性輸血反應需積極液體治療維持腎灌流', bidirectional: false, unlock_condition: null },
+
+  // 疾病間關聯
+  { id: 'ECC-E-088', source_node_id: 'ECC-L3-015', target_node_id: 'ECC-L3-016', relation_type: 'differential', weight: 0.6, description: '低血糖可為 Addison 危象的臨床表現之一', bidirectional: false, unlock_condition: null },
 ];

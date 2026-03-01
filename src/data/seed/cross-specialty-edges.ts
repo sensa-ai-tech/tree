@@ -1082,4 +1082,66 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: false,
     unlock_condition: null,
   },
+
+  // ─── Phase 4: VetPro 百科擴展跨科邊 ───
+
+  // ONCO-L3-016 HCC ↔ SURG: 軟組織手術（肝葉切除）
+  {
+    id: 'CROSS-ONCO-SURG-003',
+    source_node_id: 'ONCO-L3-016',   // HCC
+    target_node_id: 'SURG-L5-001',   // 軟組織手術
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: 'Massive HCC 首選治療為肝葉切除，需外科專業評估手術可行性與血管侵犯',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ONCO-L3-017 Multiple Myeloma ↔ CPATH: 骨髓穿刺/SPE
+  {
+    id: 'CROSS-ONCO-CPATH-002',
+    source_node_id: 'ONCO-L3-017',   // Multiple Myeloma
+    target_node_id: 'CPATH-L0-001',  // 臨床病理總覽（骨髓穿刺/SPE 判讀）
+    relation_type: 'clinical_apply',
+    weight: 0.9,
+    description: '骨髓瘤診斷依賴臨床病理：血清蛋白電泳 M spike、骨髓穿刺漿細胞計數、Bence Jones 蛋白尿',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ECC-L3-015 低血糖 ↔ ONCO: Insulinoma
+  {
+    id: 'CROSS-ECC-ONCO-001',
+    source_node_id: 'ECC-L3-015',    // 低血糖急診
+    target_node_id: 'ONCO-L3-015',   // Insulinoma
+    relation_type: 'complication',
+    weight: 1.0,
+    description: 'Insulinoma 是中老年犬反覆低血糖急診的重要鑑別診斷，需轉介腫瘤科評估',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // ECC-L3-016 Addisonian Crisis ↔ IM: Addison disease
+  {
+    id: 'CROSS-ECC-IM-001',
+    source_node_id: 'ECC-L3-016',    // 艾迪森危象
+    target_node_id: 'IM-L3-011',     // 犬腎上腺皮質機能低下 (Addison's)
+    relation_type: 'complication',
+    weight: 1.0,
+    description: '艾迪森危象為慢性 Addison disease 的急性失代償，急診穩定後需轉內科長期管理',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // ECC-L3-017 輸血反應 ↔ CPATH: 血型/交叉配血
+  {
+    id: 'CROSS-ECC-CPATH-001',
+    source_node_id: 'ECC-L3-017',    // 輸血反應
+    target_node_id: 'CPATH-L0-001',  // 臨床病理（血型鑑定/交叉配血）
+    relation_type: 'clinical_apply',
+    weight: 0.8,
+    description: '輸血反應預防依賴臨床病理實驗室的血型鑑定和交叉配血測試',
+    bidirectional: false,
+    unlock_condition: null,
+  },
 ];

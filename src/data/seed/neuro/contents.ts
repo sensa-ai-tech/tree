@@ -4372,6 +4372,455 @@ RNS 遞減反應是 MG 的重要電生理證據，但金標準仍為血清 AChR 
   created_at: now,
 };
 
+/** Chiari 樣畸形 / 脊髓空洞症 (CM/SM) — 疾病型 */
+const contentCMSM: NodeContent = {
+  id: 'CONTENT-NEURO-L3-014',
+  node_id: 'NEURO-L3-014',
+  version: 1,
+  summary: 'Chiari 樣畸形（Chiari-like Malformation, CM）是犬後顱窩體積不足導致小腦疝出枕骨大孔的先天性顱骨畸形，好發於查理士王小獵犬（Cavalier King Charles Spaniel, CKCS），>95% CKCS 有影像學 CM 證據。約 50% CM 犬會繼發脊髓空洞症（Syringomyelia, SM）——脊髓中央管內 CSF 充填的空洞，導致神經性疼痛與感覺異常。Phantom scratching（幻搔抓動作）為 SM 的特徵性臨床表現。MRI 為金標準影像診斷。治療包括內科（Gabapentin 10-20 mg/kg PO BID-TID 止痛、Omeprazole 降低 CSF 分泌）與外科（枕骨大孔減壓術 FMD，約 80% 成功率）。',
+  learning_objectives: [
+    '說明 CM 的顱骨畸形機轉與 SM 的脊髓空洞形成病理',
+    '辨識 phantom scratching 作為 SM 的特徵性臨床表現',
+    '描述 MRI 在 CM/SM 診斷中的關鍵影像特徵',
+    '比較內科與外科治療策略及各自的適應症',
+    '列出 CKCS 品種篩檢計畫（BVA/KC SM Scheme）的重要性',
+  ],
+  key_points: [
+    '好發品種：CKCS（>95% 有 CM 影像證據），其他短頭品種（Brussels Griffon、Pomeranian、Chihuahua）亦有報告',
+    'CM 病理：後顱窩過小 → 小腦疝出枕骨大孔 → CSF 流動受阻 → 脊髓中央管內壓力異常 → 脊髓空洞形成',
+    'SM 臨床特徵：phantom scratching（走路時單側後肢懸空搔抓頸肩部但未接觸皮膚）——特異性極高',
+    '其他症狀：頸部疼痛（尤其夜間或興奮時加劇）、脊柱側彎（scoliosis）、感覺異常、前肢無力',
+    'MRI 金標準：矢狀面 T2WI 可見小腦疝出枕骨大孔 + 脊髓中央管高訊號空洞',
+    '內科治療：Gabapentin 10-20 mg/kg PO BID-TID（神經性疼痛首選）+ Omeprazole 0.7-1 mg/kg PO SID（降低 CSF 分泌）+ Prednisolone 短期使用（0.5 mg/kg）',
+    '外科治療：枕骨大孔減壓術（Foramen Magnum Decompression, FMD）——移除枕骨部分骨片擴大後顱窩容積，80% 術後臨床改善',
+  ],
+  body: `# Chiari 樣畸形 / 脊髓空洞症 (CM/SM)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦與腦幹體積不足的先天性顱骨畸形，與人類 Chiari I 型畸形（Chiari Type I Malformation）類似但非完全相同（故稱「Chiari-like」）。
+
+### 病理機轉
+1. **後顱窩過小**：顱骨發育異常，枕骨過度旋轉（occipital bone hypoplasia），後顱窩容積不足
+2. **小腦疝出**：小腦（尤其蚓部 vermis）經枕骨大孔疝出，壓迫腦幹與脊髓
+3. **CSF 流動受阻**：枕骨大孔處 CSF 循環通路被小腦組織阻塞
+4. **脊髓空洞形成**：CSF 動力學異常 → 脊髓中央管內壓力脈衝增加 → 中央管擴張形成液體充填的空洞（syrinx）
+5. **神經損傷**：空洞擴大壓迫脊髓背角（dorsal horn）→ 感覺異常與神經性疼痛
+
+### 流行病學
+| 項目 | 數據 |
+|------|------|
+| CKCS CM 盛行率 | >95%（MRI 影像學證據） |
+| CM → SM 發展率 | ~50% CKCS |
+| SM 臨床症狀出現 | 約 6 個月-3 歲，部分到 6 歲以上才出現 |
+| 遺傳模式 | 多基因遺傳（polygenic），高度遺傳 |
+| 其他好發品種 | Brussels Griffon、Pomeranian、Chihuahua、Yorkshire Terrier |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床分類
+| 分級 | 臨床表現 | 處置方向 |
+|------|----------|----------|
+| 亞臨床 CM | MRI 見 CM 但無症狀 | 監測，育種篩檢 |
+| 疼痛型 SM | 頸部疼痛、phantom scratching、夜間嚎叫 | 內科止痛 |
+| 神經缺損型 | 前肢無力、共濟失調、脊柱側彎 | 內科 ± 手術 |
+
+### 特徵性臨床表現
+- **Phantom scratching**：走路或興奮時單側後肢懸空搔抓頸肩區域，但爪子未接觸皮膚——SM 特異性極高
+- **頸部疼痛**：觸摸頸部或耳朵後方引發疼痛反應，夜間加劇
+- **溫度/天氣敏感**：症狀在天氣變化、項圈壓迫時加劇
+- **脊柱側彎（scoliosis）**：空洞壓迫單側脊髓前角導致
+
+### MRI 診斷標準
+- **CM 診斷**：矢狀面 T1WI/T2WI 見小腦疝出枕骨大孔尾側
+- **SM 診斷**：矢狀面 T2WI 見脊髓中央管高訊號擴張（空洞寬度 ≥ 脊髓直徑 50% 為中度，≥ 75% 為重度）
+- **空洞分級**：BVA/KC SM Scheme 將 SM 分為 SM0（無空洞）、SM1（中央管擴張 < 2mm）、SM2（空洞 ≥ 2mm）
+
+## 三、治療策略 (Treatment)
+
+### 內科治療
+| 藥物 | 劑量 | 機轉 | 備註 |
+|------|------|------|------|
+| Gabapentin | 10-20 mg/kg PO BID-TID（犬） | 抑制 α2δ 鈣離子通道，減少神經性疼痛 | SM 止痛首選，從低劑量起始 |
+| Pregabalin | 2-4 mg/kg PO BID（犬） | 同 Gabapentin 但生體可用率更高 | Gabapentin 反應不佳時替代 |
+| Omeprazole | 0.7-1 mg/kg PO SID（犬） | 質子幫浦抑制劑，降低 CSF 分泌 | 減少脈絡叢 CSF 產生 |
+| Prednisolone | 0.5 mg/kg PO SID（犬）短期 | 抗炎、減少腦水腫 | 急性疼痛發作短期使用 2-4 週 |
+| NSAIDs (Meloxicam) | 0.1 mg/kg PO SID（犬） | 抗炎止痛 | 輕度病例替代方案 |
+
+### 外科治療
+- **枕骨大孔減壓術（Foramen Magnum Decompression, FMD）**
+  - 適應症：內科治療反應不佳、進行性神經缺損
+  - 術式：移除枕骨鱗狀部分 + 寰椎背弓部分骨片 → 擴大枕骨大孔容積 → 恢復 CSF 流動
+  - 手術成功率：約 80% 臨床改善
+  - 併發症：CSF 漏、傷口感染、空洞復發（約 25-50% 長期復發）
+
+## 四、預後 (Prognosis)
+- 亞臨床 CM：良好，但需長期監測是否發展 SM
+- 內科管理 SM：Gabapentin 控制疼痛效果良好，約 60-70% 犬生活品質可維持
+- FMD 術後：短期改善率 ~80%，但長期復發率 25-50%
+- 進行性神經缺損型：預後謹慎至不良
+- CKCS 品種篩檢（BVA/KC SM Scheme）可降低後代 SM 風險`,
+  clinical_pearl: 'CKCS 飼主常將 phantom scratching 誤認為皮膚搔癢或跳蚤，導致延遲就醫。關鍵鑑別：phantom scratching 時爪子不接觸皮膚，且多在走路或興奮時發生。頸部項圈壓迫可加劇 CM/SM 症狀——確診犬應改用胸背帶（harness）。內科治療建議從低劑量 Gabapentin（5 mg/kg）起始漸增，以減少嗜睡副作用。FMD 手術雖有 80% 短期改善率，但需告知飼主長期復發風險（25-50%），術後仍可能需要持續藥物管理。\n\n【台灣流行病學】CKCS 在台灣飼養數量逐年增加，CM/SM 臨床案例亦隨之上升。台灣具備高場 MRI（1.5T/3T）設備的動物醫院已可執行標準化 CM/SM 診斷。FMD 手術需轉介至具神經外科經驗的專科醫院。',
+  common_mistakes: [
+    '將 phantom scratching 誤診為皮膚搔癢（過敏/跳蚤）而延誤神經科評估',
+    '未對有 SM 症狀的犬執行 MRI（僅靠 X 光無法診斷脊髓空洞）',
+    '使用頸部項圈而非胸背帶（頸部壓迫加劇 CM/SM 症狀）',
+    'Gabapentin 起始劑量過高導致嚴重嗜睡（應從低劑量漸增）',
+    '術後未告知飼主 FMD 長期復發風險而停止藥物管理',
+  ],
+  disease_data: {
+    signalment: '好發品種：CKCS（>95% 有 CM 影像學證據）、Brussels Griffon、Pomeranian、Chihuahua。SM 臨床症狀出現年齡約 6 個月-3 歲，部分到 6 歲以上。無明顯性別偏好。',
+    etiology: '先天性顱骨畸形（後顱窩體積不足），多基因遺傳（polygenic），高度遺傳性。CKCS 品種中 CM 的遺傳率極高。',
+    pathogenesis: '後顱窩過小 → 小腦疝出枕骨大孔 → CSF 流動受阻 → 脊髓中央管內壓力脈衝異常 → 中央管擴張形成脊髓空洞（syrinx）→ 空洞壓迫背角（dorsal horn）→ 神經性疼痛與感覺異常。',
+    clinical_signs: [
+      { sign: 'Phantom scratching', category: 'primary', description: 'SM 特徵性表現——走路或興奮時單側後肢懸空搔抓頸肩部，爪未接觸皮膚' },
+      { sign: '頸部疼痛', category: 'primary', description: '觸摸頸後方或耳朵引發疼痛，夜間或興奮時加劇，可表現為嚎叫' },
+      { sign: '感覺異常', category: 'primary', description: '對頸肩部觸摸過度敏感（allodynia）或異常感覺（paresthesia）' },
+      { sign: '前肢無力', category: 'secondary', description: '空洞壓迫頸髓腹角運動神經元導致' },
+      { sign: '脊柱側彎', category: 'secondary', description: '空洞壓迫單側脊髓前角導致軀幹肌群不對稱' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '椎間盤疾病 (IVDD)', key_differentiator: '急性發作、X 光可見椎間盤鈣化、MRI 見壓迫性病灶而非中央管空洞' },
+      { condition: '水腦症', key_differentiator: 'CKCS 可同時存在，MRI 見腦室擴張而非脊髓空洞' },
+      { condition: '外耳/中耳炎', key_differentiator: 'CKCS 常見，可引起頭部搔抓行為，耳鏡檢查可鑑別' },
+      { condition: '皮膚過敏', key_differentiator: '搔抓有皮膚接觸且有皮膚病灶，phantom scratching 爪未碰觸皮膚' },
+    ],
+    diagnostic_workup: '1. 神經學檢查（phantom scratching 誘發、頸部疼痛評估、本體感覺測試）→ 2. 基礎血檢排除代謝性原因 → 3. MRI（金標準）：矢狀面 T2WI 評估小腦疝出與脊髓空洞 → 4. 空洞分級（SM0/SM1/SM2）→ 5. 鑑別同時存在的水腦症',
+    treatment_protocol: '內科首選：Gabapentin 10-20 mg/kg PO BID-TID（從低劑量 5 mg/kg 起始漸增）+ Omeprazole 0.7-1 mg/kg PO SID。急性疼痛發作：Prednisolone 0.5 mg/kg PO SID × 2-4 週後減量。Gabapentin 反應不佳時替換 Pregabalin 2-4 mg/kg PO BID。輕度疼痛可用 Meloxicam 0.1 mg/kg PO SID。內科治療失敗或進行性神經缺損時：枕骨大孔減壓術（FMD）。避免使用頸部項圈（改用胸背帶）。',
+    prognosis: '內科管理 SM：約 60-70% 犬透過 Gabapentin + Omeprazole 可維持可接受的生活品質。FMD 術後：短期臨床改善率約 80%，但長期空洞復發率 25-50%（平均 2-3 年內）。進行性神經缺損型預後謹慎至不良。亞臨床 CM 犬可能終身不發展臨床症狀。',
+    monitoring: '每 3-6 個月神經學評估（phantom scratching 頻率、疼痛評分、步態）。MRI 追蹤：FMD 術後 6-12 個月評估空洞變化。Gabapentin 劑量需依臨床反應調整（嗜睡為常見副作用）。育種者應執行 BVA/KC SM Scheme MRI 篩檢。',
+    owner_communication: 'CM/SM 是一種先天性的顱骨與脊髓問題，在 CKCS 品種中非常常見。您的狗狗做出的「空中搔抓」動作是因為脊髓內有異常的液體腔（空洞）壓迫神經，導致感覺異常。目前無法根治，但透過止痛藥（Gabapentin）和降低脊髓液分泌的藥物（Omeprazole）通常可以有效控制疼痛。請改用胸背帶代替項圈，避免頸部壓力加劇症狀。如果藥物效果不佳，可以考慮手術（枕骨大孔減壓術），約 80% 的犬術後改善。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病理機轉段落後', type: 'annotated_image', description: 'CM/SM 矢狀面 MRI 標註圖（小腦疝出、脊髓空洞）' },
+    { position: '臨床表現段落後', type: 'video', description: 'Phantom scratching 臨床影片示範' },
+  ],
+  interactive_placeholders: [
+    { position: '治療策略段落', type: 'interactive_overlay', description: 'CM/SM 內科 vs 外科治療決策樹互動工具' },
+  ],
+  drug_api_links: ['Gabapentin', 'Pregabalin', 'Omeprazole', 'Prednisolone', 'Meloxicam'],
+  references: [
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 10: Congenital & Developmental Disorders.', relevance: 'CM/SM 臨床診斷與手術治療標準教材' },
+    { type: 'guideline', citation: 'Rusbridge C, et al. International Veterinary Epilepsy Task Force (IVETF) recommendations for a veterinary epilepsy-specific MRI protocol — and British Veterinary Association/Kennel Club Chiari Malformation/Syringomyelia (CM/SM) Scheme. BMC Vet Res. 2019;15:164.', relevance: 'BVA/KC SM 品種篩檢標準與 MRI 分級系統' },
+    { type: 'journal', citation: 'Rusbridge C, Knowler SP. Coexistence of occipital dysplasia and occipital hypoplasia/syringomyelia in the cavalier King Charles spaniel. J Small Anim Pract. 2006;47(10):603-606.', relevance: 'CKCS CM/SM 病理與盛行率原始研究' },
+    { type: 'journal', citation: 'Sanchis-Mora S, et al. Pregabalin for the treatment of syringomyelia-associated neuropathic pain in dogs: a randomised, placebo-controlled, double-blinded clinical trial. Vet J. 2019;250:55-62.', relevance: 'Pregabalin 治療 SM 神經性疼痛的隨機對照試驗' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 壞死性腦炎 (NME/NLE) — 疾病型 */
+const contentNME: NodeContent = {
+  id: 'CONTENT-NEURO-L3-015',
+  node_id: 'NEURO-L3-015',
+  version: 1,
+  summary: '壞死性腦炎為 MUO（Meningoencephalomyelitis of Unknown Origin）的亞型，包括壞死性腦膜腦炎（Necrotizing Meningoencephalitis, NME，即「Pug Dog Encephalitis」）與壞死性白質腦炎（Necrotizing Leukoencephalitis, NLE）。NME 好發於巴哥犬（Pug）、Maltese、Chihuahua 等小型犬，NLE 好發於 Yorkshire Terrier 與法國鬥牛犬。DLA class II 基因型態與疾病易感性相關。臨床表現為急性至亞急性前腦徵象（癲癇、意識改變、行為異常）。MRI 見多灶性非對稱性壞死病灶。CSF 分析呈淋巴球性細胞增多與蛋白升高。免疫抑制治療為核心：Prednisolone + Cytarabine（Ara-C）50 mg/m² SC BID × 2 天 q3wk 為標準方案。未治療平均存活 3-6 個月。',
+  learning_objectives: [
+    '區分 NME 與 NLE 的好發品種、病灶分布與病理特徵',
+    '說明 DLA class II 基因型態在疾病易感性中的角色',
+    '描述 NME/NLE 的典型 MRI 影像特徵（多灶性壞死）',
+    '掌握 Cytarabine（Ara-C）免疫抑制治療方案與監測',
+    '比較 NME/NLE 與 GME 的臨床鑑別要點',
+  ],
+  key_points: [
+    'NME（Pug Dog Encephalitis）：巴哥犬 + 大腦皮質灰質壞死 + 淋巴球/漿細胞血管周圍套（perivascular cuffing）',
+    'NLE：Yorkshire Terrier + 法國鬥牛犬 + 大腦白質壞死 + 雙側對稱性偏好',
+    'DLA class II 基因型態：DLA-DQB1*02601 與巴哥犬 NME 易感性顯著相關',
+    'MRI 特徵：T2WI/FLAIR 多灶性高訊號（壞死灶），非對稱性（NME）或雙側對稱性（NLE），對比增強不一致',
+    'CSF：淋巴球性細胞增多（pleocytosis）+ 蛋白升高（通常 50-200 mg/dL），部分病例 CSF 可能正常',
+    '治療方案：Prednisolone 1-2 mg/kg PO BID（2 週後漸減）+ Cytarabine 50 mg/m² SC BID × 2 天 q3-4wk',
+    '替代方案：Cyclosporine 5 mg/kg PO BID 或 Mycophenolate 10-20 mg/kg PO BID',
+    '未治療 NME 平均存活 1-6 個月，積極免疫抑制治療可延長中位存活至 12-24 個月',
+  ],
+  body: `# 壞死性腦炎 (NME/NLE)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+壞死性腦炎屬於 MUO（Meningoencephalomyelitis of Unknown Origin）的亞型，以腦組織壞死為主要病理特徵，可分為兩型：
+- **NME（Necrotizing Meningoencephalitis）**：又稱 Pug Dog Encephalitis，灰質為主的壞死
+- **NLE（Necrotizing Leukoencephalitis）**：白質為主的壞死
+
+### 病理機轉
+1. **免疫介導性炎症**：T 細胞與 B 細胞介導的自體免疫反應攻擊腦組織
+2. **DLA class II 基因關聯**：DLA-DQB1*02601 與巴哥犬 NME 高度相關（遺傳易感性）
+3. **抗體介導破壞**：抗 GFAP（glial fibrillary acidic protein）抗體在 NME 犬中被發現
+4. **壞死進展**：炎症 → 血管周圍淋巴球/漿細胞浸潤 → 腦實質壞死 → 軟化灶形成
+
+### 品種分布
+| 亞型 | 好發品種 | 好發年齡 | 病灶偏好 |
+|------|----------|----------|----------|
+| NME | Pug、Maltese、Chihuahua、Shih Tzu | 1-7 歲（中位 3 歲） | 大腦皮質灰質、非對稱 |
+| NLE | Yorkshire Terrier、法國鬥牛犬 | 1-10 歲（中位 4.5 歲） | 大腦白質、腦幹、雙側對稱 |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+- **NME 典型表現**（前腦徵象為主）：
+  - 癲癇發作（約 60-80%，常為首發症狀）
+  - 意識改變（嗜睡、昏迷）
+  - 行為異常（迷失方向、壓頭行為）
+  - 視覺障礙（皮質盲）
+  - 環行（circling）
+
+- **NLE 典型表現**（白質+腦幹）：
+  - 中樞性前庭徵象（head tilt、眼球震顫）
+  - 共濟失調
+  - 輕癱至四肢癱瘓
+  - 三叉神經/顏面神經功能異常
+
+### MRI 特徵
+| 序列 | NME 表現 | NLE 表現 |
+|------|----------|----------|
+| T2WI/FLAIR | 多灶性非對稱性高訊號（皮質+皮質下） | 雙側對稱性白質高訊號 |
+| T1WI | 等至低訊號（壞死灶） | 等至低訊號 |
+| 對比增強 | 不一致（環狀或不規則增強） | 輕度至無增強 |
+| 特殊特徵 | 腦回腫脹、腦溝消失 | 病灶可延伸至腦幹 |
+
+### CSF 分析
+- 淋巴球性細胞增多（50-500 cells/μL，以小淋巴球為主）
+- 蛋白升高（通常 50-200 mg/dL）
+- 約 10-15% 病例 CSF 可能正常
+
+## 三、治療策略 (Treatment)
+
+### 免疫抑制治療方案
+| 藥物 | 劑量 | 用法 | 監測 |
+|------|------|------|------|
+| Prednisolone | 1-2 mg/kg PO BID | 起始劑量 2 週 → 漸減至 0.5 mg/kg QOD | PU/PD、醫源性庫欣、肝指數 |
+| Cytarabine (Ara-C) | 50 mg/m² SC BID × 2 天 | 每 3-4 週一個療程 | CBC（骨髓抑制），nadir 7-10 天 |
+| Cyclosporine | 5 mg/kg PO BID | Cytarabine 替代/輔助 | 血中濃度谷值 200-400 ng/mL |
+| Mycophenolate | 10-20 mg/kg PO BID | 替代方案 | GI 副作用、CBC |
+| Leflunomide | 2-4 mg/kg PO SID | 第三線選擇 | 肝指數、CBC |
+
+### Cytarabine 注意事項
+- 體表面積（BSA）計算劑量，非體重
+- SC 注射比 IV 更常用（方便性），分 4 次注射於不同部位
+- 骨髓抑制為主要風險：治療前與 nadir（7-10 天）需查 CBC
+- 嗜中性球 < 2000/μL 時暫停下一療程
+
+## 四、預後 (Prognosis)
+- **未治療**：NME 中位存活 1-3 個月，NLE 1-6 個月（通常快速進展）
+- **Prednisolone 單藥**：中位存活 3-6 個月
+- **Pred + Cytarabine 合併治療**：中位存活 12-24 個月（部分犬可超過 2 年）
+- **不良預後因子**：首次就診時嚴重意識障礙、癲癇重積狀態、多灶性腦幹病灶
+- 即使積極治療，多數犬最終仍因疾病進展而安樂死`,
+  clinical_pearl: 'NME/NLE 與 GME 均屬 MUO，生前確診需組織病理（生前為推定診斷）。臨床上可透過品種（巴哥=NME, 中型Terrier=GME）、MRI 病灶模式（NME 非對稱灰質, NLE 對稱白質, GME 後腦偏好）、CSF 特徵做推定區分。Cytarabine 劑量必須按體表面積（BSA）計算而非體重，小型犬 BSA 相對體重更高因此劑量需特別注意。治療 NME 合併癲癇時，Levetiracetam 為首選 AED（不經肝代謝，避免與 Prednisolone 肝代謝競爭）。\n\n【台灣流行病學】巴哥犬在台灣為常見品種，NME 臨床案例並不罕見。台灣已有多家教學醫院可執行 CSF 分析與腦部 MRI。Cytarabine 為化療藥物，需由專業人員配製與注射，台灣獸醫癌症治療中心可提供此服務。',
+  common_mistakes: [
+    '未將 NME/NLE 與 GME 做臨床區分（品種+MRI 模式有助推定鑑別）',
+    'Cytarabine 劑量按體重而非體表面積計算（導致劑量錯誤）',
+    '未在 Cytarabine 療程前查 CBC（漏檢骨髓抑制風險）',
+    '僅用 Prednisolone 單藥治療 NME 而未加入 Cytarabine（存活期顯著縮短）',
+    '癲癇控制使用 Phenobarbital 而非 Levetiracetam（PB 肝代謝與高劑量 Pred 競爭）',
+  ],
+  disease_data: {
+    signalment: 'NME：巴哥犬（Pug）、Maltese、Chihuahua、Shih Tzu，好發 1-7 歲（中位 3 歲）。NLE：Yorkshire Terrier、法國鬥牛犬，好發 1-10 歲（中位 4.5 歲）。無明顯性別偏好。',
+    etiology: '免疫介導性自體免疫反應，DLA class II 基因型態（DLA-DQB1*02601）與巴哥犬 NME 易感性顯著相關。抗 GFAP 抗體在 NME 犬中被發現，支持自體免疫機轉。',
+    pathogenesis: 'T 細胞與 B 細胞介導的自體免疫反應攻擊腦組織 → 血管周圍淋巴球/漿細胞浸潤（perivascular cuffing）→ 腦實質壞死 → 軟化灶形成 → 顱內壓升高與進行性神經功能喪失。NME 偏好灰質壞死，NLE 偏好白質壞死。',
+    clinical_signs: [
+      { sign: '癲癇發作', category: 'primary', description: 'NME 最常見首發症狀（60-80%），可為局灶性或全身性' },
+      { sign: '意識改變', category: 'primary', description: '嗜睡至昏迷，反映大腦皮質廣泛受損' },
+      { sign: '行為異常', category: 'primary', description: '迷失方向、壓頭行為（head pressing）、環行' },
+      { sign: '視覺障礙', category: 'secondary', description: '皮質盲——瞳孔反射正常但威脅反應消失' },
+      { sign: '前庭/腦幹徵象', category: 'secondary', description: 'NLE 常見：head tilt、眼球震顫、共濟失調' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'GME（肉芽腫性腦膜腦炎）', key_differentiator: 'GME 好發中型犬（Terrier 類）、CSF 常見混合性細胞增多、MRI 病灶對比增強更明顯' },
+      { condition: '顱內腫瘤', key_differentiator: '腫瘤通常為單一佔位性病灶、好發老齡犬、對比增強均勻' },
+      { condition: '感染性腦炎（犬瘟熱/隱球菌）', key_differentiator: '有感染源暴露史或免疫缺陷背景、特異性抗原/抗體檢測陽性' },
+      { condition: '腦血管事件 (CVA)', key_differentiator: '超急性發作（秒至分鐘）、MRI DWI 限制擴散、單一血管分布區域' },
+    ],
+    diagnostic_workup: '1. 神經學檢查定位（前腦 vs 腦幹）→ 2. 基礎血檢排除代謝性/感染性原因 → 3. MRI（多灶性壞死灶，T2/FLAIR 高訊號）→ 4. CSF 分析（淋巴球性細胞增多 + 蛋白升高）→ 5. 感染篩檢排除（犬瘟熱 PCR、隱球菌抗原、弓形蟲抗體）→ 6. 確診需組織病理（生前為推定診斷）',
+    treatment_protocol: '免疫抑制為核心。起始：Prednisolone 1-2 mg/kg PO BID × 2 週 → 漸減至 0.5-1 mg/kg QOD。同時開始 Cytarabine（Ara-C）50 mg/m² SC BID × 2 天，每 3-4 週一療程。治療前查 CBC，nadir 7-10 天復查。嗜中性球 < 2000/μL 時暫停。Cytarabine 不耐受時替換 Cyclosporine 5 mg/kg PO BID（監測谷值 200-400 ng/mL）。癲癇控制：Levetiracetam 20 mg/kg PO TID 為首選 AED（不經肝代謝）。',
+    prognosis: '未治療 NME：中位存活 1-3 個月。Prednisolone 單藥：中位存活 3-6 個月。Pred + Cytarabine：中位存活 12-24 個月，部分犬存活超過 2 年。不良預後因子：嚴重意識障礙、癲癇重積、多灶性腦幹病灶、CSF 蛋白 > 200 mg/dL。NLE 整體預後略優於 NME。',
+    monitoring: '免疫抑制治療期間：每次 Cytarabine 療程前查 CBC（嗜中性球 ≥ 3000/μL 方可進行）。每月肝指數（Prednisolone 副作用）。Cyclosporine 使用者每 2 週查血中濃度直到穩定。每 3-6 個月 MRI 追蹤病灶變化。癲癇犬需定期 AED 血中濃度監測。',
+    owner_communication: '壞死性腦炎是一種免疫系統攻擊腦部的嚴重疾病，在巴哥犬等品種中有遺傳傾向。目前無法根治，但透過免疫抑制藥物（類固醇 + 化療藥物 Cytarabine）可以延緩病程。多數犬在積極治療下可存活 1-2 年以上。治療期間需要定期血液檢查監測藥物副作用。Cytarabine 是一種化療藥物，但用於此病的劑量遠低於腫瘤治療劑量，副作用相對可控。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'MRI 特徵表格後', type: 'annotated_image', description: 'NME vs NLE MRI 影像比較圖（灰質壞死 vs 白質壞死）' },
+    { position: '病理機轉段落後', type: 'diagram', description: 'MUO 分類架構圖（GME vs NME vs NLE）' },
+  ],
+  interactive_placeholders: [
+    { position: '治療方案段落', type: 'interactive_overlay', description: 'Cytarabine 劑量計算器（依體表面積）' },
+  ],
+  drug_api_links: ['Prednisolone', 'Cytarabine', 'Cyclosporine', 'Levetiracetam'],
+  references: [
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 7: Encephalitis & Meningitis.', relevance: 'NME/NLE 病理與臨床診斷標準教材' },
+    { type: 'journal', citation: 'Granger N, Smith PM, Jeffery ND. Clinical findings and treatment of non-infectious meningoencephalomyelitis in dogs: a systematic review of 457 published cases from 1962 to 2008. Vet J. 2010;184(3):290-297.', relevance: 'MUO 大規模系統回顧與治療成效分析' },
+    { type: 'journal', citation: 'Schrauwen I, et al. Genome-wide association study identifies DLA class II haplotype in Pug dog necrotizing meningoencephalitis. BMC Genomics. 2014;15:349.', relevance: 'DLA class II 基因與巴哥犬 NME 遺傳關聯性研究' },
+    { type: 'journal', citation: 'Lowrie M, et al. The role of cytosine arabinoside as an add-on therapy for MUO in dogs. J Small Anim Pract. 2016;57(5):263-270.', relevance: 'Cytarabine 治療 MUO 的臨床療效研究' },
+    { type: 'guideline', citation: 'ACVIM Consensus – MUO Diagnosis & Treatment (2023). https://onlinelibrary.wiley.com/doi/10.1111/jvim.16834', relevance: 'ACVIM MUO 診斷與治療共識聲明' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 認知功能障礙症候群 (CDS) — 疾病型 */
+const contentCDS: NodeContent = {
+  id: 'CONTENT-NEURO-L3-016',
+  node_id: 'NEURO-L3-016',
+  version: 1,
+  summary: '認知功能障礙症候群（Cognitive Dysfunction Syndrome, CDS）是犬貓的年齡相關神經退化性疾病，與人類阿茲海默症（Alzheimer disease）具有相似的病理機轉（beta-amyloid 沉積）。犬 >11 歲盛行率 28-68%，貓 >15 歲約 50%。使用 DISHAA 評估系統：Disorientation（迷失方向）、Interactions（社交互動改變）、Sleep-wake cycle（睡眠週期異常）、Housetraining（如廁訓練退化）、Activity（活動量改變）、Anxiety（焦慮增加）。治療以 Selegiline（L-deprenyl）0.5-1 mg/kg PO SID 為一線用藥，MCT oil 與 SAMe 20 mg/kg 為輔助營養品。需先排除其他可治療的醫學原因。',
+  learning_objectives: [
+    '運用 DISHAA 評估系統系統性評估犬貓認知功能',
+    '說明 beta-amyloid 沉積在 CDS 病理中的角色',
+    '列出需排除的可治療醫學原因（甲狀腺、腎臟、腦腫瘤等）',
+    '掌握 Selegiline 的藥理機轉與臨床使用',
+    '描述環境豐富化與營養補充在 CDS 管理中的角色',
+  ],
+  key_points: [
+    '盛行率：犬 >11 歲 28-68%，犬 >15 歲 >68%；貓 >11 歲約 36%，貓 >15 歲約 50%',
+    '病理機轉：beta-amyloid（Aβ）沉積 → 神經元喪失 → 腦萎縮 → 神經傳導物質失衡（多巴胺、乙醯膽鹼下降）',
+    'DISHAA 評估：≥2 個範疇出現行為改變 + 排除其他原因 = CDS 臨床診斷',
+    '必須排除的可治療原因：甲狀腺功能低下（犬）/亢進（貓）、腎臟病、腦腫瘤、疼痛、視/聽覺喪失、泌尿道感染',
+    '一線藥物：Selegiline（L-deprenyl）0.5-1 mg/kg PO SID（MAO-B 抑制劑，增加多巴胺濃度）',
+    '營養補充：MCT oil（中鏈脂肪酸，提供腦部替代能量源）、SAMe 20 mg/kg PO SID（神經保護）、Omega-3 DHA/EPA',
+    '環境管理：維持固定作息、環境豐富化（益智玩具）、適度運動、避免家具擺設大幅變動',
+    '貓 CDS：Selegiline 未經貓核准，可用 SAMe + Omega-3 + 環境豐富化為主',
+  ],
+  body: `# 認知功能障礙症候群 (CDS)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+認知功能障礙症候群（CDS）是犬貓的年齡相關神經退化性疾病，被認為是人類阿茲海默症（Alzheimer Disease, AD）的自然動物模型。
+
+### 病理機轉
+1. **Beta-amyloid（Aβ）沉積**：犬腦中 Aβ42 蛋白沉積模式與人類 AD 極為相似，形成老年斑塊（senile plaques），但犬不形成神經纖維纏結（neurofibrillary tangles）
+2. **腦血管澱粉樣變性（CAA）**：Aβ 沉積於腦血管壁，影響腦血流自我調節
+3. **神經元喪失與腦萎縮**：大腦皮質與海馬迴神經元減少，腦室代償性擴張
+4. **神經傳導物質失衡**：多巴胺（Dopamine）↓、乙醯膽鹼（Acetylcholine）↓、GABA ↓、5-HT 改變
+5. **氧化壓力**：老化腦部自由基產生增加 + 抗氧化能力下降 → 進一步加速神經退化
+
+### 流行病學
+| 年齡層 | 犬盛行率 | 貓盛行率 |
+|--------|----------|----------|
+| 11-12 歲 | 28% | 36% |
+| 13-14 歲 | 50-60% | ~45% |
+| ≥ 15 歲 | >68% | ~50% |
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### DISHAA 評估系統
+| 範疇 | 英文 | 臨床表現 |
+|------|------|----------|
+| D | Disorientation | 在熟悉環境中迷路、走到錯誤的門邊、卡在角落 |
+| I | Interactions | 不再迎接主人、不願被觸摸、對家庭成員冷漠 |
+| S | Sleep-wake cycle | 日夜顛倒、夜間嚎叫/遊走、白天過度嗜睡 |
+| H | Housetraining | 在室內排便排尿（已有良好如廁訓練的犬） |
+| A | Activity | 無目的遊走、重複行為、或活動量明顯下降 |
+| A | Anxiety | 新出現的分離焦慮、對聲音過度反應、恐懼行為 |
+
+### 診斷流程（排除性診斷）
+CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
+
+| 需排除的原因 | 檢查項目 |
+|-------------|----------|
+| 甲狀腺功能低下（犬）/ 亢進（貓） | T4, fT4, TSH |
+| 慢性腎臟病 | BUN, Creatinine, SDMA, 尿液分析 |
+| 腦腫瘤 | MRI |
+| 肝腦症 | 膽汁酸、血氨 |
+| 慢性疼痛（關節炎） | 骨科檢查、X 光 |
+| 視/聽覺喪失 | 眼科檢查、BAER |
+| 泌尿道感染 | 尿液培養 |
+| 高血壓（貓） | 血壓測量 |
+
+### MRI 表現（非必要但有參考價值）
+- 腦萎縮：腦溝加深、腦室擴張
+- 與年齡相關但 CDS 犬比同齡正常犬更顯著
+
+## 三、治療策略 (Treatment)
+
+### 藥物治療
+| 藥物 | 劑量 | 機轉 | 備註 |
+|------|------|------|------|
+| Selegiline (L-deprenyl) | 0.5-1 mg/kg PO SID（犬），早晨給藥 | MAO-B 抑制劑 → 增加腦部多巴胺、去甲腎上腺素 | FDA 核准犬用，1 個月無效可增至 1 mg/kg |
+| Propentofylline | 2.5-5 mg/kg PO BID（犬） | 磷酸二酯酶抑制劑 → 改善腦血流 | 歐洲核准，美國未上市 |
+| Trazodone | 2-5 mg/kg PO BID（犬） | 5-HT 拮抗/再吸收抑制 | 夜間焦慮/遊走輔助 |
+
+### 營養補充
+| 營養素 | 劑量 | 機轉 |
+|--------|------|------|
+| MCT oil | 飼料中 5-10% 熱量替代 | 中鏈脂肪酸 → 肝臟產生酮體 → 腦部替代能量源 |
+| SAMe | 20 mg/kg PO SID 空腹 | 甲基化反應、麩胱甘肽合成 → 神經保護 |
+| Omega-3 (DHA/EPA) | DHA 40-50 mg/kg/day | 抗氧化、抗炎、神經膜完整性 |
+| Vitamin E + C | E: 400 IU/day, C: 100 mg/day（中大型犬） | 抗氧化 |
+| Phosphatidylserine | 50-100 mg/day（犬） | 神經膜磷脂質 → 改善記憶與學習 |
+
+### 環境管理
+- 維持固定日常作息（餵食、散步、睡覺時間不變）
+- 環境豐富化：益智玩具（Kong、嗅聞墊）、社交互動
+- 適度運動：維持體能但避免過度疲勞
+- 避免家具擺設大幅變動（迷路風險）
+- 夜間小夜燈（改善夜間定向能力）
+- 室內增加便盆選項（如廁退化）
+
+## 四、預後 (Prognosis)
+- CDS 為進行性退化疾病，無法逆轉
+- 早期介入（Selegiline + 營養 + 環境管理）可延緩認知衰退速度
+- Selegiline 治療反應率約 60-70%（通常 2-4 週開始見效，需至少 1 個月評估）
+- 生活品質評估應定期執行（DISHAA 評分追蹤）
+- 與主人溝通管理期望至關重要：目標是「維持生活品質」而非「治癒」`,
+  clinical_pearl: 'CDS 是被嚴重低估的疾病——多數飼主將行為改變視為「正常老化」而未就醫。主動在老齡犬貓健檢中加入 DISHAA 問卷篩檢可大幅提升早期發現率。Selegiline 建議早晨給藥以避免影響夜間睡眠（增加多巴胺可能導致興奮）。MCT oil 的臨床試驗顯示可改善犬認知功能，其機轉為提供腦部酮體作為替代能量源（老化腦部葡萄糖利用率下降）。CDS 犬常合併骨關節炎——疼痛管理可顯著改善行為表現，治療 CDS 前應先處理可治療的疼痛。\n\n【台灣流行病學】台灣犬貓壽命延長（犬平均 12-14 歲，貓 14-16 歲），CDS 臨床重要性日增。Selegiline 在台灣可透過動物用藥管道取得。SAMe 與 MCT oil 可從保健品通路購得。台灣獸醫行為學正逐步推廣 DISHAA 評估於老齡動物健檢中。',
+  common_mistakes: [
+    '將 CDS 行為改變歸因於「正常老化」而未進行醫學排除檢查',
+    '未排除甲狀腺功能異常/腎臟病/腦腫瘤等可治療原因即診斷 CDS',
+    '忽略合併的慢性疼痛（骨關節炎）對行為的影響',
+    'Selegiline 使用不足 1 個月即判定無效（需至少 4 週評估）',
+    '未對貓 CDS 進行血壓測量（高血壓為貓常見且可治療的行為改變原因）',
+  ],
+  disease_data: {
+    signalment: '犬 >11 歲盛行率 28-68%，>15 歲 >68%。貓 >11 歲約 36%，>15 歲約 50%。所有品種均可發生，無明顯品種或性別偏好。',
+    etiology: '年齡相關神經退化性疾病，與 beta-amyloid（Aβ42）蛋白沉積、腦血管澱粉樣變性（CAA）、神經元喪失、神經傳導物質失衡（多巴胺/乙醯膽鹼下降）及氧化壓力增加相關。確切病因不明但與老化過程密切相關。',
+    pathogenesis: 'Aβ42 蛋白沉積形成老年斑塊 → 腦血管澱粉樣變性 → 腦血流自我調節障礙 → 神經元喪失與腦萎縮（大腦皮質+海馬迴）→ 腦室代償性擴張 → 多巴胺/乙醯膽鹼/GABA 等神經傳導物質下降 → 認知功能進行性退化。犬不形成 tau 蛋白神經纖維纏結（與人類 AD 的差異）。',
+    clinical_signs: [
+      { sign: '迷失方向', category: 'primary', description: '在熟悉環境中迷路、走到錯誤的門、卡在家具角落' },
+      { sign: '睡眠週期異常', category: 'primary', description: '日夜顛倒、夜間嚎叫/遊走、白天過度嗜睡' },
+      { sign: '社交互動改變', category: 'primary', description: '不再迎接主人、對家庭成員冷漠、不再尋求互動' },
+      { sign: '如廁退化', category: 'secondary', description: '已有良好訓練的犬在室內排便排尿' },
+      { sign: '焦慮增加', category: 'secondary', description: '新出現的分離焦慮、對聲音過度反應、恐懼行為' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '甲狀腺功能低下（犬）', key_differentiator: '嗜睡、體重增加、皮膚症狀、T4/fT4 低下' },
+      { condition: '腦腫瘤', key_differentiator: '局灶性神經缺損、癲癇、MRI 見佔位性病灶' },
+      { condition: '慢性疼痛（骨關節炎）', key_differentiator: '活動量下降但方向感正常、觸診關節疼痛、NSAID 試驗反應' },
+      { condition: '感覺喪失（視/聽覺）', key_differentiator: '威脅反應消失或 BAER 異常，感覺矯正後行為改善' },
+      { condition: '泌尿道感染', key_differentiator: '頻尿、血尿、尿液培養陽性，抗生素治療後如廁行為恢復' },
+    ],
+    diagnostic_workup: '1. 完整病史（DISHAA 問卷）→ 2. 理學檢查 + 神經學檢查 → 3. CBC/生化/甲狀腺（T4, fT4）排除代謝性原因 → 4. 尿液分析 + 培養排除 UTI → 5. 血壓測量（尤其貓）→ 6. 眼科檢查排除視覺喪失 → 7. 骨科/疼痛評估 → 8. MRI（排除腦腫瘤，非必要但建議老齡犬伴癲癇時執行）→ 9. 排除所有可治療原因後 = CDS 臨床診斷',
+    treatment_protocol: '多模式管理。藥物：Selegiline 0.5 mg/kg PO SID 早晨給藥（犬），1 個月無明顯改善可增至 1 mg/kg。夜間焦慮/遊走：Trazodone 2-5 mg/kg PO BID 或睡前給藥。營養補充：MCT oil（飼料中 5-10% 熱量替代）+ SAMe 20 mg/kg PO SID 空腹 + Omega-3 DHA 40-50 mg/kg/day。環境管理：固定作息、環境豐富化、夜間小夜燈、增加便盆。貓 CDS：Selegiline 未核准，以 SAMe + Omega-3 + 環境豐富化為主，夜間焦慮可試 Gabapentin 25-50 mg PO。',
+    prognosis: 'CDS 為進行性退化，無法逆轉。早期介入（Selegiline + 營養 + 環境管理）可延緩衰退速度。Selegiline 治療反應率約 60-70%，通常 2-4 週起效，至少 1 個月評估。多數犬在診斷後 12-24 個月內認知功能持續下降。生活品質評估應每 3-6 個月執行（DISHAA 評分追蹤）。當生活品質嚴重下降且管理手段無效時，應與飼主討論安寧照護。',
+    monitoring: '每 3 個月 DISHAA 評分追蹤（量化認知變化趨勢）。Selegiline 使用期間：1 個月評估療效，無效則增量或加入輔助藥物。每 6 個月基礎血檢追蹤（老齡犬伴隨疾病監測）。記錄行為日誌（夜間遊走次數、如廁事件）供客觀評估。',
+    owner_communication: '認知功能障礙是老年犬貓的「類失智症」，和人類阿茲海默症有相似的腦部變化。這是自然老化的一部分，但可以透過藥物和生活管理來延緩。您可能注意到的變化——迷路、夜間嚎叫、不認人、在室內排便——都是典型症狀。Selegiline 是目前最主要的藥物，約六到七成的犬有改善。維持固定的生活節奏、提供益智玩具、適度運動也很重要。這是一個長期管理的過程，我們的目標是盡可能維持生活品質。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'DISHAA 表格後', type: 'interactive_overlay', description: 'DISHAA 互動式評估問卷（飼主自評工具）' },
+    { position: '病理機轉段落後', type: 'diagram', description: '犬 CDS vs 人類 AD 病理比較圖' },
+  ],
+  interactive_placeholders: [
+    { position: '治療策略段落', type: 'interactive_overlay', description: 'CDS 多模式管理方案建構工具' },
+  ],
+  drug_api_links: ['Selegiline', 'Trazodone', 'Gabapentin'],
+  references: [
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 20: Geriatric Neurology.', relevance: 'CDS 臨床診斷與管理標準教材' },
+    { type: 'journal', citation: 'Landsberg GM, Nichol J, Araujo JA. Cognitive dysfunction syndrome: a disease of canine and feline brain aging. Vet Clin North Am Small Anim Pract. 2012;42(4):749-768.', relevance: 'CDS 綜合回顧——病理、診斷、治療' },
+    { type: 'journal', citation: 'Dewey CW, et al. Canine cognitive dysfunction: pathophysiology, diagnosis, and treatment. Vet Clin North Am Small Anim Pract. 2019;49(3):477-499.', relevance: 'CDS 最新病理與治療進展' },
+    { type: 'guideline', citation: 'Landsberg G, et al. AAHA Senior Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2012;48(3):1-11.', relevance: 'AAHA 老齡犬貓照護指引——含 CDS 篩檢建議' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const NEURO_CONTENTS = new Map<string, NodeContent>([
   ['NEURO-L0-001', contentNeuroOverview],
@@ -4404,4 +4853,7 @@ export const NEURO_CONTENTS = new Map<string, NodeContent>([
   ['NEURO-L5-002', contentSpinalSurgery],
   ['NEURO-L5-003', contentNeuroRehab],
   ['NEURO-L4-005', contentEMG],
+  ['NEURO-L3-014', contentCMSM],
+  ['NEURO-L3-015', contentNME],
+  ['NEURO-L3-016', contentCDS],
 ]);

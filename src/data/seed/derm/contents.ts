@@ -5091,6 +5091,515 @@ const contentDermatohistopathology: NodeContent = {
   created_at: now,
 };
 
+/** 貓嗜酸性肉芽腫複合症 (EGC) — 疾病型 */
+const contentEGC: NodeContent = {
+  id: 'CONTENT-DERM-L3-015',
+  node_id: 'DERM-L3-015',
+  version: 1,
+  summary: '貓嗜酸性肉芽腫複合症（Feline Eosinophilic Granuloma Complex, EGC）是貓特有的一組炎症性皮膚與口腔黏膜病變，包含三種臨床型態：惰性潰瘍（indolent ulcer）、嗜酸性斑塊（eosinophilic plaque）與線狀肉芽腫（linear/collagenolytic granuloma）。超過 80% 病例具有潛在的過敏基礎（跳蚤過敏、食物不良反應、環境過敏），少數為特發性。診斷結合臨床表現與細胞學（嗜酸球為主），組織病理可進一步確認。治療策略以控制潛在過敏原為核心，藥物選擇包括局部 tacrolimus、全身性糖皮質激素及 cyclosporine。',
+  learning_objectives: [
+    '辨識 EGC 三種臨床型態的特徵性表現與好發部位',
+    '闡述 EGC 與過敏基礎之間的病理生理關聯',
+    '規劃 EGC 的診斷流程，包含細胞學與鑑別診斷',
+    '比較局部治療（tacrolimus）與全身性治療（prednisolone/cyclosporine）的適應症',
+    '設計 EGC 患貓的長期管理策略，包含過敏原控制',
+  ],
+  key_points: [
+    'EGC 包含三型：惰性潰瘍（上唇）、嗜酸性斑塊（腹部/大腿內側）、線狀肉芽腫（大腿後側/口腔）',
+    '超過 80% EGC 有潛在過敏基礎：跳蚤過敏 > 食物不良反應 > 環境過敏原',
+    '惰性潰瘍（rodent ulcer）好發上唇，呈紅棕色潰瘍，邊緣隆起，通常不痛不癢',
+    '嗜酸性斑塊高度瘙癢，表面糜爛濕潤，細胞學見大量嗜酸球',
+    '線狀肉芽腫好發大腿後側，呈線狀或結節狀黃色至粉色斑塊，膠原退化為特徵',
+    '細胞學為初步診斷工具：嗜酸球為主的炎症浸潤',
+    '鑑別診斷必須排除鱗狀上皮細胞癌（SCC）與肥大細胞瘤（MCT）',
+    'Methylprednisolone acetate 長效注射適用於餵藥困難的貓',
+  ],
+  body: `# 貓嗜酸性肉芽腫複合症 (Feline Eosinophilic Granuloma Complex)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+EGC 並非單一疾病，而是一組以嗜酸球浸潤和/或膠原退化為特徵的臨床反應型態。目前認為大多數 EGC 是對各種過敏原（跳蚤、食物、環境）產生的嗜酸球介導型免疫反應，少部分為特發性。
+
+### 免疫病理
+- 過敏原刺激 → Th2 型免疫反應 → IL-5（嗜酸球趨化與活化）↑
+- 嗜酸球浸潤組織 → 釋放 major basic protein (MBP) 與 eosinophil cationic protein (ECP)
+- MBP/ECP → 膠原退化（collagenolysis）與組織損傷
+- 線狀肉芽腫：嗜酸球圍繞退化膠原形成「火焰圖樣」（flame figures）
+- 惰性潰瘍：慢性免疫反應導致上皮缺損與肉芽組織增生
+
+### 潛在病因
+| 病因類別 | 比例 | 備註 |
+|---------|------|------|
+| 跳蚤過敏 | 30-40% | 台灣常見，嚴格除蚤試驗為第一步 |
+| 食物不良反應 | 15-25% | 8-12 週排除飲食試驗 |
+| 環境過敏原 | 15-20% | 室內塵蟎、花粉 |
+| 特發性 | 15-20% | 排除所有過敏原後仍反覆發作 |
+| 蚊蟲咬傷過敏 | < 5% | 好發耳翼與鼻樑（台灣夏季好發） |
+
+## 二、臨床表現與診斷 (Clinical Features & Diagnosis)
+
+### 三種臨床型態
+
+| 型態 | 好發部位 | 外觀 | 瘙癢 | 特徵 |
+|------|---------|------|------|------|
+| 惰性潰瘍 (Indolent Ulcer) | 上唇（單/雙側） | 紅棕色、邊緣隆起的潰瘍 | 不痛不癢 | 又稱 rodent ulcer；不痛是重要特徵 |
+| 嗜酸性斑塊 (Eosinophilic Plaque) | 腹部、大腿內側 | 隆起、糜爛、濕潤表面 | 劇烈瘙癢 | 細胞學嗜酸球最豐富 |
+| 線狀肉芽腫 (Linear Granuloma) | 大腿後側、口腔 | 線狀/結節狀黃粉色斑塊 | 輕/無 | 口腔型可見下唇「腫脹下巴」(fat chin) |
+
+### 診斷流程
+1. **臨床形態辨識**：根據病灶型態、好發部位、瘙癢程度初步判斷
+2. **細胞學檢查**（印片/FNA）：見大量嗜酸球（通常 > 50%），可伴少量嗜中性球
+3. **排除腫瘤**：惰性潰瘍必須與 SCC 鑑別 → FNA 或活檢
+4. **尋找潛在過敏原**：
+   - 嚴格跳蚤預防試驗（isoxazoline 類，至少 8 週）
+   - 排除飲食試驗（水解蛋白或新奇蛋白，8-12 週）
+   - 環境過敏原檢測（IgE 血清學或皮內試驗）
+5. **組織病理**（必要時）：嗜酸球浸潤、膠原退化（火焰圖樣）、肉芽腫反應
+
+### 鑑別診斷
+| 疾病 | 鑑別要點 |
+|------|---------|
+| 鱗狀上皮細胞癌 (SCC) | 老年貓、耳尖/鼻部好發、組織病理見角化珠與侵犯性上皮 |
+| 肥大細胞瘤 (MCT) | 單一結節、FNA 見異染顆粒而非嗜酸球 |
+| 貓疱疹病毒皮膚炎 | 面部潰瘍、PCR 陽性、對抗病毒治療有反應 |
+| 蚊蟲咬傷過敏 | 好發耳翼/鼻樑、季節性（夏季）、限制外出可改善 |
+
+## 三、治療策略 (Treatment Strategy)
+
+### 第一步：控制潛在過敏原
+- 嚴格跳蚤預防（所有病例）
+- 排除飲食試驗（食物不良反應佔 15-25%）
+- 環境過敏原控制
+
+### 藥物治療
+
+| 藥物 | 劑量 | 適應症 | 備註 |
+|------|------|--------|------|
+| Tacrolimus 0.1% 軟膏 | BID 外用 | 輕度/局部病灶，首選 | 惰性潰瘍局部治療效果佳 |
+| Prednisolone | 2 mg/kg PO SID × 2 週 → 漸減 | 中-重度/多發病灶 | 漸減至最低有效劑量或停藥 |
+| Methylprednisolone acetate | 4 mg/kg SC，每 2-3 個月 | 餵藥困難的貓 | 長期使用增加糖尿病風險 |
+| Cyclosporine | 7 mg/kg PO SID | 類固醇反應差或需長期控制 | 起效需 4-6 週，監測腸胃副作用 |
+| Dexamethasone | 0.1-0.2 mg/kg PO SID × 3 天 → 停 | 急性嚴重病灶短期控制 | 效力比 prednisolone 強 7 倍 |
+
+### 治療流程
+1. **所有病例**→ 嚴格跳蚤預防 + 排除飲食試驗
+2. **輕度局部**→ Tacrolimus 0.1% BID 外用
+3. **中度/多發**→ Prednisolone 2 mg/kg PO SID × 14 天 → 漸減 4-6 週
+4. **餵藥困難**→ Methylprednisolone acetate 4 mg/kg SC
+5. **反覆發作/類固醇依賴**→ Cyclosporine 7 mg/kg PO SID 長期
+6. **頑固型**→ Chlorambucil 2 mg PO q48-72h + prednisolone 低劑量
+
+## 四、預後 (Prognosis)
+
+- **有明確過敏基礎並可控制者**：預後良好，控制過敏原可減少復發
+- **特發性病例**：常需長期間歇性藥物控制，預後保留
+- **惰性潰瘍**：對治療反應通常良好，但停藥後復發率 30-50%
+- **嗜酸性斑塊**：對糖皮質激素反應最快，但停藥後復發率高
+- **線狀肉芽腫**：部分幼貓（< 1 歲）可自行消退
+- **惡性轉化風險**：長期慢性惰性潰瘍極罕見報告轉化為 SCC，但風險極低`,
+  clinical_pearl: 'EGC 的治療核心不在於壓制症狀，而在於找出並控制潛在的過敏原。看到 EGC 第一件事不是開類固醇，而是做嚴格跳蚤預防試驗——台灣跳蚤問題嚴重，這一步常被忽略。餵藥困難的貓可考慮 methylprednisolone acetate 長效注射，但每年不應超過 3-4 次（糖尿病風險）。口腔線狀肉芽腫在幼貓常可自行消退，不一定需要積極治療。',
+  common_mistakes: [
+    '未排除 SCC 即以 EGC 治療惰性潰瘍（尤其老年貓必須活檢）',
+    '未做嚴格跳蚤預防試驗就直接使用類固醇',
+    '長期反覆使用 methylprednisolone acetate 注射而未嘗試其他方案',
+    '未進行排除飲食試驗就斷定為特發性',
+    '將三種型態誤認為不同疾病而非同一複合症的不同表現',
+  ],
+  disease_data: {
+    signalment: '所有年齡貓皆可發生，好發 2-6 歲。無明顯品種好發性，但部分文獻報告短毛家貓比例較高。幼貓（< 1 歲）線狀肉芽腫可見自發消退。無明顯性別差異（惰性潰瘍部分文獻報告母貓較多）。',
+    etiology: '超過 80% 有潛在過敏基礎：跳蚤過敏（最常見）、食物不良反應、環境過敏原（塵蟎、花粉）。少部分為蚊蟲咬傷過敏或特發性。遺傳因素可能參與（少數家系報告）。',
+    pathogenesis: '過敏原 → Th2 免疫反應 → IL-5 促進嗜酸球趨化與活化 → 嗜酸球浸潤皮膚/黏膜 → 釋放 major basic protein (MBP) 與 eosinophil cationic protein → 膠原退化（collagenolysis/flame figures）與組織損傷 → 臨床病灶形成。三種型態反映不同程度與深度的嗜酸球介導損傷。',
+    clinical_signs: [
+      { sign: '惰性潰瘍', category: 'primary', description: '上唇單/雙側紅棕色潰瘍，邊緣隆起，不痛不癢，又稱 rodent ulcer' },
+      { sign: '嗜酸性斑塊', category: 'primary', description: '腹部/大腿內側隆起糜爛性斑塊，劇烈瘙癢，表面濕潤' },
+      { sign: '線狀肉芽腫', category: 'primary', description: '大腿後側線狀/結節狀黃粉色斑塊，口腔可見「腫脹下巴」' },
+      { sign: '繼發細菌感染', category: 'secondary', description: '慢性病灶易繼發細菌感染，增加分泌物與氣味' },
+      { sign: '周邊嗜酸球增多', category: 'secondary', description: '部分病例血液嗜酸球計數升高' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '鱗狀上皮細胞癌 (SCC)', key_differentiator: '老年貓、白色貓好發，耳尖/鼻/唇好發，組織病理見角化珠' },
+      { condition: '肥大細胞瘤 (MCT)', key_differentiator: '單一結節性病灶，FNA 見異染顆粒而非嗜酸球' },
+      { condition: '貓疱疹病毒皮膚炎', key_differentiator: '面部/鼻部潰瘍，FHV-1 PCR 陽性' },
+      { condition: '蚊蟲咬傷過敏', key_differentiator: '耳翼/鼻樑好發，嚴格限制夏季，限制外出可改善' },
+    ],
+    diagnostic_workup: '1. 臨床形態辨識（三型各有特徵）→ 2. 細胞學（印片或 FNA：嗜酸球 > 50%）→ 3. 排除腫瘤（惰性潰瘍必須排除 SCC）→ 4. 嚴格跳蚤預防試驗（isoxazoline 8 週）→ 5. 排除飲食試驗（8-12 週）→ 6. 環境過敏原檢測（血清 IgE 或皮內試驗）→ 7. 必要時組織病理確認',
+    treatment_protocol: '1. 所有病例嚴格跳蚤預防。2. 排除飲食試驗。3. 輕度局部：Tacrolimus 0.1% BID。4. 中-重度：Prednisolone 2 mg/kg PO SID × 14 天後漸減。5. 餵藥困難：Methylprednisolone acetate 4 mg/kg SC q2-3 個月。6. 類固醇依賴/反應差：Cyclosporine 7 mg/kg PO SID。7. 頑固型：Chlorambucil 2 mg PO q48-72h + 低劑量 prednisolone。',
+    prognosis: '有明確過敏基礎並可控制者預後良好。特發性病例需長期間歇性藥物控制。惰性潰瘍治療反應佳但停藥復發率 30-50%。嗜酸性斑塊對糖皮質激素反應快但復發率高。幼貓線狀肉芽腫可能自行消退。整體生活品質可維持良好。',
+    monitoring: '治療初期每 2 週評估臨床反應。糖皮質激素長期使用者每 3-6 個月監測血糖、尿液分析（糖尿病風險）。Cyclosporine 使用者每 3 個月複查 CBC/生化。復發時重新評估過敏原控制計畫。',
+    owner_communication: 'EGC 是一種過敏引起的皮膚反應，不是傳染病也不會傳給人。最重要的是找出過敏原（跳蚤、食物等）並加以控制。藥物可以控制症狀，但如果不處理根本原因容易復發。長期注射類固醇雖然方便但有糖尿病風險，建議嘗試口服藥物或局部治療。部分年輕貓的肉芽腫可能自己好起來。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '三型比較段落後', type: 'comparison_table', description: 'EGC 三種臨床型態對照圖' },
+    { position: '治療段落後', type: 'flowchart', description: 'EGC 診斷與治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '鑑別診斷段落', type: 'decision_tree', description: 'EGC 三型辨識與鑑別診斷決策樹' },
+  ],
+  drug_api_links: ['Tacrolimus', 'Prednisolone', 'Methylprednisolone', 'Cyclosporine', 'Chlorambucil'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 14: Eosinophilic Skin Diseases.", relevance: 'EGC 臨床特徵、診斷與治療的經典教材參考' },
+    { type: 'journal', citation: 'Buckley L, Nuttall T. Feline eosinophilic granuloma complex(ities): some clinical clarification. J Feline Med Surg. 2012;14(7):471-481.', relevance: 'EGC 三型臨床分類與過敏基礎的系統性綜述' },
+    { type: 'journal', citation: 'Ravens PA, Xu BJ, Vogelnest LJ. Feline atopic dermatitis: a retrospective study of 45 cases (2001-2012). Vet Dermatol. 2014;25(2):95-102.', relevance: '貓過敏性皮膚病（含 EGC）的臨床表現與治療結果回顧' },
+    { type: 'journal', citation: 'Wildermuth BE, Griffin CE, Rosenkrantz WS. Response of feline eosinophilic plaques and lip ulcers to amoxicillin trihydrate-clavulanate potassium therapy. Vet Dermatol. 2012;23(1):55-e12.', relevance: '部分 EGC 病例對抗生素有反應的臨床觀察' },
+    { type: 'guideline', citation: 'ICADA – Feline Allergic Skin Disease Guidelines (2021). https://doi.org/10.1111/vde.13028', relevance: 'ICADA 貓過敏性皮膚病國際指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 脂腺炎 (Sebaceous Adenitis) — 疾病型 */
+const contentSA: NodeContent = {
+  id: 'CONTENT-DERM-L3-016',
+  node_id: 'DERM-L3-016',
+  version: 1,
+  summary: '脂腺炎（Sebaceous Adenitis, SA）是一種以皮脂腺遭受免疫介導性肉芽腫性破壞為特徵的罕見皮膚病，最常見於標準貴賓犬（Standard Poodle，遺傳性體染色體隱性），亦見於秋田犬、Vizsla 等品種。病理上皮脂腺被炎症浸潤取代並最終消失，導致皮膚乾燥、毛囊鑄型（follicular cast）及脫毛。毛囊鑄型為高度特徵性臨床表現。確診需組織病理學（皮脂腺周圍肉芽腫性炎症或皮脂腺缺失）。治療以局部油浴、角質溶解洗劑及 cyclosporine 為主。',
+  learning_objectives: [
+    '辨識脂腺炎的臨床特徵與好發品種',
+    '描述脂腺炎的免疫介導病理機轉',
+    '闡述毛囊鑄型（follicular cast）的形成機制與臨床辨識',
+    '規劃脂腺炎的診斷流程，理解組織病理為確診金標準',
+    '設計脂腺炎的多模式治療計畫（油浴+洗劑+免疫調節）',
+  ],
+  key_points: [
+    '標準貴賓犬為最好發品種（體染色體隱性遺傳，盛行率 2-5%），秋田犬、Vizsla 亦好發',
+    '病理核心：免疫介導性肉芽腫性炎症破壞皮脂腺 → 皮脂缺乏 → 皮膚乾燥與角化異常',
+    '毛囊鑄型（follicular cast）為高度特徵性表現：緊密附著於毛幹的角質管狀物',
+    '標準貴賓犬：瀰漫性乾燥、鱗屑、脫毛；秋田犬：較脂溢性、深層膿皮症更常見',
+    '確診需皮膚活檢組織病理：早期見皮脂腺周圍肉芽腫性炎症；晚期皮脂腺完全消失',
+    '治療三大支柱：油浴浸泡（礦物油/嬰兒油）、角質溶解洗劑（硫磺/水楊酸）、Cyclosporine 5 mg/kg PO SID',
+    '預後視品種而異：標準貴賓犬治療反應較佳，秋田犬預後較差',
+  ],
+  body: `# 脂腺炎 (Sebaceous Adenitis)
+
+## 一、病理機制 (Pathophysiology)
+
+### 病因
+- **免疫介導性**：T 淋巴球介導的肉芽腫性炎症選擇性攻擊皮脂腺
+- **遺傳基礎**：標準貴賓犬為體染色體隱性遺傳（autosomal recessive），盛行率約 2-5%
+- 確切觸發因素不明，推測遺傳易感性 + 環境觸發因素
+
+### 病理過程
+1. T 細胞介導免疫反應靶向皮脂腺上皮
+2. 淋巴球與組織球浸潤皮脂腺周圍（periglandular granulomatous inflammation）
+3. 皮脂腺進行性破壞 → 皮脂分泌喪失
+4. 繼發角化異常：毛囊角質過度堆積 → 毛囊鑄型（follicular cast）形成
+5. 皮膚屏障功能下降 → 繼發細菌性膿皮症
+
+### 組織病理分期
+| 分期 | 病理特徵 | 臨床意義 |
+|------|---------|---------|
+| 早期（活動期） | 皮脂腺周圍淋巴球/組織球/漿細胞浸潤 | 可確診，仍有治療窗口 |
+| 中期（進展期） | 皮脂腺萎縮、部分被肉芽腫取代 | 確診明確 |
+| 晚期（靜止期） | 皮脂腺完全消失、纖維化取代 | 僅見皮脂腺缺失，需結合臨床判斷 |
+
+## 二、臨床表現與診斷 (Clinical Features & Diagnosis)
+
+### 好發品種與年齡
+- **標準貴賓犬**（Standard Poodle）：最具代表性，1-5 歲發病，體染色體隱性
+- **秋田犬**（Akita）：表現較不典型，更脂溢性，易繼發膿皮症
+- **Vizsla**：典型乾性表現
+- **Samoyed、German Shepherd Dog**：偶有報告
+- **貓**：極罕見，表現與犬不同
+
+### 臨床特徵比較
+| 特徵 | 標準貴賓犬 | 秋田犬 |
+|------|-----------|--------|
+| 鱗屑類型 | 乾性、細碎白色 | 較油脂性 |
+| 毛囊鑄型 | 非常顯著（pathognomonic） | 較不明顯 |
+| 脫毛分布 | 背側軀幹、耳翼、尾部 | 類似但更瀰漫 |
+| 繼發膿皮症 | 偶見 | 常見且較嚴重 |
+| 治療反應 | 較佳 | 較差 |
+| 預後 | 可管控 | 保留至不佳 |
+
+### 診斷要點
+1. **臨床辨識**：好發品種 + 毛囊鑄型 + 乾性鱗屑脫毛 → 高度懷疑
+2. **毛髮檢查（Trichogram）**：見毛幹上附著角質鑄型物
+3. **皮膚活檢（確診金標準）**：
+   - 取材：背側軀幹病灶區 + 正常皮膚對照
+   - 早期：皮脂腺周圍肉芽腫性炎症
+   - 晚期：皮脂腺完全缺失（需注意正常犬某些部位皮脂腺本就較少）
+4. **排除其他角化異常**：甲狀腺低下、皮膚癬菌症、皮脂溢出症
+5. **繼發膿皮症培養**：尤其秋田犬，需評估是否有抗藥性
+
+### 鑑別診斷
+| 疾病 | 鑑別要點 |
+|------|---------|
+| 甲狀腺功能低下 | T4/TSH 異常，伴有肥胖/嗜睡/心搏過緩 |
+| 皮膚癬菌症 | Wood's lamp/DTM 培養陽性 |
+| 原發性皮脂溢出症 | 皮脂腺正常但功能過度，組織病理皮脂腺完整 |
+| 脫毛症 X | 無毛囊鑄型，組織病理皮脂腺存在 |
+| 落葉型天疱瘡 | 有膿疱，細胞學見棘層鬆解細胞 |
+
+## 三、治療策略 (Treatment Strategy)
+
+### 局部治療（所有病例的基礎）
+
+#### 油浴浸泡（Oil Bath Soak）
+- **方法**：礦物油或嬰兒油全身塗抹 → 浸泡 2-4 小時（可穿 T-shirt 防舔） → 角質溶解洗劑洗去
+- **頻率**：初期每週 1-2 次 → 改善後每 2-4 週 1 次
+- **目的**：軟化並移除毛囊鑄型，補充皮膚脂質
+
+#### 角質溶解洗劑
+- **硫磺/水楊酸洗劑**（sulfur 2% / salicylic acid 2%）：軟化角質、抗菌
+- **使用方法**：油浴後使用，接觸時間 10 分鐘後沖洗
+- **頻率**：配合油浴頻率
+
+### 全身性治療
+
+| 藥物 | 劑量 | 適應症 | 備註 |
+|------|------|--------|------|
+| Cyclosporine | 5 mg/kg PO SID | 中-重度或局部治療反應差 | 起效 6-8 週，反應率 60-70% |
+| Essential fatty acids | EPA/DHA 補充 | 所有病例輔助 | 改善皮膚屏障，6-8 週見效 |
+| Vitamin A (Retinol) | 10,000-30,000 IU PO SID | 輔助角化調控 | 標準貴賓犬反應不一 |
+| 抗生素 | 依培養結果 | 繼發膿皮症 | 秋田犬常需要，至少 4-6 週 |
+
+### 治療流程
+1. **所有病例**→ 油浴 + 硫磺水楊酸洗劑 + 必需脂肪酸補充
+2. **輕度**→ 上述局部治療 3 個月評估
+3. **中-重度/局部治療反應差**→ 加 Cyclosporine 5 mg/kg PO SID
+4. **繼發膿皮症**→ 依培養結果加抗生素治療
+5. **難治型**→ 考慮 Cyclosporine + Vitamin A 組合
+
+## 四、預後 (Prognosis)
+
+- **標準貴賓犬**：積極治療下預後可接受，多數可獲得良好控制但需終生管理
+- **秋田犬**：預後較差，繼發膿皮症控制困難，治療反應率較低
+- **Vizsla**：介於兩者之間，治療反應中等
+- **毛髮再生**：部分犬治療後毛髮可部分再生，但通常無法恢復原本品質
+- **生活品質**：不影響壽命，適當管理下生活品質可維持良好
+- **繁殖建議**：確診犬不應繁殖（隱性遺傳，建議品種篩檢）`,
+  clinical_pearl: '遇到標準貴賓犬「反覆膿皮症」治不好時，別忘了檢查毛囊鑄型——把毛拔起來看看毛幹上是否有緊密附著的白色管狀角質物。這個簡單的 trichogram 發現就能讓你懷疑脂腺炎，但確診永遠需要活檢。油浴聽起來古老但效果真的很好——關鍵是浸泡時間要夠長（至少 2 小時）且要用角質溶解洗劑把油洗掉。建議飼主觀看油浴示範影片。',
+  common_mistakes: [
+    '未做活檢就以「皮脂溢出症」治療，延誤脂腺炎的正確診斷',
+    '活檢取晚期病灶（皮脂腺已完全消失），病理僅報告「皮脂腺缺失」而非肉芽腫性炎症',
+    '油浴浸泡時間不足（< 1 小時）或未使用角質溶解洗劑洗去殘油',
+    '未控制繼發膿皮症即開始免疫調節治療',
+    '確診犬繼續繁殖（體染色體隱性，會擴大攜帶者群體）',
+  ],
+  disease_data: {
+    signalment: '標準貴賓犬最好發（體染色體隱性，盛行率 2-5%），發病年齡 1-5 歲。秋田犬、Vizsla、Samoyed、German Shepherd Dog 亦有報告。無明顯性別差異。貓極罕見。',
+    etiology: '免疫介導性（T 細胞介導肉芽腫性炎症靶向皮脂腺）。標準貴賓犬為體染色體隱性遺傳。確切觸發因素不明。',
+    pathogenesis: '遺傳易感性 → T 細胞介導免疫反應靶向皮脂腺上皮 → 皮脂腺周圍肉芽腫性炎症（淋巴球/組織球/漿細胞浸潤）→ 皮脂腺進行性破壞與消失 → 皮脂分泌喪失 → 毛囊角質過度堆積（follicular cast）+ 皮膚乾燥 → 繼發角化異常與細菌感染。',
+    clinical_signs: [
+      { sign: '毛囊鑄型', category: 'primary', description: '毛幹上緊密附著的白色管狀角質物，為高度特徵性表現（pathognomonic）' },
+      { sign: '乾性鱗屑', category: 'primary', description: '背側軀幹瀰漫性乾燥白色細碎鱗屑' },
+      { sign: '脫毛', category: 'primary', description: '背側軀幹、耳翼、尾部對稱性脫毛' },
+      { sign: '被毛品質下降', category: 'primary', description: '被毛粗糙、無光澤、易斷裂' },
+      { sign: '繼發膿皮症', category: 'secondary', description: '皮膚屏障破壞導致細菌感染，秋田犬尤其嚴重' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '甲狀腺功能低下', key_differentiator: '全身症狀（肥胖、嗜睡）、T4/TSH 異常、組織病理皮脂腺存在' },
+      { condition: '皮膚癬菌症', key_differentiator: 'Wood\'s lamp/DTM 陽性、真菌培養確認' },
+      { condition: '原發性皮脂溢出症', key_differentiator: '組織病理皮脂腺存在且肥大' },
+      { condition: '脫毛症 X', key_differentiator: '無毛囊鑄型、無鱗屑、組織病理皮脂腺存在' },
+    ],
+    diagnostic_workup: '1. 臨床評估（品種、毛囊鑄型、鱗屑分布）→ 2. Trichogram（毛幹角質鑄型）→ 3. 皮膚活檢（背側病灶 + 正常皮膚對照）→ 4. 排除甲狀腺低下（T4/TSH）→ 5. 排除皮膚癬菌（DTM/PCR）→ 6. 繼發膿皮症培養（尤其秋田犬）',
+    treatment_protocol: '1. 所有病例：油浴浸泡（礦物油 2-4 小時）+ 硫磺水楊酸洗劑 + EFA 補充。2. 輕度：局部治療 3 個月評估。3. 中-重度：加 Cyclosporine 5 mg/kg PO SID。4. 繼發膿皮症：依培養結果抗生素治療 4-6 週。5. 難治型：Cyclosporine + Vitamin A 10,000-30,000 IU PO SID。',
+    prognosis: '標準貴賓犬治療反應較佳，積極治療下多數可良好控制但需終生管理。秋田犬預後較差，繼發膿皮症控制困難。不影響壽命。部分犬治療後被毛可部分再生但品質通常無法恢復至正常。確診犬不應繁殖。',
+    monitoring: '治療初期每 4 週評估臨床改善（鱗屑、鑄型、被毛品質）。Cyclosporine 使用者每 3 個月 CBC/生化。繼發膿皮症者追蹤培養。長期每 3-6 個月複查評估治療計畫調整。',
+    owner_communication: '脂腺炎是一種免疫系統攻擊皮膚油脂腺的疾病，導致皮膚乾燥和毛髮脫落。這是遺傳性疾病（尤其標準貴賓犬），無法根治但可以良好控制。治療核心是定期油浴——把油塗滿全身浸泡至少 2 小時，再用藥用洗劑洗去。這需要飼主的耐心與配合。嚴重時需加口服免疫調節藥物。確診的狗不建議繁殖。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床特徵段落後', type: 'comparison_table', description: '標準貴賓犬 vs 秋田犬脂腺炎臨床表現比較' },
+    { position: '組織病理段落後', type: 'comparison_table', description: '脂腺炎三期組織病理特徵比較圖' },
+  ],
+  interactive_placeholders: [
+    { position: '治療段落', type: 'decision_tree', description: '脂腺炎治療升階決策樹' },
+  ],
+  drug_api_links: ['Cyclosporine', 'Sulfur', 'Salicylic acid', 'Vitamin A'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 18: Keratinization Defects — Sebaceous Adenitis.", relevance: '脂腺炎臨床診斷與治療的經典教材參考' },
+    { type: 'journal', citation: 'Linek M et al. Effects of cyclosporine A on clinical and histologic abnormalities in dogs with sebaceous adenitis. J Am Vet Med Assoc. 2005;226(1):59-64.', relevance: 'Cyclosporine 治療脂腺炎的臨床試驗' },
+    { type: 'journal', citation: 'Reichler IM et al. Sebaceous adenitis in the standard poodle: a discussion of 10 cases. J Small Anim Pract. 2001;42(7):341-345.', relevance: '標準貴賓犬脂腺炎的臨床系列報告' },
+    { type: 'journal', citation: 'Frazer MM et al. Sebaceous adenitis in Vizsla dogs. J Am Vet Med Assoc. 2011;238(10):1246-1249.', relevance: 'Vizsla 犬脂腺炎的臨床特徵與治療' },
+    { type: 'guideline', citation: 'ACVD – Sebaceous Adenitis Consensus Review. https://doi.org/10.1111/vde.12900', relevance: 'ACVD 脂腺炎共識回顧' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 盤狀紅斑性狼瘡 (DLE) — 疾病型 */
+const contentDLE: NodeContent = {
+  id: 'CONTENT-DERM-L3-017',
+  node_id: 'DERM-L3-017',
+  version: 1,
+  summary: '盤狀紅斑性狼瘡（Discoid Lupus Erythematosus, DLE）是犬最常見的自體免疫皮膚病，僅累及皮膚而不涉及全身器官（有別於 SLE）。典型表現為鼻平面（nasal planum）去色素化、紅斑、結痂與潰瘍，又稱「Collie nose」。紫外線暴露為重要加重因子。診斷依賴組織病理學（界面皮膚炎、基底膜帶免疫複合物沉積）。一線治療為 tacrolimus 0.1% 外用 + doxycycline/niacinamide 組合，並強調紫外線防護。',
+  learning_objectives: [
+    '辨識 DLE 的典型臨床表現與好發品種',
+    '區分 DLE 與全身性紅斑性狼瘡（SLE）的差異',
+    '闡述紫外線在 DLE 病理生理中的角色',
+    '描述 DLE 組織病理特徵（界面皮膚炎）',
+    '規劃 DLE 的多模式治療策略（UV 防護 + 局部 + 全身性）',
+  ],
+  key_points: [
+    'DLE 是犬最常見的自體免疫皮膚病，僅限皮膚（不同於 SLE 的全身累及）',
+    '典型表現：鼻平面去色素化 → 紅斑 → 結痂 → 潰瘍，病程從鼻尖向鼻樑擴展',
+    '好發品種：柯利犬（Collie）、德國牧羊犬、西伯利亞哈士奇、喜樂蒂牧羊犬',
+    '紫外線暴露為重要加重因子，病情常有夏重冬輕的季節性',
+    '組織病理特徵：界面皮膚炎（interface dermatitis）——基底層液化變性、色素失禁',
+    '一線治療：Tacrolimus 0.1% 外用 BID + Doxycycline 5 mg/kg PO BID + Niacinamide 250-500 mg PO BID-TID',
+    '紫外線防護為治療基石：避免正午陽光、寵物用防曬乳、環境遮蔽',
+    'DLE 不需要全身性免疫抑制（不同於 SLE），預後良好',
+    '台灣地區 DLE 因日照強烈而需格外強調 UV 防護，建議避免正午遛狗',
+  ],
+  body: `# 盤狀紅斑性狼瘡 (Discoid Lupus Erythematosus, DLE)
+
+## 一、病理機制 (Pathophysiology)
+
+### DLE vs SLE
+- **DLE（Discoid LE）**：僅累及皮膚，不涉及腎臟、關節、血液等全身器官
+- **SLE（Systemic LE）**：多系統累及（皮膚 + 腎臟 + 關節 + 血液學異常）
+- DLE 的 ANA 檢測通常為陰性或低滴度（不同於 SLE 常陽性）
+- 兩者為獨立疾病，DLE 極罕見轉化為 SLE
+
+### 免疫病理
+- 自體抗體靶向基底膜帶（basement membrane zone）成分
+- Type III 免疫反應：免疫複合物沉積於表真皮交界處
+- 補體活化 → 基底層角質細胞損傷（液化變性 liquefaction degeneration）
+- 色素細胞（melanocyte）破壞 → 去色素化（最早可見的臨床徵兆）
+- 紫外線加重機轉：UV-B 誘導角質細胞凋亡 → 釋放核抗原 → 自體免疫反應增強
+
+### 紫外線的角色
+- UV-B 是主要致病波段（280-315 nm）
+- UV 誘導角質細胞表面核抗原（Ro/La）外露
+- UV 促進促炎細胞因子（TNF-α、IL-1）釋放
+- 臨床表現夏重冬輕、戶外犬比室內犬嚴重
+
+## 二、臨床表現與診斷 (Clinical Features & Diagnosis)
+
+### 好發品種與特徵
+- **柯利犬（Collie）**：最具代表性（「Collie nose」）
+- **德國牧羊犬、西伯利亞哈士奇、喜樂蒂牧羊犬、布列塔尼獵犬**
+- 發病年齡通常 3-6 歲，無明顯性別差異
+
+### 典型臨床進程
+1. **第一階段（早期）**：鼻平面正常的鵝卵石紋理（cobblestone pattern）消失 → 表面變光滑
+2. **第二階段**：去色素化（depigmentation）——黑色鼻頭出現灰色或粉色斑塊
+3. **第三階段**：紅斑（erythema）與鱗屑
+4. **第四階段**：結痂、糜爛與潰瘍
+5. **第五階段（嚴重）**：鼻平面廣泛潰瘍、可向鼻樑蔓延
+
+### 病灶分布
+| 部位 | 頻率 | 備註 |
+|------|------|------|
+| 鼻平面 | > 90% | 最常見、最典型 |
+| 鼻樑 | 30-40% | 嚴重病例向上蔓延 |
+| 唇部 | 10-20% | 通常為延伸病灶 |
+| 眼周 | 5-10% | 較少見 |
+| 耳翼 | 5-10% | 較少見 |
+| 遠端肢端/生殖器 | 罕見 | 需重新考慮 SLE |
+
+### 診斷流程
+1. **臨床辨識**：好發品種 + 鼻平面典型進程 + 季節性加重
+2. **排除 SLE**：CBC/生化/尿液分析/ANA → 排除全身累及
+3. **皮膚活檢（確診）**：
+   - 組織病理：界面皮膚炎（interface dermatitis）——基底層液化變性、淋巴球浸潤表真皮交界處、色素失禁（pigmentary incontinence）
+   - 免疫螢光/免疫組化：基底膜帶 IgG/IgM/C3 沉積（lupus band test）
+4. **排除其他鑑別**：天疱瘡、皮膚癬菌、鱗狀上皮細胞癌、鼻部日光性皮膚炎
+
+### 鑑別診斷
+| 疾病 | 鑑別要點 |
+|------|---------|
+| 天疱瘡（Pemphigus foliaceus） | 膿疱為主、鼻平面完好（表面非真皮交界處）、細胞學見棘層鬆解細胞 |
+| 全身性紅斑性狼瘡 (SLE) | 多系統累及（關節/腎臟/血液）、ANA 陽性、需全身性免疫抑制 |
+| 鼻部日光性皮膚炎 | 白色或淡色鼻頭犬、無免疫複合物沉積 |
+| 鱗狀上皮細胞癌 (SCC) | 侵犯性病灶、組織破壞、老年犬 |
+| 皮膚癬菌症 | DTM/PCR 陽性、無界面皮膚炎 |
+
+## 三、治療策略 (Treatment Strategy)
+
+### 第一步：紫外線防護（所有病例的基石）
+- 避免正午（10:00-16:00）陽光暴露
+- 寵物用防曬乳（SPF 30+，避免含 zinc oxide——犬舔舐可能中毒）
+- 鼻部紋身（深色色素沉著術）——部分獸醫使用但效果持續時間有限
+- 環境遮蔽：提供充足遮蔭、考慮室內飼養
+
+### 藥物治療
+
+| 藥物 | 劑量 | 適應症 | 備註 |
+|------|------|--------|------|
+| Tacrolimus 0.1% 軟膏 | BID 外用至病灶 | 一線局部治療 | 起效 4-6 週，副作用極少 |
+| Doxycycline | 5 mg/kg PO BID | 一線全身治療 | 免疫調節（非抗菌）作用 |
+| Niacinamide | 犬 < 10 kg: 250 mg PO TID; ≥ 10 kg: 500 mg PO TID | 與 doxycycline 聯用 | 抑制肥大細胞脫顆粒、抗炎 |
+| Vitamin E | 400-800 IU PO SID | 輔助抗氧化 | 安全性高，可長期使用 |
+| Prednisolone | 1-2 mg/kg PO SID × 2-4 週 → 漸減 | 嚴重或急性惡化 | 控制後轉換至非類固醇方案 |
+| Cyclosporine | 5 mg/kg PO SID | 頑固型 | 一線治療反應差時的替代選擇 |
+
+### 治療流程
+1. **所有病例**→ 嚴格紫外線防護
+2. **一線治療**→ Tacrolimus 0.1% BID 外用 + Doxycycline/Niacinamide 口服
+3. **6-8 週評估**→ 改善：維持並漸減 → 無改善：升階
+4. **嚴重/急性惡化**→ Prednisolone 1-2 mg/kg PO SID × 2-4 週後漸減
+5. **頑固型/類固醇依賴**→ Cyclosporine 5 mg/kg PO SID
+6. **長期維持**→ 最低有效劑量 doxycycline/niacinamide + tacrolimus + UV 防護
+
+## 四、預後 (Prognosis)
+
+- **整體預後良好**：DLE 不威脅生命，適當治療下多數犬可獲得良好控制
+- **不轉化為 SLE**：DLE 與 SLE 為獨立疾病，轉化風險極低
+- **季節性管理**：夏季可能需要加強治療，冬季可適度減量
+- **長期美容問題**：鼻部去色素化可能永久存在，不影響功能
+- **併發症風險**：長期未治療的鼻部潰瘍理論上有 SCC 轉化風險（極罕見）
+- **飼主依從性**：治療需長期持續，紫外線防護需飼主配合`,
+  clinical_pearl: 'DLE 最常被混淆的是天疱瘡——兩者都好發在鼻面部。記住關鍵區別：DLE 攻擊基底膜（interface dermatitis），去色素化是最早徵兆；天疱瘡攻擊角質細胞間黏附（acantholysis），膿疱是最早徵兆。DLE 的鼻頭表面會變光滑（cobblestone pattern 消失），這個早期徵兆非常有幫助。Doxycycline + niacinamide 組合的抗炎效果被低估了——很多 DLE 單靠這個組合就能控制得很好，不需要類固醇。',
+  common_mistakes: [
+    '將 DLE 與 SLE 混淆而給予過度的全身性免疫抑制治療',
+    '未做活檢確診就直接治療（可能遺漏 SCC 或天疱瘡）',
+    '忽略紫外線防護的重要性——藥物治療沒有 UV 防護效果會大打折扣',
+    '使用含 zinc oxide 的防曬乳（犬舔舐可能導致鋅中毒）',
+    '把鼻頭去色素化誤認為正常老化變化而延誤診斷',
+  ],
+  disease_data: {
+    signalment: '好發品種：柯利犬（Collie）、德國牧羊犬、西伯利亞哈士奇、喜樂蒂牧羊犬、布列塔尼獵犬。發病年齡通常 3-6 歲。無明顯性別差異。貓極罕見。',
+    etiology: '自體免疫——自體抗體靶向基底膜帶成分，紫外線為重要環境觸發/加重因子。遺傳易感性（品種好發性）。DLE 為獨立疾病，非 SLE 的皮膚表現。',
+    pathogenesis: '遺傳易感性 + 紫外線觸發 → 自體抗體產生（靶向基底膜帶）→ Type III 免疫反應（免疫複合物沉積於表真皮交界處）→ 補體活化 → 基底層角質細胞液化變性（interface dermatitis）→ 色素細胞破壞（去色素化）→ 進行性組織損傷（紅斑→結痂→潰瘍）。UV-B 促進角質細胞凋亡與核抗原外露加重自體免疫循環。',
+    clinical_signs: [
+      { sign: '鼻平面去色素化', category: 'primary', description: '最早徵兆：黑色鼻頭出現灰/粉色斑塊，cobblestone pattern 消失' },
+      { sign: '鼻平面紅斑與結痂', category: 'primary', description: '去色素化區域出現紅斑、鱗屑、結痂' },
+      { sign: '鼻平面潰瘍', category: 'primary', description: '嚴重病例鼻平面廣泛潰瘍，可向鼻樑蔓延' },
+      { sign: '季節性加重', category: 'primary', description: '夏季紫外線強烈時病情惡化，冬季可自行改善' },
+      { sign: '出血', category: 'secondary', description: '潰瘍區域外傷或日曬後出血' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '落葉型天疱瘡 (PF)', key_differentiator: '膿疱為主而非去色素化，細胞學見棘層鬆解細胞，鼻平面表面完好' },
+      { condition: '全身性紅斑性狼瘡 (SLE)', key_differentiator: '多系統累及（關節/腎臟/血液）、ANA 陽性、需全身性免疫抑制' },
+      { condition: '鼻部日光性皮膚炎', key_differentiator: '白色/淡色鼻頭犬好發，無免疫複合物沉積' },
+      { condition: '鱗狀上皮細胞癌 (SCC)', key_differentiator: '侵犯性組織破壞、老年犬、組織病理見惡性角化上皮' },
+    ],
+    diagnostic_workup: '1. 臨床評估（品種、鼻平面病灶、季節性）→ 2. 排除 SLE（CBC/生化/尿液/ANA）→ 3. 皮膚活檢（鼻平面病灶邊緣 punch biopsy）→ 4. 組織病理確認（interface dermatitis、色素失禁）→ 5. 選擇性免疫螢光（lupus band test：基底膜帶 IgG/C3 沉積）',
+    treatment_protocol: '1. 所有病例嚴格紫外線防護。2. 一線：Tacrolimus 0.1% BID 外用 + Doxycycline 5 mg/kg PO BID + Niacinamide 250-500 mg PO TID。3. 6-8 週評估。4. 嚴重/急性惡化：加 Prednisolone 1-2 mg/kg PO SID × 2-4 週後漸減。5. 頑固型：Cyclosporine 5 mg/kg PO SID。6. 輔助：Vitamin E 400-800 IU PO SID。',
+    prognosis: '整體預後良好。DLE 不威脅生命且極罕見轉化為 SLE。適當治療（藥物 + UV 防護）下多數犬可獲得良好控制。鼻部去色素化可能為永久性美容問題。需長期管理，夏季可能需加強治療。長期未治療的潰瘍極罕見報告 SCC 轉化。',
+    monitoring: '治療初期每 4 週評估臨床改善。穩定後每 3-6 個月複查。夏季密切追蹤（UV 加重）。Prednisolone 使用者監測血糖/尿液。ANA 追蹤（排除 SLE 轉化）：確診時 + 每年一次。任何口腔/關節/腎臟症狀需立即重新評估。',
+    owner_communication: 'DLE 是一種只影響鼻子皮膚的自體免疫病，跟全身性狼瘡不同，不會影響內臟。最重要的是防曬——避免正午陽光直射鼻子。藥物治療通常效果很好，包括外用藥膏（tacrolimus）和口服抗發炎組合（doxycycline + niacinamide）。鼻子的顏色可能無法完全恢復，但這只是美容問題不影響健康。需要長期管理，夏天要特別注意。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床進程段落後', type: 'comparison_table', description: 'DLE 臨床進程五階段圖示' },
+    { position: '鑑別診斷段落後', type: 'comparison_table', description: 'DLE vs 天疱瘡 vs SLE 鑑別比較表' },
+  ],
+  interactive_placeholders: [
+    { position: '治療段落', type: 'decision_tree', description: 'DLE 治療升階決策樹' },
+  ],
+  drug_api_links: ['Tacrolimus', 'Doxycycline', 'Niacinamide', 'Prednisolone', 'Cyclosporine', 'Vitamin E'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 9: Autoimmune and Immune-Mediated Dermatoses — Discoid Lupus Erythematosus.", relevance: 'DLE 臨床診斷與治療的經典教材參考' },
+    { type: 'journal', citation: 'Banovic F et al. Discoid lupus erythematosus in dogs: report of 45 cases. Vet Dermatol. 2015;26(1):23-e7.', relevance: '犬 DLE 最大規模臨床回顧研究' },
+    { type: 'journal', citation: 'Oberkirchner U et al. Successful treatment of canine discoid lupus erythematosus with topical tacrolimus: a prospective study. Vet Dermatol. 2012;23(6):513-e98.', relevance: 'Tacrolimus 治療犬 DLE 的前瞻性研究' },
+    { type: 'guideline', citation: 'Mueller RS et al. Treatment of autoimmune skin diseases in dogs and cats. J Small Anim Pract. 2006;47(9):511-516.', relevance: '自體免疫皮膚病治療共識指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L0-001', contentDermOverview],
@@ -5124,4 +5633,7 @@ export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L3-013', contentCTCL],
   ['DERM-L3-014', contentMCT],
   ['DERM-L4-005', contentDermatohistopathology],
+  ['DERM-L3-015', contentEGC],
+  ['DERM-L3-016', contentSA],
+  ['DERM-L3-017', contentDLE],
 ]);

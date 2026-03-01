@@ -51,4 +51,9 @@ export const NEURO_NODES: KnowledgeNode[] = [
 
   // ─── Phase 3: 新增 EMG/電生理診斷 ───
   { id: 'NEURO-L4-005', specialty: 'NEURO', title: 'EMG/電生理診斷', title_en: 'Electrodiagnostics (EMG/NCV/EEG)', layer: 4, node_type: 'diagnostic', difficulty: 4, estimated_minutes: 30, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['EMG', '電生理', '神經肌肉', '診斷'], encyclopedia_link: null, cross_specialty_notes: 'IM - 巨食道症鏈結; SURG - 術中神經監測', created_at: now, updated_at: now },
+
+  // ─── Phase 4: VetPro 百科擴展（3 nodes）───
+  { id: 'NEURO-L3-014', specialty: 'NEURO', title: 'Chiari 樣畸形 / 脊髓空洞症', title_en: 'Chiari-like Malformation / Syringomyelia (CM/SM)', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 30, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['CM', 'SM', 'CKCS', '犬'], encyclopedia_link: null, cross_specialty_notes: 'SURG - 枕骨大孔減壓術（FMD）', created_at: now, updated_at: now },
+  { id: 'NEURO-L3-015', specialty: 'NEURO', title: '壞死性腦炎', title_en: 'Necrotizing Encephalitis (NME/NLE)', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 30, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['NME', 'NLE', 'MUO', '犬'], encyclopedia_link: null, cross_specialty_notes: 'IM - 免疫抑制治療; ONCO - Cytarabine 化療藥物', created_at: now, updated_at: now },
+  { id: 'NEURO-L3-016', specialty: 'NEURO', title: '認知功能障礙症候群', title_en: 'Cognitive Dysfunction Syndrome (CDS)', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['CDS', 'DISHAA', '老齡', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'IM - 甲狀腺功能低下鑑別; CPATH - 老齡血檢', created_at: now, updated_at: now },
 ];

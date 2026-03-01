@@ -119,4 +119,28 @@ export const NEURO_EDGES: KnowledgeEdge[] = [
   // ─── Phase 3: 審計缺失邊補齊 ───
   { id: 'NEURO-E-066', source_node_id: 'NEURO-L3-013', target_node_id: 'NEURO-L5-003', relation_type: 'clinical_apply', weight: 0.7, description: '腰薦椎疾病術後需復健（疼痛管理、骨盆肌群強化、排尿功能訓練）', bidirectional: false, unlock_condition: null },
   { id: 'NEURO-E-067', source_node_id: 'NEURO-L1-003', target_node_id: 'NEURO-L3-012', relation_type: 'prerequisite', weight: 0.8, description: 'CSF 生理（產生、循環、吸收）是理解水腦症病理的前置知識', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 4: VetPro 百科擴展邊 ───
+
+  // NEURO-L3-014 (CM/SM) 相關邊
+  { id: 'NEURO-E-068', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-014', relation_type: 'clinical_apply', weight: 0.9, description: '脊髓壓迫/空洞形成是 CM/SM 的核心病理機轉', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-069', source_node_id: 'NEURO-L1-003', target_node_id: 'NEURO-L3-014', relation_type: 'prerequisite', weight: 0.8, description: 'CSF 動力學異常是脊髓空洞症形成的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-070', source_node_id: 'NEURO-L3-014', target_node_id: 'NEURO-L4-003', relation_type: 'clinical_apply', weight: 1, description: 'CM/SM 確診需 MRI 評估枕骨大孔與脊髓空洞', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-071', source_node_id: 'NEURO-L3-014', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: 'CM/SM 需神經學檢查評估 phantom scratching 與感覺異常', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-072', source_node_id: 'NEURO-L3-014', target_node_id: 'NEURO-L5-002', relation_type: 'clinical_apply', weight: 0.8, description: '嚴重 CM/SM 需枕骨大孔減壓術（FMD）', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-073', source_node_id: 'NEURO-L3-014', target_node_id: 'NEURO-L3-012', relation_type: 'differential', weight: 0.7, description: 'CM/SM vs 水腦症需鑑別（CKCS 可同時存在兩者）', bidirectional: true, unlock_condition: null },
+
+  // NEURO-L3-015 (NME/NLE) 相關邊
+  { id: 'NEURO-E-074', source_node_id: 'NEURO-L2-005', target_node_id: 'NEURO-L3-015', relation_type: 'clinical_apply', weight: 0.8, description: '壞死性腦炎導致 ICP 升高與腦組織壞死', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-075', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L4-003', relation_type: 'clinical_apply', weight: 1, description: 'NME/NLE 需 MRI 顯示多灶性壞死病灶', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-076', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: 'NME/NLE 需 CSF 分析顯示淋巴球性細胞增多', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-077', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: 'NME/NLE 神經學檢查可定位前腦病灶', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-078', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L3-003', relation_type: 'differential', weight: 0.9, description: 'NME/NLE vs GME 需鑑別（均屬 MUO）', bidirectional: true, unlock_condition: null },
+  { id: 'NEURO-E-079', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L3-008', relation_type: 'differential', weight: 0.7, description: 'NME vs 顱內腫瘤需鑑別（MRI 均可見前腦病灶）', bidirectional: true, unlock_condition: null },
+
+  // NEURO-L3-016 (CDS) 相關邊
+  { id: 'NEURO-E-080', source_node_id: 'NEURO-L1-002', target_node_id: 'NEURO-L3-016', relation_type: 'prerequisite', weight: 0.7, description: '神經生理學（神經傳導物質退化）是 CDS 的基礎概念', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-081', source_node_id: 'NEURO-L3-016', target_node_id: 'NEURO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: 'CDS 需神經學檢查排除其他神經疾病', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-082', source_node_id: 'NEURO-L3-016', target_node_id: 'NEURO-L4-003', relation_type: 'clinical_apply', weight: 0.6, description: 'CDS 可用 MRI 排除結構性腦部病變（腫瘤、腦炎）', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-083', source_node_id: 'NEURO-L3-016', target_node_id: 'NEURO-L3-008', relation_type: 'differential', weight: 0.7, description: 'CDS vs 顱內腫瘤需鑑別（老齡犬行為改變）', bidirectional: true, unlock_condition: null },
 ];

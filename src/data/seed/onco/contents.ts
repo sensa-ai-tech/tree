@@ -4999,6 +4999,337 @@ TKI 為小分子藥物，競爭性結合 RTK 的 ATP 結合位點，阻斷下游
   created_at: now,
 };
 
+/** 肝細胞癌 — 疾病型 */
+const contentHCC: NodeContent = {
+  id: 'CONTENT-ONCO-L3-016',
+  node_id: 'ONCO-L3-016',
+  version: 1,
+  summary: '肝細胞癌（Hepatocellular Carcinoma, HCC）是犬最常見的原發性肝臟腫瘤，占所有犬原發性肝臟腫瘤的 50% 以上。依形態學分為 massive（巨塊型，53-61%）、nodular（結節型）、diffuse（瀰漫型）三種。Massive 型預後最佳，肝葉切除後中位存活時間 >1460 天；diffuse 型預後最差。ALP 升高見於約 80% 的病例。超音波為首要篩檢工具，CT 增強掃描用於手術計畫。Toceranib 2.5 mg/kg EOD 可作為不可切除型的緩和治療。',
+  learning_objectives: [
+    '描述犬 HCC 的三種形態學分型及其預後差異',
+    '說明 ALP 升高在 HCC 篩檢中的臨床意義',
+    '列出 massive HCC 肝葉切除的手術適應症與禁忌症',
+    '比較 HCC 與其他原發性肝臟腫瘤（膽管癌、類癌）的鑑別要點',
+    '說明 Toceranib 在不可切除 HCC 的緩和治療角色',
+  ],
+  key_points: [
+    'HCC 占犬原發性肝臟惡性腫瘤 > 50%，中老年犬好發（中位年齡 10-11 歲）',
+    '三種形態：massive（53-61%，單一大腫塊，預後最好）、nodular（多個結節）、diffuse（瀰漫浸潤，預後最差）',
+    'ALP 升高見於約 80% 病例（非特異性但高敏感度的篩檢指標）',
+    'Massive HCC 肝葉切除後 MST > 1460 天（> 4 年），是少數手術可治癒的犬惡性腫瘤',
+    'Nodular 型 MST 270-428 天，diffuse 型 MST < 6 個月',
+    '轉移率整體低（0-37%），massive 型轉移率最低',
+  ],
+  body: `# 肝細胞癌 (Hepatocellular Carcinoma, HCC)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+肝細胞癌是犬最常見的原發性肝臟惡性腫瘤，占所有犬原發性肝腫瘤的 50% 以上。中老年犬好發（中位年齡 10-11 歲），無明確品種偏好，部分研究顯示雄犬略多。病因不明，與人類不同，犬 HCC 與肝硬化或病毒性肝炎無明確關聯。
+
+### 形態學分型
+- **Massive（巨塊型）**：53-61%，單一大腫塊侵犯單一肝葉，最常見的亞型，預後最佳
+- **Nodular（結節型）**：約 20-30%，多個結節散布於多個肝葉
+- **Diffuse（瀰漫型）**：最少見但預後最差，整個肝臟瀰漫性浸潤
+
+### 生物行為
+- Massive 型：局部侵犯為主，轉移率低（0-5%），手術切除可治癒
+- Nodular 型：中度惡性，區域淋巴結和肺轉移可見
+- Diffuse 型：高度惡性，早期轉移常見（肝門淋巴結、腹膜、肺）
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+| 症狀類別 | 表現 | 發生率/備註 |
+|---------|------|-----------|
+| 非特異性 | 食慾下降、體重減輕、嗜睡 | 最常見主訴 |
+| 腹部 | 腹部腫塊、腹部膨大 | Massive 型可觸及大型肝腫塊 |
+| 急性 | 腹腔出血（腫瘤破裂） | 少見但可為首次就診主訴 |
+| 肝功能 | 黃疸、腹水 | 晚期或 diffuse 型較常見 |
+| 副腫瘤 | 低血糖（大型腫瘤分泌 IGF-II）、紅血球增多症 | 少見 |
+
+### 實驗室檢查
+- **ALP 升高**：約 80% 病例，HCC 可產生 corticosteroid-induced ALP isoenzyme
+- **ALT/AST**：可正常或輕度升高
+- **低白蛋白**：晚期肝功能不全
+- **低血糖**：大型 HCC 可分泌 IGF-II 類物質
+
+### 影像學
+- **腹部超音波**：首要篩檢，massive 型表現為單一肝葉大型混合回音腫塊
+- **三期 CT 增強**：手術前必備——評估腫瘤範圍、血管侵犯、手術可行性
+- **胸腔 X 光**：排除肺轉移
+
+### 診斷確認
+- FNA 細胞學：可輔助但有出血風險（肝臟高血管性腫瘤），且難以區分良性肝結節性增生 vs HCC
+- 組織病理：金標準——Tru-cut biopsy 或手術切除後病理
+
+## 三、治療策略 (Treatment)
+
+### 手術治療（Massive 型首選）
+- **肝葉切除（Hepatic lobectomy）**：massive 型的治療首選，左側肝葉切除較右側/中央葉技術難度低
+- 術前評估：凝血功能、肝功能儲備、CT 血管重建確認血管侵犯
+- 術後併發症：出血（最常見）、膽汁漏、低白蛋白、低血糖
+- 手術死亡率：約 5-10%（大型轉診醫院數據）
+
+### 化學治療
+- 傳統化療對 HCC 效果有限
+- **Toceranib（Palladia）**：2.5 mg/kg PO 隔日，可作為不可切除型的緩和治療，部分病例見疾病穩定
+- **Metronomic cyclophosphamide**：可考慮合併使用
+
+### Nodular/Diffuse 型
+- 手術切除通常不可行
+- 緩和治療為主（Toceranib、支持療法）
+- 預後不佳
+
+## 四、鑑別診斷 (Differential Diagnosis)
+
+| 鑑別疾病 | 關鍵區分點 |
+|---------|-----------|
+| 肝臟結節性增生（Nodular hyperplasia） | 老年犬極常見的良性病變，超音波難以區分，需病理確認 |
+| 膽管癌（Cholangiocarcinoma） | 占原發肝腫瘤 22-41%，侵犯性更強，ALP 也會升高 |
+| 肝臟類癌（Hepatic carcinoid） | 罕見，神經內分泌腫瘤 |
+| 轉移性肝腫瘤 | 多發結節，需找到原發腫瘤（脾臟 HSA、胰臟腫瘤等） |
+| 肝臟淋巴瘤 | 肝脾浸潤型淋巴瘤，FNA 可見淋巴母細胞 |
+
+## 五、預後 (Prognosis)
+
+| 亞型 | 中位存活時間 | 備註 |
+|------|------------|------|
+| Massive（手術切除） | > 1460 天（> 4 年） | 少數可手術治癒的犬惡性腫瘤 |
+| Nodular | 270-428 天 | 手術切除困難 |
+| Diffuse | < 180 天 | 預後最差，緩和治療為主 |
+
+[圖片:HCC 形態學分型與預後比較圖——massive vs nodular vs diffuse]`,
+  clinical_pearl: 'HCC 是犬少數「手術可治癒」的惡性腫瘤之一——但前提是 massive 型！在臨床上，當你遇到老年犬 ALP 異常升高（有時可達正常值 10-20 倍以上）合併腹部超音波發現單一肝葉大型腫塊時，不要急著放棄——安排 CT 評估手術可行性，因為成功切除後的存活時間可超過 4 年。\n\n台灣臨床的實務重點：(1) 很多肝臟腫塊是意外發現（健檢超音波），ALP 異常升高是重要線索；(2) 左側肝葉切除在有經驗的外科醫師手上是可行的手術；(3) 不要僅靠 FNA 就放棄手術——FNA 常無法區分良性增生和 HCC。',
+  common_mistakes: [
+    '將 HCC 等同於人類肝癌的預後認知——犬 massive HCC 手術後預後極佳（MST > 4 年），不應因「肝癌」標籤就放棄治療',
+    '僅以超音波判斷肝腫塊良惡性——超音波無法可靠區分 HCC 與結節性增生，需病理確認',
+    '對所有型態的 HCC 一概而論——massive 型預後遠優於 nodular 和 diffuse，治療策略完全不同',
+    '忽略術前 CT 評估——未評估血管侵犯就進行手術，增加術中大出血風險',
+    'ALP 正常即排除 HCC——約 20% 的 HCC 病例 ALP 可以正常',
+  ],
+  disease_data: {
+    signalment: '中老年犬，中位年齡 10-11 歲（範圍 5-16 歲）。無明確品種偏好，部分研究顯示雄犬略多。貓的肝臟腫瘤以膽管癌較多見。',
+    etiology: '犬 HCC 病因不明。與人類不同，犬 HCC 與肝硬化、B/C 肝病毒無關聯。可能涉及慢性肝損傷、黃麴毒素暴露（動物模型已證實）、遺傳因素。',
+    pathogenesis: '肝細胞惡性轉化 → 依型態不同發展為局灶（massive）或多灶（nodular/diffuse）腫瘤 → massive 型形成單一大腫塊壓迫鄰近肝組織但通常不侵犯血管 → nodular/diffuse 型多灶性生長難以完全切除 → 肝功能逐漸受損 → ALP 異常升高（腫瘤細胞自分泌 corticosteroid-induced isoenzyme）。',
+    clinical_signs: [
+      { sign: '食慾下降/體重減輕', category: 'primary', description: '非特異性但最常見的主訴' },
+      { sign: '腹部腫塊/腹部膨大', category: 'primary', description: 'Massive 型可觸及大型肝腫塊' },
+      { sign: '嗜睡/虛弱', category: 'primary', description: '慢性病程' },
+      { sign: '急性腹腔出血', category: 'secondary', description: '腫瘤破裂出血可為首次就診主訴（少見）' },
+      { sign: '黃疸', category: 'secondary', description: '晚期或 diffuse 型肝功能不全' },
+      { sign: '低血糖', category: 'secondary', description: '大型腫瘤分泌 IGF-II 類物質（副腫瘤症候群，罕見）' },
+    ],
+    staging: {
+      system: '依形態學分型（Massive / Nodular / Diffuse）結合轉移評估',
+      stages: [
+        'Massive 型：單一肝葉大型腫塊，無轉移 → 手術可治癒',
+        'Nodular 型：多個結節散布多肝葉 ± 區域淋巴結轉移',
+        'Diffuse 型：整個肝臟瀰漫性浸潤 ± 遠端轉移',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '肝臟結節性增生', key_differentiator: '老年犬極常見的良性病變，超音波難以區分，ALP 通常正常或輕度升高，需病理確認' },
+      { condition: '膽管癌', key_differentiator: '侵犯性更強、更易轉移，超音波可見不規則低回音腫塊' },
+      { condition: '轉移性肝腫瘤', key_differentiator: '多發小結節，需尋找原發腫瘤（脾臟 HSA 最常見）' },
+      { condition: '肝臟淋巴瘤', key_differentiator: '全身性疾病的一部分，FNA 可見淋巴母細胞，常伴脾臟浸潤' },
+      { condition: '肝臟膿瘍', key_differentiator: '發燒、白血球升高，超音波見含液腫塊' },
+    ],
+    diagnostic_workup: '1. CBC/BCS（注意 ALP 升高程度）→ 2. 腹部超音波（肝腫塊型態評估）→ 3. 三期 CT 增強（手術計畫、血管侵犯評估）→ 4. 胸腔三視圖 X 光（排除肺轉移）→ 5. 凝血功能檢查（術前必要）→ 6. FNA/Tru-cut 或術中病理',
+    treatment_protocol: '【Massive 型】肝葉切除為首選治療，左側/外側肝葉切除技術上較可行。術前：凝血功能評估、CT 血管重建。術後監控出血和肝功能。手術死亡率 5-10%。【不可切除型】Toceranib 2.5 mg/kg PO 隔日（緩和治療）± metronomic cyclophosphamide。支持療法：營養管理、肝保護劑。',
+    prognosis: 'Massive 型肝葉切除：MST > 1460 天（> 4 年），是犬惡性腫瘤中預後最佳的之一。Nodular 型：MST 270-428 天。Diffuse 型：MST < 180 天。整體轉移率低（0-37%），massive 型最低。術後 ALP 恢復正常為良好預後指標。',
+    monitoring: '術後：每 24 小時肝功能和凝血功能 × 3 天。出院後每 3 個月腹部超音波 + ALP 追蹤（首年），之後每 6 個月。胸腔 X 光每 6 個月。ALP 再度升高提示復發。',
+    owner_communication: '犬肝細胞癌如果是巨塊型（最常見），手術切除後預後非常好，平均存活超過 4 年，是少數可以手術治癒的犬惡性腫瘤。手術有一定風險（出血），但成功率高。術後需要定期追蹤超音波和血檢。如果是多發結節型或瀰漫型，預後較差，治療以緩和療法為主。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '形態學分型段落後', type: 'comparison_table', description: 'HCC 三種形態學分型超音波影像與預後比較' },
+    { position: '治療段落後', type: 'flowchart', description: 'HCC 診斷與治療決策流程圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Toceranib', 'Cyclophosphamide'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 24: Hepatobiliary Tumors.', relevance: '犬肝臟腫瘤完整章節' },
+    { type: 'journal', citation: 'Liptak JM, Dernell WS, Monnet E, et al. Massive hepatocellular carcinoma in dogs: 48 cases (1992-2002). JAVMA. 2004;225(8):1225-1230.', relevance: '犬 massive HCC 最大型回顧研究，MST > 1460 天' },
+    { type: 'journal', citation: 'Patnaik AK, Hurvitz AI, Lieberman PH. Canine hepatic neoplasms: a clinicopathologic study. Vet Pathol. 1980;17(5):553-564.', relevance: '犬肝臟腫瘤分類與臨床病理經典研究' },
+    { type: 'journal', citation: 'Matsuyama A, Poirier VJ, Bhatt A, et al. Outcome of dogs with hepatocellular carcinoma treated with hepatic lobectomy: 52 cases. JAVMA. 2022;260(10):1172-1179.', relevance: 'HCC 肝葉切除最新預後數據' },
+    { type: 'guideline', citation: 'ACVIM/VSSO Consensus – Hepatic Tumors in Dogs. https://doi.org/10.1111/jvim.16190', relevance: 'ACVIM/VSSO 犬肝臟腫瘤共識聲明' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 多發性骨髓瘤 — 疾病型 */
+const contentMultipleMyeloma: NodeContent = {
+  id: 'CONTENT-ONCO-L3-017',
+  node_id: 'ONCO-L3-017',
+  version: 1,
+  summary: '多發性骨髓瘤（Multiple Myeloma）是犬第二常見的造血系統腫瘤（僅次於淋巴瘤），由骨髓中漿細胞惡性增殖引起。臨床表現以「四病」為特徵：骨溶解性病變、單株免疫球蛋白血症（M spike）、Bence Jones 蛋白尿、骨髓漿細胞浸潤。診斷需至少符合兩項以上標準。高鈣血症和高黏滯度症候群為常見且具臨床意義的副腫瘤表現。Melphalan 0.1 mg/kg PO SID × 10 天（後續脈衝療法）+ Prednisone 為標準治療方案。',
+  learning_objectives: [
+    '說明犬多發性骨髓瘤的四項診斷標準',
+    '描述血清蛋白電泳 M spike 的診斷意義',
+    '列出高黏滯度症候群的臨床表現與緊急處理',
+    '說明 Melphalan + Prednisone 治療方案的用法與骨髓毒性監控',
+    '比較骨髓瘤與淋巴瘤在造血系統腫瘤鑑別中的差異',
+  ],
+  key_points: [
+    '犬第二常見的造血系統腫瘤（僅次於淋巴瘤），中老年犬好發',
+    '診斷四標準（至少符合兩項）：骨溶解性病變、M spike、Bence Jones 蛋白尿、骨髓漿細胞 > 20%',
+    '血清蛋白電泳（SPE）可見 M spike（monoclonal gammopathy）為關鍵診斷工具',
+    '高鈣血症（15-20%）和高黏滯度症候群為重要副腫瘤表現',
+    'Melphalan 0.1 mg/kg PO SID × 10 天，後續 0.05 mg/kg SID 脈衝療法 + Prednisone',
+    '治療反應率 43-93%，中位存活時間 540 天（約 18 個月）',
+  ],
+  body: `# 多發性骨髓瘤 (Multiple Myeloma)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+多發性骨髓瘤起源於骨髓中成熟漿細胞（plasma cell）的惡性增殖。是犬第二常見的造血系統腫瘤（占所有造血腫瘤的 8%），中老年犬好發（中位年齡 8-9 歲），German Shepherd 可能有較高發病率。
+
+### 病理機轉
+惡性漿細胞在骨髓中克隆性增殖 → 以下四大病理效應：
+1. **單株免疫球蛋白過度分泌**（M protein）→ 高蛋白血症 → 高黏滯度症候群
+2. **骨髓基質破壞**（分泌 RANKL、MIP-1α）→ 骨溶解性病變 → 病理性骨折 + 高鈣血症
+3. **正常造血抑制** → 貧血、血小板減少、免疫低下
+4. **免疫球蛋白輕鏈過量分泌** → Bence Jones 蛋白尿 → 腎小管損傷 → 腎衰竭
+
+### 免疫球蛋白分型
+- 最常見：IgG（60-70%）、IgA（20-30%）
+- 少見：IgM（Waldenstrom macroglobulinemia）、輕鏈型
+- IgA 型高黏滯度症候群發生率較高（IgA 容易多聚合）
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+| 症狀 | 機轉 | 發生率 |
+|------|------|--------|
+| 骨痛/跛行 | 骨溶解性病變 | 50-60% |
+| 嗜睡/虛弱 | 貧血、高鈣 | 常見 |
+| PU/PD | 高鈣血症、腎損傷 | 25-40% |
+| 出血傾向 | M protein 干擾凝血 | 20-30% |
+| 視覺障礙 | 高黏滯度→視網膜血管病變 | 10-15% |
+| 神經症狀 | 高黏滯度、脊椎骨溶解 | 少見 |
+
+### 高黏滯度症候群（Hyperviscosity Syndrome）
+- 發生率：約 20%（IgA > IgM > IgG）
+- 表現：眼底出血/視網膜剝離、鼻出血、心衰竭、神經症狀
+- 緊急處理：plasmapheresis（血漿置換）或放血後輸注等量晶體液
+
+### 診斷標準（至少符合兩項）
+1. **骨溶解性病變**：全身骨骼 X 光可見「打孔式」（punched-out）溶骨性病灶
+2. **單株免疫球蛋白血症**：血清蛋白電泳（SPE）見 M spike
+3. **Bence Jones 蛋白尿**：尿液蛋白電泳檢測免疫球蛋白輕鏈
+4. **骨髓漿細胞增生 > 20%**：骨髓穿刺/活檢確認
+
+### 診斷流程
+1. CBC/BCS：貧血、高蛋白（globulin 升高）、高鈣血症
+2. 血清蛋白電泳（SPE）：M spike 確認
+3. 尿液蛋白電泳：Bence Jones 蛋白
+4. 全身骨骼 X 光：溶骨性病灶（脊椎、骨盆、四肢長骨）
+5. 骨髓穿刺：漿細胞比例 > 20%
+
+## 三、治療策略 (Treatment)
+
+### 化學治療（首選）
+**Melphalan + Prednisone 方案：**
+- **誘導期**：Melphalan 0.1 mg/kg PO SID × 10 天 + Prednisone 0.5 mg/kg PO SID
+- **維持期**：Melphalan 0.05 mg/kg PO SID（持續給藥）或脈衝療法（0.1 mg/kg × 10 天，每 3 週一個週期）
+- 監控：每 2 週 CBC（骨髓毒性——嗜中性球減少、血小板減少）
+- 替代方案：Cyclophosphamide 可替代 Melphalan 用於不耐受病例
+
+### 高鈣血症處理
+- 靜脈輸液（0.9% NaCl）促進鈣排泄
+- Furosemide 2-4 mg/kg IV（促進尿鈣排泄）
+- Prednisone（抑制骨吸收和腫瘤細胞）
+- Bisphosphonates（Pamidronate 1-2 mg/kg IV over 2-4 hr）
+
+### 高黏滯度緊急處理
+- Plasmapheresis（最有效但設備受限）
+- 放血（10-20 mL/kg）後等量晶體液置換
+- 同時啟動化療降低 M protein 分泌
+
+## 四、預後 (Prognosis)
+
+| 治療 | 反應率 | 中位存活時間 |
+|------|--------|------------|
+| Melphalan + Prednisone | 43-93% | 540 天（~18 個月） |
+| 未治療 | — | < 6 個月 |
+
+### 預後因子
+- **不良因子**：高鈣血症、Bence Jones 蛋白尿嚴重、骨髓浸潤廣泛、IgA 型
+- **良好因子**：對化療快速反應（M protein 下降 > 50%）、IgG 型
+- 治療反應評估：每 4-6 週追蹤 SPE 中 M spike 高度
+
+## 五、台灣臨床相關性 (Taiwan Clinical Relevance)
+
+- SPE（血清蛋白電泳）在台灣大型轉診醫院和部分教學醫院可執行
+- Melphalan 需透過藥局調劑或專案進口
+- Bence Jones 蛋白尿檢測：可外送至人醫實驗室
+- 骨髓穿刺：髂骨翼或肱骨近端穿刺，需適當鎮靜
+- 台灣臨床最常見的就診主訴為骨痛/跛行 + 高蛋白血症的意外發現
+
+[圖片:多發性骨髓瘤診斷與治療流程圖——SPE M spike + 骨溶解 + 骨髓穿刺 → Melphalan/Pred]`,
+  clinical_pearl: '當你看到一隻老年犬有「不明原因的高蛋白血症」（total protein > 9 g/dL，主要是 globulin 升高）+ 貧血 + 骨痛，腦中就應該浮現「多發性骨髓瘤」三個字。下一步是做血清蛋白電泳（SPE）——如果看到明確的 M spike，就幾乎確診了。\n\n高黏滯度症候群的小技巧：眼底檢查是快速篩檢高黏滯度的方法——如果看到視網膜血管擴張扭曲、出血、視網膜剝離，就高度懷疑。另外，驗血時如果離心後血清呈現異常濃稠（試管傾斜時流動緩慢），也是高黏滯度的非正式線索。\n\n治療的好消息：犬骨髓瘤對 Melphalan 反應率很高，而且化療副作用相對可管理（主要是骨髓抑制），很多飼主可以接受「口服藥回家吃」的治療模式。',
+  common_mistakes: [
+    '高蛋白血症只想到脫水——脫水是 albumin 和 globulin 同時升高，骨髓瘤是 globulin 選擇性極度升高',
+    '未做血清蛋白電泳就排除骨髓瘤——total protein 可以「正常偏高」但 SPE 已有 M spike',
+    '骨痛/跛行只想到骨科問題——老年犬骨溶解性病變需做全身骨骼 X 光排除骨髓瘤',
+    '忽略 Melphalan 的骨髓毒性監控——未每 2 週驗 CBC 導致嚴重嗜中性球減少',
+    '將骨髓瘤與漿細胞瘤（solitary plasmacytoma）混淆——後者為局部腫瘤，手術可治癒',
+  ],
+  disease_data: {
+    signalment: '中老年犬，中位年齡 8-9 歲（範圍 2-15 歲）。German Shepherd 可能有較高發病率。無明顯性別偏好。貓罕見。',
+    etiology: '確切病因不明。與人類骨髓瘤相似，可能涉及慢性抗原刺激導致漿細胞失控增殖、基因突變。',
+    pathogenesis: '骨髓漿細胞克隆性增殖 → 大量分泌單株免疫球蛋白（M protein）→ 高蛋白血症/高黏滯度 + 骨質破壞（RANKL/OPG 失衡）→ 骨溶解/高鈣血症 + 正常造血抑制 → 貧血/感染/出血 + 輕鏈腎病 → 多器官功能障礙。',
+    clinical_signs: [
+      { sign: '骨痛/跛行', category: 'primary', description: '骨溶解性病變導致疼痛和病理性骨折，50-60% 病例' },
+      { sign: '嗜睡/虛弱', category: 'primary', description: '貧血和高鈣血症引起' },
+      { sign: 'PU/PD', category: 'primary', description: '高鈣血症和腎損傷導致' },
+      { sign: '出血傾向（鼻出血、牙齦出血）', category: 'secondary', description: 'M protein 干擾凝血因子和血小板功能' },
+      { sign: '視覺障礙/失明', category: 'secondary', description: '高黏滯度導致視網膜血管病變' },
+      { sign: '反覆感染', category: 'secondary', description: '正常免疫球蛋白被抑制（免疫低下）' },
+    ],
+    staging: {
+      system: '犬多發性骨髓瘤臨床分期',
+      stages: [
+        'Stage I：骨髓漿細胞增生但無全身症狀，< 2 處骨溶解',
+        'Stage II：介於 I 和 III 之間',
+        'Stage III：貧血 + 高鈣 + > 3 處骨溶解 + 腎衰竭',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '淋巴瘤（造血型）', key_differentiator: '淋巴母細胞為主，SPE 通常為多株增高而非 M spike，免疫表型 B/T cell marker' },
+      { condition: '髓外漿細胞瘤（Extramedullary plasmacytoma）', key_differentiator: '局部腫瘤（皮膚/口腔最常見），無全身骨髓浸潤，手術可治癒' },
+      { condition: '慢性 Ehrlichiosis', key_differentiator: '可見多株高蛋白血症（polyclonal gammopathy），PCR 或抗體可確診' },
+      { condition: '淋巴漿細胞性淋巴瘤', key_differentiator: '介於淋巴瘤與骨髓瘤之間，常伴 IgM 分泌' },
+      { condition: '反應性漿細胞增生', key_differentiator: '多株增生（polyclonal），骨髓漿細胞通常 < 10%' },
+    ],
+    diagnostic_workup: '1. CBC/BCS（高蛋白、貧血、高鈣）→ 2. 血清蛋白電泳（M spike）→ 3. 尿液蛋白電泳（Bence Jones 蛋白）→ 4. 全身骨骼 X 光（溶骨性病灶）→ 5. 骨髓穿刺（漿細胞 > 20%）→ 6. 凝血功能（出血傾向評估）→ 7. 腎功能（Bence Jones 腎病）',
+    treatment_protocol: '首選：Melphalan 0.1 mg/kg PO SID × 10 天（誘導）→ 0.05 mg/kg PO SID 或脈衝 0.1 mg/kg × 10d q3w（維持）+ Prednisone 0.5 mg/kg PO SID。每 2 週 CBC 監控骨髓毒性。高鈣血症：0.9% NaCl IV + Furosemide 2-4 mg/kg + Pamidronate。高黏滯度：plasmapheresis 或放血 + 晶體液置換。',
+    prognosis: 'Melphalan + Prednisone 治療反應率 43-93%，MST 約 540 天（18 個月）。未治療 MST < 6 個月。預後不良因子：高鈣血症、嚴重 Bence Jones 蛋白尿、腎衰竭、IgA 型。',
+    monitoring: '每 2 週 CBC（骨髓毒性監控）→ 每 4-6 週 SPE 追蹤 M spike 高度（治療反應評估）→ 每 3 個月腎功能和鈣離子 → 每 6 個月全身骨骼 X 光。M spike 下降 > 50% 為部分緩解。',
+    owner_communication: '多發性骨髓瘤是一種骨髓中漿細胞的惡性腫瘤，可以造成骨骼破壞和蛋白質異常。好消息是這種腫瘤對化療反應通常很好——治療後平均可存活約 1.5 年以上。治療主要是口服藥物（Melphalan + Prednisone），您可以在家給藥，但需要每 2 週回診驗血監控藥物副作用。骨痛通常在治療後明顯改善。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病理機轉段落後', type: 'flowchart', description: '骨髓瘤四大病理效應示意圖' },
+    { position: '骨骼 X 光段落', type: 'annotated_image', description: '犬骨髓瘤溶骨性病變 X 光影像（punched-out lesions）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Melphalan', 'Prednisone', 'Cyclophosphamide', 'Pamidronate', 'Furosemide'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 33: Plasma Cell Tumors.', relevance: '犬漿細胞腫瘤完整章節' },
+    { type: 'journal', citation: 'Matus RE, Leifer CE, MacEwen EG, et al. Prognostic factors for multiple myeloma in the dog. JAVMA. 1986;188(11):1288-1292.', relevance: '犬多發性骨髓瘤預後因子經典研究' },
+    { type: 'journal', citation: 'Vail DM. Plasma cell neoplasms. In: Vail DM, Thamm DH, Liptak JM, eds. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020:688-704.', relevance: '漿細胞腫瘤治療方案與預後' },
+    { type: 'guideline', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter: Multiple Myeloma.', relevance: '骨髓瘤診斷標準與內科管理' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const ONCO_CONTENTS = new Map<string, NodeContent>([
   // Layer 0
@@ -5039,4 +5370,6 @@ export const ONCO_CONTENTS = new Map<string, NodeContent>([
   ['ONCO-L5-004', contentRadiationTherapy],
   ['ONCO-L5-005', contentMetronomicChemo],
   ['ONCO-L5-006', contentTKI],
+  ['ONCO-L3-016', contentHCC],
+  ['ONCO-L3-017', contentMultipleMyeloma],
 ]);

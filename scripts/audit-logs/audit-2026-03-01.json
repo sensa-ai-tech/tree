@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-01T00:16:21.900Z",
+  "timestamp": "2026-03-01T10:02:38.025Z",
   "totalScore": 100,
   "specialties": [
     {
@@ -63,7 +63,7 @@
     {
       "key": "IM",
       "label": "內科",
-      "nodeCount": 44,
+      "nodeCount": 48,
       "dimensions": {
         "structure": {
           "score": 100,
@@ -121,7 +121,7 @@
     {
       "key": "DERM",
       "label": "皮膚科",
-      "nodeCount": 31,
+      "nodeCount": 34,
       "dimensions": {
         "structure": {
           "score": 100,
@@ -237,7 +237,7 @@
     {
       "key": "NEURO",
       "label": "神經科",
-      "nodeCount": 30,
+      "nodeCount": 33,
       "dimensions": {
         "structure": {
           "score": 100,
@@ -295,7 +295,7 @@
     {
       "key": "ONCO",
       "label": "腫瘤科",
-      "nodeCount": 32,
+      "nodeCount": 34,
       "dimensions": {
         "structure": {
           "score": 100,
@@ -353,7 +353,7 @@
     {
       "key": "ECC",
       "label": "急診加護",
-      "nodeCount": 30,
+      "nodeCount": 33,
       "dimensions": {
         "structure": {
           "score": 100,
@@ -469,11 +469,11 @@
   ],
   "allIssues": [],
   "summary": {
-    "totalNodes": 249,
-    "totalEdges": 637,
-    "totalQuestions": 1785,
+    "totalNodes": 264,
+    "totalEdges": 716,
+    "totalQuestions": 1875,
     "totalCases": 74,
     "totalPaths": 40,
-    "crossSpecialtyEdges": 97
+    "crossSpecialtyEdges": 102
   }
 }

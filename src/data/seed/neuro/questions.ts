@@ -2310,4 +2310,247 @@ export const NEURO_QUESTIONS: ReviewQuestion[] = [
     explanation: '此病例高度疑似重症肌無力（MG）：運動不耐受（exertional weakness）+ 巨食道症（犬 MG 約 40% 有巨食道）。預期 RNS 結果：低頻（2-3 Hz）刺激下 CMAP 振幅遞減 > 10%（通常 > 30-50%），支持突觸後（postsynaptic）NMJ 障礙。高頻遞增為突觸前障礙（肉毒桿菌/壁蝨麻痺），不符此病例。注意：RNS 正常不能排除 MG（敏感度僅 60-70%），尤其局灶型 MG 可能 RNS 陰性。因此即使 RNS 正常仍需等待 AChR 抗體結果（金標準，敏感度 85-90%）。巨食道症不是 RNS 的禁忌症。',
     difficulty: 5, spaced_rep: true, tags: ['RNS', 'MG', '巨食道症', '臨床推理'], image_placeholder: null,
   },
+
+  // ─── Phase 4: CM/SM 題目 ───
+  // MCQ 1: CM/SM breed predisposition
+  {
+    id: 'Q-NEURO-CMSM-001', node_id: 'NEURO-L3-014', question_type: 'mcq',
+    question: '下列哪個品種的 Chiari 樣畸形（CM）影像學盛行率最高？',
+    options: [
+      '法國鬥牛犬',
+      '查理士王小獵犬（CKCS）',
+      '德國牧羊犬',
+      '拉布拉多犬',
+    ],
+    correct_answer: '查理士王小獵犬（CKCS）',
+    explanation: 'CKCS 的 CM 影像學盛行率 >95%，是所有犬種中最高的。CM 是後顱窩體積不足導致小腦疝出枕骨大孔的先天性畸形，約 50% 的 CM CKCS 會發展脊髓空洞症（SM）。其他短頭品種如 Brussels Griffon、Pomeranian 亦有報告但盛行率遠低於 CKCS。',
+    difficulty: 3, spaced_rep: true, tags: ['CM', 'SM', 'CKCS', '品種'], image_placeholder: null,
+  },
+  // MCQ 2: Phantom scratching
+  {
+    id: 'Q-NEURO-CMSM-002', node_id: 'NEURO-L3-014', question_type: 'mcq',
+    question: '脊髓空洞症（Syringomyelia）最具特異性的臨床表現為何？',
+    options: [
+      '後肢癱瘓',
+      'Phantom scratching（幻搔抓動作）',
+      '全身性癲癇發作',
+      '雙側瞳孔散大',
+    ],
+    correct_answer: 'Phantom scratching（幻搔抓動作）',
+    explanation: 'Phantom scratching 是 SM 特異性極高的臨床表現：犬在走路或興奮時，單側後肢懸空做出搔抓頸肩部的動作，但爪子未實際接觸皮膚。這是由於脊髓空洞壓迫背角（dorsal horn）導致感覺異常（neuropathic pain/paresthesia）所致。後肢癱瘓為 IVDD 或 DM 的表現，非 SM 的特徵性表現。',
+    difficulty: 3, spaced_rep: true, tags: ['SM', 'phantom scratching', '臨床表現'], image_placeholder: null,
+  },
+  // MCQ 3: CM/SM treatment
+  {
+    id: 'Q-NEURO-CMSM-003', node_id: 'NEURO-L3-014', question_type: 'mcq',
+    question: 'CM/SM 內科治療中，用於控制神經性疼痛的首選藥物為何？',
+    options: [
+      'Phenobarbital',
+      'Meloxicam',
+      'Gabapentin',
+      'Metoclopramide',
+    ],
+    correct_answer: 'Gabapentin',
+    explanation: 'Gabapentin 10-20 mg/kg PO BID-TID 是 SM 神經性疼痛（neuropathic pain）的首選藥物，透過抑制 α2δ 鈣離子通道減少疼痛訊號傳遞。NSAIDs（如 Meloxicam）對神經性疼痛效果有限。Phenobarbital 為抗癲癇藥物，非止痛用途。若 Gabapentin 反應不佳，可替換為 Pregabalin 2-4 mg/kg PO BID。',
+    difficulty: 3, spaced_rep: true, tags: ['CM/SM', 'Gabapentin', '神經性疼痛'], image_placeholder: null,
+  },
+  // MCQ 4: FMD surgery
+  {
+    id: 'Q-NEURO-CMSM-004', node_id: 'NEURO-L3-014', question_type: 'mcq',
+    question: 'CM/SM 的外科治療——枕骨大孔減壓術（FMD）的手術成功率約為多少？',
+    options: [
+      '約 30%',
+      '約 50%',
+      '約 80%',
+      '約 95%',
+    ],
+    correct_answer: '約 80%',
+    explanation: '枕骨大孔減壓術（Foramen Magnum Decompression, FMD）透過移除枕骨鱗狀部分與寰椎背弓骨片擴大後顱窩容積，約 80% 犬術後臨床症狀改善。但長期復發率約 25-50%（平均 2-3 年內），因纖維組織增生再次壓迫。適應症為內科治療反應不佳或進行性神經缺損。',
+    difficulty: 4, spaced_rep: true, tags: ['FMD', '手術', '預後'], image_placeholder: null,
+  },
+  // True/False 5: Omeprazole mechanism
+  {
+    id: 'Q-NEURO-CMSM-005', node_id: 'NEURO-L3-014', question_type: 'true_false',
+    question: 'Omeprazole 用於 CM/SM 治療的機轉是降低腦脊髓液（CSF）分泌。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '正確。Omeprazole（質子幫浦抑制劑）0.7-1 mg/kg PO SID 可抑制脈絡叢的 CSF 分泌，降低脊髓中央管內的 CSF 壓力脈衝，有助於減緩脊髓空洞的擴張。這是其用於 CM/SM 的藥理基礎，與其在消化系統中抑制胃酸分泌的機轉類似（均透過抑制 H+/K+ ATPase）。',
+    difficulty: 3, spaced_rep: true, tags: ['Omeprazole', 'CSF', '藥理'], image_placeholder: null,
+  },
+  // Case-based 6: CM/SM clinical case
+  {
+    id: 'Q-NEURO-CMSM-006', node_id: 'NEURO-L3-014', question_type: 'case_based',
+    question: '一隻 2 歲 CKCS，飼主主訴近 3 個月走路時會出現單側後肢懸空搔抓頸部的動作（但爪子未碰到皮膚），夜間偶有嚎叫。神經學檢查發現頸部觸診引發明顯疼痛反應，輕度脊柱側彎（scoliosis）。最適當的下一步診斷為何？',
+    options: [
+      '頸部 X 光',
+      '腦脊髓液分析',
+      '頭頸部 MRI',
+      '血清 AChR 抗體檢測',
+    ],
+    correct_answer: '頭頸部 MRI',
+    explanation: '此病例典型 CM/SM 表現：(1) CKCS 品種、(2) phantom scratching（幻搔抓——特異性極高）、(3) 頸部疼痛、(4) 脊柱側彎。MRI 是 CM/SM 的金標準診斷：矢狀面 T2WI 可見小腦疝出枕骨大孔 + 脊髓中央管高訊號空洞（syrinx）。X 光無法顯示脊髓空洞。CSF 分析在 CM/SM 中通常正常或輕微異常，非首選。AChR 抗體為重症肌無力的檢測，不符合此臨床表現。',
+    difficulty: 4, spaced_rep: true, tags: ['CM/SM', 'MRI', 'CKCS', '臨床推理'], image_placeholder: null,
+  },
+
+  // ─── Phase 4: NME/NLE 題目 ───
+  // MCQ 1: NME breed
+  {
+    id: 'Q-NEURO-NME-001', node_id: 'NEURO-L3-015', question_type: 'mcq',
+    question: '壞死性腦膜腦炎（NME）最早被報告且最具代表性的好發品種為何？',
+    options: [
+      'Yorkshire Terrier',
+      '巴哥犬（Pug）',
+      '法國鬥牛犬',
+      'Beagle',
+    ],
+    correct_answer: '巴哥犬（Pug）',
+    explanation: 'NME 最早被描述於巴哥犬，故又稱「Pug Dog Encephalitis」。NME 以大腦皮質灰質壞死為特徵，好發於巴哥犬（Pug）、Maltese、Chihuahua、Shih Tzu 等小型犬。與 NME 不同，NLE（壞死性白質腦炎）好發於 Yorkshire Terrier 和法國鬥牛犬，以大腦白質壞死為主。兩者均屬 MUO 的亞型。',
+    difficulty: 3, spaced_rep: true, tags: ['NME', 'Pug', '品種'], image_placeholder: null,
+  },
+  // MCQ 2: DLA association
+  {
+    id: 'Q-NEURO-NME-002', node_id: 'NEURO-L3-015', question_type: 'mcq',
+    question: '下列哪個基因位點與巴哥犬 NME 的遺傳易感性最相關？',
+    options: [
+      'SOD1 基因',
+      'MDR1 (ABCB1) 基因',
+      'DLA class II (DLA-DQB1) 基因',
+      'vWF 基因',
+    ],
+    correct_answer: 'DLA class II (DLA-DQB1) 基因',
+    explanation: '全基因體關聯研究（GWAS）顯示 DLA class II 區域的 DLA-DQB1*02601 基因型與巴哥犬 NME 的易感性高度相關。DLA（Dog Leukocyte Antigen）class II 分子參與抗原呈遞，異常的 DLA 型態可能導致免疫系統對自身腦組織產生異常反應。SOD1 與退化性脊髓病變相關，MDR1 與藥物敏感性相關，vWF 與凝血異常相關。',
+    difficulty: 4, spaced_rep: true, tags: ['NME', 'DLA', '遺傳'], image_placeholder: null,
+  },
+  // MCQ 3: Cytarabine protocol
+  {
+    id: 'Q-NEURO-NME-003', node_id: 'NEURO-L3-015', question_type: 'mcq',
+    question: 'NME/NLE 治療中 Cytarabine（Ara-C）的標準給藥方案為何？',
+    options: [
+      '200 mg/m² IV 連續輸注 48 小時',
+      '50 mg/m² SC BID × 2 天，每 3-4 週一療程',
+      '100 mg/m² PO SID 連續 5 天',
+      '25 mg/m² IM 每週一次',
+    ],
+    correct_answer: '50 mg/m² SC BID × 2 天，每 3-4 週一療程',
+    explanation: 'Cytarabine（Ara-C）用於 MUO/NME/NLE 的標準方案為 50 mg/m² SC BID × 2 天（共 4 次注射），每 3-4 週重複一個療程。劑量按體表面積（BSA）計算而非體重。SC 注射比 IV 更常用（臨床方便性）。主要副作用為骨髓抑制，nadir（最低點）約在第 7-10 天，每次療程前與 nadir 時需查 CBC。嗜中性球 < 2000/μL 時應暫停。',
+    difficulty: 4, spaced_rep: true, tags: ['Cytarabine', 'NME', '免疫抑制'], image_placeholder: null,
+  },
+  // MCQ 4: NME vs NLE MRI
+  {
+    id: 'Q-NEURO-NME-004', node_id: 'NEURO-L3-015', question_type: 'mcq',
+    question: '下列哪項 MRI 特徵最能區分 NME 與 NLE？',
+    options: [
+      'NME 病灶以非對稱性皮質灰質壞死為主，NLE 以雙側對稱性白質壞死為主',
+      'NME 有明顯對比增強，NLE 無增強',
+      'NME 僅侵犯後腦，NLE 僅侵犯前腦',
+      'NME 見 DWI 限制擴散，NLE 不見',
+    ],
+    correct_answer: 'NME 病灶以非對稱性皮質灰質壞死為主，NLE 以雙側對稱性白質壞死為主',
+    explanation: 'NME 的 MRI 特徵為 T2WI/FLAIR 多灶性非對稱性高訊號，偏好大腦皮質灰質與皮質下。NLE 則以雙側相對對稱的大腦白質高訊號為主，病灶可延伸至腦幹。兩者均可見對比增強但不一致（增強程度與壞死階段有關）。兩者均可侵犯前腦，但 NLE 更常延伸至後腦/腦幹。',
+    difficulty: 4, spaced_rep: true, tags: ['NME', 'NLE', 'MRI', '鑑別'], image_placeholder: null,
+  },
+  // True/False 5: NME prognosis
+  {
+    id: 'Q-NEURO-NME-005', node_id: 'NEURO-L3-015', question_type: 'true_false',
+    question: '壞死性腦炎（NME）未經治療的平均存活時間約為 1-3 個月。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '正確。NME 未治療的自然病程進展迅速，中位存活僅 1-3 個月。Prednisolone 單藥治療可延長至 3-6 個月。Prednisolone + Cytarabine 合併免疫抑制治療可將中位存活延長至 12-24 個月，部分犬可存活超過 2 年。不良預後因子包括嚴重意識障礙、癲癇重積狀態和多灶性腦幹病灶。',
+    difficulty: 3, spaced_rep: true, tags: ['NME', '預後', '存活'], image_placeholder: null,
+  },
+  // Case-based 6: NME clinical case
+  {
+    id: 'Q-NEURO-NME-006', node_id: 'NEURO-L3-015', question_type: 'case_based',
+    question: '一隻 2.5 歲巴哥犬，急性發作全身性癲癇 2 次，發作間期有壓頭行為（head pressing）與左側環行。神經學檢查：左側威脅反應消失（右側正常），意識輕度低下。MRI 顯示右側大腦皮質多灶性 T2/FLAIR 高訊號，非對稱分布。CSF 分析：白血球 150 cells/μL（95% 小淋巴球），蛋白 120 mg/dL。感染篩檢均陰性。最可能的診斷與最佳治療方案為何？',
+    options: [
+      'GME — Prednisolone 單藥治療',
+      'NME — Prednisolone + Cytarabine 合併免疫抑制',
+      '感染性腦炎 — 廣效抗生素',
+      '腦腫瘤 — 手術切除',
+    ],
+    correct_answer: 'NME — Prednisolone + Cytarabine 合併免疫抑制',
+    explanation: '此病例高度指向 NME：(1) 巴哥犬（NME 代表品種）、(2) 年輕成年（中位發病年齡 3 歲）、(3) 前腦徵象（癲癇 + 壓頭 + 環行 + 對側威脅反應消失）、(4) MRI 非對稱性皮質灰質病灶（NME 特徵）、(5) CSF 淋巴球性細胞增多 + 蛋白升高、(6) 感染篩檢陰性。最佳治療：Prednisolone 1-2 mg/kg PO BID + Cytarabine 50 mg/m² SC BID × 2 天 q3-4wk 的合併免疫抑制方案，可將中位存活從 1-3 個月延長至 12-24 個月。GME 通常好發於中型犬且 CSF 呈混合性細胞增多。腫瘤多見老齡犬且為單一佔位性病灶。',
+    difficulty: 5, spaced_rep: true, tags: ['NME', 'Pug', 'Cytarabine', '臨床推理'], image_placeholder: null,
+  },
+
+  // ─── Phase 4: CDS 題目 ───
+  // MCQ 1: CDS prevalence
+  {
+    id: 'Q-NEURO-CDS-001', node_id: 'NEURO-L3-016', question_type: 'mcq',
+    question: '犬認知功能障礙症候群（CDS）在 11 歲以上犬隻中的盛行率約為多少？',
+    options: [
+      '5-10%',
+      '28-68%',
+      '80-90%',
+      '< 1%',
+    ],
+    correct_answer: '28-68%',
+    explanation: 'CDS 在犬 >11 歲的盛行率約 28-68%，隨年齡增加而升高（>15 歲可超過 68%）。貓 >11 歲約 36%，>15 歲約 50%。CDS 是一個被嚴重低估的疾病——許多飼主將症狀歸因為「正常老化」而未就醫。DISHAA 評估系統可幫助系統性篩檢。',
+    difficulty: 3, spaced_rep: true, tags: ['CDS', '盛行率', '老齡'], image_placeholder: null,
+  },
+  // MCQ 2: DISHAA
+  {
+    id: 'Q-NEURO-CDS-002', node_id: 'NEURO-L3-016', question_type: 'mcq',
+    question: 'CDS 評估中的 DISHAA 系統，其中 "H" 代表什麼？',
+    options: [
+      'Hearing loss（聽覺喪失）',
+      'Housetraining（如廁訓練退化）',
+      'Hyperthermia（高體溫）',
+      'Hyperactivity（過度活躍）',
+    ],
+    correct_answer: 'Housetraining（如廁訓練退化）',
+    explanation: 'DISHAA 系統為 CDS 的標準化評估工具：D = Disorientation（迷失方向）、I = Interactions（社交互動改變）、S = Sleep-wake cycle（睡眠週期異常）、H = Housetraining（如廁訓練退化）、A = Activity（活動量改變）、A = Anxiety（焦慮增加）。如廁退化指的是已有良好訓練的犬在室內排便排尿，需排除泌尿道感染等原因。',
+    difficulty: 3, spaced_rep: true, tags: ['CDS', 'DISHAA', '評估'], image_placeholder: null,
+  },
+  // MCQ 3: Selegiline
+  {
+    id: 'Q-NEURO-CDS-003', node_id: 'NEURO-L3-016', question_type: 'mcq',
+    question: 'CDS 的一線治療藥物 Selegiline（L-deprenyl）的藥理機轉為何？',
+    options: [
+      'GABA-A 受體促效劑',
+      'MAO-B 抑制劑，增加腦部多巴胺濃度',
+      'NMDA 受體拮抗劑',
+      '乙醯膽鹼酯酶抑制劑',
+    ],
+    correct_answer: 'MAO-B 抑制劑，增加腦部多巴胺濃度',
+    explanation: 'Selegiline（L-deprenyl）0.5-1 mg/kg PO SID 是犬 CDS 的 FDA 核准一線藥物。其機轉為選擇性抑制 MAO-B（Monoamine Oxidase-B），減少多巴胺與去甲腎上腺素的分解，增加腦部多巴胺濃度。此外可能具有神經保護效果（減少自由基產生）。治療反應率約 60-70%，通常 2-4 週起效，建議至少 1 個月評估療效。早晨給藥以避免影響睡眠。',
+    difficulty: 4, spaced_rep: true, tags: ['Selegiline', 'MAO-B', 'CDS'], image_placeholder: null,
+  },
+  // MCQ 4: CDS pathology
+  {
+    id: 'Q-NEURO-CDS-004', node_id: 'NEURO-L3-016', question_type: 'mcq',
+    question: '犬 CDS 的腦部病理變化與人類哪種疾病最相似？',
+    options: [
+      '帕金森氏病（Parkinson Disease）',
+      '阿茲海默症（Alzheimer Disease）',
+      '亨丁頓舞蹈症（Huntington Disease）',
+      '多發性硬化症（Multiple Sclerosis）',
+    ],
+    correct_answer: '阿茲海默症（Alzheimer Disease）',
+    explanation: '犬 CDS 被視為人類阿茲海默症（AD）的自然動物模型。兩者共同的病理特徵為 beta-amyloid（Aβ42）蛋白沉積形成老年斑塊（senile plaques），伴隨腦血管澱粉樣變性（CAA）、神經元喪失與腦萎縮。但犬 CDS 與人類 AD 的差異在於：犬不形成 tau 蛋白的神經纖維纏結（neurofibrillary tangles），此為人類 AD 的另一項標誌性病理。',
+    difficulty: 3, spaced_rep: true, tags: ['CDS', 'Alzheimer', 'Aβ', '病理'], image_placeholder: null,
+  },
+  // True/False 5: CDS exclusion diagnosis
+  {
+    id: 'Q-NEURO-CDS-005', node_id: 'NEURO-L3-016', question_type: 'true_false',
+    question: 'CDS 為排除性診斷，診斷前必須先排除甲狀腺功能異常、腎臟病、腦腫瘤等可治療的醫學原因。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: '正確。CDS 是排除性診斷——必須先排除所有可能導致類似行為改變的可治療醫學原因。需排除的項目包括：甲狀腺功能低下（犬）/亢進（貓）、慢性腎臟病、腦腫瘤、肝腦症、慢性疼痛（骨關節炎）、視/聽覺喪失、泌尿道感染、高血壓（貓）。只有在 DISHAA 評估 ≥2 個範疇出現行為改變且排除所有可治療原因後，才能做出 CDS 的臨床診斷。',
+    difficulty: 3, spaced_rep: true, tags: ['CDS', '排除性診斷', '鑑別'], image_placeholder: null,
+  },
+  // Case-based 6: CDS clinical case
+  {
+    id: 'Q-NEURO-CDS-006', node_id: 'NEURO-L3-016', question_type: 'case_based',
+    question: '一隻 13 歲已絕育母柴犬，飼主主訴近 6 個月出現以下變化：(1) 在家中走到錯誤的門邊，卡在角落；(2) 夜間不斷遊走並嚎叫；(3) 開始在室內排尿（過去如廁訓練良好）；(4) 不再主動迎接主人回家。基礎血檢（CBC/生化/T4）正常，尿液分析與培養正常，神經學檢查無局灶性缺損，眼科檢查正常。最可能的診斷與最佳初始治療為何？',
+    options: [
+      'CDS — Selegiline 0.5-1 mg/kg PO SID + 環境管理',
+      '甲狀腺功能低下 — Levothyroxine 補充',
+      '前庭疾病 — Meclizine 止暈',
+      '泌尿道感染 — Amoxicillin-clavulanate 抗生素',
+    ],
+    correct_answer: 'CDS — Selegiline 0.5-1 mg/kg PO SID + 環境管理',
+    explanation: '此病例符合 CDS 診斷：(1) 老齡犬（13 歲），(2) DISHAA 評估 4/6 範疇異常（D = 迷路/卡角落、S = 夜間遊走嚎叫、H = 室內排尿、I = 不迎接主人），(3) 已排除代謝性原因（血檢/甲狀腺正常）、UTI（尿液培養陰性）、視覺喪失（眼科正常）、局灶性神經疾病（神經檢查正常）。最佳治療：Selegiline 0.5 mg/kg PO SID 早晨給藥 + 環境管理（固定作息、夜間小夜燈、增加便盆、益智玩具）+ 營養補充（MCT oil、SAMe 20 mg/kg）。1 個月後評估療效，無改善可增量至 1 mg/kg。夜間遊走嚴重時可加用 Trazodone 2-5 mg/kg 睡前給藥。',
+    difficulty: 4, spaced_rep: true, tags: ['CDS', 'DISHAA', 'Selegiline', '臨床推理'], image_placeholder: null,
+  },
 ];

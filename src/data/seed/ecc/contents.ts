@@ -4602,6 +4602,511 @@ const contentAcuteAbdomen: NodeContent = {
   created_at: now,
 };
 
+/** 低血糖急診 — 疾病型 */
+const contentHypoglycemia: NodeContent = {
+  id: 'CONTENT-ECC-L3-015',
+  node_id: 'ECC-L3-015',
+  version: 1,
+  summary: '低血糖急診是小動物急診中常見且可致命的代謝緊急狀況。Toy breed 幼犬（< 6 月齡）為最高風險群，其他原因包括胰島素瘤、敗血症、肝功能不全、腎上腺皮質不全和木糖醇中毒。血糖 < 60 mg/dL 即需警覺，< 40 mg/dL 為嚴重低血糖可致癲癇和腦損傷。急救以 IV dextrose 0.5 g/kg bolus（25% dextrose 2 mL/kg）為首選，之後以 2.5-5% dextrose CRI 維持。Insulinoma 相關低血糖需避免快速推注高濃度 dextrose（反彈效應）。木糖醇中毒需 48-72 小時持續監控。',
+  learning_objectives: [
+    '列出犬貓低血糖的常見原因並按急診處置優先級分類',
+    '說明 Toy breed 幼犬低血糖的病理機轉與高風險因素',
+    '描述低血糖急救的 dextrose 靜脈給藥方案與劑量計算',
+    '解釋 insulinoma 相關低血糖避免反彈效應的原則',
+    '說明木糖醇中毒致低血糖的機轉與監控時程',
+  ],
+  key_points: [
+    '血糖 < 60 mg/dL 需警覺，< 40 mg/dL 為嚴重低血糖（癲癇風險）',
+    'Toy breed 幼犬為最高風險群（肝醣儲存不足 + 高代謝率）',
+    'IV dextrose 0.5 g/kg bolus（= 25% dextrose 2 mL/kg slow IV over 5-10 min）',
+    'Insulinoma：避免快速推注 50% dextrose——刺激更多胰島素分泌造成反彈性低血糖',
+    '木糖醇中毒：15-30 分鐘內即可致嚴重低血糖，需 48-72 小時監控',
+    'Insulin:glucose ratio > 50 μU/mL per mg/dL 高度懷疑 insulinoma',
+    '長期低血糖管理：Diazoxide 5-30 mg/kg PO BID',
+  ],
+  body: `# 低血糖急診 (Hypoglycemic Emergency)
+
+## 一、病理機制 (Pathophysiology)
+
+### 血糖調節
+正常血糖維持在 60-120 mg/dL（3.3-6.7 mmol/L），由胰島素（降血糖）和反調節激素（glucagon、cortisol、epinephrine、GH）之間的平衡維持。低血糖發生時，大腦（glucose-dependent organ）最先受影響。
+
+### 低血糖分類
+| 類別 | 原因 | 機轉 |
+|------|------|------|
+| 攝入不足 | Toy breed 幼犬、飢餓 | 肝醣儲存耗盡 + 糖質新生不足 |
+| 過度消耗 | 敗血症、大型腫瘤 | 細菌/腫瘤大量消耗葡萄糖 |
+| 過度分泌胰島素 | Insulinoma、外源性胰島素過量 | 胰島素不當升高 |
+| 肝功能不全 | 肝硬化、PSS | 糖質新生和肝醣分解能力下降 |
+| 內分泌不足 | Addison's disease | Cortisol 缺乏影響糖質新生 |
+| 毒物 | 木糖醇（Xylitol） | 犬體內強效胰島素促分泌物 |
+
+### Toy Breed 幼犬特殊風險
+- 肝臟相對體重比小 → 肝醣儲存量少
+- 體表面積/體重比大 → 散熱快、代謝率高
+- 糖質新生酵素尚未完全成熟
+- 進食間隔稍長（> 4-6 小時）即可發生低血糖
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現（與血糖濃度相關）
+| 血糖範圍 | 症狀 | 機轉 |
+|---------|------|------|
+| 50-60 mg/dL | 顫抖、焦躁、心搏過速 | 腎上腺素代償反應 |
+| 40-50 mg/dL | 虛弱、共濟失調、嗜睡 | 神經低血糖（neuroglycopenia） |
+| < 40 mg/dL | 癲癇、昏迷 | 嚴重腦能量不足 |
+| < 20 mg/dL | 腦死風險 | 不可逆腦損傷 |
+
+### 診斷流程
+1. **快速血糖**（glucometer point-of-care）：確認低血糖
+2. **同步血清 insulin**（低血糖時抽血）：insulin:glucose ratio > 50 高度懷疑 insulinoma
+3. **基礎血檢**：CBC、BCS（肝功能、腎功能、電解質、cortisol）
+4. **病史和信號**：年齡、品種、用藥史（外源性 insulin）、暴露史（xylitol）
+
+### Insulin:Glucose Ratio（AIGR）
+- **公式**：Blood insulin (μU/mL) × 100 / Blood glucose (mg/dL)
+- **正常犬**：< 30
+- **> 50**：高度懷疑 insulinoma
+
+## 三、治療策略 (Treatment)
+
+### 急性低血糖急救
+1. **IV Dextrose bolus**：0.5 g/kg（= 25% dextrose 2 mL/kg 或 50% dextrose 1 mL/kg 稀釋為 25%）slow IV over 5-10 min
+2. **維持輸液**：2.5-5% dextrose in 0.9% NaCl CRI，目標血糖 80-120 mg/dL
+3. **血糖監控**：每 1-2 小時，直到穩定
+4. **癲癇控制**：Diazepam 0.5-1 mg/kg IV（如有癲癇）
+
+### Insulinoma 相關低血糖特殊處理
+- **避免快速推注 50% dextrose**：刺激腫瘤 β 細胞分泌更多胰島素 → 反彈性低血糖
+- **使用稀釋 dextrose（12.5-25%）緩慢推注**
+- **維持低濃度 dextrose CRI**
+- **長期管理**：Diazoxide 5-30 mg/kg PO BID（抑制胰島素分泌）
+
+### 木糖醇（Xylitol）中毒
+- **機轉**：犬體內 xylitol 強效刺激胰島素分泌（人類無此反應）
+- **毒性劑量**：> 0.1 g/kg 可致低血糖，> 0.5 g/kg 可致急性肝衰竭
+- **時程**：攝入後 15-30 分鐘即可出現低血糖
+- **監控**：48-72 小時持續血糖和肝指數監控
+
+### Toy Breed 幼犬
+- IV dextrose 穩定後，儘早開始頻繁小餐
+- 高蛋白質飲食 + 每 4-6 小時進食
+- 飼主教育：避免長時間禁食
+
+## 四、鑑別診斷 (Differential Diagnosis)
+
+| 鑑別 | 關鍵區分 |
+|------|---------|
+| Insulinoma | 中老年犬、反覆發作、insulin:glucose ratio > 50 |
+| 敗血症 | 發燒（或低體溫）、白血球異常、明確感染源 |
+| 肝功能不全 | 低白蛋白、低 BUN、膽酸升高 |
+| Addison's disease | 低鈉高鉀、Na:K < 27:1 |
+| 醫源性 | 糖尿病犬使用胰島素、劑量調整後 |
+| 木糖醇中毒 | 暴露史（口香糖、無糖食品）、急性發作 |
+
+## 五、預後 (Prognosis)
+
+- Toy breed 幼犬：糾正低血糖後預後極佳，隨年齡增長風險下降
+- Insulinoma：手術後 MST 12-18 個月（見 ONCO-L3-015）
+- 木糖醇中毒：僅低血糖者預後良好，合併肝衰竭者預後差
+- 敗血症相關：取決於基礎疾病治療
+
+[圖片:低血糖急診處置流程圖——血糖確認 → dextrose bolus → 病因鑑別 → 維持治療]`,
+  clinical_pearl: '急診最容易犯的錯：中老年犬因「癲癇」送來，直接給 Diazepam 抗癲癇而沒有先測血糖！測血糖只需 5 秒鐘和一滴血，是低成本高收益的急診 SOP 第一步。任何精神異常、虛弱、癲癇的犬貓都要先排除低血糖。\n\n木糖醇中毒是台灣越來越常見的中毒——因為含木糖醇的口香糖、無糖糖果和烘焙食品越來越多。犬僅需吃 1-2 顆含木糖醇的口香糖就可能致命性低血糖。一定要問暴露史！\n\n【實務小技巧】如果沒有靜脈通路（小型幼犬血管難找），可以用 50% dextrose 稀釋後滴在舌下/牙齦（buccal absorption），或骨內注射（IO）給予 dextrose。',
+  common_mistakes: [
+    '癲癇犬未先測血糖就直接給抗癲癇藥——低血糖是可快速矯正的癲癇原因',
+    '快速推注 50% dextrose 給 insulinoma 患犬——造成反彈性低血糖更危險',
+    '糾正低血糖後未查找病因——低血糖是症狀不是診斷，必須找到根本原因',
+    '木糖醇中毒血糖正常就安心出院——肝毒性可在 12-72 小時後出現，需持續監控',
+    'Toy breed 幼犬低血糖後未教育飼主——未強調頻繁餵食的重要性導致反覆就診',
+  ],
+  disease_data: {
+    signalment: 'Toy breed 幼犬（Chihuahua、Yorkshire Terrier、Pomeranian）< 6 月齡最高風險。Insulinoma：中老年大型犬。木糖醇中毒：不分品種年齡。',
+    etiology: 'Toy breed 幼犬：肝醣儲存不足 + 高代謝率 + 進食不足。Insulinoma：β 細胞腫瘤不受控分泌胰島素。木糖醇：強效胰島素促分泌物。其他：敗血症、肝病、Addison、外源性胰島素過量。',
+    pathogenesis: '血糖下降 → 腦細胞能量不足（大腦無法使用替代能源）→ 腎上腺素代償反應（顫抖、心搏過速）→ 進一步下降則神經低血糖症狀（虛弱、共濟失調）→ 嚴重時癲癇、昏迷 → 持續低血糖可致不可逆腦損傷。',
+    clinical_signs: [
+      { sign: '顫抖/焦躁', category: 'primary', description: '腎上腺素代償反應，血糖 50-60 mg/dL' },
+      { sign: '虛弱/共濟失調', category: 'primary', description: '神經低血糖，血糖 40-50 mg/dL' },
+      { sign: '癲癇', category: 'primary', description: '嚴重低血糖 < 40 mg/dL' },
+      { sign: '昏迷', category: 'primary', description: '極嚴重低血糖 < 30 mg/dL' },
+      { sign: '心搏過速', category: 'secondary', description: '交感代償反應' },
+      { sign: '低體溫', category: 'secondary', description: 'Toy breed 幼犬尤其明顯' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'Insulinoma', key_differentiator: '中老年犬、反覆發作、低血糖時 insulin 不適當升高、insulin:glucose ratio > 50' },
+      { condition: '敗血症', key_differentiator: '發燒或低體溫、白血球異常（左移）、明確感染源' },
+      { condition: '肝功能不全/PSS', key_differentiator: '低白蛋白、低 BUN、膽酸升高、肝萎縮' },
+      { condition: 'Addison\'s disease', key_differentiator: '低鈉高鉀、Na:K < 27:1、ACTH 刺激試驗異常' },
+      { condition: '木糖醇中毒', key_differentiator: '暴露史明確、急性發作（15-30 分鐘內）、可續發肝衰竭' },
+    ],
+    diagnostic_workup: '1. 快速血糖（glucometer）→ 2. 低血糖時同步抽血測 insulin（送檢前先治療！）→ 3. CBC/BCS + 電解質 → 4. 肝功能（膽酸、NH3）→ 5. Cortisol（排除 Addison）→ 6. 暴露史詢問（木糖醇、insulin 注射史）',
+    treatment_protocol: '【急性處理】25% dextrose 2 mL/kg slow IV bolus（5-10 min）→ 2.5-5% dextrose CRI → 每 1-2 小時血糖監控 → 癲癇時 Diazepam 0.5 mg/kg IV。【Insulinoma】避免快速 50% dextrose，用稀釋 dextrose 緩推。長期：Diazoxide 5-30 mg/kg PO BID。【木糖醇】IV dextrose + 48-72 小時肝指數監控。【Toy breed 幼犬】穩定後儘早頻繁小餐。',
+    prognosis: 'Toy breed 幼犬：糾正後預後極佳。Insulinoma：手術後 MST 12-18 個月。木糖醇僅低血糖：預後良好。木糖醇合併肝衰竭：預後差。敗血症相關：取決於基礎疾病。',
+    monitoring: '急性期：每 1-2 小時血糖直到穩定 > 80 mg/dL × 12 小時。木糖醇：48-72 小時肝指數（ALT/ALP）+ 血糖。Insulinoma：見 ONCO-L3-015 監控計畫。',
+    owner_communication: '您的狗狗血糖過低，這可能造成腦部損傷和癲癇。我們正在靜脈給予糖分來穩定血糖。接下來需要找出低血糖的原因（幼犬進食不足/腫瘤/中毒等）。如果是幼犬，請務必每 4-6 小時餵食，不要讓牠長時間空腹。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床表現表格後', type: 'flowchart', description: '低血糖急診處置流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '治療段落後', type: 'drug_calculator', description: 'Dextrose 劑量計算器（輸入體重和目標濃度）' },
+  ],
+  drug_api_links: ['Dextrose', 'Diazoxide', 'Diazepam'],
+  references: [
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Hypoglycemia.', relevance: 'ECC 核心教材低血糖章節' },
+    { type: 'journal', citation: 'Koenig A. Endocrine emergencies in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(4):869-897.', relevance: '犬貓內分泌急診綜述' },
+    { type: 'journal', citation: 'Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. JAVMA. 2006;229(7):1113-1117.', relevance: '木糖醇致犬急性肝衰竭經典報告' },
+    { type: 'guideline', citation: 'ASPCA Animal Poison Control Center. Xylitol Toxicosis in Dogs — Clinical Management Guidelines, 2023.', relevance: '木糖醇中毒處置指南' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 艾迪森危象 — 疾病型 */
+const contentAddisonianCrisis: NodeContent = {
+  id: 'CONTENT-ECC-L3-016',
+  node_id: 'ECC-L3-016',
+  version: 1,
+  summary: '艾迪森危象（Addisonian Crisis）是腎上腺皮質功能不全（Hypoadrenocorticism）的急性失代償表現，為可致命的內分泌急診。典型電解質三聯徵為低鈉（< 140 mEq/L）、高鉀（> 5.5 mEq/L）、Na:K 比值 < 27:1。臨床表現包括低血壓休克、心搏過緩（高鉀致心律不整）、低體溫、低血糖。急救以 shock-dose 等張晶體液（0.9% NaCl）復甦為首要步驟。確診前可給 Dexamethasone 0.5-1 mg/kg IV（不干擾後續 ACTH 刺激試驗）。長期維持以 DOCP（Percorten-V）0.02 mL/kg IM q25d + Prednisone 為標準方案。',
+  learning_objectives: [
+    '辨識艾迪森危象的電解質三聯徵及其心電圖表現',
+    '說明 shock-dose crystalloid 復甦在艾迪森危象的給藥方案',
+    '解釋為何 Dexamethasone 優於 Hydrocortisone 作為確診前的類固醇選擇',
+    '描述 ACTH 刺激試驗在急診情境的執行時機與判讀',
+    '列出 DOCP 長期維持治療的劑量與監控計畫',
+  ],
+  key_points: [
+    '電解質三聯徵：低鈉（< 140）、高鉀（> 5.5）、Na:K < 27:1',
+    '高鉀致心臟毒性：ECG 可見高尖 T 波、P 波消失、QRS 加寬、心室纖維顫動',
+    '急救首選：0.9% NaCl（不含鉀！）shock-dose 20-30 mL/kg IV bolus（犬），10-15 mL/kg（貓）',
+    '確診前類固醇：Dexamethasone SP 0.5-1 mg/kg IV（不干擾 ACTH stim test）',
+    'ACTH 刺激試驗：基礎 cortisol + ACTH 注射後 1 小時 cortisol，兩者均 < 2 μg/dL 確診',
+    '長期維持：DOCP 2.2 mg/kg IM q25d + Prednisone 0.1-0.2 mg/kg PO SID',
+    '「偉大的偽裝者」（Great Pretender）：症狀非特異性，常被誤診為腎衰竭或胃腸炎',
+  ],
+  body: `# 艾迪森危象 (Addisonian Crisis)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+腎上腺皮質功能不全（Hypoadrenocorticism / Addison's disease）分為原發性（腎上腺破壞，最常見）和繼發性（ACTH 缺乏）。艾迪森危象是原發性 Addison 的急性失代償表現，涉及糖皮質素（cortisol）和鹽皮質素（aldosterone）同時缺乏。
+
+### 鹽皮質素缺乏 → 電解質危機
+- Aldosterone 缺乏 → 腎臟遠曲小管無法保鈉排鉀 → **低鈉高鉀**
+- 低鈉 → 低滲透壓 → 水分跟隨鈉流失 → 低血容量 → 休克
+- 高鉀 → 細胞膜極化異常 → **心臟傳導障礙** → 致命性心律不整
+
+### 糖皮質素缺乏
+- Cortisol 缺乏 → 糖質新生不足 → **低血糖**
+- 血管對兒茶酚胺反應性降低 → **低血壓**（即使大量輸液仍可能低血壓）
+- 腸胃道黏膜防禦力下降 → 嘔吐、腹瀉、血便
+
+### 典型患犬
+- 年輕至中年母犬為主（70% 雌性）
+- Standard Poodle、Portuguese Water Dog、Nova Scotia Duck Tolling Retriever 等品種偏好
+- 常有反覆就診的「waxing and waning」病史（時好時壞）
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 臨床表現
+| 系統 | 表現 | 機轉 |
+|------|------|------|
+| 循環 | 低血壓、脈搏微弱、CRT 延長 | 低血容量 + cortisol 缺乏 |
+| 心臟 | 心搏過緩（高鉀） | 高鉀致心臟傳導障礙 |
+| 消化 | 嘔吐、腹瀉（可血便） | Cortisol 缺乏致腸道損傷 |
+| 神經 | 虛弱、嗜睡、collapse | 低血壓 + 低血糖 |
+| 體溫 | 低體溫 | 代謝率降低 |
+
+### 電解質三聯徵
+- **Na < 140 mEq/L**（常見 < 130）
+- **K > 5.5 mEq/L**（常見 > 7.0）
+- **Na:K < 27:1**（正常 27-40:1）
+
+### 高鉀心電圖變化（按嚴重程度遞進）
+| K 濃度 | ECG 變化 |
+|--------|---------|
+| 5.5-6.5 | 高尖 T 波（peaked T waves） |
+| 6.5-7.5 | P 波振幅降低、PR 延長 |
+| 7.5-8.5 | P 波消失、QRS 加寬 |
+| > 8.5 | Sine wave pattern → VF → 心臟停止 |
+
+### 診斷流程
+1. **電解質**：確認低鈉高鉀、Na:K < 27:1
+2. **基礎 cortisol**：< 2 μg/dL 高度懷疑（> 2 μg/dL 可排除）
+3. **ACTH 刺激試驗**：確診金標準
+   - 基礎 cortisol + cosyntropin 5 μg/kg IV → 1 小時後 cortisol
+   - 兩者均 < 2 μg/dL = 確診 Addison's disease
+4. **注意**：先給 Dexamethasone 治療（不干擾 ACTH stim），不要等結果才治療！
+
+### 容易誤診的情況
+- 誤診為急性腎衰竭（Azotemia 為腎前性，輸液後改善）
+- 誤診為急性胃腸炎
+- 誤診為心臟疾病（因心搏過緩）
+- 「偉大的偽裝者」（Great Pretender）：症狀非特異性
+
+## 三、治療策略 (Treatment)
+
+### Phase 1：急性穩定（前 1-2 小時）
+1. **IV 液體復甦**：0.9% NaCl（**不含鉀的晶體液！**），shock-dose：
+   - 犬：20-30 mL/kg IV bolus，每 15-20 分鐘評估，可重複至 80-90 mL/kg/hr
+   - 貓：10-15 mL/kg IV bolus
+2. **類固醇**：Dexamethasone SP 0.5-1 mg/kg IV（確診前首選——不干擾 ACTH stim）
+3. **高鉀處理**（K > 7 或有 ECG 變化時）：
+   - 10% Calcium gluconate 0.5-1.5 mL/kg slow IV over 10-15 min（保護心肌，監控 ECG）
+   - Regular insulin 0.5 U/kg IV + Dextrose 2 g per unit insulin（將 K 移入細胞）
+4. **低血糖**：25% dextrose bolus 如前述
+
+### Phase 2：確診與過渡（2-24 小時）
+- 執行 ACTH 刺激試驗（如尚未做）
+- 持續 0.9% NaCl 維持輸液
+- 監控電解質每 4-6 小時
+- 轉換為 Hydrocortisone（同時有糖皮質和鹽皮質活性）
+
+### Phase 3：長期維持
+- **DOCP（Desoxycorticosterone pivalate, Percorten-V）**：2.2 mg/kg IM 或 SC q25 天
+- **Prednisone**：0.1-0.2 mg/kg PO SID（糖皮質素補充）
+- 或 **Fludrocortisone（Florinef）**：0.01-0.02 mg/kg PO BID（同時提供鹽皮質和糖皮質活性）
+
+## 四、預後 (Prognosis)
+
+- 急性危象經適當治療後存活率 > 90%
+- 長期管理下犬隻可有正常壽命和生活品質
+- 需要終身藥物治療和定期電解質監控
+- 危險期：初次就診未被識別 → 延誤治療
+
+[圖片:艾迪森危象急救流程圖——電解質確認 → 0.9% NaCl bolus → Dexamethasone → ACTH stim → 長期DOCP]`,
+  clinical_pearl: '艾迪森的經典口訣：「年輕母犬 + 反覆嘔吐腹瀉 + 低鈉高鉀 + 腎前性 Azotemia」= Addison until proven otherwise。\n\n急診的黃金法則：看到 Na:K < 27:1，腦中就要響起 Addison 警鈴。但注意——約 10-30% 的 Addison 犬是「atypical」型（僅有 cortisol 缺乏，電解質正常），這些更容易漏診。\n\n類固醇選擇的實務重點：Dexamethasone 不會在 ACTH stim test 中產生交叉反應（不同於 Hydrocortisone/Prednisolone），所以可以先治療後確診——千萬不要因為「想先確診」而延誤治療！\n\n台灣臨床注意：DOCP（Percorten-V）在台灣取得可能受限，部分獸醫院使用 Fludrocortisone（Florinef）作為替代。',
+  common_mistakes: [
+    '將腎前性 Azotemia 誤判為原發性腎衰竭而給予含鉀輸液——Addison 犬的 BUN/Cre 升高是因為低灌流，輸 0.9% NaCl 後即改善',
+    '使用含鉀輸液（LRS）治療 Addison 危象——高鉀患者絕對禁用含鉀液！必須用 0.9% NaCl',
+    '為了等 ACTH stim 結果而延誤類固醇治療——先給 Dexamethasone 穩定，不影響後續確診',
+    '忽略心電圖監控——高鉀可在數分鐘內造成致命性心律不整',
+    '誤將 atypical Addison（電解質正常）視為單純胃腸炎——反覆就診的年輕犬要考慮 baseline cortisol 篩檢',
+  ],
+  disease_data: {
+    signalment: '犬為主（貓極罕見）。年輕至中年（中位年齡 4-5 歲，範圍 4 個月-14 歲）。雌犬約 70%。Standard Poodle、Portuguese Water Dog、West Highland White Terrier、Bearded Collie 等品種偏好。',
+    etiology: '原發性（95%）：免疫介導性腎上腺破壞（最常見）、醫源性（Trilostane/Mitotane 過量）、肉芽腫性、感染性。繼發性（5%）：腦下垂體疾病致 ACTH 缺乏。',
+    pathogenesis: '腎上腺皮質破壞 > 90% → cortisol + aldosterone 同時缺乏 → 低鈉高鉀 + 低血壓 + 低血糖 → 循環衰竭 → 休克。慢性代償期間：反覆輕微症狀（嘔吐、食慾差、虛弱）→ 壓力事件（手術、寄宿、生病）觸發急性失代償 = 艾迪森危象。',
+    clinical_signs: [
+      { sign: '虛弱/collapse', category: 'primary', description: '低血壓和低血糖引起' },
+      { sign: '嘔吐/腹瀉', category: 'primary', description: 'Cortisol 缺乏致腸道功能障礙，可見血便' },
+      { sign: '心搏過緩', category: 'primary', description: '高鉀致心臟傳導障礙' },
+      { sign: '低體溫', category: 'secondary', description: '代謝率降低和灌流不足' },
+      { sign: '脫水', category: 'secondary', description: '鈉和水分大量流失' },
+      { sign: 'Waxing and waning 病史', category: 'secondary', description: '反覆就診、症狀時好時壞是 Addison 的特徵' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '急性腎衰竭', key_differentiator: 'Addison 的 Azotemia 為腎前性（輸液後改善），真正腎衰竭對輸液反應差' },
+      { condition: '急性胃腸炎/HGE', key_differentiator: '胃腸炎通常電解質正常或僅輕度異常，Na:K 比值正常' },
+      { condition: '心臟疾病', key_differentiator: '心搏過緩可誤判為心臟疾病，但心臟病通常 K 正常' },
+      { condition: '敗血症', key_differentiator: '敗血症可有低血壓和低體溫，但電解質模式不同' },
+      { condition: '低血糖（其他原因）', key_differentiator: 'Addison 低血糖通常伴隨電解質三聯徵' },
+    ],
+    diagnostic_workup: '1. 電解質（Na, K, Na:K ratio）→ 2. 基礎 cortisol（< 2 μg/dL 高度懷疑）→ 3. ACTH 刺激試驗（確診金標準）→ 4. CBC/BCS（腎前性 Azotemia、嗜酸球增多、淋巴球增多——缺乏 stress leukogram 是線索）→ 5. ECG（高鉀心電圖變化）→ 6. 血糖',
+    treatment_protocol: '【急性】0.9% NaCl shock-dose（犬 20-30 mL/kg bolus）→ Dexamethasone SP 0.5-1 mg/kg IV → 高鉀時 10% Calcium gluconate 0.5-1.5 mL/kg slow IV → Regular insulin 0.5 U/kg IV + Dextrose 補充 → 每 4-6 小時監控電解質。【長期】DOCP 2.2 mg/kg IM q25d + Prednisone 0.1-0.2 mg/kg PO SID。替代：Fludrocortisone 0.01-0.02 mg/kg PO BID。',
+    prognosis: '急性危象經適當治療存活率 > 90%。長期管理下犬隻可有正常壽命和生活品質。需要終身藥物治療。DOCP 劑量可能需根據電解質調整。',
+    monitoring: '急性期：每 2-4 小時電解質 + ECG 直到 K 正常化。DOCP 治療後：第 14 天和第 25 天查電解質（調整劑量和間隔）→ 穩定後每 3-6 個月追蹤。Prednisone 劑量根據臨床症狀調整（最低有效劑量）。',
+    owner_communication: '您的狗狗有腎上腺功能不全（艾迪森病），這是可以治療的慢性疾病。急性危象很危險，但經治療後通常恢復良好。需要終身每月注射 DOCP + 每日口服 Prednisone。壓力事件前（寄宿、手術）可能需要增加 Prednisone 劑量。定期回診驗電解質很重要。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'ECG 變化表格後', type: 'waveform', description: '高鉀心電圖變化階梯圖（正常 → peaked T → 寬 QRS → sine wave）' },
+    { position: '治療段落後', type: 'flowchart', description: '艾迪森危象急救流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '液體治療段落後', type: 'drug_calculator', description: '0.9% NaCl shock-dose 計算器（輸入體重計算 bolus 量）' },
+  ],
+  drug_api_links: ['Dexamethasone', 'DOCP', 'Fludrocortisone', 'Prednisone', 'Calcium gluconate'],
+  references: [
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Adrenal Emergencies.', relevance: 'ECC 核心教材腎上腺急診章節' },
+    { type: 'journal', citation: 'Klein SC, Peterson ME. Canine hypoadrenocorticism: Part I & II. Can Vet J. 2010;51(1):63-69 & 51(2):179-184.', relevance: '犬 Addison disease 完整綜述（兩部分）' },
+    { type: 'journal', citation: 'Thompson AL, Scott-Moncrieff JC, Anderson JD. Comparison of classic hypoadrenocorticism with glucocorticoid-deficient hypoadrenocorticism in dogs. JVECC. 2007;17(2):197-203.', relevance: 'Typical vs Atypical Addison 比較研究' },
+    { type: 'guideline', citation: 'Lathan P. Hypoadrenocorticism. In: Feldman EC, et al., eds. Canine & Feline Endocrinology, 4th ed. Elsevier, 2015:485-520.', relevance: '犬貓內分泌教科書 Addison 章節' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 輸血反應 — 疾病型 */
+const contentTransfusionReactions: NodeContent = {
+  id: 'CONTENT-ECC-L3-017',
+  node_id: 'ECC-L3-017',
+  version: 1,
+  summary: '輸血反應（Transfusion Reactions）是輸血醫學中不可忽視的併發症，分為免疫性和非免疫性。犬最重要的血型為 DEA 1.1（陽性約 40-45%），DEA 1.1 陰性犬在第二次接受 DEA 1.1 陽性血時會發生急性溶血反應。貓的血型系統更危險——B 型貓天生具有高效價 anti-A 抗體，即使首次輸入 A 型血也可致致命性急性溶血。因此貓的任何輸血前必須做血型鑑定和交叉配血。處理以立即停止輸血、抗組織胺、類固醇和積極液體治療為主。',
+  learning_objectives: [
+    '比較犬（DEA 系統）和貓（AB 系統）血型的臨床意義差異',
+    '說明為何 B 型貓首次輸入 A 型血即可致命',
+    '分類急性溶血性、發熱非溶血性和過敏性輸血反應的臨床表現',
+    '描述輸血反應的急診處置步驟',
+    '說明交叉配血（crossmatch）的適應症和執行方式',
+  ],
+  key_points: [
+    '犬 DEA 1.1：最重要的臨床血型，DEA 1.1 陰性犬第二次輸 DEA 1.1 陽性血 → 急性溶血',
+    '貓 AB 系統：B 型貓有天然高效價 anti-A 抗體，首次輸 A 型血即可致命',
+    '貓任何輸血前必須做血型鑑定 + 交叉配血',
+    '犬首次輸血可不做交叉配血（無天然 anti-DEA 1.1），但第二次以後必須',
+    '急性溶血性反應：發燒、震顫、嘔吐、血紅蛋白尿、DIC → 立即停止輸血',
+    '發熱非溶血性反應（FNHTR）：最常見的輸血反應（白血球抗體引起）',
+    '過敏性反應：蕁麻疹、面部水腫、罕見過敏性休克',
+  ],
+  body: `# 輸血反應 (Transfusion Reactions)
+
+## 一、血型系統 (Blood Type Systems)
+
+### 犬血型（DEA 系統）
+- **DEA 1.1**：臨床最重要的血型（Dog Erythrocyte Antigen 1.1）
+  - DEA 1.1 陽性：約 40-45%（台灣犬隻比例類似）
+  - DEA 1.1 陰性：約 55-60% → 「理想全效供血犬」
+- **天然抗體**：犬對 DEA 1.1 **無天然抗體** → 首次輸血通常安全
+- **致敏**：DEA 1.1 陰性犬接受 DEA 1.1 陽性血後產生 anti-DEA 1.1 抗體 → 第二次輸血致急性溶血（半衰期縮短至 < 12 小時）
+- 其他 DEA 型（3, 4, 5, 7）：臨床意義較低
+- **Dal 抗原**：Dalmatian 特有血型系統，需注意
+
+### 貓血型（AB 系統）
+- **A 型**：約 95-99%（台灣貓大多為 A 型）
+- **B 型**：約 1-5%（英短、波斯等品種較高比例 10-25%）
+- **AB 型**：極罕見
+- **關鍵差異**：B 型貓**天生具有高效價 anti-A 抗體**
+  - B 型貓首次輸入 A 型血 → 嚴重急性溶血反應（可致命！）
+  - A 型貓有低效價 anti-B 抗體 → 輸 B 型血致輕度溶血（RBC 半衰期縮短至 2 天）
+- **Mik 抗原**：近年發現的貓新血型系統
+
+## 二、輸血反應分類 (Classification)
+
+### 免疫性反應
+| 類型 | 時程 | 機轉 | 臨床表現 |
+|------|------|------|---------|
+| **急性溶血性（AHTR）** | 數分鐘-數小時 | 抗體介導 RBC 破壞（type II 超敏反應） | 發燒、震顫、嘔吐、血紅蛋白血症/尿、低血壓、DIC |
+| **延遲性溶血性（DHTR）** | 2-21 天 | 記憶性免疫反應 | PCV 未預期下降、黃疸、Coombs 陽性 |
+| **發熱非溶血性（FNHTR）** | 1-6 小時 | 白血球抗體或細胞激素 | 僅發燒（體溫升高 > 1°C），無溶血 |
+| **過敏性** | 數分鐘-數小時 | 對血漿蛋白的 type I 超敏反應 | 蕁麻疹、面部水腫、搔癢、罕見過敏性休克 |
+| **輸血相關急性肺損傷（TRALI）** | 1-6 小時 | 供血者抗白血球抗體 | 急性呼吸窘迫、非心因性肺水腫 |
+
+### 非免疫性反應
+| 類型 | 原因 | 臨床表現 |
+|------|------|---------|
+| **體積過負荷（TACO）** | 輸注速度過快/量過多 | 呼吸困難、肺水腫（尤其貓和心臟病犬） |
+| **細菌污染** | 血品儲存/處理不當 | 敗血症、高燒、休克 |
+| **低體溫** | 未回溫血品 | 體溫下降 |
+| **枸櫞酸毒性** | 大量輸血中枸櫞酸螯合 Ca²⁺ | 低鈣血症、心搏過緩（大量快速輸血時） |
+
+## 三、交叉配血 (Crossmatch)
+
+### 適應症
+- **犬**：第二次以上輸血、距前次輸血 > 4 天、輸血史不明
+- **貓**：**任何輸血前都必須做**（因 B 型貓天然抗體致命風險）
+- 急診無法做交叉配血時：至少做血型鑑定
+
+### 主/次側交叉配血
+- **主側（Major crossmatch）**：受血者血清 + 供血者 RBC → 檢查受血者有無 anti-供血者 RBC 抗體
+- **次側（Minor crossmatch）**：供血者血清 + 受血者 RBC → 檢查供血者有無 anti-受血者 RBC 抗體
+- 判讀：凝集或溶血 = 不相容 → 禁止輸血
+
+## 四、治療策略 (Treatment)
+
+### 急性溶血性輸血反應（AHTR）處理
+1. **立即停止輸血**（最重要的第一步！）
+2. **維持 IV 通路**——更換輸液管路，開始 0.9% NaCl
+3. **積極液體治療**：2-3 倍維持速率（維持腎灌流，預防血紅蛋白腎病）
+4. **Diphenhydramine**：1-2 mg/kg IM
+5. **Dexamethasone**：0.5-1 mg/kg IV（嚴重時）
+6. **Epinephrine**：0.01-0.02 mg/kg IV/IM（過敏性休克時）
+7. **DIC 監控與處理**：PT/aPTT、FDP/D-dimer
+8. **尿量監控**：目標 > 1-2 mL/kg/hr（預防腎衰竭）
+
+### FNHTR（發熱非溶血性）
+- 暫時減速或暫停輸血
+- 確認不是急性溶血（檢查血漿顏色、PCV 變化）
+- Diphenhydramine 1-2 mg/kg IM
+- 發燒消退後可考慮以較慢速度恢復輸注
+- 下次輸血：使用 leukoreduced 血品
+
+### 過敏性反應
+- 暫停輸血
+- Diphenhydramine 1-2 mg/kg IM
+- 輕微蕁麻疹/面部水腫：症狀控制後可恢復輸注
+- 嚴重過敏性休克：Epinephrine + 液體復甦
+
+### TACO（體積過負荷）
+- 停止或大幅減速輸血
+- Furosemide 1-2 mg/kg IV
+- 氧氣支持
+- 貓和心臟病犬輸血速率不超過 3-5 mL/kg/hr
+
+## 五、預防 (Prevention)
+
+| 措施 | 說明 |
+|------|------|
+| 血型鑑定 | 犬：DEA 1.1 型；貓：AB 型 |
+| 交叉配血 | 犬第二次以上必做；貓每次必做 |
+| 輸血速率控制 | 前 15-30 分鐘慢速（0.5-1 mL/kg/hr）觀察 |
+| 監控 vital signs | 每 15-30 分鐘：體溫、HR、RR、黏膜顏色 |
+| 血品品管 | 儲存溫度、保存期限、無菌操作 |
+
+## 六、預後 (Prognosis)
+
+- FNHTR 和輕度過敏反應：預後極佳
+- AHTR 早期識別並處理：存活率 > 70%
+- AHTR 合併 DIC：預後差
+- 貓 B 型輸 A 型血（未鑑定）：死亡率極高
+
+[圖片:輸血反應分類與處置決策樹——免疫性 vs 非免疫性 → 各亞型對應處置]`,
+  clinical_pearl: '「前 15 分鐘」是輸血反應的黃金監控期——大多數急性溶血反應在輸血開始後 15 分鐘內就會出現徵兆。所以任何輸血都要在前 15-30 分鐘以低速（0.5-1 mL/kg/hr）輸注，同時密切監控體溫、心率和呼吸頻率。\n\n貓的輸血是比犬更危險的操作——記住一個簡單規則：「貓每次輸血前一定要做血型 + 交叉配血，沒有例外」。B 型貓看起來很少，但如果你不篩檢就永遠不知道，而給 B 型貓輸 A 型血可以在幾分鐘內致命。\n\n如何快速判斷是溶血還是 FNHTR？輸血中發燒時，抽一管血離心——如果血漿（或血清）呈粉紅色/紅色 = 血管內溶血 = AHTR！如果血漿透明 = 可能只是 FNHTR。',
+  common_mistakes: [
+    '犬首次輸血就大意不做任何血型鑑定——雖然犬首次輸血通常安全，但不做紀錄會讓第二次輸血更危險',
+    '貓未做血型就輸血——B 型貓首次輸 A 型血即可致命，這是不可原諒的疏忽',
+    '輸血反應時只是減速而不停止——急性溶血性反應必須立即停止輸血',
+    '將 FNHTR 誤判為 AHTR 而永久放棄輸血——FNHTR 是最常見的反應，下次用 leukoreduced 血品即可',
+    '忘記在輸血後監控尿量——AHTR 的血紅蛋白可堵塞腎小管導致急性腎損傷',
+  ],
+  disease_data: {
+    signalment: '所有犬貓均有風險。犬：DEA 1.1 陰性犬接受第二次 DEA 1.1 陽性血風險最高。貓：B 型貓（英短、波斯等品種比例較高）風險最高。',
+    etiology: '免疫性：抗紅血球抗體（天然或致敏後產生）介導的 RBC 破壞。非免疫性：輸注過量、血品污染、溫度異常、枸櫞酸毒性。',
+    pathogenesis: 'AHTR：抗體結合供血者 RBC → 補體活化 → 血管內溶血 → 游離血紅蛋白 → 腎小管損傷 + DIC 啟動 → 腎衰竭 + 出血。FNHTR：受血者白血球抗體與供血者殘留白血球反應 → 細胞激素釋放 → 發燒。過敏性：IgE 介導對血漿蛋白的 type I 超敏反應。',
+    clinical_signs: [
+      { sign: '發燒（體溫升高 > 1°C）', category: 'primary', description: '所有免疫性反應均可見，需鑑別 AHTR vs FNHTR' },
+      { sign: '震顫/不安', category: 'primary', description: '急性溶血反應的早期徵兆' },
+      { sign: '嘔吐', category: 'primary', description: '急性溶血反應中常見' },
+      { sign: '血紅蛋白尿（紅棕色尿）', category: 'primary', description: '血管內溶血的確定性證據' },
+      { sign: '蕁麻疹/面部水腫', category: 'secondary', description: '過敏性反應' },
+      { sign: '呼吸急促/困難', category: 'secondary', description: 'TRALI 或 TACO' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'IMHA（自體免疫溶血）', key_differentiator: '非輸血相關，Coombs 陽性，球形紅血球增多' },
+      { condition: '敗血症', key_differentiator: '非輸血時間點，有明確感染源' },
+      { condition: '過敏性休克（非輸血）', key_differentiator: '與輸血時間無關，其他過敏原暴露史' },
+      { condition: 'DIC（其他原因）', key_differentiator: '基礎疾病引起，非輸血直接導致' },
+    ],
+    diagnostic_workup: '1. 立即停止輸血 → 2. 抽血離心看血漿顏色（溶血判斷）→ 3. PCV/TP（與輸血前比較）→ 4. 尿液顏色（血紅蛋白尿）→ 5. 體溫趨勢 → 6. PT/aPTT、FDP/D-dimer（DIC 評估）→ 7. Coombs test → 8. 供血者血品檢查（細菌培養）',
+    treatment_protocol: '【AHTR】立即停止輸血 → 0.9% NaCl 2-3 倍維持速率 → Diphenhydramine 1-2 mg/kg IM → Dexamethasone 0.5-1 mg/kg IV → 尿量監控 > 1-2 mL/kg/hr → DIC 處理。【FNHTR】暫停 → 確認非溶血 → Diphenhydramine → 可慢速恢復。【過敏】暫停 → Diphenhydramine → 輕微可恢復 / 嚴重：Epinephrine 0.01 mg/kg IV。【TACO】停止 + Furosemide 1-2 mg/kg IV。',
+    prognosis: 'FNHTR 和輕度過敏：預後極佳。AHTR 早期處理：存活率 > 70%。AHTR + DIC：預後差。貓 B→A 不相容輸血：死亡率極高。TRALI：支持治療後多數可恢復。',
+    monitoring: '輸血中：每 15 分鐘（前 1 小時）和每 30 分鐘（之後）監控 T、HR、RR、黏膜。AHTR 後：每 2-4 小時 PCV/TP、尿量、凝血功能 × 24-48 小時。DHTR：輸血後 1-2 週追蹤 PCV。',
+    owner_communication: '您的寵物在輸血過程中出現了輸血反應。我們已經停止輸血並開始治療。輸血反應有不同嚴重程度，從輕微的發燒到嚴重的紅血球破壞。我們會密切監控各項指標，確保腎臟功能正常。如果未來需要再次輸血，我們會更仔細地篩選血品和做交叉配血測試。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '血型系統段落後', type: 'comparison_table', description: '犬 DEA vs 貓 AB 血型系統對照圖' },
+    { position: '輸血反應分類表後', type: 'flowchart', description: '輸血反應類型鑑別與處置決策樹' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Diphenhydramine', 'Dexamethasone', 'Epinephrine', 'Furosemide'],
+  references: [
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Transfusion Medicine & Transfusion Reactions.', relevance: 'ECC 核心教材輸血醫學與反應章節' },
+    { type: 'journal', citation: 'Tocci LJ, Ewing PJ. Increasing patient safety in veterinary transfusion medicine: an overview of pretransfusion testing. JVECC. 2009;19(1):66-73.', relevance: '輸血前檢查與安全性綜述' },
+    { type: 'journal', citation: 'Weingart C, Giger U, Kohn B. Whole blood transfusions in 91 cats: a clinical evaluation. JFMS. 2004;6(3):139-148.', relevance: '貓全血輸血臨床評估——含貓血型重要性' },
+    { type: 'guideline', citation: 'Holowaychuk MK, et al. VECCS Consensus Statement on Canine and Feline Blood Donor Screening and Transfusion Medicine. JVECC. 2014;24(4):387-395.', relevance: 'VECCS 犬貓輸血醫學共識聲明' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const ECC_CONTENTS = new Map<string, NodeContent>([
   ['ECC-L0-001', contentECCOverview],
@@ -4634,4 +5139,7 @@ export const ECC_CONTENTS = new Map<string, NodeContent>([
   ['ECC-L5-005', contentNutrition],
   ['ECC-L5-006', contentMechVent],
   ['ECC-L3-014', contentAcuteAbdomen],
+  ['ECC-L3-015', contentHypoglycemia],
+  ['ECC-L3-016', contentAddisonianCrisis],
+  ['ECC-L3-017', contentTransfusionReactions],
 ]);

@@ -53,4 +53,8 @@ export const ONCO_NODES: KnowledgeNode[] = [
 
   // ─── Phase 3: 靶向治療與 TKI ───
   { id: 'ONCO-L5-006', specialty: 'ONCO', title: '靶向治療與酪氨酸激酶抑制劑', title_en: 'Targeted Therapy / TKI', layer: 5, node_type: 'therapeutic', difficulty: 5, estimated_minutes: 30, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['TKI', 'Toceranib', 'Masitinib', '靶向治療', '標靶'], encyclopedia_link: null, cross_specialty_notes: 'DERM - MCT c-KIT 靶向; IM - 甲狀腺癌 TKI', created_at: now, updated_at: now },
+
+  // ─── Phase 4: VetPro 百科擴展 ───
+  { id: 'ONCO-L3-016', specialty: 'ONCO', title: '肝細胞癌', title_en: 'Hepatocellular Carcinoma (HCC)', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['HCC', '肝臟', '腫瘤', '犬'], encyclopedia_link: null, cross_specialty_notes: 'SURG 共病（肝葉切除）; CPATH - ALP/肝指數判讀', created_at: now, updated_at: now },
+  { id: 'ONCO-L3-017', specialty: 'ONCO', title: '多發性骨髓瘤', title_en: 'Multiple Myeloma', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['multiple_myeloma', '骨髓瘤', '漿細胞', '犬', '高蛋白血症'], encyclopedia_link: null, cross_specialty_notes: 'CPATH - 血清蛋白電泳/Bence Jones; IM - 高鈣血症/腎衰竭', created_at: now, updated_at: now },
 ];

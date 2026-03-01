@@ -6434,6 +6434,627 @@ const contentAirwayInflammation: NodeContent = {
   created_at: now,
 };
 
+/** 胰外分泌不全 (EPI) — 疾病型 */
+const contentEPI: NodeContent = {
+  id: 'CONTENT-IM-L3-024',
+  node_id: 'IM-L3-024',
+  version: 1,
+  summary: '胰外分泌不全（EPI）是胰臟腺泡細胞功能喪失導致消化酵素（脂肪酶、澱粉酶、蛋白酶）分泌不足，引起嚴重吸收不良。犬最常見病因為胰腺腺泡萎縮（PAA），德國牧羊犬（GSD）為好發品種。確診依據血清犬胰蛋白酶免疫反應濃度（cTLI）< 2.5 μg/L，終生胰酶替代治療為核心。',
+  learning_objectives: [
+    '說明 EPI 的兩大病因（PAA vs 慢性胰臟炎終末期）及其差異',
+    '運用 cTLI 檢驗正確診斷 EPI 並解釋結果判讀',
+    '制定 EPI 的完整治療計畫（胰酶替代 + Cobalamin + 飲食調整）',
+    '列出 EPI 與慢性腸病（CE）及慢性胰臟炎的鑑別要點',
+    '說明 Cobalamin 缺乏在 EPI 中的臨床意義與補充方案',
+  ],
+  key_points: [
+    'cTLI < 2.5 μg/L（犬）為確診標準；2.5-5.7 μg/L 為灰色地帶需追蹤',
+    '犬 EPI 最常見病因為胰腺腺泡萎縮（PAA），推測為免疫介導機轉',
+    'GSD（德國牧羊犬）和 Rough-coated Collie 為高風險品種',
+    '治療核心：胰酶替代（Pancreatin/Viokase）每餐混食',
+    'Cobalamin（維生素 B12）缺乏發生率 > 80%，需皮下注射補充',
+    '預後良好但需終生治療；約 60% 犬對治療反應佳',
+    '台灣地區 GSD（德國牧羊犬）仍為最常見 EPI 品種，近年混種犬比例上升',
+  ],
+  body: `# 胰外分泌不全 (Exocrine Pancreatic Insufficiency, EPI)
+
+## 一、病理機制 (Pathophysiology)
+
+EPI 的核心為**胰臟腺泡細胞功能喪失**，導致脂肪酶（lipase）、澱粉酶（amylase）、蛋白酶（trypsin/chymotrypsin）等消化酵素分泌嚴重不足（需喪失 > 90% 功能才出現臨床症狀）。
+
+### 病因分類
+
+| 病因 | 機轉 | 好發 | 佔比 |
+|------|------|------|------|
+| 胰腺腺泡萎縮 (PAA) | 推測為自體免疫性淋巴球性胰臟炎→腺泡進行性萎縮→纖維化取代 | 犬（GSD、Rough Collie）1-5 歲 | 犬 ~60-70% |
+| 慢性胰臟炎終末期 | 反覆發炎→纖維化→腺泡組織破壞殆盡 | 犬貓，中老年 | 犬 ~15-20%；貓主因 |
+| 胰管阻塞 | 胰管結石或腫瘤壓迫→腺泡萎縮 | 貓較多 | 少見 |
+| 先天性 | 胰臟發育不全 | 幼犬 | 罕見 |
+
+**PAA 免疫病理假說**：T 淋巴球浸潤 → 腺泡細胞凋亡 → 進行性萎縮。部分犬在亞臨床期可偵測到淋巴球浸潤（preclinical phase），此時 cTLI 可能尚在灰色地帶。
+
+### 吸收不良機轉鏈
+胰酶分泌不足 → 脂肪/蛋白質/碳水化合物消化障礙 → 營養吸收不良 → 滲透性腹瀉 → 小腸細菌過度生長 (SIBO) → Cobalamin 吸收受損（需要胰臟分泌的 intrinsic factor）→ 全身營養不良
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | 頻率 | 描述 |
+|---------|------|------|
+| 體重減輕（食慾正常或增加） | > 90% | 典型「吃不胖」表現 |
+| 脂肪便 (steatorrhea) | > 80% | 大量、黃灰色、油膩惡臭糞便 |
+| 多食症 (polyphagia) | ~70% | 營養吸收不良導致飢餓感增強 |
+| 糞便量增加 | ~80% | 未消化食物增加糞便體積 |
+| 被毛品質差 | ~50% | 脂溶性維生素缺乏 |
+| 腸鳴音增加/排氣 | ~40% | SIBO 產氣 |
+| 食糞 (coprophagia) | ~30% | 營養缺乏行為 |
+
+### 確診檢查
+
+| 檢測 | 敏感度 | 特異度 | 判讀 |
+|------|--------|--------|------|
+| cTLI（犬） | > 95% | > 95% | < 2.5 μg/L = 確診；2.5-5.7 = 灰色地帶；> 5.7 = 正常 |
+| fTLI（貓） | ~80% | ~90% | < 8 μg/L = 確診；8-12 = 可疑 |
+| Cobalamin（血清 B12） | N/A | N/A | 低值支持 EPI 診斷；< 200 ng/L 需積極補充 |
+| Folate | N/A | N/A | 升高提示 SIBO |
+
+**重要**：cTLI 需**空腹 12 小時**採血，非空腹樣本可偽性升高。
+
+## 三、治療策略 (Treatment)
+
+| 治療 | 藥物/措施 | 劑量 | 備註 |
+|------|----------|------|------|
+| 胰酶替代 | [藥物:Pancreatin] 粉劑 | 1-2 茶匙/餐（隨體重調整） | 每餐混入食物，不需預孵育 |
+| Cobalamin 補充 | [藥物:Cyanocobalamin] | 犬：250-1500 μg SC q1wk × 6 wk → q2wk × 6 wk → q1mo | > 80% EPI 犬有 B12 缺乏 |
+| 飲食調整 | 高消化性、低脂飲食 | — | 部分犬對低脂反應佳；部分可正常飲食 |
+| 抗生素（SIBO） | [藥物:Tylosin] 或 [藥物:Metronidazole] | Tylosin 25 mg/kg PO BID × 4-6 wk | 僅在 SIBO 確認或治療反應不佳時使用 |
+| 胃酸抑制 | [藥物:Omeprazole] | 1 mg/kg PO SID | 可減少胃酸對胰酶的破壞（可選） |
+
+**治療反應評估**：2-4 週內應見糞便品質改善與體重增加。約 60% 犬反應良好，20% 部分反應，20% 反應不佳（需調整劑量或排查共病）。
+
+## 四、預後 (Prognosis)
+
+| 因素 | 良好預後 | 不良預後 |
+|------|---------|---------|
+| 病因 | PAA | 胰臟腫瘤 |
+| Cobalamin | 及時補充 | 嚴重缺乏未補充 |
+| 飼主配合度 | 終生每餐加酶 | 不規律用藥 |
+| 共病 | 無 | 合併 IBD/CE |
+
+中位存活時間：治療反應佳者可存活數年；需終生治療，費用為主要考量。`,
+  clinical_pearl: 'cTLI 是 EPI 確診的金標準，但必須在空腹 12 小時後採血。最常見的診斷延誤原因是未想到 EPI——任何年輕 GSD 出現慢性腹瀉 + 體重減輕 + 食慾正常或增加，應首先排除 EPI。治療初期 Cobalamin 補充與胰酶補充同等重要。',
+  common_mistakes: [
+    '未空腹採血做 cTLI 導致偽正常結果',
+    '僅給胰酶但忽略 Cobalamin 補充（導致治療反應不佳）',
+    '將 EPI 誤診為 IBD/CE 而進行不必要的免疫抑制治療',
+    '以為胰酶需要與食物預孵育（現已證實不需要）',
+  ],
+  disease_data: {
+    signalment: '犬最常見，尤其 GSD（德國牧羊犬）和 Rough-coated Collie，好發年齡 1-5 歲（PAA）。貓少見但多因慢性胰臟炎，好發中老年。',
+    etiology: '犬最常見為胰腺腺泡萎縮（PAA），推測為自體免疫機轉。其次為慢性胰臟炎終末期。貓以慢性胰臟炎為主因。罕見病因包括胰管阻塞和先天性胰臟發育不全。',
+    pathogenesis: 'PAA：T 淋巴球浸潤胰臟腺泡 → 進行性腺泡萎縮與纖維化 → 消化酵素分泌不足（需喪失 > 90% 功能才出現症狀）→ 脂肪/蛋白質/碳水化合物吸收不良 → SIBO → Cobalamin/脂溶性維生素缺乏。',
+    clinical_signs: [
+      { sign: '體重減輕伴多食', category: 'primary', description: '吃不胖為最典型表現，食慾正常或增加但持續消瘦' },
+      { sign: '脂肪便', category: 'primary', description: '大量、黃灰色、油膩惡臭、難以沖洗的糞便' },
+      { sign: '腹瀉', category: 'primary', description: '慢性大腸或小腸型腹瀉，糞便量多' },
+      { sign: '被毛品質差', category: 'secondary', description: '脂溶性維生素缺乏導致毛髮乾燥粗糙' },
+      { sign: '食糞', category: 'secondary', description: '營養缺乏驅動的異常進食行為' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '慢性腸病 (CE/IBD)', key_differentiator: 'cTLI 正常；需內視鏡切片；食慾常減退而非增加' },
+      { condition: '慢性胰臟炎', key_differentiator: 'cPLI 升高；cTLI 可能正常或降低；超音波胰臟異常' },
+      { condition: '小腸淋巴瘤', key_differentiator: '超音波腸壁增厚/淋巴結腫大；需切片確診' },
+      { condition: '蛋白質流失性腸病 (PLE)', key_differentiator: '低白蛋白血症為特徵；cTLI 正常' },
+    ],
+    diagnostic_workup: '1. 空腹 12 hr 採血 cTLI（犬 < 2.5 μg/L 確診）→ 2. 同時測 Cobalamin/Folate → 3. CBC/生化排查共病 → 4. 腹腔超音波評估胰臟萎縮 → 5. 糞便浮游法排除寄生蟲',
+    treatment_protocol: '核心：每餐添加胰酶粉（Pancreatin 1-2 茶匙/餐）。Cobalamin 補充（250-1500 μg SC q1wk × 6 wk）。低脂高消化性飲食。SIBO 時加 Tylosin 25 mg/kg BID × 4-6 wk。終生治療。',
+    prognosis: '治療反應佳者預後良好，可存活數年。約 60% 犬對初始治療反應良好。Cobalamin 補充與胰酶同等重要。治療失敗最常見原因：未補充 B12、合併 IBD/CE、飼主配合度差。',
+    monitoring: '治療 2-4 週評估糞便品質與體重。每 3-6 個月追蹤 Cobalamin 與體重。治療穩定後可嘗試最低有效胰酶劑量。',
+    owner_communication: 'EPI 需終生每餐添加胰酶粉，治療成本是需考量的因素。大多數犬對治療反應良好，可維持正常生活品質。B12 注射補充在初始治療中不可或缺。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '吸收不良機轉鏈段落後', type: 'flowchart', description: 'EPI 吸收不良機轉鏈流程圖：酵素不足→消化障礙→SIBO→B12缺乏' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Pancreatin', 'Cyanocobalamin', 'Tylosin', 'Omeprazole'],
+  references: [
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 61: Exocrine Pancreatic Disease.', relevance: 'EPI 病理生理與臨床管理教材' },
+    { type: 'journal', citation: 'Westermarck E, Wiberg M. "Exocrine pancreatic insufficiency in dogs." Vet Clin North Am Small Anim Pract. 2003;33(5):1165-1179.', relevance: 'EPI 病因、診斷與治療綜合回顧' },
+    { type: 'journal', citation: 'Batchelor DJ, Noble PJ, Cripps PJ, et al. "Breed associations for canine exocrine pancreatic insufficiency." J Vet Intern Med. 2007;21(2):207-214.', relevance: 'EPI 品種好發性流行病學' },
+    { type: 'guideline', citation: 'Xenoulis PG, Steiner JM. "Canine and feline pancreatic lipase immunoreactivity." Vet Clin Pathol. 2012;41(3):312-324.', relevance: 'cTLI/cPLI 檢驗判讀指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 膽囊黏液囊腫 (Gallbladder Mucocele) — 疾病型 */
+const contentGBMucocele: NodeContent = {
+  id: 'CONTENT-IM-L3-025',
+  node_id: 'IM-L3-025',
+  version: 1,
+  summary: '膽囊黏液囊腫（Gallbladder Mucocele）是犬膽囊內黏液異常蓄積導致膽囊擴張的進行性疾病。腹腔超音波可見特徵性「奇異果切面（kiwi fruit sign）」。與高脂血症、甲狀腺機能低下和 Cushing 等內分泌疾病密切相關。膽囊破裂致膽汁性腹膜炎為最嚴重併發症，膽囊切除術為根治性治療。',
+  learning_objectives: [
+    '描述膽囊黏液囊腫的病理生理機轉與危險因子',
+    '辨識腹腔超音波中「kiwi fruit sign」的特徵表現',
+    '評估膽囊黏液囊腫的外科 vs 內科治療適應症',
+    '列出膽囊黏液囊腫與高脂血症、內分泌疾病的關聯',
+    '說明膽囊破裂導致膽汁性腹膜炎的緊急處理',
+  ],
+  key_points: [
+    '超音波特徵性「kiwi fruit sign」（放射狀黏液條紋）為診斷關鍵',
+    '危險因子：高脂血症、甲低、Cushing、ABCB4 基因突變（Shetland Sheepdog）',
+    '膽囊切除術（cholecystectomy）為根治性治療',
+    '膽囊破裂 → 膽汁性腹膜炎為最危險併發症，死亡率 20-40%',
+    'Ursodeoxycholic acid (UDCA) 可用於早期內科保守管理',
+    '好發品種：Shetland Sheepdog、Cocker Spaniel、Miniature Schnauzer',
+    '台灣地區膽囊黏液囊腫診斷率隨超音波普及而上升，貴賓犬與雪納瑞為高風險品種',
+  ],
+  body: `# 膽囊黏液囊腫 (Gallbladder Mucocele)
+
+## 一、病理機制 (Pathophysiology)
+
+膽囊黏液囊腫的核心為**膽囊上皮細胞分泌過量黏液** (mucin) → 膽囊內黏液蓄積 → 膽囊進行性擴張 → 膽管阻塞/膽囊壁缺血壞死 → 膽囊破裂。
+
+### 病因與機轉
+
+| 因素 | 機轉 | 關聯性 |
+|------|------|--------|
+| 高脂血症 (dyslipidemia) | 異常脂質代謝改變膽囊上皮細胞功能 → 黏液分泌增加 | 強 |
+| 甲狀腺機能低下 | 甲低 → 高膽固醇血症 → 膽汁成分改變 | 中-強 |
+| Cushing's disease | 高皮質醇 → 高脂血症 + 膽囊運動功能下降 | 中 |
+| ABCB4 基因突變 | 磷脂轉運蛋白缺陷 → 膽汁成分異常 | Shetland Sheepdog |
+| 膽囊運動功能障礙 | 膽汁淤滯 → 黏液蓄積 | 推測相關 |
+
+**進展路徑**：黏液分泌過量 → 膽汁淤滯 → 膽囊擴張 → 壁內壓力升高 → 膽囊壁缺血 → 壞死/破裂 → 膽汁性腹膜炎
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | 頻率 | 描述 |
+|---------|------|------|
+| 嘔吐 | ~60% | 非特異性，間歇性 |
+| 厭食/食慾下降 | ~50% | 可能緩慢進展 |
+| 腹部疼痛 | ~40% | 右前腹觸診痛 |
+| 黃疸 | ~30% | 膽管阻塞時出現 |
+| 無症狀 | ~25% | 偶然超音波發現 |
+| 急性腹症 | ~15% | 膽囊破裂導致 |
+
+### 超音波診斷
+
+| 特徵 | 描述 | 臨床意義 |
+|------|------|---------|
+| Kiwi fruit sign | 膽囊內放射狀高回音條紋，似奇異果切面 | 特徵性表現，高度提示 mucocele |
+| Immobile stellate pattern | 不動的星狀高回音結構 | 成熟 mucocele |
+| 膽囊壁增厚 | > 2-3 mm | 提示發炎或缺血 |
+| 不連續膽囊壁 | 壁缺損 | 提示破裂 |
+| 腹腔游離液 | 高回音液體 | 膽汁性腹膜炎 |
+
+### 血液學異常
+
+| 檢查 | 常見異常 | 意義 |
+|------|---------|------|
+| ALP | 升高（80-90%） | 膽汁淤滯 |
+| GGT | 升高（70%） | 膽管損傷 |
+| ALT | 升高（50-60%） | 肝細胞損傷 |
+| 膽固醇/三酸甘油酯 | 升高 | 基礎高脂血症 |
+| Total bilirubin | 升高（30%） | 膽管阻塞 |
+| 白血球 | 升高 | 膽囊炎/腹膜炎 |
+
+## 三、治療策略 (Treatment)
+
+### 外科治療（首選）
+
+**膽囊切除術 (cholecystectomy)** 為根治性治療。
+
+| 適應症 | 處理 |
+|--------|------|
+| 有臨床症狀的 mucocele | 擇期膽囊切除術 |
+| 膽囊破裂/腹膜炎 | 緊急膽囊切除 + 腹腔灌洗 |
+| 膽管阻塞 | 膽囊切除 ± 膽管沖洗/支架 |
+
+**手術預後**：未破裂者手術死亡率 < 10%；已破裂者死亡率 20-40%。
+
+### 內科保守治療
+
+| 藥物 | 劑量 | 目的 |
+|------|------|------|
+| [藥物:Ursodeoxycholic acid] (UDCA) | 10-15 mg/kg PO SID | 促進膽汁流動、減少黏液蓄積 |
+| [藥物:SAMe] (S-adenosylmethionine) | 20 mg/kg PO SID 空腹 | 肝臟保護 |
+| 低脂飲食 | — | 控制高脂血症 |
+| 治療基礎內分泌疾病 | — | 甲低：levothyroxine；Cushing：trilostane |
+
+**內科治療適應症**：早期偶然發現的無症狀 mucocele，飼主拒絕手術，或手術高風險病患。需每 1-3 個月超音波追蹤。
+
+## 四、預後 (Prognosis)
+
+| 情境 | 預後 | 存活率 |
+|------|------|--------|
+| 擇期膽囊切除（未破裂） | 良好 | > 90% |
+| 緊急手術（已破裂） | 警戒 | 60-80% |
+| 內科保守管理 | 不確定 | 約 50% 最終仍需手術 |
+| 膽汁性腹膜炎未手術 | 極差 | 極低 |
+
+**關鍵**: 早期外科介入顯著優於等待破裂後緊急手術。`,
+  clinical_pearl: '任何犬在腹腔超音波看到「kiwi fruit sign」即應高度懷疑膽囊黏液囊腫。此病與內分泌疾病（甲低、Cushing）密切相關——確診 mucocele 後應篩檢基礎內分泌疾病。在擇期手術與觀察等待之間，早期手術的預後顯著優於等到膽囊破裂後緊急手術。',
+  common_mistakes: [
+    '將 mucocele 誤判為單純膽泥（sludge）而未積極處理',
+    '診斷 mucocele 但未篩檢基礎內分泌疾病（甲低、Cushing）',
+    '內科保守管理未定期超音波追蹤，錯失手術時機',
+    '已有臨床症狀仍選擇保守治療而非手術',
+  ],
+  disease_data: {
+    signalment: '中老年犬（中位年齡 9-11 歲）。好發品種：Shetland Sheepdog（ABCB4 基因突變）、Cocker Spaniel、Miniature Schnauzer、Pomeranian。貓極罕見。',
+    etiology: '多因子：高脂血症（原發性或繼發於甲低/Cushing）、ABCB4 基因突變（Shetland Sheepdog）、膽囊運動功能障礙。確切觸發機轉尚不完全清楚。',
+    pathogenesis: '膽囊上皮細胞黏液分泌過量 → 黏液蓄積 → 膽囊進行性擴張 → 膽管阻塞/膽囊壁缺血壞死 → 破裂 → 膽汁性腹膜炎。',
+    clinical_signs: [
+      { sign: '嘔吐', category: 'primary', description: '間歇性，非特異性' },
+      { sign: '厭食', category: 'primary', description: '食慾漸進性下降' },
+      { sign: '腹部疼痛', category: 'primary', description: '右前腹觸診痛' },
+      { sign: '黃疸', category: 'secondary', description: '膽管阻塞時出現，鞏膜/耳朵黃染' },
+      { sign: '急性腹症', category: 'secondary', description: '膽囊破裂時突發劇烈腹痛、休克' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '膽泥 (biliary sludge)', key_differentiator: '膽泥為均勻低回音沉積，可移動；mucocele 為不動的放射狀/星狀結構' },
+      { condition: '膽囊炎 (cholecystitis)', key_differentiator: '膽囊壁增厚明顯但內容物不同；可合併存在' },
+      { condition: '膽石 (cholelithiasis)', key_differentiator: '強回音結構伴聲影' },
+      { condition: '膽囊腫瘤', key_differentiator: '壁內腫塊，不規則增厚' },
+    ],
+    diagnostic_workup: '1. 腹腔超音波（kiwi fruit sign / stellate pattern）→ 2. CBC/生化（ALP/GGT/ALT/膽紅素/膽固醇/三酸甘油酯）→ 3. T4/TSH 篩檢甲低 → 4. LDDS/UCCR 篩檢 Cushing → 5. 凝血功能（術前評估）',
+    treatment_protocol: '有症狀：膽囊切除術（cholecystectomy）為首選。無症狀早期：UDCA 10-15 mg/kg PO SID + SAMe + 低脂飲食 + 治療基礎內分泌疾病 + q1-3mo 超音波追蹤。膽囊破裂：緊急手術 + 腹腔灌洗 + 廣譜抗生素。',
+    prognosis: '擇期手術存活率 > 90%，預後良好。膽囊破裂後緊急手術死亡率 20-40%。內科保守管理約 50% 最終仍需手術。早期介入是改善預後的關鍵。',
+    monitoring: '內科管理者：每 1-3 個月腹腔超音波追蹤膽囊大小與型態變化。術後：2 週拆線/追蹤，1-3 個月生化追蹤肝指數。長期追蹤基礎內分泌疾病控制。',
+    owner_communication: '膽囊黏液囊腫是進行性疾病，破裂風險隨時間增加。擇期手術安全性高，預後良好。等待破裂後再手術風險顯著增加。若選擇保守治療，必須定期超音波追蹤。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '超音波診斷段落後', type: 'comparison_table', description: '膽囊超音波影像比較：正常膽囊 vs 膽泥 vs kiwi fruit sign vs 破裂' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Ursodeoxycholic acid', 'SAMe'],
+  references: [
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 63: Diseases of the Gallbladder and Extrahepatic Biliary System.', relevance: '膽囊疾病病理與臨床管理教材' },
+    { type: 'journal', citation: 'Aguirre AL, Center SA, Randolph JF, et al. "Gallbladder disease in Shetland Sheepdogs: 38 cases (1995-2005)." J Am Vet Med Assoc. 2007;231(1):79-88.', relevance: 'Shetland Sheepdog 膽囊黏液囊腫品種傾向' },
+    { type: 'journal', citation: 'Parkanzky M, Grimes J, Schmiedt C, et al. "Long-term survival of dogs treated for gallbladder mucocele by cholecystectomy, medical management, or both." J Vet Intern Med. 2019;33(5):2057-2066.', relevance: '膽囊切除 vs 內科管理預後比較' },
+    { type: 'guideline', citation: 'Jaffey JA, Graham A, VanEerde E, et al. "Gallbladder mucocele: variables associated with outcome and the utility of ultrasonography to identify gallbladder rupture in 219 dogs." J Vet Intern Med. 2018;32(1):195-200.', relevance: '超音波診斷與預後因子分析' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 犬慢性肝炎 (Canine Chronic Hepatitis) — 疾病型 */
+const contentCanineChronicHepatitis: NodeContent = {
+  id: 'CONTENT-IM-L3-026',
+  node_id: 'IM-L3-026',
+  version: 1,
+  summary: '犬慢性肝炎（Canine Chronic Hepatitis）是以肝臟持續性發炎與進行性纖維化為特徵的異質性疾病群。病因包括銅蓄積性（Doberman、Bedlington Terrier）、免疫介導性和特發性。肝臟切片為確診金標準（WSAVA 標準化評分）。治療依病因不同：銅蓄積用 D-penicillamine/鋅；免疫介導用 prednisolone + azathioprine。ACVIM 共識聲明為重要治療指引。',
+  learning_objectives: [
+    '分類犬慢性肝炎的病因（銅蓄積 vs 免疫介導 vs 特發性）',
+    '說明品種特異性肝病的分子機轉（Doberman 銅代謝基因突變）',
+    '解釋肝臟切片在慢性肝炎診斷中的角色與 WSAVA 標準化評分',
+    '制定銅蓄積性肝炎與免疫介導性肝炎的差異化治療方案',
+    '評估肝纖維化/肝硬化的進展與預後因子',
+  ],
+  key_points: [
+    '肝臟切片為確診金標準，需 WSAVA 標準化組織學評分與銅染色（rhodanine/rubeanic acid）',
+    '品種特異性：Doberman（COMMD1/ATP7A 銅代謝缺陷）、Bedlington Terrier（COMMD1 突變）、Labrador、Cocker Spaniel',
+    '銅蓄積治療：D-penicillamine 10-15 mg/kg PO BID + 低銅飲食 + 鋅（乙酸鋅）',
+    '免疫介導治療：Prednisolone 1-2 mg/kg/day + Azathioprine 1-2 mg/kg/day',
+    'ACVIM 2019 共識聲明為犬慢性肝炎診斷與治療的重要參考',
+    '肝硬化為不可逆終末期；門脈高壓與腹水為預後不良指標',
+  ],
+  body: `# 犬慢性肝炎 (Canine Chronic Hepatitis)
+
+## 一、病理機制 (Pathophysiology)
+
+犬慢性肝炎是一組以**肝細胞壞死、淋巴球漿細胞浸潤、進行性纖維化**為特徵的異質性疾病群。持續的肝損傷 → 星狀細胞活化 → 膠原沉積 → 橋接性纖維化 → 肝硬化。
+
+### 病因分類
+
+| 類型 | 機轉 | 好發品種 | 特徵 |
+|------|------|---------|------|
+| 銅蓄積性 | 銅代謝基因突變（COMMD1、ATP7A、ATP7B）→ 肝細胞銅排泄障礙 → 銅蓄積 → 氧化損傷 → 肝細胞壞死 | Bedlington Terrier, Doberman, Labrador, West Highland White Terrier | 肝銅 > 400 μg/g (DW)；rhodanine 染色陽性 |
+| 免疫介導性 | 自體免疫或觸發因子 → T/B 淋巴球攻擊肝細胞 → interface hepatitis | Doberman, Cocker Spaniel, Standard Poodle | 大量淋巴球/漿細胞浸潤、interface hepatitis |
+| 感染性 | Leptospira, 犬傳染性肝炎（CAV-1）, Bartonella | 任何品種 | 需排查培養/PCR |
+| 藥物誘發性 | Phenobarbital, CCNU, Carprofen, Ketoconazole 等 | 接受相關藥物者 | 藥物暴露史 + 停藥後改善 |
+| 特發性 | 病因不明，排除上述所有原因 | 任何品種 | 排除性診斷 |
+
+### Doberman 肝病特殊性
+Doberman Pinscher 慢性肝炎盛行率高達 6-12%。涉及**銅蓄積 + 免疫介導**雙重機轉。COMMD1 和 ATP7B 基因變異影響肝細胞銅排泄。雌犬比雄犬更早發病且更嚴重。
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+| 臨床表現 | 頻率 | 描述 |
+|---------|------|------|
+| 食慾下降 | ~70% | 漸進性 |
+| 嘔吐 | ~60% | 間歇性 |
+| 嗜睡/精神沉鬱 | ~60% | 漸進性 |
+| 多渴多尿 | ~40% | 肝臟尿素循環受損 |
+| 黃疸 | ~30% | 提示膽汁淤滯或嚴重肝損傷 |
+| 腹水 | ~25% | 門脈高壓 + 低白蛋白血症 |
+| 體重減輕 | ~50% | 蛋白質代謝異常 |
+| 肝性腦病 (HE) | ~15% | 高血氨 → 神經症狀 |
+
+### 診斷流程
+
+| 步驟 | 檢查 | 期待發現 |
+|------|------|---------|
+| 1 | CBC/生化 | ALT/AST 升高、ALP/GGT 升高、低白蛋白、低 BUN、高膽汁酸、高 NH3 |
+| 2 | 凝血功能 | PT/aPTT 延長（肝臟合成凝血因子下降） |
+| 3 | 腹腔超音波 | 肝臟大小/回音性異常、門脈血流評估、腹水 |
+| 4 | **肝臟切片**（金標準） | WSAVA 標準化評分：壞死、發炎（門脈區/小葉）、纖維化分級 + rhodanine 銅染色 + 銅定量 |
+| 5 | 排查性檢驗 | Leptospira PCR、CAV-1 抗體、藥物暴露史 |
+
+**肝臟銅定量標準**（乾重）：
+- 正常：< 200 μg/g
+- 邊緣：200-400 μg/g
+- 異常蓄積：> 400 μg/g
+- 嚴重蓄積：> 1000 μg/g（Bedlington 可達 > 10,000 μg/g）
+
+## 三、治療策略 (Treatment)
+
+### 銅蓄積性肝炎
+
+| 藥物 | 劑量 | 機轉 | 備註 |
+|------|------|------|------|
+| [藥物:D-penicillamine] | 10-15 mg/kg PO BID（空腹） | 銅螯合 → 增加尿銅排泄 | 副作用：嘔吐（可從低劑量漸增）|
+| [藥物:Zinc acetate] | 5-10 mg/kg PO BID（空腹） | 誘導腸道 metallothionein → 阻斷銅吸收 | 不可與 D-penicillamine 同時給予 |
+| 低銅飲食 | — | 減少飲食銅攝入 | 避免高銅食物（肝臟、貝類） |
+| [藥物:Vitamin E] | 10 IU/kg PO SID | 抗氧化保護 | 輔助治療 |
+
+### 免疫介導性肝炎
+
+| 藥物 | 劑量 | 備註 |
+|------|------|------|
+| [藥物:Prednisolone] | 1-2 mg/kg PO SID → 漸減 | 第一線免疫抑制 |
+| [藥物:Azathioprine] | 1-2 mg/kg PO SID（犬）| 第二線，減少類固醇劑量 |
+| [藥物:Mycophenolate] | 10 mg/kg PO BID | 替代 azathioprine |
+
+### 肝臟支持治療
+
+| 藥物 | 劑量 | 適應症 |
+|------|------|--------|
+| [藥物:SAMe] | 20 mg/kg PO SID 空腹 | 所有慢性肝炎 |
+| [藥物:UDCA] | 10-15 mg/kg PO SID | 膽汁淤滯 |
+| [藥物:Lactulose] | 0.5 mL/kg PO BID-TID | 肝性腦病 |
+| 低蛋白飲食 | — | 肝性腦病（HE） |
+
+## 四、預後 (Prognosis)
+
+| 因素 | 良好預後 | 不良預後 |
+|------|---------|---------|
+| 纖維化程度 | 輕度/中度纖維化 | 橋接纖維化/肝硬化 |
+| 病因 | 銅蓄積（可螯合治療）| 特發性 |
+| 白蛋白 | > 2.0 g/dL | < 2.0 g/dL |
+| 臨床表現 | 無腹水/HE | 腹水 + 肝性腦病 |
+| 治療反應 | ALT 下降 > 50% | ALT 持續升高 |
+
+**中位存活**：及時診治的犬可存活 1-5 年。肝硬化伴腹水者中位存活約 1-3 個月。`,
+  clinical_pearl: '犬慢性肝炎的確診必須依賴肝臟切片——僅憑 ALT 升高無法區分銅蓄積、免疫介導、藥物性或特發性。切片時務必同時送 WSAVA 標準化評分和銅定量（rhodanine 染色 + 原子吸收光譜分析）。Doberman 品種應在 4-6 歲時進行肝指數篩檢。',
+  common_mistakes: [
+    '僅憑血液生化升高就開始治療，未做肝臟切片確認病因',
+    '銅蓄積性肝炎使用免疫抑制劑（可能加速銅沉積的肝損傷）',
+    '肝切片未同時做銅染色與銅定量',
+    '免疫介導型肝炎過快減量 prednisolone 導致復發',
+  ],
+  disease_data: {
+    signalment: '犬，中老年（5-10 歲）。品種傾向：Doberman Pinscher、Bedlington Terrier、Labrador Retriever、Cocker Spaniel、West Highland White Terrier、Standard Poodle。Doberman 雌犬更嚴重。',
+    etiology: '銅蓄積性（基因突變致銅代謝障礙）、免疫介導性（自體免疫攻擊肝細胞）、感染性（Leptospira、CAV-1）、藥物誘發性（Phenobarbital、CCNU）、特發性（排除性診斷）。',
+    pathogenesis: '持續性肝損傷 → 肝細胞壞死 → 淋巴球/漿細胞浸潤 → 肝星狀細胞活化 → 膠原沉積 → 進行性纖維化 → 橋接纖維化 → 肝硬化 → 門脈高壓/肝衰竭。',
+    clinical_signs: [
+      { sign: '食慾下降/嘔吐', category: 'primary', description: '漸進性，為最常見初始症狀' },
+      { sign: '嗜睡/精神沉鬱', category: 'primary', description: '活動力下降' },
+      { sign: '黃疸', category: 'secondary', description: '嚴重肝損傷或膽汁淤滯' },
+      { sign: '腹水', category: 'secondary', description: '門脈高壓 + 低白蛋白血症' },
+      { sign: '肝性腦病', category: 'secondary', description: '高血氨→神經症狀（行為異常、轉圈、抽搐）' },
+    ],
+    staging: { system: 'WSAVA 肝臟組織學評分系統', stages: ['Grade 1：輕度門脈區發炎', 'Grade 2：中度門脈區發炎 + 輕度 interface hepatitis', 'Grade 3：嚴重發炎 + 橋接壞死 + 中度纖維化', 'Grade 4：肝硬化（不可逆）'] },
+    differential_diagnosis: [
+      { condition: '反應性肝病 (reactive hepatopathy)', key_differentiator: '繼發於其他系統性疾病（腸病、胰臟炎），通常 ALT 升高較輕微' },
+      { condition: '肝臟腫瘤', key_differentiator: '超音波局灶性病變；切片確診' },
+      { condition: '類固醇肝病 (steroid hepatopathy)', key_differentiator: '糖皮質素暴露史；ALP 顯著升高；空泡性肝病變' },
+      { condition: '貓膽管炎', key_differentiator: '為貓特有疾病，犬極罕見' },
+    ],
+    diagnostic_workup: '1. CBC/生化（ALT/ALP/Albumin/膽汁酸/NH3）→ 2. 凝血功能 → 3. 腹腔超音波 → 4. 肝臟切片（超音波引導 Tru-cut 或腹腔鏡）+ 銅染色 + 銅定量 → 5. 排查：Leptospira PCR、藥物暴露史',
+    treatment_protocol: '銅蓄積：D-penicillamine 10-15 mg/kg PO BID + Zinc acetate（與 D-pen 分開）+ 低銅飲食 + Vitamin E。免疫介導：Prednisolone 1-2 mg/kg/day → 漸減 + Azathioprine 1-2 mg/kg/day。所有類型：SAMe 20 mg/kg + UDCA 10-15 mg/kg。HE：Lactulose + 低蛋白飲食。',
+    prognosis: '早期纖維化（Grade 1-2）且治療反應佳者可存活 1-5 年。肝硬化（Grade 4）伴腹水/HE 者預後極差，中位存活 1-3 個月。白蛋白 < 2.0 g/dL 為獨立不良預後因子。',
+    monitoring: '治療後 2-4 週追蹤 ALT/ALP/Albumin。穩定後每 2-3 個月追蹤。免疫抑制劑治療時需監測 CBC（azathioprine 骨髓抑制）。銅蓄積型 6-12 個月重複肝切片評估銅含量。',
+    owner_communication: '犬慢性肝炎的治療取決於正確識別病因，肝切片是不可替代的診斷步驟。治療反應因個體差異而異。早期發現與及時治療可顯著改善預後。若已發展至肝硬化則為不可逆。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病因分類表後', type: 'flowchart', description: '犬慢性肝炎診斷流程圖：生化異常→超音波→肝切片→銅染色→分類治療' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['D-penicillamine', 'Zinc acetate', 'Prednisolone', 'Azathioprine', 'SAMe', 'UDCA', 'Lactulose'],
+  references: [
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 62: Chronic Hepatitis in Dogs.', relevance: '犬慢性肝炎病理與臨床管理教材' },
+    { type: 'guideline', citation: 'Webster CRL, Center SA, Cullen JM, et al. "ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs." J Vet Intern Med. 2019;33(3):1173-1200.', relevance: 'ACVIM 犬慢性肝炎診斷與治療共識聲明' },
+    { type: 'journal', citation: 'Hoffmann G, van den Ingh TS, Bode P, Rothuizen J. "Copper-associated chronic hepatitis in Labrador Retrievers." J Vet Intern Med. 2006;20(4):856-861.', relevance: 'Labrador 銅蓄積性肝炎品種研究' },
+    { type: 'journal', citation: 'Poldervaart JH, Favier RP, Penning LC, et al. "Primary hepatitis in dogs: a retrospective review (2002-2006)." J Vet Intern Med. 2009;23(1):72-80.', relevance: '犬原發性肝炎回顧性研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 巨食道症 (Megaesophagus) — 疾病型 */
+const contentMegaesophagus: NodeContent = {
+  id: 'CONTENT-IM-L3-027',
+  node_id: 'IM-L3-027',
+  version: 1,
+  summary: '巨食道症（Megaesophagus）是食道擴張伴蠕動功能減退或喪失的疾病，導致食物滯留於食道、反流（regurgitation）和嚴重的吸入性肺炎風險。分為先天性（幼犬）和後天性（需篩檢重症肌無力 MG、甲低、Addison 等基礎病因）。Bailey chair 姿勢進食管理是治療核心。吸入性肺炎為最常見致死併發症。',
+  learning_objectives: [
+    '區分反流（regurgitation）與嘔吐（vomiting）的臨床特徵與鑑別意義',
+    '列出後天性巨食道症的可逆性病因並制定系統性排查計畫',
+    '說明重症肌無力（MG）與巨食道症的關聯及 AChR 抗體檢測',
+    '制定巨食道症的營養管理策略（Bailey chair、飲食稠度調整）',
+    '評估吸入性肺炎在巨食道症預後中的角色',
+  ],
+  key_points: [
+    '反流（regurgitation）vs 嘔吐（vomiting）鑑別：反流為被動、無腹部收縮、食物未消化',
+    '後天性需篩檢可逆病因：重症肌無力（AChR 抗體）、甲低、Addison、鉛中毒',
+    '胸腔 X 光可見食道擴張、充氣；鋇劑造影確認食道蠕動障礙',
+    'Bailey chair 姿勢進食（直立 10-15 分鐘）為管理核心',
+    '吸入性肺炎為最常見死因（發生率 30-50%）',
+    '先天性好發品種：Great Dane、GSD、Irish Setter、Shar Pei',
+    '台灣地區巨食道症以犬為主，飼主衛教 Bailey Chair 方法時需考量居住空間較小的在地狀況',
+  ],
+  body: `# 巨食道症 (Megaesophagus)
+
+## 一、病理機制 (Pathophysiology)
+
+巨食道症的核心為**食道體部蠕動功能障礙**，導致食道擴張與食物滯留。食道由橫紋肌組成（犬全段為橫紋肌；貓遠端 1/3 為平滑肌），蠕動受迷走神經與食道神經叢控制。
+
+### 分類與病因
+
+| 類型 | 病因 | 特徵 | 佔比 |
+|------|------|------|------|
+| **先天性** | 食道神經肌肉發育異常 | 幼犬斷奶後發病；部分可隨成長改善 | ~25% |
+| **後天特發性** | 不明（可能為神經退化） | 成犬，排除所有已知病因 | ~50% |
+| **後天繼發性** | 可逆性基礎病因 | 治療基礎病因後可能改善 | ~25% |
+
+### 後天繼發性病因（需系統性排查）
+
+| 病因 | 機轉 | 篩檢方法 |
+|------|------|---------|
+| 重症肌無力 (MG) | AChR 抗體 → 神經肌肉傳導障礙 → 食道橫紋肌無力 | AChR 抗體滴度 |
+| 甲狀腺機能低下 | 甲低 → 神經肌肉功能異常 | T4/TSH |
+| Addison's disease | 電解質異常 → 肌肉功能障礙 | ACTH 刺激試驗 |
+| 多發性肌炎 | 肌肉發炎 → 食道肌肉受累 | CK、肌肉切片 |
+| 鉛中毒 | 鉛 → 神經毒性 | 血鉛濃度 |
+| SLE（全身性紅斑狼瘡） | 免疫複合物 → 多器官損傷 | ANA |
+| 胸腔腫瘤/淋巴結腫大 | 食道外壓迫 | 胸腔 X 光/CT |
+
+### 吸入性肺炎機轉
+食道擴張 → 食物/液體滯留 → 反流 → 咽喉保護反射不足 → 內容物誤吸入氣管 → 化學性 + 細菌性肺炎 → 呼吸窘迫
+
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+### 反流 vs 嘔吐鑑別
+
+| 特徵 | 反流 (Regurgitation) | 嘔吐 (Vomiting) |
+|------|---------------------|-----------------|
+| 腹部收縮 | 無（被動） | 有（主動、乾嘔） |
+| 時間與進食關係 | 進食後數分至數小時 | 任何時間 |
+| 內容物 | 未消化食物/黏液、管狀形狀 | 消化中食物/膽汁 |
+| pH | 中性（6-7） | 酸性（< 5） |
+| 前驅症狀 | 無 | 噁心、流涎、躁動 |
+
+### 臨床表現
+
+| 表現 | 頻率 | 描述 |
+|------|------|------|
+| 反流 | > 90% | 進食後被動排出未消化食物 |
+| 體重減輕/營養不良 | > 70% | 營養攝入不足 |
+| 咳嗽/呼吸困難 | ~40% | 吸入性肺炎徵兆 |
+| 食慾正常或增加 | ~60% | 營養需求未滿足 |
+| 流涎 | ~30% | 食道擴張刺激 |
+| 發燒 | ~25% | 吸入性肺炎繼發 |
+
+### 診斷
+
+| 檢查 | 發現 | 意義 |
+|------|------|------|
+| 胸腔 X 光 | 食道擴張（充氣或充液）；腹背位可見氣管條紋與食道重疊 | 初步診斷 |
+| 鋇劑造影/螢光透視 | 鋇劑滯留食道 + 蠕動減弱或消失 | 確認蠕動障礙 |
+| AChR 抗體 | 陽性 | 重症肌無力確診 |
+| T4/TSH | 低 T4 + 高 TSH | 甲狀腺機能低下 |
+| ACTH 刺激試驗 | 低皮質醇反應 | Addison's disease |
+| CK | 升高 | 多發性肌炎 |
+
+## 三、治療策略 (Treatment)
+
+### 營養管理（核心治療）
+
+| 措施 | 方法 | 目的 |
+|------|------|------|
+| **Bailey chair** | 進食時犬以直立姿勢坐於特製椅中，維持 **10-15 分鐘** | 利用重力幫助食物通過食道進入胃 |
+| 飲食稠度調整 | 嘗試不同稠度（泥狀 vs 液態 vs 小丸狀），找到個體最佳反應 | 每隻犬反應不同，需個體化調整 |
+| 少量多餐 | 每日 3-4 餐 | 減少每次食道負荷 |
+| 高熱量飲食 | 熱量密集飲食 | 以最少體積提供足夠營養 |
+
+### 藥物治療
+
+| 藥物 | 劑量 | 適應症 |
+|------|------|--------|
+| [藥物:Sildenafil] | 1-2 mg/kg PO TID | 降低下食道括約肌壓力（部分病例有效） |
+| [藥物:Metoclopramide] | 0.2-0.5 mg/kg PO TID | 促進胃排空（減少胃食道反流），注意：對食道體部蠕動無效 |
+| [藥物:Sucralfate] | 0.5-1 g PO TID | 食道炎保護 |
+| [藥物:Pyridostigmine] | 0.5-3 mg/kg PO BID-TID | 重症肌無力（AChE 抑制劑） |
+| 基礎病因治療 | — | 甲低：Levothyroxine；Addison：DOCP + Prednisolone |
+
+### 吸入性肺炎處理
+
+| 措施 | 詳述 |
+|------|------|
+| 廣譜抗生素 | Ampicillin + Enrofloxacin IV（或 Amoxicillin-clavulanate PO 輕症）|
+| 氧氣支持 | SpO2 < 94% 時給氧 |
+| 霧化治療 | Saline 霧化 + coupage |
+| 禁食 | 急性期暫停口服進食 |
+
+## 四、預後 (Prognosis)
+
+| 類型 | 預後 | 備註 |
+|------|------|------|
+| 先天性（幼犬） | 警戒至良好 | 部分可隨成長自發改善（~20-40%） |
+| 後天繼發性（可逆病因） | 依基礎病因 | MG 治療後 ~50% 可改善；甲低補充後可能恢復 |
+| 後天特發性 | 謹慎至不良 | 終生管理；吸入性肺炎風險持續存在 |
+
+**吸入性肺炎**為最常見死因（30-50% 的巨食道症犬會發生）。飼主的長期護理配合度是影響存活的最關鍵因素。`,
+  clinical_pearl: '區分反流與嘔吐是診斷巨食道症的第一步——反流是被動的、無腹部收縮的、排出未消化食物。後天性巨食道症一定要篩檢重症肌無力（AChR 抗體），因為 MG 治療後食道功能可能部分或完全恢復。Bailey chair 管理中，「維持直立 10-15 分鐘」比食物稠度更重要。',
+  common_mistakes: [
+    '將反流誤判為嘔吐而使用止吐藥（止吐藥對反流無效）',
+    '後天性巨食道症未篩檢 MG、甲低、Addison（錯失可逆病因）',
+    'Bailey chair 進食時間不足（應至少直立 10-15 分鐘）',
+    '忽視吸入性肺炎的早期徵兆（輕微咳嗽、低燒、呼吸加速）',
+  ],
+  disease_data: {
+    signalment: '先天性：幼犬斷奶後發病，好發品種 Great Dane、GSD、Irish Setter、Shar Pei、Wire Fox Terrier。後天性：成年至老年犬，任何品種。犬遠多於貓。',
+    etiology: '先天性：食道神經肌肉發育異常。後天特發性：推測為食道神經退化，病因不明。後天繼發性：重症肌無力（最重要可逆病因）、甲低、Addison、多發性肌炎、鉛中毒、SLE、胸腔腫瘤壓迫。',
+    pathogenesis: '食道蠕動功能障礙 → 食道體部擴張 → 食物/液體滯留 → 反流 → 營養不良 + 吸入性肺炎風險。MG 機轉：AChR 自體抗體 → 神經肌肉接合處傳導障礙 → 食道橫紋肌收縮無力。',
+    clinical_signs: [
+      { sign: '反流', category: 'primary', description: '進食後被動排出未消化食物，無腹部收縮' },
+      { sign: '體重減輕', category: 'primary', description: '營養攝入不足導致消瘦' },
+      { sign: '咳嗽/呼吸困難', category: 'secondary', description: '吸入性肺炎徵兆' },
+      { sign: '流涎', category: 'secondary', description: '食道擴張刺激唾液分泌' },
+      { sign: '發燒', category: 'secondary', description: '吸入性肺炎繼發感染' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '食道異物', key_differentiator: '急性發作；內視鏡/X 光可見異物' },
+      { condition: '食道狹窄', key_differentiator: '特定位置狹窄（鋇劑造影）；可能有麻醉/腐蝕劑暴露史' },
+      { condition: '血管環異常 (PRAA)', key_differentiator: '幼犬斷奶後發病；擴張僅在心基部前方（focal dilation）' },
+      { condition: '食道腫瘤', key_differentiator: '內視鏡可見腫塊；好發老年犬' },
+      { condition: '胃食道反流 (GERD)', key_differentiator: '食道大小正常；反流物為酸性' },
+    ],
+    diagnostic_workup: '1. 病史（反流 vs 嘔吐鑑別）→ 2. 胸腔 X 光（食道擴張）→ 3. 鋇劑造影/螢光透視確認 → 4. AChR 抗體（排查 MG）→ 5. T4/TSH、ACTH 刺激試驗、CK → 6. CBC/生化排查系統性疾病',
+    treatment_protocol: '營養管理：Bailey chair 直立進食 10-15 min + 飲食稠度個體化調整 + 少量多餐 + 高熱量飲食。藥物：Sildenafil 1-2 mg/kg TID（可選）。MG：Pyridostigmine 0.5-3 mg/kg BID-TID。基礎病因治療。吸入性肺炎：廣譜抗生素 + 氧氣。',
+    prognosis: '先天性部分可自發改善。繼發性取決於基礎病因控制（MG 治療後約 50% 可改善）。特發性預後謹慎至不良，需終生管理。吸入性肺炎為最常見死因。飼主長期配合度是最關鍵預後因子。',
+    monitoring: '每 2-4 週評估體重與營養狀態。胸腔 X 光監測吸入性肺炎。MG 患者追蹤 AChR 抗體滴度。教導飼主識別吸入性肺炎早期徵兆（咳嗽增加、呼吸費力、發燒、精神沉鬱）。',
+    owner_communication: '巨食道症需要飼主高度配合的長期管理。Bailey chair 進食是最有效的管理方式。吸入性肺炎是最大風險，需密切觀察呼吸狀況。部分繼發性病例在治療基礎病因後可能改善。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '反流 vs 嘔吐鑑別表後', type: 'comparison_table', description: '反流 vs 嘔吐臨床表現比較圖' },
+    { position: 'Bailey chair 段落後', type: 'flowchart', description: 'Bailey chair 姿勢進食示意圖與管理流程' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Sildenafil', 'Metoclopramide', 'Sucralfate', 'Pyridostigmine'],
+  references: [
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 55: Diseases of the Esophagus.', relevance: '食道疾病病理與臨床管理教材' },
+    { type: 'journal', citation: 'Gaynor AR, Shofer FS, Washabau RJ. "Risk factors for acquired megaesophagus in dogs." J Am Vet Med Assoc. 1997;211(11):1406-1412.', relevance: '後天性巨食道症危險因子流行病學' },
+    { type: 'journal', citation: 'Shelton GD. "Myasthenia gravis and disorders of neuromuscular transmission." Vet Clin North Am Small Anim Pract. 2002;32(1):189-206.', relevance: '重症肌無力與巨食道症的關聯' },
+    { type: 'journal', citation: 'McBrearty AR, Ramsey IK, Courcier EA, et al. "Clinical factors associated with death before discharge and overall survival time in dogs with generalized megaesophagus." J Am Vet Med Assoc. 2011;238(12):1564-1569.', relevance: '巨食道症預後因子分析' },
+    { type: 'guideline', citation: 'ACVIM Consensus – Megaesophagus Management. https://onlinelibrary.wiley.com/doi/10.1111/jvim.15120', relevance: 'ACVIM 巨食道症管理共識聲明' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
@@ -6487,4 +7108,9 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L3-021', contentBacterialPneumonia],
   ['IM-L3-022', contentFeLVFIV],
   ['IM-L3-023', contentCPV],
+  // GI/Hepatobiliary expansion
+  ['IM-L3-024', contentEPI],
+  ['IM-L3-025', contentGBMucocele],
+  ['IM-L3-026', contentCanineChronicHepatitis],
+  ['IM-L3-027', contentMegaesophagus],
 ]);
