@@ -3559,7 +3559,7 @@ const contentHemoabdomen: NodeContent = {
   id: 'CONTENT-ECC-L3-009',
   node_id: 'ECC-L3-009',
   version: 1,
-  summary: '腹腔出血（Hemoabdomen）分為創傷性（鈍傷/穿刺傷）與非創傷性（脾臟血管肉瘤、肝臟腫瘤、凝血病）。AFAST 超音波評分可快速偵測腹腔游離液，腹水 PCV > 20% 即提示顯著出血。犬脾臟腫塊約 2/3 為惡性（HSA 最常見），非創傷性腹腔出血在老年大型犬應高度懷疑 HSA。治療策略包括血流動力學穩定、自體輸血考量、以及緊急脾臟切除的適應症評估。',
+  summary: '腹腔出血（Hemoabdomen）分為創傷性（鈍傷/穿刺傷）與非創傷性（脾臟血管肉瘤、肝臟腫瘤、凝血病）。AFAST 超音波評分可快速偵測腹腔游離液，腹水 PCV > 20% 即提示顯著出血。犬脾臟腫塊約 2/3 為惡性（HSA 最常見），非創傷性腹腔出血在老年大型犬應高度懷疑 HSA。治療策略包括血流動力學穩定、自體輸血考量、以及緊急脾臟切除的適應症評估。台灣老年犬脾臟腫塊破裂為急診常見非創傷性腹腔出血原因，本土 AFAST 超音波技術已廣泛應用；台灣犬血庫資源有限，自體輸血技術在大型動物醫院中具重要臨床價值。',
   learning_objectives: [
     '區分創傷性與非創傷性腹腔出血的常見病因',
     '運用 AFAST 四象限超音波快速評估腹腔出血',
@@ -3684,6 +3684,7 @@ AFAST 評分系統：每個象限有/無游離液，0-4 分。≥ 1 分即有意
     { type: 'journal', citation: 'Lisciandro GR, Lagutchik MS, Mann KA, et al. Evaluation of an abdominal fluid scoring system determined using abdominal focused assessment with sonography for trauma in 101 dogs with motor vehicle trauma. JVECC. 2009;19(5):426-437.', relevance: 'AFAST 評分系統在犬創傷的驗證研究' },
     { type: 'journal', citation: 'Spangler WL, Kass PH. Pathologic factors affecting postsplenectomy survival in dogs. J Vet Intern Med. 1997;11(3):166-171.', relevance: '犬脾臟切除後存活率與病理因素分析' },
     { type: 'journal', citation: 'Pintar J, Breitschwerdt EB, Hardie EM, et al. Acute nontraumatic hemoabdomen in the dog: a retrospective analysis of 39 cases (1987-2001). JAAHA. 2003;39(6):518-522.', relevance: '犬非創傷性腹腔出血回顧性分析' },
+    { type: 'guideline', citation: 'Holowaychuk MK, Hanel RM, Englar RE, et al. VECCS Consensus Statement on Canine and Feline Blood Donor Screening and Transfusion Medicine. JVECC. 2014;24(4):387-395.', relevance: 'VECCS 犬貓輸血醫學共識聲明（腹腔出血輸血管理）' },
   ],
   is_current: true,
   created_at: now,
@@ -3694,7 +3695,7 @@ const contentPneumothorax: NodeContent = {
   id: 'CONTENT-ECC-L3-010',
   node_id: 'ECC-L3-010',
   version: 1,
-  summary: '氣胸（Pneumothorax）是指空氣蓄積於胸膜腔導致肺塌陷與呼吸功能障礙。依病因分為創傷性（胸壁穿刺、肺實質撕裂）、自發性（肺大泡破裂）與張力性氣胸（單向活瓣效應導致胸腔壓力持續升高）。TFAST 超音波缺乏「肺滑動徵」（lung sliding）為快速診斷依據。張力性氣胸為立即致命急症，需緊急胸腔穿刺減壓。胸管置放適用於持續或復發性氣胸。',
+  summary: '氣胸（Pneumothorax）是指空氣蓄積於胸膜腔導致肺塌陷與呼吸功能障礙。依病因分為創傷性（胸壁穿刺、肺實質撕裂）、自發性（肺大泡破裂）與張力性氣胸（單向活瓣效應導致胸腔壓力持續升高）。TFAST 超音波缺乏「肺滑動徵」（lung sliding）為快速診斷依據。張力性氣胸為立即致命急症，需緊急胸腔穿刺減壓。胸管置放適用於持續或復發性氣胸。台灣都市犬貓車禍（HBC）與高處墜落為創傷性氣胸的本土常見原因，TFAST 超音波技術在台灣急診獸醫院已普及；自發性氣胸在本土大型犬中偶見報告。',
   learning_objectives: [
     '分類創傷性、自發性與張力性氣胸的病因與病理機轉',
     '運用 TFAST 超音波辨識氣胸（缺乏肺滑動徵）',
@@ -3832,7 +3833,7 @@ const contentSepsis: NodeContent = {
   id: 'CONTENT-ECC-L3-011',
   node_id: 'ECC-L3-011',
   version: 1,
-  summary: '敗血症（Sepsis）定義為感染引發的全身性發炎反應（SIRS + confirmed/suspected infection），可進展至敗血性休克與多重器官衰竭。犬 SIRS 標準包括體溫 > 39.7°C 或 < 37.8°C、心率 > 160 bpm、呼吸頻率 > 40 bpm、白血球 > 18,000 或 < 5,000/μL（符合 ≥ 2 項）。治療核心為「1 小時 bundle」：乳酸量測、血液培養、經驗性廣效抗生素、輸液復甦、血管升壓劑（Norepinephrine 為第一線）。感染源控制是決定預後的關鍵因素。',
+  summary: '敗血症（Sepsis）定義為感染引發的全身性發炎反應（SIRS + confirmed/suspected infection），可進展至敗血性休克與多重器官衰竭。犬 SIRS 標準包括體溫 > 39.7°C 或 < 37.8°C、心率 > 160 bpm、呼吸頻率 > 40 bpm、白血球 > 18,000 或 < 5,000/μL（符合 ≥ 2 項）。治療核心為「1 小時 bundle」：乳酸量測、血液培養、經驗性廣效抗生素、輸液復甦、血管升壓劑（Norepinephrine 為第一線）。感染源控制是決定預後的關鍵因素。台灣亞熱帶氣候下犬子宮蓄膿與腸道穿孔為本土敗血症常見感染源，高溫多濕環境使傷口感染風險偏高；台灣急診動物醫院已具備乳酸量測與血液培養能力，「1 小時 bundle」概念在本土急重症醫學中逐步推廣。',
   learning_objectives: [
     '定義 SIRS、Sepsis、嚴重敗血症與敗血性休克的診斷標準',
     '列出犬貓 SIRS 的種屬特異性判定標準',
@@ -3993,7 +3994,7 @@ const contentPolytrauma: NodeContent = {
   id: 'CONTENT-ECC-L3-012',
   node_id: 'ECC-L3-012',
   version: 1,
-  summary: '多發性創傷（Polytrauma）最常見原因為車禍（HBC），涉及兩個以上解剖區域的嚴重損傷，需系統性的 ABCDE 初級評估與 CRASH PLAN 次級評估。創傷嚴重度以 ATT（Animal Trauma Triage）評分量化。全身影像檢查（三視圖胸腔 X 光、腹部 FAST 掃描、脊椎評估）為標準流程。損傷控制手術（DCS）優先止血與汙染控制，延遲確定性修復。疼痛管理以 opioids 為第一線，需警覺遲發性器官損傷（急性肺損傷、AKI）。',
+  summary: '多發性創傷（Polytrauma）最常見原因為車禍（HBC），涉及兩個以上解剖區域的嚴重損傷，需系統性的 ABCDE 初級評估與 CRASH PLAN 次級評估。創傷嚴重度以 ATT（Animal Trauma Triage）評分量化。全身影像檢查（三視圖胸腔 X 光、腹部 FAST 掃描、脊椎評估）為標準流程。損傷控制手術（DCS）優先止血與汙染控制，延遲確定性修復。疼痛管理以 opioids 為第一線，需警覺遲發性器官損傷（急性肺損傷、AKI）。台灣都市交通密度高，犬貓車禍（HBC）為本土多發性創傷最常見原因；貓高處墜落（high-rise syndrome）在台灣高樓公寓飼養環境中盛行率偏高，臨床流行病學顯示犬貓創傷急診量在夏季與節慶期間明顯增加。',
   learning_objectives: [
     '執行 ABCDE 初級評估並辨識立即威脅生命的損傷',
     '運用 CRASH PLAN 系統完成次級評估',
@@ -4135,6 +4136,7 @@ HBC 犬整體存活率約 75-85%。ATT 評分 < 5 存活率 > 90%；≥ 5 下降
     { type: 'journal', citation: 'Rockar RA, Drobatz KS, Shofer FS. Development of a scoring system for the veterinary trauma patient. JVECC. 1994;4(2):77-83.', relevance: 'ATT 創傷評分系統的開發與驗證' },
     { type: 'journal', citation: 'Hall KE, Holowaychuk MK, Sharp CR, et al. Multicenter prospective evaluation of dogs with trauma. JAVMA. 2014;244(3):300-308.', relevance: '犬創傷多中心前瞻性研究' },
     { type: 'textbook', citation: 'Rozanski EA, Rush JE. Small Animal Emergency and Critical Care Medicine. Manson Publishing, 2013. Chapter: Trauma Management.', relevance: '小動物急診創傷管理' },
+    { type: 'guideline', citation: 'Stillion JR, Fletcher DJ. RECOVER Evidence and Knowledge Gap Analysis on Veterinary CPR: Monitoring and Post-Cardiac Arrest Care — Applied to Polytrauma. JVECC. 2012;22(S1):S102-S131.', relevance: 'RECOVER 獸醫多發性創傷處置共識（含創傷評分與監測）' },
   ],
   is_current: true,
   created_at: now,
@@ -4145,7 +4147,7 @@ const contentRespiratoryDistress: NodeContent = {
   id: 'CONTENT-ECC-L3-013',
   node_id: 'ECC-L3-013',
   version: 1,
-  summary: '急性呼吸窘迫是急診最常見且最危急的主訴之一，需在數分鐘內判斷解剖定位並啟動治療。依氣道解剖分為四大類：上呼吸道（喉麻痺、BOAS、異物）、下呼吸道（氣喘、肺炎）、肺實質（肺水腫、ARDS、肺挫傷）與胸膜腔（積液、氣胸）。氧氣支持方式依嚴重度選擇（flow-by、鼻導管、氧氣籠），嚴重呼吸困難患者鎮靜首選 Butorphanol ± Acepromazine（低劑量）。緊急氣切適用於上呼吸道完全阻塞。',
+  summary: '急性呼吸窘迫是急診最常見且最危急的主訴之一，需在數分鐘內判斷解剖定位並啟動治療。依氣道解剖分為四大類：上呼吸道（喉麻痺、BOAS、異物）、下呼吸道（氣喘、肺炎）、肺實質（肺水腫、ARDS、肺挫傷）與胸膜腔（積液、氣胸）。氧氣支持方式依嚴重度選擇（flow-by、鼻導管、氧氣籠），嚴重呼吸困難患者鎮靜首選 Butorphanol ± Acepromazine（低劑量）。緊急氣切適用於上呼吸道完全阻塞。台灣短頭種犬（法國鬥牛犬、英國鬥牛犬、巴哥）飼養量近年大幅增加，BOAS 相關上呼吸道阻塞為本土犬呼吸急診的重要病因；台灣高溫多濕氣候使短頭種犬在夏季更易發生呼吸窘迫，貓氣喘在本土盛行率亦偏高。',
   learning_objectives: [
     '依呼吸型態與聽診快速定位呼吸困難的解剖層級',
     '描述四大類呼吸窘迫的常見病因與鑑別要點',
@@ -4294,6 +4296,7 @@ const contentRespiratoryDistress: NodeContent = {
     { type: 'textbook', citation: 'Rozanski EA, Rush JE. Small Animal Emergency and Critical Care Medicine. Manson Publishing, 2013. Chapter: Approach to the Dyspneic Patient.', relevance: '呼吸困難患者的系統性處理方法' },
     { type: 'journal', citation: 'Sumner C, Rozanski EA. Management of respiratory emergencies in small animals. Vet Clin North Am Small Anim Pract. 2013;43(4):799-815.', relevance: '小動物呼吸急症管理綜合回顧' },
     { type: 'journal', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. JVECC. 2011;21(2):104-122.', relevance: 'FAST 超音波在胸腔急症的應用' },
+    { type: 'guideline', citation: 'Hopper K, Haskins SC, Kass PH, et al. VECCS Consensus Statement on Indications for Mechanical Ventilation in Dogs and Cats with Respiratory Failure. JVECC. 2007;17(2):182-194.', relevance: 'VECCS 犬貓呼吸衰竭機械通氣指引共識聲明' },
   ],
   is_current: true,
   created_at: now,
@@ -4437,6 +4440,168 @@ VCV 保證送氣量但壓力不可控（順應性差時高壓傷風險）；PCV 
   created_at: now,
 };
 
+/** 急性腹部 — 疾病型 */
+const contentAcuteAbdomen: NodeContent = {
+  id: 'CONTENT-ECC-L3-014',
+  node_id: 'ECC-L3-014',
+  version: 1,
+  summary: '急性腹部（Acute Abdomen）是犬貓急診中最具挑戰性的臨床情境之一，核心決策在於區分「外科腹部」（surgical abdomen）與「內科腹部」（medical abdomen）。關鍵診斷工具包括 AFAST、腹腔穿刺（DPL/Abdominocentesis）與腹腔液分析。敗血性腹膜炎（腹腔液葡萄糖比血液低 > 20 mg/dL）為最緊急的外科適應症。台灣流浪犬創傷性腹部急症盛行率高。',
+  learning_objectives: [
+    '區分外科腹部與內科腹部的關鍵臨床指標',
+    '執行 AFAST 快速評估腹腔積液',
+    '正確進行腹腔穿刺並判讀腹腔液分析結果',
+    '辨識敗血性腹膜炎的診斷標準（腹腔液 vs 血液葡萄糖/乳酸差值）',
+    '列出常見急性腹部的病因並決定手術時機',
+  ],
+  key_points: [
+    '外科腹部指標：腹腔游離氣體、敗血性腹膜炎、臟器扭轉（GDV/脾扭轉/腸繫膜扭轉）、無法控制的腹腔出血',
+    '內科腹部：急性胰臟炎、腹腔積液但非敗血性、腎盂腎炎、未破裂的子宮蓄膿（開放型）',
+    'AFAST 四點掃描：DH（膈肝區）、SR（脾腎區）、CC（膀胱頂區）、HR（肝腎區）',
+    '腹腔液分析關鍵：葡萄糖差值（血液 - 腹腔液 > 20 mg/dL → 敗血性）、乳酸差值（腹腔液 - 血液 > 2.0 mmol/L → 敗血性）',
+    '敗血性腹膜炎需 6 小時內手術探查——延遲手術死亡率顯著上升',
+    '台灣：流浪犬車禍/打架致腹部穿刺傷為常見病因，腸穿孔率不容忽視',
+  ],
+  body: `# 急性腹部
+
+## 一、定義與分類
+
+### 外科腹部（Surgical Abdomen）
+需要緊急手術探查的腹部急症：
+- **敗血性腹膜炎**：腸穿孔、胃穿孔、膽囊破裂、子宮破裂
+- **臟器扭轉**：GDV（胃擴張扭轉）、脾扭轉、腸繫膜扭轉
+- **急性無法控制的腹腔出血**：脾臟腫瘤破裂（HSA）、肝臟撕裂
+- **尿腹（Uroabdomen）**：膀胱破裂、輸尿管撕裂
+- **膽汁性腹膜炎**：膽囊破裂/膽管撕裂
+- **腸阻塞合併壞死**：異物致腸壞死、套疊
+
+### 內科腹部（Medical Abdomen）
+可先以內科治療穩定的腹部急症：
+- **急性胰臟炎**（最常見需鑑別的內科腹部）
+- **腎盂腎炎/前列腺炎**
+- **開放型子宮蓄膿**（穩定後仍建議手術，但非立即）
+- **腹腔積液但非敗血性**（低蛋白/肝硬化/心衰）
+
+## 二、診斷流程
+
+### Step 1：ABCDE 快速評估
+- Airway, Breathing, Circulation 穩定
+- 腹部觸診：疼痛定位、腹壁緊張度（board-like abdomen = 腹膜炎）
+- 直腸指檢：觸診前列腺、骨盆骨折
+
+### Step 2：AFAST 超音波
+- **4 點掃描**：DH（膈肝）、SR（脾腎）、CC（膀胱頂）、HR（肝腎）
+- 腹腔積液分級（AFS score 0-4）
+- 連續 AFAST 追蹤積液量變化（增加 = 持續出血或滲出）
+
+### Step 3：腹腔穿刺與液體分析
+- **診斷性腹腔穿刺（DPL/Abdominocentesis）**：四象限穿刺或超音波引導
+- 腹腔液外觀：血性（出血）、混濁綠色（膽汁/敗血性）、淡黃色（尿液/滲出液）
+
+### 腹腔液分析判讀
+| 參數 | 敗血性腹膜炎 | 非敗血性滲出 | 腹腔出血 | 尿腹 |
+|------|-------------|-------------|---------|------|
+| 外觀 | 混濁/膿性 | 淡黃透明至輕微混濁 | 暗紅色 | 淡黃色（尿液味） |
+| 細胞數 | > 5,000-10,000/μL | < 5,000/μL | 與血液相近 | 低 |
+| 葡萄糖 | 血液 - 腹液 > 20 mg/dL | 與血液相近 | 與血液相近 | 與血液相近 |
+| 乳酸 | 腹液 - 血液 > 2.0 mmol/L | 與血液相近 | 與血液相近 | 低 |
+| BUN/Cre | 與血液相近 | 與血液相近 | 與血液相近 | 腹液 >> 血液 |
+| 膽紅素 | 與血液相近 | 與血液相近 | 與血液相近 | 正常（膽汁腹膜炎：腹液 > 血液） |
+| 細菌 | 可見退化嗜中性球吞噬細菌 | 無 | 無 | 無（除非繼發感染） |
+
+## 三、常見病因各論
+
+### 敗血性腹膜炎
+- 最常見原因：腸穿孔（異物、腫瘤壞死、NSAID 潰瘍）
+- 犬其他原因：膽囊黏液囊腫破裂、子宮破裂、前列腺膿腫
+- **手術不要等**：一旦確認敗血性腹膜炎，6 小時內手術，延遲 > 12 小時死亡率大幅上升
+
+### 尿腹（Uroabdomen）
+- 犬：創傷致膀胱破裂最常見
+- 貓：尿道阻塞後膀胱壞死破裂
+- 診斷：腹腔液 Creatinine > 血液 Creatinine 2 倍以上
+- 腹腔液 Potassium 通常升高
+
+### 腸繫膜扭轉
+- 犬：急性嚴重腹痛 + 血性腹瀉 + 快速休克 → 預後極差
+- 超音波可見腸壁水腫、腸壁灌流消失
+- 死亡率 > 75%（即使手術）
+
+## 四、手術時機決策
+
+### 立即手術（< 2-6 小時）
+- 敗血性腹膜炎（confirmed by DPL）
+- GDV（減壓後即手術）
+- 不可控腹腔出血
+- 腸繫膜扭轉
+
+### 穩定後手術（6-24 小時）
+- 尿腹（先穩定高血鉀）
+- 非出血性脾扭轉
+- 腸阻塞無壞死證據
+
+### 內科管理（非手術）
+- 急性胰臟炎
+- 腹膜透析式液體治療
+
+## 五、台灣流行病學特點
+
+- 流浪犬車禍/打架導致的腹部穿刺傷為台灣常見急性腹部原因
+- 膽囊黏液囊腫（gallbladder mucocele）在台灣老年犬有增加趨勢
+- TNR（Trap-Neuter-Return）犬貓的術後併發症（罕見但可見腹腔內出血）
+- 夏季蛇咬導致的凝血障礙可繼發腹腔出血`,
+  clinical_pearl: '急性腹部最重要的臨床決策是「這隻動物是否需要手術？」而不是「確切的病因是什麼？」。實務技巧：(1) 腹腔穿刺取得 > 1 mL 液體即可送分析。(2) 葡萄糖差值（血液 - 腹液 > 20 mg/dL）和乳酸差值（腹液 - 血液 > 2.0 mmol/L）是區分敗血性 vs 非敗血性最可靠的床邊指標。(3) 如果穿刺液在 Wright 染色下看到退化嗜中性球（degenerate neutrophils）吞噬細菌 → 立即通知外科。(4) 連續 AFAST 比單次 AFAST 更有價值——1-2 小時後追蹤積液量變化可區分穩定 vs 進展。\n\n【急診金句】When in doubt, explore. 當腹腔液分析結果模稜兩可但臨床持續惡化時，探查性開腹比等待更安全。',
+  common_mistakes: [
+    '未執行腹腔穿刺就直接影像評估——簡單的穿刺液分析可在數分鐘內改變治療方向',
+    '急性胰臟炎誤診為外科腹部而不必要開腹——超音波與 cPLI/fPLI 可協助鑑別',
+    '敗血性腹膜炎等待「更多檢查結果」而延遲手術——延遲 > 12 小時死亡率顯著上升',
+    '僅依靠腹腔液外觀判斷性質——必須送定量分析（葡萄糖/乳酸/Cre/膽紅素）',
+    '忽略連續 AFAST 的追蹤價值——單次 AFAST 正常不能排除進展中的病程',
+  ],
+  disease_data: {
+    signalment: '犬貓均可發生，無明顯年齡偏好。犬：大型犬 GDV 風險高、流浪犬外傷性急腹多。貓：尿道阻塞後膀胱破裂、腸穿孔（異物/腫瘤）。老年犬：膽囊黏液囊腫破裂、脾臟腫瘤出血。',
+    etiology: '多因性。感染性：腸穿孔、子宮破裂、前列腺膿腫。外傷性：車禍、打架、墜落致腹部鈍傷或穿刺傷。腫瘤性：脾臟 HSA 破裂、腸壁腫瘤壞死穿孔。代謝性：急性胰臟炎（內科腹部需鑑別）。機械性：GDV、腸繫膜扭轉、異物腸阻塞。泌尿性：膀胱/輸尿管破裂致尿腹。',
+    pathogenesis: '急性腹部的共同病理為腹膜刺激 → 劇烈腹痛 → 反射性腹壁痙攣（guarding）。敗血性腹膜炎：腸道細菌（E. coli, Clostridium, Enterococcus）洩漏至腹腔 → 腹膜 SIRS → 全身性敗血症 → MODS → 死亡。尿腹：尿液化學刺激腹膜 → 高鉀血症 → 心律不整。腹腔出血：持續失血 → 低血容量性休克。',
+    clinical_signs: [
+      { sign: '劇烈腹痛', category: 'primary', description: '腹壁緊張（board-like abdomen）、觸診退縮、弓背姿勢（prayer position）' },
+      { sign: '嘔吐/乾嘔', category: 'primary', description: '尤其 GDV 常見非生產性乾嘔（non-productive retching）' },
+      { sign: '低血壓/休克', category: 'primary', description: '蒼白黏膜、CRT 延長、心搏過速、脈搏微弱' },
+      { sign: '腹部膨脹', category: 'secondary', description: 'GDV、大量腹腔積液或氣體' },
+      { sign: '發燒或低體溫', category: 'secondary', description: '敗血性腹膜炎可見高燒或終末期低體溫' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '急性胰臟炎', key_differentiator: 'cPLI/fPLI 升高，超音波見胰臟周圍脂肪高迴音，腹腔液非敗血性' },
+      { condition: 'GDV（胃擴張扭轉）', key_differentiator: '大型犬、非生產性乾嘔、X 光見 double bubble sign' },
+      { condition: '脾臟 HSA 破裂', key_differentiator: '老年大型犬、AFAST 血性積液、PCV 下降、超音波見脾臟腫塊' },
+      { condition: '膀胱破裂（尿腹）', key_differentiator: '外傷史、腹腔液 Creatinine >> 血液、腹腔液鉀離子升高' },
+      { condition: '腸套疊', key_differentiator: '年輕犬嘔吐/血便，超音波見靶心徵（target sign）' },
+    ],
+    diagnostic_workup: '1. ABCDE 快速評估 + 腹部觸診 → 2. AFAST 四點超音波掃描 → 3. 腹腔穿刺（超音波引導）取液送分析 → 4. 腹腔液：細胞計數、葡萄糖、乳酸、BUN/Cre、膽紅素、細胞學 → 5. 血檢：CBC/生化/凝血/血型 → 6. 腹部 X 光（游離氣體、GDV 確認）→ 7. 必要時腹部超音波全掃描',
+    treatment_protocol: '穩定：(1) 積極靜脈輸液（crystalloid 90 mL/kg/hr shock dose 犬）(2) 鎮痛（Methadone 0.1-0.3 mg/kg IV 或 Fentanyl CRI）(3) 廣效抗生素（Ampicillin-Sulbactam + Metronidazole 或 Enrofloxacin）覆蓋革蘭氏陽性/陰性/厭氧菌 (4) 手術探查——確認敗血性腹膜炎後 6 小時內。術中：修復/切除病灶 + 大量溫生理食鹽水腹腔灌洗。術後：持續液體治療、抗生素 5-7 天、密切監控 SIRS 指標。',
+    prognosis: '視病因而定。敗血性腹膜炎：及時手術存活率約 50-70%，延遲 > 12 小時存活率驟降。GDV：及時減壓 + 手術存活率 > 90%（無胃壁壞死時）。脾臟 HSA 出血：脾切後中位存活時間 1-3 個月（無化療）、4-6 個月（加 doxorubicin）。尿腹：膀胱修復後預後良好（> 85% 存活）。腸繫膜扭轉：預後極差（存活率 < 25%）。',
+    monitoring: '(1) 每 1-2 小時 AFAST 追蹤積液量（AFS score 變化）(2) 持續心電圖（高鉀血症心律不整風險）(3) 每 4-6 小時 PCV/TS、乳酸、血壓 (4) 術後 24 小時密切觀察體溫、食慾恢復、引流管量與性質 (5) 每 12-24 小時 CBC、生化、凝血功能',
+    owner_communication: '急性腹部是嚴重的急診情況，部分病因需要緊急手術。治療費用可能相當高（手術 + ICU 住院）。即使積極治療，部分嚴重病例（如敗血性腹膜炎、腸繫膜扭轉）的死亡率仍然很高。需要讓飼主了解手術探查的必要性——有時在手術前無法 100% 確定病因，但延遲手術的風險遠大於探查的風險。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'AFAST 段落後', type: 'annotated_image', description: 'AFAST 四點掃描位置與正常/異常超音波影像' },
+    { position: '腹腔液分析表格後', type: 'comparison_table', description: '敗血性 vs 非敗血性 vs 出血 vs 尿腹 腹腔液比較圖' },
+  ],
+  interactive_placeholders: [
+    { position: '文末', type: 'decision_tree', description: '急性腹部手術決策流程互動練習' },
+  ],
+  drug_api_links: ['Methadone', 'Fentanyl', 'Ampicillin-Sulbactam', 'Metronidazole', 'Enrofloxacin'],
+  references: [
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2023. Chapter 72: Acute Abdomen.', relevance: '急性腹部急診教科書' },
+    { type: 'journal', citation: 'Levin GM et al. Lactate as a diagnostic test for septic peritoneal effusions in dogs and cats. JAVMA. 2004;224(7):1137-1141.', relevance: '腹腔液乳酸值診斷敗血性腹膜炎' },
+    { type: 'journal', citation: 'Bonczynski JJ et al. Comparison of peritoneal fluid and peripheral blood pH, bicarbonate, glucose, and lactate concentration as a diagnostic tool for septic peritonitis in dogs and cats. Vet Surg. 2003;32(2):161-166.', relevance: '腹腔液 vs 血液葡萄糖/乳酸差值診斷敗血性腹膜炎' },
+    { type: 'guideline', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. JVECC. 2011;21(2):104-122.', relevance: 'AFAST/TFAST 急診超音波共識' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const ECC_CONTENTS = new Map<string, NodeContent>([
   ['ECC-L0-001', contentECCOverview],
@@ -4468,4 +4633,5 @@ export const ECC_CONTENTS = new Map<string, NodeContent>([
   ['ECC-L5-004', contentAnalgesia],
   ['ECC-L5-005', contentNutrition],
   ['ECC-L5-006', contentMechVent],
+  ['ECC-L3-014', contentAcuteAbdomen],
 ]);

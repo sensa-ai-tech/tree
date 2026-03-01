@@ -3,10 +3,15 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Map, Info, X, ArrowLeft } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { Card, CardBody } from '@/components/ui/Card';
 import { GraphSkeleton } from '@/components/ui/Skeleton';
-import { KnowledgeGraph } from '@/components/features/KnowledgeGraph';
 import { SpecialtyGrid } from '@/components/features/SpecialtyGrid';
+
+const KnowledgeGraph = dynamic(
+  () => import('@/components/features/KnowledgeGraph').then(m => m.KnowledgeGraph),
+  { ssr: false, loading: () => <GraphSkeleton /> }
+);
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 
 const SPECIALTIES = [

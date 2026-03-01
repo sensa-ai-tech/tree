@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Card, CardBody } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils/cn';
-import { RotateCcw, Eye } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 interface SpacedRepReviewProps {
   nodeId: string;

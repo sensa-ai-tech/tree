@@ -29,7 +29,7 @@ const defaultExperience: UserExperience = {
   specialties_explored: [],
 };
 
-export const useGamificationStore = create<GamificationState>((set, get) => ({
+export const useGamificationStore = create<GamificationState>((set, _get) => ({
   experience: defaultExperience,
   achievements: [],
   recentXPEvents: [],

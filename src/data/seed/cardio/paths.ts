@@ -15,6 +15,7 @@ export const CARDIO_PATHS: LearningPath[] = [
       { node_id: 'CARDIO-L1-003', is_required: false, phase: '基礎概念', learning_note: '選修但建議閱讀' },
       { node_id: 'CARDIO-L2-001', is_required: true, phase: '病理機轉', learning_note: null },
       { node_id: 'CARDIO-L3-001', is_required: true, phase: '臨床應用', learning_note: '核心疾病節點' },
+      { node_id: 'CARDIO-L3-005', is_required: false, phase: '臨床應用', learning_note: '選修：犬心絲蟲感染——台灣流行病學重要疾病' },
       { node_id: 'CARDIO-L3-006', is_required: false, phase: '臨床應用', learning_note: '選修：先天性心臟病概論（PDA/PS/SAS）' },
       { node_id: 'CARDIO-L4-001', is_required: true, phase: '臨床應用', learning_note: null },
       { node_id: 'CARDIO-L4-002', is_required: true, phase: '臨床應用', learning_note: null },

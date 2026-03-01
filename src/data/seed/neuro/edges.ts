@@ -86,4 +86,37 @@ export const NEURO_EDGES: KnowledgeEdge[] = [
   { id: 'NEURO-E-053', source_node_id: 'NEURO-L3-009', target_node_id: 'NEURO-L3-002', relation_type: 'differential', weight: 0.8, description: 'Wobbler vs IVDD 需鑑別（均導致頸脊髓壓迫）', bidirectional: true, unlock_condition: null },
   { id: 'NEURO-E-054', source_node_id: 'NEURO-L3-010', target_node_id: 'NEURO-L3-002', relation_type: 'differential', weight: 0.9, description: 'FCE vs IVDD Hansen Type III 需鑑別（急性脊髓疾病）', bidirectional: true, unlock_condition: null },
   { id: 'NEURO-E-055', source_node_id: 'NEURO-L3-011', target_node_id: 'NEURO-L3-002', relation_type: 'differential', weight: 0.7, description: '椎間盤炎 vs IVDD 需鑑別（均可導致脊痛）', bidirectional: true, unlock_condition: null },
+
+  // ─── 審計修復：L3 缺少 prerequisite 邊 ───
+  // NEURO-L3-011 (椎間盤炎) 需要 L1/L2 prerequisite
+  { id: 'NEURO-E-056', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-011', relation_type: 'prerequisite', weight: 0.8, description: '脊椎解剖是理解椎間盤炎感染部位與擴散途徑的前置知識', bidirectional: false, unlock_condition: null },
+
+  // ─── 第二輪審計：藥理學/影像學/復健視角補齊 ───
+
+  // MG 缺少治療路徑：需 Tensilon test → 復健支持（目前無 cholinesterase inhibitor L5 節點，先連復健）
+  { id: 'NEURO-E-057', source_node_id: 'NEURO-L3-006', target_node_id: 'NEURO-L5-003', relation_type: 'clinical_apply', weight: 0.7, description: '重症肌無力管理需營養支持、姿位餵食（巨食道症）與肌力復健', bidirectional: false, unlock_condition: null },
+
+  // MG 需影像排除胸腺瘤（胸腔 X 光/CT）
+  { id: 'NEURO-E-058', source_node_id: 'NEURO-L3-006', target_node_id: 'NEURO-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: 'MG 需胸腔影像排除胸腺瘤（犬 MG 約 3-5% 伴隨胸腺瘤）', bidirectional: false, unlock_condition: null },
+
+  // Wobbler 術後需神經復健
+  { id: 'NEURO-E-059', source_node_id: 'NEURO-L3-009', target_node_id: 'NEURO-L5-003', relation_type: 'clinical_apply', weight: 0.8, description: 'Wobbler 術後需長期神經復健（本體感覺訓練、水療、步態矯正）', bidirectional: false, unlock_condition: null },
+
+  // 馬尾症候群術後需復健
+  { id: 'NEURO-E-060', source_node_id: 'NEURO-L3-013', target_node_id: 'NEURO-L5-003', relation_type: 'clinical_apply', weight: 0.7, description: '馬尾症候群術後復健包含疼痛管理、骨盆肌群強化與排尿功能訓練', bidirectional: false, unlock_condition: null },
+
+  // 癲癇需 CSF 分析排除繼發性原因（腦炎、感染）
+  { id: 'NEURO-E-061', source_node_id: 'NEURO-L3-001', target_node_id: 'NEURO-L4-002', relation_type: 'clinical_apply', weight: 0.6, description: '非典型癲癇（成年發作、局灶性、藥物難治型）需 CSF 排除 GME/感染性腦炎', bidirectional: false, unlock_condition: null },
+
+  // 椎間盤炎需 CSF 分析
+  { id: 'NEURO-E-062', source_node_id: 'NEURO-L3-011', target_node_id: 'NEURO-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: '椎間盤炎 CSF 分析可見中性球增多與蛋白升高，支持感染性診斷', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: EMG/電生理診斷 相關邊 ───
+  { id: 'NEURO-E-063', source_node_id: 'NEURO-L1-002', target_node_id: 'NEURO-L4-005', relation_type: 'builds_on', weight: 0.9, description: '神經生理學（動作電位、突觸傳遞）是電生理診斷的理論基礎', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-064', source_node_id: 'NEURO-L3-006', target_node_id: 'NEURO-L4-005', relation_type: 'clinical_apply', weight: 0.9, description: '重症肌無力需重複神經刺激（RNS）確認遞減反應', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-065', source_node_id: 'NEURO-L3-005', target_node_id: 'NEURO-L4-005', relation_type: 'clinical_apply', weight: 0.8, description: '多發性神經根炎需 EMG/NCV 評估去神經化與傳導速度下降', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 審計缺失邊補齊 ───
+  { id: 'NEURO-E-066', source_node_id: 'NEURO-L3-013', target_node_id: 'NEURO-L5-003', relation_type: 'clinical_apply', weight: 0.7, description: '腰薦椎疾病術後需復健（疼痛管理、骨盆肌群強化、排尿功能訓練）', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-067', source_node_id: 'NEURO-L1-003', target_node_id: 'NEURO-L3-012', relation_type: 'prerequisite', weight: 0.8, description: 'CSF 生理（產生、循環、吸收）是理解水腦症病理的前置知識', bidirectional: false, unlock_condition: null },
 ];

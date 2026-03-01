@@ -87,4 +87,58 @@ export const DERM_EDGES: KnowledgeEdge[] = [
   { id: 'DERM-E-040', source_node_id: 'DERM-L2-003', target_node_id: 'DERM-L3-013', relation_type: 'clinical_apply', weight: 0.7, description: '自體免疫機轉與 CTCL 免疫失調相關', bidirectional: false, unlock_condition: null },
   { id: 'DERM-E-041', source_node_id: 'DERM-L3-013', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 1, description: 'CTCL 需皮膚細胞學/組織病理確診', bidirectional: false, unlock_condition: null },
   { id: 'DERM-E-042', source_node_id: 'DERM-L3-013', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 0.8, description: 'CTCL 需免疫調節治療', bidirectional: false, unlock_condition: null },
+
+  // ─── 審計補齊：缺失的 L3→L5 治療邊與 L3→L4 診斷邊 ───
+
+  // DERM-L3-006 (馬拉色菌) 缺少 L3→L5 治療邊
+  { id: 'DERM-E-043', source_node_id: 'DERM-L3-006', target_node_id: 'DERM-L5-005', relation_type: 'clinical_apply', weight: 1.0, description: '馬拉色菌皮膚炎需要抗黴菌治療（局部/全身 ketoconazole 或 itraconazole）', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-009 (疥蟎) 缺少 L3→L5 治療邊
+  { id: 'DERM-E-044', source_node_id: 'DERM-L3-009', target_node_id: 'DERM-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: '疥蟎症需要抗寄生蟲治療（isoxazoline 類藥物為首選）', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-003 (FAD) 缺少 L3→L5 治療邊
+  { id: 'DERM-E-045', source_node_id: 'DERM-L3-003', target_node_id: 'DERM-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: '跳蚤過敏性皮膚炎的根本治療是嚴格跳蚤預防', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-002 (食物不良反應) 缺少 L3→L5 治療邊
+  { id: 'DERM-E-046', source_node_id: 'DERM-L3-002', target_node_id: 'DERM-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '食物不良反應管理需要排除飲食試驗與長期飲食管理', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-001 (CAD) 缺少繼發感染診斷邊
+  { id: 'DERM-E-047', source_node_id: 'DERM-L3-001', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: '犬異位性皮膚炎常繼發細菌/酵母菌感染，需細胞學確認', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-012 (脫毛症 X) 缺少 L3→L5 治療邊
+  { id: 'DERM-E-048', source_node_id: 'DERM-L3-012', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 0.7, description: '脫毛症 X 治療包含褪黑激素、甲狀腺素補充或免疫調節', bidirectional: false, unlock_condition: null },
+
+  // ─── 第二輪審計：藥理/影像/教育學視角補齊 ───
+
+  // DERM-L3-011 (藥物不良反應) → 治療路徑：嚴重藥物反應需免疫調節治療（停藥 + 支持治療 + 免疫抑制）
+  { id: 'DERM-E-049', source_node_id: 'DERM-L3-011', target_node_id: 'DERM-L5-003', relation_type: 'clinical_apply', weight: 0.8, description: '嚴重藥物反應（如 TEN/SJS）需停藥、支持療法與免疫調節治療', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-001 (CAD) → 耳鏡檢查：50-80% CAD 犬合併外耳炎
+  { id: 'DERM-E-050', source_node_id: 'DERM-L3-001', target_node_id: 'DERM-L4-004', relation_type: 'clinical_apply', weight: 0.8, description: '50-80% 犬異位性皮膚炎合併外耳炎，需常規耳鏡檢查評估', bidirectional: false, unlock_condition: null },
+
+  // DERM-L5-001 (過敏管理) → L5-003 (免疫調節)：治療升階路徑
+  { id: 'DERM-E-051', source_node_id: 'DERM-L5-001', target_node_id: 'DERM-L5-003', relation_type: 'builds_on', weight: 0.7, description: '一線抗搔癢治療無效時需升階至免疫調節治療（cyclosporine、ASIT）', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: DERM-L3-014 (MCT) & DERM-L4-005 (Dermatohistopathology) ───
+
+  // DERM-L2-001 (過敏/肥大細胞機轉) → MCT
+  { id: 'DERM-E-052', source_node_id: 'DERM-L2-001', target_node_id: 'DERM-L3-014', relation_type: 'prerequisite', weight: 0.9, description: '肥大細胞生物學與脫顆粒機轉是理解 MCT 的基礎', bidirectional: false, unlock_condition: null },
+
+  // MCT → FNA 細胞學
+  { id: 'DERM-E-053', source_node_id: 'DERM-L3-014', target_node_id: 'DERM-L4-003', relation_type: 'clinical_apply', weight: 1.0, description: 'MCT 初步診斷依賴 FNA 細胞學（典型紫色顆粒）', bidirectional: false, unlock_condition: null },
+
+  // MCT → 組織病理
+  { id: 'DERM-E-054', source_node_id: 'DERM-L3-014', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: 'MCT 分級（Patnaik/Kiupel）需組織病理確診', bidirectional: false, unlock_condition: null },
+
+  // 天疱瘡 → 組織病理
+  { id: 'DERM-E-055', source_node_id: 'DERM-L3-010', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: '天疱瘡需組織病理確診（棘層鬆解、嗜酸球膿疱）', bidirectional: false, unlock_condition: null },
+
+  // 藥物不良反應 → 組織病理
+  { id: 'DERM-E-056', source_node_id: 'DERM-L3-011', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 0.9, description: '藥物不良反應需組織病理確診（界面皮膚炎、角質細胞壞死）', bidirectional: false, unlock_condition: null },
+
+  // CTCL → 組織病理
+  { id: 'DERM-E-057', source_node_id: 'DERM-L3-013', target_node_id: 'DERM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: 'CTCL 確診依賴組織病理（嗜表皮淋巴球、Pautrier microabscess）', bidirectional: false, unlock_condition: null },
+
+  // 角化異常 → 膿皮症（審計補齊缺失邊）
+  { id: 'DERM-E-058', source_node_id: 'DERM-L2-002', target_node_id: 'DERM-L3-005', relation_type: 'clinical_apply', weight: 0.8, description: '角化異常導致皮膚屏障破壞，為細菌性膿皮症的誘因', bidirectional: false, unlock_condition: null },
 ];

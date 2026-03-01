@@ -37,7 +37,9 @@ export const useAuthStore = create<AuthState>()(
           const mockUser: User = {
             id: `mock-${Date.now()}`,
             email,
-            role: email.includes('admin') ? 'admin' : 'user',
+            // Mock mode: admin role only for exact match of designated admin email
+          // Production: should use Supabase RLS + JWT claims instead
+          role: email === 'admin@vetknowledgetree.com' ? 'admin' : 'user',
           };
           set({ user: mockUser, isLoading: false });
         } catch (err) {

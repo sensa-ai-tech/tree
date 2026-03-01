@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
-import { Settings, Sparkles, ClipboardCheck, BarChart3, ArrowLeft } from 'lucide-react';
+import { Settings, Sparkles, ClipboardCheck, BarChart3, ArrowLeft, ShieldAlert } from 'lucide-react';
+import { useAuthStore } from '@/stores/auth-store';
+import { Button } from '@/components/ui/Button';
 
 const ADMIN_NAV = [
   { href: '/admin/generate', label: 'AI 生成', icon: <Sparkles className="h-4 w-4" /> },
@@ -8,6 +12,24 @@ const ADMIN_NAV = [
 ] as const;
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  const { user } = useAuthStore();
+  const isAdmin = !!user && user.role === 'admin';
+
+  if (!isAdmin) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
+        <div className="text-center space-y-4">
+          <ShieldAlert className="mx-auto h-16 w-16 text-red-400" />
+          <h1 className="text-2xl font-bold text-gray-800">存取被拒</h1>
+          <p className="text-gray-500">您需要管理員權限才能存取此頁面。</p>
+          <Link href="/">
+            <Button variant="secondary">返回首頁</Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Admin Navbar */}

@@ -130,4 +130,13 @@ export const ECC_EDGES: KnowledgeEdge[] = [
   // 跨層連結
   { id: 'ECC-E-070', source_node_id: 'ECC-L3-009', target_node_id: 'ECC-L3-012', relation_type: 'same_system', weight: 0.8, description: '腹腔出血常為多發創傷的一部分', bidirectional: false, unlock_condition: null },
   { id: 'ECC-E-071', source_node_id: 'ECC-L3-010', target_node_id: 'ECC-L3-012', relation_type: 'same_system', weight: 0.8, description: '氣胸常為多發創傷的一部分', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 急性腹部相關邊 ───
+  { id: 'ECC-E-072', source_node_id: 'ECC-L2-001', target_node_id: 'ECC-L3-014', relation_type: 'prerequisite', weight: 0.9, description: 'SIRS/敗血症機轉是理解敗血性腹膜炎的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-073', source_node_id: 'ECC-L3-014', target_node_id: 'ECC-L4-001', relation_type: 'clinical_apply', weight: 1, description: '急性腹部需 ABCDE 快速分診評估循環與腹部觸診', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-074', source_node_id: 'ECC-L3-014', target_node_id: 'ECC-L4-002', relation_type: 'clinical_apply', weight: 1, description: 'AFAST 是急性腹部首要影像評估工具（偵測腹腔積液）', bidirectional: false, unlock_condition: null },
+  { id: 'ECC-E-075', source_node_id: 'ECC-L3-014', target_node_id: 'ECC-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '急性腹部需積極靜脈輸液穩定循環', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 審計缺失邊補齊 ───
+  { id: 'ECC-E-076', source_node_id: 'ECC-L4-001', target_node_id: 'ECC-L4-002', relation_type: 'builds_on', weight: 0.8, description: 'ABCDE 分診後以 AFAST/TFAST 進行快速影像評估（ABCDE builds to POCUS）', bidirectional: false, unlock_condition: null },
 ];

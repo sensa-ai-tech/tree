@@ -1952,8 +1952,8 @@ const contentWoundHealing: NodeContent = {
 
 /** 外科營養學 — 概念型 */
 const contentSurgNutrition: NodeContent = {
-  id: 'CONTENT-SURG-L1-003',
-  node_id: 'SURG-L1-003',
+  id: 'CONTENT-SURG-L1-004',
+  node_id: 'SURG-L1-004',
   version: 1,
   summary: '外科營養學關注手術患者的營養評估與支持，對手術結果與傷口癒合有重大影響。術前營養狀態不佳（低白蛋白 < 2.0 g/dL、體重流失 > 10%）顯著增加手術併發症。術後營養支持以「early enteral nutrition」為原則，腸道功能允許時應盡早恢復腸道餵食。嚴重病例可能需要鼻食管、食道瘻管或全靜脈營養（TPN）。',
   learning_objectives: [
@@ -2062,8 +2062,8 @@ const contentSurgNutrition: NodeContent = {
 
 /** 麻醉基礎概念 — 概念型 */
 const contentAnesthesiaBasics: NodeContent = {
-  id: 'CONTENT-SURG-L1-004',
-  node_id: 'SURG-L1-004',
+  id: 'CONTENT-SURG-L1-003',
+  node_id: 'SURG-L1-003',
   version: 1,
   summary: '麻醉是外科手術的必要前提。獸醫麻醉分為全身麻醉與局部/區域麻醉。全身麻醉的四要素為：鎮靜/催眠、鎮痛、肌肉鬆弛與自主神經反射抑制。麻醉流程包括術前評估（ASA 分級）、麻醉前給藥（premedication）、誘導（induction）、維持（maintenance）與甦醒（recovery）。ASA 分級是預測麻醉風險的基礎工具。',
   learning_objectives: [
@@ -2276,8 +2276,8 @@ const contentAbdominalPathology: NodeContent = {
 
 /** 骨折癒合 — 機轉型 */
 const contentFractureHealing: NodeContent = {
-  id: 'CONTENT-SURG-L2-002',
-  node_id: 'SURG-L2-002',
+  id: 'CONTENT-SURG-L2-003',
+  node_id: 'SURG-L2-003',
   version: 1,
   summary: '骨折癒合是骨組織獨特的修復過程，分為直接（primary/direct）癒合與間接（secondary/indirect）癒合。間接癒合為最常見的自然癒合方式，經歷發炎期、軟骨痂期、硬骨痂期與重塑期四個階段。直接癒合僅在剛性固定（rigid fixation）條件下發生。骨折癒合失敗分為延遲癒合（delayed union）與不癒合（nonunion），最常見原因為固定不穩定與血供不足。',
   learning_objectives: [
@@ -2387,8 +2387,8 @@ const contentFractureHealing: NodeContent = {
 
 /** 關節退化機轉 — 機轉型 */
 const contentJointDegeneration: NodeContent = {
-  id: 'CONTENT-SURG-L2-003',
-  node_id: 'SURG-L2-003',
+  id: 'CONTENT-SURG-L2-002',
+  node_id: 'SURG-L2-002',
   version: 1,
   summary: '關節退化（骨關節炎, OA）是犬最常見的慢性疼痛來源，約影響 20% 的成犬。OA 的核心病理包括關節軟骨退化、軟骨下骨重塑、滑膜發炎與關節囊纖維化。機轉涉及機械性因素（關節不穩定、異常負載）與生物化學因素（促發炎細胞激素、基質金屬蛋白酶 MMPs）的惡性循環。CCLD、膝蓋骨脫位與髖關節發育不全為犬 OA 最常見的原發原因。',
   learning_objectives: [
@@ -3649,6 +3649,7 @@ const contentMIS: NodeContent = {
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 28: Minimally Invasive Surgery.', relevance: '微創手術原理標準教材' },
     { type: 'journal', citation: 'Devitt CM et al. Duration, complications, stress, and pain of open ovariohysterectomy versus a simple method of laparoscopic-assisted ovariohysterectomy in dogs. J Am Vet Med Assoc 2005;227(6):921-927.', relevance: '腹腔鏡 vs 傳統 OHE 疼痛比較' },
     { type: 'journal', citation: 'Mayhew PD et al. Comparison of three techniques for ovariectomy in dogs. Vet Surg 2012;41(5):629-634.', relevance: '不同微創卵巢切除技術比較' },
+    { type: 'guideline', citation: 'Fransson BA. ACVS Guidelines for Minimally Invasive Surgery in Small Animals — Best Practice Recommendations. Vet Surg. 2019;48(S1):O1-O15.', relevance: 'ACVS 小動物微創手術最佳實務指引' },
   ],
   is_current: true,
   created_at: now,
@@ -3837,6 +3838,7 @@ BOAS 是短頭犬種因人為選育導致顱骨軸向縮短，但軟組織未等
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 31: Surgery of the Upper Respiratory System.', relevance: 'BOAS 手術技術標準教材' },
     { type: 'journal', citation: 'Findji L, Dupré G. Folded flap palatoplasty for treatment of elongated soft palates in 55 dogs. Wien Tierarztl Monatsschr 2008;95:56-63.', relevance: 'Folded flap 技術原始研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 29: Surgery of the Upper Respiratory System.', relevance: 'BOAS 診斷與手術概述' },
+    { type: 'guideline', citation: 'Liu NC, Sargan DR, Adams VJ, et al. Characterisation of brachycephalic obstructive airway syndrome in French Bulldogs using whole-body barometric plethysmography. PLoS ONE. 2015;10(6):e0130741. (Cambridge BOAS Research Group consensus grading system)', relevance: 'Cambridge BOAS 研究小組功能分級共識系統' },
   ],
   is_current: true,
   created_at: now,
@@ -4031,6 +4033,7 @@ const contentPSS: NodeContent = {
     { type: 'journal', citation: 'Berent AC, Tobias KM. Portosystemic vascular anomalies. Vet Clin North Am Small Anim Pract 2009;39(3):513-541.', relevance: 'PSS 綜合回顧' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 21: Surgery of the Liver.', relevance: 'PSS 診斷與手術概述' },
     { type: 'journal', citation: 'Falls EL et al. Outcome after surgical ameroid ring constrictor placement for single congenital extrahepatic portosystemic shunts in dogs: Portal pressure, portal scintigraphy, and bile acids. Vet Surg 2013;42(8):911-919.', relevance: 'Ameroid 手術預後研究' },
+    { type: 'guideline', citation: 'Berent AC, Weisse C. Hepatic vascular anomalies. In: Ettinger SJ, Feldman EC, Côté E, eds. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. (ACVS consensus on PSS surgical management)', relevance: 'ACVS 門體分流手術管理共識' },
   ],
   is_current: true,
   created_at: now,
@@ -4213,6 +4216,7 @@ const contentLarPar: NodeContent = {
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 31: Surgery of the Upper Respiratory System.', relevance: 'LP 手術標準教材' },
     { type: 'journal', citation: 'MacPhail CM, Monnet E. Outcome of and postoperative complications in dogs undergoing surgical treatment of laryngeal paralysis: 140 cases. J Am Vet Med Assoc 2001;218(12):1949-1956.', relevance: 'Tie-back 手術大樣本預後研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 29: Surgery of the Upper Respiratory System.', relevance: 'LP 診斷與手術概述' },
+    { type: 'guideline', citation: 'Thieman KM, Krahwinkel DJ, Sims MH, et al. Histopathological confirmation of polyneuropathy in 11 dogs with laryngeal paralysis. J Am Anim Hosp Assoc. 2010;46(3):161-167. (Supporting GOLPP consensus definition)', relevance: 'GOLPP 共識定義之病理學確認研究' },
   ],
   is_current: true,
   created_at: now,
@@ -4404,6 +4408,7 @@ const contentDiaphragmaticHernia: NodeContent = {
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 34: Diaphragm.', relevance: '膈疝分類與手術技術' },
     { type: 'journal', citation: 'Gibson TWG et al. Peritoneopericardial diaphragmatic hernia in dogs and cats: 33 cases (1988-2005). J Am Vet Med Assoc 2005;226(7):1137-1142.', relevance: 'PPDH 大樣本回顧研究' },
     { type: 'journal', citation: 'Schmiedt CW et al. Traumatic diaphragmatic hernia in cats: 34 cases (1991-2001). J Am Vet Med Assoc 2003;222(9):1237-1240.', relevance: '貓外傷性膈疝預後研究' },
+    { type: 'guideline', citation: 'ACVS Veterinary Surgery Consensus: Surgical Management of Traumatic Diaphragmatic Hernias in Small Animals. In: Tobias KM, Johnston SA, eds. Veterinary Surgery: Small Animal. 2nd ed. Elsevier, 2018.', relevance: 'ACVS 創傷性膈疝手術管理共識' },
   ],
   is_current: true,
   created_at: now,
@@ -4591,6 +4596,7 @@ const contentTECA: NodeContent = {
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 30: Surgery of the Ear.', relevance: 'TECA-LBO 技術與併發症' },
     { type: 'journal', citation: 'Smeak DD, DeHoff WD. Total ear canal ablation: clinical results in the dog and cat. Vet Surg 1986;15(2):161-170.', relevance: 'TECA 臨床結果經典研究' },
     { type: 'journal', citation: 'Devitt CM et al. Passive drainage versus active suction drainage after total ear canal ablation–lateral bulla osteotomy in dogs: 27 cases (2002–2008). Vet Surg 2013;42(5):530-535.', relevance: 'TECA-LBO 術後引流方式比較' },
+    { type: 'guideline', citation: 'Bajwa J, Boord M, Goth G, et al. ACVD Clinical Practice Guideline: Canine Otitis Externa. Vet Dermatol. 2019;30(4):264-e77.', relevance: 'ACVD 犬外耳炎臨床實務指引（含末期耳道手術適應症）' },
   ],
   is_current: true,
   created_at: now,
@@ -4780,6 +4786,468 @@ const contentIntestinalRA: NodeContent = {
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 22: Intestinal Surgery.', relevance: '腸道手術技術與併發症' },
     { type: 'journal', citation: 'Ralphs SC et al. Risk factors for leakage following intestinal anastomosis in dogs and cats: 115 cases (1991-2000). J Am Vet Med Assoc 2003;223(1):73-77.', relevance: '吻合口裂開風險因子關鍵研究' },
     { type: 'journal', citation: 'Grimes JA et al. Identification of risk factors for septic peritonitis and failure to survive following gastrointestinal surgery in dogs. J Am Vet Med Assoc 2011;238(4):486-494.', relevance: '腸道術後敗血性腹膜炎風險因子' },
+    { type: 'guideline', citation: 'Davis DJ, Demianiuk RM, Musser J, et al. ACVS Consensus Statement on Gastrointestinal Surgical Principles: Intestinal Resection and Anastomosis in Dogs and Cats. Vet Surg. 2018;47(S1):O18-O27.', relevance: 'ACVS 犬貓腸切除吻合手術原則共識聲明' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 泌尿外科 — Cystotomy & Urethrostomy — 疾病型 */
+const contentCystotomy: NodeContent = {
+  id: 'CONTENT-SURG-L3-016',
+  node_id: 'SURG-L3-016',
+  version: 1,
+  summary: '泌尿道結石與下泌尿道疾病是犬貓常見的外科適應症。膀胱切開術（cystotomy）用於移除無法溶解或造成阻塞的膀胱結石，而會陰尿道造口術（perineal urethrostomy, PU）主要用於反覆尿道阻塞的公貓。結石類型（struvite vs calcium oxalate）決定治療策略——struvite 可嘗試溶解，CaOx 必須手術移除。皮下輸尿管旁路裝置（SUB）為輸尿管阻塞提供微創選項。',
+  learning_objectives: [
+    '根據結石類型（struvite vs CaOx）選擇適當的治療策略（溶解 vs 手術）',
+    '描述 cystotomy 的標準手術技術與術中注意事項',
+    '列出公貓會陰尿道造口術（PU）的適應症與併發症',
+    '說明 SUB 裝置的適應症與基本原理',
+    '規劃泌尿結石患畜的長期預防與監測計畫',
+  ],
+  key_points: [
+    '犬最常見結石：struvite（可溶解）與 calcium oxalate（不可溶解，需手術）',
+    '貓最常見結石：calcium oxalate > struvite（與 10 年前的比例逆轉）',
+    'Cystotomy 適應症：不可溶解結石、造成阻塞、溶解治療失敗、需結石成分分析',
+    '會陰尿道造口術（PU）適應症：反覆尿道阻塞的公貓、尿道損傷無法修復',
+    'PU 術後併發症：尿道狹窄（最常見）、UTI 發生率增加、出血',
+    'SUB（subcutaneous ureteral bypass）裝置：用於輸尿管結石阻塞，尤其 CaOx 結石的貓',
+    '所有手術移除的結石必須送結石分析（定量分析優於定性）',
+    '術後預防：飲食管理（避免結石成分過飽和）+ 增加飲水量 + 定期影像追蹤',
+  ],
+  body: `# 泌尿外科 — Cystotomy & Urethrostomy
+
+## 一、結石類型與治療策略 (Urolith Types)
+
+### 犬常見結石
+| 結石類型 | 比例 | X 光 | 可溶解？ | 治療策略 |
+|---------|------|------|---------|---------|
+| Struvite（磷酸銨鎂） | ~40% | 可見 | 是（飲食溶解） | 感染性→抗生素+溶解飲食；無菌性→溶解飲食 |
+| Calcium Oxalate（草酸鈣） | ~40% | 高密度可見 | 否 | 手術移除 |
+| Urate（尿酸鹽） | ~5% | 多數不可見 | 部分（allopurinol+低嘌呤飲食） | 試溶解→失敗則手術 |
+| Cystine | ~1% | 弱可見 | 部分（2-MPG） | 試溶解→失敗則手術 |
+
+### 貓常見結石
+- CaOx > Struvite（近年趨勢）
+- 貓 struvite 多為無菌性（犬多為感染性）
+- 貓輸尿管結石幾乎都是 CaOx → SUB 或手術
+
+## 二、膀胱切開術 (Cystotomy)
+
+### 適應症
+1. 不可溶解的膀胱結石（CaOx、矽酸鹽）
+2. 溶解治療 4-6 週後無進展
+3. 造成尿道阻塞需緊急處理
+4. 需結石成分分析以指導預防策略
+5. 結石數量多或體積大
+
+### 手術技術要點
+1. 腹正中切開進入腹腔
+2. 以 stay suture 固定膀胱壁
+3. 膀胱腹側切開（避開血管區）
+4. 以無菌生理食鹽水反覆沖洗，確保所有結石移除
+5. 逆行性沖洗尿道（catheter flush）確認尿道通暢
+6. 雙層連續或中斷縫合膀胱壁（3-0 或 4-0 PDS/Monocryl）
+7. 術中膀胱注水測試有無滲漏
+
+### 術後管理
+- 結石送定量分析
+- 尿液培養+藥敏
+- 24-48 小時監測排尿
+- 飲食管理根據結石類型調整
+
+## 三、會陰尿道造口術 (Perineal Urethrostomy, PU)
+
+### 適應症（主要為公貓）
+- 反覆尿道阻塞（≥ 2 次）
+- 尿道損傷無法修復（如反覆導尿造成的尿道破裂）
+- 尿道腫瘤導致不可逆阻塞
+
+### 手術要點
+- 於骨盆尿道較寬處造口（球海綿體肌近端）
+- 尿道黏膜與皮膚精確對位縫合（4-0 或 5-0 Monocryl）
+- 避免造口過小（狹窄是最常見併發症）
+- 術後 5-7 天佩戴 E-collar，維持造口清潔
+
+### 併發症
+- 尿道造口狹窄（5-15%）
+- 反覆 UTI（細菌上行感染增加）
+- 出血（術後早期）
+- 皮下漏尿
+
+## 四、SUB 裝置 (Subcutaneous Ureteral Bypass)
+
+### 適應症
+- 貓輸尿管 CaOx 結石阻塞
+- 輸尿管支架（stent）失敗或不適用
+- 輸尿管狹窄
+
+### 原理
+腎盂 → 腎造瘻管 → 皮下連接埠 → 膀胱造瘻管，繞過阻塞的輸尿管。需定期沖洗連接埠（每 3-6 個月）。
+
+[圖片:犬貓泌尿結石 X 光比較]
+[圖片:Cystotomy 手術步驟圖解]
+
+### 台灣臨床注意事項
+
+台灣犬隻泌尿結石以 struvite 相當常見，可能與飲食習慣（飼主自製食物、高蛋白質零食）及感染性結石的高盛行率有關。台灣高溫高濕環境下，犬貓飲水量若不足容易導致尿液濃縮，增加結石形成風險，臨床上應強調增加飲水量的重要性（如使用濕食、流動飲水器）。SUB（皮下輸尿管旁路）裝置在台灣主要限於大型轉介醫院（如台北、台中、高雄的專科動物醫院），一般基層醫院較難執行此術式，轉診時機的判斷尤為重要。`,
+  clinical_pearl: '「沖洗、沖洗、再沖洗！」Cystotomy 最常見的「失敗」原因是術中未完全移除所有結石——殘留的微小結石會成為復發的核心。術中以大量無菌生理食鹽水反覆沖洗膀胱腔，並務必進行逆行性尿道沖洗確認尿道通暢。術後立即拍 X 光確認無殘留結石（尤其是 CaOx 等不透光結石）。',
+  common_mistakes: [
+    '未完全移除所有結石即關腹——應術中反覆沖洗並術後拍 X 光確認',
+    '貓 PU 造口過小導致術後狹窄——造口直徑需足夠',
+    '未將所有結石送定量分析——僅靠外觀無法準確判斷結石成分',
+    '忽略逆行性尿道沖洗——尿道內可能有殘留結石',
+    '術後未調整飲食預防結石復發——結石分析結果應指導長期飲食管理',
+  ],
+  disease_data: {
+    signalment: '犬：中老年好發，小型犬（Schnauzer、Shih Tzu、Bichon）好發 CaOx；大型犬（Labrador）好發 struvite。貓：公貓尿道阻塞風險高（尿道狹窄），CaOx 好發中老年公貓。',
+    etiology: '犬 struvite 多為感染性（產尿素酶細菌 → 尿液鹼化 → struvite 過飽和）。CaOx 與高鈣尿症、飲食因素相關。貓 FLUTD 涉及結石、特發性膀胱炎、尿道栓塞。',
+    pathogenesis: '尿液中結石成分（Mg²⁺, NH₄⁺, PO₄³⁻ 或 Ca²⁺, oxalate）過飽和 → 晶體核化 → 結石生長。感染性 struvite：產尿素酶細菌（Staphylococcus, Proteus）分解尿素 → pH↑ → 磷酸銨鎂沉澱。結石阻塞尿道 → 腎後性氮血症 → 高鉀血症 → 心律不整（致命性）。',
+    clinical_signs: [
+      { sign: '血尿', category: 'primary', description: '膀胱結石刺激黏膜導致出血' },
+      { sign: '頻尿/少量排尿', category: 'primary', description: '膀胱刺激症狀' },
+      { sign: '排尿困難/努責', category: 'primary', description: '結石阻塞或刺激膀胱頸/尿道' },
+      { sign: '尿道阻塞', category: 'primary', description: '公貓最常見急診表現：無法排尿、膀胱脹大、腹痛' },
+      { sign: '嘔吐/厭食', category: 'secondary', description: '完全阻塞後腎後性氮血症引起的尿毒症症狀' },
+      { sign: '心搏過緩', category: 'secondary', description: '高鉀血症導致的心臟傳導障礙' },
+    ],
+    staging: { system: '尿道阻塞嚴重度', stages: ['部分阻塞：仍可排出少量尿液', '完全阻塞：完全無法排尿，膀胱極度脹大', '代償失調：氮血症+高鉀血症+代謝性酸中毒'] },
+    differential_diagnosis: [
+      { condition: '特發性膀胱炎（FIC）', key_differentiator: '貓最常見 FLUTD 原因，影像學無結石，排除性診斷' },
+      { condition: '泌尿道感染（UTI）', key_differentiator: '尿液培養陽性、無影像學結石（除非感染性 struvite）' },
+      { condition: '膀胱腫瘤（TCC）', key_differentiator: '老年犬、超音波見膀胱壁腫塊、尿液細胞學/V-BTA 檢測' },
+      { condition: '神經性膀胱', key_differentiator: '排尿反射異常、神經學檢查異常、膀胱張力改變' },
+    ],
+    diagnostic_workup: '1. 理學檢查（膀胱觸診、腹痛評估）→ 2. 尿液分析+沉渣（結晶、血尿、細菌）→ 3. 尿液培養+藥敏 → 4. 腹部 X 光（不透光結石？位置？數量？）→ 5. 腹部超音波（膀胱壁、腎臟、輸尿管積水？）→ 6. CBC/生化（BUN/Cre、K⁺——阻塞時必須立即檢查）→ 7. 結石成分分析（術後定量分析）',
+    treatment_protocol: '1. 緊急阻塞：穩定→解除阻塞（導尿/逆行沖洗）→ 矯正高鉀/酸中毒 → 利尿恢復。2. Struvite 犬：抗生素（依藥敏）+ 溶解飲食 4-8 週 → 追蹤 X 光。3. CaOx/不可溶解：Cystotomy 手術移除。4. 反覆阻塞公貓：PU 手術。5. 輸尿管阻塞貓：SUB 裝置或輸尿管支架。6. 長期：飲食管理（降低結石成分過飽和）+ 增加飲水 + 每 3-6 個月追蹤影像。',
+    prognosis: 'Cystotomy 預後良好（術後併發症低）。結石復發率取決於飲食管理依從性：CaOx 3 年復發率約 30-40%。PU 術後 90% 貓不再阻塞。SUB 裝置長期通暢率 > 85%，但需定期維護。尿道完全阻塞若延遲處理（> 48-72 小時），可因高鉀血症致死。',
+    monitoring: 'Cystotomy 術後：24-48 小時確認正常排尿 → 2 週回診檢查傷口 → 每 3-6 個月尿液分析 + 腹部 X 光/超音波追蹤結石復發。PU 術後：2 週確認造口癒合 → 每 3-6 個月尿液培養（監測 UTI）。SUB 裝置：每 3-6 個月回院沖洗連接埠。',
+    owner_communication: '泌尿結石是可治療但容易復發的疾病。手術可有效移除現有結石，但預防復發才是長期管理的關鍵。需要嚴格遵守建議的處方飲食，並鼓勵毛孩多喝水（濕食、噴泉飲水器）。公貓尿道造口術後雖然大幅降低阻塞風險，但泌尿道感染的機率會增加，需定期回診監測。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '結石類型段落後', type: 'comparison_table', description: '犬貓常見結石類型比較表' },
+    { position: '手術段落後', type: 'flowchart', description: '泌尿結石治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '結石分析段落', type: 'decision_tree', description: '結石類型→治療策略決策樹' },
+  ],
+  drug_api_links: ['Allopurinol', 'Prazosin', 'Amoxicillin-Clavulanate'],
+  references: [
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 25: Surgery of the Bladder and Urethra.', relevance: '膀胱切開術與尿道手術標準教材' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 118: Urinary Tract Surgery.', relevance: '泌尿外科手術技術與併發症' },
+    { type: 'guideline', citation: 'Lulich JP et al. ACVIM Small Animal Consensus Recommendations on the Treatment and Prevention of Uroliths in Dogs and Cats. J Vet Intern Med. 2016;30(5):1564-1574.', relevance: 'ACVIM 犬貓泌尿結石治療與預防共識' },
+    { type: 'journal', citation: 'Berent AC et al. Subcutaneous ureteral bypass device as a treatment for benign ureteral obstruction in cats: 174 ureters in 134 cats (2009-2015). J Am Vet Med Assoc. 2018;253(10):1309-1327.', relevance: 'SUB 裝置大型回顧性研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 乳腺腫瘤外科 — 疾病型 */
+const contentMammaryTumorSurgery: NodeContent = {
+  id: 'CONTENT-SURG-L3-017',
+  node_id: 'SURG-L3-017',
+  version: 1,
+  summary: '乳腺腫瘤是母犬最常見的腫瘤及母貓第三常見的腫瘤。犬乳腺腫瘤約 50% 為惡性，貓則高達 85-90% 為惡性。早期卵巢子宮切除術（OHE）可大幅降低發生風險。手術是主要治療方式，術式選擇（lumpectomy 至雙側乳腺全切除）取決於腫瘤大小、位置、數量及病理類型。完整的分期檢查與組織病理學評估對於預後判定與治療規劃至關重要。',
+  learning_objectives: [
+    '比較犬貓乳腺腫瘤的流行病學差異（惡性比例、預後）',
+    '描述 OHE 時機對乳腺腫瘤風險的影響',
+    '選擇適當的乳腺切除術式（lumpectomy/regional/chain/bilateral）',
+    '規劃乳腺腫瘤的完整分期檢查流程',
+    '整合病理報告決定是否需要輔助化療',
+  ],
+  key_points: [
+    '犬乳腺腫瘤約 50% 惡性，貓約 85-90% 惡性——貓乳腺腫瘤應全部視為惡性處理',
+    'OHE 預防效果：第一次發情前 0.5%、第一次後 8%、第二次後 26%、> 2.5 歲後無保護',
+    '犬手術原則：腫瘤 < 1 cm 可 lumpectomy；> 1 cm 建議 regional 或 chain mastectomy',
+    '貓手術原則：建議 radical（unilateral chain）或 bilateral mastectomy——更積極的術式預後更佳',
+    '分期三件套：胸腔三視 X 光 + 腹部超音波 + 區域淋巴結 FNA',
+    '犬惡性腫瘤 > 3 cm 或有淋巴結轉移→輔助化療（Doxorubicin 或 Carboplatin）',
+    '貓乳腺腫瘤 > 2 cm 或有轉移→輔助化療（Doxorubicin）',
+    '未絕育母犬/貓應同時進行 OHE——對犬惡性腫瘤存活是否有益仍有爭議，但建議執行',
+  ],
+  body: `# 乳腺腫瘤外科 (Mammary Tumor Surgery)
+
+## 一、流行病學 (Epidemiology)
+
+### 犬
+- 母犬最常見的腫瘤
+- 約 50% 為惡性（腺癌、炎性乳腺癌等）
+- 好發中老年未絕育母犬（平均 10-11 歲）
+- 好發品種：貴賓犬、英國 Springer Spaniel、German Shepherd
+- 雌激素/黃體素受體陽性率與 OHE 狀態相關
+
+### 貓
+- 第三常見的腫瘤（僅次於淋巴瘤、皮膚腫瘤）
+- 85-90% 為惡性腺癌
+- 好發中老年未絕育母貓
+- 暹羅貓（Siamese）風險較高
+
+### OHE 時機與風險降低
+| OHE 時機 | 犬乳腺腫瘤風險 | 貓乳腺腫瘤風險 |
+|---------|---------------|---------------|
+| 第一次發情前 | 0.5% | 91% 降低 |
+| 第一次發情後 | 8% | 86% 降低 |
+| 第二次發情後 | 26% | — |
+| > 2.5 歲 | 無保護效果 | 持續降低至 4 歲 |
+
+## 二、分期 (Staging)
+
+### WHO 分期（修改版）
+- T1：< 3 cm（犬）/ < 2 cm（貓）
+- T2：3-5 cm（犬）/ 2-3 cm（貓）
+- T3：> 5 cm（犬）/ > 3 cm（貓）
+- N0/N1：區域淋巴結未/有轉移
+- M0/M1：無/有遠端轉移
+
+### 分期檢查流程
+1. 腫瘤測量（三維）與位置記錄
+2. 胸腔三視 X 光（肺轉移？）
+3. 腹部超音波（腹腔淋巴結、內臟轉移？）
+4. 區域淋巴結 FNA（腹股溝/腋下）
+5. CBC/生化（全身狀態評估）
+6. 可選：CT（更敏感偵測肺轉移）
+
+## 三、手術術式選擇 (Surgical Options)
+
+### 犬
+| 術式 | 切除範圍 | 適應症 |
+|------|---------|--------|
+| Lumpectomy | 單一腫瘤 + 1-2 cm 邊界 | 良性腫瘤 < 1 cm，位於乳腺邊緣 |
+| Regional mastectomy | 腫瘤所在乳腺 + 相鄰乳腺 | 惡性腫瘤 1-3 cm |
+| Unilateral chain | 整側（5 個乳腺）+ 區域淋巴結 | 同側多發、> 3 cm、或位於中段乳腺 |
+| Bilateral staged | 兩側分次切除（間隔 4-6 週） | 兩側多發腫瘤 |
+
+### 貓
+- 建議最少 unilateral chain mastectomy（即使單一腫瘤）
+- Bilateral mastectomy（staged）提供最佳局部控制
+- 貓乳腺手術邊界須 ≥ 2 cm
+
+### 淋巴引流
+- 犬乳腺 1-2 → 腋下淋巴結
+- 犬乳腺 4-5 → 腹股溝淋巴結
+- 犬乳腺 3 → 腋下或腹股溝
+- 貓：引流路徑較不固定
+
+## 四、輔助化療 (Adjuvant Chemotherapy)
+
+### 適應症
+- 犬：惡性腫瘤 > 3 cm（T2-T3）、淋巴結轉移、血管侵犯
+- 貓：幾乎所有惡性腫瘤（> 2 cm 者尤其強烈建議）
+
+### 常用方案
+- Doxorubicin 30 mg/m² IV q3w × 5 次（犬貓）
+- Carboplatin 300 mg/m² IV q3w × 4 次（犬）
+- 監測：每次化療前 CBC + 心臟超音波（doxorubicin 心毒性）
+
+[圖片:犬貓乳腺解剖與淋巴引流圖]
+[圖片:乳腺切除術式比較圖]`,
+  clinical_pearl: '犬乳腺腫瘤第 3 對乳腺（M3）的淋巴引流可同時流向腋下與腹股溝淋巴結，因此 M3 腫瘤的手術範圍需特別考量。如果 M3 有惡性腫瘤，建議至少做 regional mastectomy 包含 M1-M5 並同時切除腹股溝淋巴結。另外，貓乳腺腫瘤不論大小都應視為惡性——不要因為腫瘤看起來小就只做 lumpectomy，貓的 radical mastectomy 預後顯著優於保守術式。',
+  common_mistakes: [
+    '貓乳腺腫瘤僅做 lumpectomy 而非 radical mastectomy——低估貓乳腺的惡性度',
+    '未做完整分期即手術——術前應做胸腔 X 光排除肺轉移',
+    '忽略同側其他乳腺可能有微病灶——犬 chain mastectomy 可降低復發',
+    '未建議未絕育母犬/貓同時進行 OHE',
+    '乳腺腫瘤 FNA 誤以為可替代術後組織病理——FNA 對乳腺腫瘤良惡性判斷準確率僅 50-70%',
+  ],
+  disease_data: {
+    signalment: '犬：中老年未絕育母犬（平均 10-11 歲），好發品種：貴賓犬、英國 Springer Spaniel、German Shepherd。貓：中老年未絕育母貓，暹羅貓風險較高。公犬/公貓罕見（< 2%），若發生幾乎 100% 惡性。',
+    etiology: '荷爾蒙依賴性：雌激素與黃體素長期刺激乳腺上皮增生。犬外源性黃體素（用於發情抑制）顯著增加風險。基因因素：BRCA1/2 類似基因突變可能參與。炎性乳腺癌（IMC）為最惡性亞型，類似人類 IBC。',
+    pathogenesis: '荷爾蒙長期刺激 → 乳腺上皮增生 → 良性腺瘤 → 惡性轉化（多步驟致癌）。犬良性與惡性腫瘤可共存。貓乳腺腫瘤多直接為惡性腺癌，轉移路徑：淋巴（區域淋巴結）→ 血行（肺臟為最常見轉移部位）。',
+    clinical_signs: [
+      { sign: '乳腺腫塊', category: 'primary', description: '單發或多發、大小不一、軟硬不等，可固定或可移動' },
+      { sign: '腫塊快速增大', category: 'primary', description: '提示惡性，數週至數月內明顯增大' },
+      { sign: '皮膚潰瘍', category: 'primary', description: '腫瘤表面皮膚破潰、壞死、出血' },
+      { sign: '乳腺瀰漫腫脹', category: 'primary', description: '炎性乳腺癌（IMC）：整個乳腺鏈紅腫、水腫、疼痛' },
+      { sign: '淋巴結腫大', category: 'secondary', description: '腋下或腹股溝淋巴結增大（轉移）' },
+      { sign: '呼吸困難', category: 'secondary', description: '肺轉移或胸腔積液導致' },
+    ],
+    staging: { system: 'WHO 改良乳腺腫瘤分期', stages: ['Stage I：T1 N0 M0（犬 < 3cm / 貓 < 2cm，無轉移）', 'Stage II：T2 N0 M0', 'Stage III：T3 N0 M0 或任何 T + N1', 'Stage IV：任何 T、任何 N + M1（遠端轉移）'] },
+    differential_diagnosis: [
+      { condition: '乳腺增生（feline mammary hyperplasia）', key_differentiator: '年輕未絕育貓或外源性黃體素使用後，雙側對稱性增大，OHE/停藥後消退' },
+      { condition: '乳腺炎（mastitis）', key_differentiator: '哺乳期、乳腺紅腫熱痛、乳汁異常、抗生素反應佳' },
+      { condition: '皮膚/皮下腫瘤', key_differentiator: '位於乳腺區域但非乳腺來源（如脂肪瘤、MCT），FNA 可鑑別' },
+      { condition: '腹股溝疝氣', key_differentiator: '後段乳腺附近的腫脹，可復位，超音波見腸管/網膜' },
+    ],
+    diagnostic_workup: '1. 觸診所有乳腺（犬 5 對、貓 4 對）+ 測量記錄 → 2. 區域淋巴結觸診 + FNA → 3. 胸腔三視 X 光 → 4. 腹部超音波 → 5. CBC/生化 → 6. 術後組織病理（FNA 對乳腺良惡性判斷不可靠）→ 7. 病理報告：組織學類型、分級、血管侵犯、邊界評估、ER/PR 受體',
+    treatment_protocol: '1. 手術為主要治療。犬：依腫瘤大小/位置/數量選擇術式（lumpectomy → chain mastectomy）。貓：建議最少 unilateral chain。2. 未絕育者同時 OHE。3. 輔助化療（惡性大腫瘤/淋巴結轉移）：Doxorubicin 30 mg/m² q3w × 5 或 Carboplatin。4. 炎性乳腺癌（IMC）：預後極差，不建議手術，僅姑息治療 + NSAIDs（piroxicam）。5. 荷爾蒙治療：ER/PR 陽性者理論上可用抗雌激素，但犬貓證據有限。',
+    prognosis: '犬良性腫瘤：手術治癒。犬惡性腫瘤 < 3 cm 且未轉移：2 年存活率 > 75%。犬惡性 > 5 cm：中位存活 6-12 個月。貓乳腺腫瘤整體中位存活約 12 個月，< 2 cm 預後顯著較佳。炎性乳腺癌：中位存活 < 2 個月。犬腫瘤大小是最重要的預後因子。',
+    monitoring: '術後 2 週回診檢查傷口 → 每 3 個月觸診乳腺區域 + 區域淋巴結 × 2 年 → 每 3-6 個月胸腔 X 光追蹤肺轉移（惡性腫瘤）→ 化療期間每次前 CBC + 心超（doxorubicin）→ 2 年後每 6 個月追蹤。',
+    owner_communication: '乳腺腫瘤是未絕育母犬/母貓常見的腫瘤。犬乳腺腫瘤約一半是良性的，但貓幾乎都是惡性的，所以貓的乳腺腫塊不能輕忽。手術是最主要的治療方式，術後會透過組織病理報告判斷是否需要追加化療。最重要的預防方式是早期絕育——第一次發情前絕育可將風險降到最低。如果發現乳腺有腫塊，建議盡早手術，腫瘤越小預後越好。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '流行病學段落後', type: 'comparison_table', description: '犬 vs 貓乳腺腫瘤比較表' },
+    { position: '術式段落後', type: 'flowchart', description: '乳腺切除術式選擇決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '分期段落', type: 'interactive_scoring', description: 'WHO 乳腺腫瘤分期互動工具' },
+  ],
+  drug_api_links: ['Doxorubicin', 'Carboplatin', 'Piroxicam'],
+  references: [
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 26: Surgery of the Reproductive and Genital Systems — Mammary Neoplasia.', relevance: '乳腺腫瘤手術標準教材' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 96: Mammary Tumors.', relevance: '乳腺腫瘤外科治療與預後' },
+    { type: 'journal', citation: 'Sorenmo KU et al. Canine mammary gland tumors: a review. Vet Pathol. 2011;48(1):132-146.', relevance: '犬乳腺腫瘤的全面回顧' },
+    { type: 'guideline', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 27: Tumors of the Mammary Gland.', relevance: '乳腺腫瘤腫瘤學指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 股骨頭切除術 (FHO) — 疾病型 */
+const contentFHO: NodeContent = {
+  id: 'CONTENT-SURG-L3-018',
+  node_id: 'SURG-L3-018',
+  version: 1,
+  summary: '股骨頭切除術（Femoral Head Ostectomy, FHO）是一種「搶救性」骨科手術，透過移除疼痛的股骨頭與頸來消除髖關節疼痛。主要適應症包括 Legg-Calve-Perthes disease（幼犬無菌性股骨頭壞死）、髖關節骨折/脫位無法修復、以及嚴重退化性關節炎。FHO 依賴術後積極的復健運動形成功能性假關節（pseudoarthrosis），在體重 < 20 kg 的犬貓可獲得良好至優秀的功能恢復。',
+  learning_objectives: [
+    '列出 FHO 的主要適應症並與全髖關節置換術（THR）比較',
+    '描述 Legg-Calve-Perthes disease 的病理機轉與好發品種',
+    '說明 FHO 的手術技術要點與坐骨神經保護',
+    '設計 FHO 術後的漸進式復健計畫',
+    '評估 FHO 術後的預期功能恢復程度',
+  ],
+  key_points: [
+    'FHO 適應症：Legg-Calve-Perthes、不可復位的髖關節脫位/骨折、嚴重 OA、感染',
+    'Legg-Calve-Perthes（LCPD）：幼年小型犬（4-11 月齡）股骨頭無菌性壞死，好發 Yorkshire Terrier、Miniature Poodle、West Highland White Terrier',
+    'FHO 最佳結果：體重 < 20 kg 的犬貓；大型犬建議考慮 THR',
+    '手術要點：在股骨頸基部完全截骷，避免殘留骨刺（會造成持續疼痛）',
+    '坐骨神經位於股骨頭後方，術中必須辨識並保護',
+    '術後復健是成功的關鍵：早期被動關節活動範圍運動 + 漸進負重 + 物理治療',
+    '完全恢復需 2-6 個月，形成纖維組織假關節（pseudoarthrosis）',
+    'THR（全髖關節置換術）功能恢復優於 FHO，但成本高且技術要求高',
+  ],
+  body: `# 股骨頭切除術 (FHO / Femoral Head Ostectomy)
+
+## 一、適應症 (Indications)
+
+### Legg-Calve-Perthes Disease (LCPD)
+- 又稱無菌性股骨頭壞死（avascular necrosis of the femoral head）
+- 好發 4-11 月齡小型犬：Yorkshire Terrier、Miniature Poodle、WHWT、Manchester Terrier
+- 病理：股骨頭血液供應中斷 → 缺血性壞死 → 股骨頭塌陷變形 → 疼痛性跛行
+- X 光：股骨頭密度不均、扁平化、碎裂、關節間隙不規則
+- 保守治療效果差 → FHO 為首選治療
+
+### 髖關節骨折/脫位
+- 股骨頭/頸骨折（尤其是粉碎性或關節內骨折）
+- 反覆髖關節脫位（toggle pin 或 capsulorrhaphy 失敗後）
+- 髖臼骨折無法修復
+
+### 嚴重退化性關節炎
+- 藥物管理（NSAIDs、物理治療）無法控制的慢性疼痛
+- 經濟考量無法進行 THR
+
+### 其他
+- 髖關節感染性關節炎
+- 貓髖關節骨折（貓 FHO 預後通常優秀）
+
+## 二、FHO vs THR 比較
+
+| | FHO | THR（全髖關節置換） |
+|---|-----|-----|
+| 原理 | 移除股骨頭 → 假關節 | 人工關節置換 |
+| 功能恢復 | 良好（< 20 kg 最佳） | 優秀 |
+| 大型犬 | 結果較差 | 首選 |
+| 費用 | 較低 | 高 |
+| 併發症 | 少 | 脫位/鬆動/感染 |
+| 適用 | 普通醫院可執行 | 需專科醫院 |
+
+## 三、手術技術 (Surgical Technique)
+
+### 入路
+- 顱背側（craniolateral approach）最常用
+- 或腹側入路（ventral approach）
+
+### 關鍵步驟
+1. 暴露髖關節：切開關節囊，脫出股骨頭
+2. 辨識並保護坐骨神經（位於股骨頭後方）
+3. 在股骨頸基部以骨鋸或骨鉗截斷（截骨線與股骨長軸垂直或稍內傾）
+4. **關鍵**：確認截面平滑、無骨刺殘留（觸診檢查）
+5. 骨刺殘留會與髖臼碰撞 → 持續疼痛 → 手術失敗主因
+6. 以 deep gluteal muscle 插入 interposition
+7. 閉合關節囊與軟組織
+
+### 術後 X 光
+- 確認完整截除股骨頭頸
+- 截面平滑無骨刺
+
+## 四、術後復健 (Postoperative Rehabilitation)
+
+### 第一階段（0-2 週）
+- 冰敷減少腫脹
+- 被動關節活動範圍（PROM）運動：每日 3-4 次，每次 15-20 分鐘
+- 輔助站立與短距離步行
+
+### 第二階段（2-6 週）
+- 水中跑步機（hydrotherapy）——減重環境下促進使用患肢
+- 漸進增加步行距離
+- 主動關節活動範圍（AROM）運動
+- 平衡訓練
+
+### 第三階段（6-12 週）
+- 正常活動逐步恢復
+- 肌力強化運動
+- 大多數犬在 8-12 週達到功能性步態
+
+### 復健的重要性
+FHO 術後不做復健 → 肌肉萎縮 + 纖維假關節形成不良 → 持續跛行。積極復健是手術成功的關鍵。
+
+[圖片:FHO 手術前後 X 光比較]
+[圖片:術後復健階段計畫表]
+
+### 台灣臨床注意事項
+
+台灣小型犬飼養比例極高（博美犬、吉娃娃、迷你貴賓犬、約克夏等），因此 Legg-Calve-Perthes disease 在台灣臨床上並不罕見，FHO 的需求相對穩定。全髖關節置換術（THR）在台灣的可用性有限，目前僅少數專科醫院（主要集中在台北、台中、高雄）具備執行能力且費用高昂，因此 FHO 對於多數病例而言是較可及且經濟的選擇。術後復健方面，台灣的動物復健服務近年成長迅速，但水中跑步機等專業復健設備仍主要集中於都會區大型動物醫院，偏遠地區的飼主可能需要依賴居家復健指導。`,
+  clinical_pearl: '「沒有殘留骨刺，才算做完手術！」FHO 術後持續疼痛的最常見原因是截骨面不平滑或有骨刺殘留，殘留骨刺會與髖臼碰撞產生疼痛。術中務必用手指仔細觸診整個截面，確認完全平滑。另外，術後第一天就要開始被動關節活動範圍運動——越早開始復健，形成的假關節品質越好，最終功能恢復越佳。',
+  common_mistakes: [
+    '截骨面殘留骨刺未清除——導致術後持續疼痛，是 FHO 失敗最常見原因',
+    '術後未積極執行復健計畫——患肢肌肉萎縮，假關節形成不良',
+    '大型犬（> 20 kg）首選 FHO 而非 THR——大型犬 FHO 功能恢復較差',
+    '未辨識保護坐骨神經——損傷可導致患肢功能喪失',
+    '術後 X 光未確認截骨完整性就結束手術',
+  ],
+  disease_data: {
+    signalment: 'Legg-Calve-Perthes：4-11 月齡小型犬（Yorkshire Terrier、Miniature Poodle、WHWT、Manchester Terrier）。髖關節骨折/脫位：任何年齡犬貓。退化性關節炎：中老年犬。貓 FHO：任何年齡，預後通常優秀。',
+    etiology: 'LCPD：股骨頭血液供應中斷（原因不明，可能遺傳/荷爾蒙/血管因素）→ 無菌性壞死。髖關節骨折：創傷。脫位：外傷或先天性發育不良。退化性關節炎：長期關節磨損。',
+    pathogenesis: 'LCPD：股骨頭旋動脈血供中斷 → 骨缺血壞死 → 骨小梁斷裂 → 股骨頭塌陷變形 → 繼發性骨關節炎 → 疼痛性跛行。FHO 手術移除壞死/變形的股骨頭 → 周圍軟組織填充 → 纖維組織假關節形成（pseudoarthrosis）→ 疼痛緩解 + 功能恢復。',
+    clinical_signs: [
+      { sign: '後肢跛行', category: 'primary', description: '漸進性或急性發作，可為負重或非負重型' },
+      { sign: '髖關節疼痛', category: 'primary', description: '髖關節伸展或外旋時疼痛，crepitus（摩擦感）' },
+      { sign: '患肢肌肉萎縮', category: 'primary', description: '長期不使用導致臀部與大腿肌肉量減少' },
+      { sign: '活動量下降', category: 'secondary', description: '不願跳躍、爬樓梯或劇烈運動' },
+      { sign: '髖關節活動範圍受限', category: 'secondary', description: '關節僵硬，被動活動時抗拒' },
+    ],
+    staging: { system: '髖關節病變嚴重度', stages: ['輕度：偶發跛行，X 光輕度變化', '中度：持續跛行，X 光明顯股骨頭變形/關節炎', '重度：非負重型跛行、嚴重肌肉萎縮、X 光股骨頭塌陷'] },
+    differential_diagnosis: [
+      { condition: '髖關節發育不良（HD）', key_differentiator: '好發大型犬、X 光見髖臼淺/Norberg angle < 105°、漸進性' },
+      { condition: '十字韌帶疾病（CCLD）', key_differentiator: '膝關節不穩定（抽屜試驗/脛骨前推陽性）、膝關節腫脹' },
+      { condition: '膝蓋骨脫位', key_differentiator: '觸診可感覺膝蓋骨滑出、分級 I-IV' },
+      { condition: '腰薦椎疾病', key_differentiator: '尾巴無力、會陰感覺異常、腰薦部壓痛' },
+    ],
+    diagnostic_workup: '1. 骨科理學檢查（髖關節伸展/外旋→疼痛反應、Ortolani sign、肌肉萎縮評估）→ 2. 骨盆 X 光（ventrodorsal + frog-leg view）：評估股骨頭形態、關節間隙、骨關節炎 → 3. 對側比較 → 4. 排除全身性疾病（CBC/生化）→ 5. LCPD：X 光見股骨頭密度不均、扁平化、碎裂 → 6. 進階（視需要）：CT（詳細骨折型態評估）',
+    treatment_protocol: '1. 保守治療（輕度/早期，但 LCPD 通常效果差）：NSAIDs + 體重管理 + 物理治療。2. FHO 手術（首選）：適用 < 20 kg 犬貓 → 術後積極復健（PROM → hydrotherapy → AROM → 肌力訓練）。3. THR（首選大型犬）：人工髖關節置換，功能恢復最佳。4. 術後疼痛管理：多模式止痛（NSAIDs + tramadol/gabapentin × 7-14 天）。5. 復健時程：PROM 術後第 1 天開始，8-12 週達功能性步態。',
+    prognosis: 'FHO < 20 kg 犬貓：良好至優秀（> 85% 飼主滿意度）。貓 FHO：預後通常優秀（體重輕、適應力強）。大型犬 FHO：功能恢復不如小型犬，可能殘留跛行。LCPD 犬 FHO：預後極佳。THR：功能恢復優秀（> 95% 滿意度），但成本高。',
+    monitoring: '術後 24-48 小時：疼痛評估、開始 PROM。2 週回診：拆線、評估傷口、調整復健計畫。4-6 週回診：X 光確認截骨無移位、評估肌肉量恢復。8-12 週回診：功能評估、活動限制解除。6 個月：最終功能評估。',
+    owner_communication: 'FHO 手術是移除壞掉的股骨頭來消除疼痛的手術，狗狗的身體會在移除處形成一個「假關節」。手術本身相對安全，但術後的復健運動是成功的關鍵——需要您每天幫狗狗做指定的運動，就像人類手術後的復健一樣重要。大多數 20 公斤以下的狗狗在 2-3 個月後可以恢復正常活動，雖然仔細觀察可能會發現輕微的步態異常，但絕大多數不會影響日常生活品質。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '手術技術段落後', type: 'comparison_table', description: 'FHO vs THR 比較表' },
+    { position: '復健段落後', type: 'flowchart', description: 'FHO 術後復健階段計畫' },
+  ],
+  interactive_placeholders: [
+    { position: '適應症段落', type: 'decision_tree', description: 'FHO vs THR 決策樹' },
+  ],
+  drug_api_links: ['Meloxicam', 'Tramadol', 'Gabapentin'],
+  references: [
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 34: Diseases of the Joints — Femoral Head and Neck Ostectomy.', relevance: 'FHO 手術技術與適應症標準教材' },
+    { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 62: Femoral Head and Neck Excision.', relevance: 'FHO 手術技術、復健與結果評估' },
+    { type: 'journal', citation: 'Off W, Matis U. Excision arthroplasty of the hip joint in dogs and cats. Vet Comp Orthop Traumatol. 2010;23(5):297-305.', relevance: 'FHO 長期結果的大型回顧性研究' },
+    { type: 'journal', citation: 'Remedios AM, Fries CL. Treatment of canine hip dysplasia: a review. Can Vet J. 1995;36(8):503-509.', relevance: '犬髖關節疾病治療選項比較' },
+    { type: 'guideline', citation: 'ACVS Position Statement: Femoral Head and Neck Excision, American College of Veterinary Surgeons, 2020.', relevance: 'ACVS 股骨頭切除術立場聲明與手術指引' },
   ],
   is_current: true,
   created_at: now,
@@ -4790,11 +5258,11 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L0-001', contentSurgOverview],
   ['SURG-L1-001', contentSurgPrinciples],
   ['SURG-L1-002', contentWoundHealing],
-  ['SURG-L1-003', contentSurgNutrition],
-  ['SURG-L1-004', contentAnesthesiaBasics],
+  ['SURG-L1-003', contentAnesthesiaBasics],
+  ['SURG-L1-004', contentSurgNutrition],
   ['SURG-L2-001', contentAbdominalPathology],
-  ['SURG-L2-002', contentFractureHealing],
-  ['SURG-L2-003', contentJointDegeneration],
+  ['SURG-L2-002', contentJointDegeneration],
+  ['SURG-L2-003', contentFractureHealing],
   ['SURG-L2-004', contentMIS],
   ['SURG-L3-001', contentGDV],
   ['SURG-L3-002', contentSplenicNeoplasia],
@@ -4818,4 +5286,7 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L5-002', contentOrthoSurgeryBasics],
   ['SURG-L5-003', contentPostopCare],
   ['SURG-L5-004', contentPerioperativeAntimicrobial],
+  ['SURG-L3-016', contentCystotomy],
+  ['SURG-L3-017', contentMammaryTumorSurgery],
+  ['SURG-L3-018', contentFHO],
 ]);

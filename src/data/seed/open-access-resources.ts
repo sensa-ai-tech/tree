@@ -1,0 +1,906 @@
+/**
+ * Open-Access Veterinary Academic Resources
+ *
+ * 開放取用獸醫學術資源中心 — 為每個專科提供至少 5 項高品質免費資源。
+ * 所有 URL 均指向真正免費全文或開放取用的資源。
+ *
+ * 資源來源：
+ * - PubMed Central (PMC) — 免費全文文獻
+ * - Merck Veterinary Manual — 免費線上獸醫參考書
+ * - WSAVA — 全球小動物獸醫協會免費臨床指引
+ * - IRIS — 國際腎臟利益協會分期指引
+ * - RECOVER — 實證心肺復甦指引
+ * - ACVIM — 美國獸醫內科學院共識聲明（多數於 JVIM 開放取用）
+ *
+ * 最後更新：2026-02-26
+ */
+
+// ─── Types ───
+
+export interface OpenAccessResource {
+  /** 唯一識別碼，格式：OAR-{SPECIALTY}-{###} */
+  id: string;
+  /** 英文標題 */
+  title: string;
+  /** 中文標題 */
+  title_zh: string;
+  /** 完整 URL */
+  url: string;
+  /** 資源來源分類 */
+  source: 'PMC' | 'MerckVetManual' | 'WSAVA' | 'IRIS' | 'RECOVER' | 'ACVIM' | 'Other';
+  /** 受益專科列表 */
+  specialty: string[];
+  /** 相關主題標籤 */
+  topics: string[];
+  /** 取用類型 */
+  access_type: 'free_full_text' | 'free_abstract' | 'open_access';
+  /** 中文描述（簡述資源重點） */
+  description_zh: string;
+}
+
+// ─── Helper ───
+
+/** 依專科篩選資源 */
+export function getResourcesBySpecialty(specialty: string): OpenAccessResource[] {
+  return OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes(specialty));
+}
+
+/** 依來源篩選資源 */
+export function getResourcesBySource(
+  source: OpenAccessResource['source']
+): OpenAccessResource[] {
+  return OPEN_ACCESS_RESOURCES.filter((r) => r.source === source);
+}
+
+/** 依主題關鍵字搜尋資源 */
+export function searchResources(keyword: string): OpenAccessResource[] {
+  const lowerKeyword = keyword.toLowerCase();
+  return OPEN_ACCESS_RESOURCES.filter(
+    (r) =>
+      r.topics.some((t) => t.toLowerCase().includes(lowerKeyword)) ||
+      r.title.toLowerCase().includes(lowerKeyword) ||
+      r.title_zh.includes(keyword) ||
+      r.description_zh.includes(keyword)
+  );
+}
+
+// ═══════════════════════════════════════════
+// Open-Access Resource Collection
+// ═══════════════════════════════════════════
+
+export const OPEN_ACCESS_RESOURCES: OpenAccessResource[] = [
+  // ─────────────────────────────────────────
+  // CARDIO — 心臟科（8 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-CARDIO-001',
+    title: 'ACVIM Consensus Statement — Guidelines for the Diagnosis and Treatment of Canine Chronic Valvular Heart Disease (2019)',
+    title_zh: 'ACVIM 共識聲明 — 犬慢性瓣膜性心臟病診斷與治療指引（2019）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6849894/',
+    source: 'ACVIM',
+    specialty: ['CARDIO'],
+    topics: ['MMVD', 'CHF', 'pimobendan', 'ACVIM staging', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVIM 2019 年犬慢性瓣膜性心臟病指引，涵蓋 MMVD 分期（A-D）、診斷標準、各期治療建議，包含 EPIC trial 結果。為犬心臟病臨床決策最重要的參考文獻。',
+  },
+  {
+    id: 'OAR-CARDIO-002',
+    title: 'ACVIM Consensus Statement — Guidelines for the Diagnosis and Treatment of Canine Dilated Cardiomyopathy (2019)',
+    title_zh: 'ACVIM 共識聲明 — 犬擴張型心肌病診斷與治療指引（2019）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6849898/',
+    source: 'ACVIM',
+    specialty: ['CARDIO'],
+    topics: ['DCM', 'Doberman', 'pimobendan', 'Holter', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVIM 2019 犬 DCM 共識聲明，包含杜賓犬 DCM 篩檢建議、Holter 監測時機、藥物治療方案（pimobendan/ACEI/furosemide），以及飲食相關 DCM 議題。',
+  },
+  {
+    id: 'OAR-CARDIO-003',
+    title: 'Merck Veterinary Manual — Heart Disease in Dogs and Cats',
+    title_zh: 'Merck 獸醫手冊 — 犬貓心臟病',
+    url: 'https://www.merckvetmanual.com/circulatory-system/heart-disease-and-heart-failure-in-animals/overview-of-heart-disease-and-heart-failure-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['CARDIO'],
+    topics: ['heart disease', 'heart failure', 'overview', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 獸醫手冊心臟病總覽章節，涵蓋心衰竭的病理生理學、分類、一般治療原則，適合作為入門參考。',
+  },
+  {
+    id: 'OAR-CARDIO-004',
+    title: 'ACVIM Consensus Statement — Classification of Feline Cardiomyopathies (2020)',
+    title_zh: 'ACVIM 共識聲明 — 貓心肌病分類（2020）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7382360/',
+    source: 'ACVIM',
+    specialty: ['CARDIO'],
+    topics: ['HCM', 'feline cardiomyopathy', 'classification', 'echocardiography'],
+    access_type: 'free_full_text',
+    description_zh: '2020 年 ACVIM 貓心肌病分類共識，提出新的分類系統（phenotype-based），涵蓋 HCM、DCM、RCM、ARVC、UCM 的診斷標準與鑑別要點。',
+  },
+  {
+    id: 'OAR-CARDIO-005',
+    title: 'American Heartworm Society — Current Canine Guidelines (2024)',
+    title_zh: '美國心絲蟲協會 — 犬心絲蟲最新指引（2024）',
+    url: 'https://www.heartwormsociety.org/veterinary-resources/american-heartworm-society-guidelines',
+    source: 'Other',
+    specialty: ['CARDIO', 'IM'],
+    topics: ['heartworm', 'Dirofilaria', 'prevention', 'melarsomine', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'AHS 犬心絲蟲預防、診斷與治療最新指引，含 slow-kill vs adulticidal protocol 比較，適用台灣高盛行區臨床實務。',
+  },
+  {
+    id: 'OAR-CARDIO-006',
+    title: 'ACVIM Consensus Statement — Pulmonary Hypertension in Dogs (2020)',
+    title_zh: 'ACVIM 共識聲明 — 犬肺動脈高壓（2020）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7382339/',
+    source: 'ACVIM',
+    specialty: ['CARDIO', 'IM'],
+    topics: ['pulmonary hypertension', 'sildenafil', 'echocardiography', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '2020 犬肺動脈高壓共識聲明，涵蓋分類、超音波診斷標準（TR velocity）、治療（sildenafil/pimobendan）、預後評估。',
+  },
+  {
+    id: 'OAR-CARDIO-007',
+    title: 'Merck Veterinary Manual — Congenital and Inherited Anomalies of the Cardiovascular System',
+    title_zh: 'Merck 獸醫手冊 — 先天性心血管異常',
+    url: 'https://www.merckvetmanual.com/circulatory-system/congenital-and-inherited-anomalies-of-the-cardiovascular-system/congenital-and-inherited-anomalies-of-the-cardiovascular-system-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['CARDIO', 'SURG'],
+    topics: ['PDA', 'PS', 'SAS', 'VSD', 'congenital heart disease'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 先天性心臟病章節，涵蓋 PDA、PS、SAS、VSD、ASD、Tetralogy of Fallot 等常見先天性心臟異常的解剖、臨床表現與治療選擇。',
+  },
+  {
+    id: 'OAR-CARDIO-008',
+    title: 'ACVIM Consensus Statement — Feline Arterial Thromboembolism (FATE) (2021)',
+    title_zh: 'ACVIM 共識聲明 — 貓動脈血栓栓塞症（2021）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8252159/',
+    source: 'ACVIM',
+    specialty: ['CARDIO', 'ECC'],
+    topics: ['ATE', 'FATE', 'clopidogrel', 'thromboembolism', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: '貓動脈血栓栓塞（ATE/FATE）共識聲明，涵蓋急診處理、疼痛控制、抗血栓治療（clopidogrel）、預後評估、預防策略。',
+  },
+
+  // ─────────────────────────────────────────
+  // IM — 內科（10 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-IM-001',
+    title: 'IRIS — Staging of CKD Guidelines',
+    title_zh: 'IRIS — 慢性腎病分期指引',
+    url: 'https://www.iris-kidney.com/guidelines/staging.html',
+    source: 'IRIS',
+    specialty: ['IM'],
+    topics: ['CKD', 'staging', 'SDMA', 'creatinine', 'proteinuria', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'IRIS 慢性腎病分期系統（Stage 1-4），包含肌酐值、SDMA、蛋白尿亞分期、血壓亞分期標準，為全球犬貓 CKD 管理的統一框架。',
+  },
+  {
+    id: 'OAR-IM-002',
+    title: 'IRIS — Treatment Recommendations for CKD',
+    title_zh: 'IRIS — 慢性腎病治療建議',
+    url: 'https://www.iris-kidney.com/guidelines/recommendations.html',
+    source: 'IRIS',
+    specialty: ['IM'],
+    topics: ['CKD', 'treatment', 'renal diet', 'phosphate binders', 'benazepril'],
+    access_type: 'free_full_text',
+    description_zh: 'IRIS 各期 CKD 治療建議，含飲食管理、磷結合劑、ACEI/ARB、EPO 使用時機、脫水管理。依 IRIS 分期給予具體建議。',
+  },
+  {
+    id: 'OAR-IM-003',
+    title: 'ACVIM Consensus Statement — Diagnosis of Cushing Syndrome in Dogs (2023)',
+    title_zh: 'ACVIM 共識聲明 — 犬庫欣氏症候群診斷（2023）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10100475/',
+    source: 'ACVIM',
+    specialty: ['IM'],
+    topics: ['Cushing', 'hyperadrenocorticism', 'LDDS', 'UCCR', 'ACTH stimulation', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '2023 更新版犬庫欣氏症候群診斷共識，含 LDDS、UCCR、ACTH stimulation test 的選擇策略、敏感度/特異度比較、鑑別 PDH vs ADH。',
+  },
+  {
+    id: 'OAR-IM-004',
+    title: 'ACVIM Consensus Statement — Canine and Feline Diabetes Mellitus (2018)',
+    title_zh: 'ACVIM 共識聲明 — 犬貓糖尿病（2018）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5866983/',
+    source: 'ACVIM',
+    specialty: ['IM', 'ECC'],
+    topics: ['diabetes mellitus', 'insulin', 'fructosamine', 'blood glucose curve', 'DKA'],
+    access_type: 'free_full_text',
+    description_zh: '犬貓糖尿病共識，涵蓋分型、胰島素種類與劑量調整、血糖曲線監測、飲食管理、糖尿病酮酸血症預防。',
+  },
+  {
+    id: 'OAR-IM-005',
+    title: 'ACVIM Consensus Statement — Canine IMHA (2019)',
+    title_zh: 'ACVIM 共識聲明 — 犬免疫介導性溶血性貧血（2019）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6430924/',
+    source: 'ACVIM',
+    specialty: ['IM', 'ECC', 'CPATH'],
+    topics: ['IMHA', 'immune-mediated', 'prednisolone', 'mycophenolate', 'transfusion'],
+    access_type: 'free_full_text',
+    description_zh: '犬 IMHA 診斷與治療共識，含 Coombs test、spherocytosis 判讀、免疫抑制藥物選擇（prednisolone + mycophenolate vs azathioprine）、抗血栓治療、預後指標。',
+  },
+  {
+    id: 'OAR-IM-006',
+    title: 'Merck Veterinary Manual — Feline Hyperthyroidism',
+    title_zh: 'Merck 獸醫手冊 — 貓甲狀腺機能亢進',
+    url: 'https://www.merckvetmanual.com/endocrine-system/the-thyroid-gland/hyperthyroidism-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['IM', 'CARDIO'],
+    topics: ['hyperthyroidism', 'methimazole', 'radioiodine', 'T4', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 甲亢章節，含臨床表現、T4/fT4 診斷、藥物治療（methimazole）、放射碘治療、手術選擇、與 CKD 共病管理。',
+  },
+  {
+    id: 'OAR-IM-007',
+    title: 'WSAVA — Global Nutrition Guidelines (2011)',
+    title_zh: 'WSAVA — 全球營養指引（2011）',
+    url: 'https://wsava.org/global-guidelines/global-nutrition-guidelines/',
+    source: 'WSAVA',
+    specialty: ['IM', 'DERM'],
+    topics: ['nutrition', 'diet', 'body condition score', 'nutritional assessment'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 全球營養指引，含營養評估五步驟、體態評分（BCS 1-9）、疾病營養管理原則，適用於多種內科疾病的營養介入。',
+  },
+  {
+    id: 'OAR-IM-008',
+    title: 'ACVIM Consensus Statement — Chronic Enteropathies in Dogs (2010)',
+    title_zh: 'ACVIM 共識聲明 — 犬慢性腸病（2010）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3168138/',
+    source: 'ACVIM',
+    specialty: ['IM'],
+    topics: ['IBD', 'chronic enteropathy', 'food-responsive', 'immunosuppressive', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '犬慢性腸病共識，提出食物反應性腸病、抗生素反應性腸病、免疫抑制反應性腸病的分類體系與逐步診斷流程。',
+  },
+  {
+    id: 'OAR-IM-009',
+    title: 'IRIS — Grading of AKI Guidelines',
+    title_zh: 'IRIS — 急性腎損傷分級指引',
+    url: 'https://www.iris-kidney.com/guidelines/grading.html',
+    source: 'IRIS',
+    specialty: ['IM', 'ECC'],
+    topics: ['AKI', 'acute kidney injury', 'grading', 'creatinine', 'urine output'],
+    access_type: 'free_full_text',
+    description_zh: 'IRIS AKI 分級系統（Grade I-V），依肌酐值、尿量、臨床反應分級，並提供各級處理建議。與 CKD 分期互補使用。',
+  },
+  {
+    id: 'OAR-IM-010',
+    title: 'ACVIM Consensus Statement — Leptospirosis Diagnosis, Treatment, and Prevention (2010)',
+    title_zh: 'ACVIM 共識聲明 — 鉤端螺旋體病診治與預防（2010）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3168141/',
+    source: 'ACVIM',
+    specialty: ['IM', 'ECC'],
+    topics: ['leptospirosis', 'Leptospira', 'MAT', 'PCR', 'zoonotic', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '犬鉤端螺旋體病共識聲明，含 MAT/PCR 診斷策略、抗生素治療（doxycycline/ampicillin）、疫苗建議、人畜共通風險控管。台灣高風險區實務必備。',
+  },
+
+  // ─────────────────────────────────────────
+  // DERM — 皮膚科（7 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-DERM-001',
+    title: 'ICADA — Canine Atopic Dermatitis Treatment Guidelines (2015 updated)',
+    title_zh: 'ICADA — 犬異位性皮膚炎治療指引（2015 更新）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4531508/',
+    source: 'PMC',
+    specialty: ['DERM'],
+    topics: ['atopic dermatitis', 'oclacitinib', 'lokivetmab', 'ASIT', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '國際犬異位性皮膚炎委員會（ICADA）治療指引 2015 更新版，含急性 vs 慢性 CAD 治療流程圖、新藥（oclacitinib）定位、減敏治療（ASIT）建議。',
+  },
+  {
+    id: 'OAR-DERM-002',
+    title: 'Merck Veterinary Manual — Dermatophytosis (Ringworm)',
+    title_zh: 'Merck 獸醫手冊 — 皮膚癬菌症',
+    url: 'https://www.merckvetmanual.com/integumentary-system/dermatophytosis/dermatophytosis-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['DERM'],
+    topics: ['dermatophytosis', 'ringworm', 'Microsporum', 'Trichophyton', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 皮膚癬菌症章節，涵蓋 Wood lamp、DTM 培養、PCR 診斷、局部與全身抗黴菌治療、環境除汙策略。',
+  },
+  {
+    id: 'OAR-DERM-003',
+    title: 'WAVD — Diagnosis and Treatment of Demodicosis in Dogs (2020)',
+    title_zh: '世界獸醫皮膚科學會 — 犬蠕形蟎症診治（2020）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295855/',
+    source: 'PMC',
+    specialty: ['DERM'],
+    topics: ['demodicosis', 'Demodex', 'isoxazoline', 'ivermectin', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '犬蠕形蟎症最新診治指引，含 isoxazoline 類藥物（afoxolaner/fluralaner/sarolaner）取代 ivermectin 作為一線治療的實證支持、治癒判定標準。',
+  },
+  {
+    id: 'OAR-DERM-004',
+    title: 'Merck Veterinary Manual — Otitis Externa',
+    title_zh: 'Merck 獸醫手冊 — 外耳炎',
+    url: 'https://www.merckvetmanual.com/ear-disorders/otitis-externa/otitis-externa-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['DERM'],
+    topics: ['otitis externa', 'ear infection', 'Malassezia', 'Pseudomonas', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 外耳炎章節，涵蓋 primary/predisposing/perpetuating 因素（PPPP 模型）、耳鏡檢查、細胞學判讀、耳清潔與藥物治療。',
+  },
+  {
+    id: 'OAR-DERM-005',
+    title: 'WSAVA — Guidelines for the Diagnosis and Treatment of Canine Superficial Bacterial Folliculitis (Antimicrobial Stewardship)',
+    title_zh: 'WSAVA — 犬淺表細菌性毛囊炎診治與抗菌管理指引',
+    url: 'https://wsava.org/global-guidelines/therapeutic-guidelines/',
+    source: 'WSAVA',
+    specialty: ['DERM'],
+    topics: ['pyoderma', 'MRSP', 'antimicrobial stewardship', 'topical therapy', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 抗菌管理指引中犬膿皮症部分，強調局部治療優先、抗生素選擇原則（一線 vs 二線）、MRSP 感染處理、培養與藥敏的適應症。',
+  },
+  {
+    id: 'OAR-DERM-006',
+    title: 'Merck Veterinary Manual — Flea Allergy Dermatitis',
+    title_zh: 'Merck 獸醫手冊 — 跳蚤過敏性皮膚炎',
+    url: 'https://www.merckvetmanual.com/integumentary-system/fleas/flea-allergy-dermatitis-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['DERM'],
+    topics: ['FAD', 'flea allergy', 'flea control', 'isoxazoline', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck FAD 章節，含 IgE 機轉、典型分布模式（犬：腰薦部；貓：粟粒性皮膚炎）、跳蚤控制策略、環境除蚤。台灣亞熱帶環境全年適用。',
+  },
+  {
+    id: 'OAR-DERM-007',
+    title: 'BMC Veterinary Research — Adverse Food Reactions in Dogs and Cats (Systematic Review)',
+    title_zh: 'BMC 獸醫研究 — 犬貓食物不良反應系統性回顧',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4710035/',
+    source: 'PMC',
+    specialty: ['DERM', 'IM'],
+    topics: ['food allergy', 'adverse food reaction', 'elimination diet', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: '犬貓食物不良反應系統性回顧，含常見過敏原排行、排除飲食試驗最佳做法（8 週新蛋白源或水解蛋白）、皮膚 vs GI 表現比較。',
+  },
+
+  // ─────────────────────────────────────────
+  // SURG — 外科（7 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-SURG-001',
+    title: 'Merck Veterinary Manual — Gastric Dilatation-Volvulus (GDV)',
+    title_zh: 'Merck 獸醫手冊 — 胃擴張扭轉',
+    url: 'https://www.merckvetmanual.com/digestive-system/diseases-of-the-stomach-and-intestines-in-small-animals/gastric-dilation-volvulus-in-small-animals',
+    source: 'MerckVetManual',
+    specialty: ['SURG', 'ECC'],
+    topics: ['GDV', 'gastropexy', 'gastric decompression', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck GDV 章節，涵蓋病理生理（胃擴張→扭轉→灌流不足→SIRS）、急診穩定、手術（de-rotation + gastropexy）、預防性胃固定術適應症。',
+  },
+  {
+    id: 'OAR-SURG-002',
+    title: 'Merck Veterinary Manual — Cranial Cruciate Ligament Disease',
+    title_zh: 'Merck 獸醫手冊 — 前十字韌帶疾病',
+    url: 'https://www.merckvetmanual.com/musculoskeletal-system/arthropathies-and-related-disorders-in-small-animals/cranial-cruciate-ligament-disease-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['SURG'],
+    topics: ['CCLD', 'TPLO', 'TTA', 'stifle', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck CCLD 章節，含臨床檢查（drawer test/tibial thrust）、影像學、手術術式比較（TPLO vs TTA vs extracapsular）、復健。',
+  },
+  {
+    id: 'OAR-SURG-003',
+    title: 'ACVS — Brachycephalic Syndrome Overview',
+    title_zh: 'ACVS — 短頭犬症候群概述',
+    url: 'https://www.acvs.org/small-animal/brachycephalic-syndrome',
+    source: 'Other',
+    specialty: ['SURG', 'ECC'],
+    topics: ['BOAS', 'brachycephalic', 'soft palate', 'stenotic nares', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '美國獸醫外科學院（ACVS）短頭犬呼吸道症候群概述，含解剖異常（狹窄鼻孔/軟顎過長/喉囊外翻/氣管發育不全）、分級、手術時機與術式。',
+  },
+  {
+    id: 'OAR-SURG-004',
+    title: 'Merck Veterinary Manual — Intervertebral Disc Disease',
+    title_zh: 'Merck 獸醫手冊 — 椎間盤疾病',
+    url: 'https://www.merckvetmanual.com/nervous-system/diseases-of-the-spinal-column-and-cord/intervertebral-disc-disease-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['SURG', 'NEURO'],
+    topics: ['IVDD', 'Hansen Type I', 'Hansen Type II', 'hemilaminectomy', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck IVDD 章節，涵蓋 Hansen I/II 型分類、神經學分級（Grade 1-5）、內科 vs 手術治療時機、手術術式（hemilaminectomy/ventral slot）、預後。',
+  },
+  {
+    id: 'OAR-SURG-005',
+    title: 'Merck Veterinary Manual — Pyometra',
+    title_zh: 'Merck 獸醫手冊 — 子宮蓄膿',
+    url: 'https://www.merckvetmanual.com/reproductive-system/reproductive-diseases-of-the-female-small-animal/metritis-and-pyometra-in-small-animals',
+    source: 'MerckVetManual',
+    specialty: ['SURG', 'ECC'],
+    topics: ['pyometra', 'OHE', 'aglepristone', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 子宮蓄膿章節，含 open vs closed pyometra 分類、診斷（影像 + 血檢）、OHE 手術、內科保守治療（aglepristone — 歐洲適用）、術後照護。',
+  },
+  {
+    id: 'OAR-SURG-006',
+    title: 'WSAVA — Guidelines for Safe Anesthesia',
+    title_zh: 'WSAVA — 安全麻醉指引',
+    url: 'https://wsava.org/global-guidelines/anesthesia-guidelines/',
+    source: 'WSAVA',
+    specialty: ['SURG', 'ECC'],
+    topics: ['anesthesia', 'ASA classification', 'monitoring', 'premedication'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 全球安全麻醉指引，含 ASA 風險分級、麻醉前評估、監測標準（SpO2/ETCO2/BP/ECG）、常見麻醉藥物方案。適用各級手術。',
+  },
+  {
+    id: 'OAR-SURG-007',
+    title: 'Merck Veterinary Manual — GI Foreign Bodies in Small Animals',
+    title_zh: 'Merck 獸醫手冊 — 小動物消化道異物',
+    url: 'https://www.merckvetmanual.com/digestive-system/diseases-of-the-stomach-and-intestines-in-small-animals/gastrointestinal-foreign-bodies-in-small-animals',
+    source: 'MerckVetManual',
+    specialty: ['SURG'],
+    topics: ['foreign body', 'linear foreign body', 'enterotomy', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 消化道異物章節，含線性異物（貓常見）特殊處理、影像診斷（X 光/超音波）、手術決策（gastrotomy vs enterotomy vs resection & anastomosis）。',
+  },
+
+  // ─────────────────────────────────────────
+  // NEURO — 神經科（7 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-NEURO-001',
+    title: 'ACVIM Consensus Statement — Idiopathic Epilepsy in Dogs (2015)',
+    title_zh: 'ACVIM 共識聲明 — 犬特發性癲癇（2015）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4913651/',
+    source: 'ACVIM',
+    specialty: ['NEURO'],
+    topics: ['epilepsy', 'seizure', 'phenobarbital', 'levetiracetam', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '國際獸醫癲癇工作小組（IVETF）共識，含癲癇分類（ILAE 基礎）、診斷 Tier I-III、何時啟動抗癲癇藥物、一線藥物（phenobarbital/imepiton/KBr）選擇。',
+  },
+  {
+    id: 'OAR-NEURO-002',
+    title: 'IVETF — Consensus Proposal: Drug-Resistant Canine Epilepsy (2015)',
+    title_zh: 'IVETF 共識提案 — 犬難治性癲癇（2015）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4913653/',
+    source: 'PMC',
+    specialty: ['NEURO'],
+    topics: ['drug-resistant epilepsy', 'polytherapy', 'levetiracetam', 'zonisamide', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '犬難治性癲癇定義與處理共識，含藥物抗性定義、多藥物治療策略（add-on levetiracetam/zonisamide）、癲癇重積狀態處理、飼主溝通。',
+  },
+  {
+    id: 'OAR-NEURO-003',
+    title: 'Merck Veterinary Manual — Vestibular Disease in Dogs and Cats',
+    title_zh: 'Merck 獸醫手冊 — 犬貓前庭疾病',
+    url: 'https://www.merckvetmanual.com/nervous-system/diseases-of-the-vestibular-system/vestibular-disease-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['NEURO'],
+    topics: ['vestibular disease', 'head tilt', 'nystagmus', 'peripheral', 'central', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 前庭疾病章節，含中央 vs 周邊前庭鑑別（paradoxical vestibular signs）、老犬特發性前庭症候群、中耳炎相關、MRI 適應症。',
+  },
+  {
+    id: 'OAR-NEURO-004',
+    title: 'Merck Veterinary Manual — Meningoencephalitis',
+    title_zh: 'Merck 獸醫手冊 — 腦膜腦炎',
+    url: 'https://www.merckvetmanual.com/nervous-system/inflammatory-diseases-of-the-central-nervous-system/meningoencephalitis-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['NEURO', 'IM'],
+    topics: ['GME', 'NME', 'MUO', 'meningoencephalitis', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 腦膜腦炎章節，涵蓋 MUO（GME/NME/NLE）分類、CSF 分析、MRI 特徵、免疫抑制治療（prednisolone + cytarabine/procarbazine/mycophenolate）。',
+  },
+  {
+    id: 'OAR-NEURO-005',
+    title: 'ACVIM Consensus Statement — Meningoencephalomyelitis of Unknown Origin (MUO) in Dogs (2023)',
+    title_zh: 'ACVIM 共識聲明 — 犬不明原因腦膜腦脊髓炎（MUO）（2023）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10100468/',
+    source: 'ACVIM',
+    specialty: ['NEURO'],
+    topics: ['MUO', 'GME', 'NME', 'immunosuppression', 'cytarabine', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '2023 年 MUO 共識更新，統一 GME/NME/NLE 術語為 MUO，提出標準化診斷流程、免疫抑制治療方案比較、長期預後評估。',
+  },
+  {
+    id: 'OAR-NEURO-006',
+    title: 'ACVS — Intervertebral Disc Disease in Dogs',
+    title_zh: 'ACVS — 犬椎間盤疾病',
+    url: 'https://www.acvs.org/small-animal/intervertebral-disc-disease',
+    source: 'Other',
+    specialty: ['NEURO', 'SURG'],
+    topics: ['IVDD', 'neurological grading', 'surgery vs conservative', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVS 犬 IVDD 總覽，含神經學分級系統（Grade 1-5）、手術 vs 保守治療選擇標準、術後復健建議、品種傾向（臘腸犬/法鬥/比格）。',
+  },
+  {
+    id: 'OAR-NEURO-007',
+    title: 'Merck Veterinary Manual — Degenerative Myelopathy',
+    title_zh: 'Merck 獸醫手冊 — 退化性脊髓病變',
+    url: 'https://www.merckvetmanual.com/nervous-system/diseases-of-the-spinal-column-and-cord/degenerative-myelopathy-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['NEURO'],
+    topics: ['degenerative myelopathy', 'SOD1', 'German Shepherd', 'rehabilitation', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck DM 章節，涵蓋 SOD1 基因突變、臨床進程（UMN→LMN→呼吸衰竭）、與 IVDD 鑑別、物理復健策略、SOD1 基因檢測。',
+  },
+
+  // ─────────────────────────────────────────
+  // ONCO — 腫瘤科（7 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-ONCO-001',
+    title: 'Merck Veterinary Manual — Canine Lymphoma',
+    title_zh: 'Merck 獸醫手冊 — 犬淋巴瘤',
+    url: 'https://www.merckvetmanual.com/circulatory-system/lymphoma/lymphoma-in-dogs',
+    source: 'MerckVetManual',
+    specialty: ['ONCO'],
+    topics: ['lymphoma', 'CHOP', 'multicentric', 'staging', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 犬淋巴瘤章節，含分類（multicentric/alimentary/mediastinal/extranodal）、WHO 分期、CHOP-based 化療方案、rescue protocols、預後因子。',
+  },
+  {
+    id: 'OAR-ONCO-002',
+    title: 'ACVIM Consensus Statement — Mast Cell Tumors in Dogs (2016)',
+    title_zh: 'ACVIM 共識聲明 — 犬肥大細胞瘤（2016）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5032892/',
+    source: 'ACVIM',
+    specialty: ['ONCO', 'SURG'],
+    topics: ['MCT', 'mast cell tumor', 'Patnaik', 'Kiupel', 'KIT mutation', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '犬 MCT 共識聲明，含 Patnaik vs Kiupel 分級系統比較、KIT 突變檢測與 TKI 治療（toceranib/masitinib）、手術切緣建議、分期與預後。',
+  },
+  {
+    id: 'OAR-ONCO-003',
+    title: 'Merck Veterinary Manual — Hemangiosarcoma',
+    title_zh: 'Merck 獸醫手冊 — 血管肉瘤',
+    url: 'https://www.merckvetmanual.com/circulatory-system/hemangiosarcoma/hemangiosarcoma-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['ONCO', 'SURG', 'ECC'],
+    topics: ['HSA', 'hemangiosarcoma', 'spleen', 'doxorubicin', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck HSA 章節，涵蓋好發部位（脾臟/右心耳/皮下）、急性腹腔出血急診處理、脾臟切除 + doxorubicin 化療方案、中位存活時間。',
+  },
+  {
+    id: 'OAR-ONCO-004',
+    title: 'Merck Veterinary Manual — Osteosarcoma in Animals',
+    title_zh: 'Merck 獸醫手冊 — 動物骨肉瘤',
+    url: 'https://www.merckvetmanual.com/musculoskeletal-system/neoplasia-of-bone/osteosarcoma-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['ONCO', 'SURG'],
+    topics: ['osteosarcoma', 'amputation', 'carboplatin', 'limb-sparing', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 骨肉瘤章節，含好發部位（長骨幹骺端）、影像診斷、截肢 + carboplatin 標準方案、保肢手術適應症、疼痛管理。',
+  },
+  {
+    id: 'OAR-ONCO-005',
+    title: 'VFSP — Feline Injection-Site Sarcoma Task Force Recommendations (2020)',
+    title_zh: '貓注射處肉瘤工作小組建議（2020）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7464443/',
+    source: 'PMC',
+    specialty: ['ONCO'],
+    topics: ['FISS', 'injection-site sarcoma', 'vaccination', 'wide excision', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: '貓注射處肉瘤（FISS）最新建議，含 3-2-1 rule 監測、廣切手術（3cm lateral + 2 fascial planes deep）、放射治療、疫苗施打位置建議（distal limb）。',
+  },
+  {
+    id: 'OAR-ONCO-006',
+    title: 'Merck Veterinary Manual — Mammary Tumors',
+    title_zh: 'Merck 獸醫手冊 — 乳腺腫瘤',
+    url: 'https://www.merckvetmanual.com/reproductive-system/mammary-tumors/mammary-tumors-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['ONCO', 'SURG'],
+    topics: ['mammary tumor', 'mastectomy', 'spay', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 乳腺腫瘤章節，含犬（~50% 惡性）vs 貓（~85% 惡性）差異、早期絕育保護效果、手術範圍選擇、化療適應症、預後因子。',
+  },
+  {
+    id: 'OAR-ONCO-007',
+    title: 'ACVIM Consensus Statement — Diagnosis, Classification, and Treatment of Canine Appendicular Osteosarcoma',
+    title_zh: 'ACVIM 共識聲明 — 犬四肢骨肉瘤診斷分類與治療',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5032893/',
+    source: 'ACVIM',
+    specialty: ['ONCO', 'SURG'],
+    topics: ['osteosarcoma', 'appendicular', 'chemotherapy', 'staging', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: '犬四肢骨肉瘤共識聲明，含分期檢查標準、手術（截肢 vs 保肢）決策流程、輔助化療（carboplatin vs doxorubicin）、疼痛控制方案。',
+  },
+
+  // ─────────────────────────────────────────
+  // ECC — 急診加護（8 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-ECC-001',
+    title: 'RECOVER Initiative — Evidence-Based CPR Guidelines for Dogs and Cats (2012)',
+    title_zh: 'RECOVER 倡議 — 犬貓實證心肺復甦指引（2012）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3695658/',
+    source: 'RECOVER',
+    specialty: ['ECC'],
+    topics: ['CPR', 'BLS', 'ALS', 'chest compression', 'epinephrine', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'RECOVER CPR 指引——獸醫史上第一個實證 CPR 共識，涵蓋 BLS（胸外按壓/呼吸道/通氣）、ALS（藥物/ECG 判讀/電除顫）、CPR 後照護。',
+  },
+  {
+    id: 'OAR-ECC-002',
+    title: 'RECOVER Initiative — Updated CPR Guidelines (2024)',
+    title_zh: 'RECOVER 倡議 — 更新版 CPR 指引（2024）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10836563/',
+    source: 'RECOVER',
+    specialty: ['ECC'],
+    topics: ['CPR', 'RECOVER 2.0', 'updated guidelines', 'post-cardiac arrest care'],
+    access_type: 'free_full_text',
+    description_zh: 'RECOVER 2024 更新版，新增 12 年來的實證更新，涵蓋按壓深度/速率修正、vasopressin 角色、point-of-care ultrasound 於 CPR 的應用。',
+  },
+  {
+    id: 'OAR-ECC-003',
+    title: 'Merck Veterinary Manual — Toxicology Introduction',
+    title_zh: 'Merck 獸醫手冊 — 毒物學總論',
+    url: 'https://www.merckvetmanual.com/toxicology/toxicology-introduction/overview-of-toxicology',
+    source: 'MerckVetManual',
+    specialty: ['ECC'],
+    topics: ['toxicology', 'decontamination', 'activated charcoal', 'emesis'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 毒物學總論，涵蓋中毒處理 ABC（stabilize → decontaminate → specific antidotes）、催吐適應症/禁忌、活性碳使用。',
+  },
+  {
+    id: 'OAR-ECC-004',
+    title: 'Merck Veterinary Manual — DKA (Diabetic Ketoacidosis)',
+    title_zh: 'Merck 獸醫手冊 — 糖尿病酮酸血症',
+    url: 'https://www.merckvetmanual.com/endocrine-system/the-pancreas/diabetes-mellitus-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['ECC', 'IM'],
+    topics: ['DKA', 'insulin', 'fluid therapy', 'potassium', 'phosphorus'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 糖尿病章節中 DKA 段落，含輸液治療（0.9% NaCl）、regular insulin CRI、電解質監測（K/PO4）、酸鹼校正、併發症預防。',
+  },
+  {
+    id: 'OAR-ECC-005',
+    title: 'ACVIM Consensus Statement — Sepsis in Dogs and Cats (2021)',
+    title_zh: 'ACVIM 共識聲明 — 犬貓敗血症（2021）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8252163/',
+    source: 'ACVIM',
+    specialty: ['ECC', 'IM'],
+    topics: ['sepsis', 'SIRS', 'antimicrobial', 'fluid resuscitation', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: '犬貓敗血症共識聲明，含 SIRS 標準（犬/貓不同 cut-off）、早期目標導向治療（EGDT）、經驗性抗生素選擇、血管升壓藥使用時機、lactate 監測。',
+  },
+  {
+    id: 'OAR-ECC-006',
+    title: 'Merck Veterinary Manual — Heat Stroke',
+    title_zh: 'Merck 獸醫手冊 — 中暑',
+    url: 'https://www.merckvetmanual.com/emergency-medicine-and-critical-care/heatstroke/heatstroke-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['ECC'],
+    topics: ['heat stroke', 'hyperthermia', 'cooling', 'DIC', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 中暑章節，涵蓋體溫調節失敗機轉、急診降溫策略（主動冷卻至 39.5°C 停止）、併發症（DIC/ARF/腦水腫）監測、預後因子。台灣夏季高發。',
+  },
+  {
+    id: 'OAR-ECC-007',
+    title: 'WSAVA — Guidelines for the Assessment of Pain in Animals',
+    title_zh: 'WSAVA — 動物疼痛評估指引',
+    url: 'https://wsava.org/global-guidelines/animal-pain-guidelines/',
+    source: 'WSAVA',
+    specialty: ['ECC', 'SURG'],
+    topics: ['pain assessment', 'Glasgow scale', 'multimodal analgesia', 'opioid'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 疼痛評估與管理指引，含 Glasgow 犬疼痛量表、貓 grimace scale、多模式止痛策略（opioid/NSAID/local anesthesia/gabapentin）。',
+  },
+  {
+    id: 'OAR-ECC-008',
+    title: 'AAHA/AAFP — Fluid Therapy Guidelines for Dogs and Cats (2024)',
+    title_zh: 'AAHA/AAFP — 犬貓液體治療指引（2024）',
+    url: 'https://www.aaha.org/resources/2024-aaha-fluid-therapy-guidelines-for-dogs-and-cats/',
+    source: 'Other',
+    specialty: ['ECC', 'IM', 'SURG'],
+    topics: ['fluid therapy', 'crystalloid', 'colloid', 'dehydration', 'shock resuscitation'],
+    access_type: 'free_full_text',
+    description_zh: 'AAHA 2024 液體治療指引，涵蓋脫水評估、休克輸液速率、維持輸液計算、膠體液爭議、貓低容量輸液策略。急診與圍手術期必備。',
+  },
+
+  // ─────────────────────────────────────────
+  // CPATH — 臨床病理（6 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-CPATH-001',
+    title: 'Merck Veterinary Manual — CBC Interpretation',
+    title_zh: 'Merck 獸醫手冊 — 全血球計數判讀',
+    url: 'https://www.merckvetmanual.com/clinical-pathology-and-procedures/diagnostic-procedures-for-the-private-practice-laboratory/hematology',
+    source: 'MerckVetManual',
+    specialty: ['CPATH'],
+    topics: ['CBC', 'hematology', 'anemia', 'leukocytosis', 'thrombocytopenia'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck CBC 判讀章節，涵蓋 RBC 指標（PCV/MCV/MCHC/reticulocyte）、WBC 分類計數、血小板評估、常見異常型態判讀。',
+  },
+  {
+    id: 'OAR-CPATH-002',
+    title: 'Merck Veterinary Manual — Serum Biochemistry',
+    title_zh: 'Merck 獸醫手冊 — 血清生化',
+    url: 'https://www.merckvetmanual.com/clinical-pathology-and-procedures/diagnostic-procedures-for-the-private-practice-laboratory/clinical-chemistry',
+    source: 'MerckVetManual',
+    specialty: ['CPATH', 'IM'],
+    topics: ['biochemistry', 'ALT', 'ALP', 'BUN', 'creatinine', 'glucose'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 血清生化判讀，涵蓋肝臟指標（ALT/ALP/GGT/bilirubin）、腎臟指標（BUN/creatinine/SDMA）、電解質、血糖、蛋白質分析。',
+  },
+  {
+    id: 'OAR-CPATH-003',
+    title: 'ASVCP — Quality Assurance Guidelines for Veterinary Laboratories',
+    title_zh: 'ASVCP — 獸醫實驗室品質保證指引',
+    url: 'https://www.asvcp.org/page/QALS_Guidelines',
+    source: 'Other',
+    specialty: ['CPATH'],
+    topics: ['quality assurance', 'QC', 'pre-analytical', 'reference intervals'],
+    access_type: 'free_full_text',
+    description_zh: '美國獸醫臨床病理學會（ASVCP）品質保證指引，涵蓋分析前品管、參考區間建立、儀器校正、品管規則（Westgard rules）。',
+  },
+  {
+    id: 'OAR-CPATH-004',
+    title: 'Merck Veterinary Manual — Urinalysis',
+    title_zh: 'Merck 獸醫手冊 — 尿液分析',
+    url: 'https://www.merckvetmanual.com/clinical-pathology-and-procedures/diagnostic-procedures-for-the-private-practice-laboratory/urinalysis',
+    source: 'MerckVetManual',
+    specialty: ['CPATH', 'IM'],
+    topics: ['urinalysis', 'USG', 'UPC', 'sediment', 'crystals'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 尿液分析章節，涵蓋採集方法（膀胱穿刺/導尿/自排）、比重（USG）判讀、試紙化學分析、沉渣顯微鏡檢查、UPC 蛋白尿評估。',
+  },
+  {
+    id: 'OAR-CPATH-005',
+    title: 'ASVCP — Guidelines for Cytology Preparation and Interpretation',
+    title_zh: 'ASVCP — 細胞學製備與判讀指引',
+    url: 'https://www.asvcp.org/page/Cytology_Guidelines',
+    source: 'Other',
+    specialty: ['CPATH', 'ONCO', 'DERM'],
+    topics: ['cytology', 'FNA', 'staining', 'interpretation', 'sample quality'],
+    access_type: 'free_full_text',
+    description_zh: 'ASVCP 細胞學指引，涵蓋 FNA 技術、抹片製備、染色方法（Diff-Quik/Wright-Giemsa）、細胞學標準術語、品質判定標準。',
+  },
+  {
+    id: 'OAR-CPATH-006',
+    title: 'Merck Veterinary Manual — Coagulation Testing',
+    title_zh: 'Merck 獸醫手冊 — 凝血功能檢查',
+    url: 'https://www.merckvetmanual.com/clinical-pathology-and-procedures/diagnostic-procedures-for-the-private-practice-laboratory/hemostasis-testing',
+    source: 'MerckVetManual',
+    specialty: ['CPATH', 'ECC'],
+    topics: ['coagulation', 'PT', 'aPTT', 'fibrinogen', 'D-dimer', 'DIC'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 凝血檢查章節，涵蓋 PT/aPTT/fibrinogen/D-dimer 判讀、DIC 診斷標準、凝血因子缺乏鑑別、抗凝血劑中毒處理。',
+  },
+
+  // ─────────────────────────────────────────
+  // 跨專科通用資源（5 resources）
+  // ─────────────────────────────────────────
+  {
+    id: 'OAR-CROSS-001',
+    title: 'WSAVA — Vaccination Guidelines for Dogs and Cats',
+    title_zh: 'WSAVA — 犬貓疫苗接種指引',
+    url: 'https://wsava.org/global-guidelines/vaccination-guidelines/',
+    source: 'WSAVA',
+    specialty: ['IM', 'ONCO', 'ECC'],
+    topics: ['vaccination', 'core vaccine', 'non-core', 'booster', 'FISS prevention'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 全球疫苗指引，涵蓋核心 vs 非核心疫苗分類、幼犬幼貓初始免疫程序、成年動物追加接種間隔、疫苗施打位置（預防 FISS）。',
+  },
+  {
+    id: 'OAR-CROSS-002',
+    title: 'WSAVA — Global Guidelines for Antimicrobial Use in Companion Animals',
+    title_zh: 'WSAVA — 伴侶動物抗菌藥物使用全球指引',
+    url: 'https://wsava.org/global-guidelines/therapeutic-guidelines/',
+    source: 'WSAVA',
+    specialty: ['IM', 'SURG', 'DERM', 'ECC'],
+    topics: ['antimicrobial stewardship', 'AMR', 'empirical therapy', 'culture & sensitivity'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 抗菌管理指引，涵蓋經驗性抗生素選擇階梯（一線/二線/三線）、MRSP/MRSA 處理、圍手術期抗菌策略、培養適應症。跨科通用。',
+  },
+  {
+    id: 'OAR-CROSS-003',
+    title: 'AAHA — Canine and Feline Pain Management Guidelines (2022)',
+    title_zh: 'AAHA — 犬貓疼痛管理指引（2022）',
+    url: 'https://www.aaha.org/resources/2022-aaha-pain-management-guidelines-for-dogs-and-cats/',
+    source: 'Other',
+    specialty: ['ECC', 'SURG', 'ONCO', 'NEURO'],
+    topics: ['pain management', 'NSAID', 'opioid', 'gabapentin', 'multimodal analgesia'],
+    access_type: 'free_full_text',
+    description_zh: 'AAHA 2022 犬貓疼痛管理指引，涵蓋疼痛評估工具、急性 vs 慢性疼痛方案、多模式止痛策略、貓特殊考量、癌症疼痛管理。',
+  },
+  {
+    id: 'OAR-CROSS-004',
+    title: 'AAHA — Life Stage Guidelines for Dogs and Cats (2019)',
+    title_zh: 'AAHA — 犬貓生命階段指引（2019）',
+    url: 'https://www.aaha.org/resources/2019-aaha-canine-life-stage-guidelines/',
+    source: 'Other',
+    specialty: ['IM', 'CARDIO', 'ONCO', 'NEURO'],
+    topics: ['life stage', 'senior care', 'geriatric', 'wellness', 'screening'],
+    access_type: 'free_full_text',
+    description_zh: 'AAHA 生命階段指引，含幼年/成年/老年/高齡動物健康檢查建議、篩檢項目（血檢/尿檢/血壓/甲狀腺）、飼主溝通策略。',
+  },
+  {
+    id: 'OAR-CROSS-005',
+    title: 'WSAVA — Guidelines for Liver Standardization',
+    title_zh: 'WSAVA — 肝臟疾病標準化指引',
+    url: 'https://wsava.org/global-guidelines/liver-disease-guidelines/',
+    source: 'WSAVA',
+    specialty: ['IM', 'SURG', 'CPATH'],
+    topics: ['liver disease', 'hepatic lipidosis', 'hepatitis', 'PSS', 'biopsy'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 肝臟疾病標準化指引，涵蓋犬貓肝臟疾病分類標準化、病理組織學報告格式、肝臟活檢適應症與技術、常見肝膽疾病鑑別。',
+  },
+
+  // ─── Phase 4: 新增學術資源（2026-03-01 專家審查補強） ───
+
+  {
+    id: 'OAR-IM-010',
+    title: 'ACVIM Consensus — Canine Chronic Hepatitis (2019)',
+    title_zh: 'ACVIM 共識 — 犬慢性肝炎',
+    url: 'https://onlinelibrary.wiley.com/doi/10.1111/jvim.15467',
+    source: 'ACVIM',
+    specialty: ['IM'],
+    topics: ['chronic hepatitis', 'copper', 'liver', 'canine', 'biopsy'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVIM 犬慢性肝炎共識聲明，涵蓋銅相關肝病、特發性肝炎的診斷標準化、肝臟活檢適應症、治療（D-penicillamine、Ursodiol、飲食管理）。',
+  },
+  {
+    id: 'OAR-IM-011',
+    title: 'ACVIM Consensus — Feline Pancreatitis (2021)',
+    title_zh: 'ACVIM 共識 — 貓胰臟炎',
+    url: 'https://onlinelibrary.wiley.com/doi/10.1111/jvim.16053',
+    source: 'ACVIM',
+    specialty: ['IM', 'ECC'],
+    topics: ['pancreatitis', 'feline', 'fPLI', 'SNAP', 'triaditis'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVIM 貓胰臟炎共識聲明，涵蓋 fPLI/SNAP fPL 診斷流程、超音波發現、急性 vs 慢性區分、三合症（triaditis）關聯、營養支持策略。',
+  },
+  {
+    id: 'OAR-CROSS-006',
+    title: 'ISFM — Feline CKD Management Guidelines',
+    title_zh: 'ISFM — 貓慢性腎病管理指引',
+    url: 'https://journals.sagepub.com/doi/10.1177/1098612X16631234',
+    source: 'Other',
+    specialty: ['IM'],
+    topics: ['CKD', 'feline', 'SDMA', 'renal diet', 'phosphate binders', 'proteinuria'],
+    access_type: 'free_full_text',
+    description_zh: 'ISFM 貓慢性腎病管理指引，為 IRIS 分期框架的臨床應用指引，涵蓋飲食管理、磷結合劑選擇、蛋白尿監測、血壓控制及貓特異性治療考量。',
+  },
+  {
+    id: 'OAR-CROSS-007',
+    title: 'AAFP — Feline Retrovirus Testing & Management Guidelines (2020)',
+    title_zh: 'AAFP — 貓逆轉錄病毒檢測與管理指引',
+    url: 'https://journals.sagepub.com/doi/10.1177/1098612X20941784',
+    source: 'Other',
+    specialty: ['IM', 'ONCO'],
+    topics: ['FeLV', 'FIV', 'retrovirus', 'SNAP', 'PCR', 'vaccination', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'AAFP 貓逆轉錄病毒檢測與管理指引 2020 更新版，涵蓋 FeLV/FIV 篩檢流程（SNAP → IFA/PCR 確認）、regressive vs progressive FeLV 感染分類、管理策略、疫苗建議。',
+  },
+  {
+    id: 'OAR-CROSS-008',
+    title: 'OMIA — Online Mendelian Inheritance in Animals',
+    title_zh: 'OMIA — 動物遺傳性狀資料庫',
+    url: 'https://omia.org/',
+    source: 'Other',
+    specialty: ['CARDIO', 'NEURO', 'DERM', 'IM'],
+    topics: ['genetics', 'inherited disease', 'breed predisposition', 'SOD1', 'PRA'],
+    access_type: 'free_full_text',
+    description_zh: 'OMIA 為悉尼大學維護的免費資料庫，收錄 135+ 物種的遺傳性疾病與性狀。涵蓋犬貓品種好發的遺傳疾病（如 DCM/ARVC 基因突變、SOD1 退化性脊髓病變、MDR1 藥物敏感），可查詢 OMIA ID 連結至基因變異與臨床表現。',
+  },
+];
+
+// ─── Statistics ───
+
+/** 資源統計摘要 */
+export const RESOURCE_STATS = {
+  total: OPEN_ACCESS_RESOURCES.length,
+  bySpecialty: {
+    CARDIO: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('CARDIO')).length,
+    IM: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('IM')).length,
+    DERM: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('DERM')).length,
+    SURG: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('SURG')).length,
+    NEURO: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('NEURO')).length,
+    ONCO: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('ONCO')).length,
+    ECC: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('ECC')).length,
+    CPATH: OPEN_ACCESS_RESOURCES.filter((r) => r.specialty.includes('CPATH')).length,
+  },
+  bySource: {
+    PMC: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'PMC').length,
+    MerckVetManual: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'MerckVetManual').length,
+    WSAVA: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'WSAVA').length,
+    IRIS: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'IRIS').length,
+    RECOVER: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'RECOVER').length,
+    ACVIM: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'ACVIM').length,
+    Other: OPEN_ACCESS_RESOURCES.filter((r) => r.source === 'Other').length,
+  },
+} as const;

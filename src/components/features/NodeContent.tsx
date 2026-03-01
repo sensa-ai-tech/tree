@@ -3,10 +3,21 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import type { NodeContent as NodeContentType } from '@/types/knowledge';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { cn } from '@/lib/utils/cn';
 import { AlertTriangle, Lightbulb, CheckCircle2 } from 'lucide-react';
+
+const sanitizeSchema = {
+  ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames ?? []), 'div', 'span'],
+  attributes: {
+    ...defaultSchema.attributes,
+    div: [...(defaultSchema.attributes?.div ?? []), 'className'],
+    span: [...(defaultSchema.attributes?.span ?? []), 'className'],
+  },
+};
 
 interface NodeContentProps {
   content: NodeContentType | null;
@@ -61,7 +72,7 @@ export function NodeContent({ content, isLoading, error, className }: NodeConten
       {/* Body (Markdown) */}
       {content.body && (
         <section className="prose prose-sm max-w-none">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
             {content.body}
           </ReactMarkdown>
         </section>

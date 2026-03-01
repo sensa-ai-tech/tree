@@ -65,7 +65,7 @@ export const ECC_PATHS: LearningPath[] = [
       { node_id: 'ECC-L4-001', is_required: true, phase: '診斷技能', learning_note: 'ABCDE 分診——中毒急診的第一步' },
       { node_id: 'ECC-L3-005', is_required: true, phase: '中毒総論', learning_note: '中毒急診通則與去汙原則' },
       { node_id: 'ECC-L3-007', is_required: true, phase: '中毒各論', learning_note: '常見中毒：巧克力、木糖醇、NSAID、百合、葡萄' },
-      { node_id: 'ECC-L3-008', is_required: true, phase: '中毒各論', learning_note: '台灣特有：蛇咬傷與蟾蛍中毒' },
+      { node_id: 'ECC-L3-008', is_required: true, phase: '中毒各論', learning_note: '台灣特有：蛇咬傷與蟾蜍中毒' },
       { node_id: 'ECC-L2-003', is_required: false, phase: '病理機轉', learning_note: '選修：中毒常併發凝血功能障礙' },
       { node_id: 'ECC-L5-001', is_required: true, phase: '治療管理', learning_note: '液體治療——中毒去汙的基石' },
       { node_id: 'ECC-L5-004', is_required: true, phase: '治療管理', learning_note: '急診止痛——蛇咬傷止痛特別重要' },

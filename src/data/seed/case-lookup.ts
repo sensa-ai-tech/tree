@@ -11,6 +11,7 @@ import { SURG_CASES } from './surg/cases';
 import { NEURO_CASES } from './neuro/cases';
 import { ONCO_CASES } from './onco/cases';
 import { ECC_CASES } from './ecc/cases';
+import { CPATH_CASES } from './cpath/cases';
 
 /** All case challenges merged across all specialties */
 export const ALL_CASES: CaseChallenge[] = [
@@ -21,4 +22,5 @@ export const ALL_CASES: CaseChallenge[] = [
   ...NEURO_CASES,
   ...ONCO_CASES,
   ...ECC_CASES,
+  ...CPATH_CASES,
 ];

@@ -237,13 +237,23 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
           })}
         </div>
 
-        {/* Explanation (reviewing) */}
-        {isReviewing && currentQuestion.explanation && (
-          <div className="rounded-lg bg-blue-50 p-3">
-            <p className="text-xs font-medium text-blue-700">解析</p>
-            <p className="mt-1 text-sm text-blue-800">{currentQuestion.explanation}</p>
-          </div>
-        )}
+        {/* Answer feedback + Explanation (reviewing) — aria-live for screen readers */}
+        <div aria-live="polite" aria-atomic="true">
+          {isReviewing && (
+            <div className="space-y-2">
+              <p className="sr-only">
+                {selectedOption === currentQuestion.correct_answer ? '答對了！' : '答錯了。'}
+                正確答案是：{currentQuestion.options?.[Number(currentQuestion.correct_answer)] ?? currentQuestion.correct_answer}
+              </p>
+              {currentQuestion.explanation && (
+                <div className="rounded-lg bg-blue-50 p-3">
+                  <p className="text-xs font-medium text-blue-700">解析</p>
+                  <p className="mt-1 text-sm text-blue-800">{currentQuestion.explanation}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
 
         {/* Actions */}
         <div className="flex justify-end">

@@ -129,15 +129,15 @@ test.describe('Knowledge Node Cruise', () => {
     const failed = results.filter((r) => r.status === 'fail').length;
     const total = results.length;
 
-    console.log(`\n=== Node Cruise Results ===`);
-    console.log(`Total visited: ${total} | Passed: ${passed} | Failed: ${failed}`);
+    console.warn(`\n=== Node Cruise Results ===`);
+    console.warn(`Total visited: ${total} | Passed: ${passed} | Failed: ${failed}`);
 
     // 列出所有問題
     const failedNodes = results.filter((r) => r.status === 'fail');
     if (failedNodes.length > 0) {
-      console.log('\nFailed nodes:');
+      console.warn('\nFailed nodes:');
       for (const node of failedNodes) {
-        console.log(`  ${node.nodeId}: ${node.issues.join(', ')}`);
+        console.warn(`  ${node.nodeId}: ${node.issues.join(', ')}`);
       }
     }
 

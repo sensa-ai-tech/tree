@@ -113,6 +113,18 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     unlock_condition: null,
   },
 
+  // ─── IM → CARDIO（甲低心臟效應） ───
+  {
+    id: 'CROSS-IM-CARDIO-001',
+    source_node_id: 'IM-L3-002',     // 甲狀腺低下
+    target_node_id: 'CARDIO-L3-007', // 心律不整各論
+    relation_type: 'complication',
+    weight: 0.7,
+    description: '甲低導致竇性心搏過緩與心肌收縮力下降，治療甲低後心率通常恢復正常',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
   // ─── NEURO ↔ CARDIO（鑑別診斷） ───
   {
     id: 'CROSS-NEURO-CARDIO-001',
@@ -392,6 +404,18 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     weight: 0.9,
     description: '右心耳 HSA 為犬心包積液最常見的腫瘤性病因（~60%）',
     bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // ONCO → CARDIO（Doxorubicin 心毒性監測）
+  {
+    id: 'CROSS-ONCO-CARDIO-002',
+    source_node_id: 'ONCO-L5-001',   // 化學治療
+    target_node_id: 'CARDIO-L4-002', // 心臟超音波
+    relation_type: 'drug_related',
+    weight: 0.8,
+    description: 'Doxorubicin 累積劑量 >180-240 mg/m² 有心肌毒性風險，CHOP 療程需定期心超監測（FS、LVEDDN）',
+    bidirectional: false,
     unlock_condition: null,
   },
 
@@ -721,7 +745,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
   {
     id: 'CROSS-IM-CPATH-002',
     source_node_id: 'IM-L3-013',     // AKI
-    target_node_id: 'CPATH-L4-014',  // 尿液分析
+    target_node_id: 'CPATH-L4-009',  // 尿液分析完整判讀
     relation_type: 'clinical_apply',
     weight: 1.0,
     description: 'AKI 診斷與監控需尿液分析（比重、尿沉渣、UPC）',
@@ -731,7 +755,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
   {
     id: 'CROSS-IM-CPATH-003',
     source_node_id: 'IM-L3-017',     // FIP
-    target_node_id: 'CPATH-L4-015',  // 體腔滲出液分析
+    target_node_id: 'CPATH-L4-006',  // 體液分析
     relation_type: 'clinical_apply',
     weight: 1.0,
     description: 'FIP 滲出型需體腔液分析（Rivalta test、高蛋白、A:G ratio）',
@@ -741,7 +765,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
   {
     id: 'CROSS-IM-CPATH-004',
     source_node_id: 'IM-L3-014',     // PLN
-    target_node_id: 'CPATH-L4-014',  // 尿液分析
+    target_node_id: 'CPATH-L4-009',  // 尿液分析完整判讀
     relation_type: 'clinical_apply',
     weight: 1.0,
     description: 'PLN 以 UPC ratio > 2.0 為診斷核心，需連續尿液監控',
@@ -874,6 +898,188 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     weight: 0.9,
     description: '皮膚淋巴瘤（CTCL）為淋巴瘤的皮膚表現型，治療原則交叉',
     bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // ─── CPATH → CARDIO 跨科邊（3 條）───
+  {
+    id: 'CROSS-CPATH-CARDIO-001',
+    source_node_id: 'CPATH-L4-001',  // CBC
+    target_node_id: 'CARDIO-L3-005', // 心絲蟲
+    relation_type: 'prerequisite',
+    weight: 0.9,
+    description: 'CBC 可見嗜酸性球增多，血液抹片可發現 microfilaria，為心絲蟲診斷的基礎檢查',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CPATH-CARDIO-002',
+    source_node_id: 'CPATH-L4-004',  // 凝血功能
+    target_node_id: 'CARDIO-L3-010', // ATE
+    relation_type: 'prerequisite',
+    weight: 0.8,
+    description: '動脈血栓栓塞需凝血功能評估與 D-dimer/AT 監控，凝血檢查指導抗凝治療決策',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CPATH-CARDIO-003',
+    source_node_id: 'CPATH-L4-002',  // 生化
+    target_node_id: 'CARDIO-L3-003', // HCM
+    relation_type: 'prerequisite',
+    weight: 0.8,
+    description: 'Cardiac biomarkers（cTnI, NT-proBNP）屬生化檢測範疇，用於 HCM 篩檢和預後評估',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ─── CPATH → NEURO 跨科邊（2 條）───
+  {
+    id: 'CROSS-CPATH-NEURO-001',
+    source_node_id: 'CPATH-L4-006',  // 體液分析
+    target_node_id: 'NEURO-L3-003',  // GME/MUO
+    relation_type: 'prerequisite',
+    weight: 1.0,
+    description: 'CSF 分析是 MUO（GME/NME/NLE）診斷的核心檢查，評估細胞數、蛋白和細胞學',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CPATH-NEURO-002',
+    source_node_id: 'CPATH-L4-006',  // 體液分析
+    target_node_id: 'NEURO-L3-001',  // 癲癇
+    relation_type: 'prerequisite',
+    weight: 0.8,
+    description: 'CSF 分析用於排除癲癇的感染性和發炎性病因，是結構性癲癇的鑑別工具',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ─── CPATH → IM 內分泌跨科邊（4 條）───
+  {
+    id: 'CROSS-CPATH-IM-010',
+    source_node_id: 'CPATH-L4-010',  // 內分泌功能檢測
+    target_node_id: 'IM-L3-001',     // Cushing
+    relation_type: 'prerequisite',
+    weight: 1.0,
+    description: 'LDDS/UCCR/ACTH 刺激試驗為庫興氏症確診的核心內分泌功能檢測',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CPATH-IM-011',
+    source_node_id: 'CPATH-L4-010',  // 內分泌功能檢測
+    target_node_id: 'IM-L3-002',     // 甲低
+    relation_type: 'prerequisite',
+    weight: 1.0,
+    description: 'T4/fT4/TSH 檢測為犬甲狀腺功能低下確診的必要內分泌檢查',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CPATH-IM-012',
+    source_node_id: 'CPATH-L4-010',  // 內分泌功能檢測
+    target_node_id: 'IM-L3-003',     // 甲亢
+    relation_type: 'prerequisite',
+    weight: 1.0,
+    description: 'T4/fT4 檢測為貓甲狀腺功能亢進確診的第一線內分泌檢查',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-CPATH-IM-013',
+    source_node_id: 'CPATH-L4-010',  // 內分泌功能檢測
+    target_node_id: 'IM-L3-006',     // DM
+    relation_type: 'prerequisite',
+    weight: 0.9,
+    description: 'Fructosamine 區分真性糖尿病與壓力性高血糖，為糖尿病確診和監控的關鍵檢測',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ─── Phase 3: 新增跨科邊 ───
+
+  // ONCO ↔ ECC: 副腫瘤急診需輸液
+  {
+    id: 'CROSS-ONCO-ECC-002',
+    source_node_id: 'ONCO-L2-002',   // 副腫瘤症候群
+    target_node_id: 'ECC-L5-001',    // 靜脈液體治療
+    relation_type: 'prerequisite',
+    weight: 0.8,
+    description: '副腫瘤症候群急診（高鈣血症、低血糖、DIC）需積極靜脈輸液穩定',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // ONCO → ECC: MCT 脫顆粒可致過敏性休克
+  {
+    id: 'CROSS-ONCO-ECC-003',
+    source_node_id: 'ONCO-L3-002',   // MCT
+    target_node_id: 'ECC-L3-001',    // 過敏性休克
+    relation_type: 'complication',
+    weight: 0.8,
+    description: 'MCT 脫顆粒（手術操作/自發性）釋放大量組織胺可導致過敏性休克（Darier sign）',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM → IM: 貓甲亢治療揭露隱藏CKD
+  {
+    id: 'CROSS-IM-IM-003',
+    source_node_id: 'IM-L3-003',     // 貓甲亢
+    target_node_id: 'IM-L3-004',     // CKD
+    relation_type: 'complication',
+    weight: 0.95,
+    description: '貓甲亢治療後 GFR 下降可揭露先前被高代謝狀態掩蓋的 CKD（unmasking CKD），需治療前後監測 SDMA/Creatinine',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM → ECC: 胰臟炎觸發 DKA
+  {
+    id: 'CROSS-IM-ECC-010',
+    source_node_id: 'IM-L3-008',     // 胰臟炎
+    target_node_id: 'ECC-L3-002',    // DKA
+    relation_type: 'complication',
+    weight: 0.85,
+    description: '胰臟炎為 DKA 的常見誘發因子，胰島 β 細胞功能受損加劇胰島素缺乏，需同時處理兩者',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM → ECC: IMHA → 血栓栓塞
+  {
+    id: 'CROSS-IM-ECC-011',
+    source_node_id: 'IM-L3-005',     // IMHA
+    target_node_id: 'ECC-L2-003',    // 凝血功能障礙與DIC
+    relation_type: 'complication',
+    weight: 0.9,
+    description: 'IMHA 患者 30-80% 發生血栓栓塞（肺栓塞為主要死因），需預防性抗凝治療（低分子肝素/clopidogrel）',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM → ECC: CPV 需積極輸液
+  {
+    id: 'CROSS-IM-ECC-009',
+    source_node_id: 'IM-L3-023',     // CPV 犬細小病毒
+    target_node_id: 'ECC-L5-001',    // 靜脈液體治療
+    relation_type: 'clinical_apply',
+    weight: 1.0,
+    description: 'CPV 致嚴重嘔吐腹瀉脫水與敗血症風險，需積極靜脈輸液維持循環',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // IM → ONCO: FeLV 導致淋巴瘤
+  {
+    id: 'CROSS-IM-ONCO-002',
+    source_node_id: 'IM-L3-022',     // FeLV/FIV
+    target_node_id: 'ONCO-L3-001',   // 犬淋巴瘤（此處為廣義淋巴瘤含貓）
+    relation_type: 'complication',
+    weight: 0.9,
+    description: 'FeLV 整合宿主基因組可導致貓淋巴瘤（尤其 T-cell 型），FeLV 陽性貓罹患淋巴瘤風險增加 60 倍',
+    bidirectional: false,
     unlock_condition: null,
   },
 ];

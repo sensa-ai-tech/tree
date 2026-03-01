@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { buildSkeletonPrompt } from '@/lib/ai/prompts/skeleton';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, skeletonOutputSchema } from '@/lib/ai/parsers/validators';

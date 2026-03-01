@@ -52,4 +52,7 @@ export const ECC_NODES: KnowledgeNode[] = [
 
   // Layer 5: 治療與管理
   { id: 'ECC-L5-006', specialty: 'ECC', title: '機械通氣與氧氣治療', title_en: 'Mechanical Ventilation & Oxygen Therapy', layer: 5, node_type: 'therapeutic', difficulty: 5, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['機械通氣', '氧氣', 'IPPV', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'SURG - 術中通氣管理', created_at: now, updated_at: now },
+
+  // ─── Phase 3: 急性腹部 ───
+  { id: 'ECC-L3-014', specialty: 'ECC', title: '急性腹部', title_en: 'Acute Abdomen', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['急性腹部', '腹膜炎', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'SURG - GDV/腸穿孔/脾扭轉手術決策; IM - 胰臟炎鑑別', created_at: now, updated_at: now },
 ];

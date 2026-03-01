@@ -2324,121 +2324,144 @@ const contentHairCycle: NodeContent = {
   id: 'CONTENT-DERM-L1-003',
   node_id: 'DERM-L1-003',
   version: 1,
-  summary: '犬貓皮膚表面覆蓋的正常微生物群落（皮膚微生物體，skin microbiome）構成了抵禦病原菌的重要生物屏障。正常菌群包括常駐菌（resident flora）如 Staphylococcus pseudintermedius、Malassezia pachydermatis 等，以及暫時菌（transient flora）。皮膚微生物生態的平衡由宿主免疫、皮膚微環境與微生物間的競爭共同維持。生態失衡（dysbiosis）是膿皮症與馬拉色菌皮膚炎等繼發感染的根本原因。',
+  summary: '犬貓毛髮的生長遵循週期性模式，依序經歷生長期（anagen）、退化期（catagen）、休止期（telogen）和脫落期（exogen）。與人類持續生長的頭髮不同，犬貓大部分毛囊為馬賽克式非同步週期（mosaic pattern），少部分品種（如 Poodle、Yorkshire Terrier）具有較長的 anagen 期。毛髮週期受光照週期、荷爾蒙（甲狀腺素、腎上腺皮質激素、性激素）、營養與遺傳因子調控。週期異常是多種脫毛症（alopecia）的基礎病理。',
   learning_objectives: [
-    '列舉犬貓皮膚正常常駐菌群與暫時菌群',
-    '說明皮膚微生物生態平衡的維持機制',
-    '描述 dysbiosis 如何導致繼發性皮膚感染',
-    '理解不同體表部位微生物群落組成的差異',
+    '描述毛髮生長週期的四個階段（anagen、catagen、telogen、exogen）及各階段的組織學特徵',
+    '說明犬貓毛囊的馬賽克式非同步週期模式與人類持續生長模式的差異',
+    '解釋光照週期（photoperiod）對犬貓季節性換毛的調控機轉',
+    '說明甲狀腺素、皮質醇與性激素對毛髮週期的影響',
+    '列舉常見毛髮週期異常與對應的臨床脫毛模式',
   ],
   key_points: [
-    'S. pseudintermedius 是犬皮膚最重要的常駐菌，正常時無害，屏障受損時致病',
-    'M. pachydermatis 是犬皮膚正常嗜脂酵母菌，好發耳道、指間、皮膚皺褶',
-    '皮膚微環境（pH、濕度、溫度、皮脂分泌）決定不同部位的菌群組成',
-    '犬正常皮膚 pH 約 6.2-7.4（較人類偏鹼），有利於某些細菌與酵母菌定殖',
-    '抗菌肽（defensins, cathelicidins）維持常駐菌與暫時菌的平衡',
-    '過敏性皮膚病 → 屏障破壞 + 免疫改變 → dysbiosis → S. pseudintermedius / Malassezia 過度增殖',
-    '長期抗生素使用可破壞菌群平衡、選擇抗藥菌（MRSP）',
-    'Demodex canis 是毛囊正常共生寄生蟲，免疫低下時過度增殖致病',
+    'Anagen（生長期）：毛母質細胞（matrix cells）快速有絲分裂 → 毛幹延長；毛球包裹真皮乳頭（dermal papilla）；活躍黑色素合成',
+    'Catagen（退化期）：毛母質細胞凋亡 → 毛球退縮上移 → 與真皮乳頭分離；持續 1-2 週',
+    'Telogen（休止期）：毛囊靜止，毛幹以「棒狀毛根（club hair）」固定於毛囊中；犬可持續數週至數月',
+    'Exogen（脫落期）：新 anagen 毛推擠舊 telogen 毛 → 自然脫落；過度脫落為病理性',
+    '犬貓為「複合毛囊」（compound follicle）：一個初級毛（guard hair）+ 多根次級毛（secondary/undercoat hair），比例因品種而異',
+    '光照週期調控：松果體 melatonin → 影響 GnRH/prolactin → 間接調節毛囊週期；室內犬因人工光照而全年持續換毛',
+    '甲狀腺素促進 anagen 啟動：甲低 → 毛囊停滯在 telogen → 對稱性非搔癢性脫毛',
+    '皮質醇過高（庫欣）→ 抑制 anagen 啟動 + 毛囊萎縮 → 對稱性脫毛 + 毛髮稀疏不再生',
+    '性激素：雌激素抑制毛髮生長（產後脫毛）、睪固酮促進某些部位毛髮生長',
+    'Alopecia X：好發 Pomeranian/Nordic breeds，毛囊停滯在 kenogen（延長的 telogen），機轉不明，可能涉及腎上腺性激素前驅物',
   ],
-  body: `# 皮膚微生物生態
+  body: `# 毛髮生長週期
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
+### 毛髮週期四階段
 
+**Anagen（生長期）**：
+- 真皮乳頭（dermal papilla）釋放訊號分子（Wnt, Shh, BMP 抑制劑）→ 毛母質幹細胞活化
+- 毛母質細胞（matrix cells）快速分裂 → 分化為毛幹各層（髓質、皮質、角質層）
+- 黑色素細胞（melanocytes）位於毛球，將黑色素傳遞給分化中的角質細胞
+- 犬 anagen 持續時間依品種而異：短毛犬（數週）vs Poodle/Yorkie（數月至持續生長）
 
-### 正常皮膚微生物群
-犬貓皮膚表面棲息著多樣的微生物群落，構成動態的生態系統。
+**Catagen（退化期）**：
+- 毛母質細胞凋亡（apoptosis）→ 毛球退縮
+- 毛囊下段玻璃膜（glassy membrane）增厚
+- 真皮乳頭與毛球分離
+- 持續約 1-2 週
 
-### 常駐菌群（Resident Flora）
-- **細菌**：Staphylococcus pseudintermedius（犬最重要）、Micrococcus spp.、Corynebacterium spp.、Propionibacterium spp.
-- **酵母菌**：Malassezia pachydermatis（嗜脂，好發耳道/指間/皮膚皺褶）
-- **寄生蟲**：Demodex canis（毛囊共生，少量正常）
+**Telogen（休止期）**：
+- 毛囊靜止不再生長
+- 毛幹末端形成棒狀毛根（club hair）錨定於毛囊中
+- 犬 telogen 可持續數週至數月，長短因品種/季節/健康狀態而異
+- **Kenogen**：telogen 結束但新 anagen 未啟動的空窗期（正常短暫，病理時延長 → 脫毛）
 
-### 暫時菌群（Transient Flora）
-- Staphylococcus aureus、Pseudomonas aeruginosa、Escherichia coli
-- 來自環境接觸，通常被常駐菌與宿主免疫清除
-- 皮膚屏障受損時可定殖並致病
+**Exogen（脫落期）**：
+- 新的 anagen 毛幹向上生長 → 推擠舊 telogen club hair
+- 正常的脫毛過程；病理性加速 → 過度掉毛
 
-### 微生物生態平衡的維持
-### 宿主因素
-- **物理屏障**：角質層完整性阻擋病原穿透
-- **化學屏障**：皮脂中的脂肪酸具抗菌活性
-- **抗菌肽**：β-defensins、cathelicidins 由角質細胞產生
-- **免疫監視**：皮膚常駐免疫細胞持續巡邏
+### 犬貓毛囊的特殊結構
 
-### 微環境因素
-- **pH**：犬皮膚 pH 6.2-7.4，不同部位有差異
-- **濕度與溫度**：影響微生物增殖速率
-- **皮脂分泌量**：皮脂腺活躍度影響嗜脂微生物數量
-- **解剖位置**：皮膚皺褶較潮濕溫暖 → 微生物密度較高
+**複合毛囊（Compound Follicle）**：
+- 一個初級毛囊（primary, guard hair）+ 多個次級毛囊（secondary, undercoat）
+- Guard hair：粗硬，提供保護；Undercoat：細軟，保溫
+- 品種差異極大：Husky 可達 1:20（初級:次級）；Poodle 缺乏 undercoat
 
-### 微生物競爭
-- 常駐菌產生 bacteriocins 抑制暫時菌
-- 空間與營養競爭限制病原菌定殖
-- 微生物多樣性高 → 抗入侵能力強
+**馬賽克式非同步週期（Mosaic Pattern）**：
+- 犬貓相鄰毛囊處於不同週期階段 → 避免同時大面積脫毛
+- 例外：季節性換毛時較多毛囊同步進入 telogen → 明顯掉毛季
+- 人類頭髮：90% 毛囊同時處於 anagen（持續 2-7 年）→ 掉髮不明顯
 
-### Dysbiosis 與皮膚感染
-### 導致 Dysbiosis 的因素
-1. **皮膚屏障破壞**：過敏 → 搔抓 → 表皮損傷 → 微環境改變
-2. **免疫功能改變**：Th2 偏移 → 抗菌肽產生減少
-3. **醫源性因素**：長期抗生素殺滅常駐菌 → 暫時菌/抗藥菌佔位
-4. **環境因素**：高濕度（台灣）→ 利於馬拉色菌增殖
+### 毛髮週期的調控因子
 
-### 臨床後果
-- S. pseudintermedius 過度增殖 → 膿皮症
-- M. pachydermatis 過度增殖 → 馬拉色菌皮膚炎
-- 正常菌群被抗藥菌取代 → MRSP 感染
-- Demodex 過度增殖（免疫抑制）→ 蠕形蟎症
+**光照週期（Photoperiod）**：
+- 自然光照 → 視網膜 → 松果體 melatonin 分泌 → 間接影響毛囊活性
+- 日照縮短 → melatonin↑ → 部分品種促進冬毛生長（厚 undercoat）
+- 室內犬暴露於人工光照 → 光週期訊號模糊 → 全年持續低度換毛
+
+**荷爾蒙調控**：
+
+| 荷爾蒙 | 對毛囊的效應 | 臨床相關疾病 |
+|--------|------------|------------|
+| 甲狀腺素（T4/T3） | 促進 anagen 啟動，必要於正常毛髮週期 | 甲低 → telogen arrest → 對稱性脫毛 |
+| 皮質醇（Cortisol） | 高濃度抑制 anagen，促進毛囊萎縮 | 庫欣 → 脫毛 + 毛髮不再生 |
+| 雌激素（Estrogen） | 抑制毛髮生長，延長 telogen | 母犬產後脫毛（telogen effluvium） |
+| 睪固酮（Testosterone） | 促進某些部位毛髮生長 | 雄性化腫瘤 → 局部毛髮增生 |
+| 生長激素（GH） | 促進毛囊活性 | GH 缺乏 → Pomeranian 脫毛（爭議） |
+| Melatonin | 促進 anagen 啟動（某些品種） | 用於 Alopecia X 試驗性治療 |
+
+**營養因子**：蛋白質/必需脂肪酸/鋅/生物素缺乏 → 毛髮品質下降、生長緩慢
+
+### 毛髮週期異常的臨床模式
+
+| 異常類型 | 機轉 | 臨床表現 | 常見原因 |
+|---------|------|---------|---------|
+| Telogen arrest | 毛囊停滯在 telogen 不進入 anagen | 對稱性非搔癢性脫毛 | 甲低、庫欣 |
+| Telogen effluvium | 大量毛囊同步進入 telogen | 急性廣泛性掉毛 | 重病、手術、產後、高燒 |
+| Anagen defluxion | Anagen 毛囊突然損傷 | 急性脫毛 | 化療藥物、輻射 |
+| Follicular dysplasia | 毛囊結構發育異常 | 品種特異性脫毛 | 遺傳（colour dilution alopecia） |
+| Alopecia X | 延長的 kenogen，機轉不明 | 軀幹對稱脫毛，頭四肢保留 | Pomeranian、Nordic breeds |
 
 ## 二、臨床意義 (Clinical Significance)
 
-### 體表部位差異
-不同解剖部位因微環境不同，菌群組成有顯著差異：
-- **耳道**：溫暖潮濕，M. pachydermatis 密度最高
-- **指間**：潮濕，馬拉色菌與細菌混合
-- **腹側**：皮脂分泌少，菌群密度較低
-- **皮膚皺褶**：（法鬥、沙皮）高溫高濕 → 感染好發
+### Trichogram（毛髮檢查）判讀
 
-[圖片:犬皮膚不同部位微生物群落分佈圖]
+毛髮檢查可直接評估毛囊週期狀態：
+- **Anagen 毛根**：圓形、飽滿、有黑色素
+- **Telogen 毛根**：棒狀（club-shaped）、無黑色素
+- **正常犬**：anagen:telogen 比例因品種/季節而異
+- **內分泌脫毛**：telogen 毛根比例顯著增加（>80%）
 
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 皮膚微生物組移植（skin microbiome transplantation） | 犬 dysbiosis 的菌群恢復治療 | 人醫糞便微生物移植（FMT）已成熟，皮膚局部菌群移植試驗進行中 |
-| 16S rRNA/宏基因組定序（metagenomics） | 犬皮膚微生物群落的精準分析與監測 | 人醫皮膚微生物組研究已深入，獸醫犬品種特異性微生物組研究累積中 |
-| 益生菌外用製劑（topical probiotics） | 犬皮膚共生菌恢復以抑制病原菌過度增殖 | 人醫 AD 局部益生菌試驗初步正面，獸醫尚在概念驗證階段 |
-| 噬菌體精準殺菌（precision phage therapy） | 選擇性殺滅犬 MRSP 而不影響共生菌群 | 人醫抗 MRSA 噬菌體進入臨床應用，獸醫 S. pseudintermedius 噬菌體庫建立中 |
+| Wnt pathway agonists 促進毛髮再生 | 犬 Alopecia X 的靶向治療 | 人醫禿髮治療臨床試驗中，獸醫尚無對應研究 |
+| JAK inhibitors (tofacitinib) 治療斑禿 | 犬自體免疫性脫毛的潛在治療 | 人醫斑禿 FDA 核准，獸醫 oclacitinib 用於過敏但尚未用於脫毛 |
+| Minoxidil 局部促進毛髮生長 | 犬局部脫毛的輔助治療 | 人醫成熟使用，獸醫犬安全性有限（貓禁用：心毒性）|
 
 ## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬皮膚「正常」微生物組的定義是否因品種而異 | 不同品種皮膚結構與皮脂差異大，但品種特異性正常值尚未建立 | Level IV |
-| 抗生素/抗黴菌治療後微生物組恢復的時間與完整性 | 治療後 dysbiosis 可能持續數週至數月，但系統性研究不足 | Level IV |
-| S. pseudintermedius 由共生菌轉變為致病菌的觸發因子 | 皮膚屏障破壞與免疫微環境改變為主要假說，但分子機轉不明 | Level III |`,
-  clinical_pearl: '把膿皮症和馬拉色菌皮膚炎理解為「dysbiosis 的臨床表現」而非單純感染，會完全改變你的臨床思維。S. pseudintermedius 和 M. pachydermatis 本來就住在犬的皮膚上——它們不是「入侵者」。真正的問題是什麼破壞了平衡？答案通常是過敏。這就是為什麼只用抗生素/抗黴菌而不控制過敏，感染會一再復發。',
+| Alopecia X 的真正病理機轉 | 多種假說（腎上腺性激素、GH 缺乏、毛囊受體異常）但無定論 | Level IV |
+| Melatonin 治療 Alopecia X 的效果 | 約 30-40% 有部分毛髮再生，但無 RCT 支持 | Level IV |
+| Colour dilution alopecia 能否治療 | 目前無有效治療，僅支持性護理 | Level V |
+| 品種間毛囊週期長度的分子差異 | 研究極少，可能涉及 FGF5 和 RSPO2 基因多型性 | Level IV |`,
+  clinical_pearl: '在毛髮檢查（trichogram）中，如果看到幾乎全部是 telogen 毛根（棒狀、無色素），配合對稱性非搔癢性脫毛的臨床表現，幾乎可以確定是「內分泌性脫毛」。接下來的問題是哪個內分泌疾病？犬的三大鑑別：甲低（T4/TSH）、庫欣（LDDS/ACTH stim）、性激素異常（Alopecia X）。記住：內分泌脫毛的共同特徵是「毛囊存在但停工（telogen arrest）」——毛囊結構完好，一旦矯正荷爾蒙異常，毛髮通常可以再生。',
   common_mistakes: [
-    '將 S. pseudintermedius 和 M. pachydermatis 視為外來病原而非正常共生菌',
-    '忽略 dysbiosis 概念，僅將皮膚感染視為單純的病原入侵',
-    '過度使用廣效抗生素破壞正常菌群平衡而促進 MRSP 選擇',
-    '不了解不同體表部位微生物群落差異導致取樣部位選擇不當',
+    '不理解 anagen 和 telogen 毛根的形態差異，無法正確判讀 trichogram',
+    '忽略品種間毛髮週期的巨大差異——短毛犬和長毛犬的正常 anagen:telogen 比例完全不同',
+    '將所有對稱性脫毛都歸因於甲低——庫欣、Alopecia X、性激素異常都可以造成類似表現',
+    '不了解室內犬因人工光照而全年換毛是正常現象，將正常掉毛誤判為病理',
   ],
   disease_data: null,
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: '正常菌群段落後', type: 'comparison_table', description: '犬皮膚常駐菌 vs 暫時菌群比較表' },
-    { position: 'Dysbiosis 段落後', type: 'flowchart', description: '皮膚屏障破壞 → Dysbiosis → 感染的惡性循環圖' },
+    { position: '毛髮週期四階段段落後', type: 'flowchart', description: '毛髮生長週期四階段（Anagen → Catagen → Telogen → Exogen）循環圖' },
+    { position: '荷爾蒙調控表後', type: 'comparison_table', description: '各荷爾蒙對毛囊週期的促進/抑制效應比較表' },
   ],
   interactive_placeholders: [],
-  drug_api_links: [],
+  drug_api_links: ['Melatonin', 'Levothyroxine'],
   references: [
-    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 3: Bacterial Skin Diseases.", relevance: '犬皮膚正常菌群與膿皮症' },
-    { type: 'journal', citation: 'Rodrigues Hoffmann A. The canine skin microbiome: characterization of bacterial and fungal communities in healthy dogs. PLoS One. 2014;9(1):e83197.', relevance: '犬皮膚微生物組的基因體學分析' },
-    { type: 'journal', citation: 'Bond R et al. Biology, diagnosis and treatment of Malassezia dermatitis in dogs and cats. Vet Dermatol. 2020;31(1):28-e4.', relevance: '馬拉色菌生物學與皮膚共生關係' },
-    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引中皮膚常駐菌群與膿皮症的關係' },
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Structure and Function of the Skin.", relevance: '犬貓毛囊結構與毛髮週期基礎' },
+    { type: 'journal', citation: 'Diaz SF, Torres SM, Dunstan RW, Jessen C. "The effect of body region on the canine hair cycle as defined by unit area trichogram." Vet Dermatol. 2004;15(4):225-229.', relevance: '犬不同體表區域毛髮週期差異的定量研究' },
+    { type: 'journal', citation: 'Frank LA. "Comparative Dermatology -- Canine Endocrine Dermatoses." Clin Dermatol. 2006;24(4):317-325.', relevance: '犬內分泌脫毛的毛髮週期病理' },
+    { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017. Chapter 9: Endocrine and Metabolic Diseases.', relevance: '毛髮週期異常與內分泌疾病的臨床對照' },
+    { type: 'guideline', citation: 'Cerundolo R, Lloyd DH, Persechino A, et al. "Treatment of canine Alopecia X with trilostane." Vet Dermatol. 2004;15(5):285-293. Referenced in ACVD consensus on alopecic disorders.', relevance: 'Alopecia X 毛髮週期障礙的治療共識與臨床指引' },
   ],
   is_current: true,
   created_at: now,
@@ -4353,7 +4376,7 @@ const contentAlopeciaX: NodeContent = {
   id: 'CONTENT-DERM-L3-012',
   node_id: 'DERM-L3-012',
   version: 1,
-  summary: '脫毛症 X（Alopecia X），又稱腎上腺性脫毛症或生長激素反應性脫毛症，是一種主要影響北歐絲毛型犬種（尤其博美犬 Pomeranian）的非炎症性、非瘙癢性脫毛疾病。病因不明，可能與腎上腺性激素代謝異常或毛囊週期停滯有關。特徵為軀幹雙側對稱性脫毛，保留頭部與四肢末端。此為排除性診斷，預後極佳（僅為美容問題），治療選項包括褪黑激素（melatonin）與 trilostane。',
+  summary: '脫毛症 X（Alopecia X），又稱腎上腺性脫毛症或生長激素反應性脫毛症，是一種主要影響北歐絲毛型犬種（尤其博美犬 Pomeranian）的非炎症性、非瘙癢性脫毛疾病。病因不明，可能與腎上腺性激素代謝異常或毛囊週期停滯有關。特徵為軀幹雙側對稱性脫毛，保留頭部與四肢末端。此為排除性診斷，預後極佳（僅為美容問題），治療選項包括褪黑激素（melatonin）與 trilostane。台灣博美犬飼養量高，脫毛症 X 在本土犬皮膚科門診中為常見排除性診斷；台灣高溫多濕氣候可能加重皮膚色素沉著，飼主常因外觀顧慮而就診。',
   learning_objectives: [
     '描述脫毛症 X 的典型臨床表現與好發品種',
     '說明脫毛症 X 的可能病因假說（腎上腺性激素代謝異常、毛囊受體缺陷）',
@@ -4521,6 +4544,7 @@ const contentAlopeciaX: NodeContent = {
     { type: 'journal', citation: 'Frank LA et al. Steroidogenic response of adrenal tissues after administration of ACTH to dogs with hypercortisolism. J Am Vet Med Assoc. 2001;218(2):214-218.', relevance: '腎上腺性激素代謝異常假說的關鍵研究' },
     { type: 'journal', citation: 'Cerundolo R et al. Treatment of canine Alopecia X with trilostane. Vet Dermatol. 2004;15(5):285-293.', relevance: 'Trilostane 治療脫毛症 X 的臨床療效評估' },
     { type: 'journal', citation: 'Friedmann PS et al. Alopecia X in Pomeranians and miniature poodles — response to melatonin. Proceedings of the 7th World Congress of Veterinary Dermatology. 2012.', relevance: '褪黑激素治療脫毛症 X 的臨床經驗報告' },
+    { type: 'guideline', citation: 'Frank LA, Hnilica KA, Oliver JW. Adrenal steroid hormone concentrations in dogs with hair cycle arrest (Alopecia X) before and during treatment with melatonin and mitotane. Vet Dermatol. 2004;15(5):278-284. (Referenced in ACVD consensus approach to endocrine alopecia diagnosis)', relevance: '內分泌性脫毛診斷與治療共識方法' },
   ],
   is_current: true,
   created_at: now,
@@ -4531,7 +4555,7 @@ const contentCTCL: NodeContent = {
   id: 'CONTENT-DERM-L3-013',
   node_id: 'DERM-L3-013',
   version: 1,
-  summary: '皮膚 T 細胞淋巴瘤（Cutaneous T-Cell Lymphoma, CTCL）是犬最常見的皮膚淋巴瘤類型，以蕈樣肉芽腫（Mycosis Fungoides, MF）為主要亞型。CTCL 的特徵為嗜表皮性腫瘤性 T 淋巴球浸潤，臨床呈現 patch → plaque → tumor 的漸進性三階段病程。Sézary syndrome 為其白血病變異型。診斷依賴皮膚切片組織病理學與免疫組化（CD3+/CD8− 或 CD4+）。治療以 CCNU（lomustine）為一線化療藥物，但長期預後不良。',
+  summary: '皮膚 T 細胞淋巴瘤（Cutaneous T-Cell Lymphoma, CTCL）是犬最常見的皮膚淋巴瘤類型，以蕈樣肉芽腫（Mycosis Fungoides, MF）為主要亞型。CTCL 的特徵為嗜表皮性腫瘤性 T 淋巴球浸潤，臨床呈現 patch → plaque → tumor 的漸進性三階段病程。Sézary syndrome 為其白血病變異型。診斷依賴皮膚切片組織病理學與免疫組化（CD3+/CD8− 或 CD4+）。治療以 CCNU（lomustine）為一線化療藥物，但長期預後不良。台灣犬 CTCL 臨床上常被誤診為慢性皮膚炎或黴菌感染，需提高警覺；CCNU 在台灣獸醫腫瘤科可取得，組織病理與免疫組化需送專業病理實驗室。',
   learning_objectives: [
     '區分皮膚淋巴瘤的嗜表皮型（epitheliotropic）與非嗜表皮型（non-epitheliotropic）',
     '描述蕈樣肉芽腫（MF）patch → plaque → tumor 三階段臨床進程',
@@ -4738,6 +4762,335 @@ const contentCTCL: NodeContent = {
   created_at: now,
 };
 
+/** 肥大細胞瘤 (MCT) — 疾病型 */
+const contentMCT: NodeContent = {
+  id: 'CONTENT-DERM-L3-014',
+  node_id: 'DERM-L3-014',
+  version: 1,
+  summary: '犬肥大細胞瘤（Mast Cell Tumor, MCT）是犬最常見的皮膚惡性腫瘤，約佔犬皮膚腫瘤的 16-21%。MCT 源自肥大細胞的腫瘤性增生，臨床表現多變（「偉大的模仿者」），從良性皮膚結節到高度惡性的全身性疾病不等。診斷依賴 FNA 細胞學初步鑑定及手術切除後組織病理分級（Patnaik 三級制或 Kiupel 二級制）。c-KIT 突變為重要的預後與治療標靶。',
+  learning_objectives: [
+    '描述犬 MCT 的臨床表現多變性及「偉大的模仿者」概念',
+    '比較 Patnaik 三級制與 Kiupel 二級制分級系統的差異與臨床意義',
+    '闡述 c-KIT 突變在 MCT 發病機轉、預後及標靶治療中的角色',
+    '規劃 MCT 的分期檢查流程與手術邊界要求',
+    '制定 MCT 的多模式治療計畫（手術、化療、TKI）',
+  ],
+  key_points: [
+    'MCT 是犬最常見的皮膚惡性腫瘤，好發品種：拳師犬、鬥牛㹴、拉布拉多、金毛尋回犬、巴哥犬',
+    'Patnaik Grade I（良性行為）、II（生物學行為不定）、III（高度惡性）；Kiupel 系統簡化為 Low grade / High grade',
+    'Kiupel High grade 定義：有絲分裂指數 ≥ 7/10 HPF、≥ 3 多核巨細胞/10 HPF、≥ 3 怪異核/10 HPF、核直徑異常（karyomegaly）',
+    'c-KIT（CD117）突變見於約 25-30% 犬 MCT，與較差預後及 TKI 治療反應相關',
+    '手術邊界要求：側面 2-3 cm、深面至少 1 個筋膜面（fascial plane）',
+    '肥大細胞脫顆粒可導致局部與全身性效應：組胺釋放→胃潰瘍、低血壓、凝血異常',
+    '術前預防脫顆粒：H1 blocker（diphenhydramine）+ H2 blocker（famotidine）',
+    '化療方案：Vinblastine + Prednisolone 為標準一線；Toceranib（Palladia）為口服 TKI',
+  ],
+  body: `# 犬肥大細胞瘤 (MCT)
+
+## 一、病理機制 (Pathophysiology)
+
+### 概述
+犬肥大細胞瘤（MCT）源自肥大細胞的腫瘤性增殖。肥大細胞正常分佈於皮膚結締組織中，含有大量嗜鹼性顆粒（組胺、肝素、蛋白酶、細胞因子）。MCT 的發病與 c-KIT（CD117）酪胺酸激酶受體的突變密切相關。
+
+### c-KIT 突變
+c-KIT 基因編碼幹細胞因子受體（SCF receptor），正常情況下調控肥大細胞的增殖、分化與存活。約 25-30% 的犬 MCT 存在 c-KIT 突變（主要為 exon 11 的 internal tandem duplication, ITD），導致受體持續活化而不需配體結合，促進腫瘤細胞不受控增殖。
+
+### 肥大細胞脫顆粒
+MCT 細胞可自發或受觸發後脫顆粒，釋放大量生物活性介質：
+- **組胺**：H1 受體→血管擴張、蕁麻疹；H2 受體→胃酸分泌增加→胃潰瘍
+- **肝素**：抗凝血效應→出血傾向
+- **蛋白酶（tryptase、chymase）**：組織降解
+- **TNF-α、VEGF**：促進血管新生與腫瘤微環境
+
+## 二、臨床表現 (Clinical Signs)
+
+### 皮膚病灶特徵
+MCT 被稱為「偉大的模仿者（The Great Pretender）」，因其外觀極為多變。可表現為：無毛軟性結節、堅硬皮下腫塊、紅腫發炎性斑塊、甚至類似脂肪瘤的柔軟腫塊。
+
+### Darier's sign
+操作腫瘤時引發局部紅腫、蕁麻疹樣反應（潮紅、水腫），為 MCT 的特徵性表現，由機械性刺激引起肥大細胞脫顆粒所致。
+
+## 三、分級系統 (Grading Systems)
+
+### Patnaik 三級制 (1984)
+| Grade | 特徵 | 預後 |
+|-------|------|------|
+| I | 分化良好、有絲分裂罕見、侷限於真皮 | 術後存活 > 4 年 |
+| II | 中度分化、有絲分裂偶見、可侵犯皮下 | 生物學行為不定 |
+| III | 分化不良、高有絲分裂、侵犯深層組織 | 中位存活 < 6 個月 |
+
+### Kiupel 二級制 (2011)
+Kiupel 系統克服 Patnaik Grade II 過大（佔 40-60%）且觀察者間一致性低的問題。
+
+**High grade** 標準（符合任一即為 High grade）：
+1. 有絲分裂指數 ≥ 7/10 HPF
+2. ≥ 3 個多核巨細胞/10 HPF
+3. ≥ 3 個怪異核/10 HPF
+4. 核直徑異常（karyomegaly）
+
+**Low grade**：不符合上述任何標準。
+
+## 四、分期與診斷 (Staging & Diagnosis)
+
+### 分期（WHO 改良版）
+- Stage I：單一皮膚腫瘤，局部淋巴結未受累
+- Stage II：單一皮膚腫瘤 + 區域淋巴結轉移
+- Stage III：多發皮膚腫瘤或大型浸潤性腫瘤
+- Stage IV：腫瘤伴遠端轉移或全身性肥大細胞病
+
+### 分期檢查流程
+1. FNA 細胞學：初步確認 MCT（典型紫色異染顆粒）
+2. 區域淋巴結 FNA（無論淋巴結是否腫大）
+3. 腹部超音波（肝脾評估）
+4. CBC + 血抹片（嗜酸球增多？循環中 MCT 細胞？）
+5. 肝脾 FNA（如超音波異常）
+
+## 五、手術治療 (Surgical Treatment)
+
+### 手術邊界
+- **側面邊界**：2-3 cm（Patnaik II/III 或 Kiupel High grade 建議 3 cm）
+- **深面邊界**：至少 1 個完整筋膜面（fascial plane）
+- 手術標本以墨水標記方向後送組織病理，評估邊界清淨度
+- 邊界不清淨（dirty margin）→ 考慮再次手術或輔助放療
+
+### 脫顆粒預防
+術前 30 分鐘給予：
+- H1 blocker：Diphenhydramine 2 mg/kg IM
+- H2 blocker：Famotidine 0.5-1 mg/kg IV
+
+## 六、全身治療 (Systemic Therapy)
+
+### Vinblastine + Prednisolone (VP) 標準方案
+- Vinblastine 2 mg/m² IV 每 2 週，共 4-6 次
+- Prednisolone 1-2 mg/kg PO SID → 漸減
+- 適應症：高分級 MCT、淋巴結轉移、邊界不清淨
+
+### 酪胺酸激酶抑制劑 (TKI)
+- **Toceranib (Palladia)**：2.75 mg/kg PO 隔日，c-KIT 突變陽性者反應率 > 60%
+- **Masitinib (Masivet)**：12.5 mg/kg PO SID（歐洲）
+
+[圖片:MCT 臨床外觀多變性比較圖]
+[圖片:Patnaik vs Kiupel 分級系統比較]
+
+### 台灣臨床注意事項
+
+MCT 在台灣犬隻中相當常見，尤其是拉布拉多（Labrador）與黃金獵犬（Golden Retriever）——這兩個品種在台灣飼養數量龐大，為 MCT 高風險族群。台灣亞熱帶氣候本身與 MCT 發生無直接紫外線關聯（不同於鱗狀上皮細胞癌等紫外線相關腫瘤），但臨床上需注意與其他皮膚腫瘤（如日光性皮膚炎繼發的 SCC）進行鑑別診斷。治療藥物方面，標準一線化療方案 Vinblastine 在台灣可取得；口服 TKI Toceranib（Palladia）可透過進口管道取得但價格較高（每錠約 500-1000 台幣），飼主經濟負擔需納入治療決策。c-KIT 突變檢測需外送國外實驗室，周轉時間約 2-3 週。`,
+  clinical_pearl: '每一個犬皮膚腫塊都應做 FNA！MCT 是「偉大的模仿者」，許多外觀無害的皮膚結節最終被證實為 MCT。FNA 細胞學快速、便宜（可在院內完成），紫色異染顆粒在 Diff-Quik 染色下極為典型。另外，操作 MCT 前務必預防性給予 H1+H2 blocker——即使手術探查時的機械性刺激也可能誘發嚴重的肥大細胞脫顆粒反應。',
+  common_mistakes: [
+    '僅憑外觀判斷皮膚腫塊而未做 FNA，導致 MCT 被誤診為脂肪瘤或囊腫',
+    '手術邊界不足（< 2 cm）導致局部復發率顯著上升',
+    '未在術前給予 H1/H2 blocker 預防脫顆粒',
+    '忽略區域淋巴結 FNA——即使淋巴結大小正常也可能已有微轉移',
+    '僅使用 Patnaik 分級而未同時使用 Kiupel 系統——Grade II 涵蓋範圍過大，預後判斷不精確',
+  ],
+  disease_data: {
+    signalment: '好發中老年犬（平均 8-9 歲），好發品種：拳師犬（Boxer）、鬥牛㹴（Bull Terrier）、拉布拉多、金毛尋回犬、巴哥犬（Pug）、波士頓㹴、Weimaraner。無明顯性別差異。拳師犬 MCT 多為低分級。',
+    etiology: '確切病因不明，已知與 c-KIT（CD117）酪胺酸激酶受體基因突變相關。約 25-30% 犬 MCT 帶有 c-KIT exon 11 internal tandem duplication（ITD）。慢性發炎或免疫異常可能是促發因素。某些品種的遺傳易感性已被證實。',
+    pathogenesis: 'c-KIT 突變 → SCF 受體持續活化 → 下游 RAS/MAPK 與 PI3K/AKT 訊號持續激活 → 腫瘤性肥大細胞不受控增殖。腫瘤細胞保留脫顆粒能力 → 釋放組胺（胃酸↑、血管擴張）、肝素（凝血↓）、蛋白酶（組織降解）、TNF-α（全身發炎）→ 副腫瘤症候群。',
+    clinical_signs: [
+      { sign: '皮膚腫塊', category: 'primary', description: '外觀多變：柔軟到堅硬、有毛到無毛、單發或多發，好發軀幹、四肢、會陰' },
+      { sign: 'Darier sign', category: 'primary', description: '操作腫瘤後局部紅腫、蕁麻疹樣反應（肥大細胞脫顆粒引起）' },
+      { sign: '腫瘤周圍水腫', category: 'primary', description: '組胺釋放導致血管通透性增加，腫瘤周圍可見紅腫' },
+      { sign: '胃腸道潰瘍', category: 'secondary', description: '組胺經 H2 受體刺激胃酸分泌 → 胃十二指腸潰瘍，表現為嘔吐、黑便' },
+      { sign: '凝血異常', category: 'secondary', description: '肝素釋放導致凝血時間延長、出血傾向' },
+      { sign: '區域淋巴結腫大', category: 'secondary', description: '轉移至引流區域淋巴結，觸診可腫大' },
+    ],
+    staging: { system: 'WHO 改良 MCT 分期', stages: ['Stage I：單一皮膚腫瘤，淋巴結未受累', 'Stage II：單一皮膚腫瘤 + 區域淋巴結轉移', 'Stage III：多發皮膚腫瘤或大型浸潤性腫瘤', 'Stage IV：遠端轉移或全身性肥大細胞病'] },
+    differential_diagnosis: [
+      { condition: '脂肪瘤（Lipoma）', key_differentiator: '柔軟、可移動、FNA 見脂肪細胞而非肥大細胞' },
+      { condition: '組織球瘤（Histiocytoma）', key_differentiator: '好發年輕犬（< 3 歲）、通常自發消退、FNA 見圓形細胞而非異染顆粒' },
+      { condition: '皮膚淋巴瘤', key_differentiator: '組織病理見異型淋巴球嗜表皮浸潤，免疫組化 CD3+/CD79a-' },
+      { condition: '黑色素瘤（Melanoma）', key_differentiator: 'FNA 見含色素的上皮樣/梭形細胞，Melan-A/PNL2 免疫組化陽性' },
+      { condition: '皮膚血管外皮細胞瘤', key_differentiator: '紡錘形細胞為主，無異染顆粒' },
+    ],
+    diagnostic_workup: '1. FNA 細胞學（Diff-Quik 染色見典型紫色異染顆粒）→ 2. 完整分期：區域淋巴結 FNA（無論大小）→ 3. CBC/生化（嗜酸球？肝指數？）→ 4. 腹部超音波（肝脾形態）→ 5. 如超音波異常：肝脾 FNA → 6. 手術切除送病理：Patnaik + Kiupel 分級 + c-KIT 免疫組化 + 有絲分裂指數 + 邊界評估 → 7. 考慮 c-KIT 突變 PCR（exon 11 ITD）',
+    treatment_protocol: '1. 手術切除：側面 2-3 cm + 深面 1 個筋膜面。2. 術前 H1 + H2 blocker 預防脫顆粒。3. Low grade + 邊界清淨→觀察。4. High grade 或邊界不清→輔助化療：Vinblastine 2 mg/m² IV q2w × 4-6 次 + Prednisolone 1-2 mg/kg PO。5. c-KIT 突變陽性→考慮 TKI：Toceranib 2.75 mg/kg PO 隔日。6. 不可切除→放療或 TKI。7. 全程 H1/H2 blocker + 胃保護劑。',
+    prognosis: 'Kiupel Low grade：術後中位存活 > 2 年，局部復發率 < 10%（邊界清淨時）。Kiupel High grade：中位存活 4-6 個月，術後加化療可延長。Patnaik I：預後極佳（> 4 年）。Patnaik III：中位存活 < 6 個月。c-KIT 突變陽性者預後較差但可能對 TKI 有反應。多發 MCT 的預後取決於各腫瘤的獨立分級。',
+    monitoring: 'Low grade 術後：每 3 個月觸診檢查局部及淋巴結，持續 2 年。High grade 化療期間：每次 vinblastine 前 CBC（ANC ≥ 2000/μL）。TKI 治療：每 2-4 週 CBC + 生化 + 尿液分析（腎蛋白尿監測）。任何新皮膚腫塊立即 FNA。每 3-6 個月腹部超音波追蹤。',
+    owner_communication: 'MCT 是犬最常見的皮膚癌，但預後差異極大——低分級 MCT 手術切除乾淨後可能完全治癒。手術需要比腫瘤本身大很多的邊界（周圍 2-3 公分），這是為了確保完全移除。如果是高分級或手術切不乾淨，會建議追加化療或標靶治療。手術前後會給抗組胺藥預防過敏反應。如果狗狗出現嘔吐、黑色糞便要立刻回診（可能是胃潰瘍）。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分級系統段落後', type: 'comparison_table', description: 'Patnaik vs Kiupel 分級系統比較表' },
+    { position: '治療段落後', type: 'flowchart', description: 'MCT 分期-分級-治療決策流程圖' },
+  ],
+  interactive_placeholders: [
+    { position: '分級段落', type: 'interactive_scoring', description: 'Kiupel High/Low grade 評估工具' },
+    { position: '治療段落', type: 'drug_comparison', description: 'Vinblastine/Prednisolone vs Toceranib 治療比較' },
+  ],
+  drug_api_links: ['Vinblastine', 'Prednisolone', 'Toceranib', 'Diphenhydramine', 'Famotidine'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 20: Cutaneous Neoplasia — Mast Cell Tumors.", relevance: '犬 MCT 的臨床特徵、診斷與治療經典教材參考' },
+    { type: 'journal', citation: 'Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155.', relevance: 'Kiupel 二級制分級系統原始研究' },
+    { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (Palladia), an inhibitor of the kit tyrosine kinase, for the treatment of dogs with recurrent mast cell tumor. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib 臨床試驗關鍵研究' },
+    { type: 'guideline', citation: 'Blackwood L et al. European consensus document on mast cell tumours in dogs and cats. Vet Comp Oncol. 2012;10(3):e1-e29.', relevance: '歐洲 MCT 共識指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 皮膚組織病理學 (Dermatohistopathology) — 診斷型 */
+const contentDermatohistopathology: NodeContent = {
+  id: 'CONTENT-DERM-L4-005',
+  node_id: 'DERM-L4-005',
+  version: 1,
+  summary: '皮膚組織病理學（Dermatohistopathology）是皮膚疾病確定性診斷的金標準，透過活檢組織的顯微鏡評估提供特異性診斷。適應症包括對治療無反應的皮膚病、水疱/潰瘍性病灶、疑似腫瘤、以及需要分級的皮膚腫瘤。活檢方式包括 punch biopsy、wedge biopsy 及 excisional biopsy，選擇取決於病灶特徵與臨床需求。',
+  learning_objectives: [
+    '辨識需要皮膚活檢送組織病理的臨床情境',
+    '比較 punch biopsy、wedge biopsy 及 excisional biopsy 的適應症與技術',
+    '描述正確的皮膚活檢標本採集、固定及送檢流程',
+    '辨識主要的組織病理學反應型態（interface、perivascular、nodular/diffuse、vesiculopustular）',
+    '整合組織病理報告結果於臨床診斷與治療決策中',
+  ],
+  key_points: [
+    'Punch biopsy（4-8 mm）為最常用、最快速的皮膚活檢方式',
+    'Wedge/excisional biopsy 適用於深層病變、脂肪層病變、或需完整切除的腫瘤',
+    '取樣原則：選擇具代表性的新鮮/活動性病灶，避免已苔蘚化或繼發感染的區域',
+    '標本固定：10% 中性緩衝福馬林（NBF），組織：固定液比例至少 1:10',
+    'Interface dermatitis：基底層液化變性/淋巴球浸潤——見於天疱瘡、紅斑性狼瘡、藥物反應',
+    'Perivascular dermatitis：血管周圍炎症細胞浸潤——見於過敏性皮膚炎、跳蚤過敏',
+    'Nodular/diffuse dermatitis：真皮深層結節狀或彌漫性浸潤——見於深部黴菌感染、肉芽腫',
+    '提供臨床照片與完整病史給病理醫師是獲得準確診斷的關鍵',
+  ],
+  body: `# 皮膚組織病理學 (Dermatohistopathology)
+
+## 一、活檢適應症 (Indications for Biopsy)
+
+### 何時需要皮膚活檢？
+- 經驗性治療 4-6 週後無改善的皮膚病灶
+- 水疱（vesicle）、大疱（bulla）或潰瘍性病灶（疑似自體免疫）
+- 疑似皮膚腫瘤需組織學分級
+- 不尋常的臨床表現或分佈
+- 需區分類似疾病的鑑別診斷（如天疱瘡 vs 膿皮症）
+- 治療前基線記錄（如疑似 CTCL）
+
+### 何時不需要活檢？
+- 臨床與細胞學已足夠診斷的常見疾病（如典型膿皮症）
+- 可透過刮搔/培養確診的寄生蟲或黴菌感染
+
+## 二、活檢技術 (Biopsy Techniques)
+
+### Punch Biopsy（環鑽活檢）
+- 最常用、最快速、侵入性最小
+- 尺寸：6 mm 或 8 mm（不建議小於 6 mm）
+- 技術：沿毛髮生長方向旋轉環鑽，穿透至皮下脂肪層
+- 每個病例建議取 2-3 個不同部位或不同型態的標本
+- 適用：大多數炎症性與自體免疫性皮膚病
+
+### Wedge Biopsy（楔形活檢）
+- 以手術刀切取楔形全層皮膚組織
+- 適用：深層病變（脂膜炎）、皮下結節、需評估病灶邊緣
+- 可獲得較大且較深的組織標本
+
+### Excisional Biopsy（切除性活檢）
+- 將整個病灶連同適當邊界完整切除
+- 適用：疑似腫瘤（MCT、黑色素瘤）——同時達到診斷與治療目的
+- 需墨水標記方向以評估邊界清淨度
+
+## 三、標本處理 (Specimen Handling)
+
+### 固定與送檢
+1. 切除後立即放入 10% 中性緩衝福馬林（NBF）
+2. 組織：固定液體積比 ≥ 1:10
+3. 避免擠壓、彎折、乾燥標本
+4. 標記取樣部位與方向
+
+### 送檢資訊（缺一不可）
+- 完整臨床病史（發病時間、進程、治療反應）
+- 病灶描述（型態、分佈、數量）
+- 臨床照片（至少全身分佈圖 + 病灶特寫）
+- 鑑別診斷列表
+- 目前用藥（免疫抑制劑可改變組織學型態）
+
+## 四、主要組織病理學反應型態 (Histopathologic Patterns)
+
+### 1. Interface Dermatitis（界面皮膚炎）
+- 特徵：基底層液化變性、淋巴球侵犯表真皮交界處、個別角質細胞壞死
+- 代表疾病：紅斑性狼瘡、多形性紅斑、藥物不良反應、CTCL 早期
+
+### 2. Perivascular Dermatitis（血管周圍皮膚炎）
+- 特徵：真皮淺層或深層血管周圍炎症細胞套袖狀浸潤
+- 代表疾病：異位性皮膚炎（淋巴球+嗜酸球）、跳蚤過敏（嗜酸球為主）
+
+### 3. Vesiculopustular Dermatitis（水疱膿疱性皮膚炎）
+- 特徵：表皮內或表皮下水疱/膿疱形成
+- 棘層鬆解性膿疱→天疱瘡（acantholytic cells）
+- 表皮下水疱→類天疱瘡
+
+### 4. Nodular/Diffuse Dermatitis（結節/彌漫性皮膚炎）
+- 特徵：真皮至皮下的結節狀或彌漫性炎症浸潤
+- 代表疾病：深部黴菌感染、異物肉芽腫、無菌性結節性脂膜炎
+
+### 5. Follicular/Perifollicular Dermatitis（毛囊/毛囊周圍皮膚炎）
+- 特徵：以毛囊為中心的炎症
+- 代表疾病：蠕形蟎症、細菌性毛囊炎、脫毛症 X
+
+[圖片:五種主要組織病理學反應型態比較圖]
+[圖片:Punch biopsy 正確技術示範]`,
+  clinical_pearl: '「不要洗掉線索！」——皮膚活檢前不要清洗或刮搔病灶表面，因為表面的痂皮、鱗屑和膿疱中包含重要的診斷資訊（如棘層鬆解細胞、細菌、真菌孢子）。尤其是疑似自體免疫皮膚病時，完整的膿疱標本是確診天疱瘡的關鍵。取樣時選擇新鮮的原發性病灶（膿疱、水疱），而非已破潰的繼發性病灶（糜爛、痂皮）。',
+  common_mistakes: [
+    '取樣部位選擇不當——活檢已苔蘚化或繼發感染的慢性區域，而非新鮮活動性病灶',
+    '使用過小的 punch（< 6 mm），標本太小無法判讀完整的組織學型態',
+    '活檢前清洗病灶或移除痂皮，破壞表面的診斷線索',
+    '未提供臨床照片與完整病史給病理醫師，導致報告僅能描述型態而無法給出特異性診斷',
+    '標本固定不當（福馬林量不足或延遲固定）導致組織自溶',
+  ],
+  disease_data: null,
+  diagnostic_data: {
+    indication: [
+      '經驗性治療無效的慢性皮膚病（> 4-6 週）',
+      '水疱/大疱/潰瘍性病灶（疑似自體免疫皮膚病）',
+      '疑似皮膚腫瘤需組織學分級',
+      '不尋常臨床表現需確定性診斷',
+      '治療監測（如 CTCL 治療效果評估）',
+    ],
+    contraindication: [
+      '活動性出血傾向（需先矯正凝血功能）',
+      '取樣部位有嚴重繼發感染（先控制感染後再活檢較佳，但緊急情況例外）',
+    ],
+    technique: 'Punch biopsy（6-8 mm 環鑽）：沿毛髮生長方向旋轉穿透至皮下脂肪，以細鑷子或針尖輕輕提起標本後剪斷底部。Wedge biopsy（#15 手術刀）：切取楔形全層皮膚組織，適用於深層病變。Excisional biopsy：完整切除病灶（適用於腫瘤）。所有標本立即放入 10% NBF（組織:固定液 ≥ 1:10）。取樣前不清洗或刮搔病灶表面。局部麻醉注射於病灶周圍而非正下方。每個病例建議取 2-3 個不同部位標本。',
+    normal_findings: [
+      { finding: '正常皮膚結構', description: '完整表皮、真皮乳頭層與網狀層結構正常、附屬器（毛囊、皮脂腺、汗腺）形態正常', significance: '排除結構性皮膚病變' },
+      { finding: '正常角質層', description: '薄層均勻的角化層，無過度角化或異常角化', significance: '排除角化異常疾病' },
+      { finding: '正常毛囊週期', description: 'Anagen 與 telogen 毛囊比例正常，毛球形態完整', significance: '排除毛囊疾病與內分泌脫毛' },
+    ],
+    abnormal_findings: [
+      { finding: '基底層液化變性（interface dermatitis）', description: '基底層空泡化、淋巴球浸潤表真皮交界處、個別角質細胞壞死', significance: '高度提示自體免疫疾病（紅斑性狼瘡、多形性紅斑）或藥物反應' },
+      { finding: '棘層鬆解（acantholysis）', description: '角質細胞間黏附喪失、游離圓形角質細胞（acantholytic cells）', significance: '天疱瘡的特徵性表現，需進一步分型（PF vs PV）' },
+      { finding: '嗜表皮淋巴球浸潤', description: '異型淋巴球侵入表皮，可形成 Pautrier microabscess', significance: '皮膚 T 細胞淋巴瘤（CTCL/蕈狀肉芽腫）的特徵' },
+      { finding: '有絲分裂指數升高', description: '腫瘤細胞有絲分裂計數 ≥ 7/10 HPF', significance: 'Kiupel High grade MCT 的診斷標準之一' },
+    ],
+    interpretation_guide: '1. 低倍鏡（2x-4x）評估整體型態（表皮變化、炎症分佈模式、深度）。2. 確認反應型態（interface/perivascular/vesiculopustular/nodular-diffuse/follicular）。3. 高倍鏡（40x）評估細胞型態、有絲分裂、特殊結構。4. 需結合臨床病史、照片與鑑別診斷列表綜合判讀。5. 報告應包含描述性診斷與形態學診斷，並提供可能的鑑別診斷排序。',
+    pitfalls: [
+      '取樣部位選擇不當（活檢慢性苔蘚化區域而非新鮮活動性病灶）',
+      '使用過小的 punch（< 6 mm）導致標本不足以判讀',
+      '活檢前清洗病灶或移除痂皮，破壞表面診斷線索',
+      '未提供臨床照片與完整病史，導致病理醫師無法給出特異性診斷',
+      '標本固定不當（福馬林量不足或延遲固定）導致組織自溶',
+    ],
+    sensitivity_specificity: '組織病理學的診斷準確率取決於取樣品質、臨床資訊充足度及病理醫師經驗。配合臨床照片與完整病史，診斷準確率可達 80-95%。為皮膚疾病的金標準診斷工具（Level I evidence）。',
+    cost_benefit: '中等成本（活檢耗材 + 病理費用），但對於治療無反應或診斷不明的皮膚病，組織病理學是不可替代的確定性診斷工具。尤其對於自體免疫皮膚病與皮膚腫瘤分級具有決定性價值。',
+  },
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '活檢技術段落後', type: 'comparison_table', description: 'Punch vs Wedge vs Excisional biopsy 比較表' },
+    { position: '反應型態段落後', type: 'comparison_table', description: '五種主要組織病理學反應型態與代表疾病對照表' },
+  ],
+  interactive_placeholders: [
+    { position: '活檢適應症段落', type: 'decision_tree', description: '何時需要皮膚活檢？臨床決策樹' },
+  ],
+  drug_api_links: [],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 3: Diagnostic Methods.", relevance: '皮膚活檢技術與組織病理學型態經典參考' },
+    { type: 'textbook', citation: "Gross TL, Ihrke PJ, Walder EJ, Affolter VK. Skin Diseases of the Dog and Cat: Clinical and Histopathological Diagnosis, 2nd ed. Blackwell, 2005.", relevance: '獸醫皮膚組織病理學專著，反應型態分類標準' },
+    { type: 'journal', citation: 'Mauldin EA, Peters-Kennedy J. Integumentary System. In: Maxie MG, ed. Jubb, Kennedy & Palmer\'s Pathology of Domestic Animals, 6th ed. Elsevier, 2016;1:509-736.', relevance: '家畜皮膚病理學參考' },
+    { type: 'guideline', citation: 'Yager JA. An approach to the histological diagnosis of skin disease. In: BSAVA Manual of Canine and Feline Dermatology, 3rd ed. 2012;22-31.', relevance: '系統性組織病理學判讀方法指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L0-001', contentDermOverview],
@@ -4769,4 +5122,6 @@ export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L3-011', contentDrugEruption],
   ['DERM-L3-012', contentAlopeciaX],
   ['DERM-L3-013', contentCTCL],
+  ['DERM-L3-014', contentMCT],
+  ['DERM-L4-005', contentDermatohistopathology],
 ]);

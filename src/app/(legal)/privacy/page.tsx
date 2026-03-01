@@ -72,6 +72,7 @@ export default function PrivacyPage() {
               <li><strong>Supabase</strong>：身份驗證與資料儲存</li>
               <li><strong>Vercel</strong>：網站託管與部署</li>
               <li><strong>Cloudinary</strong>：圖片儲存與管理</li>
+              <li><strong>Anthropic</strong>：AI 輔助內容生成（學習內容、測驗題目），不傳輸個人識別資料</li>
             </ul>
           </section>
 

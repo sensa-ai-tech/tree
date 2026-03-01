@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { buildConceptContentPrompt } from '@/lib/ai/prompts/content-concept';
 import { buildDiseaseContentPrompt } from '@/lib/ai/prompts/content-disease';
-import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, nodeContentSchema, diseaseDataSchema } from '@/lib/ai/parsers/validators';
 import type { KnowledgeNode } from '@/types/knowledge';
 

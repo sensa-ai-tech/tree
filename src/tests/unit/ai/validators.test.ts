@@ -2,7 +2,6 @@ import { describe, it, expect } from 'vitest';
 import {
   skeletonOutputSchema,
   nodeContentSchema,
-  diseaseDataSchema,
   edgeSchema,
   questionSchema,
   caseStepSchema,

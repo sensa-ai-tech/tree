@@ -51,7 +51,7 @@ export default function DashboardHomePage() {
   const completedCount = getCompletedCount();
   const inProgressCount = getInProgressCount();
   const totalNodes = nodes.length;
-  const completionPercent = totalNodes > 0 ? Math.round((completedCount / totalNodes) * 100) : 0;
+  const _completionPercent = totalNodes > 0 ? Math.round((completedCount / totalNodes) * 100) : 0;
 
   // 各專科節點數
   const specialtyProgress = useMemo(() => {

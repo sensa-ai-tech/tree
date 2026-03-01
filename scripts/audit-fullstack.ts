@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * VetKnowledgeTree 全面品質審計腳本
  *

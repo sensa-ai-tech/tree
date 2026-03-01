@@ -4263,6 +4263,7 @@ const contentHistiocyticSarcoma: NodeContent = {
     { type: 'journal', citation: 'Affolter VK, Moore PF. Localized and disseminated histiocytic sarcoma of dendritic cell origin in dogs. Vet Pathol. 2002;39(1):74-83.', relevance: '組織球肉瘤 DC 起源分類的經典文獻' },
     { type: 'journal', citation: 'Skorupski KA et al. CCNU for the treatment of dogs with histiocytic sarcoma. J Vet Intern Med. 2007;21(1):121-126.', relevance: 'Lomustine 治療 HS 的臨床研究' },
     { type: 'journal', citation: 'Abadie J et al. Epidemiology, pathology, and genetics of histiocytic sarcoma in the Bernese mountain dog — a review. Vet Pathol. 2009;46(3):385-397.', relevance: '伯恩山犬 HS 流行病學、病理和遺傳學回顧' },
+    { type: 'guideline', citation: 'Moore PF. A review of histiocytic diseases of dogs and cats. Vet Pathol. 2014;51(1):167-184. doi:10.1177/0300985813510413 (ACVP/ASVCP consensus on histiocytic disease classification)', relevance: 'ACVP/ASVCP 犬貓組織球疾病分類共識回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -4463,6 +4464,541 @@ const contentThyroidCarcinoma: NodeContent = {
   created_at: now,
 };
 
+/** 鱗狀上皮細胞癌 — 疾病型 */
+const contentSCC: NodeContent = {
+  id: 'CONTENT-ONCO-L3-014',
+  node_id: 'ONCO-L3-014',
+  version: 1,
+  summary: '鱗狀上皮細胞癌（Squamous Cell Carcinoma, SCC）是犬貓常見的上皮惡性腫瘤，可發生於口腔、皮膚、甲床等多個解剖位置。貓口腔 SCC 是貓最常見的口腔腫瘤，預後極差（中位存活約 2 個月）。犬甲床 SCC 需截趾治療，預後相對較好。貓鼻平面/耳尖 SCC 與紫外線暴露密切相關，白色短毛貓為高危族群。各解剖位置的臨床行為和治療策略差異顯著。',
+  learning_objectives: [
+    '區分 SCC 在不同解剖位置（口腔、皮膚、甲床）的臨床行為差異',
+    '說明紫外線暴露與貓鼻平面/耳尖 SCC 的因果關係',
+    '掌握貓口腔 SCC 預後極差的原因及目前治療困境',
+    '描述犬甲床 SCC 的診斷與截趾治療原則',
+    '擬定不同解剖位置 SCC 的分期檢查與治療計畫',
+    '比較手術、放射治療、化療在 SCC 各亞型中的角色',
+  ],
+  key_points: [
+    '貓口腔 SCC 是貓最常見的口腔惡性腫瘤（約 70%），預後極差，中位存活僅約 2 個月',
+    '貓口腔 SCC 容易被誤診為齒齦炎或牙周病，任何不癒合的口腔潰瘍應活檢',
+    '紫外線暴露是貓鼻平面、耳尖 SCC 的主要危險因子，白色或淺色短毛貓為高危族群',
+    '犬甲床 SCC 是犬趾部最常見的惡性腫瘤，截趾（digit amputation）後預後良好（中位存活 > 1 年）',
+    '犬口腔 SCC 分為非扁桃體型（rostrally located，預後較佳）和扁桃體型（tonsillar，預後極差）',
+    'CT 是口腔 SCC 術前評估骨侵犯範圍的關鍵影像工具',
+    '貓鼻平面 SCC 早期可用放射治療（curative-intent RT）或光動力療法（PDT），效果佳',
+    'Piroxicam 可作為 SCC 的輔助或姑息性治療（COX-2 抑制劑抗腫瘤效應）',
+  ],
+  body: `# 鱗狀上皮細胞癌 (Squamous Cell Carcinoma, SCC)
+
+## 一、流行病學與病因 (Epidemiology & Etiology)
+
+### 犬 SCC
+- **口腔 SCC**：犬第二常見口腔惡性腫瘤（僅次於黑色素瘤）。好發於中老年犬（中位年齡 8-10 歲），大型犬較常見。非扁桃體型（rostral, gingival）預後優於扁桃體型（tonsillar）
+- **甲床 SCC（Subungual SCC）**：犬趾部最常見的惡性腫瘤，約占趾部腫瘤的 30-50%。黑色大型犬品種（Labrador、Standard Poodle、Rottweiler、Giant Schnauzer）好發。可能與色素沉著有關（非紫外線）
+- **皮膚 SCC**：較少見，好發於腹側皮膚（紫外線暴露少毛區域）。Dalmatian、Bull Terrier、Beagle 等淺色品種較易發生
+
+### 貓 SCC
+- **口腔 SCC**：貓最常見的口腔惡性腫瘤，約占 70%。好發於老年貓（中位年齡 12-14 歲），舌底和齒齦為最常見位置
+- **鼻平面/耳尖 SCC（Solar/Actinic SCC）**：紫外線暴露為主因。白色或淺色短毛貓好發（缺乏黑色素保護）。常由日光性角化症（actinic keratosis）→ SCC in situ → 侵犯性 SCC 逐步進展
+- **病因/風險因子**：紫外線（UV-B）→ DNA 損傷 → p53 突變；環境致癌物接觸（跳蚤圈中的化學物質、二手菸——有研究顯示與貓口腔 SCC 風險增加相關）
+
+## 二、臨床分類 (Clinical Classification)
+
+### 貓口腔 SCC
+- **好發位置**：舌底（sublingual）、齒齦（gingival）、硬顎（hard palate）
+- **臨床特徵**：局部侵犯性極強，早期即侵犯下顎骨或上顎骨；遠端轉移率相對低（< 10-15%，但多數患貓在轉移前已因局部疾病惡化而安樂死）
+- **預後**：極差，各種治療方案的中位存活僅約 2-3 個月
+
+### 貓鼻平面/耳尖 SCC
+- **外觀**：鼻平面、耳尖的結痂、潰瘍、紅斑，不癒合的傷口
+- **進程**：日光性皮膚炎 → 日光性角化症 → carcinoma in situ → 侵犯性 SCC
+- **特性**：早期局限於表皮/真皮，轉移率低；晚期可侵犯深層組織和軟骨
+
+### 犬口腔 SCC
+- **非扁桃體型（Rostral/Gingival）**：最常見，局部侵犯骨骼但轉移率較低（< 20%），手術切除預後佳
+- **扁桃體型（Tonsillar SCC）**：極具侵犯性，確診時多已轉移（區域淋巴結 > 70%），預後極差
+
+### 犬甲床 SCC
+- **特徵**：趾頭腫脹、蹄爪脫落（onychomadesis）、跛行
+- **影像學**：X 光顯示 P3（末端趾骨）溶骨性病變
+- **生物行為**：局部侵犯性強但遠端轉移率低（< 15%），截趾後預後良好
+
+## 三、臨床表現 (Clinical Signs)
+
+### 口腔 SCC（犬貓）
+- 流涎（ptyalism）、口臭（halitosis）
+- 進食困難（dysphagia）、食慾下降
+- 口腔出血、牙齒鬆動
+- 顏面腫脹（上顎）或下頷腫脹（下顎）
+- 體重減輕
+
+### 甲床 SCC（犬）
+- 單一趾頭腫脹（digital swelling）
+- 蹄爪脫落或變形
+- 跛行
+- 趾間潰瘍或出血
+- 可能被誤診為甲溝炎或異物
+
+### 皮膚/鼻平面 SCC（貓）
+- 鼻平面結痂、潰瘍、出血
+- 耳尖捲曲（ear tip curling）、結痂
+- 慢性不癒合的皮膚傷口
+- 可能伴有二次細菌感染
+
+## 四、診斷 (Diagnosis)
+
+### 細胞學與組織病理
+- **FNA 細胞學**：可見角化的上皮細胞群，部分有核異型性。口腔 SCC 的 FNA 診斷率中等
+- **組織活檢**：確診的金標準。punch biopsy 或 incisional biopsy。注意貓口腔 SCC 常伴大量發炎，表層活檢可能只見發炎而漏診深層的腫瘤——需取深層組織
+
+### 影像分期
+- **口腔 SCC**：CT 為必備——評估骨侵犯範圍、淋巴結、肺轉移。CT 對手術切除範圍的規劃至關重要
+- **甲床 SCC**：趾部 X 光（P3 溶骨性病變）+ 胸腔 X 光（肺轉移篩檢）
+- **貓鼻平面 SCC**：CT 評估侵犯深度，尤其是鼻腔和眶腔是否受侵犯
+
+### 分期系統
+- 犬口腔 SCC：WHO TNM 分期（T1 ≤ 2 cm, T2 2-4 cm, T3 > 4 cm）
+- 區域淋巴結評估（下頷/咽後淋巴結 FNA）
+
+## 五、治療 (Treatment)
+
+### 手術
+- **犬口腔 SCC（非扁桃體型）**：mandibulectomy（下顎切除）或 maxillectomy（上顎切除），需 ≥ 1 cm 骨骼切緣。術後犬的功能恢復和生活品質通常良好
+- **犬甲床 SCC**：digit amputation（截趾），預後良好
+- **貓口腔 SCC**：mandibulectomy/maxillectomy 效果有限，因確診時多已廣泛侵犯
+- **貓鼻平面 SCC**：鼻平面切除（nosectomy）對早期病變有效
+
+### 放射治療
+- **貓鼻平面 SCC**：curative-intent RT（strontium-90 plesiotherapy 或 orthovoltage RT）對 T1 病變有效，完全緩解率可達 85-95%（carcinoma in situ 或早期侵犯性 SCC）
+- **犬口腔 SCC**：術後 RT 用於切緣不完全的病例
+- **貓口腔 SCC**：palliative RT 可短暫緩解，但無法顯著延長存活
+
+### 化療與藥物治療
+- **Carboplatin**：對 SCC 有中度療效（response rate 約 20-30%），可作為輔助或姑息治療
+- **Piroxicam（NSAID/COX-2 抑制劑）**：有抗腫瘤效應，可作為姑息性單藥或與 carboplatin 併用
+- **Toceranib（Palladia）**：多靶點 TKI，部分研究顯示對 SCC 有療效
+- **光動力療法（PDT）**：貓鼻平面/耳尖早期 SCC 的替代治療，需特殊設備
+
+## 六、預後 (Prognosis)
+
+| 亞型 | 中位存活時間 | 關鍵預後因子 |
+|------|-------------|-------------|
+| 犬口腔 SCC（非扁桃體） | 手術後 1-2 年以上 | 腫瘤位置（rostral 佳）、切緣狀態、TNM 分期 |
+| 犬口腔 SCC（扁桃體） | 3-6 個月 | 確診時多已轉移，預後極差 |
+| 犬甲床 SCC | 截趾後 > 1-2 年 | 單趾受侵犯且截趾——轉移率低 |
+| 貓口腔 SCC | 約 2 個月（各治療方式） | 確診時多已晚期，治療反應差 |
+| 貓鼻平面 SCC（早期） | RT 後 > 1-3 年 | 腫瘤分期（T1 佳）、完全切除/放療 |
+
+## 七、台灣臨床相關性 (Taiwan Clinical Relevance)
+
+- **白色短毛貓鼻平面/耳尖 SCC**：台灣位於亞熱帶，日照強烈，白色短毛貓 SCC 發生率高。應建議飼主限制白色貓的日曬暴露
+- **貓口腔 SCC**：台灣貓口腔腫瘤中 SCC 占比最高，常因初期被誤診為齒齦炎而延誤就醫
+- **犬甲床 SCC**：台灣飼養大型犬（Labrador、Golden Retriever）普遍，甲床 SCC 並不罕見
+- **治療可及性**：放射治療在台灣僅少數教學醫院可提供；光動力療法更為稀少。手術和姑息性藥物治療為台灣目前主要可行的治療模式
+
+[圖片:SCC 各解剖位置臨床影像——貓口腔/貓鼻平面/犬甲床/犬口腔比較]`,
+  clinical_pearl: '貓口腔 SCC 容易被誤診為慢性齒齦炎（gingivostomatitis）——任何老年貓口腔中不癒合的潰瘍或「肉芽組織」樣病變，均應進行深層組織活檢排除 SCC。表層活檢常僅見發炎和壞死組織而漏診深處的腫瘤，至少需取到黏膜下層。\n\n犬甲床 SCC 的「趾頭紅腫」常被初始誤診為甲溝炎（paronychia）或異物感染，給予抗生素治療數週無改善時應立即 X 光檢查 P3 骨溶解。黑色大型犬的任何單一趾頭腫脹都應高度懷疑甲床腫瘤。\n\n【台灣流行病學】白色短毛貓在台灣亞熱帶氣候下鼻平面/耳尖 SCC 相當常見。早期病變（結痂期/日光性角化症）即應積極治療——等到侵犯性 SCC 形成後治療難度大增。建議飼主為白色貓提供遮陰環境並避免中午時段日曬。',
+  common_mistakes: [
+    '老年貓口腔潰瘍僅給予抗生素而未活檢——延誤貓口腔 SCC 的診斷',
+    '口腔 SCC 活檢只取表層組織——常僅見發炎而漏診深層腫瘤，需取深層組織',
+    '犬趾頭腫脹長期以甲溝炎治療而未 X 光檢查——延誤甲床 SCC 診斷',
+    '貓口腔 SCC 告知飼主「手術可以治癒」——事實上貓口腔 SCC 的治療效果極有限，各治療方式中位存活僅約 2 個月',
+    '忽略白色短毛貓鼻平面結痂的早期預防——日光性角化症階段積極治療預後遠優於侵犯性 SCC',
+  ],
+  disease_data: {
+    signalment: '犬口腔 SCC：中老年犬（8-10 歲），大型犬；犬甲床 SCC：黑色大型犬（Labrador、Standard Poodle、Rottweiler、Giant Schnauzer），中位年齡 10 歲。貓口腔 SCC：老年貓（12-14 歲），無品種偏好。貓鼻平面/耳尖 SCC：白色或淺色短毛貓，中位年齡 11-12 歲。',
+    etiology: '多因性。紫外線（UV-B）暴露為貓鼻平面/耳尖 SCC 的主因（p53 突變）。犬甲床 SCC 可能與色素沉著有關。環境致癌物（二手菸可能增加貓口腔 SCC 風險）。犬口腔 SCC 病因不明。',
+    pathogenesis: '上皮細胞 DNA 損傷（UV、化學致癌物）→ p53/Rb 突變 → 上皮異型增生（dysplasia）→ carcinoma in situ → 突破基底膜形成侵犯性 SCC → 局部侵犯（骨骼、軟組織）→ 區域淋巴結轉移（口腔型）→ 遠端轉移（少見，但扁桃體型例外）',
+    clinical_signs: [
+      { sign: '口腔潰瘍或腫塊', category: 'primary', description: '口腔 SCC 的典型表現，常伴流涎、口臭、進食困難' },
+      { sign: '趾頭腫脹/蹄爪脫落', category: 'primary', description: '犬甲床 SCC 的典型表現，伴跛行' },
+      { sign: '鼻平面結痂/潰瘍', category: 'primary', description: '貓鼻平面 SCC 的典型表現，慢性不癒合' },
+      { sign: '流涎和口臭', category: 'secondary', description: '口腔 SCC 伴隨的常見症狀' },
+      { sign: '體重減輕', category: 'secondary', description: '因進食困難導致，尤其貓口腔 SCC' },
+      { sign: '耳尖捲曲/結痂', category: 'secondary', description: '貓耳尖 SCC 的早期表現' },
+    ],
+    staging: {
+      system: 'WHO TNM Staging for Oral Tumors',
+      stages: [
+        'T1：腫瘤最大徑 ≤ 2 cm',
+        'T2：腫瘤最大徑 2-4 cm',
+        'T3：腫瘤最大徑 > 4 cm',
+        'N0：無區域淋巴結轉移',
+        'N1：同側淋巴結轉移',
+        'N2：對側或雙側淋巴結轉移',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '貓齒齦炎/口炎（Gingivostomatitis）', key_differentiator: '通常為雙側對稱性發炎，FIV/FCV 相關；SCC 多為單側或局灶性潰瘍/腫塊' },
+      { condition: '口腔黑色素瘤', key_differentiator: '常有色素沉著（但無色素型存在），免疫組化 Melan-A/PNL-2 陽性' },
+      { condition: '纖維肉瘤（Oral FSA）', key_differentiator: '組織學見紡錘形細胞而非角化上皮細胞' },
+      { condition: '甲溝炎/異物（趾部）', key_differentiator: '抗生素反應佳、X 光無 P3 溶骨；SCC 抗生素無效且 X 光見骨溶解' },
+      { condition: '嗜酸球性肉芽腫（貓）', key_differentiator: '口腔嗜酸球性肉芽腫複合體可模擬 SCC，但細胞學見嗜酸球浸潤' },
+    ],
+    diagnostic_workup: '1. 口腔檢查（需鎮靜/麻醉下完整檢查）→ 2. FNA 細胞學或深層活檢（組織病理為金標準）→ 3. CT（口腔 SCC 必備——骨侵犯評估、手術規劃）→ 4. 區域淋巴結 FNA（下頷/咽後）→ 5. 胸腔三面 X 光（肺轉移篩檢）→ 6. 趾部 X 光（甲床 SCC——P3 溶骨評估）',
+    treatment_protocol: '依解剖位置而異。犬口腔 SCC（非扁桃體型）：mandibulectomy/maxillectomy ≥ 1 cm 骨切緣，預後佳。犬甲床 SCC：digit amputation，預後良好。貓口腔 SCC：各治療效果有限，palliative care 為主。貓鼻平面 SCC（早期）：nosectomy 或 curative-intent RT（Sr-90 或 orthovoltage），完全緩解率高。藥物輔助：Piroxicam（COX-2 抑制）± Carboplatin。',
+    prognosis: '犬口腔 SCC（非扁桃體型）手術後：MST 1-2 年以上。犬扁桃體 SCC：MST 3-6 個月（多已轉移）。犬甲床 SCC 截趾後：MST > 1-2 年。貓口腔 SCC：MST 約 2 個月（各治療方式）。貓鼻平面 SCC（早期 + RT）：MST > 1-3 年。',
+    monitoring: '口腔 SCC 術後：每 2-3 個月口腔檢查（鎮靜下）+ 區域淋巴結評估。每 3 個月胸腔 X 光追蹤。甲床 SCC 截趾後：每 3 個月追蹤 + 檢查其他趾頭（可能多趾發生）。貓鼻平面 SCC RT 後：每 2 個月追蹤局部復發。',
+    owner_communication: '不同解剖位置的 SCC 預後差異極大——犬甲床 SCC 截趾後預後良好，但貓口腔 SCC 預後極差。貓口腔 SCC 確診後應坦誠告知飼主預後有限，討論姑息性照護和生活品質目標。白色貓飼主應被教育防曬的重要性——限制日曬暴露可預防鼻平面/耳尖 SCC。犬口腔 SCC 飼主需了解 mandibulectomy/maxillectomy 術後犬的外觀和功能恢復通常良好。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床分類段落後', type: 'comparison_table', description: '犬貓 SCC 各解剖位置臨床特徵與預後比較表' },
+    { position: '治療段落後', type: 'flowchart', description: 'SCC 治療決策流程圖（依解剖位置分流）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Carboplatin', 'Piroxicam', 'Toceranib'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 20: Tumors of the Alimentary Tract — Oral Tumors Section; Chapter 19: Tumors of the Skin and Subcutaneous Tissues — SCC Section.', relevance: 'SCC 完整章節（口腔與皮膚）' },
+    { type: 'journal', citation: 'Bilgic O et al. Feline oral squamous cell carcinoma: a review of biologic behavior, diagnosis, and treatment options. J Feline Med Surg. 2015;17(2):163-172.', relevance: '貓口腔 SCC 綜合回顧' },
+    { type: 'journal', citation: 'Wobeser BK et al. Diagnoses and clinical outcomes associated with surgically amputated canine digits submitted to multiple veterinary diagnostic laboratories. Vet Pathol. 2007;44(3):355-361.', relevance: '犬趾部腫瘤（甲床 SCC）截趾預後' },
+    { type: 'guideline', citation: 'Liptak JM, Withrow SJ. Oral Tumors. In: Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. pp. 381-398.', relevance: '口腔腫瘤手術與治療指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 胰島素瘤 — 疾病型 */
+const contentInsulinoma: NodeContent = {
+  id: 'CONTENT-ONCO-L3-015',
+  node_id: 'ONCO-L3-015',
+  version: 1,
+  summary: '胰島素瘤（Insulinoma）是犬最常見的功能性胰臟內分泌腫瘤，起源於胰臟 β 細胞，過度分泌胰島素導致低血糖。中大型犬好發（中位年齡 9-10 歲）。臨床表現為發作性虛弱、癲癇、collapse，符合 Whipple\'s triad（低血糖 + 低血糖症狀 + 給糖後症狀緩解）。診斷依據為禁食低血糖伴不適當高胰島素。手術切除為首選治療，術後中位存活 12-18 個月。內科管理包括 Diazoxide 和頻繁小餐。',
+  learning_objectives: [
+    '說明 Insulinoma 的病理生理機轉（β 細胞胰島素過度分泌 → 低血糖）',
+    '描述 Whipple\'s triad 並應用於臨床診斷',
+    '解釋 Amended Insulin-to-Glucose Ratio（AIGR）的計算與臨床意義',
+    '擬定 Insulinoma 的診斷檢查流程（禁食試驗、影像學定位）',
+    '比較手術治療與內科管理的適應症和預後',
+    '掌握低血糖急救的處理步驟（dextrose bolus）',
+  ],
+  key_points: [
+    'Insulinoma 是犬最常見的功能性胰臟內分泌腫瘤，β 細胞不受調節地分泌胰島素',
+    '好發於中大型犬（中位年齡 9-10 歲），German Shepherd、Irish Setter、Golden Retriever、Boxer 較常見',
+    'Whipple\'s triad：(1) 空腹或運動後低血糖症狀、(2) 血糖 < 60 mg/dL、(3) 給糖後症狀緩解',
+    '低血糖 + 血清胰島素不適當偏高（insulin > 正常下限 when glucose < 60 mg/dL）為診斷關鍵',
+    '手術為首選治療：胰臟部分切除（partial pancreatectomy），術中肉眼檢查+觸診定位腫瘤',
+    'Diazoxide（benzothiadiazine）為首選內科藥物——抑制胰島素分泌、促進肝醣分解和糖質新生',
+    '低血糖急救：50% dextrose 稀釋成 12.5-25% 緩慢 IV bolus（0.5-1 mL/kg），避免快速推注（刺激更多胰島素分泌）',
+    '約 50% 為惡性（regional/distant metastasis），肝轉移最常見',
+  ],
+  body: `# 胰島素瘤 (Insulinoma)
+
+## 一、流行病學 (Epidemiology)
+
+Insulinoma 是犬最常見的功能性胰臟內分泌腫瘤，但整體發病率仍屬罕見。
+
+### 好發特徵
+- **物種**：主要發生於犬，貓極罕見
+- **年齡**：中老年犬，中位年齡 9-10 歲（範圍 3-14 歲）
+- **品種**：中大型犬較常見——German Shepherd、Irish Setter、Golden Retriever、Boxer、Standard Poodle、Fox Terrier
+- **性別**：無明顯性別偏好
+
+## 二、病理生理 (Pathophysiology)
+
+### β 細胞腫瘤的胰島素過度分泌
+正常情況下，胰臟 β 細胞的胰島素分泌受血糖濃度負回饋調控——血糖降低時，胰島素分泌減少。Insulinoma 的腫瘤性 β 細胞**喪失此負回饋機制**，在血糖已低的情況下仍持續分泌胰島素。
+
+### 低血糖的後果
+- **神經性低血糖症狀（Neuroglycopenia）**：大腦幾乎完全依賴葡萄糖作為能量來源。血糖 < 60 mg/dL 時出現：虛弱、共濟失調、迷茫、顫抖、癲癇發作、昏迷
+- **腎上腺素反應（Adrenergic response）**：交感神經活化——心搏加速、顫抖、焦躁、飢餓感
+- **慢性適應**：長期慢性低血糖的犬可能因大腦適應而症狀不明顯，直到血糖極低時才發作
+
+### Whipple's Triad
+診斷 insulinoma 的經典臨床三要素：
+1. 空腹或運動後出現低血糖相關症狀
+2. 發作時血糖 < 60 mg/dL（< 3.3 mmol/L）
+3. 給予葡萄糖後症狀迅速緩解
+
+## 三、臨床表現 (Clinical Signs)
+
+### 發作性特徵
+Insulinoma 的臨床表現具有**間歇性和發作性**的特點——症狀常在空腹、運動或興奮後出現，持續數秒至數分鐘後自行緩解（因 counter-regulatory hormones 作用）。
+
+### 常見症狀（依頻率排列）
+1. **發作性虛弱/無力**（最常見，約 65-80%）
+2. **癲癇發作（seizures）**（約 30-50%）
+3. **共濟失調（ataxia）**
+4. **後肢無力（pelvic limb weakness）**
+5. **collapse**
+6. **顫抖（trembling/fasciculations）**
+7. **意識混亂/迷茫**
+8. **過度飢餓感**
+
+### 重要：症狀的間歇性
+飼主常描述「突然軟腳」、「呆滯」、「走路不穩」，數分鐘後恢復正常。這種間歇性症狀是 insulinoma 的重要線索。
+
+## 四、診斷 (Diagnosis)
+
+### 實驗室檢查
+- **血糖**：禁食後（或發作時）血糖 < 60 mg/dL。注意：隨機血糖可能正常（因 counter-regulatory hormones）
+- **血清胰島素**：在低血糖時同步測量——若胰島素 > 正常下限（不適當偏高），高度支持 insulinoma
+- **AIGR（Amended Insulin-to-Glucose Ratio）**：= [血清胰島素 (μU/mL) × 100] ÷ [血糖 (mg/dL) - 30]。AIGR > 30 高度支持 insulinoma。注意：血糖 ≤ 30 mg/dL 時公式不適用
+- **禁食試驗**：若隨機血糖正常，可進行 12-72 小時禁食試驗（住院監控下），每 1-2 小時測血糖和胰島素，直到血糖 < 60 mg/dL
+
+### 影像學定位
+- **腹部超音波**：可偵測胰臟腫塊，但 insulinoma 通常很小（< 1-2 cm），超音波偵測率僅約 30-50%
+- **CT（雙期增強掃描）**：偵測率高於超音波（約 50-70%），動脈期增強為特徵。也可評估肝臟轉移
+- **術中肉眼檢查/觸診**：為定位的最可靠方法——仔細檢查整個胰臟和肝臟
+
+### 排除其他低血糖原因
+- 肝功能不全（低白蛋白、BUN 降低、膽酸升高）
+- 敗血症（發燒、白血球異常）
+- Addison's disease（低鈉高鉀、ACTH 刺激試驗）
+- 腫瘤相關低血糖（大型肉瘤分泌 IGF-II）
+- 幼犬/toy 品種低血糖
+- 外源性胰島素過量（醫源性）
+
+## 五、治療 (Treatment)
+
+### 手術治療（首選）
+- **胰臟部分切除術（Partial pancreatectomy）**：術中仔細觸診和檢查整個胰臟，切除可見腫瘤。若未見明顯腫塊，可考慮 distal pancreatectomy
+- **術中肝臟檢查**：評估肝臟轉移灶並取活檢
+- **術後併發症**：胰臟炎（最常見）、暫時性高血糖（殘存正常 β 細胞被長期低血糖抑制後功能恢復）、傷口感染
+- **術後 24-48 小時監控血糖**：每 2-4 小時測一次
+
+### 內科管理
+適用於不宜手術、拒絕手術、術後復發或轉移性患犬：
+
+- **飲食管理**：頻繁小餐（每天 4-6 餐），高蛋白質、高脂肪、高複合碳水化合物飲食。避免單純糖類（刺激更多胰島素分泌）。避免空腹和劇烈運動
+- **Diazoxide**：5-10 mg/kg PO BID，首選內科藥物。機轉：抑制 β 細胞胰島素分泌 + 促進肝醣分解 + 促進糖質新生。副作用：嘔吐、腹瀉、食慾下降
+- **Prednisone/Prednisolone**：0.25-0.5 mg/kg PO BID。機轉：促進糖質新生、拮抗胰島素作用。長期使用的副作用：PU/PD、肌肉萎縮、醫源性 Cushing
+- **Octreotide（Somatostatin analogue）**：10-40 μg/dog SC BID-TID。抑制胰島素分泌，但療效個體差異大
+- **Streptozotocin**：針對 β 細胞的化療藥物，需大量生理食鹽水利尿防止腎毒性。使用經驗有限，不是常規推薦
+
+### 低血糖急救
+- **緊急處理**：50% dextrose 稀釋為 12.5-25%，IV bolus 0.5-1 mL/kg 的 25% dextrose，緩慢推注（5-10 分鐘）
+- **維持輸液**：2.5-5% dextrose in 0.9% NaCl CRI，維持血糖 60-120 mg/dL
+- **注意**：避免快速推注高濃度 dextrose——可能刺激腫瘤 β 細胞分泌更多胰島素，造成反彈性低血糖
+- **居家急救**：飼主可給予少量 corn syrup / honey 塗抹牙齦
+
+## 六、預後 (Prognosis)
+
+### 手術預後
+- **無轉移（Stage I）**：手術後中位存活 12-18 個月
+- **有轉移（Stage II/III）**：手術 + 內科管理，中位存活 6-12 個月
+- **手術成功後**：約 50-70% 會在 6-18 個月後復發（低血糖重現）
+
+### 臨床分期（Modified WHO）
+- **Stage I**：胰臟腫瘤，無轉移
+- **Stage II**：胰臟腫瘤 + 區域淋巴結轉移
+- **Stage III**：遠端轉移（肝臟最常見）
+
+### 預後因子
+- 臨床分期（最重要）
+- 術後血糖是否恢復正常（恢復 = 完全切除，預後較佳）
+- 腫瘤大小（較大腫瘤預後較差）
+- 低血糖的嚴重程度
+
+## 七、台灣臨床相關性 (Taiwan Clinical Relevance)
+
+- 台灣犬隻以中大型犬（Labrador、Golden Retriever、German Shepherd）為多，insulinoma 並非罕見
+- 需與其他低血糖原因鑑別：幼犬/toy breed 低血糖、Addison's disease、肝功能不全
+- Diazoxide 在台灣取得管道有限，需透過專案進口或動物醫院自行調劑
+- 腹部超音波為初步定位工具，CT 增強掃描在大型教學醫院可執行
+- 飼主教育重點：頻繁小餐、避免空腹和劇烈運動、居家低血糖急救處理
+
+[圖片:Insulinoma 診斷與治療決策流程圖——低血糖鑑別 → 禁食試驗 → 影像定位 → 手術/內科管理]`,
+  clinical_pearl: '「低血糖時胰島素卻不低」是 insulinoma 的核心診斷概念。正常低血糖時胰島素應被抑制至極低；若低血糖時胰島素仍 > 正常下限（即使不是特別高），即屬「不適當偏高」，高度支持 insulinoma。不需要胰島素絕對值很高才能診斷。\n\n低血糖急救的陷阱：避免快速推注高濃度 dextrose（50%）——這會刺激腫瘤性 β 細胞分泌更多胰島素，造成反彈性低血糖。應稀釋為 12.5-25% 後緩慢推注。\n\n【台灣流行病學】台灣中大型犬飼養比例高，insulinoma 並非少見。許多患犬初期以「癲癇」或「後肢無力」就診被誤導至神經科方向，測量血糖是低成本高收益的篩檢步驟。任何中老年大型犬的新發癲癇都應先排除低血糖。',
+  common_mistakes: [
+    '中老年犬新發癲癇直接進行腦部 MRI 而未先測血糖——insulinoma 是可治療的低血糖原因',
+    '隨機血糖正常即排除 insulinoma——需在低血糖發作時同步測胰島素，或進行禁食試驗',
+    '快速靜脈推注 50% dextrose——刺激更多胰島素分泌造成反彈性低血糖，應稀釋後緩慢給予',
+    '術後血糖正常即認為治癒——約 50-70% 會在 6-18 個月後復發，需長期監控',
+    '餵食單純糖類（果糖、蜂蜜大量給予）來治療慢性低血糖——會刺激更多胰島素分泌，應用複合碳水化合物和蛋白質',
+  ],
+  disease_data: {
+    signalment: '中大型犬，中位年齡 9-10 歲（範圍 3-14 歲）。German Shepherd、Irish Setter、Golden Retriever、Boxer、Standard Poodle 較常見。無明顯性別偏好。貓極罕見。',
+    etiology: '確切病因不明。胰臟 β 細胞發生腫瘤性轉化，可能涉及 MEN1 基因或其他腫瘤抑制基因突變。約 50% 為惡性（有轉移能力），約 50% 為良性（局限於胰臟）。',
+    pathogenesis: '胰臟 β 細胞腫瘤性轉化 → 喪失血糖負回饋調控 → 不受調節地持續分泌胰島素 → 持續性低血糖 → 神經性低血糖症狀（大腦能量不足）+ 腎上腺素代償反應 → 反覆發作性虛弱/癲癇/collapse',
+    clinical_signs: [
+      { sign: '發作性虛弱/無力', category: 'primary', description: '最常見症狀（65-80%），空腹或運動後出現，數分鐘內可自行緩解' },
+      { sign: '癲癇發作', category: 'primary', description: '約 30-50%，嚴重低血糖導致的大腦能量不足' },
+      { sign: '後肢無力/共濟失調', category: 'primary', description: '「突然軟腳」是飼主常見描述' },
+      { sign: 'Collapse/昏迷', category: 'primary', description: '嚴重低血糖可致失去意識' },
+      { sign: '顫抖/肌肉束狀跳動', category: 'secondary', description: '腎上腺素反應和神經肌肉興奮性增加' },
+      { sign: '過度飢餓/焦躁', category: 'secondary', description: '低血糖引發的代償性反應' },
+    ],
+    staging: {
+      system: 'Modified WHO Clinical Staging for Canine Insulinoma',
+      stages: [
+        'Stage I：腫瘤局限於胰臟，無轉移',
+        'Stage II：腫瘤侵犯區域淋巴結',
+        'Stage III：遠端轉移（最常見為肝臟）',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '肝功能不全', key_differentiator: '低白蛋白、低 BUN、膽酸升高、肝酵素異常；insulin 正常偏低' },
+      { condition: 'Addison\'s disease（腎上腺皮質不全）', key_differentiator: '低鈉高鉀、ACTH 刺激試驗異常；可伴低血糖但胰島素正常' },
+      { condition: '敗血症', key_differentiator: '發燒、白血球異常、明確感染源；低血糖為全身疾病的一部分' },
+      { condition: '腫瘤相關低血糖（Non-islet cell tumor）', key_differentiator: '大型肉瘤（肝臟或腹腔）分泌 IGF-II 導致低血糖；胰島素通常偏低' },
+      { condition: '幼犬/Toy breed 低血糖', key_differentiator: '幼齡或極小型犬，肝醣儲存不足；禁食即發作，給糖即緩解' },
+      { condition: '外源性胰島素過量', key_differentiator: '病史（糖尿病治療中犬）、胰島素極高但 C-peptide 低（外源性 insulin 不含 C-peptide）' },
+    ],
+    diagnostic_workup: '1. CBC/BCS（基礎評估、排除肝病）→ 2. 空腹血糖（< 60 mg/dL 時同步測血清 insulin）→ 3. 禁食試驗（隨機血糖正常時住院禁食 12-72 小時監控）→ 4. AIGR 計算 → 5. 腹部超音波（胰臟腫塊定位 + 肝轉移篩檢）→ 6. CT 雙期增強（進一步定位、分期）→ 7. 胸腔 X 光（遠端轉移）',
+    treatment_protocol: '首選手術：partial pancreatectomy ± 肝轉移灶活檢/切除。術前穩定血糖（dextrose CRI）。術後監控血糖 48 小時。內科管理（不宜手術者）：頻繁小餐 + Diazoxide 5-10 mg/kg PO BID + Prednisone 0.25-0.5 mg/kg PO BID。低血糖急救：25% dextrose 0.5-1 mL/kg slow IV bolus + 2.5-5% dextrose CRI。',
+    prognosis: 'Stage I 手術後：MST 12-18 個月。Stage II/III：MST 6-12 個月（手術 + 內科）。僅內科管理：MST 約 6-12 個月。約 50-70% 術後 6-18 個月復發。術後血糖正常化為良好預後指標。',
+    monitoring: '術後：每 2-4 小時測血糖共 48 小時 → 穩定後每 1-2 個月追蹤空腹血糖 → 每 3 個月腹部超音波（胰臟復發/肝轉移）→ 低血糖復發時重新評估手術或調整內科藥物。內科管理者：每 2-4 週追蹤血糖和症狀，漸進調整 Diazoxide 劑量。',
+    owner_communication: 'Insulinoma 是一種可治療但通常無法治癒的腫瘤。手術可顯著延長存活時間並改善生活品質。飼主需學習居家低血糖急救（corn syrup 塗抹牙齦）。飲食管理是長期照護的關鍵——頻繁小餐、避免空腹和劇烈運動。內科藥物可有效控制低血糖但可能需逐步加量。需定期回診監控。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病理生理段落後', type: 'flowchart', description: 'Insulinoma 低血糖病理機轉示意圖' },
+    { position: '治療段落後', type: 'flowchart', description: 'Insulinoma 診斷與治療決策流程圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Diazoxide', 'Prednisone', 'Dextrose', 'Octreotide'],
+  references: [
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 24: Tumors of the Endocrine System — Insulinoma Section.', relevance: 'Insulinoma 完整章節' },
+    { type: 'journal', citation: 'Polton GA et al. Survival analysis of dogs with advanced insulinoma treated with surgery and medical therapy. J Vet Intern Med. 2007;21(5):1060-1065.', relevance: '犬 insulinoma 手術與內科治療存活分析' },
+    { type: 'journal', citation: 'Tobin RL et al. Outcome of surgical versus medical treatment of dogs with beta cell neoplasia: 39 cases (1990-1997). J Am Vet Med Assoc. 1999;215(2):226-230.', relevance: '犬 insulinoma 手術 vs 內科比較' },
+    { type: 'guideline', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 53: Disorders of the Endocrine Pancreas — Insulinoma.', relevance: '內科教科書 insulinoma 章節' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 靶向治療與酪氨酸激酶抑制劑 — 治療型 */
+const contentTKI: NodeContent = {
+  id: 'CONTENT-ONCO-L5-006',
+  node_id: 'ONCO-L5-006',
+  version: 1,
+  summary: '酪氨酸激酶抑制劑（Tyrosine Kinase Inhibitors, TKIs）是獸醫腫瘤科第一類真正的靶向治療藥物。Toceranib phosphate（Palladia）為 FDA 核准的犬用多靶點 TKI，抑制 VEGFR、PDGFR 與 KIT；Masitinib（Masivet/Kinavet）主要靶向 c-KIT 突變型 MCT。TKI 代表獸醫腫瘤治療從傳統細胞毒性化療邁向精準醫學的里程碑。',
+  learning_objectives: [
+    '說明 TKI 的作用機轉（VEGFR、PDGFR、KIT 抑制）',
+    '比較 Toceranib 與 Masitinib 的適應症、劑量與副作用差異',
+    '描述 c-KIT 突變檢測在 MCT 治療決策中的角色',
+    '列出 TKI 常見副作用與監控計畫',
+    '說明節拍式化療（metronomic chemotherapy）與 TKI 的協同策略',
+  ],
+  key_points: [
+    'Toceranib（Palladia）：多靶點 TKI，抑制 VEGFR2、PDGFR-β、KIT、Flt-3、RET',
+    'Masitinib（Masivet）：選擇性 KIT 抑制劑，主要用於不可切除 c-KIT 突變型 MCT',
+    '犬 MCT 約 25-30% 有 c-KIT（exon 11）突變，突變型對 TKI 反應率更高（~60% vs ~40%）',
+    'Toceranib 標準劑量：3.25 mg/kg PO 隔日給藥（Monday-Wednesday-Friday）；副作用管理常需劑量調整',
+    '主要副作用：腸胃道（厭食/嘔吐/腹瀉 40-50%）、蛋白尿（30%）、高血壓、嗜中性球減少、跛行',
+    '監控：每 2 週 CBC + 生化（最初 6 週），之後每 4-6 週；每月血壓 + 尿蛋白/肌酐比值',
+  ],
+  body: `# 靶向治療與酪氨酸激酶抑制劑 (TKI)
+
+## 一、作用機轉 (Mechanism of Action)
+
+### 酪氨酸激酶信號通路
+受體酪氨酸激酶（Receptor Tyrosine Kinases, RTKs）在腫瘤增殖、血管新生與轉移中扮演關鍵角色：
+- **KIT（CD117）**：肥大細胞、造血幹細胞表面受體，c-KIT 突變導致構成性活化（constitutive activation）→ 不受控增殖
+- **VEGFR（1/2/3）**：血管內皮生長因子受體，驅動腫瘤血管新生（tumor angiogenesis）
+- **PDGFR（α/β）**：血小板衍生生長因子受體，促進基質細胞增殖與腫瘤微環境重塑
+
+### TKI 作用原理
+TKI 為小分子藥物，競爭性結合 RTK 的 ATP 結合位點，阻斷下游訊號傳遞（Ras-MAPK、PI3K-AKT 等），導致腫瘤細胞增殖停止與凋亡。
+
+## 二、藥物各論
+
+### Toceranib phosphate（Palladia）
+| 項目 | 內容 |
+|------|------|
+| 靶點 | VEGFR2, PDGFR-β, KIT, Flt-3, RET |
+| FDA 核准適應症 | 犬不可切除 Grade II-III MCT（Patnaik 分級） |
+| 劑量 | 3.25 mg/kg PO 隔日（MWF 給藥常見） |
+| 反應率 | 整體 ORR ~42%；c-KIT 突變型 ~60%；野生型 ~37% |
+| 藥物交互 | 避免與 NSAIDs 併用（增加 GI 毒性）；P-glycoprotein 基質 |
+
+### Masitinib（Masivet/Kinavet）
+| 項目 | 內容 |
+|------|------|
+| 靶點 | KIT（高選擇性）、PDGFR-α、LYN、FGFR3 |
+| 核准適應症 | 犬不可切除 c-KIT 突變型 MCT（EMA 核准） |
+| 劑量 | 12.5 mg/kg PO SID |
+| 反應率 | c-KIT 突變型 ORR ~50%；中位存活時間較對照組延長 |
+| 特點 | 對 c-KIT exon 11 突變選擇性高，非 KIT 依賴腫瘤效果有限 |
+
+## 三、c-KIT 突變檢測（生物標記驅動治療）
+
+### c-KIT 突變的臨床意義
+- 犬 MCT 約 25-30% 有 c-KIT 突變（主要在 exon 11 juxtamembrane domain）
+- 突變導致 KIT 受體構成性磷酸化，不需 SCF 配體即持續活化
+- **突變型對 TKI 反應較好**：但野生型也可從 VEGFR/PDGFR 抑制中獲益
+- KIT 免疫組化染色模式（pattern I/II/III）可預測生物行為
+
+### 檢測方法
+- **PCR + 定序**：金標準，檢測 exon 11 內部串聯重複（ITD）
+- **KIT IHC 染色模式**：Pattern III（瀰漫性細胞質染色）與較差預後相關
+- 建議不可切除/復發 MCT 均應送 c-KIT 突變檢測
+
+## 四、副作用與監控
+
+### 常見副作用（Toceranib 為例）
+| 副作用 | 發生率 | 管理 |
+|--------|--------|------|
+| 腸胃道（厭食/嘔吐/腹瀉） | 40-50% | 劑量減量、止吐藥（Maropitant）、drug holiday |
+| 嗜中性球減少 | 20-30% | 暫停至 ANC > 1500/μL 再恢復 |
+| 蛋白尿 | ~30% | 監控 UPC；UPC > 2.0 考慮劑量調整或停藥 |
+| 高血壓 | 15-25% | 定期血壓監測；Amlodipine 5-10 mg/kg 控制 |
+| 跛行/肌肉疼痛 | 10-20% | 鎮痛處理、drug holiday |
+| 手掌/足底角質增生（hand-foot 等效） | 少見 | 保溼、劑量調整 |
+
+### 監控計畫
+| 時間點 | 監測項目 |
+|--------|---------|
+| 基線 | CBC、生化（含 BUN/Cre/ALT/ALP）、UPC、血壓、腫瘤測量 |
+| 每 2 週（最初 6 週） | CBC、生化 |
+| 之後每 4-6 週 | CBC、生化、UPC、血壓 |
+| 每 4-8 週 | 腫瘤測量/影像評估療效 |
+
+## 五、節拍式化療與 TKI 的協同
+
+### 概念
+低劑量持續給藥（metronomic chemotherapy）+ TKI 可同時靶向腫瘤細胞與腫瘤微環境：
+- **Cyclophosphamide metronomic**（10-15 mg/m² PO SID）：抗血管新生 + 免疫調節
+- **Toceranib + Cyclophosphamide**：協同抗血管新生，部分研究顯示比單藥更佳
+- **Piroxicam + Toceranib**：注意 GI 毒性風險增加，需謹慎監控
+
+## 六、台灣可用性與實務考量
+
+- Toceranib（Palladia）：台灣可通過進口取得，但價格昂貴
+- Masitinib（Masivet）：台灣可用性更受限
+- c-KIT 突變檢測：可外送至國外實驗室（美國 CU/MSU），周轉時間 2-3 週
+- 替代方案：Imatinib（人用 Glivec）偶有超標使用報告，但缺乏獸醫藥動學資料
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 液態切片（circulating tumor DNA） | MCT 治療中的微小殘留病偵測與早期復發預警 | 犬初步研究中 |
+| 免疫查核點抑制劑（anti-PD-1/PD-L1） | 犬腫瘤免疫治療的新前沿 | 犬專用 anti-PD-L1 臨床試驗進行中 |
+| 多靶點組合（TKI + 免疫治療） | 協同抗腫瘤效果 | 人醫已成為多種癌症標準治療，獸醫探索階段 |`,
+  clinical_pearl: 'Toceranib 的實務處方技巧：(1) 起始劑量 3.25 mg/kg 隔日，但臨床上約 50% 的犬需在治療初期因 GI 副作用而減量至 2.75 mg/kg 或暫停 1-2 天（drug holiday）。(2) 永遠不要與 NSAIDs 併用——GI 穿孔風險顯著增加。(3) 蛋白尿是被低估的副作用：每次回診都應檢查 UPC。(4) 即使野生型 MCT，Toceranib 仍有 ~37% 反應率（靠 VEGFR/PDGFR 抑制），所以不要因 c-KIT 陰性就完全放棄 TKI。(5) 告知飼主：TKI 是「長期口服管理」而非短期療程，需準備持續用藥與監控的費用與時間。\n\n【台灣實務】Toceranib 價格約每錠 500-1000 台幣，中大型犬月費可達 15,000-30,000 台幣。建議在開始 TKI 前先與飼主充分溝通費用與預期效果。',
+  common_mistakes: [
+    '未在開始 TKI 前進行 c-KIT 突變檢測，錯失精準治療機會',
+    '將 Toceranib 與 NSAIDs（如 Piroxicam）併用而不密切監控 GI 毒性',
+    '忽略定期監控蛋白尿（UPC）和血壓——等到出現臨床症狀才發現已嚴重',
+    '在嗜中性球過低（ANC < 1500/μL）時繼續給藥，增加感染風險',
+    'c-KIT 突變陰性即完全排除 TKI 的使用——野生型仍可從 VEGFR 抑制獲益',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'RTK 信號通路段落後', type: 'pathway_diagram', description: 'VEGFR/PDGFR/KIT 訊號通路與 TKI 作用位點示意圖' },
+    { position: '副作用表格後', type: 'monitoring_timeline', description: 'TKI 監控計畫時間軸圖' },
+  ],
+  interactive_placeholders: [
+    { position: '文末', type: 'decision_tree', description: 'MCT 治療決策樹：可切除 vs 不可切除 × c-KIT 突變狀態' },
+  ],
+  drug_api_links: ['Toceranib', 'Masitinib', 'Cyclophosphamide', 'Piroxicam'],
+  references: [
+    { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (Palladia, SU11654), a receptor tyrosine kinase inhibitor, for the treatment of dogs with recurrent (either local or distant) mast cell tumor following surgical excision. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib FDA 核准臨床試驗（MCT）' },
+    { type: 'journal', citation: 'Hahn KA et al. Masitinib is safe and effective for the treatment of canine mast cell tumors. J Vet Intern Med. 2008;22(6):1301-1309.', relevance: 'Masitinib 犬 MCT 臨床試驗' },
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 18: Targeted Therapy.', relevance: '獸醫腫瘤靶向治療教材' },
+    { type: 'journal', citation: 'Weishaar KM et al. c-Kit Mutation and Localization Status as Response Predictors in Mast Cell Tumors (MCTs) Treated with Toceranib Phosphate (Palladia). J Vet Intern Med. 2018;32(1):394-405.', relevance: 'c-KIT 突變與 TKI 治療反應預測' },
+    { type: 'guideline', citation: 'Veterinary Cooperative Oncology Group (VCOG) Consensus Statement: Tyrosine Kinase Inhibitors in Veterinary Oncology. Veterinary and Comparative Oncology, 2021.', relevance: 'VCOG TKI 獸醫腫瘤科共識聲明' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const ONCO_CONTENTS = new Map<string, NodeContent>([
   // Layer 0
@@ -4490,6 +5026,8 @@ export const ONCO_CONTENTS = new Map<string, NodeContent>([
   ['ONCO-L3-011', contentNasalTumor],
   ['ONCO-L3-012', contentHistiocyticSarcoma],
   ['ONCO-L3-013', contentThyroidCarcinoma],
+  ['ONCO-L3-014', contentSCC],
+  ['ONCO-L3-015', contentInsulinoma],
   // Layer 4
   ['ONCO-L4-001', contentTumorCytology],
   ['ONCO-L4-002', contentStagingWorkup],
@@ -4500,4 +5038,5 @@ export const ONCO_CONTENTS = new Map<string, NodeContent>([
   ['ONCO-L5-003', contentCancerPain],
   ['ONCO-L5-004', contentRadiationTherapy],
   ['ONCO-L5-005', contentMetronomicChemo],
+  ['ONCO-L5-006', contentTKI],
 ]);

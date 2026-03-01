@@ -30,7 +30,7 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
   { id: 'CARDIO-E-014', source_node_id: 'CARDIO-L3-001', target_node_id: 'CARDIO-L5-001', relation_type: 'clinical_apply', weight: 1, description: 'MMVD 進展至 CHF 需要治療', bidirectional: false, unlock_condition: null },
 
   // 心絲蟲 → X 光
-  { id: 'CARDIO-E-015', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L4-004', relation_type: 'clinical_apply', weight: 0.8, description: '心絲蟲需 X 光評估肺動脈變化', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-015', source_node_id: 'CARDIO-L3-005', target_node_id: 'CARDIO-L4-004', relation_type: 'clinical_apply', weight: 0.8, description: '心絲蟲需 X 光評估肺動脈變化', bidirectional: false, unlock_condition: null },
 
   // 補充 prerequisite 邊（L1 → L3）
   { id: 'CARDIO-E-016', source_node_id: 'CARDIO-L1-001', target_node_id: 'CARDIO-L3-004', relation_type: 'prerequisite', weight: 0.8, description: '心臟解剖是理解心包膜積液的前置知識', bidirectional: false, unlock_condition: null },
@@ -86,4 +86,35 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
   { id: 'CARDIO-E-038', source_node_id: 'CARDIO-L3-001', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 1, description: 'MMVD ACVIM 分期是長期管理基礎', bidirectional: false, unlock_condition: null },
   { id: 'CARDIO-E-039', source_node_id: 'CARDIO-L3-002', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'DCM 需長期追蹤與藥物調整', bidirectional: false, unlock_condition: null },
   { id: 'CARDIO-E-040', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'HCM 需長期監控與抗血栓預防', bidirectional: false, unlock_condition: null },
+
+  // ─── 審計修復：L3 缺少 prerequisite 邊 ───
+  // CARDIO-L3-008 (感染性心內膜炎) 需要 L1/L2 prerequisite
+  { id: 'CARDIO-E-041', source_node_id: 'CARDIO-L1-001', target_node_id: 'CARDIO-L3-008', relation_type: 'prerequisite', weight: 0.8, description: '心臟瓣膜解剖是理解感染性心內膜炎的前置知識', bidirectional: false, unlock_condition: null },
+  // CARDIO-L3-009 (肺動脈高壓) 需要 L1/L2 prerequisite
+  { id: 'CARDIO-E-042', source_node_id: 'CARDIO-L1-003', target_node_id: 'CARDIO-L3-009', relation_type: 'prerequisite', weight: 0.8, description: '血流動力學是理解肺動脈高壓的前置知識', bidirectional: false, unlock_condition: null },
+  // CARDIO-L3-010 (貓 ATE) 需要 L1/L2 prerequisite
+  { id: 'CARDIO-E-043', source_node_id: 'CARDIO-L1-003', target_node_id: 'CARDIO-L3-010', relation_type: 'prerequisite', weight: 0.8, description: '血流動力學是理解動脈血栓栓塞的前置知識', bidirectional: false, unlock_condition: null },
+
+  // ─── 疾病間臨床關聯邊 ───
+  // DCM → 心律不整: complication
+  { id: 'CARDIO-E-044', source_node_id: 'CARDIO-L3-002', target_node_id: 'CARDIO-L3-007', relation_type: 'complication', weight: 0.9, description: '擴張型心肌病常併發心房顫動等心律不整', bidirectional: false, unlock_condition: null },
+  // HCM → 心律不整: complication
+  { id: 'CARDIO-E-045', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L3-007', relation_type: 'complication', weight: 0.7, description: '肥厚型心肌病可誘發心室性心律不整', bidirectional: false, unlock_condition: null },
+  // MMVD → 心內膜炎: complication
+  { id: 'CARDIO-E-046', source_node_id: 'CARDIO-L3-001', target_node_id: 'CARDIO-L3-008', relation_type: 'complication', weight: 0.6, description: '退化瓣膜是感染性心內膜炎的危險因子', bidirectional: false, unlock_condition: null },
+  // 心絲蟲 → 心律不整: complication
+  { id: 'CARDIO-E-047', source_node_id: 'CARDIO-L3-005', target_node_id: 'CARDIO-L3-007', relation_type: 'complication', weight: 0.7, description: '心絲蟲感染可導致繼發性心律不整', bidirectional: false, unlock_condition: null },
+  // 肺動脈高壓 → 心律不整: complication
+  { id: 'CARDIO-E-048', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L3-007', relation_type: 'complication', weight: 0.8, description: '慢性肺動脈高壓導致右心衰竭與心律不整', bidirectional: false, unlock_condition: null },
+  // DCM → CHF 治療: clinical_apply
+  { id: 'CARDIO-E-049', source_node_id: 'CARDIO-L3-002', target_node_id: 'CARDIO-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '擴張型心肌病最終需要心衰竭治療', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 審計缺失邊補齊 ───
+  { id: 'CARDIO-E-050', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L4-002', relation_type: 'clinical_apply', weight: 1, description: '心包膜積液需心臟超音波確診（偵測積液量、心包填塞徵象）並引導心包穿刺術', bidirectional: false, unlock_condition: null },
+
+  // ─── Medium/Low fixes: 鑑別與併發邊補齊 ───
+  // 心律不整 ↔ MMVD: differential（老年犬暈厥需鑑別心律不整性 vs 瓣膜性心衰竭）
+  { id: 'CARDIO-E-051', source_node_id: 'CARDIO-L3-007', target_node_id: 'CARDIO-L3-001', relation_type: 'differential', weight: 0.7, description: '老年犬暈厥需鑑別心律不整與瓣膜性心衰竭——兩者均可導致暈厥但機轉與處置不同', bidirectional: true, unlock_condition: null },
+  // 肺高壓 ← 心絲蟲: complication（心絲蟲導致肺高壓——已有 CARDIO-E-033 但此處加上反向說明）
+  { id: 'CARDIO-E-052', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L3-005', relation_type: 'complication', weight: 0.8, description: '肺高壓患犬需排查心絲蟲感染作為根本原因', bidirectional: false, unlock_condition: null },
 ];

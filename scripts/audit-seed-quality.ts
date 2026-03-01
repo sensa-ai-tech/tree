@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * VetKnowledgeTree 品質審計腳本
  *
@@ -258,7 +259,6 @@ function auditEdgeIntegrity(sp: SpecialtyData): DimensionScore {
   const issues: string[] = [];
   let deductions = 0;
 
-  const nodeIds = new Set(sp.nodes.map((n) => n.id));
   const allNodeIds = new Set(ALL_NODES.map((n) => n.id));
 
   // 3a. 每個 L3 節點需 ≥1 條邊從 L1/L2 指向它 (prerequisite/builds_on/clinical_apply)

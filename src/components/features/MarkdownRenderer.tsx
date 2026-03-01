@@ -4,10 +4,28 @@ import { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
+import dynamic from 'next/dynamic';
 import { parseContentMarkers } from '@/lib/utils/markdown-renderer';
-import { MermaidRenderer } from '@/components/features/MermaidRenderer';
 import { ImagePlaceholder } from '@/components/features/ImagePlaceholder';
+
+const MermaidRenderer = dynamic(
+  () => import('@/components/features/MermaidRenderer').then(m => m.MermaidRenderer),
+  { ssr: false, loading: () => <div className="my-4 h-48 animate-pulse rounded-lg bg-gray-100" /> }
+);
 import { cn } from '@/lib/utils/cn';
+
+/** Custom sanitization schema — allows safe HTML tags used in vet content */
+const sanitizeSchema = {
+  ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames ?? []), 'div', 'span'],
+  attributes: {
+    ...defaultSchema.attributes,
+    div: [...(defaultSchema.attributes?.div ?? []), 'className', 'data-desc'],
+    span: [...(defaultSchema.attributes?.span ?? []), 'className'],
+    code: [...(defaultSchema.attributes?.code ?? []), 'className'],
+  },
+};
 
 interface MarkdownRendererProps {
   content: string;
@@ -35,7 +53,7 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
     >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
         components={{
           table: ({ children, ...props }) => (
             <div className="overflow-x-auto -mx-2 px-2">

@@ -48,6 +48,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <DemoDataProvider>
       <div className="min-h-screen bg-gray-50">
+        {/* Skip to content — WCAG 2.1 Level A */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-indigo-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:shadow-lg focus:outline-none"
+        >
+          跳至主要內容
+        </a>
         <Navbar onMenuClick={handleOpenSidebar} />
         <div className="flex">
           {/* 手機 overlay backdrop */}
@@ -71,7 +78,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           />
 
           {/* 主要內容區 — 手機底部留空給 bottom nav */}
-          <main className="min-w-0 flex-1 p-4 pb-20 md:p-6 md:pb-6 lg:p-8 lg:pb-8">
+          <main id="main-content" className="min-w-0 flex-1 p-4 pb-20 md:p-6 md:pb-6 lg:p-8 lg:pb-8">
             {children}
           </main>
         </div>

@@ -1,7 +1,7 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { calculateXP, calculateTotalSessionXP } from '@/lib/gamification/xp-calculator';
 import { getLevelFromXP, getTierFromLevel, getLevelInfo } from '@/lib/gamification/level-system';
-import { calculateNextReview, createInitialState, isDueForReview } from '@/lib/gamification/spaced-rep';
+import { calculateNextReview, createInitialState } from '@/lib/gamification/spaced-rep';
 import { checkNewAchievements, type UserAchievementState } from '@/lib/gamification/achievements';
 
 describe('Complete Learning Flow', () => {

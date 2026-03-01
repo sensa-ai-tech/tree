@@ -418,9 +418,9 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['immunology', 'defensins', 'innate_immunity'], image_placeholder: null,
   },
 
-  // ========== DERM-L1-003 微生物生態 (8 questions) ==========
+  // ========== DERM-L1-001 皮膚微生物生態 (8 questions) ==========
   {
-    id: 'Q-DERM-L1-003-A', node_id: 'DERM-L1-003', question_type: 'mcq',
+    id: 'Q-DERM-L1-003-A', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '犬正常皮膚微生物群（skin microbiome）中，最主要的常駐菌（resident flora）為何？',
     options: [
       'Staphylococcus pseudintermedius',
@@ -433,7 +433,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'microbiome', 'Staphylococcus'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-B', node_id: 'DERM-L1-003', question_type: 'mcq',
+    id: 'Q-DERM-L1-003-B', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: 'Malassezia pachydermatis 在犬正常皮膚上的分布特徵為何？',
     options: [
       '均勻分布於全身皮膚',
@@ -446,7 +446,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'Malassezia', 'distribution'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-C', node_id: 'DERM-L1-003', question_type: 'mcq',
+    id: 'Q-DERM-L1-003-C', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '下列何者是維持犬皮膚微生物生態平衡的重要因素？',
     options: [
       '定期使用全身性抗生素',
@@ -459,7 +459,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'microbiome_homeostasis'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-D', node_id: 'DERM-L1-003', question_type: 'mcq',
+    id: 'Q-DERM-L1-003-D', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '犬皮膚 pH 值約為多少？與人類相比有何差異？',
     options: [
       '犬約 4.5-5.5，與人類相近',
@@ -472,7 +472,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'skin_pH', 'species_difference'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-E', node_id: 'DERM-L1-003', question_type: 'case_based',
+    id: 'Q-DERM-L1-003-E', node_id: 'DERM-L1-001', question_type: 'case_based',
     question: '一隻 CAD 犬長期使用外用類固醇後出現局部皮膚感染惡化。從微生物生態學的角度，最可能的機轉為何？',
     options: [
       '類固醇直接促進細菌生長',
@@ -485,7 +485,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['microbiology', 'steroid', 'dysbiosis'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-F', node_id: 'DERM-L1-003', question_type: 'case_based',
+    id: 'Q-DERM-L1-003-F', node_id: 'DERM-L1-001', question_type: 'case_based',
     question: '一隻犬反覆發生膿皮症（pyoderma），培養持續長出 methicillin-resistant S. pseudintermedius（MRSP）。從微生物生態的觀點，最佳的長期管理策略為何？',
     options: [
       '持續輪換使用不同全身性抗生素',
@@ -498,7 +498,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['microbiology', 'MRSP', 'antimicrobial_stewardship'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-G', node_id: 'DERM-L1-003', question_type: 'true_false',
+    id: 'Q-DERM-L1-003-G', node_id: 'DERM-L1-001', question_type: 'true_false',
     question: '犬皮膚正常微生物群（commensal flora）的存在有助於抵抗致病菌的定殖，這稱為「定殖抗性（colonization resistance）」。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
@@ -506,7 +506,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'colonization_resistance'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-H', node_id: 'DERM-L1-003', question_type: 'mcq',
+    id: 'Q-DERM-L1-003-H', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '下列關於犬皮膚皮癬菌（dermatophyte）的描述，何者正確？',
     options: [
       '皮癬菌是犬皮膚的正常常駐菌',
@@ -1774,4 +1774,292 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
   { id: 'Q-DERM-L3-013-001', node_id: 'DERM-L3-013', question_type: 'mcq', question: '犬皮膚 T 細胞淋巴瘤（CTCL）最常見的臨床亞型為何？', options: ['皮膚 B 細胞淋巴瘤', '蕈狀肉芽腫（mycosis fungoides）', '皮膚漿細胞瘤', 'Sézary syndrome'], correct_answer: '蕈狀肉芽腫（mycosis fungoides）', explanation: '蕈狀肉芽腫（mycosis fungoides, MF）是犬最常見的皮膚淋巴瘤亞型，屬於上皮性 T 細胞淋巴瘤（epitheliotropic CTCL）。臨床分期：斑疹期（patch）→ 斑塊期（plaque）→ 腫瘤期（tumor）。Sézary syndrome 為其白血病變體，有循環中的腫瘤性 T 細胞。確診依賴皮膚組織病理。', difficulty: 4, spaced_rep: true, tags: ['CTCL', 'mycosis_fungoides', 'lymphoma'], image_placeholder: null },
   { id: 'Q-DERM-L3-013-002', node_id: 'DERM-L3-013', question_type: 'mcq', question: '蕈狀肉芽腫的組織病理學特徵為何？', options: ['表皮下水泡', '腫瘤性 T 淋巴球的上皮趨向性（epitheliotropism），形成 Pautrier 微膿瘍', '棘層溶解性膿疱', '嗜酸球肉芽腫'], correct_answer: '腫瘤性 T 淋巴球的上皮趨向性（epitheliotropism），形成 Pautrier 微膿瘍', explanation: '蕈狀肉芽腫的核心病理特徵為腫瘤性 T 淋巴球具有上皮趨向性，侵入表皮形成 Pautrier 微膿瘍（Pautrier microabscesses）。細胞形態表現為核不規則（cerebriform nuclei）的中至大型淋巴球。免疫組織化學染色通常為 CD3+/CD8-（CD4+ 或 CD4-/CD8-）。早期斑疹期可能被誤診為發炎性皮膚病。', difficulty: 4, spaced_rep: true, tags: ['CTCL', 'histopathology', 'Pautrier', 'epitheliotropism'], image_placeholder: null },
   { id: 'Q-DERM-L3-013-003', node_id: 'DERM-L3-013', question_type: 'mcq', question: '犬皮膚 T 細胞淋巴瘤（CTCL）的治療選項中，何者最常用於早期斑疹/斑塊期？', options: ['CHOP 化療方案', '外用氮芥（mechlorethamine）或 retinoids（isotretinoin/acitretin）', '全身放射線治療', '手術廣泛切除'], correct_answer: '外用氮芥（mechlorethamine）或 retinoids（isotretinoin/acitretin）', explanation: '早期 CTCL（斑疹/斑塊期）可用外用氮芥或口服 retinoids 控制。Lomustine（CCNU）是進展期最常用的化療藥物。CHOP 方案效果不佳。局部放射線可用於單一病灶。預後隨分期差異大：早期可存活數月至數年，腫瘤期中位存活約 4-6 個月。', difficulty: 5, spaced_rep: true, tags: ['CTCL', 'treatment', 'retinoids', 'mechlorethamine', 'lomustine'], image_placeholder: null },
+
+  // ========== DERM-L3-014 肥大細胞瘤 MCT (8 questions) ==========
+  {
+    id: 'Q-DERM-MCT-001', node_id: 'DERM-L3-014', question_type: 'mcq',
+    question: '犬肥大細胞瘤（MCT）佔犬皮膚腫瘤的比例約為多少？',
+    options: ['5-10%', '16-21%', '30-35%', '40-50%'],
+    correct_answer: '16-21%',
+    explanation: 'MCT 是犬最常見的皮膚惡性腫瘤，約佔犬所有皮膚腫瘤的 16-21%。好發品種包括拳師犬、鬥牛㹴、拉布拉多、金毛尋回犬、巴哥犬。MCT 被稱為「偉大的模仿者」，因其外觀極為多變。',
+    difficulty: 3, spaced_rep: true, tags: ['MCT', 'epidemiology'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-002', node_id: 'DERM-L3-014', question_type: 'mcq',
+    question: 'Kiupel 二級制 MCT 分級系統中，符合下列哪項即判定為 High grade？',
+    options: [
+      '有絲分裂指數 ≥ 3/10 HPF',
+      '有絲分裂指數 ≥ 7/10 HPF',
+      '腫瘤直徑 > 3 cm',
+      '腫瘤位於會陰或指間',
+    ],
+    correct_answer: '有絲分裂指數 ≥ 7/10 HPF',
+    explanation: 'Kiupel High grade 標準（符合任一即為 High grade）：①有絲分裂指數 ≥ 7/10 HPF；②≥ 3 個多核巨細胞/10 HPF；③≥ 3 個怪異核/10 HPF；④核直徑異常（karyomegaly）。此系統簡化了 Patnaik Grade II 過大的問題，觀察者間一致性更高。',
+    difficulty: 4, spaced_rep: true, tags: ['MCT', 'Kiupel', 'grading'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-003', node_id: 'DERM-L3-014', question_type: 'mcq',
+    question: '犬 MCT 手術切除建議的側面邊界為多少？',
+    options: ['0.5-1 cm', '1-1.5 cm', '2-3 cm', '5 cm'],
+    correct_answer: '2-3 cm',
+    explanation: 'MCT 手術切除建議側面邊界 2-3 cm，深面至少 1 個完整筋膜面（fascial plane）。邊界不足是局部復發的主要原因。切除標本需以墨水標記方向，送組織病理評估邊界清淨度。Kiupel High grade 或 Patnaik Grade II/III 建議 3 cm。',
+    difficulty: 3, spaced_rep: true, tags: ['MCT', 'surgery', 'margin'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-004', node_id: 'DERM-L3-014', question_type: 'mcq',
+    question: 'c-KIT 突變在犬 MCT 中的臨床意義為何？',
+    options: [
+      '所有 MCT 都有 c-KIT 突變',
+      'c-KIT 突變與較差預後相關，且為酪胺酸激酶抑制劑（TKI）的治療標靶',
+      'c-KIT 突變代表預後良好',
+      'c-KIT 突變僅見於 Patnaik Grade I',
+    ],
+    correct_answer: 'c-KIT 突變與較差預後相關，且為酪胺酸激酶抑制劑（TKI）的治療標靶',
+    explanation: '約 25-30% 犬 MCT 存在 c-KIT（CD117）exon 11 ITD 突變，導致受體持續活化。c-KIT 突變陽性與較高的復發率及較差預後相關，但同時是 TKI（如 Toceranib/Palladia）的治療標靶，突變陽性者對 TKI 反應率 > 60%。',
+    difficulty: 4, spaced_rep: true, tags: ['MCT', 'c-KIT', 'TKI', 'prognosis'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-005', node_id: 'DERM-L3-014', question_type: 'mcq',
+    question: 'MCT 手術前預防肥大細胞脫顆粒的標準藥物組合為何？',
+    options: [
+      'Prednisolone + Cyclosporine',
+      'Diphenhydramine（H1 blocker）+ Famotidine（H2 blocker）',
+      'Atropine + Adrenaline',
+      'Dexamethasone + Omeprazole',
+    ],
+    correct_answer: 'Diphenhydramine（H1 blocker）+ Famotidine（H2 blocker）',
+    explanation: '術前 30 分鐘給予 H1 blocker（Diphenhydramine 2 mg/kg IM）+ H2 blocker（Famotidine 0.5-1 mg/kg IV）可預防手術操作誘發的肥大細胞脫顆粒效應（組胺釋放→低血壓、蕁麻疹、胃酸分泌增加）。這是 MCT 手術前的標準預防措施。',
+    difficulty: 3, spaced_rep: true, tags: ['MCT', 'degranulation', 'H1_H2_blocker'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-006', node_id: 'DERM-L3-014', question_type: 'true_false',
+    question: '犬 MCT 的 FNA 細胞學上，典型表現為含有紫色異染（metachromatic）顆粒的圓形細胞。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'MCT 的 FNA 細胞學在 Diff-Quik 或 Wright-Giemsa 染色下，可見圓形至卵圓形的肥大細胞，細胞質充滿紫色異染（metachromatic）顆粒。這是 MCT 最具特徵性的細胞學表現。需注意分化不良的 MCT（Patnaik III）顆粒可能稀少或不典型，增加診斷難度。',
+    difficulty: 3, spaced_rep: true, tags: ['MCT', 'cytology', 'FNA'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-007', node_id: 'DERM-L3-014', question_type: 'case_based',
+    question: '8 歲拳師犬右前肢發現 2 cm 皮膚結節，FNA 確認為 MCT。分期檢查（淋巴結 FNA、腹部超音波、CBC）均正常。手術切除後病理報告：Kiupel Low grade，邊界清淨（最近邊界 5 mm）。下一步最適當的建議？',
+    options: [
+      '立即開始 Vinblastine + Prednisolone 化療',
+      '定期追蹤（每 3 個月觸診檢查），無需化療',
+      '再次手術擴大邊界',
+      '開始 Toceranib 標靶治療',
+    ],
+    correct_answer: '定期追蹤（每 3 個月觸診檢查），無需化療',
+    explanation: 'Kiupel Low grade + 邊界清淨的犬 MCT 預後極佳，術後中位存活 > 2 年，局部復發率 < 10%。不需要輔助化療。建議每 3 個月觸診檢查手術部位及區域淋巴結，持續 2 年。任何新出現的皮膚腫塊應立即 FNA。拳師犬 MCT 多為低分級，但可能為多發性。',
+    difficulty: 3, spaced_rep: true, tags: ['MCT', 'prognosis', 'follow_up', 'Boxer'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-MCT-008', node_id: 'DERM-L3-014', question_type: 'case_based',
+    question: '10 歲拉布拉多軀幹 MCT 術後病理：Kiupel High grade，側面邊界不清淨。區域淋巴結 FNA 可見肥大細胞（轉移）。最適當的後續治療策略？',
+    options: [
+      '僅觀察追蹤',
+      '全身化療（Vinblastine + Prednisolone）± 局部放療',
+      '僅局部換藥',
+      '口服抗組織胺即可',
+    ],
+    correct_answer: '全身化療（Vinblastine + Prednisolone）± 局部放療',
+    explanation: 'Kiupel High grade + 邊界不清淨 + 淋巴結轉移屬於高風險 MCT。需積極多模式治療：①全身化療——Vinblastine 2 mg/m² IV q2w × 4-6 次 + Prednisolone；②局部放療——針對不清淨邊界；③考慮 c-KIT 突變檢測——突變陽性者可加用 Toceranib。化療期間每次給藥前需 CBC 監測。High grade MCT 中位存活 4-6 個月，積極治療可延長。',
+    difficulty: 5, spaced_rep: true, tags: ['MCT', 'high_grade', 'chemotherapy', 'radiation'], image_placeholder: null,
+  },
+
+  // ========== DERM-L4-005 皮膚組織病理學 (8 questions) ==========
+  {
+    id: 'Q-DERM-HISTO-001', node_id: 'DERM-L4-005', question_type: 'mcq',
+    question: '皮膚活檢時，punch biopsy 建議的最小尺寸為何？',
+    options: ['2 mm', '4 mm', '6 mm', '10 mm'],
+    correct_answer: '6 mm',
+    explanation: 'Punch biopsy 建議使用 6 mm 或 8 mm 環鑽，不建議小於 6 mm。過小的標本無法提供足夠的組織結構供病理醫師判讀完整的組織學型態。每個病例建議取 2-3 個不同部位或不同型態的標本，以增加診斷率。',
+    difficulty: 3, spaced_rep: true, tags: ['biopsy', 'punch', 'technique'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-002', node_id: 'DERM-L4-005', question_type: 'mcq',
+    question: '下列哪種組織病理學反應型態最常見於天疱瘡（Pemphigus）？',
+    options: [
+      'Perivascular dermatitis（血管周圍皮膚炎）',
+      'Vesiculopustular dermatitis 伴棘層鬆解（acantholysis）',
+      'Nodular dermatitis（結節性皮膚炎）',
+      'Follicular dermatitis（毛囊皮膚炎）',
+    ],
+    correct_answer: 'Vesiculopustular dermatitis 伴棘層鬆解（acantholysis）',
+    explanation: '天疱瘡（Pemphigus，尤其是 Pemphigus foliaceus）的典型組織病理特徵為表皮內棘層鬆解性膿疱（acantholytic pustule）。自體抗體攻擊角質細胞間的橋粒蛋白（desmoglein-1）→ 細胞間黏附喪失 → 棘層鬆解 → 膿疱形成，其中可見游離的圓形角質細胞（acantholytic cells）。',
+    difficulty: 4, spaced_rep: true, tags: ['histopathology', 'pemphigus', 'acantholysis'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-003', node_id: 'DERM-L4-005', question_type: 'mcq',
+    question: '皮膚活檢標本應使用何種固定液，且組織與固定液的最低體積比為何？',
+    options: [
+      '95% 酒精，1:5',
+      '10% 中性緩衝福馬林（NBF），1:10',
+      'Bouin 固定液，1:3',
+      '生理食鹽水，1:1',
+    ],
+    correct_answer: '10% 中性緩衝福馬林（NBF），1:10',
+    explanation: '皮膚活檢標本應立即放入 10% 中性緩衝福馬林（10% NBF），組織：固定液體積比至少 1:10。固定液量不足或延遲固定會導致組織自溶，嚴重影響組織學判讀品質。避免擠壓或彎折標本。',
+    difficulty: 3, spaced_rep: true, tags: ['biopsy', 'fixation', 'formalin'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-004', node_id: 'DERM-L4-005', question_type: 'mcq',
+    question: 'Interface dermatitis（界面皮膚炎）的組織病理特徵為何？',
+    options: [
+      '毛囊內嗜中性球浸潤',
+      '基底層液化變性與淋巴球浸潤表真皮交界處',
+      '真皮深層肉芽腫性炎症',
+      '表皮過度角化伴毛囊栓塞',
+    ],
+    correct_answer: '基底層液化變性與淋巴球浸潤表真皮交界處',
+    explanation: 'Interface dermatitis 的特徵為基底層液化變性（liquefactive degeneration）、淋巴球侵犯表真皮交界處、以及個別角質細胞壞死（apoptosis）。代表疾病包括紅斑性狼瘡、多形性紅斑、藥物不良反應。此型態提示免疫介導的基底層攻擊。',
+    difficulty: 4, spaced_rep: true, tags: ['histopathology', 'interface_dermatitis', 'pattern'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-005', node_id: 'DERM-L4-005', question_type: 'mcq',
+    question: '下列何者不是皮膚活檢的適應症？',
+    options: [
+      '經驗性治療 4-6 週後無改善的慢性皮膚病',
+      '水疱/潰瘍性病灶疑似自體免疫疾病',
+      '臨床與細胞學已確診的典型表淺膿皮症',
+      '疑似皮膚腫瘤需組織學分級',
+    ],
+    correct_answer: '臨床與細胞學已確診的典型表淺膿皮症',
+    explanation: '典型表淺膿皮症可透過臨床表現加上皮膚細胞學（見退化性嗜中性球+球菌）即可確診並開始治療，不需要組織病理。活檢適用於診斷不確定、治療無反應、疑似自體免疫或腫瘤等情境。',
+    difficulty: 3, spaced_rep: true, tags: ['biopsy', 'indication', 'pyoderma'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-006', node_id: 'DERM-L4-005', question_type: 'true_false',
+    question: '皮膚活檢前應徹底清洗病灶表面並去除痂皮，以獲得乾淨的標本供病理判讀。',
+    options: ['正確', '錯誤'],
+    correct_answer: '錯誤',
+    explanation: '皮膚活檢前不應清洗或刮搔病灶表面。表面的痂皮、鱗屑和膿疱中包含重要的診斷資訊（如天疱瘡的棘層鬆解細胞、真菌孢子、細菌群落）。尤其是疑似自體免疫皮膚病時，完整的膿疱標本是確診的關鍵。清洗會破壞這些診斷線索。',
+    difficulty: 3, spaced_rep: true, tags: ['biopsy', 'technique', 'common_mistake'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-007', node_id: 'DERM-L4-005', question_type: 'case_based',
+    question: '3 歲犬面部與耳翼出現膿疱與痂皮，皮膚細胞學見大量嗜中性球但未見細菌。抗生素治療 4 週無改善。下一步最適當的診斷步驟？',
+    options: [
+      '更換更強效抗生素',
+      '皮膚活檢送組織病理（選擇完整膿疱取樣）',
+      '繼續觀察兩週',
+      '開始 prednisolone 經驗性治療',
+    ],
+    correct_answer: '皮膚活檢送組織病理（選擇完整膿疱取樣）',
+    explanation: '面部膿疱合併無菌性嗜中性球浸潤且對抗生素無反應，高度懷疑天疱瘡（Pemphigus foliaceus）。需皮膚活檢確診。取樣重點：選擇新鮮完整膿疱（非已破潰的痂皮區），且活檢前不要清洗或破壞膿疱。組織病理可見棘層鬆解性膿疱伴游離的棘層鬆解細胞（acantholytic cells）。',
+    difficulty: 4, spaced_rep: true, tags: ['biopsy', 'pemphigus', 'case', 'sterile_pustule'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HISTO-008', node_id: 'DERM-L4-005', question_type: 'case_based',
+    question: '組織病理報告描述：「表皮基底層液化變性，真皮淺層血管周圍淋巴球與漿細胞浸潤，個別角質細胞壞死（apoptosis）。」此反應型態最符合下列哪類疾病？',
+    options: [
+      '細菌性膿皮症',
+      '紅斑性狼瘡或藥物不良反應（interface dermatitis）',
+      '蠕形蟎症',
+      '皮膚癬菌症',
+    ],
+    correct_answer: '紅斑性狼瘡或藥物不良反應（interface dermatitis）',
+    explanation: '此描述為典型的 interface dermatitis（界面皮膚炎）：基底層液化變性 + 淋巴球浸潤表真皮交界處 + 個別角質細胞壞死。需進一步結合臨床資訊鑑別：紅斑性狼瘡（面部蝶形紅斑、光敏感）、多形性紅斑（標靶型病灶）、藥物反應（近期用藥史）。ANA 檢測及直接免疫螢光可輔助鑑別。',
+    difficulty: 4, spaced_rep: true, tags: ['histopathology', 'interface_dermatitis', 'lupus', 'drug_reaction'], image_placeholder: null,
+  },
+
+  // ========== DERM-L1-003 毛髮生長週期 (8 questions) ==========
+  {
+    id: 'Q-DERM-HAIR-001', node_id: 'DERM-L1-003', question_type: 'mcq',
+    question: '犬貓毛髮生長週期中，毛髮主動生長的階段稱為？',
+    options: [
+      'Catagen（退行期）',
+      'Telogen（休止期）',
+      'Anagen（生長期）',
+      'Exogen（脫落期）',
+    ],
+    correct_answer: 'Anagen（生長期）',
+    explanation: 'Anagen（生長期）是毛囊基質細胞（matrix cells）活躍分裂、毛髮主動生長的階段。在此階段，毛囊深入真皮層，毛乳頭（dermal papilla）血管豐富，提供營養支持毛髮合成。毛髮的最終長度取決於 anagen 的持續時間。',
+    difficulty: 1, spaced_rep: true, tags: ['hair_cycle', 'anagen', 'physiology'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-002', node_id: 'DERM-L1-003', question_type: 'mcq',
+    question: '毛髮生長週期中，Catagen（退行期）的主要特徵為何？',
+    options: [
+      '毛囊基質細胞活躍增殖',
+      '毛囊逐漸萎縮，毛乳頭與基質細胞分離',
+      '毛髮完全脫落並開始新的生長週期',
+      '毛囊處於完全靜止狀態',
+    ],
+    correct_answer: '毛囊逐漸萎縮，毛乳頭與基質細胞分離',
+    explanation: 'Catagen（退行期）是 anagen 與 telogen 之間的短暫過渡期。此階段毛囊基質細胞停止分裂並進入凋亡，毛囊下段逐漸萎縮退化，上皮索（epithelial strand）形成，毛乳頭上移並與毛囊球部分離。Catagen 通常持續時間最短（約 2-3 週）。',
+    difficulty: 2, spaced_rep: true, tags: ['hair_cycle', 'catagen', 'regression'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-003', node_id: 'DERM-L1-003', question_type: 'mcq',
+    question: '下列哪一品種的犬具有持續生長型（continuous growth）毛髮，anagen 期特別長？',
+    options: [
+      '柴犬（Shiba Inu）',
+      '拉布拉多（Labrador Retriever）',
+      '貴賓犬（Poodle）',
+      '哈士奇（Siberian Husky）',
+    ],
+    correct_answer: '貴賓犬（Poodle）',
+    explanation: '貴賓犬（Poodle）、約克夏㹴、馬爾濟斯等品種的毛髮具有非常長的 anagen 期，毛髮會持續生長而非在固定長度後進入 telogen——這就是為何這些品種的毛髮可以長得很長，需要定期修剪。相對地，柴犬、哈士奇等品種的 anagen 較短，毛髮達到固定長度後即停止生長。',
+    difficulty: 1, spaced_rep: true, tags: ['hair_cycle', 'breed_variation', 'anagen'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-004', node_id: 'DERM-L1-003', question_type: 'mcq',
+    question: '甲狀腺功能低下（hypothyroidism）對犬毛髮生長週期的影響為何？',
+    options: [
+      '促進 anagen 期延長，毛髮過度生長',
+      '使大量毛囊停滯於 telogen 期，導致對稱性脫毛',
+      '加速 catagen 期，毛髮變得更粗',
+      '不影響毛髮生長週期',
+    ],
+    correct_answer: '使大量毛囊停滯於 telogen 期，導致對稱性脫毛',
+    explanation: '甲狀腺荷爾蒙（T3/T4）對毛囊的 anagen 啟動至關重要。甲狀腺功能低下時，毛囊無法正常由 telogen 進入 anagen（telogen arrest），導致大量毛囊停留在休止期 → 毛髮逐漸脫落但無新毛生長 → 非發炎性對稱性脫毛（bilateral symmetric alopecia），常見於軀幹。拔毛後觀察到多數毛髮為 telogen 期毛根（club hair）。',
+    difficulty: 2, spaced_rep: true, tags: ['hair_cycle', 'hypothyroidism', 'alopecia', 'endocrine'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-005', node_id: 'DERM-L1-003', question_type: 'mcq',
+    question: '光週期（photoperiod）對犬貓毛髮生長週期的影響，下列敘述何者正確？',
+    options: [
+      '光週期對犬貓毛髮生長週期完全沒有影響',
+      '日照時間縮短會促進 anagen 啟動，刺激冬毛生長',
+      '日照時間延長會促進更厚的被毛生長',
+      '光週期僅影響貓而不影響犬',
+    ],
+    correct_answer: '日照時間縮短會促進 anagen 啟動，刺激冬毛生長',
+    explanation: '光週期是影響犬貓季節性換毛的重要因子。日照時間縮短（秋冬）會透過松果體（pineal gland）調節褪黑激素（melatonin）分泌增加，促進毛囊進入 anagen，刺激冬毛（較密較厚的底毛）生長。相反地，日照時間延長（春夏）促進 telogen 與脫毛。室內飼養的犬貓因人工照明導致光週期訊號模糊，常出現全年持續性脫毛現象。',
+    difficulty: 2, spaced_rep: true, tags: ['hair_cycle', 'photoperiod', 'seasonal_shedding', 'melatonin'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-006', node_id: 'DERM-L1-003', question_type: 'true_false',
+    question: 'Telogen 期（休止期）的毛髮又稱為「club hair」，其毛根呈現棍棒狀形態，此時毛髮已停止生長但仍留在毛囊中。',
+    options: ['正確', '錯誤'],
+    correct_answer: '正確',
+    explanation: 'Telogen 期毛髮確實稱為 club hair，因其毛根（hair root）呈現特徵性的棍棒狀（club-shaped）形態。此時毛囊處於靜止狀態，毛髮不再生長但仍透過被動機制附著於毛囊中，直到新的 anagen 期毛髮從下方推出，或外力（如梳理）使其脫落。臨床上，毛髮拔除檢查（trichogram）可藉由辨識毛根形態來判斷毛囊所處的生長週期階段。',
+    difficulty: 1, spaced_rep: true, tags: ['hair_cycle', 'telogen', 'club_hair', 'trichogram'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-007', node_id: 'DERM-L1-003', question_type: 'case_based',
+    question: '一隻 2 歲已絕育母犬（品種：博美犬），飼主主訴犬隻被毛在剃毛後已經 6 個月仍未長回。理學檢查顯示軀幹大面積脫毛但皮膚無發炎或色素沉著。從毛髮生長週期的觀點，最可能的診斷為何？',
+    options: [
+      '皮膚癬菌感染導致毛囊破壞',
+      '剃毛後脫毛症（post-clipping alopecia），毛囊停滯於 telogen 期',
+      '蠕形蟎感染',
+      '食物不良反應引起的脫毛',
+    ],
+    correct_answer: '剃毛後脫毛症（post-clipping alopecia），毛囊停滯於 telogen 期',
+    explanation: '剃毛後脫毛症（post-clipping alopecia）好發於北歐犬種（博美犬、哈士奇、薩摩耶等），剃毛後毛囊大量同步進入 telogen 期且無法正常啟動下一輪 anagen，導致毛髮長時間無法再生長。機轉可能與剃毛移除了毛幹對毛囊的物理保護與溫度調節有關。通常為自限性，但恢復時間可達 6-24 個月。臨床上需排除內分泌疾病（甲狀腺功能低下、腎上腺功能亢進）。',
+    difficulty: 2, spaced_rep: true, tags: ['hair_cycle', 'post_clipping_alopecia', 'Pomeranian', 'telogen_arrest'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-HAIR-008', node_id: 'DERM-L1-003', question_type: 'case_based',
+    question: '一隻 5 歲已絕育公犬（品種：黃金獵犬），3 個月前因嚴重疾病住院治療後，飼主發現犬隻全身被毛明顯稀疏。皮膚科檢查無發炎，拔毛檢查（trichogram）顯示大量 telogen 期毛根。最可能的診斷為何？',
+    options: [
+      '犬異位性皮膚炎（CAD）',
+      '蠕形蟎症（Demodicosis）',
+      '休止期脫毛（telogen effluvium），因系統性疾病壓力導致毛囊同步進入休止期',
+      '腎上腺功能亢進（Cushing syndrome）',
+    ],
+    correct_answer: '休止期脫毛（telogen effluvium），因系統性疾病壓力導致毛囊同步進入休止期',
+    explanation: 'Telogen effluvium（休止期脫毛）是因重大生理壓力事件（嚴重疾病、高燒、手術、分娩、嚴重營養不良）導致大量原本處於 anagen 期的毛囊同步提前進入 telogen 期。約在壓力事件後 1-3 個月開始出現瀰漫性脫毛（因 telogen 期持續約 2-6 個月後才脫落）。這是一種自限性的生理反應，當壓力源解除後，毛囊會逐漸重新進入 anagen 期，被毛可完全恢復。',
+    difficulty: 2, spaced_rep: true, tags: ['hair_cycle', 'telogen_effluvium', 'systemic_stress', 'alopecia'], image_placeholder: null,
+  },
 ];

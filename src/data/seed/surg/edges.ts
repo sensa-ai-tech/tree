@@ -91,4 +91,39 @@ export const SURG_EDGES: KnowledgeEdge[] = [
   { id: 'SURG-E-054', source_node_id: 'SURG-L3-003', target_node_id: 'SURG-L3-015', relation_type: 'same_system', weight: 0.9, description: '腸道異物可能需腸切除吻合', bidirectional: false, unlock_condition: null },
   { id: 'SURG-E-055', source_node_id: 'SURG-L3-015', target_node_id: 'SURG-L4-002', relation_type: 'clinical_apply', weight: 1, description: '腸切除術中需即時決策（壞死範圍/血流評估）', bidirectional: false, unlock_condition: null },
   { id: 'SURG-E-056', source_node_id: 'SURG-L3-015', target_node_id: 'SURG-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '腸切除術後照護（禁食/逐步恢復飲食）', bidirectional: false, unlock_condition: null },
+
+  // ─── 第二輪審計：藥理學/麻醉學視角補齊 ───
+
+  // 骨科手術需圍術期抗生素預防（一代頭孢黴素為首選）
+  { id: 'SURG-E-057', source_node_id: 'SURG-L3-004', target_node_id: 'SURG-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: 'CCLD 修復（TPLO/TTA）需圍術期預防性抗生素（cefazolin 術前 30 分鐘）', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-058', source_node_id: 'SURG-L3-007', target_node_id: 'SURG-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: '骨折內固定術需圍術期預防性抗生素，開放性骨折需延長抗生素療程', bidirectional: false, unlock_condition: null },
+
+  // BOAS 為高風險麻醉病例，需特別注意氣道管理
+  { id: 'SURG-E-059', source_node_id: 'SURG-L3-010', target_node_id: 'SURG-L1-003', relation_type: 'prerequisite', weight: 0.9, description: 'BOAS 為高風險麻醉病例：術前需預氧合、避免過度鎮靜、備妥緊急氣切設備', bidirectional: false, unlock_condition: null },
+
+  // ─── 結構邊修正：L3 → L5 治療邊補齊 ───
+  { id: 'SURG-E-060', source_node_id: 'SURG-L3-002', target_node_id: 'SURG-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '脾臟腫瘤的主要治療為脾臟切除術（splenectomy）', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-061', source_node_id: 'SURG-L3-006', target_node_id: 'SURG-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '會陰疝氣需手術修補，選擇內閉鎖肌轉位或合成補片修復', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-062', source_node_id: 'SURG-L3-007', target_node_id: 'SURG-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '骨折穩定需骨科手術，包括骨板、髓內釘、外固定等方法', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-063', source_node_id: 'SURG-L3-008', target_node_id: 'SURG-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '膝蓋骨脫位 Grade III-IV 需手術矯正，含滑車溝加深與脛骨粗隆移位', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-064', source_node_id: 'SURG-L3-005', target_node_id: 'SURG-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: 'IVDD Grade III-V 需手術減壓（hemilaminectomy/ventral slot）', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: SURG-L3-016 (泌尿外科) / SURG-L3-017 (乳腺腫瘤) / SURG-L3-018 (FHO) ───
+
+  // 泌尿外科
+  { id: 'SURG-E-065', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-016', relation_type: 'prerequisite', weight: 0.9, description: '腹腔臟器病理（泌尿系統）是泌尿外科的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-066', source_node_id: 'SURG-L3-016', target_node_id: 'SURG-L5-001', relation_type: 'clinical_apply', weight: 1.0, description: '膀胱切開術（cystotomy）與尿道造口術為軟組織手術', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-067', source_node_id: 'SURG-L3-016', target_node_id: 'SURG-L4-001', relation_type: 'clinical_apply', weight: 1.0, description: '泌尿結石手術需術前影像（X光+超音波）定位結石', bidirectional: false, unlock_condition: null },
+
+  // 乳腺腫瘤
+  { id: 'SURG-E-068', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-017', relation_type: 'prerequisite', weight: 0.8, description: '腹腔臟器病理與荷爾蒙影響為乳腺腫瘤的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-069', source_node_id: 'SURG-L3-017', target_node_id: 'SURG-L5-001', relation_type: 'clinical_apply', weight: 1.0, description: '乳腺切除術為軟組織手術', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-070', source_node_id: 'SURG-L3-017', target_node_id: 'SURG-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: '乳腺腫瘤需術前胸腔 X光/腹部超音波分期', bidirectional: false, unlock_condition: null },
+
+  // FHO
+  { id: 'SURG-E-071', source_node_id: 'SURG-L2-002', target_node_id: 'SURG-L3-018', relation_type: 'prerequisite', weight: 1.0, description: '骨關節病理是 FHO 適應症評估的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-072', source_node_id: 'SURG-L3-018', target_node_id: 'SURG-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: 'FHO 為骨科手術', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-073', source_node_id: 'SURG-L3-018', target_node_id: 'SURG-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: 'FHO 術後需積極復健計畫', bidirectional: false, unlock_condition: null },
+  // L3 → L4: clinical_apply（FHO → 骨科影像）
+  { id: 'SURG-E-074', source_node_id: 'SURG-L3-018', target_node_id: 'SURG-L4-003', relation_type: 'clinical_apply', weight: 1.0, description: 'FHO 術前需骨科 X 光評估髖關節、Legg-Calve-Perthes 分期與術後追蹤', bidirectional: false, unlock_condition: null },
 ];

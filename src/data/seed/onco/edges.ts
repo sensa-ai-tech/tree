@@ -105,4 +105,31 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   { id: 'ONCO-E-066', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-013', relation_type: 'prerequisite', weight: 0.8, description: '腫瘤生物學是甲狀腺癌的基礎', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-067', source_node_id: 'ONCO-L3-013', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '甲狀腺癌需 FNA 細胞學', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-068', source_node_id: 'ONCO-L3-013', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: '犬甲狀腺癌可手術切除', bidirectional: false, unlock_condition: null },
+
+  // ─── 疾病間臨床關聯邊 ───
+  // ASAC → 細胞學/組織學診斷: clinical_apply
+  { id: 'ONCO-E-069', source_node_id: 'ONCO-L3-010', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: '肛囊腺癌需要細胞學/組織學診斷', bidirectional: false, unlock_condition: null },
+  // 組織球肉瘤 → 分期檢查: clinical_apply
+  { id: 'ONCO-E-070', source_node_id: 'ONCO-L3-012', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: '組織球肉瘤需要完整分期檢查評估預後', bidirectional: false, unlock_condition: null },
+  // 鼻腔腫瘤 → 化療: clinical_apply
+  { id: 'ONCO-E-071', source_node_id: 'ONCO-L3-011', target_node_id: 'ONCO-L5-001', relation_type: 'clinical_apply', weight: 0.6, description: '鼻腔腫瘤可考慮放療後輔助化療（carboplatin）', bidirectional: false, unlock_condition: null },
+
+  // ─── ONCO-L3-014（SCC 鱗狀上皮細胞癌）───
+  { id: 'ONCO-E-072', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-014', relation_type: 'prerequisite', weight: 0.9, description: '腫瘤轉移機轉為 SCC 局部侵犯與轉移特性的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-073', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.9, description: 'SCC 需細胞學/組織病理確診', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-074', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 1, description: 'SCC 以手術切除為主要治療（mandibulectomy/maxillectomy/截趾）', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-075', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: '貓鼻平面/耳尖 SCC 及犬口腔 SCC 可用放射治療', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-076', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.9, description: '口腔 SCC 需 CT 分期評估骨侵犯範圍', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-077', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L3-005', relation_type: 'differential', weight: 0.7, description: 'SCC 與口腔黑色素瘤為口腔腫塊的主要鑑別', bidirectional: true, unlock_condition: null },
+
+  // ─── ONCO-L3-015（Insulinoma 胰島素瘤）───
+  { id: 'ONCO-E-078', source_node_id: 'ONCO-L2-002', target_node_id: 'ONCO-L3-015', relation_type: 'prerequisite', weight: 1, description: '副腫瘤症候群（低血糖）為 insulinoma 的核心病理機轉', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-079', source_node_id: 'ONCO-L3-015', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.7, description: 'Insulinoma 需超音波引導 FNA 或術中組織病理確診', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-080', source_node_id: 'ONCO-L3-015', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 1, description: 'Insulinoma 以手術切除（胰臟部分切除）為首選治療', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-081', source_node_id: 'ONCO-L3-015', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 0.8, description: 'Insulinoma 需腹部超音波/CT 定位及分期', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 靶向治療與 TKI 相關邊 ───
+  { id: 'ONCO-E-082', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L5-006', relation_type: 'builds_on', weight: 0.9, description: '腫瘤生物學（VEGFR/PDGFR/KIT 訊號通路）是靶向治療的理論基礎', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-083', source_node_id: 'ONCO-L3-002', target_node_id: 'ONCO-L5-006', relation_type: 'clinical_apply', weight: 1, description: 'MCT 為 TKI（Toceranib/Masitinib）的首要適應症，尤其 c-KIT 突變型', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-084', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L5-006', relation_type: 'clinical_apply', weight: 0.7, description: 'SCC 可嘗試 COX-2 抑制劑合併 TKI 的多靶點治療策略', bidirectional: false, unlock_condition: null },
 ];

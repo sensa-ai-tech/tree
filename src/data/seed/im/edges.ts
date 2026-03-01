@@ -2,14 +2,14 @@ import type { KnowledgeEdge } from '@/types/knowledge';
 
 export const IM_EDGES: KnowledgeEdge[] = [
   // L0 → L1: prerequisite
-  { id: 'IM-E-001', source_node_id: 'IM-L0-001', target_node_id: 'IM-L1-001', relation_type: 'prerequisite', weight: 1.0, description: '內科總覽為內分泌基礎的前置', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-001', source_node_id: 'IM-L0-001', target_node_id: 'IM-L1-001', relation_type: 'prerequisite', weight: 1.0, description: '內科總覽為腎臟生理基礎的前置', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-002', source_node_id: 'IM-L0-001', target_node_id: 'IM-L1-002', relation_type: 'prerequisite', weight: 1.0, description: null, bidirectional: false, unlock_condition: null },
   { id: 'IM-E-003', source_node_id: 'IM-L0-001', target_node_id: 'IM-L1-003', relation_type: 'prerequisite', weight: 0.8, description: null, bidirectional: false, unlock_condition: null },
   { id: 'IM-E-004', source_node_id: 'IM-L0-001', target_node_id: 'IM-L1-004', relation_type: 'prerequisite', weight: 0.8, description: null, bidirectional: false, unlock_condition: null },
 
   // L1 → L2: builds_on
-  { id: 'IM-E-005', source_node_id: 'IM-L1-002', target_node_id: 'IM-L2-001', relation_type: 'builds_on', weight: 0.9, description: '腎臟生理是腎損傷機轉的基礎', bidirectional: false, unlock_condition: null },
-  { id: 'IM-E-006', source_node_id: 'IM-L1-001', target_node_id: 'IM-L2-002', relation_type: 'builds_on', weight: 0.9, description: '內分泌生理是失調機轉的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-005', source_node_id: 'IM-L1-001', target_node_id: 'IM-L2-001', relation_type: 'builds_on', weight: 0.9, description: '腎臟生理是腎損傷機轉的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-006', source_node_id: 'IM-L1-004', target_node_id: 'IM-L2-002', relation_type: 'builds_on', weight: 0.9, description: '內分泌生理是失調機轉的基礎', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-007', source_node_id: 'IM-L1-003', target_node_id: 'IM-L2-004', relation_type: 'builds_on', weight: 0.8, description: '消化生理是肝膽病理的基礎', bidirectional: false, unlock_condition: null },
 
   // L2 → L3: clinical_apply
@@ -54,7 +54,7 @@ export const IM_EDGES: KnowledgeEdge[] = [
   { id: 'IM-E-034', source_node_id: 'IM-L3-007', target_node_id: 'IM-L3-012', relation_type: 'differential', weight: 0.8, description: 'IBD 與 PLE 需鑑別（嚴重 IBD 可繼發 PLE）', bidirectional: true, unlock_condition: null },
 
   // 酸鹼平衡障礙 (IM-L2-005) edges
-  { id: 'IM-E-035', source_node_id: 'IM-L1-004', target_node_id: 'IM-L2-005', relation_type: 'builds_on', weight: 0.9, description: '呼吸生理是酸鹼平衡障礙的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-035', source_node_id: 'IM-L1-001', target_node_id: 'IM-L2-005', relation_type: 'builds_on', weight: 0.9, description: '腎臟生理（酸鹼調節）是酸鹼平衡障礙的基礎', bidirectional: false, unlock_condition: null },
 
   // Cushing's vs Addison's differential
   { id: 'IM-E-036', source_node_id: 'IM-L3-001', target_node_id: 'IM-L3-011', relation_type: 'differential', weight: 0.8, description: 'Cushing\'s 與 Addison\'s 為腎上腺功能亢進/低下需鑑別', bidirectional: true, unlock_condition: null },
@@ -109,4 +109,70 @@ export const IM_EDGES: KnowledgeEdge[] = [
 
   // L2-004 → L3-019: clinical_apply（肝膽病理 → 膽管炎）
   { id: 'IM-E-062', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-019', relation_type: 'clinical_apply', weight: 0.9, description: '肝膽病理機轉是膽管炎的基礎', bidirectional: false, unlock_condition: null },
+
+  // ─── 審計修復：L3 缺少 prerequisite 邊 + L3→L4 clinical_apply ───
+  // IM-L3-016 (鉤端螺旋體病) 需要 L1/L2 prerequisite
+  { id: 'IM-E-063', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-016', relation_type: 'prerequisite', weight: 0.8, description: '發炎與免疫調節是理解鉤端螺旋體感染免疫病理的前置知識', bidirectional: false, unlock_condition: null },
+  // IM-L3-017 (貓傳染性腹膜炎 FIP) 需要 L1/L2 prerequisite
+  { id: 'IM-E-064', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-017', relation_type: 'prerequisite', weight: 0.8, description: '發炎與免疫調節是理解 FIP 免疫介導性血管炎的前置知識', bidirectional: false, unlock_condition: null },
+  // IM-L3-018 (貓下泌尿道疾病 FLUTD) 需要 L1/L2 prerequisite
+  { id: 'IM-E-065', source_node_id: 'IM-L1-001', target_node_id: 'IM-L3-018', relation_type: 'prerequisite', weight: 0.8, description: '腎臟生理與尿液形成是理解 FLUTD 的前置知識', bidirectional: false, unlock_condition: null },
+  // IM-L3-015 (IMT) 缺少 L3→L4 clinical_apply
+  { id: 'IM-E-066', source_node_id: 'IM-L3-015', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.7, description: 'IMT 需腹腔超音波評估脾腫大與內出血', bidirectional: false, unlock_condition: null },
+
+  // ─── 疾病間臨床關聯邊 ───
+  // 糖尿病 → CKD: complication（糖尿病腎病變）
+  { id: 'IM-E-067', source_node_id: 'IM-L3-006', target_node_id: 'IM-L3-004', relation_type: 'complication', weight: 0.8, description: '糖尿病腎病變：糖尿病是慢性腎病的重要危險因子', bidirectional: false, unlock_condition: null },
+  // 糖尿病 ↔ 胰臟炎: complication
+  { id: 'IM-E-068', source_node_id: 'IM-L3-006', target_node_id: 'IM-L3-008', relation_type: 'complication', weight: 0.7, description: '胰臟炎與糖尿病相互關聯：胰臟炎可觸發糖尿病', bidirectional: true, unlock_condition: null },
+  // 糖尿病 → 肝脂肪變性: complication
+  { id: 'IM-E-069', source_node_id: 'IM-L3-006', target_node_id: 'IM-L3-009', relation_type: 'complication', weight: 0.6, description: '控制不佳的糖尿病可導致肝臟脂肪變性', bidirectional: false, unlock_condition: null },
+  // 壁蝨傳染病 → IMT: complication
+  { id: 'IM-E-070', source_node_id: 'IM-L3-010', target_node_id: 'IM-L3-015', relation_type: 'complication', weight: 0.7, description: '壁蝨傳染病（艾利希體/焦蟲）可觸發免疫介導血小板減少症', bidirectional: false, unlock_condition: null },
+  // FLUTD ↔ CKD: complication
+  { id: 'IM-E-071', source_node_id: 'IM-L3-018', target_node_id: 'IM-L3-004', relation_type: 'complication', weight: 0.7, description: 'FLUTD 梗阻性腎後腎病可導致慢性腎病', bidirectional: true, unlock_condition: null },
+  // 糖尿病 → 內分泌藥物治療: clinical_apply
+  { id: 'IM-E-072', source_node_id: 'IM-L3-006', target_node_id: 'IM-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: '糖尿病需要內分泌藥物治療（胰島素）', bidirectional: false, unlock_condition: null },
+  // 犬甲低 → 內分泌藥物治療: clinical_apply
+  { id: 'IM-E-073', source_node_id: 'IM-L3-002', target_node_id: 'IM-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: '犬甲狀腺機能低下需要內分泌藥物治療（levothyroxine）', bidirectional: false, unlock_condition: null },
+  // 貓甲亢 → 內分泌藥物治療: clinical_apply
+  { id: 'IM-E-074', source_node_id: 'IM-L3-003', target_node_id: 'IM-L5-002', relation_type: 'clinical_apply', weight: 1.0, description: '貓甲狀腺機能亢進需要內分泌藥物治療（methimazole）', bidirectional: false, unlock_condition: null },
+  // 胰臟炎 → 消化系統治療: clinical_apply
+  { id: 'IM-E-075', source_node_id: 'IM-L3-008', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: '胰臟炎需要消化系統疾病治療（支持療法、止吐、止痛）', bidirectional: false, unlock_condition: null },
+  // 肝脂肪變性 → 消化系統治療: clinical_apply
+  { id: 'IM-E-076', source_node_id: 'IM-L3-009', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: '貓肝臟脂肪變性需要消化系統疾病治療（營養支持、食管管灌食）', bidirectional: false, unlock_condition: null },
+  // 酸鹼平衡障礙 → 糖尿病: clinical_apply
+  { id: 'IM-E-077', source_node_id: 'IM-L2-005', target_node_id: 'IM-L3-006', relation_type: 'clinical_apply', weight: 0.8, description: '酸鹼平衡障礙是糖尿病酮酸血症的核心病理機轉', bidirectional: false, unlock_condition: null },
+  // 酸鹼平衡障礙 → CKD: clinical_apply（IRIS Stage 3-4 代謝性酸中毒需碳酸氫鈉補充）
+  { id: 'IM-E-078', source_node_id: 'IM-L2-005', target_node_id: 'IM-L3-004', relation_type: 'clinical_apply', weight: 0.7, description: '慢性腎病 IRIS Stage 3-4 常伴代謝性酸中毒，需血氣監測與碳酸氫鈉補充', bidirectional: false, unlock_condition: null },
+  // 酸鹼平衡障礙 → AKI: clinical_apply（急性腎損傷常致嚴重代謝性酸中毒）
+  { id: 'IM-E-079', source_node_id: 'IM-L2-005', target_node_id: 'IM-L3-013', relation_type: 'clinical_apply', weight: 0.8, description: 'AKI 導致嚴重代謝性酸中毒，血液氣體分析為必要監測工具', bidirectional: false, unlock_condition: null },
+
+  // ─── 呼吸/感染擴展邊 ───
+  // L0 → L1: prerequisite（呼吸系統生理需內科總覽前置）
+  { id: 'IM-E-080', source_node_id: 'IM-L0-001', target_node_id: 'IM-L1-005', relation_type: 'prerequisite', weight: 0.8, description: '內科總覽為呼吸系統生理的前置知識', bidirectional: false, unlock_condition: null },
+  // L1 → L2: builds_on（呼吸生理 → 氣道發炎與重塑）
+  { id: 'IM-E-081', source_node_id: 'IM-L1-005', target_node_id: 'IM-L2-007', relation_type: 'builds_on', weight: 0.9, description: '呼吸系統生理是氣道發炎與重塑病理機轉的基礎', bidirectional: false, unlock_condition: null },
+  // L2 → L3: clinical_apply（氣道發炎 → 貓哮喘）
+  { id: 'IM-E-082', source_node_id: 'IM-L2-007', target_node_id: 'IM-L3-020', relation_type: 'clinical_apply', weight: 1.0, description: '氣道發炎與重塑機轉是貓哮喘的核心病理', bidirectional: false, unlock_condition: null },
+  // L2 → L3: clinical_apply（氣道發炎 → 細菌性肺炎）
+  { id: 'IM-E-083', source_node_id: 'IM-L2-007', target_node_id: 'IM-L3-021', relation_type: 'clinical_apply', weight: 0.8, description: '氣道發炎機轉與細菌性肺炎的氣道防禦失能相關', bidirectional: false, unlock_condition: null },
+  // L3 → L4: clinical_apply（貓哮喘 → 腹腔超音波/影像）
+  { id: 'IM-E-084', source_node_id: 'IM-L3-020', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.7, description: '貓哮喘需胸腔 X 光/超音波評估肺實質與氣道', bidirectional: false, unlock_condition: null },
+  // L3 → L4: clinical_apply（細菌性肺炎 → 影像評估）
+  { id: 'IM-E-085', source_node_id: 'IM-L3-021', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: '細菌性肺炎需胸腔 X 光評估浸潤範圍與治療反應', bidirectional: false, unlock_condition: null },
+  // L2 → L3: prerequisite（免疫調節 → FeLV/FIV）
+  { id: 'IM-E-086', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-022', relation_type: 'prerequisite', weight: 0.8, description: '發炎與免疫調節是理解 FeLV/FIV 免疫抑制與腫瘤發生的前置知識', bidirectional: false, unlock_condition: null },
+  // L2 → L3: prerequisite（免疫/發炎 → CPV）
+  { id: 'IM-E-087', source_node_id: 'IM-L2-003', target_node_id: 'IM-L3-023', relation_type: 'prerequisite', weight: 0.8, description: '發炎與免疫調節是理解 CPV 腸道免疫破壞與敗血症的前置知識', bidirectional: false, unlock_condition: null },
+  // L3 → L5: clinical_apply（FeLV/FIV → 免疫抑制治療）
+  { id: 'IM-E-088', source_node_id: 'IM-L3-022', target_node_id: 'IM-L5-003', relation_type: 'clinical_apply', weight: 0.7, description: 'FeLV/FIV 繼發 IMHA 時需免疫抑制治療', bidirectional: false, unlock_condition: null },
+  // L3 → L5: clinical_apply（CPV → 消化系統治療）
+  { id: 'IM-E-089', source_node_id: 'IM-L3-023', target_node_id: 'IM-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'CPV 腸炎需消化系統支持治療（輸液、止吐、營養）', bidirectional: false, unlock_condition: null },
+  // L3 ↔ L3: differential（貓哮喘 vs 肺炎）
+  { id: 'IM-E-090', source_node_id: 'IM-L3-020', target_node_id: 'IM-L3-021', relation_type: 'differential', weight: 0.8, description: '貓哮喘與細菌性肺炎需鑑別：氣管沖洗液細胞學為關鍵', bidirectional: true, unlock_condition: null },
+  // L3 → L4: clinical_apply（FeLV/FIV → 腹腔超音波）
+  { id: 'IM-E-091', source_node_id: 'IM-L3-022', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.8, description: 'FeLV/FIV 需腹腔超音波評估腸系膜淋巴結腫大與臟器浸潤', bidirectional: false, unlock_condition: null },
+  // L3 → L4: clinical_apply（CPV → 腹腔超音波）
+  { id: 'IM-E-092', source_node_id: 'IM-L3-023', target_node_id: 'IM-L4-003', relation_type: 'clinical_apply', weight: 0.7, description: 'CPV 需腹腔超音波評估腸壁增厚、腸蠕動減少及腸套疊', bidirectional: false, unlock_condition: null },
 ];

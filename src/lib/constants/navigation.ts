@@ -8,12 +8,10 @@ import {
   User,
   Settings,
 } from 'lucide-react';
-import { createElement } from 'react';
-
 export interface NavItem {
   href: string;
   label: string;
-  /** lucide icon component — 用 createElement 延遲渲染 */
+  /** lucide icon component — 消費端自行 createElement 指定 className */
   icon: typeof Home;
   adminOnly?: boolean;
 }

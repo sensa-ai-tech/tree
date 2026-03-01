@@ -2932,94 +2932,114 @@ const contentRenalInjury: NodeContent = {
   created_at: now,
 };
 
-/** 自體免疫機轉 — L2 機轉型 */
-const contentAutoimmuneMechanism: NodeContent = {
+/** 內分泌失調機轉 — L2 機轉型 */
+const contentEndocrineDysregulation: NodeContent = {
   id: 'CONTENT-IM-L2-002',
   node_id: 'IM-L2-002',
   version: 1,
-  summary: '自體免疫疾病源於免疫耐受性崩解，導致免疫系統攻擊自身組織。機轉涉及遺傳易感性、環境觸發因子、分子模仿、表位擴展等。在犬貓最重要的自體免疫機轉為 Type II（抗體介導細胞破壞，如 IMHA/ITP）和 Type III（免疫複合體沉積，如腎小球腎炎）超敏反應。',
+  summary: '內分泌失調機轉涵蓋下視丘-垂體-靶腺軸（HPA/HPT/HPG）的回饋失衡、腺體自主性分泌（腫瘤性）、自體免疫性腺體破壞、以及受體層級的訊號異常（胰島素阻抗）。犬貓最常見的內分泌疾病——庫欣症候群、甲狀腺功能低下/亢進、糖尿病、愛迪生氏症——均可追溯至這些核心機轉。',
   learning_objectives: [
-    '說明免疫耐受性崩解的主要機轉（分子模仿、表位擴展、旁觀者效應、Treg 功能缺陷）',
-    '解釋 Type II 超敏反應在 IMHA 和 ITP 中的具體病理機轉',
-    '描述免疫複合體疾病（Type III）的形成與組織沉積機轉',
-    '說明遺傳易感性（MHC/DLA 多型性）與環境觸發因子的交互作用',
-    '解釋免疫抑制藥物（Prednisolone、Mycophenolate、Cyclosporine）的分子作用機轉',
+    '描述 HPA 軸（下視丘-垂體-腎上腺）的正常回饋調控與失調機轉',
+    '說明 HPT 軸（下視丘-垂體-甲狀腺）在犬甲低和貓甲亢中的不同病理機轉',
+    '解釋胰島素阻抗（insulin resistance）的分子機轉與臨床後果',
+    '描述自體免疫性腺體破壞在愛迪生氏症與第一型糖尿病中的角色',
+    '說明腫瘤性自主分泌（autonomous secretion）在垂體腺瘤與腎上腺腫瘤中的機轉',
   ],
   key_points: [
-    '免疫耐受崩解的四大機轉：分子模仿（molecular mimicry）、表位擴展（epitope spreading）、旁觀者活化（bystander activation）、Treg 功能缺陷',
-    '分子模仿：病原抗原與自身抗原結構相似 → 抗病原免疫反應交叉攻擊自身組織（如感染觸發 IMHA）',
-    '表位擴展：初始免疫反應損傷組織 → 暴露新的自身抗原 → 免疫反應擴大到更多自身標靶',
-    'Type II 機轉（IMHA）：自體抗體（IgG/IgM）結合紅血球 → Fc receptor 吞噬（血管外溶血）或補體 MAC（血管內溶血）',
-    'Type III 機轉：Ab-Ag 免疫複合體沉積在血管壁/腎小球 → 補體活化 → 嗜中性球浸潤 → 組織損傷',
-    '遺傳易感性：犬 DLA（Dog Leukocyte Antigen）多型性影響抗原呈現，某些 DLA 單倍型與自體免疫疾病風險相關',
-    '免疫抑制藥物靶點：Prednisolone（NF-κB 抑制、T 細胞凋亡）、Mycophenolate（IMPDH 抑制→淋巴球增殖抑制）、Cyclosporine（Calcineurin 抑制→IL-2 轉錄抑制）',
+    'HPA 軸正常調控：下視丘 CRH → 垂體 ACTH → 腎上腺 cortisol → 負回饋抑制 CRH/ACTH',
+    '犬庫欣（PDH 85%）：垂體 ACTH 腺瘤自主分泌 → 雙側腎上腺增生 → 皮質醇過高 → 負回饋無效',
+    '犬庫欣（ADH 15%）：腎上腺腫瘤自主分泌 cortisol → ACTH 被抑制 → 對側腎上腺萎縮',
+    'HPT 軸：下視丘 TRH → 垂體 TSH → 甲狀腺 T4/T3 → 負回饋抑制 TRH/TSH',
+    '犬甲低（>95% 原發性）：淋巴球性甲狀腺炎（自體免疫）或特發性甲狀腺萎縮 → T4↓ → TSH↑（代償失敗）',
+    '貓甲亢：甲狀腺結節性增生/腺瘤 → 自主分泌 T4 → TSH 被抑制 → 正常甲狀腺組織萎縮',
+    '胰島素阻抗：受體後訊號障礙（IRS-1 磷酸化異常 → PI3K/Akt 路徑↓）→ 肝臟糖質新生↑ + 周邊葡萄糖攝取↓',
+    '犬 DM 多為第一型（β 細胞免疫破壞 + 遺傳易感性）；貓 DM 多為第二型（胰島素阻抗 + β 細胞衰竭 + 澱粉樣沉積）',
+    '愛迪生氏症（原發性）：免疫介導腎上腺皮質破壞 → cortisol↓ + aldosterone↓ → Na↓K↑（Na:K <27 為典型）',
+    '非典型愛迪生：僅 zona fasciculata 受損 → cortisol↓ 但 aldosterone 正常 → 電解質正常，易漏診',
   ],
-  body: `# 自體免疫機轉
+  body: `# 內分泌失調機轉
 
 ## 一、病理機轉 (Pathophysiology)
 
-### 免疫耐受性崩解
+### HPA 軸失調：庫欣症候群
 
-**分子模仿（Molecular Mimicry）**：病原抗原表位與自身抗原結構相似→抗病原免疫反應交叉辨識自身組織→範例：Babesia 感染→紅血球表面抗原修飾→觸發抗紅血球抗體→繼發性 IMHA
+**正常 HPA 軸**：下視丘 CRH（corticotropin-releasing hormone）→ 垂體前葉 ACTH → 腎上腺皮質 zona fasciculata → cortisol 分泌 → 負回饋抑制下視丘和垂體
 
-**表位擴展（Epitope Spreading）**：初始免疫反應破壞組織→細胞內抗原釋放→新暴露的自身抗原被樹突細胞捕獲呈現→T/B 細胞反應擴展→疾病隨時間加重
+**垂體依賴型（PDH, 85%）**：ACTH 分泌型垂體微腺瘤/大腺瘤 → ACTH 自主過度分泌（部分保留回饋敏感性）→ 雙側腎上腺增生 → 皮質醇過高 → 臨床庫欣表現。LDDS 可部分抑制（保留回饋）而 HDDS 可抑制（與腎上腺腫瘤鑑別）
 
-**Treg 功能缺陷**：Treg（CD4+ CD25+ FoxP3+）維持周邊耐受→數量減少或功能異常→自身反應性 T 細胞逃逸→某些犬品種（Cocker Spaniel）的 Treg 功能缺陷與 IMHA 風險相關
+**腎上腺依賴型（ADH, 15%）**：腎上腺皮質腺瘤/腺癌 → 自主分泌 cortisol → ACTH 負回饋抑制 → 對側腎上腺萎縮。LDDS 和 HDDS 均無法抑制。ACTH 刺激測試呈單側誇大反應。
 
-### Type II 超敏反應（IMHA/ITP 核心機轉）
+**醫源性庫欣**：長期外源性類固醇 → HPA 軸抑制 → 腎上腺萎縮 → 突然停藥可致 Addisonian crisis
 
-**血管外溶血（主要路徑）**：IgG 結合紅血球表面抗原→脾臟/肝臟巨噬細胞 Fcγ receptor 辨識→完全或部分吞噬（形成球形紅血球）→[藥物:Prednisolone] 機轉之一：降低巨噬細胞 Fcγ receptor 表達
+### HPT 軸失調：甲狀腺疾病
 
-**血管內溶血（更急性/危險）**：IgM 結合紅血球→高效活化補體 classical pathway→C3b opsonization + C5b-9 MAC→紅血球直接裂解→Hemoglobinemia→hemoglobinuria
+**犬甲低（Hypothyroidism）**：
+- 原發性（>95%）：淋巴球性甲狀腺炎（自體免疫，anti-thyroglobulin Ab）→ 甲狀腺組織漸進破壞 → T4↓ → TSH 代償性↑（早期）→ 最終代償失敗
+- 特發性甲狀腺萎縮：甲狀腺實質被脂肪/纖維組織取代，機轉不明
+- 品種易感性：Golden Retriever, Doberman, Beagle 等
 
-**高凝血狀態**：溶血→phosphatidylserine 暴露→凝血因子活化；組織因子釋放→外在途徑活化；內皮損傷→促凝表面→**血栓栓塞（肺血栓為最常見死因）**
+**貓甲亢（Hyperthyroidism）**：
+- 甲狀腺結節性增生/腺瘤 → T4 自主過度分泌 → TSH 被抑制至極低
+- 可能致病因子：飲食碘含量變化、罐頭 BPA、環境內分泌干擾物
+- 繼發性影響：甲亢性心肌病（HCM 樣改變）、腎臟 GFR 假性正常（甲亢掩蓋 CKD）
 
-### 免疫抑制藥物的分子機轉
+### 胰島素-葡萄糖軸失調：糖尿病
 
-| 藥物 | 靶點 | 機轉 | 主要效應 |
-|------|------|------|---------|
-| [藥物:Prednisolone] | NF-κB, GR | 抑制促炎基因轉錄、誘導 T 細胞凋亡 | 廣效免疫抑制 |
-| [藥物:Mycophenolate] | IMPDH | 抑制嘌呤從頭合成 → 淋巴球特異性增殖抑制 | B/T 細胞抑制 |
-| [藥物:Cyclosporine] | Calcineurin | 抑制 NFAT → IL-2 轉錄抑制 | T 細胞抑制 |
-| [藥物:Azathioprine] | Purine synthesis | 干擾 DNA 合成 → 淋巴球增殖抑制 | T 細胞抑制為主 |
-| hIVIG | Fc receptors | 競爭性阻斷巨噬細胞 Fcγ receptor | 急性減少吞噬 |
+**犬 DM（主要為第一型）**：
+- 免疫介導 β 細胞破壞 + 遺傳易感性（DLA 相關）→ 絕對胰島素缺乏
+- 胰臟炎繼發 β 細胞破壞也常見
+- 幾乎所有犬 DM 需終身胰島素治療
+
+**貓 DM（主要為第二型）**：
+- 胰島素阻抗：肥胖 → 脂肪組織分泌促炎細胞因子（TNF-α, IL-6）→ IRS-1 serine 磷酸化 → 干擾正常 tyrosine 磷酸化 → PI3K/Akt 路徑下游訊號↓
+- β 細胞衰竭：胰島澱粉樣沉積（amylin/IAPP 聚集）→ β 細胞毒性 → 分泌能力漸失
+- 葡萄糖毒性（glucotoxicity）：持續高血糖 → β 細胞功能進一步抑制（可逆！早期控制血糖可達緩解）
+
+### 腎上腺皮質機能低下：愛迪生氏症
+
+**原發性（免疫介導）**：自體免疫攻擊腎上腺皮質 → zona glomerulosa（aldosterone）+ zona fasciculata（cortisol）破壞 → 低鈉高鉀 + 皮質醇缺乏
+
+**非典型愛迪生**：僅 zona fasciculata 受損或破壞早期 → cortisol↓ 但 aldosterone 尚正常 → 電解質正常 → ACTH 刺激測試確診
+
+**繼發性**：垂體 ACTH 分泌不足（腫瘤、創傷）→ cortisol↓ 但 aldosterone 正常（RAAS 獨立調控）
 
 ## 六、人醫借鑑 (Translational Insights)
 
-- 人醫 **rituximab (anti-CD20)** 治療難治性 warm AIHA 已成為二線標準——獸醫犬用抗 CD20 抗體處於早期研發
-- 人醫 **complement inhibitors** (eculizumab: anti-C5) 用於 PNH——獸醫尚無對應藥物但補體途徑為潛在靶標
-- 人醫的 **direct oral anticoagulants (DOACs)** 如 rivaroxaban 正取代 warfarin——獸醫犬藥動學研究中
-- 人醫自體免疫疾病的 **precision immunosuppression**（依免疫表型選藥）概念可借鑑
+- 人醫 **GLP-1 receptor agonists**（semaglutide）治療 T2DM 與肥胖——獸醫貓 DM 的 GLP-1 類似物 exenatide 有初步研究
+- 人醫 **continuous glucose monitoring (CGM)** 革新糖尿病管理——獸醫 FreeStyle Libre 在犬貓已廣泛使用
+- 人醫 **pasireotide** 治療庫欣病（垂體型）——獸醫犬 PDH 的垂體靶向治療正在探索中
+- 人醫甲亢的 **radioactive iodine (I-131)** 治療已成熟——獸醫貓甲亢 I-131 為黃金標準但受設施限制
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
-| IMHA 最佳初始免疫抑制方案 | Pred ± 第二藥物 | Level II-III | 單藥 vs 雙藥 RCT |
-| 犬用 anti-CD20 開發 | 研究階段 | Level IV | 犬嵌合/人源化抗體 |
-| 自體免疫疾病的遺傳預測 | DLA typing 可識別風險 | Level III | 商品化基因風險檢測 |
-| 腸道微生物群與自體免疫 | 相關性已確認 | Level III | FMT 調控自體免疫？ |`,
-  clinical_pearl: '在 IMHA 治療中，Prednisolone 的作用機轉不僅僅是「免疫抑制」。它至少有三重效應：(1) 降低巨噬細胞表面 Fcγ receptor 表達 → 減少 IgG-opsonized 紅血球的吞噬（最快速的效應，24-48 小時）；(2) 抑制 T 細胞功能 → 減少對 B 細胞的 help → 間接減少自體抗體產生；(3) 抑制補體活化路徑。這也解釋了為什麼 Prednisolone 在 IMHA 中的效果比在其他自體免疫疾病中更為迅速。',
+| 犬甲低的自體免疫觸發因子 | 遺傳 + 環境（待釐清） | Level III | 犬 DLA 與甲狀腺炎風險 |
+| 貓甲亢的環境因素 | BPA/PBDE 假說 | Level III | 流行病學前瞻研究 |
+| 貓 DM 緩解率的預測因子 | 早期診斷 + 積極胰島素治療 | Level II | 胰島功能殘存的生物標記 |
+| 非典型愛迪生的病程預測 | 部分進展為典型型 | Level IV | 長期追蹤研究 |`,
+  clinical_pearl: '貓甲亢會掩蓋同時存在的 CKD。甲亢增加心輸出量和腎臟血流，使 GFR 假性正常。一旦治療甲亢（methimazole 或 I-131），GFR 下降，「隱藏的」CKD 便會浮現。因此在治療貓甲亢前和治療後 2-4 週都必須監測腎功能指標（SDMA, BUN, Creatinine）。臨床上建議先以低劑量 methimazole 試驗性治療 2-4 週評估腎功能變化，再決定是否進行 I-131 永久治療。',
   common_mistakes: [
-    '將自體免疫疾病簡化為「免疫系統過強」——實際上是免疫調節失衡（Treg 功能缺陷 + effector 過度活化）',
-    '不理解分子模仿解釋了為什麼感染可以觸發自體免疫（Babesia → IMHA）',
-    '忽略表位擴展現象——這解釋了為什麼自體免疫疾病會隨時間擴大攻擊範圍',
-    '不理解不同免疫抑制劑的作用靶點差異——合理的聯合治療需要不同靶點的藥物',
+    '混淆 PDH（垂體型，ACTH 高）與 ADH（腎上腺型，ACTH 低）的 ACTH 水平差異',
+    '忽略醫源性庫欣的可能——長期外源性類固醇使用後突然停藥可致 Addisonian crisis',
+    '不理解貓甲亢掩蓋 CKD 的機轉，治療前未評估腎功能基線',
+    '將犬 DM 和貓 DM 的病理機轉混為一談——犬以免疫破壞為主，貓以胰島素阻抗為主',
+    '忽略非典型愛迪生（電解質正常型）的存在，導致漏診',
   ],
   disease_data: null,
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: 'Type II 超敏反應段落後', type: 'flowchart', description: 'IMHA 血管外 vs 血管內溶血機轉比較圖' },
-    { position: '免疫抑制藥物表後', type: 'flowchart', description: '免疫抑制藥物作用靶點與 T/B 細胞活化路徑圖' },
+    { position: 'HPA 軸段落後', type: 'flowchart', description: 'HPA 軸正常回饋 vs PDH/ADH 失調機轉比較圖' },
+    { position: '胰島素阻抗段落後', type: 'flowchart', description: '犬 T1DM vs 貓 T2DM 病理機轉比較圖' },
   ],
   interactive_placeholders: [],
-  drug_api_links: ['Prednisolone', 'Mycophenolate', 'Cyclosporine', 'Azathioprine'],
+  drug_api_links: ['Trilostane', 'Methimazole', 'Insulin', 'Levothyroxine'],
   references: [
-    { type: 'journal', citation: 'Garden OA et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334.', relevance: 'IMHA 免疫機轉與診斷共識' },
-    { type: 'textbook', citation: 'Tizard IR. Veterinary Immunology: An Introduction, 10th ed. Elsevier, 2018. Chapters on Autoimmunity.', relevance: '獸醫自體免疫學教材' },
-    { type: 'journal', citation: 'Swann JW, Skelly BJ. "Systematic review of evidence relating to the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med. 2013;27(1):1-9.', relevance: '免疫抑制治療機轉與證據' },
-    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334.', relevance: 'IMHA 診斷共識' },
+    { type: 'guideline', citation: 'Behrend E et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21.', relevance: '犬貓糖尿病管理共識' },
+    { type: 'textbook', citation: 'Feldman EC, Nelson RW, Reusch CE, Scott-Moncrieff JC. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015.', relevance: '犬貓內分泌學教材' },
+    { type: 'journal', citation: 'Peterson ME. "Hyperthyroidism in cats: what\'s causing this epidemic of thyroid disease and can we prevent it?" J Feline Med Surg. 2012;14(11):804-818.', relevance: '貓甲亢流行病學與病因' },
+    { type: 'guideline', citation: 'Scott-Moncrieff JC. "Hypothyroidism." In: Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. pp.77-135.', relevance: '犬甲低診斷與管理' },
   ],
   is_current: true,
   created_at: now,
@@ -4436,7 +4456,7 @@ const contentAKI: NodeContent = {
   id: 'CONTENT-IM-L3-013',
   node_id: 'IM-L3-013',
   version: 1,
-  summary: '急性腎損傷（AKI）為腎功能突然惡化，以急性氮血症和尿量異常為特徵。IRIS AKI 分級系統分為 Grade I-V。常見病因包括腎毒素（百合花中毒於貓、葡萄/葡萄乾於犬、乙二醇、NSAIDs）、腎缺血及感染。早期積極輸液治療是關鍵。',
+  summary: '急性腎損傷（AKI）為腎功能突然惡化，以急性氮血症和尿量異常為特徵。IRIS AKI 分級系統分為 Grade I-V。常見病因包括腎毒素（百合花中毒於貓、葡萄/葡萄乾於犬、乙二醇、NSAIDs）、腎缺血及感染。早期積極輸液治療是關鍵。台灣因亞熱帶氣候與居家環境，百合花（花市常見且價格低廉）為貓 AKI 最重要的可預防病因，鉤端螺旋體感染亦為本土犬 AKI 的重要病因。',
   learning_objectives: [
     '運用 IRIS AKI 分級系統（Grade I-V）正確評估 AKI 嚴重度',
     '區分腎前性、腎性與腎後性 AKI 的病因與診斷策略',
@@ -4572,6 +4592,7 @@ AKI 核心為**腎小管上皮細胞急性損傷**，機轉依病因而異：
     { type: 'journal', citation: 'Langston C. "Acute uremia." In: Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. pp 1969-1985.', relevance: 'AKI 診斷與治療教材' },
     { type: 'journal', citation: 'Segev G et al. "Consensus recommendations for immunosuppressive treatment of dogs with glomerular disease based on established pathology." J Vet Intern Med. 2013;27 Suppl 1:S44-54.', relevance: '腎臟疾病治療共識' },
     { type: 'journal', citation: 'Bennett SL, Abraham LA. "Treatment of acute kidney injury." Vet Clin North Am Small Anim Pract. 2022;52(3):601-612.', relevance: 'AKI 治療最新回顧' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 311: Acute Kidney Injury.', relevance: 'AKI 診斷與治療標準教科書' },
   ],
   is_current: true,
   created_at: now,
@@ -4582,7 +4603,7 @@ const contentPLN: NodeContent = {
   id: 'CONTENT-IM-L3-014',
   node_id: 'IM-L3-014',
   version: 1,
-  summary: '蛋白質流失性腎病（PLN）以持續性腎小球蛋白尿（UPC > 2.0）為特徵，最常見病因為免疫複合體腎小球腎炎和類澱粉沉著症。Soft-coated Wheaten Terrier 和 Bernese Mountain Dog 有遺傳傾向。腎臟切片（光學/免疫螢光/電子顯微鏡）為確診金標準。治療包括 ACEi/ARB 抗蛋白尿、免疫抑制（免疫複合體型）及抗血栓預防。',
+  summary: '蛋白質流失性腎病（PLN）以持續性腎小球蛋白尿（UPC > 2.0）為特徵，最常見病因為免疫複合體腎小球腎炎和類澱粉沉著症。Soft-coated Wheaten Terrier 和 Bernese Mountain Dog 有遺傳傾向。腎臟切片（光學/免疫螢光/電子顯微鏡）為確診金標準。治療包括 ACEi/ARB 抗蛋白尿、免疫抑制（免疫複合體型）及抗血栓預防。台灣常見的繼發性 PLN 病因包括心絲蟲感染（Dirofilaria 免疫複合體腎炎）與壁蝨媒介疾病（Ehrlichia），本土流行病學顯示這些感染源在未預防犬隻中盛行率偏高。',
   learning_objectives: [
     '定義 PLN 並說明 UPC > 2.0 作為診斷標準的意義',
     '區分免疫複合體腎小球腎炎與類澱粉沉著症的病理與治療差異',
@@ -4720,7 +4741,7 @@ const contentIMT: NodeContent = {
   id: 'CONTENT-IM-L3-015',
   node_id: 'IM-L3-015',
   version: 1,
-  summary: '免疫介導血小板減少症（IMT）是犬最常見的嚴重血小板減少原因，以自體抗體加速血小板破壞為特徵。分為原發性（特發性）和繼發性。Evans syndrome 為 IMT 合併 IMHA。血小板 < 50,000/μL 時出現瘀斑與黏膜出血。治療以免疫抑制為核心。',
+  summary: '免疫介導血小板減少症（IMT）是犬最常見的嚴重血小板減少原因，以自體抗體加速血小板破壞為特徵。分為原發性（特發性）和繼發性。Evans syndrome 為 IMT 合併 IMHA。血小板 < 50,000/μL 時出現瘀斑與黏膜出血。治療以免疫抑制為核心。台灣因亞熱帶氣候壁蝨活動全年不間斷，Ehrlichia canis 與 Babesia gibsoni 為繼發性 IMT 的重要本土病因，臨床上應優先排除壁蝨媒介疾病後再啟動免疫抑制治療。',
   learning_objectives: [
     '區分原發性與繼發性 IMT 的病因與臨床意義',
     '說明 Evans syndrome（IMT + IMHA）的診斷與治療特殊性',
@@ -5009,7 +5030,7 @@ const contentFIP: NodeContent = {
   id: 'CONTENT-IM-L3-017',
   node_id: 'IM-L3-017',
   version: 1,
-  summary: '貓傳染性腹膜炎（FIP）由貓冠狀病毒（FCoV）突變為高致病力型所引起。分為濕型（滲出型）和乾型（肉芽腫型）。過去被認為幾乎 100% 致命，現在 GS-441524 等抗病毒藥物已使 FIP 成為可治癒疾病。治療標準為 GS-441524 皮下注射 84 天。',
+  summary: '貓傳染性腹膜炎（FIP）由貓冠狀病毒（FCoV）突變為高致病力型所引起。分為濕型（滲出型）和乾型（肉芽腫型）。過去被認為幾乎 100% 致命，現在 GS-441524 等抗病毒藥物已使 FIP 成為可治癒疾病。治療標準為 GS-441524 皮下注射 84 天。台灣多貓家庭與貓咖啡廳密度高，FCoV 盛行率偏高；GS-441524 在台灣可透過獸醫處方取得，本土治療經驗持續累積。',
   learning_objectives: [
     '說明 FCoV 突變為 FIPV 的機轉與免疫病理',
     '區分 FIP 濕型與乾型的臨床表現與診斷策略',
@@ -5166,6 +5187,7 @@ const contentFIP: NodeContent = {
     { type: 'journal', citation: 'Tasker S. "Diagnosis of feline infectious peritonitis: Update on evidence supporting available tests." J Feline Med Surg. 2018;20(3):228-243.', relevance: 'FIP 診斷方法更新' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 95: Feline Infectious Peritonitis.', relevance: 'FIP 教材' },
     { type: 'journal', citation: 'Jones S et al. "Antiviral treatment of feline infectious peritonitis using GS-441524: A retrospective study of 30 cats." J Feline Med Surg. 2021;23(12):1103-1111.', relevance: 'GS-441524 回顧性治療研究' },
+    { type: 'guideline', citation: 'Tasker S, Addie DD, Egberink H, et al. European Advisory Board on Cat Diseases (ABCD) Guidelines on Feline Infectious Peritonitis. J Feline Med Surg. 2023;25(1):1-11. doi:10.1177/1098612X221145687', relevance: 'ABCD 歐洲貓傳染性腹膜炎診斷與治療指引' },
   ],
   is_current: true,
   created_at: now,
@@ -5176,7 +5198,7 @@ const contentFLUTD: NodeContent = {
   id: 'CONTENT-IM-L3-018',
   node_id: 'IM-L3-018',
   version: 1,
-  summary: '貓下泌尿道疾病（FLUTD）為一組以排尿困難、血尿和頻尿為特徵的症候群。貓特發性膀胱炎（FIC）為最常見病因（55-69%），壓力為重要觸發因子。公貓尿道阻塞為急診狀況。治療以多模式環境改善（MEMO）和壓力管理為核心。',
+  summary: '貓下泌尿道疾病（FLUTD）為一組以排尿困難、血尿和頻尿為特徵的症候群。貓特發性膀胱炎（FIC）為最常見病因（55-69%），壓力為重要觸發因子。公貓尿道阻塞為急診狀況。治療以多模式環境改善（MEMO）和壓力管理為核心。台灣都會區室內飼養貓比例高，乾飼料為主食的飲食習慣與高溫多濕環境下飲水量不足，使 FLUTD 在本土貓的盛行率偏高；臨床上公貓尿道阻塞為台灣貓急診最常見主訴之一。',
   learning_objectives: [
     '列舉 FLUTD 的主要病因並說明各自的占比與特徵',
     '區分貓特發性膀胱炎（FIC）與其他 FLUTD 病因的診斷策略',
@@ -5336,7 +5358,7 @@ const contentCholangitis: NodeContent = {
   id: 'CONTENT-IM-L3-019',
   node_id: 'IM-L3-019',
   version: 1,
-  summary: '貓膽管炎分為嗜中性球型（化膿性）和淋巴球型兩大類。三合症（Triaditis）指膽管炎、胰臟炎與發炎性腸病（IBD）同時存在，反映貓獨特的膽胰管解剖。嗜中性球型以上行性細菌感染為主（E. coli），淋巴球型可能為免疫介導。肝臟切片為確診金標準。',
+  summary: '貓膽管炎分為嗜中性球型（化膿性）和淋巴球型兩大類。三合症（Triaditis）指膽管炎、胰臟炎與發炎性腸病（IBD）同時存在，反映貓獨特的膽胰管解剖。嗜中性球型以上行性細菌感染為主（E. coli），淋巴球型可能為免疫介導。肝臟切片為確診金標準。台灣獸醫臨床中貓膽管炎為常見肝膽疾病，淋巴球型在本土老年貓盛行率高，Triaditis 三合症的診斷需結合超音波、fPLI 與肝切片，台灣各大動物醫院已具備完整診斷能力。',
   learning_objectives: [
     '區分嗜中性球型與淋巴球型膽管炎的病因、病理與治療差異',
     '說明 Triaditis 的解剖學基礎與三器官交互影響機轉',
@@ -5507,6 +5529,911 @@ const contentCholangitis: NodeContent = {
   created_at: now,
 };
 
+/** 貓下呼吸道疾病/貓哮喘 (FLAD) — 疾病型 */
+const contentFelineAsthma: NodeContent = {
+  id: 'CONTENT-IM-L3-020',
+  node_id: 'IM-L3-020',
+  version: 1,
+  summary: '貓下呼吸道疾病（FLAD）又稱貓哮喘，是貓最常見的下呼吸道疾病，盛行率約 1-5%。病理以 Th2 驅動的嗜酸球性氣道發炎、支氣管痙攣和氣道重塑為特徵，與人類過敏性哮喘高度相似。臨床表現為反覆咳嗽、喘鳴和呼吸困難。治療以吸入型類固醇（Fluticasone）合併支氣管擴張劑為首選，急性發作時需緊急支氣管擴張劑（Terbutaline）解痙。',
+  learning_objectives: [
+    '說明貓哮喘的免疫病理機轉（Th2/嗜酸球性氣道發炎）',
+    '區分貓哮喘的臨床分級（輕度、中度、重度/急性危象）',
+    '正確判讀胸腔 X 光特徵（支氣管壁增厚 doughnut sign、肺過度充氣）',
+    '制定 FLAD 的階梯式治療方案（吸入型 vs 全身性類固醇）',
+    '說明急性哮喘發作的緊急處理流程',
+  ],
+  key_points: [
+    '盛行率：貓群體約 1-5%，暹羅貓可能有品種傾向',
+    '核心病理：Th2 → IL-5 → 嗜酸球浸潤 → 支氣管痙攣 + 黏液過度分泌 + 氣道重塑',
+    '胸腔 X 光特徵：支氣管壁增厚（doughnut/tram line sign）、肺過度充氣（橫膈後移、心臟偏小）',
+    'BAL 細胞學金標準：嗜酸球 > 17% 高度支持 FLAD',
+    '治療階梯：輕度→吸入 Fluticasone 110 μg BID；中度→加 Albuterol PRN；重度→全身性 Prednisolone',
+    '急性發作緊急處理：氧氣 + Terbutaline 0.01 mg/kg SC/IM → 支氣管痙攣解除',
+    '吸入型治療需搭配貓專用面罩與儲霧器（spacer），飼主衛教至關重要',
+  ],
+  body: `# 貓下呼吸道疾病 / 貓哮喘 (Feline Asthma / FLAD)
+
+## 一、病理機制 (Pathophysiology)
+
+### 免疫病理
+
+吸入過敏原（室內塵蟎、花粉、黴菌、貓砂粉塵）→ 氣道上皮 DC 攝取 → Th2 分化 → IL-4（IgE 產生）+ IL-5（嗜酸球活化）+ IL-13（杯狀細胞化生、氣道高反應性）→ IgE 結合肥大細胞 → 再次接觸過敏原 → 肥大細胞脫顆粒 → 組胺 + 白三烯 → 急性支氣管痙攣
+
+**急性 vs 慢性**：
+| 階段 | 病理 | 可逆性 | 治療反應 |
+|------|------|--------|---------|
+| 急性發作 | 支氣管平滑肌痙攣 + 黏膜水腫 | 完全可逆 | 支氣管擴張劑即效 |
+| 亞急性 | 嗜酸球浸潤 + 黏液栓塞 | 大部分可逆 | 類固醇 1-2 週 |
+| 慢性重塑 | 上皮下纖維化 + 平滑肌增生 | 部分不可逆 | 長期抗炎控制 |
+
+### 嗜酸球的破壞效應
+
+嗜酸球活化 → 釋放 MBP（主要鹼性蛋白）+ ECP → 氣道上皮細胞壞死 → 裸露的基底膜暴露感覺神經 → Substance P → 肥大細胞再活化 → 惡性循環
+
+## 二、臨床表現與診斷
+
+### 臨床分級
+
+| 分級 | 表現 | 頻率 | 日常影響 |
+|------|------|------|---------|
+| 輕度 | 偶發咳嗽、無呼吸困難 | < 2 次/週 | 無影響 |
+| 中度 | 頻繁咳嗽、活動後喘 | 2-7 次/週 | 中度受限 |
+| 重度 | 持續呼吸困難、端坐呼吸 | 每日 | 嚴重受限 |
+| 急性危象 | 開口呼吸、發紺、呼吸衰竭 | 急性 | 危及生命 |
+
+### 診斷流程
+
+| 檢查 | 發現 | 敏感度 | 備註 |
+|------|------|--------|------|
+| 胸腔 X 光 | 支氣管壁增厚（doughnut/tram line）| 中等 | 23% 正常 X 光仍可能有 FLAD |
+| 肺過度充氣 | 橫膈後移、心臟偏小 | 中等 | 空氣滯留的表現 |
+| BAL 細胞學 | 嗜酸球 > 17% | 高 | 金標準，需全身麻醉 |
+| 糞便浮游 | 排除肺蟲 (Aelurostrongylus) | — | 台灣盛行率低但需排除 |
+| 心絲蟲抗原/抗體 | 排除 HARD | — | 台灣心絲蟲區需檢測 |
+
+**鑑別診斷**：心絲蟲相關呼吸道疾病（HARD）、肺蟲、細菌性肺炎、肺腫瘤、心衰竭
+
+## 三、治療策略
+
+### 階梯式治療
+
+| 分級 | 抗炎 | 支氣管擴張 | 備註 |
+|------|------|-----------|------|
+| 輕度 | 吸入 Fluticasone 44-110 μg BID | — | 面罩+spacer 訓練 |
+| 中度 | 吸入 Fluticasone 110-220 μg BID | 吸入 Albuterol PRN | 衛教 PRN 使用 |
+| 重度 | Prednisolone 1-2 mg/kg PO SID→漸減 | 吸入 Albuterol PRN + 口服 Theophylline | 全身性類固醇 |
+| 急性危象 | Dexamethasone 0.25 mg/kg IV | Terbutaline 0.01 mg/kg SC/IM | 氧氣 + 最少刺激 |
+
+### 吸入治療衛教
+
+- 專用貓面罩 + AeroChamber/spacer（人用兒童 spacer 亦可）
+- 步驟：搖勻 MDI → 插入 spacer → 面罩輕置貓鼻口 → 按壓 MDI 1 次 → 維持 7-10 次呼吸 → 移除
+- Fluticasone 需 2 週達穩態效果；Albuterol 即時起效（5-10 分鐘）
+- 飼主訓練要點：先讓貓適應面罩（零食獎勵 3-5 天）→ 再加入藥物
+
+### 環境管理
+
+- 移除已知或疑似過敏原（更換無粉塵貓砂、HEPA 空氣清淨機）
+- 避免吸菸、香氛蠟燭、強效清潔劑
+- 控制室內塵蟎（定期清洗貓床、控制濕度 < 50%）
+
+## 四、預後
+
+| 情境 | 預後 | 說明 |
+|------|------|------|
+| 輕中度、規律吸入治療 | 良好 | 大多可控制症狀 |
+| 重度、慢性重塑 | 謹慎 | 不可逆氣道變化 |
+| 急性危象 | 取決於及時處理 | 未治療可致死 |`,
+  clinical_pearl: '貓哮喘的急性發作是真正的緊急狀況——此時最重要的原則是「最少刺激」。不要第一時間做 X 光或抽血——先給予氧氣（flow-by 或氧氣籠）並在最少保定下給予 Terbutaline 0.01 mg/kg SC/IM。等穩定後才進行進一步評估。很多貓在過度保定下因壓力導致支氣管痙攣加劇而死亡。另外，胸腔 X 光正常不能排除 FLAD——約 23% 的確診貓 X 光完全正常。',
+  common_mistakes: [
+    '將所有貓的咳嗽都診斷為哮喘而忽略心絲蟲相關呼吸道疾病（HARD）和肺蟲鑑別',
+    '急性發作時過度保定做檢查——壓力加劇支氣管痙攣，應先穩定再檢查',
+    '僅用口服類固醇長期治療而未嘗試吸入型——吸入型副作用遠少於全身性',
+    '吸入治療衛教不足——飼主不會正確使用面罩和 spacer 導致治療失敗',
+    '胸腔 X 光正常就排除 FLAD——約 23% 確診貓 X 光正常',
+  ],
+  disease_data: {
+    signalment: '盛行率約 1-5% 的貓群體。無明確性別傾向。暹羅貓可能有品種傾向。好發年齡 2-8 歲，但任何年齡均可發生。室內貓暴露於室內過敏原（塵蟎、黴菌、貓砂粉塵）風險較高。',
+    etiology: '過敏性氣道發炎為主因。常見過敏原：室內塵蟎（Dermatophagoides）、黴菌孢子、花粉、貓砂粉塵、香菸煙霧、香氛。部分為非過敏性氣道高反應性。感染（Mycoplasma spp.）可能為共病因子。',
+    pathogenesis: '吸入過敏原 → APC 呈現 → Th2 分化 → IL-4/IL-5/IL-13 → IgE 產生 + 嗜酸球浸潤 → 肥大細胞脫顆粒 → 急性支氣管痙攣 + 黏液過度分泌 → 慢性：氣道重塑（上皮下纖維化、平滑肌增生、杯狀細胞化生）→ 不可逆氣道狹窄。',
+    clinical_signs: [
+      { sign: '咳嗽', category: 'primary', description: '最常見主訴，乾咳為主，可呈蹲伏姿勢（neck extension + abdominal effort），易被飼主誤認為嘔吐' },
+      { sign: '喘鳴（wheezing）', category: 'primary', description: '呼氣期喘鳴音，反映下呼吸道狹窄' },
+      { sign: '呼吸急促/用力', category: 'primary', description: '呼氣性呼吸困難，腹部用力' },
+      { sign: '運動不耐', category: 'secondary', description: '中重度患貓活動力下降' },
+      { sign: '開口呼吸', category: 'secondary', description: '重度或急性發作，貓正常不會開口呼吸' },
+      { sign: '發紺', category: 'secondary', description: '嚴重低氧時舌頭/黏膜變紫' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '心絲蟲相關呼吸道疾病（HARD）', key_differentiator: '心絲蟲抗原/抗體陽性，流行區需排除' },
+      { condition: '肺蟲（Aelurostrongylus abstrusus）', key_differentiator: '糞便 Baermann 法可見 L1 幼蟲' },
+      { condition: '細菌性肺炎', key_differentiator: 'BAL 嗜中性球為主、發燒、X 光肺泡型浸潤' },
+      { condition: '肺腫瘤（原發或轉移）', key_differentiator: 'X 光可見結節、CT 更敏感，細胞學/組織學確診' },
+      { condition: '充血性心衰竭', key_differentiator: '心臟超音波異常、NT-proBNP 升高、肺靜脈擴張' },
+    ],
+    diagnostic_workup: '1. 理學檢查（聽診：呼氣期喘鳴音、呼吸型態）→ 2. 胸腔 X 光（支氣管壁增厚、肺過度充氣）→ 3. 排除心絲蟲（抗原 + 抗體）→ 4. 排除肺蟲（糞便浮游）→ 5. BAL 細胞學（嗜酸球 > 17%）+ 培養 → 6. 進階：CT、過敏原檢測',
+    treatment_protocol: '階梯式治療：輕度→吸入 Fluticasone 44-110 μg BID via spacer；中度→Fluticasone 110-220 μg BID + Albuterol PRN；重度→Prednisolone 1-2 mg/kg/day PO 漸減 + 吸入療法。急性危象→氧氣 + Terbutaline 0.01 mg/kg SC/IM + Dexamethasone 0.25 mg/kg IV。環境管理：移除過敏原、低粉塵貓砂、HEPA。',
+    prognosis: '輕中度規律治療：預後良好，大多可有效控制。重度/慢性重塑：預後謹慎，不可逆氣道變化持續存在。急性危象如及時處理存活率高。長期管理可維持良好生活品質。部分貓隨年齡增加氣道重塑加劇。',
+    monitoring: '初始治療 2-4 週後評估症狀改善。穩定後每 3-6 個月追蹤。監測：呼吸頻率（RR）、咳嗽頻率、運動耐力。長期口服類固醇貓需每 6 個月血糖和尿液監測。建議飼主記錄症狀日記。',
+    owner_communication: '貓哮喘是慢性可控制但通常無法根治的疾病，類似人類的氣喘。吸入型治療是最安全有效的長期方案，需要飼主的耐心配合學習使用面罩。環境管理非常重要——更換低粉塵貓砂、使用空氣清淨機。注意急性發作的警告徵兆（開口呼吸、發紺）——需立即就醫。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '診斷流程表後', type: 'flowchart', description: 'FLAD 診斷決策流程圖' },
+    { position: '階梯式治療表後', type: 'annotated_image', description: '貓吸入治療示範（面罩 + spacer + MDI）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Fluticasone', 'Albuterol', 'Terbutaline', 'Prednisolone', 'Dexamethasone', 'Theophylline'],
+  references: [
+    { type: 'journal', citation: 'Trzil JE. "Feline Asthma: Diagnostic and Treatment Update." Vet Clin North Am Small Anim Pract. 2020;50(2):375-391.', relevance: '貓哮喘診斷與治療最新回顧' },
+    { type: 'journal', citation: 'Reinero CR. "Advances in the understanding of pathogenesis, and diagnostics and therapeutics for feline allergic asthma." Vet J. 2011;190(1):28-33.', relevance: '貓哮喘免疫病理與治療進展' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 22: Lower Respiratory Tract Disorders.', relevance: '下呼吸道疾病教材' },
+    { type: 'guideline', citation: 'Padrid P. "Feline asthma: diagnosis and treatment." Vet Clin North Am Small Anim Pract. 2000;30(6):1279-1293.', relevance: '貓哮喘經典臨床指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 犬貓細菌性肺炎 — 疾病型 */
+const contentBacterialPneumonia: NodeContent = {
+  id: 'CONTENT-IM-L3-021',
+  node_id: 'IM-L3-021',
+  version: 1,
+  summary: '犬貓細菌性肺炎是常見且可致命的下呼吸道感染，犬的發生率遠高於貓。吸入性肺炎（aspiration pneumonia）為最常見類型，常繼發於嘔吐、巨食道、喉麻痺或全身麻醉後。致病菌以口腔常駐菌為主（Pasteurella、E. coli、Streptococcus、Bordetella），通常為混合感染。診斷依據胸腔 X 光肺泡型浸潤加上 BAL 細菌培養。治療需 3-6 週的經驗性或目標抗生素治療。',
+  learning_objectives: [
+    '列出犬貓細菌性肺炎的主要原因與危險因子',
+    '說明吸入性肺炎的病理機轉與好發情境',
+    '正確判讀細菌性肺炎的胸腔 X 光特徵（肺泡型浸潤、支氣管空氣像）',
+    '制定經驗性抗生素方案並說明 BAL 培養指引治療的重要性',
+    '說明犬貓細菌性肺炎的預後因子與監測計畫',
+  ],
+  key_points: [
+    '吸入性肺炎是犬最常見的肺炎類型，好發於右中葉和右前葉（重力依賴）',
+    '危險因子：嘔吐/反流、巨食道、喉麻痺、全身麻醉、氣管插管、口咽疾病、意識不清',
+    '常見菌種：Pasteurella spp.、E. coli、Bordetella bronchiseptica、Streptococcus spp.、Mycoplasma spp.（貓）',
+    '胸腔 X 光：肺泡型浸潤（air bronchogram）、好發於腹側肺葉（吸入性）或多葉分布（血行性）',
+    '經驗性抗生素：Amoxicillin-clavulanate ± Fluoroquinolone（社區型）；重症加 Metronidazole（厭氧菌覆蓋）',
+    '治療療程：臨床改善後至少再治療 1-2 週，總療程通常 3-6 週；以 X 光改善為停藥依據',
+    '貓肺炎較罕見但嚴重——Mycoplasma 為重要病原，需特殊培養',
+  ],
+  body: `# 犬貓細菌性肺炎 (Bacterial Pneumonia)
+
+## 一、病理機制 (Pathophysiology)
+
+### 感染途徑
+
+| 途徑 | 機轉 | 代表情境 | 好發肺葉 |
+|------|------|---------|---------|
+| 吸入性（最常見） | 口腔/胃內容物吸入 | 嘔吐、反流、麻醉後、巨食道 | 右中葉、右前葉（重力依賴） |
+| 吸入性（感染性） | 上呼吸道感染下行 | Bordetella、犬舍咳 | 前葉為主 |
+| 血行性 | 菌血症經肺血管播散 | 感染性心內膜炎、IV 導管感染 | 後葉、瀰漫性 |
+| 外傷性 | 穿刺性胸壁損傷 | 咬傷、異物 | 損傷對側 |
+
+### 吸入性肺炎病理機轉
+
+**雙重損傷**：
+1. **化學性損傷**：胃酸（pH < 2.5）→ 肺泡上皮與內皮細胞直接灼傷 → 通透性增加 → 肺水腫 → 表面活性劑失活 → 肺泡塌陷
+2. **細菌感染**：口腔常駐菌（厭氧菌 + 兼性厭氧菌）隨吸入物進入 → 黏液纖毛清除已被破壞 → 細菌增殖 → 嗜中性球浸潤 → 化膿性肺炎
+
+**危險因子**：
+| 危險因子 | 機轉 | 犬/貓 |
+|---------|------|--------|
+| 巨食道 | 食物滯留 + 反流 | 犬為主 |
+| 喉麻痺 | 喉閉合不全 → 吸入 | 犬（老年大型犬） |
+| 全身麻醉 | 喉反射抑制 + 胃反流 | 犬貓 |
+| 持續嘔吐 | 反覆吸入機會 | 犬貓 |
+| 口咽疾病 | 吞嚥困難 | 犬貓 |
+| 意識不清/癲癇 | 保護性反射喪失 | 犬貓 |
+
+## 二、臨床表現與診斷
+
+### 臨床表現
+
+| 臨床表現 | 頻率 | 描述 |
+|---------|------|------|
+| 濕咳（productive cough） | 常見 | 有痰咳嗽，可能咳出膿性分泌物 |
+| 發燒 | 60-80% | > 39.5°C，但重症可能低體溫 |
+| 呼吸急促/困難 | 常見 | 取決於浸潤範圍 |
+| 精神沉鬱/食慾下降 | 常見 | 全身性發炎反應 |
+| 鼻腔分泌物 | 變異 | 黏膿性 |
+| 聽診異常 | 常見 | 囉音（crackles）、支氣管呼吸音（tubular breath sounds） |
+
+### 診斷
+
+| 檢查 | 發現 | 臨床價值 |
+|------|------|---------|
+| 胸腔 X 光（三視角） | 肺泡型浸潤（air bronchogram）、好發腹側葉 | 首選影像，評估範圍與嚴重度 |
+| CBC | 嗜中性球增多（可能左移）| 支持感染但非特異 |
+| BAL 細胞學 + 培養 | 嗜中性球為主 + 細胞內細菌 + 培養定菌 | 金標準，指引抗生素選擇 |
+| 經氣管沖洗（TTW） | 替代 BAL，無需全身麻醉 | 適合無法麻醉的重症患者 |
+| 血液氣體 | PaO2 下降、A-a gradient 增加 | 評估氧合嚴重度 |
+
+## 三、治療策略
+
+### 抗生素選擇
+
+| 情境 | 經驗性抗生素 | 療程 | 備註 |
+|------|------------|------|------|
+| 社區型（輕-中度） | Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID | 3-6 週 | 涵蓋大部分口腔菌 |
+| 社區型（需廣譜） | Amoxicillin-Clav + Fluoroquinolone | 4-6 週 | 加強革蘭氏陰性覆蓋 |
+| 吸入性（厭氧菌） | Amoxicillin-Clav + Metronidazole 10 mg/kg PO BID | 4-6 週 | 厭氧菌覆蓋 |
+| 重症/住院 | Ampicillin-Sulbactam IV + Enrofloxacin IV | 至穩定後轉 PO | 依培養結果調整 |
+| 貓（Mycoplasma 疑慮） | Doxycycline 5-10 mg/kg PO SID | 3-4 週 | Mycoplasma 對 β-lactam 無效 |
+
+### 支持療法
+
+- **氧氣**：SpO2 < 93% → 鼻管 (50-100 mL/kg/min)、氧氣籠或 flow-by
+- **霧化療法 (Nebulization)**：生理食鹽水霧化 15-20 分鐘 Q6-8H → 稀釋分泌物
+- **叩擊排痰 (Coupage)**：霧化後胸壁叩擊 5-10 分鐘 → 鬆動分泌物
+- **輸液**：維持水合但避免過度（加重肺水腫）
+- **營養**：維持足夠熱量攝取，吸入性肺炎患者考慮暫時禁食並以食管管灌食
+
+## 四、預後
+
+| 預後因子 | 良好 | 不良 |
+|---------|------|------|
+| 肺葉數 | 1-2 葉受累 | ≥ 3 葉或瀰漫性 |
+| 基礎原因 | 可矯正（一次性吸入） | 不可矯正（巨食道） |
+| 培養結果 | 敏感菌株 | 多重抗藥菌 |
+| 氧合狀態 | SpO2 > 90% | 需機械通氣 |
+| 整體存活率 | 77-89%（社區型） | 50-68%（吸入性） |
+
+### 台灣臨床注意事項
+
+台灣屬亞熱帶氣候，高溫高濕的環境增加了吸入性肺炎的風險——濕熱環境下食物腐敗快速，嘔吐相關的吸入事件相對常見。台灣流浪犬族群因長期戶外暴露、營養不良與免疫力低下，細菌性肺炎的盛行率較家犬為高。台灣常見致病菌以 Pasteurella spp.、E. coli、Streptococcus spp. 為主，與國際報告一致，但因抗生素使用習慣差異，部分區域的抗藥性模式可能不同，建議積極進行 BAL 培養與藥敏試驗以指導治療。此外，台灣犬舍環境密度較高，Bordetella bronchiseptica 相關的群聚感染需特別留意。`,
+  clinical_pearl: '吸入性肺炎最重要的臨床線索是「在嘔吐/麻醉事件後出現的急性呼吸症狀」加上「胸腔 X 光右中葉/右前葉（重力依賴部位）的肺泡型浸潤」。在等待培養結果期間，經驗性抗生素必須涵蓋厭氧菌——因為口腔常駐菌中厭氧菌佔很大比例。Amoxicillin-Clavulanate 為首選，不需要額外加 Metronidazole 除非是嚴重的壞死性肺炎。另外，「coupage + nebulization」是被低估的輔助療法——每 6-8 小時生理食鹽水霧化後叩擊排痰可顯著加速痊癒。',
+  common_mistakes: [
+    '吸入性肺炎抗生素未覆蓋厭氧菌——口腔常駐菌中厭氧菌為重要成分',
+    '抗生素療程太短（僅 7-10 天）——細菌性肺炎通常需 3-6 週，以 X 光改善為停藥依據',
+    '未做 BAL/TTW 培養就長期使用經驗性抗生素——培養敏感性指引可避免抗藥性',
+    '過度積極輸液——肺炎患者過度水合可加重肺水腫',
+    '忽略吸入性肺炎的基礎原因（巨食道、喉麻痺）——不處理根本原因會反覆發作',
+  ],
+  disease_data: {
+    signalment: '犬遠多於貓。犬：中大型犬更常見吸入性肺炎。幼犬（社會化階段、犬舍環境）好發 Bordetella 肺炎。老年大型犬（喉麻痺、巨食道）好發吸入性肺炎。貓：較罕見，但 Mycoplasma 為重要病原。短頭犬種因上呼吸道解剖異常風險較高。',
+    etiology: '最常見為吸入性（胃內容物或口腔分泌物吸入）。致病菌：Pasteurella spp.、E. coli、Klebsiella spp.、Bordetella bronchiseptica、Streptococcus spp.、Staphylococcus spp.、厭氧菌（Bacteroides、Fusobacterium）。貓：Mycoplasma spp.、Bordetella、Pasteurella。常為混合感染。',
+    pathogenesis: '吸入性：胃酸化學灼傷肺泡上皮 + 口腔常駐菌隨吸入物進入下呼吸道 → 黏液纖毛清除已被破壞 → 細菌增殖 → 嗜中性球大量浸潤 → 化膿性肺泡炎 → 肺實質化（consolidation）→ 嚴重者壞死與膿瘍形成。血行性：菌血症 → 肺毛細管菌栓 → 多發性肺炎。',
+    clinical_signs: [
+      { sign: '濕性咳嗽', category: 'primary', description: '有痰咳嗽，可能咳出膿性分泌物' },
+      { sign: '發燒', category: 'primary', description: '> 39.5°C，但重症敗血症可能低體溫' },
+      { sign: '呼吸急促/困難', category: 'primary', description: '取決於浸潤範圍和嚴重度' },
+      { sign: '精神沉鬱/食慾下降', category: 'primary', description: '全身性發炎反應' },
+      { sign: '鼻腔膿性分泌物', category: 'secondary', description: '下呼吸道分泌物上行' },
+      { sign: '聽診囉音', category: 'secondary', description: 'Crackles 和/或 tubular breath sounds' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '貓哮喘 (FLAD)', key_differentiator: 'BAL 嗜酸球為主、無發燒、通常無細菌' },
+      { condition: '肺水腫（心源性）', key_differentiator: '心臟超音波異常、對利尿劑反應、肺門周圍分布' },
+      { condition: '肺腫瘤', key_differentiator: '結節狀病灶、CT 特徵、細胞學/組織學確診' },
+      { condition: '肺黴菌感染', key_differentiator: '慢性病程、結節狀/腔洞性病灶、培養確診' },
+      { condition: '肺出血', key_differentiator: '凝血異常、BAL 血性、中毒史（鼠藥）' },
+    ],
+    diagnostic_workup: '1. 理學檢查（聽診：crackles、tubular breath sounds）→ 2. 胸腔 X 光三視角（肺泡型浸潤、air bronchogram）→ 3. CBC + 生化（白血球增多、CRP 升高）→ 4. SpO2/血液氣體 → 5. BAL 或 TTW（細胞學 + 需氧/厭氧培養 + 敏感性試驗 + Mycoplasma 培養）→ 6. 評估基礎原因（鋇劑吞嚥/透視 for 巨食道、喉檢查）',
+    treatment_protocol: '經驗性抗生素：Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID ± Enrofloxacin 5 mg/kg PO SID（犬），療程 3-6 週。吸入性加 Metronidazole 10 mg/kg PO BID。重症：IV Ampicillin-Sulbactam + Enrofloxacin。貓疑似 Mycoplasma：Doxycycline 5-10 mg/kg PO SID。支持療法：氧氣（SpO2 < 93%）、霧化 + coupage Q6-8H、輸液維持水合、營養支持。',
+    prognosis: '社區型輕中度：存活率 77-89%，預後良好至謹慎。吸入性肺炎：存活率 50-68%，取決於基礎原因可否矯正。反覆吸入性（巨食道未矯正）：預後謹慎至不良。多重抗藥菌感染：預後不良。早期適當抗生素治療顯著改善預後。',
+    monitoring: '治療開始後 48-72 小時評估臨床反應（體溫、呼吸頻率、食慾）。每 1-2 週追蹤胸腔 X 光直到完全消退。停藥前需 X 光確認浸潤完全或近完全消退。反覆發作者需評估與處理基礎原因。',
+    owner_communication: '細菌性肺炎需要長時間的抗生素治療（通常 3-6 週），請務必完成全部療程。如果是吸入性肺炎，需要找出並處理吸入的原因（如巨食道）以防復發。居家照護包括保持適度活動（避免劇烈運動但不要完全休息）、監測呼吸頻率和食慾。如果出現呼吸困難加重、開口呼吸或拒食，請立即就醫。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '感染途徑表後', type: 'flowchart', description: '細菌性肺炎感染途徑與病理機轉流程圖' },
+    { position: '治療策略段落後', type: 'comparison_table', description: '不同情境的抗生素選擇決策表' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Amoxicillin-Clavulanate', 'Enrofloxacin', 'Metronidazole', 'Doxycycline', 'Ampicillin-Sulbactam'],
+  references: [
+    { type: 'journal', citation: 'Dear JD. "Bacterial pneumonia in dogs and cats: An update." Vet Clin North Am Small Anim Pract. 2020;50(2):447-465.', relevance: '犬貓細菌性肺炎最新回顧' },
+    { type: 'journal', citation: 'Kogan DA et al. "Clinical, clinicopathologic, and radiographic findings in dogs with aspiration pneumonia: 88 cases (2004-2006)." J Am Vet Med Assoc. 2008;233(11):1742-1747.', relevance: '犬吸入性肺炎臨床研究' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 22: Lower Respiratory Tract Disorders.', relevance: '下呼吸道疾病教材' },
+    { type: 'guideline', citation: 'Lappin MR et al. "Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats." J Vet Intern Med. 2017;31(2):279-294.', relevance: '呼吸道感染抗生素使用指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** FeLV/FIV 逆轉錄病毒感染 — 疾病型 */
+const contentFeLVFIV: NodeContent = {
+  id: 'CONTENT-IM-L3-022',
+  node_id: 'IM-L3-022',
+  version: 1,
+  summary: '貓白血病病毒（FeLV）與貓免疫缺陷病毒（FIV）為貓最重要的逆轉錄病毒感染。FeLV 可致淋巴瘤、骨髓抑制和免疫抑制；FIV 造成進行性免疫缺陷，類似人類 HIV。台灣收容所貓 FeLV 盛行率約 3-10%、FIV 約 5-15%。SNAP combo test 為首選篩檢工具，但需了解窗口期與確認檢驗的重要性。FeLV 有疫苗可預防；FIV 以支持療法為主。',
+  learning_objectives: [
+    '說明 FeLV 與 FIV 的病毒學差異與感染機轉',
+    '列出 FeLV 感染的四種結局（進行性/退行性/局灶性/流產性）',
+    '正確解讀 SNAP combo test 結果（抗原 vs 抗體、偽陽性/偽陰性）',
+    '制定 FeLV/FIV 陽性貓的長期管理方案',
+    '說明 FeLV 疫苗的適應症與台灣使用現況',
+  ],
+  key_points: [
+    'FeLV：Gammaretrovirus，感染結局取決於免疫反應——進行性感染（持續抗原血症）預後不良',
+    'FIV：Lentivirus（類 HIV），主要經咬傷傳播，分 5 個 subtype（A-E），慢性進行性免疫缺陷',
+    'SNAP test：FeLV 偵測 p27 抗原（血中游離）、FIV 偵測抗體——母源抗體可致 FIV 幼貓偽陽性',
+    'FeLV 感染結局：進行性（持續病毒血症，預後差）、退行性（病毒潛伏骨髓，可能再活化）、流產性（成功清除）、局灶性（少見）',
+    '台灣盛行率：收容所/流浪貓 FeLV 3-10%、FIV 5-15%；戶外接觸為主要風險因子',
+    'FeLV 相關疾病：淋巴瘤（最常見腫瘤）、骨髓抑制（貧血/白血球減少）、免疫抑制→伺機感染',
+    'FeLV 疫苗：非核心疫苗，建議戶外接觸或高風險貓施打；FIV 無有效疫苗（台灣未上市）',
+  ],
+  body: `# FeLV/FIV 逆轉錄病毒感染
+
+## 一、病毒學與傳播
+
+### FeLV（貓白血病病毒）
+
+| 特徵 | 說明 |
+|------|------|
+| 分類 | Gammaretrovirus, Retroviridae |
+| 傳播途徑 | 唾液（共用食碗、理毛）、鼻分泌物、血液、乳汁、胎盤 |
+| 環境存活 | 脆弱，環境中數分鐘至數小時失活 |
+| 感染結局 | 取決於病毒量、年齡與免疫狀態 |
+
+**FeLV 感染四種結局**：
+
+| 結局 | 機轉 | 抗原血症 | PCR | 預後 |
+|------|------|---------|-----|------|
+| 流產性（Abortive） | 強免疫反應，早期清除 | 陰性 | 陰性 | 極好 |
+| 退行性（Regressive） | 病毒整合入骨髓 DNA 但複製被抑制 | 短暫→陰性 | 骨髓 PCR 可陽性 | 良好（可能再活化） |
+| 進行性（Progressive） | 免疫無法控制，持續病毒複製 | 持續陽性 | 陽性 | 不良（中位存活 2-3 年） |
+| 局灶性（Focal/Atypical） | 病毒局限於特定組織 | 間歇性陽性 | 組織 PCR 陽性 | 變異 |
+
+### FIV（貓免疫缺陷病毒）
+
+| 特徵 | 說明 |
+|------|------|
+| 分類 | Lentivirus, Retroviridae（與 HIV 同屬） |
+| 傳播途徑 | 主要經咬傷（唾液中病毒量高），偶經垂直傳播 |
+| 感染階段 | 急性期（2-4 週）→ 無症狀攜帶期（數年）→ 漸進免疫缺陷期 → AIDS-like 終末期 |
+| Subtype | A（最常見）, B, C, D, E |
+
+## 二、台灣流行病學
+
+| 族群 | FeLV 盛行率 | FIV 盛行率 | 風險因子 |
+|------|-----------|-----------|---------|
+| 收容所貓 | 3-10% | 5-15% | 高密度、壓力 |
+| 流浪貓（TNR） | 5-8% | 8-18% | 戶外打鬥、公貓 |
+| 家貓（純室內） | < 1% | < 2% | 極低 |
+| 家貓（有戶外接觸） | 2-5% | 3-8% | 接觸流浪貓 |
+
+**台灣特色**：都會區 TNR 計畫普及 → 篩檢率提升 → 早期發現增加。收容所入所貓強制 SNAP 篩檢為趨勢。
+
+## 三、臨床表現
+
+### FeLV 相關疾病
+
+| 類別 | 疾病 | 頻率 | 機轉 |
+|------|------|------|------|
+| 腫瘤 | 淋巴瘤（縱膈/多中心/消化道） | 最常見 | 病毒整合致癌 |
+| 骨髓 | 非再生性貧血 | 常見 | 骨髓前驅細胞感染 |
+| 骨髓 | 白血球減少/血小板減少 | 中等 | 骨髓抑制 |
+| 免疫 | 繼發感染（口腔炎、FIP、Toxoplasma） | 常見 | 免疫抑制 |
+| 生殖 | 流產、新生兒死亡 | 母貓 | 胎盤傳播 |
+
+### FIV 相關疾病
+
+| 階段 | 表現 | 持續時間 |
+|------|------|---------|
+| 急性期 | 輕度發燒、淋巴結腫大、短暫白血球減少 | 2-4 週 |
+| 無症狀期 | 臨床正常 | 數月至數年 |
+| 漸進免疫缺陷 | 慢性口腔炎、慢性上呼吸道感染、體重減輕 | 漸進 |
+| 終末期 | 嚴重伺機感染、消瘦、腫瘤 | — |
+
+## 四、診斷
+
+### SNAP Combo Test 判讀
+
+| 標靶 | FeLV p27 抗原 | FIV 抗體 |
+|------|-------------|---------|
+| 偵測 | 血中游離病毒抗原 | 抗 FIV 抗體 |
+| 窗口期 | 感染後 2-3 週 | 感染後 2-4 週 |
+| 偽陽性 | 少見（IFA 確認） | 母源抗體（< 6 月齡幼貓）、FIV 疫苗（台灣未使用） |
+| 偽陰性 | 退行性感染/極早期 | 末期免疫缺陷（無法產生抗體） |
+| 確認檢驗 | IFA 或 PCR | 6 個月後重驗或 Western blot/PCR |
+
+## 五、治療與管理
+
+| 面向 | FeLV 陽性貓 | FIV 陽性貓 |
+|------|-----------|-----------|
+| 室內飼養 | 必須（防傳播 + 減少感染暴露） | 必須 |
+| 疫苗 | 其他核心疫苗照常 | 照常（殺毒疫苗優先） |
+| 伺機感染 | 積極診斷與治療 | 積極診斷與治療 |
+| 監測 | 每 6 月：CBC、生化、胸腔 X 光 | 每 6-12 月：CBC、生化、尿液 |
+| 抗病毒 | 無高效藥物（Interferonω 部分證據） | Zidovudine（研究中，非常規） |
+| 預防 | FeLV 疫苗（戶外/高風險貓） | 無有效疫苗 |
+| 預後 | 進行性：中位存活 2-3 年 | 可有正常壽命（若管理良好） |`,
+  clinical_pearl: 'SNAP combo test 的 FIV 部分偵測的是「抗體」而非抗原——因此有兩個常見陷阱：(1) 小於 6 個月齡的幼貓可能有母源抗體導致偽陽性，應在 6 個月後重驗；(2) FIV 末期免疫嚴重缺陷的貓可能無法產生足夠抗體而偽陰性。FeLV 部分偵測 p27 抗原，退行性感染的貓抗原血症可以消退——因此「曾經 FeLV 陽性後轉陰」的貓仍有骨髓中病毒再活化的風險，在免疫抑制（如使用類固醇、化療）時應格外注意。',
+  common_mistakes: [
+    '幼貓 FIV SNAP 陽性就宣判診斷——小於 6 月齡幼貓母源抗體可致偽陽性，需 6 個月後重驗',
+    'FeLV SNAP 陽性未做確認檢驗就安樂——應以 IFA 或 PCR 確認，並在 4-6 週後重驗',
+    'FIV 陽性貓就建議安樂——管理良好的 FIV 貓可有正常壽命',
+    '忽略 FeLV 退行性感染的再活化風險——免疫抑制治療前應考慮病毒狀態',
+    '認為 FeLV/FIV 陽性貓不能打疫苗——其他核心疫苗仍需施打，優先使用殺毒疫苗',
+  ],
+  disease_data: {
+    signalment: 'FeLV：年輕貓（< 4 歲）風險最高（成貓有年齡相關抵抗力）。多貓家庭與收容所高風險。無明確品種傾向。FIV：未絕育戶外公貓（打鬥傳播）風險最高，中位診斷年齡 5 歲以上。台灣流浪貓族群盛行率較高。',
+    etiology: 'FeLV：Gammaretrovirus，經唾液、鼻分泌物、血液、乳汁、胎盤傳播。長期密切接觸（共用食碗、理毛）為主要傳播方式。FIV：Lentivirus，主要經咬傷傳播，偶經垂直傳播。環境傳播極罕見（病毒脆弱）。',
+    pathogenesis: 'FeLV：經口鼻進入 → 扁桃腺/淋巴組織初級複製 → 病毒血症 → 骨髓/上皮組織感染。免疫反應決定結局：強 CMI → 清除（流產性）；部分 → 退行性（骨髓潛伏）；弱 → 進行性（持續病毒血症→淋巴瘤/骨髓抑制/免疫抑制）。FIV：咬傷進入 → 區域淋巴結複製 → 病毒血症 → CD4+ T 細胞感染 → 漸進性 CD4+ 減少 → 免疫缺陷。',
+    clinical_signs: [
+      { sign: '體重減輕/消瘦', category: 'primary', description: '慢性進行性，兩種病毒皆可見' },
+      { sign: '慢性口腔炎/齒齦炎', category: 'primary', description: 'FIV 特別常見，嚴重增生性口腔炎' },
+      { sign: '反覆/慢性感染', category: 'primary', description: '上呼吸道、皮膚、泌尿道反覆感染' },
+      { sign: '貧血', category: 'primary', description: 'FeLV 骨髓抑制導致非再生性貧血' },
+      { sign: '淋巴結腫大', category: 'secondary', description: '全身性，FeLV 淋巴瘤或 FIV 急性期' },
+      { sign: '發燒（不明原因）', category: 'secondary', description: '反覆不明原因發燒' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: 'FIP（貓傳染性腹膜炎）', key_differentiator: '高球蛋白、滲出液分析、FCoV PCR' },
+      { condition: '淋巴瘤（非 FeLV 相關）', key_differentiator: 'FeLV 陰性、組織病理/免疫組化分型' },
+      { condition: '慢性腎病', key_differentiator: 'IRIS 分期、腎指數、USG' },
+      { condition: 'Mycoplasma haemofelis', key_differentiator: 'PCR 確診、血液抹片偶見附著紅血球' },
+      { condition: '骨髓疾病（再生不良性貧血）', key_differentiator: '骨髓穿刺/活檢' },
+    ],
+    diagnostic_workup: '1. SNAP combo test（FeLV p27 抗原 + FIV 抗體）→ 2. 陽性結果確認：FeLV → IFA 或血液 PCR；FIV → 6 月後重驗或 Western blot → 3. 基線評估：CBC（貧血/白血球減少）、生化、尿液分析、胸腔 X 光（縱膈淋巴瘤篩檢）→ 4. FeLV 陽性：骨髓評估（若血球減少持續）',
+    treatment_protocol: '無特效抗病毒藥物。管理策略：(1) 室內飼養（減少暴露 + 防傳播）(2) 核心疫苗照常（殺毒疫苗優先）(3) 伺機感染積極治療 (4) 定期健檢監測 (5) FeLV 淋巴瘤→化療（CHOP protocol）(6) 嚴重口腔炎→全口拔牙 ± Cyclosporine (7) 營養支持與環境減壓 (8) FeLV 疫苗預防（高風險貓）。',
+    prognosis: 'FeLV 進行性感染：中位存活 2-3 年，30% 於確診後 2 年內因相關疾病死亡。FeLV 退行性/流產性：預後良好。FIV：管理良好可有正常壽命（12-15 年），許多 FIV 貓最終死於非 FIV 相關原因。雙重感染（FeLV + FIV）：預後最差。',
+    monitoring: 'FeLV 陽性：每 6 個月 CBC + 生化 + 體重 + 理學檢查。每年胸腔 X 光（淋巴瘤篩檢）。注意貧血、淋巴結腫大、體重下降。FIV 陽性：每 6-12 個月 CBC + 生化 + 尿液。口腔檢查。注意慢性感染徵兆。',
+    owner_communication: 'FeLV/FIV 陽性不等於判死刑。FIV 陽性貓在良好管理下可以有正常壽命和良好生活品質。關鍵是室內飼養、定期健檢、及時處理伺機感染。FeLV 預後較差但仍有數年的有品質生活。不建議與陰性貓混養以防傳播。飼主的心理支持也很重要。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'FeLV 感染結局表後', type: 'flowchart', description: 'FeLV 感染結局決策樹' },
+    { position: 'SNAP 判讀表後', type: 'flowchart', description: 'SNAP combo test 結果判讀與確認檢驗流程' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Cyclosporine', 'Interferon'],
+  references: [
+    { type: 'guideline', citation: 'Levy JK et al. "2020 AAFP Feline Retrovirus Testing and Management Guidelines." J Feline Med Surg. 2020;22(1):5-30.', relevance: 'FeLV/FIV 篩檢與管理最新指引' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 96: Feline Leukemia Virus and Feline Immunodeficiency Virus.', relevance: 'FeLV/FIV 教材' },
+    { type: 'journal', citation: 'Hartmann K. "Clinical aspects of feline retroviruses: A review." Viruses. 2012;4(11):2684-2710.', relevance: 'FeLV/FIV 臨床綜述' },
+    { type: 'journal', citation: 'Beczkowski PM et al. "Naturally occurring feline immunodeficiency virus (FIV) infection in cats: A review." Vet Microbiol. 2021;261:109195.', relevance: 'FIV 自然感染回顧' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 犬細小病毒腸炎 (CPV) — 疾病型 */
+const contentCPV: NodeContent = {
+  id: 'CONTENT-IM-L3-023',
+  node_id: 'IM-L3-023',
+  version: 1,
+  summary: '犬細小病毒腸炎（CPV-2）是幼犬最嚴重的傳染病之一，以急性出血性腸炎和嚴重白血球減少為特徵。病毒攻擊快速分裂的細胞（腸道隱窩上皮和骨髓），導致腸道屏障崩潰、細菌移位和敗血症。死亡率未治療可達 90%，積極支持療法可降至 5-20%。台灣幼犬預防注射覆蓋率不均，夜市/寵物店購入幼犬和收容所幼犬為高風險族群。',
+  learning_objectives: [
+    '說明 CPV-2 的病毒學特性與腸道隱窩攻擊機轉',
+    '列出 CPV 的典型臨床三聯徵（嘔吐、出血性腹瀉、白血球減少）',
+    '制定 CPV 的積極支持療法方案（輸液、抗生素、止吐、營養）',
+    '解釋 CPV SNAP 抗原檢測的判讀注意事項（疫苗後偽陽性）',
+    '說明台灣的犬疫苗接種時程與母源抗體干擾問題',
+  ],
+  key_points: [
+    'CPV-2 為 Parvoviridae 科，無套膜 DNA 病毒——環境抵抗力極強（室溫可存活 > 1 年）',
+    '攻擊快速分裂細胞：(1) 腸道隱窩上皮 → 絨毛萎縮 → 出血性腹瀉 (2) 骨髓 → 白血球減少 → 免疫抑制',
+    '典型三聯徵：急性嘔吐 + 出血性（番茄醬樣）腹瀉 + 白血球減少（< 2000/μL）',
+    '致死機轉：腸道屏障崩潰 → 細菌移位 → 敗血症 + 低血糖 + DIC → 多器官衰竭',
+    '診斷：SNAP CPV 抗原檢測（糞便）——注意活毒疫苗接種後 5-12 天可偽陽性',
+    '治療核心：積極靜脈輸液 + 廣譜抗生素（Ampicillin + Enrofloxacin）+ 止吐（Maropitant）+ 早期腸道營養',
+    '台灣疫苗時程：6-8 週起始、每 2-4 週追加、16 週最後一劑；母源抗體可干擾至 12-16 週',
+  ],
+  body: `# 犬細小病毒腸炎 (Canine Parvovirus Enteritis, CPV)
+
+## 一、病毒學與流行病學
+
+### 病毒特性
+
+| 特徵 | 說明 |
+|------|------|
+| 分類 | Carnivore protoparvovirus 1, Parvoviridae |
+| 基因組 | 單股 DNA，約 5 kb |
+| 主要型別 | CPV-2a, 2b, 2c（台灣以 2a/2b 為主） |
+| 環境耐受性 | 無套膜，極度穩定——室溫可存活 > 1 年，耐酸耐鹼 |
+| 有效消毒 | 1:30 漂白水（sodium hypochlorite）、10 分鐘接觸 |
+| 傳播途徑 | 糞口傳播，間接（環境/媒介）傳播常見 |
+
+### 好發族群
+
+| 風險因子 | 說明 |
+|---------|------|
+| 年齡 | 6 週至 6 個月（母源抗體消退至疫苗保護建立的窗口期） |
+| 品種 | Rottweiler, Doberman, German Shepherd, Pit Bull（較高風險） |
+| 疫苗狀態 | 未完整接種 3 劑（最後一劑 ≥ 16 週齡） |
+| 環境 | 收容所、犬舍、寵物店、夜市（台灣特色高風險來源） |
+
+### 台灣流行病學
+
+- 台灣夜市/寵物店購入未完整疫苗接種幼犬仍為重要感染源
+- 收容所幼犬入所後 CPV 爆發為常見問題
+- 都會區獸醫院每年仍見顯著病例數，尤其在疫苗「空窗期」（8-16 週齡）幼犬
+
+## 二、病理機制 (Pathophysiology)
+
+### 腸道攻擊
+
+**機轉鏈**：
+經口感染 → 口咽淋巴組織初級複製（2-5 天）→ 病毒血症 → 攻擊快速分裂細胞
+
+**腸道**：
+CPV 結合 transferrin receptor（TfR）→ 進入腸道隱窩（crypt）上皮幹細胞 → 幹細胞壞死 → 絨毛無法更新 → 絨毛萎縮/塌陷 → 腸道屏障崩潰
+
+| 病理階段 | 發生事件 | 臨床表現 |
+|---------|---------|---------|
+| Day 0-4 | 病毒複製、口咽→血行散布 | 無症狀或輕度發燒 |
+| Day 3-5 | 腸道隱窩壞死 → 絨毛萎縮 | 嘔吐、水樣腹瀉 |
+| Day 4-7 | 屏障崩潰 → 出血 + 細菌移位 | 出血性腹瀉、敗血症 |
+| Day 5-10 | 骨髓抑制 → 嗜中性球減少 | 白血球 < 2000、發燒/低體溫 |
+
+### 致死機轉
+
+腸道屏障崩潰 → 腸道細菌（E. coli, Clostridium spp.）移位 → 敗血症 → SIRS → 低血壓 + 低血糖（肝糖耗竭 + 敗血症）+ DIC → 多器官衰竭 → 死亡
+
+**白血球減少的雙重打擊**：骨髓嗜中性球前驅細胞被 CPV 破壞 → 嚴重嗜中性球減少 → 無法對抗移位細菌 → 敗血症風險大幅增加
+
+## 三、臨床表現與診斷
+
+### 典型臨床表現
+
+| 表現 | 頻率 | 描述 |
+|------|------|------|
+| 嘔吐 | > 90% | 頻繁、劇烈、通常先於腹瀉 |
+| 出血性腹瀉 | > 80% | 「番茄醬樣」或血水便，惡臭 |
+| 精神極度沉鬱 | > 90% | 虛脫、不願移動 |
+| 發燒 → 低體溫 | 變異 | 初期發燒、敗血症後可能低體溫 |
+| 腹痛 | 常見 | 觸診腹部疼痛 |
+| 脫水 | > 80% | 嚴重脫水（8-12%） |
+
+### 實驗室檢查
+
+| 檢查 | 發現 | 臨床意義 |
+|------|------|---------|
+| CBC | WBC < 2000/μL（嗜中性球減少） | 預後指標——越低越差 |
+| 血糖 | 低血糖 (< 60 mg/dL) | 需積極補充，與預後相關 |
+| 電解質 | 低鉀、低鈉 | 嘔吐/腹瀉流失 |
+| 白蛋白 | 低白蛋白血症 | 腸道蛋白流失 |
+| 凝血 | PT/aPTT 延長 | DIC 徵兆 |
+
+### SNAP CPV 抗原檢測
+
+| 項目 | 說明 |
+|------|------|
+| 原理 | 偵測糞便中 CPV 抗原 |
+| 敏感度 | 80-98%（發病 3-7 天最高） |
+| 特異度 | 高（> 95%） |
+| 偽陽性 | 活毒疫苗接種後 5-12 天（病毒脫落） |
+| 偽陰性 | 發病極早期（Day 1-2）、抗體已中和病毒 |
+
+## 四、治療策略
+
+### 積極支持療法
+
+| 治療 | 方案 | 說明 |
+|------|------|------|
+| 靜脈輸液 | LRS 或 Plasma-Lyte，先矯正脫水再維持 | 核心治療——維持灌流 |
+| 葡萄糖 | 2.5-5% Dextrose in fluids | 低血糖 < 60 mg/dL 時必要 |
+| 電解質 | KCl 補充（20-40 mEq/L） | 矯正低鉀 |
+| 廣譜抗生素 | Ampicillin 22 mg/kg IV Q8H + Enrofloxacin 5 mg/kg IV SID | 預防/治療敗血症 |
+| 止吐 | Maropitant 1 mg/kg SC/IV SID | 核心止吐——改善舒適度與早期進食 |
+| 止吐（追加） | Ondansetron 0.5 mg/kg IV Q8-12H | Maropitant 不足時 |
+| 早期腸道營養 | 停止嘔吐後 12 小時即可開始少量多餐 | 縮短住院時間 |
+| 膠體液 | Hetastarch 20 mL/kg/day（若低白蛋白） | 維持膠體滲透壓 |
+
+### 進階治療
+
+| 治療 | 適應症 | 證據 |
+|------|--------|------|
+| Oseltamivir 2 mg/kg PO BID × 5d | 嗜中性球減少 | 有限——可能減少菌血症 |
+| 高免疫血漿/血清 | 嚴重白血球減少 | 有限——部分研究支持 |
+| 輸血 | PCV < 20% 或嚴重出血 | 必要時 |
+| G-CSF | 嚴重持續嗜中性球減少 | 研究中 |
+
+## 五、預防——台灣疫苗接種建議
+
+| 週齡 | 疫苗 | 說明 |
+|------|------|------|
+| 6-8 週 | 第一劑 CPV（多合一） | 起始 |
+| 10-12 週 | 第二劑 | 追加 |
+| 14-16 週 | 第三劑（≥ 16 週齡必須） | 確保母源抗體不干擾 |
+| 1 年後 | 追加 1 劑 | 建立長期免疫 |
+| 之後每 3 年 | 追加 | WSAVA 建議 |
+
+**母源抗體干擾**：母源抗體可持續至 12-16 週齡 → 中和疫苗病毒 → 疫苗失效。因此最後一劑必須在 ≥ 16 週齡施打。
+
+## 六、預後
+
+| 預後因子 | 良好 | 不良 |
+|---------|------|------|
+| 白血球數 | > 2500/μL | < 1000/μL |
+| 血糖 | 正常 | 低血糖 < 40 mg/dL |
+| 年齡 | > 12 週 | < 8 週 |
+| 治療時機 | 發病 24 小時內 | 延遲治療 |
+| 品種 | — | Rottweiler, Doberman |
+| 整體存活率 | 80-95%（積極治療） | < 10%（未治療） |`,
+  clinical_pearl: 'CPV 治療中最被低估的兩件事：(1) 早期腸道營養——傳統觀念是 NPO 直到停止嘔吐，但新研究顯示在 Maropitant 控制嘔吐後儘早開始少量多餐（高消化性低脂飲食）可促進腸道上皮修復、縮短住院時間。(2) 低血糖監測——CPV 幼犬低血糖（< 40 mg/dL）是獨立死亡預測因子，必須每 4-6 小時監測並積極補充。白血球計數低谷通常在 Day 5-7，之後若開始回升（> 2500/μL）通常預後良好。',
+  common_mistakes: [
+    '疫苗接種最後一劑在 12 週齡就結束——母源抗體可干擾至 16 週，最後一劑必須 ≥ 16 週齡',
+    'SNAP 陽性但近期接種過疫苗——活毒疫苗後 5-12 天可偽陽性，需結合臨床判斷',
+    'CPV 幼犬長時間禁食等嘔吐完全停止——早期腸道營養（停嘔後 12 小時）可加速復原',
+    '忽略低血糖監測——低血糖是 CPV 重要死亡因子，需每 4-6 小時測量',
+    '僅用單一抗生素——敗血症風險下需覆蓋革蘭氏陽性 + 陰性菌（Ampicillin + Fluoroquinolone）',
+  ],
+  disease_data: {
+    signalment: '好發 6 週至 6 個月齡幼犬。Rottweiler、Doberman、German Shepherd、American Pit Bull Terrier 品種風險較高。未完整接種疫苗的幼犬為最高風險族群。台灣夜市/寵物店購入幼犬和收容所幼犬為高風險群體。',
+    etiology: 'Carnivore protoparvovirus 1（CPV-2a, 2b, 2c）。無套膜單股 DNA 病毒，環境抵抗力極強（室溫存活 > 1 年）。糞口傳播為主，間接傳播（環境汙染、鞋底、器具）常見。感染量極低即可致病（< 1000 virus particles）。',
+    pathogenesis: '經口感染 → 口咽淋巴組織 2-5 天初級複製 → 病毒血症 → 攻擊快速分裂細胞 → (1) 腸道隱窩幹細胞壞死 → 絨毛萎縮 → 腸道屏障崩潰 → 出血性腹瀉 + 細菌移位 (2) 骨髓前驅細胞 → 白血球減少 → 免疫抑制 → 敗血症 + 低血糖 + DIC → 多器官衰竭。',
+    clinical_signs: [
+      { sign: '急性劇烈嘔吐', category: 'primary', description: '通常為首發症狀，頻繁劇烈' },
+      { sign: '出血性腹瀉', category: 'primary', description: '番茄醬樣或血水便，惡臭' },
+      { sign: '極度精神沉鬱', category: 'primary', description: '虛脫、不願移動' },
+      { sign: '嚴重脫水', category: 'primary', description: '皮膚帳幕延遲、黏膜乾燥' },
+      { sign: '發燒或低體溫', category: 'primary', description: '初期發燒，敗血症後低體溫（不良預兆）' },
+      { sign: '腹痛', category: 'secondary', description: '觸診腹部疼痛反應' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '犬冠狀病毒腸炎', key_differentiator: '通常較輕、白血球正常、CPV SNAP 陰性' },
+      { condition: '犬瘟熱', key_differentiator: '呼吸道 + 消化道 + 神經症狀、結膜炎、角質墊增厚' },
+      { condition: '出血性胃腸炎（HGE/AHDS）', key_differentiator: '成犬、WBC 正常或升高、CPV 陰性' },
+      { condition: '腸套疊', key_differentiator: '超音波可見 target sign、觸診可摸到腸管' },
+      { condition: '異物/中毒', key_differentiator: '病史、X 光/超音波異物、毒物暴露史' },
+    ],
+    diagnostic_workup: '1. 病史（年齡、疫苗狀態、接觸史）→ 2. SNAP CPV 糞便抗原檢測 → 3. CBC（白血球計數——預後指標）→ 4. 生化 + 電解質（血糖、K+、Na+、白蛋白）→ 5. 凝血檢查（疑似 DIC 時）→ 6. 腹腔超音波（排除套疊/異物、評估腸壁厚度）',
+    treatment_protocol: '積極支持療法：(1) IV 輸液（LRS，先矯正脫水 4-6 hr 再維持）+ KCl 20-40 mEq/L (2) 2.5-5% Dextrose 維持血糖 > 60 mg/dL (3) Ampicillin 22 mg/kg IV Q8H + Enrofloxacin 5 mg/kg IV SID (4) Maropitant 1 mg/kg SC/IV SID ± Ondansetron (5) 早期腸道營養（停嘔 12 hr 後開始）(6) 低白蛋白→膠體液。療程直至進食正常、白血球回升、無嘔吐腹瀉 24-48 hr。',
+    prognosis: '積極治療存活率 80-95%。未治療死亡率 > 90%。不良預後因子：WBC < 1000/μL、低血糖 < 40 mg/dL、低體溫、< 8 週齡、Rottweiler/Doberman。大多數存活犬在 5-7 天內開始改善。存活者通常完全康復並獲得長期免疫。',
+    monitoring: '住院期間每 4-6 小時：體溫、心率、血壓、血糖。每日：CBC（白血球趨勢）、體重、嘔吐/腹瀉次數。每 12-24 小時：電解質。出院標準：停止嘔吐 + 自主進食 + WBC 回升 + 正常水合。出院後 1-2 週追蹤。',
+    owner_communication: 'CPV 是嚴重但可治療的疾病。住院治療通常需要 5-7 天。積極治療下存活率可達 80-95%。治療費用因住院天數而異。康復後的幼犬通常獲得長期免疫。環境消毒非常重要——使用 1:30 稀釋漂白水清潔所有接觸面。其他未完整接種疫苗的犬隻應避免接觸受汙染環境至少 6 個月。完成疫苗接種是最好的預防。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '腸道攻擊機轉段落後', type: 'flowchart', description: 'CPV 感染病理機轉與致死途徑流程圖' },
+    { position: '疫苗接種表後', type: 'timeline', description: '台灣幼犬疫苗接種時程與母源抗體干擾示意圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Ampicillin', 'Enrofloxacin', 'Maropitant', 'Ondansetron', 'Oseltamivir'],
+  references: [
+    { type: 'journal', citation: 'Goddard A, Leisewitz AL. "Canine parvovirus." Vet Clin North Am Small Anim Pract. 2010;40(6):1041-1053.', relevance: 'CPV 診斷與治療綜述' },
+    { type: 'journal', citation: 'Venn EC et al. "Evaluation of an outpatient protocol in the treatment of canine parvoviral enteritis." J Vet Emerg Crit Care. 2017;27(1):52-65.', relevance: 'CPV 治療方案研究' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 91: Canine Viral Diseases.', relevance: 'CPV 教材' },
+    { type: 'guideline', citation: 'Day MJ et al. "WSAVA Guidelines for the Vaccination of Dogs and Cats." J Small Anim Pract. 2016;57(1):E1-E45.', relevance: 'WSAVA 犬貓疫苗接種指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 呼吸系統生理 — L1 概念型 */
+const contentRespiratoryPhysiology: NodeContent = {
+  id: 'CONTENT-IM-L1-005',
+  node_id: 'IM-L1-005',
+  version: 1,
+  summary: '呼吸系統生理涵蓋通氣、氣體交換、氧氣運輸與呼吸調控四大面向。犬貓呼吸系統在解剖與功能上與人類相似但有物種差異——貓的氣道對刺激物特別敏感，犬的熱散逸高度依賴呼吸（喘氣）。理解正常呼吸生理是診斷呼吸道疾病的基石。',
+  learning_objectives: [
+    '描述犬貓呼吸系統的解剖結構（上呼吸道、下呼吸道、肺泡）與各段功能',
+    '解釋通氣力學（肺順應性、氣道阻力、呼吸功）及其臨床意義',
+    '說明肺泡氣體交換原理（擴散定律、V/Q 匹配）與氧合評估指標',
+    '描述氧氣運輸系統（血紅素氧解離曲線）與組織氧供需平衡',
+    '說明呼吸中樞調控機制（延腦、橋腦、化學受體）與臨床應用',
+  ],
+  key_points: [
+    '犬貓氣道分為傳導區（鼻腔→氣管→支氣管至終末細支氣管）與呼吸區（呼吸性細支氣管→肺泡管→肺泡）',
+    '肺泡表面活性劑（surfactant）由 Type II 肺泡細胞分泌，降低表面張力防止肺泡塌陷',
+    '氣體交換依 Fick 擴散定律：擴散量 ∝ 面積 × 分壓差 / 厚度；V/Q 不匹配是低氧血症最常見原因',
+    '血紅素氧解離曲線：右移（↑ CO2、↑ H+、↑ 溫度、↑ 2,3-DPG）→ 促進組織卸氧',
+    '貓的支氣管平滑肌對刺激物反應特別強烈——此為貓哮喘的生理基礎',
+    '犬缺乏有效汗腺，散熱高度依賴呼吸蒸發（喘氣 panting），短頭犬種易熱衰竭',
+    'SpO2 ≥ 95% 對應 PaO2 ≥ 80 mmHg（安全區）；SpO2 < 90% 提示嚴重低氧',
+  ],
+  body: `# 呼吸系統生理 (Respiratory Physiology)
+
+## 一、呼吸道解剖與功能分區
+
+### 傳導區 (Conducting Zone)
+- **上呼吸道**：鼻腔（加溫、加濕、過濾）→ 咽 → 喉
+- **下呼吸道**：氣管 → 主支氣管 → 葉支氣管 → 段支氣管 → 終末細支氣管
+- 傳導區功能：空氣調節、黏液纖毛清除（mucociliary escalator）、IgA 免疫防禦
+- **犬貓差異**：貓氣管直徑較小（4-5 mm），支氣管平滑肌更為發達
+
+### 呼吸區 (Respiratory Zone)
+- 呼吸性細支氣管 → 肺泡管 → 肺泡囊 → 肺泡
+- 犬肺泡約 5 億個，總面積約 50-100 m²
+- 肺泡壁：Type I 細胞（氣體交換，佔 95% 面積）+ Type II 細胞（surfactant 分泌）+ 肺泡巨噬細胞
+
+## 二、通氣力學 (Ventilation Mechanics)
+
+| 參數 | 定義 | 犬正常值 | 臨床意義 |
+|------|------|---------|---------|
+| 潮氣量 (Vt) | 每次呼吸進出肺的氣體量 | 10-15 mL/kg | 淺快呼吸時 Vt 下降 |
+| 呼吸頻率 (RR) | 每分鐘呼吸次數 | 犬 15-30、貓 20-40 | 異常需評估原因 |
+| 每分通氣量 (MV) | Vt × RR | 150-300 mL/kg/min | 反映整體通氣效率 |
+| 肺順應性 (C) | ΔV/ΔP | — | 纖維化↓、肺水腫↓ |
+| 氣道阻力 (R) | ΔP/Flow | — | 哮喘↑、異物↑ |
+
+**呼吸功 (Work of Breathing)**：
+- 正常呼吸主要依賴吸氣肌（橫膈膜 75%、外肋間肌）
+- 呼氣為被動過程（肺彈性回縮力）
+- 氣道阻力增加（哮喘/異物）→ 呼氣需主動出力 → 呼氣性呼吸困難
+
+## 三、氣體交換 (Gas Exchange)
+
+**Fick 擴散定律**：Vgas = A × D × (P1 - P2) / T
+- A = 擴散面積、D = 擴散係數、P1-P2 = 分壓差、T = 擴散距離
+- CO2 擴散速率為 O2 的 20 倍 → 低氧血症通常先於高碳酸血症
+
+**V/Q 匹配**：
+- 正常 V/Q ≈ 0.8（通氣/灌流比）
+- V/Q = 0（分流，shunt）→ 對氧氣無反應的低氧
+- V/Q = ∞（死腔，deadspace）→ 通氣浪費
+- V/Q 不匹配是臨床低氧血症最常見原因（肺炎、肺水腫、肺不張）
+
+## 四、氧氣運輸與血紅素氧解離曲線
+
+**氧氣運輸三形式**：
+1. 溶解氧（PaO2，僅占 1.5%）
+2. 與血紅素結合（SaO2/SpO2，占 98.5%）
+3. 氧含量（CaO2） = (1.34 × Hb × SaO2) + (0.003 × PaO2)
+
+| 右移因子 | 左移因子 | 臨床意義 |
+|---------|---------|---------|
+| ↑ CO2 (Bohr effect) | ↓ CO2 | 組織代謝活躍處卸氧 |
+| ↑ H+ (酸中毒) | ↓ H+ (鹼中毒) | 酸中毒促進組織供氧 |
+| ↑ 溫度 | ↓ 溫度 | 發燒動物卸氧增加 |
+| ↑ 2,3-DPG | ↓ 2,3-DPG | 貧血代償性↑ 2,3-DPG |
+
+## 五、呼吸調控
+
+**延腦呼吸中樞**：
+- 背側呼吸群（DRG）：主要驅動吸氣
+- 腹側呼吸群（VRG）：用力呼吸時活化
+
+**化學受體**：
+- 中樞化學受體（延腦腹外側）：對 CO2/H+ 敏感（主要驅動力）
+- 周邊化學受體（頸動脈體、主動脈體）：對 PaO2 < 60 mmHg 敏感
+
+## 六、犬貓物種差異
+
+| 特徵 | 犬 | 貓 | 臨床意義 |
+|------|----|----|---------|
+| 氣管直徑 | 較大 | 較小（4-5 mm） | 貓氣管插管選管重要 |
+| 支氣管反應性 | 中等 | 高度敏感 | 貓哮喘好發基礎 |
+| 散熱方式 | 喘氣為主 | 出汗+喘氣 | 短頭犬易熱衰竭 |
+| 呼吸頻率 | 15-30/min | 20-40/min | — |`,
+  clinical_pearl: '評估呼吸困難動物時，先區分是「吸氣性」還是「呼氣性」呼吸困難——吸氣性（stridor、頸部伸展）提示上呼吸道阻塞（喉麻痺、塌陷氣管），呼氣性（腹部用力、延長呼氣）提示下呼吸道問題（哮喘、慢性支氣管炎）。這個簡單的臨床觀察可以在第一秒就縮小鑑別診斷範圍。SpO2 是非侵入性監測的利器，但要記住它反映的是 SaO2 而非 PaO2——在氧解離曲線的平坦區（SpO2 > 90%），PaO2 的大幅下降可能只造成 SpO2 的微小變化。',
+  common_mistakes: [
+    '將 SpO2 和 PaO2 混為一談（SpO2 90% 對應 PaO2 約 60 mmHg，非線性關係）',
+    '忘記 CO2 擴散速率遠快於 O2——因此「正常 CO2 但低氧」常見於 V/Q 不匹配初期',
+    '未區分吸氣性與呼氣性呼吸困難的解剖意義',
+    '忽略貓支氣管平滑肌高反應性——操作時過度刺激可誘發支氣管痙攣',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '呼吸道解剖段落後', type: 'annotated_image', description: '犬貓呼吸道解剖與功能分區標注圖' },
+    { position: '氧解離曲線段落後', type: 'flowchart', description: '血紅素氧解離曲線與移動因子示意圖' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: [],
+  references: [
+    { type: 'textbook', citation: 'Cunningham JG, Klein BG. Textbook of Veterinary Physiology, 6th ed. Elsevier, 2020. Section IV: Respiratory Physiology.', relevance: '動物呼吸生理學基礎教材' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Section on Respiratory System.', relevance: '呼吸系統生理與疾病整合教材' },
+    { type: 'journal', citation: 'Rozanski E. "Canine chronic bronchitis." Vet Clin North Am Small Anim Pract. 2020;50(2):393-404.', relevance: '犬慢性支氣管疾病與呼吸生理' },
+    { type: 'guideline', citation: 'Sumner C, Rozanski E. "Management of respiratory emergencies in small animals." Vet Clin North Am Small Anim Pract. 2013;43(4):799-815.', relevance: '呼吸急診中的生理學應用' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 呼吸道發炎與氣道重塑 — L2 機轉型 */
+const contentAirwayInflammation: NodeContent = {
+  id: 'CONTENT-IM-L2-007',
+  node_id: 'IM-L2-007',
+  version: 1,
+  summary: '氣道發炎與重塑（airway remodeling）是連接呼吸生理與臨床呼吸道疾病的核心病理機轉。急性發炎以嗜酸球或嗜中性球浸潤為主，慢性則進展至氣道平滑肌增生、杯狀細胞化生和上皮下纖維化。貓的氣道重塑與人類哮喘病理高度相似，犬的慢性支氣管炎則更類似人類 COPD。',
+  learning_objectives: [
+    '描述氣道發炎的免疫學機轉（Th2 pathway 與嗜酸球性發炎）',
+    '說明氣道重塑的組織學變化（平滑肌增生、杯狀細胞化生、上皮下纖維化）',
+    '比較嗜酸球性與嗜中性球性氣道發炎的病因與治療差異',
+    '解釋黏液纖毛清除功能障礙在呼吸道感染中的角色',
+    '說明犬貓氣道發炎的物種差異與臨床意義',
+  ],
+  key_points: [
+    'Th2 pathway：過敏原 → APC → Th2 細胞 → IL-4/IL-5/IL-13 → IgE 產生 + 嗜酸球活化 + 杯狀細胞增生',
+    '嗜酸球性發炎：釋放 MBP、ECP 等陽離子蛋白 → 氣道上皮損傷 → 進一步發炎循環',
+    '氣道重塑四大特徵：(1) 上皮下纖維化 (2) 平滑肌肥大/增生 (3) 杯狀細胞化生 (4) 血管新生',
+    '黏液纖毛清除（mucociliary escalator）：正常每分鐘 1-2 cm 速率 → 感染/發炎時纖毛運動減慢 → 黏液蓄積 → 細菌定殖',
+    '貓哮喘 = Th2/嗜酸球主導（類似人類哮喘）；犬慢性支氣管炎 = 嗜中性球主導（類似人類 COPD）',
+    '氣道重塑為部分不可逆——早期介入抗炎治療可減緩進展',
+  ],
+  body: `# 呼吸道發炎與氣道重塑 (Airway Inflammation & Remodeling)
+
+## 一、氣道發炎的免疫學機轉
+
+### Th2 型嗜酸球性發炎（貓哮喘模型）
+
+**機轉鏈**：
+吸入過敏原 → 氣道上皮樹突細胞（DC）攝取 → 遷移至淋巴結呈現 → 初始 T 細胞分化為 Th2 → 產生 IL-4（促 B cell class switch → IgE）、IL-5（嗜酸球活化與存活）、IL-13（杯狀細胞化生 + 氣道高反應性）
+
+**嗜酸球效應**：
+| 釋放物質 | 效應 | 臨床結果 |
+|---------|------|---------|
+| MBP（主要鹼性蛋白） | 上皮細胞毒性 | 氣道上皮脫落 |
+| ECP（嗜酸球陽離子蛋白） | 黏液腺刺激 | 黏液過度分泌 |
+| LTC4/LTD4（白三烯） | 支氣管平滑肌收縮 | 氣道狹窄 |
+| TGF-β | 促纖維化 | 上皮下纖維化 |
+
+### 嗜中性球性發炎（犬慢性支氣管炎模型）
+
+**機轉鏈**：
+慢性刺激（吸入刺激物、感染、汙染物）→ 上皮細胞與巨噬細胞活化 → IL-8/CXCL8 → 嗜中性球趨化 → 蛋白酶（elastase、MMP-9）釋放 → 彈性纖維與膠原蛋白降解 → 氣道壁損傷 → 修復時結締組織沉積 → 纖維化
+
+| 特徵 | 嗜酸球性（Th2 型） | 嗜中性球性 |
+|------|-------------------|-----------|
+| 代表疾病 | 貓哮喘 | 犬慢性支氣管炎 |
+| 驅動細胞因子 | IL-4, IL-5, IL-13 | IL-8, TNF-α, IL-17 |
+| BAL 細胞學 | 嗜酸球 > 17% | 嗜中性球 > 12% |
+| 類固醇反應 | 良好 | 部分有效 |
+| 人類對應 | 過敏性哮喘 | COPD |
+
+## 二、氣道重塑 (Airway Remodeling)
+
+### 四大組織學特徵
+
+1. **上皮下纖維化**：TGF-β → 纖維母細胞活化 → 膠原蛋白 I/III 沉積於基底膜下 → 氣道壁增厚
+2. **平滑肌肥大/增生**：慢性收縮刺激 + 生長因子 → 平滑肌質量增加 → 氣道高反應性
+3. **杯狀細胞化生**：IL-13 驅動 → 正常纖毛上皮被杯狀細胞取代 → 黏液過度分泌
+4. **血管新生**：VEGF 增加 → 氣道壁血管增多 → 促進炎症細胞浸潤 + 水腫
+
+### 重塑的不可逆性
+
+| 階段 | 病理 | 可逆性 | 治療策略 |
+|------|------|--------|---------|
+| 急性發炎 | 支氣管痙攣 + 黏膜水腫 | 完全可逆 | 支氣管擴張劑 |
+| 亞急性 | 黏液栓塞 + 嗜酸球浸潤 | 大部分可逆 | 類固醇 |
+| 慢性重塑 | 纖維化 + 平滑肌增生 | 部分不可逆 | 長期抗炎 |
+
+## 三、黏液纖毛清除功能障礙
+
+正常氣道防禦的第一道防線：
+
+**黏液纖毛系統**：
+- 杯狀細胞和漿液腺分泌黏液（gel 層 + sol 層）
+- 纖毛以 12-15 Hz 頻率協調擺動 → 推送黏液向咽方向（每分鐘 1-2 cm）
+- 黏液中含 IgA、lysozyme、lactoferrin 等抗菌物質
+
+**失能機轉**：
+| 原因 | 機轉 | 後果 |
+|------|------|------|
+| 病毒感染 | 纖毛上皮破壞 | 繼發細菌性肺炎 |
+| 黏液過度分泌 | 超過纖毛清除能力 | 黏液栓塞 |
+| 脫水/乾燥 | sol 層減少 → 纖毛無法有效擺動 | 黏液滯留 |
+| 全身麻醉 | 纖毛運動抑制 | 術後肺炎風險 |
+| 慢性發炎 | 纖毛細胞被杯狀細胞取代 | 清除功能永久下降 |`,
+  clinical_pearl: '支氣管肺泡沖洗液（BAL）的細胞學分析是區分氣道發炎類型的金標準工具。正常貓 BAL：巨噬細胞 > 70%、嗜酸球 < 17%、嗜中性球 < 7%。嗜酸球 > 17% 強烈提示過敏性/哮喘性氣道發炎（類固醇反應良好）；嗜中性球顯著增加伴細菌吞噬 → 感染性氣道發炎（需抗生素）。然而實際臨床中約 30% 的貓哮喘 BAL 同時有嗜中性球增加——要注意混合型發炎的可能。',
+  common_mistakes: [
+    '將所有氣道發炎都視為嗜酸球性而直接使用類固醇——嗜中性球性感染型發炎用類固醇會惡化',
+    '忽略氣道重塑的不可逆性——延遲抗炎治療導致永久性氣道壁增厚',
+    '不做 BAL 細胞學就經驗性治療呼吸道疾病——嗜酸球 vs 嗜中性球的治療方向完全不同',
+    '忘記全身麻醉會抑制黏液纖毛清除功能——術後應注意肺炎風險特別是在已有呼吸道疾病的患者',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'Th2 機轉鏈段落後', type: 'flowchart', description: 'Th2 pathway 與嗜酸球性氣道發炎流程圖' },
+    { position: '氣道重塑段落後', type: 'comparison_table', description: '正常氣道 vs 急性發炎 vs 慢性重塑組織學比較' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: [],
+  references: [
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 46: Diseases of the Lower Respiratory Tract.', relevance: '下呼吸道疾病病理生理教材' },
+    { type: 'journal', citation: 'Reinero CR. "Advances in the understanding of pathogenesis, and diagnostics and therapeutics for feline allergic asthma." Vet J. 2011;190(1):28-33.', relevance: '貓哮喘免疫病理機轉' },
+    { type: 'journal', citation: 'Trzil JE. "Feline Asthma: Diagnostic and Treatment Update." Vet Clin North Am Small Anim Pract. 2020;50(2):375-391.', relevance: '貓哮喘發炎與重塑最新知識' },
+    { type: 'guideline', citation: 'Hawkins EC. "Chronic bronchitis in dogs." In: Bonagura JD, Twedt DC, eds. Kirk\'s Current Veterinary Therapy XV. Elsevier, 2014:672-678.', relevance: '犬慢性支氣管炎臨床指引' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
@@ -5518,7 +6445,7 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L1-004', contentEndocrinePhysiology],
   // L2 Mechanisms
   ['IM-L2-001', contentRenalInjury],
-  ['IM-L2-002', contentAutoimmuneMechanism],
+  ['IM-L2-002', contentEndocrineDysregulation],
   ['IM-L2-003', contentGIInflammation],
   ['IM-L2-004', contentHepaticInjury],
   ['IM-L2-005', contentAcidBase],
@@ -5553,4 +6480,11 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L5-002', contentEndocrineTherapy],
   ['IM-L5-003', contentImmunosuppression],
   ['IM-L5-004', contentGITherapy],
+  // Respiratory & Infectious expansion
+  ['IM-L1-005', contentRespiratoryPhysiology],
+  ['IM-L2-007', contentAirwayInflammation],
+  ['IM-L3-020', contentFelineAsthma],
+  ['IM-L3-021', contentBacterialPneumonia],
+  ['IM-L3-022', contentFeLVFIV],
+  ['IM-L3-023', contentCPV],
 ]);
