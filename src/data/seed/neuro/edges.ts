@@ -147,35 +147,35 @@ export const NEURO_EDGES: KnowledgeEdge[] = [
   // ─── 缺失 prerequisite 邊修復：確保每個 L3 疾病節點至少 1 條 L1/L2 → L3 prerequisite ───
 
   // NEURO-L3-001 (犬特發性癲癇) ← L2-001 (癲癇發作機轉)
-  { id: 'NEURO-E-084', source_node_id: 'NEURO-L2-001', target_node_id: 'NEURO-L3-001', relation_type: 'prerequisite', weight: 3, description: '癲癇發作機轉（興奮/抑制失衡、閾值降低）是理解特發性癲癇的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-084', source_node_id: 'NEURO-L2-001', target_node_id: 'NEURO-L3-001', relation_type: 'prerequisite', weight: 1, description: '癲癇發作機轉（興奮/抑制失衡、閾值降低）是理解特發性癲癇的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-002 (IVDD) ← L2-002 (脊髓壓迫機轉)
-  { id: 'NEURO-E-085', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-002', relation_type: 'prerequisite', weight: 3, description: '脊髓壓迫機轉（水腫、缺血、脫髓鞘）是理解 IVDD 臨床分級的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-085', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-002', relation_type: 'prerequisite', weight: 1, description: '脊髓壓迫機轉（水腫、缺血、脫髓鞘）是理解 IVDD 臨床分級的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-004 (前庭疾病) ← L1-001 (神經系統解剖)
-  { id: 'NEURO-E-086', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-004', relation_type: 'prerequisite', weight: 3, description: '前庭系統解剖（周邊 vs 中樞通路）是鑑別前庭疾病定位的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-086', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-004', relation_type: 'prerequisite', weight: 1, description: '前庭系統解剖（周邊 vs 中樞通路）是鑑別前庭疾病定位的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-005 (多發性神經根炎) ← L2-003 (神經肌肉接合病理)
-  { id: 'NEURO-E-087', source_node_id: 'NEURO-L2-003', target_node_id: 'NEURO-L3-005', relation_type: 'prerequisite', weight: 3, description: '神經肌肉接合與周邊神經病理是理解多發性神經根炎免疫介導去髓鞘的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-087', source_node_id: 'NEURO-L2-003', target_node_id: 'NEURO-L3-005', relation_type: 'prerequisite', weight: 1, description: '神經肌肉接合與周邊神經病理是理解多發性神經根炎免疫介導去髓鞘的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-006 (重症肌無力) ← L2-003 (神經肌肉接合病理)
-  { id: 'NEURO-E-088', source_node_id: 'NEURO-L2-003', target_node_id: 'NEURO-L3-006', relation_type: 'prerequisite', weight: 3, description: 'NMJ 突觸傳遞病理（AChR 抗體阻斷）是理解重症肌無力的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-088', source_node_id: 'NEURO-L2-003', target_node_id: 'NEURO-L3-006', relation_type: 'prerequisite', weight: 1, description: 'NMJ 突觸傳遞病理（AChR 抗體阻斷）是理解重症肌無力的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-007 (退化性脊髓病變 DM) ← L1-001 (神經系統解剖)
-  { id: 'NEURO-E-089', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-007', relation_type: 'prerequisite', weight: 3, description: '脊髓白質解剖（上行/下行通路）是理解 DM 進行性軸突退化的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-089', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-007', relation_type: 'prerequisite', weight: 1, description: '脊髓白質解剖（上行/下行通路）是理解 DM 進行性軸突退化的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-008 (顱內腫瘤) ← L2-005 (顱內壓升高機轉)
-  { id: 'NEURO-E-090', source_node_id: 'NEURO-L2-005', target_node_id: 'NEURO-L3-008', relation_type: 'prerequisite', weight: 3, description: '顱內壓升高機轉（Monro-Kellie、腦疝）是理解顱內腫瘤臨床表現的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-090', source_node_id: 'NEURO-L2-005', target_node_id: 'NEURO-L3-008', relation_type: 'prerequisite', weight: 1, description: '顱內壓升高機轉（Monro-Kellie、腦疝）是理解顱內腫瘤臨床表現的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-009 (Wobbler) ← L2-002 (脊髓壓迫機轉)
-  { id: 'NEURO-E-091', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-009', relation_type: 'prerequisite', weight: 3, description: '頸脊髓壓迫機轉是理解 Wobbler 頸椎脊髓病變（動態/靜態壓迫）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-091', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-009', relation_type: 'prerequisite', weight: 1, description: '頸脊髓壓迫機轉是理解 Wobbler 頸椎脊髓病變（動態/靜態壓迫）的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-010 (FCE) ← L1-001 (神經系統解剖)
-  { id: 'NEURO-E-092', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-010', relation_type: 'prerequisite', weight: 3, description: '脊髓血管解剖（脊髓動脈分布）是理解 FCE 缺血性梗塞的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-092', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-010', relation_type: 'prerequisite', weight: 1, description: '脊髓血管解剖（脊髓動脈分布）是理解 FCE 缺血性梗塞的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-013 (腰薦椎疾病) ← L2-002 (脊髓壓迫機轉)
-  { id: 'NEURO-E-093', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-013', relation_type: 'prerequisite', weight: 3, description: '脊髓/馬尾壓迫機轉是理解腰薦椎疾病神經根病變的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-093', source_node_id: 'NEURO-L2-002', target_node_id: 'NEURO-L3-013', relation_type: 'prerequisite', weight: 1, description: '脊髓/馬尾壓迫機轉是理解腰薦椎疾病神經根病變的前置知識', bidirectional: false, unlock_condition: null },
 
   // NEURO-L3-015 (壞死性腦炎 NME/NLE) ← L1-001 (神經系統解剖)
-  { id: 'NEURO-E-094', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-015', relation_type: 'prerequisite', weight: 3, description: '大腦皮質與白質解剖是理解壞死性腦炎病灶分布（NME 灰質 vs NLE 白質）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-094', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-015', relation_type: 'prerequisite', weight: 1, description: '大腦皮質與白質解剖是理解壞死性腦炎病灶分布（NME 灰質 vs NLE 白質）的前置知識', bidirectional: false, unlock_condition: null },
 ];

@@ -150,29 +150,29 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   // ─── 缺失 prerequisite 邊修復：確保每個 L3 疾病節點至少 1 條 L1/L2 → L3 prerequisite ───
 
   // ONCO-L3-001 (犬淋巴瘤) ← L1-001 (腫瘤生物學)
-  { id: 'ONCO-E-095', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-001', relation_type: 'prerequisite', weight: 3, description: '腫瘤生物學（細胞增殖動力學、克隆演化）是理解淋巴瘤免疫表型分類與分期的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-095', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-001', relation_type: 'prerequisite', weight: 1, description: '腫瘤生物學（細胞增殖動力學、克隆演化）是理解淋巴瘤免疫表型分類與分期的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-003 (骨肉瘤) ← L1-001 (腫瘤生物學)
-  { id: 'ONCO-E-096', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-003', relation_type: 'prerequisite', weight: 3, description: '腫瘤生物學（間質細胞惡性轉化、骨基質產生）是理解骨肉瘤高度侵犯性的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-096', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-003', relation_type: 'prerequisite', weight: 1, description: '腫瘤生物學（間質細胞惡性轉化、骨基質產生）是理解骨肉瘤高度侵犯性的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-004 (血管肉瘤 HSA) ← L1-001 (腫瘤生物學)
-  { id: 'ONCO-E-097', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-004', relation_type: 'prerequisite', weight: 3, description: '腫瘤生物學（血管內皮細胞惡性增殖、腫瘤血管新生）是理解 HSA 血行轉移的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-097', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-004', relation_type: 'prerequisite', weight: 1, description: '腫瘤生物學（血管內皮細胞惡性增殖、腫瘤血管新生）是理解 HSA 血行轉移的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-005 (口腔黑色素瘤) ← L2-001 (腫瘤轉移機轉)
-  { id: 'ONCO-E-098', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-005', relation_type: 'prerequisite', weight: 3, description: '腫瘤轉移機轉（局部侵犯、淋巴與血行轉移）是理解口腔黑色素瘤高轉移率的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-098', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-005', relation_type: 'prerequisite', weight: 1, description: '腫瘤轉移機轉（局部侵犯、淋巴與血行轉移）是理解口腔黑色素瘤高轉移率的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-007 (TCC) ← L1-001 (腫瘤生物學)
-  { id: 'ONCO-E-099', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-007', relation_type: 'prerequisite', weight: 3, description: '腫瘤生物學（上皮細胞惡性轉化、COX-2 過度表達）是理解 TCC 發病機轉的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-099', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-007', relation_type: 'prerequisite', weight: 1, description: '腫瘤生物學（上皮細胞惡性轉化、COX-2 過度表達）是理解 TCC 發病機轉的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-009 (軟組織肉瘤 STS) ← L1-001 (腫瘤生物學)
-  { id: 'ONCO-E-100', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-009', relation_type: 'prerequisite', weight: 3, description: '腫瘤生物學（間質細胞腫瘤分級、有絲分裂指數）是理解 STS 局部侵犯行為的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-100', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-009', relation_type: 'prerequisite', weight: 1, description: '腫瘤生物學（間質細胞腫瘤分級、有絲分裂指數）是理解 STS 局部侵犯行為的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-010 (肛囊腺癌 ASAC) ← L2-002 (副腫瘤症候群)
-  { id: 'ONCO-E-101', source_node_id: 'ONCO-L2-002', target_node_id: 'ONCO-L3-010', relation_type: 'prerequisite', weight: 3, description: '副腫瘤症候群（PTHrP 介導高鈣血症）是理解 ASAC 系統性影響的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-101', source_node_id: 'ONCO-L2-002', target_node_id: 'ONCO-L3-010', relation_type: 'prerequisite', weight: 1, description: '副腫瘤症候群（PTHrP 介導高鈣血症）是理解 ASAC 系統性影響的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-011 (鼻腔腫瘤) ← L1-001 (腫瘤生物學)
-  { id: 'ONCO-E-102', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-011', relation_type: 'prerequisite', weight: 3, description: '腫瘤生物學（上皮/間質分化、局部骨溶解機轉）是理解鼻腔腫瘤局部侵犯行為的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-102', source_node_id: 'ONCO-L1-001', target_node_id: 'ONCO-L3-011', relation_type: 'prerequisite', weight: 1, description: '腫瘤生物學（上皮/間質分化、局部骨溶解機轉）是理解鼻腔腫瘤局部侵犯行為的前置知識', bidirectional: false, unlock_condition: null },
 
   // ONCO-L3-012 (組織球肉瘤) ← L1-002 (腫瘤免疫學)
-  { id: 'ONCO-E-103', source_node_id: 'ONCO-L1-002', target_node_id: 'ONCO-L3-012', relation_type: 'prerequisite', weight: 3, description: '腫瘤免疫學（樹突細胞/巨噬細胞譜系、免疫組化標記 CD18/CD11d）是理解組織球肉瘤來源的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-103', source_node_id: 'ONCO-L1-002', target_node_id: 'ONCO-L3-012', relation_type: 'prerequisite', weight: 1, description: '腫瘤免疫學（樹突細胞/巨噬細胞譜系、免疫組化標記 CD18/CD11d）是理解組織球肉瘤來源的前置知識', bidirectional: false, unlock_condition: null },
 ];

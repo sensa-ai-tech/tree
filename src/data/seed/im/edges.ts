@@ -206,45 +206,45 @@ export const IM_EDGES: KnowledgeEdge[] = [
 
   // ─── 補齊 L3 prerequisite 邊（每個 L3 疾病至少 1 條 prerequisite 連至 L1/L2）───
   // IM-L3-001 (Cushing) ← L2-002 (內分泌失調機轉)
-  { id: 'IM-E-112', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-001', relation_type: 'prerequisite', weight: 3, description: '內分泌失調機轉是理解犬腎上腺皮質機能亢進（HPA 軸過度活化）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-112', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-001', relation_type: 'prerequisite', weight: 1, description: '內分泌失調機轉是理解犬腎上腺皮質機能亢進（HPA 軸過度活化）的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-002 (犬甲低) ← L1-004 (內分泌系統生理)
-  { id: 'IM-E-113', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-002', relation_type: 'prerequisite', weight: 3, description: '內分泌系統生理（甲狀腺-HPT 軸）是理解犬甲狀腺機能低下的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-113', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-002', relation_type: 'prerequisite', weight: 1, description: '內分泌系統生理（甲狀腺-HPT 軸）是理解犬甲狀腺機能低下的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-003 (貓甲亢) ← L2-002 (內分泌失調機轉)
-  { id: 'IM-E-114', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-003', relation_type: 'prerequisite', weight: 3, description: '內分泌失調機轉是理解貓甲狀腺機能亢進（自主性腺瘤）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-114', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-003', relation_type: 'prerequisite', weight: 1, description: '內分泌失調機轉是理解貓甲狀腺機能亢進（自主性腺瘤）的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-004 (CKD) ← L1-001 (腎臟生理與尿液形成)
-  { id: 'IM-E-115', source_node_id: 'IM-L1-001', target_node_id: 'IM-L3-004', relation_type: 'prerequisite', weight: 3, description: '腎臟生理與尿液形成是理解慢性腎病（GFR 下降、濃縮功能喪失）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-115', source_node_id: 'IM-L1-001', target_node_id: 'IM-L3-004', relation_type: 'prerequisite', weight: 1, description: '腎臟生理與尿液形成是理解慢性腎病（GFR 下降、濃縮功能喪失）的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-005 (IMHA) ← L2-006 (免疫介導疾病機轉)
-  { id: 'IM-E-116', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-005', relation_type: 'prerequisite', weight: 3, description: '免疫介導疾病機轉（Type II 超敏反應）是理解 IMHA 紅血球破壞的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-116', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-005', relation_type: 'prerequisite', weight: 1, description: '免疫介導疾病機轉（Type II 超敏反應）是理解 IMHA 紅血球破壞的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-006 (糖尿病) ← L1-004 (內分泌系統生理)
-  { id: 'IM-E-117', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-006', relation_type: 'prerequisite', weight: 3, description: '內分泌系統生理（胰島素分泌與作用）是理解糖尿病的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-117', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-006', relation_type: 'prerequisite', weight: 1, description: '內分泌系統生理（胰島素分泌與作用）是理解糖尿病的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-007 (慢性腸病 IBD/CE) ← L1-003 (消化系統生理)
-  { id: 'IM-E-118', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-007', relation_type: 'prerequisite', weight: 3, description: '消化系統生理（腸道屏障與黏膜免疫）是理解慢性腸病的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-118', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-007', relation_type: 'prerequisite', weight: 1, description: '消化系統生理（腸道屏障與黏膜免疫）是理解慢性腸病的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-008 (胰臟炎) ← L1-003 (消化系統生理)
-  { id: 'IM-E-119', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-008', relation_type: 'prerequisite', weight: 3, description: '消化系統生理（胰臟外分泌功能與酵素活化）是理解胰臟炎自體消化的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-119', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-008', relation_type: 'prerequisite', weight: 1, description: '消化系統生理（胰臟外分泌功能與酵素活化）是理解胰臟炎自體消化的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-009 (貓肝臟脂肪變性) ← L2-004 (肝膽病理機轉)
-  { id: 'IM-E-120', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-009', relation_type: 'prerequisite', weight: 3, description: '肝膽病理機轉（肝臟脂質代謝異常）是理解貓肝臟脂肪變性的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-120', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-009', relation_type: 'prerequisite', weight: 1, description: '肝膽病理機轉（肝臟脂質代謝異常）是理解貓肝臟脂肪變性的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-010 (艾利希體/焦蟲) ← L1-002 (免疫學基礎)
-  { id: 'IM-E-121', source_node_id: 'IM-L1-002', target_node_id: 'IM-L3-010', relation_type: 'prerequisite', weight: 3, description: '免疫學基礎（宿主對胞內寄生物的免疫反應）是理解壁蝨媒介感染的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-121', source_node_id: 'IM-L1-002', target_node_id: 'IM-L3-010', relation_type: 'prerequisite', weight: 1, description: '免疫學基礎（宿主對胞內寄生物的免疫反應）是理解壁蝨媒介感染的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-011 (Addison) ← L1-004 (內分泌系統生理)
-  { id: 'IM-E-122', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-011', relation_type: 'prerequisite', weight: 3, description: '內分泌系統生理（腎上腺皮質功能與電解質調節）是理解 Addison 的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-122', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-011', relation_type: 'prerequisite', weight: 1, description: '內分泌系統生理（腎上腺皮質功能與電解質調節）是理解 Addison 的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-012 (PLE) ← L1-003 (消化系統生理)
-  { id: 'IM-E-123', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-012', relation_type: 'prerequisite', weight: 3, description: '消化系統生理（腸道蛋白質吸收與淋巴回流）是理解蛋白質流失性腸病的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-123', source_node_id: 'IM-L1-003', target_node_id: 'IM-L3-012', relation_type: 'prerequisite', weight: 1, description: '消化系統生理（腸道蛋白質吸收與淋巴回流）是理解蛋白質流失性腸病的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-013 (AKI) ← L2-001 (腎損傷機轉)
-  { id: 'IM-E-124', source_node_id: 'IM-L2-001', target_node_id: 'IM-L3-013', relation_type: 'prerequisite', weight: 3, description: '腎損傷機轉（腎小管壞死、腎前/腎後因素）是理解急性腎損傷的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-124', source_node_id: 'IM-L2-001', target_node_id: 'IM-L3-013', relation_type: 'prerequisite', weight: 1, description: '腎損傷機轉（腎小管壞死、腎前/腎後因素）是理解急性腎損傷的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-014 (PLN) ← L2-001 (腎損傷機轉)
-  { id: 'IM-E-125', source_node_id: 'IM-L2-001', target_node_id: 'IM-L3-014', relation_type: 'prerequisite', weight: 3, description: '腎損傷機轉（腎絲球基底膜損傷與蛋白尿）是理解蛋白質流失性腎病的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-125', source_node_id: 'IM-L2-001', target_node_id: 'IM-L3-014', relation_type: 'prerequisite', weight: 1, description: '腎損傷機轉（腎絲球基底膜損傷與蛋白尿）是理解蛋白質流失性腎病的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-015 (IMT) ← L2-006 (免疫介導疾病機轉)
-  { id: 'IM-E-126', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-015', relation_type: 'prerequisite', weight: 3, description: '免疫介導疾病機轉（抗血小板抗體）是理解免疫介導血小板減少症的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-126', source_node_id: 'IM-L2-006', target_node_id: 'IM-L3-015', relation_type: 'prerequisite', weight: 1, description: '免疫介導疾病機轉（抗血小板抗體）是理解免疫介導血小板減少症的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-019 (膽管炎/三合症) ← L2-004 (肝膽病理機轉)
-  { id: 'IM-E-127', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-019', relation_type: 'prerequisite', weight: 3, description: '肝膽病理機轉（膽道系統發炎與膽汁鬱滯）是理解貓膽管炎與三合症的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-127', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-019', relation_type: 'prerequisite', weight: 1, description: '肝膽病理機轉（膽道系統發炎與膽汁鬱滯）是理解貓膽管炎與三合症的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-020 (貓哮喘) ← L2-007 (呼吸道發炎與氣道重塑)
-  { id: 'IM-E-128', source_node_id: 'IM-L2-007', target_node_id: 'IM-L3-020', relation_type: 'prerequisite', weight: 3, description: '呼吸道發炎與氣道重塑是理解貓哮喘嗜酸性氣道炎症的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-128', source_node_id: 'IM-L2-007', target_node_id: 'IM-L3-020', relation_type: 'prerequisite', weight: 1, description: '呼吸道發炎與氣道重塑是理解貓哮喘嗜酸性氣道炎症的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-021 (細菌性肺炎) ← L1-005 (呼吸系統生理)
-  { id: 'IM-E-129', source_node_id: 'IM-L1-005', target_node_id: 'IM-L3-021', relation_type: 'prerequisite', weight: 3, description: '呼吸系統生理（黏膜纖毛清除與肺泡防禦機制）是理解細菌性肺炎的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-129', source_node_id: 'IM-L1-005', target_node_id: 'IM-L3-021', relation_type: 'prerequisite', weight: 1, description: '呼吸系統生理（黏膜纖毛清除與肺泡防禦機制）是理解細菌性肺炎的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-025 (膽囊黏液囊腫) ← L2-004 (肝膽病理機轉)
-  { id: 'IM-E-130', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-025', relation_type: 'prerequisite', weight: 3, description: '肝膽病理機轉（膽囊黏膜增生與膽汁成分異常）是理解膽囊黏液囊腫的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-130', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-025', relation_type: 'prerequisite', weight: 1, description: '肝膽病理機轉（膽囊黏膜增生與膽汁成分異常）是理解膽囊黏液囊腫的前置知識', bidirectional: false, unlock_condition: null },
   // IM-L3-026 (犬慢性肝炎) ← L2-004 (肝膽病理機轉)
-  { id: 'IM-E-131', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-026', relation_type: 'prerequisite', weight: 3, description: '肝膽病理機轉（銅蓄積與免疫介導肝損傷）是理解犬慢性肝炎的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-131', source_node_id: 'IM-L2-004', target_node_id: 'IM-L3-026', relation_type: 'prerequisite', weight: 1, description: '肝膽病理機轉（銅蓄積與免疫介導肝損傷）是理解犬慢性肝炎的前置知識', bidirectional: false, unlock_condition: null },
 
   // ─── 補齊：IM-L3-010 (Ehrlichia/Babesia) 前向連接至診斷節點 ───
   { id: 'IM-E-132', source_node_id: 'IM-L3-010', target_node_id: 'IM-L4-002', relation_type: 'clinical_apply', weight: 2, description: '壁蝨媒介感染需尿液分析評估腎功能（Babesia 可致急性腎損傷與血紅蛋白尿）', bidirectional: false, unlock_condition: null },

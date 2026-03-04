@@ -130,32 +130,32 @@ export const SURG_EDGES: KnowledgeEdge[] = [
   // ─── 審計補齊：L3 缺失 prerequisite 邊（每個 L3 須至少 1 條 L1/L2 prerequisite）───
 
   // SURG-L3-001 (GDV)：需腹腔臟器病理（胃解剖與扭轉機轉）
-  { id: 'SURG-E-075', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-001', relation_type: 'prerequisite', weight: 3, description: '腹腔臟器病理（胃韌帶鬆弛、胃軸旋轉機轉）是理解 GDV 的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-075', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-001', relation_type: 'prerequisite', weight: 1, description: '腹腔臟器病理（胃韌帶鬆弛、胃軸旋轉機轉）是理解 GDV 的前置知識', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-002 (脾臟腫瘤)：需腹腔臟器病理（脾臟血管結構）
-  { id: 'SURG-E-076', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-002', relation_type: 'prerequisite', weight: 3, description: '腹腔臟器病理（脾臟血管結構與腫瘤血行轉移）是脾臟腫瘤的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-076', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-002', relation_type: 'prerequisite', weight: 1, description: '腹腔臟器病理（脾臟血管結構與腫瘤血行轉移）是脾臟腫瘤的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-003 (腸道異物)：需腹腔臟器病理（腸道解剖與蠕動）
-  { id: 'SURG-E-077', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-003', relation_type: 'prerequisite', weight: 3, description: '腹腔臟器病理（腸道蠕動、腸壁血供）是理解異物阻塞與腸壞死的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-077', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-003', relation_type: 'prerequisite', weight: 1, description: '腹腔臟器病理（腸道蠕動、腸壁血供）是理解異物阻塞與腸壞死的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-004 (CCLD)：需骨關節病理（膝關節穩定機制）
-  { id: 'SURG-E-078', source_node_id: 'SURG-L2-002', target_node_id: 'SURG-L3-004', relation_type: 'prerequisite', weight: 3, description: '骨關節病理（十字韌帶退化、脛骨平台斜度）是理解 CCLD 的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-078', source_node_id: 'SURG-L2-002', target_node_id: 'SURG-L3-004', relation_type: 'prerequisite', weight: 1, description: '骨關節病理（十字韌帶退化、脛骨平台斜度）是理解 CCLD 的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-006 (會陰疝氣)：需手術解剖學（骨盆膈肌肉結構）
-  { id: 'SURG-E-079', source_node_id: 'SURG-L1-001', target_node_id: 'SURG-L3-006', relation_type: 'prerequisite', weight: 3, description: '手術解剖學（骨盆膈肌群、陰部神經走向）是會陰疝氣修補的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-079', source_node_id: 'SURG-L1-001', target_node_id: 'SURG-L3-006', relation_type: 'prerequisite', weight: 1, description: '手術解剖學（骨盆膈肌群、陰部神經走向）是會陰疝氣修補的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-007 (創傷性骨折穩定)：需骨折癒合機轉
-  { id: 'SURG-E-080', source_node_id: 'SURG-L2-003', target_node_id: 'SURG-L3-007', relation_type: 'prerequisite', weight: 3, description: '骨折癒合機轉（一期/二期癒合、骨痂形成）是選擇骨折固定策略的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-080', source_node_id: 'SURG-L2-003', target_node_id: 'SURG-L3-007', relation_type: 'prerequisite', weight: 1, description: '骨折癒合機轉（一期/二期癒合、骨痂形成）是選擇骨折固定策略的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-008 (膝蓋骨脫位)：需骨關節病理（髕股關節力學）
-  { id: 'SURG-E-081', source_node_id: 'SURG-L2-002', target_node_id: 'SURG-L3-008', relation_type: 'prerequisite', weight: 3, description: '骨關節病理（髕股關節排列、滑車溝深度）是理解膝蓋骨脫位分級的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-081', source_node_id: 'SURG-L2-002', target_node_id: 'SURG-L3-008', relation_type: 'prerequisite', weight: 1, description: '骨關節病理（髕股關節排列、滑車溝深度）是理解膝蓋骨脫位分級的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-009 (子宮蓄膿)：需腹腔臟器病理（子宮內分泌病理）
-  { id: 'SURG-E-082', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-009', relation_type: 'prerequisite', weight: 3, description: '腹腔臟器病理（黃體素介導的子宮內膜增生/細菌感染）是子宮蓄膿的病理基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-082', source_node_id: 'SURG-L2-001', target_node_id: 'SURG-L3-009', relation_type: 'prerequisite', weight: 1, description: '腹腔臟器病理（黃體素介導的子宮內膜增生/細菌感染）是子宮蓄膿的病理基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-011 (PSS)：需手術解剖學（門脈系統正常解剖）
-  { id: 'SURG-E-083', source_node_id: 'SURG-L1-001', target_node_id: 'SURG-L3-011', relation_type: 'prerequisite', weight: 3, description: '手術解剖學（門靜脈系統正常走向與肝臟血供）是理解 PSS 的基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-083', source_node_id: 'SURG-L1-001', target_node_id: 'SURG-L3-011', relation_type: 'prerequisite', weight: 1, description: '手術解剖學（門靜脈系統正常走向與肝臟血供）是理解 PSS 的基礎', bidirectional: false, unlock_condition: null },
 
   // SURG-L3-015 (腸切除吻合術)：需外科原則（吻合技術與組織處理）
-  { id: 'SURG-E-084', source_node_id: 'SURG-L1-004', target_node_id: 'SURG-L3-015', relation_type: 'prerequisite', weight: 3, description: '外科原則（無菌技術、組織處理、縫合方式）是腸切除吻合術的技術基礎', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-084', source_node_id: 'SURG-L1-004', target_node_id: 'SURG-L3-015', relation_type: 'prerequisite', weight: 1, description: '外科原則（無菌技術、組織處理、縫合方式）是腸切除吻合術的技術基礎', bidirectional: false, unlock_condition: null },
 ];
