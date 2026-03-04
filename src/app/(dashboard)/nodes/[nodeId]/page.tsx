@@ -1,7 +1,6 @@
 'use client';
 
 import { use, useEffect, useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronRight, CheckCircle, BookOpen, Stethoscope, Search, Lightbulb, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
@@ -17,7 +16,6 @@ import { RelatedNodes } from '@/components/features/RelatedNodes';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
-import { SEED_NODE_CONTENTS } from '@/data/seed';
 
 interface NodeDetailPageProps {
   params: Promise<{ nodeId: string }>;
@@ -25,7 +23,6 @@ interface NodeDetailPageProps {
 
 export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   const { nodeId } = use(params);
-  const router = useRouter();
   const { nodes, edges, getNodeById, selectedNodeContent, setNodeContent } = useKnowledgeStore();
   const { getStatus, completeNode, startNode } = useLearningStore();
   const { addXP } = useGamificationStore();
@@ -35,15 +32,13 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   const node = useMemo(() => getNodeById(nodeId), [getNodeById, nodeId, nodes]);
   const status = getStatus(nodeId);
 
-  // 自動從 seed 載入內容（當 store 尚未設定時）
+  // 自動從 seed 載入內容（動態 import 避免打包到 client bundle）
   useEffect(() => {
     if (!selectedNodeContent || selectedNodeContent.node_id !== nodeId) {
-      const seedContent = SEED_NODE_CONTENTS.get(nodeId);
-      if (seedContent) {
-        setNodeContent(seedContent);
-      } else {
-        setNodeContent(null);
-      }
+      import('@/data/seed').then(({ SEED_NODE_CONTENTS }) => {
+        const seedContent = SEED_NODE_CONTENTS.get(nodeId);
+        setNodeContent(seedContent ?? null);
+      });
     }
   }, [nodeId, selectedNodeContent, setNodeContent]);
 
@@ -60,6 +55,22 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
       .trim();
   }, [content?.body]);
 
+  // 動態產生 TOC 章節項目（必須在所有 early return 之前，遵守 Rules of Hooks）
+  const tocSections = useMemo(() => {
+    if (!content || !node) return [];
+    const items: { id: string; label: string }[] = [];
+    items.push({ id: 'summary', label: '摘要' });
+    if (content.learning_objectives.length > 0) items.push({ id: 'objectives', label: '學習目標' });
+    if (node.node_type === 'disease' && content.disease_data) items.push({ id: 'disease', label: '疾病資料' });
+    if (node.node_type === 'diagnostic' && content.diagnostic_data) items.push({ id: 'diagnostic', label: '診斷方法' });
+    if (content.body) items.push({ id: 'body', label: '詳細內容' });
+    if (content.key_points && content.key_points.length > 0) items.push({ id: 'keypoints', label: '重點整理' });
+    if (content.clinical_pearl) items.push({ id: 'pearl', label: '臨床珍珠' });
+    if (content.common_mistakes && content.common_mistakes.length > 0) items.push({ id: 'mistakes', label: '常見錯誤' });
+    if (content.references && content.references.length > 0) items.push({ id: 'references', label: '參考文獻' });
+    return items;
+  }, [content, node]);
+
   // nodes 尚未載入時顯示 loading（DemoDataProvider 注入需要時間）
   if (nodes.length === 0) {
     return (
@@ -74,10 +85,10 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   if (!node) {
     return (
       <div className="flex h-64 flex-col items-center justify-center gap-4">
-        <p className="text-gray-500">找不到此知識節點</p>
-        <Button variant="secondary" onClick={() => router.back()}>
-          返回上一頁
-        </Button>
+        <p className="text-gray-500">找不到此知識節點（ID: {nodeId}）</p>
+        <Link href="/graph">
+          <Button variant="secondary">返回知識圖譜</Button>
+        </Link>
       </div>
     );
   }
@@ -107,22 +118,6 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
     disease: <Stethoscope className="h-5 w-5" />,
     diagnostic: <Search className="h-5 w-5" />,
   } as Record<string, React.ReactNode>;
-
-  // 動態產生 TOC 章節項目
-  const tocSections = useMemo(() => {
-    if (!content) return [];
-    const items: { id: string; label: string }[] = [];
-    items.push({ id: 'summary', label: '摘要' });
-    if (content.learning_objectives.length > 0) items.push({ id: 'objectives', label: '學習目標' });
-    if (node.node_type === 'disease' && content.disease_data) items.push({ id: 'disease', label: '疾病資料' });
-    if (node.node_type === 'diagnostic' && content.diagnostic_data) items.push({ id: 'diagnostic', label: '診斷方法' });
-    if (content.body) items.push({ id: 'body', label: '詳細內容' });
-    if (content.key_points && content.key_points.length > 0) items.push({ id: 'keypoints', label: '重點整理' });
-    if (content.clinical_pearl) items.push({ id: 'pearl', label: '臨床珍珠' });
-    if (content.common_mistakes && content.common_mistakes.length > 0) items.push({ id: 'mistakes', label: '常見錯誤' });
-    if (content.references && content.references.length > 0) items.push({ id: 'references', label: '參考文獻' });
-    return items;
-  }, [content, node.node_type]);
 
   const specialtyLabel: Record<string, string> = {
     CARDIO: '心臟科', IM: '內科', DERM: '皮膚科', SURG: '外科',

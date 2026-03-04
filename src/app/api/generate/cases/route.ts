@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withAuth } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildCasePrompt } from '@/lib/ai/prompts/cases';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
@@ -12,7 +13,7 @@ interface CaseGenerationInput {
   related_node_ids: string[];
 }
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: CaseGenerationInput = await request.json();
 
@@ -60,3 +61,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const POST = withAuth(handlePost);

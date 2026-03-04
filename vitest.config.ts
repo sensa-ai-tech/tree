@@ -6,6 +6,12 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     include: ['src/tests/**/*.test.ts', 'src/tests/**/*.test.tsx'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'text-summary', 'lcov'],
+      include: ['src/lib/**', 'src/stores/**'],
+      exclude: ['src/data/seed/**', 'src/tests/**'],
+    },
   },
   resolve: {
     alias: {

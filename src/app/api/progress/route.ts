@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withRateLimit } from '@/lib/api/middleware';
 import type { UserNodeProgress, ProgressStatus } from '@/types/gamification';
 
 interface ProgressUpdateInput {
@@ -8,7 +9,7 @@ interface ProgressUpdateInput {
   time_spent_minutes?: number | null;
 }
 
-export async function GET(_request: NextRequest) {
+async function handleGet(_request: NextRequest) {
   try {
     // Mock mode: return empty progress list.
     // In a real implementation, read the authenticated user's ID from session,
@@ -22,7 +23,7 @@ export async function GET(_request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: ProgressUpdateInput = await request.json();
 
@@ -78,3 +79,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const GET = withRateLimit(handleGet);
+export const POST = withRateLimit(handlePost);

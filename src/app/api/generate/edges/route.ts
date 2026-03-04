@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withAuth } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildEdgesPrompt } from '@/lib/ai/prompts/edges';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, edgeOutputSchema } from '@/lib/ai/parsers/validators';
 import type { EdgeGenerationInput, EdgeOutput } from '@/types/knowledge';
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: EdgeGenerationInput = await request.json();
 
@@ -40,3 +41,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const POST = withAuth(handlePost);

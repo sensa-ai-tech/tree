@@ -1,16 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Briefcase, Filter } from 'lucide-react';
 import { Card, CardBody, CardFooter } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { CardSkeleton } from '@/components/ui/Skeleton';
 import type { CaseChallenge } from '@/types/case';
-import { ALL_CASES } from '@/data/seed/case-lookup';
-
-// Seed cases for demonstration (all specialties)
-const MOCK_CASES: CaseChallenge[] = ALL_CASES;
 
 const DIFFICULTY_LABELS: Record<number, string> = {
   1: '入門',
@@ -21,10 +17,17 @@ const DIFFICULTY_LABELS: Record<number, string> = {
 };
 
 export default function CasesPage() {
-  const [cases] = useState<CaseChallenge[]>(MOCK_CASES);
-  const [isLoading] = useState(false);
+  const [cases, setCases] = useState<CaseChallenge[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
+
+  useEffect(() => {
+    import('@/data/seed/case-lookup').then(({ ALL_CASES }) => {
+      setCases(ALL_CASES);
+      setIsLoading(false);
+    });
+  }, []);
 
   const filteredCases = cases.filter((c) => {
     if (selectedSpecialty && c.specialty !== selectedSpecialty) return false;

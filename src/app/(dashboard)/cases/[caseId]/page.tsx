@@ -1,14 +1,13 @@
 'use client';
 
-import { use, useState, useMemo } from 'react';
+import { use, useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Briefcase, CheckCircle, XCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { ALL_CASES } from '@/data/seed/case-lookup';
-import type { CaseStepData } from '@/types/case';
+import type { CaseChallenge, CaseStepData } from '@/types/case';
 
 interface CaseDetailPageProps {
   params: Promise<{ caseId: string }>;
@@ -27,15 +26,32 @@ const STEP_TYPE_LABELS: Record<string, string> = {
 export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   const { caseId } = use(params);
   const router = useRouter();
+  const [allCases, setAllCases] = useState<CaseChallenge[]>([]);
+  const [isLoadingCases, setIsLoadingCases] = useState(true);
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedActions, setSelectedActions] = useState<Set<string>>(new Set());
   const [showFeedback, setShowFeedback] = useState(false);
   const [stepResults, setStepResults] = useState<Map<number, boolean>>(new Map());
 
+  useEffect(() => {
+    import('@/data/seed/case-lookup').then(({ ALL_CASES }) => {
+      setAllCases(ALL_CASES);
+      setIsLoadingCases(false);
+    });
+  }, []);
+
   const caseData = useMemo(
-    () => ALL_CASES.find((c) => c.id === caseId) ?? null,
-    [caseId]
+    () => allCases.find((c) => c.id === caseId) ?? null,
+    [caseId, allCases]
   );
+
+  if (isLoadingCases) {
+    return (
+      <div className="flex h-64 items-center justify-center">
+        <p className="text-sm text-gray-400">病例載入中...</p>
+      </div>
+    );
+  }
 
   if (!caseData) {
     return (

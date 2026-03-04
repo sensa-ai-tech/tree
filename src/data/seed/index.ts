@@ -176,9 +176,7 @@ export const SEED_CASE = ALL_CASES[0];
 // ═══════════════════════════════════════════
 
 /** 檢查是否為 mock 模式（無 Supabase 連線） */
-export function isMockMode(): boolean {
-  return !process.env.NEXT_PUBLIC_SUPABASE_URL;
-}
+export { isMockMode } from './mock-mode';
 
 /** 一次性注入所有 seed 資料至各 store */
 export function initializeDemoData(): void {

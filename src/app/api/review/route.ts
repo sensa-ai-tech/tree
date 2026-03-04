@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withRateLimit } from '@/lib/api/middleware';
 import { calculateNextReview, createInitialState } from '@/lib/gamification/spaced-rep';
 import type { UserSpacedRepetition, SpacedRepetitionState } from '@/types/gamification';
 
@@ -14,7 +15,7 @@ interface DueReviewItem {
   repetitions: number;
 }
 
-export async function GET(_request: NextRequest) {
+async function handleGet(_request: NextRequest) {
   try {
     // Mock mode: return empty due-review list.
     // In a real implementation, query Supabase for the authenticated user's
@@ -28,7 +29,7 @@ export async function GET(_request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: ReviewSubmitInput = await request.json();
 
@@ -79,3 +80,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const GET = withRateLimit(handleGet);
+export const POST = withRateLimit(handlePost);

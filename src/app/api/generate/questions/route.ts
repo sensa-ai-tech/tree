@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withAuth } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildQuestionsPrompt } from '@/lib/ai/prompts/questions';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
@@ -11,7 +12,7 @@ interface QuestionsInput {
   key_points: string[];
 }
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: QuestionsInput = await request.json();
 
@@ -59,3 +60,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const POST = withAuth(handlePost);

@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withAuth } from '@/lib/api/middleware';
 import { callClaude } from '@/lib/ai/claude-client';
 import { buildSkeletonPrompt } from '@/lib/ai/prompts/skeleton';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, skeletonOutputSchema } from '@/lib/ai/parsers/validators';
 import type { SkeletonInput, SkeletonOutput } from '@/types/knowledge';
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: SkeletonInput = await request.json();
     const prompt = buildSkeletonPrompt(input);
@@ -24,3 +25,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const POST = withAuth(handlePost);

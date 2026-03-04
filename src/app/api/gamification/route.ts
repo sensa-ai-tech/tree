@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withRateLimit } from '@/lib/api/middleware';
 import type {
   UserExperience,
   UserAchievement,
@@ -29,7 +30,7 @@ const VALID_XP_SOURCES: XPSource[] = [
   'exploration_bonus',
 ];
 
-export async function GET(_request: NextRequest) {
+async function handleGet(_request: NextRequest) {
   try {
     // Mock mode: return default gamification state.
     // In a real implementation, query Supabase for the authenticated user's
@@ -54,7 +55,7 @@ export async function GET(_request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: XPEventInput = await request.json();
 
@@ -110,3 +111,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const GET = withRateLimit(handleGet);
+export const POST = withRateLimit(handlePost);

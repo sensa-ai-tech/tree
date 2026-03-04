@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withRateLimit } from '@/lib/api/middleware';
 import type { KnowledgeNode } from '@/types/knowledge';
 
 interface NodeDetailResponse {
@@ -6,12 +7,12 @@ interface NodeDetailResponse {
   error?: string;
 }
 
-export async function GET(
+async function handleGet(
   _request: NextRequest,
-  { params }: { params: Promise<{ nodeId: string }> }
+  context?: { params: Promise<Record<string, string>> }
 ) {
   try {
-    const { nodeId } = await params;
+    const { nodeId } = (await context!.params) as { nodeId: string };
 
     if (!nodeId || nodeId.trim() === '') {
       return NextResponse.json(
@@ -34,3 +35,5 @@ export async function GET(
     return NextResponse.json({ data: null, error: message }, { status: 500 });
   }
 }
+
+export const GET = withRateLimit(handleGet);

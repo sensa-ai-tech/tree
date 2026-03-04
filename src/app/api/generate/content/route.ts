@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withAuth } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { getContentPrompt } from '@/lib/ai/prompt-registry';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, nodeContentSchema } from '@/lib/ai/parsers/validators';
 import type { ContentGenerationInput, ContentOutput, KnowledgeNode } from '@/types/knowledge';
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const input: ContentGenerationInput = await request.json();
 
@@ -76,3 +77,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const POST = withAuth(handlePost);

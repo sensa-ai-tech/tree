@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { withRateLimit } from '@/lib/api/middleware';
 import type { CaseChallenge, CaseResult, CaseStepResult } from '@/types/case';
 
 interface CaseSubmitInput {
@@ -6,12 +7,12 @@ interface CaseSubmitInput {
   total_time_seconds: number;
 }
 
-export async function GET(
+async function handleGet(
   _request: NextRequest,
-  { params }: { params: Promise<{ caseId: string }> }
+  context?: { params: Promise<Record<string, string>> }
 ) {
   try {
-    const { caseId } = await params;
+    const { caseId } = (await context!.params) as { caseId: string };
 
     if (!caseId || caseId.trim() === '') {
       return NextResponse.json(
@@ -39,12 +40,12 @@ export async function GET(
   }
 }
 
-export async function POST(
+async function handlePost(
   request: NextRequest,
-  { params }: { params: Promise<{ caseId: string }> }
+  context?: { params: Promise<Record<string, string>> }
 ) {
   try {
-    const { caseId } = await params;
+    const { caseId } = (await context!.params) as { caseId: string };
     const input: CaseSubmitInput = await request.json();
 
     if (!caseId || caseId.trim() === '') {
@@ -91,3 +92,6 @@ export async function POST(
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+
+export const GET = withRateLimit(handleGet);
+export const POST = withRateLimit(handlePost);
