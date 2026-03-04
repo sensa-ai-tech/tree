@@ -159,4 +159,27 @@ export const ECC_EDGES: KnowledgeEdge[] = [
 
   // 疾病間關聯
   { id: 'ECC-E-088', source_node_id: 'ECC-L3-015', target_node_id: 'ECC-L3-016', relation_type: 'differential', weight: 0.6, description: '低血糖可為 Addison 危象的臨床表現之一', bidirectional: false, unlock_condition: null },
+
+  // ─── 補齊缺失 prerequisite 邊：確保每個 L3 節點至少有 1 條 L1/L2 prerequisite ───
+
+  // ECC-L3-001（過敏性休克）← L1-001（休克生理學）
+  { id: 'ECC-E-089', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-001', relation_type: 'prerequisite', weight: 3, description: '過敏性休克屬於分布性休克，需先理解休克生理學（血管擴張、有效循環血量下降機轉）', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-002（DKA）← L1-003（酸鹼平衡）
+  { id: 'ECC-E-090', source_node_id: 'ECC-L1-003', target_node_id: 'ECC-L3-002', relation_type: 'prerequisite', weight: 3, description: 'DKA 核心病理為酮體堆積致代謝性酸中毒，需先掌握酸鹼平衡（Henderson-Hasselbalch、代償機制）', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-003（中暑）← L1-001（休克生理學）
+  { id: 'ECC-E-091', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-003', relation_type: 'prerequisite', weight: 3, description: '中暑可導致分布性休克與血流動力學衰竭，需先理解休克生理學（熱致血管擴張、有效循環血量重分配）', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-009（腹腔出血）← L2-004（創傷與出血病生理）
+  { id: 'ECC-E-092', source_node_id: 'ECC-L2-004', target_node_id: 'ECC-L3-009', relation_type: 'prerequisite', weight: 3, description: '腹腔出血的評估與處置需理解創傷出血機轉（失血性休克分級、凝血病變三角）', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-010（氣胸）← L1-001（休克生理學）
+  { id: 'ECC-E-093', source_node_id: 'ECC-L1-001', target_node_id: 'ECC-L3-010', relation_type: 'prerequisite', weight: 3, description: '張力性氣胸可導致阻塞性休克（縱膈腔移位、靜脈回流受阻），需先理解休克生理學', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-011（敗血症臨床處置）← L2-001（SIRS/敗血症機轉）
+  { id: 'ECC-E-094', source_node_id: 'ECC-L2-001', target_node_id: 'ECC-L3-011', relation_type: 'prerequisite', weight: 3, description: '敗血症臨床處置需先理解 SIRS/敗血症級聯反應機轉（細胞激素風暴、血管通透性增加、組織灌流不足）', bidirectional: false, unlock_condition: null },
+
+  // ECC-L3-012（多發性創傷）← L2-004（創傷與出血病生理）
+  { id: 'ECC-E-095', source_node_id: 'ECC-L2-004', target_node_id: 'ECC-L3-012', relation_type: 'prerequisite', weight: 3, description: '多發性創傷處置需理解創傷出血病生理（致死三角：低體溫/酸中毒/凝血病變、損傷控制復甦）', bidirectional: false, unlock_condition: null },
 ];

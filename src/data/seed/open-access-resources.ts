@@ -12,7 +12,7 @@
  * - RECOVER — 實證心肺復甦指引
  * - ACVIM — 美國獸醫內科學院共識聲明（多數於 JVIM 開放取用）
  *
- * 最後更新：2026-02-26
+ * 最後更新：2026-03-04
  */
 
 // ─── Types ───
@@ -876,6 +876,119 @@ export const OPEN_ACCESS_RESOURCES: OpenAccessResource[] = [
     topics: ['genetics', 'inherited disease', 'breed predisposition', 'SOD1', 'PRA'],
     access_type: 'free_full_text',
     description_zh: 'OMIA 為悉尼大學維護的免費資料庫，收錄 135+ 物種的遺傳性疾病與性狀。涵蓋犬貓品種好發的遺傳疾病（如 DCM/ARVC 基因突變、SOD1 退化性脊髓病變、MDR1 藥物敏感），可查詢 OMIA ID 連結至基因變異與臨床表現。',
+  },
+
+  // ─── Phase 5: 新增學術資源（2026-03-04 擴增） ───
+
+  {
+    id: 'OAR-ECC-009',
+    title: 'RECOVER 2024 — Reassessment Campaign on Veterinary Resuscitation: Updated CPR Guidelines',
+    title_zh: 'RECOVER 2024 — 獸醫復甦再評估：更新版 CPR 指引',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10836563/',
+    source: 'RECOVER',
+    specialty: ['ECC'],
+    topics: ['CPR', 'RECOVER 2024', 'chest compression', 'vasopressor', 'POCUS', 'post-cardiac arrest'],
+    access_type: 'free_full_text',
+    description_zh: 'RECOVER 2024 年 CPR 指引更新版，整合 2012-2024 年新實證，修訂胸外按壓深度與速率建議、vasopressin 與 epinephrine 併用策略、point-of-care ultrasound（POCUS）在心肺復甦中的應用，以及心臟停止後照護（post-cardiac arrest care）更新。',
+  },
+  {
+    id: 'OAR-NEURO-008',
+    title: 'IVETF — International Veterinary Epilepsy Task Force Consensus Reports on Epilepsy Definition, Classification, and Diagnosis (2015)',
+    title_zh: 'IVETF — 國際獸醫癲癇工作小組癲癇定義、分類與診斷共識報告（2015）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4913649/',
+    source: 'PMC',
+    specialty: ['NEURO'],
+    topics: ['epilepsy', 'IVETF', 'classification', 'Tier I-III diagnosis', 'canine', 'idiopathic epilepsy'],
+    access_type: 'free_full_text',
+    description_zh: 'IVETF 2015 癲癇定義與分類共識，建立犬癲癇三層診斷系統（Tier I 基礎排除、Tier II 進階影像、Tier III 腦電圖），統一結構性/特發性/反應性癲癇定義，為全球獸醫神經科癲癇診斷的標準參考框架。',
+  },
+  {
+    id: 'OAR-ONCO-008',
+    title: 'ACVIM Consensus Statement — Chemotherapy for Dogs with Lymphoma (2016)',
+    title_zh: 'ACVIM 共識聲明 — 犬淋巴瘤化學治療（2016）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4913659/',
+    source: 'ACVIM',
+    specialty: ['ONCO'],
+    topics: ['lymphoma', 'CHOP', 'chemotherapy', 'rescue protocol', 'canine', 'prognosis'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVIM 犬淋巴瘤化療共識，詳述 CHOP-based 多藥物化療方案（UW-25/modified）、單藥方案（doxorubicin alone）、rescue protocols（MOPP/LAP/LOPP）、化療毒性分級（VCOG-CTCAE）、及影響預後的因子（免疫表型/分期/亞分期）。',
+  },
+  {
+    id: 'OAR-DERM-008',
+    title: 'WAVD — World Association for Veterinary Dermatology: Treatment of Canine Atopic Dermatitis Clinical Practice Guidelines (2023 update)',
+    title_zh: 'WAVD — 世界獸醫皮膚科學會：犬異位性皮膚炎治療臨床實踐指引（2023 更新）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10337822/',
+    source: 'PMC',
+    specialty: ['DERM'],
+    topics: ['atopic dermatitis', 'CAD', 'oclacitinib', 'lokivetmab', 'cyclosporine', 'ASIT', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'WAVD 2023 年犬異位性皮膚炎治療更新指引，新增 lokivetmab 長期安全性資料、JAK 抑制劑（oclacitinib）與 cyclosporine 頭對頭比較、減敏治療（ASIT）新型給藥途徑（皮下淋巴結注射），並更新急性發作與慢性管理的階梯式治療流程圖。',
+  },
+  {
+    id: 'OAR-CPATH-007',
+    title: 'ASVCP — Quality Assurance Guidelines for Veterinary Clinical Pathology Laboratories (2009/2023 update)',
+    title_zh: 'ASVCP — 獸醫臨床病理實驗室品質保證指引（2009/2023 更新）',
+    url: 'https://www.asvcp.org/page/QALS_Guidelines',
+    source: 'Other',
+    specialty: ['CPATH'],
+    topics: ['quality assurance', 'QC', 'Westgard rules', 'reference intervals', 'method validation', 'POCT'],
+    access_type: 'free_full_text',
+    description_zh: 'ASVCP 獸醫實驗室品質保證指引完整版，涵蓋分析前/分析中/分析後三階段品管、Westgard 多規則品管系統、參考區間建立方法學（CLSI C28）、方法驗證（精密度/準確度/線性）、以及 POCT 設備品管要求。為獸醫實驗室品質管理的標準文件。',
+  },
+  {
+    id: 'OAR-IM-012',
+    title: 'IRIS 2023 — Treatment Recommendations for CKD Stages 1-4 (Updated)',
+    title_zh: 'IRIS 2023 — 慢性腎病第 1-4 期治療建議（更新版）',
+    url: 'https://www.iris-kidney.com/guidelines/recommendations.html',
+    source: 'IRIS',
+    specialty: ['IM'],
+    topics: ['CKD', 'treatment', 'IRIS 2023', 'renal diet', 'phosphate binders', 'SDMA', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'IRIS 2023 更新版 CKD 治療建議，依 IRIS 分期（Stage 1-4）提供具體治療方案：Stage 1 原發病處理與飲食；Stage 2 腎臟飲食+磷結合劑+ACEI/ARB；Stage 3-4 加強水分管理、EPO、止吐、H2 blocker，並新增 SDMA 在治療監測中的定位。',
+  },
+  {
+    id: 'OAR-SURG-008',
+    title: 'ACVS — Prophylactic Gastropexy for Prevention of GDV: Laparoscopic-Assisted Technique',
+    title_zh: 'ACVS — 預防性胃固定術預防 GDV：腹腔鏡輔助技術',
+    url: 'https://www.acvs.org/small-animal/gastric-dilatation-volvulus',
+    source: 'Other',
+    specialty: ['SURG', 'ECC'],
+    topics: ['GDV', 'gastropexy', 'prophylactic', 'laparoscopic', 'deep-chested breeds', 'canine'],
+    access_type: 'free_full_text',
+    description_zh: 'ACVS 關於預防性胃固定術的共識總覽，涵蓋高風險品種（大型/巨型深胸犬）篩選標準、腹腔鏡輔助胃固定術（LAG）vs 開腹式技術比較、術後併發症、預防性胃固定的實證支持（降低 GDV 發生率達 >95%），以及建議與絕育手術同時進行的時機選擇。',
+  },
+  {
+    id: 'OAR-CROSS-009',
+    title: 'WSAVA 2024 — Guidelines for the Vaccination of Dogs and Cats',
+    title_zh: 'WSAVA 2024 — 犬貓疫苗接種指引',
+    url: 'https://wsava.org/global-guidelines/vaccination-guidelines/',
+    source: 'WSAVA',
+    specialty: ['IM', 'ONCO', 'ECC'],
+    topics: ['vaccination', 'core vaccine', 'non-core', 'WSAVA 2024', 'booster interval', 'FISS', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 2024 年全球疫苗接種指引更新版，修訂核心疫苗（CDV/CPV/CAV-2；FPV/FCV/FHV-1）追加接種間隔建議、新增貓白血病疫苗（FeLV）分齡策略、FISS 預防注射位置更新（遠端肢體），以及低資源環境下的疫苗方案建議。',
+  },
+  {
+    id: 'OAR-CROSS-010',
+    title: 'AAHA 2023 — Pain Management Guidelines for Dogs and Cats',
+    title_zh: 'AAHA 2023 — 犬貓疼痛管理指引',
+    url: 'https://www.aaha.org/resources/2022-aaha-pain-management-guidelines-for-dogs-and-cats/',
+    source: 'Other',
+    specialty: ['ECC', 'SURG', 'ONCO', 'NEURO', 'IM'],
+    topics: ['pain management', 'multimodal analgesia', 'NSAID', 'gabapentin', 'opioid', 'chronic pain', 'cancer pain', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'AAHA 2022/2023 犬貓疼痛管理指引，涵蓋急性（術後/外傷）與慢性（退化性關節炎/癌症）疼痛評估工具（Glasgow CPS/CMPS-SF、Colorado State 量表、貓 grimace scale）、多模式止痛策略（NSAID+gabapentin+opioid+局部麻醉+物理復健）、貓特殊用藥考量（meloxicam 低劑量長期使用、solensia/frunevetmab）。',
+  },
+  {
+    id: 'OAR-ECC-010',
+    title: 'VIN — Veterinary Information Network: Emergency Drug Calculator & Quick Reference',
+    title_zh: 'VIN — 獸醫資訊網路：急診藥物計算器與快速參考',
+    url: 'https://www.vin.com/members/cms/project/defaultadv1.aspx?id=5124&pid=451',
+    source: 'Other',
+    specialty: ['ECC', 'IM', 'SURG'],
+    topics: ['emergency drugs', 'drug calculator', 'dosing reference', 'CRI', 'resuscitation', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'VIN 急診藥物計算器與快速參考工具（免費註冊可用），涵蓋急救藥物劑量（epinephrine/atropine/lidocaine/vasopressin）、CRI 計算（fentanyl/ketamine/lidocaine）、電解質補充劑量、以及常用急救藥物的犬貓體重換算表。適合臨床急診快速查閱。',
   },
 ];
 

@@ -117,4 +117,16 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
   { id: 'CARDIO-E-051', source_node_id: 'CARDIO-L3-007', target_node_id: 'CARDIO-L3-001', relation_type: 'differential', weight: 0.7, description: '老年犬暈厥需鑑別心律不整與瓣膜性心衰竭——兩者均可導致暈厥但機轉與處置不同', bidirectional: true, unlock_condition: null },
   // 肺高壓 ← 心絲蟲: complication（心絲蟲導致肺高壓——已有 CARDIO-E-033 但此處加上反向說明）
   { id: 'CARDIO-E-052', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L3-005', relation_type: 'complication', weight: 0.8, description: '肺高壓患犬需排查心絲蟲感染作為根本原因', bidirectional: false, unlock_condition: null },
+
+  // ─── 補齊 L3 prerequisite 邊（每個 L3 疾病至少 1 條 prerequisite 連至 L1/L2）───
+  // CARDIO-L3-001 (MMVD) ← L2-001 (瓣膜退化機轉)
+  { id: 'CARDIO-E-053', source_node_id: 'CARDIO-L2-001', target_node_id: 'CARDIO-L3-001', relation_type: 'prerequisite', weight: 3, description: '瓣膜退化機轉是理解 MMVD 黏液瘤性退化的必要前置知識', bidirectional: false, unlock_condition: null },
+  // CARDIO-L3-002 (DCM) ← L2-002 (心肌重塑機轉)
+  { id: 'CARDIO-E-054', source_node_id: 'CARDIO-L2-002', target_node_id: 'CARDIO-L3-002', relation_type: 'prerequisite', weight: 3, description: '心肌重塑機轉是理解擴張型心肌病心室擴大與收縮功能下降的前置知識', bidirectional: false, unlock_condition: null },
+  // CARDIO-L3-003 (HCM) ← L1-003 (心臟血流動力學)
+  { id: 'CARDIO-E-055', source_node_id: 'CARDIO-L1-003', target_node_id: 'CARDIO-L3-003', relation_type: 'prerequisite', weight: 3, description: '心臟血流動力學是理解 HCM 舒張功能障礙與流出道阻塞的前置知識', bidirectional: false, unlock_condition: null },
+  // CARDIO-L3-006 (先天性心臟病) ← L1-001 (心臟解剖學)
+  { id: 'CARDIO-E-056', source_node_id: 'CARDIO-L1-001', target_node_id: 'CARDIO-L3-006', relation_type: 'prerequisite', weight: 3, description: '心臟解剖學是理解先天性心臟病（PDA/PS/SAS）結構異常的前置知識', bidirectional: false, unlock_condition: null },
+  // CARDIO-L3-007 (心律不整各論) ← L1-002 (心臟電生理學)
+  { id: 'CARDIO-E-057', source_node_id: 'CARDIO-L1-002', target_node_id: 'CARDIO-L3-007', relation_type: 'prerequisite', weight: 3, description: '心臟電生理學是理解臨床心律不整（SVT/VT/AF/SSS）的前置知識', bidirectional: false, unlock_condition: null },
 ];

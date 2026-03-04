@@ -168,4 +168,24 @@ export const DERM_EDGES: KnowledgeEdge[] = [
   { id: 'DERM-E-073', source_node_id: 'DERM-L3-017', target_node_id: 'DERM-L3-010', relation_type: 'differential', weight: 0.9, description: 'DLE 與天疱瘡鑑別：皆好發鼻面部但組織病理截然不同（interface vs acantholysis）', bidirectional: true, unlock_condition: null },
   { id: 'DERM-E-074', source_node_id: 'DERM-L3-015', target_node_id: 'DERM-L3-014', relation_type: 'differential', weight: 0.7, description: 'EGC 嗜酸性斑塊需與 MCT 鑑別（兩者皆含嗜酸球）', bidirectional: true, unlock_condition: null },
   { id: 'DERM-E-075', source_node_id: 'DERM-L3-016', target_node_id: 'DERM-L3-012', relation_type: 'differential', weight: 0.7, description: '脂腺炎與脫毛症 X 鑑別：皆為非瘙癢性脫毛但脂腺炎有毛囊鑄型', bidirectional: true, unlock_condition: null },
+
+  // ─── 審計補齊：L3 缺失 prerequisite 邊（每個 L3 須至少 1 條 L1/L2 prerequisite）───
+
+  // DERM-L3-001 (犬異位性皮膚炎 CAD)：IgE 介導的 Type I 過敏反應，需皮膚免疫學基礎
+  { id: 'DERM-E-076', source_node_id: 'DERM-L1-002', target_node_id: 'DERM-L3-001', relation_type: 'prerequisite', weight: 3, description: '皮膚免疫學（IgE/肥大細胞/Th2 pathway）是理解 CAD 發病機轉的前置知識', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-002 (食物不良反應)：需理解過敏反應機轉（Type I & Type IV）
+  { id: 'DERM-E-077', source_node_id: 'DERM-L2-001', target_node_id: 'DERM-L3-002', relation_type: 'prerequisite', weight: 3, description: '過敏反應機轉（IgE 介導與非 IgE 介導）是理解食物不良反應的基礎', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-003 (跳蚤過敏性皮膚炎 FAD)：Type I 過敏性超敏反應
+  { id: 'DERM-E-078', source_node_id: 'DERM-L2-001', target_node_id: 'DERM-L3-003', relation_type: 'prerequisite', weight: 3, description: '過敏反應機轉（跳蚤唾液蛋白引發的 Type I 超敏反應）是 FAD 的核心病理基礎', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-006 (馬拉色菌皮膚炎)：需理解角化異常與皮膚屏障
+  { id: 'DERM-E-079', source_node_id: 'DERM-L2-002', target_node_id: 'DERM-L3-006', relation_type: 'prerequisite', weight: 3, description: '角化異常導致皮脂過度分泌，為馬拉色菌過度增殖的前提條件', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-010 (天疱瘡)：自體免疫機轉攻擊橋粒蛋白
+  { id: 'DERM-E-080', source_node_id: 'DERM-L2-003', target_node_id: 'DERM-L3-010', relation_type: 'prerequisite', weight: 3, description: '自體免疫皮膚病機轉（抗橋粒蛋白抗體導致棘層鬆解）是天疱瘡的核心前置知識', bidirectional: false, unlock_condition: null },
+
+  // DERM-L3-013 (皮膚淋巴瘤 CTCL)：需免疫學基礎理解 T 細胞腫瘤行為
+  { id: 'DERM-E-081', source_node_id: 'DERM-L1-002', target_node_id: 'DERM-L3-013', relation_type: 'prerequisite', weight: 3, description: '皮膚免疫學（T 細胞亞群與嗜皮性）是理解 CTCL 嗜表皮行為的基礎', bidirectional: false, unlock_condition: null },
 ];

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-04T15:00:18.014Z",
+  "timestamp": "2026-03-04T15:16:25.798Z",
   "totalScore": 100,
   "specialties": [
     {
@@ -470,10 +470,10 @@
   "allIssues": [],
   "summary": {
     "totalNodes": 264,
-    "totalEdges": 723,
-    "totalQuestions": 1875,
+    "totalEdges": 792,
+    "totalQuestions": 1890,
     "totalCases": 99,
-    "totalPaths": 40,
+    "totalPaths": 43,
     "crossSpecialtyEdges": 109
   }
 }

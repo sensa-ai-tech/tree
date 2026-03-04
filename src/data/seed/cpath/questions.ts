@@ -1918,4 +1918,211 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     explanation: '整合判讀的核心能力之一是辨識與處理矛盾結果。tT4 受非甲狀腺疾病（euthyroid sick syndrome / NTI）、藥物（glucocorticoids, NSAIDs）與品種（視覺獵犬天然偏低）影響。當臨床表現與實驗室結果不一致時，應考慮干擾因素、建議進階檢查（Free T4 by ED 較不受 NTI 影響）、或待原發病穩定後追蹤。報告中應清楚說明此不一致性與建議。',
     difficulty: 4, spaced_rep: true, tags: ['整合判讀', '矛盾結果', '甲狀腺', 'NTI'], image_placeholder: null,
   },
+
+  // ─── Phase 5: 新增 CPATH 題目（2026-03-04） ───
+
+  // ── CBC Artifact Recognition（3 題）──
+  {
+    id: 'Q-CPATH-061', node_id: 'CPATH-L4-001', question_type: 'mcq',
+    question: '犬的 CBC 報告顯示血小板計數為 15,000/μL（參考值 175,000-500,000），但臨床上無出血傾向。血液抹片檢查最可能發現的偽象（artifact）為？',
+    options: [
+      '紅血球 rouleaux formation',
+      '血小板凝集（platelet clumping）',
+      '破碎紅血球（schistocytes）',
+      '嗜中性球左移（left shift）',
+    ],
+    correct_answer: '血小板凝集（platelet clumping）',
+    explanation: '臨床上無出血症狀但血小板計數極低時，最常見的原因是分析前偽象——血小板凝集（platelet clumping）。EDTA 抗凝劑可誘發部分犬（尤其是 Cavalier King Charles Spaniel）的血小板聚集，導致自動血球分析儀將血小板叢計為大型細胞或忽略，造成假性血小板低下。確認方法為血液抹片末端（feathered edge）檢查血小板叢。貓尤其容易發生 EDTA 誘導的血小板凝集。',
+    difficulty: 3, spaced_rep: true, tags: ['CBC', '偽象', '血小板凝集', 'artifact'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-062', node_id: 'CPATH-L4-001', question_type: 'mcq',
+    question: '在自動血球分析儀的 CBC 報告中，脂血（lipemia）樣本最可能造成下列哪個參數的偽性升高？',
+    options: [
+      '紅血球計數（RBC count）',
+      '血紅素濃度（hemoglobin concentration）',
+      '血小板計數（platelet count）',
+      '網狀紅血球計數（reticulocyte count）',
+    ],
+    correct_answer: '血紅素濃度（hemoglobin concentration）',
+    explanation: '脂血是常見的分析前干擾因素。血紅素測定採用分光光度法（cyanmethemoglobin 法），脂肪微粒造成光散射使吸光度假性升高，因此 hemoglobin 濃度偽高。連帶影響計算參數 MCH 和 MCHC 偽高。相較之下，RBC count 和 PCV（離心法）較不受脂血影響，因此當 MCHC > 38 g/dL 且與 PCV 不相符時，應考慮脂血干擾。',
+    difficulty: 3, spaced_rep: true, tags: ['CBC', '偽象', '脂血', 'hemoglobin'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-063', node_id: 'CPATH-L4-001', question_type: 'mcq',
+    question: '犬的 CBC 顯示 MCV 95 fL（參考值 60-77 fL），MCHC 29 g/dL（參考值 32-36），reticulocyte count 偏高。在排除真正的大球性貧血後，最可能的偽象原因為？',
+    options: [
+      '樣本保存過久導致紅血球腫脹（in vitro swelling）',
+      'EDTA 過量導致紅血球皺縮',
+      '冷凝集素（cold agglutinin）造成紅血球聚集',
+      '血小板被誤計為紅血球',
+    ],
+    correct_answer: '樣本保存過久導致紅血球腫脹（in vitro swelling）',
+    explanation: 'EDTA 抗凝血液若室溫保存超過 6-8 小時（或冷藏更久），紅血球會吸水腫脹，導致 MCV 假性升高、MCHC 假性降低（因為紅血球體積增大但 hemoglobin 總量不變）。這是最常見的「假性大球性低色素性」偽象。解決方法：盡快（1-2 小時內）完成 CBC 分析，或核對 PCV（離心法不受此影響）。高 reticulocyte 本身也會導致 MCV 輕度升高，但本題 MCV 極高提示保存偽象。',
+    difficulty: 4, spaced_rep: true, tags: ['CBC', '偽象', 'MCV', '樣本保存', 'in vitro'], image_placeholder: null,
+  },
+
+  // ── 何時需要骨髓生檢（3 題）──
+  {
+    id: 'Q-CPATH-064', node_id: 'CPATH-L4-007', question_type: 'mcq',
+    question: '下列哪種臨床情境最適合建議進行骨髓穿刺/活檢（bone marrow aspirate/biopsy）？',
+    options: [
+      '犬急性腸胃炎伴隨輕度嗜中性球升高',
+      '犬持續性非再生性貧血（PCV 18%，reticulocyte < 10,000/μL，持續 > 2 週）',
+      '貓跳蚤過敏導致嗜酸性球升高',
+      '犬急性溶血性貧血（PCV 15%，reticulocyte 350,000/μL）',
+    ],
+    correct_answer: '犬持續性非再生性貧血（PCV 18%，reticulocyte < 10,000/μL，持續 > 2 週）',
+    explanation: '骨髓穿刺的主要適應症為：(1) 持續性非再生性貧血（排除腎病、鐵缺乏等常見原因後）；(2) 不明原因的兩系或三系血球減少（bi/pancytopenia）；(3) 周邊血液出現異常細胞（blast cells）疑似白血病；(4) 高球蛋白血症疑似多發性骨髓瘤。急性溶血伴隨高 reticulocyte 是骨髓有反應的再生性貧血，不需要骨髓穿刺。嗜酸性球升高與嗜中性球升高通常有明確原因。',
+    difficulty: 3, spaced_rep: true, tags: ['骨髓', '適應症', '非再生性貧血'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-065', node_id: 'CPATH-L4-007', question_type: 'mcq',
+    question: '犬的 CBC 顯示全血球減少（pancytopenia）：PCV 20%、WBC 2,500/μL（嗜中性球 800/μL）、血小板 45,000/μL，reticulocyte count < 5,000/μL。骨髓穿刺最可能的發現為？',
+    options: [
+      '骨髓增生活躍（hypercellular marrow）伴紅血球系過度增生',
+      '骨髓低細胞性（hypocellular marrow）伴脂肪組織取代',
+      '骨髓正常細胞性，M:E ratio 正常',
+      '骨髓增生活躍伴巨核細胞增多',
+    ],
+    correct_answer: '骨髓低細胞性（hypocellular marrow）伴脂肪組織取代',
+    explanation: '全血球減少伴隨所有系列的非再生反應（低 reticulocyte、低嗜中性球、低血小板），最常見的骨髓發現為低細胞性骨髓（hypocellular/aplastic marrow），正常造血組織被脂肪取代。常見原因包括：骨髓毒性藥物（如 chloramphenicol、化療藥物）、Ehrlichia canis 慢性感染、特發性再生不良性貧血、FeLV（貓）。骨髓增生活躍但周邊血球減少的情況見於骨髓增生異常症候群（MDS）或免疫介導性破壞。',
+    difficulty: 4, spaced_rep: true, tags: ['骨髓', 'pancytopenia', '再生不良', 'aplastic'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-066', node_id: 'CPATH-L4-007', question_type: 'mcq',
+    question: '老年犬（10 歲）出現高球蛋白血症（TP 11.2 g/dL，globulin 7.8 g/dL），血清蛋白電泳顯示 monoclonal gammopathy（γ-region 單克隆尖峰）。除骨髓穿刺外，下列哪項追加檢查對確認診斷最有幫助？',
+    options: [
+      '尿液蛋白電泳尋找 Bence Jones 蛋白尿',
+      '腹腔超音波檢查肝臟',
+      '皮膚切片活檢',
+      '胸腔 X 光檢查縱隔腔腫塊',
+    ],
+    correct_answer: '尿液蛋白電泳尋找 Bence Jones 蛋白尿',
+    explanation: '老年犬的 monoclonal gammopathy 最常見的原因為多發性骨髓瘤（multiple myeloma）。診斷標準需滿足至少 2 項：(1) 骨髓漿細胞 > 20%；(2) 血清 monoclonal gammopathy；(3) 溶骨性病灶（osteolysis）；(4) Bence Jones 蛋白尿（免疫球蛋白輕鏈）。尿液蛋白電泳是非侵入性檢查中最具診斷價值的追加項目。骨骼放射學檢查也重要但題目已提到骨髓穿刺。其他選項與多發性骨髓瘤無直接相關。',
+    difficulty: 4, spaced_rep: true, tags: ['骨髓', '多發性骨髓瘤', 'monoclonal gammopathy', 'Bence Jones'], image_placeholder: null,
+  },
+
+  // ── CSF 解讀（3 題）──
+  {
+    id: 'Q-CPATH-067', node_id: 'CPATH-L4-006', question_type: 'mcq',
+    question: '犬的腦脊髓液（CSF）分析顯示：有核細胞計數 320 cells/μL（參考值 < 5）、蛋白質 180 mg/dL（參考值 < 25），細胞學以小型至中型淋巴球為主，混合少量單核球。最可能的診斷方向為？',
+    options: [
+      '細菌性腦膜炎',
+      '肉芽腫性腦膜腦脊髓炎（GME）或不明原因腦膜腦脊髓炎（MUO）',
+      '隱球菌腦膜炎',
+      '脊髓壓迫性病變（IVDD）',
+    ],
+    correct_answer: '肉芽腫性腦膜腦脊髓炎（GME）或不明原因腦膜腦脊髓炎（MUO）',
+    explanation: 'CSF 呈現明顯的淋巴球性/混合性細胞增多（pleocytosis）伴蛋白質升高，以小型淋巴球為主且無細菌或真菌，最支持免疫介導性/炎症性中樞神經系統疾病，如 MUO（包括 GME、NME、NLE）。細菌性腦膜炎以嗜中性球為主（neutrophilic pleocytosis）。隱球菌感染可見混合性但通常可見隱球菌體。IVDD 通常 CSF 正常或僅輕度白蛋白細胞解離（albuminocytologic dissociation）。MUO 是犬最常見的炎症性 CNS 疾病，確診需 MRI + CSF 分析。',
+    difficulty: 4, spaced_rep: true, tags: ['CSF', '體液分析', 'MUO', 'GME', '淋巴球性'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-068', node_id: 'CPATH-L4-006', question_type: 'mcq',
+    question: '犬 CSF 分析顯示有核細胞計數正常（2 cells/μL），但蛋白質明顯升高（85 mg/dL）。此「白蛋白細胞解離」（albuminocytologic dissociation）模式最常見於下列哪種狀況？',
+    options: [
+      '急性細菌性腦膜炎',
+      '腫瘤壓迫或血腦屏障受損（如脊髓腫瘤）',
+      '犬瘟熱病毒感染',
+      '特發性癲癇',
+    ],
+    correct_answer: '腫瘤壓迫或血腦屏障受損（如脊髓腫瘤）',
+    explanation: '白蛋白細胞解離（albuminocytologic dissociation, ACD）指 CSF 蛋白質升高但有核細胞計數正常或僅輕微升高。最常見的原因包括：(1) 中樞神經系統腫瘤（壓迫導致血腦屏障局部破壞，蛋白質滲出但腫瘤細胞不易脫落至 CSF）；(2) 椎間盤疾病（IVDD）；(3) 缺血性脊髓病變。細菌性腦膜炎和犬瘟熱通常伴隨明顯的細胞增多。特發性癲癇 CSF 正常。ACD 發現時應建議 MRI 進一步檢查。',
+    difficulty: 4, spaced_rep: true, tags: ['CSF', '白蛋白細胞解離', 'ACD', '腫瘤'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-069', node_id: 'CPATH-L4-006', question_type: 'mcq',
+    question: '貓 CSF 分析發現大量嗜中性球（92%），有核細胞計數 2,800 cells/μL，蛋白質 250 mg/dL。革蘭氏染色未見細菌，但嗜中性球呈退化性變化（degenerate neutrophils）。最適當的後續處理為？',
+    options: [
+      '直接排除細菌感染，僅給予類固醇',
+      '進行 CSF 細菌培養/藥敏試驗，同時開始經驗性抗生素治療',
+      '立即進行骨髓穿刺',
+      '重複採樣以確認結果',
+    ],
+    correct_answer: '進行 CSF 細菌培養/藥敏試驗，同時開始經驗性抗生素治療',
+    explanation: 'CSF 呈現顯著的嗜中性球性細胞增多（neutrophilic pleocytosis），且嗜中性球呈退化性變化（核腫脹、染色質模糊），強烈提示細菌性腦膜炎/腦膜腦脊髓炎。革蘭氏染色未見細菌不能排除感染（敏感度約 50-75%）。應立即送 CSF 進行需氧/厭氧菌培養與藥敏試驗，同時開始經驗性廣效抗生素（如 ampicillin/sulbactam + metronidazole + enrofloxacin）。在培養結果確認前不應給予免疫抑制劑量的類固醇，以免加重感染。',
+    difficulty: 4, spaced_rep: true, tags: ['CSF', '嗜中性球', '細菌性腦膜炎', '培養'], image_placeholder: null,
+  },
+
+  // ── 凝血功能檢查判讀（3 題）──
+  {
+    id: 'Q-CPATH-070', node_id: 'CPATH-L4-004', question_type: 'mcq',
+    question: '犬的凝血檢查顯示 PT 顯著延長（38 秒，參考值 6-10）、aPTT 顯著延長（45 秒，參考值 10-16）、血小板計數正常、D-dimer 正常。此模式最可能的原因為？',
+    options: [
+      '瀰漫性血管內凝固（DIC）',
+      '抗凝血劑中毒（如 brodifacoum）',
+      '免疫介導性血小板低下症（ITP）',
+      'von Willebrand disease',
+    ],
+    correct_answer: '抗凝血劑中毒（如 brodifacoum）',
+    explanation: 'PT 和 aPTT 同時顯著延長，但血小板正常且 D-dimer 正常（排除 DIC），最經典的原因是抗凝血劑（維生素 K 拮抗劑）中毒，如 brodifacoum/bromadiolone 老鼠藥。這類毒物抑制維生素 K 依賴性凝血因子（II、VII、IX、X）的活化，導致外源和內源凝血途徑同時受影響。PT 通常最先延長（因 Factor VII 半衰期最短，約 6 小時）。DIC 通常伴隨 D-dimer 升高和血小板降低。ITP 影響血小板不影響 PT/aPTT。vWD 不影響 PT。',
+    difficulty: 3, spaced_rep: true, tags: ['凝血', 'PT', 'aPTT', '抗凝血劑中毒', '維生素K'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-071', node_id: 'CPATH-L4-004', question_type: 'case_based',
+    question: '一隻 7 歲德國牧羊犬因急性呼吸困難與腹部膨大就診。凝血檢查：PT 22 秒（↑）、aPTT 35 秒（↑）、fibrinogen < 50 mg/dL（↓）、D-dimer > 5,000 ng/mL（↑↑↑）、血小板 35,000/μL（↓↓）、血液抹片見破碎紅血球。最可能的凝血異常診斷為？',
+    options: [
+      '單純性維生素 K 缺乏',
+      '瀰漫性血管內凝固（DIC）',
+      '嚴重肝衰竭',
+      '遺傳性血友病 A（Factor VIII 缺乏）',
+    ],
+    correct_answer: '瀰漫性血管內凝固（DIC）',
+    explanation: '本病例呈現 DIC 的經典實驗室特徵組合：(1) PT 和 aPTT 同時延長（凝血因子消耗）；(2) fibrinogen 極低（消耗性凝血病變）；(3) D-dimer 極高（纖溶亢進）；(4) 血小板嚴重降低（消耗）；(5) 破碎紅血球/schistocytes（微血管病性溶血性貧血）。結合急性呼吸困難與腹部膨大（可能為脾臟血管肉瘤破裂出血），DIC 常見於嚴重感染、腫瘤（HSA）、胰臟炎、GDV 等觸發因素。DIC 診斷需要多項凝血異常同時存在。',
+    difficulty: 4, spaced_rep: true, tags: ['凝血', 'DIC', 'D-dimer', 'fibrinogen', 'schistocytes'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-072', node_id: 'CPATH-L4-004', question_type: 'mcq',
+    question: '犬的凝血檢查顯示 PT 正常、aPTT 延長（28 秒，參考值 10-16）、口腔黏膜出血時間（BMBT）延長。血小板計數正常。此模式最可能的原因為？',
+    options: [
+      '抗凝血劑中毒',
+      'von Willebrand disease（vWD）',
+      '維生素 K 缺乏',
+      '肝衰竭',
+    ],
+    correct_answer: 'von Willebrand disease（vWD）',
+    explanation: 'von Willebrand disease 的凝血檢查特徵為：(1) BMBT 延長（vWF 是血小板黏附的關鍵因子，影響初期止血）；(2) aPTT 可能延長（vWF 是 Factor VIII 的載體蛋白，vWF 不足導致 Factor VIII 活性降低）；(3) PT 正常（外源途徑不受影響）；(4) 血小板計數正常（質的問題非量的問題）。確認診斷需要 vWF 抗原測定。好發品種包括 Doberman（Type 1）、German Shorthaired Pointer（Type 2）、Scottish Terrier（Type 3）。',
+    difficulty: 3, spaced_rep: true, tags: ['凝血', 'vWD', 'BMBT', 'aPTT', '初期止血'], image_placeholder: null,
+  },
+
+  // ── 品質保證與分析前誤差（3 題）──
+  {
+    id: 'Q-CPATH-073', node_id: 'CPATH-L2-001', question_type: 'mcq',
+    question: '在 Westgard 品管規則中，下列哪項違規最可能代表系統性誤差（systematic error）而非隨機誤差？',
+    options: [
+      '1-2s（一個品管值超過 ±2SD）',
+      '1-3s（一個品管值超過 ±3SD）',
+      '2-2s（連續兩個品管值超過同方向 ±2SD）',
+      'R-4s（兩個連續品管值差距超過 4SD）',
+    ],
+    correct_answer: '2-2s（連續兩個品管值超過同方向 ±2SD）',
+    explanation: 'Westgard 品管規則中，2-2s（連續兩個品管值位於同方向的 ±2SD 以外）代表系統性誤差（systematic error），提示分析系統出現持續性偏移（shift），可能原因包括：試劑批號變更、校正標準偏差、儀器光源老化等。1-3s 通常代表隨機誤差（random error）。R-4s（相鄰兩值差距 > 4SD）反映隨機誤差增大（精密度惡化）。1-2s 是警告規則，單獨不判定為失控。辨識系統性 vs 隨機誤差對於排除故障方向至關重要。',
+    difficulty: 4, spaced_rep: true, tags: ['品管', 'Westgard', '系統性誤差', 'QC'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-074', node_id: 'CPATH-L2-001', question_type: 'mcq',
+    question: '一份犬的血清生化報告顯示鉀離子（K+）為 8.2 mEq/L（參考值 3.5-5.8），但心電圖未顯示高血鉀的典型變化（尖 T 波、QRS 增寬）。最可能的原因為？',
+    options: [
+      '真正的高血鉀，但心臟尚未受影響',
+      '秋田犬品種特性導致紅血球鉀離子釋出（假性高血鉀）',
+      '呼吸性鹼中毒導致細胞內鉀離子移出',
+      '樣本標記錯誤',
+    ],
+    correct_answer: '秋田犬品種特性導致紅血球鉀離子釋出（假性高血鉀）',
+    explanation: '特定犬種（如秋田犬、柴犬等日本犬種）的紅血球含有高濃度鉀離子（high-K+ RBCs），血液凝固後紅血球內鉀釋出至血清中，造成假性高血鉀（pseudohyperkalemia）。其他造成假性高血鉀的原因包括：溶血、血小板極度增多（thrombocytosis > 1,000,000/μL）、白血球極度增多（> 100,000/μL）、EDTA 汙染。K+ 8.2 mEq/L 若為真正高血鉀，通常已有明顯 ECG 變化。解決方法：使用鋰肝素管（避免凝固釋出 K+）並盡速分離血漿。',
+    difficulty: 3, spaced_rep: true, tags: ['品管', '假性高血鉀', '分析前', '品種差異', '秋田犬'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-075', node_id: 'CPATH-L2-001', question_type: 'mcq',
+    question: '關於獸醫實驗室「參考區間（reference interval）」的建立，下列敘述何者正確？',
+    options: [
+      '使用至少 20 隻健康動物的數據即可建立參考區間',
+      '參考區間建立應依 ASVCP/CLSI 建議使用至少 40 隻（理想 120 隻）同物種健康動物的數據，並排除離群值',
+      '不同品種和年齡的動物可以共用同一套參考區間',
+      '直接沿用人醫實驗室的參考區間即可',
+    ],
+    correct_answer: '參考區間建立應依 ASVCP/CLSI 建議使用至少 40 隻（理想 120 隻）同物種健康動物的數據，並排除離群值',
+    explanation: '依 ASVCP 和 CLSI C28-A3 指引，參考區間建立需要：(1) 最少 40 隻（robust method）至理想 120 隻（non-parametric method）的健康動物樣本；(2) 明確定義「健康」標準並排除亞臨床疾病；(3) 使用統一的分析前流程（禁食、採樣方式）；(4) 離群值偵測與處理（Dixon/Tukey method）；(5) 考慮品種、年齡、性別的分組需求。20 隻樣本量不足，且不同物種間不能共用參考區間。某些品種確實需要品種特異性參考區間（如 greyhound 的高 PCV/creatinine）。',
+    difficulty: 3, spaced_rep: true, tags: ['品管', '參考區間', 'ASVCP', 'CLSI', '方法學'], image_placeholder: null,
+  },
 ];
