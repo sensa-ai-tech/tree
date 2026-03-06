@@ -83,8 +83,9 @@ import { ECC_QUESTIONS } from './ecc/questions';
 import { ECC_CASES } from './ecc/cases';
 import { ECC_PATHS } from './ecc/paths';
 
-// ─── Cross-Specialty Edges ───
+// ─── Cross-Specialty Edges & Paths ───
 import { CROSS_SPECIALTY_EDGES } from './cross-specialty-edges';
+import { CROSS_SPECIALTY_PATHS } from './cross-specialty-paths';
 
 // ─── Progress & Gamification ───
 import { SEED_PROGRESS } from './seed-progress';
@@ -165,6 +166,7 @@ const ALL_PATHS: LearningPath[] = [
   ...NEURO_PATHS,
   ...ONCO_PATHS,
   ...ECC_PATHS,
+  ...CROSS_SPECIALTY_PATHS,
 ];
 
 // ─── 向後相容：舊版匯出 ───

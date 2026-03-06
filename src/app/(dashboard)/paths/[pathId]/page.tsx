@@ -2,7 +2,7 @@
 
 import { use, useMemo } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, CheckCircle2, Circle, Flag } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
@@ -17,21 +17,13 @@ interface PathDetailPageProps {
 
 export default function PathDetailPage({ params }: PathDetailPageProps) {
   const { pathId } = use(params);
-  const router = useRouter();
   const { paths, getNodeById } = useKnowledgeStore();
   const { getStatus } = useLearningStore();
 
   const path = useMemo(() => paths.find((p) => p.id === pathId), [paths, pathId]);
 
   if (!path) {
-    return (
-      <div className="flex h-64 flex-col items-center justify-center gap-4">
-        <p className="text-gray-500">找不到此學習路徑</p>
-        <Button variant="secondary" onClick={() => router.push('/paths')}>
-          返回路徑列表
-        </Button>
-      </div>
-    );
+    notFound();
   }
 
   const completedNodes = path.path_nodes.filter((pn) => getStatus(pn.node_id) === 'completed').length;

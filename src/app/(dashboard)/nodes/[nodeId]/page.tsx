@@ -2,6 +2,7 @@
 
 import { use, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { ChevronRight, CheckCircle, BookOpen, Stethoscope, Search, Lightbulb, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
@@ -83,14 +84,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   }
 
   if (!node) {
-    return (
-      <div className="flex h-64 flex-col items-center justify-center gap-4">
-        <p className="text-gray-500">找不到此知識節點（ID: {nodeId}）</p>
-        <Link href="/graph">
-          <Button variant="secondary">返回知識圖譜</Button>
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   function handleStartLearning(): void {

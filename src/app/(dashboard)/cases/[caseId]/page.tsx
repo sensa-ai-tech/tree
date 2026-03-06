@@ -1,9 +1,9 @@
 'use client';
 
 import { use, useState, useEffect, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Briefcase, CheckCircle, XCircle, ChevronRight } from 'lucide-react';
+import { ArrowLeft, CheckCircle, XCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -54,27 +54,7 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   }
 
   if (!caseData) {
-    return (
-      <div className="space-y-6">
-        <div className="flex items-center gap-3">
-          <Link href="/cases">
-            <Button variant="ghost" size="sm" icon={<ArrowLeft className="h-4 w-4" />}>
-              返回病例列表
-            </Button>
-          </Link>
-        </div>
-        <Card>
-          <CardBody className="flex flex-col items-center gap-4 py-12">
-            <Briefcase className="h-12 w-12 text-gray-300" />
-            <p className="text-gray-500">找不到病例 ID: {caseId}</p>
-            <p className="text-sm text-gray-400">此病例可能尚未建立或已被移除</p>
-            <Button variant="secondary" onClick={() => router.push('/cases')}>
-              返回病例列表
-            </Button>
-          </CardBody>
-        </Card>
-      </div>
-    );
+    notFound();
   }
 
   const step: CaseStepData | undefined = caseData.steps[currentStep];

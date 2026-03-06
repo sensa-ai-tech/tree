@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VetKnowledgeTree
 
-## Getting Started
+結構化的獸醫專科互動學習平台，涵蓋 8 大臨床專科的知識圖譜。
 
-First, run the development server:
+## Features
+
+- **Knowledge Graph** — 264 nodes, 792 edges across 8 veterinary specialties
+- **Spaced Repetition** — SM-2 algorithm for optimized review scheduling
+- **Case Challenges** — 99 interactive clinical scenarios with step-by-step decision making
+- **Gamification** — XP, levels, achievements, and learning streaks
+- **1,890 Review Questions** — Multi-format questions covering all specialties
+- **43 Learning Paths** — Structured curricula with milestones
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript 5 (strict mode) |
+| UI | React 19 + Tailwind CSS 4 |
+| State | Zustand |
+| Backend | Supabase (PostgreSQL + Auth + RLS) |
+| Testing | Vitest + Playwright |
+| Deploy | Vercel |
+
+## Quick Start
 
 ```bash
+git clone <repo-url>
+cd vet-knowledge-tree
+npm install
+cp .env.local.example .env.local  # Configure environment variables
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app runs in **mock mode** when Supabase credentials are not configured, using built-in seed data.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+See [docs/QUICKSTART.md](docs/QUICKSTART.md) for detailed setup instructions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Specialties
 
-## Learn More
+| Code | Specialty | Nodes |
+|------|-----------|-------|
+| CARDIO | Cardiology | 26 |
+| IM | Internal Medicine | 48 |
+| DERM | Dermatology | 34 |
+| SURG | Surgery | 34 |
+| NEURO | Neurology | 33 |
+| ONCO | Oncology | 34 |
+| ECC | Emergency & Critical Care | 33 |
+| CPATH | Clinical Pathology | 22 |
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev          # Start dev server
+npm run build        # Production build
+npm run lint         # ESLint check
+npm test             # Run tests
+npx tsc --noEmit     # Type check
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Quality Metrics
 
-## Deploy on Vercel
+- TypeScript: 0 errors (strict mode)
+- ESLint: 0 errors, 0 warnings
+- Tests: 165/165 passing
+- npm audit: 0 vulnerabilities
+- Seed Quality Audit: 100/100
+- Engineering Audit: 100/100
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

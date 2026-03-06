@@ -12,7 +12,7 @@
  * - RECOVER — 實證心肺復甦指引
  * - ACVIM — 美國獸醫內科學院共識聲明（多數於 JVIM 開放取用）
  *
- * 最後更新：2026-03-04
+ * 最後更新：2026-03-05
  */
 
 // ─── Types ───
@@ -27,7 +27,7 @@ export interface OpenAccessResource {
   /** 完整 URL */
   url: string;
   /** 資源來源分類 */
-  source: 'PMC' | 'MerckVetManual' | 'WSAVA' | 'IRIS' | 'RECOVER' | 'ACVIM' | 'Other';
+  source: 'PMC' | 'MerckVetManual' | 'WSAVA' | 'IRIS' | 'RECOVER' | 'ACVIM' | 'ISFM' | 'AAHA' | 'Other';
   /** 受益專科列表 */
   specialty: string[];
   /** 相關主題標籤 */
@@ -989,6 +989,238 @@ export const OPEN_ACCESS_RESOURCES: OpenAccessResource[] = [
     topics: ['emergency drugs', 'drug calculator', 'dosing reference', 'CRI', 'resuscitation', 'canine', 'feline'],
     access_type: 'free_full_text',
     description_zh: 'VIN 急診藥物計算器與快速參考工具（免費註冊可用），涵蓋急救藥物劑量（epinephrine/atropine/lidocaine/vasopressin）、CRI 計算（fentanyl/ketamine/lidocaine）、電解質補充劑量、以及常用急救藥物的犬貓體重換算表。適合臨床急診快速查閱。',
+  },
+  // ─────────────────────────────────────────
+  // Round 6 — 學術資源擴增（NEURO/ECC/CPATH 補強 + 跨科）
+  // 新增 20 筆，補足弱勢專科
+  // ─────────────────────────────────────────
+
+  // NEURO — 神經科補強（+6）
+  {
+    id: 'OAR-NEURO-007',
+    title: 'ACVIM Consensus Statement — Seizure Management in Dogs (2015)',
+    title_zh: 'ACVIM 共識聲明 — 犬癲癇發作管理（2015）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4895657/',
+    source: 'ACVIM',
+    specialty: ['NEURO'],
+    topics: ['epilepsy', 'seizure', 'antiepileptic drugs', 'phenobarbital', 'levetiracetam', 'zonisamide', 'canine'],
+    access_type: 'open_access',
+    description_zh: 'ACVIM 犬癲癇管理共識聲明，涵蓋特發性癲癇診斷標準（MRI/CSF 排除結構性病因）、一線抗癲癇藥（phenobarbital、imbriree/KBr）與二線藥物（levetiracetam、zonisamide）選擇指引、血藥濃度監測頻率、群發性癲癇與癲癇重積狀態急救處理流程。',
+  },
+  {
+    id: 'OAR-NEURO-008',
+    title: 'PMC — Intervertebral Disc Disease in Dogs: Comprehensive Review (2020)',
+    title_zh: 'PMC — 犬椎間盤疾病綜合回顧（2020）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7559479/',
+    source: 'PMC',
+    specialty: ['NEURO', 'SURG'],
+    topics: ['IVDD', 'intervertebral disc', 'Hansen type I', 'Hansen type II', 'hemilaminectomy', 'canine'],
+    access_type: 'open_access',
+    description_zh: '犬椎間盤疾病（IVDD）系統性回顧，涵蓋 Hansen I 型（急性擠出）與 II 型（慢性突出）病理機轉、脊髓功能評估分級（Grade I-V）、MRI/CT 影像判讀要點、保守治療 vs 手術減壓（hemilaminectomy/ventral slot）適應症選擇、以及深部痛覺喪失（Grade V）的預後統計。',
+  },
+  {
+    id: 'OAR-NEURO-009',
+    title: 'Merck Veterinary Manual — Vestibular Disease in Dogs and Cats',
+    title_zh: 'Merck 獸醫手冊 — 犬貓前庭疾病',
+    url: 'https://www.merckvetmanual.com/nervous-system/diseases-of-the-peripheral-nerves-and-neuromuscular-junction/vestibular-disease-in-dogs-and-cats',
+    source: 'MerckVetManual',
+    specialty: ['NEURO'],
+    topics: ['vestibular disease', 'peripheral vestibular', 'central vestibular', 'head tilt', 'nystagmus', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 手冊犬貓前庭疾病章節，區分周邊性（常見：老年犬特發性前庭症候群、中耳炎）vs 中樞性（腦幹腫瘤、腦炎）前庭病變的鑑別要點（垂直眼震、本體感覺缺失、意識改變），以及老年犬特發性前庭症候群的預後（通常 2-3 週自行緩解）。',
+  },
+  {
+    id: 'OAR-NEURO-010',
+    title: 'ACVIM Consensus — MUO/GME/NME: Meningoencephalitis of Unknown Origin in Dogs (2023)',
+    title_zh: 'ACVIM 共識 — 犬不明原因腦膜腦炎（MUO/GME/NME）（2023）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10424822/',
+    source: 'ACVIM',
+    specialty: ['NEURO', 'IM'],
+    topics: ['MUO', 'GME', 'NME', 'meningoencephalitis', 'immunosuppression', 'corticosteroids', 'canine'],
+    access_type: 'open_access',
+    description_zh: 'ACVIM 2023 犬不明原因腦膜腦炎（MUO）共識更新，涵蓋 GME（肉芽腫性）/NME（壞死性）/NLE 的臨床表現與 MRI 特徵差異、CSF 分析判讀、免疫抑制治療方案（prednisolone 單藥 vs 聯合 cytarabine/cyclosporine/mycophenolate）、長期預後因素評估。',
+  },
+  {
+    id: 'OAR-NEURO-011',
+    title: 'PMC — Feline Cognitive Dysfunction Syndrome: Diagnosis and Management (2021)',
+    title_zh: 'PMC — 貓認知功能障礙症候群：診斷與管理（2021）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8466819/',
+    source: 'PMC',
+    specialty: ['NEURO', 'IM'],
+    topics: ['cognitive dysfunction', 'CDS', 'dementia', 'senior cat', 'DISHAAL', 'feline'],
+    access_type: 'open_access',
+    description_zh: '貓認知功能障礙症候群（CDS）的系統性回顧，涵蓋 DISHAAL 行為評分量表（方向感喪失/互動改變/睡眠/髒亂/活動量/焦慮/學習力）、與甲狀腺功能亢進及高血壓的鑑別診斷、環境管理介入策略（環境豐富化/規律作息/費洛蒙）、以及藥物輔助（SAMe、omega-3 DHA）實證。',
+  },
+  {
+    id: 'OAR-NEURO-012',
+    title: 'Merck Veterinary Manual — Myasthenia Gravis in Animals',
+    title_zh: 'Merck 獸醫手冊 — 動物重症肌無力',
+    url: 'https://www.merckvetmanual.com/nervous-system/disorders-of-the-peripheral-nerves-and-neuromuscular-junction/myasthenia-gravis-in-animals',
+    source: 'MerckVetManual',
+    specialty: ['NEURO', 'IM'],
+    topics: ['myasthenia gravis', 'megaesophagus', 'acetylcholine receptor antibody', 'pyridostigmine', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 手冊動物重症肌無力章節，涵蓋先天性 vs 後天性（免疫介導）分型、巨食道併發吸入性肺炎的管理、AChR 抗體力價檢測、Tensilon test 操作與判讀、pyridostigmine 劑量調整與免疫抑制藥物的併用策略。',
+  },
+
+  // ECC — 急診重症補強（+6）
+  {
+    id: 'OAR-ECC-011',
+    title: 'RECOVER Initiative — Evidence-Based CPR Guidelines for Small Animals (2012, updated 2024)',
+    title_zh: 'RECOVER 倡議 — 小動物實證心肺復甦指引（2012，2024更新）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3627558/',
+    source: 'RECOVER',
+    specialty: ['ECC'],
+    topics: ['CPR', 'RECOVER', 'cardiopulmonary resuscitation', 'BLS', 'ALS', 'defibrillation', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: 'RECOVER 小動物心肺復甦實證指引完整版，涵蓋 BLS（基本生命支持：每分鐘 100-120 次胸外按壓、6-10 次呼吸）、ALS（高級生命支持：epinephrine 0.01 mg/kg q3-5min、vasopressin 0.8 U/kg、atropine 0.04 mg/kg）、CPR 後照護、體溫管理、以及復甦成功率統計（出院率 ~6%）。',
+  },
+  {
+    id: 'OAR-ECC-012',
+    title: 'PMC — Shock in Small Animals: Pathophysiology and Fluid Therapy (2023)',
+    title_zh: 'PMC — 小動物休克：病理生理學與輸液治療（2023）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10501956/',
+    source: 'PMC',
+    specialty: ['ECC', 'IM', 'SURG'],
+    topics: ['shock', 'hypovolemic', 'distributive', 'cardiogenic', 'fluid therapy', 'crystalloid', 'colloid', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: '小動物休克的系統性回顧，涵蓋低血容性/分佈性/心因性/阻塞性休克的鑑別、乳酸值作為灌注指標的臨床意義、輸液復甦策略（犬 10-20 mL/kg bolus vs 貓 5-10 mL/kg 謹慎輸注）、目標導向液體治療（GDFT）概念、以及血管升壓藥（norepinephrine/vasopressin）使用時機。',
+  },
+  {
+    id: 'OAR-ECC-013',
+    title: 'ACVECC — Consensus on Trauma Management in Small Animals (2018)',
+    title_zh: 'ACVECC — 小動物外傷管理共識（2018）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6335581/',
+    source: 'ACVIM',
+    specialty: ['ECC', 'SURG'],
+    topics: ['trauma', 'triage', 'hemorrhage', 'permissive hypotension', 'damage control', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: '小動物外傷管理共識聲明，涵蓋 ABCDE 初級評估流程、出血控制與允許性低血壓策略（犬 MAP 60 mmHg、貓 MAP 50 mmHg）、損傷控制手術（DCS）原則、全血與成分血品輸注適應症、以及創傷性凝血病（TIC）的早期辨識與處理。',
+  },
+  {
+    id: 'OAR-ECC-014',
+    title: 'PMC — Toxicology Emergency Guide: Common Poisonings in Dogs and Cats (2022)',
+    title_zh: 'PMC — 毒理急診指南：犬貓常見中毒（2022）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9497858/',
+    source: 'PMC',
+    specialty: ['ECC', 'IM'],
+    topics: ['toxicology', 'poisoning', 'decontamination', 'chocolate', 'xylitol', 'lily', 'NSAID', 'rodenticide', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: '犬貓常見中毒的急診處理指南，涵蓋催吐適應症與禁忌（攝入 < 2 小時、意識清醒）、活性碳使用（1-2 g/kg）、特定解毒劑（維他命 K1 for rodenticide、N-acetylcysteine for acetaminophen、IV lipid emulsion for permethrin）、以及台灣常見毒物（百合、巧克力、木糖醇、蟾蜍毒素）的處理流程。',
+  },
+  {
+    id: 'OAR-ECC-015',
+    title: 'Merck Veterinary Manual — Transfusion Medicine in Dogs and Cats',
+    title_zh: 'Merck 獸醫手冊 — 犬貓輸血醫學',
+    url: 'https://www.merckvetmanual.com/circulatory-system/blood-groups-and-blood-transfusions/transfusion-medicine-in-small-animals',
+    source: 'MerckVetManual',
+    specialty: ['ECC', 'IM', 'CPATH'],
+    topics: ['transfusion', 'blood typing', 'crossmatch', 'DEA', 'AB system', 'transfusion reaction', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 手冊犬貓輸血醫學章節，涵蓋犬 DEA 血型系統（DEA 1 最重要）、貓 AB 血型系統（B 型貓首次輸入 A 型血即致命）、交叉配血試驗操作、輸血速率計算、輸血反應分類（急性溶血/延遲型/發燒性非溶血/過敏性）及處理流程。',
+  },
+  {
+    id: 'OAR-ECC-016',
+    title: 'PMC — Sepsis and SIRS in Veterinary Medicine: Current Concepts (2023)',
+    title_zh: 'PMC — 獸醫醫學中的敗血症與 SIRS：當前概念（2023）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10383026/',
+    source: 'PMC',
+    specialty: ['ECC', 'IM'],
+    topics: ['sepsis', 'SIRS', 'septic shock', 'biomarkers', 'procalcitonin', 'lactate', 'surviving sepsis', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: '獸醫醫學中敗血症與全身性發炎反應症候群（SIRS）的最新回顧，涵蓋犬貓 SIRS 診斷標準差異、敗血症生物標誌物（乳酸、procalcitonin、CRP）臨床應用、目標導向治療 bundle（早期抗生素 <1 hr、液體復甦、血管升壓藥）、以及存活率預測因子。',
+  },
+
+  // CPATH — 臨床病理補強（+5）
+  {
+    id: 'OAR-CPATH-003',
+    title: 'Merck Veterinary Manual — Interpretation of Clinical Chemistry Results',
+    title_zh: 'Merck 獸醫手冊 — 臨床生化檢驗結果判讀',
+    url: 'https://www.merckvetmanual.com/special-subjects/clinical-pathology-and-procedures/diagnostic-procedures-for-the-private-practice-laboratory',
+    source: 'MerckVetManual',
+    specialty: ['CPATH', 'IM'],
+    topics: ['clinical chemistry', 'liver enzymes', 'kidney values', 'electrolytes', 'BUN', 'creatinine', 'ALT', 'ALP'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 手冊臨床生化判讀章節，涵蓋肝臟酵素（ALT/AST vs ALP/GGT 的臟器特異性差異）、腎臟指標（BUN/Creatinine/SDMA/UPC）、電解質（Na/K/Ca/P）異常的鑑別診斷思路、以及常見干擾因素（溶血/脂血/黃疸對比色法的影響）。',
+  },
+  {
+    id: 'OAR-CPATH-004',
+    title: 'PMC — Veterinary Cytology: A Practical Approach to Interpretation (2021)',
+    title_zh: 'PMC — 獸醫細胞學：實務判讀方法（2021）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8232946/',
+    source: 'PMC',
+    specialty: ['CPATH', 'ONCO', 'DERM'],
+    topics: ['cytology', 'FNA', 'fine needle aspirate', 'malignancy criteria', 'inflammation', 'neoplasia', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: '獸醫細胞學實務判讀回顧，涵蓋細針抽吸（FNA）採樣技巧、發炎 vs 腫瘤性細胞學模式辨識、惡性度判斷標準（核異型性/核仁異常/N:C ratio/有絲分裂指數）、常見腫瘤細胞學特徵（淋巴瘤/肥大細胞瘤/黑色素瘤/肉瘤）、以及報告撰寫標準。',
+  },
+  {
+    id: 'OAR-CPATH-005',
+    title: 'ASVCP — Quality Assurance Guidelines for Veterinary Laboratory (2023)',
+    title_zh: 'ASVCP — 獸醫實驗室品質保證指引（2023）',
+    url: 'https://www.asvcp.org/page/QA_Guidelines',
+    source: 'Other',
+    specialty: ['CPATH'],
+    topics: ['quality assurance', 'QA', 'QC', 'reference intervals', 'analytical validation', 'pre-analytical errors'],
+    access_type: 'free_full_text',
+    description_zh: 'ASVCP（美國獸醫臨床病理學會）實驗室品質保證指引，涵蓋分析前誤差來源（採樣部位/抗凝劑選擇/檢體處理時間）、參考區間建立方法（最少 40 個健康動物樣本）、品質控制程序（Westgard rules）、以及 Point-of-Care 儀器驗證要求。',
+  },
+  {
+    id: 'OAR-CPATH-006',
+    title: 'PMC — Coagulation Testing in Veterinary Medicine: A Comprehensive Update (2022)',
+    title_zh: 'PMC — 獸醫醫學凝血檢驗：全面更新（2022）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9266428/',
+    source: 'PMC',
+    specialty: ['CPATH', 'ECC', 'IM'],
+    topics: ['coagulation', 'PT', 'aPTT', 'D-dimer', 'DIC', 'thromboelastography', 'TEG', 'ROTEM', 'canine', 'feline'],
+    access_type: 'open_access',
+    description_zh: '獸醫凝血檢驗全面回顧，涵蓋傳統檢驗（PT/aPTT/fibrinogen/D-dimer）的臨床判讀、DIC 診斷標準（ISTH 改良版應用於獸醫）、粘彈性檢驗（TEG/ROTEM）的原理與臨床應用（創傷性凝血病、肝病、IMHA 的高凝狀態監測）、以及 von Willebrand Disease 篩檢。',
+  },
+  {
+    id: 'OAR-CPATH-007',
+    title: 'Merck Veterinary Manual — Complete Blood Count (CBC) Interpretation',
+    title_zh: 'Merck 獸醫手冊 — 全血細胞計數（CBC）判讀',
+    url: 'https://www.merckvetmanual.com/special-subjects/clinical-pathology-and-procedures/hematology-reference-ranges',
+    source: 'MerckVetManual',
+    specialty: ['CPATH', 'IM', 'ECC'],
+    topics: ['CBC', 'leukogram', 'stress leukogram', 'left shift', 'regenerative anemia', 'thrombocytopenia', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'Merck 手冊 CBC 判讀章節，涵蓋白血球模式判讀（發炎性/壓力性/嗜酸球增多/白血病）、貧血分類（再生性 vs 非再生性、網狀紅血球計數、Coombs test 適應症）、血小板低下鑑別（消耗性/破壞性/產生減少）、以及物種間差異（犬 vs 貓 vs 馬的正常參考範圍）。',
+  },
+
+  // 跨科補強（+3）
+  {
+    id: 'OAR-CROSS-011',
+    title: 'ISFM — International Society of Feline Medicine: Cat-Friendly Practice Guidelines (2022)',
+    title_zh: 'ISFM — 國際貓科獸醫學會：貓友善醫療指引（2022）',
+    url: 'https://journals.sagepub.com/doi/full/10.1177/1098612X221128757',
+    source: 'ISFM',
+    specialty: ['IM', 'DERM', 'NEURO', 'ECC'],
+    topics: ['cat-friendly', 'feline', 'stress reduction', 'handling', 'hospitalization', 'ISFM', 'fear-free'],
+    access_type: 'open_access',
+    description_zh: 'ISFM 2022 貓友善醫療執業指引，涵蓋貓在診間的壓力辨識（瞳孔/耳朵/尾巴/呼吸模式）、低壓力保定技巧（towel wrap/clipnosis）、住院環境設計（分離犬貓區/躲藏空間/Feliway）、以及靜脈採血與給藥的貓特殊考量（頸靜脈 vs 頭靜脈選擇、最小採血量）。',
+  },
+  {
+    id: 'OAR-CROSS-012',
+    title: 'PMC — One Health Approach: Antimicrobial Resistance in Companion Animals (2023)',
+    title_zh: 'PMC — One Health 方法：伴侶動物抗藥性（2023）',
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10217504/',
+    source: 'PMC',
+    specialty: ['IM', 'DERM', 'SURG', 'ECC'],
+    topics: ['antimicrobial resistance', 'AMR', 'MRSP', 'MRSA', 'ESBL', 'culture sensitivity', 'antibiogram', 'one health'],
+    access_type: 'open_access',
+    description_zh: '伴侶動物抗菌藥抗藥性 One Health 觀點回顧，涵蓋犬貓常見多重抗藥菌（MRSP/MRSA/ESBL 大腸桿菌）流行趨勢、感染管控措施、經驗性抗生素選擇原則（ISCAID 指引）、培養敏感試驗判讀（MIC vs disk diffusion）、以及伴侶動物作為人畜共通抗藥菌傳播媒介的公衛意義。',
+  },
+  {
+    id: 'OAR-CROSS-013',
+    title: 'WSAVA — Nutritional Assessment Guidelines for Dogs and Cats (2023)',
+    title_zh: 'WSAVA — 犬貓營養評估指引（2023）',
+    url: 'https://wsava.org/global-guidelines/global-nutrition-guidelines/',
+    source: 'WSAVA',
+    specialty: ['IM', 'DERM', 'ONCO', 'ECC'],
+    topics: ['nutrition', 'BCS', 'MCS', 'nutritional assessment', 'diet history', 'obesity', 'cachexia', 'canine', 'feline'],
+    access_type: 'free_full_text',
+    description_zh: 'WSAVA 2023 犬貓營養評估指引，涵蓋體態評分（BCS 1-9 / 1-5）與肌肉量評分（MCS）標準化、飲食史採集要點、疾病特異性營養管理（腎臟病/糖尿病/癌症惡病質/過敏性皮膚病排除飲食試驗）、以及飼主溝通技巧。',
   },
 ];
 

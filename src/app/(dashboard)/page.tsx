@@ -7,6 +7,7 @@ import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Progress } from '@/components/ui/Progress';
 import { Skeleton, CardSkeleton } from '@/components/ui/Skeleton';
+import { WelcomeOnboarding } from '@/components/features/WelcomeOnboarding';
 import { useAuthStore } from '@/stores/auth-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
@@ -44,6 +45,7 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
+      <WelcomeOnboarding />
       {/* Welcome */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">
