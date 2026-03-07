@@ -2706,4 +2706,29 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     explanation: '英國短毛貓是 B 型血比例最高的品種之一（可達 25%）。B 型貓首次輸入 A 型血即可致命。在不知道血型的情況下「盲目輸血」風險極大。最適當的做法：(1) 用晶體液維持血容量。(2) 氧氣支持。(3) 如有 Oxyglobin（血紅蛋白基攜氧液）可作為暫時性氧合橋接。(4) 緊急聯繫可做血型的醫院取得試劑或將貓轉診。(5) 「先少量試」的做法在貓是危險的——B 型貓即使少量 A 型血也可致嚴重反應。',
     difficulty: 5, spaced_rep: true, tags: ['貓', '輸血', '英短', '血型', '病例'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-ECC-FB-001', node_id: 'ECC-L5-001', question_type: 'fill_blank',
+    question: '犬休克輸液（shock dose crystalloid）的劑量為 _____ mL/kg IV',
+    options: ['60-90'],
+    correct_answer: '60-90',
+    explanation: '犬的休克劑量晶體液為 60-90 mL/kg IV，約等於一倍血液量。臨床上不應一次灌入全量，而是分 1/4 至 1/3 量（15-30 mL/kg）快速輸注後評估反應（心率、CRT、血壓、意識）。常見錯誤是將犬的劑量用在貓身上（貓僅 40-60 mL/kg），或未分次評估導致容量過負荷。',
+    difficulty: 2, spaced_rep: true, tags: ['shock', '輸液', '劑量'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-FB-002', node_id: 'ECC-L5-001', question_type: 'fill_blank',
+    question: '貓休克輸液（shock dose crystalloid）的劑量為 _____ mL/kg IV',
+    options: ['40-60'],
+    correct_answer: '40-60',
+    explanation: '貓的休克劑量晶體液為 40-60 mL/kg IV，明顯低於犬（60-90 mL/kg），因為貓的血液量較低（約 60 mL/kg vs 犬 80-90 mL/kg）且對容量過負荷更為敏感。貓的輸液復甦應更加保守，每次 10-15 mL/kg 快速輸注後即需重新評估，避免肺水腫。',
+    difficulty: 2, spaced_rep: true, tags: ['shock', '輸液', '貓'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ECC-FB-003', node_id: 'ECC-L3-001', question_type: 'fill_blank',
+    question: 'Atropine 心搏過緩急救劑量為 _____ mg/kg IV',
+    options: ['0.02-0.04'],
+    correct_answer: '0.02-0.04',
+    explanation: 'Atropine 用於心搏過緩急救的劑量為 0.02-0.04 mg/kg IV。常見錯誤是劑量過低（0.01 mg/kg 可能反而因中樞迷走神經刺激而暫時加重心搏過緩）。在 CPCR 情境中，Atropine 可每 3-5 分鐘重複給藥。若 Atropine 反應不佳，應考慮使用 Dopamine 或 Isoproterenol 持續輸注。',
+    difficulty: 3, spaced_rep: true, tags: ['atropine', 'CPCR', '急救'], image_placeholder: null,
+  },
 ];

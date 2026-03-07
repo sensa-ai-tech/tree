@@ -20,7 +20,7 @@ const FEATURES = [
     icon: Stethoscope,
     color: 'bg-emerald-50 text-emerald-600',
     title: '臨床病例',
-    desc: '99 個互動病例挑戰，模擬真實臨床決策流程。',
+    desc: '103 個互動病例挑戰，模擬真實臨床決策流程。',
     link: '/cases',
   },
   {

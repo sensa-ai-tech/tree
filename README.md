@@ -4,12 +4,12 @@
 
 ## Features
 
-- **Knowledge Graph** — 264 nodes, 792 edges across 8 veterinary specialties
+- **Knowledge Graph** — 264 nodes, 802 edges across 8 veterinary specialties
 - **Spaced Repetition** — SM-2 algorithm for optimized review scheduling
-- **Case Challenges** — 99 interactive clinical scenarios with step-by-step decision making
+- **Case Challenges** — 103 interactive clinical scenarios with step-by-step decision making
 - **Gamification** — XP, levels, achievements, and learning streaks
-- **1,890 Review Questions** — Multi-format questions covering all specialties
-- **43 Learning Paths** — Structured curricula with milestones
+- **1,949 Review Questions** — Multi-format questions covering all specialties
+- **47 Learning Paths** — Structured curricula with milestones
 
 ## Tech Stack
 

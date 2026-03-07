@@ -2552,4 +2552,29 @@ export const ONCO_QUESTIONS: ReviewQuestion[] = [
     explanation: '此病例經典表現：(1) 老年 German Shepherd（高風險品種）。(2) 極度高蛋白血症（TP 12.5，主要為 globulin 9.7）= 高度懷疑單株免疫球蛋白血症。(3) 高鈣血症（14.2）= 副腫瘤表現。(4) 貧血（PCV 25%）= 骨髓浸潤抑制正常造血。(5) 多處溶骨性病灶 = 骨骼破壞。已滿足多個骨髓瘤診斷條件（溶骨 + 疑似 M protein + 貧血）。首要確診步驟：(1) SPE 確認 M spike。(2) 骨髓穿刺確認漿細胞 > 20%。同時檢驗：Bence Jones 蛋白尿、腎功能評估。',
     difficulty: 4, spaced_rep: true, tags: ['骨髓瘤', '診斷', 'SPE', '病例'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-ONCO-FB-001', node_id: 'ONCO-L5-001', question_type: 'fill_blank',
+    question: 'Doxorubicin 犬的標準劑量為 _____ mg/m\u00B2 IV 每 3 週一次',
+    options: ['30'],
+    correct_answer: '30',
+    explanation: 'Doxorubicin 犬的標準劑量為 30 mg/m\u00B2 IV 每 3 週一次，是犬淋巴瘤 CHOP 方案和多種實體瘤化療的核心藥物。常見錯誤是用 mg/kg 而非 mg/m\u00B2 計算劑量，這在大型犬會導致劑量過高。給藥時必須確認靜脈通路通暢，血管外滲會造成嚴重組織壞死。',
+    difficulty: 3, spaced_rep: true, tags: ['doxorubicin', '化療', '劑量'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ONCO-FB-002', node_id: 'ONCO-L5-001', question_type: 'fill_blank',
+    question: '犬 Doxorubicin 的累積心毒性劑量上限為 _____ mg/m\u00B2（約 5-6 次療程）',
+    options: ['180-240'],
+    correct_answer: '180-240',
+    explanation: 'Doxorubicin 的累積心毒性劑量上限為 180-240 mg/m\u00B2，相當於 30 mg/m\u00B2 × 6-8 次療程。超過此劑量後，不可逆的擴張型心肌病（DCM）風險顯著增加。Boxer 和 Doberman 等 DCM 好發品種對心毒性更為敏感，建議在化療前和每 2-3 次療程後進行心臟超音波監測。',
+    difficulty: 4, spaced_rep: true, tags: ['doxorubicin', '心毒性', '累積劑量'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ONCO-FB-003', node_id: 'ONCO-L3-002', question_type: 'fill_blank',
+    question: '犬肥大細胞瘤 (MCT) 的手術切除邊界建議為腫瘤邊緣外 _____ cm',
+    options: ['2-3'],
+    correct_answer: '2-3',
+    explanation: '犬 MCT 手術切除建議腫瘤邊緣外 2-3 cm 的側方邊界，深部邊界至少包含一層筋膜面。若切緣不乾淨（dirty margin），需考慮二次手術擴大切除或輔助放射治療。近年研究顯示 Low grade MCT 的 2 cm 側方邊界已足夠，但 High grade MCT 仍建議 3 cm 以上。',
+    difficulty: 3, spaced_rep: true, tags: ['MCT', '手術邊界', '外科'], image_placeholder: null,
+  },
 ];

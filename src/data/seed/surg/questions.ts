@@ -2153,4 +2153,29 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     explanation: '股骨頸粉碎性骨折在一般醫院難以進行內固定（血供差、骨折型態複雜），THR 又無法負擔。FHO 是此情況下最務實的選擇。雖然 25 kg 略超過 FHO 的理想體重（< 20 kg），但配合積極復健仍可獲得可接受的功能恢復。保守治療對股骨頸骨折效果極差（不癒合率高）。截肢為最後手段，三足犬可良好適應但應非首選。術後強調 PROM + hydrotherapy + 漸進負重。',
     difficulty: 4, spaced_rep: true, tags: ['FHO', 'fracture', 'economic_constraint', 'case'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-SURG-FB-001', node_id: 'SURG-L3-004', question_type: 'fill_blank',
+    question: '犬絕育手術（OHE）的推薦卵巢韌帶結紮安全距離為距輸尿管至少 _____ cm',
+    options: ['1-2'],
+    correct_answer: '1-2',
+    explanation: 'OHE 手術中，卵巢動靜脈血管蒂的結紮位置應距輸尿管至少 1-2 cm，以避免誤傷或結紮輸尿管。常見的醫源性輸尿管損傷多發生在子宮體或卵巢韌帶結紮時，尤其在肥胖犬或中大型犬因脂肪覆蓋而解剖辨識困難的情況下。',
+    difficulty: 2, spaced_rep: true, tags: ['OHE', '手術', '解剖'], image_placeholder: null,
+  },
+  {
+    id: 'Q-SURG-FB-002', node_id: 'SURG-L1-001', question_type: 'fill_blank',
+    question: '術前禁食時間：犬成年患者建議術前 _____ 小時禁食固體食物',
+    options: ['6-12'],
+    correct_answer: '6-12',
+    explanation: '犬成年患者術前建議禁食固體食物 6-12 小時，以降低麻醉期間反流和吸入性肺炎的風險。禁水時間較短（2-4 小時即可）。幼犬、小型犬和糖尿病患者需縮短禁食時間（4-6 小時），以避免低血糖。過度延長禁食（> 12 小時）反而可能增加胃酸分泌和反流風險。',
+    difficulty: 2, spaced_rep: true, tags: ['術前', '禁食', '麻醉'], image_placeholder: null,
+  },
+  {
+    id: 'Q-SURG-FB-003', node_id: 'SURG-L3-003', question_type: 'fill_blank',
+    question: '腸道切開縫合後，建議使用 _____ 號可吸收縫線進行單層全層縫合',
+    options: ['3-0 至 4-0'],
+    correct_answer: '3-0 至 4-0',
+    explanation: '腸道手術建議使用 3-0 至 4-0 號可吸收單絲縫線（如 PDS 或 Monocryl）進行單層全層連續或間斷縫合。過粗的縫線會造成組織損傷和缺血，過細則強度不足。多絲縫線（如 Vicryl）因毛細作用可能成為細菌溫床，不建議用於腸道閉合。',
+    difficulty: 3, spaced_rep: true, tags: ['腸道手術', '縫合', '外科技術'], image_placeholder: null,
+  },
 ];

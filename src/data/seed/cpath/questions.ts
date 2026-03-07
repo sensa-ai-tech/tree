@@ -2125,4 +2125,29 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     explanation: '依 ASVCP 和 CLSI C28-A3 指引，參考區間建立需要：(1) 最少 40 隻（robust method）至理想 120 隻（non-parametric method）的健康動物樣本；(2) 明確定義「健康」標準並排除亞臨床疾病；(3) 使用統一的分析前流程（禁食、採樣方式）；(4) 離群值偵測與處理（Dixon/Tukey method）；(5) 考慮品種、年齡、性別的分組需求。20 隻樣本量不足，且不同物種間不能共用參考區間。某些品種確實需要品種特異性參考區間（如 greyhound 的高 PCV/creatinine）。',
     difficulty: 3, spaced_rep: true, tags: ['品管', '參考區間', 'ASVCP', 'CLSI', '方法學'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-CPATH-FB-001', node_id: 'CPATH-L4-001', question_type: 'fill_blank',
+    question: '犬正常血小板計數範圍為 _____ \u00D7 10\u00B3/\u03BCL',
+    options: ['175-500'],
+    correct_answer: '175-500',
+    explanation: '犬正常血小板計數為 175-500 \u00D7 10\u00B3/\u03BCL。低於 175 為血小板減少症，臨床上自發性出血通常在 < 30-50 \u00D7 10\u00B3/\u03BCL 時出現。常見的假性血小板減少原因包括 EDTA 誘導的血小板聚集和採血困難導致的活化聚集，應以血液抹片確認。Cavalier King Charles Spaniel 有遺傳性巨血小板症，機器計數可能偏低。',
+    difficulty: 2, spaced_rep: true, tags: ['CBC', '血小板', '正常值'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-FB-002', node_id: 'CPATH-L4-001', question_type: 'fill_blank',
+    question: '犬正常 PCV (Packed Cell Volume) 範圍為 _____%',
+    options: ['37-55'],
+    correct_answer: '37-55',
+    explanation: '犬正常 PCV 為 37-55%。低於 37% 為貧血，高於 55% 可能為紅血球增多症或脫水導致的相對性增多。需注意品種差異：Greyhound 等視覺獵犬的正常 PCV 可達 55-65%，若使用一般參考值會被誤判為紅血球增多症。幼犬的 PCV 通常偏低（約 28-35%）。',
+    difficulty: 2, spaced_rep: true, tags: ['PCV', 'CBC', '正常值'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CPATH-FB-003', node_id: 'CPATH-L4-002', question_type: 'fill_blank',
+    question: '犬血清白蛋白正常值範圍為 _____ g/dL',
+    options: ['2.3-4.0'],
+    correct_answer: '2.3-4.0',
+    explanation: '犬血清白蛋白正常值為 2.3-4.0 g/dL。白蛋白 < 2.0 g/dL 時可能出現水腫和體腔積液（低膠體滲透壓）。低白蛋白血症的常見原因包括蛋白流失性腸病（PLE）、蛋白流失性腎病（PLN）、肝功能不全和嚴重營養不良。白蛋白同時是重要的急性期負相蛋白，在嚴重發炎時會下降。',
+    difficulty: 2, spaced_rep: true, tags: ['白蛋白', '生化', '正常值'], image_placeholder: null,
+  },
 ];

@@ -2289,4 +2289,29 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     explanation: '此為典型 DLE 表現：柯利犬（好發品種）、鼻平面去色素化與紅斑、cobblestone pattern 消失、夏季加重（UV 相關）、ANA 陰性（排除 SLE）。應進行鼻平面 punch biopsy 確診（預期見 interface dermatitis），然後啟動一線治療：tacrolimus 0.1% BID 外用 + doxycycline/niacinamide 口服 + 嚴格紫外線防護。DLE 不需要全身性免疫抑制。鼻頭去色素化不是正常老化，而是自體免疫疾病的早期徵兆。',
     difficulty: 4, spaced_rep: true, tags: ['DLE', 'Collie', 'depigmentation', 'diagnostic_approach', 'treatment'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-DERM-FB-001', node_id: 'DERM-L5-001', question_type: 'fill_blank',
+    question: 'Oclacitinib (Apoquel) 的犬起始劑量為 _____ mg/kg PO BID × 14 天，之後改為 SID',
+    options: ['0.4-0.6'],
+    correct_answer: '0.4-0.6',
+    explanation: 'Oclacitinib 的起始劑量為 0.4-0.6 mg/kg PO BID 連續 14 天，之後維持劑量改為 SID。常見錯誤是長期使用 BID 頻率，這會增加免疫抑制風險（尤其是蠕形蟲感染和 UTI）。另需注意 Oclacitinib 不建議用於 12 月齡以下的犬隻。',
+    difficulty: 3, spaced_rep: true, tags: ['oclacitinib', 'Apoquel', '劑量'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-FB-002', node_id: 'DERM-L3-005', question_type: 'fill_blank',
+    question: '犬膿皮症經驗性抗生素治療的最低建議療程為 _____ 週',
+    options: ['3-4'],
+    correct_answer: '3-4',
+    explanation: '犬表淺膿皮症的經驗性抗生素治療建議至少 3-4 週，且應在皮膚病灶完全消退後再延長 1 週。深層膿皮症則需更長療程（6-8 週甚至更久）。療程不足是膿皮症復發和抗藥性產生的主要原因，切勿因外觀改善就提早停藥。',
+    difficulty: 2, spaced_rep: true, tags: ['膿皮症', '抗生素', '療程'], image_placeholder: null,
+  },
+  {
+    id: 'Q-DERM-FB-003', node_id: 'DERM-L3-003', question_type: 'fill_blank',
+    question: 'Ivermectin 治療犬蠕形蟲 (Demodex) 的口服劑量範圍為 _____ mg/kg SID',
+    options: ['0.3-0.6'],
+    correct_answer: '0.3-0.6',
+    explanation: 'Ivermectin 治療犬蠕形蟲的口服劑量為 0.3-0.6 mg/kg SID，需從低劑量（0.05 mg/kg）逐步增量以監測不良反應。使用前必須確認犬隻非 MDR1 突變品種（如 Collie、Sheltie），否則可能導致嚴重神經毒性。目前 Isoxazoline 類藥物（如 Fluralaner）已逐漸取代 Ivermectin 成為一線治療。',
+    difficulty: 3, spaced_rep: true, tags: ['Demodex', 'ivermectin', '劑量'], image_placeholder: null,
+  },
 ];

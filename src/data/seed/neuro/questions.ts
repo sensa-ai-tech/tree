@@ -2553,4 +2553,29 @@ export const NEURO_QUESTIONS: ReviewQuestion[] = [
     explanation: '此病例符合 CDS 診斷：(1) 老齡犬（13 歲），(2) DISHAA 評估 4/6 範疇異常（D = 迷路/卡角落、S = 夜間遊走嚎叫、H = 室內排尿、I = 不迎接主人），(3) 已排除代謝性原因（血檢/甲狀腺正常）、UTI（尿液培養陰性）、視覺喪失（眼科正常）、局灶性神經疾病（神經檢查正常）。最佳治療：Selegiline 0.5 mg/kg PO SID 早晨給藥 + 環境管理（固定作息、夜間小夜燈、增加便盆、益智玩具）+ 營養補充（MCT oil、SAMe 20 mg/kg）。1 個月後評估療效，無改善可增量至 1 mg/kg。夜間遊走嚴重時可加用 Trazodone 2-5 mg/kg 睡前給藥。',
     difficulty: 4, spaced_rep: true, tags: ['CDS', 'DISHAA', 'Selegiline', '臨床推理'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-NEURO-FB-001', node_id: 'NEURO-L3-001', question_type: 'fill_blank',
+    question: 'Phenobarbital 犬癲癇控制的起始劑量為 _____ mg/kg PO BID',
+    options: ['2-3'],
+    correct_answer: '2-3',
+    explanation: 'Phenobarbital 犬癲癇的起始劑量為 2-3 mg/kg PO BID，達穩態約需 10-14 天。常見錯誤是起始劑量過高（> 5 mg/kg）導致嚴重鎮靜和共濟失調，或過低（< 2 mg/kg）無法達到有效血清濃度。給藥 2 週後應進行首次血清藥物濃度監測（TDM）。',
+    difficulty: 2, spaced_rep: true, tags: ['癲癇', 'phenobarbital', '劑量'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-FB-002', node_id: 'NEURO-L3-001', question_type: 'fill_blank',
+    question: '犬 Phenobarbital 的治療血清濃度範圍為 _____ \u03BCg/mL',
+    options: ['15-45'],
+    correct_answer: '15-45',
+    explanation: 'Phenobarbital 犬的治療血清濃度為 15-45 \u03BCg/mL（部分文獻建議 15-35）。低於 15 \u03BCg/mL 通常療效不足，高於 35-45 \u03BCg/mL 肝毒性風險顯著增加。建議每 6 個月監測血清濃度和肝功能指標（ALP、ALT、膽汁酸），若 PB 濃度已達上限仍控制不佳，應加用第二線藥物（如 KBr 或 Levetiracetam）。',
+    difficulty: 3, spaced_rep: true, tags: ['phenobarbital', 'TDM', '血清濃度'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-FB-003', node_id: 'NEURO-L3-002', question_type: 'fill_blank',
+    question: '椎間盤疾病（IVDD）的 MRI 建議在發病後 _____ 小時內進行以評估手術適應症',
+    options: ['24-48'],
+    correct_answer: '24-48',
+    explanation: 'IVDD Grade III 以上（尤其 Grade V 深痛覺喪失）建議在發病後 24-48 小時內完成 MRI 並評估手術適應症。延遲超過 48 小時的 Grade V 病例，手術成功率從約 50-60% 顯著降至 < 10%。MRI 是評估脊髓壓迫程度和定位手術節段的金標準影像檢查。',
+    difficulty: 3, spaced_rep: true, tags: ['IVDD', 'MRI', '手術時機'], image_placeholder: null,
+  },
 ];

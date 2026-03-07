@@ -2497,4 +2497,29 @@ export const CARDIO_QUESTIONS: ReviewQuestion[] = [
     explanation: 'Stage D 為難治性 CHF，需要升階治療。序列性腎元阻斷（sequential nephron blockade）是核心策略：Furosemide 阻斷亨利氏環（loop）+ Hydrochlorothiazide（HCT）阻斷遠曲小管 + Spironolactone 阻斷集尿管，三段聯合阻斷鈉再吸收。加入 HCT 後通常 24-48 小時可見到改善。注意：HCT 可能導致嚴重低血鉀和脫水，需密切監測電解質和腎功能（48-72 小時內回診）。其他 Stage D 選項包括增加 Furosemide 注射頻率或改為 CRI。',
     difficulty: 5, spaced_rep: true, tags: ['長期管理', 'Stage D', '序列性腎元阻斷', 'HCT', '臨床推理'], image_placeholder: null,
   },
+  // Fill-in-the-blank questions
+  {
+    id: 'Q-CARDIO-FB-001', node_id: 'CARDIO-L5-001', question_type: 'fill_blank',
+    question: 'Pimobendan 的犬標準劑量為 _____ mg/kg PO BID',
+    options: ['0.25-0.3'],
+    correct_answer: '0.25-0.3',
+    explanation: 'Pimobendan 的標準劑量為 0.25-0.3 mg/kg PO BID，是 ACVIM 指引中 Stage B2 以上犬心臟病的核心用藥。常見錯誤包括劑量過高（> 0.5 mg/kg 可能導致低血壓）或給藥頻率錯誤（必須 BID 而非 SID，因半衰期短）。建議空腹給藥以提高生體利用率。',
+    difficulty: 3, spaced_rep: true, tags: ['pimobendan', '劑量', 'CHF'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-FB-002', node_id: 'CARDIO-L4-004', question_type: 'fill_blank',
+    question: '犬正常 VHS (Vertebral Heart Score) 應小於 _____ 個椎體',
+    options: ['10.5'],
+    correct_answer: '10.5',
+    explanation: '犬正常 VHS 應小於 10.5 個椎體（自 T4 起算）。VHS > 10.5 提示心臟擴大，是 MMVD Stage B2 的影像學指標之一。需注意品種差異：短頭種（如 Bulldog）VHS 可偏高，而細長胸種（如 Whippet）VHS 偏低，應參考品種特異性參考值。',
+    difficulty: 2, spaced_rep: true, tags: ['VHS', '影像', '心臟'], image_placeholder: null,
+  },
+  {
+    id: 'Q-CARDIO-FB-003', node_id: 'CARDIO-L3-001', question_type: 'fill_blank',
+    question: '根據 ACVIM 共識，犬 MMVD Stage B2 的 LA/Ao 比值標準為大於 _____',
+    options: ['1.6'],
+    correct_answer: '1.6',
+    explanation: 'ACVIM 2019 共識定義 MMVD Stage B2 需滿足心臟重塑證據，其中超音波指標 LA/Ao ≥ 1.6 為關鍵閾值。常見錯誤是混淆 1.5 與 1.6 的標準——1.6 為目前 ACVIM 共識採用的切點，搭配 LVIDDN ≥ 1.7 共同判定左心擴大。',
+    difficulty: 3, spaced_rep: true, tags: ['MMVD', 'staging', '超音波'], image_placeholder: null,
+  },
 ];

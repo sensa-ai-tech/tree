@@ -1224,4 +1224,126 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: false,
     unlock_condition: null,
   },
+
+  // ─── Phase 6: 藥理學跨專科邊強化（10 條 drug_related edges）───
+
+  // Doxorubicin 心毒性 → DCM
+  {
+    id: 'CROSS-DRUG-DOX-001',
+    source_node_id: 'ONCO-L5-001',   // 化學治療基礎
+    target_node_id: 'CARDIO-L3-002', // 擴張型心肌病 (DCM)
+    relation_type: 'drug_related',
+    weight: 0.8,
+    description: 'Doxorubicin 累積心毒性（>180 mg/m²）可導致擴張型心肌病（DCM），化療前後需心臟超音波監測',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // Cyclosporine 跨皮膚科/內科使用
+  {
+    id: 'CROSS-DRUG-CYCLO-001',
+    source_node_id: 'DERM-L5-001',   // 過敏性皮膚病管理
+    target_node_id: 'IM-L5-003',     // 免疫抑制治療
+    relation_type: 'drug_related',
+    weight: 0.7,
+    description: 'Cyclosporine 用於異位性皮膚炎（5 mg/kg SID）與免疫介導疾病（同劑量），需監測肝功能與 GI 副作用',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+
+  // Metronidazole 神經毒性
+  {
+    id: 'CROSS-DRUG-METRO-001',
+    source_node_id: 'IM-L5-004',     // 消化系統疾病治療
+    target_node_id: 'NEURO-L3-001',  // 犬特發性癲癇
+    relation_type: 'drug_related',
+    weight: 0.6,
+    description: 'Metronidazole 高劑量或長期使用可導致中樞神經毒性（前庭症狀、癲癇），犬劑量不應超過 25 mg/kg/day',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // NSAID 腎毒性
+  {
+    id: 'CROSS-DRUG-NSAID-001',
+    source_node_id: 'SURG-L5-002',   // 骨科手術基礎（周術期止痛）
+    target_node_id: 'IM-L3-013',     // 急性腎損傷 (AKI)
+    relation_type: 'drug_related',
+    weight: 0.7,
+    description: 'NSAIDs（meloxicam, carprofen）在脫水或低血壓患者可導致急性腎損傷，術中低血壓時禁用',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // NSAID 消化道潰瘍
+  {
+    id: 'CROSS-DRUG-NSAID-002',
+    source_node_id: 'SURG-L5-002',   // 骨科手術基礎（周術期止痛）
+    target_node_id: 'IM-L3-008',     // 胰臟炎（GI 相關）
+    relation_type: 'drug_related',
+    weight: 0.6,
+    description: 'NSAIDs 可導致消化道潰瘍出血，不可與類固醇併用，高風險患者需加用 omeprazole',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // 化療骨髓抑制 → CBC 監測
+  {
+    id: 'CROSS-DRUG-CHEMO-001',
+    source_node_id: 'ONCO-L5-001',   // 化學治療基礎
+    target_node_id: 'CPATH-L4-001',  // 全血球計數判讀 (CBC)
+    relation_type: 'drug_related',
+    weight: 0.9,
+    description: '化療藥物骨髓抑制需密切監測 CBC：嗜中性球 nadir 通常在給藥後 7-10 天，<1000/μL 需暫停化療',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // Phenobarbital 肝毒性 → 生化監測
+  {
+    id: 'CROSS-DRUG-PHEN-001',
+    source_node_id: 'NEURO-L5-001',  // 抗癲癇藥物治療
+    target_node_id: 'CPATH-L4-002',  // 血清生化判讀
+    relation_type: 'drug_related',
+    weight: 0.7,
+    description: 'Phenobarbital 長期使用可導致肝酵素上升（ALP 最明顯），需每 6 個月監測肝功能與藥物血清濃度',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // Trilostane 過度抑制 → Addisonian crisis
+  {
+    id: 'CROSS-DRUG-TRILOST-001',
+    source_node_id: 'IM-L3-001',     // 犬腎上腺皮質機能亢進 (Cushing's)
+    target_node_id: 'ECC-L3-016',    // 艾迪森危象 (Addisonian Crisis)
+    relation_type: 'drug_related',
+    weight: 0.8,
+    description: 'Trilostane 治療 Cushing\'s 可導致醫源性 Addison\'s crisis，ACTH 刺激試驗 cortisol <1 μg/dL 為過度抑制',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // Furosemide 電解質異常 → 生化監測
+  {
+    id: 'CROSS-DRUG-FURO-001',
+    source_node_id: 'CARDIO-L5-001', // 心臟衰竭治療 (CHF treatment)
+    target_node_id: 'CPATH-L4-002',  // 血清生化判讀
+    relation_type: 'drug_related',
+    weight: 0.7,
+    description: 'Furosemide 長期使用可導致低鉀血症與代謝性鹼中毒，需定期監測電解質，必要時補充 KCl',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+
+  // Vincristine 用於 IMT 急性處理
+  {
+    id: 'CROSS-DRUG-VINCR-001',
+    source_node_id: 'ONCO-L5-001',   // 化學治療基礎（化療藥物）
+    target_node_id: 'IM-L3-015',     // 免疫介導血小板減少症 (IMT)
+    relation_type: 'drug_related',
+    weight: 0.7,
+    description: 'Vincristine 0.02 mg/kg IV 可用於嚴重 IMT 的急性處理，刺激血小板從巨核細胞釋放，通常 48-72 小時內見效',
+    bidirectional: false,
+    unlock_condition: null,
+  },
 ];
