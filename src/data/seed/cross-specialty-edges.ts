@@ -1346,4 +1346,84 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: false,
     unlock_condition: null,
   },
+
+  // ─── Phase 7: 臨床審計補充共病邊（2026-04-03）───
+
+  // 貓三合體炎 (Triaditis)：胰臟炎 ↔ 膽管炎 ↔ IBD
+  {
+    id: 'CROSS-IM-TRIAD-001',
+    source_node_id: 'IM-L3-008',   // 胰臟炎
+    target_node_id: 'IM-L3-019',   // 膽管炎/膽囊黏液囊腫
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '貓三合體炎（Triaditis）：胰臟炎、膽管炎與 IBD 經常同時發生，共用膽胰管的解剖特點使細菌可逆行感染，治療需同時考慮三個器官',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  // 貓 DM → 肝脂質沉積症
+  {
+    id: 'CROSS-IM-DM-HL-001',
+    source_node_id: 'IM-L3-006',   // 糖尿病 (DM) / IBD/CE
+    target_node_id: 'IM-L3-009',   // 肝脂質沉積症
+    relation_type: 'complication',
+    weight: 0.85,
+    description: '厭食的糖尿貓極易併發肝脂質沉積症：胰島素缺乏導致脂肪大量動員→肝臟三酸甘油酯堆積→肝衰竭，是貓 DM 常見致死路徑',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // IMHA → 肺血栓栓塞 (PTE)
+  {
+    id: 'CROSS-IM-ECC-PTE-001',
+    source_node_id: 'IM-L3-005',   // IMHA
+    target_node_id: 'ECC-L3-013',  // 呼吸急診
+    relation_type: 'complication',
+    weight: 0.95,
+    description: 'IMHA 患犬的血栓栓塞發生率 30-80%，肺血栓栓塞（PTE）是 IMHA 第一死因。血小板活化、内皮損傷、血液高凝狀態（Virchow 三要素）均因溶血而惡化',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // 心絲蟲腔靜脈症候群 → 急診
+  {
+    id: 'CROSS-CARDIO-ECC-CS-001',
+    source_node_id: 'CARDIO-L3-005',  // 心絲蟲
+    target_node_id: 'ECC-L3-001',     // 急診總覽/分診
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '心絲蟲腔靜脈症候群（Caval syndrome）：大量蟲體阻塞三尖瓣/後腔靜脈→急性右心衰竭+溶血性貧血+DIC，需緊急經頸靜脈取蟲',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // 子宮蓄膿 → AKI
+  {
+    id: 'CROSS-SURG-IM-PYO-AKI-001',
+    source_node_id: 'SURG-L3-009',  // 子宮蓄膿
+    target_node_id: 'IM-L3-013',    // AKI
+    relation_type: 'complication',
+    weight: 0.8,
+    description: 'E. coli 子宮蓄膿的内毒素可透過免疫複合體沉積導致腎小管壞死→AKI，術前需評估腎功能，術後密切監測 UOP 與肌酐',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // 庫興氏 → 蛋白尿/PLN
+  {
+    id: 'CROSS-IM-CUSHING-PLN-001',
+    source_node_id: 'IM-L3-001',    // 庫興氏症
+    target_node_id: 'IM-L3-014',    // PLN/蛋白流失腎病
+    relation_type: 'complication',
+    weight: 0.75,
+    description: '高皮質醇導致腎絲球高灌流與系膜基質增生→蛋白尿→進行性腎絲球病變，UPC 監測應列入庫興氏定期追蹤項目',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  // IVDD 術後 → 復健
+  {
+    id: 'CROSS-SURG-NEURO-REHAB-001',
+    source_node_id: 'SURG-L3-005',  // IVDD 手術
+    target_node_id: 'NEURO-L5-003', // 神經復健
+    relation_type: 'clinical_apply',
+    weight: 0.85,
+    description: 'IVDD 減壓術後的神經復健（水療、被動關節運動、神經肌肉電刺激）對功能恢復至關重要，Grade III-V 術後應及早轉介復健科',
+    bidirectional: false,
+    unlock_condition: null,
+  },
 ];

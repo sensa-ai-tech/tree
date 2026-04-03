@@ -8,6 +8,7 @@ import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import dynamic from 'next/dynamic';
 import { parseContentMarkers } from '@/lib/utils/markdown-renderer';
 import { ImagePlaceholder } from '@/components/features/ImagePlaceholder';
+import { ClinicalImage } from '@/components/features/ClinicalImage';
 
 const MermaidRenderer = dynamic(
   () => import('@/components/features/MermaidRenderer').then(m => m.MermaidRenderer),
@@ -21,7 +22,7 @@ const sanitizeSchema = {
   tagNames: [...(defaultSchema.tagNames ?? []), 'div', 'span'],
   attributes: {
     ...defaultSchema.attributes,
-    div: [...(defaultSchema.attributes?.div ?? []), 'className', 'data-desc'],
+    div: [...(defaultSchema.attributes?.div ?? []), 'className', 'data*'],
     span: [...(defaultSchema.attributes?.span ?? []), 'className'],
     code: [...(defaultSchema.attributes?.code ?? []), 'className'],
   },
@@ -85,18 +86,39 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
             return <pre {...props}>{children}</pre>;
           },
           div: ({ className: divClassName, children, ...props }) => {
+            // Extract description from text content (data-desc may be stripped by sanitizer)
             const dataDesc =
               (props as Record<string, unknown>)['data-desc'] as string | undefined;
-            if (divClassName === 'image-placeholder' && dataDesc) {
-              return <ImagePlaceholder description={dataDesc} />;
+            const extractDesc = (prefix: string): string | undefined => {
+              if (dataDesc) return dataDesc;
+              const text = typeof children === 'string' ? children : '';
+              const re = new RegExp(`^\\[${prefix}: (.+)\\]$`);
+              const m = re.exec(text.trim());
+              return m?.[1];
+            };
+
+            if (divClassName === 'clinical-image') {
+              const desc = extractDesc('臨床影像');
+              if (desc) {
+                const asset = parsed.resolvedImages.get(desc);
+                if (asset) {
+                  return <ClinicalImage asset={asset} showAttribution />;
+                }
+              }
+              return <ImagePlaceholder description={desc ?? ''} />;
             }
-            if (divClassName === 'interactive-placeholder' && dataDesc) {
+            if (divClassName === 'image-placeholder') {
+              const desc = extractDesc('圖片預留位');
+              return <ImagePlaceholder description={desc ?? ''} />;
+            }
+            if (divClassName === 'interactive-placeholder') {
+              const desc = extractDesc('互動元件預留位');
               return (
                 <div className="my-4 flex items-center gap-3 rounded-lg border-2 border-dashed border-purple-200 bg-purple-50/50 p-4">
                   <span className="text-2xl">🎮</span>
                   <div>
                     <p className="text-sm font-medium text-purple-700">互動元件預留位</p>
-                    <p className="text-xs text-purple-500">{dataDesc}</p>
+                    <p className="text-xs text-purple-500">{desc}</p>
                   </div>
                 </div>
               );

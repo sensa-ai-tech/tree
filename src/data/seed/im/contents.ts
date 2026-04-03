@@ -1561,7 +1561,7 @@ const contentFelineHyperthyroidism: NodeContent = {
     'Total T4 > 4.0 μg/dL 確診；若 T4 在高正常值（2.5-4.0）但臨床高度懷疑 → 測 Free T4',
     '甲亢可增加 GFR 而「掩蓋」CKD——治療甲亢後 Creatinine 可能顯著上升',
     '放射性碘 (I-131) 為唯一治癒性治療，治癒率 > 95%',
-    'Methimazole 起始 2.5 mg PO BID，2-3 週後追蹤 T4 和腎功能',
+    'Methimazole 起始 1.25-2.5 mg PO BID（CKD 風險高者從 1.25 mg 起始），2-3 週後追蹤 T4 和腎功能',
     '繼發性甲亢心臟病（thyrotoxic cardiomyopathy）治療甲亢後多數可逆',
   ],
   body: `# 貓甲狀腺機能亢進 (Feline Hyperthyroidism)
@@ -1618,7 +1618,7 @@ const contentFelineHyperthyroidism: NodeContent = {
 
 | 治療 | 方式 | 優勢 | 劣勢 | 證據等級 |
 |------|------|------|------|---------|
-| [藥物:Methimazole] | 2.5 mg PO BID（起始） | 可逆、便宜、評估腎功能 | 需每日投藥、副作用 | Level I |
+| [藥物:Methimazole] | 1.25-2.5 mg PO BID（起始，CKD 風險高者從低劑量開始） | 可逆、便宜、評估腎功能 | 需每日投藥、副作用 | Level I |
 | **I-131 放射性碘** | 單次 SC 注射 | **唯一治癒性治療**、治癒率 >95% | 設備限制、需隔離 | Level I |
 | 手術（甲狀腺切除） | 單側/雙側 | 治癒性 | 全麻風險、副甲狀腺損傷 | Level II |
 | [藥物:Iodine-restricted diet] (Hill's y/d) | 處方飲食 | 無侵入性 | 必須唯一食物來源、嗜口性差 | Level II |
@@ -3937,7 +3937,7 @@ const contentEndocrineTherapy: NodeContent = {
   key_points: [
     'Trilostane：1-2 mg/kg PO SID 餐後，10-14 天後 ACTH stim（給藥後 4-6h），目標 post-ACTH 1.45-5.4 μg/dL',
     'Levothyroxine：0.02 mg/kg PO BID，4-8 週後 post-pill T4（給藥後 4-6h），目標 2.5-5.0 μg/dL',
-    'Methimazole：2.5 mg PO BID 起始，2-3 週後追蹤 T4 + 腎功能，目標 T4 1.0-2.5 μg/dL',
+    'Methimazole：1.25-2.5 mg PO BID 起始（AAFP 2016），2-3 週後追蹤 T4 + 腎功能，目標 T4 1.0-2.5 μg/dL',
     'DOCP：2.2 mg/kg IM q25d + Prednisolone 0.1-0.2 mg/kg PO SID',
     '犬 DM：NPH 0.25-0.5 U/kg SC BID；貓 DM：Glargine 0.25-0.5 U/kg SC BID',
     '監測核心原則：正確時間點採樣 + 追蹤臨床症狀 + 定期評估共病',
@@ -3972,7 +3972,7 @@ const contentEndocrineTherapy: NodeContent = {
 [藥物:Levothyroxine] 0.02 mg/kg PO BID。Post-pill T4 4-6h 後目標 2.5-5.0 ug/dL。
 
 ### 甲亢治療
-- [藥物:Methimazole] 2.5 mg PO BID（起始）——2-3 週追蹤 T4 + Cre
+- [藥物:Methimazole] 1.25-2.5 mg PO BID（起始，CKD 風險高者從低劑量開始）——2-3 週追蹤 T4 + Cre
 - **I-131 放射性碘**：唯一治癒性治療，治癒率 >95%
 
 ### DM 胰島素治療

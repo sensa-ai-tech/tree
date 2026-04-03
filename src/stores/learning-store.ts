@@ -1,6 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserNodeProgress, ProgressStatus } from '@/types/gamification';
 
 interface LearningState {
@@ -20,93 +21,128 @@ interface LearningState {
   setLoading: (loading: boolean) => void;
   getCompletedCount: () => number;
   getInProgressCount: () => number;
+  resetStore: () => void;
 }
 
-export const useLearningStore = create<LearningState>((set, get) => ({
-  progress: new Map(),
-  todayReviewCount: 0,
-  todayNewCount: 0,
-  isLoading: false,
+export const useLearningStore = create<LearningState>()(
+  persist(
+    (set, get) => ({
+      progress: new Map(),
+      todayReviewCount: 0,
+      todayNewCount: 0,
+      isLoading: false,
 
-  setProgress: (nodeId, progress) =>
-    set((state) => {
-      const newMap = new Map(state.progress);
-      newMap.set(nodeId, progress);
-      return { progress: newMap };
+      setProgress: (nodeId, progress) =>
+        set((state) => {
+          const newMap = new Map(state.progress);
+          newMap.set(nodeId, progress);
+          return { progress: newMap };
+        }),
+
+      getProgress: (nodeId) => get().progress.get(nodeId),
+
+      getStatus: (nodeId) => get().progress.get(nodeId)?.status ?? 'locked',
+
+      completeNode: (nodeId, score, timeMinutes) =>
+        set((state) => {
+          const newMap = new Map(state.progress);
+          const existing = newMap.get(nodeId);
+          newMap.set(nodeId, {
+            user_id: existing?.user_id ?? '',
+            node_id: nodeId,
+            status: 'completed',
+            started_at: existing?.started_at ?? new Date().toISOString(),
+            completed_at: new Date().toISOString(),
+            score,
+            time_spent_minutes: timeMinutes,
+          });
+          return { progress: newMap };
+        }),
+
+      startNode: (nodeId) =>
+        set((state) => {
+          const newMap = new Map(state.progress);
+          const existing = newMap.get(nodeId);
+          newMap.set(nodeId, {
+            user_id: existing?.user_id ?? '',
+            node_id: nodeId,
+            status: 'in_progress',
+            started_at: new Date().toISOString(),
+            completed_at: null,
+            score: null,
+            time_spent_minutes: null,
+          });
+          return { progress: newMap };
+        }),
+
+      unlockNode: (nodeId) =>
+        set((state) => {
+          const newMap = new Map(state.progress);
+          if (!newMap.has(nodeId)) {
+            newMap.set(nodeId, {
+              user_id: '',
+              node_id: nodeId,
+              status: 'available',
+              started_at: null,
+              completed_at: null,
+              score: null,
+              time_spent_minutes: null,
+            });
+          }
+          return { progress: newMap };
+        }),
+
+      incrementReviewCount: () =>
+        set((state) => ({ todayReviewCount: state.todayReviewCount + 1 })),
+      incrementNewCount: () =>
+        set((state) => ({ todayNewCount: state.todayNewCount + 1 })),
+      setLoading: (isLoading) => set({ isLoading }),
+
+      getCompletedCount: () => {
+        let count = 0;
+        for (const p of get().progress.values()) {
+          if (p.status === 'completed') count++;
+        }
+        return count;
+      },
+
+      getInProgressCount: () => {
+        let count = 0;
+        for (const p of get().progress.values()) {
+          if (p.status === 'in_progress') count++;
+        }
+        return count;
+      },
+
+      resetStore: () =>
+        set({
+          progress: new Map(),
+          todayReviewCount: 0,
+          todayNewCount: 0,
+          isLoading: false,
+        }),
     }),
-
-  getProgress: (nodeId) => get().progress.get(nodeId),
-
-  getStatus: (nodeId) => get().progress.get(nodeId)?.status ?? 'locked',
-
-  completeNode: (nodeId, score, timeMinutes) =>
-    set((state) => {
-      const newMap = new Map(state.progress);
-      const existing = newMap.get(nodeId);
-      newMap.set(nodeId, {
-        user_id: existing?.user_id ?? '',
-        node_id: nodeId,
-        status: 'completed',
-        started_at: existing?.started_at ?? new Date().toISOString(),
-        completed_at: new Date().toISOString(),
-        score,
-        time_spent_minutes: timeMinutes,
-      });
-      return { progress: newMap };
-    }),
-
-  startNode: (nodeId) =>
-    set((state) => {
-      const newMap = new Map(state.progress);
-      const existing = newMap.get(nodeId);
-      newMap.set(nodeId, {
-        user_id: existing?.user_id ?? '',
-        node_id: nodeId,
-        status: 'in_progress',
-        started_at: new Date().toISOString(),
-        completed_at: null,
-        score: null,
-        time_spent_minutes: null,
-      });
-      return { progress: newMap };
-    }),
-
-  unlockNode: (nodeId) =>
-    set((state) => {
-      const newMap = new Map(state.progress);
-      if (!newMap.has(nodeId)) {
-        newMap.set(nodeId, {
-          user_id: '',
-          node_id: nodeId,
-          status: 'available',
-          started_at: null,
-          completed_at: null,
-          score: null,
-          time_spent_minutes: null,
-        });
-      }
-      return { progress: newMap };
-    }),
-
-  incrementReviewCount: () =>
-    set((state) => ({ todayReviewCount: state.todayReviewCount + 1 })),
-  incrementNewCount: () =>
-    set((state) => ({ todayNewCount: state.todayNewCount + 1 })),
-  setLoading: (isLoading) => set({ isLoading }),
-
-  getCompletedCount: () => {
-    let count = 0;
-    for (const p of get().progress.values()) {
-      if (p.status === 'completed') count++;
+    {
+      name: 'vet-learning-storage',
+      storage: createJSONStorage(() => localStorage, {
+        replacer: (_key, value) => {
+          if (value instanceof Map) {
+            return { __type: 'Map', entries: Array.from(value.entries()) };
+          }
+          return value;
+        },
+        reviver: (_key, value) => {
+          if (value && typeof value === 'object' && (value as Record<string, unknown>).__type === 'Map') {
+            return new Map((value as { entries: [string, UserNodeProgress][] }).entries);
+          }
+          return value;
+        },
+      }),
+      partialize: (state) => ({
+        progress: state.progress,
+        todayReviewCount: state.todayReviewCount,
+        todayNewCount: state.todayNewCount,
+      }),
     }
-    return count;
-  },
-
-  getInProgressCount: () => {
-    let count = 0;
-    for (const p of get().progress.values()) {
-      if (p.status === 'in_progress') count++;
-    }
-    return count;
-  },
-}));
+  )
+);

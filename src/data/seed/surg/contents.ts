@@ -44,11 +44,19 @@ GDV 的核心病理包括三個層面：
 ### 急診處理
 [互動:GDV 急診處理流程決策圖]
 
-1. **積極輸液復甦**：兩條大口徑靜脈導管，晶體液 shock dose（60-90 mL/kg/hr 第一小時）
+1. **積極輸液復甦**：兩條大口徑靜脈導管（14-18G），晶體液 shock dose（犬 60-90 mL/kg）**以 1/4 量 bolus 給予後重新評估**（HR、CRT、MAP、lactate），反覆給予直至灌流改善，避免一次性輸注全量
 2. **胃減壓**：嘗試口胃管，失敗則右側腹壁 trocar 穿刺減壓
 3. **ECG 監測**：偵測心室心律不整
 4. **血液檢查**：lactate、電解質、CBC、凝血功能
 5. **Lactate 判讀**：< 6.0 mmol/L 預後較佳，> 6.0 mmol/L 提示胃壁壞死風險升高
+
+### 麻醉方案（GDV 高風險）
+- **ASA 分級**：通常 IV-V（血流動力不穩定）
+- **避免使用**：Alpha-2 agonists（Dexmedetomidine/Medetomidine）——加重心搏過緩與低血壓
+- **推薦誘導**：Fentanyl 2-5 mcg/kg IV + Midazolam 0.2-0.3 mg/kg IV → Propofol 1-4 mg/kg IV to effect（或血流動力不穩定時用 Etomidate 1-2 mg/kg IV）
+- **維持**：Isoflurane/Sevoflurane（最低有效濃度）+ Fentanyl CRI 2-5 mcg/kg/hr + Lidocaine CRI 25-50 mcg/kg/min
+- **預氧化**：插管前 100% O₂ 面罩 3-5 分鐘（降低去飽和風險）
+- **術中監測**：連續 ECG + SpO₂ + ETCO₂ + 直接/間接血壓 + 體溫
 
 ### 手術
 麻醉穩定後進行正中開腹：
@@ -167,7 +175,7 @@ GDV 的核心病理包括三個層面：
   ],
   drug_api_links: ['Lidocaine', 'Metoclopramide'],
   references: [
-    { type: 'guideline', citation: 'ACVS Consensus Statement on Gastric Dilatation-Volvulus. Vet Surg. 2023.', relevance: 'GDV 診斷與治療最新共識' },
+    { type: 'journal', citation: 'Brockman DJ et al. Canine gastric dilatation/volvulus syndrome in a veterinary critical care unit: 295 cases (1986-1992). J Am Vet Med Assoc. 1995;207(4):460-464.', relevance: 'GDV 大型回顧性研究，預後因子分析' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 20: Surgery of the Digestive System.', relevance: 'GDV 手術技術標準教材' },
     { type: 'journal', citation: 'de Battisti A et al. Lactate as a prognostic indicator in dogs with gastric dilatation-volvulus. J Am Vet Med Assoc. 2009;235(1):46-52.', relevance: 'Lactate 作為 GDV 預後指標的關鍵研究' },
     { type: 'journal', citation: 'Glickman LT et al. Incidence of and breed-related risk factors for gastric dilatation-volvulus in dogs. J Am Vet Med Assoc. 2000;216(1):40-45.', relevance: '品種風險因子流行病學研究' },
@@ -1711,7 +1719,7 @@ const contentSurgOverview: NodeContent = {
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '小動物外科學權威教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '獸醫外科學進階教材' },
     { type: 'textbook', citation: 'Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. AO Publishing, 2005.', relevance: 'AO 骨折固定原則' },
-    { type: 'guideline', citation: 'ACVS Position Statements and Practice Guidelines. American College of Veterinary Surgeons, 2023.', relevance: '獸醫外科學專科認證與實務指引' },
+    { type: 'guideline', citation: 'American College of Veterinary Surgeons (ACVS). Veterinary Surgery Practice Guidelines. Available at: acvs.org.', relevance: '獸醫外科學專科認證與實務指引' },
     { type: 'journal', citation: 'Burn CC. Bestowing the benefit of the doubt: systematic review of veterinary surgical outcomes. Vet Surg. 2020;49(Suppl 1):O8-O17.', relevance: '獸醫手術結果系統性回顧' },
   ],
   is_current: true,

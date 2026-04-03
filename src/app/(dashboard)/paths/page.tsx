@@ -1,13 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Route, Clock, BookOpen } from 'lucide-react';
+import { Route, Clock, BookOpen, Filter } from 'lucide-react';
 import { Card, CardBody, CardFooter } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { CardSkeleton } from '@/components/ui/Skeleton';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import type { LearningPath } from '@/types/knowledge';
+
+const SPECIALTY_LABELS: Record<string, string> = {
+  CARDIO: '心臟科',
+  IM: '內科',
+  DERM: '皮膚科',
+  SURG: '外科',
+  NEURO: '神經科',
+  ONCO: '腫瘤科',
+  ECC: '急診加護',
+  CPATH: '臨床病理',
+  CROSS: '跨專科',
+};
 
 function LearningPathCard({ path }: { path: LearningPath }) {
   return (
@@ -46,6 +58,7 @@ function LearningPathCard({ path }: { path: LearningPath }) {
 export default function PathsPage() {
   const { paths, isLoading } = useKnowledgeStore();
   const [isInitializing, setIsInitializing] = useState(true);
+  const [selectedSpecialty, setSelectedSpecialty] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsInitializing(false), 300);
@@ -54,11 +67,39 @@ export default function PathsPage() {
 
   const loading = isLoading || isInitializing;
 
+  // 取得所有存在的專科選項（依資料動態產生）
+  const availableSpecialties = useMemo(() => {
+    const set = new Set(paths.map((p) => p.specialty));
+    return Array.from(set).sort();
+  }, [paths]);
+
+  const filteredPaths = useMemo(() => {
+    if (!selectedSpecialty) return paths;
+    return paths.filter((p) => p.specialty === selectedSpecialty);
+  }, [paths, selectedSpecialty]);
+
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-2">
-        <Route className="h-6 w-6 text-indigo-600" />
-        <h1 className="text-2xl font-bold text-gray-900">學習路徑</h1>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Route className="h-6 w-6 text-indigo-600" />
+          <h1 className="text-2xl font-bold text-gray-900">學習路徑</h1>
+        </div>
+        {!loading && paths.length > 0 && (
+          <div className="flex items-center gap-2">
+            <Filter className="h-4 w-4 text-gray-500" />
+            <select
+              value={selectedSpecialty}
+              onChange={(e) => setSelectedSpecialty(e.target.value)}
+              className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            >
+              <option value="">全部專科</option>
+              {availableSpecialties.map((s) => (
+                <option key={s} value={s}>{SPECIALTY_LABELS[s] ?? s}</option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
 
       {loading ? (
@@ -77,7 +118,7 @@ export default function PathsPage() {
         </div>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {paths.map((path) => (
+          {filteredPaths.map((path) => (
             <LearningPathCard key={path.id} path={path} />
           ))}
         </div>

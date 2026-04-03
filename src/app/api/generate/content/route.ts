@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth } from '@/lib/api/middleware';
+import { withAuth, withRateLimit } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { getContentPrompt } from '@/lib/ai/prompt-registry';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
-import { validate, nodeContentSchema } from '@/lib/ai/parsers/validators';
-import type { ContentGenerationInput, ContentOutput, KnowledgeNode } from '@/types/knowledge';
+import { validate, nodeContentSchema, contentGenerationInputSchema } from '@/lib/ai/parsers/validators';
+import type { ContentOutput, KnowledgeNode } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
   try {
-    const input: ContentGenerationInput = await request.json();
+    const raw = await request.json();
+    const inputValidation = validate(contentGenerationInputSchema, raw);
+    if (!inputValidation.success) {
+      return NextResponse.json(
+        { error: 'Invalid input', details: inputValidation.errors },
+        { status: 400 }
+      );
+    }
+    const input = inputValidation.data;
 
     if (isAIMockMode) {
       return NextResponse.json({ data: [] as ContentOutput[] });
@@ -78,4 +86,4 @@ async function handlePost(request: NextRequest) {
   }
 }
 
-export const POST = withAuth(handlePost);
+export const POST = withAuth(withRateLimit(handlePost, { maxRequests: 5, windowSeconds: 60 }));

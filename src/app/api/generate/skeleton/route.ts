@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth } from '@/lib/api/middleware';
+import { withAuth, withRateLimit } from '@/lib/api/middleware';
 import { callClaude } from '@/lib/ai/claude-client';
 import { buildSkeletonPrompt } from '@/lib/ai/prompts/skeleton';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
-import { validate, skeletonOutputSchema } from '@/lib/ai/parsers/validators';
-import type { SkeletonInput, SkeletonOutput } from '@/types/knowledge';
+import { validate, skeletonOutputSchema, skeletonInputSchema } from '@/lib/ai/parsers/validators';
+import type { SkeletonOutput } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
   try {
-    const input: SkeletonInput = await request.json();
+    const raw = await request.json();
+    const inputValidation = validate(skeletonInputSchema, raw);
+    if (!inputValidation.success) {
+      return NextResponse.json(
+        { error: 'Invalid input', details: inputValidation.errors },
+        { status: 400 }
+      );
+    }
+    const input = inputValidation.data;
     const prompt = buildSkeletonPrompt(input);
     const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
     const parsed = safeParseJson<SkeletonOutput>(rawResponse);
@@ -26,4 +34,4 @@ async function handlePost(request: NextRequest) {
   }
 }
 
-export const POST = withAuth(handlePost);
+export const POST = withAuth(withRateLimit(handlePost, { maxRequests: 5, windowSeconds: 60 }));

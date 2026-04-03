@@ -7,6 +7,8 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { DemoDataProvider } from '@/components/providers/DemoDataProvider';
 import { useAuthStore } from '@/stores/auth-store';
+import { useAchievementTracker } from '@/lib/gamification/use-achievement-tracker';
+import { LevelUpModal } from '@/components/features/LevelUpModal';
 import { cn } from '@/lib/utils/cn';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -32,6 +34,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const handleCloseSidebar = useCallback(() => {
     setSidebarOpen(false);
   }, []);
+
+  // 自動檢查成就解鎖 + 連續學習天數
+  useAchievementTracker();
 
   // 等待 hydration 完成 + auth check
   if (!_hasHydrated || isChecking) {
@@ -85,6 +90,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         {/* 手機底部導航 */}
         <MobileBottomNav />
+
+        {/* 升級慶祝彈窗 */}
+        <LevelUpModal />
       </div>
     </DemoDataProvider>
   );

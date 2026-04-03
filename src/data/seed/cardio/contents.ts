@@ -1051,7 +1051,7 @@ const contentHCM: NodeContent = {
       { sign: '奔馬律', category: 'secondary', description: 'S4（舒張期）奔馬律，提示舒張功能障礙' },
       { sign: '猝死', category: 'secondary', description: '可為首發表現，尤其在年輕好發品種' },
     ],
-    staging: { system: '依臨床表現分期（adapted from Fuentes VL 2022）', stages: ['無症狀—低風險（壁厚 6-7mm, LA 正常, 無 SEC）', '無症狀—高風險（壁厚 > 7mm, LA 擴大, SEC/LVOTO）', 'CHF 期（胸水和/或肺水腫）', 'ATE 期（動脈血栓栓塞發作）', '終末期（難治性 CHF 或反覆 ATE）'] },
+    staging: { system: '依臨床表現分期（adapted from Luis Fuentes VL et al. ACVIM Consensus 2020）', stages: ['無症狀—低風險（壁厚 6-7mm, LA 正常, 無 SEC）', '無症狀—高風險（壁厚 > 7mm, LA 擴大, SEC/LVOTO）', 'CHF 期（胸水和/或肺水腫）', 'ATE 期（動脈血栓栓塞發作）', '終末期（難治性 CHF 或反覆 ATE）'] },
     differential_diagnosis: [
       { condition: '全身性高血壓性心肌肥厚', key_differentiator: '收縮壓 > 160 mmHg，常見於慢性腎病或甲亢貓，控制血壓後肥厚可能部分逆轉' },
       { condition: '甲狀腺功能亢進性心肌變化', key_differentiator: 'T4 升高，高動力性表現（心率↑, 收縮力↑），治療甲亢後可改善' },

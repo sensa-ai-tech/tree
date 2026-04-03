@@ -17,6 +17,7 @@ import { RelatedNodes } from '@/components/features/RelatedNodes';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
+import { calculateXP } from '@/lib/gamification/xp-calculator';
 
 interface NodeDetailPageProps {
   params: Promise<{ nodeId: string }>;
@@ -28,6 +29,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   const { getStatus, completeNode, startNode } = useLearningStore();
   const { addXP } = useGamificationStore();
   const [isCompleting, setIsCompleting] = useState(false);
+  const [loadTimeout, setLoadTimeout] = useState(false);
 
   // 依賴 nodes 以便 DemoDataProvider 注入資料後重新計算
   const node = useMemo(() => getNodeById(nodeId), [getNodeById, nodeId, nodes]);
@@ -72,8 +74,15 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
     return items;
   }, [content, node]);
 
-  // nodes 尚未載入時顯示 loading（DemoDataProvider 注入需要時間）
-  if (nodes.length === 0) {
+  // nodes 尚未載入 — 設定超時，避免永久 loading
+  useEffect(() => {
+    if (nodes.length === 0 && !loadTimeout) {
+      const timer = setTimeout(() => setLoadTimeout(true), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [nodes.length, loadTimeout]);
+
+  if (nodes.length === 0 && !loadTimeout) {
     return (
       <div className="flex h-64 flex-col items-center justify-center gap-4">
         <Skeleton variant="text" width="40%" />
@@ -95,14 +104,17 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   async function handleComplete(): Promise<void> {
     setIsCompleting(true);
     try {
+      const difficulty = (node?.difficulty ?? 3) as 1 | 2 | 3 | 4 | 5;
+      const xpAmount = calculateXP('complete_node', { difficulty });
+
       completeNode(nodeId, 100, 15);
       addXP({
         source: 'complete_node',
-        amount: 100,
+        amount: xpAmount,
         description: `完成節點：${node?.title}`,
         timestamp: new Date().toISOString(),
       });
-      showToast.success('恭喜完成此節點！');
+      showToast.success(`恭喜完成此節點！+${xpAmount} XP`);
     } finally {
       setIsCompleting(false);
     }

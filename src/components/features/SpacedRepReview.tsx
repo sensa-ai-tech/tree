@@ -1,49 +1,62 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Card, CardBody } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils/cn';
 import { Eye } from 'lucide-react';
+import type { FSRSRating, SpacedRepetitionState } from '@/types/gamification';
+import { previewIntervals } from '@/lib/gamification/spaced-rep';
 
 interface SpacedRepReviewProps {
   nodeId: string;
   question: string;
   answer?: string;
-  onRate: (quality: 0 | 1 | 2 | 3 | 4 | 5) => void;
+  currentState?: SpacedRepetitionState;
+  onRate: (rating: FSRSRating) => void;
   className?: string;
 }
 
 type CardSide = 'question' | 'answer';
 
-const RATING_LABELS: Array<{ value: 0 | 1 | 2 | 3 | 4 | 5; label: string; color: string }> = [
-  { value: 0, label: '完全忘記', color: 'bg-red-600 hover:bg-red-700' },
-  { value: 1, label: '幾乎忘記', color: 'bg-red-400 hover:bg-red-500' },
-  { value: 2, label: '很困難', color: 'bg-orange-500 hover:bg-orange-600' },
-  { value: 3, label: '有點困難', color: 'bg-yellow-500 hover:bg-yellow-600' },
-  { value: 4, label: '還好', color: 'bg-green-500 hover:bg-green-600' },
-  { value: 5, label: '非常簡單', color: 'bg-green-600 hover:bg-green-700' },
+function formatInterval(days: number): string {
+  if (days < 1) return '<1 天';
+  if (days < 30) return `${days} 天`;
+  if (days < 365) return `${Math.round(days / 30)} 個月`;
+  return `${(days / 365).toFixed(1)} 年`;
+}
+
+const RATING_BUTTONS: Array<{ value: FSRSRating; label: string; sublabel: string; color: string }> = [
+  { value: 1, label: '忘記', sublabel: 'Again', color: 'bg-red-500 hover:bg-red-600' },
+  { value: 2, label: '困難', sublabel: 'Hard', color: 'bg-orange-500 hover:bg-orange-600' },
+  { value: 3, label: '良好', sublabel: 'Good', color: 'bg-green-500 hover:bg-green-600' },
+  { value: 4, label: '簡單', sublabel: 'Easy', color: 'bg-emerald-600 hover:bg-emerald-700' },
 ];
 
 export function SpacedRepReview({
   nodeId,
   question,
   answer,
+  currentState,
   onRate,
   className,
 }: SpacedRepReviewProps) {
   const [side, setSide] = useState<CardSide>('question');
 
+  const intervals = useMemo(() => {
+    if (!currentState) return null;
+    return previewIntervals(currentState);
+  }, [currentState]);
+
   function handleFlip(): void {
     setSide('answer');
   }
 
-  function handleRate(quality: 0 | 1 | 2 | 3 | 4 | 5): void {
-    onRate(quality);
+  function handleRate(rating: FSRSRating): void {
+    onRate(rating);
     setSide('question');
   }
 
-  // Empty state
   if (!question) {
     return (
       <div className={cn('flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 p-8', className)}>
@@ -78,19 +91,24 @@ export function SpacedRepReview({
         ) : (
           <div className="space-y-2">
             <p className="text-center text-xs text-gray-500">你記得多好？</p>
-            <div className="grid grid-cols-3 gap-2">
-              {RATING_LABELS.map((rating) => (
+            <div className="grid grid-cols-4 gap-2">
+              {RATING_BUTTONS.map((btn) => (
                 <button
-                  key={rating.value}
+                  key={btn.value}
                   type="button"
-                  onClick={() => handleRate(rating.value)}
+                  onClick={() => handleRate(btn.value)}
                   className={cn(
                     'rounded-lg px-2 py-2 text-xs font-medium text-white transition-colors',
-                    rating.color
+                    btn.color
                   )}
                 >
-                  <span className="block text-lg">{rating.value}</span>
-                  <span className="block">{rating.label}</span>
+                  <span className="block text-sm font-bold">{btn.label}</span>
+                  <span className="block text-[10px] opacity-80">{btn.sublabel}</span>
+                  {intervals && (
+                    <span className="mt-1 block text-[10px] opacity-70">
+                      {formatInterval(intervals[btn.value])}
+                    </span>
+                  )}
                 </button>
               ))}
             </div>

@@ -1,3 +1,6 @@
+import type { ImageAsset } from '@/types/image';
+import { getImageByDescription } from '@/data/seed/image-registry';
+
 export interface DrugLink {
   name: string;
   position: number;
@@ -18,6 +21,7 @@ export interface ParsedContent {
   drugLinks: DrugLink[];
   imagePlaceholders: ImagePlaceholder[];
   interactiveElements: InteractiveElement[];
+  resolvedImages: Map<string, ImageAsset>;
 }
 
 const DRUG_PATTERN = /\[藥物:([^\]]+)\]/g;
@@ -49,21 +53,33 @@ export function parseContentMarkers(rawMarkdown: string): ParsedContent {
     });
   }
 
+  // Resolve images from registry
+  const resolvedImages = new Map<string, ImageAsset>();
+  for (const ip of imagePlaceholders) {
+    const asset = getImageByDescription(ip.description);
+    if (asset) {
+      resolvedImages.set(ip.description, asset);
+    }
+  }
+
   let processed = rawMarkdown;
   processed = processed.replace(
     DRUG_PATTERN,
     '<span class="drug-link" data-drug="$1">$1</span>'
   );
-  processed = processed.replace(
-    IMAGE_PATTERN,
-    '<div class="image-placeholder" data-desc="$1">[圖片預留位: $1]</div>'
-  );
+  processed = processed.replace(IMAGE_PATTERN, (_match, desc: string) => {
+    const hasImage = resolvedImages.has(desc);
+    if (hasImage) {
+      return `<div class="clinical-image">[臨床影像: ${desc}]</div>`;
+    }
+    return `<div class="image-placeholder">[圖片預留位: ${desc}]</div>`;
+  });
   processed = processed.replace(
     INTERACTIVE_PATTERN,
     '<div class="interactive-placeholder" data-desc="$1">[互動元件預留位: $1]</div>'
   );
 
-  return { markdown: processed, drugLinks, imagePlaceholders, interactiveElements };
+  return { markdown: processed, drugLinks, imagePlaceholders, interactiveElements, resolvedImages };
 }
 
 export function extractHeadings(

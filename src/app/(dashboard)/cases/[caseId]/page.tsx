@@ -1,12 +1,15 @@
 'use client';
 
-import { use, useState, useEffect, useMemo } from 'react';
+import { use, useState, useEffect, useMemo, useCallback } from 'react';
 import { useRouter, notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle, XCircle, ChevronRight } from 'lucide-react';
+import { ArrowLeft, CheckCircle, XCircle, ChevronRight, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { showToast } from '@/components/ui/Toast';
+import { useGamificationStore } from '@/stores/gamification-store';
+import { calculateXP } from '@/lib/gamification/xp-calculator';
 import type { CaseChallenge, CaseStepData } from '@/types/case';
 
 interface CaseDetailPageProps {
@@ -32,6 +35,9 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   const [selectedActions, setSelectedActions] = useState<Set<string>>(new Set());
   const [showFeedback, setShowFeedback] = useState(false);
   const [stepResults, setStepResults] = useState<Map<number, boolean>>(new Map());
+  const [xpAwarded, setXPAwarded] = useState(false);
+  const addXP = useGamificationStore((s) => s.addXP);
+  const addSpecialty = useGamificationStore((s) => s.addSpecialty);
 
   useEffect(() => {
     import('@/data/seed/case-lookup').then(({ ALL_CASES }) => {
@@ -45,6 +51,34 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
     [caseId, allCases]
   );
 
+  const step: CaseStepData | undefined = caseData?.steps[currentStep];
+  const totalSteps = caseData?.steps.length ?? 0;
+
+  const completedSteps = stepResults.size;
+  const correctCount = [...stepResults.values()].filter(Boolean).length;
+
+  // 病例完成時獎勵 XP — 必須在所有 early return 之前呼叫
+  const handleCaseComplete = useCallback(() => {
+    if (xpAwarded || !caseData) return;
+
+    const accuracy = completedSteps > 0 ? correctCount / completedSteps : 0;
+    const xpAmount = calculateXP('case_challenge', {
+      difficulty: caseData.difficulty as 1 | 2 | 3 | 4 | 5,
+      accuracy,
+    });
+
+    addXP({
+      source: 'case_challenge',
+      amount: xpAmount,
+      description: `完成病例：${caseData.title}`,
+      timestamp: new Date().toISOString(),
+    });
+
+    addSpecialty(caseData.specialty);
+    setXPAwarded(true);
+    showToast.success(`病例完成！獲得 ${xpAmount} XP`);
+  }, [xpAwarded, caseData, completedSteps, correctCount, addXP, addSpecialty]);
+
   if (isLoadingCases) {
     return (
       <div className="flex h-64 items-center justify-center">
@@ -56,9 +90,6 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   if (!caseData) {
     notFound();
   }
-
-  const step: CaseStepData | undefined = caseData.steps[currentStep];
-  const totalSteps = caseData.steps.length;
 
   function toggleAction(action: string) {
     setSelectedActions((prev) => {
@@ -90,9 +121,6 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
       setCurrentStep((s) => s + 1);
     }
   }
-
-  const completedSteps = stepResults.size;
-  const correctCount = [...stepResults.values()].filter(Boolean).length;
 
   return (
     <div className="space-y-6">
@@ -236,13 +264,17 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
                   下一步
                 </Button>
               ) : (
-                <div className="text-center w-full space-y-2">
-                  <p className="text-sm font-medium text-gray-700">
-                    病例完成！正確率：{completedSteps > 0 ? Math.round((correctCount / completedSteps) * 100) : 0}%
+                <div className="text-center w-full space-y-3">
+                  <div className="flex items-center justify-center gap-2 text-amber-600">
+                    <Trophy className="h-5 w-5" />
+                    <p className="text-sm font-semibold">病例完成！</p>
+                  </div>
+                  <p className="text-sm text-gray-700">
+                    正確率：{completedSteps > 0 ? Math.round((correctCount / completedSteps) * 100) : 0}%
                     （{correctCount}/{completedSteps}）
                   </p>
-                  <Button variant="secondary" onClick={() => router.push('/cases')}>
-                    返回病例列表
+                  <Button variant="secondary" onClick={() => { handleCaseComplete(); router.push('/cases'); }}>
+                    完成並返回
                   </Button>
                 </div>
               )}

@@ -65,29 +65,29 @@ describe('Complete Learning Flow', () => {
     expect(getTierFromLevel(21).tier).toBe('mentor');
   });
 
-  it('should simulate spaced repetition flow', () => {
+  it('should simulate spaced repetition flow with ts-fsrs', () => {
     // 1. 建立初始狀態
     const initial = createInitialState();
-    expect(initial.repetitions).toBe(0);
+    expect(initial.reps).toBe(0);
+    expect(initial.state).toBe(0); // New
 
-    // 2. 第一次成功複習 (quality 4)
-    const after1 = calculateNextReview(4, initial);
-    expect(after1.repetitions).toBe(1);
-    expect(after1.interval_days).toBe(1);
+    // 2. 第一次成功複習 (Good=3)
+    const after1 = calculateNextReview(3, initial);
+    expect(after1.reps).toBe(1);
+    expect(after1.stability).toBeGreaterThan(0);
 
-    // 3. 第二次成功複習
+    // 3. 第二次成功複習 (Easy=4)
     const after2 = calculateNextReview(4, after1);
-    expect(after2.repetitions).toBe(2);
-    expect(after2.interval_days).toBe(6);
+    expect(after2.reps).toBe(2);
+    expect(new Date(after2.due).getTime()).toBeGreaterThan(new Date(after1.due).getTime());
 
-    // 4. 第三次失敗
+    // 4. 第三次失敗 (Again=1)
     const after3 = calculateNextReview(1, after2);
-    expect(after3.repetitions).toBe(0);
-    expect(after3.interval_days).toBe(1);
+    expect(after3.lapses).toBeGreaterThan(0);
 
-    // 5. 回到第一次
-    const after4 = calculateNextReview(5, after3);
-    expect(after4.repetitions).toBe(1);
+    // 5. 恢復 (Good=3)
+    const after4 = calculateNextReview(3, after3);
+    expect(after4.reps).toBeGreaterThan(after3.reps);
     expect(after4.mastery_level).toBeGreaterThan(0);
   });
 

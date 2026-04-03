@@ -1,21 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth } from '@/lib/api/middleware';
+import { withAuth, withRateLimit } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildCasePrompt } from '@/lib/ai/prompts/cases';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
-import { validate, caseOutputSchema } from '@/lib/ai/parsers/validators';
+import { validate, caseOutputSchema, caseGenerationInputSchema } from '@/lib/ai/parsers/validators';
 import type { KnowledgeNode } from '@/types/knowledge';
-
-interface CaseGenerationInput {
-  specialty: string;
-  difficulty: number;
-  species: string;
-  related_node_ids: string[];
-}
 
 async function handlePost(request: NextRequest) {
   try {
-    const input: CaseGenerationInput = await request.json();
+    const raw = await request.json();
+    const inputValidation = validate(caseGenerationInputSchema, raw);
+    if (!inputValidation.success) {
+      return NextResponse.json(
+        { error: 'Invalid input', details: inputValidation.errors },
+        { status: 400 }
+      );
+    }
+    const input = inputValidation.data;
 
     if (isAIMockMode) {
       return NextResponse.json({ data: { cases: [] } });
@@ -62,4 +63,4 @@ async function handlePost(request: NextRequest) {
   }
 }
 
-export const POST = withAuth(handlePost);
+export const POST = withAuth(withRateLimit(handlePost, { maxRequests: 5, windowSeconds: 60 }));

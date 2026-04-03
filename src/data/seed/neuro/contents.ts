@@ -17,7 +17,7 @@ const contentEpilepsy: NodeContent = {
   ],
   key_points: [
     '好發品種：Beagle、德國牧羊犬（GSD）、Border Collie、Labrador、Golden Retriever、比利時牧羊犬',
-    'IVETF 三層診斷：Tier I（基礎血檢+尿檢+MRI+CSF）、Tier II（膽汁酸+血氨+感染篩檢）、Tier III（基因檢測+進階影像）',
+    'IVETF 三層診斷：Tier I（基礎血檢+尿檢）、Tier II（膽汁酸+血氨+感染篩檢）、Tier III（腦部 MRI+CSF 分析+基因檢測）',
     '特發性癲癇定義：排除結構性與代謝性原因，首次發作年齡 6 個月-6 歲',
     '治療起始標準：首次 cluster seizures、status epilepticus、發作頻率 > 2 次/6 個月、post-ictal 嚴重或持續',
     '一線 AED：Phenobarbital（2-5 mg/kg PO BID）或 Potassium Bromide（20-30 mg/kg PO SID）',
@@ -52,7 +52,7 @@ const contentEpilepsy: NodeContent = {
 急救順序：
 1. [藥物:Diazepam] 0.5-1 mg/kg IV（或 per rectum 1-2 mg/kg）
 2. 無效時 [藥物:Levetiracetam] 30-60 mg/kg IV
-3. 持續發作：[藥物:Phenobarbital] 2-4 mg/kg IV q20-30min（最多 16-24 mg/kg/24hr）
+3. 持續發作：[藥物:Phenobarbital] 2-4 mg/kg IV q20-30min（最多 12-24 mg/kg/24hr，注意累積劑量越高呼吸抑制風險越大）
 4. 難治性 SE：[藥物:Propofol] CRI 或 [藥物:Midazolam] CRI
 
 [圖片:癲癇重積狀態急救流程圖]
@@ -2872,7 +2872,7 @@ const contentAEDTherapy: NodeContent = {
 急救順序：
 1. [藥物:Diazepam] 0.5-1 mg/kg IV（或 per rectum 1-2 mg/kg）
 2. [藥物:Levetiracetam] 30-60 mg/kg IV
-3. [藥物:Phenobarbital] 2-4 mg/kg IV q20-30min（最多 16-24 mg/kg/24hr）
+3. [藥物:Phenobarbital] 2-4 mg/kg IV q20-30min（最多 12-24 mg/kg/24hr，注意累積劑量越高呼吸抑制風險越大）
 4. 難治性 SE：[藥物:Propofol] CRI 或 [藥物:Midazolam] CRI
 
 ## 二、藥物/方法比較 (Comparison)

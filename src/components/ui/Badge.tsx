@@ -15,8 +15,8 @@ interface BadgeProps {
 }
 
 const SIZE_CLASSES: Record<BadgeSize, string> = {
-  sm: 'px-2 py-0.5 text-[10px]',
-  md: 'px-2.5 py-0.5 text-xs',
+  sm: 'px-2 py-0.5 text-[10px] whitespace-nowrap',
+  md: 'px-2.5 py-0.5 text-xs whitespace-nowrap',
 };
 
 export function Badge({ children, variant = 'default', size = 'md', layer, nodeType, difficulty, className }: BadgeProps) {

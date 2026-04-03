@@ -82,24 +82,40 @@ export interface UserNodeProgress {
   time_spent_minutes: number | null;
 }
 
+/** ts-fsrs Rating: 1=Again, 2=Hard, 3=Good, 4=Easy */
+export type FSRSRating = 1 | 2 | 3 | 4;
+
+/** ts-fsrs State: 0=New, 1=Learning, 2=Review, 3=Relearning */
+export type FSRSState = 0 | 1 | 2 | 3;
+
 export interface SpacedRepetitionState {
-  ease_factor: number;
-  interval_days: number;
-  repetitions: number;
-  next_review: string;
+  due: string;
+  stability: number;
+  difficulty: number;
+  elapsed_days: number;
+  scheduled_days: number;
+  reps: number;
+  lapses: number;
+  state: FSRSState;
+  last_review: string | null;
   mastery_level: number;
-  last_quality: 0 | 1 | 2 | 3 | 4 | 5;
+  last_rating: FSRSRating;
 }
 
 export interface UserSpacedRepetition {
   user_id: string;
   node_id: string;
-  ease_factor: number;
-  interval_days: number;
-  repetitions: number;
-  next_review: string | null;
+  due: string | null;
+  stability: number;
+  difficulty: number;
+  elapsed_days: number;
+  scheduled_days: number;
+  reps: number;
+  lapses: number;
+  state: number;
+  last_review: string | null;
   mastery_level: number;
-  last_quality: number | null;
+  last_rating: number | null;
 }
 
 export interface XPEvent {

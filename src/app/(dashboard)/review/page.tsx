@@ -1,41 +1,109 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { RotateCcw, Brain, Trophy, BarChart3 } from 'lucide-react';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Progress } from '@/components/ui/Progress';
+import { SpacedRepReview } from '@/components/features/SpacedRepReview';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
 import { showToast } from '@/components/ui/Toast';
+import { createInitialState, calculateNextReview, isDueForReview } from '@/lib/gamification/spaced-rep';
+import type { FSRSRating, SpacedRepetitionState } from '@/types/gamification';
+
+interface ReviewItem {
+  node_id: string;
+  question: string;
+  answer: string;
+  state: SpacedRepetitionState;
+}
 
 export default function ReviewPage() {
   const { todayReviewCount, incrementReviewCount } = useLearningStore();
   const { addXP } = useGamificationStore();
   const [isReviewing, setIsReviewing] = useState(false);
   const [reviewDone, setReviewDone] = useState(false);
+  const [reviewItems, setReviewItems] = useState<ReviewItem[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Mock: pending review count
-  const pendingReviewCount = 5;
   const dailyGoal = 10;
 
+  useEffect(() => {
+    async function loadReviewItems() {
+      try {
+        // Mock mode: load seed questions that are due for review
+        const { SEED_QUESTIONS } = await import('@/data/seed');
+
+        // Pick questions marked for spaced_rep and create mock review states
+        const dueItems: ReviewItem[] = SEED_QUESTIONS
+          .filter((q) => q.spaced_rep)
+          .slice(0, 10)
+          .map((q) => {
+            const state = createInitialState();
+            // Set due to past so they appear as "due"
+            state.due = new Date(Date.now() - 86400000).toISOString();
+            return {
+              node_id: q.node_id,
+              question: q.question,
+              answer: q.correct_answer + (q.explanation ? ` — ${q.explanation}` : ''),
+              state,
+            };
+          });
+
+        setReviewItems(dueItems);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadReviewItems();
+  }, []);
+
+  const pendingReviewCount = reviewItems.filter((item) => isDueForReview(item.state)).length;
+  const currentItem = reviewItems[currentIndex] ?? null;
+
   function handleStartReview(): void {
+    setCurrentIndex(0);
     setIsReviewing(true);
     showToast.info('開始今日複習');
   }
 
-  function handleCompleteReview(): void {
+  const handleRate = useCallback((rating: FSRSRating) => {
+    if (!currentItem) return;
+
+    const nextState = calculateNextReview(rating, currentItem.state);
+
+    // Update the item's state
+    setReviewItems((prev) =>
+      prev.map((item, i) => (i === currentIndex ? { ...item, state: nextState } : item))
+    );
+
     incrementReviewCount();
-    addXP({
-      source: 'daily_review',
-      amount: 30,
-      description: '完成每日複習',
-      timestamp: new Date().toISOString(),
-    });
-    setIsReviewing(false);
-    setReviewDone(true);
-    showToast.success('複習完成！獲得 30 XP');
+
+    if (currentIndex < reviewItems.length - 1) {
+      setCurrentIndex((i) => i + 1);
+    } else {
+      // All done
+      addXP({
+        source: 'daily_review',
+        amount: 30,
+        description: '完成每日複習',
+        timestamp: new Date().toISOString(),
+      });
+      setIsReviewing(false);
+      setReviewDone(true);
+      showToast.success('複習完成！獲得 30 XP');
+    }
+  }, [currentItem, currentIndex, reviewItems.length, incrementReviewCount, addXP]);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent" />
+      </div>
+    );
   }
 
   return (
@@ -89,7 +157,14 @@ export default function ReviewPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold text-gray-900">間隔重複複習</h2>
-            <Badge>{pendingReviewCount} 題待複習</Badge>
+            <div className="flex items-center gap-2">
+              {isReviewing && (
+                <Badge variant="outline">
+                  {currentIndex + 1} / {reviewItems.length}
+                </Badge>
+              )}
+              <Badge>{pendingReviewCount} 題待複習</Badge>
+            </div>
           </div>
         </CardHeader>
         <CardBody>
@@ -99,15 +174,15 @@ export default function ReviewPage() {
               <p className="text-lg font-medium text-gray-900">做得好！今日複習已完成</p>
               <p className="text-sm text-gray-500">明天會有新的複習內容，請保持學習節奏</p>
             </div>
-          ) : isReviewing ? (
-            <div className="space-y-4 py-4">
-              {/* SpacedRepReview component placeholder */}
-              <div className="rounded-lg border border-gray-200 p-6 text-center">
-                <p className="text-gray-500">SpacedRepReview 元件將在此渲染</p>
-              </div>
-              <div className="flex justify-center">
-                <Button onClick={handleCompleteReview}>完成複習</Button>
-              </div>
+          ) : isReviewing && currentItem ? (
+            <div className="py-4">
+              <SpacedRepReview
+                nodeId={currentItem.node_id}
+                question={currentItem.question}
+                answer={currentItem.answer}
+                currentState={currentItem.state}
+                onRate={handleRate}
+              />
             </div>
           ) : pendingReviewCount > 0 ? (
             <div className="flex flex-col items-center gap-4 py-8">

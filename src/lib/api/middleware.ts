@@ -17,9 +17,10 @@ export function withAuth(handler: RouteHandler): RouteHandler {
   return async (request, context) => {
     const adminApiKey = process.env.ADMIN_API_KEY;
     if (!adminApiKey) {
+      console.error('[withAuth] ADMIN_API_KEY environment variable is not set');
       return NextResponse.json(
-        { error: 'Server misconfigured: ADMIN_API_KEY not set' },
-        { status: 500 }
+        { error: 'Service temporarily unavailable' },
+        { status: 503 }
       );
     }
 

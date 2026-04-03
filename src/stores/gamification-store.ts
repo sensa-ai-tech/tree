@@ -1,6 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserExperience, XPEvent, UserAchievement } from '@/types/gamification';
 import { getLevelInfo } from '@/lib/gamification/level-system';
 
@@ -18,6 +19,7 @@ interface GamificationState {
   setExperience: (exp: UserExperience) => void;
   setAchievements: (achievements: UserAchievement[]) => void;
   setRecentXPEvents: (events: XPEvent[]) => void;
+  resetStore: () => void;
 }
 
 const defaultExperience: UserExperience = {
@@ -29,70 +31,91 @@ const defaultExperience: UserExperience = {
   specialties_explored: [],
 };
 
-export const useGamificationStore = create<GamificationState>((set, _get) => ({
-  experience: defaultExperience,
-  achievements: [],
-  recentXPEvents: [],
-  showLevelUpModal: false,
+export const useGamificationStore = create<GamificationState>()(
+  persist(
+    (set, _get) => ({
+      experience: defaultExperience,
+      achievements: [],
+      recentXPEvents: [],
+      showLevelUpModal: false,
 
-  addXP: (event) =>
-    set((state) => {
-      const newXP = state.experience.total_xp + event.amount;
-      const oldLevel = state.experience.current_level;
-      const levelInfo = getLevelInfo(newXP);
-      const leveledUp = levelInfo.level > oldLevel;
+      addXP: (event) =>
+        set((state) => {
+          const newXP = state.experience.total_xp + event.amount;
+          const oldLevel = state.experience.current_level;
+          const levelInfo = getLevelInfo(newXP);
+          const leveledUp = levelInfo.level > oldLevel;
 
-      return {
-        experience: {
-          ...state.experience,
-          total_xp: newXP,
-          current_level: levelInfo.level,
-        },
-        recentXPEvents: [event, ...state.recentXPEvents].slice(0, 20),
-        showLevelUpModal: leveledUp,
-      };
-    }),
+          return {
+            experience: {
+              ...state.experience,
+              total_xp: newXP,
+              current_level: levelInfo.level,
+            },
+            recentXPEvents: [event, ...state.recentXPEvents].slice(0, 20),
+            showLevelUpModal: leveledUp,
+          };
+        }),
 
-  unlockAchievement: (achievementId) =>
-    set((state) => {
-      if (state.achievements.some((a) => a.achievement_id === achievementId)) {
-        return state;
-      }
-      return {
-        achievements: [
-          ...state.achievements,
-          {
-            user_id: state.experience.user_id,
-            achievement_id: achievementId,
-            unlocked_at: new Date().toISOString(),
+      unlockAchievement: (achievementId) =>
+        set((state) => {
+          if (state.achievements.some((a) => a.achievement_id === achievementId)) {
+            return state;
+          }
+          return {
+            achievements: [
+              ...state.achievements,
+              {
+                user_id: state.experience.user_id,
+                achievement_id: achievementId,
+                unlocked_at: new Date().toISOString(),
+              },
+            ],
+          };
+        }),
+
+      updateStreak: (days) =>
+        set((state) => ({
+          experience: {
+            ...state.experience,
+            streak_days: days,
+            last_active_date: new Date().toISOString().split('T')[0],
           },
-        ],
-      };
+        })),
+
+      addSpecialty: (specialty) =>
+        set((state) => {
+          const current = state.experience.specialties_explored;
+          if (current.includes(specialty)) return state;
+          return {
+            experience: {
+              ...state.experience,
+              specialties_explored: [...current, specialty],
+            },
+          };
+        }),
+
+      setShowLevelUpModal: (show) => set({ showLevelUpModal: show }),
+      setExperience: (experience) => set({ experience }),
+      setAchievements: (achievements) => set({ achievements }),
+      setRecentXPEvents: (events) => set({ recentXPEvents: events }),
+
+      resetStore: () =>
+        set({
+          experience: defaultExperience,
+          achievements: [],
+          recentXPEvents: [],
+          showLevelUpModal: false,
+        }),
     }),
-
-  updateStreak: (days) =>
-    set((state) => ({
-      experience: {
-        ...state.experience,
-        streak_days: days,
-        last_active_date: new Date().toISOString().split('T')[0],
-      },
-    })),
-
-  addSpecialty: (specialty) =>
-    set((state) => {
-      const current = state.experience.specialties_explored;
-      if (current.includes(specialty)) return state;
-      return {
-        experience: {
-          ...state.experience,
-          specialties_explored: [...current, specialty],
-        },
-      };
-    }),
-
-  setShowLevelUpModal: (show) => set({ showLevelUpModal: show }),
-  setExperience: (experience) => set({ experience }),
-  setAchievements: (achievements) => set({ achievements }),
-  setRecentXPEvents: (events) => set({ recentXPEvents: events }),
-}));
+    {
+      name: 'vet-gamification-storage',
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({
+        experience: state.experience,
+        achievements: state.achievements,
+        recentXPEvents: state.recentXPEvents,
+      }),
+    }
+  )
+);

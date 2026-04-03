@@ -2,10 +2,11 @@
 
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, Bell, User, BookOpen, Menu, X } from 'lucide-react';
+import { Search, Bell, User, BookOpen, Menu, X, Trophy, Flame, Star } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { useAuthStore } from '@/stores/auth-store';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
+import { useGamificationStore } from '@/stores/gamification-store';
 import Link from 'next/link';
 
 interface NavbarProps {
@@ -22,10 +23,14 @@ const SPECIALTY_LABELS: Record<string, string> = {
 export function Navbar({ className, onMenuClick }: NavbarProps) {
   const { user } = useAuthStore();
   const { nodes, setFilters } = useKnowledgeStore();
+  const recentXPEvents = useGamificationStore((s) => s.recentXPEvents);
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const notifRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // 即時搜尋結果（最多 8 筆）
@@ -63,10 +68,50 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
     inputRef.current?.focus();
   }
 
+  // 重設 activeIndex 當搜尋結果變化
+  useEffect(() => {
+    setActiveIndex(-1);
+  }, [searchResults.length]);
+
+  // 搜尋鍵盤導航
+  function handleSearchKeyDown(e: React.KeyboardEvent): void {
+    if (!showDropdown || searchResults.length === 0) return;
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setActiveIndex((prev) => (prev + 1) % (searchResults.length + 1)); // +1 for "view all" button
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setActiveIndex((prev) => (prev - 1 + searchResults.length + 1) % (searchResults.length + 1));
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (activeIndex >= 0 && activeIndex < searchResults.length) {
+          handleResultClick(searchResults[activeIndex].id);
+        } else if (activeIndex === searchResults.length) {
+          // "View all" button
+          setFilters({ search: searchQuery.trim() });
+          setShowDropdown(false);
+          router.push('/graph');
+        }
+        break;
+      case 'Escape':
+        setShowDropdown(false);
+        setActiveIndex(-1);
+        break;
+    }
+  }
+
   // 關閉下拉（點擊外部）
   const handleClickOutside = useCallback((e: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
       setShowDropdown(false);
+      setActiveIndex(-1);
+    }
+    if (notifRef.current && !notifRef.current.contains(e.target as Node)) {
+      setShowNotifications(false);
     }
   }, []);
 
@@ -122,7 +167,9 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
               aria-expanded={showDropdown}
               aria-haspopup="listbox"
               aria-controls="search-results"
+              aria-activedescendant={activeIndex >= 0 ? `search-result-${activeIndex}` : undefined}
               autoComplete="off"
+              onKeyDown={handleSearchKeyDown}
             />
             {searchQuery && (
               <button
@@ -146,14 +193,18 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
           >
             {searchResults.length > 0 ? (
               <>
-                {searchResults.map((node) => (
+                {searchResults.map((node, i) => (
                   <button
                     key={node.id}
+                    id={`search-result-${i}`}
                     type="button"
                     role="option"
-                    aria-selected={false}
+                    aria-selected={i === activeIndex}
                     onClick={() => handleResultClick(node.id)}
-                    className="flex w-full items-center gap-3 px-3 py-2.5 text-left hover:bg-indigo-50 transition-colors"
+                    className={cn(
+                      'flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors',
+                      i === activeIndex ? 'bg-indigo-50' : 'hover:bg-indigo-50'
+                    )}
                   >
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-gray-900">{node.title}</p>
@@ -164,13 +215,17 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
                   </button>
                 ))}
                 <button
+                  id={`search-result-${searchResults.length}`}
                   type="button"
                   onClick={() => {
                     setFilters({ search: searchQuery.trim() });
                     setShowDropdown(false);
                     router.push('/graph');
                   }}
-                  className="flex w-full items-center justify-center gap-1 border-t border-gray-100 px-3 py-2 text-xs font-medium text-indigo-600 hover:bg-indigo-50 transition-colors"
+                  className={cn(
+                    'flex w-full items-center justify-center gap-1 border-t border-gray-100 px-3 py-2 text-xs font-medium text-indigo-600 transition-colors',
+                    activeIndex === searchResults.length ? 'bg-indigo-50' : 'hover:bg-indigo-50'
+                  )}
                 >
                   <Search className="h-3 w-3" />
                   在圖譜中查看全部結果
@@ -187,13 +242,60 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
 
       {/* Right section */}
       <div className="flex items-center gap-3">
-        <button
-          type="button"
-          className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
-          aria-label="通知"
-        >
-          <Bell className="h-5 w-5" />
-        </button>
+        <div ref={notifRef} className="relative">
+          <button
+            type="button"
+            onClick={() => setShowNotifications((v) => !v)}
+            className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
+            aria-label="通知"
+            aria-expanded={showNotifications}
+          >
+            <Bell className="h-5 w-5" />
+            {recentXPEvents.length > 0 && (
+              <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-indigo-500" />
+            )}
+          </button>
+
+          {showNotifications && (
+            <div className="absolute right-0 top-full mt-1 w-72 rounded-lg border border-gray-200 bg-white shadow-lg z-50">
+              <div className="border-b border-gray-100 px-3 py-2">
+                <p className="text-xs font-semibold text-gray-700">最近動態</p>
+              </div>
+              <div className="max-h-64 overflow-y-auto">
+                {recentXPEvents.length > 0 ? (
+                  recentXPEvents.slice(0, 10).map((event, i) => (
+                    <div key={i} className="flex items-center gap-2.5 px-3 py-2 text-xs hover:bg-gray-50 transition-colors">
+                      {event.source === 'complete_node' && <Star className="h-3.5 w-3.5 flex-shrink-0 text-indigo-500" />}
+                      {event.source === 'case_challenge' && <Trophy className="h-3.5 w-3.5 flex-shrink-0 text-amber-500" />}
+                      {event.source === 'streak_bonus' && <Flame className="h-3.5 w-3.5 flex-shrink-0 text-orange-500" />}
+                      {!['complete_node', 'case_challenge', 'streak_bonus'].includes(event.source) && (
+                        <Star className="h-3.5 w-3.5 flex-shrink-0 text-gray-400" />
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-gray-700">{event.description}</p>
+                        <p className="text-gray-400">{new Date(event.timestamp).toLocaleDateString('zh-TW')}</p>
+                      </div>
+                      <span className="flex-shrink-0 font-medium text-indigo-600">+{event.amount}</span>
+                    </div>
+                  ))
+                ) : (
+                  <div className="px-3 py-6 text-center text-xs text-gray-400">
+                    尚無動態記錄
+                  </div>
+                )}
+              </div>
+              {recentXPEvents.length > 0 && (
+                <Link
+                  href="/profile"
+                  onClick={() => setShowNotifications(false)}
+                  className="block border-t border-gray-100 px-3 py-2 text-center text-xs font-medium text-indigo-600 hover:bg-indigo-50 transition-colors"
+                >
+                  查看完整記錄
+                </Link>
+              )}
+            </div>
+          )}
+        </div>
 
         <Link
           href="/profile"

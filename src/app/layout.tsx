@@ -64,7 +64,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const nonce = (await headers()).get('x-nonce') ?? '';
 
   return (
-    <html lang="zh-TW">
+    <html lang="zh-TW" data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"

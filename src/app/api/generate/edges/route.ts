@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth } from '@/lib/api/middleware';
+import { withAuth, withRateLimit } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildEdgesPrompt } from '@/lib/ai/prompts/edges';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
-import { validate, edgeOutputSchema } from '@/lib/ai/parsers/validators';
-import type { EdgeGenerationInput, EdgeOutput } from '@/types/knowledge';
+import { validate, edgeOutputSchema, edgeGenerationInputSchema } from '@/lib/ai/parsers/validators';
+import type { EdgeOutput, KnowledgeNode } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
   try {
-    const input: EdgeGenerationInput = await request.json();
+    const raw = await request.json();
+    const inputValidation = validate(edgeGenerationInputSchema, raw);
+    if (!inputValidation.success) {
+      return NextResponse.json(
+        { error: 'Invalid input', details: inputValidation.errors },
+        { status: 400 }
+      );
+    }
+    const input = inputValidation.data;
 
     if (isAIMockMode) {
       const emptyOutput: EdgeOutput = {
@@ -23,7 +31,8 @@ async function handlePost(request: NextRequest) {
       return NextResponse.json({ data: emptyOutput });
     }
 
-    const prompt = buildEdgesPrompt(input.all_nodes, input.specialty_abbr);
+    // Cast after Zod validation — passthrough preserves extra KnowledgeNode fields
+    const prompt = buildEdgesPrompt(input.all_nodes as unknown as KnowledgeNode[], input.specialty_abbr);
     const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
     const parsed = safeParseJson<EdgeOutput>(rawResponse);
     const validation = validate(edgeOutputSchema, parsed);
@@ -42,4 +51,4 @@ async function handlePost(request: NextRequest) {
   }
 }
 
-export const POST = withAuth(handlePost);
+export const POST = withAuth(withRateLimit(handlePost, { maxRequests: 5, windowSeconds: 60 }));

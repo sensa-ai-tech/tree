@@ -58,6 +58,7 @@ export default function CasesPage() {
           <option value="NEURO">神經科</option>
           <option value="ONCO">腫瘤科</option>
           <option value="ECC">急診加護</option>
+          <option value="CPATH">臨床病理</option>
         </select>
         <select
           value={selectedDifficulty ?? ''}

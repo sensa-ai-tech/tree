@@ -20,6 +20,7 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [fillBlankInput, setFillBlankInput] = useState('');
   const [focusedIndex, setFocusedIndex] = useState<number>(0);
   const [state, setState] = useState<QuizState>(questions.length === 0 ? 'empty' : 'answering');
   const [startTime] = useState(() => Date.now());
@@ -74,22 +75,37 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
     }
   }, [state, options, focusedIndex, handleSelectOption]);
 
-  const handleSubmitAnswer = useCallback((): void => {
-    if (!selectedOption || !currentQuestion) return;
+  const getSelectedAnswer = useCallback((): string | null => {
+    if (!currentQuestion) return null;
+    if (currentQuestion.question_type === 'fill_blank') {
+      return fillBlankInput.trim() || null;
+    }
+    return selectedOption;
+  }, [currentQuestion, fillBlankInput, selectedOption]);
 
-    const isCorrect = selectedOption === currentQuestion.correct_answer;
+  const handleSubmitAnswer = useCallback((): void => {
+    const answer = getSelectedAnswer();
+    if (!answer || !currentQuestion) return;
+
+    let isCorrect: boolean;
+    if (currentQuestion.question_type === 'fill_blank') {
+      // Case-insensitive, trim whitespace comparison
+      isCorrect = answer.toLowerCase() === currentQuestion.correct_answer.toLowerCase();
+    } else {
+      isCorrect = answer === currentQuestion.correct_answer;
+    }
     const timeSpent = Math.round((Date.now() - questionStartTime) / 1000);
 
     const record: AnswerRecord = {
       question_id: currentQuestion.id,
-      selected_answer: selectedOption,
+      selected_answer: answer,
       is_correct: isCorrect,
       time_spent_seconds: timeSpent,
     };
 
     setAnswers((prev) => [...prev, record]);
     setState('reviewing');
-  }, [selectedOption, currentQuestion, questionStartTime]);
+  }, [getSelectedAnswer, currentQuestion, questionStartTime]);
 
   const handleNext = useCallback((): void => {
     const nextIndex = currentIndex + 1;
@@ -118,6 +134,7 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
 
     setCurrentIndex(nextIndex);
     setSelectedOption(null);
+    setFillBlankInput('');
     setQuestionStartTime(Date.now());
     setState('answering');
   }, [currentIndex, questions, answers, startTime, onComplete]);
@@ -190,52 +207,82 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
           {currentQuestion.question}
         </p>
 
-        {/* Options — ARIA radiogroup + keyboard navigation */}
-        <div
-          ref={optionsRef}
-          role="radiogroup"
-          aria-labelledby={`question-${currentIndex}`}
-          className="space-y-2"
-          onKeyDown={handleKeyDown}
-        >
-          {options.map((option, i) => {
-            const letter = String.fromCharCode(65 + i);
-            const isSelected = selectedOption === option;
-            const isCorrect = option === currentQuestion.correct_answer;
+        {/* Answer Input — adapts to question type */}
+        {currentQuestion.question_type === 'fill_blank' ? (
+          <div className="space-y-2">
+            <input
+              type="text"
+              value={fillBlankInput}
+              onChange={(e) => setFillBlankInput(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && fillBlankInput.trim()) handleSubmitAnswer(); }}
+              disabled={isReviewing}
+              placeholder="請輸入答案..."
+              className={cn(
+                'w-full rounded-lg border px-4 py-3 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500',
+                isReviewing && fillBlankInput.toLowerCase() === currentQuestion.correct_answer.toLowerCase()
+                  ? 'border-green-400 bg-green-50'
+                  : isReviewing
+                    ? 'border-red-400 bg-red-50'
+                    : 'border-gray-200'
+              )}
+              aria-label="填寫答案"
+            />
+            {isReviewing && (
+              <p className="text-sm text-gray-600">
+                正確答案：<strong className="text-green-700">{currentQuestion.correct_answer}</strong>
+              </p>
+            )}
+          </div>
+        ) : (
+          <div
+            ref={optionsRef}
+            role="radiogroup"
+            aria-labelledby={`question-${currentIndex}`}
+            className="space-y-2"
+            onKeyDown={handleKeyDown}
+          >
+            {(currentQuestion.question_type === 'true_false'
+              ? ['正確', '錯誤']
+              : options
+            ).map((option, i) => {
+              const letter = String.fromCharCode(65 + i);
+              const isSelected = selectedOption === option;
+              const isCorrect = option === currentQuestion.correct_answer;
 
-            let optionStyle = 'border-gray-200 hover:border-indigo-300 hover:bg-indigo-50';
-            if (isReviewing && isCorrect) {
-              optionStyle = 'border-green-400 bg-green-50';
-            } else if (isReviewing && isSelected && !isCorrect) {
-              optionStyle = 'border-red-400 bg-red-50';
-            } else if (isSelected) {
-              optionStyle = 'border-indigo-500 bg-indigo-50';
-            }
+              let optionStyle = 'border-gray-200 hover:border-indigo-300 hover:bg-indigo-50';
+              if (isReviewing && isCorrect) {
+                optionStyle = 'border-green-400 bg-green-50';
+              } else if (isReviewing && isSelected && !isCorrect) {
+                optionStyle = 'border-red-400 bg-red-50';
+              } else if (isSelected) {
+                optionStyle = 'border-indigo-500 bg-indigo-50';
+              }
 
-            return (
-              <button
-                key={i}
-                type="button"
-                role="radio"
-                aria-checked={isSelected}
-                aria-label={`選項 ${letter}: ${option}`}
-                tabIndex={i === focusedIndex ? 0 : -1}
-                onClick={() => handleSelectOption(option)}
-                disabled={isReviewing}
-                className={cn(
-                  'flex w-full items-start gap-3 rounded-lg border p-3 text-left text-sm transition-colors',
-                  'disabled:cursor-default focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1',
-                  optionStyle
-                )}
-              >
-                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-600">
-                  {letter}
-                </span>
-                <span className="text-gray-700">{option}</span>
-              </button>
-            );
-          })}
-        </div>
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  role="radio"
+                  aria-checked={isSelected}
+                  aria-label={`選項 ${letter}: ${option}`}
+                  tabIndex={i === focusedIndex ? 0 : -1}
+                  onClick={() => handleSelectOption(option)}
+                  disabled={isReviewing}
+                  className={cn(
+                    'flex w-full items-start gap-3 rounded-lg border p-3 text-left text-sm transition-colors',
+                    'disabled:cursor-default focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1',
+                    optionStyle
+                  )}
+                >
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-600">
+                    {letter}
+                  </span>
+                  <span className="text-gray-700">{option}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Answer feedback + Explanation (reviewing) — aria-live for screen readers */}
         <div aria-live="polite" aria-atomic="true">
@@ -261,7 +308,7 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
             <Button
               size="sm"
               onClick={handleSubmitAnswer}
-              disabled={!selectedOption}
+              disabled={!getSelectedAnswer()}
             >
               確認答案
             </Button>

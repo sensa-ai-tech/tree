@@ -1,35 +1,56 @@
 import { type NextRequest, NextResponse } from 'next/server';
+import { jwtVerify } from 'jose';
 
 /**
- * Middleware — CSP nonce + Supabase session
+ * Middleware — Admin auth + CSP nonce + Supabase session
  *
  * 安全策略：
+ * - /admin/* 路由需要有效的 JWT cookie（/admin/login 除外）
  * - script-src: nonce-based + strict-dynamic（移除 unsafe-inline）
  * - unsafe-eval: Mermaid 圖表引擎需要（已用 securityLevel:'strict' + DOMPurify 緩解）
  * - style-src: 保留 unsafe-inline（Next.js / Tailwind 內聯樣式需要）
  * - report-uri: CSP 違規自動報告至 /api/csp-report
  */
 
-const MOCK_MODE = !process.env.NEXT_PUBLIC_SUPABASE_URL;
+const ADMIN_COOKIE_NAME = 'vkt-admin-token';
+
+async function verifyAdminCookie(token: string): Promise<boolean> {
+  const secret = process.env.VKT_JWT_SECRET;
+  if (!secret || secret.length < 32) return false;
+  try {
+    const { payload } = await jwtVerify(
+      token,
+      new TextEncoder().encode(secret)
+    );
+    return payload.role === 'admin';
+  } catch {
+    return false;
+  }
+}
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // --- Admin route protection ---
+  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
+    const token = request.cookies.get(ADMIN_COOKIE_NAME)?.value;
+    if (!token || !(await verifyAdminCookie(token))) {
+      const loginUrl = new URL('/admin/login', request.url);
+      loginUrl.searchParams.set('from', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
   // 1. Generate per-request nonce
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 
   // 2. Forward nonce to downstream via x-nonce header
-  //    Next.js 14+ automatically reads x-nonce and adds it to its inline scripts
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-nonce', nonce);
 
   const response = NextResponse.next({
     request: { headers: requestHeaders },
   });
-
-  // 3. Supabase session refresh (future: add cookie management here)
-  if (!MOCK_MODE) {
-    // When Supabase is configured, handle session refresh here
-    // using @supabase/ssr createServerClient with cookie management
-  }
 
   // 4. Set CSP with nonce
   const csp = [

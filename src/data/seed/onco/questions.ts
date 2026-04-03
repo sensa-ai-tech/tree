@@ -2577,4 +2577,38 @@ export const ONCO_QUESTIONS: ReviewQuestion[] = [
     explanation: '犬 MCT 手術切除建議腫瘤邊緣外 2-3 cm 的側方邊界，深部邊界至少包含一層筋膜面。若切緣不乾淨（dirty margin），需考慮二次手術擴大切除或輔助放射治療。近年研究顯示 Low grade MCT 的 2 cm 側方邊界已足夠，但 High grade MCT 仍建議 3 cm 以上。',
     difficulty: 3, spaced_rep: true, tags: ['MCT', '手術邊界', '外科'], image_placeholder: null,
   },
+
+  // ===== 臨床審計補充：化療劑量與毒性管理題（2026-04-03）=====
+  {
+    id: 'Q-ONCO-CHEMO-DOSE-001', node_id: 'ONCO-L5-001', question_type: 'fill_blank',
+    question: 'CHOP 方案中 Doxorubicin 的標準靜脈注射劑量為 _____ mg/m²，需緩慢滴注 _____ 分鐘以上。',
+    options: null,
+    correct_answer: '30 mg/m²，緩慢滴注 15-20 分鐘以上（避免急性過敏反應）',
+    explanation: 'Doxorubicin 標準劑量為 30 mg/m² IV slow infusion（15-20 min 以上）。須注意：① 嚴格血管外滲漏會導致嚴重組織壞死 ② 預先給予 Diphenhydramine 0.5-1 mg/kg IM 預防過敏 ③ 監測 ECG 心律變化。',
+    difficulty: 4, spaced_rep: true, tags: ['化療劑量', 'Doxorubicin', 'CHOP'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ONCO-CHEMO-DOSE-002', node_id: 'ONCO-L5-001', question_type: 'fill_blank',
+    question: 'Vincristine 在 CHOP 方案中的劑量為 _____ mg/m² IV，最嚴重的毒性為 _____。',
+    options: null,
+    correct_answer: '0.7 mg/m² IV，最嚴重毒性為周邊神經毒性（便秘、腸阻塞）',
+    explanation: 'Vincristine 0.7 mg/m² IV 為標準 CHOP 劑量。作為 vinca alkaloid，主要毒性為周邊神經毒性（便秘最常見，嚴重可致麻痺性腸阻塞）。骨髓抑制較其他化療藥物輕微。血管外漏同樣會造成嚴重組織壞死。',
+    difficulty: 4, spaced_rep: true, tags: ['化療劑量', 'Vincristine', 'CHOP'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ONCO-CHEMO-TOX-001', node_id: 'ONCO-L5-001', question_type: 'mcq',
+    question: 'Doxorubicin 的累積性心臟毒性閾值約為多少？超過此劑量後心肌損害風險顯著增加。',
+    options: ['50-100 mg/m² 總累積量', '100-150 mg/m² 總累積量', '180-240 mg/m² 總累積量', '300-400 mg/m² 總累積量'],
+    correct_answer: '180-240 mg/m² 總累積量',
+    explanation: 'Doxorubicin 的累積性心臟毒性閾值約為 180-240 mg/m² 總累積量（相當於 6-8 次標準劑量 30 mg/m²）。超過此閾值後，擴張型心肌病（DCM）風險顯著增加。Doberman 等 DCM 好發品種可能在更低累積量即出現毒性。建議每 2-3 次治療進行心超評估 FS%。',
+    difficulty: 4, spaced_rep: true, tags: ['化療毒性', 'Doxorubicin', '心毒性'], image_placeholder: null,
+  },
+  {
+    id: 'Q-ONCO-CHEMO-TOX-002', node_id: 'ONCO-L5-001', question_type: 'mcq',
+    question: '化療犬出現嗜中性球 < 1000/μL 伴發燒 39.5°C，最優先的處置為何？',
+    options: ['觀察 24 小時', '口服 Amoxicillin-Clavulanate', '靜脈輸液 + 廣效抗生素（如 Ampicillin/Sulbactam + Enrofloxacin）', '緊急化療藥物減量'],
+    correct_answer: '靜脈輸液 + 廣效抗生素（如 Ampicillin/Sulbactam + Enrofloxacin）',
+    explanation: '嗜中性球 < 1000/μL + 發燒 = 發燒性嗜中性球低下症（febrile neutropenia），屬腫瘤科急症。需住院、IV 廣效抗生素覆蓋 G(+) 和 G(-) 菌（Ampicillin/Sulbactam + Enrofloxacin 為常見組合）、輸液支持、密切監測。下次化療應降低劑量 20-25%。VCOG-CTCAE Grade III-IV 毒性。',
+    difficulty: 4, spaced_rep: true, tags: ['化療毒性', '發燒性嗜中性球低下', '急診'], image_placeholder: null,
+  },
 ];

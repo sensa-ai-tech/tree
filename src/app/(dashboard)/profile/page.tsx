@@ -24,6 +24,8 @@ export default function ProfilePage() {
 
   async function handleLogout(): Promise<void> {
     await logout();
+    useLearningStore.getState().resetStore();
+    useGamificationStore.getState().resetStore();
     showToast.success('已登出');
     router.push('/login');
   }

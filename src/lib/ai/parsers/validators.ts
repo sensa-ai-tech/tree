@@ -159,6 +159,44 @@ export const caseOutputSchema = z.object({
   steps: z.array(caseStepSchema).min(1),
 });
 
+// ─── Input Validation Schemas ─────────────────────────────
+
+/** POST /api/generate/skeleton */
+export const skeletonInputSchema = z.object({
+  specialty_name: z.string().min(1, '專科名稱為必填'),
+  specialty_name_en: z.string().min(1, '英文專科名稱為必填'),
+  specialty_abbr: z.string().min(1).max(10, '專科縮寫最多 10 字元'),
+});
+
+/** POST /api/generate/content */
+export const contentGenerationInputSchema = z.object({
+  node_ids: z.array(z.string().min(1)).min(1, '至少需要一個 node_id'),
+  batch_size: z.number().int().min(1).max(20, '批次大小最多 20'),
+  priority: z.enum(['learning_path', 'clinical_relevance', 'sequential']),
+});
+
+/** POST /api/generate/edges — all_nodes uses passthrough to accept full KnowledgeNode objects */
+export const edgeGenerationInputSchema = z.object({
+  specialty_abbr: z.string().min(1).max(10),
+  all_nodes: z.array(knowledgeNodeSchema.passthrough()).min(1, '至少需要一個節點'),
+  existing_edges: z.array(edgeSchema).optional(),
+});
+
+/** POST /api/generate/questions */
+export const questionsInputSchema = z.object({
+  node_id: z.string().min(1, 'node_id 為必填'),
+  content_summary: z.string().min(1, '內容摘要為必填'),
+  key_points: z.array(z.string()).min(1, '至少需要一個重點'),
+});
+
+/** POST /api/generate/cases */
+export const caseGenerationInputSchema = z.object({
+  specialty: z.string().min(1, '專科為必填'),
+  difficulty: z.number().int().min(1).max(5),
+  species: z.string().min(1, '物種為必填'),
+  related_node_ids: z.array(z.string().min(1)).min(1, '至少需要一個關聯節點'),
+});
+
 // --- 通用驗證函數 ---
 
 export type ValidationResult<T> =

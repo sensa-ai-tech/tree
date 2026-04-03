@@ -37,9 +37,9 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-005', node_id: 'IM-L3-006', question_type: 'mcq',
     question: '犬糖尿病的起始胰島素治療，最常使用的胰島素類型為？',
-    options: ['Regular insulin（短效）', 'NPH insulin（中效）', 'Lente insulin（中效）', 'Glargine insulin（長效）'],
-    correct_answer: 'Lente insulin（中效）',
-    explanation: '犬糖尿病首選 Lente insulin（豬源或重組），起始劑量 0.25-0.5 U/kg SC BID。NPH 也可使用但作用時間在犬中較不穩定。Glargine（長效）主要用於貓糖尿病。Regular insulin 主要用於 DKA 急性處理。',
+    options: ['Regular insulin（短效）', 'NPH insulin（中效）', 'Vetsulin/Caninsulin（豬源中效）', 'Glargine insulin（長效）'],
+    correct_answer: 'Vetsulin/Caninsulin（豬源中效）',
+    explanation: '犬糖尿病首選 Vetsulin（Caninsulin，豬源 insulin zinc suspension，中效型），起始劑量 0.25-0.5 U/kg SC BID。NPH (Humulin N) 亦可使用，為第二選擇。兩者均為 AAHA 2018 指南推薦的犬 DM 第一線胰島素。Glargine（長效）主要用於貓糖尿病。Regular insulin 主要用於 DKA 急性處理。注意：人用 Lente insulin 已全球停產，犬用應使用 Vetsulin 商品名稱。',
     difficulty: 3, spaced_rep: true, tags: ['糖尿病', '胰島素', '治療'], image_placeholder: null,
   },
   {
@@ -1831,7 +1831,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-IM-L5-002-007', node_id: 'IM-L5-002', question_type: 'case_based',
-    question: '一隻新診斷糖尿病的犬開始 Lente insulin 0.5 U/kg SC BID。一週後飼主報告犬仍持續多喝多尿，居家血糖測量多數 >300 mg/dL。最合適的下一步為何？',
+    question: '一隻新診斷糖尿病的犬開始 Vetsulin (Caninsulin) 0.5 U/kg SC BID。一週後飼主報告犬仍持續多喝多尿，居家血糖測量多數 >300 mg/dL。最合適的下一步為何？',
     options: ['立即將劑量加倍至 1.0 U/kg BID', '安排院內 12 小時血糖曲線評估', '換用 Glargine insulin', '增加至 TID 給藥'],
     correct_answer: '安排院內 12 小時血糖曲線評估',
     explanation: '新開始胰島素治療的犬在第一週血糖控制不佳是常見的，不應急於大幅調整劑量。正確做法是安排 12 小時血糖曲線（每 2 小時測血糖），評估：① nadir（最低血糖值）② 胰島素作用持續時間（duration of action）③ 是否有 Somogyi effect。根據曲線結果才能精確判斷是劑量不足、作用時間太短還是反彈性高血糖，再做相應調整。每次調整不超過 10-25%。',
