@@ -14,6 +14,7 @@ import { DiagnosticContent } from '@/components/features/DiagnosticContent';
 import { MarkdownRenderer } from '@/components/features/MarkdownRenderer';
 import { ReferenceList } from '@/components/features/ReferenceList';
 import { RelatedNodes } from '@/components/features/RelatedNodes';
+import { ProcedureLinks } from '@/components/features/ProcedureLinks';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
@@ -310,6 +311,9 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           </CardBody>
         </Card>
       )}
+
+      {/* Procedure Links from Hostrain */}
+      <ProcedureLinks nodeId={nodeId} />
 
       {/* Related Nodes */}
       <RelatedNodes
