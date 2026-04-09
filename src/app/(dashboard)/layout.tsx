@@ -6,6 +6,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { MobileBottomNav } from '@/components/layout/MobileBottomNav';
 import { DemoDataProvider } from '@/components/providers/DemoDataProvider';
+import { SupabaseDataProvider } from '@/components/providers/SupabaseDataProvider';
 import { useAuthStore } from '@/stores/auth-store';
 import { useAchievementTracker } from '@/lib/gamification/use-achievement-tracker';
 import { LevelUpModal } from '@/components/features/LevelUpModal';
@@ -52,6 +53,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <DemoDataProvider>
+      <SupabaseDataProvider>
       <div className="min-h-screen bg-gray-50">
         {/* Skip to content — WCAG 2.1 Level A */}
         <a
@@ -94,6 +96,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* 升級慶祝彈窗 */}
         <LevelUpModal />
       </div>
+    </SupabaseDataProvider>
     </DemoDataProvider>
   );
 }
