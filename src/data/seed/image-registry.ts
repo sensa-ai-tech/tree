@@ -1,5 +1,5 @@
 /**
- * Image Registry — 臨床影像中央註冊表
+ * Image Registry，臨床影像中央註冊表
  *
  * 提供 [圖片:description] 標記與 ImageAsset 的映射。
  * 當 Cloudinary 影像上傳後，在此註冊即可自動渲染。
@@ -19,7 +19,7 @@ export const IMAGE_REGISTRY: Map<string, ImageAsset> = new Map();
 export const IMAGE_DESCRIPTION_MAP: Record<string, string> = {
   // ── CARDIO ──
   // '犬貓常見心臟病分佈圓餅圖': 'IMG-CARDIO-001',
-  // 'MMVD 病理機制瀑布圖——從分子到器官': 'IMG-CARDIO-002',
+  // 'MMVD 病理機制瀑布圖，從分子到器官': 'IMG-CARDIO-002',
   // ... 上傳影像後取消註解並填入 ID
 
   // ── IM ──

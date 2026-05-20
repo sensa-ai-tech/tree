@@ -4,10 +4,10 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
   // MCQ 1: GDV emergency
   {
     id: 'Q-SURG-001', node_id: 'SURG-L3-001', question_type: 'mcq',
-    question: 'GDV 急診處理中，術前 plasma lactate 超過多少 mmol/L 與胃壁壞死及死亡率升高顯著相關？',
+    question: 'GDV 急診處理中，術前 plasma lactate 超過多少 mmol/L 與胃壁壞死及死亡率升高明顯相關？',
     options: ['2.0 mmol/L', '4.0 mmol/L', '6.0 mmol/L', '10.0 mmol/L'],
     correct_answer: '6.0 mmol/L',
-    explanation: '多項研究證實術前 lactate > 6.0 mmol/L 的犬，胃壁壞死的可能性顯著增加，需要 partial gastrectomy 的機率更高，整體死亡率也明顯上升。Lactate 是目前 GDV 最實用的預後生物標記物。',
+    explanation: '多項研究證實術前 lactate > 6.0 mmol/L 的犬，胃壁壞死的可能性明顯增加，需要 partial gastrectomy 的機率更高，整體死亡率也明顯上升。Lactate 是目前 GDV 最實用的預後生物標記物。',
     difficulty: 3, spaced_rep: true, tags: ['GDV', 'lactate', '預後'], image_placeholder: null,
   },
   // MCQ 2: GDV gastropexy
@@ -64,7 +64,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
   // MCQ 6: Pyometra WBC
   {
     id: 'Q-SURG-006', node_id: 'SURG-L3-009', question_type: 'mcq',
-    question: '子宮蓄膿犬出現 WBC 正常但 band neutrophils 比例顯著升高的現象稱為？',
+    question: '子宮蓄膿犬出現 WBC 正常但 band neutrophils 比例明顯升高的現象稱為？',
     options: [
       'Regenerative left shift',
       'Degenerative left shift',
@@ -106,10 +106,10 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
   // True/False 9
   {
     id: 'Q-SURG-009', node_id: 'SURG-L3-001', question_type: 'true_false',
-    question: 'GDV 術後心室心律不整（VPCs）最常發生在術後 12-72 小時內，因此需持續 ECG 監測。',
+    question: 'GDV 術後心室心律不整（VPCs）最常發生在術後 12-72 小時內，所以需持續 ECG 監測。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'GDV 術後心室心律不整（ventricular premature complexes, VPCs）好發於術後 12-72 小時，發生率約 40-70%。原因包括心肌缺血再灌流損傷、電解質失衡（低血鉀）、酸鹼失衡。嚴重時需使用 Lidocaine CRI 治療。因此建議術後至少持續 ECG 監測 48-72 小時。',
+    explanation: 'GDV 術後心室心律不整（ventricular premature complexes, VPCs）好發於術後 12-72 小時，發生率約 40-70%。原因包括心肌缺血再灌流損傷、電解質失衡（低血鉀）、酸鹼失衡。嚴重時需使用 Lidocaine CRI 治療。所以建議術後至少持續 ECG 監測 48-72 小時。',
     difficulty: 3, spaced_rep: true, tags: ['GDV', '心律不整', '術後'], image_placeholder: null,
   },
   // True/False 10
@@ -127,7 +127,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: 'GDV 中胃典型以 _____ 方向扭轉 _____ 度（從尾端/術者端觀察）。',
     options: null,
     correct_answer: '順時針方向扭轉 220-270 度',
-    explanation: '從術者觀察尾端時，GDV 的胃典型以順時針方向扭轉 220-270 度。幽門從其正常的右側位置移至腹側再到左側，而胃底則移至右側。理解扭轉方向對於正確進行 derotation 至關重要。',
+    explanation: '從術者觀察尾端時，GDV 的胃典型以順時針方向扭轉 220-270 度。幽門從其正常的右側位置移至腹側再到左側，而胃底則移至右側。理解扭轉方向對於正確進行 derotation 不能省。',
     difficulty: 3, spaced_rep: true, tags: ['GDV', '病理', '手術'], image_placeholder: null,
   },
   // Case-based 12
@@ -393,7 +393,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '老年心臟病犬需緊急手術，選擇 premedication 時應避免哪個藥物？',
     options: ['Butorphanol', 'Methadone', 'Dexmedetomidine', 'Midazolam'],
     correct_answer: 'Dexmedetomidine',
-    explanation: 'Alpha-2 agonists 造成顯著心搏過緩和後負荷增加，對心臟病犬風險高。老年心臟病建議用 opioid +/- benzodiazepine（midazolam）組合。',
+    explanation: 'Alpha-2 agonists 造成明顯心搏過緩和後負荷增加，對心臟病犬風險高。老年心臟病建議用 opioid +/- benzodiazepine（midazolam）組合。',
     difficulty: 3, spaced_rep: true, tags: ['麻醉', '心臟病'], image_placeholder: null,
   },
   {
@@ -719,7 +719,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '犬脾臟結節性增生（nodular hyperplasia）與 HSA 在術前影像學上如何區分？',
     options: ['超音波可靠區分兩者', 'CT 增強掃描可完全區分', '術前影像無法可靠區分，需組織病理確診', 'X光可清楚區分'],
     correct_answer: '術前影像無法可靠區分，需組織病理確診',
-    explanation: '超音波和 CT 均無法可靠區分良性結節增生與 HSA。最終診斷需脾切除後組織病理學檢查。因此脾臟腫塊通常建議手術切除送檢。',
+    explanation: '超音波和 CT 均無法可靠區分良性結節增生與 HSA。最終診斷需脾切除後組織病理學檢查。所以脾臟腫塊通常建議手術切除送檢。',
     difficulty: 3, spaced_rep: true, tags: ['脾臟', '診斷'], image_placeholder: null,
   },
   {
@@ -768,7 +768,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '犬腸切開術（enterotomy）的切口位置建議在？',
     options: ['異物正上方的腸壁', '異物遠端（aboral side）正常腸壁的抗腸繫膜側', '腸繫膜側', '異物近端腸壁'],
     correct_answer: '異物遠端（aboral side）正常腸壁的抗腸繫膜側',
-    explanation: 'Enterotomy 切口做在異物遠端健康腸壁的抗腸繫膜側（antimesenteric border），因此處血供最少。異物可向遠端推移後取出。避免在腫脹損傷的腸壁上做切口。',
+    explanation: 'Enterotomy 切口做在異物遠端健康腸壁的抗腸繫膜側（antimesenteric border），所以處血供最少。異物可向遠端推移後取出。避免在腫脹損傷的腸壁上做切口。',
     difficulty: 4, spaced_rep: true, tags: ['異物', 'enterotomy'], image_placeholder: null,
   },
   {
@@ -887,10 +887,10 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-SURG-L3-005-003', node_id: 'SURG-L3-005', question_type: 'mcq',
-    question: 'IVDD Grade V 犬在喪失深層痛覺超過多少小時後手術預後顯著下降？',
+    question: 'IVDD Grade V 犬在喪失深層痛覺超過多少小時後手術預後明顯下降？',
     options: ['6 小時', '12 小時', '24-48 小時', '72 小時'],
     correct_answer: '24-48 小時',
-    explanation: 'Grade V IVDD 犬（癱瘓＋喪失深層痛覺），若<24-48hr手術，恢復率約50-60%；若>48hr則顯著下降至<5-10%。因此深層痛覺消失為緊急手術適應症。',
+    explanation: 'Grade V IVDD 犬（癱瘓＋喪失深層痛覺），若<24-48hr手術，恢復率約50-60%；若>48hr則明顯下降至<5-10%。所以深層痛覺消失為緊急手術適應症。',
     difficulty: 4, spaced_rep: true, tags: ['IVDD', 'Grade V'], image_placeholder: null,
   },
   {
@@ -1028,7 +1028,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '髓內釘（intramedullary pin）固定骨折的主要缺點為？',
     options: ['手術時間長', '無法抵抗旋轉力及軸向壓縮力', '需特殊設備', '感染率高'],
     correct_answer: '無法抵抗旋轉力及軸向壓縮力',
-    explanation: 'IM pin 可抵抗彎曲力但無法抵抗旋轉（rotation）及軸向（axial）力。因此常需合併 cerclage wire 或外固定支架（tie-in configuration）來增加旋轉穩定性。',
+    explanation: 'IM pin 可抵抗彎曲力但無法抵抗旋轉（rotation）及軸向（axial）力。所以常需合併 cerclage wire 或外固定支架（tie-in configuration）來增加旋轉穩定性。',
     difficulty: 4, spaced_rep: true, tags: ['骨折', 'IM pin'], image_placeholder: null,
   },
   {
@@ -1623,7 +1623,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '腹腔鏡手術相較於傳統開腹手術，術後疼痛較輕、恢復較快。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '腹腔鏡手術（微創手術）的優勢包括：切口小（通常 5-12 mm port sites）、組織損傷少、術後疼痛較輕、恢復時間縮短、感染風險降低。多項研究證實犬腹腔鏡 OVE 較傳統 OVH 術後疼痛評分顯著較低，活動力恢復更快。',
+    explanation: '腹腔鏡手術（微創手術）的優勢包括：切口小（通常 5-12 mm port sites）、組織損傷少、術後疼痛較輕、恢復時間縮短、感染風險降低。多項研究證實犬腹腔鏡 OVE 較傳統 OVH 術後疼痛評分明顯較低，活動力恢復更快。',
     difficulty: 2, spaced_rep: true, tags: ['微創手術', '優勢', '術後恢復'], image_placeholder: null,
   },
   {
@@ -1659,7 +1659,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '法國鬥牛犬和巴哥犬為 BOAS 最常受影響的品種。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '法國鬥牛犬（French Bulldog）和巴哥犬（Pug）為 BOAS 最高風險品種，其次為英國鬥牛犬（English Bulldog）、波士頓㹴（Boston Terrier）、北京犬（Pekingese）等。這些品種因頭骨短縮（brachycephaly）導致上呼吸道軟組織相對過多，氣道空間顯著狹窄。肥胖會進一步加重 BOAS 症狀。',
+    explanation: '法國鬥牛犬（French Bulldog）和巴哥犬（Pug）為 BOAS 最高風險品種，其次為英國鬥牛犬（English Bulldog）、波士頓㹴（Boston Terrier）、北京犬（Pekingese）等。這些品種因頭骨短縮（brachycephaly）導致上呼吸道軟組織相對過多，氣道空間明顯狹窄。肥胖會後續加重 BOAS 症狀。',
     difficulty: 2, spaced_rep: true, tags: ['BOAS', '品種', '好發'], image_placeholder: null,
   },
   {
@@ -1681,13 +1681,13 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     id: 'Q-SURG-L3-011-001', node_id: 'SURG-L3-011', question_type: 'mcq',
     question: '先天性肝外門體分流（extrahepatic PSS）最常見的實驗室檢查異常為何？',
     options: [
-      '空腹 + 餐後膽汁酸均顯著升高',
-      '僅 ALT 顯著升高',
+      '空腹 + 餐後膽汁酸均明顯升高',
+      '僅 ALT 明顯升高',
       '高血糖',
       'BUN 升高',
     ],
-    correct_answer: '空腹 + 餐後膽汁酸均顯著升高',
-    explanation: '膽汁酸（bile acids）為 PSS 最敏感的篩檢指標：空腹膽汁酸升高（正常 < 25 μmol/L）且餐後膽汁酸顯著升高（正常 < 25 μmol/L，PSS 常 > 100 μmol/L）。其他常見異常包括：BUN 偏低（肝臟尿素合成減少）、白蛋白偏低、微小紅血球症（microcytosis）、尿酸銨結晶（ammonium biurate crystalluria）。ALT 通常正常至輕度升高。',
+    correct_answer: '空腹 + 餐後膽汁酸均明顯升高',
+    explanation: '膽汁酸（bile acids）為 PSS 最敏感的篩檢指標：空腹膽汁酸升高（正常 < 25 μmol/L）且餐後膽汁酸明顯升高（正常 < 25 μmol/L，PSS 常 > 100 μmol/L）。其他常見異常包括：BUN 偏低（肝臟尿素合成減少）、白蛋白偏低、微小紅血球症（microcytosis）、尿酸銨結晶（ammonium biurate crystalluria）。ALT 通常正常至輕度升高。',
     difficulty: 3, spaced_rep: true, tags: ['PSS', '膽汁酸', '診斷'], image_placeholder: null,
   },
   {
@@ -1702,12 +1702,12 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     id: 'Q-SURG-L3-011-003', node_id: 'SURG-L3-011', question_type: 'case_based',
     question: '8 月齡約克夏㹴，飼主報告生長遲緩、餐後呆滯流口水、偶發抽搐。血液檢查：BUN 3 mg/dL（偏低）、Alb 1.8 g/dL（偏低）、空腹膽汁酸 180 μmol/L。此犬最可能出現的神經症狀機轉為何？',
     options: [
-      '肝性腦病（hepatic encephalopathy）——氨等毒素未經肝臟代謝直接進入全身循環',
+      '肝性腦病（hepatic encephalopathy），氨等毒素未經肝臟代謝直接進入全身循環',
       '低血糖性腦病',
       '先天性水腦症',
       '門脈高壓導致腦水腫',
     ],
-    correct_answer: '肝性腦病（hepatic encephalopathy）——氨等毒素未經肝臟代謝直接進入全身循環',
+    correct_answer: '肝性腦病（hepatic encephalopathy），氨等毒素未經肝臟代謝直接進入全身循環',
     explanation: 'PSS 導致腸道吸收的氨（ammonia）、mercaptans、短鏈脂肪酸等神經毒素繞過肝臟直接進入全身循環。這些毒素通過血腦障壁導致肝性腦病（HE）。臨床表現：餐後行為異常（呆滯、流口水、壓頭）、間歇性方向感喪失、癲癇發作。約克夏㹴為先天性肝外 PSS 最高風險品種之一。內科穩定（低蛋白飲食 + Lactulose + 抗生素）後再行手術矯正。',
     difficulty: 4, spaced_rep: true, tags: ['PSS', '肝性腦病', '約克夏'], image_placeholder: null,
   },
@@ -1723,7 +1723,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
       '以貓最為常見',
     ],
     correct_answer: '為全身性進行性多發性神經病的一部分，喉麻痺為最早的臨床表現',
-    explanation: 'GOLPP（Geriatric Onset Laryngeal Paralysis Polyneuropathy）是老年大型犬（拉布拉多、黃金獵犬，通常 > 10 歲）的進行性多發性神經病。喉返神經（recurrent laryngeal nerve）因其長度最長而最先受影響，之後逐漸出現後肢無力、食道功能障礙等。理解 GOLPP 為全身性疾病對飼主溝通和預後評估至關重要。',
+    explanation: 'GOLPP（Geriatric Onset Laryngeal Paralysis Polyneuropathy）是老年大型犬（拉布拉多、黃金獵犬，通常 > 10 歲）的進行性多發性神經病。喉返神經（recurrent laryngeal nerve）因其長度最長而最先受影響，之後逐漸出現後肢無力、食道功能障礙等。理解 GOLPP 為全身性疾病對飼主溝通和預後評估不能省。',
     difficulty: 3, spaced_rep: true, tags: ['喉麻痺', 'GOLPP', '神經病'], image_placeholder: null,
   },
   {
@@ -1731,7 +1731,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '杓狀軟骨側化術（arytenoid lateralization / tie-back）的主要術後併發症為吸入性肺炎。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '單側杓狀軟骨側化術（unilateral arytenoid lateralization，俗稱 tie-back）為喉麻痺的標準外科治療。術後最常見且最嚴重的併發症為吸入性肺炎（aspiration pneumonia），發生率約 10-30%，因永久性喉部開放導致氣道保護功能下降。術後管理重點：升高食盆、避免水中游泳、小口進食、避免過度興奮氣喘。長期追蹤約 90% 犬呼吸功能顯著改善。',
+    explanation: '單側杓狀軟骨側化術（unilateral arytenoid lateralization，俗稱 tie-back）為喉麻痺的標準外科治療。術後最常見且最嚴重的併發症為吸入性肺炎（aspiration pneumonia），發生率約 10-30%，因永久性喉部開放導致氣道保護功能下降。術後管理重點：升高食盆、避免水中游泳、小口進食、避免過度興奮氣喘。長期追蹤約 90% 犬呼吸功能明顯改善。',
     difficulty: 3, spaced_rep: true, tags: ['喉麻痺', 'tie-back', '吸入性肺炎'], image_placeholder: null,
   },
   {
@@ -1744,7 +1744,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
       '血液甲狀腺功能檢查',
     ],
     correct_answer: '淺鎮靜下喉鏡檢查（laryngoscopy）確認杓狀軟骨是否對稱外展',
-    explanation: '喉麻痺確診需淺鎮靜下直接喉鏡檢查：正常犬吸氣時杓狀軟骨對稱外展，喉麻痺時杓狀軟骨不動或矛盾運動（paradoxical motion，吸氣時內收）。鎮靜深度關鍵——過深會抑制正常喉運動導致假陽性。此犬同時有後肢交叉步態，高度懷疑 GOLPP。甲狀腺功能檢查有意義但非確診工具（僅約 < 5% 喉麻痺與甲低有關）。',
+    explanation: '喉麻痺確診需淺鎮靜下直接喉鏡檢查：正常犬吸氣時杓狀軟骨對稱外展，喉麻痺時杓狀軟骨不動或矛盾運動（paradoxical motion，吸氣時內收）。鎮靜深度關鍵，過深會抑制正常喉運動導致假陽性。此犬同時有後肢交叉步態，高度懷疑 GOLPP。甲狀腺功能檢查有意義但非確診工具（僅約 < 5% 喉麻痺與甲低有關）。',
     difficulty: 4, spaced_rep: true, tags: ['喉麻痺', '喉鏡', '診斷', 'GOLPP'], image_placeholder: null,
   },
 
@@ -1839,7 +1839,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '腸吻合術中，PDS（polydioxanone）為最常推薦的縫合材料，因為它是單絲可吸收縫線。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'PDS（polydioxanone）和 Monocryl（poliglecaprone 25）為腸吻合術最常推薦的縫合材料。優點：單絲（monofilament）——不藏匿細菌，較編織線感染風險低；可吸收——不留永久異物；組織反應小。PDS 張力維持較長（約 4-6 週 50% 張力），適合腸吻合處癒合期。避免使用 chromic catgut（組織反應大、張力維持差）和不可吸收的編織縫線（braided nylon）。',
+    explanation: 'PDS（polydioxanone）和 Monocryl（poliglecaprone 25）為腸吻合術最常推薦的縫合材料。優點：單絲（monofilament），不藏匿細菌，較編織線感染風險低；可吸收，不留永久異物；組織反應小。PDS 張力維持較長（約 4-6 週 50% 張力），適合腸吻合處癒合期。避免使用 chromic catgut（組織反應大、張力維持差）和不可吸收的編織縫線（braided nylon）。',
     difficulty: 3, spaced_rep: true, tags: ['腸吻合', '縫線', 'PDS'], image_placeholder: null,
   },
   {
@@ -1852,7 +1852,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
       '胰臟炎 → 禁食加止吐',
     ],
     correct_answer: '吻合處滲漏（dehiscence）導致敗血性腹膜炎 → 緊急探查手術',
-    explanation: '腸吻合術後 3-5 天出現突發嘔吐、腹痛、發燒和白血球顯著升高，高度懷疑吻合處滲漏（dehiscence）導致敗血性腹膜炎。此為外科急診，需立即探查手術：確認滲漏處、視情況重新吻合或造口術（stoma）、腹腔沖洗。腹水分析如可獲得：glucose 低、lactate 高、細胞內細菌陽性支持敗血性腹膜炎診斷。延遲手術死亡率極高。Dehiscence 危險因子：低白蛋白、腫瘤切除、術中低血壓、異物引起的腸壁損傷。',
+    explanation: '腸吻合術後 3-5 天出現突發嘔吐、腹痛、發燒和白血球明顯升高，高度懷疑吻合處滲漏（dehiscence）導致敗血性腹膜炎。此為外科急診，需立即探查手術：確認滲漏處、視情況重新吻合或造口術（stoma）、腹腔沖洗。腹水分析如可獲得：glucose 低、lactate 高、細胞內細菌陽性支持敗血性腹膜炎診斷。延遲手術死亡率極高。Dehiscence 危險因子：低白蛋白、腫瘤切除、術中低血壓、異物引起的腸壁損傷。',
     difficulty: 5, spaced_rep: true, tags: ['腸吻合', 'dehiscence', '腹膜炎'], image_placeholder: null,
   },
 
@@ -1953,7 +1953,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
       '定期導尿沖洗膀胱',
     ],
     correct_answer: '飲食管理（處方飲食降低 CaOx 過飽和度）+ 增加飲水量 + 定期影像追蹤',
-    explanation: 'CaOx 結石不可溶解，預防復發是長期管理的核心。關鍵策略：①處方飲食（降低 CaOx 相對過飽和度，避免過度限制蛋白質或過度酸化尿液——這反而促進 CaOx 形成）；②增加飲水量（濕食、噴泉飲水器、稀釋尿液）；③每 3-6 個月腹部 X 光或超音波追蹤。CaOx 3 年復發率約 30-40%，Schnauzer 是好發品種。Allopurinol 用於 urate 結石而非 CaOx。',
+    explanation: 'CaOx 結石不可溶解，預防復發是長期管理的核心。關鍵策略：①處方飲食（降低 CaOx 相對過飽和度，避免過度限制蛋白質或過度酸化尿液，這反而促進 CaOx 形成）；②增加飲水量（濕食、噴泉飲水器、稀釋尿液）；③每 3-6 個月腹部 X 光或超音波追蹤。CaOx 3 年復發率約 30-40%，Schnauzer 是好發品種。Allopurinol 用於 urate 結石而非 CaOx。',
     difficulty: 4, spaced_rep: true, tags: ['CaOx', 'prevention', 'diet', 'Schnauzer'], image_placeholder: null,
   },
 
@@ -1989,7 +1989,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
       '僅進行 FNA 追蹤觀察',
     ],
     correct_answer: 'Unilateral chain mastectomy（單側乳腺鏈全切除）',
-    explanation: '貓乳腺腫瘤 85-90% 為惡性，因此建議最少做 unilateral chain mastectomy（即使僅有單一腫瘤）。更積極的 bilateral staged mastectomy 可提供最佳局部控制。研究顯示貓的 radical mastectomy 比保守術式（lumpectomy）的局部復發率顯著降低，生存期更長。',
+    explanation: '貓乳腺腫瘤 85-90% 為惡性，所以建議最少做 unilateral chain mastectomy（即使僅有單一腫瘤）。更積極的 bilateral staged mastectomy 可提供最佳局部控制。研究顯示貓的 radical mastectomy 比保守術式（lumpectomy）的局部復發率明顯降低，生存期更長。',
     difficulty: 4, spaced_rep: true, tags: ['mammary_tumor', 'cat', 'mastectomy', 'radical'], image_placeholder: null,
   },
   {
@@ -2002,7 +2002,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
       '飼主的就醫時間',
     ],
     correct_answer: '腫瘤大小',
-    explanation: '犬乳腺腫瘤大小是最重要的預後因子：T1（< 3 cm）2 年存活率 > 75%；T3（> 5 cm）中位存活 6-12 個月。其他重要預後因子包括：組織學分級、淋巴結轉移、血管侵犯、ER/PR 受體狀態。因此早期發現、早期手術是改善預後的關鍵。',
+    explanation: '犬乳腺腫瘤大小是最重要的預後因子：T1（< 3 cm）2 年存活率 > 75%；T3（> 5 cm）中位存活 6-12 個月。其他重要預後因子包括：組織學分級、淋巴結轉移、血管侵犯、ER/PR 受體狀態。所以早期發現、早期手術是改善預後的關鍵。',
     difficulty: 3, spaced_rep: true, tags: ['mammary_tumor', 'prognosis', 'tumor_size'], image_placeholder: null,
   },
   {
@@ -2020,10 +2020,10 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-SURG-MAM-006', node_id: 'SURG-L3-017', question_type: 'true_false',
-    question: 'FNA 細胞學可準確判斷犬乳腺腫瘤的良惡性，因此可替代術後組織病理學評估。',
+    question: 'FNA 細胞學可準確判斷犬乳腺腫瘤的良惡性，所以可替代術後組織病理學評估。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: 'FNA 對犬乳腺腫瘤良惡性的判斷準確率僅 50-70%，因為乳腺腫瘤常為混合型（良性與惡性成分共存）。FNA 取樣可能僅取到良性區域而遺漏惡性成分。因此術後完整的組織病理學評估是不可替代的，包括組織學類型、分級、血管侵犯、邊界評估等。',
+    explanation: 'FNA 對犬乳腺腫瘤良惡性的判斷準確率僅 50-70%，因為乳腺腫瘤常為混合型（良性與惡性成分共存）。FNA 取樣可能僅取到良性區域而遺漏惡性成分。所以術後完整的組織病理學評估是不可替代的，包括組織學類型、分級、血管侵犯、邊界評估等。',
     difficulty: 3, spaced_rep: true, tags: ['mammary_tumor', 'FNA', 'histopathology', 'limitation'], image_placeholder: null,
   },
   {
@@ -2124,7 +2124,7 @@ export const SURG_QUESTIONS: ReviewQuestion[] = [
     question: '對於大型犬（> 20 kg）的嚴重髖關節疾病，全髖關節置換術（THR）的功能恢復優於 FHO。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'THR 提供接近正常的髖關節生物力學，功能恢復優於 FHO（> 95% 飼主滿意度 vs FHO 約 85%）。大型犬因體重負荷大，FHO 形成的假關節可能無法提供足夠的功能支持，殘留跛行較明顯。因此大型犬（> 20 kg）首選 THR。但 THR 費用高、需專科醫院、且有特定併發症（脫位、假體鬆動、感染）。',
+    explanation: 'THR 提供接近正常的髖關節生物力學，功能恢復優於 FHO（> 95% 飼主滿意度 vs FHO 約 85%）。大型犬因體重負荷大，FHO 形成的假關節可能無法提供足夠的功能支持，殘留跛行較明顯。所以大型犬（> 20 kg）首選 THR。但 THR 費用高、需專科醫院、且有特定併發症（脫位、假體鬆動、感染）。',
     difficulty: 3, spaced_rep: true, tags: ['FHO', 'THR', 'comparison', 'large_breed'], image_placeholder: null,
   },
   {

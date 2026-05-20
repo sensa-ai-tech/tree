@@ -77,7 +77,8 @@ export const useKnowledgeStore = create<KnowledgeState>((set, get) => ({
       if (filters.specialty && node.specialty !== filters.specialty) return false;
       if (filters.layer !== null && node.layer !== filters.layer) return false;
       if (filters.nodeType && node.node_type !== filters.nodeType) return false;
-      if (filters.search) {
+      if (filters.search && filters.search !== '*') {
+        // '*' 是「綜覽全圖」的 sentinel，跳過 search filter 但保留 specialty 過濾
         const search = filters.search.toLowerCase();
         return (
           node.title.toLowerCase().includes(search) ||

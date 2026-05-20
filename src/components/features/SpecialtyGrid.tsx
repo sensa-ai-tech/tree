@@ -9,6 +9,7 @@ import {
   Microscope,
   Zap,
   FlaskConical,
+  Network,
 } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 
@@ -36,10 +37,11 @@ const SPECIALTY_INFO: SpecialtyInfo[] = [
 interface SpecialtyGridProps {
   nodeCounts: Record<string, number>;
   onSelect: (specialty: string) => void;
+  onSelectAll?: () => void;
   className?: string;
 }
 
-export function SpecialtyGrid({ nodeCounts, onSelect, className }: SpecialtyGridProps) {
+export function SpecialtyGrid({ nodeCounts, onSelect, onSelectAll, className }: SpecialtyGridProps) {
   const totalNodes = Object.values(nodeCounts).reduce((sum, c) => sum + c, 0);
 
   return (
@@ -50,6 +52,16 @@ export function SpecialtyGrid({ nodeCounts, onSelect, className }: SpecialtyGrid
         <p className="mt-1 text-sm text-gray-500">
           共 {totalNodes} 個知識節點，涵蓋 8 大獸醫專科
         </p>
+        {onSelectAll && (
+          <button
+            type="button"
+            onClick={onSelectAll}
+            className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-700"
+          >
+            <Network className="h-4 w-4" />
+            綜覽全圖（{totalNodes} 節點）
+          </button>
+        )}
       </div>
 
       {/* 專科卡片網格 */}

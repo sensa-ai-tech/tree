@@ -1,5 +1,5 @@
 /**
- * Case lookup module — provides ALL_CASES for client-side case detail pages.
+ * Case lookup module，provides ALL_CASES for client-side case detail pages.
  * Separated from index.ts to avoid importing store-dependent code on client components.
  */
 import type { CaseChallenge } from '@/types/case';

@@ -39,7 +39,7 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   // L3 → L5: clinical_apply (diseases → treatments)
   { id: 'ONCO-E-022', source_node_id: 'ONCO-L3-001', target_node_id: 'ONCO-L5-001', relation_type: 'clinical_apply', weight: 1, description: '淋巴瘤以化療為主要治療', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-023', source_node_id: 'ONCO-L3-002', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 0.9, description: 'MCT 以手術切除為首選治療', bidirectional: false, unlock_condition: null },
-  { id: 'ONCO-E-024', source_node_id: 'ONCO-L3-003', target_node_id: 'ONCO-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '骨肉瘤疼痛管理至關重要', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-024', source_node_id: 'ONCO-L3-003', target_node_id: 'ONCO-L5-003', relation_type: 'clinical_apply', weight: 0.9, description: '骨肉瘤疼痛管理不能省', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-025', source_node_id: 'ONCO-L3-005', target_node_id: 'ONCO-L5-004', relation_type: 'clinical_apply', weight: 0.8, description: '口腔黑色素瘤可考慮放射治療', bidirectional: false, unlock_condition: null },
 
   // L5 internal: drug_related
@@ -134,7 +134,7 @@ export const ONCO_EDGES: KnowledgeEdge[] = [
   { id: 'ONCO-E-084', source_node_id: 'ONCO-L3-014', target_node_id: 'ONCO-L5-006', relation_type: 'clinical_apply', weight: 0.7, description: 'SCC 可嘗試 COX-2 抑制劑合併 TKI 的多靶點治療策略', bidirectional: false, unlock_condition: null },
 
   // ─── ONCO-L3-016（肝細胞癌 HCC）───
-  { id: 'ONCO-E-085', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-016', relation_type: 'prerequisite', weight: 0.8, description: '肝細胞癌轉移機轉——massive 型轉移率低，diffuse 型高度侵犯', bidirectional: false, unlock_condition: null },
+  { id: 'ONCO-E-085', source_node_id: 'ONCO-L2-001', target_node_id: 'ONCO-L3-016', relation_type: 'prerequisite', weight: 0.8, description: '肝細胞癌轉移機轉，massive 型轉移率低，diffuse 型高度侵犯', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-086', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L4-001', relation_type: 'clinical_apply', weight: 0.8, description: 'HCC 需 FNA 細胞學輔助診斷（但肝臟 FNA 有出血風險）', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-087', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L4-002', relation_type: 'clinical_apply', weight: 1, description: 'HCC 需腹部超音波及 CT 評估腫瘤型態與分期', bidirectional: false, unlock_condition: null },
   { id: 'ONCO-E-088', source_node_id: 'ONCO-L3-016', target_node_id: 'ONCO-L5-002', relation_type: 'clinical_apply', weight: 1, description: 'Massive HCC 以肝葉切除為首選治療', bidirectional: false, unlock_condition: null },

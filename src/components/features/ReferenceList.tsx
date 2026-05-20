@@ -63,7 +63,7 @@ export function ReferenceList({ references, className }: ReferenceListProps) {
             </span>
             <span className="text-gray-800">{ref.citation}</span>
             {ref.relevance && (
-              <span className="ml-1 text-gray-500"> — {ref.relevance}</span>
+              <span className="ml-1 text-gray-500">，{ref.relevance}</span>
             )}
             {externalLink && (
               <a

@@ -18,6 +18,7 @@ import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Progress } from '@/components/ui/Progress';
+import { WelcomeOnboarding } from '@/components/features/WelcomeOnboarding';
 import { useAuthStore } from '@/stores/auth-store';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
@@ -72,6 +73,7 @@ export default function DashboardHomePage() {
 
   return (
     <div className="space-y-6">
+      <WelcomeOnboarding />
       {/* 歡迎訊息 */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">

@@ -48,7 +48,7 @@ export default function ReviewPage() {
             return {
               node_id: q.node_id,
               question: q.question,
-              answer: q.correct_answer + (q.explanation ? ` — ${q.explanation}` : ''),
+              answer: q.correct_answer + (q.explanation ? `，${q.explanation}` : ''),
               state,
             };
           });

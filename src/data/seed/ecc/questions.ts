@@ -136,11 +136,11 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '急診醫學中「golden hour」的概念是指？',
     options: [
       '急診室營運的黃金時段',
-      '創傷或急症後最初一小時的及時處置對預後至關重要',
+      '創傷或急症後最初一小時的及時處置對預後不能省',
       '藥物發揮作用需要的平均時間',
       '實驗室報告的等待時間',
     ],
-    correct_answer: '創傷或急症後最初一小時的及時處置對預後至關重要',
+    correct_answer: '創傷或急症後最初一小時的及時處置對預後不能省',
     explanation: 'Golden hour（黃金小時）概念源自人類創傷醫學，指創傷後最初 60 分鐘內的及時評估與處置對患者存活率與預後有決定性影響。在獸醫急診中同樣適用：早期辨識休克、及時液體復甦、控制出血、穩定呼吸道等處置越早進行，預後越好。延遲會導致不可逆的器官損傷。',
     difficulty: 1, spaced_rep: true, tags: ['急診', '概論', 'golden hour'], image_placeholder: null,
   },
@@ -201,7 +201,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '急診醫學中，「treat the patient, not the numbers」意指在急診穩定化階段可完全不需要任何實驗室檢查。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '「Treat the patient, not the numbers」強調的是臨床判斷與理學檢查應主導急診決策，不應等待完整檢查報告才開始處置。但這不代表不需要實驗室檢查——急診最小資料庫（emergency minimum database：PCV/TS、BUN dipstick、glucose、血氣/電解質、lactate）應盡快獲得，只是不應因等待結果而延遲生命拯救處置。',
+    explanation: '「Treat the patient, not the numbers」強調的是臨床判斷與理學檢查應主導急診決策，不應等待完整檢查報告才開始處置。但這不代表不需要實驗室檢查，急診最小資料庫（emergency minimum database：PCV/TS、BUN dipstick、glucose、血氣/電解質、lactate）應盡快獲得，只是不應因等待結果而延遲生命拯救處置。',
     difficulty: 2, spaced_rep: true, tags: ['急診', '原則', '資料庫'], image_placeholder: null,
   },
   {
@@ -373,7 +373,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '無限制，越快矯正越好',
     ],
     correct_answer: '0.5 mEq/L/hr（12 mEq/L/day）',
-    explanation: '慢性低血鈉（> 48 小時）時，腦細胞已適應低滲透壓環境（排出有機溶質）。若 Na+ 矯正過快，血漿滲透壓急速上升會導致腦細胞脫水，引起滲透壓脫髓鞘症候群（osmotic demyelination syndrome, ODS）——可能導致永久性神經損傷。安全速率：0.5 mEq/L/hr，每日不超過 10-12 mEq/L。需每 4-6 小時監測 Na+。',
+    explanation: '慢性低血鈉（> 48 小時）時，腦細胞已適應低滲透壓環境（排出有機溶質）。若 Na+ 矯正過快，血漿滲透壓急速上升會導致腦細胞脫水，引起滲透壓脫髓鞘症候群（osmotic demyelination syndrome, ODS），可能導致永久性神經損傷。安全速率：0.5 mEq/L/hr，每日不超過 10-12 mEq/L。需每 4-6 小時監測 Na+。',
     difficulty: 4, spaced_rep: true, tags: ['電解質', '低血鈉', '矯正速率'], image_placeholder: null,
   },
   {
@@ -411,7 +411,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '嗜睡但其他指標正常',
     ],
     correct_answer: '躁動不安、喘氣、對觸碰敏感',
-    explanation: '犬急性疼痛的行為指標包括：躁動不安（restlessness）、喘氣（panting）、嗚叫/呻吟、對觸碰或移動敏感（guarding）、不願躺下或頻繁換姿勢、食慾下降、心率增快、血壓升高。使用疼痛評分量表（如 Glasgow Composite Pain Scale-Short Form）可以系統化評估。沉默不一定代表不痛——貓尤其善於隱藏疼痛。',
+    explanation: '犬急性疼痛的行為指標包括：躁動不安（restlessness）、喘氣（panting）、嗚叫/呻吟、對觸碰或移動敏感（guarding）、不願躺下或頻繁換姿勢、食慾下降、心率增快、血壓升高。使用疼痛評分量表（如 Glasgow Composite Pain Scale-Short Form）可以系統化評估。沉默不一定代表不痛，貓尤其善於隱藏疼痛。',
     difficulty: 2, spaced_rep: true, tags: ['疼痛', '評估', '行為'], image_placeholder: null,
   },
   {
@@ -424,7 +424,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '只在手術後才會發生',
     ],
     correct_answer: '中樞神經系統對重複疼痛刺激的敏感化（central sensitization）',
-    explanation: 'Wind-up 是中樞敏感化（central sensitization）的表現：重複的 C 纖維傳入刺激導致脊髓背角神經元 NMDA 受體活化，使神經元興奮性逐漸增加，對同等強度刺激的反應越來越強。臨床意義：若不及時提供適當止痛，疼痛處理會越來越困難。這是「preemptive analgesia」（預防性止痛）概念的基礎——在疼痛刺激到達前就給予止痛藥。',
+    explanation: 'Wind-up 是中樞敏感化（central sensitization）的表現：重複的 C 纖維傳入刺激導致脊髓背角神經元 NMDA 受體活化，使神經元興奮性逐漸增加，對同等強度刺激的反應越來越強。臨床意義：若不及時提供適當止痛，疼痛處理會越來越困難。這是「preemptive analgesia」（預防性止痛）概念的基礎，在疼痛刺激到達前就給予止痛藥。',
     difficulty: 3, spaced_rep: true, tags: ['疼痛', 'wind-up', '中樞敏感化'], image_placeholder: null,
   },
   {
@@ -450,7 +450,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '血壓與呼吸速率',
     ],
     correct_answer: '面部表情、姿勢、對觸碰反應、整體行為',
-    explanation: 'Glasgow CMPS-Feline 是經驗證的貓急性疼痛量表，評估：(1) 面部表情（耳朵位置、口鼻區緊繃、鬍鬚位置）——即 Feline Grimace Scale；(2) 姿勢（蜷縮、緊張）；(3) 對觸碰/傷口的反應；(4) 整體行為（安靜/焦慮/攻擊）。分數超過閾值（通常 5/20）提示需要額外止痛。貓善於隱藏疼痛，系統化評估工具很重要。',
+    explanation: 'Glasgow CMPS-Feline 是經驗證的貓急性疼痛量表，評估：(1) 面部表情（耳朵位置、口鼻區緊繃、鬍鬚位置），即 Feline Grimace Scale；(2) 姿勢（蜷縮、緊張）；(3) 對觸碰/傷口的反應；(4) 整體行為（安靜/焦慮/攻擊）。分數超過閾值（通常 5/20）提示需要額外止痛。貓善於隱藏疼痛，系統化評估工具很重要。',
     difficulty: 3, spaced_rep: true, tags: ['疼痛', '貓', '評估量表'], image_placeholder: null,
   },
   {
@@ -497,7 +497,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '局部麻醉作用',
     ],
     correct_answer: 'NMDA 受體拮抗，減少中樞敏感化',
-    explanation: 'Ketamine 在亞麻醉劑量（sub-anesthetic dose, 0.1-0.6 mg/kg/hr CRI）作為 NMDA 受體拮抗劑，可阻斷中樞敏感化（central sensitization）與 wind-up 現象，提供顯著的輔助止痛效果。特別適用於嚴重疼痛、opioid 反應不佳、或需要減少 opioid 劑量的情況。常作為多模式止痛的一部分（MLK: morphine + lidocaine + ketamine CRI）。',
+    explanation: 'Ketamine 在亞麻醉劑量（sub-anesthetic dose, 0.1-0.6 mg/kg/hr CRI）作為 NMDA 受體拮抗劑，可阻斷中樞敏感化（central sensitization）與 wind-up 現象，提供明顯的輔助止痛效果。特別適用於嚴重疼痛、opioid 反應不佳、或需要減少 opioid 劑量的情況。常作為多模式止痛的一部分（MLK: morphine + lidocaine + ketamine CRI）。',
     difficulty: 4, spaced_rep: true, tags: ['疼痛', 'ketamine', 'NMDA', 'CRI'], image_placeholder: null,
   },
 
@@ -604,7 +604,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '攝入後 24 小時內',
     ],
     correct_answer: '攝入後 1-2 小時內',
-    explanation: '催吐（emesis induction）在毒物攝入後越早執行越有效。一般建議在攝入後 1-2 小時內進行，此時大部分毒物仍在胃中。超過 2 小時後效果顯著降低（胃已排空至小腸）。催吐禁忌症：(1) 腐蝕性物質（再次損傷食道）；(2) 石油類產品（吸入性肺炎風險）；(3) 已昏迷/癲癇（吸入風險）；(4) 短鼻犬種（喉頭痙攣風險較高）。',
+    explanation: '催吐（emesis induction）在毒物攝入後越早執行越有效。一般建議在攝入後 1-2 小時內進行，此時大部分毒物仍在胃中。超過 2 小時後效果明顯降低（胃已排空至小腸）。催吐禁忌症：(1) 腐蝕性物質（再次損傷食道）；(2) 石油類產品（吸入性肺炎風險）；(3) 已昏迷/癲癇（吸入風險）；(4) 短鼻犬種（喉頭痙攣風險較高）。',
     difficulty: 2, spaced_rep: true, tags: ['中毒', '催吐', '去汙'], image_placeholder: null,
   },
   {
@@ -643,7 +643,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '血液透析',
     ],
     correct_answer: '靜脈輸液利尿（IV fluid diuresis）',
-    explanation: '增強排泄的方法包括：(1) IV fluid diuresis（大量輸液增加 GFR 與尿量，加速水溶性毒物排泄）；(2) 尿液酸鹼化（如 NaHCO3 使尿液鹼化加速弱酸性藥物排泄，如 aspirin）；(3) 血液透析/血液灌流（用於嚴重中毒如乙二醇、甲醇）。並非所有毒物都適合增強排泄——蛋白結合率高或分布容積大的毒物效果有限。',
+    explanation: '增強排泄的方法包括：(1) IV fluid diuresis（大量輸液增加 GFR 與尿量，加速水溶性毒物排泄）；(2) 尿液酸鹼化（如 NaHCO3 使尿液鹼化加速弱酸性藥物排泄，如 aspirin）；(3) 血液透析/血液灌流（用於嚴重中毒如乙二醇、甲醇）。並非所有毒物都適合增強排泄，蛋白結合率高或分布容積大的毒物效果有限。',
     difficulty: 3, spaced_rep: true, tags: ['中毒', '增強排泄', '輸液'], image_placeholder: null,
   },
   {
@@ -656,7 +656,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '只需給予活性碳',
     ],
     correct_answer: '催吐 → 活性碳 → IV 輸液 → 監測腎功能與 GI 出血',
-    explanation: 'NSAID 中毒（如 ibuprofen）對犬具有顯著腎毒性與 GI 毒性。攝入 < 2 小時且意識正常：(1) 催吐（apomorphine）；(2) 催吐後給予活性碳 + cathartic（減少未排出毒物吸收）；(3) 積極 IV 輸液維持腎臟灌流（至少 48 小時）；(4) 胃保護劑（omeprazole + sucralfate）；(5) 監測 creatinine、BUN、糞便潛血。犬 ibuprofen 毒性劑量：GI 毒性 > 50 mg/kg、腎毒性 > 100 mg/kg。',
+    explanation: 'NSAID 中毒（如 ibuprofen）對犬具有明顯腎毒性與 GI 毒性。攝入 < 2 小時且意識正常：(1) 催吐（apomorphine）；(2) 催吐後給予活性碳 + cathartic（減少未排出毒物吸收）；(3) 積極 IV 輸液維持腎臟灌流（至少 48 小時）；(4) 胃保護劑（omeprazole + sucralfate）；(5) 監測 creatinine、BUN、糞便潛血。犬 ibuprofen 毒性劑量：GI 毒性 > 50 mg/kg、腎毒性 > 100 mg/kg。',
     difficulty: 3, spaced_rep: true, tags: ['中毒', 'NSAID', '處置流程'], image_placeholder: null,
   },
   {
@@ -677,7 +677,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '所有中毒都應該先催吐再做其他處置。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '催吐有明確禁忌症：(1) 腐蝕性物質（強酸/強鹼）——再次損傷食道；(2) 石油類（hydrocarbon）——吸入性肺炎風險；(3) 意識不清/癲癇中——吸入風險；(4) 已超過 2-4 小時（效果極低）；(5) 尖銳異物（穿孔風險）；(6) 某些產品含有催吐劑已自行嘔吐過。需先評估毒物種類與患畜狀態，再決定是否催吐。',
+    explanation: '催吐有明確禁忌症：(1) 腐蝕性物質（強酸/強鹼），再次損傷食道；(2) 石油類（hydrocarbon），吸入性肺炎風險；(3) 意識不清/癲癇中，吸入風險；(4) 已超過 2-4 小時（效果極低）；(5) 尖銳異物（穿孔風險）；(6) 某些產品含有催吐劑已自行嘔吐過。需先評估毒物種類與患畜狀態，再決定是否催吐。',
     difficulty: 2, spaced_rep: true, tags: ['中毒', '催吐', '禁忌'], image_placeholder: null,
   },
   {
@@ -690,7 +690,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '抽血、影像、催吐、住院',
     ],
     correct_answer: '穩定化（stabilization）、去汙（decontamination）、特異解毒劑（antidote）、增強排泄（enhanced elimination）',
-    explanation: '中毒處理四大支柱：(1) 穩定化——ABCDE 評估與生命支持（永遠優先）；(2) 去汙——催吐、活性碳、皮膚/眼睛沖洗（減少毒物吸收）；(3) 特異解毒劑——若有的話（NAC for acetaminophen, fomepizole for ethylene glycol, vitamin K1 for rodenticide 等）；(4) 增強排泄——IV diuresis、尿液酸鹼化、透析。並非所有毒物都有特異解毒劑。',
+    explanation: '中毒處理四大支柱：(1) 穩定化，ABCDE 評估與生命支持（永遠優先）；(2) 去汙，催吐、活性碳、皮膚/眼睛沖洗（減少毒物吸收）；(3) 特異解毒劑，若有的話（NAC for acetaminophen, fomepizole for ethylene glycol, vitamin K1 for rodenticide 等）；(4) 增強排泄，IV diuresis、尿液酸鹼化、透析。並非所有毒物都有特異解毒劑。',
     difficulty: 3, spaced_rep: true, tags: ['中毒', '處理原則', '四大支柱'], image_placeholder: null,
   },
 
@@ -772,7 +772,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '僅 cryoprecipitate',
     ],
     correct_answer: '新鮮全血（fresh whole blood）',
-    explanation: '新鮮全血（< 8 小時採集）包含紅血球、血小板（功能性）、凝血因子（包括 labile factors V & VIII）——可同時處理 DIC 患畜的貧血、血小板減少與凝血因子消耗。若無新鮮全血，可合併使用 packed RBC + FFP。濃縮血小板在獸醫較少可用。Cryoprecipitate 富含 fibrinogen、vWF、Factor VIII，適合特定凝血因子缺乏但非 DIC 的全面補充。',
+    explanation: '新鮮全血（< 8 小時採集）包含紅血球、血小板（功能性）、凝血因子（包括 labile factors V & VIII），可同時處理 DIC 患畜的貧血、血小板減少與凝血因子消耗。若無新鮮全血，可合併使用 packed RBC + FFP。濃縮血小板在獸醫較少可用。Cryoprecipitate 富含 fibrinogen、vWF、Factor VIII，適合特定凝血因子缺乏但非 DIC 的全面補充。',
     difficulty: 4, spaced_rep: true, tags: ['DIC', '輸血', '新鮮全血'], image_placeholder: null,
   },
   {
@@ -960,7 +960,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: 'DKA 治療過程中最需要頻繁監測的電解質為鉀離子（potassium），建議每 2-4 小時監測一次。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'DKA 治療中鉀離子變化最劇烈且最危險：insulin 驅動 K+ 進入細胞、酸中毒矯正也使 K+ 進入細胞、輸液稀釋、持續腎排泄——多重因素導致血鉀可在數小時內急降。嚴重低血鉀（< 2.5 mEq/L）可致心律不整與呼吸肌無力。建議 insulin CRI 期間每 2-4 小時監測 K+，並根據數值調整 KCl 補充量。同時監測磷酸鹽（也會下降）。',
+    explanation: 'DKA 治療中鉀離子變化最劇烈且最危險：insulin 驅動 K+ 進入細胞、酸中毒矯正也使 K+ 進入細胞、輸液稀釋、持續腎排泄，多重因素導致血鉀可在數小時內急降。嚴重低血鉀（< 2.5 mEq/L）可致心律不整與呼吸肌無力。建議 insulin CRI 期間每 2-4 小時監測 K+，並根據數值調整 KCl 補充量。同時監測磷酸鹽（也會下降）。',
     difficulty: 3, spaced_rep: true, tags: ['DKA', '鉀', '監測'], image_placeholder: null,
   },
   {
@@ -1003,7 +1003,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '電解質異常',
     ],
     correct_answer: '直接熱損傷 + 全身性炎症反應（heat-induced SIRS）→ MODS',
-    explanation: '中暑的病理生理為多重打擊：(1) 直接熱損傷（> 41.5°C 細胞蛋白質變性）；(2) 腸道黏膜屏障破壞 → 細菌/內毒素移位；(3) 全身性炎症反應（heat-induced SIRS）；(4) 凝血系統活化 → DIC；(5) 多器官功能障礙（腎臟 AKI、肝臟壞死、心肌損傷、腦水腫、ARDS）。因此中暑不僅是「過熱」問題，而是全身性炎症性疾病。',
+    explanation: '中暑的病理生理為多重打擊：(1) 直接熱損傷（> 41.5°C 細胞蛋白質變性）；(2) 腸道黏膜屏障破壞 → 細菌/內毒素移位；(3) 全身性炎症反應（heat-induced SIRS）；(4) 凝血系統活化 → DIC；(5) 多器官功能障礙（腎臟 AKI、肝臟壞死、心肌損傷、腦水腫、ARDS）。所以中暑不僅是「過熱」問題，而是全身性炎症性疾病。',
     difficulty: 4, spaced_rep: true, tags: ['中暑', 'SIRS', 'MODS', '病理'], image_placeholder: null,
   },
   {
@@ -1042,7 +1042,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '讓犬喝大量冰水',
     ],
     correct_answer: '將犬移至陰涼處，用室溫水淋濕全身（尤其腋下腹股溝），開電扇，立即送院',
-    explanation: '飼主端的初步降溫對中暑預後有重大影響。正確建議：(1) 立即移至陰涼通風處；(2) 室溫水淋濕全身（重點：腋下、腹股溝、頸部——大血管表淺處）；(3) 電扇加速蒸發散熱；(4) 不用冰水（血管收縮反效果）；(5) 不要強迫灌水（意識不清可能嗆入）；(6) 立即送院。早期降溫啟動越早，存活率越高。',
+    explanation: '飼主端的初步降溫對中暑預後有重大影響。正確建議：(1) 立即移至陰涼通風處；(2) 室溫水淋濕全身（重點：腋下、腹股溝、頸部，大血管表淺處）；(3) 電扇加速蒸發散熱；(4) 不用冰水（血管收縮反效果）；(5) 不要強迫灌水（意識不清可能嗆入）；(6) 立即送院。早期降溫啟動越早，存活率越高。',
     difficulty: 2, spaced_rep: true, tags: ['中暑', '飼主指導', '初步處理'], image_placeholder: null,
   },
   {
@@ -1063,7 +1063,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '體重',
     ],
     correct_answer: 'DIC 的發展與嚴重度',
-    explanation: '研究顯示犬中暑最重要的預後預測因子為 DIC 的發展。有 DIC 的中暑犬死亡率顯著高於無 DIC 者。其他不良預後因子：就診時已昏迷/癲癇（神經損傷嚴重）、高乳酸（灌流不足）、延遲降溫（到院前未降溫）。初始體溫本身的預測價值反而不如 DIC 與神經學狀態。持續體溫過高（> 24 小時無法控制）也是不良預後指標。',
+    explanation: '研究顯示犬中暑最重要的預後預測因子為 DIC 的發展。有 DIC 的中暑犬死亡率明顯高於無 DIC 者。其他不良預後因子：就診時已昏迷/癲癇（神經損傷嚴重）、高乳酸（灌流不足）、延遲降溫（到院前未降溫）。初始體溫本身的預測價值反而不如 DIC 與神經學狀態。持續體溫過高（> 24 小時無法控制）也是不良預後指標。',
     difficulty: 4, spaced_rep: true, tags: ['中暑', '預後', 'DIC'], image_placeholder: null,
   },
 
@@ -1119,7 +1119,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '皮下輸液',
     ],
     correct_answer: '10% Calcium gluconate 0.5-1.0 mL/kg IV slow + IV fluid bolus',
-    explanation: 'K+ 8.2 + ECG 變化 + 心搏過緩 = 高血鉀緊急情況，在導尿前必須先穩定心臟。(1) 10% Calcium gluconate 0.5-1.0 mL/kg IV slow over 10-15 min（ECG 監測下）——鈣離子不降低血鉀，但提高心肌興奮閾值保護心臟免於心律不整；(2) IV fluid bolus（0.9% NaCl 或 LRS 10-15 mL/kg）稀釋血鉀並恢復腎臟灌流；(3) 穩定後再進行鎮靜/麻醉下導尿。Regular insulin + dextrose 也可降 K+。',
+    explanation: 'K+ 8.2 + ECG 變化 + 心搏過緩 = 高血鉀緊急情況，在導尿前必須先穩定心臟。(1) 10% Calcium gluconate 0.5-1.0 mL/kg IV slow over 10-15 min（ECG 監測下），鈣離子不降低血鉀，但提高心肌興奮閾值保護心臟免於心律不整；(2) IV fluid bolus（0.9% NaCl 或 LRS 10-15 mL/kg）稀釋血鉀並恢復腎臟灌流；(3) 穩定後再進行鎮靜/麻醉下導尿。Regular insulin + dextrose 也可降 K+。',
     difficulty: 4, spaced_rep: true, tags: ['尿道阻塞', '高血鉀', '急救', 'calcium gluconate'], image_placeholder: null,
   },
   {
@@ -1132,7 +1132,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '高血鈉',
     ],
     correct_answer: '低血鉀（hypokalemia）',
-    explanation: 'Post-obstructive diuresis 期間大量尿液排出，鉀離子經腎臟流失迅速，容易發展為低血鉀。臨床表現：肌肉虛弱（ventroflexion of neck in cats）、精神差、腸蠕動減少。治療期間從高血鉀轉變為低血鉀可在 12-24 小時內發生。需每 4-6 小時監測 K+ 並在輸液中補充 KCl。尿量 > 4 mL/kg/hr 代表顯著的阻塞後利尿。',
+    explanation: 'Post-obstructive diuresis 期間大量尿液排出，鉀離子經腎臟流失迅速，容易發展為低血鉀。臨床表現：肌肉虛弱（ventroflexion of neck in cats）、精神差、腸蠕動減少。治療期間從高血鉀轉變為低血鉀可在 12-24 小時內發生。需每 4-6 小時監測 K+ 並在輸液中補充 KCl。尿量 > 4 mL/kg/hr 代表明顯的阻塞後利尿。',
     difficulty: 4, spaced_rep: true, tags: ['尿道阻塞', '低血鉀', '阻塞後利尿'], image_placeholder: null,
   },
   {
@@ -1196,7 +1196,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '2 週',
     ],
     correct_answer: '至少 4 週（第二代抗凝血劑）',
-    explanation: '第二代抗凝血鼠藥（如 brodifacoum, bromadiolone）脂溶性極高，半衰期可長達數月，儲存在脂肪組織中緩慢釋放。Vitamin K1 治療至少 4 週（有些需 6-8 週），口服 2.5-5 mg/kg/day divided BID with fatty food（脂肪促進吸收）。停藥 48-72 小時後需複查 PT，若延長需繼續治療。第一代（warfarin）治療 1-2 週即可。Vitamin K3（menadione）不可用——對犬有毒。',
+    explanation: '第二代抗凝血鼠藥（如 brodifacoum, bromadiolone）脂溶性極高，半衰期可長達數月，儲存在脂肪組織中緩慢釋放。Vitamin K1 治療至少 4 週（有些需 6-8 週），口服 2.5-5 mg/kg/day divided BID with fatty food（脂肪促進吸收）。停藥 48-72 小時後需複查 PT，若延長需繼續治療。第一代（warfarin）治療 1-2 週即可。Vitamin K3（menadione）不可用，對犬有毒。',
     difficulty: 3, spaced_rep: true, tags: ['中毒', '鼠藥', 'vitamin K1'], image_placeholder: null,
   },
   {
@@ -1235,7 +1235,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '輸注 packed RBC',
     ],
     correct_answer: '新鮮冷凍血漿（FFP）輸注 + Vitamin K1 SC/IV 同時開始',
-    explanation: '已出現嚴重凝血異常與出血（PT/aPTT 極度延長+瘀斑）時，Vitamin K1 單獨使用需 6-12 小時才能讓肝臟合成足夠凝血因子。在此之前患畜有致命性出血風險。緊急處置：(1) FFP 10-20 mL/kg 立即補充功能性凝血因子；(2) 同時開始 Vitamin K1（首劑可 SC 或 IV slow diluted，之後改 PO）；(3) 若有顯著貧血需加 pRBC；(4) 避免 IM 注射（血腫風險）。',
+    explanation: '已出現嚴重凝血異常與出血（PT/aPTT 極度延長+瘀斑）時，Vitamin K1 單獨使用需 6-12 小時才能讓肝臟合成足夠凝血因子。在此之前患畜有致命性出血風險。緊急處置：(1) FFP 10-20 mL/kg 立即補充功能性凝血因子；(2) 同時開始 Vitamin K1（首劑可 SC 或 IV slow diluted，之後改 PO）；(3) 若有明顯貧血需加 pRBC；(4) 避免 IM 注射（血腫風險）。',
     difficulty: 4, spaced_rep: true, tags: ['中毒', '鼠藥', 'FFP', '急救'], image_placeholder: null,
   },
   {
@@ -1256,7 +1256,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '呼吸衰竭',
     ],
     correct_answer: '假性臨床改善（看似好轉）',
-    explanation: '乙二醇中毒分三階段：第一階段（0.5-12 hr）：乙二醇本身導致 CNS 抑制（類似醉酒）+ 代謝性酸中毒。第二階段（12-24 hr）：患畜看似好轉（乙二醇已代謝，CNS 症狀消退），但毒性代謝物（glycolic acid, oxalic acid）正在蓄積。第三階段（24-72 hr）：草酸鈣結晶沉積於腎小管 → 急性腎衰竭（少尿/無尿），此時已無法逆轉。因此早期治療（8-12 hr 內）至關重要。',
+    explanation: '乙二醇中毒分三階段：第一階段（0.5-12 hr）：乙二醇本身導致 CNS 抑制（類似醉酒）+ 代謝性酸中毒。第二階段（12-24 hr）：患畜看似好轉（乙二醇已代謝，CNS 症狀消退），但毒性代謝物（glycolic acid, oxalic acid）正在蓄積。第三階段（24-72 hr）：草酸鈣結晶沉積於腎小管 → 急性腎衰竭（少尿/無尿），此時已無法逆轉。所以早期治療（8-12 hr 內）不能省。',
     difficulty: 4, spaced_rep: true, tags: ['中毒', '乙二醇', '臨床進程'], image_placeholder: null,
   },
 
@@ -1273,7 +1273,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '任何形式的癲癇發作',
     ],
     correct_answer: '癲癇發作持續 > 5 分鐘，或兩次發作間意識未恢復',
-    explanation: '癲癇重積狀態（SE）定義為：連續癲癇發作 > 5 分鐘（operational definition，因超過 5 分鐘不太可能自行停止），或兩次以上發作之間意識未完全恢復。SE 是神經科急症——持續發作導致腦缺氧、腦水腫、橫紋肌溶解、高體溫、DIC。發作時間越長，藥物控制越困難（benzodiazepine 受體 internalization）。',
+    explanation: '癲癇重積狀態（SE）定義為：連續癲癇發作 > 5 分鐘（operational definition，因超過 5 分鐘不太可能自行停止），或兩次以上發作之間意識未完全恢復。SE 是神經科急症，持續發作導致腦缺氧、腦水腫、橫紋肌溶解、高體溫、DIC。發作時間越長，藥物控制越困難（benzodiazepine 受體 internalization）。',
     difficulty: 2, spaced_rep: true, tags: ['癲癇重積', '定義', '急診'], image_placeholder: null,
   },
   {
@@ -1325,7 +1325,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '口服 phenobarbital',
     ],
     correct_answer: 'Phenobarbital 16 mg/kg IV slow + 主動降溫 + 檢查血糖',
-    explanation: '兩次 diazepam 無效 = refractory SE，升級治療：(1) Phenobarbital 16 mg/kg IV slow over 15 min；(2) 主動降溫（體溫 41.2°C 已達危險）——但不要使用冰水，室溫水+風扇即可，目標 39.5°C 停止；(3) 立即檢查血糖（低血糖可能是原因或結果）→ 若低給予 dextrose bolus；(4) 同時建立 IV access 送急診最小資料庫（glucose, BUN, Ca, electrolytes）排除代謝性癲癇原因。',
+    explanation: '兩次 diazepam 無效 = refractory SE，升級治療：(1) Phenobarbital 16 mg/kg IV slow over 15 min；(2) 主動降溫（體溫 41.2°C 已達危險），但不要使用冰水，室溫水+風扇即可，目標 39.5°C 停止；(3) 立即檢查血糖（低血糖可能是原因或結果）→ 若低給予 dextrose bolus；(4) 同時建立 IV access 送急診最小資料庫（glucose, BUN, Ca, electrolytes）排除代謝性癲癇原因。',
     difficulty: 4, spaced_rep: true, tags: ['癲癇重積', '難治性', '臨床推理'], image_placeholder: null,
   },
   {
@@ -1338,7 +1338,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '僅觀察 24 小時',
     ],
     correct_answer: '完整神經學檢查 + 血液學/生化 + 考慮腦部 MRI',
-    explanation: '8 歲犬首次癲癇需排除結構性原因（structural epilepsy）：(1) 完整神經學檢查（interictal period 有無局灶性缺陷）；(2) 完整血液學+生化（代謝性原因：肝腦病變、低血糖、低血鈣、尿毒症）；(3) 腦部 MRI + CSF analysis 排除腫瘤（meningioma 最常見）、腦炎。> 6 歲犬首次癲癇，腦腫瘤的機率顯著增加。1-5 歲犬首次癲癇較可能為特發性癲癇（idiopathic epilepsy）。',
+    explanation: '8 歲犬首次癲癇需排除結構性原因（structural epilepsy）：(1) 完整神經學檢查（interictal period 有無局灶性缺陷）；(2) 完整血液學+生化（代謝性原因：肝腦病變、低血糖、低血鈣、尿毒症）；(3) 腦部 MRI + CSF analysis 排除腫瘤（meningioma 最常見）、腦炎。> 6 歲犬首次癲癇，腦腫瘤的機率明顯增加。1-5 歲犬首次癲癇較可能為特發性癲癇（idiopathic epilepsy）。',
     difficulty: 3, spaced_rep: true, tags: ['癲癇', '首次發作', '鑑別診斷'], image_placeholder: null,
   },
   {
@@ -1346,7 +1346,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: 'Diazepam 可作為貓長期口服抗癲癇藥物的首選。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: 'Diazepam 口服在犬因耐受性（tolerance）快速發展而不適合長期使用。在貓雖然口服 bioavailability 較好，但有報告極罕見的急性特異性肝壞死（idiosyncratic acute hepatic necrosis），可能致命，因此不建議作為貓的長期口服抗癲癇首選。貓癲癇的長期口服首選為 phenobarbital 或 levetiracetam。Diazepam 在獸醫主要用途為 SE 的急救（IV/rectal）。',
+    explanation: 'Diazepam 口服在犬因耐受性（tolerance）快速發展而不適合長期使用。在貓雖然口服 bioavailability 較好，但有報告極罕見的急性特異性肝壞死（idiosyncratic acute hepatic necrosis），可能致命，所以不建議作為貓的長期口服抗癲癇首選。貓癲癇的長期口服首選為 phenobarbital 或 levetiracetam。Diazepam 在獸醫主要用途為 SE 的急救（IV/rectal）。',
     difficulty: 3, spaced_rep: true, tags: ['癲癇', 'diazepam', '貓', '長期'], image_placeholder: null,
   },
   {
@@ -1376,7 +1376,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '肺臟',
     ],
     correct_answer: '腎臟（急性腎損傷）',
-    explanation: '葡萄/葡萄乾對犬可導致急性腎小管壞死（acute tubular necrosis），機制尚不完全明確（可能與酒石酸 tartaric acid 相關）。毒性劑量個體差異極大——有些犬吃少量即發生 AKI，有些吃大量無事。臨床表現：嘔吐（6-12 hr）→ 少尿/無尿 → azotemia。治療：催吐（< 2 hr）、活性碳、積極 48-72 小時 IV 輸液、監測腎功能。無特異解毒劑。',
+    explanation: '葡萄/葡萄乾對犬可導致急性腎小管壞死（acute tubular necrosis），機制尚不完全明確（可能與酒石酸 tartaric acid 相關）。毒性劑量個體差異極大，有些犬吃少量即發生 AKI，有些吃大量無事。臨床表現：嘔吐（6-12 hr）→ 少尿/無尿 → azotemia。治療：催吐（< 2 hr）、活性碳、積極 48-72 小時 IV 輸液、監測腎功能。無特異解毒劑。',
     difficulty: 3, spaced_rep: true, tags: ['中毒', '葡萄', '腎臟'], image_placeholder: null,
   },
   {
@@ -1462,7 +1462,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '巧克力口味糖果',
     ],
     correct_answer: '可可粉/烘焙用巧克力（baker\'s chocolate）',
-    explanation: 'Theobromine 含量依可可含量遞增：白巧克力（幾乎無 theobromine）< 牛奶巧克力（~1.5-2 mg/g）< 半甜巧克力（~5-7 mg/g）< 黑巧克力（~5-15 mg/g）< 烘焙用巧克力/可可粉（~15-28 mg/g）。因此同樣重量的可可粉毒性遠大於牛奶巧克力。評估毒性需計算：攝入量(g) × theobromine 濃度(mg/g) ÷ 體重(kg) = mg/kg 攝入量。',
+    explanation: 'Theobromine 含量依可可含量遞增：白巧克力（幾乎無 theobromine）< 牛奶巧克力（~1.5-2 mg/g）< 半甜巧克力（~5-7 mg/g）< 黑巧克力（~5-15 mg/g）< 烘焙用巧克力/可可粉（~15-28 mg/g）。所以同樣重量的可可粉毒性遠大於牛奶巧克力。評估毒性需計算：攝入量(g) × theobromine 濃度(mg/g) ÷ 體重(kg) = mg/kg 攝入量。',
     difficulty: 2, spaced_rep: true, tags: ['中毒', '巧克力', 'theobromine', '含量'], image_placeholder: null,
   },
 
@@ -1518,7 +1518,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '骨髓抑制',
     ],
     correct_answer: '過敏反應（急性 anaphylaxis 或延遲性血清病）',
-    explanation: '蛇毒血清為異種蛋白（通常馬源或羊源），可引起：(1) 急性過敏反應/anaphylaxis（Type I, 數分鐘內）；(2) 延遲性血清病（Type III, 7-14 天後，關節痛、發燒、蕁麻疹）。給予前可先 diphenhydramine premedication，IV 輸注速度由慢到快，準備好 epinephrine 備用。儘管有過敏風險，嚴重蛇咬（凝血異常、進展性腫脹）仍應給予 antivenom——益處遠大於風險。',
+    explanation: '蛇毒血清為異種蛋白（通常馬源或羊源），可引起：(1) 急性過敏反應/anaphylaxis（Type I, 數分鐘內）；(2) 延遲性血清病（Type III, 7-14 天後，關節痛、發燒、蕁麻疹）。給予前可先 diphenhydramine premedication，IV 輸注速度由慢到快，準備好 epinephrine 備用。儘管有過敏風險，嚴重蛇咬（凝血異常、進展性腫脹）仍應給予 antivenom，益處遠大於風險。',
     difficulty: 3, spaced_rep: true, tags: ['蛇咬', 'antivenom', '過敏'], image_placeholder: null,
   },
   {
@@ -1531,7 +1531,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '手術切除咬傷部位',
     ],
     correct_answer: 'Antivenom + IV 輸液 + FFP（若出血） + 止痛 + 傷口護理',
-    explanation: '嚴重蛇咬傷（進展性腫脹+凝血異常）治療：(1) Antivenom（台灣可使用出血性蛇毒血清）盡早給予——中和循環中毒液；(2) IV 輸液維持灌流；(3) 若有活動性出血可輸 FFP 暫時補充凝血因子；(4) 止痛（opioid 為主，避免 NSAIDs 因凝血異常）；(5) 傷口護理+適當抗生素（蛇口腔含菌）；(6) 連續監測凝血功能 48-72 小時。不建議預防性截肢或清創過度。',
+    explanation: '嚴重蛇咬傷（進展性腫脹+凝血異常）治療：(1) Antivenom（台灣可使用出血性蛇毒血清）盡早給予，中和循環中毒液；(2) IV 輸液維持灌流；(3) 若有活動性出血可輸 FFP 暫時補充凝血因子；(4) 止痛（opioid 為主，避免 NSAIDs 因凝血異常）；(5) 傷口護理+適當抗生素（蛇口腔含菌）；(6) 連續監測凝血功能 48-72 小時。不建議預防性截肢或清創過度。',
     difficulty: 4, spaced_rep: true, tags: ['蛇咬', 'antivenom', '治療計畫'], image_placeholder: null,
   },
   {
@@ -1577,7 +1577,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: 'ABCDE 評估中的 A（Airway）階段，最需要立即處理的狀況為？',
     options: ['輕微咳嗽', '上呼吸道完全阻塞', '流鼻水', '打噴嚏'],
     correct_answer: '上呼吸道完全阻塞',
-    explanation: 'Airway 評估確認呼吸道是否通暢。完全阻塞（異物、喉頭水腫、嚴重創傷）為最緊急狀況——數分鐘內可致死。處置：(1) 口腔檢查並移除可見異物；(2) 頭頸伸展維持氣道；(3) 必要時氣管插管；(4) 插管失敗則緊急氣管切開術。部分阻塞（stridor, stertor）也需密切監測，可能迅速惡化。',
+    explanation: 'Airway 評估確認呼吸道是否通暢。完全阻塞（異物、喉頭水腫、嚴重創傷）為最緊急狀況，數分鐘內可致死。處置：(1) 口腔檢查並移除可見異物；(2) 頭頸伸展維持氣道；(3) 必要時氣管插管；(4) 插管失敗則緊急氣管切開術。部分阻塞（stridor, stertor）也需密切監測，可能迅速惡化。',
     difficulty: 2, spaced_rep: true, tags: ['ABCDE', '呼吸道', '阻塞'], image_placeholder: null,
   },
   {
@@ -1619,10 +1619,10 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-ECC-ABCDE-006', node_id: 'ECC-L4-001', question_type: 'true_false',
-    question: 'ABCDE 評估應嚴格依序進行——在確認 A 正常前不處理 B，確認 B 正常前不處理 C。',
+    question: 'ABCDE 評估應嚴格依序進行，在確認 A 正常前不處理 B，確認 B 正常前不處理 C。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'ABCDE 的嚴格順序是核心原則：呼吸道阻塞不處理，再多的 breathing support 也無意義；沒有 breathing，circulation support 也不能提供氧氣。因此必須依序：A → B → C → D → E。但在團隊合作的急診環境中，不同團隊成員可以同步處理（如一人處理 airway，另一人建立 IV access 準備 circulation support），只要按優先順序分配資源。',
+    explanation: 'ABCDE 的嚴格順序是核心原則：呼吸道阻塞不處理，再多的 breathing support 也無意義；沒有 breathing，circulation support 也不能提供氧氣。所以必須依序：A → B → C → D → E。但在團隊合作的急診環境中，不同團隊成員可以同步處理（如一人處理 airway，另一人建立 IV access 準備 circulation support），只要按優先順序分配資源。',
     difficulty: 2, spaced_rep: true, tags: ['ABCDE', '順序', '原則'], image_placeholder: null,
   },
   {
@@ -1630,7 +1630,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: 'E（Exposure/Environment）評估中，最容易被忽略但臨床上很重要的項目為？',
     options: ['毛色', '體溫測量', '品種鑑定', '年齡估算'],
     correct_answer: '體溫測量',
-    explanation: 'E 階段進行全身性暴露檢查：(1) 體溫測量——低體溫（休克、環境暴露）或高體溫（中暑、癲癇後）對治療決策影響重大且常被忽略；(2) 全身仔細視觸診尋找隱藏傷口（如穿刺傷、骨折、腹部膨脹）；(3) 保溫措施（低體溫患畜需主動加溫）；(4) 疼痛評估。直腸溫度是 E 階段不可省略的檢查。',
+    explanation: 'E 階段進行全身性暴露檢查：(1) 體溫測量，低體溫（休克、環境暴露）或高體溫（中暑、癲癇後）對治療決策影響重大且常被忽略；(2) 全身仔細視觸診尋找隱藏傷口（如穿刺傷、骨折、腹部膨脹）；(3) 保溫措施（低體溫患畜需主動加溫）；(4) 疼痛評估。直腸溫度是 E 階段不可省略的檢查。',
     difficulty: 2, spaced_rep: true, tags: ['ABCDE', '體溫', '全身檢查'], image_placeholder: null,
   },
   {
@@ -1663,7 +1663,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: 'AFAST 中，腹腔游離液體最容易先蓄積的位置為？',
     options: ['脾腎間隙', '膀胱直腸窩/膀胱頂', '膈肝間隙', '肝腎間隙'],
     correct_answer: '膀胱直腸窩/膀胱頂',
-    explanation: '因重力效應，少量腹腔游離液體最先蓄積在最低處——側臥時為膀胱直腸窩（cysto-colic view）或膀胱周圍。AFAST 的敏感度隨液體量增加：> 10 mL/kg 時 AFAST 敏感度 > 90%。AFS（abdominal fluid score）0-4 分：每個視窗有游離液體計 1 分，分數越高液體越多。連續 AFAST 監測分數變化可評估內出血是否進展。',
+    explanation: '因重力效應，少量腹腔游離液體最先蓄積在最低處，側臥時為膀胱直腸窩（cysto-colic view）或膀胱周圍。AFAST 的敏感度隨液體量增加：> 10 mL/kg 時 AFAST 敏感度 > 90%。AFS（abdominal fluid score）0-4 分：每個視窗有游離液體計 1 分，分數越高液體越多。連續 AFAST 監測分數變化可評估內出血是否進展。',
     difficulty: 3, spaced_rep: true, tags: ['AFAST', '游離液體', '蓄積'], image_placeholder: null,
   },
   {
@@ -1684,7 +1684,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '輸液過量',
     ],
     correct_answer: '進行性腹腔內出血，可能需要緊急手術探查',
-    explanation: '連續 AFAST 分數增加 + PCV 下降 = 進行性腹腔內出血的客觀證據。可能來源：脾臟/肝臟撕裂、大血管損傷、腎臟損傷。若液體復甦後 PCV 持續下降且腹腔積液持續增加，提示需要手術介入止血。AFAST 的連續監測（serial monitoring）比單次檢查更有價值——趨勢比單一數字重要。腹水 PCV 可與周邊 PCV 比較以確認出血性。',
+    explanation: '連續 AFAST 分數增加 + PCV 下降 = 進行性腹腔內出血的客觀證據。可能來源：脾臟/肝臟撕裂、大血管損傷、腎臟損傷。若液體復甦後 PCV 持續下降且腹腔積液持續增加，提示需要手術介入止血。AFAST 的連續監測（serial monitoring）比單次檢查更有價值，趨勢比單一數字重要。腹水 PCV 可與周邊 PCV 比較以確認出血性。',
     difficulty: 4, spaced_rep: true, tags: ['AFAST', '腹腔出血', '連續監測'], image_placeholder: null,
   },
   {
@@ -1697,7 +1697,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '氣胸；胸管引流',
     ],
     correct_answer: '心包積液合併心包膜填塞；心包膜穿刺',
-    explanation: '心臟周圍無回音區（pericardial effusion）+ Beck\'s triad（低血壓/脈搏微弱 + 頸靜脈怒張 + 心音減弱）= 心包膜填塞。FAST 在膈肝間隙（DH view）可以同時觀察心臟與腹腔。心包積液壓迫心臟限制舒張期充盈 → 心輸出量降低 → 阻塞性休克。緊急心包膜穿刺（pericardiocentesis）可能救命——即使引流少量液體也能顯著改善血流動力學。',
+    explanation: '心臟周圍無回音區（pericardial effusion）+ Beck\'s triad（低血壓/脈搏微弱 + 頸靜脈怒張 + 心音減弱）= 心包膜填塞。FAST 在膈肝間隙（DH view）可以同時觀察心臟與腹腔。心包積液壓迫心臟限制舒張期充盈 → 心輸出量降低 → 阻塞性休克。緊急心包膜穿刺（pericardiocentesis）可能救命，即使引流少量液體也能明顯改善血流動力學。',
     difficulty: 4, spaced_rep: true, tags: ['AFAST', '心包積液', '填塞', '穿刺'], image_placeholder: null,
   },
   {
@@ -1733,7 +1733,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '貓的液體復甦需較犬謹慎的主要原因為？',
     options: ['貓的血管較小', '貓比犬更容易發生液體過負荷與肺水腫', '貓不需要液體治療', '貓的腎功能更好'],
     correct_answer: '貓比犬更容易發生液體過負荷與肺水腫',
-    explanation: '貓比犬更容易液體過負荷的原因：(1) 心臟容積相對較小；(2) 潛在的心肌病（HCM）盛行率高（可能未診斷）；(3) 肺微血管通透性對容積過荷更敏感。因此貓的休克量較低（40-60 vs 60-90 mL/kg），bolus 量更保守（10-15 mL/kg increments），輸液速率需頻繁評估（呼吸速率是最敏感的過負荷指標）。',
+    explanation: '貓比犬更容易液體過負荷的原因：(1) 心臟容積相對較小；(2) 潛在的心肌病（HCM）盛行率高（可能未診斷）；(3) 肺微血管通透性對容積過荷更敏感。所以貓的休克量較低（40-60 vs 60-90 mL/kg），bolus 量更保守（10-15 mL/kg increments），輸液速率需頻繁評估（呼吸速率是最敏感的過負荷指標）。',
     difficulty: 3, spaced_rep: true, tags: ['輸液', '貓', '過負荷'], image_placeholder: null,
   },
   {
@@ -1805,7 +1805,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '每 30 秒給一次大量通氣',
     ],
     correct_answer: '氣管插管後每 6 秒給一次通氣（10 次/分），按壓不中斷',
-    explanation: 'RECOVER 指引建議：氣管插管後，胸外按壓不中斷（continuous compressions），同時每 6 秒給一次通氣（10 breaths/min），潮氣量 10 mL/kg。若未插管，按壓:通氣比為 30:2。過度通氣會增加胸腔內壓，減少靜脈回流，降低冠狀動脈灌流——是 CPR 常見錯誤。ETCO2 監測通氣效果。',
+    explanation: 'RECOVER 指引建議：氣管插管後，胸外按壓不中斷（continuous compressions），同時每 6 秒給一次通氣（10 breaths/min），潮氣量 10 mL/kg。若未插管，按壓:通氣比為 30:2。過度通氣會增加胸腔內壓，減少靜脈回流，降低冠狀動脈灌流，是 CPR 常見錯誤。ETCO2 監測通氣效果。',
     difficulty: 3, spaced_rep: true, tags: ['CPR', 'RECOVER', '通氣'], image_placeholder: null,
   },
   {
@@ -1942,7 +1942,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '犬全血在室溫下保存超過 8 小時後，血小板功能幾乎完全喪失。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '血小板在室溫下保存約 6-8 小時後功能即顯著下降。新鮮全血（< 8 小時）含有功能性血小板、所有凝血因子（包含 labile factors V, VIII）、紅血球。儲存全血（> 8 小時，4°C 保存，最多 28-35 天）仍有紅血球但無功能性血小板且 labile factors 活性下降。需要血小板時應使用新鮮全血或濃縮血小板（cryopreserved or platelet-rich plasma）。',
+    explanation: '血小板在室溫下保存約 6-8 小時後功能即明顯下降。新鮮全血（< 8 小時）含有功能性血小板、所有凝血因子（包含 labile factors V, VIII）、紅血球。儲存全血（> 8 小時，4°C 保存，最多 28-35 天）仍有紅血球但無功能性血小板且 labile factors 活性下降。需要血小板時應使用新鮮全血或濃縮血小板（cryopreserved or platelet-rich plasma）。',
     difficulty: 3, spaced_rep: true, tags: ['輸血', '血小板', '保存'], image_placeholder: null,
   },
   {
@@ -2019,7 +2019,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '僅 tramadol PO',
     ],
     correct_answer: 'Fentanyl CRI + low-dose ketamine CRI（避免 NSAID）',
-    explanation: '胰臟炎疼痛嚴重需要強效止痛。但此犬有氮血症（腎功能不全），NSAIDs 絕對禁忌（進一步腎損傷風險）。最佳方案：(1) Fentanyl CRI 3-5 ug/kg/hr（可快速調整）；(2) Low-dose ketamine CRI 0.1-0.5 mg/kg/hr（NMDA antagonist 輔助止痛，減少 opioid 需求）；(3) Lidocaine CRI 可考慮加入（但需排除心律不整）。口服 tramadol 對嚴重疼痛效果不足。',
+    explanation: '胰臟炎疼痛嚴重需要強效止痛。但此犬有氮血症（腎功能不全），NSAIDs 絕對禁忌（後續腎損傷風險）。最佳方案：(1) Fentanyl CRI 3-5 ug/kg/hr（可快速調整）；(2) Low-dose ketamine CRI 0.1-0.5 mg/kg/hr（NMDA antagonist 輔助止痛，減少 opioid 需求）；(3) Lidocaine CRI 可考慮加入（但需排除心律不整）。口服 tramadol 對嚴重疼痛效果不足。',
     difficulty: 4, spaced_rep: true, tags: ['止痛', '胰臟炎', 'CRI', '腎臟'], image_placeholder: null,
   },
   {
@@ -2032,7 +2032,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '增加 morphine 劑量',
     ],
     correct_answer: '減少 morphine CRI 速率 50% + 如果持續可給予低劑量 naloxone titrate',
-    explanation: '呼吸速率 6 次/分代表 opioid-induced 呼吸抑制。但犬可喚醒（非深度昏迷），處理：(1) 先減少 CRI 速率 50%（或暫停）；(2) 若呼吸速率未改善或 SpO2 下降，低劑量 naloxone titrate（0.001-0.005 mg/kg IV increments）——目標是僅逆轉呼吸抑制而保留止痛效果；(3) 給氧支持；(4) 恢復後以更低速率重啟 CRI。全劑量 naloxone 會完全逆轉止痛造成劇痛。',
+    explanation: '呼吸速率 6 次/分代表 opioid-induced 呼吸抑制。但犬可喚醒（非深度昏迷），處理：(1) 先減少 CRI 速率 50%（或暫停）；(2) 若呼吸速率未改善或 SpO2 下降，低劑量 naloxone titrate（0.001-0.005 mg/kg IV increments），目標是僅逆轉呼吸抑制而保留止痛效果；(3) 給氧支持；(4) 恢復後以更低速率重啟 CRI。全劑量 naloxone 會完全逆轉止痛造成劇痛。',
     difficulty: 4, spaced_rep: true, tags: ['止痛', 'opioid', '呼吸抑制', 'naloxone'], image_placeholder: null,
   },
   {
@@ -2083,7 +2083,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       'RER = 體重(kg) × 50',
     ],
     correct_answer: 'RER = 70 × [體重(kg)]^0.75',
-    explanation: 'RER = 70 × BW(kg)^0.75 kcal/day（適用所有體重）。簡化公式：RER = 30 × BW + 70（適用 2-30 kg）。重症患畜通常以 RER（而非 MER/DER）作為目標——過去使用的 illness energy factor（× 1.5-2.0）已不建議（overfeeding 增加併發症）。開始時可給 50% RER，24-48 小時內逐漸增加至 100% RER。',
+    explanation: 'RER = 70 × BW(kg)^0.75 kcal/day（適用所有體重）。簡化公式：RER = 30 × BW + 70（適用 2-30 kg）。重症患畜通常以 RER（而非 MER/DER）作為目標，過去使用的 illness energy factor（× 1.5-2.0）已不建議（overfeeding 增加併發症）。開始時可給 50% RER，24-48 小時內逐漸增加至 100% RER。',
     difficulty: 2, spaced_rep: true, tags: ['營養', 'RER', '計算'], image_placeholder: null,
   },
   {
@@ -2091,11 +2091,11 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '貓因疾病厭食超過 3-5 天後開始再餵食時，最需要監測的嚴重併發症為？',
     options: [
       '高血糖',
-      '再餵食症候群（refeeding syndrome）——低磷、低鉀、低鎂血症',
+      '再餵食症候群（refeeding syndrome），低磷、低鉀、低鎂血症',
       '高蛋白血症',
       '便秘',
     ],
-    correct_answer: '再餵食症候群（refeeding syndrome）——低磷、低鉀、低鎂血症',
+    correct_answer: '再餵食症候群（refeeding syndrome），低磷、低鉀、低鎂血症',
     explanation: '長期禁食後再餵食時，insulin 分泌增加驅動 glucose 進入細胞，同時帶動 phosphorus、potassium、magnesium 進入細胞內，導致血漿濃度急降。低磷血症最危險（< 1.5 mg/dL 可致溶血、呼吸衰竭、心衰竭）。預防：(1) 緩慢增加餵食量（第一天 25% RER → 逐日增加）；(2) 再餵食前先矯正電解質；(3) 每 12 小時監測 phosphorus, K+, Mg2+ 前 72 小時。貓肝脂肪沉積症後尤其高風險。',
     difficulty: 4, spaced_rep: true, tags: ['營養', 'refeeding', '低磷'], image_placeholder: null,
   },
@@ -2257,7 +2257,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: 'TFAST（Thoracic Focused Assessment with Sonography for Trauma）中，正常肺滑動徵（lung sliding sign / glide sign）的消失高度提示該側存在氣胸。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '正常情況下，TFAST 可見臟層胸膜與壁層胸膜間的相對滑動（lung sliding / glide sign）。當氣胸發生時，氣體將兩層胸膜分隔，導致 lung sliding 消失。在 M-mode 下，正常肺表現為「seashore sign（海岸線徵）」，氣胸則呈現「barcode sign / stratosphere sign（條碼徵）」。TFAST 診斷氣胸的敏感度（> 95%）優於仰臥位 X 光。此外，lung point（滑動與非滑動的交界點）可幫助估計氣胸範圍。',
+    explanation: '正常情況下，TFAST 可見臟層胸膜與壁層胸膜間的相對滑動（lung sliding / glide sign）。當氣胸發生時，氣體將兩層胸膜分隔，導致 lung sliding 消失。在 M-mode 下，正常肺表現為「seashore sign（海岸線徵）」，氣胸則呈現「barcode sign / stratosphere sign（條碼徵）」。TFAST 診斷氣胸的敏感度（> 95%）優於仰臥位 X 光。另外，lung point（滑動與非滑動的交界點）可幫助估計氣胸範圍。',
     difficulty: 3, spaced_rep: true, tags: ['TFAST', '氣胸', '超音波', 'lung sliding'], image_placeholder: null,
   },
   {
@@ -2308,7 +2308,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '僅加用 Dexamethasone 抗炎',
     ],
     correct_answer: '開始 Norepinephrine CRI 0.1-0.5 μg/kg/min',
-    explanation: '該犬呈現典型 hyperdynamic 敗血性休克：高動力循環（磚紅色黏膜、CRT < 1 秒）但 MAP < 65 mmHg（液體無反應性低血壓），乳酸顯著升高。液體復甦 30 mL/kg 後仍低血壓 = 液體無反應（fluid-unresponsive），需開始升壓藥。Norepinephrine（NE）為敗血性休克的首選升壓藥（強 α-1 + 中等 β-1），目標 MAP ≥ 65 mmHg。低劑量 dopamine 已不推薦。類固醇僅用於升壓藥無法維持血壓時（refractory septic shock）。',
+    explanation: '該犬呈現典型 hyperdynamic 敗血性休克：高動力循環（磚紅色黏膜、CRT < 1 秒）但 MAP < 65 mmHg（液體無反應性低血壓），乳酸明顯升高。液體復甦 30 mL/kg 後仍低血壓 = 液體無反應（fluid-unresponsive），需開始升壓藥。Norepinephrine（NE）為敗血性休克的首選升壓藥（強 α-1 + 中等 β-1），目標 MAP ≥ 65 mmHg。低劑量 dopamine 已不推薦。類固醇僅用於升壓藥無法維持血壓時（refractory septic shock）。',
     difficulty: 4, spaced_rep: true, tags: ['敗血症', '敗血性休克', 'Norepinephrine', '升壓藥'], image_placeholder: null,
   },
 
@@ -2333,7 +2333,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '動物創傷分診評分（Animal Trauma Triage score, ATT score）涵蓋 6 個身體系統的評估，每項 0-3 分，總分越高代表預後越差。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'ATT score（Animal Trauma Triage score）由 Rockar 等人（1994）提出，評估 6 個身體系統：灌流（perfusion）、心臟（cardiac）、呼吸（respiratory）、眼/肌肉/外皮（eye/muscle/integument）、骨骼（skeletal）、神經（neurologic）。每項 0（正常）至 3（嚴重），總分 0-18。ATT score ≥ 5 的犬死亡率顯著增加，≥ 8 則極高。此評分系統有助於快速評估創傷嚴重度、分配資源與預後溝通。',
+    explanation: 'ATT score（Animal Trauma Triage score）由 Rockar 等人（1994）提出，評估 6 個身體系統：灌流（perfusion）、心臟（cardiac）、呼吸（respiratory）、眼/肌肉/外皮（eye/muscle/integument）、骨骼（skeletal）、神經（neurologic）。每項 0（正常）至 3（嚴重），總分 0-18。ATT score ≥ 5 的犬死亡率明顯增加，≥ 8 則極高。此評分系統有助於快速評估創傷嚴重度、分配資源與預後溝通。',
     difficulty: 3, spaced_rep: true, tags: ['創傷', 'ATT score', '分診', '預後'], image_placeholder: null,
   },
   {
@@ -2346,7 +2346,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '先處理脊椎問題 → 再處理呼吸與循環',
     ],
     correct_answer: '止血 + 液體復甦 → 胸腔穿刺評估 → 神經評估 → 骨折暫時固定',
-    explanation: 'Damage control resuscitation（DCR）原則：先處理致命威脅，延後確定性治療。(1) C 最先處理：開放性骨折出血直接加壓止血 + 快速輸液復甦（permissive hypotension）；(2) B：右側肺音減弱提示可能氣胸或血胸，TFAST 評估後可能需胸腔穿刺；(3) D：後肢無感覺提示脊椎損傷，穩定後再進一步評估；(4) 開放性骨折暫時固定（Robert Jones 繃帶），確定性手術待全身穩定後。不應在不穩定的病患上進行冗長的影像學檢查。',
+    explanation: 'Damage control resuscitation（DCR）原則：先處理致命威脅，延後確定性治療。(1) C 最先處理：開放性骨折出血直接加壓止血 + 快速輸液復甦（permissive hypotension）；(2) B：右側肺音減弱提示可能氣胸或血胸，TFAST 評估後可能需胸腔穿刺；(3) D：後肢無感覺提示脊椎損傷，穩定後再後續評估；(4) 開放性骨折暫時固定（Robert Jones 繃帶），確定性手術待全身穩定後。不應在不穩定的病患上進行冗長的影像學檢查。',
     difficulty: 4, spaced_rep: true, tags: ['多發性創傷', 'damage control', 'ABCDE', '病例推理'], image_placeholder: null,
   },
 
@@ -2422,7 +2422,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '增加呼吸頻率至 30 bpm',
     ],
     correct_answer: '增加 PEEP 至 8-10 cmH₂O',
-    explanation: '此犬的主要問題是低血氧（PaO₂ 55 mmHg，目標 > 80）而 PaCO₂ 正常（38 mmHg），代表氧合問題而非通氣問題。在 FiO₂ 已高達 80% 的情況下，進一步提高 FiO₂ 效益有限且增加氧中毒風險。增加 PEEP（5→8-10 cmH₂O）可打開更多塌陷肺泡、改善 V/Q 配對、降低肺內分流，有效改善氧合並可能讓後續降低 FiO₂。增加 VT 至 15 mL/kg 過高可致肺損傷（lung-protective ventilation 建議 VT 6-10 mL/kg）。增加 RR 主要改善 PaCO₂，對氧合幫助有限。',
+    explanation: '此犬的主要問題是低血氧（PaO₂ 55 mmHg，目標 > 80）而 PaCO₂ 正常（38 mmHg），代表氧合問題而非通氣問題。在 FiO₂ 已高達 80% 的情況下，後續提高 FiO₂ 效益有限且增加氧中毒風險。增加 PEEP（5→8-10 cmH₂O）可打開更多塌陷肺泡、改善 V/Q 配對、降低肺內分流，有效改善氧合並可能讓後續降低 FiO₂。增加 VT 至 15 mL/kg 過高可致肺損傷（lung-protective ventilation 建議 VT 6-10 mL/kg）。增加 RR 主要改善 PaCO₂，對氧合幫助有限。',
     difficulty: 5, spaced_rep: true, tags: ['機械通氣', 'PEEP', '呼吸器調整', '血氣判讀'], image_placeholder: null,
   },
 
@@ -2463,7 +2463,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       'AFAST AFS score = 1（單一象限少量積液）',
     ],
     correct_answer: '腹腔穿刺液中可見退化嗜中性球吞噬細菌',
-    explanation: '腹腔穿刺液中見退化嗜中性球（degenerate neutrophils）吞噬細菌（intracellular bacteria）= 敗血性腹膜炎的確診。敗血性腹膜炎需 6 小時內手術探查，延遲 > 12 小時死亡率顯著上升。急性胰臟炎為內科腹部，以支持治療為主（除非併發膿瘍需引流）。少量腹腔積液和 AFS score = 1 需追蹤但不一定立即手術。',
+    explanation: '腹腔穿刺液中見退化嗜中性球（degenerate neutrophils）吞噬細菌（intracellular bacteria）= 敗血性腹膜炎的確診。敗血性腹膜炎需 6 小時內手術探查，延遲 > 12 小時死亡率明顯上升。急性胰臟炎為內科腹部，以支持治療為主（除非併發膿瘍需引流）。少量腹腔積液和 AFS score = 1 需追蹤但不一定立即手術。',
     difficulty: 4, spaced_rep: true, tags: ['敗血性腹膜炎', '手術決策', '細胞學'], image_placeholder: null,
   },
   {
@@ -2476,7 +2476,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '腹腔液膽紅素 > 血液膽紅素',
     ],
     correct_answer: '腹腔液 Creatinine > 血液 Creatinine 2 倍以上',
-    explanation: '尿腹（uroabdomen）的診斷性指標：腹腔液 Creatinine 為血液 Creatinine 的 2 倍以上（最常用）。此外，腹腔液 Potassium 通常升高（尿液含高鉀，洩漏至腹腔）。葡萄糖降低和乳酸升高為敗血性腹膜炎指標。膽紅素差值（腹腔液 > 血液）為膽汁性腹膜炎的指標。尿腹最常見原因：犬為創傷致膀胱破裂，貓為尿道阻塞後膀胱壞死破裂。',
+    explanation: '尿腹（uroabdomen）的診斷性指標：腹腔液 Creatinine 為血液 Creatinine 的 2 倍以上（最常用）。另外，腹腔液 Potassium 通常升高（尿液含高鉀，洩漏至腹腔）。葡萄糖降低和乳酸升高為敗血性腹膜炎指標。膽紅素差值（腹腔液 > 血液）為膽汁性腹膜炎的指標。尿腹最常見原因：犬為創傷致膀胱破裂，貓為尿道阻塞後膀胱壞死破裂。',
     difficulty: 4, spaced_rep: true, tags: ['尿腹', 'Creatinine', '腹腔液', '診斷'], image_placeholder: null,
   },
   {
@@ -2510,19 +2510,19 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '僅給予抗生素和止痛藥，不需手術',
     ],
     correct_answer: '積極液體復甦 + 廣效抗生素 + 6 小時內手術探查',
-    explanation: '此病例為典型敗血性腹膜炎：(1) 混濁黃綠色腹腔液 + WBC > 20,000（退化嗜中性球為主）+ intracellular bacteria = 確診敗血性腹膜炎。(2) 葡萄糖差值 75 mg/dL（>> 20 mg/dL 閾值）進一步支持診斷。(3) 敗血性腹膜炎的黃金治療原則：積極液體復甦（crystalloid shock dose）+ 廣效抗生素（Ampicillin-Sulbactam + Metronidazole 覆蓋革蘭氏陰性 + 厭氧菌）+ 6 小時內手術探查修復病灶 + 腹腔灌洗。等待「更多檢查」或「觀察」會延誤手術時機，> 12 小時死亡率大幅上升。術中找到病因（最常見為腸穿孔）並修復。',
+    explanation: '此病例為典型敗血性腹膜炎：(1) 混濁黃綠色腹腔液 + WBC > 20,000（退化嗜中性球為主）+ intracellular bacteria = 確診敗血性腹膜炎。(2) 葡萄糖差值 75 mg/dL（>> 20 mg/dL 閾值）後續支持診斷。(3) 敗血性腹膜炎的黃金治療原則：積極液體復甦（crystalloid shock dose）+ 廣效抗生素（Ampicillin-Sulbactam + Metronidazole 覆蓋革蘭氏陰性 + 厭氧菌）+ 6 小時內手術探查修復病灶 + 腹腔灌洗。等待「更多檢查」或「觀察」會延誤手術時機，> 12 小時死亡率大幅上升。術中找到病因（最常見為腸穿孔）並修復。',
     difficulty: 5, spaced_rep: true, tags: ['敗血性腹膜炎', '手術決策', '急診處置', '病例'], image_placeholder: null,
   },
   {
     id: 'Q-ECC-ACUTE-008', node_id: 'ECC-L3-014', question_type: 'case_based',
     question: '一隻 2 歲公貓，因尿道阻塞經導尿後住院。住院第 2 天發現腹部膨脹、精神沉鬱。AFAST 見大量腹腔積液。腹腔穿刺液：淡黃色透明、無細菌、腹腔液 Creatinine 850 μmol/L（血液 Creatinine 380 μmol/L）、腹腔液 K⁺ 7.8 mmol/L。最可能的診斷與首要處置為何？',
     options: [
-      '敗血性腹膜炎 — 立即手術',
-      '尿腹（膀胱破裂）— 先穩定高血鉀（Calcium gluconate + insulin/dextrose）再手術修復',
-      '腹腔出血 — 輸血',
-      '急性胰臟炎 — 內科治療',
+      '敗血性腹膜炎，立即手術',
+      '尿腹（膀胱破裂）， 先穩定高血鉀（Calcium gluconate + insulin/dextrose）再手術修復',
+      '腹腔出血，輸血',
+      '急性胰臟炎，內科治療',
     ],
-    correct_answer: '尿腹（膀胱破裂）— 先穩定高血鉀（Calcium gluconate + insulin/dextrose）再手術修復',
+    correct_answer: '尿腹（膀胱破裂）， 先穩定高血鉀（Calcium gluconate + insulin/dextrose）再手術修復',
     explanation: '此病例為尿腹（uroabdomen）：(1) 尿道阻塞導尿後發生膀胱破裂（阻塞期間膀胱壁缺血壞死）。(2) 腹腔液 Creatinine 850（血液 380）= 比值 2.2 倍，確診尿腹。(3) 腹腔液 K⁺ 7.8 mmol/L = 嚴重高鉀血症，有心律不整風險。首要處置：(1) 10% Calcium gluconate 0.5-1.5 mL/kg IV slow（保護心肌）。(2) Regular insulin 0.5 U/kg IV + Dextrose 2 g/U insulin（將 K⁺ 移入細胞內）。(3) 腹腔引流（暫時降低腹腔壓力與 K⁺ 吸收）。(4) 穩定後手術修復膀胱。不是敗血性腹膜炎（無細菌、液體清澈）。',
     difficulty: 5, spaced_rep: true, tags: ['尿腹', '膀胱破裂', '高鉀血症', '貓', '病例'], image_placeholder: null,
   },
@@ -2578,7 +2578,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '建議手術探查胰臟',
     ],
     correct_answer: '教育飼主每 4-6 小時高蛋白小餐餵食，避免長時間禁食',
-    explanation: '此為典型 Toy breed 幼犬低血糖：(1) 3 月齡 Chihuahua = 最高風險群。(2) 血糖 28 mg/dL = 嚴重低血糖。(3) 急性處理後，最重要的長期管理是飼主教育——每 4-6 小時餵食高蛋白質小餐，避免長時間禁食（包括夜間）。這不是 insulinoma（3 個月大、toy breed = 進食不足型低血糖）。隨年齡增長，肝醣儲存和糖質新生能力成熟後風險自然下降。不需 Diazoxide 或手術。',
+    explanation: '此為典型 Toy breed 幼犬低血糖：(1) 3 月齡 Chihuahua = 最高風險群。(2) 血糖 28 mg/dL = 嚴重低血糖。(3) 急性處理後，最重要的長期管理是飼主教育，每 4-6 小時餵食高蛋白質小餐，避免長時間禁食（包括夜間）。這不是 insulinoma（3 個月大、toy breed = 進食不足型低血糖）。隨年齡增長，肝醣儲存和糖質新生能力成熟後風險自然下降。不需 Diazoxide 或手術。',
     difficulty: 3, spaced_rep: true, tags: ['toy breed', '幼犬', '低血糖', '飼主教育', '病例'], image_placeholder: null,
   },
 
@@ -2630,7 +2630,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '所有 Addison\'s disease 犬隻都會呈現低鈉高鉀的典型電解質異常。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '錯誤。約 10-30% 的 Addison 犬為「atypical」型，僅有 cortisol 缺乏（糖皮質素不足）而 aldosterone 功能正常或部分保留，因此電解質可以正常。這些 atypical 病例更容易漏診，常被誤診為慢性胃腸炎或其他非特異性疾病。建議對反覆就診的年輕犬做 baseline cortisol 篩檢。部分 atypical 型日後可能進展為 typical 型。',
+    explanation: '錯誤。約 10-30% 的 Addison 犬為「atypical」型，僅有 cortisol 缺乏（糖皮質素不足）而 aldosterone 功能正常或部分保留，所以電解質可以正常。這些 atypical 病例更容易漏診，常被誤診為慢性胃腸炎或其他非特異性疾病。建議對反覆就診的年輕犬做 baseline cortisol 篩檢。部分 atypical 型日後可能進展為 typical 型。',
     difficulty: 3, spaced_rep: true, tags: ['Addison', 'atypical', '電解質'], image_placeholder: null,
   },
   {
@@ -2666,7 +2666,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       'AB 型是最常見的貓血型',
     ],
     correct_answer: 'B 型貓有天然高效價 anti-A 抗體，首次輸 A 型血即可致命',
-    explanation: 'B 型貓天生具有高效價 anti-A 同種抗體（alloantibodies），與犬不同，不需經過致敏過程。B 型貓首次輸入 A 型血即可發生致命性急性溶血反應（RBC 在數分鐘內被破壞）。A 型貓有低效價 anti-B 抗體（輕度溶血）。因此，貓的每次輸血前必須做血型鑑定和交叉配血。',
+    explanation: 'B 型貓天生具有高效價 anti-A 同種抗體（alloantibodies），與犬不同，不需經過致敏過程。B 型貓首次輸入 A 型血即可發生致命性急性溶血反應（RBC 在數分鐘內被破壞）。A 型貓有低效價 anti-B 抗體（輕度溶血）。所以，貓的每次輸血前必須做血型鑑定和交叉配血。',
     difficulty: 3, spaced_rep: true, tags: ['貓', '血型', 'anti-A'], image_placeholder: null,
   },
   {
@@ -2690,7 +2690,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
     question: '犬首次輸血不需要做交叉配血，因為犬對 DEA 1.1 沒有天然抗體。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '正確。犬對 DEA 1.1 確實沒有天然抗體，因此首次輸血通常不會發生急性溶血反應，技術上可以不做交叉配血。但建議至少做 DEA 1.1 血型鑑定以建立記錄，因為 DEA 1.1 陰性犬在接受 DEA 1.1 陽性血後會致敏，第二次以後就必須做交叉配血。貓則不同——因 B 型貓有天然 anti-A 抗體，每次輸血前都必須做血型鑑定和交叉配血。',
+    explanation: '正確。犬對 DEA 1.1 確實沒有天然抗體，所以首次輸血通常不會發生急性溶血反應，技術上可以不做交叉配血。但建議至少做 DEA 1.1 血型鑑定以建立記錄，因為 DEA 1.1 陰性犬在接受 DEA 1.1 陽性血後會致敏，第二次以後就必須做交叉配血。貓則不同，因 B 型貓有天然 anti-A 抗體，每次輸血前都必須做血型鑑定和交叉配血。',
     difficulty: 3, spaced_rep: true, tags: ['犬', '交叉配血', 'DEA'], image_placeholder: null,
   },
   {
@@ -2703,7 +2703,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       '先少量輸注 1 mL 觀察 15 分鐘，無反應就繼續',
     ],
     correct_answer: '盡一切努力取得血型試劑（轉診或外送）再輸血，同時用晶體液和 Oxyglobin 穩定',
-    explanation: '英國短毛貓是 B 型血比例最高的品種之一（可達 25%）。B 型貓首次輸入 A 型血即可致命。在不知道血型的情況下「盲目輸血」風險極大。最適當的做法：(1) 用晶體液維持血容量。(2) 氧氣支持。(3) 如有 Oxyglobin（血紅蛋白基攜氧液）可作為暫時性氧合橋接。(4) 緊急聯繫可做血型的醫院取得試劑或將貓轉診。(5) 「先少量試」的做法在貓是危險的——B 型貓即使少量 A 型血也可致嚴重反應。',
+    explanation: '英國短毛貓是 B 型血比例最高的品種之一（可達 25%）。B 型貓首次輸入 A 型血即可致命。在不知道血型的情況下「盲目輸血」風險極大。最適當的做法：(1) 用晶體液維持血容量。(2) 氧氣支持。(3) 如有 Oxyglobin（血紅蛋白基攜氧液）可作為暫時性氧合橋接。(4) 緊急聯繫可做血型的醫院取得試劑或將貓轉診。(5) 「先少量試」的做法在貓是危險的，B 型貓即使少量 A 型血也可致嚴重反應。',
     difficulty: 5, spaced_rep: true, tags: ['貓', '輸血', '英短', '血型', '病例'], image_placeholder: null,
   },
   // Fill-in-the-blank questions

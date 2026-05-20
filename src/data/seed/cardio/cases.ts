@@ -19,7 +19,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集',
-        prompt: '你需要進一步詢問哪些問題？請選擇最重要的 3 項。',
+        prompt: '你需要後續詢問哪些問題？請選擇最重要的 3 項。',
         available_actions: [
           '詢問咳嗽的時間型態（白天 vs 夜間、活動後 vs 休息時）',
           '詢問是否有暈厥或虛脫',
@@ -33,8 +33,8 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '詢問目前使用的藥物',
           '詢問居家 sleeping RR 趨勢',
         ],
-        feedback_correct: '很好！咳嗽型態有助於區分心因性 vs 呼吸道咳嗽，藥物史對治療決策至關重要，sleeping RR 趨勢是監測 CHF 最敏感的居家指標。',
-        feedback_incorrect: '心因性咳嗽通常在夜間或休息時加劇。了解用藥史對於決定治療方案至關重要。Sleeping RR 是 CHF 最敏感的居家監測指標，應優先詢問。',
+        feedback_correct: '很好！咳嗽型態有助於區分心因性 vs 呼吸道咳嗽，藥物史對治療決策不能省，sleeping RR 趨勢是監測 CHF 最敏感的居家指標。',
+        feedback_incorrect: '心因性咳嗽通常在夜間或休息時加劇。了解用藥史對於決定治療方案不能省。Sleeping RR 是 CHF 最敏感的居家監測指標，應優先詢問。',
         key_learning_points: [
           'MMVD 咳嗽可源自左主支氣管壓迫（乾咳）或肺水腫（濕咳）',
           'Sleeping RR > 30 次/分高度提示 CHF 發生或惡化',
@@ -216,7 +216,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
     id: 'CASE-CARDIO-002', title: '杜賓犬隱匿期擴張型心肌病篩檢', specialty: 'CARDIO', cross_specialties: ['CPATH'], required_nodes: ['CARDIO-L3-002', 'CARDIO-L4-002', 'CARDIO-L4-003', 'CARDIO-L2-002'], difficulty: 4, species: '犬',
     scenario: { signalment: '5 歲已絕育雄性杜賓犬，體重 38 kg', chief_complaint: '飼主帶來進行品種好發疾病篩檢，目前無明顯臨床症狀', brief_history: '飼主知道杜賓犬是 DCM 好發品種。犬隻活力食慾正常。父系 7 歲猝死（DCM），同胎一隻 4 歲診斷 DCM。飼餵含穀物成犬乾糧。' },
     steps: [
-      { step_number: 1, step_type: 'history_collection', title: '病史採集與風險評估', prompt: '面對杜賓犬 DCM 篩檢，選擇最重要的 3 項詢問。', available_actions: ['詢問家族心臟病或猝死史', '詢問運動時喘息或落後', '詢問飲食是否為 grain-free diet', '詢問體重變化', '詢問暈厥或虛脫', '詢問疫苗品牌'], correct_actions: ['詢問家族心臟病或猝死史', '詢問暈厥或虛脫', '詢問飲食是否為 grain-free diet'], feedback_correct: '很好！杜賓 DCM 有強烈遺傳性。暈厥可能是心室心律不整的唯一表現。Grain-free diet 相關 DCM 是重要議題。', feedback_incorrect: '杜賓 DCM 有明確遺傳基礎，家族史極重要。隱匿期最危險的表現是心律不整導致的暈厥。Grain-free diet 與 DCM 的關聯性不容忽視。', key_learning_points: ['杜賓犬 DCM 盛行率約 45-58%', '隱匿期可無症狀但心律不整可導致猝死', 'Grain-free/BEG diet 相關 DCM 是近年重要鑑別'] },
+      { step_number: 1, step_type: 'history_collection', title: '病史採集與風險評估', prompt: '面對杜賓犬 DCM 篩檢，選擇最重要的 3 項詢問。', available_actions: ['詢問家族心臟病或猝死史', '詢問運動時喘息或落後', '詢問飲食是否為 grain-free diet', '詢問體重變化', '詢問暈厥或虛脫', '詢問疫苗品牌'], correct_actions: ['詢問家族心臟病或猝死史', '詢問暈厥或虛脫', '詢問飲食是否為 grain-free diet'], feedback_correct: '很好！杜賓 DCM 有強烈遺傳性。暈厥可能是心室心律不整的唯一表現。Grain-free diet 相關 DCM 是重要議題。', feedback_incorrect: '杜賓 DCM 有明確遺傳基礎，家族史極重要。隱匿期最危險的表現是心律不整導致的暈厥。Grain-free diet 跟 DCM 的關聯這幾年越來越被重視。', key_learning_points: ['杜賓犬 DCM 盛行率約 45-58%', '隱匿期可無症狀但心律不整可導致猝死', 'Grain-free/BEG diet 相關 DCM 是近年重要鑑別'] },
       { step_number: 2, step_type: 'physical_examination', title: '理學檢查', prompt: '理學檢查發現為何？', available_actions: ['左心尖 Grade I/VI 收縮期雜音', '未聞明顯雜音，心音正常', '偶發心律不齊（premature beats）', '股動脈脈搏良好', '呼吸正常，肺部清晰', '體溫 38.5 度 BCS 5/9'], correct_actions: ['未聞明顯雜音，心音正常', '偶發心律不齊（premature beats）'], feedback_correct: '正確！隱匿期 DCM 理學檢查可能正常。間歇性 premature beats 是極重要線索。', feedback_incorrect: '隱匿期 DCM 理學檢查通常接近正常。心律不齊（VPCs）是最重要的臨床線索。', key_learning_points: ['隱匿期理學檢查可完全正常', 'VPCs 可能是唯一發現', '杜賓 DCM 分心律不整型與心肌功能障礙型'] },
       { step_number: 3, step_type: 'diagnostic_plan', title: '篩檢計畫', prompt: '篩檢檢查？選擇 3 項。', available_actions: ['24 小時 Holter', '心臟超音波', '靜態 ECG', 'cTnI', '胸腔 X 光', 'NT-proBNP'], correct_actions: ['24 小時 Holter', '心臟超音波', 'cTnI'], feedback_correct: '完美！Holter 是偵測心室心律不整金標準。心超評估心室功能。cTnI 可在心超異常前升高。', feedback_incorrect: '篩檢核心：Holter（靜態 ECG 敏感度不足）、心超、cTnI。', key_learning_points: ['Holter > 50 VPCs/24hr 為異常', '心超 LVIDDN > 1.73 為 DCM 標準', 'cTnI 可在心超異常前 1-2 年升高'] },
       { step_number: 4, step_type: 'result_interpretation', title: '結果判讀', prompt: 'Holter：320 VPCs + 3 段 VT。心超：LVIDDN 1.65、FS 28%、EF 42%。cTnI：0.15（正常 < 0.10）。如何解讀？', available_actions: ['隱匿期 DCM（心律不整型）', '完全正常', '明顯 DCM 需治療 CHF', '單純心律不整無關 DCM'], correct_actions: ['隱匿期 DCM（心律不整型）'], feedback_correct: '正確！320 VPCs 遠超閾值且有 VT。EF 偏低。cTnI 升高。符合隱匿期 DCM 心律不整型。', feedback_incorrect: '320 VPCs + VT = 明確心律不整。EF 偏低 + cTnI 升高 = 隱匿期 DCM。', key_learning_points: ['> 50 VPCs/24hr 或 LVIDDN > 1.73 即可診斷', 'VT runs 提示猝死風險', '兩型可重疊'] },
@@ -251,9 +251,9 @@ export const CARDIO_CASES: CaseChallenge[] = [
       { step_number: 1, step_type: 'physical_examination', title: '急診理學檢查', prompt: '選擇最重要的 3 項理學發現。', available_actions: ['心音減弱（muffled heart sounds）', '頸靜脈怒張（jugular distension）', '股動脈脈搏微弱、奇脈（pulsus paradoxus）', '腹部波動感（腹水）', '體溫 37.8 度（偏低）', '可視黏膜蒼白 CRT 3 秒'], correct_actions: ['心音減弱（muffled heart sounds）', '頸靜脈怒張（jugular distension）', '股動脈脈搏微弱、奇脈（pulsus paradoxus）'], feedback_correct: '正確！這是 Beck triad（心音減弱 + 頸靜脈怒張 + 低血壓/奇脈）的典型表現，高度提示心包膜填塞（cardiac tamponade）。', feedback_incorrect: 'Beck triad 是心包膜填塞的經典三徵：心音減弱、頸靜脈怒張、低血壓/奇脈。這是心臟急診必須辨識的重要徵象。', key_learning_points: ['Beck triad：心包膜填塞三徵', '奇脈 = 吸氣時收縮壓下降 > 10 mmHg', '心包膜積液 ≠ 心包膜填塞（填塞取決於速度與量）'] },
       { step_number: 2, step_type: 'diagnostic_plan', title: '急診影像', prompt: '最優先的檢查？', available_actions: ['TFAST（心臟超音波快速掃描）', '胸腔 X 光', '靜態 ECG', 'CBC + 生化', '心包膜液細胞學', '腹腔超音波'], correct_actions: ['TFAST（心臟超音波快速掃描）'], feedback_correct: '正確！TFAST 是確認心包膜積液最快速且敏感的方法。可同時評估右心房/心室舒張期塌陷（填塞的確認）。不應因拍 X 光延誤穿刺。', feedback_incorrect: '心包膜填塞是急診，TFAST 是最快確認方法。X 光可見圓球狀心影但無法確認填塞。ECG electrical alternans 是輔助但非必要。', key_learning_points: ['TFAST 確認心包膜積液敏感度接近 100%', '右心房舒張期塌陷 = 填塞的超音波徵象', '不要為了 X 光延誤心包穿刺'] },
       { step_number: 3, step_type: 'result_interpretation', title: '超音波發現', prompt: 'TFAST 發現大量心包膜積液，右心房舒張期塌陷，右心房壁可見一個 3 cm 團塊。ECG 顯示 electrical alternans + 低電壓。如何解讀？', available_actions: ['心包膜填塞合併右心房腫瘤（最可能血管肉瘤 HSA）', '心包膜填塞，特發性心包膜積液', '心包膜填塞，心臟基底部腫瘤', '輕度心包膜積液無需穿刺'], correct_actions: ['心包膜填塞合併右心房腫瘤（最可能血管肉瘤 HSA）'], feedback_correct: '正確！黃金獵犬 + 右心房腫塊 = 高度懷疑血管肉瘤（HSA）。HSA 是犬心包膜積液最常見的腫瘤原因。Electrical alternans 確認大量積液。', feedback_incorrect: '犬心包膜積液病因：腫瘤（HSA 最常見）> 特發性 > 感染性。右心房團塊在黃金獵犬幾乎確認 HSA。', key_learning_points: ['犬心包膜積液最常見原因：HSA > 特發性 > 心基底腫瘤', 'HSA 好發品種：黃金獵犬、德國牧羊犬', 'Electrical alternans = 心臟在大量積液中擺動', '右心房團塊 vs 心基底腫瘤的預後差異大'] },
-      { step_number: 4, step_type: 'treatment_plan', title: '急診處置', prompt: '立即處置？選擇 2 項。', available_actions: ['心包膜穿刺術（pericardiocentesis）', 'IV 輸液擴容（生理食鹽水 bolus）', 'Furosemide IV 利尿', '胸管放置', '立即手術切除腫瘤', '口服 Prednisolone'], correct_actions: ['心包膜穿刺術（pericardiocentesis）', 'IV 輸液擴容（生理食鹽水 bolus）'], feedback_correct: '正確！心包穿刺是心包膜填塞的唯一有效治療。IV 輸液擴容維持前負荷。禁忌 Furosemide（會降低前負荷加重填塞）。手術需穩定後再評估。', feedback_incorrect: '心包膜填塞的急救：穿刺引流 + 輸液擴容。Furosemide 是絕對禁忌（降低前負荷）。穿刺後才能考慮進一步手術。', key_learning_points: ['心包穿刺是填塞的 definitive 急救', 'IV 輸液維持前負荷', 'Furosemide 在心包膜填塞為禁忌', '穿刺通常右側第 4-6 肋間，ECG 監測'] },
+      { step_number: 4, step_type: 'treatment_plan', title: '急診處置', prompt: '立即處置？選擇 2 項。', available_actions: ['心包膜穿刺術（pericardiocentesis）', 'IV 輸液擴容（生理食鹽水 bolus）', 'Furosemide IV 利尿', '胸管放置', '立即手術切除腫瘤', '口服 Prednisolone'], correct_actions: ['心包膜穿刺術（pericardiocentesis）', 'IV 輸液擴容（生理食鹽水 bolus）'], feedback_correct: '正確！心包穿刺是心包膜填塞的唯一有效治療。IV 輸液擴容維持前負荷。禁忌 Furosemide（會降低前負荷加重填塞）。手術需穩定後再評估。', feedback_incorrect: '心包膜填塞的急救：穿刺引流 + 輸液擴容。Furosemide 是絕對禁忌（降低前負荷）。穿刺後才能考慮後續手術。', key_learning_points: ['心包穿刺是填塞的 definitive 急救', 'IV 輸液維持前負荷', 'Furosemide 在心包膜填塞為禁忌', '穿刺通常右側第 4-6 肋間，ECG 監測'] },
       { step_number: 5, step_type: 'result_interpretation', title: '積液分析', prompt: '穿刺出 350 mL 暗紅色液體。PCV 18%，不凝固。細胞學見大量紅血球與少量反應性間皮細胞。如何解讀？', available_actions: ['血性積液，符合 HSA 但細胞學常無法確診', '確認 HSA 診斷', '感染性心包膜炎', '特發性心包膜積液'], correct_actions: ['血性積液，符合 HSA 但細胞學常無法確診'], feedback_correct: '正確！HSA 細胞學確診率僅 25-50%（因腫瘤細胞與反應性間皮細胞難區分）。不凝固的血性積液排除醫源性出血。需要影像 + 臨床整合判斷。', feedback_incorrect: '心包膜積液細胞學對 HSA 的診斷率低（25-50%）。不凝固 = 非急性出血。確診常需手術切片。臨床 + 影像綜合判斷。', key_learning_points: ['心包膜積液細胞學對 HSA 敏感度僅 25-50%', '不凝固的血性積液排除醫源性', '反應性間皮細胞常被誤判為腫瘤', 'pH < 7.0 提示感染性'] },
-      { step_number: 6, step_type: 'case_summary', title: '後續計畫與預後', prompt: '關於後續處理與預後？', available_actions: ['腹部超音波分期（脾臟/肝臟轉移）+ 與飼主討論預後', '直接排定手術', '僅觀察等復發再穿刺', '化療無需進一步分期'], correct_actions: ['腹部超音波分期（脾臟/肝臟轉移）+ 與飼主討論預後'], feedback_correct: '正確！HSA 高度轉移性，需完整分期（腹超看脾臟/肝臟）。右心耳切除 + 化療 vs 姑息性重複穿刺。右心房 HSA 中位存活：手術 + 化療約 4-6 個月，僅穿刺約 1-2 個月。', feedback_incorrect: 'HSA 是高度惡性腫瘤，必須分期評估轉移。與飼主充分溝通預後後再決定治療方向。', key_learning_points: ['心臟 HSA 轉移率極高', '完整分期：腹超 + 胸腔影像', '手術 + 化療 vs 姑息性穿刺的存活差異', '飼主溝通與生活品質考量'] },
+      { step_number: 6, step_type: 'case_summary', title: '後續計畫與預後', prompt: '關於後續處理與預後？', available_actions: ['腹部超音波分期（脾臟/肝臟轉移）+ 與飼主討論預後', '直接排定手術', '僅觀察等復發再穿刺', '化療無需後續分期'], correct_actions: ['腹部超音波分期（脾臟/肝臟轉移）+ 與飼主討論預後'], feedback_correct: '正確！HSA 高度轉移性，需完整分期（腹超看脾臟/肝臟）。右心耳切除 + 化療 vs 姑息性重複穿刺。右心房 HSA 中位存活：手術 + 化療約 4-6 個月，僅穿刺約 1-2 個月。', feedback_incorrect: 'HSA 是高度惡性腫瘤，必須分期評估轉移。與飼主充分溝通預後後再決定治療方向。', key_learning_points: ['心臟 HSA 轉移率極高', '完整分期：腹超 + 胸腔影像', '手術 + 化療 vs 姑息性穿刺的存活差異', '飼主溝通與生活品質考量'] },
     ],
     expert_pathway: { reasoning: '虛弱 + 腹水 + 頸靜脈怒張 → Beck triad → TFAST 確認填塞 + RA mass → HSA。緊急穿刺 + 輸液。分期評估後與飼主討論。', key_decisions: ['辨識 Beck triad', 'TFAST 優先於 X 光', '穿刺 + 輸液（非 Furosemide）', '積液分析 + 腫瘤分期'], common_pitfalls: ['使用 Furosemide 加重填塞', '為 X 光延誤穿刺', '積液細胞學陰性排除 HSA', '未做腹部分期'] },
     related_nodes_for_review: ['CARDIO-L3-004', 'CARDIO-L4-002', 'CARDIO-L5-003', 'CARDIO-L4-004'],
@@ -266,7 +266,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
     steps: [
       { step_number: 1, step_type: 'physical_examination', title: '心臟聽診', prompt: '聽診發現？選擇最重要的 2 項。', available_actions: ['左心基底部持續性機械樣雜音 (continuous machinery murmur)', '股動脈脈搏跳躍有力（bounding pulse / water-hammer pulse）', '右心基底部收縮期雜音', '心率 180 bpm 規則', '呼吸音正常', '腹部觸診正常'], correct_actions: ['左心基底部持續性機械樣雜音 (continuous machinery murmur)', '股動脈脈搏跳躍有力（bounding pulse / water-hammer pulse）'], feedback_correct: '正確！左心基底部持續性雜音 (Grade V-VI) 是 PDA 的 pathognomonic sign。Bounding pulse 因舒張期血流從主動脈經 PDA 流入肺動脈導致 wide pulse pressure。', feedback_incorrect: 'PDA 有兩個經典體徵：(1) 左心基底部持續性機械樣雜音（跨越整個收縮與舒張期），(2) bounding/water-hammer pulse（因舒張壓偏低）。', key_learning_points: ['持續性機械樣雜音 = PDA 的 pathognomonic sign', 'Bounding pulse 因 wide pulse pressure', 'PDA 好發品種：玩具/迷你貴賓、馬爾濟斯、Pomeranian', '雌犬發生率為雄犬 3 倍'] },
       { step_number: 2, step_type: 'diagnostic_plan', title: '確認診斷', prompt: '選擇 2 項最重要的檢查。', available_actions: ['心臟超音波（含彩色都卜勒）', '胸腔 X 光', '靜態 ECG', 'CBC + 生化', 'CT 血管攝影', '心導管檢查'], correct_actions: ['心臟超音波（含彩色都卜勒）', '胸腔 X 光'], feedback_correct: '正確！彩色都卜勒可見肺動脈內持續性亂流（確認 PDA 分流）。心超評估 LA/LV 容積負荷程度。X 光評估心臟大小、肺血管充血程度（overcirculation）與主動脈丘（ductal bump）。', feedback_incorrect: '心超確認 PDA 位置與分流方向。X 光評估容積負荷與肺血管充血。ECG 可見左心擴大但非確診工具。', key_learning_points: ['彩色都卜勒確認 PDA：肺動脈持續性亂流', 'X 光三特徵：心臟擴大、肺過度灌流、主動脈丘', 'LA/LV 擴大程度決定手術緊急性', '右到左分流（Eisenmenger）需排除'] },
-      { step_number: 3, step_type: 'result_interpretation', title: '結果判讀', prompt: '心超：左到右分流 PDA、LA/Ao 2.3、LVIDdN 2.1（擴大）。X 光：心臟擴大（VHS 12.5）、肺血管充血。如何評估？', available_actions: ['血流動力學顯著的 PDA，有容積負荷，建議盡早閉合', 'PDA 但尚無血流動力學影響，可觀察', '右到左分流 PDA（Eisenmenger）不可手術', '非 PDA 造成的心雜音'], correct_actions: ['血流動力學顯著的 PDA，有容積負荷，建議盡早閉合'], feedback_correct: '正確！LA/Ao > 1.6 + LVIDdN 擴大 = 顯著容積負荷。左到右分流確認非 Eisenmenger。所有血流動力學顯著的 PDA 都應閉合（不治療可在 1 歲前發展為 CHF）。', feedback_incorrect: 'LA/Ao 2.3 + LVIDdN 2.1 = 明顯容積負荷。左到右分流可手術。未閉合的 PDA 多數在 1 歲前進展為 CHF。', key_learning_points: ['所有血流動力學顯著 PDA 都應閉合', '未治療犬 64% 在 1 歲前死於 CHF', '左到右分流可手術；右到左（Eisenmenger）不可', '手術時機：確診後盡早'] },
+      { step_number: 3, step_type: 'result_interpretation', title: '結果判讀', prompt: '心超：左到右分流 PDA、LA/Ao 2.3、LVIDdN 2.1（擴大）。X 光：心臟擴大（VHS 12.5）、肺血管充血。如何評估？', available_actions: ['血流動力學明顯的 PDA，有容積負荷，建議盡早閉合', 'PDA 但尚無血流動力學影響，可觀察', '右到左分流 PDA（Eisenmenger）不可手術', '非 PDA 造成的心雜音'], correct_actions: ['血流動力學明顯的 PDA，有容積負荷，建議盡早閉合'], feedback_correct: '正確！LA/Ao > 1.6 + LVIDdN 擴大 = 明顯容積負荷。左到右分流確認非 Eisenmenger。所有血流動力學明顯的 PDA 都應閉合（不治療可在 1 歲前發展為 CHF）。', feedback_incorrect: 'LA/Ao 2.3 + LVIDdN 2.1 = 明顯容積負荷。左到右分流可手術。未閉合的 PDA 多數在 1 歲前進展為 CHF。', key_learning_points: ['所有血流動力學明顯 PDA 都應閉合', '未治療犬 64% 在 1 歲前死於 CHF', '左到右分流可手術；右到左（Eisenmenger）不可', '手術時機：確診後盡早'] },
       { step_number: 4, step_type: 'treatment_plan', title: '閉合方式選擇', prompt: '建議的閉合方式？', available_actions: ['經導管 ACDO (Amplatz Canine Duct Occluder) 裝置閉合', '開胸手術結紮', '藥物治療（Indomethacin）', '觀察至 6 個月齡再處理', 'Coil embolization'], correct_actions: ['經導管 ACDO (Amplatz Canine Duct Occluder) 裝置閉合'], feedback_correct: '正確！ACDO 是目前犬 PDA 閉合的 gold standard，成功率 > 95%，併發症率低。體重過小（< 2 kg）或 ductus 形態不適合時才考慮開胸結紮。Indomethacin 僅對新生兒（< 幾天齡）有效。', feedback_incorrect: 'ACDO 是首選（成功率 > 95%）。開胸結紮適用於 ACDO 不可行時。Indomethacin 僅新生兒有效。不應延遲處理。', key_learning_points: ['ACDO 是犬 PDA 閉合 gold standard', '成功率 > 95%，住院 1-2 天', 'Miller 分類決定裝置選擇', '體重 < 2 kg 可能需開胸結紮'] },
       { step_number: 5, step_type: 'case_summary', title: '術後追蹤', prompt: '術後追蹤計畫？', available_actions: ['24 小時後心超確認閉合，1、3、6 個月追蹤心臟大小回縮', '術後無需追蹤', '每週 X 光追蹤', '僅聽診確認雜音消失'], correct_actions: ['24 小時後心超確認閉合，1、3、6 個月追蹤心臟大小回縮'], feedback_correct: '正確！24 小時確認裝置位置與殘餘分流。多數犬 LA/LV 在 1-3 個月內回縮至正常。6 個月時應完全正常化。成功閉合的犬預後與正常犬相同。', feedback_incorrect: '術後需確認閉合成功（無殘餘分流）。心臟大小回縮是治療成功的指標。成功閉合後預後極佳。', key_learning_points: ['術後 24 小時心超確認閉合', 'LA/LV 通常 1-3 個月回縮', '成功閉合後壽命與正常犬無異', '殘餘分流需要重新評估'] },
     ],
@@ -279,8 +279,8 @@ export const CARDIO_CASES: CaseChallenge[] = [
     id: 'CASE-CARDIO-006', title: '老年吉娃娃 MMVD Stage D 難治性心衰竭', specialty: 'CARDIO', cross_specialties: ['IM', 'ECC'], required_nodes: ['CARDIO-L3-001', 'CARDIO-L5-001', 'CARDIO-L2-001'], difficulty: 5, species: '犬',
     scenario: { signalment: '14 歲已絕育雌性吉娃娃，體重 2.8 kg', chief_complaint: '即使服藥仍反覆呼吸困難，本月第三次住院', brief_history: 'MMVD 已治療 2 年。目前用藥：Furosemide 4 mg/kg PO TID、Pimobendan 0.25 mg/kg PO BID、Benazepril 0.5 mg/kg PO SID、Spironolactone 2 mg/kg PO SID。上次出院 5 天即再發呼吸困難。飼主觀察 sleeping RR 持續 > 40。' },
     steps: [
-      { step_number: 1, step_type: 'history_collection', title: '藥物與合規性評估', prompt: '評估治療失敗原因，最重要的 3 項詢問。', available_actions: ['確認飼主用藥合規性（劑量、頻率、是否漏藥）', '評估鈉攝入（零食、人食）', '確認 Pimobendan 是否空腹給予', '詢問最近有無更換獸醫', '詢問居住環境（樓梯、溫度）', '詢問最近有無添加保健食品'], correct_actions: ['確認飼主用藥合規性（劑量、頻率、是否漏藥）', '評估鈉攝入（零食、人食）', '確認 Pimobendan 是否空腹給予'], feedback_correct: '很好！合規性是最常見的治療失敗原因。Pimobendan 空腹 vs 飯後吸收差異顯著。高鈉飲食可抵消利尿劑效果。確認這些後才能判定為真正的藥物抗性。', feedback_incorrect: '治療失敗先排除非藥物因素：合規性（最常見）、Pimobendan 需空腹（飯後生物利用度降 40%）、飲食鈉含量。排除後才算真正難治性。', key_learning_points: ['治療失敗首先排除合規性問題', 'Pimobendan 必須空腹給予（飯後生物利用度下降 40%）', '高鈉飲食可抵消 Furosemide 效果', '「難治性」需排除偽抗性因素'] },
-      { step_number: 2, step_type: 'diagnostic_plan', title: '評估檢查', prompt: '確認合規性良好後，進一步評估？選擇 3 項。', available_actions: ['胸腔 X 光評估肺水腫程度', '心臟超音波評估疾病進展', '腎功能 + 電解質（Furosemide 抗性評估）', 'NT-proBNP', '全血球計數', '血壓測量'], correct_actions: ['胸腔 X 光評估肺水腫程度', '心臟超音波評估疾病進展', '腎功能 + 電解質（Furosemide 抗性評估）'], feedback_correct: '正確！X 光確認肺水腫程度與胸水。心超評估 MR 進展（可能有腱索斷裂）、LA/LV 大小。腎功能評估心腎症候群與利尿劑抗性。', feedback_incorrect: 'Stage D 評估三要素：X 光（肺水腫/胸水）、心超（MR 進展/腱索斷裂）、腎功能（心腎症候群/利尿劑抗性）。', key_learning_points: ['Stage D = 對標準治療產生抗性的 CHF', 'Furosemide 抗性可因腎功能惡化', '腱索斷裂導致急性 MR 惡化', '心腎症候群是 Stage D 常見併發症'] },
+      { step_number: 1, step_type: 'history_collection', title: '藥物與合規性評估', prompt: '評估治療失敗原因，最重要的 3 項詢問。', available_actions: ['確認飼主用藥合規性（劑量、頻率、是否漏藥）', '評估鈉攝入（零食、人食）', '確認 Pimobendan 是否空腹給予', '詢問最近有無更換獸醫', '詢問居住環境（樓梯、溫度）', '詢問最近有無添加保健食品'], correct_actions: ['確認飼主用藥合規性（劑量、頻率、是否漏藥）', '評估鈉攝入（零食、人食）', '確認 Pimobendan 是否空腹給予'], feedback_correct: '很好！合規性是最常見的治療失敗原因。Pimobendan 空腹 vs 飯後吸收差異明顯。高鈉飲食可抵消利尿劑效果。確認這些後才能判定為真正的藥物抗性。', feedback_incorrect: '治療失敗先排除非藥物因素：合規性（最常見）、Pimobendan 需空腹（飯後生物利用度降 40%）、飲食鈉含量。排除後才算真正難治性。', key_learning_points: ['治療失敗首先排除合規性問題', 'Pimobendan 必須空腹給予（飯後生物利用度下降 40%）', '高鈉飲食可抵消 Furosemide 效果', '「難治性」需排除偽抗性因素'] },
+      { step_number: 2, step_type: 'diagnostic_plan', title: '評估檢查', prompt: '確認合規性良好後，後續評估？選擇 3 項。', available_actions: ['胸腔 X 光評估肺水腫程度', '心臟超音波評估疾病進展', '腎功能 + 電解質（Furosemide 抗性評估）', 'NT-proBNP', '全血球計數', '血壓測量'], correct_actions: ['胸腔 X 光評估肺水腫程度', '心臟超音波評估疾病進展', '腎功能 + 電解質（Furosemide 抗性評估）'], feedback_correct: '正確！X 光確認肺水腫程度與胸水。心超評估 MR 進展（可能有腱索斷裂）、LA/LV 大小。腎功能評估心腎症候群與利尿劑抗性。', feedback_incorrect: 'Stage D 評估三要素：X 光（肺水腫/胸水）、心超（MR 進展/腱索斷裂）、腎功能（心腎症候群/利尿劑抗性）。', key_learning_points: ['Stage D = 對標準治療產生抗性的 CHF', 'Furosemide 抗性可因腎功能惡化', '腱索斷裂導致急性 MR 惡化', '心腎症候群是 Stage D 常見併發症'] },
       { step_number: 3, step_type: 'result_interpretation', title: '結果判讀', prompt: 'X 光：肺靜脈充血、輕度肺水腫。心超：LA/Ao 3.2、重度 MR（腱索完整）、LVIDDN 2.4。BUN 55、Cr 2.1、K+ 3.2。如何解讀？', available_actions: ['Stage D CHF，利尿劑抗性合併心腎症候群與低血鉀', '穩定控制中的 Stage C', '急性腎衰竭為主要問題', '右心衰竭為主'], correct_actions: ['Stage D CHF，利尿劑抗性合併心腎症候群與低血鉀'], feedback_correct: '正確！即使 Furosemide TID 仍有肺水腫 = 利尿劑抗性。BUN/Cr 升高 = 心腎症候群。K+ 3.2 = Furosemide 導致低血鉀（心律不整風險增加）。LA/Ao 3.2 = 嚴重擴大。', feedback_incorrect: '最高劑量 Furosemide 仍有肺水腫 = 利尿劑抗性 = Stage D。腎指數升高反映心輸出量不足。低血鉀是高劑量 Furosemide 的常見副作用。', key_learning_points: ['利尿劑抗性定義：最大劑量仍無法控制充血', '心腎症候群：心衰竭導致腎灌流不足', '低血鉀增加心律不整風險', 'LA/Ao > 2.5 為極度擴大'] },
       { step_number: 4, step_type: 'treatment_plan', title: '治療調整', prompt: '如何調整治療？選擇最適當的 2 項。', available_actions: ['加入 Torasemide 替代部分 Furosemide', '加入 Hydrochlorothiazide（利尿劑合併）', '增加 Furosemide 至 6 mg/kg TID', '加入 Sildenafil 降低肺動脈壓', '停止所有利尿劑讓腎功能恢復', '加入 Digoxin'], correct_actions: ['加入 Torasemide 替代部分 Furosemide', '加入 Sildenafil 降低肺動脈壓'], feedback_correct: '正確！Torasemide 生物利用度更穩定（比 Furosemide 高），且有抗醛固酮效果。Sildenafil 降低肺動脈壓，減輕右心後負荷，改善症狀。Hydrochlorothiazide 也可考慮但電解質風險更高。', feedback_incorrect: 'Stage D 選項：Torasemide 替代 Furosemide（更穩定生物利用度）、Sildenafil（降肺高壓）、Hydrochlorothiazide（序貫利尿但需密切監測電解質）。單純增加 Furosemide 效果有限且腎毒性增加。', key_learning_points: ['Torasemide：Furosemide 的替代品，生物利用度更穩定', 'Sildenafil：PDE-5 抑制劑降低肺動脈壓', 'Sequential nephron blockade：Furosemide + Hydrochlorothiazide', 'Stage D 治療目標是改善生活品質'] },
       { step_number: 5, step_type: 'case_summary', title: '預後與飼主溝通', prompt: '與飼主溝通時最重要的是？', available_actions: ['誠實討論預後、治療目標轉為生活品質、教導何時該考慮安樂死', '保證新藥一定能改善', '建議轉診做瓣膜手術', '只要持續加藥就能控制'], correct_actions: ['誠實討論預後、治療目標轉為生活品質、教導何時該考慮安樂死'], feedback_correct: '正確！Stage D 中位存活時間約 3-6 個月。治療目標從「延長壽命」轉為「維持生活品質」。飼主需了解何時症狀已超越可控範圍，安樂死討論是獸醫的責任。', feedback_incorrect: 'Stage D 預後有限。飼主需了解：治療目標是生活品質、症狀可能反覆惡化、安樂死討論是負責任的醫療溝通。', key_learning_points: ['Stage D 中位存活約 3-9 個月', '治療目標轉為生活品質導向', '安樂死討論是 Stage D 管理的一部分', 'Sleeping RR > 40 持續 = 控制不佳的指標'] },
@@ -324,7 +324,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集與初步評估',
-        prompt: '面對疑似暈厥的犬，你需要進一步確認哪些關鍵病史？請選擇最重要的 3 項。',
+        prompt: '面對疑似暈厥的犬，你需要後續確認哪些關鍵病史？請選擇最重要的 3 項。',
         available_actions: [
           '詢問暈厥發作的細節（前驅症狀、持續時間、恢復速度、有無抽搐樣運動）',
           '詢問過去是否有類似暈倒或虛弱發作',
@@ -338,8 +338,8 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '詢問過去是否有類似暈倒或虛弱發作',
           '詢問家族史（Boxer 為 ARVC 好發品種）',
         ],
-        feedback_correct: '很好！暈厥細節有助於區分心因性暈厥 vs 癲癇發作——心因性暈厥通常恢復快速且無後發作期（postictal phase）。反覆虛弱發作提示間歇性心律不整。Boxer 為犬致心律不整性右室心肌病（ARVC/Boxer cardiomyopathy）好發品種，家族史對診斷至關重要。',
-        feedback_incorrect: '暈厥犬的病史重點：(1) 發作細節區分暈厥 vs 癲癇；(2) 過去類似發作頻率；(3) Boxer 犬的品種特異性——ARVC 為遺傳性疾病，需詢問家族中是否有暈厥或猝死病史。',
+        feedback_correct: '很好！暈厥細節有助於區分心因性暈厥 vs 癲癇發作，心因性暈厥通常恢復快速且無後發作期（postictal phase）。反覆虛弱發作提示間歇性心律不整。Boxer 為犬致心律不整性右室心肌病（ARVC/Boxer cardiomyopathy）好發品種，家族史對診斷不能省。',
+        feedback_incorrect: '暈厥犬的病史重點：(1) 發作細節區分暈厥 vs 癲癇；(2) 過去類似發作頻率；(3) Boxer 犬的品種特異性，ARVC 為遺傳性疾病，需詢問家族中是否有暈厥或猝死病史。',
         key_learning_points: [
           '心因性暈厥：突發、短暫（秒到分鐘）、恢復快速、無 postictal phase',
           'Boxer 犬是 ARVC（致心律不整性右室心肌病）的好發品種',
@@ -364,8 +364,8 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '股動脈脈搏不規則，偶有脈搏缺失（pulse deficit）',
           '黏膜粉紅但偶爾短暫變蒼白（與脈搏缺失同步）',
         ],
-        feedback_correct: '正確！心搏過速合併不規則心律與多發早搏高度提示心室性心律不整（VT/VPCs）。脈搏缺失表示部分心搏無法產生有效心輸出——這是 VPCs 的典型表現。黏膜間歇變蒼白反映短暫血流動力學障礙。Boxer 犬有以上表現高度懷疑 ARVC 相關 VT。',
-        feedback_incorrect: '心律不整的關鍵體徵：(1) 聽診心律不規則與早搏；(2) 脈搏缺失（pulse deficit）——觸診脈搏數 < 聽診心率，代表無效心搏；(3) 血流動力學影響（黏膜間歇蒼白）。這些均指向血流動力學有意義的心律不整。',
+        feedback_correct: '正確！心搏過速合併不規則心律與多發早搏高度提示心室性心律不整（VT/VPCs）。脈搏缺失表示部分心搏無法產生有效心輸出，這是 VPCs 的典型表現。黏膜間歇變蒼白反映短暫血流動力學障礙。Boxer 犬有以上表現高度懷疑 ARVC 相關 VT。',
+        feedback_incorrect: '心律不整的關鍵體徵：(1) 聽診心律不規則與早搏；(2) 脈搏缺失（pulse deficit），觸診脈搏數 < 聽診心率，代表無效心搏；(3) 血流動力學影響（黏膜間歇蒼白）。這些均指向血流動力學有意義的心律不整。',
         key_learning_points: [
           '脈搏缺失（pulse deficit）是心室早搏的重要體徵',
           '心搏過速（HR > 160 bpm）合併不規則心律需立即 ECG',
@@ -390,7 +390,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '心臟超音波（評估心臟結構與功能）',
           '胸腔 X 光（評估心臟大小與肺野）',
         ],
-        feedback_correct: '完美！ECG 是確診心律不整最關鍵的工具——確認 VT vs SVT、型態（單形 vs 多形）、頻率。心超評估 ARVC 的結構異常（右室擴大、室壁運動異常）。X 光評估心臟整體大小。Holter 在急性處置穩定後安排做長期監測。cTnI 可評估心肌損傷但非急性首選。',
+        feedback_correct: '完美！ECG 是確診心律不整最關鍵的工具，確認 VT vs SVT、型態（單形 vs 多形）、頻率。心超評估 ARVC 的結構異常（右室擴大、室壁運動異常）。X 光評估心臟整體大小。Holter 在急性處置穩定後安排做長期監測。cTnI 可評估心肌損傷但非急性首選。',
         feedback_incorrect: '急性心律不整的診斷三核心：(1) ECG 確認類型與嚴重度；(2) 心超評估結構基礎（ARVC 的右室變化）；(3) X 光評估整體心臟。Holter 用於穩定後長期監測。急性暈厥不需做腦脊髓液分析。',
         key_learning_points: [
           'ECG 是心律不整診斷的最基本且最重要工具',
@@ -404,13 +404,13 @@ export const CARDIO_CASES: CaseChallenge[] = [
         title: '檢查結果判讀',
         prompt: '檢查結果如下：\n• ECG：持續性單形心室心搏過速（sustained monomorphic VT），心率 220 bpm，寬 QRS 呈左束支傳導阻滯形態（LBBB），可見 AV 分離\n• 心超：右室輕度擴大，右室游離壁局部運動減弱，左室功能正常（FS 38%）\n• X 光：VHS 11.5（輕度增大），肺野清晰\n\n如何解讀這些結果？',
         available_actions: [
-          'Boxer ARVC 合併持續性 VT——需立即處理。LBBB 形態提示起源於右室，符合 ARVC。血流動力學有影響（暈厥）需緊急藥物轉律。',
+          'Boxer ARVC 合併持續性 VT，需立即處理。LBBB 形態提示起源於右室，符合 ARVC。血流動力學有影響（暈厥）需緊急藥物轉律。',
           '僅為良性心室早搏，觀察即可',
           '左心衰竭導致的繼發性心律不整',
           'SVT 誤判為 VT，不需治療',
         ],
         correct_actions: [
-          'Boxer ARVC 合併持續性 VT——需立即處理。LBBB 形態提示起源於右室，符合 ARVC。血流動力學有影響（暈厥）需緊急藥物轉律。',
+          'Boxer ARVC 合併持續性 VT，需立即處理。LBBB 形態提示起源於右室，符合 ARVC。血流動力學有影響（暈厥）需緊急藥物轉律。',
         ],
         feedback_correct: '正確！持續性 VT + 寬 QRS + LBBB 形態 + Boxer 品種 = 高度符合 ARVC 相關的心室心律不整。心率 220 bpm 為嚴重心搏過速。已有暈厥代表血流動力學受影響。右室局部運動減弱與擴大是 ARVC 的典型心超表現。此為血流動力學有意義的持續性 VT，需緊急處理。',
         feedback_incorrect: '持續性 VT（心率 220 bpm）合併暈厥絕非「良性」。LBBB 形態的寬 QRS 在 Boxer 犬幾乎確診 ARVC。左心功能正常排除 DCM。SVT 不會有如此寬的 QRS 和 AV 分離。',
@@ -437,12 +437,12 @@ export const CARDIO_CASES: CaseChallenge[] = [
         correct_actions: [
           'Lidocaine 2 mg/kg IV bolus（over 2 min），若無效可重複 1-2 次，有效後開始 CRI 50-80 μg/kg/min；同時持續 ECG 監測',
         ],
-        feedback_correct: '正確！Lidocaine 是犬急性 VT 的首選藥物（Class Ib 抗心律不整藥）。Bolus 給予後觀察 ECG 變化——若 VT 轉為竇性節律或明顯減速，開始 CRI 維持。若首次 bolus 無效，可在 5-10 分鐘後重複 1-2 次（最大累積劑量 8 mg/kg）。Atenolol 為口服藥不適用急性處置。Amiodarone 在犬的安全性數據有限。Diltiazem 用於 SVT 而非 VT。電擊除顫用於 VFib 而非 VT。',
+        feedback_correct: '正確！Lidocaine 是犬急性 VT 的首選藥物（Class Ib 抗心律不整藥）。Bolus 給予後觀察 ECG 變化，若 VT 轉為竇性節律或明顯減速，開始 CRI 維持。若首次 bolus 無效，可在 5-10 分鐘後重複 1-2 次（最大累積劑量 8 mg/kg）。Atenolol 為口服藥不適用急性處置。Amiodarone 在犬的安全性數據有限。Diltiazem 用於 SVT 而非 VT。電擊除顫用於 VFib 而非 VT。',
         feedback_incorrect: 'Lidocaine 是犬 VT 的第一線急性治療。Atenolol 為口服 beta-blocker，不適合急性處置。Amiodarone 在犬的使用經驗有限且副作用多。Diltiazem 為鈣離子阻斷劑，用於 SVT。電擊除顫（defibrillation）用於心室顫動（VFib），非持續性 VT。',
         key_learning_points: [
           'Lidocaine 是犬 VT 的第一線急性治療藥物',
           'Lidocaine bolus 2 mg/kg IV slow → 可重複至最大 8 mg/kg → CRI 50-80 μg/kg/min',
-          'Lidocaine 毒性徵兆：肌肉震顫、噁心、癲癇——需立即停藥',
+          'Lidocaine 毒性徵兆：肌肉震顫、噁心、癲癇，需立即停藥',
           'VT ≠ VFib：VT 用藥物轉律，VFib 用電擊除顫',
         ],
       },
@@ -469,7 +469,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
           'Sotalol 是 Boxer ARVC 長期管理的首選口服藥',
           'Holter 監測是評估抗心律不整藥效果的金標準',
           'ARVC 為遺傳進行性疾病，需終身監測與治療',
-          '即使治療下仍有猝死風險——飼主需充分理解',
+          '即使治療下仍有猝死風險，飼主需充分理解',
           '限制劇烈運動可降低猝死誘發風險',
         ],
       },
@@ -477,7 +477,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
     expert_pathway: {
       reasoning: 'Boxer 犬 + 運動相關暈厥 + 持續性 VT（LBBB 形態）+ 右室局部運動異常 → ARVC。急性 Lidocaine 轉律 → 穩定後 Sotalol 長期管理 → Holter 定期監測 → 飼主衛教猝死風險。',
       key_decisions: [
-        '暈厥鑑別：心因性 vs 癲癇——ECG 為關鍵',
+        '暈厥鑑別：心因性 vs 癲癇，ECG 為關鍵',
         '辨識持續性 VT 需緊急處理',
         'Lidocaine 為犬 VT 第一線急性處置',
         'Sotalol 為 ARVC 長期管理首選',
@@ -499,7 +499,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
     ],
     tags: ['心律不整', 'VT', 'ARVC', 'Boxer', 'Lidocaine', 'Sotalol', '暈厥', 'case_challenge'],
   },
-  // --- CASE-CARDIO-009: 中年貓急性後肢癱瘓——ATE 診斷與急診管理 ---
+  // --- CASE-CARDIO-009: 中年貓急性後肢癱瘓，ATE 診斷與急診管理 ---
   {
     id: 'CASE-CARDIO-009',
     title: '中年家貓急性後肢癱瘓：動脈血栓栓塞症的急診處置與預後評估',
@@ -532,7 +532,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '後肢肉墊發紺、觸摸冰冷（與前肢明顯溫差）',
           '後肢趾甲剪斷後無出血或流出暗紅色血液',
         ],
-        feedback_correct: '正確！這三項是區分 ATE 與神經性癱瘓的關鍵——ATE 的核心是血管阻塞（5P：Pulselessness、Pallor/cyanosis、Pain、Paralysis、Poikilothermia），而非原發神經病變。趾甲剪斷測試（nail trim test）是快速評估末梢灌流的簡易方法：ATE 無血流或流出暗色血液，正常應為鮮紅色出血。',
+        feedback_correct: '正確！這三項是區分 ATE 與神經性癱瘓的關鍵，ATE 的核心是血管阻塞（5P：Pulselessness、Pallor/cyanosis、Pain、Paralysis、Poikilothermia），而非原發神經病變。趾甲剪斷測試（nail trim test）是快速評估末梢灌流的簡易方法：ATE 無血流或流出暗色血液，正常應為鮮紅色出血。',
         feedback_incorrect: 'ATE vs 神經性癱瘓的鑑別關鍵在於末梢血管灌流：(1) 脈搏消失、(2) 肉墊發紺冰冷、(3) 趾甲剪斷測試無出血。神經性癱瘓（如脊髓疾病）通常有正常的末梢灌流。奔馬律雖提示心臟病但非區分 ATE 與神經性的關鍵。',
         key_learning_points: [
           'ATE 的 5P：Pulselessness、Pallor、Pain、Paralysis、Poikilothermia',
@@ -584,11 +584,11 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '止痛：Methadone 0.1-0.2 mg/kg IV 或 Buprenorphine 0.02 mg/kg IV',
           '抗凝血啟動：Clopidogrel 75 mg loading dose + Dalteparin 100-150 IU/kg SC',
         ],
-        feedback_correct: '正確！處理優先序：(1) K⁺ 6.9 + T 波尖高 = 緊急高血鉀，Calcium gluconate 穩定心肌膜電位（不降鉀但心臟保護），隨後 Regular insulin + Dextrose 將鉀驅入細胞內。(2) ATE 極度疼痛——純 mu opioid（Methadone）或 partial agonist（Buprenorphine）是首選，NSAID 在腎灌流不足時禁忌。(3) Clopidogrel loading + LMWH 防止血栓擴大（FAT CAT Study 支持）。注意：此時無肺水腫不需 Furosemide；HCM 禁忌快速輸液；tPA 在貓死亡率 ~50% 不建議。',
+        feedback_correct: '正確！處理優先序：(1) K⁺ 6.9 + T 波尖高 = 緊急高血鉀，Calcium gluconate 穩定心肌膜電位（不降鉀但心臟保護），隨後 Regular insulin + Dextrose 將鉀驅入細胞內。(2) ATE 極度疼痛，純 mu opioid（Methadone）或 partial agonist（Buprenorphine）是首選，NSAID 在腎灌流不足時禁忌。(3) Clopidogrel loading + LMWH 防止血栓擴大（FAT CAT Study 支持）。注意：此時無肺水腫不需 Furosemide；HCM 禁忌快速輸液；tPA 在貓死亡率 ~50% 不建議。',
         feedback_incorrect: 'ATE 急診處理三大優先：(1) 高血鉀（K⁺ > 6.5 = 心搏停止風險）→ Calcium gluconate 先保護心臟。(2) 疼痛控制（opioid 而非 NSAID）。(3) 抗凝血防止血栓擴大。快速輸液在 HCM 會誘發 CHF。tPA 死亡率過高。',
         key_learning_points: [
           'ATE 急診優先順序：高血鉀處理 > 止痛 > 抗凝血',
-          'Calcium gluconate 穩定心肌膜而非降鉀——是保命的第一步',
+          'Calcium gluconate 穩定心肌膜而非降鉀，是保命的第一步',
           'HCM 貓禁忌快速輸液（容量超載 → CHF / 肺水腫）',
           'tPA 溶栓在貓死亡率高達 50%，目前不建議常規使用',
         ],
@@ -610,7 +610,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '長期 Clopidogrel 18.75 mg PO SID 終身抗血栓 + Atenolol 控制 HCM 心率',
           '誠實告知飼主：ATE 復發率 40-75%，中位存活期約 77-223 天，治療目標為生活品質',
         ],
-        feedback_correct: '正確！長期管理：(1) Clopidogrel 終身（FAT CAT Study 支持優於 Aspirin）；(2) HCM 管理——Atenolol 降低心率改善舒張期充盈；(3) 若有 CHF 徵象加入 Furosemide。預後溝通至關重要：ATE 復發率高（40-75%），存活中位數約 77-223 天（依嚴重度），預後不良因子包括低體溫、三肢以上受累、合併 CHF、高血鉀。飼主需了解這是長期管理而非治癒，生活品質評估是持續的過程。',
+        feedback_correct: '正確！長期管理：(1) Clopidogrel 終身（FAT CAT Study 支持優於 Aspirin）；(2) HCM 管理，Atenolol 降低心率改善舒張期充盈；(3) 若有 CHF 徵象加入 Furosemide。預後溝通不能省：ATE 復發率高（40-75%），存活中位數約 77-223 天（依嚴重度），預後不良因子包括低體溫、三肢以上受累、合併 CHF、高血鉀。飼主需了解這是長期管理而非治癒，生活品質評估是持續的過程。',
         feedback_incorrect: '長期管理核心：Clopidogrel（FAT CAT Study 勝過 Aspirin）+ HCM 管理（Atenolol）。ATE 復發率極高，飼主需充分了解預後。HCM 目前無外科治癒方案。僅 Aspirin 預防效果不如 Clopidogrel。',
         key_learning_points: [
           'Clopidogrel 18.75 mg PO SID 是貓 ATE 二級預防首選（FAT CAT Study）',
@@ -672,10 +672,10 @@ export const CARDIO_CASES: CaseChallenge[] = [
     tags: ['ATE', 'HCM', '貓', '血栓', '急診', '高血鉀', '預後', 'case_challenge'],
   },
 
-  // ========== CASE-CARDIO-010: 幼犬持續性動脈導管 (PDA) — Miniature Poodle ==========
+  // ========== CASE-CARDIO-010: 幼犬持續性動脈導管 (PDA)，Miniature Poodle ==========
   {
     id: 'CASE-CARDIO-010',
-    title: '迷你貴賓幼犬的持續性機械樣心雜音——PDA 的診斷與經導管閉合',
+    title: '迷你貴賓幼犬的持續性機械樣心雜音，PDA 的診斷與經導管閉合',
     specialty: 'CARDIO',
     cross_specialties: ['SURG'],
     required_nodes: ['CARDIO-L3-006', 'CARDIO-L4-001', 'CARDIO-L4-002', 'CARDIO-L1-001'],
@@ -705,8 +705,8 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '股動脈脈搏明顯跳躍有力（bounding / water-hammer pulse），舒張壓明顯偏低',
           '心前區可觸及震顫（precordial thrill）',
         ],
-        feedback_correct: '正確！這三項是 PDA 的經典三聯體徵：(1) 持續性機械樣雜音——因為主動脈壓在收縮期和舒張期都高於肺動脈壓，血流持續經 PDA 從主動脈流向肺動脈；(2) Bounding pulse——因舒張期血流「漏」入肺動脈導致舒張壓下降，脈壓增大；(3) 心前區震顫反映 Grade V-VI 的高強度雜音。持續性雜音（continuous murmur）是 PDA 的 pathognomonic sign，必須與「來回雜音（to-and-fro murmur）」區分。',
-        feedback_incorrect: 'PDA 三聯體徵：持續性機械樣雜音（pathognomonic）+ bounding pulse（寬脈壓）+ 心前區震顫。持續性雜音跨越 S2 為 PDA 特徵——一般收縮期雜音在 S2 前終止。',
+        feedback_correct: '正確！這三項是 PDA 的經典三聯體徵：(1) 持續性機械樣雜音，因為主動脈壓在收縮期和舒張期都高於肺動脈壓，血流持續經 PDA 從主動脈流向肺動脈；(2) Bounding pulse，因舒張期血流「漏」入肺動脈導致舒張壓下降，脈壓增大；(3) 心前區震顫反映 Grade V-VI 的高強度雜音。持續性雜音（continuous murmur）是 PDA 的 pathognomonic sign，必須與「來回雜音（to-and-fro murmur）」區分。',
+        feedback_incorrect: 'PDA 三聯體徵：持續性機械樣雜音（pathognomonic）+ bounding pulse（寬脈壓）+ 心前區震顫。持續性雜音跨越 S2 為 PDA 特徵，一般收縮期雜音在 S2 前終止。',
         key_learning_points: [
           '持續性機械樣雜音 = PDA 的 pathognomonic sign',
           'Bounding pulse 機轉：舒張期血流漏入肺動脈 → 舒張壓↓ → 脈壓↑',
@@ -737,30 +737,30 @@ export const CARDIO_CASES: CaseChallenge[] = [
         key_learning_points: [
           '彩色都卜勒在肺動脈主幹內可見持續性亂流 = 確認 PDA',
           'X 光三特徵：心臟擴大、肺過度灌流、主動脈丘',
-          'LA/Ao > 1.6 = 血流動力學顯著的 PDA',
-          '必須排除右到左分流（Eisenmenger syndrome）——差別黏膜（differential cyanosis）',
+          'LA/Ao > 1.6 = 血流動力學明顯的 PDA',
+          '必須排除右到左分流（Eisenmenger syndrome），差別黏膜（differential cyanosis）',
         ],
       },
       {
         step_number: 3,
         step_type: 'result_interpretation',
         title: '檢查結果判讀',
-        prompt: '檢查結果：\n• 心超：彩色都卜勒確認左到右分流 PDA（肺動脈主幹內持續性亂流），LA/Ao 2.5（顯著擴大），LVIDdN 2.0（擴大），LV FS 45%（hyperdynamic），無肺動脈高壓徵兆\n• X 光：VHS 12.0（增大），心臟呈 D 型（LA/LV enlargement），肺血管充血，主動脈丘可見\n• ECG：P mitrale（P 波 > 0.04 秒），tall R waves in leads II/III\n\n你的評估？',
+        prompt: '檢查結果：\n• 心超：彩色都卜勒確認左到右分流 PDA（肺動脈主幹內持續性亂流），LA/Ao 2.5（明顯擴大），LVIDdN 2.0（擴大），LV FS 45%（hyperdynamic），無肺動脈高壓徵兆\n• X 光：VHS 12.0（增大），心臟呈 D 型（LA/LV enlargement），肺血管充血，主動脈丘可見\n• ECG：P mitrale（P 波 > 0.04 秒），tall R waves in leads II/III\n\n你的評估？',
         available_actions: [
-          '血流動力學顯著的左到右分流 PDA，LA/LV 已有明顯容積負荷。建議盡早閉合——未治療的 PDA 約 64% 在 1 歲前死於 CHF。',
+          '血流動力學明顯的左到右分流 PDA，LA/LV 已有明顯容積負荷。建議盡早閉合，未治療的 PDA 約 64% 在 1 歲前死於 CHF。',
           'PDA 但尚無血流動力學影響，可觀察至成年',
           '右到左分流 PDA（Eisenmenger），不適合閉合',
           '先給予 Furosemide 控制 CHF 症狀再評估',
         ],
         correct_actions: [
-          '血流動力學顯著的左到右分流 PDA，LA/LV 已有明顯容積負荷。建議盡早閉合——未治療的 PDA 約 64% 在 1 歲前死於 CHF。',
+          '血流動力學明顯的左到右分流 PDA，LA/LV 已有明顯容積負荷。建議盡早閉合，未治療的 PDA 約 64% 在 1 歲前死於 CHF。',
         ],
-        feedback_correct: '正確！LA/Ao 2.5（顯著擴大）+ LVIDdN 2.0（擴大）= 明顯容積負荷。左到右分流確認可手術。所有血流動力學顯著的 PDA 都應盡早閉合——不治療的犬約 64% 在 1 歲前因 CHF 死亡。FS 45%（hyperdynamic）是容積負荷的代償反應（非真正的 systolic function 指標）。無肺動脈高壓徵兆排除 Eisenmenger。手術時機：確診後盡早（理想 3-6 月齡），不應等待「長大再手術」。',
-        feedback_incorrect: 'LA/Ao 2.5 + LVIDdN 2.0 = 明顯容積負荷，絕非「無影響」。左到右分流可手術（右到左不可）。不治療 PDA 死亡率極高。不需先給 Furosemide——直接閉合才是 definitive 治療。',
+        feedback_correct: '正確！LA/Ao 2.5（明顯擴大）+ LVIDdN 2.0（擴大）= 明顯容積負荷。左到右分流確認可手術。所有血流動力學明顯的 PDA 都應盡早閉合，不治療的犬約 64% 在 1 歲前因 CHF 死亡。FS 45%（hyperdynamic）是容積負荷的代償反應（非真正的 systolic function 指標）。無肺動脈高壓徵兆排除 Eisenmenger。手術時機：確診後盡早（理想 3-6 月齡），不應等待「長大再手術」。',
+        feedback_incorrect: 'LA/Ao 2.5 + LVIDdN 2.0 = 明顯容積負荷，絕非「無影響」。左到右分流可手術（右到左不可）。不治療 PDA 死亡率極高。不需先給 Furosemide，直接閉合才是 definitive 治療。',
         key_learning_points: [
-          '所有血流動力學顯著 PDA 應盡早閉合——不治療 64% 在 1 歲前死亡',
+          '所有血流動力學明顯 PDA 應盡早閉合，不治療 64% 在 1 歲前死亡',
           'FS hyperdynamic（> 40%）是容積負荷的代償反應',
-          '不應等待「長大再手術」——早期閉合容積負荷可逆轉',
+          '不應等待「長大再手術」，早期閉合容積負荷可逆轉',
           'Eisenmenger syndrome（右到左分流）= 閉合禁忌',
         ],
       },
@@ -770,16 +770,16 @@ export const CARDIO_CASES: CaseChallenge[] = [
         title: '閉合方式選擇',
         prompt: '你推薦的 PDA 閉合方式？',
         available_actions: [
-          '經導管 ACDO（Amplatz Canine Duct Occluder）裝置閉合——成功率 > 95%，微創，住院 1-2 天。2.8 kg 體重為可行範圍（最低約 2 kg），需術前 CT 或血管攝影確認 ductus 大小與形態選擇適當裝置。',
+          '經導管 ACDO（Amplatz Canine Duct Occluder）裝置閉合，成功率 > 95%，微創，住院 1-2 天。2.8 kg 體重為可行範圍（最低約 2 kg），需術前 CT 或血管攝影確認 ductus 大小與形態選擇適當裝置。',
           '開胸手術結紮（thoracotomy + ligation）',
           '經導管 coil embolization',
           '藥物治療（Indomethacin 促進 PDA 閉合）',
           '觀察至 1 歲再處理',
         ],
         correct_actions: [
-          '經導管 ACDO（Amplatz Canine Duct Occluder）裝置閉合——成功率 > 95%，微創，住院 1-2 天。2.8 kg 體重為可行範圍（最低約 2 kg），需術前 CT 或血管攝影確認 ductus 大小與形態選擇適當裝置。',
+          '經導管 ACDO（Amplatz Canine Duct Occluder）裝置閉合，成功率 > 95%，微創，住院 1-2 天。2.8 kg 體重為可行範圍（最低約 2 kg），需術前 CT 或血管攝影確認 ductus 大小與形態選擇適當裝置。',
         ],
-        feedback_correct: '正確！ACDO 是目前犬 PDA 閉合的 gold standard——經股動脈進入，將裝置放置於動脈導管內形成完全閉塞。成功率 > 95%，嚴重併發症 < 5%。2.8 kg 在多數中心的可行範圍內（最低約 2-2.5 kg，取決於股動脈大小）。術前需血管攝影或 CT 確認 ductus 的 Miller 分型（Type I-IV），以選擇適當大小的 ACDO。開胸結紮適用於 ACDO 不可行時（體重過小或 ductus 形態不適合）。Indomethacin 僅對出生後數天內的新生兒可能有效，5 月齡已無效。',
+        feedback_correct: '正確！ACDO 是目前犬 PDA 閉合的 gold standard，經股動脈進入，將裝置放置於動脈導管內形成完全閉塞。成功率 > 95%，嚴重併發症 < 5%。2.8 kg 在多數中心的可行範圍內（最低約 2-2.5 kg，取決於股動脈大小）。術前需血管攝影或 CT 確認 ductus 的 Miller 分型（Type I-IV），以選擇適當大小的 ACDO。開胸結紮適用於 ACDO 不可行時（體重過小或 ductus 形態不適合）。Indomethacin 僅對出生後數天內的新生兒可能有效，5 月齡已無效。',
         feedback_incorrect: 'ACDO 是犬 PDA 的 gold standard（成功率 > 95%）。開胸結紮為備選。Coil 適用於小型 PDA 但大型 PDA 常不完全閉合。Indomethacin 僅新生兒（出生數天內）有效。延遲處理增加 CHF 風險。',
         key_learning_points: [
           'ACDO 是犬 PDA 閉合的 gold standard（成功率 > 95%）',
@@ -803,8 +803,8 @@ export const CARDIO_CASES: CaseChallenge[] = [
         correct_actions: [
           '24-48 小時心超確認閉合 → 1 個月心超追蹤 LA/LV 回縮 → 3 個月確認完全正常化 → 6 個月最終評估。成功閉合的犬壽命與正常犬相同。無殘餘分流不需長期藥物。',
         ],
-        feedback_correct: '正確！術後追蹤的重點在於心臟大小的回縮——LA/LV 容積負荷解除後，心臟通常在 1-3 個月內逐漸回縮至正常大小。若 3-6 個月仍未回縮，需考慮殘餘分流或其他共存心臟病。成功閉合且無殘餘分流的犬，預後與正常犬完全相同——壽命無差異。不需要長期藥物。持續性雜音消失是治療成功的臨床指標之一。飼主需知道成功閉合後幼犬可正常活動和絕育手術。',
-        feedback_incorrect: 'PDA 閉合後需追蹤心臟回縮。不追蹤可能遺漏殘餘分流。成功閉合不需長期藥物。每週 X 光過於頻繁且非最佳追蹤工具——心超才是。',
+        feedback_correct: '正確！術後追蹤的重點在於心臟大小的回縮，LA/LV 容積負荷解除後，心臟通常在 1-3 個月內逐漸回縮至正常大小。若 3-6 個月仍未回縮，需考慮殘餘分流或其他共存心臟病。成功閉合且無殘餘分流的犬，預後與正常犬完全相同，壽命無差異。不需要長期藥物。持續性雜音消失是治療成功的臨床指標之一。飼主需知道成功閉合後幼犬可正常活動和絕育手術。',
+        feedback_incorrect: 'PDA 閉合後需追蹤心臟回縮。不追蹤可能遺漏殘餘分流。成功閉合不需長期藥物。每週 X 光過於頻繁且非最佳追蹤工具，心超才是。',
         key_learning_points: [
           '術後 24-48 小時心超確認裝置位置和閉合完整性',
           'LA/LV 通常在 1-3 個月內回縮至正常',
@@ -815,12 +815,12 @@ export const CARDIO_CASES: CaseChallenge[] = [
       },
     ],
     expert_pathway: {
-      reasoning: '5 月齡 Miniature Poodle + 持續性機械樣雜音 + bounding pulse → PDA 高度懷疑 → 心超確認左到右分流 + 容積負荷（LA/Ao 2.5）→ 血流動力學顯著 PDA → ACDO 閉合 → 術後追蹤 LA/LV 回縮。',
+      reasoning: '5 月齡 Miniature Poodle + 持續性機械樣雜音 + bounding pulse → PDA 高度懷疑 → 心超確認左到右分流 + 容積負荷（LA/Ao 2.5）→ 血流動力學明顯 PDA → ACDO 閉合 → 術後追蹤 LA/LV 回縮。',
       key_decisions: [
         '辨識持續性雜音為 PDA 的 pathognomonic sign',
         '心超確認分流方向排除 Eisenmenger',
         'ACDO 為首選閉合方式',
-        '不延遲手術——未治療 PDA 死亡率高',
+        '不延遲手術，未治療 PDA 死亡率高',
         '術後追蹤心臟回縮確認成功',
       ],
       common_pitfalls: [
@@ -838,7 +838,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
   // ========== CASE-CARDIO-011: 犬肺動脈高壓 ==========
   {
     id: 'CASE-CARDIO-011',
-    title: 'CKCS MMVD 合併持續性運動不耐——繼發性肺動脈高壓的診斷與 Sildenafil 治療',
+    title: 'CKCS MMVD 合併持續性運動不耐，繼發性肺動脈高壓的診斷與 Sildenafil 治療',
     specialty: 'CARDIO',
     cross_specialties: ['IM'],
     required_nodes: ['CARDIO-L3-009', 'CARDIO-L3-001', 'CARDIO-L4-002', 'CARDIO-L5-001'],
@@ -847,31 +847,31 @@ export const CARDIO_CASES: CaseChallenge[] = [
     scenario: {
       signalment: '8 歲已絕育雄性 Cavalier King Charles Spaniel（CKCS），體重 8.5 kg',
       chief_complaint: '已知 MMVD 接受 CHF 治療中，運動不耐持續惡化但無明顯肺水腫',
-      brief_history: '一年前因 MMVD Stage C（首次 CHF）開始治療，目前用藥：Furosemide 2 mg/kg PO BID、Pimobendan 0.25 mg/kg PO BID、Benazepril 0.5 mg/kg PO SID。用藥後咳嗽和呼吸困難明顯改善，sleeping RR 穩定在 20-24 次/分。然而近 2 個月運動不耐逐漸惡化——散步 10 分鐘即明顯喘息需休息，之前可走 30 分鐘。偶有暈厥前徵（搖晃、短暫虛弱）。食慾正常。',
+      brief_history: '一年前因 MMVD Stage C（首次 CHF）開始治療，目前用藥：Furosemide 2 mg/kg PO BID、Pimobendan 0.25 mg/kg PO BID、Benazepril 0.5 mg/kg PO SID。用藥後咳嗽和呼吸困難明顯改善，sleeping RR 穩定在 20-24 次/分。不過近 2 個月運動不耐逐漸惡化，散步 10 分鐘即明顯喘息需休息，之前可走 30 分鐘。偶有暈厥前徵（搖晃、短暫虛弱）。食慾正常。',
     },
     steps: [
       {
         step_number: 1,
         step_type: 'history_collection',
-        title: '病史分析——CHF 控制良好但運動不耐惡化的鑑別',
+        title: '病史分析，CHF 控制良好但運動不耐惡化的鑑別',
         prompt: '已知 MMVD 犬 CHF 控制良好（sleeping RR 正常）但運動不耐惡化，你需要考慮哪些原因？選擇最重要的 3 項。',
         available_actions: [
-          '繼發性肺動脈高壓（PH secondary to left heart disease）——MMVD 最常見的併發症之一',
-          '心律不整——MR 導致 LA 擴大引發 AF 或 SVT',
+          '繼發性肺動脈高壓（PH secondary to left heart disease），MMVD 最常見的併發症之一',
+          '心律不整，MR 導致 LA 擴大引發 AF 或 SVT',
           '用藥合規性問題或 Pimobendan 未空腹給予',
           '慢性支氣管炎共存',
           '甲狀腺功能低下',
           '骨關節炎',
         ],
         correct_actions: [
-          '繼發性肺動脈高壓（PH secondary to left heart disease）——MMVD 最常見的併發症之一',
-          '心律不整——MR 導致 LA 擴大引發 AF 或 SVT',
+          '繼發性肺動脈高壓（PH secondary to left heart disease），MMVD 最常見的併發症之一',
+          '心律不整，MR 導致 LA 擴大引發 AF 或 SVT',
           '用藥合規性問題或 Pimobendan 未空腹給予',
         ],
-        feedback_correct: '很好！CHF 控制良好（sleeping RR 正常）但運動不耐惡化的關鍵鑑別：(1) 肺動脈高壓——MMVD 的 LA 壓力升高傳遞至肺靜脈 → 肺動脈反應性血管收縮 → 肺血管重塑 → PH。PH 導致右心負荷增加和心輸出量限制；(2) 心律不整——LA 擴大容易誘發 AF，AF 導致心輸出量下降 20-30%；(3) 用藥問題永遠是首先排除的因素。暈厥前徵提示血流動力學不穩定的可能。',
+        feedback_correct: '很好！CHF 控制良好（sleeping RR 正常）但運動不耐惡化的關鍵鑑別：(1) 肺動脈高壓，MMVD 的 LA 壓力升高傳遞至肺靜脈 → 肺動脈反應性血管收縮 → 肺血管重塑 → PH。PH 導致右心負荷增加和心輸出量限制；(2) 心律不整，LA 擴大容易誘發 AF，AF 導致心輸出量下降 20-30%；(3) 用藥問題永遠是首先排除的因素。暈厥前徵提示血流動力學不穩定的可能。',
         feedback_incorrect: '已控制 CHF 的 MMVD 犬若運動不耐惡化，首要鑑別：PH（最常見）、心律不整（AF）、用藥問題。甲狀腺和骨關節炎可致運動不耐但不會有暈厥前徵。支氣管炎可共存但不解釋暈厥。',
         key_learning_points: [
-          'PH 是 MMVD 最常見的併發症——LA 壓力升高 → 肺血管重塑',
+          'PH 是 MMVD 最常見的併發症，LA 壓力升高 → 肺血管重塑',
           'CHF 控制良好但運動不耐惡化 → 懷疑 PH 或 AF',
           'PH 的臨床表現：運動不耐、暈厥/暈厥前徵、右心衰竭徵兆',
           'AF 是 MMVD 犬 LA 嚴重擴大後的常見心律不整',
@@ -881,7 +881,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
         step_number: 2,
         step_type: 'diagnostic_plan',
         title: '診斷評估',
-        prompt: '你安排進一步評估。選擇最適當的 3 項檢查。',
+        prompt: '你安排後續評估。選擇最適當的 3 項檢查。',
         available_actions: [
           '完整心臟超音波（含三尖瓣逆流速度評估肺動脈壓）',
           '胸腔 X 光（評估肺水腫復發、右心擴大、肺動脈大小）',
@@ -895,7 +895,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '胸腔 X 光（評估肺水腫復發、右心擴大、肺動脈大小）',
           'ECG（評估心律和右心擴大徵兆）',
         ],
-        feedback_correct: '完美！心超是診斷 PH 最重要的非侵入性工具——三尖瓣逆流（TR）的最大速度可透過 simplified Bernoulli equation（ΔP = 4V²）估算肺動脈收縮壓（PASP）。TR velocity > 3.0 m/s = 中度 PH（PASP > 36 mmHg）、> 3.5 m/s = 重度 PH（PASP > 50 mmHg）。同時評估右心大小和功能。X 光評估肺動脈擴大（> pulmonary vein）、右心擴大、肺水腫是否復發。ECG 排除 AF 和評估右心軸偏移。',
+        feedback_correct: '完美！心超是診斷 PH 最重要的非侵入性工具，三尖瓣逆流（TR）的最大速度可透過 simplified Bernoulli equation（ΔP = 4V²）估算肺動脈收縮壓（PASP）。TR velocity > 3.0 m/s = 中度 PH（PASP > 36 mmHg）、> 3.5 m/s = 重度 PH（PASP > 50 mmHg）。同時評估右心大小和功能。X 光評估肺動脈擴大（> pulmonary vein）、右心擴大、肺水腫是否復發。ECG 排除 AF 和評估右心軸偏移。',
         feedback_incorrect: 'PH 診斷核心：心超 TR velocity 估算 PASP 是金標準非侵入性方法。X 光評估肺動脈大小和右心擴大。ECG 排除 AF。NT-proBNP 可輔助但非特異。',
         key_learning_points: [
           'TR velocity 估算 PASP：ΔP = 4V²（Simplified Bernoulli equation）',
@@ -933,7 +933,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
         title: 'PH 治療方案',
         prompt: '確認為 MMVD 合併重度繼發性 PH。你的治療調整？選擇最適當的 2 項。',
         available_actions: [
-          'Sildenafil 1-2 mg/kg PO BID-TID 加入現有 CHF 治療方案——PDE-5 抑制劑選擇性擴張肺血管降低肺動脈壓',
+          'Sildenafil 1-2 mg/kg PO BID-TID 加入現有 CHF 治療方案，PDE-5 抑制劑選擇性擴張肺血管降低肺動脈壓',
           '優化 CHF 管理：確認 Pimobendan 空腹給予、Furosemide 劑量適當（不需過度利尿加重右心前負荷不足）',
           'Bosentan（endothelin receptor antagonist）替代 Sildenafil',
           '增加 Furosemide 至 4 mg/kg TID',
@@ -941,15 +941,15 @@ export const CARDIO_CASES: CaseChallenge[] = [
           '加入 Digoxin',
         ],
         correct_actions: [
-          'Sildenafil 1-2 mg/kg PO BID-TID 加入現有 CHF 治療方案——PDE-5 抑制劑選擇性擴張肺血管降低肺動脈壓',
+          'Sildenafil 1-2 mg/kg PO BID-TID 加入現有 CHF 治療方案，PDE-5 抑制劑選擇性擴張肺血管降低肺動脈壓',
           '優化 CHF 管理：確認 Pimobendan 空腹給予、Furosemide 劑量適當（不需過度利尿加重右心前負荷不足）',
         ],
-        feedback_correct: '正確！Sildenafil 是犬 PH 的首選藥物——PDE-5 抑制劑選擇性作用於肺血管 cGMP pathway，擴張肺動脈降低 PVR。起始劑量 1 mg/kg PO BID，可漸增至 2 mg/kg TID。Sildenafil 可降低 PASP 20-30%，改善運動耐受力和臨床症狀。同時需優化 CHF 管理——但注意過度利尿會減少 RV 前負荷，反而加重 PH 患者的心輸出量下降。Bosentan 在犬的使用經驗有限且肝毒性風險。Furosemide 增加不能解決 PH 問題且可能有害。',
-        feedback_incorrect: 'Sildenafil 是犬 PH 的首選藥物（PDE-5 抑制劑）。過度利尿對 PH 有害——減少 RV 前負荷。Bosentan 在犬經驗有限。CHF 管理需優化但非加劇利尿。Digoxin 在此情境無明確角色。',
+        feedback_correct: '正確！Sildenafil 是犬 PH 的首選藥物，PDE-5 抑制劑選擇性作用於肺血管 cGMP pathway，擴張肺動脈降低 PVR。起始劑量 1 mg/kg PO BID，可漸增至 2 mg/kg TID。Sildenafil 可降低 PASP 20-30%，改善運動耐受力和臨床症狀。同時需優化 CHF 管理，但注意過度利尿會減少 RV 前負荷，反而加重 PH 患者的心輸出量下降。Bosentan 在犬的使用經驗有限且肝毒性風險。Furosemide 增加不能解決 PH 問題且可能有害。',
+        feedback_incorrect: 'Sildenafil 是犬 PH 的首選藥物（PDE-5 抑制劑）。過度利尿對 PH 有害，減少 RV 前負荷。Bosentan 在犬經驗有限。CHF 管理需優化但非加劇利尿。Digoxin 在此情境無明確角色。',
         key_learning_points: [
-          'Sildenafil 是犬 PH 的首選藥物——PDE-5 抑制劑擴張肺血管',
+          'Sildenafil 是犬 PH 的首選藥物，PDE-5 抑制劑擴張肺血管',
           '劑量：1-2 mg/kg PO BID-TID，可漸增',
-          '過度利尿對 PH 有害——減少 RV 前負荷加重右心衰竭',
+          '過度利尿對 PH 有害，減少 RV 前負荷加重右心衰竭',
           'PH 治療目標：改善運動耐受力和臨床症狀（非完全「正常化」PASP）',
           'Sildenafil 可降低 PASP 20-30%',
         ],
@@ -960,18 +960,18 @@ export const CARDIO_CASES: CaseChallenge[] = [
         title: '追蹤與預後',
         prompt: '治療 4 週後回診：飼主報告散步可維持 20 分鐘（從 10 分鐘改善），暈厥前徵消失。心超追蹤 TR velocity 降至 3.2 m/s（PASP ~41 mmHg），TAPSE 改善至 14 mm。你的後續建議？',
         available_actions: [
-          '治療反應良好。繼續 Sildenafil + 現有 CHF 藥物。每 3-6 個月心超追蹤 TR velocity 和 RV 功能。若症狀再惡化可考慮增加 Sildenafil 劑量或加入 Pimobendan（若未使用）。PH 合併 MMVD 的中位存活期取決於 PH 嚴重度和右心功能——輕中度約 12-18 個月，重度約 6-12 個月。',
+          '治療反應良好。繼續 Sildenafil + 現有 CHF 藥物。每 3-6 個月心超追蹤 TR velocity 和 RV 功能。若症狀再惡化可考慮增加 Sildenafil 劑量或加入 Pimobendan（若未使用）。PH 合併 MMVD 的中位存活期取決於 PH 嚴重度和右心功能，輕中度約 12-18 個月，重度約 6-12 個月。',
           '可以停止 Sildenafil，症狀已改善',
           '不需再追蹤，持續用藥即可',
           'PASP 未完全正常，加倍 Sildenafil 劑量',
         ],
         correct_actions: [
-          '治療反應良好。繼續 Sildenafil + 現有 CHF 藥物。每 3-6 個月心超追蹤 TR velocity 和 RV 功能。若症狀再惡化可考慮增加 Sildenafil 劑量或加入 Pimobendan（若未使用）。PH 合併 MMVD 的中位存活期取決於 PH 嚴重度和右心功能——輕中度約 12-18 個月，重度約 6-12 個月。',
+          '治療反應良好。繼續 Sildenafil + 現有 CHF 藥物。每 3-6 個月心超追蹤 TR velocity 和 RV 功能。若症狀再惡化可考慮增加 Sildenafil 劑量或加入 Pimobendan（若未使用）。PH 合併 MMVD 的中位存活期取決於 PH 嚴重度和右心功能，輕中度約 12-18 個月，重度約 6-12 個月。',
         ],
-        feedback_correct: '正確！TR velocity 從 3.8 降至 3.2 m/s（PASP 57.8 → 41 mmHg）= 明顯改善但仍為中度 PH。TAPSE 改善反映右心功能恢復。臨床症狀明顯改善證實治療有效。PH 治療是長期管理——不可停藥（症狀改善 ≠ 疾病治癒）。追蹤重點：TR velocity 趨勢、RV 大小和功能（TAPSE）、臨床症狀（運動耐受力）。Group 2 PH 的預後取決於原發心臟病的進展和 PH 控制程度。',
-        feedback_incorrect: 'Sildenafil 停藥會導致 PH 反彈。PASP 不需完全正常——治療目標是改善症狀和右心功能。定期追蹤必要——PH 可進展。劑量調整應基於症狀和追蹤結果。',
+        feedback_correct: '正確！TR velocity 從 3.8 降至 3.2 m/s（PASP 57.8 → 41 mmHg）= 明顯改善但仍為中度 PH。TAPSE 改善反映右心功能恢復。臨床症狀明顯改善證實治療有效。PH 治療是長期管理，不可停藥（症狀改善 ≠ 疾病治癒）。追蹤重點：TR velocity 趨勢、RV 大小和功能（TAPSE）、臨床症狀（運動耐受力）。Group 2 PH 的預後取決於原發心臟病的進展和 PH 控制程度。',
+        feedback_incorrect: 'Sildenafil 停藥會導致 PH 反彈。PASP 不需完全正常，治療目標是改善症狀和右心功能。定期追蹤必要，PH 可進展。劑量調整應基於症狀和追蹤結果。',
         key_learning_points: [
-          'PH 治療是長期管理——不可停藥',
+          'PH 治療是長期管理，不可停藥',
           '治療目標：改善臨床症狀和右心功能（非完全「正常化」PASP）',
           '追蹤指標：TR velocity 趨勢、TAPSE、臨床症狀',
           '每 3-6 個月心超追蹤',
@@ -985,7 +985,7 @@ export const CARDIO_CASES: CaseChallenge[] = [
         'CHF 控制良好但運動不耐惡化 → PH 列入鑑別',
         'TR velocity 估算 PASP 是 PH 診斷的核心工具',
         'Sildenafil 是犬 PH 的首選藥物',
-        '不過度利尿——保護 RV 前負荷',
+        '不過度利尿，保護 RV 前負荷',
         '長期追蹤 TR velocity 和 TAPSE',
       ],
       common_pitfalls: [

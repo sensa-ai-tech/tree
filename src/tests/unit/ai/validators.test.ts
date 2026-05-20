@@ -89,7 +89,7 @@ describe('Node Content Validation', () => {
       summary: '這是一個關於心臟聽診的重要知識點',
       learning_objectives: ['了解聽診技術'],
       key_points: ['S1 S2 心音辨識'],
-      body: '心臟聽診是獸醫臨床檢查的基礎技能之一。透過聽診器可以評估心臟功能的多項指標，包括心率、心律、心音強度以及是否存在異常雜音。正確的聽診技術對於早期發現心臟疾病至關重要。',
+      body: '心臟聽診是獸醫臨床檢查的基本功之一。透過聽診器可以評估心率、心律、心音強度，也能聽出有沒有異常雜音。聽診技術練得熟，早期發現心臟病的機會就會大很多。',
     };
     const result = validate(nodeContentSchema, data);
     expect(result.success).toBe(true);

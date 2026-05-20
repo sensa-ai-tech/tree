@@ -2,7 +2,7 @@ import type { NodeContent } from '@/types/knowledge';
 
 const now = '2026-02-15T00:00:00Z';
 
-/** 心臟科總覽 — 概念型 */
+/** 心臟科總覽，概念型 */
 const contentOverview: NodeContent = {
   id: 'CONTENT-L0-001',
   node_id: 'CARDIO-L0-001',
@@ -17,7 +17,7 @@ const contentOverview: NodeContent = {
   key_points: [
     '犬最常見後天心臟病：MMVD（約 75%）',
     '貓最常見心臟病：HCM（約 60%）',
-    '台灣為心絲蟲高盛行區，預防醫學至關重要',
+    '台灣為心絲蟲高盛行區，預防醫學不能省',
     '心臟聽診是最基礎也最重要的篩檢工具',
     '心臟超音波（echocardiography）是確診金標準',
   ],
@@ -41,7 +41,7 @@ const contentOverview: NodeContent = {
 台灣地處亞熱帶，[藥物:Ivermectin] 等心絲蟲預防藥物的使用極為重要。根據台灣獸醫內科學會統計，未預防犬隻的心絲蟲陽性率可達 20-40%。
 
 [圖片:犬貓常見心臟病分佈圓餅圖]`,
-  clinical_pearl: '每次理學檢查都應進行心臟聽診。即使是年輕健康動物，發現心雜音也需進一步評估——早期發現可顯著改善預後。',
+  clinical_pearl: '每次理學檢查都要聽心臟，年輕健康的也不能省。聽到雜音就要繼續追，不要假設「應該還好」。早抓到一年，治療空間差很多。',
   common_mistakes: [
     '認為心雜音一定代表嚴重心臟病（功能性雜音很常見）',
     '忽略貓的心臟病（貓常無明顯症狀直到急性發作）',
@@ -63,7 +63,7 @@ const contentOverview: NodeContent = {
   created_at: now,
 };
 
-/** MMVD — 疾病型 */
+/** MMVD，疾病型 */
 const contentMMVD: NodeContent = {
   id: 'CONTENT-L3-001',
   node_id: 'CARDIO-L3-001',
@@ -123,7 +123,7 @@ MMVD，又稱為慢性退行性瓣膜病（Chronic Degenerative Valvular Disease
 - **Stage D**：加強利尿劑、考慮 [藥物:Spironolactone]、[藥物:Sildenafil]
 
 [圖片:MMVD 分期治療流程圖]`,
-  clinical_pearl: '心雜音的等級與 MMVD 的嚴重度不一定正相關。Grade II/VI 的雜音可能已有顯著心臟重塑（B2），而 Grade V/VI 的雜音在某些穩定病患中可能維持多年不進展。永遠要以影像學（心超 + X 光）作為分期依據。',
+  clinical_pearl: '心雜音的等級與 MMVD 的嚴重度不一定正相關。Grade II/VI 的雜音可能已有明顯心臟重塑（B2），而 Grade V/VI 的雜音在某些穩定病患中可能維持多年不進展。永遠要以影像學（心超 + X 光）作為分期依據。',
   common_mistakes: [
     '僅憑心雜音等級判斷疾病嚴重度，未安排心臟超音波',
     '在 Stage B1 即開始使用 pimobendan（EPIC 研究僅支持 B2 以上）',
@@ -173,17 +173,17 @@ MMVD，又稱為慢性退行性瓣膜病（Chronic Degenerative Valvular Disease
   created_at: now,
 };
 
-/** 心臟聽診 — 診斷型 */
+/** 心臟聽診，診斷型 */
 const contentAuscultation: NodeContent = {
   id: 'CONTENT-L4-001',
   node_id: 'CARDIO-L4-001',
   version: 1,
-  summary: '心臟聽診是獸醫臨床檢查中最基礎且最重要的心臟評估工具。透過系統性的聽診技巧，可以辨識正常心音（S1、S2）、異常心音（S3、S4）、心雜音及心律不整，為進一步影像學檢查提供方向。',
+  summary: '心臟聽診是獸醫臨床檢查中最基礎且最重要的心臟評估工具。透過系統性的聽診技巧，可以辨識正常心音（S1、S2）、異常心音（S3、S4）、心雜音及心律不整，為後續影像學檢查提供方向。',
   learning_objectives: [
     '執行系統性的犬貓心臟聽診四點聽診法',
     '辨識 S1、S2 心音並判斷是否存在異常心音',
     '運用 Levine 分級量表評估心雜音等級（I-VI）',
-    '根據聽診發現制定進一步診斷計畫',
+    '根據聽診發現制定後續診斷計畫',
   ],
   key_points: [
     '四個聽診位置：左心尖（二尖瓣）、左心底（主動脈/肺動脈）、右心尖（三尖瓣）、右心底',
@@ -218,8 +218,8 @@ const contentAuscultation: NodeContent = {
 | V/VI | 聽診器邊緣觸及即可聞 |
 | VI/VI | 不接觸胸壁即可聞 |
 
-[互動:心音播放器——正常心音 vs. 各級雜音]`,
-  clinical_pearl: '在進行聽診時，先評估心率和節律，再專注於各別心音。注意犬的竇性心律不整是正常的——吸氣時心率加快，呼氣時減慢。如果在貓身上聽到節律不整，則需要進一步評估。',
+[互動:心音播放器，正常心音 vs. 各級雜音]`,
+  clinical_pearl: '在進行聽診時，先評估心率和節律，再專注於各別心音。注意犬的竇性心律不整是正常的，吸氣時心率加快，呼氣時減慢。如果在貓身上聽到節律不整，則需要後續評估。',
   common_mistakes: [
     '僅在左側聽診而忽略右側（三尖瓣逆流常見於右側）',
     '將犬的竇性心律不整誤判為病理性心律不整',
@@ -239,7 +239,7 @@ const contentAuscultation: NodeContent = {
       { finding: '收縮期雜音', description: 'S1 與 S2 之間聽到的異常音', significance: '最常見原因：二尖瓣或三尖瓣閉鎖不全、心室中隔缺損、主動脈/肺動脈狹窄' },
       { finding: '舒張期雜音', description: 'S2 與下一個 S1 之間的異常音', significance: '少見，提示主動脈或肺動脈瓣閉鎖不全' },
       { finding: '奔馬律（Gallop rhythm）', description: '額外的 S3 或 S4 心音', significance: 'S3 提示容量過載，S4 提示順應性下降。貓的奔馬律高度提示心肌病' },
-      { finding: '心律不整', description: '節律不規則（排除犬竇性心律不整後）', significance: '需 ECG 進一步評估，可能為早期收縮、房室傳導阻滯等' },
+      { finding: '心律不整', description: '節律不規則（排除犬竇性心律不整後）', significance: '需 ECG 後續評估，可能為早期收縮、房室傳導阻滯等' },
     ],
     interpretation_guide: '1. 確認心率（犬正常 60-160 bpm，貓 140-220 bpm）。2. 評估節律規則性。3. 各聽診點逐一評估 S1、S2 音量與品質。4. 辨識是否有雜音（定位、時相、等級、特徵）。5. 辨識是否有額外心音（S3、S4）。',
     pitfalls: [
@@ -248,7 +248,7 @@ const contentAuscultation: NodeContent = {
       '肥胖動物胸壁過厚降低聽診敏感度',
     ],
     sensitivity_specificity: '對心雜音偵測的敏感度約 70-85%（取決於操作者經驗），對確診特定疾病的特異度較低，需搭配影像學。',
-    cost_benefit: '成本極低（僅需聽診器），可在任何臨床場景執行。作為篩檢工具價值極高，是決定是否需要進一步心臟檢查的第一步。',
+    cost_benefit: '成本極低（僅需聽診器），可在任何臨床場景執行。作為篩檢工具價值極高，是決定是否需要後續心臟檢查的第一步。',
   },
   procedure_data: null,
   visual_placeholders: [

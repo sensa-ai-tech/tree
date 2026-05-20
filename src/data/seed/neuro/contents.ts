@@ -2,12 +2,12 @@ import type { NodeContent } from '@/types/knowledge';
 
 const now = '2026-02-15T00:00:00Z';
 
-/** 犬特發性癲癇 — 疾病型 */
+/** 犬特發性癲癇 - 疾病型 */
 const contentEpilepsy: NodeContent = {
   id: 'CONTENT-NEURO-L3-001',
   node_id: 'NEURO-L3-001',
   version: 1,
-  summary: '犬特發性癲癇（Canine Idiopathic Epilepsy）是犬最常見的慢性神經疾病，好發於 1-5 歲的純種犬。IVETF 共識將癲癇分為特發性、結構性及反應性三大類。治療以長期抗癲癇藥物（AED）為主，Phenobarbital 和 Potassium Bromide 為傳統一線用藥，Levetiracetam 和 Zonisamide 為新一代選擇。',
+  summary: '犬特發性癲癇（Canine Idiopathic Epilepsy）是門診最常碰到的慢性神經疾病，多半在 1 到 5 歲純種犬身上發病。IVETF 共識把癲癇分成特發性、結構性、反應性三類。長期靠 AED 控制，老藥是 Phenobarbital 跟 Potassium Bromide，新一代則用 Levetiracetam 跟 Zonisamide。',
   learning_objectives: [
     '運用 IVETF 分類系統將癲癇正確分類為特發性、結構性或反應性',
     '描述 IVETF Tier I-III 的分層診斷流程',
@@ -30,24 +30,24 @@ const contentEpilepsy: NodeContent = {
 
 
 ### 概述
-犬特發性癲癇（Idiopathic Epilepsy, IE）是犬最常見的慢性神經疾病，約占所有癲癇犬隻的 60-70%。IVETF（International Veterinary Epilepsy Task Force）將其定義為排除結構性與代謝性原因後的反覆癲癇發作。
+特發性癲癇（IE）大概占了犬癲癇病例的六到七成，是門診長期追蹤最常見的一種。IVETF（International Veterinary Epilepsy Task Force）的定義很簡單：把結構性跟代謝性原因都排除掉，剩下反覆發作的，就歸這類。
 
 ### IVETF 癲癇分類
-- **特發性癲癇（Idiopathic Epilepsy）**：遺傳性或推定遺傳性，無結構性腦部病變
-- **結構性癲癇（Structural Epilepsy）**：腦部結構性病變所致（腫瘤、腦炎、血管事件）
-- **反應性癲癇發作（Reactive Seizures）**：代謝或中毒原因導致的發作（低血糖、肝腦症、中毒）
+- 特發性癲癇（Idiopathic Epilepsy）：遺傳性或推定遺傳性，腦部沒有結構性病變
+- 結構性癲癇（Structural Epilepsy）：腦袋裡找得到病灶，像腫瘤、腦炎、血管事件
+- 反應性癲癇發作（Reactive Seizures）：代謝或中毒誘發，例如低血糖、肝腦症、中毒
 
 ### 發作分類
-- **局灶性發作（Focal Seizures）**：單側面部抽搐、咀嚼動作、單肢抽動、行為異常（fly-biting）
-- **全身性發作（Generalized Seizures）**：
-  - 強直-陣攣性（Tonic-clonic）：最常見，全身僵直後節律性抽搐
-  - 強直性（Tonic）：持續肌肉收縮
+- 局灶性發作（Focal Seizures）：單側面部抽搐、咀嚼動作、單肢抽動、行為異常（fly-biting 那種）
+- 全身性發作（Generalized Seizures）：
+  - 強直-陣攣性（Tonic-clonic）：臨床上看到最多，先全身僵直再節律性抽搐
+  - 強直性（Tonic）：肌肉持續收縮
   - 陣攣性（Clonic）：節律性肌肉抽搐
-  - 肌躍攣性（Myoclonic）：短暫肌肉跳動
-- **局灶性演變為全身性（Focal to bilateral tonic-clonic）**：局灶發作擴散至雙側
+  - 肌躍攣性（Myoclonic）：短暫的肌肉跳動
+- 局灶性演變為全身性（Focal to bilateral tonic-clonic）：從局灶起跳，再擴散到雙側
 
 ### 緊急處置：癲癇重積狀態
-癲癇重積狀態（Status Epilepticus, SE）定義為持續 > 5 分鐘的癲癇發作或兩次發作間無意識恢復。
+癲癇重積狀態（Status Epilepticus, SE）的定義是發作持續超過 5 分鐘，或兩次發作之間意識沒有恢復。
 
 急救順序：
 1. [藥物:Diazepam] 0.5-1 mg/kg IV（或 per rectum 1-2 mg/kg）
@@ -90,10 +90,10 @@ const contentEpilepsy: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **Phenobarbital 肝毒性**：長期使用 PB 可導致肝酵素持續升高、肝纖維化，嚴重時可致肝衰竭
-- **癲癇重積狀態（Status Epilepticus）**：持續 > 5 分鐘的發作或連續發作間無意識恢復，可造成不可逆腦損傷
-- **Cluster seizures**：24 小時內 ≥ 2 次發作，為預後不良因子且需緊急處置
-- **藥物難治性癲癇**：約 20-30% 的犬對兩種 AED 反應不佳，需多藥方案或調整策略
+- Phenobarbital 肝毒性：PB 長期吃下去，肝酵素會慢慢爬高，可能走到肝纖維化，嚴重的話會肝衰竭
+- 癲癇重積狀態（Status Epilepticus）：發作超過 5 分鐘或連續發作中間沒醒過來，會造成不可逆的腦損傷
+- Cluster seizures：24 小時內發作兩次以上，這是預後不良因子，要當急診處理
+- 藥物難治性癲癇：大概兩成到三成的犬對兩種 AED 反應都不夠，得換多藥方案或調整策略
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -105,60 +105,60 @@ const contentEpilepsy: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **藥物控制良好**：預後良好 — 約 60-70% 的犬以適當 AED 可達滿意控制（發作頻率降低 > 50%），平均壽命可接近正常
-- **藥物難治性癲癇**：預後謹慎 — 約 20-30% 為難治性，需多藥方案管理，生活品質可能受影響
-- **首次即 cluster seizures/SE**：預後較差 — 初始即出現 cluster 或 SE 的犬，後續癲癇控制通常較困難
-- **預後良好因子**：首次發作年齡 1-5 歲、單一發作型態、對首線 AED 反應良好、飼主用藥依從性高
-- **預後不良因子**：Border Collie/GSD 品種（藥物反應較差）、高發作頻率、cluster seizures、status epilepticus、SUDEP 風險
+- 藥物控制良好：六到七成的犬用合適的 AED 就能控制得不錯（發作頻率降一半以上），壽命大致正常
+- 藥物難治性癲癇：兩到三成走到難治性這條路，得用多藥方案，生活品質會被影響
+- 首次就 cluster seizures 或 SE：初次就跑出 cluster 或 SE 的犬，之後通常比較難控制
+- 預後良好因子：首次發作落在 1 到 5 歲、發作型態單一、首線 AED 反應好、飼主乖乖吃藥
+- 預後不良因子：Border Collie 跟 GSD（這兩種品種對藥反應就是比較差）、發作頻率高、cluster seizures、status epilepticus、SUDEP 風險
 
 ## 六、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 新一代 AED（Brivaracetam/Cenobamate） | 犬難治性癲癇的新選擇——Cenobamate 機轉獨特（Na⁺ 通道 + GABA-A） | 人醫 Cenobamate 療效優異，犬藥動學初步研究中 |
-| 迷走神經刺激（VNS） | 犬藥物難治性癲癇的非藥物輔助治療 | 人醫已商業化超過 20 年，犬有少數病例報告 |
-| 反應性神經刺激（RNS） | 犬局灶性癲癇的即時偵測與閉迴路刺激 | 人醫 FDA 核准（NeuroPace），獸醫僅概念階段 |
-| 癲癇預警裝置（Seizure alert devices） | 犬穿戴式裝置偵測前驅運動模式以預警飼主 | 人醫多款上市，犬原型裝置研究中 |
+| 新一代 AED（Brivaracetam/Cenobamate） | 犬難治性癲癇的新選擇，Cenobamate 機轉特別（Na⁺ 通道 + GABA-A 雙作用） | 人醫 Cenobamate 療效不錯，犬的藥動學還在初步研究 |
+| 迷走神經刺激（VNS） | 犬藥物難治性癲癇的非藥物輔助治療 | 人醫已經商業化超過 20 年，犬只有零星病例報告 |
+| 反應性神經刺激（RNS） | 犬局灶性癲癇的即時偵測加閉迴路刺激 | 人醫 FDA 核准（NeuroPace），獸醫還停在概念階段 |
+| 癲癇預警裝置（Seizure alert devices） | 用穿戴式裝置抓前驅運動模式來提早通知飼主 | 人醫已經有好幾款上市，犬的原型還在研究 |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| AED 起始時機：首次發作 vs 達標準後 | 首次單一發作即治療 vs 觀察等待 vs 僅 cluster/SE 後才治療——缺乏大型 RCT 直接比較 | Level III |
-| Levetiracetam 作為一線 AED 的定位 | LEV 副作用少但需 TID 給藥，取代 PB 為一線的證據正在累積 | Level II |
-| Honeymoon effect 的臨床意義 | LEV 初期效果可能逐漸減弱，是否為真正的藥理現象或自然疾病波動仍有爭議 | Level III |
-| 犬癲癇基因檢測的臨床實用性 | 已知基因突變僅涵蓋少數品種，泛品種基因 panel 的預測價值有限 | Level IV |`,
-  clinical_pearl: '治療犬特發性癲癇時，「完全無發作」不應是唯一目標。合理的治療目標是將發作頻率降低 50% 以上，同時維持可接受的生活品質。PB 血中濃度應維持在 15-35 ug/mL，開始治療後 2-3 週達穩態時首次監測。提醒飼主建立「發作日誌」追蹤頻率與型態。\n\n【台灣流行病學】犬特發性癲癇在台灣臨床並不罕見，好發品種如米格魯犬（Beagle）、德國牧羊犬、金毛獵犬、拉布拉多在台灣均有相當飼養數量。台灣小型犬（如吉娃娃、馬爾濟斯）的反應性癲癇（如低血糖、肝門脈分流）需與特發性癲癇鑑別。Phenobarbital 與 Levetiracetam 為台灣市場主要抗癲癇藥物，KBr 在台灣取得較不便。台灣獸醫神經科推廣「發作日誌」與居家錄影輔助診斷。',
+| AED 起始時機：首次發作就用、還是達到標準再用 | 首次單一發作就治療、觀察等待、或等到 cluster/SE 才治療，目前缺乏大型 RCT 直接比較 | Level III |
+| Levetiracetam 當一線 AED 的定位 | LEV 副作用少但要 TID 給藥，取代 PB 當一線的證據在累積 | Level II |
+| Honeymoon effect 的臨床意義 | LEV 一開始效果好但會慢慢減弱，到底是真的藥理現象還是疾病本身的波動，目前還在爭 | Level III |
+| 犬癲癇基因檢測的臨床實用性 | 已知突變只涵蓋少數品種，跨品種基因 panel 的預測價值不高 | Level IV |`,
+  clinical_pearl: '治犬特發性癲癇不能把「完全不發作」當唯一目標。比較實際的做法是把頻率壓低五成以上、維持還算可以的生活品質。PB 血中濃度抓在 15-35 ug/mL，治療開始 2-3 週達穩態時做第一次監測。跟飼主說好要寫「發作日誌」追頻率跟型態。\n\n【台灣流行病學】犬特發性癲癇在台灣門診不罕見，米格魯、德國牧羊犬、金毛、拉布拉多這幾個好發品種在台灣飼養量都不算少。台灣小型犬如吉娃娃、馬爾濟斯遇到的反應性癲癇（低血糖、肝門脈分流那類），要跟特發性癲癇分清楚。Phenobarbital 跟 Levetiracetam 是台灣市場的主力，KBr 在台灣比較難拿。台灣獸醫神經科這幾年主推「發作日誌」加居家錄影來幫忙診斷。',
   common_mistakes: [
-    '未排除代謝性原因（如低血糖、肝腦症）即診斷為特發性癲癇',
-    '首次單一發作即開始長期 AED 治療（通常需達到治療起始標準）',
-    '僅憑單次 PB 血中濃度偏低即急於增加劑量（需等待穩態 2-3 週）',
-    '使用 KBr 時未告知飼主避免高鈉飲食變化（影響 Br⁻ 排泄與血中濃度）',
-    '忽略 Levetiracetam 的 honeymoon effect（初期效果佳但可能逐漸減弱）',
+    '沒先排除代謝性原因（低血糖、肝腦症那些）就直接掛上特發性癲癇',
+    '單次發作就開始長期 AED（通常要先達到治療起始標準才用）',
+    '看到一次 PB 血中濃度偏低就急著加量（要等穩態，2-3 週才準）',
+    '用 KBr 但沒提醒飼主避開高鈉飲食變化（會影響 Br⁻ 排泄跟血中濃度）',
+    '忽略 Levetiracetam 的 honeymoon effect（前期好用，後面會慢慢減弱）',
   ],
   disease_data: {
-    signalment: '好發於 1-5 歲（首次發作年齡 6 個月-6 歲）的純種犬。品種偏好：Beagle、GSD、Border Collie、Labrador、Golden Retriever、Australian Shepherd、Belgian Tervuren、Bernese Mountain Dog。無明顯性別偏好。',
-    etiology: '特發性癲癇為推定遺傳性，確切基因突變已在部分品種被鑑定（如 Lagotto Romagnolo 的 LGI2 基因）。大多數品種的遺傳模式為多基因遺傳。定義上排除可識別的結構性或代謝性腦部病變。',
-    pathogenesis: '興奮性-抑制性神經傳遞失衡 → 神經元群過度同步化放電 → 局灶性或全身性癲癇發作。長期反覆發作可能導致 kindling effect（發作閾值逐漸降低）與繼發性神經損傷（excitotoxicity）。',
+    signalment: '純種犬好發，發病集中在 1-5 歲（首次發作年齡落在 6 個月到 6 歲）。品種偏好有 Beagle、GSD、Border Collie、Labrador、Golden Retriever、Australian Shepherd、Belgian Tervuren、Bernese Mountain Dog。沒有明顯性別差。',
+    etiology: '推定為遺傳性，部分品種的基因突變已經找到（例如 Lagotto Romagnolo 的 LGI2）。多數品種屬多基因遺傳。定義上要先把可辨識的結構性或代謝性腦部病變排掉。',
+    pathogenesis: '興奮性跟抑制性神經傳遞失衡，神經元群同步放電過度，跑出局灶性或全身性發作。長期反覆發作會出現 kindling effect（發作閾值越來越低），加上 excitotoxicity 造成繼發性神經損傷。',
     clinical_signs: [
-      { sign: '強直-陣攣性發作', category: 'primary', description: '全身僵直（強直期）後節律性四肢抽搐（陣攣期），常伴倒地、划水動作、流涎、大小便失禁' },
-      { sign: '局灶性面部抽搐', category: 'primary', description: '單側面部肌肉抽動、咀嚼動作、流涎，可能演變為全身性發作' },
-      { sign: '發作後期（Post-ictal）', category: 'secondary', description: '發作後暫時性失明、方向感喪失、嗜睡、不安或攻擊行為，可持續數分鐘至數小時' },
-      { sign: '自主神經症狀', category: 'secondary', description: '發作時可見瞳孔散大、流涎、排尿排便' },
+      { sign: '強直-陣攣性發作', category: 'primary', description: '先全身僵直（強直期），再進入節律性四肢抽搐（陣攣期），常伴倒地、划水動作、流涎、大小便失禁' },
+      { sign: '局灶性面部抽搐', category: 'primary', description: '單側面部肌肉抽動、咀嚼動作、流涎，有時會擴散成全身性發作' },
+      { sign: '發作後期（Post-ictal）', category: 'secondary', description: '發作完一段時間會看到失明、方向感喪失、嗜睡、不安或攻擊行為，可以拖幾分鐘到幾小時' },
+      { sign: '自主神經症狀', category: 'secondary', description: '發作當下會有瞳孔散大、流涎、排尿排便' },
     ],
-    staging: { system: 'IVETF Seizure Frequency Classification', stages: ['孤立性發作（Isolated seizures）：間隔 > 24 小時', '叢集性發作（Cluster seizures）：24 小時內 ≥ 2 次發作', '癲癇重積狀態（Status epilepticus）：持續 > 5 分鐘或兩次發作間無意識恢復'] },
+    staging: { system: 'IVETF Seizure Frequency Classification', stages: ['孤立性發作（Isolated seizures）：間隔超過 24 小時', '叢集性發作（Cluster seizures）：24 小時內 2 次以上', '癲癇重積狀態（Status epilepticus）：持續超過 5 分鐘或兩次發作間沒醒過來'] },
     differential_diagnosis: [
-      { condition: '結構性癲癇（腦腫瘤）', key_differentiator: '> 6 歲首次發作、進行性神經功能缺損、MRI 可見腫塊病灶' },
-      { condition: '反應性癲癇發作（低血糖）', key_differentiator: '血糖 < 60 mg/dL，多見於幼犬或胰島素瘤患犬，補糖後發作停止' },
-      { condition: '肝腦症', key_differentiator: '肝功能異常（膽汁酸升高、血氨升高），常伴間歇性行為異常、流涎' },
-      { condition: 'MUO（腦膜腦炎）', key_differentiator: 'CSF 淋巴球增多、蛋白升高，MRI 可見多灶性或瀰漫性病灶' },
-      { condition: '心因性暈厥（Syncope）', key_differentiator: '短暫意識喪失伴肌張力消失，無 post-ictal 期，心臟聽診異常或心律不整，ECG/Holter 可確認' },
+      { condition: '結構性癲癇（腦腫瘤）', key_differentiator: '6 歲以後才首次發作、神經功能缺損會進展、MRI 看得到腫塊病灶' },
+      { condition: '反應性癲癇發作（低血糖）', key_differentiator: '血糖小於 60 mg/dL，多半是幼犬或胰島素瘤患犬，補糖後發作就停' },
+      { condition: '肝腦症', key_differentiator: '肝功能異常（膽汁酸升、血氨升），常伴間歇性行為異常、流涎' },
+      { condition: 'MUO（腦膜腦炎）', key_differentiator: 'CSF 淋巴球多、蛋白升，MRI 看得到多灶或瀰漫性病灶' },
+      { condition: '心因性暈厥（Syncope）', key_differentiator: '短暫意識喪失加肌張力消失，沒有 post-ictal 期，心臟聽診會異常或聽到心律不整，ECG/Holter 可以確認' },
     ],
-    diagnostic_workup: '1. 詳細病史（發作描述、頻率、影片記錄）→ 2. 神經學檢查（發作間期通常正常）→ 3. Tier I 血檢（排除代謝性原因）→ 4. Tier II 膽汁酸/血氨（排除肝腦症）→ 5. 腦部 MRI（排除結構性病變）→ 6. CSF 分析（排除腦炎）→ 7. 基因檢測（品種特異性）',
-    treatment_protocol: '治療起始標準：cluster seizures、status epilepticus、發作頻率 > 2 次/6 個月、嚴重 post-ictal。一線：PB 2-5 mg/kg PO BID 或 KBr 20-30 mg/kg PO SID。單一藥物控制不佳時加入第二線：LEV 20 mg/kg PO TID 或 ZNS 5-10 mg/kg PO BID。難治性癲癇定義：兩種適當 AED 以治療劑量使用仍無法有效控制。',
-    prognosis: '約 60-70% 的犬以適當 AED 可達到滿意控制（發作頻率降低 > 50%）。約 20-30% 為藥物難治性。好發品種中 Border Collie 和 GSD 的預後通常較差。Cluster seizures 和 status epilepticus 的發生與較差預後相關。平均壽命可接近正常，但 SUDEP（Sudden Unexpected Death in Epilepsy）風險存在。',
-    monitoring: '開始 PB 後 2-3 週測穩態血中濃度（目標 15-35 ug/mL）。之後每 6 個月監測 PB 濃度 + 肝功能（ALT、ALP、膽汁酸）。KBr 濃度目標 1-3 mg/mL（合併 PB 時）或 2-3 mg/mL（單用時）。要求飼主記錄發作日誌（日期、時間、持續時間、類型）。',
-    owner_communication: '特發性癲癇是一種終身疾病，目前無法治癒但可有效管理。治療目標是降低發作頻率和嚴重度，而非完全消除發作。強調用藥依從性（不可自行停藥或減藥，突然停用 PB 可誘發癲癇重積）。教導緊急處置：發作時保持冷靜、記錄時間、不要試圖打開嘴巴、發作超過 5 分鐘立即就醫。',
+    diagnostic_workup: '先收完整病史（發作描述、頻率、影片最好），做神經學檢查（發作間期通常正常）。Tier I 血檢排代謝性原因，Tier II 加膽汁酸跟血氨排肝腦症，Tier III 上腦部 MRI 排結構性病變、CSF 分析排腦炎，必要時再做品種特異性的基因檢測。',
+    treatment_protocol: '什麼時候開始治療？cluster seizures、status epilepticus、半年內發作超過 2 次、或 post-ictal 很嚴重，這些就是起始標準。一線用 PB 2-5 mg/kg PO BID 或 KBr 20-30 mg/kg PO SID。單藥壓不住就加二線：LEV 20 mg/kg PO TID 或 ZNS 5-10 mg/kg PO BID。難治性癲癇的定義就是兩種適當 AED 用到治療劑量還是控制不住。',
+    prognosis: '約六到七成犬隻用合適 AED 可以控制得不錯（發作頻率掉一半以上）。兩到三成是藥物難治性。好發品種裡 Border Collie 跟 GSD 的預後通常比較差。出現 cluster seizures 或 status epilepticus 都跟差預後綁在一起。壽命可以接近正常，但要注意 SUDEP（Sudden Unexpected Death in Epilepsy）這個風險。',
+    monitoring: 'PB 開始後 2-3 週測穩態血中濃度，目標 15-35 ug/mL。之後每 6 個月追 PB 濃度跟肝功能（ALT、ALP、膽汁酸）。KBr 濃度合併 PB 時抓 1-3 mg/mL，單用就抓 2-3 mg/mL。飼主要寫發作日誌，把日期、時間、持續時間、類型記下來。',
+    owner_communication: '特發性癲癇是終身疾病，目前無法治癒，但管理得當可以控制得不錯。治療目標是把發作頻率跟嚴重度壓下來，不是完全消除發作。藥一定要照吃，不能自己停或減量，突然停 PB 會誘發癲癇重積。發作當下教飼主：保持冷靜、記時間、不要去掰嘴巴，超過 5 分鐘立刻就醫。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -180,12 +180,12 @@ const contentEpilepsy: NodeContent = {
   created_at: now,
 };
 
-/** 椎間盤疾病 (IVDD) — 疾病型 */
+/** 椎間盤疾病 (IVDD) - 疾病型 */
 const contentIVDD: NodeContent = {
   id: 'CONTENT-NEURO-L3-002',
   node_id: 'NEURO-L3-002',
   version: 1,
-  summary: '椎間盤疾病（Intervertebral Disc Disease, IVDD）是犬最常見的脊髓壓迫性疾病，分為 Hansen Type I（急性椎間盤突出）與 Hansen Type II（慢性椎間盤膨出）。好發於軟骨發育不全品種（如臘腸犬），臨床嚴重度以修正 Frankel 分級（Grade I-V）評估。治療依分級決定保守或手術治療，深痛覺喪失為最重要的預後指標。',
+  summary: '椎間盤疾病（IVDD）在門診是最常碰到的脊髓壓迫疾病，分 Hansen Type I（急性椎間盤突出）跟 Hansen Type II（慢性椎間盤膨出）兩型。臘腸跟柯基那種軟骨發育不全的品種特別容易中。嚴重度看修正 Frankel 分級（Grade I-V），臨床分級先抓出來再決定保守還是開刀，深痛覺有沒有掉是最關鍵的預後指標。',
   learning_objectives: [
     '區分 Hansen Type I 與 Type II 椎間盤疾病的病理機轉與臨床表現',
     '運用修正 Frankel 分級系統（Grade I-V）評估 IVDD 嚴重度',
@@ -208,29 +208,29 @@ const contentIVDD: NodeContent = {
 
 
 ### 概述
-犬椎間盤疾病（IVDD）是犬最常見的脊髓壓迫性疾病，約占所有犬神經科就診的 2%。軟骨發育不全（chondrodystrophic）品種有極高的發病率，臘腸犬的終生盛行率可達 19-24%。
+犬 IVDD 是門診最常見的脊髓壓迫疾病，神經科就診中大概占 2%。軟骨發育不全（chondrodystrophic）品種的盛行率特別高，臘腸犬一生中可能就有 19-24% 的機會中。
 
 ### 分類
 ### Hansen Type I（急性椎間盤突出）
-- 髓核發生軟骨樣變性（chondroid metaplasia） → 脫水鈣化
-- 纖維環急性破裂 → 鈣化髓核突出至椎管
-- 造成急性脊髓壓迫與挫傷
-- 好發於軟骨發育不全品種 3-6 歲
+- 髓核走軟骨樣變性（chondroid metaplasia），脫水鈣化
+- 纖維環急性破裂，鈣化髓核衝進椎管
+- 造成急性脊髓壓迫加挫傷
+- 好發在軟骨發育不全品種，年齡 3-6 歲
 
 ### Hansen Type II（慢性椎間盤膨出）
-- 纖維環發生纖維樣變性（fibroid metaplasia）
-- 纖維環逐漸膨出至椎管
-- 造成慢性漸進性脊髓壓迫
-- 好發於大型犬 > 5 歲
+- 纖維環走纖維樣變性（fibroid metaplasia）
+- 纖維環慢慢膨出到椎管裡
+- 造成慢性、漸進性的脊髓壓迫
+- 好發大型犬，5 歲以上
 
 ### Hansen Type III（急性非壓迫性）
-- 正常髓核高速射出，造成脊髓挫傷但無持續壓迫
-- 臨床表現為急性發作後不進展，通常預後較好
+- 正常髓核高速射出，造成脊髓挫傷但沒有持續壓迫
+- 臨床上是急性發作後不再進展，預後通常比較好
 
 ### 好發位置
-- **胸腰椎（T11-L2）**：65-75%，T12-T13 與 T13-L1 最常見
-- **頸椎（C2-C7）**：15-25%，C2-C3 最常見
-- **腰薦椎（L4-S3）**：少見
+- 胸腰椎（T11-L2）：65-75%，T12-T13 與 T13-L1 最常見
+- 頸椎（C2-C7）：15-25%，C2-C3 最常見
+- 腰薦椎（L4-S3）：少見
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -244,11 +244,11 @@ const contentIVDD: NodeContent = {
 | V | 癱瘓無深痛覺 | 無自主運動，深痛覺喪失 |
 
 ### 診斷流程
-1. 神經學檢查 → 定位病灶脊髓節段
-2. 脊椎 X 光：可見椎間隙狹窄、椎間盤鈣化（敏感度有限）
-3. **MRI（金標準）**：直接顯示椎間盤突出、脊髓壓迫與脊髓訊號變化
-4. CT myelography：MRI 不可得時的替代方案
-5. CSF 分析：排除發炎性疾病
+1. 神經學檢查先做，把病灶脊髓節段抓出來
+2. 脊椎 X 光：看得到椎間隙變窄、椎間盤鈣化（敏感度普通）
+3. MRI（金標準）：直接看到椎間盤突出、脊髓壓迫、脊髓訊號變化
+4. CT myelography：沒有 MRI 時的替代方案
+5. CSF 分析：排掉發炎性疾病
 
 ## 三、治療策略 (Treatment)
 
@@ -269,10 +269,10 @@ const contentIVDD: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **進行性脊髓軟化（PMM）**：發生率約 2-5%（Grade V），術後神經功能持續惡化、panniculus 截斷面上移，一旦確診致死率接近 100%
-- **尿路感染**：癱瘓期間膀胱管理不當導致細菌性膀胱炎，為最常見的可預防併發症
-- **褥瘡（Decubital ulcers）**：長期臥床犬隻在骨突處（髖、肘、跗）產生壓力性潰瘍
-- **復發**：保守治療後復發率約 30-40%，手術後同一位點復發率低（< 5%）但其他位點可能新發
+- 進行性脊髓軟化（PMM）：Grade V 約 2-5% 會走到這條路。術後神經功能繼續掉、panniculus 截斷面往上爬，一旦確診致死率接近百分百
+- 尿路感染：癱瘓期間膀胱管理沒做好就會跑出細菌性膀胱炎，最常見也最好預防
+- 褥瘡（Decubital ulcers）：長期躺著的犬隻會在髖、肘、跗這些骨突處長壓力性潰瘍
+- 復發：保守治療復發率 30-40%，手術後同一節段復發率不到 5%，但其他節段還是可能新發
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -284,13 +284,13 @@ const contentIVDD: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **Grade I-II 保守治療**：預後良好 — 成功率 > 85%，但復發率約 30-40%
-- **Grade I-III 手術治療**：預後良好 — 步行恢復率 > 95%
-- **Grade IV 手術治療**：預後良好 — 步行恢復率 > 90%
-- **Grade V 深痛覺喪失 < 24h**：預後謹慎 — 步行恢復率約 50-60%
-- **Grade V 深痛覺喪失 > 48h**：預後差 — 步行恢復率 < 5%
-- **預後良好因子**：深痛覺存在、早期手術減壓、積極術後復健、Hansen Type III（非壓迫性）
-- **預後不良因子**：深痛覺喪失 > 48 小時、PMM 發生、MRI T2 高訊號範圍廣泛、多節段壓迫
+- Grade I-II 保守治療：成功率 85% 以上，但復發率 30-40%
+- Grade I-III 手術治療：步行恢復率超過 95%
+- Grade IV 手術治療：步行恢復率超過 90%
+- Grade V 深痛覺喪失 24 小時內手術：步行恢復率約 50-60%
+- Grade V 深痛覺喪失超過 48 小時：預後很差，步行恢復率不到 5%
+- 預後良好因子：深痛覺還在、早期手術減壓、積極術後復健、Hansen Type III（非壓迫性）
+- 預後不良因子：深痛覺喪失超過 48 小時、跑出 PMM、MRI T2 高訊號範圍廣、多節段壓迫
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -305,28 +305,28 @@ const contentIVDD: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| Grade III IVDD 手術 vs 保守治療 | Grade I-II 保守治療成功率高，但 Grade III 的最佳策略仍有爭議——部分研究支持早期手術 | Level II |
-| 術後類固醇使用 | 高劑量 Methylprednisolone 曾被推薦但現多數專家反對——可能加重脊髓損傷而非保護 | Level II |
-| 深痛覺喪失 > 48 小時是否仍應手術 | 傳統認為 > 48h 手術預後極差（< 5%），但少數報告仍有恢復案例 | Level III |
-| 預防性椎間盤開窗術（fenestration） | 降低鄰近節段復發率的效果存在爭議，增加手術時間與風險 | Level III |`,
-  clinical_pearl: '評估 IVDD 病患時，深痛覺（deep pain perception）是最關鍵的預後指標。測試方式為用止血鉗夾趾骨——要確認的是「大腦層級的疼痛感知」（轉頭、叫喊），而非僅是脊髓反射性的屈曲反應（withdrawal reflex）。Grade IV 胸腰椎 IVDD 術後步行恢復率 > 90%，但 Grade V 若深痛覺喪失 > 48 小時，恢復率驟降至 < 5%。\n\n【台灣流行病學】椎間盤疾病是台灣最常見的神經外科急症。臘腸犬在台灣飼養數量極大，IVDD 盛行率高達 19-24%，為台灣神經科病例的最大宗。法國鬥牛犬近年在台灣飼養量急速上升，其頸椎與胸腰椎 IVDD 病例亦增加。台灣 MRI 設備在主要都會區已相對普及，有助於術前精確定位。台灣多家動物醫院已具備 hemilaminectomy 與 ventral slot 手術能力，但飼主對 Grade V 病例的預後認知仍需加強。',
+| Grade III IVDD 手術或保守治療 | Grade I-II 保守治療成功率不錯，但 Grade III 怎麼選還在吵，部分研究支持早期手術 | Level II |
+| 術後類固醇使用 | 高劑量 Methylprednisolone 以前被推薦過，現在多數專家反對，可能反而加重脊髓損傷 | Level II |
+| 深痛覺喪失超過 48 小時要不要開刀 | 傳統認為 48 小時後手術預後極差（不到 5%），但少數報告還是有恢復案例 | Level III |
+| 預防性椎間盤開窗術（fenestration） | 能不能降低鄰近節段復發率還在爭，會增加手術時間跟風險 | Level III |`,
+  clinical_pearl: 'IVDD 進來先看深痛覺（deep pain perception），這是最關鍵的預後指標。測試方式是用止血鉗夾趾骨，要看的是「大腦層級的疼痛感知」（轉頭、叫喊），不是脊髓反射的屈曲反應（withdrawal reflex），這兩個千萬別搞混。Grade IV 胸腰椎 IVDD 術後步行恢復率超過 90%，但 Grade V 只要深痛覺喪失超過 48 小時，恢復率就掉到 5% 以下。\n\n【台灣流行病學】IVDD 是台灣最常見的神經外科急症。臘腸犬在台灣飼養量大，IVDD 盛行率 19-24%，是神經科病例的最大宗。法鬥這幾年在台灣飼養量爆衝，頸椎跟胸腰椎 IVDD 病例也跟著上來。MRI 在台灣主要都會區已經普及，術前定位的精準度提高很多。國內幾家動物醫院都有 hemilaminectomy 跟 ventral slot 手術能力，不過飼主對 Grade V 病例的預後認知還需要再教育。',
   common_mistakes: [
-    '將屈曲反射（withdrawal reflex）誤判為深痛覺存在——屈曲反射是脊髓反射，不代表大腦感知到疼痛',
-    '僅依賴 X 光診斷 IVDD（X 光僅能提示，MRI 或 CT myelography 才能確認壓迫位置與程度）',
-    '保守治療期間未執行嚴格籠內休息（「限制活動」不等於「籠內休息」）',
-    'Grade III 以上仍堅持保守治療過久而延誤手術時機',
-    '忽略進行性脊髓軟化（PMM）的可能性——Grade V 術後若神經功能持續惡化需高度懷疑',
+    '把屈曲反射（withdrawal reflex）當成深痛覺存在，屈曲反射只是脊髓反射，不代表大腦感知到疼痛',
+    '只靠 X 光診斷 IVDD，X 光只能提示，要 MRI 或 CT myelography 才能確認壓迫位置跟程度',
+    '保守治療期間沒做嚴格籠內休息，「限制活動」跟「籠內休息」不是同一件事',
+    'Grade III 以上還在硬撐保守治療，把手術時機拖過了',
+    '忽略 PMM 的可能，Grade V 術後神經功能繼續惡化就要高度懷疑',
   ],
   disease_data: {
-    signalment: '軟骨發育不全品種（臘腸犬、Beagle、Shih Tzu、Pekingese、French Bulldog、Cocker Spaniel）好發，3-6 歲。Hansen Type II 好發於大型犬 > 5 歲（GSD、Labrador、Doberman）。無明顯性別偏好，但某些研究顯示雄性略多。',
-    etiology: 'Hansen Type I：遺傳性軟骨發育不全導致椎間盤髓核提前發生軟骨樣變性與鈣化（chondroid metaplasia），使纖維環承受異常壓力而急性破裂。Hansen Type II：年齡相關的纖維樣變性（fibroid metaplasia），纖維環逐漸退化膨出。',
-    pathogenesis: '椎間盤退化 → 髓核/纖維環結構破壞 → 急性突出（Type I）或慢性膨出（Type II）→ 脊髓壓迫 + 挫傷 → 脊髓水腫、出血、去髓鞘 → 軸突損傷 → 神經功能障礙。嚴重壓迫可導致脊髓缺血壞死（myelomalacia），若為進行性（PMM）則預後極差。',
+    signalment: '軟骨發育不全品種好發，臘腸、Beagle、Shih Tzu、Pekingese、French Bulldog、Cocker Spaniel 都算，年齡 3-6 歲。Hansen Type II 則跑到大型犬身上，5 歲以上的 GSD、Labrador、Doberman 比較常見。性別差不大，部分研究說雄性稍多。',
+    etiology: 'Hansen Type I：遺傳性軟骨發育不全讓髓核提早走 chondroid metaplasia 鈣化，纖維環撐不住異常壓力就急性破。Hansen Type II：年齡相關的 fibroid metaplasia，纖維環慢慢退化、膨出去。',
+    pathogenesis: '椎間盤退化以後，髓核跟纖維環結構壞掉，跑出急性突出（Type I）或慢性膨出（Type II）。接下來壓迫加挫傷打進脊髓，水腫、出血、去髓鞘陸續來，軸突損傷後神經功能就出問題。嚴重壓迫會走到脊髓缺血壞死（myelomalacia），如果是進行性（PMM）那預後就差到底。',
     clinical_signs: [
-      { sign: '背痛/頸痛', category: 'primary', description: '胸腰椎：弓背（kyphosis）、腹部緊繃、觸診脊椎疼痛。頸椎：低頭姿勢、頸部僵硬、轉頭抗拒' },
-      { sign: '後肢共濟失調/輕癱', category: 'primary', description: '本體感覺性共濟失調，步態搖擺、腳掌翻轉（knuckling），胸腰椎 IVDD 典型表現' },
-      { sign: '四肢輕癱', category: 'primary', description: '頸椎 IVDD 可導致四肢受影響，通常前肢症狀較後肢輕' },
-      { sign: '癱瘓', category: 'secondary', description: '嚴重壓迫導致完全運動功能喪失，可伴或不伴深痛覺' },
-      { sign: '排尿功能障礙', category: 'secondary', description: 'UMN 膀胱（胸腰椎）：膀胱膨大、難以擠壓。LMN 膀胱（腰薦椎）：膀胱鬆弛、易溢流' },
+      { sign: '背痛/頸痛', category: 'primary', description: '胸腰椎可看到弓背（kyphosis）、腹部緊繃、觸診脊椎會痛。頸椎則表現為低頭姿勢、頸部僵硬、轉頭就抗拒' },
+      { sign: '後肢共濟失調/輕癱', category: 'primary', description: '本體感覺性共濟失調，步態搖搖晃晃、腳掌翻轉（knuckling），是胸腰椎 IVDD 的典型樣子' },
+      { sign: '四肢輕癱', category: 'primary', description: '頸椎 IVDD 可以打到四肢，通常前肢症狀比後肢輕' },
+      { sign: '癱瘓', category: 'secondary', description: '嚴重壓迫導致完全運動功能喪失，可能還有深痛覺，也可能沒有' },
+      { sign: '排尿功能障礙', category: 'secondary', description: 'UMN 膀胱（胸腰椎）會膨大、難擠壓；LMN 膀胱（腰薦椎）則鬆弛、容易溢流' },
     ],
     staging: {
       system: 'Modified Frankel Scale for IVDD',
@@ -339,17 +339,17 @@ const contentIVDD: NodeContent = {
       ],
     },
     differential_diagnosis: [
-      { condition: '纖維軟骨栓塞（FCE）', key_differentiator: '超急性發作（數分鐘內達最嚴重），通常非進行性，不對稱，MRI 見脊髓梗塞訊號但無壓迫性病灶' },
-      { condition: '脊椎腫瘤', key_differentiator: '慢性進行性，X 光可見溶骨性變化，MRI 顯示腫塊伴對比增強' },
-      { condition: '椎間盤脊椎炎（Discospondylitis）', key_differentiator: '發燒、白血球升高、X 光見終板溶蝕與反應性新骨增生' },
-      { condition: '退化性脊髓病變（DM）', key_differentiator: '慢性漸進性後肢 UMN 輕癱，無疼痛，MRI 通常無壓迫性病灶，SOD1 基因突變陽性' },
-      { condition: '主動脈血栓栓塞（ATE，貓）', key_differentiator: '貓急性後肢癱瘓最重要鑑別——後肢冰冷、股動脈脈搏消失、趾甲切面無出血，常伴 HCM' },
+      { condition: '纖維軟骨栓塞（FCE）', key_differentiator: '超急性發作，幾分鐘內達到最嚴重，之後通常不再進展，左右不對稱，MRI 看到脊髓梗塞訊號但找不到壓迫性病灶' },
+      { condition: '脊椎腫瘤', key_differentiator: '慢性進行性，X 光看得到溶骨性變化，MRI 顯示腫塊加對比增強' },
+      { condition: '椎間盤脊椎炎（Discospondylitis）', key_differentiator: '會發燒、白血球升、X 光看到終板溶蝕跟反應性新骨增生' },
+      { condition: '退化性脊髓病變（DM）', key_differentiator: '慢性漸進性後肢 UMN 輕癱，不會痛，MRI 通常找不到壓迫性病灶，SOD1 基因突變陽性' },
+      { condition: '主動脈血栓栓塞（ATE，貓）', key_differentiator: '貓急性後肢癱瘓的第一個要想到的，後肢冰冷、股動脈脈搏摸不到、趾甲切面沒出血，常伴 HCM' },
     ],
-    diagnostic_workup: '1. 神經學檢查（定位、分級）→ 2. 脊椎 X 光（椎間隙狹窄、椎間盤鈣化，敏感度約 60-70%）→ 3. MRI（金標準：椎間盤突出位置、脊髓壓迫程度、脊髓訊號變化）→ 4. CT ± myelography（MRI 不可得時替代）→ 5. 基礎血檢排除系統性疾病 → 6. CSF 分析（排除發炎性疾病）',
-    treatment_protocol: '保守治療（Grade I-II 或飼主拒絕手術）：嚴格籠內休息 4-6 週 + 疼痛管理（Gabapentin 5-10 mg/kg TID + Tramadol 2-5 mg/kg BID-TID）+ NSAIDs 或短期低劑量 Prednisolone。手術治療（Grade III-V，尤其深痛覺喪失需緊急手術）：胸腰椎 hemilaminectomy，頸椎 ventral slot。術後神經科復健（水療、被動關節運動、站立訓練）加速恢復。',
-    prognosis: 'Grade I-II 保守治療：成功率 > 85%（但復發率約 30-40%）。Grade I-III 手術治療：步行恢復率 > 95%。Grade IV 手術治療：步行恢復率 > 90%。Grade V 深痛覺喪失 < 24h 手術：步行恢復率約 50-60%。Grade V 深痛覺喪失 > 48h：步行恢復率 < 5%。進行性脊髓軟化（PMM）：發生率約 2-5%，一旦確診預後極差（致死）。',
-    monitoring: '保守治療：每週神經學檢查評估恢復進度，4-6 週後逐漸恢復活動。術後：24-48 小時密切監測神經功能（尤其 Grade V 需注意 PMM 徵兆）。長期：每 3-6 個月神經學追蹤，注意復發徵兆。膀胱管理：癱瘓期間每日擠壓膀胱 3-4 次或導尿，監測尿液感染。',
-    owner_communication: 'IVDD 是犬常見且可治療的神經疾病。輕度病例（Grade I-II）保守治療成功率高，但需嚴格執行籠內休息 4-6 週，提前恢復活動是最常見的復發原因。嚴重病例（Grade III-V）建議盡早手術以獲得最佳恢復機會。特別強調深痛覺喪失（Grade V）為緊急情況，需在 24-48 小時內手術。術後復健計畫對功能恢復極為重要。',
+    diagnostic_workup: '神經學定位先做（定位加分級），然後脊椎 X 光看椎間隙狹窄跟椎間盤鈣化（敏感度約 60-70%）。MRI 是金標準，能看到椎間盤突出位置、脊髓壓迫程度、脊髓訊號變化。沒 MRI 時改 CT 加 myelography。基礎血檢排系統性疾病、CSF 分析排發炎性疾病。',
+    treatment_protocol: '保守治療（Grade I-II 或飼主拒絕手術）：嚴格籠內休息 4-6 週加疼痛管理（Gabapentin 5-10 mg/kg TID 加 Tramadol 2-5 mg/kg BID-TID），NSAIDs 或短期低劑量 Prednisolone 都可以。手術治療（Grade III-V，特別是深痛覺喪失要當急診開）：胸腰椎走 hemilaminectomy，頸椎走 ventral slot。術後安排神經科復健（水療、被動關節運動、站立訓練）加速恢復。',
+    prognosis: 'Grade I-II 保守治療成功率超過 85%，但復發率 30-40%。Grade I-III 手術步行恢復率超過 95%。Grade IV 手術超過 90%。Grade V 深痛覺喪失 24 小時內手術約 50-60%。深痛覺喪失超過 48 小時就只剩 5% 以下。進行性脊髓軟化（PMM）發生率約 2-5%，一旦確診基本上就走向死亡。',
+    monitoring: '保守治療：每週做神經學檢查看進度，4-6 週後再慢慢恢復活動。術後 24-48 小時要密切追神經功能（特別是 Grade V，盯緊 PMM 徵兆）。長期就每 3-6 個月追蹤一次，注意復發徵兆。膀胱管理在癱瘓期間每天擠 3-4 次或導尿，順便監測尿液感染。',
+    owner_communication: 'IVDD 是犬常見、可治療的神經疾病。輕度病例（Grade I-II）保守治療成功率高，但要嚴格執行籠內休息 4-6 週，太早讓牠動是最常見的復發原因。嚴重的（Grade III-V）建議盡早開刀，恢復機會最好。深痛覺喪失（Grade V）是急診，24-48 小時內就要進手術房。術後復健計畫對功能恢復很關鍵。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -371,12 +371,12 @@ const contentIVDD: NodeContent = {
   created_at: now,
 };
 
-/** 肉芽腫性腦膜腦炎 (GME/MUO) — 疾病型 */
+/** 肉芽腫性腦膜腦炎 (GME/MUO) - 疾病型 */
 const contentGME: NodeContent = {
   id: 'CONTENT-NEURO-L3-003',
   node_id: 'NEURO-L3-003',
   version: 1,
-  summary: '肉芽腫性腦膜腦炎（GME）現歸類於不明原因腦膜腦炎（Meningoencephalitis of Unknown Origin, MUO），為犬最常見的中樞神經系統發炎性疾病。好發於小型犬年輕至中年雌性。MUO 涵蓋 GME、壞死性腦炎（NME）和壞死性白質腦炎（NLE）三種組織學亞型。臨床表現取決於病灶位置（前腦、腦幹、小腦、脊髓），治療以免疫抑制為主。',
+  summary: '肉芽腫性腦膜腦炎（GME）現在歸到不明原因腦膜腦炎（MUO）這個大傘下，是犬中樞神經系統發炎性疾病裡最常見的。好發在小型犬、年輕到中年的母犬。MUO 涵蓋 GME、壞死性腦炎（NME）跟壞死性白質腦炎（NLE）三種組織學亞型。臨床表現看病灶在哪邊（前腦、腦幹、小腦、脊髓），治療主軸是免疫抑制。',
   learning_objectives: [
     '描述 MUO 三種亞型（GME、NME、NLE）的組織病理與品種偏好',
     '說明 MUO 的臨床表現如何取決於病灶位置（多灶性 vs 局灶性）',
@@ -399,33 +399,33 @@ const contentGME: NodeContent = {
 
 
 ### 概述
-不明原因腦膜腦炎（Meningoencephalitis of Unknown Origin, MUO）是犬最常見的中樞神經系統發炎性疾病群。因確定診斷需腦組織活檢，臨床上通常以「MUO」作為推定診斷。
+不明原因腦膜腦炎（MUO）是犬最常見的中樞神經系統發炎性疾病群。確定診斷要靠腦組織活檢，臨床上通常先以「MUO」這個推定診斷處理。
 
 ### MUO 亞型
 ### GME（Granulomatous Meningoencephalitis）
-- 血管周圍組織球與淋巴球浸潤形成肉芽腫
-- 三種臨床形式：局灶性、播散性、眼型
-- 病灶可見於前腦、腦幹、小腦、脊髓
+- 血管周圍有組織球跟淋巴球浸潤，形成肉芽腫
+- 臨床上分三種：局灶性、播散性、眼型
+- 病灶可以跑到前腦、腦幹、小腦、脊髓
 
 ### NME（Necrotizing Meningoencephalitis）
-- 又稱 Pug dog encephalitis
-- 大腦皮質壞死伴發炎
+- 又叫 Pug dog encephalitis
+- 大腦皮質壞死加發炎
 - 好發 Pug、Maltese、Chihuahua、Papillon、French Bulldog
-- 與 DLA class II 基因型相關
+- 跟 DLA class II 基因型有關
 
 ### NLE（Necrotizing Leukoencephalitis）
-- 又稱 Yorkshire Terrier encephalitis
-- 白質壞死伴發炎，影響腦幹白質
-- 好發 Yorkshire Terrier、French Bulldog
+- 又叫 Yorkshire Terrier encephalitis
+- 白質壞死加發炎，主要打腦幹白質
+- 好發 Yorkshire Terrier 跟 French Bulldog
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-依病灶位置而異：
-- **前腦**：癲癇發作、行為異常、對側威脅反應缺失、盲目轉圈
-- **腦幹**：意識改變、腦神經缺損（面癱、吞嚥困難）、步態異常
-- **小腦**：小腦性共濟失調、意向性震顫、辨距不良
-- **脊髓**：四肢輕癱/癱瘓、脊髓定位疼痛
-- **多灶性**：上述多區域症狀組合，播散性 GME 最常見
+看病灶在哪邊，臨床表現完全不一樣：
+- 前腦：癲癇發作、行為異常、對側威脅反應缺失、盲目轉圈
+- 腦幹：意識改變、腦神經缺損（面癱、吞嚥困難）、步態異常
+- 小腦：小腦性共濟失調、意向性震顫、辨距不良
+- 脊髓：四肢輕癱或癱瘓、脊髓定位有疼痛
+- 多灶性：好幾區同時出狀況，播散性 GME 最常見
 
 ### 診斷
 ### MRI 特徵
@@ -453,10 +453,10 @@ const contentGME: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **免疫抑制劑副作用**：Prednisolone 長期使用致醫源性庫興氏症（多飲多尿、肌肉萎縮、皮膚菲薄）；Cytarabine 致骨髓抑制（白血球低下）
-- **繼發性感染**：免疫抑制下泌尿道感染、皮膚感染風險增加
-- **疾病復發**：減藥過快為最常見的復發原因，約 30-50% 的 MUO 犬在治療期間至少復發一次
-- **癲癇併發**：前腦型 MUO 常繼發癲癇，需合併 AED 治療
+- 免疫抑制劑副作用：Prednisolone 長期吃會跑出醫源性庫興氏症（多飲多尿、肌肉萎縮、皮膚變薄）；Cytarabine 會壓骨髓，白血球會掉
+- 繼發性感染：免疫被壓低以後，泌尿道感染、皮膚感染風險就會上升
+- 疾病復發：減藥太快是最常見的復發原因，三成到五成的 MUO 犬治療期間至少復發一次
+- 癲癇併發：前腦型 MUO 常會跑出癲癇，要合併 AED 治療
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -468,12 +468,12 @@ const contentGME: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **GME 局灶型**：預後謹慎至中等 — 多藥免疫抑制方案中位存活 > 12 個月，僅 Prednisolone 單藥約 3-6 個月
-- **GME 播散性**：預後差 — 中位存活數週至數月，快速進展者預後最差
-- **NME（Pug dog encephalitis）**：預後差 — 中位存活 1-6 個月，品種基因易感性高
-- **NLE（Yorkshire Terrier encephalitis）**：預後中等至差 — 對免疫抑制反應不一
-- **預後良好因子**：局灶型表現、對初始免疫抑制快速反應、CSF 細胞數明顯下降、MRI 病灶縮小
-- **預後不良因子**：播散性發作、嚴重意識障礙、腦幹受累、NME 亞型、初始治療反應差
+- GME 局灶型：預後謹慎到中等，多藥免疫抑制方案中位存活超過 12 個月，單用 Prednisolone 大概只剩 3-6 個月
+- GME 播散性：預後差，中位存活數週到數月，進展快的最慘
+- NME（Pug dog encephalitis）：預後差，中位存活 1-6 個月，品種基因易感性高
+- NLE（Yorkshire Terrier encephalitis）：預後中等到差，對免疫抑制的反應每隻都不一樣
+- 預後良好因子：局灶型表現、初始免疫抑制反應快、CSF 細胞數明顯下降、MRI 病灶縮小
+- 預後不良因子：一開始就是播散性、嚴重意識障礙、腦幹被打到、NME 亞型、初始治療反應差
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -488,41 +488,41 @@ const contentGME: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| MUO 最佳二線免疫抑制劑選擇 | Cytarabine vs Cyclosporine vs Mycophenolate vs Leflunomide——缺乏 head-to-head RCT，選擇多依臨床經驗 | Level III |
-| GME/NME/NLE 是否為同一疾病譜 | 三者組織病理不同但臨床處置相似，統稱 MUO 是否適當仍有爭論 | Level IV |
-| 免疫抑制治療的最佳持續時間 | 何時可安全停藥尚無共識——部分專家建議終身低劑量維持 | Level IV |
-| 局灶性 GME 的手術活檢角色 | MRI 見腫塊效應時手術活檢可確診但風險高，是否優於推定治療有爭議 | Level III |`,
-  clinical_pearl: 'MUO 的診斷是「排除性」的——必須先排除感染性腦炎（Toxoplasma、Neospora、Distemper、Cryptococcus 等），才能開始免疫抑制治療。若在未排除感染的情況下使用高劑量類固醇，可能導致感染性腦炎惡化。建議 CSF 送檢感染性疾病 panel 的同時，可先使用較低劑量的抗發炎類固醇（0.5-1 mg/kg）暫時穩定病情。\n\n【台灣流行病學】MUO（GME/NME/NLE）在台灣小型犬中為重要的神經科疾病。巴哥犬、約克夏梗、馬爾濟斯等台灣常見小型品種為 NME/NLE 的好發族群。台灣亞熱帶環境下，感染性腦炎（如犬瘟熱、Cryptococcus、Toxoplasma）亦需列入鑑別診斷。台灣 CSF 分析與感染性疾病 panel 在主要獸醫教學醫院均可執行，但基層醫院轉診意識仍需提升。',
+| MUO 最佳二線免疫抑制劑怎麼選 | Cytarabine、Cyclosporine、Mycophenolate、Leflunomide 之間缺乏 head-to-head RCT，選擇多半看臨床經驗 | Level III |
+| GME/NME/NLE 算不算同一個疾病譜 | 三者組織病理不同但臨床處置很像，統稱 MUO 適不適合還在爭 | Level IV |
+| 免疫抑制治療要吃多久 | 什麼時候可以安全停藥沒有共識，有些專家建議終身低劑量維持 | Level IV |
+| 局灶性 GME 要不要做手術活檢 | MRI 看到腫塊效應時手術活檢可以確診但風險高，比推定治療好不好還在爭 | Level III |`,
+  clinical_pearl: 'MUO 的診斷本質是「排除性」的。一定要先把感染性腦炎（Toxoplasma、Neospora、Distemper、Cryptococcus 那一票）排掉，才能下手免疫抑制。沒排除就直接打高劑量類固醇，會把感染性腦炎推往更糟的方向。建議 CSF 送感染性疾病 panel 的同時，可以先用較低劑量的抗發炎類固醇（0.5-1 mg/kg）穩住病情。\n\n【台灣流行病學】MUO（GME/NME/NLE）在台灣小型犬是重要的神經科病。巴哥、約克夏梗、馬爾濟斯這些台灣常見小型品種就是 NME/NLE 的好發族群。台灣亞熱帶氣候下，感染性腦炎（犬瘟熱、Cryptococcus、Toxoplasma）也要一起鑑別。CSF 分析跟感染性疾病 panel 在主要獸醫教學醫院都做得起來，但基層轉診意識還可以再加強。',
   common_mistakes: [
-    '未排除感染性腦炎即開始高劑量免疫抑制治療（Toxoplasma、Neospora、Distemper、Cryptococcus 需先排除）',
-    '將局灶性 GME 的 MRI 腫塊效應誤診為腦腫瘤而進行手術（CSF 分析可提供重要鑑別資訊）',
-    '僅使用 Prednisolone 單一治療而不加入二線免疫抑制劑（長期高劑量類固醇副作用大且復發率高）',
-    '症狀改善後過快減少免疫抑制劑量導致復發',
-    '忽略 NME/NLE 的品種特異性——Pug、Yorkshire Terrier 等品種的預後通常較典型 GME 差',
+    '沒排除感染性腦炎就直接打高劑量免疫抑制（Toxoplasma、Neospora、Distemper、Cryptococcus 一定要先排）',
+    '把局灶性 GME 的 MRI 腫塊效應當成腦腫瘤就直接動刀（CSF 分析其實能幫忙鑑別）',
+    '只用 Prednisolone 單藥治療，沒加二線免疫抑制劑（長期高劑量類固醇副作用大、復發率高）',
+    '症狀一改善就急著減免疫抑制劑量，結果復發',
+    '忽略 NME/NLE 的品種特異性，Pug、Yorkshire Terrier 這些品種預後通常比典型 GME 還差',
   ],
   disease_data: {
     signalment: '好發於小型犬雌性，中位年齡 3-6 歲。品種偏好：Maltese、Chihuahua、Pug（NME）、Yorkshire Terrier（NLE）、Papillon、French Bulldog、Shih Tzu。雌性約為雄性的 2 倍。',
-    etiology: '確切病因不明，推測為免疫介導性機轉。GME：T 細胞介導的遲發型過敏反應。NME/NLE：可能有自體免疫成分，與 DLA class II 等位基因強烈相關（尤其 Pug）。非感染性，無傳染性。',
-    pathogenesis: 'GME：活化的 T 細胞與巨噬細胞在中樞神經系統血管周圍聚集 → 形成肉芽腫性血管周圍袖套 → 腦實質與腦膜發炎 → 水腫與組織損傷。NME/NLE：免疫介導性大腦皮質（NME）或白質（NLE）壞死 → 進行性神經功能喪失。',
+    etiology: '確切病因不明，目前推測是免疫介導性。GME 走 T 細胞介導的遲發型過敏反應。NME/NLE 可能有自體免疫成分，跟 DLA class II 等位基因關聯很強（特別是 Pug）。不是感染，不會傳染。',
+    pathogenesis: 'GME 的機轉是活化的 T 細胞跟巨噬細胞跑到中樞神經系統血管周圍聚集，形成肉芽腫性血管周圍袖套，腦實質跟腦膜發炎，最後水腫加組織損傷。NME/NLE 則是免疫介導性的大腦皮質（NME）或白質（NLE）壞死，造成進行性神經功能喪失。',
     clinical_signs: [
-      { sign: '癲癇發作', category: 'primary', description: '前腦病灶最常見表現，可為局灶性或全身性，NME 尤其常見' },
-      { sign: '多灶性神經功能缺損', category: 'primary', description: '播散性 GME 同時出現多區域症狀：意識改變 + 腦神經缺損 + 共濟失調' },
-      { sign: '急性進行性惡化', category: 'primary', description: '播散性 GME 可在數天內快速惡化' },
-      { sign: '視覺障礙', category: 'secondary', description: '眼型 GME 造成視神經炎或視網膜炎，表現為急性失明' },
-      { sign: '頸痛', category: 'secondary', description: '腦膜炎成分可表現為頸部疼痛與僵硬' },
+      { sign: '癲癇發作', category: 'primary', description: '前腦病灶最常見表現，可以是局灶性或全身性，NME 特別常見' },
+      { sign: '多灶性神經功能缺損', category: 'primary', description: '播散性 GME 會同時跑出好幾區症狀：意識改變、腦神經缺損、共濟失調全部一起來' },
+      { sign: '急性進行性惡化', category: 'primary', description: '播散性 GME 可以在幾天內就惡化得很快' },
+      { sign: '視覺障礙', category: 'secondary', description: '眼型 GME 會造成視神經炎或視網膜炎，表現是急性失明' },
+      { sign: '頸痛', category: 'secondary', description: '有腦膜炎成分時會看到頸部疼痛跟僵硬' },
     ],
     staging: null,
     differential_diagnosis: [
-      { condition: '感染性腦炎（Toxoplasma/Neospora）', key_differentiator: '血清學或 CSF PCR 陽性，CSF 可見中性球增多或混合細胞增多' },
-      { condition: '腦腫瘤', key_differentiator: '通常 > 5 歲，MRI 見單一腫塊伴均勻增強，CSF 蛋白升高但細胞數正常或輕度升高' },
-      { condition: '犬瘟熱腦炎', key_differentiator: '病史中有呼吸/消化道症狀，CDV PCR 陽性，CSF 抗體效價升高' },
-      { condition: '隱球菌腦膜炎', key_differentiator: 'CSF 隱球菌抗原陽性，特殊染色可見酵母菌' },
+      { condition: '感染性腦炎（Toxoplasma/Neospora）', key_differentiator: '血清學或 CSF PCR 陽性，CSF 可看到中性球增多或混合細胞增多' },
+      { condition: '腦腫瘤', key_differentiator: '通常 5 歲以上，MRI 看到單一腫塊加均勻增強，CSF 蛋白升但細胞數正常或只輕度升' },
+      { condition: '犬瘟熱腦炎', key_differentiator: '病史會問到呼吸或消化道症狀，CDV PCR 陽性，CSF 抗體效價會升' },
+      { condition: '隱球菌腦膜炎', key_differentiator: 'CSF 隱球菌抗原陽性，特殊染色可以看到酵母菌' },
     ],
-    diagnostic_workup: '1. 完整神經學檢查 → 2. 基礎血檢（排除系統性疾病）→ 3. 腦部 MRI（多灶/局灶病灶、增強模式）→ 4. CSF 分析（細胞學 + 蛋白 + 感染性疾病 panel：Toxoplasma/Neospora IgG/IgM、CDV PCR、Cryptococcus Ag）→ 5. 排除感染後作 MUO 推定診斷。確定診斷需腦組織活檢（臨床上少做）。',
-    treatment_protocol: '初始：Prednisolone 1-2 mg/kg PO BID × 2-4 週。穩定後逐漸減量（每 2-4 週減 25%），維持劑量 0.25-0.5 mg/kg QOD。二線免疫抑制：Cytarabine (Ara-C) 50 mg/m² SC BID × 2 天 q3-4 週（最常用）、Cyclosporine 5-10 mg/kg PO BID、Mycophenolate 10-20 mg/kg PO BID、Leflunomide 2-4 mg/kg PO SID。合併癲癇時加 AED。',
-    prognosis: 'GME 局灶性：中位存活約 3-6 個月（僅 prednisolone）至 > 12 個月（多藥方案）。GME 播散性：預後較差，中位存活數週至數月。NME（Pug）：預後差，中位存活 1-6 個月。NLE：預後中等至差。整體而言，MUO 目前無法治癒，治療目標為緩解症狀和延長有品質的存活時間。',
-    monitoring: '開始治療後 2-4 週回診評估臨床反應。MRI 追蹤：治療 1-3 個月後評估病灶變化。CSF 追蹤：可選擇性用於評估治療反應（細胞數下降為良好指標）。長期每 2-4 週監測 CBC/BCS（免疫抑制劑副作用）。Cyclosporine 使用時監測血中濃度。',
-    owner_communication: 'MUO 是犬的免疫介導性腦部發炎疾病，目前無法根治但可以透過免疫抑制藥物控制。治療需長期甚至終身用藥，且需定期回診監測副作用。藥物減量需緩慢漸進，不可自行停藥。預後因亞型而異，但多數犬在適當治療下可維持數月至數年的良好生活品質。需誠實告知飼主復發的可能性與長期醫療費用。',
+    diagnostic_workup: '先完整神經學檢查，再做基礎血檢把系統性疾病排掉，最後腦部 MRI 看多灶或局灶病灶跟增強模式，CSF 分析做細胞學、蛋白、感染性疾病 panel（Toxoplasma/Neospora IgG/IgM、CDV PCR、Cryptococcus Ag）。把感染都排掉後才下 MUO 推定診斷。確定診斷要做腦組織活檢，但臨床上很少做。',
+    treatment_protocol: '初始用 Prednisolone 1-2 mg/kg PO BID 吃 2-4 週。穩定後慢慢減量（每 2-4 週減 25%），維持劑量壓在 0.25-0.5 mg/kg QOD。二線免疫抑制最常用 Cytarabine (Ara-C) 50 mg/m² SC BID 連兩天，每 3-4 週一次；其他選項有 Cyclosporine 5-10 mg/kg PO BID、Mycophenolate 10-20 mg/kg PO BID、Leflunomide 2-4 mg/kg PO SID。合併癲癇時要加 AED。',
+    prognosis: 'GME 局灶性：中位存活約 3-6 個月（單用 prednisolone）到超過 12 個月（多藥方案）。GME 播散性預後較差，中位存活數週到數月。NME（Pug）預後差，中位存活 1-6 個月。NLE 預後中等到差。整體來說 MUO 目前不能治癒，治療目標是緩解症狀、延長有品質的存活時間。',
+    monitoring: '治療開始後 2-4 週回診看臨床反應。MRI 追蹤抓在治療 1-3 個月後評估病灶變化。CSF 追蹤可選擇性做，細胞數下降是好現象。長期每 2-4 週追 CBC/BCS（盯免疫抑制劑副作用）。用 Cyclosporine 時要監測血中濃度。',
+    owner_communication: 'MUO 是犬的免疫介導性腦部發炎疾病，目前無法根治，但用免疫抑制藥物可以控制。治療需要長期甚至終身用藥，要固定回診監測副作用。藥物減量要慢、要漸進，不能自己停。預後看亞型，但多數犬在適當治療下可以維持幾個月到幾年的良好生活品質。要老實告訴飼主有復發可能性跟長期醫療費用。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -543,7 +543,7 @@ const contentGME: NodeContent = {
   created_at: now,
 };
 
-/** 前庭症候群 — 疾病型 */
+/** 前庭症候群 - 疾病型 */
 const contentVestibular: NodeContent = {
   id: 'CONTENT-NEURO-L3-004',
   node_id: 'NEURO-L3-004',
@@ -574,8 +574,8 @@ const contentVestibular: NodeContent = {
 前庭症候群是犬貓急診中極常見的神經科表現，飼主常以「突然頭歪一邊、站不穩、眼球亂轉」為主訴。前庭系統負責維持平衡與空間定向，功能障礙會導致特徵性的頭傾、眼震與平衡失調。
 
 ### 前庭系統解剖
-- **周邊前庭**：內耳迷路（半規管+耳石器）→ CN VIII 前庭分支
-- **中樞前庭**：延髓前庭核 → 小腦絨球小結葉
+- 周邊前庭：內耳迷路（半規管+耳石器），接著CN VIII 前庭分支
+- 中樞前庭：延髓前庭核，跟著小腦絨球小結葉
 
 ### 中樞性 vs 周邊性鑑別
 | 特徵 | 周邊性 | 中樞性 |
@@ -590,16 +590,16 @@ const contentVestibular: NodeContent = {
 
 ### 犬常見病因
 ### 周邊性
-- **特發性前庭症候群（Idiopathic vestibular disease）**：最常見，好發老年犬
-- **中耳炎/內耳炎（Otitis media/interna）**：細菌感染最常見，常伴外耳炎病史
-- **耳毒性藥物**：Aminoglycosides（Gentamicin）、loop diuretics
-- **甲狀腺功能低下性神經病變**
+- 特發性前庭症候群（Idiopathic vestibular disease）：最常見，好發老年犬
+- 中耳炎/內耳炎（Otitis media/interna）：細菌感染最常見，常伴外耳炎病史
+- 耳毒性藥物：Aminoglycosides（Gentamicin）、loop diuretics
+- 甲狀腺功能低下性神經病變
 
 ### 中樞性
-- **MUO（腦膜腦炎）**
-- **腦腫瘤**（腦膜瘤、脈絡叢乳突瘤）
-- **腦血管事件（CVA / 中風）**
-- **Metronidazole 中毒**
+- MUO（腦膜腦炎）
+- 腦腫瘤（腦膜瘤、脈絡叢乳突瘤）
+- 腦血管事件（CVA / 中風）
+- Metronidazole 中毒
 
 ### 老年犬特發性前庭症候群
 - 好發 > 8 歲犬
@@ -622,10 +622,10 @@ const contentVestibular: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **脫水與營養不良**：急性前庭發作期嚴重嘔吐與無法進食可導致脫水，老年犬尤其需注意
-- **跌倒外傷**：嚴重旋轉步態與傾倒可造成肢體或頭部外傷
-- **殘留頭傾**：特發性前庭症候群恢復後約 30-50% 犬殘留輕微永久性頭傾
-- **中耳感染惡化**：周邊性前庭疾病若因中耳炎所致，感染可延伸至內耳或甚至腦幹
+- 脫水與營養不良：急性前庭發作期嚴重嘔吐與無法進食可導致脫水，老年犬尤其需注意
+- 跌倒外傷：嚴重旋轉步態與傾倒可造成肢體或頭部外傷
+- 殘留頭傾：特發性前庭症候群恢復後約 30-50% 犬殘留輕微永久性頭傾
+- 中耳感染惡化：周邊性前庭疾病若因中耳炎所致，感染可延伸至內耳或甚至腦幹
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -637,12 +637,12 @@ const contentVestibular: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **特發性前庭症候群**：預後良好 — 大多數犬 2-4 週內顯著改善，可能殘留輕微頭傾但不影響生活品質
-- **中耳炎/內耳炎**：預後良好至中等 — 適當抗生素治療 4-6 週後多可恢復，慢性病例可能殘留功能缺損
-- **中樞性（MUO/腫瘤）**：預後取決於病因 — MUO 需長期免疫抑制，腦腫瘤預後因類型而異
-- **Metronidazole 中毒**：預後良好 — 停藥後通常 1-2 週完全恢復
-- **預後良好因子**：周邊性病灶、急性發作後 2-3 天內開始改善、老年犬特發性、姿勢反應正常
-- **預後不良因子**：中樞性病灶（姿勢反應缺損、垂直眼震、意識改變）、進行性惡化、多灶性神經缺損
+- 特發性前庭症候群：預後好，多數犬 2-4 週內就明顯改善，可能殘留輕微頭傾但不影響生活品質
+- 中耳炎/內耳炎：預後好到中等，適當抗生素治療 4-6 週多半可以恢復，慢性病例可能殘留功能缺損
+- 中樞性（MUO/腫瘤）：預後看病因，MUO 要長期免疫抑制，腦腫瘤就要看腫瘤類型
+- Metronidazole 中毒：預後好，停藥後通常 1-2 週完全恢復
+- 預後良好因子：周邊性病灶、急性發作後 2-3 天就開始改善、老年犬特發性、姿勢反應正常
+- 預後不良因子：中樞性病灶（姿勢反應缺損、垂直眼震、意識改變）、會繼續惡化、多灶性神經缺損
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -660,19 +660,19 @@ const contentVestibular: NodeContent = {
 | 老年犬「特發性」前庭症候群的排除診斷充分性 | 缺乏確認性診斷，部分可能遺漏早期腫瘤或微小腦梗塞 | Level IV |
 | 前庭疾病是否需常規 MRI | 典型周邊性特發性前庭不需 MRI，但「典型」的定義標準不一 | Level III |
 | 犬腦血管事件（中風）的診斷與管理 | 犬腦梗塞的盛行率可能被低估，MRI DWI 序列在獸醫的使用尚不普及 | Level III |
-| 甲狀腺功能低下性前庭疾病的因果關係 | T4 低下與前庭症狀的直接因果關係仍有爭議——可能為巧合 | Level IV |`,
-  clinical_pearl: '區分中樞性與周邊性前庭疾病的最實用臨床指標是「姿勢反應」——如果有同側姿勢反應缺損（如本體感覺定位異常），病灶幾乎一定是中樞性的，因為周邊前庭系統不影響姿勢反應通路。另外，注意「矛盾性前庭徵」（paradoxical vestibular signs）：頭傾方向與姿勢反應缺損側相反時，提示小腦絨球小結葉病變，仍屬中樞性。\n\n【台灣流行病學】前庭疾病在台灣老年犬中極為常見，老年犬特發性前庭症候群是台灣基層獸醫院最常見的神經科急診之一。台灣亞熱帶潮濕氣候下，中耳/內耳感染（周邊性前庭疾病的常見病因）好發率較高，尤其在長耳犬種（如可卡犬、米格魯犬）。台灣獸醫師對中樞性與周邊性前庭疾病的鑑別能力直接影響治療決策與轉診判斷。',
+| 甲狀腺功能低下性前庭疾病的因果關係 | T4 低下與前庭症狀的直接因果關係仍有爭議，可能為巧合 | Level IV |`,
+  clinical_pearl: '分中樞性還是周邊性前庭疾病，最實用的指標是「姿勢反應」。只要有同側姿勢反應缺損（像本體感覺定位異常），病灶幾乎就是中樞性的，因為周邊前庭系統根本不會打到姿勢反應通路。另外要注意「矛盾性前庭徵」（paradoxical vestibular signs）：頭傾方向跟姿勢反應缺損側相反，這提示小腦絨球小結葉病變，一樣是中樞性。\n\n【台灣流行病學】前庭疾病在台灣老年犬非常常見，老年犬特發性前庭症候群是基層獸醫院最常見的神經科急診之一。台灣亞熱帶潮濕氣候下，中耳/內耳感染（周邊性前庭疾病的常見病因）發生率比較高，特別是長耳犬種（可卡、米格魯這些）。台灣獸醫師對中樞性跟周邊性前庭疾病的鑑別能力，直接影響治療決策跟要不要轉診。',
   common_mistakes: [
-    '未進行完整姿勢反應檢查就將前庭疾病歸類為周邊性（姿勢反應缺損是中樞性的關鍵指標）',
-    '將急性嚴重的特發性前庭症候群誤判為中風而建議安樂死（此病預後通常良好）',
-    '忽略中耳炎作為周邊性前庭疾病的常見病因——應檢查鼓膜或進行影像學（CT/MRI）評估中耳',
-    '將垂直眼震或方向改變眼震誤判為周邊性（這些幾乎一定是中樞性的特徵）',
-    '忽略 Metronidazole 中毒作為犬急性中樞性前庭疾病的可治療病因——需詢問用藥史',
+    '沒做完整姿勢反應檢查就把前庭疾病歸類為周邊性（姿勢反應缺損是中樞性的關鍵指標）',
+    '把急性嚴重的特發性前庭症候群誤判為中風就勸安樂死（這病預後通常很好）',
+    '忽略中耳炎是周邊性前庭疾病的常見病因，要檢查鼓膜或用影像（CT/MRI）評估中耳',
+    '把垂直眼震或方向改變眼震當成周邊性（這幾乎一定是中樞性的特徵）',
+    '忽略 Metronidazole 中毒這個可治療病因，遇到急性中樞性前庭疾病要問用藥史',
   ],
   disease_data: {
     signalment: '周邊性特發性前庭：好發老年犬（> 8 歲），無品種偏好。中耳炎相關：任何年齡，Cocker Spaniel 等耳道疾病好發品種。中樞性：因病因而異。貓：任何年齡，中耳/內耳息肉、鼻咽息肉（幼貓）、中耳炎為常見周邊病因。',
     etiology: '周邊性：特發性（最常見，老年犬）、中耳炎/內耳炎（細菌感染）、耳毒性藥物、甲狀腺功能低下。中樞性：MUO、腦腫瘤、腦血管事件、Metronidazole 中毒、顱腦外傷、感染性腦炎。',
-    pathogenesis: '前庭系統損傷 → 失去對稱性前庭傳入訊號 → 中樞神經系統接收不對稱輸入 → 頭傾向病灶側（代償不足側）、眼震快速相離開病灶側、身體傾倒向病灶側。中樞代償機制會逐漸調整不對稱輸入，因此症狀多會隨時間部分至完全改善。',
+    pathogenesis: '前庭系統損傷，失去對稱性前庭傳入訊號，中樞神經系統接收不對稱輸入，最後頭傾向病灶側（代償不足側）、眼震快速相離開病灶側、身體傾倒向病灶側。中樞代償機制會逐漸調整不對稱輸入，所以症狀多會隨時間部分至完全改善。',
     clinical_signs: [
       { sign: '頭部傾斜', category: 'primary', description: '頭持續向病灶側傾斜，最具特徵性的前庭徵象' },
       { sign: '眼球震顫', category: 'primary', description: '自發性眼震，快速相離開病灶側。周邊性為水平或旋轉性，中樞性可為任何方向' },
@@ -688,9 +688,9 @@ const contentVestibular: NodeContent = {
       { condition: '代謝性疾病（肝腦症）', key_differentiator: '肝功能異常、血氨升高、間歇性行為異常' },
       { condition: '耳毒性藥物（Aminoglycosides/Metronidazole）', key_differentiator: '近期藥物使用史，Aminoglycosides 損傷前庭上皮（通常雙側），Metronidazole 中毒伴小腦徵象（中樞性），停藥後改善' },
     ],
-    diagnostic_workup: '1. 完整神經學檢查（中樞 vs 周邊鑑別）→ 2. 耳鏡檢查（鼓膜完整性、外耳炎）→ 3. 基礎血檢 + T4（排除代謝性原因、甲狀腺功能低下）→ 4. 中耳影像（X 光敏感度低，CT 或 MRI 更佳）→ 5. 若懷疑中樞性：腦部 MRI + CSF 分析。周邊性特發性：排除診斷，不需 MRI（典型病例）。',
-    treatment_protocol: '特發性前庭症候群：支持性治療為主。Maropitant 1 mg/kg SC/PO SID（止吐）、輸液支持維持水合、輔助進食。無需類固醇或抗生素。中耳炎/內耳炎：長期抗生素（Amoxicillin-clavulanate 或 Fluoroquinolone）4-6 週 ± 耳道沖洗/手術。中樞性：依病因治療（MUO→免疫抑制、腫瘤→手術/放療/化療、Metronidazole 中毒→停藥 + Diazepam）。',
-    prognosis: '特發性前庭症候群：預後良好，大多數犬在 2-4 週內顯著改善，可能殘留輕微頭傾。可能復發。中耳炎/內耳炎：適當治療後預後良好至中等。中樞性：取決於病因，MUO 需長期免疫抑制，腦腫瘤預後因腫瘤類型而異，Metronidazole 中毒停藥後通常可恢復。',
+    diagnostic_workup: '先做完整神經學檢查（中樞還是周邊鑑別出來），接著耳鏡看鼓膜完整性跟外耳炎。基礎血檢加 T4 排代謝性原因跟甲狀腺功能低下，再做中耳影像（X 光敏感度低，CT 或 MRI 比較好）。如果懷疑中樞性就上腦部 MRI 加 CSF 分析。周邊性特發性屬於排除診斷，典型病例不需要 MRI。',
+    treatment_protocol: '特發性前庭症候群：支持性治療為主。Maropitant 1 mg/kg SC/PO SID（止吐）、輸液支持維持水合、輔助進食。無需類固醇或抗生素。中耳炎/內耳炎：長期抗生素（Amoxicillin-clavulanate 或 Fluoroquinolone）4-6 週 ± 耳道沖洗/手術。中樞性：依病因治療（MUO 走免疫抑制、腫瘤靠手術/放療/化療、Metronidazole 中毒就停藥加 Diazepam）。',
+    prognosis: '特發性前庭症候群預後好，多數犬 2-4 週內就明顯改善，可能殘留輕微頭傾，有機會復發。中耳炎/內耳炎適當治療後預後好到中等。中樞性的看病因，MUO 要長期免疫抑制，腦腫瘤預後看類型，Metronidazole 中毒停藥後通常會恢復。',
     monitoring: '特發性前庭：每日評估改善程度，2-3 天應開始進步。中耳炎：治療 2 週後復查耳鏡和神經學檢查。中樞性：依病因安排追蹤 MRI/CSF。飼主衛教：急性期需協助進食飲水、防止受傷跌倒、注意復發徵兆。',
     owner_communication: '「狗狗突然頭歪、眼球亂轉、站不穩」是前庭疾病的典型表現，看起來很嚴重但如果是老年犬特發性前庭症候群，預後通常良好。大多數犬在 2-3 天開始改善，2-4 週大幅恢復。急性期需要飼主協助進食飲水。可能會殘留輕微頭傾但不影響生活品質。需要與獸醫合作排除需要特殊治療的潛在病因。',
   },
@@ -708,18 +708,18 @@ const contentVestibular: NodeContent = {
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '前庭系統疾病章節' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '前庭疾病臨床指南' },
     { type: 'journal', citation: 'Garosi LS et al. Results of diagnostic investigations and long-term outcome of 33 dogs with brain infarction (2000-2004). J Vet Intern Med. 2005;19(5):725-731.', relevance: '犬腦血管事件與中樞性前庭疾病' },
-    { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 共識——前庭疾病與癲癇鑑別分類' },
+    { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 共識，前庭疾病與癲癇鑑別分類' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 多發性神經根炎 — 疾病型 */
+/** 多發性神經根炎 - 疾病型 */
 const contentPolyradiculoneuritis: NodeContent = {
   id: 'CONTENT-NEURO-L3-005',
   node_id: 'NEURO-L3-005',
   version: 1,
-  summary: '犬急性多發性神經根炎（Acute Canine Polyradiculoneuritis, ACP）又稱 Coonhound paralysis，是犬最常見的急性周邊神經疾病，臨床上類似人的 Guillain-Barr\u00e9 syndrome (GBS)。表現為急性上行性下運動神經元型四肢輕癱至癱瘓。通常由免疫介導性脫髓鞘或軸突損傷引起。治療以支持性照護為主，多數犬在數週至數月內自行恢復。',
+  summary: '犬急性多發性神經根炎（ACP）又叫 Coonhound paralysis，是犬最常見的急性周邊神經疾病，臨床上跟人的 Guillain-Barr\u00e9 syndrome (GBS) 很像。表現是急性上行性下運動神經元四肢輕癱到癱瘓。多半是免疫介導性脫髓鞘或軸突損傷在搞鬼。治療以支持性照護為主，多數犬幾週到幾個月會自己恢復。',
   learning_objectives: [
     '描述急性多發性神經根炎的免疫介導性病理機轉',
     '辨識典型的急性上行性 LMN 輕癱/癱瘓臨床表現',
@@ -730,7 +730,7 @@ const contentPolyradiculoneuritis: NodeContent = {
   key_points: [
     '又稱 Coonhound paralysis（因最初報導與浣熊咬傷接觸有關），類似人的 GBS',
     '免疫介導性機轉：感染或暴露後 7-14 天引發針對周邊神經髓鞘或軸突的免疫攻擊',
-    '典型表現：急性（24-72 小時）上行性 LMN 四肢輕癱 → 癱瘓，後肢先發',
+    '典型表現：急性（24-72 小時）上行性 LMN 四肢輕癱，最後癱瘓，後肢先發',
     '特徵性 LMN 徵象：反射減弱至消失、肌張力下降、快速肌肉萎縮',
     '呼吸肌麻痺為最嚴重併發症（需監測呼吸功能）',
     '治療以支持性照護為主：翻身防褥瘡、膀胱管理、營養支持、復健',
@@ -743,52 +743,52 @@ const contentPolyradiculoneuritis: NodeContent = {
 
 
 ### 概述
-犬急性多發性神經根炎（ACP）是犬最常見的急性周邊多神經病變，臨床表現與人的 Guillain-Barr\u00e9 syndrome（GBS）極為相似。最初在美國因與浣熊咬傷接觸後發病的 Coonhound 犬而得名，但現已知多種免疫觸發因子均可引發。
+犬急性多發性神經根炎（ACP）是犬最常見的急性周邊多神經病變，臨床上跟人的 Guillain-Barr\u00e9 syndrome (GBS) 很像。名字最早來自美國的 Coonhound 犬被浣熊咬完後發病，現在已經知道很多免疫觸發因子都會引發。
 
 ### 病理機轉
-- 前驅免疫事件（感染、疫苗接種、手術、毒素暴露）→ 7-14 天潛伏期
-- 免疫系統對周邊神經組分產生交叉反應性抗體
-- 脫髓鞘型（demyelinating）：攻擊 Schwann 細胞/髓鞘
-- 軸突型（axonal）：直接損傷軸突，恢復較慢
+- 前驅免疫事件（感染、疫苗接種、手術、毒素暴露）後 7-14 天潛伏期
+- 免疫系統對周邊神經組分跑出交叉反應性抗體
+- 脫髓鞘型（demyelinating）：打 Schwann 細胞或髓鞘
+- 軸突型（axonal）：直接傷軸突，恢復比較慢
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-- 急性發作（24-72 小時內進展至最嚴重）
-- **上行性 LMN 癱瘓**：後肢先發 → 擴展至前肢 → 可能影響呼吸肌
-- 所有四肢反射減弱至消失
+- 急性發作（24-72 小時內走到最嚴重）
+- 上行性 LMN 癱瘓：先從後肢開始，再往前肢擴，可能打到呼吸肌
+- 四肢反射減弱到消失
 - 肌張力降低（弛緩性）
-- 快速出現肌肉萎縮（去神經性）
-- 面部/咽喉肌麻痺（部分病例）：聲音改變、吞嚥困難
-- **意識完全正常**（重要鑑別點）
-- 通常不疼痛（但部分病例有痛覺過敏）
+- 肌肉萎縮跑得很快（去神經性）
+- 面部或咽喉肌麻痺（部分病例會有）：聲音改變、吞嚥困難
+- 意識完全正常（這是重要鑑別點）
+- 通常不會痛（但部分病例有痛覺過敏）
 
 ### 診斷
-- 臨床診斷為主（典型病史 + 臨床表現）
+- 主要靠臨床診斷（典型病史加臨床表現）
 - 電生理學（EMG/NCV）：去神經電位、傳導速度減慢（脫髓鞘型）或 CMAP 降低（軸突型）
-- CSF：白蛋白-細胞學解離（albuminocytologic dissociation）——蛋白升高但細胞數正常
-- 神經活檢：脫髓鞘 ± 軸突變性（臨床上少做）
+- CSF：白蛋白-細胞學解離（albuminocytologic dissociation），蛋白升但細胞數正常
+- 神經活檢：脫髓鞘加軸突變性，臨床上很少做
 
 ## 三、治療策略 (Treatment)
 
-- **支持性照護為核心**：
+- 支持性照護是核心：
   - 每 4-6 小時翻身防褥瘡
   - 膀胱管理（手動擠壓或間歇導尿）
   - 營養支持（管飼或輔助餵食）
-  - 眼部護理（角膜潤滑，若有面癱）
-  - 物理治療與被動關節運動
-- 監測呼吸功能（最嚴重併發症為呼吸衰竭）
-- 免疫抑制藥物效果不明確，目前不常規推薦
-- [藥物:Human IV Immunoglobulin]（hIVIG）：少數報導顯示可能加速恢復，但證據有限
+  - 眼部護理（角膜潤滑，有面癱才需要）
+  - 物理治療加被動關節運動
+- 盯緊呼吸功能（最嚴重併發症就是呼吸衰竭）
+- 免疫抑制藥物效果不明確，現在不常規推薦
+- [藥物:Human IV Immunoglobulin]（hIVIG）：少數報導說可能加速恢復，但證據有限
 
 [圖片:多發性神經根炎臨床評估與支持性照護要點]
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **呼吸肌麻痺**：最嚴重且可致命的併發症，肋間肌與橫膈肌受累導致呼吸衰竭，需機械通氣支持
-- **褥瘡**：長期臥床犬隻在骨突處（髖、肘、跗）產生壓力性潰瘍，每 4-6 小時翻身可預防
-- **尿路感染**：膀胱功能障礙需手動擠壓或導尿，長期導尿增加感染風險
-- **肌肉萎縮與關節攣縮**：去神經性快速肌肉萎縮，缺乏 PROM 可導致不可逆關節攣縮
+- 呼吸肌麻痺：最嚴重也最可能致命的併發症，肋間肌跟橫膈肌被打到就會走向呼吸衰竭，要上機械通氣
+- 褥瘡：長期臥床犬隻在髖、肘、跗這些骨突處長壓力性潰瘍，每 4-6 小時翻身可以預防
+- 尿路感染：膀胱功能障礙要手動擠壓或導尿，長期導尿就會增加感染風險
+- 肌肉萎縮跟關節攣縮：去神經性肌肉萎縮跑得快，沒做 PROM 會變成不可逆關節攣縮
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -800,11 +800,11 @@ const contentPolyradiculoneuritis: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **脫髓鞘型**：預後良好 — 多數犬 3-6 週開始恢復步行，完全恢復約 2-3 個月
-- **軸突型**：預後中等 — 恢復較慢，可能需 3-6 個月，約 70-80% 可恢復步行
-- **呼吸肌受累**：預後謹慎至差 — 需機械通氣支持，若能度過急性期仍有恢復機會
-- **預後良好因子**：脫髓鞘型（NCV 減慢為主）、未累及呼吸肌、1-2 週內達 nadir 後開始改善、良好的支持性照護
-- **預後不良因子**：軸突型（CMAP 明顯降低）、呼吸肌麻痺需機械通氣、嚴重吞嚥困難、併發吸入性肺炎
+- 脫髓鞘型：預後好，多數犬 3-6 週開始能走，完全恢復約 2-3 個月
+- 軸突型：預後中等，恢復比較慢，可能要 3-6 個月，七到八成可以恢復步行
+- 呼吸肌被打到：預後從謹慎到差，要靠機械通氣支持，撐過急性期就還有恢復機會
+- 預後良好因子：脫髓鞘型（NCV 減慢為主）、呼吸肌沒被打到、1-2 週內就達 nadir 然後開始改善、護理品質好
+- 預後不良因子：軸突型（CMAP 明顯降低）、呼吸肌麻痺要機械通氣、嚴重吞嚥困難、併發吸入性肺炎
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -819,41 +819,41 @@ const contentPolyradiculoneuritis: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬 ACP 的免疫抑制治療效果 | 高劑量類固醇或 hIVIG 是否加速恢復——少數報告結果不一，缺乏 RCT | Level IV |
-| hIVIG（人類靜脈免疫球蛋白）在犬 ACP 的角色 | 人 GBS 的標準治療，犬僅有少數病例報告，費用高且取得不易 | Level IV |
-| 犬 ACP 與疫苗接種的因果關係 | 時序相關性報告存在，但大規模流行病學證據不足以確認因果 | Level III |
-| 血漿置換（plasmapheresis）在犬的可行性 | 人 GBS 的有效治療，獸醫操作技術與設備限制目前尚不普及 | Level IV |`,
-  clinical_pearl: '多發性神經根炎的飼主溝通重點是「時間」——這是一種自限性疾病，大多數犬會恢復，但過程可能需要數週到數月。最大的挑戰是前 1-2 週病情可能持續惡化（達到 nadir），飼主需要有心理準備。呼吸功能監測是住院期間最重要的工作——如果出現呼吸急促或呼吸型態改變，代表呼吸肌受累，可能需要呼吸支持。\n\n【台灣流行病學】急性多發性神經根炎在台灣偶有報告，常被誤診為 IVDD 或其他脊髓疾病。台灣亞熱帶環境下壁蝨麻痺（tick paralysis）雖少見但需納入急性下運動神經元四肢癱瘓的鑑別診斷。台灣犬隻接觸蟾蜍毒素（Bufo 屬）亦可能導致急性神經肌肉症狀。台灣獸醫對急性多發性神經根炎的認知度不高，提升鑑別診斷能力有助於避免不必要的手術探查。',
+| 犬 ACP 的免疫抑制治療效果 | 高劑量類固醇或 hIVIG 到底能不能加速恢復？少數報告結果不一致，缺乏 RCT | Level IV |
+| hIVIG（人類靜脈免疫球蛋白）在犬 ACP 的角色 | 是人 GBS 的標準治療，犬只有少數病例報告，費用高也不好取得 | Level IV |
+| 犬 ACP 跟疫苗接種的因果關係 | 時序相關性報告是有，但流行病學證據還不足以下因果結論 | Level III |
+| 血漿置換（plasmapheresis）在犬可不可行 | 人 GBS 有效，但獸醫端的技術跟設備還沒普及 | Level IV |`,
+  clinical_pearl: '多發性神經根炎跟飼主溝通的重點就是「時間」這兩個字。這是自限性疾病，多數犬會恢復，但過程可能拖幾週到幾個月。最大的挑戰是前 1-2 週病情可能還在繼續惡化（往 nadir 走），飼主一定要有心理準備。住院期間最關鍵的就是盯呼吸功能，呼吸急促或呼吸型態改變就代表呼吸肌被打到，可能要呼吸支持。\n\n【台灣流行病學】急性多發性神經根炎在台灣偶爾會碰到，常常被誤診成 IVDD 或其他脊髓疾病。台灣亞熱帶環境下壁蝨麻痺（tick paralysis）雖然少見，但碰到急性下運動神經元四肢癱瘓還是要列入鑑別。台灣犬隻接觸蟾蜍毒素（Bufo 屬）也可能引起急性神經肌肉症狀。基層獸醫對這個病的認知度不高，提升鑑別能力可以避開很多不必要的手術探查。',
   common_mistakes: [
-    '將多發性神經根炎與急性 IVDD 混淆——IVDD 為 UMN 徵象（反射亢進），而多發性神經根炎為 LMN 徵象（反射消失）',
-    '嘗試使用高劑量類固醇治療（目前無證據支持免疫抑制治療的效果，可能增加併發症）',
-    '忽略呼吸功能監測——呼吸肌麻痺是最危險的併發症，需密切觀察',
-    '未提供充分的支持性照護（褥瘡、尿路感染、肌肉萎縮為最常見的可預防併發症）',
-    '在恢復期過早放棄治療——完全恢復可能需要 2-6 個月',
+    '把多發性神經根炎跟急性 IVDD 搞混，IVDD 是 UMN 徵象（反射亢進），多發性神經根炎是 LMN 徵象（反射消失）',
+    '想用高劑量類固醇治療（目前沒有證據支持免疫抑制治療效果，反而可能增加併發症）',
+    '沒在盯呼吸功能，呼吸肌麻痺是最危險的併發症，要密切觀察',
+    '支持性照護做得不夠（褥瘡、尿路感染、肌肉萎縮是最常見也最好預防的併發症）',
+    '恢復期太早放棄治療，完全恢復可能要 2-6 個月',
   ],
   disease_data: {
-    signalment: '任何品種和年齡均可發生。Coonhound 犬因浣熊唾液暴露而有較高風險。無明顯性別偏好。任何體型犬均可受影響。',
-    etiology: '免疫介導性，多種觸發因子：浣熊唾液暴露（原始報導）、疫苗接種、上呼吸道或腸胃道感染、手術、其他免疫刺激。確切抗原靶點在犬中尚未完全鑑定（人 GBS 中已知有 anti-ganglioside 抗體如 anti-GM1）。',
-    pathogenesis: '前驅免疫事件 → 7-14 天潛伏期 → 分子模擬（molecular mimicry）引發交叉反應性免疫反應 → 補體活化 + 巨噬細胞浸潤周邊神經 → 脫髓鞘（demyelinating form）或軸突損傷（axonal form）→ 神經傳導阻斷 → LMN 四肢癱瘓。脫髓鞘型恢復較快（髓鞘再生），軸突型恢復較慢（需軸突再生）。',
+    signalment: '任何品種年齡都可能發生。Coonhound 犬因為接觸浣熊唾液所以風險高。沒有明顯性別偏好，任何體型都可能。',
+    etiology: '免疫介導性，觸發因子很多種：浣熊唾液暴露（最早的報告）、疫苗接種、上呼吸道或腸胃道感染、手術、其他免疫刺激都算。確切的抗原靶點在犬還沒完全找出來（人 GBS 已經知道有 anti-ganglioside 抗體像 anti-GM1）。',
+    pathogenesis: '前驅免疫事件後 7-14 天潛伏期，分子模擬（molecular mimicry）引發交叉反應性免疫反應，接著補體活化加巨噬細胞浸潤周邊神經。再來就是脫髓鞘（demyelinating form）或軸突損傷（axonal form），神經傳導被阻斷，最後跑出 LMN 四肢癱瘓。脫髓鞘型恢復比較快（髓鞘可以再生），軸突型恢復比較慢（要等軸突再生）。',
     clinical_signs: [
-      { sign: '急性上行性四肢輕癱/癱瘓', category: 'primary', description: '24-72 小時內由後肢擴展至前肢，所有四肢反射消失、肌張力降低' },
-      { sign: '快速肌肉萎縮', category: 'primary', description: '去神經性萎縮，發病後數天內即可見' },
-      { sign: '意識正常', category: 'primary', description: '患犬警覺但無法移動——重要鑑別點' },
-      { sign: '聲音改變/吞嚥困難', category: 'secondary', description: '咽喉肌受累，見於部分嚴重病例' },
-      { sign: '呼吸困難', category: 'secondary', description: '呼吸肌麻痺，最嚴重併發症，需緊急處理' },
+      { sign: '急性上行性四肢輕癱/癱瘓', category: 'primary', description: '24-72 小時內從後肢往前肢擴，四肢反射都消失、肌張力降低' },
+      { sign: '肌肉萎縮跑得快', category: 'primary', description: '去神經性萎縮，發病幾天內就看得到' },
+      { sign: '意識正常', category: 'primary', description: '患犬警覺但動不了，這是重要鑑別點' },
+      { sign: '聲音改變/吞嚥困難', category: 'secondary', description: '咽喉肌被打到，部分嚴重病例會有' },
+      { sign: '呼吸困難', category: 'secondary', description: '呼吸肌麻痺，最嚴重的併發症，要當急診處理' },
     ],
     staging: null,
     differential_diagnosis: [
-      { condition: '肉毒桿菌中毒（Botulism）', key_differentiator: '暴露於腐敗食物病史，症狀可更快速進展，瞳孔散大、巨食道較常見' },
-      { condition: '重症肌無力（MG）', key_differentiator: 'Edrophonium test 陽性，AChR 抗體升高，症狀波動性（exercise-induced weakness）' },
-      { condition: '蜱麻痺（Tick paralysis）', key_differentiator: '蜱叮咬病史，移除蜱後 24-72 小時快速恢復' },
-      { condition: '急性 IVDD（四肢輕癱型）', key_differentiator: '頸椎疼痛、UMN 徵象（反射亢進）、MRI 見椎間盤壓迫' },
+      { condition: '肉毒桿菌中毒（Botulism）', key_differentiator: '有吃到腐敗食物的病史，症狀可以更快進展，瞳孔散大、巨食道比較常見' },
+      { condition: '重症肌無力（MG）', key_differentiator: 'Edrophonium test 陽性，AChR 抗體升，症狀有波動性（exercise-induced weakness）' },
+      { condition: '蜱麻痺（Tick paralysis）', key_differentiator: '有蜱叮咬病史，把蜱拔掉後 24-72 小時就快速恢復' },
+      { condition: '急性 IVDD（四肢輕癱型）', key_differentiator: '頸椎會痛、UMN 徵象（反射亢進）、MRI 看得到椎間盤壓迫' },
     ],
-    diagnostic_workup: '1. 詳細病史（前驅感染、浣熊接觸、疫苗接種、蜱暴露）→ 2. 神經學檢查（確認 LMN 四肢癱瘓、反射消失、意識正常）→ 3. 基礎血檢（排除代謝性原因、CK 可輕度升高）→ 4. EMG/NCV（去神經電位、傳導速度異常，發病 5-7 天後較明顯）→ 5. CSF（白蛋白-細胞學解離）→ 6. AChR 抗體（排除 MG）→ 7. Edrophonium test（排除 MG）',
-    treatment_protocol: '以支持性照護為主。臥床護理：每 4-6 小時翻身、厚軟墊。膀胱管理：手動擠壓或間歇導尿 TID-QID。營養支持：若吞嚥困難需鼻飼管或食道瘻管。物理治療：被動關節運動（每日 2-3 次）、站立訓練（恢復期）、水療。眼部護理：角膜潤滑（若面癱）。呼吸監測：血氧飽和度、呼吸型態。hIVIG 0.5 g/kg IV over 6-12h 可考慮但證據有限。',
-    prognosis: '整體預後良好至中等。脫髓鞘型：多數犬在 3-6 週開始恢復步行，完全恢復 2-3 個月。軸突型：恢復較慢，可能需 3-6 個月。約 70-80% 的犬可恢復步行功能。嚴重病例（呼吸肌受累）需機械通氣支持，預後較差。復發罕見但可發生。',
-    monitoring: '住院期間：每 2-4 小時評估呼吸功能（呼吸頻率、型態、SpO2）。每日神經學檢查評估進展或 nadir。每日評估褥瘡、尿路感染徵兆。出院後：每週神經學追蹤直到開始恢復，之後每 2 週。復健進度評估。',
-    owner_communication: '多發性神經根炎是犬的免疫介導性周邊神經疾病，類似人的 Guillain-Barr\u00e9 syndrome。好消息是大多數犬最終會恢復，但壞消息是恢復過程漫長（數週到數月）。前 1-2 週病情可能仍在惡化。住院期間的護理品質直接影響預後——防止褥瘡和泌尿道感染至關重要。出院後需要飼主投入大量時間進行居家護理和復健。',
+    diagnostic_workup: '先收詳細病史（前驅感染、浣熊接觸、疫苗接種、蜱暴露通通要問）。神經學檢查確認 LMN 四肢癱瘓、反射消失、意識正常。基礎血檢排代謝性原因（CK 可能會輕度升）。EMG/NCV 看去神經電位跟傳導速度異常，發病 5-7 天後比較明顯。CSF 看白蛋白-細胞學解離，最後加 AChR 抗體跟 Edrophonium test 把 MG 排掉。',
+    treatment_protocol: '以支持性照護為主。臥床護理每 4-6 小時翻身、用厚軟墊。膀胱管理用手動擠壓或間歇導尿 TID-QID。營養支持上，吞嚥困難就要鼻飼管或食道瘻管。物理治療包含被動關節運動（每日 2-3 次）、站立訓練（恢復期）、水療。眼部護理就是角膜潤滑（有面癱才需要）。呼吸監測抓血氧飽和度跟呼吸型態。hIVIG 0.5 g/kg IV over 6-12h 可以考慮但證據有限。',
+    prognosis: '整體預後好到中等。脫髓鞘型：多數犬 3-6 週開始能走，完全恢復約 2-3 個月。軸突型恢復比較慢，可能要 3-6 個月。七到八成可以恢復步行功能。嚴重病例（呼吸肌被打到）要機械通氣，預後比較差。復發少見但會發生。',
+    monitoring: '住院期間每 2-4 小時看一次呼吸功能（呼吸頻率、型態、SpO2）。每日神經學檢查看進展或 nadir。每日看褥瘡、尿路感染徵兆。出院後每週神經學追蹤到開始恢復，之後每 2 週。記得評估復健進度。',
+    owner_communication: '多發性神經根炎是犬的免疫介導性周邊神經疾病，跟人的 Guillain-Barr\u00e9 syndrome 很像。好消息是多數犬最後會恢復，但壞消息是恢復過程漫長（幾週到幾個月）。前 1-2 週病情可能還在惡化。住院期間的護理品質直接影響預後，防止褥瘡跟泌尿道感染是不能省的。出院後需要飼主花很多時間做居家護理跟復健。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -873,7 +873,7 @@ const contentPolyradiculoneuritis: NodeContent = {
   created_at: now,
 };
 
-/** 重症肌無力 — 疾病型 */
+/** 重症肌無力 - 疾病型 */
 const contentMG: NodeContent = {
   id: 'CONTENT-NEURO-L3-006',
   node_id: 'NEURO-L3-006',
@@ -887,7 +887,7 @@ const contentMG: NodeContent = {
     '說明 MG 的治療策略與吸入性肺炎預防',
   ],
   key_points: [
-    '後天型 MG：自體免疫性，抗 AChR 抗體破壞突觸後膜 AChR → NMJ 傳導失敗',
+    '後天型 MG：自體免疫性，抗 AChR 抗體破壞突觸後膜 AChR，跟著NMJ 傳導失敗',
     '三種臨床表現型：全身型（exercise-induced weakness）、局灶型（megaesophagus ± 面肌/咽喉肌無力）、急性暴發型（快速全身性癱瘓 + 呼吸衰竭）',
     '好發品種：German Shepherd、Golden Retriever、Labrador、Akita、Newfoundland。雙峰年齡分布：1-4 歲與 9-13 歲',
     '診斷金標準：血清 AChR 抗體效價（> 0.6 nmol/L）',
@@ -924,22 +924,22 @@ const contentMG: NodeContent = {
 - 嚴重時無法站立或行走
 
 ### 局灶型（Focal）
-- **巨食道（Megaesophagus）**：最常見的局灶表現（約 40% 的後天型 MG）
-- 食道肌肉無力 → 食道擴張 → 反流（regurgitation）
+- 巨食道（Megaesophagus）：最常見的局灶表現（約 40% 的後天型 MG）
+- 食道肌肉無力，食道擴張，反流（regurgitation）
 - 面部肌肉/咽喉肌無力：咀嚼困難、聲音改變
 - 可無明顯四肢無力
 
 ### 急性暴發型（Acute Fulminating）
 - 快速進展的全身性癱瘓
-- 呼吸肌麻痺 → 呼吸衰竭
+- 呼吸肌麻痺，最後呼吸衰竭
 - 常見巨食道
 - 需緊急處置，預後較差
 
 ### 診斷
-- **AChR 抗體效價（金標準）**：> 0.6 nmol/L 為陽性。約 2% 為血清陰性 MG
-- **Edrophonium (Tensilon) test**：[藥物:Edrophonium] 0.1-0.2 mg/kg IV 快速注射，陽性 = 30-60 秒內肌力改善持續 2-5 分鐘。備 Atropine 以防膽鹼激性危象
-- **胸腔 X 光**：評估 megaesophagus 與胸腺腫塊、吸入性肺炎
-- **EMG/重複神經刺激（RNS）**：漸減反應（decremental response）> 10% 支持 NMJ 疾病
+- AChR 抗體效價（金標準）：> 0.6 nmol/L 為陽性。約 2% 為血清陰性 MG
+- Edrophonium (Tensilon) test：[藥物:Edrophonium] 0.1-0.2 mg/kg IV 快速注射，陽性 = 30-60 秒內肌力改善持續 2-5 分鐘。備 Atropine 以防膽鹼激性危象
+- 胸腔 X 光：評估 megaesophagus 與胸腺腫塊、吸入性肺炎
+- EMG/重複神經刺激（RNS）：漸減反應（decremental response）> 10% 支持 NMJ 疾病
 
 ## 三、治療策略 (Treatment)
 
@@ -954,10 +954,10 @@ const contentMG: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **吸入性肺炎**：MG 犬最主要的致死原因（約 40%），巨食道導致反流後食物誤吸入氣道
-- **膽鹼激性危象**：Pyridostigmine 過量引發——症狀與 MG 加重相似（肌肉無力），伴流涎、嘔吐、腹瀉、瞳孔縮小
-- **急性暴發型危象**：快速進展的全身性癱瘓 + 呼吸衰竭，需緊急氣管插管與呼吸支持
-- **免疫抑制副作用**：合併使用 Prednisolone 初期可能暫時加重肌肉無力（謹慎低劑量起始）
+- 吸入性肺炎：MG 犬最主要的致死原因（約 40%），巨食道導致反流後食物誤吸入氣道
+- 膽鹼激性危象：Pyridostigmine 過量引發，症狀與 MG 加重相似（肌肉無力），伴流涎、嘔吐、腹瀉、瞳孔縮小
+- 急性暴發型危象：快速進展的全身性癱瘓 + 呼吸衰竭，需緊急氣管插管與呼吸支持
+- 免疫抑制副作用：合併使用 Prednisolone 初期可能暫時加重肌肉無力（謹慎低劑量起始）
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -969,17 +969,17 @@ const contentMG: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **後天型（自發緩解型）**：預後中等至良好 — 約 87% 犬可在 6-8 個月內自發緩解，AChR 抗體效價降至正常後可逐漸停藥
-- **局灶型（僅巨食道）**：預後中等 — 需長期巨食道管理，吸入性肺炎風險為最大威脅
-- **急性暴發型**：預後差 — 快速全身性癱瘓合併呼吸衰竭，死亡率高
-- **預後良好因子**：全身型（非暴發型）、AChR 抗體效價逐月下降、無巨食道、飼主良好配合直立餵食
-- **預後不良因子**：併發吸入性肺炎、急性暴發型、伴隨胸腺腫瘤、巨食道持續無改善
+- 後天型（自發緩解型）：預後中等至良好，約 87% 犬可在 6-8 個月內自發緩解，AChR 抗體效價降至正常後可逐漸停藥
+- 局灶型（僅巨食道）：預後中等，需長期巨食道管理，吸入性肺炎風險為最大威脅
+- 急性暴發型：預後差，快速全身性癱瘓合併呼吸衰竭，死亡率高
+- 預後良好因子：全身型（非暴發型）、AChR 抗體效價逐月下降、無巨食道、飼主良好配合直立餵食
+- 預後不良因子：併發吸入性肺炎、急性暴發型、伴隨胸腺腫瘤、巨食道持續無改善
 
 ## 六、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 抗 MuSK / 抗 LRP4 抗體檢測 | 犬血清陰性 MG（AChR Ab 陰性）的進一步分型 | 人 MG 已有商業化檢測，犬研究剛起步 |
+| 抗 MuSK / 抗 LRP4 抗體檢測 | 犬血清陰性 MG（AChR Ab 陰性）的再分型 | 人 MG 已有商業化檢測，犬研究剛起步 |
 | FcRn 拮抗劑（Efgartigimod） | 犬 MG 的快速降低致病性 IgG 新策略 | 人 MG 2021 年獲 FDA 核准，獸醫尚無研究 |
 | 補體抑制劑（Eculizumab/Ravulizumab） | 犬難治性 MG 的精準靶向治療 | 人全身型 MG 已核准使用，費用極高 |
 | 食道動態壓力檢查（Manometry） | 犬 MG 巨食道的功能性評估與治療反應監測 | 人醫標準，獸醫技術上可行但未普及 |
@@ -992,21 +992,21 @@ const contentMG: NodeContent = {
 | 血清陰性 MG（AChR Ab 陰性）的診斷與管理 | 約 2% 的犬 MG 為血清陰性，可能涉及其他 NMJ 抗體（如 anti-MuSK） | Level IV |
 | 胸腺切除術在犬 MG 的療效 | 人 MG 中胸腺切除為標準治療，犬胸腺腫瘤應切除，但無腫瘤時切除效果不明 | Level III |
 | 犬 MG 自發緩解後是否需維持治療 | AChR 抗體正常化後停藥時機與復發風險的資料有限 | Level IV |`,
-  clinical_pearl: '犬 MG 的最大陷阱是「局灶型」——約 40% 的後天型 MG 犬僅表現巨食道而無明顯四肢無力。因此，任何新診斷的犬巨食道都應納入 MG 的鑑別診斷，並檢測 AChR 抗體。另一個重要觀念是：約 87% 的後天型 MG 犬可在 6-8 個月內自發緩解，但在等待緩解期間，吸入性肺炎是最主要的致死原因——因此巨食道的管理和飼主衛教至關重要。\n\n【台灣流行病學】重症肌無力在台灣犬為少見但重要的神經肌肉接合疾病。台灣犬 MG 的好發品種包括金毛獵犬、德國牧羊犬等大型犬。AChR 抗體檢測目前需送國外實驗室，台灣臨床上多依靠 Edrophonium（Tensilon）試驗做初步評估。台灣潮濕亞熱帶氣候下巨食道犬的吸入性肺炎風險尤其高，飼主衛教（直立進食、食物質地調整）在台灣臨床管理中至關重要。',
+  clinical_pearl: '犬 MG 的最大陷阱是「局灶型」，約 40% 的後天型 MG 犬僅表現巨食道而無明顯四肢無力。所以，任何新診斷的犬巨食道都應納入 MG 的鑑別診斷，並檢測 AChR 抗體。另一個重要觀念是：約 87% 的後天型 MG 犬可在 6-8 個月內自發緩解，但在等待緩解期間，吸入性肺炎是最主要的致死原因，所以巨食道的管理和飼主衛教不能省。\n\n【台灣流行病學】重症肌無力在台灣犬為少見但重要的神經肌肉接合疾病。台灣犬 MG 的好發品種包括金毛獵犬、德國牧羊犬等大型犬。AChR 抗體檢測目前需送國外實驗室，台灣臨床上多依靠 Edrophonium（Tensilon）試驗做初步評估。台灣潮濕亞熱帶氣候下巨食道犬的吸入性肺炎風險尤其高，飼主衛教（直立進食、食物質地調整）在台灣臨床管理中不能省。',
   common_mistakes: [
     '新診斷的犬巨食道未檢測 AChR 抗體（約 25-30% 的犬巨食道由 MG 引起）',
     '執行 Edrophonium test 時未準備 Atropine（膽鹼激性危象可致心搏過慢）',
     'Pyridostigmine 過量導致膽鹼激性危象（症狀與 MG 加重相似：肌肉無力、流涎、嘔吐、瞳孔縮小）',
-    '忽略吸入性肺炎的預防——未教導飼主直立餵食技巧',
-    '對所有 MG 犬立即使用免疫抑制劑——初期高劑量類固醇可能加重肌肉無力',
+    '忽略吸入性肺炎的預防，未教導飼主直立餵食技巧',
+    '對所有 MG 犬立即使用免疫抑制劑，初期高劑量類固醇可能加重肌肉無力',
   ],
   disease_data: {
     signalment: '後天型好發品種：German Shepherd、Golden Retriever、Labrador、Akita、Newfoundland、Chihuahua。雙峰年齡分布：1-4 歲與 9-13 歲。先天型：Jack Russell Terrier、Smooth Fox Terrier，幼犬期發病。無明顯性別偏好。',
     etiology: '後天型：自體免疫性疾病，產生針對突觸後膜乙醯膽鹼受體（nicotinic AChR）的自體抗體（IgG）。可伴隨胸腺腫瘤或其他自體免疫疾病。先天型：遺傳性 AChR 結構或數量異常，體染色體隱性遺傳。',
-    pathogenesis: '後天型：抗 AChR 抗體與突觸後膜 AChR 結合 → 1. 補體介導性 AChR 破壞；2. 加速 AChR 內化降解（antigenic modulation）；3. 功能性 AChR 阻斷 → 突觸後膜 AChR 密度降低 → ACh 無法有效傳遞訊號 → 骨骼肌收縮力進行性下降（「安全因子」耗盡）→ 運動誘發性肌肉無力。',
+    pathogenesis: '後天型 MG 的機轉是這樣：抗 AChR 抗體跟突觸後膜 AChR 結合後，三條路會同時發生：第一是補體介導性的 AChR 破壞、第二是加速 AChR 內化降解（antigenic modulation）、第三是功能性 AChR 阻斷。後果就是突觸後膜 AChR 密度降低，ACh 沒辦法有效傳遞訊號，骨骼肌收縮力一路掉下去（「安全因子」耗盡），跑出運動誘發性肌肉無力。',
     clinical_signs: [
       { sign: '運動誘發性肌肉無力', category: 'primary', description: '運動後四肢乏力、步態短促、步頻降低，休息數分鐘後改善。是全身型 MG 的特徵性表現' },
-      { sign: '巨食道/反流', category: 'primary', description: '食道肌肉無力 → 食道擴張 → 進食後反流（被動性，非嘔吐）。為局灶型最常見表現' },
+      { sign: '巨食道/反流', category: 'primary', description: '食道肌肉無力，接著食道擴張，吃進去之後就反流（被動性的，不是嘔吐）。是局灶型最常見的表現' },
       { sign: '聲音改變', category: 'secondary', description: '喉肌無力導致叫聲嘶啞或減弱' },
       { sign: '呼吸急促/困難', category: 'secondary', description: '呼吸肌無力（急性暴發型）或吸入性肺炎所致' },
       { sign: '面部表情減少', category: 'secondary', description: '面部肌肉無力，眼瞼下垂（較少見於犬）' },
@@ -1016,13 +1016,13 @@ const contentMG: NodeContent = {
       { condition: '多發性神經根炎（ACP）', key_differentiator: '急性非波動性 LMN 癱瘓，反射消失，AChR 抗體陰性，Edrophonium test 陰性' },
       { condition: '肉毒桿菌中毒', key_differentiator: '急性 LMN 癱瘓，瞳孔散大，腐敗食物暴露史，AChR 抗體陰性' },
       { condition: '甲狀腺功能低下性肌病', key_differentiator: 'T4/fT4 降低，TSH 升高，肌肉酶（CK）升高' },
-      { condition: '多發性肌炎', key_differentiator: 'CK 顯著升高，EMG 見肌源性異常，肌肉活檢見發炎浸潤' },
+      { condition: '多發性肌炎', key_differentiator: 'CK 明顯升高，EMG 見肌源性異常，肌肉活檢見發炎浸潤' },
     ],
-    diagnostic_workup: '1. 詳細病史（運動誘發性無力、反流 vs 嘔吐）→ 2. 神經學檢查（運動後無力加重、反射通常正常）→ 3. AChR 抗體效價（金標準：> 0.6 nmol/L）→ 4. Edrophonium test（備 Atropine）→ 5. 胸腔 X 光（megaesophagus、胸腺腫塊、吸入性肺炎）→ 6. EMG + 重複神經刺激（漸減反應 > 10%）→ 7. 基礎血檢 + T4（排除甲狀腺功能低下）',
+    diagnostic_workup: '先收詳細病史（運動誘發性無力、反流跟嘔吐怎麼分），做完整神經學檢查（運動後無力會加重、反射通常正常），接著測 AChR 抗體效價（金標準，超過 0.6 nmol/L 算陽性）跟 Edrophonium test（記得備 Atropine）。胸腔 X 光看 megaesophagus、胸腺腫塊、吸入性肺炎。EMG 加重複神經刺激抓漸減反應（超過 10%）。基礎血檢加 T4 把甲狀腺功能低下排掉。',
     treatment_protocol: '基礎治療：Pyridostigmine 0.5-3 mg/kg PO BID-TID，從低劑量開始逐漸調整。巨食道管理：Bailey chair 直立餵食 10-15 分鐘、小量多餐、食物球狀（facilitates esophageal transit）。難治/嚴重型加入免疫抑制：Prednisolone（低劑量起始 0.5 mg/kg QOD 漸增，避免初期高劑量加重無力）、Azathioprine 2 mg/kg PO QOD、Mycophenolate 10-20 mg/kg PO BID。胸腺腫瘤者建議手術切除。',
     prognosis: '約 87% 的後天型 MG 犬可在治療後自發緩解，中位時間約 6-8 個月。AChR 抗體效價下降至正常後可逐漸減藥。吸入性肺炎為最主要的致死/安樂死原因（約 40% 的死亡原因）。急性暴發型預後最差。局灶型（僅巨食道）預後較好。',
     monitoring: '每月測 AChR 抗體效價追蹤治療反應（下降趨勢為良好指標）。定期胸腔 X 光監測 megaesophagus 程度和吸入性肺炎。Pyridostigmine 劑量調整依臨床反應。使用免疫抑制時監測 CBC/BCS。飼主記錄反流頻率和運動耐受度。',
-    owner_communication: '重症肌無力是可治療的疾病，約 87% 的犬可在治療後進入緩解。巨食道管理（直立餵食）是治療的關鍵——吸入性肺炎是 MG 犬最主要的致死原因，而正確的餵食管理可以大幅降低風險。教導飼主辨識反流 vs 嘔吐、記錄頻率。強調按時給藥的重要性，並教導辨識膽鹼激性危象的症狀（過度流涎、嘔吐、腹瀉、瞳孔縮小）。',
+    owner_communication: '重症肌無力是可治療的疾病，約 87% 的犬可在治療後進入緩解。巨食道管理（直立餵食）是治療的關鍵，吸入性肺炎是 MG 犬最主要的致死原因，而正確的餵食管理可以大幅降低風險。教導飼主辨識反流 vs 嘔吐、記錄頻率。強調按時給藥的重要性，並教導辨識膽鹼激性危象的症狀（過度流涎、嘔吐、腹瀉、瞳孔縮小）。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -1037,13 +1037,13 @@ const contentMG: NodeContent = {
     { type: 'journal', citation: 'Dewey CW et al. Clinical forms of acquired myasthenia gravis in dogs: 25 cases (1988-1995). J Vet Intern Med. 1997;11(2):50-57.', relevance: '犬後天型 MG 臨床表現型分析' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: 'NMJ 疾病章節' },
     { type: 'journal', citation: 'Shelton GD et al. Acquired myasthenia gravis: Selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 1990;4(6):281-284.', relevance: '局灶型 MG 早期文獻' },
-    { type: 'guideline', citation: 'Shelton GD. ACVIM Consensus: Myasthenia Gravis in Dogs and Cats — Diagnosis and Treatment Recommendations. J Vet Intern Med. 2016;30(4):1131.', relevance: '犬貓 MG 診斷與治療共識建議' },
+    { type: 'guideline', citation: 'Shelton GD. ACVIM Consensus: Myasthenia Gravis in Dogs and Cats，Diagnosis and Treatment Recommendations. J Vet Intern Med. 2016;30(4):1131.', relevance: '犬貓 MG 診斷與治療共識建議' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 退化性脊髓病變 (DM) — 疾病型 */
+/** 退化性脊髓病變 (DM) - 疾病型 */
 const contentDM: NodeContent = {
   id: 'CONTENT-NEURO-L3-007',
   node_id: 'NEURO-L3-007',
@@ -1060,8 +1060,8 @@ const contentDM: NodeContent = {
     'SOD1（Superoxide Dismutase 1）基因突變：homozygous（A/A）為高風險，但非所有 A/A 犬都會發病',
     '好發品種：German Shepherd（GSD）、Boxer、Pembroke Welsh Corgi、Rhodesian Ridgeback、Chesapeake Bay Retriever',
     '好發年齡：> 8 歲，慢性緩慢進展（月到年的時間尺度）',
-    '臨床進展四階段：後肢 UMN 共濟失調 → 後肢癱瘓 → 前肢受累 → 腦幹神經元退化',
-    '無疼痛為重要特徵——有疼痛應考慮 IVDD 等壓迫性疾病',
+    '臨床進展四階段：先後肢 UMN 共濟失調，再來後肢癱瘓，接著前肢受累，最後腦幹神經元退化',
+    '無疼痛為重要特徵，有疼痛應考慮 IVDD 等壓迫性疾病',
     '排除性生前診斷：MRI 無壓迫性病灶 + SOD1 基因陽性 + 符合品種與臨床特徵',
     '確定診斷需死後脊髓組織病理：胸腰段白質軸突變性與脫髓鞘',
   ],
@@ -1075,7 +1075,7 @@ const contentDM: NodeContent = {
 退化性脊髓病變（DM）是犬的慢性進行性上運動神經元與全身性下運動神經元退化性疾病，病理學上與人的 ALS 極為相似。SOD1 基因突變被鑑定為主要的遺傳風險因子。
 
 ### 遺傳學
-- **SOD1 基因突變**：E40K 突變（最常見，跨多品種）
+- SOD1 基因突變：E40K 突變（最常見，跨多品種）
 - 基因型：
   - N/N（normal）：正常
   - A/N（carrier）：攜帶者，發病風險極低
@@ -1084,7 +1084,7 @@ const contentDM: NodeContent = {
 - 基因檢測意義：A/A 配合臨床表現支持推定診斷，但 A/A 不等於一定發病
 
 ### 病理機轉
-- SOD1 蛋白異常折疊 → 蛋白聚集體形成 → 氧化壓力增加
+- SOD1 蛋白異常折疊，跟著蛋白聚集體形成，氧化壓力增加
 - 上運動神經元軸突退化（胸腰段最早受累）
 - 白質脫髓鞘與軸突喪失
 - 晚期擴展至下運動神經元、腦幹核
@@ -1100,7 +1100,7 @@ const contentDM: NodeContent = {
 - 後肢反射正常至亢進
 
 ### Stage 2（進展期，數月至 1 年）
-- 後肢非步行性輕癱 → 癱瘓
+- 後肢非步行性輕癱，然後癱瘓
 - 開始出現 LMN 徵象（肌肉萎縮、反射減弱）
 
 ### Stage 3（晚期）
@@ -1113,11 +1113,11 @@ const contentDM: NodeContent = {
 - 吞嚥困難
 
 ### 診斷
-- **排除性診斷**：排除可治療的脊髓疾病後作推定診斷
+- 排除性診斷：排除可治療的脊髓疾病後作推定診斷
 - MRI：排除椎間盤疾病、腫瘤等壓迫性病灶（DM 的 MRI 通常正常或僅見輕微萎縮）
 - SOD1 基因檢測：A/A homozygous 支持診斷
 - CSF：通常正常
-- **確定診斷：死後組織病理**——胸腰段白質全方位軸突變性與脫髓鞘
+- 確定診斷：死後組織病理，胸腰段白質整段軸突變性與脫髓鞘
 
 [圖片:DM 臨床進展四階段示意圖]
 
@@ -1128,10 +1128,10 @@ const contentDM: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- **褥瘡與皮膚損傷**：後肢癱瘓後拖行導致足背磨損，長期臥床產生壓力性潰瘍
-- **尿路感染與失禁**：晚期膀胱功能喪失，尿液滯留增加感染風險
-- **關節攣縮**：不運動的後肢關節逐漸僵硬，影響輪椅使用
-- **飼主身心疲勞**：長期照護進行性疾病的心理與體力負擔，需提供飼主支持
+- 褥瘡與皮膚損傷：後肢癱瘓後拖行導致足背磨損，長期臥床產生壓力性潰瘍
+- 尿路感染與失禁：晚期膀胱功能喪失，尿液滯留增加感染風險
+- 關節攣縮：不運動的後肢關節逐漸僵硬，影響輪椅使用
+- 飼主身心疲勞：長期照護進行性疾病的心理與體力負擔，需提供飼主支持
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -1143,11 +1143,11 @@ const contentDM: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- **整體預後**：預後不良 — DM 為進行性且不可逆的神經退化疾病，目前無法治癒
-- **Stage 1 至後肢癱瘓**：中位約 6-12 個月 — 積極復健可延長步行能力維持時間 2-3 倍
-- **後肢癱瘓至安樂死**：中位約 3-6 個月 — 輪椅可維持一定活動力與生活品質
-- **預後良好因子**（延長功能維持）：早期開始物理復健（水療 + PROM）、飼主高度配合居家復健、使用後肢輪椅維持活動
-- **預後不良因子**：快速進展至前肢受累、嚴重大小便失禁、飼主無法提供足夠照護、合併其他系統性疾病（如 DM 犬常伴髖關節發育不全）
+- 整體預後：預後不良，DM 為進行性且不可逆的神經退化疾病，目前無法治癒
+- Stage 1 至後肢癱瘓：中位約 6-12 個月，積極復健可延長步行能力維持時間 2-3 倍
+- 後肢癱瘓至安樂死：中位約 3-6 個月，輪椅可維持一定活動力與生活品質
+- 預後良好因子（延長功能維持）：早期開始物理復健（水療 + PROM）、飼主高度配合居家復健、使用後肢輪椅維持活動
+- 預後不良因子：快速進展至前肢受累、嚴重大小便失禁、飼主無法提供足夠照護、合併其他系統性疾病（如 DM 犬常伴髖關節發育不全）
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1162,26 +1162,26 @@ const contentDM: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| SOD1 A/A 基因型作為 DM 生前確診的充分性 | A/A 為風險因子但非確診——約 10-30% 的 A/A 犬終身不發病 | Level III |
+| SOD1 A/A 基因型作為 DM 生前確診的充分性 | A/A 為風險因子但非確診，約 10-30% 的 A/A 犬終身不發病 | Level III |
 | Aminocaproic acid 與抗氧化補充品的療效 | 廣泛使用但缺乏 RCT 證據支持療效，可能為安慰劑效應 | Level IV |
 | 犬 DM 與人 ALS 的疾病修飾療法轉譯 | Riluzole 等人 ALS 藥物在犬的藥動學/藥效學研究極有限 | Level IV |
 | 安樂死時機的客觀標準 | 目前依賴主觀生活品質評估，缺乏標準化的 DM 安樂死決策工具 | Level IV |`,
-  clinical_pearl: 'DM 的生前診斷是「排除性」的——你永遠不能 100% 確定是 DM，只能排除其他可治療的疾病。臨床上最常見的陷阱是將慢性 Type II IVDD 誤診為 DM，或反過來。關鍵鑑別點：DM 通常無疼痛，而 IVDD 常有脊椎痛。此外，DM 的 MRI 不會顯示壓迫性病灶。SOD1 基因 A/A 支持但不能確診 DM——約 10-30% 的某些品種正常個體也是 A/A。\n\n【台灣流行病學】退化性脊髓病變在台灣以柯基犬（Welsh Corgi）為最具代表性的好發品種，德國牧羊犬亦為經典好發族群。台灣柯基犬飼養量持續增加，DM 的臨床病例亦隨之增多。SOD1 基因檢測在台灣可透過國外實驗室進行。台灣獸醫復健科近年蓬勃發展，水中跑步機等物理治療對 DM 犬的生活品質維護有顯著幫助。台灣飼主對 DM 的漸進性預後需有充分認知。',
+  clinical_pearl: 'DM 的生前診斷是「排除性」的，你永遠不能 100% 確定是 DM，只能排除其他可治療的疾病。臨床上最常見的陷阱是將慢性 Type II IVDD 誤診為 DM，或反過來。關鍵鑑別點：DM 通常無疼痛，而 IVDD 常有脊椎痛。另外，DM 的 MRI 不會顯示壓迫性病灶。SOD1 基因 A/A 支持但不能確診 DM，約 10-30% 的某些品種正常個體也是 A/A。\n\n【台灣流行病學】退化性脊髓病變在台灣以柯基犬（Welsh Corgi）為最具代表性的好發品種，德國牧羊犬亦為經典好發族群。台灣柯基犬飼養量持續增加，DM 的臨床病例亦隨之增多。SOD1 基因檢測在台灣可透過國外實驗室進行。台灣獸醫復健科近年蓬勃發展，水中跑步機等物理治療對 DM 犬的生活品質維護有明顯幫助。台灣飼主對 DM 的漸進性預後需有充分認知。',
   common_mistakes: [
-    '僅憑 SOD1 基因 A/A 即診斷 DM——A/A 是風險因子但非確診依據（部分正常犬也是 A/A）',
+    '僅憑 SOD1 基因 A/A 即診斷 DM，A/A 是風險因子但非確診依據（部分正常犬也是 A/A）',
     '未進行 MRI 排除壓迫性脊髓疾病即診斷 DM（最大的鑑別是慢性 IVDD）',
-    '將伴有疼痛的脊髓疾病診斷為 DM——DM 本身不引起疼痛',
-    '告知飼主「無治療可做」而放棄積極復健——物理復健可顯著延長維持步行能力的時間',
-    '忽略 DM 的進展特徵——過快進展（數天到數週）應重新評估診斷',
+    '將伴有疼痛的脊髓疾病診斷為 DM，DM 本身不引起疼痛',
+    '告知飼主「無治療可做」而放棄積極復健，物理復健可明顯延長維持步行能力的時間',
+    '忽略 DM 的進展特徵，過快進展（數天到數週）應重新評估診斷',
   ],
   disease_data: {
     signalment: '好發品種：German Shepherd Dog（最經典）、Boxer、Pembroke Welsh Corgi、Rhodesian Ridgeback、Chesapeake Bay Retriever、Bernese Mountain Dog。好發年齡 > 8 歲（中位 9-11 歲）。無明顯性別偏好。',
     etiology: '遺傳性：SOD1（Superoxide Dismutase 1）基因 E40K 突變為主要風險因子（homozygous A/A）。為多因子疾病，遺傳易感性 + 可能的環境因子。與人 ALS 的 SOD1 突變高度同源，犬 DM 被視為自然發生的 ALS 動物模型。',
-    pathogenesis: 'SOD1 蛋白錯誤折疊 → 蛋白聚集體在運動神經元中累積 → 氧化壓力增加 + 粒線體功能障礙 + 蛋白質降解系統過載 → 上運動神經元軸突逐漸退化（dying-back 機轉）→ 白質脫髓鞘 + 軸突喪失（胸腰段白質最早且最嚴重）→ 晚期波及下運動神經元和腦幹核。',
+    pathogenesis: 'SOD1 蛋白錯誤折疊後，蛋白聚集體在運動神經元裡慢慢累積，氧化壓力上升、粒線體功能出問題、蛋白質降解系統超載一起來。上運動神經元軸突走 dying-back 機轉慢慢退化，白質脫髓鞘加軸突喪失（胸腰段白質最早也最嚴重），晚期才波及下運動神經元跟腦幹核。',
     clinical_signs: [
       { sign: '後肢共濟失調', category: 'primary', description: '慢性漸進性本體感覺性共濟失調，腳掌翻轉、crossing、不對稱指甲磨損' },
       { sign: '後肢 UMN 輕癱', category: 'primary', description: '漸進性後肢無力，最終無法步行，後肢反射早期正常至亢進' },
-      { sign: '無疼痛', category: 'primary', description: 'DM 不引起疼痛——有疼痛需重新評估診斷（重要鑑別 IVDD）' },
+      { sign: '無疼痛', category: 'primary', description: 'DM 不引起疼痛，有疼痛需重新評估診斷（重要鑑別 IVDD）' },
       { sign: '肌肉萎縮', category: 'secondary', description: '晚期出現 LMN 型肌肉萎縮，代表下運動神經元也開始退化' },
       { sign: '大小便失禁', category: 'secondary', description: '晚期膀胱和肛門括約肌功能喪失' },
     ],
@@ -1200,11 +1200,11 @@ const contentDM: NodeContent = {
       { condition: '脊髓腫瘤', key_differentiator: '可有疼痛，MRI 見腫塊伴對比增強，可呈不對稱性' },
       { condition: '纖維軟骨栓塞（FCE）', key_differentiator: '急性發作（分鐘至數小時），不對稱性，非進行性' },
     ],
-    diagnostic_workup: '1. 詳細病史（慢性進行性、無疼痛、品種）→ 2. 神經學檢查（後肢 UMN 共濟失調/輕癱、無疼痛）→ 3. SOD1 基因檢測（A/A homozygous 支持診斷）→ 4. 脊椎 MRI（排除壓迫性病灶——DM 的 MRI 通常正常）→ 5. 基礎血檢排除代謝性疾病 → 6. 推定診斷：符合品種 + 年齡 + 臨床特徵 + MRI 正常 + SOD1 A/A。確定診斷：死後組織病理。',
-    treatment_protocol: '目前無藥物可逆轉或阻止 DM 進展。物理復健為最重要的介入：水療（游泳、水中跑步機）、被動關節運動、站立訓練、平衡訓練——已被證實可延長維持步行能力的時間。輔助裝置：後肢推車/輪椅維持活動力與生活品質。補充品（效果未經充分驗證）：Aminocaproic acid 500 mg PO TID、維生素 E、B 群、Omega-3。',
+    diagnostic_workup: '1. 詳細病史（慢性進行性、無疼痛、品種），2. 神經學檢查（後肢 UMN 共濟失調/輕癱、無疼痛）。3. SOD1 基因檢測（A/A homozygous 支持診斷），4. 脊椎 MRI（排除壓迫性病灶，DM 的 MRI 通常正常），5. 基礎血檢排除代謝性疾病。6. 推定診斷：符合品種 + 年齡 + 臨床特徵 + MRI 正常 + SOD1 A/A。確定診斷：死後組織病理。',
+    treatment_protocol: '目前無藥物可逆轉或阻止 DM 進展。物理復健為最重要的介入：水療（游泳、水中跑步機）、被動關節運動、站立訓練、平衡訓練，已被證實可延長維持步行能力的時間。輔助裝置：後肢推車/輪椅維持活動力與生活品質。補充品（效果未經充分驗證）：Aminocaproic acid 500 mg PO TID、維生素 E、B 群、Omega-3。',
     prognosis: '預後不良，為進行性且不可逆。從首次出現症狀至後肢癱瘓：中位約 6-12 個月。從後肢癱瘓至需安樂死：中位約 3-6 個月。積極復健的犬維持步行能力的時間可延長至未復健犬的約 2-3 倍。安樂死的常見決定點為：後肢完全癱瘓 + 大小便失禁 + 飼主無法提供足夠照護。',
     monitoring: '每月神經學檢查評估進展速度。復健進度評估：步行能力、姿勢反應、肌肉質量。生活品質評估：飼主問卷追蹤日常活動能力。進展速度異常（過快或不對稱）時需重新評估診斷。',
-    owner_communication: 'DM 是一種慢性進行性疾病，目前無法治癒或阻止。但這不代表「什麼都不能做」——積極的物理復健可以顯著延長犬維持步行能力的時間。後肢癱瘓後，使用輪椅仍可維持良好的生活品質。重要的是與飼主一起設定合理的期望與生活品質指標。當進展至嚴重大小便失禁或前肢也開始受累時，需要討論生活品質和安樂死的時機。',
+    owner_communication: 'DM 是一種慢性進行性疾病，目前無法治癒或阻止。但這不代表「什麼都不能做」，積極的物理復健可以明顯延長犬維持步行能力的時間。後肢癱瘓後，使用輪椅仍可維持良好的生活品質。重要的是與飼主一起設定合理的期望與生活品質指標。當進展至嚴重大小便失禁或前肢也開始受累時，需要討論生活品質和安樂死的時機。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -1225,21 +1225,21 @@ const contentDM: NodeContent = {
   created_at: now,
 };
 
-/** 神經定位診斷 — 診斷型 */
+/** 神經定位診斷 - 診斷型 */
 const contentLocalization: NodeContent = {
   id: 'CONTENT-NEURO-L4-004',
   node_id: 'NEURO-L4-004',
   version: 1,
   summary: '神經定位診斷（Neurological Localization）是獸醫神經科的核心技能，透過系統性的神經學檢查結果，將病灶定位至神經系統的特定區域。正確的定位是建立鑑別診斷清單和選擇適當診斷工具的前提。主要定位區域包括：前腦、腦幹、小腦、C1-C5、C6-T2、T3-L3、L4-S3。',
   learning_objectives: [
-    '執行系統性的神經定位診斷流程：意識→步態→姿勢反應→脊髓反射→腦神經',
+    '執行系統性的神經定位診斷流程：意識、步態、姿勢反應、脊髓反射到腦神經',
     '根據神經學檢查結果將病灶正確定位至七大區域之一',
     '區分上運動神經元（UMN）與下運動神經元（LMN）病灶的臨床表現',
     '識別多灶性病灶（multifocal lesion）的特徵',
     '根據定位結果建立適當的鑑別診斷清單',
   ],
   key_points: [
-    '神經定位五步驟：意識（Mentation）→ 步態（Gait）→ 姿勢反應（Postural reactions）→ 脊髓反射（Spinal reflexes）→ 腦神經（Cranial nerves）',
+    '神經定位五步驟：意識（Mentation）、步態（Gait）、姿勢反應（Postural reactions）、脊髓反射（Spinal reflexes）、腦神經（Cranial nerves），照順序跑下來',
     'UMN 徵象：反射正常至亢進、肌張力增加、延遲性萎縮',
     'LMN 徵象：反射減弱至消失、肌張力降低、快速性萎縮、去神經電位',
     '七大定位區域：前腦、腦幹、小腦、C1-C5、C6-T2、T3-L3、L4-S3',
@@ -1258,13 +1258,13 @@ const contentLocalization: NodeContent = {
 ### 系統性檢查流程
 ### Step 1：意識評估（Mentation）
 - 正常（Alert）、嗜睡（Obtunded）、木僵（Stupor）、昏迷（Coma）
-- 意識改變提示**前腦**或**腦幹**病變（上行性網狀活化系統 ARAS）
+- 意識改變提示前腦或腦幹病變（上行性網狀活化系統 ARAS）
 
 ### Step 2：步態評估（Gait）
 - 共濟失調（Ataxia）三類型：
-  - 本體感覺性（Proprioceptive）：腳掌翻轉（knuckling）→ 脊髓或前腦
-  - 前庭性（Vestibular）：頭部傾斜、旋轉 → 前庭系統
-  - 小腦性（Cerebellar）：辨距不良（dysmetria）、意向性震顫 → 小腦
+  - 本體感覺性（Proprioceptive）：腳掌翻轉（knuckling），脊髓或前腦
+  - 前庭性（Vestibular）：頭部傾斜、旋轉，前庭系統
+  - 小腦性（Cerebellar）：辨距不良（dysmetria）、意向性震顫，最後小腦
 - 不對稱步態：單側或不對稱提示側化病灶
 
 ### Step 3：姿勢反應（Postural Reactions）
@@ -1273,12 +1273,12 @@ const contentLocalization: NodeContent = {
 - 異常提示感覺或運動通路中的任何位置病變
 
 ### Step 4：脊髓反射（Spinal Reflexes）
-- **膝蓋反射（Patellar reflex）**：L4-L6（股四頭肌/股神經）
-- **屈曲反射（Withdrawal reflex）**：
+- 膝蓋反射（Patellar reflex）：L4-L6（股四頭肌/股神經）
+- 屈曲反射（Withdrawal reflex）：
   - 前肢：C6-T2
   - 後肢：L4-S1
-- **會陰反射（Perineal reflex）**：S1-S3（陰部神經）
-- **Panniculus reflex**：截斷面定位脊髓病灶上緣
+- 會陰反射（Perineal reflex）：S1-S3（陰部神經）
+- Panniculus reflex：截斷面定位脊髓病灶上緣
 
 ### Step 5：腦神經評估（Cranial Nerves）
 - CN II：威脅反應、PLR（瞳孔對光反射）
@@ -1308,7 +1308,7 @@ const contentLocalization: NodeContent = {
 | 肌萎縮 | 延遲出現（廢用性） | 快速出現（去神經性） |
 | Babinski sign | 可能陽性 | 陰性 |
 
-[互動:神經定位練習——輸入神經學檢查發現，系統自動定位]
+[互動:神經定位練習，輸入神經學檢查發現，系統自動定位]
 
 ## 二、判讀要點 (Interpretation)
 
@@ -1333,7 +1333,7 @@ const contentLocalization: NodeContent = {
 | 犬神經學檢查的觀察者間一致性（inter-observer agreement） | 不同經驗程度獸醫的定位準確率差異大（50% vs 80%），需標準化訓練 | Level III |
 | 深痛覺（DPP）測試的最佳標準化方法 | 止血鉗力道、刺激位置缺乏統一標準，導致 IVDD Grade V 判定不一致 | Level IV |
 | 多灶性 vs 瀰漫性病灶定位的臨床價值 | 定位至「多灶性」的鑑別診斷範圍仍廣（MUO、轉移瘤、代謝性），實用價值存疑 | Level IV |
-| 腦幹 vs 前庭周邊病灶的臨床區分準確率 | 中樞 vs 周邊前庭疾病的臨床鑑別在部分案例中困難——paradoxical vestibular 尤其容易誤判 | Level III |`,
+| 腦幹 vs 前庭周邊病灶的臨床區分準確率 | 中樞 vs 周邊前庭疾病的臨床鑑別在部分案例中困難，paradoxical vestibular 尤其容易誤判 | Level III |`,
   clinical_pearl: '記住「兩個 UMN 規則」：若前後肢均為 UMN 徵象，病灶在 C1-C5。若前肢 LMN + 後肢 UMN，病灶在 C6-T2（cervical intumescence）。T3-L3 病變只影響後肢（UMN），前肢完全正常。在 IVDD 病例中，panniculus reflex 的截斷面可以幫助定位壓迫脊髓節段的上緣。',
   common_mistakes: [
     '混淆 UMN 與 LMN 徵象（最常見錯誤：將反射亢進誤判為 LMN 病灶）',
@@ -1355,11 +1355,11 @@ const contentLocalization: NodeContent = {
       '嚴重不穩定的多發性創傷（先穩定生命徵象）',
       '極度疼痛的動物需適當鎮痛後再進行完整檢查',
     ],
-    technique: '系統性五步驟流程：1. 意識評估（觀察環境互動、對刺激反應）→ 2. 步態評估（行走、轉彎、上下斜坡，注意對稱性與共濟失調類型）→ 3. 姿勢反應（本體感覺定位為最敏感，所有四肢逐一測試）→ 4. 脊髓反射（膝蓋反射、屈曲反射、會陰反射、panniculus reflex）→ 5. 腦神經評估（CN II-XII 系統性檢查）。全程記錄在標準化神經學檢查表上。',
+    technique: '系統性五步驟流程：1. 意識評估（觀察環境互動、對刺激反應）。2. 步態評估（行走、轉彎、上下斜坡，注意對稱性與共濟失調類型），3. 姿勢反應（本體感覺定位為最敏感，所有四肢逐一測試），4. 脊髓反射（膝蓋反射、屈曲反射、會陰反射、panniculus reflex），5. 腦神經評估（CN II-XII 系統性檢查）。全程記錄在標準化神經學檢查表上。',
     normal_findings: [
       { finding: '意識正常（Alert）', description: '動物對環境保持警覺，對刺激有適當反應', significance: '排除前腦與腦幹的嚴重病變' },
       { finding: '步態正常', description: '對稱、協調的四肢運動，無共濟失調', significance: '排除影響運動通路的明顯病變' },
-      { finding: '所有脊髓反射正常', description: '膝蓋反射 +2（正常）、屈曲反射正常、會陰反射正常', significance: '排除顯著的 UMN 或 LMN 病變' },
+      { finding: '所有脊髓反射正常', description: '膝蓋反射 +2（正常）、屈曲反射正常、會陰反射正常', significance: '排除明顯的 UMN 或 LMN 病變' },
       { finding: '所有腦神經正常', description: 'PLR 正常、威脅反應正常、面部對稱、吞嚥正常', significance: '排除顱內或顱神經病變' },
     ],
     abnormal_findings: [
@@ -1368,7 +1368,7 @@ const contentLocalization: NodeContent = {
       { finding: '前肢 LMN + 後肢 UMN', description: '前肢反射減弱/肌萎縮 + 後肢反射亢進', significance: '病灶定位 C6-T2（頸膨大處病變）' },
       { finding: '頭部傾斜 + 眼球震顫', description: '持續性頭部傾斜，伴自發性或位置性眼振', significance: '前庭系統病變；需區分中樞性（腦幹）vs 周邊性（CN VIII）' },
     ],
-    interpretation_guide: '1. 有無意識改變？有 → 前腦或腦幹。2. 有無腦神經異常？有 → 腦幹或周邊腦神經。3. 有無共濟失調？什麼類型？→ 本體感覺性/前庭性/小腦性。4. 受影響的肢體：四肢/前肢/後肢/單肢。5. UMN 或 LMN 徵象？6. 整合所有結果定位至七大區域。7. 考慮是否為多灶性。',
+    interpretation_guide: '1. 有沒有意識改變？有的話往前腦或腦幹找。2. 有沒有腦神經異常？有的話想腦幹或周邊腦神經。3. 有沒有共濟失調？是哪種類型？分本體感覺性、前庭性、小腦性。4. 受影響的肢體：四肢、前肢、後肢、單肢。5. 是 UMN 還是 LMN 徵象？6. 整合所有結果定位到七大區域。7. 考慮是不是多灶性。',
     pitfalls: [
       '動物過度緊張或疼痛可能影響反射評估的準確性',
       '肥胖動物的膝蓋反射可能難以引出（不代表 LMN 病變）',
@@ -1384,7 +1384,7 @@ const contentLocalization: NodeContent = {
     { position: 'UMN vs LMN 比較後', type: 'comparison_table', description: 'UMN/LMN 臨床特徵互動比較' },
   ],
   interactive_placeholders: [
-    { position: '文末', type: 'localization_exercise', description: '神經定位互動練習——輸入檢查發現自動定位' },
+    { position: '文末', type: 'localization_exercise', description: '神經定位互動練習，輸入檢查發現自動定位' },
   ],
   drug_api_links: [],
   references: [
@@ -1397,12 +1397,12 @@ const contentLocalization: NodeContent = {
   created_at: now,
 };
 
-/** 獸醫神經科總覽 — 概念型 */
+/** 獸醫神經科總覽 - 概念型 */
 const contentNeuroOverview: NodeContent = {
   id: 'CONTENT-NEURO-L0-001',
   node_id: 'NEURO-L0-001',
   version: 1,
-  summary: '獸醫神經科（Veterinary Neurology）涵蓋犬貓中樞與周邊神經系統疾病的診斷與治療。神經科臨床推理的核心在於「神經定位診斷」——透過系統性神經學檢查將病灶定位至特定解剖區域，再結合進階影像（MRI）與實驗室檢查（CSF 分析）建立確診。常見疾病包括癲癇、椎間盤疾病、腦膜腦炎、前庭症候群與神經肌肉疾病。',
+  summary: '獸醫神經科（Veterinary Neurology）涵蓋犬貓中樞與周邊神經系統疾病的診斷與治療。神經科臨床推理的核心在於「神經定位診斷」，透過系統性神經學檢查將病灶定位至特定解剖區域，再結合進階影像（MRI）與實驗室檢查（CSF 分析）建立確診。常見疾病包括癲癇、椎間盤疾病、腦膜腦炎、前庭症候群與神經肌肉疾病。',
   learning_objectives: [
     '描述獸醫神經科的範疇與常見疾病類別',
     '說明神經定位診斷在臨床推理中的核心地位',
@@ -1427,7 +1427,7 @@ const contentNeuroOverview: NodeContent = {
 獸醫神經科專注於犬貓中樞神經系統（CNS：腦與脊髓）及周邊神經系統（PNS：腦神經、脊神經、神經肌肉接合處、肌肉）疾病的診斷與治療。
 
 ### 臨床推理核心：神經定位
-神經科最獨特的臨床技能是「神經定位診斷」——透過系統性神經學檢查（意識→步態→姿勢反應→脊髓反射→腦神經），將觀察到的神經功能缺損對應至特定解剖區域。正確的定位是建立鑑別診斷清單的基礎。
+神經科最獨特的臨床技能就是「神經定位診斷」。透過系統性神經學檢查（意識、步態、姿勢反應、脊髓反射、腦神經一路跑下來），把觀察到的神經功能缺損對應到特定解剖區域。先有定位才能列鑑別診斷清單。
 
 ### 主要疾病類別
 | 類別 | 代表疾病 | 好發物種/品種 |
@@ -1440,22 +1440,22 @@ const contentNeuroOverview: NodeContent = {
 | 退化性 | DM | 犬（GSD、Welsh Corgi） |
 
 ### 診斷工具概覽
-- **神經學檢查**：最基礎且最重要，無需特殊設備
-- **MRI**：CNS 疾病的金標準影像工具
-- **CSF 分析**：發炎性 vs 感染性 CNS 疾病鑑別
-- **CT**：骨骼結構評估、MRI 不可得時替代
-- **EMG/NCV**：周邊神經與神經肌肉疾病評估
+- 神經學檢查：最基礎且最重要，無需特殊設備
+- MRI：CNS 疾病的金標準影像工具
+- CSF 分析：發炎性 vs 感染性 CNS 疾病鑑別
+- CT：骨骼結構評估、MRI 不可得時替代
+- EMG/NCV：周邊神經與神經肌肉疾病評估
 
 ### 台灣臨床現況
 台灣小動物神經科近年快速發展，MRI 設備在主要都會區已相對普及。常見急診包括癲癇重積狀態、急性 IVDD（臘腸犬在台灣飼養量大）與急性前庭症候群（老年犬）。
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **神經定位診斷的核心地位**：獸醫神經科臨床推理的基石在於從臨床症狀定位病灶至七大解剖區域（前腦/腦幹/小腦/C1-C5/C6-T2/T3-L3/L4-S3），在 MRI 不可得的環境下仍能提供 70-80% 的定位準確率
-- **急診決策的時效性**：癲癇重積狀態與急性深痛覺喪失的 IVDD 均為「與時間賽跑」的神經科急診，延遲處置直接影響預後——SE 超過 30 分鐘可造成不可逆腦損傷，Grade V IVDD 超過 48 小時手術預後急劇下降
-- **品種好發模式指導篩檢**：台灣常見品種的神經疾病好發模式（臘腸犬 IVDD、法鬥 IVDD/hemivertebra、CKCS Chiari-like malformation、小型犬 MUO）可作為預防性諮詢與早期篩檢依據
-- **跨專科整合需求**：神經科疾病常需與內科（代謝性癲癇、肝腦症）、外科（脊椎手術）、影像科（MRI 判讀）及急診科（SE 處置）密切協作，是小動物臨床中最仰賴多專科合作的領域之一
-- **飼主溝通與預後評估**：神經科疾病的預後評估（如 IVDD 分級系統、MUO 存活中位數）直接影響飼主的治療決定，準確且同理的溝通能力與臨床知識同等重要
+- 神經定位診斷的核心地位：獸醫神經科臨床推理的基石在於從臨床症狀定位病灶至七大解剖區域（前腦/腦幹/小腦/C1-C5/C6-T2/T3-L3/L4-S3），在 MRI 不可得的環境下仍能提供 70-80% 的定位準確率
+- 急診決策的時效性：癲癇重積狀態與急性深痛覺喪失的 IVDD 均為「與時間賽跑」的神經科急診，延遲處置直接影響預後，SE 超過 30 分鐘可造成不可逆腦損傷，Grade V IVDD 超過 48 小時手術預後急劇下降
+- 品種好發模式指導篩檢：台灣常見品種的神經疾病好發模式（臘腸犬 IVDD、法鬥 IVDD/hemivertebra、CKCS Chiari-like malformation、小型犬 MUO）可作為預防性諮詢與早期篩檢依據
+- 跨專科整合需求：神經科疾病常需與內科（代謝性癲癇、肝腦症）、外科（脊椎手術）、影像科（MRI 判讀）及急診科（SE 處置）密切協作，是小動物臨床中最仰賴多專科合作的領域之一
+- 飼主溝通與預後評估：神經科疾病的預後評估（如 IVDD 分級系統、MUO 存活中位數）直接影響飼主的治療決定，準確且同理的溝通能力與臨床知識同等重要
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1470,11 +1470,11 @@ const contentNeuroOverview: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬癲癇分類系統（IVETF 2015）的臨床實用性 | 分類過於複雜，基層獸醫使用率低 | Level IV |
-| 犬認知功能障礙（CCD）的診斷標準 | 缺乏金標準，依賴行為問卷——主觀性高 | Level IV |`,
+| 犬認知功能障礙（CCD）的診斷標準 | 缺乏金標準，依賴行為問卷，主觀性高 | Level IV |`,
   clinical_pearl: '神經科初學者最重要的第一步是學好「神經定位診斷」。在沒有 MRI 的情況下，一個準確的神經學檢查仍然可以提供 70-80% 的定位準確率。記住：先定位，再列鑑別，最後選工具。',
   common_mistakes: [
-    '跳過神經學檢查直接安排 MRI——MRI 只是輔助工具，神經學檢查才是定位的基礎',
-    '混淆 UMN 與 LMN 徵象——這是最基本也最常犯的錯誤',
+    '跳過神經學檢查直接安排 MRI，MRI 只是輔助工具，神經學檢查才是定位的基礎',
+    '混淆 UMN 與 LMN 徵象，這是最基本也最常犯的錯誤',
     '將前庭性共濟失調誤認為小腦性共濟失調',
     '忽略多灶性病變的可能性（如 MUO 常為多灶性）',
   ],
@@ -1490,13 +1490,13 @@ const contentNeuroOverview: NodeContent = {
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '獸醫神經科基礎教材' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '神經科實務指南' },
     { type: 'journal', citation: 'Muñana KR. Update on the approach to seizures in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):xi-xii.', relevance: '犬貓癲癇管理更新' },
-    { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 癲癇定義與分類共識——神經科核心指引' },
+    { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 癲癇定義與分類共識，神經科核心指引' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 神經解剖學 — 概念型 */
+/** 神經解剖學 - 概念型 */
 const contentNeuroanatomy: NodeContent = {
   id: 'CONTENT-NEURO-L1-001',
   node_id: 'NEURO-L1-001',
@@ -1515,7 +1515,7 @@ const contentNeuroanatomy: NodeContent = {
     '腦幹 = 中腦 + 橋腦 + 延髓，包含 ARAS（上行性網狀活化系統）控制意識',
     '脊髓四大區域：頸膨大（C6-T2）、胸腰段（T3-L3）、腰膨大（L4-S3）、薦尾段',
     'UMN 通路：皮質脊髓徑（corticospinal tract）與紅核脊髓徑（rubrospinal tract）',
-    'LMN = 脊髓腹角運動神經元 → 腹根 → 脊神經 → 周邊神經 → 神經肌肉接合處 → 骨骼肌',
+    'LMN = 脊髓腹角運動神經元，腹根，脊神經，最後周邊神經，接著神經肌肉接合處，跟著骨骼肌',
     '自主神經系統：交感神經（T1-L4 側角）與副交感神經（腦幹核 + S1-S3）',
   ],
   body: `# 神經解剖學
@@ -1527,16 +1527,16 @@ const contentNeuroanatomy: NodeContent = {
 ### 中樞神經系統
 ### 腦部
 
-**前腦（Prosencephalon）**
-- **大腦（Cerebrum）**：皮質（灰質）負責意識、感覺整合、運動起始、行為；白質為纖維連結
-- **間腦（Diencephalon）**：視丘（感覺轉接站）、下視丘（內分泌、自主調控）
+前腦（Prosencephalon）
+- 大腦（Cerebrum）：皮質（灰質）負責意識、感覺整合、運動起始、行為；白質為纖維連結
+- 間腦（Diencephalon）：視丘（感覺轉接站）、下視丘（內分泌、自主調控）
 
-**腦幹（Brainstem）**
-- **中腦（Mesencephalon）**：CN III, IV 核、紅核、上行性網狀活化系統（ARAS）
-- **橋腦（Pons）**：CN V 核、呼吸調控中樞
-- **延髓（Medulla oblongata）**：CN VI-XII 核、心血管/呼吸中樞、前庭核
+腦幹（Brainstem）
+- 中腦（Mesencephalon）：CN III, IV 核、紅核、上行性網狀活化系統（ARAS）
+- 橋腦（Pons）：CN V 核、呼吸調控中樞
+- 延髓（Medulla oblongata）：CN VI-XII 核、心血管/呼吸中樞、前庭核
 
-**小腦（Cerebellum）**
+小腦（Cerebellum）
 - 協調運動但不起始運動
 - 絨球小結葉（flocculonodular lobe）：前庭小腦
 - 蟲部（vermis）：軀幹平衡
@@ -1559,15 +1559,15 @@ const contentNeuroanatomy: NodeContent = {
 - CN IX/X（吞嚥+發聲）、CN XI（斜方肌）、CN XII（舌頭運動）
 
 ### UMN vs LMN 通路
-- **UMN**：起自大腦皮質運動區 → 內囊 → 腦幹 → 脊髓側索/腹索 → 突觸至 LMN
-- **LMN**：脊髓腹角 α 運動神經元 → 腹根 → 脊神經 → 周邊神經 → NMJ → 骨骼肌
+- UMN：起自大腦皮質運動區，內囊，腦幹，最後脊髓側索/腹索，接著突觸至 LMN
+- LMN：脊髓腹角 α 運動神經元。腹根，脊神經周邊神經，最後NMJ，接著骨骼肌
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **神經定位的解剖基礎**：掌握中樞與周邊神經系統的解剖結構，才能從臨床症狀（如 UMN vs LMN 徵候）正確定位病灶位置——C6-T2 病變呈現前肢 LMN + 後肢 UMN 是最經典的定位模式
-- **脊髓手術入路選擇**：脊髓節段的精確解剖知識直接影響手術入路——胸腰椎 IVDD 選擇 hemilaminectomy，頸椎 IVDD 選擇 ventral slot，且術中辨識解剖標記（accessory process、椎弓根）攸關手術安全
-- **腦神經檢查與腦幹定位**：12 對腦神經的起源核團分布於中腦、橋腦與延腦，透過腦神經功能異常的組合可精確定位腦幹病灶層級（如 CN V-VII 異常 → 橋腦）
-- **品種相關解剖變異的臨床意義**：小型犬（臘腸犬、法鬥）與大型犬（德國牧羊犬）的脊髓解剖差異影響 IVDD 的好發位置與手術策略；CKCS 的後顱窩發育不全與 Chiari-like malformation 直接相關
+- 神經定位的解剖基礎：掌握中樞與周邊神經系統的解剖結構，才能從臨床症狀（如 UMN vs LMN 徵候）正確定位病灶位置，C6-T2 病變呈現前肢 LMN + 後肢 UMN 是最經典的定位模式
+- 脊髓手術入路選擇：脊髓節段的精確解剖知識直接影響手術入路，胸腰椎 IVDD 選擇 hemilaminectomy，頸椎 IVDD 選擇 ventral slot，且術中辨識解剖標記（accessory process、椎弓根）攸關手術安全
+- 腦神經檢查與腦幹定位：12 對腦神經的起源核團分布於中腦、橋腦與延腦，透過腦神經功能異常的組合可精確定位腦幹病灶層級（如 CN V-VII 異常，跟著橋腦）
+- 品種相關解剖變異的臨床意義：小型犬（臘腸犬、法鬥）與大型犬（德國牧羊犬）的脊髓解剖差異影響 IVDD 的好發位置與手術策略；CKCS 的後顱窩發育不全與 Chiari-like malformation 直接相關
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1585,9 +1585,9 @@ const contentNeuroanatomy: NodeContent = {
 | 犬腦功能分區的品種差異 | 短頭種（brachycephalic）腦部比例與長頭種不同，功能區域可能有位移 | Level IV |`,
   clinical_pearl: '臨床上最重要的解剖概念是「頸膨大」（C6-T2 intumescence）與「腰膨大」（L4-S3 intumescence）。這兩個區域的 LMN 細胞體密集，病灶在此會呈現 LMN 徵象（反射減弱、快速萎縮），而非 UMN 徵象。記住：C6-T2 病變 = 前肢 LMN + 後肢 UMN，這是定位的經典考點。',
   common_mistakes: [
-    '混淆脊髓節段與椎體編號——犬的脊髓比脊柱短，腰膨大（L4-S3）實際位於 L3-L5 椎體水平',
-    '忘記 ARAS 在維持意識中的角色——腦幹病變可導致意識喪失，前腦病變通常不會',
-    '將小腦視為運動起始中樞——小腦調控運動精確度但不起始運動',
+    '混淆脊髓節段與椎體編號，犬的脊髓比脊柱短，腰膨大（L4-S3）實際位於 L3-L5 椎體水平',
+    '忘記 ARAS 在維持意識中的角色，腦幹病變可導致意識喪失，前腦病變通常不會',
+    '將小腦視為運動起始中樞，小腦調控運動精確度但不起始運動',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -1602,19 +1602,19 @@ const contentNeuroanatomy: NodeContent = {
     { type: 'textbook', citation: 'Evans HE, de Lahunta A. Miller\'s Anatomy of the Dog, 4th ed. Elsevier, 2013.', relevance: '犬解剖學權威教材' },
     { type: 'textbook', citation: 'de Lahunta A, Glass E, Kent M. Veterinary Neuroanatomy and Clinical Neurology, 4th ed. Saunders, 2015.', relevance: '獸醫神經解剖臨床教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013. Chapter 1.', relevance: '神經解剖基礎章節' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識——以解剖為基礎的分層診斷' },
+    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，以解剖為基礎的分層診斷' },
     { type: 'journal', citation: 'Jeffery ND et al. Factors associated with recovery from paraplegia in dogs with loss of pain perception in the pelvic limbs following intervertebral disk herniation. J Am Vet Med Assoc. 2016;248(4):386-394.', relevance: '脊髓解剖與功能預後相關研究' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 神經生理學 — 概念型 */
+/** 神經生理學 - 概念型 */
 const contentNeurophysiology: NodeContent = {
   id: 'CONTENT-NEURO-L1-002',
   node_id: 'NEURO-L1-002',
   version: 1,
-  summary: '神經生理學研究神經系統的功能機轉，包含神經元的電生理特性（靜止膜電位、動作電位）、突觸傳遞（化學突觸與電突觸）、主要神經傳遞物質（Glutamate、GABA、Acetylcholine、Dopamine、Serotonin）、以及神經肌肉接合處（NMJ）的訊號傳導。理解這些基礎機轉對於掌握癲癇（興奮/抑制失衡）、神經肌肉疾病（NMJ 傳導異常）與藥物治療原理（AED 機轉）至關重要。',
+  summary: '神經生理學研究神經系統的功能機轉，包含神經元的電生理特性（靜止膜電位、動作電位）、突觸傳遞（化學突觸與電突觸）、主要神經傳遞物質（Glutamate、GABA、Acetylcholine、Dopamine、Serotonin）、以及神經肌肉接合處（NMJ）的訊號傳導。理解這些基礎機轉對於掌握癲癇（興奮/抑制失衡）、神經肌肉疾病（NMJ 傳導異常）與藥物治療原理（AED 機轉）不能省。',
   learning_objectives: [
     '描述神經元靜止膜電位的離子基礎與動作電位的產生機轉',
     '說明化學突觸傳遞的步驟與主要神經傳遞物質的功能',
@@ -1624,12 +1624,12 @@ const contentNeurophysiology: NodeContent = {
   ],
   key_points: [
     '靜止膜電位約 -70mV，由 Na⁺/K⁺-ATPase 維持',
-    '動作電位：閾值去極化 → Na⁺ 通道開放（去極化）→ K⁺ 通道開放（再極化）→ 過極化',
+    '動作電位：閾值去極化，Na⁺ 通道開放（去極化），K⁺ 通道開放（再極化），最後過極化',
     '主要興奮性神經傳遞物質：Glutamate（CNS 最主要）、Acetylcholine（NMJ）',
     '主要抑制性神經傳遞物質：GABA（CNS 最主要）、Glycine（脊髓）',
-    'NMJ 傳導：運動神經元動作電位 → ACh 釋放 → nAChR 活化 → 終板電位 → 肌肉收縮',
+    'NMJ 傳導：運動神經元動作電位，接著ACh 釋放。nAChR 活化，終板電位肌肉收縮',
     '癲癇的離子通道基礎：Na⁺/Ca²⁺ 通道過度活化或 GABA 受體功能不足',
-    'AED 藥理機轉與離子通道/受體的對應：PB→GABA-A、ZNS→Na⁺/Ca²⁺、LEV→SV2A',
+    'AED 藥理機轉與離子通道/受體的對應：PB 走 GABA-A、ZNS 走 Na⁺/Ca²⁺、LEV 走 SV2A',
   ],
   body: `# 神經生理學
 
@@ -1645,23 +1645,23 @@ const contentNeurophysiology: NodeContent = {
 
 ### 動作電位
 1. 刺激使膜去極化達閾值（約 -55mV）
-2. 電壓門控 Na⁺ 通道開放 → 快速去極化（+30mV）
-3. Na⁺ 通道失活 + K⁺ 通道開放 → 再極化
-4. 過極化（undershoot）→ 回復靜止電位
-5. 絕對不反應期 → 相對不反應期
+2. 電壓門控 Na⁺ 通道開放，最後快速去極化（+30mV）
+3. Na⁺ 通道失活 + K⁺ 通道開放，接著再極化
+4. 過極化（undershoot），跟著回復靜止電位
+5. 絕對不反應期，相對不反應期
 
 ### 髓鞘與跳躍傳導
 - 有髓纖維：動作電位在 Ranvier 結間跳躍傳導（saltatory conduction）
 - 傳導速度與纖維直徑和髓鞘厚度成正比
-- 脫髓鞘疾病 → 傳導減慢或傳導阻斷
+- 脫髓鞘疾病，傳導減慢或傳導阻斷
 
 ### 突觸傳遞
 ### 化學突觸步驟
 1. 動作電位抵達突觸前末梢
-2. 電壓門控 Ca²⁺ 通道開放 → Ca²⁺ 內流
+2. 電壓門控 Ca²⁺ 通道開放，最後Ca²⁺ 內流
 3. 突觸小泡與突觸前膜融合（SNARE 蛋白複合體）
 4. 神經傳遞物質釋放至突觸裂隙
-5. 與突觸後受體結合 → EPSP 或 IPSP
+5. 與突觸後受體結合，接著EPSP 或 IPSP
 6. 傳遞物質清除（再攝取/酵素降解/擴散）
 
 ### 主要神經傳遞物質
@@ -1676,20 +1676,20 @@ const contentNeurophysiology: NodeContent = {
 
 ### 神經肌肉接合處 (NMJ)
 正常 NMJ 傳導：
-1. 運動神經末梢動作電位 → Ca²⁺ 內流
+1. 運動神經末梢動作電位，跟著Ca²⁺ 內流
 2. ACh 突觸小泡釋放（量子釋放）
-3. ACh 與終板膜 nAChR 結合 → 終板電位（EPP）
-4. EPP 達閾值 → 肌膜動作電位 → 肌肉收縮
-5. AChE 水解 ACh → 終止訊號
+3. ACh 與終板膜 nAChR 結合，終板電位（EPP）
+4. EPP 達閾值，肌膜動作電位，最後肌肉收縮
+5. AChE 水解 ACh，接著終止訊號
 
-**安全因子（Safety factor）**：正常 EPP 遠超閾值，即使部分 AChR 被阻斷仍可正常傳導。MG 中 AChR 減少使安全因子下降，反覆刺激導致 EPP 逐漸低於閾值 → 漸減反應（decremental response）。
+安全因子（Safety factor）：正常 EPP 遠超閾值，即使部分 AChR 被阻斷仍可正常傳導。MG 中 AChR 減少使安全因子下降，反覆刺激導致 EPP 逐漸低於閾值，跟著漸減反應（decremental response）。
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **AED 藥理的生理基礎**：理解 GABA 與 Glutamate 的興奮-抑制平衡是掌握所有抗癲癇藥物作用機轉的前提——Phenobarbital 增強 GABA-A 受體功能、Levetiracetam 調控突觸囊泡蛋白 SV2A 減少 Glutamate 釋放
-- **MG 診斷的電生理依據**：NMJ 安全因子下降導致的漸減反應（decremental response）是重複神經刺激（RNS）診斷 MG 的電生理基礎，犬 MG 在 RNS 3Hz 刺激下 CMAP 振幅下降 > 10% 為陽性判讀標準
-- **離子通道病變與癲癇分型**：Na⁺/K⁺/Ca²⁺ 通道的基因突變可導致犬遺傳性癲癇（如 KCNJ10 突變導致 Rhodesian Ridgeback 癲癇），了解離子通道功能有助於未來精準藥物選擇
-- **中毒急診的生理機轉**：有機磷中毒抑制 AChE 導致 ACh 蓄積、Ivermectin 增強 GABA/GluCl 通道——掌握神經生理可快速辨識中毒機轉並選擇正確拮抗劑（Atropine + 2-PAM / 支持療法）
+- AED 藥理的生理基礎：理解 GABA 與 Glutamate 的興奮-抑制平衡是掌握所有抗癲癇藥物作用機轉的前提，Phenobarbital 增強 GABA-A 受體功能、Levetiracetam 調控突觸囊泡蛋白 SV2A 減少 Glutamate 釋放
+- MG 診斷的電生理依據：NMJ 安全因子下降導致的漸減反應（decremental response）是重複神經刺激（RNS）診斷 MG 的電生理基礎，犬 MG 在 RNS 3Hz 刺激下 CMAP 振幅下降 > 10% 為陽性判讀標準
+- 離子通道病變與癲癇分型：Na⁺/K⁺/Ca²⁺ 通道的基因突變可導致犬遺傳性癲癇（如 KCNJ10 突變導致 Rhodesian Ridgeback 癲癇），了解離子通道功能有助於未來精準藥物選擇
+- 中毒急診的生理機轉：有機磷中毒抑制 AChE 導致 ACh 蓄積、Ivermectin 增強 GABA/GluCl 通道，掌握神經生理可快速辨識中毒機轉並選擇正確拮抗劑（Atropine + 2-PAM / 支持療法）
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1705,11 +1705,11 @@ const contentNeurophysiology: NodeContent = {
 |---------|------|---------------|
 | 犬 EEG 在臨床癲癇診斷中的實用性 | 技術上可行但缺乏標準化 protocol 與正常參考值 | Level IV |
 | 犬離子通道突變與癲癇表型的關聯 | 已知 KCNJ10、LGI2 等突變，但多數品種癲癇的遺傳基礎不明 | Level III |`,
-  clinical_pearl: '理解「安全因子」概念是掌握 MG 病理生理的關鍵。正常 NMJ 的 EPP 約為閾值的 3-4 倍，這個「安全餘量」使得即使有少量 AChR 失功能也不會影響肌肉收縮。MG 中大量 AChR 被抗體破壞後，安全因子降低，初次刺激尚可引發收縮，但反覆刺激（如運動）時 ACh 釋放量逐漸下降，最終 EPP 低於閾值 → 運動誘發性無力。',
+  clinical_pearl: '理解「安全因子」概念是掌握 MG 病理生理的關鍵。正常 NMJ 的 EPP 約為閾值的 3-4 倍，這個「安全餘量」使得即使有少量 AChR 失功能也不會影響肌肉收縮。MG 中大量 AChR 被抗體破壞後，安全因子降低，初次刺激尚可引發收縮，但反覆刺激（如運動）時 ACh 釋放量逐漸下降，最終 EPP 低於閾值，運動誘發性無力。',
   common_mistakes: [
-    '混淆 EPSP（興奮性突觸後電位）與動作電位——EPSP 是分級電位可疊加，動作電位是全有全無',
-    '忘記 GABA 是 CNS 最主要的抑制性傳遞物質——理解這一點才能掌握 PB 和 Benzodiazepine 的藥理',
-    '將 NMJ 的 nicotinic AChR 與自主神經節的受體混淆——MG 僅影響 NMJ 的 nicotinic 受體',
+    '混淆 EPSP（興奮性突觸後電位）與動作電位，EPSP 是分級電位可疊加，動作電位是全有全無',
+    '忘記 GABA 是 CNS 最主要的抑制性傳遞物質，理解這一點才能掌握 PB 和 Benzodiazepine 的藥理',
+    '將 NMJ 的 nicotinic AChR 與自主神經節的受體混淆，MG 僅影響 NMJ 的 nicotinic 受體',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -1724,19 +1724,19 @@ const contentNeurophysiology: NodeContent = {
     { type: 'textbook', citation: 'de Lahunta A, Glass E, Kent M. Veterinary Neuroanatomy and Clinical Neurology, 4th ed. Saunders, 2015.', relevance: '獸醫神經生理基礎' },
     { type: 'textbook', citation: 'Cunningham JG, Klein BG. Textbook of Veterinary Physiology, 6th ed. Elsevier, 2020.', relevance: '獸醫生理學神經系統章節' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經生理臨床應用' },
-    { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 共識——神經生理機轉基礎與 AED 作用靶點' },
-    { type: 'journal', citation: 'Bhatt M et al. International veterinary epilepsy task force consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176.', relevance: 'IVETF 藥物治療共識——神經傳遞與藥理基礎' },
+    { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 共識，神經生理機轉基礎與 AED 作用靶點' },
+    { type: 'journal', citation: 'Bhatt M et al. International veterinary epilepsy task force consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176.', relevance: 'IVETF 藥物治療共識，神經傳遞與藥理基礎' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 腦脊髓液生理 — 概念型 */
+/** 腦脊髓液生理 - 概念型 */
 const contentCSFPhysiology: NodeContent = {
   id: 'CONTENT-NEURO-L1-003',
   node_id: 'NEURO-L1-003',
   version: 1,
-  summary: '腦脊髓液（Cerebrospinal Fluid, CSF）是充填於腦室系統與蛛網膜下腔的無色透明液體，由脈絡叢（choroid plexus）主動分泌產生。CSF 的核心功能包括：機械性緩衝保護、代謝廢物清除、營養與訊號分子運輸、以及維持顱內壓（ICP）恆定。犬貓 CSF 總量約 1-1.5 mL/kg，每日產生約 0.04-0.05 mL/min，約 4-5 小時完全更新一次。理解 CSF 的產生、循環與吸收機轉對於認識水腦症、顱內壓升高與 CSF 分析的臨床應用至關重要。',
+  summary: '腦脊髓液（Cerebrospinal Fluid, CSF）是充填於腦室系統與蛛網膜下腔的無色透明液體，由脈絡叢（choroid plexus）主動分泌產生。CSF 的核心功能包括：機械性緩衝保護、代謝廢物清除、營養與訊號分子運輸、以及維持顱內壓（ICP）恆定。犬貓 CSF 總量約 1-1.5 mL/kg，每日產生約 0.04-0.05 mL/min，約 4-5 小時完全更新一次。理解 CSF 的產生、循環與吸收機轉對於認識水腦症、顱內壓升高與 CSF 分析的臨床應用不能省。',
   learning_objectives: [
     '描述 CSF 的產生部位、機轉與速率',
     '說明 CSF 在腦室系統與蛛網膜下腔的循環路徑',
@@ -1746,8 +1746,8 @@ const contentCSFPhysiology: NodeContent = {
   ],
   key_points: [
     'CSF 由脈絡叢（側腦室>第三腦室>第四腦室）主動分泌，涉及 Na⁺/K⁺-ATPase、碳酸酐酶（carbonic anhydrase）與水通道蛋白（aquaporin-1）',
-    '循環路徑：側腦室 → 室間孔（Monro） → 第三腦室 → 中腦導水管（Sylvius） → 第四腦室 → 側孔（Luschka）/正中孔（Magendie） → 蛛網膜下腔',
-    '吸收途徑：蛛網膜絨毛（arachnoid villi）→ 靜脈竇為經典途徑；近年研究發現 glymphatic system 與篩板淋巴引流為重要補充途徑',
+    '循環路徑：側腦室，室間孔（Monro），最後第三腦室，接著中腦導水管（Sylvius）。第四腦室，側孔（Luschka）/正中孔（Magendie）蛛網膜下腔',
+    '吸收途徑：蛛網膜絨毛（arachnoid villi），最後靜脈竇為經典途徑；近年研究發現 glymphatic system 與篩板淋巴引流為重要補充途徑',
     'Monroe-Kellie 原則：顱腔內腦組織 + CSF + 血液容積恆定，任一增加需其他代償性減少',
     '犬貓正常 CSF：蛋白 < 25-30 mg/dL、有核細胞 < 5 cells/μL、無色透明、葡萄糖約為血糖 60-80%',
     '血腦屏障（BBB）與血-CSF 屏障（BCSFB）構成 CNS 的雙重防線，限制血液成分進入 CSF',
@@ -1763,8 +1763,8 @@ const contentCSFPhysiology: NodeContent = {
 ### 脈絡叢的結構與功能
 - 脈絡叢位於各腦室內，由上皮細胞（ependymal-derived）與高度血管化的間質組成
 - 上皮細胞間以緊密接合（tight junctions）連接，形成血-CSF 屏障（BCSFB）
-- 產生機轉：血漿超濾 + 主動分泌（Na⁺/K⁺-ATPase 驅動 Na⁺ 向腦室側運輸 → 水隨滲透梯度移動）
-- 碳酸酐酶（CA）：CO₂ + H₂O → HCO₃⁻ + H⁺，HCO₃⁻ 分泌至 CSF 維持 pH
+- 產生機轉：血漿超濾 + 主動分泌（Na⁺/K⁺-ATPase 驅動 Na⁺ 向腦室側運輸，接著水隨滲透梯度移動）
+- 碳酸酐酶（CA）：CO₂ + H₂O，跟著HCO₃⁻ + H⁺，HCO₃⁻ 分泌至 CSF 維持 pH
 
 ### 產生速率
 - 犬：約 0.04-0.05 mL/min（約 60-70 mL/day）
@@ -1783,7 +1783,7 @@ const contentCSFPhysiology: NodeContent = {
     ↓ 側孔（Luschka）/ 正中孔（Magendie）
 蛛網膜下腔（腦表面 + 脊髓周圍）
     ↓
-蛛網膜絨毛（Arachnoid villi）→ 靜脈竇吸收
+蛛網膜絨毛（Arachnoid villi），靜脈竇吸收
 \`\`\`
 
 ### 循環動力
@@ -1802,7 +1802,7 @@ const contentCSFPhysiology: NodeContent = {
 - CSF 沿動脈周圍間隙（periarterial space）進入腦實質
 - 經由星狀膠質細胞足突上的 AQP4 水通道蛋白進入間質
 - 間質液攜帶代謝廢物沿靜脈周圍間隙流出
-- 在睡眠期間活性顯著增加（與 Aβ 清除相關）
+- 在睡眠期間活性明顯增加（與 Aβ 清除相關）
 
 ### CSF 正常成分
 | 參數 | 犬正常值 | 貓正常值 | 臨床意義 |
@@ -1815,11 +1815,11 @@ const contentCSFPhysiology: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **水腦症的病理生理基礎**：阻塞性水腦症（中腦導水管狹窄最常見）與交通性水腦症（蛛網膜絨毛吸收障礙）的機轉差異決定了治療策略——V-P shunt 可同時處理兩種類型，但 Acetazolamide 減少 CSF 產生僅為輔助手段
-- **Monroe-Kellie 原則與 ICP 管理**：顱腔為固定容積空間，CSF 是 ICP 代償的主要緩衝——腦水腫或佔位性病灶時 CSF 先被代償性排出，代償耗盡後 ICP 急劇上升，因此 ICP 的變化呈「冰山效應」，晚期才出現臨床症狀
-- **CSF 採集部位的選擇**：小腦延髓池穿刺（CMP）較腰椎穿刺更常用於犬貓，但前顱窩病灶的 CSF 異常可能在 CMP 取樣中不明顯——病灶越接近採集點，CSF 異常越顯著
-- **Glymphatic system 與神經退化疾病**：睡眠期間 glymphatic 清除活性增加 60%，解釋了為什麼老年犬 CDS（認知障礙症候群）與睡眠障礙具有雙向關聯——睡眠改善可能有助於延緩 Aβ 沉積
-- **CSF 壓力的臨床量測**：犬貓麻醉下側臥位進行 CMP 時可用測壓管量測開放壓力，正常 < 170 mmH₂O，> 200 mmH₂O 提示 ICP 升高，指導 Mannitol（0.5-1 g/kg IV）或高張食鹽水的使用時機
+- 水腦症的病理生理基礎：阻塞性水腦症（中腦導水管狹窄最常見）與交通性水腦症（蛛網膜絨毛吸收障礙）的機轉差異決定了治療策略，V-P shunt 可同時處理兩種類型，但 Acetazolamide 減少 CSF 產生僅為輔助手段
+- Monroe-Kellie 原則與 ICP 管理：顱腔為固定容積空間，CSF 是 ICP 代償的主要緩衝，腦水腫或佔位性病灶時 CSF 先被代償性排出，代償耗盡後 ICP 急劇上升，所以 ICP 的變化呈「冰山效應」，晚期才出現臨床症狀
+- CSF 採集部位的選擇：小腦延髓池穿刺（CMP）較腰椎穿刺更常用於犬貓，但前顱窩病灶的 CSF 異常可能在 CMP 取樣中不明顯，病灶越接近採集點，CSF 異常越明顯
+- Glymphatic system 與神經退化疾病：睡眠期間 glymphatic 清除活性增加 60%，解釋了為什麼老年犬 CDS（認知障礙症候群）與睡眠障礙具有雙向關聯，睡眠改善可能有助於延緩 Aβ 沉積
+- CSF 壓力的臨床量測：犬貓麻醉下側臥位進行 CMP 時可用測壓管量測開放壓力，正常 < 170 mmH₂O，> 200 mmH₂O 提示 ICP 升高，指導 Mannitol（0.5-1 g/kg IV）或高張食鹽水的使用時機
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1835,15 +1835,15 @@ const contentCSFPhysiology: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬 Glymphatic system 的臨床重要性 | 齧齒類研究充分但犬的 glymphatic 功能數據極有限 | Level IV |
-| 先天性水腦犬的最佳手術時機 | 症狀性 vs 預防性 V-P shunt——早期介入可否改善長期預後 | Level III |
+| 先天性水腦犬的最佳手術時機 | 症狀性 vs 預防性 V-P shunt，早期介入可否改善長期預後 | Level III |
 | CSF 產生速率在老年犬是否下降 | 人醫資料顯示老年 CSF 產生下降 50%，犬的資料缺乏 | Level IV |
 | Acetazolamide 對犬水腦症的長期療效 | 短期可減少 CSF 產生，但長期 compensatory 機制可能抵消效果 | Level III |`,
-  clinical_pearl: 'CSF 採集時注意「部位偏差」（site bias）：病灶靠近採集點時 CSF 異常更明顯。前腦病灶在小腦延髓池（CMP）採集的 CSF 可能細胞數正常，腰椎穿刺反而更有意義。反之，後顱窩病灶在 CMP 最敏感。因此，CSF 正常不能完全排除 CNS 疾病，需結合 MRI 判斷。',
+  clinical_pearl: 'CSF 採集時注意「部位偏差」（site bias）：病灶靠近採集點時 CSF 異常更明顯。前腦病灶在小腦延髓池（CMP）採集的 CSF 可能細胞數正常，腰椎穿刺反而更有意義。反之，後顱窩病灶在 CMP 最敏感。所以，CSF 正常不能完全排除 CNS 疾病，需結合 MRI 判斷。',
   common_mistakes: [
-    '混淆阻塞性與交通性水腦症——前者為 CSF 通路阻塞（導水管狹窄），後者為吸收障礙',
-    '忽略 CSF 採集部位對結果的影響——前腦病灶在 CMP 取樣可能為假陰性',
-    '認為 CSF 壓力正常即排除 ICP 升高——麻醉可降低 ICP，且 CSF 壓力受測量姿勢影響',
-    '未同步採集血糖比對 CSF 葡萄糖——CSF 葡萄糖需以 CSF/血糖比值判讀才有意義',
+    '混淆阻塞性與交通性水腦症，前者為 CSF 通路阻塞（導水管狹窄），後者為吸收障礙',
+    '忽略 CSF 採集部位對結果的影響，前腦病灶在 CMP 取樣可能為假陰性',
+    '認為 CSF 壓力正常即排除 ICP 升高，麻醉可降低 ICP，且 CSF 壓力受測量姿勢影響',
+    '未同步採集血糖比對 CSF 葡萄糖，CSF 葡萄糖需以 CSF/血糖比值判讀才有意義',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -1863,7 +1863,7 @@ const contentCSFPhysiology: NodeContent = {
   created_at: now,
 };
 
-/** 癲癇發作機轉 — 機轉型 */
+/** 癲癇發作機轉 - 機轉型 */
 const contentSeizurePathophysiology: NodeContent = {
   id: 'CONTENT-NEURO-L2-001',
   node_id: 'NEURO-L2-001',
@@ -1877,13 +1877,13 @@ const contentSeizurePathophysiology: NodeContent = {
     '將發作機轉連結至抗癲癇藥物的藥理靶點',
   ],
   key_points: [
-    '興奮/抑制失衡：Glutamate（興奮性）↑ 或 GABA（抑制性）↓ → 神經元過度同步放電',
-    '陣發性去極化移位（PDS）：癲癇神經元的特徵性放電模式——Na⁺/Ca²⁺ 內流驅動的去極化 + 異常高頻動作電位叢發',
-    '癲癇形成三階段：初始損傷（腦炎/外傷/中風）→ 潛伏期（迴路重塑、苔蘚纖維萌芽）→ 自發性反覆發作',
+    '興奮/抑制失衡：Glutamate（興奮性）↑ 或 GABA（抑制性）↓，然後神經元過度同步放電',
+    '陣發性去極化移位（PDS）：癲癇神經元的特徵性放電模式，Na⁺/Ca²⁺ 內流驅動的去極化 + 異常高頻動作電位叢發',
+    '癲癇形成三階段：初始損傷（腦炎/外傷/中風），最後潛伏期（迴路重塑、苔蘚纖維萌芽），接著自發性反覆發作',
     '犬特發性癲癇（IE）可能涉及遺傳性離子通道或受體異常（channelopathy），多數品種致病基因尚未確認',
-    '癲癇重積（SE）的自我維持：持續發作 > 5 分鐘 → GABA-A 受體內化（internalization）→ Benzodiazepine 抗性 → 需要二線藥物',
-    '發作後期（postictal phase）：神經元暫時性抑制 + 腦水腫 → 臨床表現為意識混濁、失明、共濟失調',
-    '反覆癲癇發作的神經毒性：興奮毒性（excitotoxicity）→ 海馬迴硬化（hippocampal sclerosis）→ 癲癇更難控制',
+    '癲癇重積（SE）的自我維持：持續發作 > 5 分鐘。GABA-A 受體內化（internalization），Benzodiazepine 抗性需要二線藥物',
+    '發作後期（postictal phase）：神經元暫時性抑制 + 腦水腫，最後臨床表現為意識混濁、失明、共濟失調',
+    '反覆癲癇發作的神經毒性：興奮毒性（excitotoxicity），接著海馬迴硬化（hippocampal sclerosis），跟著癲癇更難控制',
   ],
   body: `# 癲癇發作機轉
 
@@ -1893,7 +1893,7 @@ const contentSeizurePathophysiology: NodeContent = {
 
 ### 正常神經元電生理
 - 靜止膜電位：~-70 mV（K⁺ 外流主導）
-- 動作電位：閾值達到 → 電壓門控 Na⁺ 通道開放 → 快速去極化 → K⁺ 通道開放 → 再極化
+- 動作電位：閾值達到，電壓門控 Na⁺ 通道開放，快速去極化，最後K⁺ 通道開放，接著再極化
 - 正常腦功能依賴興奮性與抑制性傳遞的精密平衡
 
 ### 癲癇發作的核心機轉
@@ -1903,26 +1903,26 @@ const contentSeizurePathophysiology: NodeContent = {
 癲癇狀態：
   興奮↑：Glutamate ↑、NMDA/AMPA 受體過度活化、Na⁺ 通道功能異常
   抑制↓：GABA 合成↓、GABA-A 受體表達↓、Cl⁻ 通道功能異常
-  → 神經元過度同步放電 → 臨床癲癇發作
+ ，跟著神經元過度同步放電，臨床癲癇發作
 \`\`\`
 
 ### 陣發性去極化移位（PDS, Paroxysmal Depolarization Shift）
 - 癲癇灶神經元的特徵性電生理表現
-- 機轉：持續性 Na⁺/Ca²⁺ 內流 → 長時程去極化平台（~200-500 ms）→ 其上疊加高頻動作電位叢發
-- 單一神經元 PDS → 經突觸與縫隙接合擴散 → 神經元群體同步 → EEG 上的棘波（spike）
+- 機轉：持續性 Na⁺/Ca²⁺ 內流，長時程去極化平台（~200-500 ms），最後其上疊加高頻動作電位叢發
+- 單一神經元 PDS，接著經突觸與縫隙接合擴散，跟著神經元群體同步，EEG 上的棘波（spike）
 
 ### 癲癇的擴散
-- 局灶性發作：異常放電侷限於皮質特定區域 → 對側肢體陣攣/行為異常
-- 全身性發作：異常放電經皮質-皮質連結或丘腦-皮質迴路快速擴散 → 雙側強直-陣攣
-- 繼發性全身化：局灶性起源 → 擴散至雙側大腦 → 全身性表現
+- 局灶性發作：異常放電侷限於皮質特定區域，對側肢體陣攣/行為異常
+- 全身性發作：異常放電經皮質-皮質連結或丘腦-皮質迴路快速擴散，最後雙側強直-陣攣
+- 繼發性全身化：局灶性起源，接著擴散至雙側大腦，跟著全身性表現
 
 ### 癲癇形成（Epileptogenesis）
 
 | 階段 | 時期 | 病理變化 |
 |------|------|---------|
-| 初始損傷 | 急性（小時-天） | 腦炎/外傷/中風 → 神經元死亡 + 發炎 |
+| 初始損傷 | 急性（小時-天） | 腦炎/外傷/中風，神經元死亡 + 發炎 |
 | 潛伏期 | 亞急性（週-月） | 苔蘚纖維萌芽（mossy fiber sprouting）、GABA 中間神經元喪失、突觸重塑、神經膠質增生 |
-| 慢性癲癇 | 慢性 | 異常迴路建立 → 自發性反覆癲癇發作 |
+| 慢性癲癇 | 慢性 | 異常迴路建立，自發性反覆癲癇發作 |
 
 ### 犬特發性癲癇的遺傳基礎
 - 大多數品種的致病基因尚未確認
@@ -1932,18 +1932,18 @@ const contentSeizurePathophysiology: NodeContent = {
 
 ### 癲癇重積（Status Epilepticus）的病理生理
 持續發作 > 5 分鐘啟動自我維持機轉：
-1. GABA-A 受體內化（5-10 分鐘）：受體從突觸膜被 endocytosis 移除 → Benzodiazepine 效果降低
-2. NMDA 受體上調（15-30 分鐘）：突觸後 NMDA 受體表達增加 → 興奮性進一步增強
-3. 代謝衰竭（> 30 分鐘）：ATP 耗竭 → 離子泵失效 → 細胞內 Ca²⁺ 持續升高 → 神經元不可逆損傷
+1. GABA-A 受體內化（5-10 分鐘）：受體從突觸膜被 endocytosis 移除，最後Benzodiazepine 效果降低
+2. NMDA 受體上調（15-30 分鐘）：突觸後 NMDA 受體表達增加，接著興奮性再增強
+3. 代謝衰竭（> 30 分鐘）：ATP 耗竭。離子泵失效，細胞內 Ca²⁺ 持續升高然後神經元不可逆損傷
 4. 全身性併發症：高體溫、橫紋肌溶解、DIC、腎衰竭
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **GABA-A 受體內化解釋 Benzodiazepine 的時間依賴性抗性**：癲癇重積持續越久，Diazepam 效果越差——這是為什麼 ACVIM 共識建議在發作超過 5 分鐘即給予 Benzodiazepine，而非等待更長時間；超過 30 分鐘未控制應升級至 Phenobarbital IV 或 Propofol/Ketamine CRI
-- **癲癇形成（epileptogenesis）與預防性 AED 的爭議**：腦炎或嚴重腦外傷後是否應預防性給予 AED 以阻斷 epileptogenesis 仍有爭議——人醫資料顯示預防性 AED 不能減少長期癲癇風險，但可降低急性期的發作頻率
-- **發作類型決定定位與鑑別**：局灶性發作提示前腦結構性病灶（腫瘤、腦炎、血管病變），全身性起始發作較支持特發性癲癇——正確分類發作類型是決定是否需要 MRI 的重要依據
-- **反覆發作的累積性損傷**：每次全身性強直-陣攣發作都經由興奮毒性造成海馬迴神經元損傷，長期可導致海馬迴硬化與藥物反應性降低——這是為什麼早期積極控制發作頻率的理論基礎
-- **貓癲癇的特殊性**：貓癲癇多數為結構性（腦炎、腫瘤、海馬迴壞死），特發性比例遠低於犬；貓的癲癇發作常表現為面部肌陣攣（facial myoclonus）與流涎，較少典型強直-陣攣
+- GABA-A 受體內化解釋 Benzodiazepine 的時間依賴性抗性：癲癇重積持續越久，Diazepam 效果越差，這是為什麼 ACVIM 共識建議在發作超過 5 分鐘即給予 Benzodiazepine，而非等待更長時間；超過 30 分鐘未控制應升級至 Phenobarbital IV 或 Propofol/Ketamine CRI
+- 癲癇形成（epileptogenesis）與預防性 AED 的爭議：腦炎或嚴重腦外傷後是否應預防性給予 AED 以阻斷 epileptogenesis 仍有爭議，人醫資料顯示預防性 AED 不能減少長期癲癇風險，但可降低急性期的發作頻率
+- 發作類型決定定位與鑑別：局灶性發作提示前腦結構性病灶（腫瘤、腦炎、血管病變），全身性起始發作較支持特發性癲癇，正確分類發作類型是決定是否需要 MRI 的重要依據
+- 反覆發作的累積性損傷：每次全身性強直-陣攣發作都經由興奮毒性造成海馬迴神經元損傷，長期可導致海馬迴硬化與藥物反應性降低，這是為什麼早期積極控制發作頻率的理論基礎
+- 貓癲癇的特殊性：貓癲癇多數為結構性（腦炎、腫瘤、海馬迴壞死），特發性比例遠低於犬；貓的癲癇發作常表現為面部肌陣攣（facial myoclonus）與流涎，較少典型強直-陣攣
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -1958,16 +1958,16 @@ const contentSeizurePathophysiology: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬 IE 何時開始 AED 治療 | 第一次發作即治療 vs 等待第二次——早期治療是否改善長期預後仍有爭議 | Level III |
+| 犬 IE 何時開始 AED 治療 | 第一次發作即治療 vs 等待第二次，早期治療是否改善長期預後仍有爭議 | Level III |
 | 反覆發作是否真的累積損傷犬腦 | 犬缺乏縱向 MRI 海馬迴體積追蹤研究，人醫資料外推 | Level III |
 | Ketamine CRI 用於犬 SE 的安全性與療效 | NMDA 拮抗理論上合理，但犬 prospective 研究有限 | Level III |
 | 犬癲癇的 EEG 標準化 | 犬 EEG 受麻醉影響大，清醒 EEG 技術限制是主要瓶頸 | Level IV |`,
-  clinical_pearl: '癲癇重積的「5 分鐘法則」有堅實的病理生理基礎：持續發作超過 5 分鐘後，GABA-A 受體開始從突觸膜內化（internalization），使得 Benzodiazepine 的效果急劇下降。臨床上，Diazepam 在發作前 5 分鐘給予的成功率 > 80%，但超過 30 分鐘後降至 < 40%。因此，及早給藥是控制 SE 最重要的預後因子。',
+  clinical_pearl: '癲癇重積的「5 分鐘法則」有堅實的病理生理基礎：持續發作超過 5 分鐘後，GABA-A 受體開始從突觸膜內化（internalization），使得 Benzodiazepine 的效果急劇下降。臨床上，Diazepam 在發作前 5 分鐘給予的成功率 > 80%，但超過 30 分鐘後降至 < 40%。所以，及早給藥是控制 SE 最重要的預後因子。',
   common_mistakes: [
-    '將所有犬癲癇都歸因為特發性——需先排除結構性（腦炎、腫瘤）與代謝性（低血糖、肝性腦病）原因',
-    '等待癲癇重積持續太久才用藥——超過 5 分鐘即應給予 Benzodiazepine',
-    '忽略發作類型的正確分類——局灶性起始 vs 全身性起始對後續診斷方向有重大影響',
-    '未認識到 Benzodiazepine 的時間依賴性抗性——SE 超過 30 分鐘應升級至 Phenobarbital IV 或麻醉藥物',
+    '將所有犬癲癇都歸因為特發性，需先排除結構性（腦炎、腫瘤）與代謝性（低血糖、肝性腦病）原因',
+    '等待癲癇重積持續太久才用藥，超過 5 分鐘即應給予 Benzodiazepine',
+    '忽略發作類型的正確分類，局灶性起始 vs 全身性起始對後續診斷方向有重大影響',
+    '未認識到 Benzodiazepine 的時間依賴性抗性，SE 超過 30 分鐘應升級至 Phenobarbital IV 或麻醉藥物',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -1987,12 +1987,12 @@ const contentSeizurePathophysiology: NodeContent = {
   created_at: now,
 };
 
-/** 脊髓壓迫機轉 — 機轉型 */
+/** 脊髓壓迫機轉 - 機轉型 */
 const contentSpinalCompression: NodeContent = {
   id: 'CONTENT-NEURO-L2-002',
   node_id: 'NEURO-L2-002',
   version: 1,
-  summary: '脊髓壓迫（Spinal Cord Compression）是犬貓最常見的脊髓損傷機轉，病因包括椎間盤突出（IVDD）、脊椎腫瘤、脊椎骨折/脫位、寰樞關節不穩定與退化性腰薦椎狹窄。壓迫導致的損傷分為原發性（mechanical compression + contusion）與繼發性（缺血、水腫、興奮毒性、自由基損傷）。神經功能喪失的順序遵循纖維直徑規則：本體感覺→自主運動→淺痛覺→深痛覺。',
+  summary: '脊髓壓迫（Spinal Cord Compression）是犬貓最常見的脊髓損傷機轉，病因包括椎間盤突出（IVDD）、脊椎腫瘤、脊椎骨折/脫位、寰樞關節不穩定與退化性腰薦椎狹窄。壓迫導致的損傷分為原發性（mechanical compression + contusion）與繼發性（缺血、水腫、興奮毒性、自由基損傷）。神經功能喪失的順序遵循纖維直徑規則：本體感覺、自主運動、淺痛覺、深痛覺。',
   learning_objectives: [
     '描述脊髓壓迫的原發性與繼發性損傷機轉',
     '說明神經功能喪失的纖維直徑依序性',
@@ -2002,12 +2002,12 @@ const contentSpinalCompression: NodeContent = {
   ],
   key_points: [
     '原發性損傷：機械壓迫（compression）+ 挫傷（contusion），發生於壓迫當下',
-    '繼發性損傷：缺血 → 細胞水腫 → 興奮毒性 → ROS → 細胞凋亡，持續數天至數週',
+    '繼發性損傷：缺血，最後細胞水腫，接著興奮毒性，跟著ROS，細胞凋亡，持續數天至數週',
     '纖維直徑規則：大直徑有髓纖維（本體感覺）最先受損，小直徑無髓纖維（深痛覺）最後受損',
-    '臨床喪失順序：本體感覺 → 自主運動 → 淺痛覺 → 深痛覺（最後喪失 = 最嚴重）',
+    '臨床喪失順序：本體感覺，自主運動，最後淺痛覺，接著深痛覺（最後喪失 = 最嚴重）',
     '急性壓迫損傷遠大於慢性壓迫（脊髓對慢性壓迫有一定適應能力）',
     '進行性脊髓軟化（PMM）：最嚴重的繼發損傷，脊髓自溶性壞死向頭尾端擴展，致死',
-    '深痛覺喪失代表脊髓最深層纖維受損——Grade V IVDD 的預後指標',
+    '深痛覺喪失代表脊髓最深層纖維受損，Grade V IVDD 的預後指標',
   ],
   body: `# 脊髓壓迫機轉
 
@@ -2017,18 +2017,18 @@ const contentSpinalCompression: NodeContent = {
 
 ### 損傷分類
 ### 原發性損傷（Primary Injury）
-- **壓迫（Compression）**：物理性壓迫脊髓組織，阻斷軸突傳導與血流
-- **挫傷（Contusion）**：急性高速衝擊（如 Hansen Type I）造成脊髓實質損傷
+- 壓迫（Compression）：物理性壓迫脊髓組織，阻斷軸突傳導與血流
+- 挫傷（Contusion）：急性高速衝擊（如 Hansen Type I）造成脊髓實質損傷
 - 壓迫程度與速度決定原發損傷嚴重度
 
 ### 繼發性損傷（Secondary Injury）
 發生於原發損傷後數小時至數天：
-1. **血管損傷與缺血**：微血管破裂、血管痙攣 → 脊髓灰質缺血
-2. **細胞水腫**：Na⁺/K⁺-ATPase 失效 → 細胞毒性水腫
-3. **興奮毒性**：Glutamate 大量釋放 → Ca²⁺ 過載
-4. **自由基損傷**：ROS 與 RNS → 脂質過氧化、膜損傷
-5. **發炎反應**：嗜中性球與巨噬細胞浸潤
-6. **細胞凋亡**：延遲性程序性細胞死亡
+1. 血管損傷與缺血：微血管破裂、血管痙攣，跟著脊髓灰質缺血
+2. 細胞水腫：Na⁺/K⁺-ATPase 失效，細胞毒性水腫
+3. 興奮毒性：Glutamate 大量釋放，Ca²⁺ 過載
+4. 自由基損傷：ROS 與 RNS，最後脂質過氧化、膜損傷
+5. 發炎反應：嗜中性球與巨噬細胞浸潤
+6. 細胞凋亡：延遲性程序性細胞死亡
 
 ### 纖維直徑與功能喪失順序
 脊髓受壓時，大直徑有髓纖維最先受影響，小直徑無髓纖維最後受影響：
@@ -2036,13 +2036,13 @@ const contentSpinalCompression: NodeContent = {
 | 喪失順序 | 功能 | 纖維特性 | 臨床對應 |
 |---------|------|---------|---------|
 | 1（最先） | 本體感覺 | 大直徑有髓 | 共濟失調、knuckling |
-| 2 | 自主運動 | 中直徑有髓 | 輕癱 → 癱瘓 |
+| 2 | 自主運動 | 中直徑有髓 | 輕癱，接著癱瘓 |
 | 3 | 淺痛覺 | 小直徑有髓 | 皮膚痛覺減退 |
 | 4（最後） | 深痛覺 | 小直徑無髓 C 纖維 | Grade V IVDD |
 
 ### 急性 vs 慢性壓迫
-- **急性壓迫**（如 Hansen Type I）：脊髓無時間適應，挫傷嚴重，繼發損傷顯著
-- **慢性壓迫**（如 Hansen Type II）：脊髓逐漸適應，可容忍較大程度壓迫而維持功能
+- 急性壓迫（如 Hansen Type I）：脊髓無時間適應，挫傷嚴重，繼發損傷明顯
+- 慢性壓迫（如 Hansen Type II）：脊髓逐漸適應，可容忍較大程度壓迫而維持功能
 
 ### 進行性脊髓軟化 (PMM)
 - 發生率：Grade V IVDD 約 2-5%
@@ -2052,11 +2052,11 @@ const contentSpinalCompression: NodeContent = {
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **IVDD 分級系統指導手術決策**：纖維直徑規則是 IVDD 5 級分級系統的病理基礎——Grade I（僅痛覺）→ Grade V（深痛覺喪失），Grade IV-V 為手術急症，Grade V 且深痛覺喪失 > 48 小時者預後急劇下降至 < 5%
-- **繼發損傷的時間窗概念**：原發壓迫後的繼發損傷（缺血、水腫、興奮毒性、自由基）在 24-72 小時內持續累積，這是 Grade V IVDD 強調早期手術減壓（< 24-48 hr）的核心理據
-- **急慢性壓迫的預後差異**：Hansen Type I（急性核髓脫出）因脊髓無適應時間，挫傷嚴重且繼發損傷顯著；Hansen Type II（慢性環纖維突出）脊髓可逐步適應，同等壓迫程度下功能保留較好——這影響手術時機的急迫性判斷
-- **PMM 的早期辨識**：進行性脊髓軟化（PMM）是 IVDD 術後最致命的併發症，panniculus 截斷面持續顱側移動、前肢出現 LMN 徵象為早期警訊，一旦確認 PMM，應立即與飼主討論人道考量
-- **物種差異**：犬以 IVDD 為最常見脊髓壓迫病因（尤其軟骨營養不良品種），貓則以淋巴瘤脊髓外壓迫與纖維軟骨栓塞（FCE）相對常見
+- IVDD 分級系統指導手術決策：纖維直徑規則是 IVDD 5 級分級系統的病理基礎，Grade I（僅痛覺），跟著Grade V（深痛覺喪失），Grade IV-V 為手術急症，Grade V 且深痛覺喪失 > 48 小時者預後急劇下降至 < 5%
+- 繼發損傷的時間窗概念：原發壓迫後的繼發損傷（缺血、水腫、興奮毒性、自由基）在 24-72 小時內持續累積，這是 Grade V IVDD 強調早期手術減壓（< 24-48 hr）的核心理據
+- 急慢性壓迫的預後差異：Hansen Type I（急性核髓脫出）因脊髓無適應時間，挫傷嚴重且繼發損傷明顯；Hansen Type II（慢性環纖維突出）脊髓可逐步適應，同等壓迫程度下功能保留較好，這影響手術時機的急迫性判斷
+- PMM 的早期辨識：進行性脊髓軟化（PMM）是 IVDD 術後最致命的併發症，panniculus 截斷面持續顱側移動、前肢出現 LMN 徵象為早期警訊，一旦確認 PMM，應立即與飼主討論人道考量
+- 物種差異：犬以 IVDD 為最常見脊髓壓迫病因（尤其軟骨營養不良品種），貓則以淋巴瘤脊髓外壓迫與纖維軟骨栓塞（FCE）相對常見
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2072,12 +2072,12 @@ const contentSpinalCompression: NodeContent = {
 |---------|------|---------------|
 | 犬 IVDD 術後高劑量類固醇的神經保護效果 | 人 SCI 已否定 Methylprednisolone 方案，犬同樣趨向不推薦但仍有使用者 | Level II |
 | PMM 的早期預測指標 | 目前依賴臨床觀察，缺乏可靠的 MRI 或生物標記早期預警 | Level IV |`,
-  clinical_pearl: '在評估 IVDD Grade V 患者時，最關鍵的概念是「時間窗」。繼發損傷在原發損傷後持續數天，早期手術減壓可以減少繼發損傷的嚴重度。這是為什麼深痛覺喪失被視為「與時間賽跑」的緊急情況——每延遲一小時，脊髓繼發損傷就多一分累積。',
+  clinical_pearl: '在評估 IVDD Grade V 患者時，最關鍵的概念是「時間窗」。繼發損傷在原發損傷後持續數天，早期手術減壓可以減少繼發損傷的嚴重度。這是為什麼深痛覺喪失被視為「與時間賽跑」的緊急情況，每延遲一小時，脊髓繼發損傷就多一分累積。',
   common_mistakes: [
-    '低估繼發損傷的嚴重性——術後神經功能可能因繼發損傷持續惡化',
+    '低估繼發損傷的嚴重性，術後神經功能可能因繼發損傷持續惡化',
     '將 Hansen Type II 的慢性壓迫用急性壓迫的預後標準評估',
-    '忽略 PMM 的早期徵兆——panniculus 截斷面持續上移是重要警訊',
-    '未區分急性與慢性脊髓壓迫的手術急迫性——Hansen Type I 急性壓迫需緊急手術，Type II 慢性壓迫可允許較充分的術前評估',
+    '忽略 PMM 的早期徵兆，panniculus 截斷面持續上移是重要警訊',
+    '未區分急性與慢性脊髓壓迫的手術急迫性，Hansen Type I 急性壓迫需緊急手術，Type II 慢性壓迫可允許較充分的術前評估',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2091,13 +2091,13 @@ const contentSpinalCompression: NodeContent = {
     { type: 'journal', citation: 'Jeffery ND et al. Intervertebral disk degeneration in dogs: consequences, diagnosis, treatment, and future directions. J Vet Intern Med. 2013;27(6):1318-1333.', relevance: '脊髓壓迫機轉與 IVDD' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '脊髓損傷病理生理' },
     { type: 'journal', citation: 'Olby N. The pathogenesis and treatment of acute spinal cord injuries in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):791-807.', relevance: '急性脊髓損傷繼發機轉' },
-    { type: 'guideline', citation: 'Moore SA et al. ACVIM Consensus Statement on thoracolumbar intervertebral disc disease. J Vet Intern Med. 2020;34(5):1684-1699.', relevance: 'ACVIM IVDD 共識——脊髓壓迫病理生理' },
+    { type: 'guideline', citation: 'Moore SA et al. ACVIM Consensus Statement on thoracolumbar intervertebral disc disease. J Vet Intern Med. 2020;34(5):1684-1699.', relevance: 'ACVIM IVDD 共識，脊髓壓迫病理生理' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 神經肌肉接合病理 — 機轉型 */
+/** 神經肌肉接合病理 - 機轉型 */
 const contentNMJPathology: NodeContent = {
   id: 'CONTENT-NEURO-L2-003',
   node_id: 'NEURO-L2-003',
@@ -2111,13 +2111,13 @@ const contentNMJPathology: NodeContent = {
     '將 NMJ 病理機轉連結至電生理診斷（重複神經刺激）與藥理學測試（Edrophonium test）',
   ],
   key_points: [
-    'NMJ 正常傳遞：動作電位到達軸突末梢 → 電壓門控 Ca²⁺ 通道開放 → Ca²⁺ 內流 → SNARE 蛋白介導囊泡融合 → ACh 胞吐 → 與突觸後 nAChR 結合 → Na⁺ 內流 → 終板電位（EPP）→ 肌纖維動作電位 → 肌肉收縮',
+    'NMJ 正常傳遞：動作電位跑到軸突末梢後，電壓門控 Ca²⁺ 通道打開，Ca²⁺ 內流。SNARE 蛋白介導囊泡融合，ACh 胞吐出去。ACh 跟突觸後 nAChR 結合，Na⁺ 內流產生終板電位（EPP），肌纖維動作電位接著放出去，最後肌肉收縮',
     '安全係數（Safety Factor）：正常 EPP 振幅遠大於引發肌纖維動作電位所需的閾值（約 4:1），確保高頻率傳遞的可靠性',
-    '免疫介導性 MG：抗 nAChR 自體抗體（IgG）→ 三重機轉：(1) 補體介導的終板破壞、(2) 受體交聯加速內化（antigenic modulation）、(3) 直接阻斷 ACh 結合',
-    '肉毒桿菌中毒：Botulinum toxin 蛋白酶裂解 SNARE 蛋白（SNAP-25/Synaptobrevin）→ 阻斷囊泡融合 → ACh 釋放完全停止',
-    '蜱麻痺：蜱唾腺毒素（holocyclotoxin, Ixodes; 或 dermacentor toxin）→ 阻斷突觸前 Ca²⁺ 內流 → ACh 釋放減少',
-    '重複神經刺激（RNS）電生理：突觸後病變（MG）→ 低頻（2-3 Hz）漸減 > 10%；突觸前病變（肉毒）→ 低頻漸減 + 高頻增強（post-tetanic facilitation）',
-    '先天性 MG：nAChR 亞單元基因突變 → 受體數量減少或功能異常，非免疫介導，AChR 抗體陰性',
+    '免疫介導性 MG：抗 nAChR 自體抗體（IgG），跟著三重機轉：(1) 補體介導的終板破壞、(2) 受體交聯加速內化（antigenic modulation）、(3) 直接阻斷 ACh 結合',
+    '肉毒桿菌中毒：Botulinum toxin 蛋白酶裂解 SNARE 蛋白（SNAP-25/Synaptobrevin），阻斷囊泡融合，ACh 釋放完全停止',
+    '蜱麻痺：蜱唾腺毒素（holocyclotoxin, Ixodes; 或 dermacentor toxin），最後阻斷突觸前 Ca²⁺ 內流，接著ACh 釋放減少',
+    '重複神經刺激（RNS）電生理：突觸後病變（MG），跟著低頻（2-3 Hz）漸減 > 10%；突觸前病變（肉毒），低頻漸減 + 高頻增強（post-tetanic facilitation）',
+    '先天性 MG：nAChR 亞單元基因突變，然後受體數量減少或功能異常，非免疫介導，AChR 抗體陰性',
   ],
   body: `# 神經肌肉接合病理
 
@@ -2127,36 +2127,36 @@ const contentNMJPathology: NodeContent = {
 
 ### NMJ 正常結構與功能
 ### 解剖結構
-- **突觸前**：運動神經元軸突末梢（含 ACh 囊泡、電壓門控 Ca²⁺ 通道、SNARE 蛋白複合體）
-- **突觸間隙**：寬約 50 nm，含 AChE（附著於基底膜上的膠原尾型）
-- **突觸後**：肌肉終板（motor end plate），nAChR 密集分布於褶皺頂部
+- 突觸前：運動神經元軸突末梢（含 ACh 囊泡、電壓門控 Ca²⁺ 通道、SNARE 蛋白複合體）
+- 突觸間隙：寬約 50 nm，含 AChE（附著於基底膜上的膠原尾型）
+- 突觸後：肌肉終板（motor end plate），nAChR 密集分布於褶皺頂部
 
 ### 傳遞步驟
 1. 動作電位抵達軸突末梢
-2. 電壓門控 Ca²⁺ 通道（P/Q-type）開放 → Ca²⁺ 內流
+2. 電壓門控 Ca²⁺ 通道（P/Q-type）開放，最後Ca²⁺ 內流
 3. Ca²⁺ 觸發 SNARE 蛋白複合體（Synaptobrevin + SNAP-25 + Syntaxin）介導囊泡融合
 4. ACh 胞吐至突觸間隙（~10,000 ACh 分子/囊泡）
-5. ACh 與突觸後 nAChR（α₂βδε 五聚體）結合 → 陽離子通道開放 → Na⁺ 內流
-6. 終板電位（EPP）產生 → 超過閾值時觸發肌纖維動作電位
-7. AChE 快速水解 ACh → Choline 被突觸前再攝取 → 重新合成 ACh
+5. ACh 與突觸後 nAChR（α₂βδε 五聚體）結合，接著陽離子通道開放，跟著Na⁺ 內流
+6. 終板電位（EPP）產生，超過閾值時觸發肌纖維動作電位
+7. AChE 快速水解 ACh，Choline 被突觸前再攝取，最後重新合成 ACh
 
 ### 安全係數
 - EPP 振幅（~40 mV）遠大於閾值（~10 mV），比值約 4:1
 - 確保即使在高頻率刺激下，傳遞仍然可靠
-- NMJ 疾病使安全係數降低 → 高頻率（重複活動）時傳遞失敗 → 運動誘發性肌無力
+- NMJ 疾病使安全係數降低，接著高頻率（重複活動）時傳遞失敗，跟著運動誘發性肌無力
 
 ### NMJ 病變分類
 ### 突觸後病變（最常見）
 
-**免疫介導性重症肌無力（Acquired MG）**
+免疫介導性重症肌無力（Acquired MG）
 - 自體抗體（IgG）靶向突觸後 nAChR
 - 三重攻擊機轉：
-  1. **補體介導的終板破壞**：IgG 結合 nAChR → 活化補體級聯 → 膜攻擊複合體（MAC）→ 終板褶皺破壞
-  2. **抗原調變（Antigenic modulation）**：抗體交聯相鄰 nAChR → 加速受體內化與降解 → 可用受體數量下降
-  3. **直接功能阻斷**：部分抗體直接結合 ACh 結合位點 → 阻斷 ACh-nAChR 交互作用
-- 結果：可用 nAChR 數量顯著減少 → 安全係數降低 → 運動誘發性肌無力
+  1. 補體介導的終板破壞：IgG 結合 nAChR，活化補體級聯，膜攻擊複合體（MAC），最後終板褶皺破壞
+  2. 抗原調變（Antigenic modulation）：抗體交聯相鄰 nAChR，接著加速受體內化與降解，跟著可用受體數量下降
+  3. 直接功能阻斷：部分抗體直接結合 ACh 結合位點，阻斷 ACh-nAChR 交互作用
+- 結果：可用 nAChR 數量明顯減少，安全係數降低，最後運動誘發性肌無力
 
-**先天性 MG**
+先天性 MG
 - nAChR 亞單元基因突變（如 ε 亞單元缺失突變）
 - 受體數量或功能先天不足
 - 品種傾向：Jack Russell Terrier、Springer Spaniel
@@ -2164,17 +2164,17 @@ const contentNMJPathology: NodeContent = {
 
 ### 突觸前病變
 
-**肉毒桿菌中毒（Botulism）**
+肉毒桿菌中毒（Botulism）
 - Clostridium botulinum 產生的 Botulinum neurotoxin（BoNT）
 - BoNT 為鋅依賴性蛋白酶，靶向 SNARE 蛋白：
   - BoNT/A、C、E：裂解 SNAP-25
   - BoNT/B、D、F、G：裂解 Synaptobrevin
-- SNARE 複合體無法組裝 → 囊泡融合完全阻斷 → ACh 釋放停止
+- SNARE 複合體無法組裝，接著囊泡融合完全阻斷，跟著ACh 釋放停止
 - 犬最常見為 BoNT/C 型（食入腐敗肉類或動物屍體）
 
-**蜱麻痺（Tick Paralysis）**
+蜱麻痺（Tick Paralysis）
 - Ixodes holocyclus（澳洲）或 Dermacentor spp.（北美）的唾腺毒素
-- 毒素阻斷突觸前電壓門控 Ca²⁺ 通道 → Ca²⁺ 內流減少 → ACh 釋放下降
+- 毒素阻斷突觸前電壓門控 Ca²⁺ 通道，Ca²⁺ 內流減少，然後ACh 釋放下降
 - 移除蜱後通常 24-72 小時恢復（毒素代謝清除）
 - 嚴重病例可致呼吸肌麻痺
 
@@ -2183,22 +2183,22 @@ const contentNMJPathology: NodeContent = {
 |------|-------------|---------------|
 | 低頻 RNS (2-3 Hz) | 漸減 > 10% | 漸減 > 10% |
 | 高頻 RNS (20-50 Hz) | 無增強 | 增強（post-tetanic facilitation） |
-| CMAP 基線振幅 | 正常或輕度下降 | 顯著下降 |
+| CMAP 基線振幅 | 正常或輕度下降 | 明顯下降 |
 | 單纖維 EMG | Jitter 增加 | Jitter 增加 |
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **犬 MG 三種臨床亞型的辨識**：局灶型（40%，僅食道擴張或面部無力）、全身型（50%，運動誘發性四肢無力 + 巨食道）、爆發型（10%，急性呼吸衰竭）——局灶型最易被誤診，任何原因不明的巨食道症犬都應檢測 AChR 抗體
-- **Edrophonium test 的原理與操作**：Edrophonium 為超短效 AChE 抑制劑（作用時間 ~5 分鐘），靜脈注射後抑制 ACh 降解 → 突觸間隙 ACh 濃度升高 → 暫時性肌力改善，用於 MG 的床邊快速篩檢（敏感度 ~80-90%）
-- **巨食道症與吸入性肺炎的風險管理**：MG 犬因食道 striated muscle 無力導致巨食道，進而引發反流與吸入性肺炎——吸入性肺炎是 MG 犬最常見的死因，抬高餵食（Bailey chair）是預防的核心措施
-- **肉毒桿菌中毒的上行性 LMN 麻痺**：典型表現為急性上行性四肢弛緩性麻痺（後肢先發 → 前肢 → 顱神經），與 ACP 表現相似但進展更快，且顱神經受累更早（面部無力、瞳孔散大）
-- **蜱麻痺的地理流行病學**：台灣以 Rhipicephalus sanguineus 為主要蜱種，蜱麻痺報告極少（以澳洲 I. holocyclus 與北美 D. variabilis 為主），但不可完全排除——全身搜蜱與移除蜱是最重要的治療
+- 犬 MG 三種臨床亞型的辨識：局灶型（40%，僅食道擴張或面部無力）、全身型（50%，運動誘發性四肢無力 + 巨食道）、爆發型（10%，急性呼吸衰竭），局灶型最易被誤診，任何原因不明的巨食道症犬都應檢測 AChR 抗體
+- Edrophonium test 的原理與操作：Edrophonium 為超短效 AChE 抑制劑（作用時間 ~5 分鐘），靜脈注射後抑制 ACh 降解，最後突觸間隙 ACh 濃度升高，接著暫時性肌力改善，用於 MG 的床邊快速篩檢（敏感度 ~80-90%）
+- 巨食道症與吸入性肺炎的風險管理：MG 犬因食道 striated muscle 無力導致巨食道，進而引發反流與吸入性肺炎，吸入性肺炎是 MG 犬最常見的死因，抬高餵食（Bailey chair）是預防的核心措施
+- 肉毒桿菌中毒的上行性 LMN 麻痺：典型表現為急性上行性四肢弛緩性麻痺（後肢先發，跟著前肢，顱神經），與 ACP 表現相似但進展更快，且顱神經受累更早（面部無力、瞳孔散大）
+- 蜱麻痺的地理流行病學：台灣以 Rhipicephalus sanguineus 為主要蜱種，蜱麻痺報告極少（以澳洲 I. holocyclus 與北美 D. variabilis 為主），但不可完全排除，全身搜蜱與移除蜱是最重要的治療
 
 ## 三、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 抗 MuSK 抗體檢測 | 犬 AChR 抗體陰性 MG 的進一步免疫分型 | 人醫 anti-MuSK MG 佔 AChR 陰性 MG 的 40%，犬研究極初步 |
+| 抗 MuSK 抗體檢測 | 犬 AChR 抗體陰性 MG 的再免疫分型 | 人醫 anti-MuSK MG 佔 AChR 陰性 MG 的 40%，犬研究極初步 |
 | 單纖維肌電圖（SFEMG） | 犬 NMJ 疾病的高敏感度電生理確診 | 人 MG 診斷金標準之一，獸醫設備與技術門檻高 |
 | 補體抑制劑（Eculizumab/Ravulizumab） | 犬全身型 MG 的靶向免疫治療 | 人醫已核准用於全身型 MG，獸醫成本為主要障礙 |
 | BoNT 治療性應用 | 犬肌張力障礙、痙攣的局部注射治療 | 人醫廣泛使用，獸醫初步臨床應用 |
@@ -2211,12 +2211,12 @@ const contentNMJPathology: NodeContent = {
 | AChR 抗體陰性犬 MG 的盛行率與機轉 | 犬 AChR Ab 陰性 MG 是否涉及 anti-MuSK 或 anti-LRP4 抗體尚不明確 | Level IV |
 | 犬 MG 的自發性緩解率 | 部分犬 MG 可自發緩解（局灶型 > 全身型），但預測因子不明確 | Level III |
 | 肉毒桿菌中毒犬的抗毒素治療效益 | 犬用抗毒素可及性低，且治療窗口狹窄（毒素結合後不可逆），臨床效益爭議 | Level IV |`,
-  clinical_pearl: '犬 MG 的「隱藏殺手」是吸入性肺炎而非肌無力本身。局灶型 MG 犬因僅表現食道擴張，肌無力症狀不明顯，容易被忽略。臨床上遇到原因不明的巨食道症犬（尤其是中大型犬、3-5 歲或 > 10 歲的雙峰年齡分布），應常規檢測 AChR 抗體。早期診斷 + Bailey chair 抬高餵食可顯著降低吸入性肺炎的風險。',
+  clinical_pearl: '犬 MG 的「隱藏殺手」是吸入性肺炎而非肌無力本身。局灶型 MG 犬因僅表現食道擴張，肌無力症狀不明顯，容易被忽略。臨床上遇到原因不明的巨食道症犬（尤其是中大型犬、3-5 歲或 > 10 歲的雙峰年齡分布），應常規檢測 AChR 抗體。早期診斷 + Bailey chair 抬高餵食可明顯降低吸入性肺炎的風險。',
   common_mistakes: [
-    '將所有「運動後無力」都歸因於心肺問題而忽略 NMJ 疾病——MG 的運動誘發性肌無力有特徵性的休息後恢復',
-    '未對巨食道症犬檢測 AChR 抗體——局灶型 MG 是犬後天性巨食道症最常見的可治療原因之一',
-    '混淆突觸前與突觸後 NMJ 病變的電生理表現——高頻 RNS 增強提示突觸前病變（肉毒），突觸後（MG）則無增強',
-    '忽略先天性 MG 的可能——AChR 抗體陰性的年輕犬 NMJ 疾病需考慮先天性 MG（基因檢測）',
+    '將所有「運動後無力」都歸因於心肺問題而忽略 NMJ 疾病，MG 的運動誘發性肌無力有特徵性的休息後恢復',
+    '未對巨食道症犬檢測 AChR 抗體，局灶型 MG 是犬後天性巨食道症最常見的可治療原因之一',
+    '混淆突觸前與突觸後 NMJ 病變的電生理表現，高頻 RNS 增強提示突觸前病變（肉毒），突觸後（MG）則無增強',
+    '忽略先天性 MG 的可能，AChR 抗體陰性的年輕犬 NMJ 疾病需考慮先天性 MG（基因檢測）',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2236,7 +2236,7 @@ const contentNMJPathology: NodeContent = {
   created_at: now,
 };
 
-/** 脊髓軟化機轉 — 機轉型 */
+/** 脊髓軟化機轉 - 機轉型 */
 const contentMyelomalacia: NodeContent = {
   id: 'CONTENT-NEURO-L2-004',
   node_id: 'NEURO-L2-004',
@@ -2251,12 +2251,12 @@ const contentMyelomalacia: NodeContent = {
   ],
   key_points: [
     '脊髓軟化 = 脊髓實質的液化性壞死，灰質（中央區域）比白質更易受影響（灰質代謝率高、血管密度高）',
-    '原發性損傷：急性椎間盤突出的衝擊力 → 脊髓挫傷（contusion）+ 壓迫（compression）→ 機械性細胞破壞',
-    '繼發性損傷級聯（6-72 小時）：缺血 → 再灌流損傷 → ROS 風暴 → Glutamate 興奮毒性 → Ca²⁺ 過載 → 粒線體衰竭 → 細胞凋亡與壞死',
+    '原發性損傷：急性椎間盤突出的衝擊力，脊髓挫傷（contusion）+ 壓迫（compression），最後機械性細胞破壞',
+    '繼發性損傷級聯（6-72 小時）：先缺血再灌流損傷，跑出 ROS 風暴跟 Glutamate 興奮毒性、Ca²⁺ 過載，最後粒線體衰竭，細胞凋亡跟壞死一起來',
     '進行性脊髓軟化（PMM）：壞死從原發損傷處向顱側與尾側擴展，機轉可能涉及 CSF 中毒性介質擴散與血管內微血栓',
     '深痛覺喪失是 PMM 的主要風險因子：T/L IVDD 深痛覺陰性犬 PMM 發生率約 10-15%',
-    'PMM 的臨床徵兆：截癱 → 上行性 LMN 前肢無力 → 肋間肌麻痺 → 膈肌呼吸 → 呼吸衰竭（通常 3-7 天內進展）',
-    '脊髓軟化為不可逆病變，無有效治療——早期辨識 PMM 徵兆對於安樂死決策的倫理溝通至關重要',
+    'PMM 的臨床徵兆：截癱。上行性 LMN 前肢無力，肋間肌麻痺膈肌呼吸，最後呼吸衰竭（通常 3-7 天內進展）',
+    '脊髓軟化為不可逆病變，無有效治療，早期辨識 PMM 徵兆對於安樂死決策的倫理溝通不能省',
   ],
   body: `# 脊髓軟化機轉
 
@@ -2265,45 +2265,45 @@ const contentMyelomalacia: NodeContent = {
 
 
 ### 定義與病理特徵
-- **脊髓軟化（Myelomalacia）**：脊髓組織的液化性壞死（liquefactive necrosis）
+- 脊髓軟化（Myelomalacia）：脊髓組織的液化性壞死（liquefactive necrosis）
 - 巨觀：受影響區域脊髓呈軟化糊狀，正常結構消失
 - 組織學：神經元壞死、軸突崩解、髓鞘溶解、巨噬細胞浸潤（消化壞死組織）
-- 灰質（中央區域）先於白質受影響——灰質代謝需求高、血管分布為終末動脈型
+- 灰質（中央區域）先於白質受影響，灰質代謝需求高、血管分布為終末動脈型
 
 ### 脊髓損傷的時間序列
 ### 原發性損傷（秒-分鐘）
-- Hansen Type I 椎間盤突出：髓核急性擠出 → 脊髓高速衝擊
+- Hansen Type I 椎間盤突出：髓核急性擠出，接著脊髓高速衝擊
 - 損傷類型：挫傷（contusion, 最常見）>  壓迫（compression）> 裂傷（laceration）
-- 機械力直接破壞神經元、軸突與血管 → 出血性壞死（中央灰質區域）
+- 機械力直接破壞神經元、軸突與血管，跟著出血性壞死（中央灰質區域）
 - 衝擊力大小與突出速度決定原發性損傷嚴重度
 
 ### 繼發性損傷級聯（分鐘-天）
 \`\`\`
 原發性損傷（機械性）
     ↓
-血管損傷 → 出血 + 血管痙攣 → 局部缺血
+血管損傷，出血 + 血管痙攣，局部缺血
     ↓
-缺血 → ATP 耗竭 → 離子泵失效
+缺血，最後ATP 耗竭，接著離子泵失效
     ↓
-Na⁺/Ca²⁺ 內流 + K⁺ 外流 → 細胞腫脹
+Na⁺/Ca²⁺ 內流 + K⁺ 外流，跟著細胞腫脹
     ↓
-Glutamate 大量釋放 → NMDA 受體過度活化 → Ca²⁺ 過載
+Glutamate 大量釋放，NMDA 受體過度活化，Ca²⁺ 過載
     ↓
 Ca²⁺ 依賴性酵素活化（calpain、磷脂酶 A₂）
     ↓
-粒線體損傷 → ROS 風暴 → 脂質過氧化 → 膜崩解
+粒線體損傷，最後ROS 風暴，接著脂質過氧化，跟著膜崩解
     ↓
-發炎級聯：嗜中性球/巨噬細胞浸潤 → TNF-α、IL-1β
+發炎級聯：嗜中性球/巨噬細胞浸潤，TNF-α、IL-1β
     ↓
-細胞凋亡（寡突膠質細胞尤其敏感）→ 脫髓鞘
+細胞凋亡（寡突膠質細胞尤其敏感），脫髓鞘
     ↓
-脊髓水腫 → 進一步壓迫殘存血管 → 缺血惡性循環
+脊髓水腫，最後再壓迫殘存血管，接著缺血惡性循環
 \`\`\`
 
 ### 再灌流損傷
 - 手術減壓或血管痙攣緩解後，血流恢復反而加劇損傷
-- 機轉：O₂ 再引入 → 黃嘌呤氧化酶產生大量超氧陰離子（O₂⁻）
-- ROS + Fe²⁺（出血釋放的血紅素鐵）→ Fenton 反應 → 最具破壞力的 hydroxyl radical（·OH）
+- 機轉：O₂ 再引入，跟著黃嘌呤氧化酶產生大量超氧陰離子（O₂⁻）
+- ROS + Fe²⁺（出血釋放的血紅素鐵），Fenton 反應，最具破壞力的 hydroxyl radical（·OH）
 
 ### 進行性脊髓軟化（PMM）
 ### 擴散機轉
@@ -2311,9 +2311,9 @@ Ca²⁺ 依賴性酵素活化（calpain、磷脂酶 A₂）
 - 擴散速度：每 24 小時可擴展 1-3 個脊椎節段
 - 可能機轉（尚不完全明瞭）：
   1. CSF 中毒性介質（自由基、Glutamate、發炎因子）經蛛網膜下腔擴散
-  2. 脊髓內血管微血栓形成 → 節段性缺血壞死
+  2. 脊髓內血管微血栓形成，最後節段性缺血壞死
   3. 壞死組織釋放的毒性物質直接損傷相鄰正常脊髓
-  4. 自主神經功能障礙 → 脊髓血管調控失衡
+  4. 自主神經功能障礙，接著脊髓血管調控失衡
 
 ### PMM 的臨床進展
 | 時間 | 臨床表現 | 定位意義 |
@@ -2321,24 +2321,24 @@ Ca²⁺ 依賴性酵素活化（calpain、磷脂酶 A₂）
 | Day 0 | T/L 深痛覺喪失性截癱 | 原發損傷位點 |
 | Day 1-2 | 前肢 LMN 徵兆出現（反射↓、肌張力↓） | 壞死上行至 C6-T2（臂叢） |
 | Day 2-4 | 肋間肌麻痺（呼吸淺快、矛盾呼吸） | 壞死上行至胸椎肋間神經 |
-| Day 3-7 | 膈肌呼吸代償 → 最終呼吸衰竭 | 壞死上行至 C3-C5（膈神經） |
+| Day 3-7 | 膈肌呼吸代償，跟著最終呼吸衰竭 | 壞死上行至 C3-C5（膈神經） |
 
 ### 風險因子
 | 因子 | 風險 |
 |------|------|
 | 深痛覺完全喪失 | PMM 發生率 ~10-15% |
-| 發病至手術時間 > 48 小時 | 預後顯著惡化 |
+| 發病至手術時間 > 48 小時 | 預後明顯惡化 |
 | T3-L3 IVDD（胸腰段） | 高於頸段 IVDD |
 | 椎管內占位比 > 50% | 原發損傷更嚴重 |
 | 臘腸犬、法國鬥牛犬 | 品種傾向（Type I IVDD 高發） |
 
 ## 二、臨床意義 (Clinical Significance)
 
-- **深痛覺喪失是最重要的預後指標**：T/L IVDD 深痛覺陰性犬的手術後功能恢復率約 50-60%（深痛覺喪失 < 48 小時）vs < 5%（> 48 小時），且有 10-15% 發展為致命性 PMM——這是術前溝通的核心數據
-- **PMM 的早期辨識決定安樂死時機**：術後截癱犬若出現前肢反射減弱、呼吸型態改變（淺快呼吸、腹式呼吸）、肛門張力喪失從尾側往顱側擴展，需高度懷疑 PMM——目前無有效治療，及時辨識可避免動物不必要的痛苦
-- **繼發性損傷的時間窗決定手術時機**：繼發性損傷在原發傷後 6-72 小時內進行，早期手術減壓（< 24 小時）的目的是中止壓迫性缺血級聯，但無法逆轉已發生的原發性損傷——這解釋了為什麼深痛覺喪失超過 48 小時的預後極差
-- **MRI 對脊髓軟化的預測價值**：術前 MRI T2WI 上脊髓高訊號延伸 > 2 個椎體長度（extensive T2 hyperintensity）與預後不良高度相關，但不能 100% 預測 PMM——部分長節段高訊號犬仍可恢復
-- **再灌流損傷的臨床管理**：術後 24-48 小時維持足夠的平均動脈壓（MAP > 80 mmHg）以確保脊髓灌流是目前唯一有實證支持的神經保護策略——低血壓會加劇繼發性缺血損傷
+- 深痛覺喪失是最重要的預後指標：T/L IVDD 深痛覺陰性犬的手術後功能恢復率約 50-60%（深痛覺喪失 < 48 小時）vs < 5%（> 48 小時），且有 10-15% 發展為致命性 PMM，這是術前溝通的核心數據
+- PMM 的早期辨識決定安樂死時機：術後截癱犬若出現前肢反射減弱、呼吸型態改變（淺快呼吸、腹式呼吸）、肛門張力喪失從尾側往顱側擴展，需高度懷疑 PMM，目前無有效治療，及時辨識可避免動物不必要的痛苦
+- 繼發性損傷的時間窗決定手術時機：繼發性損傷在原發傷後 6-72 小時內進行，早期手術減壓（< 24 小時）的目的是中止壓迫性缺血級聯，但無法逆轉已發生的原發性損傷，這解釋了為什麼深痛覺喪失超過 48 小時的預後極差
+- MRI 對脊髓軟化的預測價值：術前 MRI T2WI 上脊髓高訊號延伸 > 2 個椎體長度（extensive T2 hyperintensity）與預後不良高度相關，但不能 100% 預測 PMM，部分長節段高訊號犬仍可恢復
+- 再灌流損傷的臨床管理：術後 24-48 小時維持足夠的平均動脈壓（MAP > 80 mmHg）以確保脊髓灌流是目前唯一有實證支持的神經保護策略，低血壓會加劇繼發性缺血損傷
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2354,15 +2354,15 @@ Ca²⁺ 依賴性酵素活化（calpain、磷脂酶 A₂）
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 深痛覺喪失 > 48 小時犬是否仍應嘗試手術 | 少數晚期病例仍恢復，但整體成功率 < 5%，且 PMM 風險增加 | Level III |
-| MRI T2 高訊號長度能否可靠預測 PMM | 敏感度高但特異度不足——部分長節段高訊號犬仍可恢復行走能力 | Level III |
-| 高劑量 Methylprednisolone（MPSS）在犬 IVDD 的角色 | 人脊髓損傷已棄用 MPSS，但部分獸醫仍使用——副作用風險 > 潛在獲益 | Level I（反對使用） |
+| MRI T2 高訊號長度能否可靠預測 PMM | 敏感度高但特異度不足，部分長節段高訊號犬仍可恢復行走能力 | Level III |
+| 高劑量 Methylprednisolone（MPSS）在犬 IVDD 的角色 | 人脊髓損傷已棄用 MPSS，但部分獸醫仍使用，副作用風險 > 潛在獲益 | Level I（反對使用） |
 | PMM 的精確擴散機轉 | CSF 毒性介質擴散 vs 血管微血栓仍為假說，缺乏動物模型驗證 | Level IV |`,
-  clinical_pearl: '判斷 PMM 最早的臨床線索之一是「截斷徵象（cut-off sign）的上行」：正常情況下深痛覺喪失截斷點固定於損傷節段，若截斷點在術後 24-48 小時內向顱側移動（例如從 L1 上移至 T10），高度提示 PMM 正在進行。同時觀察肛門張力——LMN 性肛門鬆弛的出現（原本為 UMN 性 IVDD）也是壞死向尾側擴展的重要證據。',
+  clinical_pearl: '判斷 PMM 最早的臨床線索之一是「截斷徵象（cut-off sign）的上行」：正常情況下深痛覺喪失截斷點固定於損傷節段，若截斷點在術後 24-48 小時內向顱側移動（例如從 L1 上移至 T10），高度提示 PMM 正在進行。同時觀察肛門張力，LMN 性肛門鬆弛的出現（原本為 UMN 性 IVDD）也是壞死向尾側擴展的重要證據。',
   common_mistakes: [
-    '將所有深痛覺喪失病例都等同於 PMM——PMM 僅佔深痛覺喪失犬的 10-15%，多數仍有手術恢復機會',
+    '將所有深痛覺喪失病例都等同於 PMM，PMM 僅佔深痛覺喪失犬的 10-15%，多數仍有手術恢復機會',
     '術後未監測 PMM 進展的臨床徵兆（前肢反射、呼吸型態、截斷徵象上行）',
-    '使用高劑量 Methylprednisolone（MPSS）——人醫已有 Level I 證據反對使用，副作用（腸胃穿孔、感染）風險高於潛在獲益',
-    '忽略術後血壓管理——低血壓加劇繼發性缺血損傷，是最可控的預後惡化因子',
+    '使用高劑量 Methylprednisolone（MPSS），人醫已有 Level I 證據反對使用，副作用（腸胃穿孔、感染）風險高於潛在獲益',
+    '忽略術後血壓管理，低血壓加劇繼發性缺血損傷，是最可控的預後惡化因子',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2382,7 +2382,7 @@ Ca²⁺ 依賴性酵素活化（calpain、磷脂酶 A₂）
   created_at: now,
 };
 
-/** 神經學檢查 — 診斷型 */
+/** 神經學檢查 - 診斷型 */
 const contentNeuroExam: NodeContent = {
   id: 'CONTENT-NEURO-L4-001',
   node_id: 'NEURO-L4-001',
@@ -2396,7 +2396,7 @@ const contentNeuroExam: NodeContent = {
     '辨識檢查中的常見陷阱（假陽性/假陰性）',
   ],
   key_points: [
-    '五步驟流程：意識（Mentation）→ 步態（Gait）→ 姿勢反應（Postural reactions）→ 脊髓反射（Spinal reflexes）→ 腦神經（Cranial nerves）',
+    '五步驟流程：意識（Mentation），步態（Gait），姿勢反應（Postural reactions），最後脊髓反射（Spinal reflexes），接著腦神經（Cranial nerves）',
     '本體感覺定位（proprioceptive positioning）是最敏感的姿勢反應測試',
     '膝蓋反射（patellar reflex）測試 L4-L6 股四頭肌/股神經',
     '深痛覺測試：止血鉗夾趾骨，觀察有意識的疼痛反應（轉頭/叫喊），非屈曲反射',
@@ -2416,7 +2416,7 @@ const contentNeuroExam: NodeContent = {
 
 ### 系統性五步驟
 ### Step 1：意識評估
-- Alert → Obtunded → Stupor → Coma
+- Alert。Obtunded，Stupor然後Coma
 - 意識改變提示前腦或腦幹 ARAS 病變
 
 ### Step 2：步態分析
@@ -2425,16 +2425,16 @@ const contentNeuroExam: NodeContent = {
 - 注意對稱性與嚴重度
 
 ### Step 3：姿勢反應
-- **本體感覺定位（Proprioceptive positioning）**：翻轉腳掌，正常犬立即矯正
-- **Hopping**：單肢站立側移，測試整合功能
+- 本體感覺定位（Proprioceptive positioning）：翻轉腳掌，正常犬立即矯正
+- Hopping：單肢站立側移，測試整合功能
 - 異常提示從皮質到 LMN 任何位置的病變
 
 ### Step 4：脊髓反射
-- **膝蓋反射**：L4-L6（股神經），正常 +2
-- **屈曲反射前肢**：C6-T2，夾趾觀察屈曲
-- **屈曲反射後肢**：L4-S1，夾趾觀察屈曲
-- **會陰反射**：S1-S3（陰部神經），觸碰肛門觀察收縮
-- **Panniculus reflex**：從尾端向頭端逐節刺激皮膚，觀察皮肌收縮消失的截斷面
+- 膝蓋反射：L4-L6（股神經），正常 +2
+- 屈曲反射前肢：C6-T2，夾趾觀察屈曲
+- 屈曲反射後肢：L4-S1，夾趾觀察屈曲
+- 會陰反射：S1-S3（陰部神經），觸碰肛門觀察收縮
+- Panniculus reflex：從尾端向頭端逐節刺激皮膚，觀察皮肌收縮消失的截斷面
 
 ### Step 5：腦神經
 - CN II：威脅反應、PLR、menace response
@@ -2466,10 +2466,10 @@ const contentNeuroExam: NodeContent = {
 |---------|------|---------------|
 | 犬神經學檢查的觀察者間一致性 | 不同經驗程度獸醫的定位準確率差異大（50% vs 80%） | Level III |
 | 深痛覺測試的最佳標準化方法 | 止血鉗力道、刺激位置缺乏統一標準，影響 IVDD 分級一致性 | Level IV |`,
-  clinical_pearl: '神經學檢查最容易出錯的地方是深痛覺（DPP）測試。正確方法：用止血鉗夾壓趾骨，觀察的是「大腦層級的疼痛感知」——犬會轉頭看向刺激源、發出叫聲或試圖咬人。單純的屈曲反射（肢體回縮）是脊髓反射弧的反應，即使脊髓完全橫斷也可能存在。這個區分直接影響 IVDD 的分級與手術緊急度。',
+  clinical_pearl: '神經學檢查最容易出錯的地方是深痛覺（DPP）測試。正確方法：用止血鉗夾壓趾骨，觀察的是「大腦層級的疼痛感知」，犬會轉頭看向刺激源、發出叫聲或試圖咬人。單純的屈曲反射（肢體回縮）是脊髓反射弧的反應，即使脊髓完全橫斷也可能存在。這個區分直接影響 IVDD 的分級與手術緊急度。',
   common_mistakes: [
-    '將屈曲反射誤判為深痛覺——這是最常見也最危險的錯誤',
-    '在動物極度緊張時評估反射——緊張的肌肉張力可掩蓋真實的反射狀態',
+    '將屈曲反射誤判為深痛覺，這是最常見也最危險的錯誤',
+    '在動物極度緊張時評估反射，緊張的肌肉張力可掩蓋真實的反射狀態',
     '忽略 panniculus reflex 的截斷面定位價值',
     '未系統性地按五步驟執行而遺漏重要發現',
   ],
@@ -2487,10 +2487,10 @@ const contentNeuroExam: NodeContent = {
       '極度疼痛動物需先鎮痛再進行完整檢查',
       '高度懷疑顱內壓升高時避免過度刺激',
     ],
-    technique: '系統性五步驟：1. 意識評估（觀察環境互動）→ 2. 步態（行走/轉彎/上下坡）→ 3. 姿勢反應（本體感覺定位、hopping）→ 4. 脊髓反射（膝蓋反射、屈曲反射、會陰反射、panniculus）→ 5. 腦神經（CN II-XII）。所有結果記錄於標準化檢查表。全程約 15-20 分鐘。',
+    technique: '系統性五步驟：1. 意識評估（觀察環境互動），2. 步態（行走/轉彎/上下坡）。3. 姿勢反應（本體感覺定位、hopping），4. 脊髓反射（膝蓋反射、屈曲反射、會陰反射、panniculus），5. 腦神經（CN II-XII）。所有結果記錄於標準化檢查表。全程約 15-20 分鐘。',
     normal_findings: [
       { finding: 'Alert 意識', description: '對環境保持警覺，對刺激有適當反應', significance: '排除前腦與腦幹嚴重病變' },
-      { finding: '對稱協調步態', description: '四肢對稱運動，無共濟失調', significance: '排除顯著運動通路病變' },
+      { finding: '對稱協調步態', description: '四肢對稱運動，無共濟失調', significance: '排除明顯運動通路病變' },
       { finding: '膝蓋反射 +2', description: '適度反射，非亢進非減弱', significance: '排除 L4-L6 LMN 或上位 UMN 病變' },
       { finding: '本體感覺定位正常', description: '翻轉腳掌立即矯正', significance: '最敏感的姿勢反應，正常排除大部分脊髓病變' },
     ],
@@ -2522,13 +2522,13 @@ const contentNeuroExam: NodeContent = {
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經學檢查標準教材' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '神經學檢查實務指南' },
     { type: 'journal', citation: 'Garosi L. Lesion Localization and Differential Diagnosis. In: BSAVA Manual, 4th ed. 2013:1-17.', relevance: '定位診斷方法論' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識——神經學檢查標準化診斷流程' },
+    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，神經學檢查標準化診斷流程' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 腦脊髓液分析 — 診斷型 */
+/** 腦脊髓液分析 - 診斷型 */
 const contentCSFAnalysis: NodeContent = {
   id: 'CONTENT-NEURO-L4-002',
   node_id: 'NEURO-L4-002',
@@ -2547,8 +2547,8 @@ const contentCSFAnalysis: NodeContent = {
     'MUO 典型：淋巴球-單核球增多（50-500 cells/μL）、蛋白輕中度升高',
     '細菌性腦膜炎：嗜中性球增多、蛋白明顯升高、可能混濁',
     'FIP 腦炎（貓）：蛋白極高（常 > 200 mg/dL）、嗜中性球或混合細胞',
-    '白蛋白-細胞學解離（albuminocytologic dissociation）：蛋白升高但細胞正常 → ACP、腫瘤',
-    '顱內壓升高時 CSF 採集有腦疝風險——需先 MRI 排除佔位性病灶',
+    '白蛋白-細胞學解離（albuminocytologic dissociation）：蛋白升高但細胞正常，然後ACP、腫瘤',
+    '顱內壓升高時 CSF 採集有腦疝風險，需先 MRI 排除佔位性病灶',
   ],
   body: `# 腦脊髓液分析
 
@@ -2577,9 +2577,9 @@ const contentCSFAnalysis: NodeContent = {
 | 嗜酸球增多 | 嗜酸球 > 10% | 寄生蟲移行、Cryptococcus（部分） |
 
 ### 特異性檢測
-- **感染 panel**：Toxoplasma IgG/IgM、Neospora IgG、CDV PCR、Cryptococcus Ag
-- **腫瘤細胞學**：淋巴瘤可能見到異型淋巴球
-- **白蛋白指數（Albumin quotient）**：評估 BBB 完整性
+- 感染 panel：Toxoplasma IgG/IgM、Neospora IgG、CDV PCR、Cryptococcus Ag
+- 腫瘤細胞學：淋巴瘤可能見到異型淋巴球
+- 白蛋白指數（Albumin quotient）：評估 BBB 完整性
 
 ## 二、判讀要點 (Interpretation)
 
@@ -2610,7 +2610,7 @@ const contentCSFAnalysis: NodeContent = {
 | Cisternal vs lumbar CSF 採集的安全性與診斷價值差異 | 枕骨大孔穿刺在後顱窩佔位病灶時的腦疝風險 vs 腰椎穿刺的較低敏感度 | Level III |
 | CSF 採集後 30 分鐘處理的嚴格性 | 臨床上常難以在 30 分鐘內完成分析，延遲對細胞計數的影響程度不一 | Level IV |
 | MUO 治療追蹤中重複 CSF 採集的價值 | 部分專家依據 CSF 調整免疫抑制劑，但重複穿刺的風險-效益比未有共識 | Level IV |
-| CSF 正常但臨床高度懷疑 MUO 的處理 | 局灶性 GME 的 CSF 可能正常——是否直接開始免疫抑制治療存在爭議 | Level III |`,
+| CSF 正常但臨床高度懷疑 MUO 的處理 | 局灶性 GME 的 CSF 可能正常，是否直接開始免疫抑制治療存在爭議 | Level III |`,
   clinical_pearl: 'CSF 採集前必須先做腦部 MRI（或至少 CT）。原因是：如果有佔位性病灶（腫瘤、膿瘍）導致顱內壓升高，CSF 採集時突然降低後顱窩壓力可能誘發小腦扁桃體疝（cerebellar herniation），這是致命性的併發症。MRI 正常或僅見瀰漫性變化時，CSF 採集通常安全。',
   common_mistakes: [
     '未先做 MRI 排除佔位性病灶即進行 CSF 採集（腦疝風險）',
@@ -2622,7 +2622,7 @@ const contentCSFAnalysis: NodeContent = {
   diagnostic_data: {
     indication: [
       '疑似中樞神經系統發炎性疾病（MUO、感染性腦炎）',
-      'MRI 顯示腦部或脊髓病變需進一步鑑別',
+      'MRI 顯示腦部或脊髓病變需再鑑別',
       '癲癇發作的病因評估（排除結構性/發炎性原因）',
       '治療反應評估（MUO 追蹤）',
     ],
@@ -2644,14 +2644,14 @@ const contentCSFAnalysis: NodeContent = {
       { finding: '蛋白 300 mg/dL + 嗜中性球', description: '蛋白極度升高伴嗜中性球', significance: '貓 FIP 腦炎高度懷疑' },
       { finding: '蛋白升高 + 細胞正常', description: '白蛋白-細胞學解離', significance: 'ACP、脊髓腫瘤、BBB 輕度破壞' },
     ],
-    interpretation_guide: '1. 外觀（清澈/混濁/血性）→ 2. 蛋白與細胞是否同步升高 → 3. 細胞分類模式（淋巴球/嗜中性球/混合/嗜酸球）→ 4. 結合 MRI 與臨床表現 → 5. 感染 panel 結果整合。',
+    interpretation_guide: '1. 外觀（清澈/混濁/血性），2. 蛋白與細胞是否同步升高。3. 細胞分類模式（淋巴球/嗜中性球/混合/嗜酸球）。4. 結合 MRI 與臨床表現。5. 感染 panel 結果整合。',
     pitfalls: [
-      '穿刺汙染可使 WBC 假性升高——每 500 RBC 約增加 1 WBC',
-      'CSF 放置超過 30 分鐘細胞退化顯著',
+      '穿刺汙染可使 WBC 假性升高，每 500 RBC 約增加 1 WBC',
+      'CSF 放置超過 30 分鐘細胞退化明顯',
       '部分 MUO 病例 CSF 可能正常（尤其局灶性 GME）',
       '腰椎穿刺的蛋白正常值較小腦延髓池高（< 45 mg/dL）',
     ],
-    sensitivity_specificity: 'CSF 分析對 CNS 發炎性疾病的敏感度約 80-90%，但特異度有限——需結合 MRI、感染 panel 與臨床表現。對腫瘤的敏感度較低（約 50%），腫瘤細胞 CSF 脫落率低。',
+    sensitivity_specificity: 'CSF 分析對 CNS 發炎性疾病的敏感度約 80-90%，但特異度有限，需結合 MRI、感染 panel 與臨床表現。對腫瘤的敏感度較低（約 50%），腫瘤細胞 CSF 脫落率低。',
     cost_benefit: '費用中等（包含麻醉與分析費用），但對 MUO vs 感染性腦炎的鑑別價值極高。可避免不必要的免疫抑制治療或遺漏可治療的感染。',
   },
   procedure_data: null,
@@ -2664,13 +2664,13 @@ const contentCSFAnalysis: NodeContent = {
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: 'CSF 分析標準參考' },
     { type: 'journal', citation: 'Di Terlizzi R, Platt SR. The function, composition and analysis of cerebrospinal fluid in companion animals. Vet J. 2009;180(1):15-32.', relevance: 'CSF 分析綜合回顧' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: 'CSF 採集技術與判讀' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識——CSF 分析在癲癇診斷中的角色' },
+    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，CSF 分析在癲癇診斷中的角色' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 神經影像學 (MRI/CT) — 診斷型 */
+/** 神經影像學 (MRI/CT) - 診斷型 */
 const contentNeuroImaging: NodeContent = {
   id: 'CONTENT-NEURO-L4-003',
   node_id: 'NEURO-L4-003',
@@ -2689,7 +2689,7 @@ const contentNeuroImaging: NodeContent = {
     'T1W：解剖結構佳，脂肪亮、水暗、灰質比白質暗',
     'T2W：水亮（水腫/發炎亮訊號），最敏感偵測病變',
     'FLAIR：T2W 但抑制 CSF 訊號，periventricular 病灶更清楚',
-    'Gd-T1W：BBB 破壞處或血管豐富區域增強 → 腫瘤、活動性發炎',
+    'Gd-T1W：BBB 破壞處或血管豐富區域增強，跟著腫瘤、活動性發炎',
     'IVDD MRI：T2W 見脊髓高訊號（水腫/壞死），椎間盤突出物可見',
   ],
   body: `# 神經影像學
@@ -2726,7 +2726,7 @@ const contentNeuroImaging: NodeContent = {
 - 腦膜增強評估有用
 
 ### Gadolinium 增強 T1W
-- BBB 破壞處 Gadolinium 漏出 → T1 增強（變亮）
+- BBB 破壞處 Gadolinium 漏出，T1 增強（變亮）
 - 腫瘤、活動性發炎、膿瘍壁增強
 - 環狀增強（ring enhancement）提示膿瘍或壞死性腫瘤中心
 
@@ -2764,12 +2764,12 @@ const contentNeuroImaging: NodeContent = {
 | T2W 脊髓高訊號作為 IVDD 預後指標的可靠度 | 高訊號可代表水腫（可逆）或壞死（不可逆），單憑 MRI 難以區分 | Level III |
 | MUO vs 腦腫瘤的 MRI 鑑別準確率 | 單靠 MRI 特徵鑑別 MUO 與低度惡性腦瘤準確率約 80%，需 CSF 或病理佐證 | Level II |
 | 犬 MRI protocol 跨機構標準化 | 各機構使用不同場強、序列與切面厚度，影響跨機構影像比較與多中心研究 | Level IV |`,
-  clinical_pearl: 'MRI 的 T2W 脊髓高訊號在 IVDD 中具有預後意義——高訊號越廣泛，代表脊髓水腫或壞死越嚴重，預後越差。但注意：T2W 高訊號可以是水腫（可逆）也可以是壞死/軟化（不可逆），需結合臨床分級判斷。Grade V 合併廣泛 T2 高訊號的預後最差。',
+  clinical_pearl: 'MRI 的 T2W 脊髓高訊號在 IVDD 中具有預後意義，高訊號越廣泛，代表脊髓水腫或壞死越嚴重，預後越差。但注意：T2W 高訊號可以是水腫（可逆）也可以是壞死/軟化（不可逆），需結合臨床分級判斷。Grade V 合併廣泛 T2 高訊號的預後最差。',
   common_mistakes: [
-    '混淆 T1W 與 T2W 的訊號特性——記住「T2 = 水亮」',
-    '未加做 Gadolinium 增強就下結論——增強模式對腫瘤 vs MUO 鑑別至關重要',
-    '將 DM 犬的正常 MRI 誤認為「沒有問題」——DM 的 MRI 通常正常，這恰恰是排除性診斷的一部分',
-    '忽略 MRI 的金屬禁忌——有骨科植入物的動物需確認 MRI 相容性',
+    '混淆 T1W 與 T2W 的訊號特性，記住「T2 = 水亮」',
+    '未加做 Gadolinium 增強就下結論，增強模式對腫瘤 vs MUO 鑑別不能省',
+    '將 DM 犬的正常 MRI 誤認為「沒有問題」，DM 的 MRI 通常正常，這恰恰是排除性診斷的一部分',
+    '忽略 MRI 的金屬禁忌，有骨科植入物的動物需確認 MRI 相容性',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -2785,7 +2785,7 @@ const contentNeuroImaging: NodeContent = {
       '全身麻醉禁忌（嚴重心肺疾病未穩定）',
       'CT myelography：碘過敏（罕見）',
     ],
-    technique: '全身麻醉後置於掃描台。腦部 MRI 標準序列：sagittal T2W → transverse T2W → transverse FLAIR → transverse T1W → IV Gadolinium 0.1 mmol/kg → transverse & sagittal Gd-T1W。脊椎 MRI：sagittal T2W → transverse T2W（病灶處）→ sagittal T1W → Gd-T1W（如需）。',
+    technique: '全身麻醉後放上掃描台。腦部 MRI 標準序列照這個順序跑：sagittal T2W、transverse T2W、transverse FLAIR、transverse T1W。打 IV Gadolinium 0.1 mmol/kg，再做 transverse 跟 sagittal Gd-T1W。脊椎 MRI 序列：sagittal T2W、transverse T2W（病灶處）、sagittal T1W、Gd-T1W（如需）。',
     normal_findings: [
       { finding: '對稱的腦結構', description: '左右大腦半球對稱，腦室系統正常大小', significance: '排除佔位性病灶與水腦症' },
       { finding: '脊髓訊號均勻', description: 'T2W 脊髓呈均勻中等訊號', significance: '排除脊髓壓迫與髓內病變' },
@@ -2797,7 +2797,7 @@ const contentNeuroImaging: NodeContent = {
       { finding: '單一腫塊伴均勻 Gd 增強', description: '邊界清楚的腫塊，T1W 等至低訊號，均勻增強', significance: '腦膜瘤（meningioma）高度懷疑' },
       { finding: '楔形 T2 高訊號，血管分布區', description: '符合血管供應區域的楔形病灶', significance: '腦梗塞（cerebrovascular accident）' },
     ],
-    interpretation_guide: '1. 系統性評估所有序列 → 2. T2W 偵測病變（最敏感）→ 3. T1W 評估解剖與出血 → 4. FLAIR 評估腦室旁與腦膜 → 5. Gd-T1W 評估 BBB 破壞與血管性 → 6. 結合定位與臨床特徵作綜合判斷。',
+    interpretation_guide: '1. 系統性評估所有序列。2. T2W 偵測病變（最敏感），3. T1W 評估解剖與出血。4. FLAIR 評估腦室旁與腦膜。 Gd-T1W 評估 BBB 破壞與血管性。6. 結合定位與臨床特徵作綜合判斷。',
     pitfalls: [
       'Magic angle artifact 可在脊髓周圍產生假性高訊號',
       '慢性出血在 T1W 可為高訊號（methemoglobin），需與增強區分',
@@ -2805,7 +2805,7 @@ const contentNeuroImaging: NodeContent = {
       'Motion artifact 可導致假性病灶',
     ],
     sensitivity_specificity: 'MRI 對 CNS 病變的敏感度 > 90%，但特異度因疾病而異。對 IVDD 幾乎 100% 敏感。對 MUO vs 腫瘤的鑑別特異度約 80%（需結合 CSF）。',
-    cost_benefit: '費用較高但提供其他工具無法替代的資訊。對 IVDD 手術定位不可或缺。對 MUO 診斷與腫瘤手術規劃至關重要。',
+    cost_benefit: '費用較高但提供其他工具無法替代的資訊。對 IVDD 手術定位少不了。對 MUO 診斷與腫瘤手術規劃不能省。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -2817,13 +2817,13 @@ const contentNeuroImaging: NodeContent = {
     { type: 'textbook', citation: 'Gavin PR, Bagley RS. Practical Small Animal MRI. Wiley-Blackwell, 2009.', relevance: '小動物 MRI 實務教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經影像學章節' },
     { type: 'journal', citation: 'Cervera V et al. Diagnosis and treatment of intracranial disease. Vet Clin North Am Small Anim Pract. 2014;44(6):1157-1185.', relevance: '顱內疾病影像診斷' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識——MRI 在癲癇分層診斷中的角色' },
+    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，MRI 在癲癇分層診斷中的角色' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 抗癲癇藥物治療 — 治療型 */
+/** 抗癲癇藥物治療 - 治療型 */
 const contentAEDTherapy: NodeContent = {
   id: 'CONTENT-NEURO-L5-001',
   node_id: 'NEURO-L5-001',
@@ -2892,7 +2892,7 @@ const contentAEDTherapy: NodeContent = {
 - 穩態：2-3 個月（可給 loading dose 縮短）
 - 目標血中濃度：1-3 mg/mL（合併 PB）或 2-3 mg/mL（單用）
 - 副作用：腸胃不適、後肢共濟失調、嗜睡
-- 注意：**貓禁用**（引發致命性嗜酸球性支氣管炎）
+- 注意：貓禁用（引發致命性嗜酸球性支氣管炎）
 
 ### 二線藥物
 | 藥物 | 劑量 | 優勢 | 注意事項 |
@@ -2903,11 +2903,11 @@ const contentAEDTherapy: NodeContent = {
 ## 三、併發症與監控 (Complications & Monitoring)
 
 ### AED 主要副作用與監測
-- **Phenobarbital 肝毒性**：最嚴重的長期副作用——慢性肝炎、肝纖維化，嚴重時致肝衰竭。需每 6 個月監測 ALT/ALP/膽汁酸
-- **PB 急性鎮靜與多飲多食多尿**：起始 1-2 週最明顯，多數犬可逐漸耐受
-- **KBr 溴中毒**：後肢共濟失調、嗜睡加重、腸胃不適——高鈉飲食變化可突然改變血中濃度
-- **LEV Honeymoon effect**：初期效果顯著但可能在數月後減弱，需增加劑量或加藥
-- **緊急 SE 藥物的呼吸抑制**：Diazepam/Propofol CRI 需監測呼吸，備妥插管設備
+- Phenobarbital 肝毒性：最嚴重的長期副作用，慢性肝炎、肝纖維化，嚴重時致肝衰竭。需每 6 個月監測 ALT/ALP/膽汁酸
+- PB 急性鎮靜與多飲多食多尿：起始 1-2 週最明顯，多數犬可逐漸耐受
+- KBr 溴中毒：後肢共濟失調、嗜睡加重、腸胃不適，高鈉飲食變化可突然改變血中濃度
+- LEV Honeymoon effect：初期效果明顯但可能在數月後減弱，需增加劑量或加藥
+- 緊急 SE 藥物的呼吸抑制：Diazepam/Propofol CRI 需監測呼吸，備妥插管設備
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -2919,11 +2919,11 @@ const contentAEDTherapy: NodeContent = {
 
 ## 四、預後影響 (Prognostic Impact)
 
-- **PB 單藥治療反應良好**：約 60-70% 的 IE 犬可達滿意控制，平均壽命接近正常
-- **多藥方案仍控制不佳**：約 20-30% 為藥物難治性，需持續調整方案，生活品質受影響
-- **突發 SE 風險**：即使控制良好的犬仍有 SE 風險，飼主需備有直腸 Diazepam 急救
-- **預後良好因子**：首次發作年齡 1-5 歲、低初始發作頻率、對首線 AED 治療濃度反應良好
-- **預後不良因子**：首發即 cluster/SE、高發作頻率（> 1 次/月）、多藥治療濃度仍無效、品種（Border Collie 藥物反應差）
+- PB 單藥治療反應良好：約 60-70% 的 IE 犬可達滿意控制，平均壽命接近正常
+- 多藥方案仍控制不佳：約 20-30% 為藥物難治性，需持續調整方案，生活品質受影響
+- 突發 SE 風險：即使控制良好的犬仍有 SE 風險，飼主需備有直腸 Diazepam 急救
+- 預後良好因子：首次發作年齡 1-5 歲、低初始發作頻率、對首線 AED 治療濃度反應良好
+- 預後不良因子：首發即 cluster/SE、高發作頻率（> 1 次/月）、多藥治療濃度仍無效、品種（Border Collie 藥物反應差）
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -2938,17 +2938,17 @@ const contentAEDTherapy: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| LEV 作為犬癲癇一線 AED 的定位 | 副作用少但需 TID 給藥且 honeymoon effect 爭議——是否能取代 PB 為一線仍缺乏頭對頭 RCT | Level II |
+| LEV 作為犬癲癇一線 AED 的定位 | 副作用少但需 TID 給藥且 honeymoon effect 爭議，是否能取代 PB 為一線仍缺乏頭對頭 RCT | Level II |
 | AED 起始時機：首次發作 vs 達 IVETF 標準 | 早期治療可能改善長期預後（kindling 假說），但首次發作即治療的證據不足 | Level III |
-| 難治性癲癇的定義標準 | 兩種 AED 治療濃度失敗 vs 三種——標準不統一影響臨床試驗收案與治療決策 | Level IV |
-| PB 長期使用的停藥可能性 | 長期無發作的犬是否可嘗試逐漸減量停藥——突然停藥可誘發 SE，但長期使用肝毒性累積 | Level IV |`,
+| 難治性癲癇的定義標準 | 兩種 AED 治療濃度失敗 vs 三種，標準不統一影響臨床試驗收案與治療決策 | Level IV |
+| PB 長期使用的停藥可能性 | 長期無發作的犬是否可嘗試逐漸減量停藥，突然停藥可誘發 SE，但長期使用肝毒性累積 | Level IV |`,
   clinical_pearl: '「發作日誌」是管理癲癇犬的最重要工具之一。要求飼主記錄每次發作的日期、時間、持續時間、類型（局灶/全身）與 post-ictal 嚴重度。這不僅用於評估治療效果，也能幫助辨識 cluster seizure 模式和預警惡化趨勢。用手機拍攝發作影片更可幫助區分發作類型。',
   common_mistakes: [
     '首次單一發作即開始長期 AED（需達到治療起始標準）',
-    '僅憑臨床改善就停止 PB 血中濃度監測——肝毒性可在控制良好時發生',
+    '僅憑臨床改善就停止 PB 血中濃度監測，肝毒性可在控制良好時發生',
     'KBr 用於貓（貓對 Br⁻ 極度敏感，引發致命性嗜酸球性支氣管炎）',
     '突然停用 PB 而非逐漸減量（突然停藥可誘發 status epilepticus）',
-    '忽略 PB 的酵素誘導效應對 LEV 的影響——合併使用時 LEV 可能需 TID 或更高劑量',
+    '忽略 PB 的酵素誘導效應對 LEV 的影響，合併使用時 LEV 可能需 TID 或更高劑量',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2963,13 +2963,13 @@ const contentAEDTherapy: NodeContent = {
     { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'AED 管理共識' },
     { type: 'guideline', citation: 'Bhatt M et al. IVETF consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176.', relevance: 'IVETF 治療共識' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '癲癇治療章節' },
-    { type: 'journal', citation: 'Munana KR et al. Use of levetiracetam as adjunctive treatment for refractory canine epilepsy: a randomized, placebo-controlled crossover trial. J Vet Intern Med. 2012;26(2):341-348.', relevance: 'Levetiracetam RCT——AED 臨床試驗證據' },
+    { type: 'journal', citation: 'Munana KR et al. Use of levetiracetam as adjunctive treatment for refractory canine epilepsy: a randomized, placebo-controlled crossover trial. J Vet Intern Med. 2012;26(2):341-348.', relevance: 'Levetiracetam RCT，AED 臨床試驗證據' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 脊椎手術基礎 — 治療型 */
+/** 脊椎手術基礎 - 治療型 */
 const contentSpinalSurgery: NodeContent = {
   id: 'CONTENT-NEURO-L5-002',
   node_id: 'NEURO-L5-002',
@@ -2989,7 +2989,7 @@ const contentSpinalSurgery: NodeContent = {
     'Grade IV 術後步行恢復率 > 90%，Grade V < 48hr DPP 喪失約 50-60%',
     '術後膀胱管理：Grade ≥ 3 需每日手動擠壓或導尿直到自主排尿恢復',
     '術後復健：被動關節運動、站立訓練、水療加速恢復',
-    'PMM 為最嚴重併發症——術後神經功能持續惡化需高度懷疑',
+    'PMM 為最嚴重併發症，術後神經功能持續惡化需高度懷疑',
   ],
   body: `# 脊椎手術基礎
 
@@ -3042,28 +3042,28 @@ const contentSpinalSurgery: NodeContent = {
 ## 三、併發症與監控 (Complications & Monitoring)
 
 ### 術後主要併發症
-- **進行性脊髓軟化（PMM）**：最嚴重——約 2-5% 的 Grade V 術後出現，不可逆的上行性/下行性脊髓壞死，通常致命
-- **術後感染（椎間盤炎/傷口感染）**：發熱、傷口滲液、新發疼痛——需長期抗生素（6-8 週）
-- **尿路感染**：Grade ≥ 3 術後膀胱管理期間最常見的可預防併發症
-- **植入物失敗/椎體不穩定**：Ventral slot 過寬導致椎體塌陷為毀滅性併發症
-- **鄰近椎間隙 IVDD 復發**：術後同區域或鄰近椎間隙再次突出，復發率約 5-10%
+- 進行性脊髓軟化（PMM）：最嚴重，約 2-5% 的 Grade V 術後出現，不可逆的上行性/下行性脊髓壞死，通常致命
+- 術後感染（椎間盤炎/傷口感染）：發熱、傷口滲液、新發疼痛，需長期抗生素（6-8 週）
+- 尿路感染：Grade ≥ 3 術後膀胱管理期間最常見的可預防併發症
+- 植入物失敗/椎體不穩定：Ventral slot 過寬導致椎體塌陷為毀滅性併發症
+- 鄰近椎間隙 IVDD 復發：術後同區域或鄰近椎間隙再次突出，復發率約 5-10%
 
 ### 術後監控計畫
 | 時間點 | 監測項目 | 目標 |
 |--------|---------|------|
-| 術後 24-72 小時 | 每 4-6 小時神經學檢查（步態/DPP/反射） | 確認穩定或改善——持續惡化需懷疑 PMM |
+| 術後 24-72 小時 | 每 4-6 小時神經學檢查（步態/DPP/反射） | 確認穩定或改善，持續惡化需懷疑 PMM |
 | 術後持續 | 膀胱管理（每 6-8 小時擠壓/導尿） | 殘餘尿量 < 10 mL 可停止 |
 | 術後 2 週 | 傷口檢查、縫合拆除 | 傷口無感染 |
 | 術後 4-8 週 | 神經學檢查 + 復健評估 | 功能恢復進度追蹤 |
 
 ## 四、預後影響 (Prognostic Impact)
 
-- **Grade I-II IVDD 保守治療 vs 手術**：保守治療成功率 > 85%，但復發率 30-40%；手術復發率較低
-- **Grade III 手術**：步行恢復率 > 95%，多數在 2-4 週內恢復
-- **Grade IV 手術**：步行恢復率 > 90%，需數週至數月復健
-- **Grade V（DPP 喪失 < 48 hr）手術**：步行恢復率約 50-60%，需積極復健
-- **Grade V（DPP 喪失 > 48 hr）**：預後極差——步行恢復率 < 5%，PMM 風險高
-- **頸椎 IVDD（ventral slot）**：整體預後良好，步行恢復率 > 90%
+- Grade I-II IVDD 保守治療 vs 手術：保守治療成功率 > 85%，但復發率 30-40%；手術復發率較低
+- Grade III 手術：步行恢復率 > 95%，多數在 2-4 週內恢復
+- Grade IV 手術：步行恢復率 > 90%，需數週至數月復健
+- Grade V（DPP 喪失 < 48 hr）手術：步行恢復率約 50-60%，需積極復健
+- Grade V（DPP 喪失 > 48 hr）：預後極差，步行恢復率 < 5%，PMM 風險高
+- 頸椎 IVDD（ventral slot）：整體預後良好，步行恢復率 > 90%
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3072,22 +3072,22 @@ const contentSpinalSurgery: NodeContent = {
 | 微創脊椎手術（MIS）/內視鏡椎間盤切除 | 犬 IVDD 的微創替代術式（減少肌肉損傷與恢復時間） | 人醫標準術式，犬初步嘗試但器械尺寸為限制 |
 | 脊髓灌注壓力（SCPP）監測 | 犬急性脊髓損傷術中/術後的灌注壓力目標導向治療 | 人醫 SCI 已建立 SCPP 目標，犬研究起步 |
 | 神經保護劑（Riluzole/Minocycline） | 犬急性 IVDD 術後的輔助神經保護 | 人醫 SCI 臨床試驗中，犬 Riluzole PK 研究開始 |
-| 人工椎間盤（Artificial disc） | 犬頸椎 IVDD 的椎間盤替換——保留活動度 | 人醫已商業化，犬生物力學研究中 |
+| 人工椎間盤（Artificial disc） | 犬頸椎 IVDD 的椎間盤替換，保留活動度 | 人醫已商業化，犬生物力學研究中 |
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| Grade III IVDD 保守治療 vs 手術 | 兩者成功率接近但手術復發率較低——缺乏前瞻性 RCT 直接比較 | Level III |
+| Grade III IVDD 保守治療 vs 手術 | 兩者成功率接近但手術復發率較低，缺乏前瞻性 RCT 直接比較 | Level III |
 | IVDD 術後類固醇使用 | Methylprednisolone 可能加重脊髓損傷（NASCIS III 爭議延伸至獸醫），多數神經外科專家不建議 | Level II |
-| DPP 喪失 > 48 小時是否仍應手術 | 極低恢復率（< 5%）vs 少數成功案例——手術費用與 PMM 風險需與飼主充分溝通 | Level III |
-| 預防性開窗術（Prophylactic fenestration）的價值 | 術中對鄰近椎間隙同時開窗以降低復發率——是否增加手術時間與風險而效益有限 | Level III |`,
+| DPP 喪失 > 48 小時是否仍應手術 | 極低恢復率（< 5%）vs 少數成功案例，手術費用與 PMM 風險需與飼主充分溝通 | Level III |
+| 預防性開窗術（Prophylactic fenestration）的價值 | 術中對鄰近椎間隙同時開窗以降低復發率，是否增加手術時間與風險而效益有限 | Level III |`,
   clinical_pearl: 'Ventral slot 手術最關鍵的技術要點是「slot 寬度不可超過椎體寬度的 1/3」。過寬的 slot 會破壞椎體的結構完整性，導致椎體塌陷（ventral slot collapse），這是一個毀滅性的併發症。使用高速鑽時需持續以生理食鹽水沖洗冷卻，避免熱損傷。',
   common_mistakes: [
-    'Grade V 病例延遲手術超過 48 小時——每小時延遲都降低恢復機會',
+    'Grade V 病例延遲手術超過 48 小時，每小時延遲都降低恢復機會',
     'Ventral slot 過寬導致椎體不穩定',
-    '術後忽略膀胱管理——尿路感染是最常見的可預防併發症',
-    '術後未進行復健——復健可顯著加速功能恢復',
+    '術後忽略膀胱管理，尿路感染是最常見的可預防併發症',
+    '術後未進行復健，復健可明顯加速功能恢復',
     '術後神經功能持續惡化未考慮 PMM（進行性脊髓軟化）',
   ],
   disease_data: null,
@@ -3109,12 +3109,12 @@ const contentSpinalSurgery: NodeContent = {
   created_at: now,
 };
 
-/** 神經科復健 — 治療型 */
+/** 神經科復健 - 治療型 */
 const contentNeuroRehab: NodeContent = {
   id: 'CONTENT-NEURO-L5-003',
   node_id: 'NEURO-L5-003',
   version: 1,
-  summary: '神經科復健（Neurological Rehabilitation）是脊髓損傷（IVDD 術後）、周邊神經病變與其他神經疾病恢復的關鍵輔助治療。核心技術包括被動關節運動（PROM）、輔助站立與行走訓練、水療（hydrotherapy）、電刺激（NMES）與平衡訓練。研究顯示積極復健可將 DM 犬維持步行能力的時間延長 2-3 倍，IVDD 術後犬的功能恢復也顯著加速。',
+  summary: '神經科復健（Neurological Rehabilitation）是脊髓損傷（IVDD 術後）、周邊神經病變與其他神經疾病恢復的關鍵輔助治療。核心技術包括被動關節運動（PROM）、輔助站立與行走訓練、水療（hydrotherapy）、電刺激（NMES）與平衡訓練。研究顯示積極復健可將 DM 犬維持步行能力的時間延長 2-3 倍，IVDD 術後犬的功能恢復也明顯加速。',
   learning_objectives: [
     '制定脊髓損傷犬的分階段復健計畫',
     '描述被動關節運動（PROM）的執行方法與頻率',
@@ -3128,8 +3128,8 @@ const contentNeuroRehab: NodeContent = {
     '水療（水中跑步機/游泳）：浮力減重 40-60%，允許早期主動運動',
     'NMES（神經肌肉電刺激）：延緩去神經性肌萎縮，維持肌肉質量',
     'DM 犬積極復健可延長步行能力時間 2-3 倍（Kathmann et al. 2006）',
-    'IVDD 術後復健分三階段：急性期（1-2 週）→ 恢復期（2-6 週）→ 強化期（6-12 週）',
-    '居家復健飼主指導極為重要——大部分復健需要在家執行',
+    'IVDD 術後復健分三階段：急性期（1-2 週），恢復期（2-6 週），最後強化期（6-12 週）',
+    '居家復健飼主指導極為重要，大部分復健需要在家執行',
   ],
   body: `# 神經科復健
 
@@ -3141,7 +3141,7 @@ const contentNeuroRehab: NodeContent = {
 ### 神經可塑性（Neuroplasticity）
 - 脊髓與腦具有一定的功能重組能力
 - 重複性特定動作訓練可強化殘存神經通路
-- 「use it or lose it」原則——不活動導致功能進一步喪失
+- 「use it or lose it」原則，不活動導致功能再喪失
 
 ### 預防併發症
 - 褥瘡：定期翻身（q4-6h）、厚軟墊
@@ -3189,16 +3189,16 @@ const contentNeuroRehab: NodeContent = {
 
 ## 二、藥物/方法比較 (Comparison)
 
-比較水療(浮力減重) vs 陸上運動(本體感覺訓練) vs 電刺激(NMES肌肉再教育) — 適應症依神經損傷類型而異：IVDD 術後首選水療，DM 首選步態訓練，ACP 首選被動 ROM + 站立訓練。
+比較水療(浮力減重) vs 陸上運動(本體感覺訓練) vs 電刺激(NMES肌肉再教育)，適應症依神經損傷類型而異：IVDD 術後首選水療，DM 首選步態訓練，ACP 首選被動 ROM + 站立訓練。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
 ### 復健相關併發症
-- **過度復健（Overexertion）**：過早過量的活動可導致手術部位不穩定或再損傷——漸進式增加為原則
-- **水療相關感染**：術後傷口未癒合即開始水療可致傷口感染——建議術後 ≥ 2 週且傷口完整後開始
-- **PROM 過度操作**：超出正常關節活動範圍或過於激烈可導致軟組織損傷——應在無痛範圍內溫和執行
-- **飼主執行不當**：居家復健佔總復健量的大部分——錯誤技術可能適得其反，需詳細示範與影片指導
-- **心理壓力**：長期復健過程對飼主的心理負擔，特別是 DM 等進行性疾病
+- 過度復健（Overexertion）：過早過量的活動可導致手術部位不穩定或再損傷，漸進式增加為原則
+- 水療相關感染：術後傷口未癒合即開始水療可致傷口感染，建議術後 ≥ 2 週且傷口完整後開始
+- PROM 過度操作：超出正常關節活動範圍或過於激烈可導致軟組織損傷，應在無痛範圍內溫和執行
+- 飼主執行不當：居家復健佔總復健量的大部分，錯誤技術可能適得其反，需詳細示範與影片指導
+- 心理壓力：長期復健過程對飼主的心理負擔，特別是 DM 等進行性疾病
 
 ### 功能評估與監控
 | 時間點 | 評估項目 | 目標 |
@@ -3210,11 +3210,11 @@ const contentNeuroRehab: NodeContent = {
 
 ## 四、預後影響 (Prognostic Impact)
 
-- **IVDD 術後 + 積極復健**：功能恢復速度顯著加快——水療組 vs 非水療組恢復時間可差 2-4 週
-- **DM 犬 + 每日復健**：維持步行能力時間延長至未復健犬的 2-3 倍（Kathmann 2006）
-- **ACP 犬復健**：每日 PROM + 站立訓練可維持肌肉量與關節活動度，加速神經再生期的功能恢復
-- **預後良好因子**：早期開始復健（術後 48 小時內 PROM）、飼主高度配合居家執行、有水療設備資源
-- **預後限制因子**：DPP 完全喪失、PMM 發生、飼主無法配合居家復健、嚴重關節攣縮已形成
+- IVDD 術後 + 積極復健：功能恢復速度明顯加快，水療組 vs 非水療組恢復時間可差 2-4 週
+- DM 犬 + 每日復健：維持步行能力時間延長至未復健犬的 2-3 倍（Kathmann 2006）
+- ACP 犬復健：每日 PROM + 站立訓練可維持肌肉量與關節活動度，加速神經再生期的功能恢復
+- 預後良好因子：早期開始復健（術後 48 小時內 PROM）、飼主高度配合居家執行、有水療設備資源
+- 預後限制因子：DPP 完全喪失、PMM 發生、飼主無法配合居家復健、嚴重關節攣縮已形成
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -3229,16 +3229,16 @@ const contentNeuroRehab: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 水療的最佳起始時機與頻率 | 術後 2 週 vs 更早（傷口癒合前以乾式復健為主）——缺乏比較不同時機的 RCT | Level IV |
-| NMES（神經肌肉電刺激）在犬的實際療效 | 理論上延緩去神經肌萎縮，但犬高品質 RCT 極少——參數（頻率/強度/模式）未標準化 | Level IV |
+| 水療的最佳起始時機與頻率 | 術後 2 週 vs 更早（傷口癒合前以乾式復健為主），缺乏比較不同時機的 RCT | Level IV |
+| NMES（神經肌肉電刺激）在犬的實際療效 | 理論上延緩去神經肌萎縮，但犬高品質 RCT 極少，參數（頻率/強度/模式）未標準化 | Level IV |
 | DM 犬復健的最佳方案組合 | 水療 + PROM + 輪椅為經驗性方案，但各成分的個別貢獻量化困難 | Level III |
 | 幹細胞治療合併復健的附加效益 | 犬 IVDD 術後幹細胞移植的療效尚無高品質 RCT 支持，是否合併復健可提升效果不明 | Level IV |`,
   clinical_pearl: '水中跑步機是神經復健中最有價值的工具之一。水的浮力讓尚無法獨立行走的犬可以進行步態訓練（水位至大轉子可減重 40-60%），而水的阻力同時提供肌力訓練。建議 IVDD 術後 2 週（傷口癒合後）即開始，每週 2-3 次，每次從 5 分鐘逐漸增加到 20 分鐘。',
   common_mistakes: [
-    '術後僅限制活動而未積極復健——被動恢復遠不如主動復健',
+    '術後僅限制活動而未積極復健，被動恢復遠不如主動復健',
     'PROM 執行過於激烈或超出正常關節活動範圍（應溫和且在無痛範圍內）',
     '水療開始過早（傷口未癒合時水療有感染風險）',
-    '告知 DM 飼主「無藥可治」而未推薦積極復健——復健是 DM 最有效的介入',
+    '告知 DM 飼主「無藥可治」而未推薦積極復健，復健是 DM 最有效的介入',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -3253,13 +3253,13 @@ const contentNeuroRehab: NodeContent = {
     { type: 'journal', citation: 'Kathmann I et al. Daily controlled physiotherapy increases survival time in dogs with suspected degenerative myelopathy. J Vet Intern Med. 2006;20(4):927-932.', relevance: 'DM 犬復健延長存活時間的關鍵研究' },
     { type: 'textbook', citation: 'Millis DL, Levine D. Canine Rehabilitation and Physical Therapy, 2nd ed. Elsevier, 2014.', relevance: '犬復健標準教材' },
     { type: 'journal', citation: 'Drum MG. Physical rehabilitation of the canine neurologic patient. Vet Clin North Am Small Anim Pract. 2010;40(1):181-193.', relevance: '神經科復健綜述' },
-    { type: 'guideline', citation: 'Moore SA et al. ACVIM Consensus Statement on thoracolumbar intervertebral disc disease. J Vet Intern Med. 2020;34(5):1684-1699.', relevance: 'ACVIM IVDD 共識——術後復健建議' },
+    { type: 'guideline', citation: 'Moore SA et al. ACVIM Consensus Statement on thoracolumbar intervertebral disc disease. J Vet Intern Med. 2020;34(5):1684-1699.', relevance: 'ACVIM IVDD 共識，術後復健建議' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 顱內壓升高機轉 — 機轉型 */
+/** 顱內壓升高機轉 - 機轉型 */
 const contentICPMechanism: NodeContent = {
   id: 'CONTENT-NEURO-L2-005',
   node_id: 'NEURO-L2-005',
@@ -3274,11 +3274,11 @@ const contentICPMechanism: NodeContent = {
     '掌握降低 ICP 的藥物治療原則（Mannitol、高張食鹽水）',
   ],
   key_points: [
-    'Monro-Kellie 學說：顱腔容積固定 → 腦實質（80%）+ CSF（10%）+ 血液（10%）= 恆定',
+    'Monro-Kellie 學說：顱腔容積固定，接著腦實質（80%）+ CSF（10%）+ 血液（10%）= 恆定',
     '正常犬 ICP < 12 mmHg，ICP > 20 mmHg 需積極處置',
     'ICP 升高四大原因：佔位性病灶（腫瘤、血腫、膿瘍）、腦水腫（細胞毒性/血管源性）、水腦症（CSF 循環障礙）、顱內出血',
-    'Cushing 反應三聯徵：心搏過緩（bradycardia）+ 全身性高血壓（systemic hypertension）+ 呼吸型態異常（irregular respiration）——提示腦幹壓迫',
-    'CPP = MAP - ICP：目標 CPP > 50 mmHg（犬），CPP 過低 → 腦缺血 → 神經元死亡',
+    'Cushing 反應三聯徵：心搏過緩（bradycardia）+ 全身性高血壓（systemic hypertension）+ 呼吸型態異常（irregular respiration），提示腦幹壓迫',
+    'CPP = MAP - ICP：目標 CPP > 50 mmHg（犬），CPP 過低，跟著腦缺血，神經元死亡',
     '腦疝類型：天幕疝（transtentorial herniation，瞳孔散大、意識急劇下降）、枕骨大孔疝（foramen magnum herniation，呼吸驟停、死亡）',
     '急性降 ICP：Mannitol 0.5-1 g/kg IV over 15-20 min（滲透性利尿，效果 30 min 內出現，持續 2-5 hr）；高張食鹽水 3-5% NaCl 3-5 mL/kg IV（低血壓患者優先選擇）',
   ],
@@ -3288,28 +3288,28 @@ const contentICPMechanism: NodeContent = {
 
 ### Monro-Kellie 學說
 顱腔為不可擴張的密閉空間（成年動物顱骨癒合後），其內容物分為三大成分：
-- **腦實質**（Brain Parenchyma）：約占 80%，不可壓縮
-- **腦脊髓液**（CSF）：約占 10%，可透過加速吸收與減少產生來代償
-- **血液**（Blood）：約占 10%，可透過靜脈回流增加來代償
+- 腦實質（Brain Parenchyma）：約占 80%，不可壓縮
+- 腦脊髓液（CSF）：約占 10%，可透過加速吸收與減少產生來代償
+- 血液（Blood）：約占 10%，可透過靜脈回流增加來代償
 
-當任一成分體積增加時（如腫瘤佔位、腦水腫、水腦症），其他成分必須減少以維持 ICP 正常。代償能力有限——一旦耗盡，ICP 將呈指數型急速上升（pressure-volume curve 的陡峭段）。
+當任一成分體積增加時（如腫瘤佔位、腦水腫、水腦症），其他成分必須減少以維持 ICP 正常。代償能力有限，一旦耗盡，ICP 將呈指數型急速上升（pressure-volume curve 的陡峭段）。
 
 ### ICP 升高的四大原因
 | 原因 | 機轉 | 常見疾病 |
 |------|------|---------|
 | 佔位性病灶 | 新增腫塊佔據顱腔空間 | 腦腫瘤、顱內血腫、膿瘍 |
 | 腦水腫 | 細胞毒性（cytotoxic）或血管源性（vasogenic）水腫增加腦實質體積 | 腦外傷、腦炎、缺血後再灌流損傷 |
-| 水腦症 | CSF 產生/循環/吸收障礙 → CSF 蓄積 | 先天性水腦、腫瘤阻塞導水管 |
+| 水腦症 | CSF 產生/循環/吸收障礙，CSF 蓄積 | 先天性水腦、腫瘤阻塞導水管 |
 | 顱內出血 | 血液佔據顱腔空間 + 繼發血管痙攣 | 凝血障礙、血管畸形、外傷 |
 
 ### Cushing 反應（Cushing Response）
-ICP 極度升高壓迫腦幹 → 缺血刺激血管運動中樞 → 交感神經過度活化 → 全身性高血壓 → 壓力感受器反射性心搏過緩 → 呼吸中樞受壓產生不規則呼吸。此三聯徵為腦幹壓迫的危險訊號，提示即將發生腦疝。
+ICP 極度升高壓迫腦幹，最後缺血刺激血管運動中樞，接著交感神經過度活化。全身性高血壓，壓力感受器反射性心搏過緩然後呼吸中樞受壓產生不規則呼吸。此三聯徵為腦幹壓迫的危險訊號，提示即將發生腦疝。
 
 ### 腦灌流壓與腦疝
-- **CPP = MAP - ICP**：維持腦灌流的驅動壓力
+- CPP = MAP - ICP：維持腦灌流的驅動壓力
 - 目標 CPP > 50 mmHg（犬），低於此值腦缺血風險急增
-- **天幕疝（Transtentorial Herniation）**：大腦顳葉內側（uncus）向下疝入天幕裂孔 → 壓迫同側動眼神經（CN III）→ 同側瞳孔散大、對光反射消失 → 壓迫中腦 → 意識急劇下降
-- **枕骨大孔疝（Foramen Magnum Herniation）**：小腦扁桃體向下疝入枕骨大孔 → 壓迫延髓 → 呼吸驟停 → 死亡
+- 天幕疝（Transtentorial Herniation）：大腦顳葉內側（uncus）向下疝入天幕裂孔，最後壓迫同側動眼神經（CN III），接著同側瞳孔散大、對光反射消失，跟著壓迫中腦，意識急劇下降
+- 枕骨大孔疝（Foramen Magnum Herniation）：小腦扁桃體向下疝入枕骨大孔，壓迫延髓，最後呼吸驟停，接著死亡
 
 ### ICP 管理藥物原則
 
@@ -3322,17 +3322,17 @@ ICP 極度升高壓迫腦幹 → 缺血刺激血管運動中樞 → 交感神經
 
 ## 二、重要概念 (Key Concepts)
 
-- **ICP 監測**：犬貓臨床中直接 ICP 監測（顱內壓力探頭）使用率低，主要依賴臨床徵兆（意識程度、瞳孔反應、修正 Glasgow 昏迷量表）間接評估
-- **修正 Glasgow 昏迷量表（MGCS）**：評估運動活動（1-6）、腦幹反射（1-6）、意識程度（1-6），總分 3-18，≤ 8 分提示嚴重 ICP 升高與不良預後
-- **30 度頭部抬高**：促進靜脈回流降低 ICP，為最簡易且無創的第一線措施
-- **過度換氣**：短暫降低 PaCO₂ → 腦血管收縮 → 減少顱內血容積 → 降低 ICP，但效果短暫且可能加重缺血，僅作為橋接措施
+- ICP 監測：犬貓臨床中直接 ICP 監測（顱內壓力探頭）使用率低，主要依賴臨床徵兆（意識程度、瞳孔反應、修正 Glasgow 昏迷量表）間接評估
+- 修正 Glasgow 昏迷量表（MGCS）：評估運動活動（1-6）、腦幹反射（1-6）、意識程度（1-6），總分 3-18，≤ 8 分提示嚴重 ICP 升高與不良預後
+- 30 度頭部抬高：促進靜脈回流降低 ICP，為最簡易且無創的第一線措施
+- 過度換氣：短暫降低 PaCO₂。腦血管收縮，減少顱內血容積然後降低 ICP，但效果短暫且可能加重缺血，僅作為橋接措施
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 頸靜脈壓迫（如頸圈過緊、頸靜脈採血）會阻礙靜脈回流加重 ICP 升高——顱內壓升高疑慮的患者應使用胸帶而非頸圈
-- Cushing 反應為晚期腦幹壓迫徵兆——出現時可能已接近不可逆腦疝
+- 頸靜脈壓迫（如頸圈過緊、頸靜脈採血）會阻礙靜脈回流加重 ICP 升高，顱內壓升高疑慮的患者應使用胸帶而非頸圈
+- Cushing 反應為晚期腦幹壓迫徵兆，出現時可能已接近不可逆腦疝
 - Mannitol 反覆給予可因血腦屏障破損導致藥物滲入腦組織，引起反彈性 ICP 升高
-- 過度換氣雖可降低 ICP，但 PaCO₂ < 30 mmHg 可能加重腦缺血——僅作為暫時橋接
+- 過度換氣雖可降低 ICP，但 PaCO₂ < 30 mmHg 可能加重腦缺血，僅作為暫時橋接
 - 犬貓低血壓時優先選擇高張食鹽水而非 Mannitol（Mannitol 的利尿效應可能加重低血壓）
 
 ## 四、人醫借鑒 (Translational Insights)
@@ -3350,13 +3350,13 @@ ICP 極度升高壓迫腦幹 → 缺血刺激血管運動中樞 → 交感神經
 | Mannitol vs 高張食鹽水的優劣比較 | 人醫系統性回顧提示高張食鹽水可能更優，獸醫直接比較研究不足 | Level III |
 | 犬 MGCS 的預後預測準確度 | 原始研究 MGCS ≤ 8 分 48 小時死亡率約 50%，但後續驗證研究結果不一致 | Level III |
 | 類固醇在 ICP 管理中的角色 | 對血管源性水腫（腫瘤周圍水腫）有效，但對細胞毒性水腫（外傷）無效甚至有害 | Level II |`,
-  clinical_pearl: 'Cushing 反應（心搏過緩 + 高血壓 + 呼吸異常）的出現代表腦幹已受到嚴重壓迫，是即將發生腦疝的危險訊號。在臨床上，當你看到一隻意識逐漸惡化的犬貓突然出現心搏過緩與血壓升高時，不要直覺性地給予 Atropine 或降壓藥——應立即啟動降低 ICP 的措施：30 度頭部抬高 + Mannitol 0.5-1 g/kg IV + 確保呼吸道通暢。記住 CPP = MAP - ICP，維持足夠的 MAP 同時降低 ICP 才是保護腦灌流的關鍵。',
+  clinical_pearl: 'Cushing 反應（心搏過緩 + 高血壓 + 呼吸異常）的出現代表腦幹已受到嚴重壓迫，是即將發生腦疝的危險訊號。在臨床上，當你看到一隻意識逐漸惡化的犬貓突然出現心搏過緩與血壓升高時，不要直覺性地給予 Atropine 或降壓藥，應立即啟動降低 ICP 的措施：30 度頭部抬高 + Mannitol 0.5-1 g/kg IV + 確保呼吸道通暢。記住 CPP = MAP - ICP，維持足夠的 MAP 同時降低 ICP 才是保護腦灌流的關鍵。',
   common_mistakes: [
-    '將 Cushing 反應中的心搏過緩用 Atropine 治療——心搏過緩是壓力感受器對高血壓的代償反應，根本原因是 ICP 升高',
-    '在低血壓患者使用 Mannitol——Mannitol 的滲透性利尿效應可能加重低血壓與組織灌流不足',
-    '過度依賴過度換氣降低 ICP——PaCO₂ 過低（< 30 mmHg）導致腦血管過度收縮與缺血',
-    '忽略頸靜脈回流阻塞對 ICP 的影響——頸圈、不當保定姿勢、頸部壓迫均可加重 ICP 升高',
-    '反覆使用 Mannitol 未考慮反彈效應——血腦屏障破損時 Mannitol 滲入腦組織可反彈性升高 ICP',
+    '將 Cushing 反應中的心搏過緩用 Atropine 治療，心搏過緩是壓力感受器對高血壓的代償反應，根本原因是 ICP 升高',
+    '在低血壓患者使用 Mannitol，Mannitol 的滲透性利尿效應可能加重低血壓與組織灌流不足',
+    '過度依賴過度換氣降低 ICP，PaCO₂ 過低（< 30 mmHg）導致腦血管過度收縮與缺血',
+    '忽略頸靜脈回流阻塞對 ICP 的影響，頸圈、不當保定姿勢、頸部壓迫均可加重 ICP 升高',
+    '反覆使用 Mannitol 未考慮反彈效應，血腦屏障破損時 Mannitol 滲入腦組織可反彈性升高 ICP',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -3379,7 +3379,7 @@ ICP 極度升高壓迫腦幹 → 缺血刺激血管運動中樞 → 交感神經
   created_at: now,
 };
 
-/** 顱內腫瘤 — 疾病型 */
+/** 顱內腫瘤 - 疾病型 */
 const contentBrainTumor: NodeContent = {
   id: 'CONTENT-NEURO-L3-008',
   node_id: 'NEURO-L3-008',
@@ -3396,7 +3396,7 @@ const contentBrainTumor: NodeContent = {
     '好發年齡：犬 > 5 歲，貓 > 8 歲；犬膠質瘤好發短頭品種（Boxer、Boston Terrier、French Bulldog），腦膜瘤好發長頭品種（Golden Retriever、GSD）',
     '貓腦膜瘤特點：前腦好發、邊界清晰（well-demarcated）、對比增強明顯均勻、腫瘤可剝離腦膜（surgical accessibility），手術後中位存活時間 > 2 年',
     '犬膠質瘤特點：侵襲性高（infiltrative）、邊界不清、MRI 對比增強可為環狀或不均勻、手術完全切除困難、預後較差',
-    '脈絡叢腫瘤（Choroid Plexus Tumor）：CPP（良性）vs CPC（惡性），產生過多 CSF 或阻塞 CSF 流通 → 阻塞性水腦症',
+    '脈絡叢腫瘤（Choroid Plexus Tumor）：CPP（良性）vs CPC（惡性），產生過多 CSF 或阻塞 CSF 流通，最後阻塞性水腦症',
     '繼發性癲癇為最常見的首發症狀（犬顱內腫瘤約 50-80% 伴發癲癇）',
     'MRI 對比增強為診斷金標準：腦膜瘤呈均勻強增強 + dural tail sign；膠質瘤呈環狀或不均勻增強',
     '治療：手術（accessible tumors）± 放射治療（SRT/SRS）± Hydroxyurea（50 mg/kg PO EOD，對腦膜瘤有部分反應率）± Phenobarbital/Levetiracetam 控制繼發癲癇',
@@ -3425,28 +3425,28 @@ const contentBrainTumor: NodeContent = {
 ### 腫瘤導致神經功能障礙的機轉
 1. 直接壓迫腦實質
 2. 腫瘤周圍血管源性水腫（peritumoral vasogenic edema）
-3. 阻塞 CSF 循環 → 阻塞性水腦症
+3. 阻塞 CSF 循環，接著阻塞性水腦症
 4. 顱內壓升高
 5. 繼發性癲癇（腫瘤周圍皮層激惹）
 
 ## 二、判讀要點 (Clinical Signs & Diagnosis)
 
 ### 臨床表現
-- **前腦腫瘤**：行為改變（性格改變、遊蕩、press heading）、視覺障礙、癲癇發作（最常見首發症狀）
-- **腦幹腫瘤**：多重腦神經麻痺、本體感覺缺失、意識改變
-- **小腦腫瘤**：共濟失調（hypermetria）、意向性震顫、姿勢異常
+- 前腦腫瘤：行為改變（性格改變、遊蕩、press heading）、視覺障礙、癲癇發作（最常見首發症狀）
+- 腦幹腫瘤：多重腦神經麻痺、本體感覺缺失、意識改變
+- 小腦腫瘤：共濟失調（hypermetria）、意向性震顫、姿勢異常
 
 ### MRI 鑑別要點
-- **腦膜瘤**：extra-axial（腦外生長）、均勻增強、broad-based dural attachment、dural tail sign、可見鈣化
-- **膠質瘤**：intra-axial（腦內生長）、邊界不清、T2/FLAIR 高訊號範圍廣、環狀增強（ring enhancement）
+- 腦膜瘤：extra-axial（腦外生長）、均勻增強、broad-based dural attachment、dural tail sign、可見鈣化
+- 膠質瘤：intra-axial（腦內生長）、邊界不清、T2/FLAIR 高訊號範圍廣、環狀增強（ring enhancement）
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 老年犬首發癲癇即應將腦腫瘤列為首要鑑別——> 5 歲犬首次癲癇約 30% 為腦腫瘤所致
+- 老年犬首發癲癇即應將腦腫瘤列為首要鑑別，> 5 歲犬首次癲癇約 30% 為腦腫瘤所致
 - 貓腦膜瘤的手術預後遠優於犬膠質瘤，不應因「腦腫瘤」而一律建議安樂死
-- MRI 未對比增強即下結論可能遺漏腫瘤——對比增強（gadolinium）為必要步驟
-- 腫瘤周圍水腫可能比腫瘤本身造成更大的佔位效應——短期 Prednisolone 可有效減輕水腫
-- Hydroxyurea 對腦膜瘤有部分反應率但非根治性——需合理設定飼主預期
+- MRI 未對比增強即下結論可能遺漏腫瘤，對比增強（gadolinium）為必要步驟
+- 腫瘤周圍水腫可能比腫瘤本身造成更大的佔位效應，短期 Prednisolone 可有效減輕水腫
+- Hydroxyurea 對腦膜瘤有部分反應率但非根治性，需合理設定飼主預期
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3463,18 +3463,18 @@ const contentBrainTumor: NodeContent = {
 | 犬腦腫瘤切片 vs 經驗性治療 | 組織學確診為金標準但手術風險高，部分臨床醫師依 MRI 經驗性治療（放射+化療） | Level III |
 | Hydroxyurea 對犬腦膜瘤的實際療效 | 回顧性研究顯示部分反應，但缺乏前瞻性隨機對照試驗 | Level IV |
 | 放射治療最佳方案（常規分次 vs 低分次 vs SRS） | 犬缺乏不同方案的直接比較研究 | Level III |`,
-  clinical_pearl: '老年犬首次癲癇發作最需警惕的鑑別診斷就是顱內腫瘤——> 5 歲犬首發癲癇約 30% 最終確診為腦腫瘤。MRI 對比增強是不可省略的步驟。若確診為腦膜瘤（尤其貓），不要放棄治療——貓腦膜瘤手術切除後中位存活時間 > 2 年，預後遠優於犬膠質瘤。\n\n【台灣流行病學】短頭品種犬（法國鬥牛犬、波士頓梗）在台灣飼養數量近年大幅增加，膠質瘤發生率可能隨之上升。台灣主要都會區已有 MRI 設備與腦外科能力的教學醫院/轉介中心。放射治療設備較稀缺，為治療的主要瓶頸。',
+  clinical_pearl: '老年犬首次癲癇發作最需警惕的鑑別診斷就是顱內腫瘤，> 5 歲犬首發癲癇約 30% 最終確診為腦腫瘤。MRI 對比增強是不可省略的步驟。若確診為腦膜瘤（尤其貓），不要放棄治療，貓腦膜瘤手術切除後中位存活時間 > 2 年，預後遠優於犬膠質瘤。\n\n【台灣流行病學】短頭品種犬（法國鬥牛犬、波士頓梗）在台灣飼養數量近年大幅增加，膠質瘤發生率可能隨之上升。台灣主要都會區已有 MRI 設備與腦外科能力的教學醫院/轉介中心。放射治療設備較稀缺，為治療的主要瓶頸。',
   common_mistakes: [
     '將老年犬首發癲癇直接歸類為特發性癲癇而未進行 MRI 排除結構性病因',
-    '僅執行 MRI 平掃（plain scan）而未使用 Gadolinium 對比增強——可能遺漏腫瘤或低估範圍',
-    '因「腦腫瘤」診斷而一律建議安樂死——貓腦膜瘤手術預後良好，不應放棄治療',
-    '忽略腫瘤周圍水腫的佔位效應——短期 Prednisolone（1-2 mg/kg/day）可有效改善臨床症狀',
-    '在未控制繼發癲癇的情況下進行麻醉誘導——術前應先用 Levetiracetam 或 Phenobarbital 達到穩態血藥濃度',
+    '僅執行 MRI 平掃（plain scan）而未使用 Gadolinium 對比增強，可能遺漏腫瘤或低估範圍',
+    '因「腦腫瘤」診斷而一律建議安樂死，貓腦膜瘤手術預後良好，不應放棄治療',
+    '忽略腫瘤周圍水腫的佔位效應，短期 Prednisolone（1-2 mg/kg/day）可有效改善臨床症狀',
+    '在未控制繼發癲癇的情況下進行麻醉誘導，術前應先用 Levetiracetam 或 Phenobarbital 達到穩態血藥濃度',
   ],
   disease_data: {
     signalment: '犬：> 5 歲。膠質瘤好發短頭品種（Boxer、Boston Terrier、French Bulldog、Staffordshire Bull Terrier），腦膜瘤好發長頭品種（Golden Retriever、GSD）及大型犬。貓：> 8 歲，腦膜瘤最常見，無明顯品種偏好。無明顯性別差異。',
     etiology: '原發性腦腫瘤病因不明，可能涉及遺傳易感性（短頭品種膠質瘤高發率提示品種遺傳因素）、環境因素與體細胞基因突變。繼發性（轉移性）腫瘤來自全身性惡性腫瘤的血行轉移（血管肉瘤、黑色素瘤、肺腺癌等）或鄰近結構的直接侵犯（鼻腔腫瘤、垂體大腺瘤）。',
-    pathogenesis: '腫瘤細胞增殖 → 佔位性病灶逐漸擴大 → 壓迫鄰近腦實質 + 腫瘤周圍血管源性水腫（VEGF 介導血腦屏障破壞）→ 顱內壓升高 + 腦組織移位 → 臨床神經功能障礙。腫瘤周圍皮層刺激 → 異常放電 → 繼發性癲癇（腦腫瘤犬 50-80% 伴發癲癇）。',
+    pathogenesis: '腫瘤細胞慢慢增殖，佔位性病灶愈撐愈大，壓迫鄰近腦實質的同時，腫瘤周圍血管源性水腫（VEGF 介導血腦屏障破壞）也跟著來，最後就是顱內壓升高加上腦組織移位，跑出臨床神經功能障礙。腫瘤周圍皮層被激惹會出現異常放電，這就是繼發性癲癇（腦腫瘤犬 50-80% 會伴發癲癇）。',
     clinical_signs: [
       { sign: '癲癇發作', category: 'primary', description: '最常見首發症狀（50-80%），前腦腫瘤尤其常見，可為局灶性或全身性' },
       { sign: '行為改變', category: 'primary', description: '前腦腫瘤：性格改變、漫無目的遊蕩（pacing）、press heading、反應遲鈍' },
@@ -3489,11 +3489,11 @@ const contentBrainTumor: NodeContent = {
       { condition: '特發性癲癇', key_differentiator: '首發年齡 6 月-6 歲、發作間期神經學檢查正常、MRI 正常' },
       { condition: '腦膿瘍', key_differentiator: 'MRI 環狀增強伴中央不增強區（ring-enhancing lesion），可有發燒與白血球升高' },
     ],
-    diagnostic_workup: '1. 神經學檢查（定位：前腦/腦幹/小腦/多灶性）→ 2. 基礎血檢（CBC、生化）排除代謝性病因 + 胸腹影像排除原發腫瘤 → 3. MRI 平掃 + Gadolinium 對比增強（金標準：腫瘤位置、大小、邊界、增強模式、水腫範圍）→ 4. CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿有腦疝風險）→ 5. 組織學確診（手術活檢或立體定位穿刺活檢，為分型金標準但非必須）',
-    treatment_protocol: '多模式治療：1. 支持治療：Phenobarbital 2-5 mg/kg PO BID 或 Levetiracetam 20 mg/kg PO TID 控制癲癇 + Prednisolone 1-2 mg/kg/day 減輕腫瘤周圍水腫。2. 手術切除：腦膜瘤（尤其貓）為首選——邊界清晰者手術完全切除率高。3. 放射治療：術後輔助或不可手術腫瘤的主要治療（常規分次 48-54 Gy/16-20 fx 或低分次 SRS）。4. 化學治療：Hydroxyurea 50 mg/kg PO EOD（腦膜瘤有部分反應率 30-40%）。',
+    diagnostic_workup: '1. 神經學檢查（定位：前腦/腦幹/小腦/多灶性），2. 基礎血檢（CBC、生化）排除代謝性病因 + 胸腹影像排除原發腫瘤。3. MRI 平掃 + Gadolinium 對比增強（金標準：腫瘤位置、大小、邊界、增強模式、水腫範圍），4. CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿有腦疝風險），5. 組織學確診（手術活檢或立體定位穿刺活檢，為分型金標準但非必須）',
+    treatment_protocol: '多模式治療：1. 支持治療：Phenobarbital 2-5 mg/kg PO BID 或 Levetiracetam 20 mg/kg PO TID 控制癲癇 + Prednisolone 1-2 mg/kg/day 減輕腫瘤周圍水腫。2. 手術切除：腦膜瘤（尤其貓）為首選，邊界清晰者手術完全切除率高。3. 放射治療：術後輔助或不可手術腫瘤的主要治療（常規分次 48-54 Gy/16-20 fx 或低分次 SRS）。4. 化學治療：Hydroxyurea 50 mg/kg PO EOD（腦膜瘤有部分反應率 30-40%）。',
     prognosis: '腦膜瘤（貓）手術切除：MST > 24 個月，部分報告達 3-4 年。腦膜瘤（犬）手術切除：MST 約 7-16 個月。膠質瘤：保守治療 MST 約 2-4 個月，放射治療 MST 約 8-14 個月，手術困難（infiltrative）。脈絡叢乳頭狀瘤（CPP）：手術可治癒。未治療腦腫瘤（僅支持療法）：MST 約 2-4 個月。預後因子：腫瘤類型（腦膜瘤 > 膠質瘤）、手術可及性、腫瘤大小、ICP 升高程度。',
     monitoring: '治療期間：每 2-4 週監測癲癇頻率、神經功能變化、AED 血藥濃度（Phenobarbital 目標 20-30 μg/mL）。Hydroxyurea 使用期間：每 2 週 CBC 監測骨髓抑制。術後/放療後：每 2-3 個月 MRI 追蹤腫瘤大小與復發。長期：注意腫瘤復發徵兆（癲癇頻率增加、新發神經功能缺損、行為退化）。',
-    owner_communication: '顱內腫瘤的治療選擇取決於腫瘤類型、位置與動物整體狀態。貓腦膜瘤手術預後相對良好（平均存活 > 2 年），值得積極治療。犬膠質瘤預後較差但放射治療仍可延長生活品質良好的時間。繼發性癲癇可透過抗癲癇藥物良好控制。治療目標為最大化生活品質而非僅追求存活時間——定期評估生活品質量表（如 HHHHHMM Scale）有助於適時做出人道決定。',
+    owner_communication: '顱內腫瘤的治療選擇取決於腫瘤類型、位置與動物整體狀態。貓腦膜瘤手術預後相對良好（平均存活 > 2 年），值得積極治療。犬膠質瘤預後較差但放射治療仍可延長生活品質良好的時間。繼發性癲癇可透過抗癲癇藥物良好控制。治療目標為最大化生活品質而非僅追求存活時間，定期評估生活品質量表（如 HHHHHMM Scale）有助於適時做出人道決定。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -3516,7 +3516,7 @@ const contentBrainTumor: NodeContent = {
   created_at: now,
 };
 
-/** 頸椎脊髓病變 (Wobbler Syndrome) — 疾病型 */
+/** 頸椎脊髓病變 (Wobbler Syndrome) - 疾病型 */
 const contentWobbler: NodeContent = {
   id: 'CONTENT-NEURO-L3-009',
   node_id: 'NEURO-L3-009',
@@ -3538,7 +3538,7 @@ const contentWobbler: NodeContent = {
     '保守治療：NSAIDs + Gabapentin + 限制活動（避免頸部過度屈伸）+ 使用胸帶而非頸圈，約 50% 短期改善但長期易惡化',
     '手術治療：ventral slot（單節段腹側壓迫）、distraction-fusion（多節段或椎體不穩定）；術後改善率約 80%，但鄰接節段病變（adjacent segment disease, domino effect）為長期風險',
   ],
-  body: `# 頸椎脊髓病變 — Wobbler Syndrome (Cervical Spondylomyelopathy)
+  body: `# 頸椎脊髓病變，Wobbler Syndrome (Cervical Spondylomyelopathy)
 
 ## 一、主要內容 (Pathophysiology)
 
@@ -3549,26 +3549,26 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
 
 ### DA-CSM（椎間盤相關型）
 - 好發 Doberman Pinscher 中年犬（5-9 歲），占該品種 CSM > 80%
-- 病理：頸椎椎間盤慢性退化膨出（Hansen Type II）+ 背側纖維環/黃韌帶肥厚 → 腹背方向脊髓壓迫
+- 病理：頸椎椎間盤慢性退化膨出（Hansen Type II）+ 背側纖維環/黃韌帶肥厚，接著腹背方向脊髓壓迫
 - 最常見壓迫位置：C5-C6、C6-C7
 - 可為單節段或多節段壓迫
 
 ### OA-CSM（骨性相關型）
 - 好發 Great Dane 年輕犬（< 2 歲），也見於 Mastiff、Rottweiler
-- 病理：椎體畸形（vertebral body malformation）、關節突增生（articular process hypertrophy）、椎弓畸形 → 椎管狹窄
+- 病理：椎體畸形（vertebral body malformation）、關節突增生（articular process hypertrophy）、椎弓畸形，跟著椎管狹窄
 - 可能與快速生長、營養過剩（高鈣高蛋白飲食）有關
 - 最常見位置：C3-C5
 
 ### 脊髓損傷機轉
-- 慢性壓迫 → 脊髓白質去髓鞘與軸突退化（Wallerian degeneration）
-- 外側與腹側索（lateral and ventral funiculi）最先受累 → 後肢 UMN 長纖維束受損最明顯
+- 慢性壓迫，脊髓白質去髓鞘與軸突退化（Wallerian degeneration）
+- 外側與腹側索（lateral and ventral funiculi）最先受累，然後後肢 UMN 長纖維束受損最明顯
 - 動態壓迫（頸部屈伸時壓迫加重）為重要特徵
 
 ## 二、判讀要點 (Clinical Signs & Diagnosis)
 
 ### 經典步態分析
-- **後肢**：長步幅（long-strided）、痙攣性共濟失調、步態搖擺、延遲的本體感覺定位反應
-- **前肢**：短步幅（short-strided, choppy）、有時出現 floating/hypermetric 步態
+- 後肢：長步幅（long-strided）、痙攣性共濟失調、步態搖擺、延遲的本體感覺定位反應
+- 前肢：短步幅（short-strided, choppy）、有時出現 floating/hypermetric 步態
 - 此「two-engine gait」為 CSM 的經典表現
 - 頸部低頭姿勢（low head carriage）常見
 
@@ -3579,10 +3579,10 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 僅評估步態而忽略前後肢步幅差異——two-engine gait 是 CSM 的重要特徵
+- 僅評估步態而忽略前後肢步幅差異，two-engine gait 是 CSM 的重要特徵
 - 將年輕 Great Dane 的共濟失調歸因於骨骼發育問題而未進行 MRI 評估
-- 保守治療後短期改善即停止追蹤——CSM 為進行性疾病，多數保守治療犬長期會惡化
-- 手術僅處理最明顯壓迫位點而忽略鄰近節段的亞臨床壓迫——術後鄰接節段病變（domino effect）可達 20%
+- 保守治療後短期改善即停止追蹤，CSM 為進行性疾病，多數保守治療犬長期會惡化
+- 手術僅處理最明顯壓迫位點而忽略鄰近節段的亞臨床壓迫，術後鄰接節段病變（domino effect）可達 20%
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3601,16 +3601,16 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
 | 營養因素在 OA-CSM 中的角色 | 流行病學關聯但因果關係未確立 | Level IV |`,
   clinical_pearl: 'Wobbler Syndrome 的步態評估是診斷的第一步。典型的 two-engine gait（後肢長步幅痙攣性共濟失調 + 前肢短步幅 choppy 步態）在走廊上讓犬慢速行走時最明顯。評估時讓犬在平滑地面直線行走，並觀察轉圈時的後肢交叉（crossing over）。記住 Doberman 中年犬出現進行性四肢共濟失調，CSM 是最優先的鑑別診斷。\n\n【台灣流行病學】Doberman 在台灣飼養量不高但仍有固定族群，CSM 為該品種最重要的神經疾病。Great Dane 在台灣較少見。台灣具備頸椎 MRI 與 ventral slot/distraction-fusion 手術能力的轉介中心主要集中在台北、台中、台南。',
   common_mistakes: [
-    '僅觀察後肢步態而忽略前肢短步幅——前後肢步幅不一致是 CSM 的重要診斷線索',
-    '使用頸圈而非胸帶——頸圈壓迫可加重頸椎脊髓壓迫，CSM 患犬應永久改用胸帶',
-    '保守治療後短期改善即認為治癒——CSM 為進行性疾病，需定期神經學追蹤',
-    '手術僅處理單節段壓迫而忽略多節段問題——術前需完整評估 C2-T1 全頸椎',
+    '僅觀察後肢步態而忽略前肢短步幅，前後肢步幅不一致是 CSM 的重要診斷線索',
+    '使用頸圈而非胸帶，頸圈壓迫可加重頸椎脊髓壓迫，CSM 患犬應永久改用胸帶',
+    '保守治療後短期改善即認為治癒，CSM 為進行性疾病，需定期神經學追蹤',
+    '手術僅處理單節段壓迫而忽略多節段問題，術前需完整評估 C2-T1 全頸椎',
     '將 Great Dane 幼犬的後肢無力歸因於髖關節發育不良而延誤 CSM 診斷',
   ],
   disease_data: {
     signalment: 'DA-CSM：Doberman Pinscher 最好發（占 CSM 犬 > 50%），5-9 歲中年犬，雄性略多。OA-CSM：Great Dane（< 2 歲）、Mastiff、Rottweiler。其他品種亦可發生但較少見。',
     etiology: 'DA-CSM：頸椎椎間盤慢性退化（Hansen Type II）合併背側韌帶肥厚，可能有品種遺傳易感性（Doberman CSM 發病率高達 50%）。OA-CSM：先天/發育性椎體畸形 + 關節突增生，可能與快速生長期營養過剩（高鈣、高蛋白飲食）有關。兩型均涉及慢性動態與靜態脊髓壓迫。',
-    pathogenesis: '椎間盤退化膨出/椎體畸形 → 頸椎椎管有效空間減少 → 慢性脊髓壓迫（腹側為椎間盤/椎體，背側為黃韌帶/關節突）→ 白質去髓鞘 + 軸突 Wallerian 退化 → 外側索與腹側索最先受累 → 後肢 UMN 長纖維束功能障礙 → 痙攣性共濟失調。頸部屈伸動作可加重壓迫（動態壓迫成分）。',
+    pathogenesis: '椎間盤退化膨出或椎體畸形以後，頸椎椎管有效空間就少了，慢性脊髓壓迫接著來（腹側被椎間盤跟椎體壓，背側被黃韌帶跟關節突壓）。白質去髓鞘加軸突 Wallerian 退化，外側索跟腹側索最先受累，後肢 UMN 長纖維束功能掉下去，最後出現痙攣性共濟失調。頸部屈伸動作會加重壓迫（這就是動態壓迫成分）。',
     clinical_signs: [
       { sign: '後肢痙攣性共濟失調', category: 'primary', description: '長步幅（long-strided）搖擺步態，本體感覺定位反應延遲，後肢交叉（crossing over）' },
       { sign: '前肢短步幅步態', category: 'primary', description: '短步幅、choppy 步態，有時 floating/hypermetric，與後肢形成 two-engine gait' },
@@ -3620,12 +3620,12 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
     ],
     staging: null,
     differential_diagnosis: [
-      { condition: '退化性脊髓病變（DM）', key_differentiator: '後肢 UMN → LMN 進行性輕癱，無疼痛，前肢通常晚期才受累，MRI 無壓迫性病灶，SOD1 基因陽性' },
+      { condition: '退化性脊髓病變（DM）', key_differentiator: '後肢 UMN，接著LMN 進行性輕癱，無疼痛，前肢通常晚期才受累，MRI 無壓迫性病灶，SOD1 基因陽性' },
       { condition: '頸椎 IVDD（Hansen Type I）', key_differentiator: '急性發作（數小時至數日），嚴重疼痛，MRI 見急性椎間盤突出物，好發軟骨發育不全品種' },
       { condition: '顱內/高頸椎腫瘤', key_differentiator: 'MRI 見佔位性病灶伴對比增強，可有腦神經麻痺，通常為進行性但非對稱性' },
       { condition: '寰樞關節不穩定', key_differentiator: '小型犬好發（Yorkshire Terrier、Chihuahua），嚴重頸痛，C1-C2 X 光/MRI 見寰齒間距增加' },
     ],
-    diagnostic_workup: '1. 步態評估（two-engine gait 辨識）+ 神經學檢查（後肢 UMN 徵兆、前肢可 UMN 或 LMN）→ 2. 頸椎 X 光（椎間隙狹窄、椎體畸形，但敏感度與特異度有限）→ 3. MRI（金標準：矢狀面定位壓迫 + 橫切面評估壓迫方向 + T2 高訊號評估脊髓損傷 + 動態 MRI 評估屈伸時壓迫變化）→ 4. CSF 分析（排除發炎性疾病）→ 5. 電生理檢查（SSEP 可評估脊髓傳導功能，但臨床使用有限）',
+    diagnostic_workup: '1. 步態評估（two-engine gait 辨識）+ 神經學檢查（後肢 UMN 徵兆、前肢可 UMN 或 LMN），2. 頸椎 X 光（椎間隙狹窄、椎體畸形，但敏感度與特異度有限）。 MRI（金標準：矢狀面定位壓迫 + 橫切面評估壓迫方向 + T2 高訊號評估脊髓損傷 + 動態 MRI 評估屈伸時壓迫變化），4. CSF 分析（排除發炎性疾病），5. 電生理檢查（SSEP 可評估脊髓傳導功能，但臨床使用有限）',
     treatment_protocol: '保守治療（輕度病例或飼主選擇）：NSAIDs（Meloxicam 0.1 mg/kg SID）+ Gabapentin（5-10 mg/kg TID）+ Tramadol（2-5 mg/kg BID-TID）+ 限制活動（避免跑跳）+ 永久改用胸帶 + 短期 Prednisolone（急性惡化時 0.5-1 mg/kg/day tapering）。手術治療（中重度或保守治療失敗）：ventral slot（單節段腹側壓迫）、distraction-fusion with locking plate（多節段或不穩定）、dorsal laminectomy（背側壓迫為主）。術後復健（水療、被動關節運動）加速恢復。',
     prognosis: '保守治療：約 50% 短期改善但多數長期進行性惡化。手術治療：整體改善率約 80%，Doberman DA-CSM ventral slot 術後步態改善率約 80%，但術後鄰接節段病變（domino effect）發生率約 20%。OA-CSM（Great Dane）手術預後較 DA-CSM 差，可能因多節段畸形。預後不良因子：MRI T2 脊髓高訊號廣泛、多節段壓迫、不可行走、症狀持續時間長。',
     monitoring: '保守治療：每月神經學檢查評估是否進展。手術後：2 週傷口檢查，4 週神經學評估，3 個月 MRI 追蹤融合情況。長期：每 3-6 個月神經學追蹤，注意鄰接節段病變徵兆（新節段壓迫症狀）。Gabapentin/NSAIDs 長期使用需監測肝腎功能。',
@@ -3651,7 +3651,7 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
   created_at: now,
 };
 
-/** 纖維軟骨栓塞 (FCE) — 疾病型 */
+/** 纖維軟骨栓塞 (FCE) - 疾病型 */
 const contentFCE: NodeContent = {
   id: 'CONTENT-NEURO-L3-010',
   node_id: 'NEURO-L3-010',
@@ -3666,7 +3666,7 @@ const contentFCE: NodeContent = {
   ],
   key_points: [
     '超急性發作：數分鐘至數小時內達最嚴重程度，多數在運動或玩耍中發病',
-    '初始事件後無疼痛：初始可能有短暫尖叫/疼痛反應，但之後脊髓觸診無痛——與 IVDD 的持續疼痛形成鮮明對比',
+    '初始事件後無疼痛：初始可能有短暫尖叫/疼痛反應，但之後脊髓觸診無痛，與 IVDD 的持續疼痛形成鮮明對比',
     '不對稱/側化神經功能缺損：一側肢體比另一側嚴重（lateralized），符合單側血管分佈',
     '好發犬種：大型/巨型犬（Labrador、GSD、Greyhound、Irish Wolfhound），但小型犬（Miniature Schnauzer、Shetland Sheepdog）亦可發生',
     '非進行性：達最嚴重後不再惡化（通常 12-24 小時後穩定），有別於 IVDD 的可能進行性惡化',
@@ -3689,14 +3689,14 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
 - 異常血管通道（殘存胚胎血管）提供纖維軟骨物質進入脊髓血管的途徑
 
 ### 脊髓梗塞機轉
-纖維軟骨栓子 → 脊髓節段動脈（segmental artery）或中央動脈（central artery）阻塞 → 灰質（grey matter）首先受累（代謝需求高、微血管密度高）→ 缺血壞死 → 灰質軟化（myelomalacia）。梗塞範圍取決於栓塞血管大小與側支循環能力。
+纖維軟骨栓子，接著脊髓節段動脈（segmental artery）或中央動脈（central artery）阻塞。灰質（grey matter）首先受累（代謝需求高、微血管密度高），缺血壞死然後灰質軟化（myelomalacia）。梗塞範圍取決於栓塞血管大小與側支循環能力。
 
 ## 二、判讀要點 (Clinical Signs & Diagnosis)
 
 ### 臨床三大特徵
-1. **超急性發作**：通常在運動中突然發病，數分鐘至數小時內達最嚴重程度
-2. **非疼痛性**（初始事件後）：犬可能在發病瞬間尖叫，但之後脊髓觸診不引起疼痛反應
-3. **不對稱/側化**：一側肢體明顯比另一側嚴重，反映單側血管灌流區域梗塞
+1. 超急性發作：通常在運動中突然發病，數分鐘至數小時內達最嚴重程度
+2. 非疼痛性（初始事件後）：犬可能在發病瞬間尖叫，但之後脊髓觸診不引起疼痛反應
+3. 不對稱/側化：一側肢體明顯比另一側嚴重，反映單側血管灌流區域梗塞
 
 ### MRI 表現
 - T2WI：脊髓內高訊號（intramedullary hyperintensity），通常在灰質或灰白質交界處
@@ -3708,16 +3708,16 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
 | 鑑別 | FCE 特徵 | 鑑別疾病特徵 |
 |------|---------|-------------|
 | IVDD Hansen Type I | 無痛、非進行性、不對稱 | 疼痛持續、可進行性、較對稱、MRI 見壓迫 |
-| IVDD Hansen Type III | 極相似——兩者可能難以區分 | MRI 可見少量突出物 |
+| IVDD Hansen Type III | 極相似，兩者可能難以區分 | MRI 可見少量突出物 |
 | 脊椎骨折/脫位 | 無外傷史 | 有明確外傷史，X 光/CT 見骨折 |
 | 出血性脊髓梗塞 | MRI 無出血訊號 | MRI 見出血訊號（T1 高訊號、gradient echo 低訊號） |
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 將所有急性脊髓病變都當作 IVDD——FCE 的無痛、不對稱、非進行性特徵可鑑別
-- FCE 初始發病時可能有短暫疼痛（尖叫），不應因此排除 FCE——關鍵是之後的持續非疼痛性
-- 小型犬也可以發生 FCE——Miniature Schnauzer 與 Shetland Sheepdog 有報告
-- FCE 超急性期（< 12 小時）MRI 可能尚無明顯 T2 高訊號——若臨床高度懷疑但首次 MRI 正常，24-48 小時後重複 MRI
+- 將所有急性脊髓病變都當作 IVDD，FCE 的無痛、不對稱、非進行性特徵可鑑別
+- FCE 初始發病時可能有短暫疼痛（尖叫），不應所以排除 FCE，關鍵是之後的持續非疼痛性
+- 小型犬也可以發生 FCE，Miniature Schnauzer 與 Shetland Sheepdog 有報告
+- FCE 超急性期（< 12 小時）MRI 可能尚無明顯 T2 高訊號，若臨床高度懷疑但首次 MRI 正常，24-48 小時後重複 MRI
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3733,18 +3733,18 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
 | FCE vs Hansen Type III 的鑑別 | 兩者臨床與 MRI 表現可極度相似，部分學者認為兩者為同一疾病譜系的不同端 | Level IV |
 | FCE 的確切栓塞路徑 | 動脈 vs 靜脈 vs 混合，纖維軟骨如何進入血管仍有爭議 | Level IV |
 | 急性期類固醇使用 | 目前無證據支持類固醇對 FCE 有益，部分神經科醫師仍經驗性使用短期 Dexamethasone | Level IV |`,
-  clinical_pearl: 'FCE 的臨床診斷三要素——超急性、非疼痛、不對稱——是在急診中與 IVDD Hansen Type I 鑑別的關鍵。一隻大型犬在運動中突然後肢癱瘓，一側明顯比另一側嚴重，脊椎觸診不痛——高度懷疑 FCE。而臘腸犬急性後肢癱瘓伴嚴重背痛與較對稱的神經功能缺損——高度懷疑 IVDD。FCE 確診後最重要的訊息是告訴飼主：這不是 IVDD，不需要手術，積極復健是最佳治療。保留自主運動功能的犬預後良好，多數可在 6-12 週內恢復行走能力。',
+  clinical_pearl: 'FCE 的臨床診斷三要素，超急性、非疼痛、不對稱，是在急診中與 IVDD Hansen Type I 鑑別的關鍵。一隻大型犬在運動中突然後肢癱瘓，一側明顯比另一側嚴重，脊椎觸診不痛，高度懷疑 FCE。而臘腸犬急性後肢癱瘓伴嚴重背痛與較對稱的神經功能缺損，高度懷疑 IVDD。FCE 確診後最重要的訊息是告訴飼主：這不是 IVDD，不需要手術，積極復健是最佳治療。保留自主運動功能的犬預後良好，多數可在 6-12 週內恢復行走能力。',
   common_mistakes: [
-    '將 FCE 誤診為 IVDD 並進行不必要的減壓手術——FCE 無壓迫性病灶，手術無益',
-    '忽略 FCE 的不對稱性——IVDD 通常較對稱，明顯側化的急性脊髓病變應優先考慮 FCE',
-    '因初始發病時的短暫疼痛（尖叫）而排除 FCE——FCE 的特徵是持續性非疼痛，非完全無疼痛',
-    '在 FCE 急性期使用高劑量類固醇——無證據支持療效，且可能引起消化道併發症',
-    '對深痛覺喪失的 FCE 犬過早放棄——FCE 預後優於同等嚴重度的 IVDD，應給予更長的恢復觀察期',
+    '將 FCE 誤診為 IVDD 並進行不必要的減壓手術，FCE 無壓迫性病灶，手術無益',
+    '忽略 FCE 的不對稱性，IVDD 通常較對稱，明顯側化的急性脊髓病變應優先考慮 FCE',
+    '因初始發病時的短暫疼痛（尖叫）而排除 FCE，FCE 的特徵是持續性非疼痛，非完全無疼痛',
+    '在 FCE 急性期使用高劑量類固醇，無證據支持療效，且可能引起消化道併發症',
+    '對深痛覺喪失的 FCE 犬過早放棄，FCE 預後優於同等嚴重度的 IVDD，應給予更長的恢復觀察期',
   ],
   disease_data: {
     signalment: '大型/巨型犬好發：Labrador Retriever、German Shepherd Dog、Greyhound、Irish Wolfhound。小型犬亦可發生（Miniature Schnauzer、Shetland Sheepdog）。犬：成年（中位年齡 5-6 歲），貓少見但有報告。無明顯性別偏好，部分研究顯示雄性略多。',
     etiology: '椎間盤纖維軟骨物質（成分與 nucleus pulposus 相同）栓塞脊髓節段動脈或靜脈。確切進入血管的路徑未完全釐清。多數在運動或劇烈活動中發病，提示急性椎間盤內壓力變化可能為觸發因素。',
-    pathogenesis: '纖維軟骨栓子進入脊髓血管 → 節段性動脈/靜脈阻塞 → 脊髓灰質首先缺血（代謝需求高）→ 缺血性壞死（myelomalacia）→ 梗塞範圍取決於栓塞血管的大小與側支循環 → 單側為主的不對稱脊髓損傷。非進行性——栓塞一旦發生即固定，不會持續擴大。',
+    pathogenesis: '纖維軟骨栓子跑進脊髓血管以後，造成節段性動脈或靜脈阻塞，脊髓灰質先缺血（代謝需求高，最敏感）。接著就是缺血性壞死（myelomalacia），梗塞範圍看栓塞血管大小跟側支循環，臨床上多半是單側為主的不對稱脊髓損傷。這病不會進展，栓塞一旦發生就固定下來，不會繼續擴大。',
     clinical_signs: [
       { sign: '超急性肢體癱瘓/輕癱', category: 'primary', description: '數分鐘至數小時內達最嚴重程度，通常在運動中發病' },
       { sign: '不對稱/側化神經功能缺損', category: 'primary', description: '一側肢體比另一側嚴重，反映單側血管灌流區域' },
@@ -3755,16 +3755,16 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
     staging: null,
     differential_diagnosis: [
       { condition: 'IVDD Hansen Type I', key_differentiator: '持續疼痛、較對稱、可為進行性、MRI 見壓迫性病灶（突出的椎間盤物質）' },
-      { condition: 'IVDD Hansen Type III', key_differentiator: '與 FCE 極度相似——兩者可能無法 MRI 鑑別，Type III 可見少量突出物，FCE 完全無壓迫' },
+      { condition: 'IVDD Hansen Type III', key_differentiator: '與 FCE 極度相似，兩者可能無法 MRI 鑑別，Type III 可見少量突出物，FCE 完全無壓迫' },
       { condition: '脊椎骨折/脫位', key_differentiator: '有外傷史，X 光/CT 見明確骨折或脫位' },
       { condition: '出血性脊髓梗塞', key_differentiator: 'MRI 見出血訊號（T1 高訊號、gradient echo blooming artifact）' },
       { condition: '主動脈血栓栓塞（ATE，貓）', key_differentiator: '貓：後肢冰冷、股動脈脈搏消失、趾甲切面無出血，常伴 HCM' },
     ],
-    diagnostic_workup: '1. 神經學檢查（評估不對稱性、定位脊髓節段、確認非疼痛性）→ 2. 基礎血檢排除凝血異常與系統性疾病 → 3. MRI（金標準：T2WI 脊髓內高訊號、無壓迫性病灶、符合血管分佈區域；注意超急性期 < 12h 可能尚無明顯變化）→ 4. CSF 分析（排除發炎性疾病，FCE 通常正常或輕度蛋白升高）→ 5. 確診需組織病理學（臨床以推定診斷為主：典型臨床表現 + MRI 支持 + 排除其他病因）',
+    diagnostic_workup: '1. 神經學檢查（評估不對稱性、定位脊髓節段、確認非疼痛性），2. 基礎血檢排除凝血異常與系統性疾病。3. MRI（金標準：T2WI 脊髓內高訊號、無壓迫性病灶、符合血管分佈區域；注意超急性期 < 12h 可能尚無明顯變化）。4. CSF 分析（排除發炎性疾病，FCE 通常正常或輕度蛋白升高），5. 確診需組織病理學（臨床以推定診斷為主：典型臨床表現 + MRI 支持 + 排除其他病因）',
     treatment_protocol: '無手術適應症。支持性照護：尿路管理（擠壓膀胱或導尿，預防尿路感染）、褥瘡預防（翻身、軟墊）、營養支持。積極復健為核心治療：水療（underwater treadmill）、被動關節運動（PROM）、主動輔助運動、站立平衡訓練、電刺激（NMES）。復健應在穩定後盡早開始（24-48 小時內）。急性期無證據支持類固醇或其他神經保護藥物。',
     prognosis: '整體預後優於同等嚴重度的 IVDD。保留自主運動功能（能自主移動肢體）者預後良好，85-90% 可恢復行走能力（通常 6-12 週）。深痛覺存在但無自主運動者：約 50-60% 可恢復行走。深痛覺喪失者：預後謹慎但仍優於 IVDD Grade V（約 25-50% 可恢復）。預後良好因子：保留自主運動、小面積梗塞、早期積極復健。預後不良因子：深痛覺喪失、廣泛脊髓 T2 高訊號（> 2 椎體長度）、LMN 損傷為主。',
     monitoring: '急性期（1-3 天）：每 12 小時神經學評估確認非進行性。亞急性期（1-4 週）：每週神經學與步態評估追蹤恢復進度。復健期（1-3 個月）：每 2 週評估復健成效並調整計畫。長期：FCE 復發少見，恢復後通常無需長期追蹤。膀胱管理期間每週尿液培養監測感染。',
-    owner_communication: 'FCE 是一種脊髓血管意外（類似人的中風），不是椎間盤突出（IVDD），不需要手術。好消息是 FCE 不會持續惡化——發病後穩定即為最差狀態，之後只會改善或維持。積極復健（水療、物理治療）是最重要的治療。保留肢體自主運動能力的犬，絕大多數可在 6-12 週內恢復行走。即使深痛覺喪失的犬，FCE 的恢復機會也比 IVDD 更高——請不要太早放棄。復健期間需要耐心，進步可能是緩慢但持續的。',
+    owner_communication: 'FCE 是一種脊髓血管意外（類似人的中風），不是椎間盤突出（IVDD），不需要手術。好消息是 FCE 不會持續惡化，發病後穩定即為最差狀態，之後只會改善或維持。積極復健（水療、物理治療）是最重要的治療。保留肢體自主運動能力的犬，絕大多數可在 6-12 週內恢復行走。即使深痛覺喪失的犬，FCE 的恢復機會也比 IVDD 更高，請不要太早放棄。復健期間需要耐心，進步可能是緩慢但持續的。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -3787,7 +3787,7 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
   created_at: now,
 };
 
-/** 椎間盤炎 (Discospondylitis) — 疾病型 */
+/** 椎間盤炎 (Discospondylitis) - 疾病型 */
 const contentDiscospondylitis: NodeContent = {
   id: 'CONTENT-NEURO-L3-011',
   node_id: 'NEURO-L3-011',
@@ -3807,7 +3807,7 @@ const contentDiscospondylitis: NodeContent = {
     'X 光典型表現：椎體終板溶蝕（endplate lysis）+ 椎間隙狹窄或塌陷 + 反應性新骨增生（spondylosis），但變化可能延遲 2-4 週出現',
     'MRI 優勢：可在 X 光變化出現前偵測（T2WI 椎間盤與終板高訊號、T1WI 終板低訊號、對比增強明顯），且可評估脊髓壓迫與硬膜外膿瘍',
     '治療：依培養結果選擇抗生素（經驗性治療：Cephalexin 或 Amoxicillin-clavulanate），療程至少 6-8 週，以 X 光骨性癒合為停藥依據',
-    'Brucella canis：必須排除——血清學篩檢，陽性者有人畜共通傳染風險，治療困難（長期 Doxycycline + Aminoglycoside），預後謹慎',
+    'Brucella canis：必須排除，血清學篩檢，陽性者有人畜共通傳染風險，治療困難（長期 Doxycycline + Aminoglycoside），預後謹慎',
   ],
   body: `# 椎間盤炎 (Discospondylitis)
 
@@ -3819,9 +3819,9 @@ const contentDiscospondylitis: NodeContent = {
 Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection of the intervertebral disc and adjacent vertebral endplates），為犬脊椎感染最常見的形式。感染可能擴展至椎管形成硬膜外膿瘍（epidural abscess/empyema），導致脊髓壓迫。
 
 ### 感染途徑
-- **血行播散**（最常見）：遠處感染灶（泌尿道、皮膚、口腔、心內膜）的細菌經血流到達椎體終板微血管
-- **直接接種**：脊椎手術或椎間盤開窗術後感染（少見）
-- **鄰近結構擴散**：鄰近軟組織感染擴散至脊椎（少見）
+- 血行播散（最常見）：遠處感染灶（泌尿道、皮膚、口腔、心內膜）的細菌經血流到達椎體終板微血管
+- 直接接種：脊椎手術或椎間盤開窗術後感染（少見）
+- 鄰近結構擴散：鄰近軟組織感染擴散至脊椎（少見）
 
 ### 致病菌
 | 病原 | 佔比 | 特點 |
@@ -3835,16 +3835,16 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
 ## 二、判讀要點 (Clinical Signs & Diagnosis)
 
 ### 臨床表現
-- **脊椎疼痛**為最一致的臨床症狀：觸診脊椎特定位點引起疼痛反應
+- 脊椎疼痛為最一致的臨床症狀：觸診脊椎特定位點引起疼痛反應
 - 發燒（約 50% 犬可能無發燒）
 - 嗜睡、食慾下降、體重減輕
 - 神經功能缺損（約 30-50%）：取決於感染位置與脊髓壓迫程度
 - 腰薦椎感染：尾部下垂、後肢疼痛、排便排尿困難
 
 ### 影像診斷時間線
-- **X 光**（2-4 週延遲）：椎體終板溶蝕 → 椎間隙狹窄 → 反應性新骨增生。急性期 X 光可能完全正常！
-- **MRI**（早期偵測）：T2WI 椎間盤與終板高訊號 + T1WI 終板低訊號 + 對比增強明顯 + 可評估硬膜外膿瘍與脊髓壓迫
-- **CT**：骨性變化評估優於 MRI，可與 MRI 互補
+- X 光（2-4 週延遲）：椎體終板溶蝕，椎間隙狹窄，然後反應性新骨增生。急性期 X 光可能完全正常！
+- MRI（早期偵測）：T2WI 椎間盤與終板高訊號 + T1WI 終板低訊號 + 對比增強明顯 + 可評估硬膜外膿瘍與脊髓壓迫
+- CT：骨性變化評估優於 MRI，可與 MRI 互補
 
 ### 病原鑑定
 - 血液培養（敏感度約 45-75%）：需在抗生素治療前採集
@@ -3854,11 +3854,11 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 急性期 X 光正常不能排除 Discospondylitis——骨性變化延遲 2-4 週出現
-- 不是所有 Discospondylitis 犬都有發燒——約 50% 可能體溫正常
-- 未在開始抗生素前採集血液與尿液培養——一旦用藥後培養敏感度大幅下降
-- 每隻 Discospondylitis 犬都必須排除 Brucella canis——漏診有公共衛生風險
-- 抗生素療程不足（< 6 週）是復發最常見的原因——應以影像學骨性癒合為停藥依據
+- 急性期 X 光正常不能排除 Discospondylitis，骨性變化延遲 2-4 週出現
+- 不是所有 Discospondylitis 犬都有發燒，約 50% 可能體溫正常
+- 未在開始抗生素前採集血液與尿液培養，一旦用藥後培養敏感度大幅下降
+- 每隻 Discospondylitis 犬都必須排除 Brucella canis，漏診有公共衛生風險
+- 抗生素療程不足（< 6 週）是復發最常見的原因，應以影像學骨性癒合為停藥依據
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3874,20 +3874,20 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
 | 經驗性抗生素選擇 | 在培養結果出前，第一代頭孢 vs Amoxicillin-clavulanate vs Fluoroquinolone 的最佳選擇未有共識 | Level IV |
 | 抗生素最佳療程長度 | 慣例 6-8 週，但部分複雜病例可能需 3-6 個月，缺乏前瞻性研究確定最佳療程 | Level IV |
 | 硬膜外膿瘍手術引流 vs 保守治療 | 大多數可單獨抗生素治療，手術引流的適應症尚未標準化 | Level IV |`,
-  clinical_pearl: 'Discospondylitis 的診斷時間陷阱是最常被忽略的要點。一隻有脊椎疼痛與發燒的犬，X 光完全正常不能排除 Discospondylitis——骨性變化需要 2-4 週才會出現。若臨床高度懷疑（大型犬 + 脊椎局部疼痛 + 發燒 + WBC 升高），應直接安排 MRI 或在 2-3 週後重複 X 光。同時記住每一隻 Discospondylitis 犬都必須篩檢 Brucella canis——這是少數具有人畜共通傳染風險的犬神經疾病，漏診可能影響飼主健康。',
+  clinical_pearl: 'Discospondylitis 的診斷時間陷阱是最常被忽略的要點。一隻有脊椎疼痛與發燒的犬，X 光完全正常不能排除 Discospondylitis，骨性變化需要 2-4 週才會出現。若臨床高度懷疑（大型犬 + 脊椎局部疼痛 + 發燒 + WBC 升高），應直接安排 MRI 或在 2-3 週後重複 X 光。同時記住每一隻 Discospondylitis 犬都必須篩檢 Brucella canis，這是少數具有人畜共通傳染風險的犬神經疾病，漏診可能影響飼主健康。',
   common_mistakes: [
-    '急性期 X 光正常即排除 Discospondylitis——骨性變化延遲 2-4 週',
-    '開始抗生素後才採集培養——大幅降低培養陽性率',
-    '遺漏 Brucella canis 血清學篩檢——具人畜共通傳染風險',
-    '抗生素療程不足即停藥——最低 6-8 週，應以影像學骨性癒合為依據',
-    '忽略尋找原發感染灶（泌尿道感染、心內膜炎、齒科疾病）——未處理原發灶易復發',
+    '急性期 X 光正常即排除 Discospondylitis，骨性變化延遲 2-4 週',
+    '開始抗生素後才採集培養，大幅降低培養陽性率',
+    '遺漏 Brucella canis 血清學篩檢，具人畜共通傳染風險',
+    '抗生素療程不足即停藥，最低 6-8 週，應以影像學骨性癒合為依據',
+    '忽略尋找原發感染灶（泌尿道感染、心內膜炎、齒科疾病），未處理原發灶易復發',
   ],
   disease_data: {
     signalment: '大型犬好發：German Shepherd Dog、Great Dane、Rottweiler、Labrador Retriever。中年犬（平均 4-6 歲）。雄性略多（雄:雌約 2:1）。Aspergillus Discospondylitis：GSD 明顯好發。Brucella Discospondylitis：未絕育繁殖犬高風險。',
-    etiology: '感染性——細菌（Staphylococcus pseudintermedius 最常見，約 40-50%）或真菌（Aspergillus spp.）經血行途徑從遠處感染灶播散至椎體終板微血管。常見原發灶：泌尿道感染、皮膚感染、心內膜炎、口腔/齒科感染。免疫抑制（長期類固醇使用、糖尿病）為風險因子。',
-    pathogenesis: '致病菌經血行到達椎體終板微血管 → 細菌定殖於終板軟骨下骨 → 感染擴散至椎間盤（avascular structure，感染後難以清除）與鄰近椎體 → 終板骨質溶蝕 + 椎間盤壞死 + 反應性新骨增生。感染可向椎管擴散形成硬膜外膿瘍（epidural empyema）→ 脊髓壓迫 → 神經功能缺損。',
+    etiology: '感染性，細菌（Staphylococcus pseudintermedius 最常見，約 40-50%）或真菌（Aspergillus spp.）經血行途徑從遠處感染灶播散至椎體終板微血管。常見原發灶：泌尿道感染、皮膚感染、心內膜炎、口腔/齒科感染。免疫抑制（長期類固醇使用、糖尿病）為風險因子。',
+    pathogenesis: '致病菌經血行跑到椎體終板微血管，在終板軟骨下骨定殖，再擴散到椎間盤（無血管結構，感染一旦進去就難清）跟鄰近椎體。後果是終板骨質溶蝕、椎間盤壞死、反應性新骨增生。感染可以再往椎管擴散形成硬膜外膿瘍（epidural empyema），壓到脊髓就跑出神經功能缺損。',
     clinical_signs: [
-      { sign: '脊椎疼痛', category: 'primary', description: '最一致症狀——觸診特定脊椎區域引起明顯疼痛反應，可表現為弓背、行走僵硬、不願活動' },
+      { sign: '脊椎疼痛', category: 'primary', description: '最一致症狀，觸診特定脊椎區域引起明顯疼痛反應，可表現為弓背、行走僵硬、不願活動' },
       { sign: '發燒', category: 'primary', description: '約 50% 犬有發燒（> 39.5°C），但體溫正常不能排除' },
       { sign: '嗜睡/食慾下降', category: 'primary', description: '全身性感染的非特異性表現' },
       { sign: '神經功能缺損', category: 'secondary', description: '約 30-50%：取決於感染位置，輕癱、共濟失調、排尿障礙（硬膜外膿瘍壓迫脊髓時）' },
@@ -3900,11 +3900,11 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
       { condition: 'Spondylosis deformans', key_differentiator: '通常無臨床症狀（incidental finding），X 光見椎體腹側骨贅但終板完整' },
       { condition: '免疫介導性多關節炎', key_differentiator: '多關節受累、關節腫脹/疼痛、X 光無脊椎終板變化、關節液分析呈無菌性炎症' },
     ],
-    diagnostic_workup: '1. 理學檢查 + 脊椎觸診定位疼痛 → 2. CBC/生化（白血球升高、CRP 升高）→ 3. 尿液分析 + 尿液培養（檢測泌尿道原發灶）→ 4. 血液培養（抗生素使用前！2-3 組需氧/厭氧培養）→ 5. 脊椎 X 光（初始 + 2-3 週後重複）→ 6. MRI（早期偵測、評估硬膜外膿瘍與脊髓壓迫程度）→ 7. Brucella canis 血清學（RSAT 篩檢，陽性者 AGID 確認）→ 8. CT 導引椎間盤穿刺培養（培養陰性時考慮）',
-    treatment_protocol: '抗生素治療為核心：經驗性首選——Cephalexin 22 mg/kg PO BID 或 Amoxicillin-clavulanate 12.5-25 mg/kg PO BID（依培養藥敏調整）。Enrofloxacin 5-10 mg/kg PO SID 為脊椎滲透性佳的替代選擇（避免用於生長期犬）。療程：最低 6-8 週，複雜病例可達 3-6 個月。停藥依據：臨床症狀消失 + X 光/MRI 顯示骨性癒合。Aspergillus Discospondylitis：Itraconazole 5 mg/kg PO BID 長期。Brucella：Doxycycline + Aminoglycoside。硬膜外膿瘍造成嚴重脊髓壓迫時考慮手術引流。疼痛管理：Gabapentin 5-10 mg/kg TID + Tramadol PRN。',
+    diagnostic_workup: '1. 理學檢查 + 脊椎觸診定位疼痛。2. CBC/生化（白血球升高、CRP 升高），3. 尿液分析 + 尿液培養（檢測泌尿道原發灶）。4. 血液培養（抗生素使用前！2-3 組需氧/厭氧培養），5. 脊椎 X 光（初始 + 2-3 週後重複）。 MRI（早期偵測、評估硬膜外膿瘍與脊髓壓迫程度），7. Brucella canis 血清學（RSAT 篩檢，陽性者 AGID 確認），8. CT 導引椎間盤穿刺培養（培養陰性時考慮）',
+    treatment_protocol: '抗生素治療為核心：經驗性首選，Cephalexin 22 mg/kg PO BID 或 Amoxicillin-clavulanate 12.5-25 mg/kg PO BID（依培養藥敏調整）。Enrofloxacin 5-10 mg/kg PO SID 為脊椎滲透性佳的替代選擇（避免用於生長期犬）。療程：最低 6-8 週，複雜病例可達 3-6 個月。停藥依據：臨床症狀消失 + X 光/MRI 顯示骨性癒合。Aspergillus Discospondylitis：Itraconazole 5 mg/kg PO BID 長期。Brucella：Doxycycline + Aminoglycoside。硬膜外膿瘍造成嚴重脊髓壓迫時考慮手術引流。疼痛管理：Gabapentin 5-10 mg/kg TID + Tramadol PRN。',
     prognosis: '細菌性 Discospondylitis（非 Brucella）：抗生素治療反應通常良好，約 70-80% 犬臨床痊癒。無神經功能缺損者預後最佳。伴硬膜外膿瘍但及時治療者預後中等。復發率約 10-15%（多因療程不足）。Aspergillus Discospondylitis：預後謹慎至不良，需極長期抗真菌治療且復發率高。Brucella Discospondylitis：治療困難，根除率低，有公共衛生考量。預後不良因子：多灶性感染、嚴重神經功能缺損、Aspergillus/Brucella 感染、免疫抑制犬。',
     monitoring: '治療期間：每 2 週臨床評估（疼痛、體溫、神經功能）+ 每月 CBC/CRP 追蹤感染指標。影像追蹤：每 4-6 週 X 光評估骨性變化（終板溶蝕停止、新骨增生增加代表癒合）。停藥後：1 個月與 3 個月追蹤 X 光確認持續癒合，無復發徵兆。Brucella 陽性犬：終身追蹤血清學。',
-    owner_communication: 'Discospondylitis 是脊椎的感染，類似人的骨髓炎。治療需要長期抗生素（至少 6-8 週，可能更長），不能因為症狀改善就自行停藥——提前停藥是復發最常見的原因。大多數犬對抗生素治療反應良好，約 70-80% 可完全康復。若犬被診斷為 Brucella canis 感染，需特別注意這是一種人畜共通傳染病，家人（尤其免疫低下者與孕婦）可能有感染風險，需諮詢醫師。',
+    owner_communication: 'Discospondylitis 是脊椎的感染，類似人的骨髓炎。治療需要長期抗生素（至少 6-8 週，可能更長），不能因為症狀改善就自行停藥，提前停藥是復發最常見的原因。大多數犬對抗生素治療反應良好，約 70-80% 可完全康復。若犬被診斷為 Brucella canis 感染，需特別注意這是一種人畜共通傳染病，家人（尤其免疫低下者與孕婦）可能有感染風險，需諮詢醫師。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -3921,13 +3921,13 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '脊椎感染鑑別診斷基礎' },
     { type: 'journal', citation: 'Tipold A, Stein VM. Inflammatory diseases of the spine in small animals. Vet Clin North Am Small Anim Pract. 2010;40(5):871-879.', relevance: '犬脊椎炎症性疾病綜合回顧' },
     { type: 'journal', citation: 'Harris JM et al. Clinical features and outcome of dogs with discospondylitis: 69 cases (1986-2006). J Am Vet Med Assoc. 2013;242(3):359-363.', relevance: 'Discospondylitis 大規模回顧研究與預後因子' },
-    { type: 'guideline', citation: 'Sykes JE, Hartmann K, Lunn KF, et al. ACVIM Consensus Statement: 2010 ACVIM Small Animal Consensus Statement on Leptospirosis — Diagnosis, Epidemiology, Treatment, and Prevention. J Vet Intern Med. 2011;25(1):1-13.', relevance: 'ACVIM 鉤端螺旋體共識聲明（discospondylitis 重要鑑別感染源）' },
+    { type: 'guideline', citation: 'Sykes JE, Hartmann K, Lunn KF, et al. ACVIM Consensus Statement: 2010 ACVIM Small Animal Consensus Statement on Leptospirosis，Diagnosis, Epidemiology, Treatment, and Prevention. J Vet Intern Med. 2011;25(1):1-13.', relevance: 'ACVIM 鉤端螺旋體共識聲明（discospondylitis 重要鑑別感染源）' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 水腦症 (Hydrocephalus) — 疾病型 */
+/** 水腦症 (Hydrocephalus) - 疾病型 */
 const contentHydrocephalus: NodeContent = {
   id: 'CONTENT-NEURO-L3-012',
   node_id: 'NEURO-L3-012',
@@ -3947,7 +3947,7 @@ const contentHydrocephalus: NodeContent = {
     '超音波經前囟門：無需麻醉的快速篩檢工具，可即時評估腦室大小',
     'MRI 確認診斷：腦室擴張程度量化（V/B ratio）、評估阻塞位置、排除腫瘤/發炎等續發原因',
     '內科治療：Omeprazole 1 mg/kg PO BID（降低脈絡叢 CSF 產生，研究顯示可減少 CSF 產生率約 26%）+ Prednisolone 0.5-1 mg/kg/day（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑，減少 CSF 分泌）',
-    '外科治療：腦室腹腔引流管（VP shunt）——適用於內科治療反應不佳或嚴重/進行性神經功能缺損的病例，併發症包括阻塞、感染、過度引流',
+    '外科治療：腦室腹腔引流管（VP shunt），適用於內科治療反應不佳或嚴重/進行性神經功能缺損的病例，併發症包括阻塞、感染、過度引流',
   ],
   body: `# 水腦症 (Hydrocephalus)
 
@@ -3956,18 +3956,18 @@ const contentHydrocephalus: NodeContent = {
 
 
 ### CSF 循環路徑
-CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生 → 經室間孔（foramen of Monro）至第三腦室 → 經中腦導水管（mesencephalic aqueduct）至第四腦室 → 經側孔（foramen of Luschka）與正中孔（foramen of Magendie）至蛛網膜下腔 → 經蛛網膜絨毛（arachnoid villi）吸收至靜脈竇。此循環中任何環節阻塞或吸收障礙均可導致水腦症。
+CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生，接著經室間孔（foramen of Monro）至第三腦室。經中腦導水管（mesencephalic aqueduct）至第四腦室，經側孔（foramen of Luschka）與正中孔（foramen of Magendie）至蛛網膜下腔然後經蛛網膜絨毛（arachnoid villi）吸收至靜脈竇。此循環中任何環節阻塞或吸收障礙均可導致水腦症。
 
 ### 分類
-- **阻塞性/非交通性水腦症（Obstructive/Non-communicating）**：CSF 循環在腦室系統內阻塞——最常見阻塞位置為中腦導水管（先天性狹窄或腫瘤壓迫）→ 側腦室與第三腦室擴張，第四腦室正常
-- **交通性水腦症（Communicating）**：CSF 可自由流通至蛛網膜下腔，但吸收障礙（蛛網膜絨毛功能不良）或過度產生（脈絡叢乳頭瘤 CPP）→ 所有腦室均勻擴張
+- 阻塞性/非交通性水腦症（Obstructive/Non-communicating）：CSF 循環在腦室系統內阻塞，最常見阻塞位置為中腦導水管（先天性狹窄或腫瘤壓迫），最後側腦室與第三腦室擴張，第四腦室正常
+- 交通性水腦症（Communicating）：CSF 可自由流通至蛛網膜下腔，但吸收障礙（蛛網膜絨毛功能不良）或過度產生（脈絡叢乳頭瘤 CPP），接著所有腦室均勻擴張
 
 ### 先天性水腦症
 - 多為導水管發育異常（aqueductal stenosis）導致的阻塞性水腦症
 - 玩具犬品種遺傳易感性高
-- 顱骨癒合不全 → 前囟門持續開放（正常犬出生後數週即閉合）
-- 腦室擴張壓迫腦皮質 → 皮質變薄 → 認知功能障礙
-- 並非所有有開放前囟門的玩具犬都有臨床症狀——腦室擴張可為亞臨床
+- 顱骨癒合不全，跟著前囟門持續開放（正常犬出生後數週即閉合）
+- 腦室擴張壓迫腦皮質，皮質變薄，然後認知功能障礙
+- 並非所有有開放前囟門的玩具犬都有臨床症狀，腦室擴張可為亞臨床
 
 ### 後天性水腦症
 - 腫瘤阻塞 CSF 通路（脈絡叢腫瘤、室管膜瘤、腦幹腫瘤）
@@ -3982,17 +3982,17 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生 → 經室間
 - 症狀嚴重度與皮質殘餘厚度相關，不一定與腦室大小完全成正比
 
 ### 診斷工具
-- **超音波（經前囟門）**：開放前囟門犬的快速篩檢——無需麻醉，可即時測量腦室大小
-- **MRI（金標準）**：精確量化腦室擴張（V/B ratio > 0.6 提示顯著擴張）、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質厚度
-- **CT**：可替代 MRI 評估腦室大小與骨性結構
+- 超音波（經前囟門）：開放前囟門犬的快速篩檢，無需麻醉，可即時測量腦室大小
+- MRI（金標準）：精確量化腦室擴張（V/B ratio > 0.6 提示明顯擴張）、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質厚度
+- CT：可替代 MRI 評估腦室大小與骨性結構
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 開放前囟門不等於水腦症——許多玩具犬有亞臨床前囟門開放且腦室正常或輕度擴張，無臨床意義
-- 腦室擴張不等於需要治療——關鍵是是否有進行性神經功能障礙
-- Acetazolamide 長期使用可能導致代謝性酸中毒——需定期監測電解質與血氣
-- VP shunt 手術並非一勞永逸——阻塞（最常見）、感染、過度引流（slit ventricle syndrome）為主要併發症
-- 將所有玩具犬的行為異常歸因於水腦症——認知障礙（CDS）、門體分流（PSS）等也需考慮
+- 開放前囟門不等於水腦症，許多玩具犬有亞臨床前囟門開放且腦室正常或輕度擴張，無臨床意義
+- 腦室擴張不等於需要治療，關鍵是是否有進行性神經功能障礙
+- Acetazolamide 長期使用可能導致代謝性酸中毒，需定期監測電解質與血氣
+- VP shunt 手術並非一勞永逸，阻塞（最常見）、感染、過度引流（slit ventricle syndrome）為主要併發症
+- 將所有玩具犬的行為異常歸因於水腦症，認知障礙（CDS）、門體分流（PSS）等也需考慮
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -4009,34 +4009,34 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生 → 經室間
 | Omeprazole 降低 CSF 產生的長期療效 | 短期研究顯示減少約 26% CSF 產生，但長期療效與安全性數據有限 | Level III |
 | VP shunt 最佳手術時機 | 內科治療反應不佳時轉手術的時間點未標準化 | Level IV |
 | 亞臨床腦室擴張的處理 | 許多玩具犬有無症狀性腦室擴張，是否需預防性治療或僅追蹤觀察無共識 | Level IV |`,
-  clinical_pearl: '評估玩具犬品種的水腦症時，最重要的臨床判斷是區分「需要治療的水腦症」與「亞臨床腦室擴張」。許多 Chihuahua 與 Yorkshire Terrier 在 MRI 上可見輕度至中度腦室擴張但完全無臨床症狀——這些犬不需要治療。治療的決定應基於進行性神經功能障礙（癲癇頻率增加、行為持續退化、新發神經功能缺損），而非單純影像上的腦室大小。Omeprazole 1 mg/kg BID 是近年被引入的內科治療選擇，機轉為抑制脈絡叢質子泵從而降低 CSF 分泌，部分犬對此反應良好。\n\n【台灣流行病學】Chihuahua、Yorkshire Terrier、Pomeranian 等玩具犬品種在台灣飼養數量龐大，先天性水腦症在台灣臨床並不少見。經前囟門超音波為基層動物醫院可執行的快速篩檢。VP shunt 手術需轉介至具備神經外科能力的醫院。',
+  clinical_pearl: '評估玩具犬品種的水腦症時，最重要的臨床判斷是區分「需要治療的水腦症」與「亞臨床腦室擴張」。許多 Chihuahua 與 Yorkshire Terrier 在 MRI 上可見輕度至中度腦室擴張但完全無臨床症狀，這些犬不需要治療。治療的決定應基於進行性神經功能障礙（癲癇頻率增加、行為持續退化、新發神經功能缺損），而非單純影像上的腦室大小。Omeprazole 1 mg/kg BID 是近年被引入的內科治療選擇，機轉為抑制脈絡叢質子泵從而降低 CSF 分泌，部分犬對此反應良好。\n\n【台灣流行病學】Chihuahua、Yorkshire Terrier、Pomeranian 等玩具犬品種在台灣飼養數量龐大，先天性水腦症在台灣臨床並不少見。經前囟門超音波為基層動物醫院可執行的快速篩檢。VP shunt 手術需轉介至具備神經外科能力的醫院。',
   common_mistakes: [
-    '將所有有開放前囟門的玩具犬都診斷為水腦症——前囟門開放在玩具犬品種中常見且可能無臨床意義',
-    '僅依據 MRI 腦室大小決定治療——臨床症狀嚴重度與進行性才是治療決策的關鍵',
-    '長期使用 Acetazolamide 而未監測電解質——可導致代謝性酸中毒與低鉀血症',
-    'VP shunt 術後未定期追蹤——shunt 阻塞是最常見併發症，需持續監測神經功能變化',
-    '忽略後天性水腦症的續發原因——成年犬新發水腦症應積極排除腦腫瘤與發炎性疾病',
+    '將所有有開放前囟門的玩具犬都診斷為水腦症，前囟門開放在玩具犬品種中常見且可能無臨床意義',
+    '僅依據 MRI 腦室大小決定治療，臨床症狀嚴重度與進行性才是治療決策的關鍵',
+    '長期使用 Acetazolamide 而未監測電解質，可導致代謝性酸中毒與低鉀血症',
+    'VP shunt 術後未定期追蹤，shunt 阻塞是最常見併發症，需持續監測神經功能變化',
+    '忽略後天性水腦症的續發原因，成年犬新發水腦症應積極排除腦腫瘤與發炎性疾病',
   ],
   disease_data: {
     signalment: '先天性：玩具犬品種（Chihuahua、Yorkshire Terrier、Pomeranian、Maltese、English Bulldog、Lhasa Apso、Toy Poodle），幼犬至年輕犬（通常 < 1 歲出現症狀，但輕度者可能成年才表現）。後天性：任何品種與年齡，取決於原發病因（腫瘤、發炎、出血）。無明顯性別偏好。',
-    etiology: '先天性：導水管發育異常（aqueductal stenosis/atresia）為最常見原因，可能合併顱骨發育不全（open fontanelle）。遺傳因素在玩具犬品種中明確。後天性：CSF 循環通路阻塞——腦腫瘤（脈絡叢腫瘤、室管膜瘤）、腦膜炎/腦室炎後纖維化、顱內出血後蛛網膜絨毛阻塞、CSF 過度產生（脈絡叢乳頭瘤 CPP）。',
-    pathogenesis: 'CSF 產生/循環/吸收失衡 → CSF 在腦室系統內蓄積 → 腦室擴張 → 腦實質（尤其白質）壓迫與變薄 → 腦皮質功能障礙（認知、視覺、運動）。顱骨未閉合（幼犬）時腦室擴張可藉顱骨膨脹部分代償；顱骨閉合後代償能力有限，ICP 升高更快。慢性腦室擴張導致室旁白質水腫與軸突損傷（periventricular edema → transependymal CSF absorption）。',
+    etiology: '先天性：導水管發育異常（aqueductal stenosis/atresia）為最常見原因，可能合併顱骨發育不全（open fontanelle）。遺傳因素在玩具犬品種中明確。後天性：CSF 循環通路阻塞，腦腫瘤（脈絡叢腫瘤、室管膜瘤）、腦膜炎/腦室炎後纖維化、顱內出血後蛛網膜絨毛阻塞、CSF 過度產生（脈絡叢乳頭瘤 CPP）。',
+    pathogenesis: 'CSF 產生、循環、吸收三者只要失衡，CSF 就會在腦室系統內蓄積，腦室擴張。腦實質（特別是白質）被壓迫變薄，跑出腦皮質功能障礙（認知、視覺、運動都會被打到）。顱骨還沒閉合的幼犬可以靠顱骨膨脹做部分代償；顱骨閉合後就沒得代償，ICP 升得很快。慢性腦室擴張會造成室旁白質水腫加軸突損傷（periventricular edema 加 transependymal CSF absorption）。',
     clinical_signs: [
       { sign: '認知功能障礙', category: 'primary', description: '學習能力差、house-training 困難、反應遲鈍、行為異常（迴轉、press heading）' },
       { sign: '癲癇發作', category: 'primary', description: '前腦皮質壓迫導致的繼發性癲癇，可為局灶性或全身性' },
       { sign: '視覺障礙', category: 'primary', description: '雙側威脅反應減弱或消失（視皮質壓迫），PLR 通常正常' },
-      { sign: '腹外側斜視', category: 'secondary', description: '"Setting sun sign"——中腦 tectum 壓迫致眼球腹外側偏位，先天性水腦症特徵' },
-      { sign: '圓頂頭骨/前囟門開放', category: 'secondary', description: '先天性特徵——觸診頭頂可感受到顱骨缺損（open fontanelle）' },
+      { sign: '腹外側斜視', category: 'secondary', description: '"Setting sun sign"，中腦 tectum 壓迫致眼球腹外側偏位，先天性水腦症特徵' },
+      { sign: '圓頂頭骨/前囟門開放', category: 'secondary', description: '先天性特徵，觸診頭頂可感受到顱骨缺損（open fontanelle）' },
     ],
     staging: null,
     differential_diagnosis: [
-      { condition: '門體分流（PSS）', key_differentiator: '小型犬幼犬行為異常的重要鑑別——餐後血氨升高、膽汁酸異常、肝臟小，症狀與進食相關' },
-      { condition: '犬認知障礙症候群（CDS）', key_differentiator: '老年犬（> 11 歲），進行性行為改變，MRI 無腦室顯著擴張' },
+      { condition: '門體分流（PSS）', key_differentiator: '小型犬幼犬行為異常的重要鑑別，餐後血氨升高、膽汁酸異常、肝臟小，症狀與進食相關' },
+      { condition: '犬認知障礙症候群（CDS）', key_differentiator: '老年犬（> 11 歲），進行性行為改變，MRI 無腦室明顯擴張' },
       { condition: '腦膜腦炎（MUO）', key_differentiator: '小型犬年輕至中年，CSF 炎症性變化，MRI 多灶性或彌漫性病灶' },
       { condition: '顱內腫瘤伴續發水腦', key_differentiator: 'MRI 可見原發腫塊 + 阻塞性腦室擴張，中老年犬' },
     ],
-    diagnostic_workup: '1. 理學與神經學檢查（開放前囟門觸診、腹外側斜視辨識）→ 2. 超音波經前囟門（快速篩檢，無需麻醉，可即時評估腦室大小）→ 3. MRI（金標準：量化腦室擴張 V/B ratio、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質殘餘厚度）→ 4. 基礎血檢排除代謝性病因（肝功能、血氨、膽汁酸——排除 PSS）→ 5. CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿風險）',
-    treatment_protocol: '內科治療（輕度至中度症狀）：Omeprazole 1 mg/kg PO BID（降低脈絡叢 CSF 產生）+ Prednisolone 0.5-1 mg/kg/day tapering 至最低有效劑量（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑，減少 CSF 分泌）。癲癇控制：Levetiracetam 20 mg/kg PO TID 或 Phenobarbital 2-5 mg/kg PO BID。外科治療（內科反應不佳或嚴重/進行性病例）：腦室腹腔引流管（VP shunt），將 CSF 從側腦室引流至腹腔吸收。VP shunt 併發症管理：阻塞（最常見）→ 修正或更換，感染 → 移除 + 抗生素，過度引流（slit ventricle syndrome）→ 可調壓閥。',
+    diagnostic_workup: '1. 理學與神經學檢查（開放前囟門觸診、腹外側斜視辨識），2. 超音波經前囟門（快速篩檢，無需麻醉，可即時評估腦室大小）。3. MRI（金標準：量化腦室擴張 V/B ratio、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質殘餘厚度），4. 基礎血檢排除代謝性病因（肝功能、血氨、膽汁酸，排除 PSS）。 CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿風險）',
+    treatment_protocol: '內科治療（輕度至中度症狀）：Omeprazole 1 mg/kg PO BID（降低脈絡叢 CSF 產生）+ Prednisolone 0.5-1 mg/kg/day tapering 至最低有效劑量（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑，減少 CSF 分泌）。癲癇控制：Levetiracetam 20 mg/kg PO TID 或 Phenobarbital 2-5 mg/kg PO BID。外科治療（內科反應不佳或嚴重/進行性病例）：腦室腹腔引流管（VP shunt），將 CSF 從側腦室引流至腹腔吸收。VP shunt 併發症怎麼處理？阻塞最常見，要修正或更換；感染就移除加抗生素；過度引流（slit ventricle syndrome）用可調壓閥處理。',
     prognosis: '先天性水腦症（輕度）：內科治療可穩定多數犬的神經功能，生活品質可接受。先天性水腦症（中重度）：VP shunt 手術成功率約 70-80%，術後神經功能可改善但可能殘留認知缺陷。VP shunt 併發症發生率約 20-30%（阻塞為主）。後天性水腦症：取決於原發病因的可治療性。預後良好因子：輕度臨床症狀、內科治療反應良好、腦皮質厚度 > 10 mm。預後不良因子：嚴重皮質變薄、持續進行性惡化、多重神經功能缺損、VP shunt 反覆阻塞。',
     monitoring: '內科治療：每 2-4 週臨床評估神經功能變化 + 癲癇頻率記錄。Acetazolamide 使用期間：每月電解質與血氣監測。VP shunt 術後：每月神經學檢查（前 3 個月），之後每 3-6 個月。注意 shunt 阻塞徵兆（症狀突然惡化、前囟門膨隆感增加）。MRI 追蹤：術後 3 個月與 6 個月評估腦室大小變化。長期：癲癇藥物血藥濃度監測。',
     owner_communication: '水腦症是腦脊髓液在腦中蓄積過多導致腦室擴張的疾病。先天性水腦症在玩具犬品種中較常見。輕度病例可透過藥物治療（降低腦脊髓液產生的藥物 + 癲癇藥物）控制症狀。藥物反應不佳的中重度病例可考慮腦室引流管手術（VP shunt），手術成功率約 70-80%，但引流管阻塞是常見的長期併發症。治療目標為控制症狀、維持生活品質，而非治癒。部分犬即使接受治療仍可能有學習能力較差或輕度行為異常等殘留缺陷。',
@@ -4062,7 +4062,7 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生 → 經室間
   created_at: now,
 };
 
-/** 腰薦椎疾病 (Lumbosacral Disease / Cauda Equina) — 疾病型 */
+/** 腰薦椎疾病 (Lumbosacral Disease / Cauda Equina) - 疾病型 */
 const contentLumbosacral: NodeContent = {
   id: 'CONTENT-NEURO-L3-013',
   node_id: 'NEURO-L3-013',
@@ -4077,10 +4077,10 @@ const contentLumbosacral: NodeContent = {
   ],
   key_points: [
     'GSD 極高好發率（占腰薦椎疾病犬 > 50%），中年至老年（5-8 歲），其他大型犬亦可發生',
-    'L7-S1 為犬腰薦椎交界處，脊髓在 L5-L6 終止（conus medullaris），L7-S1 以下為馬尾神經根（cauda equina）——壓迫為 LMN 損傷',
-    '多重壓迫因子：L7-S1 椎間盤退化膨出（Hansen Type II）+ 黃韌帶肥厚 + 關節突增生 + 骨性終板增生 → 椎管與椎間孔狹窄',
+    'L7-S1 為犬腰薦椎交界處，脊髓在 L5-L6 終止（conus medullaris），L7-S1 以下為馬尾神經根（cauda equina），壓迫為 LMN 損傷',
+    '多重壓迫因子：L7-S1 椎間盤退化膨出（Hansen Type II）+ 黃韌帶肥厚 + 關節突增生 + 骨性終板增生，跟著椎管與椎間孔狹窄',
     '腰薦部疼痛為最常見症狀：夾尾（tail tucking）、不願跳躍/爬樓梯/上車、腰薦部觸診疼痛、Lord test（過度伸展腰薦部）陽性',
-    '後肢跛行：坐骨神經受壓 → 後肢跛行，常被誤診為髖關節疾病',
+    '後肢跛行：坐骨神經受壓，後肢跛行，常被誤診為髖關節疾病',
     '嚴重病例：尿失禁（膀胱張力下降，LMN bladder）、糞失禁（肛門張力下降）、尾部下垂無力',
     'MRI 金標準：矢狀面評估 L7-S1 壓迫 + 動態 MRI（伸展位壓迫加重）+ T2WI 評估馬尾神經水腫',
     '保守治療：Gabapentin 5-10 mg/kg TID + Meloxicam 0.1 mg/kg SID + 限制運動（尤其跳躍） + 體重管理 + 物理治療',
@@ -4102,10 +4102,10 @@ const contentLumbosacral: NodeContent = {
 
 ### 壓迫機轉
 DLSS 為多因素疾病，壓迫來自多個方向：
-- **腹側**：L7-S1 椎間盤退化膨出（Hansen Type II）+ 終板骨贅
-- **背側**：黃韌帶肥厚（ligamentum flavum hypertrophy）
-- **側方**：關節突增生（articular process hypertrophy）→ 椎間孔狹窄壓迫神經根
-- **動態成分**：腰薦椎過度伸展（extension）時壓迫加重——工作犬/運動犬的風險因子
+- 腹側：L7-S1 椎間盤退化膨出（Hansen Type II）+ 終板骨贅
+- 背側：黃韌帶肥厚（ligamentum flavum hypertrophy）
+- 側方：關節突增生（articular process hypertrophy），然後椎間孔狹窄壓迫神經根
+- 動態成分：腰薦椎過度伸展（extension）時壓迫加重，工作犬/運動犬的風險因子
 
 ### GSD 品種易感性
 - GSD 腰薦椎生物力學異常（L7-S1 過度活動性）
@@ -4115,30 +4115,30 @@ DLSS 為多因素疾病，壓迫來自多個方向：
 ## 二、判讀要點 (Clinical Signs & Diagnosis)
 
 ### 臨床表現
-- **腰薦部疼痛**（最常見、最一致）：
+- 腰薦部疼痛（最常見、最一致）：
   - 夾尾（tail tucking）、不願跳躍/爬樓梯/上車
   - 腰薦部觸診疼痛反應
-  - Lord test 陽性：固定骨盆，將腰薦部過度伸展（lordosis）→ 引起疼痛反應
-- **後肢跛行**：坐骨神經壓迫 → 單側或雙側後肢跛行（lameness vs paresis）
-- **嚴重/晚期**：
+  - Lord test 陽性：固定骨盆，將腰薦部過度伸展（lordosis），最後引起疼痛反應
+- 後肢跛行：坐骨神經壓迫，接著單側或雙側後肢跛行（lameness vs paresis）
+- 嚴重/晚期：
   - 尿失禁（LMN bladder：膀胱膨大、易溢流、殘尿量增加）
   - 糞失禁（肛門張力下降）
   - 尾部下垂無力
   - 後肢肌肉萎縮（臀肌、股後肌群）
 
 ### 診斷工具
-- **MRI**（金標準）：矢狀面與橫切面評估壓迫位置與程度 + 動態 MRI（屈伸位比較）+ T2WI 評估馬尾神經水腫與椎間盤退化程度
-- **CT**：骨性結構評估優於 MRI（關節突增生、椎間孔狹窄的骨性成分），與 MRI 互補
-- **肌電圖（EMG）**：評估 L6-S3 支配肌群的去神經支配程度，協助判斷手術必要性
-- **X 光**：可見 L7-S1 椎間隙狹窄、骨贅、腰薦椎活動異常（屈伸比較片），但敏感度與特異度有限
+- MRI（金標準）：矢狀面與橫切面評估壓迫位置與程度 + 動態 MRI（屈伸位比較）+ T2WI 評估馬尾神經水腫與椎間盤退化程度
+- CT：骨性結構評估優於 MRI（關節突增生、椎間孔狹窄的骨性成分），與 MRI 互補
+- 肌電圖（EMG）：評估 L6-S3 支配肌群的去神經支配程度，協助判斷手術必要性
+- X 光：可見 L7-S1 椎間隙狹窄、骨贅、腰薦椎活動異常（屈伸比較片），但敏感度與特異度有限
 
 ## 三、常見陷阱 (Common Pitfalls)
 
-- 腰薦椎疾病常被誤診為髖關節發育不良（HD）——兩者可共存於 GSD，但 Lord test 與 careful palpation 可區分
-- 尿失禁的晚期病例可能被轉介至內科排除泌尿系統疾病——腰薦椎疾病的 LMN bladder 是重要鑑別
-- X 光正常不能排除 DLSS——軟組織壓迫（椎間盤膨出、韌帶肥厚）X 光看不到
+- 腰薦椎疾病常被誤診為髖關節發育不良（HD），兩者可共存於 GSD，但 Lord test 與 careful palpation 可區分
+- 尿失禁的晚期病例可能被轉介至內科排除泌尿系統疾病，腰薦椎疾病的 LMN bladder 是重要鑑別
+- X 光正常不能排除 DLSS，軟組織壓迫（椎間盤膨出、韌帶肥厚）X 光看不到
 - 雙側後肢肌肉萎縮可能被歸因於年齡相關萎縮而忽略腰薦椎壓迫
-- 保守治療需包含體重管理與運動限制——僅給予止痛藥不足以控制病程
+- 保守治療需包含體重管理與運動限制，僅給予止痛藥不足以控制病程
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -4156,24 +4156,24 @@ DLSS 為多因素疾病，壓迫來自多個方向：
 | 手術方式選擇（laminectomy ± foraminotomy ± discectomy ± fixation） | 不同組合的比較研究有限 | Level III |
 | 硬膜外類固醇注射的長期療效 | 短期止痛效果正面但長期數據不足 | Level III |
 | GSD 預防性繁殖篩檢 | 目前無可靠的影像或基因篩檢方法可在症狀前預測 DLSS | Level IV |`,
-  clinical_pearl: 'GSD 中年犬出現「不願跳躍 + 夾尾 + 後肢跛行」三聯徵時，腰薦椎疾病應為首要懷疑。診間中最實用的理學檢查是 Lord test——一手固定骨盆，另一手將尾根向背側過度伸展（creating lordosis at L7-S1）——若引起明顯疼痛反應則高度提示腰薦椎壓迫。注意這些犬常同時有髖關節發育不良，區分兩者的疼痛來源需要仔細的觸診技巧。若 Lord test 陽性且 Ortolani test 陰性，腰薦椎疾病可能是主要疼痛來源。\n\n【台灣流行病學】GSD 在台灣飼養量不少（警犬/工作犬/家庭犬），腰薦椎疾病是該品種中老年最常見的退行性神經疾病之一。台灣炎熱氣候使犬隻活動量可能減少，但工作犬族群高強度運動仍為 DLSS 風險因子。台灣具備腰薦椎 MRI 與 dorsal laminectomy 手術能力的轉介中心主要在都會區。',
+  clinical_pearl: 'GSD 中年犬出現「不願跳躍 + 夾尾 + 後肢跛行」三聯徵時，腰薦椎疾病應為首要懷疑。診間中最實用的理學檢查是 Lord test，一手固定骨盆，另一手將尾根向背側過度伸展（creating lordosis at L7-S1），若引起明顯疼痛反應則高度提示腰薦椎壓迫。注意這些犬常同時有髖關節發育不良，區分兩者的疼痛來源需要仔細的觸診技巧。若 Lord test 陽性且 Ortolani test 陰性，腰薦椎疾病可能是主要疼痛來源。\n\n【台灣流行病學】GSD 在台灣飼養量不少（警犬/工作犬/家庭犬），腰薦椎疾病是該品種中老年最常見的退行性神經疾病之一。台灣炎熱氣候使犬隻活動量可能減少，但工作犬族群高強度運動仍為 DLSS 風險因子。台灣具備腰薦椎 MRI 與 dorsal laminectomy 手術能力的轉介中心主要在都會區。',
   common_mistakes: [
-    '將 GSD 後肢跛行全部歸因於髖關節發育不良——必須同時評估腰薦椎，兩者可共存',
-    '僅做 X 光評估即排除 DLSS——軟組織壓迫（椎間盤、韌帶）需 MRI 才能評估',
-    '忽略 Lord test——這是最敏感的腰薦椎疼痛誘發試驗',
+    '將 GSD 後肢跛行全部歸因於髖關節發育不良，必須同時評估腰薦椎，兩者可共存',
+    '僅做 X 光評估即排除 DLSS，軟組織壓迫（椎間盤、韌帶）需 MRI 才能評估',
+    '忽略 Lord test，這是最敏感的腰薦椎疼痛誘發試驗',
     '將 LMN bladder 的尿失禁僅歸因於泌尿系統疾病而忽略神經學檢查',
-    '保守治療僅給予 NSAIDs 而未搭配 Gabapentin、體重管理與運動限制——多模式治療效果更佳',
+    '保守治療僅給予 NSAIDs 而未搭配 Gabapentin、體重管理與運動限制，多模式治療效果更佳',
   ],
   disease_data: {
     signalment: 'German Shepherd Dog 極高好發率（占 DLSS 犬 > 50%），5-8 歲中年至老年。其他大型犬亦可發生（Labrador、Rottweiler、Boxer、Dalmatian）。雄性略多（雄:雌約 1.5-2:1）。工作犬（警犬、軍犬、敏捷犬）因高強度運動為額外風險因子。',
-    etiology: '多因素退化性疾病：L7-S1 椎間盤退化（Hansen Type II 膨出）+ 黃韌帶肥厚 + 關節突增生與肥厚 + 腰薦椎不穩定性 → 椎管與椎間孔狹窄 → 馬尾神經根壓迫。GSD 品種遺傳易感性（L7-S1 過度活動性與生物力學異常）。高強度運動加速退化過程。',
-    pathogenesis: 'L7-S1 承受犬脊椎最大的生物力學應力（前伸/後伸/旋轉）→ 椎間盤加速退化膨出 + 黃韌帶代償性肥厚 + 關節突反應性增生 → 椎管與椎間孔有效空間縮減 → 馬尾神經根（L7、S1-S3、Cd 神經根）機械性壓迫與缺血 → 神經根脫髓鞘與軸突損傷 → 疼痛（感覺神經根）+ 功能缺損（運動神經根）。過度伸展動作（跳躍、上坡）加重壓迫（動態因素）。',
+    etiology: '多因素退化性疾病：L7-S1 椎間盤退化（Hansen Type II 膨出）+ 黃韌帶肥厚 + 關節突增生與肥厚 + 腰薦椎不穩定性，跟著椎管與椎間孔狹窄，馬尾神經根壓迫。GSD 品種遺傳易感性（L7-S1 過度活動性與生物力學異常）。高強度運動加速退化過程。',
+    pathogenesis: 'L7-S1 是犬脊椎承受最大生物力學應力的位置（前伸、後伸、旋轉都要扛），椎間盤加速退化膨出、黃韌帶代償性肥厚、關節突反應性增生一起來，把椎管跟椎間孔空間擠掉。馬尾神經根（L7、S1-S3、Cd 神經根）受到機械性壓迫加缺血，神經根脫髓鞘加軸突損傷後，感覺神經根痛、運動神經根功能掉。過度伸展動作（跳躍、上坡）會加重壓迫，這就是動態因素。',
     clinical_signs: [
       { sign: '腰薦部疼痛', category: 'primary', description: '夾尾、不願跳躍/爬樓梯/上車、腰薦部觸診疼痛、Lord test 陽性' },
       { sign: '後肢跛行', category: 'primary', description: '坐骨神經壓迫導致單側或雙側後肢跛行，運動後加重' },
       { sign: '後肢肌肉萎縮', category: 'primary', description: '臀肌、股後肌群（hamstrings）與腓腸肌萎縮，慢性壓迫的去神經表現' },
-      { sign: '尿失禁', category: 'secondary', description: '嚴重病例：LMN bladder（膀胱膨大、殘尿量增加、溢流性尿失禁）——S1-S3 神經根壓迫' },
-      { sign: '糞失禁/尾部下垂', category: 'secondary', description: '嚴重病例：肛門張力下降、尾部無力下垂——陰部神經與尾神經壓迫' },
+      { sign: '尿失禁', category: 'secondary', description: '嚴重病例：LMN bladder（膀胱膨大、殘尿量增加、溢流性尿失禁），S1-S3 神經根壓迫' },
+      { sign: '糞失禁/尾部下垂', category: 'secondary', description: '嚴重病例：肛門張力下降、尾部無力下垂，陰部神經與尾神經壓迫' },
     ],
     staging: null,
     differential_diagnosis: [
@@ -4183,11 +4183,11 @@ DLSS 為多因素疾病，壓迫來自多個方向：
       { condition: '腰薦椎腫瘤', key_differentiator: 'MRI 見佔位性病灶伴對比增強，進行性惡化速度較 DLSS 快' },
       { condition: '骨關節炎（膝關節/跗關節）', key_differentiator: '關節觸診疼痛/腫脹，X 光見關節退化，Lord test 陰性' },
     ],
-    diagnostic_workup: '1. 步態評估 + 神經學檢查（後肢 LMN 徵兆：膝反射正常或減弱、tibial nerve reflex 減弱、肛門張力評估）→ 2. 腰薦部觸診 + Lord test → 3. 脊椎 X 光（L7-S1 椎間隙狹窄、骨贅、屈伸比較片評估不穩定性）→ 4. MRI（金標準：壓迫位置與程度、馬尾神經水腫、動態 MRI 屈伸位比較）→ 5. CT（骨性壓迫成分評估，與 MRI 互補）→ 6. EMG（評估 L6-S3 支配肌群去神經支配程度，協助手術決策）→ 7. 基礎血檢排除系統性疾病 + 尿液分析（尿失禁犬排除泌尿道感染）',
-    treatment_protocol: '保守治療（輕中度病例）：多模式疼痛管理——Gabapentin 5-10 mg/kg PO TID + Meloxicam 0.1 mg/kg PO SID + Tramadol 2-5 mg/kg PO BID-TID（急性加重期）。運動管理：限制跳躍/爬樓梯/高強度運動 + 體重管理（理想 BCS 4-5/9）。物理治療：水療（underwater treadmill）+ 核心肌群強化 + 伸展運動。硬膜外類固醇注射（CT 導引 Methylprednisolone）：保守治療反應不佳時的微創選項。手術治療（中重度或保守失敗）：dorsal laminectomy（L7 背側椎板切除，減壓馬尾）+ foraminotomy（椎間孔擴大，釋放受壓神經根）+ partial discectomy（移除突出椎間盤物質）。必要時加固定（fixation-fusion，腰薦椎不穩定時）。',
+    diagnostic_workup: '1. 步態評估 + 神經學檢查（後肢 LMN 徵兆：膝反射正常或減弱、tibial nerve reflex 減弱、肛門張力評估），2. 腰薦部觸診 + Lord test。3. 脊椎 X 光（L7-S1 椎間隙狹窄、骨贅、屈伸比較片評估不穩定性），4. MRI（金標準：壓迫位置與程度、馬尾神經水腫、動態 MRI 屈伸位比較）。5. CT（骨性壓迫成分評估，與 MRI 互補），6. EMG（評估 L6-S3 支配肌群去神經支配程度，協助手術決策）。 基礎血檢排除系統性疾病 + 尿液分析（尿失禁犬排除泌尿道感染）',
+    treatment_protocol: '保守治療（輕中度病例）：多模式疼痛管理，Gabapentin 5-10 mg/kg PO TID + Meloxicam 0.1 mg/kg PO SID + Tramadol 2-5 mg/kg PO BID-TID（急性加重期）。運動管理：限制跳躍/爬樓梯/高強度運動 + 體重管理（理想 BCS 4-5/9）。物理治療：水療（underwater treadmill）+ 核心肌群強化 + 伸展運動。硬膜外類固醇注射（CT 導引 Methylprednisolone）：保守治療反應不佳時的微創選項。手術治療（中重度或保守失敗）：dorsal laminectomy（L7 背側椎板切除，減壓馬尾）+ foraminotomy（椎間孔擴大，釋放受壓神經根）+ partial discectomy（移除突出椎間盤物質）。必要時加固定（fixation-fusion，腰薦椎不穩定時）。',
     prognosis: '保守治療：約 50-60% 輕中度病例可良好控制（疼痛改善、功能維持），但長期進行性退化。手術治療：術後改善率約 75-85%。無尿失禁者手術預後良好。已有尿失禁者術後膀胱功能恢復率較差（約 50%）。預後良好因子：僅疼痛無神經功能缺損、早期手術、單一壓迫位點。預後不良因子：術前已有尿失禁（LMN bladder 恢復困難）、慢性嚴重肌肉萎縮、多節段壓迫。工作犬恢復至工作能力的比例約 60-70%。',
     monitoring: '保守治療：每月臨床評估疼痛程度與神經功能變化。注意尿失禁出現（提示病程進展，應考慮手術）。體重每月監測。NSAIDs 長期使用需每 3-6 個月監測肝腎功能。手術後：2 週傷口檢查，4 週限制活動，6-8 週開始復健計畫。長期每 3-6 個月神經學追蹤。膀胱功能監測：殘尿量評估（術前有 LMN bladder 者需密切追蹤恢復情況）。',
-    owner_communication: '腰薦椎疾病是大型犬（尤其 GSD）常見的退化性神經疾病，類似人的腰椎間盤突出與椎管狹窄。輕度病例可透過藥物止痛、限制跳躍、體重管理與物理治療控制症狀。藥物治療反應不佳或出現尿失禁時建議手術減壓。手術成功率約 75-85%，但已出現尿失禁的犬膀胱功能恢復較困難——因此建議在出現失禁前積極治療。日常照護重點：維持理想體重（過重顯著加重腰薦負擔）、避免跳躍/上下車用斜坡替代、規律低衝擊運動（游泳、散步）。',
+    owner_communication: '腰薦椎疾病是大型犬（尤其 GSD）常見的退化性神經疾病，類似人的腰椎間盤突出與椎管狹窄。輕度病例可透過藥物止痛、限制跳躍、體重管理與物理治療控制症狀。藥物治療反應不佳或出現尿失禁時建議手術減壓。手術成功率約 75-85%，但已出現尿失禁的犬膀胱功能恢復較困難，所以建議在出現失禁前積極治療。日常照護重點：維持理想體重（過重明顯加重腰薦負擔）、避免跳躍/上下車用斜坡替代、規律低衝擊運動（游泳、散步）。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -4210,7 +4210,7 @@ DLSS 為多因素疾病，壓迫來自多個方向：
   created_at: now,
 };
 
-/** EMG/電生理診斷 — 診斷型 */
+/** EMG/電生理診斷 - 診斷型 */
 const contentEMG: NodeContent = {
   id: 'CONTENT-NEURO-L4-005',
   node_id: 'NEURO-L4-005',
@@ -4239,10 +4239,10 @@ const contentEMG: NodeContent = {
 EMG 記錄肌肉纖維的電位活動。同心針電極（concentric needle electrode）插入目標肌肉，分析靜息活動（insertional & spontaneous activity）與自主收縮時的運動單位電位（Motor Unit Action Potentials, MUAPs）。
 
 ### 異常發現
-- **纖維顫動電位（Fibrillation potentials）**：去神經化肌肉纖維的自發性放電，呈小振幅（< 300 μV）規則波形
-- **正銳波（Positive sharp waves, PSWs）**：去神經化的另一種表現，初始正向偏轉後緩慢回歸基線
-- **複合重複放電（Complex repetitive discharges, CRDs）**：慢性去神經化的特徵
-- **肌強直放電（Myotonic discharges）**：音頻漸強漸弱（dive-bomber sound），見於先天性肌強直
+- 纖維顫動電位（Fibrillation potentials）：去神經化肌肉纖維的自發性放電，呈小振幅（< 300 μV）規則波形
+- 正銳波（Positive sharp waves, PSWs）：去神經化的另一種表現，初始正向偏轉後緩慢回歸基線
+- 複合重複放電（Complex repetitive discharges, CRDs）：慢性去神經化的特徵
+- 肌強直放電（Myotonic discharges）：音頻漸強漸弱（dive-bomber sound），見於先天性肌強直
 
 ### 臨床應用
 - 確認下運動神經元（LMN）病變的存在與分布
@@ -4273,9 +4273,9 @@ EMG 記錄肌肉纖維的電位活動。同心針電極（concentric needle elec
 以固定頻率（2-3 Hz 低頻或 30-50 Hz 高頻）反覆刺激運動神經，記錄連續 CMAP 振幅變化。
 
 ### 判讀
-- **正常**：連續刺激振幅穩定（遞減 < 10%）
-- **突觸後障礙（MG）**：低頻 RNS 遞減 > 10%（通常 > 30-50%）
-- **突觸前障礙（肉毒桿菌中毒/Tick paralysis）**：低頻遞減 + 高頻刺激後遞增（incremental response）
+- 正常：連續刺激振幅穩定（遞減 < 10%）
+- 突觸後障礙（MG）：低頻 RNS 遞減 > 10%（通常 > 30-50%）
+- 突觸前障礙（肉毒桿菌中毒/Tick paralysis）：低頻遞減 + 高頻刺激後遞增（incremental response）
 
 ### 重症肌無力確診
 RNS 遞減反應是 MG 的重要電生理證據，但金標準仍為血清 AChR 抗體。RNS 敏感度約 60-70%（局灶型 MG 可能正常）。
@@ -4310,10 +4310,10 @@ RNS 遞減反應是 MG 的重要電生理證據，但金標準仍為血清 AChR 
 | 單纖維 EMG（SF-EMG） | MG 最敏感的電生理檢查（敏感度 > 95%） | 獸醫偶有研究報告，臨床使用極少 |
 | 定量 EMG（qEMG） | 客觀量化去神經化程度與復健進度 | 人醫已標準化，獸醫研究階段 |
 | 長時間 EEG 監測 | 犬癲癇的連續腦波監測（ICU 設定） | 人醫已商業化，獸醫原型系統少數機構有 |`,
-  clinical_pearl: 'EMG 異常（fibrillation potentials, PSWs）通常在臨床症狀出現後 5-7 天才出現，因此急性 LMN 病變初期 EMG 可能正常。建議症狀發作一週後再安排電生理檢查。此外，EMG 必須在全身麻醉下進行（犬無法配合清醒檢查），需注意麻醉藥物可能影響神經傳導。台灣目前電生理檢查主要集中在台大、中興等教學醫院。\n\n【實務技巧】當懷疑 MG 時，優先送 AChR 抗體（敏感度 85-90%）；若抗體陰性但臨床高度懷疑，再安排 RNS 檢查。局灶型 MG（僅巨食道症表現）的 AChR 抗體與 RNS 均可能呈假陰性。',
+  clinical_pearl: 'EMG 異常（fibrillation potentials, PSWs）通常在臨床症狀出現後 5-7 天才出現，所以急性 LMN 病變初期 EMG 可能正常。建議症狀發作一週後再安排電生理檢查。另外，EMG 必須在全身麻醉下進行（犬無法配合清醒檢查），需注意麻醉藥物可能影響神經傳導。台灣目前電生理檢查主要集中在台大、中興等教學醫院。\n\n【實務技巧】當懷疑 MG 時，優先送 AChR 抗體（敏感度 85-90%）；若抗體陰性但臨床高度懷疑，再安排 RNS 檢查。局灶型 MG（僅巨食道症表現）的 AChR 抗體與 RNS 均可能呈假陰性。',
   common_mistakes: [
     '在急性病變初期（< 5 天）即安排 EMG，此時去神經化電位尚未出現導致假陰性',
-    '將屈曲反射存在誤認為 LMN 功能正常，未進一步安排 EMG/NCV 評估',
+    '將屈曲反射存在誤認為 LMN 功能正常，未再安排 EMG/NCV 評估',
     '忽略麻醉藥物對電生理結果的影響（某些肌肉鬆弛劑會影響 NMJ 傳遞）',
     '僅依靠 RNS 陰性結果排除 MG（局灶型 MG 的 RNS 敏感度僅約 50-60%）',
   ],
@@ -4348,7 +4348,7 @@ RNS 遞減反應是 MG 的重要電生理證據，但金標準仍為血清 AChR 
       '急性病變 < 5-7 天 EMG 可能假陰性',
       '肥胖動物深層肌肉 EMG 取樣困難',
       '麻醉藥物（尤其肌肉鬆弛劑）干擾 RNS 結果',
-      'NCV 受體溫影響——低體溫時傳導速度假性降低',
+      'NCV 受體溫影響，低體溫時傳導速度假性降低',
     ],
     sensitivity_specificity: 'EMG 對 LMN 病變敏感度約 80-90%（需症狀 > 5-7 天）。RNS 對全身型 MG 敏感度約 60-70%，特異度高（> 95%）。NCV 對脫髓鞘病變敏感度高（> 90%）。',
     cost_benefit: '設備昂貴（EMG 機器約 50-100 萬台幣），需專業操作與判讀人員。台灣可用設施有限（教學醫院/少數轉診中心）。對於 MG 診斷，AChR 抗體為首選（較便宜且外送即可），RNS 為次選。',
@@ -4372,12 +4372,12 @@ RNS 遞減反應是 MG 的重要電生理證據，但金標準仍為血清 AChR 
   created_at: now,
 };
 
-/** Chiari 樣畸形 / 脊髓空洞症 (CM/SM) — 疾病型 */
+/** Chiari 樣畸形 / 脊髓空洞症 (CM/SM) - 疾病型 */
 const contentCMSM: NodeContent = {
   id: 'CONTENT-NEURO-L3-014',
   node_id: 'NEURO-L3-014',
   version: 1,
-  summary: 'Chiari 樣畸形（Chiari-like Malformation, CM）是犬後顱窩體積不足導致小腦疝出枕骨大孔的先天性顱骨畸形，好發於查理士王小獵犬（Cavalier King Charles Spaniel, CKCS），>95% CKCS 有影像學 CM 證據。約 50% CM 犬會繼發脊髓空洞症（Syringomyelia, SM）——脊髓中央管內 CSF 充填的空洞，導致神經性疼痛與感覺異常。Phantom scratching（幻搔抓動作）為 SM 的特徵性臨床表現。MRI 為金標準影像診斷。治療包括內科（Gabapentin 10-20 mg/kg PO BID-TID 止痛、Omeprazole 降低 CSF 分泌）與外科（枕骨大孔減壓術 FMD，約 80% 成功率）。',
+  summary: 'Chiari 樣畸形（Chiari-like Malformation, CM）是犬後顱窩體積不足導致小腦疝出枕骨大孔的先天性顱骨畸形，好發於查理士王小獵犬（Cavalier King Charles Spaniel, CKCS），>95% CKCS 有影像學 CM 證據。約 50% CM 犬會繼發脊髓空洞症（Syringomyelia, SM），脊髓中央管內 CSF 充填的空洞，導致神經性疼痛與感覺異常。Phantom scratching（幻搔抓動作）為 SM 的特徵性臨床表現。MRI 為金標準影像診斷。治療包括內科（Gabapentin 10-20 mg/kg PO BID-TID 止痛、Omeprazole 降低 CSF 分泌）與外科（枕骨大孔減壓術 FMD，約 80% 成功率）。',
   learning_objectives: [
     '說明 CM 的顱骨畸形機轉與 SM 的脊髓空洞形成病理',
     '辨識 phantom scratching 作為 SM 的特徵性臨床表現',
@@ -4387,12 +4387,12 @@ const contentCMSM: NodeContent = {
   ],
   key_points: [
     '好發品種：CKCS（>95% 有 CM 影像證據），其他短頭品種（Brussels Griffon、Pomeranian、Chihuahua）亦有報告',
-    'CM 病理：後顱窩過小 → 小腦疝出枕骨大孔 → CSF 流動受阻 → 脊髓中央管內壓力異常 → 脊髓空洞形成',
-    'SM 臨床特徵：phantom scratching（走路時單側後肢懸空搔抓頸肩部但未接觸皮膚）——特異性極高',
+    'CM 病理：後顱窩太小，小腦從枕骨大孔疝出，CSF 流動受阻，脊髓中央管內壓力跟著異常，最後跑出脊髓空洞',
+    'SM 臨床特徵：phantom scratching（走路時單側後肢懸空搔抓頸肩部但未接觸皮膚），特異性極高',
     '其他症狀：頸部疼痛（尤其夜間或興奮時加劇）、脊柱側彎（scoliosis）、感覺異常、前肢無力',
     'MRI 金標準：矢狀面 T2WI 可見小腦疝出枕骨大孔 + 脊髓中央管高訊號空洞',
     '內科治療：Gabapentin 10-20 mg/kg PO BID-TID（神經性疼痛首選）+ Omeprazole 0.7-1 mg/kg PO SID（降低 CSF 分泌）+ Prednisolone 短期使用（0.5 mg/kg）',
-    '外科治療：枕骨大孔減壓術（Foramen Magnum Decompression, FMD）——移除枕骨部分骨片擴大後顱窩容積，80% 術後臨床改善',
+    '外科治療：枕骨大孔減壓術（Foramen Magnum Decompression, FMD），移除枕骨部分骨片擴大後顱窩容積，80% 術後臨床改善',
   ],
   body: `# Chiari 樣畸形 / 脊髓空洞症 (CM/SM)
 
@@ -4402,17 +4402,17 @@ const contentCMSM: NodeContent = {
 Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦與腦幹體積不足的先天性顱骨畸形，與人類 Chiari I 型畸形（Chiari Type I Malformation）類似但非完全相同（故稱「Chiari-like」）。
 
 ### 病理機轉
-1. **後顱窩過小**：顱骨發育異常，枕骨過度旋轉（occipital bone hypoplasia），後顱窩容積不足
-2. **小腦疝出**：小腦（尤其蚓部 vermis）經枕骨大孔疝出，壓迫腦幹與脊髓
-3. **CSF 流動受阻**：枕骨大孔處 CSF 循環通路被小腦組織阻塞
-4. **脊髓空洞形成**：CSF 動力學異常 → 脊髓中央管內壓力脈衝增加 → 中央管擴張形成液體充填的空洞（syrinx）
-5. **神經損傷**：空洞擴大壓迫脊髓背角（dorsal horn）→ 感覺異常與神經性疼痛
+1. 後顱窩過小：顱骨發育異常，枕骨過度旋轉（occipital bone hypoplasia），後顱窩容積不足
+2. 小腦疝出：小腦（尤其蚓部 vermis）經枕骨大孔疝出，壓迫腦幹與脊髓
+3. CSF 流動受阻：枕骨大孔處 CSF 循環通路被小腦組織阻塞
+4. 脊髓空洞形成：CSF 動力學異常，脊髓中央管內壓力脈衝增加，中央管擴張形成液體充填的空洞（syrinx）
+5. 神經損傷：空洞擴大壓迫脊髓背角（dorsal horn），最後感覺異常與神經性疼痛
 
 ### 流行病學
 | 項目 | 數據 |
 |------|------|
 | CKCS CM 盛行率 | >95%（MRI 影像學證據） |
-| CM → SM 發展率 | ~50% CKCS |
+| CM，接著SM 發展率 | ~50% CKCS |
 | SM 臨床症狀出現 | 約 6 個月-3 歲，部分到 6 歲以上才出現 |
 | 遺傳模式 | 多基因遺傳（polygenic），高度遺傳 |
 | 其他好發品種 | Brussels Griffon、Pomeranian、Chihuahua、Yorkshire Terrier |
@@ -4427,15 +4427,15 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
 | 神經缺損型 | 前肢無力、共濟失調、脊柱側彎 | 內科 ± 手術 |
 
 ### 特徵性臨床表現
-- **Phantom scratching**：走路或興奮時單側後肢懸空搔抓頸肩區域，但爪子未接觸皮膚——SM 特異性極高
-- **頸部疼痛**：觸摸頸部或耳朵後方引發疼痛反應，夜間加劇
-- **溫度/天氣敏感**：症狀在天氣變化、項圈壓迫時加劇
-- **脊柱側彎（scoliosis）**：空洞壓迫單側脊髓前角導致
+- Phantom scratching：走路或興奮時單側後肢懸空搔抓頸肩區域，但爪子未接觸皮膚，SM 特異性極高
+- 頸部疼痛：觸摸頸部或耳朵後方引發疼痛反應，夜間加劇
+- 溫度/天氣敏感：症狀在天氣變化、項圈壓迫時加劇
+- 脊柱側彎（scoliosis）：空洞壓迫單側脊髓前角導致
 
 ### MRI 診斷標準
-- **CM 診斷**：矢狀面 T1WI/T2WI 見小腦疝出枕骨大孔尾側
-- **SM 診斷**：矢狀面 T2WI 見脊髓中央管高訊號擴張（空洞寬度 ≥ 脊髓直徑 50% 為中度，≥ 75% 為重度）
-- **空洞分級**：BVA/KC SM Scheme 將 SM 分為 SM0（無空洞）、SM1（中央管擴張 < 2mm）、SM2（空洞 ≥ 2mm）
+- CM 診斷：矢狀面 T1WI/T2WI 見小腦疝出枕骨大孔尾側
+- SM 診斷：矢狀面 T2WI 見脊髓中央管高訊號擴張（空洞寬度 ≥ 脊髓直徑 50% 為中度，≥ 75% 為重度）
+- 空洞分級：BVA/KC SM Scheme 將 SM 分為 SM0（無空洞）、SM1（中央管擴張 < 2mm）、SM2（空洞 ≥ 2mm）
 
 ## 三、治療策略 (Treatment)
 
@@ -4449,9 +4449,9 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
 | NSAIDs (Meloxicam) | 0.1 mg/kg PO SID（犬） | 抗炎止痛 | 輕度病例替代方案 |
 
 ### 外科治療
-- **枕骨大孔減壓術（Foramen Magnum Decompression, FMD）**
+- 枕骨大孔減壓術（Foramen Magnum Decompression, FMD）
   - 適應症：內科治療反應不佳、進行性神經缺損
-  - 術式：移除枕骨鱗狀部分 + 寰椎背弓部分骨片 → 擴大枕骨大孔容積 → 恢復 CSF 流動
+  - 術式：移除枕骨鱗狀部分 + 寰椎背弓部分骨片，跟著擴大枕骨大孔容積，恢復 CSF 流動
   - 手術成功率：約 80% 臨床改善
   - 併發症：CSF 漏、傷口感染、空洞復發（約 25-50% 長期復發）
 
@@ -4461,7 +4461,7 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
 - FMD 術後：短期改善率 ~80%，但長期復發率 25-50%
 - 進行性神經缺損型：預後謹慎至不良
 - CKCS 品種篩檢（BVA/KC SM Scheme）可降低後代 SM 風險`,
-  clinical_pearl: 'CKCS 飼主常將 phantom scratching 誤認為皮膚搔癢或跳蚤，導致延遲就醫。關鍵鑑別：phantom scratching 時爪子不接觸皮膚，且多在走路或興奮時發生。頸部項圈壓迫可加劇 CM/SM 症狀——確診犬應改用胸背帶（harness）。內科治療建議從低劑量 Gabapentin（5 mg/kg）起始漸增，以減少嗜睡副作用。FMD 手術雖有 80% 短期改善率，但需告知飼主長期復發風險（25-50%），術後仍可能需要持續藥物管理。\n\n【台灣流行病學】CKCS 在台灣飼養數量逐年增加，CM/SM 臨床案例亦隨之上升。台灣具備高場 MRI（1.5T/3T）設備的動物醫院已可執行標準化 CM/SM 診斷。FMD 手術需轉介至具神經外科經驗的專科醫院。',
+  clinical_pearl: 'CKCS 飼主常將 phantom scratching 誤認為皮膚搔癢或跳蚤，導致延遲就醫。關鍵鑑別：phantom scratching 時爪子不接觸皮膚，且多在走路或興奮時發生。頸部項圈壓迫可加劇 CM/SM 症狀，確診犬應改用胸背帶（harness）。內科治療建議從低劑量 Gabapentin（5 mg/kg）起始漸增，以減少嗜睡副作用。FMD 手術雖有 80% 短期改善率，但需告知飼主長期復發風險（25-50%），術後仍可能需要持續藥物管理。\n\n【台灣流行病學】CKCS 在台灣飼養數量逐年增加，CM/SM 臨床案例亦隨之上升。台灣具備高場 MRI（1.5T/3T）設備的動物醫院已可執行標準化 CM/SM 診斷。FMD 手術需轉介至具神經外科經驗的專科醫院。',
   common_mistakes: [
     '將 phantom scratching 誤診為皮膚搔癢（過敏/跳蚤）而延誤神經科評估',
     '未對有 SM 症狀的犬執行 MRI（僅靠 X 光無法診斷脊髓空洞）',
@@ -4472,9 +4472,9 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
   disease_data: {
     signalment: '好發品種：CKCS（>95% 有 CM 影像學證據）、Brussels Griffon、Pomeranian、Chihuahua。SM 臨床症狀出現年齡約 6 個月-3 歲，部分到 6 歲以上。無明顯性別偏好。',
     etiology: '先天性顱骨畸形（後顱窩體積不足），多基因遺傳（polygenic），高度遺傳性。CKCS 品種中 CM 的遺傳率極高。',
-    pathogenesis: '後顱窩過小 → 小腦疝出枕骨大孔 → CSF 流動受阻 → 脊髓中央管內壓力脈衝異常 → 中央管擴張形成脊髓空洞（syrinx）→ 空洞壓迫背角（dorsal horn）→ 神經性疼痛與感覺異常。',
+    pathogenesis: '後顱窩太小，小腦從枕骨大孔疝出，CSF 流動受阻後，脊髓中央管內壓力脈衝跟著異常。中央管擴張形成脊髓空洞（syrinx），空洞壓迫背角（dorsal horn）就跑出神經性疼痛跟感覺異常。',
     clinical_signs: [
-      { sign: 'Phantom scratching', category: 'primary', description: 'SM 特徵性表現——走路或興奮時單側後肢懸空搔抓頸肩部，爪未接觸皮膚' },
+      { sign: 'Phantom scratching', category: 'primary', description: 'SM 特徵性表現，走路或興奮時單側後肢懸空搔抓頸肩部，爪未接觸皮膚' },
       { sign: '頸部疼痛', category: 'primary', description: '觸摸頸後方或耳朵引發疼痛，夜間或興奮時加劇，可表現為嚎叫' },
       { sign: '感覺異常', category: 'primary', description: '對頸肩部觸摸過度敏感（allodynia）或異常感覺（paresthesia）' },
       { sign: '前肢無力', category: 'secondary', description: '空洞壓迫頸髓腹角運動神經元導致' },
@@ -4487,7 +4487,7 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
       { condition: '外耳/中耳炎', key_differentiator: 'CKCS 常見，可引起頭部搔抓行為，耳鏡檢查可鑑別' },
       { condition: '皮膚過敏', key_differentiator: '搔抓有皮膚接觸且有皮膚病灶，phantom scratching 爪未碰觸皮膚' },
     ],
-    diagnostic_workup: '1. 神經學檢查（phantom scratching 誘發、頸部疼痛評估、本體感覺測試）→ 2. 基礎血檢排除代謝性原因 → 3. MRI（金標準）：矢狀面 T2WI 評估小腦疝出與脊髓空洞 → 4. 空洞分級（SM0/SM1/SM2）→ 5. 鑑別同時存在的水腦症',
+    diagnostic_workup: '1. 神經學檢查（phantom scratching 誘發、頸部疼痛評估、本體感覺測試），2. 基礎血檢排除代謝性原因。3. MRI（金標準）：矢狀面 T2WI 評估小腦疝出與脊髓空洞。4. 空洞分級（SM0/SM1/SM2），5. 鑑別同時存在的水腦症',
     treatment_protocol: '內科首選：Gabapentin 10-20 mg/kg PO BID-TID（從低劑量 5 mg/kg 起始漸增）+ Omeprazole 0.7-1 mg/kg PO SID。急性疼痛發作：Prednisolone 0.5 mg/kg PO SID × 2-4 週後減量。Gabapentin 反應不佳時替換 Pregabalin 2-4 mg/kg PO BID。輕度疼痛可用 Meloxicam 0.1 mg/kg PO SID。內科治療失敗或進行性神經缺損時：枕骨大孔減壓術（FMD）。避免使用頸部項圈（改用胸背帶）。',
     prognosis: '內科管理 SM：約 60-70% 犬透過 Gabapentin + Omeprazole 可維持可接受的生活品質。FMD 術後：短期臨床改善率約 80%，但長期空洞復發率 25-50%（平均 2-3 年內）。進行性神經缺損型預後謹慎至不良。亞臨床 CM 犬可能終身不發展臨床症狀。',
     monitoring: '每 3-6 個月神經學評估（phantom scratching 頻率、疼痛評分、步態）。MRI 追蹤：FMD 術後 6-12 個月評估空洞變化。Gabapentin 劑量需依臨床反應調整（嗜睡為常見副作用）。育種者應執行 BVA/KC SM Scheme MRI 篩檢。',
@@ -4505,7 +4505,7 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
   drug_api_links: ['Gabapentin', 'Pregabalin', 'Omeprazole', 'Prednisolone', 'Meloxicam'],
   references: [
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 10: Congenital & Developmental Disorders.', relevance: 'CM/SM 臨床診斷與手術治療標準教材' },
-    { type: 'guideline', citation: 'Rusbridge C, et al. International Veterinary Epilepsy Task Force (IVETF) recommendations for a veterinary epilepsy-specific MRI protocol — and British Veterinary Association/Kennel Club Chiari Malformation/Syringomyelia (CM/SM) Scheme. BMC Vet Res. 2019;15:164.', relevance: 'BVA/KC SM 品種篩檢標準與 MRI 分級系統' },
+    { type: 'guideline', citation: 'Rusbridge C, et al. International Veterinary Epilepsy Task Force (IVETF) recommendations for a veterinary epilepsy-specific MRI protocol，and British Veterinary Association/Kennel Club Chiari Malformation/Syringomyelia (CM/SM) Scheme. BMC Vet Res. 2019;15:164.', relevance: 'BVA/KC SM 品種篩檢標準與 MRI 分級系統' },
     { type: 'journal', citation: 'Rusbridge C, Knowler SP. Coexistence of occipital dysplasia and occipital hypoplasia/syringomyelia in the cavalier King Charles spaniel. J Small Anim Pract. 2006;47(10):603-606.', relevance: 'CKCS CM/SM 病理與盛行率原始研究' },
     { type: 'journal', citation: 'Sanchis-Mora S, et al. Pregabalin for the treatment of syringomyelia-associated neuropathic pain in dogs: a randomised, placebo-controlled, double-blinded clinical trial. Vet J. 2019;250:55-62.', relevance: 'Pregabalin 治療 SM 神經性疼痛的隨機對照試驗' },
   ],
@@ -4513,7 +4513,7 @@ Chiari 樣畸形（CM）是犬後顱窩（caudal fossa）體積相對於小腦�
   created_at: now,
 };
 
-/** 壞死性腦炎 (NME/NLE) — 疾病型 */
+/** 壞死性腦炎 (NME/NLE) - 疾病型 */
 const contentNME: NodeContent = {
   id: 'CONTENT-NEURO-L3-015',
   node_id: 'NEURO-L3-015',
@@ -4529,7 +4529,7 @@ const contentNME: NodeContent = {
   key_points: [
     'NME（Pug Dog Encephalitis）：巴哥犬 + 大腦皮質灰質壞死 + 淋巴球/漿細胞血管周圍套（perivascular cuffing）',
     'NLE：Yorkshire Terrier + 法國鬥牛犬 + 大腦白質壞死 + 雙側對稱性偏好',
-    'DLA class II 基因型態：DLA-DQB1*02601 與巴哥犬 NME 易感性顯著相關',
+    'DLA class II 基因型態：DLA-DQB1*02601 與巴哥犬 NME 易感性明顯相關',
     'MRI 特徵：T2WI/FLAIR 多灶性高訊號（壞死灶），非對稱性（NME）或雙側對稱性（NLE），對比增強不一致',
     'CSF：淋巴球性細胞增多（pleocytosis）+ 蛋白升高（通常 50-200 mg/dL），部分病例 CSF 可能正常',
     '治療方案：Prednisolone 1-2 mg/kg PO BID（2 週後漸減）+ Cytarabine 50 mg/m² SC BID × 2 天 q3-4wk',
@@ -4542,14 +4542,14 @@ const contentNME: NodeContent = {
 
 ### 概述
 壞死性腦炎屬於 MUO（Meningoencephalomyelitis of Unknown Origin）的亞型，以腦組織壞死為主要病理特徵，可分為兩型：
-- **NME（Necrotizing Meningoencephalitis）**：又稱 Pug Dog Encephalitis，灰質為主的壞死
-- **NLE（Necrotizing Leukoencephalitis）**：白質為主的壞死
+- NME（Necrotizing Meningoencephalitis）：又稱 Pug Dog Encephalitis，灰質為主的壞死
+- NLE（Necrotizing Leukoencephalitis）：白質為主的壞死
 
 ### 病理機轉
-1. **免疫介導性炎症**：T 細胞與 B 細胞介導的自體免疫反應攻擊腦組織
-2. **DLA class II 基因關聯**：DLA-DQB1*02601 與巴哥犬 NME 高度相關（遺傳易感性）
-3. **抗體介導破壞**：抗 GFAP（glial fibrillary acidic protein）抗體在 NME 犬中被發現
-4. **壞死進展**：炎症 → 血管周圍淋巴球/漿細胞浸潤 → 腦實質壞死 → 軟化灶形成
+1. 免疫介導性炎症：T 細胞與 B 細胞介導的自體免疫反應攻擊腦組織
+2. DLA class II 基因關聯：DLA-DQB1*02601 與巴哥犬 NME 高度相關（遺傳易感性）
+3. 抗體介導破壞：抗 GFAP（glial fibrillary acidic protein）抗體在 NME 犬中被發現
+4. 壞死進展：炎症，血管周圍淋巴球/漿細胞浸潤，腦實質壞死，最後軟化灶形成
 
 ### 品種分布
 | 亞型 | 好發品種 | 好發年齡 | 病灶偏好 |
@@ -4560,14 +4560,14 @@ const contentNME: NodeContent = {
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
 ### 臨床表現
-- **NME 典型表現**（前腦徵象為主）：
+- NME 典型表現（前腦徵象為主）：
   - 癲癇發作（約 60-80%，常為首發症狀）
   - 意識改變（嗜睡、昏迷）
   - 行為異常（迷失方向、壓頭行為）
   - 視覺障礙（皮質盲）
   - 環行（circling）
 
-- **NLE 典型表現**（白質+腦幹）：
+- NLE 典型表現（白質+腦幹）：
   - 中樞性前庭徵象（head tilt、眼球震顫）
   - 共濟失調
   - 輕癱至四肢癱瘓
@@ -4591,7 +4591,7 @@ const contentNME: NodeContent = {
 ### 免疫抑制治療方案
 | 藥物 | 劑量 | 用法 | 監測 |
 |------|------|------|------|
-| Prednisolone | 1-2 mg/kg PO BID | 起始劑量 2 週 → 漸減至 0.5 mg/kg QOD | PU/PD、醫源性庫欣、肝指數 |
+| Prednisolone | 1-2 mg/kg PO BID | 起始劑量 2 週，接著漸減至 0.5 mg/kg QOD | PU/PD、醫源性庫欣、肝指數 |
 | Cytarabine (Ara-C) | 50 mg/m² SC BID × 2 天 | 每 3-4 週一個療程 | CBC（骨髓抑制），nadir 7-10 天 |
 | Cyclosporine | 5 mg/kg PO BID | Cytarabine 替代/輔助 | 血中濃度谷值 200-400 ng/mL |
 | Mycophenolate | 10-20 mg/kg PO BID | 替代方案 | GI 副作用、CBC |
@@ -4604,28 +4604,28 @@ const contentNME: NodeContent = {
 - 嗜中性球 < 2000/μL 時暫停下一療程
 
 ## 四、預後 (Prognosis)
-- **未治療**：NME 中位存活 1-3 個月，NLE 1-6 個月（通常快速進展）
-- **Prednisolone 單藥**：中位存活 3-6 個月
-- **Pred + Cytarabine 合併治療**：中位存活 12-24 個月（部分犬可超過 2 年）
-- **不良預後因子**：首次就診時嚴重意識障礙、癲癇重積狀態、多灶性腦幹病灶
+- 未治療：NME 中位存活 1-3 個月，NLE 1-6 個月（通常快速進展）
+- Prednisolone 單藥：中位存活 3-6 個月
+- Pred + Cytarabine 合併治療：中位存活 12-24 個月（部分犬可超過 2 年）
+- 不良預後因子：首次就診時嚴重意識障礙、癲癇重積狀態、多灶性腦幹病灶
 - 即使積極治療，多數犬最終仍因疾病進展而安樂死`,
-  clinical_pearl: 'NME/NLE 與 GME 均屬 MUO，生前確診需組織病理（生前為推定診斷）。臨床上可透過品種（巴哥=NME, 中型Terrier=GME）、MRI 病灶模式（NME 非對稱灰質, NLE 對稱白質, GME 後腦偏好）、CSF 特徵做推定區分。Cytarabine 劑量必須按體表面積（BSA）計算而非體重，小型犬 BSA 相對體重更高因此劑量需特別注意。治療 NME 合併癲癇時，Levetiracetam 為首選 AED（不經肝代謝，避免與 Prednisolone 肝代謝競爭）。\n\n【台灣流行病學】巴哥犬在台灣為常見品種，NME 臨床案例並不罕見。台灣已有多家教學醫院可執行 CSF 分析與腦部 MRI。Cytarabine 為化療藥物，需由專業人員配製與注射，台灣獸醫癌症治療中心可提供此服務。',
+  clinical_pearl: 'NME/NLE 與 GME 均屬 MUO，生前確診需組織病理（生前為推定診斷）。臨床上可透過品種（巴哥=NME, 中型Terrier=GME）、MRI 病灶模式（NME 非對稱灰質, NLE 對稱白質, GME 後腦偏好）、CSF 特徵做推定區分。Cytarabine 劑量必須按體表面積（BSA）計算而非體重，小型犬 BSA 相對體重更高所以劑量需特別注意。治療 NME 合併癲癇時，Levetiracetam 為首選 AED（不經肝代謝，避免與 Prednisolone 肝代謝競爭）。\n\n【台灣流行病學】巴哥犬在台灣為常見品種，NME 臨床案例並不罕見。台灣已有多家教學醫院可執行 CSF 分析與腦部 MRI。Cytarabine 為化療藥物，需由專業人員配製與注射，台灣獸醫癌症治療中心可提供此服務。',
   common_mistakes: [
     '未將 NME/NLE 與 GME 做臨床區分（品種+MRI 模式有助推定鑑別）',
     'Cytarabine 劑量按體重而非體表面積計算（導致劑量錯誤）',
     '未在 Cytarabine 療程前查 CBC（漏檢骨髓抑制風險）',
-    '僅用 Prednisolone 單藥治療 NME 而未加入 Cytarabine（存活期顯著縮短）',
+    '僅用 Prednisolone 單藥治療 NME 而未加入 Cytarabine（存活期明顯縮短）',
     '癲癇控制使用 Phenobarbital 而非 Levetiracetam（PB 肝代謝與高劑量 Pred 競爭）',
   ],
   disease_data: {
     signalment: 'NME：巴哥犬（Pug）、Maltese、Chihuahua、Shih Tzu，好發 1-7 歲（中位 3 歲）。NLE：Yorkshire Terrier、法國鬥牛犬，好發 1-10 歲（中位 4.5 歲）。無明顯性別偏好。',
-    etiology: '免疫介導性自體免疫反應，DLA class II 基因型態（DLA-DQB1*02601）與巴哥犬 NME 易感性顯著相關。抗 GFAP 抗體在 NME 犬中被發現，支持自體免疫機轉。',
-    pathogenesis: 'T 細胞與 B 細胞介導的自體免疫反應攻擊腦組織 → 血管周圍淋巴球/漿細胞浸潤（perivascular cuffing）→ 腦實質壞死 → 軟化灶形成 → 顱內壓升高與進行性神經功能喪失。NME 偏好灰質壞死，NLE 偏好白質壞死。',
+    etiology: '免疫介導性自體免疫反應，DLA class II 基因型態（DLA-DQB1*02601）與巴哥犬 NME 易感性明顯相關。抗 GFAP 抗體在 NME 犬中被發現，支持自體免疫機轉。',
+    pathogenesis: 'T 細胞與 B 細胞介導的自體免疫反應攻擊腦組織。血管周圍淋巴球/漿細胞浸潤（perivascular cuffing），腦實質壞死軟化灶形成，最後顱內壓升高與進行性神經功能喪失。NME 偏好灰質壞死，NLE 偏好白質壞死。',
     clinical_signs: [
       { sign: '癲癇發作', category: 'primary', description: 'NME 最常見首發症狀（60-80%），可為局灶性或全身性' },
       { sign: '意識改變', category: 'primary', description: '嗜睡至昏迷，反映大腦皮質廣泛受損' },
       { sign: '行為異常', category: 'primary', description: '迷失方向、壓頭行為（head pressing）、環行' },
-      { sign: '視覺障礙', category: 'secondary', description: '皮質盲——瞳孔反射正常但威脅反應消失' },
+      { sign: '視覺障礙', category: 'secondary', description: '皮質盲，瞳孔反射正常但威脅反應消失' },
       { sign: '前庭/腦幹徵象', category: 'secondary', description: 'NLE 常見：head tilt、眼球震顫、共濟失調' },
     ],
     staging: null,
@@ -4635,8 +4635,8 @@ const contentNME: NodeContent = {
       { condition: '感染性腦炎（犬瘟熱/隱球菌）', key_differentiator: '有感染源暴露史或免疫缺陷背景、特異性抗原/抗體檢測陽性' },
       { condition: '腦血管事件 (CVA)', key_differentiator: '超急性發作（秒至分鐘）、MRI DWI 限制擴散、單一血管分布區域' },
     ],
-    diagnostic_workup: '1. 神經學檢查定位（前腦 vs 腦幹）→ 2. 基礎血檢排除代謝性/感染性原因 → 3. MRI（多灶性壞死灶，T2/FLAIR 高訊號）→ 4. CSF 分析（淋巴球性細胞增多 + 蛋白升高）→ 5. 感染篩檢排除（犬瘟熱 PCR、隱球菌抗原、弓形蟲抗體）→ 6. 確診需組織病理（生前為推定診斷）',
-    treatment_protocol: '免疫抑制為核心。起始：Prednisolone 1-2 mg/kg PO BID × 2 週 → 漸減至 0.5-1 mg/kg QOD。同時開始 Cytarabine（Ara-C）50 mg/m² SC BID × 2 天，每 3-4 週一療程。治療前查 CBC，nadir 7-10 天復查。嗜中性球 < 2000/μL 時暫停。Cytarabine 不耐受時替換 Cyclosporine 5 mg/kg PO BID（監測谷值 200-400 ng/mL）。癲癇控制：Levetiracetam 20 mg/kg PO TID 為首選 AED（不經肝代謝）。',
+    diagnostic_workup: '1. 神經學檢查定位（前腦 vs 腦幹）。2. 基礎血檢排除代謝性/感染性原因。3. MRI（多灶性壞死灶，T2/FLAIR 高訊號），4. CSF 分析（淋巴球性細胞增多 + 蛋白升高），5. 感染篩檢排除（犬瘟熱 PCR、隱球菌抗原、弓形蟲抗體），6. 確診需組織病理（生前為推定診斷）',
+    treatment_protocol: '免疫抑制為核心。起始：Prednisolone 1-2 mg/kg PO BID × 2 週，最後漸減至 0.5-1 mg/kg QOD。同時開始 Cytarabine（Ara-C）50 mg/m² SC BID × 2 天，每 3-4 週一療程。治療前查 CBC，nadir 7-10 天復查。嗜中性球 < 2000/μL 時暫停。Cytarabine 不耐受時替換 Cyclosporine 5 mg/kg PO BID（監測谷值 200-400 ng/mL）。癲癇控制：Levetiracetam 20 mg/kg PO TID 為首選 AED（不經肝代謝）。',
     prognosis: '未治療 NME：中位存活 1-3 個月。Prednisolone 單藥：中位存活 3-6 個月。Pred + Cytarabine：中位存活 12-24 個月，部分犬存活超過 2 年。不良預後因子：嚴重意識障礙、癲癇重積、多灶性腦幹病灶、CSF 蛋白 > 200 mg/dL。NLE 整體預後略優於 NME。',
     monitoring: '免疫抑制治療期間：每次 Cytarabine 療程前查 CBC（嗜中性球 ≥ 3000/μL 方可進行）。每月肝指數（Prednisolone 副作用）。Cyclosporine 使用者每 2 週查血中濃度直到穩定。每 3-6 個月 MRI 追蹤病灶變化。癲癇犬需定期 AED 血中濃度監測。',
     owner_communication: '壞死性腦炎是一種免疫系統攻擊腦部的嚴重疾病，在巴哥犬等品種中有遺傳傾向。目前無法根治，但透過免疫抑制藥物（類固醇 + 化療藥物 Cytarabine）可以延緩病程。多數犬在積極治療下可存活 1-2 年以上。治療期間需要定期血液檢查監測藥物副作用。Cytarabine 是一種化療藥物，但用於此病的劑量遠低於腫瘤治療劑量，副作用相對可控。',
@@ -4662,7 +4662,7 @@ const contentNME: NodeContent = {
   created_at: now,
 };
 
-/** 認知功能障礙症候群 (CDS) — 疾病型 */
+/** 認知功能障礙症候群 (CDS) - 疾病型 */
 const contentCDS: NodeContent = {
   id: 'CONTENT-NEURO-L3-016',
   node_id: 'NEURO-L3-016',
@@ -4677,7 +4677,7 @@ const contentCDS: NodeContent = {
   ],
   key_points: [
     '盛行率：犬 >11 歲 28-68%，犬 >15 歲 >68%；貓 >11 歲約 36%，貓 >15 歲約 50%',
-    '病理機轉：beta-amyloid（Aβ）沉積 → 神經元喪失 → 腦萎縮 → 神經傳導物質失衡（多巴胺、乙醯膽鹼下降）',
+    '病理機轉：beta-amyloid（Aβ）沉積，接著神經元喪失，跟著腦萎縮，神經傳導物質失衡（多巴胺、乙醯膽鹼下降）',
     'DISHAA 評估：≥2 個範疇出現行為改變 + 排除其他原因 = CDS 臨床診斷',
     '必須排除的可治療原因：甲狀腺功能低下（犬）/亢進（貓）、腎臟病、腦腫瘤、疼痛、視/聽覺喪失、泌尿道感染',
     '一線藥物：Selegiline（L-deprenyl）0.5-1 mg/kg PO SID（MAO-B 抑制劑，增加多巴胺濃度）',
@@ -4693,11 +4693,11 @@ const contentCDS: NodeContent = {
 認知功能障礙症候群（CDS）是犬貓的年齡相關神經退化性疾病，被認為是人類阿茲海默症（Alzheimer Disease, AD）的自然動物模型。
 
 ### 病理機轉
-1. **Beta-amyloid（Aβ）沉積**：犬腦中 Aβ42 蛋白沉積模式與人類 AD 極為相似，形成老年斑塊（senile plaques），但犬不形成神經纖維纏結（neurofibrillary tangles）
-2. **腦血管澱粉樣變性（CAA）**：Aβ 沉積於腦血管壁，影響腦血流自我調節
-3. **神經元喪失與腦萎縮**：大腦皮質與海馬迴神經元減少，腦室代償性擴張
-4. **神經傳導物質失衡**：多巴胺（Dopamine）↓、乙醯膽鹼（Acetylcholine）↓、GABA ↓、5-HT 改變
-5. **氧化壓力**：老化腦部自由基產生增加 + 抗氧化能力下降 → 進一步加速神經退化
+1. Beta-amyloid（Aβ）沉積：犬腦中 Aβ42 蛋白沉積模式與人類 AD 極為相似，形成老年斑塊（senile plaques），但犬不形成神經纖維纏結（neurofibrillary tangles）
+2. 腦血管澱粉樣變性（CAA）：Aβ 沉積於腦血管壁，影響腦血流自我調節
+3. 神經元喪失與腦萎縮：大腦皮質與海馬迴神經元減少，腦室代償性擴張
+4. 神經傳導物質失衡：多巴胺（Dopamine）↓、乙醯膽鹼（Acetylcholine）↓、GABA ↓、5-HT 改變
+5. 氧化壓力：老化腦部自由基產生增加 + 抗氧化能力下降，然後再加速神經退化
 
 ### 流行病學
 | 年齡層 | 犬盛行率 | 貓盛行率 |
@@ -4734,25 +4734,25 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
 
 ### MRI 表現（非必要但有參考價值）
 - 腦萎縮：腦溝加深、腦室擴張
-- 與年齡相關但 CDS 犬比同齡正常犬更顯著
+- 與年齡相關但 CDS 犬比同齡正常犬更明顯
 
 ## 三、治療策略 (Treatment)
 
 ### 藥物治療
 | 藥物 | 劑量 | 機轉 | 備註 |
 |------|------|------|------|
-| Selegiline (L-deprenyl) | 0.5-1 mg/kg PO SID（犬），早晨給藥 | MAO-B 抑制劑 → 增加腦部多巴胺、去甲腎上腺素 | FDA 核准犬用，1 個月無效可增至 1 mg/kg |
-| Propentofylline | 2.5-5 mg/kg PO BID（犬） | 磷酸二酯酶抑制劑 → 改善腦血流 | 歐洲核准，美國未上市 |
+| Selegiline (L-deprenyl) | 0.5-1 mg/kg PO SID（犬），早晨給藥 | MAO-B 抑制劑，最後增加腦部多巴胺、去甲腎上腺素 | FDA 核准犬用，1 個月無效可增至 1 mg/kg |
+| Propentofylline | 2.5-5 mg/kg PO BID（犬） | 磷酸二酯酶抑制劑，接著改善腦血流 | 歐洲核准，美國未上市 |
 | Trazodone | 2-5 mg/kg PO BID（犬） | 5-HT 拮抗/再吸收抑制 | 夜間焦慮/遊走輔助 |
 
 ### 營養補充
 | 營養素 | 劑量 | 機轉 |
 |--------|------|------|
-| MCT oil | 飼料中 5-10% 熱量替代 | 中鏈脂肪酸 → 肝臟產生酮體 → 腦部替代能量源 |
-| SAMe | 20 mg/kg PO SID 空腹 | 甲基化反應、麩胱甘肽合成 → 神經保護 |
+| MCT oil | 飼料中 5-10% 熱量替代 | 中鏈脂肪酸，跟著肝臟產生酮體，腦部替代能量源 |
+| SAMe | 20 mg/kg PO SID 空腹 | 甲基化反應、麩胱甘肽合成，神經保護 |
 | Omega-3 (DHA/EPA) | DHA 40-50 mg/kg/day | 抗氧化、抗炎、神經膜完整性 |
 | Vitamin E + C | E: 400 IU/day, C: 100 mg/day（中大型犬） | 抗氧化 |
-| Phosphatidylserine | 50-100 mg/day（犬） | 神經膜磷脂質 → 改善記憶與學習 |
+| Phosphatidylserine | 50-100 mg/day（犬） | 神經膜磷脂質，最後改善記憶與學習 |
 
 ### 環境管理
 - 維持固定日常作息（餵食、散步、睡覺時間不變）
@@ -4767,8 +4767,8 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
 - 早期介入（Selegiline + 營養 + 環境管理）可延緩認知衰退速度
 - Selegiline 治療反應率約 60-70%（通常 2-4 週開始見效，需至少 1 個月評估）
 - 生活品質評估應定期執行（DISHAA 評分追蹤）
-- 與主人溝通管理期望至關重要：目標是「維持生活品質」而非「治癒」`,
-  clinical_pearl: 'CDS 是被嚴重低估的疾病——多數飼主將行為改變視為「正常老化」而未就醫。主動在老齡犬貓健檢中加入 DISHAA 問卷篩檢可大幅提升早期發現率。Selegiline 建議早晨給藥以避免影響夜間睡眠（增加多巴胺可能導致興奮）。MCT oil 的臨床試驗顯示可改善犬認知功能，其機轉為提供腦部酮體作為替代能量源（老化腦部葡萄糖利用率下降）。CDS 犬常合併骨關節炎——疼痛管理可顯著改善行為表現，治療 CDS 前應先處理可治療的疼痛。\n\n【台灣流行病學】台灣犬貓壽命延長（犬平均 12-14 歲，貓 14-16 歲），CDS 臨床重要性日增。Selegiline 在台灣可透過動物用藥管道取得。SAMe 與 MCT oil 可從保健品通路購得。台灣獸醫行為學正逐步推廣 DISHAA 評估於老齡動物健檢中。',
+- 與主人溝通管理期望不能省：目標是「維持生活品質」而非「治癒」`,
+  clinical_pearl: 'CDS 是被嚴重低估的疾病，多數飼主將行為改變視為「正常老化」而未就醫。主動在老齡犬貓健檢中加入 DISHAA 問卷篩檢可大幅提升早期發現率。Selegiline 建議早晨給藥以避免影響夜間睡眠（增加多巴胺可能導致興奮）。MCT oil 的臨床試驗顯示可改善犬認知功能，其機轉為提供腦部酮體作為替代能量源（老化腦部葡萄糖利用率下降）。CDS 犬常合併骨關節炎，疼痛管理可明顯改善行為表現，治療 CDS 前應先處理可治療的疼痛。\n\n【台灣流行病學】台灣犬貓壽命延長（犬平均 12-14 歲，貓 14-16 歲），CDS 臨床重要性日增。Selegiline 在台灣可透過動物用藥管道取得。SAMe 與 MCT oil 可從保健品通路購得。台灣獸醫行為學正逐步推廣 DISHAA 評估於老齡動物健檢中。',
   common_mistakes: [
     '將 CDS 行為改變歸因於「正常老化」而未進行醫學排除檢查',
     '未排除甲狀腺功能異常/腎臟病/腦腫瘤等可治療原因即診斷 CDS',
@@ -4779,7 +4779,7 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
   disease_data: {
     signalment: '犬 >11 歲盛行率 28-68%，>15 歲 >68%。貓 >11 歲約 36%，>15 歲約 50%。所有品種均可發生，無明顯品種或性別偏好。',
     etiology: '年齡相關神經退化性疾病，與 beta-amyloid（Aβ42）蛋白沉積、腦血管澱粉樣變性（CAA）、神經元喪失、神經傳導物質失衡（多巴胺/乙醯膽鹼下降）及氧化壓力增加相關。確切病因不明但與老化過程密切相關。',
-    pathogenesis: 'Aβ42 蛋白沉積形成老年斑塊 → 腦血管澱粉樣變性 → 腦血流自我調節障礙 → 神經元喪失與腦萎縮（大腦皮質+海馬迴）→ 腦室代償性擴張 → 多巴胺/乙醯膽鹼/GABA 等神經傳導物質下降 → 認知功能進行性退化。犬不形成 tau 蛋白神經纖維纏結（與人類 AD 的差異）。',
+    pathogenesis: 'Aβ42 蛋白沉積形成老年斑塊，腦血管也跟著走澱粉樣變性。腦血流自我調節出問題，神經元喪失加腦萎縮（大腦皮質跟海馬迴最先掉），腦室代償性擴張。神經傳導物質方面，多巴胺、乙醯膽鹼、GABA 通通下降，認知功能就進行性退化。要注意一點：犬不會形成 tau 蛋白神經纖維纏結，這跟人類 AD 不一樣。',
     clinical_signs: [
       { sign: '迷失方向', category: 'primary', description: '在熟悉環境中迷路、走到錯誤的門、卡在家具角落' },
       { sign: '睡眠週期異常', category: 'primary', description: '日夜顛倒、夜間嚎叫/遊走、白天過度嗜睡' },
@@ -4795,11 +4795,11 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
       { condition: '感覺喪失（視/聽覺）', key_differentiator: '威脅反應消失或 BAER 異常，感覺矯正後行為改善' },
       { condition: '泌尿道感染', key_differentiator: '頻尿、血尿、尿液培養陽性，抗生素治療後如廁行為恢復' },
     ],
-    diagnostic_workup: '1. 完整病史（DISHAA 問卷）→ 2. 理學檢查 + 神經學檢查 → 3. CBC/生化/甲狀腺（T4, fT4）排除代謝性原因 → 4. 尿液分析 + 培養排除 UTI → 5. 血壓測量（尤其貓）→ 6. 眼科檢查排除視覺喪失 → 7. 骨科/疼痛評估 → 8. MRI（排除腦腫瘤，非必要但建議老齡犬伴癲癇時執行）→ 9. 排除所有可治療原因後 = CDS 臨床診斷',
+    diagnostic_workup: '1. 完整病史（DISHAA 問卷），2. 理學檢查 + 神經學檢查。3. CBC/生化/甲狀腺（T4, fT4）排除代謝性原因，4. 尿液分析 + 培養排除 UTI。5. 血壓測量（尤其貓），6. 眼科檢查排除視覺喪失。7. 骨科/疼痛評估，8. MRI（排除腦腫瘤，非必要但建議老齡犬伴癲癇時執行）。9. 排除所有可治療原因後 = CDS 臨床診斷',
     treatment_protocol: '多模式管理。藥物：Selegiline 0.5 mg/kg PO SID 早晨給藥（犬），1 個月無明顯改善可增至 1 mg/kg。夜間焦慮/遊走：Trazodone 2-5 mg/kg PO BID 或睡前給藥。營養補充：MCT oil（飼料中 5-10% 熱量替代）+ SAMe 20 mg/kg PO SID 空腹 + Omega-3 DHA 40-50 mg/kg/day。環境管理：固定作息、環境豐富化、夜間小夜燈、增加便盆。貓 CDS：Selegiline 未核准，以 SAMe + Omega-3 + 環境豐富化為主，夜間焦慮可試 Gabapentin 25-50 mg PO。',
     prognosis: 'CDS 為進行性退化，無法逆轉。早期介入（Selegiline + 營養 + 環境管理）可延緩衰退速度。Selegiline 治療反應率約 60-70%，通常 2-4 週起效，至少 1 個月評估。多數犬在診斷後 12-24 個月內認知功能持續下降。生活品質評估應每 3-6 個月執行（DISHAA 評分追蹤）。當生活品質嚴重下降且管理手段無效時，應與飼主討論安寧照護。',
     monitoring: '每 3 個月 DISHAA 評分追蹤（量化認知變化趨勢）。Selegiline 使用期間：1 個月評估療效，無效則增量或加入輔助藥物。每 6 個月基礎血檢追蹤（老齡犬伴隨疾病監測）。記錄行為日誌（夜間遊走次數、如廁事件）供客觀評估。',
-    owner_communication: '認知功能障礙是老年犬貓的「類失智症」，和人類阿茲海默症有相似的腦部變化。這是自然老化的一部分，但可以透過藥物和生活管理來延緩。您可能注意到的變化——迷路、夜間嚎叫、不認人、在室內排便——都是典型症狀。Selegiline 是目前最主要的藥物，約六到七成的犬有改善。維持固定的生活節奏、提供益智玩具、適度運動也很重要。這是一個長期管理的過程，我們的目標是盡可能維持生活品質。',
+    owner_communication: '認知功能障礙是老年犬貓的「類失智症」，和人類阿茲海默症有相似的腦部變化。這是自然老化的一部分，但可以透過藥物和生活管理來延緩。您可能注意到的變化，迷路、夜間嚎叫、不認人、在室內排便，都是典型症狀。Selegiline 是目前最主要的藥物，約六到七成的犬有改善。維持固定的生活節奏、提供益智玩具、適度運動也很重要。這是一個長期管理的過程，我們的目標是盡可能維持生活品質。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -4813,9 +4813,9 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
   drug_api_links: ['Selegiline', 'Trazodone', 'Gabapentin'],
   references: [
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 20: Geriatric Neurology.', relevance: 'CDS 臨床診斷與管理標準教材' },
-    { type: 'journal', citation: 'Landsberg GM, Nichol J, Araujo JA. Cognitive dysfunction syndrome: a disease of canine and feline brain aging. Vet Clin North Am Small Anim Pract. 2012;42(4):749-768.', relevance: 'CDS 綜合回顧——病理、診斷、治療' },
+    { type: 'journal', citation: 'Landsberg GM, Nichol J, Araujo JA. Cognitive dysfunction syndrome: a disease of canine and feline brain aging. Vet Clin North Am Small Anim Pract. 2012;42(4):749-768.', relevance: 'CDS 綜合回顧，病理、診斷、治療' },
     { type: 'journal', citation: 'Dewey CW, et al. Canine cognitive dysfunction: pathophysiology, diagnosis, and treatment. Vet Clin North Am Small Anim Pract. 2019;49(3):477-499.', relevance: 'CDS 最新病理與治療進展' },
-    { type: 'guideline', citation: 'Landsberg G, et al. AAHA Senior Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2012;48(3):1-11.', relevance: 'AAHA 老齡犬貓照護指引——含 CDS 篩檢建議' },
+    { type: 'guideline', citation: 'Landsberg G, et al. AAHA Senior Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2012;48(3):1-11.', relevance: 'AAHA 老齡犬貓照護指引，含 CDS 篩檢建議' },
   ],
   is_current: true,
   created_at: now,

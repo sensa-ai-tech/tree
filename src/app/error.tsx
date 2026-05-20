@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
 import Link from 'next/link';
+import { reportError } from '@/lib/observability/error-reporter';
 
 interface ErrorPageProps {
   error: Error & { digest?: string };
@@ -11,8 +12,10 @@ interface ErrorPageProps {
 
 export default function ErrorPage({ error, reset }: ErrorPageProps) {
   useEffect(() => {
-    // Log error to monitoring service in production
-    console.error('[ErrorBoundary]', error);
+    reportError(error, {
+      scope: 'ErrorBoundary',
+      tags: error.digest ? { digest: error.digest } : undefined,
+    });
   }, [error]);
 
   return (

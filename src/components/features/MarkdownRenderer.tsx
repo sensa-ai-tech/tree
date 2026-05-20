@@ -16,15 +16,40 @@ const MermaidRenderer = dynamic(
 );
 import { cn } from '@/lib/utils/cn';
 
-/** Custom sanitization schema — allows safe HTML tags used in vet content */
+/**
+ * Custom sanitization schema。
+ *
+ * 安全策略：
+ * 1. 基於 rehype-sanitize 的 defaultSchema（已防 XSS、event handler、危險標籤）
+ * 2. 額外允許 div/span/code 帶 className，作為自訂元件樣式 hook
+ * 3. div 只允許特定 data-* 白名單，不用 data* 萬用字元，避免未來新增 data-on* 之類
+ *    被誤認為合法屬性
+ * 4. 即使 parseContentMarkers 產生的 HTML 不慎被惡意輸入污染（例如未來 user-generated
+ *    content），這層 sanitize 仍會把 onclick / onload / javascript: 等都清掉
+ *
+ * 信任邊界：rehype-raw 解析的 HTML 必定先經過 rehype-sanitize 才能渲染。
+ * 不允許繞過 sanitize 的渲染路徑。
+ */
 const sanitizeSchema = {
   ...defaultSchema,
   tagNames: [...(defaultSchema.tagNames ?? []), 'div', 'span'],
   attributes: {
     ...defaultSchema.attributes,
-    div: [...(defaultSchema.attributes?.div ?? []), 'className', 'data*'],
+    div: [
+      ...(defaultSchema.attributes?.div ?? []),
+      'className',
+      ['data-desc', /^[^<>"'`]+$/],
+      ['data-asset-id', /^[A-Z0-9-]{1,64}$/],
+      ['data-component', /^[a-z-]{1,32}$/],
+    ],
     span: [...(defaultSchema.attributes?.span ?? []), 'className'],
     code: [...(defaultSchema.attributes?.code ?? []), 'className'],
+  },
+  // 明確拒絕 protocol-relative URLs 與 javascript: scheme
+  protocols: {
+    ...defaultSchema.protocols,
+    href: ['http', 'https', 'mailto'],
+    src: ['http', 'https', 'data'],
   },
 };
 

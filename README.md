@@ -4,11 +4,11 @@
 
 ## Features
 
-- **Knowledge Graph** — 264 nodes, 802 edges across 8 veterinary specialties
+- **Knowledge Graph** — 266 nodes, 806 edges across 8 veterinary specialties
 - **Spaced Repetition** — SM-2 algorithm for optimized review scheduling
 - **Case Challenges** — 103 interactive clinical scenarios with step-by-step decision making
 - **Gamification** — XP, levels, achievements, and learning streaks
-- **1,949 Review Questions** — Multi-format questions covering all specialties
+- **1,874 Review Questions** — Multi-format questions covering all specialties
 - **47 Learning Paths** — Structured curricula with milestones
 
 ## Tech Stack
@@ -18,9 +18,11 @@
 | Framework | Next.js 16 (App Router, Turbopack) |
 | Language | TypeScript 5 (strict mode) |
 | UI | React 19 + Tailwind CSS 4 |
+| Graph | @xyflow/react v12 (formerly reactflow) |
 | State | Zustand |
 | Backend | Supabase (PostgreSQL + Auth + RLS) |
 | Testing | Vitest + Playwright |
+| CI | GitHub Actions |
 | Deploy | Vercel |
 
 ## Quick Start
@@ -64,8 +66,9 @@ npx tsc --noEmit     # Type check
 
 - TypeScript: 0 errors (strict mode)
 - ESLint: 0 errors, 0 warnings
-- Tests: 165/165 passing
-- npm audit: 0 vulnerabilities
+- Tests: 200/200 passing
+- Production build: 36 routes
+- npm audit (prod deps): 2 moderate (Next.js postcss transitive, build-time only)
 - Seed Quality Audit: 100/100
 - Engineering Audit: 100/100
 

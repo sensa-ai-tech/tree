@@ -33,13 +33,25 @@ export const useAuthStore = create<AuthState>()(
       login: async (email: string, _password: string) => {
         set({ isLoading: true, error: null });
         try {
-          // Mock mode: simulate login
+          // ⚠️ 這個 store 目前是 demo 用 mock 登入：不驗證密碼。
+          // 生產環境必須串 supabase.auth.signInWithPassword，並由 Supabase JWT
+          // custom claims + RLS 控制 role，前端不能自己決定 admin。
+          //
+          // 為了縮小目前 mock 的攻擊面：
+          // 1. admin role 只能在沒有 Supabase URL（純 demo）時才能拿到
+          // 2. 有 Supabase URL 時統一回 user role，admin 操作交給後端 /api/admin/*
+          //    用 JWT cookie 驗證（middleware + admin-auth.ts）
+          const hasSupabase =
+            typeof window !== 'undefined' &&
+            !!process.env.NEXT_PUBLIC_SUPABASE_URL;
+
+          const isAdminEmail = email === 'admin@vetknowledgetree.com';
+          const role: User['role'] = !hasSupabase && isAdminEmail ? 'admin' : 'user';
+
           const mockUser: User = {
             id: `mock-${Date.now()}`,
             email,
-            // Mock mode: admin role only for exact match of designated admin email
-          // Production: should use Supabase RLS + JWT claims instead
-          role: email === 'admin@vetknowledgetree.com' ? 'admin' : 'user',
+            role,
           };
           set({ user: mockUser, isLoading: false });
         } catch (err) {

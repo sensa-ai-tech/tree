@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: NodeLayoutProps): Promise<Met
     : node.title;
 
   const description = content?.summary
-    ?? `${node.title} — 獸醫專科知識樹 ${node.specialty} 專科 Layer ${node.layer} 知識節點。`;
+    ?? `${node.title}，獸醫專科知識樹 ${node.specialty} 專科 Layer ${node.layer} 知識節點。`;
 
   return {
     title,

@@ -3,7 +3,7 @@ import type { LearningPath } from '@/types/knowledge';
 /**
  * Cross-Specialty Learning Paths
  *
- * 跨科整合學習路徑 — 模擬臨床上多科協作的真實情境。
+ * 跨科整合學習路徑，模擬臨床上多科協作的真實情境。
  * 這些路徑跨越 2+ 個專科，引導學習者從症狀出發進行鑑別診斷。
  *
  * 最後更新：2026-03-05
@@ -19,15 +19,15 @@ export const CROSS_SPECIALTY_PATHS: LearningPath[] = [
     estimated_hours: 12,
     path_nodes: [
       { node_id: 'IM-L0-001', is_required: true, phase: '基礎回顧', learning_note: '起點：內科學全景概覽' },
-      { node_id: 'CPATH-L4-002', is_required: true, phase: '實驗室基礎', learning_note: '生化全套判讀——PU/PD 初篩關鍵' },
-      { node_id: 'CPATH-L4-009', is_required: true, phase: '實驗室基礎', learning_note: '尿液分析——尿比重是 PU/PD 最重要指標' },
-      { node_id: 'IM-L2-004', is_required: true, phase: '病理機轉', learning_note: '內分泌病理機轉——ADH/aldosterone/cortisol 軸' },
-      { node_id: 'IM-L3-007', is_required: true, phase: '鑑別診斷：內分泌', learning_note: '腎上腺皮質機能亢進（Cushing\'s）——最常見 PU/PD 原因之一' },
-      { node_id: 'IM-L3-008', is_required: true, phase: '鑑別診斷：內分泌', learning_note: '糖尿病——滲透性利尿' },
-      { node_id: 'IM-L3-009', is_required: true, phase: phase_label('鑑別診斷：內分泌'), learning_note: '甲狀腺功能亢進（貓）——代謝率增加導致 PU/PD' },
-      { node_id: 'IM-L3-003', is_required: true, phase: '鑑別診斷：腎臟', learning_note: '慢性腎臟病——腎臟濃縮能力喪失' },
-      { node_id: 'IM-L3-004', is_required: true, phase: '鑑別診斷：腎臟', learning_note: '急性腎損傷——多尿期' },
-      { node_id: 'IM-L3-013', is_required: false, phase: '鑑別診斷：肝臟', learning_note: '選修：肝病與尿素循環——低 BUN 伴 PU/PD' },
+      { node_id: 'CPATH-L4-002', is_required: true, phase: '實驗室基礎', learning_note: '生化全套判讀，PU/PD 初篩關鍵' },
+      { node_id: 'CPATH-L4-009', is_required: true, phase: '實驗室基礎', learning_note: '尿液分析，尿比重是 PU/PD 最重要指標' },
+      { node_id: 'IM-L2-004', is_required: true, phase: '病理機轉', learning_note: '內分泌病理機轉，ADH/aldosterone/cortisol 軸' },
+      { node_id: 'IM-L3-007', is_required: true, phase: '鑑別診斷：內分泌', learning_note: '腎上腺皮質機能亢進（Cushing\'s），最常見 PU/PD 原因之一' },
+      { node_id: 'IM-L3-008', is_required: true, phase: '鑑別診斷：內分泌', learning_note: '糖尿病，滲透性利尿' },
+      { node_id: 'IM-L3-009', is_required: true, phase: phase_label('鑑別診斷：內分泌'), learning_note: '甲狀腺功能亢進（貓），代謝率增加導致 PU/PD' },
+      { node_id: 'IM-L3-003', is_required: true, phase: '鑑別診斷：腎臟', learning_note: '慢性腎臟病，腎臟濃縮能力喪失' },
+      { node_id: 'IM-L3-004', is_required: true, phase: '鑑別診斷：腎臟', learning_note: '急性腎損傷，多尿期' },
+      { node_id: 'IM-L3-013', is_required: false, phase: '鑑別診斷：肝臟', learning_note: '選修：肝病與尿素循環，低 BUN 伴 PU/PD' },
       { node_id: 'CPATH-L4-010', is_required: false, phase: '進階檢查', learning_note: '選修：內分泌功能檢查（LDDS/HDDS/ACTH stimulation）' },
     ],
     milestones: [
@@ -71,12 +71,12 @@ export const CROSS_SPECIALTY_PATHS: LearningPath[] = [
     path_nodes: [
       { node_id: 'CPATH-L1-003', is_required: true, phase: '免疫學基礎', learning_note: '起點：免疫學核心概念（自體免疫機轉）' },
       { node_id: 'IM-L2-001', is_required: true, phase: '病理機轉', learning_note: '內科免疫病理機轉' },
-      { node_id: 'IM-L3-005', is_required: true, phase: '血液系統', learning_note: 'IMHA — 免疫介導溶血性貧血' },
-      { node_id: 'IM-L3-006', is_required: true, phase: '血液系統', learning_note: 'IMT — 免疫介導血小板減少症' },
+      { node_id: 'IM-L3-005', is_required: true, phase: '血液系統', learning_note: 'IMHA，免疫介導溶血性貧血' },
+      { node_id: 'IM-L3-006', is_required: true, phase: '血液系統', learning_note: 'IMT，免疫介導血小板減少症' },
       { node_id: 'CPATH-L4-001', is_required: true, phase: '實驗室檢查', learning_note: 'CBC 判讀：球形紅血球、自凝、reticulocyte count' },
       { node_id: 'CPATH-L4-004', is_required: true, phase: '實驗室檢查', learning_note: '凝血功能檢查與 DIC 排除' },
-      { node_id: 'DERM-L3-010', is_required: false, phase: '皮膚系統', learning_note: '選修：天皰瘡 — 自體免疫皮膚疾病' },
-      { node_id: 'NEURO-L3-007', is_required: false, phase: '神經系統', learning_note: '選修：MUO/GME — 免疫介導腦膜腦炎' },
+      { node_id: 'DERM-L3-010', is_required: false, phase: '皮膚系統', learning_note: '選修：天皰瘡，自體免疫皮膚疾病' },
+      { node_id: 'NEURO-L3-007', is_required: false, phase: '神經系統', learning_note: '選修：MUO/GME，免疫介導腦膜腦炎' },
       { node_id: 'IM-L3-012', is_required: false, phase: '關節系統', learning_note: '選修：免疫介導多關節炎（IMPA）' },
     ],
     milestones: [
@@ -122,7 +122,7 @@ export const CROSS_SPECIALTY_PATHS: LearningPath[] = [
       { node_id: 'ECC-L1-001', is_required: true, phase: '基礎概念', learning_note: '急診分診原則與 ABCDE 評估' },
       { node_id: 'ECC-L3-001', is_required: true, phase: '核心急症', learning_note: '心肺復甦（CPR）流程' },
       { node_id: 'ECC-L3-002', is_required: true, phase: '核心急症', learning_note: '休克的辨識與處理' },
-      { node_id: 'CPATH-L4-005', is_required: true, phase: '急診實驗室', learning_note: '血氣分析——急診最重要的即時檢驗' },
+      { node_id: 'CPATH-L4-005', is_required: true, phase: '急診實驗室', learning_note: '血氣分析，急診最重要的即時檢驗' },
       { node_id: 'CPATH-L4-001', is_required: true, phase: '急診實驗室', learning_note: '急診 CBC 快速判讀' },
       { node_id: 'ECC-L3-003', is_required: true, phase: '中毒急診', learning_note: '中毒急診處理流程' },
       { node_id: 'ECC-L3-005', is_required: true, phase: '創傷', learning_note: '創傷急診初步處理' },
@@ -170,11 +170,11 @@ export const CROSS_SPECIALTY_PATHS: LearningPath[] = [
     path_nodes: [
       { node_id: 'ONCO-L0-001', is_required: true, phase: '腫瘤科總覽', learning_note: '起點：腫瘤科學全景' },
       { node_id: 'ONCO-L1-001', is_required: true, phase: '基礎概念', learning_note: '腫瘤生物學基礎' },
-      { node_id: 'CPATH-L4-003', is_required: true, phase: '細胞學', learning_note: '細胞學判讀——腫塊初步評估的第一步' },
-      { node_id: 'CPATH-L4-011', is_required: true, phase: '進階病理', learning_note: '淋巴結與腫瘤細胞學——分期必備' },
+      { node_id: 'CPATH-L4-003', is_required: true, phase: '細胞學', learning_note: '細胞學判讀，腫塊初步評估的第一步' },
+      { node_id: 'CPATH-L4-011', is_required: true, phase: '進階病理', learning_note: '淋巴結與腫瘤細胞學，分期必備' },
       { node_id: 'ONCO-L4-001', is_required: true, phase: '影像診斷', learning_note: '腫瘤影像學（三視 X-ray、腹部超音波、CT）' },
-      { node_id: 'ONCO-L3-001', is_required: true, phase: '常見腫瘤', learning_note: '淋巴瘤——最常見的造血系統腫瘤' },
-      { node_id: 'ONCO-L3-002', is_required: true, phase: '常見腫瘤', learning_note: '肥大細胞瘤——犬最常見皮膚腫瘤' },
+      { node_id: 'ONCO-L3-001', is_required: true, phase: '常見腫瘤', learning_note: '淋巴瘤，最常見的造血系統腫瘤' },
+      { node_id: 'ONCO-L3-002', is_required: true, phase: '常見腫瘤', learning_note: '肥大細胞瘤，犬最常見皮膚腫瘤' },
       { node_id: 'SURG-L3-003', is_required: false, phase: '外科銜接', learning_note: '選修：腫瘤外科原則（切除邊界）' },
     ],
     milestones: [

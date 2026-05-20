@@ -61,6 +61,11 @@ export default function GraphPage() {
     setFilters({ specialty: value || null });
   }
 
+  function handleSelectAll(): void {
+    // 「綜覽全圖」：顯示所有 264 節點，用 search='*' 通過判斷邏輯但不過濾
+    setFilters({ specialty: null, search: '*' });
+  }
+
   function handleClearSpecialty(): void {
     setFilters({ specialty: null, search: '' });
   }
@@ -92,6 +97,7 @@ export default function GraphPage() {
         <SpecialtyGrid
           nodeCounts={nodeCounts}
           onSelect={handleSpecialtySelect}
+          onSelectAll={handleSelectAll}
         />
       ) : (
         /* ===== 已選專科：顯示該專科圖譜 ===== */
@@ -110,7 +116,7 @@ export default function GraphPage() {
               </button>
               <span className="text-gray-300">/</span>
               <span className="text-base font-bold text-indigo-700">
-                {selectedSpecLabel || '搜尋結果'}
+                {selectedSpecLabel || (filters.search === '*' ? '綜覽全圖' : '搜尋結果')}
               </span>
               <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-medium text-indigo-600">
                 {filteredNodes.length} 節點
@@ -143,8 +149,8 @@ export default function GraphPage() {
             </div>
           </div>
 
-          {/* 搜尋清除提示 */}
-          {filters.search && (
+          {/* 搜尋清除提示（'*' 是綜覽全圖 sentinel，不顯示為搜尋字串） */}
+          {filters.search && filters.search !== '*' && (
             <div className="flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
               <p className="text-sm text-amber-700">
                 搜尋「<strong>{filters.search}</strong>」的結果

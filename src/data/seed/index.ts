@@ -1,5 +1,5 @@
 /**
- * Demo Seed Data Orchestrator — 多專科版
+ * Demo Seed Data Orchestrator，多專科版
  *
  * 在 mock 模式下（無 Supabase URL）自動注入 8 個專科的範例資料，
  * 讓使用者無需外部服務即可體驗完整學習流程。
@@ -108,7 +108,7 @@ export const ALL_NODES: KnowledgeNode[] = [
 ];
 
 /** 所有邊合併（科內 + 跨科） */
-const ALL_EDGES: KnowledgeEdge[] = [
+export const ALL_EDGES: KnowledgeEdge[] = [
   ...CARDIO_EDGES,
   ...CPATH_EDGES,
   ...IM_EDGES,
@@ -145,7 +145,7 @@ export const SEED_QUESTIONS: ReviewQuestion[] = [
 ];
 
 /** 所有病例合併 */
-const ALL_CASES: CaseChallenge[] = [
+export const ALL_CASES: CaseChallenge[] = [
   ...CARDIO_CASES,
   ...CPATH_CASES,
   ...IM_CASES,
@@ -157,7 +157,7 @@ const ALL_CASES: CaseChallenge[] = [
 ];
 
 /** 所有學習路徑合併 */
-const ALL_PATHS: LearningPath[] = [
+export const ALL_PATHS: LearningPath[] = [
   ...CARDIO_PATHS,
   ...CPATH_PATHS,
   ...IM_PATHS,
@@ -182,7 +182,7 @@ export { isMockMode } from './mock-mode';
 
 /** 一次性注入所有 seed 資料至各 store */
 export function initializeDemoData(): void {
-  // 1. Auth — 自動登入學生身分
+  // 1. Auth，自動登入學生身分
   const authStore = useAuthStore.getState();
   if (!authStore.user) {
     authStore.setUser({
@@ -192,7 +192,7 @@ export function initializeDemoData(): void {
     });
   }
 
-  // 2. Knowledge — 節點、邊、路徑
+  // 2. Knowledge，節點、邊、路徑
   const knowledgeStore = useKnowledgeStore.getState();
   if (knowledgeStore.nodes.length === 0) {
     knowledgeStore.setNodes(ALL_NODES);
@@ -200,7 +200,7 @@ export function initializeDemoData(): void {
     knowledgeStore.setPaths(ALL_PATHS);
   }
 
-  // 3. Learning — 學習進度
+  // 3. Learning，學習進度
   const learningStore = useLearningStore.getState();
   const hasProgress = learningStore.progress.size > 0;
   if (!hasProgress) {
@@ -209,7 +209,7 @@ export function initializeDemoData(): void {
     }
   }
 
-  // 4. Gamification — XP、成就、事件
+  // 4. Gamification，XP、成就、事件
   const gamStore = useGamificationStore.getState();
   if (gamStore.experience.total_xp === 0) {
     gamStore.setExperience(SEED_EXPERIENCE);

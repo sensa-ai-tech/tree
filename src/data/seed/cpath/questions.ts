@@ -63,7 +63,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '溶血干擾造成偽陽性',
     ],
     correct_answer: '肝細胞損傷合併肝功能下降',
-    explanation: 'ALT 顯著升高是肝細胞損傷的敏感指標（肝特異性酵素）。ALP 升高可反映膽汁淤積或皮質醇誘導。白蛋白由肝臟合成，低白蛋白血症提示肝臟合成功能下降。三者結合指向明確的肝細胞損傷伴隨功能減退。',
+    explanation: 'ALT 明顯升高是肝細胞損傷的敏感指標（肝特異性酵素）。ALP 升高可反映膽汁淤積或皮質醇誘導。白蛋白由肝臟合成，低白蛋白血症提示肝臟合成功能下降。三者結合指向明確的肝細胞損傷伴隨功能減退。',
     difficulty: 3, spaced_rep: true, tags: ['生化', '肝臟', '判讀'], image_placeholder: null,
   },
   // CPATH-L4-003 細胞學基本原則
@@ -329,7 +329,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-CPATH-CHEM-003', node_id: 'CPATH-L1-002', question_type: 'mcq',
-    question: '溶血樣本對下列哪項生化數值的影響最為顯著？',
+    question: '溶血樣本對下列哪項生化數值的影響最為明顯？',
     options: [
       '血糖（glucose）假性升高',
       '鉀離子（potassium）假性升高',
@@ -337,7 +337,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '膽固醇（cholesterol）假性升高',
     ],
     correct_answer: '鉀離子（potassium）假性升高',
-    explanation: '紅血球細胞內鉀離子濃度遠高於血漿（尤其犬），溶血時大量鉀離子釋入血漿造成假性高血鉀。此外溶血也會影響：AST 升高（紅血球含 AST）、LDH 升高、膽紅素干擾、鐵升高。溶血對血糖的影響是降低（因紅血球持續消耗葡萄糖）而非升高。',
+    explanation: '紅血球細胞內鉀離子濃度遠高於血漿（尤其犬），溶血時大量鉀離子釋入血漿造成假性高血鉀。另外溶血也會影響：AST 升高（紅血球含 AST）、LDH 升高、膽紅素干擾、鐵升高。溶血對血糖的影響是降低（因紅血球持續消耗葡萄糖）而非升高。',
     difficulty: 2, spaced_rep: true, tags: ['臨床化學', '溶血', '干擾'], image_placeholder: null,
   },
   {
@@ -350,7 +350,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '骨骼型 ALP 在成年犬中佔主要比例',
     ],
     correct_answer: '犬有肝臟型、骨骼型與皮質醇誘導型（CALP）三種主要來源',
-    explanation: '犬 ALP 有三種主要同功異構酶：(1) 肝臟型（L-ALP）來自膽管上皮，膽汁淤積時升高；(2) 骨骼型（B-ALP）來自成骨細胞，幼犬及骨骼疾病時升高；(3) 皮質醇誘導型（CALP）為犬特有，Cushing 或外源性類固醇使用時顯著升高。貓沒有 CALP，故貓 ALP 升高的臨床意義更大。',
+    explanation: '犬 ALP 有三種主要同功異構酶：(1) 肝臟型（L-ALP）來自膽管上皮，膽汁淤積時升高；(2) 骨骼型（B-ALP）來自成骨細胞，幼犬及骨骼疾病時升高；(3) 皮質醇誘導型（CALP）為犬特有，Cushing 或外源性類固醇使用時明顯升高。貓沒有 CALP，故貓 ALP 升高的臨床意義更大。',
     difficulty: 3, spaced_rep: true, tags: ['臨床化學', 'ALP', '同功異構酶'], image_placeholder: null,
   },
   {
@@ -363,7 +363,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       'IRIS Stage 4',
     ],
     correct_answer: 'IRIS Stage 3',
-    explanation: 'IRIS CKD 分期依據穩定狀態下的血清 creatinine 與 SDMA：Stage 1（Cr < 1.4, SDMA < 18）、Stage 2（Cr 1.4-2.8, SDMA 18-35）、Stage 3（Cr 2.9-5.0, SDMA 36-54）、Stage 4（Cr > 5.0, SDMA > 54）。此犬 creatinine 3.2 mg/dL 落在 Stage 3 範圍。SDMA 28 偏向 Stage 2，但 IRIS 建議以 creatinine 為主要依據。高磷血症與等滲尿進一步支持腎功能減退。',
+    explanation: 'IRIS CKD 分期依據穩定狀態下的血清 creatinine 與 SDMA：Stage 1（Cr < 1.4, SDMA < 18）、Stage 2（Cr 1.4-2.8, SDMA 18-35）、Stage 3（Cr 2.9-5.0, SDMA 36-54）、Stage 4（Cr > 5.0, SDMA > 54）。此犬 creatinine 3.2 mg/dL 落在 Stage 3 範圍。SDMA 28 偏向 Stage 2，但 IRIS 建議以 creatinine 為主要依據。高磷血症與等滲尿後續支持腎功能減退。',
     difficulty: 4, spaced_rep: true, tags: ['臨床化學', 'CKD', 'IRIS', '腎臟'], image_placeholder: null,
   },
   {
@@ -530,7 +530,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '非再生性小球性貧血',
     ],
     correct_answer: '非再生性正球性貧血',
-    explanation: 'PCV 15% 為嚴重貧血。犬 reticulocyte count < 60,000/uL 代表骨髓反應不足（非再生性）。MCV 正常代表正球性。非再生性正球性貧血常見於慢性腎病（EPO 不足）、慢性疾病性貧血、骨髓疾病（再生不良性貧血、白血病浸潤）。需進一步做骨髓檢查確認原因。',
+    explanation: 'PCV 15% 為嚴重貧血。犬 reticulocyte count < 60,000/uL 代表骨髓反應不足（非再生性）。MCV 正常代表正球性。非再生性正球性貧血常見於慢性腎病（EPO 不足）、慢性疾病性貧血、骨髓疾病（再生不良性貧血、白血病浸潤）。需後續做骨髓檢查確認原因。',
     difficulty: 3, spaced_rep: true, tags: ['CBC', '貧血', '非再生性'], image_placeholder: null,
   },
   {
@@ -607,7 +607,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '必定為外源性類固醇誘導',
     ],
     correct_answer: '貓 ALP 半衰期短且缺乏 CALP，此升高具重要臨床意義',
-    explanation: '貓 ALP 的血清半衰期僅約 6 小時（犬約 70 小時），且貓缺乏皮質醇誘導型 ALP（CALP）。因此貓 ALP 即使輕度升高（2-3 倍）也具重要臨床意義，常見原因包括肝脂肪沉積症（hepatic lipidosis）、膽管炎、膽道阻塞。犬 ALP 可因類固醇、抗痙攣藥等大幅升高而無肝膽疾病。',
+    explanation: '貓 ALP 的血清半衰期僅約 6 小時（犬約 70 小時），且貓缺乏皮質醇誘導型 ALP（CALP）。所以貓 ALP 即使輕度升高（2-3 倍）也具重要臨床意義，常見原因包括肝脂肪沉積症（hepatic lipidosis）、膽管炎、膽道阻塞。犬 ALP 可因類固醇、抗痙攣藥等大幅升高而無肝膽疾病。',
     difficulty: 3, spaced_rep: true, tags: ['生化', 'ALP', '貓', '物種差異'], image_placeholder: null,
   },
   {
@@ -620,7 +620,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '膽汁淤積',
     ],
     correct_answer: '肌肉損傷',
-    explanation: 'CK 是肌肉特異性酵素（骨骼肌與心肌），顯著升高強烈提示肌肉損傷。AST 同時存在於肝臟與肌肉，在 CK 升高的情況下 AST 升高應歸因於肌肉來源。ALT 正常進一步排除肝臟損傷。常見原因：外傷、劇烈運動、肌炎、注射部位反應、癲癇發作後、低鉀性肌病等。',
+    explanation: 'CK 是肌肉特異性酵素（骨骼肌與心肌），明顯升高強烈提示肌肉損傷。AST 同時存在於肝臟與肌肉，在 CK 升高的情況下 AST 升高應歸因於肌肉來源。ALT 正常後續排除肝臟損傷。常見原因：外傷、劇烈運動、肌炎、注射部位反應、癲癇發作後、低鉀性肌病等。',
     difficulty: 3, spaced_rep: true, tags: ['生化', 'CK', '肌肉', '判讀'], image_placeholder: null,
   },
   {
@@ -654,7 +654,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     question: '犬血清膽固醇（cholesterol）升高最常見的原因是高脂飲食，與內分泌疾病無關。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '犬高膽固醇血症最常見的原因是內分泌疾病，尤其是甲狀腺功能低下（hypothyroidism）與腎上腺皮質功能亢進（hyperadrenocorticism）。其他原因包括膽汁淤積（膽汁酸排泄減少）、腎病症候群（蛋白質流失刺激肝臟脂蛋白合成增加）、糖尿病。犬不像人類那樣容易因飲食而顯著升高膽固醇。',
+    explanation: '犬高膽固醇血症最常見的原因是內分泌疾病，尤其是甲狀腺功能低下（hypothyroidism）與腎上腺皮質功能亢進（hyperadrenocorticism）。其他原因包括膽汁淤積（膽汁酸排泄減少）、腎病症候群（蛋白質流失刺激肝臟脂蛋白合成增加）、糖尿病。犬不像人類那樣容易因飲食而明顯升高膽固醇。',
     difficulty: 3, spaced_rep: true, tags: ['生化', '膽固醇', '內分泌'], image_placeholder: null,
   },
   {
@@ -787,7 +787,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       'Platelet count',
     ],
     correct_answer: 'PT',
-    explanation: '抗凝血劑齧齒動物毒餌抑制 vitamin K epoxide reductase，影響 vitamin K 依賴性凝血因子（II、VII、IX、X）的活化。Factor VII 的半衰期最短（犬約 6 小時），最先耗竭，因此 PT（評估外在路徑，包含 Factor VII）最先延長。aPTT 隨後才會延長（Factor IX 半衰期較長）。血小板計數不受直接影響。',
+    explanation: '抗凝血劑齧齒動物毒餌抑制 vitamin K epoxide reductase，影響 vitamin K 依賴性凝血因子（II、VII、IX、X）的活化。Factor VII 的半衰期最短（犬約 6 小時），最先耗竭，所以 PT（評估外在路徑，包含 Factor VII）最先延長。aPTT 隨後才會延長（Factor IX 半衰期較長）。血小板計數不受直接影響。',
     difficulty: 3, spaced_rep: true, tags: ['凝血', '鼠藥中毒', 'vitamin K'], image_placeholder: null,
   },
   {
@@ -800,7 +800,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       'D-dimer 只在人醫有價值，獸醫無應用',
     ],
     correct_answer: 'D-dimer 升高代表纖維蛋白溶解活性增加，但特異度低',
-    explanation: 'D-dimer 是交聯纖維蛋白（cross-linked fibrin）被 plasmin 降解的產物，升高代表體內有凝血與纖溶同時進行。在犬的 DIC 診斷中有參考價值但特異度低——任何導致血栓或纖維蛋白沉積的狀況（手術後、創傷、腫瘤、炎症）都可能升高。DIC 診斷需綜合 PT/aPTT 延長、血小板減少、fibrinogen 降低、D-dimer 升高等多項指標。',
+    explanation: 'D-dimer 是交聯纖維蛋白（cross-linked fibrin）被 plasmin 降解的產物，升高代表體內有凝血與纖溶同時進行。在犬的 DIC 診斷中有參考價值但特異度低，任何導致血栓或纖維蛋白沉積的狀況（手術後、創傷、腫瘤、炎症）都可能升高。DIC 診斷需綜合 PT/aPTT 延長、血小板減少、fibrinogen 降低、D-dimer 升高等多項指標。',
     difficulty: 4, spaced_rep: true, tags: ['凝血', 'D-dimer', 'DIC'], image_placeholder: null,
   },
   {
@@ -818,7 +818,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-CPATH-COAG-006', node_id: 'CPATH-L4-004', question_type: 'case_based',
-    question: '一隻 8 歲犬因脾臟腫塊住院，術後第二天出現手術傷口滲血、針孔不止血。檢查：PT 延長、aPTT 延長、platelet 38,000/uL（參考值 175,000-500,000）、fibrinogen 50 mg/dL（參考值 200-400）、D-dimer 顯著升高。血液抹片見 schistocytes。最可能的診斷為？',
+    question: '一隻 8 歲犬因脾臟腫塊住院，術後第二天出現手術傷口滲血、針孔不止血。檢查：PT 延長、aPTT 延長、platelet 38,000/uL（參考值 175,000-500,000）、fibrinogen 50 mg/dL（參考值 200-400）、D-dimer 明顯升高。血液抹片見 schistocytes。最可能的診斷為？',
     options: [
       '原發性免疫介導性血小板減少症',
       '瀰漫性血管內凝血（DIC）',
@@ -844,7 +844,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       'vWD 會導致 PT 延長',
       'vWD 第一型在 Doberman Pinscher 中最為常見',
       'vWD 透過 aPTT 即可確診',
-      'vWD 患犬的血小板計數通常顯著降低',
+      'vWD 患犬的血小板計數通常明顯降低',
     ],
     correct_answer: 'vWD 第一型在 Doberman Pinscher 中最為常見',
     explanation: 'von Willebrand disease 是犬最常見的先天性出血性疾病。第一型（所有 vWF multimers 等比例減少）最常見，Doberman Pinscher 盛行率可達 50-70%。vWF 參與血小板黏附（primary hemostasis），故 BMBT 延長但血小板計數正常。aPTT 可能輕度延長（因 vWF 也是 Factor VIII 的攜帶蛋白），但 aPTT 正常不能排除 vWD。確診需測量 vWF:Ag。',
@@ -903,7 +903,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '單純代謝性鹼中毒',
     ],
     correct_answer: '呼吸性酸中毒合併部分代謝代償',
-    explanation: 'pH 7.28（酸性）、pCO2 68 mmHg（顯著升高，主要變化）指向呼吸性酸中毒（換氣不足導致 CO2 蓄積）。HCO3- 30 mmol/L 輕度升高為代謝代償（腎臟保留 HCO3-）。pO2 55 mmHg 顯示低氧血症。常見原因：上呼吸道阻塞、神經肌肉疾病、胸腔積液、肺實質病變。需評估是否需要機械通氣。',
+    explanation: 'pH 7.28（酸性）、pCO2 68 mmHg（明顯升高，主要變化）指向呼吸性酸中毒（換氣不足導致 CO2 蓄積）。HCO3- 30 mmol/L 輕度升高為代謝代償（腎臟保留 HCO3-）。pO2 55 mmHg 顯示低氧血症。常見原因：上呼吸道阻塞、神經肌肉疾病、胸腔積液、肺實質病變。需評估是否需要機械通氣。',
     difficulty: 4, spaced_rep: true, tags: ['血氣', '呼吸性酸中毒', '判讀'], image_placeholder: null,
   },
   {
@@ -1006,7 +1006,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '腫瘤性胸水；化療',
     ],
     correct_answer: '化膿性胸膜炎（pyothorax）；胸管引流 + 全身性抗生素',
-    explanation: '化膿性滲出液（蛋白質 > 3.0, 有核細胞 > 5,000）以退化性嗜中性球為主（核腫脹、染色質模糊），見細胞內細菌，glucose 極低（細菌與嗜中性球消耗）——這是化膿性胸膜炎（pyothorax）的典型表現。犬 pyothorax 常見混合感染（需氧+厭氧菌）。治療三要素：(1) 雙側胸管引流；(2) 全身性廣效抗生素（待培養結果再調整）；(3) 支持療法。',
+    explanation: '化膿性滲出液（蛋白質 > 3.0, 有核細胞 > 5,000）以退化性嗜中性球為主（核腫脹、染色質模糊），見細胞內細菌，glucose 極低（細菌與嗜中性球消耗），這是化膿性胸膜炎（pyothorax）的典型表現。犬 pyothorax 常見混合感染（需氧+厭氧菌）。治療三要素：(1) 雙側胸管引流；(2) 全身性廣效抗生素（待培養結果再調整）；(3) 支持療法。',
     difficulty: 4, spaced_rep: true, tags: ['體液', '胸水', 'pyothorax'], image_placeholder: null,
   },
   {
@@ -1057,7 +1057,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '再生不良性貧血',
     ],
     correct_answer: '急性白血病（acute leukemia）',
-    explanation: '骨髓中原始細胞（blasts）> 20%（WHO 標準）或 > 30%（部分舊標準）是急性白血病的診斷門檻。進一步分型需結合形態學、細胞化學染色與流式細胞術：急性骨髓性白血病（AML）vs 急性淋巴球性白血病（ALL）。MDS 的 blast 比例 < 20% 但有血球發育異常。反應性增生的 blast 不會如此高比例。',
+    explanation: '骨髓中原始細胞（blasts）> 20%（WHO 標準）或 > 30%（部分舊標準）是急性白血病的診斷門檻。後續分型需結合形態學、細胞化學染色與流式細胞術：急性骨髓性白血病（AML）vs 急性淋巴球性白血病（ALL）。MDS 的 blast 比例 < 20% 但有血球發育異常。反應性增生的 blast 不會如此高比例。',
     difficulty: 4, spaced_rep: true, tags: ['骨髓', '白血病', 'blast'], image_placeholder: null,
   },
   {
@@ -1075,7 +1075,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-CPATH-BM-005', node_id: 'CPATH-L4-007', question_type: 'case_based',
-    question: '一隻 6 歲犬因全血球減少（pancytopenia）就診。骨髓穿刺：低細胞性（hypocellular），脂肪佔 > 75%，三系造血前驅細胞均顯著減少，無異常細胞浸潤。最可能的骨髓診斷為？',
+    question: '一隻 6 歲犬因全血球減少（pancytopenia）就診。骨髓穿刺：低細胞性（hypocellular），脂肪佔 > 75%，三系造血前驅細胞均明顯減少，無異常細胞浸潤。最可能的骨髓診斷為？',
     options: [
       '急性白血病',
       '骨髓增生不良症候群（MDS）',
@@ -1088,7 +1088,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-CPATH-BM-006', node_id: 'CPATH-L4-007', question_type: 'case_based',
-    question: '一隻 4 歲犬因嚴重非再生性貧血（PCV 10%）就診。骨髓穿刺：M:E ratio 8:1（顯著升高），紅血球前驅細胞系列幾乎消失，顆粒球系正常增生，巨核細胞正常。最可能的骨髓診斷為？',
+    question: '一隻 4 歲犬因嚴重非再生性貧血（PCV 10%）就診。骨髓穿刺：M:E ratio 8:1（明顯升高），紅血球前驅細胞系列幾乎消失，顆粒球系正常增生，巨核細胞正常。最可能的骨髓診斷為？',
     options: [
       '純紅血球再生不良（pure red cell aplasia, PRCA）',
       '急性骨髓性白血病',
@@ -1096,7 +1096,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '反應性紅血球增生',
     ],
     correct_answer: '純紅血球再生不良（pure red cell aplasia, PRCA）',
-    explanation: 'M:E ratio 極度升高（8:1）因紅血球系幾乎消失，而顆粒球系與巨核球系正常——這是純紅血球再生不良（PRCA）的特徵。PRCA 選擇性影響紅血球前驅細胞，常為免疫介導性（抗體攻擊紅血球前驅細胞或 EPO）。犬 PRCA 也可能與 FeLV（貓）、Parvovirus、藥物有關。與 aplastic anemia（三系均受影響）不同。',
+    explanation: 'M:E ratio 極度升高（8:1）因紅血球系幾乎消失，而顆粒球系與巨核球系正常，這是純紅血球再生不良（PRCA）的特徵。PRCA 選擇性影響紅血球前驅細胞，常為免疫介導性（抗體攻擊紅血球前驅細胞或 EPO）。犬 PRCA 也可能與 FeLV（貓）、Parvovirus、藥物有關。與 aplastic anemia（三系均受影響）不同。',
     difficulty: 5, spaced_rep: true, tags: ['骨髓', 'PRCA', 'M:E ratio'], image_placeholder: null,
   },
   {
@@ -1191,7 +1191,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-CPATH-BT-007', node_id: 'CPATH-L4-008', question_type: 'true_false',
-    question: '犬首次輸血不需要做血型鑑定或交叉試驗，因為犬沒有臨床顯著的天然同種抗體。',
+    question: '犬首次輸血不需要做血型鑑定或交叉試驗，因為犬沒有臨床明顯的天然同種抗體。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
     explanation: '雖然犬不像貓有強力天然同種抗體，首次不配型輸血的急性致命反應風險較低，但仍建議進行血型鑑定（至少 DEA 1）。原因：(1) 部分犬可能有天然抗 DEA 抗體（尤其抗 DEA 7, Dal）；(2) 首次不配型輸血會致敏，使第二次輸血風險大增；(3) 即使首次也可能有輕度反應（發燒、嘔吐）。理想做法是所有輸血前均做血型+交叉試驗。',
@@ -1224,7 +1224,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '完全不受尿液濃度影響',
     ],
     correct_answer: '在鹼性尿液中容易出現假陽性',
-    explanation: '尿液試紙蛋白質墊是基於 pH 指示劑與蛋白質結合後的顏色變化（protein error of indicator）。鹼性尿液（pH > 7.5）會導致試劑墊本身顏色改變，造成假陽性。此外試紙主要偵測白蛋白，對球蛋白與 Bence-Jones 蛋白的敏感度低。尿液蛋白的確認與量化需使用 UPC（urine protein/creatinine ratio）。',
+    explanation: '尿液試紙蛋白質墊是基於 pH 指示劑與蛋白質結合後的顏色變化（protein error of indicator）。鹼性尿液（pH > 7.5）會導致試劑墊本身顏色改變，造成假陽性。另外試紙主要偵測白蛋白，對球蛋白與 Bence-Jones 蛋白的敏感度低。尿液蛋白的確認與量化需使用 UPC（urine protein/creatinine ratio）。',
     difficulty: 3, spaced_rep: true, tags: ['尿液', '試紙', '蛋白質'], image_placeholder: null,
   },
   {
@@ -1263,7 +1263,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '膀胱腫瘤；超音波',
     ],
     correct_answer: '細菌性膀胱炎合併 struvite 結石形成風險；尿液培養',
-    explanation: '膀胱穿刺尿液見大量 WBC 與細菌，確認為細菌性膀胱炎。鹼性尿液（pH 8.0）與 struvite 結晶提示感染引起的鹼性環境促進 struvite 形成——犬的 struvite 結石 > 85% 與尿路感染相關（感染型，尤其 urease-producing bacteria 如 Staphylococcus）。需做尿液培養+抗藥性試驗選擇適當抗生素，同時影像學評估是否已有結石。',
+    explanation: '膀胱穿刺尿液見大量 WBC 與細菌，確認為細菌性膀胱炎。鹼性尿液（pH 8.0）與 struvite 結晶提示感染引起的鹼性環境促進 struvite 形成，犬的 struvite 結石 > 85% 與尿路感染相關（感染型，尤其 urease-producing bacteria 如 Staphylococcus）。需做尿液培養+抗藥性試驗選擇適當抗生素，同時影像學評估是否已有結石。',
     difficulty: 3, spaced_rep: true, tags: ['尿液', 'UTI', 'struvite', '培養'], image_placeholder: null,
   },
   {
@@ -1284,7 +1284,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     question: '尿液試紙上的葡萄糖（glucose）測試在犬中出現陽性，一定代表糖尿病。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '尿液葡萄糖陽性（glucosuria）代表血糖超過腎臟再吸收閾值（犬約 180 mg/dL），最常見原因確實是糖尿病。但其他原因也可導致：(1) 壓力性高血糖（犬可達 200+ mg/dL）；(2) 輸注含葡萄糖液體；(3) 腎小管功能異常（Fanconi syndrome，如 Basenji）——此時血糖正常但腎臟無法正常再吸收葡萄糖；(4) 某些藥物。需結合血糖判讀。',
+    explanation: '尿液葡萄糖陽性（glucosuria）代表血糖超過腎臟再吸收閾值（犬約 180 mg/dL），最常見原因確實是糖尿病。但其他原因也可導致：(1) 壓力性高血糖（犬可達 200+ mg/dL）；(2) 輸注含葡萄糖液體；(3) 腎小管功能異常（Fanconi syndrome，如 Basenji），此時血糖正常但腎臟無法正常再吸收葡萄糖；(4) 某些藥物。需結合血糖判讀。',
     difficulty: 2, spaced_rep: true, tags: ['尿液', '葡萄糖', '鑑別'], image_placeholder: null,
   },
   {
@@ -1353,7 +1353,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '基礎值過低，無法判讀',
     ],
     correct_answer: '不完全抑制（8 hr > 1.4 ug/dL），支持 Cushing\'s syndrome',
-    explanation: 'LDDS test 判讀關鍵看 8 小時值：若 8 hr cortisol > 1.4 ug/dL（或 > 50% baseline），代表未被抑制，支持 Cushing\'s syndrome 診斷。此犬 8 hr 值 4.2 ug/dL 遠超過閾值。4 hr 值 3.8 ug/dL 未見明顯抑制，故無法藉此區分垂體型 vs 腎上腺型（若 4 hr 值下降 > 50% 後 8 hr 反彈，或 8 hr 仍抑制 > 50%，則傾向垂體型）。需進一步做腹部超音波或 HDDS 區分。',
+    explanation: 'LDDS test 判讀關鍵看 8 小時值：若 8 hr cortisol > 1.4 ug/dL（或 > 50% baseline），代表未被抑制，支持 Cushing\'s syndrome 診斷。此犬 8 hr 值 4.2 ug/dL 遠超過閾值。4 hr 值 3.8 ug/dL 未見明顯抑制，故無法藉此區分垂體型 vs 腎上腺型（若 4 hr 值下降 > 50% 後 8 hr 反彈，或 8 hr 仍抑制 > 50%，則傾向垂體型）。需後續做腹部超音波或 HDDS 區分。',
     difficulty: 4, spaced_rep: true, tags: ['內分泌', 'LDDS', 'Cushing'], image_placeholder: null,
   },
   {
@@ -1366,7 +1366,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '甲亢復發',
     ],
     correct_answer: '治療甲亢後暴露了潛在的慢性腎病（masked CKD）',
-    explanation: '甲狀腺功能亢進導致心輸出量增加、腎血流量增加、GFR 增加，使 creatinine 假性正常或偏低——掩蓋了潛在的 CKD。治療甲亢（降低 T4）後，GFR 回到真實水準，原本被掩蓋的腎功能不全暴露出來（creatinine 上升）。建議甲亢治療前先用 methimazole trial（2-4 週）評估腎功能，若 creatinine 顯著上升，可能需要只做部分控制甲亢以平衡腎臟灌流。',
+    explanation: '甲狀腺功能亢進導致心輸出量增加、腎血流量增加、GFR 增加，使 creatinine 假性正常或偏低，掩蓋了潛在的 CKD。治療甲亢（降低 T4）後，GFR 回到真實水準，原本被掩蓋的腎功能不全暴露出來（creatinine 上升）。建議甲亢治療前先用 methimazole trial（2-4 週）評估腎功能，若 creatinine 明顯上升，可能需要只做部分控制甲亢以平衡腎臟灌流。',
     difficulty: 5, spaced_rep: true, tags: ['內分泌', '貓', '甲亢', 'CKD', '腎臟'], image_placeholder: null,
   },
   {
@@ -1374,7 +1374,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     question: 'Fructosamine 反映犬貓過去 2-3 週的平均血糖，不受採樣當下壓力性高血糖的影響。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'Fructosamine 是血清蛋白質（主要為白蛋白）與葡萄糖非酵素性糖化的產物，反映過去 1-3 週（犬約 2-3 週、貓約 1-2 週）的平均血糖。短暫的壓力性高血糖不會顯著影響 fructosamine 值。但低白蛋白血症會導致 fructosamine 假性偏低、甲亢（蛋白質代謝加速）也會偏低。在監測糖尿病治療效果與鑑別壓力性高血糖方面非常有價值。',
+    explanation: 'Fructosamine 是血清蛋白質（主要為白蛋白）與葡萄糖非酵素性糖化的產物，反映過去 1-3 週（犬約 2-3 週、貓約 1-2 週）的平均血糖。短暫的壓力性高血糖不會明顯影響 fructosamine 值。但低白蛋白血症會導致 fructosamine 假性偏低、甲亢（蛋白質代謝加速）也會偏低。在監測糖尿病治療效果與鑑別壓力性高血糖方面非常有價值。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌', 'fructosamine', '血糖'], image_placeholder: null,
   },
   {
@@ -1417,7 +1417,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '嗜酸性球性淋巴結炎',
     ],
     correct_answer: '轉移性癌（carcinoma）',
-    explanation: '上皮細胞在淋巴結中屬於異常發現。見到成群黏附的上皮樣細胞具有惡性標準（核仁明顯、異型性），高度提示轉移性癌（carcinoma metastasis）。上皮細胞腫瘤的細胞學特徵為細胞群聚（clustering）、細胞間黏附性強。需進一步確認原發腫瘤來源（乳腺、肺、甲狀腺、消化道等）。淋巴瘤細胞是獨立分散的圓形細胞。',
+    explanation: '上皮細胞在淋巴結中屬於異常發現。見到成群黏附的上皮樣細胞具有惡性標準（核仁明顯、異型性），高度提示轉移性癌（carcinoma metastasis）。上皮細胞腫瘤的細胞學特徵為細胞群聚（clustering）、細胞間黏附性強。需後續確認原發腫瘤來源（乳腺、肺、甲狀腺、消化道等）。淋巴瘤細胞是獨立分散的圓形細胞。',
     difficulty: 4, spaced_rep: true, tags: ['淋巴結', '轉移', '癌', '細胞學'], image_placeholder: null,
   },
   {
@@ -1443,7 +1443,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '感染性淋巴結炎；培養',
     ],
     correct_answer: '高分化淋巴瘤；流式細胞術確認免疫表型（B vs T cell）',
-    explanation: '多中心淋巴結腫大合併細胞學顯示 > 50% 大型淋巴母細胞、多個核仁、高有絲分裂象——確診高分化淋巴瘤。黃金獵犬是淋巴瘤好發品種。下一步流式細胞術確認 B cell vs T cell 免疫表型：B-cell 對 CHOP 化療反應較好（中位生存期 12-14 月），T-cell 預後較差（6-9 月）。同時需分期（胸腹 X 光/超音波、骨髓、CBC）。',
+    explanation: '多中心淋巴結腫大合併細胞學顯示 > 50% 大型淋巴母細胞、多個核仁、高有絲分裂象，確診高分化淋巴瘤。黃金獵犬是淋巴瘤好發品種。下一步流式細胞術確認 B cell vs T cell 免疫表型：B-cell 對 CHOP 化療反應較好（中位生存期 12-14 月），T-cell 預後較差（6-9 月）。同時需分期（胸腹 X 光/超音波、骨髓、CBC）。',
     difficulty: 4, spaced_rep: true, tags: ['淋巴結', '淋巴瘤', '流式細胞術', '分期'], image_placeholder: null,
   },
   {
@@ -1456,7 +1456,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '黑色素瘤轉移',
     ],
     correct_answer: '漿細胞瘤（plasmacytoma）',
-    explanation: '漿細胞的經典細胞學特徵為：核偏位（eccentric nucleus）、核旁透明區（perinuclear clear zone / Golgi zone）、胞漿嗜鹼性（RNA 豐富）。漿細胞瘤可發生於皮膚（較常見且通常良性）或骨外組織。需與淋巴瘤區分——漿細胞瘤的細胞更大、胞漿更豐富、核偏位更明顯。多發性骨髓瘤（multiple myeloma）也有漿細胞特徵，但伴隨骨溶解、M-protein 與骨髓浸潤。',
+    explanation: '漿細胞的經典細胞學特徵為：核偏位（eccentric nucleus）、核旁透明區（perinuclear clear zone / Golgi zone）、胞漿嗜鹼性（RNA 豐富）。漿細胞瘤可發生於皮膚（較常見且通常良性）或骨外組織。需與淋巴瘤區分，漿細胞瘤的細胞更大、胞漿更豐富、核偏位更明顯。多發性骨髓瘤（multiple myeloma）也有漿細胞特徵，但伴隨骨溶解、M-protein 與骨髓浸潤。',
     difficulty: 4, spaced_rep: true, tags: ['淋巴結', '漿細胞瘤', '細胞學'], image_placeholder: null,
   },
   {
@@ -1477,7 +1477,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '組織球性肉瘤',
     ],
     correct_answer: '反應性竇組織球增生（reactive sinus histiocytosis）',
-    explanation: '反應性竇組織球增生是淋巴結中竇巨噬細胞增生的良性反應，常見伴隨吞噬活動（erythrophagocytosis、hemosiderin 沉積、phagocytosed debris）。通常為對引流區域炎症、出血或免疫刺激的反應。與組織球性肉瘤不同——後者的組織球呈明顯異型性（核仁異常、多核巨細胞）。單純出血性淋巴結不會有如此活躍的吞噬活動與組織球增生。',
+    explanation: '反應性竇組織球增生是淋巴結中竇巨噬細胞增生的良性反應，常見伴隨吞噬活動（erythrophagocytosis、hemosiderin 沉積、phagocytosed debris）。通常為對引流區域炎症、出血或免疫刺激的反應。與組織球性肉瘤不同，後者的組織球呈明顯異型性（核仁異常、多核巨細胞）。單純出血性淋巴結不會有如此活躍的吞噬活動與組織球增生。',
     difficulty: 4, spaced_rep: true, tags: ['淋巴結', '組織球', '吞噬'], image_placeholder: null,
   },
 
@@ -1554,7 +1554,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     question: '犬疥癬蟲（Sarcoptes scabiei）因數量少且寄生在表皮隧道中，皮膚刮搔的敏感度僅約 20-50%，故刮搔陰性不能排除疥癬。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '犬疥癬蟲在皮膚上的數量通常很少（與 Demodex 不同），加上牠們在表皮角質層挖掘隧道，即使淺層刮搔也不一定能取到。皮膚刮搔敏感度僅 20-50%。因此臨床上若高度懷疑疥癬（劇烈搔癢、耳緣反射陽性、接觸史），即使刮搔陰性也可進行試驗性治療（trial treatment with isoxazoline 或 selamectin）。血清學（IgG ELISA）也可輔助。',
+    explanation: '犬疥癬蟲在皮膚上的數量通常很少（與 Demodex 不同），加上牠們在表皮角質層挖掘隧道，即使淺層刮搔也不一定能取到。皮膚刮搔敏感度僅 20-50%。所以臨床上若高度懷疑疥癬（劇烈搔癢、耳緣反射陽性、接觸史），即使刮搔陰性也可進行試驗性治療（trial treatment with isoxazoline 或 selamectin）。血清學（IgG ELISA）也可輔助。',
     difficulty: 3, spaced_rep: true, tags: ['皮膚', 'Sarcoptes', '敏感度'], image_placeholder: null,
   },
   {
@@ -1597,7 +1597,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '病毒培養',
     ],
     correct_answer: '抗 FIV 抗體（antibody）',
-    explanation: 'FIV 快篩（如 SNAP FIV/FeLV combo）偵測的是抗 FIV 抗體。因此有窗口期限制（感染後 2-4 週才產生足夠抗體）。假陽性可見於：(1) 幼貓接受到母源抗體（建議 > 6 月齡後重測）；(2) 曾接種 FIV 疫苗。抗體陽性需以 Western blot 或 PCR 確認。與 FeLV 不同——FeLV 快篩偵測的是 p27 抗原。',
+    explanation: 'FIV 快篩（如 SNAP FIV/FeLV combo）偵測的是抗 FIV 抗體。所以有窗口期限制（感染後 2-4 週才產生足夠抗體）。假陽性可見於：(1) 幼貓接受到母源抗體（建議 > 6 月齡後重測）；(2) 曾接種 FIV 疫苗。抗體陽性需以 Western blot 或 PCR 確認。與 FeLV 不同，FeLV 快篩偵測的是 p27 抗原。',
     difficulty: 3, spaced_rep: true, tags: ['感染', 'FIV', '抗體', '貓'], image_placeholder: null,
   },
   {
@@ -1743,7 +1743,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '促進 T 細胞的增殖',
     ],
     correct_answer: '在標的細胞膜上形成孔洞，導致細胞裂解',
-    explanation: '補體系統活化的最終產物為 C5b-C9 組成的膜攻擊複合體（MAC），它插入標的細胞（如細菌或被抗體標記的細胞）的細胞膜，形成跨膜孔洞，導致離子與水分湧入，最終造成細胞滲透性裂解。此外，補體活化過程中的中間產物也有重要功能：C3a/C5a 為過敏毒素（促發炎）、C3b 為調理素（促進吞噬）。',
+    explanation: '補體系統活化的最終產物為 C5b-C9 組成的膜攻擊複合體（MAC），它插入標的細胞（如細菌或被抗體標記的細胞）的細胞膜，形成跨膜孔洞，導致離子與水分湧入，最終造成細胞滲透性裂解。另外，補體活化過程中的中間產物也有重要功能：C3a/C5a 為過敏毒素（促發炎）、C3b 為調理素（促進吞噬）。',
     difficulty: 2, spaced_rep: true, tags: ['免疫學', '補體', 'MAC', '先天免疫'], image_placeholder: null,
   },
 
@@ -1786,7 +1786,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '代表有細菌汙染',
     ],
     correct_answer: '代表有皮黴菌（dermatophyte）生長，因其優先代謝蛋白質產生鹼性代謝物',
-    explanation: 'DTM 培養基含有 pH 指示劑（酚紅），皮黴菌（Microsporum, Trichophyton）優先代謝蛋白質產生鹼性代謝物，使培養基 pH 上升、顏色從黃色轉為紅色。重要的是，顏色變化應在菌落生長同時或之前出現才有意義；某些腐生菌晚期也可能產生鹼性代謝物造成偽陽性。因此需結合菌落形態與顯微鏡觀察大分生孢子型態確認。',
+    explanation: 'DTM 培養基含有 pH 指示劑（酚紅），皮黴菌（Microsporum, Trichophyton）優先代謝蛋白質產生鹼性代謝物，使培養基 pH 上升、顏色從黃色轉為紅色。重要的是，顏色變化應在菌落生長同時或之前出現才有意義；某些腐生菌晚期也可能產生鹼性代謝物造成偽陽性。所以需結合菌落形態與顯微鏡觀察大分生孢子型態確認。',
     difficulty: 2, spaced_rep: true, tags: ['微生物學', '黴菌', 'DTM', '皮黴菌'], image_placeholder: null,
   },
 
@@ -1841,12 +1841,12 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
     question: '與大型參考實驗室相比，即時檢驗（POCT）設備在臨床上的最大優勢為何？',
     options: [
       '精確度（precision）總是優於參考實驗室',
-      '能在數分鐘內於診間獲得結果，對急診決策與即時治療調整至關重要',
+      '能在數分鐘內於診間獲得結果，對急診決策與即時治療調整不能省',
       '完全不需要品質管控程序',
       '所有項目的正常參考範圍與參考實驗室完全相同',
     ],
-    correct_answer: '能在數分鐘內於診間獲得結果，對急診決策與即時治療調整至關重要',
-    explanation: 'POCT（如 IDEXX Catalyst、iSTAT、Abaxis VetScan）最大的臨床價值是快速回報（turnaround time 數分鐘），這在急診情境（如 DKA 的電解質監測、急性腎損傷的即時評估）中至關重要。但 POCT 的精確度可能不如大型實驗室，且仍需定期品管（QC 校正液、比對試驗）。不同平台的參考範圍可能有差異，應使用各平台專屬的參考值。',
+    correct_answer: '能在數分鐘內於診間獲得結果，對急診決策與即時治療調整不能省',
+    explanation: 'POCT（如 IDEXX Catalyst、iSTAT、Abaxis VetScan）最大的臨床價值是快速回報（turnaround time 數分鐘），這在急診情境（如 DKA 的電解質監測、急性腎損傷的即時評估）中不能省。但 POCT 的精確度可能不如大型實驗室，且仍需定期品管（QC 校正液、比對試驗）。不同平台的參考範圍可能有差異，應使用各平台專屬的參考值。',
     difficulty: 3, spaced_rep: true, tags: ['POCT', '急診', '即時檢驗'], image_placeholder: null,
   },
   {
@@ -1932,7 +1932,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '嗜中性球左移（left shift）',
     ],
     correct_answer: '血小板凝集（platelet clumping）',
-    explanation: '臨床上無出血症狀但血小板計數極低時，最常見的原因是分析前偽象——血小板凝集（platelet clumping）。EDTA 抗凝劑可誘發部分犬（尤其是 Cavalier King Charles Spaniel）的血小板聚集，導致自動血球分析儀將血小板叢計為大型細胞或忽略，造成假性血小板低下。確認方法為血液抹片末端（feathered edge）檢查血小板叢。貓尤其容易發生 EDTA 誘導的血小板凝集。',
+    explanation: '臨床上無出血症狀但血小板計數極低時，最常見的原因是分析前偽象，血小板凝集（platelet clumping）。EDTA 抗凝劑可誘發部分犬（尤其是 Cavalier King Charles Spaniel）的血小板聚集，導致自動血球分析儀將血小板叢計為大型細胞或忽略，造成假性血小板低下。確認方法為血液抹片末端（feathered edge）檢查血小板叢。貓尤其容易發生 EDTA 誘導的血小板凝集。',
     difficulty: 3, spaced_rep: true, tags: ['CBC', '偽象', '血小板凝集', 'artifact'], image_placeholder: null,
   },
   {
@@ -1945,7 +1945,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '網狀紅血球計數（reticulocyte count）',
     ],
     correct_answer: '血紅素濃度（hemoglobin concentration）',
-    explanation: '脂血是常見的分析前干擾因素。血紅素測定採用分光光度法（cyanmethemoglobin 法），脂肪微粒造成光散射使吸光度假性升高，因此 hemoglobin 濃度偽高。連帶影響計算參數 MCH 和 MCHC 偽高。相較之下，RBC count 和 PCV（離心法）較不受脂血影響，因此當 MCHC > 38 g/dL 且與 PCV 不相符時，應考慮脂血干擾。',
+    explanation: '脂血是常見的分析前干擾因素。血紅素測定採用分光光度法（cyanmethemoglobin 法），脂肪微粒造成光散射使吸光度假性升高，所以 hemoglobin 濃度偽高。連帶影響計算參數 MCH 和 MCHC 偽高。相較之下，RBC count 和 PCV（離心法）較不受脂血影響，所以當 MCHC > 38 g/dL 且與 PCV 不相符時，應考慮脂血干擾。',
     difficulty: 3, spaced_rep: true, tags: ['CBC', '偽象', '脂血', 'hemoglobin'], image_placeholder: null,
   },
   {
@@ -2027,7 +2027,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '特發性癲癇',
     ],
     correct_answer: '腫瘤壓迫或血腦屏障受損（如脊髓腫瘤）',
-    explanation: '白蛋白細胞解離（albuminocytologic dissociation, ACD）指 CSF 蛋白質升高但有核細胞計數正常或僅輕微升高。最常見的原因包括：(1) 中樞神經系統腫瘤（壓迫導致血腦屏障局部破壞，蛋白質滲出但腫瘤細胞不易脫落至 CSF）；(2) 椎間盤疾病（IVDD）；(3) 缺血性脊髓病變。細菌性腦膜炎和犬瘟熱通常伴隨明顯的細胞增多。特發性癲癇 CSF 正常。ACD 發現時應建議 MRI 進一步檢查。',
+    explanation: '白蛋白細胞解離（albuminocytologic dissociation, ACD）指 CSF 蛋白質升高但有核細胞計數正常或僅輕微升高。最常見的原因包括：(1) 中樞神經系統腫瘤（壓迫導致血腦屏障局部破壞，蛋白質滲出但腫瘤細胞不易脫落至 CSF）；(2) 椎間盤疾病（IVDD）；(3) 缺血性脊髓病變。細菌性腦膜炎和犬瘟熱通常伴隨明顯的細胞增多。特發性癲癇 CSF 正常。ACD 發現時應建議 MRI 後續檢查。',
     difficulty: 4, spaced_rep: true, tags: ['CSF', '白蛋白細胞解離', 'ACD', '腫瘤'], image_placeholder: null,
   },
   {
@@ -2040,14 +2040,14 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       '重複採樣以確認結果',
     ],
     correct_answer: '進行 CSF 細菌培養/藥敏試驗，同時開始經驗性抗生素治療',
-    explanation: 'CSF 呈現顯著的嗜中性球性細胞增多（neutrophilic pleocytosis），且嗜中性球呈退化性變化（核腫脹、染色質模糊），強烈提示細菌性腦膜炎/腦膜腦脊髓炎。革蘭氏染色未見細菌不能排除感染（敏感度約 50-75%）。應立即送 CSF 進行需氧/厭氧菌培養與藥敏試驗，同時開始經驗性廣效抗生素（如 ampicillin/sulbactam + metronidazole + enrofloxacin）。在培養結果確認前不應給予免疫抑制劑量的類固醇，以免加重感染。',
+    explanation: 'CSF 呈現明顯的嗜中性球性細胞增多（neutrophilic pleocytosis），且嗜中性球呈退化性變化（核腫脹、染色質模糊），強烈提示細菌性腦膜炎/腦膜腦脊髓炎。革蘭氏染色未見細菌不能排除感染（敏感度約 50-75%）。應立即送 CSF 進行需氧/厭氧菌培養與藥敏試驗，同時開始經驗性廣效抗生素（如 ampicillin/sulbactam + metronidazole + enrofloxacin）。在培養結果確認前不應給予免疫抑制劑量的類固醇，以免加重感染。',
     difficulty: 4, spaced_rep: true, tags: ['CSF', '嗜中性球', '細菌性腦膜炎', '培養'], image_placeholder: null,
   },
 
   // ── 凝血功能檢查判讀（3 題）──
   {
     id: 'Q-CPATH-070', node_id: 'CPATH-L4-004', question_type: 'mcq',
-    question: '犬的凝血檢查顯示 PT 顯著延長（38 秒，參考值 6-10）、aPTT 顯著延長（45 秒，參考值 10-16）、血小板計數正常、D-dimer 正常。此模式最可能的原因為？',
+    question: '犬的凝血檢查顯示 PT 明顯延長（38 秒，參考值 6-10）、aPTT 明顯延長（45 秒，參考值 10-16）、血小板計數正常、D-dimer 正常。此模式最可能的原因為？',
     options: [
       '瀰漫性血管內凝固（DIC）',
       '抗凝血劑中毒（如 brodifacoum）',
@@ -2055,7 +2055,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       'von Willebrand disease',
     ],
     correct_answer: '抗凝血劑中毒（如 brodifacoum）',
-    explanation: 'PT 和 aPTT 同時顯著延長，但血小板正常且 D-dimer 正常（排除 DIC），最經典的原因是抗凝血劑（維生素 K 拮抗劑）中毒，如 brodifacoum/bromadiolone 老鼠藥。這類毒物抑制維生素 K 依賴性凝血因子（II、VII、IX、X）的活化，導致外源和內源凝血途徑同時受影響。PT 通常最先延長（因 Factor VII 半衰期最短，約 6 小時）。DIC 通常伴隨 D-dimer 升高和血小板降低。ITP 影響血小板不影響 PT/aPTT。vWD 不影響 PT。',
+    explanation: 'PT 和 aPTT 同時明顯延長，但血小板正常且 D-dimer 正常（排除 DIC），最經典的原因是抗凝血劑（維生素 K 拮抗劑）中毒，如 brodifacoum/bromadiolone 老鼠藥。這類毒物抑制維生素 K 依賴性凝血因子（II、VII、IX、X）的活化，導致外源和內源凝血途徑同時受影響。PT 通常最先延長（因 Factor VII 半衰期最短，約 6 小時）。DIC 通常伴隨 D-dimer 升高和血小板降低。ITP 影響血小板不影響 PT/aPTT。vWD 不影響 PT。',
     difficulty: 3, spaced_rep: true, tags: ['凝血', 'PT', 'aPTT', '抗凝血劑中毒', '維生素K'], image_placeholder: null,
   },
   {
@@ -2096,7 +2096,7 @@ export const CPATH_QUESTIONS: ReviewQuestion[] = [
       'R-4s（兩個連續品管值差距超過 4SD）',
     ],
     correct_answer: '2-2s（連續兩個品管值超過同方向 ±2SD）',
-    explanation: 'Westgard 品管規則中，2-2s（連續兩個品管值位於同方向的 ±2SD 以外）代表系統性誤差（systematic error），提示分析系統出現持續性偏移（shift），可能原因包括：試劑批號變更、校正標準偏差、儀器光源老化等。1-3s 通常代表隨機誤差（random error）。R-4s（相鄰兩值差距 > 4SD）反映隨機誤差增大（精密度惡化）。1-2s 是警告規則，單獨不判定為失控。辨識系統性 vs 隨機誤差對於排除故障方向至關重要。',
+    explanation: 'Westgard 品管規則中，2-2s（連續兩個品管值位於同方向的 ±2SD 以外）代表系統性誤差（systematic error），提示分析系統出現持續性偏移（shift），可能原因包括：試劑批號變更、校正標準偏差、儀器光源老化等。1-3s 通常代表隨機誤差（random error）。R-4s（相鄰兩值差距 > 4SD）反映隨機誤差增大（精密度惡化）。1-2s 是警告規則，單獨不判定為失控。辨識系統性 vs 隨機誤差對於排除故障方向不能省。',
     difficulty: 4, spaced_rep: true, tags: ['品管', 'Westgard', '系統性誤差', 'QC'], image_placeholder: null,
   },
   {

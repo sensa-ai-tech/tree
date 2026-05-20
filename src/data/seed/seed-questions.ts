@@ -65,7 +65,7 @@ export const SEED_QUESTIONS: ReviewQuestion[] = [
       'ACE 抑制',
     ],
     correct_answer: '磷酸二酯酶 III 抑制 + 鈣敏化',
-    explanation: 'Pimobendan 是一種 inodilator：透過 PDE III 抑制增加 cAMP 濃度（正性肌力+血管擴張），同時具有鈣敏化作用（增強肌絲對鈣離子的反應性），在不顯著增加心肌耗氧量的情況下增強收縮力。',
+    explanation: 'Pimobendan 是一種 inodilator：透過 PDE III 抑制增加 cAMP 濃度（正性肌力+血管擴張），同時具有鈣敏化作用（增強肌絲對鈣離子的反應性），在不明顯增加心肌耗氧量的情況下增強收縮力。',
     difficulty: 4, spaced_rep: true, tags: ['pharmacology', 'pimobendan'], image_placeholder: null,
   },
   {
@@ -82,12 +82,12 @@ export const SEED_QUESTIONS: ReviewQuestion[] = [
     question: 'MMVD 心雜音的等級（Grade）與疾病嚴重度總是正相關。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '心雜音等級不一定與疾病嚴重度正相關。Grade II 的雜音可能已有顯著心臟重塑（B2），而 Grade V 的雜音可能維持穩定多年。應以影像學（心超+X光）作為分期依據。',
+    explanation: '心雜音等級不一定與疾病嚴重度正相關。Grade II 的雜音可能已有明顯心臟重塑（B2），而 Grade V 的雜音可能維持穩定多年。應以影像學（心超+X光）作為分期依據。',
     difficulty: 3, spaced_rep: true, tags: ['MMVD', 'auscultation'], image_placeholder: null,
   },
   {
     id: 'Q-MMVD-010', node_id: 'CARDIO-L3-001', question_type: 'true_false',
-    question: 'EPIC 研究證實，在 MMVD Stage B1 即開始 pimobendan 可顯著延緩疾病進展。',
+    question: 'EPIC 研究證實，在 MMVD Stage B1 即開始 pimobendan 可明顯延緩疾病進展。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
     explanation: 'EPIC 研究的納入標準為 Stage B2（有心臟重塑的證據）。對於 Stage B1 患犬，目前尚無強烈證據支持使用 pimobendan。',

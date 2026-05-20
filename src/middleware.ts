@@ -13,6 +13,8 @@ import { jwtVerify } from 'jose';
  */
 
 const ADMIN_COOKIE_NAME = 'vkt-admin-token';
+const JWT_ISSUER = 'vet-knowledge-tree';
+const JWT_AUDIENCE = 'vkt-admin';
 
 async function verifyAdminCookie(token: string): Promise<boolean> {
   const secret = process.env.VKT_JWT_SECRET;
@@ -20,7 +22,8 @@ async function verifyAdminCookie(token: string): Promise<boolean> {
   try {
     const { payload } = await jwtVerify(
       token,
-      new TextEncoder().encode(secret)
+      new TextEncoder().encode(secret),
+      { issuer: JWT_ISSUER, audience: JWT_AUDIENCE }
     );
     return payload.role === 'admin';
   } catch {

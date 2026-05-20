@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { reportError } from '@/lib/observability/error-reporter';
 
 interface GlobalErrorProps {
   error: Error & { digest?: string };
@@ -13,7 +14,10 @@ interface GlobalErrorProps {
  */
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
-    console.error('[GlobalError]', error);
+    reportError(error, {
+      scope: 'GlobalError',
+      tags: { fatal: true, ...(error.digest ? { digest: error.digest } : {}) },
+    });
   }, [error]);
 
   return (

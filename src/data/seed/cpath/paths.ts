@@ -88,7 +88,7 @@ export const CPATH_PATHS: LearningPath[] = [
     path_nodes: [
       { node_id: 'CPATH-L4-003', is_required: true, phase: '基礎概念', learning_note: '起點：細胞學基本原則' },
       { node_id: 'CPATH-L2-001', is_required: true, phase: '品質控管', learning_note: '樣本採集與處理品質' },
-      { node_id: 'CPATH-L4-011', is_required: true, phase: '臨床應用', learning_note: '淋巴結與腫瘤細胞學——腫瘤科必備' },
+      { node_id: 'CPATH-L4-011', is_required: true, phase: '臨床應用', learning_note: '淋巴結與腫瘤細胞學，腫瘤科必備' },
       { node_id: 'CPATH-L4-012', is_required: true, phase: '臨床應用', learning_note: '皮膚細胞學與刮搞判讀' },
       { node_id: 'CPATH-L4-006', is_required: true, phase: '進階應用', learning_note: '體液分析：CSF、胸水、腹水判讀' },
       { node_id: 'CPATH-L4-007', is_required: false, phase: '進階應用', learning_note: '選修：骨髓細胞學評估' },

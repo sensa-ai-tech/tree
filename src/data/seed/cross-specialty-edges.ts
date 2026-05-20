@@ -314,7 +314,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     target_node_id: 'ECC-L2-001',    // SIRS/敗血症
     relation_type: 'prerequisite',
     weight: 0.8,
-    description: '凝血功能檢查對評估 DIC/敗血症至關重要',
+    description: '凝血功能檢查對評估 DIC/敗血症不能省',
     bidirectional: false,
     unlock_condition: null,
   },
@@ -551,7 +551,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     unlock_condition: null,
   },
 
-  // IM ↔ IM (Cushing → DM co-morbidity) — internal IM cross-disease edge
+  // IM ↔ IM (Cushing → DM co-morbidity)，internal IM cross-disease edge
   {
     id: 'CROSS-IM-IM-001',
     source_node_id: 'IM-L3-001',     // Cushing's
@@ -594,7 +594,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     target_node_id: 'ECC-L2-001',    // SIRS/DIC
     relation_type: 'complication',
     weight: 0.9,
-    description: '重度熱射病常繼發 DIC，死亡率顯著上升',
+    description: '重度熱射病常繼發 DIC，死亡率明顯上升',
     bidirectional: false,
     unlock_condition: null,
   },
@@ -630,7 +630,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     target_node_id: 'ECC-L2-003',    // 凝血病變
     relation_type: 'complication',
     weight: 0.8,
-    description: 'PLE 低白蛋白致 AT-III 流失，血栓栓塞風險顯著增加（肺栓塞/門脈血栓）',
+    description: 'PLE 低白蛋白致 AT-III 流失，血栓栓塞風險明顯增加（肺栓塞/門脈血栓）',
     bidirectional: false,
     unlock_condition: null,
   },
@@ -1422,7 +1422,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     target_node_id: 'NEURO-L5-003', // 神經復健
     relation_type: 'clinical_apply',
     weight: 0.85,
-    description: 'IVDD 減壓術後的神經復健（水療、被動關節運動、神經肌肉電刺激）對功能恢復至關重要，Grade III-V 術後應及早轉介復健科',
+    description: 'IVDD 減壓術後的神經復健（水療、被動關節運動、神經肌肉電刺激）對功能恢復不能省，Grade III-V 術後應及早轉介復健科',
     bidirectional: false,
     unlock_condition: null,
   },

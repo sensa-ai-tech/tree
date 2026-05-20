@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { isMockMode } from '@/data/seed/mock-mode';
 import { createBrowserClient } from '@/lib/supabase/client';
+import { reportError } from '@/lib/observability/error-reporter';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import type { KnowledgeNode, KnowledgeEdge, LearningPath } from '@/types/knowledge';
 
@@ -63,13 +64,29 @@ export function SupabaseDataProvider({ children }: { children: React.ReactNode }
           has_certificate: false,
         })) as unknown as LearningPath[];
 
+        // 防呆：DB 有節點但邊或路徑為空時，從 seed 補上。
+        // 常見於 seed-to-supabase 只匯入部分資料或 migration 中斷。
+        if (nodes.length > 0 && (edges.length === 0 || paths.length === 0)) {
+          const seed = await import('@/data/seed');
+          if (edges.length === 0) {
+            console.warn(
+              '[SupabaseDataProvider] DB 有節點但無邊，從 seed 補上 ALL_EDGES（請重跑 seed-to-supabase）'
+            );
+          }
+          setNodes(nodes);
+          setEdges(edges.length > 0 ? edges : seed.ALL_EDGES);
+          setPaths(paths.length > 0 ? paths : seed.ALL_PATHS);
+          setError(null);
+          return;
+        }
+
         setNodes(nodes);
         setEdges(edges);
         setPaths(paths);
         setError(null);
       } catch (err) {
         const msg = err instanceof Error ? err.message : 'Failed to load data';
-        console.error('SupabaseDataProvider:', msg);
+        reportError(err, { scope: 'SupabaseDataProvider:loadData' });
         setError(msg);
       } finally {
         setLoading(false);

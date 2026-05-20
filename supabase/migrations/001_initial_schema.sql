@@ -4,7 +4,7 @@
 -- ====================================
 
 -- 1. 使用者 Profile（擴展 Supabase Auth）
-CREATE TABLE IF NOT EXISTS user_profiles (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_profiles (
     id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     display_name TEXT NOT NULL DEFAULT '',
     avatar_url TEXT,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
 );
 
 -- 2. 知譀節點
-CREATE TABLE IF NOT EXISTS knowledge_nodes (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS knowledge_nodes (
     id TEXT PRIMARY KEY,
     specialty TEXT NOT NULL,
     title TEXT NOT NULL,
@@ -35,14 +35,14 @@ CREATE TABLE IF NOT EXISTS knowledge_nodes (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_knowledge_nodes_specialty ON knowledge_nodes(specialty);
-CREATE INDEX idx_knowledge_nodes_layer ON knowledge_nodes(layer);
-CREATE INDEX idx_knowledge_nodes_node_type ON knowledge_nodes(node_type);
-CREATE INDEX idx_knowledge_nodes_status ON knowledge_nodes(status);
-CREATE INDEX idx_knowledge_nodes_tags ON knowledge_nodes USING GIN(tags);
+CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_specialty ON knowledge_nodes(specialty);
+CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_layer ON knowledge_nodes(layer);
+CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_node_type ON knowledge_nodes(node_type);
+CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_status ON knowledge_nodes(status);
+CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_tags ON knowledge_nodes USING GIN(tags);
 
 -- 3. 知讘邊(節點間關係)
-CREATE TABLE IF NOT EXISTS knowledge_edges (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS knowledge_edges (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     source_node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     target_node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
@@ -57,12 +57,12 @@ CREATE TABLE IF NOT EXISTS knowledge_edges (
     CONSTRAINT unique_edge UNIQUE (source_node_id, target_node_id, relation_type)
 );
 
-CREATE INDEX idx_knowledge_edges_source ON knowledge_edges(source_node_id);
-CREATE INDEX idx_knowledge_edges_target ON knowledge_edges(target_node_id);
-CREATE INDEX idx_knowledge_edges_type ON knowledge_edges(relation_type);
+CREATE INDEX IF NOT EXISTS idx_knowledge_edges_source ON knowledge_edges(source_node_id);
+CREATE INDEX IF NOT EXISTS idx_knowledge_edges_target ON knowledge_edges(target_node_id);
+CREATE INDEX IF NOT EXISTS idx_knowledge_edges_type ON knowledge_edges(relation_type);
 
 -- 4. 學習路徑
-CREATE TABLE IF NOT EXISTS learning_paths (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS learning_paths (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     title TEXT NOT NULL,
     description TEXT,
@@ -76,11 +76,11 @@ CREATE TABLE IF NOT EXISTS learning_paths (
     updated_at TIMESTAMPTz NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_learning_paths_specialty ON learning_paths(specialty);
-CREATE INDEX idx_learning_paths_type ON learning_paths(path_type);
+CREATE INDEX IF NOT EXISTS idx_learning_paths_specialty ON learning_paths(specialty);
+CREATE INDEX IF NOT EXISTS idx_learning_paths_type ON learning_paths(path_type);
 
 -- 5. 複習題目
-CREATE TABLE IF NOT EXISTS review_questions (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS review_questions (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     question_type TEXT NOT NULL CHECK (question_type IN (
@@ -96,12 +96,12 @@ CREATE TABLE IF NOT EXISTS review_questions (
     created_at TIMESTAMPTz NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_review_questions_node ON review_questions(node_id);
-CREATE INDEX idx_review_questions_type ON review_questions(question_type);
-CREATE INDEX idx_review_questions_difficulty ON review_questions(difficulty);
+CREATE INDEX IF NOT EXISTS idx_review_questions_node ON review_questions(node_id);
+CREATE INDEX IF NOT EXISTS idx_review_questions_type ON review_questions(question_type);
+CREATE INDEX IF NOT EXISTS idx_review_questions_difficulty ON review_questions(difficulty);
 
 -- 6. 病例挑戰
-CREATE TABLE IF NOT EXISTS case_challenges (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS case_challenges (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     title TEXT NOT NULL,
     specialty TEXT NOT NULL,
@@ -115,11 +115,11 @@ CREATE TABLE IF NOT EXISTS case_challenges (
     updated_at TIMESTAMPTz NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_case_challenges_specialty ON case_challenges(specialty);
-CREATE INDEX idx_case_challenges_difficulty ON case_challenges(difficulty);
+CREATE INDEX IF NOT EXISTS idx_case_challenges_specialty ON case_challenges(specialty);
+CREATE INDEX IF NOT EXISTS idx_case_challenges_difficulty ON case_challenges(difficulty);
 
 -- 7. 使用者學習進度
-CREATE TABLE IF NOT EXISTS user_progress (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_progress (
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     status TEXT NOT NULL DEFAULT 'locked' CHECK (status IN ('locked', 'available', 'in_progress', 'completed')),
@@ -130,11 +130,11 @@ CREATE TABLE IF NOT EXISTS user_progress (
     PRIMARY KEY (user_id, node_id)
 );
 
-CREATE INDEX idx_user_progress_user ON user_progress(user_id);
-CREATE INDEX idx_user_progress_status ON user_progress(status);
+CREATE INDEX IF NOT EXISTS idx_user_progress_user ON user_progress(user_id);
+CREATE INDEX IF NOT EXISTS idx_user_progress_status ON user_progress(status);
 
 -- 8. 間隔重複排程
-CREATE TABLE IF NOT EXISTS user_spaced_repetition (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_spaced_repetition (
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     ease_factor NUMERIC NOT NULL DEFAULT 2.5,
@@ -147,11 +147,11 @@ CREATE TABLE IF NOT EXISTS user_spaced_repetition (
     PRIMARY KEY (user_id, node_id)
 );
 
-CREATE INDEX idx_spaced_rep_next_review ON user_spaced_repetition(next_review);
-CREATE INDEX idx_spaced_rep_user ON user_spaced_repetition(user_id);
+CREATE INDEX IF NOT EXISTS idx_spaced_rep_next_review ON user_spaced_repetition(next_review);
+CREATE INDEX IF NOT EXISTS idx_spaced_rep_user ON user_spaced_repetition(user_id);
 
 -- 9. 使用者經驗值 / 等級
-CREATE TABLE IF NOT EXISTS user_experience (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_experience (
     user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     total_xp INTEGER NOT NULL DEFAULT 0,
     current_level INTEGER NOT NULL DEFAULT 1,
@@ -162,14 +162,14 @@ CREATE TABLE IF NOT EXISTS user_experience (
 );
 
 -- 10. 使用者成就
-CREATE TABLE IF NOT EXISTS user_achievements (
+CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_achievements (
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     achievement_id TEXT NOT NULL,
     unlocked_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     PRIMARY KEY (user_id, achievement_id)
 );
 
-CREATE INDEX idx_user_achievements_user ON user_achievements(user_id);
+CREATE INDEX IF NOT EXISTS idx_user_achievements_user ON user_achievements(user_id);
 
 -- ====================================
 -- Row Level Security (RLS) Policies
@@ -188,72 +188,89 @@ ALTER TABLE user_experience ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_achievements ENABLE ROW LEVEL SECURITY;
 
 -- user_profiles: 自己可以讀寫
+DROP POLICY IF EXISTS "Users can view own profile" ON user_profiles;
 CREATE POLICY "Users can view own profile" ON user_profiles
     FOR SELECT USING (auth.uid() = id);
+DROP POLICY IF EXISTS "Users can update own profile" ON user_profiles;
 CREATE POLICY "Users can update own profile" ON user_profiles
     FOR UPDATE USING (auth.uid() = id);
+DROP POLICY IF EXISTS "Users can insert own profile" ON user_profiles;
 CREATE POLICY "Users can insert own profile" ON user_profiles
     FOR INSERT WITH CHECK (auth.uid() = id);
 
 -- knowledge_nodes:  已發佈的所有人可議，admin 可寫
+DROP POLICY IF EXISTS "Published nodes are viewable by all" ON knowledge_nodes;
 CREATE POLICY "Published nodes are viewable by all" ON knowledge_nodes
     FOR SELECT USING (status = 'published' OR EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role IN ('admin', 'reviewer')
     ));
+DROP POLICY IF EXISTS "Admins can manage nodes" ON knowledge_nodes;
 CREATE POLICY "Admins can manage nodes" ON knowledge_nodes
     FOR ALL USING (EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
 -- knowledge_edges: 所有人可議
+DROP POLICY IF EXISTS "Edges are viewable by all authenticated" ON knowledge_edges;
 CREATE POLICY "Edges are viewable by all authenticated" ON knowledge_edges
     FOR SELECT USING (auth.uid() IS NOT NULL);
+DROP POLICY IF EXISTS "Admins can manage edges" ON knowledge_edges;
 CREATE POLICY "Admins can manage edges" ON knowledge_edges
     FOR ALL USING (EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
 -- learning_paths: 已發佈的所有人可讀
+DROP POLICY IF EXISTS "Published paths are viewable" ON learning_paths;
 CREATE POLICY "Published paths are viewable" ON learning_paths
     FOR SELECT USING (is_published = TRUE OR EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
+DROP POLICY IF EXISTS "Admins can manage paths" ON learning_paths;
 CREATE POLICY "Admins can manage paths" ON learning_paths
     FOR ALL USING (EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
 -- review_questions: 所有人可讀
+DROP POLICY IF EXISTS "Questions are viewable by authenticated" ON review_questions;
 CREATE POLICY "Questions are viewable by authenticated" ON review_questions
     FOR SELECT USING (auth.uid() IS NOT NULL);
+DROP POLICY IF EXISTS "Admins can manage questions" ON review_questions;
 CREATE POLICY "Admins can manage questions" ON review_questions
     FOR ALL USING (EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
 -- case_challenges: 已發佈的所有人可議
+DROP POLICY IF EXISTS "Published cases are viewable" ON case_challenges;
 CREATE POLICY "Published cases are viewable" ON case_challenges
     FOR SELECT USING (is_published = TRUE OR EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
+DROP POLICY IF EXISTS "Admins can manage cases" ON case_challenges;
 CREATE POLICY "Admins can manage cases" ON case_challenges
     FOR ALL USING (EXISTS (
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
 -- user_progress: 只能存取自己的進度
+DROP POLICY IF EXISTS "Users can manage own progress" ON user_progress;
 CREATE POLICY "Users can manage own progress" ON user_progress
     FOR ALL USING (auth.uid() = user_id);
 
 -- user_spaced_repetition: 只能存取自己的
+DROP POLICY IF EXISTS "Users can manage own spaced rep" ON user_spaced_repetition;
 CREATE POLICY "Users can manage own spaced rep" ON user_spaced_repetition
     FOR ALL USING (auth.uid() = user_id);
 
 -- user_experience: 只能存取自己的
+DROP POLICY IF EXISTS "Users can manage own experience" ON user_experience;
 CREATE POLICY "Users can manage own experience" ON user_experience
     FOR ALL USING (auth.uid() = user_id);
 
 -- user_achievements: 只能存取自己的
+DROP POLICY IF EXISTS "Users can manage own achievements" ON user_achievements;
 CREATE POLICY "Users can manage own achievements" ON user_achievements
     FOR ALL USING (auth.uid() = user_id);
 
@@ -269,26 +286,26 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER tr_user_profiles_updated_at
+CREATE OR REPLACE TRIGGER tr_user_profiles_updated_at
     BEFORE UPDATE ON user_profiles
     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
-CREATE TRIGGER tr_knowledge_nodes_updated_at
+CREATE OR REPLACE TRIGGER tr_knowledge_nodes_updated_at
     BEFORE UPDATE ON knowledge_nodes
     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
-CREATE TRIGGER tr_learning_paths_updated_at
+CREATE OR REPLACE TRIGGER tr_learning_paths_updated_at
     BEFORE UPDATE ON learning_paths
     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
-CREATE TRIGGER tr_case_challenges_updated_at
+CREATE OR REPLACE TRIGGER tr_case_challenges_updated_at
     BEFORE UPDATE ON case_challenges
     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
-CREATE TRIGGER tr_user_spaced_rep_updated_at
+CREATE OR REPLACE TRIGGER tr_user_spaced_rep_updated_at
     BEFORE UPDATE ON user_spaced_repetition
     FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
-CREATE TRIGGER tr_user_experience_updated_at
+CREATE OR REPLACE TRIGGER tr_user_experience_updated_at
     BEFORE UPDATE ON user_experience
     FOR EACH ROW EXECUTE FUNCTION update_updated_at();

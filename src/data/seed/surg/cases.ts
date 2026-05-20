@@ -3,7 +3,7 @@ import type { CaseChallenge } from '@/types/case';
 export const SURG_CASES: CaseChallenge[] = [
   {
     id: 'CASE-SURG-001',
-    title: '大丹犬急性腹部膨脹 — 胃擴張扭轉',
+    title: '大丹犬急性腹部膨脹，胃擴張扭轉',
     specialty: 'SURG',
     cross_specialties: ['IM', 'ECC'],
     required_nodes: ['SURG-L3-001', 'SURG-L4-001', 'SURG-L5-001'],
@@ -19,7 +19,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集與初步評估',
-        prompt: '這隻大丹犬被緊急送入急診。你需要進一步確認哪些資訊？請選擇最重要的 3 項。',
+        prompt: '這隻大丹犬被緊急送入急診。你需要後續確認哪些資訊？請選擇最重要的 3 項。',
         available_actions: [
           '確認嘔吐是否為非生產性（retching without vomiting）',
           '詢問腹部膨脹的發展速度（急性 vs 漸進性）',
@@ -33,7 +33,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '詢問腹部膨脹的發展速度（急性 vs 漸進性）',
           '詢問過去是否有類似發作或 GDV 病史',
         ],
-        feedback_correct: '非生產性嘔吐（retching without vomiting）是 GDV 最典型的主訴。急性腹部膨脹在進食後 2-4 小時發生是典型的 GDV 時間框架。GDV 病史對治療決策重要——曾發生 GDV 未做 gastropexy 的犬復發率極高。',
+        feedback_correct: '非生產性嘔吐（retching without vomiting）是 GDV 最典型的主訴。急性腹部膨脹在進食後 2-4 小時發生是典型的 GDV 時間框架。GDV 病史對治療決策重要，曾發生 GDV 未做 gastropexy 的犬復發率極高。',
         feedback_incorrect: 'GDV 急診中最關鍵的病史資訊是嘔吐型態（非生產性為特徵）、腹部膨脹速度（急性提示 GDV）與過去是否有類似發作。飼料品牌和疫苗史在此刻不是優先資訊。',
         key_learning_points: [
           '非生產性嘔吐（retching without vomiting）是 GDV 的最典型臨床表現',
@@ -59,7 +59,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '心搏過速（HR 180 bpm），股動脈脈搏微弱',
           '黏膜蒼白偏灰，CRT > 3 秒',
         ],
-        feedback_correct: '腹部鼓音提示胃內大量氣體積聚。心搏過速合併弱脈與蒼白黏膜為分配性/阻塞性休克的典型表現——擴張的胃壓迫後腔靜脈導致靜脈回流減少，心輸出量下降。這三項發現高度支持 GDV 合併心血管衰竭。',
+        feedback_correct: '腹部鼓音提示胃內大量氣體積聚。心搏過速合併弱脈與蒼白黏膜為分配性/阻塞性休克的典型表現，擴張的胃壓迫後腔靜脈導致靜脈回流減少，心輸出量下降。這三項發現高度支持 GDV 合併心血管衰竭。',
         feedback_incorrect: '在 GDV 急診中，最關鍵的理學檢查發現是腹部膨脹（鼓音）加上休克徵候（心搏過速、弱脈、蒼白黏膜、CRT 延長）。這些代表胃擴張導致的血流動力學障礙，需要立即處置。',
         key_learning_points: [
           '腹部叩診鼓音提示胃內大量氣體，為 GDV 的重要理學檢查發現',
@@ -85,7 +85,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '右側臥位腹部 X 光確認 GDV',
           '抽血檢驗：lactate、電解質、CBC、凝血功能',
         ],
-        feedback_correct: '積極輸液復甦是最優先的行動——在不穩定休克狀態下直接麻醉風險極高。右側臥 X 光可快速確認 GDV（「雙氣泡」或 Popeye arm sign）。Lactate 是最重要的預後指標，電解質（尤其低血鉀）影響麻醉安全性。',
+        feedback_correct: '積極輸液復甦是最優先的行動，在不穩定休克狀態下直接麻醉風險極高。右側臥 X 光可快速確認 GDV（「雙氣泡」或 Popeye arm sign）。Lactate 是最重要的預後指標，電解質（尤其低血鉀）影響麻醉安全性。',
         feedback_incorrect: 'GDV 急診的核心原則是「先穩定再手術」。直接送手術室或觀察等待都不恰當。需要同時進行輸液復甦、影像確診與血液檢查。腹部超音波在此情境不如 X 光快速且特異。',
         key_learning_points: [
           'GDV 急診原則：先穩定（輸液、減壓）再手術',
@@ -130,13 +130,13 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           '正中開腹 → 胃 derotation → 評估胃壁與脾臟活性 → 壞死組織切除（如有）→ 右側 incisional gastropexy',
         ],
-        feedback_correct: '正確的手術順序：1) 正中開腹提供最佳視野；2) 先 derotation 恢復胃的正常位置（幽門推回右側）；3) 評估胃壁（特別是大彎側）與脾臟的血流與活性——灰黑色、無出血或蠕動的區域提示壞死；4) 壞死區域切除（partial gastrectomy / splenectomy）；5) 最後進行 incisional gastropexy 防止復發。',
+        feedback_correct: '正確的手術順序：1) 正中開腹提供最佳視野；2) 先 derotation 恢復胃的正常位置（幽門推回右側）；3) 評估胃壁（特別是大彎側）與脾臟的血流與活性，灰黑色、無出血或蠕動的區域提示壞死；4) 壞死區域切除（partial gastrectomy / splenectomy）；5) 最後進行 incisional gastropexy 防止復發。',
         feedback_incorrect: '必須先 derotation 才能 gastropexy（因為胃在錯誤位置無法固定）。不做 gastropexy 的復發率高達 54-80%。正中開腹是標準入路，提供雙側腹腔完整視野。胃壁與脾臟活性評估是決定是否需要切除的關鍵步驟。',
         key_learning_points: [
           'GDV 手術標準順序：derotation → 活性評估 → 必要時切除 → gastropexy',
           '胃壁壞死評估：顏色（灰黑色 = 壞死）、漿膜面出血、切開時是否出血',
           '右側 incisional gastropexy 是預防復發的標準方式',
-          '脾臟必須同時評估——脾臟扭轉或嚴重淤血需切除',
+          '脾臟必須同時評估，脾臟扭轉或嚴重淤血需切除',
         ],
       },
       {
@@ -176,7 +176,7 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           'ICU 住院至少 48-72 小時。持續 ECG 監測（VPCs 好發 12-72 hr）。每 6-12 小時追蹤 lactate 與電解質。NPO 12-24 小時後開始少量流質。教導飼主出院後改為少量多餐。',
         ],
-        feedback_correct: 'GDV 術後最大風險是心室心律不整（VPCs），好發於 12-72 小時，因此需 ICU 至少 48-72 小時 ECG 監測。Lactate 追蹤可確認組織灌流改善。電解質（尤其鉀離子）需密切監測。恢復餵食應從少量流質開始。長期改為少量多餐（2-3 次/日）可降低復發風險。',
+        feedback_correct: 'GDV 術後最大風險是心室心律不整（VPCs），好發於 12-72 小時，所以需 ICU 至少 48-72 小時 ECG 監測。Lactate 追蹤可確認組織灌流改善。電解質（尤其鉀離子）需密切監測。恢復餵食應從少量流質開始。長期改為少量多餐（2-3 次/日）可降低復發風險。',
         feedback_incorrect: 'GDV 是高風險外科急診，術後不可過早出院。心室心律不整在 12-72 小時內發生率 40-70%，可能致命，必須 ECG 監測。預防性 Lidocaine CRI 不是常規需要（僅在嚴重 VPCs 時使用）。飲食管理（少量多餐）是預防復發的重要生活調整。',
         key_learning_points: [
           'GDV 術後 VPCs 發生率 40-70%，好發於 12-72 小時，需 ICU ECG 監測',
@@ -189,7 +189,7 @@ export const SURG_CASES: CaseChallenge[] = [
     expert_pathway: {
       reasoning: '大丹犬（最高風險品種）+ 餐後急性非生產性嘔吐與腹部膨脹 = 高度懷疑 GDV。急診處理遵循「先穩定再手術」原則：積極輸液 → X 光確診 → lactate 預後評估 → derotation + gastropexy → ICU 術後監測。',
       key_decisions: [
-        '即使高度懷疑 GDV 也要先穩定再手術——休克狀態下麻醉風險極高',
+        '即使高度懷疑 GDV 也要先穩定再手術，休克狀態下麻醉風險極高',
         '術前 lactate 判讀影響與飼主的溝通（> 6.0 需告知較高死亡率）',
         '術中胃壁活性評估決定是否需要 partial gastrectomy',
         '術後 48-72 小時持續 ECG 監測是降低 VPCs 相關死亡的關鍵',
@@ -199,7 +199,7 @@ export const SURG_CASES: CaseChallenge[] = [
         '僅做胃減壓未做 gastropexy，導致高復發率',
         '忽略術後心律不整監測，VPCs 可在看似穩定的犬突然發生',
         '過早恢復正常餵食或出院',
-        '未評估脾臟——脾臟撕裂出血可能在術後才表現',
+        '未評估脾臟，脾臟撕裂出血可能在術後才表現',
       ],
     },
     related_nodes_for_review: [
@@ -230,7 +230,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集',
-        prompt: '面對急性癱瘓的臘腸犬，你需要進一步確認哪些關鍵病史？請選擇最重要的 3 項。',
+        prompt: '面對急性癱瘓的臘腸犬，你需要後續確認哪些關鍵病史？請選擇最重要的 3 項。',
         available_actions: [
           '確認癱瘓發展的時間進程（急性惡化 vs 漸進性）',
           '確認排尿功能（自主排尿 vs 溢尿 vs 完全無法排尿）',
@@ -244,7 +244,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '確認排尿功能（自主排尿 vs 溢尿 vs 完全無法排尿）',
           '詢問過去「背痛」發作的細節與治療反應',
         ],
-        feedback_correct: '很好！癱瘓時間進程對預後至關重要——急性完全癱瘓（< 24-48 小時）且深層痛覺消失需緊急手術評估。排尿功能是上位運動神經元（UMN）vs 下位運動神經元（LMN）膀胱的重要鑑別。過去反覆背痛高度提示慢性椎間盤退化（Hansen Type I）。',
+        feedback_correct: '很好！癱瘓時間進程對預後不能省，急性完全癱瘓（< 24-48 小時）且深層痛覺消失需緊急手術評估。排尿功能是上位運動神經元（UMN）vs 下位運動神經元（LMN）膀胱的重要鑑別。過去反覆背痛高度提示慢性椎間盤退化（Hansen Type I）。',
         feedback_incorrect: '急性脊髓壓迫的病史重點：(1) 時間進程決定緊急度；(2) 排尿功能反映脊髓損傷程度；(3) 過去類似發作提示椎間盤慢性退化。臘腸犬為 IVDD 最好發品種。',
         key_learning_points: [
           '臘腸犬是 Hansen Type I IVDD 最好發品種（發生率 19-24%）',
@@ -259,18 +259,18 @@ export const SURG_CASES: CaseChallenge[] = [
         prompt: '病史補充：癱瘓在 12 小時內從可行走惡化至完全癱瘓。目前無法自主排尿（溢尿狀態）。進行完整神經學檢查。請選擇最關鍵的 3 項發現。',
         available_actions: [
           '後肢完全癱瘓（paraplegia），無自主運動',
-          '後肢脊髓反射亢進（膝蓋反射 +3，退縮反射亢進）——上位運動神經元徵象',
-          '深層痛覺（deep pain perception）：用止血鉗夾趾骨——犬轉頭嚎叫（深痛覺存在）',
+          '後肢脊髓反射亢進（膝蓋反射 +3，退縮反射亢進），上位運動神經元徵象',
+          '深層痛覺（deep pain perception）：用止血鉗夾趾骨，犬轉頭嚎叫（深痛覺存在）',
           '前肢神經學檢查完全正常',
           '背部觸診 T12-L2 區域明顯疼痛反應',
           '肛門反射存在',
         ],
         correct_actions: [
           '後肢完全癱瘓（paraplegia），無自主運動',
-          '後肢脊髓反射亢進（膝蓋反射 +3，退縮反射亢進）——上位運動神經元徵象',
-          '深層痛覺（deep pain perception）：用止血鉗夾趾骨——犬轉頭嚎叫（深痛覺存在）',
+          '後肢脊髓反射亢進（膝蓋反射 +3，退縮反射亢進），上位運動神經元徵象',
+          '深層痛覺（deep pain perception）：用止血鉗夾趾骨，犬轉頭嚎叫（深痛覺存在）',
         ],
-        feedback_correct: '正確！後肢癱瘓 + UMN 徵象（反射亢進）= T3-L3 脊髓節段病變。深層痛覺是最關鍵的預後指標——存在深痛覺（Grade IV）比消失深痛覺（Grade V）預後顯著較佳。背痛定位在 T12-L2 進一步確認胸腰椎 IVDD。此犬為 Modified Frankel Grade IV（癱瘓、有深痛覺）。',
+        feedback_correct: '正確！後肢癱瘓 + UMN 徵象（反射亢進）= T3-L3 脊髓節段病變。深層痛覺是最關鍵的預後指標，存在深痛覺（Grade IV）比消失深痛覺（Grade V）預後明顯較佳。背痛定位在 T12-L2 後續確認胸腰椎 IVDD。此犬為 Modified Frankel Grade IV（癱瘓、有深痛覺）。',
         feedback_incorrect: '脊髓損傷的神經學檢查三大重點：(1) 運動功能（行走能力 → 自主運動 → 癱瘓）；(2) 反射型態（UMN vs LMN 定位脊髓節段）；(3) 深層痛覺（最關鍵的預後指標）。Dachshund 胸腰椎 IVDD 最常見在 T12-L2 區域。',
         key_learning_points: [
           'IVDD 神經學分級（Modified Frankel）：Grade I 僅背痛 → Grade V 深痛覺消失',
@@ -296,7 +296,7 @@ export const SURG_CASES: CaseChallenge[] = [
           'MRI 胸腰椎（首選：評估脊髓壓迫位置、程度與脊髓訊號變化）',
           'CT 脊椎（替代方案：快速、可見鈣化椎間盤，但對脊髓評估不如 MRI）',
         ],
-        feedback_correct: '完美！MRI 是 IVDD 術前影像的金標準——可精確定位壓迫節段、區分急性 vs 慢性、評估脊髓訊號變化（水腫 vs 壞死軟化）作為預後參考。CT 在 Hansen Type I（鈣化椎間盤突出）也很有價值，速度快且對鈣化物質的定位優異。實務上若無 MRI 可用，CT 是可接受的替代。脊椎 X 光僅能看到鈣化與椎間隙變窄，無法確認壓迫位置，不足以做手術規劃。',
+        feedback_correct: '完美！MRI 是 IVDD 術前影像的金標準，可精確定位壓迫節段、區分急性 vs 慢性、評估脊髓訊號變化（水腫 vs 壞死軟化）作為預後參考。CT 在 Hansen Type I（鈣化椎間盤突出）也很有價值，速度快且對鈣化物質的定位優異。實務上若無 MRI 可用，CT 是可接受的替代。脊椎 X 光僅能看到鈣化與椎間隙變窄，無法確認壓迫位置，不足以做手術規劃。',
         feedback_incorrect: 'IVDD 術前影像首選 MRI（脊髓評估最佳）或 CT（速度快、鈣化定位佳）。脊椎 X 光無法確認壓迫的確切位置和脊髓狀態，不適合作為手術規劃的唯一依據。Myelography 為侵入性，已被 MRI/CT 取代。',
         key_learning_points: [
           'MRI 是 IVDD 術前影像的金標準',
@@ -319,7 +319,7 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           '強烈建議緊急手術（hemilaminectomy）。Grade IV + 急性惡化 < 24 hr + MRI 確認嚴重壓迫 → 手術預後佳（恢復率 > 90%）。T2 高訊號 < 2 椎體為可逆水腫。越早減壓預後越好。',
         ],
-        feedback_correct: '正確！Grade IV IVDD 手術 vs 保守治療的證據明確：手術恢復率 > 90%，保守治療恢復率約 50%。急性惡化的 Grade III-V 是手術強適應症。T2 高訊號 < 2 椎體提示水腫而非壞死軟化，預後良好。Hemilaminectomy 是胸腰椎 IVDD 的標準術式。深痛覺存在但延遲手術有惡化至 Grade V 的風險——Grade V 恢復率顯著下降。',
+        feedback_correct: '正確！Grade IV IVDD 手術 vs 保守治療的證據明確：手術恢復率 > 90%，保守治療恢復率約 50%。急性惡化的 Grade III-V 是手術強適應症。T2 高訊號 < 2 椎體提示水腫而非壞死軟化，預後良好。Hemilaminectomy 是胸腰椎 IVDD 的標準術式。深痛覺存在但延遲手術有惡化至 Grade V 的風險，Grade V 恢復率明顯下降。',
         feedback_incorrect: 'Grade IV IVDD（癱瘓、有深痛覺）是手術的強適應症。保守治療在 Grade III-V 的恢復率遠低於手術。延遲手術增加惡化至 Grade V（深痛覺消失）的風險，一旦惡化至 Grade V > 48 小時，恢復率驟降至 < 50%。',
         key_learning_points: [
           'Grade III-V IVDD 手術恢復率 > 保守治療',
@@ -343,7 +343,7 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           '正確手術流程：背側入路 → 確認正確節段（counting from T13 or lumbar） → 單側移除椎弓板（hemilaminectomy）→ 移除突出的椎間盤物質 → 檢視脊髓減壓充分 → 關閉（肌肉覆蓋缺損區域）。術中注意不傷及脊髓和脊髓血管。',
         ],
-        feedback_correct: '正確！Hemilaminectomy 是胸腰椎 IVDD 的標準術式。單側入路（通常從壓迫較嚴重側）提供足夠的視野移除突出的椎間盤物質，同時保留對側椎弓板維持脊椎穩定性。正確定位手術節段至關重要——術中可用肋骨計數或術前放置標記。移除所有突出的椎間盤物質確保充分減壓。Dorsal laminectomy 破壞更多結構，增加脊椎不穩定風險。',
+        feedback_correct: '正確！Hemilaminectomy 是胸腰椎 IVDD 的標準術式。單側入路（通常從壓迫較嚴重側）提供足夠的視野移除突出的椎間盤物質，同時保留對側椎弓板維持脊椎穩定性。正確定位手術節段不能省，術中可用肋骨計數或術前放置標記。移除所有突出的椎間盤物質確保充分減壓。Dorsal laminectomy 破壞更多結構，增加脊椎不穩定風險。',
         feedback_incorrect: 'Hemilaminectomy（單側椎弓板切除）是胸腰椎 IVDD 金標準術式。相比 dorsal laminectomy 保留更多結構穩定性。腹側入路不適用於胸腰椎。必須移除突出的椎間盤物質才能充分減壓。',
         key_learning_points: [
           'Hemilaminectomy 是胸腰椎 IVDD 的金標準術式',
@@ -369,8 +369,8 @@ export const SURG_CASES: CaseChallenge[] = [
           '術後急性期：疼痛管理（multimodal analgesia）+ 膀胱管理（每日 3-4 次手擠排尿至自主排尿恢復）+ 嚴格籠休 4-6 週 + 被動關節活動範圍運動（PROM）開始',
           '復健計畫：第 1-2 週 PROM + 水中跑步機（若可）→ 第 3-4 週漸進站立和輔助行走訓練 → 第 5-8 週逐步增加負重和距離。長期：體重管理（減輕脊椎負擔）+ 環境調整（斜坡取代階梯、限制跳躍）+ 告知再發風險',
         ],
-        feedback_correct: '正確！IVDD 術後管理兩大支柱：(1) 急性期——疼痛管理、膀胱護理（UMN 膀胱恢復常需 1-3 週）和嚴格籠休；(2) 復健——從 PROM 開始漸進至主動運動。水中跑步機（underwater treadmill）利用浮力減輕負重，是最有效的 IVDD 復健工具。長期體重管理極為重要——肥胖增加椎間盤負荷和再發風險。臘腸犬 IVDD 再發率約 15-25%。',
-        feedback_incorrect: '術後自由活動可能導致手術部位損傷。IVDD 術後復健是恢復的關鍵——被動到主動運動的漸進過渡。膀胱管理是術後最重要的護理之一。體重管理和環境調整是降低再發的長期策略。',
+        feedback_correct: '正確！IVDD 術後管理兩大支柱：(1) 急性期，疼痛管理、膀胱護理（UMN 膀胱恢復常需 1-3 週）和嚴格籠休；(2) 復健，從 PROM 開始漸進至主動運動。水中跑步機（underwater treadmill）利用浮力減輕負重，是最有效的 IVDD 復健工具。長期體重管理極為重要，肥胖增加椎間盤負荷和再發風險。臘腸犬 IVDD 再發率約 15-25%。',
+        feedback_incorrect: '術後自由活動可能導致手術部位損傷。IVDD 術後復健是恢復的關鍵，被動到主動運動的漸進過渡。膀胱管理是術後最重要的護理之一。體重管理和環境調整是降低再發的長期策略。',
         key_learning_points: [
           'UMN 膀胱恢復通常需 1-3 週，期間需手動擠壓排尿',
           '水中跑步機是 IVDD 復健最有效的工具',
@@ -385,7 +385,7 @@ export const SURG_CASES: CaseChallenge[] = [
       key_decisions: [
         '神經學分級（Modified Frankel）決定手術 vs 保守治療',
         '深層痛覺為最重要的預後指標',
-        'Grade IV 強烈建議手術——恢復率 > 90%',
+        'Grade IV 強烈建議手術，恢復率 > 90%',
         'MRI 評估壓迫位置和脊髓訊號',
         '術後復健計畫是恢復的關鍵',
       ],
@@ -582,7 +582,7 @@ export const SURG_CASES: CaseChallenge[] = [
         key_learning_points: [
           '反覆 UTI 需影像檢查排除潛在結石',
           '結石類型決定治療方式（溶解 vs 手術）',
-          '術中完全清除和術後 X 光確認至關重要',
+          '術中完全清除和術後 X 光確認不能省',
           '長期預防策略依結石類型而不同',
         ],
       },
@@ -1083,7 +1083,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '骨折 X 光：至少兩個正交視角（AP + lateral）',
           '必須包含骨折上下的關節（排除脫位/關節內骨折）',
           '車禍患者胸腔 X 光必做（肺挫傷可延遲 24-48 hr 出現）',
-          '關節內骨折可能需要 CT 進一步評估',
+          '關節內骨折可能需要 CT 後續評估',
         ],
       },
       {
@@ -1407,7 +1407,7 @@ export const SURG_CASES: CaseChallenge[] = [
   // ===== CASE-SURG-008: French Bulldog with BOAS =====
   {
     id: 'CASE-SURG-008',
-    title: '法國鬥牛犬運動不耐與呼吸困難 — BOAS',
+    title: '法國鬥牛犬運動不耐與呼吸困難，BOAS',
     specialty: 'SURG',
     cross_specialties: ['ECC'],
     required_nodes: ['SURG-L3-010', 'SURG-L1-001'],
@@ -1437,13 +1437,13 @@ export const SURG_CASES: CaseChallenge[] = [
           '評估打鼾類型：吸氣性 stertor（低沉鼾聲）vs stridor（高音哨聲）',
           '詢問是否有睡眠呼吸暫停（sleep apnea）、睡姿偏好（坐姿睡眠）',
         ],
-        feedback_correct: '正確！漸進性運動不耐提示慢性上呼吸道阻塞。Stertor（低沉鼾聲）指向鼻咽/軟腭阻塞，stridor（高音哨聲）指向喉部阻塞——有助判斷阻塞層級。睡眠呼吸暫停和坐姿睡眠為嚴重 BOAS 的重要指標（BOAS functional grading）。BCS 7/9 顯示過胖——肥胖加重 BOAS 症狀。',
+        feedback_correct: '正確！漸進性運動不耐提示慢性上呼吸道阻塞。Stertor（低沉鼾聲）指向鼻咽/軟腭阻塞，stridor（高音哨聲）指向喉部阻塞，有助判斷阻塞層級。睡眠呼吸暫停和坐姿睡眠為嚴重 BOAS 的重要指標（BOAS functional grading）。BCS 7/9 顯示過胖，肥胖加重 BOAS 症狀。',
         feedback_incorrect: 'BOAS 病史重點：運動不耐進程（漸進性加重為典型）、呼吸音類型（stertor vs stridor 區分阻塞層級）、睡眠呼吸品質（嚴重度指標）。肥胖和高溫為惡化因子。',
         key_learning_points: [
           'Stertor（低沉鼾聲）= 鼻咽/軟腭阻塞；Stridor（高音哨聲）= 喉部阻塞',
           '睡眠呼吸暫停為嚴重 BOAS 的警示信號',
           '法國鬥牛犬為 BOAS 最高風險品種之一',
-          '肥胖（BCS > 6/9）顯著加重 BOAS 症狀',
+          '肥胖（BCS > 6/9）明顯加重 BOAS 症狀',
         ],
       },
       {
@@ -1464,7 +1464,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '口腔檢查：軟腭過長延伸超過會厭尖端約 1.5 cm，黏膜輕度水腫',
           '頸部聽診：明顯吸氣性 stertor，安靜時亦可聞及',
         ],
-        feedback_correct: '正確！BOAS 理學檢查三大發現：(1) 鼻孔狹窄——分級為 Grade I（輕微）至 Grade III（幾乎完全閉合），此犬 Grade II-III 明確需要手術矯正。(2) 軟腭過長——超過會厭尖端表示需要 staphylectomy。(3) 安靜時可聞及 stertor——表示靜態氣道阻塞已相當嚴重（BOAS Grade III）。下一步建議：鎮靜下喉鏡檢查評估喉室外翻和喉塌陷。',
+        feedback_correct: '正確！BOAS 理學檢查三大發現：(1) 鼻孔狹窄，分級為 Grade I（輕微）至 Grade III（幾乎完全閉合），此犬 Grade II-III 明確需要手術矯正。(2) 軟腭過長，超過會厭尖端表示需要 staphylectomy。(3) 安靜時可聞及 stertor，表示靜態氣道阻塞已相當嚴重（BOAS Grade III）。下一步建議：鎮靜下喉鏡檢查評估喉室外翻和喉塌陷。',
         feedback_incorrect: 'BOAS 理學檢查核心：鼻孔狹窄程度（Grade I-III）、軟腭長度（是否超過會厭）、靜態呼吸音（stertor/stridor）。安靜時可聞及呼吸音異常表示嚴重阻塞。',
         key_learning_points: [
           'Stenotic nares 分級：Grade I（輕微）→ Grade III（幾乎完全閉合）',
@@ -1487,13 +1487,13 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           'Multilevel surgery：Wedge rhinoplasty + Folded flap palatoplasty + Sacculectomy（如有喉室外翻）。術前減重至 BCS 5/9。術後密切監測上呼吸道水腫 24-48 小時，備好氣管插管/暫時氣管切開。',
         ],
-        feedback_correct: '正確！BOAS 手術原則為多層級同時矯正：(1) Wedge rhinoplasty 擴大鼻孔——增加鼻腔氣流。(2) Folded flap palatoplasty（較傳統 staphylectomy 術後水腫少、癒合佳）截短軟腭。(3) Sacculectomy 切除外翻的喉室（如有）。術前減重可降低麻醉風險和改善術後效果。術後最關鍵 24-48 小時：上呼吸道水腫可能導致急性阻塞，需備好再插管或緊急氣管切開的設備和人力。約 85-95% 犬術後呼吸功能顯著改善。',
+        feedback_correct: '正確！BOAS 手術原則為多層級同時矯正：(1) Wedge rhinoplasty 擴大鼻孔，增加鼻腔氣流。(2) Folded flap palatoplasty（較傳統 staphylectomy 術後水腫少、癒合佳）截短軟腭。(3) Sacculectomy 切除外翻的喉室（如有）。術前減重可降低麻醉風險和改善術後效果。術後最關鍵 24-48 小時：上呼吸道水腫可能導致急性阻塞，需備好再插管或緊急氣管切開的設備和人力。約 85-95% 犬術後呼吸功能明顯改善。',
         feedback_incorrect: 'BOAS 手術為多層級矯正（rhinoplasty + palatoplasty ± sacculectomy），單一矯正效果不佳。術前減重和術後氣道監測為成功關鍵。',
         key_learning_points: [
-          'Multilevel surgery 為 BOAS 標準治療——同時處理所有阻塞層級',
+          'Multilevel surgery 為 BOAS 標準治療，同時處理所有阻塞層級',
           'Folded flap palatoplasty 較傳統 staphylectomy 術後水腫少',
-          '術後 24-48 小時為最危險期——上呼吸道水腫可能致命',
-          '術前減重（BCS ≤ 5/9）顯著改善手術效果',
+          '術後 24-48 小時為最危險期，上呼吸道水腫可能致命',
+          '術前減重（BCS ≤ 5/9）明顯改善手術效果',
           '早期手術（< 2 歲）可預防喉塌陷等不可逆繼發變化',
         ],
       },
@@ -1514,7 +1514,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '判斷為術後上呼吸道水腫導致氣道阻塞：Dexamethasone 0.1-0.2 mg/kg IV（抗水腫）+ 鎮靜（Butorphanol 0.2 mg/kg IV 降低焦慮和呼吸需求）；若無改善需準備再插管',
           '若藥物無法緩解且 SpO₂ 持續下降，需緊急暫時氣管切開（temporary tracheostomy）維持氣道通暢，通常在水腫消退後 24-72 小時可移除',
         ],
-        feedback_correct: '正確！術後上呼吸道水腫是 BOAS 手術最常見且最危險的併發症（發生率 5-10%）。處置升級階梯：(1) Dexamethasone IV 減輕黏膜水腫 + Butorphanol 鎮靜（降低氧氣需求，避免焦慮引起的呼吸惡化）。(2) 若無改善，嘗試再插管（可能困難因水腫造成喉部腫脹）。(3) 插管困難或反覆拔管後阻塞，則緊急暫時氣管切開。暫時氣管切開通常在 24-72 小時水腫消退後可安全移除。術後 ICU 監護至少 24 小時是必要的——不可低估短頭種犬的氣道風險。',
+        feedback_correct: '正確！術後上呼吸道水腫是 BOAS 手術最常見且最危險的併發症（發生率 5-10%）。處置升級階梯：(1) Dexamethasone IV 減輕黏膜水腫 + Butorphanol 鎮靜（降低氧氣需求，避免焦慮引起的呼吸惡化）。(2) 若無改善，嘗試再插管（可能困難因水腫造成喉部腫脹）。(3) 插管困難或反覆拔管後阻塞，則緊急暫時氣管切開。暫時氣管切開通常在 24-72 小時水腫消退後可安全移除。術後 ICU 監護至少 24 小時是必要的，不可低估短頭種犬的氣道風險。',
         feedback_incorrect: '僅給氧不能解決機械性氣道阻塞。術後水腫的處理需要「升級階梯」思維：藥物 → 插管 → 氣管切開。及時氣管切開可救命。',
         key_learning_points: [
           '術後上呼吸道水腫是 BOAS 手術最危險併發症（發生率 5-10%）',
@@ -1528,7 +1528,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 5,
         step_type: 'case_summary',
         title: '長期預後與體重管理',
-        prompt: '術後水腫在 48 小時後消退，犬呼吸平穩出院。2 週後回診拆線：鼻孔明顯擴大，stertor 顯著減少。4 週後回診飼主報告運動耐受力大幅改善、打鼾明顯減輕。長期管理建議？選擇 2 項。',
+        prompt: '術後水腫在 48 小時後消退，犬呼吸平穩出院。2 週後回診拆線：鼻孔明顯擴大，stertor 明顯減少。4 週後回診飼主報告運動耐受力大幅改善、打鼾明顯減輕。長期管理建議？選擇 2 項。',
         available_actions: [
           '強調體重管理為長期成功的關鍵：目標 BCS 4-5/9，肥胖復發會使呼吸症狀惡化；建議獸醫營養師制定減重計畫（目標 1-2% 體重/週），定期量體重追蹤',
           '說明 BOAS 手術改善率約 85-95%，但需持續監測：避免高溫高濕環境（短頭種散熱差）、避免使用項圈改用胸背帶、飛行限制評估。若未來出現進行性 stridor 需評估喉塌陷進展',
@@ -1541,8 +1541,8 @@ export const SURG_CASES: CaseChallenge[] = [
           '強調體重管理為長期成功的關鍵：目標 BCS 4-5/9，肥胖復發會使呼吸症狀惡化；建議獸醫營養師制定減重計畫（目標 1-2% 體重/週），定期量體重追蹤',
           '說明 BOAS 手術改善率約 85-95%，但需持續監測：避免高溫高濕環境（短頭種散熱差）、避免使用項圈改用胸背帶、飛行限制評估。若未來出現進行性 stridor 需評估喉塌陷進展',
         ],
-        feedback_correct: '正確！BOAS 手術後的長期管理：(1) 體重管理是最重要的可控因子——肥胖復發會嚴重影響手術效果，BCS 應維持 4-5/9。(2) 環境管理——短頭種犬主要靠喘息散熱，高溫高濕環境是中暑的高風險因子；項圈壓迫氣管應改用胸背帶。(3) 持續監測——雖然手術改善率高（85-95%），但部分犬可能發展喉塌陷（特別是 Grade III 喉塌陷為不可逆變化，預後差）。(4) 繁殖倫理——BOAS 具遺傳性，確診犬隻不建議繁殖。(5) 航空旅行——短頭種犬是機艙氣壓環境的高風險群體。',
-        feedback_incorrect: 'BOAS 手術效果良好但非完全治癒——需持續體重管理和環境調整。喉塌陷可能為長期進展的問題。BOAS 具遺傳性，不建議繁殖。',
+        feedback_correct: '正確！BOAS 手術後的長期管理：(1) 體重管理是最重要的可控因子，肥胖復發會嚴重影響手術效果，BCS 應維持 4-5/9。(2) 環境管理，短頭種犬主要靠喘息散熱，高溫高濕環境是中暑的高風險因子；項圈壓迫氣管應改用胸背帶。(3) 持續監測，雖然手術改善率高（85-95%），但部分犬可能發展喉塌陷（特別是 Grade III 喉塌陷為不可逆變化，預後差）。(4) 繁殖倫理，BOAS 具遺傳性，確診犬隻不建議繁殖。(5) 航空旅行，短頭種犬是機艙氣壓環境的高風險群體。',
+        feedback_incorrect: 'BOAS 手術效果良好但非完全治癒，需持續體重管理和環境調整。喉塌陷可能為長期進展的問題。BOAS 具遺傳性，不建議繁殖。',
         key_learning_points: [
           '體重管理（BCS 4-5/9）是 BOAS 術後長期成功的最重要可控因子',
           '短頭種犬避免高溫高濕環境、使用胸背帶取代項圈',
@@ -1564,7 +1564,7 @@ export const SURG_CASES: CaseChallenge[] = [
         '僅矯正單一層級（如僅做鼻孔）而忽略軟腭',
         '術後未準備緊急氣管切開導致上呼吸道水腫窒息',
         '軟腭截短過度導致鼻咽逆流',
-        '忽略術前減重——肥胖增加麻醉和術後風險',
+        '忽略術前減重，肥胖增加麻醉和術後風險',
         '延遲手術導致不可逆喉塌陷',
       ],
     },
@@ -1575,7 +1575,7 @@ export const SURG_CASES: CaseChallenge[] = [
   // ===== CASE-SURG-009: Yorkshire Terrier with PSS =====
   {
     id: 'CASE-SURG-009',
-    title: '約克夏㹴幼犬生長遲緩與餐後神經症狀 — 門體分流',
+    title: '約克夏㹴幼犬生長遲緩與餐後神經症狀，門體分流',
     specialty: 'SURG',
     cross_specialties: ['IM', 'CPATH'],
     required_nodes: ['SURG-L3-011', 'SURG-L2-001'],
@@ -1605,7 +1605,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '詢問蛋白質攝取量與症狀嚴重度的相關性',
           '詢問尿液是否有結晶或結石病史（尿酸銨結晶）',
         ],
-        feedback_correct: '正確！PSS 的神經症狀（肝性腦病，HE）典型為餐後 1-3 小時發作——腸道吸收的氨和其他神經毒素繞過肝臟直接進入全身循環影響腦部。高蛋白飲食加重症狀（更多氨產生）。尿酸銨結晶/結石為 PSS 的特徵性泌尿道問題（肝臟無法將尿酸轉換為尿囊素）。約克夏㹴為先天性肝外 PSS 最高風險品種。',
+        feedback_correct: '正確！PSS 的神經症狀（肝性腦病，HE）典型為餐後 1-3 小時發作，腸道吸收的氨和其他神經毒素繞過肝臟直接進入全身循環影響腦部。高蛋白飲食加重症狀（更多氨產生）。尿酸銨結晶/結石為 PSS 的特徵性泌尿道問題（肝臟無法將尿酸轉換為尿囊素）。約克夏㹴為先天性肝外 PSS 最高風險品種。',
         feedback_incorrect: 'PSS 病史三要素：餐後神經症狀（HE）、蛋白質攝取與症狀的關聯、尿酸銨結晶。約克夏㹴為 PSS 高風險品種。',
         key_learning_points: [
           '餐後 1-3 小時神經症狀為肝性腦病特徵',
@@ -1632,7 +1632,7 @@ export const SURG_CASES: CaseChallenge[] = [
           'CBC：評估微小紅血球症（microcytosis）',
           '腹部超音波：尋找異常分流血管、評估肝臟大小（小肝症）和腎臟',
         ],
-        feedback_correct: '正確！PSS 診斷三支柱：(1) 血液生化——膽汁酸（最敏感的篩檢指標）空腹 + 餐後均升高（常 > 100 μmol/L）、BUN 偏低（肝臟尿素合成不足）、白蛋白偏低、空腹低血糖。(2) CBC——微小紅血球症（MCV 低）為 PSS 特徵性但非特異性發現，原因未完全釐清，可能與鐵代謝異常有關。(3) 腹部超音波——可直接看到分流血管（有經驗者偵測率 80-95%）、小肝症（microhepatica）、腎盂擴張。CT 血管攝影（CTA）為確認分流解剖的金標準。',
+        feedback_correct: '正確！PSS 診斷三支柱：(1) 血液生化，膽汁酸（最敏感的篩檢指標）空腹 + 餐後均升高（常 > 100 μmol/L）、BUN 偏低（肝臟尿素合成不足）、白蛋白偏低、空腹低血糖。(2) CBC，微小紅血球症（MCV 低）為 PSS 特徵性但非特異性發現，原因未完全釐清，可能與鐵代謝異常有關。(3) 腹部超音波，可直接看到分流血管（有經驗者偵測率 80-95%）、小肝症（microhepatica）、腎盂擴張。CT 血管攝影（CTA）為確認分流解剖的金標準。',
         feedback_incorrect: 'PSS 診斷：膽汁酸（最敏感）、CBC（微小紅血球症）、腹部超音波（直接可視化分流血管和小肝症）。CTA 為解剖定位金標準。',
         key_learning_points: [
           '膽汁酸（空腹 + 餐後）為 PSS 最敏感的篩檢指標',
@@ -1655,12 +1655,12 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           '先內科穩定（低蛋白飲食 + Lactulose + Metronidazole/Ampicillin 控制 HE）2-4 週 → 手術漸進閉合分流（Ameroid constrictor 或 Cellophane banding）。術後追蹤膽汁酸評估閉合效果。',
         ],
-        feedback_correct: '正確！PSS 治療策略：(1) 術前內科穩定（2-4 週）——低蛋白飲食減少氨產生、Lactulose 促進腸道排氨、Metronidazole 減少產氨菌。(2) 手術漸進閉合——Ameroid constrictor 或 Cellophane banding 在 2-5 週內緩慢閉合分流，避免急性門脈高壓（portal hypertension）。急性完全結紮可致命（門脈高壓 → 腸道水腫 → 休克）。(3) 術後追蹤——3 個月後重測膽汁酸評估閉合效果。約 85-90% 犬術後臨床改善良好。約克夏㹴預後通常良好。',
+        feedback_correct: '正確！PSS 治療策略：(1) 術前內科穩定（2-4 週），低蛋白飲食減少氨產生、Lactulose 促進腸道排氨、Metronidazole 減少產氨菌。(2) 手術漸進閉合，Ameroid constrictor 或 Cellophane banding 在 2-5 週內緩慢閉合分流，避免急性門脈高壓（portal hypertension）。急性完全結紮可致命（門脈高壓 → 腸道水腫 → 休克）。(3) 術後追蹤，3 個月後重測膽汁酸評估閉合效果。約 85-90% 犬術後臨床改善良好。約克夏㹴預後通常良好。',
         feedback_incorrect: '急性完全結紮可致命（門脈高壓）。標準為先內科穩定 → 手術漸進閉合（ameroid/cellophane）→ 術後追蹤。',
         key_learning_points: [
           '術前內科穩定 2-4 週：低蛋白飲食 + Lactulose + 抗生素',
           '漸進閉合（Ameroid/Cellophane）避免急性門脈高壓',
-          '急性完全結紮可致命——絕不可一次完全阻斷',
+          '急性完全結紮可致命，絕不可一次完全阻斷',
           '術後 3 個月重測膽汁酸評估閉合效果',
           '約 85-90% 犬術後臨床改善良好',
         ],
@@ -1671,18 +1671,18 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '術後急性期監測與併發症處理',
         prompt: 'Ameroid constrictor 手術完成。術後 6 小時犬出現全身性癲癇發作，持續約 1 分鐘後停止。血檢：Glucose 42 mg/dL（低血糖）、NH₃ 正常。最可能的原因與處置？選擇 2 項。',
         available_actions: [
-          '術後癲癇最常見原因為低血糖——PSS 犬肝醣儲存不足，手術禁食加劇；立即 50% Dextrose 0.5-1 mL/kg IV diluted bolus → 持續 Dextrose CRI（2.5-5%）維持 Glucose > 80 mg/dL',
-          '術後需監測門脈高壓徵兆（腹水、腸道水腫、血便）——分流漸進閉合過程中若門脈壓升高過快可致急性門脈高壓；術後 24-72 小時密切監測腹部膨脹、腸道蠕動音和糞便性狀',
+          '術後癲癇最常見原因為低血糖，PSS 犬肝醣儲存不足，手術禁食加劇；立即 50% Dextrose 0.5-1 mL/kg IV diluted bolus → 持續 Dextrose CRI（2.5-5%）維持 Glucose > 80 mg/dL',
+          '術後需監測門脈高壓徵兆（腹水、腸道水腫、血便），分流漸進閉合過程中若門脈壓升高過快可致急性門脈高壓；術後 24-72 小時密切監測腹部膨脹、腸道蠕動音和糞便性狀',
           '給予 Phenobarbital 高劑量控制',
           '立即重新手術移除 Ameroid',
           '觀察等待不需處置',
           '判斷為腦損傷，建議安樂死',
         ],
         correct_actions: [
-          '術後癲癇最常見原因為低血糖——PSS 犬肝醣儲存不足，手術禁食加劇；立即 50% Dextrose 0.5-1 mL/kg IV diluted bolus → 持續 Dextrose CRI（2.5-5%）維持 Glucose > 80 mg/dL',
-          '術後需監測門脈高壓徵兆（腹水、腸道水腫、血便）——分流漸進閉合過程中若門脈壓升高過快可致急性門脈高壓；術後 24-72 小時密切監測腹部膨脹、腸道蠕動音和糞便性狀',
+          '術後癲癇最常見原因為低血糖，PSS 犬肝醣儲存不足，手術禁食加劇；立即 50% Dextrose 0.5-1 mL/kg IV diluted bolus → 持續 Dextrose CRI（2.5-5%）維持 Glucose > 80 mg/dL',
+          '術後需監測門脈高壓徵兆（腹水、腸道水腫、血便），分流漸進閉合過程中若門脈壓升高過快可致急性門脈高壓；術後 24-72 小時密切監測腹部膨脹、腸道蠕動音和糞便性狀',
         ],
-        feedback_correct: '正確！PSS 術後癲癇的兩大原因：(1) 低血糖——PSS 犬的肝醣合成和儲存能力差（小肝症），手術禁食使原本就不足的肝醣儲備耗盡。處理：立即補充 Dextrose 並維持 CRI。(2) 術後門脈高壓——Ameroid constrictor 在手術放置後可能因局部反應導致過快閉合，引起急性門脈高壓（腹水、腸道水腫、腸黏膜屏障破壞 → 細菌轉移 → 敗血症）。第三個原因（較少見）為術後持續性 HE——NH₃ 正常排除此可能。術後 72 小時為高風險期，需密集監測 Glucose、電解質、腹部大小和糞便。',
+        feedback_correct: '正確！PSS 術後癲癇的兩大原因：(1) 低血糖，PSS 犬的肝醣合成和儲存能力差（小肝症），手術禁食使原本就不足的肝醣儲備耗盡。處理：立即補充 Dextrose 並維持 CRI。(2) 術後門脈高壓，Ameroid constrictor 在手術放置後可能因局部反應導致過快閉合，引起急性門脈高壓（腹水、腸道水腫、腸黏膜屏障破壞 → 細菌轉移 → 敗血症）。第三個原因（較少見）為術後持續性 HE，NH₃ 正常排除此可能。術後 72 小時為高風險期，需密集監測 Glucose、電解質、腹部大小和糞便。',
         feedback_incorrect: '術後癲癇需立即鑑別原因：低血糖（最常見）、急性門脈高壓、持續性 HE。NH₃ 正常排除 HE，Glucose 42 mg/dL 確認低血糖為主因。門脈高壓監測是術後 72 小時的重要任務。',
         key_learning_points: [
           'PSS 術後癲癇最常見原因為低血糖（肝醣儲存不足）',
@@ -1698,7 +1698,7 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '長期追蹤與預後評估',
         prompt: '術後 3 個月回診。犬體重增至 2.0 kg（追上同胎手足），精神食慾極佳，無任何神經症狀。追蹤膽汁酸：空腹 25 μmol/L（術前 85）、餐後 45 μmol/L（術前 320）。長期管理建議？選擇 2 項。',
         available_actions: [
-          '膽汁酸顯著改善（雖未完全正常化）代表分流已大幅閉合；約 50% 犬術後膽汁酸不會完全正常化但臨床症狀消失，此為可接受的結果。繼續每 6 個月追蹤膽汁酸至穩定',
+          '膽汁酸明顯改善（雖未完全正常化）代表分流已大幅閉合；約 50% 犬術後膽汁酸不會完全正常化但臨床症狀消失，此為可接受的結果。繼續每 6 個月追蹤膽汁酸至穩定',
           '可逐步放寬飲食限制（漸進增加蛋白質含量），觀察是否再出現 HE 症狀；若無症狀可過渡至正常優質蛋白飲食。Lactulose 和 Metronidazole 在無 HE 症狀時可逐步停藥',
           '膽汁酸未完全正常化需再次手術',
           '需終身限制蛋白質飲食',
@@ -1706,13 +1706,13 @@ export const SURG_CASES: CaseChallenge[] = [
           '完全正常不需追蹤',
         ],
         correct_actions: [
-          '膽汁酸顯著改善（雖未完全正常化）代表分流已大幅閉合；約 50% 犬術後膽汁酸不會完全正常化但臨床症狀消失，此為可接受的結果。繼續每 6 個月追蹤膽汁酸至穩定',
+          '膽汁酸明顯改善（雖未完全正常化）代表分流已大幅閉合；約 50% 犬術後膽汁酸不會完全正常化但臨床症狀消失，此為可接受的結果。繼續每 6 個月追蹤膽汁酸至穩定',
           '可逐步放寬飲食限制（漸進增加蛋白質含量），觀察是否再出現 HE 症狀；若無症狀可過渡至正常優質蛋白飲食。Lactulose 和 Metronidazole 在無 HE 症狀時可逐步停藥',
         ],
-        feedback_correct: '正確！PSS 術後追蹤的核心指標：(1) 膽汁酸——約 50% 犬術後不會完全正常化（可能存在殘餘分流或微血管分流），但若臨床無症狀則為可接受的結果。膽汁酸從 320 降至 45 μmol/L 代表分流已大幅閉合。(2) 體重追趕是最直觀的成功指標——從 1.2 kg 增至 2.0 kg 表示肝功能恢復後生長恢復正常。(3) 飲食管理——無 HE 症狀時可漸進恢復正常蛋白飲食（每 2 週增加 10-15% 蛋白質），避免突然改變。(4) 藥物漸減——Lactulose 和 Metronidazole 在膽汁酸改善且無 HE 時可逐步停用。約 85-90% 犬術後長期預後良好。約克夏㹴預後通常佳。',
+        feedback_correct: '正確！PSS 術後追蹤的核心指標：(1) 膽汁酸，約 50% 犬術後不會完全正常化（可能存在殘餘分流或微血管分流），但若臨床無症狀則為可接受的結果。膽汁酸從 320 降至 45 μmol/L 代表分流已大幅閉合。(2) 體重追趕是最直觀的成功指標，從 1.2 kg 增至 2.0 kg 表示肝功能恢復後生長恢復正常。(3) 飲食管理，無 HE 症狀時可漸進恢復正常蛋白飲食（每 2 週增加 10-15% 蛋白質），避免突然改變。(4) 藥物漸減，Lactulose 和 Metronidazole 在膽汁酸改善且無 HE 時可逐步停用。約 85-90% 犬術後長期預後良好。約克夏㹴預後通常佳。',
         feedback_incorrect: '約 50% 犬術後膽汁酸不完全正常化但臨床無症狀為可接受結果。體重追趕正常為良好指標。無 HE 症狀時可漸進恢復正常飲食和停藥。不需再次手術。',
         key_learning_points: [
-          '約 50% PSS 犬術後膽汁酸不完全正常化但臨床良好——可接受',
+          '約 50% PSS 犬術後膽汁酸不完全正常化但臨床良好，可接受',
           '體重追趕正常為手術成功的直觀指標',
           '無 HE 症狀時可漸進恢復正常蛋白飲食',
           'Lactulose 和抗生素在膽汁酸改善後可逐步停藥',
@@ -1743,7 +1743,7 @@ export const SURG_CASES: CaseChallenge[] = [
   // --- CASE-SURG-010: Pyometra ---
   {
     id: 'CASE-SURG-010',
-    title: '未絕育黃金獵犬多飲多尿與陰道分泌物 — 子宮蓄膿',
+    title: '未絕育黃金獵犬多飲多尿與陰道分泌物，子宮蓄膿',
     specialty: 'SURG',
     cross_specialties: ['IM', 'ECC'],
     required_nodes: ['SURG-L3-009', 'SURG-L4-001', 'SURG-L5-001'],
@@ -1759,7 +1759,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集',
-        prompt: '這隻 8 歲未絕育黃金獵犬因嗜睡與陰道分泌物就診。你需要進一步確認哪些資訊？請選擇最重要的 3 項。',
+        prompt: '這隻 8 歲未絕育黃金獵犬因嗜睡與陰道分泌物就診。你需要後續確認哪些資訊？請選擇最重要的 3 項。',
         available_actions: [
           '確認最後一次發情的時間（距今幾週）',
           '詢問分泌物的顏色、氣味與量',
@@ -1802,7 +1802,7 @@ export const SURG_CASES: CaseChallenge[] = [
         feedback_correct: '正確！腹部觸診感受到增大的管狀子宮是 pyometra 的重要理學檢查發現（注意：closed cervix 時子宮極度膨脹，觸診需輕柔避免破裂）。發燒與心搏過速提示全身性感染反應（SIRS）。脫水是 PU/PD 合併食慾下降的結果，需積極輸液矯正。',
         feedback_incorrect: 'Pyometra 的關鍵理學檢查：腹部觸診子宮增大（需輕柔！）、SIRS 徵候（發燒/心搏過速）、脫水程度評估。這三項決定手術的緊急程度與術前穩定化的需求。',
         key_learning_points: [
-          '觸診增大子宮時需輕柔——closed pyometra 有破裂風險',
+          '觸診增大子宮時需輕柔，closed pyometra 有破裂風險',
           '發燒 + 心搏過速 = 全身性感染反應（SIRS），提示需緊急處置',
           'PU/PD 機制：E. coli 內毒素干擾腎小管 ADH 受體 → 腎原性尿崩',
         ],
@@ -1825,13 +1825,13 @@ export const SURG_CASES: CaseChallenge[] = [
           'CBC + 生化（BUN/Cre 評估腎功能）+ 電解質',
           '凝血功能（PT/aPTT）',
         ],
-        feedback_correct: '完美！超音波是確診 pyometra 的首選影像——可直接觀察子宮角膨脹、含液體腔室、壁厚度（壁薄提示破裂風險）。CBC 預期嗜中性球 left shift，BUN/Cre 評估 endotoxin 引起的腎損傷。凝血功能評估 DIC 風險（pyometra 為 DIC 的重要誘因之一）。',
-        feedback_incorrect: '超音波優於 X 光——可直接評估子宮內容物與壁完整性。CBC/生化/凝血是術前必要評估：嗜中性球毒性變化評估感染嚴重度、BUN/Cre 評估腎功能、凝血篩檢 DIC。',
+        feedback_correct: '完美！超音波是確診 pyometra 的首選影像，可直接觀察子宮角膨脹、含液體腔室、壁厚度（壁薄提示破裂風險）。CBC 預期嗜中性球 left shift，BUN/Cre 評估 endotoxin 引起的腎損傷。凝血功能評估 DIC 風險（pyometra 為 DIC 的重要誘因之一）。',
+        feedback_incorrect: '超音波優於 X 光，可直接評估子宮內容物與壁完整性。CBC/生化/凝血是術前必要評估：嗜中性球毒性變化評估感染嚴重度、BUN/Cre 評估腎功能、凝血篩檢 DIC。',
         key_learning_points: [
           '超音波是 pyometra 首選影像學檢查',
           'Pyometra 典型 CBC：嗜中性球增多伴 left shift 與毒性變化',
           'E. coli endotoxin 可引起 AKI 與 DIC',
-          '術前 BUN/Cre 評估對預後判斷至關重要',
+          '術前 BUN/Cre 評估對預後判斷不能省',
         ],
       },
       {
@@ -1840,20 +1840,20 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '檢查結果判讀',
         prompt: '檢查結果如下：\n\n- 超音波：雙側子宮角明顯膨脹（直徑約 3-4 cm），內含均質無回音液體，子宮壁厚度正常，無游離腹水\n- CBC：WBC 38,000/µL（嗜中性球 32,000 伴 band 形增多與毒性變化），PCV 38%\n- 生化：BUN 42 mg/dL（↑），Cre 1.8 mg/dL（輕度↑），ALT 正常，Glucose 正常\n- 電解質：正常範圍\n- 凝血：PT/aPTT 正常\n\n如何解讀？',
         available_actions: [
-          '確診 open cervix pyometra。顯著嗜中性球增多伴 left shift 反映嚴重子宮感染。BUN/Cre 輕度升高為 endotoxin 相關 pre-renal/renal AKI，需積極輸液矯正後再評估。凝血正常排除目前 DIC。建議輸液穩定後緊急 OVH',
+          '確診 open cervix pyometra。明顯嗜中性球增多伴 left shift 反映嚴重子宮感染。BUN/Cre 輕度升高為 endotoxin 相關 pre-renal/renal AKI，需積極輸液矯正後再評估。凝血正常排除目前 DIC。建議輸液穩定後緊急 OVH',
           'BUN/Cre 升高代表慢性腎病，不適合手術',
           '凝血正常可直接手術，不需輸液',
           '建議先用抗生素保守治療 1 週觀察',
         ],
         correct_actions: [
-          '確診 open cervix pyometra。顯著嗜中性球增多伴 left shift 反映嚴重子宮感染。BUN/Cre 輕度升高為 endotoxin 相關 pre-renal/renal AKI，需積極輸液矯正後再評估。凝血正常排除目前 DIC。建議輸液穩定後緊急 OVH',
+          '確診 open cervix pyometra。明顯嗜中性球增多伴 left shift 反映嚴重子宮感染。BUN/Cre 輕度升高為 endotoxin 相關 pre-renal/renal AKI，需積極輸液矯正後再評估。凝血正常排除目前 DIC。建議輸液穩定後緊急 OVH',
         ],
-        feedback_correct: '正確！超音波確認 pyometra。WBC 38,000 伴 band 形與毒性變化反映嚴重感染。BUN/Cre 升高在 pyometra 常見——主要為 pre-renal（脫水）合併 endotoxin 對腎小管的損傷。輸液矯正脫水後 BUN/Cre 通常改善。凝血正常是手術的有利條件。Open cervix pyometra 雖然較 closed 安全，但仍需緊急手術。',
-        feedback_incorrect: 'Pyometra 的 BUN/Cre 升高多為可逆性（pre-renal + endotoxin AKI），輸液後通常改善，不應因此延遲手術。保守治療僅在種犬需保留繁殖力時考慮（aglepristone 療法），且僅限 open cervix。',
+        feedback_correct: '正確！超音波確認 pyometra。WBC 38,000 伴 band 形與毒性變化反映嚴重感染。BUN/Cre 升高在 pyometra 常見，主要為 pre-renal（脫水）合併 endotoxin 對腎小管的損傷。輸液矯正脫水後 BUN/Cre 通常改善。凝血正常是手術的有利條件。Open cervix pyometra 雖然較 closed 安全，但仍需緊急手術。',
+        feedback_incorrect: 'Pyometra 的 BUN/Cre 升高多為可逆性（pre-renal + endotoxin AKI），輸液後通常改善，不應所以延遲手術。保守治療僅在種犬需保留繁殖力時考慮（aglepristone 療法），且僅限 open cervix。',
         key_learning_points: [
           'Pyometra 的氮血症多為可逆性：脫水（pre-renal）+ endotoxin AKI',
           '嗜中性球 left shift 伴毒性變化 = 嚴重感染的血液學指標',
-          'Open cervix pyometra 仍需緊急手術——分泌物引流不代表自癒',
+          'Open cervix pyometra 仍需緊急手術，分泌物引流不代表自癒',
           '凝血功能正常是手術安全性的重要確認',
         ],
       },
@@ -1871,10 +1871,10 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           '緊急 OVH：正中開腹 → 雙重結紮卵巢動脈與子宮動脈 → 完整移除雙側卵巢與子宮 → 避免子宮內容物溢漏 → 術後繼續靜脈輸液 + IV 抗生素（ampicillin-sulbactam）→ 48 小時後追蹤 BUN/Cre',
         ],
-        feedback_correct: '完美！緊急 OVH 是 pyometra 的標準治療。手術重點：(1) 雙重結紮確保止血安全；(2) 完整移除卵巢——殘留卵巢組織（ovarian remnant）可導致復發；(3) 子宮操作需輕柔，避免內容物溢漏污染腹腔；(4) 術後抗生素建議 ampicillin-sulbactam 或 amoxicillin-clavulanate（覆蓋 E. coli 為主的感染）；(5) 持續輸液支持腎灌流。大多數犬在 OVH 後 48-72 小時明顯改善。',
-        feedback_incorrect: 'OVH 是 pyometra 的金標準治療。保留卵巢（僅子宮切除）不可接受——progesterone 持續分泌會導致殘端蓄膿。Aglepristone 保守治療僅限年輕種犬需保留繁殖力的 open cervix 案例，且復發率約 20%。經陰道灌洗不是標準做法。',
+        feedback_correct: '完美！緊急 OVH 是 pyometra 的標準治療。手術重點：(1) 雙重結紮確保止血安全；(2) 完整移除卵巢，殘留卵巢組織（ovarian remnant）可導致復發；(3) 子宮操作需輕柔，避免內容物溢漏污染腹腔；(4) 術後抗生素建議 ampicillin-sulbactam 或 amoxicillin-clavulanate（覆蓋 E. coli 為主的感染）；(5) 持續輸液支持腎灌流。大多數犬在 OVH 後 48-72 小時明顯改善。',
+        feedback_incorrect: 'OVH 是 pyometra 的金標準治療。保留卵巢（僅子宮切除）不可接受，progesterone 持續分泌會導致殘端蓄膿。Aglepristone 保守治療僅限年輕種犬需保留繁殖力的 open cervix 案例，且復發率約 20%。經陰道灌洗不是標準做法。',
         key_learning_points: [
-          'OVH（非單獨子宮切除）是 pyometra 的標準手術——必須移除雙側卵巢',
+          'OVH（非單獨子宮切除）是 pyometra 的標準手術，必須移除雙側卵巢',
           '術中避免子宮破裂與內容物溢漏是降低腹膜炎風險的關鍵',
           'E. coli 是 pyometra 最常見的致病菌（約 70%），抗生素選擇需覆蓋',
           '術後 BUN/Cre 通常在 48-72 小時內改善',
@@ -1906,7 +1906,7 @@ export const SURG_CASES: CaseChallenge[] = [
   // --- CASE-SURG-011: GI Foreign Body ---
   {
     id: 'CASE-SURG-011',
-    title: '幼犬急性嘔吐與線狀異物 — 腸道異物',
+    title: '幼犬急性嘔吐與線狀異物，腸道異物',
     specialty: 'SURG',
     cross_specialties: ['IM', 'ECC'],
     required_nodes: ['SURG-L3-003', 'SURG-L3-015', 'SURG-L4-001', 'SURG-L5-001'],
@@ -1922,7 +1922,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集',
-        prompt: '這隻 1 歲拉布拉多因急性嘔吐就診。你需要進一步確認哪些資訊？請選擇最重要的 3 項。',
+        prompt: '這隻 1 歲拉布拉多因急性嘔吐就診。你需要後續確認哪些資訊？請選擇最重要的 3 項。',
         available_actions: [
           '詳問可能吞食的物品類型、大小與時間',
           '確認嘔吐的型態（進食後 vs 非進食相關、有無膽汁）',
@@ -1940,7 +1940,7 @@ export const SURG_CASES: CaseChallenge[] = [
         feedback_incorrect: '1 歲拉布拉多急性嘔吐的首要鑑別是異物。病史重點：吞食物品細節（線狀 vs 非線狀影響手術決策）、嘔吐型態（定位）、環境中異物暴露風險。',
         key_learning_points: [
           '拉布拉多、黃金獵犬、鬥牛犬是異物吞食最高風險品種',
-          '線狀異物（繩索、線、布條）最危險——可導致多處腸道 plication 與穿孔',
+          '線狀異物（繩索、線、布條）最危險，可導致多處腸道 plication 與穿孔',
           '嘔吐型態有助定位：近端阻塞嘔吐早且頻繁，遠端較晚',
         ],
       },
@@ -1962,12 +1962,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '體溫 39.2°C，心搏過速（HR 130 bpm）',
           '舌下檢查：舌繫帶處可見一段繩索纏繞',
         ],
-        feedback_correct: '優秀！腹部 bunching（腸道皺摺團聚）是線狀異物的特徵性觸診發現——線狀物固定於近端錨點後，腸蠕動將腸壁沿線收縮。舌下繫帶纏繞是線狀異物的經典錨點（另一常見錨點是幽門）。微燒與心搏過速提示可能的腸壁損傷或早期腹膜炎。',
-        feedback_incorrect: '線狀異物的三大理學檢查發現：(1) 腸道 bunching/plication（特徵性），(2) 舌下檢查——必須檢查舌繫帶是否有線狀物纏繞，(3) 全身感染/炎症徵候（可能腸壁穿孔）。',
+        feedback_correct: '優秀！腹部 bunching（腸道皺摺團聚）是線狀異物的特徵性觸診發現，線狀物固定於近端錨點後，腸蠕動將腸壁沿線收縮。舌下繫帶纏繞是線狀異物的經典錨點（另一常見錨點是幽門）。微燒與心搏過速提示可能的腸壁損傷或早期腹膜炎。',
+        feedback_incorrect: '線狀異物的三大理學檢查發現：(1) 腸道 bunching/plication（特徵性），(2) 舌下檢查，必須檢查舌繫帶是否有線狀物纏繞，(3) 全身感染/炎症徵候（可能腸壁穿孔）。',
         key_learning_points: [
           '腸道 plication/bunching 是線狀異物的特徵性觸診發現',
-          '線狀異物必須檢查舌繫帶——常為近端錨點',
-          '絕對不可拉扯可見的線狀物——可能切割已 plicated 的腸壁',
+          '線狀異物必須檢查舌繫帶，常為近端錨點',
+          '絕對不可拉扯可見的線狀物，可能切割已 plicated 的腸壁',
           '貓的線狀異物錨點通常在舌繫帶，犬在幽門',
         ],
       },
@@ -1989,8 +1989,8 @@ export const SURG_CASES: CaseChallenge[] = [
           'CBC + 生化 + 電解質（術前評估）',
           '腹部超音波（評估腸道蠕動、壁厚度、游離液體）',
         ],
-        feedback_correct: '完美！X 光是第一線影像——線狀異物典型表現：多處小腸節段聚集在腹部中央呈「comma shape」或 plication pattern，不均勻氣體分佈，可能可見游離腹腔氣體（穿孔徵象）。超音波可進一步評估腸壁厚度、蠕動、游離液體（腹膜炎徵候）、偶可見異物本身。術前血檢評估電解質紊亂（嘔吐導致低鉀低氯代謝性鹼中毒）。',
-        feedback_incorrect: 'X 光 + 超音波是互補的影像評估。鋇劑造影在懷疑穿孔時禁忌（加重腹膜炎），且線狀異物通常不需要造影就可診斷。術前電解質評估對麻醉安全至關重要。',
+        feedback_correct: '完美！X 光是第一線影像，線狀異物典型表現：多處小腸節段聚集在腹部中央呈「comma shape」或 plication pattern，不均勻氣體分佈，可能可見游離腹腔氣體（穿孔徵象）。超音波可後續評估腸壁厚度、蠕動、游離液體（腹膜炎徵候）、偶可見異物本身。術前血檢評估電解質紊亂（嘔吐導致低鉀低氯代謝性鹼中毒）。',
+        feedback_incorrect: 'X 光 + 超音波是互補的影像評估。鋇劑造影在懷疑穿孔時禁忌（加重腹膜炎），且線狀異物通常不需要造影就可診斷。術前電解質評估對麻醉安全不能省。',
         key_learning_points: [
           '線狀異物 X 光特徵：腸道 plication、comma-shaped gas pattern、腹腔中央小腸聚集',
           '游離腹腔氣體 = 穿孔，需緊急手術',
@@ -2012,13 +2012,13 @@ export const SURG_CASES: CaseChallenge[] = [
         correct_actions: [
           '線狀異物合併腸道 plication 確診。超音波顯示腸壁增厚與少量游離液體提示早期腸壁損傷但尚未穿孔。低鉀低氯需術前矯正。建議緊急探查手術',
         ],
-        feedback_correct: '正確！影像學確認線狀異物伴 plication。腸壁增厚提示炎症/缺血但尚未穿孔（無游離氣體）。少量腹水可能為漿膜面滲出——需視為早期腹膜炎前兆。低鉀（3.2）需術前用 KCl 補充（目標 > 3.5），低氯常伴隨嘔吐。線狀異物絕不可催吐或拉扯——腸道 plication 狀態下催吐可造成多處穿孔。',
-        feedback_incorrect: '線狀異物不會自然排出。無游離氣體不代表腸壁完好——腸壁增厚和腹水是早期損傷的徵兆。催吐在任何腸道異物中都是禁忌（尤其線狀異物——加重 plication 切割）。',
+        feedback_correct: '正確！影像學確認線狀異物伴 plication。腸壁增厚提示炎症/缺血但尚未穿孔（無游離氣體）。少量腹水可能為漿膜面滲出，需視為早期腹膜炎前兆。低鉀（3.2）需術前用 KCl 補充（目標 > 3.5），低氯常伴隨嘔吐。線狀異物絕不可催吐或拉扯，腸道 plication 狀態下催吐可造成多處穿孔。',
+        feedback_incorrect: '線狀異物不會自然排出。無游離氣體不代表腸壁完好，腸壁增厚和腹水是早期損傷的徵兆。催吐在任何腸道異物中都是禁忌（尤其線狀異物，加重 plication 切割）。',
         key_learning_points: [
           '線狀異物絕對禁忌催吐與經口拉扯',
           '腸壁增厚 + 少量腹水 = 早期腸壁損傷，需緊急手術',
-          '低鉀 < 3.5 mEq/L 需術前矯正——低鉀增加 ileus 與心律不整風險',
-          '線狀異物無自然排出的可能——plication 只會隨蠕動加重',
+          '低鉀 < 3.5 mEq/L 需術前矯正，低鉀增加 ileus 與心律不整風險',
+          '線狀異物無自然排出的可能，plication 只會隨蠕動加重',
         ],
       },
       {
@@ -2027,22 +2027,22 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '手術決策與技術',
         prompt: '電解質矯正後進入手術室。打開腹腔後確認線狀異物從幽門延伸至遠端空腸，造成 4 處明顯 plication。2 處腸壁有漿膜面暗紅色變（缺血徵兆）但未穿孔。你的手術策略是什麼？',
         available_actions: [
-          '先切斷舌下錨點，再於多處 plication 進行 enterotomy 分段取出線狀物。評估 2 處缺血腸壁——若漿膜面恢復顏色則保留；若缺血無法恢復則進行該段腸道 resection-anastomosis',
+          '先切斷舌下錨點，再於多處 plication 進行 enterotomy 分段取出線狀物。評估 2 處缺血腸壁，若漿膜面恢復顏色則保留；若缺血無法恢復則進行該段腸道 resection-anastomosis',
           '從幽門做單一 gastrotomy 將整條線一次拉出',
           '僅做一處 enterotomy 即可取出所有線',
           '所有 plication 處全部做 resection-anastomosis',
         ],
         correct_actions: [
-          '先切斷舌下錨點，再於多處 plication 進行 enterotomy 分段取出線狀物。評估 2 處缺血腸壁——若漿膜面恢復顏色則保留；若缺血無法恢復則進行該段腸道 resection-anastomosis',
+          '先切斷舌下錨點，再於多處 plication 進行 enterotomy 分段取出線狀物。評估 2 處缺血腸壁，若漿膜面恢復顏色則保留；若缺血無法恢復則進行該段腸道 resection-anastomosis',
         ],
-        feedback_correct: '完美！線狀異物手術的核心原則：(1) 切斷錨點——解除線的張力；(2) 多處 enterotomy——在每個 plication 節點切開腸壁取出線段，不可從單一處拉扯（會切割 mesenteric border 的腸壁）；(3) 腸壁活性評估——漿膜面顏色、蠕動、mesenteric 血流。缺血腸壁以溫生理食鹽水覆蓋 5 分鐘後再評估。無法恢復的節段才做 R&A。保留所有可行的腸段以避免短腸症候群。',
-        feedback_incorrect: '從單一處拉出整條線是嚴重錯誤——線已嵌入 plication 的 mesenteric border，拉扯會造成多處穿孔。必須在每個 plication 點做 enterotomy 分段取出。不必要的 R&A 增加短腸風險。',
+        feedback_correct: '完美！線狀異物手術的核心原則：(1) 切斷錨點，解除線的張力；(2) 多處 enterotomy，在每個 plication 節點切開腸壁取出線段，不可從單一處拉扯（會切割 mesenteric border 的腸壁）；(3) 腸壁活性評估，漿膜面顏色、蠕動、mesenteric 血流。缺血腸壁以溫生理食鹽水覆蓋 5 分鐘後再評估。無法恢復的節段才做 R&A。保留所有可行的腸段以避免短腸症候群。',
+        feedback_incorrect: '從單一處拉出整條線是嚴重錯誤，線已嵌入 plication 的 mesenteric border，拉扯會造成多處穿孔。必須在每個 plication 點做 enterotomy 分段取出。不必要的 R&A 增加短腸風險。',
         key_learning_points: [
           '線狀異物手術：切斷錨點 → 多處 enterotomy → 分段取出 → 評估腸壁活性',
-          '絕不可從單一處拉出整條線——mesenteric border 切割風險',
+          '絕不可從單一處拉出整條線，mesenteric border 切割風險',
           '腸壁活性評估：溫鹽水覆蓋 5 分鐘後評估顏色、蠕動、出血',
           '僅無法恢復的缺血腸段需 resection-anastomosis',
-          '線狀異物比單一異物預後差——約 60-80% 需多處 enterotomy',
+          '線狀異物比單一異物預後差，約 60-80% 需多處 enterotomy',
         ],
       },
     ],
@@ -2070,7 +2070,7 @@ export const SURG_CASES: CaseChallenge[] = [
   // --- CASE-SURG-012: Wound Management ---
   {
     id: 'CASE-SURG-012',
-    title: '犬咬傷合併組織缺損 — 開放性傷口管理',
+    title: '犬咬傷合併組織缺損，開放性傷口管理',
     specialty: 'SURG',
     cross_specialties: ['ECC'],
     required_nodes: ['SURG-L1-002', 'SURG-L5-001'],
@@ -2086,7 +2086,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集與初步分級',
-        prompt: '這隻犬因狗咬傷被緊急帶入。你需要進一步確認哪些資訊？請選擇最重要的 3 項。',
+        prompt: '這隻犬因狗咬傷被緊急帶入。你需要後續確認哪些資訊？請選擇最重要的 3 項。',
         available_actions: [
           '確認受傷時間（距就診多久）與攻擊犬的大小',
           '詢問傷口出血是否已控制、出血量估計',
@@ -2100,11 +2100,11 @@ export const SURG_CASES: CaseChallenge[] = [
           '詢問傷口出血是否已控制、出血量估計',
           '確認狂犬病疫苗接種狀態（雙方犬隻）',
         ],
-        feedback_correct: '正確！受傷時間影響傷口分類——6 小時內為「新鮮傷口」，> 6 小時為「延遲就醫」，> 12 小時視為已污染。攻擊犬大小預估 crush injury 嚴重度。出血評估決定是否需優先止血。狂犬病疫苗狀態在犬咬傷中是法律與公衛要求。',
-        feedback_incorrect: '咬傷急診的病史重點：時間（影響傷口分類）、出血（決定優先處置）、狂犬病（法律與公衛）。攻擊犬大小可預估深層組織損傷程度——大型犬咬合力可達 200+ psi。',
+        feedback_correct: '正確！受傷時間影響傷口分類，6 小時內為「新鮮傷口」，> 6 小時為「延遲就醫」，> 12 小時視為已污染。攻擊犬大小預估 crush injury 嚴重度。出血評估決定是否需優先止血。狂犬病疫苗狀態在犬咬傷中是法律與公衛要求。',
+        feedback_incorrect: '咬傷急診的病史重點：時間（影響傷口分類）、出血（決定優先處置）、狂犬病（法律與公衛）。攻擊犬大小可預估深層組織損傷程度，大型犬咬合力可達 200+ psi。',
         key_learning_points: [
           '傷口時間分類：< 6h 新鮮、6-12h 延遲、> 12h 已污染/感染',
-          '大型犬咬合力可造成深層 crush injury——表面傷口可能遠小於深層損傷',
+          '大型犬咬合力可造成深層 crush injury，表面傷口可能遠小於深層損傷',
           '犬咬傷的「冰山效應」：可見傷口僅為實際損傷的一小部分',
         ],
       },
@@ -2127,12 +2127,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '呼吸平穩，雙側胸壁聽診肺音正常，無皮下氣腫',
         ],
         feedback_correct: '正確！胸壁穿刺傷必須排除胸腔穿透（皮下氣腫、肺音減弱、呼吸困難）。大面積 avulsion flap 是狗咬傷最常見的嚴重軟組織損傷型態。前肢穿刺傷需排除骨折與關節穿透。心血管穩定（CRT 正常）表示目前無重大出血。',
-        feedback_incorrect: '犬咬傷理學檢查優先級：(1) 胸壁穿透評估——氣胸可致命；(2) 傷口全面盤點——分類每處傷口；(3) 骨骼與關節完整性。心血管評估決定是否需先穩定再處理傷口。',
+        feedback_incorrect: '犬咬傷理學檢查優先級：(1) 胸壁穿透評估，氣胸可致命；(2) 傷口全面盤點，分類每處傷口；(3) 骨骼與關節完整性。心血管評估決定是否需先穩定再處理傷口。',
         key_learning_points: [
           '胸壁咬傷必須排除穿透性胸腔損傷（皮下氣腫、氣胸）',
           'Avulsion flap（皮瓣剝離）是犬咬傷最常見的軟組織損傷型態',
           '冰山效應：穿刺傷口徑小，但深層 crush injury 範圍遠大於表面',
-          '骨折與關節穿透的排除對四肢咬傷至關重要',
+          '骨折與關節穿透的排除對四肢咬傷不能省',
         ],
       },
       {
@@ -2153,8 +2153,8 @@ export const SURG_CASES: CaseChallenge[] = [
           '所有傷口需全身麻醉下徹底清創、大量沖洗（lavage ≥ 500 mL/cm 傷口）',
           '開始廣效抗生素（amoxicillin-clavulanate 20 mg/kg BID）覆蓋需氧菌與厭氧菌',
         ],
-        feedback_correct: '正確！犬咬傷一律視為 Class III 污染傷口（犬口腔含 Pasteurella、Streptococcus、Staphylococcus、厭氧菌等 100+ 菌種）。清創原則：「debridement by layer」——逐層移除壞死與無活性組織，保留所有有血流的活組織。大量沖洗（溫生理食鹽水 + 7 psi 壓力沖洗）是降低細菌量最有效的方法。咬傷不適合一期閉合（感染風險太高），應採開放管理或延遲閉合。',
-        feedback_incorrect: '咬傷立即縫合（primary closure）是最常見的錯誤——將細菌封在組織內導致膿瘍或蜂窩性組織炎。犬口腔含多種需氧與厭氧菌，全身抗生素是必要的。優碘不足以處理深層污染。',
+        feedback_correct: '正確！犬咬傷一律視為 Class III 污染傷口（犬口腔含 Pasteurella、Streptococcus、Staphylococcus、厭氧菌等 100+ 菌種）。清創原則：「debridement by layer」，逐層移除壞死與無活性組織，保留所有有血流的活組織。大量沖洗（溫生理食鹽水 + 7 psi 壓力沖洗）是降低細菌量最有效的方法。咬傷不適合一期閉合（感染風險太高），應採開放管理或延遲閉合。',
+        feedback_incorrect: '咬傷立即縫合（primary closure）是最常見的錯誤，將細菌封在組織內導致膿瘍或蜂窩性組織炎。犬口腔含多種需氧與厭氧菌，全身抗生素是必要的。優碘不足以處理深層污染。',
         key_learning_points: [
           '犬咬傷 = Class III 污染傷口，禁忌一期閉合',
           '清創原則：保留有血流組織，移除壞死組織（「debridement by layer」）',
@@ -2180,7 +2180,7 @@ export const SURG_CASES: CaseChallenge[] = [
           '穿刺傷放置 Penrose drain 引流 3-5 天，減少死腔膿瘍形成',
           '考慮使用負壓傷口治療（VAC therapy）加速肉芽組織形成',
         ],
-        feedback_correct: '正確！開放傷口管理的核心是「wound bed preparation」：(1) Wet-to-dry bandage 提供持續清創——濕紗布乾燥後移除時帶走壞死組織與滲出液；(2) 穿刺傷的死腔用 Penrose drain 引流，避免膿瘍；(3) VAC therapy 加速肉芽組織生長並減少水腫。延遲一期閉合在 3-5 天後評估——當傷口床為健康粉紅色肉芽組織且無感染徵象時即可閉合。',
+        feedback_correct: '正確！開放傷口管理的核心是「wound bed preparation」：(1) Wet-to-dry bandage 提供持續清創，濕紗布乾燥後移除時帶走壞死組織與滲出液；(2) 穿刺傷的死腔用 Penrose drain 引流，避免膿瘍；(3) VAC therapy 加速肉芽組織生長並減少水腫。延遲一期閉合在 3-5 天後評估，當傷口床為健康粉紅色肉芽組織且無感染徵象時即可閉合。',
         feedback_incorrect: '立即皮瓣在污染傷口上進行將導致感染失敗。「先開放管理→肉芽形成→再閉合」是污染傷口的黃金法則。不換藥等 1 週會導致感染惡化。',
         key_learning_points: [
           'Delayed primary closure（延遲一期閉合）：3-5 天內，肉芽形成前閉合',
@@ -2196,22 +2196,22 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '傷口閉合決策',
         prompt: '第 4 天回診：穿刺傷引流量減少，已移除 Penrose drain。腹部大面積傷口換藥後已見健康紅色肉芽組織填充，無感染徵象（無膿性分泌物、無異味、傷口邊緣無紅腫擴展）。體溫正常。如何決定閉合方式？',
         available_actions: [
-          '健康肉芽組織 + 無感染 = 可進行延遲一期閉合。評估皮膚鬆弛度——若可直接對合則 walking suture + 皮膚縫合；若張力太大則需推進皮瓣（advancement flap）或亞甲基藍引導的旋轉皮瓣',
+          '健康肉芽組織 + 無感染 = 可進行延遲一期閉合。評估皮膚鬆弛度，若可直接對合則 walking suture + 皮膚縫合；若張力太大則需推進皮瓣（advancement flap）或亞甲基藍引導的旋轉皮瓣',
           '繼續開放管理讓傷口完全以二期癒合自行閉合',
           '肉芽組織已形成，可停止抗生素與換藥',
           '此時不適合閉合，需等到完全無肉芽才能縫',
         ],
         correct_actions: [
-          '健康肉芽組織 + 無感染 = 可進行延遲一期閉合。評估皮膚鬆弛度——若可直接對合則 walking suture + 皮膚縫合；若張力太大則需推進皮瓣（advancement flap）或亞甲基藍引導的旋轉皮瓣',
+          '健康肉芽組織 + 無感染 = 可進行延遲一期閉合。評估皮膚鬆弛度，若可直接對合則 walking suture + 皮膚縫合；若張力太大則需推進皮瓣（advancement flap）或亞甲基藍引導的旋轉皮瓣',
         ],
-        feedback_correct: '正確！第 3-5 天是延遲一期閉合的最佳時機——肉芽組織提供血管基底、細菌量已降低、傷口邊緣尚未過度纖維化。閉合技巧：walking sutures（皮下組織推進縫合）消除死腔並減少皮膚張力。若皮膚缺損太大，使用 subdermal plexus flap（推進或旋轉皮瓣）。術後繼續抗生素至臨床痊癒後 7 天。完全以二期癒合雖可行但耗時數週且留下大面積疤痕。',
+        feedback_correct: '正確！第 3-5 天是延遲一期閉合的最佳時機，肉芽組織提供血管基底、細菌量已降低、傷口邊緣尚未過度纖維化。閉合技巧：walking sutures（皮下組織推進縫合）消除死腔並減少皮膚張力。若皮膚缺損太大，使用 subdermal plexus flap（推進或旋轉皮瓣）。術後繼續抗生素至臨床痊癒後 7 天。完全以二期癒合雖可行但耗時數週且留下大面積疤痕。',
         feedback_incorrect: '3-5 天健康肉芽組織形成後即為延遲閉合的最佳時機。完全二期癒合對大面積傷口耗時太長（4-6 週+）。肉芽組織是閉合的理想基底，而非阻礙。抗生素不可在傷口尚未癒合時停止。',
         key_learning_points: [
           '延遲一期閉合（delayed primary closure）在傷後 3-5 天執行最佳',
           'Walking sutures 是減少皮膚張力與死腔的關鍵縫合技巧',
           '大面積缺損可用推進皮瓣或旋轉皮瓣覆蓋',
           '抗生素持續至臨床痊癒後 7-14 天',
-          '犬咬傷癒合後整體預後良好——大多數犬功能完全恢復',
+          '犬咬傷癒合後整體預後良好，大多數犬功能完全恢復',
         ],
       },
     ],
@@ -2228,7 +2228,7 @@ export const SURG_CASES: CaseChallenge[] = [
         '立即一期閉合咬傷導致嚴重感染',
         '忽略深層 crush injury（冰山效應）',
         '未排除胸腔穿透就專注於皮膚傷口',
-        '清創不足——保留了無活性組織',
+        '清創不足，保留了無活性組織',
         '抗生素選擇未覆蓋厭氧菌',
       ],
     },
@@ -2237,7 +2237,7 @@ export const SURG_CASES: CaseChallenge[] = [
   },
   {
     id: 'CASE-SURG-013',
-    title: '公貓反覆尿道阻塞 — 會陰尿道造口術',
+    title: '公貓反覆尿道阻塞，會陰尿道造口術',
     specialty: 'SURG',
     cross_specialties: ['IM', 'ECC'],
     required_nodes: ['SURG-L3-016', 'SURG-L4-001', 'SURG-L5-001'],
@@ -2253,7 +2253,7 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集與手術適應症評估',
-        prompt: '這隻公貓因第三次尿道阻塞被轉診至外科。你需要進一步確認哪些資訊以評估是否適合會陰尿道造口術（perineal urethrostomy, PU）？請選擇最重要的 3 項。',
+        prompt: '這隻公貓因第三次尿道阻塞被轉診至外科。你需要後續確認哪些資訊以評估是否適合會陰尿道造口術（perineal urethrostomy, PU）？請選擇最重要的 3 項。',
         available_actions: [
           '確認過去三次阻塞的原因（結石 vs 尿道栓子 vs 特發性痙攣）與每次解除方式',
           '確認目前內科治療完整性（處方飼料、prazosin、環境豐富化、鎮痛劑）',
@@ -2267,12 +2267,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '確認目前內科治療完整性（處方飼料、prazosin、環境豐富化、鎮痛劑）',
           '確認阻塞持續時間與目前腎功能狀態（BUN/Cre/K+）',
         ],
-        feedback_correct: '正確！PU 手術的適應症評估需要：(1) 阻塞的病因——特發性 FLUTD 合併反覆阻塞（≥ 3 次或內科無法控制）是最常見的 PU 適應症，純結石阻塞需先評估結石類型是否可溶解；(2) 內科治療是否已最大化——確認處方飼料遵從性、prazosin、環境豐富化、止痛（gabapentin/buprenorphine）均已嘗試後仍反覆阻塞才考慮手術；(3) 急性腎後性阻塞的嚴重度決定術前穩定化的需求。',
+        feedback_correct: '正確！PU 手術的適應症評估需要：(1) 阻塞的病因，特發性 FLUTD 合併反覆阻塞（≥ 3 次或內科無法控制）是最常見的 PU 適應症，純結石阻塞需先評估結石類型是否可溶解；(2) 內科治療是否已最大化，確認處方飼料遵從性、prazosin、環境豐富化、止痛（gabapentin/buprenorphine）均已嘗試後仍反覆阻塞才考慮手術；(3) 急性腎後性阻塞的嚴重度決定術前穩定化的需求。',
         feedback_incorrect: '反覆尿道阻塞轉診外科時，最關鍵的病史是：阻塞原因（影響手術決策）、內科治療完整性（確認非內科不遵從）、以及目前阻塞嚴重度（影響術前穩定化）。飼料品牌等非核心資訊。',
         key_learning_points: [
           'PU 手術適應症：≥ 3 次阻塞、內科治療最大化後仍反覆阻塞、或無法導尿的尿道損傷',
           '貓下泌尿道疾病（FLUTD）約 55-69% 為特發性（FIC），非結石',
-          '術前必須評估腎功能——阻塞 > 24 小時可致高血鉀、急性腎損傷',
+          '術前必須評估腎功能，阻塞 > 24 小時可致高血鉀、急性腎損傷',
         ],
       },
       {
@@ -2293,12 +2293,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '心搏過緩（HR 140 bpm，貓正常 160-220），心律不整',
           '體溫偏低 37.2°C，黏膜蒼白、CRT 3 秒，精神極度沉鬱',
         ],
-        feedback_correct: '正確！膀胱堅硬膨大確認完全阻塞。心搏過緩 + 心律不整高度懷疑高血鉀（K+ > 7.0 mEq/L 可致心臟傳導異常）——這是尿道阻塞最致命的併發症。低體溫 + 循環不良（蒼白黏膜、CRT 延長）提示代謝性酸中毒與血流動力學不穩定。必須先穩定化再進行任何手術。',
+        feedback_correct: '正確！膀胱堅硬膨大確認完全阻塞。心搏過緩 + 心律不整高度懷疑高血鉀（K+ > 7.0 mEq/L 可致心臟傳導異常），這是尿道阻塞最致命的併發症。低體溫 + 循環不良（蒼白黏膜、CRT 延長）提示代謝性酸中毒與血流動力學不穩定。必須先穩定化再進行任何手術。',
         feedback_incorrect: '尿道阻塞急診最關鍵的理學檢查：膀胱觸診（確認阻塞程度）、心率與心律（高血鉀徵兆）、循環狀態（休克評估）。心搏過緩在貓尿道阻塞中提示致命性高血鉀。',
         key_learning_points: [
-          '貓尿道阻塞 > 24 小時死亡率顯著上升——主要致死原因為高血鉀性心律不整',
+          '貓尿道阻塞 > 24 小時死亡率明顯上升，主要致死原因為高血鉀性心律不整',
           '心搏過緩（貓 < 160 bpm）+ 心律不整 = 高度懷疑高血鉀（K+ > 7 mEq/L）',
-          '術前穩定化優先於手術——先解除阻塞、矯正電解質、恢復腎功能',
+          '術前穩定化優先於手術，先解除阻塞、矯正電解質、恢復腎功能',
         ],
       },
       {
@@ -2319,8 +2319,8 @@ export const SURG_CASES: CaseChallenge[] = [
           '靜脈給予 regular insulin（0.25-0.5 IU/kg IV）+ dextrose（1-2 g/unit insulin IV）驅鉀入細胞',
           '緊急導尿解除阻塞，同時開始生理食鹽水（0.9% NaCl）輸液矯正脫水與沖刷鉀離子',
         ],
-        feedback_correct: '正確！K+ 8.2 mEq/L 合併 ECG 變化是緊急狀態：(1) Calcium gluconate 不降低鉀但在 2-5 分鐘內穩定心肌，效果持續 20-30 分鐘，為爭取時間的第一步；(2) Insulin + dextrose 在 15-30 分鐘內將鉀驅入細胞內，降低血清鉀約 0.5-1.0 mEq/L；(3) 導尿解除阻塞後腎臟恢復排鉀功能，0.9% NaCl 輸液同時稀釋鉀與矯正脫水。PU 手術在穩定化後 24-72 小時安排——不可在高血鉀狀態下全身麻醉。',
-        feedback_incorrect: '高血鉀合併 ECG 變化是致命急診——必須三管齊下：calcium gluconate（心臟保護）→ insulin + dextrose（驅鉀入細胞）→ 導尿 + 輸液（排除鉀離子根源）。不可在高血鉀時麻醉手術。',
+        feedback_correct: '正確！K+ 8.2 mEq/L 合併 ECG 變化是緊急狀態：(1) Calcium gluconate 不降低鉀但在 2-5 分鐘內穩定心肌，效果持續 20-30 分鐘，為爭取時間的第一步；(2) Insulin + dextrose 在 15-30 分鐘內將鉀驅入細胞內，降低血清鉀約 0.5-1.0 mEq/L；(3) 導尿解除阻塞後腎臟恢復排鉀功能，0.9% NaCl 輸液同時稀釋鉀與矯正脫水。PU 手術在穩定化後 24-72 小時安排，不可在高血鉀狀態下全身麻醉。',
+        feedback_incorrect: '高血鉀合併 ECG 變化是致命急診，必須三管齊下：calcium gluconate（心臟保護）→ insulin + dextrose（驅鉀入細胞）→ 導尿 + 輸液（排除鉀離子根源）。不可在高血鉀時麻醉手術。',
         key_learning_points: [
           'Calcium gluconate 穩定心肌（不降鉀），是高血鉀急救第一步',
           'Regular insulin + dextrose 是降低血清鉀最有效的藥物組合',
@@ -2330,13 +2330,13 @@ export const SURG_CASES: CaseChallenge[] = [
       {
         step_number: 4,
         step_type: 'treatment_plan',
-        title: '會陰尿道造口術——手術規劃',
+        title: '會陰尿道造口術，手術規劃',
         prompt: '48 小時後，貓的電解質已正常化（K+ 4.1）、腎功能改善（Cre 2.8）、導尿管通暢。決定進行 PU 手術。關於手術技術，以下最正確的 3 項是？',
         available_actions: [
           '手術目標：將較寬的骨盆尿道（pelvic urethra）開口至會陰部皮膚，繞過狹窄的陰莖尿道（penile urethra）',
           '關鍵解剖：球海綿體肌（bulbospongiosus muscle）分離後暴露骨盆尿道，注意保護尿道背側的直腸',
           '吻合技巧：尿道黏膜與皮膚以 4-0/5-0 可吸收縫線（PDS/Monocryl）做 simple interrupted 吻合，確保無張力、黏膜外翻',
-          '保留陰莖——僅切開尿道即可',
+          '保留陰莖，僅切開尿道即可',
           '使用不可吸收縫線（nylon）縫合尿道黏膜',
           '術中不需要導尿管定位',
         ],
@@ -2345,10 +2345,10 @@ export const SURG_CASES: CaseChallenge[] = [
           '關鍵解剖：球海綿體肌（bulbospongiosus muscle）分離後暴露骨盆尿道，注意保護尿道背側的直腸',
           '吻合技巧：尿道黏膜與皮膚以 4-0/5-0 可吸收縫線（PDS/Monocryl）做 simple interrupted 吻合，確保無張力、黏膜外翻',
         ],
-        feedback_correct: '正確！PU 手術的核心原則：(1) 陰莖尿道直徑僅 0.7 mm（阻塞好發處），骨盆尿道直徑 3-4 mm——造口於骨盆尿道層級可大幅降低再阻塞率；(2) 球海綿體肌是定位骨盆尿道的解剖標誌，必須完全分離以暴露足夠長度的尿道；(3) 黏膜-皮膚吻合使用可吸收單股縫線，確保黏膜外翻（mucosa everted）以防止縫合處狹窄。導尿管（5 Fr red rubber）術中保留以利定位與沖洗。陰莖需完整切除以避免殘留的陰莖尿道成為藏汙納垢處。',
+        feedback_correct: '正確！PU 手術的核心原則：(1) 陰莖尿道直徑僅 0.7 mm（阻塞好發處），骨盆尿道直徑 3-4 mm，造口於骨盆尿道層級可大幅降低再阻塞率；(2) 球海綿體肌是定位骨盆尿道的解剖標誌，必須完全分離以暴露足夠長度的尿道；(3) 黏膜-皮膚吻合使用可吸收單股縫線，確保黏膜外翻（mucosa everted）以防止縫合處狹窄。導尿管（5 Fr red rubber）術中保留以利定位與沖洗。陰莖需完整切除以避免殘留的陰莖尿道成為藏汙納垢處。',
         feedback_incorrect: 'PU 手術的三個關鍵：(1) 造口位置在骨盆尿道（寬）而非陰莖尿道（窄）；(2) 球海綿體肌分離是手術核心步驟；(3) 黏膜外翻吻合防止狹窄。陰莖須切除，使用可吸收縫線，術中保留導尿管輔助定位。',
         key_learning_points: [
-          '陰莖尿道直徑 ~0.7 mm vs 骨盆尿道 ~3-4 mm——PU 造口必須在骨盆尿道層級',
+          '陰莖尿道直徑 ~0.7 mm vs 骨盆尿道 ~3-4 mm，PU 造口必須在骨盆尿道層級',
           '球海綿體肌（bulbospongiosus）是 PU 手術的關鍵解剖標誌',
           '黏膜-皮膚吻合使用 4-0/5-0 可吸收單股縫線，黏膜外翻以防狹窄',
         ],
@@ -2371,12 +2371,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '長期監測：PU 術後尿路感染（UTI）發生率約 20-30%，因造口繞過正常的尿道防禦機制。建議每 6 個月尿液培養監測',
           '告知飼主預後：PU 術後再阻塞率約 10-25%（多為造口狹窄所致），但 85-90% 飼主滿意度高。繼續處方飼料與環境豐富化以降低 FIC 發作頻率',
         ],
-        feedback_correct: '正確！PU 術後管理重點：(1) 短期——伊莉莎白圈保護造口 5-7 天（舔舐是造口失敗的常見原因）、監測出血與水腫、確認排尿通暢；(2) 長期——UTI 是 PU 最常見的長期併發症（造口位置較低且缺乏陰莖尿道的自然防禦），需定期尿液培養而非僅尿液分析（亞臨床菌尿常見）；(3) PU 手術降低的是「阻塞」頻率，但不治癒 FIC 本身——持續的內科管理（處方飼料、環境豐富化、減壓）至關重要。',
+        feedback_correct: '正確！PU 術後管理重點：(1) 短期，伊莉莎白圈保護造口 5-7 天（舔舐是造口失敗的常見原因）、監測出血與水腫、確認排尿通暢；(2) 長期，UTI 是 PU 最常見的長期併發症（造口位置較低且缺乏陰莖尿道的自然防禦），需定期尿液培養而非僅尿液分析（亞臨床菌尿常見）；(3) PU 手術降低的是「阻塞」頻率，但不治癒 FIC 本身，持續的內科管理（處方飼料、環境豐富化、減壓）不能省。',
         feedback_incorrect: '術後關鍵：伊莉莎白圈（舔舐是造口失敗主因）、長期 UTI 監測（PU 破壞尿道防禦）、持續內科管理 FIC。PU 降低阻塞但不治癒 FIC。',
         key_learning_points: [
           'PU 術後最常見併發症：造口狹窄（10-25%）、UTI（20-30%）、出血',
-          'PU 繞過尿道自然防禦機制，長期 UTI 風險上升——需定期尿液培養',
-          'PU 降低阻塞頻率但不治癒 FIC——內科管理（飲食、環境、止痛）必須持續',
+          'PU 繞過尿道自然防禦機制，長期 UTI 風險上升，需定期尿液培養',
+          'PU 降低阻塞頻率但不治癒 FIC，內科管理（飲食、環境、止痛）必須持續',
         ],
       },
       {
@@ -2386,7 +2386,7 @@ export const SURG_CASES: CaseChallenge[] = [
         prompt: '回顧此病例，以下哪 3 項是最重要的學習重點？',
         available_actions: [
           'PU 手術是反覆尿道阻塞（≥ 3 次或內科最大化仍失敗）的標準治療。手術核心在於骨盆尿道-皮膚吻合，繞過狹窄的陰莖尿道',
-          '高血鉀是尿道阻塞最致命的併發症——急救三步驟：calcium gluconate（心臟保護）→ insulin + dextrose（驅鉀）→ 導尿 + 輸液（排鉀）',
+          '高血鉀是尿道阻塞最致命的併發症，急救三步驟：calcium gluconate（心臟保護）→ insulin + dextrose（驅鉀）→ 導尿 + 輸液（排鉀）',
           'PU 術後需長期追蹤：UTI（20-30%）、造口狹窄（10-25%）為最常見併發症。FIC 的內科管理不可停止',
           '所有尿道阻塞的貓都應立即手術',
           'PU 可完全治癒 FLUTD',
@@ -2394,7 +2394,7 @@ export const SURG_CASES: CaseChallenge[] = [
         ],
         correct_actions: [
           'PU 手術是反覆尿道阻塞（≥ 3 次或內科最大化仍失敗）的標準治療。手術核心在於骨盆尿道-皮膚吻合，繞過狹窄的陰莖尿道',
-          '高血鉀是尿道阻塞最致命的併發症——急救三步驟：calcium gluconate（心臟保護）→ insulin + dextrose（驅鉀）→ 導尿 + 輸液（排鉀）',
+          '高血鉀是尿道阻塞最致命的併發症，急救三步驟：calcium gluconate（心臟保護）→ insulin + dextrose（驅鉀）→ 導尿 + 輸液（排鉀）',
           'PU 術後需長期追蹤：UTI（20-30%）、造口狹窄（10-25%）為最常見併發症。FIC 的內科管理不可停止',
         ],
         feedback_correct: '優秀！此病例整合了 FLUTD 的內科管理失敗後轉向外科介入的完整思路：先穩定致命併發症（高血鉀）→ 恢復腎功能 → 擇期 PU 手術 → 長期追蹤。PU 手術雖然是泌尿外科的基本手術，但正確的患者篩選、術前穩定化、精準的手術技巧與術後長期管理同等重要。',
@@ -2402,7 +2402,7 @@ export const SURG_CASES: CaseChallenge[] = [
         key_learning_points: [
           '貓 PU 手術的完整流程：適應症評估 → 術前穩定化 → 手術 → 長期追蹤',
           '高血鉀急救的藥物學：calcium gluconate（秒級心臟保護）→ insulin/dextrose（分鐘級降鉀）→ 輸液排鉀（小時級）',
-          'FLUTD 是終身管理的疾病——PU 僅降低阻塞頻率，飲食與環境管理不可中斷',
+          'FLUTD 是終身管理的疾病，PU 僅降低阻塞頻率，飲食與環境管理不可中斷',
         ],
       },
     ],
@@ -2416,10 +2416,10 @@ export const SURG_CASES: CaseChallenge[] = [
         '術後長期 UTI 監測與 FIC 持續管理',
       ],
       common_pitfalls: [
-        '在高血鉀狀態下急於手術——全麻風險極高',
+        '在高血鉀狀態下急於手術，全麻風險極高',
         '造口位置過低（陰莖尿道）導致再狹窄',
         '黏膜未外翻吻合導致術後狹窄',
-        '術後忽略 FIC 內科管理——僅靠 PU 無法根治 FLUTD',
+        '術後忽略 FIC 內科管理，僅靠 PU 無法根治 FLUTD',
         '未定期監測 UTI（亞臨床菌尿常見）',
       ],
     },
@@ -2428,7 +2428,7 @@ export const SURG_CASES: CaseChallenge[] = [
   },
   {
     id: 'CASE-SURG-014',
-    title: '幼貓急性嘔吐 — 線狀腸道異物',
+    title: '幼貓急性嘔吐，線狀腸道異物',
     specialty: 'SURG',
     cross_specialties: ['IM', 'ECC'],
     required_nodes: ['SURG-L3-003', 'SURG-L3-015', 'SURG-L4-001'],
@@ -2444,18 +2444,18 @@ export const SURG_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集與異物風險評估',
-        prompt: '2 歲母貓急性嘔吐 3 天、拒食、飼主提及線軸被打翻。你需要進一步確認哪些關鍵資訊？選擇最重要的 3 項。',
+        prompt: '2 歲母貓急性嘔吐 3 天、拒食、飼主提及線軸被打翻。你需要後續確認哪些關鍵資訊？選擇最重要的 3 項。',
         available_actions: [
-          '詢問線軸上的線是否有缺少——評估吞入線狀異物（linear foreign body）的可能性',
-          '詢問嘔吐的頻率與型態——是否有進行性惡化（提示持續阻塞而非單純胃炎）',
+          '詢問線軸上的線是否有缺少，評估吞入線狀異物（linear foreign body）的可能性',
+          '詢問嘔吐的頻率與型態，是否有進行性惡化（提示持續阻塞而非單純胃炎）',
           '詢問貓是否有玩線、緞帶、橡皮筋等習慣（貓的線狀異物行為風險評估）',
           '詢問飼料品牌是否更換',
           '詢問是否有打噴嚏或流鼻水',
           '詢問同居犬是否也有嘔吐',
         ],
         correct_actions: [
-          '詢問線軸上的線是否有缺少——評估吞入線狀異物（linear foreign body）的可能性',
-          '詢問嘔吐的頻率與型態——是否有進行性惡化（提示持續阻塞而非單純胃炎）',
+          '詢問線軸上的線是否有缺少，評估吞入線狀異物（linear foreign body）的可能性',
+          '詢問嘔吐的頻率與型態，是否有進行性惡化（提示持續阻塞而非單純胃炎）',
           '詢問貓是否有玩線、緞帶、橡皮筋等習慣（貓的線狀異物行為風險評估）',
         ],
         feedback_correct: '正確！線狀異物（linear foreign body）在貓的腸道異物中佔約 30-50%，是最危險的異物類型。確認線是否缺少可提高臨床懷疑度。進行性嘔吐（由食物轉為膽汁）提示腸道阻塞而非單純胃炎。貓特別喜歡玩線狀物品（線、緞帶、毛線、橡皮筋、聖誕燈飾線），行為史有助於風險分層。',
@@ -2484,12 +2484,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '口腔檢查：舌根基部發現一段線卡住（sublingual linear foreign body anchor），線從舌頭下方消失進入消化道',
           '脫水約 7%（皮膚帳篷延遲、黏膜略乾），心搏 200 bpm，體溫 39.8°C',
         ],
-        feedback_correct: '正確！線狀異物的經典三聯徵：(1) 腸段聚集（plication/bunching）——線的一端固定，腸管沿線收縮聚攏形成手風琴狀；(2) 舌下錨定點（sublingual anchor）——約 50% 的貓線狀異物會卡在舌根基部，口腔檢查是必做步驟；(3) 腹痛 + 發燒提示可能有腸壁穿孔或即將穿孔。脫水需術前矯正。',
+        feedback_correct: '正確！線狀異物的經典三聯徵：(1) 腸段聚集（plication/bunching），線的一端固定，腸管沿線收縮聚攏形成手風琴狀；(2) 舌下錨定點（sublingual anchor），約 50% 的貓線狀異物會卡在舌根基部，口腔檢查是必做步驟；(3) 腹痛 + 發燒提示可能有腸壁穿孔或即將穿孔。脫水需術前矯正。',
         feedback_incorrect: '線狀異物的理學檢查重點：腹部腸段聚集（bunching）、口腔舌下錨定點檢查（50% 可見）、以及全身狀態評估（脫水、發燒、腹痛）。舌下檢查是貓嘔吐時必做的步驟。',
         key_learning_points: [
-          '貓嘔吐時必須檢查口腔舌根——約 50% 線狀異物錨定於舌下',
+          '貓嘔吐時必須檢查口腔舌根，約 50% 線狀異物錨定於舌下',
           '腸段聚集（plication/bunching）是線狀異物最具特異性的觸診發現',
-          '發燒 + 腹痛提示腸壁可能已穿孔——手術急迫性上升',
+          '發燒 + 腹痛提示腸壁可能已穿孔，手術急迫性上升',
         ],
       },
       {
@@ -2510,12 +2510,12 @@ export const SURG_CASES: CaseChallenge[] = [
           '腹部超音波確認腸管聚集型態，評估有無腹腔游離液（提示穿孔）',
           '血液檢查（CBC、生化、電解質）評估發炎程度與脫水/電解質失衡，為手術做準備',
         ],
-        feedback_correct: '正確！X 光是第一線工具——線狀異物的經典影像為腸管聚集、偏心性氣泡（gas accumulates on anti-mesenteric side）、逗號形腸段。超音波更敏感，可直接看到聚集的腸管與腸系膜側的線狀高回音影，且可評估腹腔游離液（腹膜炎/穿孔徵兆）。術前血液檢查評估感染程度（WBC）、腎功能與電解質，指導輸液治療。鋇劑造影在已有臨床確診時不建議——延遲手術且鋇劑如穿孔會造成化學性腹膜炎。',
+        feedback_correct: '正確！X 光是第一線工具，線狀異物的經典影像為腸管聚集、偏心性氣泡（gas accumulates on anti-mesenteric side）、逗號形腸段。超音波更敏感，可直接看到聚集的腸管與腸系膜側的線狀高回音影，且可評估腹腔游離液（腹膜炎/穿孔徵兆）。術前血液檢查評估感染程度（WBC）、腎功能與電解質，指導輸液治療。鋇劑造影在已有臨床確診時不建議，延遲手術且鋇劑如穿孔會造成化學性腹膜炎。',
         feedback_incorrect: '線狀異物影像學：X 光（腸管聚集 + 偏心氣泡）→ 超音波（確認聚集 + 評估穿孔）→ 血液檢查（術前評估）。鋇劑在已確診時不建議。',
         key_learning_points: [
           '線狀異物 X 光經典三徵：腸段聚集、偏心性氣泡、逗號形腸段',
           '超音波可直接看到線狀異物的高回音影與腸管聚集',
-          '腹腔游離液（free fluid）提示腸壁穿孔——手術緊急性從擇期升級為緊急',
+          '腹腔游離液（free fluid）提示腸壁穿孔，手術緊急性從擇期升級為緊急',
         ],
       },
       {
@@ -2524,22 +2524,22 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '手術決策與技巧',
         prompt: '影像確認線狀異物合併小腸聚集。血液檢查：WBC 22,000/μL（嗜中性球左移）、BUN/Cre 正常、低氯低鉀。超音波未見游離腹腔液。術前輸液矯正電解質後準備手術。手術操作最重要的 3 項原則是？',
         available_actions: [
-          '先檢查舌下錨定點——剪斷舌下的線（不可拉扯），然後開腹探查',
-          '可能需要多處腸切開術（multiple enterotomies）——在線狀異物造成的腸系膜側穿孔風險最高處分段取出線，絕對不可從單一切口拉出整條線',
-          '每個切開處術中評估腸壁活性——若有壞死或穿孔區域需做腸段切除吻合術（resection and anastomosis），以血流與蠕動評估活性',
+          '先檢查舌下錨定點，剪斷舌下的線（不可拉扯），然後開腹探查',
+          '可能需要多處腸切開術（multiple enterotomies），在線狀異物造成的腸系膜側穿孔風險最高處分段取出線，絕對不可從單一切口拉出整條線',
+          '每個切開處術中評估腸壁活性，若有壞死或穿孔區域需做腸段切除吻合術（resection and anastomosis），以血流與蠕動評估活性',
           '從舌下拉出整條線即可',
           '僅做一處腸切開拉出所有線段',
           '使用內視鏡取出線狀異物',
         ],
         correct_actions: [
-          '先檢查舌下錨定點——剪斷舌下的線（不可拉扯），然後開腹探查',
-          '可能需要多處腸切開術（multiple enterotomies）——在線狀異物造成的腸系膜側穿孔風險最高處分段取出線，絕對不可從單一切口拉出整條線',
-          '每個切開處術中評估腸壁活性——若有壞死或穿孔區域需做腸段切除吻合術（resection and anastomosis），以血流與蠕動評估活性',
+          '先檢查舌下錨定點，剪斷舌下的線（不可拉扯），然後開腹探查',
+          '可能需要多處腸切開術（multiple enterotomies），在線狀異物造成的腸系膜側穿孔風險最高處分段取出線，絕對不可從單一切口拉出整條線',
+          '每個切開處術中評估腸壁活性，若有壞死或穿孔區域需做腸段切除吻合術（resection and anastomosis），以血流與蠕動評估活性',
         ],
-        feedback_correct: '正確！線狀異物手術的絕對禁忌是「從單一切口拉出整條線」——這會像鋸子一樣切穿腸系膜側腸壁，造成多處穿孔與致命性腹膜炎。正確做法：(1) 舌下剪斷解除錨定；(2) 開腹後全程檢查腸管，在每個聚集處做獨立的 enterotomy，分段移除線段；(3) 通常需要 2-4 處 enterotomy；(4) 每處切開時評估腸壁——腸系膜側是穿孔風險最高處，壞死腸段需切除吻合。貓小腸直徑小，吻合使用 4-0/5-0 可吸收縫線。',
-        feedback_incorrect: '線狀異物手術最致命的錯誤：從單一切口拉線——會切穿腸壁。正確：舌下剪斷 → 多處 enterotomy 分段取出 → 評估每段腸壁活性 → 壞死段切除吻合。',
+        feedback_correct: '正確！線狀異物手術的絕對禁忌是「從單一切口拉出整條線」，這會像鋸子一樣切穿腸系膜側腸壁，造成多處穿孔與致命性腹膜炎。正確做法：(1) 舌下剪斷解除錨定；(2) 開腹後全程檢查腸管，在每個聚集處做獨立的 enterotomy，分段移除線段；(3) 通常需要 2-4 處 enterotomy；(4) 每處切開時評估腸壁，腸系膜側是穿孔風險最高處，壞死腸段需切除吻合。貓小腸直徑小，吻合使用 4-0/5-0 可吸收縫線。',
+        feedback_incorrect: '線狀異物手術最致命的錯誤：從單一切口拉線，會切穿腸壁。正確：舌下剪斷 → 多處 enterotomy 分段取出 → 評估每段腸壁活性 → 壞死段切除吻合。',
         key_learning_points: [
-          '線狀異物絕對禁忌：從單一切口拉出整條線——會造成多處腸壁穿孔',
+          '線狀異物絕對禁忌：從單一切口拉出整條線，會造成多處腸壁穿孔',
           '正確做法：多處腸切開術（multiple enterotomies），通常需 2-4 處',
           '腸系膜側（mesenteric border）是線狀異物最容易切穿腸壁的部位',
         ],
@@ -2550,7 +2550,7 @@ export const SURG_CASES: CaseChallenge[] = [
         title: '術後管理與預後',
         prompt: '手術完成：舌下剪斷線後，經 3 處 enterotomy 分段取出約 90 cm 縫線。一段約 8 cm 的空腸因腸系膜側穿孔合併局部腹膜炎，執行腸段切除吻合。腹腔沖洗後關腹。術後最重要的管理重點是？',
         available_actions: [
-          '術後 12-24 小時禁食後開始少量多餐易消化飲食（a/d 或皇家腸胃道處方）。監測嘔吐——若術後持續嘔吐需排除腸吻合處滲漏',
+          '術後 12-24 小時禁食後開始少量多餐易消化飲食（a/d 或皇家腸胃道處方）。監測嘔吐，若術後持續嘔吐需排除腸吻合處滲漏',
           '抗生素治療：因已有局部腹膜炎，使用廣效抗生素（ampicillin/sulbactam + metronidazole）覆蓋需氧與厭氧菌，療程 7-14 天',
           '疼痛管理（buprenorphine 0.02 mg/kg IV/buccal q6-8h）+ 監測白蛋白（腹膜炎可致低白蛋白血症）。預後：無穿孔存活率 > 90%，有穿孔約 70-80%',
           '術後可立即恢復正常飲食',
@@ -2558,11 +2558,11 @@ export const SURG_CASES: CaseChallenge[] = [
           '預後極差，存活率 < 30%',
         ],
         correct_actions: [
-          '術後 12-24 小時禁食後開始少量多餐易消化飲食（a/d 或皇家腸胃道處方）。監測嘔吐——若術後持續嘔吐需排除腸吻合處滲漏',
+          '術後 12-24 小時禁食後開始少量多餐易消化飲食（a/d 或皇家腸胃道處方）。監測嘔吐，若術後持續嘔吐需排除腸吻合處滲漏',
           '抗生素治療：因已有局部腹膜炎，使用廣效抗生素（ampicillin/sulbactam + metronidazole）覆蓋需氧與厭氧菌，療程 7-14 天',
           '疼痛管理（buprenorphine 0.02 mg/kg IV/buccal q6-8h）+ 監測白蛋白（腹膜炎可致低白蛋白血症）。預後：無穿孔存活率 > 90%，有穿孔約 70-80%',
         ],
-        feedback_correct: '正確！線狀異物合併穿孔與腹膜炎的術後管理關鍵：(1) 控制飲食——術後 12-24 小時禁食讓腸吻合處初步癒合（漿膜面 fibrin seal 需 3-4 小時，足夠張力需 10-14 天），術後持續嘔吐是滲漏的警訊（漏出率 5-10%）；(2) 廣效抗生素覆蓋腸道菌群（需氧 + 厭氧）；(3) 疼痛管理對貓至關重要——buprenorphine 是貓腹部手術首選鎮痛劑。整體預後：無穿孔 > 90% 存活，有穿孔合併腹膜炎約 70-80%。',
+        feedback_correct: '正確！線狀異物合併穿孔與腹膜炎的術後管理關鍵：(1) 控制飲食，術後 12-24 小時禁食讓腸吻合處初步癒合（漿膜面 fibrin seal 需 3-4 小時，足夠張力需 10-14 天），術後持續嘔吐是滲漏的警訊（漏出率 5-10%）；(2) 廣效抗生素覆蓋腸道菌群（需氧 + 厭氧）；(3) 疼痛管理對貓不能省，buprenorphine 是貓腹部手術首選鎮痛劑。整體預後：無穿孔 > 90% 存活，有穿孔合併腹膜炎約 70-80%。',
         feedback_incorrect: '線狀異物合併穿孔的術後管理：控制飲食（禁食後漸進恢復）、廣效抗生素（已有腹膜炎）、疼痛管理。整體預後良好（有穿孔 70-80% 存活），不是極差。',
         key_learning_points: [
           '腸吻合術後漿膜面 fibrin seal 需 3-4 小時，足夠張力需 10-14 天',
@@ -2574,17 +2574,17 @@ export const SURG_CASES: CaseChallenge[] = [
     expert_pathway: {
       reasoning: '2 歲母貓急性嘔吐 + 接觸線軸 → 口腔舌下發現線狀異物錨定 → 腹部觸診腸段聚集 → X 光/超音波確認線狀異物 + 腸管 plication → 術前穩定化（輸液、電解質矯正）→ 舌下剪線 + 3 處 enterotomy 分段取出 + 壞死段 R&A → 術後抗生素 + 疼痛管理 + 漸進飲食恢復。',
       key_decisions: [
-        '口腔檢查舌下——發現錨定點為確診關鍵',
-        '絕不從單一切口拉線——必須多處 enterotomy',
-        '術中每段腸壁活性評估——壞死段切除吻合',
+        '口腔檢查舌下，發現錨定點為確診關鍵',
+        '絕不從單一切口拉線，必須多處 enterotomy',
+        '術中每段腸壁活性評估，壞死段切除吻合',
         '穿孔合併腹膜炎需廣效抗生素',
         '術後嘔吐需警覺吻合處滲漏',
       ],
       common_pitfalls: [
         '未檢查口腔舌下而漏診線狀異物',
-        '從單一切口拉出整條線——導致腸壁多處穿孔（致命錯誤）',
+        '從單一切口拉出整條線，導致腸壁多處穿孔（致命錯誤）',
         '鋇劑造影延遲手術且增加穿孔風險',
-        '忽略腸系膜側穿孔——漏診需切除的壞死腸段',
+        '忽略腸系膜側穿孔，漏診需切除的壞死腸段',
         '術後未適當禁食導致吻合處滲漏',
       ],
     },

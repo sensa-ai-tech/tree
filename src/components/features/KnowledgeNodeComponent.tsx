@@ -1,14 +1,16 @@
 'use client';
 
 import { memo } from 'react';
-import { Handle, Position, type NodeProps } from 'reactflow';
+import { Handle, Position, type Node, type NodeProps } from '@xyflow/react';
 
-export interface KnowledgeNodeData {
+export interface KnowledgeNodeData extends Record<string, unknown> {
   label: string;
   color: string;
   isHighlighted: boolean;
   layer: number;
 }
+
+export type KnowledgeFlowNode = Node<KnowledgeNodeData, 'knowledge'>;
 
 const LAYER_SHORT: Record<number, string> = {
   0: 'L0',
@@ -28,7 +30,7 @@ const LAYER_SHORT: Record<number, string> = {
  * - Layer badge 小標籤
  * - isHighlighted 視覺回饋
  */
-function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeNodeData>) {
+function KnowledgeNodeComponentInner({ data }: NodeProps<KnowledgeFlowNode>) {
   const { label, color, isHighlighted, layer } = data;
 
   return (

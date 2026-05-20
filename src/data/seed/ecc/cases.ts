@@ -59,7 +59,7 @@ export const ECC_CASES: CaseChallenge[] = [
           'E：體溫 36.2 C（低體溫），腹部極度緊繃疼痛',
           '觸診膀胱極度脹大且堅硬',
         ],
-        feedback_correct: '正確！心搏過緩（貓正常 > 180 bpm）合併心律不整在尿道阻塞的貓高度提示致命性高血鉀。低體溫（36.2 C）反映末梢灌流不足與代謝功能下降。膀胱極度脹大確認完全阻塞。這是紅色（即刻）分診——需立即處理高血鉀。',
+        feedback_correct: '正確！心搏過緩（貓正常 > 180 bpm）合併心律不整在尿道阻塞的貓高度提示致命性高血鉀。低體溫（36.2 C）反映末梢灌流不足與代謝功能下降。膀胱極度脹大確認完全阻塞。這是紅色（即刻）分診，需立即處理高血鉀。',
         feedback_incorrect: '在尿道阻塞的貓，最關鍵的發現是心搏過緩與心律不整（提示高血鉀）、低體溫（提示嚴重代謝障礙）以及膀胱脹大（確認阻塞）。心律不整是最具致命性的問題，必須立即處理。',
         key_learning_points: [
           '貓心率 < 180 bpm 為心搏過緩，在尿道阻塞背景下高度提示高血鉀',
@@ -99,13 +99,13 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '檢查結果判讀',
         prompt: '緊急檢查結果如下：\n- ECG：心搏過緩 140 bpm，無 P 波，QRS 波增寬\n- 血氣：pH 7.18，K+ 8.2 mEq/L，Na+ 148 mEq/L，iCa 1.05 mmol/L\n- PCV 38%，TP 7.2 g/dL，血糖 95 mg/dL\n- BUN（stick）> 130 mg/dL\n\n最需要立即處理的問題是什麼？',
         available_actions: [
-          '致命性高血鉀（K+ 8.2 mEq/L）合併嚴重 ECG 變化——立即給予 10% calcium gluconate',
-          '代謝性酸中毒（pH 7.18）——立即給予 sodium bicarbonate',
-          '氮血症（BUN > 130）——立即導尿減壓',
-          '低體溫——立即保溫',
+          '致命性高血鉀（K+ 8.2 mEq/L）合併嚴重 ECG 變化，立即給予 10% calcium gluconate',
+          '代謝性酸中毒（pH 7.18），立即給予 sodium bicarbonate',
+          '氮血症（BUN > 130），立即導尿減壓',
+          '低體溫，立即保溫',
         ],
         correct_actions: [
-          '致命性高血鉀（K+ 8.2 mEq/L）合併嚴重 ECG 變化——立即給予 10% calcium gluconate',
+          '致命性高血鉀（K+ 8.2 mEq/L）合併嚴重 ECG 變化，立即給予 10% calcium gluconate',
         ],
         feedback_correct: '正確！K+ 8.2 mEq/L 合併 ECG 顯示無 P 波和 QRS 增寬，為致命性高血鉀。Calcium gluconate（10%，0.5-1.5 mL/kg IV slow over 5-10 min）可在數分鐘內穩定心肌細胞膜電位，是最優先處置。它不降低血鉀，而是保護心肌。降鉀需後續靠輸液與導尿。',
         feedback_incorrect: '雖然酸中毒、氮血症和低體溫都需要處理，但高血鉀導致的心律不整可在數分鐘內致死。Calcium gluconate 是唯一能在數分鐘內保護心肌免於高血鉀毒性的藥物。導尿前必須先穩定心律。',
@@ -130,7 +130,7 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           '0.9% NaCl 靜脈輸液（避免含鉀液體）+ 鎮靜後導尿 + 持續 ECG 監測',
         ],
-        feedback_correct: '正確！使用 0.9% NaCl 而非 LRS（含 K+ 4 mEq/L）避免進一步增加鉀負荷。導尿需適當鎮靜（如 butorphanol 0.2 mg/kg IV + midazolam 0.2 mg/kg IV），減少動物壓力並放鬆尿道。持續 ECG 監測追蹤心律變化。',
+        feedback_correct: '正確！使用 0.9% NaCl 而非 LRS（含 K+ 4 mEq/L）避免後續增加鉀負荷。導尿需適當鎮靜（如 butorphanol 0.2 mg/kg IV + midazolam 0.2 mg/kg IV），減少動物壓力並放鬆尿道。持續 ECG 監測追蹤心律變化。',
         feedback_incorrect: 'LRS 含鉀 4 mEq/L，在高血鉀病患應避免使用。導尿不鎮靜會造成動物極大痛苦且增加尿道損傷風險。等血鉀完全正常再導尿延誤治療。0.9% NaCl 為高血鉀病患的首選輸液。',
         key_learning_points: [
           '高血鉀病患避免含鉀輸液（LRS、Plasma-Lyte），改用 0.9% NaCl',
@@ -186,7 +186,7 @@ export const ECC_CASES: CaseChallenge[] = [
         feedback_correct: '正確！泌尿道處方濕糧增加水分攝取並優化尿液 pH 與礦物質組成，是預防復發的基石。環境豐富化與壓力管理（多水碗、多砂盆、Feliway）針對 FLUTD 的壓力因子。飼主衛教辨識早期徵兆可避免再次嚴重阻塞。',
         feedback_incorrect: '預防性抗生素無實證支持且可能促進抗藥性。每週超音波追蹤過度且非必要。限制活動量無實證支持。預防復發的核心在於：增加飲水（濕糧）、減壓（環境管理）、飼主衛教（早期辨識）。',
         key_learning_points: [
-          '貓尿道阻塞復發率高達 30-40%，預防措施至關重要',
+          '貓尿道阻塞復發率高達 30-40%，預防措施不能省',
           '增加飲水量（濕糧、噴泉飲水器）是降低復發率最有效的策略',
           '環境壓力是 FLUTD 的重要促發因子',
           '飼主衛教：任何排尿異常都需立即就醫，不要「再觀察看看」',
@@ -715,7 +715,7 @@ export const ECC_CASES: CaseChallenge[] = [
           'DKA 三支柱：輸液+insulin+電解質',
           'RI CRI 0.05-0.1 U/kg/hr',
           '血糖降速目標 50-75 mg/dL/hr',
-          '總體鉇低—insulin 後快速下降',
+          '總體鉇低，insulin 後快速下降',
         ],
       },
       {
@@ -1269,7 +1269,7 @@ export const ECC_CASES: CaseChallenge[] = [
         prompt: '血糖 92、電解質正常、生化正常、CBC 正常。判斷？',
         available_actions: [
           '排除代謝性原因，應考慮顏內或特異性癲癇',
-          '確診特異性癲癇不需進一步檢查',
+          '確診特異性癲癇不需後續檢查',
           '必須做腦 MRI',
           '重複檢查',
         ],
@@ -1469,7 +1469,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '術中監測要點：持續 ECG 監測心律不整（脾臟腫瘤犬高達 40% 有心室性心律不整，尤其 VPCs 和 VT）、維持 MAP > 60、監測 ETCO₂ 和 SpO₂；備好 Lidocaine 2 mg/kg IV bolus 處理 VT',
           '脾臟切除技術：完整脾臟切除（total splenectomy），避免觸壓腫瘤以減少醫源性破裂和播種；結紮脾門血管時注意保護胃短動脈，術後送病理確認腫瘤類型',
         ],
-        feedback_correct: '正確！脾臟腫瘤手術的兩大重點：(1) 心律不整監測——脾臟腫瘤（尤其 HSA）犬有 40% 發生心室性心律不整，VT 可致命。Lidocaine 2 mg/kg IV bolus 後接 CRI（50-80 μg/kg/min）是犬 VT 的第一線治療。需持續 ECG 監測至術後 72 小時。(2) 手術技術——完整脾臟切除是標準術式，部分切除不推薦（腫瘤邊界不明確且可能為多灶性）。輕柔操作避免腫瘤擠壓播種。結紮脾門血管時需辨識並保護胃短動脈以避免胃壁缺血壞死。完整腫瘤送病理是確診的唯一方式。',
+        feedback_correct: '正確！脾臟腫瘤手術的兩大重點：(1) 心律不整監測，脾臟腫瘤（尤其 HSA）犬有 40% 發生心室性心律不整，VT 可致命。Lidocaine 2 mg/kg IV bolus 後接 CRI（50-80 μg/kg/min）是犬 VT 的第一線治療。需持續 ECG 監測至術後 72 小時。(2) 手術技術，完整脾臟切除是標準術式，部分切除不推薦（腫瘤邊界不明確且可能為多灶性）。輕柔操作避免腫瘤擠壓播種。結紮脾門血管時需辨識並保護胃短動脈以避免胃壁缺血壞死。完整腫瘤送病理是確診的唯一方式。',
         feedback_incorrect: '脾臟腫瘤手術必須做完整脾臟切除而非部分切除。心室性心律不整（VPCs/VT）是高頻併發症，ECG 監測和 Lidocaine 準備為必要。避免觸壓腫瘤以減少播種。',
         key_learning_points: [
           '脾臟腫瘤犬 40% 有心室性心律不整（VPCs/VT），需持續 ECG 監測',
@@ -1496,8 +1496,8 @@ export const ECC_CASES: CaseChallenge[] = [
           '誠實告知：HSA 為高度惡性腫瘤，僅手術的中位存活期約 1-3 個月（多數死於轉移）；加上 Doxorubicin-based 化療可延長至 5-7 個月；預後因子包括是否已有肉眼可見的肝/心臟轉移',
           '建議術後全身腫瘤分期（Staging）：心臟超音波（排除右心房腫瘤）、胸腔 X 光三張（肺轉移）、腹部超音波（肝臟等轉移）。分期結果影響化療決策和預後評估',
         ],
-        feedback_correct: '正確！犬脾臟 HSA 是預後極差的腫瘤——約 90% 在診斷時已有微轉移。關鍵溝通：(1) 預後——僅手術 MST 1-3 個月，加 Doxorubicin 化療（30 mg/m² IV q3wk × 5-6 cycles）MST 5-7 個月。(2) 分期——心臟超音波排除右心房轉移（RA mass 存在時預後更差），胸部 X 光和腹超評估遠端轉移。(3) Stage I（限於脾臟未破裂）預後最佳，Stage II（破裂 ± 局部轉移）和 Stage III（遠端轉移）預後漸差。(4) 飼主決策支持——化療副作用在犬通常可耐受（嚴重副作用 < 10%），但需權衡費用、預期延長的存活時間和生活品質。(5) 值得注意：約 1/3 脾臟腫瘤為良性（血腫/結節性增生），病理結果決定一切。',
-        feedback_incorrect: 'HSA 為高度惡性腫瘤，僅手術無法治癒。化療可延長存活期但不治癒。術後分期對治療決策至關重要。誠實的預後溝通是獸醫的責任。',
+        feedback_correct: '正確！犬脾臟 HSA 是預後極差的腫瘤，約 90% 在診斷時已有微轉移。關鍵溝通：(1) 預後，僅手術 MST 1-3 個月，加 Doxorubicin 化療（30 mg/m² IV q3wk × 5-6 cycles）MST 5-7 個月。(2) 分期，心臟超音波排除右心房轉移（RA mass 存在時預後更差），胸部 X 光和腹超評估遠端轉移。(3) Stage I（限於脾臟未破裂）預後最佳，Stage II（破裂 ± 局部轉移）和 Stage III（遠端轉移）預後漸差。(4) 飼主決策支持，化療副作用在犬通常可耐受（嚴重副作用 < 10%），但需權衡費用、預期延長的存活時間和生活品質。(5) 值得注意：約 1/3 脾臟腫瘤為良性（血腫/結節性增生），病理結果決定一切。',
+        feedback_incorrect: 'HSA 為高度惡性腫瘤，僅手術無法治癒。化療可延長存活期但不治癒。術後分期對治療決策不能省。誠實的預後溝通是獸醫的責任。',
         key_learning_points: [
           '犬脾臟 HSA 僅手術 MST 1-3 個月，加化療 MST 5-7 個月',
           '約 90% HSA 在診斷時已有微轉移',
@@ -1550,7 +1550,7 @@ export const ECC_CASES: CaseChallenge[] = [
       {
         step_number: 1,
         step_type: 'physical_examination',
-        title: '初級評估（Primary Survey — ABCDE）',
+        title: '初級評估（Primary Survey，ABCDE）',
         prompt: '犬抵達急診，你執行 ABCDE 系統性初級評估。請選出最需要立即處理的 3 項發現。',
         available_actions: [
           'A：氣道通暢，口腔有少量血液但無阻塞',
@@ -1565,7 +1565,7 @@ export const ECC_CASES: CaseChallenge[] = [
           'C：心率 190 bpm，黏膜蒼白，CRT 3 秒，MAP 58 mmHg，右大腿開放傷口持續出血',
           'E：體溫 37.8°C，右後肢股骨明顯變形合併開放性傷口（骨頭外露）',
         ],
-        feedback_correct: '正確！依 ABCDE 優先順序：(1) B：右側肺音消失高度提示氣胸或血胸，這是最優先處理的呼吸威脅；(2) C：低血壓 + 心搏過速 + 蒼白 = 低血容性休克，開放傷口需直接加壓止血；(3) E：開放性骨折為嚴重損傷，需暫時固定與傷口覆蓋防止進一步汙染。這三項構成即刻生命威脅，需按 ABC 順序依序處置。',
+        feedback_correct: '正確！依 ABCDE 優先順序：(1) B：右側肺音消失高度提示氣胸或血胸，這是最優先處理的呼吸威脅；(2) C：低血壓 + 心搏過速 + 蒼白 = 低血容性休克，開放傷口需直接加壓止血；(3) E：開放性骨折為嚴重損傷，需暫時固定與傷口覆蓋防止後續汙染。這三項構成即刻生命威脅，需按 ABC 順序依序處置。',
         feedback_incorrect: '初級評估的核心是辨識「即刻致命威脅」並依 ABCDE 優先處理。右側肺音消失（B）比意識評估（D）更緊急。開放性出血（C）需立即控制。開放性骨折（E）雖非直接致命但為嚴重損傷需緊急處理。',
         key_learning_points: [
           '創傷 ABCDE 按順序處理：氣道→呼吸→循環→神經→全身',
@@ -1633,7 +1633,7 @@ export const ECC_CASES: CaseChallenge[] = [
         prompt: '穩定後 X 光：右側第 6-8 肋骨骨折（非連枷胸），右肺葉有肺泡型浸潤（肺挫傷），少量殘餘氣胸。股骨已暫時固定。神經學評估：後肢無力為疼痛性不動，深痛覺和脊髓反射均正常。住院 ICU 12 小時後犬呼吸速率從 28 升至 44 次/分，SpO₂ 從 96% 降至 90%。最適當的處置？選擇 2 項。',
         available_actions: [
           '肺挫傷惡化（典型在創傷後 24-48 小時達高峰）：給予氧氣支持（nasal cannula O₂ 2-4 L/min 或 oxygen cage），限制 IV 輸液量（避免 fluid overload 加重肺水腫），維持 SpO₂ > 94%',
-          '疼痛控制對呼吸改善至關重要：Methadone 0.2 mg/kg IV q4h 或 CRI（肋骨骨折疼痛限制呼吸深度 → 低換氣 → 肺萎陷）；考慮局部神經阻斷（intercostal nerve block）減輕胸壁疼痛',
+          '疼痛控制對呼吸改善不能省：Methadone 0.2 mg/kg IV q4h 或 CRI（肋骨骨折疼痛限制呼吸深度 → 低換氣 → 肺萎陷）；考慮局部神經阻斷（intercostal nerve block）減輕胸壁疼痛',
           '大量輸液沖洗肺部',
           '立即開胸手術修復肋骨',
           '給予高劑量類固醇治療肺挫傷',
@@ -1641,10 +1641,10 @@ export const ECC_CASES: CaseChallenge[] = [
         ],
         correct_actions: [
           '肺挫傷惡化（典型在創傷後 24-48 小時達高峰）：給予氧氣支持（nasal cannula O₂ 2-4 L/min 或 oxygen cage），限制 IV 輸液量（避免 fluid overload 加重肺水腫），維持 SpO₂ > 94%',
-          '疼痛控制對呼吸改善至關重要：Methadone 0.2 mg/kg IV q4h 或 CRI（肋骨骨折疼痛限制呼吸深度 → 低換氣 → 肺萎陷）；考慮局部神經阻斷（intercostal nerve block）減輕胸壁疼痛',
+          '疼痛控制對呼吸改善不能省：Methadone 0.2 mg/kg IV q4h 或 CRI（肋骨骨折疼痛限制呼吸深度 → 低換氣 → 肺萎陷）；考慮局部神經阻斷（intercostal nerve block）減輕胸壁疼痛',
         ],
-        feedback_correct: '正確！肺挫傷是創傷後最常見的胸腔併發症，典型在 24-48 小時達高峰後逐漸改善。管理核心：(1) 氧氣支持維持 SpO₂ > 94%——若 nasal cannula 不足需考慮 oxygen cage 或嚴重時機械通氣。(2) 限制 IV 輸液——過多液體加重肺泡滲出，使用「乾燥」策略（dry side of euvolemia）。(3) 疼痛控制——肋骨骨折疼痛導致淺快呼吸和低換氣，充分止痛可改善呼吸力學。Intercostal nerve block（Bupivacaine 0.5% 0.5-1 mL/site）提供區域性止痛效果極佳。(4) 類固醇在肺挫傷中無證據支持且可能增加感染風險。(5) 肋骨骨折除非連枷胸通常保守治療即可。',
-        feedback_incorrect: '肺挫傷治療核心：氧氣支持 + 限制輸液 + 止痛。大量輸液加重肺水腫。類固醇無效。肋骨骨折通常保守治療。充分止痛改善呼吸力學至關重要。',
+        feedback_correct: '正確！肺挫傷是創傷後最常見的胸腔併發症，典型在 24-48 小時達高峰後逐漸改善。管理核心：(1) 氧氣支持維持 SpO₂ > 94%，若 nasal cannula 不足需考慮 oxygen cage 或嚴重時機械通氣。(2) 限制 IV 輸液，過多液體加重肺泡滲出，使用「乾燥」策略（dry side of euvolemia）。(3) 疼痛控制，肋骨骨折疼痛導致淺快呼吸和低換氣，充分止痛可改善呼吸力學。Intercostal nerve block（Bupivacaine 0.5% 0.5-1 mL/site）提供區域性止痛效果極佳。(4) 類固醇在肺挫傷中無證據支持且可能增加感染風險。(5) 肋骨骨折除非連枷胸通常保守治療即可。',
+        feedback_incorrect: '肺挫傷治療核心：氧氣支持 + 限制輸液 + 止痛。大量輸液加重肺水腫。類固醇無效。肋骨骨折通常保守治療。充分止痛改善呼吸力學不能省。',
         key_learning_points: [
           '肺挫傷典型在創傷後 24-48 小時達高峰',
           '管理三核心：氧氣支持 + 限制輸液（dry strategy）+ 止痛',
@@ -1670,8 +1670,8 @@ export const ECC_CASES: CaseChallenge[] = [
           '股骨開放性骨折確定性手術時機：穩定後 24-72 小時內進行（此犬已第 3 天符合條件）；建議骨板固定（plate osteosynthesis）或 interlocking nail，同時做最終清創和傷口關閉/引流',
           '出院前確認清單：呼吸穩定（room air SpO₂ > 96%）、疼痛控制良好（multimodal analgesia 口服過渡）、傷口無感染徵兆、飼主衛教居家照護（限制活動 6-8 週、傷口護理、複診時程）。術後 2 週拆線、6-8 週 X 光追蹤骨癒合',
         ],
-        feedback_correct: '正確！多發性創傷的 Damage control 概念延續到確定性手術時機：(1) 穩定後 24-72 小時內進行骨折確定性固定——過早（血流動力學不穩定）增加麻醉風險，過晚（> 5-7 天）增加感染和骨不癒合風險。(2) 股骨骨折幾乎都需要手術固定——骨板固定（locking plate）或 interlocking nail 為常用方法。開放性骨折需最終清創確認傷口無壞死組織。(3) 出院清單確保所有系統穩定後才出院。(4) 術後追蹤：2 週拆線評估傷口、6-8 週 X 光評估骨癒合進展。(5) 限制活動（籠休 crate rest）6-8 週對骨癒合至關重要。年輕犬（3 歲）骨癒合通常順利。',
-        feedback_incorrect: '股骨開放性骨折需手術固定，保守治療效果差。手術時機為穩定後 24-72 小時。出院需確認呼吸、疼痛、傷口均穩定。術後限制活動 6-8 週對骨癒合至關重要。',
+        feedback_correct: '正確！多發性創傷的 Damage control 概念延續到確定性手術時機：(1) 穩定後 24-72 小時內進行骨折確定性固定，過早（血流動力學不穩定）增加麻醉風險，過晚（> 5-7 天）增加感染和骨不癒合風險。(2) 股骨骨折幾乎都需要手術固定，骨板固定（locking plate）或 interlocking nail 為常用方法。開放性骨折需最終清創確認傷口無壞死組織。(3) 出院清單確保所有系統穩定後才出院。(4) 術後追蹤：2 週拆線評估傷口、6-8 週 X 光評估骨癒合進展。(5) 限制活動（籠休 crate rest）6-8 週對骨癒合不能省。年輕犬（3 歲）骨癒合通常順利。',
+        feedback_incorrect: '股骨開放性骨折需手術固定，保守治療效果差。手術時機為穩定後 24-72 小時。出院需確認呼吸、疼痛、傷口均穩定。術後限制活動 6-8 週對骨癒合不能省。',
         key_learning_points: [
           '骨折確定性手術最佳時機：穩定後 24-72 小時',
           '股骨骨折幾乎都需手術固定（骨板或 interlocking nail）',
@@ -1741,7 +1741,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '每 30 次按壓給予 2 次通氣（氣管內管已拔除，先重新插管再通氣）',
           '指派角色：一人按壓、一人通氣、一人準備藥物/監測，宣布開始 CPR 計時',
         ],
-        feedback_correct: '正確！RECOVER 指引強調「按壓優先」——CPA 確認後 10 秒內開始胸外按壓。速率 100-120 次/分，確保胸壁完全回彈（full recoil）。按壓:通氣比 = 30:2（無氣管內管時）或連續按壓（有氣管內管時每 6 秒一次通氣）。團隊角色分配確保 CPR 流暢。每 2 分鐘換手按壓者以維持按壓品質。',
+        feedback_correct: '正確！RECOVER 指引強調「按壓優先」，CPA 確認後 10 秒內開始胸外按壓。速率 100-120 次/分，確保胸壁完全回彈（full recoil）。按壓:通氣比 = 30:2（無氣管內管時）或連續按壓（有氣管內管時每 6 秒一次通氣）。團隊角色分配確保 CPR 流暢。每 2 分鐘換手按壓者以維持按壓品質。',
         feedback_incorrect: '辨識 CPA 後最優先的行動是「立即按壓」。任何延遲（做 ECG、建立中心導管、等藥物）都會降低存活率。RECOVER 指引：確認 CPA → 10 秒內開始 BLS → 邊做 BLS 邊準備 ALS。',
         key_learning_points: [
           'RECOVER 核心：CPA 確認後 10 秒內開始胸外按壓',
@@ -1753,7 +1753,7 @@ export const ECC_CASES: CaseChallenge[] = [
       {
         step_number: 2,
         step_type: 'treatment_plan',
-        title: '進階生命支持（ALS）——藥物治療',
+        title: '進階生命支持（ALS），藥物治療',
         prompt: 'BLS 進行中。氣管內管已重新置入。ECG 確認為 PEA。你的 ALS 藥物治療？選擇最適當的組合。',
         available_actions: [
           'Epinephrine（低劑量）0.01 mg/kg IV 每 3-5 分鐘一次 + 同時尋找可逆原因（5H5T）',
@@ -1792,7 +1792,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '立即電擊除顫（defibrillation）：4-6 J/kg 單相波或 2-4 J/kg 雙相波',
           '電擊後立即恢復按壓 2 分鐘（不等待確認節律），然後再檢查',
         ],
-        feedback_correct: '正確！VFib 是「可電擊節律（shockable rhythm）」——唯一有效的治療是 defibrillation。RECOVER 建議除顫能量：單相波 4-6 J/kg、雙相波 2-4 J/kg。電擊後不要暫停確認節律——立即恢復按壓 2 分鐘，因為電擊後心肌可能暫時呈現 asystole 或 PEA，需要按壓維持灌流。2 分鐘後再次暫停檢查節律。若 VFib 持續，可增加 50% 能量再次電擊。',
+        feedback_correct: '正確！VFib 是「可電擊節律（shockable rhythm）」，唯一有效的治療是 defibrillation。RECOVER 建議除顫能量：單相波 4-6 J/kg、雙相波 2-4 J/kg。電擊後不要暫停確認節律，立即恢復按壓 2 分鐘，因為電擊後心肌可能暫時呈現 asystole 或 PEA，需要按壓維持灌流。2 分鐘後再次暫停檢查節律。若 VFib 持續，可增加 50% 能量再次電擊。',
         feedback_incorrect: 'VFib = 立即電擊。拖延電擊降低存活率。電擊後立即恢復按壓（不暫停檢查），因為電擊後心臟需要時間恢復有效節律。先給藥再電擊會延遲治療。',
         key_learning_points: [
           'VFib 和 pulseless VT 為「可電擊節律」',
@@ -1807,15 +1807,15 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '自主循環恢復（ROSC）辨識',
         prompt: '電擊後恢復按壓 2 分鐘。按壓期間 ETCO₂（end-tidal CO₂）從 12 mmHg 突然升高至 38 mmHg。暫停按壓檢查：ECG 顯示竇性心搏過速 HR 160 bpm，可觸及股動脈脈搏。這代表什麼？',
         available_actions: [
-          '自主循環恢復（ROSC）——ETCO₂ 突然升高是 ROSC 最早且最可靠的指標。停止按壓，進入 post-arrest care。',
+          '自主循環恢復（ROSC），ETCO₂ 突然升高是 ROSC 最早且最可靠的指標。停止按壓，進入 post-arrest care。',
           '假象，繼續按壓',
           'PEA 復發，持續 CPR',
           'ETCO₂ 升高無意義，需看血壓',
         ],
         correct_actions: [
-          '自主循環恢復（ROSC）——ETCO₂ 突然升高是 ROSC 最早且最可靠的指標。停止按壓，進入 post-arrest care。',
+          '自主循環恢復（ROSC），ETCO₂ 突然升高是 ROSC 最早且最可靠的指標。停止按壓，進入 post-arrest care。',
         ],
-        feedback_correct: '正確！ETCO₂ 在 CPR 期間突然升高（通常從 < 15 升至 > 30-40 mmHg）是 ROSC 最早且最可靠的指標——代表心臟恢復泵血功能，肺部灌流增加，CO₂ 排出量驟增。結合 ECG 顯示有組織節律和可觸及脈搏，確認 ROSC。此時停止按壓，進入 post-cardiac arrest care 階段。',
+        feedback_correct: '正確！ETCO₂ 在 CPR 期間突然升高（通常從 < 15 升至 > 30-40 mmHg）是 ROSC 最早且最可靠的指標，代表心臟恢復泵血功能，肺部灌流增加，CO₂ 排出量驟增。結合 ECG 顯示有組織節律和可觸及脈搏，確認 ROSC。此時停止按壓，進入 post-cardiac arrest care 階段。',
         feedback_incorrect: 'ETCO₂ 是 CPR 期間監測的最佳工具：(1) 低 ETCO₂（< 10-15）提示按壓品質不佳或預後差；(2) 突然升高 > 30-40 提示 ROSC。結合脈搏可觸及和有組織 ECG 節律，即可確認 ROSC。',
         key_learning_points: [
           'ETCO₂ 突然升高是 ROSC 最早且最可靠的指標',
@@ -1842,7 +1842,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '呼吸管理：維持 SpO₂ 94-100%，避免過度通氣（ETCO₂ 35-45 mmHg），FiO₂ 逐步調降至可維持 SpO₂ > 94% 的最低濃度',
           '神經保護：避免高體溫（目標 32-34°C 若有設備；至少維持正常體溫避免發燒）+ 持續 ECG 監測 + 密切神經狀態評估',
         ],
-        feedback_correct: '正確！Post-arrest care 三大支柱：(1) 血流動力學——ROSC 後常見低血壓（心肌頓抑 myocardial stunning），需積極維持 MAP > 80 確保腦灌流。(2) 呼吸——避免 hyperoxia（FiO₂ 100% 長時間使用增加氧化壓力）和過度通氣（低 PaCO₂ 造成腦血管收縮）。(3) 神經保護——溫度管理最重要（避免發燒；mild therapeutic hypothermia 32-34°C 可減少缺血再灌注損傷）。類固醇在 post-arrest care 中無益且可能有害。',
+        feedback_correct: '正確！Post-arrest care 三大支柱：(1) 血流動力學，ROSC 後常見低血壓（心肌頓抑 myocardial stunning），需積極維持 MAP > 80 確保腦灌流。(2) 呼吸，避免 hyperoxia（FiO₂ 100% 長時間使用增加氧化壓力）和過度通氣（低 PaCO₂ 造成腦血管收縮）。(3) 神經保護，溫度管理最重要（避免發燒；mild therapeutic hypothermia 32-34°C 可減少缺血再灌注損傷）。類固醇在 post-arrest care 中無益且可能有害。',
         feedback_incorrect: 'Post-arrest care 三大支柱：血流動力學支持、呼吸管理、神經保護。避免過度輸液（非最大化 CVP）。避免高濃度氧氣長時間使用。類固醇無證據支持。ROSC 後 24-72 小時是最關鍵的監護期。',
         key_learning_points: [
           'Post-arrest care 三支柱：血流動力學 + 呼吸管理 + 神經保護',
@@ -1912,8 +1912,8 @@ export const ECC_CASES: CaseChallenge[] = [
           '呼吸深且快（Kussmaul 呼吸），呼氣帶有丙酮味',
           '腹部觸診輕度緊繃疼痛，可能有輕度肝臟腫大',
         ],
-        feedback_correct: '正確！嚴重脫水是 DKA 最突出的體徵——因高血糖滲透性利尿 + 嘔吐導致大量液體流失。Kussmaul 呼吸（深大呼吸）為代謝性酸中毒的呼吸代償——試圖排出 CO₂ 來提高 pH。丙酮味來自酮體揮發。腹部疼痛可能因急性胰臟炎（DKA 常見共病）或肝臟脂肪沉積。',
-        feedback_incorrect: 'DKA 理學檢查三大異常：(1) 嚴重脫水——滲透性利尿 + 嘔吐導致；(2) Kussmaul 呼吸 + 丙酮味——代謝性酸中毒 + 酮體揮發；(3) 腹痛——常合併胰臟炎。低體溫反映嚴重代謝障礙。',
+        feedback_correct: '正確！嚴重脫水是 DKA 最突出的體徵，因高血糖滲透性利尿 + 嘔吐導致大量液體流失。Kussmaul 呼吸（深大呼吸）為代謝性酸中毒的呼吸代償，試圖排出 CO₂ 來提高 pH。丙酮味來自酮體揮發。腹部疼痛可能因急性胰臟炎（DKA 常見共病）或肝臟脂肪沉積。',
+        feedback_incorrect: 'DKA 理學檢查三大異常：(1) 嚴重脫水，滲透性利尿 + 嘔吐導致；(2) Kussmaul 呼吸 + 丙酮味，代謝性酸中毒 + 酮體揮發；(3) 腹痛，常合併胰臟炎。低體溫反映嚴重代謝障礙。',
         key_learning_points: [
           'DKA 脫水機制：高血糖滲透性利尿 + 嘔吐 + 進食減少',
           'Kussmaul 呼吸是代謝性酸中毒的呼吸代償反應',
@@ -1954,19 +1954,19 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '檢查結果判讀',
         prompt: '檢查結果如下：\n• 血糖：450 mg/dL\n• 尿液試紙：葡萄糖 4+，酮體 3+\n• 血氣：pH 7.12，HCO₃⁻ 8 mEq/L，K+ 3.2 mEq/L（偏低），Na+ 142，iCa 1.0 mmol/L，Phosphorus 5.8 mg/dL（正常）\n• 生化：BUN 45，Cre 2.8（腎前性 + 可能輕度 CKD），ALT 180（升高），fPLI 陽性\n• CBC：Hct 48%（脫水濃縮），WBC 18,000（輕度升高）\n\n如何判讀？',
         available_actions: [
-          '確認 DKA 合併嚴重代謝性酸中毒（pH 7.12）、低血鉀（3.2——治療後會更低！）、腎前性氮血症、急性胰臟炎。需立即開始治療。',
+          '確認 DKA 合併嚴重代謝性酸中毒（pH 7.12）、低血鉀（3.2，治療後會更低！）、腎前性氮血症、急性胰臟炎。需立即開始治療。',
           '血糖不夠高（< 500），可能不是 DKA',
           '先處理腎衰竭再處理血糖',
           '等酸中毒自行改善',
         ],
         correct_actions: [
-          '確認 DKA 合併嚴重代謝性酸中毒（pH 7.12）、低血鉀（3.2——治療後會更低！）、腎前性氮血症、急性胰臟炎。需立即開始治療。',
+          '確認 DKA 合併嚴重代謝性酸中毒（pH 7.12）、低血鉀（3.2，治療後會更低！）、腎前性氮血症、急性胰臟炎。需立即開始治療。',
         ],
-        feedback_correct: '正確！pH 7.12 為嚴重酸中毒（正常 7.35-7.45）。關鍵發現：K+ 3.2 看似僅「輕度低」，但 DKA 的 K+ 會因酸中毒被「推出」細胞外而偽性正常——實際全身鉀量嚴重缺乏。開始輸液 + insulin 後，K+ 會急劇下降（insulin 將 K+ 推入細胞），可能導致致命性低血鉀。氮血症主因脫水（腎前性），輸液後應改善。fPLI 陽性確認胰臟炎共病。',
-        feedback_incorrect: '血糖 > 250 mg/dL + 酮體 + 酸中毒即為 DKA（不需要 > 500）。K+ 3.2 在 DKA 中代表全身鉀量嚴重缺乏——酸中毒把 K+ 推出細胞偽性正常化。治療開始後 K+ 會急劇下降。氮血症優先靠輸液矯正。',
+        feedback_correct: '正確！pH 7.12 為嚴重酸中毒（正常 7.35-7.45）。關鍵發現：K+ 3.2 看似僅「輕度低」，但 DKA 的 K+ 會因酸中毒被「推出」細胞外而偽性正常，實際全身鉀量嚴重缺乏。開始輸液 + insulin 後，K+ 會急劇下降（insulin 將 K+ 推入細胞），可能導致致命性低血鉀。氮血症主因脫水（腎前性），輸液後應改善。fPLI 陽性確認胰臟炎共病。',
+        feedback_incorrect: '血糖 > 250 mg/dL + 酮體 + 酸中毒即為 DKA（不需要 > 500）。K+ 3.2 在 DKA 中代表全身鉀量嚴重缺乏，酸中毒把 K+ 推出細胞偽性正常化。治療開始後 K+ 會急劇下降。氮血症優先靠輸液矯正。',
         key_learning_points: [
           'DKA 的 K+ 偽性正常化：酸中毒將 K+ 推出細胞外',
-          'Insulin 治療後 K+ 急劇下降——必須先補鉀再給 insulin',
+          'Insulin 治療後 K+ 急劇下降，必須先補鉀再給 insulin',
           '嚴重酸中毒（pH < 7.1）需考慮 bicarbonate 補充',
           'DKA 貓約 30-40% 合併胰臟炎',
         ],
@@ -1974,7 +1974,7 @@ export const ECC_CASES: CaseChallenge[] = [
       {
         step_number: 4,
         step_type: 'treatment_plan',
-        title: '初始治療——輸液與電解質矯正',
+        title: '初始治療，輸液與電解質矯正',
         prompt: '開始 DKA 治療。第一步的輸液與電解質管理？選擇最適當的方案。',
         available_actions: [
           '0.9% NaCl 輸液矯正脫水（前 4-6 小時補充脫水量 + 維持量），同時加入 KCl 40 mEq/L 補鉀。先輸液 1-2 小時矯正最嚴重的脫水和開始補鉀後，再開始 insulin。',
@@ -1985,11 +1985,11 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           '0.9% NaCl 輸液矯正脫水（前 4-6 小時補充脫水量 + 維持量），同時加入 KCl 40 mEq/L 補鉀。先輸液 1-2 小時矯正最嚴重的脫水和開始補鉀後，再開始 insulin。',
         ],
-        feedback_correct: '正確！DKA 治療第一優先是「輸液」而非 insulin。原因：(1) 矯正脫水改善腎灌流，恢復腎臟排糖能力可降低 25-50% 的血糖；(2) 矯正循環量改善組織灌流；(3) 先補鉀——在 K+ < 3.5 時開始 insulin 可能致命（insulin 將 K+ 推入細胞 → 嚴重低血鉀 → 心律不整）。0.9% NaCl 為首選（不含 K+ 以便精確控制補鉀量，且含 Na+ 較高有助擴張血容量）。',
-        feedback_incorrect: '不先輸液就給 insulin 是 DKA 治療最致命的錯誤之一。脫水狀態下 insulin 效果差且低血鉀風險極高。D5W 會進一步升高血糖。輸液 + 補鉀 → 穩定後才開始 insulin。',
+        feedback_correct: '正確！DKA 治療第一優先是「輸液」而非 insulin。原因：(1) 矯正脫水改善腎灌流，恢復腎臟排糖能力可降低 25-50% 的血糖；(2) 矯正循環量改善組織灌流；(3) 先補鉀，在 K+ < 3.5 時開始 insulin 可能致命（insulin 將 K+ 推入細胞 → 嚴重低血鉀 → 心律不整）。0.9% NaCl 為首選（不含 K+ 以便精確控制補鉀量，且含 Na+ 較高有助擴張血容量）。',
+        feedback_incorrect: '不先輸液就給 insulin 是 DKA 治療最致命的錯誤之一。脫水狀態下 insulin 效果差且低血鉀風險極高。D5W 會後續升高血糖。輸液 + 補鉀 → 穩定後才開始 insulin。',
         key_learning_points: [
           'DKA 治療第一優先：輸液矯正脫水（不是 insulin）',
-          '先補鉀再給 insulin——防止致命性低血鉀',
+          '先補鉀再給 insulin，防止致命性低血鉀',
           '輸液本身可降低 25-50% 的血糖（恢復腎排糖功能）',
           '補鉀速率 K+ 2.5-3.5 → 40 mEq/L；K+ < 2.5 → 60-80 mEq/L（不超過 0.5 mEq/kg/hr）',
         ],
@@ -2008,13 +2008,13 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           'Regular insulin CRI 0.05 U/kg/hr（貓低劑量起始），目標血糖下降速率 50-75 mg/dL/hr。血糖降至 250 mg/dL 時加入 2.5% Dextrose 至輸液中。每 1-2 小時監測血糖和電解質。',
         ],
-        feedback_correct: '正確！Regular insulin CRI 是 DKA 的標準 insulin 給予方式——可精確控制血糖下降速率。貓使用 0.05 U/kg/hr 起始（犬可用 0.1 U/kg/hr）。血糖下降速率過快（> 75-100 mg/dL/hr）增加腦水腫風險。血糖降至 250 mg/dL 時加入 dextrose 是關鍵步驟——此時酮體可能仍未清除完，需持續 insulin 但要防止低血糖。每 1-2 小時監測血糖和 K+ 至關重要。',
+        feedback_correct: '正確！Regular insulin CRI 是 DKA 的標準 insulin 給予方式，可精確控制血糖下降速率。貓使用 0.05 U/kg/hr 起始（犬可用 0.1 U/kg/hr）。血糖下降速率過快（> 75-100 mg/dL/hr）增加腦水腫風險。血糖降至 250 mg/dL 時加入 dextrose 是關鍵步驟，此時酮體可能仍未清除完，需持續 insulin 但要防止低血糖。每 1-2 小時監測血糖和 K+ 不能省。',
         feedback_incorrect: 'Regular insulin CRI 是 DKA 金標準。NPH 和 Glargine 是長效/中效 insulin，不適合急性 DKA 管理（無法精確控制）。IV bolus 高劑量 insulin 會導致血糖驟降和嚴重低血鉀。CRI 可隨時調整速率。',
         key_learning_points: [
           'Regular insulin CRI 是 DKA 的金標準 insulin 給予方式',
           '貓起始劑量 0.05 U/kg/hr，犬 0.1 U/kg/hr',
           '血糖下降速率目標：50-75 mg/dL/hr',
-          '血糖 250 mg/dL 時加入 2.5% Dextrose——繼續 insulin 清酮但防止低血糖',
+          '血糖 250 mg/dL 時加入 2.5% Dextrose，繼續 insulin 清酮但防止低血糖',
           '每 1-2 小時監測血糖和 K+',
         ],
       },
@@ -2032,7 +2032,7 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           '當貓可穩定進食且酮體接近清除時，首次皮下注射長效 insulin（Glargine 0.25-0.5 U/kg BID 或 PZI）。注射後 4-6 小時停止 CRI（overlap 確保不中斷）。出院前衛教：居家血糖監測、低血糖徵兆辨識、飲食調整（高蛋白低碳水）、定期回診。',
         ],
-        feedback_correct: '正確！CRI 至皮下 insulin 的過渡時機：(1) 可穩定進食；(2) 酮體接近清除；(3) 酸中毒矯正。Glargine（Lantus）是貓糖尿病長期管理的首選 insulin。Overlap（先打皮下再停 CRI）防止 insulin 中斷導致酮體再生成。貓糖尿病約 30-40% 在良好管理下可達到緩解（remission），因此定期回診調整劑量很重要。飲食調整為高蛋白低碳水（類似 Atkins diet）有助血糖控制。',
+        feedback_correct: '正確！CRI 至皮下 insulin 的過渡時機：(1) 可穩定進食；(2) 酮體接近清除；(3) 酸中毒矯正。Glargine（Lantus）是貓糖尿病長期管理的首選 insulin。Overlap（先打皮下再停 CRI）防止 insulin 中斷導致酮體再生成。貓糖尿病約 30-40% 在良好管理下可達到緩解（remission），所以定期回診調整劑量很重要。飲食調整為高蛋白低碳水（類似 Atkins diet）有助血糖控制。',
         feedback_incorrect: '停止 insulin 後血糖會再度升高且酮體可能再生成。DKA 貓需要長期 insulin 治療。CRI → 皮下 insulin 需有 overlap 期。貓糖尿病有緩解可能但需漸進調整。',
         key_learning_points: [
           'CRI → 皮下 insulin 過渡需 overlap（先打皮下 → 4-6 小時後停 CRI）',
@@ -2046,11 +2046,11 @@ export const ECC_CASES: CaseChallenge[] = [
     expert_pathway: {
       reasoning: '肥胖老年貓 + PU/PD + 體重下降 + 嘔吐 + Kussmaul 呼吸 + 丙酮味 → DKA。確認：血糖 450 + 酮體 3+ + pH 7.12。治療順序：輸液矯正脫水（最優先）→ 補鉀（K+ < 3.5 先補鉀再給 insulin）→ Regular insulin CRI 0.05 U/kg/hr → 血糖 250 加 Dextrose → 穩定進食後過渡 Glargine → 長期管理。',
       key_decisions: [
-        '先輸液再 insulin——防止致命性低血鉀',
+        '先輸液再 insulin，防止致命性低血鉀',
         '先補鉀至 K+ > 3.5 才開始 insulin',
         '血糖下降速率不超過 75 mg/dL/hr',
-        '血糖 250 加 Dextrose——持續 insulin 清酮',
-        '監測 phosphorus——DKA 治療中可驟降',
+        '血糖 250 加 Dextrose，持續 insulin 清酮',
+        '監測 phosphorus，DKA 治療中可驟降',
         'CRI → 皮下 insulin 需 overlap',
       ],
       common_pitfalls: [
@@ -2074,7 +2074,7 @@ export const ECC_CASES: CaseChallenge[] = [
   // ========== CASE-ECC-012: 犬術後敗血症 ==========
   {
     id: 'CASE-ECC-012',
-    title: '犬術後敗血症的早期辨識與積極處置——Source Control 的關鍵角色',
+    title: '犬術後敗血症的早期辨識與積極處置，Source Control 的關鍵角色',
     specialty: 'ECC',
     cross_specialties: ['SURG', 'IM'],
     required_nodes: ['ECC-L3-011', 'ECC-L2-001', 'ECC-L4-001', 'ECC-L5-001'],
@@ -2119,25 +2119,25 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '緊急診斷檢查',
         prompt: '你判斷為敗血症合併早期敗血性休克。需要哪些緊急檢查？選擇最適當的 3 項。',
         available_actions: [
-          'CBC + 完整生化 + 乳酸（lactate）——評估器官功能與組織灌流',
-          '血液培養（aerobic + anaerobic）——在給予抗生素之前採集',
-          '腹部超音波（AFAST）——評估腹腔游離液體',
+          'CBC + 完整生化 + 乳酸（lactate），評估器官功能與組織灌流',
+          '血液培養（aerobic + anaerobic），在給予抗生素之前採集',
+          '腹部超音波（AFAST），評估腹腔游離液體',
           '胸腔 X 光',
           '尿液培養',
           '凝血功能（PT/aPTT）',
         ],
         correct_actions: [
-          'CBC + 完整生化 + 乳酸（lactate）——評估器官功能與組織灌流',
-          '血液培養（aerobic + anaerobic）——在給予抗生素之前採集',
-          '腹部超音波（AFAST）——評估腹腔游離液體',
+          'CBC + 完整生化 + 乳酸（lactate），評估器官功能與組織灌流',
+          '血液培養（aerobic + anaerobic），在給予抗生素之前採集',
+          '腹部超音波（AFAST），評估腹腔游離液體',
         ],
-        feedback_correct: '完美！乳酸是敗血症嚴重度和治療反應的重要指標（> 2.5 mmol/L 為異常，> 4 提示嚴重低灌流）。血液培養必須在首劑抗生素之前採集——但不應為等待採血而延遲抗生素給予超過 1 小時。AFAST 快速評估腹腔游離液體——術後腹膜炎可能有腹腔滲出液/膿液。Surviving Sepsis Campaign 強調「golden hour」——早期辨識與積極介入。',
+        feedback_correct: '完美！乳酸是敗血症嚴重度和治療反應的重要指標（> 2.5 mmol/L 為異常，> 4 提示嚴重低灌流）。血液培養必須在首劑抗生素之前採集，但不應為等待採血而延遲抗生素給予超過 1 小時。AFAST 快速評估腹腔游離液體，術後腹膜炎可能有腹腔滲出液/膿液。Surviving Sepsis Campaign 強調「golden hour」，早期辨識與積極介入。',
         feedback_incorrect: '敗血症急診三要素：(1) 乳酸評估組織灌流（最重要的預後指標之一）；(2) 血培養在抗生素前採集（但不延遲治療）；(3) 腹部超音波確認感染源。凝血和胸 X 光可在穩定後安排。',
         key_learning_points: [
           '乳酸 > 2.5 mmol/L 為敗血症組織低灌流的指標',
           '血液培養必須在首劑抗生素前採集',
           'AFAST 可在 2-3 分鐘內評估腹腔游離液體',
-          'Surviving Sepsis: "golden hour" 概念——早期辨識與介入',
+          'Surviving Sepsis: "golden hour" 概念，早期辨識與介入',
         ],
       },
       {
@@ -2154,13 +2154,13 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           '敗血症合併多器官功能障礙的早期徵兆：低血糖（葡萄糖消耗↑ + 肝功能↓）、腎損傷（AKI）、血小板低下（DIC 前期？）、高乳酸（組織低灌流）、低白蛋白（capillary leak）。腹腔液需穿刺分析。需立即開始治療。',
         ],
-        feedback_correct: '正確！多項器官功能障礙指標：(1) 低血糖是敗血症的嚴重徵兆——細菌消耗 + 肝糖原耗盡 + 肝功能受損；(2) AKI（Cr 2.0）反映腎灌流不足；(3) 血小板 85,000 下降可能是 DIC 前兆——需監測 PT/aPTT/D-dimer；(4) 乳酸 5.8 為嚴重組織低灌流；(5) 低白蛋白反映 capillary leak syndrome。腹腔液需立即穿刺分析——若為化膿性或敗血性 → 需手術再探查（source control）。',
+        feedback_correct: '正確！多項器官功能障礙指標：(1) 低血糖是敗血症的嚴重徵兆，細菌消耗 + 肝糖原耗盡 + 肝功能受損；(2) AKI（Cr 2.0）反映腎灌流不足；(3) 血小板 85,000 下降可能是 DIC 前兆，需監測 PT/aPTT/D-dimer；(4) 乳酸 5.8 為嚴重組織低灌流；(5) 低白蛋白反映 capillary leak syndrome。腹腔液需立即穿刺分析，若為化膿性或敗血性 → 需手術再探查（source control）。',
         feedback_incorrect: '術後第二天出現多器官功能障礙徵兆絕非正常恢復。低血糖是敗血症的危險信號。乳酸 5.8 代表嚴重組織低灌流。這是需要積極介入的敗血症急症。',
         key_learning_points: [
           '敗血症低血糖：細菌消耗 + 肝糖原耗盡 + 肝功能受損',
           '血小板下降 + 高 WBC = 注意 DIC 可能',
           '乳酸 > 4 mmol/L = 嚴重組織低灌流，與死亡率直接相關',
-          '低白蛋白反映 capillary leak——影響輸液策略',
+          '低白蛋白反映 capillary leak，影響輸液策略',
         ],
       },
       {
@@ -2170,22 +2170,22 @@ export const ECC_CASES: CaseChallenge[] = [
         prompt: '你確認為敗血症合併多器官功能障礙早期徵兆。腹腔穿刺液分析：WBC > 25,000/μL，退化性嗜中性球，細胞內細菌（+）→ 敗血性腹膜炎。你的治療方案？選擇最適當的 3 項。',
         available_actions: [
           '積極液體復甦：0.9% NaCl 或 LRS 20-30 mL/kg IV bolus，以 MAP ≥ 65 mmHg 和乳酸下降為目標，反覆評估灌流指標',
-          '廣效 IV 抗生素（Ampicillin-Sulbactam 20-30 mg/kg IV q8h + Enrofloxacin 10 mg/kg IV SID）——涵蓋革蘭氏陽性、陰性與厭氧菌',
-          '手術再探查（surgical re-exploration）——source control 是敗血性腹膜炎的關鍵治療',
+          '廣效 IV 抗生素（Ampicillin-Sulbactam 20-30 mg/kg IV q8h + Enrofloxacin 10 mg/kg IV SID），涵蓋革蘭氏陽性、陰性與厭氧菌',
+          '手術再探查（surgical re-exploration），source control 是敗血性腹膜炎的關鍵治療',
           '僅口服抗生素觀察',
           '高劑量類固醇治療休克',
           '限制輸液避免肺水腫',
         ],
         correct_actions: [
           '積極液體復甦：0.9% NaCl 或 LRS 20-30 mL/kg IV bolus，以 MAP ≥ 65 mmHg 和乳酸下降為目標，反覆評估灌流指標',
-          '廣效 IV 抗生素（Ampicillin-Sulbactam 20-30 mg/kg IV q8h + Enrofloxacin 10 mg/kg IV SID）——涵蓋革蘭氏陽性、陰性與厭氧菌',
-          '手術再探查（surgical re-exploration）——source control 是敗血性腹膜炎的關鍵治療',
+          '廣效 IV 抗生素（Ampicillin-Sulbactam 20-30 mg/kg IV q8h + Enrofloxacin 10 mg/kg IV SID），涵蓋革蘭氏陽性、陰性與厭氧菌',
+          '手術再探查（surgical re-exploration），source control 是敗血性腹膜炎的關鍵治療',
         ],
-        feedback_correct: '正確！敗血症三大支柱：(1) 液體復甦——目標導向（MAP ≥ 65、乳酸下降、尿量恢復），犬可耐受較大量輸液但需監測肺水腫徵兆；(2) 廣效 IV 抗生素——必須涵蓋腸道菌群（G+、G-、厭氧菌），Ampicillin-Sulbactam + Enrofloxacin 或 Metronidazole 是常用組合；(3) Source control——敗血性腹膜炎的最關鍵治療是手術清除感染源（可能為子宮殘端洩漏、腸道微穿孔等），無法單靠抗生素控制。輸液穩定後儘速安排手術。高劑量類固醇在敗血性休克無益且可能有害。',
+        feedback_correct: '正確！敗血症三大支柱：(1) 液體復甦，目標導向（MAP ≥ 65、乳酸下降、尿量恢復），犬可耐受較大量輸液但需監測肺水腫徵兆；(2) 廣效 IV 抗生素，必須涵蓋腸道菌群（G+、G-、厭氧菌），Ampicillin-Sulbactam + Enrofloxacin 或 Metronidazole 是常用組合；(3) Source control，敗血性腹膜炎的最關鍵治療是手術清除感染源（可能為子宮殘端洩漏、腸道微穿孔等），無法單靠抗生素控制。輸液穩定後儘速安排手術。高劑量類固醇在敗血性休克無益且可能有害。',
         feedback_incorrect: '敗血性腹膜炎的三大治療支柱：液體復甦 + 廣效 IV 抗生素 + source control（手術）。口服抗生素無法達到足夠血中濃度。限制輸液會加重組織低灌流。Source control 是抗生素無法取代的關鍵介入。',
         key_learning_points: [
           '敗血症三大治療支柱：液體復甦 + 抗生素 + source control',
-          'Source control 是敗血性腹膜炎的決定性治療——手術清除感染源',
+          'Source control 是敗血性腹膜炎的決定性治療，手術清除感染源',
           '廣效抗生素需涵蓋 G+、G-、厭氧菌',
           '液體復甦目標：MAP ≥ 65 mmHg、乳酸下降、尿量 > 1 mL/kg/hr',
         ],
@@ -2193,7 +2193,7 @@ export const ECC_CASES: CaseChallenge[] = [
       {
         step_number: 5,
         step_type: 'treatment_plan',
-        title: '液體復甦無反應——升壓劑使用',
+        title: '液體復甦無反應，升壓劑使用',
         prompt: '給予 60 mL/kg 晶體液後，MAP 仍僅 58 mmHg，乳酸未下降。你的下一步處置？',
         available_actions: [
           'Norepinephrine 0.1-0.5 μg/kg/min CRI 作為首選升壓劑，繼續滴定至 MAP ≥ 65 mmHg。同時補充 dextrose 維持血糖 > 80 mg/dL。',
@@ -2205,13 +2205,13 @@ export const ECC_CASES: CaseChallenge[] = [
         correct_actions: [
           'Norepinephrine 0.1-0.5 μg/kg/min CRI 作為首選升壓劑，繼續滴定至 MAP ≥ 65 mmHg。同時補充 dextrose 維持血糖 > 80 mg/dL。',
         ],
-        feedback_correct: '正確！液體復甦無反應（fluid-refractory septic shock）的首選升壓劑為 Norepinephrine（α1 > β1 agonist）。Norepinephrine 增加 SVR 提升 MAP，同時有輕度正性肌力作用。Dopamine 在敗血性休克的療效不如 Norepinephrine 且心律不整風險較高。持續給予大量晶體液（> 80 mL/kg）不再增加效益反而增加第三間隙積液和肺水腫風險。血糖需密切監測——敗血症低血糖可加重腦損傷。',
+        feedback_correct: '正確！液體復甦無反應（fluid-refractory septic shock）的首選升壓劑為 Norepinephrine（α1 > β1 agonist）。Norepinephrine 增加 SVR 提升 MAP，同時有輕度正性肌力作用。Dopamine 在敗血性休克的療效不如 Norepinephrine 且心律不整風險較高。持續給予大量晶體液（> 80 mL/kg）不再增加效益反而增加第三間隙積液和肺水腫風險。血糖需密切監測，敗血症低血糖可加重腦損傷。',
         feedback_incorrect: 'Fluid-refractory shock 的首選升壓劑：Norepinephrine。過量晶體液增加第三間隙積液。Dopamine 心律不整風險較高。Vasopressin 可作為 Norepinephrine 的附加劑但非首選。',
         key_learning_points: [
           'Norepinephrine 是敗血性休克 fluid-refractory 的首選升壓劑',
           '液體復甦目標量約 40-60 mL/kg 晶體液，超過此量效益有限',
           '升壓劑需用輸液幫浦精確滴定，以 MAP ≥ 65 為目標',
-          '敗血症低血糖需 dextrose 補充——監測頻率 q1-2h',
+          '敗血症低血糖需 dextrose 補充，監測頻率 q1-2h',
         ],
       },
     ],
@@ -2239,7 +2239,7 @@ export const ECC_CASES: CaseChallenge[] = [
   // ========== CASE-ECC-013: 幼犬低血糖急診 ==========
   {
     id: 'CASE-ECC-013',
-    title: '幼犬癲癇發作——低血糖急診的快速診斷與 Dextrose 治療',
+    title: '幼犬癲癇發作，低血糖急診的快速診斷與 Dextrose 治療',
     specialty: 'ECC',
     cross_specialties: ['IM', 'NEURO'],
     required_nodes: ['ECC-L3-015', 'ECC-L1-002', 'ECC-L4-001', 'ECC-L5-001'],
@@ -2269,8 +2269,8 @@ export const ECC_CASES: CaseChallenge[] = [
           'E：體溫 35.8°C（低體溫），血糖快速測定 28 mg/dL（嚴重低血糖，正常 74-143）',
           'C：心率 180 bpm（幼犬可接受範圍），黏膜略蒼白，CRT 2 秒',
         ],
-        feedback_correct: '正確！意識程度改變是低血糖的嚴重神經學表現——腦細胞完全依賴葡萄糖作為能量來源。低體溫反映代謝功能低下與熱量產生不足。血糖 28 mg/dL 為嚴重低血糖——這是必須在所有意識改變的幼犬上第一時間檢測的項目。關鍵原則：ALL collapsed/seizing puppies → CHECK GLUCOSE FIRST。',
-        feedback_incorrect: '幼犬意識改變的急診三要素：(1) 神經學評估（意識程度 = 低血糖嚴重度指標）；(2) 血糖測定——必須是第一時間的檢查（< 60 mg/dL = 低血糖，< 40 = 嚴重）；(3) 循環評估。記住：所有倒地/抽搐的幼犬 → 先測血糖。',
+        feedback_correct: '正確！意識程度改變是低血糖的嚴重神經學表現，腦細胞完全依賴葡萄糖作為能量來源。低體溫反映代謝功能低下與熱量產生不足。血糖 28 mg/dL 為嚴重低血糖，這是必須在所有意識改變的幼犬上第一時間檢測的項目。關鍵原則：ALL collapsed/seizing puppies → CHECK GLUCOSE FIRST。',
+        feedback_incorrect: '幼犬意識改變的急診三要素：(1) 神經學評估（意識程度 = 低血糖嚴重度指標）；(2) 血糖測定，必須是第一時間的檢查（< 60 mg/dL = 低血糖，< 40 = 嚴重）；(3) 循環評估。記住：所有倒地/抽搐的幼犬 → 先測血糖。',
         key_learning_points: [
           '所有意識改變/癲癇/倒地的幼犬 → 第一步檢測血糖',
           '幼犬低血糖原因：肝糖原儲備少 + 肌肉量少 + 進食間隔過長',
@@ -2295,12 +2295,12 @@ export const ECC_CASES: CaseChallenge[] = [
           'IV Dextrose 0.5 g/kg（= 50% dextrose 1 mL/kg 稀釋成 12.5% 後 IV slow over 5 min），血糖回升後開始 2.5-5% Dextrose CRI 維持',
           '緩慢體溫復溫（加溫毛巾、暖氣墊間接接觸，目標 37.5-38.5°C，避免過快復溫）',
         ],
-        feedback_correct: '正確！IV Dextrose 是嚴重低血糖的第一線治療。50% Dextrose 必須稀釋後使用——高濃度 dextrose 直接給予可導致靜脈炎和高滲透壓損傷（尤其在幼犬纖細的血管）。稀釋至 12.5%（1:3 稀釋）後緩慢 IV over 5 分鐘。Bolus 後立即開始 2.5-5% Dextrose CRI——防止反彈性低血糖（幼犬肝糖原儲備極少）。低體溫需同步處理——代謝率低下會影響葡萄糖利用和器官功能恢復。口服糖水在意識不清時有誤嚥風險。',
-        feedback_incorrect: '意識不清時不可口服餵食（誤嚥風險）。IV Dextrose 是嚴重低血糖的唯一安全有效治療。50% Dextrose 需稀釋——濃度過高損傷血管。低體溫需同步處理。僅觀察可能導致腦損傷或死亡。',
+        feedback_correct: '正確！IV Dextrose 是嚴重低血糖的第一線治療。50% Dextrose 必須稀釋後使用，高濃度 dextrose 直接給予可導致靜脈炎和高滲透壓損傷（尤其在幼犬纖細的血管）。稀釋至 12.5%（1:3 稀釋）後緩慢 IV over 5 分鐘。Bolus 後立即開始 2.5-5% Dextrose CRI，防止反彈性低血糖（幼犬肝糖原儲備極少）。低體溫需同步處理，代謝率低下會影響葡萄糖利用和器官功能恢復。口服糖水在意識不清時有誤嚥風險。',
+        feedback_incorrect: '意識不清時不可口服餵食（誤嚥風險）。IV Dextrose 是嚴重低血糖的唯一安全有效治療。50% Dextrose 需稀釋，濃度過高損傷血管。低體溫需同步處理。僅觀察可能導致腦損傷或死亡。',
         key_learning_points: [
           'IV Dextrose 0.5 g/kg bolus 是嚴重低血糖的第一線治療',
           '50% Dextrose 必須稀釋至 12.5% 才能安全 IV（稀釋 1:3）',
-          'Bolus 後立即 2.5-5% Dextrose CRI——防止反彈性低血糖',
+          'Bolus 後立即 2.5-5% Dextrose CRI，防止反彈性低血糖',
           '意識不清時禁止口服餵食（aspiration risk）',
           '低體溫需緩慢復溫（快速復溫可致心律不整）',
         ],
@@ -2309,21 +2309,21 @@ export const ECC_CASES: CaseChallenge[] = [
         step_number: 3,
         step_type: 'result_interpretation',
         title: '治療反應評估',
-        prompt: 'IV Dextrose bolus 後 10 分鐘：血糖回升至 95 mg/dL，幼犬開始有意識恢復（head-responsive），體溫緩慢回升至 36.5°C。繼續 5% Dextrose CRI。30 分鐘後血糖 120 mg/dL，開始嘗試抬頭。需要進一步排除哪些鑑別診斷？選擇最適當的 3 項。',
+        prompt: 'IV Dextrose bolus 後 10 分鐘：血糖回升至 95 mg/dL，幼犬開始有意識恢復（head-responsive），體溫緩慢回升至 36.5°C。繼續 5% Dextrose CRI。30 分鐘後血糖 120 mg/dL，開始嘗試抬頭。需要後續排除哪些鑑別診斷？選擇最適當的 3 項。',
         available_actions: [
-          '先天性門體分流（portosystemic shunt）——玩具犬種好發，可致低血糖 + 低 BUN + 高 NH3',
-          '新生兒敗血症——發燒/低體溫 + 低血糖 + 嗜睡',
-          '腸道寄生蟲大量感染——幼犬常見，可致營養不良與低血糖',
+          '先天性門體分流（portosystemic shunt），玩具犬種好發，可致低血糖 + 低 BUN + 高 NH3',
+          '新生兒敗血症，發燒/低體溫 + 低血糖 + 嗜睡',
+          '腸道寄生蟲大量感染，幼犬常見，可致營養不良與低血糖',
           '腎上腺功能低下（Addison）',
           'Insulinoma',
           '中毒（木糖醇）',
         ],
         correct_actions: [
-          '先天性門體分流（portosystemic shunt）——玩具犬種好發，可致低血糖 + 低 BUN + 高 NH3',
-          '新生兒敗血症——發燒/低體溫 + 低血糖 + 嗜睡',
-          '腸道寄生蟲大量感染——幼犬常見，可致營養不良與低血糖',
+          '先天性門體分流（portosystemic shunt），玩具犬種好發，可致低血糖 + 低 BUN + 高 NH3',
+          '新生兒敗血症，發燒/低體溫 + 低血糖 + 嗜睡',
+          '腸道寄生蟲大量感染，幼犬常見，可致營養不良與低血糖',
         ],
-        feedback_correct: '正確！幼犬低血糖的鑑別在穩定後需進一步評估：(1) 先天性 PSS——Yorkshire 是最好發品種，低血糖 + 低 BUN + 小肝臟是線索，需檢測空腹與餐後膽汁酸；(2) 新生兒敗血症——幼犬免疫力低，低血糖可能是敗血症的首發表現；(3) 大量腸道寄生蟲——幼犬常見（蛔蟲、鈎蟲），營養攝取不足。Insulinoma 極罕見於幼犬（好發中老年犬）。Addison 也不常見於 8 週齡幼犬。',
+        feedback_correct: '正確！幼犬低血糖的鑑別在穩定後需後續評估：(1) 先天性 PSS，Yorkshire 是最好發品種，低血糖 + 低 BUN + 小肝臟是線索，需檢測空腹與餐後膽汁酸；(2) 新生兒敗血症，幼犬免疫力低，低血糖可能是敗血症的首發表現；(3) 大量腸道寄生蟲，幼犬常見（蛔蟲、鈎蟲），營養攝取不足。Insulinoma 極罕見於幼犬（好發中老年犬）。Addison 也不常見於 8 週齡幼犬。',
         feedback_incorrect: '幼犬低血糖在排除餵食不足後，需考慮：PSS（Yorkshire 好發）、敗血症（幼犬免疫力弱）、寄生蟲感染。Insulinoma 好發中老年犬。Addison 在 8 週齡極罕見。',
         key_learning_points: [
           'Yorkshire Terrier 幼犬低血糖需排除先天性門體分流（PSS）',
@@ -2335,8 +2335,8 @@ export const ECC_CASES: CaseChallenge[] = [
       {
         step_number: 4,
         step_type: 'treatment_plan',
-        title: '進一步檢查與穩定後管理',
-        prompt: '幼犬完全恢復意識，開始主動進食。生化回報：BUN 8 mg/dL（偏低），Albumin 2.0 g/dL（低），NH3 待結果。糞便浮游可見少量蛔蟲卵。你的進一步計畫？選擇最適當的 2 項。',
+        title: '後續檢查與穩定後管理',
+        prompt: '幼犬完全恢復意識，開始主動進食。生化回報：BUN 8 mg/dL（偏低），Albumin 2.0 g/dL（低），NH3 待結果。糞便浮游可見少量蛔蟲卵。你的後續計畫？選擇最適當的 2 項。',
         available_actions: [
           '安排空腹與餐後膽汁酸檢測排除 PSS（BUN 偏低 + 低白蛋白 + Yorkshire 品種 → PSS 高度懷疑）',
           '出院前衛教：少量多餐（每 3-4 小時餵食）、高能量幼犬飼料、監測活力與食慾、血糖異常徵兆辨識、驅蟲計畫',
@@ -2349,8 +2349,8 @@ export const ECC_CASES: CaseChallenge[] = [
           '安排空腹與餐後膽汁酸檢測排除 PSS（BUN 偏低 + 低白蛋白 + Yorkshire 品種 → PSS 高度懷疑）',
           '出院前衛教：少量多餐（每 3-4 小時餵食）、高能量幼犬飼料、監測活力與食慾、血糖異常徵兆辨識、驅蟲計畫',
         ],
-        feedback_correct: '正確！BUN 偏低 + 低白蛋白 + Yorkshire 品種 = PSS 高度懷疑，需進一步膽汁酸檢測。空腹膽汁酸 + 餐後 2 小時膽汁酸可篩檢肝功能異常。若高度異常，再安排腹部超音波或 CT 血管攝影確認分流血管位置。飼主衛教極重要——少量多餐（每 3-4 小時）維持血糖穩定是預防復發的關鍵。驅蟲可使用 pyrantel 或 fenbendazole。復發性低血糖是 PSS 幼犬的常見主訴。',
-        feedback_incorrect: 'BUN 偏低在幼犬需注意 PSS 可能。膽汁酸檢測是 PSS 篩檢的首選工具。飼主衛教（少量多餐）對預防幼犬低血糖復發至關重要。CT 血管攝影在膽汁酸異常確認後再安排。',
+        feedback_correct: '正確！BUN 偏低 + 低白蛋白 + Yorkshire 品種 = PSS 高度懷疑，需後續膽汁酸檢測。空腹膽汁酸 + 餐後 2 小時膽汁酸可篩檢肝功能異常。若高度異常，再安排腹部超音波或 CT 血管攝影確認分流血管位置。飼主衛教極重要，少量多餐（每 3-4 小時）維持血糖穩定是預防復發的關鍵。驅蟲可使用 pyrantel 或 fenbendazole。復發性低血糖是 PSS 幼犬的常見主訴。',
+        feedback_incorrect: 'BUN 偏低在幼犬需注意 PSS 可能。膽汁酸檢測是 PSS 篩檢的首選工具。飼主衛教（少量多餐）對預防幼犬低血糖復發不能省。CT 血管攝影在膽汁酸異常確認後再安排。',
         key_learning_points: [
           '低 BUN + 低 Albumin + 低血糖 + 玩具犬種 → PSS 高度懷疑',
           '空腹/餐後膽汁酸是 PSS 篩檢的首選非侵入性檢查',
@@ -2366,14 +2366,14 @@ export const ECC_CASES: CaseChallenge[] = [
         available_actions: [
           '幼犬低血糖急診管理：所有倒地/抽搐幼犬第一步測血糖 → IV Dextrose 0.5 g/kg（稀釋至 12.5%）→ Dextrose CRI 維持 → 同步復溫 → 穩定後排除 PSS/敗血症/寄生蟲等根本原因 → 飼主衛教少量多餐預防復發。玩具犬種幼犬是高風險群。',
           '幼犬抽搐一律是癲癇，給予 Phenobarbital 即可',
-          '低血糖矯正後不需進一步檢查',
+          '低血糖矯正後不需後續檢查',
           '口服糖水是幼犬低血糖的最佳治療',
         ],
         correct_actions: [
           '幼犬低血糖急診管理：所有倒地/抽搐幼犬第一步測血糖 → IV Dextrose 0.5 g/kg（稀釋至 12.5%）→ Dextrose CRI 維持 → 同步復溫 → 穩定後排除 PSS/敗血症/寄生蟲等根本原因 → 飼主衛教少量多餐預防復發。玩具犬種幼犬是高風險群。',
         ],
         feedback_correct: '完整的幼犬低血糖急診流程：辨識（倒地/抽搐/虛弱）→ 快速血糖測定 → IV Dextrose 急救 → CRI 維持 → 復溫 → 鑑別根本原因 → 飼主衛教。這個病例展示了從急性處置到根本原因排查的系統化思維。Yorkshire 幼犬需特別注意 PSS 的可能性。',
-        feedback_incorrect: '幼犬抽搐不一定是癲癇——低血糖是最常見且最可治療的原因。必須先排除代謝異常再考慮神經學診斷。矯正低血糖後仍需排除根本原因。意識不清時不可口服餵食。',
+        feedback_incorrect: '幼犬抽搐不一定是癲癇，低血糖是最常見且最可治療的原因。必須先排除代謝異常再考慮神經學診斷。矯正低血糖後仍需排除根本原因。意識不清時不可口服餵食。',
         key_learning_points: [
           '幼犬低血糖急診 SOP：血糖測定 → IV Dextrose → CRI → 復溫 → 鑑別原因',
           '所有倒地/抽搐幼犬：先測血糖再做其他檢查',
@@ -2407,7 +2407,7 @@ export const ECC_CASES: CaseChallenge[] = [
   // ========== CASE-ECC-014: 犬艾迪森危象 ==========
   {
     id: 'CASE-ECC-014',
-    title: '犬急性虛脫合併心搏過緩——艾迪森危象的辨識與緊急處置',
+    title: '犬急性虛脫合併心搏過緩，艾迪森危象的辨識與緊急處置',
     specialty: 'ECC',
     cross_specialties: ['IM'],
     required_nodes: ['ECC-L3-016', 'ECC-L1-001', 'ECC-L1-002', 'ECC-L5-001'],
@@ -2426,7 +2426,7 @@ export const ECC_CASES: CaseChallenge[] = [
         prompt: '面對急性虛脫的中年犬，進行理學檢查。請選擇最關鍵的 3 項發現。',
         available_actions: [
           '心率 50 bpm（明顯心搏過緩），心律規則',
-          '黏膜蒼白、CRT 3 秒、股動脈脈搏微弱——低血容性休克',
+          '黏膜蒼白、CRT 3 秒、股動脈脈搏微弱，低血容性休克',
           '體溫 36.8°C（偏低），皮膚帳篷延遲（脫水 7-8%）',
           '體態 BCS 3/9（消瘦）',
           '腹部觸診輕度不適但無明顯腫塊',
@@ -2434,14 +2434,14 @@ export const ECC_CASES: CaseChallenge[] = [
         ],
         correct_actions: [
           '心率 50 bpm（明顯心搏過緩），心律規則',
-          '黏膜蒼白、CRT 3 秒、股動脈脈搏微弱——低血容性休克',
+          '黏膜蒼白、CRT 3 秒、股動脈脈搏微弱，低血容性休克',
           '體溫 36.8°C（偏低），皮膚帳篷延遲（脫水 7-8%）',
         ],
-        feedback_correct: '正確！最關鍵的異常組合：心搏過緩（HR 50）+ 低血容性休克。這是一個「不合理」的組合——休克狀態下正常心臟應該代償性心搏過速。心搏過緩合併低血壓 = 高度懷疑高血鉀（Addison crisis）或嚴重心臟傳導異常。Addison 是著名的 "Great Pretender"——模仿多種疾病，間歇性 GI 症狀 + 體重下降 + 急性虛脫是經典表現。Wheaten Terrier 是 Addison 好發品種。',
-        feedback_incorrect: '急性虛脫的關鍵：心搏過緩 + 休克是不正常組合——休克時心臟應代償性心搏過速。「不該慢的心臟卻慢了」→ 高度懷疑高血鉀。加上間歇性 GI 症狀 + 體重下降 + 好發品種 = Addison crisis 高度懷疑。',
+        feedback_correct: '正確！最關鍵的異常組合：心搏過緩（HR 50）+ 低血容性休克。這是一個「不合理」的組合，休克狀態下正常心臟應該代償性心搏過速。心搏過緩合併低血壓 = 高度懷疑高血鉀（Addison crisis）或嚴重心臟傳導異常。Addison 是著名的 "Great Pretender"，模仿多種疾病，間歇性 GI 症狀 + 體重下降 + 急性虛脫是經典表現。Wheaten Terrier 是 Addison 好發品種。',
+        feedback_incorrect: '急性虛脫的關鍵：心搏過緩 + 休克是不正常組合，休克時心臟應代償性心搏過速。「不該慢的心臟卻慢了」→ 高度懷疑高血鉀。加上間歇性 GI 症狀 + 體重下降 + 好發品種 = Addison crisis 高度懷疑。',
         key_learning_points: [
           '心搏過緩 + 低血容性休克 = 「不合理組合」→ 懷疑高血鉀',
-          'Addison = "Great Pretender"——可模仿腸胃炎、腎衰竭、神經疾病',
+          'Addison = "Great Pretender"，可模仿腸胃炎、腎衰竭、神經疾病',
           'Addison 好發品種：Wheaten Terrier、Standard Poodle、Bearded Collie、Great Dane',
           '典型 Addison 三聯徵：GI 症狀 + 虛弱/嗜睡 + 體重下降',
         ],
@@ -2452,7 +2452,7 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '緊急診斷檢查',
         prompt: '你高度懷疑 Addisonian crisis。需要哪些緊急檢查？選擇最適當的 3 項。',
         available_actions: [
-          '電解質 stat（Na+、K+）——計算 Na:K 比值',
+          '電解質 stat（Na+、K+），計算 Na:K 比值',
           '靜脈血氣（pH、HCO3-）',
           'ECG 連續監測（評估高血鉀心電圖變化）',
           '完整 CBC + 生化',
@@ -2460,11 +2460,11 @@ export const ECC_CASES: CaseChallenge[] = [
           '基礎 cortisol 或 ACTH 刺激試驗',
         ],
         correct_actions: [
-          '電解質 stat（Na+、K+）——計算 Na:K 比值',
+          '電解質 stat（Na+、K+），計算 Na:K 比值',
           'ECG 連續監測（評估高血鉀心電圖變化）',
           '靜脈血氣（pH、HCO3-）',
         ],
-        feedback_correct: '完美！電解質是 Addisonian crisis 最關鍵的快速診斷工具——Na:K 比值 < 27 高度提示 Addison（正常 27-40）。ECG 監測高血鉀的心電圖變化（T 波尖高 → P 波消失 → QRS 增寬 → sine wave）以評估緊急性。血氣確認代謝性酸中毒。ACTH 刺激試驗是確診工具但需時間——不應延遲急性治療。可在開始治療前先抽基礎 cortisol（Dexamethasone 不影響 cortisol 測定，但 Hydrocortisone 會）。',
+        feedback_correct: '完美！電解質是 Addisonian crisis 最關鍵的快速診斷工具，Na:K 比值 < 27 高度提示 Addison（正常 27-40）。ECG 監測高血鉀的心電圖變化（T 波尖高 → P 波消失 → QRS 增寬 → sine wave）以評估緊急性。血氣確認代謝性酸中毒。ACTH 刺激試驗是確診工具但需時間，不應延遲急性治療。可在開始治療前先抽基礎 cortisol（Dexamethasone 不影響 cortisol 測定，但 Hydrocortisone 會）。',
         feedback_incorrect: '急性 Addisonian crisis 的即時診斷：(1) Na:K 比值（< 27 高度提示）；(2) ECG 評估高血鉀心臟毒性；(3) 血氣確認酸中毒。ACTH 刺激試驗是確診工具但非急診首要。先穩定再確診。',
         key_learning_points: [
           'Na:K < 27 高度提示 Addison（正常 27-40）',
@@ -2479,21 +2479,21 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '檢查結果判讀',
         prompt: '結果如下：\n• 電解質：Na+ 128 mEq/L（低鈉），K+ 7.8 mEq/L（嚴重高鉀），Na:K = 16.4\n• ECG：心搏過緩 50 bpm，T 波尖高，P 波振幅降低但仍存在\n• 血氣：pH 7.22，HCO3- 14 mEq/L（代謝性酸中毒）\n• 血糖：62 mg/dL（偏低）\n\n你的評估？',
         available_actions: [
-          'Addisonian crisis 合併嚴重電解質失衡：低鈉高鉀（Na:K 16.4）+ 代謝性酸中毒 + 低血糖。高血鉀已有 ECG 變化。需立即治療——先穩定心臟和循環。',
+          'Addisonian crisis 合併嚴重電解質失衡：低鈉高鉀（Na:K 16.4）+ 代謝性酸中毒 + 低血糖。高血鉀已有 ECG 變化。需立即治療，先穩定心臟和循環。',
           '原發性腎衰竭',
           '心臟傳導系統疾病',
           '急性胃腸炎引起的電解質失衡',
         ],
         correct_actions: [
-          'Addisonian crisis 合併嚴重電解質失衡：低鈉高鉀（Na:K 16.4）+ 代謝性酸中毒 + 低血糖。高血鉀已有 ECG 變化。需立即治療——先穩定心臟和循環。',
+          'Addisonian crisis 合併嚴重電解質失衡：低鈉高鉀（Na:K 16.4）+ 代謝性酸中毒 + 低血糖。高血鉀已有 ECG 變化。需立即治療，先穩定心臟和循環。',
         ],
-        feedback_correct: '正確！Na:K 16.4 幾乎確認 Addison——aldosterone 缺乏導致腎臟無法保 Na+ 排 K+。K+ 7.8 + ECG 變化（T 波尖高、P 波減低）= 緊急高血鉀，需立即處理。代謝性酸中毒（pH 7.22）因 H+ 排泄減少和低灌流。低血糖因 cortisol 缺乏導致糖新生下降。原發性腎衰竭也可有高鉀但通常 Na:K 不會如此極端且不會有低鈉。',
+        feedback_correct: '正確！Na:K 16.4 幾乎確認 Addison，aldosterone 缺乏導致腎臟無法保 Na+ 排 K+。K+ 7.8 + ECG 變化（T 波尖高、P 波減低）= 緊急高血鉀，需立即處理。代謝性酸中毒（pH 7.22）因 H+ 排泄減少和低灌流。低血糖因 cortisol 缺乏導致糖新生下降。原發性腎衰竭也可有高鉀但通常 Na:K 不會如此極端且不會有低鈉。',
         feedback_incorrect: 'Na:K 16.4（正常 27-40）幾乎確診 Addison。腎衰竭的 Na:K 通常不會如此極端。心臟傳導疾病不會造成電解質異常。急性腸胃炎的電解質變化型態不同（通常低鉀而非高鉀）。',
         key_learning_points: [
           'Na:K < 23 → 敏感度 100% 用於 Addison 篩檢',
           'Aldosterone 缺乏 → 腎臟無法保 Na+ 排 K+ → 低鈉高鉀',
           'Cortisol 缺乏 → 糖新生↓ + 血管張力↓ + 壓力反應↓',
-          'K+ > 7 合併 ECG 變化 = 緊急高血鉀——需立即處理',
+          'K+ > 7 合併 ECG 變化 = 緊急高血鉀，需立即處理',
         ],
       },
       {
@@ -2502,22 +2502,22 @@ export const ECC_CASES: CaseChallenge[] = [
         title: '緊急治療',
         prompt: '確認為 Addisonian crisis。你的緊急治療方案？選擇最適當的 3 項。',
         available_actions: [
-          '0.9% NaCl 20-30 mL/kg IV bolus——矯正低鈉、擴張血容量、稀釋鉀離子',
-          'Dexamethasone SP 0.5-1 mg/kg IV——取代缺乏的 glucocorticoid（且不影響後續 ACTH 刺激試驗的 cortisol 測定）',
-          '10% Calcium gluconate 0.5-1 mL/kg IV slow（over 10 min），ECG 監測——K+ > 7 合併 ECG 變化的心臟保護',
+          '0.9% NaCl 20-30 mL/kg IV bolus，矯正低鈉、擴張血容量、稀釋鉀離子',
+          'Dexamethasone SP 0.5-1 mg/kg IV，取代缺乏的 glucocorticoid（且不影響後續 ACTH 刺激試驗的 cortisol 測定）',
+          '10% Calcium gluconate 0.5-1 mL/kg IV slow（over 10 min），ECG 監測，K+ > 7 合併 ECG 變化的心臟保護',
           '0.45% NaCl 低鈉輸液',
           'Hydrocortisone IV 作為唯一治療',
           '口服 Fludrocortisone 立即開始',
         ],
         correct_actions: [
-          '0.9% NaCl 20-30 mL/kg IV bolus——矯正低鈉、擴張血容量、稀釋鉀離子',
-          'Dexamethasone SP 0.5-1 mg/kg IV——取代缺乏的 glucocorticoid（且不影響後續 ACTH 刺激試驗的 cortisol 測定）',
-          '10% Calcium gluconate 0.5-1 mL/kg IV slow（over 10 min），ECG 監測——K+ > 7 合併 ECG 變化的心臟保護',
+          '0.9% NaCl 20-30 mL/kg IV bolus，矯正低鈉、擴張血容量、稀釋鉀離子',
+          'Dexamethasone SP 0.5-1 mg/kg IV，取代缺乏的 glucocorticoid（且不影響後續 ACTH 刺激試驗的 cortisol 測定）',
+          '10% Calcium gluconate 0.5-1 mL/kg IV slow（over 10 min），ECG 監測，K+ > 7 合併 ECG 變化的心臟保護',
         ],
-        feedback_correct: '正確！Addisonian crisis 急性治療三大支柱：(1) 0.9% NaCl 積極輸液——同時矯正低鈉（不超過 0.5 mEq/L/hr 避免 osmotic demyelination）、擴張血容量、稀釋 K+。0.9% NaCl 含 154 mEq/L Na+，是理想選擇。(2) Dexamethasone 比 Hydrocortisone 更適合急診使用——因為 Dexamethasone 不影響 ACTH 刺激試驗的 cortisol 測定（若尚未確診可在治療後仍做 ACTH stim）。(3) Calcium gluconate 在 K+ > 7 + ECG 變化時給予心臟保護——穩定心肌細胞膜電位（不降鉀但保護心臟）。',
-        feedback_incorrect: '急性 Addisonian crisis 三支柱：(1) 0.9% NaCl 積極輸液；(2) Dexamethasone 取代 glucocorticoid；(3) Calcium gluconate 保護心臟（K+ > 7 + ECG 變化）。0.45% NaCl 不適合——Na+ 含量太低無法矯正低鈉。口服藥物在急性危象不可靠。',
+        feedback_correct: '正確！Addisonian crisis 急性治療三大支柱：(1) 0.9% NaCl 積極輸液，同時矯正低鈉（不超過 0.5 mEq/L/hr 避免 osmotic demyelination）、擴張血容量、稀釋 K+。0.9% NaCl 含 154 mEq/L Na+，是理想選擇。(2) Dexamethasone 比 Hydrocortisone 更適合急診使用，因為 Dexamethasone 不影響 ACTH 刺激試驗的 cortisol 測定（若尚未確診可在治療後仍做 ACTH stim）。(3) Calcium gluconate 在 K+ > 7 + ECG 變化時給予心臟保護，穩定心肌細胞膜電位（不降鉀但保護心臟）。',
+        feedback_incorrect: '急性 Addisonian crisis 三支柱：(1) 0.9% NaCl 積極輸液；(2) Dexamethasone 取代 glucocorticoid；(3) Calcium gluconate 保護心臟（K+ > 7 + ECG 變化）。0.45% NaCl 不適合，Na+ 含量太低無法矯正低鈉。口服藥物在急性危象不可靠。',
         key_learning_points: [
-          '0.9% NaCl 是 Addisonian crisis 的首選輸液——同時處理低鈉、低血容量、高鉀',
+          '0.9% NaCl 是 Addisonian crisis 的首選輸液，同時處理低鈉、低血容量、高鉀',
           'Dexamethasone 不影響 ACTH 刺激試驗的 cortisol 測定',
           'Calcium gluconate 在 K+ > 7 + ECG 變化時給予心臟保護',
           '矯正低鈉速率不超過 0.5 mEq/L/hr（避免 osmotic demyelination syndrome）',
@@ -2540,7 +2540,7 @@ export const ECC_CASES: CaseChallenge[] = [
           '長期 mineralocorticoid 補充：DOCP（desoxycorticosterone pivalate）2.2 mg/kg IM 每 25 天 + 低劑量 Prednisolone 0.1-0.2 mg/kg PO SID',
           '飼主衛教：說明 Addison 為終身疾病需終身用藥；壓力事件（手術、旅行、寄宿）前需增加 Prednisolone 劑量；定期監測電解質（初期每月→穩定後每 3-6 個月）；攜帶緊急用藥資訊卡',
         ],
-        feedback_correct: '正確！ACTH 刺激試驗 Post-ACTH cortisol < 2 μg/dL 確診原發性 Addison。長期管理需同時補充 mineralocorticoid（DOCP）和 glucocorticoid（Prednisolone）。DOCP 是犬 Addison 的首選 mineralocorticoid——注射方便、血中濃度穩定。初始劑量 2.2 mg/kg IM 每 25 天，之後依電解質調整劑量和間隔。低劑量 Prednisolone 補充 glucocorticoid——壓力事件時需加倍（stress dose）。飼主衛教和緊急用藥資訊是關鍵——Addison 犬在壓力下可能再次危象。治療得當的 Addison 犬預後極佳，壽命與正常犬相同。',
+        feedback_correct: '正確！ACTH 刺激試驗 Post-ACTH cortisol < 2 μg/dL 確診原發性 Addison。長期管理需同時補充 mineralocorticoid（DOCP）和 glucocorticoid（Prednisolone）。DOCP 是犬 Addison 的首選 mineralocorticoid，注射方便、血中濃度穩定。初始劑量 2.2 mg/kg IM 每 25 天，之後依電解質調整劑量和間隔。低劑量 Prednisolone 補充 glucocorticoid，壓力事件時需加倍（stress dose）。飼主衛教和緊急用藥資訊是關鍵，Addison 犬在壓力下可能再次危象。治療得當的 Addison 犬預後極佳，壽命與正常犬相同。',
         feedback_incorrect: '確診 Addison 後需同時補充 mineralocorticoid（DOCP）和 glucocorticoid（Prednisolone）。僅 Prednisolone 無法矯正電解質異常。Addison 為終身疾病不可停藥。電解質監測是劑量調整的依據。',
         key_learning_points: [
           'ACTH 刺激試驗 Post-ACTH cortisol < 2 μg/dL = 確診 Addison',
@@ -2561,7 +2561,7 @@ export const ECC_CASES: CaseChallenge[] = [
         '長期 DOCP + Prednisolone 的終身管理',
       ],
       common_pitfalls: [
-        '將間歇性 GI 症狀歸因於腸胃炎而忽略 Addison——"Great Pretender"',
+        '將間歇性 GI 症狀歸因於腸胃炎而忽略 Addison，"Great Pretender"',
         '未檢測電解質就將心搏過緩歸因於心臟疾病',
         '使用 Hydrocortisone 而非 Dexamethasone（會影響後續 ACTH 試驗）',
         '矯正低鈉過快導致 osmotic demyelination',

@@ -1,12 +1,18 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
-import type { ReviewQuestion, QuizResult, AnswerRecord } from '@/types/quiz';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
-import { Progress } from '@/components/ui/Progress';
 import { cn } from '@/lib/utils/cn';
-import { CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
+import type { QuizResult, ReviewQuestion } from '@/types/quiz';
+import {
+  QuizFeedback,
+  QuizFillBlank,
+  QuizOptions,
+  QuizProgressHeader,
+  QuizResults,
+  useQuizState,
+} from './quiz';
 
 interface QuizEngineProps {
   questions: ReviewQuestion[];
@@ -14,133 +20,24 @@ interface QuizEngineProps {
   className?: string;
 }
 
-type QuizState = 'answering' | 'reviewing' | 'complete' | 'empty';
+const TRUE_FALSE_OPTIONS: readonly string[] = ['正確', '錯誤'];
 
 export function QuizEngine({ questions, onComplete, className }: QuizEngineProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState<AnswerRecord[]>([]);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [fillBlankInput, setFillBlankInput] = useState('');
-  const [focusedIndex, setFocusedIndex] = useState<number>(0);
-  const [state, setState] = useState<QuizState>(questions.length === 0 ? 'empty' : 'answering');
-  const [startTime] = useState(() => Date.now());
-  const [questionStartTime, setQuestionStartTime] = useState(() => Date.now());
-  const optionsRef = useRef<HTMLDivElement>(null);
+  const {
+    phase,
+    currentIndex,
+    currentQuestion,
+    answers,
+    selectedOption,
+    fillBlankInput,
+    setSelectedOption,
+    setFillBlankInput,
+    getSelectedAnswer,
+    submitAnswer,
+    goNext,
+  } = useQuizState({ questions, onComplete });
 
-  const currentQuestion = questions[currentIndex] as ReviewQuestion | undefined;
-  const options = currentQuestion?.options ?? [];
-
-  // 重設 focusedIndex 當題目變化
-  useEffect(() => {
-    setFocusedIndex(0);
-  }, [currentIndex]);
-
-  const handleSelectOption = useCallback((option: string): void => {
-    if (state !== 'answering') return;
-    setSelectedOption(option);
-  }, [state]);
-
-  /** 鍵盤導航：ArrowUp/Down 切換選項、Enter/Space 選擇 */
-  const handleKeyDown = useCallback((e: React.KeyboardEvent): void => {
-    if (state !== 'answering') return;
-
-    switch (e.key) {
-      case 'ArrowDown':
-      case 'ArrowRight':
-        e.preventDefault();
-        setFocusedIndex((prev) => {
-          const next = (prev + 1) % options.length;
-          const buttons = optionsRef.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]');
-          buttons?.[next]?.focus();
-          return next;
-        });
-        break;
-      case 'ArrowUp':
-      case 'ArrowLeft':
-        e.preventDefault();
-        setFocusedIndex((prev) => {
-          const next = (prev - 1 + options.length) % options.length;
-          const buttons = optionsRef.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]');
-          buttons?.[next]?.focus();
-          return next;
-        });
-        break;
-      case 'Enter':
-      case ' ':
-        e.preventDefault();
-        if (options[focusedIndex]) {
-          handleSelectOption(options[focusedIndex]);
-        }
-        break;
-    }
-  }, [state, options, focusedIndex, handleSelectOption]);
-
-  const getSelectedAnswer = useCallback((): string | null => {
-    if (!currentQuestion) return null;
-    if (currentQuestion.question_type === 'fill_blank') {
-      return fillBlankInput.trim() || null;
-    }
-    return selectedOption;
-  }, [currentQuestion, fillBlankInput, selectedOption]);
-
-  const handleSubmitAnswer = useCallback((): void => {
-    const answer = getSelectedAnswer();
-    if (!answer || !currentQuestion) return;
-
-    let isCorrect: boolean;
-    if (currentQuestion.question_type === 'fill_blank') {
-      // Case-insensitive, trim whitespace comparison
-      isCorrect = answer.toLowerCase() === currentQuestion.correct_answer.toLowerCase();
-    } else {
-      isCorrect = answer === currentQuestion.correct_answer;
-    }
-    const timeSpent = Math.round((Date.now() - questionStartTime) / 1000);
-
-    const record: AnswerRecord = {
-      question_id: currentQuestion.id,
-      selected_answer: answer,
-      is_correct: isCorrect,
-      time_spent_seconds: timeSpent,
-    };
-
-    setAnswers((prev) => [...prev, record]);
-    setState('reviewing');
-  }, [getSelectedAnswer, currentQuestion, questionStartTime]);
-
-  const handleNext = useCallback((): void => {
-    const nextIndex = currentIndex + 1;
-
-    if (nextIndex >= questions.length) {
-      setState('complete');
-
-      const allAnswers = [...answers];
-      // The last answer was already added in handleSubmitAnswer
-      const correctCount = allAnswers.filter((a) => a.is_correct).length;
-      const totalTime = Math.round((Date.now() - startTime) / 1000);
-
-      const result: QuizResult = {
-        session_id: `quiz-${Date.now()}`,
-        node_id: questions[0]?.node_id ?? '',
-        total_questions: questions.length,
-        correct_count: correctCount,
-        accuracy: questions.length > 0 ? correctCount / questions.length : 0,
-        total_time_seconds: totalTime,
-        answers: allAnswers,
-        completed_at: new Date().toISOString(),
-      };
-      onComplete(result);
-      return;
-    }
-
-    setCurrentIndex(nextIndex);
-    setSelectedOption(null);
-    setFillBlankInput('');
-    setQuestionStartTime(Date.now());
-    setState('answering');
-  }, [currentIndex, questions, answers, startTime, onComplete]);
-
-  // Empty state
-  if (state === 'empty') {
+  if (phase === 'empty') {
     return (
       <div className={cn('flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 p-8', className)}>
         <p className="text-sm text-gray-500">目前沒有可用的測驗題目</p>
@@ -148,172 +45,56 @@ export function QuizEngine({ questions, onComplete, className }: QuizEngineProps
     );
   }
 
-  // Complete state
-  if (state === 'complete') {
-    const correctCount = answers.filter((a) => a.is_correct).length;
-    const accuracy = questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0;
-
-    return (
-      <Card className={cn('mx-auto max-w-lg', className)}>
-        <CardBody className="space-y-4 text-center">
-          <h3 className="text-lg font-semibold text-gray-900">測驗結束</h3>
-          <div className="space-y-2">
-            <p className="text-3xl font-bold text-indigo-600">{accuracy}%</p>
-            <p className="text-sm text-gray-500">
-              {correctCount} / {questions.length} 題正確
-            </p>
-          </div>
-          <Progress value={accuracy} max={100} variant="mastery" showPercentage />
-          <div className="space-y-1 text-left">
-            {answers.map((answer, i) => (
-              <div key={i} className="flex items-center gap-2 text-sm">
-                {answer.is_correct ? (
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
-                ) : (
-                  <XCircle className="h-4 w-4 text-red-500" />
-                )}
-                <span className="text-gray-600">
-                  第 {i + 1} 題 — {answer.time_spent_seconds}s
-                </span>
-              </div>
-            ))}
-          </div>
-        </CardBody>
-      </Card>
-    );
+  if (phase === 'complete') {
+    return <QuizResults answers={answers} totalQuestions={questions.length} className={className} />;
   }
 
   if (!currentQuestion) return null;
 
-  const isReviewing = state === 'reviewing';
+  const isReviewing = phase === 'reviewing';
+  const optionsForRender = currentQuestion.question_type === 'true_false'
+    ? [...TRUE_FALSE_OPTIONS]
+    : (currentQuestion.options ?? []);
 
   return (
     <Card className={cn('mx-auto max-w-lg', className)} role="region" aria-label="測驗區域">
       <CardBody className="space-y-4">
-        {/* Progress */}
-        <div className="flex items-center justify-between text-xs text-gray-500">
-          <span aria-live="polite">第 {currentIndex + 1} / {questions.length} 題</span>
-          <Progress
-            value={currentIndex + 1}
-            max={questions.length}
-            size="sm"
-            className="w-32"
-            aria-label={`進度：第 ${currentIndex + 1} 題，共 ${questions.length} 題`}
-          />
-        </div>
+        <QuizProgressHeader current={currentIndex + 1} total={questions.length} />
 
-        {/* Question */}
-        <p id={`question-${currentIndex}`} className="text-sm font-medium text-gray-900 leading-relaxed">
+        <p id={`question-${currentQuestion.id}`} className="text-sm font-medium text-gray-900 leading-relaxed">
           {currentQuestion.question}
         </p>
 
-        {/* Answer Input — adapts to question type */}
         {currentQuestion.question_type === 'fill_blank' ? (
-          <div className="space-y-2">
-            <input
-              type="text"
-              value={fillBlankInput}
-              onChange={(e) => setFillBlankInput(e.target.value)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && fillBlankInput.trim()) handleSubmitAnswer(); }}
-              disabled={isReviewing}
-              placeholder="請輸入答案..."
-              className={cn(
-                'w-full rounded-lg border px-4 py-3 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500',
-                isReviewing && fillBlankInput.toLowerCase() === currentQuestion.correct_answer.toLowerCase()
-                  ? 'border-green-400 bg-green-50'
-                  : isReviewing
-                    ? 'border-red-400 bg-red-50'
-                    : 'border-gray-200'
-              )}
-              aria-label="填寫答案"
-            />
-            {isReviewing && (
-              <p className="text-sm text-gray-600">
-                正確答案：<strong className="text-green-700">{currentQuestion.correct_answer}</strong>
-              </p>
-            )}
-          </div>
+          <QuizFillBlank
+            value={fillBlankInput}
+            onChange={setFillBlankInput}
+            onSubmit={submitAnswer}
+            correctAnswer={currentQuestion.correct_answer}
+            isReviewing={isReviewing}
+          />
         ) : (
-          <div
-            ref={optionsRef}
-            role="radiogroup"
-            aria-labelledby={`question-${currentIndex}`}
-            className="space-y-2"
-            onKeyDown={handleKeyDown}
-          >
-            {(currentQuestion.question_type === 'true_false'
-              ? ['正確', '錯誤']
-              : options
-            ).map((option, i) => {
-              const letter = String.fromCharCode(65 + i);
-              const isSelected = selectedOption === option;
-              const isCorrect = option === currentQuestion.correct_answer;
-
-              let optionStyle = 'border-gray-200 hover:border-indigo-300 hover:bg-indigo-50';
-              if (isReviewing && isCorrect) {
-                optionStyle = 'border-green-400 bg-green-50';
-              } else if (isReviewing && isSelected && !isCorrect) {
-                optionStyle = 'border-red-400 bg-red-50';
-              } else if (isSelected) {
-                optionStyle = 'border-indigo-500 bg-indigo-50';
-              }
-
-              return (
-                <button
-                  key={i}
-                  type="button"
-                  role="radio"
-                  aria-checked={isSelected}
-                  aria-label={`選項 ${letter}: ${option}`}
-                  tabIndex={i === focusedIndex ? 0 : -1}
-                  onClick={() => handleSelectOption(option)}
-                  disabled={isReviewing}
-                  className={cn(
-                    'flex w-full items-start gap-3 rounded-lg border p-3 text-left text-sm transition-colors',
-                    'disabled:cursor-default focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1',
-                    optionStyle
-                  )}
-                >
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-600">
-                    {letter}
-                  </span>
-                  <span className="text-gray-700">{option}</span>
-                </button>
-              );
-            })}
-          </div>
+          <QuizOptions
+            questionId={currentQuestion.id}
+            options={optionsForRender}
+            correctAnswer={currentQuestion.correct_answer}
+            selectedOption={selectedOption}
+            isReviewing={isReviewing}
+            onSelect={setSelectedOption}
+          />
         )}
 
-        {/* Answer feedback + Explanation (reviewing) — aria-live for screen readers */}
-        <div aria-live="polite" aria-atomic="true">
-          {isReviewing && (
-            <div className="space-y-2">
-              <p className="sr-only">
-                {selectedOption === currentQuestion.correct_answer ? '答對了！' : '答錯了。'}
-                正確答案是：{currentQuestion.options?.[Number(currentQuestion.correct_answer)] ?? currentQuestion.correct_answer}
-              </p>
-              {currentQuestion.explanation && (
-                <div className="rounded-lg bg-blue-50 p-3">
-                  <p className="text-xs font-medium text-blue-700">解析</p>
-                  <p className="mt-1 text-sm text-blue-800">{currentQuestion.explanation}</p>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
+        {isReviewing && (
+          <QuizFeedback question={currentQuestion} selectedAnswer={selectedOption} />
+        )}
 
-        {/* Actions */}
         <div className="flex justify-end">
-          {state === 'answering' ? (
-            <Button
-              size="sm"
-              onClick={handleSubmitAnswer}
-              disabled={!getSelectedAnswer()}
-            >
+          {phase === 'answering' ? (
+            <Button size="sm" onClick={submitAnswer} disabled={!getSelectedAnswer()}>
               確認答案
             </Button>
           ) : (
-            <Button size="sm" onClick={handleNext} icon={<ArrowRight className="h-4 w-4" />}>
+            <Button size="sm" onClick={goNext} icon={<ArrowRight className="h-4 w-4" />}>
               {currentIndex + 1 >= questions.length ? '查看結果' : '下一題'}
             </Button>
           )}

@@ -78,7 +78,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'SDMA 可比 Creatinine 更早偵測到腎功能下降，約在腎功能喪失 25-40% 時即可升高。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'SDMA（Symmetric Dimethylarginine）在腎功能喪失約 25-40% 時即可偵測到升高，比 Creatinine 平均早 17 個月。Creatinine 通常要在腎功能喪失 > 75% 才會顯著升高，且受肌肉量影響。SDMA 不受肌肉量影響，對消瘦或老年動物特別有價值。',
+    explanation: 'SDMA（Symmetric Dimethylarginine）在腎功能喪失約 25-40% 時即可偵測到升高，比 Creatinine 平均早 17 個月。Creatinine 通常要在腎功能喪失 > 75% 才會明顯升高，且受肌肉量影響。SDMA 不受肌肉量影響，對消瘦或老年動物特別有價值。',
     difficulty: 2, spaced_rep: true, tags: ['SDMA', 'CKD', '腎功能'], image_placeholder: null,
   },
   {
@@ -94,7 +94,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬艾利希體症的慢性期可導致骨髓發育不全和全血球減少，預後通常不良。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'E. canis 慢性期可進展為骨髓發育不全（bone marrow hypoplasia），導致全血球減少（pancytopenia）。此階段的治療反應差，預後謹慎至不良。這也是為什麼早期診斷和完整治療（28 天 Doxycycline）非常重要——避免疾病進展至慢性期。',
+    explanation: 'E. canis 慢性期可進展為骨髓發育不全（bone marrow hypoplasia），導致全血球減少（pancytopenia）。此階段的治療反應差，預後謹慎至不良。這也是為什麼早期診斷和完整治療（28 天 Doxycycline）非常重要，避免疾病進展至慢性期。',
     difficulty: 3, spaced_rep: true, tags: ['Ehrlichia', '慢性期', '預後'], image_placeholder: null,
   },
 
@@ -166,7 +166,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '下列哪項最能說明小動物內科中「evidence-based medicine（EBM）」的最高等級證據？',
     options: ['專家意見', '病例系列報告', '系統性回顧與統合分析（systematic review & meta-analysis）', '回溯性世代研究'],
     correct_answer: '系統性回顧與統合分析（systematic review & meta-analysis）',
-    explanation: 'EBM 的證據等級金字塔中，系統性回顧與統合分析位於最頂端，其次為隨機對照試驗（RCT）、世代研究、病例對照研究、病例系列、專家意見。獸醫領域的 RCT 數量有限，因此臨床決策常需結合較低等級的證據與臨床經驗。',
+    explanation: 'EBM 的證據等級金字塔中，系統性回顧與統合分析位於最頂端，其次為隨機對照試驗（RCT）、世代研究、病例對照研究、病例系列、專家意見。獸醫領域的 RCT 數量有限，所以臨床決策常需結合較低等級的證據與臨床經驗。',
     difficulty: 2, spaced_rep: true, tags: ['內科總覽', 'EBM', '證據等級'], image_placeholder: null,
   },
   {
@@ -182,7 +182,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '在小動物內科學中，「Occam\'s razor」原則建議優先以單一疾病解釋所有臨床表現，再考慮多重疾病共存。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'Occam\'s razor（奧坎剃刀）原則在醫學中表示應優先尋找能解釋所有臨床表現的單一診斷。然而在老年小動物中，多重共病（multimorbidity）十分常見，因此也需靈活運用「Hickam\'s dictum」——患者可以同時有多個互不相關的疾病。',
+    explanation: 'Occam\'s razor（奧坎剃刀）原則在醫學中表示應優先尋找能解釋所有臨床表現的單一診斷。不過在老年小動物中，多重共病（multimorbidity）十分常見，所以也需靈活運用「Hickam\'s dictum」，患者可以同時有多個互不相關的疾病。',
     difficulty: 2, spaced_rep: true, tags: ['內科總覽', '診斷原則'], image_placeholder: null,
   },
   {
@@ -190,7 +190,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 10 歲已絕育雌性拉布拉多因「多喝多尿、腹部膨大、皮膚變薄」就診。您建立的 problem list 包含 PU/PD、腹部膨大和皮膚病變。根據 problem-oriented approach，最合理的下一步為何？',
     options: ['針對每個問題列出鑑別診斷，尋找能統一解釋的疾病', '立即進行腹腔超音波', '先治療皮膚問題再觀察其他症狀', '直接安排 ACTH 刺激試驗'],
     correct_answer: '針對每個問題列出鑑別診斷，尋找能統一解釋的疾病',
-    explanation: 'Problem-oriented approach 的下一步是為每個問題建立鑑別診斷，然後尋找交集——哪個疾病能同時解釋所有問題。PU/PD + 腹部膨大（可能是肝腫大或腹水）+ 皮膚變薄的交集包括 Cushing\'s syndrome，但需系統性排查而非直接跳到特定檢查。',
+    explanation: 'Problem-oriented approach 的下一步是為每個問題建立鑑別診斷，然後尋找交集，哪個疾病能同時解釋所有問題。PU/PD + 腹部膨大（可能是肝腫大或腹水）+ 皮膚變薄的交集包括 Cushing\'s syndrome，但需系統性排查而非直接跳到特定檢查。',
     difficulty: 2, spaced_rep: true, tags: ['內科總覽', '診斷思維', '病例'], image_placeholder: null,
   },
   {
@@ -262,9 +262,9 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L1-001-007', node_id: 'IM-L1-001', question_type: 'case_based',
     question: '一隻 5 歲貓的尿液比重為 1.035，血清 Creatinine 1.2 mg/dL，SDMA 9 μg/dL。飼主因貓飲水量稍增而擔心。最正確的解讀為何？',
-    options: ['尿液濃縮能力正常，目前無腎功能異常證據', '已有早期 CKD，需限磷飲食', '腎髓質沖刷，需進一步檢查', '必須做 GFR 測量才能確認'],
+    options: ['尿液濃縮能力正常，目前無腎功能異常證據', '已有早期 CKD，需限磷飲食', '腎髓質沖刷，需後續檢查', '必須做 GFR 測量才能確認'],
     correct_answer: '尿液濃縮能力正常，目前無腎功能異常證據',
-    explanation: '貓 USG 1.035 表示良好的濃縮能力（貓 USG >1.035 為適當濃縮），Creatinine 和 SDMA 均在正常範圍。尿液濃縮能力通常是最早喪失的腎功能之一，因此正常的 USG 加上正常的腎指數，目前無腎功能異常的證據。飲水量輕微增加可能與飲食、環境或行為因素有關。',
+    explanation: '貓 USG 1.035 表示良好的濃縮能力（貓 USG >1.035 為適當濃縮），Creatinine 和 SDMA 均在正常範圍。尿液濃縮能力通常是最早喪失的腎功能之一，所以正常的 USG 加上正常的腎指數，目前無腎功能異常的證據。飲水量輕微增加可能與飲食、環境或行為因素有關。',
     difficulty: 2, spaced_rep: true, tags: ['腎臟生理', '尿液分析', 'USG'], image_placeholder: null,
   },
   {
@@ -306,7 +306,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '在小動物臨床中，直接 Coombs test（直接抗球蛋白試驗）的檢測目標為何？',
     options: ['血清中的游離自體抗體', '紅血球表面結合的抗體或補體', '淋巴球上的 MHC 分子', '血小板表面的抗體'],
     correct_answer: '紅血球表面結合的抗體或補體',
-    explanation: '直接 Coombs test 偵測紅血球表面已結合的 IgG 抗體和/或 C3 補體片段。這是 IMHA 診斷的重要輔助工具之一。然而，Coombs test 的敏感度約 60-70%，陰性結果不能排除 IMHA。間接 Coombs test 則偵測血清中的游離抗紅血球抗體。',
+    explanation: '直接 Coombs test 偵測紅血球表面已結合的 IgG 抗體和/或 C3 補體片段。這是 IMHA 診斷的重要輔助工具之一。不過，Coombs test 的敏感度約 60-70%，陰性結果不能排除 IMHA。間接 Coombs test 則偵測血清中的游離抗紅血球抗體。',
     difficulty: 3, spaced_rep: true, tags: ['免疫學', 'Coombs test', 'IMHA'], image_placeholder: null,
   },
   {
@@ -330,7 +330,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 4 歲德國牧羊犬被診斷為肛門周圍瘻管（perianal fistula），組織病理顯示大量淋巴球和漿細胞浸潤。此病變最可能涉及哪種免疫反應？',
     options: ['IgE 媒介的 Type I 反應', 'Type III 免疫複合體沉積', 'T 細胞媒介的 Type IV 遲發型反應', '補體活化的 Type II 反應'],
     correct_answer: 'T 細胞媒介的 Type IV 遲發型反應',
-    explanation: '犬肛門周圍瘻管被認為是免疫媒介疾病，組織學上以淋巴球和漿細胞浸潤為主，符合 Type IV 遲發型超敏反應的特徵。德國牧羊犬好發此病，且與 MHC（DLA）基因型相關。治療上 Cyclosporine（calcineurin inhibitor，抑制 T 細胞活化）的效果佳，進一步支持 T 細胞在病理中的核心角色。',
+    explanation: '犬肛門周圍瘻管被認為是免疫媒介疾病，組織學上以淋巴球和漿細胞浸潤為主，符合 Type IV 遲發型超敏反應的特徵。德國牧羊犬好發此病，且與 MHC（DLA）基因型相關。治療上 Cyclosporine（calcineurin inhibitor，抑制 T 細胞活化）的效果佳，後續支持 T 細胞在病理中的核心角色。',
     difficulty: 3, spaced_rep: true, tags: ['免疫學', 'Type IV', '肛門瘻管', '病例'], image_placeholder: null,
   },
   {
@@ -385,10 +385,10 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-IM-L1-003-006', node_id: 'IM-L1-003', question_type: 'case_based',
-    question: '一隻 3 歲約克夏犬出現餐後嘔吐和間歇性腹瀉，血檢顯示低白蛋白血症。餐前膽汁酸正常但餐後膽汁酸顯著升高（85 μmol/L，參考值 <25）。最可能的病理生理機制為何？',
+    question: '一隻 3 歲約克夏犬出現餐後嘔吐和間歇性腹瀉，血檢顯示低白蛋白血症。餐前膽汁酸正常但餐後膽汁酸明顯升高（85 μmol/L，參考值 <25）。最可能的病理生理機制為何？',
     options: ['肝細胞功能衰竭導致膽汁酸合成異常', '門脈系統分流使膽汁酸繞過肝臟首過代謝', '迴腸膽汁酸重吸收功能喪失', '膽管完全阻塞'],
     correct_answer: '門脈系統分流使膽汁酸繞過肝臟首過代謝',
-    explanation: '餐後膽汁酸顯著升高（餐前可能正常或輕度升高）是門脈分流（PSS）的特徵性表現。餐後從腸道重吸收的膽汁酸經門脈分流直接進入全身循環，未經肝臟有效清除。約克夏犬是先天性 PSS 的好發品種。低白蛋白血症反映肝臟合成功能受損。膽管阻塞時餐前膽汁酸也會明顯升高。',
+    explanation: '餐後膽汁酸明顯升高（餐前可能正常或輕度升高）是門脈分流（PSS）的特徵性表現。餐後從腸道重吸收的膽汁酸經門脈分流直接進入全身循環，未經肝臟有效清除。約克夏犬是先天性 PSS 的好發品種。低白蛋白血症反映肝臟合成功能受損。膽管阻塞時餐前膽汁酸也會明顯升高。',
     difficulty: 3, spaced_rep: true, tags: ['消化系統', '膽汁酸', '門脈分流', '病例'], image_placeholder: null,
   },
   {
@@ -446,7 +446,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓的甲狀腺機能亢進大多數是由甲狀腺腺瘤性增生或良性腺瘤引起，惡性甲狀腺癌僅佔約 1-3%。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '貓甲亢約 97-99% 由良性甲狀腺腺瘤性增生（adenomatous hyperplasia）或腺瘤（adenoma）引起，惡性甲狀腺癌僅 1-3%。這與犬不同——犬的甲狀腺腫塊約 50% 為惡性。貓甲亢的良性本質使得 Methimazole 藥物治療、手術切除和放射碘治療均為有效選項。',
+    explanation: '貓甲亢約 97-99% 由良性甲狀腺腺瘤性增生（adenomatous hyperplasia）或腺瘤（adenoma）引起，惡性甲狀腺癌僅 1-3%。這與犬不同，犬的甲狀腺腫塊約 50% 為惡性。貓甲亢的良性本質使得 Methimazole 藥物治療、手術切除和放射碘治療均為有效選項。',
     difficulty: 2, spaced_rep: true, tags: ['內分泌', '甲亢', '貓', '病理'], image_placeholder: null,
   },
   {
@@ -488,7 +488,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '下列哪種機制最能解釋缺血性 AKI 中腎小管上皮細胞損傷的核心病理？',
     options: ['免疫複合體沉積於腎絲球', 'ATP 耗竭導致 Na+/K+-ATPase 功能喪失和細胞骨架崩解', '腎小管管腔內結晶沉澱阻塞', '自體抗體攻擊腎小管基底膜'],
     correct_answer: 'ATP 耗竭導致 Na+/K+-ATPase 功能喪失和細胞骨架崩解',
-    explanation: '缺血導致腎小管上皮細胞（尤其是近曲小管 S3 段和髓質升支粗段）ATP 急速耗竭。Na+/K+-ATPase 從基底側移位至頂端膜，細胞骨架崩解，細胞脫落至管腔形成 cast，進一步阻塞和加劇損傷。再灌流時的氧化壓力（ROS）造成二次損傷。',
+    explanation: '缺血導致腎小管上皮細胞（尤其是近曲小管 S3 段和髓質升支粗段）ATP 急速耗竭。Na+/K+-ATPase 從基底側移位至頂端膜，細胞骨架崩解，細胞脫落至管腔形成 cast，後續阻塞和加劇損傷。再灌流時的氧化壓力（ROS）造成二次損傷。',
     difficulty: 3, spaced_rep: true, tags: ['AKI', '缺血性', '病理機轉'], image_placeholder: null,
   },
   {
@@ -578,7 +578,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬免疫介導性血小板減少症（ITP）中，血小板計數 <30,000/μL 時通常已有自發性出血風險。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '血小板計數 <30,000/μL（尤其 <10,000/μL）時自發性出血風險顯著增加，可能出現皮膚瘀斑、鼻出血、GI 出血等。ITP 的血小板常極度減少（<20,000/μL），因為免疫介導的血小板破壞速率遠超骨髓代償產生速率。治療反應通常在 Prednisolone 開始後 3-7 天開始見到血小板回升。',
+    explanation: '血小板計數 <30,000/μL（尤其 <10,000/μL）時自發性出血風險明顯增加，可能出現皮膚瘀斑、鼻出血、GI 出血等。ITP 的血小板常極度減少（<20,000/μL），因為免疫介導的血小板破壞速率遠超骨髓代償產生速率。治療反應通常在 Prednisolone 開始後 3-7 天開始見到血小板回升。',
     difficulty: 2, spaced_rep: true, tags: ['自體免疫', 'ITP', '血小板', '出血'], image_placeholder: null,
   },
   {
@@ -628,7 +628,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬腸道微生物失調（dysbiosis）的評估中，「Dysbiosis Index（DI）」主要基於哪種方法？',
     options: ['糞便培養鑑定特定病原菌', '糞便 PCR 量化特定細菌群的相對豐度', '腸道組織切片的 FISH 螢光染色', '血清抗微生物抗體測定'],
     correct_answer: '糞便 PCR 量化特定細菌群的相對豐度',
-    explanation: 'Texas A&M 大學 GI Lab 開發的 Dysbiosis Index 使用 qPCR 量化 7 個細菌類群（如 Faecalibacterium, Turicibacter, Streptococcus, Blautia, Fusobacterium, C. hiranonis, E. coli），計算出 DI 值。DI >2 表示顯著失調，0-2 為輕度，<0 為正常。此工具幫助監測 CE 治療反應和益生菌療效。',
+    explanation: 'Texas A&M 大學 GI Lab 開發的 Dysbiosis Index 使用 qPCR 量化 7 個細菌類群（如 Faecalibacterium, Turicibacter, Streptococcus, Blautia, Fusobacterium, C. hiranonis, E. coli），計算出 DI 值。DI >2 表示明顯失調，0-2 為輕度，<0 為正常。此工具幫助監測 CE 治療反應和益生菌療效。',
     difficulty: 3, spaced_rep: true, tags: ['腸道發炎', 'dysbiosis', 'DI'], image_placeholder: null,
   },
   {
@@ -660,7 +660,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 9 歲法國鬥牛犬被診斷為中度淋巴漿細胞性腸炎（LPE），免疫組化染色（IHC）顯示固有層淋巴球以 CD3+ T 細胞為主，未見 clonality。此 IHC 結果的臨床意義為何？',
     options: ['確認為腸道 T 細胞淋巴瘤', '排除任何腫瘤可能', '支持 IBD 診斷，但需結合臨床和 PARR/PCR 排除早期淋巴瘤', '表示需要立即化療'],
     correct_answer: '支持 IBD 診斷，但需結合臨床和 PARR/PCR 排除早期淋巴瘤',
-    explanation: '以 CD3+ T 細胞為主的浸潤在 LPE 和小細胞 T 細胞腸道淋巴瘤中都可見。未見 clonality 支持多克隆（IBD）而非單克隆（淋巴瘤）的浸潤，但需結合 PARR（PCR for antigen receptor rearrangement）進一步確認。小細胞淋巴瘤與嚴重 IBD 的鑑別在組織學上可很困難，IHC 和 clonality 分析提供重要附加資訊。',
+    explanation: '以 CD3+ T 細胞為主的浸潤在 LPE 和小細胞 T 細胞腸道淋巴瘤中都可見。未見 clonality 支持多克隆（IBD）而非單克隆（淋巴瘤）的浸潤，但需結合 PARR（PCR for antigen receptor rearrangement）後續確認。小細胞淋巴瘤與嚴重 IBD 的鑑別在組織學上可很困難，IHC 和 clonality 分析提供重要附加資訊。',
     difficulty: 4, spaced_rep: true, tags: ['腸道發炎', 'LPE', '淋巴瘤鑑別', 'IHC', '病例'], image_placeholder: null,
   },
   {
@@ -707,10 +707,10 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-IM-L2-004-005', node_id: 'IM-L2-004', question_type: 'true_false',
-    question: '貓的肝臟 ALP 半衰期僅約 6 小時（犬約 70 小時），因此貓 ALP 即使輕度升高也具有重要臨床意義。',
+    question: '貓的肝臟 ALP 半衰期僅約 6 小時（犬約 70 小時），所以貓 ALP 即使輕度升高也具有重要臨床意義。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '貓肝 ALP 半衰期極短（約 6 小時 vs 犬約 70 小時），且貓不會產生類固醇誘導性 ALP 同工酶。因此貓 ALP 升高（即使僅 2-3 倍上限）即提示明顯的膽汁鬱滯或肝膽疾病，應進行進一步檢查（腹腔超音波、膽汁酸等）。犬 ALP 升高則需考慮更多非肝膽因素（如 Cushing\'s、藥物、骨骼生長）。',
+    explanation: '貓肝 ALP 半衰期極短（約 6 小時 vs 犬約 70 小時），且貓不會產生類固醇誘導性 ALP 同工酶。所以貓 ALP 升高（即使僅 2-3 倍上限）即提示明顯的膽汁鬱滯或肝膽疾病，應進行後續檢查（腹腔超音波、膽汁酸等）。犬 ALP 升高則需考慮更多非肝膽因素（如 Cushing\'s、藥物、骨骼生長）。',
     difficulty: 2, spaced_rep: true, tags: ['肝損傷', 'ALP', '貓', '半衰期'], image_placeholder: null,
   },
   {
@@ -804,13 +804,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['酸鹼', '混合型異常', '酸血症'], image_placeholder: null,
   },
 
-  // ===== IM-L3-001 Cushing's — 7 remaining (1 existing Q-IM-002) =====
+  // ===== IM-L3-001 Cushing's，7 remaining (1 existing Q-IM-002) =====
   {
     id: 'Q-IM-L3-001-001', node_id: 'IM-L3-001', question_type: 'mcq',
     question: '犬 Cushing\'s syndrome 中，腦下垂體依賴型（PDH）約佔所有自然發生病例的多少比例？',
     options: ['約 50%', '約 65%', '約 80-85%', '約 95%'],
     correct_answer: '約 80-85%',
-    explanation: '犬自然發生的 Cushing\'s syndrome 約 80-85% 為 PDH（pituitary-dependent hyperadrenocorticism），15-20% 為腎上腺腫瘤型（AT：腺瘤或腺癌）。PDH 由腦下垂體（多為前葉或中間葉）ACTH 分泌腫瘤引起，導致雙側腎上腺增生。區分兩者對治療策略的選擇至關重要。',
+    explanation: '犬自然發生的 Cushing\'s syndrome 約 80-85% 為 PDH（pituitary-dependent hyperadrenocorticism），15-20% 為腎上腺腫瘤型（AT：腺瘤或腺癌）。PDH 由腦下垂體（多為前葉或中間葉）ACTH 分泌腫瘤引起，導致雙側腎上腺增生。區分兩者對治療策略的選擇不能省。',
     difficulty: 3, spaced_rep: true, tags: ['Cushing', 'PDH', '流行病學'], image_placeholder: null,
   },
   {
@@ -818,7 +818,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬 Cushing\'s syndrome 的經典臨床表現不包含下列何者？',
     options: ['多喝多尿（PU/PD）', '腹部膨大（pot-belly appearance）', '低血糖發作', '對稱性脫毛和皮膚鈣沉著'],
     correct_answer: '低血糖發作',
-    explanation: '犬 Cushing\'s 的經典表現包括 PU/PD（約 90%）、多食、腹部膨大（肝腫大+腹肌無力）、對稱性脫毛、皮膚變薄/鈣沉著、喘息、肌肉無力。皮質醇會增加血糖（糖質新生增加+胰島素阻抗），因此 Cushing\'s 更常見高血糖甚至繼發糖尿病，而非低血糖。低血糖反而常見於 Addison\'s 或 insulinoma。',
+    explanation: '犬 Cushing\'s 的經典表現包括 PU/PD（約 90%）、多食、腹部膨大（肝腫大+腹肌無力）、對稱性脫毛、皮膚變薄/鈣沉著、喘息、肌肉無力。皮質醇會增加血糖（糖質新生增加+胰島素阻抗），所以 Cushing\'s 更常見高血糖甚至繼發糖尿病，而非低血糖。低血糖反而常見於 Addison\'s 或 insulinoma。',
     difficulty: 3, spaced_rep: true, tags: ['Cushing', '臨床表現'], image_placeholder: null,
   },
   {
@@ -862,7 +862,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['Cushing', 'UTI', '免疫抑制'], image_placeholder: null,
   },
 
-  // ===== IM-L3-002 甲低 — 7 remaining (1 existing Q-IM-003) =====
+  // ===== IM-L3-002 甲低，7 remaining (1 existing Q-IM-003) =====
   {
     id: 'Q-IM-L3-002-001', node_id: 'IM-L3-002', question_type: 'mcq',
     question: '犬甲狀腺機能低下的最常見病因為何？',
@@ -876,7 +876,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '下列哪項是犬甲低的皮膚病變特徵？',
     options: ['瘙癢性丘疹和痂皮', '對稱性非搔癢性脫毛、「悲傷臉」和皮膚增厚（myxedema）', '多發性化膿性結節', '光敏感性皮膚炎'],
     correct_answer: '對稱性非搔癢性脫毛、「悲傷臉」和皮膚增厚（myxedema）',
-    explanation: '犬甲低的皮膚表現包括：雙側對稱性脫毛（好發於軀幹和尾巴——「rat tail」）、不搔癢（除非繼發感染）、皮膚增厚和色素沉著、黏液水腫（myxedema）導致的「悲傷/悲劇面容」（tragic facial expression，以 Labrador 最經典）。皮膚症狀反映甲狀腺素在維持毛囊周期和皮膚代謝中的重要角色。',
+    explanation: '犬甲低的皮膚表現包括：雙側對稱性脫毛（好發於軀幹和尾巴，「rat tail」）、不搔癢（除非繼發感染）、皮膚增厚和色素沉著、黏液水腫（myxedema）導致的「悲傷/悲劇面容」（tragic facial expression，以 Labrador 最經典）。皮膚症狀反映甲狀腺素在維持毛囊周期和皮膚代謝中的重要角色。',
     difficulty: 3, spaced_rep: true, tags: ['甲低', '皮膚', 'myxedema'], image_placeholder: null,
   },
   {
@@ -884,7 +884,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬甲低診斷時，「euthyroid sick syndrome（ESS）」導致假陽性的機制為何？',
     options: ['甲狀腺抗體干擾 T4 檢測', '非甲狀腺疾病或藥物抑制 T4 的蛋白結合和周邊轉換，導致 Total T4 偏低', 'TSH 假性升高', 'Free T4 檢測方法不夠敏感'],
     correct_answer: '非甲狀腺疾病或藥物抑制 T4 的蛋白結合和周邊轉換，導致 Total T4 偏低',
-    explanation: 'ESS 指非甲狀腺的全身性疾病（感染、腫瘤、肝腎病等）或某些藥物（糖皮質激素、NSAIDs、磺胺、phenobarbital）降低甲狀腺荷爾蒙的血清蛋白結合和 5\'-deiodinase 活性，導致 Total T4 低下但甲狀腺功能實際正常。因此不應在動物有其他疾病時診斷甲低，應待疾病控制後再評估。',
+    explanation: 'ESS 指非甲狀腺的全身性疾病（感染、腫瘤、肝腎病等）或某些藥物（糖皮質激素、NSAIDs、磺胺、phenobarbital）降低甲狀腺荷爾蒙的血清蛋白結合和 5\'-deiodinase 活性，導致 Total T4 低下但甲狀腺功能實際正常。所以不應在動物有其他疾病時診斷甲低，應待疾病控制後再評估。',
     difficulty: 3, spaced_rep: true, tags: ['甲低', 'ESS', '假陽性', '診斷陷阱'], image_placeholder: null,
   },
   {
@@ -920,13 +920,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['甲低', '高膽固醇', '血檢異常'], image_placeholder: null,
   },
 
-  // ===== IM-L3-003 貓甲亢 — 7 remaining (1 existing Q-IM-006) =====
+  // ===== IM-L3-003 貓甲亢，7 remaining (1 existing Q-IM-006) =====
   {
     id: 'Q-IM-L3-003-001', node_id: 'IM-L3-003', question_type: 'mcq',
     question: '貓甲狀腺機能亢進最常見的臨床表現組合為何？',
     options: ['嗜睡、體重增加、便秘', '體重減輕、食慾增加、心搏過速', '多喝多尿、腹部膨大、脫毛', '嘔吐、黃疸、腹瀉'],
     correct_answer: '體重減輕、食慾增加、心搏過速',
-    explanation: '貓甲亢的經典三聯症：體重減輕（>90%）+ 多食（約 50-80%）+ 心搏過速（約 50%）。其他常見症狀包括嘔吐/腹瀉、多飲多尿、活動力增加/躁動、毛髮品質差。約 10% 的老年甲亢貓表現為「apathetic hyperthyroidism」——嗜睡和厭食而非典型的高代謝表現。',
+    explanation: '貓甲亢的經典三聯症：體重減輕（>90%）+ 多食（約 50-80%）+ 心搏過速（約 50%）。其他常見症狀包括嘔吐/腹瀉、多飲多尿、活動力增加/躁動、毛髮品質差。約 10% 的老年甲亢貓表現為「apathetic hyperthyroidism」，嗜睡和厭食而非典型的高代謝表現。',
     difficulty: 2, spaced_rep: true, tags: ['甲亢', '貓', '臨床表現'], image_placeholder: null,
   },
   {
@@ -934,7 +934,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓甲亢治療後必須密切監測腎功能的原因為何？',
     options: ['Methimazole 具直接腎毒性', '甲亢增加 GFR，治療後 GFR 下降可能揭露潛在 CKD', '甲亢導致腎臟肥大，治療後腎臟萎縮', 'T4 是腎臟必需的生長因子'],
     correct_answer: '甲亢增加 GFR，治療後 GFR 下降可能揭露潛在 CKD',
-    explanation: '甲亢透過增加心輸出量和降低腎血管阻力而增加 GFR，這會掩蓋潛在的 CKD（腎指數被假性正常化）。治療甲亢後 GFR 回到基線，可能揭露先前被掩蓋的氮血症。因此建議治療後 2-4 週複查腎功能，若出現顯著氮血症可能需要調整 Methimazole 劑量（容許輕度甲亢以維持 GFR）。',
+    explanation: '甲亢透過增加心輸出量和降低腎血管阻力而增加 GFR，這會掩蓋潛在的 CKD（腎指數被假性正常化）。治療甲亢後 GFR 回到基線，可能揭露先前被掩蓋的氮血症。所以建議治療後 2-4 週複查腎功能，若出現明顯氮血症可能需要調整 Methimazole 劑量（容許輕度甲亢以維持 GFR）。',
     difficulty: 3, spaced_rep: true, tags: ['甲亢', '貓', 'CKD', 'GFR'], image_placeholder: null,
   },
   {
@@ -978,13 +978,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['甲亢', '貓', '心肌病', '心臟超音波'], image_placeholder: null,
   },
 
-  // ===== IM-L3-005 DM — 7 remaining (1 existing Q-IM-004 assigned to this node_id) =====
+  // ===== IM-L3-005 DM，7 remaining (1 existing Q-IM-004 assigned to this node_id) =====
   {
     id: 'Q-IM-L3-005-001', node_id: 'IM-L3-005', question_type: 'mcq',
     question: '犬糖尿病的主要病理生理機制類似人類的哪一型糖尿病？',
     options: ['第一型糖尿病（β 細胞破壞，胰島素絕對缺乏）', '第二型糖尿病（胰島素阻抗為主）', '妊娠糖尿病', 'MODY（maturity-onset diabetes of the young）'],
     correct_answer: '第一型糖尿病（β 細胞破壞，胰島素絕對缺乏）',
-    explanation: '犬糖尿病主要類似人類第一型——β 細胞被免疫介導性或特發性破壞，導致胰島素絕對缺乏，幾乎所有犬糖尿病都需要胰島素治療。貓糖尿病則更類似第二型（胰島素阻抗 + β 細胞胰島澱粉樣蛋白沉積），部分貓在控制風險因子後可能緩解。犬好發品種包括 Samoyed、Australian Terrier、Miniature Schnauzer。',
+    explanation: '犬糖尿病主要類似人類第一型，β 細胞被免疫介導性或特發性破壞，導致胰島素絕對缺乏，幾乎所有犬糖尿病都需要胰島素治療。貓糖尿病則更類似第二型（胰島素阻抗 + β 細胞胰島澱粉樣蛋白沉積），部分貓在控制風險因子後可能緩解。犬好發品種包括 Samoyed、Australian Terrier、Miniature Schnauzer。',
     difficulty: 3, spaced_rep: true, tags: ['糖尿病', '犬', '病理生理'], image_placeholder: null,
   },
   {
@@ -1024,7 +1024,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 11 歲已絕育雄貓被診斷糖尿病，BCS 8/9。開始 Glargine 1U SC BID 和高蛋白低碳水飲食。6 週後 fructosamine 降至正常範圍，居家血糖曲線 nadir 60 mg/dL。最適當的處置為何？',
     options: ['維持原劑量', '增加胰島素劑量', '減低胰島素劑量並密切監測是否進入糖尿病緩解', '完全停止胰島素'],
     correct_answer: '減低胰島素劑量並密切監測是否進入糖尿病緩解',
-    explanation: 'Fructosamine 正常化 + nadir 60 mg/dL（低於安全範圍）表示血糖控制過度，有低血糖風險。肥胖貓（BCS 8/9）在體重減輕和飲食改善後胰島素阻抗可能改善，部分 Type 2 貓可進入糖尿病緩解。應減低劑量（如 0.5U BID）並密切監測血糖。如果低劑量仍出現 nadir <80 mg/dL，考慮進一步減量或嘗試停藥。',
+    explanation: 'Fructosamine 正常化 + nadir 60 mg/dL（低於安全範圍）表示血糖控制過度，有低血糖風險。肥胖貓（BCS 8/9）在體重減輕和飲食改善後胰島素阻抗可能改善，部分 Type 2 貓可進入糖尿病緩解。應減低劑量（如 0.5U BID）並密切監測血糖。如果低劑量仍出現 nadir <80 mg/dL，考慮後續減量或嘗試停藥。',
     difficulty: 4, spaced_rep: true, tags: ['糖尿病', '貓', '緩解', '劑量調整', '病例'], image_placeholder: null,
   },
   {
@@ -1036,13 +1036,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['糖尿病', 'Somogyi', '反彈性高血糖'], image_placeholder: null,
   },
 
-  // ===== IM-L3-006 IBD/CE — 7 remaining (1 existing Q-IM-005 assigned to this node_id) =====
+  // ===== IM-L3-006 IBD/CE，7 remaining (1 existing Q-IM-005 assigned to this node_id) =====
   {
     id: 'Q-IM-L3-006-001', node_id: 'IM-L3-006', question_type: 'mcq',
     question: '犬慢性腸病（CE）的診斷流程中，ACVIM 共識建議在內視鏡切片前應先完成的排除步驟不包含下列何者？',
     options: ['糞便浮游法排除寄生蟲', '飲食排除試驗（2-4 週水解蛋白或新蛋白飲食）', '排除腸外原因（如 Addison\'s、甲亢、肝病）', '經驗性化療排除淋巴瘤'],
     correct_answer: '經驗性化療排除淋巴瘤',
-    explanation: 'CE 診斷的逐步排除法（stepwise approach）包括：糞便寄生蟲檢查 → 飲食排除試驗 → 排除腸外原因 → 抗生素試驗（有爭議）→ 內視鏡/外科切片組織病理。不可能也不應該用「經驗性化療」來排除淋巴瘤——淋巴瘤的確診需要組織學、IHC 和/或 clonality 分析。',
+    explanation: 'CE 診斷的逐步排除法（stepwise approach）包括：糞便寄生蟲檢查 → 飲食排除試驗 → 排除腸外原因 → 抗生素試驗（有爭議）→ 內視鏡/外科切片組織病理。不可能也不應該用「經驗性化療」來排除淋巴瘤，淋巴瘤的確診需要組織學、IHC 和/或 clonality 分析。',
     difficulty: 3, spaced_rep: true, tags: ['IBD', 'CE', '診斷流程', 'ACVIM'], image_placeholder: null,
   },
   {
@@ -1050,7 +1050,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬 CE 的 CCECAI（Canine Chronic Enteropathy Clinical Activity Index）評估哪些參數？',
     options: ['僅血清白蛋白和體重', '臨床症狀（嘔吐、腹瀉、食慾、活動力）+ 白蛋白 + 腹水/水腫 + 搔癢', '組織病理分級 + 免疫組化結果', '糞便 calprotectin 和 DI 值'],
     correct_answer: '臨床症狀（嘔吐、腹瀉、食慾、活動力）+ 白蛋白 + 腹水/水腫 + 搔癢',
-    explanation: 'CCECAI 由 9 個項目組成：態度/活動力、食慾、嘔吐、糞便質地、排便頻率、體重減輕、血清白蛋白、腹水/周邊水腫、搔癢。每項 0-3 分，總分 0-27。≤3 分=不顯著，4-5=輕度，6-8=中度，9-11=重度，≥12=非常重度。CCECAI 可用於預後評估（>9 分的治療反應率較差）和治療追蹤。',
+    explanation: 'CCECAI 由 9 個項目組成：態度/活動力、食慾、嘔吐、糞便質地、排便頻率、體重減輕、血清白蛋白、腹水/周邊水腫、搔癢。每項 0-3 分，總分 0-27。≤3 分=不明顯，4-5=輕度，6-8=中度，9-11=重度，≥12=非常重度。CCECAI 可用於預後評估（>9 分的治療反應率較差）和治療追蹤。',
     difficulty: 3, spaced_rep: true, tags: ['IBD', 'CE', 'CCECAI', '評估工具'], image_placeholder: null,
   },
   {
@@ -1094,7 +1094,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['IBD', 'CE', 'PLE', '低白蛋白'], image_placeholder: null,
   },
 
-  // ===== IM-L3-007 急性胰臟炎 — 7 remaining (1 existing Q-IM-007) =====
+  // ===== IM-L3-007 急性胰臟炎，7 remaining (1 existing Q-IM-007) =====
   {
     id: 'Q-IM-L3-007-001', node_id: 'IM-L3-007', question_type: 'mcq',
     question: '犬急性胰臟炎的特異性血清標記（spec cPL / Spec cPL®）的主要優勢為何？',
@@ -1124,7 +1124,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓急性胰臟炎的臨床表現與犬相比較不典型，嘔吐和腹痛的比例遠低於犬。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '貓急性胰臟炎的表現較犬不典型：嘔吐約 35-50%（犬約 90%）、腹痛僅約 10-25%（犬約 50-60%）。貓胰臟炎最常見的表現為嗜睡（約 100%）和厭食（約 95%），較非特異性。此外貓胰臟炎常與其他疾病共存（「triaditis」：胰臟炎 + 膽管炎 + IBD），增加診斷複雜度。',
+    explanation: '貓急性胰臟炎的表現較犬不典型：嘔吐約 35-50%（犬約 90%）、腹痛僅約 10-25%（犬約 50-60%）。貓胰臟炎最常見的表現為嗜睡（約 100%）和厭食（約 95%），較非特異性。另外貓胰臟炎常與其他疾病共存（「triaditis」：胰臟炎 + 膽管炎 + IBD），增加診斷複雜度。',
     difficulty: 3, spaced_rep: true, tags: ['胰臟炎', '貓', '臨床表現', '比較'], image_placeholder: null,
   },
   {
@@ -1138,9 +1138,9 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L3-007-006', node_id: 'IM-L3-007', question_type: 'case_based',
     question: '一隻 10 歲貓因嗜睡和厭食 4 天就診。黃疸明顯。血檢：fPLI 明顯升高、肝酵素升高（ALT 3x、ALP 2x）、總膽紅素 5.2 mg/dL。超音波見膽總管壁增厚和胰臟周圍高回音變化。此貓最可能的診斷為何？',
-    options: ['單純肝脂質沉積症', '貓「triaditis」——胰臟炎合併膽管炎和可能的 IBD', '膽管癌', '急性肝衰竭'],
-    correct_answer: '貓「triaditis」——胰臟炎合併膽管炎和可能的 IBD',
-    explanation: '貓的膽管和胰管在十二指腸乳頭處共同開口（犬有分開的輔助胰管），因此胰臟炎易逆行至膽管引起膽管炎。Triaditis（胰臟炎 + 膽管炎 + IBD）在貓中相當常見。黃疸（膽管炎/膽道阻塞）+ fPLI 升高（胰臟炎）+ 肝酵素升高的組合高度提示 triaditis。治療需同時處理所有三個組分。',
+    options: ['單純肝脂質沉積症', '貓「triaditis」，胰臟炎合併膽管炎和可能的 IBD', '膽管癌', '急性肝衰竭'],
+    correct_answer: '貓「triaditis」，胰臟炎合併膽管炎和可能的 IBD',
+    explanation: '貓的膽管和胰管在十二指腸乳頭處共同開口（犬有分開的輔助胰管），所以胰臟炎易逆行至膽管引起膽管炎。Triaditis（胰臟炎 + 膽管炎 + IBD）在貓中相當常見。黃疸（膽管炎/膽道阻塞）+ fPLI 升高（胰臟炎）+ 肝酵素升高的組合高度提示 triaditis。治療需同時處理所有三個組分。',
     difficulty: 4, spaced_rep: true, tags: ['胰臟炎', '貓', 'triaditis', '膽管炎', '病例'], image_placeholder: null,
   },
   {
@@ -1152,7 +1152,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['胰臟炎', '營養', '早期進食'], image_placeholder: null,
   },
 
-  // ===== IM-L3-008 IMHA — 8 questions (0 existing for this node_id) =====
+  // ===== IM-L3-008 IMHA，8 questions (0 existing for this node_id) =====
   {
     id: 'Q-IM-L3-008-001', node_id: 'IM-L3-008', question_type: 'mcq',
     question: '犬原發性 IMHA 的診斷中，下列哪項血液學發現最具特異性？',
@@ -1198,7 +1198,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 6 歲已絕育雌性可卡犬因急性嗜睡和蒼白就診。PCV 12%，網織紅血球明顯增多，血液抹片見大量球狀紅血球和多染性紅血球。自凝試驗陽性。總膽紅素 8.5 mg/dL（升高），Coombs test 陽性。壁蝨疾病 PCR 陰性，ANA 陰性。此犬最可能的分類為何？',
     options: ['繼發性 IMHA（壁蝨疾病）', '原發性（特發性）IMHA', '微血管病變性溶血', '遺傳性球狀紅血球增多症'],
     correct_answer: '原發性（特發性）IMHA',
-    explanation: '此犬符合 IMHA 的所有診斷標準：再生性貧血 + 球狀紅血球 + 自凝陽性 + 高膽紅素（溶血性黃疸）+ Coombs 陽性。壁蝨疾病 PCR 和 ANA 陰性排除了主要的繼發性原因，因此分類為原發性（特發性）IMHA。可卡犬是好發品種，已絕育雌性更常見。需立即開始免疫抑制和抗血栓治療。',
+    explanation: '此犬符合 IMHA 的所有診斷標準：再生性貧血 + 球狀紅血球 + 自凝陽性 + 高膽紅素（溶血性黃疸）+ Coombs 陽性。壁蝨疾病 PCR 和 ANA 陰性排除了主要的繼發性原因，所以分類為原發性（特發性）IMHA。可卡犬是好發品種，已絕育雌性更常見。需立即開始免疫抑制和抗血栓治療。',
     difficulty: 4, spaced_rep: true, tags: ['IMHA', '原發性', '診斷', '病例'], image_placeholder: null,
   },
   {
@@ -1230,8 +1230,8 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L3-009-002', node_id: 'IM-L3-009', question_type: 'mcq',
     question: '貓 HL 的治療中，最關鍵且優先的介入措施為何？',
-    options: ['肝臟保護劑（SAMe + Ursodiol）', '積極營養支持——通常需放置食管營養管（esophagostomy tube）', '免疫抑制劑治療', '肝臟活檢確認診斷'],
-    correct_answer: '積極營養支持——通常需放置食管營養管（esophagostomy tube）',
+    options: ['肝臟保護劑（SAMe + Ursodiol）', '積極營養支持，通常需放置食管營養管（esophagostomy tube）', '免疫抑制劑治療', '肝臟活檢確認診斷'],
+    correct_answer: '積極營養支持，通常需放置食管營養管（esophagostomy tube）',
     explanation: '貓 HL 治療的基石是積極的營養支持。由於多數 HL 貓嚴重厭食，通常需要放置食管營養管（E-tube，全身麻醉下快速放置）或鼻食管（NE tube，暫時過渡用）。每日熱量目標由 RER 開始逐步增加至全量。營養管通常需維持 4-8 週。肝臟保護劑為輔助治療。同時需積極治療潛在疾病（如胰臟炎、膽管炎）。',
     difficulty: 3, spaced_rep: true, tags: ['貓肝脂', '營養管', '治療'], image_placeholder: null,
   },
@@ -1240,7 +1240,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓 HL 的診斷中，下列哪項血液學發現最具提示性？',
     options: ['ALT 極度升高（>10 倍）', 'ALP 升高伴 GGT 正常或僅輕度升高', 'GGT 極度升高伴 ALP 正常', '所有肝酵素均正常'],
     correct_answer: 'ALP 升高伴 GGT 正常或僅輕度升高',
-    explanation: '貓 HL 的典型肝酵素模式：ALP 明顯升高（2-10 倍）但 GGT 正常或輕度升高。此模式有助於區分 HL 和其他肝膽疾病（如膽管炎/膽管阻塞時 GGT 通常也明顯升高）。記住貓 ALP 半衰期短（約 6 小時），因此貓 ALP 即使中度升高也有重要意義。ALT 通常也會升高但程度不如 ALP。',
+    explanation: '貓 HL 的典型肝酵素模式：ALP 明顯升高（2-10 倍）但 GGT 正常或輕度升高。此模式有助於區分 HL 和其他肝膽疾病（如膽管炎/膽管阻塞時 GGT 通常也明顯升高）。記住貓 ALP 半衰期短（約 6 小時），所以貓 ALP 即使中度升高也有重要意義。ALT 通常也會升高但程度不如 ALP。',
     difficulty: 3, spaced_rep: true, tags: ['貓肝脂', '肝酵素', 'ALP', 'GGT'], image_placeholder: null,
   },
   {
@@ -1284,7 +1284,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['貓肝脂', 'L-carnitine', '營養補充'], image_placeholder: null,
   },
 
-  // ===== IM-L3-010 蜱蟲傳染病 — 4 remaining (4 existing) =====
+  // ===== IM-L3-010 蜱蟲傳染病，4 remaining (4 existing) =====
   {
     id: 'Q-IM-L3-010-001', node_id: 'IM-L3-010', question_type: 'mcq',
     question: '犬焦蟲症（Babesia canis）與犬艾利希體症（E. canis）的關鍵鑑別特徵為何？',
@@ -1332,7 +1332,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬典型 Addison\'s disease 的電解質異常組合為何？',
     options: ['高鈉/低鉀', '低鈉/高鉀（Na:K 比值 <27:1）', '高鈣/低磷', '低鈉/低鉀'],
     correct_answer: '低鈉/高鉀（Na:K 比值 <27:1）',
-    explanation: '典型 Addison\'s（糖皮質素 + 礦物皮質素均缺乏）的電解質異常：低血鈉 + 高血鉀，Na:K 比值 <27:1（正常 27:1-40:1）。機制：醛固酮缺乏導致遠端腎小管無法有效保鈉排鉀。嚴重高血鉀可致心律不整（心電圖見 T 波高尖、P 波消失、QRS 增寬）。但約 10-30% 為「非典型 Addison\'s」——僅缺 glucocorticoid，電解質正常，更易漏診。',
+    explanation: '典型 Addison\'s（糖皮質素 + 礦物皮質素均缺乏）的電解質異常：低血鈉 + 高血鉀，Na:K 比值 <27:1（正常 27:1-40:1）。機制：醛固酮缺乏導致遠端腎小管無法有效保鈉排鉀。嚴重高血鉀可致心律不整（心電圖見 T 波高尖、P 波消失、QRS 增寬）。但約 10-30% 為「非典型 Addison\'s」，僅缺 glucocorticoid，電解質正常，更易漏診。',
     difficulty: 3, spaced_rep: true, tags: ['Addison', '電解質', 'Na:K比值'], image_placeholder: null,
   },
   {
@@ -1362,8 +1362,8 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L3-011-006', node_id: 'IM-L3-011', question_type: 'case_based',
     question: '一隻 3 歲標準貴賓犬因反覆嘔吐、嗜睡和脫水就診，過去 6 個月已因類似症狀就診 3 次，每次輸液後快速改善。血檢：Na⁺ 128 mEq/L、K⁺ 7.2 mEq/L、Na:K = 17.8、BUN 45 mg/dL、Cre 2.2 mg/dL。ECG 見 T 波高尖。最可能的診斷和最優先的處置？',
-    options: ['腎衰竭——開始透析', 'Addison\'s disease——緊急 IV NaCl、Dexamethasone 和處理高血鉀', '幽門梗阻——安排手術', '反覆性胰臟炎——止痛和止吐'],
-    correct_answer: 'Addison\'s disease——緊急 IV NaCl、Dexamethasone 和處理高血鉀',
+    options: ['腎衰竭，開始透析', 'Addison\'s disease，緊急 IV NaCl、Dexamethasone 和處理高血鉀', '幽門梗阻，安排手術', '反覆性胰臟炎，止痛和止吐'],
+    correct_answer: 'Addison\'s disease，緊急 IV NaCl、Dexamethasone 和處理高血鉀',
     explanation: '年輕貴賓犬 + 反覆 waxing-waning 症狀 + 輸液後「奇蹟般」改善 + 低鈉高鉀（Na:K 17.8）+ 氮血症 + ECG 高血鉀變化 = 高度懷疑 Addison\'s disease。氮血症在此為腎前性（脫水 + 低血壓降低 GFR）。緊急處置：大量 0.9% NaCl + IV Dexamethasone 0.1 mg/kg + 若 ECG 嚴重異常可給 10% CaCl₂ 保護心肌。抽血送 baseline cortisol + ACTH 刺激試驗確認。',
     difficulty: 4, spaced_rep: true, tags: ['Addison', 'crisis', '貴賓犬', '病例'], image_placeholder: null,
   },
@@ -1372,7 +1372,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 5 歲犬確診 Addison\'s disease 後穩定出院。長期維持治療方案應為何？',
     options: ['僅口服 Prednisolone 終生', 'DOCP（desoxycorticosterone pivalate）每 25 天注射一次 + 口服低劑量 Prednisolone', '僅每月 DOCP 注射', '每年 ACTH 刺激試驗確認後才給藥'],
     correct_answer: 'DOCP（desoxycorticosterone pivalate）每 25 天注射一次 + 口服低劑量 Prednisolone',
-    explanation: '典型 Addison\'s 需補充兩種荷爾蒙：① 礦物皮質素——DOCP（Percorten-V 或 Zycortal）2.2 mg/kg IM/SC 每 25 天（初始），根據電解質調整間隔和劑量。或替代方案：口服 Fludrocortisone（0.01-0.02 mg/kg PO SID/BID）。② 糖皮質素——低劑量 Prednisolone（0.1-0.2 mg/kg PO SID），壓力時需加量。定期監測電解質和體重。',
+    explanation: '典型 Addison\'s 需補充兩種荷爾蒙：① 礦物皮質素，DOCP（Percorten-V 或 Zycortal）2.2 mg/kg IM/SC 每 25 天（初始），根據電解質調整間隔和劑量。或替代方案：口服 Fludrocortisone（0.01-0.02 mg/kg PO SID/BID）。② 糖皮質素，低劑量 Prednisolone（0.1-0.2 mg/kg PO SID），壓力時需加量。定期監測電解質和體重。',
     difficulty: 3, spaced_rep: true, tags: ['Addison', 'DOCP', '長期治療'], image_placeholder: null,
   },
   {
@@ -1380,7 +1380,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬「非典型 Addison\'s」（atypical hypoadrenocorticism）與典型 Addison\'s 的主要區別為何？',
     options: ['非典型僅影響貓', '非典型僅有糖皮質素缺乏，電解質正常（無醛固酮缺乏表現）', '非典型症狀更嚴重', '非典型不需要 ACTH 刺激試驗診斷'],
     correct_answer: '非典型僅有糖皮質素缺乏，電解質正常（無醛固酮缺乏表現）',
-    explanation: '非典型 Addison\'s 約佔 10-30% 病例，僅有 glucocorticoid 缺乏而 mineralocorticoid（醛固酮）分泌尚保留或在正常低限。因此電解質正常（無低鈉高鉀），更容易被忽略。表現為非特異性症狀（嗜睡、厭食、嘔吐）。ACTH 刺激試驗仍為確診工具。部分非典型病例可能隨時間進展為典型 Addison\'s，需持續監測電解質。',
+    explanation: '非典型 Addison\'s 約佔 10-30% 病例，僅有 glucocorticoid 缺乏而 mineralocorticoid（醛固酮）分泌尚保留或在正常低限。所以電解質正常（無低鈉高鉀），更容易被忽略。表現為非特異性症狀（嗜睡、厭食、嘔吐）。ACTH 刺激試驗仍為確診工具。部分非典型病例可能隨時間進展為典型 Addison\'s，需持續監測電解質。',
     difficulty: 3, spaced_rep: true, tags: ['Addison', '非典型', '電解質正常'], image_placeholder: null,
   },
 
@@ -1390,7 +1390,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬蛋白流失性腸病（PLE）的病理生理機制中，哪種途徑是蛋白質從腸道流失的最主要原因？',
     options: ['腎絲球蛋白尿', '腸道淋巴管擴張和/或黏膜炎症導致血漿蛋白滲出', '肝臟合成蛋白質減少', '皮膚傷口流失'],
     correct_answer: '腸道淋巴管擴張和/或黏膜炎症導致血漿蛋白滲出',
-    explanation: 'PLE 的蛋白流失有兩種主要機制：① 腸道淋巴管擴張（intestinal lymphangiectasia）——淋巴液富含蛋白質，淋巴管破裂導致淋巴球和蛋白大量流入腸腔。② 嚴重腸道黏膜炎症（如 IBD、淋巴瘤）——破壞黏膜屏障，血漿蛋白直接滲出。兩種機制可同時存在。PLE 的特徵是白蛋白和球蛋白同時降低（panhypoproteinemia），有助區分腎病變（僅白蛋白流失）。',
+    explanation: 'PLE 的蛋白流失有兩種主要機制：① 腸道淋巴管擴張（intestinal lymphangiectasia），淋巴液富含蛋白質，淋巴管破裂導致淋巴球和蛋白大量流入腸腔。② 嚴重腸道黏膜炎症（如 IBD、淋巴瘤），破壞黏膜屏障，血漿蛋白直接滲出。兩種機制可同時存在。PLE 的特徵是白蛋白和球蛋白同時降低（panhypoproteinemia），有助區分腎病變（僅白蛋白流失）。',
     difficulty: 3, spaced_rep: true, tags: ['PLE', '病理生理', '淋巴管擴張'], image_placeholder: null,
   },
   {
@@ -1406,7 +1406,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬 PLE 患者發生血栓栓塞的風險增加，主要原因為何？',
     options: ['紅血球增多症', '抗凝血酶 III（ATIII）從腸道流失導致高凝狀態', '血小板減少', '肝素抗性'],
     correct_answer: '抗凝血酶 III（ATIII）從腸道流失導致高凝狀態',
-    explanation: 'PLE 導致 ATIII（重要的內源性抗凝血因子）從腸道流失，ATIII 活性降低（<50% 時血栓風險顯著增加）。同時低白蛋白血症增加血液黏度和血小板聚集傾向。PLE 犬的血栓風險類似腎病症候群。嚴重低白蛋白（<2.0 g/dL）的 PLE 犬應考慮預防性抗凝治療（低劑量 aspirin 或 clopidogrel）。',
+    explanation: 'PLE 導致 ATIII（重要的內源性抗凝血因子）從腸道流失，ATIII 活性降低（<50% 時血栓風險明顯增加）。同時低白蛋白血症增加血液黏度和血小板聚集傾向。PLE 犬的血栓風險類似腎病症候群。嚴重低白蛋白（<2.0 g/dL）的 PLE 犬應考慮預防性抗凝治療（低劑量 aspirin 或 clopidogrel）。',
     difficulty: 4, spaced_rep: true, tags: ['PLE', 'ATIII', '血栓', '高凝狀態'], image_placeholder: null,
   },
   {
@@ -1422,7 +1422,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'PLE 犬的低鈣血症常為離子鈣降低（真正的低鈣），主要因維生素 D 吸收不良所致。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: 'PLE 犬的低總鈣血症多數為假性低鈣——因白蛋白降低導致蛋白結合鈣減少，但離子鈣（iCa²⁺）通常正常。然而，部分嚴重 PLE 犬確實會因維生素 D 和鎂的腸道吸收不良而出現真正的低離子鈣。因此應該測量離子鈣而非僅看總鈣來判斷。真正的低離子鈣需補充鈣和維生素 D。',
+    explanation: 'PLE 犬的低總鈣血症多數為假性低鈣，因白蛋白降低導致蛋白結合鈣減少，但離子鈣（iCa²⁺）通常正常。不過，部分嚴重 PLE 犬確實會因維生素 D 和鎂的腸道吸收不良而出現真正的低離子鈣。所以應該測量離子鈣而非僅看總鈣來判斷。真正的低離子鈣需補充鈣和維生素 D。',
     difficulty: 3, spaced_rep: true, tags: ['PLE', '低鈣血症', '離子鈣'], image_placeholder: null,
   },
   {
@@ -1430,7 +1430,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 6 歲約克夏犬因腹部膨大和慢性腹瀉就診。血檢：白蛋白 1.1 g/dL、球蛋白 1.5 g/dL、膽固醇 95 mg/dL（低）、淋巴球 600/μL（低）。腹腔超音波見腹水和小腸壁可見多條高回音線（「striations」）。此超音波發現最支持何種診斷？',
     options: ['腸道淋巴瘤', '腸道淋巴管擴張引起的 PLE', '急性腸炎', '腸扭轉'],
     correct_answer: '腸道淋巴管擴張引起的 PLE',
-    explanation: '典型的淋巴管擴張型 PLE：約克夏犬 + 嚴重低蛋白血症（白蛋白 + 球蛋白均低 = panhypoproteinemia）+ 低膽固醇（脂肪吸收不良）+ 淋巴球減少（淋巴液流失至腸腔）+ 腹水。超音波見小腸壁高回音條紋（「mucosal striations」或「hyperechoic mucosal speckles」）是淋巴管擴張的特徵性影像。內視鏡見十二指腸黏膜白色「雪花狀」斑點可進一步確認。',
+    explanation: '典型的淋巴管擴張型 PLE：約克夏犬 + 嚴重低蛋白血症（白蛋白 + 球蛋白均低 = panhypoproteinemia）+ 低膽固醇（脂肪吸收不良）+ 淋巴球減少（淋巴液流失至腸腔）+ 腹水。超音波見小腸壁高回音條紋（「mucosal striations」或「hyperechoic mucosal speckles」）是淋巴管擴張的特徵性影像。內視鏡見十二指腸黏膜白色「雪花狀」斑點可後續確認。',
     difficulty: 4, spaced_rep: true, tags: ['PLE', '淋巴管擴張', '約克夏', '超音波', '病例'], image_placeholder: null,
   },
   {
@@ -1446,7 +1446,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬 PLE 的預後評估中，下列哪個因素被報導與最差的預後相關？',
     options: ['年齡 >10 歲', '血清白蛋白 <1.5 g/dL 且對治療反應差', '品種為約克夏犬', '僅有腹瀉而無嘔吐'],
     correct_answer: '血清白蛋白 <1.5 g/dL 且對治療反應差',
-    explanation: '犬 PLE 的負面預後因素包括：嚴重低白蛋白血症（<1.5 g/dL）、CCECAI 評分高（>9）、對飲食和免疫抑制治療無反應、潛在病因為腸道淋巴瘤（vs IBD 預後較好）、同時有 PLN。白蛋白在治療 2-4 週後是否改善是重要的預後指標。整體而言 PLE 犬的中位存活時間差異很大（數月至數年），取決於潛在病因和治療反應。',
+    explanation: '犬 PLE 的負面預後因素包括：嚴重低白蛋白血症（<1.5 g/dL）、CCECAI 評分高（>9）、對飲食和免疫抑制治療無反應、潛在病因為腸道淋巴瘤（vs IBD 預後較好）、同時有 PLN。白蛋白在治療 2-4 週後是否改善是重要的預後指標。整體來看 PLE 犬的中位存活時間差異很大（數月至數年），取決於潛在病因和治療反應。',
     difficulty: 3, spaced_rep: true, tags: ['PLE', '預後', '白蛋白'], image_placeholder: null,
   },
 
@@ -1472,7 +1472,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '監測 Trilostane 治療 Cushing\'s 犬的療效時，ACTH 刺激試驗的最佳採血時機為何？',
     options: ['給藥前（trough）', '給藥後 4-6 小時（peak effect）', '給藥後 24 小時', '隨機時間'],
     correct_answer: '給藥後 4-6 小時（peak effect）',
-    explanation: 'Trilostane 的最大效應出現在給藥後約 2-6 小時。因此 ACTH 刺激試驗應在給藥後 4-6 小時進行（即在最大抑制時間點評估）。目標 post-ACTH cortisol 1.45-5.4 μg/dL（或 40-150 nmol/L）。<1.45 表示過度抑制需減量，>5.4 可能需加量。治療第 10-14 天、第 30 天、之後每 3 個月監測一次。',
+    explanation: 'Trilostane 的最大效應出現在給藥後約 2-6 小時。所以 ACTH 刺激試驗應在給藥後 4-6 小時進行（即在最大抑制時間點評估）。目標 post-ACTH cortisol 1.45-5.4 μg/dL（或 40-150 nmol/L）。<1.45 表示過度抑制需減量，>5.4 可能需加量。治療第 10-14 天、第 30 天、之後每 3 個月監測一次。',
     difficulty: 4, spaced_rep: true, tags: ['內分泌檢驗', 'Trilostane監測', 'ACTH'], image_placeholder: null,
   },
   {
@@ -1480,7 +1480,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬甲低診斷中，Free T4 的最佳檢測方法為何？',
     options: ['類比免疫分析法（analog immunoassay）', '平衡透析法（equilibrium dialysis）', '直接化學冷光法', '放射免疫分析（RIA）Total T4'],
     correct_answer: '平衡透析法（equilibrium dialysis）',
-    explanation: 'Free T4 by equilibrium dialysis（ED）是測量游離 T4 的金標準方法。ED 法先將血清透析分離游離 T4，再以 RIA 測定，不受蛋白結合異常和抗甲狀腺素抗體干擾。類比免疫分析法（analog method）較便宜但準確度不如 ED，在犬中可能被低估。因此在甲低診斷中，推薦使用 Free T4 by ED 而非 analog method。',
+    explanation: 'Free T4 by equilibrium dialysis（ED）是測量游離 T4 的金標準方法。ED 法先將血清透析分離游離 T4，再以 RIA 測定，不受蛋白結合異常和抗甲狀腺素抗體干擾。類比免疫分析法（analog method）較便宜但準確度不如 ED，在犬中可能被低估。所以在甲低診斷中，推薦使用 Free T4 by ED 而非 analog method。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌檢驗', 'Free T4', 'ED法'], image_placeholder: null,
   },
   {
@@ -1488,7 +1488,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '尿液皮質醇/肌酐比值（UCCR）具有高敏感度但低特異度，適合用於排除而非確診 Cushing\'s syndrome。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'UCCR 敏感度 >95%（幾乎所有 Cushing\'s 犬 UCCR 都升高），但特異度僅約 20-25%（許多非 Cushing\'s 疾病和壓力也會升高 UCCR）。因此 UCCR 正常基本可排除 Cushing\'s（高陰性預測值），但 UCCR 升高不能確診（需進一步做 LDDS 或 ACTH 刺激試驗）。建議在家收集晨尿連續 2 天取平均值（避免醫院壓力干擾）。',
+    explanation: 'UCCR 敏感度 >95%（幾乎所有 Cushing\'s 犬 UCCR 都升高），但特異度僅約 20-25%（許多非 Cushing\'s 疾病和壓力也會升高 UCCR）。所以 UCCR 正常基本可排除 Cushing\'s（高陰性預測值），但 UCCR 升高不能確診（需後續做 LDDS 或 ACTH 刺激試驗）。建議在家收集晨尿連續 2 天取平均值（避免醫院壓力干擾）。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌檢驗', 'UCCR', 'Cushing篩檢'], image_placeholder: null,
   },
   {
@@ -1504,7 +1504,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻貓的 T4 為 3.5 μg/dL（正常上限 4.0），臨床懷疑甲亢但 T4 不具診斷性。Free T4 by ED 結果為 68 pmol/L（升高，正常 <40）。此組合應如何解讀？',
     options: ['Free T4 正常，排除甲亢', '支持早期甲亢診斷（T4 正常高值 + Free T4 升高）', '僅表示非甲狀腺疾病', '需等 T4 >4.0 才能考慮甲亢'],
     correct_answer: '支持早期甲亢診斷（T4 正常高值 + Free T4 升高）',
-    explanation: 'T4 在正常高值（3.5-4.0）+ Free T4 by ED 升高高度支持甲亢。約 5-10% 甲亢貓因合併 NTI 使 Total T4 被壓低至正常高值。Free T4 by ED 敏感度 >98%，但特異度較 T4 低（約 85-90%），NTI 也可能造成 Free T4 輕度假升高。因此需結合臨床症狀（體重減輕、心搏過速、觸及頸部結節）綜合判斷。可考慮 2-4 週後複查或甲狀腺核醫掃描確認。',
+    explanation: 'T4 在正常高值（3.5-4.0）+ Free T4 by ED 升高高度支持甲亢。約 5-10% 甲亢貓因合併 NTI 使 Total T4 被壓低至正常高值。Free T4 by ED 敏感度 >98%，但特異度較 T4 低（約 85-90%），NTI 也可能造成 Free T4 輕度假升高。所以需結合臨床症狀（體重減輕、心搏過速、觸及頸部結節）綜合判斷。可考慮 2-4 週後複查或甲狀腺核醫掃描確認。',
     difficulty: 4, spaced_rep: true, tags: ['內分泌檢驗', 'Free T4', '貓甲亢', '結果判讀', '病例'], image_placeholder: null,
   },
   {
@@ -1551,10 +1551,10 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-IM-L4-002-005', node_id: 'IM-L4-002', question_type: 'true_false',
-    question: 'SDMA 的優勢之一是不受肌肉量影響，因此在消瘦、老年或小型犬貓中比 Creatinine 更能反映真實的腎功能。',
+    question: 'SDMA 的優勢之一是不受肌肉量影響，所以在消瘦、老年或小型犬貓中比 Creatinine 更能反映真實的腎功能。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'SDMA（Symmetric Dimethylarginine）是精胺酸甲基化的副產物，由所有有核細胞產生，幾乎完全由腎臟排泄。不同於 Creatinine（受肌肉量影響——肌肉消耗的動物 Creatinine 可能假性正常），SDMA 不受肌肉量、體型或飲食影響。這使得 SDMA 在消瘦、老年、小型犬貓或肌肉量極少的動物中特別有價值。正常犬貓 SDMA <18 μg/dL。',
+    explanation: 'SDMA（Symmetric Dimethylarginine）是精胺酸甲基化的副產物，由所有有核細胞產生，幾乎完全由腎臟排泄。不同於 Creatinine（受肌肉量影響，肌肉消耗的動物 Creatinine 可能假性正常），SDMA 不受肌肉量、體型或飲食影響。這使得 SDMA 在消瘦、老年、小型犬貓或肌肉量極少的動物中特別有價值。正常犬貓 SDMA <18 μg/dL。',
     difficulty: 2, spaced_rep: true, tags: ['腎功能', 'SDMA', '肌肉量'], image_placeholder: null,
   },
   {
@@ -1568,8 +1568,8 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L4-002-007', node_id: 'IM-L4-002', question_type: 'case_based',
     question: '一隻 5 歲犬因 PU/PD 就診。USG 1.005，血糖正常，Creatinine 正常，SDMA 正常，尿培養陰性。電解質正常。最可能的鑑別診斷方向和下一步檢查為何？',
-    options: ['CKD——安排腎臟超音波', '中樞性或腎源性尿崩症（DI）——安排水剝奪試驗或 Desmopressin 試驗', '糖尿病——複查血糖', '腎上腺功能不足——ACTH 刺激試驗'],
-    correct_answer: '中樞性或腎源性尿崩症（DI）——安排水剝奪試驗或 Desmopressin 試驗',
+    options: ['CKD，安排腎臟超音波', '中樞性或腎源性尿崩症（DI），安排水剝奪試驗或 Desmopressin 試驗', '糖尿病，複查血糖', '腎上腺功能不足，ACTH 刺激試驗'],
+    correct_answer: '中樞性或腎源性尿崩症（DI），安排水剝奪試驗或 Desmopressin 試驗',
     explanation: 'USG 1.005（極度稀釋）+ 正常腎功能 + 正常血糖 + 正常電解質的 PU/PD，主要鑑別包括中樞性 DI（CDI）、腎源性 DI（NDI）和心因性多喝（psychogenic polydipsia）。修改式水剝奪試驗可區分：CDI（無法濃縮但對 DDAVP 有反應）、NDI（無法濃縮且對 DDAVP 無反應）、心因性多喝（可濃縮但需先控制水攝取）。或可先嘗試 DDAVP trial（安全且簡單）。',
     difficulty: 4, spaced_rep: true, tags: ['尿液分析', 'PU/PD', 'DI', '鑑別', '病例'], image_placeholder: null,
   },
@@ -1604,7 +1604,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬急性胰臟炎的超音波典型表現為何？',
     options: ['胰臟完全正常', '胰臟腫大、低回音，周圍脂肪高回音變化（peritoneal fat saponification）', '胰臟萎縮和鈣化', '僅見腹水無其他異常'],
     correct_answer: '胰臟腫大、低回音，周圍脂肪高回音變化（peritoneal fat saponification）',
-    explanation: '犬急性胰臟炎的超音波表現：胰臟腫大和低回音（水腫/壞死）、周圍腸繫膜脂肪高回音變化（脂肪壞死/皂化）、可能有局部腹膜積液。超音波敏感度約 68%（輕微胰臟炎可能看不到變化）。貓胰臟炎的超音波敏感度更低（約 25-35%）。因此超音波正常不能排除胰臟炎，需結合 cPL/fPLI 和臨床判斷。',
+    explanation: '犬急性胰臟炎的超音波表現：胰臟腫大和低回音（水腫/壞死）、周圍腸繫膜脂肪高回音變化（脂肪壞死/皂化）、可能有局部腹膜積液。超音波敏感度約 68%（輕微胰臟炎可能看不到變化）。貓胰臟炎的超音波敏感度更低（約 25-35%）。所以超音波正常不能排除胰臟炎，需結合 cPL/fPLI 和臨床判斷。',
     difficulty: 3, spaced_rep: true, tags: ['腹超', '胰臟炎', '影像表現'], image_placeholder: null,
   },
   {
@@ -1620,7 +1620,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬貓腹腔超音波中，肝臟瀰漫性高回音可能見於類固醇性肝病（steroid hepatopathy）、肝脂質沉積和肝硬化等不同疾病。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '肝臟瀰漫性高回音是非特異性發現，可見於多種疾病：steroid hepatopathy（犬 Cushing\'s 或外源性類固醇）、肝脂質沉積（尤其是貓 HL）、肝硬化/纖維化、淋巴瘤浸潤等。因此超音波只能提示肝臟異常，確診通常需要肝臟細胞學或組織學。貓 HL 的超音波敏感度約 60-80%，但特異度有限。',
+    explanation: '肝臟瀰漫性高回音是非特異性發現，可見於多種疾病：steroid hepatopathy（犬 Cushing\'s 或外源性類固醇）、肝脂質沉積（尤其是貓 HL）、肝硬化/纖維化、淋巴瘤浸潤等。所以超音波只能提示肝臟異常，確診通常需要肝臟細胞學或組織學。貓 HL 的超音波敏感度約 60-80%，但特異度有限。',
     difficulty: 2, spaced_rep: true, tags: ['腹超', '肝臟', '高回音', '鑑別'], image_placeholder: null,
   },
   {
@@ -1668,9 +1668,9 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L4-004-003', node_id: 'IM-L4-004', question_type: 'mcq',
     question: '犬胃擴張扭轉（GDV）的 X 光特徵性表現為何？',
-    options: ['胃縮小', '「double bubble sign」——胃被軟組織帶（幽門-胃壁褶皺）分隔為兩個充氣腔室', '單純胃積氣', '胃壁鈣化'],
-    correct_answer: '「double bubble sign」——胃被軟組織帶（幽門-胃壁褶皺）分隔為兩個充氣腔室',
-    explanation: 'GDV 的經典 X 光表現：右側臥位可見「double bubble」或「compartmentalization」——胃被移位的幽門產生的軟組織帶（shelf sign/reverse C sign）分隔為兩個充氣腔室。幽門通常從正常右側位置移至背側和左側。其他 X 光發現包括胃極度擴張、小腸向尾側移位、脾臟移位。右側臥位是最佳的診斷投影角度。',
+    options: ['胃縮小', '「double bubble sign」，胃被軟組織帶（幽門-胃壁褶皺）分隔為兩個充氣腔室', '單純胃積氣', '胃壁鈣化'],
+    correct_answer: '「double bubble sign」，胃被軟組織帶（幽門-胃壁褶皺）分隔為兩個充氣腔室',
+    explanation: 'GDV 的經典 X 光表現：右側臥位可見「double bubble」或「compartmentalization」，胃被移位的幽門產生的軟組織帶（shelf sign/reverse C sign）分隔為兩個充氣腔室。幽門通常從正常右側位置移至背側和左側。其他 X 光發現包括胃極度擴張、小腸向尾側移位、脾臟移位。右側臥位是最佳的診斷投影角度。',
     difficulty: 3, spaced_rep: true, tags: ['消化影像', 'GDV', 'X光'], image_placeholder: null,
   },
   {
@@ -1686,7 +1686,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '腹腔超音波在偵測胃和腸道異物方面的敏感度可能受到胃腸道氣體干擾而降低。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '超音波的聲波無法穿透氣體，因此胃腸道內大量氣體會嚴重干擾異物偵測。金屬、骨頭和部分塑膠異物可產生聲影（acoustic shadow），但軟組織密度異物（如織物、海綿）可能不易與腸道內容物區分。禁食 12 小時可減少胃內食糜干擾。X 光對不透光異物的偵測可能優於超音波，兩者互補使用效果最佳。',
+    explanation: '超音波的聲波無法穿透氣體，所以胃腸道內大量氣體會嚴重干擾異物偵測。金屬、骨頭和部分塑膠異物可產生聲影（acoustic shadow），但軟組織密度異物（如織物、海綿）可能不易與腸道內容物區分。禁食 12 小時可減少胃內食糜干擾。X 光對不透光異物的偵測可能優於超音波，兩者互補使用效果最佳。',
     difficulty: 2, spaced_rep: true, tags: ['消化影像', '超音波', '異物', '限制'], image_placeholder: null,
   },
   {
@@ -1702,7 +1702,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 10 歲貓因慢性嘔吐安排上消化道內視鏡。內視鏡發現十二指腸黏膜瀰漫性水腫和顆粒狀，無明顯腫塊。取了 8 份十二指腸切片。組織學報告「中度淋巴漿細胞性腸炎」。接下來需要追加哪些檢查以確認非淋巴瘤？',
     options: ['不需追加，組織學已足夠', '免疫組化染色（IHC for CD3/CD20）和 PARR clonality 分析', '僅需 CBC 追蹤', '重新內視鏡取更多切片'],
     correct_answer: '免疫組化染色（IHC for CD3/CD20）和 PARR clonality 分析',
-    explanation: '老年貓的中度 LPE 需警覺小細胞 T 細胞淋巴瘤的可能性。IHC 可確認浸潤淋巴球的表型（CD3+ T cell vs CD20/CD79a+ B cell），評估是否有上皮向性（epitheliotropism，腫瘤性 T 細胞浸潤上皮層的特徵）。PARR（PCR for antigen receptor rearrangement）評估 T 或 B 細胞受體基因重排的 clonality——單克隆支持淋巴瘤，多克隆支持 IBD。',
+    explanation: '老年貓的中度 LPE 需警覺小細胞 T 細胞淋巴瘤的可能性。IHC 可確認浸潤淋巴球的表型（CD3+ T cell vs CD20/CD79a+ B cell），評估是否有上皮向性（epitheliotropism，腫瘤性 T 細胞浸潤上皮層的特徵）。PARR（PCR for antigen receptor rearrangement）評估 T 或 B 細胞受體基因重排的 clonality，單克隆支持淋巴瘤，多克隆支持 IBD。',
     difficulty: 4, spaced_rep: true, tags: ['消化影像', '內視鏡', 'IHC', 'PARR', '淋巴瘤', '病例'], image_placeholder: null,
   },
   {
@@ -1720,7 +1720,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬貓 CKD 管理中，腎臟處方飲食最主要的營養特點為何？',
     options: ['高蛋白低脂', '限磷、適量優質蛋白、添加 omega-3 脂肪酸', '高碳水化合物無脂肪', '高纖維限鈉'],
     correct_answer: '限磷、適量優質蛋白、添加 omega-3 脂肪酸',
-    explanation: 'CKD 腎臟處方飲食的核心：① 限磷（最重要）——減緩繼發性腎性副甲狀腺機能亢進和腎臟鈣磷沉積 ② 適量優質蛋白——減少尿毒素生成但維持肌肉量 ③ omega-3 脂肪酸（EPA/DHA）——抗炎和腎臟保護 ④ 增加水溶性纖維 ⑤ 添加鉀（代謝性酸中毒消耗鉀）。多項 RCT 已證實腎臟飲食可延長 CKD 犬貓的存活時間。',
+    explanation: 'CKD 腎臟處方飲食的核心：① 限磷（最重要），減緩繼發性腎性副甲狀腺機能亢進和腎臟鈣磷沉積 ② 適量優質蛋白，減少尿毒素生成但維持肌肉量 ③ omega-3 脂肪酸（EPA/DHA），抗炎和腎臟保護 ④ 增加水溶性纖維 ⑤ 添加鉀（代謝性酸中毒消耗鉀）。多項 RCT 已證實腎臟飲食可延長 CKD 犬貓的存活時間。',
     difficulty: 3, spaced_rep: true, tags: ['CKD管理', '腎臟飲食', '限磷'], image_placeholder: null,
   },
   {
@@ -1728,7 +1728,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'IRIS 建議 CKD 貓在哪個階段開始使用腎臟處方飲食？',
     options: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4'],
     correct_answer: 'Stage 2',
-    explanation: 'IRIS 指南建議從 Stage 2 開始轉換為腎臟處方飲食。Stage 1 可能不需要（若磷正常），但應開始監測。飲食轉換應逐步進行（7-14 天混合新舊飲食），避免強制——厭食的危害大於飲食不理想。對於拒食腎臟飲食的貓，適量進食普通食物配合磷結合劑優於因堅持腎臟飲食而導致的營養攝取不足。',
+    explanation: 'IRIS 指南建議從 Stage 2 開始轉換為腎臟處方飲食。Stage 1 可能不需要（若磷正常），但應開始監測。飲食轉換應逐步進行（7-14 天混合新舊飲食），避免強制，厭食的危害大於飲食不理想。對於拒食腎臟飲食的貓，適量進食普通食物配合磷結合劑優於因堅持腎臟飲食而導致的營養攝取不足。',
     difficulty: 3, spaced_rep: true, tags: ['CKD管理', '腎臟飲食', 'IRIS', '起始時機'], image_placeholder: null,
   },
   {
@@ -1758,8 +1758,8 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L5-001-006', node_id: 'IM-L5-001', question_type: 'case_based',
     question: '一隻 CKD Stage 3 貓（Cre 4.2 mg/dL），磷 7.5 mg/dL，已使用腎臟飲食 4 週但磷仍偏高。PCV 22%（輕度貧血），血壓 148 mmHg。下列哪項是當前最需要處理的問題？',
-    options: ['貧血——立即開始 EPO', '高血壓——開始 Amlodipine', '高磷血症——加入磷結合劑', '氮血症——增加輸液頻率'],
-    correct_answer: '高磷血症——加入磷結合劑',
+    options: ['貧血，立即開始 EPO', '高血壓，開始 Amlodipine', '高磷血症，加入磷結合劑', '氮血症，增加輸液頻率'],
+    correct_answer: '高磷血症，加入磷結合劑',
     explanation: 'Stage 3 磷目標 <5.0 mg/dL，7.5 明顯超標且飲食限磷 4 週未達標。高磷血症加速 CKD 進展（促進腎臟鈣磷沉積和繼發性副甲狀腺機能亢進），是最需要優先處理的問題。血壓 148 mmHg 在 <160 的安全範圍內，暫不需降壓。PCV 22% 為輕度貧血，監測但不一定需要立即 EPO（EPO 通常在 PCV <20% 且有症狀時考慮）。',
     difficulty: 4, spaced_rep: true, tags: ['CKD管理', '高磷', '治療優先', '病例'], image_placeholder: null,
   },
@@ -1786,7 +1786,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'Trilostane 治療犬 Cushing\'s 時，最嚴重的潛在副作用為何？',
     options: ['輕度 GI 不適', '醫源性 Addison\'s crisis（急性腎上腺皮質功能不足）', '輕度脫毛', '食慾增加'],
     correct_answer: '醫源性 Addison\'s crisis（急性腎上腺皮質功能不足）',
-    explanation: 'Trilostane 抑制腎上腺類固醇合成可能過度，導致醫源性 Addisonian crisis——急性糖皮質素和/或礦物皮質素缺乏，表現為嘔吐、腹瀉、虛脫、低血壓、電解質異常（低鈉高鉀）。這是可致命的急症。發生率約 2-15%。緊急處置：停藥 + IV 輸液 + Dexamethasone + 電解質管理。定期 ACTH 刺激試驗監測可降低風險。飼主教育識別早期警訊極重要。',
+    explanation: 'Trilostane 抑制腎上腺類固醇合成可能過度，導致醫源性 Addisonian crisis，急性糖皮質素和/或礦物皮質素缺乏，表現為嘔吐、腹瀉、虛脫、低血壓、電解質異常（低鈉高鉀）。這是可致命的急症。發生率約 2-15%。緊急處置：停藥 + IV 輸液 + Dexamethasone + 電解質管理。定期 ACTH 刺激試驗監測可降低風險。飼主教育識別早期警訊極重要。',
     difficulty: 4, spaced_rep: true, tags: ['內分泌藥物', 'Trilostane', 'Addisonian crisis'], image_placeholder: null,
   },
   {
@@ -1794,7 +1794,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'Methimazole 治療貓甲亢時，需要定期監測的血液學和生化項目為何？',
     options: ['僅 T4', 'T4 + 腎功能（Creatinine/SDMA）+ CBC（嗜中性球和血小板）+ 肝功能', '僅 CBC', '僅腎功能'],
     correct_answer: 'T4 + 腎功能（Creatinine/SDMA）+ CBC（嗜中性球和血小板）+ 肝功能',
-    explanation: '完整監測包括：① T4——評估甲亢控制（目標 1-3 μg/dL）② 腎功能——甲亢治療後可能揭露 CKD ③ CBC——監測嗜中性球減少（最嚴重副作用之一）和血小板減少 ④ 肝功能——罕見肝毒性。建議治療 2-3 週後首次複查，之後每 3-6 個月。嗜中性球 <1500/μL 或血小板顯著減少需立即停藥。',
+    explanation: '完整監測包括：① T4，評估甲亢控制（目標 1-3 μg/dL）② 腎功能，甲亢治療後可能揭露 CKD ③ CBC，監測嗜中性球減少（最嚴重副作用之一）和血小板減少 ④ 肝功能，罕見肝毒性。建議治療 2-3 週後首次複查，之後每 3-6 個月。嗜中性球 <1500/μL 或血小板明顯減少需立即停藥。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌藥物', 'Methimazole', '監測'], image_placeholder: null,
   },
   {
@@ -1802,7 +1802,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬甲低的 Levothyroxine 治療中，治療監測的最佳採血時機為何？',
     options: ['給藥前（trough level）', '給藥後 4-6 小時（peak level）', '隨機時間', '給藥後 24 小時'],
     correct_answer: '給藥後 4-6 小時（peak level）',
-    explanation: 'Levothyroxine 口服後約 4-6 小時達到血清 peak 濃度。監測時建議在給藥後 4-6 小時採血測 T4——peak T4 應在正常參考範圍上限或略高（3-5 μg/dL）。若 peak T4 仍低，考慮增加劑量或改善吸收（空腹給藥或避免與含鈣食物同時給予）。治療後 4-8 週首次監測，之後每 6 個月。',
+    explanation: 'Levothyroxine 口服後約 4-6 小時達到血清 peak 濃度。監測時建議在給藥後 4-6 小時採血測 T4，peak T4 應在正常參考範圍上限或略高（3-5 μg/dL）。若 peak T4 仍低，考慮增加劑量或改善吸收（空腹給藥或避免與含鈣食物同時給予）。治療後 4-8 週首次監測，之後每 6 個月。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌藥物', 'Levothyroxine', '監測時機'], image_placeholder: null,
   },
   {
@@ -1818,14 +1818,14 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'Addison\'s 犬的礦物皮質素補充中，DOCP（Percorten-V/Zycortal）的初始給藥間隔為每 25 天一次，可根據電解質監測結果調整。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'DOCP 初始劑量 2.2 mg/kg IM 或 SC 每 25 天一次。治療第 14 天和第 25 天檢查電解質（Na、K）。若第 25 天電解質正常，可嘗試延長間隔至 28-30 天。多數犬最終穩定在 1.1-2.2 mg/kg 每 25-30 天。DOCP 僅有礦物皮質素活性，因此需另外口服低劑量 Prednisolone（0.1-0.2 mg/kg SID）補充糖皮質素。壓力時 Prednisolone 需加量 2-10 倍。',
+    explanation: 'DOCP 初始劑量 2.2 mg/kg IM 或 SC 每 25 天一次。治療第 14 天和第 25 天檢查電解質（Na、K）。若第 25 天電解質正常，可嘗試延長間隔至 28-30 天。多數犬最終穩定在 1.1-2.2 mg/kg 每 25-30 天。DOCP 僅有礦物皮質素活性，所以需另外口服低劑量 Prednisolone（0.1-0.2 mg/kg SID）補充糖皮質素。壓力時 Prednisolone 需加量 2-10 倍。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌藥物', 'DOCP', 'Addison治療'], image_placeholder: null,
   },
   {
     id: 'Q-IM-L5-002-006', node_id: 'IM-L5-002', question_type: 'case_based',
     question: '一隻 Cushing\'s 犬使用 Trilostane 2 mg/kg SID 治療 3 個月，近期出現體重減輕和偶爾嘔吐。ACTH 刺激試驗（給藥後 4-6 小時）：post-ACTH cortisol 0.5 μg/dL。電解質：Na 138、K 6.5 mEq/L。最適當的處置？',
-    options: ['維持原劑量', '停藥、補充 Dexamethasone、輸液、監測電解質——疑似 Trilostane 引起的 Addisonian crisis', '增加劑量', '改為 Mitotane'],
-    correct_answer: '停藥、補充 Dexamethasone、輸液、監測電解質——疑似 Trilostane 引起的 Addisonian crisis',
+    options: ['維持原劑量', '停藥、補充 Dexamethasone、輸液、監測電解質，疑似 Trilostane 引起的 Addisonian crisis', '增加劑量', '改為 Mitotane'],
+    correct_answer: '停藥、補充 Dexamethasone、輸液、監測電解質，疑似 Trilostane 引起的 Addisonian crisis',
     explanation: 'Post-ACTH cortisol 0.5 μg/dL（遠低於目標 1.45-5.4）+ 高血鉀 6.5 + 臨床症狀（體重減輕、嘔吐）= 醫源性 Addisonian crisis。即刻處置：停止 Trilostane、IV 0.9% NaCl、IV Dexamethasone 0.1 mg/kg、監測電解質和 ECG（K 6.5 有心律不整風險）。若高鉀嚴重，考慮 insulin/dextrose 或 CaCl₂。恢復後重新評估是否需要降低劑量重新開始。',
     difficulty: 5, spaced_rep: true, tags: ['內分泌藥物', 'Trilostane', 'Addisonian crisis', '病例'], image_placeholder: null,
   },
@@ -1842,7 +1842,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓甲亢管理中，碘限制飲食（Hill\'s y/d）作為唯一治療方式的主要限制為何？',
     options: ['效果優於 Methimazole', '貓只能吃 y/d，不可攝取任何其他食物或零食，限制實際可行性', '導致碘中毒', '需要每天注射'],
     correct_answer: '貓只能吃 y/d，不可攝取任何其他食物或零食，限制實際可行性',
-    explanation: '碘限制飲食（y/d 含極低碘 <0.32 ppm）的原理是限制甲狀腺荷爾蒙合成的原料。主要限制：貓必須 100% 只吃此飲食——任何額外食物、零食、甚至飲水中的碘都可能使治療失效。多貓家庭中難以控制，戶外貓更不適用。此外，T4 下降速度較 Methimazole 慢（可能需 4-8 週），且不是所有貓都喜歡此飲食的口味。',
+    explanation: '碘限制飲食（y/d 含極低碘 <0.32 ppm）的原理是限制甲狀腺荷爾蒙合成的原料。主要限制：貓必須 100% 只吃此飲食，任何額外食物、零食、甚至飲水中的碘都可能使治療失效。多貓家庭中難以控制，戶外貓更不適用。另外，T4 下降速度較 Methimazole 慢（可能需 4-8 週），且不是所有貓都喜歡此飲食的口味。',
     difficulty: 3, spaced_rep: true, tags: ['內分泌藥物', '碘限制飲食', '貓甲亢', '限制'], image_placeholder: null,
   },
 
@@ -1852,7 +1852,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬免疫介導疾病的免疫抑制治療中，Mycophenolate mofetil（MMF）的主要作用機制為何？',
     options: ['抑制 calcineurin', '抑制 inosine monophosphate dehydrogenase（IMPDH），阻斷淋巴球嘌呤合成', '直接細胞毒殺 B 細胞', '與糖皮質素受體結合'],
     correct_answer: '抑制 inosine monophosphate dehydrogenase（IMPDH），阻斷淋巴球嘌呤合成',
-    explanation: 'MMF 是 mycophenolic acid 的前驅藥，抑制 IMPDH——嘌呤 de novo 合成的關鍵酵素。淋巴球（尤其是 T 和 B 細胞）高度依賴 de novo 嘌呤合成（與其他細胞可使用 salvage pathway 不同），因此 MMF 相對選擇性地抑制淋巴球增殖。犬劑量 10 mg/kg PO BID。優點：起效較 Azathioprine 快（3-5 天 vs 2-4 週）。主要副作用：GI（腹瀉，dose-dependent）。',
+    explanation: 'MMF 是 mycophenolic acid 的前驅藥，抑制 IMPDH，嘌呤 de novo 合成的關鍵酵素。淋巴球（尤其是 T 和 B 細胞）高度依賴 de novo 嘌呤合成（與其他細胞可使用 salvage pathway 不同），所以 MMF 相對選擇性地抑制淋巴球增殖。犬劑量 10 mg/kg PO BID。優點：起效較 Azathioprine 快（3-5 天 vs 2-4 週）。主要副作用：GI（腹瀉，dose-dependent）。',
     difficulty: 4, spaced_rep: true, tags: ['免疫抑制', 'Mycophenolate', 'IMPDH'], image_placeholder: null,
   },
   {
@@ -1876,12 +1876,12 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '長期使用糖皮質激素（Prednisolone）的犬最常見的副作用不包含下列何者？',
     options: ['多喝多尿和多食', 'Steroid hepatopathy', '醫源性 Cushing\'s syndrome', '低血糖'],
     correct_answer: '低血糖',
-    explanation: '長期高劑量 Prednisolone 的常見副作用：PU/PD/PP（多喝多尿多食）、steroid hepatopathy（ALP 顯著升高）、醫源性 Cushing\'s（腹部膨大、皮膚變薄、肌肉萎縮）、GI 潰瘍風險增加、免疫抑制（感染風險增加）、繼發性 UTI。糖皮質激素促進糖質新生和胰島素阻抗，傾向引起高血糖（甚至繼發糖尿病），而非低血糖。',
+    explanation: '長期高劑量 Prednisolone 的常見副作用：PU/PD/PP（多喝多尿多食）、steroid hepatopathy（ALP 明顯升高）、醫源性 Cushing\'s（腹部膨大、皮膚變薄、肌肉萎縮）、GI 潰瘍風險增加、免疫抑制（感染風險增加）、繼發性 UTI。糖皮質激素促進糖質新生和胰島素阻抗，傾向引起高血糖（甚至繼發糖尿病），而非低血糖。',
     difficulty: 2, spaced_rep: true, tags: ['免疫抑制', 'Prednisolone', '副作用'], image_placeholder: null,
   },
   {
     id: 'Q-IM-L5-003-005', node_id: 'IM-L5-003', question_type: 'true_false',
-    question: '免疫抑制治療中，Prednisolone 的減量速度不應過快——通常建議每 2-4 週減量 25%，以避免疾病復發。',
+    question: '免疫抑制治療中，Prednisolone 的減量速度不應過快，通常建議每 2-4 週減量 25%，以避免疾病復發。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
     explanation: '過快減量 Prednisolone 是 IMHA 和 IBD 復發的最常見原因之一。標準減量策略：臨床改善穩定後 2-4 週開始減量，每 2-4 週減量 25%（或每次減低原始劑量的 25%）。減量過程中持續監測臨床症狀和相關血檢（如 PCV/網織紅 for IMHA、白蛋白/CCECAI for CE）。若復發，回到上一個有效劑量重新開始。',
@@ -1906,8 +1906,8 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L5-003-008', node_id: 'IM-L5-003', question_type: 'mcq',
     question: '人類靜脈免疫球蛋白（human IV immunoglobulin, hIVIG）在犬 IMHA 治療中的角色和作用機制為何？',
-    options: ['第一線治療，取代 Prednisolone', '輔助治療——通過 Fc receptor blockade 暫時減緩巨噬細胞對紅血球的吞噬', '無任何證據支持使用', '用於預防復發'],
-    correct_answer: '輔助治療——通過 Fc receptor blockade 暫時減緩巨噬細胞對紅血球的吞噬',
+    options: ['第一線治療，取代 Prednisolone', '輔助治療，通過 Fc receptor blockade 暫時減緩巨噬細胞對紅血球的吞噬', '無任何證據支持使用', '用於預防復發'],
+    correct_answer: '輔助治療，通過 Fc receptor blockade 暫時減緩巨噬細胞對紅血球的吞噬',
     explanation: 'hIVIG（0.5-1 g/kg IV over 4-6 小時）在嚴重、難治性 IMHA 中作為輔助治療。機制包括：飽和巨噬細胞 Fc 受體減少紅血球吞噬（Fc receptor blockade）、調節補體活化、免疫調節。效果暫時（數天至 2 週）。限制：昂貴、可能引起過敏反應、存在人類異種蛋白免疫風險（重複使用）。非第一線治療，保留給對標準治療反應不良的病例。',
     difficulty: 4, spaced_rep: true, tags: ['免疫抑制', 'hIVIG', 'IMHA', '輔助治療'], image_placeholder: null,
   },
@@ -1918,7 +1918,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬慢性腸病的飲食排除試驗中，水解蛋白飲食（hydrolyzed protein diet）的原理為何？',
     options: ['提供更多蛋白質', '蛋白質被水解為小分子量胜肽（<10 kDa），降低免疫系統辨識和引發過敏反應的可能', '完全去除蛋白質', '添加更多脂肪幫助消化'],
     correct_answer: '蛋白質被水解為小分子量胜肽（<10 kDa），降低免疫系統辨識和引發過敏反應的可能',
-    explanation: '水解蛋白飲食中的蛋白質被酵素水解為小分子量胜肽（通常 <10 kDa，部分產品 <3 kDa），低於 MHC II 呈現給 T 細胞所需的最小分子量（~10 kDa），理論上不會引發免疫反應。這允許使用常見蛋白質來源（如大豆、雞肉）的水解物而不引發食物不良反應。另一選擇是新蛋白飲食（novel protein，如鹿肉、鴨肉、袋鼠肉——動物未曾接觸過的蛋白質來源）。',
+    explanation: '水解蛋白飲食中的蛋白質被酵素水解為小分子量胜肽（通常 <10 kDa，部分產品 <3 kDa），低於 MHC II 呈現給 T 細胞所需的最小分子量（~10 kDa），理論上不會引發免疫反應。這允許使用常見蛋白質來源（如大豆、雞肉）的水解物而不引發食物不良反應。另一選擇是新蛋白飲食（novel protein，如鹿肉、鴨肉、袋鼠肉，動物未曾接觸過的蛋白質來源）。',
     difficulty: 3, spaced_rep: true, tags: ['消化治療', '飲食排除', '水解蛋白'], image_placeholder: null,
   },
   {
@@ -1926,7 +1926,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬急性胰臟炎治療中，Maropitant（Cerenia）的止吐劑量和額外效益為何？',
     options: ['0.1 mg/kg PO SID，僅止吐', '1 mg/kg IV/SC SID，除止吐外可能有內臟止痛效果', '10 mg/kg PO BID，僅止痛', '0.5 mg/kg IM BID，僅抗炎'],
     correct_answer: '1 mg/kg IV/SC SID，除止吐外可能有內臟止痛效果',
-    explanation: 'Maropitant（NK1 receptor antagonist）1 mg/kg IV/SC SID 是犬貓急性嘔吐的首選止吐劑。除了中樞和周邊止吐效果，NK1 受體在內臟疼痛傳導中也扮演角色，因此 Maropitant 可能提供額外的內臟止痛效果（visceral analgesia），這對胰臟炎和其他腹腔疼痛疾病特別有價值。IV 給藥時需緩慢注射（可能造成短暫疼痛反應）。',
+    explanation: 'Maropitant（NK1 receptor antagonist）1 mg/kg IV/SC SID 是犬貓急性嘔吐的首選止吐劑。除了中樞和周邊止吐效果，NK1 受體在內臟疼痛傳導中也扮演角色，所以 Maropitant 可能提供額外的內臟止痛效果（visceral analgesia），這對胰臟炎和其他腹腔疼痛疾病特別有價值。IV 給藥時需緩慢注射（可能造成短暫疼痛反應）。',
     difficulty: 3, spaced_rep: true, tags: ['消化治療', 'Maropitant', '止吐', '胰臟炎'], image_placeholder: null,
   },
   {
@@ -1964,8 +1964,8 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
   {
     id: 'Q-IM-L5-004-007', node_id: 'IM-L5-004', question_type: 'case_based',
     question: '一隻 PLE 犬（白蛋白 1.3 g/dL）使用低脂飲食 + Prednisolone 治療 2 週後白蛋白回升至 1.8 g/dL。犬出現右後肢急性腫脹和疼痛。最可能的併發症和處置為何？',
-    options: ['關節炎——開始 NSAIDs', '靜脈血栓栓塞——開始抗凝治療（heparin 或 rivaroxaban）並確認 ATIII', '軟組織感染——開始抗生素', '骨折——安排 X 光'],
-    correct_answer: '靜脈血栓栓塞——開始抗凝治療（heparin 或 rivaroxaban）並確認 ATIII',
+    options: ['關節炎，開始 NSAIDs', '靜脈血栓栓塞，開始抗凝治療（heparin 或 rivaroxaban）並確認 ATIII', '軟組織感染，開始抗生素', '骨折，安排 X 光'],
+    correct_answer: '靜脈血栓栓塞，開始抗凝治療（heparin 或 rivaroxaban）並確認 ATIII',
     explanation: '嚴重低白蛋白（<2.0 g/dL）的 PLE 犬有高血栓風險（ATIII 流失 + 高凝狀態）。急性單肢腫脹和疼痛高度懷疑靜脈血栓栓塞。緊急處置：確認 ATIII 活性、開始抗凝治療（unfractionated heparin 初始，若 ATIII 低需同時補充 FFP 或 ATIII 濃縮物，因為 heparin 效果依賴 ATIII）。Rivaroxaban（直接 Xa 抑制劑，不依賴 ATIII）在獸醫中的使用經驗正在增加。長期需口服抗血栓藥物直至白蛋白恢復。',
     difficulty: 5, spaced_rep: true, tags: ['消化治療', 'PLE', '血栓', '抗凝', '病例'], image_placeholder: null,
   },
@@ -1974,11 +1974,11 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬 HE（肝性腦病）的飲食管理原則為何？',
     options: ['完全蛋白質限制（零蛋白飲食）', '適度蛋白質限制，優先使用植物性和乳製品蛋白，避免過度限制導致肌肉消耗', '高蛋白飲食促進肝臟再生', '僅限脂肪不限蛋白'],
     correct_answer: '適度蛋白質限制，優先使用植物性和乳製品蛋白，避免過度限制導致肌肉消耗',
-    explanation: 'HE 的飲食管理：適度（非嚴格）限蛋白，蛋白質來源優先選擇植物性（大豆）和乳製品蛋白（casein）——這些蛋白質產氨較少。避免紅肉和器官肉（含高量血紅素和嘌呤，產氨多）。過度限蛋白會導致肌肉消耗和負氮平衡，反而惡化預後。添加可發酵纖維（促進結腸菌利用 NH₃ 合成細菌蛋白質）。少量多餐避免大量蛋白質一次性消化。',
+    explanation: 'HE 的飲食管理：適度（非嚴格）限蛋白，蛋白質來源優先選擇植物性（大豆）和乳製品蛋白（casein），這些蛋白質產氨較少。避免紅肉和器官肉（含高量血紅素和嘌呤，產氨多）。過度限蛋白會導致肌肉消耗和負氮平衡，反而惡化預後。添加可發酵纖維（促進結腸菌利用 NH₃ 合成細菌蛋白質）。少量多餐避免大量蛋白質一次性消化。',
     difficulty: 3, spaced_rep: true, tags: ['消化治療', 'HE', '飲食管理', '蛋白質'], image_placeholder: null,
   },
 
-  // ===== IM-L3-004 CKD — 3 remaining (5 existing: Q-IM-001, Q-IM-009, Q-IM-010, Q-IM-012, Q-IM-014) =====
+  // ===== IM-L3-004 CKD，3 remaining (5 existing: Q-IM-001, Q-IM-009, Q-IM-010, Q-IM-012, Q-IM-014) =====
   {
     id: 'Q-IM-L3-004-001', node_id: 'IM-L3-004', question_type: 'mcq',
     question: '犬貓 CKD 的常見併發症中，繼發性腎性副甲狀腺機能亢進（renal secondary hyperparathyroidism）的觸發機制為何？',
@@ -2006,7 +2006,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
 
   // ===== Phase 2C: 8 New IM Nodes =====
 
-  // ===== IM-L2-006 免疫介導疾病機轉 — 3 questions =====
+  // ===== IM-L2-006 免疫介導疾病機轉，3 questions =====
   {
     id: 'Q-IM-L2-006-001', node_id: 'IM-L2-006', question_type: 'mcq',
     question: '免疫介導疾病中，Type II 超敏反應（抗體介導細胞毒殺）的典型代表疾病為何？',
@@ -2032,7 +2032,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['免疫學', 'IMHA', '疫苗', '超敏反應', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-013 急性腎損傷 AKI — 3 questions =====
+  // ===== IM-L3-013 急性腎損傷 AKI，3 questions =====
   {
     id: 'Q-IM-L3-013-001', node_id: 'IM-L3-013', question_type: 'mcq',
     question: '下列何者是貓急性腎損傷（AKI）最常見的腎毒性病因？',
@@ -2046,7 +2046,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'IRIS AKI 分級系統共分 5 級（Grade I-V），主要以血清肌酐的升高幅度和對輸液治療的反應來分級。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'IRIS AKI 分級系統分為 Grade I-V。Grade I 為非氮血症性 AKI（有 AKI 病史/風險但 Cre 正常或 < 1.6 mg/dL）。Grade II-V 依據 Cre 升高幅度遞增。每個 Grade 還根據對治療的反應（volume responsive、volume non-responsive、需要 RRT）進一步亞分級。',
+    explanation: 'IRIS AKI 分級系統分為 Grade I-V。Grade I 為非氮血症性 AKI（有 AKI 病史/風險但 Cre 正常或 < 1.6 mg/dL）。Grade II-V 依據 Cre 升高幅度遞增。每個 Grade 還根據對治療的反應（volume responsive、volume non-responsive、需要 RRT）後續亞分級。',
     difficulty: 3, spaced_rep: true, tags: ['AKI', 'IRIS', '分級'], image_placeholder: null,
   },
   {
@@ -2054,14 +2054,14 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 3 歲家貓被發現啃咬 Easter lily 約 6 小時前。目前精神尚可，血檢 Cre 1.2 mg/dL（正常），尿量正常。最適當的處置為？',
     options: ['觀察即可，Cre 正常表示無腎損傷', '催吐（若未超過 6 小時）+ 活性碳 + 積極 48-72 小時靜脈輸液治療並監測尿量與腎功能', '僅給予皮下輸液並 24 小時後回診', '給予 NAC（N-acetylcysteine）即可保護腎臟'],
     correct_answer: '催吐（若未超過 6 小時）+ 活性碳 + 積極 48-72 小時靜脈輸液治療並監測尿量與腎功能',
-    explanation: '百合中毒的治療關鍵是早期積極介入。即使 Cre 目前正常，腎損傷通常在 24-72 小時後才顯現。6 小時內催吐仍可考慮。積極 IV 輸液（2-3 倍維持量）維持 48-72 小時是核心治療，目的是維持腎灌注並促進毒素排泄。必須密切監測尿量——寡尿是預後不良指標。',
+    explanation: '百合中毒的治療關鍵是早期積極介入。即使 Cre 目前正常，腎損傷通常在 24-72 小時後才顯現。6 小時內催吐仍可考慮。積極 IV 輸液（2-3 倍維持量）維持 48-72 小時是核心治療，目的是維持腎灌注並促進毒素排泄。必須密切監測尿量，寡尿是預後不良指標。',
     difficulty: 4, spaced_rep: true, tags: ['AKI', '百合中毒', '貓', '去污染', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-014 蛋白質流失性腎病 PLN — 3 questions =====
+  // ===== IM-L3-014 蛋白質流失性腎病 PLN，3 questions =====
   {
     id: 'Q-IM-L3-014-001', node_id: 'IM-L3-014', question_type: 'mcq',
-    question: '犬蛋白質流失性腎病（PLN）的診斷中，UPC（尿蛋白/肌酐比值）大於多少被認為有顯著腎絲球蛋白尿？',
+    question: '犬蛋白質流失性腎病（PLN）的診斷中，UPC（尿蛋白/肌酐比值）大於多少被認為有明顯腎絲球蛋白尿？',
     options: ['UPC > 0.2', 'UPC > 0.5', 'UPC > 2.0', 'UPC > 5.0'],
     correct_answer: 'UPC > 2.0',
     explanation: 'IRIS 蛋白尿分級：犬 UPC < 0.2 為非蛋白尿、0.2-0.5 為邊緣性、> 0.5 為蛋白尿。但 UPC > 2.0 通常代表腎絲球來源的蛋白尿（glomerular proteinuria），高度提示腎絲球疾病如 PLN。UPC > 3.5 更是嚴重腎絲球蛋白尿，常伴隨低白蛋白血症和血栓風險。',
@@ -2080,11 +2080,11 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 5 歲軟毛小麥梗犬年度健檢發現 UPC 3.8、Albumin 1.8 g/dL、Cre 1.5 mg/dL。身體狀況良好，無明顯臨床症狀。下一步最適當的處置為？',
     options: ['UPC 偏高但 Cre 正常，繼續觀察即可', '開始 Telmisartan/Benazepril 抗蛋白尿 + 考慮腎臟切片確定病因 + 低劑量 Aspirin 預防血栓', '直接開始 Prednisolone 免疫抑制治療', '限制蛋白質飲食即可控制蛋白尿'],
     correct_answer: '開始 Telmisartan/Benazepril 抗蛋白尿 + 考慮腎臟切片確定病因 + 低劑量 Aspirin 預防血栓',
-    explanation: 'UPC 3.8 = 嚴重腎絲球蛋白尿。Albumin 1.8 = 低白蛋白血症 → 血栓風險增加（Alb < 2.0 時血栓風險顯著上升）。治療：(1) ACEI/ARB 降低腎絲球內壓減少蛋白尿、(2) 腎臟切片確定腎絲球病變類型（免疫複合體性、類澱粉沉著等）以決定是否需要免疫抑制、(3) 抗血栓預防。即使 Cre 正常也需積極處置。',
+    explanation: 'UPC 3.8 = 嚴重腎絲球蛋白尿。Albumin 1.8 = 低白蛋白血症 → 血栓風險增加（Alb < 2.0 時血栓風險明顯上升）。治療：(1) ACEI/ARB 降低腎絲球內壓減少蛋白尿、(2) 腎臟切片確定腎絲球病變類型（免疫複合體性、類澱粉沉著等）以決定是否需要免疫抑制、(3) 抗血栓預防。即使 Cre 正常也需積極處置。',
     difficulty: 4, spaced_rep: true, tags: ['PLN', 'Wheaten', '抗蛋白尿', '血栓', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-015 免疫介導血小板減少症 IMT — 3 questions =====
+  // ===== IM-L3-015 免疫介導血小板減少症 IMT，3 questions =====
   {
     id: 'Q-IM-L3-015-001', node_id: 'IM-L3-015', question_type: 'mcq',
     question: '犬原發性免疫介導血小板減少症（IMT）的血小板計數通常低於多少？',
@@ -2110,7 +2110,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['IMT', 'Vincristine', '治療', '類固醇反應不良', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-016 鉤端螺旋體病 Leptospirosis — 3 questions =====
+  // ===== IM-L3-016 鉤端螺旋體病 Leptospirosis，3 questions =====
   {
     id: 'Q-IM-L3-016-001', node_id: 'IM-L3-016', question_type: 'mcq',
     question: '犬鉤端螺旋體病（Leptospirosis）的確診金標準血清學檢查為何？',
@@ -2132,11 +2132,11 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 4 歲拉布拉多犬，常在戶外水域活動。主訴急性嘔吐、厭食、黃疸 2 天。血檢：BUN 85、Cre 5.2、T-Bil 8.5、ALP 480、ALT 350。尿液 USG 1.012。MAT 初步結果：L. icterohaemorrhagiae 1:1600。最適當的初始治療為？',
     options: ['Amoxicillin IV（殺菌期）→ 穩定後轉 Doxycycline PO 完成 14 天療程', 'Metronidazole 單獨使用', 'Enrofloxacin 14 天', '僅支持療法等待 MAT 雙份血清確認'],
     correct_answer: 'Amoxicillin IV（殺菌期）→ 穩定後轉 Doxycycline PO 完成 14 天療程',
-    explanation: '鉤端螺旋體病的標準治療分兩階段：(1) 殺菌期——Ampicillin/Amoxicillin IV（嚴重患犬無法口服時）或 Penicillin G IV；(2) 消除腎臟帶菌期——Doxycycline 5 mg/kg PO BID × 14 天。Doxycycline 是唯一能清除腎臟帶菌的藥物。不應等待雙份血清確認才開始治療——MAT 1:1600 加上典型臨床表現已足夠支持治療。',
+    explanation: '鉤端螺旋體病的標準治療分兩階段：(1) 殺菌期，Ampicillin/Amoxicillin IV（嚴重患犬無法口服時）或 Penicillin G IV；(2) 消除腎臟帶菌期，Doxycycline 5 mg/kg PO BID × 14 天。Doxycycline 是唯一能清除腎臟帶菌的藥物。不應等待雙份血清確認才開始治療，MAT 1:1600 加上典型臨床表現已足夠支持治療。',
     difficulty: 4, spaced_rep: true, tags: ['Leptospirosis', 'Doxycycline', 'Amoxicillin', '治療', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-017 貓傳染性腹膜炎 FIP — 3 questions =====
+  // ===== IM-L3-017 貓傳染性腹膜炎 FIP，3 questions =====
   {
     id: 'Q-IM-L3-017-001', node_id: 'IM-L3-017', question_type: 'mcq',
     question: '貓傳染性腹膜炎（FIP）的滲出液 Rivalta test 陽性代表什麼？',
@@ -2162,7 +2162,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['FIP', '濕型', '幼貓', 'A/G ratio', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-018 貓下泌尿道疾病 FLUTD — 3 questions =====
+  // ===== IM-L3-018 貓下泌尿道疾病 FLUTD，3 questions =====
   {
     id: 'Q-IM-L3-018-001', node_id: 'IM-L3-018', question_type: 'mcq',
     question: '貓下泌尿道疾病（FLUTD）中，最常見的病因為何？',
@@ -2176,7 +2176,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓的尿路結石中，struvite（鳥糞石）與 calcium oxalate（草酸鈣）的發生率目前已接近相等，且草酸鈣結石無法透過飲食溶解。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '過去 struvite 結石佔多數，但隨著酸化飲食的普及，calcium oxalate（CaOx）比例逐年上升，目前兩者發生率接近。關鍵差異：struvite 可透過處方飲食（酸化 + 低鎂）溶解（4-6 週），但 CaOx 結石無法飲食溶解，必須手術移除。因此結石類型鑑定（影像特徵 + 尿液分析）對治療決策至關重要。',
+    explanation: '過去 struvite 結石佔多數，但隨著酸化飲食的普及，calcium oxalate（CaOx）比例逐年上升，目前兩者發生率接近。關鍵差異：struvite 可透過處方飲食（酸化 + 低鎂）溶解（4-6 週），但 CaOx 結石無法飲食溶解，必須手術移除。所以結石類型鑑定（影像特徵 + 尿液分析）對治療決策不能省。',
     difficulty: 3, spaced_rep: true, tags: ['FLUTD', 'struvite', 'CaOx', '結石'], image_placeholder: null,
   },
   {
@@ -2188,7 +2188,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['FLUTD', 'FIC', 'MEMO', '環境管理', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-019 貓膽管炎與三合症 — 3 questions =====
+  // ===== IM-L3-019 貓膽管炎與三合症，3 questions =====
   {
     id: 'Q-IM-L3-019-001', node_id: 'IM-L3-019', question_type: 'mcq',
     question: '貓的中性球膽管炎（neutrophilic cholangitis）和淋巴球膽管炎（lymphocytic cholangitis）的主要區分特徵為何？',
@@ -2214,7 +2214,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['膽管炎', '三合症', 'Ursodiol', 'Prednisolone', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-013 急性腎損傷 AKI — 5 new questions (004-008) =====
+  // ===== IM-L3-013 急性腎損傷 AKI，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-013-004', node_id: 'IM-L3-013', question_type: 'mcq',
     question: '犬乙二醇（ethylene glycol）中毒導致急性腎損傷時，尿液沉渣中最具診斷特徵的結晶為何？',
@@ -2228,7 +2228,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬乙二醇中毒的首選解毒劑為何？',
     options: ['N-acetylcysteine（NAC）', 'Fomepizole（4-methylpyrazole）', 'Atropine', 'Deferoxamine'],
     correct_answer: 'Fomepizole（4-methylpyrazole）',
-    explanation: 'Fomepizole 是犬乙二醇中毒的首選解毒劑，為醇脫氫酶（alcohol dehydrogenase）的競爭性抑制劑，可阻斷乙二醇代謝為毒性代謝物。犬的效果顯著且副作用小。貓因代謝差異，fomepizole 效果不佳，需使用 20% ethanol IV。治療須在攝入後 8-12 小時內開始才有效。',
+    explanation: 'Fomepizole 是犬乙二醇中毒的首選解毒劑，為醇脫氫酶（alcohol dehydrogenase）的競爭性抑制劑，可阻斷乙二醇代謝為毒性代謝物。犬的效果明顯且副作用小。貓因代謝差異，fomepizole 效果不佳，需使用 20% ethanol IV。治療須在攝入後 8-12 小時內開始才有效。',
     difficulty: 3, spaced_rep: true, tags: ['AKI', '乙二醇', 'fomepizole', '解毒劑'], image_placeholder: null,
   },
   {
@@ -2256,7 +2256,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['AKI', '百合', '高血鉀', '急診', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-014 蛋白質流失性腎病 PLN — 5 new questions (004-008) =====
+  // ===== IM-L3-014 蛋白質流失性腎病 PLN，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-014-004', node_id: 'IM-L3-014', question_type: 'mcq',
     question: '犬蛋白尿的 IRIS 分級中，UPC > 0.5 被歸類為？',
@@ -2278,7 +2278,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'PLN 患犬出現 Albumin < 2.0 g/dL 時，最需警覺的嚴重併發症為何？',
     options: ['低血糖', '血栓栓塞症（thromboembolism）', '高血壓', '代謝性鹼中毒'],
     correct_answer: '血栓栓塞症（thromboembolism）',
-    explanation: '當 Albumin < 2.0 g/dL 時，血栓風險顯著上升。機轉包括：(1) 抗凝血因子（antithrombin III）隨蛋白尿流失、(2) 肝臟代償性增加促凝因子合成、(3) 高脂血症增加血液黏稠度、(4) 血小板過度活化。常見血栓部位為肺動脈和腎動脈。因此 Albumin < 2.0 的 PLN 犬建議預防性抗血栓（低劑量 aspirin 或 clopidogrel）。',
+    explanation: '當 Albumin < 2.0 g/dL 時，血栓風險明顯上升。機轉包括：(1) 抗凝血因子（antithrombin III）隨蛋白尿流失、(2) 肝臟代償性增加促凝因子合成、(3) 高脂血症增加血液黏稠度、(4) 血小板過度活化。常見血栓部位為肺動脈和腎動脈。所以 Albumin < 2.0 的 PLN 犬建議預防性抗血栓（低劑量 aspirin 或 clopidogrel）。',
     difficulty: 4, spaced_rep: true, tags: ['PLN', '血栓', '低白蛋白', '併發症'], image_placeholder: null,
   },
   {
@@ -2294,17 +2294,17 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 4 歲伯恩山犬，健檢發現 UPC 4.2、Albumin 1.6 g/dL、Cre 1.8 mg/dL。雙後肢輕度水腫。三天後突然呼吸急促、SpO2 88%、胸腔 X 光顯示右肺動脈增粗。最可能的急性併發症為何？',
     options: ['心因性肺水腫', '肺動脈血栓栓塞（pulmonary thromboembolism）', '嚴重肺炎', '自發性氣胸'],
     correct_answer: '肺動脈血栓栓塞（pulmonary thromboembolism）',
-    explanation: '此犬有嚴重 PLN（UPC 4.2）+ 重度低白蛋白血症（Alb 1.6）+ 急性呼吸窘迫 + 右肺動脈增粗，高度提示肺動脈血栓栓塞（PTE）。PTE 是 PLN 最致命的併發症，Albumin < 2.0 時風險顯著增加。伯恩山犬為 PLN 好發品種。治療需緊急抗凝（heparin → warfarin 或 rivaroxaban）+ 支持性氧療 + 持續抗蛋白尿治療。',
+    explanation: '此犬有嚴重 PLN（UPC 4.2）+ 重度低白蛋白血症（Alb 1.6）+ 急性呼吸窘迫 + 右肺動脈增粗，高度提示肺動脈血栓栓塞（PTE）。PTE 是 PLN 最致命的併發症，Albumin < 2.0 時風險明顯增加。伯恩山犬為 PLN 好發品種。治療需緊急抗凝（heparin → warfarin 或 rivaroxaban）+ 支持性氧療 + 持續抗蛋白尿治療。',
     difficulty: 4, spaced_rep: true, tags: ['PLN', 'PTE', '血栓', '伯恩山犬', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-015 免疫介導血小板減少症 IMT — 5 new questions (004-008) =====
+  // ===== IM-L3-015 免疫介導血小板減少症 IMT，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-015-004', node_id: 'IM-L3-015', question_type: 'mcq',
-    question: '犬免疫介導血小板減少症（IMT）中，血小板低於多少時自發性出血風險顯著增加？',
+    question: '犬免疫介導血小板減少症（IMT）中，血小板低於多少時自發性出血風險明顯增加？',
     options: ['< 100,000/μL', '< 75,000/μL', '< 30,000/μL', '< 150,000/μL'],
     correct_answer: '< 30,000/μL',
-    explanation: '血小板 < 30,000/μL 時自發性出血風險顯著增加，臨床可見瘀點（petechiae）、瘀斑（ecchymoses）、黏膜出血（鼻出血、牙齦出血）、血尿、黑便等。血小板 50,000-100,000/μL 通常不會自發出血但手術出血風險增加。原發性 IMT 的血小板常 < 20,000/μL。',
+    explanation: '血小板 < 30,000/μL 時自發性出血風險明顯增加，臨床可見瘀點（petechiae）、瘀斑（ecchymoses）、黏膜出血（鼻出血、牙齦出血）、血尿、黑便等。血小板 50,000-100,000/μL 通常不會自發出血但手術出血風險增加。原發性 IMT 的血小板常 < 20,000/μL。',
     difficulty: 2, spaced_rep: true, tags: ['IMT', '血小板', '出血閾值'], image_placeholder: null,
   },
   {
@@ -2312,7 +2312,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '血液抹片上，每個油鏡視野（oil immersion field）平均可見 1 個血小板，估算的血小板總數約為多少？',
     options: ['5,000-10,000/μL', '15,000-20,000/μL', '50,000-75,000/μL', '100,000-150,000/μL'],
     correct_answer: '15,000-20,000/μL',
-    explanation: '血液抹片血小板估算法：每個油鏡視野（100x）的血小板平均數 × 15,000-20,000 = 估算總數。此方法雖粗略但可快速確認嚴重血小板減少。正常犬每個油鏡視野應有 8-15 個血小板。抹片估算對於排除 EDTA 依賴性假性血小板減少症（pseudothrombocytopenia）也很重要——此時可見大量血小板凝聚。',
+    explanation: '血液抹片血小板估算法：每個油鏡視野（100x）的血小板平均數 × 15,000-20,000 = 估算總數。此方法雖粗略但可快速確認嚴重血小板減少。正常犬每個油鏡視野應有 8-15 個血小板。抹片估算對於排除 EDTA 依賴性假性血小板減少症（pseudothrombocytopenia）也很重要，此時可見大量血小板凝聚。',
     difficulty: 3, spaced_rep: true, tags: ['IMT', '血液抹片', '血小板估算'], image_placeholder: null,
   },
   {
@@ -2340,7 +2340,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['Evans syndrome', 'IMHA', 'IMT', '柯卡犬', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-016 鉤端螺旋體病 Leptospirosis — 5 new questions (004-008) =====
+  // ===== IM-L3-016 鉤端螺旋體病 Leptospirosis，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-016-004', node_id: 'IM-L3-016', question_type: 'mcq',
     question: '犬鉤端螺旋體病的 MAT 檢測中，下列何種情況最具診斷價值？',
@@ -2382,7 +2382,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['Leptospirosis', '經驗性治療', 'Ampicillin', '臨床決策', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-017 貓傳染性腹膜炎 FIP — 5 new questions (004-008) =====
+  // ===== IM-L3-017 貓傳染性腹膜炎 FIP，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-017-004', node_id: 'IM-L3-017', question_type: 'mcq',
     question: 'FIP 體腔液分析中，A:G ratio（白蛋白/球蛋白比值）低於多少時高度提示 FIP？',
@@ -2404,7 +2404,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'GS-441524 治療 FIP 的目前建議標準療程（皮下注射劑型）為多長？',
     options: ['連續 28 天', '連續 42 天', '連續 84 天（12 週）', '連續 112 天（16 週）'],
     correct_answer: '連續 84 天（12 週）',
-    explanation: 'GS-441524 SC 注射的標準療程為 84 天（12 週），劑量依病型調整：濕型起始 6-8 mg/kg/day SC，眼型/神經型需更高劑量（10-12 mg/kg/day）以穿透血腦屏障或血眼屏障。療程不可自行縮短，過早停藥復發率顯著增加。近年口服劑型也有報告，但生體可用率和療效仍在研究中。治療期間需定期追蹤血液學和肝腎功能。',
+    explanation: 'GS-441524 SC 注射的標準療程為 84 天（12 週），劑量依病型調整：濕型起始 6-8 mg/kg/day SC，眼型/神經型需更高劑量（10-12 mg/kg/day）以穿透血腦屏障或血眼屏障。療程不可自行縮短，過早停藥復發率明顯增加。近年口服劑型也有報告，但生體可用率和療效仍在研究中。治療期間需定期追蹤血液學和肝腎功能。',
     difficulty: 4, spaced_rep: true, tags: ['FIP', 'GS-441524', '療程', '劑量'], image_placeholder: null,
   },
   {
@@ -2424,13 +2424,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['FIP', '乾型', '神經型', '眼型', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-018 貓下泌尿道疾病 FLUTD — 5 new questions (004-008) =====
+  // ===== IM-L3-018 貓下泌尿道疾病 FLUTD，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-018-004', node_id: 'IM-L3-018', question_type: 'mcq',
     question: '貓自發性膀胱炎（FIC）佔年輕至中年貓 FLUTD 病因的比例約為多少？',
     options: ['10-20%', '30-40%', '55-65%', '80-90%'],
     correct_answer: '55-65%',
-    explanation: 'FIC 佔年輕至中年貓（< 10 歲）FLUTD 病因的 55-65%（部分文獻報告高達 69%），是最常見的病因。其次為尿路結石（15-21%）和尿道栓子（10-21%）。UTI 在年輕貓中反而少見（1-5%），但在 > 10 歲的貓中比例顯著增加。FIC 的病理機轉涉及神經內分泌壓力反應異常和膀胱黏膜 GAG 層缺損。',
+    explanation: 'FIC 佔年輕至中年貓（< 10 歲）FLUTD 病因的 55-65%（部分文獻報告高達 69%），是最常見的病因。其次為尿路結石（15-21%）和尿道栓子（10-21%）。UTI 在年輕貓中反而少見（1-5%），但在 > 10 歲的貓中比例明顯增加。FIC 的病理機轉涉及神經內分泌壓力反應異常和膀胱黏膜 GAG 層缺損。',
     difficulty: 2, spaced_rep: true, tags: ['FLUTD', 'FIC', '流行病學', '病因比例'], image_placeholder: null,
   },
   {
@@ -2466,13 +2466,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['FLUTD', '尿道阻塞', '高血鉀', '急救', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-019 貓膽管炎與三合症 — 5 new questions (004-008) =====
+  // ===== IM-L3-019 貓膽管炎與三合症，5 new questions (004-008) =====
   {
     id: 'Q-IM-L3-019-004', node_id: 'IM-L3-019', question_type: 'mcq',
     question: '貓膽管炎的確診金標準為何？',
     options: ['血清 ALP/ALT 升高', '腹部超音波顯示膽管擴張', '肝臟切片組織病理學檢查', '糞便寄生蟲檢查'],
     correct_answer: '肝臟切片組織病理學檢查',
-    explanation: '肝臟切片（超音波導引細針或楔形切片）的組織病理學是區分膽管炎類型的金標準。中性球膽管炎可見門脈區中性球浸潤，淋巴球膽管炎可見門脈區小淋巴球和漿細胞浸潤。這兩種的治療方向完全不同（前者為抗生素、後者為免疫抑制），因此組織學分型對臨床決策至關重要。血液學和影像學僅能提供推定診斷。',
+    explanation: '肝臟切片（超音波導引細針或楔形切片）的組織病理學是區分膽管炎類型的金標準。中性球膽管炎可見門脈區中性球浸潤，淋巴球膽管炎可見門脈區小淋巴球和漿細胞浸潤。這兩種的治療方向完全不同（前者為抗生素、後者為免疫抑制），所以組織學分型對臨床決策不能省。血液學和影像學僅能提供推定診斷。',
     difficulty: 2, spaced_rep: true, tags: ['膽管炎', '肝臟切片', '金標準', '診斷'], image_placeholder: null,
   },
   {
@@ -2496,7 +2496,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓肝臟脂質沉著症（hepatic lipidosis）可作為膽管炎或三合症的併發症或鑑別診斷出現，厭食超過 3-7 天的肥胖貓特別容易發生。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '肝臟脂質沉著症（fatty liver）是貓特有的致命肝病，通常發生在肥胖貓厭食 > 3-7 天後。過度脂肪動員 → 肝臟三酸甘油脂堆積 → 肝功能衰竭。膽管炎/三合症引起的厭食可誘發繼發性 hepatic lipidosis，使病情更加複雜。因此所有厭食貓（尤其肥胖者）需早期營養支持（食道管/胃管），不可等待自主進食。',
+    explanation: '肝臟脂質沉著症（fatty liver）是貓特有的致命肝病，通常發生在肥胖貓厭食 > 3-7 天後。過度脂肪動員 → 肝臟三酸甘油脂堆積 → 肝功能衰竭。膽管炎/三合症引起的厭食可誘發繼發性 hepatic lipidosis，使病情更加複雜。所以所有厭食貓（尤其肥胖者）需早期營養支持（食道管/胃管），不可等待自主進食。',
     difficulty: 3, spaced_rep: true, tags: ['hepatic lipidosis', '膽管炎', '鑑別', '肥胖貓'], image_placeholder: null,
   },
   {
@@ -2508,7 +2508,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['中性球膽管炎', '三合症', '抗生素', 'Ursodiol', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L1-005 呼吸系統生理 — 8 questions =====
+  // ===== IM-L1-005 呼吸系統生理，8 questions =====
   {
     id: 'Q-IM-RESP-001', node_id: 'IM-L1-005', question_type: 'mcq',
     question: '犬肺泡表面活性劑（surfactant）主要由哪種細胞分泌？',
@@ -2538,7 +2538,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '呼吸中樞的主要化學驅動力為何？',
     options: ['PaO2 下降', 'PaCO2 / H+ 升高', '血漿 HCO3- 濃度', '血紅素飽和度'],
     correct_answer: 'PaCO2 / H+ 升高',
-    explanation: '延腦腹外側的中樞化學受體對 CO2/H+ 最為敏感，為正常呼吸驅動的主力。周邊化學受體（頸動脈體、主動脈體）在 PaO2 < 60 mmHg 時才顯著活化，作為低氧時的備援驅動力。',
+    explanation: '延腦腹外側的中樞化學受體對 CO2/H+ 最為敏感，為正常呼吸驅動的主力。周邊化學受體（頸動脈體、主動脈體）在 PaO2 < 60 mmHg 時才明顯活化，作為低氧時的備援驅動力。',
     difficulty: 2, spaced_rep: true, tags: ['呼吸', '調控', '化學受體'], image_placeholder: null,
   },
   {
@@ -2546,15 +2546,15 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '脈搏血氧儀（pulse oximetry）顯示 SpO2 90% 時，對應的 PaO2 大約為多少？',
     options: ['100 mmHg', '80 mmHg', '60 mmHg', '40 mmHg'],
     correct_answer: '60 mmHg',
-    explanation: '氧解離曲線上 SpO2 90% 對應 PaO2 約 60 mmHg。這是「危險閾值」——低於此值，SpO2 將急速下降（曲線陡峭部分）。SpO2 ≥ 95% 通常對應 PaO2 ≥ 80 mmHg（安全區）。',
+    explanation: '氧解離曲線上 SpO2 90% 對應 PaO2 約 60 mmHg。這是「危險閾值」，低於此值，SpO2 將急速下降（曲線陡峭部分）。SpO2 ≥ 95% 通常對應 PaO2 ≥ 80 mmHg（安全區）。',
     difficulty: 2, spaced_rep: true, tags: ['呼吸', 'SpO2', '監測'], image_placeholder: null,
   },
   {
     id: 'Q-IM-RESP-006', node_id: 'IM-L1-005', question_type: 'true_false',
-    question: 'CO2 的擴散速率約為 O2 的 20 倍，因此在 V/Q 不匹配的早期階段，患者通常先出現低氧血症而非高碳酸血症。',
+    question: 'CO2 的擴散速率約為 O2 的 20 倍，所以在 V/Q 不匹配的早期階段，患者通常先出現低氧血症而非高碳酸血症。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: 'CO2 在水中的溶解度與擴散係數遠高於 O2（約 20 倍），因此即使 V/Q 不匹配，CO2 仍可透過正常肺區域代償排出。但 O2 因曲線特性無法等量代償，故低氧先出現。嚴重 V/Q 不匹配或通氣衰竭時才出現高碳酸血症。',
+    explanation: 'CO2 在水中的溶解度與擴散係數遠高於 O2（約 20 倍），所以即使 V/Q 不匹配，CO2 仍可透過正常肺區域代償排出。但 O2 因曲線特性無法等量代償，故低氧先出現。嚴重 V/Q 不匹配或通氣衰竭時才出現高碳酸血症。',
     difficulty: 2, spaced_rep: true, tags: ['呼吸', 'CO2', 'O2', '擴散'], image_placeholder: null,
   },
   {
@@ -2574,7 +2574,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['呼吸', '吸氣性', '上呼吸道', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L2-007 呼吸道發炎與氣道重塑 — 8 questions =====
+  // ===== IM-L2-007 呼吸道發炎與氣道重塑，8 questions =====
   {
     id: 'Q-IM-RESP-009', node_id: 'IM-L2-007', question_type: 'mcq',
     question: '貓哮喘的核心免疫病理屬於哪種類型？',
@@ -2640,7 +2640,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['慢性支氣管炎', '嗜中性球', '犬', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-020 貓下呼吸道疾病/貓哮喘 — 8 questions =====
+  // ===== IM-L3-020 貓下呼吸道疾病/貓哮喘，8 questions =====
   {
     id: 'Q-IM-ASTHMA-001', node_id: 'IM-L3-020', question_type: 'mcq',
     question: '貓哮喘（FLAD）的胸腔 X 光最典型特徵為何？',
@@ -2662,7 +2662,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '吸入型 Fluticasone 用於貓哮喘長期控制時，大約需要多久才能達到穩態效果？',
     options: ['即時（數分鐘）', '24 小時', '約 2 週', '約 2 個月'],
     correct_answer: '約 2 週',
-    explanation: '吸入型類固醇（Fluticasone）需約 2 週達穩態抗炎效果。因此在開始吸入治療的初期，可能需要短期口服類固醇作為「橋接」。相比之下，Albuterol（β2-agonist）為即時起效（5-10 分鐘）的急救/症狀緩解藥物。',
+    explanation: '吸入型類固醇（Fluticasone）需約 2 週達穩態抗炎效果。所以在開始吸入治療的初期，可能需要短期口服類固醇作為「橋接」。相比之下，Albuterol（β2-agonist）為即時起效（5-10 分鐘）的急救/症狀緩解藥物。',
     difficulty: 3, spaced_rep: true, tags: ['Fluticasone', '吸入', '貓哮喘'], image_placeholder: null,
   },
   {
@@ -2670,7 +2670,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '診斷貓哮喘時，下列哪項檢查的結果正常仍不能排除 FLAD？',
     options: ['BAL 細胞學', '糞便浮游（排除肺蟲）', '胸腔 X 光', 'SNAP 心絲蟲檢測'],
     correct_answer: '胸腔 X 光',
-    explanation: '約 23% 的確診 FLAD 貓胸腔 X 光完全正常。因此 X 光正常不能排除 FLAD。BAL 細胞學（嗜酸球 > 17%）是診斷金標準。糞便浮游和心絲蟲檢測為排除性檢查（排除肺蟲和 HARD）。',
+    explanation: '約 23% 的確診 FLAD 貓胸腔 X 光完全正常。所以 X 光正常不能排除 FLAD。BAL 細胞學（嗜酸球 > 17%）是診斷金標準。糞便浮游和心絲蟲檢測為排除性檢查（排除肺蟲和 HARD）。',
     difficulty: 3, spaced_rep: true, tags: ['貓哮喘', '診斷', 'X光'], image_placeholder: null,
   },
   {
@@ -2686,7 +2686,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓哮喘急性發作時，應優先進行胸腔 X 光和抽血以確認診斷，然後再給予支氣管擴張劑。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '急性哮喘發作的首要原則是「最少刺激」。應先提供氧氣 + Terbutaline SC/IM 解除支氣管痙攣，等穩定後再進行進一步檢查。過度保定（抓握做 X 光或抽血）會因壓力加劇支氣管痙攣，很多貓因過度保定而死亡。',
+    explanation: '急性哮喘發作的首要原則是「最少刺激」。應先提供氧氣 + Terbutaline SC/IM 解除支氣管痙攣，等穩定後再進行後續檢查。過度保定（抓握做 X 光或抽血）會因壓力加劇支氣管痙攣，很多貓因過度保定而死亡。',
     difficulty: 3, spaced_rep: true, tags: ['貓哮喘', '急性', '處置原則'], image_placeholder: null,
   },
   {
@@ -2706,7 +2706,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['貓哮喘', '吸入治療', '衛教', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-021 犬貓細菌性肺炎 — 8 questions =====
+  // ===== IM-L3-021 犬貓細菌性肺炎，8 questions =====
   {
     id: 'Q-IM-PNEUM-001', node_id: 'IM-L3-021', question_type: 'mcq',
     question: '犬吸入性肺炎最好發的肺葉位置為何？',
@@ -2720,7 +2720,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬吸入性肺炎的「雙重損傷」機轉中，化學性損傷的來源為何？',
     options: ['細菌毒素', '胃酸（pH < 2.5）灼傷肺泡上皮', '免疫複合體沉積', '吸入的空氣汙染物'],
     correct_answer: '胃酸（pH < 2.5）灼傷肺泡上皮',
-    explanation: '吸入性肺炎的雙重損傷：(1) 化學性損傷——胃酸直接灼傷肺泡上皮與內皮 → 通透性增加 → 肺水腫 → surfactant 失活 (2) 細菌感染——口腔常駐菌隨吸入物進入已受損的氣道 → 化膿性肺炎。',
+    explanation: '吸入性肺炎的雙重損傷：(1) 化學性損傷，胃酸直接灼傷肺泡上皮與內皮 → 通透性增加 → 肺水腫 → surfactant 失活 (2) 細菌感染，口腔常駐菌隨吸入物進入已受損的氣道 → 化膿性肺炎。',
     difficulty: 3, spaced_rep: true, tags: ['吸入性', '肺炎', '胃酸', '病理'], image_placeholder: null,
   },
   {
@@ -2736,7 +2736,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '貓的細菌性肺炎中，哪種病原需要特殊培養且對 β-lactam 抗生素無效？',
     options: ['Pasteurella multocida', 'Mycoplasma spp.', 'Bordetella bronchiseptica', 'E. coli'],
     correct_answer: 'Mycoplasma spp.',
-    explanation: 'Mycoplasma 缺乏細胞壁，因此 (1) 對 β-lactam 類抗生素（Amoxicillin、Ampicillin 等）無效 (2) 需要特殊培養基。治療首選 Doxycycline 或 Azithromycin。貓肺炎中 Mycoplasma 為重要病原，BAL 培養時應特別要求 Mycoplasma 培養。',
+    explanation: 'Mycoplasma 缺乏細胞壁，所以 (1) 對 β-lactam 類抗生素（Amoxicillin、Ampicillin 等）無效 (2) 需要特殊培養基。治療首選 Doxycycline 或 Azithromycin。貓肺炎中 Mycoplasma 為重要病原，BAL 培養時應特別要求 Mycoplasma 培養。',
     difficulty: 3, spaced_rep: true, tags: ['Mycoplasma', '貓', '肺炎', '抗生素'], image_placeholder: null,
   },
   {
@@ -2772,13 +2772,13 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['貓', '肺炎', 'Mycoplasma', '培養', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-022 FeLV/FIV 逆轉錄病毒感染 — 8 questions =====
+  // ===== IM-L3-022 FeLV/FIV 逆轉錄病毒感染，8 questions =====
   {
     id: 'Q-IM-FELV-001', node_id: 'IM-L3-022', question_type: 'mcq',
     question: 'SNAP combo test 中，FeLV 和 FIV 的偵測標靶分別為何？',
     options: ['FeLV 抗體 / FIV 抗原', 'FeLV p27 抗原 / FIV 抗體', '兩者皆偵測抗體', '兩者皆偵測抗原'],
     correct_answer: 'FeLV p27 抗原 / FIV 抗體',
-    explanation: 'SNAP FeLV/FIV combo test：FeLV 偵測血中游離 p27 抗原（病毒蛋白）；FIV 偵測抗 FIV 抗體。了解此差異對於解讀結果至關重要——FIV 偽陽性可因母源抗體（幼貓）或疫苗（台灣未使用）造成。',
+    explanation: 'SNAP FeLV/FIV combo test：FeLV 偵測血中游離 p27 抗原（病毒蛋白）；FIV 偵測抗 FIV 抗體。了解此差異對於解讀結果不能省，FIV 偽陽性可因母源抗體（幼貓）或疫苗（台灣未使用）造成。',
     difficulty: 3, spaced_rep: true, tags: ['FeLV', 'FIV', 'SNAP', '診斷'], image_placeholder: null,
   },
   {
@@ -2786,7 +2786,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 3 月齡幼貓 SNAP FIV 抗體陽性。最適當的下一步為何？',
     options: ['確認診斷，建議安樂', '立即開始抗病毒治療', '6 個月齡後重新檢驗（母源抗體可能偽陽性）', '立即做 PCR 確認'],
     correct_answer: '6 個月齡後重新檢驗（母源抗體可能偽陽性）',
-    explanation: '小於 6 個月齡幼貓的 FIV SNAP 陽性可因母源抗體偽陽性——FIV 母貓的抗體經乳汁傳給幼貓，可持續至 6 個月齡。應在 6 個月後重新檢驗。絕不應僅憑一次陽性結果就做安樂死決定。PCR 可輔助但也有限制。',
+    explanation: '小於 6 個月齡幼貓的 FIV SNAP 陽性可因母源抗體偽陽性，FIV 母貓的抗體經乳汁傳給幼貓，可持續至 6 個月齡。應在 6 個月後重新檢驗。絕不應僅憑一次陽性結果就做安樂死決定。PCR 可輔助但也有限制。',
     difficulty: 3, spaced_rep: true, tags: ['FIV', '幼貓', '母源抗體', '偽陽性'], image_placeholder: null,
   },
   {
@@ -2794,7 +2794,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'FeLV 感染的「退行性感染（Regressive infection）」意味著什麼？',
     options: ['病毒完全被清除', '病毒潛伏在骨髓 DNA 中但複製被抑制，SNAP 轉陰但骨髓 PCR 可能陽性', '持續病毒血症，預後不良', '感染局限於單一器官'],
     correct_answer: '病毒潛伏在骨髓 DNA 中但複製被抑制，SNAP 轉陰但骨髓 PCR 可能陽性',
-    explanation: '退行性感染：免疫系統控制了病毒複製但未完全清除——proviral DNA 整合入骨髓細胞。SNAP 抗原轉陰（無活躍複製）。風險：免疫抑制（化療、類固醇）時可能再活化。流產性感染才是完全清除（SNAP 陰性 + PCR 陰性）。',
+    explanation: '退行性感染：免疫系統控制了病毒複製但未完全清除，proviral DNA 整合入骨髓細胞。SNAP 抗原轉陰（無活躍複製）。風險：免疫抑制（化療、類固醇）時可能再活化。流產性感染才是完全清除（SNAP 陰性 + PCR 陰性）。',
     difficulty: 3, spaced_rep: true, tags: ['FeLV', '退行性', '潛伏', '骨髓'], image_placeholder: null,
   },
   {
@@ -2810,7 +2810,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'FIV 的主要傳播途徑為何？',
     options: ['共用食碗和理毛', '糞口傳播', '咬傷（唾液中病毒量高）', '呼吸道飛沫'],
     correct_answer: '咬傷（唾液中病毒量高）',
-    explanation: 'FIV 主要經咬傷傳播——唾液中病毒量高。因此未絕育戶外公貓（打鬥行為）為最高風險族群。日常接觸（共用食碗、理毛）的傳播風險極低。這與 FeLV（唾液密切接觸可傳播）的傳播途徑不同。',
+    explanation: 'FIV 主要經咬傷傳播，唾液中病毒量高。所以未絕育戶外公貓（打鬥行為）為最高風險族群。日常接觸（共用食碗、理毛）的傳播風險極低。這與 FeLV（唾液密切接觸可傳播）的傳播途徑不同。',
     difficulty: 2, spaced_rep: true, tags: ['FIV', '傳播', '咬傷'], image_placeholder: null,
   },
   {
@@ -2834,11 +2834,11 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 8 歲 FIV 陽性室內貓因嚴重慢性口腔炎就診。口腔黏膜瀰漫性增生性炎症，進食困難。已嘗試抗生素和止痛但效果有限。最適當的治療策略為何？',
     options: ['持續長期抗生素治療', '全口拔牙（near-total/total extraction）± 免疫調節治療', '僅使用口服類固醇', '拒絕治療因為 FIV 陽性'],
     correct_answer: '全口拔牙（near-total/total extraction）± 免疫調節治療',
-    explanation: 'FIV 相關慢性口腔炎的治療首選為全口拔牙（near-total extraction，保留犬齒或全部拔除）。約 60-80% 的貓在全口拔牙後口腔炎顯著改善。輔助：Cyclosporine、Prednisolone。仍有口腔炎殘留者可考慮幹細胞或 Interferonω。FIV 狀態不是拒絕治療的理由。',
+    explanation: 'FIV 相關慢性口腔炎的治療首選為全口拔牙（near-total extraction，保留犬齒或全部拔除）。約 60-80% 的貓在全口拔牙後口腔炎明顯改善。輔助：Cyclosporine、Prednisolone。仍有口腔炎殘留者可考慮幹細胞或 Interferonω。FIV 狀態不是拒絕治療的理由。',
     difficulty: 4, spaced_rep: true, tags: ['FIV', '口腔炎', '全口拔牙', '病例'], image_placeholder: null,
   },
 
-  // ===== IM-L3-023 犬細小病毒腸炎 (CPV) — 8 questions =====
+  // ===== IM-L3-023 犬細小病毒腸炎 (CPV)，8 questions =====
   {
     id: 'Q-IM-CPV-001', node_id: 'IM-L3-023', question_type: 'mcq',
     question: 'CPV-2 攻擊的主要細胞靶標為何？',
@@ -2876,7 +2876,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '幼犬 CPV 疫苗接種中，為什麼最後一劑必須在 16 週齡或以上施打？',
     options: ['16 週齡前免疫系統尚未發育', '母源抗體可持續至 12-16 週齡，干擾疫苗效果', '16 週齡前藥物代謝太快', '法規要求'],
     correct_answer: '母源抗體可持續至 12-16 週齡，干擾疫苗效果',
-    explanation: '母源抗體（MDA）從母乳獲得，可中和疫苗病毒使疫苗失效。MDA 半衰期約 10 天，可持續至 12-16 週齡。如果最後一劑在 12 週給予，部分幼犬仍有足夠 MDA 干擾疫苗。因此 WSAVA 建議最後一劑必須在 ≥ 16 週齡，確保 MDA 已降至不干擾水平。',
+    explanation: '母源抗體（MDA）從母乳獲得，可中和疫苗病毒使疫苗失效。MDA 半衰期約 10 天，可持續至 12-16 週齡。如果最後一劑在 12 週給予，部分幼犬仍有足夠 MDA 干擾疫苗。所以 WSAVA 建議最後一劑必須在 ≥ 16 週齡，確保 MDA 已降至不干擾水平。',
     difficulty: 3, spaced_rep: true, tags: ['CPV', '疫苗', '母源抗體', '台灣'], image_placeholder: null,
   },
   {
@@ -2926,7 +2926,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬 EPI 治療中，Cobalamin（維生素 B12）補充的建議途徑與原因為何？',
     options: ['口服補充即可，因腸道吸收正常', '皮下注射（SC），因 EPI 缺乏胰臟分泌的 intrinsic factor 導致 B12 吸收障礙', '靜脈注射（IV），因需快速糾正缺乏', '不需補充，B12 缺乏在 EPI 中罕見'],
     correct_answer: '皮下注射（SC），因 EPI 缺乏胰臟分泌的 intrinsic factor 導致 B12 吸收障礙',
-    explanation: '犬的 intrinsic factor 主要由胰臟分泌（不同於人類由胃壁細胞分泌）。EPI 患犬胰臟功能喪失 → intrinsic factor 缺乏 → 迴腸末段 Cobalamin 吸收障礙。因此必須皮下注射補充（250-1500 μg SC q1wk × 6 wk）。超過 80% 的 EPI 犬有 B12 缺乏，未補充是治療反應不佳的常見原因。',
+    explanation: '犬的 intrinsic factor 主要由胰臟分泌（不同於人類由胃壁細胞分泌）。EPI 患犬胰臟功能喪失 → intrinsic factor 缺乏 → 迴腸末段 Cobalamin 吸收障礙。所以必須皮下注射補充（250-1500 μg SC q1wk × 6 wk）。超過 80% 的 EPI 犬有 B12 缺乏，未補充是治療反應不佳的常見原因。',
     difficulty: 3, spaced_rep: true, tags: ['EPI', 'Cobalamin', 'B12', '治療'], image_placeholder: null,
   },
   {
@@ -2934,7 +2934,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '下列哪項最能區分 EPI 與慢性腸病（CE/IBD）？',
     options: ['體重減輕', '慢性腹瀉', 'cTLI 檢驗結果', '腹腔超音波'],
     correct_answer: 'cTLI 檢驗結果',
-    explanation: 'EPI 與 CE/IBD 都可表現為慢性腹瀉與體重減輕，臨床上難以僅憑症狀區分。cTLI 是最關鍵的鑑別檢查：EPI 的 cTLI < 2.5 μg/L（顯著降低），而 CE/IBD 的 cTLI 正常（> 5.7 μg/L）。此外 EPI 常伴多食症（polyphagia），而 CE/IBD 食慾通常減退。',
+    explanation: 'EPI 與 CE/IBD 都可表現為慢性腹瀉與體重減輕，臨床上難以僅憑症狀區分。cTLI 是最關鍵的鑑別檢查：EPI 的 cTLI < 2.5 μg/L（明顯降低），而 CE/IBD 的 cTLI 正常（> 5.7 μg/L）。另外 EPI 常伴多食症（polyphagia），而 CE/IBD 食慾通常減退。',
     difficulty: 3, spaced_rep: true, tags: ['EPI', 'IBD', '鑑別診斷'], image_placeholder: null,
   },
   {
@@ -2950,7 +2950,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 3 歲已結紮雌性 GSD，主訴持續 4 個月的慢性腹瀉與體重減輕（從 30 kg 降至 23 kg），但食慾非常旺盛甚至出現食糞行為。糞便大量、黃灰色油膩。生化檢查大致正常。下列哪項檢查最應優先進行？',
     options: ['腹腔超音波', '內視鏡腸道切片', '空腹 12 小時血清 cTLI', '糞便培養'],
     correct_answer: '空腹 12 小時血清 cTLI',
-    explanation: '此案例高度符合 EPI：(1) GSD 品種（PAA 高風險）(2) 年輕成犬 (3) 慢性腹瀉 + 體重減輕 + 多食 + 食糞 (4) 大量油膩糞便（脂肪便）。cTLI 是最直接的篩選/確診檢查，應優先於侵入性的內視鏡切片。若 cTLI < 2.5 μg/L 即可確診並開始治療，避免不必要的進一步檢查。',
+    explanation: '此案例高度符合 EPI：(1) GSD 品種（PAA 高風險）(2) 年輕成犬 (3) 慢性腹瀉 + 體重減輕 + 多食 + 食糞 (4) 大量油膩糞便（脂肪便）。cTLI 是最直接的篩選/確診檢查，應優先於侵入性的內視鏡切片。若 cTLI < 2.5 μg/L 即可確診並開始治療，避免不必要的後續檢查。',
     difficulty: 3, spaced_rep: true, tags: ['EPI', 'GSD', 'cTLI', '病例'], image_placeholder: null,
   },
 
@@ -2960,7 +2960,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '犬膽囊黏液囊腫（Gallbladder Mucocele）在腹腔超音波的特徵性表現為何？',
     options: ['均勻低回音膽泥，隨體位移動', '強回音結構伴後方聲影', '放射狀高回音條紋（kiwi fruit sign）', '膽囊壁鈣化'],
     correct_answer: '放射狀高回音條紋（kiwi fruit sign）',
-    explanation: '膽囊黏液囊腫在超音波上最特徵性的表現為「kiwi fruit sign」——膽囊內呈現放射狀高回音條紋，類似奇異果切面。此為黏液層層蓄積形成的特徵性圖案。不同於膽泥（均勻低回音，隨體位移動），mucocele 的結構不會隨體位改變。成熟的 mucocele 可呈現「immobile stellate pattern」（不動的星狀結構）。',
+    explanation: '膽囊黏液囊腫在超音波上最特徵性的表現為「kiwi fruit sign」，膽囊內呈現放射狀高回音條紋，類似奇異果切面。此為黏液層層蓄積形成的特徵性圖案。不同於膽泥（均勻低回音，隨體位移動），mucocele 的結構不會隨體位改變。成熟的 mucocele 可呈現「immobile stellate pattern」（不動的星狀結構）。',
     difficulty: 3, spaced_rep: true, tags: ['mucocele', '超音波', 'kiwi fruit', '診斷'], image_placeholder: null,
   },
   {
@@ -2968,7 +2968,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '膽囊黏液囊腫的根治性治療為何？',
     options: ['UDCA（Ursodeoxycholic acid）長期口服', '膽囊切除術（cholecystectomy）', '膽囊引流術', '低脂飲食加觀察'],
     correct_answer: '膽囊切除術（cholecystectomy）',
-    explanation: '膽囊切除術是膽囊黏液囊腫的根治性治療。擇期手術（未破裂時）存活率 > 90%。內科治療（UDCA + SAMe + 低脂飲食）僅適用於早期無症狀病例或手術高風險患者，約 50% 最終仍需手術。膽囊破裂後緊急手術死亡率顯著升高（20-40%），因此早期外科介入的預後遠優於等待觀察。',
+    explanation: '膽囊切除術是膽囊黏液囊腫的根治性治療。擇期手術（未破裂時）存活率 > 90%。內科治療（UDCA + SAMe + 低脂飲食）僅適用於早期無症狀病例或手術高風險患者，約 50% 最終仍需手術。膽囊破裂後緊急手術死亡率明顯升高（20-40%），所以早期外科介入的預後遠優於等待觀察。',
     difficulty: 2, spaced_rep: true, tags: ['mucocele', '膽囊切除', '治療'], image_placeholder: null,
   },
   {
@@ -2992,7 +2992,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '膽囊黏液囊腫若無臨床症狀，可安全地長期觀察而不需外科介入。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '膽囊黏液囊腫是進行性疾病，即使無症狀，破裂風險隨時間增加。內科保守管理的病例約 50% 最終仍需手術。擇期手術的存活率 > 90%，但等到破裂後緊急手術死亡率增至 20-40%。因此，即使無症狀，也應與飼主充分討論手術選項，並至少每 1-3 個月超音波追蹤。',
+    explanation: '膽囊黏液囊腫是進行性疾病，即使無症狀，破裂風險隨時間增加。內科保守管理的病例約 50% 最終仍需手術。擇期手術的存活率 > 90%，但等到破裂後緊急手術死亡率增至 20-40%。所以，即使無症狀，也應與飼主充分討論手術選項，並至少每 1-3 個月超音波追蹤。',
     difficulty: 3, spaced_rep: true, tags: ['mucocele', '預後', '手術時機'], image_placeholder: null,
   },
   {
@@ -3000,7 +3000,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 10 歲 Shetland Sheepdog，因間歇性嘔吐和食慾下降 2 週就診。血檢：ALP 580 U/L（↑↑）、GGT 45 U/L（↑）、ALT 120 U/L（↑）、膽固醇 450 mg/dL（↑↑）。腹腔超音波發現膽囊內放射狀高回音結構，不隨體位移動，膽囊壁完整無不連續。最適合的處理為何？',
     options: ['UDCA 口服 + 3 個月後追蹤超音波', '建議擇期膽囊切除術 + 同時篩檢甲低', '緊急手術', '僅低脂飲食觀察'],
     correct_answer: '建議擇期膽囊切除術 + 同時篩檢甲低',
-    explanation: '此案例：(1) Shetland Sheepdog（ABCB4 基因突變高風險品種）(2) 超音波 kiwi fruit sign 確認 mucocele (3) 有臨床症狀（嘔吐、食慾下降）(4) 膽固醇顯著升高 → 需篩檢甲低/Cushing。有症狀的 mucocele 首選擇期膽囊切除（存活率 > 90%）。膽囊壁完整，非緊急手術但不宜拖延。高膽固醇血症需同時篩檢基礎內分泌疾病。',
+    explanation: '此案例：(1) Shetland Sheepdog（ABCB4 基因突變高風險品種）(2) 超音波 kiwi fruit sign 確認 mucocele (3) 有臨床症狀（嘔吐、食慾下降）(4) 膽固醇明顯升高 → 需篩檢甲低/Cushing。有症狀的 mucocele 首選擇期膽囊切除（存活率 > 90%）。膽囊壁完整，非緊急手術但不宜拖延。高膽固醇血症需同時篩檢基礎內分泌疾病。',
     difficulty: 4, spaced_rep: true, tags: ['mucocele', 'Shetland', '膽囊切除', '高脂血症', '病例'], image_placeholder: null,
   },
 
@@ -3050,7 +3050,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 7 歲 Doberman 雌犬，年度健檢血檢發現 ALT 350 U/L（↑↑）、ALP 210 U/L（↑）、白蛋白 2.5 g/dL（偏低），無明顯臨床症狀。腹腔超音波顯示肝臟大小正常偏小，回音性輕度不均勻。下列哪項是最適合的下一步？',
     options: ['給予 SAMe + UDCA 觀察 3 個月', '直接開始 Prednisolone 免疫抑制治療', '肝臟切片（含 WSAVA 評分 + rhodanine 銅染色 + 銅定量）', '更換飲食為肝臟處方食品'],
     correct_answer: '肝臟切片（含 WSAVA 評分 + rhodanine 銅染色 + 銅定量）',
-    explanation: '此案例：(1) Doberman 雌犬（慢性肝炎高風險品種，盛行率 6-12%）(2) ALT 顯著升高但無症狀（亞臨床期）(3) 白蛋白偏低提示肝臟合成功能開始受損。在未確認病因前不應直接開始免疫抑制（若為銅蓄積型，類固醇可能加速損傷）。肝切片是必要的：需 WSAVA 標準化評分 + 銅染色 + 銅定量以區分銅蓄積型與免疫介導型，從而決定正確的治療方案。',
+    explanation: '此案例：(1) Doberman 雌犬（慢性肝炎高風險品種，盛行率 6-12%）(2) ALT 明顯升高但無症狀（亞臨床期）(3) 白蛋白偏低提示肝臟合成功能開始受損。在未確認病因前不應直接開始免疫抑制（若為銅蓄積型，類固醇可能加速損傷）。肝切片是必要的：需 WSAVA 標準化評分 + 銅染色 + 銅定量以區分銅蓄積型與免疫介導型，從而決定正確的治療方案。',
     difficulty: 4, spaced_rep: true, tags: ['慢性肝炎', 'Doberman', '肝切片', '銅', '病例'], image_placeholder: null,
   },
 
@@ -3060,7 +3060,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '區分反流（regurgitation）與嘔吐（vomiting）最關鍵的臨床特徵為何？',
     options: ['排出物的顏色', '發生在進食後的時間', '是否有腹部收縮（前驅努責動作）', '排出物的氣味'],
     correct_answer: '是否有腹部收縮（前驅努責動作）',
-    explanation: '反流（regurgitation）是被動過程，無腹部收縮或前驅努責動作，食物由食道被動排出。嘔吐（vomiting）是主動過程，有明顯的腹部收縮（abdominal contractions）和前驅症狀（噁心、流涎、舔嘴）。這一鑑別在巨食道症診斷中至關重要，因為反流指向食道疾病，而嘔吐指向胃腸道疾病。',
+    explanation: '反流（regurgitation）是被動過程，無腹部收縮或前驅努責動作，食物由食道被動排出。嘔吐（vomiting）是主動過程，有明顯的腹部收縮（abdominal contractions）和前驅症狀（噁心、流涎、舔嘴）。這一鑑別在巨食道症診斷中不能省，因為反流指向食道疾病，而嘔吐指向胃腸道疾病。',
     difficulty: 2, spaced_rep: true, tags: ['反流', '嘔吐', '鑑別', '巨食道症'], image_placeholder: null,
   },
   {
@@ -3068,7 +3068,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '後天性巨食道症最重要的可逆性病因為何？需要用什麼檢查確認？',
     options: ['甲狀腺機能低下；T4/TSH', '重症肌無力（MG）；AChR 抗體', 'Addison\'s disease；ACTH 刺激試驗', '鉛中毒；血鉛濃度'],
     correct_answer: '重症肌無力（MG）；AChR 抗體',
-    explanation: '重症肌無力（Myasthenia Gravis, MG）是後天性巨食道症最重要的可逆性病因，佔後天繼發性病例的很大比例。MG 的 AChR 自體抗體導致神經肌肉接合處傳導障礙 → 食道橫紋肌收縮無力。確認檢查為血清 AChR 抗體滴度。MG 治療（Pyridostigmine）後約 50% 的巨食道症可部分或完全改善。因此每隻後天性巨食道症犬都應篩檢 AChR 抗體。',
+    explanation: '重症肌無力（Myasthenia Gravis, MG）是後天性巨食道症最重要的可逆性病因，佔後天繼發性病例的很大比例。MG 的 AChR 自體抗體導致神經肌肉接合處傳導障礙 → 食道橫紋肌收縮無力。確認檢查為血清 AChR 抗體滴度。MG 治療（Pyridostigmine）後約 50% 的巨食道症可部分或完全改善。所以每隻後天性巨食道症犬都應篩檢 AChR 抗體。',
     difficulty: 3, spaced_rep: true, tags: ['巨食道症', '重症肌無力', 'AChR', '診斷'], image_placeholder: null,
   },
   {
@@ -3092,7 +3092,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'Metoclopramide 可有效改善巨食道症的食道體部蠕動功能。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: 'Metoclopramide 是胃促動劑（prokinetic），主要作用於胃與上段小腸的平滑肌，促進胃排空。犬的食道全段由橫紋肌組成（非平滑肌），因此 Metoclopramide 對食道體部蠕動功能無效。在巨食道症中 Metoclopramide 的角色僅限於減少胃食道反流（促進胃排空），不能替代姿勢進食管理。',
+    explanation: 'Metoclopramide 是胃促動劑（prokinetic），主要作用於胃與上段小腸的平滑肌，促進胃排空。犬的食道全段由橫紋肌組成（非平滑肌），所以 Metoclopramide 對食道體部蠕動功能無效。在巨食道症中 Metoclopramide 的角色僅限於減少胃食道反流（促進胃排空），不能替代姿勢進食管理。',
     difficulty: 3, spaced_rep: true, tags: ['巨食道症', 'Metoclopramide', '藥物', '迷思'], image_placeholder: null,
   },
   {
@@ -3100,7 +3100,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: '一隻 5 歲混種犬，主訴反流（被動排出未消化食物，無腹部收縮）3 週，同時觀察到後肢步態僵硬。胸腔 X 光顯示食道全段擴張充氣。體重 25 kg，精神尚可。下列哪項組合檢查對釐清病因最有價值？',
     options: ['腹腔超音波 + 糞便浮游法', 'AChR 抗體 + T4/TSH + ACTH 刺激試驗', '鋇劑造影 + 食道內視鏡', 'CBC + 生化 + 尿液分析'],
     correct_answer: 'AChR 抗體 + T4/TSH + ACTH 刺激試驗',
-    explanation: '此案例為後天性巨食道症（成犬、全段食道擴張）。「後肢步態僵硬」是重要線索，提示可能有全身性神經肌肉疾病（如全身型重症肌無力的骨骼肌無力）。系統性排查可逆病因是最重要的步驟：(1) AChR 抗體（篩檢 MG——合併四肢無力高度懷疑）(2) T4/TSH（排查甲低）(3) ACTH 刺激試驗（排查 Addison）。這些病因若被識別並治療，巨食道症有機會改善。',
+    explanation: '此案例為後天性巨食道症（成犬、全段食道擴張）。「後肢步態僵硬」是重要線索，提示可能有全身性神經肌肉疾病（如全身型重症肌無力的骨骼肌無力）。系統性排查可逆病因是最重要的步驟：(1) AChR 抗體（篩檢 MG，合併四肢無力高度懷疑）(2) T4/TSH（排查甲低）(3) ACTH 刺激試驗（排查 Addison）。這些病因若被識別並治療，巨食道症有機會改善。',
     difficulty: 4, spaced_rep: true, tags: ['巨食道症', 'MG', '甲低', '排查', '病例'], image_placeholder: null,
   },
   // Fill-in-the-blank questions
@@ -3117,7 +3117,7 @@ export const IM_QUESTIONS: ReviewQuestion[] = [
     question: 'IRIS 犬 CKD Stage 3 的血清肌酐範圍為 _____ mg/dL',
     options: ['2.9-5.0'],
     correct_answer: '2.9-5.0',
-    explanation: 'IRIS 犬 CKD 分期中，Stage 3 的血清肌酐（Creatinine）為 2.9-5.0 mg/dL，代表中度氮血症。臨床上需與 Stage 2（1.4-2.8）和 Stage 4（> 5.0）清楚區分，因為治療策略和預後有顯著差異。Stage 3 開始建議積極的腎臟飲食管理和磷結合劑的使用。',
+    explanation: 'IRIS 犬 CKD 分期中，Stage 3 的血清肌酐（Creatinine）為 2.9-5.0 mg/dL，代表中度氮血症。臨床上需與 Stage 2（1.4-2.8）和 Stage 4（> 5.0）清楚區分，因為治療策略和預後有明顯差異。Stage 3 開始建議積極的腎臟飲食管理和磷結合劑的使用。',
     difficulty: 2, spaced_rep: true, tags: ['CKD', 'IRIS', 'staging'], image_placeholder: null,
   },
   {

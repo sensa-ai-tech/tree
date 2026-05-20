@@ -1,23 +1,26 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import ReactFlow, {
+import {
+  ReactFlow,
   Background,
   Controls,
   MarkerType,
   ReactFlowProvider,
   useReactFlow,
+  useNodesState,
+  useEdgesState,
   type Node,
   type Edge,
   type NodeMouseHandler,
-} from 'reactflow';
-import 'reactflow/dist/style.css';
+} from '@xyflow/react';
+import '@xyflow/react/dist/style.css';
 import type { KnowledgeNode, KnowledgeEdge } from '@/types/knowledge';
 import { LAYER_COLORS, type Layer } from '@/types/knowledge';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { cn } from '@/lib/utils/cn';
 import { KnowledgeNodeComponent } from './KnowledgeNodeComponent';
-import type { KnowledgeNodeData } from './KnowledgeNodeComponent';
+import type { KnowledgeFlowNode } from './KnowledgeNodeComponent';
 import { getLayoutedElements } from '@/lib/utils/dagre-layout';
 
 interface KnowledgeGraphProps {
@@ -37,7 +40,7 @@ const DEFAULT_EDGE_TYPES = {};
 function buildFlowNodes(
   knowledgeNodes: KnowledgeNode[],
   highlightPath: string[]
-): Node<KnowledgeNodeData>[] {
+): KnowledgeFlowNode[] {
   return knowledgeNodes.map((node) => {
     const isHighlighted = highlightPath.includes(node.id);
     const color = LAYER_COLORS[node.layer as Layer] ?? '#6b7280';
@@ -74,23 +77,39 @@ function buildFlowEdges(knowledgeEdges: KnowledgeEdge[]): Edge[] {
   }));
 }
 
-/** Inner component that uses useReactFlow to auto-fitView on node changes */
+/** Inner component。
+ *
+ * 為什麼用 useNodesState / useEdgesState 而非直接傳 props：
+ * React Flow v11 + React 19 環境下，純 controlled mode（只傳 nodes/edges prop）
+ * 在 props 後續更新時，edges 不會被加入內部 lookup，導致 SVG 中的 edge path 始終為空。
+ * 改用 useNodesState/useEdgesState 並透過 useEffect 同步 props，可解這個渲染斷層。
+ */
 function KnowledgeGraphInner({
   flowNodes,
   flowEdges,
   onNodeClick,
 }: {
-  flowNodes: Node<KnowledgeNodeData>[];
+  flowNodes: KnowledgeFlowNode[];
   flowEdges: Edge[];
   onNodeClick?: NodeMouseHandler;
 }) {
   const { fitView } = useReactFlow();
+  const [nodes, setNodes, onNodesChange] = useNodesState(flowNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(flowEdges);
   const prevNodeCountRef = useRef(flowNodes.length);
+
+  // 同步 props 變動到內部 state
+  useEffect(() => {
+    setNodes(flowNodes);
+  }, [flowNodes, setNodes]);
+
+  useEffect(() => {
+    setEdges(flowEdges);
+  }, [flowEdges, setEdges]);
 
   useEffect(() => {
     if (flowNodes.length !== prevNodeCountRef.current) {
       prevNodeCountRef.current = flowNodes.length;
-      // Delay to let ReactFlow update internal node positions (increased from 50ms to 200ms)
       const timer = setTimeout(() => {
         fitView({ padding: 0.15, duration: 300 });
       }, 200);
@@ -100,8 +119,10 @@ function KnowledgeGraphInner({
 
   return (
     <ReactFlow
-      nodes={flowNodes}
-      edges={flowEdges}
+      nodes={nodes}
+      edges={edges}
+      onNodesChange={onNodesChange}
+      onEdgesChange={onEdgesChange}
       onNodeClick={onNodeClick}
       nodeTypes={NODE_TYPES}
       edgeTypes={DEFAULT_EDGE_TYPES}
@@ -111,7 +132,6 @@ function KnowledgeGraphInner({
       maxZoom={3}
       attributionPosition="bottom-left"
       onInit={() => {
-        // 備援 fitView：onInit 時也觸發一次，確保首次載入正確
         setTimeout(() => {
           fitView({ padding: 0.15, duration: 300 });
         }, 300);
@@ -141,7 +161,7 @@ export function KnowledgeGraph({
       return { layoutedNodes: rawNodes, layoutedEdges: rawEdges };
     }
 
-    const { nodes: ln, edges: le } = getLayoutedElements(rawNodes, rawEdges, {
+    const { nodes: ln, edges: le } = getLayoutedElements(rawNodes as Node[], rawEdges, {
       direction: 'TB',
       nodeWidth: 260,
       nodeHeight: 80,
@@ -149,7 +169,7 @@ export function KnowledgeGraph({
       nodeSep: 60,
     });
 
-    return { layoutedNodes: ln, layoutedEdges: le };
+    return { layoutedNodes: ln as KnowledgeFlowNode[], layoutedEdges: le };
   }, [knowledgeNodes, knowledgeEdges, highlightPath]);
 
   const handleNodeClick: NodeMouseHandler = useCallback(
@@ -209,7 +229,7 @@ export function KnowledgeGraph({
   return (
     <div
       role="region"
-      aria-label="知識圖譜 — 點擊節點查看詳情"
+      aria-label="知識圖譜，點擊節點查看詳情"
       className={cn(
         'h-[500px] w-full rounded-xl border border-gray-200 bg-white',
         className

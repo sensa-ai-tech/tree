@@ -1,8 +1,11 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import { createHash, timingSafeEqual } from 'crypto';
 
 const COOKIE_NAME = 'vkt-admin-token';
-const COOKIE_MAX_AGE = 60 * 60 * 8; // 8 hours
+const COOKIE_MAX_AGE = 60 * 60 * 2; // 2 hours (was 8)
+const JWT_ISSUER = 'vet-knowledge-tree';
+const JWT_AUDIENCE = 'vkt-admin';
 
 function getSecret(): Uint8Array {
   const secret = process.env.VKT_JWT_SECRET;
@@ -16,29 +19,48 @@ export async function createAdminToken(): Promise<string> {
   return new SignJWT({ role: 'admin' })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
+    .setIssuer(JWT_ISSUER)
+    .setAudience(JWT_AUDIENCE)
     .setExpirationTime(`${COOKIE_MAX_AGE}s`)
     .sign(getSecret());
 }
 
 export async function verifyAdminToken(token: string): Promise<boolean> {
   try {
-    const { payload } = await jwtVerify(token, getSecret());
+    const { payload } = await jwtVerify(token, getSecret(), {
+      issuer: JWT_ISSUER,
+      audience: JWT_AUDIENCE,
+    });
     return payload.role === 'admin';
   } catch {
     return false;
   }
 }
 
+/**
+ * 密碼驗證。
+ * 支援兩種儲存格式：
+ * 1. 「sha256:<hex>」純雜湊（建議生產環境用）
+ * 2. 明文（向後相容，會自動以 SHA-256 比對）
+ *
+ * 兩種模式都用 timing-safe 比對防 timing attack。
+ */
 export function validateAdminPassword(password: string): boolean {
   const expected = process.env.VKT_ADMIN_PASSWORD;
   if (!expected) return false;
-  // Constant-time comparison to prevent timing attacks
-  if (password.length !== expected.length) return false;
-  let mismatch = 0;
-  for (let i = 0; i < password.length; i++) {
-    mismatch |= password.charCodeAt(i) ^ expected.charCodeAt(i);
+
+  if (expected.startsWith('sha256:')) {
+    const expectedHash = Buffer.from(expected.slice(7), 'hex');
+    const actualHash = createHash('sha256').update(password).digest();
+    if (expectedHash.length !== actualHash.length) return false;
+    return timingSafeEqual(expectedHash, actualHash);
   }
-  return mismatch === 0;
+
+  // Fallback: plaintext compare (legacy)
+  const expectedBuf = Buffer.from(expected);
+  const actualBuf = Buffer.from(password);
+  if (expectedBuf.length !== actualBuf.length) return false;
+  return timingSafeEqual(expectedBuf, actualBuf);
 }
 
 export async function setAdminCookie(token: string): Promise<void> {

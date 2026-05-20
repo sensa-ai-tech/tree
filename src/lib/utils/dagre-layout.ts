@@ -6,7 +6,7 @@
  */
 
 import dagre from '@dagrejs/dagre';
-import type { Node, Edge } from 'reactflow';
+import type { Node, Edge } from '@xyflow/react';
 
 interface LayoutOptions {
   direction?: 'TB' | 'BT' | 'LR' | 'RL';

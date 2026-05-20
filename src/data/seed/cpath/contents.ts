@@ -2,12 +2,12 @@ import type { NodeContent } from '@/types/knowledge';
 
 const now = '2026-02-15T00:00:00Z';
 
-/** 全血球計數判讀 — 診斷型 */
+/** 全血球計數判讀，診斷型 */
 const contentCBC: NodeContent = {
   id: 'CONTENT-CPATH-L4-001',
   node_id: 'CPATH-L4-001',
   version: 1,
-  summary: '全血球計數（CBC）是最基礎也最常用的血液學檢查，包含紅血球、白血球與血小板三大部分的定量與形態評估。正確判讀 CBC 是所有獸醫臨床專科的基本能力。',
+  summary: 'CBC 是每天看最多次的血液檢查，紅血球、白血球、血小板三大區塊的數值加上形態評估。每個專科都要會看，不會看 CBC 在臨床上基本上動不了。',
   learning_objectives: [
     '解釋 CBC 各項參數的臨床意義',
     '判讀紅血球相關指標（PCV/HCT、MCV、MCHC、reticulocyte count）',
@@ -17,10 +17,10 @@ const contentCBC: NodeContent = {
   ],
   key_points: [
     'PCV/HCT：犬正常 37-55%，貓 30-45%',
-    'MCV 分類貧血為大球、正球、小球性',
-    '嗜中性球左移：band neutrophils > 1000/μL 提示急性發炎',
-    '血小板 < 50,000/μL 時有自發出血風險',
-    '永遠要搭配血液抹片（blood smear）確認自動分析儀結果',
+    'MCV 把貧血分成大球、正球、小球性',
+    '嗜中性球左移：band neutrophils > 1000/μL，急性發炎的訊號',
+    '血小板 < 50,000/μL 開始有自發出血風險',
+    '機器數值看完一定再翻一張抹片自己掃過',
   ],
   body: `# 全血球計數 (CBC) 判讀
 
@@ -33,8 +33,8 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
 
 ### 紅血球評估
 ### 貧血分類
-- **再生性貧血**：reticulocyte count 升高（犬 > 60,000/μL），提示溶血或失血
-- **非再生性貧血**：reticulocyte count 正常或降低，提示骨髓問題或慢性疾病
+- 再生性貧血：reticulocyte count 升高（犬 > 60,000/μL），提示溶血或失血
+- 非再生性貧血：reticulocyte count 正常或降低，提示骨髓問題或慢性疾病
 
 ### MCV 分類
 | 類型 | MCV | 常見原因 |
@@ -77,12 +77,12 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
 | 自動分析儀白血球分類計數 vs 人工 100-cell differential 的臨床等效性 | 高階分析儀（Sysmex、ADVIA）對正常樣本一致性佳，但異常樣本（左移、blast）仍需人工確認 | Level II |
 | 貓 EDTA 偽性血小板減少的最佳替代方案 | 枸櫞酸管複驗 vs 血液抹片估算 vs Sysmex 光學法，尚無統一共識 | Level III |
 | 犬網狀紅血球計數的標準化：絕對值 vs 百分比 vs 校正值（CRC） | ASVCP 建議使用絕對值，但不同分析儀的計數方法與參考區間差異大 | Level III |`,
-  clinical_pearl: '永遠不要只看數值——血液抹片是 CBC 判讀的「第六感」。自動分析儀可能將有核紅血球（nRBC）計為白血球，或將血小板聚集誤判為血小板減少。每份 CBC 報告都應搭配抹片確認。',
+  clinical_pearl: '不要只看數字。抹片是 CBC 的第二層保險。機器會把 nRBC 算進 WBC，也會把血小板聚集判成血小板減少。每張 CBC 報告丟出去前，自己拿抹片到 100x 油鏡下掃一遍才算數。',
   common_mistakes: [
-    '僅看自動分析儀數據而不確認血液抹片',
-    '忽略貓的 EDTA 偽性血小板減少',
-    '將皮質醇反應的 stress leukogram 誤判為感染',
-    '未用 reticulocyte count 區分再生性與非再生性貧血',
+    '只看機器數字，不看抹片',
+    '貓 EDTA 偽性血小板減少沒注意到',
+    '皮質醇反應的 stress leukogram 被當感染處理',
+    '貧血沒看 reticulocyte，再生性跟非再生性分不出來',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -95,20 +95,20 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
       { finding: 'PLT', description: '犬 175,000-500,000/μL，貓 175,000-600,000/μL', significance: '血小板數量，評估出血風險' },
     ],
     abnormal_findings: [
-      { finding: '貧血 (PCV 降低)', description: 'PCV 低於參考範圍下限', significance: '需進一步分類：再生性 vs 非再生性、小球 vs 正球 vs 大球' },
+      { finding: '貧血 (PCV 降低)', description: 'PCV 低於參考範圍下限', significance: '要再分類：再生性 vs 非再生性、小球 vs 正球 vs 大球' },
       { finding: '白血球增多', description: 'WBC 高於參考範圍上限', significance: '感染、發炎、壓力反應、腫瘤（白血病）' },
       { finding: '血小板減少', description: 'PLT < 175,000/μL', significance: '免疫介導、DIC、骨髓抑制、消耗性。< 50,000 有出血風險' },
       { finding: '左移 (Left shift)', description: 'Band neutrophils > 1000/μL', significance: '急性發炎或感染，骨髓正在釋出未成熟細胞' },
     ],
-    interpretation_guide: '1. 先看 PCV/HCT 評估貧血/紅血球增多。2. 看 WBC 總數及分類計數。3. 評估血小板數量。4. 確認血液抹片形態。5. 整合臨床症狀。',
+    interpretation_guide: '我自己的順序：先看 PCV/HCT，貧血還是紅血球增多。再看 WBC 總數跟分類。接著血小板。然後翻抹片把形態確認一輪。最後對臨床症狀。',
     pitfalls: [
-      '脂血/溶血樣本影響自動分析儀準確性',
-      '貓血小板聚集導致假性血小板減少',
-      '有核紅血球（nRBC）干擾白血球計數',
-      '未在血液抹片上確認自動分析儀的異常flag',
+      '樣本脂血或溶血，機器數值跑掉',
+      '貓血小板容易聚集，PLT 假性偏低',
+      'nRBC 被計進 WBC，數字虛高',
+      '機器跳 flag 卻沒去抹片確認',
     ],
-    sensitivity_specificity: 'CBC 為篩檢工具，對特定疾病的敏感度和特異度取決於所評估的參數。需結合臨床表現與其他檢查綜合判斷。',
-    cost_benefit: '成本低廉，為最基礎的血液學檢查。幾乎所有臨床情境的第一線篩檢工具，CP 值極高。',
+    sensitivity_specificity: 'CBC 是篩檢工具，個別參數的敏感度跟特異度要看評估什麼疾病。光看 CBC 不能下診斷，要跟臨床跟其他檢查一起看。',
+    cost_benefit: '便宜、做得快，所有專科第一線都會點的檢查。CP 值在所有實驗室項目裡排前幾名。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -123,18 +123,18 @@ CBC 是臨床最常規的血液學檢查，提供紅血球系列、白血球系�
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: 'CBC 判讀標準參考教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '血液學異常的臨床意義' },
     { type: 'journal', citation: 'Tvedten H. "Laboratory and Clinical Diagnosis of Anemia." In: Weiss DJ, Wardrop KJ, eds. Schalm\'s Veterinary Hematology, 6th ed. 2010:152-161.', relevance: '貧血分類與診斷流程' },
-    { type: 'guideline', citation: 'ASVCP Quality Assurance and Laboratory Standards Committee. "Principles of quality assurance and standards for veterinary clinical pathology." Vet Clin Pathol. 2009;38(2):141-149.', relevance: 'ASVCP 獸醫實驗室品質保證指引——CBC 品管標準' },
+    { type: 'guideline', citation: 'ASVCP Quality Assurance and Laboratory Standards Committee. "Principles of quality assurance and standards for veterinary clinical pathology." Vet Clin Pathol. 2009;38(2):141-149.', relevance: 'ASVCP 獸醫實驗室品質保證指引，CBC 品管標準' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 血液學基礎 — 概念型 */
+/** 血液學基礎，概念型 */
 const contentHemaBasics: NodeContent = {
   id: 'CONTENT-CPATH-L1-001',
   node_id: 'CPATH-L1-001',
   version: 1,
-  summary: '血液學基礎涵蓋造血系統的發育、血球生成調控、及各血球細胞系列的正常形態與功能。此模組為所有血液學診斷判讀的基石，適用全專科。',
+  summary: '造血系統怎麼發育、血球怎麼長出來、各系列細胞的正常長相跟功能。這層東西打不穩，後面所有血液學判讀都會虛。所有專科都用得到。',
   learning_objectives: [
     '描述骨髓造血的基本過程與調控因子（EPO、TPO、G-CSF）',
     '辨識犬貓周邊血液中各類正常血球的形態特徵',
@@ -143,14 +143,14 @@ const contentHemaBasics: NodeContent = {
     '區分犬與貓血液學參數的物種差異',
   ],
   key_points: [
-    '造血幹細胞（HSC）位於骨髓，分化為骨髓系與淋巴系兩大譜系',
-    '紅血球生成受 erythropoietin（EPO）調控，主要由腎臟產生',
-    '犬紅血球壽命約 110 天，貓約 70 天——貓的紅血球代謝較快',
-    '貓的嗜中性球不含 alkaline phosphatase，染色反應與犬不同',
-    '正常犬血液抹片可見少量 Howell-Jolly bodies，貓更常見',
-    '貓紅血球較小（MCV 39-55 fL），正常可見輕度中央蒼白區不明顯',
-    '血小板由巨核細胞胞質碎裂產生，受 thrombopoietin（TPO）調控',
-    '白血球分類以嗜中性球為主（犬 60-77%，貓 35-75%）',
+    '造血幹細胞（HSC）住在骨髓，分成骨髓系跟淋巴系兩大支',
+    'EPO 調控紅血球生成，主要在腎臟產生',
+    '犬紅血球壽命約 110 天，貓約 70 天，貓代謝得快',
+    '貓嗜中性球不含 alkaline phosphatase，染色反應跟犬不一樣',
+    '正常犬抹片偶爾會看到 Howell-Jolly bodies，貓更常見',
+    '貓紅血球小（MCV 39-55 fL），中央蒼白區本來就不明顯',
+    '血小板從巨核細胞胞質碎出來，受 TPO 調控',
+    '白血球分類以嗜中性球佔多數（犬 60-77%，貓 35-75%）',
   ],
   body: `# 血液學基礎 (Hematology Basics)
 
@@ -161,8 +161,8 @@ const contentHemaBasics: NodeContent = {
 ### 造血系統概述
 造血（hematopoiesis）主要發生在成年動物的骨髓中。造血幹細胞（hematopoietic stem cell, HSC）具有自我更新與多能分化能力，分化為兩大譜系：
 
-- **骨髓系（myeloid lineage）**：紅血球、顆粒球（嗜中性球、嗜酸性球、嗜鹼性球）、單核球、血小板
-- **淋巴系（lymphoid lineage）**：T 淋巴球、B 淋巴球、NK 細胞
+- 骨髓系（myeloid lineage）：紅血球、顆粒球（嗜中性球、嗜酸性球、嗜鹼性球）、單核球、血小板
+- 淋巴系（lymphoid lineage）：T 淋巴球、B 淋巴球、NK 細胞
 
 ### 紅血球系列
 ### 正常紅血球生成
@@ -179,7 +179,7 @@ const contentHemaBasics: NodeContent = {
 貓的網狀紅血球分為聚集型（aggregate）與點狀型（punctate），臨床上以聚集型計數評估再生反應。
 
 ### 白血球系列
-嗜中性球為犬貓最豐富的白血球。犬的嗜中性球壽命在組織中約 1-4 天，循環池與邊緣池比例約 1:1。貓的邊緣池較大（邊緣池:循環池 ≈ 3:1），因此貓更容易因興奮或壓力出現假性白血球增多。
+嗜中性球為犬貓最豐富的白血球。犬的嗜中性球壽命在組織中約 1-4 天，循環池與邊緣池比例約 1:1。貓的邊緣池較大（邊緣池:循環池 ≈ 3:1），所以貓更容易因興奮或壓力出現假性白血球增多。
 
 ### 血小板系列
 血小板由骨髓巨核細胞（megakaryocyte）的胞質碎裂而來，受 thrombopoietin（TPO）調控。犬血小板直徑 3-5 μm；貓血小板可較大且變異性高，容易與小紅血球混淆。
@@ -201,12 +201,12 @@ const contentHemaBasics: NodeContent = {
 | 犬貓品種特異性血液學參考區間 | 灰狗 PCV 偏高/嗜中性球偏低、秋田犬 MCV 偏大、緬甸貓 MCV 偏低，通用區間不適用 | Level II |
 | 貓聚集型 vs 點狀型網狀紅血球的臨床意義 | 僅聚集型反映急性再生反應，但不同分析儀對兩型的區分能力差異大 | Level III |
 | 犬嗜酸性球增多症的疾病特異性閾值 | 輕度增多（< 1500/μL）非特異性，但缺乏犬貓各疾病的 ROC 切點研究 | Level IV |`,
-  clinical_pearl: '貓的邊緣池白血球數量是循環池的 3 倍，因此僅因壓力或興奮就可能使 WBC 升高 2-3 倍。採血時貓掙扎造成的「假性白血球增多」是臨床最常見的判讀陷阱之一。',
+  clinical_pearl: '貓的邊緣池白血球數量是循環池的 3 倍，光是緊張或興奮就能讓 WBC 跳到 2-3 倍。診間貓掙扎抓籠子那一下抽到的血，跑出來 WBC 高得嚇人，這種「假性白血球增多」是看貓 CBC 最常被坑的地方。',
   common_mistakes: [
-    '忽略犬貓血液學參數的物種差異，用犬的參考範圍判讀貓的結果',
-    '未區分貓網狀紅血球的聚集型與點狀型，高估再生反應',
-    '將貓壓力性白血球增多（成熟嗜中性球 + 淋巴球增多）誤判為感染',
-    '忽略貓紅血球較小的特性，將正常 MCV 誤判為小球性貧血',
+    '犬貓參考範圍混用，拿犬的範圍去看貓',
+    '貓 reticulocyte 沒分聚集型跟點狀型，再生反應被高估',
+    '貓壓力性 WBC 上升（成熟嗜中性球+淋巴球都高）被當感染',
+    '忘記貓 RBC 本來就小，正常 MCV 被當小球性貧血',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -223,19 +223,19 @@ const contentHemaBasics: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '血液學基礎核心教材' },
     { type: 'textbook', citation: 'Weiss DJ, Wardrop KJ. Schalm\'s Veterinary Hematology, 6th ed. Wiley-Blackwell, 2010.', relevance: '造血系統與血球形態學權威參考' },
     { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. Elsevier, 2012.', relevance: '血球形態辨識圖譜' },
-    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 免疫介導溶血性貧血診斷共識——血液學基礎應用' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 免疫介導溶血性貧血診斷共識，血液學基礎應用' },
     { type: 'journal', citation: 'Knoll JS, Rowell SL. Clinical hematology: In-clinic analysis, quality assurance, and clinical decision-making. Vet Clin North Am Small Anim Pract. 2012;42(1):1-11.', relevance: '臨床血液學品管與決策制定' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 臨床化學基礎 — 概念型 */
+/** 臨床化學基礎，概念型 */
 const contentChemBasics: NodeContent = {
   id: 'CONTENT-CPATH-L1-002',
   node_id: 'CPATH-L1-002',
   version: 1,
-  summary: '臨床化學基礎涵蓋血清生化檢驗的原理、主要器官相關酵素與代謝物的來源與代謝途徑，以及影響結果判讀的分析前因素。為所有生化判讀的前置知識。',
+  summary: '血清生化的原理、各個器官相關酵素跟代謝物從哪裡來、怎麼代謝，還有採樣處理會怎麼把結果搞砸。生化判讀之前要先把這層打通。',
   learning_objectives: [
     '說明常見血清酵素（ALT、AST、ALP、GGT、CK）的組織來源與半衰期',
     '描述腎功能指標（BUN、creatinine、SDMA）的生理基礎',
@@ -244,14 +244,14 @@ const contentChemBasics: NodeContent = {
     '列舉影響生化結果的主要分析前因素',
   ],
   key_points: [
-    'ALT 為犬的肝細胞特異性酵素，貓的 ALT 特異性略低（肌肉也含少量）',
-    'ALP 在犬有肝臟型、骨骼型與皮質醇誘導型三種同功酶；貓僅有肝臟型與骨骼型',
-    'BUN 受飲食蛋白質、肝功能與腎功能共同影響，不如 creatinine 具腎臟特異性',
-    'SDMA 在 GFR 下降約 25% 時即升高，比 creatinine 更早偵測腎功能損傷',
-    'Albumin 僅在肝臟合成，半衰期犬約 8 天、貓約 7 天',
-    '溶血最常干擾的項目：AST↑、potassium↑、bilirubin↑、lipase↑',
-    '脂血干擾比色法檢測，可能造成假性升高或降低',
-    '犬貓 ALP 半衰期差異大：犬約 70 小時，貓僅約 6 小時',
+    'ALT 對犬肝細胞特異性很高，貓的特異性低一點（肌肉也有）',
+    'ALP 在犬有三型同功酶（肝、骨、皮質醇誘導），貓只有肝跟骨',
+    'BUN 受飲食蛋白、肝功能、腎功能三邊影響，腎臟特異性不如 creatinine',
+    'GFR 掉到 25% 左右 SDMA 就會升，比 creatinine 早抓到',
+    'Albumin 只在肝臟合成，犬半衰期 8 天、貓 7 天',
+    '溶血干擾最常見：AST↑、K⁺↑、bilirubin↑、lipase↑',
+    '脂血會干擾比色法，數值可能往上也可能往下偏',
+    'ALP 半衰期差很大：犬 70 小時，貓 6 小時',
   ],
   body: `# 臨床化學基礎 (Clinical Chemistry Basics)
 
@@ -264,12 +264,12 @@ const contentChemBasics: NodeContent = {
 
 ### 肝臟相關指標
 ### 肝細胞損傷酵素（Hepatocellular leakage enzymes）
-- **ALT（alanine aminotransferase）**：犬肝細胞高度特異性，貓特異性略低。半衰期犬約 60 小時，貓約 3.5 小時。
-- **AST（aspartate aminotransferase）**：肝臟與肌肉均含。需搭配 CK 區分來源。
+- ALT（alanine aminotransferase）：犬肝細胞高度特異性，貓特異性略低。半衰期犬約 60 小時，貓約 3.5 小時。
+- AST（aspartate aminotransferase）：肝臟與肌肉均含。需搭配 CK 區分來源。
 
 ### 膽管酵素（Cholestatic enzymes）
-- **ALP（alkaline phosphatase）**：犬有三種同功酶（肝、骨、皮質醇誘導型），因此犬 ALP 升高需綜合判斷。貓 ALP 半衰期僅約 6 小時，因此貓 ALP 升高的臨床意義更大。
-- **GGT（gamma-glutamyl transferase）**：肝內膽管上皮。貓 GGT 對膽道疾病的敏感度高於 ALP。
+- ALP（alkaline phosphatase）：犬有三種同功酶（肝、骨、皮質醇誘導型），所以犬 ALP 升高需綜合判斷。貓 ALP 半衰期僅約 6 小時，所以貓 ALP 升高的臨床意義更大。
+- GGT（gamma-glutamyl transferase）：肝內膽管上皮。貓 GGT 對膽道疾病的敏感度高於 ALP。
 
 ### 腎臟相關指標
 | 指標 | 來源 | GFR 下降多少時升高 | 備註 |
@@ -279,7 +279,7 @@ const contentChemBasics: NodeContent = {
 | SDMA | 全身細胞甲基化代謝 | ~25-40% | 較少受肌肉量影響 |
 
 ### 蛋白質
-- **Total protein（TP）**= albumin + globulin
+- Total protein（TP）= albumin + globulin
 - Albumin 僅肝臟合成，是評估肝臟合成功能與營養狀態的重要指標
 - Globulin 升高需考慮：慢性發炎、感染、腫瘤（多發性骨髓瘤）
 
@@ -303,13 +303,13 @@ const contentChemBasics: NodeContent = {
 | SDMA vs Creatinine 在犬貓早期 CKD 偵測的相對價值 | SDMA 對低肌肉量動物優勢明確，但是否應取代 creatinine 作為主要指標仍有爭議 | Level II |
 | 溶血/脂血/黃疸（HIL）干擾指數在不同分析平台間的比較性 | 各廠牌 HIL 閾值不同，同一樣本在不同平台可能被接受或拒絕 | Level III |
 | 犬 ALP 同功酶分型的臨床實用性 | 區分肝臟型、骨骼型與皮質醇誘導型有助鑑別，但同功酶分型檢測費時且非常規項目 | Level III |`,
-  clinical_pearl: '貓的 ALP 半衰期僅約 6 小時（犬約 70 小時），因此貓即使輕度 ALP 升高（如 2-3 倍）也代表顯著的膽道疾病，千萬不要因為數值「看起來不高」而輕忽。',
+  clinical_pearl: '貓 ALP 半衰期只有 6 小時（犬是 70 小時）。所以貓就算 ALP 只升 2-3 倍，後面也通常有膽道在燒。看到數字不高就放掉，會錯過很多病。',
   common_mistakes: [
-    '忽略犬 ALP 有皮質醇誘導型同功酶，將類固醇引起的 ALP 升高誤判為肝病',
-    '僅看 BUN 評估腎功能而未同時檢查 creatinine 與 SDMA',
-    '未注意溶血、脂血、黃疸對生化結果的干擾',
-    '將犬的 ALP 判讀標準套用在貓身上，低估貓輕度 ALP 升高的意義',
-    '忽略 albumin 半衰期較長，急性肝損傷初期 albumin 可能仍正常',
+    '忘了犬 ALP 有皮質醇誘導型，類固醇造成的 ALP 升高被當肝病',
+    '腎功能只看 BUN，沒一起點 creatinine 跟 SDMA',
+    '沒注意 HIL（溶血、脂血、黃疸）對生化的干擾',
+    '把犬 ALP 標準套到貓身上，低估貓輕度 ALP 升高',
+    '忘記 albumin 半衰期長，急性肝損傷早期 albumin 可能還沒掉',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -325,19 +325,19 @@ const contentChemBasics: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '臨床化學基礎核心教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '器官相關生化指標臨床意義' },
-    { type: 'journal', citation: 'Nabity MB et al. "IRIS Canine GFR Working Group — SDMA as a biomarker." J Vet Intern Med 2015;29(4):1036-1044.', relevance: 'SDMA 作為早期腎功能指標的實證' },
-    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS CKD 分期指引——腎功能生化指標臨床應用標準' },
+    { type: 'journal', citation: 'Nabity MB et al. "IRIS Canine GFR Working Group，SDMA as a biomarker." J Vet Intern Med 2015;29(4):1036-1044.', relevance: 'SDMA 作為早期腎功能指標的實證' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS CKD 分期指引，腎功能生化指標臨床應用標準' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 分析前誤差與品質控管 — 機轉型 */
+/** 分析前誤差與品質控管，機轉型 */
 const contentPreAnalytical: NodeContent = {
   id: 'CONTENT-CPATH-L2-001',
   node_id: 'CPATH-L2-001',
   version: 1,
-  summary: '分析前誤差（pre-analytical error）是臨床檢驗最主要的誤差來源，佔所有實驗室誤差的 60-70%。正確的採樣、處理與保存流程是確保檢驗結果可靠的第一步。',
+  summary: '實驗室誤差有六七成是在進機器之前就發生的。採樣、處理、保存這條流程沒走好，後面跑出來的數字都不能信。',
   learning_objectives: [
     '列舉分析前、分析中、分析後三階段的常見誤差來源',
     '說明溶血、脂血、黃疸（HIL index）對不同檢驗項目的影響',
@@ -346,14 +346,14 @@ const contentPreAnalytical: NodeContent = {
     '說明正確的採樣管選擇與樣本處理流程',
   ],
   key_points: [
-    '分析前誤差佔所有實驗室誤差 60-70%，是最可控也最被忽略的環節',
-    '常見分析前誤差：錯誤採血管、溶血、脂血、延遲送檢、未禁食',
-    'EDTA 管用於 CBC；紅頭/黃頭管用於血清生化；藍頭管（枸櫞酸鈉）用於凝血檢查',
-    '溶血影響：K⁺假性↑、AST↑、LDH↑、bilirubin↑；脂血影響比色法準確度',
-    'Levey-Jennings chart 用於追蹤 QC 品管檢體的趨勢與偏移',
-    'Westgard rules（1-2s, 1-3s, 2-2s, R-4s 等）用於判定分析批次是否合格',
-    '參考範圍通常取健康族群 95% 中間值，意味 5% 健康動物會落在範圍外',
-    '抗凝劑交叉污染（如 EDTA 汙染血清管）會造成 Ca²⁺假性降低、K⁺假性升高',
+    '分析前誤差佔六到七成，能控管卻最常被略過',
+    '常見的就那幾種：採血管錯、溶血、脂血、延遲送檢、沒禁食',
+    'EDTA 管做 CBC；紅頭或黃頭做血清生化；藍頭（枸櫞酸鈉）做凝血',
+    '溶血會把 K⁺、AST、LDH、bilirubin 推高；脂血讓比色法跑掉',
+    'Levey-Jennings chart 追 QC 趨勢跟偏移',
+    'Westgard rules（1-2s、1-3s、2-2s、R-4s）判定批次過不過',
+    '參考範圍取健康族群中間 95%，意思是 5% 健康動物本來就會落在範圍外',
+    'EDTA 汙染血清管，Ca²⁺假性降低、K⁺假性升高',
   ],
   body: `# 分析前誤差與品質控管 (Pre-analytical Errors & QC)
 
@@ -370,26 +370,26 @@ const contentPreAnalytical: NodeContent = {
 
 ### 分析前誤差
 ### 採樣相關
-- **採血管選擇**：EDTA（紫頭）→ CBC；枸櫞酸鈉（藍頭）→ 凝血；肝素（綠頭）→ 急診生化；無添加劑（紅頭）/分離膠（黃頭）→ 血清生化
-- **採血量不足**：凝血管需精確 9:1（血液:抗凝劑）比例
-- **採血順序**：先採無添加劑管，最後採 EDTA 管，避免抗凝劑交叉污染
+- 採血管選擇：EDTA（紫頭）→ CBC；枸櫞酸鈉（藍頭）→ 凝血；肝素（綠頭）→ 急診生化；無添加劑（紅頭）/分離膠（黃頭）→ 血清生化
+- 採血量不足：凝血管需精確 9:1（血液:抗凝劑）比例
+- 採血順序：先採無添加劑管，最後採 EDTA 管，避免抗凝劑交叉污染
 
 ### 樣本干擾（HIL Index）
-- **H（Hemolysis 溶血）**：細胞內容物釋出 → K⁺↑、AST↑、LDH↑
-- **I（Icterus 黃疸）**：高 bilirubin 干擾比色法
-- **L（Lipemia 脂血）**：光散射干擾 → 多項目不準確，可用高速離心或脂肪酶前處理
+- H（Hemolysis 溶血）：細胞內容物釋出 → K⁺↑、AST↑、LDH↑
+- I（Icterus 黃疸）：高 bilirubin 干擾比色法
+- L（Lipemia 脂血）：光散射干擾 → 多項目不準確，可用高速離心或脂肪酶前處理
 
 ### 品質控管基本原理
 ### 內部品管（IQC）
 每日運行已知濃度的品管檢體，繪製 Levey-Jennings chart 追蹤平均值與標準差。
 
 ### Westgard Rules 判讀
-- **1-2s 警告**：一個 QC 值超過 ±2SD → 警告，檢查下一個 QC
-- **1-3s 拒絕**：一個 QC 值超過 ±3SD → 批次拒絕
-- **2-2s 拒絕**：連續兩個 QC 值同側超過 ±2SD → 系統性偏移
+- 1-2s 警告：一個 QC 值超過 ±2SD → 警告，檢查下一個 QC
+- 1-3s 拒絕：一個 QC 值超過 ±3SD → 批次拒絕
+- 2-2s 拒絕：連續兩個 QC 值同側超過 ±2SD → 系統性偏移
 
 ### 參考範圍的建立與限制
-參考範圍取 120 頭以上健康動物中間 95% 的數值範圍。因此：
+參考範圍取 120 頭以上健康動物中間 95% 的數值範圍。所以：
 - 每 20 頭健康動物中，約有 1 頭會有某項目「異常」
 - 同時檢測 20 個項目時，健康動物至少有一項「異常」的機率高達 64%
 - 需結合臨床表現判讀，不能僅憑單一數值異常下診斷
@@ -409,13 +409,13 @@ const contentPreAnalytical: NodeContent = {
 |---------|------|---------------|
 | 犬貓 CRP/SAA 等急性期蛋白的臨床決策價值 | 具有發炎指標價值，但疾病特異度低 | Level III |
 | 犬尿蛋白/肌酸酐比值（UPC）的採樣標準化 | 單次 vs 池尿的差異、禁食狀態影響 | Level III |`,
-  clinical_pearl: '當你同時檢測 20 個生化項目時，即使完全健康的動物也有 64% 機率至少出現一項「超出參考範圍」。因此單一輕度異常如果沒有臨床症狀佐證，很可能是統計上的正常變異而非真正的病理改變。',
+  clinical_pearl: '同時點 20 項生化的話，連完全健康的動物都有 64% 機率至少跳出一個紅字。所以單一輕度異常沒搭配臨床症狀的時候，多半是統計噪音，不是真的有病理變化。',
   common_mistakes: [
-    '採血時先抽 EDTA 管再抽生化管，導致 EDTA 汙染使 Ca²⁺ 假性降低',
-    '凝血管採血量不足，枸櫞酸鈉比例偏高導致 PT/aPTT 假性延長',
-    '未在 30 分鐘內分離血清，造成血糖假性降低（細胞繼續代謝葡萄糖）',
-    '忽略 HIL index，在嚴重溶血或脂血的樣本中信任自動分析結果',
-    '將單一輕微異常值視為確定性診斷依據，未考慮參考範圍的統計限制',
+    '採血順序錯：先抽 EDTA 管再抽生化管，EDTA 汙染把 Ca²⁺ 拉低',
+    '凝血管採血量沒滿，枸櫞酸鈉比例變高，PT/aPTT 假性延長',
+    '血清沒在 30 分鐘內分離，細胞還在代謝葡萄糖，血糖假性偏低',
+    'HIL index 沒看，溶血或脂血嚴重的樣本還照單全收',
+    '把單一輕微紅字當確診依據，沒想到參考範圍本身的統計限制',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -437,12 +437,12 @@ const contentPreAnalytical: NodeContent = {
   created_at: now,
 };
 
-/** 血清生化判讀 — 診斷型 */
+/** 血清生化判讀，診斷型 */
 const contentBiochem: NodeContent = {
   id: 'CONTENT-CPATH-L4-002',
   node_id: 'CPATH-L4-002',
   version: 1,
-  summary: '血清生化檢查（serum biochemistry panel）透過測定血清中酵素活性、代謝物與電解質濃度，評估肝、腎、胰臟、肌肉等器官功能。是僅次於 CBC 的最常規檢查。',
+  summary: '血清生化是看肝、腎、胰、肌肉這些器官有沒有狀況的主力檢查。點 CBC 大概就會順手點生化，是門診跑量第二大的項目。',
   learning_objectives: [
     '系統性判讀肝臟酵素模式（hepatocellular vs cholestatic）',
     '整合 BUN、creatinine、SDMA 與 USG 評估腎功能',
@@ -451,14 +451,14 @@ const contentBiochem: NodeContent = {
     '區分犬貓生化參數的物種差異並正確套用參考範圍',
   ],
   key_points: [
-    'ALT 升高 > 2-3x：犬高度提示肝細胞損傷；貓需同時考慮肌肉來源',
-    'ALP 升高：犬須排除皮質醇誘導型（Cushing、類固醇用藥）；貓 ALP 任何升高皆具臨床意義',
-    'Azotemia 三分類：prerenal（脫水）、renal（腎實質）、postrenal（阻塞）',
-    'SDMA > 14 μg/dL 提示早期腎功能下降（GFR 損失約 25-40%）',
-    'Glucose 壓力性高血糖在貓極為常見（可達 300-400 mg/dL）',
-    'Na/K ratio < 27 高度提示 hypoadrenocorticism（Addison disease）',
-    'Spec cPL/fPL 為犬/貓胰臟炎特異性 lipase 檢測',
-    'Total protein = albumin + globulin；A/G ratio 降低提示慢性發炎或蛋白質流失',
+    'ALT 升 2-3 倍以上，犬幾乎就是肝細胞損傷；貓還要把肌肉來源一起想',
+    'ALP 升高，犬要先排除皮質醇誘導型（Cushing、類固醇）；貓 ALP 一升就有意義',
+    'Azotemia 分三類：prerenal（脫水）、renal（腎實質）、postrenal（阻塞）',
+    'SDMA > 14 μg/dL，GFR 大概掉了 25-40%',
+    '貓壓力性高血糖門診天天看，數值衝到 300-400 mg/dL 很常見',
+    'Na/K < 27 就要把 Addison 排上鑑別清單前幾名',
+    'Spec cPL/fPL 是犬貓胰臟特異性 lipase',
+    'Total protein = albumin + globulin；A/G ratio 降低代表慢性發炎或蛋白流失',
   ],
   body: `# 血清生化判讀 (Serum Biochemistry Interpretation)
 
@@ -493,9 +493,9 @@ IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
 - 傳統 amylase/lipase 對犬貓胰臟炎敏感度與特異度均不佳
 
 ### 電解質
-- **高鉀血症**：腎衰竭、尿道阻塞、Addison disease、組織損傷
-- **低鉀血症**：嘔吐、慢性腎病（貓）、胰島素治療
-- **高鈣血症**：惡性腫瘤（lymphoma）、Addison、腎衰竭、維生素 D 中毒
+- 高鉀血症：腎衰竭、尿道阻塞、Addison disease、組織損傷
+- 低鉀血症：嘔吐、慢性腎病（貓）、胰島素治療
+- 高鈣血症：惡性腫瘤（lymphoma）、Addison、腎衰竭、維生素 D 中毒
 
 ## 二、判讀要點 (Interpretation)
 
@@ -520,13 +520,13 @@ IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
 | 犬 Spec cPL 灰色地帶（200-400 μg/L）的臨床決策 | 此區間既非確診也非排除，是否需要重複檢測或搭配影像尚無共識 | Level III |
 | 犬貓 SDMA 在非腎臟因素下的變異 | 脫水、高蛋白飲食、腫瘤可能影響 SDMA，獨立於 GFR 的變異程度待釐清 | Level III |
 | 禁食 vs 非禁食樣本對犬貓生化套組判讀的影響 | 禁食主要影響 triglyceride 與 glucose，但對其他項目影響程度各研究結論不一 | Level II |`,
-  clinical_pearl: '犬 ALP 升高最常見的原因是類固醇誘導（exogenous 或 endogenous），而非肝病。但貓完全沒有皮質醇誘導型 ALP 同功酶，所以貓 ALP 哪怕僅升高 2 倍也必須認真追查膽道/肝臟疾病。',
+  clinical_pearl: '犬 ALP 升高最常見原因不是肝病，是類固醇誘導（外源或內源都有）。但貓完全沒有皮質醇誘導型 ALP，所以貓 ALP 只要升 2 倍就要認真去追膽道或肝臟。',
   common_mistakes: [
-    '貓壓力性高血糖（stress hyperglycemia）誤診為糖尿病——需搭配果糖胺確認',
-    '僅用 BUN 單一指標判斷腎功能，忽略 BUN 受飲食蛋白和脫水影響',
-    '犬 ALP 升高未排除皮質醇誘導型，直接下肝病診斷',
-    '忽略貓 GGT 比 ALP 更能反映膽道疾病',
-    '未同時評估 USG 就將 azotemia 歸類為腎性',
+    '貓壓力性高血糖被當糖尿病確診，沒搭配果糖胺',
+    '腎功能只看 BUN，忘了 BUN 受飲食蛋白跟脫水影響',
+    '犬 ALP 升高沒排除皮質醇誘導，直接下肝病診斷',
+    '忽略貓 GGT 比 ALP 更會反映膽道',
+    '沒看 USG 就把 azotemia 歸成腎性',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -546,15 +546,15 @@ IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
       { finding: 'Azotemia', description: 'BUN ↑ + Creatinine ↑', significance: '需分類 prerenal/renal/postrenal' },
       { finding: 'Hypoadrenocorticism 模式', description: 'Na/K < 27 + prerenal azotemia', significance: '高度提示 Addison disease' },
     ],
-    interpretation_guide: '1. 檢查 HIL index（溶血/黃疸/脂血）。2. 評估肝酵素模式。3. 評估腎功能三指標。4. 檢查血糖與胰臟酵素。5. 評估蛋白質。6. 評估電解質。7. 整合臨床表現。',
+    interpretation_guide: '我看生化的順序：先看 HIL index 確認樣本品質。再看肝酵素的模式。然後腎功能三指標（BUN、Cr、SDMA）。接著血糖跟胰臟酵素。再看蛋白質。再看電解質。最後對臨床。',
     pitfalls: [
-      '溶血樣本造成 AST、K⁺、bilirubin 假性升高',
-      '脂血樣本干擾比色法，多項結果不可靠',
-      '未禁食導致 triglyceride 和 glucose 假性升高',
-      '類固醇使用導致犬 ALP 和 GGT 升高被誤判為肝病',
+      '溶血會把 AST、K⁺、bilirubin 推高',
+      '脂血干擾比色法，多項結果信不過',
+      '沒禁食，triglyceride 跟 glucose 假性偏高',
+      '類固醇造成 ALP 跟 GGT 升高被誤當肝病',
     ],
-    sensitivity_specificity: '生化套組為廣泛篩檢工具，個別指標的敏感度與特異度因疾病而異。肝酵素對肝損傷敏感但不特異；SDMA 對早期腎損傷的敏感度優於 creatinine。',
-    cost_benefit: '為最常規的生化篩檢，費用中等。搭配 CBC 可覆蓋大部分常見器官疾病的初步評估。',
+    sensitivity_specificity: '生化套組是廣篩工具，個別指標的敏感度跟特異度看疾病而定。肝酵素對肝損傷敏感但不特異；SDMA 抓早期腎損傷比 creatinine 早。',
+    cost_benefit: '費用中等，跟 CBC 一起點可以覆蓋大多數常見器官疾病的初步評估。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -575,28 +575,28 @@ IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
   created_at: now,
 };
 
-/** 細胞學基本原則 — 診斷型 */
+/** 細胞學基本原則，診斷型 */
 const contentCytology: NodeContent = {
   id: 'CONTENT-CPATH-L4-003',
   node_id: 'CPATH-L4-003',
   version: 1,
-  summary: '細胞學（cytology）是透過細針抽吸（FNA）或壓印抹片取得細胞樣本，經染色後以顯微鏡評估細胞形態的診斷方法。為腫塊快速分類與初步診斷的第一線工具。',
+  summary: '細胞學是用 FNA 或壓印抹片拿到細胞，染色後上顯微鏡看形態。摸到腫塊要快速分類、先看到底是什麼方向，這是第一線工具。',
   learning_objectives: [
     '描述 FNA 的正確操作技術與抹片製作方法',
     '區分發炎性、增生性與腫瘤性細胞學模式',
     '辨識惡性腫瘤細胞的細胞學標準（malignancy criteria）',
     '說明常用細胞學染色法（Diff-Quik, Wright-Giemsa）的特性',
-    '判斷何時細胞學結果需進一步組織病理學確認',
+    '判斷何時細胞學結果需追加組織病理學確認',
   ],
   key_points: [
-    'FNA 為微創、快速、低成本的初步診斷工具，適用於大部分體表與可觸及腫塊',
-    '樣本充足性是細胞學判讀的第一步——細胞不足（non-diagnostic）需重新採樣',
-    '細胞學將腫塊分為：發炎性（inflammation）、增生性（hyperplasia）、腫瘤性（neoplasia）',
-    '腫瘤性再分為：上皮性（carcinoma）、間質性（sarcoma）、圓細胞（round cell tumor）',
-    '惡性標準包括：核仁異常（大小不一/數量多/形狀不規則）、N:C ratio 增大、有絲分裂像增多',
-    '圓細胞腫瘤（lymphoma、mast cell tumor、histiocytoma、TVT、plasmacytoma）最適合細胞學診斷',
-    'Diff-Quik 染色快速（3 分鐘），適合院內即時判讀；Wright-Giemsa 細節更佳',
-    '間質性腫瘤（sarcoma）細胞學常細胞量少且分散，診斷困難，常需組織病理確認',
+    'FNA 微創、快、便宜，體表跟可觸及的腫塊大多可以做',
+    '樣本充足性是第一關。細胞不夠（non-diagnostic）就要重抽',
+    '細胞學第一刀分三類：發炎、增生、腫瘤',
+    '腫瘤再分上皮（carcinoma）、間質（sarcoma）、圓細胞',
+    '惡性標準看核：核仁大小不一、數量多、形狀亂、N:C ratio 大、有絲分裂像多',
+    '圓細胞腫瘤（lymphoma、MCT、histiocytoma、TVT、plasmacytoma）最適合細胞學',
+    'Diff-Quik 三分鐘搞定，院內判讀；Wright-Giemsa 細節好但慢',
+    'Sarcoma 細胞抽不太到、又分散，常常要送組織病理',
   ],
   body: `# 細胞學基本原則 (Basic Cytology Principles)
 
@@ -613,9 +613,9 @@ const contentCytology: NodeContent = {
 4. 用 10 mL 注射器將針頭內容物吹至載玻片
 
 ### 抹片製作
-- **Squash prep（壓片法）**：最常用，適合大部分 FNA 樣本
-- **Starfish / pull-apart technique**：適合液態樣本
-- **Line smear**：適合液態樣本的濃縮
+- Squash prep（壓片法）：最常用，適合大部分 FNA 樣本
+- Starfish / pull-apart technique：適合液態樣本
+- Line smear：適合液態樣本的濃縮
 
 ### 細胞學模式分類
 | 模式 | 主要細胞 | 提示 |
@@ -665,16 +665,16 @@ const contentCytology: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬貓 FNA 細胞學 vs 組織病理的整體一致率 | 因組織類型差異大——淋巴結 FNA 準確度 > 90%，脾臟/肝臟 FNA 僅 60-70% | Level II |
+| 犬貓 FNA 細胞學 vs 組織病理的整體一致率 | 組織類型差異很大：淋巴結 FNA 準確度 > 90%，脾臟、肝臟 FNA 只有 60-70% | Level II |
 | 犬 MCT 細胞學分級是否可取代組織病理分級 | 細胞學可提示 high-grade，但 Kiupel/Patnaik 系統需組織病理，細胞學分級標準尚未統一 | Level III |
 | FNA 抽吸技術（aspiration）vs 非抽吸技術（non-aspiration）的診斷效能比較 | 非抽吸技術血液汙染較少，但對纖維性腫瘤細胞量可能不足，最佳策略因腫瘤類型而異 | Level III |`,
-  clinical_pearl: '圓細胞腫瘤（round cell tumors）是細胞學最能準確診斷的腫瘤類型。Lymphoma 的 FNA 準確率可達 90% 以上。相反地，間質性腫瘤（sarcoma）的 FNA 常因細胞量不足或細胞分散而難以確診，需要組織病理學。',
+  clinical_pearl: '圓細胞腫瘤是細胞學最會抓的一類。淋巴瘤 FNA 準確率 90% 以上。Sarcoma 反過來，細胞量不夠又分散，常常抽不到、看不準，最後還是要組織病理。',
   common_mistakes: [
-    '在血管豐富的腫塊使用抽吸技術導致血液嚴重汙染（hemodilution）',
-    '將反應性淋巴結增生（reactive hyperplasia）誤判為淋巴瘤',
-    '忽略肥大細胞的顆粒（Diff-Quik 偶爾染色不佳），漏診 mast cell tumor',
-    '僅憑單一惡性標準判定惡性——需多項標準同時存在才可靠',
-    '對間質性腫瘤細胞學信心過高，未建議組織病理確認',
+    '血管很多的腫塊還用抽吸技術，整片血',
+    '反應性淋巴結增生被當成淋巴瘤',
+    'Diff-Quik 把肥大細胞顆粒染不出來，MCT 漏掉',
+    '只抓一個惡性標準就下判，多項同時出現才有把握',
+    'Sarcoma 細胞學信心太高，沒回頭推組織病理'
   ],
   disease_data: null,
   diagnostic_data: {
@@ -691,15 +691,15 @@ const contentCytology: NodeContent = {
       { finding: '上皮性腫瘤', description: '細胞團簇排列，N:C ratio 增大，核仁異常', significance: 'Carcinoma，需組織病理確認分級' },
       { finding: '間質性腫瘤', description: '梭形細胞分散排列', significance: 'Sarcoma，細胞學分級困難，強烈建議組織病理' },
     ],
-    interpretation_guide: '1. 評估樣本充足性。2. 低倍辨識整體模式（發炎 vs 腫瘤）。3. 高倍評估細胞形態與惡性標準。4. 分類腫瘤類型（上皮/間質/圓細胞）。5. 提供可能診斷與建議下一步。',
+    interpretation_guide: '判讀順序：先看樣本夠不夠。低倍掃過去判斷整體模式（發炎還是腫瘤）。高倍再看細胞形態跟惡性標準。把腫瘤類型分類（上皮、間質、圓細胞）。最後寫出可能診斷跟下一步建議。',
     pitfalls: [
-      '血液汙染稀釋細胞，降低診斷準確度',
-      '抹片太厚導致細胞堆疊無法辨識',
-      'Diff-Quik 對 mast cell granules 染色可能不佳',
-      '將反應性淋巴結中增生的中/大淋巴球誤判為 lymphoma',
+      '血液汙染稀釋細胞，準確度掉很多',
+      '抹片太厚，細胞疊在一起認不出來',
+      'Diff-Quik 對 mast cell granules 有時候染不出來',
+      '反應性淋巴結裡中型大淋巴球變多被當淋巴瘤',
     ],
-    sensitivity_specificity: '細胞學對圓細胞腫瘤（尤其 lymphoma）的敏感度約 85-95%。對間質性腫瘤的敏感度約 50-70%，特異度更低。整體而言，FNA 的準確率約 70-90%，取決於腫瘤類型與操作品質。',
-    cost_benefit: '成本極低、即時可得結果、微創。為腫塊評估的最佳第一線工具。但間質性腫瘤及分級需求需組織病理學。',
+    sensitivity_specificity: '圓細胞腫瘤敏感度 85-95%（淋巴瘤特別準）。Sarcoma 只有 50-70%，特異度更低。整體 FNA 準確率 70-90%，看腫瘤類型跟操作品質。',
+    cost_benefit: '幾乎零成本、結果馬上拿到、微創。腫塊評估的第一線。但 sarcoma 跟分級需求都要送組織病理。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -720,12 +720,12 @@ const contentCytology: NodeContent = {
   created_at: now,
 };
 
-/** 凝血功能檢查 — 診斷型 */
+/** 凝血功能檢查，診斷型 */
 const contentCoagulation: NodeContent = {
   id: 'CONTENT-CPATH-L4-004',
   node_id: 'CPATH-L4-004',
   version: 1,
-  summary: '凝血功能檢查評估初級止血（血小板）與次級止血（凝血因子瀑布）的完整性。PT、aPTT 與血小板計數是最基礎的凝血篩檢三角，可快速定位出血原因。',
+  summary: '凝血檢查在看初級止血（血小板）跟次級止血（凝血因子瀑布）有沒有壞。PT、aPTT 加血小板計數是基本三角，快速定位出血是哪一段出問題。',
   learning_objectives: [
     '說明初級止血（primary hemostasis）與次級止血（secondary hemostasis）的差異',
     '解釋 PT 與 aPTT 分別評估哪些凝血途徑',
@@ -734,14 +734,14 @@ const contentCoagulation: NodeContent = {
     '說明抗凝劑中毒（rodenticide）的典型凝血模式',
   ],
   key_points: [
-    'PT 評估外源性途徑（factor VII）+ 共同途徑（X, V, II, fibrinogen）',
-    'aPTT 評估內源性途徑（XII, XI, IX, VIII）+ 共同途徑',
-    '血小板減少 + PT/aPTT 均正常 → 初級止血異常（ITP、骨髓抑制）',
-    '血小板正常 + PT 延長 + aPTT 正常 → Factor VII 缺乏（早期 rodenticide 中毒）',
-    'PT 與 aPTT 均延長 → 共同途徑異常、DIC、嚴重肝病、rodenticide 中毒（晚期）',
-    'DIC 診斷需整合：血小板↓ + PT/aPTT↑ + fibrinogen↓ + D-dimer↑ + 抹片見 schistocytes',
-    'BMBT（buccal mucosal bleeding time）評估初級止血，正常犬 < 4 分鐘',
-    '凝血管（藍頭，枸櫞酸鈉 3.2%）需精確 9:1 血液比例，不足會假性延長',
+    'PT 看的是外源性途徑（factor VII）加共同途徑（X、V、II、fibrinogen）',
+    'aPTT 看內源性途徑（XII、XI、IX、VIII）加共同途徑',
+    '血小板少、PT/aPTT 都正常，問題在初級止血（ITP、骨髓抑制）',
+    '血小板正常、PT 延長、aPTT 正常，Factor VII 缺乏，早期老鼠藥中毒先想到',
+    'PT 跟 aPTT 都延長，可能共同途徑缺乏、DIC、嚴重肝病、晚期老鼠藥中毒',
+    'DIC 要整合多項：血小板↓、PT/aPTT↑、fibrinogen↓、D-dimer↑、抹片看到 schistocytes',
+    'BMBT 評估初級止血，犬正常 < 4 分鐘',
+    '藍頭管（3.2% 枸櫞酸鈉）要 9:1 比例，採不夠 PT/aPTT 會假性延長',
   ],
   body: `# 凝血功能檢查 (Coagulation Testing)
 
@@ -773,7 +773,7 @@ DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
 - Antithrombin（AT）降低
 
 ### 抗凝劑（Rodenticide）中毒
-第二代抗凝血劑（brodifacoum, bromadiolone）抑制 vitamin K epoxide reductase，阻斷 vitamin K 依賴性因子（II, VII, IX, X）的活化。Factor VII 半衰期最短（犬 ~6h），因此 PT 最先延長。
+第二代抗凝血劑（brodifacoum, bromadiolone）抑制 vitamin K epoxide reductase，阻斷 vitamin K 依賴性因子（II, VII, IX, X）的活化。Factor VII 半衰期最短（犬 ~6h），所以 PT 最先延長。
 
 ## 二、判讀要點 (Interpretation)
 
@@ -803,13 +803,13 @@ DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
 | TEG/ROTEM vs 傳統 PT/aPTT 在犬 DIC 診斷的優劣 | TEG 提供更全面的凝血圖譜，但犬正常參考值因機型與試劑而異，標準化不足 | Level III |
 | 犬術前凝血篩檢（PT/aPTT）的必要性 | 健康犬術前 PT/aPTT 異常率極低（< 2%），是否應常規執行仍有成本效益爭議 | Level II |
 | 犬低劑量 aspirin 抗血栓預防的最佳劑量與監測 | 0.5-1 mg/kg/day vs 更高劑量，血小板功能檢測（PFA-100/Multiplate）的臨床切點尚未確立 | Level III |`,
-  clinical_pearl: 'Rodenticide 中毒時 Factor VII 半衰期最短（犬約 6 小時），所以 PT 會比 aPTT 更早延長。如果犬出現不明原因出血且 PT 延長但 aPTT 仍正常，rodenticide 中毒應列為首要鑑別。治療用 Vitamin K1 而非 K3。',
+  clinical_pearl: '老鼠藥中毒時 Factor VII 半衰期最短（犬約 6 小時），PT 會比 aPTT 早延長。犬不明出血、PT 拉長但 aPTT 還在範圍內，老鼠藥中毒擺第一個鑑別。治療用 Vitamin K1，不是 K3。',
   common_mistakes: [
-    '凝血管採血量不足（< 90% 填充），導致枸櫞酸鈉過量，PT/aPTT 假性延長',
-    '未在 1 小時內離心處理凝血樣本，Factor V 和 VIII 在室溫下不穩定',
-    '將 DIC 視為獨立疾病而非基礎疾病的併發症——需尋找並治療原發病因',
-    '忽略血小板計數在凝血評估中的重要性，僅關注 PT/aPTT',
-    '犬 PCV < 25% 時，凝血管需調整枸櫞酸鈉用量（嚴重貧血偏差）',
+    '凝血管採血量不到 90%，枸櫞酸鈉比例變高，PT/aPTT 假性延長',
+    '凝血樣本沒在 1 小時內離心處理，Factor V 跟 VIII 室溫下會掉',
+    'DIC 被當獨立疾病處理，沒去找原發病因',
+    '凝血評估只看 PT/aPTT，把血小板計數丟掉',
+    '犬 PCV < 25% 時凝血管枸櫞酸鈉用量要調，嚴重貧血會偏差',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -827,15 +827,15 @@ DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
       { finding: 'PT + aPTT 均延長', description: '兩者均超過正常上限', significance: 'DIC、嚴重肝病、晚期 rodenticide 中毒' },
       { finding: 'D-dimer 升高', description: '> 250 ng/mL', significance: '纖維蛋白溶解增加，提示 DIC 或血栓' },
     ],
-    interpretation_guide: '1. 檢查血小板數量（初級止血）。2. 評估 PT（外源性途徑）。3. 評估 aPTT（內源性途徑）。4. 如懷疑 DIC，加做 fibrinogen、D-dimer、AT。5. 整合臨床背景。',
+    interpretation_guide: '我的順序：先確認血小板（初級止血）。再看 PT（外源性）。再看 aPTT（內源性）。懷疑 DIC 就加 fibrinogen、D-dimer、AT。最後對臨床背景。',
     pitfalls: [
-      '藍頭管填充不足是最常見的分析前誤差',
-      '組織因子汙染（創傷性採血）使 PT 假性縮短',
-      '室溫放置過久導致 Factor V/VIII 降解',
-      '嚴重脂血干擾光學檢測法的 PT/aPTT 結果',
+      '藍頭管沒填夠是最常見的分析前誤差',
+      '創傷性採血帶進組織因子，PT 假性縮短',
+      '室溫放太久，Factor V/VIII 降解',
+      '嚴重脂血會干擾光學法的 PT/aPTT',
     ],
-    sensitivity_specificity: 'PT/aPTT 對凝血因子活性 < 30% 時才會延長，因此正常結果不代表凝血因子完全正常。D-dimer 敏感度高但特異度低（發炎、手術後均可升高）。',
-    cost_benefit: '基礎凝血篩檢（PT/aPTT/PLT）成本中等，對出血患者必不可少。D-dimer 和 AT 檢測成本較高，用於 DIC 確診。',
+    sensitivity_specificity: 'PT/aPTT 要凝血因子活性掉到 30% 以下才會延長，正常結果不代表因子完全沒問題。D-dimer 敏感度高但特異度低（發炎、手術後都會升）。',
+    cost_benefit: 'PT/aPTT/PLT 基礎套組費用中等，出血病人不能不做。D-dimer 跟 AT 貴一點，主要拿來確診 DIC。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -856,12 +856,12 @@ DIC 為消耗性凝血病變，需 ≥3 項異常才可確診：
   created_at: now,
 };
 
-/** 血液氣體分析 — 診斷型 */
+/** 血液氣體分析，診斷型 */
 const contentBloodGas: NodeContent = {
   id: 'CONTENT-CPATH-L4-005',
   node_id: 'CPATH-L4-005',
   version: 1,
-  summary: '血液氣體分析（blood gas analysis）評估酸鹼平衡與氧合狀態，是重症照護與急診醫學的核心檢查。系統性判讀需掌握 pH、pCO₂、HCO₃⁻ 與 base excess 的關係。',
+  summary: '血氣評估酸鹼平衡跟氧合狀態，急診跟 ICU 的核心檢查。判讀要把 pH、pCO₂、HCO₃⁻、base excess 之間的關係弄清楚。',
   learning_objectives: [
     '執行血液氣體判讀的系統性五步驟',
     '區分四種原發性酸鹼失衡及其代償反應',
@@ -870,14 +870,14 @@ const contentBloodGas: NodeContent = {
     '辨識混合性酸鹼失衡',
   ],
   key_points: [
-    '正常動脈血 pH：犬/貓 7.35-7.45；pCO₂：35-45 mmHg；HCO₃⁻：20-24 mEq/L',
-    '代謝性酸中毒（metabolic acidosis）最常見於腎衰竭、糖尿病酮酸中毒、乳酸酸中毒',
-    '呼吸性酸中毒（respiratory acidosis）= 通氣不足 → pCO₂↑',
-    'Anion gap = Na⁺ - (Cl⁻ + HCO₃⁻)，正常犬 12-24 mEq/L，貓 13-27 mEq/L',
-    'High AG metabolic acidosis：DKA、乳酸中毒、ethylene glycol 中毒、尿毒症',
-    'Normal AG (hyperchloremic) metabolic acidosis：腹瀉、RTA、大量生理食鹽水',
-    'P/F ratio = PaO₂/FiO₂，< 300 為 ALI，< 200 為 ARDS',
-    '靜脈血氣可替代動脈血氣評估酸鹼狀態，但不能評估氧合',
+    '正常動脈血：犬貓 pH 7.35-7.45、pCO₂ 35-45 mmHg、HCO₃⁻ 20-24 mEq/L',
+    '代謝性酸中毒最常見於腎衰竭、DKA、乳酸酸中毒',
+    '呼吸性酸中毒就是通氣不夠，pCO₂ 衝上去',
+    'Anion gap = Na⁺ - (Cl⁻ + HCO₃⁻)，犬 12-24、貓 13-27 mEq/L',
+    'High AG 酸中毒：DKA、乳酸、乙二醇中毒、尿毒症',
+    'Normal AG（高氯性）酸中毒：腹瀉、RTA、生理食鹽水打太多',
+    'P/F ratio = PaO₂/FiO₂，< 300 是 ALI，< 200 是 ARDS',
+    '靜脈血氣可以替代動脈血氣看酸鹼，但氧合不行',
   ],
   body: `# 血液氣體分析 (Blood Gas Analysis)
 
@@ -933,16 +933,16 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
 ## 三、常見陷阱 (Pitfalls)
 
 ### 分析前誤差
-- **氣泡殘留**：樣本中空氣氣泡使 PaO₂ 假性升高（向 150 mmHg 偏移）、PaCO₂ 假性降低。採樣後必須立即排出氣泡並密封。
-- **延遲分析**：室溫放置 > 15 分鐘，白血球與紅血球持續代謝 → pH 下降、PaCO₂ 上升、PaO₂ 下降、乳酸升高。置冰上可延長至 30 分鐘。
-- **肝素過量稀釋**：液態肝素殘留量過多會稀釋樣本，使 pCO₂ 與 HCO₃⁻ 假性降低（每 10% 稀釋量約使 pCO₂ 降低 5-10%）。建議使用乾燥平衡肝素注射器（dry balanced heparin syringe）。
+- 氣泡殘留：樣本中空氣氣泡使 PaO₂ 假性升高（向 150 mmHg 偏移）、PaCO₂ 假性降低。採樣後必須立即排出氣泡並密封。
+- 延遲分析：室溫放置 > 15 分鐘，白血球與紅血球持續代謝 → pH 下降、PaCO₂ 上升、PaO₂ 下降、乳酸升高。置冰上可延長至 30 分鐘。
+- 肝素過量稀釋：液態肝素殘留量過多會稀釋樣本，使 pCO₂ 與 HCO₃⁻ 假性降低（每 10% 稀釋量約使 pCO₂ 降低 5-10%）。建議使用乾燥平衡肝素注射器（dry balanced heparin syringe）。
 
 ### 判讀陷阱
-- **未驗證代償**：只看 pH 和原發失衡就下結論，忽略使用 Winter's formula 或代償預期值。結果可能遺漏混合性酸鹼失衡（如 DKA + 呼吸性鹼中毒）。
-- **靜脈血評氧合**：靜脈血 pO₂（通常 35-50 mmHg）反映組織氧消耗，不代表肺部氧合功能。只有動脈血 PaO₂ 與 P/F ratio 才能評估肺功能。
-- **忽略體溫效應**：低體溫使 O₂ 與 CO₂ 溶解度增加，pH 升高。體溫每低 1°C，pH 約升高 0.015，未校正可能誤判為鹼血症。
-- **FiO₂ 假設錯誤**：計算 A-a gradient 和 P/F ratio 時，常假設 FiO₂ = 21%（room air），但若患畜已接受氧氣治療則需使用實際 FiO₂。
-- **單一時間點判斷**：趨勢比單一數值更重要。乳酸 4 mmol/L 但呈下降趨勢，比 2.5 mmol/L 但持續上升更樂觀。
+- 未驗證代償：只看 pH 和原發失衡就下結論，忽略使用 Winter's formula 或代償預期值。結果可能遺漏混合性酸鹼失衡（如 DKA + 呼吸性鹼中毒）。
+- 靜脈血評氧合：靜脈血 pO₂（通常 35-50 mmHg）反映組織氧消耗，不代表肺部氧合功能。只有動脈血 PaO₂ 與 P/F ratio 才能評估肺功能。
+- 忽略體溫效應：低體溫使 O₂ 與 CO₂ 溶解度增加，pH 升高。體溫每低 1°C，pH 約升高 0.015，未校正可能誤判為鹼血症。
+- FiO₂ 假設錯誤：計算 A-a gradient 和 P/F ratio 時，常假設 FiO₂ = 21%（room air），但若患畜已接受氧氣治療則需使用實際 FiO₂。
+- 單一時間點判斷：趨勢比單一數值更重要。乳酸 4 mmol/L 但呈下降趨勢，比 2.5 mmol/L 但持續上升更樂觀。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -959,13 +959,13 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
 | 犬貓靜脈血氣替代動脈血氣的適用範圍 | pH 與 HCO₃⁻ 差異小可接受；pCO₂ 差異較大（3-8 mmHg），嚴重呼吸疾患可能影響判讀 | Level II |
 | Stewart approach vs Henderson-Hasselbalch 在獸醫的實用性 | Stewart 可揭示隱性酸鹼失衡，但計算複雜且缺乏獸醫臨床驗證共識 | Level III |
 | Base excess vs bicarbonate 作為代謝性酸中毒指標 | BE 已標準化（SBE），但不同血氣機器間仍有差異；HCO₃⁻ 為計算值非實測值 | Level III |`,
-  clinical_pearl: '急診時不必等動脈血氣——靜脈血氣的 pH 和 HCO₃⁻ 與動脈極為接近（差異 < 0.05 和 < 2 mEq/L），足以快速判斷酸鹼狀態並啟動治療。只有在需要評估氧合功能（如呼吸窘迫）時才必須採動脈血。',
+  clinical_pearl: '急診不必等動脈血氣。靜脈血氣的 pH 跟 HCO₃⁻ 跟動脈差不多（pH 差 < 0.05，HCO₃⁻ 差 < 2 mEq/L），抓酸鹼狀態啟動治療夠用。只有要評估氧合（呼吸窘迫那種）才一定要動脈血。',
   common_mistakes: [
-    '樣本中有氣泡未排出，導致 pO₂ 假性升高、pCO₂ 假性降低',
-    '使用靜脈血氣的 pO₂ 評估氧合功能——靜脈 pO₂ 無法反映肺部氧合能力',
-    '未使用 Winter\'s formula 驗證代償是否適當，遺漏混合性酸鹼失衡',
-    '忽略溫度校正：體溫每低 1°C，pH 約升高 0.015',
-    '將 high anion gap 酸中毒的所有原因簡化為乳酸酸中毒，未考慮 DKA 或中毒',
+    '樣本有氣泡沒排掉，pO₂ 假性高、pCO₂ 假性低',
+    '用靜脈血氣的 pO₂ 評估氧合，那是組織氧消耗不是肺',
+    '沒用 Winter\'s formula 驗代償，混合性酸鹼失衡漏掉',
+    '沒做溫度校正：體溫每低 1°C，pH 約升高 0.015',
+    'high anion gap 酸中毒全部歸成乳酸，沒想到 DKA 或中毒',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -985,15 +985,15 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
       { finding: '代謝性鹼中毒', description: 'pH ↑ + HCO₃⁻ ↑', significance: '嘔吐（失 HCl）、利尿劑、低鉀' },
       { finding: 'High AG acidosis', description: 'AG > 25 mEq/L + 代謝性酸中毒', significance: '有機酸堆積：乳酸、酮體、ethylene glycol' },
     ],
-    interpretation_guide: '1. 看 pH 判斷 acidemia/alkalemia。2. 看 pCO₂ 和 HCO₃⁻ 判斷原發失衡。3. 用代償公式驗證。4. 算 AG。5. 評估 PaO₂（動脈血）。',
+    interpretation_guide: '看血氣的順序：先 pH 看 acidemia 還是 alkalemia。然後 pCO₂ 跟 HCO₃⁻ 抓原發失衡。用代償公式驗。算 AG。最後看 PaO₂（要動脈血）。',
     pitfalls: [
-      '樣本含氣泡使 pO₂ 升高、pCO₂ 降低',
-      '延遲分析使 pH 降低（細胞繼續代謝）',
-      '肝素過量稀釋樣本',
-      '未考慮體溫對 pH 的影響',
+      '樣本有氣泡，pO₂ 升、pCO₂ 降',
+      '延遲分析，pH 一路掉（細胞還在代謝）',
+      '肝素加太多稀釋樣本',
+      '沒考慮體溫對 pH 的影響',
     ],
-    sensitivity_specificity: '血液氣體分析為酸鹼與氧合評估的金標準。其準確度取決於分析前因素（樣本處理），而非檢測方法本身。',
-    cost_benefit: '需要 point-of-care 血氣分析儀，設備與試劑成本較高。但對重症與急診病患為不可替代的即時監測工具。',
+    sensitivity_specificity: '血氣是酸鹼跟氧合的金標準。準確度看採樣處理，不是方法本身的限制。',
+    cost_benefit: '要 POC 血氣分析儀，設備跟試劑都不便宜。但重症跟急診的即時監測沒得替代。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1014,12 +1014,12 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
   created_at: now,
 };
 
-/** 體液分析 — 診斷型 */
+/** 體液分析，診斷型 */
 const contentBodyFluid: NodeContent = {
   id: 'CONTENT-CPATH-L4-006',
   node_id: 'CPATH-L4-006',
   version: 1,
-  summary: '體液分析涵蓋胸水、腹水、心包液、關節液與腦脊髓液（CSF）的物理性狀、化學成分與細胞學評估。正確分類體液（transudatE vs exudate）是病因診斷的關鍵第一步。',
+  summary: '胸水、腹水、心包液、關節液、CSF 的物理性狀、化學跟細胞學評估。把體液分對類（transudate vs exudate）是找病因的第一步。',
   learning_objectives: [
     '將體腔積液分類為 pure transudate、modified transudate 與 exudate',
     '判讀體液 TP、TNCC、比重與細胞學的綜合意義',
@@ -1028,14 +1028,14 @@ const contentBodyFluid: NodeContent = {
     '說明關節液分析在多關節炎鑑別中的角色',
   ],
   key_points: [
-    'Pure transudate：TP < 2.5 g/dL，TNCC < 1500/μL → 低白蛋白血症、早期門脈高壓',
-    'Modified transudate：TP 2.5-5.0 g/dL，TNCC 1000-7000/μL → 心衰竭、腫瘤、肝病',
-    'Exudate：TP > 3.0 g/dL，TNCC > 7000/μL → 感染、FIP、腫瘤、膽汁/尿液外漏',
-    '貓 FIP effusion 特徵：高蛋白（> 3.5 g/dL）、低細胞數、A:G ratio < 0.4、Rivalta test 陽性',
-    'Septic exudate：退化嗜中性球 + 細胞內細菌 → 立即需要引流與抗生素',
-    'CSF 正常：TP < 25 mg/dL，TNCC < 5/μL；蛋白升高+細胞增多提示發炎',
-    '關節液 TNCC > 3000/μL 提示關節炎；> 50,000 + 退化嗜中性球 = septic arthritis',
-    'Uroabdomen 確診：腹水 creatinine/血清 creatinine > 2:1',
+    'Pure transudate：TP < 2.5 g/dL、TNCC < 1500/μL，低白蛋白或早期門脈高壓',
+    'Modified transudate：TP 2.5-5.0、TNCC 1000-7000，CHF、腫瘤、肝病',
+    'Exudate：TP > 3.0、TNCC > 7000，感染、FIP、腫瘤、膽汁或尿液外漏',
+    '貓 FIP 積液：高蛋白（> 3.5 g/dL）、細胞數低、A:G < 0.4、Rivalta test 陽性',
+    'Septic exudate 看到退化嗜中性球加細胞內細菌，馬上引流加抗生素',
+    'CSF 正常：TP < 25 mg/dL、TNCC < 5/μL；蛋白跟細胞一起升就是發炎',
+    '關節液 TNCC > 3000/μL 就是關節炎；> 50,000 加退化嗜中性球就是 septic arthritis',
+    'Uroabdomen 確診：腹水 creatinine 是血清的 2 倍以上',
   ],
   body: `# 體液分析 (Body Fluid Analysis)
 
@@ -1102,13 +1102,13 @@ const contentBodyFluid: NodeContent = {
 | 犬貓體腔積液三分類（transudate/modified transudate/exudate）的適用性 | 此傳統分類有大量重疊區，部分學者主張改用類似人醫 Light's criteria 的多參數分類 | Level III |
 | 貓 FIP 積液 Rivalta test 的診斷效能 | 敏感度高（> 90%）但特異度因研究而異（70-98%），單獨使用不足以確診 | Level II |
 | CSF 採樣最佳時機：腦 MRI 前 vs 後 | MRI 後採 CSF 可能受對比劑影響蛋白質濃度，但先 MRI 可避免不必要的 CSF 採集 | Level IV |`,
-  clinical_pearl: '判斷腹水是否為 uroabdomen 時，腹水 creatinine 與血清 creatinine 的比值 > 2:1 是最可靠的確診依據。但要注意，剛發生膀胱破裂時腹水可能尚未充分平衡，早期比值可能低於預期——如臨床高度懷疑應隔 1-2 小時重採。',
+  clinical_pearl: '判斷腹水是不是 uroabdomen，腹水 creatinine 跟血清 creatinine 比值 > 2:1 最可靠。但要注意膀胱剛破時腹水還沒平衡，早期比值可能還沒拉到 2。臨床高度懷疑就隔 1-2 小時再抽一次。',
   common_mistakes: [
-    '僅依據外觀顏色就分類體液，未做 TP 與 TNCC 的定量分析',
-    '將所有高蛋白體液都歸為感染性滲出液，忽略 FIP 和腫瘤性滲出',
-    '未計算胸水/血清 triglyceride 比值就排除 chylothorax',
-    'CSF 採樣後未立即分析（> 30 分鐘細胞開始退化），低估 TNCC',
-    '關節液分析未區分退化性與非退化性嗜中性球，誤判 septic vs immune-mediated',
+    '光看顏色就分類體液，沒測 TP 跟 TNCC',
+    '高蛋白體液全歸感染，忘記 FIP 跟腫瘤性滲出',
+    '沒算胸水/血清 triglyceride 比值就把 chylothorax 排除',
+    'CSF 採完沒馬上看（超過 30 分鐘細胞就退化），TNCC 被低估',
+    '關節液沒區分退化性跟非退化性嗜中性球，septic 跟 immune-mediated 分不出來',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1116,7 +1116,7 @@ const contentBodyFluid: NodeContent = {
     contraindication: ['CSF 採集禁忌：顱內壓升高、枕骨大孔疝脫風險', '嚴重凝血障礙時體腔穿刺需謹慎'],
     technique: '體腔穿刺（thoracocentesis/abdominocentesis）採集體液。分裝：EDTA 管（細胞學）+ 無添加劑管（化學分析）+ 培養瓶（如疑感染）。CSF 經枕骨大孔或腰椎穿刺採集 0.5-1 mL。所有體液需 30 分鐘內處理分析。',
     normal_findings: [
-      { finding: '正常腹膜液', description: '少量、TP < 2.5 g/dL，TNCC < 1500/μL', significance: '無顯著積液' },
+      { finding: '正常腹膜液', description: '少量、TP < 2.5 g/dL，TNCC < 1500/μL', significance: '無明顯積液' },
       { finding: '正常 CSF', description: 'TP < 25 mg/dL，TNCC < 5/μL，透明無色', significance: '無中樞神經發炎' },
       { finding: '正常關節液', description: 'TNCC < 3000/μL，高黏稠度，透明', significance: '無關節發炎' },
     ],
@@ -1126,15 +1126,15 @@ const contentBodyFluid: NodeContent = {
       { finding: 'Chylous effusion', description: '乳白色 + 胸水 TG > 血清 TG', significance: '乳糜胸，需查原因（心病、腫瘤、特發性）' },
       { finding: 'CSF pleocytosis', description: 'TNCC > 5/μL', significance: '中樞神經發炎，需鑑別感染性 vs 免疫介導' },
     ],
-    interpretation_guide: '1. 評估外觀（顏色、透明度、黏稠度）。2. 測量 TP 與 TNCC 分類。3. 細胞學評估細胞型態。4. 必要時做化學比較（creatinine, bilirubin, triglyceride ratio）。5. 整合臨床。',
+    interpretation_guide: '看體液順序：先外觀（顏色、透明度、黏稠度）。測 TP 跟 TNCC 分類。細胞學看細胞型態。必要時做化學比較（creatinine、bilirubin、triglyceride ratio）。最後對臨床。',
     pitfalls: [
-      '採樣時血液汙染使 TP 和 TNCC 假性升高',
-      'CSF 延遲處理導致細胞退化、低估 TNCC',
-      '未同時採集血液做化學比較（無法計算 ratio）',
-      'EDTA 管不足或凝固導致無法做細胞學',
+      '採樣時血液汙染，TP 跟 TNCC 都假性偏高',
+      'CSF 延遲處理，細胞退化、TNCC 被低估',
+      '沒同時抽血做化學比較，沒辦法算 ratio',
+      'EDTA 管採不夠或凝掉，細胞學做不出來',
     ],
-    sensitivity_specificity: '體液分類（transudate/exudate）對病因診斷的方向性極佳，但最終確診常需結合影像學與進一步檢查。CSF 分析對 CNS 發炎的敏感度高，但特異度取決於細胞學模式。',
-    cost_benefit: '採樣技術簡單、分析成本低。為體腔積液患者的必要第一線檢查，提供極高的診斷價值。',
+    sensitivity_specificity: '體液分類抓病因方向很好用，最後確診常常要影像學跟其他檢查補。CSF 分析抓 CNS 發炎敏感度高，特異度看細胞學模式。',
+    cost_benefit: '採樣簡單、分析便宜。體腔積液病人第一線必做，CP 值極高。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1149,18 +1149,18 @@ const contentBodyFluid: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '體液分析核心教材' },
     { type: 'textbook', citation: 'Cowell RL et al. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. Elsevier, 2014.', relevance: '體液細胞學判讀參考' },
     { type: 'journal', citation: 'Dempsey SM, Ewing PJ. "A review of the pathophysiology, classification, and analysis of canine and feline cavitary effusions." J Am Anim Hosp Assoc 2011;47(1):1-11.', relevance: '體腔積液分類的病理生理學回顧' },
-    { type: 'guideline', citation: 'WSAVA Liver Standardization Group. "WSAVA Standards for Clinical and Histological Diagnosis of Canine and Feline Liver Diseases." J Comp Pathol. 2006;134(Suppl 2):S1-S36.', relevance: 'WSAVA 肝臟疾病標準化指引——腹水分析在肝病中的應用' },
+    { type: 'guideline', citation: 'WSAVA Liver Standardization Group. "WSAVA Standards for Clinical and Histological Diagnosis of Canine and Feline Liver Diseases." J Comp Pathol. 2006;134(Suppl 2):S1-S36.', relevance: 'WSAVA 肝臟疾病標準化指引，腹水分析在肝病中的應用' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 骨髓抹片判讀 — 診斷型 */
+/** 骨髓抹片判讀，診斷型 */
 const contentBoneMarrow: NodeContent = {
   id: 'CONTENT-CPATH-L4-007',
   node_id: 'CPATH-L4-007',
   version: 1,
-  summary: '骨髓抹片判讀評估造血功能的質與量，是非再生性貧血、持續性血球減少症、白血病與骨髓增生異常的確診工具。需同時評估 aspiration smear 和 core biopsy。',
+  summary: '骨髓抹片在看造血的質跟量。非再生性貧血、持續性血球減少、白血病、MDS 都靠這個確診。aspiration smear 跟 core biopsy 要一起看，不能只挑一個。',
   learning_objectives: [
     '列舉骨髓採樣的適應症與常用採樣部位',
     '描述正常骨髓的細胞比例（M:E ratio）與成熟序列',
@@ -1169,14 +1169,14 @@ const contentBoneMarrow: NodeContent = {
     '整合周邊血液與骨髓結果做綜合評估',
   ],
   key_points: [
-    '骨髓採樣適應症：非再生性貧血/血球減少症、疑似白血病、不明原因發熱合併血球異常',
-    '犬貓常用採樣部位：肱骨近端、髂骨翼、股骨粗隆',
-    '正常 M:E ratio（myeloid:erythroid）：犬 0.75-2.5:1，貓 1.0-3.0:1',
-    'M:E ratio ↑：骨髓系增生（感染、CML）或紅血球系減少（PRCA）',
-    'M:E ratio ↓：紅血球系增生（再生性貧血的骨髓代償）或骨髓系減少',
-    '巨核細胞正常每低倍視野（10x）可見 2-5 個',
-    '骨髓 blast cells > 20% 為急性白血病的診斷標準（WHO 分類）',
-    '骨髓採樣需同時做 aspiration（細胞形態）+ core biopsy（整體架構與細胞量）',
+    '採樣時機：非再生性貧血或血球減少、疑似白血病、不明發熱加血球異常',
+    '犬貓採樣部位：肱骨近端、髂骨翼、股骨粗隆',
+    '正常 M:E ratio：犬 0.75-2.5:1、貓 1.0-3.0:1',
+    'M:E ↑：骨髓系增生（感染、CML）或紅血球系減少（PRCA）',
+    'M:E ↓：紅血球系增生（再生性貧血代償）或骨髓系減少',
+    '巨核細胞每個 10x 視野正常 2-5 個',
+    'Blast cells > 20% 是急性白血病的 WHO 標準',
+    'Aspiration 看細胞形態，core biopsy 看 architecture 跟細胞量，要一起做',
   ],
   body: `# 骨髓抹片判讀 (Bone Marrow Evaluation)
 
@@ -1193,14 +1193,14 @@ const contentBoneMarrow: NodeContent = {
 
 ### 採樣與抹片製作
 ### 採樣部位
-- **肱骨近端（proximal humerus）**：犬最常用，大型犬尤其方便
-- **髂骨翼（iliac crest）**：犬貓均可，貓最常用
-- **股骨粗隆（trochanteric fossa）**：替代部位
+- 肱骨近端（proximal humerus）：犬最常用，大型犬尤其方便
+- 髂骨翼（iliac crest）：犬貓均可，貓最常用
+- 股骨粗隆（trochanteric fossa）：替代部位
 
 ### 抹片類型
-1. **Aspiration smear**：評估細胞形態、M:E ratio、成熟序列
-2. **Core biopsy**：評估整體細胞量、纖維化、architecture
-3. **Particle crush prep**：骨髓顆粒壓片，兼具兩者優點
+1. Aspiration smear：評估細胞形態、M:E ratio、成熟序列
+2. Core biopsy：評估整體細胞量、纖維化、architecture
+3. Particle crush prep：骨髓顆粒壓片，兼具兩者優點
 
 ### 鐵質評估
 - Prussian blue 染色評估儲存鐵
@@ -1251,13 +1251,13 @@ const contentBoneMarrow: NodeContent = {
 | 犬貓骨髓抹片判讀的觀察者間一致性 | M:E ratio 與 cellularity 的主觀評估在不同判讀者間差異大，標準化計數方法待建立 | Level IV |
 | 犬 MDS 的診斷標準與分類系統 | 人醫 WHO 標準在犬的適用性有限，犬專用 MDS 分類仍缺乏國際共識 | Level IV |
 | 骨髓 core biopsy vs aspiration 的相對必要性 | 部分學者認為 aspiration 品質佳時可免 core biopsy，但 core 對纖維化和 architecture 評估不可替代 | Level III |`,
-  clinical_pearl: '骨髓 aspiration 的最大陷阱是血液稀釋（hemodilution）——如果抽吸量超過 0.5 mL，周邊血液會大量混入，使骨髓評估失準。正確做法是快速抽吸 0.3-0.5 mL 即停，立刻製作抹片。如果 aspiration 失敗（dry tap），core biopsy 更顯重要。',
+  clinical_pearl: '骨髓 aspiration 最大的坑是血液稀釋。抽超過 0.5 mL，周邊血會大量混進來，M:E ratio 就不能用了。正確做法是 0.3-0.5 mL 就停手，馬上抹片。如果是 dry tap 抽不到，那 core biopsy 就更不能省。',
   common_mistakes: [
-    '骨髓抽吸量過多（> 1 mL）導致嚴重血液稀釋，M:E ratio 不可靠',
-    '僅做 aspiration 而未做 core biopsy，遺漏骨髓纖維化或腫瘤浸潤',
-    '未在骨髓採樣前先完成周邊血液 CBC 與抹片，缺乏比較基準',
-    '忽略巨核細胞評估（數量與形態），遺漏 ITP 的骨髓代償反應或白血病浸潤',
-    '在非再生性貧血不到 3-5 天就採骨髓，此時骨髓尚未充分反應',
+    '骨髓抽太多（> 1 mL），嚴重血液稀釋，M:E ratio 不能信',
+    '只做 aspiration 不做 core biopsy，骨髓纖維化或腫瘤浸潤漏掉',
+    '採骨髓前沒先做周邊血 CBC 跟抹片，沒有比較基準',
+    '巨核細胞數量跟形態沒評估，ITP 骨髓代償或白血病浸潤就漏了',
+    '非再生性貧血不到 3-5 天就採骨髓，此時骨髓還沒充分反應',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1276,15 +1276,15 @@ const contentBoneMarrow: NodeContent = {
       { finding: 'Hypocellular marrow', description: '細胞量 < 25%', significance: '再生不良性貧血、骨髓毒性（化療、Ehrlichia）' },
       { finding: '骨髓纖維化', description: 'Core biopsy 見大量膠原纖維', significance: '骨髓纖維化症、繼發於腫瘤浸潤' },
     ],
-    interpretation_guide: '1. 確認樣本品質（顆粒充足、無過度稀釋）。2. 低倍評估 cellularity 與巨核細胞。3. 計算 M:E ratio。4. 高倍評估各系列成熟序列。5. 尋找異常細胞（blast、轉移瘤）。6. 整合周邊血液結果。',
+    interpretation_guide: '看骨髓的順序：先確認樣本品質（顆粒夠、沒被稀釋過頭）。低倍看 cellularity 跟巨核細胞。算 M:E ratio。高倍看各系列成熟序列。找異常細胞（blast、轉移瘤）。最後對周邊血結果。',
     pitfalls: [
-      '血液稀釋使細胞量被低估、M:E ratio 偏向周邊血液比例',
-      'Dry tap（抽不到骨髓液）可能表示骨髓纖維化或 packed marrow',
-      '未做鐵染色而遺漏缺鐵性貧血',
-      '僅依 aspiration 判讀而忽略 core biopsy 的 architecture 資訊',
+      '血液稀釋讓細胞量被低估，M:E ratio 偏向周邊血',
+      'Dry tap 抽不到骨髓液，可能是骨髓纖維化或 packed marrow',
+      '沒做鐵染色，缺鐵性貧血漏掉',
+      '只看 aspiration 不看 core biopsy 的 architecture',
     ],
-    sensitivity_specificity: '骨髓評估為造血系統疾病的金標準檢查。對急性白血病的確診率極高（blast > 20% 為診斷標準）。但對骨髓增生異常早期的敏感度取決於判讀經驗。',
-    cost_benefit: '需鎮靜/麻醉，侵入性中等。成本中高，但對非再生性血球減少症與白血病的確診不可替代。',
+    sensitivity_specificity: '骨髓是造血系統疾病的金標準。急性白血病確診率很高（blast > 20%）。MDS 早期看判讀者經驗。',
+    cost_benefit: '要鎮靜或麻醉，侵入性中等，成本中高。但非再生性血球減少跟白血病的確診沒得替代。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1299,18 +1299,18 @@ const contentBoneMarrow: NodeContent = {
     { type: 'textbook', citation: 'Weiss DJ, Wardrop KJ. Schalm\'s Veterinary Hematology, 6th ed. Wiley-Blackwell, 2010.', relevance: '骨髓判讀權威參考教材' },
     { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. Elsevier, 2012.', relevance: '骨髓細胞形態辨識圖譜' },
     { type: 'journal', citation: 'Raskin RE. "Bone marrow cytologic and histologic biopsies: indications, technique, and evaluation." Vet Clin North Am Small Anim Pract 2012;42(1):23-42.', relevance: '骨髓採樣技術與判讀指引' },
-    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 共識——骨髓評估在免疫介導血球減少的角色' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 共識，骨髓評估在免疫介導血球減少的角色' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 血液分型與交叉試驗 — 診斷型 */
+/** 血液分型與交叉試驗，診斷型 */
 const contentBloodTyping: NodeContent = {
   id: 'CONTENT-CPATH-L4-008',
   node_id: 'CPATH-L4-008',
   version: 1,
-  summary: '血液分型（blood typing）與交叉試驗（crossmatch）是安全輸血的必要前置檢查。犬有 DEA 系統，貓有 AB 系統。貓因天然抗體存在，首次輸血不配對即有致死性溶血反應風險。',
+  summary: '輸血前不做血型跟交叉試驗會死貓。犬有 DEA 系統、貓有 AB 系統。貓有天然抗體，第一次輸血不配對就可能急性溶血致死。',
   learning_objectives: [
     '說明犬 DEA 血型系統與臨床最重要的血型（DEA 1）',
     '描述貓 AB 血型系統及各血型的盛行率（含台灣數據）',
@@ -1319,14 +1319,14 @@ const contentBloodTyping: NodeContent = {
     '列舉輸血反應的類型與處置',
   ],
   key_points: [
-    '犬主要血型系統：DEA 1（最具臨床意義），分 DEA 1.1 陽性與陰性',
-    '犬無顯著天然抗體，首次輸血不配對通常不會立即溶血，但會致敏',
-    '犬第二次輸血若不配對，DEA 1.1 陰性犬接受陽性血可發生急性溶血反應',
-    '貓 AB 系統：A 型最常見（台灣 > 90%），B 型少見，AB 型極罕見',
-    '貓 B 型有強力天然抗 A 抗體 → B 型貓接受 A 型血即使首次也會致命性溶血',
-    '貓 A 型有弱天然抗 B 抗體 → A 型貓接受 B 型血可能有輕度反應',
-    '主交叉試驗（major）：受血者血清 + 供血者紅血球 → 模擬輸入後反應',
-    '副交叉試驗（minor）：供血者血清 + 受血者紅血球 → 評估供血者抗體風險',
+    '犬主要血型 DEA 1，分 DEA 1.1 陽性跟陰性',
+    '犬幾乎沒有天然抗體，首次輸血不配對通常不會馬上溶血，但會致敏',
+    '犬第二次輸血如果不配對，DEA 1.1 陰性的犬收到陽性血會急性溶血',
+    '貓 AB 系統：A 型最多（台灣 > 90%）、B 型少見、AB 型極罕見',
+    '貓 B 型有很強的天然抗 A 抗體，B 型貓收到 A 型血第一次就會致命性溶血',
+    '貓 A 型有弱抗 B 抗體，A 型貓收到 B 型血可能有輕度反應',
+    'Major crossmatch：受血者血清 + 供血者紅血球，模擬輸進去的反應',
+    'Minor crossmatch：供血者血清 + 受血者紅血球，看供血者抗體風險',
   ],
   body: `# 血液分型與交叉試驗 (Blood Typing & Crossmatch)
 
@@ -1336,26 +1336,26 @@ const contentBloodTyping: NodeContent = {
 
 ### 犬血型系統
 ### DEA（Dog Erythrocyte Antigen）
-- **DEA 1.1**：最重要，決定輸血相容性
+- DEA 1.1：最重要，決定輸血相容性
   - DEA 1.1(+)：犬可接受 1.1(+) 或 1.1(-) 血液
   - DEA 1.1(-)：犬僅能安全接受 1.1(-) 血液（理想通用供血者）
-- **DEA 4**：> 98% 犬為陽性，臨床罕需考慮
-- **DEA 7**：約 40-50% 犬為陽性
+- DEA 4：> 98% 犬為陽性，臨床罕需考慮
+- DEA 7：約 40-50% 犬為陽性
 
 ### 犬輸血原則
 - 首次輸血：DEA 1.1 配對為佳，但急診可先不配對（因無天然抗體）
-- 第二次以後輸血：**必須**血型配對 + 交叉試驗
+- 第二次以後輸血：必須血型配對 + 交叉試驗
 
 ### 貓血型系統
 ### AB 系統
 | 血型 | 台灣盛行率 | 天然抗體 | 臨床意義 |
 |------|-----------|---------|---------|
 | A | > 90% | 弱抗 B | 接受 B 型血可能輕度反應 |
-| B | 3-8% | **強抗 A** | 接受 A 型血 → **致命性急性溶血** |
+| B | 3-8% | 強抗 A | 接受 A 型血 → 致命性急性溶血 |
 | AB | < 1% | 無 | 可接受 A 或 B 型（理想受血者） |
 
 ### 貓輸血原則
-- **貓每次輸血都必須血型配對**（包括首次）
+- 貓每次輸血都必須血型配對（包括首次）
 - B 型貓接受 A 型血的致死率極高
 - 新生兒同種免疫溶血（neonatal isoerythrolysis, NI）：B 型母貓 × A 型公貓
 
@@ -1367,8 +1367,8 @@ const contentBloodTyping: NodeContent = {
 供血者血清 + 受血者紅血球
 
 ### 判讀
-- **相容**：無凝集、無溶血
-- **不相容**：可見凝集或溶血 → 不可輸血
+- 相容：無凝集、無溶血
+- 不相容：可見凝集或溶血 → 不可輸血
 - 自體對照（patient serum + patient RBC）排除 autoagglutination
 
 ### 輸血反應分類
@@ -1398,13 +1398,13 @@ const contentBloodTyping: NodeContent = {
 | 犬 DEA 1.1 以外血型（DEA 3, 5, 7, Dal）的臨床重要性 | Dal 血型在 Dalmatian 可引起嚴重溶血，其他 DEA 的臨床影響待系統性評估 | Level III |
 | 犬首次輸血是否可安全跳過交叉試驗 | 傳統認為犬首次無天然抗體可安全輸血，但非 DEA 1 抗原也可能引發致敏，新文獻建議所有犬均做 crossmatch | Level III |
 | 貓 Mik 血型抗原的臨床意義 | 2007 年發現的新抗原，A 型配對仍可能發生急性溶血反應，台灣盛行率未知 | Level IV |`,
-  clinical_pearl: '貓的 B 型血雖然台灣盛行率僅 3-8%，但 B 型貓體內含有極強的天然抗 A 抗體。即使是首次輸血，B 型貓接受 A 型血就可能在數分鐘內發生致命性急性溶血反應。因此貓的血型檢測絕非可選——而是輸血前的強制項目。',
+  clinical_pearl: '貓 B 型在台灣盛行率只有 3-8%，但 B 型貓體內天然抗 A 抗體很強。首次輸血、B 型貓收到 A 型血，幾分鐘內就會致命性溶血。所以貓的血型檢測不是選配，是輸血前的強制項目。',
   common_mistakes: [
-    '認為貓首次輸血可以不配對——貓 B 型的天然抗體使首次即可致命',
-    '僅做主交叉試驗而忽略副交叉試驗',
-    '犬首次輸血後未記錄血型，導致第二次輸血時無法追溯',
-    '忽略新生兒同種免疫溶血（NI）的可能——B 型母貓初乳對 A 型仔貓的風險',
-    '交叉試驗中未做自體對照，將自身凝集誤判為不相容',
+    '以為貓首次輸血可以不配對，貓 B 型的天然抗體第一次就會殺貓',
+    '只做 major crossmatch，沒做 minor',
+    '犬第一次輸血沒記錄血型，第二次無法回溯',
+    '沒想到新生兒同種免疫溶血（NI）：B 型母貓初乳對 A 型仔貓的風險',
+    '交叉試驗沒做自體對照，把自身凝集誤當不相容',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1420,15 +1420,15 @@ const contentBloodTyping: NodeContent = {
       { finding: '自體凝集', description: '自體對照也出現凝集', significance: '提示 IMHA，需用 saline wash 排除 rouleaux' },
       { finding: '貓 B 型 + A 型供血', description: '主交叉強烈不相容', significance: '絕對禁止輸血，致死風險極高' },
     ],
-    interpretation_guide: '1. 先做血型鑑定（typing）。2. 再做交叉試驗（crossmatch）。3. Major crossmatch 不相容 → 更換供血者。4. Minor crossmatch 不相容 → 評估風險或更換。5. 記錄結果供未來參考。',
+    interpretation_guide: '輸血前流程：先血型鑑定，再交叉試驗。Major 不相容就換供血者。Minor 不相容要評估風險，必要時換。每次都記錄結果。',
     pitfalls: [
-      '血型卡受嚴重自體凝集或貧血影響，可能判讀困難',
-      '交叉試驗不能偵測低力價抗體——相容不代表 100% 無反應',
-      '犬首次輸血交叉試驗可能假陰性（尚未致敏）',
-      '冷凝集素（cold agglutinin）在室溫下造成假陽性，需 37°C 重測',
+      '嚴重自體凝集或重度貧血的樣本，血型卡判讀困難',
+      '交叉試驗測不到低力價抗體，相容不代表 100% 不反應',
+      '犬第一次輸血的交叉試驗可能假陰性（還沒致敏）',
+      '冷凝集素在室溫下造成假陽性，要 37°C 重測',
     ],
-    sensitivity_specificity: '血型快篩卡對犬 DEA 1.1 和貓 AB 型的準確度 > 95%。交叉試驗對臨床顯著抗體的偵測率佳，但低力價抗體可能漏檢。',
-    cost_benefit: '血型快篩成本低、速度快（5 分鐘）。交叉試驗需 30-45 分鐘但可避免致命性輸血反應。對貓而言為強制性檢查。',
+    sensitivity_specificity: '快篩卡對犬 DEA 1.1 跟貓 AB 型準確度 > 95%。交叉試驗抓臨床明顯的抗體沒問題，低力價可能漏。',
+    cost_benefit: '血型快篩便宜、5 分鐘就出來。交叉試驗 30-45 分鐘但能避免致命輸血反應。貓的話，這是強制檢查。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1448,12 +1448,12 @@ const contentBloodTyping: NodeContent = {
   created_at: now,
 };
 
-/** 尿液分析完整判讀 — 診斷型 */
+/** 尿液分析完整判讀，診斷型 */
 const contentUrinalysis: NodeContent = {
   id: 'CONTENT-CPATH-L4-009',
   node_id: 'CPATH-L4-009',
   version: 1,
-  summary: '完整尿液分析（complete urinalysis）包含物理性狀、化學試紙與尿沉渣顯微鏡檢三部分。USG 是評估腎臟濃縮能力的第一線指標，尿沉渣是偵測感染、結晶與腎損傷的關鍵。',
+  summary: '完整尿液分析分三段：物理性狀、化學試紙、尿沉渣鏡檢。USG 評估腎臟濃縮能力，尿沉渣抓感染、結晶跟腎損傷。',
   learning_objectives: [
     '說明三種採尿方式（cystocentesis、catheterization、voided）的優缺點與適應症',
     '正確判讀 USG 在不同臨床情境下的意義',
@@ -1462,14 +1462,14 @@ const contentUrinalysis: NodeContent = {
     '整合尿液分析與血清生化結果評估腎功能',
   ],
   key_points: [
-    'Cystocentesis 為尿液培養的金標準採樣方式，避免下泌尿道汙染',
-    'USG（犬 1.015-1.045，貓 1.035-1.060 為正常濃縮範圍）',
-    'Isosthenuria（USG 1.008-1.012）= 腎臟完全喪失濃縮能力',
-    '犬尿液試紙的 WBC 酯酶（leukocyte esterase）不可靠——犬嗜中性球不含此酵素',
-    '貓尿蛋白試紙易假陽性（鹼性尿），需用 UPC ratio 確認',
-    'UPC（urine protein:creatinine ratio）> 0.5（犬）/ > 0.4（貓）為異常蛋白尿',
-    '尿沉渣正常：< 5 WBC/HPF、< 5 RBC/HPF、無細菌、少量上皮細胞',
-    'Struvite 結晶在犬常與 UTI 相關，在貓多為 idiopathic（非感染性）',
+    'Cystocentesis 是尿液培養的金標準，避開下泌尿道汙染',
+    'USG 正常濃縮範圍：犬 1.015-1.045、貓 1.035-1.060',
+    'Isosthenuria（USG 1.008-1.012）就是腎臟完全失去濃縮能力',
+    '犬尿液試紙的 WBC 酯酶不能用，犬嗜中性球本來就沒這個酵素',
+    '貓尿蛋白試紙容易假陽性（鹼性尿），要用 UPC 確認',
+    'UPC > 0.5（犬）或 > 0.4（貓）就是異常蛋白尿',
+    '尿沉渣正常：< 5 WBC/HPF、< 5 RBC/HPF、沒細菌、少量上皮',
+    'Struvite 在犬常伴 UTI，在貓多半是 idiopathic',
   ],
   body: `# 尿液分析完整判讀 (Complete Urinalysis)
 
@@ -1485,8 +1485,8 @@ const contentUrinalysis: NodeContent = {
 | Voided（free catch） | 篩檢、USG 測量 | 最多汙染，不適合培養 |
 
 ### 第一部分：物理性狀
-- **顏色**：正常淡黃至琥珀色；紅色提示血尿/血紅素尿/肌紅蛋白尿
-- **透明度**：正常透明；混濁提示感染、結晶、細胞碎片
+- 顏色：正常淡黃至琥珀色；紅色提示血尿/血紅素尿/肌紅蛋白尿
+- 透明度：正常透明；混濁提示感染、結晶、細胞碎片
 
 ### 第二部分：化學試紙（Dipstick）
 | 項目 | 犬貓注意事項 |
@@ -1495,7 +1495,7 @@ const contentUrinalysis: NodeContent = {
 | Protein | 貓鹼性尿易假陽性，需 UPC 確認 |
 | Glucose | 正常陰性；陽性 = 血糖 > 腎糖閾（犬 ~180, 貓 ~280 mg/dL） |
 | Bilirubin | 犬正常可有少量（1+），貓任何 bilirubin 皆異常 |
-| WBC esterase | **犬不可靠**（犬嗜中性球不含此酵素） |
+| WBC esterase | 犬不可靠（犬嗜中性球不含此酵素） |
 | Nitrite | 犬貓不可靠（尿液在膀胱停留時間短） |
 
 ### 第三部分：尿沉渣（Sediment）
@@ -1515,10 +1515,10 @@ const contentUrinalysis: NodeContent = {
 | Cystine | 六角形 | 遺傳性胱胺酸尿症 |
 
 ### 管型（Casts）判讀
-- **Hyaline cast**：少量正常，大量提示輕度腎小管損傷
-- **Granular cast**：腎小管細胞退化，提示急性腎損傷
-- **Waxy cast**：慢性腎小管損傷
-- **Cellular cast**：RBC/WBC cast 提示腎絲球/腎小管發炎
+- Hyaline cast：少量正常，大量提示輕度腎小管損傷
+- Granular cast：腎小管細胞退化，提示急性腎損傷
+- Waxy cast：慢性腎小管損傷
+- Cellular cast：RBC/WBC cast 提示腎絲球/腎小管發炎
 
 ### USG 與腎功能整合
 USG 需搭配水合狀態與 azotemia 判讀：
@@ -1544,13 +1544,13 @@ USG 需搭配水合狀態與 azotemia 判讀：
 | 犬貓亞臨床菌尿（subclinical bacteriuria）是否需要治療 | ISCAID 指引建議大多數亞臨床菌尿不需抗生素，但免疫抑制或 CKD 患者的處置仍有爭議 | Level II |
 | 犬尿蛋白/肌酸酐比值（UPC）的採樣標準化 | 單次隨機尿 vs 多次採集平均值，禁食狀態、採樣時間對 UPC 的影響程度各研究結論不一 | Level III |
 | 貓 USG 參考範圍在不同水合狀態下的解讀 | 正常貓 USG 可達 > 1.065，但 CKD 早期貓的 USG 「下降」定義（< 1.035）是否過於寬鬆仍有討論 | Level III |`,
-  clinical_pearl: '犬尿液試紙上的 leukocyte esterase（白血球酯酶）項目對犬完全不可靠，因為犬的嗜中性球不含此酵素。許多獸醫習慣看這格來判斷是否有 UTI，但正確做法是看尿沉渣的 WBC 計數。同樣地，nitrite 在犬貓也不可靠。',
+  clinical_pearl: '犬尿液試紙的 leukocyte esterase 完全不能用，因為犬的嗜中性球沒這個酵素。很多人習慣看這格判斷 UTI，但正確做法是看尿沉渣的 WBC 計數。nitrite 也是一樣，犬貓都不可靠。',
   common_mistakes: [
-    '用犬尿液試紙的 leukocyte esterase 和 nitrite 判斷 UTI——兩者對犬貓均不可靠',
-    '未根據採尿方式調整判讀標準（voided 樣本少量細菌和上皮細胞可能是汙染）',
-    '忽略 USG 在判讀 azotemia 中的關鍵角色——未整合 USG 就將 azotemia 歸類',
-    '將少量 struvite 結晶視為必須治療——正常尿液放置後也可能出現',
-    '用試紙蛋白質結果取代 UPC ratio，在貓尤其容易假陽性',
+    '用試紙的 leukocyte esterase 跟 nitrite 判斷 UTI，這兩格犬貓都不能用',
+    '沒根據採尿方式調整判讀（voided 樣本少量細菌跟上皮細胞可能是汙染）',
+    'USG 沒整合就把 azotemia 歸類',
+    '看到少量 struvite 結晶就治療，正常尿液放久了也會出現',
+    '用試紙蛋白質取代 UPC，貓尤其容易假陽性',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1560,7 +1560,7 @@ USG 需搭配水合狀態與 azotemia 判讀：
     normal_findings: [
       { finding: 'USG', description: '犬 1.015-1.045，貓 1.035-1.060', significance: '反映腎臟濃縮能力' },
       { finding: '尿沉渣', description: '< 5 WBC/HPF, < 5 RBC/HPF, 無細菌', significance: '無發炎或感染' },
-      { finding: 'UPC', description: '犬 < 0.5，貓 < 0.4', significance: '無臨床顯著蛋白尿' },
+      { finding: 'UPC', description: '犬 < 0.5，貓 < 0.4', significance: '無臨床上明顯的蛋白尿' },
     ],
     abnormal_findings: [
       { finding: 'Isosthenuria + azotemia', description: 'USG 1.008-1.012 合併 creatinine 升高', significance: '腎實質疾病（腎臟喪失濃縮能力）' },
@@ -1568,15 +1568,15 @@ USG 需搭配水合狀態與 azotemia 判讀：
       { finding: 'Glucosuria', description: '尿糖陽性', significance: '血糖 > 腎糖閾 → 糖尿病；正常血糖下尿糖陽性 → Fanconi syndrome' },
       { finding: 'CaOx monohydrate 結晶', description: '啞鈴或針狀結晶', significance: '高度懷疑 ethylene glycol 中毒' },
     ],
-    interpretation_guide: '1. 記錄採尿方式。2. 測量 USG（refractometer，非試紙）。3. 判讀化學試紙（注意犬貓物種差異）。4. 評估尿沉渣（40x）。5. 必要時加做 UPC ratio 或培養。6. 整合血清生化。',
+    interpretation_guide: '看尿液順序：先記錄採尿方式。USG 用折射計（不要用試紙）。判讀化學試紙時注意犬貓物種差異。尿沉渣 40x 看。必要時加 UPC 或培養。最後對血清生化。',
     pitfalls: [
-      '用試紙而非折射計（refractometer）測量 USG——試紙 USG 對犬貓不準確',
-      '樣本放置過久（> 30 min）導致結晶析出（假陽性）或細胞退化（假陰性）',
-      '冷藏樣本未回溫就分析，低溫促進結晶析出',
-      '未記錄採尿方式，影響細菌學判讀標準',
+      '用試紙不用折射計測 USG，試紙 USG 在犬貓不準',
+      '樣本放超過 30 分鐘，結晶會析出（假陽性）、細胞會退化（假陰性）',
+      '冷藏樣本沒回溫就分析，低溫會促進結晶析出',
+      '沒記錄採尿方式，細菌學判讀標準不一樣',
     ],
-    sensitivity_specificity: 'USG 是評估腎臟濃縮能力最敏感的指標之一。尿沉渣對 UTI 的敏感度取決於採尿方式與樣本新鮮度。UPC ratio 是定量蛋白尿的金標準。',
-    cost_benefit: '成本極低，為腎臟與泌尿道評估的第一線必要檢查。應與每次血清生化同時進行。',
+    sensitivity_specificity: 'USG 是評估腎臟濃縮能力最靈敏的指標之一。尿沉渣抓 UTI 的敏感度看採尿方式跟樣本新鮮度。UPC 是定量蛋白尿的金標準。',
+    cost_benefit: '成本極低，腎臟跟泌尿道評估的第一線。每次點生化建議都一起做。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1591,18 +1591,18 @@ USG 需搭配水合狀態與 azotemia 判讀：
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '尿液分析判讀核心教材' },
     { type: 'textbook', citation: 'Rizzi TE et al. Atlas of Canine and Feline Urinalysis. ASVCP, 2017.', relevance: '犬貓尿液分析圖譜' },
     { type: 'journal', citation: 'Callens AJ, Bartges JW. "Urinalysis." Vet Clin North Am Small Anim Pract 2015;45(4):621-637.', relevance: '尿液分析完整判讀指引' },
-    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS 指引——尿液分析在 CKD 分期中的角色（UPC 與 USG）' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS 指引，尿液分析在 CKD 分期中的角色（UPC 與 USG）' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 內分泌功能檢測判讀 — 診斷型 */
+/** 內分泌功能檢測判讀，診斷型 */
 const contentEndocrine: NodeContent = {
   id: 'CONTENT-CPATH-L4-010',
   node_id: 'CPATH-L4-010',
   version: 1,
-  summary: '內分泌功能檢測透過基礎荷爾蒙濃度測定與動態刺激/抑制試驗，評估甲狀腺、腎上腺與胰島素軸的功能。正確的檢測選擇與判讀是避免誤診的關鍵。',
+  summary: '內分泌檢測用基礎荷爾蒙加上動態刺激/抑制試驗，評估甲狀腺、腎上腺、胰島素軸。挑錯檢測或判讀錯就會誤診，這個科別不能輕忽。',
   learning_objectives: [
     '選擇正確的甲狀腺功能檢測方式（犬低甲 vs 貓高甲）',
     '比較 LDDS、HDDS 與 ACTH stim test 在 Cushing 診斷中的角色',
@@ -1611,14 +1611,14 @@ const contentEndocrine: NodeContent = {
     '辨識影響內分泌檢測的藥物與疾病干擾因素',
   ],
   key_points: [
-    '犬 hypothyroidism 篩檢：先測 total T4，低值再加做 free T4（by equilibrium dialysis）+ TSH',
-    '貓 hyperthyroidism 篩檢：total T4 > 4.0 μg/dL 高度支持；borderline 需重複或做 free T4',
-    'LDDS test：Cushing 篩檢首選（敏感度 ~95%），但 PDH vs AT 鑑別需看 4hr 和 8hr 值',
-    'ACTH stim test：Addison 確診金標準（cortisol post-ACTH < 2 μg/dL）+ iatrogenic Cushing 篩檢',
-    'Urine cortisol:creatinine ratio（UCCR）：排除 Cushing 的最佳工具（陰性預測值 > 99%）',
-    'Sick euthyroid syndrome（非甲狀腺性病態症候群）：全身性疾病可使 T4 假性降低',
-    'Fructosamine 反映過去 1-3 週的平均血糖，不受壓力性高血糖影響',
-    'Phenobarbital、glucocorticoids、sulfonamides 可干擾甲狀腺功能檢測結果',
+    '犬甲低篩檢：先 total T4，低值再加 free T4（equilibrium dialysis）跟 TSH',
+    '貓甲亢篩檢：total T4 > 4.0 μg/dL 大致確診；borderline 要重複或做 free T4',
+    'LDDS 是 Cushing 篩檢首選（敏感度 95%），PDH 跟 AT 要鑑別就看 4hr 跟 8hr 值',
+    'ACTH stim 是 Addison 確診金標準（post-ACTH cortisol < 2 μg/dL），也篩 iatrogenic Cushing',
+    'UCCR 是排除 Cushing 的最佳工具，陰性預測值 > 99%',
+    'Sick euthyroid syndrome：全身性疾病會把 T4 拉低，看起來像甲低',
+    'Fructosamine 反映過去 1-3 週平均血糖，不會被壓力性高血糖騙到',
+    'Phenobarbital、glucocorticoids、sulfonamides 都會干擾甲狀腺檢測',
   ],
   body: `# 內分泌功能檢測判讀 (Endocrine Function Testing)
 
@@ -1628,10 +1628,10 @@ const contentEndocrine: NodeContent = {
 
 ### 甲狀腺功能
 ### 犬 Hypothyroidism 診斷流程
-1. **Total T4**：正常（> 1.5 μg/dL）→ 排除；低（< 1.0 μg/dL）→ 疑似
-2. **Free T4（ED）**：最準確的單一指標，低值支持診斷
-3. **TSH**：升高支持原發性甲低（但約 25% 甲低犬 TSH 正常）
-4. **Thyroglobulin autoantibody（TgAA）**：陽性提示淋巴球性甲狀腺炎
+1. Total T4：正常（> 1.5 μg/dL）→ 排除；低（< 1.0 μg/dL）→ 疑似
+2. Free T4（ED）：最準確的單一指標，低值支持診斷
+3. TSH：升高支持原發性甲低（但約 25% 甲低犬 TSH 正常）
+4. Thyroglobulin autoantibody（TgAA）：陽性提示淋巴球性甲狀腺炎
 
 ### 貓 Hyperthyroidism 診斷
 - Total T4 > 4.0 μg/dL → 確診
@@ -1649,7 +1649,7 @@ const contentEndocrine: NodeContent = {
 | UCCR | 排除工具 | 正常 UCCR 幾乎可排除 Cushing |
 
 ### Addison（Hypoadrenocorticism）確診
-- **ACTH stim test**：金標準
+- ACTH stim test：金標準
 - Pre-ACTH cortisol < 2 μg/dL 且 post-ACTH cortisol < 2 μg/dL → 確診
 - 生化線索：Na/K < 27、prerenal azotemia、低血糖、高鈣
 
@@ -1689,15 +1689,15 @@ const contentEndocrine: NodeContent = {
 |---------|------|---------------|
 | 犬貓內分泌功能檢測結果在不同分析平台間的比較性 | T4/cortisol 等荷爾蒙因免疫分析方法差異（CLIA vs RIA vs ELISA），結果不可直接互換 | Level III |
 | 犬 hypothyroidism 的 TSH 檢測敏感度不足 | 約 25-30% 確診甲低犬 TSH 仍在正常範圍，是否需要開發更敏感的犬 TSH assay | Level III |
-| 犬 Cushing 的 UCCR 採樣標準化 | 居家採集 vs 醫院採集的 cortisol:creatinine 差異顯著（壓力效應），最佳採集方案尚未統一 | Level II |
+| 犬 Cushing 的 UCCR 採樣標準化 | 居家採集 vs 醫院採集的 cortisol:creatinine 差異很大（壓力效應），最佳採集方案尚未統一 | Level II |
 | 貓 occult hyperthyroidism 的最佳確診策略 | 臨床症狀典型但 T4 正常/borderline 的貓，free T4、T3 抑制試驗、甲狀腺閃爍掃描的選擇尚無明確共識 | Level III |`,
-  clinical_pearl: '犬 LDDS test 的敏感度（~95%）遠優於 ACTH stim test（~80%），因此 LDDS 是 Cushing 的首選篩檢。但若患犬正在使用外源性 glucocorticoids，LDDS 無法判讀（會假陽性），此時 ACTH stim test 才是正確選擇（用來偵測 iatrogenic Cushing）。',
+  clinical_pearl: 'LDDS 敏感度 95%，遠勝 ACTH stim 的 80%，所以 Cushing 篩檢首選是 LDDS。但患犬正在用外源性 glucocorticoids 時，LDDS 沒辦法判讀（會假陽性），這時候改用 ACTH stim 抓 iatrogenic Cushing 才對。',
   common_mistakes: [
-    '在全身性疾病（sick euthyroid）期間測 T4 並診斷 hypothyroidism——應待病情穩定後複檢',
-    '僅用 ACTH stim test 篩檢 Cushing（敏感度僅 ~80%），漏診率較高',
-    '忽略 phenobarbital 會降低 total T4，在癲癇犬身上誤診甲低',
-    '貓壓力性高血糖誤診糖尿病——需搭配 fructosamine 確認是否長期高血糖',
-    'LDDS test 採血時間不精確（需嚴格 0hr、4hr、8hr），影響判讀',
+    '全身性疾病期間（sick euthyroid）測 T4 就下甲低診斷，應該等病情穩定再複檢',
+    '只用 ACTH stim 篩 Cushing（敏感度才 80%），漏診率偏高',
+    '忘了 phenobarbital 會把 total T4 拉低，癲癇犬被誤診甲低',
+    '貓壓力性高血糖被當糖尿病，沒搭配 fructosamine 確認長期高血糖',
+    'LDDS 採血時間不精確（要嚴格 0、4、8 hr），影響判讀',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1716,15 +1716,15 @@ const contentEndocrine: NodeContent = {
       { finding: 'LDDS 8hr cortisol > 1.4', description: '未被 dexamethasone 抑制', significance: '支持 Cushing 診斷' },
       { finding: 'Post-ACTH cortisol < 2', description: '對 ACTH 刺激無反應', significance: '確診 Addison disease' },
     ],
-    interpretation_guide: '1. 根據臨床疑診選擇正確檢測。2. 評估干擾因素（藥物、全身性疾病）。3. 判讀基礎值與動態試驗結果。4. 必要時以第二線檢測確認（如 fT4-ED、HDDS）。5. 整合臨床表現與影像。',
+    interpretation_guide: '看內分泌的順序：根據臨床疑診選對檢測。評估干擾（藥物、全身性疾病）。判讀基礎值跟動態試驗。必要時加第二線（fT4-ED、HDDS）。最後對臨床跟影像。',
     pitfalls: [
-      'Sick euthyroid syndrome 使 T4 假性降低',
-      '外源性 glucocorticoids 干擾 LDDS 結果',
-      'ACTH stim test 使用的 cosyntropin 需正確保存（冷凍）',
-      '採血時間不精確影響動態試驗判讀',
+      'Sick euthyroid syndrome 會把 T4 拉低',
+      '外源性 glucocorticoids 干擾 LDDS',
+      'ACTH stim 的 cosyntropin 要冷凍保存',
+      '採血時間不精確，動態試驗判讀全亂',
     ],
-    sensitivity_specificity: 'LDDS 對 Cushing 的敏感度 ~95%、特異度 ~70-75%。ACTH stim test 敏感度 ~80%、特異度 ~85-90%。UCCR 陰性預測值 > 99%（最佳排除工具）。fT4-ED 對犬 hypothyroidism 的準確度最高。',
-    cost_benefit: '基礎荷爾蒙（T4）成本中等。動態試驗（LDDS、ACTH stim）需多次採血與藥物，成本較高但為確診所必須。',
+    sensitivity_specificity: 'LDDS 對 Cushing 敏感度 95%、特異度 70-75%。ACTH stim 敏感度 80%、特異度 85-90%。UCCR 陰性預測值 > 99%（最佳排除工具）。fT4-ED 抓犬甲低準確度最高。',
+    cost_benefit: 'T4 基礎荷爾蒙費用中等。動態試驗（LDDS、ACTH stim）要多次採血加藥物，貴一點但確診沒這個不行。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1744,28 +1744,28 @@ const contentEndocrine: NodeContent = {
   created_at: now,
 };
 
-/** 淋巴結與腫瘤細胞學 — 診斷型 */
+/** 淋巴結與腫瘤細胞學，診斷型 */
 const contentLNTumorCyto: NodeContent = {
   id: 'CONTENT-CPATH-L4-011',
   node_id: 'CPATH-L4-011',
   version: 1,
-  summary: '淋巴結與腫瘤細胞學是評估淋巴結腫大與體表腫塊最快速的診斷工具。正確區分反應性增生、淋巴瘤與轉移性腫瘤，對後續治療決策有直接影響。',
+  summary: '淋巴結腫起來、體表摸到腫塊，細胞學是最快的工具。能不能正確區分反應性增生、淋巴瘤、轉移性腫瘤，後面治療方向就走不一樣的路。',
   learning_objectives: [
     '區分正常、反應性增生與淋巴瘤的淋巴結細胞學特徵',
     '辨識犬五大圓細胞腫瘤（lymphoma、MCT、histiocytoma、TVT、plasmacytoma）',
     '描述惡性腫瘤細胞學的核標準（nuclear criteria of malignancy）',
-    '判斷何時需要進一步 flow cytometry 或組織病理學確認',
+    '判斷何時要加做 flow cytometry 或組織病理學',
     '說明腫瘤分級在細胞學層面的限制',
   ],
   key_points: [
-    '正常淋巴結：> 90% 小淋巴球，少量中/大淋巴球、漿細胞、巨噬細胞',
-    '反應性增生：小淋巴球仍為主但中/大淋巴球比例增加（< 50%）+ 漿細胞↑ + Mott cells',
-    '淋巴瘤：大淋巴球 > 50%，核大且核仁明顯，單一形態（monomorphic）',
-    '犬 high-grade lymphoma 細胞學準確率 > 90%；low-grade 與反應性增生不易區分',
-    '肥大細胞瘤（MCT）：圓形細胞含嗜鹼性/異染性顆粒，Diff-Quik 可能染色不佳',
-    '組織球瘤（histiocytoma）：大量均勻圓形細胞，淡藍色胞質，常見於年輕犬（< 3 歲）',
-    'TVT（transmissible venereal tumor）：圓形細胞含特徵性胞質空泡（vacuoles in a row）',
-    '淋巴結轉移性腫瘤：在淋巴球背景中出現異質性非淋巴細胞群',
+    '正常淋巴結：> 90% 小淋巴球，少量中型大淋巴球、漿細胞、巨噬細胞',
+    '反應性增生：小淋巴球還是多（> 50%），中大淋巴球變多（但 < 50%）、漿細胞變多、可看到 Mott cells',
+    '淋巴瘤：大淋巴球 > 50%，核大、核仁明顯，單一形態（monomorphic）',
+    '犬 high-grade lymphoma 細胞學準確率 > 90%；low-grade 跟反應性增生很難分',
+    'MCT：圓細胞帶嗜鹼性或異染性顆粒，Diff-Quik 顆粒不一定染得出來',
+    'Histiocytoma：均勻圓細胞、淡藍胞質，常見於 3 歲以下的犬',
+    'TVT：圓細胞、胞質空泡排成一列（vacuoles in a row）',
+    '淋巴結轉移：淋巴球背景中冒出一群異質性的非淋巴細胞',
   ],
   body: `# 淋巴結與腫瘤細胞學 (Lymph Node & Tumor Cytology)
 
@@ -1784,9 +1784,9 @@ const contentLNTumorCyto: NodeContent = {
 
 ### 惡性標準在腫瘤細胞學的應用
 ### 核標準（最重要）
-- **Anisokaryosis**：核大小不一（> 2 倍變異）
-- **核仁異常**：大小/數量/形狀不規則
-- **異常有絲分裂**：三極或多極分裂
+- Anisokaryosis：核大小不一（> 2 倍變異）
+- 核仁異常：大小/數量/形狀不規則
+- 異常有絲分裂：三極或多極分裂
 
 ### 何時需要組織病理確認？
 - Low-grade lymphoma vs 反應性增生 → flow cytometry 或 PARR（PCR for antigen receptor rearrangement）
@@ -1806,11 +1806,11 @@ const contentLNTumorCyto: NodeContent = {
 - 中/大淋巴球比例增加但 < 50%
 - 漿細胞明顯增多（Mott cells 可見）
 - 巨噬細胞增加 + tingible body macrophages
-- **多形態（polymorphic）** = 多種成熟階段
+- 多形態（polymorphic） = 多種成熟階段
 
 ### 淋巴瘤（Lymphoma）
 - 大淋巴球 > 50%（high-grade 通常 > 70%）
-- **單一形態（monomorphic）** = 大部分細胞大小相似
+- 單一形態（monomorphic） = 大部分細胞大小相似
 - 核仁大且明顯（multiple prominent nucleoli）
 - 有絲分裂像增多
 - 壞死碎片（lymphoglandular bodies）豐富
@@ -1840,13 +1840,13 @@ const contentLNTumorCyto: NodeContent = {
 | 犬 low-grade T-cell lymphoma 的細胞學 vs PARR vs flow cytometry 最佳診斷組合 | 細胞學單獨敏感度不足（< 60%），PARR 與 flow 各有優缺，最佳組合策略尚未確立 | Level III |
 | 犬 MCT 細胞學預後預測價值（mitotic index、Ki-67 on cytology） | 細胞學 mitotic count 與組織病理分級有中等相關，但能否取代組織病理分級作預後指標仍有爭議 | Level III |
 | Sentinel lymph node（SLN）FNA 在犬腫瘤分期中的角色 | SLN FNA 的轉移偵測敏感度約 70-85%，是否可替代 SLN excisional biopsy 尚未有共識 | Level II |`,
-  clinical_pearl: '區分淋巴結反應性增生與 low-grade lymphoma 是細胞學最困難的判讀之一。關鍵在於：反應性增生是「多形態」的（各成熟階段都有），而淋巴瘤是「單一形態」的。若仍無法確定，flow cytometry（CD3/CD79a）或 PARR 是最佳的下一步。',
+  clinical_pearl: '反應性增生跟 low-grade lymphoma 是細胞學裡最難區分的兩種。我自己的口訣：反應性是「多形態」（各個成熟階段都有），淋巴瘤是「單一形態」。實在分不出來，下一步直接送 flow cytometry（CD3/CD79a）或 PARR。',
   common_mistakes: [
-    '反應性增生中中/大淋巴球增多 → 誤判為淋巴瘤（應評估是否仍為多形態分布）',
-    '肥大細胞瘤在 Diff-Quik 染色下顆粒不明顯 → 漏診 MCT（需 Wright-Giemsa 或 toluidine blue 確認）',
-    '引流淋巴結見到腫瘤細胞，誤判為淋巴結原發腫瘤而非轉移',
-    '忽略 histiocytoma 可自行消退的特性，對年輕犬急於手術',
-    'MCT 分級僅靠細胞學——MCT 的預後分級（Patnaik/Kiupel）需要組織病理',
+    '反應性增生中大淋巴球變多就當淋巴瘤，要先評估是不是還是多形態分布',
+    'MCT 在 Diff-Quik 顆粒沒染出來就漏診，需要 Wright-Giemsa 或 toluidine blue 確認',
+    '引流淋巴結看到腫瘤細胞被當淋巴結原發腫瘤，其實是轉移',
+    '忘了 histiocytoma 會自行消退，對年輕犬太急著開刀',
+    'MCT 只靠細胞學分級，Patnaik/Kiupel 系統要組織病理',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1862,15 +1862,15 @@ const contentLNTumorCyto: NodeContent = {
       { finding: '轉移性腫瘤', description: '淋巴球背景中出現異質性非淋巴細胞', significance: '提示原發腫瘤已擴散，影響分期' },
       { finding: '化膿性淋巴結炎', description: '大量嗜中性球 ± 細菌', significance: '感染，需培養與藥敏' },
     ],
-    interpretation_guide: '1. 低倍評估細胞量與背景。2. 判斷主要細胞群（淋巴球 vs 非淋巴細胞）。3. 評估淋巴球大小分布（polymorphic vs monomorphic）。4. 尋找惡性標準。5. 分類（反應性/淋巴瘤/轉移/發炎）。',
+    interpretation_guide: '看淋巴結的順序：低倍掃過去看細胞量跟背景。判斷主要細胞群（淋巴球還是非淋巴）。評估淋巴球大小分布（polymorphic 還是 monomorphic）。找惡性標準。分類（反應性、淋巴瘤、轉移、發炎）。',
     pitfalls: [
-      '血液汙染嚴重的淋巴結 FNA 幾乎無法判讀',
-      'Low-grade lymphoma 細胞與正常小淋巴球形態極為相似',
-      'Diff-Quik 對 MCT granules 的染色品質不穩定',
-      '局部引流區域的反應性淋巴結可能被誤判為腫瘤轉移',
+      '血液汙染嚴重的淋巴結 FNA 幾乎不能判讀',
+      'Low-grade lymphoma 細胞跟正常小淋巴球太像',
+      'Diff-Quik 對 MCT 顆粒的染色品質不穩定',
+      '引流區域的反應性淋巴結被當腫瘤轉移',
     ],
-    sensitivity_specificity: '細胞學對 high-grade lymphoma 的敏感度 > 90%、特異度 > 95%。對 low-grade lymphoma 敏感度降至 50-70%。MCT 的細胞學診斷準確率約 92-96%（前提是顆粒有被成功染色）。',
-    cost_benefit: 'FNA 幾乎零成本、即時可得、無需鎮靜。是淋巴結與腫塊評估的最佳起點。但需了解其限制並適時轉送組織病理。',
+    sensitivity_specificity: 'High-grade lymphoma 敏感度 > 90%、特異度 > 95%。Low-grade lymphoma 敏感度降到 50-70%。MCT 細胞學準確率 92-96%（前提顆粒有染出來）。',
+    cost_benefit: 'FNA 幾乎零成本、結果馬上拿到、不用鎮靜。淋巴結跟腫塊評估的起點。但要知道限制，該轉組織病理就轉。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -1885,18 +1885,18 @@ const contentLNTumorCyto: NodeContent = {
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '淋巴結與腫瘤細胞學判讀圖譜' },
     { type: 'journal', citation: 'Avery PR et al. "Flow cytometric characterization and clinical outcome of CD4+ T-cell lymphoma in dogs." J Vet Intern Med 2014;28(2):538-546.', relevance: 'Flow cytometry 在犬淋巴瘤分型的應用' },
     { type: 'journal', citation: 'Caniatti M et al. "Diagnosis of canine lymphoma by fine-needle aspiration cytology." Vet Clin Pathol 2019;48(Suppl 1):63-77.', relevance: '犬淋巴瘤細胞學診斷的系統性回顧' },
-    { type: 'guideline', citation: 'Valli VE, Kass PH, San Myint M, et al. ACVP/STP guidelines for canine cutaneous and subcutaneous lymphoma classification. Vet Pathol. 2013;50(2):256-268.', relevance: 'ACVP 犬淋巴瘤分類指引——細胞學在分型中的角色' },
+    { type: 'guideline', citation: 'Valli VE, Kass PH, San Myint M, et al. ACVP/STP guidelines for canine cutaneous and subcutaneous lymphoma classification. Vet Pathol. 2013;50(2):256-268.', relevance: 'ACVP 犬淋巴瘤分類指引，細胞學在分型中的角色' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 皮膚細胞學與刮搔判讀 — 診斷型 */
+/** 皮膚細胞學與刮搔判讀，診斷型 */
 const contentDermCyto: NodeContent = {
   id: 'CONTENT-CPATH-L4-012',
   node_id: 'CPATH-L4-012',
   version: 1,
-  summary: '皮膚細胞學與皮膚刮搔是皮膚科最基礎的院內診斷工具。壓印抹片（impression smear）快速辨識感染原，皮膚刮搔偵測外寄生蟲，兩者搭配可在 10 分鐘內提供初步診斷方向。',
+  summary: '皮膚細胞學跟皮膚刮搔是皮膚科門診兩個基本工具。壓印抹片抓感染原、刮搔找外寄生蟲，兩個搭起來 10 分鐘內就有初步方向。',
   learning_objectives: [
     '描述皮膚壓印抹片、膠帶抹片與皮膚刮搔的採樣技術差異',
     '辨識皮膚細胞學中常見的感染原（Malassezia、Demodex、細菌球菌/桿菌）',
@@ -1905,14 +1905,14 @@ const contentDermCyto: NodeContent = {
     '整合皮膚細胞學結果與臨床皮膚病型態制定鑑別診斷',
   ],
   key_points: [
-    '壓印抹片（impression smear）：直接將載玻片壓在病灶上，最適合滲出性/糜爛性病灶',
-    '膠帶抹片（tape prep）：透明膠帶貼皮膚表面 → 染色 → 偵測 Malassezia 與表面細菌',
-    '淺層刮搔（superficial scraping）：偵測表皮寄生蟲如 Sarcoptes（但敏感度僅 ~50%）',
-    '深層刮搔（deep scraping）：刮至出血點（capillary oozing），偵測毛囊內的 Demodex',
-    'Malassezia 判讀標準：犬 > 2 個/oil field 在非脂漏部位即有意義',
-    '球菌（cocci）為犬最常見皮膚細菌感染型態，桿菌（rods）較少見但需警惕多重抗藥性',
-    'Demodex canis 為長型蟲體（cigar-shaped），D. gatoi（貓）較短且生活在淺層',
-    '皮膚腫塊 FNA：脂肪瘤（透明脂肪細胞）、MCT（含顆粒圓細胞）、皮脂腺腫瘤（泡沫狀細胞團簇）',
+    '壓印抹片：載玻片直接壓在病灶上，滲出性、糜爛性病灶最合適',
+    '膠帶抹片：透明膠帶貼皮膚，染色後找 Malassezia 跟表面細菌',
+    '淺層刮搔：抓表皮寄生蟲如 Sarcoptes（但敏感度只有 50%）',
+    '深層刮搔：刮到微出血為止，找毛囊內 Demodex',
+    'Malassezia 判讀：犬非脂漏部位 > 2 個/oil field 就有意義',
+    '球菌是犬皮膚最常見的細菌型態；桿菌少見但要警覺多重抗藥性',
+    'Demodex canis 長條（雪茄形），D. gatoi 比較短、住在表淺',
+    '皮膚腫塊 FNA 看：脂肪瘤（透明脂肪細胞）、MCT（顆粒圓細胞）、皮脂腺腫瘤（泡沫狀細胞團簇）',
   ],
   body: `# 皮膚細胞學與刮搔判讀 (Dermatologic Cytology & Skin Scraping)
 
@@ -1939,18 +1939,18 @@ const contentDermCyto: NodeContent = {
 
 ### 常見感染原辨識
 ### 細菌
-- **球菌（cocci）**：成對或四聯排列，最常見為 Staphylococcus pseudintermedius
-- **桿菌（rods）**：需警惕 Pseudomonas 等多重抗藥性菌
+- 球菌（cocci）：成對或四聯排列，最常見為 Staphylococcus pseudintermedius
+- 桿菌（rods）：需警惕 Pseudomonas 等多重抗藥性菌
 - 重要判讀：是否有細胞內細菌（intracellular bacteria）→ 確認為真感染而非汙染
 
 ### 酵母菌
-- **Malassezia pachydermatis**：花生/雪人形（budding yeast）
+- Malassezia pachydermatis：花生/雪人形（budding yeast）
 - 正常犬皮膚可有少量；犬耳道 > 5/oil field 或非脂漏皮膚 > 2/oil field = 過量增殖
 
 ### 皮膚寄生蟲
-- **Demodex canis**：雪茄形，長 250-300 μm，毛囊內
-- **Demodex gatoi**：較短型（< 200 μm），貓表面性，淺刮即可偵測
-- **Sarcoptes scabiei**：卵圓形，短足，深層刮搔敏感度僅 ~50%（陰性不能排除）
+- Demodex canis：雪茄形，長 250-300 μm，毛囊內
+- Demodex gatoi：較短型（< 200 μm），貓表面性，淺刮即可偵測
+- Sarcoptes scabiei：卵圓形，短足，深層刮搔敏感度僅 ~50%（陰性不能排除）
 
 ### 皮膚腫塊 FNA
 | 腫瘤 | 細胞學特徵 |
@@ -1985,13 +1985,13 @@ const contentDermCyto: NodeContent = {
 | 犬 Malassezia 過量增殖的標準化計數閾值 | 不同採樣方法（壓印 vs 膠帶 vs 棉棒）的「異常」計數閾值不同，缺乏統一標準 | Level III |
 | Sarcoptes 刮搔陰性時的最佳確診策略 | 刮搔敏感度僅 ~50%，血清學（IgG ELISA）敏感度 ~85% 但在台灣不易取得，trial therapy 仍為主流 | Level II |
 | 犬深層膿皮症經驗性抗生素 vs 常規培養藥敏的成本效益 | MRSP 盛行率上升（台灣 ~20-30%），但每例常規 C&S 的成本效益尚無大型研究 | Level III |`,
-  clinical_pearl: 'Sarcoptes scabiei 刮搔的敏感度僅約 50%，也就是一半的疥癬患犬刮搔是陰性的。因此如果臨床高度懷疑（劇烈搔癢、耳翼邊緣反射陽性、典型分布），即使刮搔陰性仍應進行試驗性治療（trial therapy with isoxazoline）。',
+  clinical_pearl: 'Sarcoptes 刮搔敏感度才 50%，所以一半的疥癬犬刮搔是陰性。臨床高度懷疑（劇烈搔癢、耳翼邊緣反射陽性、典型分布）就算刮搔陰性也應該 trial therapy（isoxazoline）。不要在那裡等刮搔給答案。',
   common_mistakes: [
-    '深層刮搔未刮到出血點就停止，遺漏深層毛囊內的 Demodex',
-    '皮膚刮搔陰性就排除 Sarcoptes——敏感度僅 ~50%，應考慮 trial therapy',
-    '壓印抹片染色時間不足導致 Malassezia 和細菌辨識困難',
-    '耳道細胞學中少量 Malassezia 即給予抗黴菌治療——需考慮臨床症狀',
-    '將 MCT 的 Diff-Quik 顆粒不明顯（poorly granulated MCT）誤判為其他圓細胞腫瘤',
+    '深層刮搔沒刮到出血點就停，毛囊內的 Demodex 漏掉',
+    '刮搔陰性就排除 Sarcoptes，敏感度只有 50%，要 trial therapy',
+    '壓印抹片染色時間不夠，Malassezia 跟細菌都看不清楚',
+    '耳道看到少量 Malassezia 就上抗黴菌，要看臨床症狀',
+    'MCT 在 Diff-Quik 顆粒沒染出來（poorly granulated MCT），被當其他圓細胞腫瘤',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -2001,7 +2001,7 @@ const contentDermCyto: NodeContent = {
     normal_findings: [
       { finding: '正常皮膚壓印', description: '少量角質化上皮，無細菌或酵母菌', significance: '皮膚屏障完整' },
       { finding: '正常皮膚刮搔', description: '未見寄生蟲', significance: '無外寄生蟲感染（但 Sarcoptes 可能假陰性）' },
-      { finding: '正常耳道', description: '少量角質化上皮，偶見 < 5 Malassezia/OIF', significance: '無顯著感染' },
+      { finding: '正常耳道', description: '少量角質化上皮，偶見 < 5 Malassezia/OIF', significance: '無明顯感染' },
     ],
     abnormal_findings: [
       { finding: 'Malassezia 過量增殖', description: '> 2/OIF（非脂漏皮膚）或 > 5/OIF（耳道）', significance: 'Malassezia dermatitis/otitis，常為續發（需查原發病因）' },
@@ -2009,15 +2009,15 @@ const contentDermCyto: NodeContent = {
       { finding: '細胞內球菌', description: '嗜中性球內可見球菌', significance: '確認細菌性膿皮症（非汙染），需考慮培養' },
       { finding: 'MCT 細胞', description: '含嗜鹼性顆粒的圓形細胞', significance: '肥大細胞瘤，需組織病理分級' },
     ],
-    interpretation_guide: '1. 低倍掃描整體細胞量與背景。2. 高倍辨識感染原（細菌型態與位置、Malassezia 數量、寄生蟲）。3. 評估發炎細胞類型（嗜中性球 vs 嗜酸性球）。4. 腫塊 FNA 則評估腫瘤類型。5. 整合臨床病灶分布與病史。',
+    interpretation_guide: '看皮膚細胞學：低倍掃過去看細胞量跟背景。高倍找感染原（細菌型態跟位置、Malassezia 數量、寄生蟲）。評估發炎細胞類型（嗜中性球還是嗜酸性球）。腫塊 FNA 就看腫瘤類型。最後對臨床病灶分布跟病史。',
     pitfalls: [
-      '深層刮搔未足夠深度（需見到出血點）',
-      '未在刮搔前擠壓皮膚，降低 Demodex 偵測率',
-      '壓印抹片太厚無法辨識細胞',
-      '耳道採樣時棉棒深入過深造成不適或損傷',
+      '深層刮搔深度不夠（要刮到出血點）',
+      '刮搔前沒擠壓皮膚，Demodex 偵測率降低',
+      '壓印抹片太厚，細胞看不清楚',
+      '耳道採樣棉棒推太深，造成不適或損傷',
     ],
-    sensitivity_specificity: 'Demodex 深層刮搔敏感度 > 90%。Sarcoptes 刮搔敏感度僅 ~50%。Malassezia 膠帶抹片法敏感度約 85-90%。皮膚 FNA 對常見腫瘤的準確率約 80-95%（取決於腫瘤類型）。',
-    cost_benefit: '所有採樣技術成本極低，10 分鐘內可獲得結果。是皮膚科門診最高 CP 值的即時診斷工具。',
+    sensitivity_specificity: 'Demodex 深層刮搔敏感度 > 90%。Sarcoptes 刮搔敏感度只有 50%。Malassezia 膠帶抹片法敏感度 85-90%。皮膚 FNA 對常見腫瘤準確率 80-95%（看腫瘤類型）。',
+    cost_benefit: '所有採樣技術都幾乎零成本，10 分鐘出結果。皮膚科門診 CP 值最高的即時診斷工具。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -2032,18 +2032,18 @@ const contentDermCyto: NodeContent = {
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '皮膚細胞學判讀圖譜' },
     { type: 'textbook', citation: 'Miller WH, Griffin CE, Campbell KL. Muller & Kirk\'s Small Animal Dermatology, 7th ed. Elsevier, 2013.', relevance: '皮膚科診斷方法學教材' },
     { type: 'journal', citation: 'Saridomichelakis MN et al. "Skin cytology in dogs and cats: a comprehensive review." Vet Dermatol 2017;28(5):457-e108.', relevance: '犬貓皮膚細胞學系統性回顧' },
-    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引——皮膚細胞學在膿皮症診斷中的標準' },
+    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引，皮膚細胞學在膿皮症診斷中的標準' },
   ],
   is_current: true,
   created_at: now,
 };
 
-/** 感染性疾病實驗室診斷 — 診斷型 */
+/** 感染性疾病實驗室診斷，診斷型 */
 const contentInfectiousDx: NodeContent = {
   id: 'CONTENT-CPATH-L4-013',
   node_id: 'CPATH-L4-013',
   version: 1,
-  summary: '感染性疾病實驗室診斷整合 PCR、血清學、培養與快篩等方法，偵測病原體的核酸、抗原或宿主抗體。正確選擇檢測方法與理解其限制是避免假陽性/假陰性的關鍵。',
+  summary: '感染症診斷整合 PCR、血清學、培養跟快篩，目標是抓病原核酸、抗原或宿主抗體。每個方法都有自己的限制，挑錯方法或不知道限制就會被假陽性、假陰性騙。',
   learning_objectives: [
     '比較 PCR、血清學（抗體檢測）、抗原檢測與培養的優缺點',
     '解釋抗體檢測的 seroconversion window 與假陰性風險',
@@ -2052,14 +2052,14 @@ const contentInfectiousDx: NodeContent = {
     '說明 PCR 定量（Ct value）在臨床的判讀意義',
   ],
   key_points: [
-    'PCR 偵測病原核酸：高敏感度，可在感染早期（抗體尚未產生前）即偵測到',
-    '血清學偵測抗體：需 seroconversion（通常感染後 2-4 週），急性期可能假陰性',
-    '抗原檢測（如 FeLV p27、Heartworm Ag）：偵測病原蛋白，敏感度與特異度因試劑而異',
-    '4Dx Plus 快篩：犬心絲蟲 Ag + Ehrlichia/Anaplasma/Borrelia Ab（台灣 Ehrlichia 盛行率高）',
-    'FeLV/FIV combo test：FeLV 為抗原（p27），FIV 為抗體——陽性需確認試驗',
-    '培養（culture）為細菌感染金標準，提供藥敏結果指導抗生素選擇',
-    '真菌培養（DTM/Sabouraud）用於 dermatophytosis 確診，需 7-21 天',
-    'PCR Ct value < 25 通常代表高病原量；Ct > 35 可能為汙染或極低量',
+    'PCR 抓病原核酸，敏感度高，感染早期（抗體還沒產生）就抓得到',
+    '血清學抓抗體：要 seroconversion（通常感染後 2-4 週），急性期可能假陰性',
+    '抗原檢測（FeLV p27、Heartworm Ag）抓病原蛋白，敏感度跟特異度看試劑',
+    '4Dx Plus：犬心絲蟲 Ag + Ehrlichia/Anaplasma/Borrelia Ab（台灣 Ehrlichia 盛行率高）',
+    'FeLV/FIV combo：FeLV 是抗原（p27）、FIV 是抗體，陽性都要確認試驗',
+    '培養是細菌感染金標準，加藥敏指導抗生素選擇',
+    '真菌培養（DTM/Sabouraud）用來確診皮癬菌病，要 7-21 天',
+    'PCR Ct < 25 通常是高病原量；Ct > 35 可能是汙染或極低量',
   ],
   body: `# 感染性疾病實驗室診斷 (Infectious Disease Lab Diagnosis)
 
@@ -2108,7 +2108,7 @@ const contentInfectiousDx: NodeContent = {
 ### 貓呼吸道複合症
 - Herpesvirus（FHV-1）：PCR（結膜/口咽拭子）
 - Calicivirus（FCV）：PCR 或病毒分離
-- 健康帶菌者也可能 PCR 陽性——需結合臨床症狀
+- 健康帶菌者也可能 PCR 陽性，要結合臨床症狀
 
 ### 培養與藥敏（C&S）
 ### 何時需要培養？
@@ -2153,13 +2153,13 @@ const contentInfectiousDx: NodeContent = {
 | 犬壁蝨傳播疾病（Ehrlichia/Anaplasma）抗體陽性但無臨床症狀時是否需要治療 | 目前共識傾向不治療亞臨床感染，但部分專家認為在高盛行區（如台灣）應考慮治療 | Level III |
 | FeLV 快篩陽性的確認流程標準化 | ELISA（p27）陽性需確認（IFA/qPCR），但確認試驗在台灣送檢不便，是否單次 ELISA 足以作決策尚有爭議 | Level II |
 | PCR 偵測到的低量病原（Ct > 30）的臨床意義 | 可能代表過去感染殘存 DNA、環境汙染或極低量活菌，缺乏犬貓各病原的臨床 Ct 切點研究 | Level III |`,
-  clinical_pearl: '台灣是 Ehrlichia canis 的高盛行區，而 4Dx 偵測的是抗體而非抗原。感染初期（acute phase，前 1-3 週）抗體可能尚未產生，此時 SNAP 可能假陰性。如果臨床高度懷疑（血小板減少 + 壁蝨暴露史 + 發燒），應直接送 PCR 或先行經驗性治療（doxycycline），不要等抗體轉陽。',
+  clinical_pearl: '台灣是 Ehrlichia canis 高盛行區，4Dx 抓的是抗體不是抗原。感染初期（前 1-3 週）抗體還沒產生，SNAP 可能假陰性。臨床高度懷疑（血小板減少 + 壁蝨暴露史 + 發燒）就直接送 PCR 或先用 doxycycline 經驗性治療，不要乾等抗體轉陽。',
   common_mistakes: [
-    'FIV 抗體快篩在 < 6 月齡幼貓陽性就診斷 FIV——可能是母源抗體',
-    'FeLV 快篩單次陽性就確診——需 6 週後複驗或 IFA 確認（transient viremia 可自行清除）',
-    'FCoV 抗體效價高就診斷 FIP——高效價僅代表冠狀病毒暴露，非 FIP 確診',
-    'PCR 陽性直接等同於臨床疾病——需考慮帶菌者狀態和 Ct value',
-    '在已使用抗生素後才採集培養樣本——降低培養敏感度',
+    'FIV 抗體快篩 < 6 月齡幼貓陽性就下診斷，可能是母源抗體',
+    'FeLV 快篩一次陽性就確診，要 6 週後複驗或 IFA 確認（transient viremia 會自己清掉）',
+    'FCoV 抗體效價高就下 FIP 診斷，高效價只代表暴露過冠狀病毒',
+    'PCR 陽性直接當臨床疾病，要看帶菌者狀態跟 Ct value',
+    '用抗生素之後才採培養樣本，敏感度大幅下降',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -2173,19 +2173,19 @@ const contentInfectiousDx: NodeContent = {
     ],
     abnormal_findings: [
       { finding: 'Ehrlichia Ab 陽性', description: '4Dx Ehrlichia canis 抗體陽性', significance: '曾經或現行 Ehrlichia 感染，需結合 CBC（血小板減少）與臨床評估' },
-      { finding: 'FeLV Ag 陽性', description: 'p27 抗原陽性', significance: '現行 FeLV 抗原血症——需 6 週後複驗確認是否為 persistent 感染' },
+      { finding: 'FeLV Ag 陽性', description: 'p27 抗原陽性', significance: '現行 FeLV 抗原血症，6 週後要複驗確認是不是 persistent 感染' },
       { finding: 'PCR 陽性（Ct < 25）', description: '高病原量', significance: '活動性感染可能性高，臨床意義明確' },
       { finding: '培養陽性 + 多重抗藥', description: 'MRSP 或 Pseudomonas 等', significance: '需根據藥敏結果選擇抗生素，避免經驗性廣效用藥' },
     ],
-    interpretation_guide: '1. 根據臨床疑診選擇適當檢測方法。2. 考慮 window period 與採樣時機。3. 快篩陽性結果需確認試驗。4. PCR 結合 Ct value 評估病原量。5. 培養結果指導抗生素選擇。6. 整合臨床表現與實驗室結果。',
+    interpretation_guide: '看感染症檢測：根據臨床疑診選方法。考慮 window period 跟採樣時機。快篩陽性要確認試驗。PCR 結合 Ct value 估病原量。培養結果指導抗生素。最後對臨床。',
     pitfalls: [
-      '抗體檢測在感染早期（window period）假陰性',
-      'PCR 偵測死菌 DNA 導致假陽性（如抗生素治療後）',
-      '健康帶菌者 PCR 陽性不代表臨床疾病',
-      '快篩判讀時間過長或不足影響結果',
+      '感染早期（window period）抗體檢測假陰性',
+      'PCR 抓到死菌 DNA 假陽性（抗生素治療後常見）',
+      '健康帶菌者 PCR 陽性不等於臨床疾病',
+      '快篩判讀時間太長或太短，結果不能信',
     ],
-    sensitivity_specificity: '4Dx heartworm Ag 敏感度 > 99%（感染 > 5 隻成蟲時），特異度 > 99%。FeLV ELISA 敏感度 ~98%、特異度 ~98%。FIV Ab 敏感度 ~99%、特異度 ~98%（成貓）。PCR 敏感度取決於病原量與採樣品質。',
-    cost_benefit: '院內快篩成本中等、10 分鐘出結果，適合篩檢。PCR 成本較高但準確度最佳。培養 + 藥敏耗時但對抗藥性感染不可或缺。',
+    sensitivity_specificity: '4Dx heartworm Ag 敏感度 > 99%（感染 > 5 隻成蟲時）、特異度 > 99%。FeLV ELISA 敏感度 98%、特異度 98%。FIV Ab 敏感度 99%、特異度 98%（成貓）。PCR 敏感度看病原量跟採樣品質。',
+    cost_benefit: '院內快篩費用中等、10 分鐘出結果，適合篩檢。PCR 貴一點但準確度最佳。培養加藥敏耗時但抗藥性感染少不了。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -2206,12 +2206,12 @@ const contentInfectiousDx: NodeContent = {
   created_at: now,
 };
 
-/** 臨床病理學總覽 — 概念型 */
+/** 臨床病理學總覽，概念型 */
 const contentCpathOverview: NodeContent = {
   id: 'CONTENT-CPATH-L0-001',
   node_id: 'CPATH-L0-001',
   version: 1,
-  summary: '臨床病理學（Clinical Pathology）是獸醫學中連結臨床與實驗室的核心橋樑學科，涵蓋血液學、臨床生化與細胞學三大分支，從樣本採集到報告產出的完整流程直接影響臨床決策品質。',
+  summary: '臨床病理學是把臨床端跟實驗室接起來的橋。三大分支：血液學、臨床生化、細胞學。樣本怎麼採、怎麼分析、報告怎麼寫，每一步都直接決定臨床決策品質。',
   learning_objectives: [
     '定義臨床病理學的範疇及其在獸醫醫療中的角色',
     '列舉臨床病理學三大分支（血液學、臨床生化、細胞學）的核心內容',
@@ -2220,12 +2220,12 @@ const contentCpathOverview: NodeContent = {
     '理解臨床病理學如何與其他臨床專科整合',
   ],
   key_points: [
-    '臨床病理學三大分支：血液學（Hematology）、臨床生化（Clinical Chemistry）、細胞學（Cytology）',
-    '從樣本採集（Pre-analytical）→ 分析（Analytical）→ 報告判讀（Post-analytical）的三階段品質管控',
-    '參考區間（Reference Interval）依物種、品種、年齡而異，不可直接套用人醫標準',
-    '院內即時檢驗（POCT）與外送參考實驗室各有優缺，需根據臨床情境選擇',
-    '臨床病理是所有專科的共同語言——心臟科需要 cTnI、內科需要生化、皮膚科需要細胞學',
-    '品質管控包含內部品管（IQC）與外部能力測試（EQA/PT），確保結果可靠性',
+    '三大分支：血液學、臨床生化、細胞學',
+    '品質管控分三段：採集（pre-analytical）、分析（analytical）、報告判讀（post-analytical）',
+    '參考區間看物種、品種、年齡，不能直接套人醫標準',
+    '院內 POCT 跟外送參考實驗室各有優缺，看情境挑',
+    '臨床病理是所有專科的共同語言：心臟科要 cTnI、內科要生化、皮膚科要細胞學',
+    '品質管控分內部品管（IQC）跟外部能力測試（EQA/PT），確保結果可信',
   ],
   body: `# 臨床病理學總覽 (Clinical Pathology Overview)
 
@@ -2244,35 +2244,35 @@ const contentCpathOverview: NodeContent = {
 ### 與其他專科的關係
 
 臨床病理學是所有獸醫專科的基石：
-- **內科（Internal Medicine）**：生化 panel 評估肝腎功能、電解質平衡
-- **腫瘤科（Oncology）**：FNA 細胞學初篩腫塊性質、CBC 監測化療副作用
-- **皮膚科（Dermatology）**：皮膚細胞學鑑別感染 vs 腫瘤 vs 自體免疫
-- **心臟科（Cardiology）**：cTnI（心肌肌鈣蛋白）、NT-proBNP 生物標記
-- **急診科（ECC）**：即時血氣分析、乳酸、凝血功能
-- **外科（Surgery）**：術前生化 + CBC 評估手術風險
+- 內科（Internal Medicine）：生化 panel 評估肝腎功能、電解質平衡
+- 腫瘤科（Oncology）：FNA 細胞學初篩腫塊性質、CBC 監測化療副作用
+- 皮膚科（Dermatology）：皮膚細胞學鑑別感染 vs 腫瘤 vs 自體免疫
+- 心臟科（Cardiology）：cTnI（心肌肌鈣蛋白）、NT-proBNP 生物標記
+- 急診科（ECC）：即時血氣分析、乳酸、凝血功能
+- 外科（Surgery）：術前生化 + CBC 評估手術風險
 
 ## 二、重要概念 (Key Concepts)
 
 ### 實驗室工作流程的三個階段
 
 #### 1. 分析前階段（Pre-analytical Phase）
-此階段佔實驗室錯誤的 **60-70%**，是品質管控最重要的環節：
-- **樣本採集**：正確的採血管選擇（EDTA → CBC、Heparin → 生化、Citrate → 凝血）
-- **樣本處理**：及時分離血清/血漿、避免溶血/脂血/黃疸干擾
-- **病患準備**：禁食狀態對 Triglyceride、Glucose、Bile acids 的影響
-- **運送條件**：溫度、時間、震動對樣本穩定性的影響
+此階段佔實驗室錯誤的 60-70%，是品質管控最重要的環節：
+- 樣本採集：正確的採血管選擇（EDTA → CBC、Heparin → 生化、Citrate → 凝血）
+- 樣本處理：及時分離血清/血漿、避免溶血/脂血/黃疸干擾
+- 病患準備：禁食狀態對 Triglyceride、Glucose、Bile acids 的影響
+- 運送條件：溫度、時間、震動對樣本穩定性的影響
 
 #### 2. 分析階段（Analytical Phase）
-- **儀器校正（Calibration）**：確保量測值準確度
-- **內部品管（Internal Quality Control, IQC）**：每日/每批 QC 材料檢測，Levey-Jennings 圖監控
-- **Westgard 規則**：偵測系統性或隨機性誤差（1-2s、1-3s、2-2s、R-4s 等規則）
-- **分析方法**：濕式化學 vs 乾式化學、阻抗法 vs 雷射流式細胞術
+- 儀器校正（Calibration）：確保量測值準確度
+- 內部品管（Internal Quality Control, IQC）：每日/每批 QC 材料檢測，Levey-Jennings 圖監控
+- Westgard 規則：偵測系統性或隨機性誤差（1-2s、1-3s、2-2s、R-4s 等規則）
+- 分析方法：濕式化學 vs 乾式化學、阻抗法 vs 雷射流式細胞術
 
 #### 3. 分析後階段（Post-analytical Phase）
-- **參考區間（Reference Interval, RI）**：依物種、品種、年齡建立，非「正常值」
-- **臨床相關性**：Delta check（與前次結果比較）、臨界值通報
-- **報告撰寫**：結構化報告、臨床建議
-- **結果溝通**：與臨床醫師的有效溝通是最終目標
+- 參考區間（Reference Interval, RI）：依物種、品種、年齡建立，非「正常值」
+- 臨床相關性：Delta check（與前次結果比較）、臨界值通報
+- 報告撰寫：結構化報告、臨床建議
+- 結果溝通：與臨床醫師的有效溝通是最終目標
 
 ### 參考區間的重要性
 
@@ -2295,13 +2295,13 @@ const contentCpathOverview: NodeContent = {
 ## 三、常見陷阱 (Common Pitfalls)
 
 ### 分析前錯誤
-- **溶血**：最常見的分析前干擾，導致 K⁺ 假性升高（犬紅血球 K⁺ 含量較低故影響較小，但 Akita 等品種例外）
-- **脂血**：干擾比色法測定，導致多項生化值不準確
-- **EDTA 汙染**：EDTA 管血液汙染生化管，導致 Ca²⁺ 假性降低、K⁺ 假性升高
-- **採血管順序錯誤**：先採 EDTA 管再採生化管可能造成 EDTA 汙染
+- 溶血：最常見的分析前干擾，導致 K⁺ 假性升高（犬紅血球 K⁺ 含量較低故影響較小，但 Akita 等品種例外）
+- 脂血：干擾比色法測定，導致多項生化值不準確
+- EDTA 汙染：EDTA 管血液汙染生化管，導致 Ca²⁺ 假性降低、K⁺ 假性升高
+- 採血管順序錯誤：先採 EDTA 管再採生化管可能造成 EDTA 汙染
 
 ### 判讀錯誤
-- 將單一異常值視為確定診斷——需結合臨床整體評估
+- 把單一異常值當確定診斷，要結合臨床整體評估
 - 忽略物種差異直接套用犬的參考區間於貓
 - 未考慮藥物對檢驗結果的影響（如 Phenobarbital 誘導 ALP 升高）
 
@@ -2321,12 +2321,12 @@ const contentCpathOverview: NodeContent = {
 | POCT 與參考實驗室結果互換性 | 院內與外送結果可能有系統性差異，臨床上是否可直接比較仍有爭議 | Level II |
 | 貓血液學的品種特異性參考區間 | 不同貓品種（如 Birman 有生理性高 Creatinine）的品種特異性 RI 資料不足 | Level III |
 | AI 在臨床病理判讀中的角色 | AI 輔助判讀的準確度提升中，但在複雜多疾病情境下仍需人類專家把關 | Level IV |`,
-  clinical_pearl: '臨床病理報告最重要的不是單一數值是否「正常」，而是所有結果組合起來講述的臨床故事。一個 BUN/Creatinine 輕微升高搭配 USG < 1.030 的犬，比 BUN/Creatinine 中度升高但 USG > 1.050 的脫水犬更令人擔憂。養成「看 pattern、不看單一數值」的習慣是臨床病理判讀的核心能力。',
+  clinical_pearl: '臨床病理報告重點不是哪個數字「正常」，而是整組結果在講什麼故事。BUN/Crea 輕微升高加 USG < 1.030 的犬，比 BUN/Crea 中度升高但 USG > 1.050 的脫水犬還令人擔心。看 pattern 不看單一數值，這是臨床病理判讀的核心能力。',
   common_mistakes: [
-    '只看紅字（超出參考區間的值）而忽略正常範圍內的趨勢變化（delta check）',
-    '未核實樣本品質（溶血、脂血、凝塊）就直接判讀結果',
-    '不同實驗室或儀器的結果直接比較而未考慮方法學差異',
-    '將參考區間上下限視為絕對的「正常/異常」分界線，忽略灰色地帶',
+    '只盯紅字，忽略正常範圍內的趨勢（delta check）',
+    '沒核樣本品質（溶血、脂血、凝塊）就直接看結果',
+    '不同實驗室或儀器的結果直接比，沒考慮方法學差異',
+    '把參考區間上下限當絕對的正常異常分界線，忽略灰色地帶',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2340,7 +2340,7 @@ const contentCpathOverview: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell Publishing, 2008.', relevance: '獸醫臨床病理學最經典的全方位教科書' },
+    { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell Publishing, 2008.', relevance: '獸醫臨床病理學最經典的綜合教科書' },
     { type: 'textbook', citation: 'Rizzi TE, Valenciano AC, Cowell RL, et al. Atlas of Canine and Feline Urinalysis. Wiley-Blackwell, 2017.', relevance: '實驗室前分析品管參考' },
     { type: 'guideline', citation: 'Friedrichs KR et al. "ASVCP reference interval guidelines: determination of de novo reference intervals in veterinary species and other related topics." Vet Clin Pathol 2012;41(4):441-453.', relevance: 'ASVCP 獸醫參考區間建立指引' },
     { type: 'journal', citation: 'Flatland B et al. "ASVCP quality assurance guidelines: control of preanalytical, analytical, and postanalytical factors for urinalysis, cytology, and clinical chemistry in veterinary laboratories." Vet Clin Pathol 2014;43(1):92-109.', relevance: '獸醫實驗室三階段品質管控指南' },
@@ -2349,12 +2349,12 @@ const contentCpathOverview: NodeContent = {
   created_at: now,
 };
 
-/** 免疫學基礎 — 概念型 */
+/** 免疫學基礎，概念型 */
 const contentImmunology: NodeContent = {
   id: 'CONTENT-CPATH-L1-003',
   node_id: 'CPATH-L1-003',
   version: 1,
-  summary: '免疫學是理解感染性疾病、自體免疫疾病與過敏反應的基礎。獸醫臨床病理學中的免疫相關檢查（如抗體檢測、免疫螢光、過敏原檢測）都建立在先天性與後天性免疫的核心機轉上，且犬貓免疫系統存在重要的物種差異。',
+  summary: '免疫學是看懂感染症、自體免疫、過敏反應的底層。獸醫臨床病理裡那些免疫相關檢查（抗體檢測、免疫螢光、過敏原檢測）都建立在先天性跟後天性免疫的機轉上。犬貓免疫系統還有不少物種差異要記得。',
   learning_objectives: [
     '區分先天性免疫（Innate Immunity）與後天性免疫（Adaptive Immunity）的機制與角色',
     '列舉主要抗體類別（IgG、IgM、IgA、IgE）的結構與功能',
@@ -2363,13 +2363,13 @@ const contentImmunology: NodeContent = {
     '說明犬貓免疫系統的物種特異性差異',
   ],
   key_points: [
-    '先天性免疫：非特異性、快速反應（分鐘至小時），包括物理屏障、吞噬細胞、補體、NK 細胞',
-    '後天性免疫：抗原特異性、具記憶性，分為體液免疫（B 細胞/抗體）與細胞免疫（T 細胞）',
-    '犬有 4 種 IgG 亞型（IgG1-4），貓僅有 IgG1 和 IgG2——影響抗體介導疾病的表現',
-    'Type I（即時型/IgE 介導）：犬異位性皮膚炎、貓氣喘',
-    'Type II（抗體介導細胞毒性）：IMHA、IMTP、新生兒等免疫溶血',
-    'Type III（免疫複合物）：系統性紅斑狼瘡、血管炎',
-    'Type IV（延遲型/T 細胞介導）：接觸性皮膚炎、肉芽腫',
+    '先天性免疫：非特異性、快（分鐘到小時），包含物理屏障、吞噬細胞、補體、NK 細胞',
+    '後天性免疫：抗原特異性、有記憶，分體液免疫（B 細胞、抗體）跟細胞免疫（T 細胞）',
+    '犬有 4 種 IgG 亞型（IgG1-4），貓只有 IgG1 跟 IgG2，影響抗體介導疾病的表現',
+    'Type I（即時型，IgE 介導）：犬異位性皮膚炎、貓氣喘',
+    'Type II（抗體介導細胞毒性）：IMHA、IMTP、新生兒同種免疫溶血',
+    'Type III（免疫複合物）：SLE、血管炎',
+    'Type IV（延遲型，T 細胞介導）：接觸性皮膚炎、肉芽腫',
   ],
   body: `# 免疫學基礎 (Basic Immunology)
 
@@ -2394,7 +2394,7 @@ const contentImmunology: NodeContent = {
 
 後天性免疫具有抗原特異性與免疫記憶，反應較慢（數天）但精準：
 
-#### 體液免疫（Humoral Immunity — B 細胞）
+#### 體液免疫（Humoral Immunity，B 細胞）
 B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（Immunoglobulin）。
 
 #### 抗體類別
@@ -2406,13 +2406,13 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
 | IgA | 二聚體（分泌型） | 黏膜免疫（腸道、呼吸道、淚液） | 黏膜防禦的第一線 |
 | IgE | 單體，血清含量極低 | 與肥大細胞結合→過敏反應、抗寄生蟲 | Type I 過敏（異位性皮膚炎） |
 
-**犬貓差異**：犬有 4 種 IgG 亞型（IgG1-4），貓僅有 IgG1 和 IgG2。犬 IgG4 是非補體活化型，在某些免疫疾病中扮演調節角色。
+犬貓差異：犬有 4 種 IgG 亞型（IgG1-4），貓僅有 IgG1 和 IgG2。犬 IgG4 是非補體活化型，在某些免疫疾病中扮演調節角色。
 
-#### 細胞免疫（Cell-mediated Immunity — T 細胞）
-- **CD4+ Helper T 細胞**：Th1（細胞免疫/IFN-γ）vs Th2（體液免疫/IL-4, IL-5）平衡
-- **CD8+ Cytotoxic T 細胞**：殺死被感染/腫瘤細胞
-- **Regulatory T 細胞（Treg）**：抑制過度免疫反應，維持免疫耐受
-- **Memory T 細胞**：長期免疫記憶基礎
+#### 細胞免疫（Cell-mediated Immunity，T 細胞）
+- CD4+ Helper T 細胞：Th1（細胞免疫/IFN-γ）vs Th2（體液免疫/IL-4, IL-5）平衡
+- CD8+ Cytotoxic T 細胞：殺死被感染/腫瘤細胞
+- Regulatory T 細胞（Treg）：抑制過度免疫反應，維持免疫耐受
+- Memory T 細胞：長期免疫記憶基礎
 
 ### 補體系統（Complement System）
 
@@ -2426,7 +2426,7 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
 
 最終共同途徑→形成 MAC（Membrane Attack Complex）→ 溶解目標細胞。
 
-## 二、過敏反應分型 — Gell & Coombs 分類 (Hypersensitivity Reactions)
+## 二、過敏反應分型，Gell & Coombs 分類 (Hypersensitivity Reactions)
 
 | 類型 | 機制 | 時間 | 犬貓臨床實例 |
 |------|------|------|------------|
@@ -2450,10 +2450,10 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
 ## 三、常見陷阱 (Common Pitfalls)
 
 ### 臨床免疫學判讀陷阱
-- **自體凝集 vs 緡錢排列**：滴入生理食鹽水後，自體凝集不會消散（IMHA），緡錢排列會消散
-- **Coombs test 假陰性**：使用類固醇治療後可能轉陰；需在開始免疫抑制治療前採樣
-- **IgE 檢測的限制**：血清過敏原特異性 IgE（ASIS）的敏感度與特異度在犬約 60-80%，陽性不等於臨床相關
-- **疫苗效價判讀**：犬 CPV/CDV 抗體效價陽性代表有保護力，但效價值的高低不一定與保護程度成正比
+- 自體凝集 vs 緡錢排列：滴入生理食鹽水後，自體凝集不會消散（IMHA），緡錢排列會消散
+- Coombs test 假陰性：使用類固醇治療後可能轉陰；需在開始免疫抑制治療前採樣
+- IgE 檢測的限制：血清過敏原特異性 IgE（ASIS）的敏感度與特異度在犬約 60-80%，陽性不等於臨床相關
+- 疫苗效價判讀：犬 CPV/CDV 抗體效價陽性代表有保護力，但效價值的高低不一定與保護程度成正比
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2471,12 +2471,12 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
 | IMHA 的自體抗原身份 | 多數犬 IMHA 的具體自體抗原仍不明，限制了標靶治療的發展 | Level III |
 | 貓 IgE 在過敏疾病中的角色 | 貓的 IgE 研究遠少於犬，皮內試驗和血清 IgE 檢測的臨床相關性不明確 | Level III |
 | 疫苗接種頻率與免疫持續時間 | 犬 CPV/CDV 核心疫苗保護力可能持續 5-7 年以上，但現行指引仍建議 3 年補強 | Level II |`,
-  clinical_pearl: '面對疑似免疫介導疾病（如 IMHA、IMTP）時，務必在開始免疫抑制治療（Prednisolone）之前完成所有免疫學檢查（Coombs test、ANA、血液抹片）。一旦開始類固醇治療，這些檢查的敏感度會顯著降低，可能導致假陰性而喪失確診機會。',
+  clinical_pearl: '懷疑免疫介導疾病（IMHA、IMTP）的時候，一定要在開始免疫抑制治療（prednisolone）之前把所有免疫學檢查抽完（Coombs test、ANA、血液抹片）。類固醇一打下去，這些檢查敏感度就大幅下降，常常變假陰性，確診機會就沒了。',
   common_mistakes: [
-    '將 Coombs test 陰性直接排除 IMHA——敏感度約 60-70%，陰性不排除',
-    '在過敏原檢測中，將 IgE 陽性直接等同於臨床過敏——需結合病史與臨床表現',
-    '忽略犬貓免疫球蛋白的物種差異，直接套用犬的免疫學概念於貓',
-    '混淆「免疫缺陷」與「免疫抑制」——前者為先天缺陷，後者為後天因素（藥物、疾病）',
+    'Coombs test 陰性就排除 IMHA，這個檢查敏感度只有 60-70%',
+    '過敏原檢測 IgE 陽性直接當臨床過敏，要對照病史跟臨床表現',
+    '忽略犬貓免疫球蛋白的物種差異，把犬的免疫學概念套到貓身上',
+    '把「免疫缺陷」跟「免疫抑制」混在一起，前者先天、後者後天（藥物、疾病）',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2499,12 +2499,12 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
   created_at: now,
 };
 
-/** 微生物學基礎 — 概念型 */
+/** 微生物學基礎，概念型 */
 const contentMicrobiology: NodeContent = {
   id: 'CONTENT-CPATH-L1-004',
   node_id: 'CPATH-L1-004',
   version: 1,
-  summary: '微生物學是感染性疾病診斷的基礎，涵蓋細菌、真菌、病毒與寄生蟲的分類與致病機制。了解犬貓常見病原體的特性以及抗微生物抗藥性（AMR）趨勢，對臨床病理標本判讀與治療決策至關重要。',
+  summary: '微生物學是感染症診斷的基底，涵蓋細菌、真菌、病毒、寄生蟲的分類跟致病機制。犬貓常見病原體的特性、抗微生物抗藥性（AMR）的趨勢，這兩塊不熟，臨床病理樣本判讀跟治療決策都會出狀況。',
   learning_objectives: [
     '依 Gram 染色、形態與需氧性分類常見獸醫細菌病原',
     '列舉犬貓常見的真菌感染（淺表性與深部系統性）及其診斷方法',
@@ -2513,13 +2513,13 @@ const contentMicrobiology: NodeContent = {
     '解釋培養與藥敏試驗（C&S）在臨床決策中的角色',
   ],
   key_points: [
-    'Gram 陽性球菌（Staphylococcus, Streptococcus, Enterococcus）是犬貓皮膚與泌尿道感染最常見病原',
-    'Gram 陰性桿菌（E. coli, Pseudomonas, Proteus）在泌尿道與耳道感染中重要',
-    '犬皮膚主要病原為 S. pseudintermedius（非 S. aureus），其多重抗藥型為 MRSP',
-    'Malassezia pachydermatis 是犬最常見的皮膚酵母菌，在皮膚細胞學中高度常見',
-    '皮癬菌（Dermatophytes）以 Microsporum canis 最常見於犬貓，具人畜共通潛力',
-    '系統性真菌（Blastomyces、Histoplasma、Coccidioides）在美國多見，台灣以 Cryptococcus 為主',
-    '抗生素使用前採樣培養是避免培養失敗的關鍵原則',
+    'Gram 陽性球菌（Staphylococcus、Streptococcus、Enterococcus）是犬貓皮膚跟泌尿道感染最常見的病原',
+    'Gram 陰性桿菌（E. coli、Pseudomonas、Proteus）在泌尿道跟耳道感染裡很重要',
+    '犬皮膚主要病原是 S. pseudintermedius（不是 S. aureus），多重抗藥型是 MRSP',
+    'Malassezia pachydermatis 是犬最常見的皮膚酵母菌，皮膚細胞學常常看到',
+    '皮癬菌以 Microsporum canis 在犬貓最常見，有人畜共通潛力',
+    '系統性真菌（Blastomyces、Histoplasma、Coccidioides）美國多，台灣以 Cryptococcus 為主',
+    '抗生素用下去之前先採培養，這條規則記得就對了',
   ],
   body: `# 微生物學基礎 (Basic Microbiology)
 
@@ -2540,23 +2540,23 @@ Gram 染色是細菌快速分類的基石，決定經驗性抗生素選擇：
 | 立克次體 | Ehrlichia canis、Anaplasma spp. | 血液細胞內寄生 |
 
 ### 需氧性分類
-- **專性需氧菌**：Pseudomonas（耳道感染的重要病原）
-- **兼性厭氧菌**：多數腸內菌（E. coli, Enterococcus）
-- **專性厭氧菌**：Clostridium, Bacteroides, Fusobacterium（深部傷口、腹腔感染）
+- 專性需氧菌：Pseudomonas（耳道感染的重要病原）
+- 兼性厭氧菌：多數腸內菌（E. coli, Enterococcus）
+- 專性厭氧菌：Clostridium, Bacteroides, Fusobacterium（深部傷口、腹腔感染）
 
 ### 犬貓常見細菌感染
 
 #### 犬
-- **皮膚**：S. pseudintermedius（正常菌叢可在免疫力下降時致病）
-- **泌尿道**：E. coli（~50%）、Staphylococcus、Proteus、Enterococcus
-- **耳道**：S. pseudintermedius、Pseudomonas（慢性/抗藥性）、Proteus
-- **呼吸道**：Bordetella bronchiseptica、Mycoplasma cynos
+- 皮膚：S. pseudintermedius（正常菌叢可在免疫力下降時致病）
+- 泌尿道：E. coli（~50%）、Staphylococcus、Proteus、Enterococcus
+- 耳道：S. pseudintermedius、Pseudomonas（慢性/抗藥性）、Proteus
+- 呼吸道：Bordetella bronchiseptica、Mycoplasma cynos
 
 #### 貓
-- **泌尿道**：E. coli（最常見）；但貓 < 10 歲的 FLUTD 多為無菌性
-- **上呼吸道**：Bordetella、Chlamydophila felis、Mycoplasma felis
-- **皮膚**：S. pseudintermedius（較犬少見）、Pasteurella multocida（咬傷）
-- **膿胸**：混合感染（Pasteurella + 厭氧菌常見）
+- 泌尿道：E. coli（最常見）；但貓 < 10 歲的 FLUTD 多為無菌性
+- 上呼吸道：Bordetella、Chlamydophila felis、Mycoplasma felis
+- 皮膚：S. pseudintermedius（較犬少見）、Pasteurella multocida（咬傷）
+- 膿胸：混合感染（Pasteurella + 厭氧菌常見）
 
 ## 二、真菌學 (Mycology)
 
@@ -2595,17 +2595,17 @@ Gram 染色是細菌快速分類的基石，決定經驗性抗生素選擇：
 | FCV | RNA, 無套膜 | 貓杯狀病毒 | PCR、病毒分離 |
 
 ### 病毒特性與臨床相關
-- **無套膜病毒**（CPV, FPV, FCV）：環境抵抗力強，需強效消毒劑
-- **有套膜病毒**（FeLV, FIV, CDV）：環境脆弱，常規消毒有效
-- **反轉錄病毒**（FeLV, FIV）：可整合宿主基因體，終身感染
+- 無套膜病毒（CPV, FPV, FCV）：環境抵抗力強，需強效消毒劑
+- 有套膜病毒（FeLV, FIV, CDV）：環境脆弱，常規消毒有效
+- 反轉錄病毒（FeLV, FIV）：可整合宿主基因體，終身感染
 
 ## 四、抗微生物抗藥性 (Antimicrobial Resistance, AMR)
 
 ### 主要抗藥機制
-- **酵素降解**：β-lactamase 水解 Penicillins/Cephalosporins
-- **標靶修改**：mecA 基因→PBP2a→Methicillin 抗藥性（MRSP/MRSA）
-- **外排幫浦**：多重抗藥性 Pseudomonas
-- **滲透障礙**：外膜 Porin 突變→Gram (−) 菌的碳青黴烯類抗藥性
+- 酵素降解：β-lactamase 水解 Penicillins/Cephalosporins
+- 標靶修改：mecA 基因→PBP2a→Methicillin 抗藥性（MRSP/MRSA）
+- 外排幫浦：多重抗藥性 Pseudomonas
+- 滲透障礙：外膜 Porin 突變→Gram (−) 菌的碳青黴烯類抗藥性
 
 ### 台灣獸醫重要抗藥菌
 
@@ -2617,9 +2617,9 @@ Gram 染色是細菌快速分類的基石，決定經驗性抗生素選擇：
 | Multidrug-resistant Pseudomonas | 慢性耳道/傷口感染 | 僅少數藥物有效（需藥敏） |
 
 ### 負責任抗生素使用原則
-1. 盡可能在使用抗生素**前**採樣做培養（C&S）
+1. 盡可能在使用抗生素前採樣做培養（C&S）
 2. 優先選擇窄效抗生素（Narrow-spectrum first）
-3. 深層或反覆感染**必須**做 C&S
+3. 深層或反覆感染必須做 C&S
 4. 遵循 ISCAID（International Society for Companion Animal Infectious Diseases）用藥指引
 5. 避免對無菌性疾病經驗性使用抗生素（如貓下泌尿道疾病）
 
@@ -2631,18 +2631,18 @@ Gram 染色是細菌快速分類的基石，決定經驗性抗生素選擇：
 | 貓無症狀菌尿（Subclinical bacteriuria）是否需要治療 | 目前共識傾向不治療，但糖尿病貓或免疫抑制貓是否為例外仍有爭議 | Level III |
 | 系統性抗真菌藥物在貓 Cryptococcosis 的最佳療程 | Fluconazole 為首選，但停藥時機（抗原效價轉陰 vs 固定療程）無統一共識 | Level III |
 | 台灣犬貓 AMR 監測數據 | 相較歐美，台灣缺乏系統性的伴侶動物 AMR 監測計畫 | Level IV |`,
-  clinical_pearl: '在細胞學上看到球菌（Cocci），不要自動假設是 Staphylococcus。犬皮膚的確以 S. pseudintermedius 最常見，但耳道深部的球菌可能是 Enterococcus（對 Cephalosporins 天然抗藥），而咬傷感染的桿菌通常是 Pasteurella（對 Amoxicillin 敏感）。辨識感染部位與可能的菌種，是選擇正確經驗性抗生素的第一步。',
+  clinical_pearl: '細胞學看到球菌不要自動當成 Staphylococcus。犬皮膚的確是 S. pseudintermedius 最常見，但耳道深部的球菌可能是 Enterococcus（對 cephalosporins 天然抗藥），咬傷感染的桿菌通常是 Pasteurella（對 amoxicillin 敏感）。先看感染部位、推測可能菌種，才能選對經驗性抗生素。',
   common_mistakes: [
-    '將犬皮膚感染的病原預設為 S. aureus——犬主要為 S. pseudintermedius',
-    '在已使用抗生素 3-5 天後才採樣做培養——抗生素會抑制細菌生長導致假陰性',
-    '所有貓下泌尿道症狀（FLUTD）都給抗生素——年輕貓多為無菌性（idiopathic cystitis）',
-    '忽略厭氧菌培養——深部傷口、腹腔感染常有厭氧菌參與，需特殊培養條件',
+    '把犬皮膚感染預設為 S. aureus，犬主要是 S. pseudintermedius',
+    '已經用抗生素 3-5 天才採培養，細菌被壓住，假陰性',
+    '所有貓 FLUTD 都打抗生素，年輕貓多半是 idiopathic cystitis 不是感染',
+    '忽略厭氧菌培養，深部傷口跟腹腔感染常有厭氧菌參與，要特殊培養條件',
   ],
   disease_data: null,
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: 'Gram 染色分類表後', type: 'annotated_image', description: 'Gram 染色顯微鏡照片集——Gram(+) 球菌、Gram(−) 桿菌、混合感染' },
+    { position: 'Gram 染色分類表後', type: 'annotated_image', description: 'Gram 染色顯微鏡照片集：Gram(+) 球菌、Gram(−) 桿菌、混合感染' },
     { position: '抗藥菌表後', type: 'flowchart', description: '抗生素選擇流程圖（從經驗性→C&S 導向的決策樹）' },
   ],
   interactive_placeholders: [
@@ -2659,12 +2659,12 @@ Gram 染色是細菌快速分類的基石，決定經驗性抗生素選擇：
   created_at: now,
 };
 
-/** 分析方法學與儀器原理 — 機轉型 */
+/** 分析方法學與儀器原理，機轉型 */
 const contentMethodology: NodeContent = {
   id: 'CONTENT-CPATH-L2-002',
   node_id: 'CPATH-L2-002',
   version: 1,
-  summary: '臨床病理學的分析階段依賴多種儀器與方法學，包括血液學分析儀（阻抗法與雷射流式細胞術）、生化分析儀（濕式與乾式化學）、免疫分析法（ELISA、側向流動免疫層析）以及即時檢驗（POCT）設備。理解這些原理有助於判讀結果時識別方法學限制與干擾因素。',
+  summary: '分析階段靠多種儀器跟方法：血液學分析儀（阻抗法、雷射流式）、生化分析儀（濕式、乾式）、免疫分析（ELISA、側向流動）跟 POCT 設備。原理懂了，判讀時才知道哪些方法學限制跟干擾要注意。',
   learning_objectives: [
     '比較血液學分析儀的阻抗法與雷射流式細胞術原理及各自限制',
     '區分濕式化學與乾式化學分析儀的技術差異及適用場景',
@@ -2673,12 +2673,12 @@ const contentMethodology: NodeContent = {
     '列舉常見的分析干擾因素（溶血、脂血、黃疸）對不同方法的影響',
   ],
   key_points: [
-    '阻抗法（Impedance/Coulter Principle）：依細胞體積分類，成本低但無法精確分辨白血球亞型',
-    '雷射流式細胞術（Laser Flow Cytometry）：多參數分析（大小、複雜度、螢光），5-part differential 更精確',
-    '濕式化學（Wet Chemistry）：液態試劑 + 比色法/酵素法，項目多但試劑需冷藏',
-    '乾式化學（Dry Chemistry）：試劑預載於載片（slide），單片操作，適合院內使用',
-    '免疫分析法：ELISA（定量，實驗室用）vs Lateral Flow（定性/半定量，院內快篩）',
-    '方法驗證三要素：精密度（Precision）、準確度（Accuracy）、線性範圍（Linearity）',
+    '阻抗法（Coulter）：靠細胞體積分類，便宜但白血球亞型分不清楚',
+    '雷射流式：多參數分析（大小、複雜度、螢光），5-part differential 更精確',
+    '濕式化學：液態試劑加比色法或酵素法，項目多但要冷藏',
+    '乾式化學：試劑預載在載片上，單片操作，院內用方便',
+    '免疫分析：ELISA 定量（實驗室用），lateral flow 定性或半定量（院內快篩）',
+    '方法驗證三要素：精密度、準確度、線性範圍',
   ],
   body: `# 分析方法學與儀器原理 (Analytical Methodology & Instrumentation)
 
@@ -2687,9 +2687,9 @@ const contentMethodology: NodeContent = {
 ### 阻抗法（Electrical Impedance / Coulter Principle）
 
 阻抗法是最早且最廣泛使用的血球計數技術：
-- **原理**：血球通過微孔（aperture）時改變電阻→產生脈衝→脈衝大小與細胞體積成正比
-- **應用**：RBC/WBC 計數、MCV 測定、血小板計數
-- **限制**：
+- 原理：血球通過微孔（aperture）時改變電阻→產生脈衝→脈衝大小與細胞體積成正比
+- 應用：RBC/WBC 計數、MCV 測定、血小板計數
+- 限制：
   - 僅依體積分類，WBC 只能做 3-part differential（小細胞/中等/大細胞）
   - 大血小板可能被計入 RBC，有核紅血球（nRBC）被計入 WBC
   - 貓血小板因易聚集→計數偏低（platelet clumping artifact）
@@ -2697,13 +2697,13 @@ const contentMethodology: NodeContent = {
 ### 雷射流式細胞術（Laser Flow Cytometry）
 
 進階血液學分析儀（如 IDEXX ProCyte Dx、Sysmex XT-2000iV）採用：
-- **原理**：雷射照射單一排列通過的血球→偵測前向散射光（大小）、側向散射光（內部複雜度）、螢光（核酸含量）
-- **應用**：5-part WBC differential（嗜中性球、淋巴球、單核球、嗜酸性球、嗜鹼性球）
-- **優勢**：
+- 原理：雷射照射單一排列通過的血球→偵測前向散射光（大小）、側向散射光（內部複雜度）、螢光（核酸含量）
+- 應用：5-part WBC differential（嗜中性球、淋巴球、單核球、嗜酸性球、嗜鹼性球）
+- 優勢：
   - 精確區分白血球亞型
   - 可偵測網狀紅血球（Reticulocyte，利用 RNA 螢光染色）
   - 有核紅血球（nRBC）偵測與校正
-- **限制**：成本高、仍需血液抹片確認異常 flag
+- 限制：成本高、仍需血液抹片確認異常 flag
 
 ### 血液學分析儀比較
 
@@ -2720,18 +2720,18 @@ const contentMethodology: NodeContent = {
 
 ### 濕式化學（Wet Chemistry）
 
-- **原理**：液態試劑與樣本在反應杯中混合→比色法（Spectrophotometry）或酵素法測定
-- **偵測原理**：單色光通過反應液→偵測吸光度（Absorbance）→Beer-Lambert 定律計算濃度
-- **代表機型**：Beckman AU 系列、Roche Cobas、Olympus（參考實驗室用）
-- **優點**：項目數多、線性範圍廣、試劑成本低
-- **缺點**：需液態試劑冷藏、樣本量較大、需定期校正
+- 原理：液態試劑與樣本在反應杯中混合→比色法（Spectrophotometry）或酵素法測定
+- 偵測原理：單色光通過反應液→偵測吸光度（Absorbance）→Beer-Lambert 定律計算濃度
+- 代表機型：Beckman AU 系列、Roche Cobas、Olympus（參考實驗室用）
+- 優點：項目數多、線性範圍廣、試劑成本低
+- 缺點：需液態試劑冷藏、樣本量較大、需定期校正
 
 ### 乾式化學（Dry Chemistry）
 
-- **原理**：試劑預載於多層薄膜載片（slide）→樣本滴入→擴散層過濾→反應層產色→反射光度法測定
-- **代表機型**：IDEXX Catalyst One/Dx、Fuji DRI-CHEM（院內 POCT 常見）
-- **優點**：無液態試劑、操作簡單、樣本量小（最低 ~0.1 mL）
-- **缺點**：單片成本高、線性範圍窄（極高/低值可能超範圍）、部分項目受溶血/脂血影響
+- 原理：試劑預載於多層薄膜載片（slide）→樣本滴入→擴散層過濾→反應層產色→反射光度法測定
+- 代表機型：IDEXX Catalyst One/Dx、Fuji DRI-CHEM（院內 POCT 常見）
+- 優點：無液態試劑、操作簡單、樣本量小（最低 ~0.1 mL）
+- 缺點：單片成本高、線性範圍窄（極高/低值可能超範圍）、部分項目受溶血/脂血影響
 
 ### 比較表
 
@@ -2747,21 +2747,21 @@ const contentMethodology: NodeContent = {
 ## 三、免疫分析法 (Immunoassay Principles)
 
 ### ELISA（Enzyme-Linked Immunosorbent Assay）
-- **直接/間接 ELISA**：偵測抗原或抗體
-- **Sandwich ELISA**：兩層抗體夾住目標抗原→高特異度
-- **競爭 ELISA**：樣本中的抗原與標記抗原競爭結合
-- **應用**：T4、Cortisol、cTnI、Progesterone 等定量檢測
+- 直接/間接 ELISA：偵測抗原或抗體
+- Sandwich ELISA：兩層抗體夾住目標抗原→高特異度
+- 競爭 ELISA：樣本中的抗原與標記抗原競爭結合
+- 應用：T4、Cortisol、cTnI、Progesterone 等定量檢測
 
 ### 側向流動免疫層析（Lateral Flow Assay / Immunochromatography）
-- **原理**：樣本沿硝酸纖維素膜毛細流動→遇標記抗體形成複合物→在 test line（固定抗體）被捕獲→顯色
-- **應用**：4Dx、FeLV/FIV 快篩、Heartworm Ag、CPV Ag（院內快篩的核心技術）
-- **優點**：10 分鐘、無需儀器、操作簡單
-- **限制**：定性（+/−），敏感度/特異度略低於實驗室 ELISA
+- 原理：樣本沿硝酸纖維素膜毛細流動→遇標記抗體形成複合物→在 test line（固定抗體）被捕獲→顯色
+- 應用：4Dx、FeLV/FIV 快篩、Heartworm Ag、CPV Ag（院內快篩的核心技術）
+- 優點：10 分鐘、無需儀器、操作簡單
+- 限制：定性（+/−），敏感度/特異度略低於實驗室 ELISA
 
 ### 化學發光免疫分析（CLIA/ECLIA）
-- **原理**：化學發光取代酵素呈色→偵測光子量
-- **優勢**：極高敏感度（pg/mL 等級）、寬動態範圍
-- **應用**：參考實驗室的 T4、TSH、Cortisol、cTnI 等
+- 原理：化學發光取代酵素呈色→偵測光子量
+- 優勢：極高敏感度（pg/mL 等級）、寬動態範圍
+- 應用：參考實驗室的 T4、TSH、Cortisol、cTnI 等
 
 ## 四、方法驗證與品管 (Method Validation & Quality Control)
 
@@ -2774,10 +2774,10 @@ const contentMethodology: NodeContent = {
 | 線性範圍（Linearity） | 測量結果與濃度成正比的範圍 | 序列稀釋實驗 |
 
 ### Westgard 多規則品管
-- **1-2s 警告規則**：一個 QC 值超過 ±2 SD→警告，不一定拒絕
-- **1-3s 拒絕規則**：一個 QC 值超過 ±3 SD→拒絕此批次
-- **2-2s 規則**：連續兩個 QC 值超過同側 ±2 SD→系統性偏差
-- **R-4s 規則**：一批中兩個 QC 值差距 > 4 SD→隨機誤差
+- 1-2s 警告規則：一個 QC 值超過 ±2 SD→警告，不一定拒絕
+- 1-3s 拒絕規則：一個 QC 值超過 ±3 SD→拒絕此批次
+- 2-2s 規則：連續兩個 QC 值超過同側 ±2 SD→系統性偏差
+- R-4s 規則：一批中兩個 QC 值差距 > 4 SD→隨機誤差
 
 ### 常見分析干擾
 
@@ -2795,12 +2795,12 @@ const contentMethodology: NodeContent = {
 | 乾式化學在極端值（重度氮血症、嚴重高血糖）的可靠性 | 超出線性範圍時自動稀釋功能的準確度存疑 | Level III |
 | 貓血小板計數的最佳方法 | 光學法（雷射）優於阻抗法，但血小板聚集仍導致低估；Sysmex 的螢光血小板計數可能更準確 | Level II |
 | AI 輔助血液抹片數位形態學 | 人醫已有 CellaVision 等系統，獸醫版本因物種差異需大量訓練資料 | Level IV |`,
-  clinical_pearl: '當院內乾式化學分析儀報告的值超出預期（如 BUN > 180 mg/dL），要注意可能已超出線性範圍。此時應用生理食鹽水手動稀釋樣本（如 1:2）重測，並將結果乘以稀釋倍數。若不確定線性範圍，查閱儀器操作手冊中每個項目的 reportable range。',
+  clinical_pearl: '院內乾式化學跑出來的值如果太離譜（像 BUN > 180 mg/dL），要當心已經超出線性範圍。用生理食鹽水手動稀釋（1:2）重測，結果再乘回去。線性範圍不確定就查儀器手冊，每個項目都有 reportable range。',
   common_mistakes: [
-    '忽略阻抗法 CBC 中有核紅血球（nRBC）對 WBC 計數的假性升高——需抹片確認並手動校正',
-    '將院內 POCT 與參考實驗室的結果直接比較趨勢——方法學不同可能有系統性偏差',
-    '在嚴重脂血樣本上直接報告生化結果——脂血干擾比色法，應離心去脂或改用不受干擾的方法',
-    '未定期執行品管（QC）就報告結果——特別是院內分析儀需每日/每批 QC',
+    '忽略 nRBC 對阻抗法 WBC 計數的假性升高，要看抹片手動校正',
+    '院內 POCT 跟參考實驗室的結果直接比趨勢，方法學不同會有系統性偏差',
+    '嚴重脂血的樣本還直接報生化結果，要離心去脂或換不受干擾的方法',
+    '沒定期 QC 就報結果，院內分析儀每天或每批都要做',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2823,12 +2823,12 @@ const contentMethodology: NodeContent = {
   created_at: now,
 };
 
-/** 即時檢驗判讀 — 診斷型 */
+/** 即時檢驗判讀，診斷型 */
 const contentPOCT: NodeContent = {
   id: 'CONTENT-CPATH-L4-014',
   node_id: 'CPATH-L4-014',
   version: 1,
-  summary: '即時檢驗（Point-of-Care Testing, POCT）是獸醫院內快速獲取實驗室結果的關鍵工具，涵蓋血液學、生化、血氣、凝血與免疫快篩等。正確理解 POCT 設備的優勢與限制、與參考實驗室結果的相關性差異，是避免判讀錯誤的基礎。',
+  summary: 'POCT 是院內快速拿到實驗室結果的工具，涵蓋血液學、生化、血氣、凝血、免疫快篩。設備優勢跟限制、跟參考實驗室結果的相關性差異，這兩點搞清楚才不會判讀失準。',
   learning_objectives: [
     '列舉獸醫院內常用的 POCT 設備類型及其適用檢查',
     '比較 POCT 與參考實驗室結果的相關性與常見差異',
@@ -2838,11 +2838,11 @@ const contentPOCT: NodeContent = {
   ],
   key_points: [
     'IDEXX Catalyst One/Dx：乾式化學生化分析，院內最普及，17 分鐘出結果',
-    'IDEXX ProCyte Dx：雷射流式 CBC + Reticulocyte，5-part differential，替代手動分類',
+    'IDEXX ProCyte Dx：雷射流式 CBC 加 reticulocyte，5-part differential 取代手動分類',
     'Abaxis VetScan VS2：離心式乾式化學，12 項 rotor panel，操作簡單',
-    'i-STAT（Abbott）：手持式血氣 + 電解質 + 乳酸，急診必備',
-    'POCT 優勢：速度快（5-17 分鐘）、樣本量小、即時決策支持',
-    'POCT 限制：線性範圍窄、精密度略低、部分項目與參考實驗室有系統性偏差',
+    'i-STAT（Abbott）：手持式血氣加電解質加乳酸，急診必備',
+    'POCT 優點：快（5-17 分鐘）、樣本量小、即時支援決策',
+    'POCT 限制：線性範圍窄、精密度略低、部分項目跟參考實驗室有系統性偏差',
   ],
   body: `# 即時檢驗判讀 (Point-of-Care Testing, POCT)
 
@@ -2888,11 +2888,11 @@ Point-of-Care Testing 指在病患護理現場（bedside/clinic）執行的即�
 | Heska Element i+ | 免疫螢光 | Heartworm Ag、4Dx |
 
 ### POCT 的適應症
-- **急診/重症**：即時血氣、電解質、乳酸、血糖、PCV/TP
-- **術前評估**：基本生化 + CBC 確認手術風險
-- **初診篩檢**：基本 panel 篩查主要器官功能
-- **治療監測**：糖尿病血糖曲線、ACTH stimulation test
-- **傳染病篩檢**：4Dx、FeLV/FIV、CPV Ag
+- 急診/重症：即時血氣、電解質、乳酸、血糖、PCV/TP
+- 術前評估：基本生化 + CBC 確認手術風險
+- 初診篩檢：基本 panel 篩查主要器官功能
+- 治療監測：糖尿病血糖曲線、ACTH stimulation test
+- 傳染病篩檢：4Dx、FeLV/FIV、CPV Ag
 
 ## 二、判讀要點 (Interpretation)
 
@@ -2923,12 +2923,12 @@ Point-of-Care Testing 指在病患護理現場（bedside/clinic）執行的即�
 
 ### 何時應送參考實驗室？
 
-1. **POCT 結果與臨床不符**：結果正常但臨床高度懷疑異常（或反之）
-2. **邊界值需精確判讀**：如 SDMA 14-20 μg/dL、T4 borderline
-3. **需要 POCT 未涵蓋的項目**：如蛋白電泳、特殊內分泌、凝血因子
-4. **病例需要法律/保險文件**：參考實驗室報告具法律效力
-5. **品管疑慮**：POCT QC 失敗或結果異常偏離
-6. **需要病理醫師判讀**：血液抹片、細胞學、骨髓
+1. POCT 結果與臨床不符：結果正常但臨床高度懷疑異常（或反之）
+2. 邊界值需精確判讀：如 SDMA 14-20 μg/dL、T4 borderline
+3. 需要 POCT 未涵蓋的項目：如蛋白電泳、特殊內分泌、凝血因子
+4. 病例需要法律/保險文件：參考實驗室報告具法律效力
+5. 品管疑慮：POCT QC 失敗或結果異常偏離
+6. 需要病理醫師判讀：血液抹片、細胞學、骨髓
 
 ### 台灣 POCT 使用現況
 
@@ -2966,12 +2966,12 @@ Point-of-Care Testing 指在病患護理現場（bedside/clinic）執行的即�
 | Freestyle Libre CGM 在貓糖尿病的準確度 | 多數研究顯示與靜脈血糖有中度相關，低血糖區間準確度較差 | Level II |
 | POCT cPLI（Spec cPL/SNAP cPL）取代 Lipase 做為胰臟炎診斷標準 | Spec cPL 敏感度/特異度優於傳統 Lipase，但仍非金標準 | Level II |
 | 院內 CBC 分析儀在急診的 WBC differential 可信度 | 嚴重左移或異常細胞時自動分類不準確，是否應常規搭配抹片仍有討論 | Level III |`,
-  clinical_pearl: '當 IDEXX ProCyte Dx 報告貓的血小板計數 < 100,000/μL 時，**必須**確認血液抹片的血小板聚集情況。操作步驟：在抹片尾端（feathered edge）用 100x 油鏡觀察→每個油鏡視野平均有 8-15 個血小板代表血小板數量正常（約 150,000-300,000/μL）。如果看到大團聚集，報告「血小板足量但有聚集，機器計數不可靠」。',
+  clinical_pearl: 'ProCyte Dx 跑出來貓血小板 < 100,000/μL 時，一定要去看抹片有沒有血小板聚集。步驟：抹片尾端（feathered edge）用 100x 油鏡，每個視野平均 8-15 個血小板就代表血小板數量正常（150,000-300,000/μL）。看到大團聚集就在報告上寫「血小板足量但有聚集，機器計數不可靠」。',
   common_mistakes: [
-    '完全信賴 POCT 結果而不做血液抹片確認——特別是異常 flag 出現時',
-    '將不同 POCT 設備（如 Catalyst vs VetScan）的結果直接比較趨勢',
-    '忽略 POCT 設備的定期品管（QC）維護——液態 QC 需每日/每週執行',
-    '在嚴重溶血/脂血樣本上直接報告所有 POCT 生化結果——需辨識受干擾項目',
+    '完全相信 POCT 結果不看抹片，異常 flag 出來時特別容易出錯',
+    '不同 POCT 設備（Catalyst vs VetScan）的結果直接比趨勢',
+    '忽略 POCT 設備定期 QC 維護，液態 QC 每天或每週都要做',
+    '嚴重溶血或脂血的樣本還直接報所有 POCT 生化結果，要先辨識被干擾的項目',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -2988,26 +2988,26 @@ Point-of-Care Testing 指在病患護理現場（bedside/clinic）執行的即�
     ],
     technique: '生化：IDEXX Catalyst 使用 CLIP（Catalyst CLIP）載入樣本（血清/血漿/全血），自動分配至乾式載片，約 8-17 分鐘出結果。CBC：IDEXX ProCyte Dx 使用 EDTA 全血 0.25 mL，自動進樣，雷射流式分析約 5 分鐘出結果。血氣：i-STAT 使用肝素全血注入卡匣（cartridge），2 分鐘出結果。快篩：SNAP 系列依指示加入樣本（全血/血清/血漿）+ 共軛物，按壓啟動，8-10 分鐘判讀。',
     normal_findings: [
-      { finding: '生化 panel 全項正常', description: '所有項目均在參考區間內', significance: '主要器官功能（肝腎）正常——但需注意 POCT 的參考區間可能與外送不同' },
-      { finding: 'CBC 正常，無 flag', description: 'RBC/WBC/PLT 正常，無異常 flag', significance: '血液學無明顯異常——仍建議高風險病例搭配抹片' },
+      { finding: '生化 panel 全項正常', description: '所有項目均在參考區間內', significance: '主要器官功能（肝腎）正常，但要注意 POCT 的參考區間可能跟外送不同' },
+      { finding: 'CBC 正常，無 flag', description: 'RBC/WBC/PLT 正常，無異常 flag', significance: '血液學沒明顯異常，但高風險病例還是建議搭配抹片' },
       { finding: '血氣正常', description: 'pH 7.35-7.45, pCO2 35-45, HCO3 18-24, Lactate < 2.5', significance: '酸鹼平衡正常、無組織低灌注' },
     ],
     abnormal_findings: [
-      { finding: 'SDMA 邊界升高（15-20 μg/dL）', description: 'POCT SDMA 輕度升高', significance: '可能為早期腎功能下降——建議送參考實驗室確認，並搭配 UPC、USG 綜合評估' },
-      { finding: '貓 PLT < 50,000（ProCyte）', description: '貓血小板計數極低但臨床無出血傾向', significance: '高度懷疑血小板聚集假象——必須確認抹片' },
-      { finding: 'Lactate > 4 mmol/L', description: '血氣分析乳酸明顯升高', significance: '組織低灌注/休克/敗血症指標——需緊急介入' },
-      { finding: 'SNAP cPL 陽性', description: '犬胰臟脂肪酶免疫反應性升高', significance: '高度提示胰臟炎——搭配腹部超音波確認' },
+      { finding: 'SDMA 邊界升高（15-20 μg/dL）', description: 'POCT SDMA 輕度升高', significance: '可能是早期腎功能下降，建議送參考實驗室確認，搭配 UPC、USG 一起評估' },
+      { finding: '貓 PLT < 50,000（ProCyte）', description: '貓血小板計數極低但臨床無出血傾向', significance: '高度懷疑血小板聚集假象，必須去確認抹片' },
+      { finding: 'Lactate > 4 mmol/L', description: '血氣分析乳酸明顯升高', significance: '組織低灌注、休克、敗血症指標，要緊急介入' },
+      { finding: 'SNAP cPL 陽性', description: '犬胰臟脂肪酶免疫反應性升高', significance: '高度提示胰臟炎，搭配腹部超音波確認' },
     ],
-    interpretation_guide: '1. 確認樣本品質（溶血/脂血/凝塊）。2. 確認 POCT 設備 QC 狀態。3. 將結果與臨床表現比對——不符時送參考實驗室確認。4. 注意各項目的方法學限制與已知干擾。5. POCT 適合篩檢與急診決策，確認性診斷仍應參考外送結果。6. 歷史趨勢追蹤應使用同一平台。',
+    interpretation_guide: '看 POCT 的順序：確認樣本品質（溶血、脂血、凝塊）。確認 POCT 設備 QC 狀態。把結果跟臨床對比，不符就送參考實驗室確認。注意每個項目的方法學限制跟已知干擾。POCT 適合篩檢跟急診決策，確診還是參考外送結果。歷史趨勢追蹤要用同一個平台。',
     pitfalls: [
-      '貓 EDTA 血小板聚集導致 PLT 假性極低',
-      '溶血樣本導致 K⁺、AST、LDH 假性升高',
+      '貓 EDTA 血小板聚集，PLT 假性偏低',
+      '溶血樣本把 K⁺、AST、LDH 推高',
       '嚴重脂血干擾比色法項目',
-      '超出線性範圍的極端值可能不準確',
-      'SNAP test 判讀時間不正確（過早/過晚）影響結果',
+      '超出線性範圍的極端值，結果可能不準',
+      'SNAP test 判讀時間不對（太早或太晚）',
     ],
-    sensitivity_specificity: 'IDEXX Catalyst 生化與參考實驗室相關性：BUN r=0.98, Creatinine r=0.97, ALT r=0.95, Glucose r=0.99。ProCyte Dx CBC：WBC r=0.97, RBC r=0.99, PLT r=0.85（犬）/r=0.65（貓，受聚集影響）。SNAP 4Dx Heartworm Ag：敏感度 > 99%（≥5 成蟲）、特異度 > 99%。SNAP cPL 犬：敏感度 ~95%、特異度 ~75%。',
-    cost_benefit: 'POCT 單次檢測成本高於外送（生化 panel 約 NT$800-1500 vs 外送 NT$500-800），但即時性無可取代。急診場景中 POCT 的 turnaround time（5-17 分鐘 vs 外送 24-72 小時）直接影響臨床決策時效。建議急診/手術場景使用 POCT，非急迫情況可考慮外送節省成本。',
+    sensitivity_specificity: 'IDEXX Catalyst 生化跟參考實驗室相關性：BUN r=0.98、Creatinine r=0.97、ALT r=0.95、Glucose r=0.99。ProCyte Dx CBC：WBC r=0.97、RBC r=0.99、PLT r=0.85（犬）、r=0.65（貓，受聚集影響）。SNAP 4Dx Heartworm Ag 敏感度 > 99%（≥ 5 成蟲）、特異度 > 99%。SNAP cPL 犬敏感度 95%、特異度 75%。',
+    cost_benefit: 'POCT 單次成本高於外送（生化 panel 約 NT$800-1500、外送 NT$500-800），但即時性沒得替代。急診裡 POCT 的 turnaround time（5-17 分鐘 vs 外送 24-72 小時）直接影響決策時效。急診跟手術用 POCT，非急迫可外送節省成本。',
   },
   procedure_data: null,
   visual_placeholders: [
@@ -3028,12 +3028,12 @@ Point-of-Care Testing 指在病患護理現場（bedside/clinic）執行的即�
   created_at: now,
 };
 
-/** 整合判讀與報告撰寫 — 概念型 */
+/** 整合判讀與報告撰寫，概念型 */
 const contentIntegratedReport: NodeContent = {
   id: 'CONTENT-CPATH-L5-001',
   node_id: 'CPATH-L5-001',
   version: 1,
-  summary: '整合判讀是臨床病理學的最高層次能力，將 CBC、生化、尿液分析、細胞學等多項檢查結果綜合為一個連貫的臨床敘事（clinical narrative），辨識疾病模式（pattern），並撰寫結構化報告有效傳達給臨床醫師。',
+  summary: '整合判讀是臨床病理學最上層的能力。要把 CBC、生化、尿液分析、細胞學那些結果編成一個連貫的臨床故事，抓出疾病模式，再寫成結構化的報告交給臨床醫師。',
   learning_objectives: [
     '將 CBC + 生化 + 尿液分析結果整合為連貫的臨床解讀',
     '辨識常見的疾病模式（肝臟模式、腎臟模式、DIC 模式等）',
@@ -3042,12 +3042,12 @@ const contentIntegratedReport: NodeContent = {
     '演練以病例為基礎的整合判讀流程',
   ],
   key_points: [
-    '整合判讀的核心是「看 pattern」而非「看單一數值」',
-    '肝臟模式：ALT/AST ↑ + ALP/GGT ↑ + Bilirubin ↑ + Albumin ↓ + BUN ↓ + Cholesterol ↓ + Glucose ↓（肝衰竭）',
-    '腎臟模式：BUN/Creatinine ↑ + SDMA ↑ + Phosphorus ↑ + USG < 1.030（犬）/< 1.035（貓）+ Potassium 變化',
-    'DIC 模式：PLT ↓ + PT/aPTT ↑ + Fibrinogen ↓ + D-dimer ↑ + Schistocytes（血液抹片）',
-    '報告結構：Findings（客觀發現）→ Interpretation（臨床解讀）→ Recommendation（建議）',
-    '永遠將實驗室結果放回臨床情境中：同樣的 Creatinine 2.5 mg/dL 在脫水犬 vs 穩定腎病犬意義完全不同',
+    '整合判讀的核心是「看 pattern」，不是「看單一數值」',
+    '肝臟模式：ALT/AST↑、ALP/GGT↑、Bilirubin↑、Albumin↓、BUN↓、Cholesterol↓、Glucose↓（肝衰竭）',
+    '腎臟模式：BUN/Cr↑、SDMA↑、Phosphorus↑、USG < 1.030（犬）或 < 1.035（貓）、K 變化',
+    'DIC 模式：PLT↓、PT/aPTT↑、Fibrinogen↓、D-dimer↑、抹片看到 schistocytes',
+    '報告結構三段：Findings（客觀發現）、Interpretation（臨床解讀）、Recommendation（建議）',
+    '實驗室結果要放回臨床情境裡看：同樣 Cr 2.5 mg/dL，脫水犬跟穩定腎病犬意義完全不同',
   ],
   body: `# 整合判讀與報告撰寫 (Integrated Interpretation & Report Writing)
 
@@ -3057,31 +3057,31 @@ const contentIntegratedReport: NodeContent = {
 
 整合判讀不是逐一報告每個異常值，而是將所有結果編織成一個臨床故事。建議的判讀流程：
 
-**Step 1：確認樣本品質**
+Step 1：確認樣本品質
 - 溶血？脂血？黃疸？凝塊？
 - 採集時間（禁食？藥物？）
 - 影響哪些項目的可靠性？
 
-**Step 2：概覽所有結果，找出 Pattern**
-- 不要逐項判讀——先快速掃過所有紅字，辨識哪個器官系統受影響
+Step 2：概覽所有結果，找出 Pattern
+- 不要逐項判讀。先快速掃過所有紅字，辨識哪個器官系統受影響
 - 問自己：「這組異常指向同一個器官/疾病嗎？」
 
-**Step 3：建立鑑別診斷清單**
+Step 3：建立鑑別診斷清單
 - 根據 Pattern 列出可能的鑑別診斷
 - 用其他結果（CBC、尿液、細胞學）排除或支持
 
-**Step 4：與臨床資訊整合**
+Step 4：與臨床資訊整合
 - 病史、理學檢查、影像學結果
 - 實驗室結果支持或反駁臨床懷疑？
 
-**Step 5：撰寫報告與建議**
-- 提出最可能的診斷或需要進一步確認的方向
+Step 5：撰寫報告與建議
+- 提出最可能的診斷或需要再確認的方向
 
 ### 整合而非孤立
 
 | 錯誤做法 | 正確做法 |
 |---------|---------|
-| 「ALT 升高，建議追蹤」 | 「ALT 顯著升高（1200 U/L, >10x URL）搭配 ALP 輕度升高（220 U/L, ~2x URL），此模式提示急性肝細胞損傷而非膽汁淤積。建議排除感染性/中毒性肝炎、缺氧性損傷。建議：肝炎 panel + 腹部超音波。」 |
+| 「ALT 升高，建議追蹤」 | 「ALT 大幅升高（1200 U/L, >10x URL）搭配 ALP 輕度升高（220 U/L, ~2x URL），此模式提示急性肝細胞損傷而非膽汁淤積。建議排除感染性/中毒性肝炎、缺氧性損傷。建議：肝炎 panel + 腹部超音波。」 |
 | 「BUN/Cr 升高，腎前性或腎性」 | 「BUN 85 mg/dL, Cr 4.2 mg/dL 搭配 USG 1.015（犬），顯示腎臟無法適當濃縮尿液（預期腎前性氮血症的 USG 應 > 1.030）。此模式支持腎性氮血症，IRIS Stage 3。Phosphorus 升高與 Potassium 正常尚符合慢性腎病代償期。建議：UPC、血壓測量、腹部超音波評估腎臟結構。」 |
 
 ## 二、常見疾病模式 (Common Disease Patterns)
@@ -3146,7 +3146,7 @@ const contentIntegratedReport: NodeContent = {
 | aPTT | ↑ | 凝血因子消耗 |
 | Fibrinogen | ↓ | 消耗（但急性期蛋白可能代償性升高） |
 | D-dimer | ↑↑ | 纖維蛋白溶解產物 |
-| Schistocytes | 出現 | 血液抹片——紅血球被纖維蛋白絲切割 |
+| Schistocytes | 出現 | 血液抹片，紅血球被纖維蛋白絲切割 |
 | Antithrombin | ↓ | 消耗 |
 
 ### 溶血模式
@@ -3191,7 +3191,7 @@ const contentIntegratedReport: NodeContent = {
   [將異常值整合為疾病模式，提出可能的鑑別診斷]
 
 三、建議（Recommendations）
-  [建議進一步檢查或臨床處置]
+  [建議後續檢查或臨床處置]
 
 四、備註（Notes）
   [樣本品質、方法學限制、任何需要注意的事項]
@@ -3199,11 +3199,11 @@ const contentIntegratedReport: NodeContent = {
 
 ### 有效溝通技巧
 
-1. **量化程度**：「ALT 顯著升高（10x URL）」而非只說「ALT 升高」
-2. **說明意義**：「此模式提示急性肝細胞損傷」而非只列出數字
-3. **排序建議**：將最重要/最緊急的建議放最前面
-4. **明確不確定性**：「不排除 X 的可能」而非含糊帶過
-5. **使用臨床語言**：與臨床醫師溝通時避免過度技術化
+1. 量化程度：「ALT 大幅升高（10x URL）」而非只說「ALT 升高」
+2. 說明意義：「此模式提示急性肝細胞損傷」而非只列出數字
+3. 排序建議：將最重要/最緊急的建議放最前面
+4. 明確不確定性：「不排除 X 的可能」而非含糊帶過
+5. 使用臨床語言：與臨床醫師溝通時避免過度技術化
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3221,12 +3221,12 @@ const contentIntegratedReport: NodeContent = {
 | AI 自動判讀系統在獸醫的可靠性 | 缺乏大規模獸醫臨床驗證，現有系統多基於規則（rule-based）而非 AI | Level IV |
 | 多次檢查（serial monitoring）的最適間隔 | 不同疾病的最適追蹤間隔缺乏標準化（如 CKD 每 3-6 個月？AKI 每 24-48 小時？） | Level III |
 | 品種特異性參考區間對整合判讀的影響 | 使用通用 RI 可能導致特定品種的過度/不足診斷（如 Greyhound 的高 Creatinine） | Level III |`,
-  clinical_pearl: '整合判讀最重要的一步是「先看全貌、再看細節」。拿到一份報告時，不要馬上看紅字——先問三個問題：(1) 這隻動物為什麼來看診？(2) 臨床醫師最擔心什麼？(3) 哪個器官系統最可能有問題？帶著這個框架去看結果，你會發現 Pattern 自動浮現，而不會迷失在一堆數字裡。',
+  clinical_pearl: '整合判讀最關鍵的一步是「先看全貌再看細節」。拿到報告不要馬上盯紅字，先問三個問題：這隻動物為什麼來看診？臨床醫師最擔心什麼？哪個器官系統最可能有問題？帶這個框架去看結果，pattern 會自己浮出來，不會卡在一堆數字裡。',
   common_mistakes: [
-    '逐項報告每個異常值而未整合為疾病模式——「ALT 高、ALP 高、Bilirubin 高」應該整合為「膽汁淤積合併肝細胞損傷模式」',
-    '忽略正常結果的診斷價值——如 CKD 病患 Phosphorus 仍在正常範圍，代表可能還在 IRIS Stage 1-2',
-    '未考慮臨床情境就判讀——脫水犬的 BUN/Cr 升高可能是腎前性，補液後需重新評估',
-    '報告中只列數字不提建議——臨床醫師需要可操作的下一步方向',
+    '逐項報告每個異常值沒整合成疾病模式，「ALT 高、ALP 高、Bilirubin 高」應該整合成「膽汁淤積合併肝細胞損傷模式」',
+    '忽略正常結果的診斷價值，像 CKD 病人 Phosphorus 還在正常範圍，代表可能還在 IRIS Stage 1-2',
+    '沒考慮臨床情境就判讀，脫水犬的 BUN/Cr 升高可能是腎前性，補液後要重評估',
+    '報告只有數字沒建議，臨床醫師需要的是可以操作的下一步',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -3236,7 +3236,7 @@ const contentIntegratedReport: NodeContent = {
     { position: '報告撰寫結構後', type: 'comparison_table', description: '好報告 vs 差報告的對照範例' },
   ],
   interactive_placeholders: [
-    { position: '文末', type: 'interactive_quiz', description: '病例式整合判讀練習——給定 CBC + 生化 + UA 結果，辨識 Pattern 並撰寫判讀' },
+    { position: '文末', type: 'interactive_quiz', description: '病例式整合判讀練習：給定 CBC + 生化 + UA 結果，辨識 Pattern 並撰寫判讀' },
   ],
   drug_api_links: [],
   references: [

@@ -58,7 +58,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '動物的外耳道',
     ],
     correct_answer: '環境中（地毯、床鋪、土壤裂縫）',
-    explanation: '成年跳蚤僅占跳蚤群體的 5%，其餘 95%（卵、幼蟲、蛹）存在於環境中。因此跳蚤控制必須包含環境管理。跳蚤蛹對殺蟲劑高度抗性，可在環境中存活數月。台灣全年溫暖潮濕，跳蚤生活史不間斷，需全年預防。',
+    explanation: '成年跳蚤僅占跳蚤群體的 5%，其餘 95%（卵、幼蟲、蛹）存在於環境中。所以跳蚤控制必須包含環境管理。跳蚤蛹對殺蟲劑高度抗性，可在環境中存活數月。台灣全年溫暖潮濕，跳蚤生活史不間斷，需全年預防。',
     difficulty: 2, spaced_rep: true, tags: ['FAD', 'flea_lifecycle', '台灣'], image_placeholder: null,
   },
   // MCQ 6: Skin scraping depth
@@ -109,7 +109,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: '所有皮膚癬菌種在伍氏燈（Wood lamp）照射下都會產生蘋果綠色螢光。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '僅 Microsporum canis（約占犬貓皮膚癬菌感染的 70%）的部分菌株會在伍氏燈下產生蘋果綠色螢光，且陽性率僅約 50%。Trichophyton 和 Microsporum gypseum 不螢光。因此伍氏燈陰性不能排除皮膚癬菌感染，仍需真菌培養確認。',
+    explanation: '僅 Microsporum canis（約占犬貓皮膚癬菌感染的 70%）的部分菌株會在伍氏燈下產生蘋果綠色螢光，且陽性率僅約 50%。Trichophyton 和 Microsporum gypseum 不螢光。所以伍氏燈陰性不能排除皮膚癬菌感染，仍需真菌培養確認。',
     difficulty: 2, spaced_rep: true, tags: ['dermatophytosis', 'Wood_lamp', 'diagnosis'], image_placeholder: null,
   },
   // True/False 10: Sarcoptic mange location
@@ -203,7 +203,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-DERM-L0-006', node_id: 'DERM-L0-001', question_type: 'case_based',
-    question: '一位飼主帶 3 歲柴犬就診，主訴「最近掉很多毛」。進一步問診發現犬隻不搔癢、食慾正常、無接觸其他動物。理學檢查見雙側對稱性脫毛，皮膚無紅斑或鱗屑。最應優先考慮的病因類別是？',
+    question: '一位飼主帶 3 歲柴犬就診，主訴「最近掉很多毛」。後續問診發現犬隻不搔癢、食慾正常、無接觸其他動物。理學檢查見雙側對稱性脫毛，皮膚無紅斑或鱗屑。最應優先考慮的病因類別是？',
     options: [
       '過敏性皮膚病',
       '內分泌性脫毛（甲狀腺低下、庫欣氏症等）',
@@ -242,14 +242,14 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '皮下組織（hypodermis）→ 表皮（epidermis）→ 真皮（dermis）',
     ],
     correct_answer: '表皮（epidermis）→ 真皮（dermis）→ 皮下組織（hypodermis）',
-    explanation: '皮膚由外到內依序為：表皮（epidermis，含角質細胞為主）→ 真皮（dermis，含膠原蛋白、彈性纖維、血管、神經）→ 皮下組織（hypodermis/subcutis，主要為脂肪組織）。表皮與真皮之間的基底膜（basement membrane zone）對皮膚完整性至關重要。',
+    explanation: '皮膚由外到內依序為：表皮（epidermis，含角質細胞為主）→ 真皮（dermis，含膠原蛋白、彈性纖維、血管、神經）→ 皮下組織（hypodermis/subcutis，主要為脂肪組織）。表皮與真皮之間的基底膜（basement membrane zone）對皮膚完整性不能省。',
     difficulty: 1, spaced_rep: true, tags: ['anatomy', 'skin_structure'], image_placeholder: null,
   },
   {
     id: 'Q-DERM-L1-001-B', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '犬的表皮厚度相較於人類如何？其臨床意義為？',
     options: [
-      '犬的表皮較人類厚，因此對外用藥物吸收較差',
+      '犬的表皮較人類厚，所以對外用藥物吸收較差',
       '犬的表皮較人類薄（3-5 層 vs 人類 10-15 層），對外界刺激更敏感',
       '犬的表皮與人類等厚',
       '犬的表皮較人類薄，但有更厚的角質層補償',
@@ -377,7 +377,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-DERM-L1-002-E', node_id: 'DERM-L1-002', question_type: 'case_based',
-    question: '一隻犬在使用 lokivetmab（抗 IL-31 單株抗體）治療後瘙癢顯著改善，但皮膚感染仍持續。這個臨床觀察反映了什麼免疫學概念？',
+    question: '一隻犬在使用 lokivetmab（抗 IL-31 單株抗體）治療後瘙癢明顯改善，但皮膚感染仍持續。這個臨床觀察反映了什麼免疫學概念？',
     options: [
       'Lokivetmab 具有免疫抑制作用導致感染惡化',
       'IL-31 主要媒介瘙癢而非發炎，感染需另行處理',
@@ -569,7 +569,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '自體免疫反應',
     ],
     correct_answer: '非 IgE 媒介的反應（如 T 細胞媒介或食物不耐受）',
-    explanation: '犬的食物不良反應（AFR）包括：(1) IgE 媒介的食物過敏（true food allergy）和 (2) 非 IgE 媒介的反應（細胞媒介過敏或食物不耐受）。這也是為何血清食物 IgE 檢測不可靠的原因——許多 AFR 並非 IgE 媒介。排除飲食試驗仍是診斷的金標準。',
+    explanation: '犬的食物不良反應（AFR）包括：(1) IgE 媒介的食物過敏（true food allergy）和 (2) 非 IgE 媒介的反應（細胞媒介過敏或食物不耐受）。這也是為何血清食物 IgE 檢測不可靠的原因，許多 AFR 並非 IgE 媒介。排除飲食試驗仍是診斷的金標準。',
     difficulty: 3, spaced_rep: true, tags: ['allergy', 'AFR', 'non_IgE'], image_placeholder: null,
   },
   {
@@ -657,7 +657,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '基底膜增厚',
     ],
     correct_answer: 'Ceramide 含量下降與經表皮水分散失（TEWL）增加',
-    explanation: '研究顯示 CAD 犬的皮膚（包括病灶與非病灶區）ceramide 含量顯著下降（尤其是 ceramide 1 和 9），細胞間脂質層狀結構紊亂，導致 TEWL 增加。這使過敏原更易穿透皮膚，微生物更易定殖，形成屏障缺陷與免疫活化的惡性循環。',
+    explanation: '研究顯示 CAD 犬的皮膚（包括病灶與非病灶區）ceramide 含量明顯下降（尤其是 ceramide 1 和 9），細胞間脂質層狀結構紊亂，導致 TEWL 增加。這使過敏原更易穿透皮膚，微生物更易定殖，形成屏障缺陷與免疫活化的惡性循環。',
     difficulty: 3, spaced_rep: true, tags: ['barrier', 'ceramide', 'TEWL', 'CAD'], image_placeholder: null,
   },
   {
@@ -683,12 +683,12 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '僅用清水沖洗，不使用任何洗劑',
     ],
     correct_answer: '適度頻率沐浴（每 1-2 週）使用含 ceramide 或燕麥膠的溫和洗劑，浴後使用保濕劑',
-    explanation: '適度沐浴可物理移除過敏原、微生物及碎屑，但過度沐浴或使用刺激性洗劑會進一步破壞脂質屏障。建議使用含 ceramide、phytosphingosine 或膠態燕麥（colloidal oatmeal）的溫和洗劑，水溫不宜過高，浴後使用保濕噴劑或乳液補充脂質。',
+    explanation: '適度沐浴可物理移除過敏原、微生物及碎屑，但過度沐浴或使用刺激性洗劑會後續破壞脂質屏障。建議使用含 ceramide、phytosphingosine 或膠態燕麥（colloidal oatmeal）的溫和洗劑，水溫不宜過高，浴後使用保濕噴劑或乳液補充脂質。',
     difficulty: 3, spaced_rep: true, tags: ['barrier', 'bathing', 'CAD_management'], image_placeholder: null,
   },
   {
     id: 'Q-DERM-L2-002-F', node_id: 'DERM-L2-002', question_type: 'case_based',
-    question: '一隻犬的皮膚切片顯示角質層脂質層狀結構紊亂，並伴有 TEWL 顯著升高。此病理發現最符合下列哪種病因？',
+    question: '一隻犬的皮膚切片顯示角質層脂質層狀結構紊亂，並伴有 TEWL 明顯升高。此病理發現最符合下列哪種病因？',
     options: [
       '急性細菌性膿皮症',
       '原發性皮膚屏障缺陷（如 CAD 或原發性脂漏症）',
@@ -792,7 +792,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '天疱瘡，給予免疫抑制治療',
     ],
     correct_answer: '鋅反應性皮膚病 Syndrome I，終身補充鋅',
-    explanation: '哈士奇犬 + 口周/眼周/足墊角化過度 + 病理見角質層內空泡化（parakeratosis with pallor）= 典型的鋅反應性皮膚病 Syndrome I。北方犬種因遺傳性腸道鋅吸收不良，需終身口服鋅補充。穀物中的植酸會進一步干擾鋅吸收。',
+    explanation: '哈士奇犬 + 口周/眼周/足墊角化過度 + 病理見角質層內空泡化（parakeratosis with pallor）= 典型的鋅反應性皮膚病 Syndrome I。北方犬種因遺傳性腸道鋅吸收不良，需終身口服鋅補充。穀物中的植酸會後續干擾鋅吸收。',
     difficulty: 3, spaced_rep: true, tags: ['keratinization', 'zinc_responsive', 'Husky'], image_placeholder: null,
   },
   {
@@ -914,7 +914,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '因為跳蚤的機械性刺激造成組織損傷',
     ],
     correct_answer: '因為 FAD 是超敏反應，致敏犬只需極少量跳蚤唾液即可觸發劇烈免疫反應',
-    explanation: 'FAD 是對跳蚤唾液的超敏反應（Type I + Type IV），致敏的犬隻只需 1-2 次跳蚤叮咬即可觸發嚴重的瘙癢與皮膚病變。這也解釋了為何在 FAD 犬身上常找不到跳蚤（少量跳蚤即致病，且劇烈搔抓會移除跳蚤）。因此找不到跳蚤不能排除 FAD。',
+    explanation: 'FAD 是對跳蚤唾液的超敏反應（Type I + Type IV），致敏的犬隻只需 1-2 次跳蚤叮咬即可觸發嚴重的瘙癢與皮膚病變。這也解釋了為何在 FAD 犬身上常找不到跳蚤（少量跳蚤即致病，且劇烈搔抓會移除跳蚤）。所以找不到跳蚤不能排除 FAD。',
     difficulty: 3, spaced_rep: true, tags: ['FAD', 'hypersensitivity', 'pathogenesis'], image_placeholder: null,
   },
   {
@@ -1002,7 +1002,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '兩者臨床上完全無法區別',
     ],
     correct_answer: 'AFR 可伴有消化道症狀且通常無季節性，CAD 常有季節性',
-    explanation: 'AFR 與 CAD 的皮膚表現可完全重疊（臉部、耳、指間紅斑），但 AFR 的特點為：(1) 約 10-30% 伴有 GI 症狀（嘔吐、軟便）；(2) 通常全年無季節性波動；(3) 對類固醇反應可能較差。然而兩者常並存（約 30% CAD 犬同時有 AFR），因此必須先做排除飲食試驗。',
+    explanation: 'AFR 與 CAD 的皮膚表現可完全重疊（臉部、耳、指間紅斑），但 AFR 的特點為：(1) 約 10-30% 伴有 GI 症狀（嘔吐、軟便）；(2) 通常全年無季節性波動；(3) 對類固醇反應可能較差。不過兩者常並存（約 30% CAD 犬同時有 AFR），所以必須先做排除飲食試驗。',
     difficulty: 3, spaced_rep: true, tags: ['AFR', 'CAD', 'differential_diagnosis'], image_placeholder: null,
   },
   {
@@ -1124,7 +1124,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: '蠕形蟎症是具有傳染性的疾病，成犬間可透過直接接觸互相傳播。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '蠕形蟎症不被視為傳染性疾病。蟎蟲傳播僅發生在出生後數日內母犬與新生幼犬的直接接觸。成犬間不會傳播。蠕形蟎症的發病是宿主免疫調節異常導致常駐蟎蟲過度增殖，而非新的感染。因此患犬不需要隔離。',
+    explanation: '蠕形蟎症不被視為傳染性疾病。蟎蟲傳播僅發生在出生後數日內母犬與新生幼犬的直接接觸。成犬間不會傳播。蠕形蟎症的發病是宿主免疫調節異常導致常駐蟎蟲過度增殖，而非新的感染。所以患犬不需要隔離。',
     difficulty: 2, spaced_rep: true, tags: ['Demodex', 'transmission', 'not_contagious'], image_placeholder: null,
   },
   {
@@ -1567,7 +1567,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: '犬疥蟎症開始治療後，瘙癢可能在最初 2-4 週內反而加劇，這不一定代表治療失敗。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '蟎蟲死亡時釋放的抗原可能暫時加劇超敏反應，導致治療初期瘙癢反應性增加。此外，已存在的超敏反應需要時間消退。建議治療 4-6 週後評估臨床反應。可在治療初期短期使用 oclacitinib 或低劑量 prednisolone 控制瘙癢。',
+    explanation: '蟎蟲死亡時釋放的抗原可能暫時加劇超敏反應，導致治療初期瘙癢反應性增加。另外，已存在的超敏反應需要時間消退。建議治療 4-6 週後評估臨床反應。可在治療初期短期使用 oclacitinib 或低劑量 prednisolone 控制瘙癢。',
     difficulty: 3, spaced_rep: true, tags: ['sarcoptes', 'treatment_response', 'pruritus'], image_placeholder: null,
   },
   {
@@ -1684,7 +1684,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
 
   // ========== DERM-L4-002 皮膚刮搔 補充 (7 questions, 已有 Q-006) ==========
   { id: 'Q-DERM-L4-002-B', node_id: 'DERM-L4-002', question_type: 'mcq', question: '淺層皮膚刮搔主要用於診斷哪種外寄生蟲？', options: ['蠕形蟎', '犬疥蟎（Sarcoptes scabiei）', '壁蝨', '蚤'], correct_answer: '犬疥蟎（Sarcoptes scabiei）', explanation: '淺層刮搔採集角質層表面的蟎蟲，主要目標為疥蟎。深層刮搔（至出血）用於蠕形蟎。', difficulty: 2, spaced_rep: true, tags: ['skin_scraping', 'superficial', 'sarcoptes'], image_placeholder: null },
-  { id: 'Q-DERM-L4-002-C', node_id: 'DERM-L4-002', question_type: 'mcq', question: '深層皮膚刮搔前最重要的準備步驟為何？', options: ['給予鎮靜', '用手指擠壓皮膚，將蟎蟲從毛囊深處擠向表面', '先使用酒精消毒', '剃除所有毛髮'], correct_answer: '用手指擠壓皮膚，將蟎蟲從毛囊深處擠向表面', explanation: '刮搔前在部位用拇指和食指擠壓皮膚（squeeze-scrape 技術），可將毛囊深處的蠕形蟎擠向表面，顯著提高檢出率。', difficulty: 2, spaced_rep: true, tags: ['skin_scraping', 'technique', 'Demodex'], image_placeholder: null },
+  { id: 'Q-DERM-L4-002-C', node_id: 'DERM-L4-002', question_type: 'mcq', question: '深層皮膚刮搔前最重要的準備步驟為何？', options: ['給予鎮靜', '用手指擠壓皮膚，將蟎蟲從毛囊深處擠向表面', '先使用酒精消毒', '剃除所有毛髮'], correct_answer: '用手指擠壓皮膚，將蟎蟲從毛囊深處擠向表面', explanation: '刮搔前在部位用拇指和食指擠壓皮膚（squeeze-scrape 技術），可將毛囊深處的蠕形蟎擠向表面，明顯提高檢出率。', difficulty: 2, spaced_rep: true, tags: ['skin_scraping', 'technique', 'Demodex'], image_placeholder: null },
   { id: 'Q-DERM-L4-002-D', node_id: 'DERM-L4-002', question_type: 'mcq', question: '刮搔發現少量蠕形蟎成蟲，無幼蟲或蟲卵。臨床意義為？', options: ['明確蠕形蟎症', '可能為正常帶蟲，需結合臨床表現判斷', '嚴重蠕形蟎症', '代表治療成功'], correct_answer: '可能為正常帶蟲，需結合臨床表現判斷', explanation: '正常犬可攜帶少量蠕形蟎成蟲。蠕形蟎症的診斷要看蟎蟲數量（大量）和生活史階段（活躍增殖證據）。', difficulty: 3, spaced_rep: true, tags: ['skin_scraping', 'interpretation', 'Demodex'], image_placeholder: null },
   { id: 'Q-DERM-L4-002-E', node_id: 'DERM-L4-002', question_type: 'case_based', question: '一隻沙皮犬足部腫脹懷疑蠕形蟎性足皮膚炎，多次刮搔陰性。下一步？', options: ['排除蠕形蟎', '進行皮膚切片，因足部慢性纖維化可使刮搔假陰性', '僅經驗治療', '真菌培養'], correct_answer: '進行皮膚切片，因足部慢性纖維化可使刮搔假陰性', explanation: '慢性蠕形蟎性足皮膚炎可導致嚴重真皮纖維化和肉芽腫，皮膚切片可在深層肉芽腫中發現蟎蟲斷面。', difficulty: 4, spaced_rep: true, tags: ['skin_scraping', 'biopsy', 'pododermatitis'], image_placeholder: null },
   { id: 'Q-DERM-L4-002-F', node_id: 'DERM-L4-002', question_type: 'case_based', question: '懷疑疥蟎犬多部位刮搔陰性，但臨床高度懷疑。最合理的處理？', options: ['排除疥蟎', '治療性診斷試驗（isoxazoline 治療觀察反應）', '重複刮搔 10 次', '皮膚切片'], correct_answer: '治療性診斷試驗（isoxazoline 治療觀察反應）', explanation: '疥蟎刮搔敏感度僅 20-50%。臨床高度懷疑時，治療性試驗是最實用的方法。4-6 週後評估反應。', difficulty: 3, spaced_rep: true, tags: ['skin_scraping', 'sarcoptes', 'therapeutic_trial'], image_placeholder: null },
@@ -1743,7 +1743,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
   // ========== DERM-L5-004 耳科治療 (8 questions) ==========
   { id: 'Q-DERM-L5-004-A', node_id: 'DERM-L5-004', question_type: 'mcq', question: '外耳炎外用治療的三大核心成分？', options: ['抗生素+抗黴菌+類固醇', '抗組織胺+維生素+保濕劑', '抗寄生蟲+抗病毒+止痛', '酵素+益生菌+膠原蛋白'], correct_answer: '抗生素+抗黴菌+類固醇', explanation: '複方耳藥含：抗生素（polymyxin B, gentamicin）+ 抗黴菌（miconazole, clotrimazole）+ 類固醇（dexamethasone）。根據細胞學選擇。', difficulty: 2, spaced_rep: true, tags: ['ear_treatment', 'topical'], image_placeholder: null },
   { id: 'Q-DERM-L5-004-B', node_id: 'DERM-L5-004', question_type: 'mcq', question: 'Tris-EDTA 在外耳炎治療中的特殊作用？', options: ['僅一般清潔', '螯合細菌外膜二價陽離子，增加膜通透性提升抗生素效果', '殺酵母菌', '溶解耳蠟'], correct_answer: '螯合細菌外膜二價陽離子，增加膜通透性提升抗生素效果', explanation: 'Tris-EDTA 螯合革蘭氏陰性菌外膜 Ca/Mg，破壞 LPS 層。在耳用抗生素前 15-20 分鐘 pre-soak，對 Pseudomonas 尤重要。', difficulty: 3, spaced_rep: true, tags: ['ear_treatment', 'Tris_EDTA'], image_placeholder: null },
-  { id: 'Q-DERM-L5-004-C', node_id: 'DERM-L5-004', question_type: 'mcq', question: 'TECA-LBO 手術的適應症？', options: ['所有初次外耳炎', '慢性終末期外耳炎伴耳道鈣化/嚴重狹窄，內科無反應', '僅腫瘤', '輕度外耳炎'], correct_answer: '慢性終末期外耳炎伴耳道鈣化/嚴重狹窄，內科無反應', explanation: 'TECA-LBO 適用於慢性不可逆的耳道病變。術後聽力喪失但生活品質通常顯著改善。', difficulty: 4, spaced_rep: true, tags: ['ear_treatment', 'TECA_LBO'], image_placeholder: null },
+  { id: 'Q-DERM-L5-004-C', node_id: 'DERM-L5-004', question_type: 'mcq', question: 'TECA-LBO 手術的適應症？', options: ['所有初次外耳炎', '慢性終末期外耳炎伴耳道鈣化/嚴重狹窄，內科無反應', '僅腫瘤', '輕度外耳炎'], correct_answer: '慢性終末期外耳炎伴耳道鈣化/嚴重狹窄，內科無反應', explanation: 'TECA-LBO 適用於慢性不可逆的耳道病變。術後聽力喪失但生活品質通常明顯改善。', difficulty: 4, spaced_rep: true, tags: ['ear_treatment', 'TECA_LBO'], image_placeholder: null },
   { id: 'Q-DERM-L5-004-D', node_id: 'DERM-L5-004', question_type: 'mcq', question: '耳清潔液的選擇原則？', options: ['所有情況用同一種', '根據分泌物性質選擇：蠟質→溶蠟劑，膿性→抗菌，維持期→溫和乾燥型', '不需要使用', '僅用純水'], correct_answer: '根據分泌物性質選擇：蠟質→溶蠟劑，膿性→抗菌，維持期→溫和乾燥型', explanation: '耳蠟溶解劑用於蠟質分泌物；抗菌型（chlorhexidine/Tris-EDTA）用於感染性；乾燥型用於維持。鼓膜破損避免酒精和溶蠟劑。', difficulty: 3, spaced_rep: true, tags: ['ear_treatment', 'ear_cleaner'], image_placeholder: null },
   { id: 'Q-DERM-L5-004-E', node_id: 'DERM-L5-004', question_type: 'case_based', question: '外耳炎治療 2 週後改善但仍有殘留酵母菌，飼主坦承有時忘記點藥。最重要建議？', options: ['更換耳藥', '強調依從性，或改用長效型耳用製劑', '增加口服藥', '建議手術'], correct_answer: '強調依從性，或改用長效型耳用製劑', explanation: '依從性是治療失敗的常見原因。長效型製劑（由院方施用，每週或數週一次）可減少飼主負擔。', difficulty: 3, spaced_rep: true, tags: ['ear_treatment', 'compliance'], image_placeholder: null },
   { id: 'Q-DERM-L5-004-F', node_id: 'DERM-L5-004', question_type: 'case_based', question: '耳鏡發現鼓膜穿孔。選用耳藥時最重要的考量？', options: ['選最強抗生素', '避免耳毒性藥物（aminoglycosides, chlorhexidine），選安全替代品', '可用任何耳藥', '停止所有治療'], correct_answer: '避免耳毒性藥物（aminoglycosides, chlorhexidine），選安全替代品', explanation: '鼓膜破損時耳毒性藥物進入中耳可損傷聽覺和前庭。安全選擇：Tris-EDTA、生理食鹽水、fluoroquinolone 耳劑。', difficulty: 4, spaced_rep: true, tags: ['ear_treatment', 'ototoxicity'], image_placeholder: null },
@@ -1756,14 +1756,14 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
   { id: 'Q-DERM-L5-005-C', node_id: 'DERM-L5-005', question_type: 'mcq', question: 'Ketoconazole 相較 itraconazole 的主要缺點？', options: ['抗菌譜窄', '肝毒性風險較高且多藥物交互作用', '無法口服吸收', '更昂貴'], correct_answer: '肝毒性風險較高且多藥物交互作用', explanation: 'Ketoconazole 肝毒性風險高、抑制多種 CYP450 酵素、可抑制腎上腺皮質醇合成。優點是價格便宜。', difficulty: 3, spaced_rep: true, tags: ['antifungal', 'ketoconazole', 'hepatotoxicity'], image_placeholder: null },
   { id: 'Q-DERM-L5-005-D', node_id: 'DERM-L5-005', question_type: 'mcq', question: '皮膚癬菌感染最有效的局部治療方法？', options: ['僅塗病灶', '全身性局部治療（lime sulfur dip 或 miconazole/chlorhexidine 全身沐浴）', '口服藥即可', '酒精擦拭'], correct_answer: '全身性局部治療（lime sulfur dip 或 miconazole/chlorhexidine 全身沐浴）', explanation: '局部治療重點是全身性（whole-body）治療，病灶外皮膚也可能攜帶孢子。需與系統性治療合併。', difficulty: 3, spaced_rep: true, tags: ['antifungal', 'topical', 'dermatophytosis'], image_placeholder: null },
   { id: 'Q-DERM-L5-005-E', node_id: 'DERM-L5-005', question_type: 'case_based', question: '犬使用 itraconazole 治療皮膚癬菌，飼主問 pulse therapy 的正確給法？', options: ['每天不間斷', '連續給藥 1 週，停 1 週，交替進行', '每 3 天一次', '每月 1 天'], correct_answer: '連續給藥 1 週，停 1 週，交替進行', explanation: 'Itraconazole 高度親脂性，蓄積在角質層。Pulse therapy 1 週給/1 週停，可減少 50% 藥量且效果相當。', difficulty: 3, spaced_rep: true, tags: ['antifungal', 'pulse_therapy'], image_placeholder: null },
-  { id: 'Q-DERM-L5-005-F', node_id: 'DERM-L5-005', question_type: 'case_based', question: '犬同時用 cyclosporine 和 ketoconazole。應注意什麼交互作用？', options: ['無交互作用', 'Ketoconazole 抑制 CYP450 使 cyclosporine 血中濃度顯著升高', 'Cyclosporine 加速 ketoconazole 代謝', '兩者降低彼此效果'], correct_answer: 'Ketoconazole 抑制 CYP450 使 cyclosporine 血中濃度顯著升高', explanation: 'Ketoconazole 是強效 CYP3A4 抑制劑，可將 cyclosporine 濃度提高 2-4 倍。可有意利用以減少 cyclosporine 用量，但需監測。', difficulty: 4, spaced_rep: true, tags: ['antifungal', 'drug_interaction'], image_placeholder: null },
+  { id: 'Q-DERM-L5-005-F', node_id: 'DERM-L5-005', question_type: 'case_based', question: '犬同時用 cyclosporine 和 ketoconazole。應注意什麼交互作用？', options: ['無交互作用', 'Ketoconazole 抑制 CYP450 使 cyclosporine 血中濃度明顯升高', 'Cyclosporine 加速 ketoconazole 代謝', '兩者降低彼此效果'], correct_answer: 'Ketoconazole 抑制 CYP450 使 cyclosporine 血中濃度明顯升高', explanation: 'Ketoconazole 是強效 CYP3A4 抑制劑，可將 cyclosporine 濃度提高 2-4 倍。可有意利用以減少 cyclosporine 用量，但需監測。', difficulty: 4, spaced_rep: true, tags: ['antifungal', 'drug_interaction'], image_placeholder: null },
   { id: 'Q-DERM-L5-005-G', node_id: 'DERM-L5-005', question_type: 'true_false', question: 'Griseofulvin 仍是犬貓皮膚癬菌感染的首選系統性抗黴菌藥物。', options: ['正確', '錯誤'], correct_answer: '錯誤', explanation: 'Griseofulvin 已被更安全有效的 itraconazole 和 terbinafine 取代。Griseofulvin 有骨髓抑制、致畸性等風險。', difficulty: 2, spaced_rep: true, tags: ['antifungal', 'griseofulvin'], image_placeholder: null },
   { id: 'Q-DERM-L5-005-H', node_id: 'DERM-L5-005', question_type: 'mcq', question: 'Chlorhexidine 在外用抗黴菌治療中的角色？', options: ['強效殺黴菌', '中等抗黴菌活性，常與 miconazole 合併增強效果', '無抗黴菌活性', '僅對皮膚癬菌'], correct_answer: '中等抗黴菌活性，常與 miconazole 合併增強效果', explanation: 'Chlorhexidine 單獨對真菌中等效果。與 miconazole 合併（如 Malaseb）可產生協同作用，是最常用的外用抗黴菌沐浴配方。', difficulty: 2, spaced_rep: true, tags: ['antifungal', 'chlorhexidine'], image_placeholder: null },
 
   // ========== DERM-L3-011 藥物不良反應 (3 questions) ==========
   { id: 'Q-DERM-L3-011-001', node_id: 'DERM-L3-011', question_type: 'mcq', question: '犬最常引起藥物不良反應（drug eruption）的藥物類別為何？', options: ['抗組織胺', '磺胺類抗生素（sulfonamides）與頭孢菌素類', '外用類固醇', '益生菌'], correct_answer: '磺胺類抗生素（sulfonamides）與頭孢菌素類', explanation: '磺胺類（trimethoprim-sulfonamide）是犬藥物不良反應最常見的誘因藥物，可引起多形性紅斑（erythema multiforme, EM）、中毒性表皮壞死鬆解症（TEN）及第三型超敏反應。頭孢菌素、NSAIDs 及抗癲癇藥物亦為常見誘因。', difficulty: 3, spaced_rep: true, tags: ['drug_eruption', 'sulfonamide', 'adverse_drug_reaction'], image_placeholder: null },
   { id: 'Q-DERM-L3-011-002', node_id: 'DERM-L3-011', question_type: 'true_false', question: '多形性紅斑（erythema multiforme）在犬的診斷主要依賴皮膚組織病理，典型發現為界面皮膚炎（interface dermatitis）伴個別角質細胞壞死（apoptosis）。', options: ['正確', '錯誤'], correct_answer: '正確', explanation: '多形性紅斑的組織病理特徵為界面皮膚炎，表皮基底層與棘層可見個別角質細胞壞死（衛星細胞壞死，satellite cell necrosis），伴淋巴球浸潤。皮膚切片是確診的金標準。臨床上需詳細用藥史並排除感染性原因。', difficulty: 4, spaced_rep: true, tags: ['drug_eruption', 'erythema_multiforme', 'histopathology'], image_placeholder: null },
-  { id: 'Q-DERM-L3-011-003', node_id: 'DERM-L3-011', question_type: 'case_based', question: '一隻犬在開始服用 trimethoprim-sulfonamide 治療膿皮症第 10 天後，出現口腔黏膜潰瘍、皮膚黏膜交界處紅斑水泡、以及足墊表皮剝離。最優先的處置為何？', options: ['增加抗生素劑量', '立即停用可疑藥物並給予支持性治療', '加用 prednisolone 但繼續抗生素', '更換為另一種磺胺類抗生素'], correct_answer: '立即停用可疑藥物並給予支持性治療', explanation: '此臨床表現高度疑似中毒性表皮壞死鬆解症（TEN）或重度多形性紅斑（EM major）。最關鍵的第一步是立即停用可疑藥物。支持性治療包括靜脈輸液、疼痛管理、防止繼發感染。免疫抑制劑（如 cyclosporine）的使用仍有爭議。TEN 預後與停藥時機密切相關，延遲停藥顯著增加死亡率。', difficulty: 4, spaced_rep: true, tags: ['drug_eruption', 'TEN', 'sulfonamide', 'emergency'], image_placeholder: null },
+  { id: 'Q-DERM-L3-011-003', node_id: 'DERM-L3-011', question_type: 'case_based', question: '一隻犬在開始服用 trimethoprim-sulfonamide 治療膿皮症第 10 天後，出現口腔黏膜潰瘍、皮膚黏膜交界處紅斑水泡、以及足墊表皮剝離。最優先的處置為何？', options: ['增加抗生素劑量', '立即停用可疑藥物並給予支持性治療', '加用 prednisolone 但繼續抗生素', '更換為另一種磺胺類抗生素'], correct_answer: '立即停用可疑藥物並給予支持性治療', explanation: '此臨床表現高度疑似中毒性表皮壞死鬆解症（TEN）或重度多形性紅斑（EM major）。最關鍵的第一步是立即停用可疑藥物。支持性治療包括靜脈輸液、疼痛管理、防止繼發感染。免疫抑制劑（如 cyclosporine）的使用仍有爭議。TEN 預後與停藥時機密切相關，延遲停藥明顯增加死亡率。', difficulty: 4, spaced_rep: true, tags: ['drug_eruption', 'TEN', 'sulfonamide', 'emergency'], image_placeholder: null },
 
   // ========== DERM-L3-012 脫毛症 X (3 questions) ==========
   { id: 'Q-DERM-L3-012-001', node_id: 'DERM-L3-012', question_type: 'mcq', question: '脫毛症 X（Alopecia X）最常見於哪些品種？', options: ['拉布拉多與黃金獵犬', '博美犬（Pomeranian）與北歐犬種（Samoyed、Malamute、Chow Chow）', '法國鬥牛犬與英國鬥牛犬', '貴賓犬與馬爾濟斯'], correct_answer: '博美犬（Pomeranian）與北歐犬種（Samoyed、Malamute、Chow Chow）', explanation: '脫毛症 X 又稱「毛髮生長週期停滯性脫毛」，好發於具有豐厚雙層毛（plush coat）的北歐犬種與博美犬。博美犬最為典型，通常在 1-5 歲間發病。其確切病因不明，推測與毛囊受體對性荷爾蒙代謝物的局部敏感性異常有關。', difficulty: 3, spaced_rep: true, tags: ['alopecia_X', 'Pomeranian', 'breed_predisposition'], image_placeholder: null },
@@ -1862,7 +1862,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '口服抗組織胺即可',
     ],
     correct_answer: '全身化療（Vinblastine + Prednisolone）± 局部放療',
-    explanation: 'Kiupel High grade + 邊界不清淨 + 淋巴結轉移屬於高風險 MCT。需積極多模式治療：①全身化療——Vinblastine 2 mg/m² IV q2w × 4-6 次 + Prednisolone；②局部放療——針對不清淨邊界；③考慮 c-KIT 突變檢測——突變陽性者可加用 Toceranib。化療期間每次給藥前需 CBC 監測。High grade MCT 中位存活 4-6 個月，積極治療可延長。',
+    explanation: 'Kiupel High grade + 邊界不清淨 + 淋巴結轉移屬於高風險 MCT。需積極多模式治療：①全身化療，Vinblastine 2 mg/m² IV q2w × 4-6 次 + Prednisolone；②局部放療，針對不清淨邊界；③考慮 c-KIT 突變檢測，突變陽性者可加用 Toceranib。化療期間每次給藥前需 CBC 監測。High grade MCT 中位存活 4-6 個月，積極治療可延長。',
     difficulty: 5, spaced_rep: true, tags: ['MCT', 'high_grade', 'chemotherapy', 'radiation'], image_placeholder: null,
   },
 
@@ -1958,7 +1958,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '皮膚癬菌症',
     ],
     correct_answer: '紅斑性狼瘡或藥物不良反應（interface dermatitis）',
-    explanation: '此描述為典型的 interface dermatitis（界面皮膚炎）：基底層液化變性 + 淋巴球浸潤表真皮交界處 + 個別角質細胞壞死。需進一步結合臨床資訊鑑別：紅斑性狼瘡（面部蝶形紅斑、光敏感）、多形性紅斑（標靶型病灶）、藥物反應（近期用藥史）。ANA 檢測及直接免疫螢光可輔助鑑別。',
+    explanation: '此描述為典型的 interface dermatitis（界面皮膚炎）：基底層液化變性 + 淋巴球浸潤表真皮交界處 + 個別角質細胞壞死。需後續結合臨床資訊鑑別：紅斑性狼瘡（面部蝶形紅斑、光敏感）、多形性紅斑（標靶型病灶）、藥物反應（近期用藥史）。ANA 檢測及直接免疫螢光可輔助鑑別。',
     difficulty: 4, spaced_rep: true, tags: ['histopathology', 'interface_dermatitis', 'lupus', 'drug_reaction'], image_placeholder: null,
   },
 
@@ -1999,7 +1999,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '哈士奇（Siberian Husky）',
     ],
     correct_answer: '貴賓犬（Poodle）',
-    explanation: '貴賓犬（Poodle）、約克夏㹴、馬爾濟斯等品種的毛髮具有非常長的 anagen 期，毛髮會持續生長而非在固定長度後進入 telogen——這就是為何這些品種的毛髮可以長得很長，需要定期修剪。相對地，柴犬、哈士奇等品種的 anagen 較短，毛髮達到固定長度後即停止生長。',
+    explanation: '貴賓犬（Poodle）、約克夏㹴、馬爾濟斯等品種的毛髮具有非常長的 anagen 期，毛髮會持續生長而非在固定長度後進入 telogen，這就是為何這些品種的毛髮可以長得很長，需要定期修剪。相對地，柴犬、哈士奇等品種的 anagen 較短，毛髮達到固定長度後即停止生長。',
     difficulty: 1, spaced_rep: true, tags: ['hair_cycle', 'breed_variation', 'anagen'], image_placeholder: null,
   },
   {
@@ -2012,7 +2012,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '不影響毛髮生長週期',
     ],
     correct_answer: '使大量毛囊停滯於 telogen 期，導致對稱性脫毛',
-    explanation: '甲狀腺荷爾蒙（T3/T4）對毛囊的 anagen 啟動至關重要。甲狀腺功能低下時，毛囊無法正常由 telogen 進入 anagen（telogen arrest），導致大量毛囊停留在休止期 → 毛髮逐漸脫落但無新毛生長 → 非發炎性對稱性脫毛（bilateral symmetric alopecia），常見於軀幹。拔毛後觀察到多數毛髮為 telogen 期毛根（club hair）。',
+    explanation: '甲狀腺荷爾蒙（T3/T4）對毛囊的 anagen 啟動不能省。甲狀腺功能低下時，毛囊無法正常由 telogen 進入 anagen（telogen arrest），導致大量毛囊停留在休止期 → 毛髮逐漸脫落但無新毛生長 → 非發炎性對稱性脫毛（bilateral symmetric alopecia），常見於軀幹。拔毛後觀察到多數毛髮為 telogen 期毛根（club hair）。',
     difficulty: 2, spaced_rep: true, tags: ['hair_cycle', 'hypothyroidism', 'alopecia', 'endocrine'], image_placeholder: null,
   },
   {
@@ -2076,7 +2076,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '病毒感染（FHV-1）',
     ],
     correct_answer: '過敏反應（跳蚤、食物、環境過敏原）',
-    explanation: '超過 80% 的 EGC 病例有潛在的過敏基礎。最常見的過敏原依序為：跳蚤過敏（30-40%）、食物不良反應（15-25%）、環境過敏原（15-20%）。因此，診斷 EGC 後的首要步驟是嚴格跳蚤預防試驗與排除飲食試驗，而非直接使用免疫抑制藥物。特發性僅佔 15-20%。',
+    explanation: '超過 80% 的 EGC 病例有潛在的過敏基礎。最常見的過敏原依序為：跳蚤過敏（30-40%）、食物不良反應（15-25%）、環境過敏原（15-20%）。所以，診斷 EGC 後的首要步驟是嚴格跳蚤預防試驗與排除飲食試驗，而非直接使用免疫抑制藥物。特發性僅佔 15-20%。',
     difficulty: 3, spaced_rep: true, tags: ['EGC', 'etiology', 'allergy'], image_placeholder: null,
   },
   {
@@ -2123,7 +2123,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: '貓嗜酸性肉芽腫複合症（EGC）的線狀肉芽腫在幼貓（< 1 歲）有可能自行消退，不一定需要積極治療。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
-    explanation: '部分幼貓（< 1 歲）的線狀肉芽腫確實可自行消退，這可能與幼貓免疫系統的成熟過程有關。因此對於無明顯不適的幼貓線狀肉芽腫，可考慮觀察等待，同時進行嚴格跳蚤預防與排除飲食試驗。但若病灶持續擴大或影響功能（如口腔型影響進食），仍需積極治療。',
+    explanation: '部分幼貓（< 1 歲）的線狀肉芽腫確實可自行消退，這可能與幼貓免疫系統的成熟過程有關。所以對於無明顯不適的幼貓線狀肉芽腫，可考慮觀察等待，同時進行嚴格跳蚤預防與排除飲食試驗。但若病灶持續擴大或影響功能（如口腔型影響進食），仍需積極治療。',
     difficulty: 3, spaced_rep: true, tags: ['EGC', 'linear_granuloma', 'kitten', 'prognosis'], image_placeholder: null,
   },
   {
@@ -2136,7 +2136,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '觀察等待，因惰性潰瘍會自行消退',
     ],
     correct_answer: '進行排除飲食試驗（8-12 週），同時評估環境過敏原',
-    explanation: '此為典型的 EGC 惰性潰瘍（上唇、紅棕色、邊緣隆起、不痛不癢、細胞學見嗜酸球）。該貓已有規律除蚤，因此下一步應進行排除飲食試驗（食物不良反應佔 EGC 15-25%），同時評估環境過敏原。直接使用糖皮質激素雖可暫時控制，但未找出根本原因將反覆復發。手術切除非 EGC 標準治療。惰性潰瘍自行消退機率不高。',
+    explanation: '此為典型的 EGC 惰性潰瘍（上唇、紅棕色、邊緣隆起、不痛不癢、細胞學見嗜酸球）。該貓已有規律除蚤，所以下一步應進行排除飲食試驗（食物不良反應佔 EGC 15-25%），同時評估環境過敏原。直接使用糖皮質激素雖可暫時控制，但未找出根本原因將反覆復發。手術切除非 EGC 標準治療。惰性潰瘍自行消退機率不高。',
     difficulty: 4, spaced_rep: true, tags: ['EGC', 'indolent_ulcer', 'diagnostic_approach', 'elimination_diet'], image_placeholder: null,
   },
 
@@ -2159,11 +2159,11 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: '下列何者為脂腺炎最具特徵性的臨床表現？',
     options: [
       '面部對稱性紅斑與膿疱',
-      '毛囊鑄型（follicular cast）——毛幹上緊密附著的管狀角質物',
+      '毛囊鑄型（follicular cast），毛幹上緊密附著的管狀角質物',
       '鼻平面去色素化',
       '耳翼邊緣壞死',
     ],
-    correct_answer: '毛囊鑄型（follicular cast）——毛幹上緊密附著的管狀角質物',
+    correct_answer: '毛囊鑄型（follicular cast），毛幹上緊密附著的管狀角質物',
     explanation: '毛囊鑄型（follicular cast）是脂腺炎最具特徵性（pathognomonic）的臨床表現。因皮脂腺被破壞 → 皮脂分泌喪失 → 毛囊角質過度堆積 → 形成緊密附著於毛幹的白色管狀角質物。Trichogram（拔毛檢查）即可看到此特徵。這個簡單的臨床發現能大大提高臨床懷疑度。',
     difficulty: 3, spaced_rep: true, tags: ['SA', 'follicular_cast', 'pathognomonic'], image_placeholder: null,
   },
@@ -2198,7 +2198,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: '標準貴賓犬與秋田犬的脂腺炎臨床表現與治療反應幾乎相同。',
     options: ['正確', '錯誤'],
     correct_answer: '錯誤',
-    explanation: '兩品種的脂腺炎表現有明顯差異。標準貴賓犬表現為乾性、細碎白色鱗屑與顯著毛囊鑄型，治療反應較佳。秋田犬則較脂溢性、易繼發嚴重膿皮症，治療反應較差、預後不佳。Vizsla 介於兩者之間。因此治療策略需依品種調整。',
+    explanation: '兩品種的脂腺炎表現有明顯差異。標準貴賓犬表現為乾性、細碎白色鱗屑與明顯毛囊鑄型，治療反應較佳。秋田犬則較脂溢性、易繼發嚴重膿皮症，治療反應較差、預後不佳。Vizsla 介於兩者之間。所以治療策略需依品種調整。',
     difficulty: 3, spaced_rep: true, tags: ['SA', 'breed_variation', 'Akita', 'Standard_Poodle'], image_placeholder: null,
   },
   {
@@ -2211,7 +2211,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '全身剃毛後以藥用洗劑清洗',
     ],
     correct_answer: '進行皮膚活檢（背側病灶 + 正常皮膚對照）以確認脂腺炎診斷',
-    explanation: '此病例高度符合脂腺炎：標準貴賓犬（最好發品種）、背側軀幹乾性鱗屑與脫毛、毛囊鑄型（pathognomonic finding）、反覆膿皮症治療效果不佳（因未處理根本原因）。下一步應進行皮膚活檢確診——建議同時取病灶區與正常皮膚做對照，以確認皮脂腺周圍肉芽腫性炎症或皮脂腺缺失。確診後再規劃油浴 + cyclosporine 的完整治療方案。',
+    explanation: '此病例高度符合脂腺炎：標準貴賓犬（最好發品種）、背側軀幹乾性鱗屑與脫毛、毛囊鑄型（pathognomonic finding）、反覆膿皮症治療效果不佳（因未處理根本原因）。下一步應進行皮膚活檢確診，建議同時取病灶區與正常皮膚做對照，以確認皮脂腺周圍肉芽腫性炎症或皮脂腺缺失。確診後再規劃油浴 + cyclosporine 的完整治療方案。',
     difficulty: 4, spaced_rep: true, tags: ['SA', 'Standard_Poodle', 'follicular_cast', 'diagnostic_approach'], image_placeholder: null,
   },
 
@@ -2239,7 +2239,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
       '鼻樑腫脹與變形',
     ],
     correct_answer: '鼻平面正常鵝卵石紋理消失與去色素化',
-    explanation: 'DLE 最早的臨床徵兆是鼻平面正常的鵝卵石紋理（cobblestone pattern）消失，表面變光滑，接著出現去色素化——黑色鼻頭出現灰色或粉色斑塊。辨識這個早期徵兆非常重要，可以在病灶進展到紅斑、結痂、潰瘍之前就開始治療。這也是 DLE 與天疱瘡的早期鑑別重點（天疱瘡以膿疱為首發）。',
+    explanation: 'DLE 最早的臨床徵兆是鼻平面正常的鵝卵石紋理（cobblestone pattern）消失，表面變光滑，接著出現去色素化，黑色鼻頭出現灰色或粉色斑塊。辨識這個早期徵兆非常重要，可以在病灶進展到紅斑、結痂、潰瘍之前就開始治療。這也是 DLE 與天疱瘡的早期鑑別重點（天疱瘡以膿疱為首發）。',
     difficulty: 3, spaced_rep: true, tags: ['DLE', 'depigmentation', 'cobblestone_pattern', 'early_sign'], image_placeholder: null,
   },
   {
@@ -2247,11 +2247,11 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     question: 'DLE 組織病理學的特徵性表現為何？',
     options: [
       '棘層鬆解（acantholysis）與嗜酸球膿疱',
-      '界面皮膚炎（interface dermatitis）——基底層液化變性與色素失禁',
+      '界面皮膚炎（interface dermatitis），基底層液化變性與色素失禁',
       '血管周圍肥大細胞浸潤',
       '表皮全層壞死與表真皮分離',
     ],
-    correct_answer: '界面皮膚炎（interface dermatitis）——基底層液化變性與色素失禁',
+    correct_answer: '界面皮膚炎（interface dermatitis），基底層液化變性與色素失禁',
     explanation: 'DLE 的組織病理特徵為界面皮膚炎（interface dermatitis）：基底層液化變性（liquefaction degeneration）、淋巴球浸潤表真皮交界處、色素失禁（pigmentary incontinence，色素顆粒掉入真皮淺層）。免疫螢光可見基底膜帶 IgG/C3 沉積（lupus band test）。棘層鬆解為天疱瘡特徵，不見於 DLE。',
     difficulty: 4, spaced_rep: true, tags: ['DLE', 'interface_dermatitis', 'histopathology'], image_placeholder: null,
   },
@@ -2270,7 +2270,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
   },
   {
     id: 'Q-DERM-DLE-005', node_id: 'DERM-L3-017', question_type: 'true_false',
-    question: '盤狀紅斑性狼瘡（DLE）的病情會因紫外線暴露而加重，因此紫外線防護是治療的重要基石。',
+    question: '盤狀紅斑性狼瘡（DLE）的病情會因紫外線暴露而加重，所以紫外線防護是治療的重要基石。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
     explanation: '紫外線（尤其 UV-B）是 DLE 的重要加重因子。UV-B 可誘導角質細胞凋亡並促使核抗原外露，加重自體免疫反應。DLE 病情常呈現夏重冬輕的季節性。紫外線防護為治療基石，包括：避免正午陽光暴露、使用寵物用防曬乳（避免含 zinc oxide）、提供充足遮蔽。即使藥物治療有效，缺乏 UV 防護也會大幅降低療效。',

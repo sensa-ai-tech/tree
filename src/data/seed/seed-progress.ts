@@ -10,7 +10,7 @@ const userId = 'demo-student-001';
  * - 6 locked (L3-002, L3-003, L4-002, L5-001, L5-002, L5-003)
  */
 export const SEED_PROGRESS: UserNodeProgress[] = [
-  // completed — 5
+  // completed，5
   {
     user_id: userId,
     node_id: 'CARDIO-L0-001',
@@ -57,7 +57,7 @@ export const SEED_PROGRESS: UserNodeProgress[] = [
     time_spent_minutes: 20,
   },
 
-  // in_progress — 2
+  // in_progress，2
   {
     user_id: userId,
     node_id: 'CARDIO-L3-001',
@@ -77,7 +77,7 @@ export const SEED_PROGRESS: UserNodeProgress[] = [
     time_spent_minutes: null,
   },
 
-  // available — 5
+  // available，5
   {
     user_id: userId,
     node_id: 'CARDIO-L2-002',
@@ -124,5 +124,5 @@ export const SEED_PROGRESS: UserNodeProgress[] = [
     time_spent_minutes: null,
   },
 
-  // locked — 6 (不需要在此宣告，因為 store 預設為 locked)
+  // locked，6 (不需要在此宣告，因為 store 預設為 locked)
 ];

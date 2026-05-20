@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3099',
+    baseURL: 'http://localhost:4310',
     trace: 'on-first-retry',
   },
   timeout: 60_000,
@@ -23,8 +23,11 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npx next dev --port 3099',
-    url: 'http://localhost:3099',
+    command: 'npx next dev --port 4310',
+    url: 'http://localhost:4310',
     reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
+    stdout: 'pipe',
+    stderr: 'pipe',
   },
 });

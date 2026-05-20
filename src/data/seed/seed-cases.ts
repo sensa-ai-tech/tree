@@ -18,7 +18,7 @@ export const SEED_CASE: CaseChallenge = {
       step_number: 1,
       step_type: 'history_collection',
       title: '病史採集',
-      prompt: '你需要進一步詢問哪些問題？請選擇最重要的 3 項。',
+      prompt: '你需要後續詢問哪些問題？請選擇最重要的 3 項。',
       available_actions: [
         '詢問咳嗽的時間型態（白天 vs 夜間、活動後 vs 休息時）',
         '詢問是否有暈厥或虛脫',
@@ -32,8 +32,8 @@ export const SEED_CASE: CaseChallenge = {
         '詢問目前使用的藥物',
         '詢問居家 sleeping RR 趨勢',
       ],
-      feedback_correct: '很好！咳嗽型態有助於區分心因性 vs 呼吸道咳嗽，藥物史對治療決策至關重要，sleeping RR 趨勢是監測 CHF 最敏感的居家指標。',
-      feedback_incorrect: '心因性咳嗽通常在夜間或休息時加劇。了解用藥史對於決定治療方案至關重要。Sleeping RR 是 CHF 最敏感的居家監測指標，應優先詢問。',
+      feedback_correct: '很好！咳嗽型態有助於區分心因性 vs 呼吸道咳嗽，藥物史對治療決策不能省，sleeping RR 趨勢是監測 CHF 最敏感的居家指標。',
+      feedback_incorrect: '心因性咳嗽通常在夜間或休息時加劇。了解用藥史對於決定治療方案不能省。Sleeping RR 是 CHF 最敏感的居家監測指標，應優先詢問。',
       key_learning_points: [
         'MMVD 咳嗽可源自左主支氣管壓迫（乾咳）或肺水腫（濕咳）',
         'Sleeping RR > 30 次/分高度提示 CHF 發生或惡化',

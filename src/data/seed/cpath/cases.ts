@@ -19,7 +19,7 @@ export const CPATH_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集',
-        prompt: '面對急性貧血與黃疸的犬，你需要進一步詢問哪些問題？請選擇最重要的 3 項。',
+        prompt: '面對急性貧血與黃疸的犬，你需要後續詢問哪些問題？請選擇最重要的 3 項。',
         available_actions: [
           '詢問尿液顏色是否異常（血紅素尿/膽紅素尿）',
           '詢問是否有蜱蟲叮咬史或壁蝨暴露',
@@ -108,7 +108,7 @@ export const CPATH_CASES: CaseChallenge[] = [
           '免疫介導性溶血性貧血（IMHA），需警惕早期 DIC',
         ],
         feedback_correct: '正確！球形紅血球（spherocytes）+ 自凝現象（autoagglutination）是 IMHA 的經典細胞學特徵。再生性貧血 + 溶血前性高膽紅素血症（ALT 正常排除肝性）。血小板輕度減少 + PT/aPTT 輕度延長提示可能有早期 DIC，需密切監測。',
-        feedback_incorrect: '球形紅血球與自凝現象是 IMHA 的病理性特徵——自凝代表紅血球表面有大量抗體使紅血球聚集。焦蟲感染需在抹片上見到梨形蟲體。洋蔥中毒會產生 Heinz bodies。ALT 正常排除肝性黃疸。',
+        feedback_incorrect: '球形紅血球與自凝現象是 IMHA 的病理性特徵，自凝代表紅血球表面有大量抗體使紅血球聚集。焦蟲感染需在抹片上見到梨形蟲體。洋蔥中毒會產生 Heinz bodies。ALT 正常排除肝性黃疸。',
         key_learning_points: [
           '球形紅血球（spherocytes）：紅血球被部分吞噬後失去雙凹面變成球形，是 IMHA 特徵',
           '自凝現象：saline dilution test 仍凝集 = 真正自凝（非 rouleaux formation）',
@@ -156,12 +156,12 @@ export const CPATH_CASES: CaseChallenge[] = [
           '每 6-12 小時追蹤 PCV、每日追蹤 reticulocyte count 與凝血功能，3 天後複查 CBC + 生化',
         ],
         feedback_correct: '正確！IMHA 是需要密集實驗室監測的疾病。PCV 趨勢（6-12 小時）評估溶血速率與治療反應。Reticulocyte count 確認骨髓再生反應。凝血功能監測 DIC 進展。穩定後逐步延長監測間隔。',
-        feedback_incorrect: 'IMHA 的死亡率約 30-50%，需要積極的實驗室監測。PCV 是評估溶血速率最直接的指標，需頻繁追蹤。凝血功能監測 DIC 風險至關重要。僅追蹤單一指標或間隔太長可能錯過病情惡化。',
+        feedback_incorrect: 'IMHA 的死亡率約 30-50%，需要積極的實驗室監測。PCV 是評估溶血速率最直接的指標，需頻繁追蹤。凝血功能監測 DIC 風險不能省。僅追蹤單一指標或間隔太長可能錯過病情惡化。',
         key_learning_points: [
           'IMHA 急性期需頻繁 PCV 監測（6-12 小時）',
           'Reticulocyte count 評估骨髓再生能力是預後指標之一',
           'PT/aPTT + 血小板 + D-dimer 持續監測 DIC 風險',
-          '臨床病理在 IMHA 全程管理中扮演不可或缺的角色',
+          '臨床病理在 IMHA 全程管理中扮演少不了的角色',
         ],
       },
     ],
@@ -202,8 +202,8 @@ export const CPATH_CASES: CaseChallenge[] = [
 - PLT 280,000 (175-500)
 
 第一步：貧血分類？`, available_actions: ['中度正球正色素性非再生性貧血', '中度再生性貧血', '輕度貧血', '大球性貧血'], correct_actions: ['中度正球正色素性非再生性貧血'], feedback_correct: '正確！HCT 21% = 中度貧血。MCV 正常 = 正球性。MCHC 正常 = 正色素性。Reticulocyte 15,000 < 60,000 = 非再生性。系統判讀：先分嚴重度 → 再分形態 → 最後分再生性。', feedback_incorrect: '系統判讀順序：(1) 嚴重度（HCT 21% = 中度）、(2) 形態（MCV 正常 = 正球性、MCHC 正常 = 正色素性）、(3) 再生性（Reticulocyte < 60,000 = 非再生性）。', key_learning_points: ['貧血嚴重度：輕度 30-37%、中度 20-29%、重度 13-19%、極重度 < 13%', 'MCV 分類：小球、正球、大球', 'MCHC 分類：低色素、正色素、高色素（spherocytes）', '犬再生性閾值：Reticulocyte > 60,000/uL'] },
-      { step_number: 2, step_type: 'differential_diagnosis', title: '鑑別診斷', prompt: '正球正色素非再生性貧血的鑑別？選擇最適當的 3 項。', available_actions: ['慢性腎病（EPO 不足）', '慢性發炎性疾病（ACD / AI）', '骨髓疾病（aplasia、myelophthisis、白血病）', '急性出血（< 3 天尚未再生）', '缺鐵性貧血', 'IMHA'], correct_actions: ['慢性腎病（EPO 不足）', '慢性發炎性疾病（ACD / AI）', '骨髓疾病（aplasia、myelophthisis、白血病）'], feedback_correct: '正確！非再生性貧血的三大類鑑別：(1) EPO 不足（CKD 最常見）、(2) 慢性發炎（ACD/AI —— 鐵被螯合在巨噬細胞中）、(3) 骨髓問題。急性出血 < 3 天也可能非再生（骨髓尚未反應），但病程 2 週應已再生。', feedback_incorrect: '非再生性貧血 = 骨髓產出不足。原因：EPO 不足（CKD）、慢性炎症（鐵利用障礙）、骨髓疾病。急性出血 < 3 天骨髓未反應也暫時非再生，但 2 週病程應已顯示再生。', key_learning_points: ['非再生性貧血 = 骨髓產出不足', 'CKD 是非再生性貧血最常見原因', 'ACD/AI：Hepcidin 升高 → 鐵被困在巨噬細胞', '急性出血 3-5 天後應出現再生反應'] },
-      { step_number: 3, step_type: 'diagnostic_plan', title: '進一步檢查', prompt: '進一步鑑別方向？選擇 2 項。', available_actions: ['生化（含 BUN/Cr）+ UA 評估腎功能', '血液抹片人工複查', '骨髓抹片', '鐵質指標（Iron/TIBC/Ferritin）', 'Coombs test', 'CT 全身'], correct_actions: ['生化（含 BUN/Cr）+ UA 評估腎功能', '血液抹片人工複查'], feedback_correct: '正確！生化 + UA 首先排除 CKD（最常見原因）。血液抹片人工複查是 CBC 的延伸：評估紅血球形態異常、白血球形態（left shift/toxicity）、有無異常細胞（blast cells）。這兩項是非再生性貧血的第一線鑑別工具。', feedback_incorrect: '第一步：生化排除 CKD + 血液抹片評估形態。骨髓抹片是二線檢查（生化與抹片無法解釋時）。', key_learning_points: ['血液抹片永遠是 CBC 判讀的核心延伸', '抹片可見：紅血球形態、白血球毒性變化、blast cells', 'CKD 是非再生性貧血第一個要排除的', '骨髓抹片適應症：外周血無法解釋的血球異常'] },
+      { step_number: 2, step_type: 'differential_diagnosis', title: '鑑別診斷', prompt: '正球正色素非再生性貧血的鑑別？選擇最適當的 3 項。', available_actions: ['慢性腎病（EPO 不足）', '慢性發炎性疾病（ACD / AI）', '骨髓疾病（aplasia、myelophthisis、白血病）', '急性出血（< 3 天尚未再生）', '缺鐵性貧血', 'IMHA'], correct_actions: ['慢性腎病（EPO 不足）', '慢性發炎性疾病（ACD / AI）', '骨髓疾病（aplasia、myelophthisis、白血病）'], feedback_correct: '正確！非再生性貧血的三大類鑑別：(1) EPO 不足（CKD 最常見）、(2) 慢性發炎（ACD/AI ， 鐵被螯合在巨噬細胞中）、(3) 骨髓問題。急性出血 < 3 天也可能非再生（骨髓尚未反應），但病程 2 週應已再生。', feedback_incorrect: '非再生性貧血 = 骨髓產出不足。原因：EPO 不足（CKD）、慢性炎症（鐵利用障礙）、骨髓疾病。急性出血 < 3 天骨髓未反應也暫時非再生，但 2 週病程應已顯示再生。', key_learning_points: ['非再生性貧血 = 骨髓產出不足', 'CKD 是非再生性貧血最常見原因', 'ACD/AI：Hepcidin 升高 → 鐵被困在巨噬細胞', '急性出血 3-5 天後應出現再生反應'] },
+      { step_number: 3, step_type: 'diagnostic_plan', title: '後續檢查', prompt: '後續鑑別方向？選擇 2 項。', available_actions: ['生化（含 BUN/Cr）+ UA 評估腎功能', '血液抹片人工複查', '骨髓抹片', '鐵質指標（Iron/TIBC/Ferritin）', 'Coombs test', 'CT 全身'], correct_actions: ['生化（含 BUN/Cr）+ UA 評估腎功能', '血液抹片人工複查'], feedback_correct: '正確！生化 + UA 首先排除 CKD（最常見原因）。血液抹片人工複查是 CBC 的延伸：評估紅血球形態異常、白血球形態（left shift/toxicity）、有無異常細胞（blast cells）。這兩項是非再生性貧血的第一線鑑別工具。', feedback_incorrect: '第一步：生化排除 CKD + 血液抹片評估形態。骨髓抹片是二線檢查（生化與抹片無法解釋時）。', key_learning_points: ['血液抹片永遠是 CBC 判讀的核心延伸', '抹片可見：紅血球形態、白血球毒性變化、blast cells', 'CKD 是非再生性貧血第一個要排除的', '骨髓抹片適應症：外周血無法解釋的血球異常'] },
       { step_number: 4, step_type: 'result_interpretation', title: '結果', prompt: '生化：BUN 68、Cr 4.2、SDMA 32、Phos 7.5。UA：USG 1.015、UPC 0.8。血液抹片：正球正色素、少量 echinocytes。如何整合？', available_actions: ['CKD IRIS Stage 3 導致的非再生性貧血（EPO 不足）', '前腎性氮血症', '急性腎損傷', '骨髓抑制'], correct_actions: ['CKD IRIS Stage 3 導致的非再生性貧血（EPO 不足）'], feedback_correct: '正確！Cr 4.2 + USG 1.015（不適當稀釋）= 腎性氮血症 = CKD。IRIS Stage 3（Cr 2.9-5.0）。UPC 0.8 = 蛋白尿。非再生性貧血 = EPO 不足。Echinocytes 可見於腎衰竭。臨床病理完整整合：CBC + 生化 + UA = 診斷。', feedback_incorrect: '腎性氮血症（Cr 升高 + 不適當 USG）= CKD。IRIS Stage 3。非再生性貧血在 CKD 的機轉：腎臟 EPO 分泌不足。', key_learning_points: ['腎性氮血症：Cr 升高 + USG < 1.030 (犬)', 'CKD 貧血發生在 IRIS Stage 3-4', '機轉：腎間質纖維化 → EPO 分泌不足', 'Echinocytes：尿毒素影響紅血球膜'] },
       { step_number: 5, step_type: 'case_summary', title: '臨床病理報告撰寫', prompt: '如何整合撰寫臨床病理報告？', available_actions: ['依序報告：CBC 摘要 → 生化摘要 → UA 摘要 → 整合解讀 → 建議鑑別與追蹤', '只報告異常值', '僅列出數字不需解讀', '每個數值獨立報告'], correct_actions: ['依序報告：CBC 摘要 → 生化摘要 → UA 摘要 → 整合解讀 → 建議鑑別與追蹤'], feedback_correct: '正確！臨床病理報告應該是：(1) 各系統摘要（異常 + 臨床意義）、(2) 整合解讀（所有異常指向的共同診斷）、(3) 建議追蹤檢查。這是從「數字」到「臨床決策」的橋樑。', feedback_incorrect: '完整的臨床病理報告需要整合而非列數字。系統性摘要 + 整合解讀 + 建議追蹤是標準格式。', key_learning_points: ['臨床病理報告 = 數字到臨床決策的橋樑', '整合解讀比個別數值更重要', '報告應包含鑑別診斷與建議追蹤', '臨床病理師的角色：整合各項檢驗結果'] },
     ],
@@ -223,8 +223,8 @@ export const CPATH_CASES: CaseChallenge[] = [
 - 空腹膽汁酸 28（正常 < 15）、餐後膽汁酸 185（正常 < 25）
 - CBC：MCV 58 fL（正常 60-77 = 微小紅血球）
 
-如何系統判讀？`, available_actions: ['肝功能不全模式：合成指標全低 + 膽汁酸顯著升高 + 微小紅血球 = 高度懷疑 PSS', '肝細胞損傷（ALT 升高為主）', '膽道阻塞（ALP + GGT 升高為主）', '正常肝功能'], correct_actions: ['肝功能不全模式：合成指標全低 + 膽汁酸顯著升高 + 微小紅血球 = 高度懷疑 PSS'], feedback_correct: '正確！這是經典的肝功能不全模式：(1) Alb 低（合成不足）、(2) BUN 低（尿素循環不全）、(3) Glucose 低（糖質新生不足）、(4) Cholesterol 低（合成不足）。注意 ALT 正常——因為 PSS 的肝臟萎縮但不發炎。膽汁酸劇升確認分流。微小紅血球是 PSS 特徵。', feedback_incorrect: '關鍵：ALT 正常 ≠ 肝臟正常。PSS 的肝臟是「萎縮但不發炎」。四項合成指標全低 + 膽汁酸劇升 + 微小紅血球 = PSS 經典組合。', key_learning_points: ['ALT 正常不排除肝臟疾病（PSS 肝不發炎，只萎縮）', '肝功能不全四低：低 Alb、低 BUN、低 Glucose、低 Cholesterol', '餐後膽汁酸 > 100 = 嚴重肝功能不全', '微小紅血球（MCV < 60）是 PSS 的血液學特徵'] },
-      { step_number: 3, step_type: 'diagnostic_plan', title: '確認 PSS', prompt: '如何確認 PSS？', available_actions: ['腹部超音波尋找異常血管 + 測量肝臟大小', 'CT 血管攝影 (CTA)', '肝臟切片', '血管攝影', 'MRI 腹部', '直接手術探查'], correct_actions: ['腹部超音波尋找異常血管 + 測量肝臟大小'], feedback_correct: '正確！超音波是第一線影像：尋找連接門脈與系統靜脈的異常血管、評估肝臟大小（PSS 通常肝臟偏小）、測量門脈血流。CTA 是進一步確認的 gold standard（精確定位分流位置）。', feedback_incorrect: '超音波是第一線：異常血管 + 小肝 + 門脈血流異常。CTA 是 gold standard 定位分流。', key_learning_points: ['超音波可見：異常分流血管、小肝、門脈血流減少', 'CTA 是 PSS 定位的 gold standard', 'PSS 分類：肝內 vs 肝外、先天 vs 後天', '約克夏多為肝外先天性 PSS'] },
+如何系統判讀？`, available_actions: ['肝功能不全模式：合成指標全低 + 膽汁酸明顯升高 + 微小紅血球 = 高度懷疑 PSS', '肝細胞損傷（ALT 升高為主）', '膽道阻塞（ALP + GGT 升高為主）', '正常肝功能'], correct_actions: ['肝功能不全模式：合成指標全低 + 膽汁酸明顯升高 + 微小紅血球 = 高度懷疑 PSS'], feedback_correct: '正確！這是經典的肝功能不全模式：(1) Alb 低（合成不足）、(2) BUN 低（尿素循環不全）、(3) Glucose 低（糖質新生不足）、(4) Cholesterol 低（合成不足）。注意 ALT 正常，因為 PSS 的肝臟萎縮但不發炎。膽汁酸劇升確認分流。微小紅血球是 PSS 特徵。', feedback_incorrect: '關鍵：ALT 正常 ≠ 肝臟正常。PSS 的肝臟是「萎縮但不發炎」。四項合成指標全低 + 膽汁酸劇升 + 微小紅血球 = PSS 經典組合。', key_learning_points: ['ALT 正常不排除肝臟疾病（PSS 肝不發炎，只萎縮）', '肝功能不全四低：低 Alb、低 BUN、低 Glucose、低 Cholesterol', '餐後膽汁酸 > 100 = 嚴重肝功能不全', '微小紅血球（MCV < 60）是 PSS 的血液學特徵'] },
+      { step_number: 3, step_type: 'diagnostic_plan', title: '確認 PSS', prompt: '如何確認 PSS？', available_actions: ['腹部超音波尋找異常血管 + 測量肝臟大小', 'CT 血管攝影 (CTA)', '肝臟切片', '血管攝影', 'MRI 腹部', '直接手術探查'], correct_actions: ['腹部超音波尋找異常血管 + 測量肝臟大小'], feedback_correct: '正確！超音波是第一線影像：尋找連接門脈與系統靜脈的異常血管、評估肝臟大小（PSS 通常肝臟偏小）、測量門脈血流。CTA 是後續確認的 gold standard（精確定位分流位置）。', feedback_incorrect: '超音波是第一線：異常血管 + 小肝 + 門脈血流異常。CTA 是 gold standard 定位分流。', key_learning_points: ['超音波可見：異常分流血管、小肝、門脈血流減少', 'CTA 是 PSS 定位的 gold standard', 'PSS 分類：肝內 vs 肝外、先天 vs 後天', '約克夏多為肝外先天性 PSS'] },
       { step_number: 4, step_type: 'treatment_plan', title: '穩定治療', prompt: '確認肝外 PSS 後，手術前穩定治療？選擇 2 項。', available_actions: ['低蛋白飲食 + Lactulose + 口服抗生素（Metronidazole）控制肝性腦病', '糾正低血糖（頻繁少量餵食 + 必要時 Dextrose）', '高蛋白飲食快速補充白蛋白', '類固醇抗炎', 'UDCA 溶解膽結石', 'SAMe 保肝即可'], correct_actions: ['低蛋白飲食 + Lactulose + 口服抗生素（Metronidazole）控制肝性腦病', '糾正低血糖（頻繁少量餵食 + 必要時 Dextrose）'], feedback_correct: '正確！肝性腦病管理：低蛋白飲食（減少氨產生）、Lactulose（酸化腸腔促進氨排出）、Metronidazole（殺產氨菌）。低血糖需頻繁少量餵食。穩定後再評估手術（Ameroid constrictor 或 cellophane banding）。', feedback_incorrect: '肝性腦病三合一：低蛋白飲食 + Lactulose + Metronidazole。低血糖需頻繁餵食。穩定後手術。', key_learning_points: ['肝性腦病 = 氨 + 其他神經毒素經分流進入全身循環', 'Lactulose 機轉：酸化腸腔 → NH3 → NH4+ 不被吸收', 'PSS 手術：Ameroid constrictor 或 cellophane banding', '手術成功率肝外 PSS > 85%'] },
       { step_number: 5, step_type: 'case_summary', title: '臨床病理在 PSS 的角色', prompt: '臨床病理在 PSS 管理中的角色？', available_actions: ['貫穿診斷（膽汁酸 + 四低模式）、術前穩定監測（血氨/血糖）、術後追蹤（膽汁酸恢復）', '僅用於初步篩檢', '手術後不需追蹤', '只看 ALT 即可'], correct_actions: ['貫穿診斷（膽汁酸 + 四低模式）、術前穩定監測（血氨/血糖）、術後追蹤（膽汁酸恢復）'], feedback_correct: '正確！臨床病理在 PSS 全程扮演核心角色：(1) 診斷（生化模式 + 膽汁酸 + CBC）、(2) 穩定期監測（血氨、血糖）、(3) 術後追蹤（膽汁酸是否改善、Alb/BUN 是否恢復）。這是臨床病理「從診斷到管理」的完整範例。', feedback_incorrect: '臨床病理貫穿 PSS 全程：篩檢 → 確診 → 監測 → 追蹤。是臨床病理核心價值的典型展示。', key_learning_points: ['膽汁酸：PSS 診斷與追蹤的核心指標', '術後膽汁酸改善 = 分流成功閉合', 'Albumin/BUN 恢復 = 肝功能改善', '微小紅血球術後可恢復正常'] },
     ],
@@ -254,7 +254,7 @@ export const CPATH_CASES: CaseChallenge[] = [
     steps: [
       { step_number: 1, step_type: 'diagnostic_plan', title: '初步評估', prompt: '全身淋巴結腫大的犬，第一步最適當的檢查？', available_actions: ['細針抽吸細胞學（FNA cytology）', '切除性淋巴結切片', 'CBC + 生化', '胸腔 X 光', 'CT 全身', '4Dx 快篩'], correct_actions: ['細針抽吸細胞學（FNA cytology）'], feedback_correct: '正確！FNA 細胞學是淋巴結腫大的第一線診斷工具。微創、快速、經濟。可在 30 分鐘內區分反應性增生、淋巴瘤、轉移性腫瘤或感染。不需麻醉。', feedback_incorrect: 'FNA 是淋巴結腫大的第一線檢查。微創快速。可區分反應性、腫瘤（淋巴瘤 vs 轉移）、感染。切除性切片是二線。', key_learning_points: ['FNA 是淋巴結評估的 gold standard 第一線', '優點：微創、快速、經濟、不需麻醉', '可區分：反應性 vs 淋巴瘤 vs 轉移 vs 感染', '淋巴瘤細胞學診斷率 > 85%'] },
       { step_number: 2, step_type: 'result_interpretation', title: '細胞學判讀', prompt: 'FNA 細胞學結果：塗片富含細胞。> 90% 為大型淋巴球（大於 2 倍紅血球直徑），細胞核大、核仁明顯（1-3 個）、核質比高。小型淋巴球 < 5%。有絲分裂相多見。如何判讀？', available_actions: ['高度級別淋巴瘤（high-grade lymphoma）', '反應性淋巴結增生', '低度級別淋巴瘤', '轉移性癌（carcinoma）', '肉芽腫性淋巴結炎'], correct_actions: ['高度級別淋巴瘤（high-grade lymphoma）'], feedback_correct: '正確！正常淋巴結：> 75% 小型淋巴球 + < 5% 大型。淋巴瘤：單一群大型淋巴球 > 50%、核仁明顯、有絲分裂多。反應性增生：各大小混合（mixed population）。此例 > 90% 大型 + 有絲分裂多 = high-grade lymphoma。', feedback_incorrect: '淋巴瘤細胞學特徵：(1) 單一群（monomorphic）大型淋巴球、(2) > 50% 大型、(3) 核仁明顯、(4) 有絲分裂增加。正常/反應性是混合群（polymorphic）。', key_learning_points: ['正常淋巴結：> 75% 小型淋巴球', '反應性增生：混合群（各大小比例均增加）', '淋巴瘤：單一群大型淋巴球佔優勢', '大型淋巴球 > 2x RBC 直徑、核仁明顯'] },
-      { step_number: 3, step_type: 'diagnostic_plan', title: '進一步分類', prompt: '確認淋巴瘤後，進一步分類需要哪些檢查？選擇 2 項。', available_actions: ['流式細胞術（flow cytometry）/ 免疫表型', 'CBC + 血液抹片', 'PARR (PCR for Antigen Receptor Rearrangement)', '腹部超音波分期', '切除性切片', '骨髓抹片'], correct_actions: ['流式細胞術（flow cytometry）/ 免疫表型', 'CBC + 血液抹片'], feedback_correct: '正確！免疫表型區分 B-cell vs T-cell（影響預後與治療反應）。B-cell 預後較 T-cell 好。CBC + 抹片排除白血病性（Stage V with leukemia）。PARR 在 flow cytometry 不可用時可替代。', feedback_incorrect: '免疫表型（B vs T cell）是淋巴瘤分類的核心。CBC 排除白血病相。', key_learning_points: ['B-cell lymphoma 預後優於 T-cell', 'Flow cytometry 是免疫表型的 gold standard', 'PARR 可在細胞學抹片上做 B/T cell 分類', 'Stage V = 骨髓或血液侵犯'] },
+      { step_number: 3, step_type: 'diagnostic_plan', title: '後續分類', prompt: '確認淋巴瘤後，後續分類需要哪些檢查？選擇 2 項。', available_actions: ['流式細胞術（flow cytometry）/ 免疫表型', 'CBC + 血液抹片', 'PARR (PCR for Antigen Receptor Rearrangement)', '腹部超音波分期', '切除性切片', '骨髓抹片'], correct_actions: ['流式細胞術（flow cytometry）/ 免疫表型', 'CBC + 血液抹片'], feedback_correct: '正確！免疫表型區分 B-cell vs T-cell（影響預後與治療反應）。B-cell 預後較 T-cell 好。CBC + 抹片排除白血病性（Stage V with leukemia）。PARR 在 flow cytometry 不可用時可替代。', feedback_incorrect: '免疫表型（B vs T cell）是淋巴瘤分類的核心。CBC 排除白血病相。', key_learning_points: ['B-cell lymphoma 預後優於 T-cell', 'Flow cytometry 是免疫表型的 gold standard', 'PARR 可在細胞學抹片上做 B/T cell 分類', 'Stage V = 骨髓或血液侵犯'] },
       { step_number: 4, step_type: 'result_interpretation', title: '分期結果', prompt: 'Flow cytometry：B-cell lymphoma（CD21+, CD3-）。CBC：WBC 正常、無異常淋巴球。生化：正常。胸腔 X 光：正常。腹超：脾臟輕度腫大、肝臟正常、mesenteric LN 腫大。WHO 分期？', available_actions: ['Stage IIIa（肝脾以下全身淋巴結 + substage a 無全身症狀）', 'Stage I', 'Stage IV', 'Stage Vb'], correct_actions: ['Stage IIIa（肝脾以下全身淋巴結 + substage a 無全身症狀）'], feedback_correct: '正確！WHO 分期：Stage III = 全身淋巴結侵犯。Substage a = 無全身症狀（vs b = 有症狀）。脾臟輕度腫大但 CBC 正常、無白血病相 = 非 Stage V。B-cell + Stage IIIa 預後相對較好。', feedback_incorrect: '犬淋巴瘤 WHO 分期：I（單一 LN）、II（同側多 LN）、III（全身 LN）、IV（肝/脾）、V（骨髓/血液）。a = 無全身症狀、b = 有。', key_learning_points: ['犬淋巴瘤 WHO 分期 I-V', 'Substage a/b 影響預後', 'B-cell + Stage IIIa 中位存活約 12-14 個月（CHOP 化療）', '完整分期需：FNA + 免疫表型 + CBC + 影像'] },
       { step_number: 5, step_type: 'case_summary', title: '細胞學在腫瘤診斷的角色', prompt: '整合細胞學在淋巴瘤診斷流程中的角色。', available_actions: ['FNA 細胞學是第一線 → 免疫表型分類 → 分期 → 治療決策。細胞學提供快速初步診斷。', '細胞學不可靠必須切片', '只用 flow cytometry 不需細胞學', '影像足以診斷不需細胞學'], correct_actions: ['FNA 細胞學是第一線 → 免疫表型分類 → 分期 → 治療決策。細胞學提供快速初步診斷。'], feedback_correct: '正確！犬淋巴瘤是細胞學診斷的最佳範例。FNA 可在門診 30 分鐘內確診 > 85% 的淋巴瘤。加上免疫表型即可指導治療。切除性切片保留給細胞學不確定的病例。', feedback_incorrect: '細胞學是淋巴瘤診斷流程的起點和核心。快速、準確、經濟。', key_learning_points: ['FNA 細胞學是淋巴結腫大的第一線', '淋巴瘤細胞學準確率 > 85%', '低度淋巴瘤細胞學較困難（需切片確認）', '細胞學 + 免疫表型 + 分期 = 完整診斷'] },
     ],
@@ -273,12 +273,12 @@ export const CPATH_CASES: CaseChallenge[] = [
 - 生化：ALP 520、ALT 65、Glucose 135、Chol 350、Triglyceride 280、BUN 22、Cr 0.8
 - UA：USG 1.008、UPC 0.3、Glucose (-)
 
-哪些發現最有意義？選擇 3 項。`, available_actions: ['Stress leukogram（嗜中性球增多 + 淋巴球減少 + 嗜酸球減少）', 'ALP 顯著升高（皮質醇誘導型 ALP）', 'USG 1.008（嚴重等張尿，濃縮能力極差）', 'Glucose 135 正常偏高但無糖尿', 'Cholesterol + Triglyceride 升高', 'BUN/Cr 正常'], correct_actions: ['Stress leukogram（嗜中性球增多 + 淋巴球減少 + 嗜酸球減少）', 'ALP 顯著升高（皮質醇誘導型 ALP）', 'USG 1.008（嚴重等張尿，濃縮能力極差）'], feedback_correct: '正確！三項共同指向一個診斷——庫興氏症。Stress leukogram = 內源性皮質醇過高的白血球特徵。ALP 顯著升高 = 皮質醇誘導的同工酶（犬特有）。等張尿 = 皮質醇抑制 ADH 導致腎濃縮能力下降。', feedback_incorrect: '三大線索：stress leukogram + ALP 升高 + 等張尿 = 經典的庫興氏症生化模式。這展示了基礎三件套如何「指路」到特異性檢測。', key_learning_points: ['Stress leukogram = 內源性或外源性高皮質醇', '犬 ALP 有皮質醇誘導型同工酶（corticosteroid-induced ALP）', 'USG < 1.012 在 PU/PD 犬需考慮 Cushing', '高脂血症也是 Cushing 的常見生化異常'] },
-      { step_number: 3, step_type: 'diagnostic_plan', title: '內分泌確認', prompt: '基礎篩檢高度提示 Cushing，確認檢查？選擇 2 項。', available_actions: ['UCCR（尿液皮質醇/肌酸酐比值）篩檢', 'LDDS（低劑量 Dexamethasone 抑制試驗）確認', 'ACTH 刺激試驗', '甲狀腺 T4', '血清皮質醇基礎值', '內源性 ACTH'], correct_actions: ['UCCR（尿液皮質醇/肌酸酐比值）篩檢', 'LDDS（低劑量 Dexamethasone 抑制試驗）確認'], feedback_correct: '正確！UCCR 敏感度 > 95%（陰性幾乎排除 Cushing）——但特異性較低。LDDS 是確認的 gold standard（8hr cortisol > 1.4 ug/dL = 陽性）。兩者搭配：UCCR 篩 + LDDS 確認。基礎皮質醇值無診斷意義。', feedback_incorrect: 'UCCR 篩檢（敏感度 > 95%）+ LDDS 確認（gold standard）是 Cushing 的標準臨床病理流程。基礎皮質醇值無意義（脈衝式分泌）。', key_learning_points: ['UCCR 敏感度 > 95%、特異性 ~80%', 'LDDS 是確診 gold standard', 'ACTH stim 敏感度較低（60-85%），主要用於治療監測', '基礎皮質醇值無診斷意義（脈衝式分泌）'] },
-      { step_number: 4, step_type: 'result_interpretation', title: '內分泌結果判讀', prompt: 'UCCR > 80（正常 < 20）。LDDS：0hr 4.8、4hr 1.2、8hr 3.9 ug/dL。如何系統判讀？', available_actions: ['UCCR 陽性 + LDDS 8hr 未抑制 = 確認 Cushing。4hr 抑制 + 8hr 逃脫 = 高度提示 PDH。', 'LDDS 陰性', '只有 UCCR 陽性，LDDS 不確定', 'ADH（腎上腺腫瘤）'], correct_actions: ['UCCR 陽性 + LDDS 8hr 未抑制 = 確認 Cushing。4hr 抑制 + 8hr 逃脫 = 高度提示 PDH。'], feedback_correct: '正確！UCCR > 80 = 篩檢陽性。LDDS 8hr > 1.4 = 確認 Cushing。進階判讀：4hr cortisol < 50% baseline 或 < 1.4 = 「4hr 抑制」→ 再 8hr 逃脫 = PDH 特徵（垂體腫瘤保留部分負回饋）。這個模式在臨床病理中被稱為 LDDS 的「額外資訊」。', feedback_incorrect: 'LDDS 系統判讀：8hr 判定 Cushing 有無。4hr 提供 PDH vs ADH 額外資訊。4hr 抑制 + 8hr 逃脫 = PDH。', key_learning_points: ['LDDS 8hr > 1.4 = 確認 Cushing', 'LDDS 4hr 是「額外資訊」：4hr 抑制 + 8hr 逃脫 = PDH', 'LDDS 可同時確診 + 提示病因', '若 4hr/8hr 均不抑制，需腹超或 ACTH 進一步區分'] },
-      { step_number: 5, step_type: 'case_summary', title: '內分泌檢測的臨床病理原則', prompt: '整合多飲多尿犬的內分泌實驗室評估原則。', available_actions: ['基礎三件套先篩 → 辨識指向模式 → 特異性內分泌檢測 → 系統判讀 → 指導進一步影像', '直接做所有內分泌測試', '只做一項就夠', '影像優先不需實驗室'], correct_actions: ['基礎三件套先篩 → 辨識指向模式 → 特異性內分泌檢測 → 系統判讀 → 指導進一步影像'], feedback_correct: '正確！這是內分泌臨床病理的黃金流程：(1) 基礎三件套縮小範圍、(2) 辨識特徵模式（stress leukogram + ALP + 等張尿 = Cushing）、(3) 選擇適當的功能性檢測（UCCR + LDDS）、(4) 系統性結果判讀、(5) 影像確認。', feedback_incorrect: '內分泌診斷是分步驟的邏輯過程。基礎篩檢指路 → 特異性檢測確認 → 系統判讀 → 影像確認。', key_learning_points: ['基礎篩檢可涵蓋多種 PU/PD 鑑別', '特徵模式辨識是臨床病理的核心技能', '功能性測試（UCCR/LDDS/ACTH stim）的選擇邏輯', '結果判讀需整合基礎 + 特異性檢測'] },
+哪些發現最有意義？選擇 3 項。`, available_actions: ['Stress leukogram（嗜中性球增多 + 淋巴球減少 + 嗜酸球減少）', 'ALP 明顯升高（皮質醇誘導型 ALP）', 'USG 1.008（嚴重等張尿，濃縮能力極差）', 'Glucose 135 正常偏高但無糖尿', 'Cholesterol + Triglyceride 升高', 'BUN/Cr 正常'], correct_actions: ['Stress leukogram（嗜中性球增多 + 淋巴球減少 + 嗜酸球減少）', 'ALP 明顯升高（皮質醇誘導型 ALP）', 'USG 1.008（嚴重等張尿，濃縮能力極差）'], feedback_correct: '正確！三項共同指向一個診斷，庫興氏症。Stress leukogram = 內源性皮質醇過高的白血球特徵。ALP 明顯升高 = 皮質醇誘導的同工酶（犬特有）。等張尿 = 皮質醇抑制 ADH 導致腎濃縮能力下降。', feedback_incorrect: '三大線索：stress leukogram + ALP 升高 + 等張尿 = 經典的庫興氏症生化模式。這展示了基礎三件套如何「指路」到特異性檢測。', key_learning_points: ['Stress leukogram = 內源性或外源性高皮質醇', '犬 ALP 有皮質醇誘導型同工酶（corticosteroid-induced ALP）', 'USG < 1.012 在 PU/PD 犬需考慮 Cushing', '高脂血症也是 Cushing 的常見生化異常'] },
+      { step_number: 3, step_type: 'diagnostic_plan', title: '內分泌確認', prompt: '基礎篩檢高度提示 Cushing，確認檢查？選擇 2 項。', available_actions: ['UCCR（尿液皮質醇/肌酸酐比值）篩檢', 'LDDS（低劑量 Dexamethasone 抑制試驗）確認', 'ACTH 刺激試驗', '甲狀腺 T4', '血清皮質醇基礎值', '內源性 ACTH'], correct_actions: ['UCCR（尿液皮質醇/肌酸酐比值）篩檢', 'LDDS（低劑量 Dexamethasone 抑制試驗）確認'], feedback_correct: '正確！UCCR 敏感度 > 95%（陰性幾乎排除 Cushing），但特異性較低。LDDS 是確認的 gold standard（8hr cortisol > 1.4 ug/dL = 陽性）。兩者搭配：UCCR 篩 + LDDS 確認。基礎皮質醇值無診斷意義。', feedback_incorrect: 'UCCR 篩檢（敏感度 > 95%）+ LDDS 確認（gold standard）是 Cushing 的標準臨床病理流程。基礎皮質醇值無意義（脈衝式分泌）。', key_learning_points: ['UCCR 敏感度 > 95%、特異性 ~80%', 'LDDS 是確診 gold standard', 'ACTH stim 敏感度較低（60-85%），主要用於治療監測', '基礎皮質醇值無診斷意義（脈衝式分泌）'] },
+      { step_number: 4, step_type: 'result_interpretation', title: '內分泌結果判讀', prompt: 'UCCR > 80（正常 < 20）。LDDS：0hr 4.8、4hr 1.2、8hr 3.9 ug/dL。如何系統判讀？', available_actions: ['UCCR 陽性 + LDDS 8hr 未抑制 = 確認 Cushing。4hr 抑制 + 8hr 逃脫 = 高度提示 PDH。', 'LDDS 陰性', '只有 UCCR 陽性，LDDS 不確定', 'ADH（腎上腺腫瘤）'], correct_actions: ['UCCR 陽性 + LDDS 8hr 未抑制 = 確認 Cushing。4hr 抑制 + 8hr 逃脫 = 高度提示 PDH。'], feedback_correct: '正確！UCCR > 80 = 篩檢陽性。LDDS 8hr > 1.4 = 確認 Cushing。進階判讀：4hr cortisol < 50% baseline 或 < 1.4 = 「4hr 抑制」→ 再 8hr 逃脫 = PDH 特徵（垂體腫瘤保留部分負回饋）。這個模式在臨床病理中被稱為 LDDS 的「額外資訊」。', feedback_incorrect: 'LDDS 系統判讀：8hr 判定 Cushing 有無。4hr 提供 PDH vs ADH 額外資訊。4hr 抑制 + 8hr 逃脫 = PDH。', key_learning_points: ['LDDS 8hr > 1.4 = 確認 Cushing', 'LDDS 4hr 是「額外資訊」：4hr 抑制 + 8hr 逃脫 = PDH', 'LDDS 可同時確診 + 提示病因', '若 4hr/8hr 均不抑制，需腹超或 ACTH 後續區分'] },
+      { step_number: 5, step_type: 'case_summary', title: '內分泌檢測的臨床病理原則', prompt: '整合多飲多尿犬的內分泌實驗室評估原則。', available_actions: ['基礎三件套先篩 → 辨識指向模式 → 特異性內分泌檢測 → 系統判讀 → 指導後續影像', '直接做所有內分泌測試', '只做一項就夠', '影像優先不需實驗室'], correct_actions: ['基礎三件套先篩 → 辨識指向模式 → 特異性內分泌檢測 → 系統判讀 → 指導後續影像'], feedback_correct: '正確！這是內分泌臨床病理的黃金流程：(1) 基礎三件套縮小範圍、(2) 辨識特徵模式（stress leukogram + ALP + 等張尿 = Cushing）、(3) 選擇適當的功能性檢測（UCCR + LDDS）、(4) 系統性結果判讀、(5) 影像確認。', feedback_incorrect: '內分泌診斷是分步驟的邏輯過程。基礎篩檢指路 → 特異性檢測確認 → 系統判讀 → 影像確認。', key_learning_points: ['基礎篩檢可涵蓋多種 PU/PD 鑑別', '特徵模式辨識是臨床病理的核心技能', '功能性測試（UCCR/LDDS/ACTH stim）的選擇邏輯', '結果判讀需整合基礎 + 特異性檢測'] },
     ],
-    expert_pathway: { reasoning: 'PU/PD + 肥胖 + 脫毛 → 基礎三件套 → stress leukogram + ALP + 等張尿 = Cushing 模式 → UCCR + LDDS 確認 → PDH → 進一步腹超評估腎上腺。', key_decisions: ['基礎篩檢先行', '辨識 Cushing 的三大基礎模式', '選擇 UCCR + LDDS 組合', '判讀 LDDS 4hr 額外資訊'], common_pitfalls: ['跳過基礎篩檢直接做 LDDS', '僅看 8hr 忽略 4hr 額外資訊', '用基礎皮質醇診斷', '忽略 stress leukogram 的意義'] },
+    expert_pathway: { reasoning: 'PU/PD + 肥胖 + 脫毛 → 基礎三件套 → stress leukogram + ALP + 等張尿 = Cushing 模式 → UCCR + LDDS 確認 → PDH → 後續腹超評估腎上腺。', key_decisions: ['基礎篩檢先行', '辨識 Cushing 的三大基礎模式', '選擇 UCCR + LDDS 組合', '判讀 LDDS 4hr 額外資訊'], common_pitfalls: ['跳過基礎篩檢直接做 LDDS', '僅看 8hr 忽略 4hr 額外資訊', '用基礎皮質醇診斷', '忽略 stress leukogram 的意義'] },
     related_nodes_for_review: ['CPATH-L4-010', 'CPATH-L4-002', 'CPATH-L4-009', 'CPATH-L4-001'],
     tags: ['內分泌', 'Cushing', 'LDDS', 'UCCR', 'PU/PD', 'case_challenge'],
   },
@@ -294,9 +294,9 @@ export const CPATH_CASES: CaseChallenge[] = [
 - 細胞學：主要為非退化性嗜中性球 + 巨噬細胞 + 少量反應性間皮細胞
 
 如何分類此胸水？`, available_actions: ['改良型漏出液（modified transudate）', '純漏出液（pure transudate）', '滲出液（exudate）', '乳糜液（chylous effusion）'], correct_actions: ['改良型漏出液（modified transudate）'], feedback_correct: '正確！體液分類三步驟：(1) TP + TNCC 分類（TP 2.5-5.0 + TNCC 500-7,000 = 改良型漏出液）、(2) 外觀（淡粉紅稍混濁符合）、(3) 細胞學（混合型非特異性發炎）。改良型漏出液最常見原因：腫瘤 > 心臟衰竭 > 肝臟疾病。', feedback_incorrect: '體液分類依 TP + TNCC：純漏出液（TP < 2.5, TNCC < 500）、改良型漏出液（TP 2.5-5.0, TNCC 500-7,000）、滲出液（TP > 3.0, TNCC > 7,000）。本例 TP 4.5 + TNCC 5,500 = 改良型漏出液。', key_learning_points: ['體液分類三參數：外觀、TP/TNCC、細胞學', '純漏出液：TP < 2.5, TNCC < 500（低白蛋白、肝硬化）', '改良型漏出液：TP 2.5-5.0, TNCC 500-7,000（腫瘤、CHF）', '滲出液：TP > 3.0, TNCC > 7,000（感染性/非感染性）'] },
-      { step_number: 3, step_type: 'differential_diagnosis', title: '鑑別診斷', prompt: '犬的改良型漏出液胸水，最重要的 3 項鑑別？', available_actions: ['胸腔腫瘤（最常見原因）', '右心衰竭', '肺葉扭轉', '膿胸', '乳糜胸', '肝衰竭（低白蛋白）'], correct_actions: ['胸腔腫瘤（最常見原因）', '右心衰竭', '肺葉扭轉'], feedback_correct: '正確！犬改良型漏出液胸水三大鑑別：(1) 胸腔/縱膈腫瘤（最常見——mesothelioma、thymoma、lymphoma）、(2) 右心衰竭（心輸出不足 + 靜脈壓升高）、(3) 肺葉扭轉。細胞學需仔細找腫瘤細胞。', feedback_incorrect: '犬改良型漏出液胸水鑑別：腫瘤最常見 > CHF > 肺葉扭轉 > 肝病。膿胸是滲出液。乳糜液是獨立分類。', key_learning_points: ['犬改良型漏出液胸水 #1 原因 = 腫瘤', '心臟衰竭是重要鑑別', '胸水細胞學尋找腫瘤細胞', '膿胸 = 化膿性滲出液（退化性嗜中性球 + 細菌）'] },
-      { step_number: 4, step_type: 'diagnostic_plan', title: '進一步評估', prompt: '進一步鑑別方向？選擇 2 項。', available_actions: ['胸腔 X 光（引流後拍攝評估腫塊）', '心臟超音波排除 CHF', '胸水 Triglyceride / Cholesterol（排除乳糜）', '胸水培養', '細胞學仔細複查腫瘤細胞', 'CT 胸腔'], correct_actions: ['胸腔 X 光（引流後拍攝評估腫塊）', '心臟超音波排除 CHF'], feedback_correct: '正確！引流後 X 光可顯示被胸水遮蔽的腫塊。心超排除 CHF。如果 X 光見腫塊，再做 CT 精確評估。胸水 TG/Chol 可排除乳糜（TG > 100 mg/dL 或 TG 胸水 > 血清 = 乳糜）。', feedback_incorrect: '引流後 X 光揭示被遮蔽的腫塊。心超排除 CHF。兩者是改良型漏出液鑑別的核心影像。', key_learning_points: ['引流後 X 光 = 揭示被胸水遮蔽的病灶', '心超排除 CHF（右心功能 + 心包膜）', '乳糜液判定：胸水 TG > 100 或 TG 胸水/血清 > 1', 'CT 是胸腔腫塊精確評估的 gold standard'] },
-      { step_number: 5, step_type: 'result_interpretation', title: '綜合結果', prompt: '引流後 X 光：右前縱膈可見一個 5 cm 軟組織團塊。心超：正常心功能。細胞學複查：偶見一群異型間皮樣細胞，核大核仁明顯。如何整合？', available_actions: ['改良型漏出液 + 縱膈腫塊 + 異型間皮細胞 = 高度懷疑 mesothelioma 或 thymoma，需組織切片確診', '確診為 mesothelioma', '良性反應性間皮增生', '淋巴瘤'], correct_actions: ['改良型漏出液 + 縱膈腫塊 + 異型間皮細胞 = 高度懷疑 mesothelioma 或 thymoma，需組織切片確診'], feedback_correct: '正確！體液細胞學對間皮腫瘤的診斷是挑戰——反應性間皮細胞 vs 惡性間皮瘤難以區分。異型性提高懷疑但不足以確診。需要組織切片 + 免疫組織化學染色確診。CT 引導穿刺或胸腔鏡切片是下一步。', feedback_incorrect: '胸水細胞學對間皮腫瘤的限制：反應性 vs 惡性間皮細胞極難區分。異型性增加懷疑但需切片確認。', key_learning_points: ['反應性間皮細胞 vs 惡性間皮瘤：細胞學區分困難', '異型間皮細胞需組織切片確診', '免疫組織化學（CK/Vimentin/Desmin）輔助鑑別', '體液細胞學的限制是臨床病理師需溝通的重要觀念'] },
+      { step_number: 3, step_type: 'differential_diagnosis', title: '鑑別診斷', prompt: '犬的改良型漏出液胸水，最重要的 3 項鑑別？', available_actions: ['胸腔腫瘤（最常見原因）', '右心衰竭', '肺葉扭轉', '膿胸', '乳糜胸', '肝衰竭（低白蛋白）'], correct_actions: ['胸腔腫瘤（最常見原因）', '右心衰竭', '肺葉扭轉'], feedback_correct: '正確！犬改良型漏出液胸水三大鑑別：(1) 胸腔/縱膈腫瘤（最常見，mesothelioma、thymoma、lymphoma）、(2) 右心衰竭（心輸出不足 + 靜脈壓升高）、(3) 肺葉扭轉。細胞學需仔細找腫瘤細胞。', feedback_incorrect: '犬改良型漏出液胸水鑑別：腫瘤最常見 > CHF > 肺葉扭轉 > 肝病。膿胸是滲出液。乳糜液是獨立分類。', key_learning_points: ['犬改良型漏出液胸水 #1 原因 = 腫瘤', '心臟衰竭是重要鑑別', '胸水細胞學尋找腫瘤細胞', '膿胸 = 化膿性滲出液（退化性嗜中性球 + 細菌）'] },
+      { step_number: 4, step_type: 'diagnostic_plan', title: '後續評估', prompt: '後續鑑別方向？選擇 2 項。', available_actions: ['胸腔 X 光（引流後拍攝評估腫塊）', '心臟超音波排除 CHF', '胸水 Triglyceride / Cholesterol（排除乳糜）', '胸水培養', '細胞學仔細複查腫瘤細胞', 'CT 胸腔'], correct_actions: ['胸腔 X 光（引流後拍攝評估腫塊）', '心臟超音波排除 CHF'], feedback_correct: '正確！引流後 X 光可顯示被胸水遮蔽的腫塊。心超排除 CHF。如果 X 光見腫塊，再做 CT 精確評估。胸水 TG/Chol 可排除乳糜（TG > 100 mg/dL 或 TG 胸水 > 血清 = 乳糜）。', feedback_incorrect: '引流後 X 光揭示被遮蔽的腫塊。心超排除 CHF。兩者是改良型漏出液鑑別的核心影像。', key_learning_points: ['引流後 X 光 = 揭示被胸水遮蔽的病灶', '心超排除 CHF（右心功能 + 心包膜）', '乳糜液判定：胸水 TG > 100 或 TG 胸水/血清 > 1', 'CT 是胸腔腫塊精確評估的 gold standard'] },
+      { step_number: 5, step_type: 'result_interpretation', title: '綜合結果', prompt: '引流後 X 光：右前縱膈可見一個 5 cm 軟組織團塊。心超：正常心功能。細胞學複查：偶見一群異型間皮樣細胞，核大核仁明顯。如何整合？', available_actions: ['改良型漏出液 + 縱膈腫塊 + 異型間皮細胞 = 高度懷疑 mesothelioma 或 thymoma，需組織切片確診', '確診為 mesothelioma', '良性反應性間皮增生', '淋巴瘤'], correct_actions: ['改良型漏出液 + 縱膈腫塊 + 異型間皮細胞 = 高度懷疑 mesothelioma 或 thymoma，需組織切片確診'], feedback_correct: '正確！體液細胞學對間皮腫瘤的診斷是挑戰，反應性間皮細胞 vs 惡性間皮瘤難以區分。異型性提高懷疑但不足以確診。需要組織切片 + 免疫組織化學染色確診。CT 引導穿刺或胸腔鏡切片是下一步。', feedback_incorrect: '胸水細胞學對間皮腫瘤的限制：反應性 vs 惡性間皮細胞極難區分。異型性增加懷疑但需切片確認。', key_learning_points: ['反應性間皮細胞 vs 惡性間皮瘤：細胞學區分困難', '異型間皮細胞需組織切片確診', '免疫組織化學（CK/Vimentin/Desmin）輔助鑑別', '體液細胞學的限制是臨床病理師需溝通的重要觀念'] },
       { step_number: 6, step_type: 'case_summary', title: '體液分析的臨床病理價值', prompt: '整合體液分析在呼吸困難鑑別中的角色。', available_actions: ['體液分析 = 分類（TP/TNCC）+ 細胞學 → 縮小鑑別 → 指導影像 → 認知限制 → 需要時轉切片', '體液分析可以確診所有疾病', '只看外觀即可', '只做培養不需細胞學'], correct_actions: ['體液分析 = 分類（TP/TNCC）+ 細胞學 → 縮小鑑別 → 指導影像 → 認知限制 → 需要時轉切片'], feedback_correct: '正確！體液分析的價值：(1) 快速分類縮小鑑別、(2) 細胞學可確診某些疾病（膿胸、淋巴瘤、乳糜）、(3) 指導下一步檢查方向。但也有限制：間皮瘤、反應性增生等需組織確認。認知限制是成熟臨床病理觀念。', feedback_incorrect: '體液分析的核心價值：分類 + 細胞學 → 縮小鑑別 → 指導方向。但也要認知限制。', key_learning_points: ['體液分析是胸/腹水鑑別的第一線', '可確診：膿胸（細菌）、乳糜（TG）、某些腫瘤（淋巴瘤）', '不可確診：間皮瘤 vs 反應性間皮增生', '臨床病理的價值 = 快速縮小鑑別 + 指導方向'] },
     ],
     expert_pathway: { reasoning: '呼吸困難 + 胸腔叩診濁音 → 穿刺引流 + 取樣 → 改良型漏出液 → 鑑別：腫瘤/CHF/肺扭轉 → 引流後 X 光 + 心超 → 縱膈腫塊 + 異型間皮細胞 → 需切片確診。', key_decisions: ['穿刺 = 治療 + 診斷', '體液分類正確', '引流後影像', '認知細胞學限制'], common_pitfalls: ['因影像延誤穿刺', '體液分類錯誤', '反應性間皮誤判為腫瘤', '忽略引流後 X 光', '未排除 CHF'] },
@@ -322,7 +322,7 @@ export const CPATH_CASES: CaseChallenge[] = [
         step_number: 1,
         step_type: 'history_collection',
         title: '病史採集',
-        prompt: '面對老年貓例行篩檢出現多項異常，你需要進一步釐清哪些問題？請選擇最重要的 3 項。',
+        prompt: '面對老年貓例行篩檢出現多項異常，你需要後續釐清哪些問題？請選擇最重要的 3 項。',
         available_actions: [
           '詢問多食/多渴/多尿的具體時間與程度',
           '詢問是否有心跳加速、喘息或活動後疲倦',
@@ -383,19 +383,19 @@ export const CPATH_CASES: CaseChallenge[] = [
 
 請選擇最正確的整合判讀。`,
         available_actions: [
-          'T4 顯著升高確認甲狀腺亢進；氮血症 + USG 1.018 提示腎功能受損，但甲亢可能掩蓋 CKD 真實嚴重度',
+          'T4 明顯升高確認甲狀腺亢進；氮血症 + USG 1.018 提示腎功能受損，但甲亢可能掩蓋 CKD 真實嚴重度',
           '單純甲狀腺亢進，氮血症為甲亢導致的前腎性',
           '原發性 CKD 合併偶然發現的 T4 升高',
           '肝臟疾病為主（ALT 升高），甲狀腺次要',
         ],
         correct_actions: [
-          'T4 顯著升高確認甲狀腺亢進；氮血症 + USG 1.018 提示腎功能受損，但甲亢可能掩蓋 CKD 真實嚴重度',
+          'T4 明顯升高確認甲狀腺亢進；氮血症 + USG 1.018 提示腎功能受損，但甲亢可能掩蓋 CKD 真實嚴重度',
         ],
-        feedback_correct: '正確！這是老年貓臨床病理最重要的整合判讀挑戰之一。T4 8.5 明確確認甲亢。關鍵陷阱：甲亢會增加 GFR（腎絲球過濾率），使 BUN/Cr 看起來「沒那麼高」——實際腎功能可能比目前數值顯示的更差。USG 1.018 在貓屬不適當低（貓正常 > 1.035），支持腎臟濃縮能力受損。ALT 輕度升高是甲亢的常見肝臟影響（非原發肝病）。SDMA 18 已超出正常（> 14），進一步支持腎功能受損。',
-        feedback_incorrect: '核心概念：甲亢增加 GFR → BUN/Cr 被「稀釋」→ 腎病嚴重度被低估。治療甲亢後 GFR 正常化，BUN/Cr 可能進一步升高，揭露隱藏的 CKD。這是甲亢 + CKD 並存時最常見的臨床病理陷阱。',
+        feedback_correct: '正確！這是老年貓臨床病理最重要的整合判讀挑戰之一。T4 8.5 明確確認甲亢。關鍵陷阱：甲亢會增加 GFR（腎絲球過濾率），使 BUN/Cr 看起來「沒那麼高」，實際腎功能可能比目前數值顯示的更差。USG 1.018 在貓屬不適當低（貓正常 > 1.035），支持腎臟濃縮能力受損。ALT 輕度升高是甲亢的常見肝臟影響（非原發肝病）。SDMA 18 已超出正常（> 14），後續支持腎功能受損。',
+        feedback_incorrect: '核心概念：甲亢增加 GFR → BUN/Cr 被「稀釋」→ 腎病嚴重度被低估。治療甲亢後 GFR 正常化，BUN/Cr 可能後續升高，揭露隱藏的 CKD。這是甲亢 + CKD 並存時最常見的臨床病理陷阱。',
         key_learning_points: [
           '甲亢增加 GFR 的機轉：增加心輸出 + 降低腎血管阻力 → 腎絲球過度灌流',
-          '甲亢掩蓋 CKD：治療前 Cr 看似輕度升高，治療後可能顯著惡化',
+          '甲亢掩蓋 CKD：治療前 Cr 看似輕度升高，治療後可能明顯惡化',
           'SDMA 比 Cr 更早偵測腎功能下降，在甲亢貓中也可能被低估',
           '貓 USG < 1.035 在脫水或氮血症時 = 濃縮能力不適當',
           'ALT 輕度升高是甲亢常見的次要發現（甲狀腺素對肝細胞的直接影響）',
@@ -418,8 +418,8 @@ export const CPATH_CASES: CaseChallenge[] = [
           '先以 Methimazole 低劑量試驗性治療甲亢，2-4 週後追蹤腎功能（BUN/Cr/SDMA/USG）評估隱藏 CKD 嚴重度',
           '追蹤尿液 UPC 與血壓，評估腎臟與心血管目標器官損傷',
         ],
-        feedback_correct: '正確！Methimazole 試驗性治療（trial therapy）是甲亢合併腎功能異常的標準策略。低劑量開始（1.25-2.5 mg PO BID），2-4 週後追蹤 T4 + BUN/Cr/SDMA：若腎指數穩定 → 可考慮根治性治療；若 Cr 顯著上升（> 30%）→ 需要調整 Methimazole 劑量維持甲亢在「輕度未控制」狀態以保護腎灌流。UPC 與血壓監測評估 CKD 分期（IRIS staging）與高血壓（甲亢 + CKD 雙重風險）。',
-        feedback_incorrect: '甲亢 + CKD 的管理核心：先用可逆性藥物（Methimazole）測試腎功能反應，而非直接根治（不可逆）。追蹤腎功能與血壓是評估整體預後的關鍵。不治療甲亢不是選項——長期甲亢會導致心肌病和惡病質。',
+        feedback_correct: '正確！Methimazole 試驗性治療（trial therapy）是甲亢合併腎功能異常的標準策略。低劑量開始（1.25-2.5 mg PO BID），2-4 週後追蹤 T4 + BUN/Cr/SDMA：若腎指數穩定 → 可考慮根治性治療；若 Cr 明顯上升（> 30%）→ 需要調整 Methimazole 劑量維持甲亢在「輕度未控制」狀態以保護腎灌流。UPC 與血壓監測評估 CKD 分期（IRIS staging）與高血壓（甲亢 + CKD 雙重風險）。',
+        feedback_incorrect: '甲亢 + CKD 的管理核心：先用可逆性藥物（Methimazole）測試腎功能反應，而非直接根治（不可逆）。追蹤腎功能與血壓是評估整體預後的關鍵。不治療甲亢不是選項，長期甲亢會導致心肌病和惡病質。',
         key_learning_points: [
           'Methimazole 試驗性治療是甲亢 + CKD 的黃金標準策略',
           '治療後 Cr 升高 > 30% 提示嚴重潛在 CKD',
@@ -445,8 +445,8 @@ export const CPATH_CASES: CaseChallenge[] = [
         correct_actions: [
           '甲亢已控制但揭露 IRIS CKD Stage 3（Cr 3.4），需調降 Methimazole 劑量維持 T4 在正常高限以保護腎灌流，同時啟動 CKD 管理（腎臟處方飲食、磷結合劑、血壓控制）、每 2-4 週追蹤腎指數與 T4',
         ],
-        feedback_correct: '正確！治療後 Cr 從 2.1 升至 3.4（升幅 > 60%），證實甲亢掩蓋了嚴重 CKD。IRIS CKD Stage 3（Cr 2.9-5.0）需積極管理。策略轉為「容許輕度甲亢」以保護殘存腎功能，同時啟動多模式 CKD 管理。這正是臨床病理追蹤監測的核心價值——動態數據指導治療調整。',
-        feedback_incorrect: '治療後腎指數顯著惡化（Cr 升幅 > 60%）不是「暫時性」反應，也不是藥物副作用——這是甲亢控制後 GFR 正常化揭露了原本被掩蓋的 CKD。正確做法是調降 Methimazole 劑量（非停藥），在甲亢控制與腎灌流保護之間取得平衡，同時啟動 CKD 多模式管理。',
+        feedback_correct: '正確！治療後 Cr 從 2.1 升至 3.4（升幅 > 60%），證實甲亢掩蓋了嚴重 CKD。IRIS CKD Stage 3（Cr 2.9-5.0）需積極管理。策略轉為「容許輕度甲亢」以保護殘存腎功能，同時啟動多模式 CKD 管理。這正是臨床病理追蹤監測的核心價值，動態數據指導治療調整。',
+        feedback_incorrect: '治療後腎指數明顯惡化（Cr 升幅 > 60%）不是「暫時性」反應，也不是藥物副作用，這是甲亢控制後 GFR 正常化揭露了原本被掩蓋的 CKD。正確做法是調降 Methimazole 劑量（非停藥），在甲亢控制與腎灌流保護之間取得平衡，同時啟動 CKD 多模式管理。',
         key_learning_points: [
           '治療後 Cr 升幅 > 30% 證實甲亢掩蓋了潛在 CKD',
           'IRIS CKD 分期需在甲亢控制後重新評估才準確',
@@ -457,7 +457,7 @@ export const CPATH_CASES: CaseChallenge[] = [
       },
     ],
     expert_pathway: {
-      reasoning: '老年貓多食體重下降 + PU/PD → 理學觸及甲狀腺結節 + 心搏過速 → 篩檢 T4 顯著升高確認甲亢 → 同時發現氮血症 + 低 USG → 甲亢掩蓋 CKD 的可能 → Methimazole 試驗治療 + 追蹤腎功能揭露真實 CKD 分期。',
+      reasoning: '老年貓多食體重下降 + PU/PD → 理學觸及甲狀腺結節 + 心搏過速 → 篩檢 T4 明顯升高確認甲亢 → 同時發現氮血症 + 低 USG → 甲亢掩蓋 CKD 的可能 → Methimazole 試驗治療 + 追蹤腎功能揭露真實 CKD 分期。',
       key_decisions: [
         '辨識甲亢掩蓋 CKD 的臨床病理陷阱',
         '整合 CBC + 生化 + UA + T4 為一致的臨床敘事',
@@ -466,7 +466,7 @@ export const CPATH_CASES: CaseChallenge[] = [
       ],
       common_pitfalls: [
         '僅看 T4 升高就直接根治，忽略潛在 CKD',
-        '認為氮血症輕微（Cr 2.1）不需擔心——甲亢可能掩蓋真實值',
+        '認為氮血症輕微（Cr 2.1）不需擔心，甲亢可能掩蓋真實值',
         '忽略 USG 1.018 在貓的意義（應 > 1.035）',
         '未追蹤治療後腎功能變化',
         'ALT 升高誤判為原發肝病而非甲亢次要影響',
@@ -519,13 +519,13 @@ export const CPATH_CASES: CaseChallenge[] = [
           '立即做心電圖（ECG）監測高鉀血症的心臟毒性',
           '啟動高鉀血症急救處置（IV Regular Insulin + Dextrose / IV Calcium gluconate）',
         ],
-        feedback_correct: '正確！K+ 6.8 是危急值（critical value），無論 POCT 或外送結果，危急值必須立即處理，不可等待確認。ECG 監測是首要——高鉀導致心律不整（帳篷狀 T 波 → P 波消失 → QRS 增寬 → 心室顫動）。Calcium gluconate 心肌保護 + Insulin/Dextrose 將鉀推入細胞內是急救標準。這展示了 POCT 最大價值：急診快速決策。',
-        feedback_incorrect: 'POCT 的核心價值就在此：危急值的即時偵測。K+ > 6.5 mEq/L 有心臟毒性風險，必須立即處理——不等外送確認。ECG + 急救處置是標準流程。',
+        feedback_correct: '正確！K+ 6.8 是危急值（critical value），無論 POCT 或外送結果，危急值必須立即處理，不可等待確認。ECG 監測是首要，高鉀導致心律不整（帳篷狀 T 波 → P 波消失 → QRS 增寬 → 心室顫動）。Calcium gluconate 心肌保護 + Insulin/Dextrose 將鉀推入細胞內是急救標準。這展示了 POCT 最大價值：急診快速決策。',
+        feedback_incorrect: 'POCT 的核心價值就在此：危急值的即時偵測。K+ > 6.5 mEq/L 有心臟毒性風險，必須立即處理，不等外送確認。ECG + 急救處置是標準流程。',
         key_learning_points: [
           'POCT 核心價值：急診危急值即時偵測，分鐘級決策',
           '高鉀血症危急值 > 6.5 mEq/L：需立即 ECG 監測 + 急救',
           'Calcium gluconate：保護心肌（不降鉀）；Insulin + Dextrose：促進鉀進入細胞內',
-          'POCT 危急值不等外送確認——先治療、同時送確認',
+          'POCT 危急值不等外送確認，先治療、同時送確認',
         ],
       },
       {
@@ -551,8 +551,8 @@ K+ 差異最大（6.8 vs 5.2），可能原因？請選擇最可能的 2 項。`
           '體外溶血（in vitro hemolysis）：採樣或處理過程中紅血球破裂釋出鉀',
           '檢體凝塊（clotting in EDTA tube）：血小板活化釋放鉀',
         ],
-        feedback_correct: '正確！K+ 是最常見的 POCT vs 外送差異項目之一。主要原因是分析前誤差（pre-analytical error）：(1) 體外溶血——急診採血困難（脫水血管塌陷 + 小號針頭 + 困難採血）導致紅血球破裂，RBC 內 K+ 濃度是血漿的 25-40 倍，少量溶血即可顯著升高結果。(2) EDTA 管內微小凝塊——血小板活化時釋放 K+。這是臨床病理品管（QC）的經典教案。',
-        feedback_incorrect: '鉀離子是分析前誤差最敏感的項目。溶血是最常見原因——急診困難採血常導致。凝塊也會釋放鉀。POCT 儀器本身測量鉀通常是準確的（離子選擇電極法），問題出在檢體品質。',
+        feedback_correct: '正確！K+ 是最常見的 POCT vs 外送差異項目之一。主要原因是分析前誤差（pre-analytical error）：(1) 體外溶血，急診採血困難（脫水血管塌陷 + 小號針頭 + 困難採血）導致紅血球破裂，RBC 內 K+ 濃度是血漿的 25-40 倍，少量溶血即可明顯升高結果。(2) EDTA 管內微小凝塊，血小板活化時釋放 K+。這是臨床病理品管（QC）的經典教案。',
+        feedback_incorrect: '鉀離子是分析前誤差最敏感的項目。溶血是最常見原因，急診困難採血常導致。凝塊也會釋放鉀。POCT 儀器本身測量鉀通常是準確的（離子選擇電極法），問題出在檢體品質。',
         key_learning_points: [
           '鉀離子：分析前誤差最敏感的檢驗項目',
           '體外溶血使 K+ 假性升高（RBC 內鉀濃度 >> 血漿）',
@@ -583,7 +583,7 @@ K+ 差異最大（6.8 vs 5.2），可能原因？請選擇最可能的 2 項。`
           'ISE 直接法（POCT）vs ISE 間接法（外送）：高蛋白/高脂血症時差異更大',
           '全血 vs 血清基質差異：全血含紅血球佔體積，離子活性計算不同',
           'POCT 與外送 ±10-15% 差異通常可接受',
-          '了解方法學差異才能正確判讀——不是「誰比較準」而是「為何不同」',
+          '了解方法學差異才能正確判讀，不是「誰比較準」而是「為何不同」',
           '臨床病理品管概念：method bias vs random error vs pre-analytical error',
         ],
       },
@@ -602,7 +602,7 @@ K+ 差異最大（6.8 vs 5.2），可能原因？請選擇最可能的 2 項。`
           'POCT 用於急診即時決策（危急值、趨勢監測）；外送用於精確診斷與分期。兩者互補非互斥。差異過大時需評估分析前因素。',
         ],
         feedback_correct: '正確！這是 POCT 臨床應用的核心原則：(1) POCT 優勢：速度（分鐘 vs 小時/天）、急診危急值即時偵測、趨勢監測（serial monitoring）、少量檢體。(2) POCT 限制：精確度略遜外送、無血液抹片、項目有限。(3) 外送優勢：方法經過嚴格認證、參考範圍更可靠、項目齊全。(4) 互補策略：急診先用 POCT 決策 + 同時送外送確認。差異過大時先檢查分析前因素。',
-        feedback_incorrect: 'POCT 與外送檢驗是互補關係。POCT 的速度在急診不可取代（本例高鉀危急值即是例證）；外送的精確度與完整性對確診和分期不可或缺。臨床獸醫需理解兩者的優勢與限制。',
+        feedback_incorrect: 'POCT 與外送檢驗是互補關係。POCT 的速度在急診不可取代（本例高鉀危急值即是例證）；外送的精確度與完整性對確診和分期少不了。臨床獸醫需理解兩者的優勢與限制。',
         key_learning_points: [
           'POCT 核心優勢：速度、床邊即時、少量檢體、趨勢監測',
           'POCT 核心限制：精確度、參考範圍、項目數',
@@ -624,14 +624,14 @@ K+ 差異最大（6.8 vs 5.2），可能原因？請選擇最可能的 2 項。`
         correct_actions: [
           '建立 POCT 與外送檢驗定期比對計畫（每月抽樣 5-10 例同步送檢），制定可接受差異範圍（CV%）；急診採血 SOP 訓練（避免溶血技巧：適當號數針頭、避免過度抽吸、輕柔混合抗凝管）；POCT 儀器每日 QC（液態品管液校驗）與每半年原廠校正',
         ],
-        feedback_correct: '正確！完善的 POCT 品管包含三大面向：(1) 分析前品管——標準化採血流程降低溶血率是最具成本效益的改善措施；(2) 分析中品管——每日液態 QC + 定期校正確保儀器準確度；(3) 分析後品管——POCT vs 外送定期比對（correlation study）建立院內可接受偏差基準。這三者構成完整的品質管理循環（PDCA）。',
-        feedback_incorrect: '問題不在設備本身，而在分析前品質控制與系統性品管。本案例 K+ 差異的主因是分析前誤差（溶血），與儀器等級無關——「垃圾進、垃圾出（GIGO）」是臨床病理的基本原則。解決方案是改善採血流程、建立品管制度（每日 QC + 定期比對），而非放棄或單純升級 POCT 設備。',
+        feedback_correct: '正確！完善的 POCT 品管包含三大面向：(1) 分析前品管，標準化採血流程降低溶血率是最具成本效益的改善措施；(2) 分析中品管，每日液態 QC + 定期校正確保儀器準確度；(3) 分析後品管，POCT vs 外送定期比對（correlation study）建立院內可接受偏差基準。這三者構成完整的品質管理循環（PDCA）。',
+        feedback_incorrect: '問題不在設備本身，而在分析前品質控制與系統性品管。本案例 K+ 差異的主因是分析前誤差（溶血），與儀器等級無關，「垃圾進、垃圾出（GIGO）」是臨床病理的基本原則。解決方案是改善採血流程、建立品管制度（每日 QC + 定期比對），而非放棄或單純升級 POCT 設備。',
         key_learning_points: [
           '分析前品管：標準化採血 SOP 是降低溶血率最具成本效益的措施',
           '分析中品管：每日液態 QC + 定期校正確保儀器準確度',
           '分析後品管：POCT vs 外送定期比對（correlation study）建立院內偏差基準',
           '品質管理循環（PDCA）：計畫 → 執行 → 查核 → 行動，持續改進',
-          '臨床病理品管需要臨床團隊（採血端）與實驗室的協同合作——「好的結果始於好的檢體」',
+          '臨床病理品管需要臨床團隊（採血端）與實驗室的協同合作，「好的結果始於好的檢體」',
         ],
       },
     ],

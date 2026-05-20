@@ -114,8 +114,8 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
 
   // ─── Medium/Low fixes: 鑑別與併發邊補齊 ───
   // 心律不整 ↔ MMVD: differential（老年犬暈厥需鑑別心律不整性 vs 瓣膜性心衰竭）
-  { id: 'CARDIO-E-051', source_node_id: 'CARDIO-L3-007', target_node_id: 'CARDIO-L3-001', relation_type: 'differential', weight: 0.7, description: '老年犬暈厥需鑑別心律不整與瓣膜性心衰竭——兩者均可導致暈厥但機轉與處置不同', bidirectional: true, unlock_condition: null },
-  // 肺高壓 ← 心絲蟲: complication（心絲蟲導致肺高壓——已有 CARDIO-E-033 但此處加上反向說明）
+  { id: 'CARDIO-E-051', source_node_id: 'CARDIO-L3-007', target_node_id: 'CARDIO-L3-001', relation_type: 'differential', weight: 0.7, description: '老年犬暈厥需鑑別心律不整與瓣膜性心衰竭，兩者均可導致暈厥但機轉與處置不同', bidirectional: true, unlock_condition: null },
+  // 肺高壓 ← 心絲蟲: complication（心絲蟲導致肺高壓，已有 CARDIO-E-033 但此處加上反向說明）
   { id: 'CARDIO-E-052', source_node_id: 'CARDIO-L3-009', target_node_id: 'CARDIO-L3-005', relation_type: 'complication', weight: 0.8, description: '肺高壓患犬需排查心絲蟲感染作為根本原因', bidirectional: false, unlock_condition: null },
 
   // ─── 補齊 L3 prerequisite 邊（每個 L3 疾病至少 1 條 prerequisite 連至 L1/L2）───

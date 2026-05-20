@@ -118,7 +118,27 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
     fetchLinks();
   }, [nodeId]);
 
-  if (loading || links.length === 0) return null;
+  if (loading) {
+    return (
+      <Card id="procedure-links" className="scroll-mt-24 border-emerald-200 bg-emerald-50/30">
+        <CardHeader>
+          <h2 className="flex items-center gap-2 font-semibold text-emerald-900">
+            <ClipboardList className="h-5 w-5" />
+            操作步驟指南
+          </h2>
+        </CardHeader>
+        <CardBody>
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="h-3 w-3 animate-spin rounded-full border-2 border-emerald-300 border-t-emerald-600" />
+            載入相關操作指南中...
+          </div>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  // Mock 模式或無對應操作指南：完全不渲染（不打擾使用者）
+  if (links.length === 0) return null;
 
   return (
     <Card id="procedure-links" className="scroll-mt-24 border-emerald-200 bg-emerald-50/30">
