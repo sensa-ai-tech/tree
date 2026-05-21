@@ -1381,7 +1381,28 @@ const contentBloodTyping: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+| 情境 | 判斷要點 | 臨床意義 |
+|------|---------|---------|
+| Major crossmatch 陽性（凝集 / 溶血） | 受血者血清含對抗供血者 RBC 的抗體 | 禁止此次輸血，須另選相容供血者 |
+| Minor crossmatch 陽性 | 供血者血清含對抗受血者 RBC 的抗體（少見） | 濃縮紅血球可謹慎使用（去除血漿）；全血輸注風險較高 |
+| 卡式試驗（card agglutination）弱凝集（1+） | 初步相容但有弱致敏風險 | 首次輸血可繼續，注意監測；第二次輸血前再確認強凝集是否出現 |
+| 貓 AB 型 → 直接輸注 B 型血 | 天然抗 A 抗體極強，即使 major crossmatch 前也會在試管內溶血 | 貓血型絕對不可錯配；B 型貓接受 A 型血幾分鐘內可致命性溶血 |
+| 犬首次輸血 major crossmatch 陰性 | 通常為真陰性（犬幾乎無天然抗體），可輸注 | 致敏後（4–14 天）再輸血須重新 crossmatch，否則急性溶血 |
+
+### USG（比重）判讀整合
+
+輸血前確認受血者腎功能狀態可協助選擇血品種類：
+- BUN/Cr 正常 → 全血或 pRBC 均可
+- CKD 患者 → 優先使用 pRBC，避免額外液體負荷
+- 低蛋白血症（白蛋白 < 2 g/dL）→ 新鮮冷凍血漿（FFP）優先或 pRBC + 膠體
+
 ## 三、常見陷阱 (Pitfalls)
+
+1. **跳過交叉試驗「因為首次輸血」**：犬首次輸血雖天然抗體少，仍應盡量做 crossmatch——部分非 DEA 1 抗原（如 DEA 3、Dal）即使首次接觸也可在免疫致敏個體引發延遲性溶血。
+2. **混淆血型卡（血型鑑定）與交叉試驗（配血試驗）**：血型卡只告訴你 DEA 1.1 陽/陰性；crossmatch 才能偵測其他抗原系統的相容性——兩者目的不同，不可互相取代。
+3. **貓忽略 Mik 血型**：2007 年起確認的 Mik 抗原，A 型貓之間配對仍可能急性溶血；台灣 Mik 盛行率不明，建議所有貓輸血前均完成 major crossmatch，不論 AB 血型是否相符。
+4. **輸血反應觀察窗口太短**：溶血性輸血反應可在輸注後 4–14 天出現（延遲型）；若犬在輸血後 1–2 週出現貧血、發燒、血色素尿，應懷疑延遲性溶血，而非僅評估輸注當下。
+5. **儲存損傷（storage lesion）忽略**：犬全血冷藏超過 3–4 天，2,3-DPG 下降，氧釋放能力降低；緊急失血優先使用最新鮮血液，術後穩定患者可接受較舊血品。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -1527,7 +1548,42 @@ USG 需搭配水合狀態與 azotemia 判讀：
 
 ## 二、判讀要點 (Interpretation)
 
+### USG 整合判讀矩陣
+
+| 臨床情境 | USG | Azotemia？ | 解讀 |
+|---------|-----|-----------|------|
+| 正常水合犬 | > 1.030 | 否 | 正常腎濃縮功能 |
+| 正常水合貓 | > 1.035 | 否 | 正常腎濃縮功能 |
+| 任何物種 | 1.008–1.012（等張尿） | 否 | 中樞性/腎性尿崩症或高飲水需進一步區分 |
+| 任何物種 | < 1.030（犬）/ < 1.035（貓） | **是** | **腎前性排除，腎性 azotemia 高度懷疑** |
+| 任何物種 | > 1.030（犬） | **是** | **腎前性 azotemia**（腎功能保留，需補液） |
+
+### 蛋白尿 UPC 判讀
+
+- UPC < 0.2（犬）/ < 0.4（貓）：正常
+- UPC 0.2–0.5（犬）：borderline；需排除 inflammation/hemorrhage 後方可診斷腎性蛋白尿
+- UPC ≥ 0.5（犬）/ ≥ 0.4（貓）：異常蛋白尿；進一步分類為 pre-renal、renal（glomerular 或 tubular）、post-renal
+- **腎絲球性蛋白尿**（glomerulonephropathy）：UPC 通常 > 2，純蛋白，沉渣清澈
+- **腎小管性蛋白尿**：UPC 通常 < 1，低分子量蛋白，常伴 glucosuria 而血糖正常
+
+### 尿沉渣細胞判讀
+
+| 發現 | 正常上限 | 臨床意義 |
+|------|---------|---------|
+| WBC（HPF）| < 5 | > 5 = 尿道發炎；cystocentesis 採集更可靠 |
+| RBC（HPF）| < 5 | > 5 = 血尿；需排除穿刺出血（含 Acanthocytes → 腎絲球出血）|
+| 細菌 | 無 | cystocentesis 標本見桿菌/球菌 = 真性菌尿 |
+| Granular cast | < 偶見 | > 2–4/LPF = 活動性腎小管損傷 |
+| Waxy cast | 無 | 慢性腎病晚期改變 |
+
 ## 三、常見陷阱 (Pitfalls)
+
+1. **voided 標本做培養/細胞學**：自然排尿會帶入下泌尿道、包皮或陰道細菌及細胞；文化敏感性與細胞學結果都會假陽性。細菌培養及細胞學必須使用 cystocentesis 標本。
+2. **USG 不搭配水合狀態解讀**：脫水 + USG < 1.030（犬）才是腎性 azotemia 的金標準；在輸液大量後 USG 被稀釋，不能以此否定腎功能異常。
+3. **glucosuria 先假設糖尿病**：犬貓腎小管性 glucosuria（如 Fanconi 症候群）血糖正常；貓壓力性高血糖可達 300 mg/dL，若不確定應查 fructosamine 確認真性糖尿病。
+4. **忽略尿比重 1.008–1.012（等張尿）的意義**：等張尿不代表「稀釋尿」，而是腎臟對尿液既不濃縮也不稀釋，應高度懷疑腎病或 ADH 缺乏。
+5. **蛋白尿 dipstick 偽陽性**：dipstick 對白蛋白敏感但對球蛋白不敏感，且鹼性尿（pH > 8）會假陽性；確診蛋白尿必須用 UPC，dipstick 僅用於篩檢。
+6. **貓 Struvite 與犬 Struvite 成因不同**：犬 Struvite 幾乎都伴隨 UTI（尿素酶陽性菌），治療根本是抗生素；貓 Struvite 大多數是 idiopathic FIC，抗生素無效，飲食管理與壓力控制才是關鍵。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -1673,7 +1729,40 @@ const contentEndocrine: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+### 甲狀腺 (Thyroid) 判讀
+
+| 指標 | 犬甲低（Hypothyroidism） | 貓甲亢（Hyperthyroidism） |
+|------|------------------------|------------------------|
+| Total T4（TT4） | ↓（< 1.0 μg/dL） | ↑（> 4.5 μg/dL 強烈懷疑，> 6.0 確診） |
+| Free T4（fT4） | ↓，與 TT4 相符 | ↑（若 TT4 正常，fT4 可揭示 occult hyperthyroidism） |
+| TSH（犬） | ↑（> 0.5 ng/mL 支持甲低） | — |
+| T4 being suppressed | Sick euthyroid：TT4 可降至 0.5–1.0 μg/dL | 非甲低，NTI 才是主因 |
+
+**貓甲亢特殊情境**：CKD 合併甲亢時，T4 可能被 NTI 抑制至正常範圍（masked hyperthyroidism）；治療甲亢後 GFR 下降，腎功能惡化提示 CKD 被高 GFR 掩蓋——治療前需充分告知 prognosis。
+
+### 血糖 / 糖尿病指標
+
+| 指標 | 切點 | 解讀注意事項 |
+|------|------|------------|
+| 血糖（spot glucose） | > 250 mg/dL 犬確診 DM；貓 > 300 mg/dL 但壓力高血糖可達此值 | 需搭配臨床症狀（PU/PD/體重下降）及 fructosamine 確認 |
+| Fructosamine | 犬正常 < 340 μmol/L；貓 < 350 μmol/L | 反映過去 2–3 週平均血糖；不受單次壓力影響，鑑別貓壓力性高血糖金標準 |
+| HbA1c（犬） | 正常 < 3.5%；控制不良 > 5% | 貓 RBC 壽命短，不適用 HbA1c；貓用 fructosamine |
+
+### 皮質醇 / Cushing 診斷
+
+| 試驗 | 結果解讀 | 備注 |
+|------|---------|------|
+| LDDST（低劑量 dexamethasone 抑制試驗） | 8h cortisol > 1.0 μg/dL = Cushing | 篩檢敏感性高（> 95%）；非典型 Addison 可假陰性 |
+| ACTH stimulation | Post-ACTH cortisol > 22 μg/dL（犬）= Cushing | 偵測 PDH 敏感性僅約 60%；但診斷 ADH（adrenal dependent）較可靠；監測 trilostane 療效的首選工具 |
+| Urine cortisol:creatinine ratio（UCCR） | > 10 × 10⁻⁶ 懷疑 Cushing | 篩檢工具，假陽性多（任何應激可升高）；陰性可有效排除 |
+
 ## 三、常見陷阱 (Pitfalls)
+
+1. **Non-thyroidal illness（NTI / euthyroid sick）判斷失誤**：使用 glucocorticoids、苯巴比妥（phenobarbital）或患有嚴重疾病的犬，TT4 可降至甲低範圍；若不搭配 TSH 確認，會過度診斷甲低。TSH ↑ + TT4 ↓ 才是甲低的雙重確認。
+2. **貓壓力性高血糖誤判為糖尿病**：就診應激的貓血糖可達 300–400 mg/dL，fructosamine 正常（< 350 μmol/L）即排除真性 DM。單次血糖值永遠不應作為貓 DM 的唯一診斷依據。
+3. **ACTH stimulation 用於 Cushing 篩檢**：ACTH 試驗對 PDH 敏感性只有 60%，不應作為 Cushing 的主要篩檢工具；應使用 LDDST 或 UCCR 篩檢，ACTH 試驗用於 Addison 確診及 trilostane 療效監測。
+4. **貓甲亢治療後腎功能惡化忽視**：甲亢維持高心輸出量，掩蓋 CKD 的 GFR 下降；治療甲亢後腎功能「惡化」其實是揭露了潛在 CKD，治療前需充分溝通。
+5. **Fructosamine 在溶血 / 低蛋白血症時失準**：fructosamine 與白蛋白及球蛋白結合，溶血、低白蛋白血症（< 2 g/dL）會低估真實血糖控制情況，需知道此限制。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -1968,7 +2057,38 @@ const contentDermCyto: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
+### 壓印抹片（impression smear）細胞學
+
+| 病灶類型 | 典型細胞學所見 | 最可能診斷 |
+|---------|--------------|-----------|
+| 膿皰、表皮性皮炎 | 大量 PMN + 球菌（葡萄串狀）| 細菌性膿皮症（Staph pseudintermedius） |
+| 膿皰、鬆軟性滲出 | PMN + 桿菌 | 革蘭氏陰性菌感染；少見但更頑固 |
+| 丘疹、乾痂 | 少量 PMN + 出芽酵母（花生形，雙極） | Malassezia dermatitis |
+| 腫塊 FNA（圓細胞腫瘤） | 顆粒豐富的大圓形細胞，偶有嗜酸性顆粒（肥大細胞） | Mast Cell Tumor（MCT）——注意脫顆粒後顆粒消失 |
+| 腫塊 FNA（無顆粒圓細胞） | 空泡狀胞質圓形細胞，均勻 | 組織細胞瘤（Histiocytoma）|
+| 腫塊 FNA（上皮細胞） | 細胞緊密聚集，腺管樣排列 | 皮脂腺腫瘤 / 汗腺腫瘤 |
+
+### 皮膚刮搔（skin scraping）
+
+| 刮搔深度 | 目標寄生蟲 | 技術要點 |
+|---------|-----------|---------|
+| 表淺刮搔（til capillary ooze） | Demodex（蠕形蟎）| 多部位刮搔（≥ 5 處），含毛囊深部 |
+| 淺刮搔（角質層） | Sarcoptes（疥蟎） | 疥蟎密度低，陰性不排除；pinnae-pedal reflex 支持診斷 |
+| 透明膠帶壓印 | Cheyletiella（絨毛蟎）、虱 | 表面採集即可，方便快速 |
+
+### Malassezia 判讀標準
+
+- > 2 個/oil immersion field（× 1000）：顯著增生
+- > 5 個/oil field（耳道）：符合 Malassezia 外耳炎
+- 出芽酵母形態（花生 / 雙極）：M. pachydermatis 典型外觀；注意與念珠菌（Candida，假菌絲形態）鑑別
+
 ## 三、常見陷阱 (Pitfalls)
+
+1. **MCT 脫顆粒後漏診**：肥大細胞受 FNA 針刺機械刺激可提前脫顆粒，抹片上看不到典型紫色顆粒。Diff-Quik 染色中顆粒最清楚；若見大量嗜酸性球背景 + 圓形細胞，即使無顆粒也應懷疑 MCT，送組織病理確診。
+2. **Demodex 刮搔部位不足**：蠕形蟎分布不均，單一部位陰性不可排除——最少 5 個部位（含耳緣、趾間、口周），並刮至見微量毛細血管出血（含毛囊深部）。全身性蠕形蟎病可同時做毛根鏡（trichogram）提高偵測率。
+3. **Malassezia 計數低估（油漬效應）**：若抹片油分過多或脫色不完全，酵母形態不清；Diff-Quik 快速染色最適合 Malassezia 辨識，New Methylene Blue 或 Wright's stain 也可接受。
+4. **皮膚刮搔與 Sarcoptes 陰性不排除疥癬**：疥蟎蟲體密度低，皮膚刮搔陽性率只有 20–50%；典型臨床表現（耳緣皮屑、劇烈瘙癢、肘部病灶）+ pinnae-pedal reflex 陽性仍應診斷性治療（ivermectin / sarolaner）。
+5. **細菌性感染忽略抗藥性趨勢**：台灣犬 Staphylococcus pseudintermedius MRSP（甲氧西林抗藥）盛行率升高，反覆膿皮症治療失敗或院內感染應進行細菌培養 + 藥敏試驗，不可持續 empiric 使用第一線 beta-lactam。
 
 ## 四、人醫借鑒 (Translational Insights)
 

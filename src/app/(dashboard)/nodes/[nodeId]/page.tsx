@@ -196,7 +196,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           {content.learning_objectives.length > 0 && (
             <Card id="objectives" className="scroll-mt-24">
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">🎯 學習目標</h2>
+                <h2 className="font-semibold text-gray-900"><span aria-hidden="true">🎯</span> 學習目標</h2>
               </CardHeader>
               <CardBody>
                 <ul className="list-inside list-disc space-y-1.5 text-base text-gray-700">
@@ -212,7 +212,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           {node.node_type === 'disease' && content.disease_data && (
             <Card id="disease" className="scroll-mt-24">
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">🩺 疾病詳細資料</h2>
+                <h2 className="font-semibold text-gray-900"><span aria-hidden="true">🩺</span> 疾病詳細資料</h2>
               </CardHeader>
               <CardBody>
                 <DiseaseContent data={content.disease_data} />
@@ -224,7 +224,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           {node.node_type === 'diagnostic' && content.diagnostic_data && (
             <Card id="diagnostic" className="scroll-mt-24">
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">🔬 診斷方法詳細</h2>
+                <h2 className="font-semibold text-gray-900"><span aria-hidden="true">🔬</span> 診斷方法詳細</h2>
               </CardHeader>
               <CardBody>
                 <DiagnosticContent data={content.diagnostic_data} />
@@ -236,7 +236,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           {content.body && (
             <Card id="body" className="scroll-mt-24">
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">📖 詳細內容</h2>
+                <h2 className="font-semibold text-gray-900"><span aria-hidden="true">📖</span> 詳細內容</h2>
               </CardHeader>
               <CardBody>
                 <MarkdownRenderer content={filteredBody} />
@@ -249,7 +249,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
             <Card id="keypoints" className="border-green-200 bg-green-50 scroll-mt-24">
               <CardBody>
                 <h3 className="mb-2 flex items-center gap-2 text-base font-semibold text-green-800">
-                  <CheckCircle className="h-4 w-4" />
+                  <CheckCircle className="h-4 w-4" aria-hidden="true" />
                   重點整理
                 </h3>
                 <ul className="space-y-1.5">
@@ -266,7 +266,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
             <Card id="pearl" className="border-amber-200 bg-amber-50 scroll-mt-24">
               <CardBody>
                 <h3 className="mb-1 flex items-center gap-2 text-base font-semibold text-amber-800">
-                  <Lightbulb className="h-4 w-4" />
+                  <Lightbulb className="h-4 w-4" aria-hidden="true" />
                   臨床珍珠
                 </h3>
                 <p className="text-base text-amber-700">{content.clinical_pearl}</p>
@@ -279,7 +279,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
             <Card id="mistakes" className="border-red-200 bg-red-50 scroll-mt-24">
               <CardBody>
                 <h3 className="mb-2 flex items-center gap-2 text-base font-semibold text-red-800">
-                  <AlertTriangle className="h-4 w-4" />
+                  <AlertTriangle className="h-4 w-4" aria-hidden="true" />
                   常見錯誤
                 </h3>
                 <ul className="space-y-1.5">
@@ -295,7 +295,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
           {content.references && content.references.length > 0 && (
             <Card id="references" className="scroll-mt-24">
               <CardHeader>
-                <h2 className="font-semibold text-gray-900">📚 參考文獻</h2>
+                <h2 className="font-semibold text-gray-900"><span aria-hidden="true">📚</span> 參考文獻</h2>
               </CardHeader>
               <CardBody>
                 <ReferenceList references={content.references} />
