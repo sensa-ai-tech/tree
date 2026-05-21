@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ReactFlow,
   Background,
@@ -15,6 +15,7 @@ import {
   type NodeMouseHandler,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
+import { List, Network } from 'lucide-react';
 import type { KnowledgeNode, KnowledgeEdge } from '@/types/knowledge';
 import { LAYER_COLORS, type Layer } from '@/types/knowledge';
 import { Skeleton } from '@/components/ui/Skeleton';
@@ -143,6 +144,63 @@ function KnowledgeGraphInner({
   );
 }
 
+/** A15 fix: keyboard-accessible list view for screen readers / keyboard-only users */
+function KnowledgeGraphListView({
+  nodes,
+  onNodeClick,
+}: {
+  nodes: KnowledgeNode[];
+  onNodeClick?: (nodeId: string) => void;
+}) {
+  // Group nodes by specialty prefix (e.g., CARDIO, IM, SURG)
+  const grouped = useMemo(() => {
+    const map = new Map<string, KnowledgeNode[]>();
+    for (const node of nodes) {
+      const specialty = node.id.split('-')[0] ?? '其他';
+      if (!map.has(specialty)) map.set(specialty, []);
+      map.get(specialty)!.push(node);
+    }
+    return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
+  }, [nodes]);
+
+  return (
+    <div className="overflow-y-auto rounded-xl border border-gray-200 bg-white p-4">
+      <p className="mb-3 text-xs text-gray-500">
+        共 {nodes.length} 個知識節點 — 點擊節點可查看詳情
+      </p>
+      {grouped.map(([specialty, groupNodes]) => (
+        <section key={specialty} className="mb-4">
+          <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500">
+            {specialty}
+          </h3>
+          <ul className="space-y-1">
+            {groupNodes.map((node) => {
+              const color = LAYER_COLORS[node.layer as Layer] ?? '#6b7280';
+              return (
+                <li key={node.id}>
+                  <button
+                    type="button"
+                    onClick={() => onNodeClick?.(node.id)}
+                    className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                  >
+                    <span
+                      className="h-2.5 w-2.5 flex-shrink-0 rounded-full"
+                      style={{ backgroundColor: color }}
+                      aria-hidden="true"
+                    />
+                    <span className="flex-1 font-medium text-gray-900">{node.title}</span>
+                    <span className="text-xs text-gray-400">L{node.layer}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
+}
+
 export function KnowledgeGraph({
   nodes: knowledgeNodes,
   edges: knowledgeEdges,
@@ -152,6 +210,8 @@ export function KnowledgeGraph({
   error = null,
   className,
 }: KnowledgeGraphProps) {
+  // A15 fix: toggle between visual graph and accessible list view
+  const [viewMode, setViewMode] = useState<'graph' | 'list'>('graph');
   // 使用 dagre 佈局計算節點位置
   const { layoutedNodes, layoutedEdges } = useMemo(() => {
     const rawNodes = buildFlowNodes(knowledgeNodes, highlightPath);
@@ -227,21 +287,57 @@ export function KnowledgeGraph({
   }
 
   return (
-    <div
-      role="region"
-      aria-label="知識圖譜，點擊節點查看詳情"
-      className={cn(
-        'h-[500px] w-full rounded-xl border border-gray-200 bg-white',
-        className
+    <div role="region" aria-label="知識圖譜" className={cn('w-full', className)}>
+      {/* A15: view-mode toggle — always visible for keyboard users */}
+      <div className="mb-2 flex justify-end">
+        <div role="group" aria-label="圖譜顯示模式" className="inline-flex rounded-lg border border-gray-200 bg-white p-0.5 shadow-sm">
+          <button
+            type="button"
+            onClick={() => setViewMode('graph')}
+            aria-pressed={viewMode === 'graph'}
+            className={cn(
+              'flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500',
+              viewMode === 'graph'
+                ? 'bg-indigo-600 text-white'
+                : 'text-gray-600 hover:bg-gray-50'
+            )}
+          >
+            <Network className="h-3.5 w-3.5" aria-hidden="true" />
+            圖譜
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('list')}
+            aria-pressed={viewMode === 'list'}
+            className={cn(
+              'flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500',
+              viewMode === 'list'
+                ? 'bg-indigo-600 text-white'
+                : 'text-gray-600 hover:bg-gray-50'
+            )}
+          >
+            <List className="h-3.5 w-3.5" aria-hidden="true" />
+            清單
+          </button>
+        </div>
+      </div>
+
+      {viewMode === 'list' ? (
+        <KnowledgeGraphListView nodes={knowledgeNodes} onNodeClick={onNodeClick} />
+      ) : (
+        <div
+          aria-label="知識圖譜視覺化，可使用上方「清單」按鈕切換至無障礙版本"
+          className="h-[500px] w-full rounded-xl border border-gray-200 bg-white"
+        >
+          <ReactFlowProvider>
+            <KnowledgeGraphInner
+              flowNodes={layoutedNodes}
+              flowEdges={layoutedEdges}
+              onNodeClick={handleNodeClick}
+            />
+          </ReactFlowProvider>
+        </div>
       )}
-    >
-      <ReactFlowProvider>
-        <KnowledgeGraphInner
-          flowNodes={layoutedNodes}
-          flowEdges={layoutedEdges}
-          onNodeClick={handleNodeClick}
-        />
-      </ReactFlowProvider>
     </div>
   );
 }
