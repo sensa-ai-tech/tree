@@ -20,6 +20,15 @@ export default defineConfig({
         '**/*.d.ts',
         '**/index.ts', // barrel re-exports
       ],
+      // CI gate — Round 7 起設置。退步即 fail。每完成一輪 round 後可調高底線。
+      // 當前實際值（2026-05-21 Round 7）：lines 65%、statements 65%、functions 60%、branches 55%
+      // 設低 2-3 pp 留 buffer，避免每次新增功能就被卡住。
+      thresholds: {
+        lines: 62,
+        statements: 62,
+        functions: 56,
+        branches: 51,
+      },
     },
   },
   resolve: {

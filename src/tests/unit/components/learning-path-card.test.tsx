@@ -3,25 +3,15 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { LearningPathCard } from '@/components/features/LearningPathCard';
 import type { LearningPath } from '@/types/knowledge';
+import { makeLearningPath } from '@/tests/factories';
 
+// Test-specific overrides — 大部分欄位走 factory 預設
 function makePath(overrides: Partial<LearningPath> = {}): LearningPath {
-  return {
-    id: 'PATH-IM-01',
+  return makeLearningPath({
     title: '小動物內科入門',
     description: '從常見內科疾病開始學習',
-    specialty: 'IM',
-    target_audience: '實習獸醫',
-    estimated_hours: 12,
-    path_nodes: [
-      { node_id: 'IM-L0-001', is_required: true, phase: 'basic', learning_note: null },
-      { node_id: 'IM-L1-001', is_required: true, phase: 'basic', learning_note: null },
-      { node_id: 'IM-L3-001', is_required: false, phase: 'advanced', learning_note: null },
-    ],
-    milestones: [],
-    has_certificate: false,
-    status: 'published',
     ...overrides,
-  };
+  });
 }
 
 describe('LearningPathCard: basic rendering', () => {

@@ -3,39 +3,29 @@ import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import { QuizEngine } from '@/components/features/QuizEngine';
 import type { ReviewQuestion, QuizResult } from '@/types/quiz';
+import { makeMCQ as makeMCQFactory, makeFillBlank as makeFillBlankFactory } from '@/tests/factories';
 
+// 用 factory 加上題目特定 override，預設值來自 factory 確保 ReviewQuestion type 增欄位
+// 時不必逐 test 更新
 function makeMCQ(overrides: Partial<ReviewQuestion> = {}): ReviewQuestion {
-  return {
-    id: 'q1',
-    node_id: 'IM-L3-001',
-    question_type: 'mcq',
+  return makeMCQFactory({
     question: '貓 CKD 第幾期開始限磷？',
     options: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4'],
     correct_answer: 'Stage 2',
     explanation: 'IRIS guideline 從 Stage 2 開始限磷',
-    difficulty: 3,
-    spaced_rep: true,
     tags: ['IRIS'],
-    image_placeholder: null,
     ...overrides,
-  };
+  });
 }
 
 function makeFillBlank(overrides: Partial<ReviewQuestion> = {}): ReviewQuestion {
-  return {
-    id: 'q2',
-    node_id: 'IM-L3-001',
-    question_type: 'fill_blank',
+  return makeFillBlankFactory({
     question: 'FPV 全名是？',
-    options: null,
     correct_answer: 'Feline Panleukopenia Virus',
-    explanation: null,
     difficulty: 4,
-    spaced_rep: true,
     tags: ['FPV'],
-    image_placeholder: null,
     ...overrides,
-  };
+  });
 }
 
 describe('QuizEngine', () => {
