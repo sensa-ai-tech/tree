@@ -62,8 +62,11 @@ test.describe('Knowledge Node Cruise', () => {
   });
 
   test('cruise all node detail pages', async ({ page }) => {
-    // The cruise visits up to 1,680 generated node IDs; set generous timeout
-    test.setTimeout(300_000); // 5 minutes
+    // The cruise visits up to 1,680 generated node IDs (8 specialties × 6 layers × 35 nodes).
+    // ~266 nodes actually exist; the rest return HTTP 200 with "找不到此知識節點".
+    // Using 'load' (not 'networkidle') + 300 ms wait cuts per-node time from ~1.5 s to ~0.65 s.
+    // Estimated wall time: (266 × 650 ms) + (1,414 × 100 ms) ≈ 315 s ≈ 5.3 minutes.
+    test.setTimeout(600_000); // 10 minutes — generous margin for slower CI machines
 
     const results: Array<{
       nodeId: string;
@@ -79,7 +82,9 @@ test.describe('Knowledge Node Cruise', () => {
 
     for (const nodeId of ALL_NODE_IDS) {
       const response = await page.goto(`/nodes/${nodeId}`, {
-        waitUntil: 'networkidle',
+        // 'load' (vs 'networkidle') skips the 500 ms no-request wait;
+        // CSS/fonts are still applied so layout checks remain valid.
+        waitUntil: 'load',
         timeout: 15000,
       }).catch(() => null);
 
@@ -97,8 +102,9 @@ test.describe('Knowledge Node Cruise', () => {
         continue;
       }
 
-      // Only wait 500ms for pages that actually have node content
-      await page.waitForTimeout(500);
+      // Allow React hydration to complete for pages that have node content.
+      // 300 ms is sufficient for SSR-rendered Next.js pages; reduced from 500 ms.
+      await page.waitForTimeout(300);
 
       const bodyText = await page.locator('body').textContent().catch(() => '');
 

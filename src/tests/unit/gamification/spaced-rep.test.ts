@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { calculateNextReview, createInitialState, isDueForReview, getDueCount, previewIntervals } from '@/lib/gamification/spaced-rep';
 import type { SpacedRepetitionState } from '@/types/gamification';
 
@@ -101,6 +101,21 @@ describe('isDueForReview', () => {
     };
     expect(isDueForReview(state)).toBe(false);
   });
+
+  it('returns true when due equals current time (boundary: <= not <)', () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(1_000_000);
+    try {
+      const state: SpacedRepetitionState = {
+        ...createInitialState(),
+        due: new Date(1_000_000).toISOString(),
+      };
+      // <= means "due now" is truthy; a < mutant would return false here
+      expect(isDueForReview(state)).toBe(true);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
 });
 
 describe('getDueCount', () => {
@@ -142,5 +157,126 @@ describe('previewIntervals', () => {
     expect(intervals[2]).toBeGreaterThanOrEqual(0);
     expect(intervals[3]).toBeGreaterThanOrEqual(0);
     expect(intervals[4]).toBeGreaterThanOrEqual(0);
+  });
+
+  it('intervals are monotonically ordered: Again ≤ Hard ≤ Good ≤ Easy', () => {
+    const state = createInitialState();
+    const intervals = previewIntervals(state);
+    // Kills mutants that swap Rating.Again↔Rating.Easy etc.
+    expect(intervals[1]).toBeLessThanOrEqual(intervals[2]); // Again ≤ Hard
+    expect(intervals[2]).toBeLessThanOrEqual(intervals[3]); // Hard ≤ Good
+    expect(intervals[3]).toBeLessThanOrEqual(intervals[4]); // Good ≤ Easy
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Mutation-targeted tests: exact mastery deltas with a high-reps Review card.
+// With reps=100 → result.reps ≥ 100 → Math.min(5, reps*0.5) = 5 always.
+// This pins each ratingImpact literal and the Math.min(5,…) clamp constant.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** A "mature" Review card: reps=100 guarantees reps_contribution = 5 regardless
+ *  of whether FSRS increments reps for Again/Hard lapses. */
+function matureState(mastery: number): SpacedRepetitionState {
+  const now = Date.now();
+  return {
+    due: new Date(now - 86_400_000).toISOString(), // 1 day past due
+    stability: 20,
+    difficulty: 5,
+    elapsed_days: 1,
+    scheduled_days: 20,
+    reps: 100,
+    lapses: 0,
+    state: 2, // Review
+    last_review: new Date(now - 86_400_000).toISOString(),
+    mastery_level: mastery,
+    last_rating: 3,
+  };
+}
+
+describe('calculateNextReview — exact mastery deltas', () => {
+  // formula: mastery = Math.min(100, Math.max(0, Math.round(
+  //   currentMastery + ratingImpact[rating] + Math.min(5, result.reps * 0.5)
+  // )))
+  // With result.reps ≥ 100, Math.min(5, reps*0.5) = 5 in all cases.
+
+  it('applies ratingImpact -15 for Again (rating=1)', () => {
+    // 50 + (-15) + 5 = 40
+    expect(calculateNextReview(1, matureState(50)).mastery_level).toBe(40);
+  });
+
+  it('applies ratingImpact -3 for Hard (rating=2)', () => {
+    // 50 + (-3) + 5 = 52
+    expect(calculateNextReview(2, matureState(50)).mastery_level).toBe(52);
+  });
+
+  it('applies ratingImpact +5 for Good (rating=3)', () => {
+    // 50 + 5 + 5 = 60
+    expect(calculateNextReview(3, matureState(50)).mastery_level).toBe(60);
+  });
+
+  it('applies ratingImpact +10 for Easy (rating=4)', () => {
+    // 50 + 10 + 5 = 65
+    expect(calculateNextReview(4, matureState(50)).mastery_level).toBe(65);
+  });
+
+  it('clamps mastery at exactly 100 — not 107', () => {
+    // 92 + 10 + 5 = 107 → Math.min(100, 107) = 100
+    expect(calculateNextReview(4, matureState(92)).mastery_level).toBe(100);
+  });
+
+  it('clamps mastery at exactly 0 — not negative', () => {
+    // 8 + (-15) + 5 = -2 → Math.max(0, -2) = 0
+    expect(calculateNextReview(1, matureState(8)).mastery_level).toBe(0);
+  });
+});
+
+describe('calculateNextReview — stability/difficulty rounding', () => {
+  it('rounds stability to 2 decimal places', () => {
+    const result = calculateNextReview(3, createInitialState());
+    // If Math.round is omitted, result.stability would have many decimal places
+    // and the following identity would fail: x == Math.round(x*100)/100
+    expect(result.stability).toBe(Math.round(result.stability * 100) / 100);
+  });
+
+  it('rounds difficulty to 2 decimal places', () => {
+    const mid = calculateNextReview(3, createInitialState());
+    const result = calculateNextReview(2, mid);
+    expect(result.difficulty).toBe(Math.round(result.difficulty * 100) / 100);
+  });
+});
+
+describe('calculateNextReview — last_review tracking', () => {
+  it('initial state has null last_review (no last_review to set)', () => {
+    expect(createInitialState().last_review).toBeNull();
+  });
+
+  it('sets last_review to approximately now after first review', () => {
+    const before = Date.now();
+    const result = calculateNextReview(3, createInitialState());
+    const after = Date.now();
+    expect(result.last_review).not.toBeNull();
+    const t = new Date(result.last_review!).getTime();
+    expect(t).toBeGreaterThanOrEqual(before);
+    expect(t).toBeLessThanOrEqual(after + 100);
+  });
+});
+
+describe('getDueCount — edge cases', () => {
+  it('returns 0 for an empty array', () => {
+    expect(getDueCount([])).toBe(0);
+  });
+
+  it('returns exact count when dueCount < default maxReviews (20)', () => {
+    const past = new Date(Date.now() - 1000).toISOString();
+    const states = Array.from({ length: 7 }, () => ({ ...createInitialState(), due: past }));
+    // Math.min(7, 20) = 7; Math.max(7, 20) = 20 → pins Math.min
+    expect(getDueCount(states)).toBe(7);
+  });
+
+  it('default maxReviews is exactly 20 (not 19 or 21)', () => {
+    const past = new Date(Date.now() - 1000).toISOString();
+    const states = Array.from({ length: 25 }, () => ({ ...createInitialState(), due: past }));
+    expect(getDueCount(states)).toBe(20);
   });
 });

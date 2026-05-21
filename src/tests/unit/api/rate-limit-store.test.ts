@@ -89,6 +89,28 @@ describe('InMemoryRateLimitStore', () => {
     expect(a.count).toBe(1);
     expect(b.count).toBe(1);
   });
+
+  it('does NOT reset at exactly resetTime (> not >=)', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(1_000_000);
+
+    const r1 = await store.hit('k', 30); // resetTime = 1_000_000 + 30_000 = 1_030_000
+    expect(r1.resetTime).toBe(1_030_000);
+
+    // Jump to EXACTLY resetTime — window is NOT yet expired with `>`
+    vi.setSystemTime(1_030_000);
+    const r2 = await store.hit('k', 30);
+    // now (1_030_000) > resetTime (1_030_000) = false → counter increments
+    expect(r2.count).toBe(2);
+
+    // One ms PAST resetTime — window IS expired
+    vi.setSystemTime(1_030_001);
+    const r3 = await store.hit('k', 30);
+    // now > resetTime → fresh window
+    expect(r3.count).toBe(1);
+
+    vi.useRealTimers();
+  });
 });
 
 describe('UpstashRateLimitStore', () => {
@@ -198,6 +220,88 @@ describe('UpstashRateLimitStore', () => {
 
     // PTTL=0 is NOT > 0, so fallback to windowSeconds * 1000
     expect(result.resetTime).toBe(start + 30_000);
+
+    vi.useRealTimers();
+  });
+
+  it('uses windowSeconds fallback when PTTL returns -2 (key not found)', async () => {
+    // -2 = key does not exist in Redis; -2 > 0 is false → fallback
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-05-18T00:00:00Z'));
+
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 1 }, { result: 1 }, { result: -2 }]), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    const start = Date.now();
+    const result = await store.hit('k', 45);
+
+    expect(result.resetTime).toBe(start + 45_000);
+    vi.useRealTimers();
+  });
+
+  it('uses windowSeconds fallback when PTTL result is undefined (error element)', async () => {
+    // body[2] = { error: '...' } → body[2]?.result = undefined
+    // typeof undefined !== 'number' → fallback. Kills typeof-check-removal mutant.
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(
+        JSON.stringify([{ result: 3 }, { result: 0 }, { error: 'WRONGTYPE' }]),
+        { status: 200 }
+      )
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    const before = Date.now();
+    const result = await store.hit('k', 25);
+
+    expect(result.count).toBe(3);
+    expect(result.resetTime).toBeGreaterThanOrEqual(before + 25_000 - 50);
+    expect(result.resetTime).toBeLessThanOrEqual(before + 25_000 + 50);
+  });
+
+  it('passes cache: no-store on the Upstash fetch request', async () => {
+    // Kills mutants that remove or change the cache option
+    const mockFetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 1 }, { result: 1 }, { result: 5_000 }]), {
+        status: 200,
+      })
+    );
+    globalThis.fetch = mockFetch;
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    await store.hit('k', 5);
+
+    const [, init] = mockFetch.mock.calls[0]!;
+    expect((init as RequestInit).cache).toBe('no-store');
+  });
+
+  it('handles body[0] being null without throwing TypeError (optional-chaining)', async () => {
+    // body[0]?.result = null?.result = undefined (not TypeError)
+    // Without ?. it would be null.result → TypeError with different message → fails test
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([null, { result: 1 }, { result: 30_000 }]), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    await expect(store.hit('k', 30)).rejects.toThrow(/INCR did not return a number/);
+  });
+
+  it('handles body[2] being null without throwing TypeError (optional-chaining)', async () => {
+    // body[2]?.result = null?.result = undefined → falls back to windowSeconds * 1000
+    // Without ?. it would be null.result → TypeError, causing test to fail
+    vi.useFakeTimers();
+    vi.setSystemTime(0);
+
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 7 }, { result: 1 }, null]), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    const result = await store.hit('k', 10);
+
+    expect(result.count).toBe(7);
+    expect(result.resetTime).toBe(0 + 10_000); // fallback: Date.now() + windowSeconds * 1000
 
     vi.useRealTimers();
   });
