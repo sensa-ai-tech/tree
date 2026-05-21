@@ -25,6 +25,9 @@ async function handleGet(_request: NextRequest) {
 
 async function handlePost(request: NextRequest) {
   try {
+    if (!request.headers.get('content-type')?.includes('application/json')) {
+      return NextResponse.json({ error: 'Unsupported Media Type' }, { status: 415 });
+    }
     const input: ProgressUpdateInput = await request.json();
 
     if (!input.node_id || !input.status) {

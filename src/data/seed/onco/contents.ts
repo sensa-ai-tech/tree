@@ -359,7 +359,7 @@ const contentMCT: NodeContent = {
 切緣標準是 lateral 至少 2 cm、deep 至少一個 fascial plane。切緣乾淨（clean margins）的低度 MCT 預後很好。切緣不淨（dirty 或 close）的話要考慮二次手術或輔助放療。
 
 ### 輔助治療
-切緣不淨或沒辦法再手術時用放射治療。高度 MCT 或有轉移就上化療：[藥物:Vinblastine] 加 [藥物:Prednisolone]（VBL-Pred protocol）。標靶治療（TKI）有兩個選擇：[藥物:Toceranib]（Palladia）2.75 mg/kg PO QOD、[藥物:Masitinib]（Kinavet）12.5 mg/kg PO SID。c-KIT 突變陽性的反應率比較高。
+切緣不淨或沒辦法再手術時用放射治療。高度 MCT 或有轉移就上化療：[藥物:Vinblastine] 加 [藥物:Prednisolone]（VBL-Pred protocol）。標靶治療（TKI）有兩個選擇：[藥物:Toceranib]（Palladia）**3.25 mg/kg PO QOD**（FDA 標準劑量；臨床常因 GI 副作用減量至 2.75 mg/kg）、[藥物:Masitinib]（Kinavet）12.5 mg/kg PO SID。c-KIT 突變陽性的反應率比較高。
 
 ### 副腫瘤管理
 搭配的藥物有 [藥物:Famotidine] 0.5-1 mg/kg PO BID（H2 blocker，預防胃潰瘍）、[藥物:Diphenhydramine] 2-4 mg/kg PO BID（H1 blocker）。
@@ -429,7 +429,7 @@ MCT 併發症主要來自組胺跟肝素大量釋放（脫顆粒），會造成�
       { condition: '皮膚血管肉瘤（Cutaneous HSA）', key_differentiator: '深色或出血性皮膚腫塊，FNA 常常被血液稀釋，組織病理看得到異型血管內皮細胞' },
     ],
     diagnostic_workup: '工作流程是：FNA 第一線（診斷率超過 90%，會看到嗜鹼性顆粒圓形細胞），接著區域淋巴結 FNA、腹超評估肝脾、CBC 加 buffy coat 評估，手術切除送組織病理分級（Kiupel 二級），加做 c-KIT 突變 PCR，必要時加 Ki-67 增殖指數。',
-    treatment_protocol: '手術第一線：lateral 至少 2 cm 加 deep 至少一個 fascial plane。切緣乾淨的 low-grade 定期追蹤就好。切緣不淨要二次手術或輔助放療。high-grade 或有轉移用 VBL-Pred 化療（Vinblastine 2 mg/m² IV 每週 × 4 次後改 q2 weeks 加 Prednisolone 2 mg/kg PO 漸減），或 TKI（Toceranib 2.75 mg/kg PO QOD 或 Masitinib 12.5 mg/kg PO SID）。所有 MCT 都建議搭配抗組織胺（H1 加 H2 blocker）。',
+    treatment_protocol: '手術第一線：lateral 至少 2 cm 加 deep 至少一個 fascial plane。切緣乾淨的 low-grade 定期追蹤就好。切緣不淨要二次手術或輔助放療。high-grade 或有轉移用 VBL-Pred 化療（Vinblastine 2 mg/m² IV 每週 × 4 次後改 q2 weeks 加 Prednisolone 2 mg/kg PO 漸減），或 TKI（Toceranib 3.25 mg/kg PO QOD（FDA 標準劑量；臨床常減量至 2.75 mg/kg）或 Masitinib 12.5 mg/kg PO SID）。所有 MCT 都建議搭配抗組織胺（H1 加 H2 blocker）。',
     prognosis: 'Kiupel low-grade 加切緣乾淨中位存活超過 2 年，治癒率高。Kiupel high-grade 有治療中位存活 4 到 6 個月，局部復發跟轉移率都高。c-KIT 突變陽性預後比較差，但是可以走 TKI 標靶治療。Patnaik Grade II 最難預測，大約一半表現良好、一半會復發或轉移。',
     monitoring: '術後 1 個月回診看傷口跟有沒有局部復發。low-grade MCT 每 3 個月觸診加區域淋巴結檢查，追蹤 2 年。high-grade MCT 每個月觸診，每 3 個月做腹超跟淋巴結 FNA。化療期間每次治療前 CBC。TKI 治療每 2 到 4 週 CBC/BCS 監測副作用。',
     owner_communication: 'MCT 是犬最常見的皮膚惡性腫瘤。好消息是 low-grade 經過適當手術後多數預後很好，手術切緣夠不夠是治癒的關鍵。high-grade 比較棘手，可能要走化療或標靶治療。可以建議飼主養成定期摸摸全身皮膚的習慣，發現新腫塊就早點來做 FNA。',
@@ -3220,7 +3220,7 @@ const contentMetronomicChemo: NodeContent = {
 ### 方案三：搭配 TKI
 | 藥物 | 劑量 | 頻率 | 備註 |
 |------|------|------|------|
-| [藥物:Toceranib] | 2.75 mg/kg PO | 隔日（QOD） | 抗 VEGFR/c-KIT |
+| [藥物:Toceranib] | 3.25 mg/kg PO（FDA 標籤量；臨床可減量至 2.75 mg/kg） | 隔日（QOD） | 抗 VEGFR/c-KIT |
 | + Cyclophosphamide | 10 mg/m²/day PO | 每日 | 低劑量搭配 |
 
 ### 適應症
@@ -3745,7 +3745,7 @@ ASAC 是犬高血鈣最常見的腫瘤原因之一（僅次於淋巴瘤），發
       { condition: '淋巴瘤（引起高血鈣）', key_differentiator: '直腸觸診沒有肛囊腫塊，全身淋巴結腫大，FNA 看到均質淋巴球' },
     ],
     diagnostic_workup: '流程：直腸觸診（必做，要摸肛囊腫塊跟腹下淋巴結），FNA 細胞學（肛囊腫塊加減腹下淋巴結），CBC 加全套生化（特別注意總鈣加 ionized Ca²⁺），腹超看腹下淋巴結大小跟肝脾，胸腔三面 X 光，最後腹部 CT 規劃手術，評估腹下淋巴結範圍。',
-    treatment_protocol: '手術第一線：肛囊切除加減腹下淋巴結切除。輔助化療用 Carboplatin 300 mg/m² IV q3w × 4 到 6 cycles，或 Mitoxantrone 5 到 5.5 mg/m² IV q3w 加 Cyclophosphamide。輔助放療針對沒辦法完全切除的腹下淋巴結。Toceranib 2.75 mg/kg PO QOD 可以當替代或維持選項。高血鈣急救用 0.9% NaCl 輸液加 Furosemide 加減 Pamidronate。',
+    treatment_protocol: '手術第一線：肛囊切除加減腹下淋巴結切除。輔助化療用 Carboplatin 300 mg/m² IV q3w × 4 到 6 cycles，或 Mitoxantrone 5 到 5.5 mg/m² IV q3w 加 Cyclophosphamide。輔助放療針對沒辦法完全切除的腹下淋巴結。Toceranib 3.25 mg/kg PO QOD（FDA 標準劑量；臨床常減量至 2.75 mg/kg）可以當替代或維持選項。高血鈣急救用 0.9% NaCl 輸液加 Furosemide 加減 Pamidronate。',
     prognosis: '手術單獨中位存活 12 到 18 個月。手術加化療 15 到 24 個月。腫瘤小於 2.5 cm 中位存活超過 24 個月。腫瘤超過 10 cm 或已有遠端轉移中位存活不到 6 個月。腹下淋巴結切除可以延長存活，就算已經有轉移還是建議手術。高血鈣在腫瘤切除後通常會恢復正常。',
     monitoring: '術後每 3 個月：直腸觸診加血鈣（total 加 ionized）加腹超（腹下淋巴結追蹤）加胸腔 X 光。血鈣恢復正常後再升高就要高度懷疑復發。化療期間每次治療前 CBC 加 BCS。',
     owner_communication: 'ASAC 是要積極治療的惡性腫瘤，但是手術加化療可以給出有意義的存活時間。就算有淋巴結轉移，手術還是有幫助。高血鈣是可以控制的，通常腫瘤切除後就會改善。建議飼主了解需要定期追蹤（每 3 個月），早點發現復發才能及時處理。',
@@ -4295,7 +4295,7 @@ const contentThyroidCarcinoma: NodeContent = {
       { condition: '甲狀舌管囊腫（Thyroglossal duct cyst）', key_differentiator: '通常為年輕犬，囊性結構，超音波見液態內容' },
     ],
     diagnostic_workup: '1. 觸診（大小、可移動性、單側/雙側）→ 2. 頸部超音波（腫塊特徵、血流、與血管關係）→ 3. FNA 細胞學（超音波引導，注意出血風險）→ 4. 血液學（CBC + 生化 + T4/fT4 + TSH）→ 5. 胸腔三面 X 光（肺轉移）→ 6. 頸部 CT 造影（手術規劃，血管侵犯評估）→ 7. 甲狀腺閃爍掃描（功能性腫瘤/¹³¹I 治療規劃）',
-    treatment_protocol: 'Freely movable：甲狀腺切除術為首選（MST 20-36 個月）。Fixed tumor：術前化療或放療嘗試縮小後手術，或放射性碘（¹³¹I，功能性者）。輔助化療：Doxorubicin 30 mg/m² IV q3w 或 Toceranib 2.75 mg/kg PO QOD。外照射放療：不可切除者的局部控制。雙側切除後需終生 Levothyroxine 補充。',
+    treatment_protocol: 'Freely movable：甲狀腺切除術為首選（MST 20-36 個月）。Fixed tumor：術前化療或放療嘗試縮小後手術，或放射性碘（¹³¹I，功能性者）。輔助化療：Doxorubicin 30 mg/m² IV q3w 或 Toceranib 3.25 mg/kg PO QOD（FDA 標準劑量；臨床常減量至 2.75 mg/kg）。外照射放療：不可切除者的局部控制。雙側切除後需終生 Levothyroxine 補充。',
     prognosis: 'Freely movable + 完全切除：中位存活 20-36 個月，3 年存活率約 50%。Fixed tumor（姑息治療）：6-12 個月。功能性 + ¹³¹I：24-30 個月。已有肺轉移：3-6 個月。濾泡型/乳頭型較好，髓質型/未分化型較差。貓甲狀腺癌預後差，數據有限。',
     monitoring: '術後第 1 週：ionized Ca²⁺（每 12-24 小時，低血鈣風險）。術後 1 個月：T4 + TSH。每 3 個月：頸部超音波 + 胸腔 X 光 + T4。功能性腫瘤：T4 為復發監測指標。雙側切除後：Levothyroxine 劑量調整依 T4 監測。',
     owner_communication: '犬甲狀腺腫塊幾乎都是惡性的，但如果腫塊可以自由移動（freely movable），手術切除的預後非常好，很多犬可以存活 2-3 年以上。手術前需要做 CT 確認腫塊與血管的關係。如果腫塊固定不動，治療較為困難但仍有化療和放射性碘等選項。術後需要定期追蹤血液檢查和影像學。若雙側甲狀腺都需切除，需終生補充甲狀腺素。',

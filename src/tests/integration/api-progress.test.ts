@@ -149,10 +149,20 @@ describe('POST /api/progress', () => {
     expect(res.status).toBe(400);
   });
 
-  it('returns 500 with structured error on malformed JSON body', async () => {
+  it('returns 415 on missing content-type header (SEC-034)', async () => {
     const req = new NextRequest(new URL('http://localhost/api/progress'), {
       method: 'POST',
       headers: { 'x-real-ip': ip() },
+      body: '{{not-json',
+    });
+    const res = await POST(req);
+    expect(res.status).toBe(415);
+  });
+
+  it('returns 500 with structured error on malformed JSON body with correct content-type', async () => {
+    const req = new NextRequest(new URL('http://localhost/api/progress'), {
+      method: 'POST',
+      headers: { 'x-real-ip': ip(), 'content-type': 'application/json' },
       body: '{{not-json',
     });
     const res = await POST(req);

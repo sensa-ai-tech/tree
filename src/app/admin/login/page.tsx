@@ -71,7 +71,7 @@ export default function AdminLoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {error && <p className="text-sm text-red-600">{error}</p>}
+            {error && <p role="alert" className="text-sm text-red-600">{error}</p>}
             <Button type="submit" isLoading={isLoading} className="w-full">
               登入
             </Button>

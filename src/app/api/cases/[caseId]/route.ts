@@ -21,6 +21,13 @@ async function handleGet(
       );
     }
 
+    if (!/^[a-zA-Z0-9_-]{1,64}$/.test(caseId)) {
+      return NextResponse.json(
+        { data: null, error: 'Invalid Case ID format' },
+        { status: 400 }
+      );
+    }
+
     // Mock mode: return not found.
     // In a real implementation, query Supabase for the CaseChallenge by ID,
     // including all steps and expert pathway.
@@ -45,12 +52,22 @@ async function handlePost(
   context?: { params: Promise<Record<string, string>> }
 ) {
   try {
+    if (!request.headers.get('content-type')?.includes('application/json')) {
+      return NextResponse.json({ error: 'Unsupported Media Type' }, { status: 415 });
+    }
     const { caseId } = (await context!.params) as { caseId: string };
     const input: CaseSubmitInput = await request.json();
 
     if (!caseId || caseId.trim() === '') {
       return NextResponse.json(
         { error: 'Case ID is required' },
+        { status: 400 }
+      );
+    }
+
+    if (!/^[a-zA-Z0-9_-]{1,64}$/.test(caseId)) {
+      return NextResponse.json(
+        { error: 'Invalid Case ID format' },
         { status: 400 }
       );
     }
@@ -78,9 +95,9 @@ async function handlePost(
       }
     }
 
-    if (typeof input.total_time_seconds !== 'number' || input.total_time_seconds < 0) {
+    if (typeof input.total_time_seconds !== 'number' || input.total_time_seconds < 0 || input.total_time_seconds > 86400) {
       return NextResponse.json(
-        { error: 'total_time_seconds must be a non-negative number' },
+        { error: 'total_time_seconds must be between 0 and 86400 (24 hours)' },
         { status: 400 }
       );
     }

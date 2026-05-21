@@ -52,12 +52,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const report = body['csp-report'] ?? body;
 
     // 記錄違規（未來應接入 Sentry 或寫入資料庫）
+    // SEC-030: sanitize all user-controlled fields to prevent log injection
+    const sanitize = (v: unknown): string =>
+      typeof v === 'string' ? v.replace(/[\r\n\t]/g, ' ').slice(0, 200) : String(v ?? '').slice(0, 200);
     console.warn('[CSP Violation]', {
-      documentUri: report['document-uri'],
-      violatedDirective: report['violated-directive'],
-      blockedUri: report['blocked-uri'],
-      sourceFile: report['source-file'],
-      lineNumber: report['line-number'],
+      documentUri: sanitize(report['document-uri']),
+      violatedDirective: sanitize(report['violated-directive']),
+      blockedUri: sanitize(report['blocked-uri']),
+      sourceFile: sanitize(report['source-file']),
+      lineNumber: sanitize(report['line-number']),
     });
 
     return new NextResponse(null, { status: 204 });

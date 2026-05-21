@@ -109,7 +109,8 @@ describe('GET /api/health', () => {
     const body = await res.json();
     expect(body.status).toBe('degraded');
     expect(body.checks.supabase.ok).toBe(false);
-    expect(body.checks.supabase.reason).toMatch(/connection refused/);
+    // SEC-031: generic message, not raw pg/PostgREST error
+    expect(body.checks.supabase.reason).toMatch(/database connection failed/);
   });
 
   it('catches thrown errors from Supabase client and returns 503', async () => {
@@ -134,6 +135,7 @@ describe('GET /api/health', () => {
     expect(res.status).toBe(503);
     const body = await res.json();
     expect(body.checks.supabase.ok).toBe(false);
-    expect(body.checks.supabase.reason).toMatch(/network unreachable/);
+    // SEC-031: generic message, not raw exception details
+    expect(body.checks.supabase.reason).toMatch(/database connection failed/);
   });
 });

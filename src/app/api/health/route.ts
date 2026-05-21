@@ -33,15 +33,19 @@ export async function GET() {
       const { error } = await client.from('knowledge_nodes').select('id').limit(1);
       const latencyMs = Date.now() - t0;
       if (error) {
-        checks.supabase = { ok: false, latencyMs, reason: error.message };
+        // SEC-031: never expose raw PostgREST/pg errors to unauthenticated callers
+        console.error('[health] Supabase error:', error.message);
+        checks.supabase = { ok: false, latencyMs, reason: 'database connection failed' };
       } else {
         checks.supabase = { ok: true, latencyMs };
       }
     } catch (err) {
+      // SEC-031: log internally, return generic message
+      console.error('[health] Supabase exception:', err instanceof Error ? err.message : err);
       checks.supabase = {
         ok: false,
         latencyMs: Date.now() - t0,
-        reason: err instanceof Error ? err.message : 'unknown',
+        reason: 'database connection failed',
       };
     }
   } else {

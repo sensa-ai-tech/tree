@@ -96,7 +96,7 @@ export function SpacedRepReview({
                   onClick={() => handleRate(btn.value)}
                   className={cn(
                     // A08 fix: min-h-[44px] meets Apple/Google 44×44px touch target guideline
-                    'rounded-lg px-2 py-2 min-h-[44px] text-xs font-medium text-white transition-colors',
+                    'rounded-lg px-2 py-2 min-h-[44px] text-xs font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800',
                     btn.color
                   )}
                 >

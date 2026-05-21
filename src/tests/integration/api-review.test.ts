@@ -115,10 +115,20 @@ describe('POST /api/review', () => {
     expect(b4.data.scheduled_days).toBeGreaterThanOrEqual(b1.data.scheduled_days);
   });
 
-  it('returns 500 on malformed JSON body', async () => {
+  it('returns 415 on missing content-type header (SEC-034)', async () => {
     const req = new NextRequest(new URL('http://localhost/api/review'), {
       method: 'POST',
       headers: { 'x-real-ip': ip() },
+      body: 'broken{{{',
+    });
+    const res = await POST(req);
+    expect(res.status).toBe(415);
+  });
+
+  it('returns 500 on malformed JSON body with correct content-type', async () => {
+    const req = new NextRequest(new URL('http://localhost/api/review'), {
+      method: 'POST',
+      headers: { 'x-real-ip': ip(), 'content-type': 'application/json' },
       body: 'broken{{{',
     });
     const res = await POST(req);

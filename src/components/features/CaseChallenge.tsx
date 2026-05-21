@@ -230,7 +230,7 @@ export function CaseChallenge({ caseData, onComplete, className }: CaseChallenge
 
         {/* Feedback */}
         {isFeedback && (
-          <div className="space-y-2">
+          <div role="status" aria-live="polite" className="space-y-2">
             <div className="rounded-lg bg-blue-50 p-3">
               <p className="text-sm text-blue-800">
                 {stepResults[stepResults.length - 1]?.is_correct

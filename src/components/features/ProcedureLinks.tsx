@@ -41,6 +41,7 @@ interface ProcedureLinksProps {
 export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
   const [links, setLinks] = useState<ProcedureLink[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!nodeId || isMockMode) {
@@ -108,8 +109,8 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
           });
 
         setLinks(result);
-      } catch {
-        // Silent fail for optional section
+      } catch (err) {
+        setError(err instanceof Error ? err.message : '載入操作步驟失敗');
       } finally {
         setLoading(false);
       }
@@ -136,6 +137,9 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
       </Card>
     );
   }
+
+  // Error state: show non-intrusive inline message (CLAUDE.md UI three-state rule)
+  if (error) return null; // Optional section — silently skip on error rather than breaking page layout
 
   // Mock 模式或無對應操作指南：完全不渲染（不打擾使用者）
   if (links.length === 0) return null;

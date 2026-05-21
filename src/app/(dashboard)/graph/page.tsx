@@ -109,7 +109,7 @@ export default function GraphPage() {
               <button
                 type="button"
                 onClick={handleClearSpecialty}
-                className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors"
+                className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1"
               >
                 <ArrowLeft className="h-4 w-4" />
                 <span className="hidden sm:inline">所有專科</span>
@@ -158,9 +158,10 @@ export default function GraphPage() {
               <button
                 type="button"
                 onClick={() => setFilters({ search: '' })}
-                className="ml-auto rounded-full p-1 text-amber-500 hover:bg-amber-100"
+                aria-label="清除搜尋"
+                className="ml-auto rounded-full p-1 text-amber-500 hover:bg-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1"
               >
-                <X className="h-3.5 w-3.5" />
+                <X className="h-3.5 w-3.5" aria-hidden="true" />
               </button>
             </div>
           )}

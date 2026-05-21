@@ -20,7 +20,7 @@ const contentEpilepsy: NodeContent = {
     'IVETF 三層診斷：Tier I（基礎血檢+尿檢）、Tier II（膽汁酸+血氨+感染篩檢）、Tier III（腦部 MRI+CSF 分析+基因檢測）',
     '特發性癲癇定義：排除結構性與代謝性原因，首次發作年齡 6 個月-6 歲',
     '治療起始標準：首次 cluster seizures、status epilepticus、發作頻率 > 2 次/6 個月、post-ictal 嚴重或持續',
-    '一線 AED：Phenobarbital（2-5 mg/kg PO BID）或 Potassium Bromide（20-30 mg/kg PO SID）',
+    '一線 AED（**犬專用**）：Phenobarbital（2-5 mg/kg PO BID）或 Potassium Bromide（20-30 mg/kg PO SID；**KBr 禁用於貓**，會引起致命性嗜酸球性支氣管炎）',
     '新一代 AED：Levetiracetam（20 mg/kg PO TID）、Zonisamide（5-10 mg/kg PO BID）',
   ],
   body: `# 犬特發性癲癇
@@ -155,7 +155,7 @@ const contentEpilepsy: NodeContent = {
       { condition: '心因性暈厥（Syncope）', key_differentiator: '短暫意識喪失加肌張力消失，沒有 post-ictal 期，心臟聽診會異常或聽到心律不整，ECG/Holter 可以確認' },
     ],
     diagnostic_workup: '先收完整病史（發作描述、頻率、影片最好），做神經學檢查（發作間期通常正常）。Tier I 血檢排代謝性原因，Tier II 加膽汁酸跟血氨排肝腦症，Tier III 上腦部 MRI 排結構性病變、CSF 分析排腦炎，必要時再做品種特異性的基因檢測。',
-    treatment_protocol: '什麼時候開始治療？cluster seizures、status epilepticus、半年內發作超過 2 次、或 post-ictal 很嚴重，這些就是起始標準。一線用 PB 2-5 mg/kg PO BID 或 KBr 20-30 mg/kg PO SID。單藥壓不住就加二線：LEV 20 mg/kg PO TID 或 ZNS 5-10 mg/kg PO BID。難治性癲癇的定義就是兩種適當 AED 用到治療劑量還是控制不住。',
+    treatment_protocol: '什麼時候開始治療？cluster seizures、status epilepticus、半年內發作超過 2 次、或 post-ictal 很嚴重，這些就是起始標準。一線用 PB 2-5 mg/kg PO BID 或 KBr 20-30 mg/kg PO SID（**KBr 僅限犬，嚴禁用於貓**）。單藥壓不住就加二線：LEV 20 mg/kg PO TID 或 ZNS 5-10 mg/kg PO BID（ZNS 貓可用）。難治性癲癇的定義就是兩種適當 AED 用到治療劑量還是控制不住。',
     prognosis: '約六到七成犬隻用合適 AED 可以控制得不錯（發作頻率掉一半以上）。兩到三成是藥物難治性。好發品種裡 Border Collie 跟 GSD 的預後通常比較差。出現 cluster seizures 或 status epilepticus 都跟差預後綁在一起。壽命可以接近正常，但要注意 SUDEP（Sudden Unexpected Death in Epilepsy）這個風險。',
     monitoring: 'PB 開始後 2-3 週測穩態血中濃度，目標 15-35 ug/mL。之後每 6 個月追 PB 濃度跟肝功能（ALT、ALP、膽汁酸）。KBr 濃度合併 PB 時抓 1-3 mg/mL，單用就抓 2-3 mg/mL。飼主要寫發作日誌，把日期、時間、持續時間、類型記下來。',
     owner_communication: '特發性癲癇是終身疾病，目前無法治癒，但管理得當可以控制得不錯。治療目標是把發作頻率跟嚴重度壓下來，不是完全消除發作。藥一定要照吃，不能自己停或減量，突然停 PB 會誘發癲癇重積。發作當下教飼主：保持冷靜、記時間、不要去掰嘴巴，超過 5 分鐘立刻就醫。',

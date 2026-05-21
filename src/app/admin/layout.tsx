@@ -5,9 +5,9 @@ import { usePathname, useRouter } from 'next/navigation';
 import { Settings, Sparkles, ClipboardCheck, BarChart3, ArrowLeft, LogOut } from 'lucide-react';
 
 const ADMIN_NAV = [
-  { href: '/admin/generate', label: 'AI 生成', icon: <Sparkles className="h-4 w-4" /> },
-  { href: '/admin/review', label: '內容審核', icon: <ClipboardCheck className="h-4 w-4" /> },
-  { href: '/admin/analytics', label: '數據分析', icon: <BarChart3 className="h-4 w-4" /> },
+  { href: '/admin/generate', label: 'AI 生成', icon: <Sparkles className="h-4 w-4" aria-hidden="true" /> },
+  { href: '/admin/review', label: '內容審核', icon: <ClipboardCheck className="h-4 w-4" aria-hidden="true" /> },
+  { href: '/admin/analytics', label: '數據分析', icon: <BarChart3 className="h-4 w-4" aria-hidden="true" /> },
 ] as const;
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -46,9 +46,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
         <button
           onClick={handleLogout}
-          className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
+          className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1"
         >
-          <LogOut className="h-4 w-4" />
+          <LogOut className="h-4 w-4" aria-hidden="true" />
           登出
         </button>
       </header>
@@ -61,7 +61,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                aria-current={pathname === item.href ? 'page' : undefined}
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1"
               >
                 {item.icon}
                 {item.label}

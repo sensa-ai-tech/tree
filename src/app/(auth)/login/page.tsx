@@ -58,6 +58,7 @@ export default function LoginPage() {
               label="Email"
               type="email"
               placeholder="you@example.com"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               error={error && !email ? '請輸入 Email' : undefined}
@@ -67,11 +68,12 @@ export default function LoginPage() {
               label="密碼"
               type="password"
               placeholder="請輸入密碼"
+              autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {error && <p className="text-sm text-red-600">{error}</p>}
+            {error && <p role="alert" className="text-sm text-red-600">{error}</p>}
             <Button type="submit" isLoading={isLoading} className="w-full">
               登入
             </Button>

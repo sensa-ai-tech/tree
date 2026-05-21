@@ -149,7 +149,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
       {/* Node Info */}
       <div>
         <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-indigo-50 p-2">
+          <div className="rounded-lg bg-indigo-50 p-2" aria-hidden="true">
             {nodeTypeIcon[node.node_type] ?? <BookOpen className="h-5 w-5 text-indigo-600" />}
           </div>
           <div>

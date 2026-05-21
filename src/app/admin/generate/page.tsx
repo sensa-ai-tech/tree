@@ -154,7 +154,7 @@ export default function AdminGeneratePage() {
 
       {/* Progress */}
       {generation.status === 'generating' && (
-        <Card>
+        <Card aria-live="polite" aria-label="生成進度">
           <CardBody className="space-y-3">
             <div className="flex items-center gap-2">
               <Loader2 className="h-4 w-4 animate-spin text-indigo-600" />
@@ -187,7 +187,7 @@ export default function AdminGeneratePage() {
             </div>
           </CardHeader>
           <CardBody>
-            <pre className="max-h-96 overflow-auto rounded-lg bg-gray-900 p-4 text-sm text-green-400">
+            <pre aria-label="生成結果 JSON 預覽" className="max-h-96 overflow-auto rounded-lg bg-gray-900 p-4 text-sm text-green-400">
               {generation.result}
             </pre>
           </CardBody>

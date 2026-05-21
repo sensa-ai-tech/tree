@@ -21,6 +21,13 @@ async function handleGet(
       );
     }
 
+    if (!/^[a-zA-Z0-9_-]{1,64}$/.test(nodeId)) {
+      return NextResponse.json(
+        { data: null, error: 'Invalid Node ID format' },
+        { status: 400 }
+      );
+    }
+
     // Mock mode: return not found.
     // In a real implementation, query Supabase for the node by ID,
     // including its content, edges, and visual aids.
