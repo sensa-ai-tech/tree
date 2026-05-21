@@ -133,7 +133,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
           <button
             type="button"
             onClick={onMenuClick}
-            className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors md:hidden"
+            className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 md:hidden"
             aria-label="開啟選單"
           >
             <Menu className="h-5 w-5" aria-hidden="true" />
@@ -175,7 +175,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
               <button
                 type="button"
                 onClick={handleClearSearch}
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-0.5 text-gray-400 hover:text-gray-600"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-0.5 text-gray-400 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1"
                 aria-label="清除搜尋"
               >
                 <X className="h-3.5 w-3.5" aria-hidden="true" />
@@ -202,7 +202,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
                     aria-selected={i === activeIndex}
                     onClick={() => handleResultClick(node.id)}
                     className={cn(
-                      'flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors',
+                      'flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500',
                       i === activeIndex ? 'bg-indigo-50' : 'hover:bg-indigo-50'
                     )}
                   >
@@ -223,7 +223,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
                     router.push('/graph');
                   }}
                   className={cn(
-                    'flex w-full items-center justify-center gap-1 border-t border-gray-100 px-3 py-2 text-xs font-medium text-indigo-600 transition-colors',
+                    'flex w-full items-center justify-center gap-1 border-t border-gray-100 px-3 py-2 text-xs font-medium text-indigo-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500',
                     activeIndex === searchResults.length ? 'bg-indigo-50' : 'hover:bg-indigo-50'
                   )}
                 >
@@ -246,7 +246,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
           <button
             type="button"
             onClick={() => setShowNotifications((v) => !v)}
-            className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
+            className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1"
             // A17 fix: expose notification count to screen readers
             aria-label={recentXPEvents.length > 0 ? `通知（${recentXPEvents.length} 則新動態）` : '通知'}
             aria-expanded={showNotifications}

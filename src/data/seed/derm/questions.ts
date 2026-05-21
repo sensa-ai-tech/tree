@@ -418,9 +418,9 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['immunology', 'defensins', 'innate_immunity'], image_placeholder: null,
   },
 
-  // ========== DERM-L1-001 皮膚微生物生態 (8 questions) ==========
+  // ========== DERM-L1-001 皮膚微生物生態 continued (8 questions, IDs I–P) ==========
   {
-    id: 'Q-DERM-L1-003-A', node_id: 'DERM-L1-001', question_type: 'mcq',
+    id: 'Q-DERM-L1-001-I', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '犬正常皮膚微生物群（skin microbiome）中，最主要的常駐菌（resident flora）為何？',
     options: [
       'Staphylococcus pseudintermedius',
@@ -433,7 +433,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'microbiome', 'Staphylococcus'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-B', node_id: 'DERM-L1-001', question_type: 'mcq',
+    id: 'Q-DERM-L1-001-J', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: 'Malassezia pachydermatis 在犬正常皮膚上的分布特徵為何？',
     options: [
       '均勻分布於全身皮膚',
@@ -446,7 +446,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'Malassezia', 'distribution'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-C', node_id: 'DERM-L1-001', question_type: 'mcq',
+    id: 'Q-DERM-L1-001-K', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '下列何者是維持犬皮膚微生物生態平衡的重要因素？',
     options: [
       '定期使用全身性抗生素',
@@ -459,7 +459,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'microbiome_homeostasis'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-D', node_id: 'DERM-L1-001', question_type: 'mcq',
+    id: 'Q-DERM-L1-001-L', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '犬皮膚 pH 值約為多少？與人類相比有何差異？',
     options: [
       '犬約 4.5-5.5，與人類相近',
@@ -472,7 +472,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'skin_pH', 'species_difference'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-E', node_id: 'DERM-L1-001', question_type: 'case_based',
+    id: 'Q-DERM-L1-001-M', node_id: 'DERM-L1-001', question_type: 'case_based',
     question: '一隻 CAD 犬長期使用外用類固醇後出現局部皮膚感染惡化。從微生物生態學的角度，最可能的機轉為何？',
     options: [
       '類固醇直接促進細菌生長',
@@ -485,7 +485,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['microbiology', 'steroid', 'dysbiosis'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-F', node_id: 'DERM-L1-001', question_type: 'case_based',
+    id: 'Q-DERM-L1-001-N', node_id: 'DERM-L1-001', question_type: 'case_based',
     question: '一隻犬反覆發生膿皮症（pyoderma），培養持續長出 methicillin-resistant S. pseudintermedius（MRSP）。從微生物生態的觀點，最佳的長期管理策略為何？',
     options: [
       '持續輪換使用不同全身性抗生素',
@@ -498,7 +498,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 4, spaced_rep: true, tags: ['microbiology', 'MRSP', 'antimicrobial_stewardship'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-G', node_id: 'DERM-L1-001', question_type: 'true_false',
+    id: 'Q-DERM-L1-001-O', node_id: 'DERM-L1-001', question_type: 'true_false',
     question: '犬皮膚正常微生物群（commensal flora）的存在有助於抵抗致病菌的定殖，這稱為「定殖抗性（colonization resistance）」。',
     options: ['正確', '錯誤'],
     correct_answer: '正確',
@@ -506,7 +506,7 @@ export const DERM_QUESTIONS: ReviewQuestion[] = [
     difficulty: 2, spaced_rep: true, tags: ['microbiology', 'colonization_resistance'], image_placeholder: null,
   },
   {
-    id: 'Q-DERM-L1-003-H', node_id: 'DERM-L1-001', question_type: 'mcq',
+    id: 'Q-DERM-L1-001-P', node_id: 'DERM-L1-001', question_type: 'mcq',
     question: '下列關於犬皮膚皮癬菌（dermatophyte）的描述，何者正確？',
     options: [
       '皮癬菌是犬皮膚的正常常駐菌',
