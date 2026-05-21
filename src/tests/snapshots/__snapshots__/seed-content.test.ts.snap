@@ -1,0 +1,183 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`seed-content snapshot: 核心節點 contents 鎖定 > CARDIO-L3-001 的核心 content 欄位穩定 1`] = `
+{
+  "clinical_pearl": "雜音多大聲跟病多嚴重不一定成正比。臨床上看過 Grade II/VI 的雜音其實已經 B2，也看過 Grade V/VI 的犬穩穩過好幾年。聽診是初篩，分期還是要靠心超加 X 光。",
+  "common_mistakes": [
+    "只聽雜音就斷嚴重度，沒安排心超",
+    "B1 就開始用 pimobendan（EPIC 研究只支持 B2 以上）",
+    "飼主沒被教 sleeping RR 怎麼算，居家監測等於沒做",
+    "MMVD 引起的咳嗽被誤認成呼吸道感染",
+  ],
+  "key_points": [
+    "好發品種：CKCS、馬爾濟斯、貴賓、臘腸、吉娃娃",
+    "ACVIM 分期：A（高風險無病變）→ B1（無心臟重塑）→ B2（有重塑）→ C（臨床症狀）→ D（難治性）",
+    "EPIC 研究證實 Stage B2 開始使用 pimobendan 可延緩進入 C 期",
+    "胸腔 X 光 VHS > 10.5 及左心房/主動脈比 > 1.6 提示心臟重塑",
+    "心雜音等級不一定與疾病嚴重度正相關",
+    "居家呼吸次數（sleeping RR）< 30 次/分為重要監測指標",
+  ],
+  "learning_objectives_count": 5,
+  "node_id": "CARDIO-L3-001",
+  "references_count": 3,
+  "summary": "二尖瓣黏液瘤性退化（MMVD）是犬最常見的後天性心臟病，後天心臟病裡有七成五以上都是它。小型犬好發，CKCS 幾乎一隻不漏。ACVIM 把它分成 A 到 D 四期，到了 B2 就建議開始 pimobendan。",
+}
+`;
+
+exports[`seed-content snapshot: 核心節點 contents 鎖定 > CARDIO-L4-001 的核心 content 欄位穩定 1`] = `
+{
+  "clinical_pearl": "聽診先抓心率跟節律，再去聽個別心音。犬的竇性心律不整是正常的（吸氣加速、呼氣變慢），不用緊張。但同樣的節律不整跑到貓身上就要繼續追，貓本來就比較少看到生理性的節律變動。",
+  "common_mistakes": [
+    "僅在左側聽診而忽略右側（三尖瓣逆流常見於右側）",
+    "將犬的竇性心律不整誤判為病理性心律不整",
+    "環境太吵雜時進行聽診，影響微弱雜音的偵測",
+  ],
+  "key_points": [
+    "四個聽診位置：左心尖（二尖瓣）、左心底（主動脈/肺動脈）、右心尖（三尖瓣）、右心底",
+    "S1（第一心音）：房室瓣關閉音，標誌收縮期開始",
+    "S2（第二心音）：半月瓣關閉音，標誌舒張期開始",
+    "犬的竇性心律不整（sinus arrhythmia）為正常變異",
+    "心雜音 Levine 分級：I-VI 級，IV 級以上伴隨震顫（thrill）",
+  ],
+  "learning_objectives_count": 4,
+  "node_id": "CARDIO-L4-001",
+  "references_count": 3,
+  "summary": "聽診是獸醫做心臟評估時最基本的工具，也是看門診一定要做的動作。聽得熟之後，S1、S2 是不是正常，有沒有 S3、S4 跑出來，雜音落在哪、節律穩不穩，幾秒鐘大概就有底。後面要不要安排心超、X 光，多半就靠這一手判斷。",
+}
+`;
+
+exports[`seed-content snapshot: 核心節點 contents 鎖定 > IM-L3-001 的核心 content 欄位穩定 1`] = `
+{
+  "clinical_pearl": "LDDST 做完 8 小時，如果 cortisol 有被抑制（降到基礎值的一半以下或 < 1.4 μg/dL），那就強烈指向 PDH。但要注意一件事：大約四分之一的 PDH 在 LDDST 上不抑制（對 PDH 來說就是假陰性），偶爾 ADH 反過來也會抑制。所以 LDDST 想拿來做 PDH/ADH 鑑別，只有「抑制」這個結果才能用。沒抑制就不能下結論，要靠超音波或內源性 ACTH 才行。另外提一個重點，犬的 ALP 裡有一種 steroid-induced isoenzyme，敏感度超過 90%，是最早跑出來的血檢異常。
+
+【台灣流行病學】Cushing 在台灣的小動物門診是常見的內分泌病，好發在中老年小型犬，貴賓犬、臘腸犬、馬爾濟斯這些常見品種都跑不掉。台灣的獸醫院多半可以做 ACTH stimulation test 和 LDDST，Trilostane 是主要治療藥物。亞熱帶氣候下犬隻皮膚問題本來就多，慢性皮膚病的鑑別診斷請把 Cushing 放進去考慮。",
+  "common_mistakes": [
+    "在非傳染性疾病（NTI, non-thyroidal illness）狀態下就篩檢 Cushing（高壓力狀態會導致偽陽性）",
+    "僅憑 UCCR 升高就診斷 Cushing（UCCR 特異度低，任何壓力/疾病都可升高）",
+    "Trilostane 治療後未在正確時間點做 ACTH stim test（必須在給藥後 4-6 小時）",
+    "忽略腦下垂體大腺瘤的神經症狀（多達 25% PDH 有大腺瘤）",
+    "誤將醫源性 Cushing 的低皮質醇結果解讀為 Addison（需詢問外源性類固醇使用史）",
+  ],
+  "key_points": [
+    "PDH（80-85%）：腦下垂體 ACTH 腺瘤 → 雙側腎上腺增生；ADH（15-20%）：單側腎上腺腫瘤自主分泌 cortisol",
+    "經典臨床表現：PU/PD、多食、腹部膨大（壺腹腹）、皮膚薄化、對稱性脫毛、鈣質沉著",
+    "LDDST 敏感度 > 95%（最佳篩檢）；UCCR 敏感度高但特異度低（最佳排除工具）",
+    "ACTH stimulation test 敏感度較低（~80%）但為監測 Trilostane 治療的標準工具",
+    "Trilostane 起始劑量 1-2 mg/kg PO SID-BID，10-14 天後 ACTH stim test 評估",
+    "ALP 升高（犬特有的 steroid-induced ALP isoenzyme）見於 > 90% Cushing 犬",
+    "皮膚科共病：反覆膿皮症、蠕形蟎症、鈣質沉著症",
+  ],
+  "learning_objectives_count": 5,
+  "node_id": "IM-L3-001",
+  "references_count": 4,
+  "summary": "犬腎上腺皮質機能亢進（Cushing 症候群）是犬最常見的內分泌疾病之一，原因說起來簡單，就是身體長期被太多 cortisol 泡著。其中 80-85% 來自腦下垂體（PDH），15-20% 來自腎上腺腫瘤（ADH）。ACVIM 共識建議篩檢用 LDDST，治療之後追蹤再回去用 ACTH stimulation test。藥物選擇上，Trilostane 是現在的首選。",
+}
+`;
+
+exports[`seed-content snapshot: 核心節點 contents 鎖定 > IM-L3-028 的核心 content 欄位穩定 1`] = `
+{
+  "clinical_pearl": "看到「未疫苗幼貓 + 急性嘔吐腹瀉 + WBC 低到看不到」直接當 FPV 處理，不要等 PCR 回來。早 6 小時開始補液跟止吐，存活率差很多。",
+  "common_mistakes": [
+    "SNAP 陰性就排除 FPV：治療後 5-12 天會假陰性，加上 PCR 才穩妥",
+    "怕貓吐就不放鼻飼管，結果貓三天沒吃肝臟脂肪肝跑出來",
+    "用 chlorhexidine 消毒環境，對 parvo 沒用，要 1:32 漂白水",
+    "幼貓 8 週打完一劑就以為沒事，母源抗體可能干擾，要打到 16 週齡",
+    "把流浪幼貓直接放進家裡多貓環境沒先隔離篩檢",
+  ],
+  "key_points": [
+    "好發 8-16 週齡未疫苗幼貓",
+    "潛伏期 2-7 天，症狀來得又急又猛",
+    "CBC 三系減少（WBC < 2000 是典型）",
+    "SNAP CPV 對 FPV 有交叉反應、可篩檢",
+    "Parvo 在環境可存活 1 年以上，漂白水稀釋 1:32 才能滅活",
+    "台灣收容所每年都有 FPV 群聚爆發，幼貓進場前必篩",
+  ],
+  "learning_objectives_count": 5,
+  "node_id": "IM-L3-028",
+  "references_count": 4,
+  "summary": "貓泛白血球減少症（FPV，俗稱貓瘟）由 feline parvovirus 引起，幾乎所有未疫苗幼貓暴露後都會發病。台灣多貓家庭、收容所、貓咖啡廳環境風險特別高。病程急，沒治療死亡率 50-90%，但早期積極支持治療可以拉回來。",
+}
+`;
+
+exports[`seed-content snapshot: 核心節點 contents 鎖定 > SURG-L5-006 的核心 content 欄位穩定 1`] = `
+{
+  "clinical_pearl": "術中 EtCO2 在 5 分鐘內從 40 mmHg 飆到 60-80 mmHg 而且加大通氣壓不下來，就要想 MH。先停吸入麻醉，動作要快。Dantrolene 不是萬靈丹，但越早給效果越好，每 5 分鐘延遲都在墊高死亡率。",
+  "common_mistakes": [
+    "只看體溫不看 EtCO2：MH 的 EtCO2 飆升比體溫早出現 10-30 分鐘",
+    "把保溫毯熱風直接歸因為高熱：先排除 MH 再說",
+    "繼續用 succinylcholine 鬆肌：對 MH 是火上加油",
+    "Dantrolene 給完一劑就放心：可能需要重複到 10 mg/kg 累積劑量",
+    "降溫過頭沒停手：體溫降到 38.5°C 就停，過低反彈傷害大",
+  ],
+  "key_points": [
+    "觸發藥物：所有揮發性麻醉劑（halothane、isoflurane、sevoflurane、desflurane）+ succinylcholine",
+    "安全藥物：propofol、ketamine、alfaxalone、 medetomidine、所有 opioids、所有 NSAIDs",
+    "EtCO2 飆升是最早期、最敏感的警訊",
+    "Dantrolene 2.5 mg/kg IV bolus，10 分鐘可重複到總量 10 mg/kg",
+    "冰水灌洗腹腔/膀胱、降溫毛巾、IV 冷晶體液都要併用",
+    "好發品種：Pointer、Labrador、Greyhound、Saint Bernard",
+  ],
+  "learning_objectives_count": 5,
+  "node_id": "SURG-L5-006",
+  "references_count": 4,
+  "summary": "麻醉惡性高熱（MH）是極罕見但致命的麻醉併發症，由揮發性麻醉劑（isoflurane、sevoflurane）或 succinylcholine 觸發，肌漿網 RYR1 突變動物的鈣離子失控釋放，導致急性高熱（>41°C）、肌肉強直、呼氣末 CO2 飆升、嚴重代謝酸中毒。獸醫案例多見於豬與某些犬種（Pointer、Labrador、Greyhound）。Dantrolene 是唯一特效藥。",
+}
+`;
+
+exports[`seed-content snapshot: 結構性指標 > node_type 分佈穩定 1`] = `
+{
+  "concept": 36,
+  "diagnostic": 40,
+  "disease": 120,
+  "mechanism": 34,
+  "procedure": 5,
+  "therapeutic": 31,
+}
+`;
+
+exports[`seed-content snapshot: 結構性指標 > relation_type 分佈穩定（邊類型） 1`] = `
+{
+  "builds_on": 53,
+  "clinical_apply": 418,
+  "complication": 68,
+  "cross_specialty": 4,
+  "differential": 46,
+  "drug_related": 19,
+  "prerequisite": 188,
+  "same_system": 13,
+}
+`;
+
+exports[`seed-content snapshot: 結構性指標 > 每 layer 節點數量穩定 1`] = `
+{
+  "L0": 8,
+  "L1": 28,
+  "L2": 33,
+  "L3": 123,
+  "L4": 40,
+  "L5": 34,
+}
+`;
+
+exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分佈穩定 1`] = `
+{
+  "CARDIO": 26,
+  "CPATH": 22,
+  "DERM": 34,
+  "ECC": 33,
+  "IM": 49,
+  "NEURO": 33,
+  "ONCO": 34,
+  "SURG": 35,
+}
+`;
+
+exports[`seed-content snapshot: 結構性指標 > 總節點數 + 邊數 + 路徑數 維持穩定 1`] = `
+{
+  "contents": 266,
+  "edges": 809,
+  "nodes": 266,
+  "paths": 47,
+  "questions": 1953,
+}
+`;
