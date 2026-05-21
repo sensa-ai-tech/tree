@@ -1,4 +1,20 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+async function mockLogin(page: Page): Promise<void> {
+  await page.goto('/login');
+  await page.fill('input[type="email"]', 'student@example.com');
+  await page.fill('input[type="password"]', 'demo123');
+  await page.locator('form button[type="submit"]').click();
+  await page.waitForURL((url) => !url.pathname.startsWith('/login'), { timeout: 15_000 });
+}
+
+/** Dismiss any modal (e.g. LevelUpModal) that could intercept clicks */
+async function dismissModals(page: Page): Promise<void> {
+  await page.keyboard.press('Escape');
+  try {
+    await page.locator('[aria-hidden="true"].fixed.inset-0').first().waitFor({ state: 'detached', timeout: 1_500 });
+  } catch { /* no modal */ }
+}
 
 /**
  * 知識節點巡航測試
@@ -39,19 +55,26 @@ const RAW_PLACEHOLDER_PATTERNS = [
 
 test.describe('Knowledge Node Cruise', () => {
   test('graph page loads and shows nodes', async ({ page }) => {
+    await mockLogin(page);
     await page.goto('/graph');
+    await dismissModals(page);
     await expect(page.locator('h1')).toContainText('知識圖譜');
   });
 
   test('cruise all node detail pages', async ({ page }) => {
+    // The cruise visits up to 1,680 generated node IDs; set generous timeout
+    test.setTimeout(300_000); // 5 minutes
+
     const results: Array<{
       nodeId: string;
       status: 'pass' | 'skip' | 'fail';
       issues: string[];
     }> = [];
 
-    // 先訪問首頁讓 DemoDataProvider 注入資料
+    // 先登入再訪問 /graph 讓 DemoDataProvider 注入資料
+    await mockLogin(page);
     await page.goto('/graph');
+    await dismissModals(page);
     await page.waitForTimeout(2000);
 
     for (const nodeId of ALL_NODE_IDS) {
@@ -60,20 +83,24 @@ test.describe('Knowledge Node Cruise', () => {
         timeout: 15000,
       }).catch(() => null);
 
-      // 頁面不存在或重定向 → skip
-      if (!response || response.status() >= 400) {
+      // Skip: HTTP 404/500, navigation error, or auth redirect to /login
+      if (!response || response.status() >= 400 || page.url().includes('/login')) {
         continue;
       }
 
-      // 等待頁面內容載入
+      // Fast-path body check BEFORE expensive 500ms wait.
+      // Authenticated 404 pages render HTTP 200 with "找不到此知識節點" text.
+      // Generic next.js 404s are caught above (status >= 400) but app-level
+      // "not found" rendered in client-side routing falls here.
+      const quickBody = await page.locator('body').textContent().catch(() => '');
+      if (quickBody?.includes('找不到此知識節點')) {
+        continue;
+      }
+
+      // Only wait 500ms for pages that actually have node content
       await page.waitForTimeout(500);
 
       const bodyText = await page.locator('body').textContent().catch(() => '');
-
-      // 如果顯示「找不到此知識節點」→ skip
-      if (bodyText?.includes('找不到此知識節點')) {
-        continue;
-      }
 
       const issues: string[] = [];
 

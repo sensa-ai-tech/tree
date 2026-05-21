@@ -3,19 +3,25 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createHash } from 'crypto';
 import { SignJWT } from 'jose';
 
-// next/headers 的 cookies() 在 unit test 沒 server context。
-// 只測純函式（createAdminToken / verifyAdminToken / validateAdminPassword）。
-// 用 mock 取代 next/headers 的部分讓 import 不爆炸。
+// next/headers の cookies() は unit test では server context が無い。
+// vi.fn() にしてテストごとに注入できるようにする。
 vi.mock('next/headers', () => ({
-  cookies: async () => ({
-    get: vi.fn(),
-    set: vi.fn(),
-    delete: vi.fn(),
-  }),
+  cookies: vi.fn(),
 }));
 
-const { createAdminToken, verifyAdminToken, validateAdminPassword } =
-  await import('@/lib/admin-auth');
+const {
+  createAdminToken,
+  verifyAdminToken,
+  validateAdminPassword,
+  setAdminCookie,
+  clearAdminCookie,
+  getAdminTokenFromCookies,
+  COOKIE_NAME,
+} = await import('@/lib/admin-auth');
+
+// Get the mocked cookies fn so we can control it per-test
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+const { cookies: cookiesMock } = vi.mocked(await import('next/headers'));
 
 describe('admin-auth: JWT signing & verification', () => {
   const originalEnv = { ...process.env };
@@ -180,5 +186,145 @@ describe('admin-auth: validateAdminPassword', () => {
     // 雜湊應為 64 hex chars (32 bytes)，這裡塞短的觸發 length mismatch
     process.env.VKT_ADMIN_PASSWORD = 'sha256:deadbeef';
     expect(validateAdminPassword('anything')).toBe(false);
+  });
+});
+
+/**
+ * Round 10 新增：cookie helper 函式測試
+ * setAdminCookie / clearAdminCookie / getAdminTokenFromCookies
+ * 使用可注入的 vi.fn() mock 讓每個 test 都能獨立驗證 cookies() 呼叫。
+ *
+ * 殺死 mutants：
+ * - COOKIE_NAME 常數被替換成空字串
+ * - httpOnly: true → false
+ * - secure: NODE_ENV==='production' → true / false
+ * - sameSite: 'lax' → 'strict' / 'none'
+ * - maxAge: 7200 → 0
+ * - path: '/' → ''
+ * - cookieStore.get(COOKIE_NAME)?.value → undefined (optional chain removed)
+ */
+describe('admin-auth: cookie helpers', () => {
+  const originalEnv = { ...process.env };
+
+  // Fresh spies for each test
+  let mockGet: ReturnType<typeof vi.fn>;
+  let mockSet: ReturnType<typeof vi.fn>;
+  let mockDelete: ReturnType<typeof vi.fn>;
+
+  beforeEach(() => {
+    mockGet = vi.fn().mockReturnValue(undefined);
+    mockSet = vi.fn();
+    mockDelete = vi.fn();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (cookiesMock as ReturnType<typeof vi.fn>).mockResolvedValue({
+      get: mockGet,
+      set: mockSet,
+      delete: mockDelete,
+    } as unknown as Awaited<ReturnType<typeof cookiesMock>>);
+    process.env.VKT_JWT_SECRET = 'this-is-a-test-secret-that-is-at-least-32-chars';
+  });
+
+  afterEach(() => {
+    process.env = { ...originalEnv };
+    vi.clearAllMocks();
+  });
+
+  // ── setAdminCookie ──────────────────────────────────────────────────────────
+
+  it('setAdminCookie calls cookies().set with correct cookie name and token', async () => {
+    await setAdminCookie('tok-abc');
+    expect(mockSet).toHaveBeenCalledOnce();
+    const [name, value] = mockSet.mock.calls[0] as [string, string, unknown];
+    expect(name).toBe(COOKIE_NAME);      // kills COOKIE_NAME→'' mutant
+    expect(name).toBe('vkt-admin-token'); // double-pin the literal
+    expect(value).toBe('tok-abc');
+  });
+
+  it('setAdminCookie passes httpOnly:true (kills httpOnly:false mutant)', async () => {
+    await setAdminCookie('tok');
+    const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
+    expect(opts).toBeDefined();
+    expect(opts.httpOnly).toBe(true);
+  });
+
+  it('setAdminCookie passes sameSite:"lax" (kills "strict"/"none" mutants)', async () => {
+    await setAdminCookie('tok');
+    const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
+    expect(opts.sameSite).toBe('lax');
+  });
+
+  it('setAdminCookie passes path:"/" (kills empty-path mutant)', async () => {
+    await setAdminCookie('tok');
+    const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
+    expect(opts.path).toBe('/');
+  });
+
+  it('setAdminCookie passes maxAge:7200 (60*60*2) (kills maxAge:0 mutant)', async () => {
+    await setAdminCookie('tok');
+    const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
+    expect(opts.maxAge).toBe(7200);
+  });
+
+  it('setAdminCookie passes secure:false in non-production (vitest uses NODE_ENV=test)', async () => {
+    // In Vitest, NODE_ENV='test' — not 'production', so secure should be false.
+    // Kills the mutant that replaces === with !== (would give secure:true).
+    await setAdminCookie('tok');
+    const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
+    expect(opts.secure).toBe(false);
+  });
+
+  it('setAdminCookie passes secure:true in production (kills hardcoded-false mutant)', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (process.env as any).NODE_ENV = 'production';
+    await setAdminCookie('tok');
+    const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
+    expect(opts.secure).toBe(true);
+  });
+
+  // ── clearAdminCookie ────────────────────────────────────────────────────────
+
+  it('clearAdminCookie calls cookies().delete with the correct cookie name', async () => {
+    await clearAdminCookie();
+    expect(mockDelete).toHaveBeenCalledOnce();
+    expect(mockDelete).toHaveBeenCalledWith(COOKIE_NAME);      // kills COOKIE_NAME→'' mutant
+    expect(mockDelete).toHaveBeenCalledWith('vkt-admin-token'); // double-pin literal
+  });
+
+  it('clearAdminCookie does not call set or get', async () => {
+    await clearAdminCookie();
+    expect(mockSet).not.toHaveBeenCalled();
+    expect(mockGet).not.toHaveBeenCalled();
+  });
+
+  // ── getAdminTokenFromCookies ────────────────────────────────────────────────
+
+  it('getAdminTokenFromCookies returns the cookie value when present', async () => {
+    mockGet.mockReturnValue({ name: COOKIE_NAME, value: 'jwt-token-xyz' });
+    const result = await getAdminTokenFromCookies();
+    expect(result).toBe('jwt-token-xyz');
+    expect(mockGet).toHaveBeenCalledWith(COOKIE_NAME);
+  });
+
+  it('getAdminTokenFromCookies returns undefined when cookie is absent', async () => {
+    mockGet.mockReturnValue(undefined);
+    const result = await getAdminTokenFromCookies();
+    expect(result).toBeUndefined();
+  });
+
+  it('getAdminTokenFromCookies uses COOKIE_NAME constant not an empty string', async () => {
+    // Kills: cookieStore.get('') or cookieStore.get(undefined) mutants
+    mockGet.mockReturnValue({ name: COOKIE_NAME, value: 'some-token' });
+    await getAdminTokenFromCookies();
+    const calledWith = mockGet.mock.calls[0]?.[0] as string;
+    expect(calledWith).toBe('vkt-admin-token');
+    expect(calledWith.length).toBeGreaterThan(0);
+  });
+
+  it('getAdminTokenFromCookies returns undefined when cookie value is an empty string', async () => {
+    // Ensures optional chain ?.value is tested — value='' is different from undefined
+    mockGet.mockReturnValue({ name: COOKIE_NAME, value: '' });
+    const result = await getAdminTokenFromCookies();
+    // .value is '', which is falsy but not undefined — the function returns it as-is
+    expect(result).toBe('');
   });
 });

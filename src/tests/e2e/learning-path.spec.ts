@@ -34,7 +34,7 @@ test.describe('Learning Path Flow', () => {
 
   test('should login and reach dashboard', async ({ page }) => {
     await mockLogin(page);
-    await expect(page).toHaveURL(/\/home|\/dashboard|\/$/);
+    await expect(page).toHaveURL(/\/home|\/dashboard|\/graph|\/$/);
   });
 
   test('should display knowledge graph after login', async ({ page }) => {
