@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { DiagnosticData } from '@/types/knowledge';
 import { cn } from '@/lib/utils/cn';
 
@@ -27,9 +27,30 @@ const TABS: TabConfig[] = [
 
 export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
   const [activeTab, setActiveTab] = useState<TabKey>('indications');
+  const tabRefs = useRef<Map<TabKey, HTMLButtonElement | null>>(new Map());
 
   function handleTabChange(tab: TabKey): void {
     setActiveTab(tab);
+  }
+
+  function handleTabKeyDown(e: React.KeyboardEvent, currentKey: TabKey): void {
+    const currentIndex = TABS.findIndex((t) => t.key === currentKey);
+    let nextIndex: number | null = null;
+    if (e.key === 'ArrowRight') {
+      nextIndex = (currentIndex + 1) % TABS.length;
+    } else if (e.key === 'ArrowLeft') {
+      nextIndex = (currentIndex - 1 + TABS.length) % TABS.length;
+    } else if (e.key === 'Home') {
+      nextIndex = 0;
+    } else if (e.key === 'End') {
+      nextIndex = TABS.length - 1;
+    }
+    if (nextIndex !== null) {
+      e.preventDefault();
+      const nextKey = TABS[nextIndex].key;
+      setActiveTab(nextKey);
+      tabRefs.current.get(nextKey)?.focus();
+    }
   }
 
   function renderTabContent(): React.ReactNode {
@@ -117,7 +138,7 @@ export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
             {data.pitfalls.length > 0 ? (
               data.pitfalls.map((pitfall, i) => (
                 <div key={i} className="flex items-start gap-2 text-base">
-                  <span className="mt-0.5 flex-shrink-0 text-amber-500">&#9888;</span>
+                  <span className="mt-0.5 flex-shrink-0 text-amber-500" aria-hidden="true">&#9888;</span>
                   <span className="text-gray-700">{pitfall}</span>
                 </div>
               ))
@@ -143,7 +164,10 @@ export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
             id={`tab-${tab.key}`}
             aria-selected={activeTab === tab.key}
             aria-controls={`panel-${tab.key}`}
+            tabIndex={activeTab === tab.key ? 0 : -1}
+            ref={(el) => { tabRefs.current.set(tab.key, el); }}
             onClick={() => handleTabChange(tab.key)}
+            onKeyDown={(e) => handleTabKeyDown(e, tab.key)}
             className={cn(
               'rounded-t-lg px-3 py-2 text-sm font-medium transition-colors',
               activeTab === tab.key

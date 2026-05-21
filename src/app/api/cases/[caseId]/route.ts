@@ -62,6 +62,22 @@ async function handlePost(
       );
     }
 
+    if (input.step_results.length > 100) {
+      return NextResponse.json(
+        { error: 'step_results must not exceed 100 steps' },
+        { status: 400 }
+      );
+    }
+
+    for (const step of input.step_results) {
+      if (typeof step.score !== 'number' || step.score < 0 || step.score > 100) {
+        return NextResponse.json(
+          { error: 'each step.score must be a number between 0 and 100' },
+          { status: 400 }
+        );
+      }
+    }
+
     if (typeof input.total_time_seconds !== 'number' || input.total_time_seconds < 0) {
       return NextResponse.json(
         { error: 'total_time_seconds must be a non-negative number' },

@@ -245,10 +245,10 @@ describe('admin-auth: cookie helpers', () => {
     expect(opts.httpOnly).toBe(true);
   });
 
-  it('setAdminCookie passes sameSite:"lax" (kills "strict"/"none" mutants)', async () => {
+  it('setAdminCookie passes sameSite:"strict" (SEC-025: prevent CSRF via cross-site requests)', async () => {
     await setAdminCookie('tok');
     const opts = mockSet.mock.calls[0]?.[2] as Record<string, unknown>;
-    expect(opts.sameSite).toBe('lax');
+    expect(opts.sameSite).toBe('strict');
   });
 
   it('setAdminCookie passes path:"/" (kills empty-path mutant)', async () => {

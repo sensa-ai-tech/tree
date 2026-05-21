@@ -51,15 +51,17 @@ describe('GET /api/health', () => {
     expect(body.checks.env.reason).not.toMatch(/VKT_JWT_SECRET/);
   });
 
-  it('includes ISO timestamp + version + durationMs in payload', async () => {
+  it('includes ISO timestamp + durationMs in payload, omits version/uptimeMs', async () => {
     process.env.VKT_JWT_SECRET = 'x'.repeat(40);
     const { GET } = await import('@/app/api/health/route');
     const res = await GET();
     const body = await res.json();
     expect(body.timestamp).toMatch(/^\d{4}-\d{2}-\d{2}T/);
-    expect(body.version).toBeTruthy();
     expect(typeof body.durationMs).toBe('number');
     expect(body.durationMs).toBeGreaterThanOrEqual(0);
+    // SEC-026: version and uptimeMs must not be exposed to unauthenticated callers
+    expect(body.version).toBeUndefined();
+    expect(body.uptimeMs).toBeUndefined();
   });
 
   it('pings Supabase when both env vars set, succeeds → 200', async () => {

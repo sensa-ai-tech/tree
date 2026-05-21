@@ -42,9 +42,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   // 等待 hydration 完成 + auth check
   if (!_hasHydrated || isChecking) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50" role="status" aria-live="polite">
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-600" />
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-600" aria-hidden="true" />
           <p className="text-sm text-gray-500">載入中...</p>
         </div>
       </div>

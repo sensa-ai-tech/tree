@@ -33,6 +33,7 @@ function AchievementBadge({
   achievement: AchievementDefinition;
   isUnlocked: boolean;
 }) {
+  const statusLabel = isUnlocked ? '已解鎖' : achievement.hidden ? '隱藏成就' : '未解鎖';
   return (
     <div
       className={`flex flex-col items-center gap-2 rounded-xl border p-4 text-center transition-all ${
@@ -40,6 +41,7 @@ function AchievementBadge({
           ? 'border-amber-200 bg-amber-50 shadow-sm'
           : 'border-gray-200 bg-gray-50 opacity-50'
       }`}
+      aria-label={`${achievement.title}: ${statusLabel}`}
     >
       <span className="text-3xl" role="img" aria-label={achievement.title}>
         {achievement.icon}

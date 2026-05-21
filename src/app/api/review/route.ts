@@ -41,6 +41,13 @@ async function handlePost(request: NextRequest) {
       );
     }
 
+    if (!/^[a-zA-Z0-9_-]{1,64}$/.test(input.node_id)) {
+      return NextResponse.json(
+        { error: 'node_id must be 1–64 alphanumeric, dash, or underscore characters' },
+        { status: 400 }
+      );
+    }
+
     if (
       input.rating === undefined ||
       input.rating === null ||

@@ -145,7 +145,7 @@ export function DiseaseContent({ data, className }: DiseaseContentProps) {
           onClick={handleToggleAll}
           className="flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
         >
-          <ChevronsUpDown className="h-3.5 w-3.5" />
+          <ChevronsUpDown className="h-3.5 w-3.5" aria-hidden="true" />
           {allExpanded ? '收合全部' : '展開全部'}
         </button>
       </div>

@@ -55,8 +55,6 @@ export async function GET() {
     {
       status: allOk ? 'ok' : 'degraded',
       timestamp: new Date().toISOString(),
-      version: process.env.npm_package_version ?? '0.1.0',
-      uptimeMs: process.uptime ? Math.round(process.uptime() * 1000) : null,
       durationMs: Date.now() - startedAt,
       checks,
     },

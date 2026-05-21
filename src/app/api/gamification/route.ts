@@ -73,9 +73,16 @@ async function handlePost(request: NextRequest) {
       );
     }
 
-    if (typeof input.amount !== 'number' || input.amount <= 0) {
+    if (typeof input.amount !== 'number' || input.amount <= 0 || input.amount > 1000) {
       return NextResponse.json(
-        { error: 'amount must be a positive number' },
+        { error: 'amount must be a positive number not exceeding 1000' },
+        { status: 400 }
+      );
+    }
+
+    if (typeof input.description !== 'string' || input.description.length > 200) {
+      return NextResponse.json(
+        { error: 'description must be a string of at most 200 characters' },
         { status: 400 }
       );
     }

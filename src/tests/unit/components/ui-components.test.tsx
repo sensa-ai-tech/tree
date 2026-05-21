@@ -440,10 +440,13 @@ describe('showToast', () => {
       .toHaveBeenCalledWith('Please wait...');
   });
 
-  it('showToast.info calls toast with info icon', async () => {
+  it('showToast.info calls toast with info icon (aria-hidden JSX span)', async () => {
     const toastModule = await import('react-hot-toast');
     showToast.info('FYI');
-    expect(toastModule.default).toHaveBeenCalledWith('FYI', expect.objectContaining({ icon: 'ℹ️' }));
+    // B13: icon is now a JSX span with aria-hidden to suppress screen-reader readout
+    expect(toastModule.default).toHaveBeenCalledWith('FYI', expect.objectContaining({
+      icon: expect.objectContaining({ type: 'span', props: expect.objectContaining({ 'aria-hidden': 'true' }) }),
+    }));
   });
 
   it('showToast.dismiss delegates to toast.dismiss', async () => {

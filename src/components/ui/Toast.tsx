@@ -27,7 +27,7 @@ export function ToastProvider() {
 export const showToast = {
   success: (message: string) => toast.success(message),
   error: (message: string) => toast.error(message),
-  info: (message: string) => toast(message, { icon: 'ℹ️' }),
+  info: (message: string) => toast(message, { icon: <span aria-hidden="true">ℹ️</span> }),
   loading: (message: string) => toast.loading(message),
   dismiss: (toastId?: string) => toast.dismiss(toastId),
 };
