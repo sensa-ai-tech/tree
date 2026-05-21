@@ -136,11 +136,11 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
             className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors md:hidden"
             aria-label="開啟選單"
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="h-5 w-5" aria-hidden="true" />
           </button>
         )}
         <Link href="/home" className="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 transition-colors">
-          <BookOpen className="h-6 w-6" />
+          <BookOpen className="h-6 w-6" aria-hidden="true" />
           <span className="hidden sm:inline text-lg font-bold tracking-tight">VetKnowledgeTree</span>
         </Link>
       </div>
@@ -149,7 +149,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
       <div ref={dropdownRef} className="relative mx-4 flex-1 max-w-md">
         <form onSubmit={handleSearchSubmit}>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" aria-hidden="true" />
             <input
               ref={inputRef}
               type="text"
@@ -178,7 +178,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
                 className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-0.5 text-gray-400 hover:text-gray-600"
                 aria-label="清除搜尋"
               >
-                <X className="h-3.5 w-3.5" />
+                <X className="h-3.5 w-3.5" aria-hidden="true" />
               </button>
             )}
           </div>
@@ -227,7 +227,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
                     activeIndex === searchResults.length ? 'bg-indigo-50' : 'hover:bg-indigo-50'
                   )}
                 >
-                  <Search className="h-3 w-3" />
+                  <Search className="h-3 w-3" aria-hidden="true" />
                   在圖譜中查看全部結果
                 </button>
               </>
@@ -251,7 +251,7 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
             aria-label={recentXPEvents.length > 0 ? `通知（${recentXPEvents.length} 則新動態）` : '通知'}
             aria-expanded={showNotifications}
           >
-            <Bell className="h-5 w-5" />
+            <Bell className="h-5 w-5" aria-hidden="true" />
             {recentXPEvents.length > 0 && (
               <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-indigo-500" />
             )}
@@ -266,11 +266,11 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
                 {recentXPEvents.length > 0 ? (
                   recentXPEvents.slice(0, 10).map((event, i) => (
                     <div key={i} className="flex items-center gap-2.5 px-3 py-2 text-xs hover:bg-gray-50 transition-colors">
-                      {event.source === 'complete_node' && <Star className="h-3.5 w-3.5 flex-shrink-0 text-indigo-500" />}
-                      {event.source === 'case_challenge' && <Trophy className="h-3.5 w-3.5 flex-shrink-0 text-amber-500" />}
-                      {event.source === 'streak_bonus' && <Flame className="h-3.5 w-3.5 flex-shrink-0 text-orange-500" />}
+                      {event.source === 'complete_node' && <Star className="h-3.5 w-3.5 flex-shrink-0 text-indigo-500" aria-hidden="true" />}
+                      {event.source === 'case_challenge' && <Trophy className="h-3.5 w-3.5 flex-shrink-0 text-amber-500" aria-hidden="true" />}
+                      {event.source === 'streak_bonus' && <Flame className="h-3.5 w-3.5 flex-shrink-0 text-orange-500" aria-hidden="true" />}
                       {!['complete_node', 'case_challenge', 'streak_bonus'].includes(event.source) && (
-                        <Star className="h-3.5 w-3.5 flex-shrink-0 text-gray-400" />
+                        <Star className="h-3.5 w-3.5 flex-shrink-0 text-gray-400" aria-hidden="true" />
                       )}
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-gray-700">{event.description}</p>

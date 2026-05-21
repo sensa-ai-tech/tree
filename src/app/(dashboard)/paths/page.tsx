@@ -82,13 +82,15 @@ export default function PathsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Route className="h-6 w-6 text-indigo-600" />
+          <Route className="h-6 w-6 text-indigo-600" aria-hidden="true" />
           <h1 className="text-2xl font-bold text-gray-900">學習路徑</h1>
         </div>
         {!loading && paths.length > 0 && (
           <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4 text-gray-500" />
+            <Filter className="h-4 w-4 text-gray-500" aria-hidden="true" />
+            <label htmlFor="specialty-filter" className="sr-only">依專科篩選</label>
             <select
+              id="specialty-filter"
               value={selectedSpecialty}
               onChange={(e) => setSelectedSpecialty(e.target.value)}
               className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
@@ -111,7 +113,7 @@ export default function PathsPage() {
       ) : paths.length === 0 ? (
         <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
           <div className="text-center">
-            <Route className="mx-auto h-10 w-10 text-gray-300" />
+            <Route className="mx-auto h-10 w-10 text-gray-300" aria-hidden="true" />
             <p className="mt-2 text-gray-500">尚無學習路徑</p>
             <p className="text-sm text-gray-400">學習路徑將在管理員建立後顯示</p>
           </div>

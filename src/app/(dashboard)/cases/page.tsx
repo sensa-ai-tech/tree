@@ -38,14 +38,16 @@ export default function CasesPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-2">
-        <Briefcase className="h-6 w-6 text-indigo-600" />
+        <Briefcase className="h-6 w-6 text-indigo-600" aria-hidden="true" />
         <h1 className="text-2xl font-bold text-gray-900">病例挑戰</h1>
       </div>
 
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3">
-        <Filter className="h-4 w-4 text-gray-500" />
+        <Filter className="h-4 w-4 text-gray-500" aria-hidden="true" />
+        <label htmlFor="case-specialty-filter" className="sr-only">依專科篩選</label>
         <select
+          id="case-specialty-filter"
           value={selectedSpecialty}
           onChange={(e) => setSelectedSpecialty(e.target.value)}
           className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
@@ -60,7 +62,9 @@ export default function CasesPage() {
           <option value="ECC">急診加護</option>
           <option value="CPATH">臨床病理</option>
         </select>
+        <label htmlFor="case-difficulty-filter" className="sr-only">依難度篩選</label>
         <select
+          id="case-difficulty-filter"
           value={selectedDifficulty ?? ''}
           onChange={(e) => setSelectedDifficulty(e.target.value ? Number(e.target.value) : null)}
           className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
@@ -82,7 +86,7 @@ export default function CasesPage() {
       ) : filteredCases.length === 0 ? (
         <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
           <div className="text-center">
-            <Briefcase className="mx-auto h-10 w-10 text-gray-300" />
+            <Briefcase className="mx-auto h-10 w-10 text-gray-300" aria-hidden="true" />
             <p className="mt-2 text-gray-500">尚無病例挑戰</p>
             <p className="text-sm text-gray-400">病例將在管理員建立後顯示</p>
           </div>

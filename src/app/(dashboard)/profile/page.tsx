@@ -47,7 +47,7 @@ export default function ProfilePage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <h2 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
-              <Award className="h-5 w-5 text-amber-500" />
+              <Award className="h-5 w-5 text-amber-500" aria-hidden="true" />
               等級與經驗值
             </h2>
             <Badge className="bg-indigo-100 text-indigo-700">
@@ -79,7 +79,7 @@ export default function ProfilePage() {
         <Card>
           <CardBody className="flex items-center gap-3">
             <div className="rounded-lg bg-emerald-50 p-2">
-              <BookOpen className="h-5 w-5 text-emerald-600" />
+              <BookOpen className="h-5 w-5 text-emerald-600" aria-hidden="true" />
             </div>
             <div>
               <p className="text-sm text-gray-500">已完成節點</p>
@@ -91,7 +91,7 @@ export default function ProfilePage() {
         <Card>
           <CardBody className="flex items-center gap-3">
             <div className="rounded-lg bg-blue-50 p-2">
-              <BarChart3 className="h-5 w-5 text-blue-600" />
+              <BarChart3 className="h-5 w-5 text-blue-600" aria-hidden="true" />
             </div>
             <div>
               <p className="text-sm text-gray-500">進行中</p>
@@ -103,7 +103,7 @@ export default function ProfilePage() {
         <Card>
           <CardBody className="flex items-center gap-3">
             <div className="rounded-lg bg-orange-50 p-2">
-              <Flame className="h-5 w-5 text-orange-600" />
+              <Flame className="h-5 w-5 text-orange-600" aria-hidden="true" />
             </div>
             <div>
               <p className="text-sm text-gray-500">連續天數</p>
@@ -115,7 +115,7 @@ export default function ProfilePage() {
         <Card>
           <CardBody className="flex items-center gap-3">
             <div className="rounded-lg bg-amber-50 p-2">
-              <Award className="h-5 w-5 text-amber-600" />
+              <Award className="h-5 w-5 text-amber-600" aria-hidden="true" />
             </div>
             <div>
               <p className="text-sm text-gray-500">已解鎖成就</p>

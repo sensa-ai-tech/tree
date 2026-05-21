@@ -34,14 +34,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           aria-invalid={!!error}
-          aria-describedby={error ? `${inputId}-error` : undefined}
+          aria-describedby={
+            [error && `${inputId}-error`, helperText && !error && `${inputId}-helper`]
+              .filter(Boolean).join(' ') || undefined
+          }
           {...props}
         />
         {error && (
           <p id={`${inputId}-error`} className="text-sm text-red-600">{error}</p>
         )}
         {helperText && !error && (
-          <p className="text-sm text-gray-500">{helperText}</p>
+          <p id={`${inputId}-helper`} className="text-sm text-gray-500">{helperText}</p>
         )}
       </div>
     );

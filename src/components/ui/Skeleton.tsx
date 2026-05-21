@@ -54,7 +54,7 @@ export function Skeleton({ className, variant = 'text', width, height, lines = 1
 
 export function CardSkeleton() {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 space-y-4">
+    <div role="status" aria-label="載入中" className="rounded-xl border border-gray-200 bg-white p-6 space-y-4">
       <Skeleton variant="text" width="40%" />
       <Skeleton variant="text" lines={3} />
       <div className="flex gap-2">
@@ -67,7 +67,7 @@ export function CardSkeleton() {
 
 export function GraphSkeleton() {
   return (
-    <div className="w-full h-96 rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center">
+    <div role="status" aria-label="圖譜載入中" className="w-full h-96 rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center">
       <div className="text-center space-y-3">
         <Skeleton variant="circular" width={48} height={48} className="mx-auto" />
         <Skeleton variant="text" width={120} className="mx-auto" />

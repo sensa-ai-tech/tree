@@ -72,7 +72,7 @@ export default function AchievementsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Trophy className="h-6 w-6 text-amber-500" />
+          <Trophy className="h-6 w-6 text-amber-500" aria-hidden="true" />
           <h1 className="text-2xl font-bold text-gray-900">成就</h1>
         </div>
         <Badge className="bg-amber-100 text-amber-700">

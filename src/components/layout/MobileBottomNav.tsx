@@ -33,6 +33,7 @@ export function MobileBottomNav() {
             >
               {createElement(item.icon, {
                 className: cn('h-5 w-5', isActive && 'text-indigo-600'),
+                'aria-hidden': true,
               })}
               <span className="truncate">{item.label}</span>
             </Link>

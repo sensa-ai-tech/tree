@@ -86,7 +86,7 @@ export function Sidebar({ className, onClose }: SidebarProps) {
               )}
             >
               <span className="flex-shrink-0">
-                {createElement(item.icon, { className: 'h-5 w-5' })}
+                {createElement(item.icon, { className: 'h-5 w-5', 'aria-hidden': true })}
               </span>
               {!collapsed && <span>{item.label}</span>}
             </Link>
