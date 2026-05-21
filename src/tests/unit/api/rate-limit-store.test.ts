@@ -53,6 +53,42 @@ describe('InMemoryRateLimitStore', () => {
     expect(result.resetTime).toBe(start + 30_000);
     vi.useRealTimers();
   });
+
+  it('cleanup runs after 5+ minutes and does not disrupt subsequent hits', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-05-18T00:00:00Z'));
+
+    // Create entries: one 1-second window, one 1-hour window
+    await store.hit('user:expire', 1);     // expires at T+1s
+    await store.hit('user:persist', 3600); // expires at T+1h
+
+    // Advance past the 5-minute cleanup interval AND past user:expire's window
+    vi.setSystemTime(new Date('2026-05-18T00:06:00Z')); // +6 minutes
+
+    // This hit() triggers cleanup() which should iterate and delete user:expire
+    const result = await store.hit('user:expire', 1);
+    expect(result.count).toBe(1); // fresh count after window reset
+
+    // user:persist should still be in its window and remember count
+    const persist = await store.hit('user:persist', 3600);
+    expect(persist.count).toBe(2); // was 1, incremented
+
+    vi.useRealTimers();
+  });
+
+  it('_reset() clears all entries and resets lastCleanup', async () => {
+    await store.hit('user:a', 60);
+    await store.hit('user:a', 60);
+    await store.hit('user:b', 60);
+
+    store._reset();
+
+    // After reset all counts should restart from 1
+    const a = await store.hit('user:a', 60);
+    const b = await store.hit('user:b', 60);
+    expect(a.count).toBe(1);
+    expect(b.count).toBe(1);
+  });
 });
 
 describe('UpstashRateLimitStore', () => {
@@ -127,6 +163,44 @@ describe('UpstashRateLimitStore', () => {
     const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
     await expect(store.hit('k', 60)).rejects.toThrow(/malformed pipeline response/);
   });
+
+  it('throws malformed response when body has < 3 elements', async () => {
+    // Tests body.length < 3 branch (not body.length < 3 → false mutant)
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 1 }, { result: 1 }]), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    await expect(store.hit('k', 60)).rejects.toThrow(/malformed pipeline response/);
+  });
+
+  it('throws when INCR result is null instead of a number', async () => {
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: null }, { result: 1 }, { result: 30_000 }]), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    await expect(store.hit('k', 60)).rejects.toThrow(/INCR did not return a number/);
+  });
+
+  it('uses windowSeconds fallback when PTTL is exactly 0 (expired immediately)', async () => {
+    // PTTL=0 means key expired between INCR and PTTL; pttlResult > 0 is false → use fallback
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-05-18T00:00:00Z'));
+
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 1 }, { result: 1 }, { result: 0 }]), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    const start = Date.now();
+    const result = await store.hit('k', 30);
+
+    // PTTL=0 is NOT > 0, so fallback to windowSeconds * 1000
+    expect(result.resetTime).toBe(start + 30_000);
+
+    vi.useRealTimers();
+  });
 });
 
 describe('getRateLimitStore factory', () => {
@@ -159,5 +233,35 @@ describe('getRateLimitStore factory', () => {
     const fake = new InMemoryRateLimitStore();
     expect(getRateLimitStore(fake)).toBe(fake);
     expect(getRateLimitStore()).toBe(fake);
+  });
+
+  it('uses InMemoryStore when only URL is set (no token) — url && token vs url || token', () => {
+    // Only URL set, no token → should NOT create UpstashRateLimitStore
+    process.env.UPSTASH_REDIS_REST_URL = 'https://x.upstash.io';
+    delete process.env.UPSTASH_REDIS_REST_TOKEN;
+    const store = getRateLimitStore();
+    expect(store).toBeInstanceOf(InMemoryRateLimitStore);
+  });
+
+  it('uses InMemoryStore when only token is set (no URL)', () => {
+    delete process.env.UPSTASH_REDIS_REST_URL;
+    process.env.UPSTASH_REDIS_REST_TOKEN = 'some-token';
+    const store = getRateLimitStore();
+    expect(store).toBeInstanceOf(InMemoryRateLimitStore);
+  });
+
+  it('prints console.warn in production when Upstash is not configured', () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    delete process.env.UPSTASH_REDIS_REST_URL;
+    delete process.env.UPSTASH_REDIS_REST_TOKEN;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (process.env as any).NODE_ENV = 'production';
+
+    getRateLimitStore();
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('[rate-limit]')
+    );
+    warnSpy.mockRestore();
   });
 });

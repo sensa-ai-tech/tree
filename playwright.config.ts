@@ -19,7 +19,8 @@ export default defineConfig({
     },
     {
       name: 'mobile',
-      use: { ...devices['iPhone 14'] },
+      // Use Android Chrome (Chromium-based) so we don't need WebKit installed locally
+      use: { ...devices['Pixel 5'] },
     },
   ],
   webServer: {

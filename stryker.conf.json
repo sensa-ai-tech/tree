@@ -10,7 +10,10 @@
   "mutate": [
     "src/lib/gamification/level-system.ts",
     "src/lib/gamification/xp-calculator.ts",
-    "src/lib/admin-auth.ts"
+    "src/lib/admin-auth.ts",
+    "src/lib/api/rate-limit-store.ts",
+    "src/lib/observability/error-reporter.ts",
+    "src/lib/gamification/spaced-rep.ts"
   ],
   "thresholds": {
     "high": 80,

@@ -27,7 +27,8 @@ test.describe('Full User Journey', () => {
   test('login → home → graph overview → specialty drilldown → review', async ({ page }) => {
     // ─── 1. 登入 ───
     await mockLogin(page);
-    await expect(page).toHaveURL(/\/home|\/dashboard|\/$/);
+    // After mock-mode login, app redirects to /graph (the main learning view)
+    await expect(page).toHaveURL(/\/home|\/dashboard|\/graph|\/$/);
 
     // ─── 2. /home 應該渲染基礎元素 ───
     await page.goto('/home');

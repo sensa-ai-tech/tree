@@ -7,6 +7,26 @@ import { Input } from '@/components/ui/Input';
 import { Progress } from '@/components/ui/Progress';
 import { Badge } from '@/components/ui/Badge';
 import { Modal } from '@/components/ui/Modal';
+import { Skeleton, CardSkeleton, GraphSkeleton } from '@/components/ui/Skeleton';
+import { showToast, ToastProvider } from '@/components/ui/Toast';
+
+// Mock react-hot-toast so tests don't need real toast rendering
+vi.mock('react-hot-toast', () => {
+  const toastFn = vi.fn() as ReturnType<typeof vi.fn> & {
+    success: ReturnType<typeof vi.fn>;
+    error: ReturnType<typeof vi.fn>;
+    loading: ReturnType<typeof vi.fn>;
+    dismiss: ReturnType<typeof vi.fn>;
+  };
+  toastFn.success = vi.fn();
+  toastFn.error = vi.fn();
+  toastFn.loading = vi.fn();
+  toastFn.dismiss = vi.fn();
+  return {
+    default: toastFn,
+    Toaster: () => null,
+  };
+});
 
 // ═══════════════════════════════════════════
 // Button
@@ -303,5 +323,140 @@ describe('Modal', () => {
       </Modal>
     );
     expect(screen.getByLabelText('關閉')).toBeInTheDocument();
+  });
+});
+
+// ═══════════════════════════════════════════
+// Skeleton
+// ═══════════════════════════════════════════
+describe('Skeleton', () => {
+  it('renders text variant with animate-pulse class', () => {
+    const { container } = render(<Skeleton />);
+    expect(container.firstChild).toHaveClass('animate-pulse');
+  });
+
+  it('renders circular variant with rounded-full', () => {
+    const { container } = render(<Skeleton variant="circular" />);
+    expect(container.firstChild).toHaveClass('rounded-full');
+  });
+
+  it('circular variant uses default 40x40 dimensions', () => {
+    const { container } = render(<Skeleton variant="circular" />);
+    const div = container.firstChild as HTMLElement;
+    expect(div.style.width).toBe('40px');
+    expect(div.style.height).toBe('40px');
+  });
+
+  it('circular variant accepts custom dimensions', () => {
+    const { container } = render(<Skeleton variant="circular" width={80} height={80} />);
+    const div = container.firstChild as HTMLElement;
+    expect(div.style.width).toBe('80px');
+    expect(div.style.height).toBe('80px');
+  });
+
+  it('renders rectangular variant with rounded-lg', () => {
+    const { container } = render(<Skeleton variant="rectangular" />);
+    expect(container.firstChild).toHaveClass('rounded-lg');
+  });
+
+  it('rectangular variant uses default 100%×120 dimensions', () => {
+    const { container } = render(<Skeleton variant="rectangular" />);
+    const div = container.firstChild as HTMLElement;
+    expect(div.style.width).toBe('100%');
+    expect(div.style.height).toBe('120px');
+  });
+
+  it('text single-line renders a single div', () => {
+    const { container } = render(<Skeleton variant="text" lines={1} />);
+    // Single line renders a single div (not a wrapper)
+    expect(container.firstChild).toHaveClass('h-4');
+  });
+
+  it('text multi-line renders a wrapper with multiple lines', () => {
+    const { container } = render(<Skeleton variant="text" lines={3} />);
+    const wrapper = container.firstChild as HTMLElement;
+    expect(wrapper).toHaveClass('space-y-2');
+    expect(wrapper.children.length).toBe(3);
+  });
+
+  it('last line in multi-line text is 60% wide', () => {
+    const { container } = render(<Skeleton variant="text" lines={3} />);
+    const wrapper = container.firstChild as HTMLElement;
+    const lastLine = wrapper.children[2] as HTMLElement;
+    expect(lastLine.style.width).toBe('60%');
+  });
+
+  it('applies custom className', () => {
+    const { container } = render(<Skeleton className="custom-class" />);
+    expect(container.firstChild).toHaveClass('custom-class');
+  });
+});
+
+describe('CardSkeleton', () => {
+  it('renders a card-shaped skeleton with multiple sections', () => {
+    const { container } = render(<CardSkeleton />);
+    // Should contain multiple animate-pulse elements
+    const pulseElements = container.querySelectorAll('.animate-pulse');
+    expect(pulseElements.length).toBeGreaterThan(2);
+  });
+});
+
+describe('GraphSkeleton', () => {
+  it('renders a graph placeholder with circular skeleton', () => {
+    const { container } = render(<GraphSkeleton />);
+    const circular = container.querySelector('.rounded-full');
+    expect(circular).toBeInTheDocument();
+  });
+});
+
+// ═══════════════════════════════════════════
+// Toast (showToast)
+// ═══════════════════════════════════════════
+describe('showToast', () => {
+  it('ToastProvider renders without crashing', () => {
+    const { container } = render(<ToastProvider />);
+    // react-hot-toast is mocked to null, so container should be empty
+    expect(container).toBeDefined();
+  });
+
+  it('showToast.success delegates to toast.success', async () => {
+    const toastModule = await import('react-hot-toast');
+    showToast.success('Great job!');
+    expect((toastModule.default as unknown as { success: ReturnType<typeof vi.fn> }).success)
+      .toHaveBeenCalledWith('Great job!');
+  });
+
+  it('showToast.error delegates to toast.error', async () => {
+    const toastModule = await import('react-hot-toast');
+    showToast.error('Something broke');
+    expect((toastModule.default as unknown as { error: ReturnType<typeof vi.fn> }).error)
+      .toHaveBeenCalledWith('Something broke');
+  });
+
+  it('showToast.loading delegates to toast.loading', async () => {
+    const toastModule = await import('react-hot-toast');
+    showToast.loading('Please wait...');
+    expect((toastModule.default as unknown as { loading: ReturnType<typeof vi.fn> }).loading)
+      .toHaveBeenCalledWith('Please wait...');
+  });
+
+  it('showToast.info calls toast with info icon', async () => {
+    const toastModule = await import('react-hot-toast');
+    showToast.info('FYI');
+    expect(toastModule.default).toHaveBeenCalledWith('FYI', expect.objectContaining({ icon: 'ℹ️' }));
+  });
+
+  it('showToast.dismiss delegates to toast.dismiss', async () => {
+    const toastModule = await import('react-hot-toast');
+    showToast.dismiss('toast-id-1');
+    expect((toastModule.default as unknown as { dismiss: ReturnType<typeof vi.fn> }).dismiss)
+      .toHaveBeenCalledWith('toast-id-1');
+  });
+
+  it('showToast.dismiss with no args dismisses all toasts', async () => {
+    const toastModule = await import('react-hot-toast');
+    showToast.dismiss();
+    expect((toastModule.default as unknown as { dismiss: ReturnType<typeof vi.fn> }).dismiss)
+      .toHaveBeenCalledWith(undefined);
   });
 });

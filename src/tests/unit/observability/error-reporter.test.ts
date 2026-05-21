@@ -62,6 +62,51 @@ describe('buildEvent', () => {
     const event = buildEvent(new Error('x'), { userId: 'hashed-id' }, { dsn: 'x', release: undefined, environment: 'test' });
     expect(event.user).toEqual({ id: 'hashed-id' });
   });
+
+  it('sets platform to "javascript" in jsdom (window is defined) and never empty', () => {
+    // jsdom test env has window defined → typeof window !== 'undefined' → platform = 'javascript'
+    // Kills mutants: if(true)→'node', typeof!=='undefined'→'node', ?'node':''→''
+    const event = buildEvent(new Error('x'), {}, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.platform).toBe('javascript');
+  });
+
+  it('sets timestamp as unix seconds (integer, 1e9 < ts < 2e9)', () => {
+    const event = buildEvent(new Error('x'), {}, { dsn: 'x', release: undefined, environment: 'test' });
+    // unix seconds are ~1.7e9 right now; ms would be ~1.7e12
+    expect(event.timestamp).toBeGreaterThan(1_000_000_000);
+    expect(event.timestamp).toBeLessThan(2_000_000_000);
+    expect(Number.isInteger(event.timestamp)).toBe(true);
+  });
+
+  it('includes stacktrace when error has a stack', () => {
+    const err = new Error('has a stack');
+    expect(err.stack).toBeDefined(); // always true in Node
+    const event = buildEvent(err, {}, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.exception.values[0]?.stacktrace).toBeDefined();
+    expect(Array.isArray(event.exception.values[0]?.stacktrace?.frames)).toBe(true);
+  });
+
+  it('omits stacktrace when error.stack is absent', () => {
+    const err = new Error('no stack');
+    delete err.stack;
+    const event = buildEvent(err, {}, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.exception.values[0]?.stacktrace).toBeUndefined();
+  });
+
+  it('omits tags field when context has no tags', () => {
+    const event = buildEvent(new Error('x'), {}, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.tags).toBeUndefined();
+  });
+
+  it('omits tags field when context.tags is an empty object', () => {
+    const event = buildEvent(new Error('x'), { tags: {} }, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.tags).toBeUndefined();
+  });
+
+  it('includes tags field only when context.tags is non-empty', () => {
+    const event = buildEvent(new Error('x'), { tags: { k: 'v' } }, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.tags).toEqual({ k: 'v' });
+  });
 });
 
 describe('reportError', () => {
@@ -142,5 +187,86 @@ describe('reportError', () => {
     await Promise.resolve();
 
     expect(mockFetch).not.toHaveBeenCalled();
+  });
+
+  it('X-Sentry-Auth contains sentry_version=7 and sentry_client', async () => {
+    process.env.SENTRY_DSN = 'https://abc@o1.ingest.sentry.io/2';
+    const mockFetch = vi.fn<typeof fetch>(async () => new Response(null, { status: 200 }));
+    globalThis.fetch = mockFetch;
+
+    reportError(new Error('auth-test'), {});
+    await Promise.resolve();
+    await Promise.resolve();
+
+    const [, init] = mockFetch.mock.calls[0]!;
+    const headers = (init as RequestInit).headers as Record<string, string>;
+    expect(headers['X-Sentry-Auth']).toContain('sentry_version=7');
+    expect(headers['X-Sentry-Auth']).toContain('sentry_client=vet-knowledge-tree/0.6.1');
+    // Parts joined with ", "
+    expect(headers['X-Sentry-Auth']).toMatch(/sentry_version=7, sentry_client=/);
+  });
+
+  it('envelope item header is exactly {"type":"event"}', async () => {
+    process.env.SENTRY_DSN = 'https://abc@o1.ingest.sentry.io/2';
+    const mockFetch = vi.fn<typeof fetch>(async () => new Response(null, { status: 200 }));
+    globalThis.fetch = mockFetch;
+
+    reportError(new Error('item-header-test'), {});
+    await Promise.resolve();
+    await Promise.resolve();
+
+    const [, init] = mockFetch.mock.calls[0]!;
+    const lines = ((init as RequestInit).body as string).split('\n').filter(Boolean);
+    expect(lines.length).toBe(3);
+    const itemHeader = JSON.parse(lines[1]!);
+    expect(itemHeader).toEqual({ type: 'event' });
+  });
+
+  it('console.error called with [error-reporter] prefix when fetch throws', async () => {
+    process.env.SENTRY_DSN = 'https://abc@o1.ingest.sentry.io/2';
+    globalThis.fetch = vi.fn<typeof fetch>(async () => { throw new Error('network down'); });
+
+    reportError(new Error('network-fail'));
+    await Promise.resolve();
+    await new Promise((r) => setTimeout(r, 20));
+
+    const allCalls = consoleErrorSpy.mock.calls.flat();
+    const hasReporterPrefix = allCalls.some(
+      (arg: unknown) => typeof arg === 'string' && arg.includes('[error-reporter]')
+    );
+    expect(hasReporterPrefix).toBe(true);
+  });
+
+  it('uses SENTRY_RELEASE env var in event release field', async () => {
+    process.env.SENTRY_DSN = 'https://abc@o1.ingest.sentry.io/2';
+    process.env.SENTRY_RELEASE = 'v3.1.4';
+    delete process.env.NEXT_PUBLIC_SENTRY_RELEASE;
+    const mockFetch = vi.fn<typeof fetch>(async () => new Response(null, { status: 200 }));
+    globalThis.fetch = mockFetch;
+
+    reportError(new Error('release-test'), {});
+    await Promise.resolve();
+    await Promise.resolve();
+
+    const [, init] = mockFetch.mock.calls[0]!;
+    const lines = ((init as RequestInit).body as string).split('\n').filter(Boolean);
+    const event = JSON.parse(lines[2]!);
+    expect(event.release).toBe('v3.1.4');
+  });
+
+  it('event.environment matches NODE_ENV (not hardcoded "development")', async () => {
+    process.env.SENTRY_DSN = 'https://abc@o1.ingest.sentry.io/2';
+    // NODE_ENV='test' in vitest; if ?? mutates to &&, result would be 'development'
+    const mockFetch = vi.fn<typeof fetch>(async () => new Response(null, { status: 200 }));
+    globalThis.fetch = mockFetch;
+
+    reportError(new Error('env-test'), {});
+    await Promise.resolve();
+    await Promise.resolve();
+
+    const [, init] = mockFetch.mock.calls[0]!;
+    const lines = ((init as RequestInit).body as string).split('\n').filter(Boolean);
+    const event = JSON.parse(lines[2]!);
+    expect(event.environment).toBe('test'); // vitest sets NODE_ENV='test'
   });
 });
