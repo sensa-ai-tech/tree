@@ -135,11 +135,11 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
     <div className="space-y-4">
       {/* Breadcrumb */}
       <nav aria-label="麵包屑導航" className="flex items-center gap-1 text-sm text-gray-500">
-        <Link href="/home" className="hover:text-indigo-600 transition-colors">首頁</Link>
+        <Link href="/home" className="hover:text-indigo-600 transition-colors focus-visible:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-indigo-500">首頁</Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <Link href="/graph" className="hover:text-indigo-600 transition-colors">知識圖譜</Link>
+        <Link href="/graph" className="hover:text-indigo-600 transition-colors focus-visible:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-indigo-500">知識圖譜</Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <Link href={`/graph?specialty=${node.specialty}`} className="hover:text-indigo-600 transition-colors">
+        <Link href={`/graph?specialty=${node.specialty}`} className="hover:text-indigo-600 transition-colors focus-visible:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-indigo-500">
           {specialtyLabel[node.specialty] ?? node.specialty}
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
@@ -174,7 +174,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="shrink-0 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-200 transition-colors hover:bg-indigo-50 hover:text-indigo-600 hover:ring-indigo-200"
+              className="shrink-0 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-200 transition-colors hover:bg-indigo-50 hover:text-indigo-600 hover:ring-indigo-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
             >
               {section.label}
             </a>
