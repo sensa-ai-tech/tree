@@ -159,11 +159,16 @@ export function DiseaseContent({ data, className }: DiseaseContentProps) {
               isOpen={isOpen}
               onToggle={() => handleToggle(section.key)}
             />
-            {isOpen && (
-              <div id={`disease-section-${section.key}`} role="region" aria-label={section.label} className="px-4 py-3">
-                {section.render()}
-              </div>
-            )}
+            {/* Always present in DOM so aria-controls always resolves (B15) */}
+            <div
+              id={`disease-section-${section.key}`}
+              role="region"
+              aria-label={section.label}
+              className="px-4 py-3"
+              hidden={!isOpen}
+            >
+              {section.render()}
+            </div>
           </div>
         );
       })}
