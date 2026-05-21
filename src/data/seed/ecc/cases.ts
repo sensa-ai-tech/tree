@@ -1759,7 +1759,7 @@ export const ECC_CASES: CaseChallenge[] = [
           'Epinephrine（低劑量）0.01 mg/kg IV 每 3-5 分鐘一次 + 同時尋找可逆原因（5H5T）',
           'Epinephrine（高劑量）0.1 mg/kg IV 立即使用',
           'Atropine 0.04 mg/kg IV 作為 PEA 首選用藥',
-          'Vasopressin 0.8 U/kg IV 取代 epinephrine',
+          'Vasopressin 0.8 U/kg IV 取代 epinephrine（RECOVER 2024: 不確定等級，非標準替代）',
           'Amiodarone 5 mg/kg IV',
           'Lidocaine 2 mg/kg IV',
         ],
@@ -1771,7 +1771,7 @@ export const ECC_CASES: CaseChallenge[] = [
         key_learning_points: [
           'Epinephrine 0.01 mg/kg IV 每 3-5 分鐘是所有 CPA 節律的第一線',
           'PEA：尋找可逆原因（5H5T）是成功復甦的關鍵',
-          'Vasopressin 0.8 U/kg 可取代 epinephrine 或交替使用',
+          'Vasopressin 0.8 U/kg：RECOVER 2024 列為「證據等級不確定（indeterminate）」，人醫 AHA 2020 已移除常規推薦；若使用需有明確依據，不應並列為 Epinephrine 等效替代',
           'Atropine 0.04 mg/kg 用於 asystole 或高迷走張力',
         ],
       },

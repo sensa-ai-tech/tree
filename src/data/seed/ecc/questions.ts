@@ -1818,7 +1818,7 @@ export const ECC_QUESTIONS: ReviewQuestion[] = [
       'CPR 中完全不建議使用',
     ],
     correct_answer: '可替代第一劑或第二劑 epinephrine（0.8 U/kg IV）',
-    explanation: 'RECOVER 指引允許 vasopressin（0.8 U/kg IV）替代 epinephrine 使用一次。Vasopressin 透過 V1 受體引起血管收縮，不像 epinephrine 可能增加心肌耗氧。在酸性環境下 vasopressin 仍有效（epinephrine 在酸中毒時效果降低）。但目前證據不支持 vasopressin 優於 epinephrine。Atropine 0.04 mg/kg IV 可用於 vagal-associated asystole。',
+    explanation: '⚠️ 重要更新：RECOVER 2024 將 vasopressin 列為「證據等級不確定（indeterminate）」，人醫 AHA 2020 已移除 vasopressin 的常規 CPR 推薦。早期 RECOVER 指引曾允許 vasopressin（0.8 U/kg IV）替代 epinephrine 使用，原理為 V1 受體血管收縮且在酸性環境仍有效（epinephrine 在重度酸中毒時效果降低）。但目前獸醫 RCT 數據極為有限，不應視為與 Epinephrine 等效的標準替代藥物；使用時需有明確記錄依據。Epinephrine 0.01 mg/kg 仍是所有 CPA 節律的第一線標準用藥。',
     difficulty: 4, spaced_rep: true, tags: ['CPR', 'vasopressin', 'RECOVER'], image_placeholder: null,
   },
   {

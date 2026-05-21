@@ -37,9 +37,13 @@ jobs:
       - name: Unit tests
         run: npm test
 
-      - name: Security audit (production deps)
+      # SEC-015 fix: block merges on high/critical; moderate stays advisory-only
+      - name: Security audit (fail on high+)
         run: npm audit --omit=dev --audit-level=high
-        continue-on-error: true  # 警告但不擋，由 reviewer 決定
+
+      - name: Security audit advisory (moderate)
+        run: npm audit --omit=dev --audit-level=moderate
+        continue-on-error: true
 
       - name: Build
         run: npm run build

@@ -20,7 +20,6 @@ const {
 } = await import('@/lib/admin-auth');
 
 // Get the mocked cookies fn so we can control it per-test
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 const { cookies: cookiesMock } = vi.mocked(await import('next/headers'));
 
 describe('admin-auth: JWT signing & verification', () => {
@@ -215,7 +214,6 @@ describe('admin-auth: cookie helpers', () => {
     mockGet = vi.fn().mockReturnValue(undefined);
     mockSet = vi.fn();
     mockDelete = vi.fn();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (cookiesMock as ReturnType<typeof vi.fn>).mockResolvedValue({
       get: mockGet,
       set: mockSet,

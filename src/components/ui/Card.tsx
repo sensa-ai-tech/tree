@@ -17,7 +17,8 @@ export function Card({ className, children, onClick, hoverable, ...rest }: CardP
       onClick={onClick}
       role={onClick ? 'button' : rest.role ?? undefined}
       tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => { if (e.key === 'Enter') onClick(e as unknown as React.MouseEvent<HTMLDivElement>); } : undefined}
+      // A11 fix: role='button' must activate on both Enter AND Space per ARIA spec
+      onKeyDown={onClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(e as unknown as React.MouseEvent<HTMLDivElement>); } } : undefined}
       {...rest}
     >
       {children}

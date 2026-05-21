@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { getRateLimitStore } from './rate-limit-store';
 
 // ─── Types ───
@@ -34,7 +35,10 @@ export function withAuth(handler: RouteHandler): RouteHandler {
     }
 
     const token = authHeader.slice(7);
-    if (token !== adminApiKey) {
+    // SEC-001 fix: timing-safe comparison to prevent key brute-force via timing
+    const tokenBuf = Buffer.from(token);
+    const keyBuf = Buffer.from(adminApiKey);
+    if (tokenBuf.length !== keyBuf.length || !timingSafeEqual(tokenBuf, keyBuf)) {
       return NextResponse.json({ error: 'Invalid API key' }, { status: 403 });
     }
 

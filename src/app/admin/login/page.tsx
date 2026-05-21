@@ -37,7 +37,11 @@ export default function AdminLoginPage() {
         return;
       }
 
-      const from = searchParams.get('from') || '/admin/generate';
+      // SEC-002 fix: validate from is a relative path to prevent open redirect
+      const rawFrom = searchParams.get('from') || '/admin/generate';
+      const from = rawFrom.startsWith('/') && !rawFrom.startsWith('//') && !rawFrom.includes(':\\')
+        ? rawFrom
+        : '/admin/generate';
       router.push(from);
       router.refresh();
     } catch {

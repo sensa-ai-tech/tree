@@ -8,7 +8,8 @@ async function handler(request: NextRequest): Promise<NextResponse> {
     const body = await request.json();
     const password = body?.password;
 
-    if (!password || typeof password !== 'string') {
+    // SEC-016 fix: enforce max password length to prevent CPU-amplification DoS via huge input
+    if (!password || typeof password !== 'string' || password.length > 256) {
       return NextResponse.json({ error: '請輸入密碼' }, { status: 400 });
     }
 

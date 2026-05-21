@@ -81,7 +81,7 @@ ROSC 後進入復甦後照護階段：
 
 ## 二、藥物/方法比較 (Comparison)
 
-藥物選擇有幾組常見的問題。Epinephrine 標準劑量是 0.01 mg/kg，常有人想加碼到高劑量，但目前沒證據顯示高劑量能拉高 ROSC 或存活率，不要亂用。Vasopressin (0.8 U/kg) 可以拿來替代或合併 Epinephrine，獸醫證據不多但有些中心會用。Amiodarone 跟 Lidocaine 處理 VF 或無脈搏 VT 都可以，人醫偏好 Amiodarone，獸醫兩種都行，但記住一件事：Lidocaine 不要給貓。
+藥物選擇有幾組常見的問題。Epinephrine 標準劑量是 0.01 mg/kg，常有人想加碼到高劑量，但目前沒證據顯示高劑量能拉高 ROSC 或存活率，不要亂用。Vasopressin (0.8 U/kg)：⚠️ **RECOVER 2024 更新**：目前列為「證據等級不確定（indeterminate）」，人醫 AHA 2020 已移除常規推薦。早期指引曾允許替代 epinephrine，但獸醫 RCT 數據極為有限，不應視為等效替代；使用時需有明確記錄依據。Amiodarone 跟 Lidocaine 處理 VF 或無脈搏 VT 都可以，人醫偏好 Amiodarone，獸醫兩種都行，但記住一件事：Lidocaine 不要給貓。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 

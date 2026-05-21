@@ -256,7 +256,7 @@ const contentIVDD: NodeContent = {
 - 嚴格籠內休息 4-6 週
 - 疼痛管理：[藥物:Gabapentin] 5-10 mg/kg PO TID + [藥物:Tramadol] 2-5 mg/kg PO BID-TID
 - NSAIDs：[藥物:Meloxicam] 0.1 mg/kg PO SID（避免與類固醇併用）
-- 肌肉鬆弛劑：[藥物:Methocarbamol] 15-20 mg/kg PO TID
+- 肌肉鬆弛劑：[藥物:Methocarbamol] 22-44 mg/kg PO BID-TID（Plumb's 9th ed；最高單次 330 mg/kg/day）
 
 ### 手術治療（Grade III-V）
 - 胸腰椎：hemilaminectomy（半椎板切除術）

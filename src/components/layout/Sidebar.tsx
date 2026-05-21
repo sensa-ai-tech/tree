@@ -68,7 +68,7 @@ export function Sidebar({ className, onClose }: SidebarProps) {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 px-2 overflow-y-auto">
+      <nav aria-label="主選單" className="flex-1 space-y-1 px-2 overflow-y-auto">
         {visibleItems.map((item) => {
           const isActive = pathname === item.href || (item.href !== '/home' && pathname.startsWith(item.href));
           return (
@@ -76,13 +76,14 @@ export function Sidebar({ className, onClose }: SidebarProps) {
               key={item.href}
               href={item.href}
               onClick={handleNavClick}
+              aria-label={collapsed ? item.label : undefined}
+              aria-current={isActive ? 'page' : undefined}
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                 isActive
                   ? 'bg-indigo-50 text-indigo-700'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               )}
-              title={collapsed ? item.label : undefined}
             >
               <span className="flex-shrink-0">
                 {createElement(item.icon, { className: 'h-5 w-5' })}

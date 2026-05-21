@@ -14,7 +14,7 @@ export function MobileBottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white md:hidden">
+    <nav aria-label="底部導覽" className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white md:hidden">
       <div className="flex items-center justify-around">
         {MOBILE_NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href || (item.href !== '/home' && pathname.startsWith(item.href));
@@ -22,6 +22,8 @@ export function MobileBottomNav() {
             <Link
               key={item.href}
               href={item.href}
+              aria-label={item.label}
+              aria-current={isActive ? 'page' : undefined}
               className={cn(
                 'flex flex-1 flex-col items-center gap-0.5 py-2 text-xs transition-colors',
                 isActive

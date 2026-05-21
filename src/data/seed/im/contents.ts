@@ -17,7 +17,7 @@ const contentCKD: NodeContent = {
   ],
   key_points: [
     'IRIS 分期：Stage 1（Cre < 1.4 犬 / <1.6 貓）、Stage 2（1.4-2.8 / 1.6-2.8）、Stage 3（2.9-5.0）、Stage 4（> 5.0）',
-    'SDMA > 14 μg/dL 就要警覺早期腎功能下降，比 Cre 平均可早約 9 至 17 個月抓到（依研究而異）',
+    'SDMA 早期偵測：IRIS 2023 正式分期切點為 ≥18 μg/dL（Stage 1）；IDEXX 廠商「早期預警」值 >14 μg/dL 非 IRIS 官方分期標準——教學時需明確區分，避免過早分期（比 Cre 平均可早 9-17 個月發現功能下降，依研究而異）',
     '亞分期別忘了蛋白尿（UPC）跟血壓',
     '飲食管理走腎臟處方飲食：限磷、適量蛋白、加 omega-3',
     '藥物上 Benazepril 或 Telmisartan 抗蛋白尿、磷結合劑、紅血球生成素都會用到',

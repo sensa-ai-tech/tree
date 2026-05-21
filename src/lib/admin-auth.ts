@@ -56,7 +56,12 @@ export function validateAdminPassword(password: string): boolean {
     return timingSafeEqual(expectedHash, actualHash);
   }
 
-  // Fallback: plaintext compare (legacy)
+  // SEC-003 fix: plaintext fallback is forbidden in production
+  if (process.env.NODE_ENV === 'production') {
+    console.error('[admin-auth] FATAL: VKT_ADMIN_PASSWORD must use sha256: prefix in production. Refusing plaintext comparison.');
+    return false;
+  }
+  // Fallback: plaintext compare (legacy — dev only)
   const expectedBuf = Buffer.from(expected);
   const actualBuf = Buffer.from(password);
   if (expectedBuf.length !== actualBuf.length) return false;

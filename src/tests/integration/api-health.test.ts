@@ -39,14 +39,16 @@ describe('GET /api/health', () => {
   });
 
   it('returns 503 + status=degraded when VKT_JWT_SECRET is missing', async () => {
-    // 沒設 VKT_JWT_SECRET
+    // SEC-011 fix: env var names are NOT leaked to unauthenticated callers
     const { GET } = await import('@/app/api/health/route');
     const res = await GET();
     expect(res.status).toBe(503);
     const body = await res.json();
     expect(body.status).toBe('degraded');
     expect(body.checks.env.ok).toBe(false);
-    expect(body.checks.env.reason).toMatch(/VKT_JWT_SECRET/);
+    // Generic message — no env var names disclosed to callers
+    expect(body.checks.env.reason).toMatch(/required environment variables/i);
+    expect(body.checks.env.reason).not.toMatch(/VKT_JWT_SECRET/);
   });
 
   it('includes ISO timestamp + version + durationMs in payload', async () => {

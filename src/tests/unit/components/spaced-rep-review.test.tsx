@@ -47,9 +47,12 @@ describe('SpacedRepReview: question/answer flip', () => {
     expect(screen.getByText('（答案未提供）')).toBeInTheDocument();
   });
 
-  it('renders nodeId for traceability', () => {
+  it('accepts nodeId prop without rendering it to users (UX: internal IDs hidden from learners)', () => {
+    // U05 fix: nodeId is an API prop but intentionally not displayed — meaningful only to developers
     render(<SpacedRepReview nodeId="ECC-L4-007" question="Q" onRate={() => {}} />);
-    expect(screen.getByText(/ECC-L4-007/)).toBeInTheDocument();
+    // The question text should appear, but the nodeId itself should not be visible text
+    expect(screen.getByText('Q')).toBeInTheDocument();
+    expect(screen.queryByText(/ECC-L4-007/)).not.toBeInTheDocument();
   });
 });
 

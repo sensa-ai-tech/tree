@@ -14,8 +14,9 @@ interface BadgeProps {
   className?: string;
 }
 
+// A10 fix: raised sm from text-[10px] (below readable minimum) to text-xs (12px)
 const SIZE_CLASSES: Record<BadgeSize, string> = {
-  sm: 'px-2 py-0.5 text-[10px] whitespace-nowrap',
+  sm: 'px-2 py-0.5 text-xs whitespace-nowrap',
   md: 'px-2.5 py-0.5 text-xs whitespace-nowrap',
 };
 

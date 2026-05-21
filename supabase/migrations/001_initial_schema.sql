@@ -4,7 +4,7 @@
 -- ====================================
 
 -- 1. 使用者 Profile（擴展 Supabase Auth）
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_profiles (
+CREATE TABLE IF NOT EXISTS user_profiles (
     id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     display_name TEXT NOT NULL DEFAULT '',
     avatar_url TEXT,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_profiles (
 );
 
 -- 2. 知譀節點
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS knowledge_nodes (
+CREATE TABLE IF NOT EXISTS knowledge_nodes (
     id TEXT PRIMARY KEY,
     specialty TEXT NOT NULL,
     title TEXT NOT NULL,
@@ -42,7 +42,7 @@ CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_status ON knowledge_nodes(status)
 CREATE INDEX IF NOT EXISTS idx_knowledge_nodes_tags ON knowledge_nodes USING GIN(tags);
 
 -- 3. 知讘邊(節點間關係)
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS knowledge_edges (
+CREATE TABLE IF NOT EXISTS knowledge_edges (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     source_node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     target_node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
@@ -62,7 +62,7 @@ CREATE INDEX IF NOT EXISTS idx_knowledge_edges_target ON knowledge_edges(target_
 CREATE INDEX IF NOT EXISTS idx_knowledge_edges_type ON knowledge_edges(relation_type);
 
 -- 4. 學習路徑
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS learning_paths (
+CREATE TABLE IF NOT EXISTS learning_paths (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     title TEXT NOT NULL,
     description TEXT,
@@ -80,7 +80,7 @@ CREATE INDEX IF NOT EXISTS idx_learning_paths_specialty ON learning_paths(specia
 CREATE INDEX IF NOT EXISTS idx_learning_paths_type ON learning_paths(path_type);
 
 -- 5. 複習題目
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS review_questions (
+CREATE TABLE IF NOT EXISTS review_questions (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     question_type TEXT NOT NULL CHECK (question_type IN (
@@ -101,7 +101,7 @@ CREATE INDEX IF NOT EXISTS idx_review_questions_type ON review_questions(questio
 CREATE INDEX IF NOT EXISTS idx_review_questions_difficulty ON review_questions(difficulty);
 
 -- 6. 病例挑戰
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS case_challenges (
+CREATE TABLE IF NOT EXISTS case_challenges (
     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::TEXT,
     title TEXT NOT NULL,
     specialty TEXT NOT NULL,
@@ -119,7 +119,7 @@ CREATE INDEX IF NOT EXISTS idx_case_challenges_specialty ON case_challenges(spec
 CREATE INDEX IF NOT EXISTS idx_case_challenges_difficulty ON case_challenges(difficulty);
 
 -- 7. 使用者學習進度
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_progress (
+CREATE TABLE IF NOT EXISTS user_progress (
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     status TEXT NOT NULL DEFAULT 'locked' CHECK (status IN ('locked', 'available', 'in_progress', 'completed')),
@@ -134,7 +134,7 @@ CREATE INDEX IF NOT EXISTS idx_user_progress_user ON user_progress(user_id);
 CREATE INDEX IF NOT EXISTS idx_user_progress_status ON user_progress(status);
 
 -- 8. 間隔重複排程
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_spaced_repetition (
+CREATE TABLE IF NOT EXISTS user_spaced_repetition (
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     node_id TEXT NOT NULL REFERENCES knowledge_nodes(id) ON DELETE CASCADE,
     ease_factor NUMERIC NOT NULL DEFAULT 2.5,
@@ -151,7 +151,7 @@ CREATE INDEX IF NOT EXISTS idx_spaced_rep_next_review ON user_spaced_repetition(
 CREATE INDEX IF NOT EXISTS idx_spaced_rep_user ON user_spaced_repetition(user_id);
 
 -- 9. 使用者經驗值 / 等級
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_experience (
+CREATE TABLE IF NOT EXISTS user_experience (
     user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     total_xp INTEGER NOT NULL DEFAULT 0,
     current_level INTEGER NOT NULL DEFAULT 1,
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_experience (
 );
 
 -- 10. 使用者成就
-CREATE TABLE IF NOT EXISTS IF NOT EXISTS user_achievements (
+CREATE TABLE IF NOT EXISTS user_achievements (
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     achievement_id TEXT NOT NULL,
     unlocked_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
@@ -210,10 +210,14 @@ CREATE POLICY "Admins can manage nodes" ON knowledge_nodes
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
--- knowledge_edges: 所有人可議
+-- knowledge_edges: 只有來源或目標節點已發佈時才可讀（SEC-012 fix）
 DROP POLICY IF EXISTS "Edges are viewable by all authenticated" ON knowledge_edges;
-CREATE POLICY "Edges are viewable by all authenticated" ON knowledge_edges
-    FOR SELECT USING (auth.uid() IS NOT NULL);
+DROP POLICY IF EXISTS "Edges viewable if connected nodes are published" ON knowledge_edges;
+CREATE POLICY "Edges viewable if connected nodes are published" ON knowledge_edges
+    FOR SELECT USING (
+        EXISTS (SELECT 1 FROM knowledge_nodes WHERE id = source_node_id AND status = 'published')
+        OR EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role IN ('admin', 'reviewer'))
+    );
 DROP POLICY IF EXISTS "Admins can manage edges" ON knowledge_edges;
 CREATE POLICY "Admins can manage edges" ON knowledge_edges
     FOR ALL USING (EXISTS (
@@ -232,10 +236,14 @@ CREATE POLICY "Admins can manage paths" ON learning_paths
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
--- review_questions: 所有人可讀
+-- review_questions: 只有對應節點已發佈時才可讀（SEC-012 fix）
 DROP POLICY IF EXISTS "Questions are viewable by authenticated" ON review_questions;
-CREATE POLICY "Questions are viewable by authenticated" ON review_questions
-    FOR SELECT USING (auth.uid() IS NOT NULL);
+DROP POLICY IF EXISTS "Questions viewable if node is published" ON review_questions;
+CREATE POLICY "Questions viewable if node is published" ON review_questions
+    FOR SELECT USING (
+        EXISTS (SELECT 1 FROM knowledge_nodes WHERE id = node_id AND status = 'published')
+        OR EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role IN ('admin', 'reviewer'))
+    );
 DROP POLICY IF EXISTS "Admins can manage questions" ON review_questions;
 CREATE POLICY "Admins can manage questions" ON review_questions
     FOR ALL USING (EXISTS (
@@ -254,25 +262,29 @@ CREATE POLICY "Admins can manage cases" ON case_challenges
         SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'admin'
     ));
 
--- user_progress: 只能存取自己的進度
+-- user_progress: 只能存取自己的進度（SEC-013 fix: WITH CHECK 防止自我提權）
 DROP POLICY IF EXISTS "Users can manage own progress" ON user_progress;
 CREATE POLICY "Users can manage own progress" ON user_progress
-    FOR ALL USING (auth.uid() = user_id);
+    FOR ALL USING (auth.uid() = user_id)
+    WITH CHECK (auth.uid() = user_id);
 
--- user_spaced_repetition: 只能存取自己的
+-- user_spaced_repetition: 只能存取自己的（SEC-013 fix）
 DROP POLICY IF EXISTS "Users can manage own spaced rep" ON user_spaced_repetition;
 CREATE POLICY "Users can manage own spaced rep" ON user_spaced_repetition
-    FOR ALL USING (auth.uid() = user_id);
+    FOR ALL USING (auth.uid() = user_id)
+    WITH CHECK (auth.uid() = user_id);
 
--- user_experience: 只能存取自己的
+-- user_experience: 只能存取自己的（SEC-013 fix: WITH CHECK 防止直接竄改 XP/level）
 DROP POLICY IF EXISTS "Users can manage own experience" ON user_experience;
 CREATE POLICY "Users can manage own experience" ON user_experience
-    FOR ALL USING (auth.uid() = user_id);
+    FOR ALL USING (auth.uid() = user_id)
+    WITH CHECK (auth.uid() = user_id);
 
--- user_achievements: 只能存取自己的
+-- user_achievements: 只能存取自己的（SEC-013 fix）
 DROP POLICY IF EXISTS "Users can manage own achievements" ON user_achievements;
 CREATE POLICY "Users can manage own achievements" ON user_achievements
-    FOR ALL USING (auth.uid() = user_id);
+    FOR ALL USING (auth.uid() = user_id)
+    WITH CHECK (auth.uid() = user_id);
 
 -- ====================================
 -- 觸穼器：自動更新 updated_at

@@ -20,7 +20,8 @@ export async function GET() {
   const requiredEnv = ['VKT_JWT_SECRET'];
   const missing = requiredEnv.filter((k) => !process.env[k]);
   if (missing.length > 0) {
-    checks.env = { ok: false, reason: `missing: ${missing.join(',')}` };
+    // SEC-011 fix: do not expose env var names to unauthenticated callers
+    checks.env = { ok: false, reason: 'required environment variables not configured' };
   }
 
   // Supabase 連線檢查（如果是 mock 模式則略過）

@@ -26,15 +26,16 @@ function formatInterval(days: number): string {
   return `${(days / 365).toFixed(1)} 年`;
 }
 
+// C02 fix: red-600 (4.73:1) and orange-600 (4.59:1) pass WCAG AA with white text; -500 variants fail
 const RATING_BUTTONS: Array<{ value: FSRSRating; label: string; sublabel: string; color: string }> = [
-  { value: 1, label: '忘記', sublabel: 'Again', color: 'bg-red-500 hover:bg-red-600' },
-  { value: 2, label: '困難', sublabel: 'Hard', color: 'bg-orange-500 hover:bg-orange-600' },
-  { value: 3, label: '良好', sublabel: 'Good', color: 'bg-green-500 hover:bg-green-600' },
+  { value: 1, label: '忘記', sublabel: 'Again', color: 'bg-red-600 hover:bg-red-700' },
+  { value: 2, label: '困難', sublabel: 'Hard', color: 'bg-orange-600 hover:bg-orange-700' },
+  { value: 3, label: '良好', sublabel: 'Good', color: 'bg-green-600 hover:bg-green-700' },
   { value: 4, label: '簡單', sublabel: 'Easy', color: 'bg-emerald-600 hover:bg-emerald-700' },
 ];
 
 export function SpacedRepReview({
-  nodeId,
+  nodeId: _nodeId, // U05: prop kept for API compat; display removed (internal ID not meaningful to learners)
   question,
   answer,
   currentState,
@@ -68,12 +69,8 @@ export function SpacedRepReview({
   return (
     <Card className={cn('mx-auto max-w-md', className)}>
       <CardBody className="space-y-4">
-        <div className="text-center">
-          <p className="text-xs text-gray-400">節點 ID: {nodeId}</p>
-        </div>
-
-        {/* Card face */}
-        <div className="min-h-[120px] flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-6">
+        {/* Card face — U05 fix: removed internal nodeId display (meaningless to learners) */}
+        <div className="min-h-[120px] md:min-h-[160px] flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-6">
           {side === 'question' ? (
             <p className="text-center text-sm font-medium text-gray-900">{question}</p>
           ) : (
@@ -98,14 +95,16 @@ export function SpacedRepReview({
                   type="button"
                   onClick={() => handleRate(btn.value)}
                   className={cn(
-                    'rounded-lg px-2 py-2 text-xs font-medium text-white transition-colors',
+                    // A08 fix: min-h-[44px] meets Apple/Google 44×44px touch target guideline
+                    'rounded-lg px-2 py-2 min-h-[44px] text-xs font-medium text-white transition-colors',
                     btn.color
                   )}
                 >
                   <span className="block text-sm font-bold">{btn.label}</span>
-                  <span className="block text-[10px] opacity-80">{btn.sublabel}</span>
+                  {/* A09 fix: raised from text-[10px] (sub-readable) to text-xs (12px) */}
+                  <span className="block text-xs opacity-80">{btn.sublabel}</span>
                   {intervals && (
-                    <span className="mt-1 block text-[10px] opacity-70">
+                    <span className="mt-1 block text-xs opacity-70">
                       {formatInterval(intervals[btn.value])}
                     </span>
                   )}

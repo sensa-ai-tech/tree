@@ -247,7 +247,8 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
             type="button"
             onClick={() => setShowNotifications((v) => !v)}
             className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
-            aria-label="通知"
+            // A17 fix: expose notification count to screen readers
+            aria-label={recentXPEvents.length > 0 ? `通知（${recentXPEvents.length} 則新動態）` : '通知'}
             aria-expanded={showNotifications}
           >
             <Bell className="h-5 w-5" />
@@ -297,11 +298,13 @@ export function Navbar({ className, onMenuClick }: NavbarProps) {
           )}
         </div>
 
+        {/* A18 fix: add aria-label since email is hidden on mobile (icon-only on small screens) */}
         <Link
           href="/profile"
+          aria-label="個人檔案"
           className="flex items-center gap-2 rounded-lg px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
         >
-          <User className="h-5 w-5 text-gray-500" />
+          <User className="h-5 w-5 text-gray-500" aria-hidden="true" />
           <span className="hidden md:inline">{user?.email ?? '訪客'}</span>
         </Link>
       </div>
