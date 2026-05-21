@@ -70,7 +70,7 @@ CAD 的病理可以拆成三塊核心異常：
 ## 三、治療策略 (Treatment)
 
 ### 急性期
-- [藥物:Oclacitinib] 0.4-0.6 mg/kg PO BID x 14 天，之後改 SID
+- [藥物:Oclacitinib] 0.4-0.6 mg/kg PO BID x 14 天，之後改 SID（**禁用於 < 12 個月幼犬**；FDA/EMA 批准限制——幼犬免疫系統尚未成熟，JAK 抑制可能影響發育期免疫功能及對感染的防禦能力）
 - 或 [藥物:Prednisolone] 0.5-1 mg/kg PO SID x 5-7 天後漸減
 
 ### 慢性期多模式管理
@@ -159,7 +159,7 @@ CAD 是終生性疾病，沒辦法根治，但可以控制得很穩：
       { condition: '接觸性皮膚炎', key_differentiator: '病灶侷限於接觸部位（腹部、腋下、足底），停止接觸後改善，台灣常見園藝化學品或地板清潔劑引起' },
     ],
     diagnostic_workup: '先把完整皮膚病史問清楚（發病年齡、有沒有季節性、病灶分佈、對哪些藥反應好）。然後依序排掉 FAD（嚴格跳蚤控制 4-8 週）、疥蟎（皮膚刮搔或試驗性殺蟎）、繼發感染（皮膚細胞學）、飲食試驗 8 週。前面都過了再用 Favrot 標準下 CAD 臨床診斷。要做 ASIT 的話可以加血清 IgE 或皮內試驗來選過敏原。',
-    treatment_protocol: '多模式策略。急性期用 Oclacitinib 0.4-0.6 mg/kg PO BID 連 14 天，或短期 Prednisolone 0.5 mg/kg 用 5-7 天。慢性期可選 Oclacitinib SID、Lokivetmab SC 每月一針，或 Cyclosporine 5 mg/kg SID。ASIT 反應率 50-75%，要 6-12 個月才看得出效果。輔助治療包含皮膚屏障修復、補必需脂肪酸、全年跳蚤預防、定期皮膚細胞學追蹤。',
+    treatment_protocol: '多模式策略。急性期用 Oclacitinib 0.4-0.6 mg/kg PO BID 連 14 天（**注意：禁用於 < 12 個月幼犬**），或短期 Prednisolone 0.5 mg/kg 用 5-7 天。慢性期可選 Oclacitinib SID、Lokivetmab SC 每月一針，或 Cyclosporine 5 mg/kg SID。ASIT 反應率 50-75%，要 6-12 個月才看得出效果。輔助治療包含皮膚屏障修復、補必需脂肪酸、全年跳蚤預防、定期皮膚細胞學追蹤。',
     prognosis: 'CAD 是終身疾病，沒辦法根治但控制得宜可以過得不錯。多模式管理做得到位，多數犬可以維持良好生活品質。ASIT 是唯一有機會改變疾病自然史的治療，50-75% 的犬會臨床改善。少數犬隨著年齡會減輕。',
     monitoring: '初期每 2-4 週回診看治療反應。穩定後拉長到每 3-6 個月。每次回診要做：瘙癢評分（PVAS）、皮膚病變評分（CADESI-4）、皮膚細胞學、外耳檢查。長期用 Oclacitinib 每 6-12 個月做一次 CBC/BCS。用 Cyclosporine 要盯牙齦增生跟腸胃副作用。',
     owner_communication: 'CAD 是要終身管理的慢性病，跟人類的異位性皮膚炎很像。沒辦法根治，但靠藥物加上環境管理跟皮膚護理可以控制得很好。要跟飼主強調幾件事：按時用藥不能漏、排除飲食試驗那 8 週要嚴格執行（不能偷給任何其他食物或零食）、跳蚤預防全年都要做、定期回診、自己也要留意有沒有繼發感染的徵兆。',

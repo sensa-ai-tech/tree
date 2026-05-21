@@ -393,7 +393,7 @@ const contentAnaphylaxis: NodeContent = {
     '犬常見：急性嘔吐、血便、腹痛、低血壓、虛脫',
     '貓常見：急性呼吸窘迫、喘鳴、頭頸部搔癢、流口水',
     '疫苗打完留院觀察 15-30 分鐘，高風險的先給 Diphenhydramine',
-    '輸液是休克治療的命脈，犬 shock dose crystalloid 60-90 mL/kg/hr 分次給',
+    '輸液是休克治療的命脈，犬晶體液**分次 bolus（每次 10–20 mL/kg）依灌流終點調整**——CRT ≤ 2 秒、黏膜顏色正常、精神改善即停，不建議自動跑完傳統 shock rate 60–90 mL/kg；液體過負荷與肺水腫風險真實存在',
   ],
   body: `# 過敏性休克 (Anaphylaxis)
 

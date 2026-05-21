@@ -2014,7 +2014,7 @@ const contentDM: NodeContent = {
 | 步驟 | 措施 | 目的 |
 |------|------|------|
 | 1 | 0.9% NaCl IV + KCl 補充 | 矯正脫水 + 補鉀 |
-| 2 | Regular insulin 0.1 U/kg/hr CRI | 降血糖（目標 50-75 mg/dL/hr） |
+| 2 | Regular insulin CRI（**犬：0.05–0.1 U/kg/hr**；**貓：0.025–0.05 U/kg/hr**，貓對胰島素更敏感） | 降血糖（目標速率：50–75 mg/dL/hr，< 50 mg/dL/hr 速度下降需加 dextrose） |
 | 3 | 血糖 <250 時加 2.5-5% dextrose | 預防低血糖 |
 | 4 | KPO4 補充 | 矯正低磷（再餵食效應） |
 | 5 | NaHCO3（僅 pH <7.0） | 嚴重酸中毒時 |

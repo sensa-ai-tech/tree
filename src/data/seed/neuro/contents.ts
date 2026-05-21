@@ -262,7 +262,7 @@ const contentIVDD: NodeContent = {
 - 胸腰椎：hemilaminectomy（半椎板切除術）
 - 頸椎：ventral slot（腹側椎間開窗術）
 - 目標：減壓（decompression）+ 移除突出物
-- Grade V 需於深痛覺喪失 < 24-48 小時內手術
+- Grade V 深痛覺喪失手術時機（ACVIM 2020）：**< 24 小時**手術恢復率 50–60%（最佳時機）；> 48 小時恢復率降至 **< 5%**（近乎無望）——以 24 小時為行動目標，不可以「24–48 小時都可以」一概而論
 
 [圖片:IVDD 分型與脊髓壓迫示意圖]
 
@@ -443,7 +443,7 @@ const contentGME: NodeContent = {
 ### 免疫抑制方案
 - [藥物:Prednisolone] 1-2 mg/kg PO BID × 2-4 週，之後逐漸減量至最低有效劑量
 - 加入二線免疫抑制劑以減少類固醇副作用：
-  - [藥物:Cytarabine] (Ara-C) 50 mg/m² SC BID × 2 天，每 3-4 週一次
+  - [藥物:Cytarabine] (Ara-C) 50 mg/m² SC BID × 2 天，每 3-4 週一次（**給藥前需 CBC：ANC ≥ 2500/μL 才可給藥；ANC 1000–2500/μL 延後 1 週重測；ANC < 1000/μL 停用本次療程**）
   - [藥物:Cyclosporine] 5-10 mg/kg PO BID
   - [藥物:Mycophenolate] 10-20 mg/kg PO BID
   - [藥物:Leflunomide] 2-4 mg/kg PO SID
@@ -453,7 +453,7 @@ const contentGME: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- 免疫抑制劑副作用：Prednisolone 長期吃會跑出醫源性庫興氏症（多飲多尿、肌肉萎縮、皮膚變薄）；Cytarabine 會壓骨髓，白血球會掉
+- 免疫抑制劑副作用：Prednisolone 長期吃會跑出醫源性庫興氏症（多飲多尿、肌肉萎縮、皮膚變薄）；Cytarabine 會壓骨髓，白血球會掉——**每次療程前必做 CBC；ANC < 1000/μL 停用；目標是絕對不在骨髓抑制期給藥**
 - 繼發性感染：免疫被壓低以後，泌尿道感染、皮膚感染風險就會上升
 - 疾病復發：減藥太快是最常見的復發原因，三成到五成的 MUO 犬治療期間至少復發一次
 - 癲癇併發：前腦型 MUO 常會跑出癲癇，要合併 AED 治療
@@ -2985,7 +2985,7 @@ const contentSpinalSurgery: NodeContent = {
   key_points: [
     'Hemilaminectomy：胸腰椎 IVDD 首選，單側移除椎弓板暴露椎管',
     'Ventral slot：頸椎 IVDD 首選，從椎體腹側進入椎管',
-    '手術時機：Grade V（DPP 喪失）為緊急手術適應症（< 24-48 hr）',
+    '手術時機：Grade V DPP 喪失 < 24 hr 手術恢復率 50–60%（最佳目標），> 48 hr 降至 < 5%；不可用「24–48 hr」籠統帶過',
     'Grade IV 術後步行恢復率 > 90%，Grade V < 48hr DPP 喪失約 50-60%',
     '術後膀胱管理：Grade ≥ 3 需每日手動擠壓或導尿直到自主排尿恢復',
     '術後復健：被動關節運動、站立訓練、水療加速恢復',
@@ -3399,7 +3399,7 @@ const contentBrainTumor: NodeContent = {
     '脈絡叢腫瘤（Choroid Plexus Tumor）：CPP（良性）vs CPC（惡性），產生過多 CSF 或阻塞 CSF 流通，最後阻塞性水腦症',
     '繼發性癲癇為最常見的首發症狀（犬顱內腫瘤約 50-80% 伴發癲癇）',
     'MRI 對比增強為診斷金標準：腦膜瘤呈均勻強增強 + dural tail sign；膠質瘤呈環狀或不均勻增強',
-    '治療：手術（accessible tumors）± 放射治療（SRT/SRS）± Hydroxyurea（50 mg/kg PO EOD，對腦膜瘤有部分反應率）± Phenobarbital/Levetiracetam 控制繼發癲癇',
+    '治療：手術（accessible tumors）± 放射治療（SRT/SRS）± Hydroxyurea（**僅限犬**：50 mg/kg PO EOD，對腦膜瘤有部分反應率；**貓禁用**——貓對 Hydroxyurea 高度敏感，會造成嚴重骨髓抑制及溶血性貧血）± Phenobarbital/Levetiracetam 控制繼發癲癇',
   ],
   body: `# 顱內腫瘤 (Intracranial Neoplasia)
 
@@ -3490,7 +3490,7 @@ const contentBrainTumor: NodeContent = {
       { condition: '腦膿瘍', key_differentiator: 'MRI 環狀增強伴中央不增強區（ring-enhancing lesion），可有發燒與白血球升高' },
     ],
     diagnostic_workup: '1. 神經學檢查（定位：前腦/腦幹/小腦/多灶性），2. 基礎血檢（CBC、生化）排除代謝性病因 + 胸腹影像排除原發腫瘤。3. MRI 平掃 + Gadolinium 對比增強（金標準：腫瘤位置、大小、邊界、增強模式、水腫範圍），4. CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿有腦疝風險），5. 組織學確診（手術活檢或立體定位穿刺活檢，為分型金標準但非必須）',
-    treatment_protocol: '多模式治療：1. 支持治療：Phenobarbital 2-5 mg/kg PO BID 或 Levetiracetam 20 mg/kg PO TID 控制癲癇 + Prednisolone 1-2 mg/kg/day 減輕腫瘤周圍水腫。2. 手術切除：腦膜瘤（尤其貓）為首選，邊界清晰者手術完全切除率高。3. 放射治療：術後輔助或不可手術腫瘤的主要治療（常規分次 48-54 Gy/16-20 fx 或低分次 SRS）。4. 化學治療：Hydroxyurea 50 mg/kg PO EOD（腦膜瘤有部分反應率 30-40%）。',
+    treatment_protocol: '多模式治療：1. 支持治療：Phenobarbital 2-5 mg/kg PO BID 或 Levetiracetam 20 mg/kg PO TID 控制癲癇 + Prednisolone 1-2 mg/kg/day 減輕腫瘤周圍水腫。2. 手術切除：腦膜瘤（尤其貓）為首選，邊界清晰者手術完全切除率高。3. 放射治療：術後輔助或不可手術腫瘤的主要治療（常規分次 48-54 Gy/16-20 fx 或低分次 SRS）。4. 化學治療：Hydroxyurea 50 mg/kg PO EOD（**僅限犬**，腦膜瘤有部分反應率 30-40%；**貓嚴禁使用**——對 Hydroxyurea 極度敏感，非再生性貧血、骨髓抑制及溶血性貧血風險極高）。',
     prognosis: '腦膜瘤（貓）手術切除：MST > 24 個月，部分報告達 3-4 年。腦膜瘤（犬）手術切除：MST 約 7-16 個月。膠質瘤：保守治療 MST 約 2-4 個月，放射治療 MST 約 8-14 個月，手術困難（infiltrative）。脈絡叢乳頭狀瘤（CPP）：手術可治癒。未治療腦腫瘤（僅支持療法）：MST 約 2-4 個月。預後因子：腫瘤類型（腦膜瘤 > 膠質瘤）、手術可及性、腫瘤大小、ICP 升高程度。',
     monitoring: '治療期間：每 2-4 週監測癲癇頻率、神經功能變化、AED 血藥濃度（Phenobarbital 目標 20-30 μg/mL）。Hydroxyurea 使用期間：每 2 週 CBC 監測骨髓抑制。術後/放療後：每 2-3 個月 MRI 追蹤腫瘤大小與復發。長期：注意腫瘤復發徵兆（癲癇頻率增加、新發神經功能缺損、行為退化）。',
     owner_communication: '顱內腫瘤的治療選擇取決於腫瘤類型、位置與動物整體狀態。貓腦膜瘤手術預後相對良好（平均存活 > 2 年），值得積極治療。犬膠質瘤預後較差但放射治療仍可延長生活品質良好的時間。繼發性癲癇可透過抗癲癇藥物良好控制。治療目標為最大化生活品質而非僅追求存活時間，定期評估生活品質量表（如 HHHHHMM Scale）有助於適時做出人道決定。',
