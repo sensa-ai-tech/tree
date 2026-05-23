@@ -218,4 +218,30 @@ describe('learning-store: Map serialization (persist + replacer/reviver)', () =>
       expect(parsed.state.isLoading).toBeUndefined();
     }
   });
+
+  it('persist reviver reconstructs Map<string, UserNodeProgress> on rehydration', () => {
+    // covers learning-store.ts lines 135-138: reviver function in createJSONStorage
+    // Write serialised Map format (what the replacer produces) directly to localStorage
+    const mockProgress = makeProgress('IM-L3-001');
+    localStorage.setItem(
+      'vet-learning-storage',
+      JSON.stringify({
+        state: {
+          progress: { __type: 'Map', entries: [['IM-L3-001', mockProgress]] },
+          todayReviewCount: 3,
+          todayNewCount: 1,
+        },
+        version: 0,
+      })
+    );
+
+    // Force zustand persist to re-read from localStorage
+    (useLearningStore as any).persist.rehydrate();
+
+    const state = useLearningStore.getState();
+    expect(state.progress).toBeInstanceOf(Map);
+    expect(state.progress.size).toBe(1);
+    expect(state.progress.get('IM-L3-001')?.node_id).toBe('IM-L3-001');
+    expect(state.todayReviewCount).toBe(3);
+  });
 });

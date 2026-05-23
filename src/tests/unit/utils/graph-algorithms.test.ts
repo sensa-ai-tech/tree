@@ -58,6 +58,20 @@ describe('topologicalSort', () => {
     expect(sorted.indexOf('A')).toBeLessThan(sorted.indexOf('B'));
     expect(sorted).toContain('C');
   });
+
+  it('silently skips edges that reference nodes not in the node list', () => {
+    // covers graph-algorithms.ts line 26: `continue` when source/target not in inDegree
+    const nodes = ['A', 'B'];
+    const edges = [
+      makeEdge('A', 'MISSING'),   // target not in nodes
+      makeEdge('GHOST', 'B'),     // source not in nodes
+      makeEdge('A', 'B'),         // valid edge
+    ];
+    const sorted = topologicalSort(nodes, edges);
+    expect(sorted).toContain('A');
+    expect(sorted).toContain('B');
+    expect(sorted.indexOf('A')).toBeLessThan(sorted.indexOf('B'));
+  });
 });
 
 describe('detectCycles', () => {

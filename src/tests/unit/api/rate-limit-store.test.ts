@@ -58,6 +58,10 @@ describe('InMemoryRateLimitStore', () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-05-18T00:00:00Z'));
 
+    // Reset lastCleanup to fake-time T=0 so the 5-min interval is measured from fake time.
+    // (beforeEach created store at real-clock time; without this reset the interval is negative.)
+    store._reset();
+
     // Create entries: one 1-second window, one 1-hour window
     await store.hit('user:expire', 1);     // expires at T+1s
     await store.hit('user:persist', 3600); // expires at T+1h

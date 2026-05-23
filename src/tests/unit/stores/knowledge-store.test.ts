@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
-import type { KnowledgeNode, KnowledgeEdge } from '@/types/knowledge';
+import type { KnowledgeNode, KnowledgeEdge, LearningPath } from '@/types/knowledge';
 
 const mockNodes: KnowledgeNode[] = [
   {
@@ -156,5 +156,28 @@ describe('knowledge-store', () => {
 
     useKnowledgeStore.getState().selectNode(null);
     expect(useKnowledgeStore.getState().selectedNodeId).toBeNull();
+  });
+
+  it('setNodeContent stores content and setNodeContent(null) clears it', () => {
+    // line 67 — previously uncovered
+    const mockContent = { id: 'CONTENT-TEST', node_id: 'TEST-L3-001' } as any;
+    useKnowledgeStore.getState().setNodeContent(mockContent);
+    expect(useKnowledgeStore.getState().selectedNodeContent).toEqual(mockContent);
+    useKnowledgeStore.getState().setNodeContent(null);
+    expect(useKnowledgeStore.getState().selectedNodeContent).toBeNull();
+  });
+
+  it('getPathsBySpecialty returns only paths matching specialty', () => {
+    // line 101 — previously uncovered
+    const mockPaths: LearningPath[] = [
+      { id: 'P1', title: 'NEURO Path', description: null, specialty: 'NEURO', target_audience: null, estimated_hours: 10, path_nodes: [], milestones: [], has_certificate: false, status: 'published' },
+      { id: 'P2', title: 'CARDIO Path', description: null, specialty: 'CARDIO', target_audience: null, estimated_hours: 8, path_nodes: [], milestones: [], has_certificate: false, status: 'published' },
+    ];
+    useKnowledgeStore.getState().setPaths(mockPaths);
+    const neuro = useKnowledgeStore.getState().getPathsBySpecialty('NEURO');
+    expect(neuro).toHaveLength(1);
+    expect(neuro[0].id).toBe('P1');
+    const missing = useKnowledgeStore.getState().getPathsBySpecialty('DERM');
+    expect(missing).toHaveLength(0);
   });
 });

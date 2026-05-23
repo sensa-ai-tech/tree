@@ -186,6 +186,19 @@ describe('admin-auth: validateAdminPassword', () => {
     process.env.VKT_ADMIN_PASSWORD = 'sha256:deadbeef';
     expect(validateAdminPassword('anything')).toBe(false);
   });
+
+  it('refuses plaintext password in production and logs FATAL error (SEC-003)', () => {
+    // covers admin-auth.ts lines 61-62: production plaintext fallback is forbidden
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    (process.env as Record<string, string>).NODE_ENV = 'production';
+    process.env.VKT_ADMIN_PASSWORD = 'plaintext-password'; // no sha256: prefix
+
+    const result = validateAdminPassword('plaintext-password');
+
+    expect(result).toBe(false);
+    expect(errorSpy).toHaveBeenCalledWith(expect.stringContaining('[admin-auth] FATAL'));
+    errorSpy.mockRestore();
+  });
 });
 
 /**

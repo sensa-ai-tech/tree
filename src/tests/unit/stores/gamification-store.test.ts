@@ -186,6 +186,22 @@ describe('gamification-store: setters + reset', () => {
     expect(getState().achievements).toEqual(list);
   });
 
+  it('setRecentXPEvents replaces the recentXPEvents list', () => {
+    // line 101 of gamification-store.ts — previously uncovered
+    const events: XPEvent[] = [
+      makeXPEvent(50, 'complete_node'),
+      makeXPEvent(20, 'daily_review'),
+    ];
+    getState().setRecentXPEvents(events);
+    expect(getState().recentXPEvents).toHaveLength(2);
+    expect(getState().recentXPEvents[0]?.amount).toBe(50);
+    expect(getState().recentXPEvents[1]?.amount).toBe(20);
+
+    // passing empty array clears events
+    getState().setRecentXPEvents([]);
+    expect(getState().recentXPEvents).toHaveLength(0);
+  });
+
   it('resetStore clears everything', () => {
     getState().addXP(makeXPEvent(1000));
     getState().unlockAchievement('a1');

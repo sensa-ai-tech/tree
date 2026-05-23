@@ -220,6 +220,15 @@ describe('calculateXP', () => {
       expect(xp).toBe(100);
     });
   });
+
+  describe('default (unknown source)', () => {
+    it('returns 0 for an unrecognised XP source (default switch branch)', () => {
+      // covers xp-calculator.ts line 72 — default: return 0
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const xp = calculateXP('totally_unknown_source' as any, {});
+      expect(xp).toBe(0);
+    });
+  });
 });
 
 describe('calculateTotalSessionXP', () => {

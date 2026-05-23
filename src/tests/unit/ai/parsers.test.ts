@@ -52,6 +52,34 @@ describe('safeParseJson', () => {
   });
 });
 
+describe('safeParseJson: second catch block (lines 59-60)', () => {
+  it('throws JsonParseError when JSON cannot be fixed even after repair attempts', () => {
+    // `{ not: valid }` contains `{` so it passes the "no JSON" guard.
+    // fixTrailingCommas and fixTruncatedJson leave it unchanged (balanced braces,
+    // no trailing commas, no escape issues).  Second JSON.parse still fails →
+    // covers json-parser.ts lines 59-60.
+    expect(() => safeParseJson('{ not: valid }')).toThrow(JsonParseError);
+  });
+});
+
+describe('safeParseJson: fixTruncatedJson edge cases', () => {
+  it('handles backslash escape sequences inside a truncated JSON string', () => {
+    // covers fixTruncatedJson escape path (lines 78-84 of json-parser.ts)
+    // JSON with a backslash-escaped char (\\ = literal backslash) in a string value,
+    // followed by a truncated array — first JSON.parse fails, fixTruncatedJson runs.
+    const input = '{"key": "val\\\\ end", "nums": [1, 2';
+    const result = safeParseJson<{ key: string; nums: number[] }>(input);
+    expect(result.key).toBe('val\\ end');
+    expect(result.nums).toHaveLength(2);
+  });
+
+  it('closes an unclosed string value when input is truncated mid-string', () => {
+    // covers fixTruncatedJson inString path (line 100 of json-parser.ts)
+    const result = safeParseJson<{ key: string }>('{"key": "truncated');
+    expect(result.key).toBe('truncated');
+  });
+});
+
 describe('tryParseJson', () => {
   it('should return parsed result for valid JSON', () => {
     const result = tryParseJson<{ a: number }>('{"a": 1}');

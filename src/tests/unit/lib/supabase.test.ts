@@ -5,7 +5,7 @@
  * These tests validate mock-mode behaviour (the proxy delegation) without
  * requiring a real Supabase instance.
  */
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 // ─── client.ts ───────────────────────────────────────────────────────────────
 
@@ -136,6 +136,14 @@ describe('lib/supabase/server — mock mode', () => {
     const result = await (client as any).from('nodes').select();
     expect(result).toMatchObject({ data: [], error: null, count: 0 });
   });
+
+  it('server mock client unknown property returns { data: null, error: null }', async () => {
+    // covers server.ts line 30: default proxy handler for properties other than 'from' or 'auth'
+    const { createServerClient } = await import('@/lib/supabase/server');
+    const client = createServerClient();
+    const result = await (client as any).unknownProp();
+    expect(result).toMatchObject({ data: null, error: null });
+  });
 });
 
 // ─── middleware.ts ───────────────────────────────────────────────────────────
@@ -149,6 +157,29 @@ describe('lib/supabase/middleware — mock mode updateSession', () => {
 
     // In mock mode (no SUPABASE_URL env var), updateSession just calls
     // NextResponse.next() and returns immediately without Supabase interaction.
+    const response = await updateSession(mockRequest);
+    expect(response).toBeDefined();
+    expect(typeof response).toBe('object');
+  });
+});
+
+describe('lib/supabase/middleware — live mode updateSession', () => {
+  beforeEach(() => {
+    vi.resetModules();
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://test-project.supabase.co');
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  it('updateSession() reaches line 16 (non-mock return) when SUPABASE_URL is set', async () => {
+    // MOCK_MODE = !process.env.NEXT_PUBLIC_SUPABASE_URL = false → skips mock early-return
+    // → covers middleware.ts line 16: `return response`
+    const { updateSession } = await import('@/lib/supabase/middleware');
+    const mockRequest = {
+      headers: new Headers({ 'x-test': '1' }),
+    } as Parameters<typeof updateSession>[0];
     const response = await updateSession(mockRequest);
     expect(response).toBeDefined();
     expect(typeof response).toBe('object');
