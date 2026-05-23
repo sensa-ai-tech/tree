@@ -7179,6 +7179,216 @@ CBC 是即時又便宜的關鍵：WBC < 2000 配上典型病史，臨床診斷�
   created_at: now,
 };
 
+// ─── IM-L4-005: 肝功能評估與膽汁酸 (2026-05-23) ─────────────────────────────
+const contentHepFuncAssessment: NodeContent = {
+  id: 'CONTENT-IM-L4-005',
+  node_id: 'IM-L4-005',
+  version: 1,
+  summary: '肝功能評估包含兩大類指標：肝細胞損傷（ALT/AST）與膽汁鬱滯（ALP/GGT），搭配肝臟合成功能（白蛋白、PT、膽固醇）及膽汁酸試驗。犬貓的 ALP 有顯著物種差異——犬的 ALP 可被類固醇及苯巴比妥誘導大幅升高（非真性肝毒性），而貓的 ALP 半衰期極短（6h），任何升高都具臨床意義。膽汁酸（空腹 + 餐後 2h）是評估肝臟實際合成與排泄功能的黃金標準，用於鑑別酵素誘導（正常）與真性肝損傷（升高）。',
+  learning_objectives: [
+    '說明 ALT、AST、ALP、GGT 的組織來源及犬貓半衰期差異',
+    '正確解讀肝細胞損傷型 vs 膽汁鬱滯型 vs 混合型肝酵素模式',
+    '解釋苯巴比妥（PB）與類固醇誘發 ALP 升高的機轉，並用膽汁酸試驗鑑別真性肝毒性',
+    '執行空腹與餐後膽汁酸試驗並解讀結果',
+    '比較貓與犬 ALP 的臨床意義差異',
+  ],
+  key_points: [
+    'ALT 是犬貓肝細胞特異性標記；AST 來源包括肝臟和肌肉（AST/ALT > 1.5 時考慮肌肉來源）',
+    '犬 ALP 有三種同功異構酶：L-ALP（肝膽管）、B-ALP（骨）、C-ALP（類固醇誘導），PB/類固醇可使犬 ALP 升高至正常值 20× 以上',
+    '貓 ALP 半衰期僅 6 小時（犬為 72 小時），貓 ALP 升高需高度警惕；貓無類固醇誘發型 ALP',
+    'GGT 在貓中優於 ALP 偵測膽道疾病；脂肪肝（貓）特徵：ALP↑↑ 但 GGT 正常',
+    '膽汁酸試驗：空腹 < 10 µmol/L（犬）/ < 5 µmol/L（貓）；餐後 2h < 25 µmol/L（犬）/ < 15 µmol/L（貓）',
+    'PB 誘發 ALP 升高：膽汁酸正常 → 酵素誘導（不需換藥）；膽汁酸升高 → 真性肝損傷（需評估換藥或加 SAMe/S-adenosylmethionine）',
+    '白蛋白低下、PT 延長、低血糖 = 肝臟合成功能受損，提示重症肝衰竭',
+  ],
+  body: `# 肝功能評估與膽汁酸 (Hepatic Function Assessment & Bile Acids)
+
+## 一、肝酵素概覽
+
+### 肝細胞損傷指標
+
+| 酵素 | 主要來源 | 半衰期（犬） | 半衰期（貓） | 臨床意義 |
+|------|---------|------------|------------|---------|
+| **ALT**（SGPT）| 肝細胞胞質 | ~60 小時 | ~6 小時 | 肝細胞損傷特異性高，5× ULN 以上為顯著升高 |
+| **AST**（SGOT）| 肝線粒體 + 肌肉 | ~22 小時 | ~1.5 小時 | 肝臟 + 肌肉來源，需與 CK 合用鑑別 |
+
+**AST/ALT 比值解讀：**
+- AST/ALT < 1：以肝細胞損傷為主（肝炎、脂肪肝）
+- AST/ALT > 1.5：提示肌肉損傷參與，或嚴重肝細胞壞死（線粒體釋放 AST）
+
+### 膽汁鬱滯指標
+
+| 酵素 | 主要來源 | 半衰期（犬） | 半衰期（貓） | 特殊注意 |
+|------|---------|------------|------------|---------|
+| **ALP** | 肝膽管、骨、[類固醇/PB 誘導（犬）] | ~72 小時 | **~6 小時** | 犬貓最大差異所在（見下表） |
+| **GGT** | 肝膽管上皮、腎 | ~3 天 | ~3 天 | 貓：GGT 比 ALP 更敏感於膽道疾病 |
+
+### ALP 犬貓物種差異（核心考點）
+
+| 特性 | 犬 | 貓 |
+|------|-----|-----|
+| 半衰期 | ~72 小時 | **~6 小時** |
+| 類固醇誘導型 | **YES**（C-ALP 同功酶，最高 20×↑）| **NO** |
+| 苯巴比妥誘導 | **YES**（L-ALP 同功酶誘導）| **NO** |
+| 骨骼來源（幼年）| 輕度↑（生長期） | 輕度↑（生長期） |
+| 升高的臨床意義 | 需依程度和情境解讀 | **任何升高均具臨床意義** |
+| 甲狀腺機能亢進 | 不影響 | 輕度升高（常見）|
+
+> **核心記憶：貓 ALP 半衰期極短，升高代表「此刻」有問題；犬 ALP 半衰期長，升高需鑑別來源。**
+
+## 二、酵素模式判讀
+
+### 三種基本模式
+
+| 模式 | ALT/AST | ALP/GGT | 常見病因 |
+|------|---------|---------|---------|
+| **肝細胞損傷型** | 顯著↑（>5× ULN）| 正常或輕度↑ | 急性肝炎、毒素、缺氧、低血壓 |
+| **膽汁鬱滯型** | 正常或輕度↑ | 顯著↑（>5× ULN）| 膽管炎、膽囊黏液囊腫、類固醇肝病 |
+| **混合型** | 中度↑ | 中度↑ | IBD 繼發、胰臟炎、淋巴瘤浸潤 |
+
+### 貓脂肪肝（肝臟脂肪變性）特徵模式
+
+$$\\text{ALP} \\uparrow\\uparrow \\;(常 >10×\\text{ ULN}) \\quad + \\quad \\text{GGT} \\text{正常或僅輕度↑}$$
+
+這個「ALP/GGT 分離」是貓脂肪肝（非膽道疾病）的特徵標記。若 GGT 也顯著升高 → 合併膽管炎可能。
+
+## 三、PB（苯巴比妥）誘發 ALP 升高 — 鑑別流程
+
+苯巴比妥是犬常用癲癇藥物，可誘導肝臟 CYP450 酵素，使 ALP 升高至 2-20× ULN，但**不代表肝損傷**。
+
+\`\`\`
+犬 ALP 升高（on PB）
+         │
+         ▼
+  膽汁酸試驗
+  空腹 + 餐後 2h
+         │
+    ┌────┴────┐
+    │正常       │升高
+    ▼           ▼
+PB 誘導     真性肝毒性
+（酵素誘導）    → 評估換 LEV
+不需換藥     → 加 SAMe/肝保護
+繼續監測     → Hepatic biopsy if severe
+\`\`\`
+
+**配套監測：**
+- PB 開始後每 6 個月：CBC + 生化 + 膽汁酸
+- ALP > 5× ULN 或 ALT 顯著升高 → 立即做膽汁酸試驗
+
+## 四、膽汁酸試驗（Bile Acid Test）
+
+### 操作方法
+
+1. 禁食 12 小時 → 採血（空腹值，BA₁）
+2. 給予少量高脂食物刺激膽囊收縮
+3. 2 小時後採血（餐後值，BA₂）
+
+### 正常值
+
+| 物種 | 空腹（BA₁）| 餐後 2h（BA₂）|
+|------|------------|--------------|
+| 犬 | < 10 µmol/L | < 25 µmol/L |
+| 貓 | < 5 µmol/L | < 15 µmol/L |
+
+### 結果解讀
+
+| 結果 | 意義 |
+|------|------|
+| BA₁ 正常，BA₂ < 25（犬）| 肝功能正常 |
+| BA₁ > BA₂（空腹 > 餐後）| 自發性膽囊收縮 → 重複試驗 |
+| BA₂ 輕度升高（25-50）| 輕度肝功能不全或門脈異常 |
+| BA₂ 顯著升高（>100）| 門脈體循環分流（PSS）或重症肝病 |
+
+> 膽汁酸是「肝臟功能的積分」：需要肝臟正常攝取（Na⁺/牛磺酸共輸送）、結合、分泌，缺一不可。
+
+## 五、肝臟合成功能評估
+
+| 指標 | 正常值 | 異常意義 |
+|------|--------|---------|
+| 白蛋白 | 2.5-4.0 g/dL | < 2.0 g/dL：重症肝衰 or PLE/PLN |
+| PT（凝血酶原時間）| 犬 < 9s，貓 < 12s | 延長 > 1.5× ULN：凝血因子合成不足 |
+| 膽固醇 | 犬 110-290 mg/dL，貓 65-225 mg/dL | 低下：肝臟合成受損（< 80 mg/dL 提示肝衰）|
+| 血糖 | 70-120 mg/dL | 低血糖：嚴重肝衰或 PSS |
+
+## 六、臨床整合案例
+
+### 案例 A：5 歲 Labrador，長期服用 PB，ALP 680 U/L（ULN=120），ALT 95 U/L
+- 膽汁酸：空腹 8，餐後 18（均正常）
+- **結論：PB 誘發 ALP 升高，非真性肝毒性，繼續監測**
+
+### 案例 B：8 歲貓，食慾減退 5 天，ALP 580 U/L（ULN=80），GGT 12 U/L
+- ALP 顯著升高但 GGT 正常 → 脂肪肝高度懷疑
+- **結論：ALP/GGT 分離模式 → 貓脂肪肝，啟動鼻管灌食**
+
+### 案例 C：3 歲 Golden，ALP 2400（20× ULN），ALT 480（8× ULN），白蛋白 1.8 g/dL
+- 膽汁酸：空腹 65，餐後 180 µmol/L
+- **結論：重症肝病 + 合成功能受損，PSS 鑑別，肝臟生檢適應症**`,
+  clinical_pearl: '貓的 ALP 半衰期只有 6 小時，意味著貓 ALP 100 U/L 在臨床意義上相當於犬 ALP 1200 U/L。另一個記憶訣竅：「貓 ALP 升高必追查，犬 ALP 先問藥」。在台灣診所，最常見的 ALP 升高混淆原因是犬類固醇治療（皮膚科常用）和 PB（神經科常用）。膽汁酸試驗是最簡單的確認工具，費用低廉，應優先使用。',
+  common_mistakes: [
+    '看到犬 ALP 升高就直接診斷肝病（最常見錯誤：忽略 PB 和類固醇誘導型）',
+    '用犬的標準解讀貓 ALP（貓 ALP 80 U/L 就應追查，而非等到 400 U/L）',
+    '忽略 GGT 在貓膽道疾病中的優越性（貓脂肪肝 ALP 升但 GGT 正常；膽管炎則 GGT 也升）',
+    '膽汁酸試驗空腹值 > 餐後值時不重複試驗（自發性膽囊收縮假陽性）',
+    '用 PT 延長診斷肝衰竭時忘記鑑別抗凝血劑中毒（鼠藥、vitamin K 拮抗）',
+  ],
+  disease_data: null,
+  diagnostic_data: {
+    indication: [
+      '疑似肝病（嘔吐、黃疸、腹水、PU/PD）',
+      '長期使用 PB 或類固醇的追蹤監測',
+      '篩查門脈體循環分流（PSS）—尤其年輕小型犬貓',
+      'CBC/生化發現肝酵素異常的進一步評估',
+      '術前評估（凝血因子合成能力）',
+    ],
+    contraindication: [
+      '膽汁酸試驗：禁食不足（< 12h）會造成假性升高',
+      '膽汁酸試驗：腸道吸收障礙（IBD/PLE）可造成假性降低',
+      '若懷疑抗凝血劑中毒，PT/aPTT 測量前先補 VitK 可影響診斷',
+    ],
+    technique: '膽汁酸試驗操作：1. 禁食 12h 後採靜脈血 2 mL（空腹值）；2. 給予少量高脂罐頭（1-2 茶匙）刺激膽囊收縮；3. 精確計時 2 小時後再採血（餐後值）；4. 兩管同步送 BA 檢測。注意：貓易嘔吐，可改為藥物刺激（cerulein 0.3 µg/kg IV）代替食物刺激。',
+    normal_findings: [
+      { finding: 'ALT 5-60 U/L（犬）/ 5-50 U/L（貓）', description: '肝細胞完整', significance: '無肝細胞損傷' },
+      { finding: 'ALP 20-150 U/L（犬）/ 10-90 U/L（貓）', description: '膽汁流動正常', significance: '無膽汁鬱滯或藥物誘導' },
+      { finding: '空腹 BA < 10 µmol/L（犬）/ < 5 µmol/L（貓）', description: '肝臟攝取功能正常', significance: '肝功能完整' },
+      { finding: '餐後 BA < 25 µmol/L（犬）/ < 15 µmol/L（貓）', description: '腸肝循環正常', significance: '無門脈異常或重症肝病' },
+    ],
+    abnormal_findings: [
+      { finding: 'ALT > 5× ULN', description: '顯著肝細胞損傷', significance: '急性肝炎、毒素、缺氧、肝壞死' },
+      { finding: 'ALP > 10× ULN（犬）', description: '膽汁鬱滯或誘導型', significance: '類固醇肝病、PB 誘導、膽管疾病、Cushing' },
+      { finding: '貓 ALP > 2× ULN（任何原因）', description: '貓 ALP 極敏感', significance: '脂肪肝、膽管炎、甲亢、胰臟炎繼發' },
+      { finding: '餐後 BA > 100 µmol/L', description: '嚴重肝功能異常', significance: '門脈體循環分流、重症肝衰、晚期纖維化' },
+      { finding: '白蛋白 < 2.0 g/dL + PT 延長', description: '肝臟合成功能受損', significance: '急性肝衰竭 or 末期慢性肝病' },
+    ],
+    interpretation_guide: 'Step 1：確認模式（肝細胞 vs 膽汁鬱滯 vs 混合）。Step 2：排除藥物誘導（PB、類固醇）。Step 3：若 ALP 升高且有藥物史 → 膽汁酸試驗。Step 4：若混合型或 BA 升高 → 超音波評估肝臟結構。Step 5：評估合成功能（白蛋白、PT、血糖）。Step 6：考慮肝臟穿刺活檢適應症（BA > 100 或 ALT > 10×，無禁忌症）。',
+    pitfalls: [
+      'PB 誘導 ALP 最高可達 20× ULN，看起來非常嚴重，但膽汁酸正常代表非真性肝毒性',
+      '貓禁食時間過短（< 4h）膽囊會自發收縮，造成空腹 BA 假性升高（重複試驗）',
+      '肌肉損傷（外傷、注射、肌炎）會使 AST 升高但 ALT 正常，不代表肝病',
+      'IBD 的腸道黏膜損傷可降低 BA 的腸道吸收，造成膽汁酸試驗假性「偏低」',
+    ],
+    sensitivity_specificity: '膽汁酸試驗（空腹+餐後）診斷 PSS：敏感度 ~95%，特異度 ~67%；診斷肝功能不全（任何原因）：敏感度 ~78-88%，特異度取決於切值。ALT 對犬急性肝炎：敏感度高但特異度低（肌肉、腸道也可升高）。',
+    cost_benefit: '膽汁酸試驗（NT$300-500）是評估肝功能最具性價比的功能性檢查，在 ALP 升高且有藥物史時可快速分流（是否需要進一步影像或生檢）。超音波+生檢費用可達 NT$5000-15000，應在 BA 試驗後再決定。',
+  },
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'ALP 物種差異表後', type: 'comparison_table', description: '犬貓 ALP 特性全面比較圖（半衰期、誘導型、臨床意義）' },
+    { position: 'PB 誘發 ALP 鑑別流程', type: 'flowchart', description: 'PB 犬 ALP 升高臨床決策樹（膽汁酸試驗分流）' },
+  ],
+  interactive_placeholders: [
+    { position: '膽汁酸試驗解讀段落', type: 'interactive_calculator', description: '膽汁酸結果輸入器：輸入空腹值 + 餐後值 → 自動判讀正常/異常/PSS 高風險' },
+  ],
+  drug_api_links: ['SAMe', 'Ursodiol', 'Milk Thistle', 'Phenobarbital', 'Prednisolone'],
+  is_current: true,
+  created_at: '2026-05-23',
+  references: [
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine. 8th ed. Elsevier, 2017. Chapter 91: Diagnostic Evaluation of the Liver.', relevance: '肝功能評估標準教材' },
+    { type: 'guideline', citation: 'Webster CR et al. ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs. J Vet Intern Med. 2019;33(3):1173-1200.', relevance: '犬慢性肝炎診斷指引（含膽汁酸應用）' },
+    { type: 'journal', citation: 'Scherk MA, Center SA. Toxic, metabolic, infectious, and neoplastic liver diseases. In: Ettinger SJ, ed. Textbook of Veterinary Internal Medicine. Elsevier, 2010.', relevance: '貓肝病 ALP/GGT 分離模式' },
+    { type: 'guideline', citation: 'Center SA. Interpretation of liver enzymes. Vet Clin North Am Small Anim Pract. 2007;37(2):297-333.', relevance: '肝酵素解讀完整指引，含物種差異' },
+  ],
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
@@ -7220,6 +7430,8 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L4-002', contentUrinalysis],
   ['IM-L4-003', contentAbdoUS],
   ['IM-L4-004', contentGIEndoscopy],
+  // L4 Diagnostics — 2026-05-23 新增
+  ['IM-L4-005', contentHepFuncAssessment],
   // L5 Therapeutics
   ['IM-L5-001', contentCKDManagement],
   ['IM-L5-002', contentEndocrineTherapy],

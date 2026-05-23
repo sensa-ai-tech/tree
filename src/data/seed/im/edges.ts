@@ -248,4 +248,10 @@ export const IM_EDGES: KnowledgeEdge[] = [
 
   // ─── 補齊：IM-L3-010 (Ehrlichia/Babesia) 前向連接至診斷節點 ───
   { id: 'IM-E-132', source_node_id: 'IM-L3-010', target_node_id: 'IM-L4-002', relation_type: 'clinical_apply', weight: 2, description: '壁蝨媒介感染需尿液分析評估腎功能（Babesia 可致急性腎損傷與血紅蛋白尿）', bidirectional: false, unlock_condition: null },
+
+  // ─── IM-L4-005 肝功能評估 連接邊 ───
+  { id: 'IM-E-133', source_node_id: 'IM-L3-009', target_node_id: 'IM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: '貓肝臟脂肪變性診斷與監測需要完整肝功能評估（ALP/GGT 分離模式：脂肪肝 ALP↑ 但 GGT 正常；膽管炎 GGT 與 ALP 同步↑）', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-134', source_node_id: 'IM-L3-026', target_node_id: 'IM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: '犬慢性肝炎的活動性監測與銅蓄積評估需要序列性肝酵素追蹤搭配膽汁酸試驗（空腹 vs 餐後 2h）', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-135', source_node_id: 'IM-L3-019', target_node_id: 'IM-L4-005', relation_type: 'clinical_apply', weight: 0.9, description: '貓膽管炎（膽汁鬱滯型/免疫介導型）的 GGT/ALP/膽汁酸評估是監測膽管功能的核心工具', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-136', source_node_id: 'NEURO-L4-006', target_node_id: 'IM-L4-005', relation_type: 'cross_specialty', weight: 0.9, description: 'PB（苯巴比妥）誘發 ALP 升高需用膽汁酸試驗鑑別真性肝毒性（膽汁酸正常＝酵素誘導非肝損傷；膽汁酸升高＝真性肝毒性需評估換藥）', bidirectional: false, unlock_condition: null },
 ];
