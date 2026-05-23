@@ -40,6 +40,8 @@ export function createServerClient() {
   if (MOCK_MODE) {
     return createMockServerClient();
   }
+  // Live createClient path requires a real NEXT_PUBLIC_SUPABASE_URL; mock-mode test env can't exercise it.
+  /* istanbul ignore next */
   return createClient<Database>(supabaseUrl!, supabaseAnonKey!);
 }
 
@@ -47,5 +49,7 @@ export function createServiceRoleClient() {
   if (MOCK_MODE || !supabaseServiceKey) {
     return createMockServerClient();
   }
+  // Live service-role path requires SUPABASE_SERVICE_ROLE_KEY; mock-mode test env can't exercise it.
+  /* istanbul ignore next */
   return createClient<Database>(supabaseUrl!, supabaseServiceKey);
 }

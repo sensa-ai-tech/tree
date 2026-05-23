@@ -55,7 +55,9 @@ export const useAuthStore = create<AuthState>()(
           };
           set({ user: mockUser, isLoading: false });
         } catch (err) {
+          /* istanbul ignore next — mock try body is synchronous + cannot throw */
           const message = err instanceof Error ? err.message : '登入失敗';
+          /* istanbul ignore next */
           set({ error: message, isLoading: false });
         }
       },
@@ -66,7 +68,9 @@ export const useAuthStore = create<AuthState>()(
           const mockUser: User = { id: `mock-${Date.now()}`, email, role: 'user' };
           set({ user: mockUser, isLoading: false });
         } catch (err) {
+          /* istanbul ignore next — mock try body is synchronous + cannot throw */
           const message = err instanceof Error ? err.message : '註冊失敗';
+          /* istanbul ignore next */
           set({ error: message, isLoading: false });
         }
       },

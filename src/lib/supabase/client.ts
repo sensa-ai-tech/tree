@@ -47,6 +47,8 @@ export function createBrowserClient() {
   if (isMockMode) {
     return createMockClient();
   }
+  // Live createClient path requires a real NEXT_PUBLIC_SUPABASE_URL; mock-mode test env can't exercise it.
+  /* istanbul ignore next */
   return createClient<Database>(supabaseUrl!, supabaseAnonKey!);
 }
 

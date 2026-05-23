@@ -157,8 +157,8 @@ test.describe('Sidebar (desktop)', () => {
 // ─── MobileBottomNav Tests (mobile viewport only) ─────────────────────────────
 
 test.describe('MobileBottomNav', () => {
-  // Override: only run on mobile project (Pixel 5 viewport)
-  // We detect mobile by checking if bottom nav is visible
+  test.skip(({ viewport }) => !viewport || viewport.width >= 768, 'Bottom nav is md:hidden (mobile-only viewport)');
+
   test.beforeEach(async ({ page }) => {
     await mockLogin(page);
     await page.goto('/home');
@@ -166,43 +166,26 @@ test.describe('MobileBottomNav', () => {
     await dismissModals(page);
   });
 
-  test('bottom nav is visible on mobile viewport (md:hidden breakpoint)', async ({ page, viewport }) => {
-    // Only meaningful on mobile viewports (width < 768)
-    if (!viewport || viewport.width >= 768) {
-      test.skip();
-      return;
-    }
+  test('bottom nav is visible on mobile viewport (md:hidden breakpoint)', async ({ page }) => {
     const bottomNav = page.locator('nav.fixed.inset-x-0.bottom-0, nav[class*="bottom-0"]').first();
     await expect(bottomNav).toBeVisible();
   });
 
-  test('bottom nav "知識圖譜" tab navigates to /graph', async ({ page, viewport }) => {
-    if (!viewport || viewport.width >= 768) {
-      test.skip();
-      return;
-    }
+  test('bottom nav "知識圖譜" tab navigates to /graph', async ({ page }) => {
     const graphTab = page.locator('nav a[href="/graph"]').last(); // bottom nav is last <nav>
     await expect(graphTab).toBeVisible();
     await graphTab.click();
     await expect(page).toHaveURL(/\/graph/);
   });
 
-  test('bottom nav "每日複習" tab navigates to /review', async ({ page, viewport }) => {
-    if (!viewport || viewport.width >= 768) {
-      test.skip();
-      return;
-    }
+  test('bottom nav "每日複習" tab navigates to /review', async ({ page }) => {
     const reviewTab = page.locator('nav a[href="/review"]').last();
     await expect(reviewTab).toBeVisible();
     await reviewTab.click();
     await expect(page).toHaveURL(/\/review/);
   });
 
-  test('active tab has indigo color class', async ({ page, viewport }) => {
-    if (!viewport || viewport.width >= 768) {
-      test.skip();
-      return;
-    }
+  test('active tab has indigo color class', async ({ page }) => {
     // Navigate to /graph, then check that /graph tab has active class
     await page.goto('/graph');
     await page.waitForLoadState('networkidle', { timeout: 10_000 });
