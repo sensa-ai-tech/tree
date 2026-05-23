@@ -4193,6 +4193,147 @@ Itraconazole：主要副作用是厭食跟嘔吐，長期使用偶爾會肝酵�
   created_at: now,
 };
 
+/** 皮膚科抗生素治療，L5 治療型 */
+const contentAntibioticTherapy: NodeContent = {
+  id: 'CONTENT-DERM-L5-006',
+  node_id: 'DERM-L5-006',
+  version: 1,
+  summary: '皮膚科抗生素治療以細菌性膿皮症（bacterial pyoderma）為核心適應症，分為淺層（superficial）與深層（deep）兩種，治療強度與療程差異顯著。全身性抗生素一線選擇包括 cephalexin（犬 22-30 mg/kg PO BID）、amoxicillin-clavulanate 及 clindamycin。甲氧苯青黴素抗性金黃色葡萄球菌（MRSA）與抗性中間型葡萄球菌（MRSP）日益普遍，反覆或難治病例應做細菌培養與抗生素感受性試驗（C&S）。外用治療是降低系統抗生素使用、預防抗藥性的核心策略：2% chlorhexidine 藥浴每 3-7 天一次；局部型病灶可用外用慕斯或噴劑取代口服。療程原則：淺層至少 3-4 週，深層至少 6-8 週，均需延長至臨床痊癒後再 1 週。反覆性膿皮症（recurrent pyoderma）必須找出並治療根本原因（最常見為過敏性皮膚病），否則抗生素治療結束後必然復發。',
+  learning_objectives: [
+    '區分淺層與深層膿皮症的臨床特徵、治療方案與療程長度',
+    '選擇細菌性膿皮症的一線全身性抗生素及適當劑量',
+    '規劃外用抗菌治療（chlorhexidine 藥浴）以減少全身性抗生素依賴',
+    '判斷何時需做細菌培養/感受性試驗（C&S），以應對 MRSP',
+    '識別並管理反覆性膿皮症的根本誘因',
+  ],
+  key_points: [
+    '淺層膿皮症一線：cephalexin 22-30 mg/kg PO BID，療程 3-4 週（至臨床痊癒後 +1 週）',
+    '深層膿皮症：療程 ≥ 6-8 週，嚴重病例可能需 3-4 個月',
+    'Amoxicillin-clavulanate 適用對 beta-lactamase 陽性葡萄球菌；clindamycin 適用對 lincosamide 敏感菌',
+    '外用 2% chlorhexidine 藥浴每 3-7 天一次，是降低全身性抗生素使用的核心手段',
+    '局部外用慕斯（chlorhexidine mousse）可有效取代口服藥物用於局部表淺病灶',
+    '反覆膿皮症 → 必做 C&S 排除 MRSP + 找潛在原因（CAD、食物過敏、內分泌病）',
+    'MRSP 治療：依 C&S 選用 chloramphenicol、rifampicin、minocycline 等',
+    'Fluoroquinolone（enrofloxacin）不建議作為第一線，以減緩抗藥性產生',
+  ],
+  body: `# 皮膚科抗生素治療
+
+## 一、適應症與分類
+
+### 淺層膿皮症（Superficial Pyoderma）
+- 病灶侷限於表皮和毛囊（impetigo、folliculitis）
+- 臨床：丘疹、膿皰、「圈狀脫屑」（epidermal collarette）
+- 療程：**3-4 週**，臨床痊癒後再延長 1 週
+
+### 深層膿皮症（Deep Pyoderma）
+- 病灶達真皮甚至皮下組織（furunculosis、cellulitis）
+- 臨床：癤、竇道、出血性分泌物、結痂、疼痛
+- 療程：**≥ 6-8 週**，嚴重病例可能 3-4 個月
+
+---
+
+## 二、全身性抗生素選擇
+
+### 一線抗生素（第一選擇）
+| 藥物 | 劑量（犬） | 給藥方式 | 適應症 |
+|------|-----------|----------|--------|
+| Cephalexin | 22-30 mg/kg PO BID | 每 12 小時 | 淺層/深層膿皮症首選 |
+| Amoxicillin-clavulanate | 13.75 mg/kg PO BID | 每 12 小時 | Beta-lactamase 陽性菌 |
+| Clindamycin | 5.5-11 mg/kg PO BID | 每 12 小時 | 淺層膿皮症替代選項 |
+
+### 二線抗生素（C&S 指導）
+| 藥物 | 適應症 | 備注 |
+|------|--------|------|
+| Doxycycline | MRSP 敏感株 | 10 mg/kg PO SID |
+| Chloramphenicol | MRSP | 監測骨髓抑制 |
+| Minocycline | MRSP | 與飼主說明人畜共患風險 |
+| Rifampicin | 需與其他藥合併使用 | 不可單獨使用（快速產生抗藥性） |
+
+> **重要**: Fluoroquinolone（enrofloxacin）不建議作第一線，以減少抗藥性蔓延。
+
+---
+
+## 三、外用抗菌治療
+
+外用治療可有效補充甚至取代口服抗生素，是現代皮膚科減少全身抗生素依賴的核心策略。
+
+### 全身性藥浴（Whole-Body Antiseptic Shampoo）
+| 配方 | 頻率 | 接觸時間 | 適應症 |
+|------|------|----------|--------|
+| Chlorhexidine 2-4% | 每 3-7 天 | ≥ 10 分鐘 | 首選，廣效抗菌 |
+| Benzoyl peroxide 2.5-3% | 每週 2-3 次 | 10 分鐘 | 深層/毛囊炎，去角質 |
+| Ethyl lactate 10% | 每週 1-2 次 | 5-10 分鐘 | 較溫和，適合慢性病例 |
+
+### 局部外用製劑
+- **Chlorhexidine mousse/spray**：局部小面積病灶，可取代口服藥物
+- **外用抗生素（mupirocin ointment）**：局部淺層膿皮症，3 次/天
+- 優點：直接作用病灶，全身副作用少，可用於不耐受口服藥的動物
+
+---
+
+## 四、MRSP 的臨床挑戰
+
+甲氧苯青黴素抗性偽中間型葡萄球菌（MRSP, Methicillin-resistant *Staphylococcus pseudintermedius*）在台灣皮膚科臨床已不罕見，尤其見於：
+- 反覆接受多種抗生素治療的病例
+- 有住院史或接觸醫療場所的動物
+
+**何時做 C&S**：
+1. 第一次治療失敗（3-4 週後無改善）
+2. 曾用多種抗生素治療
+3. 深層膿皮症
+4. 術後或院內感染疑慮
+
+---
+
+## 五、反覆性膿皮症的管理
+
+反覆性膿皮症（recurrent pyoderma，每年發作 ≥ 2 次）最常見根本原因：
+
+| 原因 | 診斷工具 |
+|------|---------|
+| 犬異位性皮膚炎（CAD）| 病史 + 排除試驗 + 過敏試驗 |
+| 食物不良反應 | 8-12 週水解蛋白飼料排除試驗 |
+| 甲狀腺功能低下 | T4、FT4 測定 |
+| 腎上腺皮質功能亢進（Cushing's）| LDDS 或 HDDS |
+| 蠕形蟎症 | 深層皮膚刮取 |
+
+**治療策略**：
+1. 積極控制根本原因（最重要）
+2. 外用 chlorhexidine 維持藥浴（每週 1-2 次）長期預防
+3. 若必須用全身性抗生素，選最窄效、最短療程
+
+[圖片：淺層vs深層膿皮症組織病理示意圖]
+`,
+  clinical_pearl: '反覆性膿皮症停止抗生素後馬上復發 → 幾乎確定有未處理的潛在疾病（最常見是 CAD）。治標（抗生素）不治本（過敏管理）是最常見的臨床錯誤。外用 2% chlorhexidine 藥浴每週 1-2 次可有效減少發作頻率，是長期維持治療的核心手段。',
+  common_mistakes: [
+    '淺層膿皮症療程太短（< 3 週）就停藥 → 復發',
+    '反覆膿皮症只給抗生素而不找根本原因',
+    'MRSP 病例沒做 C&S 就試驗多種抗生素 → 加速抗藥性',
+    '以 Fluoroquinolone 作第一線 → 產生 MRSP 的風險增加',
+    '深層膿皮症療程不足（< 6-8 週）',
+    '忽視外用治療的重要性，完全依賴口服抗生素',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '抗生素選擇段落後', type: 'comparison_table', description: '膿皮症一線 vs 二線抗生素比較表' },
+    { position: '外用治療段落後', type: 'flowchart', description: '膿皮症治療決策流程圖（淺層 vs 深層 vs 反覆）' },
+  ],
+  interactive_placeholders: [
+    { position: '劑量段落', type: 'drug_calculator', description: 'Cephalexin/Amoxicillin-clavulanate 劑量計算器' },
+  ],
+  drug_api_links: ['Cephalexin', 'Amoxicillin-clavulanate', 'Clindamycin', 'Chlorhexidine'],
+  references: [
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '膿皮症完整章節，含抗生素選擇指引' },
+    { type: 'guideline', citation: 'Hillier A, et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (SAF). Vet Dermatol. 2014;25(3):163-e43.', relevance: '犬淺層膿皮症抗生素治療臨床實踐指引' },
+    { type: 'journal', citation: 'Weese JS, van Duijkeren E. Methicillin-resistant Staphylococcus aureus and Staphylococcus pseudintermedius in veterinary medicine. Vet Microbiol. 2010;140(3-4):418-29.', relevance: 'MRSA/MRSP 獸醫臨床回顧，含流行病學與治療策略' },
+    { type: 'guideline', citation: 'ISCAID (International Society for Companion Animal Infectious Diseases). Antimicrobial Use Guidelines for Treatment of Dermatological Infections in Dogs and Cats. Vet Dermatol. 2023;34(5):e81-e108.', relevance: '最新犬貓皮膚感染抗生素使用指引，含 MRSP 管理' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 藥物不良反應 (Drug Eruption)，疾病型 */
 const contentDrugEruption: NodeContent = {
   id: 'CONTENT-DERM-L3-011',
@@ -5627,6 +5768,7 @@ export const DERM_CONTENTS = new Map<string, NodeContent>([
   ['DERM-L5-003', contentImmunomodulation],
   ['DERM-L5-004', contentOticTherapy],
   ['DERM-L5-005', contentAntifungal],
+  ['DERM-L5-006', contentAntibioticTherapy],
   ['DERM-L3-011', contentDrugEruption],
   ['DERM-L3-012', contentAlopeciaX],
   ['DERM-L3-013', contentCTCL],

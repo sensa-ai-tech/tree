@@ -191,7 +191,9 @@ export const DERM_EDGES: KnowledgeEdge[] = [
 
   // ─── Phase 3: 膿皮症 → 治療邊（Phase 3.4 補齊）───
   // DERM-L3-005 (膿皮症) → DERM-L5-001 (過敏性皮膚病管理)
-  // 注：膿皮症治療核心為找出並治療根本原因（最常見過敏）並搭配抗生素；
-  //     全身性抗生素療法待 DERM-L5-006 節點建立後可另設專屬邊
+  // 膿皮症治療：雙邊路徑
+  //   E-082: 反覆膿皮症 → 過敏管理（根本原因）
+  //   E-083: 膿皮症 → 抗生素治療（直接控制細菌感染的治療路徑）
   { id: 'DERM-E-082', source_node_id: 'DERM-L3-005', target_node_id: 'DERM-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '反覆性膿皮症的根本治療在於管理潛在過敏原因（CAD/食物不良反應），同時搭配抗生素（局部 chlorhexidine 或全身性抗生素）控制細菌感染', bidirectional: false, unlock_condition: null },
+  { id: 'DERM-E-083', source_node_id: 'DERM-L3-005', target_node_id: 'DERM-L5-006', relation_type: 'clinical_apply', weight: 1.0, description: '細菌性膿皮症的直接治療：全身性抗生素（cephalexin 一線）+ 外用 chlorhexidine 藥浴；深層膿皮症療程 ≥ 6-8 週，反覆病例須做 C&S 排除 MRSP', bidirectional: false, unlock_condition: null },
 ];
