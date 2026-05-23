@@ -138,10 +138,10 @@ exports[`seed-content snapshot: 結構性指標 > node_type 分佈穩定 1`] = `
 exports[`seed-content snapshot: 結構性指標 > relation_type 分佈穩定（邊類型） 1`] = `
 {
   "builds_on": 53,
-  "clinical_apply": 418,
+  "clinical_apply": 423,
   "complication": 68,
   "cross_specialty": 4,
-  "differential": 46,
+  "differential": 49,
   "drug_related": 19,
   "prerequisite": 188,
   "same_system": 13,
@@ -175,7 +175,7 @@ exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分
 exports[`seed-content snapshot: 結構性指標 > 總節點數 + 邊數 + 路徑數 維持穩定 1`] = `
 {
   "contents": 266,
-  "edges": 809,
+  "edges": 817,
   "nodes": 266,
   "paths": 47,
   "questions": 1953,

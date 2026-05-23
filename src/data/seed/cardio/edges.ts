@@ -129,4 +129,12 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
   { id: 'CARDIO-E-056', source_node_id: 'CARDIO-L1-001', target_node_id: 'CARDIO-L3-006', relation_type: 'prerequisite', weight: 1, description: '心臟解剖學是理解先天性心臟病（PDA/PS/SAS）結構異常的前置知識', bidirectional: false, unlock_condition: null },
   // CARDIO-L3-007 (心律不整各論) ← L1-002 (心臟電生理學)
   { id: 'CARDIO-E-057', source_node_id: 'CARDIO-L1-002', target_node_id: 'CARDIO-L3-007', relation_type: 'prerequisite', weight: 1, description: '心臟電生理學是理解臨床心律不整（SVT/VT/AF/SSS）的前置知識', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 補齊 differential 邊（+3）───
+  // HCM ↔ MMVD: 貓心超鑑別（舒張功能障礙 vs 瓣膜脫垂）
+  { id: 'CARDIO-E-058', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L3-001', relation_type: 'differential', weight: 0.9, description: '貓 HCM 與犬 MMVD 均可引起 CHF，需以心超鑑別（LVPWd 增厚 vs 瓣膜脫垂反流）', bidirectional: true, unlock_condition: null },
+  // 心包膜積液 ↔ DCM: 右心衰竭鑑別
+  { id: 'CARDIO-E-059', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L3-002', relation_type: 'differential', weight: 0.8, description: '心包膜積液與 DCM 均可出現腹水/頸靜脈怒張，需以心超鑑別（積液 vs 心室擴大收縮差）', bidirectional: true, unlock_condition: null },
+  // ATE ↔ 肺高壓: 貓呼吸困難/後肢癱瘓鑑別
+  { id: 'CARDIO-E-060', source_node_id: 'CARDIO-L3-010', target_node_id: 'CARDIO-L3-009', relation_type: 'differential', weight: 0.7, description: '貓 ATE（後肢癱瘓/蒼白/冰冷）需與繼發肺高壓造成的右心失代償鑑別，常同時存在', bidirectional: true, unlock_condition: null },
 ];

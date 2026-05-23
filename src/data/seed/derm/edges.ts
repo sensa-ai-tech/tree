@@ -188,4 +188,10 @@ export const DERM_EDGES: KnowledgeEdge[] = [
 
   // DERM-L3-013 (皮膚淋巴瘤 CTCL)：需免疫學基礎理解 T 細胞腫瘤行為
   { id: 'DERM-E-081', source_node_id: 'DERM-L1-002', target_node_id: 'DERM-L3-013', relation_type: 'prerequisite', weight: 1, description: '皮膚免疫學（T 細胞亞群與嗜皮性）是理解 CTCL 嗜表皮行為的基礎', bidirectional: false, unlock_condition: null },
+
+  // ─── Phase 3: 膿皮症 → 治療邊（Phase 3.4 補齊）───
+  // DERM-L3-005 (膿皮症) → DERM-L5-001 (過敏性皮膚病管理)
+  // 注：膿皮症治療核心為找出並治療根本原因（最常見過敏）並搭配抗生素；
+  //     全身性抗生素療法待 DERM-L5-006 節點建立後可另設專屬邊
+  { id: 'DERM-E-082', source_node_id: 'DERM-L3-005', target_node_id: 'DERM-L5-001', relation_type: 'clinical_apply', weight: 0.9, description: '反覆性膿皮症的根本治療在於管理潛在過敏原因（CAD/食物不良反應），同時搭配抗生素（局部 chlorhexidine 或全身性抗生素）控制細菌感染', bidirectional: false, unlock_condition: null },
 ];

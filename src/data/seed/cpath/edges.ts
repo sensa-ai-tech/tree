@@ -59,6 +59,11 @@ export const CPATH_EDGES: KnowledgeEdge[] = [
   { id: 'CPATH-E-033', source_node_id: 'CPATH-L4-001', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: 'CBC結果需要整合判讀', bidirectional: false, unlock_condition: null },
   { id: 'CPATH-E-034', source_node_id: 'CPATH-L4-002', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '生化結果需要整合判讀', bidirectional: false, unlock_condition: null },
   { id: 'CPATH-E-035', source_node_id: 'CPATH-L4-003', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '細胞學結果需要整合判讀', bidirectional: false, unlock_condition: null },
+  // ─── Phase 3: 補齊 L4→L5 整合判讀邊（凝血/血氣/尿液/內分泌）───
+  { id: 'CPATH-E-038', source_node_id: 'CPATH-L4-004', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '凝血功能結果（PT/aPTT/FDP）需整合判讀以區分消耗性、生成障礙性或血管性出血', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-039', source_node_id: 'CPATH-L4-005', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '血液氣體分析（pH/HCO3/pCO2）需整合判讀以定性酸鹼失衡類型及代償狀態', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-040', source_node_id: 'CPATH-L4-009', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '尿液分析（USG/蛋白/沉渣/UPC）需整合判讀以評估腎功能及下泌尿道狀態', bidirectional: false, unlock_condition: null },
+  { id: 'CPATH-E-041', source_node_id: 'CPATH-L4-010', target_node_id: 'CPATH-L5-001', relation_type: 'clinical_apply', weight: 0.8, description: '內分泌功能檢測（LDDS/T4/fructosamine）需整合判讀，結合臨床症狀才能確診', bidirectional: false, unlock_condition: null },
 
   // ═══════════════════════════════════════════
   // Differential edges（鑑別/互補判讀）2 edges
