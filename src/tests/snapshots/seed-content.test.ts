@@ -118,6 +118,71 @@ describe('seed-content snapshot: 核心節點 contents 鎖定', () => {
   }
 });
 
+// ── Phase 2 新節點品質不變式（13 nodes 全部必過）──────────────────────────────
+describe('seed-content: Phase 2 新節點品質不變式', () => {
+  const PHASE2_NODES = [
+    // IM +5
+    'IM-L2-007', 'IM-L3-020', 'IM-L3-021', 'IM-L3-022', 'IM-L3-023',
+    // DERM +2
+    'DERM-L3-014', 'DERM-L4-005',
+    // SURG +3
+    'SURG-L3-016', 'SURG-L3-017', 'SURG-L3-018',
+    // NEURO / ONCO / ECC +1 each
+    'NEURO-L4-005', 'ONCO-L5-006', 'ECC-L3-014',
+  ] as const;
+
+  it('所有 Phase 2 節點都有 Content 且 body ≥ 500 chars', () => {
+    for (const nodeId of PHASE2_NODES) {
+      const content = SEED_NODE_CONTENTS.get(nodeId);
+      expect(content, `${nodeId} 缺少 content`).toBeDefined();
+      expect(
+        content!.body.length,
+        `${nodeId} body 長度 ${content!.body.length} < 500`
+      ).toBeGreaterThanOrEqual(500);
+    }
+  });
+
+  it('所有 Phase 2 節點各有 ≥ 8 道題目', () => {
+    for (const nodeId of PHASE2_NODES) {
+      const count = SEED_QUESTIONS.filter((q) => q.node_id === nodeId).length;
+      expect(count, `${nodeId} 只有 ${count} 題（需 ≥8）`).toBeGreaterThanOrEqual(8);
+    }
+  });
+
+  it('所有 Phase 2 節點有 clinical_pearl（非空）', () => {
+    for (const nodeId of PHASE2_NODES) {
+      const content = SEED_NODE_CONTENTS.get(nodeId);
+      if (!content) continue; // 由第一個 test 覆蓋
+      expect(
+        content.clinical_pearl.length,
+        `${nodeId} clinical_pearl 為空`
+      ).toBeGreaterThan(10);
+    }
+  });
+
+  it('所有 Phase 2 節點有 ≥ 3 個 learning_objectives', () => {
+    for (const nodeId of PHASE2_NODES) {
+      const content = SEED_NODE_CONTENTS.get(nodeId);
+      if (!content) continue;
+      expect(
+        content.learning_objectives.length,
+        `${nodeId} 學習目標 < 3`
+      ).toBeGreaterThanOrEqual(3);
+    }
+  });
+
+  it('所有 Phase 2 節點有 ≥ 3 個 references', () => {
+    for (const nodeId of PHASE2_NODES) {
+      const content = SEED_NODE_CONTENTS.get(nodeId);
+      if (!content) continue;
+      expect(
+        content.references.length,
+        `${nodeId} 參考文獻 < 3`
+      ).toBeGreaterThanOrEqual(3);
+    }
+  });
+});
+
 describe('seed-content snapshot: 不變式', () => {
   it('所有節點 id 唯一', () => {
     const ids = ALL_NODES.map((n) => n.id);

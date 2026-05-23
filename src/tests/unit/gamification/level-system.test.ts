@@ -132,3 +132,59 @@ describe('getXPForLevel', () => {
     }
   });
 });
+
+// ── Mutation-killing: labelEn 完整斷言（kills survivors 3-8）──────────────────
+describe('getTierFromLevel — labelEn & label exhaustive', () => {
+  it('intern tier (1-5): labelEn is exactly "Intern"', () => {
+    expect(getTierFromLevel(1).labelEn).toBe('Intern');
+    expect(getTierFromLevel(5).labelEn).toBe('Intern');
+  });
+
+  it('resident tier (6-10): label and labelEn both correct', () => {
+    expect(getTierFromLevel(6).label).toBe('住院獸醫');
+    expect(getTierFromLevel(6).labelEn).toBe('Resident');
+    expect(getTierFromLevel(10).labelEn).toBe('Resident');
+  });
+
+  it('diplomate tier (16-20): label and labelEn both correct', () => {
+    expect(getTierFromLevel(16).label).toBe('學科專家');
+    expect(getTierFromLevel(16).labelEn).toBe('Diplomate');
+    expect(getTierFromLevel(20).label).toBe('學科專家');
+    expect(getTierFromLevel(20).labelEn).toBe('Diplomate');
+  });
+
+  it('mentor tier (21+): label and labelEn both correct', () => {
+    expect(getTierFromLevel(21).label).toBe('導師');
+    expect(getTierFromLevel(21).labelEn).toBe('Mentor');
+    expect(getTierFromLevel(25).label).toBe('導師');
+    expect(getTierFromLevel(25).labelEn).toBe('Mentor');
+  });
+});
+
+// ── Mutation-killing: exact progressToNext arithmetic（kills survivors 9 & 12）
+describe('getLevelInfo — exact progressToNext arithmetic', () => {
+  it('progressToNext = xpInLevel / xpNeeded (not +, not *)', () => {
+    // Level 2: xpForCurrentLevel=500, xpForNextLevel=1200, xpNeeded=700
+    // At XP=850: xpInLevel=350, progressToNext=350/700=0.5 exactly
+    // mutant (+): xpNeeded=1700 → 350/1700≈0.206  ≠ 0.5
+    // mutant (*): 350*700=245000 → clamped to 1        ≠ 0.5
+    const info = getLevelInfo(850);
+    expect(info.level).toBe(2);
+    expect(info.progressToNext).toBe(0.5);
+  });
+
+  it('progressToNext mid-level is xpInLevel/xpNeeded (level 3 check)', () => {
+    // Level 3: xpForCurrentLevel=1200, xpForNextLevel=2100, xpNeeded=900
+    // At XP=1650: xpInLevel=450, progressToNext=450/900=0.5
+    const info = getLevelInfo(1650);
+    expect(info.level).toBe(3);
+    expect(info.progressToNext).toBe(0.5);
+  });
+
+  it('progressToNext at XP=750 matches division not sum', () => {
+    // xpNeeded should be 700 (1200-500), not 1700 (1200+500)
+    // progressToNext = 250/700 ≈ 0.3571...
+    const info = getLevelInfo(750);
+    expect(info.progressToNext).toBeCloseTo(250 / 700, 5);
+  });
+});
