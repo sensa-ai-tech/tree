@@ -4821,6 +4821,151 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
   created_at: now,
 };
 
+/** MUO/GME 免疫抑制治療 - 治療型 */
+const contentMUOImmunosuppression: NodeContent = {
+  id: 'CONTENT-NEURO-L5-004',
+  node_id: 'NEURO-L5-004',
+  version: 1,
+  summary: 'MUO（不明原因腦膜腦炎）是犬非感染性腦炎的總稱，涵蓋 GME、NME、NLE。治療主幹是高劑量 prednisolone 誘導免疫抑制；複發或控制不佳時加入 cytarabine（Ara-C）組合方案，中位存活期可從 6 個月延長至 1 年以上。監測重點是 CBC（Ara-C 骨髓抑制）和 8-12 週後 MRI 追蹤。',
+  learning_objectives: [
+    '說明 MUO 的三大亞型（GME / NME / NLE）及其品種特異性',
+    '列出 prednisolone 誘導劑量（2 mg/kg/day）與 8-12 週逐步減量方案',
+    '描述 cytarabine SC 方案（25-50 mg/m² q12h × 2 days，每 4-6 週一輪）的操作要點與毒性監測',
+    '比較 cyclosporine、MMF、procarbazine 作為替代免疫抑制劑的適用情境',
+    '解釋 MUO 亞型對預後的影響（GME 局灶 > 播散；NLE > NME）',
+  ],
+  key_points: [
+    'MUO 三大亞型：GME（肉芽腫性，最常見，任何小型犬）、NME（壞死性灰質腦炎，Pug 好發）、NLE（壞死性白質腦炎，Yorkshire/French Bulldog）',
+    'Prednisolone 誘導：2 mg/kg/day（或 4 mg/kg/day 嚴重病例）PO，持續 4 週後每 4-6 週減量 25-30%，目標維持劑量 0.5 mg/kg 每隔天',
+    'Cytarabine（Ara-C）SC 方案：25-50 mg/m² SC q12h × 2 連續天，每 4-6 週一輪；CRI 替代方案 200 mg/m² 靜脈持續滴注 24 小時',
+    'Ara-C 毒性監測：每輪治療前 CBC（血小板減少、中性球減少）；GI 副作用（嘔吐、腹瀉）可能在給藥後 3-7 天出現',
+    'GME 存活資料：prednisolone 單用中位 6-14 個月；prednisolone + cytarabine 中位 > 14 個月（部分研究 > 2 年）',
+    'MRI 追蹤：起始治療後 8-12 週複查（評估病灶縮小或新病灶），病情穩定後每 6-12 個月 MRI 維持追蹤',
+    '替代/輔助免疫抑制：Cyclosporine（5-10 mg/kg PO BID，犬；監測血中濃度 100-400 ng/mL）、Mycophenolate mofetil（10-20 mg/kg PO BID）、Procarbazine（25-50 mg/m² PO SID）',
+    '緊急情境：嚴重神經缺損伴顱壓升高 → 加用 mannitol（0.5-1 g/kg IV）或地塞米松 0.1-0.25 mg/kg IV 初期橋接',
+  ],
+  body: `# 神經科免疫抑制治療（MUO/GME）
+
+## 一、MUO 分類與鑑別診斷 (Classification)
+
+MUO（Meningoencephalitis of Unknown Origin，不明原因腦膜腦炎）是排除感染性與腫瘤性原因後的總稱。
+
+| 亞型 | 全名 | 好發品種 | 病理特徵 | 預後 |
+|------|------|---------|----------|------|
+| GME | Granulomatous MeningoEncephalitis | 小型犬（Miniature Poodle、Maltese、Chihuahua）；< 5 歲 | 圍血管套袖（perivascular cuffing），淋巴球 / 單核球浸潤，可局灶 / 播散 / 視覺型 | 中等；局灶 > 播散 |
+| NME | Necrotizing MeningoEncephalitis | Pug、Pekingese（品種特異性最強） | 大腦皮質灰質壞死 + 炎症 | 最差（Pug 中位 < 3 個月） |
+| NLE | Necrotizing LeukoEncephalitis | Yorkshire Terrier、French Bulldog | 大腦白質多發性壞死灶 | 比 NME 稍好 |
+
+> **診斷前提**：MUO 診斷需先排除 Toxoplasma、Neospora、Cryptococcus、CDV、感染性腦炎，以及腦腫瘤（淋巴瘤、腦膜瘤），才能確認免疫介導性腦炎。
+
+## 二、一線治療：Prednisolone 免疫抑制方案 (Prednisolone Protocol)
+
+### 誘導期（0-4 週）
+- **Prednisolone 2 mg/kg/day PO**（重症 / 播散性 GME 可用 4 mg/kg/day 誘導，或靜脈 Dexamethasone 0.2 mg/kg BID 至口服穩定）
+- 分 BID 給藥（早晨給較大劑量以配合皮質醇晝夜節律）
+- 同時給予胃保護劑（Omeprazole 0.7-1 mg/kg PO SID）
+
+### 減量期（第 4 週起）
+- 每 4-6 週減量 25-30%（確認神經狀態穩定後才減）
+- 目標長期維持：0.5 mg/kg 隔天一次（QOD），持續至少 6 個月甚至終生
+- 若復發，回到上一個有效劑量 + 考慮加 cytarabine
+
+### 副作用監測
+| 副作用 | 監測指標 | 處置 |
+|-------|---------|------|
+| 肝損傷（固醇性肝病） | ALT、ALP、膽汁酸，每 3 個月 | 若 ALP > 5×ULN 考慮減量 |
+| 多飲多尿 | 尿液分析、USG | 控制鹽分攝取 |
+| 醫源性 Cushing | 外觀評估、超音波 | 評估 QOL、進一步減量 |
+| 肌肉萎縮 / 脂肪重分布 | 體重、體態評分 | 低卡飼料 + 維持適度運動 |
+
+## 三、組合治療：Cytarabine（Ara-C）方案 (Cytarabine Protocol)
+
+### 適應症
+- Prednisolone 單用控制不佳（治療 4-8 週後仍有進展）
+- 復發病例（減量過程中神經惡化）
+- 重症播散性 GME（部分神經科醫師直接在誘導期使用組合方案）
+
+### SC 方案（臨床最常用）
+| 參數 | 細節 |
+|-----|------|
+| 劑量 | 25-50 mg/m² SC |
+| 頻率 | 每日兩次（q12h）× 連續 2 天為一輪 |
+| 輪次間隔 | 每 4-6 週重複（依 CBC 結果決定是否如期給藥） |
+| 給藥位置 | 頸背部或肩胛間 SC，不需特殊準備 |
+
+### CRI 方案（住院替代選項）
+- **200 mg/m² IV 持續滴注 24 小時**
+- 等效療效，但需住院監護
+- 適合無法配合 SC 給藥的情況
+
+### 毒性監測（關鍵！）
+1. **給藥前** CBC（特別是血小板和 ANC）
+   - 血小板 < 75,000/μL 或 ANC < 1,500/μL → 延後本輪
+2. **給藥後 7-10 天** CBC（骨髓抑制高峰期）
+   - 多數病例輕微且可恢復；貓比犬更敏感（犬較少嚴重骨髓抑制）
+3. GI 症狀：噁心、嘔吐、腹瀉（給藥後 3-7 天）
+   - Maropitant 1 mg/kg SC/PO SID 預防性給予
+
+## 四、替代免疫抑制劑 (Alternative Immunosuppressants)
+
+| 藥物 | 劑量 | 監測重點 | 適用情境 |
+|-----|------|---------|---------|
+| Cyclosporine | 5-10 mg/kg PO BID（犬）；隨飼料調整吸收 | 血中濃度 100-400 ng/mL（谷值）；腎功能 | prednisolone + cyclosporine 組合已有報告 |
+| Mycophenolate mofetil (MMF) | 10-20 mg/kg PO BID（犬）| CBC 每 4 週；GI 副作用 | 不耐 Ara-C 者、長期維持替代 |
+| Procarbazine | 25-50 mg/m² PO SID × 7 days，休息 1 週 | CBC；肝功能；**避免富含酪胺食物（MAO-like 作用）** | 頑固性 GME；神經科轉診中心使用 |
+| Lomustine (CCNU) | 50-60 mg/m² PO 每 6 週 | CBC（延遲性血小板減少，給藥後 5-6 週）| 播散性頑固 GME；有腫瘤科背景時使用 |
+
+## 五、預後 (Prognosis)
+
+| 亞型 | 治療 | 中位存活期 |
+|------|------|-----------|
+| GME（局灶性） | Prednisolone 單用 | 12-14 個月 |
+| GME（播散性） | Prednisolone 單用 | 3-6 個月 |
+| GME（任何）| Prednisolone + Ara-C | > 14 個月（部分 > 2 年）|
+| NME（Pug）| 任何方案 | < 3-6 個月 |
+| NLE | Prednisolone ± Ara-C | 6-12 個月（較 NME 佳）|
+
+## 六、追蹤計畫 (Follow-up)
+
+| 時間點 | 評估項目 |
+|--------|---------|
+| 治療前 | MRI + CSF（基線）；CBC；生化；感染血清學 |
+| 第 2 週 | 神經學理學檢查；有無固醇副作用 |
+| 第 4-6 週（減量前）| 神經評估決定是否減量 |
+| 第 8-12 週 | **複查 MRI**（評估病灶縮小或穩定）|
+| 每 4-6 週（Ara-C 給藥前後） | CBC |
+| 每 3 個月 | 生化（肝腎功能）；神經評估 |
+| 症狀穩定後每 6-12 個月 | 選擇性 MRI 追蹤 |`,
+  clinical_pearl: 'MUO 免疫抑制治療的最大陷阱是「減量太快」——多數復發發生在 prednisolone 減量至 < 0.5 mg/kg/day 之後，建議每次減量後至少觀察 4-6 週再繼續減。Cytarabine 屬細胞毒性化療藥物，必須由訓練有素的獸醫師或護理師在診所內以適當 PPE 執行 SC 給藥，廢棄物依化療廢棄物規範處置；切勿交由飼主在家自行注射。NME（Pug 腦炎）即便積極治療預後仍差，診斷後應誠實與飼主溝通，部分選擇安寧照護。台灣：Cytarabine 以人用藥取得（Cytosar-U），需特別留意劑量換算（mg/m² 而非 mg/kg）。',
+  common_mistakes: [
+    'MUO 確診前未排除感染性腦炎（Toxoplasma、Cryptococcus、CDV），貿然開始免疫抑制反而惡化',
+    'Prednisolone 減量過快（少於 4-6 週間隔），導致復發率上升',
+    '給 Cytarabine 前未先查 CBC，在骨髓抑制狀態給藥加重毒性',
+    '混淆 Cytarabine 劑量單位：SC 方案 mg/m²（體表面積）而非 mg/kg',
+    '誤以為 NME 和 GME 預後相同，未調整與飼主的溝通策略',
+    '未給予胃黏膜保護劑，導致固醇誘發性胃潰瘍（尤其合用 NSAIDs 時更危險）',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '治療流程開頭', type: 'diagram', description: 'MUO 治療決策流程圖（確診 → prednisolone → Ara-C 加入時機）' },
+    { position: 'Cytarabine 方案表格後', type: 'diagram', description: 'Cytarabine SC 方案時間軸（輪次間隔 + CBC 監測時間點）' },
+  ],
+  interactive_placeholders: [
+    { position: '劑量計算段落', type: 'calculator', description: '體表面積計算器（輸入體重 → 輸出 BSA 和 Ara-C 劑量）' },
+  ],
+  drug_api_links: ['Prednisolone', 'Cytarabine', 'Cyclosporine', 'Mycophenolate mofetil', 'Maropitant'],
+  references: [
+    { type: 'journal', citation: 'Flegel T, Henke D, Boettcher IC, et al. Retrospective analysis of 50 canine meningoencephalomyelitis of unknown etiology cases treated with prednisolone alone or prednisolone with cytosine arabinoside. J Am Anim Hosp Assoc. 2011;47(5):e100-e107.', relevance: 'GME prednisolone ± cytarabine 存活期比較（核心療效數據）' },
+    { type: 'journal', citation: 'Cornelis I, Van Ham L, Gielen I, et al. Clinical presentation, diagnosis, treatment and outcome of dogs and cats with meningoencephalomyelitis of unknown origin: a review. Vet J. 2019;244:37-43.', relevance: 'MUO 綜合回顧，治療選項與預後' },
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 7: Encephalopathies.', relevance: 'GME/NME/NLE 臨床分類與治療標準教材' },
+    { type: 'journal', citation: 'Granger N, Hidalgo A, Vaughan K, et al. Cytosine arabinoside for treatment of meningoencephalomyelitis of unknown origin in 26 dogs: a retrospective study of the long-term outcome. J Small Anim Pract. 2010;51(5):245-249.', relevance: 'Cytarabine 長期療效（中位存活 > 14 個月）' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const NEURO_CONTENTS = new Map<string, NodeContent>([
   ['NEURO-L0-001', contentNeuroOverview],
@@ -4856,4 +5001,5 @@ export const NEURO_CONTENTS = new Map<string, NodeContent>([
   ['NEURO-L3-014', contentCMSM],
   ['NEURO-L3-015', contentNME],
   ['NEURO-L3-016', contentCDS],
+  ['NEURO-L5-004', contentMUOImmunosuppression],
 ]);

@@ -37,6 +37,8 @@ export const NEURO_NODES: KnowledgeNode[] = [
   { id: 'NEURO-L5-002', specialty: 'NEURO', title: '脊椎手術基礎', title_en: 'Basic Spinal Surgery', layer: 5, node_type: 'therapeutic', difficulty: 5, estimated_minutes: 30, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['脊椎', '手術'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
   { id: 'NEURO-L5-003', specialty: 'NEURO', title: '神經科復健', title_en: 'Neurological Rehabilitation', layer: 5, node_type: 'therapeutic', difficulty: 4, estimated_minutes: 20, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['復健', '物理治療'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
 
+  { id: 'NEURO-L5-004', specialty: 'NEURO', title: '神經科免疫抑制治療', title_en: 'Immunosuppressive Therapy for Neurological MUO', layer: 5, node_type: 'therapeutic', difficulty: 4, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['免疫抑制', 'MUO', 'GME', 'prednisolone', 'cytarabine'], encyclopedia_link: null, cross_specialty_notes: 'IM - 免疫抑制藥物副作用管理', created_at: now, updated_at: now },
+
   // ─── Phase 2B 擴展（7 nodes）───
   // Layer 2: 病理機轉（擴充）
   { id: 'NEURO-L2-005', specialty: 'NEURO', title: '顱內壓升高機轉', title_en: 'Increased Intracranial Pressure Pathophysiology', layer: 2, node_type: 'mechanism', difficulty: 3, estimated_minutes: 20, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['ICP', '顱內壓', '腦水腫'], encyclopedia_link: null, cross_specialty_notes: 'ECC - 顱腦外傷急診', created_at: now, updated_at: now },

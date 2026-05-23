@@ -178,4 +178,8 @@ export const NEURO_EDGES: KnowledgeEdge[] = [
 
   // NEURO-L3-015 (壞死性腦炎 NME/NLE) ← L1-001 (神經系統解剖)
   { id: 'NEURO-E-094', source_node_id: 'NEURO-L1-001', target_node_id: 'NEURO-L3-015', relation_type: 'prerequisite', weight: 1, description: '大腦皮質與白質解剖是理解壞死性腦炎病灶分布（NME 灰質 vs NLE 白質）的前置知識', bidirectional: false, unlock_condition: null },
+
+  // NEURO-L5-004 (MUO 免疫抑制治療) ← L3-003 (GME) / L3-015 (NME/NLE)
+  { id: 'NEURO-E-095', source_node_id: 'NEURO-L3-003', target_node_id: 'NEURO-L5-004', relation_type: 'clinical_apply', weight: 1.0, description: 'GME 的核心治療即高劑量 prednisolone 誘導後緩慢減量，複發病例加用 cytarabine 組合免疫抑制', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-096', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L5-004', relation_type: 'clinical_apply', weight: 1.0, description: 'NME/NLE 同屬 MUO 範疇，治療框架與 GME 相同（prednisolone + cytarabine），但 NME（Pug）預後較差', bidirectional: false, unlock_condition: null },
 ];
