@@ -29,10 +29,14 @@ export const CARDIO_NODES: KnowledgeNode[] = [
   { id: 'CARDIO-L4-003', specialty: 'CARDIO', title: '心電圖判讀', title_en: 'ECG Interpretation', layer: 4, node_type: 'diagnostic', difficulty: 3, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['ECG', '電生理'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
   { id: 'CARDIO-L4-004', specialty: 'CARDIO', title: '胸腔 X 光判讀', title_en: 'Thoracic Radiograph Interpretation', layer: 4, node_type: 'diagnostic', difficulty: 3, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['X光', '影像'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
 
+  { id: 'CARDIO-L4-005', specialty: 'CARDIO', title: '心臟生物標記物', title_en: 'Cardiac Biomarkers (NT-proBNP / Troponin I)', layer: 4, node_type: 'diagnostic', difficulty: 3, estimated_minutes: 20, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['NT-proBNP', 'Troponin', '生物標記', '分期'], encyclopedia_link: null, cross_specialty_notes: 'IM - 腎功能影響 NT-proBNP; ECC - 急性心肌損傷', created_at: now, updated_at: now },
+
   // Layer 5: 治療與管理
   { id: 'CARDIO-L5-001', specialty: 'CARDIO', title: '心臟衰竭治療', title_en: 'Heart Failure Treatment', layer: 5, node_type: 'therapeutic', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['CHF', '治療', '藥物'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
   { id: 'CARDIO-L5-002', specialty: 'CARDIO', title: '抗心律不整藥物', title_en: 'Antiarrhythmic Drugs', layer: 5, node_type: 'therapeutic', difficulty: 4, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 4, status: 'published', version: 1, tags: ['藥物', '心律不整'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
   { id: 'CARDIO-L5-003', specialty: 'CARDIO', title: '心包膜穿刺術', title_en: 'Pericardiocentesis', layer: 5, node_type: 'procedure', difficulty: 5, estimated_minutes: 20, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['手術', '急診'], encyclopedia_link: null, cross_specialty_notes: null, created_at: now, updated_at: now },
+
+  { id: 'CARDIO-L5-005', specialty: 'CARDIO', title: '抗血栓治療', title_en: 'Antithrombotic Therapy', layer: 5, node_type: 'therapeutic', difficulty: 4, estimated_minutes: 20, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['抗血栓', 'clopidogrel', 'HCM', 'ATE', '貓'], encyclopedia_link: null, cross_specialty_notes: 'ECC - ATE 急性處理; IM - 抗凝治療監測', created_at: now, updated_at: now },
 
   // ─── Phase 2A 擴展（7 nodes）───
   // Layer 2: 病理機轉（擴充）

@@ -4669,6 +4669,248 @@ HCM 特殊考量：
   created_at: now,
 };
 
+/** 心臟生物標記物，診斷型 */
+const contentCardiacBiomarkers: NodeContent = {
+  id: 'CONTENT-CARDIO-L4-005',
+  node_id: 'CARDIO-L4-005',
+  version: 1,
+  summary: '心臟生物標記物（cardiac biomarkers）是輔助心臟病診斷、分期與監測的血液檢查工具，分為心肌負荷標記物和心肌損傷標記物兩類。NT-proBNP（N端B型利鈉肽前體）反映心肌牽張與心腔壓力，是 ACVIM 分期輔助指標：犬 NT-proBNP > 1500 pmol/L 提示心臟重塑，與 MMVD B2 期標準高度相關。心肌旋轉蛋白 I（Troponin I, cTnI）是心肌細胞損傷的特異性指標，升高見於急性心肌損傷、心肌炎、嚴重 CHF、心包膜炎及全身性疾病（敗血症、腎衰竭）的繼發性心肌損傷。兩者聯合使用可區分心因性呼吸困難與非心因性呼吸困難（急診分診）、識別 occult 心肌病（治療前篩查）、監測疾病進展及評估療效。',
+  learning_objectives: [
+    '區分 NT-proBNP 與 Troponin I 的生理意義與臨床適應症',
+    '運用 NT-proBNP 閾值輔助犬 MMVD 的 ACVIM 分期決策',
+    '解讀 Troponin I 升高在不同臨床情境的鑑別診斷意義',
+    '應用生物標記物輔助急性呼吸困難的病因鑑別（心因性 vs 非心因性）',
+  ],
+  key_points: [
+    '犬 NT-proBNP > 1500 pmol/L → 強烈提示心臟重塑（支持 MMVD B2 或 occult DCM 診斷）',
+    '貓 NT-proBNP > 100-200 pmol/L（依廠商不同）→ 心肌病可能；> 900 pmol/L 高度可疑',
+    'NT-proBNP 正常值可有效排除 CHF（high NPV）→ 適合急診呼吸困難快速篩查',
+    '腎功能不全時 NT-proBNP 可能因腎臟清除率下降而假性升高，需同步評估 BUN/Cr',
+    'Troponin I 升高 → 確認急性心肌損傷，見於心肌炎、嚴重心律不整、電擊、創傷',
+    'Troponin I 連續監測（6-12 hr 間隔）評估心肌損傷是否進行性惡化',
+    'Point-of-care NT-proBNP（SNAP BNP）可於診間快速定性篩查',
+  ],
+  body: `# 心臟生物標記物
+
+## 一、NT-proBNP（N端B型利鈉肽前體）
+
+### 生理機轉
+心室壁張力增加 → 心肌細胞分泌 BNP 前體（proBNP）→ 裂解為 BNP（活性）+ NT-proBNP（無活性但更穩定）。NT-proBNP 半衰期較長（60-120 分鐘），血中濃度較穩定，適合血清/血漿檢測。
+
+### 臨床切點（犬）
+| 濃度範圍 | 解讀 |
+|---------|------|
+| < 900 pmol/L | 心臟結構正常可能性高 |
+| 900–1500 pmol/L | 灰色地帶，建議配合心超 |
+| > 1500 pmol/L | 心臟重塑高度可能（B2/CHF 支持證據） |
+| > 2500 pmol/L | 臨床 CHF 可能性大 |
+
+### 臨床切點（貓）
+| 濃度範圍 | 解讀 |
+|---------|------|
+| < 100 pmol/L | 心肌病可能性低 |
+| 100–900 pmol/L | 灰色地帶，建議心超 |
+| > 900 pmol/L | 心肌病（HCM/DCM/RCM）高度可能 |
+
+### 急診應用：鑑別心因性呼吸困難
+- **NT-proBNP 正常**：較可能為非心因性（肺炎、胸腔積液非心因性、氣管炎）
+- **NT-proBNP 顯著升高**：心因性 CHF 可能性高 → 利尿劑優先
+
+### 注意事項
+- 腎功能不全（GFR 下降）→ NT-proBNP 假性升高（腎清除率降低）
+- 嚴重缺氧本身也可能輕度升高 NT-proBNP
+- 不同試劑廠商切點不同，需參考各廠商推薦值
+
+---
+
+## 二、心肌旋轉蛋白 I（Cardiac Troponin I, cTnI）
+
+### 生理意義
+cTnI 為心肌肌纖維調節蛋白，心肌細胞損傷 → 釋放至血液中。高度心肌特異性，骨骼肌損傷不會升高。
+
+### cTnI 升高的鑑別診斷
+| 疾病類別 | 代表疾病 |
+|---------|---------|
+| 原發心肌損傷 | 心肌炎、Boxer ARVC、DCM |
+| 繼發心肌損傷 | 敗血症、SIRS、腎衰竭、胃扭轉（GDV）|
+| 心律不整 | 持續性 VT/VF 導致心肌缺氧 |
+| 物理損傷 | 電擊、心臟鈍傷、心包膜積液（cardiac tamponade）|
+| 手術應激 | 心臟手術、胸腔手術、化療（doxorubicin 心毒性） |
+
+### 連續監測策略
+- **基線 → 6 小時 → 12 小時**：評估急性心肌損傷動態變化
+- 進行性上升 → 持續損傷（預後較差）
+- 快速下降 → 損傷停止（預後較好）
+
+### 限制
+- 腎功能不全可輕度升高（腎臟清除率下降）
+- 沒有明確干預治療切點（目前主要用於預後評估）
+
+---
+
+## 三、聯合應用策略
+
+| 場景 | NT-proBNP | Troponin I | 解讀 |
+|------|-----------|-----------|------|
+| 急診呼吸困難分診 | ✓ | - | 快速篩查 CHF vs 非心因性 |
+| MMVD 分期（B1 vs B2） | ✓ | - | 配合心超，> 1500 → 支持 B2 |
+| 心肌炎/ARVC 評估 | ✓ | ✓ | cTnI 升高是心肌損傷直接證據 |
+| 化療心臟毒性監測 | - | ✓ | Doxorubicin → 每療程後監測 |
+| 嚴重 CHF 治療反應 | ✓ | - | 治療後 1-2 週複測，降低代表有效 |
+
+[圖片：NT-proBNP 決策樹示意圖（急診呼吸困難分診）]
+`,
+  clinical_pearl: 'NT-proBNP 最強的臨床用途是「排除」：值正常（< 900 pmol/L）時幾乎可排除 CHF 作為急性呼吸困難的原因（高 NPV）。在急診，胸腔積液 + NT-proBNP 升高 → 心因性積液優先；NT-proBNP 正常 + 積液 → 先懷疑腫瘤/乳糜/膿胸。注意腎功能不全時需調整解讀。',
+  common_mistakes: [
+    '在腎功能不全動物中 NT-proBNP 升高直接診斷 CHF，忽略腎臟清除率影響',
+    'cTnI 升高但只診斷「心臟問題」而不做全身鑑別（GDV/敗血症也可升高）',
+    '以單次 NT-proBNP 絕對值決定分期，而不配合心超客觀指標（LA/Ao、LVIDDN）',
+    'Point-of-care SNAP BNP 陽性就等同於 B2 期，忽略其敏感性高但特異性低的特性',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '切點表格後', type: 'flowchart', description: 'NT-proBNP 急診呼吸困難分診決策樹' },
+    { position: 'cTnI 章節後', type: 'comparison_table', description: 'cTnI 升高鑑別診斷完整表' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: [],
+  references: [
+    { type: 'guideline', citation: 'Boswood A et al. The use of cardiac biomarkers in dogs and cats. J Vet Cardiol. 2008;10(2):97-111.', relevance: 'NT-proBNP 和 cTnI 臨床應用早期指引，奠定犬貓生物標記物使用基礎' },
+    { type: 'journal', citation: 'Oyama MA et al. Prospective screening for occult cardiomyopathy in dogs by measurement of plasma atrial natriuretic peptide, B-type natriuretic peptide, and cardiac troponin-I concentrations. Am J Vet Res. 2007;68(1):42-47.', relevance: '隱匿性心肌病篩查 NT-proBNP 閾值研究' },
+    { type: 'journal', citation: 'Connolly DJ, Soares Magalhaes RJ, Fuentes VL, et al. Assessment of the diagnostic accuracy of circulating natriuretic peptide concentrations to distinguish between cats with cardiac and non-cardiac causes of respiratory distress. J Vet Cardiol. 2009;11 Suppl 1:S41-50.', relevance: '貓 NT-proBNP 鑑別心因性 vs 非心因性呼吸困難準確度評估' },
+    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'ACVIM 2019 MMVD 共識，NT-proBNP 在 B2 期分期中的地位' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 抗血栓治療，治療型 */
+const contentAntithromboticTherapy: NodeContent = {
+  id: 'CONTENT-CARDIO-L5-005',
+  node_id: 'CARDIO-L5-005',
+  version: 1,
+  summary: '抗血栓治療（antithrombotic therapy）在小動物心臟科主要應用於貓 HCM 的 ATE 一級與二級預防，以及高血栓風險病例的長期管理。目前最重要的臨床依據來自 FATCAT 試驗（2015），顯示 clopidogrel 在防止貓 ATE 復發的效果優於 aspirin（中位存活 192 天 vs 43 天，p<0.01）。Clopidogrel 18.75 mg/貓/天 PO 是目前最廣泛使用的一線方案。新型口服抗凝劑 rivaroxaban（Xarelto）有初步使用報告，但仍缺乏大型 RCT 支持。犬心臟病（MMVD、DCM）血栓風險相對較低，常規抗血栓治療尚無明確適應症；感染性心內膜炎和嚴重心衰可考慮。',
+  learning_objectives: [
+    '說明 FATCAT 試驗的設計與結論，了解 clopidogrel 優於 aspirin 的臨床依據',
+    '判斷哪些貓心肌病（HCM/RCM）具有高 ATE 風險，需啟動抗血栓治療',
+    '比較 clopidogrel、aspirin 和 rivaroxaban 的機轉、劑量與監測需求',
+    '向飼主說明抗血栓治療的益處與出血風險，建立合理期待',
+  ],
+  key_points: [
+    'FATCAT 試驗（2015）：Clopidogrel 18.75 mg/貓/day vs Aspirin 81 mg/貓/72h，clopidogrel 明顯延長無再發 ATE 存活期',
+    'Clopidogrel 機轉：不可逆地抑制 ADP 受體（P2Y12），減少血小板活化與聚集',
+    '高 ATE 風險指標：LA/Ao ≥ 2.0、LA 自發性回音對比（SEC）、LA 血栓可見、HCM 嚴重分級',
+    '一級預防（未發生 ATE）：LA/Ao ≥ 2.0 貓建議 clopidogrel；< 2.0 則個案評估',
+    '二級預防（ATE 後存活）：幾乎所有病例均應長期使用 clopidogrel',
+    'Aspirin 貓劑量：5 mg/貓/72h（低劑量），但 FATCAT 顯示效果遜於 clopidogrel',
+    'Rivaroxaban（1.25 mg/貓/day）：初步文獻顯示可能有效，但尚無大型 RCT',
+    '出血風險：輕微出血（牙齦滲血、鼻出血）偶見；嚴重內出血罕見但需監測',
+  ],
+  body: `# 抗血栓治療
+
+## 一、適應症與高風險因子
+
+### 貓心肌病的血栓風險
+貓心肌病（尤其 HCM）血栓形成機制：左心房擴大 → 血流緩慢 → 高凝狀態 → 血栓形成於左心耳。血栓脫落 → 主動脈末端（鞍形血栓）→ 後肢 ATE。
+
+**高 ATE 風險指標：**
+| 指標 | 閾值 | 臨床意義 |
+|------|------|---------|
+| LA/Ao 比值 | ≥ 2.0 | 高度 LA 擴大，強烈建議抗血栓治療 |
+| 自發性回音對比（SEC）| 超音波可見 LA 內「煙霧狀」回音 | 血流緩慢的直接徵象 |
+| LA 血栓可見 | 心超發現 LA 血栓 | 絕對適應症 |
+| 嚴重 HCM（LVWT ≥ 6mm + LA 擴大）| - | 高整體風險 |
+
+---
+
+## 二、藥物選擇與劑量
+
+### Clopidogrel（首選，FATCAT 依據）
+| 項目 | 內容 |
+|------|------|
+| 劑量 | 18.75 mg/貓/天 PO（1/4 顆 75 mg 錠） |
+| 機轉 | 不可逆 P2Y12 ADP 受體拮抗 |
+| 監測 | 無需常規血液監測（不需 PT/aPTT）|
+| 停藥前等待 | 擇期手術前停藥 7-10 天 |
+| 常見副作用 | 輕微胃腸道不適、食慾略減 |
+
+### Aspirin（備選）
+| 項目 | 內容 |
+|------|------|
+| 劑量 | 5 mg/貓/72h（貓代謝慢，72 小時給一次）|
+| 機轉 | 不可逆 COX 抑制 → 減少 TXA2 生成 |
+| 限制 | FATCAT 試驗顯示效果劣於 clopidogrel |
+| 適用情境 | 費用考量時的替代選項 |
+
+### Rivaroxaban（Factor Xa 抑制劑）
+- 劑量：1.25 mg/貓/天 PO
+- 藥動學：在貓有良好生體利用率，作用可逆
+- 現況：Case series 支持，尚無前瞻性 RCT
+- 潛在優勢：對已有 LA 血栓的貓（SEC 陽性）可能更有效（抗凝 > 抗血小板）
+
+---
+
+## 三、FATCAT 試驗重點
+
+| 項目 | Clopidogrel | Aspirin |
+|------|-------------|---------|
+| 中位無再發 ATE 存活 | 192 天 | 43 天 |
+| 再發 ATE 比率 | 較低 | 較高 |
+| 結論 | **顯著優於 aspirin** | 效果有限 |
+
+> 設計：FATCAT = Feline Arterial Thromboembolism: Clopidogrel vs Aspirin Trial
+> 發表：2015年，Hogan DF et al., J Vet Intern Med
+
+---
+
+## 四、二級預防（ATE 後存活）
+
+ATE 存活後急性期穩定後：
+1. **一律建議長期 clopidogrel**（無論 LA/Ao 大小）
+2. 如有嚴重 LA 擴大或 SEC：考慮加入 rivaroxaban（雙重療法，使用經驗有限）
+3. **同時管理原發 HCM**：重新評估分期，調整利尿劑/Atenolol
+
+---
+
+## 五、犬的抗血栓治療
+
+犬心臟病血栓風險遠低於貓，常規抗血栓治療尚無明確適應症：
+- 感染性心內膜炎（IE）：推薦低劑量 aspirin + 抗生素
+- DCM 合併 AF：心率控制後評估，部分建議低劑量 aspirin
+- MMVD：不推薦常規抗血栓治療
+
+[圖片：貓 ATE 血栓形成機制示意圖 + FATCAT 試驗存活曲線]
+`,
+  clinical_pearl: 'FATCAT 試驗的關鍵訊息：clopidogrel 把 ATE 再發中位生存期從 43 天延長至 192 天。但注意這是「再發預防」的數字，不代表 clopidogrel 能讓 HCM 貓長期生存良好。飼主最常問的是「這個藥能讓牠活多久」——正確答案是：不知道，但能顯著延後下次 ATE 的發生時間。LA/Ao ≥ 2.0 是開始一級預防的主要切點。',
+  common_mistakes: [
+    'Aspirin 以人用劑量（81mg/天）給貓 → 嚴重毒性！貓劑量是 5mg/72h',
+    '以為任何心臟病貓都需要抗血栓治療 → 低風險貓（LA/Ao < 1.6, 輕度 HCM）的獲益有限',
+    '未告知飼主停藥問題：術前 7-10 天需停 clopidogrel',
+    'ATE 急性期（肢體癱瘓）才開始抗血栓治療，而非在高風險期就預防性使用',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '藥物劑量表後', type: 'comparison_table', description: 'Clopidogrel vs Aspirin vs Rivaroxaban 完整比較表' },
+    { position: 'FATCAT 章節後', type: 'survival_curve', description: 'FATCAT 試驗存活分析曲線（clopidogrel vs aspirin）' },
+  ],
+  interactive_placeholders: [
+    { position: '適應症評估', type: 'risk_calculator', description: '貓 HCM ATE 風險評估工具（LA/Ao + SEC + LA 血栓）' },
+  ],
+  drug_api_links: ['Clopidogrel', 'Aspirin', 'Rivaroxaban'],
+  references: [
+    { type: 'journal', citation: 'Hogan DF et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: the double-blind, randomized, positive-controlled feline arterial thromboembolism: clopidogrel vs. aspirin trial (FATCAT). J Vet Cardiol. 2015;17 Suppl 1:S306-17.', relevance: 'FATCAT 試驗 — clopidogrel 優於 aspirin 預防貓 ATE 復發的最高等級臨床證據' },
+    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(3):1062-1077.', relevance: 'ACVIM 2020 貓心肌病共識，包含抗血栓治療適應症指引' },
+    { type: 'journal', citation: 'Welles EG et al. Hemostatic abnormalities in cats with cardiomyopathy. Am J Vet Res. 1994;55(12):1611-1616.', relevance: '貓心肌病高凝狀態的血液學基礎研究' },
+    { type: 'journal', citation: 'Borgeat K et al. Longitudinal hemostatic changes in cats with hypertrophic cardiomyopathy. Vet J. 2016;211:24-29.', relevance: '貓 HCM 血栓前狀態縱向追蹤研究' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const CARDIO_CONTENTS = new Map<string, NodeContent>([
   ['CARDIO-L0-001', contentOverview],
@@ -4693,8 +4935,10 @@ export const CARDIO_CONTENTS = new Map<string, NodeContent>([
   ['CARDIO-L4-002', contentEchocardiography],
   ['CARDIO-L4-003', contentECG],
   ['CARDIO-L4-004', contentThoracicRadiograph],
+  ['CARDIO-L4-005', contentCardiacBiomarkers],
   ['CARDIO-L5-001', contentHeartFailureTreatment],
   ['CARDIO-L5-002', contentAntiarrhythmicDrugs],
   ['CARDIO-L5-003', contentPericardiocentesis],
   ['CARDIO-L5-004', contentCardiacStaging],
+  ['CARDIO-L5-005', contentAntithromboticTherapy],
 ]);

@@ -137,4 +137,10 @@ export const CARDIO_EDGES: KnowledgeEdge[] = [
   { id: 'CARDIO-E-059', source_node_id: 'CARDIO-L3-004', target_node_id: 'CARDIO-L3-002', relation_type: 'differential', weight: 0.8, description: '心包膜積液與 DCM 均可出現腹水/頸靜脈怒張，需以心超鑑別（積液 vs 心室擴大收縮差）', bidirectional: true, unlock_condition: null },
   // ATE ↔ 肺高壓: 貓呼吸困難/後肢癱瘓鑑別
   { id: 'CARDIO-E-060', source_node_id: 'CARDIO-L3-010', target_node_id: 'CARDIO-L3-009', relation_type: 'differential', weight: 0.7, description: '貓 ATE（後肢癱瘓/蒼白/冰冷）需與繼發肺高壓造成的右心失代償鑑別，常同時存在', bidirectional: true, unlock_condition: null },
+
+  // ─── Round 16: 生物標記物 + 抗血栓邊 ───
+  { id: 'CARDIO-E-061', source_node_id: 'CARDIO-L4-005', target_node_id: 'CARDIO-L5-004', relation_type: 'clinical_apply', weight: 0.9, description: 'NT-proBNP 閾值直接影響 ACVIM 分期決策（B1 vs B2），Troponin I 輔助長期管理計畫', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-062', source_node_id: 'CARDIO-L4-002', target_node_id: 'CARDIO-L4-005', relation_type: 'builds_on', weight: 0.8, description: '心超（LA/Ao、壁厚）與 NT-proBNP 需互相驗證以提高分期準確性', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-063', source_node_id: 'CARDIO-L3-003', target_node_id: 'CARDIO-L5-005', relation_type: 'clinical_apply', weight: 1.0, description: 'HCM 貓（尤其 LA/Ao ≥ 2.0 或已有 ATE 史）需使用抗血栓治療（clopidogrel）預防再發', bidirectional: false, unlock_condition: null },
+  { id: 'CARDIO-E-064', source_node_id: 'CARDIO-L3-010', target_node_id: 'CARDIO-L5-005', relation_type: 'clinical_apply', weight: 1.0, description: '貓 ATE 存活後的二級預防核心是長期抗血栓治療（clopidogrel 為 FATCAT 試驗首選）', bidirectional: false, unlock_condition: null },
 ];
