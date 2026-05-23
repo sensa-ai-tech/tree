@@ -10,7 +10,8 @@ import {
   buildSkeletonValidationPrompt,
   buildBatchSkeletonPrompt,
 } from '@/lib/ai/prompts/skeleton';
-import type { KnowledgeNode, KnowledgeEdge, SkeletonInput } from '@/types/knowledge';
+import { getContentPrompt, getPromptBuilderForType } from '@/lib/ai/prompt-registry';
+import type { KnowledgeNode, KnowledgeEdge, NodeType, SkeletonInput } from '@/types/knowledge';
 
 function makeNode(id: string, overrides: Partial<KnowledgeNode> = {}): KnowledgeNode {
   return {
@@ -277,5 +278,38 @@ describe('buildBatchSkeletonPrompt', () => {
       { specialty_name: 'A', specialty_name_en: 'A', specialty_abbr: 'A' },
     ]);
     expect(prompt).toContain('JSON 陣列');
+  });
+});
+
+describe('prompt-registry: getContentPrompt / getPromptBuilderForType', () => {
+  const allNodeTypes: NodeType[] = [
+    'concept', 'mechanism', 'disease', 'diagnostic',
+    'therapeutic', 'procedure', 'case_study', 'decision_tree',
+  ];
+
+  it('getContentPrompt returns a non-empty string for every node type', () => {
+    for (const nt of allNodeTypes) {
+      const node = makeNode(`TEST-${nt}`, { node_type: nt });
+      const prompt = getContentPrompt(node, []);
+      expect(typeof prompt).toBe('string');
+      expect(prompt.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('getContentPrompt embeds prerequisites when provided', () => {
+    const node = makeNode('DIAG-001', { node_type: 'diagnostic' });
+    const prompt = getContentPrompt(node, ['解剖學', '生理學']);
+    expect(prompt).toContain('解剖學');
+    expect(prompt).toContain('生理學');
+  });
+
+  it('getPromptBuilderForType returns a callable function for every node type', () => {
+    for (const nt of allNodeTypes) {
+      const builder = getPromptBuilderForType(nt);
+      expect(typeof builder).toBe('function');
+      const node = makeNode(`TEST-${nt}`, { node_type: nt });
+      const prompt = builder(node, []);
+      expect(typeof prompt).toBe('string');
+    }
   });
 });
