@@ -2579,6 +2579,87 @@ export const NEURO_QUESTIONS: ReviewQuestion[] = [
     difficulty: 3, spaced_rep: true, tags: ['IVDD', 'MRI', '手術時機'], image_placeholder: null,
   },
 
+  // AED 血中濃度監測 (NEURO-L4-006) — 8 questions
+  {
+    id: 'Q-NEURO-TDM-001', node_id: 'NEURO-L4-006', question_type: 'mcq',
+    question: '犬 Phenobarbital 的目標治療血中濃度（trough，谷值）為何？',
+    options: ['5-15 µg/mL', '15-45 µg/mL', '50-80 µg/mL', '100-200 µg/mL'],
+    correct_answer: '15-45 µg/mL',
+    explanation: '犬 Phenobarbital（PB）的目標 trough 濃度為 15-45 µg/mL（部分文獻更保守建議 15-35 µg/mL）。低於 15 µg/mL 通常療效不足；高於 45 µg/mL 肝毒性風險顯著增加。貓的目標範圍較低（10-30 µg/mL），因貓代謝較慢。',
+    difficulty: 3, spaced_rep: true, tags: ['phenobarbital', 'TDM', '血中濃度', '目標範圍'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-002', node_id: 'NEURO-L4-006', question_type: 'mcq',
+    question: '為什麼 Potassium Bromide（KBr）絕對禁用於貓？',
+    options: [
+      '貓對溴化物代謝過快，無法達治療濃度',
+      '引起貓致命性嗜酸球性支氣管肺炎',
+      '貓腎臟無法排泄溴化物，導致中毒積累',
+      'KBr 會在貓體內代謝為有毒的氫溴酸',
+    ],
+    correct_answer: '引起貓致命性嗜酸球性支氣管肺炎',
+    explanation: 'KBr 在貓呼吸道黏膜的溴化物濃度異常高，引起嗜酸球性支氣管肺炎，臨床表現為持續咳嗽、呼吸困難、呼吸音加重，死亡率高且無解毒劑。這是 KBr 在貓的絕對禁忌（非相對禁忌）。貓的 AED 首選為 Phenobarbital 或 Levetiracetam。',
+    difficulty: 3, spaced_rep: true, tags: ['KBr', '貓', '禁忌', '嗜酸球性支氣管炎'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-003', node_id: 'NEURO-L4-006', question_type: 'mcq',
+    question: '開始 Phenobarbital 治療後，何時應進行第一次血中濃度測定？',
+    options: ['24 小時後', '3-5 天後', '14 天後', '1 個月後'],
+    correct_answer: '14 天後',
+    explanation: 'Phenobarbital 的半衰期在犬約 40-90 小時，需 4-5 個半衰期達穩態，約 14 天。穩態前測定的濃度不能代表長期治療效果，因此建議開始 PB 後 14 天進行第一次 trough 濃度測定。每次劑量調整後也應等待 14 天再複測。',
+    difficulty: 3, spaced_rep: true, tags: ['phenobarbital', 'TDM', '穩態', '採樣時機'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-004', node_id: 'NEURO-L4-006', question_type: 'mcq',
+    question: '下列哪種 AED 因不經肝臟代謝而適合作為肝病犬貓的優先選擇？',
+    options: ['Phenobarbital', 'Potassium Bromide', 'Levetiracetam', 'Zonisamide'],
+    correct_answer: 'Levetiracetam',
+    explanation: 'Levetiracetam（LEV）透過腎臟排除，不需肝臟代謝，因此在肝病犬貓中安全性最高。PB 和 Zonisamide 均由肝臟代謝，肝病時清除率降低導致血中濃度升高；KBr 雖腎排除但有長達 3-6 個月穩態時間問題。LEV 是目前推薦的肝臟疾病 AED 首選。',
+    difficulty: 3, spaced_rep: true, tags: ['levetiracetam', '肝病', 'AED', '腎排除'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-005', node_id: 'NEURO-L4-006', question_type: 'mcq',
+    question: '犬口服 Potassium Bromide 達到穩態需要多長時間（無負荷劑量情況下）？',
+    options: ['3-5 天', '2-4 週', '3-6 個月', '6-12 個月'],
+    correct_answer: '3-6 個月',
+    explanation: 'KBr 在犬的半衰期極長（約 25 天），未使用負荷劑量時需 4-5 個半衰期（≈ 100-125 天）達穩態，即約 3-6 個月。若等不及可使用負荷劑量方案（100 mg/kg/day × 5 天），可將穩態時間縮短至約 1 個月。穩態前測得的濃度偏低，不能作為劑量調整依據。',
+    difficulty: 3, spaced_rep: true, tags: ['KBr', '穩態', '半衰期', '負荷劑量'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-006', node_id: 'NEURO-L4-006', question_type: 'true_false',
+    question: '犬使用 Phenobarbital 後 ALP 升高通常代表發生真實的肝損傷，應立即換藥。',
+    options: ['True', 'False'],
+    correct_answer: 'False',
+    explanation: '此陳述錯誤。PB 本身會誘導肝酶（酶誘導效應），導致 ALP 升高是預期的非毒性效應，不等於肝損傷。真正的 PB 肝毒性診斷需要：ALT 升高 + 膽汁酸升高（空腹 > 25 µmol/L 或餐後 > 50 µmol/L）。ALP 單獨升高而膽汁酸正常時，不需換藥，但應加強 6 個月一次的肝功能監測。',
+    difficulty: 3, spaced_rep: true, tags: ['phenobarbital', 'ALP', '肝毒性', '酶誘導'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-007', node_id: 'NEURO-L4-006', question_type: 'mcq',
+    question: '進行 Phenobarbital 血中濃度監測時，最正確的採樣時機為何？',
+    options: [
+      '早晨給藥後 1 小時（peak 時）',
+      '早晨給藥前（trough，谷值）',
+      '任意時間採血，不影響結果解讀',
+      '最後一次給藥後 6 小時',
+    ],
+    correct_answer: '早晨給藥前（trough，谷值）',
+    explanation: '正確採樣時機是「trough（谷值）」，即下一次給藥前（BID 給藥的話是距上次給藥 12 小時後）採血。Trough 代表最低血中濃度，是最穩定且可重複的監測指標。若採到 peak（給藥後 1-2 小時），濃度會偏高，對照目標範圍（15-45 µg/mL）會導致誤判中毒而不必要地減量。',
+    difficulty: 3, spaced_rep: true, tags: ['phenobarbital', 'TDM', 'trough', '採樣時機'], image_placeholder: null,
+  },
+  {
+    id: 'Q-NEURO-TDM-008', node_id: 'NEURO-L4-006', question_type: 'case_based',
+    question: '一隻 5 歲 Labrador 公犬，因癲癇 6 個月前開始 Phenobarbital 2 mg/kg PO BID。目前癲癇控制良好（無發作），但最近例行健檢發現 ALP 850 U/L（參考值 < 150），ALT 65 U/L（參考值 < 70），空腹膽汁酸 12 µmol/L（參考值 < 25），餐後膽汁酸 30 µmol/L（參考值 < 25）。PB 血中濃度 trough 28 µg/mL。最適當的處置為何？',
+    options: [
+      '立即停用 PB，換用 Levetiracetam（因 ALP 大幅升高）',
+      '維持現有劑量，增加膽汁酸監測頻率（每 3 個月）並給予 SAMe 肝保護',
+      '增加 PB 劑量至 3 mg/kg BID 以確保發作控制',
+      '加用 Potassium Bromide 並將 PB 減量',
+    ],
+    correct_answer: '維持現有劑量，增加膽汁酸監測頻率（每 3 個月）並給予 SAMe 肝保護',
+    explanation: '此病例顯示 PB 的早期肝毒性警示：餐後膽汁酸 30 µmol/L（輕度升高，超出參考值上限）提示肝功能輕微受損，ALT 仍在正常範圍，PB 濃度 28 µg/mL 在目標範圍內且癲癇控制良好。正確處置是：維持劑量（不增加肝毒性風險），縮短膽汁酸監測頻率（每 3 個月），加用 SAMe（20 mg/kg PO SID）保護肝功能。若下次複查膽汁酸繼續上升或 ALT 明顯升高，再考慮緩慢換藥至 LEV。不應立即換藥（癲癇控制良好，膽汁酸僅輕度升高）；不應增加 PB 劑量（會加重肝毒性）。',
+    difficulty: 5, spaced_rep: true, tags: ['phenobarbital', 'TDM', '膽汁酸', '肝毒性', 'case'], image_placeholder: null,
+  },
+
   // MUO 免疫抑制治療 (NEURO-L5-004) — 8 questions
   {
     id: 'Q-NEURO-MUO-001', node_id: 'NEURO-L5-004', question_type: 'mcq',

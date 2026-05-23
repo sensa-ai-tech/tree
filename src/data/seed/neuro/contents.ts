@@ -4821,6 +4821,139 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
   created_at: now,
 };
 
+/** AED 血中濃度監測 - 診斷型 */
+const contentAEDTDM: NodeContent = {
+  id: 'CONTENT-NEURO-L4-006',
+  node_id: 'NEURO-L4-006',
+  version: 1,
+  summary: '抗癲癇藥物（AED）的治療藥物監測（TDM）是犬貓長期癲癇管理的核心診斷技能。掌握各藥物的目標血中濃度範圍、採樣時機（谷值 trough）、穩態達到時間和毒性監測指標，才能安全有效地個體化 AED 治療。',
+  learning_objectives: [
+    '列出 Phenobarbital（犬/貓）、Potassium Bromide（犬）、Levetiracetam 的目標血中濃度範圍',
+    '說明各 AED 達到穩態的時間及正確採樣時機（trough）',
+    '解釋為什麼 KBr 絕對禁用於貓並說明其毒性機制',
+    '根據 AED 血中濃度結果決定是否調整劑量及調整幅度',
+    '設計 AED 長期監測計畫（血中濃度 + 肝功能 + 臨床評估）',
+  ],
+  key_points: [
+    '**Phenobarbital（PB）目標濃度（犬）**：15-45 µg/mL（trough，BID 給藥前採血）；穩態 14 天；> 35 µg/mL 肝毒性風險↑',
+    '**Phenobarbital（PB）目標濃度（貓）**：10-30 µg/mL（貓代謝較慢，穩態 21 天）',
+    '**Potassium Bromide（KBr）目標濃度（犬）**：1000-2000 mg/L（輔助用藥）；穩態 3-6 個月；可用負荷劑量 100 mg/kg/day × 5 天縮短穩態時間',
+    '**KBr 絕對禁用於貓**：引起嗜酸球性支氣管肺炎（致命性咳嗽 / 呼吸窘迫），無解毒劑',
+    '**Levetiracetam（LEV）**：目標 5-45 µg/mL（trough）；穩態 1-2 天；無肝臟代謝，腎排除，肝病首選 AED',
+    '**Zonisamide（ZNS）**：目標 10-40 µg/mL；穩態 3-5 天；貓用時需監測肝功能（罕見但報告有肝毒性）',
+    '採樣時機：一律在「谷值」採血（下一次給藥前），確保結果可比較和一致',
+    '開始 PB 14 天後和每次劑量調整 14 天後：驗濃度 + ALP + ALT；穩定後每 6 個月監測肝膽汁酸',
+  ],
+  body: `# 抗癲癇藥物血中濃度監測（AED TDM）
+
+## 一、TDM 的臨床目的 (Why TDM Matters)
+
+抗癲癇藥物存在顯著的個體差異（吸收率、代謝速率、腎功能），同一劑量在不同動物身上可產生很不同的血中濃度。TDM 的目的是：
+1. **確認治療濃度達標**（特別是控制不佳時）
+2. **排除毒性**（PB 肝毒性）
+3. **指導劑量調整**（目標是最低有效劑量）
+4. **確認穩態達成**（換算劑量調整效果）
+
+## 二、各藥物 TDM 快查表 (Drug-specific TDM)
+
+| 藥物 | 物種 | 目標血中濃度 | 穩態時間 | 採樣時機 | 毒性監測 |
+|------|------|-------------|---------|---------|---------|
+| Phenobarbital | 犬 | **15-45 µg/mL** | 14 天 | Trough（BID 前） | ALP、ALT、膽汁酸（每 6 個月） |
+| Phenobarbital | 貓 | **10-30 µg/mL** | 21 天 | Trough（BID 前） | 同上（貓代謝較慢） |
+| Potassium Bromide | **犬（禁貓）** | 1000-2000 mg/L（輔助）；1500-3000 mg/L（單用） | **3-6 個月** | Trough | 鎮靜、後肢無力（高濃度）；呼吸道症狀（→懷疑吸入） |
+| Levetiracetam | 犬貓 | 5-45 µg/mL | 1-2 天 | Trough | 鎮靜（罕見）；無肝毒性 |
+| Zonisamide | 犬貓 | 10-40 µg/mL | 3-5 天 | Trough | 肝毒性（貓需監測）；食慾下降 |
+| Phenobarbital + KBr | 犬 | PB 降低目標至 15-30；KBr 1000-2000 | 14 天（PB）+ 3-6 個月（KBr） | 同上 | 兩者副作用相加（鎮靜↑） |
+
+## 三、Phenobarbital TDM 詳解 (Phenobarbital TDM)
+
+### 濃度解讀與處置
+
+| 測得濃度（犬） | 解讀 | 建議 |
+|-------------|------|------|
+| < 15 µg/mL | 偏低，可能癲癇控制不足 | 增加劑量（每次增加 25-30%）；14 天後複測 |
+| 15-35 µg/mL | 理想範圍 | 維持原劑量；每 6 個月監測 |
+| 35-45 µg/mL | 上限區間，勉強可接受 | 考慮加第二線 AED（KBr/LEV）而非繼續增量 |
+| > 45 µg/mL | 毒性範圍 | 立即減量；監測肝功能；若 ALP/ALT 異常加膽汁酸測試 |
+
+### 肝毒性監測時間表
+- **開始給藥 14 天後**：首次濃度測定 + ALP + ALT
+- **穩定期**：每 6 個月 → 濃度 + ALP + ALT + 膽汁酸（空腹+餐後）
+- **PB 導致肝損傷的典型表現**：ALP 升高（最早出現）→ ALT 升高 → 膽汁酸升高（肝功能代償不足時）
+- **處置**：若膽汁酸升高 → 換用 LEV 或加 SAMe 保肝 + 緩慢減量 PB
+
+### 採樣技巧
+- 採樣一律在**下次給藥前**（trough，谷值）
+- BID 給藥：早晨給藥前採血（12 小時後）
+- 若採到 peak（給藥後 1-2 小時）：濃度偏高，不能與 trough 目標範圍比較
+
+## 四、Potassium Bromide TDM 詳解 (KBr TDM)
+
+### 穩態問題
+KBr 半衰期極長（犬約 25 天），需 **4-5 個半衰期**（≈ 3-6 個月）才達穩態。
+
+**負荷劑量方案（縮短穩態）**：
+- 100 mg/kg/day PO × 5 天（分 2-4 次給藥）
+- 5 天後進入正常維持劑量（20-30 mg/kg/day SID）
+- 負荷期 GI 副作用（嘔吐、腹瀉）常見，搭配食物給藥可緩解
+
+### KBr 的飲食注意事項
+- 氯化物（Cl⁻）攝取增加 → 加速溴化物（Br⁻）腎臟排除 → 血中濃度下降！
+- **固定飲食**（不換食物/零食）是維持 KBr 穩定濃度的關鍵
+- 高鈉飲食（如點滴中含 0.9% NaCl）也會降低 KBr 濃度
+
+### KBr 禁用於貓的機制
+KBr 在貓呼吸道黏膜的溴化物濃度異常高，引起嗜酸球性支氣管炎（與哮喘相似），臨床表現為：持續咳嗽、呼吸困難、呼吸音加重。貓死亡率高，無法預測，故 **KBr 在貓為絕對禁忌**。
+
+## 五、Levetiracetam — 為什麼 TDM 較少需要 (LEV TDM)
+
+LEV 的優勢：
+- **腎臟排除**（不經肝臟代謝）：肝病犬貓首選
+- **副作用低**：偶爾鎮靜，無骨髓毒性、無肝毒性
+- 穩態快（1-2 天）：劑量調整後可在 48-72 小時內重測
+- 目標範圍廣（5-45 µg/mL），但「行為改變/鎮靜」比血中濃度更能指導調整
+
+**貓 LEV 注意**：貓對 LEV 的 GI 副作用（食慾下降）較敏感，且短效型需 TID 給藥（依從性差）；緩釋型（ER）每天 1-2 次更方便但台灣取得不易。
+
+## 六、AED 長期監測計畫 (Long-term Monitoring Plan)
+
+| 時間點 | 監測項目 |
+|--------|---------|
+| AED 開始後 14 天（PB）/ 1-2 天（LEV）/ 3-5 天（ZNS） | 血中濃度 trough + 基礎 CBC/生化 |
+| 每次劑量調整後 14 天（PB）或 1 週（LEV） | 重測濃度 |
+| 穩定期每 6 個月 | PB 濃度 + ALP + ALT + 空腹/餐後膽汁酸 |
+| KBr 3-6 個月（或負荷後 1 個月） | KBr 血中濃度 |
+| 每次癲癇發作頻率變化時 | 重測所有在用 AED 濃度 |`,
+  clinical_pearl: 'PB 的 ALP 升高在犬很常見，原因是 PB 本身誘導肝酶（酶誘導效應），不等於肝損傷。真正的肝毒性是：ALT 升高 + 膽汁酸升高（空腹 > 25 µmol/L 或餐後 > 50 µmol/L）。因此 ALP 單獨升高不需驚慌，但膽汁酸升高是換藥訊號。KBr 的「穩態 3-6 個月」常讓飼主和醫師失去耐心提前換藥 —— 正確做法是負荷劑量縮短穩態時間，或在等待穩態期間容許更多癲癇發作（如非 cluster）。台灣：KBr 須處方取得（Veterinary K-Br），LEV（人用 Keppra）在台灣藥房可取得，Zonisamide（Zonegran）亦可透過醫師處方取用。',
+  common_mistakes: [
+    '採樣時機錯誤：在給藥後 1-2 小時採到 peak，濃度偏高，誤以為中毒而減量',
+    'KBr 未等穩態就判定無效並換藥（負荷劑量可縮短穩態時間）',
+    '給貓使用 KBr（致命性嗜酸球性支氣管炎）',
+    'ALP 升高立即換藥：PB 誘導酶是預期效應，需看 ALT + 膽汁酸才能判斷真實肝毒性',
+    'KBr 期間任意更換飼料（氯化物改變影響 KBr 腎排除，導致血中濃度大幅波動）',
+    '忽略 LEV 在腎功能不全犬貓的劑量調整（腎排除 → 腎功能差時需減量）',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'TDM 快查表後', type: 'diagram', description: 'AED 血中濃度目標範圍視覺化（各藥物橫向比較條形圖）' },
+    { position: 'PB 肝毒性監測段落', type: 'diagram', description: 'PB 長期監測時間軸（開始→14天→穩定期每6個月）' },
+  ],
+  interactive_placeholders: [
+    { position: 'PB 濃度解讀表格後', type: 'calculator', description: 'PB 劑量計算器（輸入當前濃度和體重 → 建議新劑量）' },
+  ],
+  drug_api_links: ['Phenobarbital', 'Potassium bromide', 'Levetiracetam', 'Zonisamide'],
+  references: [
+    { type: 'guideline', citation: 'Bhatti SFM, et al. International veterinary epilepsy task force consensus proposals: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11(1):176.', relevance: 'IVETF 犬癲癇 AED 治療共識，TDM 目標範圍標準來源' },
+    { type: 'journal', citation: 'Podell M, et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 犬癲癇管理共識聲明，含 TDM 建議' },
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 10: Seizures and Epilepsy.', relevance: 'AED TDM 臨床操作標準教材' },
+    { type: 'journal', citation: 'Liebel FX, et al. Feline non-inflammatory epileptic seizures—a retrospective study of 45 cases. J Small Anim Pract. 2013;54(12):632-637.', relevance: '貓 AED 治療與 TDM 特殊考量（KBr 禁用、PB 劑量）' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 /** MUO/GME 免疫抑制治療 - 治療型 */
 const contentMUOImmunosuppression: NodeContent = {
   id: 'CONTENT-NEURO-L5-004',
@@ -5001,5 +5134,6 @@ export const NEURO_CONTENTS = new Map<string, NodeContent>([
   ['NEURO-L3-014', contentCMSM],
   ['NEURO-L3-015', contentNME],
   ['NEURO-L3-016', contentCDS],
+  ['NEURO-L4-006', contentAEDTDM],
   ['NEURO-L5-004', contentMUOImmunosuppression],
 ]);

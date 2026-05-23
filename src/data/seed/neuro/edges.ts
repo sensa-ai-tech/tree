@@ -182,4 +182,8 @@ export const NEURO_EDGES: KnowledgeEdge[] = [
   // NEURO-L5-004 (MUO 免疫抑制治療) ← L3-003 (GME) / L3-015 (NME/NLE)
   { id: 'NEURO-E-095', source_node_id: 'NEURO-L3-003', target_node_id: 'NEURO-L5-004', relation_type: 'clinical_apply', weight: 1.0, description: 'GME 的核心治療即高劑量 prednisolone 誘導後緩慢減量，複發病例加用 cytarabine 組合免疫抑制', bidirectional: false, unlock_condition: null },
   { id: 'NEURO-E-096', source_node_id: 'NEURO-L3-015', target_node_id: 'NEURO-L5-004', relation_type: 'clinical_apply', weight: 1.0, description: 'NME/NLE 同屬 MUO 範疇，治療框架與 GME 相同（prednisolone + cytarabine），但 NME（Pug）預後較差', bidirectional: false, unlock_condition: null },
+
+  // NEURO-L4-006 (AED TDM) ← L3-001 (犬特發性癲癇); → L5-001 (AED 治療) as prerequisite
+  { id: 'NEURO-E-097', source_node_id: 'NEURO-L3-001', target_node_id: 'NEURO-L4-006', relation_type: 'clinical_apply', weight: 1.0, description: '癲癇長期 AED 管理的核心監測工具：Phenobarbital 濃度（trough）14 天後首測，KBr 3-6 個月穩態後採樣', bidirectional: false, unlock_condition: null },
+  { id: 'NEURO-E-098', source_node_id: 'NEURO-L4-006', target_node_id: 'NEURO-L5-001', relation_type: 'prerequisite', weight: 0.9, description: 'AED 血中濃度監測知識是優化 AED 治療方案（劑量調整、加藥判斷、毒性監測）的前置診斷技能', bidirectional: false, unlock_condition: null },
 ];
