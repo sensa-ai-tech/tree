@@ -145,6 +145,8 @@ describe('UpstashRateLimitStore', () => {
     const reqInit = init as RequestInit;
     expect(reqInit.method).toBe('POST');
     expect((reqInit.headers as Record<string, string>).Authorization).toBe('Bearer test-token');
+    // Kills StringLiteral mutant: 'application/json' → ""
+    expect((reqInit.headers as Record<string, string>)['Content-Type']).toBe('application/json');
     const body = JSON.parse(reqInit.body as string);
     expect(body).toEqual([
       ['INCR', 'user:42:/api/foo'],
@@ -260,6 +262,53 @@ describe('UpstashRateLimitStore', () => {
     expect(result.resetTime).toBeLessThanOrEqual(before + 25_000 + 50);
   });
 
+  it('falls back to windowSeconds when PTTL result is a string (non-number type guard)', async () => {
+    // Kills ConditionalExpression mutant: typeof pttlResult === 'number' → true
+    // With mutant active: true && "45000" > 0 → JS coerces "45000" → 45000 for >, so ttlMs = "45000" (string)
+    // Then Date.now() + "45000" = string concatenation, resetTime becomes wrong type/value → test fails
+    vi.useFakeTimers();
+    vi.setSystemTime(0);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const bodyWithStringPttl: any[] = [{ result: 3 }, { result: 1 }, { result: '45000' }];
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify(bodyWithStringPttl), { status: 200 })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    const result = await store.hit('k', 20); // windowSeconds=20 → fallback = 0 + 20_000
+
+    // Original: typeof '45000' === 'number' = false → fallback = 20_000
+    // Mutant:   true && '45000' > 0 → ttlMs = '45000' (string) → resetTime = 0 + '45000' = '045000' ≠ 20_000
+    expect(result.resetTime).toBe(20_000);
+
+    vi.useRealTimers();
+  });
+
+  it('uses actual PTTL value as resetTime when pttlResult is a positive number', async () => {
+    // Kills the typeof mutant: `typeof pttlResult === 'number'` → `=== 'string'`
+    // When mutant active: typeof 30_000 === 'string' = false → falls back to windowSeconds*1000=60_000
+    // That produces resetTime = now+60_000, which != now+30_000 → test fails → mutant killed
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-05-18T12:00:00Z'));
+
+    const pttl = 30_000; // 30 seconds remaining in the Redis window
+    globalThis.fetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 5 }, { result: 1 }, { result: pttl }]), {
+        status: 200,
+      })
+    );
+
+    const store = new UpstashRateLimitStore({ url: 'https://x.upstash.io', token: 't' });
+    const now = Date.now();
+    const result = await store.hit('k', 60); // windowSeconds=60 → fallback would be now+60_000
+
+    // Must equal PTTL (30_000), NOT windowSeconds*1000 (60_000)
+    expect(result.resetTime).toBe(now + pttl);
+
+    vi.useRealTimers();
+  });
+
   it('passes cache: no-store on the Upstash fetch request', async () => {
     // Kills mutants that remove or change the cache option
     const mockFetch = vi.fn<typeof fetch>(async () =>
@@ -366,6 +415,49 @@ describe('getRateLimitStore factory', () => {
     expect(warnSpy).toHaveBeenCalledWith(
       expect.stringContaining('[rate-limit]')
     );
+    // Kills string-literal mutant: removing/changing 'Vercel multi-instance' from the message
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Vercel multi-instance')
+    );
+    warnSpy.mockRestore();
+  });
+
+  it('passes correct URL and token to the UpstashRateLimitStore it creates', async () => {
+    // Kills ObjectLiteral mutant: new UpstashRateLimitStore({url, token}) → new UpstashRateLimitStore({})
+    // With mutant: url=undefined, token=undefined → fetch('undefined/pipeline') → URL won't match
+    process.env.UPSTASH_REDIS_REST_URL = 'https://my-unique.upstash.io';
+    process.env.UPSTASH_REDIS_REST_TOKEN = 'my-secret-token';
+
+    const mockFetch = vi.fn<typeof fetch>(async () =>
+      new Response(JSON.stringify([{ result: 1 }, { result: 1 }, { result: 5_000 }]), { status: 200 })
+    );
+    const savedFetch = globalThis.fetch;
+    globalThis.fetch = mockFetch;
+
+    try {
+      const store = getRateLimitStore();
+      await store.hit('k', 60);
+
+      const [fetchUrl, fetchInit] = mockFetch.mock.calls[0]!;
+      expect(String(fetchUrl)).toContain('my-unique.upstash.io');
+      expect(
+        ((fetchInit as RequestInit).headers as Record<string, string>).Authorization
+      ).toBe('Bearer my-secret-token');
+    } finally {
+      globalThis.fetch = savedFetch;
+    }
+  });
+
+  it('does NOT print console.warn when NODE_ENV is not production', () => {
+    // Kills the conditional mutant: if(true) → always warns, not just in production
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    delete process.env.UPSTASH_REDIS_REST_URL;
+    delete process.env.UPSTASH_REDIS_REST_TOKEN;
+    // NODE_ENV is 'test' by default in vitest — must NOT produce a warning
+
+    getRateLimitStore();
+
+    expect(warnSpy).not.toHaveBeenCalled();
     warnSpy.mockRestore();
   });
 });
