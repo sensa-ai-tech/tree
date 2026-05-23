@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildSkeletonPrompt, buildSkeletonValidationPrompt, buildBatchSkeletonPrompt } from '@/lib/ai/prompts/skeleton';
 import { buildConceptContentPrompt } from '@/lib/ai/prompts/content-concept';
+import { buildDiagnosticContentPrompt } from '@/lib/ai/prompts/content-diagnostic';
 import { buildDiseaseContentPrompt } from '@/lib/ai/prompts/content-disease';
 import { buildQuestionsPrompt } from '@/lib/ai/prompts/questions';
 import { buildCasePrompt } from '@/lib/ai/prompts/cases';
@@ -85,6 +86,31 @@ describe('Content Prompts', () => {
     expect(prompt).toContain('心臟聽診');
     expect(prompt).toContain('signalment');
     expect(prompt).toContain('pathogenesis');
+  });
+
+  it('buildDiagnosticContentPrompt returns string containing node info', () => {
+    const diagnosticNode: KnowledgeNode = { ...mockNode, node_type: 'diagnostic', layer: 4 };
+    const prompt = buildDiagnosticContentPrompt(diagnosticNode, ['基礎物理檢查', '解剖學']);
+    expect(typeof prompt).toBe('string');
+    expect(prompt).toContain('心臟聽診');
+    expect(prompt).toContain('Cardiac Auscultation');
+    expect(prompt).toContain('CARD');
+    expect(prompt).toContain('前置知識：基礎物理檢查、解剖學');
+  });
+
+  it('buildDiagnosticContentPrompt omits prereq section when prerequisites is empty', () => {
+    const diagnosticNode: KnowledgeNode = { ...mockNode, node_type: 'diagnostic', layer: 4 };
+    const prompt = buildDiagnosticContentPrompt(diagnosticNode, []);
+    expect(prompt).not.toContain('前置知識');
+  });
+
+  it('buildDiagnosticContentPrompt includes required JSON output keys', () => {
+    const diagnosticNode: KnowledgeNode = { ...mockNode, node_type: 'diagnostic', layer: 4 };
+    const prompt = buildDiagnosticContentPrompt(diagnosticNode, []);
+    expect(prompt).toContain('diagnostic_data');
+    expect(prompt).toContain('interpretation_guide');
+    expect(prompt).toContain('sensitivity_specificity');
+    expect(prompt).toContain('clinical_pearl');
   });
 });
 
