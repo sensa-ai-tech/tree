@@ -244,6 +244,32 @@ describe('calculateNextReview — stability/difficulty rounding', () => {
     const result = calculateNextReview(2, mid);
     expect(result.difficulty).toBe(Math.round(result.difficulty * 100) / 100);
   });
+
+  // ── Mutation killers for ArithmeticOperator survivors on lines 12–13 ──────
+  // The existing tautology tests (x == Math.round(x*100)/100) pass for ALL
+  // arithmetic mutations because the mutant output also has ≤2 decimal places.
+  // These new tests anchor the ABSOLUTE VALUE, distinguishing the original
+  // from mutations like `* 100` → `+ 100` / `- 100` / `/ 100` / `% 100`.
+
+  it('stability after Good on new card is in plausible range (kills `/ 100` → `* 100` mutant)', () => {
+    // FSRS initial stability for Good (w[2]) ≈ 3.13.
+    // Survivor mutant replaces the outer `/` with `*`:
+    //   Math.round(card.stability * 100) * 100 ≈ Math.round(313) * 100 = 31300
+    // The upper bound toBeLessThan(50) kills this mutant (31300 ≥ 50 → fails).
+    const result = calculateNextReview(3, createInitialState());
+    expect(result.stability).toBeGreaterThan(0);
+    expect(result.stability).toBeLessThan(50);
+  });
+
+  it('difficulty after Good+Hard sequence is in plausible range (kills `/ 100` → `* 100` mutant)', () => {
+    // After Good then Hard, FSRS difficulty > 4 and well below 100.
+    // Survivor mutant: Math.round(card.difficulty * 100) * 100 ≈ 50000+
+    // toBeLessThan(100) kills this mutant.
+    const mid = calculateNextReview(3, createInitialState());
+    const result = calculateNextReview(2, mid);
+    expect(result.difficulty).toBeGreaterThan(1);
+    expect(result.difficulty).toBeLessThan(100);
+  });
 });
 
 describe('calculateNextReview — last_review tracking', () => {
@@ -278,5 +304,56 @@ describe('getDueCount — edge cases', () => {
     const past = new Date(Date.now() - 1000).toISOString();
     const states = Array.from({ length: 25 }, () => ({ ...createInitialState(), due: past }));
     expect(getDueCount(states)).toBe(20);
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Mutation killer for line 69: `mastery += Math.min(5, reps * 0.5)`
+// The matureState helper (reps=100) pins Math.min's cap correctly but CANNOT
+// distinguish `* 0.5` from arithmetic alternatives because all give ≥5 with
+// a 100-reps card (e.g., 100+0.5=100.5, still > 5 → capped at 5).
+// This suite uses reps=6 so that result.reps≈7, making reps*0.5=3.5 (< 5)
+// while any other operator gives ≥5 — a distinguishable mastery delta.
+// ─────────────────────────────────────────────────────────────────────────────
+
+describe('calculateNextReview — reps*0.5 bonus (kills line-69 ArithmeticOperator mutant)', () => {
+  /** A Review card with deliberately low reps so Math.min(5, reps*0.5) < 5. */
+  function lowRepsState(reps: number, mastery: number): SpacedRepetitionState {
+    const now = Date.now();
+    return {
+      due: new Date(now - 86_400_000).toISOString(),
+      stability: 20,
+      difficulty: 5,
+      elapsed_days: 1,
+      scheduled_days: 20,
+      reps,
+      lapses: 0,
+      state: 2, // Review
+      last_review: new Date(now - 86_400_000).toISOString(),
+      mastery_level: mastery,
+      last_rating: 3,
+    };
+  }
+
+  it('reps*0.5 bonus < 5 when reps is small (kills `* 0.5` → `+ 0.5`/`- 0.5`/`/ 0.5` mutations)', () => {
+    // reps=6 → FSRS increments to 7 after Good.
+    // Original: Math.min(5, 7 * 0.5) = 3.5 → mastery = 50+5+3.5 = 58.5 → 59
+    // Mutation `+ 0.5`: Math.min(5, 7.5) = 5 → mastery = 60
+    // Mutation `- 0.5`: Math.min(5, 6.5) = 5 → mastery = 60
+    // Mutation `/ 0.5`: Math.min(5, 14)  = 5 → mastery = 60
+    // Asserting < 60 kills all three arithmetic alternatives.
+    const result = calculateNextReview(3, lowRepsState(6, 50));
+    expect(result.mastery_level).toBeLessThan(60);
+    // Also assert mastery grew (Good rating adds ratingImpact=5)
+    expect(result.mastery_level).toBeGreaterThan(50);
+  });
+
+  it('reps bonus is strictly additive with ratingImpact (reps=4 Good, mastery confirmed < max)', () => {
+    // reps=4 → result.reps≈5, Math.min(5, 5*0.5)=2.5 → mastery=50+5+2.5=57.5→58
+    // Mutation `* 0.5` → `+ 0.5`: Math.min(5, 5.5)=5 → mastery=60
+    // toBeLessThan(60) distinguishes original from mutant.
+    const result = calculateNextReview(3, lowRepsState(4, 50));
+    expect(result.mastery_level).toBeLessThan(60);
+    expect(result.mastery_level).toBeGreaterThan(50);
   });
 });
