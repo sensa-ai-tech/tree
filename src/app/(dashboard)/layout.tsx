@@ -75,6 +75,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
           {/* Sidebar: 手機 off-canvas drawer, 桌面 static */}
           <Sidebar
+            isMobileOpen={sidebarOpen}
             className={cn(
               'fixed inset-y-0 left-0 z-50 transition-transform duration-200 md:sticky md:top-14 md:z-auto md:h-[calc(100vh-3.5rem)]',
               sidebarOpen

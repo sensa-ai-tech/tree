@@ -56,13 +56,30 @@ export function SupabaseDataProvider({ children }: { children: React.ReactNode }
 
         const edges: KnowledgeEdge[] = (edgesRes.data || []) as KnowledgeEdge[];
 
-        // Map learning_paths: DB has node_ids array, TypeScript type expects path_nodes
-        const paths: LearningPath[] = (pathsRes.data || []).map((row: Record<string, unknown>) => ({
-          ...row,
-          path_nodes: (row.node_ids as string[]) || [],
-          milestones: [],
-          has_certificate: false,
-        })) as unknown as LearningPath[];
+        // Map learning_paths: DB stores node_ids as TEXT[] (string[]); the TS type expects
+        // PathNode[] objects with node_id/is_required/phase/learning_note. Without this hydration
+        // the path detail page renders /nodes/undefined links and zero progress (path_nodes are
+        // raw strings at runtime). Defaults match the seed-data shape.
+        const paths: LearningPath[] = (pathsRes.data || []).map((row: Record<string, unknown>) => {
+          const nodeIds = Array.isArray(row.node_ids) ? (row.node_ids as string[]) : [];
+          return {
+            id: row.id as string,
+            title: row.title as string,
+            description: (row.description as string | null) ?? null,
+            specialty: row.specialty as string,
+            target_audience: (row.target_audience as string | null) ?? null,
+            estimated_hours: (row.estimated_hours as number) ?? 0,
+            path_nodes: nodeIds.map((id) => ({
+              node_id: id,
+              is_required: false,
+              phase: '',
+              learning_note: null,
+            })),
+            milestones: [],
+            has_certificate: false,
+            status: 'published',
+          };
+        });
 
         // 防呆：DB 有節點但邊或路徑為空時，從 seed 補上。
         // 常見於 seed-to-supabase 只匯入部分資料或 migration 中斷。

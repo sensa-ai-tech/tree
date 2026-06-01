@@ -58,7 +58,9 @@ export function NavbarSearch() {
     setActiveIndex(-1);
   }, [searchResults.length]);
 
-  function handleSearchKeyDown(e: React.KeyboardEvent): void {
+  function handleSearchKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void {
+    // Let IME composition (e.g. Chinese/Japanese candidate confirmation) finish before we react to Enter.
+    if (e.nativeEvent.isComposing) return;
     if (!showDropdown || searchResults.length === 0) return;
 
     switch (e.key) {
@@ -71,10 +73,14 @@ export function NavbarSearch() {
         setActiveIndex((prev) => (prev - 1 + searchResults.length + 1) % (searchResults.length + 1));
         break;
       case 'Enter':
-        e.preventDefault();
+        // Only intercept Enter when we are taking over the key for a combobox action.
+        // When activeIndex === -1 (initial state, also after each searchResults change),
+        // fall through so the form's onSubmit={handleSearchSubmit} fires and routes to /graph.
         if (activeIndex >= 0 && activeIndex < searchResults.length) {
+          e.preventDefault();
           handleResultClick(searchResults[activeIndex].id);
         } else if (activeIndex === searchResults.length) {
+          e.preventDefault();
           setFilters({ search: searchQuery.trim() });
           setShowDropdown(false);
           router.push('/graph');

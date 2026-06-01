@@ -87,9 +87,21 @@ async function handlePost(
     }
 
     for (const step of input.step_results) {
+      if (!step || typeof step !== 'object' || Array.isArray(step)) {
+        return NextResponse.json(
+          { error: 'each step_results entry must be a non-null object' },
+          { status: 400 }
+        );
+      }
       if (typeof step.score !== 'number' || step.score < 0 || step.score > 100) {
         return NextResponse.json(
           { error: 'each step.score must be a number between 0 and 100' },
+          { status: 400 }
+        );
+      }
+      if (typeof step.is_correct !== 'boolean') {
+        return NextResponse.json(
+          { error: 'each step.is_correct must be a boolean' },
           { status: 400 }
         );
       }

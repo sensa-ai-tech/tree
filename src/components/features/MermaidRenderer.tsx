@@ -64,28 +64,29 @@ export function MermaidRenderer({ chart, className }: MermaidRendererProps) {
     };
   }, [chart]);
 
-  // Loading state
-  if (isLoading) {
-    return <Skeleton variant="rectangular" height={200} className={className} />;
-  }
-
-  // Error state
-  if (error) {
-    return (
-      <div className={cn('flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 p-4', className)}>
-        <AlertTriangle className="h-5 w-5 flex-shrink-0 text-red-500" />
-        <div>
-          <p className="text-sm font-medium text-red-700">圖表渲染失敗</p>
-          <p className="text-xs text-red-500">{error}</p>
-        </div>
-      </div>
-    );
-  }
-
+  // Always mount the ref div so the useEffect can find containerRef.current.
+  // Skeleton/Error overlay visually while keeping the mermaid container in the tree.
   return (
-    <div
-      ref={containerRef}
-      className={cn('overflow-auto rounded-lg border border-gray-200 bg-white p-4', className)}
-    />
+    <div className={className}>
+      {isLoading && (
+        <Skeleton variant="rectangular" height={200} />
+      )}
+      {error && (
+        <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 p-4">
+          <AlertTriangle className="h-5 w-5 flex-shrink-0 text-red-500" />
+          <div>
+            <p className="text-sm font-medium text-red-700">圖表渲染失敗</p>
+            <p className="text-xs text-red-500">{error}</p>
+          </div>
+        </div>
+      )}
+      <div
+        ref={containerRef}
+        className={cn(
+          'overflow-auto rounded-lg border border-gray-200 bg-white p-4',
+          (isLoading || error) && 'hidden'
+        )}
+      />
+    </div>
   );
 }

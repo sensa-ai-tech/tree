@@ -79,6 +79,36 @@ interface SentryEvent {
   transaction?: string;
 }
 
+type SentryFrame = { filename?: string; function?: string; lineno?: number; colno?: number };
+
+/**
+ * Parse a V8-style `err.stack` string into Sentry-shaped frames.
+ *
+ * Handles two common shapes per line:
+ *   `    at fn (file:///path/to/file.ts:10:20)`
+ *   `    at file:///path/to/file.ts:10:20`           (anonymous)
+ *
+ * Sentry expects frames in caller-first order (crash site last), which is the
+ * reverse of V8's top-down dump — so we reverse before returning.
+ * Returns `[]` if no frames can be parsed; caller decides whether to attach.
+ */
+function parseStackFrames(stack: string): SentryFrame[] {
+  const frames: SentryFrame[] = [];
+  // Two alternatives: `at fn (loc)` or `at loc` (anonymous)
+  const lineRe = /^\s*at\s+(?:(.+?)\s+\((.+?):(\d+):(\d+)\)|(.+?):(\d+):(\d+))\s*$/;
+  for (const line of stack.split('\n')) {
+    const m = lineRe.exec(line);
+    if (!m) continue;
+    if (m[1]) {
+      frames.push({ function: m[1], filename: m[2], lineno: Number(m[3]), colno: Number(m[4]) });
+    } else {
+      frames.push({ filename: m[5], lineno: Number(m[6]), colno: Number(m[7]) });
+    }
+  }
+  // Sentry wants caller-first, callee/crash-site last
+  return frames.reverse();
+}
+
 function buildEvent(error: unknown, context: ErrorContext, env: ReturnType<typeof getEnv>): SentryEvent {
   const err = error instanceof Error ? error : new Error(String(error));
   const eventId = crypto.randomUUID().replace(/-/g, '');
@@ -90,6 +120,8 @@ function buildEvent(error: unknown, context: ErrorContext, env: ReturnType<typeo
       tags[k] = String(v);
     }
   }
+
+  const frames = err.stack ? parseStackFrames(err.stack) : [];
 
   return {
     event_id: eventId,
@@ -103,7 +135,7 @@ function buildEvent(error: unknown, context: ErrorContext, env: ReturnType<typeo
         {
           type: err.name || 'Error',
           value: err.message,
-          ...(err.stack && { stacktrace: { frames: [] } }),
+          ...(err.stack && { stacktrace: { frames } }),
         },
       ],
     },
@@ -180,4 +212,4 @@ export function reportError(error: unknown, context: ErrorContext = {}): void {
 }
 
 /** Test-only — 確認 DSN 解析邏輯正確。 */
-export const _internal = { parseDsn, buildEvent };
+export const _internal = { parseDsn, buildEvent, parseStackFrames };

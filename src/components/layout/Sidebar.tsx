@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, createElement } from 'react';
+import { useEffect, useState, createElement } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -12,12 +12,38 @@ interface SidebarProps {
   className?: string;
   /** 手機 drawer 模式下關閉 callback */
   onClose?: () => void;
+  /** 手機 drawer 是否開啟（用於控制 inert / aria-hidden / Escape 處理）。桌面不需傳。 */
+  isMobileOpen?: boolean;
 }
 
-export function Sidebar({ className, onClose }: SidebarProps) {
+export function Sidebar({ className, onClose, isMobileOpen }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
+  // 預設 true，避免 SSR / 首次 paint 把桌面 sidebar 標成 inert
+  const [isDesktop, setIsDesktop] = useState(true);
   const pathname = usePathname();
   const { user } = useAuthStore();
+
+  // 同步 viewport 狀態（md breakpoint = 768px）
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 768px)');
+    const update = (): void => setIsDesktop(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
+
+  // 手機 drawer 開啟時，按 Escape 關閉
+  useEffect(() => {
+    if (isDesktop || !isMobileOpen) return;
+    const handleKeyDown = (event: KeyboardEvent): void => {
+      if (event.key === 'Escape') onClose?.();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isDesktop, isMobileOpen, onClose]);
+
+  // 只有「行動裝置 + drawer 關閉」時才停用整個 aside
+  const isMobileClosed = !isDesktop && isMobileOpen === false;
 
   const isAdmin = user?.role === 'admin';
 
@@ -37,6 +63,8 @@ export function Sidebar({ className, onClose }: SidebarProps) {
 
   return (
     <aside
+      inert={isMobileClosed ? true : undefined}
+      aria-hidden={isMobileClosed ? true : undefined}
       className={cn(
         'flex h-screen flex-col border-r border-gray-200 bg-white transition-all duration-200',
         collapsed ? 'w-16' : 'w-56',

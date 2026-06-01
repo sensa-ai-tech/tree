@@ -4,10 +4,13 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserNodeProgress, ProgressStatus } from '@/types/gamification';
 
+const getTodayKey = (): string => new Date().toISOString().split('T')[0];
+
 interface LearningState {
   progress: Map<string, UserNodeProgress>;
   todayReviewCount: number;
   todayNewCount: number;
+  lastActiveDate: string | null;
   isLoading: boolean;
 
   setProgress: (nodeId: string, progress: UserNodeProgress) => void;
@@ -30,6 +33,7 @@ export const useLearningStore = create<LearningState>()(
       progress: new Map(),
       todayReviewCount: 0,
       todayNewCount: 0,
+      lastActiveDate: null,
       isLoading: false,
 
       setProgress: (nodeId, progress) =>
@@ -93,9 +97,25 @@ export const useLearningStore = create<LearningState>()(
         }),
 
       incrementReviewCount: () =>
-        set((state) => ({ todayReviewCount: state.todayReviewCount + 1 })),
+        set((state) => {
+          const today = getTodayKey();
+          const isNewDay = state.lastActiveDate !== today;
+          return {
+            todayReviewCount: (isNewDay ? 0 : state.todayReviewCount) + 1,
+            todayNewCount: isNewDay ? 0 : state.todayNewCount,
+            lastActiveDate: today,
+          };
+        }),
       incrementNewCount: () =>
-        set((state) => ({ todayNewCount: state.todayNewCount + 1 })),
+        set((state) => {
+          const today = getTodayKey();
+          const isNewDay = state.lastActiveDate !== today;
+          return {
+            todayNewCount: (isNewDay ? 0 : state.todayNewCount) + 1,
+            todayReviewCount: isNewDay ? 0 : state.todayReviewCount,
+            lastActiveDate: today,
+          };
+        }),
       setLoading: (isLoading) => set({ isLoading }),
 
       getCompletedCount: () => {
@@ -119,6 +139,7 @@ export const useLearningStore = create<LearningState>()(
           progress: new Map(),
           todayReviewCount: 0,
           todayNewCount: 0,
+          lastActiveDate: null,
           isLoading: false,
         }),
     }),
@@ -142,7 +163,16 @@ export const useLearningStore = create<LearningState>()(
         progress: state.progress,
         todayReviewCount: state.todayReviewCount,
         todayNewCount: state.todayNewCount,
+        lastActiveDate: state.lastActiveDate,
       }),
+      onRehydrateStorage: () => (state) => {
+        if (!state) return;
+        const today = getTodayKey();
+        if (state.lastActiveDate !== today) {
+          state.todayReviewCount = 0;
+          state.todayNewCount = 0;
+        }
+      },
     }
   )
 );

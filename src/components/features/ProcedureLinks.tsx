@@ -49,6 +49,13 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
       return;
     }
 
+    // Reset state synchronously on nodeId change so stale links from a previous
+    // node never render under the new node's heading during the fetch window.
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    setLinks([]);
+
     const supabase = createBrowserClient();
 
     interface MappingRow {
@@ -74,8 +81,9 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
           .order('confidence', { ascending: false })
           .limit(10);
 
+        if (cancelled) return;
         if (mapError || !mappings || mappings.length === 0) {
-          setLoading(false);
+          if (!cancelled) setLoading(false);
           return;
         }
 
@@ -87,8 +95,9 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
           .select('id, name, name_zh, department')
           .in('id', procIds);
 
+        if (cancelled) return;
         if (procError || !procs) {
-          setLoading(false);
+          if (!cancelled) setLoading(false);
           return;
         }
 
@@ -108,15 +117,19 @@ export function ProcedureLinks({ nodeId }: ProcedureLinksProps) {
             };
           });
 
-        setLinks(result);
+        if (!cancelled) setLinks(result);
       } catch (err) {
-        setError(err instanceof Error ? err.message : '載入操作步驟失敗');
+        if (!cancelled) setError(err instanceof Error ? err.message : '載入操作步驟失敗');
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     }
 
     fetchLinks();
+
+    return () => {
+      cancelled = true;
+    };
   }, [nodeId]);
 
   if (loading) {
