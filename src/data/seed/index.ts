@@ -193,12 +193,15 @@ export function initializeDemoData(): void {
   }
 
   // 2. Knowledge，節點、邊、路徑
+  // STORE-RESET-001 (iter 5): always re-populate from ALL_NODES — no length-guard.
+  // Previously `if (nodes.length === 0)` skipped re-init when the store had stale
+  // counts (e.g. cached HMR state, or future Zustand persist). Re-population is
+  // cheap (3 array assigns, ~300 references total) and ensures users always see
+  // the latest seed after content additions like IM-L3-029 / IM-L3-030.
   const knowledgeStore = useKnowledgeStore.getState();
-  if (knowledgeStore.nodes.length === 0) {
-    knowledgeStore.setNodes(ALL_NODES);
-    knowledgeStore.setEdges(ALL_EDGES);
-    knowledgeStore.setPaths(ALL_PATHS);
-  }
+  knowledgeStore.setNodes(ALL_NODES);
+  knowledgeStore.setEdges(ALL_EDGES);
+  knowledgeStore.setPaths(ALL_PATHS);
 
   // 3. Learning，學習進度
   const learningStore = useLearningStore.getState();

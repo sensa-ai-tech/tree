@@ -7,6 +7,18 @@ const COOKIE_MAX_AGE = 60 * 60 * 2; // 2 hours (was 8)
 const JWT_ISSUER = 'vet-knowledge-tree';
 const JWT_AUDIENCE = 'vkt-admin';
 
+// SEC-R3-002 startup warning (iter 5): when both env vars set, USERS wins —
+// surface this once so operators mid-migration don't discover the precedence
+// rule via mysterious failed logins. Module-load level (runs once per server).
+if (typeof process !== 'undefined' && process.env.VKT_ADMIN_USERS && process.env.VKT_ADMIN_PASSWORD) {
+  // eslint-disable-next-line no-console
+  console.warn(
+    '[admin-auth] Both VKT_ADMIN_USERS and VKT_ADMIN_PASSWORD are set. ' +
+    'VKT_ADMIN_USERS takes precedence; VKT_ADMIN_PASSWORD will be IGNORED. ' +
+    'Remove VKT_ADMIN_PASSWORD to silence this warning once migration completes.'
+  );
+}
+
 function getSecret(): Uint8Array {
   const secret = process.env.VKT_JWT_SECRET;
   if (!secret || secret.length < 32) {

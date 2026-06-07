@@ -53,7 +53,8 @@ All variables live in `.env.local` (gitignored). Variables prefixed `NEXT_PUBLIC
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Prod only | Public anon JWT (RLS-gated client reads) | Supabase dashboard → API → anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Prod only | Server-side admin client (DELETE /api/account, seeding) | Supabase dashboard → API → service_role key. **NEVER expose to browser.** |
 | `VKT_JWT_SECRET` | Yes (≥32 chars) | Signs the `vkt-admin-token` HttpOnly cookie for `/admin/*` access | Generate locally: `openssl rand -base64 48` |
-| `VKT_ADMIN_PASSWORD` | Yes | Plaintext password checked by `/api/admin/login` | Choose a strong value; rotate via env update |
+| `VKT_ADMIN_PASSWORD` | Yes (legacy/dev) | Single-admin password. In production prefer the `sha256:<hex>` prefix form. Audit log identifies as `admin`. | Plaintext or `sha256:` + 64-hex |
+| `VKT_ADMIN_USERS` | Yes (prod, preferred) | **Takes precedence over `VKT_ADMIN_PASSWORD`**. Comma-separated `id:sha256:hex` entries enabling per-admin audit identity. Format: `alice:sha256:<64-hex>,bob:sha256:<64-hex>`. Generate hex: `echo -n "yourpass" \| sha256sum` (Bash) or `[BitConverter]::ToString([System.Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes("yourpass"))).Replace("-","").ToLower()` (PowerShell) | Generate sha256 hex per admin, comma-join |
 | `ADMIN_API_KEY` | Yes (for `/api/generate/*`) | Bearer token gating Claude-backed content generation routes | Generate: `openssl rand -hex 32` |
 | `ANTHROPIC_API_KEY` | Optional | Enables real Claude calls in `/api/generate/*`; unset → mock mode returns canned content | https://console.anthropic.com |
 | `NEXT_PUBLIC_APP_URL` | Yes | Canonical site origin used by sitemap, OG metadata, redirects | `http://localhost:3001` dev / `https://your-domain` prod |
@@ -71,7 +72,7 @@ All variables live in `.env.local` (gitignored). Variables prefixed `NEXT_PUBLIC
 | Code | Specialty | Nodes |
 |------|-----------|-------|
 | CARDIO | Cardiology | 26 |
-| IM | Internal Medicine | 49 (+ IM-L3-029 系統性高血壓, iter 2) |
+| IM | Internal Medicine | 52 (+ IM-L3-029 系統性高血壓 iter 2, + IM-L3-030 MDR1/Ivermectin iter 4) |
 | DERM | Dermatology | 34 |
 | SURG | Surgery | 34 |
 | NEURO | Neurology | 33 |
@@ -110,11 +111,12 @@ Rollback: Vercel → Deployments → click previous green deploy → Promote to 
 
 - TypeScript: 0 errors (strict mode)
 - ESLint: 0 errors (16 pre-existing test-file `any` warnings tolerated)
-- Tests: 797+/797 passing (Vitest)
+- Tests: **817+/817+ passing** (Vitest)
 - Production build: 40+ routes
 - Coverage: lines 70%+ / statements 69%+ / functions 68%+ / branches 59%+ (istanbul provider)
 - npm audit (prod deps): 2 moderate (Next.js postcss transitive, build-time only)
-- Self-Evolve Loop: iter 2 (avg score 84/100, 0 blocking)
+- Knowledge graph: **274 nodes** across 8 specialties, 810+ edges, 103 cases, 47 paths
+- Self-Evolve Loop: **iter 5** (avg score 92.4+/100, 0 blocking, 0 high after iter 5 STORE-RESET fix)
 
 ## License
 
