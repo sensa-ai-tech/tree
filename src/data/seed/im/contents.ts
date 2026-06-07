@@ -7443,7 +7443,7 @@ const contentSystemicHypertension: NodeContent = {
       { condition: '慢性腎病 (CKD)', key_differentiator: '貓老年 + Cre/SDMA 升 + USG < 1.035；HTN 為 CKD 最常見併發症' },
       { condition: '貓甲狀腺機能亢進', key_differentiator: '消瘦 + 多食 + TT4 升；甲狀腺結節可觸診' },
       { condition: 'Cushing 症候群', key_differentiator: '犬軀幹脫毛、多渴多尿、LDDST/UCCR 異常' },
-      { condition: '嗜鉻細胞瘤 (Pheochromocytoma)', key_differentiator: '陣發性 BP 飆升（不是持續性）、超音波發現腎上腺腫塊、血漿 metanephrine 升、可伴心搏過速與崩潰發作；HTN 不易單用 amlodipine 控制' },
+      { condition: '嗜鉻細胞瘤 (Pheochromocytoma)', key_differentiator: '陣發性 BP 飆升（不是持續性）、超音波發現腎上腺腫塊、血漿游離 normetanephrine > 4× 參考上限（犬 > ~1500 pg/mL，UCSF/Texas A&M 參考實驗室）或 24h 尿 fractionated metanephrines > 4× ULN（creatinine-normalized）— 特異度 > 95%；2-3× ULN 為臨界，需 CT/MRI 確認腎上腺腫塊 + clonidine suppression test；可伴心搏過速與崩潰發作（α-receptor 與 β-receptor 同時刺激）；HTN 不易單用 amlodipine 控制 — 手術前必須 α-blocker phenoxybenzamine 0.25-0.5 mg/kg PO BID × 14-21 天再考慮 β-blocker' },
       { condition: '原發性醛固酮增多症（Conn）', key_differentiator: '貓老年、低鉀、肌無力、aldosterone:renin 比值升、腎上腺腫塊' },
       { condition: '原發性 (idiopathic) HTN', key_differentiator: '排除上述所有繼發性病因後才下；貓 13-20%、犬 < 10%' },
       { condition: '肥厚型心肌病 (HCM)', key_differentiator: 'HCM 為非對稱性肥厚 + SAM 陽性；HTN-LVH 為向心性肥厚 + 高 BP；兩者可共存' },

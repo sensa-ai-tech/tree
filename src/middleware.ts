@@ -68,6 +68,20 @@ export async function middleware(request: NextRequest) {
   response.headers.set('Report-To', reportToGroup);
   response.headers.set('Reporting-Endpoints', 'csp-endpoint="/api/csp-report"');
 
+  // ENG-R3-002: Cross-origin isolation (COOP + COEP + CORP).
+  // - COOP: same-origin — sandboxes top-level browsing context so cross-origin popups
+  //   can't reference our window.opener (Spectre + cross-window scripting defense).
+  // - COEP: credentialless — modern relaxed mode that strips cookies/auth from cross-origin
+  //   subresource requests. Picked over require-corp because Cloudinary images and Google
+  //   Fonts (in CSP img-src/font-src) don't reliably send CORP; require-corp would break them.
+  //   Supported: Chrome 96+, Firefox 110+, Safari 16.4+.
+  // - CORP: same-origin — declares OUR responses as same-origin-only subresources.
+  // Combined: enables self.crossOriginIsolated === true, unlocking SharedArrayBuffer
+  // + high-resolution performance.now().
+  response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
+  response.headers.set('Cross-Origin-Embedder-Policy', 'credentialless');
+  response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
+
   // 4. Set CSP with nonce
   const csp = [
     "default-src 'self'",

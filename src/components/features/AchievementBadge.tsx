@@ -37,7 +37,7 @@ export function AchievementBadge({
         <p className={cn('text-sm font-medium truncate', isUnlocked ? 'text-gray-900' : 'text-gray-500')}>
           {achievement.title}
         </p>
-        <p className="text-xs text-gray-400 truncate">{achievement.description}</p>
+        <p className="text-xs text-gray-600 truncate">{achievement.description}</p>
         {isUnlocked && unlockedAt && (
           <p className="mt-0.5 text-xs text-amber-600">
             {new Date(unlockedAt).toLocaleDateString('zh-TW')}

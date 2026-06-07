@@ -86,7 +86,7 @@ export default function PathDetailPage({ params }: PathDetailPageProps) {
                   <div className="pb-4">
                     <h3 className="font-medium text-gray-900">{milestone.title}</h3>
                     <p className="mt-1 text-sm text-gray-600">{milestone.description}</p>
-                    <p className="mt-1 text-xs text-gray-400">通過條件：{milestone.pass_criteria}</p>
+                    <p className="mt-1 text-xs text-gray-600">通過條件：{milestone.pass_criteria}</p>
                   </div>
                 </div>
               ))}

@@ -82,7 +82,7 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   if (isLoadingCases) {
     return (
       <div className="flex h-64 items-center justify-center">
-        <p className="text-sm text-gray-400">病例載入中...</p>
+        <p className="text-sm text-gray-600">病例載入中...</p>
       </div>
     );
   }

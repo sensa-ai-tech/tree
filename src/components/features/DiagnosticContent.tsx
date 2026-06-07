@@ -75,7 +75,7 @@ export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
                   ))}
                 </ul>
               ) : (
-                <p className="text-sm text-gray-400">無特殊禁忌</p>
+                <p className="text-sm text-gray-600">無特殊禁忌</p>
               )}
             </div>
           </div>
@@ -94,7 +94,7 @@ export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
                 </div>
               ))
             ) : (
-              <p className="text-sm text-gray-400">無資料</p>
+              <p className="text-sm text-gray-600">無資料</p>
             )}
           </div>
         );
@@ -110,7 +110,7 @@ export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
                 </div>
               ))
             ) : (
-              <p className="text-sm text-gray-400">無資料</p>
+              <p className="text-sm text-gray-600">無資料</p>
             )}
           </div>
         );
@@ -143,7 +143,7 @@ export function DiagnosticContent({ data, className }: DiagnosticContentProps) {
                 </div>
               ))
             ) : (
-              <p className="text-sm text-gray-400">無已知陷阱</p>
+              <p className="text-sm text-gray-600">無已知陷阱</p>
             )}
           </div>
         );

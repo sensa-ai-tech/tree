@@ -32,6 +32,14 @@ export default function LoginPage() {
       return;
     }
 
+    // user-r3-002: symmetric with register (which enforces ≥6 chars).
+    // Mock store ignores password but real Supabase will reject short ones — fail fast here.
+    const MIN_PASSWORD_LENGTH = 6;
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      showToast.error(`密碼至少需要 ${MIN_PASSWORD_LENGTH} 個字元`);
+      return;
+    }
+
     await login(email, password);
 
     const currentError = useAuthStore.getState().error;

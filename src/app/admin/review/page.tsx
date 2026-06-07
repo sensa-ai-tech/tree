@@ -89,7 +89,7 @@ export default function AdminReviewPage() {
                     <Badge variant="outline">{item.specialty}</Badge>
                     <Badge variant="outline">{item.nodeType}</Badge>
                   </div>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-600">
                     節點 ID: {item.nodeId} | 提交時間: {item.submittedAt}
                   </p>
                 </div>

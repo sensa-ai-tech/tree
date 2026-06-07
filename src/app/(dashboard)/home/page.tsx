@@ -168,7 +168,9 @@ export default function DashboardHomePage() {
         </Card>
       )}
 
-      {/* 整體進度 */}
+      {/* 整體進度：completedCount > 0 才顯示進度條；新帳號改用前瞻性語意，避免「進度 0%」打擊。
+          iter 3 user finding: 已完成節點/學習中/Lv.1/連續天數 四個 0 + 從第一個節點開始 CTA 之後
+          再來一條 0% 進度條，等於對全新帳號連續講四次「你什麼都沒做」。 */}
       <Card>
         <CardHeader>
           <div className="flex items-center gap-2">
@@ -177,13 +179,19 @@ export default function DashboardHomePage() {
           </div>
         </CardHeader>
         <CardBody className="space-y-3">
-          <Progress
-            value={completedCount}
-            max={totalNodes || 1}
-            label={`${completedCount} / ${totalNodes} 節點已完成`}
-            showPercentage
-            size="lg"
-          />
+          {completedCount > 0 ? (
+            <Progress
+              value={completedCount}
+              max={totalNodes || 1}
+              label={`${completedCount} / ${totalNodes} 節點已完成`}
+              showPercentage
+              size="lg"
+            />
+          ) : (
+            <div className="text-sm text-gray-600">
+              共 <strong className="text-gray-900">{totalNodes}</strong> 個知識節點等你探索，先從任一專科入手即可開始累積進度。
+            </div>
+          )}
         </CardBody>
       </Card>
 

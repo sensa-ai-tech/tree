@@ -84,7 +84,15 @@ export default function PrivacyPage() {
               <li>請求製給複製本</li>
               <li>請求補充或更正</li>
               <li>請求停止蒐集、處理或利用</li>
-              <li>請求刪除您的帳號及相關資料</li>
+              <li>請求刪除您的帳號及相關資料（可於「個人資料 → 危險區」自助操作）</li>
+            </ul>
+
+            <h3 className="mt-4 text-lg font-semibold text-gray-900">資料保存期限（PDPA §27/§28）</h3>
+            <ul className="list-disc pl-6 text-gray-700 space-y-1">
+              <li><strong>活躍帳號</strong>：學習進度、複習紀錄、成就與經驗值會持續保存，直到您主動刪除帳號為止。</li>
+              <li><strong>休眠帳號</strong>：連續 <strong>24 個月</strong>未登入且無複習活動的帳號，系統會在自動清除前 <strong>60 天</strong>寄送提醒信，期滿後將永久刪除（不可復原）。</li>
+              <li><strong>主動刪除</strong>：您隨時可於 <a href="/profile" className="text-indigo-600 hover:underline">個人資料</a> 頁的「危險區」立即刪除帳號，無須等待 24 個月。</li>
+              <li><strong>法定保存義務</strong>：交易或合約相關紀錄依《商業會計法》保存 5 年，這部分不適用上述清除期限。</li>
             </ul>
           </section>
 

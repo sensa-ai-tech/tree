@@ -40,8 +40,9 @@ export default function RegisterPage() {
       return;
     }
 
-    if (password.length < 6) {
-      setLocalError('密碼至少需要 6 個字元');
+    const MIN_PASSWORD_LENGTH = 6;
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      setLocalError(`密碼至少需要 ${MIN_PASSWORD_LENGTH} 個字元`);
       return;
     }
 

@@ -140,7 +140,7 @@ export function ClinicalImage({
               <p className="text-sm text-gray-600">{asset.caption}</p>
             )}
             {showAttribution && asset.source && (
-              <p className="mt-1 text-xs text-gray-400">
+              <p className="mt-1 text-xs text-gray-600">
                 {asset.source.attribution_text}
                 {' '}
                 <span className="inline-flex items-center gap-0.5 rounded bg-gray-100 px-1 py-0.5 text-[10px] font-medium text-gray-500">

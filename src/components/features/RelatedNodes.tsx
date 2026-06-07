@@ -99,7 +99,7 @@ export function RelatedNodes({ currentNodeId, edges, allNodes, className }: Rela
       </div>
 
       {relatedItems.length > 6 && (
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-gray-600 text-center">
           還有 {relatedItems.length - 6} 個相關節點
         </p>
       )}

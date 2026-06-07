@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient, createServiceRoleClient } from '@/lib/supabase/server';
+import { isSameOriginRequest } from '@/lib/security/csrf';
 
 /**
  * DELETE /api/account
@@ -8,20 +9,32 @@ import { createServerClient, createServiceRoleClient } from '@/lib/supabase/serv
  * policy (src/app/(legal)/privacy/page.tsx §六) explicitly grants users.
  *
  * Flow:
+ *   0. (iter 3 SEC-R3-001) Reject cross-origin requests via Sec-Fetch-Site /
+ *      Origin checks. Closes residual CSRF window on this irreversible endpoint
+ *      since Supabase session cookie defaults to SameSite=lax (NOT strict).
  *   1. Verify the caller is authenticated via Supabase session cookie.
- *   2. Delete all rows the user owns in app tables (learning_progress,
- *      review_history, achievements, user_xp, case_attempts, question_attempts) —
- *      RLS would also enforce this, but explicit deletion avoids orphan rows
- *      if RLS is later relaxed.
- *   3. Call supabase.auth.admin.deleteUser via service-role client. This
- *      cascades to auth.users and any FK-bound tables.
+ *   2. Delete all rows the user owns in app tables.
+ *   3. Call supabase.auth.admin.deleteUser via service-role client.
  *   4. Return 204 No Content; client should clear local stores and redirect.
  *
  * Mock mode: createServiceRoleClient() returns a no-op proxy when
  * SUPABASE_SERVICE_ROLE_KEY is unset, so this endpoint stays callable in
  * local/demo without throwing.
  */
-export async function DELETE(): Promise<NextResponse> {
+export async function DELETE(request: NextRequest): Promise<NextResponse> {
+  // SEC-R3-001: CSRF defense-in-depth (OWASP CSRF Cheat Sheet §6)
+  if (!isSameOriginRequest(request)) {
+    console.warn('[account-delete] cross-origin request rejected:', {
+      origin: request.headers.get('origin'),
+      referer: request.headers.get('referer'),
+      secFetchSite: request.headers.get('sec-fetch-site'),
+    });
+    return NextResponse.json(
+      { error: 'Forbidden: cross-origin request rejected' },
+      { status: 403 }
+    );
+  }
+
   const supabase = createServerClient();
   const {
     data: { user },

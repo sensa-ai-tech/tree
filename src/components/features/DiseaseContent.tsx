@@ -112,7 +112,7 @@ export function DiseaseContent({ data, className }: DiseaseContentProps) {
             </ol>
           </div>
         ) : (
-          <p className="text-sm text-gray-400">無分期資訊</p>
+          <p className="text-sm text-gray-600">無分期資訊</p>
         ),
     },
     {

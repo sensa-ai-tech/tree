@@ -23,7 +23,7 @@ export function ImagePlaceholder({ description, className }: ImagePlaceholderPro
       </div>
       <div>
         <p className="text-sm font-medium text-gray-600">圖片預留位</p>
-        <p className="text-xs text-gray-400">{description}</p>
+        <p className="text-xs text-gray-600">{description}</p>
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
       <div className="flex h-64 flex-col items-center justify-center gap-4">
         <Skeleton variant="text" width="40%" />
         <Skeleton variant="rectangular" height={200} />
-        <p className="text-sm text-gray-400">知識節點載入中...</p>
+        <p className="text-sm text-gray-600">知識節點載入中...</p>
       </div>
     );
   }
@@ -307,7 +307,7 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
         <Card>
           <CardBody>
             <Skeleton variant="text" lines={5} />
-            <p className="mt-4 text-sm text-gray-400">節點內容載入中或尚未建立...</p>
+            <p className="mt-4 text-sm text-gray-600">節點內容載入中或尚未建立...</p>
           </CardBody>
         </Card>
       )}

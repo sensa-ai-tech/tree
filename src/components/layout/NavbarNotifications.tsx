@@ -9,6 +9,7 @@ export function NavbarNotifications() {
   const recentXPEvents = useGamificationStore((s) => s.recentXPEvents);
   const [showNotifications, setShowNotifications] = useState(false);
   const notifRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   const handleClickOutside = useCallback((e: MouseEvent) => {
     if (notifRef.current && !notifRef.current.contains(e.target as Node)) {
@@ -21,14 +22,30 @@ export function NavbarNotifications() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [handleClickOutside]);
 
+  // UX-R3-001: WAI-ARIA disclosure pattern — Escape closes panel + returns focus to trigger.
+  // Mirrors NavbarSearch and Sidebar mobile-drawer patterns.
+  useEffect(() => {
+    if (!showNotifications) return;
+    const onKeyDown = (event: KeyboardEvent): void => {
+      if (event.key === 'Escape') {
+        setShowNotifications(false);
+        triggerRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [showNotifications]);
+
   return (
     <div ref={notifRef} className="relative">
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setShowNotifications((v) => !v)}
         className="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1"
         aria-label={recentXPEvents.length > 0 ? `通知（${recentXPEvents.length} 則新動態）` : '通知'}
         aria-expanded={showNotifications}
+        aria-haspopup="menu"
       >
         <Bell className="h-5 w-5" aria-hidden="true" />
         {recentXPEvents.length > 0 && (
@@ -37,7 +54,11 @@ export function NavbarNotifications() {
       </button>
 
       {showNotifications && (
-        <div className="absolute right-0 top-full mt-1 w-72 rounded-lg border border-gray-200 bg-white shadow-lg z-50">
+        <div
+          className="absolute right-0 top-full mt-1 w-72 rounded-lg border border-gray-200 bg-white shadow-lg z-50"
+          role="menu"
+          aria-label="最近動態"
+        >
           <div className="border-b border-gray-100 px-3 py-2">
             <p className="text-xs font-semibold text-gray-700">最近動態</p>
           </div>
