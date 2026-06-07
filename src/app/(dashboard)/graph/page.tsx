@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Map, Info, X, ArrowLeft } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import { useShallow } from 'zustand/react/shallow';
 import { Card, CardBody } from '@/components/ui/Card';
 import { GraphSkeleton } from '@/components/ui/Skeleton';
 import { SpecialtyGrid } from '@/components/features/SpecialtyGrid';
@@ -26,7 +27,19 @@ const SPECIALTIES = [
 ] as const;
 
 export default function GraphPage() {
-  const { nodes, edges, filters, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore();
+  // useShallow: only re-render when one of these specific keys changes (Object.is per-key),
+  // not on every unrelated set() — prevents broadcast re-renders that would re-mount the heavy
+  // KnowledgeGraph (264 nodes + edges) on any setNodeContent/setLoading/etc. call elsewhere.
+  const { nodes, edges, filters, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore(
+    useShallow((s) => ({
+      nodes: s.nodes,
+      edges: s.edges,
+      filters: s.filters,
+      isLoading: s.isLoading,
+      setFilters: s.setFilters,
+      getFilteredNodes: s.getFilteredNodes,
+    }))
+  );
   const router = useRouter();
   const searchParams = useSearchParams();
 

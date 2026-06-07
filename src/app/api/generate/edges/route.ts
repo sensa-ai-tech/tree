@@ -4,6 +4,7 @@ import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildEdgesPrompt } from '@/lib/ai/prompts/edges';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, edgeOutputSchema, edgeGenerationInputSchema } from '@/lib/ai/parsers/validators';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { EdgeOutput, KnowledgeNode } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
@@ -38,6 +39,10 @@ async function handlePost(request: NextRequest) {
     const validation = validate(edgeOutputSchema, parsed);
 
     if (!validation.success) {
+      reportError(new Error('Edge output validation failed'), {
+        scope: 'route:/api/generate/edges',
+        tags: { kind: 'validation', errorCount: validation.errors.length },
+      });
       return NextResponse.json(
         { error: 'Validation failed', details: validation.errors },
         { status: 422 }
@@ -46,8 +51,8 @@ async function handlePost(request: NextRequest) {
 
     return NextResponse.json({ data: validation.data });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/generate/edges' });
+    return NextResponse.json({ error: 'Generation failed' }, { status: 500 });
   }
 }
 

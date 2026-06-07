@@ -72,3 +72,32 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* WCAG 2.3.3 — respect user's OS-level 'Reduce motion' preference.
+   Disables decorative entrance/hover transforms, smooth scroll, and slow
+   progress-bar transitions, while preserving essential loading indicators
+   (Skeleton pulse, Button spinner) at a perceivable but non-distracting pace. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .knowledge-node-body:hover {
+    transform: none;
+  }
+  /* Keep functional indicators visible but slowed, not eliminated, so users
+     still know loading is in progress (per WCAG 2.2.2 exception for essential
+     status indicators). */
+  .animate-spin {
+    animation-duration: 1.5s !important;
+    animation-iteration-count: infinite !important;
+  }
+  .animate-pulse {
+    animation-duration: 2s !important;
+    animation-iteration-count: infinite !important;
+  }
+}

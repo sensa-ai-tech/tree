@@ -16,10 +16,10 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // 已登入使用者直接導向首頁
+  // 已登入使用者直接導向 dashboard（與 app/page.tsx 的根目錄 redirect 一致）
   useEffect(() => {
     if (_hasHydrated && user) {
-      router.replace('/graph');
+      router.replace('/home');
     }
   }, [user, _hasHydrated, router]);
 
@@ -37,7 +37,9 @@ export default function LoginPage() {
     const currentError = useAuthStore.getState().error;
     if (!currentError) {
       showToast.success('登入成功');
-      router.push('/graph');
+      // 導向 /home 而非 /graph：讓 WelcomeOnboarding modal 在首次登入時觸發，
+      // 並提供等級/XP/連續天數的個人化脈絡，而不是丟到 8 格的 specialty 選單。
+      router.push('/home');
     } else {
       showToast.error(currentError);
     }

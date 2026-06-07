@@ -4,6 +4,7 @@ import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { getContentPrompt } from '@/lib/ai/prompt-registry';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, nodeContentSchema, contentGenerationInputSchema } from '@/lib/ai/parsers/validators';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { ContentOutput, KnowledgeNode } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
@@ -81,8 +82,8 @@ async function handlePost(request: NextRequest) {
 
     return NextResponse.json({ data: results });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/generate/content' });
+    return NextResponse.json({ error: 'Generation failed' }, { status: 500 });
   }
 }
 

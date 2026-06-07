@@ -4,6 +4,7 @@ import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildQuestionsPrompt } from '@/lib/ai/prompts/questions';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, questionsOutputSchema, questionsInputSchema } from '@/lib/ai/parsers/validators';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { KnowledgeNode } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
@@ -50,6 +51,10 @@ async function handlePost(request: NextRequest) {
     const validation = validate(questionsOutputSchema, parsed);
 
     if (!validation.success) {
+      reportError(new Error('Questions output validation failed'), {
+        scope: 'route:/api/generate/questions',
+        tags: { kind: 'validation', errorCount: validation.errors.length },
+      });
       return NextResponse.json(
         { error: 'Validation failed', details: validation.errors },
         { status: 422 }
@@ -58,8 +63,8 @@ async function handlePost(request: NextRequest) {
 
     return NextResponse.json({ data: validation.data });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/generate/questions' });
+    return NextResponse.json({ error: 'Generation failed' }, { status: 500 });
   }
 }
 

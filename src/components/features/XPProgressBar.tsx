@@ -22,7 +22,7 @@ export function XPProgressBar({ experience, className }: XPProgressBarProps) {
           <span className="text-sm font-semibold text-gray-900">Lv.{info.level}</span>
           <span className="text-xs text-gray-500">{info.tierLabel}</span>
         </div>
-        <span className="text-xs text-gray-400">
+        <span className="text-xs text-gray-600">
           {xpInLevel} / {xpNeeded} XP
         </span>
       </div>
@@ -32,7 +32,7 @@ export function XPProgressBar({ experience, className }: XPProgressBarProps) {
         variant="xp"
         size="sm"
       />
-      <div className="flex items-center justify-between text-xs text-gray-400">
+      <div className="flex items-center justify-between text-xs text-gray-600">
         <span>總計 {experience.total_xp} XP</span>
         <span>連續 {experience.streak_days} 天</span>
       </div>

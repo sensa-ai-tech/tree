@@ -163,13 +163,19 @@ export function getConnectedComponents(
   nodeIds: string[],
   edges: KnowledgeEdge[]
 ): string[][] {
+  const nodeIdSet = new Set(nodeIds);
   const adjacency = new Map<string, Set<string>>();
   for (const id of nodeIds) {
     adjacency.set(id, new Set());
   }
   for (const edge of edges) {
-    adjacency.get(edge.source_node_id)?.add(edge.target_node_id);
-    adjacency.get(edge.target_node_id)?.add(edge.source_node_id);
+    // Skip edges that reference nodes not in the input set; mirrors
+    // topologicalSort's `continue` guard — keeps components ⊆ nodeIds
+    // even when AI-generated edges reference missing/ghost nodes.
+    if (!nodeIdSet.has(edge.source_node_id) || !nodeIdSet.has(edge.target_node_id))
+      continue;
+    adjacency.get(edge.source_node_id)!.add(edge.target_node_id);
+    adjacency.get(edge.target_node_id)!.add(edge.source_node_id);
   }
 
   const visited = new Set<string>();

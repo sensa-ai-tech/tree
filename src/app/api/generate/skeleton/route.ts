@@ -4,6 +4,7 @@ import { callClaude } from '@/lib/ai/claude-client';
 import { buildSkeletonPrompt } from '@/lib/ai/prompts/skeleton';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
 import { validate, skeletonOutputSchema, skeletonInputSchema } from '@/lib/ai/parsers/validators';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { SkeletonOutput } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
@@ -22,6 +23,11 @@ async function handlePost(request: NextRequest) {
     const parsed = safeParseJson<SkeletonOutput>(rawResponse);
     const validation = validate(skeletonOutputSchema, parsed);
     if (!validation.success) {
+      // Surface validation failures to ops — most common LLM-output failure mode
+      reportError(new Error('Skeleton output validation failed'), {
+        scope: 'route:/api/generate/skeleton',
+        tags: { kind: 'validation', errorCount: validation.errors.length },
+      });
       return NextResponse.json(
         { error: 'Validation failed', details: validation.errors },
         { status: 422 }
@@ -29,8 +35,9 @@ async function handlePost(request: NextRequest) {
     }
     return NextResponse.json({ data: validation.data });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    // Don't leak raw upstream messages (Anthropic SDK errors can embed request IDs / partial headers)
+    reportError(error, { scope: 'route:/api/generate/skeleton' });
+    return NextResponse.json({ error: 'Generation failed' }, { status: 500 });
   }
 }
 

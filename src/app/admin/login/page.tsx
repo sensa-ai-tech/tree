@@ -37,9 +37,12 @@ export default function AdminLoginPage() {
         return;
       }
 
-      // SEC-002 fix: validate from is a relative path to prevent open redirect
+      // SEC-002 fix (hardened): strict allowlist for post-login redirect.
+      // Must be a same-origin admin path with no second-char / or \, no control chars,
+      // no scheme, no userinfo. Anything else falls back to the safe default.
       const rawFrom = searchParams.get('from') || '/admin/generate';
-      const from = rawFrom.startsWith('/') && !rawFrom.startsWith('//') && !rawFrom.includes(':\\')
+      const SAFE_FROM = /^\/admin\/[A-Za-z0-9/_-]{0,128}$/;
+      const from = SAFE_FROM.test(rawFrom) && rawFrom[1] !== '/' && rawFrom[1] !== '\\'
         ? rawFrom
         : '/admin/generate';
       router.push(from);

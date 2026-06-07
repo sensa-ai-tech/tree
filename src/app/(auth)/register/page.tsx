@@ -18,10 +18,10 @@ export default function RegisterPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [localError, setLocalError] = useState<string | null>(null);
 
-  // 已登入使用者直接導向首頁
+  // 已登入使用者直接導向 dashboard（與 app/page.tsx 的根目錄 redirect 一致）
   useEffect(() => {
     if (_hasHydrated && user) {
-      router.replace('/graph');
+      router.replace('/home');
     }
   }, [user, _hasHydrated, router]);
 
@@ -50,7 +50,8 @@ export default function RegisterPage() {
     const currentError = useAuthStore.getState().error;
     if (!currentError) {
       showToast.success('註冊成功');
-      router.push('/graph');
+      // 導向 /home 讓 WelcomeOnboarding modal 在首次註冊時觸發
+      router.push('/home');
     } else {
       showToast.error(currentError);
     }

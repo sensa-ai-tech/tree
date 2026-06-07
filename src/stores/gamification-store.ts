@@ -53,7 +53,9 @@ export const useGamificationStore = create<GamificationState>()(
               current_level: levelInfo.level,
             },
             recentXPEvents: [event, ...state.recentXPEvents].slice(0, 20),
-            showLevelUpModal: leveledUp,
+            // Only OPEN the modal on level-up; never CLOSE it implicitly.
+            // A follow-up XP event that doesn't level up must not dismiss an already-open modal.
+            showLevelUpModal: leveledUp || state.showLevelUpModal,
           };
         }),
 

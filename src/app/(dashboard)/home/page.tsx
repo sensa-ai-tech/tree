@@ -135,17 +135,33 @@ export default function DashboardHomePage() {
         </Card>
       </div>
 
-      {/* 複習提醒 */}
-      {todayReviewCount === 0 && (
+      {/* 複習提醒：只在「已完成過節點 + 今天還沒複習」時提示，避免對全新帳號謊報待辦 */}
+      {todayReviewCount === 0 && completedCount > 0 && (
         <Card className="border-amber-200 bg-amber-50">
           <CardBody className="flex items-center justify-between">
             <div>
               <p className="font-medium text-amber-800">📚 今日複習提醒</p>
-              <p className="text-sm text-amber-600">你有待複習的知識節點，別忘了鞏固記憶！</p>
+              <p className="text-sm text-amber-600">已完成 {completedCount} 個節點，今天還沒複習，回去鞏固一下吧！</p>
             </div>
             <Link href="/review">
               <Badge className="cursor-pointer bg-amber-600 text-white hover:bg-amber-700">
                 前往複習
+              </Badge>
+            </Link>
+          </CardBody>
+        </Card>
+      )}
+      {/* 全新帳號：引導去學習，而不是假裝有複習 */}
+      {completedCount === 0 && (
+        <Card className="border-indigo-200 bg-indigo-50">
+          <CardBody className="flex items-center justify-between">
+            <div>
+              <p className="font-medium text-indigo-800">🌱 從第一個節點開始</p>
+              <p className="text-sm text-indigo-600">完成知識節點後，系統會自動排程複習（FSRS 演算法）。</p>
+            </div>
+            <Link href="/graph">
+              <Badge className="cursor-pointer bg-indigo-600 text-white hover:bg-indigo-700">
+                進入圖譜
               </Badge>
             </Link>
           </CardBody>

@@ -181,7 +181,7 @@ CKCS 好發、Cough（咳嗽）、Cardiomegaly（心臟擴大）、CHF（心衰�
 |------|------|-------------|
 | A | 高風險品種，無病變 | 無雜音，心超正常 |
 | B1 | 有雜音，無重塑 | LA/Ao < 1.6, LVIDDN 正常 |
-| B2 | 有雜音，有重塑 | LA/Ao ≥ 1.6 或 LVIDDN ↑, VHS > 10.5 |
+| B2 | 有雜音(≥ 3/6)，有重塑 | 同時滿足三項（ACVIM 2019 Keene）：心雜音 ≥ 3/6 + LA/Ao ≥ 1.6（右側短軸切面）+ LVIDDN ≥ 1.7；VHS ≥ 10.5 為 EPIC trial 入組標準，非分期條件 |
 | C | CHF 臨床症狀 | 肺水腫（X 光）、sleeping RR > 30 |
 | D | 難治性心衰竭 | 對標準三合一治療反應不佳 |
 
@@ -4479,7 +4479,7 @@ const contentCardiacStaging: NodeContent = {
   ],
   key_points: [
     'ACVIM MMVD 分期：A（高風險無病變）→ B1（雜音但無重塑）→ B2（有重塑）→ C（臨床CHF）→ D（難治性CHF）',
-    'B1 vs B2 關鍵指標：LA/Ao ≥1.6 或 LVIDDN ↑ 或 VHS >10.5 → B2',
+    'B1 vs B2 關鍵指標（ACVIM 2019 Keene，三項皆須符合）：心雜音 ≥3/6 + LA/Ao ≥1.6（右側短軸）+ LVIDDN ≥1.7 → B2；VHS ≥10.5 是 EPIC 試驗的入組門檻而非分期條件',
     'B2 開始 Pimobendan（EPIC 研究，Level I 證據），B1 無需藥物治療',
     'DCM 分期：Occult（Holter + 心超篩檢）→ Overt（CHF 發生）→ 犬種特異性篩檢建議',
     'HCM 監測要點：LV 壁厚追蹤 + LA 大小 + Clopidogrel 預防 ATE（LA/Ao ≥2.0）',
@@ -4497,7 +4497,7 @@ const contentCardiacStaging: NodeContent = {
 |------|------|---------|------|
 | A | 高風險品種，無病變 | 好發品種，無雜音，心超正常 | 年度聽診篩檢 |
 | B1 | 有雜音，無心臟重塑 | 雜音+心超 LA/Ao <1.6, LVIDDN 正常 | 每 12 月心超追蹤 |
-| B2 | 有雜音，有心臟重塑 | LA/Ao ≥1.6 或 LVIDDN↑ 或 VHS >10.5 | Pimobendan 開始；每 6 月追蹤 |
+| B2 | 有雜音(≥3/6)，有心臟重塑 | 同時滿足三項（ACVIM 2019 Keene）：心雜音 ≥3/6 + LA/Ao ≥1.6（右側短軸）+ LVIDDN ≥1.7（VHS ≥10.5 為 EPIC 入組標準） | Pimobendan 開始；每 6 月追蹤 |
 | C | 臨床心衰竭 | 肺水腫（X光）± sleeping RR >30 | 三合一治療；每 1-3 月追蹤 |
 | D | 難治性心衰竭 | 標準三合一治療反應不佳 | 藥物升級；每 2-4 週追蹤 |
 

@@ -62,22 +62,28 @@ export function parseContentMarkers(rawMarkdown: string): ParsedContent {
     }
   }
 
+  // Escape HTML metacharacters before interpolating any captured marker text into
+  // raw HTML — rehype-sanitize is defense in depth, not the primary boundary.
+  const escapeHtml = (s: string): string =>
+    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
   let processed = rawMarkdown;
-  processed = processed.replace(
-    DRUG_PATTERN,
-    '<span class="drug-link" data-drug="$1">$1</span>'
-  );
+  processed = processed.replace(DRUG_PATTERN, (_m, name: string) => {
+    const safe = escapeHtml(name);
+    return `<span class="drug-link" data-drug="${safe}">${safe}</span>`;
+  });
   processed = processed.replace(IMAGE_PATTERN, (_match, desc: string) => {
+    const safe = escapeHtml(desc);
     const hasImage = resolvedImages.has(desc);
     if (hasImage) {
-      return `<div class="clinical-image">[臨床影像: ${desc}]</div>`;
+      return `<div class="clinical-image">[臨床影像: ${safe}]</div>`;
     }
-    return `<div class="image-placeholder">[圖片預留位: ${desc}]</div>`;
+    return `<div class="image-placeholder">[圖片預留位: ${safe}]</div>`;
   });
-  processed = processed.replace(
-    INTERACTIVE_PATTERN,
-    '<div class="interactive-placeholder" data-desc="$1">[互動元件預留位: $1]</div>'
-  );
+  processed = processed.replace(INTERACTIVE_PATTERN, (_m, desc: string) => {
+    const safe = escapeHtml(desc);
+    return `<div class="interactive-placeholder" data-desc="${safe}">[互動元件預留位: ${safe}]</div>`;
+  });
 
   return { markdown: processed, drugLinks, imagePlaceholders, interactiveElements, resolvedImages };
 }
