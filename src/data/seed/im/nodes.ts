@@ -85,4 +85,7 @@ export const IM_NODES: KnowledgeNode[] = [
 
   // ─── 2026-06-07 自我演化 iter 2 新增（內分泌/心血管交界 1 node）───
   { id: 'IM-L3-029', specialty: 'IM', title: '系統性高血壓', title_en: 'Systemic Hypertension', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['高血壓', '靶器官損傷', 'TOD', 'amlodipine', 'telmisartan', '犬貓', 'ACVIM-2018'], encyclopedia_link: null, cross_specialty_notes: 'CARDIO - LV 同心性肥厚與 HCM 鑑別；OPHTH - 高血壓視網膜病變（急性失明）；NEURO - 高血壓性腦病；CKD/甲亢/Cushing/嗜鉻細胞瘤共病', created_at: now, updated_at: now },
+
+  // ─── 2026-06-07 自我演化 iter 4 新增（藥物基因體學 1 node）───
+  { id: 'IM-L3-030', specialty: 'IM', title: 'MDR1 (ABCB1-1Δ) 基因突變與伊維菌素中毒', title_en: 'MDR1 (ABCB1-1Δ) Mutation & Ivermectin Toxicity', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['MDR1', 'ABCB1', 'P-glycoprotein', 'ivermectin', 'macrocyclic lactone', 'lipid emulsion', '柯利犬', 'collie', 'sheltie', '藥物基因體學', '犬'], encyclopedia_link: null, cross_specialty_notes: 'NEURO - ivermectin 神經毒性 / 高血壓性腦病鑑別；ONCO - vincristine/doxorubicin 化療藥物毒性放大；CARDIO - 心絲蟲預防劑用藥安全；ECC - IV lipid emulsion (ILE) 中毒急救', created_at: now, updated_at: now },
 ];

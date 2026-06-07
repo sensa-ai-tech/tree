@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: 'VetKnowledgeTree',
     title: 'VetKnowledgeTree - 獸醫專科知識樹',
-    description: '結構化的獸醫專科互動學習平台，涵蓋 8 大專科、187 個知識節點的互動式學習體驗。',
+    description: '結構化的獸醫專科互動學習平台，涵蓋 8 大專科、270+ 個知識節點的互動式學習體驗。',
   },
   twitter: {
     card: 'summary_large_image',

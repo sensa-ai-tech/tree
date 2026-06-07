@@ -38,34 +38,82 @@ export async function verifyAdminToken(token: string): Promise<boolean> {
 }
 
 /**
- * 密碼驗證。
- * 支援兩種儲存格式：
- * 1. 「sha256:<hex>」純雜湊（建議生產環境用）
- * 2. 明文（向後相容，會自動以 SHA-256 比對）
- *
- * 兩種模式都用 timing-safe 比對防 timing attack。
+ * SEC-R3-002 multi-admin parser.
+ * 解析 VKT_ADMIN_USERS=alice:sha256:hex,bob:sha256:hex 為 entries 陣列。
+ * 純函式 (testable)；不讀 env。跳過格式錯誤（缺 id、缺 sha256: 前綴、hex 長度錯）的條目。
  */
-export function validateAdminPassword(password: string): boolean {
+export function parseAdminUsers(raw: string | undefined): Array<{ id: string; hash: Buffer }> {
+  if (!raw) return [];
+  const entries: Array<{ id: string; hash: Buffer }> = [];
+  for (const rawEntry of raw.split(',')) {
+    const entry = rawEntry.trim();
+    if (!entry) continue;
+    const firstColon = entry.indexOf(':');
+    if (firstColon <= 0) continue;
+    const id = entry.slice(0, firstColon).trim();
+    const rest = entry.slice(firstColon + 1).trim();
+    if (!id) continue;
+    if (!rest.startsWith('sha256:')) continue;
+    const hex = rest.slice('sha256:'.length).trim();
+    if (!/^[0-9a-fA-F]{64}$/.test(hex)) continue;
+    entries.push({ id, hash: Buffer.from(hex, 'hex') });
+  }
+  return entries;
+}
+
+/**
+ * SEC-R3-002 多管理員密碼驗證 + 身份識別。
+ * - 優先讀 VKT_ADMIN_USERS（多管理員模式）；走訪「所有」entries 比對，避免 short-circuit timing leak。
+ * - 若 VKT_ADMIN_USERS 未設，向後相容讀 VKT_ADMIN_PASSWORD（單管理員模式），match 時回 'admin'。
+ * 回傳：匹配的 admin id（字串）；無匹配回 null。
+ */
+export function validateAdminPasswordWithId(password: string): string | null {
+  const actualHash = createHash('sha256').update(password).digest();
+
+  // 多管理員模式
+  const usersRaw = process.env.VKT_ADMIN_USERS;
+  if (usersRaw) {
+    const entries = parseAdminUsers(usersRaw);
+    let matchedId: string | null = null;
+    // 「無 short-circuit」走訪：即使第 1 筆 match 也繼續跑完，避免 timing 洩漏 index
+    for (const entry of entries) {
+      const equalLen = entry.hash.length === actualHash.length;
+      const match = equalLen && timingSafeEqual(entry.hash, actualHash);
+      if (match && matchedId === null) {
+        matchedId = entry.id;
+      }
+    }
+    return matchedId;
+  }
+
+  // 向後相容：單管理員模式 (VKT_ADMIN_PASSWORD)
   const expected = process.env.VKT_ADMIN_PASSWORD;
-  if (!expected) return false;
+  if (!expected) return null;
 
   if (expected.startsWith('sha256:')) {
     const expectedHash = Buffer.from(expected.slice(7), 'hex');
-    const actualHash = createHash('sha256').update(password).digest();
-    if (expectedHash.length !== actualHash.length) return false;
-    return timingSafeEqual(expectedHash, actualHash);
+    if (expectedHash.length !== actualHash.length) return null;
+    return timingSafeEqual(expectedHash, actualHash) ? 'admin' : null;
   }
 
-  // SEC-003 fix: plaintext fallback is forbidden in production
+  // SEC-003: plaintext fallback forbidden in production
   if (process.env.NODE_ENV === 'production') {
     console.error('[admin-auth] FATAL: VKT_ADMIN_PASSWORD must use sha256: prefix in production. Refusing plaintext comparison.');
-    return false;
+    return null;
   }
-  // Fallback: plaintext compare (legacy — dev only)
+  // Plaintext compare (dev only)
   const expectedBuf = Buffer.from(expected);
   const actualBuf = Buffer.from(password);
-  if (expectedBuf.length !== actualBuf.length) return false;
-  return timingSafeEqual(expectedBuf, actualBuf);
+  if (expectedBuf.length !== actualBuf.length) return null;
+  return timingSafeEqual(expectedBuf, actualBuf) ? 'admin' : null;
+}
+
+/**
+ * 密碼驗證（boolean wrapper，向後相容）。
+ * 新程式請改用 validateAdminPasswordWithId 取得 audit identity。
+ */
+export function validateAdminPassword(password: string): boolean {
+  return validateAdminPasswordWithId(password) !== null;
 }
 
 export async function setAdminCookie(token: string): Promise<void> {

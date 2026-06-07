@@ -14,14 +14,15 @@ function makeEdge(
   source: string,
   target: string,
   type: string = 'prerequisite',
-  bidirectional = false
+  bidirectional = false,
+  weight = 1
 ): KnowledgeEdge {
   return {
     id: `${source}-${target}`,
     source_node_id: source,
     target_node_id: target,
     relation_type: type as KnowledgeEdge['relation_type'],
-    weight: 1,
+    weight,
     description: null,
     bidirectional,
     unlock_condition: null,
@@ -142,6 +143,31 @@ describe('findShortestPath', () => {
     const edges = [makeEdge('A', 'B', 'same_system', true)];
     const path = findShortestPath('B', 'A', edges);
     expect(path).toEqual(['B', 'A']);
+  });
+
+  it('returns single-node path when start === end (CODE-R3-001 self-path early exit)', () => {
+    const path = findShortestPath('A', 'A', []);
+    expect(path).toEqual(['A']);
+  });
+
+  it('prefers stronger-weight route over weaker multi-hop alternative (CODE-R3-001 Dijkstra)', () => {
+    // Direct A->D weight 0.1 → cost 10
+    // Via A->B->C->D, each weight 5 → cost 0.2/edge → total 0.6
+    // Dijkstra must pick the 3-hop strong-weight route.
+    const edges = [
+      makeEdge('A', 'D', 'prerequisite', false, 0.1),
+      makeEdge('A', 'B', 'prerequisite', false, 5),
+      makeEdge('B', 'C', 'prerequisite', false, 5),
+      makeEdge('C', 'D', 'prerequisite', false, 5),
+    ];
+    const path = findShortestPath('A', 'D', edges);
+    expect(path).toEqual(['A', 'B', 'C', 'D']);
+  });
+
+  it('clamps zero / negative weights to 0.01 floor — no Infinity blow-up', () => {
+    const edges = [makeEdge('A', 'B', 'prerequisite', false, 0)];
+    const path = findShortestPath('A', 'B', edges);
+    expect(path).toEqual(['A', 'B']);
   });
 });
 

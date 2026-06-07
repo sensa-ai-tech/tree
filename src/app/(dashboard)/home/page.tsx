@@ -18,6 +18,7 @@ import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Progress } from '@/components/ui/Progress';
+import { useShallow } from 'zustand/react/shallow';
 import { WelcomeOnboarding } from '@/components/features/WelcomeOnboarding';
 import { useAuthStore } from '@/stores/auth-store';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
@@ -44,10 +45,17 @@ const QUICK_ACTIONS = [
 ] as const;
 
 export default function DashboardHomePage() {
-  const { user } = useAuthStore();
-  const { nodes } = useKnowledgeStore();
-  const { getCompletedCount, getInProgressCount, todayReviewCount } = useLearningStore();
-  const { experience } = useGamificationStore();
+  // ENG-R3-001: single-key reads use lighter selector form; multi-key uses useShallow.
+  const user = useAuthStore((s) => s.user);
+  const nodes = useKnowledgeStore((s) => s.nodes);
+  const { getCompletedCount, getInProgressCount, todayReviewCount } = useLearningStore(
+    useShallow((s) => ({
+      getCompletedCount: s.getCompletedCount,
+      getInProgressCount: s.getInProgressCount,
+      todayReviewCount: s.todayReviewCount,
+    }))
+  );
+  const experience = useGamificationStore((s) => s.experience);
 
   const completedCount = getCompletedCount();
   const inProgressCount = getInProgressCount();

@@ -4,6 +4,7 @@ import { use, useMemo } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, CheckCircle2, Circle, Flag } from 'lucide-react';
+import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -17,8 +18,14 @@ interface PathDetailPageProps {
 
 export default function PathDetailPage({ params }: PathDetailPageProps) {
   const { pathId } = use(params);
-  const { paths, getNodeById } = useKnowledgeStore();
-  const { getStatus } = useLearningStore();
+  // ENG-R3-001: useShallow for the 2-key destructure; single-key uses lighter form.
+  const { paths, getNodeById } = useKnowledgeStore(
+    useShallow((s) => ({
+      paths: s.paths,
+      getNodeById: s.getNodeById,
+    }))
+  );
+  const getStatus = useLearningStore((s) => s.getStatus);
 
   const path = useMemo(() => paths.find((p) => p.id === pathId), [paths, pathId]);
 

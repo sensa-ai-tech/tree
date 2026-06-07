@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useShallow } from 'zustand/react/shallow';
 import { isMockMode } from '@/data/seed/mock-mode';
 import { createBrowserClient } from '@/lib/supabase/client';
 import { reportError } from '@/lib/observability/error-reporter';
@@ -13,7 +14,17 @@ import type { KnowledgeNode, KnowledgeEdge, LearningPath } from '@/types/knowled
  */
 export function SupabaseDataProvider({ children }: { children: React.ReactNode }) {
   const initialized = useRef(false);
-  const { setNodes, setEdges, setPaths, setLoading, setError } = useKnowledgeStore();
+  // ENG-R3-001 useShallow: wraps entire dashboard tree. Per-key shallow comparison
+  // keeps re-renders limited to setter identity changes (effectively zero in zustand).
+  const { setNodes, setEdges, setPaths, setLoading, setError } = useKnowledgeStore(
+    useShallow((s) => ({
+      setNodes: s.setNodes,
+      setEdges: s.setEdges,
+      setPaths: s.setPaths,
+      setLoading: s.setLoading,
+      setError: s.setError,
+    }))
+  );
 
   useEffect(() => {
     if (initialized.current || isMockMode()) return;

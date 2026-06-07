@@ -7477,6 +7477,95 @@ const contentSystemicHypertension: NodeContent = {
   created_at: '2026-06-07',
 };
 
+// ─── IM-L3-030: MDR1 (ABCB1-1Δ) 突變與伊維菌素中毒 (2026-06-07 iter 4) ─────────
+const contentMDR1Toxicity: NodeContent = {
+  id: 'CONTENT-IM-L3-030',
+  node_id: 'IM-L3-030',
+  version: 1,
+  summary: 'MDR1 (ABCB1-1Δ) 為 ABCB1 基因第 4 個外顯子 4-bp 缺失造成的框移突變，導致 P-glycoprotein (P-gp) 截短、血腦屏障 (BBB) 排藥功能喪失。柯利犬 (Collie) 約 75%、長毛威比特 (Long-haired Whippet) 約 65%、澳洲牧羊犬 (Aussie) 約 50%、喜樂蒂 (Sheltie) 約 15% 帶有突變等位基因。常見受影響藥物：macrocyclic lactones (ivermectin、milbemycin、moxidectin、selamectin)、loperamide、vincristine/doxorubicin/paclitaxel、部分鴉片類。臨床表現：運動失調、瞳孔散大、流涎、震顫、視覺異常、昏迷。診斷：WSU VCPL 或 UC Davis VGL 頰部黏膜拭子基因檢測 (USD 60-70)。治療核心：20% IV lipid emulsion (ILE) 1.5 mL/kg bolus + 0.25 mL/kg/min CRI × 30-60 min（單日上限 8 mL/kg），加上支持療法。預後：及早 ILE 介入可完全康復。',
+  learning_objectives: [
+    '解釋 MDR1 (ABCB1-1Δ) 突變如何造成 P-glycoprotein 功能喪失與 BBB 滲漏',
+    '辨識 ABCB1-1Δ 高風險犬種與各品種的突變等位基因頻率',
+    '列出 11 種常見受 P-gp 影響、可能造成 MDR1 突變犬中毒的藥物',
+    '解讀 WSU VCPL / UC Davis VGL 基因檢測結果（normal/mutant heterozygous/mutant homozygous）',
+    '依據 ACVIM 共識正確執行 20% IV 脂肪乳劑 (ILE) 中毒解救方案',
+    '指導飼主在風險犬種的藥物使用安全（心絲蟲預防劑、止瀉藥、化療藥物）',
+  ],
+  key_points: [
+    'ABCB1 基因 (舊稱 MDR1) 第 4 外顯子的 4-bp 缺失 (c.227_230del) 造成框移與提前終止，P-gp 蛋白截短、無功能',
+    'P-gp 是 BBB、腸黏膜、肝臟、腎臟的外排幫浦；缺失後脂溶性藥物大量進入中樞神經系統',
+    '高風險犬種等位基因頻率：Collie ~75%、Long-haired Whippet ~65%、Aussie/Mini Aussie ~50%、Old English Sheepdog ~15%、Sheltie ~15%、German Shepherd ~10%、Border Collie ~5%',
+    '受影響藥物（11 大類）：1) macrocyclic lactones (ivermectin/milbemycin/moxidectin/selamectin)；2) loperamide (止瀉)；3) 化療：vincristine/vinblastine/doxorubicin/paclitaxel；4) digoxin；5) acepromazine（鎮靜時間延長 2-3 倍）',
+    '心絲蟲預防劑「預防劑量」(ivermectin 6 μg/kg/月) 對 MDR1 突變犬安全；致毒劑量需 >50× FDA 核准犬用預防劑量',
+    '臨床中毒劑量：ivermectin >100 μg/kg PO 對純合子突變犬即可致毒（牛羊驅蟲劑或外用「滴在皮膚」型劑型最危險）',
+    '臨床表現：早期 - 流涎、嘔吐、運動失調、瞳孔散大；中期 - 震顫、視覺喪失、低血壓；嚴重 - 昏迷、低體溫、呼吸抑制',
+    '診斷金標準：頰部拭子基因檢測（WSU VCPL https://vcpl.vetmed.wsu.edu/，USD 60-70；UC Davis VGL https://vgl.ucdavis.edu/test/mdr1）',
+    '治療核心：20% IV lipid emulsion (Intralipid/SMOFlipid)：1.5 mL/kg slow IV bolus 1 分鐘 → 0.25 mL/kg/min CRI × 30-60 min（單日上限 8 mL/kg）；可重複 q4h × 24h 直至症狀緩解',
+    '預後：早期 ILE 介入（症狀出現 4-6h 內）可完全康復；延誤 24h 以上死亡率顯著升高',
+  ],
+  body: '# MDR1 (ABCB1-1Δ) 突變與伊維菌素中毒\n\n## 一、分子遺傳學基礎\n\nABCB1 基因（舊稱 MDR1）位於犬 14 號染色體，編碼 P-glycoprotein (P-gp)，一種 ATP 依賴性外排幫浦，分布於 BBB、腸黏膜、肝細胞膽管面、腎近曲小管。ABCB1-1Δ 是第 4 個外顯子的 4 鹼基缺失 (c.227_230del GATA)，造成 reading frame shift 與提前終止 → 截短的 P-gp 蛋白無功能 → BBB 滲漏。\n\n## 二、品種與等位基因頻率\n\n| 品種 | Mutant Allele Frequency | 雙等位基因突變盛行率 |\n|------|------------------------|----------------------|\n| **Collie** | ~75% | ~50% homozygous |\n| **Long-haired Whippet** | ~65% | ~42% homozygous |\n| **Australian Shepherd** | ~50% | ~25% homozygous |\n| **Old English Sheepdog** | ~15% | ~2-5% homozygous |\n| **Shetland Sheepdog** | ~15% | ~2-5% homozygous |\n| **German Shepherd** | ~10% | ~1% homozygous |\n| **Border Collie** | ~5% | <1% homozygous |\n\n## 三、受 P-gp 影響的藥物\n\n| 類別 | 代表藥物 | 中毒風險 |\n|---------|---------|---------|\n| Macrocyclic Lactones | [藥物:Ivermectin]、Milbemycin、Moxidectin | 預防劑量安全；治療劑量危險 |\n| 止瀉藥 | [藥物:Loperamide] | OTC 劑量即可造成 CNS 抑制 |\n| 化療 | [藥物:Vincristine]、[藥物:Doxorubicin] | 神經毒性、骨髓抑制放大 |\n| 鎮靜劑 | [藥物:Acepromazine] | 鎮靜時間延長 2-3 倍 |\n| 強心配醣體 | [藥物:Digoxin] | 半衰期延長 |\n\n## 四、臨床分期\n\n| 階段 | 出現時間 | 臨床表現 |\n|------|---------|---------|\n| 早期 | 4-12h | 流涎、嘔吐、運動失調、瞳孔散大 |\n| 中期 | 12-24h | 震顫、視覺喪失、低血壓、心搏徐緩 |\n| 嚴重 | 24h+ | 昏迷、低體溫、呼吸抑制；死亡率 >50% |\n\n## 五、治療：IV Lipid Emulsion (ILE)\n\n**機轉**：脂溶性藥物在血中被「lipid sink」吸附、從 CNS 移回血液被代謝清除。\n\n**標準方案**：20% Intralipid 或 SMOFlipid\n- Loading: 1.5 mL/kg slow IV bolus（1 分鐘）\n- CRI: 0.25 mL/kg/min × 30-60 min\n- 單日上限 8 mL/kg/day；可 q4-6h 重複 × 24-72h\n\n**支持療法**：氣道保護（插管）、體溫維持、輸液、atropine（心搏徐緩）、diazepam（發作控制）。\n\n## 六、預後\n\n- 早期 ILE 介入（4-6h 內）完全康復率 >90% (Wright 2011)\n- 延誤 12-24h 康復率 60-80%\n- 延誤 >24h 或已昏迷死亡率 >50%\n',
+  clinical_pearl: '看到牧羊犬血統 + 神經症狀 + 「最近吃了 XX 藥」，先把 IV lipid emulsion 拿出來、再去開檢驗單。臨床決策走「品種風險 + 用藥史」推定診斷即可，ILE 1.5 mL/kg bolus + 0.25 mL/kg/min CRI 是兩條救命指令，全院都該知道在哪個冰箱。心絲蟲預防劑在 MDR1 犬完全安全（FDA 預防劑量遠低於 100× 致毒劑量），不要因為一個帶突變的 Collie 就停掉所有伊維菌素類預防 — 心絲蟲死亡率高得多。',
+  common_mistakes: [
+    '誤以為「MDR1 突變的 Collie 不能用任何心絲蟲預防」— 預防劑量 (6 μg/kg/月) 安全',
+    '看到 ivermectin 中毒只給活性炭、沒有第一時間給 IV lipid emulsion',
+    '把牛羊用驅蟲劑「稀釋後」給 Collie — 濃度為犬用 100× 以上',
+    'IV lipid emulsion 推太快（< 30 秒）— 增加脂肪栓塞風險',
+    'MDR1 犬使用 acepromazine 標準劑量、結果鎮靜 2-3 天醒不來',
+    '化療前沒做 MDR1 基因檢測就用標準劑量 vincristine',
+    'MDR1 雜合子視為「沒事」— 高劑量或多重 P-gp 受質仍會中毒',
+  ],
+  disease_data: {
+    signalment: 'MDR1 突變高風險犬種：Collie、Long-haired Whippet、Australian Shepherd、Old English Sheepdog、Shetland Sheepdog、English Shepherd、Silken Windhound、German Shepherd、Border Collie。台灣門診常見：Collie、Border Collie、Aussie、Sheltie。中毒臨床表現好發於餵食牛羊驅蟲劑、外用大動物 ivermectin 滴劑、人用止瀉藥或標準劑量化療後。',
+    etiology: 'ABCB1 基因第 4 外顯子 4-bp 缺失 (c.227_230del GATA) 造成 frame shift → 截短的 P-glycoprotein 無功能 → BBB 喪失外排藥物能力。純合子完全缺失；雜合子仍有約 50% 功能、高劑量下仍可中毒。中毒劑量：ivermectin >100 μg/kg PO 對純合子致毒；犬用心絲蟲預防劑 6 μg/kg/月安全。',
+    pathogenesis: '正常 P-gp 在 BBB 主動把脂溶性受質從腦內泵回血液。ABCB1-1Δ 突變 → P-gp 失能 → BBB 對 macrocyclic lactones、loperamide、長春花鹼類化療藥的滲透性大幅升高。Ivermectin 在腦內作用於 GABA-gated chloride channels，造成神經元過度抑制 → 運動失調、震顫、CNS 抑制、昏迷。',
+    clinical_signs: [
+      { sign: '運動失調與後肢無力', category: 'primary', description: '早期 4-12h 出現' },
+      { sign: '瞳孔散大（雙側對稱）', category: 'primary', description: '對光反射可能保留；與顱壓升高鑑別' },
+      { sign: '流涎與嘔吐', category: 'primary', description: '早期常見' },
+      { sign: '全身性震顫與發作', category: 'primary', description: '中期出現' },
+      { sign: '視覺喪失（中樞性盲）', category: 'primary', description: '眼底鏡通常正常' },
+      { sign: '昏迷與低體溫', category: 'primary', description: '嚴重中毒；常需插管支持' },
+      { sign: '心搏徐緩與低血壓', category: 'secondary', description: '副交感過度活化' },
+      { sign: '呼吸抑制', category: 'secondary', description: '中樞性；嚴重需 IPPV' },
+    ],
+    staging: { system: 'Ivermectin Toxicity Severity', stages: ['Stage I (Mild)：流涎、嘔吐、輕度運動失調 — ILE + 支持療法、預後良好', 'Stage II (Moderate)：明顯運動失調、視覺喪失、震顫 — ILE 立即啟動、預後良好', 'Stage III (Severe)：昏迷、低體溫、呼吸抑制、發作 — ILE + 插管 + ICU、預後保留'] },
+    differential_diagnosis: [
+      { condition: 'Moxidectin 中毒', key_differentiator: '半衰期更長（28-44 天）、症狀持續更久；治療相同' },
+      { condition: 'Loperamide 中毒', key_differentiator: '人用止瀉藥史；以嚴重鎮靜與呼吸抑制為主；naloxone 可部分逆轉' },
+      { condition: '癲癇重積', key_differentiator: '無用藥史；強直陣攣型發作；diazepam + levetiracetam' },
+      { condition: '高血壓性腦病', key_differentiator: 'BP > 180、TOD 表現；CKD/甲亢病史' },
+      { condition: '肝腦症', key_differentiator: '血氨升高、PSS 病史；頭壓牆、行為改變' },
+      { condition: '化療毒性 (vincristine 周邊神經病變)', key_differentiator: '化療史 + MDR1 突變犬；周邊神經為主、CNS 表現輕' },
+    ],
+    diagnostic_workup: '1. 詳細用藥史（牛羊驅蟲劑、loperamide、化療、外用大動物驅蟲劑）→ 2. 神經學檢查 → 3. 急性中毒：基於品種 + 用藥史推定診斷、立即啟動 ILE → 4. 基因檢測（WSU VCPL 或 UC Davis VGL，USD 60-70）→ 5. 排除鑑別：CBC/生化、BP、MRI/CSF（若疑似結構性病變）。',
+    treatment_protocol: '**第一線：IV Lipid Emulsion** — 20% Intralipid/SMOFlipid，1.5 mL/kg slow IV bolus → 0.25 mL/kg/min CRI × 30-60 min（單日上限 8 mL/kg）。q4-6h 可重複 × 24-72h。**去汙染**：apomorphine 0.04 mg/kg IV 催吐（攝食 1-2h 內）→ 活性炭 1-4 g/kg PO q4-6h × 24-48h。**支持療法**：插管 + IPPV、循環式溫毯、lactated Ringer、atropine 0.02-0.04 mg/kg、diazepam 0.5 mg/kg IV。**禁忌**：類固醇、acepromazine、再次 P-gp 受質。',
+    prognosis: '及早 ILE 介入（4-6h 內）完全康復率 >90%（Wright 2011：27 例中 22 例 ILE 後完全康復）。延誤 12-24h 康復率 60-80%、可能殘留神經缺失。延誤 >24h 或昏迷死亡率 >50%。長期：基因突變終身，需建立用藥黑名單。',
+    monitoring: '**急性期**：每 1-2h 神經狀態、瞳孔、BP、體溫；每 4-6h 評估 ILE 效應。**亞急性**：神經評分 q6-12h、嗜中性球（化療毒性時）q3-5d。**長期**：建立病歷紅旗「MDR1 Mutant」、每年提醒飼主藥物黑名單、新藥前查 WSU VCPL 清單。',
+    owner_communication: '您家的狗可能帶有 MDR1 基因突變（牧羊犬血統常見），這是一種「天生少了一道腦部防護網」的狀況。重點：(1) 強烈建議做基因檢測（USD 60，頰部拭子寄到 WSU 實驗室，3-7 天）；(2) 心絲蟲預防劑按犬用標準劑量「完全安全」，請不要因為害怕而停藥；(3) 絕對不可使用：牛羊驅蟲劑、外用大動物滴劑、人用 Imodium；(4) 化療前必須告知獸醫品種、做基因檢測再決定劑量；(5) 隨身攜帶或在病歷上標註 MDR1 警示。若已疑似中毒（流口水、走路不穩、瞳孔變大），立即急診，4-6 小時內治療康復率 >90%。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '分子遺傳學段落', type: 'annotated_image', description: 'ABCB1-1Δ 基因 4-bp 缺失示意圖（DNA 序列 + 框移 + 截短蛋白）' },
+    { position: '品種頻率段落', type: 'comparison_table', description: '10 個高風險犬種等位基因頻率長條圖' },
+  ],
+  interactive_placeholders: [
+    { position: '受影響藥物段落', type: 'drug_safety_checker', description: '輸入藥名查詢是否為 P-gp 受質、是否安全給 MDR1 突變犬使用' },
+  ],
+  drug_api_links: ['Ivermectin', 'Milbemycin', 'Moxidectin', 'Selamectin', 'Loperamide', 'Vincristine', 'Doxorubicin', 'Acepromazine', 'Digoxin', 'Atropine', 'Diazepam', 'Apomorphine'],
+  references: [
+    { type: 'journal', citation: 'Mealey KL, Bentjen SA, Gay JM, Cantor GH. Ivermectin sensitivity in collies is associated with a deletion mutation of the mdr1 gene. Pharmacogenetics. 2001;11(8):727-733.', relevance: '原始 MDR1 突變發現論文' },
+    { type: 'journal', citation: 'Mealey KL, Meurs KM. Breed distribution of the ABCB1-1Δ polymorphism among dogs undergoing ABCB1 genotyping. J Am Vet Med Assoc. 2008;233(6):921-924.', relevance: '15,000+ 犬大規模族群分析，確立各品種等位基因頻率' },
+    { type: 'journal', citation: 'Geyer J, Janko C. Treatment of MDR1 mutant dogs with macrocyclic lactones. Curr Pharm Biotechnol. 2012;13(6):969-986.', relevance: '開放取用回顧：MDR1 受質藥物清單、安全劑量、ILE 治療準則' },
+    { type: 'journal', citation: 'Wright HM, Chen AV, Talcott PA, et al. Intravenous fat emulsion as treatment for ivermectin toxicosis in three dogs homozygous for the ABCB1-1Δ gene mutation. J Vet Emerg Crit Care. 2011;21(6):666-672.', relevance: 'ILE 治療純合子 MDR1 突變犬 ivermectin 中毒的關鍵案例系列' },
+    { type: 'journal', citation: 'Bates N, Chatterton J, Robbins C, et al. Lipid infusion in the management of poisoning: a report of 6 canine cases. Vet Rec. 2013;172(13):339.', relevance: '英國毒物中心 ILE 病例系列，確立 8 mL/kg/day 上限' },
+    { type: 'web', citation: 'Washington State University Veterinary Clinical Pharmacology Lab — MDR1 Testing. https://vcpl.vetmed.wsu.edu/', relevance: '官方基因檢測單位（頰部拭子 USD 60、3-7 工作天）' },
+    { type: 'web', citation: 'University of California Davis Veterinary Genetics Laboratory — MDR1. https://vgl.ucdavis.edu/test/mdr1', relevance: '北美第二大基因檢測中心（USD 70）' },
+  ],
+  is_current: true,
+  created_at: '2026-06-07',
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
@@ -7541,4 +7630,6 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L3-028', contentFPV],
   // 2026-06-07 iter 2 新增 (內分泌/心血管交界)
   ['IM-L3-029', contentSystemicHypertension],
+  // 2026-06-07 iter 4 新增 (藥物基因體學)
+  ['IM-L3-030', contentMDR1Toxicity],
 ]);

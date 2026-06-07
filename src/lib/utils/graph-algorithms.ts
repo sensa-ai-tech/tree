@@ -149,27 +149,48 @@ export function findShortestPath(
   endNodeId: string,
   edges: KnowledgeEdge[]
 ): string[] | null {
-  const adjacency = new Map<string, string[]>();
+  // CODE-R3-001 iter 4: weighted Dijkstra honours KnowledgeEdge.weight.
+  // Self-path: trivially the single-node path, no traversal needed.
+  if (startNodeId === endNodeId) return [startNodeId];
+
+  // Weighted adjacency: stronger edges (higher weight) preferred.
+  // cost = 1 / max(0.01, weight) is monotone-decreasing in weight and
+  // BFS-equivalent when every weight = 1 (preserves the existing test contract).
+  const adjacency = new Map<string, Array<{ node: string; cost: number }>>();
   for (const edge of edges) {
+    const cost = 1 / Math.max(0.01, edge.weight);
     if (!adjacency.has(edge.source_node_id))
       adjacency.set(edge.source_node_id, []);
-    adjacency.get(edge.source_node_id)!.push(edge.target_node_id);
+    adjacency.get(edge.source_node_id)!.push({ node: edge.target_node_id, cost });
     if (edge.bidirectional) {
       if (!adjacency.has(edge.target_node_id))
         adjacency.set(edge.target_node_id, []);
-      adjacency.get(edge.target_node_id)!.push(edge.source_node_id);
+      adjacency.get(edge.target_node_id)!.push({ node: edge.source_node_id, cost });
     }
   }
 
-  const visited = new Set<string>();
+  const distance = new Map<string, number>();
   const parentMap = new Map<string, string | null>();
-  const queue: string[] = [startNodeId];
-  visited.add(startNodeId);
+  distance.set(startNodeId, 0);
   parentMap.set(startNodeId, null);
+
+  // Sorted-insert priority queue. Graph is bounded (<500 nodes); O(n) insert
+  // beats pulling in a heap dep. Upgrade to binary heap past ~10K nodes.
+  type Entry = { node: string; dist: number };
+  const queue: Entry[] = [{ node: startNodeId, dist: 0 }];
+
+  const insertSorted = (entry: Entry): void => {
+    let i = 0;
+    while (i < queue.length && queue[i].dist <= entry.dist) i += 1;
+    queue.splice(i, 0, entry);
+  };
 
   while (queue.length > 0) {
     const current = queue.shift()!;
-    if (current === endNodeId) {
+    // Stale entry: a shorter path was already finalised.
+    if (current.dist > (distance.get(current.node) ?? Infinity)) continue;
+
+    if (current.node === endNodeId) {
       const path: string[] = [];
       let node: string | null = endNodeId;
       while (node !== null) {
@@ -178,11 +199,14 @@ export function findShortestPath(
       }
       return path;
     }
-    for (const neighbor of adjacency.get(current) ?? []) {
-      if (!visited.has(neighbor)) {
-        visited.add(neighbor);
-        parentMap.set(neighbor, current);
-        queue.push(neighbor);
+
+    for (const { node: neighbor, cost } of adjacency.get(current.node) ?? []) {
+      const nextDist = current.dist + cost;
+      const prevDist = distance.get(neighbor) ?? Infinity;
+      if (nextDist < prevDist) {
+        distance.set(neighbor, nextDist);
+        parentMap.set(neighbor, current.node);
+        insertSorted({ node: neighbor, dist: nextDist });
       }
     }
   }

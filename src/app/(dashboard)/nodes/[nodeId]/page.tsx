@@ -15,6 +15,7 @@ import { MarkdownRenderer } from '@/components/features/MarkdownRenderer';
 import { ReferenceList } from '@/components/features/ReferenceList';
 import { RelatedNodes } from '@/components/features/RelatedNodes';
 import { ProcedureLinks } from '@/components/features/ProcedureLinks';
+import { useShallow } from 'zustand/react/shallow';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
@@ -26,9 +27,26 @@ interface NodeDetailPageProps {
 
 export default function NodeDetailPage({ params }: NodeDetailPageProps) {
   const { nodeId } = use(params);
-  const { nodes, edges, getNodeById, selectedNodeContent, setNodeContent } = useKnowledgeStore();
-  const { getStatus, completeNode, startNode } = useLearningStore();
-  const { addXP } = useGamificationStore();
+  // ENG-R3-001 useShallow: heaviest subscriber in the app — pulls from all 3 stores
+  // and renders DiseaseContent/DiagnosticContent/MarkdownRenderer trees. Without per-key
+  // Object.is comparison, any unrelated set() triggers a full re-render of the detail tree.
+  const { nodes, edges, getNodeById, selectedNodeContent, setNodeContent } = useKnowledgeStore(
+    useShallow((s) => ({
+      nodes: s.nodes,
+      edges: s.edges,
+      getNodeById: s.getNodeById,
+      selectedNodeContent: s.selectedNodeContent,
+      setNodeContent: s.setNodeContent,
+    }))
+  );
+  const { getStatus, completeNode, startNode } = useLearningStore(
+    useShallow((s) => ({
+      getStatus: s.getStatus,
+      completeNode: s.completeNode,
+      startNode: s.startNode,
+    }))
+  );
+  const addXP = useGamificationStore((s) => s.addXP);
   const [isCompleting, setIsCompleting] = useState(false);
   const [loadTimeout, setLoadTimeout] = useState(false);
 

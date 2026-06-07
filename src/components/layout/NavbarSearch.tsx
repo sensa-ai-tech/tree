@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, X } from 'lucide-react';
+import { useShallow } from 'zustand/react/shallow';
 import { cn } from '@/lib/utils/cn';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 
@@ -12,7 +13,14 @@ const SPECIALTY_LABELS: Record<string, string> = {
 };
 
 export function NavbarSearch() {
-  const { nodes, setFilters } = useKnowledgeStore();
+  // ENG-R3-001: navbar lives in persistent dashboard layout — useShallow stops cross-store
+  // mutations from re-triggering the search results memo.
+  const { nodes, setFilters } = useKnowledgeStore(
+    useShallow((s) => ({
+      nodes: s.nodes,
+      setFilters: s.setFilters,
+    }))
+  );
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);

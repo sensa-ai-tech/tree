@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Route, Clock, BookOpen, Filter } from 'lucide-react';
+import { useShallow } from 'zustand/react/shallow';
 import { Card, CardBody, CardFooter } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { CardSkeleton } from '@/components/ui/Skeleton';
@@ -56,7 +57,13 @@ function LearningPathCard({ path }: { path: LearningPath }) {
 }
 
 export default function PathsPage() {
-  const { paths, isLoading } = useKnowledgeStore();
+  // ENG-R3-001: useShallow skip re-renders on unrelated knowledge-store keys.
+  const { paths, isLoading } = useKnowledgeStore(
+    useShallow((s) => ({
+      paths: s.paths,
+      isLoading: s.isLoading,
+    }))
+  );
   const [isInitializing, setIsInitializing] = useState(true);
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
 

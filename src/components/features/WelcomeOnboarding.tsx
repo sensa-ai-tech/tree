@@ -5,6 +5,11 @@ import Link from 'next/link';
 import { Map, Stethoscope, Gamepad2, BookOpen, ArrowRight } from 'lucide-react';
 import { Modal } from '@/components/ui/Modal';
 import { Button } from '@/components/ui/Button';
+import {
+  TOTAL_KNOWLEDGE_NODES,
+  TOTAL_CASE_CHALLENGES,
+  TOTAL_SPECIALTIES,
+} from '@/lib/constants/content-stats';
 
 const ONBOARDING_KEY = 'vet-onboarding-completed';
 
@@ -13,14 +18,14 @@ const FEATURES = [
     icon: Map,
     color: 'bg-indigo-50 text-indigo-600',
     title: '知識圖譜',
-    desc: '264 個知識節點，8 大獸醫專科的互動式視覺化學習路徑。',
+    desc: `${TOTAL_KNOWLEDGE_NODES} 個知識節點，${TOTAL_SPECIALTIES} 大獸醫專科的互動式視覺化學習路徑。`,
     link: '/graph',
   },
   {
     icon: Stethoscope,
     color: 'bg-emerald-50 text-emerald-600',
     title: '臨床病例',
-    desc: '103 個互動病例挑戰，模擬真實臨床決策流程。',
+    desc: `${TOTAL_CASE_CHALLENGES} 個互動病例挑戰，模擬真實臨床決策流程。`,
     link: '/cases',
   },
   {
