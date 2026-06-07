@@ -29,7 +29,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
           很抱歉，頁面載入時發生未預期的錯誤。請嘗試重新載入或回到首頁。
         </p>
         {error.digest && (
-          <p className="mb-4 text-xs text-gray-400">
+          <p className="mb-4 text-xs text-gray-600">
             錯誤代碼：{error.digest}
           </p>
         )}

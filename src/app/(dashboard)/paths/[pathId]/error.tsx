@@ -29,7 +29,7 @@ export default function PathDetailError({ error, reset }: ErrorProps) {
           載入路徑詳情時發生錯誤，請返回列表頁或重試。
         </p>
         {error.digest && (
-          <p className="mb-4 text-xs text-gray-400">錯誤代碼：{error.digest}</p>
+          <p className="mb-4 text-xs text-gray-600">錯誤代碼：{error.digest}</p>
         )}
         <div className="flex items-center justify-center gap-3">
           <button

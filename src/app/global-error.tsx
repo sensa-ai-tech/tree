@@ -34,7 +34,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             應用程式發生嚴重錯誤，請嘗試重新載入頁面。
           </p>
           {error.digest && (
-            <p className="mb-4 text-xs text-gray-400">
+            <p className="mb-4 text-xs text-gray-600">
               錯誤代碼：{error.digest}
             </p>
           )}

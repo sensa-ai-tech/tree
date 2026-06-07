@@ -88,7 +88,7 @@ export default function CasesPage() {
           <div className="text-center">
             <Briefcase className="mx-auto h-10 w-10 text-gray-300" aria-hidden="true" />
             <p className="mt-2 text-gray-500">尚無病例挑戰</p>
-            <p className="text-sm text-gray-400">病例將在管理員建立後顯示</p>
+            <p className="text-sm text-gray-600">病例將在管理員建立後顯示</p>
           </div>
         </div>
       ) : (

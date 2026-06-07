@@ -49,7 +49,7 @@ async function handlePost(request: NextRequest) {
       };
 
       const prompt = getContentPrompt(placeholderNode, []);
-      const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
+      const rawResponse = await callClaude(prompt, { maxTokens: 8192, scope: 'route:/api/generate/content' });
       const parsed = safeParseJson<Record<string, unknown>>(rawResponse);
       const validation = validate(nodeContentSchema, parsed);
 

@@ -13,12 +13,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Dark-mode auto-follow disabled until a full themed implementation lands.
+   Previously this block flipped --background/--foreground on OS dark-mode preference,
+   but no component in src/ uses Tailwind `dark:` variants — net result was white
+   component islands on a black page chrome. Re-enable only when every Card, Modal,
+   Sidebar, Navbar, Button, Toast, and error boundary has dark: variants wired up.
+   Tracking: UX perfect-score blocker 'dark-mode parity' (iter 2 SELF-EVOLVE notes). */
 
 body {
   background: var(--background);

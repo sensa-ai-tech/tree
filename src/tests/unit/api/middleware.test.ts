@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { NextRequest, NextResponse } from 'next/server';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { withAuth, withRateLimit } from '@/lib/api/middleware';
+import { withAuth, withRateLimit, _resetDegradedFallback } from '@/lib/api/middleware';
 import {
   InMemoryRateLimitStore,
   getRateLimitStore,
@@ -224,9 +224,9 @@ describe('withRateLimit', () => {
     expect(blocked.status).toBe(429); // 都被歸到 unknown，第二次該擋
   });
 
-  it('fails open when store throws', async () => {
-    // 注入一個會丟例外的 fake store
+  it('fails open when store throws (legacy: degradedFallback:false)', async () => {
     _resetRateLimitStore();
+    _resetDegradedFallback();
     const brokenStore = {
       hit: vi.fn(async () => {
         throw new Error('upstash down');
@@ -236,7 +236,7 @@ describe('withRateLimit', () => {
 
     const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     const handler = vi.fn(async () => NextResponse.json({ ok: true }));
-    const res = await withRateLimit(handler, { maxRequests: 1, windowSeconds: 60 })(
+    const res = await withRateLimit(handler, { maxRequests: 1, windowSeconds: 60, degradedFallback: false })(
       makeRequest('http://localhost/api/x', {
         headers: { 'x-real-ip': '203.0.113.50' },
       })
@@ -249,6 +249,31 @@ describe('withRateLimit', () => {
       expect.stringContaining('fail-open'),
       expect.any(Error)
     );
+    consoleErrorSpy.mockRestore();
+  });
+
+  it('SEC-R2-001: degraded fallback caps brute-force when primary store fails (default on)', async () => {
+    _resetRateLimitStore();
+    _resetDegradedFallback();
+    const brokenStore = {
+      hit: vi.fn(async () => {
+        throw new Error('upstash 503');
+      }),
+    };
+    getRateLimitStore(brokenStore);
+
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const handler = vi.fn(async () => NextResponse.json({ ok: true }));
+    const wrapped = withRateLimit(handler, { maxRequests: 2, windowSeconds: 60 });
+    const ip = { headers: { 'x-real-ip': '198.51.100.7' } };
+
+    // First 2 hits go through (degraded counts locally, count=1 and count=2)
+    expect((await wrapped(makeRequest('http://localhost/api/admin/login', ip))).status).toBe(200);
+    expect((await wrapped(makeRequest('http://localhost/api/admin/login', ip))).status).toBe(200);
+    // 3rd hit should be 429 — degraded fallback enforced the cap per-instance
+    const blocked = await wrapped(makeRequest('http://localhost/api/admin/login', ip));
+    expect(blocked.status).toBe(429);
+    expect(brokenStore.hit).toHaveBeenCalledTimes(3);
     consoleErrorSpy.mockRestore();
   });
 

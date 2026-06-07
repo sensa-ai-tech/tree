@@ -1426,4 +1426,45 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: false,
     unlock_condition: null,
   },
+  // ─── 2026-06-07 iter 2: 系統性高血壓 cross-specialty edges (IM-L3-029) ───
+  {
+    id: 'CROSS-IM-CKD-HTN-001',
+    source_node_id: 'IM-L3-004',  // CKD
+    target_node_id: 'IM-L3-029',  // 系統性高血壓
+    relation_type: 'complication',
+    weight: 0.95,
+    description: 'CKD-HTN 雙向惡化軸：CKD 啟動 RAAS + 鈉滯留誘發 HTN（貓 20-65%、犬 30-93% CKD 患者有 HTN）；反之 HTN 透過腎絲球高壓加速 CKD 進展。所有 CKD 患者應例行 BP 監測，UPC > 0.4(貓)/0.5(犬) 即啟動 ARB/ACEI。',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-HYPERT4-HTN-001',
+    source_node_id: 'IM-L3-003',  // 貓甲狀腺機能亢進
+    target_node_id: 'IM-L3-029',  // 系統性高血壓
+    relation_type: 'complication',
+    weight: 0.85,
+    description: '甲亢→T4 直接增 β1 受體密度+心輸出量，23% 治療前甲亢貓有 HTN；治療甲亢後 50% 患者 BP 可正常化（Williams 2010）。所有甲亢貓應在診斷時與每次 T4 追蹤時量 BP。',
+    bidirectional: false,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-CARDIO-HTN-HCM-001',
+    source_node_id: 'IM-L3-029',     // 系統性高血壓
+    target_node_id: 'CARDIO-L3-003', // HCM
+    relation_type: 'differential',
+    weight: 0.9,
+    description: 'HTN 慢性可致 LV 向心性肥厚（concentric LVH），與原發性 HCM（非對稱性、SAM 陽性、無 HTN 史）需鑑別；兩者可共存。任何疑似 HCM 的貓都必須先量 BP 排除繼發性 HTN-LVH，否則治療方向會完全錯誤（β-blocker vs amlodipine）。',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  {
+    id: 'CROSS-IM-CUSHING-HTN-001',
+    source_node_id: 'IM-L3-001',  // Cushing
+    target_node_id: 'IM-L3-029',  // 系統性高血壓
+    relation_type: 'complication',
+    weight: 0.8,
+    description: 'Cushing 犬 31-86% 合併 HTN，機轉：皮質醇放大 catecholamine 反應+鈉滯留+內皮 NO 受抑。Trilostane 治療後部分改善但非全部，需獨立評估 BP 並考慮加 telmisartan/amlodipine。所有 Cushing 犬應每次 ACTH stim 追蹤時量 BP。',
+    bidirectional: false,
+    unlock_condition: null,
+  },
 ];

@@ -1,6 +1,7 @@
 'use client';
 
-import { User, Award, BookOpen, Flame, BarChart3, LogOut } from 'lucide-react';
+import { useState } from 'react';
+import { User, Award, BookOpen, Flame, BarChart3, LogOut, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -17,6 +18,7 @@ export default function ProfilePage() {
   const { user, logout } = useAuthStore();
   const { experience, achievements } = useGamificationStore();
   const { getCompletedCount, getInProgressCount } = useLearningStore();
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const levelInfo = getLevelInfo(experience.total_xp);
   const completedCount = getCompletedCount();
@@ -28,6 +30,35 @@ export default function ProfilePage() {
     useGamificationStore.getState().resetStore();
     showToast.success('已登出');
     router.push('/login');
+  }
+
+  // 個資法 §3 / GDPR Art.17 right-to-erasure — calls /api/account DELETE
+  // (added iter 1), clears stores, redirects /login. window.confirm is
+  // friction-by-design so a stray click cannot wipe real student progress.
+  async function handleDeleteAccount(): Promise<void> {
+    const confirmed = window.confirm(
+      '確定要永久刪除帳號嗎？此動作會清除你的學習進度、複習紀錄、成就和經驗值，無法復原。'
+    );
+    if (!confirmed) return;
+
+    setIsDeleting(true);
+    try {
+      const res = await fetch('/api/account', { method: 'DELETE' });
+      if (!res.ok && res.status !== 204) {
+        const body = (await res.json().catch(() => ({}))) as { error?: string };
+        showToast.error(body.error ?? '帳號刪除失敗，請聯絡客服');
+        return;
+      }
+      await logout();
+      useLearningStore.getState().resetStore();
+      useGamificationStore.getState().resetStore();
+      showToast.success('帳號已刪除');
+      router.push('/login');
+    } catch {
+      showToast.error('帳號刪除失敗，請稍後再試');
+    } finally {
+      setIsDeleting(false);
+    }
   }
 
   return (
@@ -68,7 +99,7 @@ export default function ProfilePage() {
             label={`距離下一級：${Math.round(levelInfo.progressToNext * 100)}%`}
             showPercentage
           />
-          <div className="text-center text-xs text-gray-400">
+          <div className="text-center text-xs text-gray-600">
             目前 {levelInfo.xpForCurrentLevel} XP / 下一級 {levelInfo.xpForNextLevel} XP
           </div>
         </CardBody>
@@ -159,6 +190,31 @@ export default function ProfilePage() {
             <span className="text-gray-500">角色</span>
             <span className="text-gray-900">{user?.role === 'admin' ? '管理員' : '學習者'}</span>
           </div>
+        </CardBody>
+      </Card>
+
+      {/* 危險區 — 個資法 §3 / GDPR Art.17 right-to-erasure */}
+      <Card className="border-red-200">
+        <CardHeader>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-red-700">
+            <Trash2 className="h-5 w-5" aria-hidden="true" />
+            危險區
+          </h2>
+        </CardHeader>
+        <CardBody className="space-y-3">
+          <p className="text-sm text-gray-600">
+            刪除帳號會永久清除你的學習進度、複習紀錄、成就紀錄與經驗值，且<strong className="text-red-700">無法復原</strong>。請於確認後再執行。
+          </p>
+          <Button
+            variant="ghost"
+            onClick={handleDeleteAccount}
+            isLoading={isDeleting}
+            disabled={isDeleting}
+            icon={<Trash2 className="h-4 w-4" />}
+            className="text-red-700 hover:bg-red-50"
+          >
+            {isDeleting ? '正在刪除…' : '刪除我的帳號'}
+          </Button>
         </CardBody>
       </Card>
     </div>

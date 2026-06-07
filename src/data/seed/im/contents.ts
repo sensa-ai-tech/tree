@@ -7389,6 +7389,94 @@ PB 誘導     真性肝毒性
   ],
 };
 
+// ─── IM-L3-029: 系統性高血壓 (2026-06-07 iter 2) ─────────────────────────────
+const contentSystemicHypertension: NodeContent = {
+  id: 'CONTENT-IM-L3-029',
+  node_id: 'IM-L3-029',
+  version: 1,
+  summary: '系統性高血壓在小動物臨床多為「繼發性」（CKD、甲亢、Cushing、嗜鉻細胞瘤），原發性少見。ACVIM 2018 共識把收縮壓切成四級：< 140 正常、140-159 前期、160-179 高血壓、≥ 180 嚴重。診斷不靠單一次測量，要排除白袍效應、取多次平均。最要命的是靶器官損傷（TOD）：眼睛（急性失明，貓 50% 以上以這個為首發）、腦（高血壓腦病、發作）、心（向心性肥厚）、腎（蛋白尿放大、CKD 加速）。治療上貓首選 amlodipine 0.625-1.25 mg/cat PO SID，犬首選 telmisartan 1 mg/kg PO SID。',
+  learning_objectives: [
+    '應用 ACVIM 2018 BP 分期系統正確判讀犬貓血壓',
+    '列出系統性高血壓最常見的 5 個繼發性病因',
+    '說明靶器官損傷（TOD）的四大標靶與篩查方法',
+    '針對貓與犬選擇正確的一線降壓藥物及劑量',
+    '辨識高血壓急症（hypertensive crisis）並啟動緊急降壓',
+    '建立繼發性高血壓的篩查與長期監測計畫',
+  ],
+  key_points: [
+    'ACVIM 2018 BP 分期：< 140 正常 / 140-159 前期 / 160-179 高血壓 / ≥ 180 嚴重（單位：mmHg 收縮壓）',
+    '診斷必須多次測量平均（首診至少 5-7 次取平均），排除白袍效應；理想環境：飼主在場、安靜房間、5-10 分鐘適應期',
+    '繼發性病因最常見：CKD（貓 20-65%、犬 30-93%）> 甲亢（貓 23%）> Cushing（犬 31-86%）> 糖尿病（10-46%）> 嗜鉻細胞瘤（罕見但 50% 以上有 HTN）',
+    'TOD 四大標靶：眼（視網膜出血/剝離、急性失明）、腦（昏迷、發作）、心（LV 向心性肥厚、奔馬律）、腎（蛋白尿放大、CKD 加速）',
+    '貓首選 amlodipine 0.625-1.25 mg/cat PO SID；若 SBP 仍 > 160 可加至 2.5 mg/cat 或加 telmisartan 1-2 mg/kg PO SID',
+    '犬首選 telmisartan 1 mg/kg PO SID（蛋白尿首選）或 amlodipine 0.1-0.5 mg/kg PO SID；若蛋白尿明顯可加 ACEI（benazepril 0.25-0.5 mg/kg PO BID）',
+    '高血壓急症（SBP ≥ 180 + 急性 TOD）：貓 amlodipine 加量至 2.5 mg PO、犬靜脈 hydralazine 0.5-2 mg/kg slow IV；24h 內目標 SBP < 160',
+    '高血壓視網膜病變在貓常為首發症狀（急性失明 + 雙側散大瞳孔），檢眼鏡是低成本高價值篩檢工具',
+  ],
+  body: '# 系統性高血壓 (Systemic Hypertension)\n\n## 一、流行病學與分類\n\n系統性高血壓在犬貓臨床絕大多數是繼發性的，原發性（特發性）高血壓在貓的盛行率約 13-20%、犬更少。重點不在「有沒有高血壓」，而在「為什麼會高血壓」。\n\n| 分類 | 定義 | 犬貓比例 |\n|------|------|---------|\n| 原發性 | 找不到底層原因 | 貓 13-20%、犬 < 10% |\n| 繼發性 | 有可辨識的底層疾病 | 貓 80%、犬 > 90% |\n| 情境性（白袍）| 醫院環境緊張造成的暫時性升高 | 任何年齡，需鑑別 |\n\n## 二、ACVIM 2018 BP 分期 (Acierno consensus)\n\n| 分期 | 收縮壓 (mmHg) | TOD 風險 | 處置建議 |\n|------|--------------|---------|---------|\n| Normotensive | < 140 | 極低 | 例行監測 |\n| Prehypertensive | 140-159 | 低 | 找原因、3 個月內複測 |\n| Hypertensive | 160-179 | 中度 | 啟動降壓 + 找原因 + TOD 評估 |\n| Severely Hypertensive | ≥ 180 | 高 | 立即降壓 + 急診 TOD 評估 |\n\n> 注意：上述切點是「持續性」高血壓，單次量測 > 160 但無 TOD 應重複測量數次（至少 2-3 次間隔數天到 1-2 週）才能確診。\n\n## 三、測量技術（標準化要點）\n\n1. **環境**：安靜獨立房間、飼主在場、5-10 分鐘適應期。\n2. **設備**：Doppler（貓首選、準確度高）或示波法 oscillometric（HDO 高解析示波）。\n3. **袖帶**：寬度 = 肢體周徑的 30-40%。袖帶太小高估 BP、太大低估 BP。\n4. **量測部位**：貓尾根或前肢；犬前肢或後肢。\n5. **重複次數**：捨棄第 1 次，取連續 3-7 次平均，差異 > 20% 須重測。\n6. **白袍效應辨識**：第一次明顯高、後面遞減 → 高度懷疑白袍。\n\n## 四、繼發性病因（必查清單）\n\n| 病因 | 機轉 | 高血壓盛行率 | 篩檢 |\n|------|------|------------|------|\n| **CKD** | RAAS 活化 + 鈉滯留 + 內皮功能異常 | 貓 20-65%、犬 30-93% | BUN/Cre/SDMA/UPC、超音波 |\n| **甲狀腺機能亢進**（貓）| ↑β1 腎上腺素能、↑心輸出 | 23%（治療前）| TT4 |\n| **Cushing**（犬）| ↑皮質醇 → 內皮功能異常、RAAS | 31-86% | LDDST/UCCR/ACTH 刺激 |\n| **糖尿病** | 內皮功能受損、肥胖 | 10-46% | 血糖、果糖胺 |\n| **嗜鉻細胞瘤** | 兒茶酚胺陣發性釋放 | 50% 以上 | 腹部超音波（腎上腺腫塊）、血漿/尿 metanephrine |\n| **原發性醛固酮增多症**（貓）| 高 aldosterone → Na+/K+ 失衡 | > 50% | aldosterone:renin 比值、超音波 |\n| **NSAID/類固醇/EPO 等藥物** | 鈉滯留、RAAS | 變異大 | 用藥史 |\n\n## 五、靶器官損傷 (TOD) — 四大標靶\n\n### 1. 眼 (Ophthalmic) — 貓 50% 以上首發症狀\n\n| 表現 | 機轉 | 處置 |\n|------|------|------|\n| 視網膜水腫/出血 | 視網膜小動脈受損 | 緊急降壓 |\n| 視網膜剝離（漿液性/出血性）| 脈絡膜灌流異常 | 緊急降壓，部分可逆 |\n| 急性失明 + 雙側散大瞳孔 | 視網膜或視神經缺血 | 24h 內降壓有機會復明 |\n| 前房出血 (hyphema) | 虹膜小血管破裂 | 評估全身性病因 |\n\n> 任何年長貓「突然眼睛看不到」首要鑑別就是高血壓視網膜病變，當下量 BP 而非先點眼藥。\n\n### 2. 腦 (Neurologic)\n\n行為異常、運動失調、發作、昏迷、頭傾。MRI 可見 PRES 樣高訊號。降壓後通常 24-72h 內改善。\n\n### 3. 心 (Cardiac)\n\n左心室向心性肥厚（concentric LVH）為慢性 HTN 特徵；需與 HCM 鑑別（HCM 多為非對稱性、SAM 陽性、無 HTN 史）。可伴 S4 奔馬律。\n\n### 4. 腎 (Renal)\n\n蛋白尿放大（UPC 上升）、CKD 加速進展。降壓 + ACEI/ARB 為 nephroprotection 核心。\n\n## 六、治療策略\n\n### 一線藥物\n\n| 物種 | 藥物 | 劑量 | 注意 |\n|------|------|------|------|\n| 貓 | [藥物:Amlodipine] | 0.625-1.25 mg/cat PO SID | 反應 1-2 週評估；若 SBP > 160 可加至 2.5 mg |\n| 貓 | [藥物:Telmisartan] | 1-2 mg/kg PO SID | amlodipine 反應不足時加；蛋白尿首選 |\n| 犬 | [藥物:Telmisartan] | 1 mg/kg PO SID | 蛋白尿/CKD 首選 |\n| 犬 | [藥物:Amlodipine] | 0.1-0.5 mg/kg PO SID | 與 telmisartan 可合用 |\n| 犬 | [藥物:Benazepril] | 0.25-0.5 mg/kg PO BID | 蛋白尿 + 輕度 HTN |\n\n### 高血壓急症處置 (SBP ≥ 180 + 急性 TOD)\n\n| 物種 | 急性降壓 | 維持 |\n|------|---------|------|\n| 貓 | Amlodipine 加量至 2.5 mg/cat PO 立刻給藥 | 24h 內目標 SBP < 160 |\n| 犬 | [藥物:Hydralazine] 0.5-2 mg/kg slow IV q15min 至 SBP < 170 | 過渡至口服 amlodipine + telmisartan |\n\n> 急性降壓最忌「降太快、降太低」：目標 24h 內降到 < 160，不要在 1 小時內把 SBP 從 220 拉到 130（會引發腦灌流不足與梗塞）。\n\n### 嗜鉻細胞瘤特殊處置\n\n手術前必須先 α-blocker（[藥物:Phenoxybenzamine] 0.25-0.5 mg/kg PO BID × 14-21 天）控制 BP，再考慮 β-blocker（單用 β-blocker 會使 α-effect 失代償，BP 反而飆升）。\n\n## 七、監測計畫\n\n| 階段 | 頻率 | 項目 |\n|------|------|------|\n| 啟動治療後 | 1-2 週 | SBP、Cre、K+、UPC |\n| 達標後 | 1-3 個月 | SBP、Cre/SDMA、K+、UPC、眼底 |\n| 穩定維持 | 3-6 個月 | SBP、生化、UPC、眼底 |\n| 任何 TOD 改變 | 立即 | 重新評估藥物 |\n',
+  clinical_pearl: '貓的高血壓視網膜病變是「來看眼睛、其實是高血壓」的經典場景。任何年長貓突然撞牆、雙側瞳孔散大、不認路，第一件事不是點眼藥水，而是當下量 BP + 看眼底。24 小時內把 amlodipine 加上去，視網膜剝離還有機會回復、貓有機會重新看得到。錯過這個窗口就終身失明。另一個常被忽略：所有開始 erythropoietin 的 CKD 貓必須先把 BP 控好，否則 EPO 會把 BP 推得更高、誘發 TOD。',
+  common_mistakes: [
+    '單次測量 SBP > 160 就診斷高血壓（沒排除白袍效應）',
+    '只看 SBP 而忽略 TOD 篩查（眼底、UPC、神經）',
+    '貓 HTN 治療後沒有逐月追蹤、劑量沒往上 titrate（amlodipine 0.625 起步常常壓不到目標）',
+    '高血壓急症一小時內把 SBP 從 220 拉到 130（誘發腦梗塞）',
+    '嗜鉻細胞瘤手術前單用 β-blocker（會使 α-effect 失代償、BP 暴衝）',
+    '看到 LV 向心性肥厚就診斷 HCM（沒量 BP、忽略繼發性高血壓性心肌病）',
+    '貓開始 erythropoietin 前沒控 BP（會加重 HTN）',
+  ],
+  disease_data: {
+    signalment: '中老年犬貓最常見。貓 > 9 歲、犬中老年。任何年齡若伴隨 CKD、內分泌疾病、急性視力喪失、神經症狀都應量 BP。台灣門診常見族群：老年貓（合併 CKD 或甲亢）、中老年犬（Cushing 或 CKD）。嗜鉻細胞瘤好發中老年大型犬。',
+    etiology: '繼發性為主（貓 80%、犬 > 90%）。最常見：(1) CKD（貓 20-65%、犬 30-93%）；(2) 甲狀腺機能亢進（貓 23%）；(3) Cushing（犬 31-86%）；(4) 糖尿病（10-46%）；(5) 嗜鉻細胞瘤（罕但 > 50% 有 HTN）；(6) 原發性醛固酮增多症（貓）；(7) 藥物誘發（NSAID、類固醇、EPO、phenylpropanolamine）。原發性（特發性）高血壓在貓佔 13-20%、犬罕見。',
+    pathogenesis: '核心機轉是 RAAS 活化 + 鈉滯留 + 內皮功能異常 + 交感神經張力升高。CKD：腎元減少 → RAAS 活化 → angiotensin II 升 → 血管收縮 + 鈉水滯留；同時 ADMA 累積抑制 NO → 內皮功能受損。甲亢：T4 直接增加 β1 受體密度 → ↑心輸出 + ↑全身血管阻力。Cushing：皮質醇放大 catecholamine 反應 + 鈉滯留 + 內皮 NO 合成受抑。嗜鉻細胞瘤：腫瘤陣發性釋放 norepinephrine/epinephrine → α1 血管收縮 + β1 心搏增加。長期高 BP → 小動脈玻璃樣變性 + 中膜肥厚 → TOD（視網膜、腦、心、腎）。',
+    clinical_signs: [
+      { sign: '急性失明 / 視網膜出血或剝離', category: 'primary', description: '貓最常見首發症狀（> 50%），雙側散大瞳孔，眼底可見視網膜小血管曲張、出血、視網膜下水腫' },
+      { sign: '神經症狀（運動失調、發作、昏迷、行為改變）', category: 'primary', description: '高血壓性腦病；MRI 可見 PRES 樣後部白質高訊號' },
+      { sign: '心搏徐緩或奔馬律', category: 'primary', description: '反射性 baroreceptor 反應；LVH 引起 S4 奔馬律' },
+      { sign: '蛋白尿 (UPC 上升)', category: 'primary', description: '腎絲球高壓誘發，是 CKD-HTN 患者的關鍵監測指標' },
+      { sign: '鼻出血', category: 'secondary', description: '鼻腔小血管破裂' },
+      { sign: 'PU/PD', category: 'secondary', description: '繼發於底層 CKD 或 Cushing' },
+      { sign: '無症狀（健檢偶發）', category: 'secondary', description: '輕中度 HTN 多為無症狀，需主動篩查' },
+    ],
+    staging: { system: 'ACVIM 2018 (Acierno) Blood Pressure Categories', stages: ['Normotensive：SBP < 140 mmHg', 'Prehypertensive：SBP 140-159 mmHg', 'Hypertensive：SBP 160-179 mmHg（需啟動降壓）', 'Severely Hypertensive：SBP ≥ 180 mmHg（高 TOD 風險、視為高血壓急症）'] },
+    differential_diagnosis: [
+      { condition: '白袍效應 (situational hypertension)', key_differentiator: '醫院測量數值高但家中或多次平均 < 140；通常第 1-2 次量測明顯高、後續遞減' },
+      { condition: '慢性腎病 (CKD)', key_differentiator: '貓老年 + Cre/SDMA 升 + USG < 1.035；HTN 為 CKD 最常見併發症' },
+      { condition: '貓甲狀腺機能亢進', key_differentiator: '消瘦 + 多食 + TT4 升；甲狀腺結節可觸診' },
+      { condition: 'Cushing 症候群', key_differentiator: '犬軀幹脫毛、多渴多尿、LDDST/UCCR 異常' },
+      { condition: '嗜鉻細胞瘤 (Pheochromocytoma)', key_differentiator: '陣發性 BP 飆升（不是持續性）、超音波發現腎上腺腫塊、血漿 metanephrine 升、可伴心搏過速與崩潰發作；HTN 不易單用 amlodipine 控制' },
+      { condition: '原發性醛固酮增多症（Conn）', key_differentiator: '貓老年、低鉀、肌無力、aldosterone:renin 比值升、腎上腺腫塊' },
+      { condition: '原發性 (idiopathic) HTN', key_differentiator: '排除上述所有繼發性病因後才下；貓 13-20%、犬 < 10%' },
+      { condition: '肥厚型心肌病 (HCM)', key_differentiator: 'HCM 為非對稱性肥厚 + SAM 陽性；HTN-LVH 為向心性肥厚 + 高 BP；兩者可共存' },
+    ],
+    diagnostic_workup: '1. 標準化 BP 測量（安靜環境、5-10 分鐘適應、3-7 次平均、捨棄第 1 次）→ 2. 確認持續性（間隔數天再測一次）→ 3. 完整 TOD 評估：眼底鏡（視網膜出血/剝離）、神經學檢查、心臟聽診/X 光/心超（LVH）、UPC + Cre/SDMA → 4. 繼發病因排查：CBC/生化/T4（貓）/LDDST 或 UCCR（犬可疑 Cushing）/腹部超音波（腎上腺腫塊、CKD 結構評估）→ 5. 嗜鉻細胞瘤可疑時：血漿或尿 metanephrine → 6. 原發性醛固酮增多症可疑時：aldosterone:renin 比值。',
+    treatment_protocol: 'SBP ≥ 160（或 ≥ 150 合併 TOD）即啟動降壓。貓首選 amlodipine 0.625-1.25 mg/cat PO SID，1-2 週後評估；若 SBP > 160 可加量至 2.5 mg/cat 或加 telmisartan 1-2 mg/kg PO SID。犬首選 telmisartan 1 mg/kg PO SID（蛋白尿首選）或 amlodipine 0.1-0.5 mg/kg PO SID；蛋白尿明顯可加 benazepril 0.25-0.5 mg/kg PO BID。高血壓急症 (SBP ≥ 180 + 急性 TOD)：貓 amlodipine 加量至 2.5 mg PO 立刻給藥；犬 hydralazine 0.5-2 mg/kg slow IV q15min 直至 SBP < 170，24h 內目標 < 160。同時並進處理底層病因（治療 CKD、甲亢、Cushing、嗜鉻細胞瘤手術）。嗜鉻細胞瘤手術前必須 α-blocker (phenoxybenzamine) 14-21 天，再考慮 β-blocker。',
+    prognosis: '繼發性高血壓的預後與底層病因強相關。CKD-HTN 控制良好可延長存活；甲亢-HTN 治療甲亢後 50% 患者 BP 可恢復正常；Cushing-HTN 治療 Cushing 後部分改善。嗜鉻細胞瘤手術切除後 BP 多可恢復。視網膜剝離若 24-72h 內降壓有 30-50% 機會復明，超過 72h 則多為永久性失明。長期未控制的 HTN 會加速 CKD 進展、誘發 LV 衰竭、增加 CVA 風險。',
+    monitoring: '啟動治療 1-2 週內回診量 BP、Cre、K+。穩定後 1-3 個月追蹤 SBP、Cre/SDMA、K+、UPC、眼底。長期穩定 3-6 個月一次。任何 TOD 改變或藥物換劑量都要立即追加 BP + 生化。同時追蹤底層疾病（CKD 走 IRIS、甲亢追 T4、Cushing 追 ACTH stim/UCCR）。',
+    owner_communication: '高血壓是「沉默的殺手」，很多時候等到眼睛看不到或發作才被抓到。每年健檢的 BP 一定要量，尤其是老貓老犬、有 CKD/甲亢/Cushing 的更要量。藥要每天吃、不能停，停藥 24-48h BP 就會反彈。在家可以觀察兩件事：(1) 撞東西、看不清楚或瞳孔變大 → 急診；(2) 食慾忽然差、呼吸變快、走路不穩 → 回診。降壓的目標不是「壓越低越好」，而是 SBP < 160 + 沒有 TOD。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'ACVIM BP 分期表後', type: 'comparison_table', description: 'ACVIM 2018 BP 四分期 vs TOD 風險視覺對照' },
+    { position: '繼發性病因段落', type: 'flowchart', description: '系統性高血壓繼發性病因鑑別決策樹' },
+    { position: 'TOD 段落', type: 'annotated_image', description: '貓高血壓視網膜病變眼底照（視網膜剝離、出血、血管曲張標示）' },
+  ],
+  interactive_placeholders: [
+    { position: 'ACVIM BP 分期段落', type: 'interactive_staging', description: '輸入 SBP + TOD 狀態自動建議是否啟動治療、藥物選擇' },
+  ],
+  drug_api_links: ['Amlodipine', 'Telmisartan', 'Benazepril', 'Hydralazine', 'Phenoxybenzamine'],
+  references: [
+    { type: 'guideline', citation: 'Acierno MJ, Brown S, Coleman AE, Jepson RE, Papich M, Stepien RL, Syme HM. ACVIM consensus statement: Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med. 2018;32(6):1803-1822. PMC6189311.', relevance: 'ACVIM 2018 高血壓共識核心指引（BP 分期、診斷、治療）' },
+    { type: 'guideline', citation: 'Brown S, Atkins C, Bagley R, et al. Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med. 2007;21(3):542-558. PMC1828041.', relevance: 'ACVIM 2007 原始高血壓共識（TOD 概念奠基）' },
+    { type: 'journal', citation: 'Syme HM, Markwell PJ, Pfeiffer D, Elliott J. Survival of cats with naturally occurring chronic renal failure is related to severity of proteinuria. J Vet Intern Med. 2006;20(3):528-535.', relevance: 'CKD-HTN-蛋白尿三角關係的關鍵研究' },
+    { type: 'journal', citation: 'Williams TL, Peak KJ, Brodbelt D, Elliott J, Syme HM. Survival and the development of azotemia after treatment of hyperthyroid cats. J Vet Intern Med. 2010;24(4):863-869.', relevance: '甲亢-HTN 治療後轉歸的長期追蹤研究' },
+    { type: 'web', citation: 'WikiVet — Systemic Hypertension in Small Animals. https://en.wikivet.net/Systemic_Hypertension', relevance: 'WikiVet 教學資源（同行審查的獸醫線上百科）' },
+    { type: 'journal', citation: 'Bijsmans ES, Jepson RE, Chang YM, Syme HM, Elliott J. Changes in systolic blood pressure over time in healthy cats and cats with chronic kidney disease. J Vet Intern Med. 2015;29(3):855-861. OpenAlex W2807636474.', relevance: 'CKD 貓 BP 縱向變化（建立基線與監測頻率）' },
+  ],
+  is_current: true,
+  created_at: '2026-06-07',
+};
+
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
@@ -7451,4 +7539,6 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L3-027', contentMegaesophagus],
   // 2026-05-18 新增
   ['IM-L3-028', contentFPV],
+  // 2026-06-07 iter 2 新增 (內分泌/心血管交界)
+  ['IM-L3-029', contentSystemicHypertension],
 ]);

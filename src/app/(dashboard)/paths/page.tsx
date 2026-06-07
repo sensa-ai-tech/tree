@@ -115,7 +115,7 @@ export default function PathsPage() {
           <div className="text-center">
             <Route className="mx-auto h-10 w-10 text-gray-300" aria-hidden="true" />
             <p className="mt-2 text-gray-500">尚無學習路徑</p>
-            <p className="text-sm text-gray-400">學習路徑將在管理員建立後顯示</p>
+            <p className="text-sm text-gray-600">學習路徑將在管理員建立後顯示</p>
           </div>
         </div>
       ) : (

@@ -19,7 +19,7 @@ export default function GraphLoading() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="space-y-3 text-center">
             <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-gray-200 border-t-indigo-600" />
-            <p className="text-sm text-gray-400">載入知識圖譜中...</p>
+            <p className="text-sm text-gray-600">載入知識圖譜中...</p>
           </div>
         </div>
       </div>

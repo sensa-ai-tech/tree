@@ -21,7 +21,7 @@ interface ReviewItem {
 }
 
 export default function ReviewPage() {
-  const { todayReviewCount, incrementReviewCount } = useLearningStore();
+  const { todayReviewCount, incrementReviewCount, progress } = useLearningStore();
   const { addXP } = useGamificationStore();
   const [isReviewing, setIsReviewing] = useState(false);
   const [reviewDone, setReviewDone] = useState(false);
@@ -34,12 +34,24 @@ export default function ReviewPage() {
   useEffect(() => {
     async function loadReviewItems() {
       try {
-        // Mock mode: load seed questions that are due for review
-        const { SEED_QUESTIONS } = await import('@/data/seed');
+        // iter 2 fix: gate review queue on actual completed nodes — home page promises
+        // 「完成知識節點後，系統會自動排程複習」(iter 1), so /review must only synthesize
+        // items for nodes the user has actually completed. Brand-new accounts fall
+        // through to the empty-state branch.
+        const completedNodeIds = new Set<string>();
+        for (const p of progress.values()) {
+          if (p.status === 'completed') completedNodeIds.add(p.node_id);
+        }
+        if (completedNodeIds.size === 0) {
+          setReviewItems([]);
+          return;
+        }
 
-        // Pick questions marked for spaced_rep and create mock review states
+        // Mock mode: pull spaced-rep questions but only for completed nodes.
+        // In prod this will read from review_history.
+        const { SEED_QUESTIONS } = await import('@/data/seed');
         const dueItems: ReviewItem[] = SEED_QUESTIONS
-          .filter((q) => q.spaced_rep)
+          .filter((q) => q.spaced_rep && completedNodeIds.has(q.node_id))
           .slice(0, 10)
           .map((q) => {
             const state = createInitialState();
@@ -59,7 +71,7 @@ export default function ReviewPage() {
       }
     }
     loadReviewItems();
-  }, []);
+  }, [progress]);
 
   const pendingReviewCount = reviewItems.filter((item) => isDueForReview(item.state)).length;
   const currentItem = reviewItems[currentIndex] ?? null;
@@ -197,7 +209,7 @@ export default function ReviewPage() {
           ) : (
             <div className="flex flex-col items-center gap-4 py-8">
               <p className="text-gray-500">目前沒有待複習的內容</p>
-              <p className="text-sm text-gray-400">學習更多節點後會產生複習排程</p>
+              <p className="text-sm text-gray-600">學習更多節點後會產生複習排程</p>
             </div>
           )}
         </CardBody>

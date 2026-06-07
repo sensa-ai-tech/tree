@@ -29,7 +29,7 @@ export default function NodeDetailError({ error, reset }: ErrorProps) {
           載入知識節點時發生錯誤。該節點可能不存在或資料格式有誤。
         </p>
         {error.digest && (
-          <p className="mb-4 text-xs text-gray-400">錯誤代碼：{error.digest}</p>
+          <p className="mb-4 text-xs text-gray-600">錯誤代碼：{error.digest}</p>
         )}
         <div className="flex items-center justify-center gap-3">
           <button

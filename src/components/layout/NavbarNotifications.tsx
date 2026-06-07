@@ -53,13 +53,13 @@ export function NavbarNotifications() {
                   )}
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-gray-700">{event.description}</p>
-                    <p className="text-gray-400">{new Date(event.timestamp).toLocaleDateString('zh-TW')}</p>
+                    <p className="text-gray-600">{new Date(event.timestamp).toLocaleDateString('zh-TW')}</p>
                   </div>
                   <span className="flex-shrink-0 font-medium text-indigo-600">+{event.amount}</span>
                 </div>
               ))
             ) : (
-              <div className="px-3 py-6 text-center text-xs text-gray-400">
+              <div className="px-3 py-6 text-center text-xs text-gray-600">
                 尚無動態記錄
               </div>
             )}

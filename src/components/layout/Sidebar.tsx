@@ -125,7 +125,7 @@ export function Sidebar({ className, onClose, isMobileOpen }: SidebarProps) {
       {/* Bottom section */}
       {!collapsed && (
         <div className="border-t border-gray-100 px-4 py-3">
-          <p className="truncate text-xs text-gray-400">
+          <p className="truncate text-xs text-gray-600">
             {user ? user.email : '未登入'}
           </p>
         </div>

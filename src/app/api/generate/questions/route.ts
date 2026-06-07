@@ -46,7 +46,7 @@ async function handlePost(request: NextRequest) {
     };
 
     const prompt = buildQuestionsPrompt(placeholderNode, input.content_summary, input.key_points);
-    const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
+    const rawResponse = await callClaude(prompt, { maxTokens: 8192, scope: 'route:/api/generate/questions' });
     const parsed = safeParseJson<{ questions: unknown[] }>(rawResponse);
     const validation = validate(questionsOutputSchema, parsed);
 

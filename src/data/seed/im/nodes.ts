@@ -82,4 +82,7 @@ export const IM_NODES: KnowledgeNode[] = [
 
   // ─── 新增（2026-05-18 P2）感染性傳染病擴增（1 node）───
   { id: 'IM-L3-028', specialty: 'IM', title: '貓泛白血球減少症', title_en: 'Feline Panleukopenia (FPV)', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['FPV', '貓瘟', '小病毒', '幼貓', '收容所'], encyclopedia_link: null, cross_specialty_notes: 'ECC - 急性脫水休克；CPATH - 全血球減少；台灣多貓家庭與收容所盛行', created_at: now, updated_at: now },
+
+  // ─── 2026-06-07 自我演化 iter 2 新增（內分泌/心血管交界 1 node）───
+  { id: 'IM-L3-029', specialty: 'IM', title: '系統性高血壓', title_en: 'Systemic Hypertension', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['高血壓', '靶器官損傷', 'TOD', 'amlodipine', 'telmisartan', '犬貓', 'ACVIM-2018'], encyclopedia_link: null, cross_specialty_notes: 'CARDIO - LV 同心性肥厚與 HCM 鑑別；OPHTH - 高血壓視網膜病變（急性失明）；NEURO - 高血壓性腦病；CKD/甲亢/Cushing/嗜鉻細胞瘤共病', created_at: now, updated_at: now },
 ];

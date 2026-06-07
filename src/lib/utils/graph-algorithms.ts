@@ -3,9 +3,25 @@ import type { KnowledgeEdge } from '@/types/knowledge';
 const DEPENDENCY_TYPES = ['prerequisite', 'builds_on'] as const;
 
 function filterDependencyEdges(edges: KnowledgeEdge[]): KnowledgeEdge[] {
-  return edges.filter((e) =>
-    (DEPENDENCY_TYPES as readonly string[]).includes(e.relation_type)
-  );
+  return edges.filter((e) => {
+    if (!(DEPENDENCY_TYPES as readonly string[]).includes(e.relation_type)) {
+      return false;
+    }
+    // Self-loops (A->A) are never a legitimate prerequisite relationship.
+    // Silently dropping is dangerous: topologicalSort would skip A entirely
+    // (A's in-degree never reaches 0); detectCycles would emit degenerate [A, A].
+    // Filter at the source + warn in dev so authoring CI surfaces the bad data.
+    if (e.source_node_id === e.target_node_id) {
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[graph-algorithms] Dropped self-loop edge ${e.id} on node ${e.source_node_id}`
+        );
+      }
+      return false;
+    }
+    return true;
+  });
 }
 
 export function topologicalSort(
@@ -75,27 +91,42 @@ export function detectCycles(edges: KnowledgeEdge[]): string[][] {
     parent.set(node, null);
   }
 
-  function dfs(node: string): void {
-    color.set(node, GRAY);
-    for (const neighbor of adjacency.get(node) ?? []) {
-      if (color.get(neighbor) === GRAY) {
-        const cycle: string[] = [neighbor, node];
-        let current = node;
+  // Iterative DFS with phase-marker stack avoids V8 stack overflow on deep
+  // dependency chains (>10K frames). Each frame tracks {node, iter} so we
+  // can pause/resume mid-neighbor-loop — preserving GRAY-on-enter /
+  // BLACK-on-exit ordering that back-edge cycle detection depends on.
+  type Frame = { node: string; iter: number };
+  for (const root of allNodes) {
+    if (color.get(root) !== WHITE) continue;
+    const stack: Frame[] = [{ node: root, iter: 0 }];
+    color.set(root, GRAY);
+    while (stack.length > 0) {
+      const frame = stack[stack.length - 1];
+      const neighbors = adjacency.get(frame.node) ?? [];
+      if (frame.iter >= neighbors.length) {
+        color.set(frame.node, BLACK);
+        stack.pop();
+        continue;
+      }
+      const neighbor = neighbors[frame.iter];
+      frame.iter += 1;
+      const c = color.get(neighbor);
+      if (c === GRAY) {
+        // Back edge → cycle. Reconstruct via parent chain from frame.node
+        // back until we reach neighbor's predecessor in the cycle.
+        const cycle: string[] = [neighbor, frame.node];
+        let current: string = frame.node;
         while (parent.get(current) && parent.get(current) !== neighbor) {
           current = parent.get(current)!;
           cycle.push(current);
         }
         cycles.push(cycle.reverse());
-      } else if (color.get(neighbor) === WHITE) {
-        parent.set(neighbor, node);
-        dfs(neighbor);
+      } else if (c === WHITE) {
+        parent.set(neighbor, frame.node);
+        color.set(neighbor, GRAY);
+        stack.push({ node: neighbor, iter: 0 });
       }
     }
-    color.set(node, BLACK);
-  }
-
-  for (const node of allNodes) {
-    if (color.get(node) === WHITE) dfs(node);
   }
 
   return cycles;

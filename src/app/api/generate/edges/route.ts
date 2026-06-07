@@ -34,7 +34,7 @@ async function handlePost(request: NextRequest) {
 
     // Cast after Zod validation — passthrough preserves extra KnowledgeNode fields
     const prompt = buildEdgesPrompt(input.all_nodes as unknown as KnowledgeNode[], input.specialty_abbr);
-    const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
+    const rawResponse = await callClaude(prompt, { maxTokens: 8192, scope: 'route:/api/generate/edges' });
     const parsed = safeParseJson<EdgeOutput>(rawResponse);
     const validation = validate(edgeOutputSchema, parsed);
 

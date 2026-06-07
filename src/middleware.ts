@@ -55,6 +55,19 @@ export async function middleware(request: NextRequest) {
     request: { headers: requestHeaders },
   });
 
+  // SEC-R2-002: report-uri is deprecated; Chrome M96+ prefers Reporting API.
+  // Advertise both Report-To (legacy Reporting API) and Reporting-Endpoints (current spec)
+  // headers so violation reports keep flowing across the full UA matrix.
+  // CSP also keeps both report-uri (Firefox/older Chrome) and report-to (Chrome 96+).
+  const reportToGroup = JSON.stringify({
+    group: 'csp-endpoint',
+    max_age: 10886400,
+    endpoints: [{ url: '/api/csp-report' }],
+    include_subdomains: true,
+  });
+  response.headers.set('Report-To', reportToGroup);
+  response.headers.set('Reporting-Endpoints', 'csp-endpoint="/api/csp-report"');
+
   // 4. Set CSP with nonce
   const csp = [
     "default-src 'self'",
@@ -67,6 +80,7 @@ export async function middleware(request: NextRequest) {
     "base-uri 'self'",
     "form-action 'self'",
     "report-uri /api/csp-report",
+    "report-to csp-endpoint",
   ].join('; ');
 
   response.headers.set('Content-Security-Policy', csp);

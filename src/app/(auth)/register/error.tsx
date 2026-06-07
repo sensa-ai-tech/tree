@@ -25,7 +25,7 @@ export default function RegisterError({ error, reset }: ErrorProps) {
           載入註冊頁面時發生錯誤，請嘗試重新載入。
         </p>
         {error.digest && (
-          <p className="mb-4 text-xs text-gray-400">錯誤代碼：{error.digest}</p>
+          <p className="mb-4 text-xs text-gray-600">錯誤代碼：{error.digest}</p>
         )}
         <div className="flex items-center justify-center gap-3">
           <button

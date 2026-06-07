@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
-import { getRateLimitStore } from './rate-limit-store';
+import { getRateLimitStore, InMemoryRateLimitStore } from './rate-limit-store';
 
 // ─── Types ───
 
@@ -53,6 +53,12 @@ interface RateLimitOptions {
   maxRequests?: number;
   /** 時間窗口秒數（預設 60） */
   windowSeconds?: number;
+  /**
+   * 主 store 失靈時是否使用 per-instance in-memory fallback（預設 true）。
+   * 安全敏感端點（auth、admin）必須保持 true；讀型 generate 端點可關。
+   * SEC-R2-001: 避免 Upstash 503 時 admin/login 變 UNLIMITED。
+   */
+  degradedFallback?: boolean;
 }
 
 /**
@@ -84,14 +90,30 @@ function extractClientIp(request: NextRequest): string {
  * - 有 UPSTASH_REDIS_REST_URL/TOKEN → Upstash REST（多 instance 共享）
  * - 否則退回 in-memory（單 instance 有效，serverless cold start 會 reset）
  *
- * 為了避免 store 失靈整個 endpoint 掛掉，store 拋例外時 fail-open（放行請求），
- * 並把錯誤印到 stderr 給監控撈。
+ * SEC-R2-001：主 store 失靈時走 per-instance in-memory fallback（degradedFallback=true，預設開），
+ * 而非直接 fail-open。攻擊者最多只能拿到 maxRequests × instance 數，而不是無限。
+ * 對讀型 generate 端點若希望單純 fail-open，可傳 degradedFallback=false。
  */
+
+// 共用 per-process degraded fallback store。Lazy 初始化避免 unused import 拖測試。
+let degradedFallbackStore: InMemoryRateLimitStore | null = null;
+function getDegradedFallback(): InMemoryRateLimitStore {
+  if (!degradedFallbackStore) {
+    degradedFallbackStore = new InMemoryRateLimitStore();
+  }
+  return degradedFallbackStore;
+}
+
+/** Test-only — reset the degraded fallback store between tests. */
+export function _resetDegradedFallback(): void {
+  degradedFallbackStore = null;
+}
+
 export function withRateLimit(
   handler: RouteHandler,
   options: RateLimitOptions = {}
 ): RouteHandler {
-  const { maxRequests = 30, windowSeconds = 60 } = options;
+  const { maxRequests = 30, windowSeconds = 60, degradedFallback = true } = options;
 
   return async (request, context) => {
     const ip = extractClientIp(request);
@@ -105,7 +127,17 @@ export function withRateLimit(
       resetTime = hit.resetTime;
     } catch (err) {
       console.error('[rate-limit] store hit failed, fail-open:', err);
-      return handler(request, context);
+      if (!degradedFallback) {
+        return handler(request, context);
+      }
+      try {
+        const fallbackHit = await getDegradedFallback().hit(key, windowSeconds);
+        count = fallbackHit.count;
+        resetTime = fallbackHit.resetTime;
+      } catch (fallbackErr) {
+        console.error('[rate-limit] degraded fallback also failed, fail-open:', fallbackErr);
+        return handler(request, context);
+      }
     }
 
     if (count > maxRequests) {

@@ -46,7 +46,7 @@ async function handlePost(request: NextRequest) {
     }));
 
     const prompt = buildCasePrompt(placeholderNodes, input.specialty, input.difficulty, input.species);
-    const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
+    const rawResponse = await callClaude(prompt, { maxTokens: 8192, scope: 'route:/api/generate/cases' });
     const parsed = safeParseJson<Record<string, unknown>>(rawResponse);
     const validation = validate(caseOutputSchema, parsed);
 

@@ -19,7 +19,7 @@ async function handlePost(request: NextRequest) {
     }
     const input = inputValidation.data;
     const prompt = buildSkeletonPrompt(input);
-    const rawResponse = await callClaude(prompt, { maxTokens: 8192 });
+    const rawResponse = await callClaude(prompt, { maxTokens: 8192, scope: 'route:/api/generate/skeleton' });
     const parsed = safeParseJson<SkeletonOutput>(rawResponse);
     const validation = validate(skeletonOutputSchema, parsed);
     if (!validation.success) {

@@ -29,7 +29,7 @@ export default function GraphError({ error, reset }: ErrorProps) {
           圖譜渲染時發生錯誤，可能是資料格式問題。請嘗試重新載入。
         </p>
         {error.digest && (
-          <p className="mb-4 text-xs text-gray-400">錯誤代碼：{error.digest}</p>
+          <p className="mb-4 text-xs text-gray-600">錯誤代碼：{error.digest}</p>
         )}
         <div className="flex items-center justify-center gap-3">
           <button

@@ -28,7 +28,7 @@ export default function AdminError({ error, reset }: ErrorProps) {
           管理功能發生異常，請嘗試重新載入或返回首頁。
         </p>
         {error.digest && (
-          <p className="mb-4 text-xs text-gray-400">錯誤代碼：{error.digest}</p>
+          <p className="mb-4 text-xs text-gray-600">錯誤代碼：{error.digest}</p>
         )}
         <div className="flex items-center justify-center gap-3">
           <button
