@@ -55,6 +55,11 @@ export default function DashboardHomePage() {
       todayReviewCount: s.todayReviewCount,
     }))
   );
+  // UX-cruise iter 3 fix: subscribe to `progress` so the completion-count cards
+  // re-render if a node is completed while this page is mounted (same iter-4
+  // function-only-selector regression class as node-detail / path-detail).
+  const progressVersion = useLearningStore((s) => s.progress);
+  void progressVersion;
   const experience = useGamificationStore((s) => s.experience);
 
   const completedCount = getCompletedCount();

@@ -26,6 +26,13 @@ export default function PathDetailPage({ params }: PathDetailPageProps) {
     }))
   );
   const getStatus = useLearningStore((s) => s.getStatus);
+  // UX-cruise iter 3 fix: subscribe to the `progress` Map so milestone status +
+  // the progress bar re-render when a node is completed. Without this, the
+  // iter-4 function-only selector kept the page stale (same regression class as
+  // the node-detail action button). The subscribed Map ref changes on every
+  // completeNode/startNode; getStatus(...) below then recomputes per re-render.
+  const progressVersion = useLearningStore((s) => s.progress);
+  void progressVersion;
 
   const path = useMemo(() => paths.find((p) => p.id === pathId), [paths, pathId]);
 

@@ -39,20 +39,26 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
       setNodeContent: s.setNodeContent,
     }))
   );
-  const { getStatus, completeNode, startNode } = useLearningStore(
+  const { completeNode, startNode } = useLearningStore(
     useShallow((s) => ({
-      getStatus: s.getStatus,
       completeNode: s.completeNode,
       startNode: s.startNode,
     }))
   );
+  // UX-cruise iter 3 fix: derive `status` via a reactive selector that reads the
+  // `progress` Map, NOT via getStatus(nodeId) on a function-only useShallow.
+  // The iter-4 useShallow refactor subscribed only to stable function refs, so the
+  // component never re-rendered after startNode/completeNode mutated progress —
+  // the action button was stuck on 「開始學習」 and never advanced to 「完成學習」/「已完成」.
+  // Selecting the derived value re-runs on every progress change and re-renders
+  // only when the status string actually changes.
+  const status = useLearningStore((s) => s.getStatus(nodeId));
   const addXP = useGamificationStore((s) => s.addXP);
   const [isCompleting, setIsCompleting] = useState(false);
   const [loadTimeout, setLoadTimeout] = useState(false);
 
   // 依賴 nodes 以便 DemoDataProvider 注入資料後重新計算
   const node = useMemo(() => getNodeById(nodeId), [getNodeById, nodeId, nodes]);
-  const status = getStatus(nodeId);
 
   // 自動從 seed 載入內容（動態 import 避免打包到 client bundle）
   useEffect(() => {
