@@ -834,7 +834,7 @@ export const NEURO_QUESTIONS: ReviewQuestion[] = [
     question: '犬 IVDD 中，下列哪個犬種因軟骨發育不良（chondrodystrophic）特性而最好發？',
     options: ['德國牧羊犬', '臘腸犬（Dachshund）', '黃金獵犬', '哈士奇'],
     correct_answer: '臘腸犬（Dachshund）',
-    explanation: '臘腸犬為 IVDD（尤其 Hansen Type I）最好發的犬種，約佔所有 IVDD 病例的 45-73%。軟骨發育不良犬種（chondrodystrophic breeds）的椎間盤在年輕時即發生軟骨樣退化（chondroid metaplasia），使髓核�ite化脆化，易於急性脫出。其他好發品種包括法國鬥牛犬、比格犬、柯基犬、西施犬等。',
+    explanation: '臘腸犬為 IVDD（尤其 Hansen Type I）最好發的犬種，約佔所有 IVDD 病例的 45-73%。軟骨發育不良犬種（chondrodystrophic breeds）的椎間盤在年輕時即發生軟骨樣退化（chondroid metaplasia），使髓核鈣化脆化，易於急性脫出。其他好發品種包括法國鬥牛犬、比格犬、柯基犬、西施犬等。',
     difficulty: 2, spaced_rep: true, tags: ['IVDD', '臘腸犬', 'chondrodystrophic'], image_placeholder: null,
   },
   {
