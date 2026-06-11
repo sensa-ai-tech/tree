@@ -35,6 +35,15 @@ export default function RegisterPage() {
       return;
     }
 
+    // UX-cruise iter 1: explicit email-format check — `type=email` only validates
+    // on native submit, which preventDefault() bypasses. Guard here so a malformed
+    // address fails fast instead of registering a broken mock account.
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!EMAIL_RE.test(email)) {
+      setLocalError('請輸入有效的 Email 格式');
+      return;
+    }
+
     if (password !== confirmPassword) {
       setLocalError('兩次輸入的密碼不一致');
       return;

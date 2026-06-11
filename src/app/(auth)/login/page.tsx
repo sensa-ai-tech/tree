@@ -32,6 +32,13 @@ export default function LoginPage() {
       return;
     }
 
+    // UX-cruise iter 1: email-format check symmetric with register.
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!EMAIL_RE.test(email)) {
+      showToast.error('請輸入有效的 Email 格式');
+      return;
+    }
+
     // user-r3-002: symmetric with register (which enforces ≥6 chars).
     // Mock store ignores password but real Supabase will reject short ones — fail fast here.
     const MIN_PASSWORD_LENGTH = 6;

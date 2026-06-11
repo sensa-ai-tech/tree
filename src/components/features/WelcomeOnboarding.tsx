@@ -32,7 +32,7 @@ const FEATURES = [
     icon: BookOpen,
     color: 'bg-amber-50 text-amber-600',
     title: '間隔複習',
-    desc: 'SM-2 演算法優化複習排程，強化長期記憶。',
+    desc: 'FSRS 演算法優化複習排程，強化長期記憶。',
     link: '/review',
   },
   {
