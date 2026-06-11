@@ -77,8 +77,10 @@
 ## 11. Build & verify checklist
 
 1. `npx tsc --noEmit` — 0 errors
-2. `npm test` — all pass (current: 797+ tests)
+2. `npm test` — all pass (current: 817+ tests)
 3. `npm run test:cov` — no threshold drop
 4. `npm run lint` — 0 errors (warnings tolerated in test files only)
-5. `npm run build` — diff route table against expectations
+5. **`npm run build` — MANDATORY GATE, never skip.** tsc + vitest do NOT exercise the Tailwind v4 production class-scan, so a 100%-green test suite can coexist with a 100%-broken deploy. This actually happened: a self-evolve loop declared "converged" while `next build` was failing on a Tailwind Oxide scanner RangeError (`String.fromCodePoint(2551915)` from a fabricated `\26F4AB` CSS escape on CJK-heavy source). `next dev` worked, masking it. Fix was tailwindcss 4.1.18 → 4.3.0. Treat build success as a hard requirement before any "done"/"converged" claim.
 6. Commit, push.
+
+> Tailwind pin: stay on tailwindcss + @tailwindcss/postcss **≥ 4.3.0**. 4.1.18's Oxide scanner crashes `next build` on this repo's CJK content. Do not downgrade below 4.3.0.
