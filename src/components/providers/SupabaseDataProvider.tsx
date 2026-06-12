@@ -6,6 +6,7 @@ import { isMockMode } from '@/data/seed/mock-mode';
 import { createBrowserClient } from '@/lib/supabase/client';
 import { reportError } from '@/lib/observability/error-reporter';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
+import { mapLearningPathRow } from '@/lib/utils/supabase-mappers';
 import type { KnowledgeNode, KnowledgeEdge, LearningPath } from '@/types/knowledge';
 
 /**
@@ -67,52 +68,11 @@ export function SupabaseDataProvider({ children }: { children: React.ReactNode }
 
         const edges: KnowledgeEdge[] = (edgesRes.data || []) as KnowledgeEdge[];
 
-        // Map learning_paths. The DB stores node_ids as TEXT[], but the current
-        // seed-to-supabase import double-serialized each entry: every element is a
-        // JSON string of a full PathNode ('{"node_id":"CARDIO-L0-001","is_required":...}')
-        // rather than a bare id. Parse both shapes so node links, 必修 badges, phase
-        // labels and learning notes survive instead of rendering raw JSON as the link.
-        // (Root-cause fix — re-importing the DB so node_ids holds bare ids, plus adding
-        // a milestones column — is tracked in Obsidian BLOCKED-OPERATIONS.md.)
-        const parsePathNode = (entry: unknown): {
-          node_id: string;
-          is_required: boolean;
-          phase: string;
-          learning_note: string | null;
-        } => {
-          if (typeof entry === 'string' && entry.trimStart().startsWith('{')) {
-            try {
-              const obj = JSON.parse(entry) as Record<string, unknown>;
-              return {
-                node_id: String(obj.node_id ?? ''),
-                is_required: Boolean(obj.is_required),
-                phase: typeof obj.phase === 'string' ? obj.phase : '',
-                learning_note:
-                  typeof obj.learning_note === 'string' ? obj.learning_note : null,
-              };
-            } catch {
-              // Fall through to treating the string as a bare id.
-            }
-          }
-          return { node_id: String(entry), is_required: false, phase: '', learning_note: null };
-        };
-
-        const paths: LearningPath[] = (pathsRes.data || []).map((row: Record<string, unknown>) => {
-          const nodeIds = Array.isArray(row.node_ids) ? (row.node_ids as unknown[]) : [];
-          return {
-            id: row.id as string,
-            title: row.title as string,
-            description: (row.description as string | null) ?? null,
-            specialty: row.specialty as string,
-            target_audience: (row.target_audience as string | null) ?? null,
-            estimated_hours: (row.estimated_hours as number) ?? 0,
-            path_nodes: nodeIds.map(parsePathNode),
-            // DB schema has no milestones column yet — see BLOCKED-OPERATIONS.md.
-            milestones: [],
-            has_certificate: false,
-            status: 'published',
-          };
-        });
+        // Map learning_paths via the extracted, unit-tested mapper (see
+        // src/lib/utils/supabase-mappers.ts). The DB's node_ids column was
+        // double-serialized by the seed import; mapLearningPathRow/parsePathNode
+        // handle both the JSON-string and bare-id shapes so node navigation works.
+        const paths: LearningPath[] = (pathsRes.data || []).map(mapLearningPathRow);
 
         // 防呆：DB 有節點但邊或路徑為空時，從 seed 補上。
         // 常見於 seed-to-supabase 只匯入部分資料或 migration 中斷。
