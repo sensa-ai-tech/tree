@@ -100,7 +100,14 @@ export default function ProfilePage() {
             showPercentage
           />
           <div className="text-center text-xs text-gray-600">
-            目前 {levelInfo.xpForCurrentLevel} XP / 下一級 {levelInfo.xpForNextLevel} XP
+            {levelInfo.xpForNextLevel > levelInfo.xpForCurrentLevel ? (
+              // 顯示「本級進度」而非等級門檻。舊文案「目前 {xpForCurrentLevel} XP」會印出該等級的
+              // 累計起始門檻（Lv.1 = 0），與上方的總 XP（129）並排時讓人誤以為自己只有 0 XP。
+              // 改為本級已累積 / 本級所需，與進度條的百分比一致。
+              <>本級進度 {experience.total_xp - levelInfo.xpForCurrentLevel} / {levelInfo.xpForNextLevel - levelInfo.xpForCurrentLevel} XP</>
+            ) : (
+              <>已達最高等級</>
+            )}
           </div>
         </CardBody>
       </Card>
