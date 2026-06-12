@@ -200,7 +200,10 @@ export default function ReviewPage() {
             <div className="flex flex-col items-center gap-4 py-8">
               <Brain className="h-12 w-12 text-indigo-400" />
               <p className="text-gray-600">
-                你有 <strong>{pendingReviewCount}</strong> 個知識節點需要複習
+                {/* pendingReviewCount 計的是「題目」數（每個完成節點可有多題），不是節點數。
+                    舊文案「N 個知識節點」會誤導（完成 1 個節點就顯示「10 個知識節點」），
+                    且與下方 badge「N 題待複習」不一致。統一用「題」。 */}
+                你有 <strong>{pendingReviewCount}</strong> 題待複習
               </p>
               <Button onClick={handleStartReview} icon={<RotateCcw className="h-4 w-4" />}>
                 開始複習
