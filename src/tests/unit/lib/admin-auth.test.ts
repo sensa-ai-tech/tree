@@ -163,6 +163,17 @@ describe('admin-auth: validateAdminPassword', () => {
     expect(validateAdminPassword('wrong-password')).toBe(false);
   });
 
+  // iter-15 regression: `vercel env pull` can write VKT_ADMIN_PASSWORD="secret\n",
+  // and dotenv expands the \n to a real newline. The configured value is trimmed so
+  // an admin typing the clean password (no trailing newline) still authenticates —
+  // otherwise the whole admin panel is unreachable via the login form.
+  it('trims a trailing newline/whitespace on the configured password (env-corruption footgun)', () => {
+    process.env.VKT_ADMIN_PASSWORD = 'correct-horse-battery-staple\n';
+    expect(validateAdminPassword('correct-horse-battery-staple')).toBe(true);
+    process.env.VKT_ADMIN_PASSWORD = '  correct-horse-battery-staple  ';
+    expect(validateAdminPassword('correct-horse-battery-staple')).toBe(true);
+  });
+
   it('rejects password of different length (timing-safe early exit)', () => {
     process.env.VKT_ADMIN_PASSWORD = 'abcd';
     expect(validateAdminPassword('xy')).toBe(false);

@@ -99,7 +99,11 @@ export function validateAdminPasswordWithId(password: string): string | null {
   }
 
   // 向後相容：單管理員模式 (VKT_ADMIN_PASSWORD)
-  const expected = process.env.VKT_ADMIN_PASSWORD;
+  // `.trim()` 正規化「設定值」（非使用者輸入），避免環境變數尾端混入換行/空白導致比對失敗。
+  // 實測 footgun：`vercel env pull` 產生的 .env.local 可能把值寫成 "secret\n"（dotenv 會展開成真換行），
+  // 於是真人在 /admin/login 輸入正確密碼仍因長度/內容不符而被拒，等於整個後台無法登入。
+  // 多管理員路徑（VKT_ADMIN_USERS）本來就逐項 trim，這裡對單密碼路徑做相同正規化以求一致。
+  const expected = process.env.VKT_ADMIN_PASSWORD?.trim();
   if (!expected) return null;
 
   if (expected.startsWith('sha256:')) {
