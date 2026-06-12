@@ -36,6 +36,18 @@ export default function PathDetailPage({ params }: PathDetailPageProps) {
 
   const path = useMemo(() => paths.find((p) => p.id === pathId), [paths, pathId]);
 
+  // Guard against the data-load race: on a hard navigation / refresh / shared link,
+  // the data provider hydrates `paths` asynchronously, so the first render sees an
+  // empty array. Without this, notFound() fired immediately and a valid path URL
+  // 404'd on refresh. Mirror the case-detail page's loading gate.
+  if (paths.length === 0) {
+    return (
+      <div className="flex h-64 items-center justify-center" role="status" aria-live="polite">
+        <p className="text-sm text-gray-600">學習路徑載入中...</p>
+      </div>
+    );
+  }
+
   if (!path) {
     notFound();
   }
