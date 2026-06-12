@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { LogIn } from 'lucide-react';
@@ -15,6 +15,12 @@ export default function LoginPage() {
   const { login, isLoading, error, clearError, user, _hasHydrated } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // In-flight guard: the mock auth store resolves login() synchronously, so
+  // isLoading flips true→false within one tick and never disables the button
+  // long enough to block a rapid double/triple click — each synchronous submit
+  // then fires its own 登入成功 toast + router.push. This ref rejects concurrent
+  // submits regardless of how fast the store resolves.
+  const submittingRef = useRef(false);
 
   // 已登入使用者直接導向 dashboard（與 app/page.tsx 的根目錄 redirect 一致）
   useEffect(() => {
@@ -25,6 +31,7 @@ export default function LoginPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
+    if (submittingRef.current) return;
     clearError();
 
     if (!email || !password) {
@@ -47,16 +54,22 @@ export default function LoginPage() {
       return;
     }
 
-    await login(email, password);
+    // Guard set only after validation passes, so a failed attempt doesn't lock out retries.
+    submittingRef.current = true;
+    try {
+      await login(email, password);
 
-    const currentError = useAuthStore.getState().error;
-    if (!currentError) {
-      showToast.success('登入成功');
-      // 導向 /home 而非 /graph：讓 WelcomeOnboarding modal 在首次登入時觸發，
-      // 並提供等級/XP/連續天數的個人化脈絡，而不是丟到 8 格的 specialty 選單。
-      router.push('/home');
-    } else {
-      showToast.error(currentError);
+      const currentError = useAuthStore.getState().error;
+      if (!currentError) {
+        showToast.success('登入成功');
+        // 導向 /home 而非 /graph：讓 WelcomeOnboarding modal 在首次登入時觸發，
+        // 並提供等級/XP/連續天數的個人化脈絡，而不是丟到 8 格的 specialty 選單。
+        router.push('/home');
+      } else {
+        showToast.error(currentError);
+      }
+    } finally {
+      submittingRef.current = false;
     }
   }
 
