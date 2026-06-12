@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { UserPlus } from 'lucide-react';
@@ -17,6 +17,10 @@ export default function RegisterPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [localError, setLocalError] = useState<string | null>(null);
+  // In-flight guard — mirrors login (iter 9). Mock register() resolves in one tick
+  // so isLoading never disables the button long enough to block a rapid double-click;
+  // without this each synchronous submit fires its own 註冊成功 toast + navigation.
+  const submittingRef = useRef(false);
 
   // 已登入使用者直接導向 dashboard（與 app/page.tsx 的根目錄 redirect 一致）
   useEffect(() => {
@@ -27,6 +31,7 @@ export default function RegisterPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
+    if (submittingRef.current) return;
     clearError();
     setLocalError(null);
 
@@ -55,15 +60,21 @@ export default function RegisterPage() {
       return;
     }
 
-    await register(email, password);
+    // Guard set only after validation passes, so a failed attempt doesn't lock out retries.
+    submittingRef.current = true;
+    try {
+      await register(email, password);
 
-    const currentError = useAuthStore.getState().error;
-    if (!currentError) {
-      showToast.success('註冊成功');
-      // 導向 /home 讓 WelcomeOnboarding modal 在首次註冊時觸發
-      router.push('/home');
-    } else {
-      showToast.error(currentError);
+      const currentError = useAuthStore.getState().error;
+      if (!currentError) {
+        showToast.success('註冊成功');
+        // 導向 /home 讓 WelcomeOnboarding modal 在首次註冊時觸發
+        router.push('/home');
+      } else {
+        showToast.error(currentError);
+      }
+    } finally {
+      submittingRef.current = false;
     }
   }
 
