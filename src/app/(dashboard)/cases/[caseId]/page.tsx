@@ -202,23 +202,53 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
 
             {/* Action Selection */}
             <div className="space-y-2">
-              <p className="text-sm font-medium text-gray-600">選擇你的行動：</p>
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium text-gray-600">選擇你的行動：</p>
+                {!showFeedback && (
+                  <p className="text-xs text-gray-500" aria-live="polite">
+                    已選 {selectedActions.size} 項 · 正解 {step.correct_actions.length} 項
+                  </p>
+                )}
+              </div>
               <div className="grid gap-2 sm:grid-cols-2">
-                {step.available_actions.map((action) => (
-                  <button
-                    key={action}
-                    type="button"
-                    disabled={showFeedback}
-                    onClick={() => toggleAction(action)}
-                    className={`rounded-lg border p-3 text-left text-sm transition-colors ${
-                      selectedActions.has(action)
-                        ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                        : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
-                    } ${showFeedback ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}`}
-                  >
-                    {action}
-                  </button>
-                ))}
+                {step.available_actions.map((action) => {
+                  // 提交後揭露每個選項的對錯，讓學生知道正解是哪幾項（而非只給通用回饋）。
+                  const isCorrectAction = step.correct_actions.includes(action);
+                  const isSelected = selectedActions.has(action);
+                  let stateClass: string;
+                  if (showFeedback) {
+                    if (isCorrectAction) {
+                      stateClass = 'border-green-500 bg-green-50 text-green-700';
+                    } else if (isSelected) {
+                      stateClass = 'border-red-400 bg-red-50 text-red-700 line-through';
+                    } else {
+                      stateClass = 'border-gray-200 bg-white text-gray-400';
+                    }
+                  } else if (isSelected) {
+                    stateClass = 'border-indigo-500 bg-indigo-50 text-indigo-700';
+                  } else {
+                    stateClass = 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50';
+                  }
+                  return (
+                    <button
+                      key={action}
+                      type="button"
+                      disabled={showFeedback}
+                      onClick={() => toggleAction(action)}
+                      className={`flex items-start justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${stateClass} ${
+                        showFeedback ? 'cursor-not-allowed' : 'cursor-pointer'
+                      }`}
+                    >
+                      <span>{action}</span>
+                      {showFeedback && isCorrectAction && (
+                        <CheckCircle className="h-4 w-4 shrink-0 text-green-600" />
+                      )}
+                      {showFeedback && !isCorrectAction && isSelected && (
+                        <XCircle className="h-4 w-4 shrink-0 text-red-500" />
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
