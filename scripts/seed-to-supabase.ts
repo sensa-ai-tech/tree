@@ -168,7 +168,11 @@ function toDbCase(c: Record<string, unknown>) {
 }
 
 function toDbPath(p: Record<string, unknown>) {
-  // learning_paths schema: id, title, description, specialty, path_type, difficulty, estimated_hours, node_ids, is_published
+  // Requires migration 002_path_fidelity.sql (milestones / path_nodes / target_audience / has_certificate columns).
+  // BLOCKED #8: the seed LearningPath has `path_nodes` (PathNode objects), NOT `node_ids`. Writing those objects
+  // into the node_ids TEXT[] column made supabase-js JSON-stringify each one. Fix: node_ids gets BARE ids, and the
+  // full objects go into the path_nodes jsonb column so is_required/phase/learning_note survive.
+  const pathNodes = Array.isArray(p.path_nodes) ? (p.path_nodes as Array<Record<string, unknown>>) : [];
   return {
     id: p.id,
     title: p.title,
@@ -177,8 +181,12 @@ function toDbPath(p: Record<string, unknown>) {
     path_type: p.path_type ?? 'beginner',
     difficulty: p.difficulty ?? 3,
     estimated_hours: p.estimated_hours ?? 0,
-    node_ids: p.node_ids ?? (p as Record<string, unknown>).path_nodes ?? [],
-    is_published: p.is_published ?? true,
+    node_ids: pathNodes.map((pn) => pn.node_id),       // bare ids (text[]) — fixes #8
+    path_nodes: pathNodes,                              // full PathNode objects (jsonb)
+    milestones: p.milestones ?? [],                    // fixes #9 (jsonb)
+    target_audience: p.target_audience ?? null,
+    has_certificate: p.has_certificate ?? false,
+    is_published: p.is_published ?? (p.status === 'published'),
   };
 }
 

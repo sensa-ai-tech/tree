@@ -54,6 +54,12 @@ describe('parsePathNode', () => {
     expect(r.phase).toBe('');
     expect(r.learning_note).toBeNull();
   });
+
+  it('accepts an already-parsed PathNode object (migration-002 path_nodes jsonb)', () => {
+    expect(
+      parsePathNode({ node_id: 'CARDIO-L2-001', is_required: true, phase: '病理機轉', learning_note: null })
+    ).toEqual({ node_id: 'CARDIO-L2-001', is_required: true, phase: '病理機轉', learning_note: null });
+  });
 });
 
 describe('mapLearningPathRow', () => {
@@ -98,5 +104,38 @@ describe('mapLearningPathRow', () => {
   it('handles a missing/non-array node_ids column as an empty path_nodes list', () => {
     const path = mapLearningPathRow({ id: 'P2', title: 'T', specialty: 'IM' });
     expect(path.path_nodes).toEqual([]);
+  });
+
+  it('reads migration-002 columns (path_nodes objects, milestones, has_certificate) when present', () => {
+    const path = mapLearningPathRow({
+      id: 'PATH-CARDIO-FOUNDATION',
+      title: '心臟科基礎入門路徑',
+      specialty: 'CARDIO',
+      target_audience: '實習獸醫',
+      has_certificate: true,
+      node_ids: ['CARDIO-L0-001'], // bare ids present too
+      path_nodes: [
+        { node_id: 'CARDIO-L0-001', is_required: true, phase: '基礎概念', learning_note: '起點' },
+      ],
+      milestones: [
+        { id: 'MS-CARDIO-01', title: '基礎過關', description: 'd', required_nodes: ['CARDIO-L0-001'], checkpoint_type: 'quiz', pass_criteria: '>=70%' },
+      ],
+    });
+    // path_nodes column wins over node_ids, preserving per-node metadata
+    expect(path.path_nodes[0]).toEqual({ node_id: 'CARDIO-L0-001', is_required: true, phase: '基礎概念', learning_note: '起點' });
+    expect(path.milestones).toHaveLength(1);
+    expect(path.milestones[0].title).toBe('基礎過關');
+    expect(path.has_certificate).toBe(true);
+    expect(path.target_audience).toBe('實習獸醫');
+  });
+
+  it('falls back to node_ids when path_nodes column is absent (legacy/pre-002 DB)', () => {
+    const path = mapLearningPathRow({
+      id: 'P3', title: 'T', specialty: 'IM',
+      node_ids: [JSON.stringify({ node_id: 'IM-L0-001', is_required: true, phase: 'x', learning_note: null })],
+    });
+    expect(path.path_nodes[0].node_id).toBe('IM-L0-001');
+    expect(path.milestones).toEqual([]);
+    expect(path.has_certificate).toBe(false);
   });
 });
