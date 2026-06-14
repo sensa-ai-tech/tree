@@ -6,8 +6,8 @@ const now = '2026-02-15T00:00:00Z';
 const contentCanineLymphoma: NodeContent = {
   id: 'CONTENT-ONCO-L3-001',
   node_id: 'ONCO-L3-001',
-  version: 1,
-  summary: '犬淋巴瘤是犬最常見的血液腫瘤，大約占所有犬腫瘤 7 到 24%。最常見的是多中心型，大概占 80%，臨床上就是全身淋巴結腫起來。WHO 分期分 I 到 V 期，再加 substage a（沒有全身症狀）跟 b（有全身症狀）。治療主軸是 CHOP-based 化療，B-cell 預後比 T-cell 好，CHOP 完全緩解率約 80 到 90%，中位存活期 12 到 14 個月。',
+  version: 2,
+  summary: '犬淋巴瘤是犬最常見的血液腫瘤，大約占所有犬腫瘤 7 到 24%。最常見的是多中心型，大概占 80%，臨床上就是全身淋巴結腫起來。WHO 分期分 I 到 V 期，再加 substage a（沒有全身症狀）跟 b（有全身症狀）。治療主軸是 CHOP-based 化療，B-cell 預後比 T-cell 好，CHOP 完全緩解率約 80 到 90%，中位存活期 12 到 14 個月。近年 FDA 核准了 rabacfosadine（Tanovea，2021 完全核准）與口服 verdinexor（Laverdia-CA1），流式細胞術也讓「惰性 vs 侵襲性」（如 T-zone 淋巴瘤）的區分更明確。',
   learning_objectives: [
     '說明犬淋巴瘤的解剖分型與 WHO 分期系統',
     '描述 B-cell 與 T-cell 免疫表型對預後的影響',
@@ -22,6 +22,8 @@ const contentCanineLymphoma: NodeContent = {
     'CHOP 方案的組成是 Cyclophosphamide、Hydroxydaunorubicin (Doxorubicin)、Oncovin (Vincristine) 加 Prednisone',
     '完全緩解率 80 到 90%，但多數會在 6 到 9 個月後復發',
     '高血鈣是 T-cell 淋巴瘤常見的副腫瘤症候群',
+    'FDA 已核准 rabacfosadine（Tanovea，IV，注意肺纖維化）與口服 verdinexor（Laverdia-CA1）作為 CHOP 以外選項（待 DVM 覆核劑量）',
+    '「T-cell 一律較差」需修正：T-zone 淋巴瘤（CD45−/CD3,CD5＋，約佔 10%）屬惰性，常採保守監測，過度治療是常見錯誤',
   ],
   body: `# 犬淋巴瘤 (Canine Lymphoma)
 
@@ -60,6 +62,20 @@ Substage 分兩種：a 是沒有全身症狀，b 是有全身症狀，像體重�
 ### 其他治療選項
 單劑 Doxorubicin 方案緩解率比較低但療程簡單。節拍式化療給的是低劑量口服藥，適合飼主沒辦法頻繁回診或經濟上有壓力的情況。[藥物:Lomustine]（CCNU）通常拿來救援 T-cell 或復發案例。[藥物:Prednisone] 單獨用的話中位存活只剩 1 到 2 個月。
 
+### 新藥與近期實證更新（2021–2025，待 DVM 覆核）
+
+近年 FDA 核准兩個犬淋巴瘤專用藥，是 CHOP 之外的重要新選項：
+
+| 藥物 | 機轉 | FDA 狀態 | 給藥 | 重點毒性 |
+|------|------|---------|------|---------|
+| Rabacfosadine（Tanovea-CA1） | 核苷酸前驅藥（PMEG prodrug），淋巴細胞內活化 | 2016 條件式 → **2021/7/15 完全核准** | IV，每 21 天一次（1.0 mg/kg；高風險犬種 0.82） | **肺纖維化（劑量限制）**、皮膚病變、腸胃道、骨髓抑制 |
+| Verdinexor（Laverdia-CA1） | 口服 SINE／XPO1（CRM1）核輸出抑制劑 | 2021/1 條件式 → 2025 完全核准（確切日期待確認） | **口服**，每週兩次（間隔 ≥72 小時），1.25→1.5 mg/kg | 食慾不振、嘔吐、腹瀉、體重減輕、血小板低下、肝指數上升；具致畸性需接觸防護 |
+
+- **證據等級**：一項多中心、隨機、雙盲、安慰劑對照試驗證實 rabacfosadine 整體反應率達 73.2%（安慰劑僅 5.6%），為目前犬淋巴瘤新藥中證據等級最高者（Weishaar 2022）。
+- **初治替代方案**：rabacfosadine 與 doxorubicin **交替使用**作為初治方案（59 隻犬 ORR 93%、CR 79%、中位 PFS 199 天），就診次數少於完整 CHOP，可作為 logistics／費用受限時的選項（Saba 2024）。
+- **救援預後判斷**：第一線 CHOP 後若**早期進展**（LAP < 86 天、rabacfosadine < 154 天），各類救援方案反應均差，可作為是否積極救援的判斷依據（Parker 2024）。
+- **免疫治療現況**：犬目前**尚無**已上市的「rituximab 等效」抗 CD20 單株抗體；早期商品（Blontress／blontuvetmab、Tactress）因缺療效/專一性資料已退出市場。新一代犬抗 CD20 mAb（1E4-cIgGB）早期試驗顯示安全且能清除 B 細胞，仍屬研究階段（McLinden 2024）。
+
 [圖片:CHOP 方案 25 週用藥時程表]
 
 ## 四、併發症與監控 (Complications & Monitoring)
@@ -70,6 +86,8 @@ Substage 分兩種：a 是沒有全身症狀，b 是有全身症狀，像體重�
 
 ### 免疫表型與預後
 用 IHC 或流式細胞儀做分型。B-cell 大約 60 到 70%，CD79a+/CD3-，跑 CHOP 中位存活 12 到 14 個月。T-cell 約 20 到 30%，CD3+/CD79a-，中位存活只剩 6 到 9 個月，而且高血鈣發生率比較高。
+
+但「T-cell＝預後差」這個老規則要修正：T 細胞型異質性很高。**T-zone 淋巴瘤（TZL）**約佔犬淋巴瘤 10%，是最常見的惰性型，流式表型為 **CD45 陰性、CD3/CD5 陽性**，病程緩慢、存活長，常採**保守監測**而非積極 CHOP；其周邊淋巴球增多不代表預後較差。更新版 Kiel 分類可在高惡性度 T 細胞型內進一步分層。另外，流式 Ki67 偏低可在小細胞型 B 細胞淋巴瘤中辨識預後較佳者。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -87,7 +105,9 @@ Substage 分兩種：a 是沒有全身症狀，b 是有全身症狀，像體重�
 | CHOP 25 週 vs 短縮 CHOP（15 週）的療效比較 | 部分研究顯示縮短方案可能不影響 OS，但數據不一致 | Level II |
 | 化療前 steroid 使用對後續 CHOP 反應的影響程度 | 公認有害但實際 OS 降低幅度還有爭議（部分研究差異不大） | Level II |
 | T-cell 淋巴瘤的最佳化療方案 | CHOP 對 T-cell 效果差，LOPP/Lomustine 可能較好但缺乏 RCT | Level III |
-| 免疫分型（流式 vs IHC）在預後預測的標準化 | 不同實驗室結果一致性存疑，需建立犬淋巴瘤統一分型標準 | Level IV |`,
+| 免疫分型（流式 vs IHC）在預後預測的標準化 | 不同實驗室結果一致性存疑，需建立犬淋巴瘤統一分型標準 | Level IV |
+| 惰性淋巴瘤（T-zone）是否該積極化療 | 流式可辨識 TZL（CD45−/CD3,CD5＋），多採保守監測；積極 CHOP 反而過度治療 | Level II–III |
+| Rabacfosadine 在第一線 vs 救援的定位 | RCT 證實有效（ORR 73.2%）；與 doxorubicin 交替可作初治，但與完整 CHOP 的頭對頭長期數據仍有限 | Level II |`,
   clinical_pearl: '犬淋巴瘤 FNA 第一線通常就能得到初步診斷，可以看到中大型淋巴球增多、取代掉正常淋巴結結構。但是免疫表型確認（B 還是 T cell）對預後評估跟治療選擇不能省，建議同時送流式細胞儀或 IHC 染色。\n\n【台灣流行病學】犬淋巴瘤在台灣是最常見的血液腫瘤之一，黃金 lymphoma 好發，加上拉布拉多在台灣飼養數量大。台灣獸醫腫瘤科這幾年發展很快，CHOP 化療方案在主要動物醫院都能跑。流式細胞儀免疫分型台灣部分實驗室已有服務。飼主對化療的接受度有提升，但費用還是要考慮的點。',
   common_mistakes: [
     '沒做免疫分型就直接上 CHOP，T-cell 預後本來就差，飼主決策也會被影響',
@@ -140,6 +160,12 @@ Substage 分兩種：a 是沒有全身症狀，b 是有全身症狀，像體重�
   drug_api_links: ['Cyclophosphamide', 'Doxorubicin', 'Vincristine', 'Prednisone', 'Lomustine'],
   references: [
     { type: 'guideline', citation: 'Vail DM et al. ACVIM Small Animal Consensus Statement on Lymphoma in Dogs. J Vet Intern Med. 2019.', relevance: '犬淋巴瘤診斷治療共識指引' },
+    { type: 'journal', citation: 'Weishaar KM, Wright ZM, Rosenberg MP, et al. Multicenter, randomized, double-blinded, placebo-controlled study of rabacfosadine in dogs with lymphoma. J Vet Intern Med. 2022;36(1):215-226. doi:10.1111/jvim.16341.', relevance: '犬淋巴瘤新藥中證據等級最高的 RCT，確立 rabacfosadine（Tanovea）療效（ORR 73.2% vs 5.6%）' },
+    { type: 'guideline', citation: 'U.S. FDA Center for Veterinary Medicine. Freedom of Information Summary, TANOVEA (rabacfosadine for injection), full approval July 15, 2021 (FOI doc 11083).', relevance: 'Tanovea 由條件式升級為完全核准之官方依據，含適應症、劑量與肺纖維化警示（NADA/劑量待 DVM 依仿單核對）' },
+    { type: 'guideline', citation: 'U.S. FDA Center for Veterinary Medicine. Laverdia-CA1 (verdinexor tablets) — conditional approval Jan 11, 2021; full approval 2025; DailyMed label.', relevance: '唯一口服 SINE/XPO1 抑制劑之核准依據與劑量（每週兩次）；完全核准確切日期待 DVM 確認' },
+    { type: 'journal', citation: 'Saba CF, Fan TM, Phillips BS, Wright ZM, Thamm DH. Alternating rabacfosadine and doxorubicin for treatment of naive canine lymphoma. Vet Comp Oncol. 2024;22(2):278-283. doi:10.1111/vco.12975.', relevance: '初治犬交替 rabacfosadine/doxorubicin 方案（ORR 93%、PFS 199 天），就診次數少於完整 CHOP 的替代選項' },
+    { type: 'journal', citation: 'Parker AS, Burton JH, Curran KM, Wolf-Ringwall A, Thamm DH. Early progression during/after CHOP indicates poor outcome with rescue protocols in dogs with multicentric lymphoma. J Vet Intern Med. 2024;38(4):2282-2292. doi:10.1111/jvim.17139.', relevance: '是否積極救援的預後判斷依據：第一線 CHOP 早期進展者各類 rescue 反應均差' },
+    { type: 'journal', citation: 'McLinden GP, Avery AC, Gardner HL, et al. Safety and biologic activity of a canine anti-CD20 monoclonal antibody in dogs with diffuse large B-cell lymphoma. J Vet Intern Med. 2024;38(3):1666-1674. doi:10.1111/jvim.17080.', relevance: '新一代犬抗 CD20 mAb 早期安全/活性數據；說明犬目前尚無已上市 rituximab 等效藥' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2.', relevance: '化療副作用分級標準' },
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤科主要教科書' },
     { type: 'journal', citation: 'Garrett LD et al. Evaluation of a 6-month chemotherapy protocol with no maintenance therapy for dogs with lymphoma. J Vet Intern Med. 2002;16(6):704-709.', relevance: '犬淋巴瘤 CHOP 方案臨床研究' },
