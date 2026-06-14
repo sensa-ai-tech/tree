@@ -1720,8 +1720,8 @@ T4/T3 過量的系統效應：
 const contentIMHA: NodeContent = {
   id: 'CONTENT-IM-L3-005',
   node_id: 'IM-L3-005',
-  version: 1,
-  summary: '犬免疫介導性溶血性貧血（IMHA）是犬最棘手的免疫病之一，免疫系統做出自體抗體去打自家紅血球。ACVIM 2019 共識分原發性（60-75%）和繼發性。死亡率不低，3 到 5 成跑不掉，最主要的死因就是血栓。治療兩條腿走：免疫抑制加抗血栓。',
+  version: 2,
+  summary: '犬免疫介導性溶血性貧血（IMHA）是犬最棘手的免疫病之一，免疫系統做出自體抗體去打自家紅血球。ACVIM 2019 共識分原發性（60-75%）和繼發性。死亡率不低，3 到 5 成跑不掉，最主要的死因就是血栓。治療兩條腿走：免疫抑制加抗血栓。2024 年一篇 RCT（Agnoli 等）提醒：一線就加上 mycophenolate 並未提升反應率、存活反而較差——雙藥不該再當常規。',
   learning_objectives: [
     '區分原發性與繼發性 IMHA 並說明常見的繼發原因',
     '運用血液學和免疫學檢測（球形紅血球、自凝集、Coombs test）診斷 IMHA',
@@ -1860,12 +1860,14 @@ const contentIMHA: NodeContent = {
 
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
-| 是否常規加第二免疫抑制劑 | ACVIM 不反對但非必須 | Level III | 單藥 vs 雙藥 RCT |
+| 是否常規加第二免疫抑制劑 | **2024 Agnoli RCT 翻轉舊觀念**：類固醇 + MMF 雙藥相較單用類固醇並未改善反應率，MMF 組存活反而較差。除非個案有特殊考量，一線不必常規加第二劑 | Level II（RCT） | 哪些亞型真正受益於雙藥？ |
 | Pred 劑量 2 vs 4 mg/kg/day | ACVIM 2019 建議 2 mg/kg/day | Level II | 劑量-反應關係研究 |
 | hIVIG 的角色 | 急救用途，但證據有限 | Level III | 前瞻性比較研究 |
-| 最佳抗血栓方案 | Clopidogrel + heparin 為常用 | Level III | DOACs 在犬的研究 |
+| 最佳抗血栓方案 | Clopidogrel 為首選抗血小板；DOACs（rivaroxaban）犬用藥動學研究中 | Level III | DOACs 在犬的 RCT |
 | 脾臟切除 | 人醫常見，獸醫罕用 | Level IV | 難治性 IMHA 的手術角色？ |
-| Mycophenolate vs Azathioprine | Mycophenolate 可能起效更快 | Level III | 頭對頭比較研究 |`,
+| Mycophenolate vs Azathioprine | 2024 RCT 提醒 MMF 加入後存活未必更好，二線藥物選擇宜個別化、密切監控 | Level II（RCT） | 頭對頭比較研究 |
+
+> ⚠️ **2024 新證據（待 DVM 審閱）**：Agnoli 等人發表於 JVIM 的隨機對照試驗（DOI 10.1111/jvim.17122）顯示，於犬 IMHA 一線治療「類固醇 + mycophenolate mofetil」雙藥組合，相較單用類固醇並未提高治療反應率，且 MMF 組存活率較低。臨床意義：不要把「一線就上雙藥」當預設；第二免疫抑制劑保留給類固醇 48–72 小時反應不佳、或無法耐受高劑量類固醇的個案，且加藥後須密切監控。本段落為文獻更新，臨床採用前請由主治獸醫師依個案判斷。`,
   clinical_pearl: '在台灣診斷 IMHA 時，最關鍵的第一步是排除壁蝨媒介疾病。Babesia gibsoni 和 Ehrlichia canis 都可以觸發繼發性 IMHA，而且台灣是高盛行區。SNAP 4Dx 可能在急性感染期偽陰性（抗體尚未產生），所以疑似 IMHA 的犬應同時送 PCR 檢測 Babesia 和 Mycoplasma。另一個重要觀念：自凝集試驗必須用生理食鹽水稀釋後判讀，將一滴 EDTA 血液滴在載玻片上加一滴 saline 混合。如果稀釋後凝集消失，則為 rouleaux（假陽性）；如果持續凝集，才是真性自凝集。',
   common_mistakes: [
     '未排除繼發原因就診斷原發性 IMHA（尤其在台灣必須排除 Babesia 和 Ehrlichia）',
@@ -1912,7 +1914,9 @@ const contentIMHA: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Prednisolone', 'Dexamethasone', 'Mycophenolate', 'Cyclosporine', 'Azathioprine', 'Clopidogrel', 'Enoxaparin'],
   references: [
-    { type: 'guideline', citation: 'Garden OA et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334.', relevance: 'IMHA 診斷 ACVIM 共識' },
+    { type: 'guideline', citation: 'Garden OA et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334.', relevance: 'IMHA 診斷 ACVIM 共識（診斷分層、自凝集、Coombs）' },
+    { type: 'guideline', citation: 'Swann JW et al. "ACVIM consensus statement on the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med. 2019;33(3):1141-1172.', relevance: 'IMHA 治療 ACVIM 共識（免疫抑制階梯 + 全面抗血栓）' },
+    { type: 'journal', citation: 'Agnoli C et al. "Randomized controlled trial of mycophenolate mofetil combined with prednisolone versus prednisolone alone for the treatment of canine non-associative immune-mediated hemolytic anemia." J Vet Intern Med. 2024. doi:10.1111/jvim.17122.', relevance: '2024 RCT：一線加 MMF 未改善反應率、存活反而較差（待 DVM 審閱）' },
     { type: 'journal', citation: 'Swann JW, Skelly BJ. "Systematic review of evidence relating to the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med. 2013;27(1):1-9.', relevance: 'IMHA 治療系統性回顧' },
     { type: 'journal', citation: 'Weinkle TK et al. "Evaluation of prognostic factors, survival rates, and treatment protocols for immune-mediated hemolytic anemia in dogs: 151 cases (1993-2002)." J Am Vet Med Assoc. 2005;226(11):1869-1880.', relevance: 'IMHA 預後因子與存活率分析' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter on IMHA.', relevance: 'IMHA 基礎教材' },
