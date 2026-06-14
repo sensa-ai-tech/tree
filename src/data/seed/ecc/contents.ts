@@ -6,8 +6,8 @@ const now = '2026-02-15T00:00:00Z';
 const contentCPR: NodeContent = {
   id: 'CONTENT-ECC-L5-002',
   node_id: 'ECC-L5-002',
-  version: 1,
-  summary: '獸醫 CPR 走 RECOVER 指引，分 BLS 跟 ALS 兩段。BLS 就是按壓加通氣，按壓 100-120 下/分、通氣 10 下/分，先把這兩件事做好其他都好說。ALS 才談藥物跟監測。CPR 做得好不好看 ETCO2，超過 15 mmHg 算合格。2024 年版本特別強調團隊分工跟早期辨識停搏，半夜值班遇到時就靠這套救命。',
+  version: 2,
+  summary: '獸醫 CPR 走 RECOVER 指引，分 BLS 跟 ALS 兩段。BLS 就是按壓加通氣，按壓 100-120 下/分、通氣 10 下/分，先把這兩件事做好其他都好說。ALS 才談藥物跟監測。CPR 做得好不好看 ETCO2，2024 版把合格門檻由 15 拉到 ≥18 mmHg。2024 RECOVER（JVECC 34(S1)，首次以 GRADE 制定）幾個關鍵變動：取消高劑量腎上腺素、atropine 只給一次、去顫第二次能量加倍一次、ETCO2 目標提高；但 BLS 的速率/深度/30:2/通氣維持不變。',
   learning_objectives: [
     '描述 RECOVER 指引中 BLS 與 ALS 的標準流程',
     '正確執行犬貓胸外按壓技術（速率、深度、姿位）',
@@ -19,9 +19,12 @@ const contentCPR: NodeContent = {
     '胸外按壓速率 100-120 次/分，深度為胸廓寬度的 1/3 至 1/2',
     '通氣速率 10 次/分，避免過度通氣',
     '按壓與通氣比 2 分鐘循環，每 2 分鐘輪換按壓者',
-    'Epinephrine 0.01 mg/kg IV 每 3-5 分鐘重複',
-    'Atropine 0.04 mg/kg IV 用於迷走神經介導的心跳停止',
-    'ETCO2 > 15 mmHg 表示 CPR 品質良好',
+    'Epinephrine 0.01 mg/kg IV 每 3-5 分鐘重複；2024 RECOVER 取消高劑量腎上腺素',
+    'Atropine 0.04 mg/kg IV 用於高迷走張力，2024 建議僅給一次（不重複）',
+    'ETCO2 ≥18 mmHg 表示 CPR 品質良好（2024 由 ~15 提高）',
+    '去顫 2024 規則：首次電擊後仍可電擊者，第二次能量加倍一次，之後不再升階',
+    '抗心律不整：犬用 lidocaine、貓首選 amiodarone；lidocaine 勿用於貓',
+    '2024 範圍：僅 BLS/ALS/監測更新；PCA（含 TTM）與整備預防尚未更新，勿誤植',
     '自主循環恢復（ROSC）後需進入復甦後照護',
   ],
   body: `# 心肺復甦術 (RECOVER)
@@ -58,16 +61,17 @@ RECOVER (Reassessment Campaign on Veterinary Resuscitation) 是獸醫 CPR 的循
 | 藥物 | 劑量 | 適應症 | 給藥間隔 |
 |------|------|--------|---------|
 | [藥物:Epinephrine] | 0.01 mg/kg IV | 所有心跳停止 | 每 3-5 分鐘 |
-| [藥物:Atropine] | 0.04 mg/kg IV | 迷走神經介導 | 單次或重複一次 |
-| [藥物:Amiodarone] | 5 mg/kg IV | VF/無脈搏 VT | 可重複一次 |
-| [藥物:Lidocaine] | 2 mg/kg IV（犬） | VF/無脈搏 VT | 可重複一次 |
+| [藥物:Atropine] | 0.04 mg/kg IV | 高迷走張力時 | **僅給一次（2024 不建議重複）** |
+| [藥物:Amiodarone] | 5 mg/kg IV | VF/無脈搏 VT | 貓首選；犬替代 |
+| [藥物:Lidocaine] | 2 mg/kg IV（**僅犬**） | VF/無脈搏 VT | 犬首選；**勿用於貓** |
 
 ### 電擊去顫
 - 單相波 4-6 J/kg，雙相波 2-4 J/kg
+- **2024 升階規則**：首次電擊後仍為可電擊節律時，第二次能量加倍「一次」，之後維持該劑量不再持續升階
 - 每 2 分鐘循環後評估節律，有 VF/VT 則電擊
 
 ### 監測
-- ETCO2：> 15 mmHg 為 CPR 品質良好，突然上升至 > 30-40 mmHg 可能提示 ROSC
+- ETCO2：**≥18 mmHg**（2024 由 ~15 提高）為 CPR 品質良好指標，越高越好；突然上升至 > 30-40 mmHg 可能提示 ROSC
 - ECG：辨識可電擊節律（VF、無脈搏 VT）vs 不可電擊節律（asystole、PEA）
 
 ### 復甦後照護
@@ -76,6 +80,17 @@ ROSC 後進入復甦後照護階段：
 2. 體溫管理（避免高體溫）
 3. 通氣支持（目標 SpO2 > 94%）
 4. 神經功能評估
+
+### 2024 RECOVER 更新重點（vs 2012，待 DVM 覆核）
+2024 年 6 月 RECOVER 於 *J Vet Emerg Crit Care* 34(S1) 發表更新版，是獸醫界**首次以 GRADE 系統**制定（~135 個 PICO 問題，建議多屬「very low」證據+專家共識，教學時應誠實標示強度）。實質更新集中在 **BLS、ALS、監測**三個領域：
+
+| 領域 | 2024 變更 | 維持不變 |
+|------|-----------|---------|
+| BLS | 新增體型特化手法（桶胸犬背臥按壓深度 ~前後徑 25%、貓/小型犬環抱雙拇指）；無插管時優先 bag-mask + O₂ | **速率 100–120/分、深度 ⅓–½、30:2、插管後通氣 10/分（每 6 秒）全部不變** |
+| ALS | **取消高劑量腎上腺素**；atropine 高迷走張力時僅給一次；抗心律不整犬用 lidocaine／貓首選 amiodarone；去顫第二次能量加倍一次 | 低劑量 epinephrine 0.01 mg/kg q3–5min；vasopressin 仍為選項（確切定位待覆核） |
+| 監測 | **ETCO2 最低目標由 ~15 提高至 ≥18 mmHg**；獨立監測領域本身即為結構性擴充 | ECG 辨識可電擊/不可電擊、capnography 確認插管 |
+
+> ⚠️ **重要範圍說明**：2024 版**並未**全面更新「整備預防（Preparedness）」與「心跳恢復後照護（PCA）」兩個領域——RECOVER 將以滾動方式於 ~2026–2027 另行發表。故 **TTM（目標體溫管理）、氧合/神經預後目標、ECPR 不可宣稱為 2024 新增**，這些仍沿用 2012 版 PCA 演算法。精確 mg/kg、U/kg、J/kg 數值請依 vec.13389/vec.13391 原文藥物表由獸醫師核對。
 
 [圖片:RECOVER CPR 演算法流程圖]
 
@@ -89,7 +104,7 @@ CPR 過程的併發症：肋骨骨折（小型犬貓特別容易）、氣胸（�
 
 ## 四、預後影響 (Prognostic Impact)
 
-數字現實一點：犬貓 CPR 整體 ROSC 率大約 35-45%，但出院存活率只剩 2-10%。會影響預後的東西就那幾個。從停搏到開始 CPR 的時間，拖過 5 分鐘存活率就掉得很快。初始心律，VF/VT 比 asystole/PEA 機會大。CPR 中 ETCO2 過 15 mmHg 代表壓得有效。CPR 拖過 20 分鐘還沒 ROSC，幾乎不用想了。最後是原發病能不能逆轉，這個沒救別的都白搭。
+數字現實一點：犬貓 CPR 整體 ROSC 率大約 35-45%，但出院存活率只剩 2-10%。會影響預後的東西就那幾個。從停搏到開始 CPR 的時間，拖過 5 分鐘存活率就掉得很快。初始心律，VF/VT 比 asystole/PEA 機會大。CPR 中 ETCO2 達 ≥18 mmHg（2024 門檻）代表壓得有效。CPR 拖過 20 分鐘還沒 ROSC，幾乎不用想了。最後是原發病能不能逆轉，這個沒救別的都白搭。
 
 ## 五、人醫借鑒 (Translational Insights)
 
@@ -98,7 +113,7 @@ CPR 過程的併發症：肋骨骨折（小型犬貓特別容易）、氣胸（�
 | 機械式胸外按壓裝置（LUCAS/AutoPulse） | 減少按壓者疲勞，維持一致的按壓品質 | 人醫已廣泛使用，獸醫因體型差異大尚無商用產品 |
 | 體外心肺復甦（ECPR/ECMO） | 對傳統 CPR 無反應的病例提供體外循環支持 | 人醫心臟停止的 ECPR 存活率可達 30%，獸醫僅少數教學醫院報告 |
 | 目標體溫管理（TTM，32-36°C） | ROSC 後神經保護性低體溫治療 | 人醫 TTM 已列入 AHA 指引，獸醫犬 ROSC 後低體溫研究極有限 |
-| Point-of-care 超音波（POCUS）導向 CPR | CPR 期間即時超音波評估心臟活動與可逆因子（4H4T） | 人醫急診已整合 POCUS 至 CPR 流程，獸醫 RECOVER 2024 開始推薦 |
+| Point-of-care 超音波（POCUS）導向 CPR | CPR 期間即時超音波評估心臟活動與可逆因子（4H4T） | 人醫急診已整合 POCUS 至 CPR 流程；獸醫多在循環評估時輔助使用（RECOVER 2024 是否明列正式推薦待原文確認） |
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
@@ -205,7 +220,11 @@ CPR 過程的併發症：肋骨骨折（小型犬貓特別容易）、氣胸（�
   drug_api_links: ['Epinephrine', 'Atropine', 'Amiodarone', 'Lidocaine'],
   references: [
     { type: 'guideline', citation: 'Fletcher DJ, Boller M, Brainard BM, et al. RECOVER evidence and knowledge gap analysis on veterinary CPR. Part 7: Clinical guidelines. JVECC. 2012;22(s1):S102-S131.', relevance: 'RECOVER CPR 原始指引' },
-    { type: 'guideline', citation: 'RECOVER Reassessment Campaign 2024. Updated clinical guidelines for veterinary CPR.', relevance: '2024 年更新版 CPR 指引' },
+    { type: 'guideline', citation: 'Burkitt-Creedon JM, Boller M, Fletcher DJ, et al. 2024 RECOVER Guidelines: Updated treatment recommendations for CPR in dogs and cats. J Vet Emerg Crit Care. 2024;34(S1):104-123. doi:10.1111/vec.13391.', relevance: '2024 更新總綱與整合建議（含更新版演算法、節律診斷工具、藥物劑量表）' },
+    { type: 'guideline', citation: 'Hopper K, Epstein SE, Burkitt-Creedon JM, et al. 2024 RECOVER Guidelines: Basic Life Support. J Vet Emerg Crit Care. 2024;34(S1):16-43. doi:10.1111/vec.13387.', relevance: 'BLS：確認速率/深度/30:2/通氣不變，新增體型特化按壓手法' },
+    { type: 'guideline', citation: 'Wolf J, Buckley GJ, Rozanski EA, et al. 2024 RECOVER Guidelines: Advanced Life Support. J Vet Emerg Crit Care. 2024;34(S1):44-75. doi:10.1111/vec.13389.', relevance: 'ALS：取消高劑量腎上腺素、atropine 僅一次、犬 lidocaine/貓 amiodarone、去顫第二次加倍' },
+    { type: 'guideline', citation: 'Brainard BM, Lane SL, Burkitt-Creedon JM, et al. 2024 RECOVER Guidelines: Monitoring. J Vet Emerg Crit Care. 2024;34(S1):76-103. doi:10.1111/vec.13390.', relevance: '監測：ETCO2 最低目標由 ~15 提高至 ≥18 mmHg' },
+    { type: 'guideline', citation: 'Fletcher DJ, Boller M, Burkitt-Creedon JM, et al. 2024 RECOVER Guidelines: Methods, evidence identification, evaluation, and consensus process. J Vet Emerg Crit Care. 2024;34(S1):3-15. doi:10.1111/vec.13388.', relevance: '首次採 GRADE、證據多為 very low；用於誠實標示建議強度' },
     { type: 'journal', citation: 'Hofmeister EH, Brainard BM, Egger CM, et al. Prognostic indicators for dogs and cats with cardiopulmonary arrest treated by cardiopulmonary cerebral resuscitation at a university teaching hospital. JAVMA. 2009;235(1):50-57.', relevance: 'CPR 預後因子研究' },
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022', relevance: '急重症醫學教科書參考' },
   ],
