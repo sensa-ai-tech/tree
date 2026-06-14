@@ -54,6 +54,9 @@ export const SURG_NODES: KnowledgeNode[] = [
   { id: 'SURG-L3-017', specialty: 'SURG', title: '乳腺腫瘤外科', title_en: 'Mammary Tumor Surgery', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['乳腺', '腫瘤', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'ONCO - 乳腺腫瘤分期與化療; 犬50%惡性/貓85%惡性', created_at: now, updated_at: now },
   { id: 'SURG-L3-018', specialty: 'SURG', title: '股骨頭切除術', title_en: 'Femoral Head Ostectomy (FHO)', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 25, clinical_relevance: 4, exam_relevance: 3, status: 'published', version: 1, tags: ['FHO', '髖關節', '骨科', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'NEURO - 坐骨神經保護', created_at: now, updated_at: now },
 
+  // ─── 2026-06-15 新增節點（階段 B）：退化性關節炎/骨關節炎 ───
+  { id: 'SURG-L3-019', specialty: 'SURG', title: '退化性關節炎/骨關節炎', title_en: 'Osteoarthritis / Degenerative Joint Disease (OA/DJD)', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['OA', 'DJD', '骨關節炎', '慢性疼痛', 'Librela', 'Solensia', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'NEURO - 慢性疼痛敏化; ONCO-L5-003 腫瘤疼痛管理; ECC-L5-004 止痛策略; 抗 NGF 單株抗體（bedinvetmab/frunevetmab）', created_at: now, updated_at: now },
+
   // ─── 2026-05-18 P2 麻醉急症補完（1 node）───
   { id: 'SURG-L5-006', specialty: 'SURG', title: '麻醉惡性高熱', title_en: 'Malignant Hyperthermia (MH)', layer: 5, node_type: 'therapeutic', difficulty: 5, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['麻醉', '惡性高熱', 'dantrolene', 'isoflurane', '急症'], encyclopedia_link: null, cross_specialty_notes: 'ECC - 高熱與酸鹼急救; 罕見但致命', created_at: now, updated_at: now },
 ];

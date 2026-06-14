@@ -36,7 +36,8 @@
 ## 不需要動的地方
 - `index.ts`：用 spread merge，新 node/content/edge 自動納入，**無需改 index**（除非新增整個專科）。
 - `seed-nodes.ts`：是舊版/僅 CARDIO 的遺留檔，非真實來源，勿誤改。
-- snapshot：只有 GOLD_NODES（`CARDIO-L3-001`、`CARDIO-L4-001`、`IM-L3-001`、`IM-L3-028`、`SURG-L5-006`）改核心欄位才需 `-u`；新節點不在其中，不影響。Phase2 不變式節點清單見 `seed-content.test.ts`。
+- snapshot（GOLD_NODES 內容）：只有 GOLD_NODES（`CARDIO-L3-001`、`CARDIO-L4-001`、`IM-L3-001`、`IM-L3-028`、`SURG-L5-006`）改核心欄位才需 `-u`；新節點不在其中，內容 snapshot 不影響。Phase2 不變式節點清單見 `seed-content.test.ts`。
+- ⚠️ **但結構性指標 snapshot 一定會變**：`seed-content.test.ts` 另有「結構性指標」5 個 snapshot（總節點/邊/路徑數、各專科節點數、node_type 分佈、relation_type 分佈、各 layer 節點數）。新增節點/邊會合法改變這些 → 跑 `npx vitest run src/tests/snapshots/seed-content.test.ts -u` 更新（這是預期的 drift 信號，非錯誤）。
 
 ---
 

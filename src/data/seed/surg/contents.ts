@@ -5423,6 +5423,163 @@ EtCO2 是最早期、最敏感的指標。任何術中 EtCO2 飆升且通氣調�
 };
 
 /** 以 Map 方式匯出，方便用 nodeId 快速查找 */
+/** 退化性關節炎/骨關節炎 (OA/DJD)，疾病型（2026-06-15 新增節點）。臨床內容待 DVM 覆核。 */
+const contentOsteoarthritis: NodeContent = {
+  id: 'CONTENT-SURG-L3-019',
+  node_id: 'SURG-L3-019',
+  version: 1,
+  summary:
+    '退化性關節炎（osteoarthritis, OA / degenerative joint disease, DJD）是犬貓最常見的慢性疼痛來源，屬於侵犯整個關節的進行性疾病，涉及軟骨退化、軟骨下骨硬化、滑膜炎與疼痛敏化。犬以續發性 OA 為主（前十字韌帶斷裂、髖／肘關節發育不良等），貓則嚴重被低估——老年貓 X 光下 DJD 盛行率超過 90%，臨床多為行為改變而非跛行。無法根治但可長期管理，核心是多模式止痛加上體重與運動控制；2022–2024 年抗 NGF 單株抗體（犬 Librela、貓 Solensia）為重大進展。',
+  learning_objectives: [
+    '說明 OA 為「全關節疾病」的病理機轉，並區分原發性與續發性 OA 的常見成因',
+    '解釋為何貓的 DJD 嚴重被低估，並辨識貓特有的行為性臨床徵象',
+    '正確運用飼主填寫的疼痛量表（CBPI、LOAD、FMPI）於診斷與療效追蹤',
+    '描述抗 NGF 單株抗體（bedinvetmab／frunevetmab）的機轉、給藥方式與已核准適應症',
+    '依實證強度排序多模式治療，並能向飼主說明體重控制為最具實證的介入',
+    '辨識常見臨床錯誤（NSAID 併用類固醇、過度倚賴 X 光判讀疼痛、忽略貓 OA）',
+  ],
+  key_points: [
+    'OA 侵犯軟骨、軟骨下骨、滑膜與關節囊，並引發周邊與中樞疼痛敏化；NGF 是關鍵疼痛媒介',
+    '犬多為續發性 OA（CCLD、髖／肘發育不良、髕骨脫位、創傷、FHO 術後）',
+    '老年貓 DJD X 光盛行率 >90%，但常被當作「老化」而漏診',
+    '貓的徵象以行為為主：不再跳高、躲藏、理毛改變、亂尿——而非明顯跛行',
+    'X 光嚴重度與疼痛程度相關性差，須結合理學檢查與飼主量表判讀',
+    '抗 NGF 單株抗體為 2022–2024 重大進展：犬用 Librela（FDA 2023／EU 2020）、貓用 Solensia（FDA 2022／EU 2021），每月皮下注射（劑量待 DVM 依仿單確認）',
+    '體重控制是最具實證、最被低估的介入；口服 glucosamine/chondroitin 實證薄弱，勿過度倚賴',
+    'FDA 已就 Librela 上市後神經學相關不良反應通報發出獸醫師通知（2024）——中性看待、監測並通報',
+  ],
+  body: `# 退化性關節炎 / 骨關節炎 (Osteoarthritis / DJD)
+
+## 一、病理機制 (Pathophysiology)
+
+OA 是「**全關節疾病**」，不是單純的「軟骨磨損」。它同時影響關節軟骨、軟骨下骨、滑膜、關節囊、韌帶與關節周圍肌肉。
+
+- **軟骨退化**：軟骨細胞代謝轉向 → MMPs、aggrecanase（ADAMTS）上升 → 蛋白多醣與第二型膠原流失 → 軟骨纖維化、龜裂、象牙化，喪失分散負重的功能（軟骨本身無血管、無神經）。
+- **軟骨下骨**：硬化、微骨折、囊腫；關節邊緣骨刺（osteophyte，X 光標誌）。
+- **滑膜炎**：續發低度發炎，滑膜巨噬細胞釋放 IL-1β、TNF-α、PGE₂ → 加重分解代謝；關節積液與關節囊增厚。
+- **疼痛循環**：機械性＋發炎性傷害感受 → 周邊敏化（PGE₂、NGF）→ 慢性化後**中樞敏化**（wind-up、異感痛、痛覺過敏）。**神經生長因子（NGF）** 是關鍵驅動者——也是抗 NGF 單株抗體的分子依據。
+- **原發性 OA**：特發性、年齡相關，常為多關節（貓較常見）。
+- **續發性 OA（犬大宗）**：關節不穩定／不一致的下游結果——前十字韌帶疾病（CCLD，犬膝關節 OA 首因）、髕骨脫位、髖／肘關節發育不良、OCD、骨折／關節內創傷、感染、FHO 術後。
+
+## 二、流行病學與病患背景 (Epidemiology & Signalment)
+
+- **犬**：估計 >1 歲犬約 20%、老年犬比例更高，是慢性疼痛最常見成因之一。
+- **貓——嚴重被低估**：老年貓 X 光 DJD 盛行率極高（Hardie 2002：90%；Lascelles 2010：92% 且 91% 至少一處附肢關節），但病歷少有記載。貓同時侵犯**附肢**（肘、髖、膝、跗、肩）與**中軸／脊椎**（腰薦、胸腰），雙側對稱性肘、髖為特徵。
+- **風險因子**：年齡、肥胖、大／巨型犬（拉布拉多、黃金、德牧、羅威那、伯恩山）、發育不良好發品種；貓常見蘇格蘭摺耳貓（軟骨發育異常）、緬因貓（髖發育不良）；既往關節傷害／手術。
+
+## 三、臨床表現與診斷 (Clinical Signs & Diagnosis)
+
+- **犬（多較明顯）**：負重性跛行、休息後僵硬（活動後改善、冷天加重）、活動量下降、上下樓／跳躍困難、肌肉萎縮、脾氣改變。
+- **貓（隱微、行為性——診斷陷阱）**：不再跳高或改跳較低處、跳躍高度下降、不願爬樓、**躲藏**、理毛行為改變、亂尿（無法進出或擺姿勢於貓砂盆）、遊戲減少、退縮易怒。明顯跛行少見。
+- **飼主疼痛量表（CMI）**：犬用 CBPI、LOAD、HCPI；貓用 FMPI、MI-CAT。是貓診斷與療效追蹤的核心。
+
+### 診斷
+1. **骨科理學檢查**：關節積液、囊壁增厚、捻發音、活動範圍受限、操作時疼痛、肌肉對稱性；步態評估（貓建議居家影片）。
+2. **X 光**：骨刺／附著點骨贅、軟骨下骨硬化、關節積液、關節腔狹窄不規則、關節內礦化。**注意：X 光嚴重度與疼痛相關性差**，須結合臨床與量表。
+3. **飼主量表**（如上）。
+4. **排除其他病因**：免疫媒介性多發性關節炎、敗血性關節炎、腫瘤、神經學疾病（IVDD、腰薦椎）、軟組織傷害；有發炎性積液時做關節液採樣。
+
+## 四、治療策略 — 多模式 (Multimodal Treatment)
+
+**核心原則**：OA 無法根治但可管理；藥物＋非藥物並行，**體重與運動管理是一切的基礎**。
+
+### 抗 NGF 單株抗體（2022–2024 重大突破）
+- **bedinvetmab（Librela，Zoetis）— 犬**：犬源化抗 NGF 單株抗體，每月皮下注射（依體重分級）。核准：EU/EMA 2020-11、**US FDA 2023-05-05**（首個 FDA 核准的犬用單株抗體）。
+- **frunevetmab（Solensia，Zoetis）— 貓**：貓源化抗 NGF 單株抗體，每月皮下注射。核准：EU 2021-05、**US FDA 2022-01-13**（FDA 首個核准用於任何動物物種的單株抗體）。
+- **上市後不良反應（中性陳述）**：FDA 於 2024-12 就 Librela 發出「致獸醫師信」，描述通報之不良事件，以**神經學**為主（運動失調、癲癇、輕癱、臥地不起）及尿失禁、PU/PD，部分通報含死亡／安樂死。多數於首劑後、約 2/3 在第一週內。屬藥物警戒**通報**，因果關係未完全確立。2025 全球藥物警戒分析（across >18M 劑）將常見事件歸為罕見／極罕見等級。**教學定位：有效選項，但須衛教、基線檢查、監測，並通報不良反應。**
+
+### NSAIDs（犬第一線藥物主力）
+- **犬**：carprofen、meloxicam、robenacoxib、deracoxib、firocoxib（劑量依現行仿單，須腸胃／腎／肝篩檢、最低有效劑量、監測）。
+- **grapiprant（Galliprant，Elanco）**：首見 piprant 類、**EP4 受體拮抗劑**（阻斷 PGE₂ 於 EP4，不抑制 COX／housekeeping prostanoids）。US FDA 2016-03 核准；標示 2 mg/kg PO SID 空腹、≥9 月齡／≥3.6 kg；副作用以輕度腸胃為主。
+- **貓——謹慎**：robenacoxib 有貓適應症（療程限制依地區）；meloxicam 貓標示含腎臟警語（美國標示對重複使用有腎風險警告）；務必評估腎功能，貓對 NSAID 敏感。
+
+### 輔助治療
+- **體重管理——最具實證、最被低估的非藥物介入**：Marshall 2010 顯示約 6.1% 減重即顯著改善跛行。務必強調。
+- **Omega-3（EPA/DHA）處方飼料／補充**：中等實證，是較有支持的營養介入。
+- **復健／控制性運動**：治療性運動、水療，維持肌肉與關節活動範圍。
+- **PSGAG（Adequan）**：FDA 核准之犬用疾病調節性 OA 藥物（IM），實證中等。
+- **關節內治療**：類固醇、新興生物製劑／放射滑膜切除（如 ⁹⁰Y、tin-117m）——關節專一、發展中。
+- **慢性／中樞疼痛輔助止痛**：gabapentin（尤其貓）、amantadine（NMDA 拮抗劑，難治性加成）；實證有限但機轉合理。
+- **環境改造（尤其貓）**：斜坡／階梯、低邊貓砂盆、柔軟保暖墊、墊高食水、防滑地面、易取得資源。
+- **實證薄弱（誠實說明）**：口服 glucosamine/chondroitin 現有實證不足以支持臨床療效，勿取代實證療法、勿對飼主誇大。
+
+### 手術／挽救（末期，簡述）
+全髖關節置換（THR，末期髖 OA 黃金標準）、關節融合（腕／跗）、FHO（髖挽救）、全肘關節置換（有限）。
+
+## 五、預後與飼主溝通 (Prognosis & Communication)
+進行性、無法根治，但多數可長期良好管理；目標為疼痛控制、維持功能與**生活品質**。以「長期夥伴關係」框架溝通：終身多模式計畫、定期以量表再評估、設定合理期待（會有起伏與急性發作），強調體重與運動是飼主可掌握的關鍵槓桿。
+
+## 六、臨床爭議與知識空缺 (Controversies & Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Librela 神經學不良反應訊號 | 真實藥物警戒通報 vs 高齡族群背景發生率；因果待釐清，人醫抗 NGF 之 RPOA 疑慮外推中 | Level III |
+| 幹細胞／再生治療（PRP、MSC） | 有潛力但實證品質不一，尚非標準治療 | Level III |
+| 口服 glucosamine/chondroitin | 雖普及但療效實證薄弱 | Level II（多為陰性／不足） |
+`,
+  clinical_pearl:
+    '對老年貓而言，「年紀大了」不是診斷。資深貓出現不跳、躲藏、亂尿等行為改變，在排除其他病因前，都應視為 DJD 疼痛——治療這隻貓，而不是治療那張 X 光片。另一個重點：體重控制是飼主最能掌握、實證也最硬的介入，光是減掉約 6% 體重就能客觀改善跛行，臨床上卻常被輕描淡寫帶過。',
+  common_mistakes: [
+    '因為貓不跛行就漏診貓 OA，把疼痛行為當成正常老化',
+    '低估或不開立體重管理計畫——它其實是最具實證的介入',
+    '用 X 光嚴重度判斷疼痛程度，忽略理學檢查與飼主疼痛量表',
+    'NSAID 與皮質類固醇併用（禁忌——腸胃道潰瘍／穿孔風險）',
+    '以缺乏實證的口服 glucosamine/chondroitin 取代實證療法，並對飼主誇大療效',
+  ],
+  disease_data: {
+    signalment:
+      '中老年至老年犬貓；大／巨型犬種（拉布拉多、黃金獵犬、德國牧羊犬、羅威那、伯恩山）及髖／肘發育不良好發品種風險高；貓常見蘇格蘭摺耳貓（軟骨發育異常）、緬因貓（髖發育不良）。肥胖與既往關節傷害／手術為重要風險因子。',
+    etiology:
+      '原發性（特發性、年齡相關，貓較常見、常為多關節）；續發性（關節不穩定或不一致所致）——犬以前十字韌帶疾病（CCLD）、髖／肘關節發育不良、髕骨脫位、OCD、骨折／創傷、FHO 術後為主。',
+    pathogenesis:
+      '軟骨細胞代謝失衡 → MMPs／aggrecanase 上升 → 蛋白多醣與第二型膠原流失、軟骨纖維化崩解；軟骨下骨硬化、微骨折、邊緣骨刺生成；繼發低度滑膜炎釋放 IL-1β、TNF-α、PGE₂，加重分解代謝並驅動疼痛；慢性化導致周邊與中樞敏化（wind-up、異感痛）。',
+    clinical_signs: [
+      { sign: '負重性跛行、休息後僵硬（活動後改善）', category: 'primary', description: '犬最常見的表現，冷天或久臥後加重' },
+      { sign: '上下樓／跳躍困難、活動量下降、肌肉萎縮', category: 'primary', description: '犬慢性功能退化，飼主常描述「變懶、不愛動」' },
+      { sign: '貓：不再跳高或改跳較低處、跳躍高度下降', category: 'primary', description: '貓特有且最早出現的行為性徵象' },
+      { sign: '貓：躲藏、理毛行為改變、遊戲／活動減少', category: 'secondary', description: '貓的行為性疼痛表現，易被誤認為老化' },
+      { sign: '貓：亂尿／無法正常使用貓砂盆', category: 'secondary', description: '因進出或擺姿勢困難所致之續發功能性問題' },
+      { sign: '觸診關節腫脹／囊壁增厚、捻發音、活動範圍受限', category: 'secondary', description: '理學檢查徵象，操作關節時可誘發疼痛' },
+    ],
+    staging: null,
+    differential_diagnosis: [
+      { condition: '免疫媒介性多發性關節炎（IMPA）', key_differentiator: '多關節、常伴發燒，關節液為發炎性（非退化性），需關節液採樣鑑別' },
+      { condition: '敗血性關節炎', key_differentiator: '單關節急性紅熱腫痛，關節液可見退化性嗜中性球與細菌，需培養' },
+      { condition: '骨／關節腫瘤', key_differentiator: '局部破壞性病灶、進行性，X 光與切片可鑑別' },
+      { condition: '神經學疾病（IVDD、腰薦椎疾病）', key_differentiator: '有神經學定位徵象（本體感覺缺失、反射改變），影像可區分' },
+      { condition: '軟組織損傷', key_differentiator: '急性、與特定外傷相關，多自限或對短期休息有反應' },
+    ],
+    diagnostic_workup:
+      '完整骨科理學檢查（腫脹、捻發音、ROM、疼痛、肌肉對稱性）＋步態評估（貓建議居家影片）；X 光（骨刺、軟骨下骨硬化、關節腔變化——惟與疼痛相關性差）；飼主疼痛量表（犬 CBPI／LOAD、貓 FMPI）；必要時關節液採樣排除感染／免疫性病因。',
+    treatment_protocol:
+      '多模式為原則。基礎：體重控制（最具實證）＋復健／控制性運動＋環境改造（尤其貓：斜坡、低邊貓砂盆、防滑、保暖墊）。藥物：犬第一線 NSAID（carprofen、meloxicam、robenacoxib 等）或 grapiprant（Galliprant，EP4 拮抗劑，2 mg/kg PO SID 空腹）；抗 NGF 單株抗體每月皮下注射——犬 Librela、貓 Solensia。輔助：Omega-3（EPA/DHA）處方飼料、PSGAG（Adequan，IM）、慢性／中樞疼痛可加 gabapentin、amantadine。末期可考慮 THR、關節融合等手術。貓用 NSAID 須評估腎功能、謹慎使用。【所有劑量與療程須由具執照獸醫師依現行仿單與個案確認】',
+    prognosis: '進行性、無法根治，但多數可長期良好管理；以疼痛控制、維持功能與生活品質為目標。',
+    monitoring:
+      '定期以疼痛量表（CBPI／LOAD／FMPI）追蹤療效；長期用藥者定期監測腎／肝／腸胃；抗 NGF 治療者注意並通報疑似神經學或其他不良反應；依反應調整多模式方案。',
+    owner_communication:
+      '說明 OA 是終身管理而非治癒；強調體重與運動是飼主可掌握的關鍵槓桿；設定合理期待（會有起伏、急性發作）；鼓勵居家行為觀察與量表回報；以生活品質為共同決策核心。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '病理機制段落後', type: 'flowchart', description: 'OA 全關節病理與疼痛敏化循環流程圖' },
+    { position: '治療策略段落後', type: 'comparison_table', description: '多模式治療實證強度比較（體重/NSAID/抗NGF/grapiprant/輔助）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Carprofen', 'Meloxicam', 'Robenacoxib', 'Grapiprant', 'Gabapentin', 'Amantadine'],
+  references: [
+    { type: 'guideline', citation: 'Monteiro BP, Lascelles BDX, Murrell J, Robertson S, Steagall PVM, Wright B. 2022 WSAVA guidelines for the recognition, assessment and treatment of pain. J Small Anim Pract. 2023;64(4):177-254. doi:10.1111/jsap.13566.', relevance: 'WSAVA 全球疼痛管理指引，犬貓急慢性疼痛辨識、量表與多模式治療的權威依據' },
+    { type: 'guideline', citation: 'U.S. FDA / Zoetis. Librela (bedinvetmab injection), NADA 141-562 FOI Summary; FDA approved May 5, 2023 (EU/EMA Nov 2020); FDA Dear Veterinarian Letter on adverse events, Dec 2024.', relevance: '犬用抗 NGF 單株抗體核准文件與上市後不良反應通報（劑量待 DVM 依仿單核對）' },
+    { type: 'guideline', citation: 'U.S. FDA / Zoetis. Solensia (frunevetmab injection) label / FOI Summary; FDA approved January 13, 2022 (first mAb approved for any animal species; EU since May 2021).', relevance: '貓用抗 NGF 單株抗體核准依據，貓 OA 疼痛控制關鍵新療法' },
+    { type: 'journal', citation: 'Rausch-Derra L, Huebner M, Wofford J, Rhodes L. A Prospective, Randomized, Masked, Placebo-Controlled Multisite Clinical Study of Grapiprant (an EP4 Prostaglandin Receptor Antagonist) in Dogs with Osteoarthritis. J Vet Intern Med. 2016;30(3):756-763. doi:10.1111/jvim.13948.', relevance: 'grapiprant（Galliprant）關鍵 RCT，支持 EP4 拮抗劑用於犬 OA 疼痛之實證' },
+    { type: 'journal', citation: 'Marshall WG, Hazewinkel HAW, Mullen D, De Meyer G, Baert K, Carmichael S. The effect of weight loss on lameness in obese dogs with osteoarthritis. Vet Res Commun. 2010;34(3):241-253. doi:10.1007/s11259-010-9348-7.', relevance: '體重控制改善跛行的客觀實證（約 6.1% 減重即顯著改善），支持體重管理為最具實證的介入' },
+    { type: 'journal', citation: 'Lascelles BDX, Henry JB 3rd, Brown J, et al. Cross-sectional study of the prevalence of radiographic degenerative joint disease in domesticated cats. Vet Surg. 2010;39(5):535-544. doi:10.1111/j.1532-950X.2010.00708.x.', relevance: '貓 DJD X 光盛行率指標研究（92% 有 DJD），佐證貓 OA 嚴重被低估' },
+    { type: 'journal', citation: 'Hardie EM, Roe SC, Martin FR. Radiographic evidence of degenerative joint disease in geriatric cats: 100 cases (1994-1997). J Am Vet Med Assoc. 2002;220(5):628-632. doi:10.2460/javma.2002.220.628.', relevance: '最早揭示老年貓 90% 有 X 光 DJD 但僅約 4% 病歷記載的奠基性研究（基礎文獻）' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L0-001', contentSurgOverview],
   ['SURG-L1-001', contentSurgPrinciples],
@@ -5448,6 +5605,7 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L3-013', contentDiaphragmaticHernia],
   ['SURG-L3-014', contentTECA],
   ['SURG-L3-015', contentIntestinalRA],
+  ['SURG-L3-019', contentOsteoarthritis],
   ['SURG-L4-001', contentPreopImaging],
   ['SURG-L4-002', contentIntraopDecision],
   ['SURG-L4-003', contentOrthoImaging],
