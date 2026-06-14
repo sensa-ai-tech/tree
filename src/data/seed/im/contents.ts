@@ -1550,7 +1550,7 @@ TT4 正常→基本排除甲低（NPV >99%）
 const contentFelineHyperthyroidism: NodeContent = {
   id: 'CONTENT-IM-L3-003',
   node_id: 'IM-L3-003',
-  version: 1,
+  version: 2,
   summary: '貓甲狀腺機能亢進是中老年貓最常碰到的內分泌疾病，T4 分太多，整隻貓代謝飆起來。97% 以上是良性增生（bilateral adenomatous hyperplasia），剩下不到 3% 是甲狀腺癌。治療有四條路可走：Methimazole、放射性碘（I-131）、手術、處方飲食。',
   learning_objectives: [
     '說明貓甲亢的病因、好發族群與流行病學',
@@ -1568,6 +1568,7 @@ const contentFelineHyperthyroidism: NodeContent = {
     '放射性碘 (I-131) 為唯一治癒性治療，治癒率 > 95%',
     'Methimazole 起始 1.25-2.5 mg PO BID（CKD 風險高者從 1.25 mg 起始），2-3 週後追蹤 T4 和腎功能',
     '繼發性甲亢心臟病（thyrotoxic cardiomyopathy）治療甲亢後多數可逆',
+    '最新學會共識為 2023 AAHA 內分泌指引（無新版 AAFP/ISFM 專屬指引）；I-131 後治療出現氮血症者預後較差，且 SDMA 無法預測治療後氮血症、貓專用 TSH 試劑遠優於犬用試劑（待 DVM 覆核）',
   ],
   body: `# 貓甲狀腺機能亢進 (Feline Hyperthyroidism)
 
@@ -1668,6 +1669,31 @@ T4/T3 過量的系統效應：
 - 人醫使用 thyroid scintigraphy 和 fine-needle aspiration 評估甲狀腺結節，獸醫亦可應用
 - 人醫的 subclinical hyperthyroidism（TSH 低、T4 正常）概念類似獸醫的隱性甲亢
 
+## 六之二、近期實證更新（2022–2025，僅列高信度，待 DVM 覆核）
+
+> ⚠️ 指引現況：目前**沒有**新版 AAFP/ISFM 貓甲亢專屬指引；最新的多學會共識文件是
+> **2023 AAHA Selected Endocrinopathies 指引**（重申 2016 AAFP 框架、加入 Group 1–4 分級診斷、
+> 強調以參考實驗室檢測 + 強制併行腎功能監測）。AAFP 仍停在 2016 版。坊間流傳的「2024/2026 AAFP 新指引」
+> 經查證為 2016 版被誤標日期，請勿引用。
+
+**1. 治療後氮血症（masked CKD）才是預後決定因子**
+一項 1,047 隻 I-131 治療貓的大型回溯研究：治療後出現氮血症者存活明顯較短，且「早發性氮血症」
+（中位 29.5 個月）較「晚發性」（42.3 個月）更差；氮血症貓最終死於腎病的比例達 70.1%（非氮血症組僅 18.1%）。
+教學重點＝甲亢的真正預後決定因子是腎臟，不是甲狀腺本身。
+
+**2. SDMA 不能預測抗甲狀腺藥治療後是否會氮血症（負向實證）**
+初始未氮血症貓以 methimazole／carbimazole 治療時，治療前 SDMA 無法區分日後是否氮血症，
+且 SDMA 上升落後於 creatinine。故**不宜**單憑治療前 SDMA 排除潛在 CKD（樣本數小 n=19，僅供參考）。
+
+**3. 診斷：貓專用 TSH 試劑大幅優於借用犬用試劑**
+新一代貓最佳化 TSH 試劑診斷敏感度 90.5%、特異度 98.9%；傳統「犬用 cTSH」試劑在未治療甲亢貓
+僅約 17% 可測得異常、敏感度不足，僅能輔助判讀。引用 TSH 數據時務必確認試劑來源（犬用 vs 貓專用）。
+
+**4. I-131 後的醫源性甲狀腺低下要追蹤、必要時補充**
+I-131 後維持甲狀腺正常且無氮血症者存活最久（中位 1,616 天）；未處理的甲狀腺低下者較短（1,232 天）。
+對「甲狀腺低下且腎功能正常」的貓補充 levothyroxine 可延長存活；但**已有 CKD 者補充無益**。
+建議治療後常規監測 T4 + 腎指標至少 6 個月。
+
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
@@ -1675,8 +1701,10 @@ T4/T3 過量的系統效應：
 | 甲亢與 CKD 的最佳平衡點 | 維持 T4 在正常低端 | Level III | 最佳 T4 目標範圍？ |
 | 碘限制飲食作為唯一治療 | 可作為選項但非首選 | Level II | 長期等效性？ |
 | 環境因素（BPA、PBDE）的角色 | 流行病學相關但因果不確定 | Level III | 前瞻性暴露研究 |
-| Transdermal Methimazole vs oral | 可能等效，吸收較不穩定 | Level II | 生物利用度比較 |
-| 早期甲亢是否治療 | 有爭議，可觀察或治療 | Level IV | TT4 灰色地帶的自然病史 |`,
+| Transdermal Methimazole vs oral | 可能等效（口服較快達甲狀腺正常、經皮 GI 副作用較少，4 週後相當）；惟無 2022–2025 新 RCT，證據仍仰賴 Sartor 2004 | Level II | 新的頭對頭 RCT |
+| 早期甲亢是否治療 | 有爭議，可觀察或治療 | Level IV | TT4 灰色地帶的自然病史 |
+| 治療前能否用 SDMA 預測治療後氮血症 | 最新負向實證：抗甲狀腺藥治療前 SDMA 無法預測，且上升落後於 Cre | Level III（小樣本） | 更大型前瞻性研究 |
+| I-131 後醫源性甲狀腺低下要不要補 levothyroxine | 甲狀腺低下且腎正常者補充可延壽；已有 CKD 者無益 | Level III | 需 RCT 確認 |`,
   clinical_pearl: '在台灣臨床上最容易犯的錯誤是治療貓甲亢後才發現 CKD。最佳策略是先用 Methimazole 做「腎功能試探」，用 2-3 週的 Methimazole 將 T4 控制到正常後追蹤 Creatinine。如果 Creatinine 明顯上升（例如從 1.2 跳到 3.0），則需要在甲亢控制與 CKD 管理之間取得平衡，可能需要維持輕度甲亢（T4 在正常高值至輕度升高）來保護腎功能。這就是為什麼 I-131 或手術等「不可逆」治療不應在未先評估腎功能的情況下執行。',
   common_mistakes: [
     '未在開始治療前評估腎功能（治療甲亢後 CKD 可能被揭露）',
@@ -1724,10 +1752,13 @@ T4/T3 過量的系統效應：
   ],
   drug_api_links: ['Methimazole', 'Atenolol', 'Amlodipine'],
   references: [
-    { type: 'guideline', citation: 'Carney HC et al. "2016 AAFP Guidelines for the Management of Feline Hyperthyroidism." J Feline Med Surg. 2016;18(5):400-416.', relevance: '貓甲亢管理 AAFP 指引' },
+    { type: 'guideline', citation: 'Bugbee A, Rucinsky R, Cazabon S, et al. "2023 AAHA Selected Endocrinopathies of Dogs and Cats Guidelines." J Am Anim Hosp Assoc. 2023;59(3):113-135. doi:10.5326/JAAHA-MS-7368.', relevance: '最新、可查證的多學會共識（涵蓋貓甲亢分級診斷 + 強制併行腎功能監測），取代將 2016 AAFP 當唯一現行指引' },
+    { type: 'guideline', citation: 'Carney HC et al. "2016 AAFP Guidelines for the Management of Feline Hyperthyroidism." J Feline Med Surg. 2016;18(5):400-416. doi:10.1177/1098612X16643252.', relevance: 'AAFP 仍現行的專屬指引（無 2024/2026 新版）；作為基礎框架與 2023 AAHA 並列' },
+    { type: 'journal', citation: 'Hyperthyroid cats that develop azotemia following successful radioiodine treatment have shorter survival times compared to cats that remain nonazotemic. J Am Vet Med Assoc. 2025;263(4). doi:10.2460/javma.24.10.0653.', relevance: '1,047 隻 I-131 治療貓：治療後氮血症（masked CKD）為真正預後決定因子（待 DVM 確認作者/頁碼）' },
+    { type: 'journal', citation: 'Peterson ME, Dougherty E, Rishniw M. "Evaluation of a novel, sensitive thyroid-stimulating hormone assay as a diagnostic test for thyroid disease in cats." Am J Vet Res. 2024;85(5). doi:10.2460/ajvr.23.12.0278.', relevance: '貓最佳化 TSH 試劑（敏90.5%／特98.9%）遠優於借用犬用試劑，更新 TSH 在診斷中的角色' },
+    { type: 'journal', citation: 'Cox SE, Wakeling J, Hall T, Williams TL. "Survival of radioiodine treated hyperthyroid cats that are euthyroid and hypothyroid after treatment, and effect of levothyroxine supplementation." J Vet Intern Med. 2025;39(1):e17295. doi:10.1111/jvim.17295.', relevance: '支持 I-131 後監測醫源性甲狀腺低下並依腎功能決定是否補充 levothyroxine' },
     { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapter on Feline Hyperthyroidism.', relevance: '貓甲亢完整參考章節' },
-    { type: 'journal', citation: 'Peterson ME. "Hyperthyroidism in cats: what\'s causing this epidemic of thyroid disease and can we prevent it?" J Feline Med Surg. 2012;14(11):804-818.', relevance: '貓甲亢流行病學與環境因素' },
-    { type: 'journal', citation: 'Williams TL et al. "Survival and the development of azotemia after treatment of hyperthyroid cats." J Vet Intern Med. 2010;24(4):863-869.', relevance: '甲亢治療後 CKD 揭露與存活分析' },
+    { type: 'journal', citation: 'Williams TL et al. "Survival and the development of azotemia after treatment of hyperthyroid cats." J Vet Intern Med. 2010;24(4):863-869.', relevance: '甲亢治療後 CKD 揭露與存活分析（基礎研究）' },
   ],
   is_current: true,
   created_at: now,
