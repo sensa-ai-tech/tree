@@ -16,10 +16,12 @@ exports[`seed-content snapshot: 核心節點 contents 鎖定 > CARDIO-L3-001 的
     "胸腔 X 光 VHS > 10.5 及左心房/主動脈比 > 1.6 提示心臟重塑",
     "心雜音等級不一定與疾病嚴重度正相關",
     "居家呼吸次數（sleeping RR）< 30 次/分為重要監測指標",
+    "C 期實證：BESST 研究支持加入 spironolactone；新發 CHF 可考慮 torasemide（CARPODIEM，劑量約 furosemide 的 1/10–1/20）",
+    "介入/外科：開心二尖瓣修復（Uechi/JASMINE）已有逾千例長期資料、早期較佳；經導管 TEER（V-Clamp）仍屬研究階段",
   ],
-  "learning_objectives_count": 5,
+  "learning_objectives_count": 6,
   "node_id": "CARDIO-L3-001",
-  "references_count": 3,
+  "references_count": 9,
   "summary": "二尖瓣黏液瘤性退化（MMVD）是犬最常見的後天性心臟病，後天心臟病裡有七成五以上都是它。小型犬好發，CKCS 幾乎一隻不漏。ACVIM 把它分成 A 到 D 四期，到了 B2 就建議開始 pimobendan。",
 }
 `;

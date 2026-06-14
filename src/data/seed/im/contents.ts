@@ -2085,20 +2085,7 @@ DKA 近期實證：建議以**即時血液 β-羥基丁酸 (β-OHB)** 取代尿�
 | CGM 在獸醫的角色 | 已驗證並納入指引，惟低血糖端準確度仍有限 | Level II | 新世代感測器（FSL2/3）低血糖端驗證 |
 | 口服降血糖藥（貓）| SGLT2 抑制劑已核准為首選之一（限胰島素未治療貓），euglycemic DKA 為主要顧慮 | Level I | SGLT2i 的緩解率與長期安全性 |
 | 犬胰島素 SID vs BID | BID 為標準 | Level II | 長效胰島素 SID 可行性？ |
-| 貓 DM 緩解後的最佳追蹤 | 定期 Fructosamine/血糖 | Level III | 緩解後復發預測因子？ |
-
-## 八、參考文獻與指引 (References)
-
-> 本節 SGLT2 抑制劑、CGM、DKA 段落於 2026-06 依近年文獻更新。臨床用藥前請以最新仿單與在地法規為準，並建議由獸醫師覆核。
-
-- FDA/DailyMed — **Bexacat (bexagliflozin)** 仿單與黑框警告（FDA 核准 2022-12-08，首個非人類 SGLT2 抑制劑）
-- FDA Animal Drugs / DailyMed — **Senvelgo (velagliflozin) oral solution** 仿單（FDA 核准 2023-08；1 mg/kg PO SID）
-- Cook AK, Behrend E. *SGLT2 inhibitor use in the management of feline diabetes mellitus.* J Vet Pharmacol Ther 2024.
-- Rothlin-Zachrisson N, et al. *Survival, remission, and quality of life in diabetic cats.* J Vet Intern Med 2023;37(1):58-69.
-- AAHA *2018 Diabetes Management Guidelines for Dogs and Cats*（2022 更新：納入 CGM、ProZinc/PZI 犬每日一次）。
-- Del Baldo F, et al. *Accuracy of a flash glucose monitoring system in cats.* J Vet Intern Med 2021；及 *FreeStyle Libre-derived metrics in diabetic dogs.* JVIM 2025.
-- Corradini S, et al. *Accuracy of a Flash Glucose Monitoring System in Diabetic Dogs.* JVIM 2016.
-- Zeugswetter FK, et al. *Glargine versus regular insulin protocol in feline diabetic ketoacidosis.* JVECC 2021.`,
+| 貓 DM 緩解後的最佳追蹤 | 定期 Fructosamine/血糖 | Level III | 緩解後復發預測因子？ |`,
   clinical_pearl: '貓糖尿病最迷人的地方是「臨床緩解」這個概念。新診斷的糖尿病貓裡，大概 30-40% 在幾週到幾個月內可以做到緩解，貓不再需要打胰島素。關鍵幾件事：第一，越早開始積極打胰島素越好，目的是把糖毒性解開。第二，飲食馬上換成高蛋白低碳水（碳水 < 10% ME）。第三，把胰島素阻抗的因子清掉，類固醇停掉、把體重減下來。Glargine 在促進緩解這件事上，比 PZI 略佔便宜。等胰島素需求量降到 < 1 U/次（一天兩次）、血糖也一直壓在 200 mg/dL 以下，就可以嘗試停藥看看。但要記得，緩解的貓裡有四分之一到三分之一會在幾個月或幾年後復發，所以追蹤不能停。\n\n【台灣流行病學】台灣犬貓糖尿病盛行率這幾年一直在往上爬，跟室內飼養、高熱量飲食、肥胖問題完全脫不了關係。台灣貓的肥胖盛行率估計超過三成，這就是糖尿病最大的引線。犬糖尿病在台灣多半碰到中老年母犬，貴賓、臘腸這些常見小型犬都跑不掉。台灣市場上 Glargine（Lantus）和 NPH 都拿得到，PZI（ProZinc）要特別進口。居家自己量血糖（home glucose monitoring）這件事，台灣飼主慢慢願意配合了。',
   common_mistakes: [
     '僅憑單次高血糖就診斷貓糖尿病（貓壓力性高血糖很常見，需搭配 Fructosamine 和持續性糖尿確診）',
@@ -2146,7 +2133,13 @@ DKA 近期實證：建議以**即時血液 β-羥基丁酸 (β-OHB)** 取代尿�
   ],
   drug_api_links: ['NPH insulin', 'Glargine', 'PZI', 'Regular insulin', 'Maropitant'],
   references: [
-    { type: 'guideline', citation: 'Behrend E et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21.', relevance: 'AAHA 糖尿病管理指引' },
+    { type: 'guideline', citation: 'Behrend E et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21（2022 更新納入 CGM、ProZinc/PZI 犬每日一次）.', relevance: 'AAHA 糖尿病管理指引' },
+    { type: 'label', citation: 'FDA/DailyMed. Bexacat (bexagliflozin) prescribing information & boxed warning (FDA approval 2022-12-08).', relevance: '貓口服 SGLT2 抑制劑：適應症、劑量、euglycemic DKA 黑框警告（2026-06 新增）' },
+    { type: 'label', citation: 'FDA Animal Drugs / DailyMed. Senvelgo (velagliflozin) oral solution prescribing information (FDA approval 2023-08; 1 mg/kg PO SID).', relevance: '貓口服 SGLT2 抑制劑（液劑）（2026-06 新增）' },
+    { type: 'journal', citation: 'Cook AK, Behrend E. "SGLT2 inhibitor use in the management of feline diabetes mellitus." J Vet Pharmacol Ther. 2024.', relevance: 'SGLT2i 機轉、療效與 DKA 風險回顧（2026-06 新增）' },
+    { type: 'journal', citation: 'Rothlin-Zachrisson N et al. "Survival, remission, and quality of life in diabetic cats." J Vet Intern Med. 2023;37(1):58-69.', relevance: '貓 DM 緩解率與飲食關聯（2026-06 新增）' },
+    { type: 'journal', citation: 'Del Baldo F et al. "Accuracy of a flash glucose monitoring system in cats." J Vet Intern Med. 2021；及 FreeStyle Libre-derived metrics in diabetic dogs, JVIM 2025；Corradini S et al., JVIM 2016（犬驗證）.', relevance: '連續血糖監測（CGM/FreeStyle Libre）驗證（2026-06 新增）' },
+    { type: 'journal', citation: 'Zeugswetter FK et al. "Glargine versus regular insulin protocol in feline diabetic ketoacidosis." J Vet Emerg Crit Care. 2021.', relevance: 'DKA 之 basal-bolus glargine 替代 CRI（2026-06 新增）' },
     { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapters on Diabetes Mellitus.', relevance: '糖尿病完整參考章節' },
     { type: 'journal', citation: 'Roomp K, Rand J. "Intensive blood glucose control is safe and effective in diabetic cats using home monitoring and treatment with glargine." J Feline Med Surg. 2009;11(8):668-682.', relevance: '貓 Glargine 治療與緩解策略' },
     { type: 'journal', citation: 'O\'Brien MA. "Diabetic emergencies in small animals." Vet Clin North Am Small Anim Pract. 2010;40(2):317-333.', relevance: 'DKA 急救管理' },

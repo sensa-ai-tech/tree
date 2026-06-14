@@ -120,7 +120,7 @@ const contentOverview: NodeContent = {
 const contentMMVD: NodeContent = {
   id: 'CONTENT-L3-001',
   node_id: 'CARDIO-L3-001',
-  version: 1,
+  version: 2,
   summary: '二尖瓣黏液瘤性退化（MMVD）是犬最常見的後天性心臟病，後天心臟病裡有七成五以上都是它。小型犬好發，CKCS 幾乎一隻不漏。ACVIM 把它分成 A 到 D 四期，到了 B2 就建議開始 pimobendan。',
   learning_objectives: [
     '描述 MMVD 的病理生理機轉與疾病進程',
@@ -128,6 +128,7 @@ const contentMMVD: NodeContent = {
     '列出各分期的治療建議與藥物選擇',
     '執行 MMVD 病患的長期追蹤計畫',
     '向飼主說明 MMVD 的預後與居家監測方法',
+    '認識介入/外科瓣膜修復（開心 MVR、經導管 TEER）的適應族群、現況與轉介時機',
   ],
   key_points: [
     '好發品種：CKCS、馬爾濟斯、貴賓、臘腸、吉娃娃',
@@ -136,6 +137,8 @@ const contentMMVD: NodeContent = {
     '胸腔 X 光 VHS > 10.5 及左心房/主動脈比 > 1.6 提示心臟重塑',
     '心雜音等級不一定與疾病嚴重度正相關',
     '居家呼吸次數（sleeping RR）< 30 次/分為重要監測指標',
+    'C 期實證：BESST 研究支持加入 spironolactone；新發 CHF 可考慮 torasemide（CARPODIEM，劑量約 furosemide 的 1/10–1/20）',
+    '介入/外科：開心二尖瓣修復（Uechi/JASMINE）已有逾千例長期資料、早期較佳；經導管 TEER（V-Clamp）仍屬研究階段',
   ],
   body: `# 二尖瓣黏液瘤性退化 (MMVD)
 
@@ -220,6 +223,25 @@ CKCS 好發、Cough（咳嗽）、Cardiomegaly（心臟擴大）、CHF（心衰�
 
 A 到 C 期的診斷、藥物調整、飼主衛教，基層多半可以自己 cover。會考慮往專科送的有幾種：D 期治療反應不好、突然腱索斷裂、合併嚴重心律不整、或飼主想討論外科瓣膜修復（MVR）。後者目前在日本跟歐美做得比較成熟，台灣選擇還不多。
 
+### 介入／外科瓣膜治療（2019–2026 新進展）
+
+內科治療只能延緩，近年「修復瓣膜」選項逐漸成熟：
+
+- **開心二尖瓣修復術（Uechi 技術／JASMINE）**：體外循環下行人工腱索置換＋瓣環成形術，可實質減少 MR。2025 年一篇 **1,019 隻（B2–D 期）** 大型研究顯示不良事件多集中於術後 <100 天、之後顯著下降，且無個案需二次手術；**D 期、高齡、體重較大、CKCS 預後較差**（JVIM 2025）。可治癒性高，但受限於體外循環設備與費用，僅日本、英國、法國、新加坡等少數中心能做，**較早期、體型較大的犬成效最佳**。
+- **經導管緣對緣修復（TEER／V-Clamp）**：微創免開胸，能顯著縮小左心房/左心室；但最大宗回溯研究（20 隻）僅 65% 存活，主要死因為瓣葉撕裂／夾合裝置脫落（JVIM 2025）。**仍屬研究階段、非標準治療**，可作為高手術風險個案的探索性選擇。
+
+> 兩者皆非取代內科治療，候選評估與轉介時機請與心臟專科討論。
+
+### 重要臨床試驗實證（EPIC 之後）
+
+- **BESST（JVIM 2021）**：已進入 CHF 的 MMVD 犬，benazepril＋spironolactone 合併相較單用 benazepril，顯著降低心因性死亡／惡化風險（HR 0.73, P=.002）→ 支持 C 期加入醛固酮拮抗劑。
+- **DELAY（J Vet Cardiol 2020）**：*臨床前* B2 期，spironolactone＋benazepril **未能**顯著延後 CHF 發生（僅見重塑改善），與 EPIC 的 pimobendan 明確效益不同 → B2 期 RAASi 延緩效益尚無定論。
+- **CARPODIEM（JVIM 2020）／ TEST（JVIM 2017）**：新發 CHF 中，torasemide 達標時間較長、心因性死亡風險約減半（CARPODIEM）；劑量約為 furosemide 的 1/10–1/20，須監測腎功能與電解質。
+
+### 肺動脈高壓（PH）與 sildenafil 定位（ACVIM 2020 共識）
+
+MMVD-PH 屬 **左心源性（後微血管）PH**：應**先**以 pimobendan ±抗心衰竭治療充分控制左心；若仍有症狀，再 **低劑量起始、緩慢加量** sildenafil，並警覺其肺血管擴張可能加重左側充血。PH 機率（低/中/高）依三尖瓣逆流流速加上支持性超音波徵象數量分級（具體流速切點依共識表）。sildenafil 半衰期短，常需每 8 小時給藥。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 ### 疾病相關併發症
 | 併發症 | 發生率 | 機轉 | 處置 |
@@ -267,7 +289,7 @@ MMVD 是會慢慢進展的慢性病，治不好但能管。跟飼主要講清楚
 
 ## 六、人醫借鑒 (Translational Insights)
 
-人醫在心臟衰竭管理上跑得比較前面，幾項東西獸醫陸續在跟。經導管二尖瓣修復（MitraClip）在人那邊已經很普及了，獸醫只有實驗犬模型的數據，但方向應該是能取代部分開胸手術。生物標記像 BNP、NT-proBNP，人醫拿來指導 CHF 治療已經算標準動作，獸醫慢慢在用，只是 cut-off 還在調整。遠端監測這部分，獸醫的 sleeping RR 居家監測根本就是從人醫的居家體重追蹤概念抄過來的。Sacubitril/Valsartan（Entresto）在人醫 HFrEF 是一線藥，犬 MMVD 的 Phase II 還在跑，看起來有點搞頭，但還沒到能寫進指引的程度。
+人醫在心臟衰竭管理上跑得比較前面，幾項東西獸醫陸續在跟。經導管二尖瓣修復（MitraClip）在人那邊已經很普及了；獸醫近年已有臨床犬隻的經導管緣對緣修復（TEER/V-Clamp）回溯系列報告（早期死亡率仍偏高），不再只是實驗模型，方向上有機會取代部分開胸手術。生物標記像 BNP、NT-proBNP，人醫拿來指導 CHF 治療已經算標準動作，獸醫慢慢在用，只是 cut-off 還在調整。遠端監測這部分，獸醫的 sleeping RR 居家監測根本就是從人醫的居家體重追蹤概念抄過來的。Sacubitril/Valsartan（Entresto）在人醫 HFrEF 是一線藥，犬 MMVD 的 Phase II 還在跑，看起來有點搞頭，但還沒到能寫進指引的程度。
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
@@ -324,8 +346,14 @@ MMVD 是會慢慢進展的慢性病，治不好但能管。跟飼主要講清楚
   ],
   drug_api_links: ['Pimobendan', 'Furosemide', 'Enalapril', 'Benazepril', 'Spironolactone', 'Sildenafil'],
   references: [
-    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: '最新 MMVD 診斷治療共識' },
+    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: '最新 MMVD 診斷治療共識（2026 年止無更新版）' },
     { type: 'journal', citation: 'Boswood A et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease and cardiomegaly: the EPIC study. J Vet Intern Med. 2016;30(6):1765-1779.', relevance: 'Pimobendan 用於 B2 期的關鍵證據' },
+    { type: 'journal', citation: 'Coffman M et al. Benazepril and spironolactone in dogs with congestive heart failure caused by MMVD (BESST study). J Vet Intern Med. 2021;35(4):1673-1687.', relevance: 'C 期加入 spironolactone 的實證（2026-06 更新）' },
+    { type: 'journal', citation: 'Borgarelli M et al. Spironolactone and benazepril in preclinical stage B2 MMVD (DELAY study). J Vet Cardiol. 2020;27:34-53.', relevance: 'B2 期 RAASi 延緩效益未達顯著（2026-06 更新）' },
+    { type: 'journal', citation: 'Besche B et al. Efficacy of oral torasemide vs furosemide in dogs with new-onset CHF due to MMVD (CARPODIEM). J Vet Intern Med. 2020.', relevance: '新發 CHF 利尿劑選擇（2026-06 更新）' },
+    { type: 'guideline', citation: 'Reinero C et al. ACVIM consensus statement guidelines for the diagnosis, classification, treatment, and monitoring of pulmonary hypertension in dogs. J Vet Intern Med. 2020;34(2):549-573.', relevance: 'MMVD-PH 與 sildenafil 使用框架（2026-06 更新）' },
+    { type: 'journal', citation: 'Long-term outcomes of mitral valve repair with artificial chordae and annuloplasty in 1,019 dogs. J Vet Intern Med. 2025.', relevance: '開心瓣膜修復（Uechi/JASMINE）長期資料（2026-06 更新）' },
+    { type: 'journal', citation: 'Lee S et al. Retrospective evaluation of transcatheter edge-to-edge mitral valve repair (V-Clamp) in dogs with MMVD. J Vet Intern Med. 2025.', relevance: '經導管 TEER 早期經驗（研究階段；2026-06 更新）' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011.', relevance: '心臟科基礎教材' },
   ],
   is_current: true,
