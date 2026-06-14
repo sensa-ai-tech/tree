@@ -1925,14 +1925,16 @@ const contentIMHA: NodeContent = {
 const contentDM: NodeContent = {
   id: 'CONTENT-IM-L3-006',
   node_id: 'IM-L3-006',
-  version: 1,
-  summary: '糖尿病在犬貓門診常見得不行，本質上就是長期高血糖加糖尿。犬多半走 Type 1，胰島 β 細胞被打掉，要打一輩子胰島素。貓多走 Type 2，是胰島素阻抗加上 β 細胞功能不全，運氣好的還能緩解。AAHA 2018 指引建議首選中效胰島素：犬用 NPH，貓用 Glargine 或 PZI。',
+  version: 2,
+  summary: '糖尿病在犬貓門診常見得不行，本質上就是長期高血糖加糖尿。犬多半走 Type 1，胰島 β 細胞被打掉，要打一輩子胰島素。貓多走 Type 2，是胰島素阻抗加上 β 細胞功能不全，運氣好的還能緩解。胰島素仍是基石（犬首選中效 NPH，貓首選長效 Glargine/PZI）；但 2022 年起貓多了一個重大新選項——口服 SGLT2 抑制劑（bexagliflozin/Bexacat、velagliflozin/Senvelgo），僅限「健康、新診斷、從未用過胰島素」的貓，且須嚴防正常血糖型酮酸中毒。監測也從住院血糖曲線轉向居家連續血糖監測（CGM）。',
   learning_objectives: [
     '比較犬（Type 1 為主）與貓（Type 2 為主）糖尿病的病因、病理生理與治療差異',
     '正確判讀血糖曲線（blood glucose curve）並據此調整胰島素劑量',
     '辨識糖尿病酮酸中毒（DKA）的臨床特徵並啟動急救處理',
     '說明 Somogyi effect 與胰島素劑量不足的鑑別方式',
     '制定糖尿病犬貓的長期居家管理計畫',
+    '說明貓用口服 SGLT2 抑制劑的適應症、禁忌與正常血糖型 DKA 的監測重點',
+    '說明連續血糖監測 (CGM/FreeStyle Libre) 取代住院血糖曲線的優勢與限制',
   ],
   key_points: [
     '犬 DM 多為 Type 1（免疫介導 β-cell 破壞），需終生胰島素；貓 DM 多為 Type 2（胰島素阻抗），約 30-40% 可達臨床緩解',
@@ -1942,6 +1944,8 @@ const contentDM: NodeContent = {
     'Fructosamine 反映過去 2-3 週的平均血糖控制（犬 < 400 μmol/L、貓 < 450 μmol/L 良好控制）',
     'DKA 為急診：高血糖 + 酮體（β-hydroxybutyrate）+ 代謝性酸中毒 + 脫水',
     'Somogyi effect：胰島素過量 → 低血糖反彈 → 反調節荷爾蒙釋放 → 高血糖。與劑量不足難以區分，需血糖曲線',
+    '貓專用口服 SGLT2 抑制劑（bexagliflozin/Bexacat 2022、velagliflozin/Senvelgo 2023）：僅限健康、新診斷、未曾用胰島素之貓；機轉不依賴胰島素故低血糖風險低，但須嚴防正常血糖型 DKA（監測酮體而非血糖）',
+    '連續血糖監測 (CGM, 如 FreeStyle Libre) 已納入 AAHA 2022 更新並大致取代住院血糖曲線；低血糖端會低估，疑似低血糖仍須血糖儀確認',
   ],
   body: `# 糖尿病 (Diabetes Mellitus, DM)
 
@@ -2004,10 +2008,23 @@ const contentDM: NodeContent = {
 | 治療 | 首選藥物 | 劑量 | 備註 | 證據等級 |
 |------|---------|------|------|---------|
 | 胰島素 | [藥物:Glargine] (Lantus) 或 [藥物:PZI] | 0.25-0.5 U/kg SC BID | 貓首選長效胰島素 | Level I |
+| 口服 SGLT2 抑制劑 | [藥物:Bexagliflozin] (Bexacat) | 15 mg 錠 PO SID（貓 ≥ 3.0 kg） | **僅限健康、新診斷、未曾用胰島素之貓**；黑框警告：正常血糖型 DKA 風險 | Level I（FDA 核准 2022/12） |
+| 口服 SGLT2 抑制劑 | [藥物:Velagliflozin] (Senvelgo) | 1 mg/kg 口服液 PO SID | 同上；**禁用於曾／正用胰島素之貓**（試驗中近 20% 發生 DKA） | Level I（FDA 核准 2023/08） |
 | 飲食 | 高蛋白低碳水化合物 | <15% ME from carbs | 緩解關鍵 | Level I |
 | 減重 | 消除肥胖 |，| 降低胰島素阻抗 | Level I |
 
 貓 DM 緩解策略：早期積極胰島素 + 高蛋白低碳水飲食 + 消除胰島素阻抗因子→約 30-40% 可達緩解。
+
+#### SGLT2 抑制劑（貓專用，2022 起的新選項）
+
+機轉：阻斷腎近曲小管的鈉-葡萄糖共同轉運蛋白 2，減少腎臟葡萄糖再吸收、促進尿糖排出來降血糖。**機轉不依賴胰島素**，單用低血糖風險低，且為口服、飼主接受度高。
+
+**最關鍵安全議題——正常血糖型酮酸中毒 (euglycemic DKA)**：因藥效與血糖脫鉤，DKA 可在血糖接近正常時發生、可能致死（FDA 黑框警告）。安全試驗中約 5% 新診斷貓發生 DKA，多數於前 7 天內、且約 8 成為 euglycemic。因此監測重點是「臨床症狀 + 酮體」而非血糖：
+- 用藥前篩檢血中 β-羥基丁酸（BHB 優於尿試紙；BHB > 2.4 mmol/L 應改用胰島素），並確認貓**食慾、活力、水合正常**、無顯著腎/肝功能異常或胰臟炎。
+- 前 14 天密集回測酮體。
+- 一旦出現厭食、嗜睡、脫水、嘔吐或體重下降，**無論血糖高低，立即停藥並評估 DKA**。
+
+> 適應症僅限「整體健康、新診斷、從未使用過胰島素」的貓。曾／正在使用胰島素、酮症或厭食的貓**禁用**。緩解率在 SGLT2i 時代尚未確立，且因藥物造成持續尿糖，須暫時停藥才能判定是否緩解。
 
 ### DKA 急救
 
@@ -2018,6 +2035,8 @@ const contentDM: NodeContent = {
 | 3 | 血糖 <250 時加 2.5-5% dextrose | 預防低血糖 |
 | 4 | KPO4 補充 | 矯正低磷（再餵食效應） |
 | 5 | NaHCO3（僅 pH <7.0） | 嚴重酸中毒時 |
+
+DKA 近期實證：建議以**即時血液 β-羥基丁酸 (β-OHB)** 取代尿酮作為診斷與療效追蹤指標（貓研究中以 β-OHB < 2.55 mmol/L 作為緩解終點，靈敏度高）；貓 DKA 中，basal-bolus [藥物:Glargine] 已被證實為傳統 regular insulin CRI 的有效且更簡便替代方案（Zeugswetter, JVECC 2021）。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -2033,6 +2052,12 @@ const contentDM: NodeContent = {
 
 居家監測：耳廓邊緣採血 + glucometer，每週 spot check（比在院 BGC 更反映真實控制）。
 
+### 現代血糖監測：連續血糖監測 (CGM / FGMS)
+
+監測重心已由「住院、反覆靜脈採血製作血糖曲線」轉向「居家連續血糖監測」。Abbott FreeStyle Libre 等組織間液 CGM 每約 15 分鐘記錄一次、可佩戴達 14 天，提供 24 小時連續血糖曲線，能捕捉到傳統間歇採血會遺漏的低血糖事件與 Somogyi 反應。AAHA 2018 指引之 2022 年更新已正式納入 CGM；對**貓**尤其有利，因居家量測可避免**緊張性高血糖 (stress hyperglycemia)** 造成的判讀誤差，大致終結了「為了血糖曲線而住院」的做法。臨床上亦開始套用人醫的 **TIR（目標範圍內時間，70-250 mg/dL）**、TAR、TBR 與變異係數 (CV%) 等指標評估控制品質。
+
+**使用限制需牢記**：感測器在**低血糖（<70 mg/dL）時可靠度下降、傾向低估血糖**，對快速變化偵測不佳；讀數有上限（FSL1 約 500、FSL2 約 400 mg/dL），會低估重度高血糖的變異；組織間液與血糖間存在數分鐘延遲；貓的感測器附著與留置時間常不足 14 天。臨床疑似低血糖時，仍應以血糖儀確認、不可單憑 CGM 數值。
+
 ## 五、預後與預後因子 (Prognosis)
 
 | 情境 | 預後 | 備註 |
@@ -2047,8 +2072,8 @@ const contentDM: NodeContent = {
 ## 六、人醫借鑑 (Translational Insights)
 
 - 犬 Type 1 DM 為人類 T1DM 的天然動物模型，自體免疫機轉高度相似
-- 人醫 continuous glucose monitoring (CGM) 系統（如 FreeStyle Libre）已有犬貓應用報告
-- 人醫 SGLT2 抑制劑 在獸醫尚未常規使用（貓 DKA 風險疑慮）
+- 人醫 continuous glucose monitoring (CGM) 系統（如 FreeStyle Libre）已在犬貓驗證並廣泛應用，逐步取代住院血糖曲線
+- 人醫 SGLT2 抑制劑已「反向轉譯」進獸醫：2022（bexagliflozin）、2023（velagliflozin）相繼獲 FDA 核准用於貓 DM，惟須嚴防正常血糖型 DKA
 - 人醫 HbA1c 的概念對應獸醫 Fructosamine，但 Fructosamine 反映時間更短（2-3 週 vs 2-3 個月）
 - 人醫 closed-loop insulin pump (artificial pancreas) 概念可能未來應用於獸醫
 
@@ -2057,10 +2082,23 @@ const contentDM: NodeContent = {
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | Glargine vs PZI（貓）| 兩者等效，Glargine 較常用 | Level II | 頭對頭比較緩解率 |
-| CGM 在獸醫的角色 | 初步有用但驗證不足 | Level III | 準確度與臨床應用研究 |
-| 口服降血糖藥（貓）| 效果不佳，不推薦 | Level II | 新型 GLP-1 agonist？ |
+| CGM 在獸醫的角色 | 已驗證並納入指引，惟低血糖端準確度仍有限 | Level II | 新世代感測器（FSL2/3）低血糖端驗證 |
+| 口服降血糖藥（貓）| SGLT2 抑制劑已核准為首選之一（限胰島素未治療貓），euglycemic DKA 為主要顧慮 | Level I | SGLT2i 的緩解率與長期安全性 |
 | 犬胰島素 SID vs BID | BID 為標準 | Level II | 長效胰島素 SID 可行性？ |
-| 貓 DM 緩解後的最佳追蹤 | 定期 Fructosamine/血糖 | Level III | 緩解後復發預測因子？ |`,
+| 貓 DM 緩解後的最佳追蹤 | 定期 Fructosamine/血糖 | Level III | 緩解後復發預測因子？ |
+
+## 八、參考文獻與指引 (References)
+
+> 本節 SGLT2 抑制劑、CGM、DKA 段落於 2026-06 依近年文獻更新。臨床用藥前請以最新仿單與在地法規為準，並建議由獸醫師覆核。
+
+- FDA/DailyMed — **Bexacat (bexagliflozin)** 仿單與黑框警告（FDA 核准 2022-12-08，首個非人類 SGLT2 抑制劑）
+- FDA Animal Drugs / DailyMed — **Senvelgo (velagliflozin) oral solution** 仿單（FDA 核准 2023-08；1 mg/kg PO SID）
+- Cook AK, Behrend E. *SGLT2 inhibitor use in the management of feline diabetes mellitus.* J Vet Pharmacol Ther 2024.
+- Rothlin-Zachrisson N, et al. *Survival, remission, and quality of life in diabetic cats.* J Vet Intern Med 2023;37(1):58-69.
+- AAHA *2018 Diabetes Management Guidelines for Dogs and Cats*（2022 更新：納入 CGM、ProZinc/PZI 犬每日一次）。
+- Del Baldo F, et al. *Accuracy of a flash glucose monitoring system in cats.* J Vet Intern Med 2021；及 *FreeStyle Libre-derived metrics in diabetic dogs.* JVIM 2025.
+- Corradini S, et al. *Accuracy of a Flash Glucose Monitoring System in Diabetic Dogs.* JVIM 2016.
+- Zeugswetter FK, et al. *Glargine versus regular insulin protocol in feline diabetic ketoacidosis.* JVECC 2021.`,
   clinical_pearl: '貓糖尿病最迷人的地方是「臨床緩解」這個概念。新診斷的糖尿病貓裡，大概 30-40% 在幾週到幾個月內可以做到緩解，貓不再需要打胰島素。關鍵幾件事：第一，越早開始積極打胰島素越好，目的是把糖毒性解開。第二，飲食馬上換成高蛋白低碳水（碳水 < 10% ME）。第三，把胰島素阻抗的因子清掉，類固醇停掉、把體重減下來。Glargine 在促進緩解這件事上，比 PZI 略佔便宜。等胰島素需求量降到 < 1 U/次（一天兩次）、血糖也一直壓在 200 mg/dL 以下，就可以嘗試停藥看看。但要記得，緩解的貓裡有四分之一到三分之一會在幾個月或幾年後復發，所以追蹤不能停。\n\n【台灣流行病學】台灣犬貓糖尿病盛行率這幾年一直在往上爬，跟室內飼養、高熱量飲食、肥胖問題完全脫不了關係。台灣貓的肥胖盛行率估計超過三成，這就是糖尿病最大的引線。犬糖尿病在台灣多半碰到中老年母犬，貴賓、臘腸這些常見小型犬都跑不掉。台灣市場上 Glargine（Lantus）和 NPH 都拿得到，PZI（ProZinc）要特別進口。居家自己量血糖（home glucose monitoring）這件事，台灣飼主慢慢願意配合了。',
   common_mistakes: [
     '僅憑單次高血糖就診斷貓糖尿病（貓壓力性高血糖很常見，需搭配 Fructosamine 和持續性糖尿確診）',
@@ -2068,6 +2106,7 @@ const contentDM: NodeContent = {
     '血糖曲線的 nadir 過低（< 65 mg/dL）未被辨識為 Somogyi effect，反而增加劑量',
     '犬未絕育母犬糖尿病未建議立即絕育（黃體素是強力胰島素拮抗因子）',
     '未積極搜尋胰島素阻抗因子就認定「胰島素劑量不夠」而一直加量',
+    '對曾／正在使用胰島素、或有酮症/厭食的貓使用 SGLT2 抑制劑（禁忌；DKA 風險大增），或用藥後僅監測血糖而忽略酮體（漏掉正常血糖型 DKA）',
   ],
   disease_data: {
     signalment: '犬：中老年（7-9 歲），未絕育母犬風險高（黃體素），好發品種：Samoyed、Australian Terrier、Miniature Schnauzer、Miniature/Toy Poodle、Pug、Bichon Frise。貓：中老年（> 8 歲），去勢公貓風險最高（肥胖傾向），Burmese 品種風險 2-4 倍。',
