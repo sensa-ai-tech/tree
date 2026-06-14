@@ -7910,6 +7910,119 @@ const contentVaccination: NodeContent = {
   created_at: now,
 };
 
+/** 抗生素合理用藥（抗菌藥物管理），治療/概念型（2026-06-15 新增節點）。臨床內容待 DVM 覆核；台灣法規須向農業部查核。 */
+const contentAntimicrobialStewardship: NodeContent = {
+  id: 'CONTENT-IM-L5-006',
+  node_id: 'IM-L5-006',
+  version: 1,
+  summary:
+    '抗菌藥物管理（Antimicrobial Stewardship）是一套跨越疾病的用藥原則，目標是在對的時機、用對的藥、用對的劑量與療程，以減緩抗藥性（AMR）這個 One Health 危機。小動物臨床中 MRSP、ESBL 大腸桿菌等多重抗藥性病原已普遍，每一次不必要的抗生素都會加速抗藥性篩選。核心做法：先判斷是否真的需要抗生素、優先送培養與藥敏（C&S）、選最窄效有效藥、用最短有效療程，並把氟喹諾酮與第三/四代頭孢等高優先重要抗生素（HPCIA）留作後線。',
+  learning_objectives: [
+    '說明抗藥性為何是 One Health 危機，並舉出三種小動物重要多重抗藥性病原（MRSP、ESBL/碳青黴烯抗藥性腸桿菌、MRSA）',
+    '區分主要 ISCAID 各系統指引（泌尿道 2019、犬膿皮症 2025 取代 2014、呼吸道 2017）的適用情境',
+    '解釋 WHO/WOAH 抗生素重要性分級，說明為何氟喹諾酮與第三/四代頭孢應被保留而非當第一線',
+    '運用實務決策流程判斷個案是否需要抗生素，以及何時應在投藥前先送 C&S',
+    '依現行證據選最窄效藥與最短有效療程（如單純性膀胱炎 3–5 天），並於藥敏後降階治療',
+    '辨識常見濫用驅動因素，並對表淺膿皮症/外耳炎優先採局部治療以減少全身性抗生素',
+  ],
+  key_points: [
+    '抗生素治療的是「細菌感染」，不是發炎、過敏或發燒；很多病毒性或自限性疾病根本不需要抗生素',
+    'MRSP 是犬膿皮症/外耳炎最主要致病菌，常為多重抗藥，且有犬↔飼主互傳紀錄',
+    'ISCAID 指引為小動物用藥實質標準：泌尿道（Weese 2019）、犬膿皮症（Loeffler 2025 取代 Hillier 2014）、呼吸道（Lappin 2017）',
+    '高優先重要抗生素（HPCIA：氟喹諾酮、第三/四代頭孢、colistin 等）不可當預防或反射性第一線，使用前最好有藥敏依據',
+    '療程趨勢「越短越好」：單純性膀胱炎 3–5 天即可（ISCAID 2019），取代舊的 10–14 天',
+    '表淺膿皮症與外耳炎應局部優先，能不全身用藥就不用（ISCAID 2025）',
+    '投藥前先做細胞學與培養藥敏（尤其復發、難治、懷疑多重抗藥、要動用 HPCIA 時）；MIC 對照 CLSI VET 斷點判讀，MIC 低不等於更有效',
+    '乾淨手術的外科預防只需術前單次達組織濃度，術後一般不需延長給藥',
+  ],
+  body: `# 抗生素合理用藥（抗菌藥物管理）(Antimicrobial Stewardship)
+
+> ⚠️ 臨床內容（藥物選擇、劑量、療程）須由具執照獸醫師覆核；台灣抗生素處方/管制法規請向農業部查核。
+
+## 一、為什麼需要管理 (Why Stewardship Matters)
+
+- **AMR 是 One Health 危機**：抗藥基因與抗藥菌在人、動物與共享環境間流動；小動物臨床用藥造成的選擇壓力會貢獻到這個共享池，人寵密切接觸是已知傳播途徑。
+- **多重抗藥病原已在小動物立足**：
+  - **MRSP**（甲氧西林抗藥性 *Staphylococcus pseudintermedius*）：自 ~2006 全球株系擴散，為犬膿皮症/外耳炎主因，常多重抗藥（β-lactam、氟喹諾酮、macrolide…），口服選項所剩無幾；有犬↔飼主互傳紀錄。
+  - **ESBL／碳青黴烯抗藥性腸桿菌**（尤其大腸桿菌）：在小動物 UTI 日益常見，基因藉可移動元件擴散。
+  - **MRSA**：主要為人的菌，寵物可由人取得（reverse zoonosis）並帶回傳人，對獸醫人員與免疫低下飼主是真實風險。
+- **與用藥的關連**：廣效與高優先藥物、不必要療程、錯誤療程都加速抗藥；**減少不必要使用是臨床最可控的槓桿**。
+
+## 二、核心原則與框架 (Principles & Frameworks)
+
+**ISCAID 各系統指引**（小動物實質標準）：
+- 泌尿道感染：Weese 等 2019，*Vet J* 247:8–25（修訂 2011 版）。
+- 犬表淺細菌性毛囊炎/膿皮症：Hillier 等 2014（*Vet Dermatol* 25(3)）——奠基但已被 **Loeffler 等 2025（*Vet Dermatol* 36(3):234–282）取代**；新版強調投藥前細胞學、表面/表淺膿皮症局部優先，並更新療程與藥物。
+- 呼吸道疾病：Lappin 等 2017，*JVIM* 31(2):279–294。
+
+**實務工具**：BSAVA/SAMSoc **「PROTECT ME」**（負責任用藥海報/口訣，含「無需抗生素」溝通表單）；WSAVA/FECAVA 推廣 ISCAID 指引。
+
+**WHO/WOAH 重要性分級——保留最高層級**：
+- WHO 的最高優先重要抗生素（HPCIA）含**氟喹諾酮、第三/四代頭孢、colistin（多黏菌素）、macrolide** 等。
+- WOAH《獸醫重要抗生素清單》（2025 版）分級獸用藥；氟喹諾酮與三/四代頭孢於人醫與獸醫皆為關鍵重要。
+- **核心原則**：HPCIA 不可用於預防或反射性第一線，使用應由 **C&S** 引導。
+
+## 三、實務決策流程 (Decision Framework)
+
+1. **這隻病患真的需要抗生素嗎？** 許多情況（病毒、自限、發炎/過敏、污染/定殖）**不需要**。抗生素治細菌感染，不治發炎或發燒本身。
+2. **投藥前送 C&S** 的時機：復發/難治、曾用過抗生素、疑多重抗藥、嚴重/深部感染、或要動用 HPCIA。以 **CLSI VET 斷點**判讀（MIC vs 部位/菌種斷點 → S/I/R）；MIC 低不代表更敏感。
+3. **經驗性選藥**：依症候群與當地抗藥型態，選最窄效有效藥；正確劑量、間隔、最短有效療程；藥敏回來後**降階（de-escalation）**至最窄效。
+4. **療程——越短越好**：如單純散發性膀胱炎 **3–5 天**（ISCAID 2019）取代舊 10–14 天；治到臨床緩解、不用任意長療程。
+5. **局部優先**：表淺膿皮症與外耳炎用 chlorhexidine/局部抗菌，能完全避免全身性抗生素就避免（ISCAID 2025）。
+
+## 四、常見濫用驅動 (Drivers of Misuse)
+
+預防性用藥過度（尤其術後無indication延長）、把定殖/污染當感染治療、飼主壓力/「以防萬一」、療程錯誤（太長；或太短復發）、復發難治卻跳過 C&S、反射性使用廣效/長效便利藥（如 cefovecin、氟喹諾酮）。
+
+## 五、高價值規則 (High-value Rules)
+
+- **氟喹諾酮、第三代頭孢不可當反射性第一線**——保留給有藥敏依據、無更窄選項者。
+- **多數單純急性腹瀉不需抗生素**（常自限，抗生素反而惡化菌叢失衡）——保留給敗血/全身徵象或確認特定病原。
+- **未併發的犬咳（kennel cough）**多為病毒/自限，多數不需抗生素（ISCAID 2017）。
+- **局部/表淺膿皮症 → 局部治療優先**（ISCAID 2025）。
+- **外科預防**：乾淨手術只需**術前單次**於切皮時達組織濃度即可，乾淨/乾淨污染手術一般不需術後延長。
+
+## 六、台灣在地 (Taiwan) ⚠️ 法規須向農業部查核
+
+- 區域上歷史性**抗生素取得較易、經驗性處方文化**，小動物**多重抗藥盛行是真實隱憂**。某區域資料報告台灣犬貓 **ESBL 大腸桿菌約 22.8%**（單一研究數字，須以現行在地監測查證）。
+- 實務意涵：在多重抗藥盛行、經驗猜測較常失準的環境，**C&S 導向治療尤其重要**。
+- 現行處方限定/管制獸用抗生素清單/調劑規定，**須對照農業部現行法規**，勿當定論直接教學。
+
+## 七、臨床要訣與常見錯誤
+
+見 key_points 與 common_mistakes。最有力的管理介入常只要五分鐘：**先細胞學、再培養、最後才考慮抗生素**——膿皮症抹片看到球菌，往往就足以導向「只用局部抗菌」而省下整個全身性療程。
+`,
+  clinical_pearl:
+    '最有效的管理介入往往只要五分鐘：投藥前先做院內細胞學。膿皮症抹片看到球菌，常常就足以把治療導向「只用局部抗菌」而省下一整個療程的全身性抗生素——先細胞學、再培養、最後才考慮抗生素。',
+  common_mistakes: [
+    '把「定殖／污染」當「感染」治療（例如無症狀或採檢污染的陽性培養也開藥）',
+    '反射性使用廣效或長效便利藥（如 cefovecin、氟喹諾酮）當第一線，未保留 HPCIA',
+    '復發或難治個案仍跳過培養藥敏，憑經驗一直換藥',
+    '療程開太長（或太短導致復發）；未依新證據縮短療程或「好了就停」',
+    '對單純急性腹瀉、未併發的犬咳（kennel cough）等多半自限的情況常規開抗生素',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '決策流程段落後', type: 'flowchart', description: '抗生素使用決策流程：需要嗎？→ C&S → 最窄效 → 最短療程 → 降階' },
+    { position: '重要性分級段落後', type: 'comparison_table', description: 'WHO/WOAH 抗生素重要性分級與 HPCIA 保留清單' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: [],
+  references: [
+    { type: 'guideline', citation: 'Weese JS, Blondeau J, Boothe D, et al. ISCAID guidelines for the diagnosis and management of bacterial urinary tract infections in dogs and cats. Vet J. 2019;247:8-25. doi:10.1016/j.tvjl.2019.02.008.', relevance: '小動物 UTI 用藥實質標準；確立單純性膀胱炎 3–5 天短療程與 C&S 導向' },
+    { type: 'guideline', citation: 'Loeffler A, Cain CL, Ferrer L, et al. Antimicrobial use guidelines for canine pyoderma by ISCAID. Vet Dermatol. 2025;36(3):234-282. doi:10.1111/vde.13342.', relevance: '2025 最新犬膿皮症指引（取代 2014 版）：投藥前細胞學、表淺膿皮症局部優先、更新療程/藥物' },
+    { type: 'guideline', citation: 'Hillier A, Lloyd DH, Weese JS, et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (ISCAID). Vet Dermatol. 2014;25(3):163-e43. doi:10.1111/vde.12118.', relevance: '膿皮症抗生素分層用藥奠基性指引（基礎文獻，已由 Loeffler 2025 取代）' },
+    { type: 'guideline', citation: 'Lappin MR, Blondeau J, Boothe D, et al. Antimicrobial use Guidelines for Treatment of Respiratory Tract Disease in Dogs and Cats (ISCAID). J Vet Intern Med. 2017;31(2):279-294. doi:10.1111/jvim.14627.', relevance: '呼吸道用藥指引；支持多數未併發犬咳/上呼吸道為自限、不需常規抗生素' },
+    { type: 'guideline', citation: 'World Organisation for Animal Health (WOAH/OIE). List of Antimicrobial Agents of Veterinary Importance, 2025 ed.; cf. WHO Medically Important Antimicrobials, 2024.', relevance: '國際抗生素重要性分級；氟喹諾酮與三/四代頭孢屬最高優先，應保留、不可當預防或第一線' },
+    { type: 'reference', citation: 'BSAVA/SAMSoc Guide to Responsible Use of Antibacterials: PROTECT ME. PROTECT 2012; PROTECT ME 2018; updated 2023/2024.', relevance: '實務層級負責任用藥工具與口訣（含「無需抗生素」溝通表單），可落地為診所管理政策' },
+    { type: 'journal', citation: 'van Duijkeren E, Catry B, Greko C, et al. Review on methicillin-resistant Staphylococcus pseudintermedius. J Antimicrob Chemother. 2011;66(12):2705-2714. doi:10.1093/jac/dkr367.', relevance: 'MRSP 流行病學與多重抗藥性代表性綜述，說明小動物多重抗藥葡萄球菌興起與人畜共通風險' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
   ['IM-L0-001', contentIMOverview],
@@ -7958,6 +8071,7 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L5-003', contentImmunosuppression],
   ['IM-L5-004', contentGITherapy],
   ['IM-L5-005', contentVaccination],
+  ['IM-L5-006', contentAntimicrobialStewardship],
   // Respiratory & Infectious expansion
   ['IM-L1-005', contentRespiratoryPhysiology],
   ['IM-L2-007', contentAirwayInflammation],

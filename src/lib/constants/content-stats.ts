@@ -18,7 +18,7 @@
  */
 
 /** Total knowledge nodes across all 8 specialties (must equal ALL_NODES.length). */
-export const TOTAL_KNOWLEDGE_NODES = 277;
+export const TOTAL_KNOWLEDGE_NODES = 278;
 
 /** Total interactive case challenges (must equal ALL_CASES.length). */
 export const TOTAL_CASE_CHALLENGES = 103;

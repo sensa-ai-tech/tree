@@ -133,20 +133,20 @@ exports[`seed-content snapshot: 結構性指標 > node_type 分佈穩定 1`] = `
   "disease": 124,
   "mechanism": 34,
   "procedure": 5,
-  "therapeutic": 35,
+  "therapeutic": 36,
 }
 `;
 
 exports[`seed-content snapshot: 結構性指標 > relation_type 分佈穩定（邊類型） 1`] = `
 {
   "builds_on": 55,
-  "clinical_apply": 437,
+  "clinical_apply": 438,
   "complication": 76,
   "cross_specialty": 5,
   "differential": 51,
   "drug_related": 21,
-  "prerequisite": 192,
-  "same_system": 13,
+  "prerequisite": 193,
+  "same_system": 14,
 }
 `;
 
@@ -157,7 +157,7 @@ exports[`seed-content snapshot: 結構性指標 > 每 layer 節點數量穩定 1
   "L2": 33,
   "L3": 127,
   "L4": 43,
-  "L5": 38,
+  "L5": 39,
 }
 `;
 
@@ -167,7 +167,7 @@ exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分
   "CPATH": 22,
   "DERM": 35,
   "ECC": 33,
-  "IM": 54,
+  "IM": 55,
   "NEURO": 35,
   "ONCO": 34,
   "SURG": 36,
@@ -176,9 +176,9 @@ exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分
 
 exports[`seed-content snapshot: 結構性指標 > 總節點數 + 邊數 + 路徑數 維持穩定 1`] = `
 {
-  "contents": 277,
-  "edges": 850,
-  "nodes": 277,
+  "contents": 278,
+  "edges": 853,
+  "nodes": 278,
   "paths": 47,
   "questions": 2001,
 }

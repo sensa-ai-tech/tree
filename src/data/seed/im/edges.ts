@@ -264,4 +264,8 @@ export const IM_EDGES: KnowledgeEdge[] = [
   { id: 'IM-E-140', source_node_id: 'IM-L1-002', target_node_id: 'IM-L5-005', relation_type: 'prerequisite', weight: 0.9, description: '免疫學基礎（體液/細胞免疫、記憶反應）是理解疫苗作用與母源抗體干擾的前置知識', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-141', source_node_id: 'IM-L5-005', target_node_id: 'IM-L3-028', relation_type: 'clinical_apply', weight: 0.9, description: '核心疫苗（FPV）為貓泛白血球減少症最主要的預防手段', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-142', source_node_id: 'IM-L5-005', target_node_id: 'IM-L3-016', relation_type: 'clinical_apply', weight: 0.8, description: '鉤端螺旋體疫苗（2024 AAHA 列核心）為外出犬之重要預防，且具人畜共通防護意義', bidirectional: false, unlock_condition: null },
+
+  // ─── IM-L5-006 抗生素合理用藥 連接邊（2026-06-15 新增節點）───
+  { id: 'IM-E-143', source_node_id: 'IM-L1-002', target_node_id: 'IM-L5-006', relation_type: 'prerequisite', weight: 0.7, description: '免疫學基礎（宿主防禦與感染 vs 定殖）是理解「何時真的需要抗生素」的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-144', source_node_id: 'IM-L5-006', target_node_id: 'IM-L5-005', relation_type: 'same_system', weight: 0.6, description: '抗菌藥物管理與疫苗預防醫學同屬「降低感染負擔/合理用藥」的預防醫學原則', bidirectional: true, unlock_condition: null },
 ];

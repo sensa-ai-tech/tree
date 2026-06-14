@@ -1532,4 +1532,16 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: true,
     unlock_condition: null,
   },
+
+  // ─── IM ↔ DERM（抗菌藥物管理 ↔ 皮膚科抗生素/MRSP，2026-06-15 新增節點連結） ───
+  {
+    id: 'CROSS-IM-DERM-001',
+    source_node_id: 'IM-L5-006',    // 抗生素合理用藥
+    target_node_id: 'DERM-L5-006',  // 皮膚科抗生素治療（MRSP）
+    relation_type: 'clinical_apply',
+    weight: 0.85,
+    description: '抗菌藥物管理原則在皮膚科的關鍵應用：膿皮症優先局部治療、投藥前細胞學、MRSP 須 C&S 導向，避免反射性全身性抗生素',
+    bidirectional: true,
+    unlock_condition: null,
+  },
 ];
