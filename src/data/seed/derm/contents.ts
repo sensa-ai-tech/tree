@@ -6,8 +6,8 @@ const now = '2026-02-15T00:00:00Z';
 const contentCAD: NodeContent = {
   id: 'CONTENT-DERM-L3-001',
   node_id: 'DERM-L3-001',
-  version: 1,
-  summary: '犬異位性皮膚炎（Canine Atopic Dermatitis, CAD）是犬最常見的過敏性皮膚病，盛行率落在 10-15%。本質是基因易感犬對環境過敏原產生異常的 IgE 介導免疫反應，造成慢性瘙癢加上皮膚屏障功能受損。臨床上多半靠 Favrot 標準搭配病史與表現來判斷。治療不能只靠一招，要組合過敏原迴避、跳蚤預防、排除飲食試驗、藥物（oclacitinib、lokivetmab、cyclosporine），有條件還可以加上過敏原特異性免疫治療（ASIT）。',
+  version: 2,
+  summary: '犬異位性皮膚炎（Canine Atopic Dermatitis, CAD）是犬最常見的過敏性皮膚病，盛行率落在 10-15%。本質是基因易感犬對環境過敏原產生異常的 IgE 介導免疫反應，造成慢性瘙癢加上皮膚屏障功能受損。臨床上多半靠 Favrot 標準搭配病史與表現來判斷。治療不能只靠一招，要組合過敏原迴避、跳蚤預防、排除飲食試驗、藥物（oclacitinib、lokivetmab、cyclosporine，2024 年新增口服 JAK 抑制劑 ilunocitinib/Zenrelia），有條件還可以加上過敏原特異性免疫治療（ASIT）。',
   learning_objectives: [
     '運用 Favrot 診斷標準評估疑似 CAD 病例',
     '描述 CAD 的 IgE 介導免疫病理機轉與皮膚屏障缺陷',
@@ -23,6 +23,7 @@ const contentCAD: NodeContent = {
     '皮膚屏障功能障礙（filaggrin 缺乏、脂質異常）是 CAD 的核心特徵',
     'Oclacitinib（JAK inhibitor）起效快（4-24 小時），適用急性與慢性控制',
     'Lokivetmab（抗 IL-31 單株抗體）每月注射一次，副作用極低',
+    'Ilunocitinib（Zenrelia，2024 FDA 核准）為第二代口服 JAK 抑制劑，第一天起即每日一次（≥12 月齡）；帶疫苗相關黑框警告——接種前後須停藥（待 DVM 依最新仿單核對）',
     'ASIT（過敏原特異性免疫治療）是唯一可能改變疾病病程的治療',
   ],
   body: `# 犬異位性皮膚炎 (CAD)
@@ -81,6 +82,19 @@ CAD 的病理可以拆成三塊核心異常：
 - 跳蚤預防：全年不能停。
 - 繼發感染控制：定期做皮膚細胞學追蹤。
 
+### 2024–2025 新藥與實證更新（待 DVM 覆核）
+
+**Ilunocitinib（Zenrelia，Elanco）— 第二代口服 JAK 抑制劑**
+FDA 於 2024 年 9 月 19 日核准，用於犬隻搔癢與異位性皮膚炎控制，適用 **≥12 月齡**犬，劑量 **0.6–0.8 mg/kg PO，每日一次**（自第一天起即 SID，不像 oclacitinib 前 14 天需 BID）。
+
+> ⚠️ **黑框警告（Boxed Warning）— 疫苗免疫反應不足**：Zenrelia 標籤帶有 FDA 黑框警告，用藥犬對疫苗的免疫反應可能不足。原則上**開始用藥前須完成疫苗接種**；**接種前停藥、接種後停藥一段時間**（依仿單）。2025 年 9 月 FDA 核准修訂標籤，**移除**原先「活毒疫苗致死性疫苗誘發疾病」之文字，但**保留**疫苗反應不足之黑框警告。黑框警告之**逐字內容與停藥天數請以最新 FDA 仿單為準**，臨床採用前由獸醫師再次核對。
+
+**JAK 抑制劑頭對頭比較**：一項 338 隻犬的隨機田間試驗（Forster 2025，廠商贊助）中，ilunocitinib 與 oclacitinib 於第 14 天前療效相近；**第 28–112 天 ilunocitinib 之 PVAS 與 CADESI-04 顯著較低**，安全性相當。判讀時宜留意此研究為 Elanco 贊助之利益衝突。
+
+**Lokivetmab 長期實證**：獨立學術團隊回溯 150 隻犬（Kasper 2024），長期使用成功率約 **77%**、不良反應僅約 **8%**，支持其作為長期止癢／維持治療選項。
+
+**指引現況**：ICADA 於 2023/2024 發表**致病機轉回顧與 CAD 新定義**（強調皮膚屏障缺損＋微生物失衡＋過敏原致敏之交互作用），但這是**機轉／定義**更新，**非新版治療指引**；目前**最新的 ICADA 治療指引仍為 2015 Olivry 版**，勿混淆。
+
 [圖片:CAD 逐步診斷治療流程圖]
 
 ## 四、併發症與監控 (Complications & Monitoring)
@@ -129,7 +143,8 @@ CAD 是終生性疾病，沒辦法根治，但可以控制得很穩：
 | Oclacitinib 長期使用的腫瘤風險 | 上市後監測顯示乳突瘤/肥大細胞瘤風險微增，但因果關係未確立 | Level III |
 | ASIT 最佳過敏原選擇策略（皮內試驗 vs 血清 IgE） | 兩者一致性僅 60-70%，金標準仍有爭議 | Level II |
 | 犬 AD 的排除飲食試驗持續時間 | 傳統 8 週 vs 新研究建議 6 週可能足夠 | Level II |
-| Lokivetmab 長期使用後抗藥物抗體（ADA）的臨床影響 | 部分犬療效漸減，ADA 盛行率與臨床意義待釐清 | Level III |`,
+| Lokivetmab 長期使用後抗藥物抗體（ADA）的臨床影響 | 部分犬療效漸減，ADA 盛行率與臨床意義待釐清 | Level III |
+| 口服 JAK：ilunocitinib vs oclacitinib | 頭對頭 RCT 顯示第 28 天後 ilunocitinib 療效較佳，但屬廠商贊助；尚缺獨立長期安全性數據 | Level II（COI） |`,
   clinical_pearl: 'CAD 是排除性診斷。FAD 跟 AFR 這兩關絕對不能跳。台灣全年都有跳蚤在跑，沒看到不等於沒有，一定要用 isoxazoline 嚴格跑跳蚤控制至少 4 週。另外，飲食排除試驗失敗的頭號原因永遠是飼主沒乖乖配合（偷塞零食、餐桌上分一口），這件事要不斷講、不斷提醒。',
   common_mistakes: [
     '未進行排除飲食試驗即診斷 CAD（食物不良反應可完全模擬 CAD 表現）',
@@ -176,8 +191,12 @@ CAD 是終生性疾病，沒辦法根治，但可以控制得很穩：
   ],
   drug_api_links: ['Oclacitinib', 'Lokivetmab', 'Cyclosporine', 'Prednisolone'],
   references: [
-    { type: 'guideline', citation: 'Hensel P et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196. (ICADA 2023 update)', relevance: 'CAD 診斷與過敏原鑑定國際指引' },
-    { type: 'journal', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'CAD 治療最新國際共識' },
+    { type: 'guideline', citation: 'Hensel P et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'CAD 診斷與過敏原鑑定國際指引（ICADA）' },
+    { type: 'journal', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Res. 2015;11:210.', relevance: '目前最新的 ICADA 治療指引（基礎，2024 機轉回顧非新版治療指引）' },
+    { type: 'guideline', citation: 'U.S. FDA Center for Veterinary Medicine. Freedom of Information Summary, Zenrelia (ilunocitinib tablets), approved September 19, 2024. animaldrugsatfda.fda.gov (FOI #15865).', relevance: '新口服 JAK 抑制劑 ilunocitinib 官方核准依據：核准日、≥12月齡、0.6–0.8 mg/kg SID、疫苗黑框警告來源（逐字內容待 DVM 依仿單核對）' },
+    { type: 'journal', citation: 'Forster S, Boegel A, Despa S, Trout C, King S. Comparative efficacy and safety of ilunocitinib and oclacitinib for the control of pruritus and associated skin lesions in dogs with atopic dermatitis. Vet Dermatol. 2025;36(2):165-176. doi:10.1111/vde.13319.', relevance: '首篇 ilunocitinib vs oclacitinib 頭對頭 RCT（第 28 天後 ilunocitinib 較佳；Elanco 贊助，須註明 COI）' },
+    { type: 'journal', citation: 'Kasper B, Zablotski Y, Mueller RS. Long-term use of lokivetmab in dogs with atopic dermatitis. Vet Dermatol. 2024;35(6):683-693. doi:10.1111/vde.13286.', relevance: '獨立團隊 lokivetmab 長期實證（150 犬，成功率約 77%、不良反應約 8%）' },
+    { type: 'guideline', citation: 'Eisenschenk MC, Hensel P, Saridomichelakis MN, et al. Introduction to the ICADA 2023 canine atopic dermatitis pathogenesis review articles and updated definition. Vet Dermatol. 2024;35(1):3-4. doi:10.1111/vde.13183.', relevance: 'ICADA 最新致病機轉回顧與 CAD 新定義（屏障+微生物失衡+致敏）；屬機轉/定義更新非治療指引' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '皮膚科經典教材，CAD 完整章節' },
     { type: 'journal', citation: 'Favrot C et al. A prospective study on the clinical features of chronic canine atopic dermatitis and its diagnosis. Vet Dermatol. 2010;21(1):23-31.', relevance: 'Favrot 診斷標準原始研究' },
   ],
