@@ -164,4 +164,8 @@ export const SURG_EDGES: KnowledgeEdge[] = [
   { id: 'SURG-E-086', source_node_id: 'SURG-L3-004', target_node_id: 'SURG-L3-019', relation_type: 'complication', weight: 0.9, description: '前十字韌帶斷裂為犬續發性膝關節 OA 最常見成因', bidirectional: false, unlock_condition: null },
   { id: 'SURG-E-087', source_node_id: 'SURG-L3-008', target_node_id: 'SURG-L3-019', relation_type: 'complication', weight: 0.8, description: '慢性髕骨脫位導致續發性膝關節 OA', bidirectional: false, unlock_condition: null },
   { id: 'SURG-E-088', source_node_id: 'SURG-L3-019', target_node_id: 'SURG-L3-018', relation_type: 'clinical_apply', weight: 0.7, description: '末期髖關節 OA 可考慮股骨頭切除術（FHO）作為挽救手術', bidirectional: false, unlock_condition: null },
+
+  // ─── SURG-L3-020 牙周病 連接邊（2026-06-15 新增節點）───
+  { id: 'SURG-E-089', source_node_id: 'SURG-L1-003', target_node_id: 'SURG-L3-020', relation_type: 'prerequisite', weight: 0.8, description: '麻醉基礎是理解牙周病確診/治療（COHAT 須全麻插管）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-090', source_node_id: 'SURG-L1-002', target_node_id: 'SURG-L3-020', relation_type: 'builds_on', weight: 0.6, description: '傷口癒合原則延伸至拔牙後牙齦/齒槽窩癒合', bidirectional: false, unlock_condition: null },
 ];

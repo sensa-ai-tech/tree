@@ -56,6 +56,8 @@ export const SURG_NODES: KnowledgeNode[] = [
 
   // ─── 2026-06-15 新增節點（階段 B）：退化性關節炎/骨關節炎 ───
   { id: 'SURG-L3-019', specialty: 'SURG', title: '退化性關節炎/骨關節炎', title_en: 'Osteoarthritis / Degenerative Joint Disease (OA/DJD)', layer: 3, node_type: 'disease', difficulty: 3, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['OA', 'DJD', '骨關節炎', '慢性疼痛', 'Librela', 'Solensia', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'NEURO - 慢性疼痛敏化; ONCO-L5-003 腫瘤疼痛管理; ECC-L5-004 止痛策略; 抗 NGF 單株抗體（bedinvetmab/frunevetmab）', created_at: now, updated_at: now },
+  // ─── 2026-06-15 新增節點（階段 B）：牙周病 ───
+  { id: 'SURG-L3-020', specialty: 'SURG', title: '犬貓牙周病', title_en: 'Periodontal Disease', layer: 3, node_type: 'disease', difficulty: 2, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['牙周病', 'periodontal', '牙科', 'COHAT', 'AVDC', '口臭', '貓齒吸收', 'FCGS', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'ONCO-L3-005 口腔腫塊鑑別; IM-L5-006 抗生素管理（不取代機械治療）; 全身性關聯（腎/肝/心）僅為關聯非因果', created_at: now, updated_at: now },
 
   // ─── 2026-05-18 P2 麻醉急症補完（1 node）───
   { id: 'SURG-L5-006', specialty: 'SURG', title: '麻醉惡性高熱', title_en: 'Malignant Hyperthermia (MH)', layer: 5, node_type: 'therapeutic', difficulty: 5, estimated_minutes: 25, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['麻醉', '惡性高熱', 'dantrolene', 'isoflurane', '急症'], encyclopedia_link: null, cross_specialty_notes: 'ECC - 高熱與酸鹼急救; 罕見但致命', created_at: now, updated_at: now },

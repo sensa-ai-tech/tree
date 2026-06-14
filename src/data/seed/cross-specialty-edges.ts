@@ -1544,4 +1544,27 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: true,
     unlock_condition: null,
   },
+
+  // ─── SURG ↔ ONCO（牙周病 ↔ 口腔黑色素瘤：口腔腫塊鑑別，2026-06-15 新增節點連結） ───
+  {
+    id: 'CROSS-SURG-ONCO-001',
+    source_node_id: 'SURG-L3-020',  // 牙周病
+    target_node_id: 'ONCO-L3-005',  // 口腔黑色素瘤
+    relation_type: 'differential',
+    weight: 0.75,
+    description: '口腔腫塊/牙齦病灶須鑑別：牙周病的牙齦增生 vs 口腔腫瘤（黑色素瘤、SCC、纖維肉瘤）——持續性或破壞性病灶應切片',
+    bidirectional: true,
+    unlock_condition: null,
+  },
+  // ─── SURG ↔ IM（牙周病抗生素使用 ↔ 抗菌藥物管理，2026-06-15 新增節點連結） ───
+  {
+    id: 'CROSS-SURG-IM-001',
+    source_node_id: 'SURG-L3-020',  // 牙周病
+    target_node_id: 'IM-L5-006',    // 抗生素合理用藥
+    relation_type: 'clinical_apply',
+    weight: 0.7,
+    description: '牙周病抗生素使用須遵循抗菌藥物管理：抗生素不取代機械性刮治/拔牙，僅特定嚴重/圍手術期個案使用',
+    bidirectional: true,
+    unlock_condition: null,
+  },
 ];
