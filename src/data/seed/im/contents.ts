@@ -7789,6 +7789,127 @@ const contentObesity: NodeContent = {
   created_at: now,
 };
 
+/** 疫苗接種與預防醫學，治療/概念型（2026-06-15 新增節點）。臨床內容待 DVM 覆核；台灣法規須向農業部/防檢署查核。 */
+const contentVaccination: NodeContent = {
+  id: 'CONTENT-IM-L5-005',
+  node_id: 'IM-L5-005',
+  version: 1,
+  summary:
+    '犬貓疫苗接種以「核心 vs 非核心疫苗」為核心架構：核心疫苗（犬 CDV/CAV/CPV/狂犬病；貓 FPV/FHV-1/FCV/狂犬病）每隻動物都應施打，非核心疫苗依生活型態與地區風險評估。幼齡系列須在滿 16 週齡後完成最後一劑以突破母源抗體，成年核心 MLV 多採每 3 年追加，狂犬病依當地法規。現行準則為 WSAVA 2024（取代 2016），AAHA 2024 已將鉤端螺旋體列為核心。台灣自 2013 鼬獾狂犬病再現後狂犬病疫苗具法定重要性，且鉤端螺旋體與心絲蟲為本地流行病。',
+  learning_objectives: [
+    '區分犬與貓的核心與非核心疫苗，並說明分類依據（疾病嚴重度、分布、人畜共通風險）',
+    '解釋母源抗體干擾與「易感空窗期」，並說明幼齡系列為何須在滿 16 週齡後完成最後一劑',
+    '陳述成年動物核心疫苗轉為每 3 年追加的依據，以及狂犬病須依法規施打的原則',
+    '說明抗體效價檢測（CDV/CAV/CPV；FPV）作為替代自動補種的用途與限制',
+    '比較減毒活毒（MLV）、不活化、重組型疫苗特性，並說明貓選用非佐劑/重組疫苗以降低 FISS 風險',
+    '辨識疫苗不良反應與貓注射部位肉瘤（FISS），並指出正確注射部位（四肢遠端/尾部）',
+  ],
+  key_points: [
+    '核心疫苗適用所有犬貓；非核心疫苗依個別風險評估給予',
+    '幼犬貓系列須施打到滿 16 週齡以上才完成，以突破不可預測的母源抗體',
+    '系列完成後於 6 個月～1 歲追加一劑，確保未轉陰個體獲得保護',
+    '成年核心 MLV 疫苗每 3 年追加即可，年年補打核心疫苗屬過度接種',
+    'WSAVA 2016（Day 等）已由 WSAVA 2024（Squires 等）取代；AAHA 2022 經 2024 更新後將鉤端螺旋體列為核心',
+    '核心 MLV 抗原有抗體即代表受保護，可用效價檢測替代自動補種；但不適用於鉤端螺旋體等，且不可取代法定狂犬病補種',
+    '貓疫苗應打在四肢遠端或尾部、絕不打肩胛間，並優先選非佐劑/重組疫苗以降低 FISS 風險',
+    '台灣：狂犬病自 2013 鼬獾再現後具法定重要性；鉤端螺旋體（人畜共通）與心絲蟲為本地流行病（法規細節須向農業部/防檢署查核）',
+  ],
+  body: `# 疫苗接種與預防醫學 (Vaccination & Preventive Medicine)
+
+> ⚠️ 臨床內容須由具執照獸醫師覆核；台灣疫苗法規（狂犬病施打間隔/物種範圍）請向農業部動植物防疫檢疫署查核。
+
+## 一、核心 vs 非核心疫苗架構 (Core vs Non-core)
+
+核心/非核心是小動物疫苗學的組織原則：**核心疫苗**針對全球分布、可致死/具人畜共通風險之病原，不分生活型態每隻都應接種；**非核心疫苗**依個別風險（地理、生活型態、密度、暴露）評估給予。
+
+**犬—核心**：犬瘟熱（CDV）、犬腺病毒（CAV-2，交叉保護 CAV-1 傳染性肝炎）、犬小病毒（CPV-2）、狂犬病（流行/法定地區為核心）。
+**犬—非核心（風險導向）**：鉤端螺旋體、博德氏菌、副流感（CPiV）、犬流感（CIV）、萊姆病（地區性）。
+- ⚠️ **更新**：**AAHA 2022 於 2024 年更新，將鉤端螺旋體改列為會外出犬隻（≥12 週齡）的核心疫苗**（依 ACVIM/WSAVA 共識）。對台灣（鉤端螺旋體流行）尤其相關——應視為核心/強烈建議，而非傳統「非核心」。
+
+**貓—核心**：貓泛白血球減少症（FPV）、貓皰疹病毒（FHV-1）、貓卡里西病毒（FCV）、狂犬病（流行/法定地區）。
+**貓—非核心/情境**：貓白血病（**FeLV——2020 AAHA/AAFP 建議所有 <1 歲幼貓為核心**，成貓再依風險）、披衣菌、博德氏菌。
+
+**現行準則**：WSAVA 2024（Squires 等，取代 2016 Day 等）、AAHA 2022 犬（含 2024 鉤端核心更新）、AAHA/AAFP 2020 貓。
+
+## 二、幼齡系列與時機：母源抗體干擾 (Puppy/Kitten Series & MDA)
+
+幼齡疫苗最重要的觀念是**母源抗體（MDA）干擾**：初乳抗體保護新生兒，同時**中和疫苗抗原**造成疫苗失效；MDA 消退速率因個體而異，存在一段「**易感空窗期**」——MDA 已不足以保護、卻仍足以阻斷疫苗。
+
+- 因 MDA 消退時機不一，採**一系列**接種，使至少一劑落在 MDA 消退後。**最後一劑必須在滿 16 週齡（部分準則延至 16–20 週）以後**。
+- 典型排程：**6–8 週**起始，**每 2–4 週一劑直到 ≥16 週**（如 8、12、16 週）。
+- **6 個月（WSAVA 2024 偏好）或 6–12 個月追加一劑**收尾，補足幼齡未轉陰個體。
+
+## 三、成年補種間隔：三年制 (Triennial)
+
+完成適當幼齡系列＋約 12 個月追加的成年犬貓，**核心 MLV 疫苗（CDV/CAV/CPV、FPV）免疫持續期 ≥3 年**，故建議核心 MLV **每 3 年補種即可**，年年補打核心屬過度接種。
+- **狂犬病**：間隔（1 年 vs 3 年劑型）依**當地法規與產品許可**，非單以免疫學決定。
+- **非核心/不活化抗原**（鉤端、博德氏菌、CIV、披衣菌、FeLV）免疫持續期短，多需**每年**追加。
+
+## 四、抗體效價檢測 (Titer Testing)
+
+核心 MLV 抗原（犬 CDV/CAV/CPV、貓 FPV）**有抗體即與保護力高度相關**，正抗體可作為保護的可靠替代指標，故效價檢測可替代自動的三年補種。
+- **用途**：確認幼齡系列後是否轉陰（尤其最後一劑 <16 週時）；判斷成年是否真需補種；管理收容所疫情；安撫擔心過度接種的飼主。
+- **限制**：負/低效價未必代表不受保護（記憶/細胞免疫可能仍在），但實務上多視為「需補種」；效價僅對核心 MLV 抗原有效，**不適用**鉤端、博德氏菌等；**狂犬病效價不能豁免法定補種**（用於旅行/檢疫，如 FAVN/RNATT）。
+
+## 五、疫苗技術類型 (Vaccine Technology)
+
+| 類型 | 例子 | 意涵 |
+|------|------|------|
+| 減毒活毒（MLV） | CDV、CAV-2、CPV-2、FPV、FHV-1、FCV | 單一有效劑即可快速、長效免疫，較能克服低 MDA；**孕期/免疫抑制慎用**，理論上有回復毒力風險 |
+| 不活化/killed | 傳統狂犬病、鉤端、披衣菌、部分 FeLV | 孕期/免疫抑制安全；常需 ≥2 劑啟動＋佐劑；**佐劑與貓 FISS 相關**、局部發炎較多 |
+| 重組/載體 | 金絲雀痘載體狂犬病與 FeLV（貓）、重組 CDV | 非佐劑、兼具 MLV 級效力與 killed 安全性；**貓建議優先用以降低 FISS 風險** |
+
+## 六、不良反應與安全 (Adverse Events & Safety)
+
+- **第一型過敏/過敏性休克**（分鐘～數小時）：顏面/眼周水腫、蕁麻疹、嘔吐、虛脫、低血壓——視為急症（epinephrine ± 抗組織胺/類固醇）；有病史者下次預先給藥或分次施打（小型犬風險較高）。
+- **自限性反應**：接種後嗜睡、短暫發燒、注射部位痠痛 24–48 小時，常見且良性。
+- **貓注射部位肉瘤（FISS）**：注射部位產生的侵襲性軟組織肉瘤，歷史上與**佐劑型疫苗（狂犬病、FeLV）**相關。重點：
+  - **注射在四肢盡量遠端**（膝/肘以下）或**尾部**，**絕不打肩胛間**——遠端發生肉瘤時可截肢根治。
+  - 優先用**非佐劑/重組貓疫苗**。
+  - **「3-2-1 法則」**：注射後腫塊持續 **>3 個月、>2 cm、或注射後 >1 個月仍在增大** → 切片/轉診。
+  - **交叉連結**：FISS 之診斷/分期/廣切與腫瘤治療見 FISS 節點。
+
+## 七、台灣在地考量 (Taiwan) ⚠️ 法規須向農業部/防檢署查核
+
+- **狂犬病**：台灣曾約 52 年無家養肉食動物狂犬病，但 **2013 年於野生鼬獾再現**（2013/7 確認），逆轉長年自滿。**犬（貓）狂犬病疫苗在台具法定重要性**——施打間隔/物種範圍請依現行法規確認。臨床訊息：在台灣狂犬病為核心且具法定強制性，不可視為選配。
+- **鉤端螺旋體**：台灣溫暖潮濕、鼠患、易淹水環境下**流行且人畜共通**，正呼應 2024 AAHA 將鉤端列為外出犬核心。
+- **多貓家庭/收容所/TNR**：密度高 → FPV/FHV-1/FCV 與 **FeLV** 暴露壓力大，支持幼貓 FeLV 核心化與入所即接種。
+- **心絲蟲（Dirofilaria immitis）**：亞熱帶多蚊環境下**流行**，全年預防是預防醫學的基石（與疫苗並行但獨立）。
+
+## 八、廣義預防醫學 (Broader Preventive Medicine)
+
+疫苗是健康計畫的一根支柱，其餘包括：**心絲蟲預防**（每月巨環內酯，台灣流行）、**腸道寄生蟲控制**（蛔/鉤/鞭蟲、絛蟲，多具人畜共通）、**外寄生蟲控制**（蚤/蜱——壁蝨媒介疾病＋跳蚤過敏）、**定期健康檢查**（即使當年無核心疫苗到期，年度回診仍是關鍵接觸點——「年度健檢，而非年度打針」），以及營養、牙科與生殖諮詢。
+`,
+  clinical_pearl:
+    '核心 MLV 抗原（犬 CDV/CAV/CPV；貓 FPV）的抗體效價是「是否受保護」的可靠替代指標——但僅限這些抗原。效價無法用於判斷鉤端螺旋體/博德氏菌是否需補打，也絕不能用來規避法定的狂犬病補種。',
+  common_mistakes: [
+    '幼犬貓系列在 16 週齡前就停止——母源抗體可能仍在阻斷，是犬小病毒/貓泛白血球減少症突破感染的首要原因',
+    '在貓的肩胛間注射——一旦發生 FISS，會把原本可手術切除的遠端腫瘤變成幾乎致命的軀幹腫瘤；應打四肢遠端或尾部',
+    '健康成犬貓每年補打核心疫苗——屬過度接種，核心 MLV 應為每 3 年',
+    '把抗體效價當作可跳過法定狂犬病補種的理由——效價不能凌駕法規',
+    '以「室內、低風險」為由在台灣略過狂犬病或鉤端螺旋體疫苗——兩者在台灣分別具法定重要性與本地流行性',
+  ],
+  disease_data: null,
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '核心/非核心段落後', type: 'comparison_table', description: '犬貓核心 vs 非核心疫苗對照表（含 2024 鉤端核心更新）' },
+    { position: '幼齡系列段落後', type: 'timeline', description: '幼犬貓疫苗排程時間軸（6–8 週起至 ≥16 週 + 6–12 月追加）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: [],
+  references: [
+    { type: 'guideline', citation: 'Squires RA, Crawford C, Marcondes M, Whitley N. 2024 guidelines for the vaccination of dogs and cats (WSAVA Vaccination Guidelines Group). J Small Anim Pract. 2024;65(5):277-316. doi:10.1111/jsap.13718.', relevance: '現行全球通用犬貓疫苗準則（取代 2016 Day 版）：核心/非核心、幼齡系列、每 3 年追加' },
+    { type: 'guideline', citation: 'Day MJ, Horzinek MC, Schultz RD, Squires RA. WSAVA Guidelines for the vaccination of dogs and cats. J Small Anim Pract. 2016;57(1):E1-E45. doi:10.1111/jsap.2_12431.', relevance: '奠基性 WSAVA 2016 準則（已被 2024 取代，仍為重要概念參考）：核心/非核心與母源抗體干擾概念' },
+    { type: 'guideline', citation: 'Ellis J, Marziani E, Aziz C, et al. 2022 AAHA Canine Vaccination Guidelines (updated 2024: leptospirosis reclassified as core for outdoor dogs). J Am Anim Hosp Assoc. 2022;58(5):213-230.', relevance: '美國 AAHA 犬疫苗準則；2024 更新將鉤端列核心，對台灣（鉤端流行）高度相關' },
+    { type: 'guideline', citation: 'Stone AES, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg. 2020;22(9):813-830. doi:10.1177/1098612X20941784.', relevance: '現行貓疫苗準則：貓核心疫苗、幼貓 FeLV 核心建議、FISS 與注射部位' },
+    { type: 'guideline', citation: 'Hartmann K, Day MJ, Thiry E, et al. Feline injection-site sarcoma: ABCD guidelines on prevention and management. J Feline Med Surg. 2015;17(7):606-613. doi:10.1177/1098612X15588451.', relevance: '貓注射部位肉瘤（FISS）預防與處置：四肢遠端/尾部注射、非佐劑優先、3-2-1 追蹤' },
+    { type: 'journal', citation: 'Hsu CH, Chu YH, Wang CY, et al. Public Health Responses to Reemergence of Animal Rabies, Taiwan, July 16–December 28, 2013. PLOS ONE. 2015;10(7):e0132160. doi:10.1371/journal.pone.0132160.', relevance: '台灣 2013 鼬獾狂犬病再現紀錄，支持台灣狂犬病疫苗的法定與臨床重要性（法規細節仍須查核）' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 export const IM_CONTENTS = new Map<string, NodeContent>([
   // L0 Overview
   ['IM-L0-001', contentIMOverview],
@@ -7836,6 +7957,7 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L5-002', contentEndocrineTherapy],
   ['IM-L5-003', contentImmunosuppression],
   ['IM-L5-004', contentGITherapy],
+  ['IM-L5-005', contentVaccination],
   // Respiratory & Infectious expansion
   ['IM-L1-005', contentRespiratoryPhysiology],
   ['IM-L2-007', contentAirwayInflammation],

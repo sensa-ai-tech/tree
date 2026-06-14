@@ -1520,4 +1520,16 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: true,
     unlock_condition: null,
   },
+
+  // ─── IM ↔ ONCO（疫苗注射部位 ↔ 貓注射部位肉瘤，2026-06-15 新增節點連結） ───
+  {
+    id: 'CROSS-IM-ONCO-001',
+    source_node_id: 'IM-L5-005',    // 疫苗接種與預防醫學
+    target_node_id: 'ONCO-L3-008',  // 貓注射部位肉瘤 (FISS)
+    relation_type: 'complication',
+    weight: 0.8,
+    description: '貓疫苗（尤其佐劑型）與注射部位肉瘤（FISS）相關：故注射應選四肢遠端/尾部、優先非佐劑疫苗，並依 3-2-1 法則追蹤腫塊',
+    bidirectional: true,
+    unlock_condition: null,
+  },
 ];

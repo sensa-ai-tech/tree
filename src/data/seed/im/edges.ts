@@ -259,4 +259,9 @@ export const IM_EDGES: KnowledgeEdge[] = [
   { id: 'IM-E-137', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-031', relation_type: 'prerequisite', weight: 0.9, description: '內分泌系統生理（能量代謝、胰島素作用）是理解肥胖之脂肪內分泌與胰島素阻抗的前置知識', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-138', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-031', relation_type: 'builds_on', weight: 0.8, description: '內分泌失調機轉（脂肪激素、慢性低度發炎）延伸至肥胖之病理', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-139', source_node_id: 'IM-L3-031', target_node_id: 'IM-L3-006', relation_type: 'complication', weight: 0.9, description: '肥胖造成胰島素阻抗，是糖尿病（尤其貓）的重要可控危險因子', bidirectional: false, unlock_condition: null },
+
+  // ─── IM-L5-005 疫苗接種與預防醫學 連接邊（2026-06-15 新增節點）───
+  { id: 'IM-E-140', source_node_id: 'IM-L1-002', target_node_id: 'IM-L5-005', relation_type: 'prerequisite', weight: 0.9, description: '免疫學基礎（體液/細胞免疫、記憶反應）是理解疫苗作用與母源抗體干擾的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-141', source_node_id: 'IM-L5-005', target_node_id: 'IM-L3-028', relation_type: 'clinical_apply', weight: 0.9, description: '核心疫苗（FPV）為貓泛白血球減少症最主要的預防手段', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-142', source_node_id: 'IM-L5-005', target_node_id: 'IM-L3-016', relation_type: 'clinical_apply', weight: 0.8, description: '鉤端螺旋體疫苗（2024 AAHA 列核心）為外出犬之重要預防，且具人畜共通防護意義', bidirectional: false, unlock_condition: null },
 ];
