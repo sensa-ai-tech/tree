@@ -254,4 +254,9 @@ export const IM_EDGES: KnowledgeEdge[] = [
   { id: 'IM-E-134', source_node_id: 'IM-L3-026', target_node_id: 'IM-L4-005', relation_type: 'clinical_apply', weight: 1.0, description: '犬慢性肝炎的活動性監測與銅蓄積評估需要序列性肝酵素追蹤搭配膽汁酸試驗（空腹 vs 餐後 2h）', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-135', source_node_id: 'IM-L3-019', target_node_id: 'IM-L4-005', relation_type: 'clinical_apply', weight: 0.9, description: '貓膽管炎（膽汁鬱滯型/免疫介導型）的 GGT/ALP/膽汁酸評估是監測膽管功能的核心工具', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-136', source_node_id: 'NEURO-L4-006', target_node_id: 'IM-L4-005', relation_type: 'cross_specialty', weight: 0.9, description: 'PB（苯巴比妥）誘發 ALP 升高需用膽汁酸試驗鑑別真性肝毒性（膽汁酸正常＝酵素誘導非肝損傷；膽汁酸升高＝真性肝毒性需評估換藥）', bidirectional: false, unlock_condition: null },
+
+  // ─── IM-L3-031 肥胖症 連接邊（2026-06-15 新增節點）───
+  { id: 'IM-E-137', source_node_id: 'IM-L1-004', target_node_id: 'IM-L3-031', relation_type: 'prerequisite', weight: 0.9, description: '內分泌系統生理（能量代謝、胰島素作用）是理解肥胖之脂肪內分泌與胰島素阻抗的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-138', source_node_id: 'IM-L2-002', target_node_id: 'IM-L3-031', relation_type: 'builds_on', weight: 0.8, description: '內分泌失調機轉（脂肪激素、慢性低度發炎）延伸至肥胖之病理', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-139', source_node_id: 'IM-L3-031', target_node_id: 'IM-L3-006', relation_type: 'complication', weight: 0.9, description: '肥胖造成胰島素阻抗，是糖尿病（尤其貓）的重要可控危險因子', bidirectional: false, unlock_condition: null },
 ];

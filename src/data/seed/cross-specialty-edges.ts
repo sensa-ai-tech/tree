@@ -1508,4 +1508,16 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: true,
     unlock_condition: null,
   },
+
+  // ─── IM ↔ SURG（肥胖 ↔ 退化性關節炎，2026-06-15 新增節點連結） ───
+  {
+    id: 'CROSS-IM-SURG-001',
+    source_node_id: 'IM-L3-031',   // 肥胖症
+    target_node_id: 'SURG-L3-019', // 退化性關節炎/OA
+    relation_type: 'complication',
+    weight: 0.9,
+    description: '肥胖是退化性關節炎的頭號可控危險因子：增加機械負荷並透過脂肪激素加重關節發炎；體重控制是 OA 最具實證的介入',
+    bidirectional: true,
+    unlock_condition: null,
+  },
 ];

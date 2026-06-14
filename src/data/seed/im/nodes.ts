@@ -88,4 +88,7 @@ export const IM_NODES: KnowledgeNode[] = [
 
   // ─── 2026-06-07 自我演化 iter 4 新增（藥物基因體學 1 node）───
   { id: 'IM-L3-030', specialty: 'IM', title: 'MDR1 (ABCB1-1Δ) 基因突變與伊維菌素中毒', title_en: 'MDR1 (ABCB1-1Δ) Mutation & Ivermectin Toxicity', layer: 3, node_type: 'disease', difficulty: 4, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 5, status: 'published', version: 1, tags: ['MDR1', 'ABCB1', 'P-glycoprotein', 'ivermectin', 'macrocyclic lactone', 'lipid emulsion', '柯利犬', 'collie', 'sheltie', '藥物基因體學', '犬'], encyclopedia_link: null, cross_specialty_notes: 'NEURO - ivermectin 神經毒性 / 高血壓性腦病鑑別；ONCO - vincristine/doxorubicin 化療藥物毒性放大；CARDIO - 心絲蟲預防劑用藥安全；ECC - IV lipid emulsion (ILE) 中毒急救', created_at: now, updated_at: now },
+
+  // ─── 2026-06-15 新增節點（階段 B）：肥胖症 ───
+  { id: 'IM-L3-031', specialty: 'IM', title: '犬貓肥胖症', title_en: 'Canine & Feline Obesity', layer: 3, node_type: 'disease', difficulty: 2, estimated_minutes: 30, clinical_relevance: 5, exam_relevance: 4, status: 'published', version: 1, tags: ['肥胖', 'obesity', 'BCS', 'MCS', '體重管理', 'RER', '慢性發炎', '犬貓'], encyclopedia_link: null, cross_specialty_notes: 'SURG-L3-019 退化性關節炎（體重為最強可控因子）；IM-L3-006 糖尿病（尤其貓）；SURG-L3-010 BOAS；鑑別甲狀腺低下/Cushing', created_at: now, updated_at: now },
 ];
