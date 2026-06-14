@@ -6,7 +6,7 @@ const now = '2026-02-15T00:00:00Z';
 const contentCKD: NodeContent = {
   id: 'CONTENT-IM-L3-004',
   node_id: 'IM-L3-004',
-  version: 1,
+  version: 2,
   summary: '慢性腎病（CKD）是犬貓最常見的腎臟疾病，年紀越大盛行率越高。IRIS（International Renal Interest Society）把 CKD 切成四期，靠血清肌酐（Creatinine）跟 SDMA 來分。早一點抓到、好好管理，存活時間可以拉長很多。',
   learning_objectives: [
     '運用 IRIS 分期系統正確分類 CKD 病患',
@@ -21,6 +21,7 @@ const contentCKD: NodeContent = {
     '亞分期別忘了蛋白尿（UPC）跟血壓',
     '飲食管理走腎臟處方飲食：限磷、適量蛋白、加 omega-3',
     '藥物上 Benazepril 或 Telmisartan 抗蛋白尿、磷結合劑、紅血球生成素都會用到',
+    'IRIS 2023 治療更新：抗蛋白尿首選 ARB（telmisartan）優先於 ACEI、目標改為 UPC 下降 50%、蛋白流失性腎病抗血栓首選 clopidogrel（待 DVM 覆核）',
     '15 歲以上的貓，CKD 盛行率超過三成',
   ],
   body: `# 慢性腎病 (Chronic Kidney Disease, CKD)
@@ -78,6 +79,19 @@ CKD 的核心問題就兩個：腎元（nephron）回不來，加上腎小管間
 證據等級這邊講清楚：腎臟處方飲食延長存活是 Level I，RCT 證實能拉長 2-3 倍。Benazepril 跟 Telmisartan 抗蛋白尿是 Level I。磷結合劑 Level II。
 
 飲食的重點，限磷不能省（目標血磷 Stage 1-2 <4.5、Stage 3 <5.0、Stage 4 <6.0 mg/dL）。蛋白質適量就好，貓尤其不要限太兇。Omega-3（EPA/DHA）有腎保護的效果，貓也建議濕食。
+
+### IRIS 2023 治療更新與近期實證（待 DVM 覆核）
+
+| 主題 | IRIS 2023 / 近期實證 | 證據 |
+|------|---------------------|------|
+| 蛋白尿首選 | 犬貓皆把 **ARB（telmisartan）排在 ACEI 之前**作為抗蛋白尿首選 | 指引 + RCT（貓 Sent 2015：telmisartan 降蛋白尿優於 benazepril，惟未證實延長存活）|
+| 蛋白尿治療目標 | 由「UPC < 0.5」改為更務實的「**UPC 下降 50%**」 | IRIS 2023 |
+| 抗血栓（蛋白流失性腎病高凝風險）| **Clopidogrel 為首選**；2023 取消「白蛋白 < 2.0 g/dL」作為啟動抗血栓的硬性條件 | IRIS 2023 |
+| 限磷時機 | 對血磷已落在該分期目標內的貓，可用 **FGF23** 進一步判斷是否仍需限磷；FGF23 升高早於血磷／PTH，亦為不良預後標記（犬即使血磷正常，FGF23 升高也預測未來高磷與惡化）| 指引 + 預後研究 |
+| 食慾／體重（貓）| **Capromorelin（Elura）** 2025 RCT：CKD 併非預期體重減輕貓 55 天增重 +5.18%（安慰劑 −1.65%，P<0.0001）。禁用於肢端肥大症，糖尿病貓謹慎（會抑制葡萄糖刺激之胰島素分泌）| RCT（2025）|
+| 移除項目 | IRIS 2023 移除 Stage 3-4 calcitriol 之例行建議 | 指引 |
+
+> 以上為文獻更新；劑量／禁忌與個案分期請由主治獸醫師確認。Beraprost（區域性、回溯性證據）與 rapamycin（試驗中、尚無發表結果）不列入常規建議。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -161,7 +175,10 @@ CKD 的核心問題就兩個：腎元（nephron）回不來，加上腎小管間
   ],
   drug_api_links: ['Benazepril', 'Telmisartan', 'Aluminum hydroxide', 'Maropitant', 'Darbepoetin'],
   references: [
-    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Staging of CKD (Modified 2023). Available at: http://www.iris-kidney.com/', relevance: 'CKD 分期與治療指引標準' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Staging of CKD & Treatment Recommendations for Dogs and Cats (Modified 2023). Available at: http://www.iris-kidney.com/', relevance: 'CKD 分期與治療指引標準；2023 變動：ARB 優於 ACEI、UPC 目標改為下降 50%、clopidogrel 首選抗血栓、FGF23 指引限磷、移除 Stage 3-4 calcitriol 例行建議' },
+    { type: 'journal', citation: 'Wofford JA, Milliken MacKinnon A, Heinen E. "Capromorelin promotes weight gain in cats with unintended weight loss: a randomized, masked, placebo-controlled clinical trial." J Feline Med Surg. 2025;27(11):1098612X251379924. doi:10.1177/1098612X251379924.', relevance: '2025 RCT：capromorelin（Elura）在 CKD 貓顯著增重（待 DVM 覆核；肢端肥大症禁用、糖尿病謹慎）' },
+    { type: 'journal', citation: 'Sent U, Gössl R, Elliott J, Syme HM, Zimmering T. "Comparison of Efficacy of Long-term Oral Treatment with Telmisartan and Benazepril in Cats with Chronic Kidney Disease." J Vet Intern Med. 2015;29(6):1479-1487. doi:10.1111/jvim.13639.', relevance: '定義性 RCT：telmisartan 降蛋白尿不劣於且優於 benazepril，惟未證實延長存活' },
+    { type: 'journal', citation: 'Miyakawa H et al. "Association between serum FGF-23 concentration and development of hyperphosphatemia in normophosphatemic dogs with chronic kidney disease." J Vet Intern Med. 2021;35(5):2296-2305. doi:10.1111/jvim.16237.', relevance: '犬即使血磷正常，FGF23 升高即預測未來高磷與惡化，支持提前限磷與 FGF23 預後判讀' },
     { type: 'journal', citation: 'Polzin DJ. "Chronic Kidney Disease in Small Animals." Vet Clin North Am Small Anim Pract. 2011;41(1):15-30.', relevance: 'CKD 管理綜合回顧' },
     { type: 'guideline', citation: 'Lees GE et al. "Assessment and Management of Proteinuria in Dogs and Cats: 2004 ACVIM Forum Consensus Statement." J Vet Intern Med. 2005;19(3):377-385.', relevance: '蛋白尿評估與管理共識' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: 'CKD 基礎教材' },
