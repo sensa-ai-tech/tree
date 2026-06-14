@@ -333,8 +333,8 @@ const contentTumorCytology: NodeContent = {
 const contentMCT: NodeContent = {
   id: 'CONTENT-ONCO-L3-002',
   node_id: 'ONCO-L3-002',
-  version: 1,
-  summary: '犬肥大細胞瘤（Mast Cell Tumor, MCT）是犬皮膚最常見的惡性腫瘤，大約占所有犬皮膚腫瘤 16 到 21%。臨床表現變化很大，可以是單一小結節，也可以是多發侵襲性腫塊。分級系統現在主流是 Kiupel 二級（低度跟高度），已經取代了舊的 Patnaik 三級。手術是第一線治療，切緣 lateral 要 2 到 3 cm、deep 一個 fascial plane。c-KIT 突變檢測可以決定要不要用標靶治療（Toceranib 或 Masitinib）。',
+  version: 2,
+  summary: '犬肥大細胞瘤（Mast Cell Tumor, MCT）是犬皮膚最常見的惡性腫瘤，大約占所有犬皮膚腫瘤 16 到 21%。臨床表現變化很大，可以是單一小結節，也可以是多發侵襲性腫塊。分級系統現在主流是 Kiupel 二級（低度跟高度），已經取代了舊的 Patnaik 三級。手術是第一線治療，近年實證支持低度 MCT 採「比例式切緣」（側緣＝腫瘤直徑、上限 2 cm）。2020 年 FDA 核准瘤內注射劑 tigilanol tiglate（Stelfonta）作為不可切除/拒絕手術腫瘤的非手術選項。c-KIT 突變檢測可以決定要不要用標靶治療（Toceranib 或 Masitinib）。',
   learning_objectives: [
     '比較 Patnaik 三級與 Kiupel 二級 MCT 分級系統',
     '描述 MCT 手術切緣的標準建議與切緣評估',
@@ -346,8 +346,9 @@ const contentMCT: NodeContent = {
     '犬最常見的皮膚惡性腫瘤，大約占所有皮膚腫瘤 16 到 21%',
     '好發品種包括拳師犬 MCT、Boston Terrier、拉布拉多、黃金、巴哥、Bulldog',
     'Kiupel 二級分級（2011）：低度（low-grade）跟高度（high-grade），判讀標準是有絲分裂指數、多核細胞、奇異核、核分裂異常',
-    '手術切緣標準：lateral 至少 2 cm，deep 至少一個 fascial plane',
+    '手術切緣：傳統 lateral 2-3 cm；近年實證支持低度 MCT 採比例式切緣（側緣＝腫瘤直徑、上限 2 cm）+ deep 一個 fascial plane，與 3 cm 廣切等效',
     'c-KIT 突變（exon 11 最常見）是預後較差的指標，也是 TKI 標靶治療的適應症',
+    'Tigilanol tiglate（Stelfonta，FDA 2020）瘤內注射為不可切除/拒絕手術 MCT 的非手術選項，但**必須**前置 H1+H2+類固醇防去顆粒（劑量待 DVM 依仿單覆核）',
     '組織胺釋放會引起的副作用：Darier sign（搓揉後局部紅腫）、胃潰瘍、低血壓',
   ],
   body: `# 肥大細胞瘤 (MCT)
@@ -390,6 +391,22 @@ const contentMCT: NodeContent = {
 ### 副腫瘤管理
 搭配的藥物有 [藥物:Famotidine] 0.5-1 mg/kg PO BID（H2 blocker，預防胃潰瘍）、[藥物:Diphenhydramine] 2-4 mg/kg PO BID（H1 blocker）。
 
+### 2020–2025 新藥與切緣實證更新（待 DVM 覆核）
+
+**瘤內注射 tigilanol tiglate（Stelfonta / EBC-46）—— 非手術新選項**
+FDA 於 **2020/11/9** 核准（EMA 2020 初已核准），適應症為**不可轉移之皮膚 MCT（全身任何部位）**與**位於肘關節或跗關節以下之不可轉移皮下 MCT**。機轉為 **PKC 活化劑**（取自 *Fontainea picrosperma* 種子），瘤內注射後造成腫瘤局部壞死、血管破壞，留下開放性傷口以二期癒合（多數 4–6 週收口，傷口常大於原腫瘤，屬預期非併發症）。關鍵 RCT：單次治療 28 天完全反應率約 **75%**，再治療後整體約 **88%**。
+
+> ⚠️ **務必執行的前置給藥（防大量去顆粒／溶瘤反應，依美國仿單）**：
+> - **Prednisolone 0.5 mg/kg PO q12h**，治療前 2 天開始，約 10 天（後段轉 q24h）
+> - **Diphenhydramine（H1）2 mg/kg PO q12h**，治療當天起共 8 天
+> - **Famotidine（H2）0.5 mg/kg PO q12h**，治療當天起共 8 天
+>
+> 省略前置給藥可能引發大量組織胺去顆粒（低血壓、胃腸潰瘍）。**實際劑量請以當地現行仿單為準，由執業獸醫師確認。**
+
+**手術切緣可「比例化」縮小（低惡性度）**：針對 grade I/II 皮膚 MCT，**側緣＝腫瘤直徑（上限 2 cm）+ 深層一個筋膜層**，完整切除率（~93%）與傳統 3 cm 廣切（~92%）相當（Chu 2020）；100 例比例切緣研究局部復發率僅約 **3%**（Saunders 2021）。對低度腫瘤可採組織保留式手術，不必一律 3 cm。
+
+**Kiupel 二級分級延伸驗證**：2024 年研究顯示二級分級可辨識具侵襲行為的 MCT，**且不受生長型態影響（皮膚與皮下皆適用）**（Sabattini 2024），填補 2011 原始系統對皮下型的空白。
+
 [圖片:MCT FNA 細胞學典型影像，嗜鹼性顆粒圓形細胞]
 
 ## 四、併發症與監控 (Complications & Monitoring)
@@ -416,7 +433,9 @@ MCT 併發症主要來自組胺跟肝素大量釋放（脫顆粒），會造成�
 | Patnaik Grade II 的預後異質性，是否應全面採用 Kiupel 二級制？ | Kiupel 再現性較好但可能遺漏部分中間風險群，Ki-67/c-KIT 輔助有助分層 | Level II |
 | 低度 MCT 切緣乾淨後是否仍需輔助化療？ | 多數共識認為不需要，但 Ki-67 > 23 或 c-KIT pattern 2/3 可能受益 | Level III |
 | MCT 前哨淋巴結（SLN）活檢的臨床價值 | SLN mapping 可發現觸診正常淋巴結的轉移，但標準化流程仍在建立 | Level III |
-| 多發性低度 MCT 的最佳管理策略 | 同時多發 vs 異時多發預後不同，是否需全身化療尚無共識 | Level IV |`,
+| 多發性低度 MCT 的最佳管理策略 | 同時多發 vs 異時多發預後不同，是否需全身化療尚無共識 | Level IV |
+| 比例式切緣是否可全面取代固定 2-3 cm | grade I/II RCT/世代研究支持側緣＝直徑（上限 2 cm）等效，high-grade 仍宜廣切 | Level II |
+| Tigilanol tiglate 相對手術的定位 | 對不可切除/拒絕手術或高手術風險部位有價值；與廣切的長期頭對頭數據仍有限 | Level II |`,
   clinical_pearl: 'MCT 的 FNA 細胞學診斷率超過 90%，因為肥大細胞的嗜鹼性顆粒在 Diff-Quick 染色下很有特徵。要注意的是：low-grade 分化差（high-grade）的 MCT 顆粒可能很少甚至看不到。另一個原則是區域淋巴結 FNA 絕對不能跳過，就算觸診正常，淋巴結轉移率還是有 25 到 50%，Grade II/III 或 high-grade 更嚴重。\n\n【台灣流行病學】肥大細胞瘤是台灣犬最常見的皮膚惡性腫瘤。好發品種裡面拳師犬 MCT、拉布拉多、黃金、巴哥犬在台灣飼養數量都不少。台灣亞熱帶氣候下犬隻戶外活動頻繁，皮膚腫塊的早期發現率還有空間。c-KIT 突變檢測跟 TKI 標靶治療（Toceranib 或 Masitinib）在台灣部分腫瘤專科已有提供。臨床上體表腫塊的 FNA 細胞學篩檢還是要更積極推廣。',
   common_mistakes: [
     '手術切緣不夠，MCT 要 lateral 至少 2 cm，不少一般外科只切 1 cm，結果局部復發',
@@ -470,8 +489,12 @@ MCT 併發症主要來自組胺跟肝素大量釋放（脫顆粒），會造成�
   drug_api_links: ['Vinblastine', 'Prednisolone', 'Toceranib', 'Masitinib', 'Famotidine', 'Diphenhydramine'],
   references: [
     { type: 'journal', citation: 'Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155.', relevance: 'Kiupel 二級分級系統原始文獻' },
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'MCT 完整章節' },
-    { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (SU11654), a receptor tyrosine kinase inhibitor, for the treatment of dogs with recurrent mast cell tumor. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib 治療 MCT 的臨床試驗' },
+    { type: 'guideline', citation: 'U.S. FDA CVM. STELFONTA (tigilanol tiglate injection) label, approved Nov 9, 2020 (DailyMed setid 05b71840-ac18-4f83-8701-bd63d8782aaf); EMA EPAR Stelfonta (EU 2020).', relevance: '官方仿單：適應症（皮膚 MCT、肘/跗以下皮下 MCT）+ 強制前置給藥（類固醇+H1+H2），最關鍵臨床安全依據（劑量待 DVM 依仿單核對）' },
+    { type: 'journal', citation: 'De Ridder TR, Campbell JE, Burke-Schwarz C, et al. Randomized controlled clinical study evaluating the efficacy and safety of intratumoral treatment of canine mast cell tumors with tigilanol tiglate (EBC-46). J Vet Intern Med. 2021;35(1):415-429. doi:10.1111/jvim.15806.', relevance: 'Stelfonta 關鍵 RCT：單次 75%／再治療後約 88% 完全反應率' },
+    { type: 'journal', citation: 'Chu ML, Hayes GM, Henry JG, Oblak ML. Comparison of lateral surgical margins of up to two centimeters with margins of three centimeters for grade I or II cutaneous mast cell tumors in dogs. J Am Vet Med Assoc. 2020;256(5):567-572. doi:10.2460/javma.256.5.567.', relevance: '證實低度 MCT 比例化/2 cm 側緣與 3 cm 廣切等效，支持組織保留式手術' },
+    { type: 'journal', citation: "Saunders H, Thomson MJ, O'Connell K, et al. Evaluation of a modified proportional margin approach for complete surgical excision of canine cutaneous mast cell tumours. Vet Comp Oncol. 2021;19(4):604-615. doi:10.1111/vco.12630.", relevance: '100 例比例切緣局部復發率僅約 3%，切緣去階梯化核心實證（頁碼待覆核）' },
+    { type: 'journal', citation: 'Sabattini S, Brocanelli A, Zaccone R, et al. The 2-tier grading system identifies canine cutaneous and/or subcutaneous mast cell tumors with aggressive biological behavior regardless of growth model. Vet Pathol. 2024;61(6):874-881. doi:10.1177/03009858241240443.', relevance: '將 Kiupel 二級分級預後價值延伸至皮下型 MCT' },
+    { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (SU11654) for the treatment of dogs with recurrent mast cell tumor. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib 治療 MCT 的臨床試驗（基礎）' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: 'MCT 化療副作用分級標準' },
   ],
   is_current: true,
