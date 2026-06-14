@@ -6,8 +6,8 @@ const now = '2026-02-15T00:00:00Z';
 const contentEpilepsy: NodeContent = {
   id: 'CONTENT-NEURO-L3-001',
   node_id: 'NEURO-L3-001',
-  version: 1,
-  summary: '犬特發性癲癇（Canine Idiopathic Epilepsy）是門診最常碰到的慢性神經疾病，多半在 1 到 5 歲純種犬身上發病。IVETF 共識把癲癇分成特發性、結構性、反應性三類。長期靠 AED 控制，老藥是 Phenobarbital 跟 Potassium Bromide，新一代則用 Levetiracetam 跟 Zonisamide。',
+  version: 2,
+  summary: '犬特發性癲癇（Canine Idiopathic Epilepsy）是門診最常碰到的慢性神經疾病，多半在 1 到 5 歲純種犬身上發病。IVETF 共識把癲癇分成特發性、結構性、反應性三類。長期靠 AED 控制，老藥是 Phenobarbital 跟 Potassium Bromide，新一代則用 Levetiracetam 跟 Zonisamide。2024 年 ACVIM 重積/群發發作共識把鼻內 midazolam 列為居家急救首選（優於肛門 diazepam）。',
   learning_objectives: [
     '運用 IVETF 分類系統將癲癇正確分類為特發性、結構性或反應性',
     '描述 IVETF Tier I-III 的分層診斷流程',
@@ -22,6 +22,8 @@ const contentEpilepsy: NodeContent = {
     '治療起始標準：首次 cluster seizures、status epilepticus、發作頻率 > 2 次/6 個月、post-ictal 嚴重或持續',
     '一線 AED（**犬專用**）：Phenobarbital（2-5 mg/kg PO BID）或 Potassium Bromide（20-30 mg/kg PO SID；**KBr 禁用於貓**，會引起致命性嗜酸球性支氣管炎）',
     '新一代 AED：Levetiracetam（20 mg/kg PO TID）、Zonisamide（5-10 mg/kg PO BID）',
+    '居家急救：2024 ACVIM 共識把鼻內 midazolam（約 0.2 mg/kg）列為無靜脈通路時首選，優於肛門 diazepam（劑量待 DVM 覆核）',
+    'CBD 與 MCT 飲食：CBD 至今證據偏弱不足以稱「有效」；MCT 油補充劑有 RCT 支持、但市售 MCT 飼料加 ZNS 的試驗為統計不顯著',
   ],
   body: `# 犬特發性癲癇
 
@@ -50,10 +52,12 @@ const contentEpilepsy: NodeContent = {
 癲癇重積狀態（Status Epilepticus, SE）的定義是發作持續超過 5 分鐘，或兩次發作之間意識沒有恢復。
 
 急救順序：
-1. [藥物:Diazepam] 0.5-1 mg/kg IV（或 per rectum 1-2 mg/kg）
+1. 第一線 benzodiazepine：有靜脈通路時 [藥物:Diazepam] 0.5-1 mg/kg IV 或 [藥物:Midazolam] 0.2-0.3 mg/kg IV。**居家／院前無靜脈通路時，2024 ACVIM 共識建議首選鼻內（intranasal）[藥物:Midazolam] 約 0.2 mg/kg，優於傳統肛門 diazepam**（實際劑量與可重複次數依共識並由獸醫師確認）
 2. 無效時 [藥物:Levetiracetam] 30-60 mg/kg IV
 3. 持續發作：[藥物:Phenobarbital] 2-4 mg/kg IV q20-30min（最多 12-24 mg/kg/24hr，注意累積劑量越高呼吸抑制風險越大）
 4. 難治性 SE：[藥物:Propofol] CRI 或 [藥物:Midazolam] CRI
+
+> 2024 年 ACVIM 發表犬貓「癲癇重積與群發發作」管理共識（Charalambous 等, JVIM 2024），把鼻內 midazolam 列為居家／院外第一線最高等級建議，扭轉以往以肛門 diazepam 為主的居家急救觀念。
 
 [圖片:癲癇重積狀態急救流程圖]
 
@@ -86,6 +90,14 @@ const contentEpilepsy: NodeContent = {
 | Potassium Bromide (KBr) | 20-30 mg/kg PO SID | Cl⁻ 通道穩定 | 腸胃不適、後肢無力、嗜睡 |
 | Levetiracetam (LEV) | 20-60 mg/kg PO TID | SV2A 蛋白結合 | 鎮靜（通常輕微且暫時） |
 | Zonisamide (ZNS) | 5-10 mg/kg PO BID | Na⁺/Ca²⁺ 通道阻斷 | 鎮靜、食慾下降、少見肝毒性 |
+
+### 近期實證更新（2021–2025，待 DVM 覆核）
+
+- **指引現況**：IVETF 2015 系列仍是癲癇分類與長期 ASM 維持治療的標準共識，至 2025 年無新版取代；真正的新權威文件是上述 **2024 ACVIM 重積/群發發作共識**（屬急救領域，非取代 IVETF）。
+- **一線藥定位**：實務上 levetiracetam、zonisamide、phenobarbital 單藥皆有不錯的飼主回報結果（Gristina 2023，回溯性、飼主主觀），新一代藥已不只是 add-on，可作合理一線單藥選項。
+- **大麻二酚（CBD）**：至 2025 年有三項輔助 CBD 的 RCT，使用期間發作頻率「有」下降，但 2025 系統性回顧評為偏差風險中到高、**尚無法下「有效」結論**；副作用含共濟失調與 ALP 上升。教學定位＝具潛力但證據不足，非標準加藥。
+- **飲食（MCT）**：中鏈三酸甘油酯**油補充劑**有 RCT 級支持（Berk 2020），可降低部分耐藥犬發作並改善認知；但市售 MCT 處方飼料加在 zonisamide 上的小型試驗（Nakatsuka 2023, n=7）**統計不顯著（p=0.37）**，只能視為安全選項、勿過度宣稱（該研究有 Purina 利益關聯）。
+- **共病與生活品質**：特發性癲癇犬可分「認知型」（學習困難、失智樣、與耐藥及較差 QoL 相關）與「情緒型」（恐懼/攻擊/依附、與藥物反應佳及較佳 QoL 相關）兩種神經行為輪廓（Rosado 2025），呼應積極控制群發/重積以保護長期認知。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -127,7 +139,9 @@ const contentEpilepsy: NodeContent = {
 | AED 起始時機：首次發作就用、還是達到標準再用 | 首次單一發作就治療、觀察等待、或等到 cluster/SE 才治療，目前缺乏大型 RCT 直接比較 | Level III |
 | Levetiracetam 當一線 AED 的定位 | LEV 副作用少但要 TID 給藥，取代 PB 當一線的證據在累積 | Level II |
 | Honeymoon effect 的臨床意義 | LEV 一開始效果好但會慢慢減弱，到底是真的藥理現象還是疾病本身的波動，目前還在爭 | Level III |
-| 犬癲癇基因檢測的臨床實用性 | 已知突變只涵蓋少數品種，跨品種基因 panel 的預測價值不高 | Level IV |`,
+| 犬癲癇基因檢測的臨床實用性 | 已知突變只涵蓋少數品種，跨品種基因 panel 的預測價值不高 | Level IV |
+| CBD 作為輔助抗癲癇的角色 | 三項 RCT 顯示使用期間發作下降，但 2025 系統性回顧評偏差風險中到高，尚不足以稱有效 | Level II（偏差高） |
+| MCT 飲食/補充劑的療效 | 油補充劑有 RCT 支持；市售處方飼料加 ZNS 的小型試驗統計不顯著（n=7），勿過度宣稱 | Level II |`,
   clinical_pearl: '治犬特發性癲癇不能把「完全不發作」當唯一目標。比較實際的做法是把頻率壓低五成以上、維持還算可以的生活品質。PB 血中濃度抓在 15-35 ug/mL，治療開始 2-3 週達穩態時做第一次監測。跟飼主說好要寫「發作日誌」追頻率跟型態。\n\n【台灣流行病學】犬特發性癲癇在台灣門診不罕見，米格魯、德國牧羊犬、金毛、拉布拉多這幾個好發品種在台灣飼養量都不算少。台灣小型犬如吉娃娃、馬爾濟斯遇到的反應性癲癇（低血糖、肝門脈分流那類），要跟特發性癲癇分清楚。Phenobarbital 跟 Levetiracetam 是台灣市場的主力，KBr 在台灣比較難拿。台灣獸醫神經科這幾年主推「發作日誌」加居家錄影來幫忙診斷。',
   common_mistakes: [
     '沒先排除代謝性原因（低血糖、肝腦症那些）就直接掛上特發性癲癇',
@@ -174,6 +188,10 @@ const contentEpilepsy: NodeContent = {
     { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 癲癇定義與分類共識' },
     { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 分層診斷流程' },
     { type: 'journal', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 癲癇管理共識' },
+    { type: 'guideline', citation: 'Charalambous M, Muñana K, Patterson EE, Platt SR, Volk HA. ACVIM Consensus Statement on the management of status epilepticus and cluster seizures in dogs and cats. J Vet Intern Med. 2024;38(1):19-40. doi:10.1111/jvim.16928.', relevance: '2024 重積/群發發作新共識：鼻內 midazolam 列居家/院外第一線最高建議，優於肛門 diazepam' },
+    { type: 'journal', citation: 'Jensen HA, Olsen A, Arendt M, Sandøe P, Nielsen SS. Cannabidiol treatment for refractory idiopathic epilepsy in dogs: A systematic review with risk of bias assessment. Prev Vet Med. 2025;245:106649. doi:10.1016/j.prevetmed.2025.106649.', relevance: '2025 系統性回顧：CBD 三項 RCT 偏差風險中到高，尚不足以稱有效；修正過度樂觀論述' },
+    { type: 'journal', citation: 'Berk BA, Law TH, Packer RMA, et al. A multicenter randomized controlled trial of medium-chain triglyceride dietary supplementation on epilepsy in dogs. J Vet Intern Med. 2020;34(3):1248-1259. doi:10.1111/jvim.15756.', relevance: 'MCT 油補充劑 RCT：對部分耐藥犬降低發作並改善認知（飲食輔助核心引用）' },
+    { type: 'journal', citation: 'Rosado B, Palacio J, Menchaca C, García-Belenguer S. Neurobehavioral Comorbidities in Canine Idiopathic Epilepsy: New Insights into Cognitive and Emotional Domains. Animals (Basel). 2025;15:1592. doi:10.3390/ani15111592.', relevance: '認知型 vs 情緒型神經行為輪廓及其與耐藥性/生活品質關聯，補足共病維度' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經科基礎教材' },
   ],
   is_current: true,
