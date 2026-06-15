@@ -3698,7 +3698,7 @@ const contentMIS: NodeContent = {
 const contentBOAS: NodeContent = {
   id: 'CONTENT-SURG-L3-010',
   node_id: 'SURG-L3-010',
-  version: 1,
+  version: 2,
   summary: '短頭種呼吸道阻塞症候群（Brachycephalic Obstructive Airway Syndrome, BOAS）是短頭犬種因為顱骨縮短，造成上呼吸道多處解剖異常的複合病症。主要異常包括狹窄性鼻孔（stenotic nares）、軟腭過長（elongated soft palate）、喉室外翻（everted laryngeal saccules）跟氣管發育不全（hypoplastic trachea）。長期氣道阻力增加會引發喉塌陷這類繼發性變化。手術矯正包括鼻翼整形術（alarplasty）、軟腭截短術（staphylectomy/folded flap palatoplasty）、喉室切除術（sacculectomy）。術後氣道監測千萬不能鬆懈。',
   learning_objectives: [
     '列舉 BOAS 的原發性與繼發性解剖異常',
@@ -3748,6 +3748,14 @@ BOAS 是短頭犬種因人為選育導致顱骨軸向縮短，但軟組織未等
 | Grade I | 運動或興奮時有喘鳴音（stridor） | 考慮早期手術 |
 | Grade II | 日常活動時有明顯呼吸噪音、運動不耐 | 建議手術 |
 | Grade III | 安靜時呼吸困難、發紺、睡眠呼吸中止 | 需要手術 |
+
+### 2020–2025 實證更新（待 DVM 覆核）
+- **標準化功能分級**：劍橋**呼吸功能分級系統（RFGS，0–III）**結合 **3 分鐘小跑運動測試** + 喉部聽診，以**全身體積壓力描記法（WBBP）**驗證為客觀標準；**0–I＝臨床不顯著（BOAS−）、II–III＝顯著（BOAS+）為手術門檻**（Riggs 2019；Ladlow 2021）。外觀風險指標：**顱面比（CFR）越低、鼻孔狹窄分級越嚴重 → 風險越高**，為育種篩檢（如英國 KC/Cambridge BOAS Scheme）依據（Liu 2017）。
+- **顎部術式無明顯優劣**：摺疊瓣顎成形術（FFP）與傳統 staphylectomy 整體併發症與預後相近，FFP 手術時間較長；**喉塌陷分級**比顎部術式選擇更能決定預後（Fracka 2024）。
+- **多層級思維 — 鼻甲常被忽略**：約 **50%** 犬於傳統多層級手術後仍有顯著鼻腔殘餘阻塞，可考慮**雷射輔助鼻甲切除（LATE）**（Liu 2019；Wallace 2024 綜述）。
+- **消化道共病**：滑動型裂孔疝/胃食道逆流常見；**多數於氣道手術後改善**→ 先治氣道、分期處理，多數不需先做疝修補；圍術期給促動力/制酸藥降低逆流與吸入性肺炎（Mayhew 2023）。
+- **預後與時機**：術後呼吸併發症約 **20–25%**、死亡率約 **2–3%**；**喉塌陷分級高、年齡大、急診呈現（風險倍增逾 30×）、麻醉時間長**為預後不良因子（Filipas 2024；Gallant 2025）。喉塌陷為進行性、幼犬即可出現 → 支持**早期介入**。
+- **福利/法規（事實陳述，須查證最新狀態）**：挪威最高法院 2023 維持騎士查理王獵犬之育種限制、解除英國鬥牛犬絕對禁令（改條件式）；荷蘭擬禁止飼養/展示極端短吻品種。手術是治療**可預防之品種選育驅動**疾病。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -3817,7 +3825,7 @@ BOAS 是短頭犬種因人為選育導致顱骨軸向縮短，但軟組織未等
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| Folded flap palatoplasty vs 傳統 staphylectomy 長期療效 | FFP 理論上減少厚度+長度效果更佳，但大樣本長期比較研究有限 | Level III |
+| Folded flap palatoplasty vs 傳統 staphylectomy 長期療效 | **2024 比較研究（Fracka）：兩術式併發症與預後相近、FFP 並無明顯較優**（FFP 手術時間較長）；喉塌陷分級比顎部術式更能決定預後 | Level III（回溯）|
 | 鼻甲骨雷射消融（LATE）的效益 | Cambridge BOAS 研究團隊推薦用於嚴重鼻腔阻塞，但侵入性與成本較高 | Level III |
 | 短頭犬種的繁殖倫理 | 育種選擇應以呼吸功能而非外觀為優先，但品種標準改革緩慢 | Expert opinion |`,
   clinical_pearl: 'BOAS 手術最常見的失誤是「做得太少」而不是「做得太多」。軟腭截短術寧可多截 1-2 mm（但不超過會厭尾端），也別留太長。截除不夠的病例症狀改善有限，二次手術就跑不掉。另外，術前一定要跟飼主講清楚，BOAS 是「改善」不是「治癒」，氣管發育不全沒辦法靠手術改變。\n\n【台灣流行病學】法國鬥牛犬在台灣很紅，連續多年註冊犬種前五名，BOAS 就診量也一直上來。台灣夏季高溫高濕環境對短頭犬種特別危險，散熱障礙加上環境溫度高，中暑風險遠高於溫帶國家。建議台灣短頭犬飼主夏季別讓狗到戶外，維持室內空調環境。',
@@ -3878,6 +3886,11 @@ BOAS 是短頭犬種因人為選育導致顱骨軸向縮短，但軟組織未等
     { type: 'journal', citation: 'Findji L, Dupré G. Folded flap palatoplasty for treatment of elongated soft palates in 55 dogs. Wien Tierarztl Monatsschr 2008;95:56-63.', relevance: 'Folded flap 技術原始研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 29: Surgery of the Upper Respiratory System.', relevance: 'BOAS 診斷與手術概述' },
     { type: 'guideline', citation: 'Liu NC, Sargan DR, Adams VJ, et al. Characterisation of brachycephalic obstructive airway syndrome in French Bulldogs using whole-body barometric plethysmography. PLoS ONE. 2015;10(6):e0130741. (Cambridge BOAS Research Group consensus grading system)', relevance: 'Cambridge BOAS 研究小組功能分級共識系統' },
+    { type: 'journal', citation: 'Riggs J, Liu N-C, Sutton DR, Sargan D, Ladlow JF. Validation of exercise testing and laryngeal auscultation for grading BOAS in pugs, French bulldogs, and English bulldogs by using whole-body barometric plethysmography. Vet Surg. 2019. doi:10.1111/vsu.13159.', relevance: '驗證劍橋呼吸功能分級系統（RFGS）與運動測試對應 WBBP 客觀標準；嚴重度分級基礎' },
+    { type: 'journal', citation: 'Liu N-C, Troconis EL, Kalmar L, et al. Conformational risk factors of brachycephalic obstructive airway syndrome (BOAS) in pugs, French bulldogs, and bulldogs. PLoS ONE. 2017;12(8):e0181928. doi:10.1371/journal.pone.0181928.', relevance: '顱面比（CFR）、鼻孔狹窄分級等外觀風險因子；連結可見檢查與量化風險、育種篩檢依據' },
+    { type: 'journal', citation: 'Fracka AB, Song MK, Dejong TL, Fransson BA. Risk factors for complicated perioperative recovery in dogs undergoing staphylectomy or folded flap palatoplasty: 76 cases (2018–2022). Vet Surg. 2024;53(4):630-641. doi:10.1111/vsu.14086.', relevance: 'FFP 與 staphylectomy 預後相近、無明顯優劣；喉塌陷分級/年齡/麻醉時間為關鍵風險因子' },
+    { type: 'journal', citation: 'Mayhew PD, Marks SL, Pollard R, et al. Effect of conventional multilevel BOAS surgery on clinical and videofluoroscopic evidence of hiatal herniation and gastroesophageal reflux in dogs. Vet Surg. 2023. doi:10.1111/vsu.13906.', relevance: '多層級氣道手術可改善裂孔疝/胃食道逆流，支持「先治氣道、分期處理消化道共病」' },
+    { type: 'journal', citation: 'Wallace ML. Surgical management of brachycephalic obstructive airway syndrome: an update on options and outcomes. Vet Surg. 2024. doi:10.1111/vsu.14131.', relevance: '2024 術式與預後綜述（含 LATE 鼻甲、多層級概念），單一傘狀參考' },
   ],
   is_current: true,
   created_at: now,
