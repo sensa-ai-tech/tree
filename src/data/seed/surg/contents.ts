@@ -710,7 +710,7 @@ const contentGIForeignBody: NodeContent = {
 const contentCCLD: NodeContent = {
   id: 'CONTENT-SURG-L3-004',
   node_id: 'SURG-L3-004',
-  version: 1,
+  version: 2,
   summary: '顱側十字韌帶疾病（Cranial Cruciate Ligament Disease, CCLD）是犬後肢跛行最常見的原因之一，也是骨科最常做的手術。在犬身上，CCLD 是退化性疾病而不是單純創傷斷裂，40-60% 的病例最後雙側都會發。診斷靠 cranial drawer test 跟 tibial thrust test，手術主流走 TPLO 或 TTA 這類生物力學矯正術，中大型犬術後預後好得很，90-95% 的病例臨床功能明顯改善。',
   learning_objectives: [
     '描述犬 CCLD 的退化性病理機轉',
@@ -785,6 +785,13 @@ TTA（Tibial Tuberosity Advancement）：
 - 只給 < 10 kg 而且配合度好的病例
 - 限制活動 8-12 週、NSAIDs、減重、配合復健
 
+### 2020–2025 實證更新（待 DVM 覆核）
+- **沒有單一最佳術式**：2022 系統性回顧（含統合分析，72 篇；Wemmers 等）指出 **TPLO 與 TTA 皆成功、無明確優劣**——TTA 術後 6 個月內 OA 評分略佳、TPLO 的 SSI 率較低；證據品質受原始研究侷限。教學上應將兩者並列為主流，而非宣稱誰勝出。**CBLO 比較證據不足**，勿宣稱優劣。
+- **OA 不論術式皆持續進展**（Moore 2020 長期世代，TTA 與雙側病例更明顯）→ 須終身 OA 共病管理；多模式止痛中 anti-NGF（Librela）可改善 OA 疼痛，但**僅為疼痛控制、非十字韌帶治療或疾病修飾**。
+- **生物製劑非常規佐劑**：2024 RCT（Volz 等）顯示 TPLO 術後關節內 **PRP 或玻尿酸對肢體功能恢復無額外助益**。
+- **SSI 與抗藥性**：大型世代（769 例 TPLO；Husi 2023）SSI 約 2.9–17.3%，且具相當比例多重抗藥（MDR）菌株 → 圍術期抗生素須審慎（連結抗生素管理）。
+- **對側斷裂風險**：classically ~22–54%；某 2024 研究於 ≥8 歲中大型犬約 19%（年齡/品種調節）——飼主衛教第二肢風險。
+
 [互動:CCLD 術式選擇決策樹]
 
 ## 四、併發症與監控 (Complications & Monitoring)
@@ -831,7 +838,7 @@ TTA（Tibial Tuberosity Advancement）：
 | TPLO vs TTA 的長期臨床結果比較 | 兩者均為 Level I 證據支持，大型前瞻性 RCT 顯示功能恢復沒明顯差異，術者經驗可能更重要 | Level I |
 | 小型犬（< 15 kg）TPLO vs ECLS | 小型犬 ECLS 效果良好且費用較低，但部分術者傾向一律 TPLO | Level II |
 | 預防性半月板鬆解（meniscal release）的必要性 | 術中半月板正常時是否應預防性鬆解以防術後晚期損傷，目前傾向不做 | Level III |
-| 幹細胞 / PRP 用於 CCLD 犬的關節保護 | 初步研究顯示可能減緩 OA 進展，但標準化不足且長期數據有限 | Level IV |`,
+| 幹細胞 / PRP 用於 CCLD 犬的關節保護 | **2024 RCT（Volz 等）：TPLO 術後關節內 PRP/玻尿酸對功能恢復無額外助益**；整體生物製劑證據品質低，不應視為常規佐劑 | Level II（RCT，陰性）|`,
   clinical_pearl: '做 cranial drawer test 的時候，部分斷裂的病例在完全伸展位可能是陰性，但屈曲 20-30 度才測得到陽性。原因是完全伸展時內側副韌帶跟關節囊還能撐住一些穩定。另外，肥胖犬或肌肉緊張的犬，tibial thrust test 比 drawer test 更容易抓到不穩定。\n\n【台灣流行病學】前十字韌帶疾病（CCLD）在台灣大型犬是很常見的骨科問題，拉布拉多跟黃金獵犬是好發品種。這幾年 TPLO 手術技術在台灣推得很快，多家專科動物醫院都有能力做。台灣小型犬 CCLD 常常合併膝蓋骨內側脫位（MPL），要一起評估處理。犬隻肥胖在台灣很普遍，這就是 CCLD 的重要風險因子。',
   common_mistakes: [
     '把犬 CCLD 當成單純創傷而不是退化性疾病，飼主衛教跟對側膝關節預防都會跟著錯',
@@ -875,10 +882,12 @@ TTA（Tibial Tuberosity Advancement）：
   ],
   drug_api_links: ['Carprofen', 'Meloxicam'],
   references: [
-    { type: 'journal', citation: 'Bergh MS et al. Systematic review of surgical treatments for cranial cruciate ligament disease in dogs. J Am Anim Hosp Assoc. 2014;50(5):315-321.', relevance: 'CCLD 手術治療系統性回顧' },
+    { type: 'journal', citation: 'Wemmers AC, Charalambous M, Harms O, Volk HA. Surgical treatment of cranial cruciate ligament disease in dogs using TPLO or TTA — A systematic review with a meta-analytic approach. Front Vet Sci. 2022;9:1004637. doi:10.3389/fvets.2022.1004637.', relevance: '最新系統性回顧（72 篇）：TPLO 與 TTA 無明確優劣，「無單一最佳術式」教學核心依據' },
+    { type: 'journal', citation: 'Volz F, Eberle D, Kornmayer M, Zablotski Y, Meyer-Lindenberg A. Effect of intra-articular PRP or hyaluronic acid on limb function recovery in dogs with TPLO for cranial cruciate ligament rupture: a randomised controlled trial. J Small Anim Pract. 2024;65(5):309-318. doi:10.1111/jsap.13704.', relevance: 'RCT：TPLO 術後 PRP/HA 無額外恢復助益，校正「生物製劑為常規佐劑」迷思' },
+    { type: 'journal', citation: 'Husi B, Overesch G, Forterre F, Rytz U. Surgical site infection after 769 Tibial Plateau Leveling Osteotomies. Front Vet Sci. 2023;10:1133813. doi:10.3389/fvets.2023.1133813.', relevance: '大型世代：量化 TPLO 術後 SSI 與多重抗藥性風險，支撐圍術期抗生素管理' },
+    { type: 'journal', citation: 'Moore EV, Weeren R, Paek M. Extended long-term radiographic and functional comparison of TPLO vs TTA for cranial cruciate ligament rupture in the dog. Vet Surg. 2020;49(1):182-191. doi:10.1111/vsu.13277.', relevance: '長期世代：OA 不論術式皆進展（TTA 與雙側更明顯），支持終身 OA 管理' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 34: Diseases of the Joints.', relevance: 'CCLD 手術技術標準教材' },
-    { type: 'journal', citation: 'Slocum B, Slocum TD. Tibial plateau leveling osteotomy for repair of cranial cruciate ligament rupture in the canine. Vet Clin North Am Small Anim Pract. 1993;23(6):1325-1354.', relevance: 'TPLO 術式原始文獻' },
-    { type: 'guideline', citation: 'ACVS Position Statement: Cranial Cruciate Ligament Disease in Dogs. 2020.', relevance: 'CCLD 手術標準共識聲明' },
+    { type: 'journal', citation: 'Slocum B, Slocum TD. Tibial plateau leveling osteotomy for repair of cranial cruciate ligament rupture in the canine. Vet Clin North Am Small Anim Pract. 1993;23(6):1325-1354.', relevance: 'TPLO 術式原始文獻（基礎）' },
   ],
   is_current: true,
   created_at: now,
@@ -5751,6 +5760,164 @@ const contentPeriodontalDisease: NodeContent = {
   created_at: now,
 };
 
+/** 貓牙齒吸收 (TR)，疾病型（2026-06-15 新增節點）。臨床內容待 DVM 覆核。 */
+const contentFelineToothResorption: NodeContent = {
+  id: 'CONTENT-SURG-L3-021',
+  node_id: 'SURG-L3-021',
+  version: 1,
+  summary:
+    '貓牙齒吸收（Tooth Resorption, TR；舊稱 FORL）是由破牙質細胞（odontoclast）介導的牙齒硬組織進行性破壞，為貓最常見的口腔疾病之一，盛行率隨年齡上升、依族群與診斷方式約 20–75%。病灶具疼痛性但常無明顯臨床表現，多數僅能靠全口牙科 X 光確診。AVDC 依放射影像分為第 1、2、3 型，治療方式完全取決於分型，與牙周病為不同疾病。',
+  learning_objectives: [
+    '說明 TR 為破牙質細胞介導的牙齒硬組織進行性吸收，並與牙周病明確區分',
+    '正確區辨 AVDC 第 1 / 2 / 3 型的放射影像特徵（PDL 與根部放射密度）',
+    '說明 AVDC 第 1–5 期（含 4a/4b/4c）依吸收深度與範圍的分期定義',
+    '解釋為何全口牙科 X 光是 TR 確診與分型的必要條件',
+    '依分型選擇正確治療：第 1 型完整拔除、第 2 型在嚴格條件下方可冠部截除並刻意保留牙根',
+    '辨識常見錯誤（無 X 光即冠部截除、漏診齦下病灶、「會吃就不痛」迷思）並提出多模式止痛',
+  ],
+  key_points: [
+    'TR 由破牙質細胞介導，為貓最常見口腔疾病之一，疼痛且進行性，盛行率隨年齡上升（約 20–75%）',
+    '病因大多為特發性；第 1 型與局部發炎（牙周病、口炎）相關；第 2 型的維生素 D／硬食假說尚未證實',
+    '第 1 型：局部放射透亮，牙根放射密度正常、PDL 完整',
+    '第 2 型：PDL 變窄或消失、牙根放射影像模糊（替代性吸收／齒槽骨沾黏 ankylosis）',
+    '第 3 型：同一顆牙同時具第 1 型與第 2 型特徵',
+    '全口牙科 X 光是確診與分型的必要工具——分型決定治療',
+    '第 1 型需完整拔除整個牙根；第 2 型在影像確認嚴重根部替代且無牙周／牙髓／口炎／FIV-FeLV 相關發炎時，方可冠部截除保留牙根',
+    '冠部截除具爭議，必須以 X 光為依據、絕不可盲目施行；FCGS／牙周病為禁忌症',
+  ],
+  body: `# 貓牙齒吸收 (Feline Tooth Resorption, TR)
+
+> ⚠️ 臨床內容（尤其冠部截除條件）須由具執照獸醫師／獸醫牙科專科覆核。第 2 型病因（維生素 D／硬食）為未證實假說。
+
+## 一、定義與盛行率 (Definition & Prevalence)
+
+貓牙齒吸收（TR；舊稱 FORL、neck lesion、cervical line lesion）是**破牙質細胞（odontoclast）介導的牙齒硬組織進行性破壞**（牙骨質、牙本質、牙釉質）。負責正常牙齒重塑的破牙質細胞異常活化且無法適時下調，吸收牙齒結構。
+- 為**貓最常見口腔疾病之一**，**疼痛且進行性**。
+- 盛行率依族群、年齡、診斷方式差異大，約 **20–75%**（如某 944 隻芬蘭受檢亞族群獸醫診斷約 21%；某 109 隻族群純種 70% vs 混種 38%）。
+- **盛行率隨年齡上升**；因病灶常始於齦下/牙根，放射影像研究盛行率遠高於目視檢查。
+
+> **本節點與牙周病為不同疾病**（已分開）。TR 是硬組織吸收性疾病，非以牙菌斑為主的牙周發炎；惟兩者常並存，第 1 型與局部發炎相關。
+
+## 二、病因 (Etiology)
+- 大多**特發性**，觸發破牙質細胞異常活化的原因不明。
+- **第 1 型**與局部發炎（牙周炎、齦炎、口炎）相關——發炎為已知共因子。
+- **第 2 型**病因未證實，過量飲食維生素 D 與硬食微創傷（abfraction）為**尚未證實之假說**。
+- **年齡**為最一致的相關因子；有品種傾向報告。
+
+## 三、AVDC 分類 (Classification)
+
+**型（Type，放射影像——決定治療）**
+- **第 1 型**：局部/多灶放射透亮，**牙根放射密度與 PDL 正常**（常伴牙周炎/發炎）。
+- **第 2 型**：**PDL 變窄或消失、部分牙齒放射密度降低**，牙根被取代而**放射影像模糊**（替代性吸收／齒槽骨沾黏）。
+- **第 3 型**：同一顆牙**兼具第 1 型與第 2 型**特徵。
+
+**期（Stage，嚴重度）**
+- 第 1 期：輕度硬組織喪失（牙骨質，或牙骨質＋牙釉質）。
+- 第 2 期：中度喪失（牙骨質±牙釉質＋牙本質，未及髓腔）。
+- 第 3 期：深度喪失及髓腔，牙齒大部分仍完整。
+- 第 4 期：廣泛喪失及髓腔，牙齒大部分失去完整性（4a 冠根同等／4b 冠較重／4c 根較重）。
+- 第 5 期：硬組織僅殘留不規則放射不透點，牙齦完全覆蓋。
+
+## 四、臨床表現 (Clinical Signs)
+- **常無明顯症狀但會痛**；許多僅能由牙科 X 光發現。
+- 麻醉下以探針觸碰 CEJ 病灶時**下頜「顫動」（jaw chattering）**——典型疼痛反應。
+- **增生/發炎牙齦覆蓋於 CEJ 缺損**處。
+- 進展後：掉食物、單側咀嚼、偏好軟食、流涎、拒食、頭部敏感。
+- 病灶突破齦緣後可見粉紅/紅色缺損。
+
+## 五、診斷 (Diagnosis)
+- **全身麻醉下口腔檢查＋探針於 CEJ 探診**（卡頓/凹陷示病灶；清醒貓可能顫動）。
+- **必做全口牙內 X 光**（AAHA 2019 標準）——是**區分第 1 型與第 2 型的唯一可靠方法**，而分型決定治療。
+- 僅探診只能發現已達牙冠表面的病灶；齦下/牙根病灶須靠影像。
+
+## 六、治療 — 依分型 (Type-dependent Treatment)
+- **第 1 型（牙根完整、PDL 正常）**：**完整拔除整個牙根**。PDL 與牙根完整者不會自行吸收，殘根會持續疼痛/感染。
+- **第 2 型（嚴重替代性吸收/沾黏）**：**冠部截除＋刻意保留牙根**僅在**全數**條件成立時可接受：① X 光確認嚴重根部替代（牙根放射模糊、無可辨識根管、沾黏）；② 無牙周炎、牙髓/根尖病變、口炎、尾側黏膜炎；③ 無 FIV/FeLV 相關或其他口腔發炎。**具爭議、嚴格 X 光導向、絕不可盲做**（基層常過度使用；專科僅保留給嚴重/完全根部替代者）。
+- **第 3 型**：依各區分型分別處置。
+- **止痛**：多模式（局部/區域神經阻斷、適用時 NSAID、圍術期鴉片類）。TR 即使會吃仍會痛。目前**無已證實之預防療法**。
+
+## 七、與 FCGS、牙周病的關係 (Relationships)
+- **貓慢性齦口炎（FCGS）／尾側口炎**：為**冠部截除的禁忌**——應完整拔除牙根，殘根會延續發炎。
+- **牙周病**（獨立節點）常**並存**且與第 1 型相關，其存在同樣**禁忌**刻意保留牙根。
+- **複查 X 光**：冠部截除後與後續牙科檢查時複查，確認保留根持續吸收、無病理反應、並偵測新發病灶。
+
+## 八、常見錯誤與臨床要訣
+見 common_mistakes。**要訣**：分型決定治療，而只有 X 光能判定分型——沒有全口 X 光就沒有可靠的 TR 決策；冠部截除是放射影像為據、條件嚴格的例外，不是困難拔牙的捷徑。
+`,
+  clinical_pearl:
+    '「分型決定治療，而只有 X 光能判定分型。」沒有全口牙科 X 光，就沒有可靠的 TR 治療決策。冠部截除是以放射影像為依據、條件嚴格的例外處置，絕非困難拔牙的捷徑。麻醉下用探針觸碰 CEJ 病灶時，貓出現下頜顫動（jaw chattering）是典型疼痛徵象。',
+  common_mistakes: [
+    '未拍牙科 X 光即執行冠部截除——最嚴重錯誤，可能留下疼痛／感染的牙根，或在牙根完整的第 1 型牙上誤行保留',
+    '僅靠目視與探診，漏診齦下或僅侷限於牙根的病灶',
+    '落入「會吃東西就不痛」的迷思——貓會忍痛進食，食慾正常不能排除疼痛性 TR',
+    '對 FCGS／口炎或牙周病的貓施行刻意保留牙根，造成發炎持續',
+    '未安排術後與後續複診 X 光，漏掉殘留病理性牙根或新發病灶',
+  ],
+  disease_data: {
+    signalment:
+      '各年齡層貓皆可發生，盛行率隨年齡上升，中老年貓最常見；純種貓可能風險較高。無明顯性別偏好。常與牙周病、FCGS 並存。',
+    etiology:
+      '大多為特發性，破牙質細胞異常活化的觸發原因不明。第 1 型與局部發炎（牙周病、齦炎、口炎）相關；第 2 型病因未證實，過量飲食維生素 D 與硬食微創傷（abfraction）均為尚未證實之假說。年齡為最一致的相關因子。',
+    pathogenesis:
+      '破牙質細胞（負責正常牙齒重塑）異常活化且無法適時下調，進行性吸收牙骨質、牙本質乃至牙釉質。第 1 型保有正常 PDL 與牙根放射密度；第 2 型發生替代性吸收，PDL 消失、牙根被骨樣組織取代並與齒槽骨沾黏（ankylosis），放射影像上牙根逐漸模糊。',
+    clinical_signs: [
+      { sign: '麻醉下探針觸碰 CEJ 病灶時下頜顫動（jaw chattering）', category: 'primary', description: '典型疼痛反應' },
+      { sign: '多數無明顯臨床症狀，僅能由牙科 X 光發現', category: 'primary', description: '病灶常位於齦下／牙根' },
+      { sign: '齦緣增生／發炎牙齦覆蓋於 CEJ 缺損處', category: 'secondary', description: '牙齦「填入」缺損' },
+      { sign: '進食掉落食物、偏單側咀嚼、偏好軟食、拒食', category: 'secondary', description: '進展期疼痛表現' },
+      { sign: '流涎、口腔疼痛、頭部敏感', category: 'secondary', description: '口腔不適徵象' },
+      { sign: '牙齦線可見粉紅／紅色缺損', category: 'secondary', description: '病灶突破齦緣後可見' },
+    ],
+    staging: {
+      system: 'AVDC 牙齒吸收分類（同時以 Type 放射影像 + Stage 嚴重度描述）',
+      stages: [
+        'Type 1：局部/多灶放射透亮，牙根放射密度與 PDL 正常（常伴牙周炎）',
+        'Type 2：PDL 變窄或消失、牙齒放射密度降低，牙根放射影像模糊（替代性吸收／沾黏）',
+        'Type 3：同一顆牙兼具 Type 1 與 Type 2 特徵',
+        'Stage 1：輕度硬組織喪失（牙骨質±牙釉質）',
+        'Stage 2：中度喪失，未及髓腔',
+        'Stage 3：深度喪失及髓腔，牙齒大部分仍完整',
+        'Stage 4：廣泛喪失及髓腔，牙齒大部分失去完整性（4a 冠根同等／4b 冠較重／4c 根較重）',
+        'Stage 5：硬組織僅殘留不規則放射不透點，牙齦完全覆蓋',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '牙周病', key_differentiator: '齒槽骨喪失為主、獨立疾病，常與 TR 並存；X 光鑑別' },
+      { condition: '齲齒（caries）', key_differentiator: '貓罕見；好發位置與影像不同' },
+      { condition: '牙折／牙根殘留', key_differentiator: '有外傷史或拔牙不全史，X 光見骨折線/殘根' },
+      { condition: '慢性齦口炎（FCGS／尾側口炎）', key_differentiator: '發炎延伸至尾側口腔黏膜、免疫介導；可與 TR 共病' },
+      { condition: '口腔腫瘤', key_differentiator: '局部腫塊/破壞性病灶，切片確診' },
+    ],
+    diagnostic_workup:
+      '全身麻醉下口腔檢查＋逐齒探診（探針於 CEJ 觸診）；必做全口牙內 X 光（AAHA 2019 標準）——為確診並區分 Type 1／Type 2 的唯一可靠方法（分型決定治療）；記錄每顆患牙之型與期；評估並存之牙周病、FCGS、FIV/FeLV 狀態。',
+    treatment_protocol:
+      '依分型處置。Type 1（牙根完整、PDL 正常）：完整拔除整個牙根。Type 2（嚴重替代性吸收/沾黏）：僅在「X 光確認嚴重根部替代、無可辨識根管、無牙周/牙髓/根尖病變、無口炎、無 FIV/FeLV 相關發炎」之全數條件成立時，方可考慮冠部截除並刻意保留牙根；具爭議、必須 X 光導向、絕不可盲做。Type 3：依各區分型分別處置。多模式止痛（局部/區域神經阻斷、適用時 NSAID、圍術期鴉片類）。目前無已證實之預防療法。【臨床細節請由具執照之獸醫師/獸醫牙科專科確認】',
+    prognosis:
+      '完整拔除患牙之患齒預後良好，可有效解除疼痛。TR 為進行性且常多齒受累，其他牙齒仍可能陸續發病，需長期追蹤。冠部截除若選例與技術得當，多數保留之牙根持續吸收且無周邊骨反應；選例錯誤則殘留疼痛/感染牙根。',
+    monitoring:
+      '術後及定期（如年度）麻醉牙科檢查＋全口 X 光複查，以確認保留牙根持續吸收且無病理反應、偵測新發病灶並評估並存牙周病/FCGS。',
+    owner_communication:
+      '向飼主說明：TR 很常見且會痛，但貓常會忍痛照吃，「會吃」不代表不痛；確診與正確治療一定要在麻醉下做全口牙科 X 光；治療方式取決於 X 光分型，部分牙需完整拔除；其他牙未來可能陸續發病，需定期複診與重照 X 光。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: 'AVDC 分類段落後', type: 'annotated_image', description: 'TR Type 1/2/3 放射影像對照（PDL 與牙根放射密度差異）' },
+    { position: '治療段落後', type: 'flowchart', description: 'TR 治療決策：全口 X 光分型 → Type 1 完整拔除 / Type 2 條件式冠部截除' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: [],
+  references: [
+    { type: 'guideline', citation: 'American Veterinary Dental College (AVDC). Tooth Resorption — AVDC Nomenclature (Types 1–3; Stages 1–5). avdc.org/avdc-nomenclature/.', relevance: 'TR 分型/分期權威命名標準；本節 Type 與 Stage 定義依此來源' },
+    { type: 'guideline', citation: 'Bellows J, Berg ML, Dennis S, et al. 2019 AAHA Dental Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2019;55(2):49-69. doi:10.5326/JAAHA-MS-6933.', relevance: '確立麻醉下逐齒探診＋全口牙內 X 光為照護標準，為 TR 診斷依據（2020 前奠基性指引）' },
+    { type: 'journal', citation: 'Gorrel C. Tooth resorption in cats: Pathophysiology and treatment options. J Feline Med Surg. 2015;17(1):37-43. doi:10.1177/1098612X14560098.', relevance: 'JFMS TR 病理生理與治療選項回顧（2020 前奠基性文獻）' },
+    { type: 'journal', citation: 'DuPont GA. Crown amputation with intentional root retention for dental resorptive lesions in cats. J Vet Dent. 2002;19(2):107-110. doi:10.1177/089875640201900206.', relevance: '冠部截除＋刻意保留牙根的奠基性臨床證據與選例條件（2020 前文獻；須符合嚴格放射條件）' },
+    { type: 'journal', citation: 'Ingham KE, Gorrel C, et al. Prevalence of tooth resorption in a colony of cats (pure-breed 70.0% vs mixed-breed 38.0%). (PMID 19025137).', relevance: '具名族群盛行率數據（純種 vs 混種），支持盛行率區間' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L0-001', contentSurgOverview],
   ['SURG-L1-001', contentSurgPrinciples],
@@ -5778,6 +5945,7 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L3-015', contentIntestinalRA],
   ['SURG-L3-019', contentOsteoarthritis],
   ['SURG-L3-020', contentPeriodontalDisease],
+  ['SURG-L3-021', contentFelineToothResorption],
   ['SURG-L4-001', contentPreopImaging],
   ['SURG-L4-002', contentIntraopDecision],
   ['SURG-L4-003', contentOrthoImaging],

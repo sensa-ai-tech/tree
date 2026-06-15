@@ -130,7 +130,7 @@ exports[`seed-content snapshot: 結構性指標 > node_type 分佈穩定 1`] = `
 {
   "concept": 36,
   "diagnostic": 43,
-  "disease": 125,
+  "disease": 126,
   "mechanism": 34,
   "procedure": 5,
   "therapeutic": 36,
@@ -145,8 +145,8 @@ exports[`seed-content snapshot: 結構性指標 > relation_type 分佈穩定（�
   "cross_specialty": 5,
   "differential": 52,
   "drug_related": 21,
-  "prerequisite": 194,
-  "same_system": 14,
+  "prerequisite": 195,
+  "same_system": 15,
 }
 `;
 
@@ -155,7 +155,7 @@ exports[`seed-content snapshot: 結構性指標 > 每 layer 節點數量穩定 1
   "L0": 8,
   "L1": 28,
   "L2": 33,
-  "L3": 128,
+  "L3": 129,
   "L4": 43,
   "L5": 39,
 }
@@ -170,15 +170,15 @@ exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分
   "IM": 55,
   "NEURO": 35,
   "ONCO": 34,
-  "SURG": 37,
+  "SURG": 38,
 }
 `;
 
 exports[`seed-content snapshot: 結構性指標 > 總節點數 + 邊數 + 路徑數 維持穩定 1`] = `
 {
-  "contents": 279,
-  "edges": 857,
-  "nodes": 279,
+  "contents": 280,
+  "edges": 859,
+  "nodes": 280,
   "paths": 47,
   "questions": 2001,
 }
