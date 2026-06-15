@@ -1567,4 +1567,16 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
     bidirectional: true,
     unlock_condition: null,
   },
+
+  // ─── SURG ↔ ONCO（FCGS 須切片排除口腔鱗狀細胞癌/腫瘤，2026-06-15 新增節點連結） ───
+  {
+    id: 'CROSS-SURG-ONCO-002',
+    source_node_id: 'SURG-L3-022',  // 貓慢性齦口炎 FCGS
+    target_node_id: 'ONCO-L3-005',  // 口腔黑色素瘤（口腔腫瘤代表節點）
+    relation_type: 'differential',
+    weight: 0.7,
+    description: 'FCGS 診斷務必切片排除口腔腫瘤（尤其鱗狀細胞癌 SCC），特別是單側或腫塊樣病灶',
+    bidirectional: true,
+    unlock_condition: null,
+  },
 ];

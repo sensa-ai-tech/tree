@@ -172,4 +172,9 @@ export const SURG_EDGES: KnowledgeEdge[] = [
   // ─── SURG-L3-021 貓牙齒吸收 連接邊（2026-06-15 新增節點）───
   { id: 'SURG-E-091', source_node_id: 'SURG-L1-003', target_node_id: 'SURG-L3-021', relation_type: 'prerequisite', weight: 0.8, description: '麻醉基礎是理解 TR 確診/治療（須全麻下探診＋全口 X 光）的前置知識', bidirectional: false, unlock_condition: null },
   { id: 'SURG-E-092', source_node_id: 'SURG-L3-020', target_node_id: 'SURG-L3-021', relation_type: 'same_system', weight: 0.7, description: '牙周病與貓齒吸收同屬口腔疾病、常並存；第 1 型 TR 與牙周發炎相關', bidirectional: true, unlock_condition: null },
+
+  // ─── SURG-L3-022 貓慢性齦口炎 (FCGS) 連接邊（2026-06-15 新增節點）───
+  { id: 'SURG-E-093', source_node_id: 'SURG-L1-003', target_node_id: 'SURG-L3-022', relation_type: 'prerequisite', weight: 0.7, description: '麻醉基礎是理解 FCGS 確診/治療（全麻下檢查、切片、全口拔牙）的前置知識', bidirectional: false, unlock_condition: null },
+  { id: 'SURG-E-094', source_node_id: 'SURG-L3-020', target_node_id: 'SURG-L3-022', relation_type: 'differential', weight: 0.7, description: 'FCGS 與牙周病鑑別：尾側口腔炎（舌顎弓黏膜）超出齒齦本身、且為免疫介導', bidirectional: true, unlock_condition: null },
+  { id: 'SURG-E-095', source_node_id: 'SURG-L3-021', target_node_id: 'SURG-L3-022', relation_type: 'same_system', weight: 0.6, description: '貓齒吸收與 FCGS 常共病；FCGS 拔牙時須一併處理齒吸收與殘根', bidirectional: true, unlock_condition: null },
 ];

@@ -6,7 +6,7 @@ const now = '2026-02-15T00:00:00Z';
 const contentGDV: NodeContent = {
   id: 'CONTENT-SURG-L3-001',
   node_id: 'SURG-L3-001',
-  version: 1,
+  version: 2,
   summary: '胃擴張扭轉（Gastric Dilatation-Volvulus, GDV）是犬最棘手的外科急診之一，大型、巨型深胸犬最常見，死亡率落在 10-33%。胃順時針一轉，流出道整個塞住，脾臟跟著被拉移位，血管被壓住，接下來就是心血管衰竭加上再灌流損傷一起來。手術三步驟：胃減壓、derotation、右側 incisional gastropexy。術前抽一管血看 lactate，這個數值幾乎決定預後走向。',
   learning_objectives: [
     '描述 GDV 的病理生理機轉，包括胃扭轉方向與血管壓迫效應',
@@ -65,6 +65,12 @@ GDV 進來那種腎上腺素直接拉滿，這是犬科最棘手的外科急診�
 3. 右側 incisional gastropexy：把胃幽門竇漿膜層縫到右腹壁，這一步沒做復發率就回不來
 
 [圖片:Incisional gastropexy 手術步驟示意圖]
+
+### 2020–2025 實證更新（待 DVM 覆核）
+- **乳酸別當單一硬指標**：單次入院乳酸區辨力有限（存活與死亡組重疊大）。「24 小時乳酸清除率 ≥50% 預測存活」此舊規則在 2020 年 45 例前瞻研究（Grassato）中**未能**可靠預測存活或胃壞死，與 Green 2011 結論相左——應把乳酸**趨勢**當作 gestalt 的一個輸入，而非 go/no-go。
+- **現代手術預後**：2025 年 130 例單中心系列（Olimpo）手術存活率約 **86.4%**（死亡率約 14%）；胃切除 6.5%（全數存活）；整體併發症約 51%（術後心律不整 30%、腹腔積液 24%）；脾切除與存活無顯著關聯（NS）。
+- **預防性切開式胃固定術安全有效**：766 例（de la Vega 2023）直接相關併發症僅 **0.4%**、無手術死亡、長期追蹤 446 例**零復發**——支持對高風險犬種於結紮/絕育時一併施行。
+- **風險因子**：一等親有 GDV 病史、進食速度快、年齡增長、深胸大型/巨型犬為顯著風險。墊高食盆是否增加風險**仍有爭議**（主要根據 2000 年 Glickman 等之基礎研究，資料已逾 20 年），現行證據不足以建議墊高，預設仍以地面餵食為宜。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -177,8 +183,11 @@ GDV 沒有單一公式，依嚴重度跟個體狀況走，每個階段都得重�
   references: [
     { type: 'journal', citation: 'Brockman DJ et al. Canine gastric dilatation/volvulus syndrome in a veterinary critical care unit: 295 cases (1986-1992). J Am Vet Med Assoc. 1995;207(4):460-464.', relevance: 'GDV 大型回顧性研究，預後因子分析' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 20: Surgery of the Digestive System.', relevance: 'GDV 手術技術標準教材' },
-    { type: 'journal', citation: 'de Battisti A et al. Lactate as a prognostic indicator in dogs with gastric dilatation-volvulus. J Am Vet Med Assoc. 2009;235(1):46-52.', relevance: 'Lactate 作為 GDV 預後指標的關鍵研究' },
-    { type: 'journal', citation: 'Glickman LT et al. Incidence of and breed-related risk factors for gastric dilatation-volvulus in dogs. J Am Vet Med Assoc. 2000;216(1):40-45.', relevance: '品種風險因子流行病學研究' },
+    { type: 'journal', citation: 'de Battisti A et al. Lactate as a prognostic indicator in dogs with gastric dilatation-volvulus. J Am Vet Med Assoc. 2009;235(1):46-52.', relevance: 'Lactate 作為 GDV 預後指標的關鍵研究（基礎）' },
+    { type: 'journal', citation: 'Glickman LT et al. Non-dietary risk factors for gastric dilatation-volvulus in large and giant breed dogs. J Am Vet Med Assoc. 2000;217(10):1492-1499.', relevance: '風險因子流行病學基礎（一等親病史、深胸、進食速度、墊高食盆爭議）；資料逾 20 年須註明時效' },
+    { type: 'journal', citation: 'Olimpo M, Cillari S, Ferraris EI, et al. Gastric Dilatation-Volvulus in Dogs: Analysis of 130 Cases in a Single Institution. Animals (Basel). 2025;15(4):579. doi:10.3390/ani15040579.', relevance: '最新 130 例現代手術系列：存活率 86.4%、併發症基準，並顯示單次乳酸與預後無顯著關聯' },
+    { type: 'journal', citation: 'de la Vega M, Ralphs SC. Outcomes and complications of prophylactic incisional gastropexy in 766 dogs (2009-2019). BMC Res Notes. 2023;16(1):300. doi:10.1186/s13104-023-06595-6.', relevance: '766 例證實預防性切開式胃固定術安全（併發症 0.4%）且長期零復發，支持對高風險犬種施行' },
+    { type: 'journal', citation: 'Grassato L, Spinella G, Musella V, et al. Pre- and post-surgical evaluation of plasma lactate concentration in 45 dogs with gastric dilatation-volvulus. Heliyon. 2020;6(2):e03307. doi:10.1016/j.heliyon.2020.e03307.', relevance: '「乳酸清除率 ≥50%」未能可靠預測存活或胃壞死，修正將固定乳酸清除率當硬指標的舊教學' },
   ],
   is_current: true,
   created_at: now,
@@ -5918,6 +5927,157 @@ const contentFelineToothResorption: NodeContent = {
   created_at: now,
 };
 
+/** 貓慢性齦口腔炎 (FCGS)，疾病型（2026-06-15 新增節點）。臨床內容待 DVM 覆核。 */
+const contentFCGS: NodeContent = {
+  id: 'CONTENT-SURG-L3-022',
+  node_id: 'SURG-L3-022',
+  version: 1,
+  summary:
+    '貓慢性齦口腔炎（FCGS，又稱尾側口腔炎）是一種嚴重、慢性、免疫介導的口腔黏膜發炎疾病，典型為雙側對稱性發炎並向尾側口腔（舌顎弓／磨牙後黏膜）延伸——此「尾側黏膜炎」是與單純牙周性齒齦炎最重要的鑑別點。患貓常有劇烈口腔疼痛、流涎、惡臭、進食困難與體重下降。實證最強的治療是全口或部分（犬齒以後全部）拔牙，約六到八成可痊癒或顯著改善；難治型可考慮環孢素、干擾素及新興的間質幹細胞療法（證據有限）。',
+  learning_objectives: [
+    '說明 FCGS 定義，並指出「尾側口腔炎（舌顎弓黏膜發炎）」為其與牙周性齒齦炎、齒吸收的關鍵鑑別特徵',
+    '描述其免疫介導病理機轉，並正確將 FCV／FIV／FeLV／Bartonella 定位為相關性而非已證實之因果',
+    '辨識主要臨床症狀（口痛、流涎、惡臭、厭食、體重下降、毛髮失整潔）並認出尾側黏膜炎標誌病灶',
+    '規劃診斷流程：全麻下口腔檢查、切片排除鱗狀細胞癌、全口牙科 X 光、評估反轉錄病毒狀態',
+    '說明「拔牙優先」的實證基礎（Jennings 2015：約 67% 痊癒或顯著改善），並對難治型提出階梯式內科處置',
+    '進行飼主溝通並避免常見錯誤（長期類固醇、未切片、止痛不足）',
+  ],
+  key_points: [
+    '標誌性病灶是尾側／舌顎弓黏膜的增生潰瘍性發炎，發炎範圍超出齒齦本身',
+    '病理為淋巴漿細胞浸潤，本質是對牙菌斑生物膜等慢性抗原的過度免疫反應',
+    '拔牙（全口或犬齒以後全部）是實證最強的首選治療，而非最後手段',
+    'Jennings 2015（n=95）：約 28% 完全緩解、約 39% 顯著改善（合計約 67%），全口與部分拔牙無顯著差異',
+    'FCV 帶原在患貓中很常見，但 FCV 病毒量不能預測嚴重度或預後（Druet & Hennet 2017）',
+    '切片的重要目的之一是排除鱗狀細胞癌（SCC），尤其單側／腫塊樣病灶',
+    '殘留牙根是治療失敗最常見原因；判定難治前須重照 X 光並重新手術',
+    '難治型（約 20–30%）可用環孢素（監測血中谷值）、干擾素、短期類固醇；間質幹細胞療法為新興、證據有限',
+  ],
+  body: `# 貓慢性齦口腔炎 (Feline Chronic Gingivostomatitis, FCGS)
+
+> ⚠️ 臨床內容（藥物劑量、方案）須由具執照獸醫師依現行藥品標示與當地法規確認。FCV/FIV/Bartonella 為相關性非已證實因果；MSC 療法為新興、證據有限。
+
+## 一、定義 (Definition)
+
+FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病，特徵為**雙側對稱**，標誌性鑑別點是發炎**向尾側口腔延伸**（舌顎弓／磨牙外側黏膜，即「尾側口腔炎」）。此尾側／外側黏膜受累、超出齒齦本身，是 FCGS 與「侷限於牙周的齒齦炎」最重要的區別。疾病劇痛且使貓衰弱。FCGS 與牙周病、齒吸收（各有獨立節點）**為不同疾病**，惟三者常並存。
+
+## 二、病理機轉 (Pathophysiology)
+
+主流模型為**對慢性抗原刺激（以牙菌斑生物膜為主要驅動抗原）之異常、過度黏膜免疫反應**——這正是「拔牙優先（移除牙菌斑滯留面）」的治療邏輯。組織學見固有層／黏膜下密集**淋巴漿細胞浸潤**（以漿細胞與 T 淋巴球為主），伴免疫失調（CD4/CD8 比例改變、免疫球蛋白變化）。
+
+共因子（皆為**相關性而非已證實因果**）：
+- **貓卡里西病毒（FCV）**：高度相關、患貓帶原常見（部分族群近乎全陽）；但因果未確立，且 FCV 病毒量**不能**預測嚴重度或預後（Druet & Hennet 2017）。
+- **FIV／FeLV**：共病，應評估但非已證實病因。
+- **Bartonella**：相關性研究結果不一、證據薄弱。
+
+## 三、流行病學與病患 (Epidemiology)
+
+一般族群盛行率約 **0.7–4%**（各文獻不一，須查證）；無強烈品種/性別偏好（部分研究純種比例較高），中年貓常見但年齡範圍廣。患貓 FCV 帶原比例高。
+
+## 四、臨床表現 (Clinical Signs)
+- **尾側／舌顎弓黏膜增生潰瘍性發炎（尾側口腔炎）= 標誌病灶**。
+- 嚴重口腔疼痛、張口困難、拒碰口部。
+- 流涎（可能帶血）、惡臭。
+- 進食困難、厭食、體重下降。
+- **停止理毛 → 毛髮糾結失整潔**（一望即知的線索）。
+- 口腔出血、下頜／頸部淋巴結腫大。
+
+## 五、診斷 (Diagnosis)
+1. **全身麻醉下完整口腔檢查**（清醒檢查低估範圍且不人道）。
+2. **代表性病灶切片**：確診淋巴漿細胞性口腔炎，並**排除腫瘤（尤其鱗狀細胞癌 SCC）**與嗜酸性等其他口腔炎。單側／腫塊樣／非典型病灶務必切片。
+3. **全口牙科 X 光（或 CBCT）**：評估殘根、齒吸收、齒槽骨流失並規劃完整拔牙。
+4. **評估 FCV／FIV／FeLV 狀態**（必要時 Bartonella）——影響預後/共病管理，非主要治療依據。
+5. 與 SCC、嗜酸性口腔炎、牙周病、齒吸收、自體免疫（如天疱瘡）、尿毒性口腔炎、感染性病因鑑別。
+
+## 六、治療 — 實證 (Treatment)
+
+**拔牙是實證最強的首選治療**：行**全口拔牙**或**拔除犬齒以後全部（前臼齒＋臼齒）**，並以 X 光確認**完整移除所有牙根碎片**（殘根是失敗常見原因）。
+- **Jennings 2015（JAVMA，n=95）**：約 28% 完全緩解、約 39% 顯著改善（合計約 **67%**），約 26% 改善有限需持續內科、約 6% 難治；**全口與部分拔牙無顯著差異**。
+- Winer 2016 系統性回顧：拔牙後約 **80%** 痊癒或顯著改善（臨床常引用 60–80%）。
+
+**難治／不完全反應者（約 20–30%）—— 內科（證據較弱）**：
+- **環孢素（ciclosporin）**：最受支持的內科輔助，**監測血中谷值**（常見目標約 ≥300 ng/mL；劑量/目標須依現行文獻與獸醫師確認）。
+- **貓重組 omega 干擾素**（及人 IFN-α）：證據變異/有限。
+- **類固醇**：可短期緩解，但**不治本、不建議長期使用**（影響日後手術與糖尿病風險）；僅作橋接。
+- **間質幹細胞（MSC）療法——新興、證據有限（小型無對照前驅試驗）**：Arzi 2016（自體脂肪 MSC，完成 7 隻，約 5/7 有反應）、Arzi 2017（異體，4/7 約 57% 有反應、反應較慢）。定位為難治型之新興選項。
+- 全程**多模式止痛**；**抗生素角色有限**（至多短暫改善，非治癒，不能取代拔牙）。
+
+## 七、預後、監測與溝通 (Prognosis & Communication)
+
+完整拔牙後多數顯著改善、相當比例可痊癒；少數需長期內科。**殘留牙根為失敗最常見原因 → 判定難治前先重照 X 光並重新手術**。對飼主說明：此為**長期、疼痛**之疾病，**拔牙為第一線（非最後手段）**，反應可能需數週至數月，部分貓需長期治療；避免以長期類固醇拖延根本治療。
+
+## 八、常見錯誤
+見 common_mistakes。**要訣**：毛髮糾結、不再理毛、張口疼痛的貓，把尾側口腔炎放鑑別前段——最有效的介入是**完整拔牙**，不是再開一輪類固醇；判定難治前先用全口 X 光確認沒有殘根。
+`,
+  clinical_pearl:
+    '一隻毛髮糾結、不再理毛、且張口時明顯疼痛的貓，應立刻把「尾側口腔炎」放進鑑別清單前段——而現有最有效的介入是完整拔除牙齒，不是再開一輪類固醇。判定難治之前，先用全口 X 光確認沒有殘留牙根。',
+  common_mistakes: [
+    '以長期類固醇取代拔牙：壓住症狀、延誤根本治療，並增加日後手術與糖尿病風險',
+    '未做切片排除鱗狀細胞癌（SCC），尤其忽略單側或腫塊樣病灶',
+    '止痛不足：低估此病疼痛程度，未給予多模式止痛',
+    '拔牙不完整／殘留牙根，卻直接把病例貼上「難治」標籤',
+    '過度依賴抗生素作為主要治療（僅短暫改善，無法治癒）',
+  ],
+  disease_data: {
+    signalment:
+      '中年貓常見（但年齡範圍廣）；無強烈品種或性別偏好（部分研究報告純種貓比例較高）。患貓 FCV 帶原比例高。一般族群盛行率約 0.7–4%（各文獻數字不一，需查證）。',
+    etiology:
+      '病因未明，目前視為對慢性抗原刺激（以牙菌斑生物膜為主要驅動抗原）之免疫介導異常反應。FCV、FIV、FeLV、Bartonella 為相關性因子，非已證實之因果。',
+    pathogenesis:
+      '口腔黏膜固有層出現以漿細胞與 T 淋巴球為主的密集淋巴漿細胞浸潤，伴隨局部與全身免疫失調（CD4/CD8 比例改變、免疫球蛋白變化）。對牙菌斑等持續抗原刺激產生過度且失調的黏膜免疫反應，故移除牙菌斑滯留面（拔牙）為治療核心邏輯。',
+    clinical_signs: [
+      { sign: '尾側／舌顎弓黏膜增生潰瘍性發炎（尾側口腔炎）', category: 'primary', description: '標誌性病灶，發炎超出齒齦本身' },
+      { sign: '嚴重口腔疼痛、張口困難、拒絕觸碰口部', category: 'primary', description: '常為主導表現' },
+      { sign: '流涎（可能帶血）、惡臭', category: 'primary', description: '口腔發炎與潰瘍' },
+      { sign: '進食困難、厭食、體重下降', category: 'primary', description: '疼痛致食慾與營養下降' },
+      { sign: '停止理毛導致毛髮糾結失整潔', category: 'secondary', description: '一望即知的臨床線索' },
+      { sign: '口腔出血、下頜／頸部淋巴結腫大', category: 'secondary', description: '發炎續發表現' },
+    ],
+    staging: {
+      system: '無國際公認正式分期系統；臨床上常以發炎範圍與嚴重度描述性分級，並可用 Stomatitis Disease Activity Index (SDAI) 等評分工具量化追蹤',
+      stages: [
+        '局限型：發炎主要局限於齒齦／牙槽黏膜（牙周相關），尚未明顯延伸至尾側',
+        '尾側型（典型 FCGS）：雙側對稱發炎並延伸至舌顎弓／尾側口腔黏膜',
+        '嚴重／廣泛型：增生潰瘍廣泛、劇痛、明顯厭食與體重下降，常需積極手術與止痛',
+      ],
+    },
+    differential_diagnosis: [
+      { condition: '口腔鱗狀細胞癌（SCC）及其他口腔腫瘤', key_differentiator: '必須切片排除，尤其單側／腫塊樣病灶；見 ONCO-L3-005' },
+      { condition: '嗜酸性球性口腔炎／嗜酸性肉芽腫複合症', key_differentiator: '特徵性病灶，細胞學/切片見嗜酸性球' },
+      { condition: '牙周病', key_differentiator: '齒齦炎侷限於齒齦、無尾側延伸；見 SURG-L3-020' },
+      { condition: '齒吸收（TR）', key_differentiator: 'X 光見硬組織吸收；見 SURG-L3-021' },
+      { condition: '自體免疫／黏膜皮膚疾病（如天疱瘡）、尿毒性口腔炎、感染性口腔炎', key_differentiator: '切片、生化、感染篩檢鑑別' },
+    ],
+    diagnostic_workup:
+      '1) 全身麻醉下完整口腔檢查；2) 代表性病灶切片以確診淋巴漿細胞性口腔炎並排除 SCC 等腫瘤；3) 全口牙科 X 光（或 CBCT）評估殘根、齒吸收、齒槽骨流失並規劃完整拔牙；4) 評估 FCV／FIV／FeLV 狀態（必要時 Bartonella）；5) 與嗜酸性、牙周、齒吸收、自體免疫等病因鑑別。',
+    treatment_protocol:
+      '第一線：拔牙（全口，或拔除犬齒以後全部前臼齒與臼齒），務必以 X 光確認無殘根。難治型（約 20–30%）：環孢素（監測血中谷值，常見目標約 ≥300 ng/mL，需依現行文獻與獸醫師確認劑量）、貓重組 omega 干擾素、短期類固醇（僅作橋接，不可長期）、間質幹細胞療法（自體或異體脂肪來源 MSC，新興且證據有限，多於專科／研究環境）。全程多模式止痛；抗生素角色有限，非治癒性。所有臨床劑量與方案須由具執照獸醫師依現行藥品標示與當地法規確認。',
+    prognosis:
+      '完整拔牙後多數顯著改善、相當比例可痊癒（Jennings 2015：約 67% 痊癒或顯著改善）；少數需長期內科管理。殘留牙根為失敗最常見原因，判定難治前應重照 X 光並重新手術。',
+    monitoring:
+      '追蹤疼痛、食慾與體重、病灶消退情形；難治型監測環孢素血中谷值；持續評估反轉錄病毒等共病。療效可能需數週至數月顯現。',
+    owner_communication:
+      '需事先說明：此為長期、疼痛之疾病；拔牙為第一線治療（非最後手段）；反應可能需數週至數月；部分貓需長期治療；避免以長期類固醇拖延根本治療。',
+  },
+  diagnostic_data: null,
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '臨床表現段落後', type: 'annotated_image', description: '尾側口腔炎（舌顎弓）病灶標註圖，對比牙周性齒齦炎' },
+    { position: '治療段落後', type: 'flowchart', description: 'FCGS 處置：切片排除 SCC → 全口/部分拔牙 → 難治型階梯式內科（環孢素/IFN/MSC）' },
+  ],
+  interactive_placeholders: [],
+  drug_api_links: ['Cyclosporine', 'Prednisolone'],
+  references: [
+    { type: 'journal', citation: 'Jennings MW, Lewis JR, Soltero-Rivera MM, Brown DC, Reiter AM. Effect of tooth extraction on stomatitis in cats: 95 cases (2000-2013). J Am Vet Med Assoc. 2015;246(6):654-660.', relevance: '拔牙療效關鍵實證：95 隻貓約 28% 完全緩解+39% 顯著改善（合計約 67%），全口與部分拔牙無顯著差異（基礎文獻）' },
+    { type: 'journal', citation: 'Winer JN, Arzi B, Verstraete FJM. Therapeutic Management of Feline Chronic Gingivostomatitis: A Systematic Review of the Literature. Front Vet Sci. 2016;3:54. doi:10.3389/fvets.2016.00054.', relevance: '系統性回顧：拔牙後約 80% 痊癒或顯著改善，並評析內科療法證據品質（基礎文獻）' },
+    { type: 'journal', citation: 'Arzi B, Mills-Ko E, Verstraete FJM, et al. Therapeutic Efficacy of Fresh, Autologous Mesenchymal Stem Cells for Severe Refractory Gingivostomatitis in Cats. Stem Cells Transl Med. 2016;5(1):75-86. doi:10.5966/sctm.2015-0127.', relevance: '難治型 FCGS 自體脂肪 MSC 小型前驅試驗（約 5/7 有反應）；新興療法、證據等級低（基礎文獻）' },
+    { type: 'journal', citation: 'Arzi B, Clark KC, Sundaram A, et al. Therapeutic Efficacy of Fresh, Allogeneic Mesenchymal Stem Cells for Severe Refractory Feline Chronic Gingivostomatitis. Stem Cells Transl Med. 2017;6(8):1710-1722.', relevance: '異體脂肪 MSC 試驗（4/7 約 57% 有反應，反應較慢）；佐證 MSC 為難治型新興但證據有限選項（基礎文獻）' },
+    { type: 'journal', citation: 'Druet I, Hennet P. Relationship between Feline calicivirus Load, Oral Lesions, and Outcome in Feline Chronic Gingivostomatitis (Caudal Stomatitis): Retrospective Study in 104 Cats. Front Vet Sci. 2017;4:209. doi:10.3389/fvets.2017.00209.', relevance: '104 隻全 FCV 陽性，但病毒量與嚴重度/預後無相關；支持「FCV 為相關非因果」（基礎文獻）' },
+    { type: 'guideline', citation: 'Bellows J, Berg ML, Dennis S, et al. 2019 AAHA Dental Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2019;55(2):49-69. doi:10.5326/JAAHA-MS-6933.', relevance: '麻醉下口腔檢查、全口牙科 X 光、完整拔牙原則之實務依據（基礎指引）' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
 export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L0-001', contentSurgOverview],
   ['SURG-L1-001', contentSurgPrinciples],
@@ -5946,6 +6106,7 @@ export const SURG_CONTENTS = new Map<string, NodeContent>([
   ['SURG-L3-019', contentOsteoarthritis],
   ['SURG-L3-020', contentPeriodontalDisease],
   ['SURG-L3-021', contentFelineToothResorption],
+  ['SURG-L3-022', contentFCGS],
   ['SURG-L4-001', contentPreopImaging],
   ['SURG-L4-002', contentIntraopDecision],
   ['SURG-L4-003', contentOrthoImaging],
