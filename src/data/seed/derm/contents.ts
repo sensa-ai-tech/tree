@@ -1236,7 +1236,7 @@ const contentMalassezia: NodeContent = {
 const contentOtitis: NodeContent = {
   id: 'CONTENT-DERM-L3-007',
   node_id: 'DERM-L3-007',
-  version: 1,
+  version: 2,
   summary: '外耳炎是犬貓最常見的耳科疾病，犬大概 10-20%、貓 2-6% 都會碰到。理解外耳炎的關鍵就是「PSPP」分類系統：原發因素（Primary）、繼發因素（Secondary）、易感因素（Predisposing）、持續因素（Perpetuating）。過敏性皮膚病是犬外耳炎最常見的原發因素，占 43-75%。耳道細胞學是基本中的基本，要靠它鑑定感染微生物（球菌、桿菌、馬拉色菌）才知道怎麼治療。慢性外耳炎會跑到中耳炎，必須更積極處理。台灣亞熱帶高溫多濕，外耳炎盛行率本來就高，垂耳犬在這種環境下復發率更高。',
   learning_objectives: [
     '運用 PSPP 分類系統系統性分析外耳炎病因',
@@ -1253,6 +1253,7 @@ const contentOtitis: NodeContent = {
     '桿菌感染（常為 Pseudomonas）：含 fluoroquinolone 或 polymyxin B，依培養藥敏調整',
     '馬拉色菌感染：含 clotrimazole 或 miconazole 的耳用製劑',
     '慢性外耳炎需評估中耳是否受累（鼓膜完整性、影像學）',
+    '局部治療優先：單純外耳炎不常規用全身抗生素（保留給中耳炎/嚴重）；局部用藥靠細胞學而非全身 C&S 的 MIC',
   ],
   body: `# 外耳炎 (Otitis Externa)
 
@@ -1361,7 +1362,25 @@ const contentOtitis: NodeContent = {
 | 慢性外耳炎何時從保守治療轉為手術（TECA-LBO） | 無標準化決策標準，依賴臨床判斷與飼主意願 | Level IV |
 | 鼓膜破裂時 fluoroquinolone 耳劑的耳毒性風險 | 一般認為比 aminoglycosides 安全，但缺乏大型安全性研究 | Level III |
 | 外耳炎維持治療（prophylactic ear cleaning）的最佳頻率 | 經驗性建議每週 1-2 次，但過度清洗可能刺激耳道 | Level IV |
-| 犬外耳炎 Pseudomonas biofilm 的最佳破壞策略 | Tris-EDTA 有效但單獨不夠；與 NAC 或 lactoferrin 併用的研究初步 | Level III |`,
+| 犬外耳炎 Pseudomonas biofilm 的最佳破壞策略 | Tris-EDTA 有效但單獨不夠；與 NAC 或 lactoferrin 併用的研究初步 | Level III |
+
+## 八、近期實證更新（局部優先 + 長效複方耳劑）
+
+### 局部優先、不常規全身抗生素（抗菌藥物管理）
+單純外耳炎以**局部治療為主，全身性抗生素並非常規**——口服抗生素僅保留給中耳炎、嚴重、或耳道無法局部給藥者。這是抗菌藥物管理（stewardship）的重要一環。
+
+### 獸醫端施用的長效複方耳劑
+RCT 支持的長效複方（florfenicol + terbinafine + 類固醇）可大幅改善飼主依從性：
+- **Osurnia**（florfenicol／terbinafine／**betamethasone**）：間隔 1 週兩劑；RCT 成功率 64.8% vs 安慰劑 43.4%（Forster 2018），且不劣於每日點藥（King 2018）。
+- **Claro／Neptra**（florfenicol／terbinafine／**mometasone**）：獸醫單次施用、標示效期約 30 天（Bae 2021 in-vivo 成功率 88.5%）。**含類固醇複方於鼓膜穿孔者禁用（如 Claro 仿單明訂）。**
+> 產品名稱、濃度、給藥間隔與適應症各國仿單不同，需 DVM 依當地仿單核對。
+
+### 細胞學優先於培養 MIC（局部用藥決策）
+**選局部藥靠細胞學，不要用「全身性 C&S 的 MIC」來決定**：正確點入耳道的局部藥濃度可達 MIC 的 100–1000 倍，故系統性 breakpoint 會低估局部療效（即使報告「抗藥」，局部仍常有效）。培養保留給：難治、桿菌／綠膿桿菌、或需全身用藥時。
+
+### 類固醇是複方不可或缺的成分
+類固醇抗發炎、止癢、減少滲出與腫脹，並**逆轉耳道狹窄與腺體增生**、恢復引流，讓抗菌成分能接觸上皮——是複方耳劑的必要成分而非附帶。
+> 臨床內容需獸醫師上線前覆核。`,
   clinical_pearl: '每次外耳炎不做耳道細胞學就開始治療，等於是在蒙眼開槍。球菌、桿菌、馬拉色菌要用完全不同的藥。更重要的是，遇到反覆外耳炎的犬，一定要往「原發因素」想，最常見就是過敏。光治感染不處理過敏，外耳炎永遠跑不掉。',
   common_mistakes: [
     '未做耳道細胞學即經驗性使用耳用藥物（球菌/桿菌/馬拉色菌需要不同治療）',
@@ -1407,10 +1426,13 @@ const contentOtitis: NodeContent = {
   ],
   drug_api_links: ['Enrofloxacin', 'Prednisolone', 'Chlorhexidine'],
   references: [
-    { type: 'guideline', citation: 'Gotthelf LN. Diagnosis and treatment of otitis media in dogs and cats. Vet Clin North Am Small Anim Pract. 2004;34(2):469-487.', relevance: '外耳炎與中耳炎的診斷治療指引' },
-    { type: 'journal', citation: 'Gortel K. Otic flushing. Vet Clin North Am Small Anim Pract. 2004;34(2):557-565.', relevance: '耳道灌洗技術指引' },
-    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '外耳炎完整章節與 PSPP 分類' },
-    { type: 'journal', citation: 'Paterson S. Discovering the causes of otitis externa. In Pract. 2016;38(Suppl 2):7-11.', relevance: '外耳炎原發因素的系統性排查' },
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '外耳炎完整章節與 PSPP 分類（注意：無正式外耳炎共識指引，本主題實證來自綜述/RCT/教科書）' },
+    { type: 'journal', citation: 'Paterson S. Discovering the causes of otitis externa. In Pract. 2016;38(Suppl 2):7-11.', relevance: '外耳炎原發因素（過敏最常見）的系統性排查' },
+    { type: 'journal', citation: 'Forster SL, Real T, Doucette KP, King SB. A randomized placebo-controlled trial of the efficacy and safety of a terbinafine, florfenicol and betamethasone topical ear formulation in dogs (Osurnia). BMC Vet Res. 2018;14(1):262. doi:10.1186/s12917-018-1589-7.', relevance: '長效複方耳劑（Osurnia，兩劑）RCT：成功率 64.8% vs 安慰劑 43.4%——支持局部優先' },
+    { type: 'journal', citation: 'Bae S, Jin Y, Oh T. In vivo and in vitro efficacy of florfenicol, terbinafine, and mometasone furoate otic solution (Claro) for canine otitis externa. Korean J Vet Res. 2021;61(4):e37. doi:10.14405/kjvr.2021.61.e37.', relevance: '獸醫單次施用長效耳劑（Claro/Neptra）in-vivo 成功率 88.5%；FDA 標示鼓膜穿孔禁用' },
+    { type: 'journal', citation: 'Buckley LM, McEwan NA, Nuttall T. Tris-EDTA significantly enhances antibiotic efficacy against multidrug-resistant Pseudomonas aeruginosa in vitro. Vet Dermatol. 2013;24(5):519-e122. doi:10.1111/vde.12071.', relevance: 'Tris-EDTA 作為增效劑降低 marbofloxacin/gentamicin 之 MIC/MBC——綠膿桿菌/生物膜管理依據' },
+    { type: 'journal', citation: 'Brame B, Cain C. Chronic otitis in cats: clinical management of primary, predisposing and perpetuating factors. J Feline Med Surg. 2021;23(5):433-446. doi:10.1177/1098612X211007072.', relevance: '貓外耳炎不同於犬：耳疥蟎為最常見主要因、發炎性耳道息肉為重要誘發/阻塞因子' },
+    { type: 'journal', citation: 'Song Y, et al. Therapeutic and formulation innovations in the management of canine otitis externa. Pharmaceutics. 2025;17(10):1332. doi:10.3390/pharmaceutics17101332.', relevance: '2025 綜述：局部為主要給藥途徑、長效新劑型、類固醇/生物膜原理與耳毒性禁忌' },
   ],
   is_current: true,
   created_at: now,
