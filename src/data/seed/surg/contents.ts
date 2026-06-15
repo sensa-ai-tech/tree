@@ -371,8 +371,8 @@ const contentPyometra: NodeContent = {
 const contentSplenicNeoplasia: NodeContent = {
   id: 'CONTENT-SURG-L3-002',
   node_id: 'SURG-L3-002',
-  version: 1,
-  summary: '犬脾臟腫瘤是臨床上常碰到的腹腔腫塊，大約 2/3 是惡性，其中血管肉瘤（hemangiosarcoma, HSA）占 45-51%。患犬常常因為脾臟腫塊破裂、急性腹腔出血才被送來。診斷靠腹部超音波加 AFAST，確診要靠組織病理。脾臟切除術（splenectomy）是主要治療方式，不過 HSA 預後很差，沒化療的話中位存活只剩 1-3 個月。良性的（像血腫、結節性增生）切完之後預後就好得多。',
+  version: 2,
+  summary: '犬脾臟腫塊是臨床常見的腹腔腫塊。經典「雙三分之二法則」（2/3 惡性、其中 2/3 HSA）其實**依就診情境而異**：在一般接受脾切除的族群中多數其實是良性（約 58%），但在「脾臟腫塊破裂、非外傷性腹腔出血」的急診情境，HSA 比例反而更高。影像（超音波/CT）無法可靠區分良惡性，確診仰賴組織病理。脾臟切除術為主要治療；HSA 即使加化療預後仍有限（中位約 4-6 個月、一年存活約 10%），良性病灶（血腫、結節性增生）切除後預後佳。',
   learning_objectives: [
     '列舉犬脾臟腫塊最常見的良性與惡性病因',
     '描述脾臟腫塊破裂的急診處理流程',
@@ -381,7 +381,7 @@ const contentSplenicNeoplasia: NodeContent = {
     '運用影像學與臨床病理初步區分良惡性脾臟腫塊',
   ],
   key_points: [
-    '犬脾臟腫塊大約 2/3 是惡性，其中 HSA 占大概 50%',
+    '「雙三分之二法則」依情境而異：一般脾切除族群多數良性（約 58%）、但破裂/出血急診 HSA 比例更高（達 85-100% of malignant）',
     '良性的原因：血腫（hematoma）、結節性增生（nodular hyperplasia）、血管瘤（hemangioma）',
     '急性腹腔出血是最常見的就診原因，要快速穩定加輸血',
     '超音波區分不出良惡性，不能只看影像就決定預後',
@@ -404,6 +404,16 @@ const contentSplenicNeoplasia: NodeContent = {
 | 惡性腫瘤 | 血管肉瘤（HSA）、纖維肉瘤、淋巴瘤、肥大細胞腫瘤 | ~65% |
 | 良性腫瘤 | 血管瘤、脂肪瘤 | ~10% |
 | 非腫瘤性 | 血腫、結節性增生、脾扭轉 | ~25% |
+
+> 註：上表為傳統概略比例（偏向「破裂/出血」轉診族群）。實際良惡性比例**依就診情境差異很大**，見下方更新。
+
+### 2020–2025 實證更新（待 DVM 覆核）
+- **「雙三分之二法則」須依情境修正（方向相反）**：
+  - **一般接受脾切除的族群（含偶然發現結節）**：多數其實**良性**——某 182 例研究 57.7% 良性、HSA 僅 32.4%；偶發結節 93.9% 良性（Ziogaite 2024）。舊法則**高估**惡性。
+  - **非外傷性腹腔出血、脾臟腫塊「破裂」之急診**：系統性回顧顯示惡性 62.5–84.3%、其中 HSA 達 85.1–100%（Schick & Grimes 2023）。舊法則**低估** HSA。
+  - 教學重點：**不要記單一數字，要依臨床表現條件化**。
+- **術前無法確診；預測分數有限**：影像（超音波/CT）與細胞學皆無法可靠區分良惡性，確診須病理。預測工具中 **HeLP score**（體重、總蛋白、血小板、胸片）外部驗證 AUC 0.79（可接受）優於 **T-STAT**（線上計算器，AUC 0.68 不佳）；**兩者皆不足以單獨決定手術**（Hillier 2024）。飼主常須在未確診下同意脾切除，化療與否待病理。HSA 風險因子：血小板低下、貧血（HCT<33%）、腹腔出血。
+- **HSA 治療現實**：脾切除＋doxorubicin 化療僅有限延長存活（單純切除中位 1–3 月、加化療約 4–6 月、一年存活約 10%），手術本質偏止血緩和（診斷時多已微轉移）。**eBAT**（雙特異性毒素）為研究前沿、非標準療法；**Yunnan Baiyao 證據不足、無確證療效**。分期建議含**心臟超音波篩檢右心房 HSA** 與凝血評估。
 
 ### 手術：脾臟切除術
 [互動:脾臟切除術步驟流程]
@@ -533,7 +543,11 @@ const contentSplenicNeoplasia: NodeContent = {
     { type: 'journal', citation: 'Spangler WL, Culbertson MR. Prevalence, type, and importance of splenic diseases in dogs: 1,480 cases (1985-1989). J Am Vet Med Assoc. 1992;200(6):829-834.', relevance: '犬脾臟腫塊流行病學經典研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 24: Surgery of the Hemolymphatic System.', relevance: '脾臟切除術技術標準教材' },
     { type: 'journal', citation: 'Wendelburg KM et al. Evaluation of a novel predictive model for splenic masses in dogs: 140 cases. J Am Vet Med Assoc. 2015;246(12):1338-1344.', relevance: '脾臟腫塊良惡性預測模型研究' },
-    { type: 'guideline', citation: 'Clifford CA et al. Treatment of canine hemangiosarcoma: 2000 and beyond. J Vet Intern Med. 2000;14(5):479-485.', relevance: 'HSA 化療方案與預後文獻' },
+    { type: 'guideline', citation: 'Clifford CA et al. Treatment of canine hemangiosarcoma: 2000 and beyond. J Vet Intern Med. 2000;14(5):479-485.', relevance: 'HSA 化療方案與預後文獻（基礎）' },
+    { type: 'journal', citation: 'Ziogaite B, Contreras ET, Horgan JE. Incidence of splenic malignancy and hemangiosarcoma in dogs undergoing splenectomy surgery at a surgical specialty clinic: 182 cases (2017–2021). PLOS ONE. 2024;19(12):e0314737. doi:10.1371/journal.pone.0314737.', relevance: '修正雙三分之二法則：一般脾切除族群多數良性（57.7%）、HSA 僅 32.4%、偶發結節 93.9% 良性' },
+    { type: 'journal', citation: 'Schick AR, Grimes JA. Evaluation of the validity of the double two-thirds rule for diagnosing hemangiosarcoma in dogs with nontraumatic hemoperitoneum due to a ruptured splenic mass: a systematic review. J Am Vet Med Assoc. 2023;261(1):69-73. doi:10.2460/javma.22.08.0389.', relevance: '系統性回顧：破裂/腹腔出血急診情境 HSA 比例反高於三分之二，與一般族群方向相反' },
+    { type: 'journal', citation: 'Hillier TN, Grimes JA, Wallace ML, Sutherland BJ, Schmiedt CW. Improved predictability is needed for calculators used to preoperatively determine the etiology of splenic masses in dogs: an external validation of the HeLP score and T-STAT. J Am Vet Med Assoc. 2024;262(7):917-923. doi:10.2460/javma.24.01.0016.', relevance: '外部驗證：HeLP（AUC 0.79 可接受）優於 T-STAT（0.68 不佳）；預測分數皆不足以單獨決定手術' },
+    { type: 'journal', citation: 'Borgatti A, Fieberg A, Winter AL, et al. Impact of repeated cycles of EGF bispecific angiotoxin (eBAT) administered at a reduced interval from doxorubicin chemotherapy in dogs with splenic haemangiosarcoma. Vet Comp Oncol. 2020;18(4):664-674. doi:10.1111/vco.12590.', relevance: 'eBAT 標靶毒素前沿證據：強化劑量未增存活、毒性反增；eBAT 仍屬實驗性非標準療法' },
   ],
   is_current: true,
   created_at: now,
