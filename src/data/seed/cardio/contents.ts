@@ -544,7 +544,7 @@ const contentAuscultation: NodeContent = {
 const contentDCM: NodeContent = {
   id: 'CONTENT-L3-002',
   node_id: 'CARDIO-L3-002',
-  version: 1,
+  version: 2,
   summary: '擴張型心肌病（DCM）是犬第二常見的後天性心臟病，以心室腔室擴大與心肌收縮力下降為特徵。好發於大型至巨型犬，尤其杜賓犬具有極高的遺傳易感性。DCM 常進展迅速，許多患犬在出現臨床症狀前即有嚴重的心肌功能障礙（隱匿期 DCM）。近年亦關注穀物替代飲食（BEG diet）與非典型 DCM 的關聯。',
   learning_objectives: [
     '描述犬 DCM 的病理生理機轉與疾病進程（隱匿期→臨床期）',
@@ -559,7 +559,7 @@ const contentDCM: NodeContent = {
     '隱匿期（occult DCM）可持續數月至數年，心超可偵測早期變化',
     'Echo 診斷標準：LVIDDN 增加、FS < 20%（杜賓 < 25%）、EPSS 增加',
     'Pimobendan 在隱匿期即有延緩進展的證據（PROTECT 研究）',
-    '飲食相關 DCM（BEG diet-associated DCM）需注意飲食史詢問',
+    '飲食相關 DCM（BEG diet）與飲食有「關聯」但因果未確立（FDA 2022）；需詢問飲食史，taurine 缺乏僅為亞型',
     '杜賓犬 DCM 預後較其他品種差，中位存活較短',
   ],
   body: `# 擴張型心肌病 (Dilated Cardiomyopathy, DCM)
@@ -739,7 +739,7 @@ const contentDCM: NodeContent = {
 | 杜賓犬，CHF 後 | 3-6 months | Calvert et al. |
 | 杜賓犬，猝死率 | 30-50% | 多項回顧性研究 |
 | 其他大型犬，CHF 後 | 6-12 months | Martin et al. |
-| 飲食相關 DCM | 可逆至正常（飲食改變後） | Adin et al. (2019) |
+| 飲食相關 DCM | 部分改善（換食後常不完全、需數月） | Freeman et al. JVIM 2022 |
 | 合併 AF | MST 減少 30-50% | Pedro et al. |
 
 ## 六、人醫借鑒 (Translational Insights)
@@ -757,7 +757,7 @@ const contentDCM: NodeContent = {
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 | 爭議議題 | 正方觀點 | 反方觀點 | Evidence Level |
 |---------|---------|---------|---------------|
-| BEG 飲食因果關係 | FDA 2018 警告、病例系列報告支持 | 缺乏 RCT、混淆因子多 | D（觀察性） |
+| BEG/無穀飲食因果關係 | 觀察性關聯、taurine 反應亞型、換食後部分改善 | FDA 2022「證據不足以建立因果」；對照餵食試驗未重現傷害 | D（關聯，因果未確立） |
 | 隱匿期所有品種是否用 Pimo | PROTECT 研究支持杜賓犬 | 僅杜賓犬有 Level A，其他品種外推存疑 | A（杜賓）/ C（其他） |
 | Taurine 補充效果 | 可卡犬/BEG 相關 DCM 改善報告 | 非所有 DCM 都是 taurine 缺乏 | B-C |
 | Digoxin 是否仍有角色 | 正性肌力 + 心率控制（AF） | 治療窗窄、毒性風險 | C（Pimobendan 時代） |
@@ -770,6 +770,23 @@ const contentDCM: NodeContent = {
 - 基因型與表型的外顯率預測模型
 - 犬 DCM 的幹細胞療法安全性與有效性長期數據
 
+## 八、近期實證更新（2018–2025）：飲食相關 DCM 的正確框架
+
+### FDA 立場已改變——「關聯」而非「因果」
+2018 年 FDA 啟動對無穀／豆科為主（BEG: boutique, exotic, grain-free）飲食與犬 DCM 關聯的調查，但 2022 年 12 月 23 日 FDA 明確表示：累積通報病例數（截至 2022/11 共 1,382 件）「不足以建立因果關係」，並在出現有意義的新證據前停止例行更新。**現行正確說法：飲食與 DCM 之間存在關聯，因果關係尚未確立。** 切勿教成「無穀飼料導致 DCM」。
+
+### 證據層級的對立
+- Freeman 等 2018（JAVMA）提出「BEG 飲食」概念，但該文為**觀點評論（commentary）**、用以提醒臨床通報，並非因果實證——常被誤引為證據。
+- 對照餵食試驗（如 Morris 等, J Anim Sci 2025，18 個月、60 隻健康犬）在「配方完整」的無穀／豆科飼料中**未**觀察到具臨床意義的心臟損害或 taurine 異常（註：該研究具飼料業界背景）。觀察性資料顯示「關聯」、對照試驗卻未重現「傷害」，正是因果未定的原因。
+
+### Taurine 與可逆性
+- Taurine 缺乏型 DCM 只是其中一個亞型（黃金獵犬明顯好發；Kaplan 等, PLoS One 2018：換食＋補 taurine 後 24 隻中 23 隻心超改善）。但**多數飲食相關 DCM 犬的 taurine 是正常的**，taurine 缺乏並非主要機轉。臨床仍建議測 taurine、缺乏者補充。
+- 與遺傳性 DCM（進行性、不可逆）不同，飲食相關 DCM 換為傳統飼料後心超參數可有統計意義的改善（Freeman 等, JVIM 2022），但幅度通常小、需數月至數年、未必完全。懷疑時應儘早換食並追蹤。
+
+### 杜賓犬基因標記的限制
+DCM1（PDK4）與 DCM2（TTN）主要在美系杜賓犬族群關聯，歐系（如英國）研究未一致證實；**標記陰性不代表不會發病，陽性也因不完全外顯而非必然發病**，勿當決定性檢測。
+> 臨床內容需獸醫師上線前覆核。
+
 [圖片:DCM 心超影像，擴大的左心室與降低的 FS]`,
   clinical_pearl: '杜賓犬的 DCM 有兩個獨特面向：(1) 心律不整表現可能先於心超異常出現，所以 Holter 篩檢與心超同等重要；(2) 杜賓犬的正常 FS 上限就較低（約 25%），不能用一般犬的標準（FS < 20%）來判斷。建議杜賓犬 4 歲開始每年進行心超 + Holter 篩檢。',
   common_mistakes: [
@@ -781,7 +798,7 @@ const contentDCM: NodeContent = {
   ],
   disease_data: {
     signalment: '好發於大型至巨型犬，中年至老年（3-7 歲開始）。杜賓犬盛行率最高（50-60%），其他好發品種包括大丹犬、愛爾蘭獵狼犬、拳師犬、紐芬蘭犬、英國可卡犬。雄性略高於雌性（約 1.5:1）。可卡犬為唯一好發的中型犬。',
-    etiology: '多為原發性/遺傳性心肌病（idiopathic）。杜賓犬已確認與 PDK4 及 TTN 基因突變相關。部分可能與 L-carnitine 或 taurine 缺乏有關（可卡犬、金毛）。近年關注穀物替代飲食（BEG diet: boutique/exotic/grain-free）與飲食相關 DCM 的關聯（FDA 2018 警告）。',
+    etiology: '多為原發性/遺傳性心肌病（idiopathic）。杜賓犬已確認與 PDK4 及 TTN 基因突變相關。部分可能與 L-carnitine 或 taurine 缺乏有關（可卡犬、金毛）。近年關注穀物替代飲食（BEG diet: boutique/exotic/grain-free）與飲食相關 DCM 的關聯（FDA 2018 啟動調查，2022 表示證據不足以建立因果）。',
     pathogenesis: '心肌細胞退化（萎縮、壞死、脂肪/纖維替代）→ 心室壁變薄 → 腔室擴大（離心性重塑）→ 收縮功能下降（FS↓, EF↓）→ 心輸出量減少 → 神經荷爾蒙代償活化（RAAS↑, SNS↑）→ 體液滯留與後負荷增加 → 續發性 AV valve regurgitation → 充血性心衰竭。同時心肌電氣不穩定導致心室性心律不整，增加猝死風險。',
     clinical_signs: [
       { sign: '運動不耐/虛弱', category: 'primary', description: '最早出現的症狀，飼主常誤以為是「年紀大了」' },
@@ -816,10 +833,13 @@ const contentDCM: NodeContent = {
   ],
   drug_api_links: ['Pimobendan', 'Furosemide', 'Enalapril', 'Benazepril', 'Spironolactone', 'Sotalol', 'Mexiletine', 'Diltiazem', 'Digoxin', 'Sildenafil'],
   references: [
-    { type: 'guideline', citation: 'Summerfield NJ et al. Efficacy of pimobendan in the prevention of congestive heart failure or sudden death in Doberman Pinschers with preclinical dilated cardiomyopathy (the PROTECT study). J Vet Intern Med. 2012;26(6):1337-1349.', relevance: '隱匿期 DCM 使用 Pimobendan 的關鍵證據' },
+    { type: 'guideline', citation: 'Summerfield NJ et al. Efficacy of pimobendan in the prevention of congestive heart failure or sudden death in Doberman Pinschers with preclinical dilated cardiomyopathy (the PROTECT study). J Vet Intern Med. 2012;26(6):1337-1349. doi:10.1111/j.1939-1676.2012.01026.x.', relevance: '隱匿期 DCM 使用 Pimobendan 的關鍵證據' },
     { type: 'journal', citation: 'Wess G et al. Evaluation of N-terminal pro-B-type natriuretic peptide as a diagnostic marker of various stages of cardiomyopathy in Doberman Pinschers. Am J Vet Res. 2011;72(5):642-649.', relevance: '杜賓犬 DCM 分期與 NT-proBNP 診斷價值' },
+    { type: 'guideline', citation: 'U.S. FDA. Investigation into Potential Link between Certain Diets and Canine Dilated Cardiomyopathy — Dec 23, 2022 update（1,382 件通報；FDA 表示「證據不足以建立因果關係」並停止例行更新）.', relevance: '當前最權威立場：飲食與 DCM 為關聯、因果未確立；用於糾正「無穀致 DCM」的過度陳述' },
+    { type: 'journal', citation: 'Freeman LM, Stern JA, Fries R, Adin DB, Rush JE. Diet-associated dilated cardiomyopathy in dogs: what do we know? J Am Vet Med Assoc. 2018;253(11):1390-1394. doi:10.2460/javma.253.11.1390.', relevance: '「BEG 飲食」概念來源，惟屬觀點評論(commentary)非因果實證——引用須標明性質' },
+    { type: 'journal', citation: 'Kaplan JL, Stern JA, Fascetti AJ, et al. Taurine deficiency and dilated cardiomyopathy in golden retrievers fed commercial diets. PLoS One. 2018;13(12):e0209112. doi:10.1371/journal.pone.0209112.', relevance: 'Taurine 缺乏型（黃金獵犬好發）換食＋補充後 23/24 隻心超改善——可逆亞型，區分於 taurine 正常之飲食相關 DCM' },
+    { type: 'journal', citation: 'Freeman LM, Rush JE, Adin DB, et al. Prospective study of dilated cardiomyopathy in dogs eating nontraditional or traditional diets and in dogs with subclinical cardiac abnormalities. J Vet Intern Med. 2022;36(2):451-463. doi:10.1111/jvim.16397.', relevance: '前瞻證據：換傳統飼料後心超(FS)顯著改善——飲食相關 DCM 部分可逆，與遺傳性 DCM 對比' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011.', relevance: 'DCM 完整病理與治療教材' },
-    { type: 'guideline', citation: 'FDA Investigation into Potential Link between Certain Diets and Canine Dilated Cardiomyopathy (2019 update).', relevance: '飲食相關 DCM 的監管與流行病學背景' },
   ],
   is_current: true,
   created_at: now,
