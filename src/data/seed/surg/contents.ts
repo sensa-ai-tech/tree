@@ -4095,7 +4095,7 @@ const contentPSS: NodeContent = {
 const contentLarPar: NodeContent = {
   id: 'CONTENT-SURG-L3-012',
   node_id: 'SURG-L3-012',
-  version: 1,
+  version: 2,
   summary: '喉麻痺（Laryngeal Paralysis, LP）是杓狀軟骨因為喉返神經出問題沒辦法正常外展，吸氣時聲門開口不夠的上呼吸道阻塞疾病。最常見的是老年大型犬的「老年發作性喉麻痺多發神經病變」（GOLPP, Geriatric Onset Laryngeal Paralysis Polyneuropathy），LP 被看作全身性多發神經病變的早期表現。典型表現是吸氣性喘鳴、聲音改變、運動不耐。確診要輕度鎮靜下做喉鏡檢查確認杓狀軟骨運動。手術以單側杓狀軟骨側向固定術（unilateral arytenoid lateralization, tie-back）為標準治療。吸入性肺炎是最重要的術後併發症。',
   learning_objectives: [
     '描述喉返神經解剖路徑與其病變導致杓狀軟骨麻痺的機轉',
@@ -4138,6 +4138,11 @@ const contentLarPar: NodeContent = {
 | 醫源性 | 甲狀腺/頸部手術損傷喉返神經 | 罕見 |
 | 腫瘤性 | 頸部/縱膈腫瘤壓迫或浸潤喉返神經 | 罕見 |
 | 甲狀腺低下相關 | 有爭議，因果關係不確定 | 不確定 |
+
+### 近期實證更新（2019–2025，待 DVM 覆核）
+- **手術結果（近期世代）**：UAL（tie-back）飼主滿意度約 **90%**，吸入性肺炎約 **7–17%**，不同技術變化在 AP 與存活期無顯著差異（Perez Lopez 2019，n=80）。Cricoarytenoid（CAL）相較 thyroarytenoid（TAL）側固聲門開口較大，但開口越大、吸入風險取捨越需留意（Drudi 2022）。
+- **預後與飼主溝通（關鍵訊息）**：飼主感知世代（Sample 2020，n=76）顯示 94% 認為 LP 影響生活品質、多數於確診約 2 年內進展惡化；接受開喉術者 QoL 較佳——但須明確告知：**手術解決的是「呼吸道」，治不了底層多發神經病變**，後肢無力與食道功能仍會持續退化。
+- **鑑別提醒（年輕犬≠GOLPP）**：年輕犬（Leonberger、Saint Bernard，約 2–3 歲）之 LP+神經病變多為 **CNTNAP1 基因變異所致早發遺傳型 LPPN3**（已有 DNA 檢測），與高齡 GOLPP（拉布拉多約 11.5 歲）在年齡與機轉上截然不同，勿混為一談（Letko 2020）。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -4269,6 +4274,10 @@ const contentLarPar: NodeContent = {
     { type: 'journal', citation: 'MacPhail CM, Monnet E. Outcome of and postoperative complications in dogs undergoing surgical treatment of laryngeal paralysis: 140 cases. J Am Vet Med Assoc 2001;218(12):1949-1956.', relevance: 'Tie-back 手術大樣本預後研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 29: Surgery of the Upper Respiratory System.', relevance: 'LP 診斷與手術概述' },
     { type: 'guideline', citation: 'Thieman KM, Krahwinkel DJ, Sims MH, et al. Histopathological confirmation of polyneuropathy in 11 dogs with laryngeal paralysis. J Am Anim Hosp Assoc. 2010;46(3):161-167. (Supporting GOLPP consensus definition)', relevance: 'GOLPP 共識定義之病理學確認研究' },
+    { type: 'journal', citation: 'Perez Lopez P, Barnes DC, Nelissen P, Demetriou J. Outcome of two variations of a surgical technique performed for canine unilateral arytenoid lateralisation. Vet Rec. 2019;185(9):268. doi:10.1136/vr.105120.', relevance: '近期 UAL（tie-back）世代（n=80）：飼主滿意度約 90%、吸入性肺炎 7–17%、技術變化無顯著差異' },
+    { type: 'journal', citation: 'Sample SJ, Stilin A, Binversie EE, Baker LA, Hardie RJ. Late-onset laryngeal paralysis: Owner perception of quality of life and cause of death. Vet Med Sci. 2020;6(3):306-313. doi:10.1002/vms3.240.', relevance: '飼主感知世代（n=76）：多數於確診約 2 年內進展、開喉術 QoL 較佳但神經病變續進展（飼主溝通依據）' },
+    { type: 'journal', citation: 'Drudi D, Lisi MLP, Sommaruga P, Chiti LE, Massari F. Comparison of immediate and short-term outcomes of cricoarytenoid and thyroarytenoid lateralization in dogs with idiopathic laryngeal paralysis. Vet Surg. 2022;51(3):482-488. doi:10.1111/vsu.13778.', relevance: 'CAL vs TAL 側固比較：CAL 聲門開口較大；開口與吸入風險為取捨' },
+    { type: 'journal', citation: 'Letko A, Minor KM, Friedenberg SG, et al. A CNTNAP1 Missense Variant Is Associated with Canine Laryngeal Paralysis and Polyneuropathy. Genes. 2020;11(12):1426. doi:10.3390/genes11121426.', relevance: '年輕犬（Leonberger/Saint Bernard）早發遺傳型 LPPN3，與高齡 GOLPP 鑑別；已有 DNA 檢測' },
   ],
   is_current: true,
   created_at: now,
