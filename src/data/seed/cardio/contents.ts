@@ -1370,8 +1370,8 @@ const contentPericardialEffusion: NodeContent = {
 const contentHeartworm: NodeContent = {
   id: 'CONTENT-L3-005',
   node_id: 'CARDIO-L3-005',
-  version: 1,
-  summary: '犬心絲蟲症（Dirofilaria immitis）是經由蚊蟲傳播的寄生蟲感染，成蟲寄生於肺動脈與右心室，導致肺動脈高壓、右心衰竭與 caval syndrome。台灣地處亞熱帶，為心絲蟲高盛行區（未預防犬陽性率 20-40%），預防醫學極為重要。治療採 AHS（美國心絲蟲學會）2020 指引之分階段殺蟲策略。',
+  version: 2,
+  summary: '犬心絲蟲症（Dirofilaria immitis）是經由蚊蟲傳播的寄生蟲感染，成蟲寄生於肺動脈與右心室，導致肺動脈高壓、右心衰竭與 caval syndrome。台灣地處亞熱帶，為心絲蟲高盛行區（未預防犬陽性率 20-40%），預防醫學極為重要。治療採 AHS（美國心絲蟲學會）2024 指引之分階段殺蟲策略。',
   learning_objectives: [
     '描述 D. immitis 的完整生活史（蚊蟲→L3 幼蟲→成蟲→microfilaria）',
     '運用 AHS 分級系統正確評估感染嚴重度（Class 1-4）',
@@ -1422,7 +1422,7 @@ const contentHeartworm: NodeContent = {
 ### Wolbachia 的角色
 - 革蘭氏陰性胞內共生菌，存在於所有 D. immitis
 - 蟲體死亡時釋放 Wolbachia → 宿主 TLR2/4 活化 → 嚴重發炎反應
-- Doxycycline 殺 Wolbachia → 降低殺蟲後發炎風險（AHS 2020 強力推薦）
+- Doxycycline 殺 Wolbachia → 降低殺蟲後發炎風險（AHS 2024 強力推薦）
 - 殺 Wolbachia 也會抑制蟲體繁殖與發育
 
 ### Caval Syndrome 機轉
@@ -1463,7 +1463,7 @@ const contentHeartworm: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-### AHS 2020 三劑法時程
+### AHS 2024 三劑法時程
 
 | 時間 | 步驟 | 藥物與劑量 | Evidence |
 |------|------|-----------|----------|
@@ -1542,7 +1542,7 @@ const contentHeartworm: NodeContent = {
 
 | 情境 | 預後 | 資料來源 |
 |------|------|---------|
-| Class 1-2 三劑法 | 治療成功率 > 95% | AHS 2020 |
+| Class 1-2 三劑法 | 治療成功率 > 95% | AHS 2024 |
 | Class 3 治療 | 成功率 70-85%（風險↑） | 多項回顧性研究 |
 | Class 4 手術取蟲 | 死亡率 15-40% | Ishihara et al. |
 | Class 4 不治療 | 致死率 ~100% |，|
@@ -1566,7 +1566,7 @@ const contentHeartworm: NodeContent = {
 | 抗原加熱處理常規化 | 提高敏感度5-15% | 額外成本+假陽性風險 | B |
 | 貓心絲蟲預防必要性 | 台灣高盛行區、貓感染預後差 | 貓感染率低、預防藥選擇有限 | B |
 | Melarsomine替代方案 | 全球供應不穩時需替代方案 | Moxidectin+Doxy+Ivermectin slow-kill效果不確定 | C |
-| 預防藥抗藥性 | ML(macrocyclic lactone)抗藥性報告增加 | 多數報告來自美國密西西比三角洲，亞洲尚無明確證據 | C |
+| 預防藥抗藥性 | ML 抗藥性已基因證實（密西西比 94.8%）、2024 歐洲首例輸入 | 亞洲尚無在地明確證據，仍以全年投藥+年檢為基石 | B（美國）/ C（亞洲） |
 
 ### 知識空缺
 - ML 類藥物抗藥性的分子機轉與全球分佈
@@ -1574,12 +1574,27 @@ const contentHeartworm: NodeContent = {
 - 心絲蟲疫苗開發的可行性
 - 全球氣候變遷對心絲蟲分佈區域擴張的影響預測
 
+## 八、近期實證更新（2024 AHS 指引 + 確認抗藥性）
+
+### AHS 指引更新至 2024 版
+美國心絲蟲學會犬隻指引已更新為 **2024 版**（2024-04 發布），貓指引亦於 2024-11 更新。核心療程（doxycycline 前處理 + 三劑 melarsomine + 全程嚴格限制運動）不變；治癒判定為**間隔 6 個月、連續兩次抗原陰性**（治療後抗原清除慢，過早複檢仍陽性屬正常）。預防新增建議：在每月 ML 之外，可搭配 **FDA 核准 isoxazolines 與 EPA 核准驅蚊產品**以減少病媒蚊傳播。
+
+### 巨環內酯（ML）抗藥性已基因層級證實
+不再是「預防失效＝一律漏服」：D. immitis 對 ML 的抗藥性已獲基因證實且可遺傳（Bourguinat 2015）。Fisher 等 2024 報告美國密西西比三角洲北緣樣本 **94.8% 帶抗藥基因型**；Traversa 等 2024 報告**歐洲首例**（由美國輸入義大利之犬，雖每月投藥仍半年內轉陽）。臨床啟示：仍以全年投藥＋每年檢測為基石，但對「LOE（疑似預防失效）」個案需同時考慮真實抗藥性；跨境引入犬隻可能帶入抗藥蟲株。
+
+### 「緩殺法（slow-kill / Moxi-Doxy）」＝搶救手段，非等效療法
+每月 moxidectin + doxycycline 雖最終可清除成蟲（實驗感染約 90–96%，Savadelis 2017），但需 **10–18 個月**，期間肺血管持續受損。AHS 明確定位為「**搶救手段、非首選**」，僅在 melarsomine 無法取得時採用（Jacobson & DiGangi 2021）。教學上不可將其與三劑 melarsomine 視為等效。
+
+### 貓心絲蟲（HARD）
+貓即使無成蟲，未成熟蟲體即可引發心絲蟲相關呼吸道疾病（HARD）；**貓無核准殺成蟲藥**（melarsomine 對貓禁用），僅能症狀／支持療法，預防是唯一可靠手段。
+> 臨床內容（尤其 melarsomine 確切劑量、注射部位、ProHeart 等商品劑量）需獸醫師依 AHS 2024 指引與仿單核對。
+
 [圖片:心絲蟲生活史示意圖]`,
   clinical_pearl: '心絲蟲抗原檢測是偵測「成蟲雌蟲」的抗原，所以在以下情況可能出現「假陰性」：(1) 感染後不到 7 個月（成蟲尚未成熟）；(2) 僅感染雄蟲；(3) 低蟲量感染。如果臨床高度懷疑但抗原陰性，可進行抗原加熱處理（heat treatment）打散免疫複合物後重測，可提升敏感度。另外，投予預防藥物並不會影響已感染成蟲的抗原檢測結果。',
   common_mistakes: [
     '未對陽性犬進行嚴格運動限制，蟲體死亡碎片引起肺血栓栓塞，運動會增加風險，這是治療致死的最常見原因',
     '直接開始 Melarsomine 而跳過 Doxycycline 前處理，殺 Wolbachia 可降低蟲體死亡時的發炎反應',
-    '使用兩劑法而非三劑法殺蟲，AHS 2020 強烈建議三劑法（更安全且更有效）',
+    '使用兩劑法而非三劑法殺蟲，AHS 2024 強烈建議三劑法（更安全且更有效）',
     '僅依賴抗原檢測而忽略 Knott\'s test，microfilaria 陽性可確認感染活性，且影響治療方案',
     '對 Class 4 caval syndrome 嘗試藥物殺蟲，應先外科取蟲穩定後再進行化學治療',
   ],
@@ -1603,7 +1618,7 @@ const contentHeartworm: NodeContent = {
       { condition: 'Angiostrongylus vasorum', key_differentiator: '法國心蟲，主要在歐洲流行，台灣罕見；可導致凝血障礙，糞便 Baermann 法檢出幼蟲' },
     ],
     diagnostic_workup: '1. 抗原檢測（SNAP test or ELISA），偵測成蟲雌蟲抗原（感染後 ~7 月可測到）→ 2. Knott\'s test 或 filter test（偵測 microfilaria，評估感染活性）→ 3. 胸腔 X 光（肺動脈擴張、右心增大、肺實質病變、肺動脈截斷徵象）→ 4. 心臟超音波（右心評估、肺動脈內蟲體可視化、三尖瓣逆流/肺高壓估計）→ 5. 血檢（CBC：嗜酸球增多、血小板減少; 生化：BUN/Cre、肝指數; 凝血功能）→ 6. 尿液分析（蛋白尿，免疫複合物腎病）→ 7. 抗原加熱處理（疑似感染但抗原陰性時提升敏感度）',
-    treatment_protocol: '【Primary Care】診斷確認後立即：(1) 嚴格限制運動（鏈繩散步、禁止跑跳）；(2) 第 1 天起 Doxycycline 10 mg/kg PO BID × 28 天（殺 Wolbachia）；(3) 第 1 天起每月 Ivermectin 預防劑量（6-12 µg/kg）或 topical Moxidectin；(4) Prednisolone 0.5 mg/kg PO BID × 7 天，再 0.5 mg/kg SID × 7 天，再 0.5 mg/kg QOD × 14 天。Class 1-2 可在一般診所完成全程治療。\n\n【Specialty Care】Melarsomine（Immiticide）三劑殺蟲法（AHS 2020 推薦）：第 60 天第 1 劑 2.5 mg/kg deep IM（腰部肌群 L3-L5）；第 90 天第 2 劑 2.5 mg/kg deep IM；第 91 天第 3 劑 2.5 mg/kg deep IM。注射後嚴格籠養 6-8 週。注射部位疼痛處理：冰敷 + Tramadol/NSAID。蟲體死亡高風險期（注射後 7-21 天）：監測肺栓塞徵象（發燒、呼吸急促、咳血），出現時 Prednisolone + cage rest + 氧氣。Class 3：先穩定 CHF（Furosemide + Sildenafil 1-2 mg/kg PO BID-TID 控制肺高壓）→ 穩定 1-2 個月再殺蟲。Class 4 Caval syndrome：緊急經頸靜脈取蟲（alligator forceps via jugular venotomy 在透視或心超引導下）→ 穩定後再進行 Melarsomine 療程。殺蟲治療後 6-9 個月複檢抗原（應轉陰），1 個月後 Knott\'s test 確認 microfilaria 清除。',
+    treatment_protocol: '【Primary Care】診斷確認後立即：(1) 嚴格限制運動（鏈繩散步、禁止跑跳）；(2) 第 1 天起 Doxycycline 10 mg/kg PO BID × 28 天（殺 Wolbachia）；(3) 第 1 天起每月 Ivermectin 預防劑量（6-12 µg/kg）或 topical Moxidectin；(4) Prednisolone 0.5 mg/kg PO BID × 7 天，再 0.5 mg/kg SID × 7 天，再 0.5 mg/kg QOD × 14 天。Class 1-2 可在一般診所完成全程治療。\n\n【Specialty Care】Melarsomine（Immiticide）三劑殺蟲法（AHS 2024 推薦）：第 60 天第 1 劑 2.5 mg/kg deep IM（腰部肌群 L3-L5）；第 90 天第 2 劑 2.5 mg/kg deep IM；第 91 天第 3 劑 2.5 mg/kg deep IM。注射後嚴格籠養 6-8 週。注射部位疼痛處理：冰敷 + Tramadol/NSAID。蟲體死亡高風險期（注射後 7-21 天）：監測肺栓塞徵象（發燒、呼吸急促、咳血），出現時 Prednisolone + cage rest + 氧氣。Class 3：先穩定 CHF（Furosemide + Sildenafil 1-2 mg/kg PO BID-TID 控制肺高壓）→ 穩定 1-2 個月再殺蟲。Class 4 Caval syndrome：緊急經頸靜脈取蟲（alligator forceps via jugular venotomy 在透視或心超引導下）→ 穩定後再進行 Melarsomine 療程。殺蟲治療後 6-9 個月複檢抗原（應轉陰），1 個月後 Knott\'s test 確認 microfilaria 清除。',
     prognosis: 'Class 1-2：治療成功率 > 95%，嚴格限制運動下殺蟲期併發症低。Class 3：治療風險較高（肺栓塞），但多數可成功治療；預後取決於治療前的肺血管損傷程度。Class 4（Caval syndrome）：外科取蟲死亡率 ~15-40%，不治療幾乎 100% 致死。心絲蟲感染造成的肺血管損傷部分可逆，成功殺蟲後 X 光變化可持續 6-12 個月逐漸改善。預防永遠優於治療。',
     monitoring: '殺蟲期（Melarsomine 注射後 6-8 週）：密切觀察肺栓塞徵象（發燒、咳嗽加劇、呼吸急促、精神沉鬱）。每月回診評估臨床狀態。治療後 1 個月：Knott\'s test（確認 microfilaria 清除）。治療後 6 個月：抗原複檢（應轉陰）。治療後 9 個月：若抗原仍陽性，考慮再次治療。長期：終身每月心絲蟲預防（Ivermectin/Milbemycin/Moxidectin/Selamectin）+ 每年抗原篩檢。',
     owner_communication: '心絲蟲症是一種可預防的嚴重疾病。台灣為高盛行區，建議全年每月預防。治療過程中最關鍵的配合事項是嚴格限制運動，蟲體死亡後碎片會堵塞肺動脈，運動增加肺血流會大幅提高栓塞風險。治療期約需 6-9 個月才能完全清除感染。費用與風險隨嚴重度增加。成功治療後需終身預防。多犬家庭中其他犬隻也應檢測並開始預防。教導飼主辨識緊急徵兆（呼吸急促、咳血、急性虛弱）。',
@@ -1620,8 +1635,12 @@ const contentHeartworm: NodeContent = {
   ],
   drug_api_links: ['Melarsomine', 'Doxycycline', 'Ivermectin', 'Moxidectin', 'Milbemycin', 'Selamectin', 'Prednisolone', 'Furosemide', 'Sildenafil'],
   references: [
-    { type: 'guideline', citation: 'American Heartworm Society. Current canine guidelines for the prevention, diagnosis, and management of heartworm (Dirofilaria immitis) infection in dogs (2020 revision).', relevance: '犬心絲蟲治療與預防最新指引' },
-    { type: 'journal', citation: 'Nelson CT et al. Current canine guidelines for the prevention, diagnosis, and management of heartworm infection in dogs. Vet Parasitol. 2014;36(S1):S9-17.', relevance: 'AHS 治療指引文獻' },
+    { type: 'guideline', citation: 'American Heartworm Society. Current Canine Guidelines for the Prevention, Diagnosis, and Management of Heartworm (Dirofilaria immitis) Infection in Dogs. 2024 ed. (published Apr 2024). heartwormsociety.org.', relevance: '犬心絲蟲治療與預防現行指引（2024 版，取代 2020）：doxycycline + 三劑 melarsomine、全程限運動、年檢、全年預防' },
+    { type: 'guideline', citation: 'American Heartworm Society. Current Feline Guidelines for the Prevention, Diagnosis, and Management of Heartworm (Dirofilaria immitis) Infection in Cats. Updated Nov 2024. heartwormsociety.org.', relevance: '貓心絲蟲（HARD）：無核准殺成蟲藥、melarsomine 禁用、預防為唯一可靠手段' },
+    { type: 'journal', citation: 'Fisher PT, Keller K, Prichard RK. Investigating Dirofilaria immitis isolates and their susceptibility/resistance patterns to macrocyclic lactones in the northern Mississippi Delta. Vet Parasitol. 2024;329:110199. doi:10.1016/j.vetpar.2024.110199.', relevance: '2024 在地確認 ML 抗藥基因型高度流行（94.8%）——更新「LOE＝漏服」舊觀念' },
+    { type: 'journal', citation: 'Traversa D, Diakou A, Colombo M, et al. First case of macrocyclic lactone-resistant Dirofilaria immitis in Europe — Cause for concern. Int J Parasitol Drugs Drug Resist. 2024;25:100549. doi:10.1016/j.ijpddr.2024.100549.', relevance: '歐洲首例 ML 抗藥性（輸入犬）——抗藥蟲株可隨寵物移動擴散，與引入犬多的地區相關' },
+    { type: 'journal', citation: 'Jacobson LS, DiGangi BA. An Accessible Alternative to Melarsomine: "Moxi-Doxy" for Treatment of Adult Heartworm Infection in Dogs. Front Vet Sci. 2021;8:702018. doi:10.3389/fvets.2021.702018.', relevance: '緩殺法定位為「melarsomine 無法取得時的最小傷害替代」，明確非首選' },
+    { type: 'journal', citation: 'Savadelis MD, Ohmes CM, Hostetler JA, et al. Assessment of parasitological findings in heartworm-infected beagles treated with imidacloprid/moxidectin and doxycycline. Parasit Vectors. 2017;10(1):245. doi:10.1186/s13071-017-2190-9.', relevance: 'moxi-doxy 殺成蟲效力主要實證（實驗感染約 95.9%、需時長）——緩殺法效力的原始數據' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter: Heartworm Disease.', relevance: '心絲蟲病完整教材' },
     { type: 'journal', citation: 'Fan CK et al. Seroepidemiology of Dirofilaria immitis infection among pet dogs in Taiwan. Vet Parasitol. 2001;97(3):203-210.', relevance: '台灣犬心絲蟲血清流行病學調查' },
   ],
