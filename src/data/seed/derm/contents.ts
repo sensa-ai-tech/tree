@@ -715,7 +715,7 @@ FAD 預後超好，是所有過敏性皮膚病裡面最容易控制的：
 const contentDemodicosis: NodeContent = {
   id: 'CONTENT-DERM-L3-004',
   node_id: 'DERM-L3-004',
-  version: 1,
+  version: 2,
   summary: '蠕形蟎症（Demodicosis）是蠕形蟎（Demodex spp.）過度增殖造成的皮膚病，犬以 Demodex canis 為主。分成局部型跟廣泛型。幼犬型（< 18 個月）多半會自限性消退，成犬型（4 歲後才新發的）就要去翻有沒有潛在免疫抑制問題。Isoxazoline 已經把傳統的 ivermectin 跟 amitraz 擠下來，成為首選治療。診斷以深層皮膚刮搔為金標準。台灣高溫多濕的環境蠕形蟎症盛行率比較高，本土常見的短鼻品種（西施犬、巴哥犬）是高風險族群。',
   learning_objectives: [
     '區分局部型與廣泛型蠕形蟎症的臨床特徵與預後差異',
@@ -729,7 +729,7 @@ const contentDemodicosis: NodeContent = {
     '局部型（< 4 處病灶或 < 1 個肢體）多可自癒（90%），廣泛型需積極治療',
     '幼犬型（< 18 月齡）與遺傳性 T 細胞功能缺陷有關；成犬型需排查 Cushing、腫瘤、免疫抑制藥物',
     '深層皮膚刮搔是診斷金標準：擠壓皮膚後刮至 capillary ooze',
-    'Isoxazoline（fluralaner, afoxolaner, sarolaner）為目前首選，療效優於 ivermectin',
+    'Isoxazoline（fluralaner, afoxolaner, sarolaner, lotilaner）為目前首選（WAVD 2020 共識），療效優於 ivermectin/amitraz',
     '治療持續至連續 2 次（間隔 4 週）深層刮搔皆為陰性後再持續 1 個月',
     '廣泛型蠕形蟎症犬不建議用於繁殖（遺傳易感性）',
   ],
@@ -830,7 +830,23 @@ const contentDemodicosis: NodeContent = {
 | Isoxazoline 治療蠕形蟎症的最佳療程與停藥標準 | 傳統標準「連續 2 次陰性刮搔後再 1 個月」是否可縮短 | Level II |
 | 局部型蠕形蟎症（< 4 處）是否需要系統性治療 | 約 90% 可自癒，但何時介入仍無共識 | Level III |
 | 成犬型蠕形蟎症潛在免疫抑制因素的最佳排查流程 | 醫源性（類固醇/CsA）最常見，但隱匿性腫瘤的篩查深度無標準 | Level IV |
-| Demodex injai（長體蠕形蟎）的治療反應是否不同於 D. canis | 臨床觀察 D. injai 治療反應可能較慢，但比較研究缺乏 | Level IV |`,
+| Demodex injai（長體蠕形蟎）的治療反應是否不同於 D. canis | 臨床觀察 D. injai 治療反應可能較慢，但比較研究缺乏 | Level IV |
+
+## 八、近期實證更新（2018–2025）
+
+### WAVD 2020 國際共識
+世界獸醫皮膚科學會（WAVD）2020 年治療共識（Mueller 等, Vet Dermatol 2020）正式把 isoxazolines 列為犬全身性蠕形蟎症首選，並明確治療終點：殺蟎治療須持續到「連續兩次深層刮搔陰性」後再延長 4 週；反應較慢者應追蹤至少 12 個月才宣告痊癒。核心觀念是「治到寄生蟲學痊癒，不是治到外觀正常」——皮膚外觀改善常比蟎蟲清除早數週至數月，切勿一見毛長回來就停藥。
+
+### Isoxazoline 四藥齊備
+除 fluralaner、afoxolaner、sarolaner 外，lotilaner（Credelio）亦有對照試驗證實療效（Snyder 等, Parasit Vectors 2017，day 84 蟎蟲 100% 清除）。四藥在試驗中蟎蟲減少率均 ≥99%，優於同期 imidacloprid-moxidectin（約 85–90%）。歐洲多中心田野試驗（Petersen 等 2020，124 隻臨床犬）顯示單次 fluralaner 使 98% 犬隻無活蟎，且幼年型與成年型療效相當。
+> ⚠ 實證註記：多數國家此為仿單外（extra-label）使用（美國 FDA 核准者僅外用 amitraz）；關鍵試驗多由藥廠贊助。劑量請 DVM 依各藥仿單核對。
+
+### 安全性與已過時的教學
+Isoxazolines 避開 amitraz 的 α2 副作用（心搏過緩、鎮靜、低血壓）與巨環內酯類神經毒性；fluralaner 即使 3 倍劑量於 ABCB1-1Δ（MDR1）牧羊犬（柯利、澳牧、喜樂蒂）僅見輕微反應，故為這些品種的安全選擇——惟全類別仍有神經不良反應（顫抖、運動失調、癲癇）通報，癲癇病史犬須謹慎。**已過時**：每日漸增口服 ivermectin、以 amitraz 藥浴為標準首選，現多視為二線或無法取得 isoxazoline 時的替代方案。
+
+### 貓蠕形蟎（簡述）
+貓需區分 D. cati（寄生毛囊；全身型常提示 FeLV/FIV、糖尿病、Cushing 等潛在免疫抑制，須查病因）與 D. gatoi（寄生角質層、具傳染性、會癢、好發後半身、易誤判為過敏，須同治同住貓並做環境清潔）。治療以石硫合劑藥浴、imidacloprid-moxidectin 滴劑為主；口服 fluralaner 有成功個案報告但尚無貓的對照試驗，且貓無任何核准的抗蠕形蟎仿單適應症。
+> 臨床內容需獸醫師上線前覆核。`,
   clinical_pearl: '成犬新發的廣泛型蠕形蟎症就是一面紅旗，永遠要回頭翻潛在的免疫抑制原因。最常見的是醫源性（長期類固醇、cyclosporine）跟內分泌疾病（Cushing）。如果都找不到，就要建議做腫瘤篩查。另外，MDR1（ABCB1）基因突變的犬（柯利犬、牧羊犬類）絕對不能用高劑量 ivermectin，會出人命。',
   common_mistakes: [
     '局部型蠕形蟎症即開始全身性藥物治療（90% 可自癒，應先觀察 4-8 週）',
@@ -874,8 +890,10 @@ const contentDemodicosis: NodeContent = {
   ],
   drug_api_links: ['Fluralaner', 'Afoxolaner', 'Sarolaner', 'Ivermectin'],
   references: [
-    { type: 'guideline', citation: 'Mueller RS et al. Treatment of demodicosis in dogs: 2011 clinical practice guidelines. Vet Dermatol. 2012;23(2):86-e21.', relevance: '蠕形蟎症治療臨床實踐指引' },
-    { type: 'journal', citation: 'Fourie JJ et al. Efficacy of orally administered fluralaner (Bravecto) or topically applied imidacloprid/moxidectin (Advocate) against generalized demodicosis in dogs. Parasit Vectors. 2015;8:187.', relevance: 'Fluralaner 治療廣泛型蠕形蟎症的關鍵研究' },
+    { type: 'guideline', citation: 'Mueller RS, Rosenkrantz W, Bensignor E, et al. Diagnosis and treatment of demodicosis in dogs and cats: Clinical consensus guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2020;31(1):4-e2. doi:10.1111/vde.12806.', relevance: '現行國際共識（取代 2011 版）：isoxazolines 首選、治療終點（兩次陰性後再 4 週、慢反應者追蹤 ≥12 個月）、診斷與貓 D. cati/D. gatoi 區分' },
+    { type: 'journal', citation: 'Zhou X, Hohman A, Hsu WH. Review of extralabel use of isoxazolines for treatment of demodicosis in dogs and cats. J Am Vet Med Assoc. 2020;256(12):1342-1346. doi:10.2460/javma.256.12.1342.', relevance: '彙整四種 isoxazoline 關鍵 RCT、各藥治癒率、MDR1 安全性與仿單外使用現況' },
+    { type: 'journal', citation: 'Petersen I, Chiummo R, Zschiesche E, et al. A European field assessment of the efficacy of fluralaner (Bravecto) chewable and spot-on formulations for treatment of dogs with generalized demodicosis. Parasit Vectors. 2020;13:304. doi:10.1186/s13071-020-04159-2.', relevance: '最大規模田野試驗（124 隻臨床犬）：單次 fluralaner 98% 無活蟎，幼年/成年型療效相當' },
+    { type: 'journal', citation: 'Fourie JJ et al. Efficacy of orally administered fluralaner (Bravecto) or topically applied imidacloprid/moxidectin (Advocate) against generalized demodicosis in dogs. Parasit Vectors. 2015;8:187. doi:10.1186/s13071-015-0775-8.', relevance: 'Fluralaner 治療廣泛型蠕形蟎症的關鍵研究（開啟 isoxazoline 典範轉移）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '蠕形蟎症完整章節' },
     { type: 'journal', citation: 'Perego R et al. Trial of the efficacy of a commercial diet in the treatment of canine generalized demodicosis associated with a deep pyoderma. Vet Res Commun. 2019;43:55-61.', relevance: '廣泛型蠕形蟎症合併深層膿皮症的管理' },
   ],
