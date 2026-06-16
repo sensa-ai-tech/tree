@@ -5611,8 +5611,8 @@ const contentCholangitis: NodeContent = {
 const contentFelineAsthma: NodeContent = {
   id: 'CONTENT-IM-L3-020',
   node_id: 'IM-L3-020',
-  version: 1,
-  summary: '貓下呼吸道疾病（FLAD）就是大家在講的貓哮喘，是貓最常見的下呼吸道疾病，盛行率 1-5%。病理上是 Th2 驅動的嗜酸球性氣道發炎，加上支氣管痙攣跟氣道重塑，跟人類的過敏性氣喘長得很像。臨床上看到的是反覆咳嗽、喘鳴、呼吸困難。長期治療首選吸入型類固醇（Fluticasone）加支氣管擴張劑，急性發作的時候要趕快用 Terbutaline 解痙。',
+  version: 2,
+  summary: '貓下呼吸道疾病（FLAD）是一個傘狀概念，最常見的就是大家講的貓哮喘（嗜酸球性），另一型是慢性支氣管炎（嗜中性球性），兩者只能靠 BAL 細胞學分型。盛行率 1-5%。病理上是 Th2 驅動的嗜酸球性氣道發炎，加上支氣管痙攣跟氣道重塑，跟人類的過敏性氣喘長得很像。臨床上看到的是反覆咳嗽、喘鳴、呼吸困難。長期治療首選吸入型類固醇（Fluticasone）加支氣管擴張劑，急性發作的時候要趕快用 Terbutaline 解痙。',
   learning_objectives: [
     '說明貓哮喘的免疫病理機轉（Th2/嗜酸球性氣道發炎）',
     '區分貓哮喘的臨床分級（輕度、中度、重度/急性危象）',
@@ -5628,6 +5628,8 @@ const contentFelineAsthma: NodeContent = {
     '治療階梯：輕度→吸入 Fluticasone 110 μg BID；中度→加 Albuterol PRN；重度→全身性 Prednisolone',
     '急性發作緊急處理：氧氣 + Terbutaline 0.01 mg/kg SC/IM → 支氣管痙攣解除',
     '吸入型治療需搭配貓專用面罩與儲霧器（spacer），飼主衛教很重要',
+    'FLAD 是傘狀名詞：氣喘（嗜酸球性）vs 慢性支氣管炎（嗜中性球性）臨床/X 光無法區分，只能靠 BAL 細胞學分型',
+    '支氣管擴張劑僅作急救/輔助、不可單用；外消旋 albuterol 的 (S)-鏡像體長期可能加重氣道發炎，優先 (R)-levalbuterol',
   ],
   body: `# 貓下呼吸道疾病 / 貓哮喘 (Feline Asthma / FLAD)
 
@@ -5701,7 +5703,25 @@ const contentFelineAsthma: NodeContent = {
 |------|------|------|
 | 輕中度、規律吸入治療 | 良好 | 大多可控制症狀 |
 | 重度、慢性重塑 | 謹慎 | 不可逆氣道變化 |
-| 急性危象 | 取決於及時處理 | 未治療可致死 |`,
+| 急性危象 | 取決於及時處理 | 未治療可致死 |
+
+## 五、近期實證更新（2018–2025）
+
+### FLAD 是傘狀概念：氣喘 vs 慢性支氣管炎
+「貓下呼吸道疾病(FLAD)」是傘狀名詞：**氣喘＝嗜酸球性、可逆性支氣管收縮（第一型過敏）**；**慢性支氣管炎＝嗜中性球性**。兩者在咳嗽（約 95%）、年齡、胸腔 X 光上幾乎無法區分，**唯一可靠分型是 BAL 細胞學**（Grotheer 2020）。分型決定抗炎策略，但**與嚴重度無關**；約半數貓不同肺葉的主要細胞型不同、健康貓 BAL 嗜酸球也可偏高，故不宜用單一固定百分比硬切（Lee 2020）——建議多肺葉採樣。
+
+### 支氣管擴張劑只是急救/輔助、不可單用
+β2 受體激動劑只解除支氣管收縮、不治發炎，**單用會增加死亡率**。外消旋 albuterol 含 (S)-鏡像體，長期使用可能加重氣道發炎與高反應性（實驗性貓氣喘證據）；故 albuterol **僅作急救**，若需長期吸入型擴張劑優先 (R)-型 levalbuterol。茶鹼(theophylline)效力較弱、角色式微。
+
+### 吸入型類固醇需口服過渡
+吸入 fluticasone 約需 10–14 天才達效，**起始 2–4 週應併用口服 prednisolone 過渡再漸減**；吸入型不可用於急性發作。慢性控制以吸入型優先，對糖尿病/心肌病等高風險貓更安全。
+
+### 急性：氣喘危象 vs 心因性肺水腫(CHF) 的床邊鑑別
+呼吸窘迫的貓務必鑑別氣喘 vs CHF。**床邊聚焦心臟超音波看到「左心房擴大」對 CHF 最具特異性（約 97% 敏感、100% 特異）**；肺超音波 B-lines 與 NT-proBNP 快篩**有假陽性**（氣喘貓也可能 NT-proBNP 偽陽），需多項合併判讀、以左心房大小為關鍵（Ward 2018）。
+
+### 新興療法（前景但未成標準）
+過敏原專一性免疫治療（ASIT/快速免疫治療）在小型/實驗研究可降低嗜酸球性氣道發炎（一研究 12 隻自然發病貓中 8 隻完全緩解並停類固醇），但證據有限、口服類固醇會削弱其效；抗 IL-5/單株抗體於貓仍屬實驗性、未上市。環境控制（禁菸、低粉塵貓砂、無噴霧）為基本功。
+> 臨床內容與所有劑量需獸醫師依仿單核對。`,
   clinical_pearl: '貓哮喘急性發作是真正會掛掉的緊急狀況，此時最高原則只有四個字：最少刺激。不要第一時間衝去拍 X 光或抽血。先給氧氣（flow-by 或氧氣籠），在最少保定的狀態下打 Terbutaline 0.01 mg/kg SC/IM。等穩定下來才談後面的評估。臨床上看過幾隻貓就是被「徹底檢查」逼死的，過度保定的壓力直接把支氣管痙攣推到極致。還有一件事要記住：胸腔 X 光正常不代表沒事，大約四分之一的確診貓 X 光看起來乾乾淨淨。',
   common_mistakes: [
     '將所有貓的咳嗽都診斷為哮喘而忽略心絲蟲相關呼吸道疾病（HARD）和肺蟲鑑別',
@@ -5745,10 +5765,13 @@ const contentFelineAsthma: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Fluticasone', 'Albuterol', 'Terbutaline', 'Prednisolone', 'Dexamethasone', 'Theophylline'],
   references: [
-    { type: 'journal', citation: 'Trzil JE. "Feline Asthma: Diagnostic and Treatment Update." Vet Clin North Am Small Anim Pract. 2020;50(2):375-391.', relevance: '貓哮喘診斷與治療最新回顧' },
-    { type: 'journal', citation: 'Reinero CR. "Advances in the understanding of pathogenesis, and diagnostics and therapeutics for feline allergic asthma." Vet J. 2011;190(1):28-33.', relevance: '貓哮喘免疫病理與治療進展' },
-    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 22: Lower Respiratory Tract Disorders.', relevance: '下呼吸道疾病教材' },
-    { type: 'guideline', citation: 'Padrid P. "Feline asthma: diagnosis and treatment." Vet Clin North Am Small Anim Pract. 2000;30(6):1279-1293.', relevance: '貓哮喘經典臨床指引' },
+    { type: 'journal', citation: 'Trzil JE. Feline Asthma: Diagnostic and Treatment Update. Vet Clin North Am Small Anim Pract. 2020;50(2):375-391. doi:10.1016/j.cvsm.2019.10.002.', relevance: '貓哮喘診斷與治療近期回顧（吸入療法、急救、環境控制）' },
+    { type: 'journal', citation: 'Grotheer M, Hirschberger J, Hartmann K, et al. Comparison of signalment, clinical, laboratory and radiographic parameters in cats with feline asthma and chronic bronchitis. J Feline Med Surg. 2020;22(7):649-655. doi:10.1177/1098612X19872428.', relevance: '氣喘 vs 慢性支氣管炎臨床/X 光無法區分，須 BAL 細胞學分型——FLAD 傘狀概念依據' },
+    { type: 'journal', citation: 'Lee EA, Johnson LR, Johnson EG, Vernau W. Clinical features and radiographic findings in cats with eosinophilic, neutrophilic, and mixed airway inflammation (2011-2018). J Vet Intern Med. 2020;34(3):1291-1299. doi:10.1111/jvim.15772.', relevance: 'BAL 分型與年齡相關、與嚴重度無關；肺葉間細胞型常不同——反對單一固定嗜酸球切點' },
+    { type: 'journal', citation: 'Ward JL, Lisciandro GR, Ware WA, et al. Evaluation of point-of-care thoracic ultrasound and NT-proBNP for the diagnosis of congestive heart failure in cats with respiratory distress. J Vet Intern Med. 2018;32(5):1530-1540. doi:10.1111/jvim.15246.', relevance: '急救鑑別氣喘 vs CHF：左心房擴大最具特異性；NT-proBNP/B-lines 有假陽性（含氣喘貓）' },
+    { type: 'journal', citation: 'Garrity S, Lee-Fowler T, Reinero C. Feline asthma and heartworm disease: clinical features, diagnostics and therapeutics. J Feline Med Surg. 2019;21(9):825-834. doi:10.1177/1098612X18823348.', relevance: '氣喘 vs HARD 鑑別（皆有氣道嗜酸球增多）；HARD 只需短期類固醇、擴張劑無效' },
+    { type: 'journal', citation: 'Reinero CR. Advances in the understanding of pathogenesis, and diagnostics and therapeutics for feline allergic asthma. Vet J. 2011;190(1):28-33. doi:10.1016/j.tvjl.2010.09.022.', relevance: '貓哮喘免疫病理與治療進展（含 ASIT/鏡像體概念基礎）' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter: Lower Respiratory Tract Disorders.', relevance: '下呼吸道疾病教材' },
   ],
   is_current: true,
   created_at: now,
