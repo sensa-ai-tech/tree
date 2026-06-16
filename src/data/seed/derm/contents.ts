@@ -1442,8 +1442,8 @@ RCT 支持的長效複方（florfenicol + terbinafine + 類固醇）可大幅改
 const contentDermatophytosis: NodeContent = {
   id: 'CONTENT-DERM-L3-008',
   node_id: 'DERM-L3-008',
-  version: 1,
-  summary: '皮膚癬菌症（Dermatophytosis，俗稱錢癬或貓癬）是親角質真菌（dermatophytes）感染犬貓皮膚跑出來的病。主要病原是 Microsporum canis（貓最常見）、M. gypseum 跟 Trichophyton mentagrophytes。這是人畜共通病。免疫正常的動物多半會自癒，但要拖好幾個月。免疫低下的就可能變廣泛感染。真菌培養（DTM 或 Sabouraud）是診斷金標準，Wood 燈只能篩部分 M. canis。台灣溫暖潮濕，剛好讓癬菌很好存活跟傳播。',
+  version: 2,
+  summary: '皮膚癬菌症（Dermatophytosis，俗稱錢癬或貓癬）是親角質真菌（dermatophytes）感染犬貓皮膚跑出來的病。主要病原是 Microsporum canis（貓最常見）、M. gypseum 跟 Trichophyton mentagrophytes。這是人畜共通病。免疫正常的動物多半會自癒，但要拖好幾個月。免疫低下的就可能變廣泛感染。診斷無單一黃金標準（WAVD 2017）：正確操作的 Wood 燈對 M. canis 敏感度其實很高（約 91–100% 發蘋果綠螢光），真菌培養（DTM/Sabouraud）用於確認菌種。台灣溫暖潮濕，剛好讓癬菌很好存活跟傳播。',
   learning_objectives: [
     '列舉犬貓最常見的三種皮膚癬菌及其流行病學特徵',
     '正確使用 Wood 燈篩檢並理解其限制',
@@ -1453,12 +1453,12 @@ const contentDermatophytosis: NodeContent = {
   ],
   key_points: [
     'M. canis 是貓最常見的皮膚癬菌（> 90%），貓可為無症狀帶菌者',
-    'Wood 燈（365 nm）：僅約 50% M. canis 菌株會產生蘋果綠螢光，陰性不排除',
-    '真菌培養（DTM 培養基）是診斷金標準：紅色變色 + 白色棉絮狀菌落 + 鏡檢大分生孢子',
+    'Wood 燈（365 nm）：正確技術下約 91–100% M. canis 感染毛幹發蘋果綠螢光（舊教材「僅約 50%」已過時，源於操作不當）',
+    '真菌培養（DTM）用於確認菌種與孢子存在（紅色變色 + 白色棉絮狀菌落 + 鏡檢大分生孢子）；WAVD 2017：無單一診斷為黃金標準',
     '免疫正常犬貓多可自癒（1-3 個月），但因人畜共通風險仍建議治療',
     '全身性治療首選：Itraconazole 5 mg/kg PO SID（脈衝療法：1 週用/1 週停）',
     '局部治療：含 miconazole + chlorhexidine 的藥浴或 lime sulfur 浸泡',
-    '環境去汙絕對不能省：漂白水 1:10 稀釋擦拭表面，吸塵清掉毛髮跟孢子',
+    '環境清潔以機械清潔為主（吸塵/擦拭洗到肉眼乾淨再用常規消毒劑）；WAVD 2017：環境非主要儲存所、不需燻蒸全屋',
   ],
   body: `# 皮膚癬菌症 (Dermatophytosis)
 
@@ -1491,10 +1491,10 @@ const contentDermatophytosis: NodeContent = {
 ### 診斷
 ### Wood 燈檢查
 - 365 nm 紫外光照。
-- 陽性：感染的毛幹會發出蘋果綠螢光（M. canis 特有，大概 50% 菌株會）。
+- 陽性：感染的毛幹會發出蘋果綠螢光（M. canis 特有）。正確技術下（專用插電燈、暗室、眼睛先適應暗光、燈頭距皮膚 2–4 cm）約 91–100% 未治療感染會陽性；舊「僅約 50%」是操作不當的結果。
 - 注意：鱗屑、藥物、細菌都會跑出偽螢光，顏色不會是蘋果綠。
 
-### 真菌培養（金標準）
+### 真菌培養（確認菌種；WAVD 2017：非唯一金標準）
 - DTM（Dermatophyte Test Medium）：等 21-28 天看結果。
 - 陽性標準：培養基從黃色轉紅色（要同步發生）加上白色棉絮狀菌落。
 - 還要鏡檢大分生孢子（macroconidia）確認菌種。
@@ -1513,11 +1513,10 @@ const contentDermatophytosis: NodeContent = {
 - Miconazole 2% + Chlorhexidine 2% 藥浴：每週 2 次
 - 或 Lime sulfur 1:16 浸泡：每週 2 次（有效但氣味強烈）
 
-### 環境去汙
-- 漂白水（次氯酸鈉）1:10 稀釋擦拭表面
-- 每日吸塵並丟棄集塵袋
-- 清洗寢具（60°C 以上）
-- 隔離感染動物直至培養陰性
+### 環境清潔（WAVD 2017 已降級）
+- 環境**不是**主要感染儲存所、**不需燻蒸全屋**；重點是機械清潔。
+- 先吸塵/擦拭移除毛髮與有機物 → 以清潔劑洗到肉眼乾淨 → 再用標示對 Trichophyton 有效的常規消毒劑（如稀釋次氯酸鈉、加速型過氧化氫）。口訣：能洗的就能消毒。
+- 清洗寢具（60°C 以上）、隔離感染動物仍合理（減少再污染與培養偽陽性），但無需恐慌式過度清潔。
 
 [圖片:Wood 燈陽性螢光示意圖與 DTM 培養結果判讀]
 
@@ -1525,7 +1524,7 @@ const contentDermatophytosis: NodeContent = {
 
 ### 常見併發症
 - 人畜共通感染（Zoonosis）：Microsporum canis 會感染人類（特別是小孩跟免疫低下的人），接觸感染犬貓後會在皮膚上跑出環形紅斑（ringworm）。飼主衛教在治療裡面絕對不能漏掉。
-- 環境汙染：癬菌孢子在環境中可以活 12-18 個月，地毯、沙發、梳子都是主要汙染源。
+- 環境角色被重新評估（WAVD 2017）：孢子雖可長期存活，但單純接觸污染環境、若皮膚無同時微創傷，很少造成真正感染；環境的主要意義在造成培養/PCR 偽陽性與再污染，而非「家裡藏著病」。機械清潔即可有效去除。
 - Kerion（肉芽腫型）：宿主免疫反應太強烈，跑出局部腫脹、化膿、疼痛的結節，很容易被誤診成細菌性膿皮症或腫瘤。
 - 貓多貓家庭傳播：M. canis 在貓群裡傳染得很快，一隻確診就把全群當成暴露，全群一起治療。
 
@@ -1566,13 +1565,34 @@ const contentDermatophytosis: NodeContent = {
 | Itraconazole 連續投藥 vs 脈衝療法的療效比較 | 脈衝療法（1 週用/1 週停）可減少藥物暴露，但比較 RCT 有限 | Level II |
 | 貓無症狀帶菌者（asymptomatic carrier）是否需要治療 | 多貓家庭/收容所建議治療以防傳播，但單貓家庭爭議較大 | Level III |
 | 皮膚癬菌停藥標準：2 次 vs 3 次培養陰性 | WAVD 建議 2-3 次連續陰性，但最佳次數未有共識 | Level III |
-| PCR 是否可取代真菌培養作為治療終點判斷 | PCR 快速但可能偵測到死菌 DNA（偽陽性），培養仍為金標準 | Level II |`,
+| PCR 是否可取代真菌培養作為治療終點判斷 | PCR 快速但可能偵測到死菌 DNA（偽陽性），培養仍為金標準 | Level II |
+
+## 八、近期實證更新（WAVD 2017 共識重點）
+
+### 四個最常見的舊觀念更正
+1. **Wood 燈不是「只有 50%」**：正確技術下 M. canis 約 91–100% 陽性，是快速、便宜的院內篩檢；陽性毛幹直接拔取做鏡檢與培養。
+2. **環境去汙已降級**：家裡非主要儲存所、不需燻蒸；機械清潔（洗到肉眼乾淨）+ 常規消毒劑即可。
+3. **griseofulvin 已淘汰**（致畸胎、療效/安全性差）；首選 itraconazole 與 terbinafine。
+4. **PCR 不能當治癒判定**：偵測死菌 DNA、治療後可能持續陽性（Moriello & Leutenegger 2018）。
+
+### 全身治療：licensed 脈衝療法
+**Itrafungol（itraconazole 口服液）是目前唯一 FDA 核准（2016）治療貓 M. canis 的全身藥**，採「週服週停」脈衝共 3 循環，利用 itraconazole 在毛髮/皮膚蓄積。Terbinafine 亦濃集於毛髮、停藥後維持 MIC 上約 5 週。劑量需 DVM 依仿單核對。
+
+### 局部治療是必要、非選配
+全身藥 + **全身被毛局部消毒並行**才是治癒組合（WAVD 2017）：lime sulfur 或 enilconazole（有殘留活性）每週兩次，或 2% miconazole + 2% chlorhexidine 洗劑。目的是降低散播孢子、縮短傳染期。
+
+### 治癒判定
+臨床消退 + 連續真菌培養陰性（傳統兩次、間隔 1–2 週）。新證據：依從性良好且健康的貓，**單次陰性培養常即足夠**（Stuntebeck & Moriello 2020，kappa 0.903）。PCR 不可作治癒判定。
+
+### 命名更新
+M. gypseum 已更名為 **Nannizzia gypsea**（de Hoog 等 2017 分類更新）。
+> 臨床內容與所有劑量需獸醫師依仿單核對。`,
   clinical_pearl: '貓就是 M. canis 最重要的帶菌者。看起來完全沒事的貓也可能在持續散播孢子。多貓家庭或收容所爆發皮膚癬菌的時候，所有貓（包含看起來沒症狀的）都要做 McKenzie 刷毛培養（牙刷法）抓帶菌者。治療終點是連續 2-3 次（間隔 2 週）真菌培養陰性，不能光看外觀。',
   common_mistakes: [
-    'Wood 燈陰性即排除皮膚癬菌症（僅約 50% M. canis 螢光陽性，其他菌種不螢光）',
+    '把「Wood 燈只有 50%、不可靠」當真（正確技術下 M. canis 約 91–100% 陽性；惟其他菌種如 Nannizzia/Trichophyton 不螢光，仍需培養佐證）',
     '僅依據臨床外觀「環形脫毛」即診斷而未做培養確認（膿皮症也可呈環形病灶）',
     '僅使用局部治療而未進行全身性抗黴菌（局部治療單獨使用效果有限）',
-    '未進行環境去汙（癬菌孢子可在環境中存活 18 個月以上）',
+    '恐慌式過度環境消毒/燻蒸全屋（WAVD 2017：環境非主要儲存所，機械清潔 + 常規消毒劑即足）',
     '停藥標準依臨床外觀而非培養結果（應連續 2-3 次培養陰性才停藥）',
   ],
   disease_data: {
@@ -1610,7 +1630,10 @@ const contentDermatophytosis: NodeContent = {
   ],
   drug_api_links: ['Itraconazole', 'Terbinafine', 'Chlorhexidine'],
   references: [
-    { type: 'guideline', citation: 'Moriello KA et al. Diagnosis and treatment of dermatophytosis in dogs and cats: Clinical Consensus Guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2017;28(3):266-e68.', relevance: 'WAVD 皮膚癬菌症診斷治療共識指引' },
+    { type: 'guideline', citation: 'Moriello KA, Coyner K, Paterson S, Mignon B. Diagnosis and treatment of dermatophytosis in dogs and cats: Clinical Consensus Guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2017;28(3):266-e68. doi:10.1111/vde.12440.', relevance: 'WAVD 現行權威共識：無單一診斷黃金標準、Wood 燈高敏感、系統+局部並行、環境去汙降級' },
+    { type: 'journal', citation: 'Moriello KA, Leutenegger CM. Use of a commercial qPCR assay in 52 high risk shelter cats for disease identification of dermatophytosis and mycological cure. Vet Dermatol. 2018;29(1):66-e26. doi:10.1111/vde.12485.', relevance: 'PCR/qPCR 偵測死菌 DNA、不能作治癒判定的證據' },
+    { type: 'journal', citation: 'Stuntebeck RL, Moriello KA. One vs two negative fungal cultures to confirm mycological cure in shelter cats treated for Microsporum canis dermatophytosis. J Feline Med Surg. 2020;22(6):598-601. doi:10.1177/1098612X19858791.', relevance: '治癒判定：健康依從貓單次陰性培養常即足夠（與兩次標準 kappa 0.903）' },
+    { type: 'guideline', citation: 'FDA CVM. Freedom of Information Summary, ITRAFUNGOL (itraconazole oral solution) for cats. Approved Nov 10, 2016 (sponsor Virbac). Alternating-week pulse x3 cycles.', relevance: '唯一 FDA 核准之貓 M. canis 全身用藥與脈衝給藥依據（劑量依仿單）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '皮膚癬菌症完整章節' },
     { type: 'journal', citation: 'Moriello KA. Feline dermatophytosis: aspects pertinent to disease management in single and multiple cat situations. J Feline Med Surg. 2014;16(5):419-431.', relevance: '貓皮膚癬菌症管理（單貓與多貓環境）' },
   ],
