@@ -36,6 +36,9 @@ export function RelatedNodes({ currentNodeId, edges, allNodes, className }: Rela
   const nodeMap = new Map(allNodes.map((n) => [n.id, n]));
 
   // 整理成顯示用結構
+  // 同一相鄰節點可能同時是 source 與 target（雙向關係以兩條有向邊表示），
+  // 需以 node.id 去重，避免重複卡片與 React duplicate-key 警告。
+  const seenNodeIds = new Set<string>();
   const relatedItems = relatedEdges
     .map((edge) => {
       const isSource = edge.source_node_id === currentNodeId;
@@ -48,11 +51,12 @@ export function RelatedNodes({ currentNodeId, edges, allNodes, className }: Rela
         direction: isSource ? 'outgoing' as const : 'incoming' as const,
       };
     })
-    .filter(Boolean) as Array<{
-      node: KnowledgeNode;
-      edgeType: string;
-      direction: 'incoming' | 'outgoing';
-    }>;
+    .filter((item): item is NonNullable<typeof item> => {
+      if (!item) return false;
+      if (seenNodeIds.has(item.node.id)) return false;
+      seenNodeIds.add(item.node.id);
+      return true;
+    });
 
   if (relatedItems.length === 0) return null;
 

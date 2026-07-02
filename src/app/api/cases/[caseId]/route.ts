@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withRateLimit } from '@/lib/api/middleware';
+import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
 import type { CaseChallenge, CaseResult, CaseStepResult } from '@/types/case';
 
 interface CaseSubmitInput {
@@ -55,6 +55,8 @@ async function handlePost(
     if (!request.headers.get('content-type')?.includes('application/json')) {
       return NextResponse.json({ error: 'Unsupported Media Type' }, { status: 415 });
     }
+    const tooLarge = enforceJsonBodyLimit(request);
+    if (tooLarge) return tooLarge;
     const { caseId } = (await context!.params) as { caseId: string };
     const input: CaseSubmitInput = await request.json();
 

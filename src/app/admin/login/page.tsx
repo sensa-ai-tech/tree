@@ -32,8 +32,8 @@ export default function AdminLoginPage() {
       });
 
       if (!res.ok) {
-        const data = await res.json();
-        setError(data.error || '登入失敗');
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        setError(data.error || (res.status === 429 ? '嘗試次數過多，請稍後再試' : '登入失敗'));
         return;
       }
 

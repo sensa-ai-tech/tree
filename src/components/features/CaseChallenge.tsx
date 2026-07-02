@@ -161,10 +161,12 @@ export function CaseChallenge({ caseData, onComplete, className }: CaseChallenge
         </div>
 
         {/* Step navigation */}
-        <div className="flex items-center gap-1 overflow-x-auto pb-1">
+        <ol className="flex items-center gap-1 overflow-x-auto pb-1" aria-label="病例挑戰進度">
           {steps.map((s, i) => (
-            <div
+            <li
               key={i}
+              aria-current={i === currentStep ? 'step' : undefined}
+              aria-label={`步驟 ${i + 1}${i === currentStep ? '（目前）' : i < currentStep ? '（已完成）' : '（未開始）'}`}
               className={cn(
                 'flex-shrink-0 rounded-full px-2.5 py-1 text-xs font-medium',
                 i === currentStep
@@ -174,10 +176,10 @@ export function CaseChallenge({ caseData, onComplete, className }: CaseChallenge
                     : 'bg-gray-100 text-gray-400'
               )}
             >
-              {i + 1}
-            </div>
+              {i < currentStep ? '✓' : i + 1}
+            </li>
           ))}
-        </div>
+        </ol>
 
         {/* Current step */}
         <div>

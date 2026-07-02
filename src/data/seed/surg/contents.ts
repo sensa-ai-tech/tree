@@ -197,7 +197,7 @@ GDV 沒有單一公式，依嚴重度跟個體狀況走，每個階段都得重�
 const contentPyometra: NodeContent = {
   id: 'CONTENT-SURG-L3-009',
   node_id: 'SURG-L3-009',
-  version: 1,
+  version: 2,
   summary: '子宮蓄膿（Pyometra）是未絕育母犬常碰到的子宮感染，好發在黃體期（發情後 4-8 週），致病菌主要是 E. coli。臨床分開放型（open）跟封閉型（closed），封閉型因為膿排不出來更危險。OHE 才是確定性治療，內科治療（Aglepristone / PGF2alpha）只有有繁殖需求、狀況穩定的開放型才考慮。',
   learning_objectives: [
     '描述子宮蓄膿的病理生理機轉與 progesterone 的角色',
@@ -309,10 +309,18 @@ const contentPyometra: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 內科治療 vs 手術治療的適應症界線 | 穩定開放型有繁殖價值者可嘗試 Aglepristone，但復發率 20-25%，封閉型禁忌內科治療 | Level II |
+| 內科治療 vs 手術治療的適應症界線 | 穩定、有繁殖價值者可嘗試 aglepristone（±低劑量 PG），復發率 20-25%；封閉型**非絕對禁忌**（aglepristone 可促子宮頸開放），但須嚴格篩選+密切監測，單獨 PGF2α 於封閉型風險高 | Level II |
 | 腹腔鏡 OHE 用於子宮蓄膿 | 腹腔鏡 OHE 在穩定開放型病例的可行性增加，但子宮極度擴張時破裂風險爭議大 | Level III |
 | 術前穩定化的最佳時間窗 | 應在多長時間內完成穩定化再手術（4-12 小時 vs 更短），延遲手術與感染惡化的平衡 | Level IV |
-| E. coli 內毒素引起的腎損傷可逆性 | 部分犬術後腎功能完全恢復，部分永久受損，預測因子尚不明確 | Level III |`,
+| E. coli 內毒素引起的腎損傷可逆性 | 部分犬術後腎功能完全恢復，部分永久受損，預測因子尚不明確 | Level III |
+
+## 八、近期實證更新（Hagman 2022「2.0」，待 DVM 覆核）
+
+1. **OHE 仍是最安全有效的確定性治療**（同時治癒 + 預防復發）；**腹腔鏡輔助 OHE** 在**經篩選的穩定病例**可行，但子宮極度擴張時破裂風險仍高，須個別評估。
+2. **內科治療的適應症比「僅限開放型」更細緻**：以 **aglepristone**（progesterone 受體拮抗劑，本身可促子宮頸開放）為主、必要時搭配低劑量前列腺素；重複/改良式 aglepristone 方案成功率報告較高。**封閉型並非絕對禁忌**——經嚴格篩選、密切監測的穩定封閉型仍可在 aglepristone 先行下嘗試；真正高風險的是「子宮頸仍封閉時單獨使用 PGF2α」（子宮破裂）。所有內科病例仍須告知 20–25% 復發率，建議下次發情即配種。
+3. **敗血症處置參照人醫概念**：液體復甦、必要時血管加壓素、來源控制（盡早 OHE）；procalcitonin 等生物標記於犬研究仍有限。
+4. E. coli 為主要病原（~70–90%），內毒素可致腎小管 ADH 阻抗（PU/PD）與 AKI；部分腎損傷可逆、部分永久。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: '子宮蓄膿犬的 WBC 有時候會出現「paradoxical leukopenia」這種陷阱。感染太嚴重的時候，骨髓嗜中性球儲備耗盡，周邊 WBC 反而落在正常或偏低，但 band neutrophils 比例往上跑（degenerative left shift）。這種病例的預後通常比 WBC 飆高的還差，術前穩定化要更積極。\n\n【台灣流行病學】子宮蓄膿在台灣是非常常見的外科急症，跟台灣未絕育母犬比例還是偏高有關。台灣流浪犬 TNR（捕捉-絕育-回置）做了這麼多年，獸醫師對 OVH 技術都很熟。但家犬未絕育的比例還是高，尤其貴賓犬、馬爾濟斯、吉娃娃這類小型犬的飼主常常因為體型小就拖著不絕育。亞熱帶氣候下子宮蓄膿一年四季都可能發生，沒有繁殖計畫的就早點絕育。',
   common_mistakes: [
     '把開放型子宮蓄膿的陰道分泌物當成正常發情出血',
@@ -357,6 +365,7 @@ const contentPyometra: NodeContent = {
   ],
   drug_api_links: ['Aglepristone', 'Dinoprost', 'Ampicillin', 'Enrofloxacin', 'Metronidazole'],
   references: [
+    { type: 'journal', citation: 'Hagman R. Pyometra in Small Animals 2.0. Vet Clin North Am Small Anim Pract. 2022;52(3):631-657. doi:10.1016/j.cvsm.2022.01.004.', relevance: '子宮蓄膿現行權威綜述（2.0 更新版；手術/內科/敗血症處置）' },
     { type: 'journal', citation: 'Jitpean S et al. Outcome of pyometra in female dogs and predictors of peritonitis and prolonged postoperative hospitalization in surgically treated cases. BMC Vet Res. 2014;10:6.', relevance: '子宮蓄膿預後因子與手術結果的大型研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 26: Surgery of the Reproductive and Genital Systems.', relevance: '子宮蓄膿手術技術標準教材' },
     { type: 'journal', citation: 'Hagman R. Pyometra in Small Animals. Vet Clin North Am Small Anim Pract. 2018;48(2):339-372.', relevance: '子宮蓄膿最新綜述文章' },
@@ -413,23 +422,6 @@ const contentSplenicNeoplasia: NodeContent = {
   - **非外傷性腹腔出血、脾臟腫塊「破裂」之急診**：系統性回顧顯示惡性 62.5–84.3%、其中 HSA 達 85.1–100%（Schick & Grimes 2023）。舊法則**低估** HSA。
   - 教學重點：**不要記單一數字，要依臨床表現條件化**。
 - **術前無法確診；預測分數有限**：影像（超音波/CT）與細胞學皆無法可靠區分良惡性，確診須病理。預測工具中 **HeLP score**（體重、總蛋白、血小板、胸片）外部驗證 AUC 0.79（可接受）優於 **T-STAT**（線上計算器，AUC 0.68 不佳）；**兩者皆不足以單獨決定手術**（Hillier 2024）。飼主常須在未確診下同意脾切除，化療與否待病理。HSA 風險因子：血小板低下、貧血（HCT<33%）、腹腔出血。
-- **HSA 治療現實**：脾切除＋doxorubicin 化療僅有限延長存活（單純切除中位 1–3 月、加化療約 4–6 月、一年存活約 10%），手術本質偏止血緩和（診斷時多已微轉移）。**eBAT**（雙特異性毒素）為研究前沿、非標準療法；**Yunnan Baiyao 證據不足、無確證療效**。分期建議含**心臟超音波篩檢右心房 HSA** 與凝血評估。
-
-### 手術：脾臟切除術
-[互動:脾臟切除術步驟流程]
-
-1. 正中開腹，腹腔探查
-2. 輕輕地把脾臟提出腹腔
-3. 從脾門開始，一條條雙重結紮或用 LigaSure 把短胃動脈跟脾動脈各分支封掉
-4. 確認沒有活動性出血再把脾臟拿掉
-5. 順便探查肝臟跟其他臟器有沒有轉移病灶
-6. 所有切下來的組織都送病理
-
-### 術後管理
-- ECG 監測（HSA 可能合併心律不整）
-- PCV/TS 每 4-6 小時追一次
-- 必要時輸血（目標 PCV > 25%）
-- 病理結果出來再決定後續
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -450,7 +442,31 @@ const contentSplenicNeoplasia: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-脾臟腫瘤怎麼治療要看嚴重度跟個體狀況，每隔一段時間就要重新評估治療反應。
+### 急診穩定（腫塊破裂出血時）
+血流動力學不穩的脾臟腫塊破裂是外科急症：晶體液/輸血復甦、AFAST 確認腹腔出血、矯正凝血（DIC 風險）；穩不下來即**緊急剖腹止血＋脾臟切除**，不等完整分期。
+
+### 脾臟切除術（主要治療）
+[互動:脾臟切除術步驟流程]
+
+1. 正中開腹，腹腔探查
+2. 輕輕地把脾臟提出腹腔
+3. 從脾門開始，一條條雙重結紮或用 LigaSure 把短胃動脈跟脾動脈各分支封掉
+4. 確認沒有活動性出血再把脾臟拿掉
+5. 探查肝臟與其他臟器有無轉移病灶
+6. 所有切下來的組織都送病理——**術前影像/細胞學無法可靠區分良惡性，確診靠病理**
+
+### 術後管理
+- ECG 監測（HSA 常合併心室心律不整）
+- PCV/TS 每 4-6 小時追一次，必要時輸血（目標 PCV > 25%）
+- 病理結果出來再決定後續全身治療
+
+### HSA 的全身治療現實
+- 脾切除＋doxorubicin 化療僅**有限**延長存活（單純切除中位 1-3 月、加化療約 4-6 月、一年存活約 10%）——手術本質偏止血/緩和（診斷時多已微轉移）。
+- **eBAT**（雙特異性毒素）為研究前沿、非標準療法；**Yunnan Baiyao 證據不足、無確證療效**，勿向飼主保證。
+- 分期建議含**心臟超音波篩檢右心房 HSA** 與凝血評估（HSA 約 25% 侵犯右心房）。
+
+### 良性病灶
+血腫、結節性增生、血管瘤等良性病灶**脾切除後預後佳**、通常不需後續治療——這也是「看到有意義的脾臟腫塊就切下來送病理、不憑影像猜預後」的理由。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -542,7 +558,7 @@ const contentSplenicNeoplasia: NodeContent = {
   references: [
     { type: 'journal', citation: 'Spangler WL, Culbertson MR. Prevalence, type, and importance of splenic diseases in dogs: 1,480 cases (1985-1989). J Am Vet Med Assoc. 1992;200(6):829-834.', relevance: '犬脾臟腫塊流行病學經典研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 24: Surgery of the Hemolymphatic System.', relevance: '脾臟切除術技術標準教材' },
-    { type: 'journal', citation: 'Wendelburg KM et al. Evaluation of a novel predictive model for splenic masses in dogs: 140 cases. J Am Vet Med Assoc. 2015;246(12):1338-1344.', relevance: '脾臟腫塊良惡性預測模型研究' },
+    { type: 'journal', citation: 'Wendelburg KM, Price LL, Burgess KE, et al. "Survival time of dogs with splenic hemangiosarcoma treated by splenectomy with or without adjuvant chemotherapy: 208 cases (2001-2012)." J Am Vet Med Assoc. 2015;247(4):393-403. doi:10.2460/javma.247.4.393', relevance: 'HSA 脾切除±輔助化療存活時間實證（修正 v1 誤標的「predictive model 246(12):1338-1344」查無 coords）' },
     { type: 'guideline', citation: 'Clifford CA et al. Treatment of canine hemangiosarcoma: 2000 and beyond. J Vet Intern Med. 2000;14(5):479-485.', relevance: 'HSA 化療方案與預後文獻（基礎）' },
     { type: 'journal', citation: 'Ziogaite B, Contreras ET, Horgan JE. Incidence of splenic malignancy and hemangiosarcoma in dogs undergoing splenectomy surgery at a surgical specialty clinic: 182 cases (2017–2021). PLOS ONE. 2024;19(12):e0314737. doi:10.1371/journal.pone.0314737.', relevance: '修正雙三分之二法則：一般脾切除族群多數良性（57.7%）、HSA 僅 32.4%、偶發結節 93.9% 良性' },
     { type: 'journal', citation: 'Schick AR, Grimes JA. Evaluation of the validity of the double two-thirds rule for diagnosing hemangiosarcoma in dogs with nontraumatic hemoperitoneum due to a ruptured splenic mass: a systematic review. J Am Vet Med Assoc. 2023;261(1):69-73. doi:10.2460/javma.22.08.0389.', relevance: '系統性回顧：破裂/腹腔出血急診情境 HSA 比例反高於三分之二，與一般族群方向相反' },
@@ -557,7 +573,7 @@ const contentSplenicNeoplasia: NodeContent = {
 const contentGIForeignBody: NodeContent = {
   id: 'CONTENT-SURG-L3-003',
   node_id: 'SURG-L3-003',
-  version: 1,
+  version: 2,
   summary: '消化道異物是犬貓常見的外科急診，犬以 3 歲以下的幼犬最多，貓的話線狀異物（linear foreign body）特別典型。異物可能卡在食道、胃或腸道，引發機械性阻塞、黏膜損傷甚至穿孔加腹膜炎。診斷靠 X 光（看不透光異物）跟超音波（非透光的）。治療走內視鏡取出，或手術做胃切開、腸切開、腸切除吻合。早點動手存活率可以超過 90%；拖到腸壞死或穿孔，死亡率就明顯上去了。',
   learning_objectives: [
     '辨識消化道異物的常見類型與好發位置',
@@ -721,8 +737,8 @@ const contentGIForeignBody: NodeContent = {
   drug_api_links: ['Maropitant', 'Metoclopramide', 'Ampicillin'],
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 20: Surgery of the Digestive System.', relevance: '消化道異物手術技術標準教材' },
-    { type: 'journal', citation: 'Hayes G. Gastrointestinal foreign bodies in dogs and cats: a retrospective study of 208 cases. J Small Anim Pract. 2009;50(11):576-583.', relevance: '犬貓消化道異物回顧性研究' },
-    { type: 'journal', citation: 'Hobday MM et al. Linear foreign body syndrome in 66 cats. J Am Vet Med Assoc. 2014;245(5):571-579.', relevance: '貓線狀異物的大型回顧性研究' },
+    { type: 'journal', citation: 'Hayes G. Gastrointestinal foreign bodies in dogs and cats: a retrospective study of 208 cases. J Small Anim Pract. 2009;50(11):576-583. doi:10.1111/j.1748-5827.2009.00783.x.', relevance: '犬貓消化道異物回顧性研究（208 例）' },
+    { type: 'journal', citation: 'Hobday MM, et al. Linear versus non-linear gastrointestinal foreign bodies in 499 dogs: comparison of management and outcome. J Small Anim Pract. 2014;55(11):560-565. doi:10.1111/jsap.12271.', relevance: '線狀 vs 非線狀消化道異物之處置與預後比較（499 犬）' },
     { type: 'guideline', citation: 'ACVS Surgical Summit Proceedings: Gastrointestinal Surgery Updates. 2021.', relevance: '消化道手術最新技術更新' },
   ],
   is_current: true,
@@ -920,7 +936,7 @@ TTA（Tibial Tuberosity Advancement）：
 const contentIVDD: NodeContent = {
   id: 'CONTENT-SURG-L3-005',
   node_id: 'SURG-L3-005',
-  version: 1,
+  version: 2,
   summary: '椎間盤疾病（Intervertebral Disc Disease, IVDD）是犬最常見的脊髓壓迫性疾病，分 Hansen Type I（急性椎間盤突出）跟 Hansen Type II（慢性椎間盤膨出）。好發品種有臘腸犬、法國鬥牛犬、柯基犬這類軟骨營養不良型品種。臨床依神經功能分 1-5 級，Grade 1-2 可以走保守治療，Grade 3-5（特別是失去深層痛覺的）一定要緊急手術減壓。手術方式看位置選，胸腰椎做 hemilaminectomy，頸椎走 ventral slot。深層痛覺還在的，術後恢復率 > 90%。',
   learning_objectives: [
     '區分 Hansen Type I 與 Type II 椎間盤疾病的病理與臨床特徵',
@@ -937,6 +953,7 @@ const contentIVDD: NodeContent = {
     '深層痛覺（deep pain perception, DPP）是最重要的預後指標',
     'DPP 陽性的手術病例恢復率 > 90%；DPP 陰性 < 48 小時恢復率 50-60%；> 48 小時 < 5%',
     'MRI 是脊髓壓迫定位的金標準影像工具',
+    '現代分類（CANSORT-SCI 2020）除 Hansen I/II 外，須認識 ANNPE（急性非壓迫性核髓脫出）與 HNPE（水合核髓脫出）——多為保守治療、非手術對象，勿與須減壓的 Hansen I 混淆',
   ],
   body: `# 椎間盤疾病 (IVDD)
 
@@ -1050,7 +1067,24 @@ Ventral Slot（頸椎）：
 | Grade 5 DPP 喪失犬的手術 vs 安樂死決策 | DPP 喪失 > 48 小時恢復率 < 5%，但精確喪失時間常難確定，倫理與費用考量複雜 | Level III |
 | 保守治療 vs 手術治療 Grade 2 IVDD | 保守治療復發率 30-40% vs 手術恢復率 > 90%，首次發作 Grade 2 的最佳策略未定論 | Level II |
 | 預防性開窗術（fenestration）的價值 | 手術減壓時是否應對相鄰椎間盤預防性開窗以降低復發，證據不一致 | Level III |
-| 類固醇用於急性脊髓損傷 | Methylprednisolone 高劑量療法曾被推薦但近年人醫與獸醫均質疑其效益且副作用大 | Level I |`,
+| 類固醇用於急性脊髓損傷 | Methylprednisolone 高劑量療法曾被推薦但近年人醫與獸醫均質疑其效益且副作用大 | Level I |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+近年最具份量的整合，是 **CANSORT-SCI（Canine Spinal Cord Injury Consortium）2020 年於 Frontiers in Veterinary Science 發表的系列回顧**，把過去散落的 IVDD 分類、預後與試驗設計做了標準化。
+
+**分類擴充——別再只記 Hansen I/II（Fenn & Olby 2020）**
+傳統 Hansen Type I（急性脫出 / extrusion）與 Type II（慢性膨出 / protrusion）之外，現代分類補進幾個臨床上會遇到、但舊教材常漏掉的實體，而且**它們的辨識直接決定「要不要開刀」，是菜鳥最容易誤判的地方**：
+- **ANNPE（acute non-compressive nucleus pulposus extrusion，急性非壓迫性核髓脫出）**：高速、低容量的核髓噴出，撞擊脊髓後**不殘留壓迫物**。特徵是超急性、常在運動/奔跑中發作、病灶常不對稱、急性期過後**通常不痛**，MRI 看不到明顯壓迫。處置以**保守＋復健為主，不是開刀對象**——要跟需要減壓的 Hansen I 分清楚。
+- **HNPE（hydrated nucleus pulposus extrusion，水合核髓脫出）**：含水量高的核髓急性脫出，**好發頸椎**，MRI 呈特徵性影像。多數**保守可改善**。
+- 臨床心法：看到「超急性、運動中發作、不太痛、不對稱、MRI 無明顯壓迫」就要想到 ANNPE/HNPE，先別急著推去開刀。
+
+**預後——DPP 仍是王道，但要連同時間與影像一起讀（Olby et al 2020, CANSORT-SCI）**
+預後回顧重申：深層痛覺（DPP）是最強的單一預後指標；DPP 陰性者預後明顯較差，「喪失時間長短」與 MRI 上 T2 高訊號的縱向長度都是輔助預後因子。臨床訊息不變——**DPP 陰性是時間敏感的急診，越早減壓越好**，這條鐵則沒有被推翻。
+
+**類固醇的句點**：高劑量 methylprednisolone（MPSS）治療急性脊髓損傷，人醫與獸醫近年證據都不支持常規使用，副作用（消化道出血、感染、傷口癒合不良）反而明顯，已不建議常規給。
+
+**台灣落地提醒**：臘腸犬等軟骨營養不良型品種在台灣盛行，MRI 與神經外科轉診可近性逐年提升；但 DPP 陰性的 Grade 5 病例，「能不能在 24-48 小時內轉到有手術能力的中心」往往才是預後的真正瓶頸，第一線接診時就要把轉診時效講清楚。`,
   clinical_pearl: 'DPP 怎麼測決定一切。用止血鉗夾趾骨，要看的不是肢體屈曲反射（withdrawal reflex），那是脊髓反射弧，脊髓橫斷也照樣有；要看的是有意識的疼痛反應，比如轉頭看刺激源、哭叫、想咬人。DPP 喪失超過 48 小時的病例恢復率非常低，但實際喪失的時間點往往很難精準抓出來。\n\n【台灣流行病學】IVDD 在台灣是常見的外科神經急症，臘腸犬是台灣最具代表性的好發品種（盛行率可以到 19-24%），其他像法國鬥牛犬、柯基犬、比格犬在台灣飼養數量也很多。台灣大型獸醫教學醫院跟神經外科專科已經有能力做半椎板切除術跟 ventral slot。MRI 設備分布越來越普及，術前定位的能力也跟著上來。',
   common_mistakes: [
     '把屈曲反射（withdrawal reflex）當成深層痛覺陽性，DPP 要看的是有意識的疼痛反應',
@@ -1095,10 +1129,12 @@ Ventral Slot（頸椎）：
   ],
   drug_api_links: ['Gabapentin', 'Methocarbamol', 'Meloxicam', 'Carprofen'],
   references: [
+    { type: 'guideline', citation: 'Olby NJ, da Costa RC, Levine JM, Stein VM; Canine Spinal Cord Injury Consortium (CANSORT-SCI). "Prognostic Factors in Canine Acute Intervertebral Disc Disease." Front Vet Sci. 2020;7:596059. doi:10.3389/fvets.2020.596059', relevance: '近期：CANSORT-SCI 預後因子整合（DPP 仍為最強指標）' },
+    { type: 'guideline', citation: 'Fenn J, Olby NJ; Canine Spinal Cord Injury Consortium (CANSORT-SCI). "Classification of Intervertebral Disc Disease." Front Vet Sci. 2020;7:579025. doi:10.3389/fvets.2020.579025', relevance: '近期：IVDD 現代分類（含 ANNPE/HNPE，非僅 Hansen I/II）' },
+    { type: 'journal', citation: 'Brisson BA. "Intervertebral Disc Disease in Dogs." Vet Clin North Am Small Anim Pract. 2010;40(5):829-858. doi:10.1016/j.cvsm.2010.06.001', relevance: 'IVDD 完整綜述文章' },
+    { type: 'guideline', citation: 'Olby NJ, Levine J, Harris T, et al. "Long-term functional outcome of dogs with severe injuries of the thoracolumbar spinal cord." J Am Vet Med Assoc. 2003;222(6):762-769. doi:10.2460/javma.2003.222.762', relevance: '脊髓損傷犬長期預後的奠基研究' },
+    { type: 'journal', citation: 'Smolders LA, Bergknut N, Grinwis GCM, et al. "Intervertebral disc degeneration in the dog. Part 1: Anatomy and physiology of the intervertebral disc and characteristics of intervertebral disc degeneration." Vet J. 2013;195(3):282-291. doi:10.1016/j.tvjl.2012.10.024', relevance: '椎間盤退化基礎科學' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 38: Surgery of the Cervical Spine; Chapter 39: Surgery of the Thoracolumbar Spine.', relevance: 'IVDD 手術技術標準教材' },
-    { type: 'journal', citation: 'Brisson BA. Intervertebral disc disease in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):829-858.', relevance: 'IVDD 完整綜述文章' },
-    { type: 'guideline', citation: 'Olby NJ et al. Long-term functional outcome of dogs with severe injuries of the thoracolumbar spinal cord. J Am Vet Med Assoc. 2003;222(6):762-769.', relevance: '脊髓損傷犬長期預後的重要研究' },
-    { type: 'journal', citation: 'Smolders LA et al. Intervertebral disc degeneration in the dog. Part 1: Anatomy and physiology of the intervertebral disc and characteristics of intervertebral disc degeneration. Vet J. 2013;195(3):282-291.', relevance: '椎間盤退化基礎科學' },
   ],
   is_current: true,
   created_at: now,
@@ -1279,7 +1315,7 @@ const contentPerinealHernia: NodeContent = {
 const contentFractureStabilization: NodeContent = {
   id: 'CONTENT-SURG-L3-007',
   node_id: 'SURG-L3-007',
-  version: 1,
+  version: 2,
   summary: '創傷性骨折穩定是犬貓急診跟骨科手術的核心操作。骨折分類靠 Salter-Harris（生長板）、AO/ASIF（型態學）跟開放/閉合三套系統。急診處理先做全身穩定化（先保命）跟暫時性外固定，確定性手術再依骨折類型挑骨板螺絲（plate-screw）、髓內針（intramedullary pin）、外固定架（external skeletal fixator, ESF）或組合式固定。犬貓骨折癒合時間看年齡跟部位，大約落在 4-12 週。',
   learning_objectives: [
     '運用 AO/ASIF 系統分類骨折',
@@ -1361,11 +1397,39 @@ const contentFractureStabilization: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-診斷要把病史、理學檢查、影像學湊起來看，同時排除其他鑑別診斷。
+### 臨床徵象
+- **無法負重/嚴重跛行**：患肢完全踏不下去
+- **腫脹與劇痛**：骨折部位明顯腫脹、觸診劇痛
+- **異常活動度/骨摩擦音（crepitus）**：觸診可及骨折端異常活動（勿過度操作以免再傷軟組織）
+- **肢體變形**：嚴重移位者見角度畸形或肢體縮短
+- **開放傷口**：皮膚破損、骨折端外露或血性分泌物（開放性骨折）
+
+### 診斷流程（先排除致命傷，再評估骨折）
+1. **全身性創傷評估（ABCDE）**：先穩住氣道/呼吸/循環
+2. **胸腔 X 光**：排除氣胸、肺挫傷、橫膈疝氣（創傷常見併發、可比骨折先致命）
+3. **AFAST/TFAST**：快速評估胸腹腔積液/出血
+4. **患肢兩正交 X 光**：須涵蓋骨折處上、下關節
+5. **CBC/生化/凝血**：評估失血量與臟器功能
+6. **CT**：複雜或關節內骨折的術前規劃
 
 ## 三、治療策略 (Treatment)
 
-治療沒有單一公式，依嚴重度跟個體狀況走，每個階段都要重新評估反應再決定下一步。
+治療分**急診穩定**與**確定性固定**兩階段：
+
+### 急診穩定（先保命）
+- 全身穩定化、止痛（[藥物:Methadone] 0.1-0.5 mg/kg IV 或 fentanyl CRI）
+- 暫時性外固定（Robert Jones bandage 或 splint）防止骨折端續移位
+- 開放性骨折：傷口濕敷料覆蓋 + 早期廣效抗生素（[藥物:Cefazolin] 22 mg/kg IV，越早越好、理想 < 6 小時）
+
+### 確定性固定（全身穩住後約 24-72 小時）
+依骨折構型、位置、患者大小與術者經驗選擇：
+- **骨板螺絲（plate-screw）**：剛性固定，適關節附近/可重建長骨骨折；鎖定骨板（LCP）提供角穩定
+- **髓內針（IM pin）**：抗彎不抗旋，**須搭配抗旋裝置**——一般以 tie-in ESF 或加用骨板達成旋轉控制；cerclage wire **僅適可解剖復位的長斜/螺旋骨折**，非通用抗旋手段
+- **外固定架（ESF）**：適開放性骨折/嚴重軟組織損傷，保留骨折端血供；釘道感染率 10-30%
+- **組合式固定**：依需求合併上述方式
+
+### 術後
+限制活動 6-12 週（幼年動物癒合較快但因骨別、部位與固定方式而異），每 4-6 週 X 光追蹤癒合；止痛由住院 opioid 過渡至 NSAIDs ± [藥物:Gabapentin]。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -1412,7 +1476,16 @@ const contentFractureStabilization: NodeContent = {
 | 鎖定骨板（LCP）vs 傳統 DCP 的臨床差異 | LCP 生物力學優勢（角穩定、減少骨膜血供干擾）明確，但臨床預後差異的前瞻性比較不足 | Level II |
 | 小型犬橈尺骨遠端骨折的最佳固定方式 | 鎖定骨板 + 骨移植為目前推薦，但成本高；外固定架與 casting 的適用性仍有討論 | Level III |
 | 開放性骨折抗生素療程 | Grade I 可短療程（24-48 hr），Grade III 療程 3-5 天或更長，最佳療程缺乏共識 | Level III |
-| 骨折癒合後植入物是否需常規移除 | 無症狀的植入物不需常規移除已為主流意見，但年輕動物或鋼板不適可能需移除 | Level IV |`,
+| 骨折癒合後植入物是否需常規移除 | 無症狀的植入物不需常規移除已為主流意見，但年輕動物或鋼板不適可能需移除 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+- **生物性骨整合與 MIPO**：微創骨板固定術（MIPO）經小切口插入骨板、保留骨折端軟組織與血供，已成中大型犬長骨骨折的主流趨勢（Hudson 2009 等）；強調「橋接式」固定而非解剖重建每個碎片。〔Evidence Level III〕
+- **鎖定骨板（LCP）普及**：角穩定設計減少對骨膜血供的壓迫，生物力學優勢明確，廣泛用於粉碎與骨質較差的骨折；與傳統 DCP 的臨床預後前瞻比較仍不足。〔Evidence Level II〕
+- **小型/玩具犬橈尺骨遠端骨折**：此部位血供差、不癒合率偏高（可達 ~20%+），骨板固定為改善癒合的推薦（Ramírez 2016 報告 toy breed 骨板固定結果）。〔Evidence Level III〕
+- **3D 列印與開放性骨折輔助**：3D 列印術前模型/客製化導板用於複雜與關節內骨折規劃；NPWT（負壓傷口治療）輔助 Grade III 開放性骨折傷口準備。開放性骨折抗生素最佳療程（短 vs 長）仍缺乏共識，趨勢參考人醫朝較短療程。〔Evidence Level III-IV〕
+
+> ⚠️ 上述更新（特別是 MIPO/LCP 適應症與開放性骨折抗生素療程）仍待 DVM 依個案與所在院所設備覆核後採用。`,
   clinical_pearl: '幼犬（< 6 個月）骨折癒合能力強得不得了，就算對線不完美，骨重塑也能把功能拉回來。但生長板骨折（Salter-Harris 分類）一定要小心，處理不好就是肢體長度不等或角度畸形。Salter-Harris Type V（壓碎型）特別容易被漏掉，X 光看起來可能正常，但生長板其實已經傷了。\n\n【台灣流行病學】骨折在台灣小動物臨床非常常見，尤其小型犬（吉娃娃、馬爾濟斯、博美犬）從高處跳下造成的橈尺骨遠端骨折。台灣居住以公寓大樓為主，小型犬從沙發、床鋪甚至飼主懷裡跳下都可能骨折。小型犬橈尺骨遠端骨折不癒合率高，台灣骨科專科推薦用鎖定骨板提高癒合率。流浪犬車禍骨折也占一定比例。',
   common_mistakes: [
     '全身性創傷評估沒做完就急著處理骨折，氣胸、腹腔出血這些有可能比骨折先要命',
@@ -1459,8 +1532,9 @@ const contentFractureStabilization: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 32: Fundamentals of Orthopedic Surgery and Fracture Management.', relevance: '骨折處理基礎標準教材' },
     { type: 'textbook', citation: 'Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. AO Publishing, 2005.', relevance: 'AO 骨折分類與固定原則權威教材' },
-    { type: 'journal', citation: 'Piermattei DL, Flo GL, DeCamp CE. Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders, 2006.', relevance: '小動物骨科手術技術參考' },
-    { type: 'guideline', citation: 'ACVS Consensus on Open Fracture Management in Small Animals. Vet Surg. 2019.', relevance: '開放性骨折處理共識' },
+    { type: 'textbook', citation: 'Piermattei DL, Flo GL, DeCamp CE. Handbook of Small Animal Orthopedics and Fracture Repair, 4th ed. Saunders, 2006.', relevance: '小動物骨科手術技術參考' },
+    { type: 'journal', citation: 'Hudson CC, Lewis DD, Pozzi A. Minimally invasive plate osteosynthesis: applications and techniques in dogs and cats. Vet Comp Orthop Traumatol. 2009;22(3):175-182. doi:10.3415/vcot-08-06-0050', relevance: '微創骨板固定術（MIPO）原則與技術' },
+    { type: 'journal', citation: 'Ramírez JM, Macías C. Conventional bone plate fixation of distal radius and ulna fractures in toy breed dogs. Aust Vet J. 2016;94(3):76-80. doi:10.1111/avj.12408', relevance: '玩具犬橈尺骨遠端骨折骨板固定結果' },
   ],
   is_current: true,
   created_at: now,
@@ -1470,7 +1544,7 @@ const contentFractureStabilization: NodeContent = {
 const contentPatellarLuxation: NodeContent = {
   id: 'CONTENT-SURG-L3-008',
   node_id: 'SURG-L3-008',
-  version: 1,
+  version: 2,
   summary: '膝蓋骨脫位（Patellar Luxation）是犬最常見的骨科疾病之一，小型犬盛行率大約 7%。內側脫位（medial patellar luxation, MPL）遠遠多於外側（lateral），用 Singleton 分級分 Grade I-IV。Grade I-II 可以保守觀察，Grade III-IV 或者持續跛行的就建議手術矯正。手術組合包括 trochleoplasty（滑車溝加深）、tibial tuberosity transposition（脛骨粗隆移位）、lateral/medial imbrication（關節囊摺疊），成功率大約 90-95%。',
   learning_objectives: [
     '運用 Singleton 分級系統評估膝蓋骨脫位嚴重度',
@@ -1598,7 +1672,21 @@ const contentPatellarLuxation: NodeContent = {
 | Grade II 無跛行是否需要手術 | Grade II 長期可致 OA 與 CCLD，早期手術 vs 等待出現症狀再手術的策略未有定論 | Level III |
 | Block recession vs Wedge recession trochleoplasty | 兩種滑車溝加深術效果相近，wedge recession 保留更多關節軟骨但技術要求較高 | Level III |
 | Grade IV 是否需矯正截骨（DFO/tibial osteotomy） | 嚴重骨骼畸形僅用標準術式復發率高，但矯正截骨增加複雜度與費用 | Level II |
-| 膝蓋骨脫位犬的繁殖建議 | MPL 為多基因遺傳，受累犬不應繁殖已有共識，但品種俱樂部執行力度不一 | Level IV |`,
+| 膝蓋骨脫位犬的繁殖建議 | MPL 為多基因遺傳，受累犬不應繁殖已有共識，但品種俱樂部執行力度不一 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### 矯正截骨用於骨骼畸形顯著者（DFO）
+標準術式（trochleoplasty+TTT+軟組織）對輕中度有效，但 Grade III-IV 合併顯著股骨遠端內翻（femoral varus）者復發率高；遠端股骨矯正截骨（DFO，如股骨閉合楔形截骨）可矯正排列、降低復發（Roch 2008）。術前以 CT/CORA 量化畸形角度決定是否加截骨。
+
+### 併發症率與風險因子的實證
+大型回顧（Cashmore 2014）顯示 MPL 矯正手術主要併發症率約 18%，高 grade 與 TTT 相關（K-wire 移位/脛骨粗隆問題）為主要風險；術前告知與術式選擇應據此個別化。
+
+### 合併 CCLD 的辨識
+高 grade MPL 合併前十字韌帶疾病比例高，術中務必評估 drawer/cranial tibial thrust，一併處理以免術後持續不穩。
+
+### 3D 列印與軟骨保留
+病患特異性 3D 列印截骨導板提升矯正截骨精準度（漸增）；滑車溝置換（patellar groove replacement）等軟骨保留/置換技術用於軟骨嚴重缺損者，仍屬發展中。`,
   clinical_pearl: '膝蓋骨脫位分級一定要在動物清醒、放鬆的狀態下做。很多小型犬上檢查台就緊張，肌肉一繃緊，分級就會被低估。建議先讓動物在地板上走，看步態，再溫柔地觸診。另外，MPL Grade III-IV 的犬有 15-20% 同時合併前十字韌帶斷裂，術中一定要評估 drawer sign，有的話就一起處理。\n\n【台灣流行病學】膝蓋骨內側脫位（MPL）是台灣小型犬最常見的骨科問題，盛行率超高。常見品種像貴賓犬、馬爾濟斯、約克夏梗、吉娃娃、博美犬都是好發族群。繁殖場在品種選育時沒有篩骨科疾病，MPL 盛行率居高不下。建議飼主買小型犬前先了解品種好發的疾病，幼犬健檢時就做膝關節評估。雙側 MPL 在台灣小型犬大約 50%。',
   common_mistakes: [
     'Grade I 無症狀就建議手術，其實 Grade I 通常不需手術，定期追蹤就好',
@@ -1643,9 +1731,11 @@ const contentPatellarLuxation: NodeContent = {
   ],
   drug_api_links: ['Carprofen', 'Meloxicam'],
   references: [
-    { type: 'journal', citation: 'Arthurs GI, Langley-Hobbs SJ. Patellar luxation as a cause of lameness in dogs. Vet Comp Orthop Traumatol. 2006;19(3):163-170.', relevance: '膝蓋骨脫位分級與臨床結果的重要研究' },
+    { type: 'journal', citation: 'Arthurs GI, Langley-Hobbs SJ. Complications associated with corrective surgery for patellar luxation in 109 dogs. Vet Surg. 2006;35(6):559-566. doi:10.1111/j.1532-950x.2006.00189.x.', relevance: '膝蓋骨脫位矯正手術併發症與風險的重要研究' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 34: Diseases of the Joints.', relevance: '膝蓋骨脫位手術技術標準教材' },
-    { type: 'journal', citation: 'Bound N et al. The prevalence of canine patellar luxation in three centres. Vet Comp Orthop Traumatol. 2009;22(1):32-37.', relevance: '膝蓋骨脫位流行病學研究' },
+    { type: 'journal', citation: 'Bound N, Zakai D, Butterworth SJ, et al. The prevalence of canine patellar luxation in three centres. Vet Comp Orthop Traumatol. 2009;22(1):32-37. doi:10.3415/vcot-08-01-0009.', relevance: '膝蓋骨脫位流行病學研究' },
+    { type: 'journal', citation: 'Cashmore RG, Havlicek M, Perkins NR, et al. Major complications and risk factors associated with surgical correction of congenital medial patellar luxation in 124 dogs. Vet Comp Orthop Traumatol. 2014;27(4):263-270. doi:10.3415/vcot-13-08-0100.', relevance: 'MPL 矯正手術主要併發症率與風險因子' },
+    { type: 'journal', citation: 'Roch SP, Gemmill TJ. Treatment of medial patellar luxation by femoral closing wedge ostectomy using a distal femoral plate in four dogs. J Small Anim Pract. 2008;49(3):152-158. doi:10.1111/j.1748-5827.2007.00420.x.', relevance: '股骨矯正截骨（DFO）治療合併股骨內翻的 MPL' },
     { type: 'guideline', citation: 'Orthopedic Foundation for Animals (OFA). Patellar Luxation Database and Breed Statistics. 2023.', relevance: '品種膝蓋骨脫位統計數據' },
   ],
   is_current: true,
@@ -1762,7 +1852,7 @@ const contentSurgOverview: NodeContent = {
 const contentSurgPrinciples: NodeContent = {
   id: 'CONTENT-SURG-L1-001',
   node_id: 'SURG-L1-001',
-  version: 1,
+  version: 2,
   summary: '手術原則跟無菌技術是所有外科手術的底子。核心包括 Halsted 手術原則、手術團隊無菌準備（手術衣穿著、手術刷手、無菌鋪單）、手術器械滅菌（高壓蒸氣、化學滅菌）、電燒止血原理，還有縫合技術基礎（縫線選擇、縫合模式）。手術部位感染（SSI）發生率落在 3-10%，無菌技術守得住，發生率就壓得下來。',
   learning_objectives: [
     '執行標準化的手術刷手與穿衣流程',
@@ -1784,7 +1874,7 @@ const contentSurgPrinciples: NodeContent = {
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-
+外科手術的底子是無菌技術、止血、縫合與感染預防；把這些基本功守住，手術部位感染（SSI）率就能壓低。
 
 ### 無菌準備
 ### 手術團隊準備
@@ -1847,7 +1937,18 @@ const contentSurgPrinciples: NodeContent = {
 |---------|------|---------------|
 | 不鏽鋼 vs 鈦合金植入物的臨床差異 | 鈦合金生物相容性較好且 MRI 相容，但成本高兩倍以上，臨床預後差異的前瞻性比較不足 | Level III |
 | 倒鉤縫線（V-Loc / barbed suture）用於腹壁與皮下閉合 | 可縮短 30-40% 縫合時間且不需打結，但組織反應與傷口裂開風險的獸醫數據有限 | Level III |
-| 術前預防性抗生素使用時機遵從率 | 切皮前 30 分鐘給予 Cefazolin 為金標準，但多中心調查顯示僅 50-70% 獸醫院嚴格遵守 | Level I |`,
+| 術前預防性抗生素使用時機遵從率 | 切皮前 30 分鐘給予 Cefazolin 為金標準，但多中心調查顯示僅 50-70% 獸醫院嚴格遵守 | Level I |
+
+## 五、近期實證更新 (Recent Evidence)
+
+[圖片:手術部位感染（SSI）預防束——無菌技術 × 正確時機單劑預防 × 溫和組織操作 × 縮短手術時間]
+
+- **抗生素預防：該給才給、給一次、不延長**：**並非所有清潔手術都需要預防性抗生素**；有指徵時（長時間、植入物、高風險）以**切皮前單劑**（如 [藥物:Cefazolin]）為原則、長手術術中追加，但**術後延長給藥並不會再降低 SSI**、且違反抗菌藥物管理（ENOVAT 系統性回顧/統合分析，Sørensen 2026，Evidence Level I）。
+- **SSI 監測與風險因子實證**：前瞻性 SSI 監測（Turk 2015）與近期風險因子研究（Stetter 2021）指出手術/麻醉時間延長、植入物等為清潔手術 SSI 的可辨識風險——監測數據用於導向預防。
+- **縫線與閉合技術的新證據**：triclosan 抗菌塗層縫線可能降低 SSI（主要為人醫 meta 證據）；倒鉤（barbed/V-Loc）免打結縫線縮短閉合時間，但**獸醫的裂開風險與長期結果數據仍有限**。
+- **手術安全文化與 AMS 進手術房**：WHO 手術安全查核表降低可預防併發症、獸醫導入中；避免不必要/延長的圍術期抗生素已成小動物外科抗菌藥物管理的重點。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '縫線選擇的黃金法則：「用最細的縫線給出足夠的張力，材質選組織反應最小的」。腹壁閉合通常用 PDS 或 Nylon（0 或 2-0），皮膚用 Nylon 或 Staples（3-0 或 4-0）。感染手術別碰編織縫線，wicking effect 會把細菌沿著縫線帶開來。',
   common_mistakes: [
     '手術刷手時間不足或技術不正確',
@@ -1866,8 +1967,10 @@ const contentSurgPrinciples: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 2: Sterilization and Asepsis.', relevance: '無菌技術標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '外科基本原則' },
-    { type: 'guideline', citation: 'Turk R et al. ACVS guidelines for surgical site infection prevention. Vet Surg. 2015;44(S1):S70-S80.', relevance: 'SSI 預防指引' },
-    { type: 'journal', citation: 'Nicholson M et al. Comparison of surgical site infection rates associated with clean surgical procedures in dogs and cats at a veterinary teaching hospital. Vet Surg. 2002;31(6):526-532.', relevance: '獸醫教學醫院 SSI 發生率研究' },
+    { type: 'journal', citation: 'Turk R, Singh A, Weese JS. "Prospective Surgical Site Infection Surveillance in Dogs." Vet Surg. 2015;44(1):2-8. doi:10.1111/j.1532-950x.2014.12267.x', relevance: '犬前瞻性 SSI 監測（修正 v1 捏造的「ACVS SSI 預防指引」誤標）' },
+    { type: 'journal', citation: 'Nicholson M, Beal M, Shofer F, Brown DC. "Epidemiologic Evaluation of Postoperative Wound Infection in Clean-Contaminated Wounds: A Retrospective Study of 239 Dogs and Cats." Vet Surg. 2002;31(6):577-581. doi:10.1053/jvet.2002.34661', relevance: '犬貓術後傷口感染流行病學（修正 v1 誤標標題/頁碼）' },
+    { type: 'journal', citation: 'Stetter J, Boge GS, Grönlund U, Bergström A. "Risk factors for surgical site infection associated with clean surgical procedures in dogs." Res Vet Sci. 2021;136:616-621. doi:10.1016/j.rvsc.2021.04.012', relevance: '清潔手術 SSI 風險因子近期研究' },
+    { type: 'guideline', citation: 'Sørensen TM, Scahill K, Weese JS, Allerton F, et al. "Efficacy of antimicrobial prophylaxis on the risk of surgical site infections in companion animal surgery: a systematic review and meta-analysis for ENOVAT guidelines." J Small Anim Pract. 2026;67(3):198-211. doi:10.1111/jsap.70055', relevance: 'ENOVAT 圍術期抗生素預防系統性回顧（Evidence Level I）' },
   ],
   is_current: true,
   created_at: now,
@@ -1994,7 +2097,7 @@ const contentWoundHealing: NodeContent = {
 const contentSurgNutrition: NodeContent = {
   id: 'CONTENT-SURG-L1-004',
   node_id: 'SURG-L1-004',
-  version: 1,
+  version: 2,
   summary: '外科營養學講的是手術患者的營養評估跟支持，對手術結果跟傷口癒合都有重大影響。術前營養狀態不好（低白蛋白 < 2.0 g/dL、體重流失 > 10%）會明顯把手術併發症拉上來。術後營養支持的原則是「early enteral nutrition」，腸道功能允許就盡早恢復腸道餵食。嚴重的病例可能要鼻食管、食道瘻管或全靜脈營養（TPN）。',
   learning_objectives: [
     '評估手術患者的營養狀態與風險因子',
@@ -2075,7 +2178,15 @@ const contentSurgNutrition: NodeContent = {
 |---------|------|---------------|
 | 犬貓術後「疾病能量需求係數」的適用性 | 傳統建議 DER = 1.5-2.0 × RER 已被質疑，目前趨勢為重症患者不超過 1.0-1.2 × RER 避免過度餵食併發症 | Level III |
 | 貓 hepatic lipidosis 的最佳營養恢復速度 | 從 25% RER 逐漸增加被普遍接受，但起始熱量與增加速度缺乏前瞻性比較 | Level III |
-| 術後早期腸內營養的最佳啟動時機（6 hr vs 12 hr vs 24 hr） | 人醫趨向 6 小時內啟動，犬貓的前瞻性數據支持 12-24 小時，更早啟動的安全性與益處仍待驗證 | Level II |`,
+| 術後早期腸內營養的最佳啟動時機（6 hr vs 12 hr vs 24 hr） | 人醫趨向 6 小時內啟動，犬貓的前瞻性數據支持 12-24 小時，更早啟動的安全性與益處仍待驗證 | Level II |
+
+## 五、近期實證更新 (Recent Evidence Updates)
+
+| 主題 | 實證更新 | 臨床意涵 | 來源 |
+|------|---------|---------|------|
+| 厭食住院貓管理共識 | Taylor 等 2022 ISFM「厭食住院貓管理共識」系統化厭食評估與輔助餵食決策（鼻食管／E-tube），強調早期介入以預防 hepatic lipidosis。 | 貓厭食 > 48-72 h 即積極營養介入；E-tube 為貓中長期首選、飼主可在家操作。 | Taylor 2022 |
+| 「不再 NPO」術後早期腸內營養 | 現代證據支持術後 12-24 h（腸道功能允許時）即啟動少量腸內營養，維持腸黏膜屏障、降低細菌移轉、縮短住院，取代「NPO 直到排氣」舊觀念。 | 術後勿默認禁食；腸道能用就用，從 1/4 RER 起逐步加量。 | Freeman 2011（WSAVA） |
+| 餵食量與再餵食症候群 | 重症避免過度餵食（目標 ≤1.0-1.2×RER）；長期飢餓（>5-7 天）者從 25-50% RER 起始、密切監測磷／鉀／鎂並補 thiamine 預防再餵食症候群。 | 「餵多≠餵好」；起始保守、追電解質，再餵食症候群可致命。 | Chan 2004、Fossum 教材 |`,
   clinical_pearl: '貓的營養管理跟犬不一樣。貓禁食超過 2-3 天就有肝脂肪沉積（hepatic lipidosis）的風險，肥胖貓更是地雷。所以只要貓食慾廢絕超過 48 小時，就要積極考慮放鼻食管或 E-tube。E-tube 在貓身上表現非常好，放置簡單，飼主可以在家自己餵，是中長期營養支持最佳的選擇。',
   common_mistakes: [
     '術後堅持「NPO 直到排氣」這套老觀念，現代證據都支持 early enteral nutrition',
@@ -2092,7 +2203,8 @@ const contentSurgNutrition: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'guideline', citation: 'ACVN/ESVCN Guidelines on Nutritional Assessment in Small Animals. J Small Anim Pract. 2011.', relevance: '營養評估指引' },
+    { type: 'guideline', citation: 'Freeman L, Becvarova I, Cave N, et al. WSAVA Nutritional Assessment Guidelines. J Small Anim Pract. 2011;52(7):385-396. doi:10.1111/j.1748-5827.2011.01079.x.', relevance: 'WSAVA 營養評估指引' },
+    { type: 'guideline', citation: 'Taylor S, Chan DL, Villaverde C, et al. "2022 ISFM Consensus Guidelines on Management of the Inappetent Hospitalised Cat." J Feline Med Surg. 2022;24(7):614-640. doi:10.1177/1098612X221106353', relevance: 'ISFM 2022 厭食住院貓營養管理共識（近期實證）' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '術後營養支持' },
     { type: 'journal', citation: 'Chan DL. Nutritional requirements of the critically ill patient. Clin Tech Small Anim Pract. 2004;19(1):1-5.', relevance: '重症營養需求' },
   ],
@@ -2104,7 +2216,7 @@ const contentSurgNutrition: NodeContent = {
 const contentAnesthesiaBasics: NodeContent = {
   id: 'CONTENT-SURG-L1-003',
   node_id: 'SURG-L1-003',
-  version: 1,
+  version: 2,
   summary: '麻醉是外科手術的必要前提。獸醫麻醉分全身麻醉跟局部/區域麻醉。全身麻醉的四要素：鎮靜/催眠、鎮痛、肌肉鬆弛、自主神經反射抑制。麻醉流程包括術前評估（ASA 分級）、麻醉前給藥（premedication）、誘導（induction）、維持（maintenance）、甦醒（recovery）。ASA 分級是預測麻醉風險的基礎工具。',
   learning_objectives: [
     '執行 ASA 體格狀態分級並評估麻醉風險',
@@ -2117,7 +2229,7 @@ const contentAnesthesiaBasics: NodeContent = {
     'ASA 分級：I 健康、II 輕微全身疾病、III 嚴重全身疾病、IV 危及生命、V 瀕死',
     '麻醉四要素：鎮靜/催眠、鎮痛、肌肉鬆弛、自主神經抑制',
     'Premedication 常用組合：[藥物:Acepromazine] 加 [藥物:Methadone]（健康犬），或 [藥物:Midazolam] 加 [藥物:Fentanyl]（高風險犬）',
-    '誘導：[藥物:Propofol] 4-6 mg/kg IV to effect（最常用），或 [藥物:Alfaxalone] 2-3 mg/kg IV',
+    '誘導：[藥物:Propofol] 4-6 mg/kg IV to effect（最常用），或 [藥物:Alfaxalone] 2-3 mg/kg IV to effect（劑量隨前給藥減量、物種而異；未前給藥或貓常需較高）',
     '維持：Isoflurane 或 Sevoflurane 吸入麻醉',
     '基本監測：HR、RR、SpO2、ETCO2、血壓、體溫',
     '低血壓定義：MAP < 60 mmHg，組織灌流不足的風險就上來了',
@@ -2149,7 +2261,8 @@ const contentAnesthesiaBasics: NodeContent = {
 - 高風險犬：Midazolam 0.2-0.3 mg/kg IV + Fentanyl 2-5 mcg/kg IV
 
 ### 3. 誘導（Induction）
-- Propofol 4-6 mg/kg IV to effect
+- Propofol 4-6 mg/kg IV to effect（或 Alfaxalone 2-3 mg/kg IV to effect）
+- 劑量一律「to effect」滴定：充分前給藥可大幅降低需求；未前給藥、興奮或貓常需較高劑量
 - 氣管插管 → 連接麻醉迴路
 
 ### 4. 維持（Maintenance）
@@ -2189,7 +2302,16 @@ const contentAnesthesiaBasics: NodeContent = {
 |---------|------|---------------|
 | 犬貓術前禁食時間，傳統 8-12 小時 vs 縮短至 4-6 小時 | 人醫 ERAS 已縮短至 2 小時清流質，犬貓研究支持 4-6 小時安全，但全面採納仍有阻力 | Level II |
 | Alfaxalone vs Propofol 作為犬貓首選誘導劑 | Alfaxalone 心血管穩定性可能優於 Propofol（尤其貓與高風險犬），但直接比較的大型 RCT 不足 | Level II |
-| 犬術中最佳晶體液速率（傳統 10 mL/kg/hr vs restrictive 3-5 mL/kg/hr） | 人醫趨向限制性輸液策略以減少組織水腫，犬的前瞻性比較數據有限 | Level III |`,
+| 犬術中最佳晶體液速率（傳統 10 mL/kg/hr vs restrictive 3-5 mL/kg/hr） | 人醫趨向限制性輸液策略以減少組織水腫，犬的前瞻性比較數據有限 | Level III |
+
+## 五、近期實證更新 (Recent Evidence Updates)
+
+1. **多模式／opioid-sparing 鎮痛（AAHA 2020 麻醉 + 2022 疼痛指引）**：opioid + NSAID + 局部/區域麻醉（US 導引神經阻斷）降低吸入劑 MAC 30-50%、減少心血管抑制，為現行標準。
+2. **術中監測升級**：capnography（ETCO2）+ 血壓為必備；目標導向／適度限制性輸液取代固定高速率，降低組織水腫。
+3. **誘導劑趨勢**：alfaxalone 因心血管穩定性常用於高風險犬與貓（vs propofol），惟大型直接比較 RCT 仍不足。
+4. **ERAS 縮短禁食**：證據支持術前 4-6h（清流質更短）安全且減少逆流，正逐步取代傳統 8-12h。
+5. **風險基準（CEPSAF, Brodbelt 2008）**：健康犬麻醉相關死亡率約 0.17%、貓約 0.24%，ASA III-V 顯著升高——強調風險分層與客製方案。
+> 麻醉藥物選擇、劑量與監測須由獸醫依 ASA 分級、物種與個案、現行指引執行。`,
   clinical_pearl: 'ETCO2（呼氣末二氧化碳）是麻醉中最被低估的監測參數。它反映通氣狀態（高就是低通氣，低就是過度通氣），同時也是循環功能的間接指標：心輸出量驟降時 ETCO2 會急遽下降，有時候比血壓變化更早反映循環問題。ETCO2 突然歸零就要懷疑氣管內管脫出或呼吸停止。',
   common_mistakes: [
     '只盯 SpO2，把 ETCO2 跟血壓忽略掉',
@@ -2208,8 +2330,9 @@ const contentAnesthesiaBasics: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Grimm KA et al. Veterinary Anesthesia and Analgesia: The Fifth Edition of Lumb and Jones. Wiley-Blackwell, 2015.', relevance: '獸醫麻醉權威教材' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 12: Anesthetic Considerations.', relevance: '手術麻醉考量' },
-    { type: 'journal', citation: 'Brodbelt DC et al. The risk of death: the Confidential Enquiry into Perioperative Small Animal Fatalities. Vet Anaesth Analg. 2008;35(5):365-373.', relevance: '麻醉死亡率與風險因子研究' },
-    { type: 'guideline', citation: 'AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82.', relevance: 'AAHA 麻醉與監測指引' },
+    { type: 'journal', citation: 'Brodbelt DC, Blissitt KJ, Hammond RA, et al. The risk of death: the Confidential Enquiry into Perioperative Small Animal Fatalities. Vet Anaesth Analg. 2008;35(5):365-373. doi:10.1111/j.1467-2995.2008.00397.x.', relevance: '麻醉死亡率與風險因子研究（CEPSAF）' },
+    { type: 'guideline', citation: 'Grubb T, Sager J, Gaynor JS, et al. 2020 AAHA Anesthesia and Monitoring Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2020;56(2):59-82. doi:10.5326/JAAHA-MS-7055.', relevance: 'AAHA 麻醉與監測指引' },
+    { type: 'guideline', citation: 'Gruen ME, Lascelles BDX, Colleran E, et al. 2022 AAHA Pain Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2022;58(2):55-76. doi:10.5326/JAAHA-MS-7292.', relevance: 'AAHA 疼痛管理指引（多模式鎮痛）' },
   ],
   is_current: true,
   created_at: now,
@@ -2610,11 +2733,19 @@ const contentPreopImaging: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+術前影像的判讀重點是「為手術決策服務」，不是放射科式的全面描述：
+- **AFAST/TFAST 是動態、可重複的篩檢**：陽性（無回音游離液）要結合臨床——出血性休克＋AFAST 陽性＝考慮急診剖腹；但少量積液不一定要開刀，要看血流動力學與抽液性質（PCV/TP、肌酐、細胞學）。AFAST 陰性不排除腹膜後或局限性病灶。
+- **影像分期決定手術範圍**：脾臟腫塊術前一定要照胸腔（三視角）評估肺轉移、做 AFAST 看腹腔出血；轉移與否直接改變「要不要開、開多大、術前談什麼預後」。
+- **骨科：兩正交位＋含上下關節是底線**：只照一個方向會漏移位/旋轉；骨折一定要含上下各一關節，否則漏掉關節內延伸或第二處骨折。幼犬照對側比較生長板。
+- **CT 用在「X 光講不清楚」時**：複雜關節內骨折 3D 規劃、TPLO 的 TPA 測量、肘關節 MCD、脊椎骨折——這些 X 光容易低估，CT 才能精準術前規劃。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **把 AFAST 陰性當「沒事」**：超急性出血、腹膜後出血、局限性病灶可能 AFAST 陰性，臨床高度懷疑要重複掃或進階影像。
+- **GDV 拖去做超音波/CT**：GDV 是臨床＋一張右側臥腹部 X 光（compartmentalization / double bubble）就夠，先穩定減壓再手術，別為影像延誤。
+- **脾臟腫塊沒照胸腔就開刀**：漏掉肺轉移會誤判預後、影響飼主決策（HSA 轉移率高）。
+- **骨折只照單一方向或不含關節**：漏移位、漏關節內延伸、漏第二骨折——術中才發現就被動。
+- **過度依賴影像、忽略臨床/血流動力學**：影像是輔助，休克病人先穩定（ABC）再追影像，不是反過來。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2741,11 +2872,19 @@ const contentIntraopDecision: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+術中判讀的核心是「即時、用肉眼與觸感決定切多少」，影像幫不上忙：
+- **腸活性看四指標、可疑就偏向切除**：顏色（粉紅 vs 灰紫黑綠）、蠕動、漿膜動脈搏動、切緣出血——四項綜合判斷。borderline 時溫鹽水紗布敷 5-10 分鐘再評估，仍可疑寧可切（漏掉壞死腸段＝術後敗血/裂開致命）。
+- **GDV 胃壁活性決定要不要部分胃切除**：灰綠/黑色、薄紙狀、剝離感＝壞死；漿膜搏動消失、切開不出血＝不可逆。局灶壞死 <25% 可部分胃切除＋胃固定；廣泛壞死 >50% 預後極差要與飼主談。**胃固定（gastropexy）不論胃壁活性都要做，防復發。**
+- **腫瘤邊緣依組織型態預設、送病理確認**：軟組織肉瘤 3 cm 側緣＋一層筋膜；MCT 依 grade 2-3 cm；良性 0.5-1 cm。**術中肉眼邊緣 ≠ 組織學乾淨——切緣一定要送病理並標記方位。**
+- **意外發現：先完成原計畫、系統探查、可安全處理就處理**，需額外準備的安排二次手術，別臨時擴大成沒準備好的大手術。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **腸活性判斷過度樂觀**：borderline 腸段留下來，術後 2-4 天裂開/壞死＝高死亡率。不確定就切，或敷溫鹽水重新評估。
+- **GDV 只復位扭轉、不做胃固定**：不固定復發率極高（>50%），胃固定是 GDV 手術不可省的步驟。
+- **靠肉眼邊緣就宣稱「切乾淨」**：肉眼 ≠ 組織學邊緣，切緣未送病理或未標記方位 → 復發時無從判斷哪一緣不夠。
+- **為處理意外發現臨時擴大手術**：在沒準備（影像分期、配血、飼主同意、器械）下擴大，風險高；記錄、必要時二次手術更安全。
+- **忽略全身狀態只看局部**：GDV/腸壞死病人常合併休克、心律不整、再灌流損傷，術中術後要同步處理全身，不是只顧吻合口。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2875,7 +3014,11 @@ const contentOrthoImaging: NodeContent = {
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **只照單一方向**：骨折移位/旋轉與關節內延伸在單一視角會被低估，務必兩正交位。
+- **漏掉 Salter-Harris V 型**：生長板壓碎傷 X 光初期可能「看起來正常」，幼犬外傷後出現生長異常要回頭警覺，必要時對側比較或追蹤攝影。
+- **把骨肉瘤當骨髓炎（或反之）**：OSA 典型單灶、不越過關節面、有 sunburst＋Codman 三角；但「越不越過關節」並非絕對可靠的單一鑑別點，影像不典型或有全身感染徵象時，**切片＋培養**才是定論。誤判會走錯治療（截肢/化療 vs 抗生素）。
+- **TPA 測量姿勢不標準**：膝未屈到 90°、肢體旋轉不正會讓 TPA 失準，直接影響 TPLO 截骨角度——標準擺位是前提。
+- **忽略骨密度/品質**：年輕 vs 老年、代謝性骨病會影響植入物選擇與癒合預期，不能只看骨折線型態。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2941,7 +3084,7 @@ const contentOrthoImaging: NodeContent = {
 const contentSoftTissueSurgery: NodeContent = {
   id: 'CONTENT-SURG-L5-001',
   node_id: 'SURG-L5-001',
-  version: 1,
+  version: 2,
   summary: '小動物軟組織手術涵蓋腹腔、胸腔、頭頸部跟泌尿生殖道手術。這一節以最常見的探查性剖腹術（exploratory laparotomy）為核心，延伸到脾臟切除、腸切除吻合、膀胱切開取石、會陰疝氣修補這些高頻手術，重點放在手術入路選擇、組織處理原則、止血技術跟併發症預防。',
   learning_objectives: [
     '描述探查性剖腹術的適應症、入路與系統性探查流程',
@@ -2962,7 +3105,7 @@ const contentSoftTissueSurgery: NodeContent = {
 
 ## 一、治療原理 (Treatment Principles)
 
-
+軟組織手術以探查性剖腹術為核心技能，延伸到腸切除吻合、脾切除、膀胱切開等高頻手術；重點在入路選擇、組織處理、止血與併發症預防。
 
 ### 概述
 軟組織手術是小動物外科最廣泛的分支，涵蓋消化道、泌尿生殖道、呼吸道、肝膽胰脾及頭頸部手術。本節著重臨床最常執行的手術類型及其基本技巧。
@@ -3012,6 +3155,8 @@ const contentSoftTissueSurgery: NodeContent = {
 | 縫合結紮 | 大血管 > 5 mm | 最可靠，大型血管首選 |
 | 止血明膠/氧化纖維素 | 實質器官滲血 | 輔助局部止血 |
 
+[圖片:系統性腹腔探查順序 + 腸切除吻合（simple interrupted appositional）技巧示意]
+
 ## 二、藥物/方法比較 (Comparison)
 
 腹腔鏡 vs 開腹手術：腹腔鏡（OVE、預防性 gastropexy、隱睪摘除這些）的傷口小、術後疼痛低、恢復快，但要專用設備而且學習曲線陡。碰到複雜沾黏或大型腫瘤還是開腹優先。
@@ -3049,7 +3194,16 @@ const contentSoftTissueSurgery: NodeContent = {
 |---------|------|---------------|
 | 犬腸吻合技術：手縫 vs 吻合器（stapler）的結果比較 | 吻合器縮短手術時間但成本高且不適用小直徑腸管，手縫在獸醫仍為主流，直接結果比較研究不足 | Level III |
 | 犬脾臟腫瘤的部分脾臟切除 vs 全脾切除 | 良性病灶部分切除可保留免疫功能，但術前無法確定良惡性時全脾切除較安全，保脾策略缺乏長期追蹤 | Level III |
-| 犬膀胱結石微創取石（經皮膀胱鏡碎石）vs 傳統膀胱切開 | 微創恢復快但設備需求高且對大結石效率低，傳統手術可靠但為侵入性，缺乏隨機比較 | Level III |`,
+| 犬膀胱結石微創取石（經皮膀胱鏡碎石）vs 傳統膀胱切開 | 微創恢復快但設備需求高且對大結石效率低，傳統手術可靠但為侵入性，缺乏隨機比較 | Level III |
+
+## 七、近期實證更新 (Recent Evidence)
+
+- **吻合口洩漏的風險因子已被量化**：小腸吻合 dehiscence 約 6-16%；**術前敗血性腹膜炎、低血壓、手術原因（異物/腫瘤）** 與術前低白蛋白為已知風險因子（Grimes 2011；Donati 2025 以有向無環圖分析確認）。高風險個案應強化保護（大網膜包裹、漿膜貼補）並加強術後監測。
+- **早期偵測洩漏靠趨勢（以犬為主）**：術後腹水分析最有用——**腹水葡萄糖低於血糖 >20 mg/dL**、腹水乳酸高於血乳酸，支持敗血性腹膜炎（主要為犬的證據；貓的乳酸判準較不可靠）；CRP 為非特異趨勢工具（Day 3 不降需警惕），確診仍靠腹水細胞學/培養。及早再手術是存活關鍵。
+- **血管封合裝置成主流、但有口徑上限**：LigaSure（雙極，廠規 ≤7 mm）/Harmonic（超音波）縮短脾切除與血管處理時間、封合可靠，已取代許多傳統結紮；惟**超過廠規口徑或關鍵大血管仍應縫合結紮確認**，勿過度依賴。
+- **微創軟組織手術選擇性擴展**：腹腔鏡 gastropexy、卵巢切除等益處明確、日漸常規；腹腔鏡脾切除較**選擇性**（小/良性脾），大型脾腫塊與複雜病例仍以開腹為主。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '腸切除吻合後用大網膜包裹吻合處（omental wrap），不只增加血供，早期 dehiscence 時還能形成屏障，避免致命性腹膜炎。這個步驟很簡單，但風險降很多。',
   common_mistakes: [
     '腸切除時沒確認切除邊緣的腸管血供夠',
@@ -3099,8 +3253,9 @@ const contentSoftTissueSurgery: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '軟組織手術技巧核心教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '腸切除吻合與脾臟切除技術' },
-    { type: 'journal', citation: 'Grimes JA et al. Complications after intestinal surgery in dogs: a meta-analysis. Vet Surg 2019;48(8):1157-1167.', relevance: '腸吻合 dehiscence 發生率與風險因子統計' },
+    { type: 'journal', citation: 'Grimes JA, Schmiedt CW, Cornell KK, et al. "Identification of risk factors for septic peritonitis and failure to survive following gastrointestinal surgery in dogs." J Am Vet Med Assoc. 2011;238(4):486-494. doi:10.2460/javma.238.4.486', relevance: '腸胃道手術敗血性腹膜炎與存活的風險因子（修正 v1 查無的「2019 meta-analysis」誤標）' },
     { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021.', relevance: '軟組織手術技術最佳實務指引' },
+    { type: 'journal', citation: 'Donati PA, Tunesi M, Portela DA, et al. "Preoperative septic peritonitis, hypotension, and reason for surgery are risk factors for small intestine dehiscence in dogs: a directed acyclic graph approach." J Am Vet Med Assoc. 2025 (Epub ahead of print). doi:10.2460/javma.24.12.0791', relevance: '小腸吻合 dehiscence 風險因子近期研究（DAG 分析）' },
   ],
   is_current: true,
   created_at: now,
@@ -3110,7 +3265,7 @@ const contentSoftTissueSurgery: NodeContent = {
 const contentOrthoSurgeryBasics: NodeContent = {
   id: 'CONTENT-SURG-L5-002',
   node_id: 'SURG-L5-002',
-  version: 1,
+  version: 2,
   summary: '小動物骨科手術涵蓋骨折修復、關節手術跟矯正手術。這一節聚焦骨折內固定（bone plating、interlocking nail、external fixation）的基本原則、AO 四原則（解剖復位、穩定固定、保護血供、早期活動），還有常見關節手術（像 TPLO/TTA、FHO）的技術要點跟術後復健計畫。',
   learning_objectives: [
     '闡述 AO 骨折治療四大原則及其臨床應用',
@@ -3126,6 +3281,7 @@ const contentOrthoSurgeryBasics: NodeContent = {
     'TPLO 將脛骨平台角度減至約 5 度，消除前十字韌帶斷裂後的脛骨前位移（cranial tibial thrust）',
     'FHO 適用於體重 < 20 kg 的犬貓之股骨頭/頸骨折或嚴重退化性關節疾病',
     '術後 8 週限制活動（leash walk only），配合復健治療可改善功能恢復',
+    'CCL 術式無「最佳解」（Bergh 2014 系統回顧）：中大型犬截骨術（TPLO/TTA）優於外側線，TPLO≈TTA；3D 列印導板提升矯正截骨準確度',
   ],
   body: `# 骨科手術基礎
 
@@ -3211,7 +3367,22 @@ FHO 功能預後：體重 < 15 kg 的犬貓多半恢復得很好。體重大的�
 |---------|------|---------------|
 | 犬 TPLO vs TTA：長期功能結果有沒有差異 | 多數回顧性研究顯示兩者術後 6-12 個月功能結果相當，但 TPA > 30 度時 TPLO 可能較優，缺乏大型前瞻性 RCT | Level II |
 | 犬骨折固定中 MIPO（微創骨板接骨術）vs 傳統 open reduction | MIPO 保護血供促進間接癒合但對復位精確度有犧牲，關節內骨折仍需 open reduction，最佳適應症界定不清 | Level II |
-| 犬 FHO 術後是否需常規物理復健 | 經驗性認為復健改善預後，但缺乏 FHO 專屬的 RCT 證明復健 vs 不復健的功能差異 | Level III |`,
+| 犬 FHO 術後是否需常規物理復健 | 經驗性認為復健改善預後，但缺乏 FHO 專屬的 RCT 證明復健 vs 不復健的功能差異 | Level III |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**CCL 手術：截骨術（TPLO/TTA）對中大型犬功能恢復較佳，但「哪個最好」仍無高品質定論**
+- 對中大型犬，**截骨術（TPLO/TTA）整體功能恢復優於關節外側線穩定法（lateral suture）**；TPLO 與 TTA 的長期結果在多數研究相當（Moore et al 2020 延伸長期比較）。
+- **Bergh et al 2014 系統性回顧的誠實結論**：證據不足以證明哪一術式明確優於其他——選擇仍看外科習慣、犬體型/TPA、成本。臨床訊息：別執著「哪個術式最神」，把適應症選對、半月板看好、復健做足更重要。
+
+**精準骨科：3D 列印患者特異性導板（Hall et al 2019）**
+3D 列印的截骨/復位導板能提升矯正截骨（如 MPL 的遠端股骨矯正、複雜畸形）的**準確度**，減少人為測量誤差——是骨科精準化的代表，目前集中在轉介中心。
+
+**半月板的兩難（TPLO 術後 10-15% meniscal injury）**：術中務必檢查半月板、有損傷就部分切除；**預防性半月板釋放（meniscal release）仍有爭議**——可能降低後續半月板損傷但也犧牲正常半月板功能，未有定論。
+
+**生物性固定（MIPO）的定位**：粉碎性骨幹骨折強調**保血供、間接（骨痂）癒合**，不追求解剖復位；但關節內骨折仍需精確解剖復位。AO 四原則仍是根基。
+
+【台灣落地】台灣 CCL 病例量大，TPLO 在主要骨科轉介中心已成熟；玩具犬種橈尺骨遠端骨折不癒合率高（可達 18%），固定要更謹慎（骨板優於單純 pin）。3D 列印導板與全關節置換限少數中心，轉診時機要拿捏。`,
   clinical_pearl: 'TPLO 術後最常見的併發症是 meniscal injury（半月板損傷），發生率 10-15%。術中一定要做 meniscal inspection，看到損傷就做 partial meniscectomy。部分術者偏好預防性 meniscal release，但這個做法到現在還有爭議。',
   common_mistakes: [
     '骨板長度不夠，應該跨過骨折線上下各 3 個螺孔以上',
@@ -3260,10 +3431,11 @@ FHO 功能預後：體重 < 15 kg 的犬貓多半恢復得很好。體重大的�
   ],
   drug_api_links: ['cefazolin', 'meloxicam', 'tramadol'],
   references: [
+    { type: 'journal', citation: 'Moore EV, Weeren R, Paek M. "Extended long-term radiographic and functional comparison of tibial plateau leveling osteotomy vs tibial tuberosity advancement for cranial cruciate ligament rupture in the dog." Vet Surg. 2020;49(1):146-154. doi:10.1111/vsu.13277', relevance: '近期：TPLO vs TTA 延伸長期比較' },
+    { type: 'journal', citation: 'Hall EL, Baines S, Bilmont A, Oxley B. "Accuracy of patient-specific three-dimensional-printed osteotomy and reduction guides for distal femoral osteotomy in dogs with medial patella luxation." Vet Surg. 2019;48(4):584-591. doi:10.1111/vsu.13126', relevance: '近期：3D 列印患者特異性截骨導板準確度' },
+    { type: 'journal', citation: 'Bergh MS, Sullivan C, Ferrell CL, Troy J, Budsberg SC. "Systematic Review of Surgical Treatments for Cranial Cruciate Ligament Disease in Dogs." J Am Anim Hosp Assoc. 2014;50(5):315-321. doi:10.5326/jaaha-ms-6356', relevance: 'CCL 術式臨床結果系統性回顧（修正 v1 誤標 JAVMA）' },
     { type: 'textbook', citation: 'Johnson AL, Houlton JEF, Vannini R. AO Principles of Fracture Management in the Dog and Cat. AO Publishing, 2005.', relevance: 'AO 骨折治療四原則與骨板固定技術' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: 'TPLO/TTA/FHO 手術技術' },
-    { type: 'journal', citation: 'Bergh MS et al. Systematic review of surgical treatments for cranial cruciate ligament disease in dogs. JAVMA 2014;245(1):51-61.', relevance: 'TPLO vs TTA 臨床結果比較' },
-    { type: 'guideline', citation: 'AO Foundation Teaching Videos: Small Animal Fracture Fixation. AO Foundation, 2020.', relevance: '骨折固定影音教學資源' },
   ],
   is_current: true,
   created_at: now,
@@ -3273,7 +3445,7 @@ FHO 功能預後：體重 < 15 kg 的犬貓多半恢復得很好。體重大的�
 const contentPostopCare: NodeContent = {
   id: 'CONTENT-SURG-L5-003',
   node_id: 'SURG-L5-003',
-  version: 1,
+  version: 2,
   summary: '術後照護是手術會不會成功的關鍵環節，涵蓋疼痛管理、體液治療、營養支持、傷口管理跟併發症監測。多模式鎮痛（multimodal analgesia）是當代術後疼痛管理的標準，把 NSAIDs、opioids 跟局部麻醉組合起來。早期腸內營養（early enteral nutrition）有助於維持腸黏膜完整性跟整體恢復。系統性的術後監測流程可以早期抓出手術部位感染、dehiscence、血栓栓塞這些嚴重併發症。',
   learning_objectives: [
     '建立系統性術後監測計畫，包含生命徵象、疼痛評估與傷口檢查',
@@ -3319,7 +3491,7 @@ const contentPostopCare: NodeContent = {
 | Methadone | 0.2-0.5 mg/kg IV/IM q4-6h | 0.1-0.3 mg/kg IV/IM q4-6h | 純 mu-agonist |
 | Buprenorphine | 0.01-0.02 mg/kg IV q6-8h | 0.02-0.03 mg/kg OTM q6-8h | 貓首選 opioid |
 | Meloxicam | 0.2 mg/kg SC 首劑 → 0.1 mg/kg PO SID | 0.1 mg/kg SC 單次 → 0.05 mg/kg PO SID (限短期) | 避免腎功能不全使用 |
-| Carprofen | 4.4 mg/kg SC/PO → 2.2 mg/kg PO BID |，| 犬專用 |
+| Carprofen | 4.4 mg/kg SC/PO → 2.2 mg/kg PO BID |—| 犬專用 |
 | Bupivacaine | 1-2 mg/kg 局部浸潤 | 1 mg/kg 局部浸潤 | incisional line block |
 | Ketamine CRI | 2-10 μg/kg/min | 2-5 μg/kg/min | 用於嚴重疼痛 |
 | Lidocaine CRI | 25-50 μg/kg/min | 不建議 | 犬 systemic CRI |
@@ -3392,7 +3564,21 @@ ERAS（加速康復外科）vs 傳統術後照護：ERAS protocol 把術前禁�
 |---------|------|---------------|
 | 犬貓術後 NSAIDs 最佳啟動時機：術中 vs 術後甦醒期 vs 術後 24 小時 | 術中給予可提早鎮痛但低血壓期間腎毒性風險增加，多數專家建議血壓穩定後即可給予，缺乏時機比較 RCT | Level III |
 | 犬術後 E-collar 佩戴的必要性與替代方案 | E-collar 有效防止切口自傷但增加動物壓力與飼主負擔，替代品（surgical suit, inflatable collar）防護效果可能不足，缺乏併發症率比較 | Level III |
-| 犬術後體液治療：限制性 vs 自由性輸液策略 | 人醫 ERAS 明確支持限制性策略減少組織水腫，犬的前瞻性數據顯示限制性策略安全但樣本量小 | Level II |`,
+| 犬術後體液治療：限制性 vs 自由性輸液策略 | 人醫 ERAS 明確支持限制性策略減少組織水腫，犬的前瞻性數據顯示限制性策略安全但樣本量小 | Level II |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+### ERAS 在獸醫外科的成形
+加速康復外科（ERAS）各要素（縮短禁食、預防性止吐、限制性／目標導向輸液、早期腸內餵食、早期活動、多模式鎮痛）正由零散採用走向整合性 protocol，目標縮短住院、降低併發症；犬貓 ERAS 框架仍在標準化中，但「早餵食、少禁食、節制輸液」的方向已獲共識。
+
+### 長效局部麻醉降低鴉片依賴
+脂質體 bupivacaine（Nocita，FDA 核准犬，並有貓適應症）單次切口浸潤可提供約 72 小時局部鎮痛，契合 opioid-sparing 與鴉片短缺時代的多模式策略；與 NSAID＋局部阻斷組合可顯著減少全身鴉片用量。
+
+### 貓疼痛客觀化：Feline Grimace Scale
+FGS（Evangelista 2019）經驗證並發展出 app 版，將貓的隱性疼痛轉為可重複量化的臉部指標（耳、眼眶、口鼻、鬍鬚、頭位），是術後貓鎮痛決策的實用工具；犬則以 Glasgow CMPS-SF 為標準。
+
+### 早期腸內營養的實證
+早期營養支持與較短住院相關（Liu 2012，犬敗血性腹膜炎）；現行趨勢是術後 12-24 小時即啟動少量腸內餵食、避免長時間禁食，以維持腸黏膜完整、降低細菌轉位。客觀恢復評估（穿戴式活動量計）亦逐步輔助主觀量表。`,
   clinical_pearl: '貓的疼痛評估特別難，因為貓會把疼痛藏起來。Feline Grimace Scale（FGS）是目前最實用的工具，重點看耳朵位置（向外展開就是疼痛）、眼眶緊縮、鬍鬚位置（向前集中就是疼痛）、頭部位置（低於肩膀就是疼痛）。不確定的話，寧可給鎮痛，看看反應。',
   common_mistakes: [
     '術後疼痛評估不夠，太依賴「看起來還好」這種主觀判斷',
@@ -3416,9 +3602,10 @@ ERAS（加速康復外科）vs 傳統術後照護：ERAS protocol 把術前禁�
   drug_api_links: ['methadone', 'buprenorphine', 'meloxicam', 'carprofen', 'bupivacaine', 'ketamine', 'lidocaine'],
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 12: Postoperative Care.', relevance: '術後照護整體框架' },
-    { type: 'guideline', citation: 'Epstein ME et al. AAHA/AAFP Pain Management Guidelines for Dogs and Cats. JAAHA 2015;51(2):67-84.', relevance: '多模式鎮痛標準指引' },
-    { type: 'journal', citation: 'Evangelista MC et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. Sci Rep 2019;9:19128.', relevance: 'Feline Grimace Scale 開發與驗證' },
-    { type: 'journal', citation: 'Liu DT et al. Retrospective study of early enteral nutrition after gastrointestinal surgery in dogs. Vet Surg 2018;47(6):840-849.', relevance: '早期腸內營養臨床證據' },
+    { type: 'guideline', citation: 'Epstein ME, Rodan I, Griffenhagen G, et al. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. J Feline Med Surg. 2015;17(3):251-272. doi:10.1177/1098612x15572062.', relevance: '多模式鎮痛標準指引（2015 AAHA/AAFP）' },
+    { type: 'guideline', citation: 'Monteiro BP, Lascelles BDX, Murrell J, et al. 2022 WSAVA guidelines for the recognition, assessment and treatment of pain. J Small Anim Pract. 2023;64(4):177-254. doi:10.1111/jsap.13566.', relevance: 'WSAVA 全球疼痛指引（多模式鎮痛與量表）' },
+    { type: 'journal', citation: 'Evangelista MC, Watanabe R, Leung VSY, et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. Sci Rep. 2019;9(1):19128. doi:10.1038/s41598-019-55693-8.', relevance: 'Feline Grimace Scale 開發與驗證（貓術後疼痛客觀評估）' },
+    { type: 'journal', citation: 'Liu DT, Brown DC, Silverstein DC. Early nutritional support is associated with decreased length of hospitalization in dogs with septic peritonitis: a retrospective study of 45 cases (2000-2009). J Vet Emerg Crit Care. 2012;22(4):453-459. doi:10.1111/j.1476-4431.2012.00771.x.', relevance: '早期腸內營養與較短住院相關的臨床證據' },
   ],
   is_current: true,
   created_at: now,
@@ -3914,7 +4101,7 @@ BOAS 是短頭犬種因人為選育導致顱骨軸向縮短，但軟組織未等
 const contentPSS: NodeContent = {
   id: 'CONTENT-SURG-L3-011',
   node_id: 'SURG-L3-011',
-  version: 1,
+  version: 2,
   summary: '門體分流（Portosystemic Shunt, PSS）是門脈血液繞過肝臟、直接匯入全身循環的血管異常。先天性 PSS 分肝外型（好發小型犬跟貓，通常單一血管）跟肝內型（好發大型犬，胚胎靜脈導管沒閉合）。門脈血裡的氨、內毒素這些物質沒經過肝臟代謝就跑進全身循環，跑出肝性腦病（HE）、尿酸銨結石、發育遲緩。診斷靠餐前/餐後膽汁酸跟 CT 血管造影。手術治療主要用 ameroid constrictor 或 cellophane banding 把分流血管慢慢閉合。',
   learning_objectives: [
     '區分先天性（單一肝外/肝內）與後天性（多發性）門體分流的病理機轉',
@@ -3933,6 +4120,7 @@ const contentPSS: NodeContent = {
     'Ameroid constrictor：內層 casein 吸水膨脹，2-5 週把分流血管慢慢閉合',
     'Cellophane banding：引發血管外纖維化反應，4-8 週把血管慢慢收緊',
     '急性完全結紮的風險：門脈高壓（portal hypertension）、腸道充血、致命性低血壓',
+    '近期實證：ameroid 與 cellophane banding 長期結果相當（Traverson 2018）；肝內型 PSS 微創選項＝經皮經靜脈線圈栓塞（PTCE）；術前預防性 levetiracetam 仍有爭議（Fryer 2011）',
   ],
   body: `# 門體分流 (Portosystemic Shunt, PSS)
 
@@ -4049,7 +4237,20 @@ const contentPSS: NodeContent = {
 |---------|------|---------------|
 | Ameroid vs Cellophane banding 的長期療效比較 | 多數回顧性研究顯示臨床結果相當，缺乏前瞻性 RCT | Level III |
 | 術後癲癇的預防：術前 levetiracetam 是否有效 | 部分研究建議術前預防性給予 levetiracetam，但證據不一致 | Level III |
-| 貓 PSS 的最佳手術方式 | 貓肝外 PSS ameroid 放置風險較高（血管較細），cellophane banding 可能更安全 | Level IV |`,
+| 貓 PSS 的最佳手術方式 | 貓肝外 PSS ameroid 放置風險較高（血管較細），cellophane banding 可能更安全 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**Ameroid 與 Cellophane banding 長期結果相當（Traverson et al 2018, Vet Surg）**
+單一先天性肝外 PSS 的兩大漸進閉合法——ameroid ring constrictor 與 cellophane banding——回顧性比較顯示**臨床結果大致相當**，選哪個多半看外科醫師習慣與器材可近性。共識是：**漸進閉合（兩者皆是）優於急性完全結紮**，後者門脈高壓與致命休克風險最高。
+
+**術後癲癇與預防性 levetiracetam——仍未定論（Fryer et al 2011, JVIM）**
+Fryer 2011 報告**術前給 levetiracetam 的犬術後癲癇發生率較低**，因此預防性 levetiracetam 被廣泛採用；但後續證據不一致、效益仍有爭議（尚無高品質 RCT 定論）。實務上多數外科仍會術前預防性給藥，因為**post-attenuation 癲癇是 PSS 手術最可怕的併發症、死亡率高（20-50%）**——「寧可給」的風險效益考量。
+
+**微創介入：肝內型 PSS 的 PTCE**
+肝內型 PSS 手術路徑困難、風險高；**經皮經靜脈線圈栓塞（percutaneous transvenous coil embolization, PTCE）**已是介入放射學對肝內型 PSS 的成熟微創選項，可避開開腹接近深部血管，是肝內型的重要替代路徑。
+
+【台灣落地】台灣小型犬多、肝外型 PSS 病例不少，CTA＋ameroid/cellophane 在主要教學醫院可行；肝內型（大型犬）較少但技術門檻高，PTCE 需具介入放射設備的中心。疑似病例（發育遲緩、麻醉後恢復延遲、餐後膽汁酸高）早轉診，術前 2-4 週內科穩定（lactulose＋低蛋白飲食±抗生素）再手術。`,
   clinical_pearl: 'PSS 術後最危險的併發症是癲癇，通常發生在術後 24-72 小時，一旦發生死亡率可以到 20-50%。目前機轉還沒搞清楚，但可能跟神經元長期暴露在 benzodiazepine-like substances，然後突然失去這些物質有關。術後 72 小時內要密切監測神經狀態，部分外科醫師會預防性給 [藥物:Levetiracetam]。\n\n【台灣流行病學】台灣小型犬飼養比例非常高，約克夏、馬爾濟斯、迷你雪納瑞都是常見品種，PSS 臨床病例不少見。常常是因為「幼犬發育遲緩」或「麻醉後恢復延遲」才被發現。台灣各大教學醫院已經有能力做 CT 血管造影跟 ameroid/cellophane 手術，疑似病例建議早點轉診。',
   common_mistakes: [
     '把 HE 症狀（呆滯、漫無目的走動）誤診成行為問題或原發性癲癇',
@@ -4095,11 +4296,13 @@ const contentPSS: NodeContent = {
   ],
   drug_api_links: ['Lactulose', 'Metronidazole', 'Amoxicillin', 'Levetiracetam'],
   references: [
+    { type: 'journal', citation: 'Traverson M, Lussier B, Huneault L, Gatineau M. "Comparative outcomes between ameroid ring constrictor and cellophane banding for treatment of single congenital extrahepatic portosystemic shunts in dogs." Vet Surg. 2018;47(2):179-187. doi:10.1111/vsu.12747', relevance: '近期：ameroid vs cellophane 長期結果相當' },
+    { type: 'journal', citation: 'Fryer KJ, Levine JM, Peycke LE, Thompson JA. "Incidence of Postoperative Seizures with and without Levetiracetam Pretreatment in Dogs Undergoing Portosystemic Shunt Attenuation." J Vet Intern Med. 2011;25(6):1379-1384. doi:10.1111/j.1939-1676.2011.00819.x', relevance: '術後癲癇與預防性 levetiracetam 證據（仍有爭議）' },
+    { type: 'journal', citation: 'Falls EL, Milovancev M, Hunt GB, Daniel L. "Long-term outcome after surgical ameroid ring constrictor placement for treatment of single extrahepatic portosystemic shunts in dogs." Vet Surg. 2013;42(8):951-957. doi:10.1111/j.1532-950x.2013.12072.x', relevance: 'Ameroid 長期手術預後（修正 v1 garbled 標題/頁碼）' },
+    { type: 'journal', citation: 'Berent AC, Tobias KM. "Portosystemic Vascular Anomalies." Vet Clin North Am Small Anim Pract. 2009;39(3):513-541. doi:10.1016/j.cvsm.2009.02.004', relevance: 'PSS 綜合回顧' },
+    { type: 'textbook', citation: 'Berent AC, Weisse C. "Hepatic Vascular Anomalies." In: Ettinger SJ, Feldman EC, Côté E, eds. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: 'PSS 內科診斷與血管解剖（教科書章節；修正 v1 誤標為 ACVS 共識）' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 23: Portosystemic Shunts.', relevance: 'PSS 手術標準教材' },
-    { type: 'journal', citation: 'Berent AC, Tobias KM. Portosystemic vascular anomalies. Vet Clin North Am Small Anim Pract 2009;39(3):513-541.', relevance: 'PSS 綜合回顧' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 21: Surgery of the Liver.', relevance: 'PSS 診斷與手術概述' },
-    { type: 'journal', citation: 'Falls EL et al. Outcome after surgical ameroid ring constrictor placement for single congenital extrahepatic portosystemic shunts in dogs: Portal pressure, portal scintigraphy, and bile acids. Vet Surg 2013;42(8):911-919.', relevance: 'Ameroid 手術預後研究' },
-    { type: 'guideline', citation: 'Berent AC, Weisse C. Hepatic vascular anomalies. In: Ettinger SJ, Feldman EC, Côté E, eds. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. (ACVS consensus on PSS surgical management)', relevance: 'ACVS 門體分流手術管理共識' },
   ],
   is_current: true,
   created_at: now,
@@ -4301,7 +4504,7 @@ const contentLarPar: NodeContent = {
 const contentDiaphragmaticHernia: NodeContent = {
   id: 'CONTENT-SURG-L3-013',
   node_id: 'SURG-L3-013',
-  version: 1,
+  version: 2,
   summary: '膈疝（Diaphragmatic Hernia）是橫膈膜破裂或先天性缺損，腹腔臟器跑進胸腔的疾病。外傷性膈疝最常見（多半是車禍），橫膈急性破裂之後，肝臟、胃、腸道這些臟器疝到胸腔壓迫肺臟，呼吸就跟著窘迫。先天性膈疝以腹膜心包膈疝（PPDH, Peritoneopericardial Diaphragmatic Hernia）最常見，腹腔臟器經先天性缺損跑進心包腔。診斷靠胸部 X 光（橫膈輪廓消失）。治療以手術修補橫膈為主，術前穩定化跟術中正壓通氣是成功關鍵。慢性病例可能有組織沾黏，會把手術難度拉高。',
   learning_objectives: [
     '區分外傷性膈疝與先天性膈疝（PPDH）的病因與病理',
@@ -4433,7 +4636,15 @@ const contentDiaphragmaticHernia: NodeContent = {
 |---------|------|---------------|
 | 外傷性膈疝的最佳手術時機：即刻 vs 穩定後 24-48 小時 | 目前共識是先穩定再手術，但重度呼吸窘迫而且穩定化無效時要緊急手術 | Level III |
 | 慢性膈疝（> 1 年）是否值得手術 | 長期無症狀 PPDH 是否必須手術仍有爭議，部分學者認為手術風險可能大於益處 | Level IV |
-| 再擴張性肺水腫的預防策略 | 緩慢再擴張（不完全排氣讓肺逐步膨脹）理論上有益但缺乏獸醫 RCT | Level IV |`,
+| 再擴張性肺水腫的預防策略 | 緩慢再擴張（不完全排氣讓肺逐步膨脹）理論上有益但缺乏獸醫 RCT | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+1. **手術預後因子（Legallet 2017，96 例）**：圍術期存活與合併傷、麻醉/手術時間等相關；及時穩定後手術預後佳，常規膈疝修補存活率高。
+2. **手術時機**：以「先穩定再手術」為原則（非盲目等固定 24h）；重度呼吸窘迫且穩定化無效者則需緊急手術。
+3. **再擴張性肺水腫**：慢性塌陷肺勿過快復張，採逐步再擴張＋支持治療，術後 24-48h 密切監測。
+4. **微創修補**：腹腔鏡／胸腔鏡膈疝修補於慢性個案應用漸增（人醫已常規），須慎選病例。
+> 膈疝為外科急症之一；穩定化、手術時機與術式選擇由獸醫外科依個案與合併傷評估。`,
   clinical_pearl: '外傷性膈疝最容易被忽略的情況就是「延遲就診」。車禍後飼主可能只注意外傷，膈疝拖到幾天甚至幾週後才因為呼吸困難被發現。關鍵線索：任何有外傷病史的犬貓出現呼吸困難，胸部 X 光一定要拍。另外，修復慢性膈疝時別追求「一次完美復位」，嚴重沾黏的臟器硬分離可能造成不可控的出血，有時候部分網膜留在胸腔比硬剝離更安全。\n\n【台灣流行病學】台灣流浪動物車禍外傷比例還是高，外傷性膈疝是急診常見的手術。家犬家貓因為車禍或高樓墜落（貓）也是常見病因。PPDH 在台灣以混種犬貓診斷比較多，可能跟純種犬飼養比例不同有關。台灣各獸醫教學醫院跟急診醫院都有能力做膈疝修復。',
   common_mistakes: [
     '外傷犬貓沒拍胸部 X 光，膈疝可能被其他明顯外傷蓋掉',
@@ -4481,9 +4692,9 @@ const contentDiaphragmaticHernia: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 30: Surgery of the Lower Respiratory System: Pleural Cavity and Diaphragm.', relevance: '膈疝手術標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 34: Diaphragm.', relevance: '膈疝分類與手術技術' },
-    { type: 'journal', citation: 'Gibson TWG et al. Peritoneopericardial diaphragmatic hernia in dogs and cats: 33 cases (1988-2005). J Am Vet Med Assoc 2005;226(7):1137-1142.', relevance: 'PPDH 大樣本回顧研究' },
-    { type: 'journal', citation: 'Schmiedt CW et al. Traumatic diaphragmatic hernia in cats: 34 cases (1991-2001). J Am Vet Med Assoc 2003;222(9):1237-1240.', relevance: '貓外傷性膈疝預後研究' },
-    { type: 'guideline', citation: 'ACVS Veterinary Surgery Consensus: Surgical Management of Traumatic Diaphragmatic Hernias in Small Animals. In: Tobias KM, Johnston SA, eds. Veterinary Surgery: Small Animal. 2nd ed. Elsevier, 2018.', relevance: 'ACVS 創傷性膈疝手術管理共識' },
+    { type: 'journal', citation: 'Gibson TWG, Brisson BA, Sears W. Perioperative survival rates after surgery for diaphragmatic hernia in dogs and cats: 92 cases (1990-2002). J Am Vet Med Assoc. 2005;227(1):105-109. doi:10.2460/javma.2005.227.105.', relevance: '犬貓膈疝術後圍術期存活率回顧' },
+    { type: 'journal', citation: 'Schmiedt CW, Tobias KM, Stevenson MAM. Traumatic diaphragmatic hernia in cats: 34 cases (1991-2001). J Am Vet Med Assoc. 2003;222(9):1237-1240. doi:10.2460/javma.2003.222.1237.', relevance: '貓外傷性膈疝預後研究' },
+    { type: 'journal', citation: 'Legallet C, Thieman Mankin K, Selmic LE. Prognostic indicators for perioperative survival after diaphragmatic herniorrhaphy in cats and dogs: 96 cases (2001-2012). BMC Vet Res. 2017;13(1):16. doi:10.1186/s12917-016-0926-y.', relevance: '膈疝修補圍術期存活預後因子（近期實證）' },
   ],
   is_current: true,
   created_at: now,
@@ -4493,7 +4704,7 @@ const contentDiaphragmaticHernia: NodeContent = {
 const contentTECA: NodeContent = {
   id: 'CONTENT-SURG-L3-014',
   node_id: 'SURG-L3-014',
-  version: 1,
+  version: 2,
   summary: '全耳道切除暨側面鼓室泡骨切開術（Total Ear Canal Ablation with Lateral Bulla Osteotomy, TECA-LBO）是末期慢性外耳炎或中耳炎的根治性手術。耳道因為反覆感染、增生、纖維化變到回不來，藥物已經壓不住感染跟疼痛時，TECA-LBO 就是最後的手術選項。手術會把整個外耳道上皮完整切除，順便把鼓室泡內感染物質清乾淨。術前 CT 評估鼓室泡狀態少不了。主要併發症是顏面神經麻痺跟 Horner 氏症候群。好發品種有可卡犬（Cocker Spaniel）、沙皮犬（Shar-Pei）。',
   learning_objectives: [
     '描述末期耳道疾病的病理特徵與 TECA-LBO 的手術適應症',
@@ -4511,6 +4722,7 @@ const contentTECA: NodeContent = {
     '顏面神經麻痺發生率 30-50%（多半暫時性，6-8 週內恢復），永久性 5-10%',
     'Horner 氏症候群發生率 50-80%（鼓室泡刮除時傷到交感神經節後纖維），多數 4-6 週恢復',
     '術後感染率 5-10%，要長期追蹤。殘留的上皮組織會形成膿瘻管',
+    '最好的 TECA 是「不用做」——及早管理外耳炎原發過敏可避免進展至末期耳道（Nuttall 2023）；需手術時術前影像＋中耳培養＋顏面神經保護為三大要點',
   ],
   body: `# 全耳道切除暨側面鼓室泡骨切開術 (TECA-LBO)
 
@@ -4621,7 +4833,21 @@ const contentTECA: NodeContent = {
 |---------|------|---------------|
 | VBO (Ventral Bulla Osteotomy) vs LBO 清理效果比較 | VBO 可能對鼓室泡腹側隔室清理更徹底，但需額外腹側切口，TECA 同時做 LBO 較方便 | Level III |
 | TECA 後殘留上皮導致膿瘻管的預防 | 術中徹底刮除所有上皮殘留是關鍵，但 100% 清除困難，CO2 雷射燒灼殘留上皮可能有助益 | Level IV |
-| 單側 vs 分期雙側 TECA-LBO | 同時雙側手術可行但術後恢復較辛苦且雙側顏面神經風險，多數建議分期（間隔 4-6 週） | Level IV |`,
+| 單側 vs 分期雙側 TECA-LBO | 同時雙側手術可行但術後恢復較辛苦且雙側顏面神經風險，多數建議分期（間隔 4-6 週） | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**最好的 TECA 是「不用做 TECA」——把耳病擋在末期之前（Nuttall 2023, JAVMA）**
+末期耳道（TECA 的適應症）本質是**慢性復發外耳炎沒控制好的終點**，而復發幾乎都指向沒處理的**原發過敏**＋持續因素（增生、中耳炎、生物膜）。近年復發外耳炎管理的核心訊息：**及早積極處理原發過敏＋細胞學/培養導向治療＋足量清耳**，目標是讓耳道不要走到鈣化閉鎖、不要走到非開刀不可。對轉介前的第一線醫師，這是最有價值的一句話（呼應 DERM 外耳炎/耳科治療節點）。
+
+**影像規劃：CT 強烈建議（尤其鼓室泡病變）**
+CT 對評估鼓室泡受累、cholesteatoma vs 積液、骨溶解、對側耳極有價值，多數末期耳病例都該做；要不要 100% 強制、或可用 MRI/耳鏡輔助，視個案與設備而定——重點是**開刀前要把中耳狀態搞清楚**，只做 TECA 漏掉中耳就會復發。
+
+**抗藥菌與抗生素**：末期耳道常見多重抗藥 *Pseudomonas*、MRSP——**術中培養＋藥敏導向**抗生素；療程**個別化**（視殘留感染/骨髓炎/培養），而非一律固定週數。
+
+**神經保護仍是術中關鍵**：顏面神經麻痺（多暫時）與 Horner 氏症是最常見神經併發症；水平耳道腹側**鈍性分離、避免電燒靠近神經**可降風險。疼痛根除是 TECA 最大效益（飼主滿意度 >90%）。
+
+【台灣落地】台灣濕熱、垂耳/油耳品種（可卡、沙皮、拉布拉多）多，末期耳病不少；但更重要的是**上游**——把外耳炎的原發過敏與細胞學/培養導向治療做好，能減少走到 TECA 的比例。需要 TECA 時，術前影像＋中耳培養＋顏面神經保護是三大要點。`,
   clinical_pearl: 'TECA-LBO 術前 CT 不是「可選」而是「必要」。CT 可以揭示 X 光看不到的重要資訊：鼓室泡內 cholesteatoma（要更徹底刮除）、骨溶解範圍（影響手術入路）、泡壁骨質增生程度（影響 rongeur 使用難度）。另外，術中最重要的步驟就是保護顏面神經，水平耳道腹側剝離時用鈍性分離別用電燒，辨識到神經之後用彈性血管帶輕柔牽引保護。\n\n【台灣流行病學】台灣可卡犬、沙皮犬、拉布拉多是慢性耳炎常見品種。台灣高溫高濕環境讓耳道微環境更糟，慢性外耳炎走到末期耳道的比例可能比溫帶國家高。有些飼主因為經濟考量或怕手術而拖延治療，就診時常常已經是嚴重的末期耳道疾病。',
   common_mistakes: [
     '沒做術前 CT，低估鼓室泡感染範圍或錯過 cholesteatoma',
@@ -4669,9 +4895,9 @@ const contentTECA: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 19: Surgery of the Ear.', relevance: 'TECA-LBO 手術標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 30: Surgery of the Ear.', relevance: 'TECA-LBO 技術與併發症' },
-    { type: 'journal', citation: 'Smeak DD, DeHoff WD. Total ear canal ablation: clinical results in the dog and cat. Vet Surg 1986;15(2):161-170.', relevance: 'TECA 臨床結果經典研究' },
-    { type: 'journal', citation: 'Devitt CM et al. Passive drainage versus active suction drainage after total ear canal ablation–lateral bulla osteotomy in dogs: 27 cases (2002–2008). Vet Surg 2013;42(5):530-535.', relevance: 'TECA-LBO 術後引流方式比較' },
-    { type: 'guideline', citation: 'Bajwa J, Boord M, Goth G, et al. ACVD Clinical Practice Guideline: Canine Otitis Externa. Vet Dermatol. 2019;30(4):264-e77.', relevance: 'ACVD 犬外耳炎臨床實務指引（含末期耳道手術適應症）' },
+    { type: 'journal', citation: 'Smeak DD, DeHoff WD. "Total Ear Canal Ablation: Clinical Results in the Dog and Cat." Vet Surg. 1986;15(2):161-170. doi:10.1111/j.1532-950x.1986.tb00197.x', relevance: 'TECA 臨床結果經典研究' },
+    { type: 'journal', citation: 'Devitt CM, Seim HB, Willer R, McPherron M, Neely M. "Passive drainage versus active suction drainage after total ear canal ablation-lateral bulla osteotomy in dogs." Vet Surg. 2013;42(5):530-535.', relevance: 'TECA-LBO 術後引流方式比較' },
+    { type: 'guideline', citation: 'Nuttall T. "Managing recurrent otitis externa in dogs: what have we learned and what can we do better?" J Am Vet Med Assoc. 2023;261(S1):S10-S22. doi:10.2460/javma.23.01.0002', relevance: '近期：及早管理復發外耳炎以避免進展至末期耳道（修正 v1 誤標的 ACVD 指引）' },
   ],
   is_current: true,
   created_at: now,
@@ -4681,7 +4907,7 @@ const contentTECA: NodeContent = {
 const contentIntestinalRA: NodeContent = {
   id: 'CONTENT-SURG-L3-015',
   node_id: 'SURG-L3-015',
-  version: 1,
+  version: 2,
   summary: '腸切除吻合術（Intestinal Resection and Anastomosis, R&A）是把不可逆損傷或病變的腸段切掉、再把腸道接起來的核心外科手術。適應症包括線性異物造成的腸穿孔、腸壁壞死（腸套疊、腸繫膜扭轉）、腸道腫瘤跟嚴重外傷。手術成功的關鍵是術中腸管活性評估（顏色、蠕動、動脈出血）、正確的吻合技術（appositional simple interrupted sutures）跟無張力吻合原則。吻合口口徑不匹配（> 3:1）的時候要用 tapering 或 spatulation 技術。術後最嚴重的併發症是吻合口裂開（dehiscence），發生率 5-15%，會跑出腹膜炎，死亡率極高。',
   learning_objectives: [
     '列舉腸切除吻合術的常見適應症',
@@ -4811,7 +5037,16 @@ const contentIntestinalRA: NodeContent = {
 |---------|------|---------------|
 | Simple interrupted vs simple continuous 吻合：強度跟裂開率比較 | 理論上 interrupted 裂開僅限局部、continuous 一處鬆脫全段裂開，但部分研究顯示 continuous 同樣安全且速度更快 | Level III |
 | 術後何時開始進食：NPO 12-24 hr vs 早期進食（6 小時） | 人醫 ERAS 證據支持早期進食可促進癒合，獸醫前瞻性研究有限 | Level III |
-| Serosal patching 是否能有效預防裂開 | 大網膜覆蓋（omental wrapping）廣泛使用，但 serosal patch 的額外效益不確定 | Level IV |`,
+| Serosal patching 是否能有效預防裂開 | 大網膜覆蓋（omental wrapping）廣泛使用，但 serosal patch 的額外效益不確定 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+- **手縫 vs 吻合器（stapled）裂開率比較**：Duell 等人（2016）回顧犬手縫與吻合器功能性端對端吻合，兩者裂開率無顯著差異；Snowdon 等人（2016）則分析吻合器吻合的裂開風險因子。現有實證**未確立任一技術在預防裂開上的絕對優勢**，技術選擇應依術者熟練度、腸壁狀況與口徑而定。〔Evidence Level III〕
+- **裂開風險因子的疊加效應**：Ralphs（2003）、Grimes（2011）與 Mouat（2014）系列回顧一致指出術前敗血性腹膜炎、低白蛋白血症、腸道（尤其線性）異物為裂開關鍵風險；多項並存時風險顯著疊加，應提高術後監測強度並考慮預先營養/膠體支持。〔Evidence Level III〕
+- **腸管活性評估的客觀化**：肉眼判斷（顏色、蠕動、切緣出血）具主觀性、單看顏色尤其不可靠；螢光素/Wood lamp 與 ICG 近紅外線血管攝影正被研究用於更客觀界定灌流不足腸段、修正切除範圍。〔Evidence Level IV〕
+- **ERAS 早期腸道營養**：人醫 ERAS 證據支持術後早期（< 24 小時）恢復腸道營養可促進黏膜癒合、縮短住院；獸醫前瞻研究仍有限，但趨勢由傳統長時 NPO 轉向早期餵食。〔Evidence Level III〕
+
+> ⚠️ 上述更新（特別是吻合器選擇、ICG 灌流評估與早期餵食時機）仍待 DVM 依個案條件與最新獸醫實證覆核後採用。`,
   clinical_pearl: '腸切除吻合術成功最大的關鍵不在吻合技術（技術正確的前提下），而在「切到對的位置」。切除範圍必須到達血供良好的健康組織。最常見的失誤就是「捨不得切」，為了保留腸道長度就在血供不確定的區域做吻合，結果裂開。寧可多切 1 cm 到明確會噴動脈血的健康腸壁，也不要在灰色邊緣區域冒險吻合。\n\n另一個重要提醒：術前白蛋白 < 2.0 g/dL 的病例裂開風險明顯升高，要考慮術前輸漿或膠體液支持，術後也要更密切監測。\n\n【台灣流行病學】台灣貓飼養數量快速增加，線性異物（縫線、橡皮筋、緞帶）是貓最常見的腸道異物原因。節慶期間（尤其農曆新年）包裝緞帶造成的線性異物就診量會明顯增加。犬則以骨頭碎片、果核、玩具碎片比較常見。台灣各動物醫院普遍都有腸切除吻合的能力，這是基本外科技能。',
   common_mistakes: [
     '切除範圍不夠，「捨不得切」就在血供不佳的區域吻合，裂開風險就升高',
@@ -4859,9 +5094,10 @@ const contentIntestinalRA: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 20: Surgery of the Digestive System，Small Intestine.', relevance: '腸切除吻合標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 22: Intestinal Surgery.', relevance: '腸道手術技術與併發症' },
-    { type: 'journal', citation: 'Ralphs SC et al. Risk factors for leakage following intestinal anastomosis in dogs and cats: 115 cases (1991-2000). J Am Vet Med Assoc 2003;223(1):73-77.', relevance: '吻合口裂開風險因子關鍵研究' },
-    { type: 'journal', citation: 'Grimes JA et al. Identification of risk factors for septic peritonitis and failure to survive following gastrointestinal surgery in dogs. J Am Vet Med Assoc 2011;238(4):486-494.', relevance: '腸道術後敗血性腹膜炎風險因子' },
-    { type: 'guideline', citation: 'Davis DJ, Demianiuk RM, Musser J, et al. ACVS Consensus Statement on Gastrointestinal Surgical Principles: Intestinal Resection and Anastomosis in Dogs and Cats. Vet Surg. 2018;47(S1):O18-O27.', relevance: 'ACVS 犬貓腸切除吻合手術原則共識聲明' },
+    { type: 'journal', citation: 'Ralphs SC, Jessen CR, Lipowitz AJ. Risk factors for leakage following intestinal anastomosis in dogs and cats: 115 cases (1991-2000). J Am Vet Med Assoc. 2003;223(1):73-77. doi:10.2460/javma.2003.223.73', relevance: '吻合口裂開風險因子關鍵研究' },
+    { type: 'journal', citation: 'Grimes JA, Schmiedt CW, Cornell KK, Radlinsky MAG. Identification of risk factors for septic peritonitis and failure to survive following gastrointestinal surgery in dogs. J Am Vet Med Assoc. 2011;238(4):486-494. doi:10.2460/javma.238.4.486', relevance: '腸道術後敗血性腹膜炎風險因子' },
+    { type: 'journal', citation: 'Mouat EE, Davis GJ, Drobatz KJ, Wallace KA. Evaluation of data from 35 dogs pertaining to dehiscence following intestinal resection and anastomosis. J Am Anim Hosp Assoc. 2014;50(4):254-263. doi:10.5326/jaaha-ms-6111', relevance: '犬腸切除吻合裂開預測因子回顧' },
+    { type: 'journal', citation: 'Duell JR, Thieman Mankin KM, Rochat MC, Regier PJ, et al. Frequency of dehiscence in hand-sutured and stapled intestinal anastomoses in dogs. Vet Surg. 2016;45(1):100-103. doi:10.1111/vsu.12428', relevance: '手縫 vs 吻合器吻合裂開率比較' },
   ],
   is_current: true,
   created_at: now,
@@ -4871,7 +5107,7 @@ const contentIntestinalRA: NodeContent = {
 const contentCystotomy: NodeContent = {
   id: 'CONTENT-SURG-L3-016',
   node_id: 'SURG-L3-016',
-  version: 1,
+  version: 2,
   summary: '泌尿道結石跟下泌尿道疾病是犬貓常見的外科適應症。膀胱切開術（cystotomy）用來移除無法溶解或造成阻塞的膀胱結石；會陰尿道造口術（perineal urethrostomy, PU）主要用在反覆尿道阻塞的公貓。結石類型（struvite vs calcium oxalate）決定治療策略，struvite 可以試溶解，CaOx 一定要手術移除。皮下輸尿管旁路裝置（SUB）給輸尿管阻塞一個微創的選項。',
   learning_objectives: [
     '根據結石類型（struvite vs CaOx）選擇適當的治療策略（溶解 vs 手術）',
@@ -4889,6 +5125,7 @@ const contentCystotomy: NodeContent = {
     'SUB（subcutaneous ureteral bypass）裝置：用於輸尿管結石阻塞，尤其 CaOx 結石的貓',
     '所有手術移除的結石必須送結石分析（定量分析優於定性）',
     '術後預防：飲食管理（避免結石成分過飽和）+ 增加飲水量 + 定期影像追蹤',
+    'Cystotomy 殘留結石率不低（Grant 2010 ~20%）→ 術中沖洗＋逆行尿道沖洗＋術後影像必做；微創取石（雷射碎石/膀胱鏡/排尿性水推）可降殘留',
   ],
   body: `# 泌尿外科，Cystotomy & Urethrostomy
 
@@ -4965,7 +5202,41 @@ const contentCystotomy: NodeContent = {
 
 ### 台灣臨床注意事項
 
-台灣犬隻泌尿結石以 struvite 相當常見，可能跟飲食習慣（飼主自製食物、高蛋白質零食）以及感染性結石的高盛行率有關。台灣高溫高濕環境下，犬貓飲水量不夠很容易讓尿液濃縮，把結石形成風險拉上來。臨床上要不斷強調增加飲水量的重要性（用濕食、流動飲水器）。SUB（皮下輸尿管旁路）裝置在台灣主要限於大型轉介醫院（台北、台中、高雄的專科動物醫院），一般基層醫院做不了，所以轉診時機要拿捏好。`,
+台灣犬隻泌尿結石以 struvite 相當常見，可能跟飲食習慣（飼主自製食物、高蛋白質零食）以及感染性結石的高盛行率有關。台灣高溫高濕環境下，犬貓飲水量不夠很容易讓尿液濃縮，把結石形成風險拉上來。臨床上要不斷強調增加飲水量的重要性（用濕食、流動飲水器）。SUB（皮下輸尿管旁路）裝置在台灣主要限於大型轉介醫院（台北、台中、高雄的專科動物醫院），一般基層醫院做不了，所以轉診時機要拿捏好。
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫泌尿外科應用 | 現況 |
+|-------------|----------------|------|
+| 內視鏡雷射碎石（laser lithotripsy） | 經膀胱鏡/輸尿管鏡擊碎結石、籃網取出，少開腹 | 轉介中心已用於犬貓下泌尿道結石 |
+| 經皮腎造瘻取石（PCNL） | 大型腎結石的微創移除 | 人醫標準；獸醫限少數中心 |
+| 輸尿管支架（ureteral stent） | 犬貓輸尿管阻塞的微創引流（SUB 之外另一選項） | 已臨床使用，貓長期易結垢/移位 |
+| 體外震波碎石（ESWL） | 犬腎/輸尿管結石非侵入碎石 | 對犬腎石可行，貓效果差、少用 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 開腹 cystotomy vs 微創取石（雷射碎石/膀胱鏡/排尿性水推） | 微創可降殘留率、恢復快，但需設備/技術；小石、適合病例優先微創 | Level III |
+| 貓輸尿管阻塞：SUB vs 輸尿管支架 | SUB 長期通暢率較高但需定期沖洗、可結垢；stent 貓較易移位/刺激，各有優劣 | Level III |
+| 公貓 PU 的時機（第 1 次 vs 第 2 次阻塞後） | 多數待反覆（≥2 次）或尿道不可逆損傷才做；PU 不治本（FLUTD 仍在）且增 UTI/造口狹窄風險 | Level IV |
+| Struvite 溶解 vs 直接手術 | ACVIM 2016 傾向可溶解者先試溶解；但阻塞/感染急症仍需介入 | Level II |
+| Cystotomy 殘留結石的可接受率與術中影像 | 殘留率不低（Grant 2010 ~20%），術中/術後影像應常規 | Level III |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**Cystotomy 沒你想的乾淨——殘留結石率不低（Grant et al 2010, JAVMA）**
+經典回顧顯示開腹 cystotomy 後**約 20% 仍有殘留結石**，殘留就是復發與再手術的根源。臨床鐵則因此是：術中大量沖洗＋逆行性尿道沖洗＋**術後一定拍影像**確認清乾淨（CaOx 等不透光石尤其要看）。這也是微創取石（膀胱鏡雷射碎石、排尿性水推 voiding urohydropropulsion）興起的理由——在適合病例可降低殘留率。
+
+**微創泌尿介入（interventional urology）是趨勢**
+雷射碎石、膀胱鏡輔助取石、輸尿管支架/SUB 讓越來越多結石/阻塞不必開大刀；恢復快、併發症型態不同，但需要專門設備與訓練，目前集中在轉介中心。
+
+**貓輸尿管阻塞與 SUB 的演進（Berent 2018；SUB 3.0, Magidenko/Berent 2025）**
+SUB（皮下輸尿管旁路）對貓良性輸尿管阻塞（多為 CaOx）長期通暢率佳，但 **device 結垢/阻塞、感染、需終身定期沖洗**是長期課題；新一代 **SUB 3.0** 在短期結果上較 2.0 改善。轉診時要把「長期維護」講清楚。
+
+**ACVIM 2016 urolith 共識主軸**：可溶解（struvite）優先試溶解、CaOx 不可溶須移除、盡量少做不必要的侵入性取石、結石一律送定量分析指導預防。
+
+【台灣落地】台灣下泌尿道結石門診量大、struvite 仍常見（感染＋自製飲食）；微創取石與 SUB 限大型轉介中心，基層要掌握轉診時機。長期預防（處方飲食＋大量飲水＋定期影像）的飼主衛教，比單次手術更決定復發率。`,
   clinical_pearl: '「沖洗、沖洗、再沖洗！」Cystotomy 最常見的「失敗」原因就是術中沒把所有結石移乾淨，殘留的微小結石就是復發的核心。術中要用大量無菌生理食鹽水反覆沖洗膀胱腔，逆行性尿道沖洗也一定要做以確認尿道通暢。術後立刻拍 X 光確認沒殘留結石（CaOx 這類不透光結石特別要看）。',
   common_mistakes: [
     '結石沒完全移除就關腹，術中要反覆沖洗、術後 X 光要確認',
@@ -5010,10 +5281,12 @@ const contentCystotomy: NodeContent = {
   ],
   drug_api_links: ['Allopurinol', 'Prazosin', 'Amoxicillin-Clavulanate'],
   references: [
+    { type: 'journal', citation: 'Magidenko S, Berent AC, Weisse C, Mejia J. "The Subcutaneous Ureteral Bypass 3.0 device shows improved short-term outcomes compared to the 2.0 device for treatment of benign ureteral obstructions in cats." Am J Vet Res. 2025;86(5). doi:10.2460/ajvr.24.09.0255', relevance: '近期：SUB 3.0 vs 2.0 短期結果改善' },
+    { type: 'guideline', citation: 'Lulich JP, Berent AC, Adams LG, Westropp JL, Bartges JW, Osborne CA. "ACVIM Small Animal Consensus Recommendations on the Treatment and Prevention of Uroliths in Dogs and Cats." J Vet Intern Med. 2016;30(5):1564-1574. doi:10.1111/jvim.14559', relevance: 'ACVIM 犬貓泌尿結石治療與預防共識' },
+    { type: 'journal', citation: 'Berent AC, Weisse CW, Bagley DH, Lamb K. "Use of a subcutaneous ureteral bypass device for treatment of benign ureteral obstruction in cats." J Am Vet Med Assoc. 2018;253(10):1309-1327. doi:10.2460/javma.253.10.1309', relevance: 'SUB 裝置大型回顧性研究（134 貓 174 輸尿管）' },
+    { type: 'journal', citation: 'Grant DC, Harper TAM, Werre SR. "Frequency of incomplete urolith removal, complications, and diagnostic imaging following cystotomy for removal of uroliths from the lower urinary tract in dogs." J Am Vet Med Assoc. 2010;236(7):763-766. doi:10.2460/javma.236.7.763', relevance: 'Cystotomy 殘留結石率與術後影像必要性' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 25: Surgery of the Bladder and Urethra.', relevance: '膀胱切開術與尿道手術標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 118: Urinary Tract Surgery.', relevance: '泌尿外科手術技術與併發症' },
-    { type: 'guideline', citation: 'Lulich JP et al. ACVIM Small Animal Consensus Recommendations on the Treatment and Prevention of Uroliths in Dogs and Cats. J Vet Intern Med. 2016;30(5):1564-1574.', relevance: 'ACVIM 犬貓泌尿結石治療與預防共識' },
-    { type: 'journal', citation: 'Berent AC et al. Subcutaneous ureteral bypass device as a treatment for benign ureteral obstruction in cats: 174 ureters in 134 cats (2009-2015). J Am Vet Med Assoc. 2018;253(10):1309-1327.', relevance: 'SUB 裝置大型回顧性研究' },
   ],
   is_current: true,
   created_at: now,
@@ -5023,7 +5296,7 @@ const contentCystotomy: NodeContent = {
 const contentMammaryTumorSurgery: NodeContent = {
   id: 'CONTENT-SURG-L3-017',
   node_id: 'SURG-L3-017',
-  version: 1,
+  version: 2,
   summary: '乳腺腫瘤是母犬最常見的腫瘤，也是母貓第三常見的腫瘤。犬乳腺腫瘤大約 50% 是惡性，貓則高達 85-90% 是惡性。早期卵巢子宮切除術（OHE）可以大幅降低發生風險。手術是主要治療方式，術式選擇從 lumpectomy 到雙側乳腺全切除，要看腫瘤大小、位置、數量跟病理類型。完整的分期檢查跟組織病理學評估對預後判定跟治療規劃都很重要。',
   learning_objectives: [
     '比較犬貓乳腺腫瘤的流行病學差異（惡性比例、預後）',
@@ -5064,7 +5337,7 @@ const contentMammaryTumorSurgery: NodeContent = {
 |---------|---------------|---------------|
 | 第一次發情前 | 0.5% | 91% 降低 |
 | 第一次發情後 | 8% | 86% 降低 |
-| 第二次發情後 | 26% |，|
+| 第二次發情後 | 26% | 資料有限 |
 | > 2.5 歲 | 無保護效果 | 持續降低至 4 歲 |
 
 ## 二、分期 (Staging)
@@ -5116,6 +5389,32 @@ const contentMammaryTumorSurgery: NodeContent = {
 - Carboplatin 300 mg/m² IV q3w × 4 次（犬）
 - 監測：每次化療前 CBC + 心臟超音波（doxorubicin 心毒性）
 
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用潛力 | 現況 |
+|---------|-------------|------|
+| 前哨淋巴結標測（SLN mapping） | 犬乳腺癌精準分期、減少不必要淋巴結廓清 | 人醫乳癌標準；犬乳腺 SLN（染料/核醫/吲哚菁綠）研究增加中 |
+| ER/PR/HER2 受體分型 + 標靶 | 犬貓乳腺癌分子分型指導治療 | 人醫標準（tamoxifen/trastuzumab）；犬貓受體分型可行但抗荷爾蒙/標靶證據有限 |
+| BRCA1/2 遺傳風險 | 高風險品種繁殖前篩檢 | 犬乳腺 BRCA 類似基因變異研究中 |
+| 發炎性乳癌（IBC）類比 | 犬 IMC 與人 IBC 病理/預後高度相似 | 兩者皆預後極差、手術非首選 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 保守 vs 積極術式對犬存活的影響 | 切緣乾淨下，lumpectomy/regional 與 chain 對「該腫瘤」存活相近；chain 主要降低同側新原發，非改善存活 | Level III |
+| 同時 OHE 對犬惡性乳腺腫瘤存活的益處 | Sorenmo 2000 提示 ER+ 腫瘤可能受益；Stratmann 2008 未見復發降低——證據不一致 | Level III |
+| 犬乳腺癌輔助化療的實證 | 化療對犬乳腺癌存活益處證據薄弱，多自人醫外推 | Level III |
+| 抗荷爾蒙治療（tamoxifen）在犬 | 副作用多（動情徵象、子宮病變、血栓），不建議常規使用 | Level IV |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+1. **術式哲學（Stratmann 2008 等）**：對犬，只要完整切除且切緣乾淨，局部切除與全鏈切除對「該腫瘤」存活率相近；chain mastectomy 主要益處是降低同側「新原發」腫瘤，而非改善已知腫瘤存活——術式應依腫瘤大小／位置／數量個別化。
+2. **同時 OHE（Sorenmo 2000 vs Stratmann 2008）**：證據不一致；Sorenmo 2000 提示同時／近期絕育對 ER+ 惡性腫瘤可能有存活益處，Stratmann 2008 未見復發降低。多數仍建議同時 OHE（兼顧子宮／卵巢疾病預防）。
+3. **貓乳腺癌**：仍以積極（單側或雙側鏈）切除 + doxorubicin 為主軸；腫瘤大小（<2 cm）為最強預後因子。
+4. **前哨淋巴結標測**：犬乳腺 SLN 研究增加，可能改善分期準確度。
+> 術式與輔助治療決策須由獸醫師依病理分期與個案評估、並與飼主充分討論。
+
 [圖片:犬貓乳腺解剖與淋巴引流圖]
 [圖片:乳腺切除術式比較圖]`,
   clinical_pearl: '犬乳腺腫瘤第 3 對乳腺（M3）的淋巴引流可以同時流向腋下跟腹股溝淋巴結，所以 M3 腫瘤的手術範圍要特別考慮。如果 M3 有惡性腫瘤，建議至少做 regional mastectomy 包含 M1-M5，並同時切除腹股溝淋巴結。另外，貓乳腺腫瘤不管大小都當惡性處理。別因為腫瘤看起來小就只做 lumpectomy，貓的 radical mastectomy 預後比保守術式好很多。',
@@ -5162,10 +5461,12 @@ const contentMammaryTumorSurgery: NodeContent = {
   ],
   drug_api_links: ['Doxorubicin', 'Carboplatin', 'Piroxicam'],
   references: [
-    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 26: Surgery of the Reproductive and Genital Systems，Mammary Neoplasia.', relevance: '乳腺腫瘤手術標準教材' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 26: Surgery of the Reproductive and Genital Systems, Mammary Neoplasia.', relevance: '乳腺腫瘤手術標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 96: Mammary Tumors.', relevance: '乳腺腫瘤外科治療與預後' },
-    { type: 'journal', citation: 'Sorenmo KU et al. Canine mammary gland tumors: a review. Vet Pathol. 2011;48(1):132-146.', relevance: '犬乳腺腫瘤的全面回顧' },
-    { type: 'guideline', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 27: Tumors of the Mammary Gland.', relevance: '乳腺腫瘤腫瘤學指引' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 27: Tumors of the Mammary Gland.', relevance: '乳腺腫瘤腫瘤學完整章節' },
+    { type: 'journal', citation: 'Sorenmo KU, et al. Development, anatomy, histology, lymphatic drainage, clinical features, and cell differentiation markers of canine mammary gland neoplasms. Vet Pathol. 2011;48(1):85-97. doi:10.1177/0300985810389480.', relevance: '犬乳腺腫瘤發育／解剖／淋巴引流回顧（Sorenmo 系列）' },
+    { type: 'journal', citation: 'Sorenmo KU, Shofer FS, Goldschmidt MH. Effect of spaying and timing of spaying on survival of dogs with mammary carcinoma. J Vet Intern Med. 2000;14(3):266-270. doi:10.1111/j.1939-1676.2000.tb01165.x.', relevance: '絕育與絕育時機對犬乳腺癌存活的影響（OHE 爭議）' },
+    { type: 'journal', citation: 'Stratmann N, et al. Mammary tumor recurrence in bitches after regional mastectomy with or without concurrent ovariohysterectomy. Vet Surg. 2008;37(1):82-86. doi:10.1111/j.1532-950X.2007.00351.x.', relevance: '區域切除±同時 OHE 與復發（OHE 爭議）' },
   ],
   is_current: true,
   created_at: now,
@@ -5175,7 +5476,7 @@ const contentMammaryTumorSurgery: NodeContent = {
 const contentFHO: NodeContent = {
   id: 'CONTENT-SURG-L3-018',
   node_id: 'SURG-L3-018',
-  version: 1,
+  version: 2,
   summary: '股骨頭切除術（Femoral Head Ostectomy, FHO）是一種「搶救性」骨科手術，把會痛的股骨頭跟頸切掉，髖關節疼痛就消除了。主要適應症包括 Legg-Calve-Perthes disease（幼犬無菌性股骨頭壞死）、無法修復的髖關節骨折或脫位、嚴重退化性關節炎。FHO 靠術後積極的復健運動形成功能性假關節（pseudoarthrosis），體重 < 20 kg 的犬貓可以得到良好到優秀的功能恢復。',
   learning_objectives: [
     '列出 FHO 的主要適應症並與全髖關節置換術（THR）比較',
@@ -5193,6 +5494,7 @@ const contentFHO: NodeContent = {
     '術後復健是成功的關鍵：早期被動關節活動範圍運動加漸進負重加物理治療',
     '完全恢復要 2-6 個月，形成纖維組織假關節（pseudoarthrosis）',
     'THR（全髖關節置換術）功能恢復比 FHO 好，但成本高、技術要求也高',
+    '近期觀點（Ober 2018）：「< 20 kg 才適合」教條鬆動——體重非可靠單一預測因子，截骨乾淨無骨刺＋積極復健才是關鍵；力板分析顯示 FHO 患肢常殘留負重不對稱',
   ],
   body: `# 股骨頭切除術 (FHO / Femoral Head Ostectomy)
 
@@ -5237,7 +5539,7 @@ const contentFHO: NodeContent = {
 
 ### 關鍵步驟
 1. 暴露髖關節：切開關節囊，脫出股骨頭
-2. 辨識並保護坐骨神經（位於股骨頭後方）
+2. 保護坐骨神經（位於股骨頭/頸後方）：標準顱背側入路通常不需常規剝離顯露，重點是避免過度向尾側牽引或剝離傷及神經
 3. 在股骨頸基部以骨鋸或骨鉗截斷（截骨線與股骨長軸垂直或稍內傾）
 4. 關鍵：確認截面平滑、無骨刺殘留（觸診檢查）
 5. 骨刺殘留會與髖臼碰撞 → 持續疼痛 → 手術失敗主因
@@ -5274,7 +5576,39 @@ FHO 術後不做復健，就會肌肉萎縮加上纖維假關節形成不良，�
 
 ### 台灣臨床注意事項
 
-台灣小型犬飼養比例非常高（博美犬、吉娃娃、迷你貴賓犬、約克夏這些），Legg-Calve-Perthes disease 在台灣臨床上不少見，FHO 的需求相對穩定。全髖關節置換術（THR）在台灣的可用性有限，目前只有少數專科醫院（主要在台北、台中、高雄）有能力做而且費用高昂，所以 FHO 對多數病例來說比較可及又經濟。術後復健方面，台灣的動物復健服務這幾年成長很快，但水中跑步機這類專業復健設備還是主要集中在都會區大型動物醫院，偏遠地區的飼主可能要靠居家復健指導。`,
+台灣小型犬飼養比例非常高（博美犬、吉娃娃、迷你貴賓犬、約克夏這些），Legg-Calve-Perthes disease 在台灣臨床上不少見，FHO 的需求相對穩定。全髖關節置換術（THR）在台灣的可用性有限，目前只有少數專科醫院（主要在台北、台中、高雄）有能力做而且費用高昂，所以 FHO 對多數病例來說比較可及又經濟。術後復健方面，台灣的動物復健服務這幾年成長很快，但水中跑步機這類專業復健設備還是主要集中在都會區大型動物醫院，偏遠地區的飼主可能要靠居家復健指導。
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫 FHO 應用 | 現況 |
+|---------|-------------|------|
+| Girdlestone 切除式關節成形術 | FHO 本質就是犬貓版 Girdlestone——靠纖維假關節止痛 | 人醫多作為感染/失敗 THR 的搶救；獸醫則是主要術式之一 |
+| 全髖關節置換（THR） | 功能要求高者，THR 力學恢復優於 FHO | 獸醫 THR 已成熟但限專科、成本高；FHO 仍是可近搶救術 |
+| 客觀步態分析（force plate/動作捕捉） | 量化 FHO 患肢真實負重，補「飼主滿意度」之不足 | 研究顯示 FHO 肢體常殘留地面反作用力不對稱，即使臨床看似良好 |
+| 骨科「早期活動」復健科學 | FHO 越早 PROM、漸進負重，假關節品質越好 | 直接沿用人醫骨科早期活動原則 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 體重 < 20 kg 的選擇門檻是否仍成立 | 傳統教條「FHO 限小型」，但近年認為體重不是可靠的單一預測因子，大型犬也可能良好、小型犬也可能失敗，技術與復健更關鍵 | Level III |
+| FHO vs THR 的最佳適應分界 | 功能要求高、年輕大型犬傾向 THR；可近性/成本下 FHO 仍合理 | Level III |
+| 截骨面殘留骨贅多少才有臨床意義 | 共識越平滑越好；Ober 2018 以 CT 證實骨再生/殘留是失敗主因之一，但與疼痛的量化關係未明 | Level IV |
+| 軟組織插補（muscle interposition）是否真有幫助 | 常規施行，但對結果的實證貢獻有限，存廢有爭議 | Level IV |
+| 客觀 vs 主觀療效評估的落差 | 飼主滿意度高，但力板分析常顯示患肢仍不對稱，最佳評估指標未統一 | Level III |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**「FHO 只適合 < 20 kg」這條教條正在鬆動**
+傳統教學說 FHO 結果好壞由體重決定（< 20 kg 佳），但近年觀點修正：**體重不是可靠的單一預測因子**——大型犬也可能得到良好功能、小型犬也可能失敗，**技術品質（截骨完整、無殘留骨刺）與術後復健投入**才是更關鍵的決定因素。臨床意義：別只用體重一刀切，把「能否配合密集復健」與「截骨技術」一起納入評估；THR 可近時，對功能要求高的大型犬仍優先考慮。
+
+**失敗有跡可循——CT 揭露原因（Ober et al 2018, Acta Vet Scand）**
+這篇用臨床＋CT 追查 4 隻大型犬 FHO 長期「不滿意」的原因，發現**截骨處骨再生/殘留骨贅、軟組織插補不足**等是持續疼痛跛行的可辨識成因——再次印證「截面要乾淨、骨刺要清掉」這個術中鐵則，也說明術後仍跛時 CT 比 X 光更能找出元兇。
+
+**客觀步態 vs 主觀滿意度的落差**
+力板/步態分析顯示，即使飼主滿意度高，FHO 患肢的地面反作用力常仍低於健側、不完全對稱。臨床溝通要誠實：FHO 是**有效止痛的搶救術**，多數能恢復良好生活品質，但**步態未必百分百正常**，這與 THR（更接近正常關節力學）不同。
+
+【台灣落地】台灣小型犬、LCPD 病例多，THR 可近性有限，FHO 仍是務實主力。成功關鍵同樣是「截骨乾淨＋飼主願意做密集復健」；都會區水療資源較足，偏遠地區要強化居家復健衛教。`,
   clinical_pearl: '「沒有殘留骨刺，手術才算做完。」FHO 術後持續疼痛最常見的原因就是截骨面不平滑或有骨刺殘留，殘留的骨刺會跟髖臼碰撞產生疼痛。術中一定要用手指仔細觸診整個截面，確認完全平滑。另外，術後第一天就要開始被動關節活動範圍運動，越早開始復健，假關節品質越好，最終功能恢復越佳。',
   common_mistakes: [
     '截骨面殘留骨刺沒清除，這會造成術後持續疼痛，是 FHO 失敗最常見的原因',
@@ -5318,11 +5652,11 @@ FHO 術後不做復健，就會肌肉萎縮加上纖維假關節形成不良，�
   ],
   drug_api_links: ['Meloxicam', 'Tramadol', 'Gabapentin'],
   references: [
-    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 34: Diseases of the Joints，Femoral Head and Neck Ostectomy.', relevance: 'FHO 手術技術與適應症標準教材' },
+    { type: 'journal', citation: 'Ober C, Pestean C, Bel L, Taulescu M. "Use of clinical and computed tomography findings to assess long-term unsatisfactory outcome after femoral head and neck ostectomy in four large breed dogs." Acta Vet Scand. 2018;60(1):24. doi:10.1186/s13028-018-0382-8', relevance: '近期：大型犬 FHO 不滿意結果之 CT 成因（骨再生/殘留骨贅）' },
+    { type: 'journal', citation: 'Off W, Matis U. "Excision arthroplasty of the hip joint in dogs and cats." Vet Comp Orthop Traumatol. 2010;23(5):297-305. doi:10.1055/s-0037-1617478', relevance: 'FHO 長期結果的大型回顧性研究' },
+    { type: 'journal', citation: 'Mann FA, Tangner CH, Wagner-Mann C, Read WK. "A Comparison of Standard Femoral Head and Neck Excision and Femoral Head and Neck Excision Using a Biceps Femoris Muscle Flap in the Dog." Vet Surg. 1987;16(3):223-230. doi:10.1111/j.1532-950x.1987.tb00943.x', relevance: '截骨技術與肌肉插補比較（軟組織插補爭議來源）' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 34: Diseases of the Joints — Femoral Head and Neck Ostectomy.', relevance: 'FHO 手術技術與適應症標準教材' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter 62: Femoral Head and Neck Excision.', relevance: 'FHO 手術技術、復健與結果評估' },
-    { type: 'journal', citation: 'Off W, Matis U. Excision arthroplasty of the hip joint in dogs and cats. Vet Comp Orthop Traumatol. 2010;23(5):297-305.', relevance: 'FHO 長期結果的大型回顧性研究' },
-    { type: 'journal', citation: 'Remedios AM, Fries CL. Treatment of canine hip dysplasia: a review. Can Vet J. 1995;36(8):503-509.', relevance: '犬髖關節疾病治療選項比較' },
-    { type: 'guideline', citation: 'ACVS Position Statement: Femoral Head and Neck Excision, American College of Veterinary Surgeons, 2020.', relevance: 'ACVS 股骨頭切除術立場聲明與手術指引' },
   ],
   is_current: true,
   created_at: now,
@@ -5481,7 +5815,7 @@ EtCO2 是最早期、最敏感的指標。任何術中 EtCO2 飆升且通氣調�
 const contentOsteoarthritis: NodeContent = {
   id: 'CONTENT-SURG-L3-019',
   node_id: 'SURG-L3-019',
-  version: 1,
+  version: 2,
   summary:
     '退化性關節炎（osteoarthritis, OA / degenerative joint disease, DJD）是犬貓最常見的慢性疼痛來源，屬於侵犯整個關節的進行性疾病，涉及軟骨退化、軟骨下骨硬化、滑膜炎與疼痛敏化。犬以續發性 OA 為主（前十字韌帶斷裂、髖／肘關節發育不良等），貓則嚴重被低估——老年貓 X 光下 DJD 盛行率超過 90%，臨床多為行為改變而非跛行。無法根治但可長期管理，核心是多模式止痛加上體重與運動控制；2022–2024 年抗 NGF 單株抗體（犬 Librela、貓 Solensia）為重大進展。',
   learning_objectives: [
@@ -5570,6 +5904,27 @@ OA 是「**全關節疾病**」，不是單純的「軟骨磨損」。它同時�
 | Librela 神經學不良反應訊號 | 真實藥物警戒通報 vs 高齡族群背景發生率；因果待釐清，人醫抗 NGF 之 RPOA 疑慮外推中 | Level III |
 | 幹細胞／再生治療（PRP、MSC） | 有潛力但實證品質不一，尚非標準治療 | Level III |
 | 口服 glucosamine/chondroitin | 雖普及但療效實證薄弱 | Level II（多為陰性／不足） |
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 抗 NGF 單株抗體（tanezumab、fasinumab） | 犬貓抗 NGF（bedinvetmab/frunevetmab）止痛的分子先驅 | 人醫第 3 期對 OA 疼痛有效，但出現「快速進展性 OA（RPOA）」安全訊號 → tanezumab 2021 FDA 未核准；此經驗正是獸醫使用抗 NGF 須警覺、監測關節惡化與不良反應的依據 |
+| 定量感覺測試（QST）／疼痛表現型分型 | 辨識中樞敏化主導者、個體化止痛 | 人醫成熟，獸醫犬貓 QST 研究中 |
+| 減重 + 運動處方（人類 OA 一線非藥物） | 犬貓體重管理 + 復健的實證骨幹 | 人醫一線實證，獸醫 Marshall 2010 呼應 |
+| 中樞作用止痛（duloxetine 等 SNRI） | 慢性 OA 中樞痛輔助（對應獸醫 amantadine/gabapentin） | 人醫核准用於 OA 慢性痛，獸醫屬機轉性借鏡 |
+| 關節內生物製劑／放射滑膜切除 | 關節專一治療（PRP、tin-117m radiosynoviorthesis） | 人醫與獸醫均屬發展中 |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### 抗 NGF 單株抗體的關鍵試驗證據
+除 FDA 核准文件外，pivotal RCT 已提供療效實證：犬 bedinvetmab（Corral 2021）與貓 frunevetmab（Gruen 2021）的隨機、盲性、安慰劑對照試驗均顯示對 OA 疼痛有意義的改善，且每月一針改善依從性。臨床定位為多模式止痛的有力新工具，而非取代體重/運動/NSAID 的基礎。
+
+### 從人醫抗 NGF 學到的安全警覺
+人類 tanezumab 第 3 期出現 RPOA 訊號、2021 年 FDA 未核准；此跨物種經驗解釋了為何須對犬貓抗 NGF 保持藥物警戒。FDA 2024 對 Librela 的致獸醫師信（神經學等通報）宜以此脈絡中性看待——有效但需基線評估、衛教、監測與通報，因果尚未定論。
+
+### 實證強弱的再確認
+最具實證的介入仍是體重控制（Marshall 2010）；口服 glucosamine/chondroitin 實證持續不足、不應取代實證療法；新興關節內／再生治療（PRP、MSC、放射滑膜切除）潛力可期但證據品質不一，尚非標準治療。
 `,
   clinical_pearl:
     '對老年貓而言，「年紀大了」不是診斷。資深貓出現不跳、躲藏、亂尿等行為改變，在排除其他病因前，都應視為 DJD 疼痛——治療這隻貓，而不是治療那張 X 光片。另一個重點：體重控制是飼主最能掌握、實證也最硬的介入，光是減掉約 6% 體重就能客觀改善跛行，臨床上卻常被輕描淡寫帶過。',
@@ -5629,6 +5984,8 @@ OA 是「**全關節疾病**」，不是單純的「軟骨磨損」。它同時�
     { type: 'journal', citation: 'Marshall WG, Hazewinkel HAW, Mullen D, De Meyer G, Baert K, Carmichael S. The effect of weight loss on lameness in obese dogs with osteoarthritis. Vet Res Commun. 2010;34(3):241-253. doi:10.1007/s11259-010-9348-7.', relevance: '體重控制改善跛行的客觀實證（約 6.1% 減重即顯著改善），支持體重管理為最具實證的介入' },
     { type: 'journal', citation: 'Lascelles BDX, Henry JB 3rd, Brown J, et al. Cross-sectional study of the prevalence of radiographic degenerative joint disease in domesticated cats. Vet Surg. 2010;39(5):535-544. doi:10.1111/j.1532-950X.2010.00708.x.', relevance: '貓 DJD X 光盛行率指標研究（92% 有 DJD），佐證貓 OA 嚴重被低估' },
     { type: 'journal', citation: 'Hardie EM, Roe SC, Martin FR. Radiographic evidence of degenerative joint disease in geriatric cats: 100 cases (1994-1997). J Am Vet Med Assoc. 2002;220(5):628-632. doi:10.2460/javma.2002.220.628.', relevance: '最早揭示老年貓 90% 有 X 光 DJD 但僅約 4% 病歷記載的奠基性研究（基礎文獻）' },
+    { type: 'journal', citation: 'Corral MJ, Moyaert H, Fernandes T, et al. A prospective, randomized, blinded, placebo-controlled multisite clinical study of bedinvetmab, a canine monoclonal antibody targeting nerve growth factor, in dogs with osteoarthritis. Vet Anaesth Analg. 2021;48(6):943-955. doi:10.1016/j.vaa.2021.08.001.', relevance: '犬抗 NGF 單株抗體 bedinvetmab（Librela）OA 疼痛之關鍵 RCT 療效實證' },
+    { type: 'journal', citation: 'Gruen ME, Myers JAE, Lascelles BDX. Efficacy and Safety of an Anti-nerve Growth Factor Antibody (Frunevetmab) for the Treatment of Degenerative Joint Disease-Associated Chronic Pain in Cats. J Vet Intern Med. 2021;35(6):2752-2762. doi:10.1111/jvim.16291.', relevance: '貓抗 NGF 單株抗體 frunevetmab（Solensia）OA 疼痛之關鍵 RCT 療效實證' },
   ],
   is_current: true,
   created_at: now,
@@ -5638,7 +5995,7 @@ OA 是「**全關節疾病**」，不是單純的「軟骨磨損」。它同時�
 const contentPeriodontalDisease: NodeContent = {
   id: 'CONTENT-SURG-L3-020',
   node_id: 'SURG-L3-020',
-  version: 1,
+  version: 2,
   summary:
     '牙周病是犬貓最常見的疾病，三歲以上犬隻在麻醉完整檢查下盛行率可達 44–100%（清醒目視檢查嚴重低估）。病程由牙菌斑生物膜引發牙齦炎（可逆），若進展為牙周炎則造成不可逆的附著喪失（牙周韌帶與齒槽骨破壞）。確診與治療皆須在全身麻醉下進行 COHAT（含牙周探測與全口牙科 X 光），所謂「免麻醉洗牙」僅具美容效果且不適當。',
   learning_objectives: [
@@ -5732,6 +6089,38 @@ const contentPeriodontalDisease: NodeContent = {
 ## 九、常見錯誤與臨床要訣
 
 見 common_mistakes。**臨床要訣**：疾病藏在牙齦線以下——再亮白的牙冠都沒有意義，若未在麻醉下探測牙周囊袋、照全口 X 光，就無法分期、也無法真正治療；在貓，「還在吃飯」永遠不能排除一口疼痛的牙齒吸收病灶。
+
+## 十、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 牙周-全身關聯（CV/糖尿病/發炎負擔） | 框定牙周發炎為「值得控制的全身發炎負擔」（關聯非因果） | 人醫關聯研究多、因果未定；獸醫謹慎沿用 |
+| 宿主調節治療（low-dose doxycycline 等抗發炎） | 輔助機械治療、調控宿主發炎反應 | 人醫已用，獸醫研究有限 |
+| 牙周微生物組與 Porphyromonas 疫苗 | P. gulae 致病、菌叢導向預防/疫苗 | 人醫 P. gingivalis 研究活躍；犬 Porphyromonas 疫苗曾試但效果有限 |
+| 引導組織再生（GTR）/牙周再生手術 | 進階牙周缺損的再生治療 | 人醫成熟，獸醫專科少量應用 |
+
+## 十一、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 牙周病與全身器官疾病的因果性 | 多為關聯（腎/肝/心），因果方向未證實，勿宣稱「導致」 | Level III |
+| 圍手術期/嚴重病例的抗生素角色 | 不取代機械治療；常規預防性使用違反抗生素管理 | Level III |
+| 免麻醉洗牙 | 強烈共識反對（AVDC 2004、AAHA 2013/2019），低於照護標準 | 共識/Level IV |
+| 居家照護產品的實證等級 | 每日刷牙金標準；VOHC 產品為輔助（試驗標準明確）、不取代刷牙與 COHAT | Level II |
+
+## 十二、近期實證更新 (Recent Evidence Updates)
+
+### 盛行率被嚴重低估（麻醉完整檢查）
+Wallis 2020 整理：清醒目視僅 9-18%、麻醉完整檢查 44-100%——支撐「無麻醉探測+X 光無法分期」，並重塑臨床對牙周病負擔的認知。
+
+### 2019 AAHA 牙科指引框架
+Bellows 2019 確立 COHAT（探測+全口 X 光）、多模式止痛/神經阻斷，並明列免麻醉洗牙低於照護標準；為現行犬貓牙科照護準則。
+
+### 口腔疼痛的再認識
+「食慾正常≠不痛」漸成共識；疼痛行為細微（掉食、單側咀嚼、躲避），貓 TR/FCGS 尤痛——拔牙須區域阻斷+多模式止痛。
+
+### 微生物組與宿主導向
+Porphyromonas（P. gulae）等牙周致病菌與宿主發炎反應為破壞主因；菌叢/宿主調節（疫苗、抗發炎）研究中，惟疫苗成效有限，機械性斑塊控制仍為核心。
 `,
   clinical_pearl:
     '疾病藏在牙齦線以下。再亮白的牙冠都沒有意義——若從未在麻醉下探測牙周囊袋、照全口 X 光，就無法分期、也無法真正治療；而在貓，「還在吃飯」永遠不能用來排除一口疼痛的牙齒吸收病灶。',

@@ -208,7 +208,7 @@ CAD 是終生性疾病，沒辦法根治，但可以控制得很穩：
 const contentSkinScraping: NodeContent = {
   id: 'CONTENT-DERM-L4-002',
   node_id: 'DERM-L4-002',
-  version: 1,
+  version: 2,
   summary: '皮膚刮搔（skin scraping）跟毛髮檢查（trichogram）是皮膚科最基本、也最常用到的診斷工具。淺層刮搔抓表皮的寄生蟲（疥蟎那類），深層刮搔則是把毛囊裡的蠕形蟎找出來。毛髮拔出來鏡檢可以看毛髮週期、毛幹有沒有壞掉、有沒有皮膚癬菌。配上礦物油浸潤法跟 KOH 消化法，幾乎每間診所馬上就能做，是皮膚科第一線跑不掉的檢查。',
   learning_objectives: [
     '正確執行淺層與深層皮膚刮搔技術',
@@ -288,11 +288,26 @@ const contentSkinScraping: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+### 系統性鏡檢流程
+1. 低倍（4x-10x）系統性掃描整張載玻片，發現可疑結構再切 40x 確認。
+2. **Demodex**：計數各發育階段（卵→幼蟲→若蟲→成蟲）與活蟲:死蟲比例——治療監測的關鍵指標（終點＝連續刮搔「零蟲」）。
+3. **Trichogram**：評估 anagen（生長期，根部膨大、有鞘、有色素）vs telogen（休止期，棒狀、無色素）比例；毛幹斷裂／分叉提示自我搔抓或結構異常；大量 telogen 提示內分泌（甲低、Cushing）或營養性脫毛。
+4. **KOH 法**：耐心等角質完全消化再判讀，尋找毛幹表面／內部排列整齊的關節孢子（ecto/endothrix）。
+
+### 敏感度／特異度
+- 深層刮搔抓 Demodex：技術正確時敏感度 > 90%（最佳診斷工具）。
+- 淺層刮搔抓 Sarcoptes：敏感度僅 20-50%，但特異度近 100%——**看到即確診，陰性不能排除**。
+- KOH 抓癬菌：敏感度 50-70%，須搭 Wood 燈與真菌培養。
+- 少量 Demodex 成蟲可能為正常共生，須結合臨床（病灶分布、各發育階段比例）判定病理性。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **深層刮搔未「擠」皮膚**：未把毛囊深處蠕形蟎逼出即刮 → 偽陰性（最常見技術錯誤）。
+- **部位選錯**：刮已苔蘚化的慢性病灶中央，蟎蟲偵測率低；應選病灶活動性邊緣／新發區。
+- **疥蟎刮搔陰性即排除**：敏感度僅 20-50%，高度懷疑時應行經驗性 isoxazoline 治療性試驗（見 §六）。
+- **未用礦物油**：標本乾燥、不易附著與觀察。
+- **KOH 過度加熱**：標本碳化、產生氣泡或蓋玻片破裂，影響判讀。
+- **薄皮膚區（眼周）深層刮搔風險高**：可改用透明膠帶壓貼法（tape impression）替代。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -307,7 +322,15 @@ const contentSkinScraping: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬過敏原特異性 IgE 檢測（血清 vs 皮膚點刺）的一致性 | 兩種方法結果不一致率高達 30-40% | Level II |
-| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |`,
+| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+| 主題 | 實證更新 | 臨床意涵 | 來源 |
+|------|---------|---------|------|
+| Isoxazoline 改寫蟎病診療 | Mueller 等 2020 WAVD 蠕形蟎共識以 isoxazoline（fluralaner/sarolaner/afoxolaner/lotilaner）為犬貓蠕形蟎／疥蟎一線治療，安全有效且大幅簡化療程。 | 診斷仍靠深層刮搔／trichoscopy 確認與監測（終點＝連續刮搔零蟲），但治療已從每日 amitraz 藥浴轉為口服 isoxazoline。 | Mueller 2020 |
+| 疥蟎「治療性試驗」門檻下降 | 因淺層刮搔對 Sarcoptes 敏感度僅 20-50%，加上 isoxazoline 安全有效，高度懷疑而刮搔陰性者直接以 isoxazoline 行診斷性治療試驗，已成主流策略。 | 不應因「刮搔陰性」延誤疥蟎治療；治療性試驗兼具診斷與治療價值。 | Mueller 2020 |
+| 非侵入輔助工具 | 皮膚鏡（dermoscopy/trichoscopy）可放大觀察毛幹、蟎蟲與毛囊鑄型；分子（PCR）法對低蟲量疥蟎較刮搔敏感。兩者補足傳統刮搔的敏感度缺口。 | 屬輔助、未取代刮搔；資源許可時可提升低蟲量病例偵測率（呼應 §四 dermoscopy）。 | Miller & Kirk 教材 |`,
   clinical_pearl: '深層刮搔最關鍵的動作是「擠」。用拇指跟食指擠皮膚皺褶，把毛囊深處的蠕形蟎逼到表面再刮。沒擠就直接刮，常常會抓不到，給你偽陰性。法鬥這種皮膚鬆鬆的品種，擠完之後也可以直接用透明膠帶壓一壓（tape impression）取代刮搔，效果不錯。',
   common_mistakes: [
     '深層刮搔時未擠壓皮膚，導致蠕形蟎偵測率下降',
@@ -363,8 +386,8 @@ const contentSkinScraping: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '皮膚刮搔技術與寄生蟲辨識標準參考' },
-    { type: 'guideline', citation: 'Mueller RS et al. Treatment of demodicosis in dogs: 2011 clinical practice guidelines. Vet Dermatol. 2012;23(2):86-e21.', relevance: '蠕形蟎治療指引中的診斷標準' },
-    { type: 'journal', citation: 'Saridomichelakis MN et al. An update on the role of cytology in the diagnosis of canine skin diseases. Vet Dermatol. 2017;28(5):457-e108.', relevance: '皮膚刮搔與細胞學在診斷中角色的更新回顧' },
+    { type: 'guideline', citation: 'Mueller RS et al. "Treatment of demodicosis in dogs: 2011 clinical practice guidelines." Vet Dermatol. 2012;23(2):86-e21. doi:10.1111/j.1365-3164.2011.01026.x', relevance: '蠕形蟎治療指引中的診斷標準' },
+    { type: 'guideline', citation: 'Mueller RS, Rosenkrantz W, Bensignor E, et al. "Diagnosis and treatment of demodicosis in dogs and cats." Vet Dermatol. 2020;31(1):4-e2. doi:10.1111/vde.12806', relevance: 'WAVD 2020 蠕形蟎共識：深層刮搔/trichoscopy 診斷 + isoxazoline 一線治療（取代 v1 一條不存在的「Saridomichelakis 皮膚細胞學回顧」捏造引用）' },
   ],
   is_current: true,
   created_at: now,
@@ -374,7 +397,7 @@ const contentSkinScraping: NodeContent = {
 const contentAFR: NodeContent = {
   id: 'CONTENT-DERM-L3-002',
   node_id: 'DERM-L3-002',
-  version: 1,
+  version: 2,
   summary: '食物不良反應（Adverse Food Reaction, AFR）包含食物過敏（免疫介導）跟食物不耐受（非免疫介導），是犬貓第三常見的過敏性皮膚病。臨床表現跟 CAD 很像，要分開只能靠嚴格的排除飲食試驗（8 週新蛋白或水解蛋白飲食）加上食物激發試驗。常見過敏原是牛肉、雞肉、乳製品、小麥。有一部分病例會合併腸胃道症狀。台灣亞熱帶氣候下，食物過敏跟環境過敏常常一起出現，本土資料看下來，雞肉跟牛肉是最常見的食物過敏原。',
   learning_objectives: [
     '區分食物過敏（免疫介導）與食物不耐受（非免疫介導）的機轉差異',
@@ -441,7 +464,13 @@ AFR 是對飲食成分出現異常反應的總稱，分成免疫介導的食物�
 
 ## 三、治療策略 (Treatment)
 
-AFR 的治療要看嚴重程度跟個體狀況做個別化規劃，治療過程中要定期評估反應再調整。
+### 核心：找出並避開致敏蛋白
+1. **確診後長期飲食管理**：以新蛋白或水解蛋白（<10 kDa）商業飲食為主；自煮須營養師平衡配方。
+2. **激發試驗定位過敏原**：逐一加回單一蛋白（每種觀察 1-2 週），縮小可餵食清單。
+3. **急性搔癢短期控制**：oclacitinib 或短療程 prednisolone 緩解，不取代飲食控制。
+4. **繼發感染同步處理**：膿皮症／馬拉色菌依細胞學治療。
+5. **合併 CAD（~20-30%）雙線管理**：飲食 + 環境過敏（ASIT/抗搔癢）並進。
+> 避開致敏蛋白後多數可單靠飲食完全控制、免長期用藥（與 CAD 不同）。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -487,7 +516,15 @@ AFR 整體預後不錯：
 | 排除飲食試驗最佳持續時間：6 週 vs 8 週 | 新研究顯示 90% 反應犬在 6 週內改善，但部分犬需更長 | Level II |
 | 水解蛋白飼料 vs 新蛋白飼料作為排除試驗首選 | 水解蛋白方便但價格高；新蛋白需詳細飲食史配合 | Level II |
 | 血清食物特異性 IgE/IgG 檢測的診斷價值 | 目前共識認為偽陽性率極高，不建議作為診斷工具 | Level I |
-| 犬食物不良反應中 IgE 介導 vs 非 IgE 介導的比例 | 多數犬 AFR 可能為非 IgE 介導，但確切機轉不明 | Level IV |`,
+| 犬食物不良反應中 IgE 介導 vs 非 IgE 介導的比例 | 多數犬 AFR 可能為非 IgE 介導，但確切機轉不明 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+1. **無可靠體外/血清檢測（Mueller & Olivry 2017 CAT-4）**：血清 IgE/IgG、唾液、毛髮食物過敏檢測偽陽性率極高，不可用於診斷；排除飲食＋激發試驗仍為唯一可靠方法。
+2. **試驗時程（Olivry 2015 CAT-1）**：約 80-90% 反應犬在 5-6 週改善；少數（含腸胃道反應者）需 8-10 週。
+3. **水解 vs 新蛋白**：兩者皆為有效一線；水解蛋白仍可能殘留抗原性、極少數犬反應，個別化選擇。
+4. **新興工具**：成分解析診斷（CRD）、腸道微生物組、口服免疫耐受（OIT）研究中（人醫已用）。
+> AFR 確診仍須嚴格排除飲食＋激發；坊間「快速食物過敏血檢/唾液檢」不可取代，由獸醫主導診斷。`,
   clinical_pearl: '排除飲食試驗會不會成功，飼主教育就是關鍵。開始前一定要花時間講清楚「完全排除」是什麼意思。一塊小零食、一口人食、甚至有調味的藥錠，都可能讓整個試驗毀掉。建議印一份書面清單，列出哪些不能吃、哪些可以給，然後在第 2 週跟第 4 週打電話追蹤一下飼主到底有沒有照做。',
   common_mistakes: [
     '依賴血清 IgE 食物過敏原檢測作為診斷工具（偽陽性率極高，目前無可靠的血清學診斷方法）',
@@ -532,10 +569,11 @@ AFR 整體預後不錯：
   ],
   drug_api_links: ['Oclacitinib', 'Prednisolone'],
   references: [
-    { type: 'guideline', citation: 'Mueller RS, Olivry T, Prelaud P. Critically appraised topic on adverse food reactions of companion animals (2): common food allergen sources in dogs and cats. BMC Vet Res. 2016;12:9.', relevance: '犬貓常見食物過敏原系統性回顧' },
-    { type: 'journal', citation: 'Olivry T, Mueller RS, Prelaud P. Critically appraised topic on adverse food reactions of companion animals (1): duration of elimination diets. BMC Vet Res. 2015;11:225.', relevance: '排除飲食試驗最佳持續時間的證據' },
+    { type: 'guideline', citation: 'Mueller RS, Olivry T, Prélaud P. Critically appraised topic on adverse food reactions of companion animals (2): common food allergen sources in dogs and cats. BMC Vet Res. 2016;12:9. doi:10.1186/s12917-016-0633-8.', relevance: '犬貓常見食物過敏原系統性回顧' },
+    { type: 'guideline', citation: 'Olivry T, Mueller RS, Prélaud P. Critically appraised topic on adverse food reactions of companion animals (1): duration of elimination diets. BMC Vet Res. 2015;11:225. doi:10.1186/s12917-015-0541-3.', relevance: '排除飲食試驗最佳持續時間的證據' },
+    { type: 'guideline', citation: 'Mueller RS, Olivry T. Critically appraised topic on adverse food reactions of companion animals (4): can we diagnose adverse food reactions in dogs and cats with in vivo or in vitro tests? BMC Vet Res. 2017;13:275. doi:10.1186/s12917-017-1142-0.', relevance: '食物過敏體內/體外檢測診斷價值（血清檢測不可靠）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '食物不良反應完整章節' },
-    { type: 'journal', citation: 'Mueller RS, Unterer S. Adverse food reactions: pathogenesis, clinical signs, diagnosis and alternatives to elimination diets. Vet J. 2018;236:89-95.', relevance: 'AFR 病理機轉與診斷方法綜述' },
+    { type: 'journal', citation: 'Mueller RS, Unterer S. Adverse food reactions: pathogenesis, clinical signs, diagnosis and alternatives to elimination diets. Vet J. 2018;236:89-95. doi:10.1016/j.tvjl.2018.04.014.', relevance: 'AFR 病理機轉與診斷方法綜述' },
   ],
   is_current: true,
   created_at: now,
@@ -545,7 +583,7 @@ AFR 整體預後不錯：
 const contentFAD: NodeContent = {
   id: 'CONTENT-DERM-L3-003',
   node_id: 'DERM-L3-003',
-  version: 1,
+  version: 2,
   summary: '跳蚤過敏性皮膚炎（Flea Allergy Dermatitis, FAD）是全球犬貓最常見的過敏性皮膚病。台灣亞熱帶，全年都暖暖潮潮，跳蚤根本不分季節。FAD 的本質是對跳蚤唾液裡的抗原（特別是半抗原 hapten）跑出 IgE 介導跟遲發型細胞介導的混合反應。被一隻跳蚤咬一口，過敏犬就會癢到不行。診斷主要靠臨床表現加上嚴格跳蚤控制後的反應來判斷。治療核心就是全年不斷的 isoxazoline 殺蚤劑，家裡所有動物都要一起跑。',
   learning_objectives: [
     '描述 FAD 的免疫病理機轉（IgE 介導 + 遲發型過敏）',
@@ -658,7 +696,16 @@ FAD 預後超好，是所有過敏性皮膚病裡面最容易控制的：
 | Isoxazoline 類藥物對跳蚤的殺滅速度是否足以防止致敏叮咬 | 殺蚤需 4-8 小時，此期間跳蚤已完成吸血與唾液注入 | Level II |
 | Fipronil 在亞熱帶地區的抗藥性程度 | 台灣、東南亞 fipronil 抗藥性報告增加，但系統性調查不足 | Level III |
 | FAD 犬是否需要額外的免疫調節治療（除跳蚤控制外） | 嚴格跳蚤控制後部分犬仍有殘餘搔癢，可能需短期 oclacitinib | Level III |
-| 環境跳蚤蛹對所有殺蟲劑的天然抗性 | 蛹繭可存活數月，是跳蚤根除的最大障礙，目前無有效殺蛹劑 | Level II |`,
+| 環境跳蚤蛹對所有殺蟲劑的天然抗性 | 蛹繭可存活數月，是跳蚤根除的最大障礙，目前無有效殺蛹劑 | Level II |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+- **Isoxazoline 時代重塑 FAD 管理**：fluralaner/afoxolaner/sarolaner/lotilaner 口服長效殺蚤劑（1-3 個月）大幅提升投藥順從性；Rohdich（2014）RCT 顯示 fluralaner 殺蚤優於 fipronil，Dryden（2015/2016）真實居家研究證實 isoxazoline 能有效壓低跳蚤族群、減少搔癢與皮膚病灶。〔Evidence Level I-II〕
+- **殺蚤速度 vs 致敏叮咬的爭議**：isoxazoline 多在數小時內殺蚤，但叮咬當下唾液抗原已注入；對高度致敏個體單靠殺蚤可能仍有殘餘搔癢，需合併環境控制與短期止癢。〔Evidence Level II〕
+- **抗藥性監測**：fipronil/pyrethroid 抗藥性報告增加（尤其亞熱帶）；isoxazoline 目前尚無明確的臨床抗藥性證據，但仍需持續監測。〔Evidence Level III〕
+- **全年防治與環境整合（亞熱帶重點）**：台灣等亞熱帶氣候跳蚤全年活躍，預防不可季節性中斷；環境未成熟期（卵/幼蟲/蛹）占族群 ~95%、蛹繭對殺蟲劑高度抗性，故須宿主＋環境＋全同居動物的整合防治。〔Evidence Level II〕
+
+> ⚠️ 上述更新（特別是殺蚤速度與致敏的關係、抗藥性趨勢）仍待 DVM 依個案與當地流行病學覆核後採用。`,
   clinical_pearl: '在台灣，「我的狗從來不出門所以不會有跳蚤」這句話是最常聽到的飼主迷思。跳蚤可以透過人的衣服、訪客、其他動物帶進室內。就算純室內犬，也應該全年用 isoxazoline 預防。診斷 FAD 最可靠的方法就是「治療性診斷」，給 isoxazoline 嚴格控制 4-8 週，看反應就知道了。',
   common_mistakes: [
     '因為沒有看到跳蚤或跳蚤糞便就排除 FAD（過敏犬過度搔抓會移除跳蚤）',
@@ -704,8 +751,10 @@ FAD 預後超好，是所有過敏性皮膚病裡面最容易控制的：
   drug_api_links: ['Fluralaner', 'Afoxolaner', 'Sarolaner', 'Oclacitinib', 'Prednisolone'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: 'FAD 完整章節與跳蚤生物學' },
-    { type: 'guideline', citation: 'Dryden MW, Hodgkins E. Vector-borne diseases in pets: the stealth health threat. Compend Contin Educ Vet. 2010;32(6):E1-4.', relevance: '跳蚤控制策略指引' },
-    { type: 'journal', citation: 'Rohdich N et al. A randomized, blinded, controlled and multi-centered field study comparing the efficacy and safety of Bravecto (fluralaner) against Frontline (fipronil) in flea- and tick-infested dogs. Parasit Vectors. 2014;7:83.', relevance: 'Isoxazoline vs fipronil 殺蚤效果比較' },
+    { type: 'journal', citation: 'Carlotti DN, Jacobs DE. Therapy, control and prevention of flea allergy dermatitis in dogs and cats. Vet Dermatol. 2000;11(2):83-98. doi:10.1046/j.1365-3164.2000.00204.x', relevance: 'FAD 治療、控制與預防的經典回顧' },
+    { type: 'journal', citation: 'Rohdich N, Roepke RKA, Zschiesche E. A randomized, blinded, controlled and multi-centered field study comparing the efficacy and safety of Bravecto (fluralaner) against Frontline (fipronil) in flea- and tick-infested dogs. Parasit Vectors. 2014;7:83. doi:10.1186/1756-3305-7-83', relevance: 'Isoxazoline vs fipronil 殺蚤效果 RCT 比較' },
+    { type: 'journal', citation: 'Dryden MW, Canfield MS, Kalosy K, et al. Evaluation of fluralaner and afoxolaner treatments to control flea populations, reduce pruritus and minimize dermatologic lesions in naturally infested dogs in private residences in west central Florida USA. Parasit Vectors. 2016;9:365. doi:10.1186/s13071-016-1654-7', relevance: 'Isoxazoline 真實居家防蚤、減少搔癢與病灶實證' },
+    { type: 'journal', citation: 'Dryden MW, Smith V, Chwala M, et al. Evaluation of afoxolaner chewables to control flea populations in naturally infested dogs in private residences in Tampa FL, USA. Parasit Vectors. 2015;8:286. doi:10.1186/s13071-015-0897-z', relevance: 'Afoxolaner 居家跳蚤族群控制田野研究' },
   ],
   is_current: true,
   created_at: now,
@@ -905,7 +954,7 @@ Isoxazolines 避開 amitraz 的 α2 副作用（心搏過緩、鎮靜、低血�
 const contentPyoderma: NodeContent = {
   id: 'CONTENT-DERM-L3-005',
   node_id: 'DERM-L3-005',
-  version: 1,
+  version: 2,
   summary: '細菌性膿皮症是犬最常見的皮膚感染，主要病原是 Staphylococcus pseudintermedius。依深度分成表層（表面膿皮症）、淺層（表皮內膿皮症）跟深層（毛囊跟真皮膿皮症）。膿皮症幾乎都是繼發於別的潛在病因（過敏、內分泌疾病、蠕形蟎症），找出並處理潛在病因才是防止復發的關鍵。甲氧西林抗藥性 S. pseudintermedius（MRSP）越來越多，所以該培養還是要培養，依藥敏選藥這件事不能省。',
   learning_objectives: [
     '依深度分類表層、淺層與深層膿皮症並辨識各自的典型病灶',
@@ -991,7 +1040,7 @@ const contentPyoderma: NodeContent = {
 - 表層膿皮症：優先外用治療（chlorhexidine 3-4% 洗劑或噴劑加上 mupirocin / fusidic acid 局部塗抹），中度以上才用全身性抗生素。
 - 深層膿皮症：一定要用全身性抗生素 4-6 週以上，加上外用輔助。
 - 何時送培養：深層膿皮症、反覆膿皮症（一年 3 次以上）、之前抗生素治療失敗的時候。
-- MRSP 處理：依藥敏結果選藥（常用 chloramphenicol、doxycycline、rifampicin 合併治療）。
+- MRSP 處理：**嚴格依藥敏選藥**（mecA 對所有 β-lactam 抗藥）；常用 chloramphenicol，doxycycline 僅在藥敏敏感時；**rifampicin 不可單用**（須合併並監測肝毒性）；避免氟喹諾酮單壓。
 
 ## 五、預後與預後因子 (Prognosis)
 
@@ -1018,7 +1067,15 @@ const contentPyoderma: NodeContent = {
 | 淺層膿皮症經驗性 vs 培養導引抗生素選擇 | MRSP 盛行率升高（台灣 ~15-30%）使經驗性治療風險增加 | Level II |
 | 淺層膿皮症是否可僅用局部治療（藥浴）而不用全身性抗生素 | 輕度/局部病灶局部治療可能足夠，但比較研究有限 | Level III |
 | 抗生素療程的最佳持續時間 | 傳統「臨床痊癒後再延長 7-21 天」vs 更短療程的可行性 | Level III |
-| 反覆膿皮症是否需每次都做培養 | 資源與成本考量 vs 抗藥性風險，目前建議至少第二次復發時培養 | Level III |`,
+| 反覆膿皮症是否需每次都做培養 | 資源與成本考量 vs 抗藥性風險，目前建議至少第二次復發時培養 | Level III |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+1. **局部治療優先＋抗菌管理（ISCAID/WAVD）**：表面/淺層膿皮症以外用（chlorhexidine 2-4% ± mupirocin/fusidic acid）為一線，可單獨控制並減少全身抗生素；全身性僅限外用不足或深層。
+2. **MRSP 上升**：經驗性全身抗生素風險增加 → 培養導向；MRSP 對所有 β-lactam 抗藥（mecA），須嚴格依藥敏；rifampicin 不可單用（肝毒性）、doxycycline 僅敏感時、避免氟喹諾酮單壓。
+3. **潛在病因控制為防復發核心**：反覆膿皮症必查並控制過敏/內分泌等根本原因，非僅抗生素。
+4. **療程個別化**：傳統「臨床痊癒後再 7-21 天」之最短療程仍在研究；外用輔助可能縮短全身療程。
+> 抗生素選擇、療程與外用方案須由獸醫依細胞學/培養藥敏與抗菌管理原則決定。`,
   clinical_pearl: '表皮脫屑環（epidermal collarette）是淺層膿皮症最具特徵性的病灶。環形鱗屑邊緣往中心翻起，中央是色素沉著或輕微紅斑。看到這個就應該做皮膚細胞學。記住：膿皮症是「果」不是「因」，每一個反覆膿皮症的病例都要回頭翻根本原因。',
   common_mistakes: [
     '僅治療膿皮症而不排查潛在病因（導致反覆復發）',
@@ -1063,8 +1120,9 @@ const contentPyoderma: NodeContent = {
   ],
   drug_api_links: ['Cephalexin', 'Amoxicillin-clavulanate', 'Chlorhexidine'],
   references: [
-    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: '犬表層膿皮症診斷與抗菌治療指引' },
-    { type: 'journal', citation: 'Loeffler A, Lloyd DH. What has changed in canine pyoderma? A narrative review. Vet J. 2018;235:73-82.', relevance: '犬膿皮症進展回顧與 MRSP 現況' },
+    { type: 'guideline', citation: 'Hillier A, Lloyd DH, Weese JS, et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (Antimicrobial Guidelines Working Group of the International Society for Companion Animal Infectious Diseases). Vet Dermatol. 2014;25(3):163-e43. doi:10.1111/vde.12118.', relevance: 'ISCAID 犬表層膿皮症診斷與抗菌治療指引' },
+    { type: 'journal', citation: 'Loeffler A, Lloyd DH. What has changed in canine pyoderma? A narrative review. Vet J. 2018;235:73-82. doi:10.1016/j.tvjl.2018.04.002.', relevance: '犬膿皮症進展回顧與 MRSP 現況' },
+    { type: 'journal', citation: 'Bannoehr J, Guardabassi L. Staphylococcus pseudintermedius in the dog: taxonomy, diagnostics, ecology, epidemiology and pathogenicity. Vet Dermatol. 2012;23(4):253-e52. doi:10.1111/j.1365-3164.2012.01046.x.', relevance: 'S. pseudintermedius 與 MRSP 病原學' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '膿皮症完整分類與治療章節' },
   ],
   is_current: true,
@@ -2542,7 +2600,7 @@ Exogen（脫落期）：
     { type: 'journal', citation: 'Diaz SF, Torres SM, Dunstan RW, Jessen C. "The effect of body region on the canine hair cycle as defined by unit area trichogram." Vet Dermatol. 2004;15(4):225-229.', relevance: '犬不同體表區域毛髮週期差異的定量研究' },
     { type: 'journal', citation: 'Frank LA. "Comparative Dermatology -- Canine Endocrine Dermatoses." Clin Dermatol. 2006;24(4):317-325.', relevance: '犬內分泌脫毛的毛髮週期病理' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017. Chapter 9: Endocrine and Metabolic Diseases.', relevance: '毛髮週期異常與內分泌疾病的臨床對照' },
-    { type: 'guideline', citation: 'Cerundolo R, Lloyd DH, Persechino A, et al. "Treatment of canine Alopecia X with trilostane." Vet Dermatol. 2004;15(5):285-293. Referenced in ACVD consensus on alopecic disorders.', relevance: 'Alopecia X 毛髮週期障礙的治療共識與臨床指引' },
+    { type: 'journal', citation: 'Cerundolo R, Lloyd DH, Persechino A, et al. Treatment of canine Alopecia X with trilostane. Vet Dermatol. 2004;15(5):285-293. doi:10.1111/j.1365-3164.2004.00403.x.', relevance: 'Alopecia X 以 trilostane 治療之臨床研究' },
   ],
   is_current: true,
   created_at: now,
@@ -2552,7 +2610,7 @@ Exogen（脫落期）：
 const contentAllergyMechanism: NodeContent = {
   id: 'CONTENT-DERM-L2-001',
   node_id: 'DERM-L2-001',
-  version: 1,
+  version: 2,
   summary: '過敏反應機轉是獸醫皮膚科最核心的病理基礎。犬貓過敏性皮膚病主要走四型過敏反應裡的 Type I（IgE 介導即時型）跟 Type IV（T 細胞介導遲發型）。過敏原穿透受損的皮膚屏障後，被朗格漢斯細胞抓到，呈現給 T 細胞。在 Th2 偏移的免疫環境下，B 細胞做 IgE class switch，產生的 allergen-specific IgE 結上肥大細胞的 FcεRI。下次再暴露時肥大細胞脫顆粒，搔癢跟發炎就跑出來。慢性期 Th1/Th17 加進來，皮膚就跑苔蘚化。',
   learning_objectives: [
     '描述 Type I 過敏反應從致敏到效應的完整路徑',
@@ -2653,7 +2711,21 @@ const contentAllergyMechanism: NodeContent = {
 |---------|------|---------------|
 | 犬 AD 的「由外而內」vs「由內而外」致病假說 | 屏障缺陷先導致致敏，或免疫異常先導致屏障損傷，因果順序未定論 | Level III |
 | 犬 ASIT 的最佳過敏原數量與配方 | 過敏原數量過多可能稀釋有效成分，但選擇標準不一致 | Level III |
-| JAK-STAT 路徑不同亞型（JAK1/2/3, TYK2）在犬 AD 中的相對重要性 | Oclacitinib 以 JAK1 為主，其他 JAK 亞型的角色研究不足 | Level IV |`,
+| JAK-STAT 路徑不同亞型（JAK1/2/3, TYK2）在犬 AD 中的相對重要性 | Oclacitinib 以 JAK1 為主，其他 JAK 亞型的角色研究不足 | Level IV |
+
+## 五、近期實證更新 (Recent Evidence Updates)
+
+### 機轉直通標靶藥：抗 IL-31 與 JAK 抑制劑
+過敏機轉的解明直接催生標靶藥：抗 IL-31 單株抗體 lokivetmab（Michels 2016 RCT）純止癢、副作用低；JAK1 抑制劑 oclacitinib 同時阻斷 IL-31 與 IL-4/IL-13（止癢+抗炎）；新一代 JAK-i ilunocitinib（Zenrelia）擴大選擇。皆對應前述 JAK-STAT 路徑。
+
+### 屏障假說與「由外而內」治療
+經皮致敏（filaggrin/ceramide 缺陷）理論支持屏障修復（保濕、必需脂肪酸、ceramide）為 CAD 多模式基礎（Marsella 2009）；ICADA 2015 治療架構（Olivry 2015）整合避敏、止癢、抗炎、屏障與感染控制。
+
+### 下一代標靶：抗 OX40L 等
+人醫抗 OX40L（amlitelimab）等阻斷 T 細胞共刺激的生物製劑在 AD 臨床試驗顯效，獸醫犬版探索中；過敏機轉研究持續開啟新標靶。
+
+### 過敏原免疫療法（ASIT）與精準診斷
+成分解析診斷（CRD）與舌下/皮下 ASIT 朝個體化發展；ASIT 是少數能改變過敏自然病程（誘導耐受）的治療，與止癢/抗炎對症並行。`,
   clinical_pearl: '理解 JAK-STAT 路徑就是理解現代皮膚科靶向治療的關鍵。Oclacitinib 抑制 JAK1，同時阻斷 IL-31（止癢）跟 IL-4/IL-13（抗炎），這就是為什麼它 4-24 小時內就能止癢。Lokivetmab 只阻斷 IL-31，純止癢但不影響其他免疫路徑，副作用最少。Cyclosporine 則是直接抑制 T 細胞活化，起效慢（4-6 週）但免疫調節效果全面。',
   common_mistakes: [
     '混淆致敏階段（首次暴露，無症狀）與效應階段（再次暴露，出現症狀）',
@@ -2674,9 +2746,10 @@ const contentAllergyMechanism: NodeContent = {
   drug_api_links: ['Oclacitinib', 'Lokivetmab', 'Cyclosporine'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 8: Allergic Skin Diseases.", relevance: '過敏反應機轉與過敏性皮膚病' },
-    { type: 'journal', citation: 'Gonzales AJ et al. Interleukin-31: its role in canine pruritus and naturally occurring canine atopic dermatitis. Vet Dermatol. 2013;24(1):48-e12.', relevance: 'IL-31 在犬瘙癢中的角色' },
-    { type: 'journal', citation: 'Marsella R et al. Current understanding of the role of the skin barrier in atopic dermatitis. Ann Allergy Asthma Immunol. 2013;110:S5-S8.', relevance: '皮膚屏障與經皮致敏' },
-    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from ICADA. BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 治療指引中的機轉基礎' },
+    { type: 'journal', citation: 'Gonzales AJ, Humphrey WR, Messamore JE, et al. Interleukin-31: its role in canine pruritus and naturally occurring canine atopic dermatitis. Vet Dermatol. 2013;24(1):48-e12. doi:10.1111/j.1365-3164.2012.01098.x.', relevance: 'IL-31 在犬瘙癢中的角色（lokivetmab 標靶依據）' },
+    { type: 'journal', citation: 'Marsella R, Olivry T, Carlotti DN. Unravelling the skin barrier: a new paradigm for atopic dermatitis and beyond? Vet Dermatol. 2009;20(5-6):533-540. doi:10.1111/j.1365-3164.2009.00809.x.', relevance: '皮膚屏障缺陷與經皮致敏（異位性皮膚炎新典範）' },
+    { type: 'guideline', citation: 'Olivry T, DeBoer DJ, Favrot C, et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Res. 2015;11:210. doi:10.1186/s12917-015-0514-6.', relevance: 'ICADA 2015 治療指引（機轉對應之多模式治療）' },
+    { type: 'journal', citation: 'Michels GM, Ramsey DS, Walsh KF, et al. A blinded, randomized, placebo-controlled, dose determination trial of lokivetmab (a caninized anti-canine IL-31 monoclonal antibody) in client-owned dogs with atopic dermatitis. Vet Dermatol. 2016;27(6):478-e129. doi:10.1111/vde.12376.', relevance: 'lokivetmab（抗 IL-31）犬 AD 之關鍵 RCT' },
   ],
   is_current: true,
   created_at: now,
@@ -2956,7 +3029,7 @@ const contentAutoimmuneMechanism: NodeContent = {
 const contentDermHistory: NodeContent = {
   id: 'CONTENT-DERM-L4-001',
   node_id: 'DERM-L4-001',
-  version: 1,
+  version: 2,
   summary: '皮膚科病史採集跟身體檢查是所有皮膚病診斷的起點，也是最重要的一步。系統性的皮膚科病史要包含發病年齡、病程多長、有沒有季節性、搔癢程度（PVAS 評分）、病灶分佈、用藥反應、飲食史、跳蚤預防史，還有家裡其他動物或人有沒有症狀。皮膚科理學檢查要辨識原發性病灶（丘疹、膿皰、水泡）跟繼發性病灶（表皮脫屑環、苔蘚化、色素沉著），記錄分佈模式來建立鑑別診斷清單。',
   learning_objectives: [
     '執行系統性皮膚科病史採集並辨識關鍵診斷線索',
@@ -3049,11 +3122,21 @@ const contentDermHistory: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+皮膚科推理依序整合：
+1. **病史三關鍵**：發病年齡（<1 歲蠕形蟎/癬菌；1-3 歲 CAD；>6 歲內分泌/腫瘤）、季節性（季節→環境過敏；全年→食物/疥蟎）、瘙癢 vs 病灶孰先（先癢→過敏；先病灶→感染/自體免疫）。
+2. **病灶解析**：優先辨識「原發性病灶」（診斷價值最高）；繼發性病灶（苔蘚化/色素沉著）常掩蓋原發，須找活動性邊緣。
+3. **分佈定位**：依特徵分佈縮小鑑別（面部/腋下/指間→CAD；腰背/尾根→FAD；耳緣/肘→疥蟎；對稱非癢脫毛→內分泌）。
+4. **類固醇反應**：CAD 通常有效、疥蟎/天疱瘡反應差，可作初步分流線索。
+> 病史＋理學僅「建立並排序鑑別」；確診仍須基本檢查（刮搔/細胞學/毛鏡）與必要試驗（排除飲食、疥蟎治療試驗）。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+1. **跳過基本檢查直接經驗治療**：刮搔＋細胞學為每次皮膚科就診最低標準，不可略過。
+2. **只看繼發病灶**：苔蘚化/色素沉著無特異性，須找原發病灶（丘疹/膿皰/脫屑環）。
+3. **長毛遮蔽病灶**：須撥開被毛檢查皮膚表面，否則漏判。
+4. **疥蟎刮搔偽陰性**：Sarcoptes 刮搔敏感度僅約 50%，高度懷疑時應做治療試驗（勿因刮搔陰性排除）。
+5. **以過敏原檢測「診斷」CAD**：血清 IgE／皮內試驗用於選 ASIT 配方，非診斷工具；CAD 為排除性診斷。
+6. **飼主主訴「癢」不精確**：須具體問搔抓/舔咬/磨蹭/搖頭行為與 PVAS 分數。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3068,7 +3151,15 @@ const contentDermHistory: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬過敏原特異性 IgE 檢測（血清 vs 皮膚點刺）的一致性 | 兩種方法結果不一致率高達 30-40% | Level II |
-| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |`,
+| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+1. **CAD 為排除性臨床診斷（ICADA, Hensel 2015）**：須先排除外寄生蟲、感染與食物不良反應；Favrot 標準（2010，~85% 敏感／79% 特異）為「輔助」而非確診工具。
+2. **標準化評分**：PVAS（搔癢，Rybníček 2009 驗證）+ CADESI-4（病灶）作為療效追蹤的客觀指標。
+3. **過敏原檢測定位**：血清 IgE 與皮內試驗用於「選 ASIT 配方」，非用於診斷 CAD（兩法一致性僅約 60-70%）。
+4. **新興工具**：皮膚鏡（dermoscopy）、NGS 微生物體鑑定研究增加，臨床落地中。
+> 皮膚科診斷以系統性病史＋理學＋基本檢查（刮搔/細胞學）為核心；過敏診斷須排除其他病因後由獸醫綜合判斷。`,
   clinical_pearl: '病史中最有價值的三個問題：第一，發病年齡。1-3 歲發病高度提示 CAD。第二，搔癢先還是病灶先？過敏先癢再破皮，感染或自體免疫先長病灶再癢。第三，對類固醇的反應如何？過敏通常有效，疥蟎跟天疱瘡反應差。這三題的答案可以讓你還沒摸到動物就先把一半的鑑別診斷砍掉。',
   common_mistakes: [
     '病史採集不夠系統化，遺漏關鍵資訊（跳蚤預防史、飲食成分）',
@@ -3121,9 +3212,10 @@ const contentDermHistory: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Diagnostic Methods.", relevance: '皮膚科診斷方法學完整章節' },
-    { type: 'journal', citation: 'Favrot C et al. A prospective study on the clinical features of chronic canine atopic dermatitis and its diagnosis. Vet Dermatol. 2010;21(1):23-31.', relevance: 'Favrot 診斷標準與病史評估' },
+    { type: 'journal', citation: 'Favrot C, Steffan J, Seewald W, Picco F. A prospective study on the clinical features of chronic canine atopic dermatitis and its diagnosis. Vet Dermatol. 2010;21(1):23-31. doi:10.1111/j.1365-3164.2009.00758.x.', relevance: 'Favrot 診斷標準與病史評估' },
+    { type: 'journal', citation: 'Rybníček J, Lau-Gillard PJ, Harvey R, Hill PB. Further validation of a pruritus severity scale for use in dogs. Vet Dermatol. 2009;20(2):115-122. doi:10.1111/j.1365-3164.2008.00728.x.', relevance: 'PVAS 搔癢評分量表驗證' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017.', relevance: '皮膚病灶辨識彩色圖譜' },
-    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 指引中皮膚病史採集與臨床診斷標準' },
+    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196. doi:10.1186/s12917-015-0515-5.', relevance: 'ICADA 指引中皮膚病史採集與臨床診斷標準' },
   ],
   is_current: true,
   created_at: now,
@@ -3133,7 +3225,7 @@ const contentDermHistory: NodeContent = {
 const contentCytology: NodeContent = {
   id: 'CONTENT-DERM-L4-003',
   node_id: 'DERM-L4-003',
-  version: 1,
+  version: 2,
   summary: '皮膚細胞學是獸醫皮膚科最重要也最實用的快速診斷工具。透過膠帶壓貼法（tape impression）、直接抹片（direct impression smear）或膿皰穿刺（pustule aspirate），幾分鐘內就可以鑑定細菌（球菌或桿菌）、馬拉色菌酵母菌、棘層鬆解細胞（天疱瘡）跟蠕形蟎。Diff-Quik 快速染色是標準做法。判讀重點：退化性嗜中性球裡面有吞噬球菌就是膿皮症；花生形酵母菌就是馬拉色菌；圓形深染角質細胞被嗜中性球圍繞就是天疱瘡。',
   learning_objectives: [
     '選擇適當的皮膚細胞學取樣方法（膠帶壓貼、直接抹片、膿皰穿刺）',
@@ -3156,7 +3248,7 @@ const contentCytology: NodeContent = {
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
-
+皮膚細胞學是皮膚科最高性價比的第一線檢查：幾分鐘內就能分辨細菌（球菌/桿菌）、馬拉色菌、棘層鬆解細胞與發炎型態，直接指導治療。
 
 ### 取樣方法
 ### 膠帶壓貼法（Tape Impression Cytology）
@@ -3220,7 +3312,12 @@ const contentCytology: NodeContent = {
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **染色過淡看不清微生物**：Diff-Quik 各缸浸泡次數不足，球菌/酵母菌染不出來；務必確保固定與染色步驟到位，必要時重染。
+- **取樣部位不對**：膠帶壓貼要選油脂最多的皺褶、指間；膿皰穿刺要選**完整未破裂**的膿皰——選錯位置直接拉低敏感度。
+- **角化碎片誤判為棘層鬆解細胞**：棘層鬆解細胞邊緣圓整、胞質深染並常被非退化嗜中性球圍繞；角化碎片邊緣不規則、無此排列——誤判會把單純膿皮症錯當天疱瘡。
+- **漏看合併感染**：膿皮症與馬拉色菌常並存，兩者都要逐項評估，不能看到球菌就停手。
+- **抹片太厚無法判讀**：檢體過厚使細胞重疊、油鏡對焦困難；抹片要夠薄、單層。
+- **只用低倍鏡找微生物**：細菌與酵母菌必須在 100x 油浸鏡下辨識，低倍鏡會漏。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3236,7 +3333,16 @@ const contentCytology: NodeContent = {
 |---------|------|---------------|
 | 馬拉色菌「有臨床意義」的 HPF 計數閾值是否因犬種/取樣部位而異 | 目前 ≥ 2-3/HPF 為通則，但短頭種犬皺褶區正常值可能更高 | Level III |
 | 膠帶壓貼法 vs 直接抹片的診斷敏感度比較 | 膠帶法更便利但某些病灶直接抹片可能更敏感，缺乏系統比較 | Level III |
-| 細胞學能否可靠區分 MRSP vs MSSP 感染 | 形態學無法區分抗藥性菌株，需培養確認；何時應啟動培養的標準不一 | Level II |`,
+| 細胞學能否可靠區分 MRSP vs MSSP 感染 | 形態學無法區分抗藥性菌株，需培養確認；何時應啟動培養的標準不一 | Level II |
+
+## 六、近期實證更新 (Recent Evidence)
+
+- **半定量計數要看「可重複性」**：膠帶壓貼細胞學對 Malassezia 的半定量鏡檢，其觀察者間/內可重複性與再現性已被系統評估（Tapes 2022）——存在一定變異。故 ≥2-3/HPF 的閾值宜視為輔助判斷而非絕對切點，趨勢追蹤最好由同一觀察者、同一方法進行。
+- **AI 輔助判讀仍屬早期、驗證有限**：深度學習自動計數球菌/酵母菌/棘層鬆解細胞的模型開始出現，理論上可降低觀察者間變異；但**獸醫皮膚科的驗證仍有限**，異常與疑難檢體仍須人工/病理醫師確認——現階段為輔助非取代（呼應臨床病理總覽）。
+- **形態學無法分辨抗藥性、MRSP 要靠培養**：細胞學能確認「有沒有感染、是球菌還桿菌」，但**無法區分 MRSP vs MSSP**；在 MRSP 盛行的當下，反覆發作或經驗治療失敗的膿皮症應及早送細菌培養＋藥敏（ISCAID/Hillier 2014）。
+- **細胞學是抗菌藥物管理（AMS）的第一步**：先以細胞學確認真有感染、是何種微生物，再決定是否與如何用藥；表淺/表面膿皮症日益傾向局部（topical）優先，是減少不必要全身性抗生素、延緩抗藥性的關鍵（呼應抗菌藥物管理節點）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '分辨膿皮症跟天疱瘡的細胞學判讀，是每位獸醫的必備技能。記三個關鍵字：膿皮症等於「退化嗜中性球加細菌」；天疱瘡等於「棘層鬆解細胞加沒細菌」。在看起來像膿皮症的病灶做了細胞學，看到大量圓形游離角質細胞被嗜中性球圍繞卻找不到任何細菌，馬上想到天疱瘡，安排皮膚切片確診。',
   common_mistakes: [
     '不做細胞學就開始治療膿皮症（可能誤診天疱瘡或忽略合併馬拉色菌）',
@@ -3291,9 +3397,10 @@ const contentCytology: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Diagnostic Methods.", relevance: '皮膚細胞學技術與判讀' },
-    { type: 'guideline', citation: 'Hillier A et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (AAHA/AAVD). Vet Dermatol. 2014;25(3):163-e43.', relevance: 'AAHA/AAVD 指引中細胞學在膿皮症診斷中的角色' },
+    { type: 'guideline', citation: 'Hillier A, Lloyd DH, Weese JS, Blondeau JM, et al. "Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (Antimicrobial Guidelines Working Group of the International Society for Companion Animal Infectious Diseases)." Vet Dermatol. 2014;25(3):163-e43. doi:10.1111/vde.12118', relevance: 'ISCAID 膿皮症診療指引（細胞學確認感染、抗藥性靠培養）；修正 v1 誤標 AAHA/AAVD' },
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '獸醫細胞學判讀圖譜' },
-    { type: 'journal', citation: 'Saridomichelakis MN et al. An update on the role of cytology in the diagnosis of canine and feline skin diseases. Vet Dermatol. 2017;28(5):457-e108.', relevance: '犬貓皮膚細胞學診斷角色的最新回顧' },
+    { type: 'textbook', citation: 'Albanese F. Canine and Feline Skin Cytology: A Comprehensive and Illustrated Guide to the Interpretation of Skin Lesions via Cytological Examination. Springer, 2017.', relevance: '犬貓皮膚細胞學判讀綜合圖譜教材（取代 v1 一條 Crossref 查無的「Saridomichelakis 皮膚細胞學回顧」捏造引用）' },
+    { type: 'journal', citation: 'Tapes D, Skampardonis V, Chatzis MK, Apostolidis K. "Repeatability and reproducibility of microscopic examination of adhesive tape strip cytology slides for the quantification of Malassezia spp. in canine skin." Vet Dermatol. 2022;33(4):305-e85. doi:10.1111/vde.13076', relevance: '膠帶壓貼 Malassezia 半定量的可重複性研究（閾值宜為輔助判斷）' },
   ],
   is_current: true,
   created_at: now,
@@ -3303,7 +3410,7 @@ const contentCytology: NodeContent = {
 const contentOtoscopy: NodeContent = {
   id: 'CONTENT-DERM-L4-004',
   node_id: 'DERM-L4-004',
-  version: 1,
+  version: 2,
   summary: '耳鏡檢查（otoscopy）跟耳道細胞學，是外耳炎診斷跟管理的兩大基石。耳鏡檢查評估耳道紅腫程度、分泌物性質、增生或狹窄程度，還有鼓膜完整性。耳道細胞學（棉棒取樣、Diff-Quik 染色、油浸鏡看）可以鑑定感染微生物類型（球菌、桿菌、馬拉色菌）跟發炎程度。兩個合起來用就可以指導耳用藥物選擇。Video otoscopy 提供更清晰的影像，還可以做耳道灌洗跟異物取出。',
   learning_objectives: [
     '正確執行手持耳鏡檢查並評估耳道與鼓膜',
@@ -3320,6 +3427,8 @@ const contentOtoscopy: NodeContent = {
     '鼓膜破裂時禁用耳毒性藥物：aminoglycosides、chlorhexidine、cetrimide',
     'Video otoscopy 優勢：放大影像、記錄、可執行耳道灌洗與異物取出',
     '慢性外耳炎需評估持續因素：耳道增生、狹窄、礦化 → 可能需要 CT 評估中耳',
+    '發炎細胞（退化性嗜中性球）+ 胞內菌 = 活動性感染（非定植），治療要更積極、桿菌型加培養',
+    '復發性外耳炎幾乎都是「原發因素（過敏）沒控制」——外耳炎是症狀不是診斷（Nuttall 2023）',
   ],
   body: `# 耳鏡檢查與耳道細胞學
 
@@ -3399,26 +3508,56 @@ const contentOtoscopy: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+耳道細胞學判讀的核心，是「分清楚正常耵聹 vs 感染、球菌 vs 桿菌、有沒有發炎細胞」：
+
+- **先看背景**：正常耳道塗片是少量角質細胞＋稀疏耵聹脂質，菌量極少。大量角質＋脂質本身 ≠ 感染。
+- **球菌 vs 桿菌要分開報**：
+  - 球菌（多為 *Staphylococcus pseudintermedius*）：成對/成串圓菌，>5/HPF 才有意義；常見於過敏底的續發感染。
+  - **桿菌＝紅旗（門檻比球菌低）**：耳道內出現明顯桿菌就要當真，尤其配上發炎細胞、慢性/復發、黃綠膿惡臭潰瘍時，幾乎都指向 *Pseudomonas aeruginosa*——這類強烈建議送培養藥敏。但判讀仍要綜合菌量、發炎細胞、病史與治療反應，不是「看到一隻桿菌就等於重病」。
+- **發炎細胞是「活動性感染」的關鍵**：看到大量退化性嗜中性球，特別是**胞內菌（intracellular bacteria）**，代表真正的活動性感染（不是單純定植），治療要更積極，桿菌型要考慮培養＋必要時系統性抗生素。
+- **馬拉色菌**：花生形/瓶形出芽酵母，>5/HPF 有意義；但數量要配臨床——油耳/垂耳品種正常耳本就可能有少量。
+- **耳蟎**：直接鏡檢/細胞學看到活動蟎蟲或蟲卵即確診，數量少也算（不是定植）。
+- **綜合判讀**：細胞學決定「用哪一類藥」，耳鏡決定「能不能用某些藥（鼓膜完整性）」，兩者缺一不可。桿菌型、反覆型、治療反應差的，細胞學之外一定要加培養。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **加熱固定融掉耵聹**：耳垢富含脂質，過度加熱固定會讓背景糊掉、菌看不清。耳道細胞學「風乾即可」，不必像血抹片那樣加熱固定。
+- **取樣太淺**：只刮到垂直段口可能漏掉水平段近鼓膜的真正病灶；棉棒要輕柔深入到水平段再旋轉取樣。
+- **過度解讀馬拉色菌/球菌**：少量在某些正常犬（油耳、垂耳品種）本就存在，要配臨床症狀，別一看到就當感染狂打藥。
+- **漏掉桿菌**：桿菌常較細、染色較淡，低倍快速掃過容易漏；任何膿性/惡臭耳一定要油浸鏡仔細找桿菌。
+- **沒評估鼓膜就用耳毒性藥**：腫到看不到鼓膜時先消腫（短期口服類固醇）再評估；確認前只用溫生理食鹽水。
+- **生物膜（biofilm）干擾**：*Pseudomonas* 慢性耳常有黏稠生物膜，會包覆細菌、降低抗生素穿透，也讓取樣量失真——清耳（Tris-EDTA ± 機械清洗）是看清楚與治療的前提。
+- **只做一次就定生死**：細胞學是「動態追蹤」工具，治療中要重複做，看菌量/發炎細胞有沒有下降，而不是只在初診做一次。
 
 ## 四、人醫借鑒 (Translational Insights)
 
-| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+| 人醫工具/概念 | 獸醫耳科應用 | 現況 |
 |-------------|-------------|------|
-| 皮膚鏡（dermoscopy） | 犬皮膚病灶非侵入性放大觀察 | 人醫標準工具，獸醫研究增加 |
-| 共聚焦顯微鏡（confocal microscopy） | 活體皮膚細胞學（不用組織切片） | 研究工具，臨床應用前 |
-| 次世代定序（NGS）微生物鑑定 | 犬皮膚感染病原精準鑑定 | 研究中，成本尚高 |
+| 耳內視鏡（otoendoscopy） | Video-otoscopy 已是犬慢性耳/中耳深層沖洗、取石、切片、myringotomy 的標準進階工具 | 轉診中心普及，影像可記錄追蹤 |
+| 鼓室圖（tympanometry） | 客觀評估鼓膜/中耳狀態，輔助判斷穿孔與積液 | 獸醫研究階段，臨床仍以耳鏡+影像為主 |
+| 生物膜（biofilm）概念 | 人慢性中耳炎的 biofilm 觀念直接套用犬 *Pseudomonas* 慢性耳：解釋抗藥與復發 | 已影響清耳/抗生素策略 |
+| 中耳影像（CT/MRI） | 評估中耳受累、骨質溶解、腫瘤，決定內科 vs 手術（TECA-LBO） | 已是末期耳病標準術前評估 |
 
 ## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬過敏原特異性 IgE 檢測（血清 vs 皮膚點刺）的一致性 | 兩種方法結果不一致率高達 30-40% | Level II |
-| 犬皮膚組織病理的品質與標準化 | 不同病理醫師間判讀一致性待改善 | Level III |`,
+| 細胞學閾值是否該因品種/個體調整 | Ginel 2002 的半定量閾值（球菌/馬拉色菌 >5/HPF）被廣用，但油耳/垂耳品種正常值可能偏高，閾值未個體化 | Level III |
+| 桿菌耳是否一律送培養 | 多數專家建議桿菌/*Pseudomonas* 疑似一律培養藥敏；但局部高濃度抗生素是否能突破培養 MIC、使 MIC 失去意義仍有爭議 | Level III |
+| 生物膜的常規偵測與處理 | 臨床上靠黏稠分泌物推測，缺乏標準化床邊偵測法；清耳是共識但最佳製劑/頻率未定 | Level IV |
+| Video-otoscopy vs CT 評估中耳 | CT 對骨質/中耳解析度佳；video-otoscopy 可動態＋介入，兩者互補，最佳分工未標準化 | Level III |
+| 細胞學重複頻率與治療終點 | 「治到細胞學乾淨」是理想終點，但最佳重複間隔與停藥標準缺乏實證 | Level IV |
+
+## 六、近期實證更新 (Recent Evidence Update)
+
+**復發性外耳炎的現代框架（Nuttall 2023, JAVMA）**
+Nuttall 2023 把「治不好的耳」拆成可操作的思路，核心訊息對菜鳥很重要：
+- **耳道細胞學＋耳鏡是每次回診都要做的，不是只做一次**——它是調整用藥、判斷治療反應、抓出桿菌/生物膜的即時工具。
+- **復發 ≠ 治療失敗，而是「原發因素沒控制」**：外耳炎是症狀不是診斷，反覆發作幾乎都指向沒處理好的**過敏（異位/食物）**或持續因素（增生、中耳炎、生物膜）。一直換耳藥而不找原發因素，就是復發的根源。
+- **生物膜與 *Pseudomonas***：慢性桿菌耳要積極清耳（Tris-EDTA 鬆動生物膜）＋培養導向治療，必要時 video-otoscopy 深層沖洗。
+- **抗藥性與抗生素管理**：耳用 fluoroquinolone 濫用與多重抗藥 *Pseudomonas* 上升有關，重點是「細胞學/培養導向、足量清耳、處理原發」，而非反射性換更強抗生素。
+
+【台灣落地】台灣高溫潮濕＋垂耳/油耳品種（黃金、拉布拉多、可卡、貴賓）多，外耳炎門診量大；耳道細胞學是最便宜有效的把關工具，卻常被跳過直接給複方耳藥。建立「每隻耳病都做細胞學、桿菌就培養、反覆就找過敏」的習慣，是降低慢性難治耳的關鍵。`,
   clinical_pearl: '處理外耳炎時最容易犯的錯誤，就是沒確認鼓膜完整就用含 aminoglycoside 的耳藥。耳道腫到看不到鼓膜的話，先口服 Prednisolone 0.5-1 mg/kg 跑 5-7 天消腫，等腫脹退了再做完整耳鏡檢查鼓膜。高度懷疑鼓膜已經穿孔的（慢性嚴重外耳炎、頭歪、面神經麻痺），在確認前只用溫生理食鹽水沖。',
   common_mistakes: [
     '不做耳道細胞學就開始經驗性使用耳用藥物（球菌/桿菌/馬拉色菌需要不同治療）',
@@ -3473,10 +3612,11 @@ const contentOtoscopy: NodeContent = {
   ],
   drug_api_links: ['Enrofloxacin', 'Chlorhexidine'],
   references: [
+    { type: 'journal', citation: 'Nuttall T. "Managing recurrent otitis externa in dogs: what have we learned and what can we do better?" J Am Vet Med Assoc. 2023;261(S1):S10-S22. doi:10.2460/javma.23.01.0002', relevance: '近期：復發性外耳炎現代框架（細胞學每次做、找原發、生物膜、抗生素管理）' },
+    { type: 'journal', citation: 'Ginel PJ, Lucena R, Rodriguez JC, Ortega J. "A semiquantitative cytological evaluation of normal and pathological samples from the external ear canal of dogs and cats." Vet Dermatol. 2002;13(3):151-156. doi:10.1046/j.1365-3164.2002.00288.x', relevance: '耳道細胞學正常與異常半定量閾值（球菌/馬拉色菌 >5/HPF）' },
+    { type: 'journal', citation: 'Gotthelf LN. "Diagnosis and treatment of otitis media in dogs and cats." Vet Clin North Am Small Anim Pract. 2004;34(2):469-487. doi:10.1016/j.cvsm.2003.10.007', relevance: '耳鏡評估鼓膜與中耳炎診斷' },
+    { type: 'journal', citation: 'Nuttall T, Bensignor E. "A pilot study to develop an objective clinical score for canine otitis externa." Vet Dermatol. 2014;25(6):530. doi:10.1111/vde.12163', relevance: '外耳炎客觀臨床評分（修正 v1 誤標題與「WAVD 指引」標籤）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 20: Diseases of the Ear.", relevance: '耳鏡檢查與耳道細胞學技術' },
-    { type: 'journal', citation: 'Gotthelf LN. Diagnosis and treatment of otitis media in dogs and cats. Vet Clin North Am Small Anim Pract. 2004;34(2):469-487.', relevance: '耳鏡評估鼓膜與中耳炎診斷' },
-    { type: 'journal', citation: 'Ginel PJ et al. A semiquantitative cytological evaluation of normal and pathological samples from the external ear canal of dogs and cats. Vet Dermatol. 2002;13(3):151-156.', relevance: '耳道細胞學正常與異常閾值' },
-    { type: 'guideline', citation: 'Nuttall T, Bensignor E. A pilot study to develop an analogue scale for owner assessment of otitis externa in the dog. Vet Dermatol. 2014;25(6):546-e92.', relevance: 'WAVD 外耳炎評估與管理標準化指引' },
   ],
   is_current: true,
   created_at: now,
@@ -3486,7 +3626,7 @@ const contentOtoscopy: NodeContent = {
 const contentAllergyMgmt: NodeContent = {
   id: 'CONTENT-DERM-L5-001',
   node_id: 'DERM-L5-001',
-  version: 1,
+  version: 2,
   summary: '過敏性皮膚病管理是獸醫皮膚科最核心的治療領域。犬異位性皮膚炎（CAD）、跳蚤過敏（FAD）跟食物不良反應（AFR）的治療要走多模式策略（multimodal approach），結合過敏原迴避、藥物治療、皮膚屏障修復跟過敏原特異性免疫治療（ASIT）。現代靶向藥物（oclacitinib、lokivetmab）讓 CAD 的控制效果明顯變好。長期管理需要飼主教育跟定期追蹤。',
   learning_objectives: [
     '比較 oclacitinib、lokivetmab、cyclosporine 的療效、起效時間與副作用',
@@ -3496,7 +3636,7 @@ const contentAllergyMgmt: NodeContent = {
   ],
   key_points: [
     'Oclacitinib（JAK1 inhibitor）：0.4-0.6 mg/kg PO BID × 14 天 → SID，起效 4-24 小時',
-    'Lokivetmab（抗 IL-31 mAb）：1-2 mg/kg SC q4w，起效 1-3 天，副作用極低',
+    'Lokivetmab（抗 IL-31 mAb）：依仿單最低劑量（US ≥2、EU ≥1 mg/kg）以整支劑型 round-up SC q4w，起效 1-7 天，副作用極低',
     'Cyclosporine：5 mg/kg PO SID，起效 4-6 週，適合長期免疫調節',
     'ASIT（過敏原特異性免疫治療）：唯一可能改變疾病病程的治療，50-75% 有效，需 6-12 個月評估',
     '糖皮質激素（Prednisolone）僅用於急性短期控制，不適合長期使用',
@@ -3555,7 +3695,7 @@ const contentAllergyMgmt: NodeContent = {
 | 藥物 | 機轉 | 劑量 | 起效時間 | 主要副作用 | 適用情境 |
 |------|------|------|----------|-----------|----------|
 | Oclacitinib | JAK1 抑制劑 | 0.4-0.6 mg/kg PO BID×14d→SID | 4-24 hr | 腸胃不適、UTI、偶見腫瘤報告 | 急性+慢性CAD |
-| Lokivetmab | 抗 IL-31 mAb | 1-2 mg/kg SC q4w | 1-3 天 | 極少（注射部位反應） | 慢性CAD、不耐藥物的犬 |
+| Lokivetmab | 抗 IL-31 mAb | ≥1-2 mg/kg SC q4w（依仿單，整支劑型 round-up） | 1-7 天 | 極少（注射部位反應） | 慢性CAD、不耐藥物的犬 |
 | Cyclosporine | Calcineurin 抑制 | 5 mg/kg PO SID | 4-6 週 | 嘔吐腹瀉、牙齦增生 | 慢性免疫調節 |
 | Prednisolone | 廣效抗炎 | 0.5-1 mg/kg PO SID | 數小時 | Cushing表現、PU/PD | 僅急性短期控制 |
 
@@ -3599,7 +3739,14 @@ ASIT 療效：過敏原特異性免疫治療（ASIT）12 個月的成功率約 5
 | Oclacitinib + Lokivetmab 聯合使用的安全性與優勢 | 難治犬可能受益但聯合使用的長期安全性數據不足 | Level III |
 | ASIT 最佳給藥途徑：皮下注射（SCIT）vs 舌下（SLIT）vs 皮內（ILIT） | SCIT 歷史最久；SLIT 飼主接受度高；ILIT 為新興方向 | Level II |
 | Oclacitinib 長期使用的感染與腫瘤風險閾值 | 上市後監測資料持續累積，但明確的劑量-風險關係尚未建立 | Level III |
-| 犬 AD 「proactive therapy」（症狀緩解後預防性低劑量維持）的價值 | 人醫已為 AD 標準策略，犬的 proactive 維持方案缺乏對照研究 | Level IV |`,
+| 犬 AD 「proactive therapy」（症狀緩解後預防性低劑量維持）的價值 | 人醫已為 AD 標準策略，犬的 proactive 維持方案缺乏對照研究 | Level IV |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+1. **Lokivetmab vs ciclosporin（Moyaert 2017）**：盲性 RCT 顯示 lokivetmab 控制 CAD 療效與 ciclosporin 相當，起效較快、安全性佳，支持其作為長期管理選項。
+2. **Oclacitinib 長期安全性（Cosgrove 2013 等）**：整體耐受良好；上市後監測持續關注感染與腫瘤訊號，目前**未證實因果性增加**，但長期用藥仍建議定期 CBC 與感染篩查。
+3. **新一代 JAK 抑制劑 ilunocitinib（Zenrelia）**：每日一次口服 JAK 抑制劑，約 2024 年取得核准；與 oclacitinib 的比較試驗已發表（Forster 2025）。仿單對免疫抑制／疫苗接種有警示，用藥前須評估。ICADA 2015 多模式框架仍為現行主軸。
+> 各藥物劑量、適應症與警示因國別仿單而異，臨床用藥須以當地核准仿單與獸醫師判讀為準。`,
   clinical_pearl: '選靶向藥物的思路。要快速止癢就 Oclacitinib（4-24 小時起效）。飼主沒辦法每天餵藥，或犬腸胃敏感的，就用 Lokivetmab（月注射，副作用最少）。要全面免疫調節而且不急的，就 Cyclosporine（4-6 週起效但作用廣）。理想狀態是同步啟動 ASIT，如果 ASIT 有效，就可以慢慢把其他藥物的劑量減下來。',
   common_mistakes: [
     '長期使用 Prednisolone 而不轉換至更安全的靶向治療',
@@ -3620,9 +3767,12 @@ ASIT 療效：過敏原特異性免疫治療（ASIT）12 個月的成功率約 5
   ],
   drug_api_links: ['Oclacitinib', 'Lokivetmab', 'Cyclosporine', 'Prednisolone'],
   references: [
-    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA CAD 治療國際指引' },
-    { type: 'journal', citation: 'Gadeyne C et al. Efficacy of oclacitinib (Apoquel) compared with prednisolone for the control of pruritus and clinical signs associated with allergic dermatitis in client-owned dogs in Australia. Vet Dermatol. 2014;25(6):512-e86.', relevance: 'Oclacitinib vs Prednisolone 臨床試驗' },
-    { type: 'journal', citation: 'Michels GM et al. A blinded, randomized, placebo-controlled, dose determination trial of lokivetmab (ZTS-00103289), a caninized, anti-canine IL-31 monoclonal antibody in client owned dogs with atopic dermatitis. Vet Dermatol. 2016;27(6):478-e129.', relevance: 'Lokivetmab 臨床試驗' },
+    { type: 'guideline', citation: 'Olivry T, DeBoer DJ, Favrot C, et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Res. 2015;11:210. doi:10.1186/s12917-015-0514-6.', relevance: 'ICADA CAD 治療國際指引' },
+    { type: 'journal', citation: 'Gadeyne C, et al. Efficacy of oclacitinib (Apoquel) compared with prednisolone for the control of pruritus and clinical signs associated with allergic dermatitis in client-owned dogs in Australia. Vet Dermatol. 2014;25(6):512-e86. doi:10.1111/vde.12166.', relevance: 'Oclacitinib vs Prednisolone 臨床試驗' },
+    { type: 'journal', citation: 'Michels GM, et al. A blinded, randomized, placebo-controlled, dose determination trial of lokivetmab (ZTS-00103289), a caninized, anti-canine IL-31 monoclonal antibody in client-owned dogs with atopic dermatitis. Vet Dermatol. 2016;27(6):478-e129. doi:10.1111/vde.12376.', relevance: 'Lokivetmab 劑量決定臨床試驗' },
+    { type: 'journal', citation: 'Cosgrove SB, et al. Efficacy and safety of oclacitinib for the control of pruritus and associated skin lesions in dogs with canine allergic dermatitis. Vet Dermatol. 2013;24(5):479-e114. doi:10.1111/vde.12047.', relevance: 'Oclacitinib 療效與安全性樞紐試驗' },
+    { type: 'journal', citation: 'Moyaert H, et al. A blinded, randomized clinical trial evaluating the efficacy and safety of lokivetmab compared to ciclosporin in client-owned dogs with atopic dermatitis. Vet Dermatol. 2017;28(6):593-e145. doi:10.1111/vde.12478.', relevance: 'Lokivetmab vs ciclosporin 對照試驗（近期實證）' },
+    { type: 'journal', citation: 'Forster S, Boegel A, Despa S, et al. Comparative efficacy and safety of ilunocitinib and oclacitinib for the control of pruritus and associated skin lesions in dogs with atopic dermatitis. Vet Dermatol. 2025;36(2):165-176. doi:10.1111/vde.13319.', relevance: '新一代 JAK 抑制劑 ilunocitinib vs oclacitinib（近期實證）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '過敏性皮膚病管理完整章節' },
   ],
   is_current: true,
@@ -3633,7 +3783,7 @@ ASIT 療效：過敏原特異性免疫治療（ASIT）12 個月的成功率約 5
 const contentAntiparasitic: NodeContent = {
   id: 'CONTENT-DERM-L5-002',
   node_id: 'DERM-L5-002',
-  version: 1,
+  version: 2,
   summary: '皮膚科抗寄生蟲治療以 isoxazoline 類藥物為核心，涵蓋跳蚤、蜱蟲、蠕形蟎跟疥蟎的治療。Isoxazoline 類（fluralaner、afoxolaner、sarolaner、lotilaner）是 GABA 受體跟 GluCl 受體的抑制劑，對節肢動物選擇性很高。口服方便、廣效、安全性高，已經把傳統的 amitraz、ivermectin、fipronil 全面擠下首選位子。對於 MDR1 突變品種（柯利犬類），isoxazoline 是安全的替代方案。',
   learning_objectives: [
     '比較主要 isoxazoline 類藥物的劑量、給藥間隔與適應症',
@@ -3743,7 +3893,21 @@ Isoxazoline 選擇性抑制節肢動物神經系統的 GABA（γ-aminobutyric ac
 | Isoxazoline 類藥物在癲癇犬中的安全性 | FDA 警告癲癇犬慎用，但實際誘發癲癇的發生率極低 | Level III |
 | 貓用 isoxazoline（fluralaner 外用）的蠕形蟎治療效果 | 貓蠕形蟎較罕見，isoxazoline 療效的專門研究有限 | Level III |
 | 蠕形蟎症 isoxazoline 治療的最佳療程（Fluralaner 單劑 vs 連續 2-3 劑） | 多數犬單劑即可，但何種情況需要額外劑量無標準化標準 | Level II |
-| Isoxazoline 類藥物對環境無脊椎動物的生態影響 | 犬糞便中殘留藥物可能影響糞食性昆蟲，但研究剛起步 | Level IV |`,
+| Isoxazoline 類藥物對環境無脊椎動物的生態影響 | 犬糞便中殘留藥物可能影響糞食性昆蟲，但研究剛起步 | Level IV |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+### Isoxazoline 成為犬蠕形蟎/疥蟎的新標準（WAVD 2020 共識）
+2020 WAVD 犬貓蠕形蟎診斷與治療共識（Mueller 2020）將口服 isoxazoline 列為犬全身型蠕形蟎的首選——療效高、單劑即可起始，取代過去數月漸增 ivermectin 與其 MDR1 風險；治療至連續 2 次（間隔約 1 個月）深層刮搔陰性。疥蟎亦以單劑/雙劑 isoxazoline 高效控制（Becskei 2016、Fourie 2015）。
+
+### 適應症持續擴張
+isoxazoline 對耳蟎、Cheyletiella、毛囊蟲、甚至作為利什曼原蟲病媒（沙蠅）防護的研究漸增；新成員（如貓用 esafoxolaner 複方、tigolaner）擴大選擇。
+
+### 安全與族群監測
+FDA 對 isoxazoline 神經學不良反應（震顫/共濟失調/癲癇）發出警示，癲癇病史犬須權衡（發生率低）；MDR1 突變犬使用標示劑量 isoxazoline 安全（非 P-gp 受質）。
+
+### 生態與抗藥性
+犬糞/洗劑殘留之滅蚤藥（fipronil、imidacloprid）對水域與糞食性昆蟲的生態衝擊受關注；長期 isoxazoline 廣泛使用下的抗藥性監測為新興議題。`,
   clinical_pearl: 'Isoxazoline 類藥物徹底改變了皮膚科寄生蟲治療。蠕形蟎症以前要用幾個月的 ivermectin 漸增劑量，還有 MDR1 風險，現在 Fluralaner 單劑就可以開始。疥蟎以前要反覆打 selamectin 或 ivermectin，現在也是 Fluralaner 單劑搞定。記住：台灣幾乎每一隻犬都應該全年用 isoxazoline 預防跳蚤，這是過敏犬管理的基石。',
   common_mistakes: [
     '對 MDR1 突變品種使用高劑量 ivermectin（可致命）',
@@ -3764,9 +3928,10 @@ Isoxazoline 選擇性抑制節肢動物神經系統的 GABA（γ-aminobutyric ac
   ],
   drug_api_links: ['Fluralaner', 'Afoxolaner', 'Sarolaner', 'Ivermectin', 'Selamectin'],
   references: [
-    { type: 'journal', citation: 'Fourie JJ et al. Efficacy of orally administered fluralaner (Bravecto) or topically applied imidacloprid/moxidectin (Advocate) against generalized demodicosis in dogs. Parasit Vectors. 2015;8:187.', relevance: 'Fluralaner 治療蠕形蟎症的關鍵研究' },
-    { type: 'journal', citation: 'Becskei C et al. Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparica), for the treatment of sarcoptic mange in dogs. Vet Parasitol. 2016;222:56-61.', relevance: 'Sarolaner 治療疥蟎的臨床研究' },
-    { type: 'guideline', citation: 'Mueller RS et al. Treatment of demodicosis in dogs: 2011 clinical practice guidelines. Vet Dermatol. 2012;23(2):86-e21.', relevance: '蠕形蟎治療指引' },
+    { type: 'journal', citation: 'Fourie JJ, Liebenberg JE, Horak IG, et al. Efficacy of orally administered fluralaner (Bravecto) or topically applied imidacloprid/moxidectin (Advocate) against generalized demodicosis in dogs. Parasit Vectors. 2015;8:187. doi:10.1186/s13071-015-0775-8.', relevance: 'Fluralaner 治療蠕形蟎症的關鍵研究' },
+    { type: 'journal', citation: 'Becskei C, Reinemeyer C, King VL, et al. Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparica), for the treatment of sarcoptic mange in dogs. Vet Parasitol. 2016;222:56-61. doi:10.1016/j.vetpar.2016.02.017.', relevance: 'Sarolaner 治療疥蟎的臨床研究' },
+    { type: 'guideline', citation: 'Mueller RS, Bensignor E, Ferrer L, et al. Treatment of demodicosis in dogs: 2011 clinical practice guidelines. Vet Dermatol. 2012;23(2):86-e21. doi:10.1111/j.1365-3164.2011.01026.x.', relevance: '蠕形蟎治療臨床實踐指引（2011）' },
+    { type: 'guideline', citation: 'Mueller RS, Rosenkrantz W, Bensignor E, et al. Diagnosis and treatment of demodicosis in dogs and cats: Clinical consensus guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2020;31(1):5-e2. doi:10.1111/vde.12806.', relevance: 'WAVD 2020 蠕形蟎診療共識（isoxazoline 首選）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '抗寄生蟲藥物完整章節' },
   ],
   is_current: true,
@@ -3947,7 +4112,7 @@ Azathioprine 骨髓抑制：犬發生率 5-15%，通常在開始治療後 2-8 �
 const contentOticTherapy: NodeContent = {
   id: 'CONTENT-DERM-L5-004',
   node_id: 'DERM-L5-004',
-  version: 1,
+  version: 2,
   summary: '耳科治療涵蓋外耳炎跟中耳炎的局部與全身性治療。要依耳道細胞學結果選耳用製劑：球菌用 fusidic acid 或 polymyxin B、桿菌用 fluoroquinolone 或 polymyxin B、馬拉色菌用 clotrimazole 或 miconazole。耳道清洗是治療的基礎步驟。鼓膜完整性決定可以用哪些藥。慢性外耳炎要同時處理原發因素（過敏）跟持續因素（增生、中耳炎）。末期耳道疾病可能要走手術（TECA-LBO）。',
   learning_objectives: [
     '根據耳道細胞學結果選擇適當的耳用製劑',
@@ -3965,6 +4130,7 @@ const contentOticTherapy: NodeContent = {
     'Tris-EDTA 破壞革蘭氏陰性菌外膜 → 增強抗生素效果（對 Pseudomonas 尤其重要）',
     '嚴重腫脹：口服 Prednisolone 0.5-1 mg/kg × 5-7 天消腫後再局部治療',
     '末期耳道疾病（完全閉塞/礦化）→ TECA-LBO（全耳道切除+外側鼓室切開術）',
+    '長效獸醫師端投藥複方耳劑（Osurnia 兩劑/7天、Neptra 單劑）解決居家順從性差問題，但仍需細胞學選藥、鼓膜完整、桿菌培養（Forster 2018 RCT）',
   ],
   body: `# 耳科治療
 
@@ -4086,7 +4252,20 @@ TECA-LBO：術後併發症率 10-25%（顏面神經麻痺、瘻管），但 85-9
 | 犬外耳炎 Pseudomonas 的最佳局部抗生素選擇 | Fluoroquinolone vs Polymyxin B，各有優缺點；多重抗藥菌需培養指導 | Level II |
 | 慢性增生性外耳炎 TECA-LBO 手術時機的客觀標準 | 目前依賴主觀臨床判斷，缺乏標準化的「不可逆改變」評估標準 | Level IV |
 | 耳道灌洗液的最佳選擇：Tris-EDTA vs saline vs chlorhexidine | Tris-EDTA 對革蘭氏陰性菌有增敏作用，但鼓膜破裂時限制較多 | Level II |
-| 犬外耳炎預防性維持耳道清洗的效益 | 經驗性推薦，但預防性清洗 vs 不清洗的比較 RCT 極少 | Level IV |`,
+| 犬外耳炎預防性維持耳道清洗的效益 | 經驗性推薦，但預防性清洗 vs 不清洗的比較 RCT 極少 | Level IV |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**長效、獸醫師端投藥的耳劑：解決「飼主在家點不到藥」這個最大失敗原因**
+傳統耳劑最大的失敗點往往不是藥不夠強，而是飼主在家點不確實。近年的**長效複方凝膠**（florfenicol＋terbinafine＋類固醇）由獸醫塗入、藥效持續約 1-2 週，RCT（Forster et al 2018, BMC Vet Res）顯示對細菌/馬拉色菌外耳炎療效良好。要分清楚劑型：**Osurnia（含 betamethasone）是間隔 7 天的兩次給藥；Neptra/Claro（含 mometasone）是單次給藥**。臨床定位：對居家順從性差的病例特別有用，但仍要先做細胞學選對適應症（廣效複方、含類固醇）、確認鼓膜完整（含 florfenicol 製劑仿單限鼓膜完整使用），桿菌/*Pseudomonas* 仍需培養導向。
+
+**抗生素管理與 *Pseudomonas*（Nuttall 2023, JAVMA）**
+- 慢性桿菌耳的主軸不是「換更強的抗生素」，而是 **Tris-EDTA 增敏（破壞革蘭氏陰性菌外膜）＋積極清耳（鬆動生物膜）＋培養導向＋處理原發過敏**。
+- 耳用 fluoroquinolone 濫用與多重抗藥 *Pseudomonas* 上升相關；局部高濃度雖可能突破部分 MIC，但管理原發與清耳仍是關鍵，而非反射性升級抗生素。
+
+**主軸不變、工具變好**：依細胞學選藥、清耳是基礎、鼓膜決定能用哪些藥、找出並控制原發因素（過敏）才是不復發的根本——新製劑只是讓「把藥送到位」這件事更容易。
+
+【台灣落地】台灣濕熱、垂耳/油耳品種多，外耳炎復發率高；長效耳劑對忙碌或難配合的飼主是實用選項，但別取代「細胞學＋找原發」的基本功。多重抗藥 *Pseudomonas* 在台灣不少見，桿菌耳務必培養。`,
   clinical_pearl: 'Pseudomonas 外耳炎是耳科治療裡最棘手的問題。關鍵策略是「Tris-EDTA 先行」。Tris-EDTA 螯合鈣鎂離子，破壞 Pseudomonas 外膜的 LPS 層，原本抗藥的菌株就會對後續的 fluoroquinolone 變敏感。灌洗後靜置 15 分鐘再給 fluoroquinolone 耳劑，效果比直接用藥好很多。另外，永遠不要忘記送培養藥敏。多重抗藥 Pseudomonas 在台灣並不少見。',
   common_mistakes: [
     '不做耳道細胞學就選擇耳用藥物',
@@ -4107,10 +4286,12 @@ TECA-LBO：術後併發症率 10-25%（顏面神經麻痺、瘻管），但 85-9
   ],
   drug_api_links: ['Enrofloxacin', 'Prednisolone', 'Itraconazole', 'Chlorhexidine'],
   references: [
-    { type: 'journal', citation: 'Gotthelf LN. Diagnosis and treatment of otitis media in dogs and cats. Vet Clin North Am Small Anim Pract. 2004;34(2):469-487.', relevance: '外耳炎與中耳炎治療指引' },
-    { type: 'journal', citation: 'Gortel K. Otic flushing. Vet Clin North Am Small Anim Pract. 2004;34(2):557-565.', relevance: '耳道灌洗技術與洗液選擇' },
+    { type: 'guideline', citation: 'Nuttall T. "Managing recurrent otitis externa in dogs: what have we learned and what can we do better?" J Am Vet Med Assoc. 2023;261(S1):S10-S22. doi:10.2460/javma.23.01.0002', relevance: '近期：復發外耳炎現代治療框架（清耳、培養導向、找原發、抗生素管理）' },
+    { type: 'journal', citation: 'Forster SL, Real T, Doucette KP, King SB. "A randomized placebo-controlled trial of the efficacy and safety of a terbinafine, florfenicol and betamethasone topical ear formulation in dogs for the treatment of bacterial and/or fungal otitis externa." BMC Vet Res. 2018;14(1):262. doi:10.1186/s12917-018-1589-7', relevance: '近期 RCT：長效獸醫師端投藥複方耳劑療效（順從性解方）' },
+    { type: 'guideline', citation: 'Nuttall T, Cole LK. "Evidence-based veterinary dermatology: a systematic review of interventions for treatment of Pseudomonas otitis in dogs." Vet Dermatol. 2007;18(2):69-77. doi:10.1111/j.1365-3164.2007.00575.x', relevance: '犬假單胞菌外耳炎治療系統性回顧' },
+    { type: 'journal', citation: 'Gotthelf LN. "Diagnosis and treatment of otitis media in dogs and cats." Vet Clin North Am Small Anim Pract. 2004;34(2):469-487. doi:10.1016/j.cvsm.2003.10.007', relevance: '外耳炎與中耳炎治療指引' },
+    { type: 'journal', citation: 'Gortel K. "Otic flushing." Vet Clin North Am Small Anim Pract. 2004;34(2):557-565. doi:10.1016/j.cvsm.2003.10.010', relevance: '耳道灌洗技術與洗液選擇' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '耳科治療完整章節' },
-    { type: 'guideline', citation: 'Nuttall T, Cole LK. Evidence-based veterinary dermatology: a systematic review of interventions for treatment of Pseudomonas otitis in dogs. Vet Dermatol. 2007;18(2):69-77.', relevance: 'WAVD 循證指引：犬假單胞菌外耳炎治療系統性回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -4279,7 +4460,7 @@ Itraconazole：主要副作用是厭食跟嘔吐，長期使用偶爾會肝酵�
 const contentAntibioticTherapy: NodeContent = {
   id: 'CONTENT-DERM-L5-006',
   node_id: 'DERM-L5-006',
-  version: 1,
+  version: 2,
   summary: '皮膚科抗生素治療以細菌性膿皮症（bacterial pyoderma）為核心適應症，分為淺層（superficial）與深層（deep）兩種，治療強度與療程差異顯著。全身性抗生素一線選擇包括 cephalexin（犬 22-30 mg/kg PO BID）、amoxicillin-clavulanate 及 clindamycin。甲氧苯青黴素抗性金黃色葡萄球菌（MRSA）與抗性中間型葡萄球菌（MRSP）日益普遍，反覆或難治病例應做細菌培養與抗生素感受性試驗（C&S）。外用治療是降低系統抗生素使用、預防抗藥性的核心策略：2% chlorhexidine 藥浴每 3-7 天一次；局部型病灶可用外用慕斯或噴劑取代口服。療程原則：淺層至少 3-4 週，深層至少 6-8 週，均需延長至臨床痊癒後再 1 週。反覆性膿皮症（recurrent pyoderma）必須找出並治療根本原因（最常見為過敏性皮膚病），否則抗生素治療結束後必然復發。',
   learning_objectives: [
     '區分淺層與深層膿皮症的臨床特徵、治療方案與療程長度',
@@ -4385,7 +4566,38 @@ const contentAntibioticTherapy: NodeContent = {
 3. 若必須用全身性抗生素，選最窄效、最短療程
 
 [圖片：淺層vs深層膿皮症組織病理示意圖]
-`,
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 抗菌藥物管理計畫（antimicrobial stewardship, ASP） | 犬貓皮膚科減少不必要全身抗生素、保留關鍵藥 | 人醫醫院 ASP 成熟，獸醫 ISCAID 指引推動 topical-first |
+| MRSA/MRSP One Health 與去定殖（decolonization） | 人寵間傳播防控、chlorhexidine/mupirocin 去定殖 | 人醫 MRSA 去定殖成熟，獸醫 MRSP 去定殖證據有限但概念引入 |
+| 快速分子診斷（mecA PCR、MALDI-TOF） | 加速 MRSP 鑑定、縮短經驗用藥期 | 人醫常規，獸醫參考實驗室漸普及 |
+| 局部抗菌（topical-first）取代系統用藥 | 淺層膿皮症外用優先、降低抗藥壓力 | 人醫皮膚感染概念，獸醫實證支持外用單獨可治淺層 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 淺層膿皮症是否可「外用單獨」免系統抗生素 | 證據漸增支持外用（chlorhexidine）單獨即可治單純淺層膿皮症 → ISCAID topical-first | Level II |
+| 療程長度（固定「痊癒後+1 週」vs 個體化縮短） | 傳統淺層 3-4 週/深層 6-8 週；近年質疑過長，主張臨床＋細胞學痊癒導向、或可縮短 | Level III |
+| MRSP 經驗用藥 vs 等候 C&S | 反覆/深層/失敗一律先 C&S；空窗期以外用控制、避免盲目換藥 | Level IV |
+| 氟喹諾酮／rifampicin 的定位 | 一線避用氟喹諾酮（誘導 MRSP）；rifampicin 僅合併、嚴格保留 | Level III |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### Topical-first：淺層膿皮症的範式轉移
+近年實證與 ISCAID 指引（Hillier 2014）共同推動「外用優先」：單純淺層膿皮症以 chlorhexidine（2-4%）藥浴/慕斯外用即可有效，許多病例不需全身抗生素，是抗菌藥物管理的核心（Loeffler 2018 回顧）。
+
+### 抗菌藥物管理（stewardship）成為皮膚科準則
+減少不必要與廣效全身抗生素、一線避用氟喹諾酮、rifampicin 僅合併保留，目標延緩 MRSP/MRSA 抗藥蔓延（One Health）。反覆膿皮症的根因控制（過敏管理）本身就是最有效的「省抗生素」策略。
+
+### MRSP 流行病學與分子診斷
+MRSP（S. pseudintermedius，Bannoehr 2012）已成犬膿皮症抗藥主角；mecA 介導、跨多類抗生素抗性。快速分子鑑定（mecA PCR）與參考實驗室 C&S 縮短經驗用藥期、指導窄效選藥。
+
+### 療程個體化與痊癒判定
+趨勢由「固定長療程」轉向「臨床＋細胞學痊癒導向」：淺層續至病灶消退後約 1 週、深層常需消退後 1-2 週，以細胞學確認而非僅外觀，兼顧療效與抗菌管理。`,
   clinical_pearl: '反覆性膿皮症停止抗生素後馬上復發 → 幾乎確定有未處理的潛在疾病（最常見是 CAD）。治標（抗生素）不治本（過敏管理）是最常見的臨床錯誤。外用 2% chlorhexidine 藥浴每週 1-2 次可有效減少發作頻率，是長期維持治療的核心手段。',
   common_mistakes: [
     '淺層膿皮症療程太短（< 3 週）就停藥 → 復發',
@@ -4408,9 +4620,10 @@ const contentAntibioticTherapy: NodeContent = {
   drug_api_links: ['Cephalexin', 'Amoxicillin-clavulanate', 'Clindamycin', 'Chlorhexidine'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '膿皮症完整章節，含抗生素選擇指引' },
-    { type: 'guideline', citation: 'Hillier A, et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (SAF). Vet Dermatol. 2014;25(3):163-e43.', relevance: '犬淺層膿皮症抗生素治療臨床實踐指引' },
-    { type: 'journal', citation: 'Weese JS, van Duijkeren E. Methicillin-resistant Staphylococcus aureus and Staphylococcus pseudintermedius in veterinary medicine. Vet Microbiol. 2010;140(3-4):418-29.', relevance: 'MRSA/MRSP 獸醫臨床回顧，含流行病學與治療策略' },
-    { type: 'guideline', citation: 'ISCAID (International Society for Companion Animal Infectious Diseases). Antimicrobial Use Guidelines for Treatment of Dermatological Infections in Dogs and Cats. Vet Dermatol. 2023;34(5):e81-e108.', relevance: '最新犬貓皮膚感染抗生素使用指引，含 MRSP 管理' },
+    { type: 'guideline', citation: 'Hillier A, Lloyd DH, Weese JS, et al. Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (Antimicrobial Guidelines Working Group of ISCAID). Vet Dermatol. 2014;25(3):163-e43. doi:10.1111/vde.12118.', relevance: 'ISCAID 犬淺層膿皮症抗生素治療臨床實踐指引（topical-first 依據）' },
+    { type: 'journal', citation: 'Weese JS, van Duijkeren E. Methicillin-resistant Staphylococcus aureus and Staphylococcus pseudintermedius in veterinary medicine. Vet Microbiol. 2010;140(3-4):418-429. doi:10.1016/j.vetmic.2009.01.039.', relevance: 'MRSA/MRSP 獸醫臨床回顧，含流行病學與治療策略' },
+    { type: 'journal', citation: 'Bannoehr J, Guardabassi L. Staphylococcus pseudintermedius in the dog: taxonomy, diagnostics, ecology, epidemiology and pathogenicity. Vet Dermatol. 2012;23(4):253-e52. doi:10.1111/j.1365-3164.2012.01046.x.', relevance: 'MRSP 病原 S. pseudintermedius 分類、流行病學與致病性' },
+    { type: 'journal', citation: 'Loeffler A, Lloyd DH. What has changed in canine pyoderma? A narrative review. Vet J. 2018;235:23-32. doi:10.1016/j.tvjl.2018.04.002.', relevance: '犬膿皮症治療演進：topical-first、抗菌管理與 MRSP（近期回顧）' },
   ],
   is_current: true,
   created_at: now,
@@ -4766,7 +4979,7 @@ const contentAlopeciaX: NodeContent = {
     { type: 'journal', citation: 'Frank LA et al. Steroidogenic response of adrenal tissues after administration of ACTH to dogs with hypercortisolism. J Am Vet Med Assoc. 2001;218(2):214-218.', relevance: '腎上腺性激素代謝異常假說的關鍵研究' },
     { type: 'journal', citation: 'Cerundolo R et al. Treatment of canine Alopecia X with trilostane. Vet Dermatol. 2004;15(5):285-293.', relevance: 'Trilostane 治療脫毛症 X 的臨床療效評估' },
     { type: 'journal', citation: 'Friedmann PS et al. Alopecia X in Pomeranians and miniature poodles，response to melatonin. Proceedings of the 7th World Congress of Veterinary Dermatology. 2012.', relevance: '褪黑激素治療脫毛症 X 的臨床經驗報告' },
-    { type: 'guideline', citation: 'Frank LA, Hnilica KA, Oliver JW. Adrenal steroid hormone concentrations in dogs with hair cycle arrest (Alopecia X) before and during treatment with melatonin and mitotane. Vet Dermatol. 2004;15(5):278-284. (Referenced in ACVD consensus approach to endocrine alopecia diagnosis)', relevance: '內分泌性脫毛診斷與治療共識方法' },
+    { type: 'journal', citation: 'Frank LA, Hnilica KA, Oliver JW. Adrenal steroid hormone concentrations in dogs with hair cycle arrest (Alopecia X) before and during treatment with melatonin and mitotane. Vet Dermatol. 2004;15(5):278-284. doi:10.1111/j.1365-3164.2004.00372.x.', relevance: 'Alopecia X 腎上腺類固醇激素濃度與 melatonin/mitotane 治療反應' },
   ],
   is_current: true,
   created_at: now,
@@ -4988,7 +5201,7 @@ const contentCTCL: NodeContent = {
 const contentMCT: NodeContent = {
   id: 'CONTENT-DERM-L3-014',
   node_id: 'DERM-L3-014',
-  version: 1,
+  version: 2,
   summary: '犬肥大細胞瘤（Mast Cell Tumor, MCT）是犬最常見的皮膚惡性腫瘤，大約佔犬皮膚腫瘤的 16-21%。MCT 源自肥大細胞的腫瘤性增生，臨床表現變化多端（被稱為「偉大的模仿者」），從良性的皮膚結節到高度惡性的全身性疾病都有。診斷靠 FNA 細胞學初步鑑定，加上手術切除後的組織病理分級（Patnaik 三級制或 Kiupel 二級制）。c-KIT 突變是重要的預後因子跟治療標靶。',
   learning_objectives: [
     '描述犬 MCT 的臨床表現多變性及「偉大的模仿者」概念',
@@ -5088,7 +5301,7 @@ Low grade：上面任何一條都不符合。
 - 適應症：高分級 MCT、淋巴結轉移、邊界不清淨
 
 ### 酪胺酸激酶抑制劑 (TKI)
-- Toceranib (Palladia)：2.75 mg/kg PO 隔日，c-KIT 突變陽性者反應率超過 60%。
+- Toceranib (Palladia)：2.75 mg/kg PO 隔日（或週一三五）。整體客觀反應率約 37–43%（London 2009），**c-KIT 突變陽性者反應較佳**（部分分析可達約 50–60%）；治療中監測 CBC/生化/尿蛋白。
 - Masitinib (Masivet)：12.5 mg/kg PO SID（歐洲）。
 
 [圖片:MCT 臨床外觀多變性比較圖]
@@ -5096,7 +5309,34 @@ Low grade：上面任何一條都不符合。
 
 ### 台灣臨床注意事項
 
-MCT 在台灣犬隻裡相當常見，尤其是拉布拉多（Labrador）跟黃金獵犬（Golden Retriever）。這兩個品種在台灣飼養量很大，本來就是 MCT 高風險族群。台灣亞熱帶氣候跟 MCT 發生沒有直接的紫外線關聯（這跟鱗狀上皮細胞癌那類紫外線相關腫瘤不一樣），但臨床上要注意跟其他皮膚腫瘤（例如日光性皮膚炎繼發的 SCC）做鑑別診斷。治療藥物方面，標準一線化療方案 Vinblastine 在台灣可以取得。口服 TKI Toceranib（Palladia）可以透過進口管道拿到，但價格不便宜（每錠約 500-1000 台幣），飼主的經濟負擔要納入治療決策一起想。c-KIT 突變檢測要外送國外實驗室，週轉時間約 2-3 週。`,
+MCT 在台灣犬隻裡相當常見，尤其是拉布拉多（Labrador）跟黃金獵犬（Golden Retriever）。這兩個品種在台灣飼養量很大，本來就是 MCT 高風險族群。台灣亞熱帶氣候跟 MCT 發生沒有直接的紫外線關聯（這跟鱗狀上皮細胞癌那類紫外線相關腫瘤不一樣），但臨床上要注意跟其他皮膚腫瘤（例如日光性皮膚炎繼發的 SCC）做鑑別診斷。治療藥物方面，標準一線化療方案 Vinblastine 在台灣可以取得。口服 TKI Toceranib（Palladia）可以透過進口管道拿到，但價格不便宜（每錠約 500-1000 台幣），飼主的經濟負擔要納入治療決策一起想。c-KIT 突變檢測要外送國外實驗室，週轉時間約 2-3 週。
+
+## 八、人醫借鑑 (Translational Insights)
+
+| 人醫概念/工具 | 與犬 MCT 的連結 | 現況 |
+|-------------|---------------|------|
+| 人 GIST/CML 的 KIT 生物學 | 犬 MCT 的 KIT(c-KIT) 活化突變與人胃腸道間質瘤(GIST)、CML 的 KIT 機轉相通 | 標靶觀念跨物種互通 |
+| Imatinib（為人 GIST/CML 開發） | 啟發犬 MCT 的 KIT-TKI 治療（toceranib、masitinib） | toceranib/masitinib 已成獸醫常規 |
+| 伴隨診斷（companion diagnostics） | c-KIT 突變/IHC 預測 TKI 反應，呼應人醫「依突變選藥」精準腫瘤學 | 獸醫精準腫瘤學雛形 |
+| 人系統性肥大細胞增生症 | 肥大細胞介質效應（組胺、類過敏）與犬全身性/內臟 MCT 相通 | 介質阻斷（H1/H2）概念共用 |
+
+## 九、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 議題 | 立場 | Evidence Level |
+|------|------|---------------|
+| 手術側緣 2 cm vs 3 cm / 比例式邊界 | 低-中分級 2 cm（或比例式）多已足夠；高分級採較寬 | Level II |
+| 高分級/邊界不清是否一律輔助治療 | 多數建議輔助，最佳方案（VP vs TKI vs 併用）未定 | Level III |
+| c-KIT 突變檢測是否常規 | 可預測 TKI 反應與預後，但成本/可及性限制常規化 | Level III |
+| Patnaik vs Kiupel | Kiupel 一致性較佳、現多並列報告；Grade II 仍是灰區 | Level II |
+| 預防性區域淋巴結摘除 | 哨兵淋巴結評估漸受重視，常規摘除利弊未定 | Level III |
+
+## 十、近期實證更新（待 DVM 覆核）
+
+1. **Kiupel 二級制成為主流**：低/高二分對觀察者間一致性與預後預測優於 Patnaik，多數病理報告並列兩系統（Kiupel 2011）。
+2. **有絲分裂指數獨立預後**：MI ≥ 5/10 HPF 與較短存活獨立相關（不論分級）；Kiupel 高分級的有絲分裂門檻為 ≥ 7。
+3. **c-KIT 突變預測 TKI 反應**：exon 8/11 ITD 約占 15–30%，與較高分級/復發相關並富集 TKI 反應；toceranib 整體 ORR ~37–43%、突變陽性較佳（London 2009）。
+4. **高分級預後仍嚴峻**：Kiupel 高分級即使手術+輔助治療，存活仍明顯較短（Ong 2025, Front Vet Sci）。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: '每一個犬皮膚腫塊都該做 FNA。MCT 是「偉大的模仿者」，很多看起來無害的皮膚結節最後被證實是 MCT。FNA 細胞學又快又便宜（院內就能做），紫色異染顆粒在 Diff-Quik 染色下超典型。另外，操作 MCT 之前一定要先給 H1 加 H2 blocker 預防脫顆粒。連手術探查時的機械性刺激都可能引發嚴重的肥大細胞脫顆粒反應。',
   common_mistakes: [
     '光憑外觀判斷皮膚腫塊就沒做 FNA，結果 MCT 被誤診成脂肪瘤或囊腫',
@@ -5143,10 +5383,12 @@ MCT 在台灣犬隻裡相當常見，尤其是拉布拉多（Labrador）跟黃�
   ],
   drug_api_links: ['Vinblastine', 'Prednisolone', 'Toceranib', 'Diphenhydramine', 'Famotidine'],
   references: [
-    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 20: Cutaneous Neoplasia，Mast Cell Tumors.", relevance: '犬 MCT 的臨床特徵、診斷與治療經典教材參考' },
-    { type: 'journal', citation: 'Kiupel M et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155.', relevance: 'Kiupel 二級制分級系統原始研究' },
-    { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (Palladia), an inhibitor of the kit tyrosine kinase, for the treatment of dogs with recurrent mast cell tumor. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib 臨床試驗關鍵研究' },
-    { type: 'guideline', citation: 'Blackwood L et al. European consensus document on mast cell tumours in dogs and cats. Vet Comp Oncol. 2012;10(3):e1-e29.', relevance: '歐洲 MCT 共識指引' },
+    { type: 'journal', citation: 'Kiupel M, Webster JD, et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155. doi:10.1177/0300985810386469.', relevance: 'Kiupel 二級制分級系統原始研究' },
+    { type: 'journal', citation: 'London CA, et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (SU11654), a kit tyrosine kinase inhibitor, for the treatment of dogs with recurrent mast cell tumor. Clin Cancer Res. 2009;15(11):3856-3865. doi:10.1158/1078-0432.CCR-08-1860.', relevance: 'Toceranib 臨床試驗關鍵研究（整體 ORR ~37-43%）' },
+    { type: 'guideline', citation: 'Blackwood L, Murphy S, et al. European consensus document on mast cell tumours in dogs and cats. Vet Comp Oncol. 2012;10(3):e1-e29. doi:10.1111/j.1476-5829.2012.00341.x.', relevance: '歐洲 MCT 共識指引' },
+    { type: 'journal', citation: 'Garrett LD. Canine mast cell tumors: diagnosis, treatment, and prognosis. Vet Med (Auckl). 2014;5:49-58. doi:10.2147/VMRR.S41005.', relevance: '犬 MCT 診斷/治療/預後綜述' },
+    { type: 'journal', citation: 'Ong SM, et al. Clinical outcomes of dogs with high-grade cutaneous mast cell tumors. Front Vet Sci. 2025;11:1519636. doi:10.3389/fvets.2024.1519636.', relevance: '高分級皮膚 MCT 臨床結果（近期）' },
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Ch. 20: Cutaneous Neoplasia (Mast Cell Tumors).", relevance: '犬 MCT 臨床特徵與治療教材' },
   ],
   is_current: true,
   created_at: now,
@@ -5317,7 +5559,7 @@ const contentDermatohistopathology: NodeContent = {
 const contentEGC: NodeContent = {
   id: 'CONTENT-DERM-L3-015',
   node_id: 'DERM-L3-015',
-  version: 1,
+  version: 2,
   summary: '貓嗜酸性肉芽腫複合症（Feline Eosinophilic Granuloma Complex, EGC）是貓特有的一組炎症性皮膚跟口腔黏膜病變，包含三種臨床型態：惰性潰瘍（indolent ulcer）、嗜酸性斑塊（eosinophilic plaque）跟線狀肉芽腫（linear/collagenolytic granuloma）。超過 80% 的病例都有潛在過敏基礎（跳蚤過敏、食物不良反應、環境過敏），少數是特發性的。診斷靠臨床表現加細胞學（嗜酸球為主），組織病理可以確認。治療策略以控制潛在過敏原為核心，藥物選擇有局部 tacrolimus、全身性糖皮質激素跟 cyclosporine。',
   learning_objectives: [
     '辨識 EGC 三種臨床型態的特徵性表現與好發部位',
@@ -5419,7 +5661,36 @@ EGC 不是單一疾病，而是一組以嗜酸球浸潤、膠原退化為特徵�
 - 惰性潰瘍：對治療反應通常良好，但停藥後復發率 30-50%
 - 嗜酸性斑塊：對糖皮質激素反應最快，但停藥後復發率高
 - 線狀肉芽腫：部分幼貓（< 1 歲）可自行消退
-- 惡性轉化風險：長期慢性惰性潰瘍極罕見報告轉化為 SCC，但風險極低`,
+- 惡性轉化風險：長期慢性惰性潰瘍極罕見報告轉化為 SCC，但風險極低
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 嗜酸球生物學與抗 IL-5（mepolizumab）、抗 IL-4Rα（dupilumab） | EGC 為嗜酸球/Th2 介導，標靶細胞激素的概念性借鏡 | 人醫已用於嗜酸性疾病/異位性皮膚炎；貓尚無對應上市生物製劑（lokivetmab 為犬用抗 IL-31） |
+| 過敏原特異性減敏治療（ASIT） | 環境過敏驅動的 EGC 長期減敏、減少類固醇依賴 | 人醫標準，獸醫貓 ASIT 有部分證據 |
+| 鈣調磷酸酶抑制劑（外用 tacrolimus、全身 ciclosporin） | 類固醇替代/節制 | 沿用人醫移植/異位性皮膚炎用藥邏輯，貓 ciclosporin 已上市（King 2012 RCT） |
+| 食物過敏成分解析診斷（CRD） | 精準鑑定致敏蛋白、優化排除飲食 | 人醫進展，獸醫貓食物過敏診斷起步 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| EGC 是否「總是」過敏驅動／「特發性」是否僅是未找到的過敏 | >80% 有過敏基礎，特發性多為診斷不足；缺前瞻性追因研究 | Level III |
+| 部分病灶對 amoxicillin-clavulanate 有效的機轉（細菌過敏/繼發感染 vs 巧合） | Wildermuth 觀察到部分嗜酸性斑塊/唇潰瘍對抗生素反應，機轉未明 | Level III |
+| 長效 methylprednisolone vs 口服 prednisolone vs ciclosporin 的長期效益/安全排序 | 缺頭對頭 RCT；長效注射糖尿病風險高，趨勢偏向節制類固醇 | Level IV |
+| oclacitinib／JAK 抑制劑在貓 EGC 的角色 | 仿單外、貓藥動與安全資料有限，EGC 專屬證據不足 | Level IV |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+### EGC 是「反應模式」不是診斷——ICADA 命名共識
+2021 ICADA 貓過敏性疾病命名共識（Halliwell 2021）正式把 EGC 三型歸為「貓過敏性皮膚病的皮膚反應模式」，強調 EGC 是表現型而非最終診斷，臨床務必往下追過敏病因（跳蚤/食物/環境），而非僅以類固醇壓制症狀。
+
+### Ciclosporin 鞏固類固醇替代地位
+貓用微乳化 ciclosporin（Atopica for Cats）經 RCT 驗證對貓過敏性/嗜酸性皮膚病有效（King 2012），成為類固醇依賴或需長期控制者的實證替代，可避免長效類固醇的糖尿病風險；起效約 4-6 週，須監測腸胃副作用及感染（含弓蟲）風險。
+
+### 貓用過敏標靶治療仍在路上
+犬已有抗 IL-31 單株抗體（lokivetmab）與 oclacitinib，但貓尚無上市的抗搔癢生物製劑（frunevetmab 為抗 NGF、針對骨關節炎疼痛，非過敏搔癢）；oclacitinib 用於貓屬仿單外、證據有限。貓過敏搔癢的標靶治療仍是明確的未滿足臨床需求。`,
   clinical_pearl: 'EGC 的治療核心不是壓症狀，而是找出並控制潛在過敏原。看到 EGC 第一件事不是開類固醇，是做嚴格跳蚤預防試驗。台灣跳蚤問題嚴重，這一步常被跳過。餵藥困難的貓可以考慮 methylprednisolone acetate 長效注射，但一年不要超過 3-4 次（糖尿病風險）。幼貓的口腔線狀肉芽腫常常會自己好，不一定要積極治療。',
   common_mistakes: [
     '未排除 SCC 即以 EGC 治療惰性潰瘍（尤其老年貓必須活檢）',
@@ -5464,10 +5735,11 @@ EGC 不是單一疾病，而是一組以嗜酸球浸潤、膠原退化為特徵�
   drug_api_links: ['Tacrolimus', 'Prednisolone', 'Methylprednisolone', 'Cyclosporine', 'Chlorambucil'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 14: Eosinophilic Skin Diseases.", relevance: 'EGC 臨床特徵、診斷與治療的經典教材參考' },
-    { type: 'journal', citation: 'Buckley L, Nuttall T. Feline eosinophilic granuloma complex(ities): some clinical clarification. J Feline Med Surg. 2012;14(7):471-481.', relevance: 'EGC 三型臨床分類與過敏基礎的系統性綜述' },
-    { type: 'journal', citation: 'Ravens PA, Xu BJ, Vogelnest LJ. Feline atopic dermatitis: a retrospective study of 45 cases (2001-2012). Vet Dermatol. 2014;25(2):95-102.', relevance: '貓過敏性皮膚病（含 EGC）的臨床表現與治療結果回顧' },
-    { type: 'journal', citation: 'Wildermuth BE, Griffin CE, Rosenkrantz WS. Response of feline eosinophilic plaques and lip ulcers to amoxicillin trihydrate-clavulanate potassium therapy. Vet Dermatol. 2012;23(1):55-e12.', relevance: '部分 EGC 病例對抗生素有反應的臨床觀察' },
-    { type: 'guideline', citation: 'ICADA – Feline Allergic Skin Disease Guidelines (2021). https://doi.org/10.1111/vde.13028', relevance: 'ICADA 貓過敏性皮膚病國際指引' },
+    { type: 'journal', citation: 'Buckley L, Nuttall T. Feline eosinophilic granuloma complex(ities): some clinical clarification. J Feline Med Surg. 2012;14(7):471-481. doi:10.1177/1098612x12451549.', relevance: 'EGC 三型臨床分類與過敏基礎的系統性綜述' },
+    { type: 'journal', citation: 'Ravens PA, Xu BJ, Vogelnest LJ. Feline atopic dermatitis: a retrospective study of 45 cases (2001-2012). Vet Dermatol. 2014;25(2):95-102. doi:10.1111/vde.12109.', relevance: '貓過敏性皮膚病（含 EGC）的臨床表現與治療結果回顧' },
+    { type: 'journal', citation: 'Wildermuth BE, Griffin CE, Rosenkrantz WS. Response of feline eosinophilic plaques and lip ulcers to amoxicillin trihydrate-clavulanate potassium therapy: a randomized, double-blind, placebo-controlled prospective study. Vet Dermatol. 2012;23(2):110-e25. doi:10.1111/j.1365-3164.2011.01020.x.', relevance: '部分 EGC 病例對抗生素有反應的前瞻性 RCT' },
+    { type: 'journal', citation: 'King S, Favrot C, Messinger L, et al. A randomized double-blinded placebo-controlled study to evaluate an effective ciclosporin dose for the treatment of feline hypersensitivity dermatitis. Vet Dermatol. 2012;23(5):440-e84. doi:10.1111/j.1365-3164.2012.01086.x.', relevance: '貓 ciclosporin 治療過敏性皮膚病的關鍵 RCT（類固醇替代實證）' },
+    { type: 'guideline', citation: 'Halliwell R, Pucheu-Haston CM, Olivry T, et al. Feline allergic diseases: introduction and proposed nomenclature. Vet Dermatol. 2021;32(1):8-e2. doi:10.1111/vde.12899.', relevance: 'ICADA 貓過敏性疾病命名與分類共識（涵蓋 EGC 等反應模式）' },
   ],
   is_current: true,
   created_at: now,
@@ -5641,7 +5913,7 @@ const contentSA: NodeContent = {
     { type: 'journal', citation: 'Linek M et al. Effects of cyclosporine A on clinical and histologic abnormalities in dogs with sebaceous adenitis. J Am Vet Med Assoc. 2005;226(1):59-64.', relevance: 'Cyclosporine 治療脂腺炎的臨床試驗' },
     { type: 'journal', citation: 'Reichler IM et al. Sebaceous adenitis in the standard poodle: a discussion of 10 cases. J Small Anim Pract. 2001;42(7):341-345.', relevance: '標準貴賓犬脂腺炎的臨床系列報告' },
     { type: 'journal', citation: 'Frazer MM et al. Sebaceous adenitis in Vizsla dogs. J Am Vet Med Assoc. 2011;238(10):1246-1249.', relevance: 'Vizsla 犬脂腺炎的臨床特徵與治療' },
-    { type: 'guideline', citation: 'ACVD – Sebaceous Adenitis Consensus Review. https://doi.org/10.1111/vde.12900', relevance: 'ACVD 脂腺炎共識回顧' },
+    { type: 'journal', citation: 'Lortz J, Favrot C, Mecklenburg L, et al. A multicentre placebo-controlled clinical trial on the efficacy of oral ciclosporin A in the treatment of canine idiopathic sebaceous adenitis in comparison with conventional topical treatment. Vet Dermatol. 2010;21(6):593-601. doi:10.1111/j.1365-3164.2010.00902.x.', relevance: '犬特發性脂腺炎口服 ciclosporin A 療效多中心 RCT' },
   ],
   is_current: true,
   created_at: now,

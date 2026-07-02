@@ -191,7 +191,7 @@ CKD 的核心問題就兩個：腎元（nephron）回不來，加上腎小管間
 const contentTickBorne: NodeContent = {
   id: 'CONTENT-IM-L3-010',
   node_id: 'IM-L3-010',
-  version: 1,
+  version: 2,
   summary: '台灣亞熱帶氣候裡，壁蝨傳染的病常見到爆。其中艾利希體症（Ehrlichia canis）跟焦蟲症（Babesia canis/gibsoni）這兩個最常碰到，會打血小板、做貧血，嚴重的會多重器官衰竭。',
   learning_objectives: [
     '描述犬艾利希體症的三個臨床分期（急性、亞臨床、慢性）',
@@ -302,7 +302,16 @@ B. gibsoni vs B. canis：B. gibsoni 體型更小、更難清除、可經直接�
 | B. gibsoni 是否可完全清除 | 現有藥物無法保證清除 | Level II | 新藥組合研究中 |
 | SNAP 陽性但臨床無症狀 | 追蹤或治療均可 | Level IV | 需前瞻性比較研究 |
 | Doxycycline 28 天 vs 更長療程 | 28 天為標準 | Level II | 慢性期是否需延長？ |
-| 壁蝨疫苗 | 尚無商品化疫苗 |，| 研發中 |`,
+| 壁蝨疫苗 | 尚無商品化疫苗 | N/A | 研發中 |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+| 主題 | 實證更新 | 臨床意涵 | 來源 |
+|------|---------|---------|------|
+| CME 治療回顧 | Mylonakis 等 2019 系統性回顧重申 doxycycline（約 28 天）仍為犬單核球艾利希體症（CME）的一線治療；最佳療程長度與「如何定義微生物學治癒」尚缺前瞻性對照試驗實證。 | doxycycline 維持一線地位；勿因血象快速回升即提早停藥。 | Mylonakis 2019 |
+| B. gibsoni 抗藥性 | Sakuma 等 2009 記錄 atovaquone + azithromycin 治療後出現帶 cytochrome b 基因突變（如 M121I）的抗藥性 B. gibsoni 變異株；此組合無法穩定達成寄生蟲學清除，帶原可能持續。 | B. gibsoni 難以「根除」；治療後務必 PCR 追蹤，帶原犬禁止捐血、避免咬鬥傳播。 | Sakuma 2009 |
+| 焦蟲分子流行病學 | Solano-Gallego & Baneth 2011 回顧指出小型焦蟲（B. gibsoni、B. conradae、B. vulpes/B. microti-like）構成獨立於大型焦蟲的寄生蟲學-臨床光譜，須分子鑑型而非僅靠形態。 | 形態學（梨形大小）不足以定種；台灣以 B. gibsoni 為主，應以 PCR/定序確認。 | Solano-Gallego 2011 |
+| 預防典範轉移 | 異惡唑啉類（isoxazoline，如 fluralaner、afoxolaner）全年投藥能在壁蝨附著早期即快速殺蝨，降低 Ehrlichia／Babesia 傳播風險；惟快速傳播病原（E. canis 經 R. sanguineus 附著後數小時即可傳播）未必能完全阻斷，殺蝨藥不等於零風險。 | 壁蝨預防由「驅避」轉向「快速殺蝨阻斷傳播」；台灣亞熱帶須全年不間斷（見 [節點:DERM-L5-002] 抗寄生蟲）。 | （見 DERM-L5-002）|`,
   clinical_pearl: '在台灣，任何犬隻出現不明原因的血小板減少，壁蝨媒介疾病應列為首要鑑別診斷。即使沒有明顯壁蝨暴露史，亞臨床期的 E. canis 可以持續多年才被發現。同時感染（Ehrlichia + Babesia 合併感染）在台灣並不少見。',
   common_mistakes: [
     'SNAP 快篩陰性就排除 Ehrlichia（急性期抗體可能尚未產生，需搭配 PCR）',
@@ -342,8 +351,10 @@ B. gibsoni vs B. canis：B. gibsoni 體型更小、更難清除、可經直接�
   interactive_placeholders: [],
   drug_api_links: ['Doxycycline', 'Imidocarb', 'Atovaquone', 'Azithromycin'],
   references: [
-    { type: 'guideline', citation: 'Neer TM et al. "Consensus Statement on Ehrlichial Disease of Small Animals from the Infectious Disease Study Group of the ACVIM." J Vet Intern Med. 2002;16(3):309-315.', relevance: 'Ehrlichia 診斷與治療共識' },
-    { type: 'journal', citation: 'Solano-Gallego L, Baneth G. "Babesiosis in dogs and cats，expanding parasitological and clinical spectra." Vet Parasitol. 2011;181(1):48-60.', relevance: '焦蟲症綜合回顧' },
+    { type: 'guideline', citation: 'Neer TM et al. "Consensus Statement on Ehrlichial Disease of Small Animals from the Infectious Disease Study Group of the ACVIM." J Vet Intern Med. 2002;16(3):309-315. doi:10.1111/j.1939-1676.2002.tb02374.x', relevance: 'Ehrlichia 診斷與治療共識' },
+    { type: 'journal', citation: 'Solano-Gallego L, Baneth G. "Babesiosis in dogs and cats—expanding parasitological and clinical spectra." Vet Parasitol. 2011;181(1):48-60. doi:10.1016/j.vetpar.2011.04.023', relevance: '焦蟲症綜合回顧' },
+    { type: 'journal', citation: 'Mylonakis ME, Harrus S, Breitschwerdt EB. "An update on the treatment of canine monocytic ehrlichiosis (Ehrlichia canis)." Vet J. 2019;246:45-53. doi:10.1016/j.tvjl.2019.01.015', relevance: 'CME 治療近期回顧：doxycycline 維持一線、療程實證空缺' },
+    { type: 'journal', citation: 'Sakuma M, Setoguchi A, Endo Y. "Possible Emergence of Drug-Resistant Variants of Babesia gibsoni in Clinical Cases Treated with Atovaquone and Azithromycin." J Vet Intern Med. 2009;23(3):493-498. doi:10.1111/j.1939-1676.2009.0300.x', relevance: 'B. gibsoni atovaquone+azithromycin 抗藥性實證' },
     { type: 'textbook', citation: 'Greene CE. Infectious Diseases of the Dog and Cat, 4th ed. Elsevier, 2012.', relevance: '壁蝨媒介疾病教科書' },
   ],
   is_current: true,
@@ -354,8 +365,8 @@ B. gibsoni vs B. canis：B. gibsoni 體型更小、更難清除、可經直接�
 const contentUrinalysis: NodeContent = {
   id: 'CONTENT-IM-L4-002',
   node_id: 'IM-L4-002',
-  version: 1,
-  summary: '尿液分析是評估腎臟和下泌尿道的入門檢查。三件事要看：物理性質（外觀、比重）、化學性質（dipstick）、沉渣鏡檢。其中尿比重（USG）是看腎臟還濃不濃縮得了尿，最重要的一個指標。',
+  version: 2,
+  summary: '尿液分析是評估腎臟和下泌尿道的入門檢查。三件事要看：物理性質（外觀、比重）、化學性質（dipstick）、沉渣鏡檢。其中尿比重（USG）是看腎臟還濃不濃縮得了尿，最重要的一個指標。判讀腎功能時，USG、UPC 要和血液腎指標（creatinine、SDMA）一起讀——SDMA 能比 creatinine 更早抓到腎功能下降。',
   learning_objectives: [
     '正確執行與判讀完整尿液分析（物理/化學/沉渣）',
     '運用 USG 評估腎臟濃縮功能',
@@ -369,12 +380,13 @@ const contentUrinalysis: NodeContent = {
     'UPC > 0.5（犬）/ > 0.4（貓）= 明顯蛋白尿',
     'Dipstick 蛋白尿在稀釋尿中可能偽陰性，濃縮尿中偽陽性',
     '膀胱穿刺（cystocentesis）為最佳採集方式（培養時必須）',
+    'SDMA 比 creatinine 更早偵測腎功能下降（GFR 喪失約 25-40% 即升高），但非 CKD 專屬、AKI 也會升高',
   ],
   body: `# 尿液分析判讀
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
-
+尿液分析適用於腎臟與下泌尿道評估、PU/PD 鑑別、蛋白尿定量、尿路感染與結石評估。常見監測情境：
 
 | 監測指標 | 頻率 | 適用情境 |
 |---------|------|---------|
@@ -423,15 +435,23 @@ USG 判讀關鍵：低張尿 (<1.008) = 完全無法濃縮（DI、psychogenic po
 
 ### UPC（尿蛋白/肌酐比值）
 
-| UPC | 犬 | 貓 | IRIS 分類 |
-|-----|----|----|---------|
-| <0.2 | 非蛋白尿 | 非蛋白尿 | Normal |
-| 0.2-0.5 | 邊緣 |，| Borderline |
-| 0.2-0.4 |，| 邊緣 | Borderline |
-| >0.5 | 蛋白尿 |，| Proteinuric |
-| >0.4 |，| 蛋白尿 | Proteinuric |
+| IRIS 蛋白尿分類 | 犬 UPC | 貓 UPC |
+|----------------|--------|--------|
+| 非蛋白尿 (Non-proteinuric) | < 0.2 | < 0.2 |
+| 邊緣 (Borderline) | 0.2-0.5 | 0.2-0.4 |
+| 蛋白尿 (Proteinuric) | > 0.5 | > 0.4 |
+
+> 犬貓切點不同（貓閾值較低）；邊緣值應連續取樣 2-3 次再判定，勿憑單次 UPC 定論（見 §三、§六）。
 
 ## 三、常見陷阱 (Pitfalls)
+
+- **USG 沒對照脫水狀態就判讀**：USG 偏低只有在動物同時脫水/氮血症時才等於濃縮功能異常；水分充足的健康動物本來就會排稀尿。只看數字不看臨床，會把正常當腎病。
+- **單次 UPC 就替蛋白尿定論**：UPC 有明顯生物變異（見 §六），邊緣值（犬 0.2-0.5 / 貓 0.2-0.4）務必連續取樣 2-3 次再判讀，單筆落在邊緣不能直接貼「蛋白尿」標籤。
+- **血尿/膿尿污染下硬解讀 UPC**：明顯血尿或發炎（膿尿、菌尿）會讓 UPC 偽性升高，反映的是出血/發炎而非腎絲球漏蛋白；應先處理或排除後再定量。
+- **把 Dipstick 蛋白格當定量**：試紙蛋白只測 albumin，鹼性尿與高濃縮尿易偽陽性、稀釋尿易偽陰性，且非定量；判讀一律回到 UPC，必要時加做 SSA（磺基水楊酸沉澱）。
+- **自然排尿樣本拿去培養**：自由排尿污染率高、培養偽陽性多；要培養一律膀胱穿刺（cystocentesis）並送定量培養（見 §六 ISCAID 2019）。
+- **採集後拖太久才鏡檢**：放置超過 30-60 分鐘，結晶可能體外新生或溶解、管型崩解、細菌過度增生、pH 漂移；理想 30 分鐘內分析，無法及時則冷藏並註明（冷藏本身會促 struvite 體外析出）。
+- **把結晶尿等同結石病**：少量 struvite/CaOx 結晶在健康動物可為正常；有無臨床意義須結合品種、pH、影像與症狀，不能見結晶就診斷尿石症。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -447,7 +467,19 @@ USG 判讀關鍵：低張尿 (<1.008) = 完全無法濃縮（DI、psychogenic po
 | UPC 的生物變異 | 單次 UPC 可能波動大 | Level II | 連續取樣的最佳策略 |
 | Dipstick 蛋白質 vs SSA vs UPC | UPC 最可靠 | Level I | 即時 UPC 測量儀器開發 |
 | 尿液微生物培養閾值 | 穿刺 >1000 CFU/mL 有意義 | Level II | 亞臨床菌尿的處理策略 |
-| 結晶尿的臨床意義 | 不等同於結石病 | Level II | 結晶→結石的風險預測 |`,
+| 結晶尿的臨床意義 | 不等同於結石病 | Level II | 結晶→結石的風險預測 |
+
+## 六、近期實證更新 (Recent Evidence)
+
+[圖片:腎功能評估三軸整合判讀——USG（濃縮力）× UPC（腎絲球漏蛋白）× SDMA/creatinine（GFR）]
+
+- **SDMA 把「驗得出腎傷害」的時間提前**：對稱二甲基精胺酸（SDMA）在 GFR 約喪失 25-40% 時即升高，比 creatinine（多需約 75% 腎元喪失才超出參考區間）更早反映腎功能下降（Nabity 2015）。IRIS 已將 SDMA 納入分期：**持續 SDMA > 14 μg/dL** 提示腎功能下降；對**肌肉量偏低、creatinine 被低估**的個案，IRIS 另建議當 SDMA ≥ 25（Stage 2）或 ≥ 45 μg/dL（Stage 3）時，視為該分期可能被低估、可採下一階的處置思維（屬低肌肉量的輔助判讀，非硬性分期切點）。
+- **SDMA 不是 CKD 專屬**：SDMA 反映的是 GFR 下降，**急性腎損傷（AKI）同樣會升高**，貓 AKI 與 CKD 都可見上升（Loane 2022）；2026 年一篇系統性回顧（Scobie 等，Evidence Level I）整理犬貓 SDMA 診斷準確度，指出研究間異質性大、切點與情境相依——SDMA 須與 USG、creatinine、臨床脈絡合讀，不可單獨當 CKD 診斷。
+- **UPC 要「連續取樣」而非單筆**：2025 年健康犬每週生物變異研究（Couture 等）量化了 UPC 與 USG 的週間波動，證實單次 UPC 會因生物變異而誤分類；邊緣蛋白尿應於數日到數週間連續取樣（取臨界差或平均）再定論，呼應 §五的爭議。
+- **無症狀菌尿不再常規治療**：ISCAID 2019 指引（Weese 等）明確**不建議**常規以抗生素治療多數犬貓的**無症狀菌尿（subclinical bacteriuria）**；培養首選膀胱穿刺檢體；偶發（單純性）細菌性膀胱炎改採**短療程（約 3-5 天）**，扭轉過去動輒 7-14 天的舊習慣。
+- **指引時效**：CKD 分期與蛋白尿亞分期以 **IRIS（2023 修訂）** 為現行依據；尿路感染診療以 **ISCAID 2019** 為現行依據。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '在評估氮血症（BUN/Cre 升高）時，USG 是區分腎前性、腎性、腎後性的關鍵。如果動物脫水但 USG < 1.030（犬）或 < 1.035（貓），即使 Creatinine 只是輕度升高，也高度提示腎臟本身的問題。',
   common_mistakes: [
     'Dipstick 蛋白尿結果未搭配 USG 解讀',
@@ -487,10 +519,15 @@ USG 判讀關鍵：低張尿 (<1.008) = 完全無法濃縮（DI、psychogenic po
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Sink CA, Weinstein NM. Practical Veterinary Urinalysis. Wiley-Blackwell, 2012.', relevance: '尿液分析標準參考' },
-    { type: 'journal', citation: 'Lees GE et al. "Assessment and Management of Proteinuria in Dogs and Cats." J Vet Intern Med. 2005;19(3):377-385.', relevance: '蛋白尿評估 ACVIM 共識' },
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '尿液分析基礎教材' },
-    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 分期與治療指引' },
+    { type: 'textbook', citation: 'Sink CA, Weinstein NM. Practical Veterinary Urinalysis. Wiley-Blackwell, 2012.', relevance: '尿液分析標準參考教材' },
+    { type: 'journal', citation: 'Lees GE, Brown SA, Elliott J, Grauer GF, Vaden SL. "Assessment and Management of Proteinuria in Dogs and Cats: 2004 ACVIM Forum Consensus Statement (Small Animal)." J Vet Intern Med. 2005;19(3):377-385. doi:10.1111/j.1939-1676.2005.tb02713.x', relevance: '蛋白尿評估 ACVIM 共識（UPC 分級基礎）' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '尿液分析與腎功能基礎教材' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 分期與蛋白尿亞分期現行指引' },
+    { type: 'journal', citation: 'Nabity MB, Lees GE, Boggess MM, Yerramilli M, et al. "Symmetric Dimethylarginine Assay Validation, Stability, and Evaluation as a Marker for the Early Detection of Chronic Kidney Disease in Dogs." J Vet Intern Med. 2015;29(4):1036-1044. doi:10.1111/jvim.12835', relevance: 'SDMA 早期偵測 CKD 的奠基驗證研究' },
+    { type: 'journal', citation: 'Loane SC, Thomson JM, Williams TL, McCallum KE. "Evaluation of symmetric dimethylarginine in cats with acute kidney injury and chronic kidney disease." J Vet Intern Med. 2022;36(5):1669-1676. doi:10.1111/jvim.16497', relevance: 'SDMA 於貓 AKI 與 CKD 皆升高、非 CKD 專屬' },
+    { type: 'journal', citation: 'Couture Y, Keys D, Summers S. "Weekly Biological Variation of Urine Protein Creatinine Ratio and Urine Specific Gravity in Healthy Dogs." J Vet Intern Med. 2025;39(2):e70052. doi:10.1111/jvim.70052', relevance: 'UPC/USG 生物變異——支持連續取樣判讀' },
+    { type: 'journal', citation: 'Scobie C, Dean R, Stavisky J, Plüddemann A. "Diagnostic accuracy of symmetric dimethylarginine for chronic kidney disease in cats and dogs: A systematic review." Vet Rec. 2026;198(7):e70216. doi:10.1002/vetr.70216', relevance: 'SDMA 診斷準確度系統性回顧（Evidence Level I）' },
+    { type: 'guideline', citation: 'Weese JS, Blondeau J, Boothe D, Guardabassi LG, et al. "International Society for Companion Animal Infectious Diseases (ISCAID) guidelines for the diagnosis and management of bacterial urinary tract infections in dogs and cats." Vet J. 2019;247:8-25. doi:10.1016/j.tvjl.2019.02.008', relevance: '尿路感染診療現行指引（含無症狀菌尿不治療）' },
   ],
   is_current: true,
   created_at: now,
@@ -500,7 +537,7 @@ USG 判讀關鍵：低張尿 (<1.008) = 完全無法濃縮（DI、psychogenic po
 const contentPancreatitis: NodeContent = {
   id: 'CONTENT-IM-L3-008',
   node_id: 'IM-L3-008',
-  version: 1,
+  version: 2,
   summary: '胰臟炎在犬貓門診常見，可能是急診，也可能是慢性的。犬多半走急性壞死型，貓則以慢性淋巴球型為主。診斷工具裡，犬胰臟特異性脂酶（cPLI/Spec cPL）目前最敏感、又不用侵入。治療的核心就幾件事：積極輸液、止痛、止吐、早點把營養給上去。',
   learning_objectives: [
     '比較犬與貓胰臟炎在病因、臨床表現與病程上的差異',
@@ -606,7 +643,17 @@ const contentPancreatitis: NodeContent = {
 | 抗生素在胰臟炎 | 不常規使用（除非有感染證據） | Level III | 預防性抗生素的角色？ |
 | Gabapentin 作為輔助止痛 | 部分臨床經驗支持 | Level IV | 犬貓胰臟炎止痛 RCT 需要 |
 | 貓三體炎最佳治療順序 | 先穩定胰臟炎再處理 IBD | Level IV | 同時或序貫治療？ |
-| 胰臟炎與 EPI 的關聯 | 反覆胰臟炎可導致 EPI | Level III | 長期追蹤數據不足 |`,
+| 胰臟炎與 EPI 的關聯 | 反覆胰臟炎可導致 EPI | Level III | 長期追蹤數據不足 |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+- **Fuzapladib（Panoquell-CA1）抗發炎新藥**：Steiner 等人（2023）以多中心隨機對照遮蔽試驗評估 LFA-1 拮抗劑 fuzapladib 於犬疑似急性胰臟炎；其機轉為抑制白血球活化/移行，是傳統支持療法之外的抗發炎新途徑（美國 FDA 條件性核准），但**不取代**輸液/止痛/營養支持。〔Evidence Level II〕
+- **輸液策略由「積極」轉向「目標導向」**：現代觀念強調個體化/目標導向輸液復甦——矯正脫水與灌流不足，但避免過度輸液（過度輸液恐加重胰臟水腫與第三間隙滲漏）。〔Evidence Level III〕
+- **早期腸道營養已成標準**：禁食不宜 > 24-48 小時，儘早經腸道（鼻食道/鼻胃管）餵食可維持腸黏膜屏障、降低細菌移位，預後優於長時禁食。〔Evidence Level II〕
+- **類固醇在犬急性胰臟炎的角色重新審視**：歷來避免使用，但近期部分文獻於特定病例重新評估短療程 prednisolone；證據仍有限、**非標準療法**。〔Evidence Level IV〕
+- **2021 ACVIM 貓胰臟炎共識**：Forman 等人（2021）整合貓胰臟炎診斷（Spec fPL 合併超音波判讀）與治療（支持療法、處理三體炎共病）的實證框架，為現行貓胰臟炎臨床指引基準。〔Evidence Level II〕
+
+> ⚠️ 上述更新（特別是 fuzapladib 的臨床定位與類固醇爭議）仍待 DVM 依個案與最新獸醫實證覆核後採用。`,
   clinical_pearl: '貓胰臟炎的臨床表現遠比犬隱微。犬胰臟炎的經典三聯征是嘔吐、腹痛和食慾廢絕，但貓可能僅表現為食慾下降和嗜睡。在任何食慾不振超過 48 小時的貓，都應將胰臟炎列入鑑別診斷。另外，貓的超音波敏感度較低，SNAP fPL 陰性結果的排除價值很高。\n\n【台灣流行病學】胰臟炎在台灣犬貓臨床盛行率高，尤其好發於中老年犬及肥胖犬貓。台灣飼主常有餵食人類食物的習慣（如年節剩菜、高脂肪零食），為犬急性胰臟炎的重要誘因。台灣常見品種如迷你雪納瑞、約克夏梗為犬胰臟炎好發品種。貓「三體炎」（胰臟炎 + 膽管炎 + IBD）在台灣臨床並不罕見。SNAP cPL/fPL 快篩已在台灣獸醫院廣泛使用。',
   common_mistakes: [
     '依賴傳統 Amylase/Lipase 診斷胰臟炎（敏感度和特異度都不足，應使用 Spec cPL/fPL）',
@@ -650,11 +697,12 @@ const contentPancreatitis: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Maropitant', 'Buprenorphine', 'Methadone', 'Prednisolone'],
   references: [
-    { type: 'journal', citation: 'Xenoulis PG. "Diagnosis of pancreatitis in dogs and cats." J Small Anim Pract. 2015;56(1):13-26.', relevance: '犬貓胰臟炎診斷綜合回顧' },
-    { type: 'journal', citation: 'Watson PJ. "Chronic pancreatitis in dogs." Top Companion Anim Med. 2012;27(3):133-139.', relevance: '犬慢性胰臟炎管理' },
-    { type: 'journal', citation: 'Forman MA et al. "ACVIM consensus statement on pancreatitis in cats." J Vet Intern Med. 2021;35(2):703-723.', relevance: '貓胰臟炎診斷治療共識' },
+    { type: 'journal', citation: 'Xenoulis PG. Diagnosis of pancreatitis in dogs and cats. J Small Anim Pract. 2015;56(1):13-26. doi:10.1111/jsap.12274', relevance: '犬貓胰臟炎診斷綜合回顧' },
+    { type: 'journal', citation: 'Watson PJ. Chronic pancreatitis in dogs. Top Companion Anim Med. 2012;27(3):133-139. doi:10.1053/j.tcam.2012.04.006', relevance: '犬慢性胰臟炎管理' },
+    { type: 'guideline', citation: 'Forman MA, Steiner JM, Armstrong PJ, et al. ACVIM consensus statement on pancreatitis in cats. J Vet Intern Med. 2021;35(2):703-723. doi:10.1111/jvim.16053', relevance: '貓胰臟炎診斷治療共識（Crossref 實查確認真實）' },
+    { type: 'journal', citation: 'Steiner JM, Lainesse C, Noshiro Y, Domen Y, et al. Fuzapladib in a randomized controlled multicenter masked study in dogs with presumptive acute onset pancreatitis. J Vet Intern Med. 2023;37(6):2084-92. doi:10.1111/jvim.16897', relevance: 'LFA-1 拮抗劑 fuzapladib 犬急性胰臟炎 RCT（新型抗發炎療法）' },
     { type: 'textbook', citation: 'Steiner JM. "Exocrine Pancreas." In: Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '胰臟炎基礎教材' },
-    { type: 'guideline', citation: 'Washabau RJ, Day MJ, Willard MD, et al. "Endoscopic, biopsy, and histopathologic guidelines for the evaluation of gastrointestinal inflammation in companion animals." J Vet Intern Med. 2010;24(1):10-26.', relevance: 'GI 炎症評估指引' },
+    { type: 'guideline', citation: 'Washabau RJ, Day MJ, Willard MD, et al. Endoscopic, biopsy, and histopathologic guidelines for the evaluation of gastrointestinal inflammation in companion animals. J Vet Intern Med. 2010;24(1):10-26. doi:10.1111/j.1939-1676.2009.0443.x', relevance: 'GI 炎症評估指引' },
   ],
   is_current: true,
   created_at: now,
@@ -664,7 +712,7 @@ const contentPancreatitis: NodeContent = {
 const contentHepaticLipidosis: NodeContent = {
   id: 'CONTENT-IM-L3-009',
   node_id: 'IM-L3-009',
-  version: 1,
+  version: 2,
   summary: '貓肝脂肪變性（FHL）是貓最常見的肝臟疾病，整個故事就是肝細胞被三酸甘油酯塞滿。典型情境就是一隻胖貓不吃東西超過 3-7 天就出事了。治療關鍵是把營養補回去，食道管灌食最有效。分原發性還是繼發性，預後差很多。',
   learning_objectives: [
     '說明貓肝臟脂肪變性的獨特病理生理機轉（與犬和人的差異）',
@@ -681,6 +729,7 @@ const contentHepaticLipidosis: NodeContent = {
     '確診：肝臟細針抽吸細胞學（> 80% 肝細胞含脂肪空泡）',
     '治療核心：食道管灌食（esophagostomy tube），每日熱量需求從 25-30% RER 逐漸增加',
     '預後：積極營養支持下存活率約 60-85%',
+    '近期食慾刺激劑（經皮 mirtazapine/Mirataz、capromorelin）是輔助，已成形 FHL 仍以食道管灌食為基石（單靠刺激食慾無法達 RER）',
   ],
   body: `# 貓肝臟脂肪變性 (Feline Hepatic Lipidosis, FHL)
 
@@ -713,7 +762,7 @@ const contentHepaticLipidosis: NodeContent = {
 
 | 指標 | FHL 典型 | 膽管炎鑑別 | 臨床意義 |
 |------|---------|-----------|---------|
-| ALP | 明顯升高 (>500 U/L) | 升高 |，|
+| ALP | 明顯升高 (>500 U/L) | 升高 | 貓無類固醇誘導型 ALP，升高即有意義 |
 | GGT | 正常或輕度升高 | 明顯升高 | ALP:GGT >5 高度提示 FHL |
 | Bilirubin | 明顯升高 | 升高 | 膽汁鬱積 |
 | Albumin | 可能降低 | 變異大 | 肝臟合成↓ |
@@ -786,7 +835,20 @@ RER = 70 × (BW kg)^0.75。食道管 (esophagostomy tube) 為首選長期營養�
 | SAMe 的臨床效益 | 理論支持但 RCT 不足 | Level III | 需貓 FHL 特異性 RCT |
 | L-Carnitine 補充 | 理論支持，臨床效果不確定 | Level IV | 劑量優化研究需要 |
 | 鼻胃管 vs 食道管 | 食道管為首選，鼻胃管為暫時過渡 | Level II | 各自最佳適應時機？ |
-| 灌食配方最佳組成 | 高蛋白 (30-40% ME) 為共識 | Level II-III | 最佳脂肪/碳水比例？ |`,
+| 灌食配方最佳組成 | 高蛋白 (30-40% ME) 為共識 | Level II-III | 最佳脂肪/碳水比例？ |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**新一代食慾刺激劑：是「輔助」不是「替代」灌食**
+近年貓的食慾刺激劑明顯進步——**經皮 mirtazapine 軟膏（Mirataz，Poole/Quimby 2019 RCT）**避免口服灌藥的壓力、**capromorelin（ghrelin 受體促效劑，Wofford 2025 RCT）**能促進體重增加。但對**已成形的 FHL** 有一個關鍵原則：**食慾刺激劑單用無法可靠達到熱量目標（RER），不能取代輔助腸道灌食（食道管）**。臨床定位：
+- **預防＆早期**：肥胖貓剛開始不吃時，食慾刺激劑＋找原因，可能擋住 FHL 成形。
+- **已 FHL**：食道管灌食仍是基石（保證熱量送達）；食慾刺激劑當輔助、協助拔管過渡。
+
+**再餵食症候群仍是頭號灌食併發症**：啟動灌食後胰島素上升把磷/鉀/鎂打進細胞，前 48-72 小時要盯緊**血磷（最關鍵）**、緩慢加熱量、必要時補 KPO4＋thiamine。
+
+**別忘了「找原發病」**：FHL 多為繼發（傳統估計大多數、達九成上下，真正原發比例可能被低估）——IBD、胰臟炎、膽管炎、DM、CKD、腫瘤都可能是讓貓不吃的元兇；原發病不解決，FHL 也難好。
+
+【台灣落地】台灣室內貓肥胖盛行（>30% 過重），FHL 門診常見；經皮 mirtazapine、capromorelin 在台灣可近性提升，是門診實用的食慾輔助，但遇到已黃疸/已 FHL 的貓，該放食道管就要放，別只靠刺激食慾拖時間。E-tube 放置技術在台灣已成熟。`,
   clinical_pearl: 'ALP:GGT 比值是 FHL 最有用的血檢鑑別線索。在大多數肝臟疾病中 ALP 和 GGT 會同步升高，但在 FHL 中 ALP 明顯升高而 GGT 正常或僅輕度升高。如果 GGT 明顯升高，要高度懷疑合併膽管炎或其他膽道疾病。另外，在黃疸貓中見到 coagulopathy，補充 Vitamin K1 後仍無改善，要考慮肝臟合成功能已嚴重受損。\n\n【台灣流行病學】貓肝脂肪沉積症在台灣為常見的貓肝臟急症，與台灣室內貓肥胖盛行率高度相關。台灣貓的肥胖問題普遍（估計超過 30% 過重），任何原因導致肥胖貓食慾廢絕超過 48 小時即應警覺 FHL 風險。台灣飼主多犬多貓家庭比例高，環境壓力導致的厭食是常見誘因。台灣獸醫院 E-tube 放置技術成熟，為 FHL 治療的關鍵支持工具。',
   common_mistakes: [
     '將 FHL 視為單獨疾病而未積極搜尋潛在病因（95% 為繼發性）',
@@ -831,9 +893,11 @@ RER = 70 × (BW kg)^0.75。食道管 (esophagostomy tube) 為首選長期營養�
   interactive_placeholders: [],
   drug_api_links: ['Maropitant', 'Vitamin K1', 'SAMe', 'Lactulose'],
   references: [
-    { type: 'journal', citation: 'Center SA. "Feline hepatic lipidosis." Vet Clin North Am Small Anim Pract. 2005;35(1):225-269.', relevance: 'FHL 綜合回顧' },
-    { type: 'journal', citation: 'Armstrong PJ, Blanchard G. "Hepatic lipidosis in cats." Vet Clin North Am Small Anim Pract. 2009;39(3):599-616.', relevance: 'FHL 管理與營養支持' },
-    { type: 'guideline', citation: 'AAHA Nutritional Assessment Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2010;46(4):285-296.', relevance: '營養評估與灌食指引' },
+    { type: 'journal', citation: 'Wofford JA, Milliken MacKinnon A, Heinen E. "Capromorelin promotes weight gain in cats with unintended weight loss: a randomized, masked, placebo-controlled clinical trial." J Feline Med Surg. 2025;27(11). doi:10.1177/1098612X251379924', relevance: '近期：capromorelin（ghrelin 促效劑）增重 RCT' },
+    { type: 'journal', citation: 'Poole M, Quimby JM, Hu T, Labelle D. "A double-blind, placebo-controlled, randomized study to evaluate the weight gain drug, mirtazapine transdermal ointment, in cats with unintended weight loss." J Vet Pharmacol Ther. 2019;42(2):179-188. doi:10.1111/jvp.12738', relevance: '經皮 mirtazapine（Mirataz）增重 RCT' },
+    { type: 'journal', citation: 'Center SA. "Feline hepatic lipidosis." Vet Clin North Am Small Anim Pract. 2005;35(1):225-269. doi:10.1016/j.cvsm.2004.10.002', relevance: 'FHL 綜合回顧' },
+    { type: 'journal', citation: 'Armstrong PJ, Blanchard G. "Hepatic Lipidosis in Cats." Vet Clin North Am Small Anim Pract. 2009;39(3):599-616. doi:10.1016/j.cvsm.2009.03.003', relevance: 'FHL 管理與營養支持' },
+    { type: 'guideline', citation: 'Baldwin K, Bartges J, Buffington T, et al. "AAHA Nutritional Assessment Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2010;46(4):285-296. doi:10.5326/0460285', relevance: '營養評估與灌食指引' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter on Hepatobiliary Disease in Cats.', relevance: '肝臟疾病基礎教材' },
   ],
   is_current: true,
@@ -844,7 +908,7 @@ RER = 70 × (BW kg)^0.75。食道管 (esophagostomy tube) 為首選長期營養�
 const contentAddisons: NodeContent = {
   id: 'CONTENT-IM-L3-011',
   node_id: 'IM-L3-011',
-  version: 1,
+  version: 2,
   summary: '犬腎上腺皮質機能低下（Addison\'s disease）說穿了，就是腎上腺皮質壞掉，糖皮質素跟/或鹽皮質素分不出來。它有個外號叫「The Great Pretender」，因為症狀千變萬化、什麼都像。典型的電解質長相是低血鈉加高血鉀（Na:K < 27）。確診靠 ACTH stimulation test，金標準。',
   learning_objectives: [
     '說明犬 Addison\'s disease 的病因分類（原發性 vs 繼發性 vs 醫源性）',
@@ -917,7 +981,7 @@ Cortisol 缺乏→糖質新生↓→低血糖風險；壓力反應能力喪失�
 
 | 藥物 | 劑量 | 備註 | 證據等級 |
 |------|------|------|---------|
-| [藥物:DOCP] (Percorten-V/Zycortal) | 2.2 mg/kg IM/SC q25-28d | 鹽皮質素首選 | Level I |
+| [藥物:DOCP] (Percorten-V/Zycortal) | 仿單 2.2 mg/kg IM/SC q25-28d；**起始可較低（~1.1–1.5 mg/kg）多數即有效**，再依電解質個別化 | 鹽皮質素首選（Bates 2013；AAHA 2023） | Level I |
 | [藥物:Fludrocortisone] | 0.01-0.02 mg/kg PO SID-BID | 口服替代 | Level II |
 | [藥物:Prednisolone] | 0.1-0.2 mg/kg PO SID | 糖皮質素補充 | Level I |
 
@@ -954,8 +1018,16 @@ Cortisol 缺乏→糖質新生↓→低血糖風險；壓力反應能力喪失�
 | DOCP vs Fludrocortisone | DOCP 為多數首選 | Level II | 長期 QoL 比較研究 |
 | 非典型進展為典型的頻率 | 約 30% 可能進展 | Level III | 長期前瞻性追蹤 |
 | 基因檢測預測風險 | 部分品種 DLA haplotype 已知 | Level III | 商品化基因檢測可行性 |
-| DOCP 最佳劑量與間隔 | 起始 2.2 mg/kg q25d，個別化調整 | Level II | 更低劑量是否足夠？ |
-| 貓 Addison's | 極罕見，治療經驗有限 | Level IV | 貓特異性治療指引需要 |`,
+| DOCP 最佳劑量與間隔 | 較低起始劑量（~1.1–1.5 mg/kg）多數已足夠（Bates 2013；AAHA 2023 採減量），依 Na/K 與間隔個別化 | Level II | 最佳最低劑量/最長間隔之前瞻比較 |
+| 貓 Addison's | 極罕見，治療經驗有限 | Level IV | 貓特異性治療指引需要 |
+
+## 八、近期實證更新（待 DVM 覆核）
+
+1. **DOCP 減量起始（Bates 2013；AAHA 2023）**：DOCP 仿單為 2.2 mg/kg，但較低起始劑量（約 1.1–1.5 mg/kg）在多數犬已足夠維持電解質正常；應依注射前 Na/K 個別化劑量與間隔，可降低成本與醫源性高鈉/低鉀風險。
+2. **cortisol:ACTH 比值輔助診斷（Lathan 2014）**：基礎 cortisol 對內源性 ACTH 的比值可作為原發性 HOAC 的輔助/替代診斷，於 ACTH 試劑取得受限時尤具價值。
+3. **基礎 cortisol 篩檢角色（Guzmán Ramos 2022 回顧）**：基礎 cortisol > 2 µg/dL 對排除 Addison 有高敏感度（良好 rule-out），確診仍須 ACTH 刺激試驗。非典型型（電解質正常、僅糖皮質素缺乏）約占 10–30%，是否進展為典型型**個別差異大、難以可靠預測**。
+4. **急救期糖皮質素選擇**：dexamethasone（非 prednisolone/prednisone）因不干擾 cortisol 分析，為 ACTH 試驗前的緊急選擇。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: 'Na:K ratio < 27 是 Addison\'s 最有價值的篩檢線索，但要記住約 10-30% 的 Addison\'s 是非典型的（電解質正常）。任何犬隻出現反覆的、間歇性的嘔吐/腹瀉/虛弱，而且壓力時症狀加重，特別是輸液後快速改善又再度惡化，都應該考慮 Addison\'s。另外，若 Cushing 病犬使用 Trilostane 治療後突然惡化，必須立即排除醫源性 Addison\'s。\n\n【台灣流行病學】Addison 病在台灣相對少見但容易被誤診為其他慢性消化道疾病。台灣常見的好發品種包括標準型貴賓犬、西高地白梗等。由於台灣 Trilostane 使用日益普及治療 Cushing 症，醫源性 Addison 危機需特別留意。DOCP（Percorten-V）在台灣取得管道有限，Fludrocortisone 為替代選項。台灣獸醫師應將 Addison 納入「反覆不明原因虛脫」的鑑別診斷。',
   common_mistakes: [
     '僅因電解質正常就排除 Addison\'s（10-30% 為非典型，電解質正常）',
@@ -1001,10 +1073,13 @@ Cortisol 缺乏→糖質新生↓→低血糖風險；壓力反應能力喪失�
   interactive_placeholders: [],
   drug_api_links: ['DOCP', 'Fludrocortisone', 'Prednisolone', 'Dexamethasone', 'Calcium gluconate', 'Regular insulin'],
   references: [
-    { type: 'journal', citation: 'Klein SC, Peterson ME. "Canine hypoadrenocorticism: Part I." Can Vet J. 2010;51(1):63-69.', relevance: 'Addison\'s 病因與診斷回顧' },
-    { type: 'guideline', citation: 'Scott-Moncrieff JC. "Hypoadrenocorticism." In: Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. pp 485-520.', relevance: 'Addison\'s 完整參考章節' },
-    { type: 'journal', citation: 'Lathan P, Thompson AL. "Management of hypoadrenocorticism (Addison\'s disease) in dogs." Vet Med (Auckl). 2018;9:1-10.', relevance: 'Addison\'s 長期管理策略' },
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '內分泌疾病基礎教材' },
+    { type: 'guideline', citation: 'Bugbee A, et al. 2023 AAHA Selected Endocrinopathies of Dogs and Cats Guidelines. J Am Anim Hosp Assoc. 2023;59(3):113-135. doi:10.5326/JAAHA-MS-7368.', relevance: '現行內分泌指引（含 HOAC 治療與 DOCP 減量）' },
+    { type: 'journal', citation: 'Bates JA, et al. Lower initial dose desoxycorticosterone pivalate for treatment of canine primary hypoadrenocorticism. Aust Vet J. 2013;91(3):77-82. doi:10.1111/avj.12019.', relevance: 'DOCP 較低起始劑量之有效性證據' },
+    { type: 'journal', citation: 'Lathan P, et al. Use of the cortisol-to-ACTH ratio for diagnosis of primary hypoadrenocorticism in dogs. J Vet Intern Med. 2014;28(5):1546-1550. doi:10.1111/jvim.12392.', relevance: 'cortisol:ACTH 比值輔助診斷原發性 HOAC' },
+    { type: 'journal', citation: 'Guzmán Ramos PJ, et al. Diagnosis of canine spontaneous hypoadrenocorticism. Canine Med Genet. 2022;9(1):6. doi:10.1186/s40575-022-00119-4.', relevance: '犬自發性 HOAC 診斷最新回顧' },
+    { type: 'journal', citation: 'Klein SC, Peterson ME. Canine hypoadrenocorticism: Part I. Can Vet J. 2010;51(1):63-69.', relevance: 'Addison\'s 病因與診斷回顧' },
+    { type: 'journal', citation: 'Lathan P, Thompson AL. Management of hypoadrenocorticism (Addison\'s disease) in dogs. Vet Med (Auckl). 2018;9:1-10.', relevance: 'Addison\'s 長期管理策略' },
+    { type: 'textbook', citation: 'Scott-Moncrieff JC. Hypoadrenocorticism. In: Feldman EC, et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015:485-520.', relevance: 'Addison\'s 完整參考章節' },
   ],
   is_current: true,
   created_at: now,
@@ -1014,7 +1089,7 @@ Cortisol 缺乏→糖質新生↓→低血糖風險；壓力反應能力喪失�
 const contentPLE: NodeContent = {
   id: 'CONTENT-IM-L3-012',
   node_id: 'IM-L3-012',
-  version: 1,
+  version: 2,
   summary: '蛋白質流失性腸病（PLE）這個名字講白就是蛋白從腸道一直漏掉，最後變成低白蛋白血症。犬最常見的根源是腸道淋巴管擴張跟慢性腸炎（IBD/CE）。白蛋白太低之後麻煩會接著來：腹水、胸水、血栓栓塞都可能跑出來。',
   learning_objectives: [
     '列舉犬 PLE 的主要病因並說明各自的病理機轉',
@@ -1031,6 +1106,7 @@ const contentPLE: NodeContent = {
     'Albumin < 1.5 g/dL 時血栓栓塞風險明顯增加，需啟動抗血栓治療',
     '飲食管理：淋巴管擴張需超低脂飲食；IBD 型 PLE 需水解蛋白或新型蛋白飲食',
     '低離子鈣（ionized calcium）是常見但易被忽略的併發症',
+    '近期實證（Myers 2023）：超低脂飲食單一療法可緩解相當比例 PLE→飲食優先、免疫抑制保留給飲食無反應者，別反射性上類固醇',
   ],
   body: `# 蛋白質流失性腸病 (Protein-Losing Enteropathy, PLE)
 
@@ -1130,7 +1206,21 @@ const contentPLE: NodeContent = {
 | Cobalamin 口服 vs 注射 | 兩者可能等效 | Level II | 口服高劑量的 PLE 特異性研究 |
 | 抗血栓何時開始 | Alb <2.0 建議開始 | Level III | 最佳介入閾值？AT-III 導向？ |
 | 全層切片 vs 內視鏡切片 | 內視鏡為首選，全層用於不確定時 | Level III | 各自 miss rate？ |
-| Budesonide vs Prednisolone | Budesonide 全身副作用較少 | Level II | PLE 中兩者等效性？ |`,
+| Budesonide vs Prednisolone | Budesonide 全身副作用較少 | Level II | PLE 中兩者等效性？ |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**「PLE = 一律類固醇」的反射動作該改了——飲食優先（Myers et al 2023, JAAHA 前瞻性研究）**
+傳統一看到 PLE 就上免疫抑制，但近年前瞻證據顯示：**相當比例的 PLE 犬光靠超低脂飲食單一療法（diet monotherapy）就能臨床緩解、白蛋白回升**，不需類固醇。實務修正：
+- **先嚴格飲食試驗**（淋巴管擴張→超低脂±MCT；疑 IBD 型→水解/新型蛋白），同時**低白蛋白就先把抗血栓做起來**。
+- **免疫抑制保留給「飲食無反應或組織學確認發炎」**的病例——不是每個 IBD 相關 PLE 都要一上來就壓免疫。
+- 「嚴格」是成敗關鍵：零食、餐桌食物、高脂藥物載體都會破功。
+
+**別漏掉的兩件事**：① **ionized calcium**（非 total Ca）——低白蛋白會把 total Ca 拉假低，真正缺的是離子鈣，會抽搐/癲癇；② **cobalamin**——PLE 常缺、是獨立壞預後因子，口服高劑量近年證據顯示與注射相近（Chang 2022），務必補。
+
+**抗血栓是標準配備（呼應 2019 ACVIM CURATIVE 邏輯）**：PLE 是高凝狀態（AT-III 隨蛋白流失），Alb <2.0 即開 clopidogrel，肺栓塞是重要死因。
+
+【台灣落地】台灣約克夏等小型犬 PLE 常見；先把飲食做到位（嚴格低脂）＋抗血栓＋補 cobalamin，再決定要不要免疫抑制。內視鏡切片台灣可做，但淋巴管擴張可能需全層切片才抓得到。`,
   clinical_pearl: '在 PLE 犬中，ionized calcium 低下是一個常被忽略但臨床上極為重要的併發症。PLE 導致 Vitamin D 結合蛋白和白蛋白流失 → 25(OH)D 和 ionized calcium 均降低 → 可導致肌肉震顫、癲癇發作。不要僅看 total calcium，它會因低白蛋白而偽低；必須測量 ionized calcium。另外，Yorkshire Terrier 若出現低蛋白腹水，PLE 合併淋巴管擴張幾乎是第一鑑別。\n\n【台灣流行病學】蛋白質流失性腸病在台灣小型犬中並不罕見，約克夏梗是台灣最具代表性的 PLE 好發品種，常合併淋巴管擴張。台灣本土飼養的軟毛麥色梗雖少，但臨床上其他小型犬（如馬爾濟斯、吉娃娃）亦有 PLE 報告。台灣獸醫院多具備消化道內視鏡與黏膜切片能力，但全層切片仍需外科配合。低白蛋白犬在台灣亞熱帶環境下的血栓風險管理需特別留意。',
   common_mistakes: [
     '未排除 PLN 就診斷 PLE（必須先測 UPC ratio）',
@@ -1174,11 +1264,12 @@ const contentPLE: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Prednisolone', 'Chlorambucil', 'Mycophenolate', 'Cyclosporine', 'Clopidogrel', 'Calcitriol', 'Cobalamin'],
   references: [
-    { type: 'journal', citation: 'Craven MD, Washabau RJ. "Comparative pathophysiology and management of protein-losing enteropathy." J Vet Intern Med. 2019;33(2):383-402.', relevance: 'PLE 病理生理與管理綜合回顧' },
-    { type: 'journal', citation: 'Dossin O, Lavoué R. "Protein-losing enteropathies in dogs." Vet Clin North Am Small Anim Pract. 2011;41(2):399-418.', relevance: 'PLE 診斷與治療策略' },
-    { type: 'journal', citation: 'Nakashima K et al. "Prognostic factors in dogs with protein-losing enteropathy." J Vet Intern Med. 2015;29(6):1504-1507.', relevance: 'PLE 預後因子分析' },
+    { type: 'journal', citation: 'Myers M, Martinez SA, Shiroma JT, Watson AT. "Prospective Evaluation of Low-Fat Diet Monotherapy in Dogs with Presumptive Protein-Losing Enteropathy." J Am Anim Hosp Assoc. 2023;59(2):74-84. doi:10.5326/jaaha-ms-7248', relevance: '近期前瞻：超低脂飲食單一療法可緩解 PLE（飲食優先）' },
+    { type: 'journal', citation: 'Craven MD, Washabau RJ. "Comparative pathophysiology and management of protein-losing enteropathy." J Vet Intern Med. 2019;33(2):383-402. doi:10.1111/jvim.15406', relevance: 'PLE 病理生理與管理綜合回顧' },
+    { type: 'journal', citation: 'Nakashima K, Hiyoshi S, Ohno K, Uchida K, et al. "Prognostic factors in dogs with protein-losing enteropathy." Vet J. 2015;205(1):28-32. doi:10.1016/j.tvjl.2015.05.001', relevance: 'PLE 預後因子分析（修正 v1 誤標 JVIM）' },
+    { type: 'journal', citation: 'Dossin O, Lavoué R. "Protein-Losing Enteropathies in Dogs." Vet Clin North Am Small Anim Pract. 2011;41(2):399-418. doi:10.1016/j.cvsm.2011.02.002', relevance: 'PLE 診斷與治療策略' },
+    { type: 'guideline', citation: 'Washabau RJ, Day MJ, Willard MD, et al. "Endoscopic, Biopsy, and Histopathologic Guidelines for the Evaluation of Gastrointestinal Inflammation in Companion Animals." J Vet Intern Med. 2010;24(1):10-26. doi:10.1111/j.1939-1676.2009.0443.x', relevance: 'GI 炎症評估與切片指引' },
     { type: 'textbook', citation: 'Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier, 2013.', relevance: '消化系統疾病基礎教材' },
-    { type: 'guideline', citation: 'Washabau RJ, Day MJ, Willard MD, et al. "Endoscopic, biopsy, and histopathologic guidelines for the evaluation of gastrointestinal inflammation in companion animals." J Vet Intern Med. 2010;24(1):10-26.', relevance: 'GI 炎症評估指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1188,7 +1279,7 @@ const contentPLE: NodeContent = {
 const contentCushings: NodeContent = {
   id: 'CONTENT-IM-L3-001',
   node_id: 'IM-L3-001',
-  version: 1,
+  version: 2,
   summary: '犬腎上腺皮質機能亢進（Cushing 症候群）是犬最常見的內分泌疾病之一，原因說起來簡單，就是身體長期被太多 cortisol 泡著。其中 80-85% 來自腦下垂體（PDH），15-20% 來自腎上腺腫瘤（ADH）。ACVIM 共識建議篩檢用 LDDST，治療之後追蹤再回去用 ACTH stimulation test。藥物選擇上，Trilostane 是現在的首選。',
   learning_objectives: [
     '區分腦下垂體依賴型（PDH）與腎上腺腫瘤型（ADH）的病因、診斷與治療差異',
@@ -1314,7 +1405,16 @@ Trilostane 監測：首次 ACTH stim 在開始後 10-14 天（給藥後 4-6hr）
 | ACTH stim vs pre-Trilostane cortisol | ACTH stim 為標準，但 pre-pill cortisol 可能有用 | Level III | 最佳監測方法？ |
 | 亞臨床 Cushing's 是否治療 | 有爭議 | Level IV | 自然病程追蹤研究 |
 | 貓 Cushing's 最佳治療 | Trilostane 為首選但經驗有限 | Level III | 貓特異性劑量研究 |
-| 新型藥物 | Cabergoline 輔助 PDH | Level IV | 獸醫臨床試驗進行中 |`,
+| 新型藥物 | Cabergoline 輔助 PDH | Level IV | 獸醫臨床試驗進行中 |
+
+## 八、近期實證更新 (Recent Evidence)
+
+- **Trilostane 監測：從「只靠 ACTH stim」走向「臨床症狀＋基礎 cortisol」**：ACTH stim 結果與臨床控制相關性並不完美、且成本高（Wehner 2021）；越來越多中心以**臨床症狀＋pre-trilostane（基礎）cortisol** 監測，ACTH stim 保留給懷疑過度抑制者。多數犬 **BID 給藥**控制較佳（Arenas 2014 於 ADH 顯示 BID trilostane 存活不劣於 mitotane）。
+- **警覺醫源性低皮質醇症**：Trilostane 可致醫源性低皮質醇（生化性 hypocortisolemia 不少見，Appleman 2021），但進展到完整 Addisonian crisis/腎上腺壞死則**較少見**；無論如何，**基礎或 post-ACTH cortisol 過低即應減量/停藥**，並教飼主辨識嘔吐/虛弱/厭食的警訊。
+- **診斷時效**：2012 ACVIM 共識（Behrend 2013）仍為現行依據；鐵則是**先有臨床症狀再驗**——LDDST 敏感度高但特異度僅 ~70%，**勿在非甲狀腺疾病/壓力下篩檢**（偽陽性）。
+- **共病要主動管理**：全身性高血壓、蛋白尿、高凝血狀態（**肺血栓栓塞為主要死因之一**）需主動監測與處置；併發糖尿病者同時管理胰島素阻抗。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: 'LDDST 做完 8 小時，如果 cortisol 有被抑制（降到基礎值的一半以下或 < 1.4 μg/dL），那就強烈指向 PDH。但要注意一件事：大約四分之一的 PDH 在 LDDST 上不抑制（對 PDH 來說就是假陰性），偶爾 ADH 反過來也會抑制。所以 LDDST 想拿來做 PDH/ADH 鑑別，只有「抑制」這個結果才能用。沒抑制就不能下結論，要靠超音波或內源性 ACTH 才行。另外提一個重點，犬的 ALP 裡有一種 steroid-induced isoenzyme，敏感度超過 90%，是最早跑出來的血檢異常。\n\n【台灣流行病學】Cushing 在台灣的小動物門診是常見的內分泌病，好發在中老年小型犬，貴賓犬、臘腸犬、馬爾濟斯這些常見品種都跑不掉。台灣的獸醫院多半可以做 ACTH stimulation test 和 LDDST，Trilostane 是主要治療藥物。亞熱帶氣候下犬隻皮膚問題本來就多，慢性皮膚病的鑑別診斷請把 Cushing 放進去考慮。',
   common_mistakes: [
     '在非傳染性疾病（NTI, non-thyroidal illness）狀態下就篩檢 Cushing（高壓力狀態會導致偽陽性）',
@@ -1362,10 +1462,12 @@ Trilostane 監測：首次 ACTH stim 在開始後 10-14 天（給藥後 4-6hr）
   ],
   drug_api_links: ['Trilostane', 'Mitotane', 'Prednisolone', 'Dexamethasone'],
   references: [
-    { type: 'guideline', citation: 'Behrend EN et al. "Diagnosis of Spontaneous Canine Hyperadrenocorticism: 2012 ACVIM Consensus Statement (Small Animal)." J Vet Intern Med. 2013;27(6):1292-1304.', relevance: 'Cushing 診斷 ACVIM 共識' },
-    { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapter on Hyperadrenocorticism.', relevance: 'Cushing 病理生理與治療完整參考' },
-    { type: 'journal', citation: 'Ramsey IK. "Trilostane in dogs." Vet Clin North Am Small Anim Pract. 2010;40(2):269-283.', relevance: 'Trilostane 治療實務指引' },
-    { type: 'journal', citation: 'Arenas C et al. "Long-term survival of dogs with adrenal-dependent hyperadrenocorticism: a comparison between mitotane and twice daily trilostane." J Vet Intern Med. 2014;28(2):473-480.', relevance: 'ADH 治療預後比較' },
+    { type: 'guideline', citation: 'Behrend EN, Kooistra HS, et al. "Diagnosis of Spontaneous Canine Hyperadrenocorticism: 2012 ACVIM Consensus Statement (Small Animal)." J Vet Intern Med. 2013;27(6):1292-1304. doi:10.1111/jvim.12192', relevance: 'Cushing 診斷現行 ACVIM 共識' },
+    { type: 'textbook', citation: 'Feldman EC, Nelson RW, Reusch C, Scott-Moncrieff JC. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapter on Hyperadrenocorticism.', relevance: 'Cushing 病理生理與治療完整參考教材' },
+    { type: 'journal', citation: 'Ramsey IK. "Trilostane in Dogs." Vet Clin North Am Small Anim Pract. 2010;40(2):269-283. doi:10.1016/j.cvsm.2009.10.008', relevance: 'Trilostane 治療實務回顧' },
+    { type: 'journal', citation: 'Arenas C, Melián C, et al. "Long-Term Survival of Dogs with Adrenal-Dependent Hyperadrenocorticism: a comparison between mitotane and twice daily trilostane." J Vet Intern Med. 2014;28(2):473-480. doi:10.1111/jvim.12303', relevance: 'ADH 治療預後比較（BID trilostane vs mitotane）' },
+    { type: 'journal', citation: 'Wehner A, Glöckner S, Weiss B, Ballhausen D. "Association between ACTH stimulation test results and clinical signs in dogs with hyperadrenocorticism treated with trilostane." Vet J. 2021;276:105740. doi:10.1016/j.tvjl.2021.105740', relevance: 'Trilostane 監測：ACTH stim 與臨床控制相關性不完美（近期）' },
+    { type: 'journal', citation: 'Appleman E, Schrage A, Lamb KE, Langston C. "Evaluation of Iatrogenic Hypocortisolemia Following Trilostane Therapy in 48 Dogs with Pituitary-Dependent Hyperadrenocorticism." J Am Anim Hosp Assoc. 2021;57(5):217-224. doi:10.5326/jaaha-ms-7076', relevance: 'Trilostane 醫源性低皮質醇症風險（近期）' },
   ],
   is_current: true,
   created_at: now,
@@ -1375,7 +1477,7 @@ Trilostane 監測：首次 ACTH stim 在開始後 10-14 天（給藥後 4-6hr）
 const contentHypothyroidism: NodeContent = {
   id: 'CONTENT-IM-L3-002',
   node_id: 'IM-L3-002',
-  version: 1,
+  version: 2,
   summary: '犬甲狀腺機能低下是犬最常見的內分泌病，T4/T3 不夠分泌，全身代謝率掉下來。95% 是原發性，要嘛淋巴球性甲狀腺炎、要嘛特發性萎縮。光看驗血數字不能下診斷，必須臨床配檢驗一起看。治療標準用 Levothyroxine（L-T4）。',
   learning_objectives: [
     '說明犬甲狀腺機能低下的病因分類（原發性 vs 繼發性 vs 先天性）',
@@ -1392,6 +1494,7 @@ const contentHypothyroidism: NodeContent = {
     'Free T4 by equilibrium dialysis (fT4ED) 是最不受非甲狀腺疾病干擾的指標',
     'Levothyroxine 起始 0.02 mg/kg PO BID，4-8 週後檢測 post-pill T4（給藥後 4-6 小時）',
     '神經肌肉併發症：面神經麻痺、前庭症候群、megaesophagus（較少見）',
+    '最新實證（Bennaim 2022, Res Vet Sci）：類比法 fT4（fT4a）受 NTI 影響大、與 TT4 高度一致而鑑別甲低助益有限；平衡透析法 fT4ED 較穩健（低 TT4 的 NTI 犬中 43% vs fT4a 12% 落在正常範圍）但仍非完全免疫於 NTI',
   ],
   body: `# 犬甲狀腺機能低下 (Canine Hypothyroidism)
 
@@ -1491,8 +1594,22 @@ TT4 正常→基本排除甲低（NPV >99%）
 | TgAA 陽性但甲功正常 | 追蹤，不治療 | Level III | 進展為甲低的自然史 |
 | 亞臨床甲低是否治療 | 有爭議，可試驗性治療 | Level IV | 前瞻性比較研究 |
 | 品種特異性 T4 參考值 | Greyhound T4 天生偏低 | Level II | 更多品種的正常值建立 |
-| 甲低與行為異常的關聯 | 因果關係不明確 | Level IV | 控制性研究需要 |`,
-  clinical_pearl: '診斷犬甲低最大的陷阱就是 euthyroid sick syndrome。台灣門診常碰到這種狀況：一隻皮膚一直爛的狗驗了 T4 偏低，直接被貼上甲低標籤。但其實是 Cushing 或皮膚病本身壓低了 T4。原則就三條：第一，狗如果正在生別的病，不要測甲狀腺。第二，T4 低要配 TSH 升高才算典型甲低。第三，有疑慮就測 fT4 by equilibrium dialysis（fT4ED），這個最不會被影響。順便提一下，TgAA 陽性可以抓出早期淋巴球性甲狀腺炎（甲低前期）。',
+| 甲低與行為異常的關聯 | 因果關係不明確 | Level IV | 控制性研究需要 |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**fT4 檢測方法學——類比法 vs 平衡透析法（Bennaim 2022, Res Vet Sci 147:37-43）**
+這篇收 146 隻非甲狀腺疾病（NTI）犬，把「方便但便宜」的類比免疫分析法 fT4（fT4a）攤開來看，結論對門診很有衝擊：
+- fT4a 受 NTI 壓低的程度跟病的嚴重度成正比，嚴重 NTI 犬 fT4a 明顯偏低，整體 33.6% 的 NTI 犬 fT4a 落在低值。
+- fT4a 與 TT4 一致性高（κ=0.79）——白話說「測了 fT4a 幾乎等於再測一次 TT4」，對鑑別甲低 vs NTI 幫助有限。
+- 關鍵數字：42 隻 TT4 偏低的 NTI 犬裡，fT4a 落在正常範圍的只有 11.9%，但平衡透析法 fT4（fT4ED）有 42.9% 正確落在正常範圍。也就是 fT4ED 比較不會被 NTI 拖下水、比較不會把「生病但甲狀腺正常」的狗誤判成甲低。
+- 但要老實講：那 42.9% 反過來看，仍有 57% 的 fT4ED 在嚴重 NTI 下被壓到正常以下——**fT4ED 比較穩，但不是免疫於 NTI 的萬靈丹**。
+
+實務結論：別用類比法 fT4 來「排除 NTI」；要鑑別就送平衡透析法 fT4ED，而且永遠要配臨床表現和 TSH 一起判讀，不能單看一個數字。
+
+**沒有單一檢測是 100% 準確（BSAVA 2023 內分泌手冊重申）**
+TT4 敏感度高但特異度低、約四分之一甲低犬 TSH 落在正常（cTSH 試劑敏感度僅 ~75% 至今仍是診斷最大瓶頸）、fT4ED 最穩但仍受嚴重 NTI 影響。降低誤診率的關鍵永遠是同一套：先排除 NTI 與干擾藥物（皮質素、phenobarbital、sulfonamides）→ 臨床高度懷疑才驗 → 多項指標合併判讀，不要單憑一個低 T4 就貼標籤。`,
+  clinical_pearl: '診斷犬甲低最大的陷阱就是 euthyroid sick syndrome。台灣門診常碰到這種狀況：一隻皮膚一直爛的狗驗了 T4 偏低，直接被貼上甲低標籤。但其實是 Cushing 或皮膚病本身壓低了 T4。原則就三條：第一，狗如果正在生別的病，不要測甲狀腺。第二，T4 低要配 TSH 升高才算典型甲低。第三，有疑慮就測 fT4 by equilibrium dialysis（fT4ED），這個最不會被影響（但嚴重 NTI 下 fT4ED 仍可能假性偏低，不是萬靈丹，還是要配臨床）。順便提一下，TgAA 陽性可以抓出早期淋巴球性甲狀腺炎（甲低前期）。',
   common_mistakes: [
     '僅憑 Total T4 低就診斷甲低，未考慮 euthyroid sick syndrome（應同時測 TSH 和/或 fT4ED）',
     '在犬同時有其他疾病（Cushing、感染、腫瘤）時就篩檢甲狀腺功能（應先穩定其他疾病）',
@@ -1537,10 +1654,12 @@ TT4 正常→基本排除甲低（NPV >99%）
   interactive_placeholders: [],
   drug_api_links: ['Levothyroxine'],
   references: [
-    { type: 'journal', citation: 'Scott-Moncrieff JC. "Clinical Signs and Concurrent Diseases of Hypothyroidism in Dogs and Cats." Vet Clin North Am Small Anim Pract. 2007;37(4):709-722.', relevance: '犬甲低臨床表現綜合回顧' },
+    { type: 'journal', citation: 'Bennaim M, Shiel RE, Evans H, Mooney CT. "Free thyroxine measurement by analogue immunoassay and equilibrium dialysis in dogs with non-thyroidal illness." Res Vet Sci. 2022;147:37-43. doi:10.1016/j.rvsc.2022.03.016', relevance: '近期實證：類比法 fT4 受 NTI 影響大、鑑別甲低助益有限；fT4ED 較穩健但非萬靈丹' },
+    { type: 'journal', citation: 'Scott-Moncrieff JC. "Clinical Signs and Concurrent Diseases of Hypothyroidism in Dogs and Cats." Vet Clin North Am Small Anim Pract. 2007;37(4):709-722. doi:10.1016/j.cvsm.2007.03.003', relevance: '犬甲低臨床表現綜合回顧' },
+    { type: 'journal', citation: 'Dixon RM, Mooney CT. "Canine serum thyroglobulin autoantibodies in health, hypothyroidism and non-thyroidal illness." Res Vet Sci. 1999;66(3):243-246. doi:10.1053/rvsc.1998.0268', relevance: 'TgAA 在甲低診斷中的角色' },
+    { type: 'guideline', citation: 'Scott-Moncrieff JC. "Thyroid Disorders in the Geriatric Veterinary Patient." Vet Clin North Am Small Anim Pract. 2012;42(4):707-725. doi:10.1016/j.cvsm.2012.04.012', relevance: '老年犬甲狀腺疾病管理' },
+    { type: 'textbook', citation: 'BSAVA Manual of Canine and Feline Endocrinology. "Canine hypothyroidism." BSAVA; 2023. doi:10.22233/9781910443866.18', relevance: '近期教科書標準：診斷需多項指標合併、無單一檢測 100% 準確' },
     { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapter on Hypothyroidism.', relevance: '犬甲低完整參考章節' },
-    { type: 'journal', citation: 'Dixon RM, Mooney CT. "Canine serum thyroglobulin autoantibodies in health, hypothyroidism and non-thyroidal illness." Res Vet Sci. 1999;66(3):243-246.', relevance: 'TgAA 在甲低診斷中的角色' },
-    { type: 'guideline', citation: 'Scott-Moncrieff JC. "Thyroid Disorders in the Geriatric Veterinary Patient." Vet Clin North Am Small Anim Pract. 2012;42(4):707-725.', relevance: '老年犬甲狀腺疾病管理' },
   ],
   is_current: true,
   created_at: now,
@@ -1609,7 +1728,7 @@ T4/T3 過量的系統效應：
 | 檢測 | 結果 | 敏感度 | 特異度 | 備註 |
 |------|------|--------|--------|------|
 | Total T4 (TT4) | >4.0 μg/dL | ~90% | 高 | 確診閾值 |
-| TT4 高正常 (2.5-4.0) | 灰色地帶 |，|，| 可能為早期/隱性甲亢 |
+| TT4 高正常 (2.5-4.0) | 灰色地帶 |—|—| 可能為早期/隱性甲亢 |
 | Free T4 by ED | 升高 | 高 | 中 | TT4 灰色地帶時測 |
 | T3 suppression test | 無抑制 | 高 | 高 | 操作較複雜 |
 | Technetium scan | 雙側/單側 | 高 | 高 | 術前定位 + 異位組織 |
@@ -1887,11 +2006,11 @@ const contentIMHA: NodeContent = {
 
 | 預後因子 | 良好 | 不良 |
 |---------|------|------|
-| 存活 >2 週 | 長期存活率高 |，|
+| 存活 >2 週 | 長期存活率高 |—|
 | 再生性貧血 | 預後較佳 | 非再生性 IMHA 預後差 |
-| 自凝集 |，| 自凝集陽性預後較差 |
-| 血栓栓塞 |，| PTE 為主要死因 |
-| 高 bilirubin |，| 嚴重溶血指標 |
+| 自凝集 |—| 自凝集陽性預後較差 |
+| 血栓栓塞 |—| PTE 為主要死因 |
+| 高 bilirubin |—| 嚴重溶血指標 |
 
 總死亡率：約 30-50%，多集中在前 2 週。存活過急性期者長期預後改善。復發率 ~15-20%。
 
@@ -2052,8 +2171,8 @@ const contentDM: NodeContent = {
 | 治療 | 首選藥物 | 劑量 | 備註 | 證據等級 |
 |------|---------|------|------|---------|
 | 胰島素 | [藥物:NPH] (Humulin N) 或 [藥物:Vetsulin] (Caninsulin) | 0.25-0.5 U/kg SC BID | 犬首選中效胰島素 | Level I |
-| 飲食 | 高纖維/複合碳水化合物 |，| 減緩葡萄糖吸收 | Level II |
-| 運動 | 規律適度運動 |，| 促進胰島素敏感性 | Level III |
+| 飲食 | 高纖維/複合碳水化合物 |—| 減緩葡萄糖吸收 | Level II |
+| 運動 | 規律適度運動 |—| 促進胰島素敏感性 | Level III |
 
 ### 貓 DM
 
@@ -2063,7 +2182,7 @@ const contentDM: NodeContent = {
 | 口服 SGLT2 抑制劑 | [藥物:Bexagliflozin] (Bexacat) | 15 mg 錠 PO SID（貓 ≥ 3.0 kg） | **僅限健康、新診斷、未曾用胰島素之貓**；黑框警告：正常血糖型 DKA 風險 | Level I（FDA 核准 2022/12） |
 | 口服 SGLT2 抑制劑 | [藥物:Velagliflozin] (Senvelgo) | 1 mg/kg 口服液 PO SID | 同上；**禁用於曾／正用胰島素之貓**（試驗中近 20% 發生 DKA） | Level I（FDA 核准 2023/08） |
 | 飲食 | 高蛋白低碳水化合物 | <15% ME from carbs | 緩解關鍵 | Level I |
-| 減重 | 消除肥胖 |，| 降低胰島素阻抗 | Level I |
+| 減重 | 消除肥胖 |—| 降低胰島素阻抗 | Level I |
 
 貓 DM 緩解策略：早期積極胰島素 + 高蛋白低碳水飲食 + 消除胰島素阻抗因子→約 30-40% 可達緩解。
 
@@ -2204,7 +2323,7 @@ DKA 近期實證：建議以**即時血液 β-羥基丁酸 (β-OHB)** 取代尿�
 const contentCE: NodeContent = {
   id: 'CONTENT-IM-L3-007',
   node_id: 'IM-L3-007',
-  version: 1,
+  version: 2,
   summary: '慢性腸病（CE）這名字其實是一票疾病的總稱：犬貓持續或反覆出現消化道症狀超過 3 週的都算。底下包括食物反應性腸病（FRE）、抗生素反應性腸病（ARE）、免疫抑制劑反應性腸病（IRE/IBD）跟蛋白質流失性腸病（PLE）。現代主流的分類方式不是看組織學長什麼樣，而是看狗對什麼治療有反應。',
   learning_objectives: [
     '說明慢性腸病的現代分類系統（FRE、ARE、IRE、PLE）及其治療反應基礎',
@@ -2222,6 +2341,7 @@ const contentCE: NodeContent = {
     '犬 CE 活動指數（CCECAI）≥ 10 分提示較差預後，需積極治療',
     'Cobalamin（Vitamin B12）缺乏在 CE 中常見且影響預後，必須補充',
     '飲食試驗：水解蛋白或新型蛋白飲食，至少 2-4 週（理想 6-8 週）',
+    '近期實證（Pilla 2020）：metronidazole 傷腸道菌相且 dysbiosis 停藥後持續數週→抗生素不再是 CE 常規步驟，飲食無效應直接評估內視鏡/免疫抑制（肉芽腫性結腸炎例外）',
   ],
   body: `# 慢性腸病 (Chronic Enteropathy, CE)
 
@@ -2295,6 +2415,8 @@ Step 3：內視鏡 + 組織病理學
 | 營養 | [藥物:Cobalamin] 補充（B12 低時必須） | 所有 CE | Level I |
 | 新興 | 糞便微生物移植 (FMT) | 難治性 CE | Level III |
 
+> ⚠️ **抗生素層級已過時**：上表「第二層＝抗生素」屬傳統階梯。依近年實證（見§八 Pilla 2020），metronidazole/tylosin 會傷菌相且 ARE 被高估，現代做法是**飲食試驗無效就直接評估內視鏡/免疫抑制**，抗生素保留給肉芽腫性結腸炎等明確適應症。
+
 ### 貓 CE 治療差異
 - 貓以 lymphoplasmacytic enteritis 和小腸淋巴瘤為主
 - [藥物:Prednisolone] + [藥物:Chlorambucil] 為貓 IBD/低度淋巴瘤的標準方案
@@ -2348,7 +2470,21 @@ Step 3：內視鏡 + 組織病理學
 | FMT 最佳方案 | 有效但標準化不足 | Level III | 供體選擇、頻率、途徑 |
 | Dysbiosis Index 的臨床價值 | 有用但非診斷性 | Level II | 追蹤治療反應？ |
 | IBD vs 低度淋巴瘤鑑別 | 組織學 + clonality 分析 | Level II | 更好的分子標記？ |
-| 飲食試驗最佳時長 | 2-4 週常用，6-8 週理想 | Level II | 最短有效試驗期？ |`,
+| 飲食試驗最佳時長 | 2-4 週常用，6-8 週理想 | Level II | 最短有效試驗期？ |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**抗生素退場：metronidazole/tylosin 不再是 CE 的常規步驟（Pilla et al 2020, JVIM）**
+這是近年 CE 管理最重要的觀念翻轉。Pilla 2020 證實 **metronidazole 會明顯破壞犬腸道菌相**——多樣性下降、Fusobacterium 等有益菌被打掉、Enterobacteriaceae/E. coli 上升、膽汁酸代謝亂掉，而且**停藥後 dysbiosis 還會持續數週**。加上越來越多證據顯示「飲食 ± 免疫抑制」不靠抗生素也能控制，現代主流已**不建議把抗生素試驗當 CE 的常規第二步**——舊的「ARE（抗生素反應性腸病）」這個分類正在縮水、被認為過去被高估。
+- **實務修正**：本節點 §三 的「第二層＝抗生素」屬傳統階梯，現代做法是**飲食試驗無效 → 直接評估內視鏡/免疫抑制**，把抗生素保留給特定情況，而不是每隻都試。
+- **重要例外**：Boxer/法鬥的**肉芽腫性結腸炎（granulomatous colitis）**與黏膜內 E. coli 有關，**對 fluoroquinolone（如 enrofloxacin）有效**，這是少數抗生素確實該用的情境——別把「少用抗生素」過度套用到這一型。
+
+**診斷與監測工具的演進（Allenspach & Mochel 2021, Vet Clin Pathol）**
+CE 診斷正從「靠組織學嚴重度」往「臨床＋生物標記＋菌相」整合：dysbiosis index、糞便/血清生物標記（calprotectin、S100A12）、cobalamin/folate 仍是實用且可近的工具；組織學分級與臨床嚴重度相關性有限，不該單獨用來決定治療強度。
+
+**主軸沒變、只是更乾淨**：飲食試驗仍是第一步（過半食物反應）、cobalamin 缺一定要補、真正的 IRE 才上免疫抑制。差別是——**少繞抗生素那一圈**。
+
+【台灣落地】台灣門診過去很習慣 CE 先給 metronidazole，依新實證應調整：先嚴格飲食試驗，無效再評估內視鏡/免疫抑制，抗生素留給肉芽腫性結腸炎等明確適應症。`,
   clinical_pearl: '慢性腸病這套診斷流程裡，最常被人跳過、但其實也最關鍵的，是嚴格的飲食排除試驗。一半到六成的慢性腸病犬其實只要換對飲食就能控制（食物反應型）。但飲食試驗要嚴格執行：水解蛋白或真正的新型蛋白，持續至少 2-4 週。這段時間不能餵零食、潔牙骨、有味道的藥物膠囊，一個都不能漏。很多飼主沒辦法嚴格配合，結果做出來變成「飲食沒反應」，狗就被誤分類成 IRE/IBD 進到下一階段的免疫抑制治療。另外要記得 Cobalamin（B12）這件事：CE 裡常缺，而且本身就是個獨立的壞預後因子，治療一開始就要驗、要補。\n\n【台灣流行病學】慢性腸病在台灣門診常見到爆。亞熱帶氣候下，食物過敏跟環境過敏原暴露頻繁，食物反應型的比例可能比文獻還高。常見品種像法鬥、柴犬對飲食特別敏感。台灣的水解蛋白處方飲食選擇也多。最後一件事：在台灣門診看到慢性腸病，要記得跟壁蝨媒介感染（像 Ehrlichia）造成的消化道症狀分開來看，不要直接往 IBD 那條路衝。',
   common_mistakes: [
     '未先進行嚴格飲食排除試驗就給免疫抑制劑（至少 50% CE 是食物反應性的）',
@@ -2395,10 +2531,12 @@ Step 3：內視鏡 + 組織病理學
   ],
   drug_api_links: ['Prednisolone', 'Budesonide', 'Metronidazole', 'Tylosin', 'Chlorambucil', 'Azathioprine', 'Cyclosporine', 'Cobalamin'],
   references: [
-    { type: 'journal', citation: 'Dandrieux JRS. "Inflammatory bowel disease versus chronic enteropathy in dogs: are they one and the same?" J Small Anim Pract. 2016;57(11):589-599.', relevance: 'CE vs IBD 概念演進與現代分類' },
-    { type: 'journal', citation: 'Allenspach K et al. "Chronic Enteropathies in Dogs: Evaluation of Risk Factors for Negative Outcome." J Vet Intern Med. 2007;21(4):700-708.', relevance: 'CE 預後因子分析（CCECAI）' },
-    { type: 'guideline', citation: 'Washabau RJ et al. "Endoscopic, Biopsy, and Histopathologic Guidelines for the Evaluation of Gastrointestinal Inflammation in Companion Animals." J Vet Intern Med. 2010;24(1):10-26.', relevance: 'WSAVA 腸道組織學分級標準' },
-    { type: 'journal', citation: 'Makielski K et al. "Narrative review of therapies for chronic enteropathies in dogs and cats." J Vet Intern Med. 2019;33(1):11-22.', relevance: 'CE 治療策略回顧' },
+    { type: 'journal', citation: 'Pilla R, Gaschen FP, Barr JW, Olson E, Honneffer J, et al. "Effects of metronidazole on the fecal microbiome and metabolome in healthy dogs." J Vet Intern Med. 2020;34(5):1853-1866. doi:10.1111/jvim.15871', relevance: '近期關鍵：metronidazole 破壞菌相、停藥後 dysbiosis 持續→抗生素退場依據' },
+    { type: 'journal', citation: 'Allenspach K, Mochel JP. "Current diagnostics for chronic enteropathies in dogs." Vet Clin Pathol. 2021;50(S1):18-28. doi:10.1111/vcp.13068', relevance: '近期診斷工具回顧（生物標記、菌相、組織學限制）' },
+    { type: 'journal', citation: 'Makielski K, Cullen J, O\'Connor A, Jergens AE. "Narrative review of therapies for chronic enteropathies in dogs and cats." J Vet Intern Med. 2019;33(1):11-22. doi:10.1111/jvim.15345', relevance: 'CE 治療策略回顧' },
+    { type: 'journal', citation: 'Dandrieux JRS. "Inflammatory bowel disease versus chronic enteropathy in dogs: are they one and the same?" J Small Anim Pract. 2016;57(11):589-599. doi:10.1111/jsap.12588', relevance: 'CE vs IBD 概念演進與現代分類' },
+    { type: 'journal', citation: 'Allenspach K, Wieland B, Gröne A, Gaschen F. "Chronic Enteropathies in Dogs: Evaluation of Risk Factors for Negative Outcome." J Vet Intern Med. 2007;21(4):700-708. doi:10.1111/j.1939-1676.2007.tb03011.x', relevance: 'CE 預後因子分析（CCECAI）' },
+    { type: 'guideline', citation: 'Washabau RJ, Day MJ, Willard MD, et al. "Endoscopic, Biopsy, and Histopathologic Guidelines for the Evaluation of Gastrointestinal Inflammation in Companion Animals." J Vet Intern Med. 2010;24(1):10-26. doi:10.1111/j.1939-1676.2009.0443.x', relevance: 'WSAVA 腸道組織學分級標準' },
     { type: 'textbook', citation: 'Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier, 2013.', relevance: '消化系統疾病基礎教材' },
   ],
   is_current: true,
@@ -2474,10 +2612,10 @@ const contentIMOverview: NodeContent = {
 
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
-| 獸醫 EBM 的可行性 | 支持但高品質 RCT 不足 |，| 多中心合作研究 |
+| 獸醫 EBM 的可行性 | 支持但高品質 RCT 不足 |—| 多中心合作研究 |
 | AI 輔助診斷在獸醫的角色 | 初步應用（影像辨識） | Level IV | 臨床決策支援系統開發 |
-| 貓內科學的獨特性 | 貓≠小型犬，需獨立研究 |，| 貓特異性藥動學/疾病機轉 |
-| 台灣流行病學數據庫 | 缺乏系統性全國數據 |，| 建立獸醫全國疾病登錄系統 |`,
+| 貓內科學的獨特性 | 貓≠小型犬，需獨立研究 |—| 貓特異性藥動學/疾病機轉 |
+| 台灣流行病學數據庫 | 缺乏系統性全國數據 |—| 建立獸醫全國疾病登錄系統 |`,
   clinical_pearl: '內科真正重要的能力，不是把每個病的細節背起來，而是建立系統性的診斷思維。我看一個病例，腦中先問三個問題：第一，這個臨床問題的鑑別診斷清單長什麼樣？第二，最低資料庫（CBC、生化、尿液分析）能告訴我什麼？第三，接下來哪些進階檢查可以最有效縮小範圍？把這套思維跑順了，碰到沒看過的病也不會亂。',
   common_mistakes: [
     '跳過最低資料庫（MDB）直接做昂貴的進階檢查',
@@ -3416,7 +3554,7 @@ AG = Na+ - (Cl- + HCO3-)，犬正常 12-24 mEq/L，貓 13-27 mEq/L
 const contentEndocrineTests: NodeContent = {
   id: 'CONTENT-IM-L4-001',
   node_id: 'IM-L4-001',
-  version: 1,
+  version: 2,
   summary: '內分泌檢驗判讀涵蓋甲狀腺功能、腎上腺功能和胰島素相關檢測的正確操作與結果解讀。動態功能試驗（LDDST、ACTH stimulation test）基於負回饋原理，需在正確條件下執行才能獲得有意義的結果。',
   learning_objectives: [
     '正確執行並判讀 LDDST 和 ACTH stimulation test',
@@ -3437,7 +3575,7 @@ const contentEndocrineTests: NodeContent = {
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
-
+內分泌動態功能試驗（LDDST、ACTH stim）基於負回饋原理，必須在正確指徵、正確時機、排除干擾下執行才有意義。檢測相關風險與監測時程：
 
 | 檢測相關風險 | 監測 | 處理 |
 |-------------|------|------|
@@ -3492,6 +3630,13 @@ Endogenous ACTH：PDH > 40 pg/mL；ADH < 10 pg/mL。EDTA 管立即冰浴送檢�
 
 ## 三、常見陷阱 (Pitfalls)
 
+- **在生病/壓力下篩檢內分泌**：急性非甲狀腺疾病使 T4 偽低（ESS，最常見的甲低誤診原因）、壓力使 cortisol 非特異升高（LDDST 偽陽性）——有臨床指徵、病情穩定再驗。
+- **Trilostane ACTH stim 時機錯誤**：必須在給藥後 4-6 小時（藥效巔峰）執行；飼主未正確回報給藥時間會直接毀掉判讀。
+- **急診用 Prednisolone 後做 ACTH stim**：[藥物:Prednisolone] 會交叉反應使 cortisol 偽高；需用類固醇時改 [藥物:Dexamethasone]（不干擾 cortisol 測定）。
+- **只憑 T4 低就診斷甲低**：未排除 ESS、[藥物:Phenobarbital]/糖皮質素/NSAID/磺胺等藥物干擾，會過度診斷、給不必要的 L-T4。
+- **內源性 ACTH 樣本處理不當**：須 EDTA 管、立即冰浴、快速分離血漿並冷凍送檢，否則 ACTH 降解、PDH/ADH 鑑別失準。
+- **貓壓力性高血糖誤判糖尿病**：壓力可使貓血糖達 300-400 mg/dL；以 Fructosamine（反映 2-3 週均值）鑑別。
+
 ## 四、人醫借鑒 (Translational Insights)
 
 - 人醫 midnight salivary cortisol 為 Cushing 篩檢常規，獸醫無對應（犬貓唾液取樣困難）
@@ -3506,7 +3651,18 @@ Endogenous ACTH：PDH > 40 pg/mL；ADH < 10 pg/mL。EDTA 管立即冰浴送檢�
 | Pre-Trilostane cortisol vs ACTH stim | ACTH stim 為標準，pre-pill cortisol 可能有用 | Level III | 兩者的頭對頭比較 |
 | 犬 TSH assay 改良 | 現有 assay 敏感度不足 | Level II | 新一代犬 TSH assay |
 | CGM 在獸醫的準確度 | 初步可靠但需驗證 | Level III | 犬貓特異性校正研究 |
-| 亞臨床甲低的治療 | 有爭議 | Level IV | 前瞻性比較研究 |`,
+| 亞臨床甲低的治療 | 有爭議 | Level IV | 前瞻性比較研究 |
+
+## 六、近期實證更新 (Recent Evidence)
+
+[圖片:內分泌動態試驗判讀軸——先有臨床指徵 → 排除干擾（藥物/ESS/壓力）→ 選對試驗與時機 → 數字結合臨床]
+
+- **Trilostane 監測：從「只看 ACTH stim」走向「臨床症狀＋基礎 cortisol」**：ACTH stim 結果與臨床控制的相關性並不完美（Wehner 2021），越來越多方案以臨床症狀＋pre-trilostane（基礎）cortisol 監測；同時須警覺**醫源性低皮質醇症**（Appleman 2021 顯示並不少見）——post-ACTH 或基礎 cortisol 過低即應減量/暫停，防 Addisonian crisis。
+- **Cushing 診斷時效**：2012 ACVIM 共識（Behrend 2013）仍為現行；鐵則是**先有臨床症狀再驗**——LDDST 敏感度高（95-100%）但特異度僅 44-73%，對無症狀犬篩檢易偽陽性（壓力/非腎上腺疾病）。
+- **連續/瞬感血糖監測（CGM/FGM）改變糖尿病監測**：FreeStyle Libre 等在犬貓糖尿病提供血糖趨勢、偵測餐後與夜間波動、減少醫院壓力性高血糖假象、降低住院 BGC 需求（Shea 2021）；惟**低血糖區間準確度較差**、疑似低血糖仍需血糖機確認。
+- **犬甲低診斷靠組合判讀**：犬 TSH assay 敏感度僅 ~75%，不能單靠 TSH；以 T4＋fT4（平衡透析）＋TSH（±TgAA）組合判讀，並先排除**非甲狀腺疾病（ESS）與藥物干擾**（最常見的 T4 偽低原因）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: 'ACTH stimulation test 的時機在 Trilostane 監測中很重要。必須在 Trilostane 給藥後 4-6 小時的效果巔峰期執行，太早或太晚都會得到錯誤結果。如果 post-ACTH cortisol < 1.45 μg/dL（過度抑制），即使臨床上看起來還好，也需要減量或暫停 Trilostane，因為有 Addisonian crisis 的風險。另一個關鍵：如果急診需要在 ACTH stim test 前給類固醇，選擇 Dexamethasone（不干擾 cortisol assay），避免 Prednisolone（會交叉反應導致 cortisol 測量偽高）。',
   common_mistakes: [
     'Trilostane 監測時在錯誤時間點做 ACTH stim（必須是給藥後 4-6 小時）',
@@ -3552,10 +3708,12 @@ Endogenous ACTH：PDH > 40 pg/mL；ADH < 10 pg/mL。EDTA 管立即冰浴送檢�
   ],
   drug_api_links: ['Dexamethasone', 'Cosyntropin', 'Trilostane', 'Levothyroxine', 'Methimazole'],
   references: [
-    { type: 'guideline', citation: 'Behrend EN et al. "Diagnosis of Spontaneous Canine Hyperadrenocorticism: 2012 ACVIM Consensus Statement." J Vet Intern Med. 2013;27(6):1292-1304.', relevance: 'Cushing 診斷共識' },
-    { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015.', relevance: '內分泌檢驗完整參考' },
-    { type: 'guideline', citation: 'Behrend E et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21.', relevance: '糖尿病監測指引' },
-    { type: 'journal', citation: 'Diagnostic Imaging of the Canine and Feline Abdomen. JVIM 2020', relevance: '腹腔影像診斷參考' },
+    { type: 'guideline', citation: 'Behrend EN, Kooistra HS, et al. "Diagnosis of Spontaneous Canine Hyperadrenocorticism: 2012 ACVIM Consensus Statement (Small Animal)." J Vet Intern Med. 2013;27(6):1292-1304. doi:10.1111/jvim.12192', relevance: 'Cushing 診斷現行 ACVIM 共識' },
+    { type: 'textbook', citation: 'Feldman EC, Nelson RW, Reusch C, Scott-Moncrieff JC. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015.', relevance: '內分泌檢驗完整參考教材' },
+    { type: 'guideline', citation: 'Behrend E, Holford A, et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21. doi:10.5326/JAAHA-MS-6822', relevance: '糖尿病管理與監測現行指引' },
+    { type: 'journal', citation: 'Wehner A, Glöckner S, Weiss B, Ballhausen D. "Association between ACTH stimulation test results and clinical signs in dogs with hyperadrenocorticism treated with trilostane." Vet J. 2021;276:105740. doi:10.1016/j.tvjl.2021.105740', relevance: 'Trilostane 監測：ACTH stim 與臨床控制相關性不完美' },
+    { type: 'journal', citation: 'Appleman E, Schrage A, Lamb KE, Langston C. "Evaluation of Iatrogenic Hypocortisolemia Following Trilostane Therapy in 48 Dogs with Pituitary-Dependent Hyperadrenocorticism." J Am Anim Hosp Assoc. 2021;57(5):217-224. doi:10.5326/jaaha-ms-7076', relevance: 'Trilostane 醫源性低皮質醇症風險' },
+    { type: 'journal', citation: 'Shea EK, Hess RS. "Assessment of postprandial hyperglycemia and circadian fluctuation of glucose concentrations in diabetic dogs using a flash glucose monitoring system." J Vet Intern Med. 2021;35(2):843-852. doi:10.1111/jvim.16046', relevance: '瞬感血糖監測偵測餐後/晝夜血糖波動（取代 v1 一條 garbled 影像引用）' },
   ],
   is_current: true,
   created_at: now,
@@ -3857,7 +4015,7 @@ const contentGIEndoscopy: NodeContent = {
 const contentCKDManagement: NodeContent = {
   id: 'CONTENT-IM-L5-001',
   node_id: 'IM-L5-001',
-  version: 1,
+  version: 2,
   summary: 'CKD 管理就是照 IRIS 分期來走，每一期該做什麼都已經寫清楚。核心策略幾件事：飲食管理（限磷、蛋白適量）、抗蛋白尿（Benazepril 或 Telmisartan）、磷結合劑、處理貧血、症狀支持。早一點介入，存活時間真的差很多。',
   learning_objectives: [
     '依據 IRIS 分期制定各期 CKD 的治療策略',
@@ -3925,6 +4083,28 @@ Stage 4（重度氮血症/尿毒症）
 
 ## 二、藥物/方法比較 (Comparison)
 
+### 抗蛋白尿：ACEi vs ARB
+- ACE 抑制劑（benazepril）與血管收縮素受體阻斷劑（ARB，telmisartan）皆透過降低腎絲球內壓、減少蛋白尿而達腎保護。
+- **貓首選 telmisartan**：頭對頭試驗顯示 telmisartan 降蛋白尿不劣於、部分情境優於 benazepril（Sent 2015），且已取得貓 CKD 蛋白尿/高血壓適應症。
+- benazepril 經膽汁排泄，腎功能不全時較不需調量；啟動任一者後 3-7 天須複檢 Creatinine/K⁺（GFR 可能暫時下降）。
+
+### 磷結合劑比較
+| 結合劑 | 特點 | 注意 |
+|--------|------|------|
+| 氫氧化鋁 | 便宜、效力強 | 長期理論上鋁蓄積/神經毒性（臨床少見） |
+| 碳酸鑭（lanthanum） | 不含鈣、效力佳 | 成本較高 |
+| 鈣基（碳酸鈣/醋酸鈣） | 兼補鈣 | 注意高血鈣風險 |
+| 殼聚醣+碳酸鈣（chitosan 複方） | 貓常用、順口性佳 | 依血磷調量 |
+
+共通鐵則：**所有磷結合劑必須與食物同時給予**，才能在腸道結合食物中的磷。
+
+### 紅血球生成刺激劑（ESA）
+- **darbepoetin 優於 epoetin alfa**：免疫原性較低、抗 EPO 抗體導致純紅血球再生不良（PRCA）風險較小、半衰期長（給藥間隔較長）。
+- 須同時補鐵；目標 PCV 勿過衝（過高增加高血壓與血栓風險）。
+
+### 降壓
+- 貓 CKD 高血壓首選 **amlodipine**；telmisartan 可同時兼顧蛋白尿與血壓。目標 SBP < 160 mmHg，避免過度降壓造成低灌流。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
 | 併發症 | 處理 | 監測 |
@@ -3967,7 +4147,21 @@ Stage 4（重度氮血症/尿毒症）
 | SGLT2i 在貓 CKD | 人醫有效，獸醫尚無定論 | Level V | 貓藥動學安全性試驗 |
 | 幹細胞治療 CKD | 初步有改善跡象 | Level IV | 劑量、途徑、安全性 |
 | 磷早期介入（Stage 1） | IRIS 建議 Stage 2 開始 | Level II | Stage 1 即應限磷？ |
-| 最佳蛋白攝取 | 適度限制非嚴格限制 | Level II-III | 貓最適蛋白需求 |`,
+| 最佳蛋白攝取 | 適度限制非嚴格限制 | Level II-III | 貓最適蛋白需求 |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+### Telmisartan 確立貓 CKD 蛋白尿/高血壓地位
+頭對頭 RCT（Sent 2015）支持 telmisartan 降貓 CKD 蛋白尿；其後取得貓蛋白尿與高血壓適應症，臨床上對貓已成為 RAAS 阻斷的優先選擇（每日一次口服液劑、順從性佳）。
+
+### 腎臟處方飲食實證再確認（犬貓皆然）
+經典對照研究確立療效：犬（Jacob 2002）與貓（Ross 2006）使用腎臟處方飲食顯著延長存活、減少尿毒危象。飲食仍是 CKD 最硬的實證介入，臨床落地關鍵在順口性與漸進換食。
+
+### SGLT2 抑制劑於貓 CKD：仍屬研究階段
+人醫 SGLT2i（dapagliflozin/empagliflozin）對 CKD 有強腎保護證據（DAPA-CKD、EMPA-KIDNEY），但**貓 CKD 仍無核准適應症**；貓已上市的 SGLT2i（bexagliflozin/velagliflozin）僅核准用於糖尿病、且帶 euglycemic DKA 風險，不可外推至 CKD。內皮素拮抗劑與非類固醇 MRA（finerenone）等亦在探索階段。
+
+### 礦物質骨病與早期標記
+FGF23 升高早於高磷血症，可能成為磷負荷的早期指標；早期且積極的磷控制（飲食＋結合劑）與存活相關，惟 Stage 1 是否即須限磷仍待更多證據。`,
   clinical_pearl: '腎臟處方飲食是 CKD 管理裡證據最硬的介入措施。有個經典研究的數字大家要記得：犬 CKD Stage 2-3 用腎臟處方飲食，中位存活是普通飲食的 2.4 倍（595 天 vs 188 天）。但臨床上飼主常常卡在價格或狗貓拒吃這兩關。實際操作的時候我會這樣做：第一，慢慢換，7-14 天漸進式。第二，多試幾個牌子跟口味（Hill\'s k/d、Royal Canin Renal、Purina NF），找到一個吃的就好。第三，貓不愛吃就微波加熱一下，香氣會出來。第四，貓盡量選濕食配方。最後一句話：如果動物就是死都不吃腎臟處方飲食，那給他吃任何東西都比餓肚子強。CKD 貓餓著最怕的就是把 FHL 引出來。',
   common_mistakes: [
     '未依 IRIS 分期制定治療計畫（不同分期的治療強度明顯不同）',
@@ -3989,8 +4183,10 @@ Stage 4（重度氮血症/尿毒症）
   drug_api_links: ['Benazepril', 'Telmisartan', 'Aluminum hydroxide', 'Darbepoetin', 'Maropitant', 'Mirtazapine', 'Amlodipine'],
   references: [
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Treatment Recommendations (Modified 2023). Available at: http://www.iris-kidney.com/', relevance: 'CKD 治療指引標準' },
-    { type: 'journal', citation: 'Jacob F et al. "Clinical evaluation of dietary modification for treatment of spontaneous chronic renal failure in dogs." J Am Vet Med Assoc. 2002;220(8):1163-1170.', relevance: '腎臟處方飲食延長存活的證據' },
-    { type: 'guideline', citation: 'Lees GE et al. "Assessment and Management of Proteinuria in Dogs and Cats: ACVIM Consensus Statement." J Vet Intern Med. 2005;19(3):377-385.', relevance: '蛋白尿管理共識' },
+    { type: 'journal', citation: 'Jacob F, Polzin DJ, Osborne CA, et al. Clinical evaluation of dietary modification for treatment of spontaneous chronic renal failure in dogs. J Am Vet Med Assoc. 2002;220(8):1163-1170. doi:10.2460/javma.2002.220.1163.', relevance: '犬腎臟處方飲食延長存活的對照研究' },
+    { type: 'journal', citation: 'Ross SJ, Osborne CA, Kirk CA, et al. Clinical evaluation of dietary modification for treatment of spontaneous chronic kidney disease in cats. J Am Vet Med Assoc. 2006;229(6):949-957. doi:10.2460/javma.229.6.949.', relevance: '貓腎臟處方飲食延長存活、減少尿毒危象的對照研究' },
+    { type: 'journal', citation: 'Sent U, Gössl R, Elliott J, Syme HM, Zimmering T. Comparison of efficacy of long-term oral treatment with telmisartan and benazepril in cats with chronic kidney disease. J Vet Intern Med. 2015;29(6):1479-1487. doi:10.1111/jvim.13639.', relevance: 'telmisartan vs benazepril 降貓 CKD 蛋白尿的頭對頭 RCT' },
+    { type: 'guideline', citation: 'Lees GE, Brown SA, Elliott J, Grauer GF, Vaden SL. Assessment and Management of Proteinuria in Dogs and Cats: ACVIM Consensus Statement. J Vet Intern Med. 2005;19(3):377-385. doi:10.1111/j.1939-1676.2005.tb02713.x.', relevance: '蛋白尿評估與管理 ACVIM 共識' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: 'CKD 管理教材' },
   ],
   is_current: true,
@@ -4001,7 +4197,7 @@ Stage 4（重度氮血症/尿毒症）
 const contentEndocrineTherapy: NodeContent = {
   id: 'CONTENT-IM-L5-002',
   node_id: 'IM-L5-002',
-  version: 1,
+  version: 2,
   summary: '內分泌疾病藥物治療涵蓋 Cushing（Trilostane）、甲低（Levothyroxine）、貓甲亢（Methimazole）、Addison（DOCP + Prednisolone）和糖尿病（胰島素）的標準治療方案。每種藥物都有特定的劑量調整策略、監測方式和副作用管理。',
   learning_objectives: [
     '制定各內分泌疾病的標準藥物治療方案',
@@ -4017,6 +4213,7 @@ const contentEndocrineTherapy: NodeContent = {
     'DOCP：2.2 mg/kg IM q25d + Prednisolone 0.1-0.2 mg/kg PO SID',
     '犬 DM：NPH 0.25-0.5 U/kg SC BID；貓 DM：Glargine 0.25-0.5 U/kg SC BID',
     '監測核心原則：正確時間點採樣 + 追蹤臨床症狀 + 定期評估共病',
+    '近期：SGLT2 抑制劑（bexagliflozin/velagliflozin）口服降糖為貓 DM 新選項（Hadd 2023），但限新診斷、非酮症貓，須嚴防 euglycemic DKA',
   ],
   body: `# 內分泌疾病藥物治療
 
@@ -4030,8 +4227,8 @@ const contentEndocrineTherapy: NodeContent = {
 |------|------|---------|------|---------|
 | PDH 首選 | 藥物 | [藥物:Trilostane] (Vetoryl) | 1-2 mg/kg PO SID 與食物 | Level I |
 | PDH 替代 | 藥物 | [藥物:Mitotane] (o,p'-DDD) | Loading 25-50 mg/kg/d x7-10d | Level II |
-| ADH 腺瘤 | 手術 | 腎上腺切除術 |，| Level II |
-| 大腺瘤 | 放射治療 | RT |，| Level III |
+| ADH 腺瘤 | 手術 | 腎上腺切除術 | — | Level II |
+| 大腺瘤 | 放射治療 | RT | — | Level III |
 
 Trilostane 監測：ACTH stim 給藥後 4-6h。目標 post-ACTH cortisol 1.5-5.4 ug/dL。
 
@@ -4059,6 +4256,37 @@ Trilostane 監測：ACTH stim 給藥後 4-6h。目標 post-ACTH cortisol 1.5-5.4
 | 貓 | [藥物:Glargine] 或 [藥物:PZI] | 0.25-0.5 U/kg SC BID | 高蛋白低碳水 |
 
 ## 二、藥物/方法比較 (Comparison)
+
+同一個內分泌病常有多個藥/法可選，這裡比較「同類怎麼挑」：
+
+**犬 Cushing：Trilostane vs Mitotane**
+| | Trilostane | Mitotane (o,p'-DDD) |
+|--|-----------|---------------------|
+| 機轉 | 可逆抑制 3β-HSD（酵素抑制） | 選擇性破壞腎上腺皮質（細胞毒） |
+| 可逆性 | 停藥可逆 | 不可逆 |
+| 角色 | 現代首選 | 替代/不耐 Trilostane |
+| 風險 | 醫源性 Addison（可逆） | 永久性 Addison、loading 期需密切監測 |
+
+→ 現代多以 Trilostane 為首選；Mitotane 用在取得受限或特殊情況。
+
+**Addison 鹽皮質素：DOCP vs Fludrocortisone**
+| | DOCP（注射） | Fludrocortisone（口服） |
+|--|------------|------------------------|
+| 給法 | IM/SC q~25-30d | PO SID-BID |
+| 電解質穩定度 | 通常較佳 | 較易飄移、易 PU/PD |
+| 糖皮質活性 | 無（需另加 pred） | 有部分糖皮質活性 |
+
+→ DOCP 長期穩定度通常較佳；Fludrocortisone 在 DOCP 取得受限時替代。
+
+**貓 DM 胰島素：長效 vs NPH**
+- 貓選**長效**（Glargine/PZI/Detemir）——NPH 在貓作用時間太短，不建議；NPH/lente 是**犬**的選項。
+- 近年多了**非胰島素口服選項：SGLT2 抑制劑**（限新診斷貓，見 §七）。
+
+**貓甲亢：Methimazole vs I-131 vs 手術 vs 飲食**
+- Methimazole：可逆可調，但需終身、不治本，且可揭露 CKD。
+- I-131：唯一治癒性（治癒率 >95%），需特殊設施與隔離。
+- 甲狀腺切除：可治癒，但麻醉＋副甲狀腺/喉返神經損傷風險。
+- 限碘飲食：適合不能用其他法者，但須完全不吃其他食物才有效。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
@@ -4092,7 +4320,7 @@ Trilostane 監測：ACTH stim 給藥後 4-6h。目標 post-ACTH cortisol 1.5-5.4
 |-------------|-------------|------|
 | GLP-1 受體促效劑 (Semaglutide) | 犬糖尿病/肥胖管理新途徑 | 人醫重磅藥物，獸醫初步研究中 |
 | 連續血糖監測（CGM）如 FreeStyle Libre | 犬貓糖尿病居家血糖曲線 | 獸醫已廣泛使用，準確度驗證完善 |
-| Imepitoioin（PLP 拮抗劑） | 犬 Cushing 新替代用藥 | 歐洲已核准，美國/亞洲評估中 |
+| SGLT2 抑制劑（bexagliflozin/velagliflozin） | 貓 DM 口服非胰島素降糖（人醫降糖藥跨界） | 已用於新診斷貓 DM；須嚴防酮酸中毒（見 §七） |
 | 甲狀腺分子靶向治療 | 貓甲亢術前穩定新方案 | 人醫使用成熟，獸醫探索替代方案 |
 
 ## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
@@ -4102,7 +4330,19 @@ Trilostane 監測：ACTH stim 給藥後 4-6h。目標 post-ACTH cortisol 1.5-5.4
 | Trilostane SID vs BID | SID 起始 | Level II | 最佳給藥頻率 |
 | 甲亢治療後最佳 T4 目標 | 正常低端 + 顧及腎功能 | Level III | CKD-甲亢平衡最佳化 |
 | GLP-1 agonist 在貓 DM | 人醫革命性但獸醫未用 | Level V | 貓藥動學研究 |
-| DOCP 最低有效劑量 | 起始 2.2 mg/kg，個別化 | Level II | 更低劑量可行性 |`,
+| DOCP 最低有效劑量 | 起始 2.2 mg/kg，個別化 | Level II | 更低劑量可行性 |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**貓糖尿病的最大變革：SGLT2 抑制劑口服降糖藥（Hadd et al 2023, JVIM）**
+SGLT2 抑制劑（bexagliflozin/Bexacat、velagliflozin/Senvelgo）是近年引進獸醫的**口服**降糖藥，機轉是促進尿糖排出、**不依賴胰島素**——對「在家打針困難」的飼主是革命性選項。Hadd 2023 田野試驗顯示對**新診斷**貓 DM 安全有效。但有不可妥協的安全前提：
+- **只用於新診斷、相對健康、無明顯酮體/胰島素依賴的貓**；不可用於 DKA 或已長期胰島素依賴者。
+- **最大風險＝（正常血糖型）糖尿病酮酸中毒（euglycemic DKA）**——用藥期間監測酮體、食慾、精神，飼主要會辨識 DKA 警訊。
+- 不是所有貓都適合；經典胰島素仍是許多貓（尤其已酮症/重症）的主力。
+
+**監測時機仍是內分泌治療的命脈（不變鐵則）**：Trilostane ACTH stim 給藥後 4-6h、Levothyroxine post-pill T4 給藥後 4-6h、Methimazole 2-3 週且必追腎功能、胰島素穩定 5-7 天才做血糖曲線；連續血糖監測（CGM, 如 FreeStyle Libre）已是居家管理的實用工具。
+
+【台灣落地】SGLT2 抑制劑在台灣的可近性與適應症仍在演進，導入務必嚴守「新診斷、非酮症」適應症並做酮體監測；多數重症/酮症貓仍以胰島素為主。內分泌藥（trilostane、methimazole、胰島素）在台取得穩定，飼主依從性與正確採血時機是成敗關鍵。`,
   clinical_pearl: '內分泌藥物治療最常見的錯誤就是在錯的時間點抽血。每個藥都有它的監測時機：Trilostane 要在給藥後 4-6 小時做 ACTH stim、Levothyroxine 也要在給藥後 4-6 小時測 post-pill T4、Methimazole 要等 2-3 週才追蹤（不是給完就抽）、胰島素則要等穩定 5-7 天才做血糖曲線。時機抓錯，劑量就調錯，後面可能爆出大事（像 Trilostane 過量直接做出 Addisonian crisis）。',
   common_mistakes: [
     '內分泌藥物追蹤時抽血時機抓錯',
@@ -4121,10 +4361,11 @@ Trilostane 監測：ACTH stim 給藥後 4-6h。目標 post-ACTH cortisol 1.5-5.4
   interactive_placeholders: [],
   drug_api_links: ['Trilostane', 'Levothyroxine', 'Methimazole', 'DOCP', 'Fludrocortisone', 'Prednisolone', 'NPH insulin', 'Glargine', 'PZI'],
   references: [
+    { type: 'journal', citation: 'Hadd MJ, Bienhoff SE, Little SE, Geller S, et al. "Safety and effectiveness of the sodium-glucose cotransporter inhibitor bexagliflozin in cats newly diagnosed with diabetes mellitus." J Vet Intern Med. 2023;37(3):915-924. doi:10.1111/jvim.16730', relevance: '近期：SGLT2 抑制劑口服降糖（新診斷貓 DM）田野試驗' },
+    { type: 'guideline', citation: 'Behrend EN, Holford AL, Lathan P, Rucinsky R, Schulman R. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21. doi:10.5326/jaaha-ms-6822', relevance: 'DM 藥物管理指引' },
+    { type: 'guideline', citation: 'Carney HC, Ward CR, Bailey SJ, Bruyette D, et al. "2016 AAFP Guidelines for the Management of Feline Hyperthyroidism." J Feline Med Surg. 2016;18(5):400-416. doi:10.1177/1098612X16643252', relevance: '貓甲亢藥物管理指引' },
+    { type: 'guideline', citation: 'Sparkes AH, Caney S, Chalhoub S, Elliott J, et al. "ISFM Consensus Guidelines on the Diagnosis and Management of Feline Chronic Kidney Disease." J Feline Med Surg. 2016;18(3):219-239. doi:10.1177/1098612X16631234', relevance: '貓 CKD 管理共識（甲亢治療揭露 CKD 相關；修正 v1 殘缺引用）' },
     { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015.', relevance: '內分泌疾病藥物治療完整參考' },
-    { type: 'guideline', citation: 'Behrend E et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21.', relevance: 'DM 藥物管理指引' },
-    { type: 'guideline', citation: 'Carney HC et al. "2016 AAFP Guidelines for the Management of Feline Hyperthyroidism." J Feline Med Surg. 2016;18(5):400-416.', relevance: '貓甲亢藥物管理指引' },
-    { type: 'journal', citation: 'Evidence-based Management of Chronic Kidney Disease in Cats. JVIM 2016', relevance: 'CKD 管理實證參考' },
   ],
   is_current: true,
   created_at: now,
@@ -4134,7 +4375,7 @@ Trilostane 監測：ACTH stim 給藥後 4-6h。目標 post-ACTH cortisol 1.5-5.4
 const contentImmunosuppression: NodeContent = {
   id: 'CONTENT-IM-L5-003',
   node_id: 'IM-L5-003',
-  version: 1,
+  version: 2,
   summary: '免疫抑制治療用在自體免疫疾病（IMHA、ITP、IBD/CE）跟免疫介導性多關節炎這類病人身上。整體策略分兩段：誘導期用高劑量把症狀快速壓下來，維持期則找最低有效劑量長期管理。常用的藥就那幾個：Prednisolone、Mycophenolate、Cyclosporine、Azathioprine、Chlorambucil，每個藥的作用靶點跟副作用都不一樣，要選對。',
   learning_objectives: [
     '制定 IMHA 的一線和二線免疫抑制治療方案',
@@ -4151,6 +4392,8 @@ const contentImmunosuppression: NodeContent = {
     'Chlorambucil（貓首選二線/IBD）：4-6 mg/m² PO q48h。監測 CBC（骨髓抑制）',
     '減量原則：IMHA 至少 3-6 個月、IBD 至少 2-3 個月。過快減量是復發的主要原因',
     '繼發感染風險：長期免疫抑制 → 泌尿道感染、蠕形蟎症、黴菌感染需警覺',
+    'IMHA 抗血栓已是標準配備（非選配）：診斷當下即評估 clopidogrel±LMWH，PTE 是主要死因（Swann 2019 共識）',
+    '開長期免疫抑制前先排除壁蝨媒介感染（Ehrlichia/Babesia/Anaplasma 可致繼發性 IMHA/ITP）',
   ],
   body: `# 免疫抑制治療
 
@@ -4200,6 +4443,24 @@ ACVIM 2019 建議：Prednisolone 起始 2 mg/kg/day（非更高）。減量時�
 
 ## 二、藥物/方法比較 (Comparison)
 
+§一 已列各藥靶點；這裡是「臨床上怎麼選第二線」的實戰比較。免疫抑制不是越多越強越好，要依疾病、物種、起效速度、監測負擔與成本來選：
+
+| 比較軸 | Prednisolone | Mycophenolate (MMF) | Azathioprine | Cyclosporine | Chlorambucil |
+|--------|-------------|---------------------|--------------|--------------|--------------|
+| 角色 | 所有一線基石 | IMHA 常用二線 | 犬經典二線 | 難治/類固醇不耐 | 貓首選二線、CE |
+| 起效 | 24-48 小時（最快） | 1-2 週 | 2-4 週（最慢） | 1-2 週 | 2-4 週 |
+| 物種 | 犬貓皆可 | 犬貓皆可 | **犬 only，貓禁用** | 犬貓皆可 | 犬貓皆可（貓耐受佳） |
+| 主要毒性 | 類固醇副作用（PU/PD、易感染、醫源庫欣） | 腹瀉（劑量相關） | 骨髓抑制、肝毒（犬） | 嘔吐、牙齦增生、多毛、機會感染 | 骨髓抑制（緩慢） |
+| 監測 | 臨床＋尿培養 | 糞便/臨床 | CBC 密集 | trough level（部分）、臨床 | CBC q2-4wk |
+| 成本 | 低 | 中-高 | 低 | 中-高 | 中 |
+
+**選藥心法**：
+- **要「快」**：急重症想快點把類固醇撐住，MMF/cyclosporine（1-2 週）比 azathioprine（2-4 週）快；但最快的還是先把 prednisolone 給足。
+- **貓**：azathioprine 絕對禁用（致命骨髓抑制）→ 貓的二線是 **chlorambucil**（或 cyclosporine）。
+- **IMHA**：ACVIM 2019 治療共識把 MMF 列為常用二線；單藥 vs 雙藥起始無定論，重症/反應差才加二線。
+- **CE/IBD**：類固醇反應不佳走 chlorambucil（貓）或 cyclosporine；PLE 想減全身副作用可用 budesonide。
+- **難治型**：考慮換機轉（calcineurin ↔ 抗代謝）、人醫新標靶（見 §五）。
+
 ## 三、併發症與監控 (Complications & Monitoring)
 
 | 藥物 | 主要副作用 | 監測 | 頻率 |
@@ -4243,7 +4504,20 @@ IMHA 急性期監測：PCV q6-12h、網織紅血球 q24-48h、凝血功能 q24h�
 | Pred 2 vs 4 mg/kg/day | ACVIM 建議 2 mg/kg | Level II | 劑量-反應 RCT |
 | Mycophenolate vs Azathioprine | Mycophenolate 可能起效快 | Level III | 頭對頭比較 |
 | DOACs 在獸醫的角色 | 人醫取代 warfarin | Level IV | 犬用 rivaroxaban 藥動學 |
-| Budesonide vs Prednisolone in CE | Budesonide 副作用少 | Level II | PLE 中等效性？ |`,
+| Budesonide vs Prednisolone in CE | Budesonide 副作用少 | Level II | PLE 中等效性？ |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**ACVIM 共識把免疫介導病的治療「標準化」了**
+- **IMHA（Swann et al 2019 治療共識）**：prednisolone 起始 **2 mg/kg/day（不是更高）**、依風險常規併抗血栓、二線首選 MMF；**緩慢減量（≥3-6 月、每 2-3 週減 25%）** 是降低復發的關鍵。
+- **ITP（LeVine et al 2024 診斷共識）**：術語改 primary(non-associative)/secondary、骨髓不再常規、診斷為結構化排除——直接影響「要不要一路免疫抑制」的決策（繼發性要治原發、別盲目壓制免疫）。
+
+**抗血栓已是 IMHA 標準配備，不是選配**
+近年一致認為**診斷 IMHA 當下就要評估抗血栓**（clopidogrel ± LMWH），因為血栓栓塞（尤其肺栓塞 PTE）是 IMHA 最主要的死因之一；這與舊年代「先壓免疫、血栓再說」的觀念不同。
+
+**人醫新標靶正在叩門（見 §五）**：JAK 抑制劑、anti-CD20（rituximab）、TPO-RA 在人醫成熟，犬貓多在探索階段；難治型 IMHA/ITP 是這些新藥未來的切入點，但目前仍非標準治療。
+
+【台灣落地】壁蝨媒介病（Ehrlichia/Babesia/Anaplasma）可表現為繼發性 IMHA/ITP——**開長期免疫抑制前務必 PCR/血清學排除感染**，把繼發當原發壓制免疫會讓感染失控（與 IM-L3-005/015 一致）。MMF、cyclosporine 在台灣可取得；azathioprine 便宜但**貓禁用**，下藥前再三確認物種。`,
   clinical_pearl: '免疫抑制治療最常犯的錯誤是減量過快。IMHA 的復發率約 15-20%，而幾乎所有復發都發生在減量過程中。安全的減量策略是「每 2-4 週減 25%，每次減量前確認 PCV 穩定」。如果在減量過程中 PCV 開始下降，立即回到上一個有效劑量並維持更長時間。另一個重要概念：Azathioprine 的效果需要 2-4 週才出現（因為它抑制的是淋巴球增殖，不是已存在的抗體），所以加入二線藥物後不能期待立即效果。',
   common_mistakes: [
     '免疫抑制劑減量過快導致復發（IMHA 至少 3-6 個月、IBD 至少 2-3 個月）',
@@ -4262,8 +4536,10 @@ IMHA 急性期監測：PCV q6-12h、網織紅血球 q24-48h、凝血功能 q24h�
   interactive_placeholders: [],
   drug_api_links: ['Prednisolone', 'Dexamethasone', 'Mycophenolate', 'Cyclosporine', 'Azathioprine', 'Chlorambucil', 'Leflunomide', 'Budesonide'],
   references: [
-    { type: 'guideline', citation: 'Garden OA et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334.', relevance: 'IMHA 免疫抑制治療共識' },
-    { type: 'journal', citation: 'Swann JW, Skelly BJ. "Systematic review of evidence relating to the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med. 2013;27(1):1-9.', relevance: '免疫抑制治療證據回顧' },
+    { type: 'guideline', citation: 'Swann JW, Garden OA, Fellman CL, Glanemann B, Goggs R, LeVine DN, et al. "ACVIM consensus statement on the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med. 2019;33(3):1141-1172. doi:10.1111/jvim.15463', relevance: 'IMHA 免疫抑制與抗血栓治療共識（本節點核心）' },
+    { type: 'guideline', citation: 'LeVine DN, Kidd L, Garden OA, Brooks MB, Goggs R, Kohn B, et al. "ACVIM consensus statement on the diagnosis of immune thrombocytopenia in dogs and cats." J Vet Intern Med. 2024;38(4). doi:10.1111/jvim.16996', relevance: '近期：ITP 診斷共識（術語/排除診斷，影響免疫抑制決策）' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, Chang YM, Jeffery U, et al. "ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats." J Vet Intern Med. 2019;33(2):313-334. doi:10.1111/jvim.15441', relevance: 'IMHA 診斷共識（與治療共識互補）' },
+    { type: 'journal', citation: 'Swann JW, Skelly BJ. "Systematic Review of Evidence Relating to the Treatment of Immune-Mediated Hemolytic Anemia in Dogs." J Vet Intern Med. 2013;27(1):1-9. doi:10.1111/jvim.12028', relevance: '免疫抑制治療證據系統性回顧' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '免疫抑制治療教材' },
   ],
   is_current: true,
@@ -4274,7 +4550,7 @@ IMHA 急性期監測：PCV q6-12h、網織紅血球 q24-48h、凝血功能 q24h�
 const contentGITherapy: NodeContent = {
   id: 'CONTENT-IM-L5-004',
   node_id: 'IM-L5-004',
-  version: 1,
+  version: 2,
   summary: '消化系統疾病的治療範圍很廣：慢性腸病（CE/IBD）走階梯式治療、胰臟炎急性期靠支持療法撐、PLE 要綜合管理、肝臟疾病有自己的藥物路線。飲食管理是這整塊的地基。藥物該怎麼用，原則就是階梯式，不要一次全部開下去。',
   learning_objectives: [
     '制定 CE 的階梯式治療方案（飲食 → 抗生素 → 免疫抑制）',
@@ -4310,6 +4586,8 @@ const contentGITherapy: NodeContent = {
 | 營養 | B12 補充 | [藥物:Cobalamin] 250-1500 ug SC q1-2wk | 所有 CE | Level I |
 | 新興 | FMT | 糞便微生物移植 | 難治性 CE | Level III |
 
+> ⚠️ **「第二層＝抗生素」為傳統階梯**：依近年實證（Pilla 2020、見§七），metronidazole/tylosin 傷腸道菌相且 ARE 被高估，現代不建議常規當第二步——飲食無效宜直接評估內視鏡/免疫抑制，抗生素留給肉芽腫性結腸炎等明確適應症。
+
 ### PLE 特殊治療
 - 超低脂飲食 (<15% DM fat) + MCT oil，淋巴管擴張核心治療
 - 免疫抑制（IBD 相關 PLE）
@@ -4336,6 +4614,35 @@ const contentGITherapy: NodeContent = {
 - 監測再餵食症候群（前 48h q12h 電解質）
 
 ## 二、藥物/方法比較 (Comparison)
+
+§一 已列各病治療；這裡比較「同一目的下幾個藥/法怎麼挑」：
+
+**止吐：Maropitant vs Ondansetron vs Metoclopramide**
+| | Maropitant | Ondansetron | Metoclopramide |
+|--|-----------|-------------|----------------|
+| 靶點 | NK1 受體 | 5-HT3 受體 | D2 拮抗＋促動力 |
+| 強項 | 廣效（中樞＋周邊），止吐主力 | 化療/尿毒/parvovirus 相關嘔吐強 | 兼促胃排空 |
+| 限制 | 不促動力 | 不促動力 | 機械性阻塞禁用、可錐體外症狀 |
+
+→ 重症嘔吐常 Maropitant ± Ondansetron 併用；需促動力（如術後腸無力）才加 metoclopramide。
+
+**肝臟保護：SAMe vs UDCA vs Silibinin vs Vit E**
+| 藥 | 主要作用 | 適用/注意 |
+|----|---------|----------|
+| SAMe | glutathione 前驅、抗氧化 | 廣泛肝病；**空腹給** |
+| UDCA（ursodiol） | 親水膽汁酸、利膽、抗凋亡 | 膽汁淤積；**完全性膽道阻塞禁用** |
+| Silibinin（水飛薊） | 抗氧化、抗纖維 | 輔助，常與 SAMe 併（Denamarin） |
+| Vit E | 抗氧化 | 銅儲積/慢性肝炎輔助 |
+
+→ 多採「組合」而非單一；UDCA 在完全性膽道阻塞時禁用。
+
+**PLE 飲食：超低脂 vs 水解蛋白**
+- **淋巴管擴張型**：核心是**超低脂**（< 15-20% ME fat）± MCT，降低乳糜流入腸腔。
+- **IBD 相關型**：以**水解蛋白**為主，搭配免疫抑制。
+- 兩型常重疊，實務上低脂＋水解可並行。
+
+**Cobalamin：口服 vs 注射**
+- 近年證據（Chang/Lidbury/Steiner 2022）：**每日高劑量口服**在 CE/EPI 低 cobalamin 犬可達**與注射相近的血中濃度**（被動濃度梯度吸收），對怕打針的飼主友善；嚴重缺乏仍可先注射衝起來。
 
 ## 三、併發症與監控 (Complications & Monitoring)
 
@@ -4381,7 +4688,18 @@ CE 追蹤指標：CCECAI 評分 q4-8wk、Albumin（PLE q2-4wk）、體重/BCS/MC
 | 抗生素在 CE 的角色 | 傾向減少使用 | Level II | dysbiosis 長期影響 |
 | Cobalamin 口服 vs 注射 | 兩者可能等效 | Level II | PLE 特異性研究 |
 | 貓三體炎最佳治療順序 | 先穩定胰臟炎 | Level IV | 同時 vs 序貫治療 |
-| SAMe 在肝病的效益 | 廣泛使用但 RCT 不足 | Level III | 犬貓特異性 RCT |`,
+| SAMe 在肝病的效益 | 廣泛使用但 RCT 不足 | Level III | 犬貓特異性 RCT |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**抗生素在 CE 退場（與慢性腸病節點 IM-L3-007 一致）**
+本節點 §一 的 CE 階梯仍列「第二層＝抗生素」，但近年實證（metronidazole 傷腸道菌相、ARE 被高估）已**不建議把抗生素試驗當常規第二步**——飲食無效應直接評估內視鏡/免疫抑制，抗生素留給肉芽腫性結腸炎（Boxer/法鬥、黏膜內 E. coli、fluoroquinolone 有效）等明確適應症。
+
+**貓胰臟炎共識（Forman et al 2021, ACVIM）**：診斷靠 spec fPL＋超音波綜合判讀；治療核心＝**積極輸液＋止痛＋早期腸道營養（禁食 >24h 不再建議）**，止吐用 maropitant；常合併**三體炎（胰臟炎＋膽管炎＋IBD）**，要看共病一起治。
+
+**Cobalamin 口服可等效注射（Chang et al 2022, JVIM）**：CE/EPI 低 cobalamin 犬每日高劑量口服可達與注射相近的血中濃度，對怕打針的飼主是友善選項；嚴重缺乏仍可先注射補起來。
+
+【台灣落地】台灣 CE/胰臟炎/FHL 門診量大；過去習慣 CE 先給 metronidazole，依新實證宜改為「嚴格飲食試驗 → 無效再內視鏡/免疫抑制」。貓三體炎常見，胰臟炎/膽管炎/IBD 要一起看。Cobalamin 口服劑型方便長期補充。`,
   clinical_pearl: '在 CE 的階梯式治療中，飲食試驗的「嚴格執行」是最關鍵也最常失敗的環節。約 50-60% 的 CE 犬是食物反應性的，只要換對飲食就能控制。但飲食試驗失敗的最常見原因不是「飲食無效」，而是「飼主執行不嚴格」。任何零食、潔牙骨、有味道的藥物膠囊、甚至其他寵物的食物都可能導致試驗失敗。所以在開始飲食試驗前，必須花時間和飼主溝通「絕對嚴格」的重要性。另外，Cobalamin 補充是所有 CE 治療中最容易被遺忘但影響預後的步驟，B12 缺乏是獨立的不良預後因子。',
   common_mistakes: [
     '飲食試驗不夠嚴格（飼主偷餵零食或其他食物，導致假性「無反應」）',
@@ -4401,9 +4719,10 @@ CE 追蹤指標：CCECAI 評分 q4-8wk、Albumin（PLE q2-4wk）、體重/BCS/MC
   interactive_placeholders: [],
   drug_api_links: ['Prednisolone', 'Budesonide', 'Metronidazole', 'Tylosin', 'Chlorambucil', 'Maropitant', 'Ondansetron', 'SAMe', 'Ursodiol', 'Cobalamin', 'Clopidogrel', 'Buprenorphine'],
   references: [
-    { type: 'journal', citation: 'Makielski K et al. "Narrative review of therapies for chronic enteropathies in dogs and cats." J Vet Intern Med. 2019;33(1):11-22.', relevance: 'CE 治療策略回顧' },
-    { type: 'guideline', citation: 'Forman MA et al. "ACVIM consensus statement on pancreatitis in cats." J Vet Intern Med. 2021;35(2):703-723.', relevance: '胰臟炎治療共識' },
-    { type: 'journal', citation: 'Craven MD, Washabau RJ. "Comparative pathophysiology and management of protein-losing enteropathy." J Vet Intern Med. 2019;33(2):383-402.', relevance: 'PLE 管理綜合回顧' },
+    { type: 'journal', citation: 'Chang C, Lidbury JA, Suchodolski JS, Steiner JM. "Effect of oral or injectable supplementation with cobalamin in dogs with hypocobalaminemia caused by chronic enteropathy or exocrine pancreatic insufficiency." J Vet Intern Med. 2022;36(5):1607-1621. doi:10.1111/jvim.16528', relevance: '近期：口服 vs 注射 cobalamin 等效性' },
+    { type: 'guideline', citation: 'Forman MA, Steiner JM, Armstrong PJ, Camus MS, Gaschen L, et al. "ACVIM consensus statement on pancreatitis in cats." J Vet Intern Med. 2021;35(2):703-723. doi:10.1111/jvim.16053', relevance: '貓胰臟炎診斷與治療共識' },
+    { type: 'journal', citation: 'Craven MD, Washabau RJ. "Comparative pathophysiology and management of protein-losing enteropathy." J Vet Intern Med. 2019;33(2):383-402. doi:10.1111/jvim.15406', relevance: 'PLE 管理綜合回顧' },
+    { type: 'journal', citation: 'Makielski K, Cullen J, O\'Connor A, Jergens AE. "Narrative review of therapies for chronic enteropathies in dogs and cats." J Vet Intern Med. 2019;33(1):11-22. doi:10.1111/jvim.15345', relevance: 'CE 治療策略回顧' },
     { type: 'textbook', citation: 'Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Elsevier, 2013.', relevance: '消化系統疾病治療教材' },
   ],
   is_current: true,
@@ -4531,7 +4850,7 @@ Classical pathway（C1q 辨識 Ab-Ag → C4b2a → C3 convertase）與 Alternati
 const contentAKI: NodeContent = {
   id: 'CONTENT-IM-L3-013',
   node_id: 'IM-L3-013',
-  version: 1,
+  version: 2,
   summary: 'AKI 就是腎功能突然壞掉，主要看到急性氮血症跟尿量變化。IRIS AKI 分級系統把它分成 Grade I-V。常見的兇手有腎毒素（百合花中毒在貓、葡萄/葡萄乾在犬、乙二醇、NSAIDs）、腎缺血、感染。早期積極輸液是關鍵。台灣亞熱帶氣候加上居家環境的特性，百合花（花市便宜又常見）是貓 AKI 最重要、又最容易預防的兇手。鉤端螺旋體感染則是台灣犬 AKI 不能漏掉的本土病因。',
   learning_objectives: [
     '運用 IRIS AKI 分級系統（Grade I-V）正確評估 AKI 嚴重度',
@@ -4621,7 +4940,36 @@ RRT 適應症：無尿 > 6-12 hr 不反應利尿劑、K > 8 mEq/L、嚴重代謝
 | 代謝性酸中毒 | 酸排泄↓ | 血氣分析 | NaHCO3 補充 |
 | 高磷血症 | 磷排泄↓ | 血磷 | 磷結合劑 |
 
-尿量監測：留置導尿管 + 封閉式集尿系統、每 1-4 hr 記錄尿量、目標 > 1-2 mL/kg/hr`,
+尿量監測：留置導尿管 + 封閉式集尿系統、每 1-4 hr 記錄尿量、目標 > 1-2 mL/kg/hr
+
+## 五、人醫借鑑 (Translational Insights)
+
+| 人醫概念/工具 | 與獸醫 AKI 的連結 | 現況 |
+|-------------|----------------|------|
+| KDIGO/AKIN AKI 分期 | IRIS AKI 分級概念對應人類 KDIGO（creatinine + 尿量分期） | 跨物種分級框架共通 |
+| 腎臟替代療法（IHD / CRRT） | 人腎科透析技術直接移植獸醫（間歇性血液透析、連續性 CRRT） | 轉介中心已提供，普及受成本/設備限 |
+| 新型腎小管損傷標記（NGAL、KIM-1、cystatin C） | 比 creatinine 更早偵測腎小管損傷 | 人醫已臨床用；獸醫 SDMA、cystatin C 研究中 |
+| 限制性輸液 / 「ins-and-outs」 | 人 ICU AKI 避免液體過載理念 | 獸醫採同樣理念，體重+尿量導向輸液 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 議題 | 立場 | Evidence Level |
+|------|------|---------------|
+| Furosemide 於少尿型 AKI 的角色 | 可促尿量但未證實改善存活或腎結局（人醫亦然）；僅在充分水合後試用 | Level II |
+| Mannitol 的腎保護 | 證據有限、過量恐加重；多保留特定情境 | Level III |
+| 最佳輸液策略（積極 vs 保守） | 初期復甦後須避免液體過載（worsens outcome）；體重/尿量導向 | Level II |
+| SDMA 於 AKI 的判讀 | 早期敏感但無法區分 AKI/CKD、非腎性（如淋巴瘤）亦可升 | Level III |
+| RRT 啟動時機 | 難治少尿/無尿、致命高鉀/酸中毒/容量過載為適應症；最佳「早 vs 晚」未定 | Level III |
+| AKI → CKD 轉化 | 存活者顯著比例進展為 CKD，需長期追蹤 | Level II |
+
+## 七、近期實證更新（待 DVM 覆核）
+
+1. **IRIS AKI 分級廣泛採用**：強調「即使非氮血症（Grade I）也算 AKI」，以連續 creatinine 變化 + 尿量分層、並標註 oliguric/non-oliguric 與是否需 RRT。
+2. **液體過載是獨立不良預後因子**（人醫與獸醫一致）：初期復甦後改採「ins-and-outs」配對輸液、每日量體重，勿盲目持續大量輸液。
+3. **SDMA 的限制**：早於 creatinine 升高但不具 AKI 特異性、無法分 AKI/CKD，且淋巴瘤等非腎疾病可升——判讀須謹慎。
+4. **鉤端螺旋體**為台灣犬 AKI 重要且**可逆/人畜共通**病因（Sykes 2011 ACVIM 共識）：疑似者早期 doxycycline + 支持治療、注意人員防護；疫苗可預防。
+5. **RRT（IHD/CRRT）** 對特定重症 AKI 可挽救生命並爭取腎臟恢復時間，惟台灣可及性有限。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: '百合花中毒是貓 AKI 最重要的可預防病因。所有百合屬（Lilium）和萱草屬（Hemerocallis）植物對貓均有腎毒性，包括花瓣、葉片、花粉甚至花瓶水。貓只要舔到少量花粉即可導致致命性 AKI。治療窗口為接觸後 18 小時內開始積極輸液。飼主教育是最重要的預防措施。',
   common_mistakes: [
     '未區分腎前性與腎性 AKI，脫水犬的高 BUN/Cre 可能單純為腎前性（補液後迅速改善）',
@@ -4666,7 +5014,7 @@ RRT 適應症：無尿 > 6-12 hr 不反應利尿劑、K > 8 mEq/L、嚴重代謝
   references: [
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Grading of Acute Kidney Injury. Available at: http://www.iris-kidney.com/', relevance: 'AKI 分級標準' },
     { type: 'journal', citation: 'Langston C. "Acute uremia." In: Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. pp 1969-1985.', relevance: 'AKI 診斷與治療教材' },
-    { type: 'journal', citation: 'Segev G et al. "Consensus recommendations for immunosuppressive treatment of dogs with glomerular disease based on established pathology." J Vet Intern Med. 2013;27 Suppl 1:S44-54.', relevance: '腎臟疾病治療共識' },
+    { type: 'guideline', citation: 'Sykes JE, et al. 2010 ACVIM Small Animal Consensus Statement on Leptospirosis: diagnosis, epidemiology, treatment, and prevention. J Vet Intern Med. 2011;25(1):1-13. doi:10.1111/j.1939-1676.2010.0654.x.', relevance: '鉤端螺旋體（犬 AKI 重要可逆/人畜共通病因）ACVIM 共識' },
     { type: 'journal', citation: 'Bennett SL, Abraham LA. "Treatment of acute kidney injury." Vet Clin North Am Small Anim Pract. 2022;52(3):601-612.', relevance: 'AKI 治療最新回顧' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 311: Acute Kidney Injury.', relevance: 'AKI 診斷與治療標準教科書' },
   ],
@@ -4678,7 +5026,7 @@ RRT 適應症：無尿 > 6-12 hr 不反應利尿劑、K > 8 mEq/L、嚴重代謝
 const contentPLN: NodeContent = {
   id: 'CONTENT-IM-L3-014',
   node_id: 'IM-L3-014',
-  version: 1,
+  version: 2,
   summary: 'PLN 的核心特徵是持續性腎小球蛋白尿（UPC > 2.0）。最常見的病因是免疫複合體腎小球腎炎，類澱粉沉著症也佔一部分。Soft-coated Wheaten Terrier 跟 Bernese Mountain Dog 有遺傳傾向。確診的金標準是腎臟切片做三聯染色（光學/免疫螢光/電子顯微鏡）。治療三條路一起走：ACEi/ARB 壓蛋白尿、免疫複合體型加免疫抑制、白蛋白掉下來時開抗血栓預防。台灣這邊要特別小心兩個繼發病因：心絲蟲（Dirofilaria 引起免疫複合體腎炎）跟壁蝨媒介疾病（Ehrlichia）。沒有做預防的犬隻盛行率偏高。',
   learning_objectives: [
     '定義 PLN 並說明 UPC > 2.0 作為診斷標準的意義',
@@ -4695,6 +5043,7 @@ const contentPLN: NodeContent = {
     'IRIS 蛋白尿亞分期：UPC < 0.2 非蛋白尿 / 0.2-0.5 犬邊緣 / > 0.5 犬蛋白尿',
     '治療三柱：(1) ACEi/ARB 抗蛋白尿 (2) 免疫抑制（免疫複合體型）(3) 抗血栓預防（Albumin < 2.0 時）',
     '抗血栓重要性：PLN 合併低白蛋白血症時血栓栓塞風險極高（抗凝血因子 III 經尿流失）',
+    '近期：telmisartan（ARB）降蛋白尿證據增強（Miyagawa 2020）；免疫抑制應依腎切片病理決定（IRIS 2013，免疫複合體型才有效）',
   ],
   body: `# 蛋白質流失性腎病 (Protein-Losing Nephropathy, PLN)
 
@@ -4762,7 +5111,39 @@ IRIS 蛋白尿亞分期指導治療：UPC 0.5-1.0 → ACEi/ARB 單藥；UPC 1.0-
 | Soft-coated Wheaten Terrier | PLN + PLE 綜合症 | 多基因 | 可用（NPHS1 等） |
 | Bernese Mountain Dog | 膜增殖性 GN | 不明 | 研究中 |
 | English Cocker Spaniel | 遺傳性腎病 | 常染色體隱性 | COL4A4 |
-| Shar-Pei | 腎類澱粉沉著 | 與家族性 Shar-Pei Fever 相關 | HAS2 |`,
+| Shar-Pei | 腎類澱粉沉著（髓質間質為主） | 與家族性 Shar-Pei Fever 相關 | HAS2 |
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫 PLN 應用 | 現況 |
+|---------|-------------|------|
+| 腎病症候群 RAAS 阻斷（ACEi/ARB）抗蛋白尿 | 犬 PLN 一線抗蛋白尿主軸 | 已是標準；telmisartan（ARB）證據增加 |
+| 抗 PLA2R 抗體（人原發膜性腎病標記） | 犬膜性腎病的血清標記與療效監測 | 人醫已臨床用；獸醫研究中、尚未常規 |
+| 腎病症候群抗凝（高凝狀態） | 低白蛋白 PLN 犬抗血栓預防 | 已納入 2019 ACVIM 抗血栓共識邏輯 |
+| 腎切片病理分類（膜性/MPGN/FSGS） | 依病理決定要不要免疫抑制 | IRIS 2013 共識核心：依 established pathology |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 經驗性免疫抑制 vs 腎切片先行 | IRIS 2013 傾向「有病理才免疫抑制」（免疫複合體型才有效）；但切片可近性/風險使部分採經驗性 | Level III |
+| 免疫複合體 GN 用哪個免疫抑制劑 | MMF 常用，但缺頭對頭 RCT，多為專家意見 | Level III |
+| ACEi vs ARB vs 兩者併用 | 單藥不夠時併用；telmisartan 近年證據佳，最佳組合未定 | Level II-III |
+| 抗血栓的起始門檻（白蛋白多低才開） | 多以 Alb <2.0 為界，但確切閾值與藥物選擇仍有爭議 | Level III |
+| 類澱粉沉著 vs 免疫複合體的鑑別 | 必須腎切片＋特殊染色（Congo red）；治療方向天差地別 | Level II |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**抗蛋白尿：telmisartan（ARB）證據增強（Miyagawa et al 2020, Res Vet Sci）**
+RAAS 阻斷仍是 PLN 抗蛋白尿的主軸；近年 telmisartan（ARB）在犬降蛋白尿與收縮壓的證據增加，對 ACEi 反應不足或不耐受者是好選項；UPC 未達標時可 ACEi＋ARB 併用。治療目標不變：**UPC 下降 >50% 或降到 <0.5**，並追蹤腎功能與血壓。
+
+**免疫抑制要「有病理才用」（IRIS 2013 共識）**
+IRIS Canine GN 共識的核心訊息：**免疫抑制應依腎切片病理（established pathology）決定**——只有免疫複合體型 GN 才可能受益，類澱粉沉著／硬化型用了無效還添毒性。臨床現實是切片可近性受限，但「不分型就一律免疫抑制」是該避免的；多數免疫抑制建議仍為專家意見（缺 RCT）。
+
+**抗血栓是 PLN 的標準配備（呼應 2019 ACVIM CURATIVE 抗血栓共識）**
+低白蛋白／腎病症候群是高凝狀態（AT-III 隨尿流失），**肺栓塞是主要死因之一**——Alb <2.0 即開抗血栓預防（clopidogrel ± 低劑量 aspirin），別等血栓事件發生才動手。
+
+【台灣落地】台灣 PLN 務必把兩個本土繼發病因排乾淨：**心絲蟲（Dirofilaria 免疫複合體腎炎）與壁蝨媒介（Ehrlichia/Babesia/Leishmania）**——沒做預防的犬盛行率高，原發病不治、單壓蛋白尿效果有限。腎切片三聯染色限大型轉介中心，基層至少要把感染排除＋ACEi/ARB＋低白蛋白時抗血栓做好。`,
   clinical_pearl: 'PLN 犬只要 UPC 超過 3.5、白蛋白又掉到 2.0 g/dL 以下，血栓栓塞的風險就高得嚇人。AT-III 跟著尿液一直流掉，抗凝能力被掏空，加上低白蛋白血症又會推著肝臟多合成凝血因子，兩件事一起發酵。臨床最常爆掉的地方是肺動脈。所以只要 Albumin < 2.0 的 PLN 犬，抗血栓預防（Clopidogrel 加減低劑量 Aspirin）就要開下去，不要等到真的血栓事件才動手。',
   common_mistakes: [
     '未區分腎小球蛋白尿與腎小管/腎後性蛋白尿，UPC > 2.0 幾乎確定為腎小球疾病',
@@ -4803,9 +5184,10 @@ IRIS 蛋白尿亞分期指導治療：UPC 0.5-1.0 → ACEi/ARB 單藥；UPC 1.0-
   interactive_placeholders: [],
   drug_api_links: ['Benazepril', 'Telmisartan', 'Mycophenolate', 'Clopidogrel', 'Amlodipine'],
   references: [
-    { type: 'guideline', citation: 'IRIS Glomerular Disease Study Group. "Consensus recommendations for immunosuppressive treatment of dogs with glomerular disease." J Vet Intern Med. 2013;27 Suppl 1:S44-54.', relevance: '腎小球疾病免疫抑制治療共識' },
-    { type: 'journal', citation: 'Littman MP et al. "Glomerulopathy and mutations in NPHS1 and KIRREL2 in Soft-Coated Wheaten Terrier dogs." J Vet Intern Med. 2013;27 Suppl 1:S62-67.', relevance: 'SCWT 遺傳性 PLN 研究' },
-    { type: 'guideline', citation: 'Lees GE et al. "Assessment and management of proteinuria in dogs and cats: 2004 ACVIM Forum Consensus Statement (Updated)." J Vet Intern Med. 2005;19(3):377-385.', relevance: '蛋白尿評估與管理共識' },
+    { type: 'journal', citation: 'Miyagawa Y, Akabane R, Sakatani A, Ogawa M. "Effects of telmisartan on proteinuria and systolic blood pressure in dogs with chronic kidney disease." Res Vet Sci. 2020;133:150-156. doi:10.1016/j.rvsc.2020.09.019', relevance: '近期：telmisartan（ARB）降犬蛋白尿與血壓' },
+    { type: 'guideline', citation: 'IRIS Canine GN Study Group; Segev G, Cowgill LD, Heiene R, et al. "Consensus Recommendations for Immunosuppressive Treatment of Dogs with Glomerular Disease Based on Established Pathology." J Vet Intern Med. 2013;27(Suppl 1):S44-S54. doi:10.1111/jvim.12228', relevance: '腎小球疾病免疫抑制治療共識（依病理）' },
+    { type: 'journal', citation: 'Littman MP, Wiley CA, Raducha MG, Henthorn PS. "Glomerulopathy and mutations in NPHS1 and KIRREL2 in soft-coated Wheaten Terrier dogs." Mamm Genome. 2013;24(3-4):119-126. doi:10.1007/s00335-012-9445-8', relevance: 'SCWT 遺傳性 PLN 研究（修正 v1 誤標 JVIM）' },
+    { type: 'guideline', citation: 'Lees GE, Brown SA, Elliott J, Grauer GF, Vaden SL. "Assessment and Management of Proteinuria in Dogs and Cats: 2004 ACVIM Forum Consensus Statement." J Vet Intern Med. 2005;19(3):377-385. doi:10.1111/j.1939-1676.2005.tb02713.x', relevance: '蛋白尿評估與管理共識' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 313: Glomerular Disease.', relevance: '腎小球疾病教材' },
   ],
   is_current: true,
@@ -4816,7 +5198,7 @@ IRIS 蛋白尿亞分期指導治療：UPC 0.5-1.0 → ACEi/ARB 單藥；UPC 1.0-
 const contentIMT: NodeContent = {
   id: 'CONTENT-IM-L3-015',
   node_id: 'IM-L3-015',
-  version: 1,
+  version: 2,
   summary: '犬的嚴重血小板減少最常見的原因就是 IMT，免疫系統做出自體抗體去打自家血小板。分原發性（特發性）跟繼發性兩種。IMT 加上 IMHA 一起爆就是 Evans syndrome。血小板掉到 50,000/μL 以下會看到瘀斑跟黏膜出血。治療核心是免疫抑制。台灣的問題在於壁蝨整年都在跑，Ehrlichia canis 跟 Babesia gibsoni 是繼發性 IMT 的重要本土兇手。看到病例先把壁蝨媒介疾病排掉再開免疫抑制，順序不能搞錯。',
   learning_objectives: [
     '區分原發性與繼發性 IMT 的病因與臨床意義',
@@ -4834,6 +5216,7 @@ const contentIMT: NodeContent = {
     '二線藥物：Mycophenolate 10 mg/kg BID 或 Cyclosporine 5 mg/kg BID',
     'Vincristine：0.02 mg/kg IV 單次，難治性 IMT 的救援藥物（促進血小板從巨核球釋放）',
     '避免不必要的靜脈穿刺和手術，嚴重血小板減少時出血風險極高',
+    '2024 ACVIM 共識（LeVine et al）：建議用 ITP（取代 IMT）、分 primary(non-associative)/secondary(associative)、骨髓不再常規要求；診斷為結構化排除',
   ],
   body: `# 免疫介導血小板減少症 (Immune-Mediated Thrombocytopenia, IMT)
 
@@ -4896,7 +5279,48 @@ Vincristine 機轉：(1) 促進骨髓巨核球碎裂→加速釋放血小板（2
 | Evans syndrome 發展 | 表位擴展 | 加強免疫抑制 |
 | 復發 | 減量太快或停藥 | 回升至有效劑量 |
 
-監測頻率：治療開始每 3-5 天追蹤 CBC 至血小板 > 100,000 → 每 1-2 週至穩定 → 減量期每 2-4 週 → 停藥後每月追蹤 3 個月`,
+監測頻率：治療開始每 3-5 天追蹤 CBC 至血小板 > 100,000 → 每 1-2 週至穩定 → 減量期每 2-4 週 → 停藥後每月追蹤 3 個月
+
+## 五、預後與預後因子 (Prognosis & Prognostic Factors)
+
+原發性 ITP 對免疫抑制反應好——反應率 > 80%，多數 3-7 天血小板開始回升，住院死亡率約 5-10%。但有幾個因子會把預後往下拉：
+
+| 預後因子 | 影響 | 來源 |
+|---------|------|------|
+| 黑便（melena）/消化道出血 | 死亡率↑、住院天數↑ | O'Marra 2011 |
+| 就診時 BUN 升高 | 與較差結局相關 | O'Marra 2011 |
+| Evans syndrome（合併 IMHA） | 死亡率 30-40% | 共識/回顧 |
+| Amegakaryocytic（抗巨核球） | 預後不良 | — |
+| 繼發於腫瘤 | 取決於原發腫瘤 | — |
+
+復發率約 20-30%，多發生在減量太快或過早停藥時。一個務實提醒：**血小板數字和出血風險不是線性的**——同樣 20,000/μL，有的狗只有零星瘀斑、有的卻黏膜大出血，所以臨床決策要看「有沒有在出血」而不是單看數字。真正致命的是肺出血和顱內出血。
+
+## 六、人醫借鑑 (Translational Insights)
+
+- 人醫原發性免疫性血小板減少症（primary ITP）和獸醫一樣是**排除診斷**，沒有單一確診試驗——這點 2024 ACVIM 共識與人醫立場完全一致。
+- 一線同為糖皮質素。**二線人醫已遠比獸醫豐富**：TPO 受體促效劑（romiplostim、eltrombopag，直接刺激血小板生成）、rituximab（anti-CD20 清除產抗體的 B 細胞）、脾切除。
+- 這些人醫二線藥在犬貓多半還在探索階段：rituximab 是人源單株抗體，犬會產生抗藥抗體、效果受限；TPO-RA 在犬尚未常規使用。這是獸醫難治性 ITP 的明顯治療缺口。
+- 骨髓檢查的角色雙方都在退場：人醫典型 ITP 不再常規做骨髓，2024 ACVIM 共識同樣**不再常規要求骨髓**，只在多系異常或治療無反應時才做。
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
+|---------|---------|---------|---------|
+| 一線單用 Pred vs 起始即併二線 | 重症/難治可考慮早期併用，但缺前瞻證據 | Level III | RCT 比較單藥 vs 併用 |
+| Vincristine 常規納入一線 | 可加速血小板回升，對死亡率影響未定 | Level II | 是否改善硬結局 |
+| hIVIG 的定位 | 昂貴、效果短暫，保留給危及生命出血的橋接 | Level III | 成本效益、最佳劑量 |
+| 血小板輸注 | 傳統視為無效（抗體快速破壞），僅危及生命出血時暫時用 | Level IV | 大量出血情境的實證 |
+| 骨髓穿刺適應症 | 典型病例不需，多系異常/無反應才做 | Level III（2024 共識） | — |
+| 減量速度與療程長度 | 經驗性 3-6 個月緩慢減量，最佳方案未定 | Level IV | 個體化減量方案 |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**2024 ACVIM ITP 診斷共識（LeVine et al, J Vet Intern Med 38:1958-1981）** 是這個主題目前最高位階的更新，幾個對門診有實質影響的重點：
+- **術語標準化**：建議用 **ITP**（immune thrombocytopenia）取代舊稱 IMT，並分為 **primary（non-associative，原發）** 與 **secondary（associative，繼發於感染/藥物/腫瘤）**。本節點沿用 IMT 為與既有教材銜接，但讀者應知新共識用語。
+- **診斷是「結構化排除」**：沒有單一確診試驗。標準路徑＝先排除假性血小板減少（EDTA 凝集、CKCS 巨血小板）→ 排除 vector-borne/藥物/腫瘤 → 評估骨髓代償。**骨髓檢查不再常規要求**，僅保留給多系血球異常或治療無反應者。
+- **台灣在地校正**：共識的繼發性比例以溫帶地區資料為主；台灣壁蝨媒介病原（**E. canis、B. gibsoni、Anaplasma**）整年流行，繼發性 ITP 占比很可能高於這些報告。**鐵則：開長期免疫抑制前，先 PCR/血清學把壁蝨病原排乾淨**——把繼發當原發來壓制免疫，會讓感染失控。
+
+**Evans syndrome 的治療借鑑 2019 ACVIM IMHA 治療共識（Swann et al, JVIM 33:1141-1172）**：當 ITP 合併 IMHA，免疫抑制策略向 IMHA 共識看齊（含抗血栓預防的考量），且因雙系受攻擊、預後較單純 ITP 差。`,
   clinical_pearl: '在疑似 IMT 犬中，第一步是確認血小板真的減少，EDTA 抗凝管可引起犬的假性血小板減少（EDTA-dependent platelet clumping）。務必檢查血液抹片，看是否有血小板凝集。如果有凝集，改用 citrate 管重抽。另外，Cavalier King Charles Spaniel 品種有生理性巨血小板症（macrothrombocytopenia），自動計數器會低估血小板數量，需手動計數。',
   common_mistakes: [
     'EDTA 假性血小板減少誤診為 IMT（未確認血液抹片）',
@@ -4938,9 +5362,10 @@ Vincristine 機轉：(1) 促進骨髓巨核球碎裂→加速釋放血小板（2
   interactive_placeholders: [],
   drug_api_links: ['Prednisolone', 'Mycophenolate', 'Cyclosporine', 'Vincristine'],
   references: [
-    { type: 'guideline', citation: 'Swann JW, Skelly BJ. "Systematic review of prognostic factors for canine immune-mediated thrombocytopenia." J Vet Intern Med. 2016;30(4):1141-1150.', relevance: 'IMT 預後因子系統性回顧' },
+    { type: 'guideline', citation: 'LeVine DN, Kidd L, Garden OA, Brooks MB, Goggs R, Kohn B, et al. "ACVIM consensus statement on the diagnosis of immune thrombocytopenia in dogs and cats." J Vet Intern Med. 2024;38(4). doi:10.1111/jvim.16996', relevance: '近期最高位階：ITP 診斷共識（術語、排除診斷流程、骨髓不再常規）' },
+    { type: 'journal', citation: 'O\'Marra SK, Delaforcade AM, Shaw SP. "Treatment and predictors of outcome in dogs with immune-mediated thrombocytopenia." J Am Vet Med Assoc. 2011;238(3):346-352. doi:10.2460/javma.238.3.346', relevance: 'IMT 治療結果與預後預測因子（melena/BUN）' },
+    { type: 'guideline', citation: 'Swann JW, Garden OA, Fellman CL, Glanemann B, Goggs R, LeVine DN, et al. "ACVIM consensus statement on the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med. 2019;33(3):1141-1172. doi:10.1111/jvim.15463', relevance: 'Evans syndrome 治療借鑑（IMHA 免疫抑制+抗血栓）' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 87: Disorders of Hemostasis.', relevance: 'IMT 診斷與治療教材' },
-    { type: 'journal', citation: 'O\'Marra SK et al. "Treatment and predictors of outcome in dogs with immune-mediated thrombocytopenia." J Am Vet Med Assoc. 2011;238(3):346-352.', relevance: 'IMT 治療結果與預後預測因子' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 286: Platelet Disorders.', relevance: '血小板疾病教材' },
   ],
   is_current: true,
@@ -5105,7 +5530,7 @@ const contentLepto: NodeContent = {
 const contentFIP: NodeContent = {
   id: 'CONTENT-IM-L3-017',
   node_id: 'IM-L3-017',
-  version: 1,
+  version: 2,
   summary: 'FIP 是貓冠狀病毒（FCoV）突變成高致病力型搞出來的病。臨床上分濕型（滲出型）跟乾型（肉芽腫型）。以前被當作幾乎 100% 致命，現在 GS-441524 這類抗病毒藥已經把 FIP 變成治得好的病。標準療程是 GS-441524 皮下注射 84 天。台灣多貓家庭、貓咖啡廳密度都高，FCoV 盛行率本來就偏高；GS-441524 在台灣可以透過獸醫處方拿到，本土的治療經驗一直在累積。',
   learning_objectives: [
     '說明 FCoV 突變為 FIPV 的機轉與免疫病理',
@@ -5119,9 +5544,9 @@ const contentFIP: NodeContent = {
     '突變關鍵：FCoV 在巨噬細胞內有效複製能力 → 全身性感染 → 免疫複合體血管炎',
     '濕型（effusive）：高蛋白、低細胞數滲出液，Rivalta test 陽性，A/G ratio < 0.4',
     '乾型（granulomatous）：肉芽腫侵犯腎、肝、CNS、眼，診斷較困難',
-    'GS-441524（核苷酸類似物）：濕型 6-10 mg/kg、乾型 10-12 mg/kg、眼型 12-15 mg/kg、神經型 15-20 mg/kg，SC SID × 84 天（ABCD 2024 更新）',
-    'Molnupiravir：替代藥物，20 mg/kg PO BID × 84 天，口服便利但突變風險',
-    '治療成功率：濕型 > 80%，乾型/眼型約 60-70%，神經型約 50-60%',
+    'GS-441524（remdesivir 的母核苷）依病型分級給藥、SC SID × 84 天；乾/眼/神經型需較高劑量以求組織與中樞穿透。注射常從較低劑量起始再依反應上調——劑量為現場常用範圍、須依現行 ABCD 指引（Tasker 2023）與 DVM/仿單核對，勿視為定值',
+    'Molnupiravir：替代藥物（人 COVID 口服藥再利用），療效近似但致突變風險未明',
+    '治療成功率（系統性回顧 ~650 貓，Gokalsing 2025）：整體約 84.6%，濕型最佳、神經型/重症較低；FIP 已從「絕症」轉為多數可治癒',
   ],
   body: `# 貓傳染性腹膜炎 (Feline Infectious Peritonitis, FIP)
 
@@ -5171,9 +5596,9 @@ const contentFIP: NodeContent = {
 | 檢查 | 濕型 | 乾型 | 備註 |
 |------|------|------|------|
 | Rivalta test | 陽性（敏感度 91%） | 不適用 | 滲出液一滴入醋酸→不消散 |
-| 滲出液分析 | TP > 3.5 g/dL, 低細胞 |，| A/G < 0.4 高度提示 FIP |
+| 滲出液分析 | TP > 3.5 g/dL, 低細胞 |—| A/G < 0.4 高度提示 FIP |
 | 血液 A/G ratio | < 0.4 | < 0.6 | 非特異但有支持價值 |
-| 滲出液 FCoV RT-PCR | 敏感度高 |，| 陽性高度支持但非確診 |
+| 滲出液 FCoV RT-PCR | 敏感度高 |—| 陽性高度支持但非確診 |
 | 組織免疫組化（IHC） | 金標準 | 金標準 | FCoV 抗原在巨噬細胞內 |
 | 血清 FCoV 抗體 | 非診斷性 | 非診斷性 | 陽性僅代表 FCoV 接觸 |
 
@@ -5190,7 +5615,7 @@ Rivalta test 操作：試管中放 8 mL 蒸餾水 + 1 滴冰醋酸→滲出液�
 | 眼型 | 12-15 mg/kg SID | SC 注射 | 84 天 |
 | 神經型 | 15-20 mg/kg SID | SC 注射 | 84 天（或更長） |
 
-註：劑量為 ABCD 2024 共識，較 Pedersen 2019 原始研究的 4-10 mg/kg 提高，反映累積臨床經驗下對血漿濃度的需求。台灣可參考亞洲貓內科學會（ASFM）2024 臨床指引。
+> ⚠️ **劑量為臨床現場常用範圍、非單一權威定值（待 DVM 依現行 ABCD 指引與仿單核對）**。注射劑量常從較低起始（接近 Pedersen 2019 原始的濕型約 2–4 mg/kg）再依反應上調；乾/眼/神經型因需更高組織與中樞穿透而採較高劑量。請勿將上表視為固定處方。
 
 GS-441524 機轉：核苷酸類似物 → 被細胞激酶磷酸化為活性三磷酸形式 → 嵌入病毒 RNA 鏈 → 終止 RNA 合成 → 抑制冠狀病毒 RdRp
 
@@ -5218,7 +5643,46 @@ GS-441524 機轉：核苷酸類似物 → 被細胞激酶磷酸化為活性三�
 | 濕型 | > 80% | 10-15% | 預後最佳 |
 | 乾型（非神經） | 60-70% | 15-20% | 療程可能需延長 |
 | 眼型 | 60-70% | 15-20% | 部分視力損傷不可逆 |
-| 神經型 | 50-60% | 20-30% | 需高劑量 + 延長療程 |`,
+| 神經型 | 50-60% | 20-30% | 需高劑量 + 延長療程 |
+
+## 五、人醫借鑑 (Translational Insights)
+
+FIP 是少見的「獸醫先行、回饋人醫」範例：
+
+| 人醫概念/工具 | 與 FIP 的連結 | 現況 |
+|-------------|-------------|------|
+| Remdesivir (GS-5734) | GS-441524 即 remdesivir 的母核苷（主要血漿代謝物）；貓 FIP 長療程安全性經驗早於人 COVID 廣泛使用 | 人 COVID-19 靜脈用藥；獸醫長期 SC/口服經驗反向參考 |
+| Molnupiravir | 同為人 COVID 口服抗病毒藥，跨物種再利用治療 FIP | FIP 替代/救援用藥（致突變風險待評估） |
+| 抗體依賴性增強 (ADE) | FIP 是 ADE 的經典天然模型（強體液、弱 CMI 反而加重） | 對病毒疫苗設計的警示意義 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議主題 | 目前立場 | Evidence Level |
+|---------|---------|---------------|
+| GS-441524 各病型最佳劑量 | 劑量逐年上修、缺前瞻性頭對頭 RCT；現場以反應導向調整 | Level III |
+| 注射 vs 口服 GS-441524 等效性 | 可注射起手、轉口服維持（Coggins 2023 支持） | Level II |
+| 神經型療程長度與劑量上限 | 需更高劑量穿透 BBB、療程常需延長，最佳值未定 | Level III |
+| 84 天療程與停藥/治癒判定 | 84 天為經驗值非 RCT；停藥後 12 週監測復發 | Level III |
+| Molnupiravir 長期安全性 | 療效近似 GS（Sase 2024，回溯性），致突變/致畸風險未明 | Level III |
+| 治癒後 FCoV 帶原與再感染 | 治癒不等於清除 FCoV 帶原；再感染/再突變可能 | Level IV |
+
+## 七、近期實證更新（2022–2025，僅列高信度，待 DVM 覆核）
+
+**1. 系統性回顧確立 GS-441524 療效（Gokalsing 2025）**
+彙整 2018–2024 共 11 項研究、約 650 隻 FIP 貓：GS-441524（單用或合併）整體成功率約 **84.6%**；合併用藥更高、濕型最佳、**神經型/重症較低**。確立 FIP 已從「絕症」轉為多數可治癒。
+
+**2. 注射起手、口服維持獲實務支持（Coggins 2023, JVIM）**
+37 貓以注射 remdesivir 起始、可轉換為口服 GS-441524，存活率高 → 支持「急性期注射、穩定後口服」的路徑。
+
+**3. Molnupiravir 為合理替代（Sase 2024, Front Vet Sci）**
+回溯性研究報告 GS-441524 與 molnupiravir **療效相近**（惟為回溯設計、尚非正式 non-inferiority RCT，結論需保留）；molnupiravir 口服便利，致突變風險使其多作替代/救援而非首選。
+
+**4. 診斷標準化（AAFP/EveryCat 2022 診斷指引）**
+標準化診斷路徑：滲出液 **A:G < 0.4 高度提示 FIP、> 0.8 幾乎可排除**；組織免疫組化（IHC/ICC）仍為確診金標準（特異度高、敏感度中等），治療年代常以「臨床診斷 + 抗病毒治療反應」作替代確診。FCoV 血清抗體效價不能確診。
+
+**5. 法規與可得性轉變**
+多國 GS-441524 已合法化或可獸醫處方（含台灣經獸醫處方）；非法/灰市來源純度與劑量不可靠，應導向合法處方管道。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: 'FIP 的診斷在乾型中仍然是臨床挑戰。單一檢查無法確診，需要「拼圖式」診斷：年輕貓 + 不明原因發燒 + 高球蛋白血症（A/G < 0.6）+ 影像學異常（腎/肝肉芽腫、腸系膜淋巴結腫大）。血清 FCoV 抗體效價僅代表曾接觸 FCoV，不能確診 FIP。確診需組織免疫組化，但在治療年代，臨床診斷加上抗病毒治療反應常作為替代確診標準。',
   common_mistakes: [
     '以血清 FCoV 抗體陽性就診斷 FIP（40-80% 多貓家庭貓有抗體，僅代表接觸過 FCoV）',
@@ -5247,7 +5711,7 @@ GS-441524 機轉：核苷酸類似物 → 被細胞激酶磷酸化為活性三�
       { condition: '肝病性腹水', key_differentiator: '低蛋白漏出液、膽汁酸異常' },
     ],
     diagnostic_workup: '1. CBC + 生化（高球蛋白、A/G < 0.6、淋巴球減少）→ 2. 滲出液分析（TP > 3.5, 低細胞, A/G < 0.4）+ Rivalta test → 3. 滲出液 FCoV RT-PCR → 4. 超音波（腹腔積液、腎表面不規則、淋巴結腫大）→ 5. 眼科檢查 → 6. 確診：組織免疫組化（IHC）或臨床診斷 + 治療反應',
-    treatment_protocol: 'GS-441524（ABCD 2024）：濕型 6-10 mg/kg SC SID、乾型 10-12 mg/kg、眼型 12-15 mg/kg、神經型 15-20 mg/kg，共 84 天。替代：Molnupiravir 20-25 mg/kg PO BID × 84 天。支持療法：食慾促進（Mirtazapine）、止吐、營養支持。治療中監測 CBC + 生化 + 體重。',
+    treatment_protocol: 'GS-441524 SC SID × 84 天，依病型分級（乾/眼/神經型採較高劑量以求中樞穿透；注射常從較低劑量起始再依反應上調）——確切劑量依現行 ABCD 指引（Tasker 2023）與 DVM/仿單核對，勿視為定值。替代：Molnupiravir PO（人 COVID 口服藥再利用，療效相近但致突變風險未明）。支持療法：食慾促進（Mirtazapine）、止吐、營養支持。治療中監測 CBC + 生化 + 體重。',
     prognosis: '濕型（GS-441524 治療）：緩解率 > 80%。乾型/眼型：60-70%。神經型：50-60%。復發率 10-20%，多在停藥後 3 個月內。未治療：100% 致死。早期診斷與治療明顯改善預後。',
     monitoring: '治療中每 2 週：體重、食慾、體溫。每月：CBC + 生化（球蛋白/A:G ratio 趨勢）。滲出液消退時間追蹤。停藥後每月追蹤 3 個月，之後每 3 個月。注意復發徵兆（發燒、球蛋白回升、體重下降）。',
     owner_communication: 'FIP 在以前是聽到就要放棄的病，現在不一樣了，抗病毒藥可以治得好。GS-441524 整個療程是 84 天，每天皮下注射一次。費用會跟貓的體重直接掛勾。多數濕型的貓治療反應都不錯。療程結束之後也要定期回診追蹤，怕復發。多貓家庭裡其他貓可能帶有 FCoV，但帶原不等於會發病。',
@@ -5261,11 +5725,13 @@ GS-441524 機轉：核苷酸類似物 → 被細胞激酶磷酸化為活性三�
   interactive_placeholders: [],
   drug_api_links: ['GS-441524', 'Molnupiravir', 'GC376', 'Mirtazapine'],
   references: [
-    { type: 'journal', citation: 'Pedersen NC et al. "Efficacy and safety of the nucleoside analog GS-441524 for treatment of cats with naturally occurring feline infectious peritonitis." J Feline Med Surg. 2019;21(4):271-281.', relevance: 'GS-441524 治療 FIP 原始研究' },
-    { type: 'journal', citation: 'Tasker S. "Diagnosis of feline infectious peritonitis: Update on evidence supporting available tests." J Feline Med Surg. 2018;20(3):228-243.', relevance: 'FIP 診斷方法更新' },
-    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 95: Feline Infectious Peritonitis.', relevance: 'FIP 教材' },
-    { type: 'journal', citation: 'Jones S et al. "Antiviral treatment of feline infectious peritonitis using GS-441524: A retrospective study of 30 cats." J Feline Med Surg. 2021;23(12):1103-1111.', relevance: 'GS-441524 回顧性治療研究' },
-    { type: 'guideline', citation: 'Tasker S, Addie DD, Egberink H, et al. European Advisory Board on Cat Diseases (ABCD) Guidelines on Feline Infectious Peritonitis. J Feline Med Surg. 2023;25(1):1-11. doi:10.1177/1098612X221145687', relevance: 'ABCD 歐洲貓傳染性腹膜炎診斷與治療指引' },
+    { type: 'guideline', citation: 'Tasker S, Addie DD, Egberink H, et al. Feline Infectious Peritonitis: European Advisory Board on Cat Diseases Guidelines. Viruses. 2023;15(9):1847. doi:10.3390/v15091847.', relevance: 'ABCD 歐洲貓 FIP 現行診療指引（治療/管理主要依據）' },
+    { type: 'guideline', citation: 'Thayer V, Gogolski S, Felten S, et al. 2022 AAFP/EveryCat Feline Infectious Peritonitis Diagnosis Guidelines. J Feline Med Surg. 2022;24(9):905-933. doi:10.1177/1098612X221118761.', relevance: 'AAFP/EveryCat 診斷標準化指引（A:G 閾值、IHC、診斷路徑）' },
+    { type: 'journal', citation: 'Gokalsing E, et al. Efficacy of GS-441524 for Feline Infectious Peritonitis: A Systematic Review (2018-2024). Pathogens. 2025;14(7):717. doi:10.3390/pathogens14070717.', relevance: '系統性回顧：11 研究約 650 貓，GS-441524 整體成功率約 84.6%' },
+    { type: 'journal', citation: 'Coggins SJ, Norris JM, Malik R, et al. Outcomes of treatment of cats with feline infectious peritonitis using parenterally administered remdesivir, with or without transition to orally administered GS-441524. J Vet Intern Med. 2023;37(5):1772-1783. doi:10.1111/jvim.16803.', relevance: '注射 remdesivir 起手、轉口服 GS-441524 之實務療效' },
+    { type: 'journal', citation: 'Sase O. GS-441524 and molnupiravir are similarly effective for the treatment of cats with feline infectious peritonitis. Front Vet Sci. 2024;11:1422408. doi:10.3389/fvets.2024.1422408.', relevance: 'GS-441524 與 molnupiravir 療效相近（回溯性，結論需保留）' },
+    { type: 'journal', citation: 'Pedersen NC, Perron M, Bannasch M, et al. Efficacy and safety of the nucleoside analog GS-441524 for treatment of cats with naturally occurring feline infectious peritonitis. J Feline Med Surg. 2019;21(4):271-281. doi:10.1177/1098612X19825701.', relevance: 'GS-441524 治療 FIP 的奠基性原始研究（原始劑量基準）' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 95: Feline Infectious Peritonitis.', relevance: 'FIP 教科書章節' },
   ],
   is_current: true,
   created_at: now,
@@ -5275,7 +5741,7 @@ GS-441524 機轉：核苷酸類似物 → 被細胞激酶磷酸化為活性三�
 const contentFLUTD: NodeContent = {
   id: 'CONTENT-IM-L3-018',
   node_id: 'IM-L3-018',
-  version: 1,
+  version: 2,
   summary: 'FLUTD 不是單一疾病，是一群症狀的集合：排尿困難、血尿、頻尿。最常見的病因是貓特發性膀胱炎（FIC），佔了 55-69%，壓力是引信。公貓尿道阻塞屬於急診，不能拖。治療核心是多模式環境改善（MEMO）跟壓力管理。台灣這邊問題特別大：都會區室內貓比例高、乾飼料為主、高溫多濕又喝水少，FLUTD 盛行率偏高。公貓尿道阻塞是台灣貓急診最常見的幾個主訴之一。',
   learning_objectives: [
     '列舉 FLUTD 的主要病因並說明各自的占比與特徵',
@@ -5367,7 +5833,7 @@ GAG 層缺損：正常膀胱表面有 glycosaminoglycan (GAG) 層保護上皮 �
 |------|------|--------|
 | 1 | ECG + 血鉀 | 立即 |
 | 2 | 高鉀處理 | K > 6.5：Calcium gluconate 10% 0.5-1 mL/kg slow IV |
-| 3 | IV 輸液 | LRS（不含鉀！用 0.9% NaCl）開始 |
+| 3 | IV 輸液 | 平衡晶體液（LRS/Plasma-Lyte）即可——微量鉀可忽略且較快矯正代謝性酸中毒；「必用 0.9% NaCl 避鉀」為過時觀念 |
 | 4 | 導尿 | 鎮靜 → 3.5F 紅色橡膠導管 → 生理食鹽水沖洗 |
 | 5 | 封閉式導尿系統 | 留置 24-48 hr，監測尿量 |
 | 6 | 阻塞後利尿 | 監測多尿期電解質流失 |
@@ -5380,7 +5846,33 @@ GAG 層缺損：正常膀胱表面有 glycosaminoglycan (GAG) 層保護上皮 �
 | CaOx | 手術移除（不可溶解） | 非酸化飲食 + 增加水攝取 | 濕食 + 增加水攝取 |
 | 混合型 | 結石分析後決定 | 依主要成分 | 個別化 |
 
-會陰尿道造口術 (PU)：適應症為反覆尿道阻塞（≥ 2-3 次）。手術目的為擴大尿道開口。併發症包括尿道狹窄（5-10%）和反覆 UTI 風險增加。`,
+會陰尿道造口術 (PU)：適應症為反覆尿道阻塞（≥ 2-3 次）。手術目的為擴大尿道開口。併發症包括尿道狹窄（5-10%）和反覆 UTI 風險增加。
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用潛力 | 現況 |
+|---------|-------------|------|
+| 間質性膀胱炎／膀胱疼痛症候群（IC/BPS） | FIC 與人 IC/BPS 病理高度相似（GAG 缺損、神經源性炎症），互為自然動物模型 | 雙向 translational；FIC 為人 IC 重要自然模型 |
+| Pandora syndrome 概念 | FIC 視為全身性壓力相關疾病（共病腸胃/行為），非僅膀胱局部 | Buffington 提出，整體醫療取向 |
+| 行為＋環境多模式療法（人 IC 一線） | 對應貓 MEMO；證據最強的 FIC 介入 | 已為 FIC 治療核心 |
+| GAG 補充（人 IC 用 pentosan polysulfate） | 犬貓 GAG 補充劑（PPS/glucosamine） | 人用 PPS 有條件證據，貓證據不足、不建議常規 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Prazosin 預防再阻塞 | 早期回顧性支持，惟前瞻研究（Conway 2022）顯示未降低、甚至增加再阻塞 | Level II |
+| GAG 補充劑（PPS/glucosamine）對 FIC 效益 | 多為陰性/證據不足，不建議常規 | Level II |
+| 阻塞貓輸液選擇（平衡液 vs 0.9% NaCl） | 平衡晶體液安全且矯酸較快，過時的「避鉀用 NaCl」已被挑戰 | Level II |
+| 抗焦慮藥（amitriptyline/fluoxetine）於難治性 FIC | 僅限難治性長期使用，非一線，證據有限 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+1. **Prazosin 不再常規（Conway 2022）**：前瞻研究顯示 prazosin 未降低、反而可能增加尿道再阻塞，挑戰過去常規使用。
+2. **阻塞輸液用平衡晶體液**：LRS/Plasma-Lyte 安全、矯正代謝性酸中毒較快；「必用 0.9% NaCl 避鉀」為過時觀念。
+3. **MEMO 為證據最強介入（ISFM）**：多模式環境改善＋全濕食降低 FIC 復發 70-80%，優於藥物。
+4. **FIC = Pandora syndrome**：以全身壓力相關疾病框架整體管理（共病評估、減壓）。
+> FLUTD 處置須區分阻塞（急診）與非阻塞、依結石成分導向飲食；藥物與輸液選擇由獸醫依個案與現行實證判斷。`,
   clinical_pearl: 'FIC 最重要的治療不是藥物，是環境改善（MEMO）。研究顯示 MEMO 可降低 FIC 復發率 70-80%，效果優於任何藥物。最關鍵的介入是增加水攝取（改為全濕食）和減少環境壓力。FIC 是自限性疾病（通常 3-7 天自行緩解），但如不處理壓力源，40-50% 會在 6-12 個月內復發。GAG 補充劑（pentosan polysulfate, glucosamine）證據不足。',
   common_mistakes: [
     '年輕貓的 FLUTD 給予抗生素，< 10 歲貓 UTI < 5%，多數為 FIC 不需要抗生素',
@@ -5422,10 +5914,11 @@ GAG 層缺損：正常膀胱表面有 glycosaminoglycan (GAG) 層保護上皮 �
   interactive_placeholders: [],
   drug_api_links: ['Buprenorphine', 'Calcium gluconate', 'Prazosin', 'Maropitant'],
   references: [
-    { type: 'guideline', citation: 'Westropp JL et al. "Evaluation of the effects of stress in cats with idiopathic cystitis." ISFM Guidelines on FLUTD. J Feline Med Surg. 2019;21(2):134-150.', relevance: 'FIC 與壓力管理指引' },
-    { type: 'journal', citation: 'Buffington CA. "Idiopathic cystitis in domestic cats，beyond the lower urinary tract." J Vet Intern Med. 2011;25(4):784-796.', relevance: 'FIC 神經內分泌機轉回顧' },
+    { type: 'journal', citation: 'Westropp JL, Kass PH, Buffington CAT. Evaluation of the effects of stress in cats with idiopathic cystitis. Am J Vet Res. 2006;67(4):731-736. doi:10.2460/ajvr.67.4.731.', relevance: 'FIC 壓力效應研究' },
+    { type: 'journal', citation: 'Buffington CAT. Idiopathic cystitis in domestic cats—beyond the lower urinary tract. J Vet Intern Med. 2011;25(4):784-796. doi:10.1111/j.1939-1676.2011.0732.x.', relevance: 'FIC 神經內分泌機轉與 Pandora syndrome 回顧' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 46: Feline Lower Urinary Tract Disease.', relevance: 'FLUTD 教材' },
-    { type: 'journal', citation: 'Defauw PAM et al. "Risk factors and clinical presentation of cats with feline idiopathic cystitis." J Feline Med Surg. 2011;13(12):967-975.', relevance: 'FIC 風險因子研究' },
+    { type: 'journal', citation: 'Defauw PAM, Van de Maele I, Duchateau L, et al. Risk factors and clinical presentation of cats with feline idiopathic cystitis. J Feline Med Surg. 2011;13(12):967-975. doi:10.1016/j.jfms.2011.08.001.', relevance: 'FIC 風險因子研究' },
+    { type: 'journal', citation: 'Conway DS, Rozanski EA, Wayne AS. Prazosin administration increases the rate of recurrent urethral obstruction in cats. J Am Vet Med Assoc. 2022;260(S2):S7-S11. doi:10.2460/javma.21.10.0469.', relevance: 'Prazosin 與尿道再阻塞前瞻研究（近期實證）' },
   ],
   is_current: true,
   created_at: now,
@@ -5435,7 +5928,7 @@ GAG 層缺損：正常膀胱表面有 glycosaminoglycan (GAG) 層保護上皮 �
 const contentCholangitis: NodeContent = {
   id: 'CONTENT-IM-L3-019',
   node_id: 'IM-L3-019',
-  version: 1,
+  version: 2,
   summary: '貓的膽管炎大致分兩種：嗜中性球型（化膿性）跟淋巴球型。Triaditis 是膽管炎、胰臟炎跟 IBD 三個一起爆，貓的膽胰管解剖天生就讓這三個器官容易彼此牽動。嗜中性球型主要是細菌上行感染，E. coli 最常見。淋巴球型則可能是免疫介導。確診金標準是肝臟切片。台灣門診中貓膽管炎屬於常見的肝膽疾病，淋巴球型在老年貓盛行率高。診斷 Triaditis 需要把超音波、fPLI、肝切片合起來看，台灣的大動物醫院多半都有這套能力。',
   learning_objectives: [
     '區分嗜中性球型與淋巴球型膽管炎的病因、病理與治療差異',
@@ -5451,7 +5944,8 @@ const contentCholangitis: NodeContent = {
     '診斷：超音波（膽囊壁增厚/膽泥/膽管擴張）+ 超音波引導 FNA + 肝臟切片（金標準）',
     '嗜中性球型治療：Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID × 4-6 週 + Ursodiol + SAMe',
     '淋巴球型治療：Prednisolone 1-2 mg/kg/day + Ursodiol + SAMe',
-    'Ursodiol（利膽酸）：10-15 mg/kg PO SID，促進膽汁流動 + 細胞保護 + 抗炎',
+    'Ursodiol（利膽酸）：10-15 mg/kg PO SID，促進膽汁流動 + 細胞保護 + 抗炎（完全性膽道阻塞禁用）',
+    '嗜中性球型務必送膽汁培養＋藥敏（常膽汁培養陽性而肝組織培養陰性）；淋巴球型亦驗出細菌 DNA，未必純免疫（Otte 2012）',
   ],
   body: `# 貓膽管炎與三合症 (Feline Cholangitis & Triaditis)
 
@@ -5556,7 +6050,38 @@ const contentCholangitis: NodeContent = {
 | Ursodiol | 取代毒性膽汁酸 + 促進膽汁流動 + 免疫調節 + 抗凋亡 | 10-15 mg/kg SID | 膽管完全阻塞時禁用 |
 | SAMe | 穀胱甘肽前驅物 → 抗氧化 + 甲基化反應 | 90 mg/cat SID（空腹） | 需空腹給予以確保吸收 |
 | Vitamin E | 脂溶性抗氧化劑 | 10 IU/kg/day | 膽汁滯留影響吸收 |
-| Cobalamin (B12) | Triaditis 合併 IBD 時常缺乏 | 250 μg SC q1wk | 口服吸收不穩定 |`,
+| Cobalamin (B12) | Triaditis 合併 IBD 時常缺乏 | 250 μg SC q1wk | 口服吸收不穩定 |
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫貓肝膽應用 | 現況 |
+|---------|-------------|------|
+| 原發性膽汁性膽管炎（PBC）/原發性硬化性膽管炎（PSC） | 貓淋巴球型膽管炎與之高度相似（免疫介導小膽管破壞） | 病理對應佳；治療借鑒 UDCA |
+| UDCA（ursodiol）為人醫 PBC 一線 | 貓肝膽病輔助保肝/利膽主力 | 已是貓膽管炎標準輔助藥 |
+| 抗粒線體抗體（AMA，人 PBC 標記） | 貓淋巴球型膽管炎的血清標記 | 獸醫尚無確立對應標記 |
+| MRCP/ERCP 非侵入膽道影像 | 貓膽道阻塞/結構評估 | 獸醫以超音波為主，MRCP 限少數中心 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 淋巴球型膽管炎是「純免疫」還是有細菌參與 | Otte 2012 在淋巴球型貓膽汁驗出細菌 DNA，純免疫模型受挑戰；部分病例可能有細菌觸發 | Level III |
+| 淋巴球型膽管炎要不要免疫抑制 | 類固醇廣泛使用但缺 RCT；UDCA 單用 vs 加類固醇的最佳組合未定 | Level IV |
+| 「Triaditis」是否被過度診斷 | 屍檢常見三器官同時發炎，但臨床顯著性與診斷門檻仍有爭議 | Level IV |
+| 膽汁培養是否該常規做 | 膽汁培養常比肝組織培養更敏感（嗜中性球型尤是），但需超音波引導膽囊穿刺 | Level III |
+| 確診切片方式（FNA vs 針/楔形切片） | FNA 取樣偏差大、無法分型；組織切片才是金標準但較侵入 | Level III |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**膽汁培養與膽囊沉積物的微生物學（Lee et al 2025, JFMS；Otte et al 2012）**
+- **膽汁培養是關鍵微生物檢查**：嗜中性球型膽管炎常**膽汁培養陽性而肝組織培養陰性**——要驗菌、要藥敏就送膽汁（超音波引導膽囊穿刺），別只靠肝切片。Lee 2025（166 例）顯示膽囊沉積物（sludge）與膽汁培養陽性、肝指數升高、膽管肝炎相關。
+- **淋巴球型未必「純免疫」**：Otte 2012 在淋巴球型貓膽汁驗出細菌 DNA，提示至少部分病例有細菌參與——即使分型為淋巴球型，仍值得評估膽汁培養，別反射性只給類固醇。
+
+**抗菌藥物管理**：嗜中性球型用**培養導向**抗生素（經驗性常用 amox-clav，嚴重者 ampicillin-sulbactam IV），療程足（4-6 週），而非長期盲目用藥。
+
+**fPLI 不能用來「排除」胰臟炎**：fPLI 對組織學胰臟炎敏感度僅約 60-80%，正常不代表沒胰臟炎；Triaditis 評估要靠**超音波＋臨床＋fPLI 綜合**，不是單一數值。
+
+【台灣落地】台灣中老年貓膽管炎門診常見；嗜中性球型務必送膽汁培養＋藥敏（台灣多重抗藥腸道菌不少），淋巴球型也別忽略細菌可能。三體炎要把胰臟炎、IBD 一起評估。UDCA／SAMe 易取得，是長期保肝主力，但完全性膽道阻塞時 UDCA 禁用。`,
   clinical_pearl: '貓的膽管炎診斷中，ALP 升高比 ALT 更有意義，貓 ALP 半衰期僅 6 小時（犬為 72 小時），所以貓 ALP 即使輕度升高（> 2 倍）都有臨床意義。另外，Triaditis 的貓常同時有胰臟炎，但 fPLI 正常不能排除胰臟炎（敏感度約 60-80%）。超音波見胰臟低回音 + 周圍脂肪高回音更有診斷價值。',
   common_mistakes: [
     '未區分嗜中性球型與淋巴球型膽管炎（治療方向完全不同：一個需要抗生素、一個需要免疫抑制）',
@@ -5598,10 +6123,12 @@ const contentCholangitis: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Amoxicillin-Clavulanate', 'Ursodiol', 'SAMe', 'Prednisolone', 'Metronidazole', 'Chlorambucil', 'Maropitant', 'Cobalamin'],
   references: [
+    { type: 'journal', citation: 'Lee K, Guess SC, Villarino NF, Haines JM. "Gallbladder sludge in cats: associations with bile culture, liver enzymes and cholangiohepatitis in 166 cases." J Feline Med Surg. 2025;27(10). doi:10.1177/1098612X251379736', relevance: '近期：膽囊沉積物與膽汁培養/肝指數/膽管肝炎關聯（166 例）' },
+    { type: 'journal', citation: 'Otte CMA, Gutiérrez OP, Favier RP, Rothuizen J. "Detection of bacterial DNA in bile of cats with lymphocytic cholangitis." Vet Microbiol. 2012;156(1-2):217-221. doi:10.1016/j.vetmic.2011.10.023', relevance: '淋巴球型膽管炎驗出細菌 DNA——挑戰純免疫模型' },
+    { type: 'journal', citation: 'Callahan Clark JE, Haddad JL, Brown DC, Morgan MJ, et al. "Feline cholangitis: a necropsy study of 44 cats." J Feline Med Surg. 2011;13(8):570-576. doi:10.1016/j.jfms.2011.05.002', relevance: '貓膽管炎病理研究' },
+    { type: 'journal', citation: 'Marolf AJ, Leach L, Gibbons DS, Bachand A, Twedt D. "Ultrasonographic Findings of Feline Cholangitis." J Am Anim Hosp Assoc. 2012;48(1):36-42. doi:10.5326/jaaha-ms-5671', relevance: '貓膽管炎超音波診斷' },
     { type: 'guideline', citation: 'Rothuizen J et al. "WSAVA Standards for Clinical and Histological Diagnosis of Canine and Feline Liver Diseases." WSAVA Liver Standardization Group. 2006.', relevance: '肝臟疾病組織病理分類標準' },
-    { type: 'journal', citation: 'Callahan Clark JE et al. "Feline cholangitis: a necropsy study of 44 cats (1986-2008)." J Feline Med Surg. 2011;13(8):570-576.', relevance: '貓膽管炎病理研究' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 37: Hepatobiliary Diseases in the Cat.', relevance: '貓肝膽疾病教材' },
-    { type: 'journal', citation: 'Marolf AJ et al. "Ultrasonographic findings of feline cholangitis." J Am Anim Hosp Assoc. 2012;48(1):36-42.', relevance: '貓膽管炎超音波診斷' },
   ],
   is_current: true,
   created_at: now,
@@ -5668,8 +6195,8 @@ const contentFelineAsthma: NodeContent = {
 | 胸腔 X 光 | 支氣管壁增厚（doughnut/tram line）| 中等 | 23% 正常 X 光仍可能有 FLAD |
 | 肺過度充氣 | 橫膈後移、心臟偏小 | 中等 | 空氣滯留的表現 |
 | BAL 細胞學 | 嗜酸球 > 17% | 高 | 金標準，需全身麻醉 |
-| 糞便浮游 | 排除肺蟲 (Aelurostrongylus) |，| 台灣盛行率低但需排除 |
-| 心絲蟲抗原/抗體 | 排除 HARD |，| 台灣心絲蟲區需檢測 |
+| 糞便浮游 | 排除肺蟲 (Aelurostrongylus) |—| 台灣盛行率低但需排除 |
+| 心絲蟲抗原/抗體 | 排除 HARD |—| 台灣心絲蟲區需檢測 |
 
 鑑別診斷：心絲蟲相關呼吸道疾病（HARD）、肺蟲、細菌性肺炎、肺腫瘤、心衰竭
 
@@ -5679,7 +6206,7 @@ const contentFelineAsthma: NodeContent = {
 
 | 分級 | 抗炎 | 支氣管擴張 | 備註 |
 |------|------|-----------|------|
-| 輕度 | 吸入 Fluticasone 44-110 μg BID |，| 面罩+spacer 訓練 |
+| 輕度 | 吸入 Fluticasone 44-110 μg BID |—| 面罩+spacer 訓練 |
 | 中度 | 吸入 Fluticasone 110-220 μg BID | 吸入 Albuterol PRN | 衛教 PRN 使用 |
 | 重度 | Prednisolone 1-2 mg/kg PO SID→漸減 | 吸入 Albuterol PRN + 口服 Theophylline | 全身性類固醇 |
 | 急性危象 | Dexamethasone 0.25 mg/kg IV | Terbutaline 0.01 mg/kg SC/IM | 氧氣 + 最少刺激 |
@@ -5940,7 +6467,7 @@ const contentBacterialPneumonia: NodeContent = {
 const contentFeLVFIV: NodeContent = {
   id: 'CONTENT-IM-L3-022',
   node_id: 'IM-L3-022',
-  version: 1,
+  version: 2,
   summary: 'FeLV（貓白血病）跟 FIV（貓免疫缺陷）是貓最重要的兩個逆轉錄病毒感染。FeLV 會造成淋巴瘤、骨髓抑制、免疫抑制；FIV 則是慢慢搞出免疫缺陷，跟人類的 HIV 很像。台灣收容所貓的盛行率，FeLV 大約 3-10%、FIV 5-15%。第一線篩檢用 SNAP combo test，但要記得有窗口期，必要時還要做確認檢驗。FeLV 有疫苗可以預防，FIV 目前只能支持療法。',
   learning_objectives: [
     '說明 FeLV 與 FIV 的病毒學差異與感染機轉',
@@ -6019,7 +6546,7 @@ FeLV 感染四種結局：
 | 急性期 | 輕度發燒、淋巴結腫大、短暫白血球減少 | 2-4 週 |
 | 無症狀期 | 臨床正常 | 數月至數年 |
 | 漸進免疫缺陷 | 慢性口腔炎、慢性上呼吸道感染、體重減輕 | 漸進 |
-| 終末期 | 嚴重伺機感染、消瘦、腫瘤 |，|
+| 終末期 | 嚴重伺機感染、消瘦、腫瘤 |—|
 
 ## 四、診斷
 
@@ -6043,7 +6570,35 @@ FeLV 感染四種結局：
 | 監測 | 每 6 月：CBC、生化、胸腔 X 光 | 每 6-12 月：CBC、生化、尿液 |
 | 抗病毒 | 沒什麼好藥（Interferonω 有部分證據） | Zidovudine（研究中，非常規） |
 | 預防 | FeLV 疫苗（戶外/高風險貓） | 無有效疫苗 |
-| 預後 | 進行性：中位存活 2-3 年 | 可有正常壽命（若管理良好） |`,
+| 預後 | 進行性：中位存活 2-3 年 | 可有正常壽命（若管理良好） |
+
+## 六、人醫借鑑 (Translational Insights)
+
+| 人醫概念/工具 | 與貓逆轉錄病毒的連結 | 現況 |
+|-------------|-------------------|------|
+| FIV 作為 HIV 動物模型 | FIV 與 HIV 同為 lentivirus、CD4+ T 細胞耗竭、病程分期相似 | HIV 致病機轉與抗病毒/疫苗研究之經典自然模型 |
+| 抗反轉錄病毒治療（ART/AZT） | zidovudine 等源自 HIV 治療 | 貓有研究但非常規，毒性/療效受限 |
+| CD4:CD8 比值監測 | HIV 以 CD4 追蹤免疫狀態 | 貓 FIV 研究用，臨床少常規 |
+| 反轉錄病毒致癌 | FeLV 致淋巴瘤與人類 HTLV 機轉相通 | 比較腫瘤病毒學 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 議題 | 立場 | Evidence Level |
+|------|------|---------------|
+| FIV 疫苗的 DIVA 困境 | 疫苗誘導抗體使抗體檢測無法區分感染 vs 接種；Fel-O-Vax FIV 已於美加停產 | Level II |
+| 抗病毒藥（AZT / interferon-ω）療效 | 證據有限、非常規 | Level III |
+| 單次陽性即安樂 | 反對——應確認檢驗，勿單憑一次陽性安樂（AAFP） | Level II |
+| FIV+ 與陰性貓同住 | 穩定不打鬥家庭傳播風險低（主要靠深咬傷） | Level II |
+| FeLV 退行性感染長期意義 | provirus 持續、免疫抑制下可再活化；輸血供血篩檢須含 PCR | Level II |
+
+## 八、近期實證更新（2020 AAFP 指引，待 DVM 覆核）
+
+1. **兩階段檢測**：單次時間點未必能定 status；篩檢陽性（尤其健康/低風險貓）須以不同方法確認，**勿單憑一次陽性安樂**。
+2. **FeLV 三分類**（abortive / regressive / progressive）取代舊「persistent/transient」；**regressive = 抗原陰性但 provirus PCR 陽性**，免疫抑制（類固醇/化療）或輸血前須警覺再活化/傳播。
+3. **FIV 疫苗（Fel-O-Vax）已於美加停產**（DIVA 問題）；判讀抗體檢測務必確認接種史；PCR 不受疫苗影響。
+4. **FIV+ 貓管理良好可達正常壽命**；穩定家庭中對其他貓傳播風險低（深咬傷為主）——不應因 FIV+ 逕自安樂或棄養。
+5. **檢測時機**：取得後盡早、暴露後、接種 FeLV/FIV 疫苗前、生病時。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: 'SNAP combo test 的 FIV 部分偵測的是「抗體」而非抗原，所以有兩個常見陷阱：(1) 小於 6 個月齡的幼貓可能有母源抗體導致偽陽性，應在 6 個月後重驗；(2) FIV 末期免疫嚴重缺陷的貓可能無法產生足夠抗體而偽陰性。FeLV 部分偵測 p27 抗原，退行性感染的貓抗原血症可以消退，所以「曾經 FeLV 陽性後轉陰」的貓仍有骨髓中病毒再活化的風險，在免疫抑制（如使用類固醇、化療）時應格外注意。',
   common_mistakes: [
     '幼貓 FIV SNAP 陽性就宣判診斷，小於 6 月齡幼貓母源抗體可致偽陽性，需 6 個月後重驗',
@@ -6087,7 +6642,7 @@ FeLV 感染四種結局：
   interactive_placeholders: [],
   drug_api_links: ['Cyclosporine', 'Interferon'],
   references: [
-    { type: 'guideline', citation: 'Levy JK et al. "2020 AAFP Feline Retrovirus Testing and Management Guidelines." J Feline Med Surg. 2020;22(1):5-30.', relevance: 'FeLV/FIV 篩檢與管理最新指引' },
+    { type: 'guideline', citation: 'Little S, Levy J, Hartmann K, et al. 2020 AAFP Feline Retrovirus Testing and Management Guidelines. J Feline Med Surg. 2020;22(1):5-30. doi:10.1177/1098612X19895940.', relevance: 'FeLV/FIV 篩檢與管理現行 AAFP 指引（兩階段檢測、勿單次陽性安樂）' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 96: Feline Leukemia Virus and Feline Immunodeficiency Virus.', relevance: 'FeLV/FIV 教材' },
     { type: 'journal', citation: 'Hartmann K. "Clinical aspects of feline retroviruses: A review." Viruses. 2012;4(11):2684-2710.', relevance: 'FeLV/FIV 臨床綜述' },
     { type: 'journal', citation: 'Beczkowski PM et al. "Naturally occurring feline immunodeficiency virus (FIV) infection in cats: A review." Vet Microbiol. 2021;261:109195.', relevance: 'FIV 自然感染回顧' },
@@ -6100,7 +6655,7 @@ FeLV 感染四種結局：
 const contentCPV: NodeContent = {
   id: 'CONTENT-IM-L3-023',
   node_id: 'IM-L3-023',
-  version: 1,
+  version: 2,
   summary: '犬細小病毒腸炎（CPV-2）是幼犬最兇的傳染病之一，臨床長相就是急性出血性腸炎加上嚴重白血球減少。病毒專挑快速分裂的細胞下手（腸道隱窩上皮跟骨髓），結果腸道屏障崩潰、細菌移位、敗血症。沒治療的死亡率可以衝到 90%，積極支持療法做下去可以壓到 5-20%。台灣幼犬疫苗覆蓋率不均，夜市或寵物店買來的幼犬、收容所的幼犬都是高風險族群。',
   learning_objectives: [
     '說明 CPV-2 的病毒學特性與腸道隱窩攻擊機轉',
@@ -6248,8 +6803,35 @@ CPV 結合 transferrin receptor（TfR）→ 進入腸道隱窩（crypt）上皮�
 | 血糖 | 正常 | 低血糖 < 40 mg/dL |
 | 年齡 | > 12 週 | < 8 週 |
 | 治療時機 | 發病 24 小時內 | 延遲治療 |
-| 品種 |，| Rottweiler, Doberman |
-| 整體存活率 | 80-95%（積極治療） | < 10%（未治療） |`,
+| 品種 | 混種/一般品種 | Rottweiler, Doberman |
+| 整體存活率 | 80-95%（積極治療） | < 10%（未治療） |
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用潛力 | 現況 |
+|---------|-------------|------|
+| 單株抗體被動免疫（人 RSV/COVID mAb） | CPV 單株抗體中和循環病毒 | 美國 2023 條件核准犬 CPV 單株抗體（CPMA），首個專一抗 CPV 製劑 |
+| 糞菌移植（FMT，人 C. difficile 標準） | CPV 幼犬腸道菌叢重建、加速腹瀉緩解 | 小型研究（Pereira 2018）顯示輔助 FMT 可加速臨床改善 |
+| 早期腸道營養（人重症 ICU 共識） | CPV 停嘔後早期餵食促腸黏膜修復 | 證據支持早期 EN 縮短住院 |
+| 抗病毒藥再利用（oseltamivir） | CPV 輔助治療 | 證據有限、不建議常規 |
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| CPV 單株抗體（CPMA）真實世界療效 | 2023 條件核准、廠商數據顯示降低症狀/死亡，獨立同儕審查療效資料仍有限 | Level III |
+| 抗生素選擇與抗藥性管理 | 非敗血症/白血球未過低者是否需 fluoroquinolone 有爭議；enrofloxacin 幼犬軟骨病變風險 | Level III |
+| 門診 vs 住院治療 | Venn 2017 門診方案存活 ~80%，資源受限可行，住院仍為標準 | Level II |
+| 輔助療法（FMT、血漿、G-CSF、oseltamivir） | 多為小型研究或證據不足，非常規 | Level III |
+
+## 九、近期實證更新 (Recent Evidence Updates)
+
+1. **CPV 單株抗體（CPMA, 2023）**：美國 USDA 條件核准之首個專一抗 CPV 被動免疫；廠商試驗示可降低臨床症狀，獨立 RCT 療效資料仍累積中，**不取代積極支持療法**。注意：一項研究（Larson 2025）顯示預防性 CPMA 可能像母源抗體般阻斷後續疫苗免疫應答，使用後疫苗時程需評估。
+2. **門診治療方案（Venn 2017）**：資源受限時，SC 輸液 + maropitant + 長效抗生素 + 口服營養之門診方案存活率約 80%，低於住院但顯著優於不治療。
+3. **早期腸道營養**：停嘔後 12h 早期餵食（vs 傳統長時間 NPO）縮短住院、促腸黏膜修復。
+4. **輔助 FMT（Pereira 2018）**：小型研究顯示糞菌移植可加速 CPV 幼犬腹瀉緩解，仍待更大型驗證。
+5. **抗生素管理**：警惕 fluoroquinolone（如 enrofloxacin）對幼犬軟骨之潛在影響；依敗血症風險與嗜中性球程度個別化抗生素選擇。
+> 以上治療之劑量、適應症與新藥使用須由獸醫師依現行核准與個案覆核。`,
   clinical_pearl: 'CPV 治療中最被低估的兩件事：(1) 早期腸道營養，傳統觀念是 NPO 直到停止嘔吐，但新研究顯示在 Maropitant 控制嘔吐後儘早開始少量多餐（高消化性低脂飲食）可促進腸道上皮修復、縮短住院時間。(2) 低血糖監測，CPV 幼犬低血糖（< 40 mg/dL）是獨立死亡預測因子，必須每 4-6 小時監測並積極補充。白血球計數低谷通常在 Day 5-7，之後若開始回升（> 2500/μL）通常預後良好。',
   common_mistakes: [
     '疫苗接種最後一劑在 12 週齡就結束，母源抗體可干擾至 16 週，最後一劑必須 ≥ 16 週齡',
@@ -6293,10 +6875,12 @@ CPV 結合 transferrin receptor（TfR）→ 進入腸道隱窩（crypt）上皮�
   interactive_placeholders: [],
   drug_api_links: ['Ampicillin', 'Enrofloxacin', 'Maropitant', 'Ondansetron', 'Oseltamivir'],
   references: [
-    { type: 'journal', citation: 'Goddard A, Leisewitz AL. "Canine parvovirus." Vet Clin North Am Small Anim Pract. 2010;40(6):1041-1053.', relevance: 'CPV 診斷與治療綜述' },
-    { type: 'journal', citation: 'Venn EC et al. "Evaluation of an outpatient protocol in the treatment of canine parvoviral enteritis." J Vet Emerg Crit Care. 2017;27(1):52-65.', relevance: 'CPV 治療方案研究' },
+    { type: 'journal', citation: 'Goddard A, Leisewitz AL. Canine parvovirus. Vet Clin North Am Small Anim Pract. 2010;40(6):1041-1053. doi:10.1016/j.cvsm.2010.07.007.', relevance: 'CPV 診斷與治療綜述' },
+    { type: 'journal', citation: 'Venn EC, et al. Evaluation of an outpatient protocol in the treatment of canine parvoviral enteritis. J Vet Emerg Crit Care. 2017;27(1):52-65. doi:10.1111/vec.12561.', relevance: 'CPV 門診治療方案研究' },
+    { type: 'journal', citation: 'Pereira GQ, Gomes LA, Santos IS, et al. Fecal microbiota transplantation in puppies with canine parvovirus infection. J Vet Intern Med. 2018;32(2):707-711. doi:10.1111/jvim.15072.', relevance: 'FMT 輔助治療 CPV 幼犬（近期實證）' },
+    { type: 'journal', citation: 'Larson L, Hansen J, Ramasami P, et al. Prophylactic use of canine parvovirus monoclonal antibody induces blockade of vaccinal canine parvovirus immunization similar to maternally derived passive immunity. Am J Vet Res. 2025;86(12). doi:10.2460/ajvr.25.07.0233.', relevance: 'CPV 單株抗體與疫苗干擾（近期實證/警示）' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 91: Canine Viral Diseases.', relevance: 'CPV 教材' },
-    { type: 'guideline', citation: 'Day MJ et al. "WSAVA Guidelines for the Vaccination of Dogs and Cats." J Small Anim Pract. 2016;57(1):E1-E45.', relevance: 'WSAVA 犬貓疫苗接種指引' },
+    { type: 'guideline', citation: 'Day MJ, Horzinek MC, Schultz RD, Squires RA. WSAVA Guidelines for the vaccination of dogs and cats. J Small Anim Pract. 2016;57(1):E1-E45. doi:10.1111/jsap.2_12431.', relevance: 'WSAVA 犬貓疫苗接種指引' },
   ],
   is_current: true,
   created_at: now,
@@ -6346,8 +6930,8 @@ const contentRespiratoryPhysiology: NodeContent = {
 | 潮氣量 (Vt) | 每次呼吸進出肺的氣體量 | 10-15 mL/kg | 淺快呼吸時 Vt 下降 |
 | 呼吸頻率 (RR) | 每分鐘呼吸次數 | 犬 15-30、貓 20-40 | 異常需評估原因 |
 | 每分通氣量 (MV) | Vt × RR | 150-300 mL/kg/min | 反映整體通氣效率 |
-| 肺順應性 (C) | ΔV/ΔP |，| 纖維化↓、肺水腫↓ |
-| 氣道阻力 (R) | ΔP/Flow |，| 哮喘↑、異物↑ |
+| 肺順應性 (C) | ΔV/ΔP |—| 纖維化↓、肺水腫↓ |
+| 氣道阻力 (R) | ΔP/Flow |—| 哮喘↑、異物↑ |
 
 呼吸功 (Work of Breathing)：
 - 正常呼吸主要依賴吸氣肌（橫膈膜 75%、外肋間肌）
@@ -6397,7 +6981,7 @@ V/Q 匹配：
 | 氣管直徑 | 較大 | 較小（4-5 mm） | 貓氣管插管選管重要 |
 | 支氣管反應性 | 中等 | 高度敏感 | 貓哮喘好發基礎 |
 | 散熱方式 | 喘氣為主 | 出汗+喘氣 | 短頭犬易熱衰竭 |
-| 呼吸頻率 | 15-30/min | 20-40/min |，|`,
+| 呼吸頻率 | 15-30/min | 20-40/min |—|`,
   clinical_pearl: '評估呼吸困難動物時，先區分是「吸氣性」還是「呼氣性」呼吸困難，吸氣性（stridor、頸部伸展）提示上呼吸道阻塞（喉麻痺、塌陷氣管），呼氣性（腹部用力、延長呼氣）提示下呼吸道問題（哮喘、慢性支氣管炎）。這個簡單的臨床觀察可以在第一秒就縮小鑑別診斷範圍。SpO2 是非侵入性監測的利器，但要記住它反映的是 SaO2 而非 PaO2，在氧解離曲線的平坦區（SpO2 > 90%），PaO2 的大幅下降可能只造成 SpO2 的微小變化。',
   common_mistakes: [
     '將 SpO2 和 PaO2 混為一談（SpO2 90% 對應 PaO2 約 60 mmHg，非線性關係）',
@@ -6606,7 +7190,7 @@ PAA 免疫病理假說：T 淋巴球浸潤 → 腺泡細胞凋亡 → 進行性�
 |------|----------|------|------|
 | 胰酶替代 | [藥物:Pancreatin] 粉劑 | 1-2 茶匙/餐（隨體重調整） | 每餐混入食物，不需預孵育 |
 | Cobalamin 補充 | [藥物:Cyanocobalamin] | 犬：250-1500 μg SC q1wk × 6 wk → q2wk × 6 wk → q1mo | > 80% EPI 犬有 B12 缺乏 |
-| 飲食調整 | 高消化性、低脂飲食 |，| 部分犬對低脂反應佳；部分可正常飲食 |
+| 飲食調整 | 高消化性、低脂飲食 |—| 部分犬對低脂反應佳；部分可正常飲食 |
 | 抗生素（SIBO） | [藥物:Tylosin] 或 [藥物:Metronidazole] | Tylosin 25 mg/kg PO BID × 4-6 wk | 僅在 SIBO 確認或治療反應不佳時使用 |
 | 胃酸抑制 | [藥物:Omeprazole] | 1 mg/kg PO SID | 可減少胃酸對胰酶的破壞（可選） |
 
@@ -6762,8 +7346,8 @@ const contentGBMucocele: NodeContent = {
 |------|------|------|
 | [藥物:Ursodeoxycholic acid] (UDCA) | 10-15 mg/kg PO SID | 促進膽汁流動、減少黏液蓄積 |
 | [藥物:SAMe] (S-adenosylmethionine) | 20 mg/kg PO SID 空腹 | 肝臟保護 |
-| 低脂飲食 |，| 控制高脂血症 |
-| 治療基礎內分泌疾病 |，| 甲低：levothyroxine；Cushing：trilostane |
+| 低脂飲食 |—| 控制高脂血症 |
+| 治療基礎內分泌疾病 |—| 甲低：levothyroxine；Cushing：trilostane |
 
 內科治療適應症：早期偶然發現的無症狀 mucocele，飼主拒絕手術，或手術高風險病患。需每 1-3 個月超音波追蹤。
 
@@ -6829,7 +7413,7 @@ const contentGBMucocele: NodeContent = {
 const contentCanineChronicHepatitis: NodeContent = {
   id: 'CONTENT-IM-L3-026',
   node_id: 'IM-L3-026',
-  version: 1,
+  version: 2,
   summary: '犬慢性肝炎不是單一疾病，是一群以肝臟持續發炎、慢慢往纖維化走的異質性疾病。病因有銅蓄積性（Doberman、Bedlington Terrier 那群）、免疫介導性、還有特發性。肝臟切片是確診金標準，要用 WSAVA 標準化評分。治療看病因走不同路：銅蓄積用 D-penicillamine 加鋅，免疫介導用 prednisolone 加 azathioprine。ACVIM 共識聲明是重要的治療指引。',
   learning_objectives: [
     '分類犬慢性肝炎的病因（銅蓄積 vs 免疫介導 vs 特發性）',
@@ -6845,6 +7429,7 @@ const contentCanineChronicHepatitis: NodeContent = {
     '免疫介導治療：Prednisolone 1-2 mg/kg/day + Azathioprine 1-2 mg/kg/day',
     'ACVIM 2019 共識聲明為犬慢性肝炎診斷與治療的重要參考',
     '肝硬化為不可逆終末期；門脈高壓與腹水為預後不良指標',
+    '近期實證（Ullal 2022）：異常肝銅蓄積跨品種化、與飼料銅上升相關→任何犬 CH 都該驗肝銅（染色＋定量），勿只憑品種預判',
   ],
   body: `# 犬慢性肝炎 (Canine Chronic Hepatitis)
 
@@ -6902,7 +7487,7 @@ Doberman Pinscher 慢性肝炎盛行率高達 6-12%。涉及銅蓄積 + 免疫�
 |------|------|------|------|
 | [藥物:D-penicillamine] | 10-15 mg/kg PO BID（空腹） | 銅螯合 → 增加尿銅排泄 | 副作用：嘔吐（可從低劑量漸增）|
 | [藥物:Zinc acetate] | 5-10 mg/kg PO BID（空腹） | 誘導腸道 metallothionein → 阻斷銅吸收 | 不可與 D-penicillamine 同時給予 |
-| 低銅飲食 |，| 減少飲食銅攝入 | 避免高銅食物（肝臟、貝類） |
+| 低銅飲食 | — | 減少飲食銅攝入 | 避免高銅食物（肝臟、貝類、堅果） |
 | [藥物:Vitamin E] | 10 IU/kg PO SID | 抗氧化保護 | 輔助治療 |
 
 ### 免疫介導性肝炎
@@ -6920,7 +7505,7 @@ Doberman Pinscher 慢性肝炎盛行率高達 6-12%。涉及銅蓄積 + 免疫�
 | [藥物:SAMe] | 20 mg/kg PO SID 空腹 | 所有慢性肝炎 |
 | [藥物:UDCA] | 10-15 mg/kg PO SID | 膽汁淤滯 |
 | [藥物:Lactulose] | 0.5 mL/kg PO BID-TID | 肝性腦病 |
-| 低蛋白飲食 |，| 肝性腦病（HE） |
+| 低蛋白飲食（適度） | — | 肝性腦病（HE） |
 
 ## 四、預後 (Prognosis)
 
@@ -6932,7 +7517,38 @@ Doberman Pinscher 慢性肝炎盛行率高達 6-12%。涉及銅蓄積 + 免疫�
 | 臨床表現 | 無腹水/HE | 腹水 + 肝性腦病 |
 | 治療反應 | ALT 下降 > 50% | ALT 持續升高 |
 
-中位存活：及時診治的犬可存活 1-5 年。肝硬化伴腹水者中位存活約 1-3 個月。`,
+中位存活：及時診治的犬可存活 1-5 年。肝硬化伴腹水者中位存活約 1-3 個月。
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫犬慢性肝炎應用 | 現況 |
+|---------|------------------|------|
+| Wilson disease（人銅儲積病） | 犬銅蓄積性肝炎的直接對應；螯合（penicillamine/trientine）＋鋅＋低銅飲食 | 病理機轉與治療策略高度平行 |
+| 自體免疫性肝炎（AIH） | 免疫介導型犬 CH 的對應（類固醇＋azathioprine 反應） | 治療邏輯沿用 |
+| Trientine（替代螯合劑） | D-penicillamine 不耐受時的替代 | 人醫常用；獸醫可近性/成本因地而異 |
+| 肝臟彈性影像（FibroScan/SWE） | 非侵入評估纖維化、減少重複切片 | 人醫常規；獸醫研究驗證中 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 經驗性治療 vs 切片先行（銅 vs 免疫） | **must-not-miss**：用錯方向會害到病人（銅蓄積給類固醇可能加重；純免疫給螯合無益）→ 切片＋銅定量才是分流關鍵 | Level II |
+| 銅蓄積性肝炎能不能用類固醇 | 純銅型不建議；銅免疫雙重機轉（如部分 Doberman）需個別權衡 | Level III |
+| 最佳螯合療程長度與停藥標準 | 依重複肝切片銅含量調整，最佳間隔未統一 | Level III |
+| 抗纖維化治療的角色 | SAMe/UDCA 廣用但缺強 RCT；專一抗纖維藥未確立 | Level III |
+| 低銅飲食單獨能否控制亞臨床銅蓄積 | 部分證據支持，但與螯合的分工未定 | Level III |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**銅蓄積性肝炎不再只是 Bedlington/Labrador 的事——飲食銅是新焦點（Ullal et al 2022, JVIM）**
+近年認知大轉變：**異常肝銅蓄積在許多品種（甚至混種）都看得到**，且與**商業飼料銅含量上升/生物可利用度提高**有關（AAFCO 1990s 末調整後）。臨床意涵：
+- **任何犬慢性肝炎都該驗肝銅**（rhodanine 染色＋定量），不能只憑品種預判。
+- **低銅飲食的角色變重**——慎選低銅處方、避開高銅食材（肝臟、貝類、堅果）。
+
+**切片定病因是 must-not-miss（Webster et al 2019 ACVIM 共識）**
+ACVIM 2019 犬慢性肝炎共識核心：**肝切片＋組織學＋銅定量決定病因**，因為治療天差地別——**銅型走螯合（D-penicillamine/trientine）＋鋅＋低銅飲食；免疫型才走類固醇±azathioprine**。給錯方向（銅型誤用類固醇）可能加重肝損傷。SAMe/UDCA 為共通輔助。
+
+【台灣落地】台灣 Doberman、拉布拉多、可卡等好發品種不少，但「飲食銅上升」讓銅蓄積跨品種化——**台灣門診遇到犬慢性肝炎，肝切片時務必加做銅染色＋定量**，別只憑品種或 ALT 就分型治療。Trientine/低銅處方飼料的可近性逐步改善。`,
   clinical_pearl: '犬慢性肝炎的確診必須依賴肝臟切片，僅憑 ALT 升高無法區分銅蓄積、免疫介導、藥物性或特發性。切片時務必同時送 WSAVA 標準化評分和銅定量（rhodanine 染色 + 原子吸收光譜分析）。Doberman 品種應在 4-6 歲時進行肝指數篩檢。',
   common_mistakes: [
     '僅憑血液生化升高就開始治療，未做肝臟切片確認病因',
@@ -6972,10 +7588,11 @@ Doberman Pinscher 慢性肝炎盛行率高達 6-12%。涉及銅蓄積 + 免疫�
   interactive_placeholders: [],
   drug_api_links: ['D-penicillamine', 'Zinc acetate', 'Prednisolone', 'Azathioprine', 'SAMe', 'UDCA', 'Lactulose'],
   references: [
+    { type: 'journal', citation: 'Ullal T, Lakin S, Gallagher B, Sbardellati N, et al. "Demographic and histopathologic features of dogs with abnormally high concentrations of hepatic copper." J Vet Intern Med. 2022;36(6). doi:10.1111/jvim.16580', relevance: '近期：異常肝銅蓄積跨品種化，飲食銅為新焦點' },
+    { type: 'guideline', citation: 'Webster CRL, Center SA, Cullen JM, Penninck DG, et al. "ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs." J Vet Intern Med. 2019;33(3):1173-1200. doi:10.1111/jvim.15467', relevance: 'ACVIM 犬慢性肝炎診斷與治療共識聲明' },
+    { type: 'journal', citation: 'Hoffmann G, van den Ingh TSGAM, Bode P, Rothuizen J. "Copper-Associated Chronic Hepatitis in Labrador Retrievers." J Vet Intern Med. 2006;20(4):856-861. doi:10.1111/j.1939-1676.2006.tb01798.x', relevance: 'Labrador 銅蓄積性肝炎品種研究' },
+    { type: 'journal', citation: 'Poldervaart JH, Favier RP, Penning LC, van den Ingh TSGAM, Rothuizen J. "Primary Hepatitis in Dogs: A Retrospective Review." J Vet Intern Med. 2009;23(1):72-80. doi:10.1111/j.1939-1676.2008.0215.x', relevance: '犬原發性肝炎回顧性研究' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 62: Chronic Hepatitis in Dogs.', relevance: '犬慢性肝炎病理與臨床管理教材' },
-    { type: 'guideline', citation: 'Webster CRL, Center SA, Cullen JM, et al. "ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs." J Vet Intern Med. 2019;33(3):1173-1200.', relevance: 'ACVIM 犬慢性肝炎診斷與治療共識聲明' },
-    { type: 'journal', citation: 'Hoffmann G, van den Ingh TS, Bode P, Rothuizen J. "Copper-associated chronic hepatitis in Labrador Retrievers." J Vet Intern Med. 2006;20(4):856-861.', relevance: 'Labrador 銅蓄積性肝炎品種研究' },
-    { type: 'journal', citation: 'Poldervaart JH, Favier RP, Penning LC, et al. "Primary hepatitis in dogs: a retrospective review (2002-2006)." J Vet Intern Med. 2009;23(1):72-80.', relevance: '犬原發性肝炎回顧性研究' },
   ],
   is_current: true,
   created_at: now,
@@ -7085,7 +7702,7 @@ const contentMegaesophagus: NodeContent = {
 | [藥物:Metoclopramide] | 0.2-0.5 mg/kg PO TID | 促進胃排空（減少胃食道反流），注意：對食道體部蠕動無效 |
 | [藥物:Sucralfate] | 0.5-1 g PO TID | 食道炎保護 |
 | [藥物:Pyridostigmine] | 0.5-3 mg/kg PO BID-TID | 重症肌無力（AChE 抑制劑） |
-| 基礎病因治療 |，| 甲低：Levothyroxine；Addison：DOCP + Prednisolone |
+| 基礎病因治療 |—| 甲低：Levothyroxine；Addison：DOCP + Prednisolone |
 
 ### 吸入性肺炎處理
 
@@ -7149,8 +7766,8 @@ const contentMegaesophagus: NodeContent = {
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 55: Diseases of the Esophagus.', relevance: '食道疾病病理與臨床管理教材' },
     { type: 'journal', citation: 'Gaynor AR, Shofer FS, Washabau RJ. "Risk factors for acquired megaesophagus in dogs." J Am Vet Med Assoc. 1997;211(11):1406-1412.', relevance: '後天性巨食道症危險因子流行病學' },
     { type: 'journal', citation: 'Shelton GD. "Myasthenia gravis and disorders of neuromuscular transmission." Vet Clin North Am Small Anim Pract. 2002;32(1):189-206.', relevance: '重症肌無力與巨食道症的關聯' },
-    { type: 'journal', citation: 'McBrearty AR, Ramsey IK, Courcier EA, et al. "Clinical factors associated with death before discharge and overall survival time in dogs with generalized megaesophagus." J Am Vet Med Assoc. 2011;238(12):1564-1569.', relevance: '巨食道症預後因子分析' },
-    { type: 'guideline', citation: 'ACVIM Consensus – Megaesophagus Management. https://onlinelibrary.wiley.com/doi/10.1111/jvim.15120', relevance: 'ACVIM 巨食道症管理共識聲明' },
+    { type: 'journal', citation: 'McBrearty AR, Ramsey IK, Courcier EA, et al. "Clinical factors associated with death before discharge and overall survival time in dogs with generalized megaesophagus." J Am Vet Med Assoc. 2011;238(12):1622-1628. doi:10.2460/javma.238.12.1622.', relevance: '巨食道症預後因子分析' },
+    { type: 'journal', citation: 'Haines JM. Survey of owners on population characteristics, diagnosis, and environmental, health, and disease associations in dogs with megaesophagus. Res Vet Sci. 2019;123:1-6. doi:10.1016/j.rvsc.2018.11.026.', relevance: '犬巨食道症族群特徵、診斷與環境/健康關聯之飼主調查' },
   ],
   is_current: true,
   created_at: now,
@@ -7290,7 +7907,7 @@ CBC 是即時又便宜的關鍵：WBC < 2000 配上典型病史，臨床診斷�
 const contentHepFuncAssessment: NodeContent = {
   id: 'CONTENT-IM-L4-005',
   node_id: 'IM-L4-005',
-  version: 1,
+  version: 2,
   summary: '肝功能評估包含兩大類指標：肝細胞損傷（ALT/AST）與膽汁鬱滯（ALP/GGT），搭配肝臟合成功能（白蛋白、PT、膽固醇）及膽汁酸試驗。犬貓的 ALP 有顯著物種差異——犬的 ALP 可被類固醇及苯巴比妥誘導大幅升高（非真性肝毒性），而貓的 ALP 半衰期極短（6h），任何升高都具臨床意義。膽汁酸（空腹 + 餐後 2h）是評估肝臟實際合成與排泄功能的黃金標準，用於鑑別酵素誘導（正常）與真性肝損傷（升高）。',
   learning_objectives: [
     '說明 ALT、AST、ALP、GGT 的組織來源及犬貓半衰期差異',
@@ -7430,7 +8047,39 @@ PB 誘導     真性肝毒性
 
 ### 案例 C：3 歲 Golden，ALP 2400（20× ULN），ALT 480（8× ULN），白蛋白 1.8 g/dL
 - 膽汁酸：空腹 65，餐後 180 µmol/L
-- **結論：重症肝病 + 合成功能受損，PSS 鑑別，肝臟生檢適應症**`,
+- **結論：重症肝病 + 合成功能受損，PSS 鑑別，肝臟生檢適應症**
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| R-factor（ALT/ALP 比，肝細胞 vs 膽汁鬱滯型分類） | 系統化分類肝損傷模式、指引鑑別 | 人醫常規分型工具，獸醫概念可借鏡 |
+| 肝彈性造影（FibroScan / shear-wave elastography） | 非侵入性評估肝纖維化、減少生檢 | 人醫成熟，獸醫剪切波彈性造影研究中 |
+| 動態肝功能試驗（ICG 清除率） | 量化肝臟實際代謝/排泄功能 | 人醫術前評估用，獸醫零星研究 |
+| 血清纖維化標記組合 / microRNA | 非侵入性肝纖維化/損傷分子標記 | 人醫進展，獸醫研究階段 |
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 膽汁酸 vs 血氨 篩檢 PSS/肝功能 | 膽汁酸敏感度高但膽汁鬱滯/腸吸收會干擾；血氨對 PSS/肝腦病更專一但檢體不穩定 | Level III |
+| ALT/ALP 升高到何種程度才做肝生檢 | 無統一閾值；須結合合成功能、影像、膽汁酸（Webster 2019 consensus 框架） | Level III |
+| 貓 ALP 任何升高的解讀 | 半衰期短故「值得追查」，但「升高＝肝功能不全」過絕對，仍須結合 GGT/膽汁酸/影像 | Level III |
+| PB 監測是否常規做膽汁酸 | 多建議定期，但最佳頻率與成本效益未統一 | Level IV |
+
+## 九、近期實證更新 (Recent Evidence Updates)
+
+### ACVIM 慢性肝炎共識框架（Webster 2019）
+2019 ACVIM 犬慢性肝炎共識統一了診斷（含肝生檢與銅染色）、分級與治療路徑，並界定肝酵素/膽汁酸/影像在何時觸發生檢，是現行犬慢性肝病評估的權威依據。
+
+### 非侵入性肝纖維化評估興起
+剪切波彈性造影（shear-wave elastography）等非侵入工具在犬貓研究中漸增，未來可能減少對肝生檢的依賴；目前肝生檢仍為纖維化/銅蓄積的金標準。
+
+### 膽汁酸的定位與限制再確認
+膽汁酸仍是低成本、高性價比的肝功能性檢查，特別用於 PSS 篩檢與「酵素誘導 vs 真性肝損傷」的鑑別；但膽汁鬱滯、迴腸吸收障礙會干擾，重症/膽汁鬱滯時可用血氨或蛋白 C 補充判讀。
+
+### 貓肝臟特化指標
+GGT 對貓膽道疾病優於 ALP；ALP-GGT 分離仍是貓脂肪肝的實用線索；貓 ALP 任何升高都值得追查（半衰期短），但須整合 GGT、膽汁酸與影像判讀，而非逕自等同肝功能不全。`,
   clinical_pearl: '貓的 ALP 半衰期只有 6 小時，意味著貓 ALP 100 U/L 在臨床意義上相當於犬 ALP 1200 U/L。另一個記憶訣竅：「貓 ALP 升高必追查，犬 ALP 先問藥」。在台灣診所，最常見的 ALP 升高混淆原因是犬類固醇治療（皮膚科常用）和 PB（神經科常用）。膽汁酸試驗是最簡單的確認工具，費用低廉，應優先使用。',
   common_mistakes: [
     '看到犬 ALP 升高就直接診斷肝病（最常見錯誤：忽略 PB 和類固醇誘導型）',
@@ -7490,9 +8139,9 @@ PB 誘導     真性肝毒性
   created_at: '2026-05-23',
   references: [
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine. 8th ed. Elsevier, 2017. Chapter 91: Diagnostic Evaluation of the Liver.', relevance: '肝功能評估標準教材' },
-    { type: 'guideline', citation: 'Webster CR et al. ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs. J Vet Intern Med. 2019;33(3):1173-1200.', relevance: '犬慢性肝炎診斷指引（含膽汁酸應用）' },
-    { type: 'journal', citation: 'Scherk MA, Center SA. Toxic, metabolic, infectious, and neoplastic liver diseases. In: Ettinger SJ, ed. Textbook of Veterinary Internal Medicine. Elsevier, 2010.', relevance: '貓肝病 ALP/GGT 分離模式' },
-    { type: 'guideline', citation: 'Center SA. Interpretation of liver enzymes. Vet Clin North Am Small Anim Pract. 2007;37(2):297-333.', relevance: '肝酵素解讀完整指引，含物種差異' },
+    { type: 'guideline', citation: 'Webster CRL, Center SA, Cullen JM, et al. ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs. J Vet Intern Med. 2019;33(3):1173-1200. doi:10.1111/jvim.15467.', relevance: '犬慢性肝炎診斷與治療 ACVIM 共識（生檢/膽汁酸觸發框架）' },
+    { type: 'textbook', citation: 'Scherk MA, Center SA. Toxic, metabolic, infectious, and neoplastic liver diseases. In: Ettinger SJ, ed. Textbook of Veterinary Internal Medicine. Elsevier, 2010.', relevance: '貓肝病 ALP/GGT 分離模式' },
+    { type: 'journal', citation: 'Center SA. Interpretation of liver enzymes. Vet Clin North Am Small Anim Pract. 2007;37(2):297-333. doi:10.1016/j.cvsm.2006.11.009.', relevance: '肝酵素解讀完整指引，含犬貓物種差異' },
   ],
 };
 
@@ -7500,7 +8149,7 @@ PB 誘導     真性肝毒性
 const contentSystemicHypertension: NodeContent = {
   id: 'CONTENT-IM-L3-029',
   node_id: 'IM-L3-029',
-  version: 1,
+  version: 2,
   summary: '系統性高血壓在小動物臨床多為「繼發性」（CKD、甲亢、Cushing、嗜鉻細胞瘤），原發性少見。ACVIM 2018 共識把收縮壓切成四級：< 140 正常、140-159 前期、160-179 高血壓、≥ 180 嚴重。診斷不靠單一次測量，要排除白袍效應、取多次平均。最要命的是靶器官損傷（TOD）：眼睛（急性失明，貓 50% 以上以這個為首發）、腦（高血壓腦病、發作）、心（向心性肥厚）、腎（蛋白尿放大、CKD 加速）。治療上貓首選 amlodipine 0.625-1.25 mg/cat PO SID，犬首選 telmisartan 1 mg/kg PO SID。',
   learning_objectives: [
     '應用 ACVIM 2018 BP 分期系統正確判讀犬貓血壓',
@@ -7516,11 +8165,11 @@ const contentSystemicHypertension: NodeContent = {
     '繼發性病因最常見：CKD（貓 20-65%、犬 30-93%）> 甲亢（貓 23%）> Cushing（犬 31-86%）> 糖尿病（10-46%）> 嗜鉻細胞瘤（罕見但 50% 以上有 HTN）',
     'TOD 四大標靶：眼（視網膜出血/剝離、急性失明）、腦（昏迷、發作）、心（LV 向心性肥厚、奔馬律）、腎（蛋白尿放大、CKD 加速）',
     '貓首選 amlodipine 0.625-1.25 mg/cat PO SID；若 SBP 仍 > 160 可加至 2.5 mg/cat 或加 telmisartan 1-2 mg/kg PO SID',
-    '犬首選 telmisartan 1 mg/kg PO SID（蛋白尿首選）或 amlodipine 0.1-0.5 mg/kg PO SID；若蛋白尿明顯可加 ACEI（benazepril 0.25-0.5 mg/kg PO BID）',
+    '犬首選 RAAS 阻斷（telmisartan 1 mg/kg PO SID，蛋白尿首選；或 ACEI benazepril 0.25-0.5 mg/kg PO BID）；amlodipine 0.1-0.5 mg/kg PO SID 用於較嚴重或加成（合用），非單獨一線',
     '高血壓急症（SBP ≥ 180 + 急性 TOD）：貓 amlodipine 加量至 2.5 mg PO、犬靜脈 hydralazine 0.5-2 mg/kg slow IV；24h 內目標 SBP < 160',
     '高血壓視網膜病變在貓常為首發症狀（急性失明 + 雙側散大瞳孔），檢眼鏡是低成本高價值篩檢工具',
   ],
-  body: '# 系統性高血壓 (Systemic Hypertension)\n\n## 一、流行病學與分類\n\n系統性高血壓在犬貓臨床絕大多數是繼發性的，原發性（特發性）高血壓在貓的盛行率約 13-20%、犬更少。重點不在「有沒有高血壓」，而在「為什麼會高血壓」。\n\n| 分類 | 定義 | 犬貓比例 |\n|------|------|---------|\n| 原發性 | 找不到底層原因 | 貓 13-20%、犬 < 10% |\n| 繼發性 | 有可辨識的底層疾病 | 貓 80%、犬 > 90% |\n| 情境性（白袍）| 醫院環境緊張造成的暫時性升高 | 任何年齡，需鑑別 |\n\n## 二、ACVIM 2018 BP 分期 (Acierno consensus)\n\n| 分期 | 收縮壓 (mmHg) | TOD 風險 | 處置建議 |\n|------|--------------|---------|---------|\n| Normotensive | < 140 | 極低 | 例行監測 |\n| Prehypertensive | 140-159 | 低 | 找原因、3 個月內複測 |\n| Hypertensive | 160-179 | 中度 | 啟動降壓 + 找原因 + TOD 評估 |\n| Severely Hypertensive | ≥ 180 | 高 | 立即降壓 + 急診 TOD 評估 |\n\n> 注意：上述切點是「持續性」高血壓，單次量測 > 160 但無 TOD 應重複測量數次（至少 2-3 次間隔數天到 1-2 週）才能確診。\n\n## 三、測量技術（標準化要點）\n\n1. **環境**：安靜獨立房間、飼主在場、5-10 分鐘適應期。\n2. **設備**：Doppler（貓首選、準確度高）或示波法 oscillometric（HDO 高解析示波）。\n3. **袖帶**：寬度 = 肢體周徑的 30-40%。袖帶太小高估 BP、太大低估 BP。\n4. **量測部位**：貓尾根或前肢；犬前肢或後肢。\n5. **重複次數**：捨棄第 1 次，取連續 3-7 次平均，差異 > 20% 須重測。\n6. **白袍效應辨識**：第一次明顯高、後面遞減 → 高度懷疑白袍。\n\n## 四、繼發性病因（必查清單）\n\n| 病因 | 機轉 | 高血壓盛行率 | 篩檢 |\n|------|------|------------|------|\n| **CKD** | RAAS 活化 + 鈉滯留 + 內皮功能異常 | 貓 20-65%、犬 30-93% | BUN/Cre/SDMA/UPC、超音波 |\n| **甲狀腺機能亢進**（貓）| ↑β1 腎上腺素能、↑心輸出 | 23%（治療前）| TT4 |\n| **Cushing**（犬）| ↑皮質醇 → 內皮功能異常、RAAS | 31-86% | LDDST/UCCR/ACTH 刺激 |\n| **糖尿病** | 內皮功能受損、肥胖 | 10-46% | 血糖、果糖胺 |\n| **嗜鉻細胞瘤** | 兒茶酚胺陣發性釋放 | 50% 以上 | 腹部超音波（腎上腺腫塊）、血漿/尿 metanephrine |\n| **原發性醛固酮增多症**（貓）| 高 aldosterone → Na+/K+ 失衡 | > 50% | aldosterone:renin 比值、超音波 |\n| **NSAID/類固醇/EPO 等藥物** | 鈉滯留、RAAS | 變異大 | 用藥史 |\n\n## 五、靶器官損傷 (TOD) — 四大標靶\n\n### 1. 眼 (Ophthalmic) — 貓 50% 以上首發症狀\n\n| 表現 | 機轉 | 處置 |\n|------|------|------|\n| 視網膜水腫/出血 | 視網膜小動脈受損 | 緊急降壓 |\n| 視網膜剝離（漿液性/出血性）| 脈絡膜灌流異常 | 緊急降壓，部分可逆 |\n| 急性失明 + 雙側散大瞳孔 | 視網膜或視神經缺血 | 24h 內降壓有機會復明 |\n| 前房出血 (hyphema) | 虹膜小血管破裂 | 評估全身性病因 |\n\n> 任何年長貓「突然眼睛看不到」首要鑑別就是高血壓視網膜病變，當下量 BP 而非先點眼藥。\n\n### 2. 腦 (Neurologic)\n\n行為異常、運動失調、發作、昏迷、頭傾。MRI 可見 PRES 樣高訊號。降壓後通常 24-72h 內改善。\n\n### 3. 心 (Cardiac)\n\n左心室向心性肥厚（concentric LVH）為慢性 HTN 特徵；需與 HCM 鑑別（HCM 多為非對稱性、SAM 陽性、無 HTN 史）。可伴 S4 奔馬律。\n\n### 4. 腎 (Renal)\n\n蛋白尿放大（UPC 上升）、CKD 加速進展。降壓 + ACEI/ARB 為 nephroprotection 核心。\n\n## 六、治療策略\n\n### 一線藥物\n\n| 物種 | 藥物 | 劑量 | 注意 |\n|------|------|------|------|\n| 貓 | [藥物:Amlodipine] | 0.625-1.25 mg/cat PO SID | 反應 1-2 週評估；若 SBP > 160 可加至 2.5 mg |\n| 貓 | [藥物:Telmisartan] | 1-2 mg/kg PO SID | amlodipine 反應不足時加；蛋白尿首選 |\n| 犬 | [藥物:Telmisartan] | 1 mg/kg PO SID | 蛋白尿/CKD 首選 |\n| 犬 | [藥物:Amlodipine] | 0.1-0.5 mg/kg PO SID | 與 telmisartan 可合用 |\n| 犬 | [藥物:Benazepril] | 0.25-0.5 mg/kg PO BID | 蛋白尿 + 輕度 HTN |\n\n### 高血壓急症處置 (SBP ≥ 180 + 急性 TOD)\n\n| 物種 | 急性降壓 | 維持 |\n|------|---------|------|\n| 貓 | Amlodipine 加量至 2.5 mg/cat PO 立刻給藥 | 24h 內目標 SBP < 160 |\n| 犬 | [藥物:Hydralazine] 0.5-2 mg/kg slow IV q15min 至 SBP < 170 | 過渡至口服 amlodipine + telmisartan |\n\n> 急性降壓最忌「降太快、降太低」：目標 24h 內降到 < 160，不要在 1 小時內把 SBP 從 220 拉到 130（會引發腦灌流不足與梗塞）。\n\n### 嗜鉻細胞瘤特殊處置\n\n手術前必須先 α-blocker（[藥物:Phenoxybenzamine] 0.25-0.5 mg/kg PO BID × 14-21 天）控制 BP，再考慮 β-blocker（單用 β-blocker 會使 α-effect 失代償，BP 反而飆升）。\n\n## 七、監測計畫\n\n| 階段 | 頻率 | 項目 |\n|------|------|------|\n| 啟動治療後 | 1-2 週 | SBP、Cre、K+、UPC |\n| 達標後 | 1-3 個月 | SBP、Cre/SDMA、K+、UPC、眼底 |\n| 穩定維持 | 3-6 個月 | SBP、生化、UPC、眼底 |\n| 任何 TOD 改變 | 立即 | 重新評估藥物 |\n',
+  body: '# 系統性高血壓 (Systemic Hypertension)\n\n## 一、流行病學與分類\n\n系統性高血壓在犬貓臨床絕大多數是繼發性的，原發性（特發性）高血壓在貓的盛行率約 13-20%、犬更少。重點不在「有沒有高血壓」，而在「為什麼會高血壓」。\n\n| 分類 | 定義 | 犬貓比例 |\n|------|------|---------|\n| 原發性 | 找不到底層原因 | 貓 13-20%、犬 < 10% |\n| 繼發性 | 有可辨識的底層疾病 | 貓 80%、犬 > 90% |\n| 情境性（白袍）| 醫院環境緊張造成的暫時性升高 | 任何年齡，需鑑別 |\n\n## 二、ACVIM 2018 BP 分期 (Acierno consensus)\n\n| 分期 | 收縮壓 (mmHg) | TOD 風險 | 處置建議 |\n|------|--------------|---------|---------|\n| Normotensive | < 140 | 極低 | 例行監測 |\n| Prehypertensive | 140-159 | 低 | 找原因、3 個月內複測 |\n| Hypertensive | 160-179 | 中度 | 啟動降壓 + 找原因 + TOD 評估 |\n| Severely Hypertensive | ≥ 180 | 高 | 立即降壓 + 急診 TOD 評估 |\n\n> 注意：上述切點是「持續性」高血壓，單次量測 > 160 但無 TOD 應重複測量數次（至少 2-3 次間隔數天到 1-2 週）才能確診。\n\n## 三、測量技術（標準化要點）\n\n1. **環境**：安靜獨立房間、飼主在場、5-10 分鐘適應期。\n2. **設備**：Doppler（貓首選、準確度高）或示波法 oscillometric（HDO 高解析示波）。\n3. **袖帶**：寬度 = 肢體周徑的 30-40%。袖帶太小高估 BP、太大低估 BP。\n4. **量測部位**：貓尾根或前肢；犬前肢或後肢。\n5. **重複次數**：捨棄第 1 次，取連續 3-7 次平均，差異 > 20% 須重測。\n6. **白袍效應辨識**：第一次明顯高、後面遞減 → 高度懷疑白袍。\n\n## 四、繼發性病因（必查清單）\n\n| 病因 | 機轉 | 高血壓盛行率 | 篩檢 |\n|------|------|------------|------|\n| **CKD** | RAAS 活化 + 鈉滯留 + 內皮功能異常 | 貓 20-65%、犬 30-93% | BUN/Cre/SDMA/UPC、超音波 |\n| **甲狀腺機能亢進**（貓）| ↑β1 腎上腺素能、↑心輸出 | 23%（治療前）| TT4 |\n| **Cushing**（犬）| ↑皮質醇 → 內皮功能異常、RAAS | 31-86% | LDDST/UCCR/ACTH 刺激 |\n| **糖尿病** | 內皮功能受損、肥胖 | 10-46% | 血糖、果糖胺 |\n| **嗜鉻細胞瘤** | 兒茶酚胺陣發性釋放 | 50% 以上 | 腹部超音波（腎上腺腫塊）、血漿/尿 metanephrine |\n| **原發性醛固酮增多症**（貓）| 高 aldosterone → Na+/K+ 失衡 | > 50% | aldosterone:renin 比值、超音波 |\n| **NSAID/類固醇/EPO 等藥物** | 鈉滯留、RAAS | 變異大 | 用藥史 |\n\n## 五、靶器官損傷 (TOD) — 四大標靶\n\n### 1. 眼 (Ophthalmic) — 貓 50% 以上首發症狀\n\n| 表現 | 機轉 | 處置 |\n|------|------|------|\n| 視網膜水腫/出血 | 視網膜小動脈受損 | 緊急降壓 |\n| 視網膜剝離（漿液性/出血性）| 脈絡膜灌流異常 | 緊急降壓，部分可逆 |\n| 急性失明 + 雙側散大瞳孔 | 視網膜或視神經缺血 | 24h 內降壓有機會復明 |\n| 前房出血 (hyphema) | 虹膜小血管破裂 | 評估全身性病因 |\n\n> 任何年長貓「突然眼睛看不到」首要鑑別就是高血壓視網膜病變，當下量 BP 而非先點眼藥。\n\n### 2. 腦 (Neurologic)\n\n行為異常、運動失調、發作、昏迷、頭傾。MRI 可見 PRES 樣高訊號。降壓後通常 24-72h 內改善。\n\n### 3. 心 (Cardiac)\n\n左心室向心性肥厚（concentric LVH）為慢性 HTN 特徵；需與 HCM 鑑別（HCM 多為非對稱性、SAM 陽性、無 HTN 史）。可伴 S4 奔馬律。\n\n### 4. 腎 (Renal)\n\n蛋白尿放大（UPC 上升）、CKD 加速進展。降壓 + ACEI/ARB 為 nephroprotection 核心。\n\n## 六、治療策略\n\n### 一線藥物\n\n| 物種 | 藥物 | 劑量 | 注意 |\n|------|------|------|------|\n| 貓 | [藥物:Amlodipine] | 0.625-1.25 mg/cat PO SID | 反應 1-2 週評估；若 SBP > 160 可加至 2.5 mg |\n| 貓 | [藥物:Telmisartan] | 1-2 mg/kg PO SID | amlodipine 反應不足時加；蛋白尿首選 |\n| 犬 | [藥物:Telmisartan] | 1 mg/kg PO SID | 蛋白尿/CKD 首選 |\n| 犬 | [藥物:Amlodipine] | 0.1-0.5 mg/kg PO SID | 與 telmisartan 可合用 |\n| 犬 | [藥物:Benazepril] | 0.25-0.5 mg/kg PO BID | 蛋白尿 + 輕度 HTN |\n\n### 高血壓急症處置 (SBP ≥ 180 + 急性 TOD)\n\n| 物種 | 急性降壓 | 維持 |\n|------|---------|------|\n| 貓 | Amlodipine 加量至 2.5 mg/cat PO 立刻給藥 | 24h 內目標 SBP < 160 |\n| 犬 | [藥物:Hydralazine] 0.5-2 mg/kg slow IV q15min 至 SBP < 170 | 過渡至口服 amlodipine + telmisartan |\n\n> 急性降壓最忌「降太快、降太低」：目標 24h 內降到 < 160，不要在 1 小時內把 SBP 從 220 拉到 130（會引發腦灌流不足與梗塞）。\n\n### 嗜鉻細胞瘤特殊處置\n\n手術前必須先 α-blocker（[藥物:Phenoxybenzamine] 0.25-0.5 mg/kg PO BID × 14-21 天）控制 BP，再考慮 β-blocker（單用 β-blocker 會使 α-effect 失代償，BP 反而飆升）。\n\n## 七、監測計畫\n\n| 階段 | 頻率 | 項目 |\n|------|------|------|\n| 啟動治療後 | 1-2 週 | SBP、Cre、K+、UPC |\n| 達標後 | 1-3 個月 | SBP、Cre/SDMA、K+、UPC、眼底 |\n| 穩定維持 | 3-6 個月 | SBP、生化、UPC、眼底 |\n| 任何 TOD 改變 | 立即 | 重新評估藥物 |\n\n## 八、人醫借鑒 (Translational Insights)\n\n| 人醫概念 | 獸醫應用潛力 | 現況 |\n|---------|-------------|------|\n| 24h 動態血壓監測 (ABPM) | 犬貓居家連續 BP 監測、減少白袍效應 | 人醫標準；獸醫設備/驗證受限、研究中 |\n| 強化降壓目標 (SPRINT) | 犬貓最佳目標 BP 是否更低 | 人醫 SPRINT 下修目標；獸醫仍 <160 |\n| RAAS 雙重阻斷 / ARB (telmisartan) | 蛋白尿性 CKD-HTN 腎保護 | telmisartan 已為犬貓常用 |\n| 醛固酮 breakthrough / MRA | spironolactone 用於難治性 HTN / 原發性醛固酮增多 | 人醫常用；獸醫證據累積中 |\n\n## 九、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)\n\n| 爭議議題 | 現況 | Evidence Level |\n|---------|------|---------------|\n| 啟動治療閾值 (≥160 vs ≥150+TOD) | ACVIM 2018 以 TOD 風險分級，灰色地帶個別化 | Level III |\n| 最佳目標 BP (<160 vs 更低) | 過低有腦/腎灌流不足風險，缺前瞻 RCT | Level III |\n| 犬一線藥 (RAAS-i vs amlodipine) | 蛋白尿者 RAAS-i 首選；amlodipine 多用於嚴重/加成 | Level II |\n| 原發性高血壓真實盛行率 | 受診斷嚴謹度影響，數據變異大 | Level III |\n\n## 十、近期實證更新 (Recent Evidence Updates)\n\n1. **Telmisartan（ARB）**：貓 CKD 蛋白尿之降壓/腎保護 RCT 支持；犬亦用。amlodipine 仍為貓快速降壓首選。\n2. **居家/動態 BP 監測**：減少白袍效應、研究增加；單次院內值不可靠。\n3. **視網膜 TOD 時間敏感**：24-72h 內降壓有 30-50% 復明機會，逾時多永久失明。\n4. **目標 SBP <160、避免過快降壓**：急症 24h 內降至 <160，勿 1h 內驟降以免腦灌流不足。\n> 高血壓多為繼發性；診斷須多次標準化測量，降壓藥與目標由獸醫依物種/病因/TOD 個別化。\n',
   clinical_pearl: '貓的高血壓視網膜病變是「來看眼睛、其實是高血壓」的經典場景。任何年長貓突然撞牆、雙側瞳孔散大、不認路，第一件事不是點眼藥水，而是當下量 BP + 看眼底。24 小時內把 amlodipine 加上去，視網膜剝離還有機會回復、貓有機會重新看得到。錯過這個窗口就終身失明。另一個常被忽略：所有開始 erythropoietin 的 CKD 貓必須先把 BP 控好，否則 EPO 會把 BP 推得更高、誘發 TOD。',
   common_mistakes: [
     '單次測量 SBP > 160 就診斷高血壓（沒排除白袍效應）',
@@ -7556,7 +8205,7 @@ const contentSystemicHypertension: NodeContent = {
       { condition: '肥厚型心肌病 (HCM)', key_differentiator: 'HCM 為非對稱性肥厚 + SAM 陽性；HTN-LVH 為向心性肥厚 + 高 BP；兩者可共存' },
     ],
     diagnostic_workup: '1. 標準化 BP 測量（安靜環境、5-10 分鐘適應、3-7 次平均、捨棄第 1 次）→ 2. 確認持續性（間隔數天再測一次）→ 3. 完整 TOD 評估：眼底鏡（視網膜出血/剝離）、神經學檢查、心臟聽診/X 光/心超（LVH）、UPC + Cre/SDMA → 4. 繼發病因排查：CBC/生化/T4（貓）/LDDST 或 UCCR（犬可疑 Cushing）/腹部超音波（腎上腺腫塊、CKD 結構評估）→ 5. 嗜鉻細胞瘤可疑時：血漿或尿 metanephrine → 6. 原發性醛固酮增多症可疑時：aldosterone:renin 比值。',
-    treatment_protocol: 'SBP ≥ 160（或 ≥ 150 合併 TOD）即啟動降壓。貓首選 amlodipine 0.625-1.25 mg/cat PO SID，1-2 週後評估；若 SBP > 160 可加量至 2.5 mg/cat 或加 telmisartan 1-2 mg/kg PO SID。犬首選 telmisartan 1 mg/kg PO SID（蛋白尿首選）或 amlodipine 0.1-0.5 mg/kg PO SID；蛋白尿明顯可加 benazepril 0.25-0.5 mg/kg PO BID。高血壓急症 (SBP ≥ 180 + 急性 TOD)：貓 amlodipine 加量至 2.5 mg PO 立刻給藥；犬 hydralazine 0.5-2 mg/kg slow IV q15min 直至 SBP < 170，24h 內目標 < 160。同時並進處理底層病因（治療 CKD、甲亢、Cushing、嗜鉻細胞瘤手術）。嗜鉻細胞瘤手術前必須 α-blocker (phenoxybenzamine) 14-21 天，再考慮 β-blocker。',
+    treatment_protocol: 'SBP ≥ 160（或 ≥ 150 合併 TOD）即啟動降壓。貓首選 amlodipine 0.625-1.25 mg/cat PO SID，1-2 週後評估；若 SBP > 160 可加量至 2.5 mg/cat 或加 telmisartan 1-2 mg/kg PO SID。犬首選 RAAS 阻斷（telmisartan 1 mg/kg PO SID，蛋白尿首選；或 benazepril 0.25-0.5 mg/kg PO BID）；amlodipine 0.1-0.5 mg/kg PO SID 用於較嚴重或加成，非單獨一線。高血壓急症 (SBP ≥ 180 + 急性 TOD)：貓 amlodipine 加量至 2.5 mg PO 立刻給藥；犬 hydralazine 0.5-2 mg/kg slow IV q15min 直至 SBP < 170，24h 內目標 < 160。同時並進處理底層病因（治療 CKD、甲亢、Cushing、嗜鉻細胞瘤手術）。嗜鉻細胞瘤手術前必須 α-blocker (phenoxybenzamine) 14-21 天，再考慮 β-blocker。',
     prognosis: '繼發性高血壓的預後與底層病因強相關。CKD-HTN 控制良好可延長存活；甲亢-HTN 治療甲亢後 50% 患者 BP 可恢復正常；Cushing-HTN 治療 Cushing 後部分改善。嗜鉻細胞瘤手術切除後 BP 多可恢復。視網膜剝離若 24-72h 內降壓有 30-50% 機會復明，超過 72h 則多為永久性失明。長期未控制的 HTN 會加速 CKD 進展、誘發 LV 衰竭、增加 CVA 風險。',
     monitoring: '啟動治療 1-2 週內回診量 BP、Cre、K+。穩定後 1-3 個月追蹤 SBP、Cre/SDMA、K+、UPC、眼底。長期穩定 3-6 個月一次。任何 TOD 改變或藥物換劑量都要立即追加 BP + 生化。同時追蹤底層疾病（CKD 走 IRIS、甲亢追 T4、Cushing 追 ACTH stim/UCCR）。',
     owner_communication: '高血壓是「沉默的殺手」，很多時候等到眼睛看不到或發作才被抓到。每年健檢的 BP 一定要量，尤其是老貓老犬、有 CKD/甲亢/Cushing 的更要量。藥要每天吃、不能停，停藥 24-48h BP 就會反彈。在家可以觀察兩件事：(1) 撞東西、看不清楚或瞳孔變大 → 急診；(2) 食慾忽然差、呼吸變快、走路不穩 → 回診。降壓的目標不是「壓越低越好」，而是 SBP < 160 + 沒有 TOD。',
@@ -7573,12 +8222,12 @@ const contentSystemicHypertension: NodeContent = {
   ],
   drug_api_links: ['Amlodipine', 'Telmisartan', 'Benazepril', 'Hydralazine', 'Phenoxybenzamine'],
   references: [
-    { type: 'guideline', citation: 'Acierno MJ, Brown S, Coleman AE, Jepson RE, Papich M, Stepien RL, Syme HM. ACVIM consensus statement: Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med. 2018;32(6):1803-1822. PMC6189311.', relevance: 'ACVIM 2018 高血壓共識核心指引（BP 分期、診斷、治療）' },
-    { type: 'guideline', citation: 'Brown S, Atkins C, Bagley R, et al. Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med. 2007;21(3):542-558. PMC1828041.', relevance: 'ACVIM 2007 原始高血壓共識（TOD 概念奠基）' },
-    { type: 'journal', citation: 'Syme HM, Markwell PJ, Pfeiffer D, Elliott J. Survival of cats with naturally occurring chronic renal failure is related to severity of proteinuria. J Vet Intern Med. 2006;20(3):528-535.', relevance: 'CKD-HTN-蛋白尿三角關係的關鍵研究' },
-    { type: 'journal', citation: 'Williams TL, Peak KJ, Brodbelt D, Elliott J, Syme HM. Survival and the development of azotemia after treatment of hyperthyroid cats. J Vet Intern Med. 2010;24(4):863-869.', relevance: '甲亢-HTN 治療後轉歸的長期追蹤研究' },
-    { type: 'web', citation: 'WikiVet — Systemic Hypertension in Small Animals. https://en.wikivet.net/Systemic_Hypertension', relevance: 'WikiVet 教學資源（同行審查的獸醫線上百科）' },
-    { type: 'journal', citation: 'Bijsmans ES, Jepson RE, Chang YM, Syme HM, Elliott J. Changes in systolic blood pressure over time in healthy cats and cats with chronic kidney disease. J Vet Intern Med. 2015;29(3):855-861. OpenAlex W2807636474.', relevance: 'CKD 貓 BP 縱向變化（建立基線與監測頻率）' },
+    { type: 'guideline', citation: 'Acierno MJ, Brown S, Coleman AE, et al. ACVIM consensus statement: Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med. 2018;32(6):1803-1822. doi:10.1111/jvim.15331.', relevance: 'ACVIM 2018 高血壓共識核心指引（BP 分期、診斷、治療）' },
+    { type: 'guideline', citation: 'Brown S, Atkins C, Bagley R, et al. Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med. 2007;21(3):542-558. doi:10.1111/j.1939-1676.2007.tb03005.x.', relevance: 'ACVIM 2007 原始高血壓共識（TOD 概念奠基）' },
+    { type: 'journal', citation: 'Syme HM, Markwell PJ, Pfeiffer D, Elliott J. Survival of cats with naturally occurring chronic renal failure is related to severity of proteinuria. J Vet Intern Med. 2006;20(3):528-535. doi:10.1111/j.1939-1676.2006.tb02892.x.', relevance: 'CKD-HTN-蛋白尿三角關係的關鍵研究' },
+    { type: 'journal', citation: 'Williams TL, Peak KJ, Brodbelt D, Elliott J, Syme HM. Survival and the development of azotemia after treatment of hyperthyroid cats. J Vet Intern Med. 2010;24(4):863-869. doi:10.1111/j.1939-1676.2010.0550.x.', relevance: '甲亢-HTN 治療後轉歸的長期追蹤研究' },
+    { type: 'journal', citation: 'Jepson RE. Feline systemic hypertension: classification and pathogenesis. J Feline Med Surg. 2011;13(1):25-34. doi:10.1016/j.jfms.2010.11.007.', relevance: '貓系統性高血壓分類與病理機轉回顧' },
+    { type: 'journal', citation: 'Bijsmans ES, Jepson RE, Chang YM, Syme HM, Elliott J. Changes in systolic blood pressure over time in healthy cats and cats with chronic kidney disease. J Vet Intern Med. 2015;29(3):855-861. doi:10.1111/jvim.12600.', relevance: 'CKD 貓 BP 縱向變化（建立基線與監測頻率）' },
   ],
   is_current: true,
   created_at: '2026-06-07',
@@ -7588,7 +8237,7 @@ const contentSystemicHypertension: NodeContent = {
 const contentMDR1Toxicity: NodeContent = {
   id: 'CONTENT-IM-L3-030',
   node_id: 'IM-L3-030',
-  version: 1,
+  version: 2,
   summary: 'MDR1 (ABCB1-1Δ) 為 ABCB1 基因第 4 個外顯子 4-bp 缺失造成的框移突變，導致 P-glycoprotein (P-gp) 截短、血腦屏障 (BBB) 排藥功能喪失。柯利犬 (Collie) 約 75%、長毛威比特 (Long-haired Whippet) 約 65%、澳洲牧羊犬 (Aussie) 約 50%、喜樂蒂 (Sheltie) 約 15% 帶有突變等位基因。常見受影響藥物：macrocyclic lactones (ivermectin、milbemycin、moxidectin、selamectin)、loperamide、vincristine/doxorubicin/paclitaxel、部分鴉片類。臨床表現：運動失調、瞳孔散大、流涎、震顫、視覺異常、昏迷。診斷：WSU VCPL 或 UC Davis VGL 頰部黏膜拭子基因檢測 (USD 60-70)。治療核心：20% IV lipid emulsion (ILE) 1.5 mL/kg bolus + 0.25 mL/kg/min CRI × 30-60 min（單日上限 8 mL/kg），加上支持療法。預後：及早 ILE 介入可完全康復。',
   learning_objectives: [
     '解釋 MDR1 (ABCB1-1Δ) 突變如何造成 P-glycoprotein 功能喪失與 BBB 滲漏',
@@ -7601,7 +8250,7 @@ const contentMDR1Toxicity: NodeContent = {
   key_points: [
     'ABCB1 基因 (舊稱 MDR1) 第 4 外顯子的 4-bp 缺失 (c.227_230del) 造成框移與提前終止，P-gp 蛋白截短、無功能',
     'P-gp 是 BBB、腸黏膜、肝臟、腎臟的外排幫浦；缺失後脂溶性藥物大量進入中樞神經系統',
-    '高風險犬種等位基因頻率：Collie ~75%、Long-haired Whippet ~65%、Aussie/Mini Aussie ~50%、Old English Sheepdog ~15%、Sheltie ~15%、German Shepherd ~10%、Border Collie ~5%',
+    '高風險犬種帶因率（攜帶 ≥1 突變等位基因之比例，非等位基因頻率）：Collie ~75%、Long-haired Whippet ~65%、Aussie/Mini Aussie ~50%、Old English Sheepdog ~15%、Sheltie ~15%、German Shepherd ~10%、Border Collie ~5%',
     '受影響藥物（11 大類）：1) macrocyclic lactones (ivermectin/milbemycin/moxidectin/selamectin)；2) loperamide (止瀉)；3) 化療：vincristine/vinblastine/doxorubicin/paclitaxel；4) digoxin；5) acepromazine（鎮靜時間延長 2-3 倍）',
     '心絲蟲預防劑「預防劑量」(ivermectin 6 μg/kg/月) 對 MDR1 突變犬安全；致毒劑量需 >50× FDA 核准犬用預防劑量',
     '臨床中毒劑量：ivermectin >100 μg/kg PO 對純合子突變犬即可致毒（牛羊驅蟲劑或外用「滴在皮膚」型劑型最危險）',
@@ -7610,7 +8259,7 @@ const contentMDR1Toxicity: NodeContent = {
     '治療核心：20% IV lipid emulsion (Intralipid/SMOFlipid)：1.5 mL/kg slow IV bolus 1 分鐘 → 0.25 mL/kg/min CRI × 30-60 min（單日上限 8 mL/kg）；可重複 q4h × 24h 直至症狀緩解',
     '預後：早期 ILE 介入（症狀出現 4-6h 內）可完全康復；延誤 24h 以上死亡率顯著升高',
   ],
-  body: '# MDR1 (ABCB1-1Δ) 突變與伊維菌素中毒\n\n## 一、分子遺傳學基礎\n\nABCB1 基因（舊稱 MDR1）位於犬 14 號染色體，編碼 P-glycoprotein (P-gp)，一種 ATP 依賴性外排幫浦，分布於 BBB、腸黏膜、肝細胞膽管面、腎近曲小管。ABCB1-1Δ 是第 4 個外顯子的 4 鹼基缺失 (c.227_230del GATA)，造成 reading frame shift 與提前終止 → 截短的 P-gp 蛋白無功能 → BBB 滲漏。\n\n## 二、品種與等位基因頻率\n\n| 品種 | Mutant Allele Frequency | 雙等位基因突變盛行率 |\n|------|------------------------|----------------------|\n| **Collie** | ~75% | ~50% homozygous |\n| **Long-haired Whippet** | ~65% | ~42% homozygous |\n| **Australian Shepherd** | ~50% | ~25% homozygous |\n| **Old English Sheepdog** | ~15% | ~2-5% homozygous |\n| **Shetland Sheepdog** | ~15% | ~2-5% homozygous |\n| **German Shepherd** | ~10% | ~1% homozygous |\n| **Border Collie** | ~5% | <1% homozygous |\n\n## 三、受 P-gp 影響的藥物\n\n| 類別 | 代表藥物 | 中毒風險 |\n|---------|---------|---------|\n| Macrocyclic Lactones | [藥物:Ivermectin]、Milbemycin、Moxidectin | 預防劑量安全；治療劑量危險 |\n| 止瀉藥 | [藥物:Loperamide] | OTC 劑量即可造成 CNS 抑制 |\n| 化療 | [藥物:Vincristine]、[藥物:Doxorubicin] | 神經毒性、骨髓抑制放大 |\n| 鎮靜劑 | [藥物:Acepromazine] | 鎮靜時間延長 2-3 倍 |\n| 強心配醣體 | [藥物:Digoxin] | 半衰期延長 |\n\n## 四、臨床分期\n\n| 階段 | 出現時間 | 臨床表現 |\n|------|---------|---------|\n| 早期 | 4-12h | 流涎、嘔吐、運動失調、瞳孔散大 |\n| 中期 | 12-24h | 震顫、視覺喪失、低血壓、心搏徐緩 |\n| 嚴重 | 24h+ | 昏迷、低體溫、呼吸抑制；死亡率 >50% |\n\n## 五、治療：IV Lipid Emulsion (ILE)\n\n**機轉**：脂溶性藥物在血中被「lipid sink」吸附、從 CNS 移回血液被代謝清除。\n\n**標準方案**：20% Intralipid 或 SMOFlipid\n- Loading: 1.5 mL/kg slow IV bolus（1 分鐘）\n- CRI: 0.25 mL/kg/min × 30-60 min\n- 單日上限 8 mL/kg/day；可 q4-6h 重複 × 24-72h\n\n**支持療法**：氣道保護（插管）、體溫維持、輸液、atropine（心搏徐緩）、diazepam（發作控制）。\n\n## 六、預後\n\n- 早期 ILE 介入（4-6h 內）完全康復率 >90% (Wright 2011)\n- 延誤 12-24h 康復率 60-80%\n- 延誤 >24h 或已昏迷死亡率 >50%\n',
+  body: '# MDR1 (ABCB1-1Δ) 突變與伊維菌素中毒\n\n## 一、分子遺傳學基礎\n\nABCB1 基因（舊稱 MDR1）位於犬 14 號染色體，編碼 P-glycoprotein (P-gp)，一種 ATP 依賴性外排幫浦，分布於 BBB、腸黏膜、肝細胞膽管面、腎近曲小管。ABCB1-1Δ 是第 4 個外顯子的 4 鹼基缺失 (c.227_230del GATA)，造成 reading frame shift 與提前終止 → 截短的 P-gp 蛋白無功能 → BBB 滲漏。\n\n## 二、品種與帶因率\n\n> 註：下表「帶因率」為攜帶 ≥1 突變等位基因之犬隻比例（carrier/affected prevalence），非等位基因頻率（allele frequency，後者較低）。\n\n| 品種 | 帶因率（≥1 突變等位基因） | 雙等位基因（homozygous）盛行率 |\n|------|------------------------|----------------------|\n| **Collie** | ~75% | ~50% homozygous |\n| **Long-haired Whippet** | ~65% | ~42% homozygous |\n| **Australian Shepherd** | ~50% | ~25% homozygous |\n| **Old English Sheepdog** | ~15% | ~2-5% homozygous |\n| **Shetland Sheepdog** | ~15% | ~2-5% homozygous |\n| **German Shepherd** | ~10% | ~1% homozygous |\n| **Border Collie** | ~5% | <1% homozygous |\n\n## 三、受 P-gp 影響的藥物\n\n| 類別 | 代表藥物 | 中毒風險 |\n|---------|---------|---------|\n| Macrocyclic Lactones | [藥物:Ivermectin]、Milbemycin、Moxidectin | 預防劑量安全；治療劑量危險 |\n| 止瀉藥 | [藥物:Loperamide] | OTC 劑量即可造成 CNS 抑制 |\n| 化療 | [藥物:Vincristine]、[藥物:Doxorubicin] | 神經毒性、骨髓抑制放大 |\n| 鎮靜劑 | [藥物:Acepromazine] | 鎮靜時間延長 2-3 倍（臨床觀察；其 P-gp 受質地位較不確定）|\n| 強心配醣體 | [藥物:Digoxin] | 半衰期延長 |\n\n## 四、臨床分期\n\n| 階段 | 出現時間 | 臨床表現 |\n|------|---------|---------|\n| 早期 | 4-12h | 流涎、嘔吐、運動失調、瞳孔散大 |\n| 中期 | 12-24h | 震顫、視覺喪失、低血壓、心搏徐緩 |\n| 嚴重 | 24h+ | 昏迷、低體溫、呼吸抑制；死亡率 >50% |\n\n## 五、治療：IV Lipid Emulsion (ILE)\n\n**機轉**：脂溶性藥物在血中被「lipid sink」吸附、從 CNS 移回血液被代謝清除。\n\n**標準方案**：20% Intralipid 或 SMOFlipid\n- Loading: 1.5 mL/kg slow IV bolus（1 分鐘）\n- CRI: 0.25 mL/kg/min × 30-60 min\n- 單日上限 8 mL/kg/day；可 q4-6h 重複 × 24-72h\n\n**支持療法**：氣道保護（插管）、體溫維持、輸液、atropine（心搏徐緩）、diazepam（發作控制）。\n\n## 六、預後\n\n- 早期 ILE 介入（4-6h 內）完全康復率 >90% (Wright 2011)\n- 延誤 12-24h 康復率 60-80%\n- 延誤 >24h 或已昏迷死亡率 >50%\n\n## 七、人醫借鑒 (Translational Insights)\n\n| 人醫概念 | 獸醫對應 | 現況 |\n|---------|---------|------|\n| 藥物基因體學術前基因分型 | 化療/巨環內酯前先驗 ABCB1 基因型再定劑量 | 人醫精準醫療常規，獸醫漸推廣於高風險犬種 |\n| 脂質救援（ILE）治療局麻全身毒性（LAST） | 延伸用於犬脂溶性藥物中毒（ivermectin/loperamide） | 源自人醫 LAST，獸醫採 lipid sink 機轉 |\n| P-gp 為腫瘤後天多重抗藥性（MDR）機轉 | 犬為生殖系 P-gp 缺失（與腫瘤後天 MDR 方向相反） | 概念互補，助理解 P-gp 生理 |\n\n## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)\n\n| 爭議議題 | 現況 | Evidence Level |\n|---------|------|---------------|\n| ILE 最佳劑量/療程與療效 | 多為病例系列/個案報告、缺 RCT；8 mL/kg/day 上限為經驗共識 | Level IV |\n| 雜合子（het）對 P-gp 受質的減量幅度 | 缺明確劑量指引；高劑量或多重受質仍可中毒 | Level IV |\n| 化療前常規 ABCB1 基因分型的成本效益 | 高風險犬種建議分型，但常規普及度/成本效益待評 | Level III |\n| acepromazine 是否為真正 P-gp 受質 | 臨床觀察 MDR1 犬鎮靜延長，但 P-gp 受質地位不如其他藥物明確 | Level IV |\n| ABCB1-1Δ 以外的新變異與貓 ABCB1 | 陸續描述新變異；貓 ABCB1 缺失突變已報告 | Level IV |\n\n## 九、近期實證更新 (Recent Evidence Updates)\n\n- **貓也有 ABCB1 功能缺失突變**：Mealey & Burke（2015）於貓鑑定 ABCB1 無義突變，提示部分貓對巨環內酯/化療藥可能敏感，惟臨床盛行率與意義仍在累積。〔Evidence Level IV〕\n- **藥物交互作用放大毒性**：併用 P-gp 抑制劑（如 ketoconazole、cyclosporine、部分鈣通道阻斷劑）可在「正常基因型」犬亦誘發巨環內酯毒性，用藥史評估不應只看基因型。〔Evidence Level IV〕\n- **ILE 證據持續累積但仍屬低階**：以病例系列為主、缺 RCT；療效與預後取決於劑量、嚴重度與介入時機，勿過度承諾。〔Evidence Level IV〕\n- **擴展型藥物基因體學**：犬用多基因藥物反應檢測（不限 ABCB1）發展中，朝高風險犬種術前/化療前預先分型的管理方向。〔Evidence Level IV〕\n\n> ⚠️ 上述更新（特別是貓 ABCB1、藥物交互作用與 ILE 證據層級）仍待 DVM 依個案與最新實證覆核後採用。\n',
   clinical_pearl: '看到牧羊犬血統 + 神經症狀 + 「最近吃了 XX 藥」，先把 IV lipid emulsion 拿出來、再去開檢驗單。臨床決策走「品種風險 + 用藥史」推定診斷即可，ILE 1.5 mL/kg bolus + 0.25 mL/kg/min CRI 是兩條救命指令，全院都該知道在哪個冰箱。心絲蟲預防劑在 MDR1 犬完全安全（FDA 預防劑量遠低於 100× 致毒劑量），不要因為一個帶突變的 Collie 就停掉所有伊維菌素類預防 — 心絲蟲死亡率高得多。',
   common_mistakes: [
     '誤以為「MDR1 突變的 Collie 不能用任何心絲蟲預防」— 預防劑量 (6 μg/kg/月) 安全',
@@ -7661,10 +8310,11 @@ const contentMDR1Toxicity: NodeContent = {
   ],
   drug_api_links: ['Ivermectin', 'Milbemycin', 'Moxidectin', 'Selamectin', 'Loperamide', 'Vincristine', 'Doxorubicin', 'Acepromazine', 'Digoxin', 'Atropine', 'Diazepam', 'Apomorphine'],
   references: [
-    { type: 'journal', citation: 'Mealey KL, Bentjen SA, Gay JM, Cantor GH. Ivermectin sensitivity in collies is associated with a deletion mutation of the mdr1 gene. Pharmacogenetics. 2001;11(8):727-733.', relevance: '原始 MDR1 突變發現論文' },
-    { type: 'journal', citation: 'Mealey KL, Meurs KM. Breed distribution of the ABCB1-1Δ polymorphism among dogs undergoing ABCB1 genotyping. J Am Vet Med Assoc. 2008;233(6):921-924.', relevance: '15,000+ 犬大規模族群分析，確立各品種等位基因頻率' },
-    { type: 'journal', citation: 'Geyer J, Janko C. Treatment of MDR1 mutant dogs with macrocyclic lactones. Curr Pharm Biotechnol. 2012;13(6):969-986.', relevance: '開放取用回顧：MDR1 受質藥物清單、安全劑量、ILE 治療準則' },
-    { type: 'journal', citation: 'Wright HM, Chen AV, Talcott PA, et al. Intravenous fat emulsion as treatment for ivermectin toxicosis in three dogs homozygous for the ABCB1-1Δ gene mutation. J Vet Emerg Crit Care. 2011;21(6):666-672.', relevance: 'ILE 治療純合子 MDR1 突變犬 ivermectin 中毒的關鍵案例系列' },
+    { type: 'journal', citation: 'Mealey KL, Bentjen SA, Gay JM, Cantor GH. Ivermectin sensitivity in collies is associated with a deletion mutation of the mdr1 gene. Pharmacogenetics. 2001;11(8):727-733. doi:10.1097/00008571-200111000-00012', relevance: '原始 MDR1 突變發現論文' },
+    { type: 'journal', citation: 'Mealey KL, Meurs KM. Breed distribution of the ABCB1-1Δ (multidrug sensitivity) polymorphism among dogs undergoing ABCB1 genotyping. J Am Vet Med Assoc. 2008;233(6):921-924. doi:10.2460/javma.233.6.921', relevance: '大規模族群分析，確立各品種帶因率' },
+    { type: 'journal', citation: 'Geyer J, Janko C. Treatment of MDR1 mutant dogs with macrocyclic lactones. Curr Pharm Biotechnol. 2012;13(6):969-986. doi:10.2174/138920112800399301', relevance: '回顧：MDR1 受質藥物清單、安全劑量、ILE 治療準則' },
+    { type: 'journal', citation: 'Wright HM, Chen AV, Talcott PA, et al. Intravenous fat emulsion as treatment for ivermectin toxicosis in three dogs homozygous for the ABCB1-1Δ gene mutation. J Vet Emerg Crit Care. 2011;21(6):666-672. doi:10.1111/j.1476-4431.2011.00687.x', relevance: 'ILE 治療純合子 MDR1 突變犬 ivermectin 中毒的關鍵案例系列' },
+    { type: 'journal', citation: 'Mealey KL, Burke NS. Identification of a nonsense mutation in feline ABCB1. J Vet Pharmacol Ther. 2015;38(5):429-433. doi:10.1111/jvp.12212', relevance: '貓 ABCB1 功能缺失突變的鑑定（近期實證）' },
     { type: 'journal', citation: 'Bates N, Chatterton J, Robbins C, et al. Lipid infusion in the management of poisoning: a report of 6 canine cases. Vet Rec. 2013;172(13):339.', relevance: '英國毒物中心 ILE 病例系列，確立 8 mL/kg/day 上限' },
     { type: 'web', citation: 'Washington State University Veterinary Clinical Pharmacology Lab — MDR1 Testing. https://vcpl.vetmed.wsu.edu/', relevance: '官方基因檢測單位（頰部拭子 USD 60、3-7 工作天）' },
     { type: 'web', citation: 'University of California Davis Veterinary Genetics Laboratory — MDR1. https://vgl.ucdavis.edu/test/mdr1', relevance: '北美第二大基因檢測中心（USD 70）' },
@@ -7816,7 +8466,7 @@ const contentObesity: NodeContent = {
 const contentVaccination: NodeContent = {
   id: 'CONTENT-IM-L5-005',
   node_id: 'IM-L5-005',
-  version: 1,
+  version: 2,
   summary:
     '犬貓疫苗接種以「核心 vs 非核心疫苗」為核心架構：核心疫苗（犬 CDV/CAV/CPV/狂犬病；貓 FPV/FHV-1/FCV/狂犬病）每隻動物都應施打，非核心疫苗依生活型態與地區風險評估。幼齡系列須在滿 16 週齡後完成最後一劑以突破母源抗體，成年核心 MLV 多採每 3 年追加，狂犬病依當地法規。現行準則為 WSAVA 2024（取代 2016），AAHA 2024 已將鉤端螺旋體列為核心。台灣自 2013 鼬獾狂犬病再現後狂犬病疫苗具法定重要性，且鉤端螺旋體與心絲蟲為本地流行病。',
   learning_objectives: [
@@ -7847,7 +8497,7 @@ const contentVaccination: NodeContent = {
 
 **犬—核心**：犬瘟熱（CDV）、犬腺病毒（CAV-2，交叉保護 CAV-1 傳染性肝炎）、犬小病毒（CPV-2）、狂犬病（流行/法定地區為核心）。
 **犬—非核心（風險導向）**：鉤端螺旋體、博德氏菌、副流感（CPiV）、犬流感（CIV）、萊姆病（地區性）。
-- ⚠️ **更新**：**AAHA 2022 於 2024 年更新，將鉤端螺旋體改列為會外出犬隻（≥12 週齡）的核心疫苗**（依 ACVIM/WSAVA 共識）。對台灣（鉤端螺旋體流行）尤其相關——應視為核心/強烈建議，而非傳統「非核心」。
+- ⚠️ **更新**：**AAHA 2022 於 2024 年更新，將鉤端螺旋體廣泛改列為犬核心疫苗（≥12 週齡；不再僅限「戶外/生活型態」族群）**（反映地理擴散與人畜共通風險）。對台灣（鉤端螺旋體流行）尤其相關——應視為核心/強烈建議，而非傳統「非核心」。
 
 **貓—核心**：貓泛白血球減少症（FPV）、貓皰疹病毒（FHV-1）、貓卡里西病毒（FCV）、狂犬病（流行/法定地區）。
 **貓—非核心/情境**：貓白血病（**FeLV——2020 AAHA/AAFP 建議所有 <1 歲幼貓為核心**，成貓再依風險）、披衣菌、博德氏菌。
@@ -7902,6 +8552,39 @@ const contentVaccination: NodeContent = {
 ## 八、廣義預防醫學 (Broader Preventive Medicine)
 
 疫苗是健康計畫的一根支柱，其餘包括：**心絲蟲預防**（每月巨環內酯，台灣流行）、**腸道寄生蟲控制**（蛔/鉤/鞭蟲、絛蟲，多具人畜共通）、**外寄生蟲控制**（蚤/蜱——壁蝨媒介疾病＋跳蚤過敏）、**定期健康檢查**（即使當年無核心疫苗到期，年度回診仍是關鍵接觸點——「年度健檢，而非年度打針」），以及營養、牙科與生殖諮詢。
+
+## 九、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 血清保護相關性（serologic correlates of protection）/ 抗體效價 | 核心 MLV 抗原以抗體效價替代自動補種 | 人醫疫苗學成熟概念，獸醫犬 CDV/CAV/CPV、貓 FPV 已採用 |
+| 免疫持續期（DOI）研究驅動延長補種間隔 | 由「每年」改「每 3 年」核心補種 | 人醫長 DOI 概念，獸醫挑戰試驗支持三年制 |
+| 重組/載體與 mRNA 疫苗平台 | 非佐劑貓疫苗降 FISS；新世代犬貓疫苗 | 人醫 mRNA/載體成熟，獸醫金絲雀痘載體已上市、mRNA 研發中 |
+| 疫苗藥物警戒與「過度接種」溝通 | 不良反應通報系統、循證衛教對抗疫苗猶豫 | 人醫 pharmacovigilance／疫苗信心框架可借鏡 |
+
+## 十、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 核心三年制 vs 年年補打 | 三年制有挑戰試驗與 DOI 支持，但臨床/飼主習慣仍年打 | Level I-II |
+| 效價檢測 vs 自動補種 | 對核心 MLV 與保護相關性高；負效價判讀、成本/可近性與適用範圍仍爭議 | Level II |
+| 鉤端螺旋體核心化範圍 | AAHA 2024 廣泛列核心；實際施打受地區流行與不良反應顧慮影響 | Level III |
+| 貓 FeLV 核心化（幼貓 vs 生活型態） | 2020 AAHA/AAFP 建議 <1 歲幼貓核心，成貓依風險；長期成本效益待評 | Level III |
+| 非佐劑/重組貓疫苗是否真降 FISS | 生物學合理、趨勢採用，但風險降低未經大型流病確證 | Level III |
+
+## 十一、近期實證更新 (Recent Evidence Updates)
+
+### 全球準則世代更替（WSAVA 2024）
+WSAVA 2024（Squires）取代 2016（Day），重申核心/非核心架構、幼齡系列末劑 ≥16 週、核心 MLV 三年制與效價檢測定位，為現行全球通用依據。
+
+### 鉤端螺旋體核心化（AAHA 2024）
+AAHA 2022 犬準則之 2024 更新將鉤端螺旋體廣泛改列核心（反映地理擴散與人畜共通風險）；對台灣（鉤端流行）尤其切題。
+
+### 貓疫苗：FeLV 幼貓核心與非佐劑優先
+2020 AAHA/AAFP 將 FeLV 列為 <1 歲幼貓核心；並推動非佐劑/重組疫苗 + 遠端/尾部注射以降 FISS（ABCD 2015；見 FISS 節點）。
+
+### 從「年度打針」到「年度健檢」
+預防醫學重心由疫苗轉向整體健康計畫——心絲蟲/腸道/外寄生蟲控制、年度健檢接觸點、營養與牙科；即使當年無核心疫苗到期仍應年度評估。
 `,
   clinical_pearl:
     '核心 MLV 抗原（犬 CDV/CAV/CPV；貓 FPV）的抗體效價是「是否受保護」的可靠替代指標——但僅限這些抗原。效價無法用於判斷鉤端螺旋體/博德氏菌是否需補打，也絕不能用來規避法定的狂犬病補種。',
@@ -7924,7 +8607,7 @@ const contentVaccination: NodeContent = {
   references: [
     { type: 'guideline', citation: 'Squires RA, Crawford C, Marcondes M, Whitley N. 2024 guidelines for the vaccination of dogs and cats (WSAVA Vaccination Guidelines Group). J Small Anim Pract. 2024;65(5):277-316. doi:10.1111/jsap.13718.', relevance: '現行全球通用犬貓疫苗準則（取代 2016 Day 版）：核心/非核心、幼齡系列、每 3 年追加' },
     { type: 'guideline', citation: 'Day MJ, Horzinek MC, Schultz RD, Squires RA. WSAVA Guidelines for the vaccination of dogs and cats. J Small Anim Pract. 2016;57(1):E1-E45. doi:10.1111/jsap.2_12431.', relevance: '奠基性 WSAVA 2016 準則（已被 2024 取代，仍為重要概念參考）：核心/非核心與母源抗體干擾概念' },
-    { type: 'guideline', citation: 'Ellis J, Marziani E, Aziz C, et al. 2022 AAHA Canine Vaccination Guidelines (updated 2024: leptospirosis reclassified as core for outdoor dogs). J Am Anim Hosp Assoc. 2022;58(5):213-230.', relevance: '美國 AAHA 犬疫苗準則；2024 更新將鉤端列核心，對台灣（鉤端流行）高度相關' },
+    { type: 'guideline', citation: 'Ellis J, Marziani E, Aziz C, et al. 2022 AAHA Canine Vaccination Guidelines (2024 Update). J Am Anim Hosp Assoc. 2024;60(6). doi:10.5326/jaaha-ms-7468.', relevance: '美國 AAHA 犬疫苗準則 2024 更新：將鉤端螺旋體廣泛列核心，對台灣（鉤端流行）高度相關' },
     { type: 'guideline', citation: 'Stone AES, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg. 2020;22(9):813-830. doi:10.1177/1098612X20941784.', relevance: '現行貓疫苗準則：貓核心疫苗、幼貓 FeLV 核心建議、FISS 與注射部位' },
     { type: 'guideline', citation: 'Hartmann K, Day MJ, Thiry E, et al. Feline injection-site sarcoma: ABCD guidelines on prevention and management. J Feline Med Surg. 2015;17(7):606-613. doi:10.1177/1098612X15588451.', relevance: '貓注射部位肉瘤（FISS）預防與處置：四肢遠端/尾部注射、非佐劑優先、3-2-1 追蹤' },
     { type: 'journal', citation: 'Hsu CH, Chu YH, Wang CY, et al. Public Health Responses to Reemergence of Animal Rabies, Taiwan, July 16–December 28, 2013. PLOS ONE. 2015;10(7):e0132160. doi:10.1371/journal.pone.0132160.', relevance: '台灣 2013 鼬獾狂犬病再現紀錄，支持台灣狂犬病疫苗的法定與臨床重要性（法規細節仍須查核）' },
@@ -7937,7 +8620,7 @@ const contentVaccination: NodeContent = {
 const contentAntimicrobialStewardship: NodeContent = {
   id: 'CONTENT-IM-L5-006',
   node_id: 'IM-L5-006',
-  version: 1,
+  version: 2,
   summary:
     '抗菌藥物管理（Antimicrobial Stewardship）是一套跨越疾病的用藥原則，目標是在對的時機、用對的藥、用對的劑量與療程，以減緩抗藥性（AMR）這個 One Health 危機。小動物臨床中 MRSP、ESBL 大腸桿菌等多重抗藥性病原已普遍，每一次不必要的抗生素都會加速抗藥性篩選。核心做法：先判斷是否真的需要抗生素、優先送培養與藥敏（C&S）、選最窄效有效藥、用最短有效療程，並把氟喹諾酮與第三/四代頭孢等高優先重要抗生素（HPCIA）留作後線。',
   learning_objectives: [
@@ -7993,6 +8676,8 @@ const contentAntimicrobialStewardship: NodeContent = {
 4. **療程——越短越好**：如單純散發性膀胱炎 **3–5 天**（ISCAID 2019）取代舊 10–14 天；治到臨床緩解、不用任意長療程。
 5. **局部優先**：表淺膿皮症與外耳炎用 chlorhexidine/局部抗菌，能完全避免全身性抗生素就避免（ISCAID 2025）。
 
+[圖片:抗生素使用決策流程——需要嗎？→ 投藥前 C&S → 最窄效有效藥 → 最短有效療程 → 藥敏後降階]
+
 ## 四、常見濫用驅動 (Drivers of Misuse)
 
 預防性用藥過度（尤其術後無indication延長）、把定殖/污染當感染治療、飼主壓力/「以防萬一」、療程錯誤（太長；或太短復發）、復發難治卻跳過 C&S、反射性使用廣效/長效便利藥（如 cefovecin、氟喹諾酮）。
@@ -8014,6 +8699,25 @@ const contentAntimicrobialStewardship: NodeContent = {
 ## 七、臨床要訣與常見錯誤
 
 見 key_points 與 common_mistakes。最有力的管理介入常只要五分鐘：**先細胞學、再培養、最後才考慮抗生素**——膿皮症抹片看到球菌，往往就足以導向「只用局部抗菌」而省下整個全身性療程。
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 最佳療程長度（「越短越好」但多短才安全） | 單純性膀胱炎 3-5 天已有證據；多數適應症缺前瞻最短療程數據，傾向「治到臨床緩解即停」 | Level II |
+| 生物標記導向用藥（犬 CRP、procalcitonin） | 可能輔助「要不要開／何時停」抗生素，但獸醫尚未常規化、切點未定 | Level III |
+| MRSP 膿皮症純局部治療的可行性 | 表淺/表面膿皮症局部優先（chlorhexidine）已獲 ISCAID 2025 支持、可避全身性抗生素；深部仍需系統性 | Level II |
+| 急性（非出血）腹瀉是否用 metronidazole | 越來越多證據顯示無臨床益處且擾動核心菌叢 → 不建議常規使用 | Level II |
+| 無症狀菌尿是否治療 | ISCAID 不建議常規治療多數無症狀菌尿 | Level II |
+
+## 九、近期實證更新 (Recent Evidence)
+
+- **膿皮症「局部優先」成為現行標準**：ISCAID 2025 犬膿皮症指引（Loeffler 2025，取代 Hillier 2014）強調投藥前細胞學、**表淺/表面膿皮症以局部抗菌為第一線**、保留全身性抗生素——直接減少 HPCIA 與全身用量。
+- **急性腹瀉不該反射開抗生素**：近期研究顯示 metronidazole 對犬急性腹瀉**無臨床益處、且擾動核心腸道菌叢**（Stübing 2024 vs 合生元；Ellis 2023 回顧）——多數非出血性急性腹瀉應避免抗生素、優先支持療法/合生元。
+- **管理介入確實能降低用量**：抗菌藥物管理介入（指引＋稽核回饋）可改變獸醫處方行為、減少不必要與廣效抗生素使用（Walker 2022）——證明 stewardship 不只是口號。
+- **國際分級持續收緊**：WOAH（2025）與 WHO（2024）重要性清單持續把**氟喹諾酮、第三/四代頭孢**列為最高優先、應保留；歐洲 ENOVAT 等網絡推動實證化的抗菌治療指引。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；台灣抗生素處方/管制法規請向農業部查核；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。
 `,
   clinical_pearl:
     '最有效的管理介入往往只要五分鐘：投藥前先做院內細胞學。膿皮症抹片看到球菌，常常就足以把治療導向「只用局部抗菌」而省下一整個療程的全身性抗生素——先細胞學、再培養、最後才考慮抗生素。',
@@ -8041,6 +8745,320 @@ const contentAntimicrobialStewardship: NodeContent = {
     { type: 'guideline', citation: 'World Organisation for Animal Health (WOAH/OIE). List of Antimicrobial Agents of Veterinary Importance, 2025 ed.; cf. WHO Medically Important Antimicrobials, 2024.', relevance: '國際抗生素重要性分級；氟喹諾酮與三/四代頭孢屬最高優先，應保留、不可當預防或第一線' },
     { type: 'reference', citation: 'BSAVA/SAMSoc Guide to Responsible Use of Antibacterials: PROTECT ME. PROTECT 2012; PROTECT ME 2018; updated 2023/2024.', relevance: '實務層級負責任用藥工具與口訣（含「無需抗生素」溝通表單），可落地為診所管理政策' },
     { type: 'journal', citation: 'van Duijkeren E, Catry B, Greko C, et al. Review on methicillin-resistant Staphylococcus pseudintermedius. J Antimicrob Chemother. 2011;66(12):2705-2714. doi:10.1093/jac/dkr367.', relevance: 'MRSP 流行病學與多重抗藥性代表性綜述，說明小動物多重抗藥葡萄球菌興起與人畜共通風險' },
+    { type: 'journal', citation: 'Stübing H, Suchodolski JS, Reisinger A, Werner M, et al. "The Effect of Metronidazole versus a Synbiotic on Clinical Course and Core Intestinal Microbiota in Dogs with Acute Diarrhea." Vet Sci. 2024;11(5):197. doi:10.3390/vetsci11050197', relevance: '急性腹瀉 metronidazole vs 合生元：無臨床益處且擾動核心菌叢（支持不反射用抗生素）' },
+    { type: 'journal', citation: 'Ellis C, Odunayo A, Tolbert MK. "The use of metronidazole in acute diarrhea in dogs: a narrative review." Top Companion Anim Med. 2023;56-57:100824. doi:10.1016/j.tcam.2023.100824', relevance: '犬急性腹瀉 metronidazole 使用回顧（多數不需）' },
+    { type: 'journal', citation: 'Walker B, Sánchez-Vizcaíno F, Barker EN. "Effect of an antimicrobial stewardship intervention on the prescribing behaviours of companion animal veterinarians: A pre-post study." Vet Rec. 2022;190(12):e1485. doi:10.1002/vetr.1485', relevance: '抗菌藥物管理介入確實減少不必要/廣效處方（stewardship 有效）' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 高血鈣診斷工作流程，L4 診斷型（2026-06-27 新增；review #1/#2 揪出的 IM 核心「以症狀為導向」缺口）。臨床內容待 DVM 覆核。 */
+const contentHypercalcemiaWorkup: NodeContent = {
+  id: 'CONTENT-IM-L4-006',
+  node_id: 'IM-L4-006',
+  version: 2,
+  summary: '高血鈣常被偶然發現，卻可能指向嚴重疾病。第一步永遠是「以離子鈣（iCa）確認」——總鈣受白蛋白、酸鹼、脂血影響，犬的校正公式不可靠。確認後依「先腫瘤、後內分泌、再中毒/腎」的系統性鑑別（犬：淋巴瘤/肛囊腺癌/原發性副甲狀腺亢進/愛迪生氏症/腎病/維生素 D 中毒/肉芽腫；貓：特發性高血鈣最常見）。關鍵工具是「高血鈣套組」（iCa+PTH+PTHrP+維生素 D）。鐵則：診斷未明前不要給類固醇（會溶解並掩蓋淋巴瘤）。',
+  learning_objectives: [
+    '說明為何高血鈣必須以離子鈣（iCa）確認、總鈣與校正公式的侷限',
+    '運用系統性鑑別（腫瘤-內分泌-中毒-腎）建立高血鈣的鑑別清單',
+    '判讀高血鈣套組（iCa/PTH/PTHrP/維生素 D）以區分原發性副甲狀腺亢進與惡性高血鈣',
+    '辨識犬貓高血鈣最常見病因的差異（犬腫瘤為主、貓特發性最常見）',
+    '制定症狀性嚴重高血鈣的急診處置並避免「未診斷先給類固醇」的陷阱',
+  ],
+  key_points: [
+    '第一步＝以離子鈣（iCa）確認：總鈣受白蛋白/酸鹼/脂血影響，犬的校正/預測公式不可靠',
+    '犬最常見病理性病因：腫瘤（淋巴瘤、肛門囊腺癌、多發性骨髓瘤＝PTHrP 介導的惡性高血鈣）',
+    '其他犬病因：原發性副甲狀腺亢進、愛迪生氏症、慢性腎病、維生素 D 中毒、肉芽腫病',
+    '貓最常見＝特發性高血鈣（IHC），多為慢性、常合併 CaOx 結石',
+    '套組判讀：原發性副甲狀腺亢進＝iCa↑＋PTH 不當地正常/升高；惡性高血鈣＝PTH 受抑＋PTHrP↑',
+    'Ca×P 乘積 > 60-70 → 軟組織/腎臟礦化、AKI 風險；慢性高血鈣→CaOx 結石、PU/PD',
+    '🔴 鐵則：診斷未明前勿給糖皮質素——會溶解並掩蓋淋巴瘤、毀掉診斷',
+    '症狀性嚴重高血鈣急診：0.9% 食鹽水利尿（補足容量後 ± furosemide）、雙磷酸鹽（pamidronate IV；貓 IHC 用 alendronate PO）',
+  ],
+  body: `# 高血鈣診斷工作流程 (Approach to Hypercalcemia)
+
+## 一、檢查原理與適應症 (Principles & Indications)
+
+高血鈣常是健檢或其他原因抽血時偶然發現，但它可能是淋巴瘤、肛囊腺癌、原發性副甲狀腺亢進或愛迪生氏症的第一個線索——**不能當「順便的數字」放過**。本節是「以異常為導向」的診斷工作流程。
+
+### 第一步：以離子鈣確認（最關鍵）
+- **總鈣（tCa）會騙人**：受白蛋白、酸鹼狀態、脂血、溶血影響；**犬的「校正鈣」公式不可靠**、不應用來決策（Lebastard 2021）。
+- **離子鈣（iCa）才是生物活性、診斷標準**：厭氧採血、盡快測定。先確認「真的有高血鈣」再往下查。
+
+### 適應症
+| 情境 | 為何要走高血鈣工作流程 |
+|------|----------------------|
+| 偶然發現 tCa 升高 | 先 iCa 確認真偽 |
+| PU/PD、厭食、嘔吐、虛弱 | 高血鈣為可逆病因之一 |
+| CaOx 尿石、反覆泌尿結石 | 慢性高血鈣（尤其貓 IHC） |
+| 已知腫瘤（淋巴瘤/肛囊腺癌） | 監測惡性高血鈣 |
+| 不明虛脫/低血壓 | 警覺愛迪生氏症 |
+
+## 二、判讀要點 (Interpretation)
+
+### 系統性鑑別（先腫瘤、後內分泌、再中毒/腎）
+犬最重要的是**腫瘤**：
+
+| 類別 | 病因 | 機轉/線索 |
+|------|------|----------|
+| **腫瘤（犬最常見病理性）** | 淋巴瘤、**肛門囊腺癌（ASAC）**、多發性骨髓瘤、其他癌 | 惡性高血鈣（HHM）＝PTHrP 介導；查肛門腺、淋巴結 |
+| 原發性副甲狀腺亢進（PHPT） | 副甲狀腺腺瘤 | iCa↑＋PTH 不當正常/升高；老年犬、頸部超音波 |
+| **愛迪生氏症** | hypoadrenocorticism | 常可逆！查 Na:K、basal cortisol/ACTH stim |
+| 腎病 | CKD/AKI | Ca-P 失調；iCa 可能反而低或正常 |
+| 維生素 D 中毒 | 膽鈣化醇鼠藥、calcipotriene 乾癬藥膏、植物 | 高血磷＋高血鈣；毒物史 |
+| 肉芽腫病 | 黴菌（芽生菌/組織漿菌） | 1,25-vit D 增生 |
+| 特發性（**貓最常見**） | feline IHC | 慢性、常 CaOx 結石、排除性診斷 |
+
+### 高血鈣套組（iCa + PTH + PTHrP + 維生素 D 代謝物）
+這是區分機轉的關鍵：
+
+| 診斷 | iCa | PTH | PTHrP |
+|------|-----|-----|-------|
+| 原發性副甲狀腺亢進 | ↑ | **不當地正常或升高** | 低/陰性 |
+| 惡性高血鈣（HHM） | ↑ | **受抑（低）** | **升高** |
+| 維生素 D 中毒 | ↑ | 受抑 | 陰性（查 25-OH-D/calcitriol） |
+
+> 註：iCa:P 比值近期被研究用於氮血症犬預測腫瘤（McDaniel 2023）；惟為輔助、非取代套組。
+
+### 診斷流程
+1. **iCa 確認** → 2. 病史/理學（肛門腺指診、淋巴結、毒物/藥物、品種年齡）→ 3. 最小資料庫（CBC/生化含磷/UA）→ 4. **高血鈣套組**（iCa/PTH/PTHrP/vit D）→ 5. 影像（胸腹 X 光/超音波找腫瘤、頸部超音波找副甲狀腺）→ 6. 特異檢查（ACTH stim 查愛迪生、淋巴結/骨髓 FNA）。
+
+[圖片:高血鈣診斷決策樹——iCa 確認 → 套組（PTH/PTHrP）分流 → 腫瘤/PHPT/中毒/愛迪生]
+
+## 三、常見陷阱 (Pitfalls)
+
+- **🔴 診斷未明前給類固醇**：糖皮質素會降鈣，但**會溶解並掩蓋淋巴瘤**——抽完套組、找完病因前**絕對不給**。最嚴重的陷阱。
+- **只看總鈣、用校正公式**：犬校正鈣不可靠，務必 iCa 確認；脂血/溶血/久放都會干擾。
+- **漏做肛門腺指診**：肛囊腺癌是犬惡性高血鈣常見來源，易被漏。
+- **忘了愛迪生氏症**：高血鈣＋低血鈉/高血鉀＋虛脫，是「可逆」病因，別只往腫瘤想。
+- **忽略 Ca×P 乘積**：> 60-70 有軟組織/腎礦化與 AKI 風險，需積極降鈣。
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 術中即時 PTH 監測 | 犬 PHPT 副甲狀腺切除的即時確認 | 人醫常規，獸醫送外部實驗室為主 |
+| 頸部超音波/核醫定位副甲狀腺 | 犬 PHPT 術前/微創消融定位 | 人醫標準，獸醫頸超漸普及、消融少數中心 |
+| 雙磷酸鹽（zoledronate/pamidronate） | 犬貓惡性/難治高血鈣降鈣 | 人醫腫瘤高血鈣標準，獸醫 pamidronate IV / alendronate PO（貓 IHC）證據增加 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 貓特發性高血鈣（IHC）的最佳一線治療 | 高纖/腎處方飲食 vs 雙磷酸鹽（alendronate）順序未定 | Level III |
+| iCa:P 比值作為腫瘤預測指標的臨床價值 | 近期於氮血症犬有預測力，但切點/外推待驗證 | Level III |
+| 原發性副甲狀腺亢進：手術 vs 超音波導引熱消融 vs 內科 | 各有適應症，缺頭對頭比較 | Level III |
+| 輕度無症狀離子高血鈣是否一律深究 | 持續性需查、單次輕微可複測；過度檢查 vs 漏診之衡量 | Level IV |
+
+## 六、近期實證更新 (Recent Evidence)
+
+- **「測 iCa、別算」獲再確認**：預測/校正鈣在犬診斷表現不足（Lebastard 2021）——持續高血鈣應直接測離子鈣、不靠公式。
+- **iCa:P 比值輔助腫瘤預測**：近期於氮血症犬，iCa:P 比值對腫瘤性高血鈣有預測價值（McDaniel 2023）；定位為輔助分流、非取代 PTH/PTHrP 套組。
+- **雙磷酸鹽於貓 IHC**：alendronate 口服對持續性離子高血鈣的貓有效（Kurtz 2022），與飲食調整並列為現行選項。
+- **分流鐵則不變**：iCa→套組（PTH/PTHrP）→影像，且**診斷前不給類固醇**仍是現行教學核心（de Brito Galvão & Schenck 2017）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
+  clinical_pearl: '高血鈣工作流程兩條保命鐵則：①「測離子鈣、不要用校正公式」——犬的校正鈣會誤導決策；②「診斷講清楚之前，絕對不給類固醇」——類固醇會把淋巴瘤溶掉、暫時壓低血鈣，看起來好轉卻毀掉確診機會。先抽完高血鈣套組（iCa/PTH/PTHrP/vit D）、做完肛門腺指診與影像，再談治療。\n\n【台灣脈絡】台灣犬高血鈣以淋巴瘤、肛囊腺癌為常見；貓門診偶見特發性高血鈣（常因 CaOx 結石或健檢發現）。PTH/PTHrP 多需送外部實驗室，採血與保存條件要先確認。',
+  common_mistakes: [
+    '只看總鈣、用校正/預測鈣公式就下結論（犬不可靠，必須離子鈣確認）',
+    '診斷未明就給糖皮質素（會溶解掩蓋淋巴瘤、毀掉診斷）',
+    '漏做肛門腺指診（肛囊腺癌是犬惡性高血鈣常見來源）',
+    '忘記愛迪生氏症這個「可逆」病因（高血鈣＋電解質異常＋虛脫）',
+    '忽略 Ca×P 乘積與腎礦化/AKI 風險，延誤積極降鈣',
+  ],
+  disease_data: null,
+  diagnostic_data: {
+    indication: ['偶然發現總鈣升高（需 iCa 確認）', 'PU/PD、厭食、虛弱的鑑別', 'CaOx 尿石/反覆泌尿結石', '已知腫瘤的惡性高血鈣監測', '不明虛脫疑愛迪生氏症'],
+    contraindication: ['無絕對禁忌；惟離子鈣樣本須厭氧處理、盡快測定，避免暴露空氣/久放影響 iCa'],
+    technique: '離子鈣：厭氧採血、盡快測定（pH 影響 iCa）。高血鈣套組：同次採血送 iCa + PTH + PTHrP + 25-OH-vit D/calcitriol（外部實驗室、注意保存）。輔以最小資料庫（CBC/生化含磷/UA）、肛門腺指診、胸腹影像、頸部超音波（副甲狀腺）。',
+    normal_findings: [
+      { finding: '離子鈣正常', description: '犬 iCa 約 1.25-1.45 mmol/L、貓約 1.1-1.4 mmol/L（依儀器）', significance: '排除真性高血鈣（總鈣升高為假象/蛋白結合）' },
+      { finding: 'PTH 正常 + iCa 正常', description: '鈣-PTH 軸正常', significance: '無原發性副甲狀腺亢進' },
+    ],
+    abnormal_findings: [
+      { finding: 'iCa↑ + PTH 受抑 + PTHrP↑', description: '惡性高血鈣（HHM）', significance: '找腫瘤：淋巴瘤、肛囊腺癌、多發性骨髓瘤' },
+      { finding: 'iCa↑ + PTH 不當地正常/升高', description: '原發性副甲狀腺亢進', significance: '老年犬副甲狀腺腺瘤；頸部超音波、手術/消融' },
+      { finding: 'iCa↑ + 高血磷 + 毒物史', description: '維生素 D 中毒', significance: '膽鈣化醇鼠藥/calcipotriene/植物；查 calcitriol' },
+      { finding: 'iCa↑ + 低血鈉/高血鉀 + 虛脫', description: '愛迪生氏症', significance: '可逆！ACTH stim 確診' },
+      { finding: '貓慢性 iCa↑ 排除其他', description: '特發性高血鈣（IHC）', significance: '常合併 CaOx 結石；飲食/雙磷酸鹽' },
+    ],
+    interpretation_guide: '1. 先 iCa 確認真性高血鈣（勿用校正公式）。2. 病史/理學＋最小資料庫找線索（肛門腺、淋巴結、毒物、電解質）。3. 高血鈣套組（PTH/PTHrP）分流：PTH 高→PHPT；PTHrP 高/PTH 低→惡性。4. 影像找腫瘤/副甲狀腺。5. 疑愛迪生即 ACTH stim。**診斷未明前不給類固醇。**',
+    pitfalls: [
+      '用總鈣/校正鈣下結論（犬不可靠）',
+      '診斷前給類固醇掩蓋淋巴瘤',
+      '離子鈣樣本暴露空氣/久放使 iCa 失準',
+      '漏做肛門腺指診與電解質（漏掉 ASAC、愛迪生）',
+    ],
+    sensitivity_specificity: '離子鈣為高血鈣的診斷標準（總鈣/校正鈣對真性高血鈣的判別不足，Lebastard 2021）。PTH/PTHrP 套組對機轉分流價值高，但須正確採樣保存。',
+    cost_benefit: '離子鈣便宜、應為第一步；高血鈣套組（PTH/PTHrP/vit D）成本中等但對機轉分流關鍵，能避免錯誤治療（尤其避免未診斷先給類固醇）。',
+  },
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '診斷流程段落後', type: 'flowchart', description: '高血鈣分流決策樹（iCa→PTH/PTHrP→腫瘤/PHPT/中毒/愛迪生）' },
+    { position: '高血鈣套組表後', type: 'comparison_table', description: 'PTH/PTHrP 判讀對照表' },
+  ],
+  interactive_placeholders: [
+    { position: '判讀段落', type: 'interactive_staging', description: '輸入 iCa/PTH/PTHrP 自動建議鑑別方向' },
+  ],
+  drug_api_links: ['Prednisolone', 'Furosemide', 'Pamidronate', 'Alendronate'],
+  references: [
+    { type: 'journal', citation: 'Messinger JS, Windham WR, Ward CR. "Ionized Hypercalcemia in Dogs: A Retrospective Study of 109 Cases (1998-2003)." J Vet Intern Med. 2009;23(3):514-519. doi:10.1111/j.1939-1676.2009.0288.x', relevance: '犬離子高血鈣病因分布回顧（腫瘤為主）' },
+    { type: 'journal', citation: 'de Brito Galvão JF, Schenck PA, Chew DJ. "A Quick Reference on Hypercalcemia." Vet Clin North Am Small Anim Pract. 2017;47(2):241-248. doi:10.1016/j.cvsm.2016.10.016', relevance: '高血鈣鑑別與工作流程快速參考' },
+    { type: 'journal', citation: 'de Brito Galvão JF, Parker V, Schenck PA, Chew DJ. "Update on Feline Ionized Hypercalcemia." Vet Clin North Am Small Anim Pract. 2017;47(2):273-292. doi:10.1016/j.cvsm.2016.09.004', relevance: '貓特發性離子高血鈣更新' },
+    { type: 'journal', citation: 'Lebastard M, Cuq B, Sharman MJ, et al. "Diagnostic performance of predicted ionized calcium in dogs with total hypercalcemia and total hypocalcemia." Vet Clin Pathol. 2021;50(4):515-524. doi:10.1111/vcp.13024', relevance: '預測/校正鈣在犬診斷表現不足→應測離子鈣（近期）' },
+    { type: 'journal', citation: 'McDaniel K, Guess SC, Haines JM, et al. "Ionized calcium-to-phosphorus ratio predicts neoplasia in azotemic dogs: a retrospective study of 105 cases." J Am Vet Med Assoc. 2023;261(11):1-5. doi:10.2460/javma.23.01.0039', relevance: 'iCa:P 比值預測氮血症犬腫瘤性高血鈣（近期）' },
+    { type: 'journal', citation: 'Kurtz M, Desquilbet L, Maire J, et al. "Alendronate treatment in cats with persistent ionized hypercalcemia: A retrospective cohort study of 20 cases." J Vet Intern Med. 2022;36(6). doi:10.1111/jvim.16508', relevance: '貓持續性離子高血鈣口服雙磷酸鹽治療（近期）' },
+    { type: 'textbook', citation: 'Feldman EC, Nelson RW, Reusch C, Scott-Moncrieff JC. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapter: Hypercalcemia and Primary Hyperparathyroidism.', relevance: '鈣代謝障礙與原發性副甲狀腺亢進完整教材' },
+  ],
+  is_current: true,
+  created_at: now,
+};
+
+/** 多渴多尿（PU/PD）診斷工作流程與尿崩症，L4 診斷型（2026-06-27 新增；review #1/#2 揪出的 IM 核心「以症狀為導向」缺口）。臨床內容待 DVM 覆核。 */
+const contentPUPDWorkup: NodeContent = {
+  id: 'CONTENT-IM-L4-007',
+  node_id: 'IM-L4-007',
+  version: 2,
+  summary: 'PU/PD（多尿/多渴）是門診最常見主訴之一，背後可能是 CKD、糖尿病、Cushing、子宮蓄膿、高血鈣等一長串疾病。鐵則：①先確認「真的是 PU/PD」（飲水 > ~100 mL/kg/day、尿量 > ~50 mL/kg/day，與頻尿/失禁區分）；②以最小資料庫＋臨床分流「先排除常見病」；③常見病全陰性才查尿崩症。區分中樞性尿崩症（CDI）、腎性尿崩症（NDI）與原發性多渴可用改良式水剝奪試驗（風險高、禁忌氮血/脫水）或較安全的 DDAVP（desmopressin）試驗；惟結果為支持性、非絕對（髓質沖刷與部分反應會重疊）。',
+  learning_objectives: [
+    '確認真性 PU/PD 並與頻尿、尿失禁、行為性喝水區分',
+    '依機轉（滲透性利尿/髓質沖刷/ADH 抗性/ADH 缺乏/原發性多渴）建立 PU/PD 病因鑑別',
+    '運用最小資料庫與臨床分流「先排除常見病」（CKD/DM/Cushing/高血鈣/子宮蓄膿等）',
+    '說明改良式水剝奪試驗與 DDAVP 試驗如何區分 CDI/NDI/原發性多渴及其侷限',
+    '辨識中樞性尿崩症的病因與 DDAVP 治療，及避免在氮血/脫水病患貿然做水剝奪試驗',
+  ],
+  key_points: [
+    '先確認真性 PU/PD：飲水 > ~100 mL/kg/day、尿量 > ~50 mL/kg/day（犬）；與頻尿/失禁/行為性喝水區分',
+    '診斷順序鐵則：確認真性 → 先排除常見病 → 最後才查尿崩症',
+    'PU/PD 機轉：滲透性利尿（DM）、髓質沖刷、ADH 抗性（腎性：高血鈣/子宮蓄膿/Cushing/低血鉀）、ADH 缺乏（CDI）、原發性多渴',
+    '最小資料庫：CBC、生化（含血鈣/血鉀/血糖/肝腎）、UA（USG+沉渣+培養）、貓加 T4',
+    '🔴 別跳過常見病直接做水剝奪試驗——MWDT 在氮血/脫水病患危險、且髓質沖刷會扭曲結果',
+    'DDAVP 試驗（較安全替代）：CDI 明顯改善、NDI 反應差、原發性多渴介於之間；結果為支持性非絕對',
+    '中樞性尿崩症（CDI）對 DDAVP 反應好；病因含特發性、外傷、腦下垂體/下視丘腫瘤；原發性（先天）NDI 罕見',
+  ],
+  body: `# 多渴多尿 (PU/PD) 診斷工作流程與尿崩症 (Diabetes Insipidus)
+
+## 一、檢查原理與適應症 (Principles & Indications)
+
+PU/PD 背後可能是 CKD、糖尿病、Cushing、子宮蓄膿、高血鈣等一長串疾病——**先確認「真的是 PU/PD」、再「先排除常見病、最後才查尿崩症」**。
+
+### 第一步：確認真性 PU/PD
+- 真性多尿：尿量 > ~50 mL/kg/day；真性多渴：飲水 > ~100 mL/kg/day（犬）。
+- **先和這些區分**：頻尿（pollakiuria，下泌尿道）、尿失禁、行為性喝水。
+- 客觀化：飲水量日誌 + 多次 USG。
+
+### 適應症
+| 情境 | 為何走 PU/PD 工作流程 |
+|------|---------------------|
+| 飼主主訴喝多尿多 | 確認真性 PU/PD、找病因 |
+| USG 持續偏低（< 1.030 犬 / < 1.035 貓） | 濃縮力異常 |
+| 體重下降/多食合併 PU/PD | DM/Cushing/甲亢（貓） |
+
+## 二、判讀要點 (Interpretation)
+
+### PU/PD 的機轉與病因（先常見、後罕見）
+| 機轉 | 病因 |
+|------|------|
+| 滲透性利尿 | 糖尿病（糖尿）、阻塞後利尿 |
+| 髓質沖刷（medullary washout） | 長期多尿、低蛋白/低鈉飲食 |
+| **ADH 抗性（腎性，最常見的「次發」）** | **高血鈣**、子宮蓄膿/腎盂腎炎（E. coli 內毒素）、Cushing、低血鉀 |
+| ADH 缺乏 | **中樞性尿崩症（CDI）** |
+| 原發性多渴 | 行為性/精神性 polydipsia |
+
+### 診斷流程（先排除常見病）
+1. **最小資料庫**：CBC、生化（含血鈣、血鉀、血糖、肝腎指標）、UA（USG + 沉渣 + 培養）、T4（貓）。
+2. **依線索分流**：糖尿→DM；ALP↑/壺腹腹→Cushing（LDDST）；高血鈣→高血鈣工作流程；未絕育母犬→子宮蓄膿超音波；低 USG+氮血→CKD（IRIS 分期）。
+3. **常見病全陰性後** → 才考慮尿崩症（CDI/NDI）vs 原發性多渴。
+
+[圖片:PU/PD 診斷決策樹——確認真性→最小資料庫→分流常見病→（全陰）水剝奪/DDAVP 試驗]
+
+### 區分 CDI / NDI / 原發性多渴
+- **改良式水剝奪試驗（MWDT）**：觀察脫水時 USG 反應、再給 DDAVP 看是否進一步濃縮。**風險高、禁忌於氮血/脫水/已知病因**；髓質沖刷會讓結果失準。
+- **DDAVP（desmopressin）試驗（較安全的實務替代）**：給 DDAVP 5-7 天，看飲水量/USG 反應——**CDI 明顯改善**；NDI 反應差；**原發性多渴介於之間（水剝奪下可能部分濃縮）**。結果為**支持性、非絕對**（髓質沖刷與部分反應會重疊）。
+
+## 三、常見陷阱 (Pitfalls)
+
+- **跳過常見病直接做水剝奪試驗**：MWDT 在氮血/脫水病患危險；務必先排除 CKD/DM/Cushing/高血鈣/子宮蓄膿。
+- **單次 USG 下結論**：USG 會波動、需多次；剛喝完水的低 USG 不代表濃縮力異常。
+- **忽略子宮蓄膿**：未絕育母犬 PU/PD＋白血球升高要先想到，超音波確認。
+- **把原發性多渴當 CDI**：兩者 DDAVP/水剝奪反應可重疊，需綜合判斷、必要時行為評估。
+- **髓質沖刷干擾**：長期多尿造成髓質溶質流失，使動物即使 ADH 正常也無法充分濃縮、扭曲試驗結果。
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| Copeptin（ADH 替代標記）+ 高張鹽水刺激 | 犬貓 CDI vs 原發性多渴的客觀分流、取代高風險 MWDT | 人醫已取代傳統水剝奪試驗，獸醫 copeptin 檢測尚未商業化 |
+| Aquaporin-2 尿液檢測 | 評估腎性 ADH 反應（NDI） | 人醫研究指標，獸醫探索階段 |
+| 腦下垂體 MRI 定位 CDI 病灶 | 犬 CDI 找腫瘤/結構性病因 | 人醫標準，獸醫轉介中心可行 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 改良式水剝奪試驗 vs DDAVP 試驗作為一線分流 | MWDT 風險高、漸被 DDAVP 試驗取代，但缺標準化方案 | Level III |
+| 原發性多渴與部分性 CDI 的鑑別 | DDAVP/水剝奪反應重疊、髓質沖刷干擾，無單一決定性試驗 | Level IV |
+| Copeptin 等新標記在犬貓的價值 | 人醫已用，獸醫尚無商業化檢測與切點 | Level IV |
+
+## 六、近期實證更新 (Recent Evidence)
+
+- **先排除常見病、別急著做水剝奪**：現行實務強調 PU/PD 應以最小資料庫＋臨床分流排除 CKD/DM/Cushing/高血鈣/子宮蓄膿等常見病，**尿崩症是排除後的診斷**（McGrotty 2019）。
+- **DDAVP 試驗取代高風險 MWDT 的趨勢**：改良式水剝奪試驗風險高（脫水/高血鈉），實務漸以較安全的 DDAVP 試驗分流 CDI；惟反應為支持性、非絕對。
+- **CKD 是 PU/PD 最常見病因之一**：以 IRIS（2023 修訂）分期評估濃縮力喪失與氮血症，為 PU/PD 工作流程的關鍵分支。
+- **客觀分流的未來**：人醫已以 copeptin＋高張鹽水刺激取代傳統水剝奪試驗（van Vonderen 的 ADH 生理研究奠基了犬 PU/PD 病生理理解）；獸醫尚待商業化檢測。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
+  clinical_pearl: 'PU/PD 工作流程的順序鐵則：「確認真性 → 先排除常見病 → 最後才查尿崩症」。最常見陷阱是看到低 USG 就直接做改良式水剝奪試驗——在已氮血或脫水的病患很危險。先用最小資料庫（含血鈣、血糖、UA/培養、Cushing 篩檢、未絕育母犬查子宮蓄膿）把常見病掃一輪；全陰性才輪到 DDAVP 試驗分中樞性尿崩症、腎性尿崩症與原發性多渴——而且結果是支持性、不是絕對。\n\n【台灣脈絡】台灣犬貓 PU/PD 門診常見，CKD（尤其老貓）、糖尿病、Cushing 為大宗；未絕育母犬要警覺子宮蓄膿。Copeptin 等新標記尚未在台灣商業化。',
+  common_mistakes: [
+    '看到低 USG 就直接做改良式水剝奪試驗（氮血/脫水病患危險，先排除常見病）',
+    '單次 USG 就下結論（USG 會波動，需多次；剛喝水後低 USG 不等於濃縮異常）',
+    '漏掉未絕育母犬的子宮蓄膿（PU/PD＋白血球升高要先想到）',
+    '把原發性多渴當中樞性尿崩症（DDAVP/水剝奪反應可重疊，需綜合判斷）',
+    '忽略髓質沖刷對水剝奪試驗結果的干擾',
+  ],
+  disease_data: null,
+  diagnostic_data: {
+    indication: ['飼主主訴喝多尿多（先確認真性 PU/PD）', 'USG 持續偏低', '體重下降/多食合併 PU/PD', '不明原因 PU/PD 排除常見病後查尿崩症'],
+    contraindication: ['改良式水剝奪試驗禁忌於氮血、脫水、已知病因或疑髓質沖刷者（危險）——此時改用 DDAVP 試驗'],
+    technique: '先以飲水量日誌＋多次 USG 確認真性 PU/PD。最小資料庫：CBC、生化（血鈣/血鉀/血糖/肝腎）、UA（USG+沉渣+培養）、貓加 T4。依線索分流常見病（DM/Cushing/高血鈣/子宮蓄膿/CKD）。常見病全陰性後分流尿崩症：改良式水剝奪試驗（住院密切監測體重/USG/電解質，禁忌氮血脫水）或較安全的 DDAVP 試驗（門診 5-7 天觀察飲水/USG 反應）。',
+    normal_findings: [
+      { finding: 'USG 可濃縮（> 1.030 犬 / > 1.035 貓）', description: '禁水或自然狀態下尿可濃縮', significance: '濃縮力正常，PU/PD 機轉存疑或為行為性' },
+      { finding: '最小資料庫無異常', description: 'CBC/生化/UA 正常', significance: '需進一步分流尿崩症 vs 原發性多渴' },
+    ],
+    abnormal_findings: [
+      { finding: '糖尿 + 高血糖', description: 'UA 糖尿、血糖持續升高', significance: '糖尿病（滲透性利尿）' },
+      { finding: '低 USG + 氮血', description: 'USG < 1.030 + BUN/Cre 升高', significance: 'CKD（IRIS 分期）' },
+      { finding: '高血鈣', description: 'iCa 升高', significance: '走高血鈣工作流程（腎性 ADH 抗性）' },
+      { finding: 'DDAVP 後 USG 明顯上升、飲水大減', description: 'DDAVP 試驗反應佳', significance: '支持中樞性尿崩症（CDI）' },
+      { finding: 'DDAVP 後反應差', description: 'USG/飲水無明顯改善', significance: '提示腎性尿崩症或原發性多渴（反應可重疊，非絕對）' },
+    ],
+    interpretation_guide: '1. 確認真性 PU/PD。2. 最小資料庫＋臨床分流先排除常見病（DM/CKD/Cushing/高血鈣/子宮蓄膿/甲亢）。3. 常見病全陰性 → 分流尿崩症：DDAVP 試驗（較安全）或改良式水剝奪試驗（風險高、禁忌氮血脫水）。4. CDI 對 DDAVP 反應佳；NDI/原發性多渴反應差或重疊，結果為支持性。5. 疑 CDI 可腦下垂體 MRI 找病因。',
+    pitfalls: [
+      '氮血/脫水病患做水剝奪試驗（危險）',
+      '單次 USG 下結論',
+      '漏掉子宮蓄膿',
+      '原發性多渴與部分性 CDI 反應重疊誤判',
+    ],
+    sensitivity_specificity: '無單一決定性試驗：改良式水剝奪與 DDAVP 試驗的結果為支持性，受髓質沖刷與部分反應重疊影響；須結合臨床與常見病排除綜合判讀。',
+    cost_benefit: '最小資料庫便宜、應先做且常能直接找到病因；尿崩症分流（水剝奪/DDAVP 試驗、MRI）成本與風險較高，僅在排除常見病後進行。',
+  },
+  procedure_data: null,
+  visual_placeholders: [
+    { position: '診斷流程段落後', type: 'flowchart', description: 'PU/PD 分流決策樹（確認真性→最小資料庫→常見病分流→水剝奪/DDAVP 試驗）' },
+    { position: '尿崩症區分段落後', type: 'comparison_table', description: 'CDI vs NDI vs 原發性多渴的試驗反應對照表' },
+  ],
+  interactive_placeholders: [
+    { position: '判讀段落', type: 'interactive_staging', description: '輸入 USG/生化/DDAVP 反應自動建議鑑別方向' },
+  ],
+  drug_api_links: ['Desmopressin'],
+  references: [
+    { type: 'journal', citation: 'Ramsey IK. "Approach to polyuria/polydipsia in dogs and cats." Companion Anim. 2009;14(7):35-42. doi:10.1111/j.2044-3862.2009.tb00552.x', relevance: '犬貓 PU/PD 診斷工作流程綜述（框架）' },
+    { type: 'journal', citation: 'McGrotty Y, Randell S. "How to diagnose polyuria and polydipsia in dogs." Vet Rec. 2019;185(4):110-111. doi:10.1136/vr.l4865', relevance: '犬 PU/PD 實務診斷流程（近期）' },
+    { type: 'journal', citation: 'van Vonderen IK, Kooistra HS, Rijnberk A. "Vasopressin Response to Osmotic Stimulation in 18 Young Dogs with Polyuria and Polydipsia." J Vet Intern Med. 2004;18(6):800-806. doi:10.1111/j.1939-1676.2004.tb02625.x', relevance: '犬 ADH 對滲透刺激的反應（PU/PD 病生理）' },
+    { type: 'journal', citation: 'van Vonderen IK, Kooistra HS, Rijnberk A. "Disturbed Vasopressin Release in 4 Dogs with So-Called Primary Polydipsia." J Vet Intern Med. 1999;13(5):419-425. doi:10.1111/j.1939-1676.1999.tb01457.x', relevance: '原發性多渴的 ADH 異常（與 CDI 鑑別之難）' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 為 PU/PD 最常見病因之一的現行分期指引' },
+    { type: 'textbook', citation: 'Feldman EC, Nelson RW, Reusch C, Scott-Moncrieff JC. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015. Chapter: Water Metabolism and Diabetes Insipidus.', relevance: '水分代謝與尿崩症完整教材' },
   ],
   is_current: true,
   created_at: now,
@@ -8088,6 +9106,9 @@ export const IM_CONTENTS = new Map<string, NodeContent>([
   ['IM-L4-004', contentGIEndoscopy],
   // L4 Diagnostics — 2026-05-23 新增
   ['IM-L4-005', contentHepFuncAssessment],
+  // L4 Diagnostics — 2026-06-27 新增（review #1/#2 缺口：以症狀為導向工作流程）
+  ['IM-L4-006', contentHypercalcemiaWorkup],
+  ['IM-L4-007', contentPUPDWorkup],
   // L5 Therapeutics
   ['IM-L5-001', contentCKDManagement],
   ['IM-L5-002', contentEndocrineTherapy],

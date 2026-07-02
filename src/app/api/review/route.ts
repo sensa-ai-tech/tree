@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withRateLimit } from '@/lib/api/middleware';
+import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
 import { calculateNextReview, createInitialState } from '@/lib/gamification/spaced-rep';
 import type { UserSpacedRepetition } from '@/types/gamification';
 import type { FSRSRating } from '@/types/gamification';
@@ -35,6 +35,8 @@ async function handlePost(request: NextRequest) {
     if (!request.headers.get('content-type')?.includes('application/json')) {
       return NextResponse.json({ error: 'Unsupported Media Type' }, { status: 415 });
     }
+    const tooLarge = enforceJsonBodyLimit(request);
+    if (tooLarge) return tooLarge;
     const input: ReviewSubmitInput = await request.json();
 
     if (!input.node_id) {

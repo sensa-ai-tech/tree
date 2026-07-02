@@ -58,10 +58,11 @@ function LearningPathCard({ path }: { path: LearningPath }) {
 
 export default function PathsPage() {
   // ENG-R3-001: useShallow skip re-renders on unrelated knowledge-store keys.
-  const { paths, isLoading } = useKnowledgeStore(
+  const { paths, isLoading, error } = useKnowledgeStore(
     useShallow((s) => ({
       paths: s.paths,
       isLoading: s.isLoading,
+      error: s.error,
     }))
   );
   const [isInitializing, setIsInitializing] = useState(true);
@@ -117,6 +118,13 @@ export default function PathsPage() {
             <CardSkeleton key={i} />
           ))}
         </div>
+      ) : error ? (
+        <Card role="alert">
+          <CardBody className="text-center">
+            <p className="font-semibold text-gray-900">學習路徑載入失敗</p>
+            <p className="mt-1 text-sm text-gray-600">請稍後再試或重新整理頁面</p>
+          </CardBody>
+        </Card>
       ) : paths.length === 0 ? (
         <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
           <div className="text-center">

@@ -60,7 +60,7 @@ function AchievementBadge({
 }
 
 export default function AchievementsPage() {
-  const { achievements } = useGamificationStore();
+  const achievements = useGamificationStore((s) => s.achievements);
 
   const unlockedIds = useMemo(
     () => new Set(achievements.map((a) => a.achievement_id)),

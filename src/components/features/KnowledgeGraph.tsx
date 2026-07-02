@@ -17,7 +17,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import { List, Network } from 'lucide-react';
 import type { KnowledgeNode, KnowledgeEdge } from '@/types/knowledge';
-import { LAYER_COLORS, type Layer } from '@/types/knowledge';
+import { LAYER_COLORS } from '@/types/knowledge';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { cn } from '@/lib/utils/cn';
 import { KnowledgeNodeComponent } from './KnowledgeNodeComponent';
@@ -44,7 +44,7 @@ function buildFlowNodes(
 ): KnowledgeFlowNode[] {
   return knowledgeNodes.map((node) => {
     const isHighlighted = highlightPath.includes(node.id);
-    const color = LAYER_COLORS[node.layer as Layer] ?? '#6b7280';
+    const color = LAYER_COLORS[node.layer] ?? '#6b7280';
 
     return {
       id: node.id,
@@ -175,7 +175,7 @@ function KnowledgeGraphListView({
           </h3>
           <ul className="space-y-1">
             {groupNodes.map((node) => {
-              const color = LAYER_COLORS[node.layer as Layer] ?? '#6b7280';
+              const color = LAYER_COLORS[node.layer] ?? '#6b7280';
               return (
                 <li key={node.id}>
                   <button

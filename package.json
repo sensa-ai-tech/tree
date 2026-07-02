@@ -9,7 +9,8 @@
     "lint": "eslint src/",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:cov": "vitest run --coverage"
+    "test:cov": "vitest run --coverage",
+    "verify:citations": "npx tsx --tsconfig tsconfig.json scripts/verify-citations.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

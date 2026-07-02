@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withRateLimit } from '@/lib/api/middleware';
+import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
 import type { UserNodeProgress, ProgressStatus } from '@/types/gamification';
 
 interface ProgressUpdateInput {
@@ -28,6 +28,8 @@ async function handlePost(request: NextRequest) {
     if (!request.headers.get('content-type')?.includes('application/json')) {
       return NextResponse.json({ error: 'Unsupported Media Type' }, { status: 415 });
     }
+    const tooLarge = enforceJsonBodyLimit(request);
+    if (tooLarge) return tooLarge;
     const input: ProgressUpdateInput = await request.json();
 
     if (!input.node_id || !input.status) {

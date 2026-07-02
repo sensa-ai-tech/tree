@@ -202,7 +202,7 @@ const contentEpilepsy: NodeContent = {
 const contentIVDD: NodeContent = {
   id: 'CONTENT-NEURO-L3-002',
   node_id: 'NEURO-L3-002',
-  version: 1,
+  version: 2,
   summary: '椎間盤疾病（IVDD）在門診是最常碰到的脊髓壓迫疾病，分 Hansen Type I（急性椎間盤突出）跟 Hansen Type II（慢性椎間盤膨出）兩型。臘腸跟柯基那種軟骨發育不全的品種特別容易中。嚴重度看修正 Frankel 分級（Grade I-V），臨床分級先抓出來再決定保守還是開刀，深痛覺有沒有掉是最關鍵的預後指標。',
   learning_objectives: [
     '區分 Hansen Type I 與 Type II 椎間盤疾病的病理機轉與臨床表現',
@@ -280,7 +280,7 @@ const contentIVDD: NodeContent = {
 - 胸腰椎：hemilaminectomy（半椎板切除術）
 - 頸椎：ventral slot（腹側椎間開窗術）
 - 目標：減壓（decompression）+ 移除突出物
-- Grade V 深痛覺喪失手術時機（ACVIM 2020）：**< 24 小時**手術恢復率 50–60%（最佳時機）；> 48 小時恢復率降至 **< 5%**（近乎無望）——以 24 小時為行動目標，不可以「24–48 小時都可以」一概而論
+- Grade V（深痛覺喪失）：手術減壓後步行恢復率約 **50–60%**（continence 常不完全）。傳統「> 48 小時恢復率 < 5%」之嚴格時間窗，**2022 ACVIM 共識（Olby et al.）與近期較大型研究認為時間-預後關聯較弱、證據不確定**；故仍建議**盡早手術減壓**（深痛覺喪失視為急診），但不宜以「過 48 小時即無望」勸退或一概而論。真正的預後決定因子是深痛覺本身與是否併發 PMM。
 
 [圖片:IVDD 分型與脊髓壓迫示意圖]
 
@@ -325,8 +325,17 @@ const contentIVDD: NodeContent = {
 |---------|------|---------------|
 | Grade III IVDD 手術或保守治療 | Grade I-II 保守治療成功率不錯，但 Grade III 怎麼選還在吵，部分研究支持早期手術 | Level II |
 | 術後類固醇使用 | 高劑量 Methylprednisolone 以前被推薦過，現在多數專家反對，可能反而加重脊髓損傷 | Level II |
-| 深痛覺喪失超過 48 小時要不要開刀 | 傳統認為 48 小時後手術預後極差（不到 5%），但少數報告還是有恢復案例 | Level III |
-| 預防性椎間盤開窗術（fenestration） | 能不能降低鄰近節段復發率還在爭，會增加手術時間跟風險 | Level III |`,
+| 深痛覺喪失超過 48 小時要不要開刀 | 2022 ACVIM 共識：時間-預後關聯較弱、「48 小時後 < 5%」恐被高估；仍建議盡早減壓，不應以時間窗逕自放棄 | Level II |
+| 預防性椎間盤開窗術（fenestration） | 能不能降低鄰近節段復發率還在爭，會增加手術時間跟風險 | Level III |
+
+## 八、近期實證更新（2022 ACVIM 共識，待 DVM 覆核）
+
+依 **Olby et al. 2022 ACVIM 共識**（急性犬胸腰椎椎間盤突出 IVDE 之診斷與處置）：
+1. **手術時機的影響被重新評估**：多數較大型、較新研究顯示「減壓時機」與預後的關聯比傳統教學弱；不宜以「過 48 小時即無望」勸退深痛覺陰性病例——仍建議盡早減壓，但深痛覺本身與 PMM 才是主要決定因子。
+2. **輕症（grade I–II）內科 vs 手術**：對症狀輕微者，內科保守與手術的預期差異證據有限，需個別化決策。
+3. **多數建議僅有低至中度證據**（觀察性研究為主）；durotomy 對結果與 PMM 的影響、最佳術後與預防照護仍是知識空缺。
+4. 深痛覺（大腦層級疼痛感知，非屈曲反射）為最關鍵預後指標；神經學定位 + MRI 仍為診斷主軸。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: 'IVDD 進來先看深痛覺（deep pain perception），這是最關鍵的預後指標。測試方式是用止血鉗夾趾骨，要看的是「大腦層級的疼痛感知」（轉頭、叫喊），不是脊髓反射的屈曲反應（withdrawal reflex），這兩個千萬別搞混。Grade IV 胸腰椎 IVDD 術後步行恢復率超過 90%，但 Grade V 只要深痛覺喪失超過 48 小時，恢復率就掉到 5% 以下。\n\n【台灣流行病學】IVDD 是台灣最常見的神經外科急症。臘腸犬在台灣飼養量大，IVDD 盛行率 19-24%，是神經科病例的最大宗。法鬥這幾年在台灣飼養量爆衝，頸椎跟胸腰椎 IVDD 病例也跟著上來。MRI 在台灣主要都會區已經普及，術前定位的精準度提高很多。國內幾家動物醫院都有 hemilaminectomy 跟 ventral slot 手術能力，不過飼主對 Grade V 病例的預後認知還需要再教育。',
   common_mistakes: [
     '把屈曲反射（withdrawal reflex）當成深痛覺存在，屈曲反射只是脊髓反射，不代表大腦感知到疼痛',
@@ -365,7 +374,7 @@ const contentIVDD: NodeContent = {
     ],
     diagnostic_workup: '神經學定位先做（定位加分級），然後脊椎 X 光看椎間隙狹窄跟椎間盤鈣化（敏感度約 60-70%）。MRI 是金標準，能看到椎間盤突出位置、脊髓壓迫程度、脊髓訊號變化。沒 MRI 時改 CT 加 myelography。基礎血檢排系統性疾病、CSF 分析排發炎性疾病。',
     treatment_protocol: '保守治療（Grade I-II 或飼主拒絕手術）：嚴格籠內休息 4-6 週加疼痛管理（Gabapentin 5-10 mg/kg TID 加 Tramadol 2-5 mg/kg BID-TID），NSAIDs 或短期低劑量 Prednisolone 都可以。手術治療（Grade III-V，特別是深痛覺喪失要當急診開）：胸腰椎走 hemilaminectomy，頸椎走 ventral slot。術後安排神經科復健（水療、被動關節運動、站立訓練）加速恢復。',
-    prognosis: 'Grade I-II 保守治療成功率超過 85%，但復發率 30-40%。Grade I-III 手術步行恢復率超過 95%。Grade IV 手術超過 90%。Grade V 深痛覺喪失 24 小時內手術約 50-60%。深痛覺喪失超過 48 小時就只剩 5% 以下。進行性脊髓軟化（PMM）發生率約 2-5%，一旦確診基本上就走向死亡。',
+    prognosis: 'Grade I-II 保守治療成功率超過 85%，但復發率 30-40%。Grade I-III 手術步行恢復率超過 95%。Grade IV 手術超過 90%。Grade V 深痛覺喪失手術減壓後步行恢復率約 50-60%（continence 常不完全）；建議盡早手術，惟「> 48 小時 < 5%」之嚴格時間窗已被 2022 ACVIM 共識質疑（時間-預後關聯較弱）。進行性脊髓軟化（PMM）發生率約 2-5%，一旦確診基本上走向死亡。',
     monitoring: '保守治療：每週做神經學檢查看進度，4-6 週後再慢慢恢復活動。術後 24-48 小時要密切追神經功能（特別是 Grade V，盯緊 PMM 徵兆）。長期就每 3-6 個月追蹤一次，注意復發徵兆。膀胱管理在癱瘓期間每天擠 3-4 次或導尿，順便監測尿液感染。',
     owner_communication: 'IVDD 是犬常見、可治療的神經疾病。輕度病例（Grade I-II）保守治療成功率高，但要嚴格執行籠內休息 4-6 週，太早讓牠動是最常見的復發原因。嚴重的（Grade III-V）建議盡早開刀，恢復機會最好。深痛覺喪失（Grade V）是急診，24-48 小時內就要進手術房。術後復健計畫對功能恢復很關鍵。',
   },
@@ -383,7 +392,7 @@ const contentIVDD: NodeContent = {
     { type: 'journal', citation: 'Brisson BA. Intervertebral disc disease in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):829-858.', relevance: '犬 IVDD 綜合回顧' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經科基礎教材 IVDD 章節' },
     { type: 'journal', citation: 'Olby N et al. Long-term functional outcome of dogs with severe injuries of the thoracolumbar spinal cord. J Am Vet Med Assoc. 2003;222(6):762-769.', relevance: '重度 IVDD 長期預後數據' },
-    { type: 'guideline', citation: 'Moore SA et al. American College of Veterinary Internal Medicine Consensus Statement on thoracolumbar intervertebral disc disease. J Vet Intern Med. 2020;34(5):1684-1699.', relevance: 'ACVIM IVDD 診斷治療共識' },
+    { type: 'guideline', citation: 'Olby NJ, Moore SA, Brisson B, et al. ACVIM consensus statement on diagnosis and management of acute canine thoracolumbar intervertebral disc extrusion. J Vet Intern Med. 2022;36(5):1570-1596. doi:10.1111/jvim.16480.', relevance: 'ACVIM 現行 IVDE 共識（診斷、手術時機、預後）' },
   ],
   is_current: true,
   created_at: now,
@@ -393,7 +402,7 @@ const contentIVDD: NodeContent = {
 const contentGME: NodeContent = {
   id: 'CONTENT-NEURO-L3-003',
   node_id: 'NEURO-L3-003',
-  version: 1,
+  version: 2,
   summary: '肉芽腫性腦膜腦炎（GME）現在歸到不明原因腦膜腦炎（MUO）這個大傘下，是犬中樞神經系統發炎性疾病裡最常見的。好發在小型犬、年輕到中年的母犬。MUO 涵蓋 GME、壞死性腦炎（NME）跟壞死性白質腦炎（NLE）三種組織學亞型。臨床表現看病灶在哪邊（前腦、腦幹、小腦、脊髓），治療主軸是免疫抑制。',
   learning_objectives: [
     '描述 MUO 三種亞型（GME、NME、NLE）的組織病理與品種偏好',
@@ -409,6 +418,7 @@ const contentGME: NodeContent = {
     '診斷三聯徵：臨床神經症狀 + MRI 多灶性/局灶性腦病灶 + CSF 淋巴球增多',
     '治療核心：Prednisolone 起始 + 二線免疫抑制劑（Cytarabine、Cyclosporine、Mycophenolate、Leflunomide）',
     '確定診斷需腦組織活檢，臨床上多以 MRI + CSF + 排除感染性疾病後作推定診斷',
+    '近期實證（Jeffery & Granger 2023 系統性回顧 671 例）：二線免疫抑制劑至今無頭對頭 RCT 證據分高下；預後研究（Gonçalves 2024）終點已擴及復發與長期失能',
   ],
   body: `# 肉芽腫性腦膜腦炎 / MUO
 
@@ -509,7 +519,17 @@ const contentGME: NodeContent = {
 | MUO 最佳二線免疫抑制劑怎麼選 | Cytarabine、Cyclosporine、Mycophenolate、Leflunomide 之間缺乏 head-to-head RCT，選擇多半看臨床經驗 | Level III |
 | GME/NME/NLE 算不算同一個疾病譜 | 三者組織病理不同但臨床處置很像，統稱 MUO 適不適合還在爭 | Level IV |
 | 免疫抑制治療要吃多久 | 什麼時候可以安全停藥沒有共識，有些專家建議終身低劑量維持 | Level IV |
-| 局灶性 GME 要不要做手術活檢 | MRI 看到腫塊效應時手術活檢可以確診但風險高，比推定治療好不好還在爭 | Level III |`,
+| 局灶性 GME 要不要做手術活檢 | MRI 看到腫塊效應時手術活檢可以確診但風險高，比推定治療好不好還在爭 | Level III |
+
+## 八、近期實證更新 (Recent Evidence Update)
+
+**治療實證仍卡在「低品質、無頭對頭」這一關（Jeffery & Granger 2023, Front Vet Sci——671 例系統性回顧，2010 年 457 例回顧的延續）**
+這篇把較新的病例彙整成 671 例再做一次系統性回顧，結論既關鍵又誠實：整體存活看起來比早年改善，但**至今仍沒有 RCT 等級的證據能證明哪一個二線免疫抑制劑（cytarabine / cyclosporine / mycophenolate / leflunomide）優於其他**——多數資料是回溯性、異質性高。白話說，「選哪個二線」目前還是經驗與藥物可近性導向，不是實證導向。這正是本主題最大的知識空缺，臨床上不必為了「選錯二線」焦慮，把主軸（排除感染→免疫抑制→緩慢減量）做穩更重要。
+
+**預後評估從「能不能活」走向「活下來剩什麼功能」（Gonçalves et al 2024, JVIM）**
+近期 MUO 預後研究把終點從單純存活，擴展到 **clinical relapse（臨床復發）** 與 **long-term disability（長期失能）**，更貼近飼主真正在意的生活品質。臨床溝通時值得把「就算控制住，仍可能有復發與殘留神經缺損」這件事講在前面，而不是只談存活月數。
+
+**台灣落地提醒**：上述實證的族群與藥物可近性以歐美為主；台灣 cytarabine 的取得、輸注排程與 MRI/CSF 轉診可近性，會實際決定你能跑到哪一線。先把「排除感染（犬瘟熱/Cryptococcus/Toxoplasma）→ 推定 MUO → 免疫抑制 → 緩慢減量」這條主軸做穩，比糾結二線藥的選擇更關鍵。`,
   clinical_pearl: 'MUO 的診斷本質是「排除性」的。一定要先把感染性腦炎（Toxoplasma、Neospora、Distemper、Cryptococcus 那一票）排掉，才能下手免疫抑制。沒排除就直接打高劑量類固醇，會把感染性腦炎推往更糟的方向。建議 CSF 送感染性疾病 panel 的同時，可以先用較低劑量的抗發炎類固醇（0.5-1 mg/kg）穩住病情。\n\n【台灣流行病學】MUO（GME/NME/NLE）在台灣小型犬是重要的神經科病。巴哥、約克夏梗、馬爾濟斯這些台灣常見小型品種就是 NME/NLE 的好發族群。台灣亞熱帶氣候下，感染性腦炎（犬瘟熱、Cryptococcus、Toxoplasma）也要一起鑑別。CSF 分析跟感染性疾病 panel 在主要獸醫教學醫院都做得起來，但基層轉診意識還可以再加強。',
   common_mistakes: [
     '沒排除感染性腦炎就直接打高劑量免疫抑制（Toxoplasma、Neospora、Distemper、Cryptococcus 一定要先排）',
@@ -551,11 +571,13 @@ const contentGME: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Prednisolone', 'Cytarabine', 'Cyclosporine', 'Mycophenolate', 'Leflunomide'],
   references: [
-    { type: 'journal', citation: 'Granger N et al. Canine meningoencephalitis of unknown origin: a review of the literature. J Vet Intern Med. 2010;24(5):1065-1076.', relevance: 'MUO 綜合回顧' },
+    { type: 'journal', citation: 'Granger N, Smith PM, Jeffery ND. "Clinical findings and treatment of non-infectious meningoencephalomyelitis in dogs: A systematic review of 457 published cases." Vet J. 2010;184:290-297. doi:10.1016/j.tvjl.2009.03.031', relevance: 'MUO 治療實證奠基系統性回顧（取代 v1 誤標 JVIM 的 garbled 引用）' },
+    { type: 'journal', citation: 'Jeffery ND, Granger N. "New insights into the treatment of meningoencephalomyelitis of unknown origin: A review of 671 cases." Front Vet Sci. 2023;10. doi:10.3389/fvets.2023.1114798', relevance: '近期 671 例系統性回顧更新：二線藥仍無頭對頭 RCT 證據' },
+    { type: 'journal', citation: 'Gonçalves R, De Decker S, Walmsley G, Maddox T, et al. "Prognosis in meningoencephalitis of unknown origin in dogs: Risk factors associated with survival, clinical relapse, and long-term disability." J Vet Intern Med. 2024;38(3):1583-1590. doi:10.1111/jvim.17037', relevance: '近期預後研究：終點擴及復發與長期失能' },
+    { type: 'journal', citation: 'Coates JR, Jeffery ND. "Perspectives on Meningoencephalomyelitis of Unknown Origin." Vet Clin North Am Small Anim Pract. 2014;44(6):1157-1185. doi:10.1016/j.cvsm.2014.07.009', relevance: 'MUO 診斷與治療方案綜論' },
+    { type: 'journal', citation: 'Lowrie M, Smith PM, Garosi L, et al. "Meningoencephalitis of unknown origin: investigation of prognostic factors and outcome using a standard treatment protocol." Vet Rec. 2013;172(20):527. doi:10.1136/vr.101431', relevance: '預後因素與標準治療方案' },
+    { type: 'guideline', citation: 'Podell M, Volk HA, Berendt M, et al. "2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs." J Vet Intern Med. 2016;30(2):477-490. doi:10.1111/jvim.13841', relevance: 'MUO 相關癲癇管理共識（常見併發症）' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '發炎性 CNS 疾病章節' },
-    { type: 'journal', citation: 'Coates JR, Jeffery ND. Perspectives on meningoencephalomyelitis of unknown origin. Vet Clin North Am Small Anim Pract. 2014;44(6):1157-1185.', relevance: 'MUO 治療方案比較' },
-    { type: 'journal', citation: 'Lowrie M et al. Meningoencephalitis of unknown origin: investigation of prognostic factors and outcome using a standard treatment protocol. Vet Rec. 2013;172(20):527.', relevance: '預後因素與標準治療方案' },
-    { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'MUO 相關癲癇管理共識（常見併發症）' },
   ],
   is_current: true,
   created_at: now,
@@ -565,7 +587,7 @@ const contentGME: NodeContent = {
 const contentVestibular: NodeContent = {
   id: 'CONTENT-NEURO-L3-004',
   node_id: 'NEURO-L3-004',
-  version: 1,
+  version: 2,
   summary: '前庭症候群（Vestibular Syndrome）是犬貓急診中常見的神經科就診原因。臨床表現為頭部傾斜、眼球震顫、旋轉步態與共濟失調。最關鍵的臨床鑑別為中樞性與周邊性前庭疾病。犬的周邊性前庭疾病以老年犬特發性前庭症候群最常見，通常預後良好。中樞性前庭疾病提示腦幹或小腦病變，預後取決於潛在病因。',
   learning_objectives: [
     '區分中樞性與周邊性前庭疾病的臨床特徵',
@@ -631,11 +653,37 @@ const contentVestibular: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-前庭症候群的診斷需結合病史、理學檢查與適當的輔助檢查，並排除其他鑑別診斷。
+### 核心臨床徵象
+- **頭部傾斜（head tilt）**：最具特徵性，持續向病灶側傾斜（矛盾性前庭徵除外）
+- **病理性眼球震顫**：快速相離開病灶側；周邊性為水平或旋轉性且方向固定，**中樞性可為垂直性或隨頭位改變方向**（後二者幾乎確診中樞性）
+- **前庭性共濟失調**：向病灶側傾倒、旋轉、轉圈，嚴重者無法站立
+- **姿勢性斜視（positional strabismus）**：頭位改變時患側眼球腹側偏位
+- **噁心嘔吐**：急性期動暈反應，老年犬尤需防脫水與營養不良
+
+### 診斷流程（先定位，再找病因）
+1. **完整神經學檢查分中樞 vs 周邊**：關鍵是**姿勢反應**——同側缺損→中樞性（周邊前庭不影響本體感覺通路）；再評估意識、眼震方向、其他腦神經（多條受累提示中樞）
+2. **耳鏡檢查**：評估鼓膜完整性與外耳炎史（中耳/內耳炎為周邊性最常見的**感染性**病因）
+3. **基礎血檢 + T4**：排除代謝性疾病與甲狀腺功能低下
+4. **中耳影像**：X 光敏感度低，CT/MRI 較佳
+5. **疑中樞性 → 腦部 MRI + CSF 分析**
+6. **老年犬特發性前庭為排除診斷**：典型病例（急性、純周邊、姿勢反應正常、2-3 天開始改善）不一定需 MRI
 
 ## 三、治療策略 (Treatment)
 
-前庭症候群的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
+治療依**定位與病因分層**：
+
+### 周邊性
+- **老年犬特發性前庭症候群**：支持療法為主——止吐（[藥物:Maropitant] 1 mg/kg SC/PO SID）、輸液維持水合、輔助進食、防跌倒外傷；**不需類固醇或抗生素**；多 2-3 天開始改善、2-4 週大幅恢復，可能殘留輕微頭傾
+- **中耳炎/內耳炎**：長療程抗生素（Amoxicillin-clavulanate 或 fluoroquinolone）4-6 週，依鼓膜狀況考慮鼓膜切開/耳道沖洗，慢性或難治者行中耳鼓室骨切開術（bulla osteotomy）
+- **耳毒性藥物**：立即停用 aminoglycosides／loop diuretics
+
+### 中樞性（依病因）
+- **MUO/腦膜腦炎**：免疫抑制（類固醇 ± 其他免疫抑制劑）
+- **腦腫瘤**：手術／放療／化療依類型
+- **Metronidazole 中毒**：立即停藥，diazepam 報告可加速恢復
+- **腦血管事件（中風）**：支持療法 + 積極盤查並控制潛在病因（高血壓、內分泌、凝血異常）
+
+> 急性嚴重的特發性前庭症候群外觀駭人，但預後通常良好，切勿與中風混為一談而過早勸安樂死。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -678,7 +726,16 @@ const contentVestibular: NodeContent = {
 | 老年犬「特發性」前庭症候群的排除診斷充分性 | 缺乏確認性診斷，部分可能遺漏早期腫瘤或微小腦梗塞 | Level IV |
 | 前庭疾病是否需常規 MRI | 典型周邊性特發性前庭不需 MRI，但「典型」的定義標準不一 | Level III |
 | 犬腦血管事件（中風）的診斷與管理 | 犬腦梗塞的盛行率可能被低估，MRI DWI 序列在獸醫的使用尚不普及 | Level III |
-| 甲狀腺功能低下性前庭疾病的因果關係 | T4 低下與前庭症狀的直接因果關係仍有爭議，可能為巧合 | Level IV |`,
+| 甲狀腺功能低下性前庭疾病的因果關係 | T4 低下與前庭症狀的直接因果關係仍有爭議，可能為巧合 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+- **神經學定位與 MRI、預後的關聯驗證**：Bongartz 等人（2020）系統性比對犬前庭疾病的神經學定位、MRI 病灶與結局，支持「姿勢反應/眼震型態臨床定位」對區分中樞 vs 周邊與預測預後的價值。〔Evidence Level III〕
+- **犬腦血管事件（中風）被低估**：Garosi 等人的系列與後續 MRI DWI/ADC 序列研究顯示，犬腦梗塞並非罕見，常以急性中樞性前庭/前腦徵象表現，應積極盤查潛在病因（高血壓、內分泌、凝血異常）。〔Evidence Level III〕
+- **前庭復健治療**：借鑒人醫前庭復健（凝視穩定、平衡再訓練），早期物理治療介入或可加速中樞代償，獸醫初步經驗正累積。〔Evidence Level IV〕
+- **甲狀腺功能低下與前庭/顏面神經病變的因果性**：T4 低下與周邊前庭/顏面神經麻痺的關聯屢被報告，但確切因果仍有爭議、補充甲狀腺素的反應不一。〔Evidence Level IV〕
+
+> ⚠️ 上述更新（特別是中風的盤查與前庭復健的角色）仍待 DVM 依個案與影像可近性覆核後採用。`,
   clinical_pearl: '分中樞性還是周邊性前庭疾病，最實用的指標是「姿勢反應」。只要有同側姿勢反應缺損（像本體感覺定位異常），病灶幾乎就是中樞性的，因為周邊前庭系統根本不會打到姿勢反應通路。另外要注意「矛盾性前庭徵」（paradoxical vestibular signs）：頭傾方向跟姿勢反應缺損側相反，這提示小腦絨球小結葉病變，一樣是中樞性。\n\n【台灣流行病學】前庭疾病在台灣老年犬非常常見，老年犬特發性前庭症候群是基層獸醫院最常見的神經科急診之一。台灣亞熱帶潮濕氣候下，中耳/內耳感染（周邊性前庭疾病的常見病因）發生率比較高，特別是長耳犬種（可卡、米格魯這些）。台灣獸醫師對中樞性跟周邊性前庭疾病的鑑別能力，直接影響治療決策跟要不要轉診。',
   common_mistakes: [
     '沒做完整姿勢反應檢查就把前庭疾病歸類為周邊性（姿勢反應缺損是中樞性的關鍵指標）',
@@ -725,8 +782,9 @@ const contentVestibular: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '前庭系統疾病章節' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '前庭疾病臨床指南' },
-    { type: 'journal', citation: 'Garosi LS et al. Results of diagnostic investigations and long-term outcome of 33 dogs with brain infarction (2000-2004). J Vet Intern Med. 2005;19(5):725-731.', relevance: '犬腦血管事件與中樞性前庭疾病' },
-    { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 共識，前庭疾病與癲癇鑑別分類' },
+    { type: 'journal', citation: 'Garosi LS, McConnell JF, Platt SR, et al. Results of diagnostic investigations and long-term outcome of 33 dogs with brain infarction (2000-2004). J Vet Intern Med. 2005;19(5):725-731. doi:10.1111/j.1939-1676.2005.tb02752.x', relevance: '犬腦血管事件與中樞性前庭疾病' },
+    { type: 'journal', citation: 'Kent M, Platt SR, Schatzberg SJ. The neurology of balance: function and dysfunction of the vestibular system in dogs and cats. Vet J. 2010;185(3):247-258. doi:10.1016/j.tvjl.2009.10.029', relevance: '前庭系統功能與障礙的經典回顧' },
+    { type: 'journal', citation: 'Bongartz U, Nessler J, Maiolini A, et al. Vestibular disease in dogs: association between neurological examination, MRI lesion localisation and outcome. J Small Anim Pract. 2020;61(1):57-64. doi:10.1111/jsap.13070', relevance: '前庭疾病神經學定位、MRI 與結局關聯（近期實證）' },
   ],
   is_current: true,
   created_at: now,
@@ -1065,7 +1123,7 @@ const contentMG: NodeContent = {
 const contentDM: NodeContent = {
   id: 'CONTENT-NEURO-L3-007',
   node_id: 'NEURO-L3-007',
-  version: 1,
+  version: 2,
   summary: '退化性脊髓病變（Degenerative Myelopathy, DM）是犬的慢性進行性脊髓退化疾病，與人的肌萎縮性側索硬化症（ALS）有相似的病理機轉。SOD1 基因突變是主要的風險因子，好發於 GSD、Boxer、Welsh Corgi 等品種。表現為慢性進行性後肢 UMN 型共濟失調和輕癱，無疼痛。目前無有效治療，積極的物理復健可延緩進展。確定診斷需死後組織病理學。',
   learning_objectives: [
     '描述 DM 的 SOD1 基因突變與疾病進展的關聯',
@@ -1087,7 +1145,7 @@ const contentDM: NodeContent = {
 
 ## 一、病理機制 (Pathophysiology)
 
-
+DM 是犬慢性進行性的脊髓白質退化，與人 ALS 高度同源；SOD1 基因突變為主要遺傳風險因子，好發 GSD、Boxer、柯基等品種。
 
 ### 概述
 退化性脊髓病變（DM）是犬的慢性進行性上運動神經元與全身性下運動神經元退化性疾病，病理學上與人的 ALS 極為相似。SOD1 基因突變被鑑定為主要的遺傳風險因子。
@@ -1141,7 +1199,26 @@ const contentDM: NodeContent = {
 
 ## 三、治療策略 (Treatment)
 
-退化性脊髓病變的治療需根據疾病嚴重程度與個體差異制定個別化治療計畫，並定期評估治療反應。
+⚠️ **目前無任何藥物可逆轉或停止 DM 進展**；治療核心是**物理復健＋支持性照護＋輔具**，目標是盡量延長可步行時間與維持生活品質（Bouché & Coates 2023 神經科/復健專家實務調查反映現況）。
+
+### 物理復健（目前最有支持證據的介入）
+- **水療（水中跑步機、游泳）＋被動關節活動（PROM）＋站立/平衡訓練**：每日規律密集復健可延長維持步行能力的時間（Kathmann 2006；惟為小型研究、證據有限）。**越早開始越好**，強度以犬可耐受、不過度疲勞為原則。
+- 光照生物調節（PBMT/低能量雷射）等物理治療法有初步/有限的支持資料，可作輔助但證據尚弱。
+
+### 輔具與護理
+- **後肢推車/輪椅**：後肢無力/癱瘓後維持活動力與生活品質。
+- **足背保護**（靴套/防磨）對抗 knuckling 造成的足背磨損；定期翻身、軟墊預防褥瘡。
+- **膀胱管理**：晚期尿滯留/失禁需定期排空（手動擠壓/導尿）、監測與預防 UTI、保持會陰清潔。
+
+### 藥物與補充品（**證據不足、勿做療效保證**）
+- Aminocaproic acid、N-acetylcysteine、維生素 E/B 群、Omega-3 等廣泛使用，但**缺乏有力證據**——可選用但不應取代復健、亦不應向飼主保證療效。
+- **無證據支持類固醇**用於 DM；**出現脊椎疼痛應重新評估是否其實為壓迫性病灶（IVDD）** 而非 DM。
+
+### 飼主溝通與安樂死
+- 設定合理期望：「無法治癒、但不是無事可做」；以生活品質指標（CSOM/活動日誌）共同追蹤。
+- 安樂死討論時機：後肢完全癱瘓＋大小便失禁、前肢受累、照護負擔超出可承受時。
+
+[圖片:DM 治療三支柱——物理復健 × 輔具/護理 × 飼主支持與生活品質追蹤]
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -1183,7 +1260,16 @@ const contentDM: NodeContent = {
 | SOD1 A/A 基因型作為 DM 生前確診的充分性 | A/A 為風險因子但非確診，約 10-30% 的 A/A 犬終身不發病 | Level III |
 | Aminocaproic acid 與抗氧化補充品的療效 | 廣泛使用但缺乏 RCT 證據支持療效，可能為安慰劑效應 | Level IV |
 | 犬 DM 與人 ALS 的疾病修飾療法轉譯 | Riluzole 等人 ALS 藥物在犬的藥動學/藥效學研究極有限 | Level IV |
-| 安樂死時機的客觀標準 | 目前依賴主觀生活品質評估，缺乏標準化的 DM 安樂死決策工具 | Level IV |`,
+| 安樂死時機的客觀標準 | 目前依賴主觀生活品質評估，缺乏標準化的 DM 安樂死決策工具 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence)
+
+- **診斷與管理的現行實務**：2023 年神經科與復健專家調查（Bouché & Coates 2023）反映現況——DM 仍為**生前排除性診斷**（相容品種/臨床 + MRI 排除壓迫 + SOD1 A/A），管理以**物理復健為核心**，藥物/補充品角色有限。
+- **SOD1 基因判讀更新**：A/A 為風險因子**非確診**，外顯率不全（相當比例 A/A 犬終身不發病）；不同品種有不同 SOD1 變異（如 Bernese T18S）。基因檢測用於支持推定診斷與育種篩檢（Zeng 2014 品種分布），不可單獨確診。
+- **生物標記與疾病修飾療法的轉譯**：神經絲輕鏈（NfL）為犬 CNS 軸突損傷的非特異生物標記，作為 DM 進展監測的潛力正在探索；人 SOD1-ALS 的反義寡核苷酸療法（tofersen，2023 核准）使自然發生的犬 SOD1-DM 成為轉譯模型——但**目前犬 DM 仍無核准的疾病修飾治療**。
+- **確定診斷仍靠病理**：生前無法 100% 確診，確診仍需死後脊髓組織病理（胸腰段白質軸突變性與脫髓鞘）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: 'DM 的生前診斷是「排除性」的，你永遠不能 100% 確定是 DM，只能排除其他可治療的疾病。臨床上最常見的陷阱是將慢性 Type II IVDD 誤診為 DM，或反過來。關鍵鑑別點：DM 通常無疼痛，而 IVDD 常有脊椎痛。另外，DM 的 MRI 不會顯示壓迫性病灶。SOD1 基因 A/A 支持但不能確診 DM，約 10-30% 的某些品種正常個體也是 A/A。\n\n【台灣流行病學】退化性脊髓病變在台灣以柯基犬（Welsh Corgi）為最具代表性的好發品種，德國牧羊犬亦為經典好發族群。台灣柯基犬飼養量持續增加，DM 的臨床病例亦隨之增多。SOD1 基因檢測在台灣可透過國外實驗室進行。台灣獸醫復健科近年蓬勃發展，水中跑步機等物理治療對 DM 犬的生活品質維護有明顯幫助。台灣飼主對 DM 的漸進性預後需有充分認知。',
   common_mistakes: [
     '僅憑 SOD1 基因 A/A 即診斷 DM，A/A 是風險因子但非確診依據（部分正常犬也是 A/A）',
@@ -1233,11 +1319,12 @@ const contentDM: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'journal', citation: 'Awano T et al. Genome-wide association analysis reveals a SOD1 mutation in canine degenerative myelopathy that resembles amyotrophic lateral sclerosis. Proc Natl Acad Sci USA. 2009;106(8):2794-2799.', relevance: 'SOD1 基因突變鑑定原始文獻' },
-    { type: 'journal', citation: 'Coates JR, Wininger FA. Canine degenerative myelopathy. Vet Clin North Am Small Anim Pract. 2010;40(5):929-950.', relevance: '犬 DM 綜合回顧' },
+    { type: 'journal', citation: 'Awano T, Johnson GS, Wininger FA, et al. "Genome-wide association analysis reveals a SOD1 mutation in canine degenerative myelopathy that resembles amyotrophic lateral sclerosis." Proc Natl Acad Sci USA. 2009;106(8):2794-2799. doi:10.1073/pnas.0812297106', relevance: 'SOD1 基因突變鑑定原始文獻' },
+    { type: 'journal', citation: 'Coates JR, Wininger FA. "Canine Degenerative Myelopathy." Vet Clin North Am Small Anim Pract. 2010;40(5):929-950. doi:10.1016/j.cvsm.2010.05.001', relevance: '犬 DM 綜合回顧' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '退化性脊髓疾病章節' },
-    { type: 'journal', citation: 'Kathmann I et al. Daily controlled physiotherapy increases survival time in dogs with suspected degenerative myelopathy. J Vet Intern Med. 2006;20(4):927-932.', relevance: '物理復健延長 DM 犬存活時間' },
-    { type: 'guideline', citation: 'Zeng R et al. Breed distribution of SOD1 alleles previously associated with canine degenerative myelopathy. J Vet Intern Med. 2014;28(2):515-521.', relevance: 'SOD1 基因突變品種篩檢指引' },
+    { type: 'journal', citation: 'Kathmann I, Cizinauskas S, Doherr MG, et al. "Daily Controlled Physiotherapy Increases Survival Time in Dogs with Suspected Degenerative Myelopathy." J Vet Intern Med. 2006;20(4):927-932. doi:10.1111/j.1939-1676.2006.tb01807.x', relevance: '物理復健延長 DM 犬存活時間（核心治療證據）' },
+    { type: 'journal', citation: 'Zeng R, Coates JR, Johnson GC, et al. "Breed Distribution of SOD1 Alleles Previously Associated with Canine Degenerative Myelopathy." J Vet Intern Med. 2014;28(2):515-521. doi:10.1111/jvim.12317', relevance: 'SOD1 基因突變品種分布（修正 v1 type 誤標 guideline→journal）' },
+    { type: 'journal', citation: 'Bouché TV, Coates JR, Moore SA, Faissler D. "Diagnosis and management of dogs with degenerative myelopathy: A survey of neurologists and rehabilitation professionals." J Vet Intern Med. 2023;37(5):1815-1820. doi:10.1111/jvim.16829', relevance: 'DM 診斷與管理現行實務調查（近期）' },
   ],
   is_current: true,
   created_at: now,
@@ -1247,7 +1334,7 @@ const contentDM: NodeContent = {
 const contentLocalization: NodeContent = {
   id: 'CONTENT-NEURO-L4-004',
   node_id: 'NEURO-L4-004',
-  version: 1,
+  version: 2,
   summary: '神經定位診斷（Neurological Localization）是獸醫神經科的核心技能，透過系統性的神經學檢查結果，將病灶定位至神經系統的特定區域。正確的定位是建立鑑別診斷清單和選擇適當診斷工具的前提。主要定位區域包括：前腦、腦幹、小腦、C1-C5、C6-T2、T3-L3、L4-S3。',
   learning_objectives: [
     '執行系統性的神經定位診斷流程：意識、步態、姿勢反應、脊髓反射到腦神經',
@@ -1330,11 +1417,23 @@ const contentLocalization: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+定位推理依序回答：
+1. **有無意識／行為改變？** → 前腦或腦幹（ARAS）。
+2. **有無腦神經缺損？** → 腦幹（CN V-XII 同側）或該腦神經周邊。
+3. **共濟失調屬哪型？** 本體感覺性（脊髓/前腦）、前庭性（頭傾斜/眼振）、小腦性（dysmetria/意向性震顫）。
+4. **受影響肢體分布**：四肢 → 頸段或瀰漫；僅後肢 → T3-L3 或 L4-S3；前肢 LMN＋後肢 UMN → C6-T2。
+5. **UMN vs LMN**：反射亢進＝UMN（病灶在反射弧之上）；反射減弱＝LMN（病灶在反射弧本身/節段）。
+6. **整合至七大區域**，並判斷是否「多灶性」（無法以單一病灶解釋全部缺損 → 想 MUO、轉移、代謝/中毒）。
+> 定位回答「在哪裡」，不直接回答「是什麼」；病因須再結合 signalment、病程（超急/急/慢、進行性/穩定）、對稱性與 MRI／CSF。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+1. **UMN／LMN 混淆**（最常見）：把反射亢進誤判為 LMN；反射減弱才是 LMN。
+2. **遺漏深痛覺（DPP）評估**：DPP 是 IVDD 等重度脊髓損傷最重要的預後指標，不可略過。
+3. **共濟失調分型錯誤**：前庭性（頭傾斜/眼振）與小腦性（dysmetria/意向性震顫）混淆。
+4. **誤判 Schiff-Sherrington**：前肢伸肌張力增強但「自主運動與姿勢反應正常」，病灶仍在 T3-L3，非頸段 UMN。
+5. **paradoxical vestibular 誤側化**：中樞前庭頭傾斜可朝病灶「對側」，須以姿勢反應缺損（中樞才有）判斷側別。
+6. **生理/技術干擾**：緊張、疼痛、鎮靜、肥胖（膝反射難引出）、老年輕度本體感覺下降，皆非真病灶，須情境化判讀。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -1351,7 +1450,15 @@ const contentLocalization: NodeContent = {
 | 犬神經學檢查的觀察者間一致性（inter-observer agreement） | 不同經驗程度獸醫的定位準確率差異大（50% vs 80%），需標準化訓練 | Level III |
 | 深痛覺（DPP）測試的最佳標準化方法 | 止血鉗力道、刺激位置缺乏統一標準，導致 IVDD Grade V 判定不一致 | Level IV |
 | 多灶性 vs 瀰漫性病灶定位的臨床價值 | 定位至「多灶性」的鑑別診斷範圍仍廣（MUO、轉移瘤、代謝性），實用價值存疑 | Level IV |
-| 腦幹 vs 前庭周邊病灶的臨床區分準確率 | 中樞 vs 周邊前庭疾病的臨床鑑別在部分案例中困難，paradoxical vestibular 尤其容易誤判 | Level III |`,
+| 腦幹 vs 前庭周邊病灶的臨床區分準確率 | 中樞 vs 周邊前庭疾病的臨床鑑別在部分案例中困難，paradoxical vestibular 尤其容易誤判 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+1. **定位導向 MRI**：正確神經定位可縮小 MRI 掃描節段、降低麻醉時間與費用；有經驗者定位與 MRI 病灶一致性約 70-80%。
+2. **標準化檢查表與訓練**：結構化神經學檢查表＋訓練可提升跨觀察者定位一致性（基層 vs 專科準確率差距大）。
+3. **客觀步態分析＋teleneurology**：感測器／影片 AI 步態量化與遠距步態影片判讀，輔助基層定位與縱向追蹤（研究增加中）。
+4. **中樞 vs 周邊前庭關鍵**：姿勢反應缺損／非 CN VIII 的腦神經缺損／垂直或方向改變性眼振 → 提示中樞；單純水平或旋轉眼振＋同側頭傾斜且姿勢反應正常 → 較支持周邊。
+> 定位為臨床推理基礎，最終病因診斷與影像判讀須由獸醫（神經專科）覆核。`,
   clinical_pearl: '記住「兩個 UMN 規則」：若前後肢均為 UMN 徵象，病灶在 C1-C5。若前肢 LMN + 後肢 UMN，病灶在 C6-T2（cervical intumescence）。T3-L3 病變只影響後肢（UMN），前肢完全正常。在 IVDD 病例中，panniculus reflex 的截斷面可以幫助定位壓迫脊髓節段的上緣。',
   common_mistakes: [
     '混淆 UMN 與 LMN 徵象（最常見錯誤：將反射亢進誤判為 LMN 病灶）',
@@ -1408,8 +1515,9 @@ const contentLocalization: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經定位診斷標準教材' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '神經學檢查實務指南' },
-    { type: 'journal', citation: 'Garosi L. Lesion Localization and Differential Diagnosis. In: Platt SR, Olby NJ eds. BSAVA Manual of Canine and Feline Neurology, 4th ed. 2013:1-17.', relevance: '病灶定位章節' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 分層診斷流程（神經定位診斷基礎）' },
+    { type: 'textbook', citation: 'de Lahunta A, Glass E, Kent M. Veterinary Neuroanatomy and Clinical Neurology, 5th ed. Elsevier, 2021.', relevance: '神經解剖與定位經典教材' },
+    { type: 'textbook', citation: 'Garosi L. Lesion Localization and Differential Diagnosis. In: Platt SR, Olby NJ eds. BSAVA Manual of Canine and Feline Neurology, 4th ed. 2013:1-17.', relevance: '病灶定位章節' },
+    { type: 'guideline', citation: 'De Risio L, et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148. doi:10.1186/s12917-015-0462-1.', relevance: 'IVETF 分層診斷流程（神經定位診斷基礎）' },
   ],
   is_current: true,
   created_at: now,
@@ -1518,7 +1626,7 @@ const contentNeuroOverview: NodeContent = {
 const contentNeuroanatomy: NodeContent = {
   id: 'CONTENT-NEURO-L1-001',
   node_id: 'NEURO-L1-001',
-  version: 1,
+  version: 2,
   summary: '獸醫神經解剖學是神經定位診斷的基礎。犬貓神經系統分為中樞神經系統（腦與脊髓）與周邊神經系統（腦神經、脊神經、自主神經）。臨床上最重要的解剖知識包括：大腦皮質功能分區、腦幹核團與腦神經起源、小腦功能解剖、脊髓節段與神經根分布、上/下運動神經元通路、以及周邊神經的走行與支配區域。',
   learning_objectives: [
     '描述犬貓中樞與周邊神經系統的大體解剖結構',
@@ -1600,7 +1708,16 @@ const contentNeuroanatomy: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬脊髓節段與椎體的精確對應關係 | 品種間差異大，現有對應表多基於大型犬數據，小型犬對應可能不同 | Level III |
-| 犬腦功能分區的品種差異 | 短頭種（brachycephalic）腦部比例與長頭種不同，功能區域可能有位移 | Level IV |`,
+| 犬腦功能分區的品種差異 | 短頭種（brachycephalic）腦部比例與長頭種不同，功能區域可能有位移 | Level IV |
+
+## 五、近期實證更新 (Recent Evidence Updates)
+
+| 主題 | 實證更新 | 臨床意涵 | 來源 |
+|------|---------|---------|------|
+| 標準化犬腦圖譜 | Johnson 等 2020 發表「家犬腦立體定位皮質圖譜」(Stereotactic Cortical Atlas)，為犬腦 MRI 自動分割、體素分析與 AI 輔助定位奠基。 | 提升結構性腦病灶定位精度與跨研究可比性；惟現有圖譜多基於中頭種，短頭/長頭種仍需專屬圖譜。 | Johnson 2020 |
+| DTI 白質纖維追蹤 | Anaya-García 等 2015 以擴散張量纖維追蹤在體呈現犬腦白質通路，開啟以白質完整性評估退化／壓迫性脊髓腦病的研究路徑。 | 未來可量化 DM/IVDD 白質損傷與預後；現屬研究性、尚未常規臨床化。 | Anaya-García 2015 |
+| 神經定位 vs 影像 | 深部痛覺（DPP）等臨床神經學定位指標仍是 IVDD 截癱犬預後關鍵——Jeffery 等 2016 證實喪失深部痛覺者恢復率顯著較低；神經學檢查所評估的「功能」不可被影像的「結構」取代。 | MRI 看結構、神經學檢查看功能，兩者互補；DPP 仍是 IVDD 預後分水嶺。 | Jeffery 2016 |
+| 脊髓節段-椎體對應 | 犬脊髓較脊柱短，腰膨大（L4-S3）實際位於 L3-L5 椎體水平；影像研究持續精修此對應關係，提醒臨床以「脊髓節段」而非「椎體編號」思考定位。 | 避免「椎體＝脊髓節段」的定位誤差；手術入路與電生理定位須回到脊髓節段。 | de Lahunta 教材 |`,
   clinical_pearl: '臨床上最重要的解剖概念是「頸膨大」（C6-T2 intumescence）與「腰膨大」（L4-S3 intumescence）。這兩個區域的 LMN 細胞體密集，病灶在此會呈現 LMN 徵象（反射減弱、快速萎縮），而非 UMN 徵象。記住：C6-T2 病變 = 前肢 LMN + 後肢 UMN，這是定位的經典考點。',
   common_mistakes: [
     '混淆脊髓節段與椎體編號，犬的脊髓比脊柱短，腰膨大（L4-S3）實際位於 L3-L5 椎體水平',
@@ -1618,10 +1735,12 @@ const contentNeuroanatomy: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Evans HE, de Lahunta A. Miller\'s Anatomy of the Dog, 4th ed. Elsevier, 2013.', relevance: '犬解剖學權威教材' },
-    { type: 'textbook', citation: 'de Lahunta A, Glass E, Kent M. Veterinary Neuroanatomy and Clinical Neurology, 4th ed. Saunders, 2015.', relevance: '獸醫神經解剖臨床教材' },
+    { type: 'textbook', citation: 'de Lahunta A, Glass E, Kent M. Veterinary Neuroanatomy and Clinical Neurology, 4th ed. Saunders, 2015.', relevance: '獸醫神經解剖臨床教材（脊髓節段-椎體對應）' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013. Chapter 1.', relevance: '神經解剖基礎章節' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，以解剖為基礎的分層診斷' },
-    { type: 'journal', citation: 'Jeffery ND et al. Factors associated with recovery from paraplegia in dogs with loss of pain perception in the pelvic limbs following intervertebral disk herniation. J Am Vet Med Assoc. 2016;248(4):386-394.', relevance: '脊髓解剖與功能預後相關研究' },
+    { type: 'guideline', citation: 'De Risio L et al. "International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs." BMC Vet Res. 2015;11:148. doi:10.1186/s12917-015-0462-1', relevance: 'IVETF 共識：以神經定位為基礎的反應性/結構性/特發性分層診斷' },
+    { type: 'journal', citation: 'Jeffery ND et al. "Factors associated with recovery from paraplegia in dogs with loss of pain perception in the pelvic limbs following intervertebral disk herniation." J Am Vet Med Assoc. 2016;248(4):386-394. doi:10.2460/javma.248.4.386', relevance: '脊髓功能（深部痛覺）與預後；神經定位之臨床價值' },
+    { type: 'journal', citation: 'Johnson PJ et al. "Stereotactic Cortical Atlas of the Domestic Canine Brain." Sci Rep. 2020;10:4781. doi:10.1038/s41598-020-61665-0', relevance: '標準化犬腦皮質圖譜（近期實證）' },
+    { type: 'journal', citation: 'Anaya García MS et al. "In Vivo Study of Cerebral White Matter in the Dog Using Diffusion Tensor Tractography." Vet Radiol Ultrasound. 2015;56(2):188-195. doi:10.1111/vru.12211', relevance: '犬腦白質 DTI 纖維追蹤（近期實證）' },
   ],
   is_current: true,
   created_at: now,
@@ -1885,7 +2004,7 @@ const contentCSFPhysiology: NodeContent = {
 const contentSeizurePathophysiology: NodeContent = {
   id: 'CONTENT-NEURO-L2-001',
   node_id: 'NEURO-L2-001',
-  version: 1,
+  version: 2,
   summary: '癲癇發作（Seizure）是由大腦皮質神經元異常同步化過度放電所引發的短暫性神經功能障礙。核心機轉為興奮性（Glutamate/NMDA/AMPA）與抑制性（GABA）神經傳遞之間的失衡。犬為小動物癲癇最常見的物種，特發性癲癇（Idiopathic Epilepsy, IE）佔犬反覆性癲癇的最大比例。理解癲癇發作的細胞與迴路機轉、癲癇形成（epileptogenesis）過程、以及癲癇重積（status epilepticus）的病理生理，是正確分類癲癇、選擇抗癲癇藥物（AED）與評估預後的基礎。',
   learning_objectives: [
     '描述癲癇發作的細胞層級機轉（離子通道、突觸傳遞失衡）',
@@ -1907,7 +2026,7 @@ const contentSeizurePathophysiology: NodeContent = {
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-
+癲癇發作的本質是大腦皮質神經元異常同步化的過度放電；理解其細胞與迴路機轉，是分類癲癇、選藥與判斷預後的基礎。
 
 ### 正常神經元電生理
 - 靜止膜電位：~-70 mV（K⁺ 外流主導）
@@ -1921,7 +2040,7 @@ const contentSeizurePathophysiology: NodeContent = {
 癲癇狀態：
   興奮↑：Glutamate ↑、NMDA/AMPA 受體過度活化、Na⁺ 通道功能異常
   抑制↓：GABA 合成↓、GABA-A 受體表達↓、Cl⁻ 通道功能異常
- ，跟著神經元過度同步放電，臨床癲癇發作
+  → 神經元過度同步放電 → 臨床癲癇發作
 \`\`\`
 
 ### 陣發性去極化移位（PDS, Paroxysmal Depolarization Shift）
@@ -1979,7 +2098,16 @@ const contentSeizurePathophysiology: NodeContent = {
 | 犬 IE 何時開始 AED 治療 | 第一次發作即治療 vs 等待第二次，早期治療是否改善長期預後仍有爭議 | Level III |
 | 反覆發作是否真的累積損傷犬腦 | 犬缺乏縱向 MRI 海馬迴體積追蹤研究，人醫資料外推 | Level III |
 | Ketamine CRI 用於犬 SE 的安全性與療效 | NMDA 拮抗理論上合理，但犬 prospective 研究有限 | Level III |
-| 犬癲癇的 EEG 標準化 | 犬 EEG 受麻醉影響大，清醒 EEG 技術限制是主要瓶頸 | Level IV |`,
+| 犬癲癇的 EEG 標準化 | 犬 EEG 受麻醉影響大，清醒 EEG 技術限制是主要瓶頸 | Level IV |
+
+## 五、近期實證更新 (Recent Evidence)
+
+- **抗藥性癲癇的機轉再認識**：約三分之一的犬特發性癲癇對足量 AED 反應不佳（藥物難治）。Potschka 等 2023 回顧犬抗藥性癲癇病理生理，提出**多機轉並存假說**：多藥外排轉運體（P-glycoprotein/MDR1）上調限制 AED 進入腦（transporter 假說）、標靶改變（GABA-A 受體亞單元變化，target 假說）、神經網路重塑等——惟多屬假說，未必全為犬臨床的確證驅動因子。
+- **癲癇重積「5 分鐘法則」的機轉與分階治療**：持續發作 > 5 分鐘即啟動 GABA-A 受體內化、造成時間依賴性 BZD 抗性，是「及早給藥」的機轉基礎（2024 ACVIM 共識）。現行框架為**分階**處置——一線 benzodiazepine，二線 IV phenobarbital 或 levetiracetam，三線麻醉劑 CRI（propofol/ketamine）；惟二/三線確切藥序仍依個案與物種調整（貓的證據較有限），勿視為僵固通則。
+- **犬作為自發性轉譯模型**：自發犬 IE 與人類癲癇共享部分 epileptogenesis 特徵（反覆發作後的海馬迴變化等），使犬成為有價值的抗 epileptogenesis 自然模型——但**犬 IE 並不等同人類顳葉癲癇**，海馬迴變化可能是反覆發作的「結果」而非原因。
+- **分類時效**：發作病因分類仍以 **IVETF 2015** 框架為現行依據——特發性（idiopathic）、結構性（structural）、反應性（reactive，代謝/毒物所致，屬「反應性發作」而非癲癇本身）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '癲癇重積的「5 分鐘法則」有堅實的病理生理基礎：持續發作超過 5 分鐘後，GABA-A 受體開始從突觸膜內化（internalization），使得 Benzodiazepine 的效果急劇下降。臨床上，Diazepam 在發作前 5 分鐘給予的成功率 > 80%，但超過 30 分鐘後降至 < 40%。所以，及早給藥是控制 SE 最重要的預後因子。',
   common_mistakes: [
     '將所有犬癲癇都歸因為特發性，需先排除結構性（腦炎、腫瘤）與代謝性（低血糖、肝性腦病）原因',
@@ -1996,10 +2124,12 @@ const contentSeizurePathophysiology: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Diazepam', 'Phenobarbital', 'Levetiracetam', 'Propofol'],
   references: [
-    { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 犬癲癇管理共識' },
-    { type: 'journal', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 癲癇定義與分類共識' },
+    { type: 'guideline', citation: 'Podell M, Volk HA, et al. "2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs." J Vet Intern Med. 2016;30(2):477-490. doi:10.1111/jvim.13841', relevance: 'ACVIM 犬癲癇管理共識' },
+    { type: 'guideline', citation: 'Charalambous M, Muñana K, et al. "ACVIM Consensus Statement on the management of status epilepticus and cluster seizures in dogs and cats." J Vet Intern Med. 2024;38(1):19-40. doi:10.1111/jvim.16928', relevance: '2024 ACVIM 癲癇重積/叢發共識（5 分鐘法則與分階治療）' },
+    { type: 'journal', citation: 'Berendt M, Farquhar RG, et al. "International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals." BMC Vet Res. 2015;11:182. doi:10.1186/s12917-015-0461-2', relevance: 'IVETF 癲癇定義與分類共識' },
+    { type: 'journal', citation: 'Potschka H, Fischer A, Löscher W, Volk HA. "Pathophysiology of drug-resistant canine epilepsy." Vet J. 2023;296-297:105990. doi:10.1016/j.tvjl.2023.105990', relevance: '犬抗藥性癲癇病理生理近期回顧（transporter/target 假說）' },
+    { type: 'journal', citation: 'Frey HH, Löscher W. "Pharmacokinetics of anti-epileptic drugs in the dog: a review." J Vet Pharmacol Ther. 1985;8(3):219-233. doi:10.1111/j.1365-2885.1985.tb00951.x', relevance: '犬抗癲癇藥物動力學基礎（修正 v1 誤標：實為 Frey 第一作者）' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '癲癇病理生理基礎章節' },
-    { type: 'journal', citation: 'Löscher W. The pharmacokinetics of antiepileptic drugs in dogs. J Vet Pharmacol Ther. 1985;8(3):219-233.', relevance: '犬抗癲癇藥物動力學基礎' },
   ],
   is_current: true,
   created_at: now,
@@ -2404,7 +2534,7 @@ Ca²⁺ 依賴性酵素活化（calpain、磷脂酶 A₂）
 const contentNeuroExam: NodeContent = {
   id: 'CONTENT-NEURO-L4-001',
   node_id: 'NEURO-L4-001',
-  version: 1,
+  version: 2,
   summary: '神經學檢查（Neurological Examination）是獸醫神經科最基礎且最重要的診斷工具。系統性五步驟流程包括：意識評估、步態分析、姿勢反應、脊髓反射與腦神經評估。透過這些檢查結果，臨床醫師可將病灶定位至七大神經解剖區域，並區分 UMN 與 LMN 病灶、中樞性與周邊性前庭疾病。正確執行神經學檢查的定位準確率約 70-80%。',
   learning_objectives: [
     '執行完整的系統性神經學檢查五步驟',
@@ -2418,7 +2548,7 @@ const contentNeuroExam: NodeContent = {
     '本體感覺定位（proprioceptive positioning）是最敏感的姿勢反應測試',
     '膝蓋反射（patellar reflex）測試 L4-L6 股四頭肌/股神經',
     '深痛覺測試：止血鉗夾趾骨，觀察有意識的疼痛反應（轉頭/叫喊），非屈曲反射',
-    'Panniculus reflex 截斷面可定位脊髓病灶上緣',
+    'Panniculus reflex 截斷面定位：病灶通常在皮肌反射消失截斷面再往頭側約 1-2 節',
     '所有檢查結果需記錄於標準化神經學檢查表',
   ],
   body: `# 神經學檢查
@@ -2450,9 +2580,9 @@ const contentNeuroExam: NodeContent = {
 ### Step 4：脊髓反射
 - 膝蓋反射：L4-L6（股神經），正常 +2
 - 屈曲反射前肢：C6-T2，夾趾觀察屈曲
-- 屈曲反射後肢：L4-S1，夾趾觀察屈曲
+- 屈曲反射後肢：主要坐骨神經 L6-S1（髖屈曲含股神經 L4-L6），夾趾觀察屈曲
 - 會陰反射：S1-S3（陰部神經），觸碰肛門觀察收縮
-- Panniculus reflex：從尾端向頭端逐節刺激皮膚，觀察皮肌收縮消失的截斷面
+- Panniculus reflex：從尾端向頭端逐節刺激皮膚，觀察皮肌收縮消失的截斷面；病灶通常在截斷面再往頭側約 1-2 節
 
 ### Step 5：腦神經
 - CN II：威脅反應、PLR、menace response
@@ -2464,11 +2594,21 @@ const contentNeuroExam: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+檢查發現的判讀原則：
+1. **本體感覺定位最敏感**：常為脊髓/前腦病變最早出現的異常，優先且逐肢測試。
+2. **反射定位節段**：反射亢進＝UMN（病灶在反射弧之上）；反射減弱/消失＝LMN（病灶在該反射弧節段）。
+3. **深痛覺（DPP）≠ 屈曲反射**：DPP 看「大腦層級疼痛感知」（轉頭/叫喊）；屈曲反射為脊髓反射弧，脊髓橫斷仍可存在——DPP 喪失為 IVDD Grade V、預後關鍵。
+4. **對稱性與整合**：先逐項記錄，再整合定位至七大區域並判斷是否多灶；不對稱提示側化病灶。
+> 神經學檢查為定位推理的資料來源；確診病因仍須結合病程、影像（MRI）與 CSF。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+1. **DPP 誤判為屈曲反射**（最常見且最危險）：肢體回縮不等於有深痛覺。
+2. **緊張/疼痛動物評估反射**：肌張力可掩蓋或假性提高反射，須先安撫/鎮痛。
+3. **肥胖犬膝反射難引出**：非 LMN 病變，勿過度解讀。
+4. **鎮靜/麻醉藥影響**：壓抑意識與反射，避免在藥物影響下定論。
+5. **本體感覺缺損勿輕率歸因「老化」**：應先排除神經/骨科疾病，不可預設為正常老化。
+6. **未按五步驟系統執行**：易遺漏關鍵發現（如腦神經、panniculus 截斷面）。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2483,7 +2623,15 @@ const contentNeuroExam: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬神經學檢查的觀察者間一致性 | 不同經驗程度獸醫的定位準確率差異大（50% vs 80%） | Level III |
-| 深痛覺測試的最佳標準化方法 | 止血鉗力道、刺激位置缺乏統一標準，影響 IVDD 分級一致性 | Level IV |`,
+| 深痛覺測試的最佳標準化方法 | 止血鉗力道、刺激位置缺乏統一標準，影響 IVDD 分級一致性 | Level IV |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+1. **標準化評分量表**：Open Field Score、改良式量表提升跨觀察者一致性，利於療效追蹤與多中心研究。
+2. **定位導向 MRI**：有經驗者神經學檢查定位與 MRI 病灶一致性約 70-80%，可縮小掃描範圍、降低麻醉與費用。
+3. **客觀步態分析 + teleneurology**：感測器／影片 AI 步態量化、遠距步態影片判讀，輔助基層神經評估與縱向追蹤。
+4. **DPP 標準化議題**：止血鉗力道與刺激位置缺乏統一標準，影響 IVDD 分級與手術決策一致性，標準化研究進行中。
+> 神經學檢查以系統性五步驟為核心，定位後病因診斷與影像判讀須由獸醫（神經專科）覆核。`,
   clinical_pearl: '神經學檢查最容易出錯的地方是深痛覺（DPP）測試。正確方法：用止血鉗夾壓趾骨，觀察的是「大腦層級的疼痛感知」，犬會轉頭看向刺激源、發出叫聲或試圖咬人。單純的屈曲反射（肢體回縮）是脊髓反射弧的反應，即使脊髓完全橫斷也可能存在。這個區分直接影響 IVDD 的分級與手術緊急度。',
   common_mistakes: [
     '將屈曲反射誤判為深痛覺，這是最常見也最危險的錯誤',
@@ -2521,7 +2669,7 @@ const contentNeuroExam: NodeContent = {
     interpretation_guide: '整合所有結果：1. 有無意識改變？2. 受影響肢體？3. UMN or LMN？4. 對稱 or 不對稱？5. 有無腦神經異常？6. 定位至七大區域。7. 考慮多灶性。',
     pitfalls: [
       '肥胖犬膝蓋反射可能難以引出（非 LMN 病變）',
-      '老年犬輕度本體感覺下降可能為正常老化',
+      '本體感覺缺損勿輕率歸因正常老化，應先排除神經/骨科疾病',
       '鎮靜藥物影響意識與反射評估',
       '極度緊張或疼痛的動物反射可能假性亢進',
     ],
@@ -2539,8 +2687,9 @@ const contentNeuroExam: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經學檢查標準教材' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '神經學檢查實務指南' },
+    { type: 'textbook', citation: 'de Lahunta A, Glass E, Kent M. Veterinary Neuroanatomy and Clinical Neurology, 5th ed. Elsevier, 2021.', relevance: '神經解剖與檢查經典教材' },
     { type: 'journal', citation: 'Garosi L. Lesion Localization and Differential Diagnosis. In: BSAVA Manual, 4th ed. 2013:1-17.', relevance: '定位診斷方法論' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，神經學檢查標準化診斷流程' },
+    { type: 'guideline', citation: 'De Risio L, et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148. doi:10.1186/s12917-015-0462-1.', relevance: 'IVETF 共識，神經學檢查標準化診斷流程' },
   ],
   is_current: true,
   created_at: now,
@@ -2611,7 +2760,12 @@ const contentCSFAnalysis: NodeContent = {
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+- **採 CSF 前沒先影像排除佔位**：後顱窩腫瘤/膿瘍致顱內壓升高時，抽 CSF 突然降壓可誘發小腦疝＝致命；cisternal puncture 風險尤高，務必先 MRI/CT。
+- **血性 CSF 不離心鑑別**：穿刺汙染 vs 真出血（蛛網膜下腔出血）靠離心看上清液——黃染（xanthochromia）＝真出血；清澈＝汙染。血染也會稀釋細胞與蛋白判讀。
+- **拖過 30-60 分鐘才處理**：CSF 細胞（尤其大單核/腫瘤細胞）數小時內就退化，計數與分類失真——採完要儘快上機/抹片，延遲會低估 pleocytosis。
+- **只送常規、不加感染 panel**：細胞學「淋巴球增多」≠ 直接等於 MUO——Toxoplasma/Neospora/CDV/Cryptococcus 都可能類似；漏掉可治療的感染性腦炎卻給免疫抑制＝災難。先排除感染再下 MUO。
+- **CSF 正常就排除 MUO**：局灶性 GME 的 CSF 可能正常或僅輕度異常；臨床＋MRI 高度懷疑時，CSF 正常不排除，必要時追蹤或推定治療。
+- **把細胞數當唯一療效指標**：CSF 細胞數受類固醇快速影響，數字下降不等於病好；要配臨床與影像綜合判斷。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2692,7 +2846,7 @@ const contentCSFAnalysis: NodeContent = {
 const contentNeuroImaging: NodeContent = {
   id: 'CONTENT-NEURO-L4-003',
   node_id: 'NEURO-L4-003',
-  version: 1,
+  version: 2,
   summary: '神經影像學是獸醫神經科確診的核心工具。MRI 為中樞神經系統疾病的金標準影像，提供卓越的軟組織對比解析度。CT 在骨骼結構評估與急診快速掃描方面有優勢。MRI 基礎序列包括 T1W、T2W、FLAIR 與 T1W+Gd（對比增強），不同疾病有其特徵性影像模式。',
   learning_objectives: [
     '比較 MRI 與 CT 在神經科疾病中的適應症',
@@ -2759,11 +2913,22 @@ const contentNeuroImaging: NodeContent = {
 
 ## 二、判讀要點 (Interpretation)
 
-判讀結果時需結合臨床表現綜合評估，注意假陽性與假陰性的可能性，必要時進行重複檢測或追加其他檢查。
+神經影像判讀的核心是「定位先行、序列互補、影像-臨床對照」：
+1. **先用神經學定位縮小範圍**，再針對該節段/腦區掃描；影像所見必須與定位一致，否則重新檢視。
+2. **序列分工**：T2W 找病灶（最敏感）、T1W 看解剖與出血、FLAIR 看腦室旁/腦膜、Gd-T1W 看 BBB 破壞（腫瘤/活動性發炎/膿瘍壁）。
+3. **病灶定性四問**：軸內 vs 軸外（extra-axial 如腦膜瘤多寬基底、均勻增強）、單灶 vs 多灶（多灶+不規則增強偏 MUO）、佔位效應/中線偏移/腦疝徵象、增強模式（均勻/環狀/不增強）。
+4. **脊髓**：T2W 高訊號定壓迫節段與嚴重度，對照椎間盤突出物位置與椎管佔比。
+5. **正常不等於沒病**：特發性癲癇、DM、代謝/功能性疾病 MRI 常正常——是排除性診斷的一環，而非「沒問題」。
 
 ## 三、常見陷阱 (Pitfalls)
 
-檢查結果的判讀需注意取樣品質、檢體保存條件及個體差異等因素可能導致的誤判。
+1. **記反序列訊號**：鐵則「T2 水亮、T1 水暗」；混淆 T1/T2 會把水腫當出血。
+2. **亞急性出血假性增強**：亞急性出血的 methemoglobin 在 T1W 為高訊號、未打對比劑也亮，易誤判為強化——須比對打藥前後；慢性出血（hemosiderin）則在 T2*/GRE 為低訊號。
+3. **Magic angle artifact**：膠原結構（韌帶、神經根）在與主磁場約 55° 時出現假性高訊號，勿誤判為病灶。
+4. **Motion／部分容積假影**：移動假影與小型犬部分容積效應可造成假病灶或過度判讀。
+5. **低場 MRI 的限制**：0.2-0.4T 對微小病灶（海馬硬化、皮質發育不全、小梗塞）敏感度遠低於 1.5T/3T，陰性不能排除。
+6. **沒打 Gd 就下結論**：腫瘤 vs MUO、活動性 vs 陳舊病灶的鑑別仰賴對比增強，不可省略。
+7. **DM／特發性癲癇 MRI 正常**：勿因「影像正常」而排除這些診斷。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -2781,7 +2946,21 @@ const contentNeuroImaging: NodeContent = {
 | 犬 MRI 最低場強標準（低場 vs 高場） | 低場（0.2-0.4T）MRI 在台灣仍在使用，但對微小病灶（如海馬硬化）的敏感度遠低於 1.5T/3T | Level III |
 | T2W 脊髓高訊號作為 IVDD 預後指標的可靠度 | 高訊號可代表水腫（可逆）或壞死（不可逆），單憑 MRI 難以區分 | Level III |
 | MUO vs 腦腫瘤的 MRI 鑑別準確率 | 單靠 MRI 特徵鑑別 MUO 與低度惡性腦瘤準確率約 80%，需 CSF 或病理佐證 | Level II |
-| 犬 MRI protocol 跨機構標準化 | 各機構使用不同場強、序列與切面厚度，影響跨機構影像比較與多中心研究 | Level IV |`,
+| 犬 MRI protocol 跨機構標準化 | 各機構使用不同場強、序列與切面厚度，影響跨機構影像比較與多中心研究 | Level IV |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+### 癲癇專屬 MRI protocol 標準化
+IVETF 2015 提出獸醫癲癇專屬 MRI 掃描建議（Rusbridge 2015）與分層診斷流程（De Risio 2015），統一序列/切面以提高微小致癇病灶（海馬、皮質）偵測與跨機構可比性；高場（1.5T/3T）對此類病灶明顯優於低場。
+
+### 進階序列與功能性影像
+擴散加權／張量影像（DWI/DTI）用於急性梗塞與脊髓白質完整性評估、預測 IVDD 預後；磁敏感（SWI/GRE）提升出血/微出血偵測；da Costa 2020 整理 IVDD 影像之現代取徑。
+
+### AI 輔助判讀萌芽
+機器學習輔助 MRI 鑑別（如腦腫瘤 vs MUO、腫瘤分級）在犬初步研究中，呼應人醫多款已核准之神經影像 AI；目前仍須結合 CSF 與臨床。
+
+### 影像-病理仍需互補
+MRI 對 MUO vs 低度腦瘤的鑑別特異度約 80%，確定診斷仍需 CSF 或病理；影像所見務必回扣神經學定位與臨床病程。`,
   clinical_pearl: 'MRI 的 T2W 脊髓高訊號在 IVDD 中具有預後意義，高訊號越廣泛，代表脊髓水腫或壞死越嚴重，預後越差。但注意：T2W 高訊號可以是水腫（可逆）也可以是壞死/軟化（不可逆），需結合臨床分級判斷。Grade V 合併廣泛 T2 高訊號的預後最差。',
   common_mistakes: [
     '混淆 T1W 與 T2W 的訊號特性，記住「T2 = 水亮」',
@@ -2818,7 +2997,7 @@ const contentNeuroImaging: NodeContent = {
     interpretation_guide: '1. 系統性評估所有序列。2. T2W 偵測病變（最敏感），3. T1W 評估解剖與出血。4. FLAIR 評估腦室旁與腦膜。 Gd-T1W 評估 BBB 破壞與血管性。6. 結合定位與臨床特徵作綜合判斷。',
     pitfalls: [
       'Magic angle artifact 可在脊髓周圍產生假性高訊號',
-      '慢性出血在 T1W 可為高訊號（methemoglobin），需與增強區分',
+      '亞急性出血在 T1W 可為高訊號（methemoglobin），需與對比增強區分；慢性出血（hemosiderin）則在 T2*/GRE 為低訊號',
       '小型犬的正常 MRI 可能因體型而被過度解讀',
       'Motion artifact 可導致假性病灶',
     ],
@@ -2834,8 +3013,9 @@ const contentNeuroImaging: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Gavin PR, Bagley RS. Practical Small Animal MRI. Wiley-Blackwell, 2009.', relevance: '小動物 MRI 實務教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經影像學章節' },
-    { type: 'journal', citation: 'Cervera V et al. Diagnosis and treatment of intracranial disease. Vet Clin North Am Small Anim Pract. 2014;44(6):1157-1185.', relevance: '顱內疾病影像診斷' },
-    { type: 'guideline', citation: 'De Risio L et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148.', relevance: 'IVETF 共識，MRI 在癲癇分層診斷中的角色' },
+    { type: 'guideline', citation: 'Rusbridge C, Long S, Jovanovik J, et al. International Veterinary Epilepsy Task Force recommendations for a veterinary epilepsy-specific MRI protocol. BMC Vet Res. 2015;11:194. doi:10.1186/s12917-015-0466-x.', relevance: '獸醫癲癇專屬 MRI 掃描建議（序列/切面標準化）' },
+    { type: 'guideline', citation: 'De Risio L, Bhatti S, Muñana K, et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148. doi:10.1186/s12917-015-0462-1.', relevance: 'IVETF 共識，MRI 在癲癇分層診斷中的角色' },
+    { type: 'journal', citation: 'da Costa RC, De Decker S, Lewis MJ, et al. Diagnostic Imaging in Intervertebral Disc Disease. Front Vet Sci. 2020;7:588338. doi:10.3389/fvets.2020.588338.', relevance: 'IVDD 影像診斷現代取徑（含進階序列）' },
   ],
   is_current: true,
   created_at: now,
@@ -2845,7 +3025,7 @@ const contentNeuroImaging: NodeContent = {
 const contentAEDTherapy: NodeContent = {
   id: 'CONTENT-NEURO-L5-001',
   node_id: 'NEURO-L5-001',
-  version: 1,
+  version: 2,
   summary: '抗癲癇藥物（Antiepileptic Drugs, AEDs）治療是犬特發性癲癇的長期管理核心。治療起始標準依據 IVETF 共識，一線藥物為 Phenobarbital（PB）與 Potassium Bromide（KBr），新一代包括 Levetiracetam（LEV）與 Zonisamide（ZNS）。治療目標為減少發作頻率 > 50%，同時維持可接受的生活品質。藥物治療需長期監測血中濃度與副作用。',
   learning_objectives: [
     '依據 IVETF 共識判斷 AED 治療起始時機',
@@ -2959,7 +3139,15 @@ const contentAEDTherapy: NodeContent = {
 | LEV 作為犬癲癇一線 AED 的定位 | 副作用少但需 TID 給藥且 honeymoon effect 爭議，是否能取代 PB 為一線仍缺乏頭對頭 RCT | Level II |
 | AED 起始時機：首次發作 vs 達 IVETF 標準 | 早期治療可能改善長期預後（kindling 假說），但首次發作即治療的證據不足 | Level III |
 | 難治性癲癇的定義標準 | 兩種 AED 治療濃度失敗 vs 三種，標準不統一影響臨床試驗收案與治療決策 | Level IV |
-| PB 長期使用的停藥可能性 | 長期無發作的犬是否可嘗試逐漸減量停藥，突然停藥可誘發 SE，但長期使用肝毒性累積 | Level IV |`,
+| PB 長期使用的停藥可能性 | 長期無發作的犬是否可嘗試逐漸減量停藥，突然停藥可誘發 SE，但長期使用肝毒性累積 | Level IV |
+
+## 七、近期實證更新（IVETF 2015 / ACVIM 2016，待 DVM 覆核）
+
+1. **Imepitoin（Pexion）**：歐洲核准之犬特發性癲癇**一線**藥（GABA-A 受體低親和力部分致效），鎮靜/肝毒性少、不需常規血中濃度監測；但**不建議用於 cluster seizures 或 status epilepticus**（IVETF 2015）。台灣/美國取得受限。
+2. **現行治療框架**：PB / KBr 為傳統一線；imepitoin 為歐洲一線（限復發性單次全身性發作）。起治時機：≥2 次/6 月、cluster、status、嚴重 post-ictal。
+3. **二線/附加**：levetiracetam、zonisamide；難治性（≥2 種適當 AED 治療濃度仍失敗）考慮組合用藥。
+4. **KBr 貓禁用**（致命性嗜酸球性支氣管炎/肺炎）；PB 需監測肝毒性；LEV 有 honeymoon effect 且 PB 酵素誘導加速其清除。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: '「發作日誌」是管理癲癇犬的最重要工具之一。要求飼主記錄每次發作的日期、時間、持續時間、類型（局灶/全身）與 post-ictal 嚴重度。這不僅用於評估治療效果，也能幫助辨識 cluster seizure 模式和預警惡化趨勢。用手機拍攝發作影片更可幫助區分發作類型。',
   common_mistakes: [
     '首次單一發作即開始長期 AED（需達到治療起始標準）',
@@ -2978,10 +3166,10 @@ const contentAEDTherapy: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Phenobarbital', 'Potassium Bromide', 'Levetiracetam', 'Zonisamide', 'Diazepam', 'Propofol', 'Midazolam'],
   references: [
-    { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'AED 管理共識' },
-    { type: 'guideline', citation: 'Bhatt M et al. IVETF consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176.', relevance: 'IVETF 治療共識' },
+    { type: 'guideline', citation: 'Podell M, Volk HA, Berendt M, et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490. doi:10.1111/jvim.13841.', relevance: 'ACVIM 犬癲癇發作管理共識' },
+    { type: 'guideline', citation: 'Bhatti SFM, De Risio L, Muñana K, et al. International Veterinary Epilepsy Task Force consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176. doi:10.1186/s12917-015-0464-z.', relevance: 'IVETF 犬癲癇藥物治療共識（PB/KBr/imepitoin）' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '癲癇治療章節' },
-    { type: 'journal', citation: 'Munana KR et al. Use of levetiracetam as adjunctive treatment for refractory canine epilepsy: a randomized, placebo-controlled crossover trial. J Vet Intern Med. 2012;26(2):341-348.', relevance: 'Levetiracetam RCT，AED 臨床試驗證據' },
+    { type: 'journal', citation: 'Muñana KR, et al. Evaluation of levetiracetam as adjunctive treatment for refractory idiopathic epilepsy in dogs: a randomized, placebo-controlled, crossover trial. J Vet Intern Med. 2012;26(2):341-348. doi:10.1111/j.1939-1676.2011.00866.x.', relevance: 'Levetiracetam 附加治療難治性癲癇 RCT' },
   ],
   is_current: true,
   created_at: now,
@@ -3281,7 +3469,7 @@ const contentNeuroRehab: NodeContent = {
 const contentICPMechanism: NodeContent = {
   id: 'CONTENT-NEURO-L2-005',
   node_id: 'NEURO-L2-005',
-  version: 1,
+  version: 2,
   summary: '顱內壓升高（Increased Intracranial Pressure, ICP）是神經急症中最關鍵的病理生理概念之一。Monro-Kellie 學說指出顱腔為固定容積空間，內含腦實質（80%）、腦脊髓液（CSF, 10%）與血液（10%）三大成分，任一成分體積增加時，其他成分必須代償性減少以維持正常 ICP（犬 < 12 mmHg）。當代償機轉耗盡時 ICP 急速上升，導致腦灌流壓（CPP = MAP - ICP）下降，引發 Cushing 反應（三聯徵：心搏過緩 + 高血壓 + 呼吸異常）與腦疝。',
   learning_objectives: [
     '說明 Monro-Kellie 學說與顱內壓組成三要素',
@@ -3367,7 +3555,21 @@ ICP 極度升高壓迫腦幹，最後缺血刺激血管運動中樞，接著交�
 |---------|------|---------------|
 | Mannitol vs 高張食鹽水的優劣比較 | 人醫系統性回顧提示高張食鹽水可能更優，獸醫直接比較研究不足 | Level III |
 | 犬 MGCS 的預後預測準確度 | 原始研究 MGCS ≤ 8 分 48 小時死亡率約 50%，但後續驗證研究結果不一致 | Level III |
-| 類固醇在 ICP 管理中的角色 | 對血管源性水腫（腫瘤周圍水腫）有效，但對細胞毒性水腫（外傷）無效甚至有害 | Level II |`,
+| 類固醇在 ICP 管理中的角色 | 對血管源性水腫（腫瘤周圍水腫）有效，但對細胞毒性水腫（外傷）無效甚至有害 | Level II |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+### 高張食鹽水 vs Mannitol：趨勢偏向 HTS
+人醫系統性回顧顯示高張食鹽水（HTS）降 ICP 不劣於、部分情境優於 mannitol，且不引起利尿性脫水——對低血壓/低血容犬尤其有利；獸醫趨勢漸以 HTS 為休克或脫水患者的優先選擇（mannitol 仍廣用於血容量穩定者）。
+
+### 非侵入性 ICP 估測：視神經鞘直徑（ONSD）
+人醫已驗證 ONSD 超音波（> ~5 mm 提示 ICP 升高）作為床邊非侵入估測；犬 ONSD 研究起步中，未來可能補足獸醫少做直接 ICP 監測的缺口。
+
+### TBI 管理「束組」化與 CPP 導向
+犬腦外傷管理採人醫式束組（Sande 2010）：30° 頭高、避免頸靜脈受阻、維持 MAP/CPP、正常通氣（避免過度換氣致缺血）、滲透治療；MGCS 主要用於神經嚴重度與預後分層，而非直接 ICP 替代指標。
+
+### 類固醇定位釐清
+類固醇僅對血管源性（腫瘤周圍）水腫有效，對細胞毒性/外傷性水腫無益甚至有害——TBI 不常規使用類固醇降 ICP。`,
   clinical_pearl: 'Cushing 反應（心搏過緩 + 高血壓 + 呼吸異常）的出現代表腦幹已受到嚴重壓迫，是即將發生腦疝的危險訊號。在臨床上，當你看到一隻意識逐漸惡化的犬貓突然出現心搏過緩與血壓升高時，不要直覺性地給予 Atropine 或降壓藥，應立即啟動降低 ICP 的措施：30 度頭部抬高 + Mannitol 0.5-1 g/kg IV + 確保呼吸道通暢。記住 CPP = MAP - ICP，維持足夠的 MAP 同時降低 ICP 才是保護腦灌流的關鍵。',
   common_mistakes: [
     '將 Cushing 反應中的心搏過緩用 Atropine 治療，心搏過緩是壓力感受器對高血壓的代償反應，根本原因是 ICP 升高',
@@ -3390,8 +3592,8 @@ ICP 極度升高壓迫腦幹，最後缺血刺激血管運動中樞，接著交�
   references: [
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 16: Encephalopathies & Increased ICP.', relevance: 'ICP 管理臨床實務指引' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '顱內壓升高機轉與處置基礎教材' },
-    { type: 'journal', citation: 'Sande A, West C. Traumatic brain injury: a review of pathophysiology and management. J Vet Emerg Crit Care. 2010;20(2):177-190.', relevance: 'ICP 管理在犬腦外傷中的應用' },
-    { type: 'guideline', citation: 'Syring RS. Assessment and treatment of central nervous system abnormalities in the emergency patient. Vet Clin North Am Small Anim Pract. 2005;35(2):281-305.', relevance: '急診 ICP 升高處置共識' },
+    { type: 'journal', citation: 'Sande A, West C. Traumatic brain injury: a review of pathophysiology and management. J Vet Emerg Crit Care. 2010;20(2):177-190. doi:10.1111/j.1476-4431.2010.00527.x.', relevance: 'ICP 管理在犬腦外傷中的應用' },
+    { type: 'journal', citation: 'Syring RS. Assessment and treatment of central nervous system abnormalities in the emergency patient. Vet Clin North Am Small Anim Pract. 2005;35(2):281-305. doi:10.1016/j.cvsm.2004.10.007.', relevance: '急診 ICP 升高處置回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -3401,7 +3603,7 @@ ICP 極度升高壓迫腦幹，最後缺血刺激血管運動中樞，接著交�
 const contentBrainTumor: NodeContent = {
   id: 'CONTENT-NEURO-L3-008',
   node_id: 'NEURO-L3-008',
-  version: 1,
+  version: 2,
   summary: '顱內腫瘤（Intracranial Neoplasia）是犬貓中老年動物最常見的結構性腦部疾病之一。犬以膠質瘤（Glioma）較常見（短頭品種好發），貓以腦膜瘤（Meningioma）為最常見（占貓原發腦瘤 > 50%，前腦好發，邊界清晰，手術預後較佳）。診斷仰賴 MRI 對比增強影像。治療策略包括手術切除、放射治療、化學治療（Hydroxyurea）及支持性抗癲癇藥物。',
   learning_objectives: [
     '比較犬與貓最常見的原發性腦腫瘤類型與好發位置',
@@ -3417,7 +3619,7 @@ const contentBrainTumor: NodeContent = {
     '脈絡叢腫瘤（Choroid Plexus Tumor）：CPP（良性）vs CPC（惡性），產生過多 CSF 或阻塞 CSF 流通，最後阻塞性水腦症',
     '繼發性癲癇為最常見的首發症狀（犬顱內腫瘤約 50-80% 伴發癲癇）',
     'MRI 對比增強為診斷金標準：腦膜瘤呈均勻強增強 + dural tail sign；膠質瘤呈環狀或不均勻增強',
-    '治療：手術（accessible tumors）± 放射治療（SRT/SRS）± Hydroxyurea（**僅限犬**：50 mg/kg PO EOD，對腦膜瘤有部分反應率；**貓禁用**——貓對 Hydroxyurea 高度敏感，會造成嚴重骨髓抑制及溶血性貧血）± Phenobarbital/Levetiracetam 控制繼發癲癇',
+    '治療：手術（accessible tumors）± 放射治療（SRT/SRS）± Hydroxyurea（**主要用於犬**：50 mg/kg PO EOD，對腦膜瘤有部分反應率；**貓須大幅減量並密集監測 CBC**——貓對其骨髓毒性較敏感、貧血風險較高，非絕對禁忌但用於腦膜瘤的經驗有限）± Phenobarbital/Levetiracetam 控制繼發癲癇',
   ],
   body: `# 顱內腫瘤 (Intracranial Neoplasia)
 
@@ -3480,7 +3682,21 @@ const contentBrainTumor: NodeContent = {
 |---------|------|---------------|
 | 犬腦腫瘤切片 vs 經驗性治療 | 組織學確診為金標準但手術風險高，部分臨床醫師依 MRI 經驗性治療（放射+化療） | Level III |
 | Hydroxyurea 對犬腦膜瘤的實際療效 | 回顧性研究顯示部分反應，但缺乏前瞻性隨機對照試驗 | Level IV |
-| 放射治療最佳方案（常規分次 vs 低分次 vs SRS） | 犬缺乏不同方案的直接比較研究 | Level III |`,
+| 放射治療最佳方案（常規分次 vs 低分次 vs SRS） | 犬缺乏不同方案的直接比較研究 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+### 立體定位放射治療（SRS/SRT）成為改變局面的選項
+過去顱內腫瘤放療多採常規分次（需多次麻醉），近年立體定位放射手術／治療（SRS/SRT）讓「單次或少數分次、高精準」治療成為可能。犬腦膜瘤單次 SRS 已被證實可行、能延長存活並改善神經症狀（Kelsey 2018），對不可手術或飼主不願開顱者尤其有價值；垂體大腺瘤、深部膠質瘤亦受惠。台灣放療設備仍是主要瓶頸，但已有轉介中心引進直線加速器。
+
+### 犬膠質瘤分類標準化與「自然模型」價值
+2018 年修訂版犬膠質瘤診斷分類（Koehler 2018）統一了犬膠質瘤的組織學／分子分級，目的是讓犬膠質瘤成為人類膠質瘤的「自然發生臨床前模型」。NCI 比較性腦腫瘤聯盟（CBTC）進一步推動犬腦腫瘤的分子分型與跨物種轉譯研究（Miller 2019）。這對診斷一致性與未來標靶／免疫治療試驗都是基礎。
+
+### 免疫治療與分子標靶在膠質瘤萌芽
+犬膠質瘤的自體腫瘤疫苗、免疫檢查點抑制、對流增強遞送（CED）化療、不可逆電穿孔（IRE）等新技術多在臨床試驗階段；目前仍以手術＋放療為主流，但分子分型正逐步開啟個體化治療之路。
+
+### 液態切片與非侵入性分型
+血漿／CSF ctDNA 的非侵入性腫瘤分型在人醫進展快速，犬基礎研究起步中，未來可能減少對侵入性切片的依賴——尤其對位置深、手術風險高的腫瘤。`,
   clinical_pearl: '老年犬首次癲癇發作最需警惕的鑑別診斷就是顱內腫瘤，> 5 歲犬首發癲癇約 30% 最終確診為腦腫瘤。MRI 對比增強是不可省略的步驟。若確診為腦膜瘤（尤其貓），不要放棄治療，貓腦膜瘤手術切除後中位存活時間 > 2 年，預後遠優於犬膠質瘤。\n\n【台灣流行病學】短頭品種犬（法國鬥牛犬、波士頓梗）在台灣飼養數量近年大幅增加，膠質瘤發生率可能隨之上升。台灣主要都會區已有 MRI 設備與腦外科能力的教學醫院/轉介中心。放射治療設備較稀缺，為治療的主要瓶頸。',
   common_mistakes: [
     '將老年犬首發癲癇直接歸類為特發性癲癇而未進行 MRI 排除結構性病因',
@@ -3508,7 +3724,7 @@ const contentBrainTumor: NodeContent = {
       { condition: '腦膿瘍', key_differentiator: 'MRI 環狀增強伴中央不增強區（ring-enhancing lesion），可有發燒與白血球升高' },
     ],
     diagnostic_workup: '1. 神經學檢查（定位：前腦/腦幹/小腦/多灶性），2. 基礎血檢（CBC、生化）排除代謝性病因 + 胸腹影像排除原發腫瘤。3. MRI 平掃 + Gadolinium 對比增強（金標準：腫瘤位置、大小、邊界、增強模式、水腫範圍），4. CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿有腦疝風險），5. 組織學確診（手術活檢或立體定位穿刺活檢，為分型金標準但非必須）',
-    treatment_protocol: '多模式治療：1. 支持治療：Phenobarbital 2-5 mg/kg PO BID 或 Levetiracetam 20 mg/kg PO TID 控制癲癇 + Prednisolone 1-2 mg/kg/day 減輕腫瘤周圍水腫。2. 手術切除：腦膜瘤（尤其貓）為首選，邊界清晰者手術完全切除率高。3. 放射治療：術後輔助或不可手術腫瘤的主要治療（常規分次 48-54 Gy/16-20 fx 或低分次 SRS）。4. 化學治療：Hydroxyurea 50 mg/kg PO EOD（**僅限犬**，腦膜瘤有部分反應率 30-40%；**貓嚴禁使用**——對 Hydroxyurea 極度敏感，非再生性貧血、骨髓抑制及溶血性貧血風險極高）。',
+    treatment_protocol: '多模式治療：1. 支持治療：Phenobarbital 2-5 mg/kg PO BID 或 Levetiracetam 20 mg/kg PO TID 控制癲癇 + Prednisolone 1-2 mg/kg/day 減輕腫瘤周圍水腫。2. 手術切除：腦膜瘤（尤其貓）為首選，邊界清晰者手術完全切除率高。3. 放射治療：術後輔助或不可手術腫瘤的主要治療（常規分次 48-54 Gy/16-20 fx，或單次/低分次立體定位 SRS/SRT）。4. 化學治療：Hydroxyurea 50 mg/kg PO EOD（**主要用於犬**，腦膜瘤部分反應率約 30-40%；**貓須大幅減量並密集 CBC 監測**——對其骨髓毒性較敏感、貧血與骨髓抑制風險較高，非絕對禁忌，貓臨床上仍用於紅血球增多症、嗜酸球增多症，惟用於腦腫瘤經驗有限）。',
     prognosis: '腦膜瘤（貓）手術切除：MST > 24 個月，部分報告達 3-4 年。腦膜瘤（犬）手術切除：MST 約 7-16 個月。膠質瘤：保守治療 MST 約 2-4 個月，放射治療 MST 約 8-14 個月，手術困難（infiltrative）。脈絡叢乳頭狀瘤（CPP）：手術可治癒。未治療腦腫瘤（僅支持療法）：MST 約 2-4 個月。預後因子：腫瘤類型（腦膜瘤 > 膠質瘤）、手術可及性、腫瘤大小、ICP 升高程度。',
     monitoring: '治療期間：每 2-4 週監測癲癇頻率、神經功能變化、AED 血藥濃度（Phenobarbital 目標 20-30 μg/mL）。Hydroxyurea 使用期間：每 2 週 CBC 監測骨髓抑制。術後/放療後：每 2-3 個月 MRI 追蹤腫瘤大小與復發。長期：注意腫瘤復發徵兆（癲癇頻率增加、新發神經功能缺損、行為退化）。',
     owner_communication: '顱內腫瘤的治療選擇取決於腫瘤類型、位置與動物整體狀態。貓腦膜瘤手術預後相對良好（平均存活 > 2 年），值得積極治療。犬膠質瘤預後較差但放射治療仍可延長生活品質良好的時間。繼發性癲癇可透過抗癲癇藥物良好控制。治療目標為最大化生活品質而非僅追求存活時間，定期評估生活品質量表（如 HHHHHMM Scale）有助於適時做出人道決定。',
@@ -3526,9 +3742,11 @@ const contentBrainTumor: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 14: Intracranial Neoplasia.', relevance: '顱內腫瘤分類與治療標準教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '腦腫瘤臨床診斷流程' },
-    { type: 'journal', citation: 'Troxel MT et al. Feline intracranial neoplasia: retrospective review of 160 cases (1985-2001). J Vet Intern Med. 2003;17(6):850-859.', relevance: '貓顱內腫瘤大規模回顧研究' },
-    { type: 'journal', citation: 'Snyder JM et al. Canine intracranial primary neoplasia: 173 cases (1986-2003). J Vet Intern Med. 2006;20(3):669-675.', relevance: '犬原發性腦腫瘤盛行率與預後數據' },
-    { type: 'guideline', citation: 'Rossmeisl JH, Jones JC, Zimmerman KL, et al. ACVIM Consensus Statement: Evaluation and Management of Intracranial Meningiomas in Dogs. J Vet Intern Med. 2022;36(1):11-29.', relevance: 'ACVIM 犬顱內腦膜瘤評估與管理共識聲明' },
+    { type: 'journal', citation: 'Troxel MT, Vite CH, Van Winkle TJ, et al. Feline intracranial neoplasia: retrospective review of 160 cases (1985-2001). J Vet Intern Med. 2003;17(6):850-859. doi:10.1111/j.1939-1676.2003.tb02525.x.', relevance: '貓顱內腫瘤大規模回顧研究（腦膜瘤最常見）' },
+    { type: 'journal', citation: 'Snyder JM, Shofer FS, Van Winkle TJ, et al. Canine intracranial primary neoplasia: 173 cases (1986-2003). J Vet Intern Med. 2006;20(3):669-675. doi:10.1111/j.1939-1676.2006.tb02913.x.', relevance: '犬原發性腦腫瘤盛行率與預後數據' },
+    { type: 'journal', citation: 'Koehler JW, Miller AD, Miller CR, et al. A Revised Diagnostic Classification of Canine Glioma: Towards Validation of the Canine Glioma Patient as a Naturally Occurring Preclinical Model for Human Glioma. J Neuropathol Exp Neurol. 2018;77(11):1039-1054. doi:10.1093/jnen/nly085.', relevance: '犬膠質瘤修訂版診斷分類（標準化分級、跨物種模型）' },
+    { type: 'journal', citation: 'Miller AD, Miller CR, Rossmeisl JH. Canine Primary Intracranial Cancer: A Clinicopathologic and Comparative Review of Glioma, Meningioma, and Choroid Plexus Tumors. Front Oncol. 2019;9:1151. doi:10.3389/fonc.2019.01151.', relevance: '犬原發性腦腫瘤臨床病理與比較性回顧（取代原捏造之 ACVIM 腦膜瘤共識）' },
+    { type: 'journal', citation: 'Kelsey KL, Gieger TL, Nolan MW. Single fraction stereotactic radiation therapy (stereotactic radiosurgery) is a feasible method for treating intracranial meningiomas in dogs. Vet Radiol Ultrasound. 2018;59(5):632-638. doi:10.1111/vru.12636.', relevance: '犬腦膜瘤單次立體定位放射手術可行性與療效' },
   ],
   is_current: true,
   created_at: now,
@@ -4674,7 +4892,7 @@ const contentNME: NodeContent = {
     { type: 'journal', citation: 'Granger N, Smith PM, Jeffery ND. Clinical findings and treatment of non-infectious meningoencephalomyelitis in dogs: a systematic review of 457 published cases from 1962 to 2008. Vet J. 2010;184(3):290-297.', relevance: 'MUO 大規模系統回顧與治療成效分析' },
     { type: 'journal', citation: 'Schrauwen I, et al. Genome-wide association study identifies DLA class II haplotype in Pug dog necrotizing meningoencephalitis. BMC Genomics. 2014;15:349.', relevance: 'DLA class II 基因與巴哥犬 NME 遺傳關聯性研究' },
     { type: 'journal', citation: 'Lowrie M, et al. The role of cytosine arabinoside as an add-on therapy for MUO in dogs. J Small Anim Pract. 2016;57(5):263-270.', relevance: 'Cytarabine 治療 MUO 的臨床療效研究' },
-    { type: 'guideline', citation: 'ACVIM Consensus – MUO Diagnosis & Treatment (2023). https://onlinelibrary.wiley.com/doi/10.1111/jvim.16834', relevance: 'ACVIM MUO 診斷與治療共識聲明' },
+    { type: 'journal', citation: 'Jeffery N, Granger N. New insights into the treatment of meningoencephalomyelitis of unknown origin since 2009: a review of 671 cases. Front Vet Sci. 2023;10:1114798. doi:10.3389/fvets.2023.1114798.', relevance: 'MUO 治療新見解：2009 年後 671 例系統性回顧' },
   ],
   is_current: true,
   created_at: now,
@@ -4843,7 +5061,7 @@ CDS 為排除性診斷，必須先排除所有可治療的醫學原因：
 const contentAEDTDM: NodeContent = {
   id: 'CONTENT-NEURO-L4-006',
   node_id: 'NEURO-L4-006',
-  version: 1,
+  version: 2,
   summary: '抗癲癇藥物（AED）的治療藥物監測（TDM）是犬貓長期癲癇管理的核心診斷技能。掌握各藥物的目標血中濃度範圍、採樣時機（谷值 trough）、穩態達到時間和毒性監測指標，才能安全有效地個體化 AED 治療。',
   learning_objectives: [
     '列出 Phenobarbital（犬/貓）、Potassium Bromide（犬）、Levetiracetam 的目標血中濃度範圍',
@@ -4854,11 +5072,11 @@ const contentAEDTDM: NodeContent = {
   ],
   key_points: [
     '**Phenobarbital（PB）目標濃度（犬）**：15-45 µg/mL（trough，BID 給藥前採血）；穩態 14 天；> 35 µg/mL 肝毒性風險↑',
-    '**Phenobarbital（PB）目標濃度（貓）**：10-30 µg/mL（貓代謝較慢，穩態 21 天）',
+    '**Phenobarbital（PB）目標濃度（貓）**：約 10-30 µg/mL（部分文獻採與犬相近範圍）；穩態約 2-3 週',
     '**Potassium Bromide（KBr）目標濃度（犬）**：1000-2000 mg/L（輔助用藥）；穩態 3-6 個月；可用負荷劑量 100 mg/kg/day × 5 天縮短穩態時間',
     '**KBr 絕對禁用於貓**：引起嗜酸球性支氣管肺炎（致命性咳嗽 / 呼吸窘迫），無解毒劑',
     '**Levetiracetam（LEV）**：目標 5-45 µg/mL（trough）；穩態 1-2 天；無肝臟代謝，腎排除，肝病首選 AED',
-    '**Zonisamide（ZNS）**：目標 10-40 µg/mL；穩態 3-5 天；貓用時需監測肝功能（罕見但報告有肝毒性）',
+    '**Zonisamide（ZNS）**：目標 10-40 µg/mL；穩態約 3-7 天（種別相依）；罕見特異質性肝毒性（不限貓），需監測肝功能',
     '採樣時機：一律在「谷值」採血（下一次給藥前），確保結果可比較和一致',
     '開始 PB 14 天後和每次劑量調整 14 天後：驗濃度 + ALP + ALT；穩定後每 6 個月監測肝膽汁酸',
   ],
@@ -4877,10 +5095,10 @@ const contentAEDTDM: NodeContent = {
 | 藥物 | 物種 | 目標血中濃度 | 穩態時間 | 採樣時機 | 毒性監測 |
 |------|------|-------------|---------|---------|---------|
 | Phenobarbital | 犬 | **15-45 µg/mL** | 14 天 | Trough（BID 前） | ALP、ALT、膽汁酸（每 6 個月） |
-| Phenobarbital | 貓 | **10-30 µg/mL** | 21 天 | Trough（BID 前） | 同上（貓代謝較慢） |
+| Phenobarbital | 貓 | **約 10-30 µg/mL**（部分同犬範圍） | 約 14-21 天 | Trough（BID 前） | 同上 |
 | Potassium Bromide | **犬（禁貓）** | 1000-2000 mg/L（輔助）；1500-3000 mg/L（單用） | **3-6 個月** | Trough | 鎮靜、後肢無力（高濃度）；呼吸道症狀（→懷疑吸入） |
 | Levetiracetam | 犬貓 | 5-45 µg/mL | 1-2 天 | Trough | 鎮靜（罕見）；無肝毒性 |
-| Zonisamide | 犬貓 | 10-40 µg/mL | 3-5 天 | Trough | 肝毒性（貓需監測）；食慾下降 |
+| Zonisamide | 犬貓 | 10-40 µg/mL | 約 3-7 天 | Trough | 罕見特異質性肝毒性（不限貓）需監測；食慾下降 |
 | Phenobarbital + KBr | 犬 | PB 降低目標至 15-30；KBr 1000-2000 | 14 天（PB）+ 3-6 個月（KBr） | 同上 | 兩者副作用相加（鎮靜↑） |
 
 ## 三、Phenobarbital TDM 詳解 (Phenobarbital TDM)
@@ -4941,7 +5159,33 @@ LEV 的優勢：
 | 每次劑量調整後 14 天（PB）或 1 週（LEV） | 重測濃度 |
 | 穩定期每 6 個月 | PB 濃度 + ALP + ALT + 空腹/餐後膽汁酸 |
 | KBr 3-6 個月（或負荷後 1 個月） | KBr 血中濃度 |
-| 每次癲癇發作頻率變化時 | 重測所有在用 AED 濃度 |`,
+| 每次癲癇發作頻率變化時 | 重測所有在用 AED 濃度 |
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用潛力 | 現況 |
+|---------|-------------|------|
+| 游離藥物濃度（free level）監測 | 低白蛋白/腎病犬 PB free vs total level 判讀 | 人醫常規；獸醫多測 total level |
+| 微量/居家採血 TDM | 減少採血壓力、提升依從性 | 人醫研究；獸醫起步 |
+| 藥物基因組學（代謝酶多態性） | 犬 PB 代謝個體差異預測 | 研究階段 |
+| 新一代 AED（cenobamate/perampanel/brivaracetam） | 難治性癲癇犬選項 | LEV/zonisamide 已用；更新 AED 獸醫資料有限 |
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| PB 目標上限（35 vs 45 µg/mL） | >35 肝毒性風險升，惟部分犬需更高濃度才控制 | Level III |
+| KBr 負荷劑量 vs 緩速達穩態 | 負荷快但 GI／神經副作用風險增 | Level III |
+| LEV honeymoon effect 的處置 | 部分犬數月後療效下降，加量/換藥未定論 | Level III |
+| 控制良好無症狀犬的 TDM 頻率 | 例行 vs 僅在控制不佳/毒性疑慮時 | Level IV |
+
+## 九、近期實證更新 (Recent Evidence Updates)
+
+1. **LEV 緩釋型（ER）**：每日 1-2 次提升依從性（vs 短效 TID），犬貓應用增加；腎排除、肝病首選。
+2. **Zonisamide**：作為一／二線替代，犬耐受佳；罕見特異質性肝毒性需監測。
+3. **PB 肝酶誘導 vs 真肝毒性**：ALP 升高多為酶誘導（預期），真毒性看 ALT + 膽汁酸——仍是 TDM 判讀核心。
+4. **imepitoin（Pexion，歐洲）**：不需常規 TDM（與 PB/KBr 不同），惟限非 cluster/SE。
+> AED 劑量與監測須由獸醫依物種、血中濃度（trough）、肝腎功能與臨床發作頻率個別化。`,
   clinical_pearl: 'PB 的 ALP 升高在犬很常見，原因是 PB 本身誘導肝酶（酶誘導效應），不等於肝損傷。真正的肝毒性是：ALT 升高 + 膽汁酸升高（空腹 > 25 µmol/L 或餐後 > 50 µmol/L）。因此 ALP 單獨升高不需驚慌，但膽汁酸升高是換藥訊號。KBr 的「穩態 3-6 個月」常讓飼主和醫師失去耐心提前換藥 —— 正確做法是負荷劑量縮短穩態時間，或在等待穩態期間容許更多癲癇發作（如非 cluster）。台灣：KBr 須處方取得（Veterinary K-Br），LEV（人用 Keppra）在台灣藥房可取得，Zonisamide（Zonegran）亦可透過醫師處方取用。',
   common_mistakes: [
     '採樣時機錯誤：在給藥後 1-2 小時採到 peak，濃度偏高，誤以為中毒而減量',
@@ -4963,10 +5207,11 @@ LEV 的優勢：
   ],
   drug_api_links: ['Phenobarbital', 'Potassium bromide', 'Levetiracetam', 'Zonisamide'],
   references: [
-    { type: 'guideline', citation: 'Bhatti SFM, et al. International veterinary epilepsy task force consensus proposals: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11(1):176.', relevance: 'IVETF 犬癲癇 AED 治療共識，TDM 目標範圍標準來源' },
-    { type: 'journal', citation: 'Podell M, et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 犬癲癇管理共識聲明，含 TDM 建議' },
+    { type: 'guideline', citation: 'Bhatti SFM, De Risio L, Muñana K, et al. International veterinary epilepsy task force consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176. doi:10.1186/s12917-015-0464-z.', relevance: 'IVETF 犬癲癇 AED 治療共識，TDM 目標範圍標準來源' },
+    { type: 'guideline', citation: 'Podell M, Volk HA, Berendt M, et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490. doi:10.1111/jvim.13841.', relevance: 'ACVIM 犬癲癇管理共識聲明，含 TDM 建議' },
+    { type: 'guideline', citation: 'De Risio L, et al. International veterinary epilepsy task force consensus proposal: diagnostic approach to epilepsy in dogs. BMC Vet Res. 2015;11:148. doi:10.1186/s12917-015-0462-1.', relevance: 'IVETF 癲癇診斷流程共識（TDM 脈絡）' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 10: Seizures and Epilepsy.', relevance: 'AED TDM 臨床操作標準教材' },
-    { type: 'journal', citation: 'Liebel FX, et al. Feline non-inflammatory epileptic seizures—a retrospective study of 45 cases. J Small Anim Pract. 2013;54(12):632-637.', relevance: '貓 AED 治療與 TDM 特殊考量（KBr 禁用、PB 劑量）' },
+    { type: 'journal', citation: 'Muñana KR, et al. Evaluation of levetiracetam as adjunctive treatment for refractory idiopathic epilepsy in dogs: a randomized, placebo-controlled, crossover trial. J Vet Intern Med. 2012;26(2):341-348. doi:10.1111/j.1939-1676.2011.00866.x.', relevance: 'Levetiracetam 附加治療 RCT（LEV TDM 證據）' },
   ],
   is_current: true,
   created_at: now,
@@ -4976,7 +5221,7 @@ LEV 的優勢：
 const contentMUOImmunosuppression: NodeContent = {
   id: 'CONTENT-NEURO-L5-004',
   node_id: 'NEURO-L5-004',
-  version: 1,
+  version: 2,
   summary: 'MUO（不明原因腦膜腦炎）是犬非感染性腦炎的總稱，涵蓋 GME、NME、NLE。治療主幹是高劑量 prednisolone 誘導免疫抑制；複發或控制不佳時加入 cytarabine（Ara-C）組合方案，中位存活期可從 6 個月延長至 1 年以上。監測重點是 CBC（Ara-C 骨髓抑制）和 8-12 週後 MRI 追蹤。',
   learning_objectives: [
     '說明 MUO 的三大亞型（GME / NME / NLE）及其品種特異性',
@@ -5086,7 +5331,40 @@ MUO（Meningoencephalitis of Unknown Origin，不明原因腦膜腦炎）是排�
 | 第 8-12 週 | **複查 MRI**（評估病灶縮小或穩定）|
 | 每 4-6 週（Ara-C 給藥前後） | CBC |
 | 每 3 個月 | 生化（肝腎功能）；神經評估 |
-| 症狀穩定後每 6-12 個月 | 選擇性 MRI 追蹤 |`,
+| 症狀穩定後每 6-12 個月 | 選擇性 MRI 追蹤 |
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 自體免疫腦炎抗體 panel（抗 NMDA-R、抗 MOG、抗 GFAP） | MUO 抗體介導機轉探索、亞型分子診斷 | 人醫已臨床常規，獸醫抗 GFAP（NME 相關）等研究中 |
+| 抗 CD20 單株抗體（rituximab）等標靶免疫治療 | 頑固性 MUO 之 B 細胞耗竭 | 人醫神經免疫成熟，獸醫零星案例/探索 |
+| 血漿置換／IVIG（猛爆性自體免疫腦炎） | 急性重症 MUO 橋接治療 | 人醫急性期選項，獸醫經驗有限 |
+| 免疫遺傳學（HLA/DLA 風險單倍型） | NME 之 DLA class II 風險基因（Pug）、品種篩檢 | 人醫 HLA 關聯成熟，獸醫 Greer 2010 已確立犬 DLA 關聯 |
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 一線即 pred+cytarabine vs pred 單用起始 | 回顧性研究顯示組合可能延長存活，但無大型 RCT、選擇偏差難排除（Flegel、Granger 系統回顧） | Level III |
+| 最佳第二線藥（cytarabine vs ciclosporin vs MMF vs procarbazine vs lomustine） | 缺頭對頭比較，多依中心經驗與藥物可近性 | Level IV |
+| cytarabine SC vs CRI 等效性 | 兩者皆用、療效大致相當，差在給藥便利性與住院需求 | Level III |
+| 治療療程與能否停藥 | 復發風險高，多需長期/終生低劑量；停藥時機未定論 | Level IV |
+| NME 亞型預後與分子分型 | NME（尤 Pug）預後差但個體差異大、subtype 比較不乾淨；DLA 風險基因提示免疫遺傳基礎 | Level III |
+
+## 九、近期實證更新 (Recent Evidence Updates)
+
+### 標準化 protocol 與預後因子
+Lowrie 2013 以標準化治療 protocol 前瞻評估 MUO 預後因子（如治療早期癲癇、特定 MRI/CSF 變化與較差結局相關），協助個體化風險溝通與監測強度設定。
+
+### 治療策略的再評估
+近年 MUO 藥物治療回顧（Beasley 2023、Granger 2010 系統性回顧）整理免疫抑制選項與證據強度，強調缺乏 RCT、現行多屬中等以下證據；cytarabine CRI、leflunomide 等納入工具箱，但「最佳組合」仍未定論。
+
+### NME 的免疫遺傳基礎
+Greer 2010 確立 Pug NME 與 DLA class II 風險單倍型的關聯，支持其免疫遺傳發病機制，並開啟品種風險篩檢與精準免疫治療的方向。
+
+### 監測導向治療
+以神經學評估＋8-12 週 MRI（病灶縮小/穩定）＋CSF 正常化作為調整免疫抑制強度與減量速度的依據，取代僅憑經驗減量；過快減量是復發主因。`,
   clinical_pearl: 'MUO 免疫抑制治療的最大陷阱是「減量太快」——多數復發發生在 prednisolone 減量至 < 0.5 mg/kg/day 之後，建議每次減量後至少觀察 4-6 週再繼續減。Cytarabine 屬細胞毒性化療藥物，必須由訓練有素的獸醫師或護理師在診所內以適當 PPE 執行 SC 給藥，廢棄物依化療廢棄物規範處置；切勿交由飼主在家自行注射。NME（Pug 腦炎）即便積極治療預後仍差，診斷後應誠實與飼主溝通，部分選擇安寧照護。台灣：Cytarabine 以人用藥取得（Cytosar-U），需特別留意劑量換算（mg/m² 而非 mg/kg）。',
   common_mistakes: [
     'MUO 確診前未排除感染性腦炎（Toxoplasma、Cryptococcus、CDV），貿然開始免疫抑制反而惡化',
@@ -5108,10 +5386,13 @@ MUO（Meningoencephalitis of Unknown Origin，不明原因腦膜腦炎）是排�
   ],
   drug_api_links: ['Prednisolone', 'Cytarabine', 'Cyclosporine', 'Mycophenolate mofetil', 'Maropitant'],
   references: [
-    { type: 'journal', citation: 'Flegel T, Henke D, Boettcher IC, et al. Retrospective analysis of 50 canine meningoencephalomyelitis of unknown etiology cases treated with prednisolone alone or prednisolone with cytosine arabinoside. J Am Anim Hosp Assoc. 2011;47(5):e100-e107.', relevance: 'GME prednisolone ± cytarabine 存活期比較（核心療效數據）' },
-    { type: 'journal', citation: 'Cornelis I, Van Ham L, Gielen I, et al. Clinical presentation, diagnosis, treatment and outcome of dogs and cats with meningoencephalomyelitis of unknown origin: a review. Vet J. 2019;244:37-43.', relevance: 'MUO 綜合回顧，治療選項與預後' },
+    { type: 'journal', citation: 'Flegel T, Boettcher IC, Matiasek K, et al. Comparison of oral administration of lomustine and prednisolone or prednisolone alone as treatment for granulomatous meningoencephalomyelitis or unclassified meningoencephalitis in dogs. J Am Vet Med Assoc. 2011;238(3):337-345. doi:10.2460/javma.238.3.337.', relevance: 'Flegel 免疫抑制治療比較研究（lomustine+pred vs pred 單用）' },
+    { type: 'journal', citation: 'Granger N, Smith PM, Jeffery ND. Clinical findings and treatment of non-infectious meningoencephalomyelitis in dogs: a systematic review of 457 published cases from 1962 to 2008. Vet J. 2010;184(3):290-297. doi:10.1016/j.tvjl.2009.03.031.', relevance: 'MUO 治療與預後系統性回顧（457 例，核心療效證據）' },
+    { type: 'journal', citation: 'Cornelis I, Van Ham L, Gielen I, et al. Clinical presentation, diagnostic findings, prognostic factors, treatment and outcome in dogs with meningoencephalomyelitis of unknown origin: a review. Vet J. 2019;244:37-44. doi:10.1016/j.tvjl.2018.12.007.', relevance: 'MUO 綜合回顧，治療選項與預後' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 7: Encephalopathies.', relevance: 'GME/NME/NLE 臨床分類與治療標準教材' },
-    { type: 'journal', citation: 'Granger N, Hidalgo A, Vaughan K, et al. Cytosine arabinoside for treatment of meningoencephalomyelitis of unknown origin in 26 dogs: a retrospective study of the long-term outcome. J Small Anim Pract. 2010;51(5):245-249.', relevance: 'Cytarabine 長期療效（中位存活 > 14 個月）' },
+    { type: 'journal', citation: 'Lowrie M, Smith PM, Garosi L. Meningoencephalitis of unknown origin: investigation of prognostic factors and outcome using a standard treatment protocol. Vet Rec. 2013;172(20):527. doi:10.1136/vr.101431.', relevance: 'MUO 標準化 protocol 之預後因子（個體化風險溝通）' },
+    { type: 'journal', citation: 'Greer KA, Schatzberg SJ, Porter BF, et al. Necrotizing meningoencephalitis of Pug dogs associates with dog leukocyte antigen class II and resembles acute variant forms of multiple sclerosis. Tissue Antigens. 2010;76(2):110-118. doi:10.1111/j.1399-0039.2010.01484.x.', relevance: 'Pug NME 與 DLA class II 風險單倍型關聯（免疫遺傳基礎）' },
+    { type: 'journal', citation: 'Beasley MJ, Shores A. Perspectives on pharmacologic strategies in the management of meningoencephalomyelitis of unknown origin in the dog. Front Vet Sci. 2023;10:1167002. doi:10.3389/fvets.2023.1167002.', relevance: '2023 MUO 藥物治療策略觀點回顧（近期實證）' },
   ],
   is_current: true,
   created_at: now,

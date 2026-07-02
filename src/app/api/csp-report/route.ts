@@ -6,6 +6,7 @@ const reportCounts = new Map<string, { count: number; resetTime: number }>();
 const MAX_REPORTS_PER_IP = 10;
 const WINDOW_MS = 60_000; // 1 minute
 const MAX_TRACKED_IPS = 2_000;
+const LOG_FIELD_MAX_LENGTH = 200;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -54,7 +55,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     // 記錄違規（未來應接入 Sentry 或寫入資料庫）
     // SEC-030: sanitize all user-controlled fields to prevent log injection
     const sanitize = (v: unknown): string =>
-      typeof v === 'string' ? v.replace(/[\r\n\t]/g, ' ').slice(0, 200) : String(v ?? '').slice(0, 200);
+      typeof v === 'string' ? v.replace(/[\r\n\t]/g, ' ').slice(0, LOG_FIELD_MAX_LENGTH) : String(v ?? '').slice(0, LOG_FIELD_MAX_LENGTH);
     console.warn('[CSP Violation]', {
       documentUri: sanitize(report['document-uri']),
       violatedDirective: sanitize(report['violated-directive']),

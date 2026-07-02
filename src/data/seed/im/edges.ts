@@ -268,4 +268,10 @@ export const IM_EDGES: KnowledgeEdge[] = [
   // ─── IM-L5-006 抗生素合理用藥 連接邊（2026-06-15 新增節點）───
   { id: 'IM-E-143', source_node_id: 'IM-L1-002', target_node_id: 'IM-L5-006', relation_type: 'prerequisite', weight: 0.7, description: '免疫學基礎（宿主防禦與感染 vs 定殖）是理解「何時真的需要抗生素」的前置知識', bidirectional: false, unlock_condition: null },
   { id: 'IM-E-144', source_node_id: 'IM-L5-006', target_node_id: 'IM-L5-005', relation_type: 'same_system', weight: 0.6, description: '抗菌藥物管理與疫苗預防醫學同屬「降低感染負擔/合理用藥」的預防醫學原則', bidirectional: true, unlock_condition: null },
+  // ─── IM-L4-006 高血鈣診斷工作流程 連接邊（2026-06-27 新增節點）───
+  { id: 'IM-E-145', source_node_id: 'IM-L4-001', target_node_id: 'IM-L4-006', relation_type: 'builds_on', weight: 0.7, description: '內分泌檢驗判讀（含 PTH/離子鈣）是高血鈣工作流程的前置實驗室基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-146', source_node_id: 'IM-L4-006', target_node_id: 'IM-L3-011', relation_type: 'differential', weight: 0.6, description: '愛迪生氏症為高血鈣的「可逆」鑑別之一，工作流程須納入並以 ACTH stim 排除', bidirectional: false, unlock_condition: null },
+  // ─── IM-L4-007 多渴多尿/尿崩症工作流程 連接邊（2026-06-27 新增節點）───
+  { id: 'IM-E-147', source_node_id: 'IM-L4-002', target_node_id: 'IM-L4-007', relation_type: 'builds_on', weight: 0.7, description: '尿液分析與 USG/濃縮力判讀是 PU/PD 工作流程的前置基礎', bidirectional: false, unlock_condition: null },
+  { id: 'IM-E-148', source_node_id: 'IM-L4-007', target_node_id: 'IM-L4-006', relation_type: 'differential', weight: 0.6, description: '高血鈣為 PU/PD 的腎性 ADH 抗性病因之一，兩個工作流程互相銜接', bidirectional: true, unlock_condition: null },
 ];

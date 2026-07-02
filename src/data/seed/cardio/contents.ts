@@ -203,7 +203,7 @@ CKCS 好發、Cough（咳嗽）、Cardiomegaly（心臟擴大）、CHF（心衰�
 
 | 分期 | 藥物 | 劑量 | 頻率 | Evidence Level |
 |------|------|------|------|----------------|
-| A/B1 | 無藥物 |，| 定期追蹤 6-12 個月 | Level I |
+| A/B1 | 無藥物 |—| 定期追蹤 6-12 個月 | Level I |
 | B2 | [藥物:Pimobendan] | 0.25-0.3 mg/kg PO | BID | Level I (EPIC) |
 | C | [藥物:Furosemide] | 2-4 mg/kg PO | BID-TID | Level I |
 | C | [藥物:Pimobendan] | 0.25-0.3 mg/kg PO | BID | Level I |
@@ -364,7 +364,7 @@ MMVD 是會慢慢進展的慢性病，治不好但能管。跟飼主要講清楚
 const contentAuscultation: NodeContent = {
   id: 'CONTENT-L4-001',
   node_id: 'CARDIO-L4-001',
-  version: 1,
+  version: 2,
   summary: '聽診是獸醫做心臟評估時最基本的工具，也是看門診一定要做的動作。聽得熟之後，S1、S2 是不是正常，有沒有 S3、S4 跑出來，雜音落在哪、節律穩不穩，幾秒鐘大概就有底。後面要不要安排心超、X 光，多半就靠這一手判斷。',
   learning_objectives: [
     '執行系統性的犬貓心臟聽診四點聽診法',
@@ -383,6 +383,7 @@ const contentAuscultation: NodeContent = {
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
+聽診是門診心臟評估的第一線：用鐘面/膜面、系統性四點聽診，幾秒內初判心率、節律、心音與雜音，決定要不要進一步影像。
 
 ### 聽診器物理原理
 
@@ -408,7 +409,7 @@ const contentAuscultation: NodeContent = {
 | 1 | 左心尖區 | 第 5 肋間，肘關節水平 | 二尖瓣 | MMVD 收縮期雜音（plateau 型） |
 | 2 | 左心底區 | 第 3-4 肋間，肩關節水平 | 主動脈瓣/肺動脈瓣 | SAS 漸強漸弱型雜音、PS |
 | 3 | 右心尖區 | 第 4-5 肋間 | 三尖瓣 | TR 收縮期雜音 |
-| 4 | 右心底區 | 第 3 肋間 |，| VSD（高位），較少使用 |
+| 4 | 右心底區 | 第 3 肋間 |—| VSD（高位），較少使用 |
 
 每個位置至少聽 5 到 10 秒，先膜面再換鐘面。診間要安靜，旁邊有人吹頭髮或抓貓籠都不行，等聲音停了再聽。同一時間另一隻手摸股動脈，順便評估脈搏品質跟節律有沒有跟心音對得起來。
 
@@ -491,7 +492,16 @@ const contentAuscultation: NodeContent = {
 - AI 心音分析在獸醫臨床的驗證研究
 - 貓心臟病的理想非侵入性篩檢策略（聽診 + NT-proBNP + 心超的成本效益分析）
 
-[互動:心音播放器，正常心音 vs. 各級雜音]`,
+[互動:心音播放器，正常心音 vs. 各級雜音]
+
+## 六、近期實證更新 (Recent Evidence)
+
+- **雜音強度與嚴重度：對特定病灶相關、但別單憑等級**：在小型犬 MMVD（Ljungvall 2014）與 PS/SAS（Caivano 2017）研究中，雜音越響通常反映病灶越嚴重；但強度同時受體型、心輸出量、胸壁厚度影響，**不能單憑 Levine 等級判斷嚴重度**——分期仍需心超 + ACVIM 分級。
+- **聽診漏掉貓心臟病、NT-proBNP 補位**：聽診敏感度約 70-85%，且貓 HCM 有 30-50% 無可聞雜音；貓出現**奔馬律或心律不整即使無雜音**仍是紅旗。急診以 **point-of-care NT-proBNP ＋ 聚焦心臟超音波（FCU）** 鑑別心因 vs 非心因性呼吸窘迫、篩檢隱匿性貓心肌病（Janson 2020；2020 ACVIM 貓心肌病共識 Luis Fuentes）。
+- **AI/電子聽診器仍屬輔助**：機器學習雜音辨識、電子聽診器數位放大有望降低操作者間變異、改善微弱雜音與貓的偵測，但**獸醫尚未標準化/驗證**——聽診發現仍須心超確診。
+- **POCUS 補聽診之不足**：急診以肺超音波 B-lines ＋ 心臟 POCUS 快速區分心因性與非心因性呼吸窘迫，是聽診的重要補充。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '聽診先抓心率跟節律，再去聽個別心音。犬的竇性心律不整是正常的（吸氣加速、呼氣變慢），不用緊張。但同樣的節律不整跑到貓身上就要繼續追，貓本來就比較少看到生理性的節律變動。',
   common_mistakes: [
     '僅在左側聽診而忽略右側（三尖瓣逆流常見於右側）',
@@ -532,9 +542,11 @@ const contentAuscultation: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011.', relevance: '心臟聽診技術標準參考' },
-    { type: 'journal', citation: 'Caivano D et al. Murmur intensity in dogs. J Vet Intern Med. 2018.', relevance: '心雜音等級與疾病嚴重度的關聯研究' },
-    { type: 'guideline', citation: 'Thomas WP, Gaber CE, Jacobs GJ, et al. "Recommendations for standards in transthoracic two-dimensional echocardiography in the dog and cat." J Vet Intern Med. 1993;7(4):247-252.', relevance: '犬貓心臟超音波標準化建議' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011.', relevance: '心臟聽診技術標準參考教材' },
+    { type: 'journal', citation: 'Ljungvall I, Rishniw M, Porciello F, et al. "Murmur intensity in small-breed dogs with myxomatous mitral valve disease reflects disease severity." J Small Anim Pract. 2014;55(11):545-550. doi:10.1111/jsap.12265', relevance: '小型犬 MMVD 雜音強度與嚴重度相關' },
+    { type: 'journal', citation: 'Caivano D, Dickson D, Martin M, et al. "Murmur intensity in adult dogs with pulmonic and subaortic stenosis reflects disease severity." J Small Anim Pract. 2017;59(3):161-166. doi:10.1111/jsap.12760', relevance: 'PS/SAS 雜音強度與嚴重度（修正 v1 誤標 JVIM 2018 garbled 引用）' },
+    { type: 'journal', citation: 'Janson CO, Hezzell MJ, Oyama MA, et al. "Focused cardiac ultrasound and point-of-care NT-proBNP assay in the emergency room for differentiation of cardiac and noncardiac causes of respiratory distress in cats." J Vet Emerg Crit Care. 2020;30(4):376-383. doi:10.1111/vec.12957', relevance: '貓急診 NT-proBNP＋FCU 補聽診之不足' },
+    { type: 'guideline', citation: 'Luis Fuentes V, Abbott J, Chetboul V, et al. "ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats." J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745', relevance: '2020 ACVIM 貓心肌病共識（無雜音貓的篩檢路徑）' },
   ],
   is_current: true,
   created_at: now,
@@ -849,7 +861,7 @@ DCM1（PDK4）與 DCM2（TTN）主要在美系杜賓犬族群關聯，歐系（�
 const contentHCM: NodeContent = {
   id: 'CONTENT-L3-003',
   node_id: 'CARDIO-L3-003',
-  version: 1,
+  version: 2,
   summary: '肥厚型心肌病（HCM）是貓最常見的心臟病，約佔所有貓心肌病的 60%。以左心室壁不對稱性或對稱性肥厚為特徵，導致舒張功能障礙。緬因貓與布偶貓已確認具有 MYBPC3 基因突變。HCM 的臨床表現可從完全無症狀到急性動脈血栓栓塞（ATE）或猝死，使得早期篩檢極為重要。',
   learning_objectives: [
     '描述貓 HCM 的病理生理機轉（舒張功能障礙 → SAM → CHF / ATE）',
@@ -930,7 +942,7 @@ const contentHCM: NodeContent = {
 | LA/Ao | < 1.5 | > 1.5 | > 2.0（ATE高風險）|
 | SAM | 無 | 存在 | 伴LVOT gradient>50 mmHg |
 | SEC (smoke) | 無 | 存在 | ATE 極高風險 |
-| LA 血栓 | 無 |，| 存在=禁忌抗凝loading |
+| LA 血栓 | 無 |—| 存在=禁忌抗凝loading |
 | E/A ratio | > 1 | < 1(鬆弛異常) 或 > 2(限制型) | 假性正常化需TDI鑑別 |
 
 ### 記憶框架，「HCM-CLOT」
@@ -1108,8 +1120,8 @@ const contentHCM: NodeContent = {
   ],
   drug_api_links: ['Furosemide', 'Clopidogrel', 'Atenolol', 'Diltiazem', 'Benazepril', 'Spironolactone', 'Pimobendan', 'Buprenorphine'],
   references: [
-    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(1):3-32.', relevance: '貓心肌病最新分類與治療共識' },
-    { type: 'journal', citation: 'Hogan DF et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: The double-blind, randomized, positive-controlled feline arterial thromboembolism; clopidogrel vs. aspirin trial (FAT CAT). J Vet Cardiol. 2015;17 Suppl 1:S306-317.', relevance: 'Clopidogrel vs Aspirin 在 ATE 預防的關鍵隨機對照試驗' },
+    { type: 'guideline', citation: 'Luis Fuentes V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745.', relevance: '貓心肌病現行 ACVIM 分類/分期（A/B1/B2/C/D）與治療共識' },
+    { type: 'journal', citation: 'Hogan DF, et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: the double-blind, randomized, positive-controlled feline arterial thromboembolism; clopidogrel vs. aspirin trial (FAT CAT). J Vet Cardiol. 2015;17 Suppl 1:S306-S317. doi:10.1016/j.jvc.2015.10.004.', relevance: 'Clopidogrel vs Aspirin 在 ATE 二級預防的關鍵 RCT' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 297: Feline Cardiomyopathies.', relevance: '貓心肌病完整教材' },
     { type: 'journal', citation: 'Kittleson MD et al. Familial hypertrophic cardiomyopathy in Maine Coon cats: an animal model of human disease. Circulation. 1999;99(24):3172-3180.', relevance: '緬因貓 HCM 遺傳學經典研究' },
   ],
@@ -1121,7 +1133,7 @@ const contentHCM: NodeContent = {
 const contentPericardialEffusion: NodeContent = {
   id: 'CONTENT-L3-004',
   node_id: 'CARDIO-L3-004',
-  version: 1,
+  version: 2,
   summary: '心包膜積液（Pericardial Effusion, PE）是犬最常見的心包膜疾病，以心包膜囊內液體異常蓄積導致心臟壓塞（cardiac tamponade）為主要臨床問題。犬 PE 最常見的病因為腫瘤（血管肉瘤 HSA 佔 60-70%）與特發性心包膜積液。心包膜穿刺引流（pericardiocentesis）是緊急處理的關鍵步驟。',
   learning_objectives: [
     '描述心包膜積液導致心臟壓塞的病理生理機轉',
@@ -1197,9 +1209,9 @@ const contentPericardialEffusion: NodeContent = {
 | 心臟超音波 (TFAST) | 98-100% | 98-100% | 確診+引導穿刺 | $$$ |
 | 胸腔 X 光 | 60-80% | 50-70% | 球形心影提示 | $$ |
 | ECG | 40-60% | 30-50% | electrical alternans、低電壓 | $ |
-| 引流液 PCV/TS |，|，| 鑑別出血性vs滲出性 | $ |
+| 引流液 PCV/TS |—|—| 鑑別出血性vs滲出性 | $ |
 | 引流液細胞學 | ~50% | 70-80% | 腫瘤偵測（敏感度低） | $$ |
-| 腹部超音波 |，|，| HSA 轉移篩檢（脾/肝） | $$ |
+| 腹部超音波 |—|—| HSA 轉移篩檢（脾/肝） | $$ |
 
 ### 記憶框架，「PE-TAP」
 - Pericardium（心包膜疾病=右心衰原因）
@@ -1311,7 +1323,21 @@ const contentPericardialEffusion: NodeContent = {
 - 更高敏感度的引流液腫瘤標記
 - 心包膜切除術的最佳術式比較（VATS vs 開胸 vs 膈下窗口）
 
-[圖片:心包膜積液心超影像，心包膜囊積液與右心房塌陷]`,
+[圖片:心包膜積液心超影像，心包膜囊積液與右心房塌陷]
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### 微創胸腔鏡心包膜開窗/切除成為復發性 PE 主流
+胸腔鏡（VATS）心包膜開窗或次全切除術治療復發性特發性 PE，相較傳統開胸的併發症與住院天數更低、長期控制良好（Case 2013）。對第 2 次以上復發的特發性 PE，微創心包膜切除已是優先選項，並可同時取心包膜活檢協助鑑別腫瘤/間皮瘤。
+
+### 心肌旋轉蛋白 cTnI 輔助鑑別 HSA vs 特發性
+心包膜積液犬的血漿 cardiac troponin I（cTnI）常升高，且 HSA 來源者顯著高於特發性（Chun 2010）。雖然數值重疊、不能單獨確診，但極高的 cTnI 會提高 HSA 的可能性，在心超未見明確腫塊時提供額外線索（仍須引流後重做心超 + 腹超分期）。
+
+### 犬 HSA 全身治療演進
+心臟 HSA 預後仍差，但全身治療持續演進：節拍式化療（低劑量 cyclophosphamide/chlorambucil）、eBAT（urokinase/EGFR 雙標靶毒素）、免疫檢查點抑制等在研究階段；toceranib 提供部分姑息活性。臨床仍以「穿刺穩定 + 手術 ± doxorubicin」為主，並須誠實溝通預後。
+
+### Cage-side POCUS/TFAST 加速急診壓塞辨識
+重點式心臟超音波（TFAST/POCUS）讓急診第一線即可快速辨識心包膜積液與壓塞徵象（右心房舒張期塌陷），縮短到引流的時間；AI 輔助判讀亦在初步驗證中。`,
   clinical_pearl: '心包膜積液引流液的 PCV 接近周邊血液不代表是急性出血，慢性心包膜積液的引流液 PCV 可高達 40-60%，但不會凝固（因為心臟持續擺動已將纖維蛋白去除）。引流液不凝固 + PCV 高 = 慢性心包膜出血（如 HSA 慢性滲出），引流液會凝固 = 醫源性穿刺到心腔或急性出血。這個「凝固測試」是穿刺過程中即時判斷的實用技巧。\n\n【台灣流行病學】在台灣，犬心包膜積液以腫瘤性病因為主（HSA 佔多數），好發於中老年大型犬如金毛獵犬與拉布拉多，這些品種在台灣飼養數量龐大。台灣亞熱帶氣候下戶外活動量大的犬隻需注意定期健檢。特發性心包膜積液在金毛犬族群中盛行率較高。台灣各大獸醫教學醫院與心臟專科已具備心包膜穿刺引流與胸腔鏡心包膜切除術能力，複雜病例建議及時轉診。',
   common_mistakes: [
     '將心包膜積液導致的腹水誤診為肝病或腹腔腫瘤，忽略「右心衰竭 → 腹水」的路徑',
@@ -1357,10 +1383,11 @@ const contentPericardialEffusion: NodeContent = {
   drug_api_links: ['Doxorubicin', 'Cisplatin'],
   references: [
     { type: 'journal', citation: 'Shaw SP, Rush JE. Canine pericardial effusion: pathophysiology and cause. Compend Contin Educ Vet. 2007;29(7):400-404.', relevance: '犬心包膜積液病理機轉與病因綜述' },
-    { type: 'journal', citation: 'Stafford Johnson M et al. Pericardial effusion in dogs: 29 cases. J Small Anim Pract. 2004;45(11):546-553.', relevance: '犬 PE 回溯性研究，病因分布與預後分析' },
+    { type: 'journal', citation: 'Stafford Johnson M, Martin M, Binns S, Henley WE. A retrospective study of clinical findings, treatment and outcome in 143 dogs with pericardial effusion. J Small Anim Pract. 2004;45(11):546-552. doi:10.1111/j.1748-5827.2004.tb00202.x.', relevance: '犬 PE 大型回溯研究：病因分布與預後' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Pericardial Disease.', relevance: '心包膜疾病完整教材' },
-    { type: 'journal', citation: 'Treggiari E et al. A descriptive review of cardiac tumours in dogs and cats. Vet Comp Oncol. 2017;15(2):273-288.', relevance: '心臟腫瘤分類與流行病學' },
-    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'ACVIM 心臟疾病共識指引，涵蓋心包膜積液鑑別診斷' },
+    { type: 'journal', citation: 'Treggiari E, Pedro B, Dukes-McEwan J, et al. A descriptive review of cardiac tumours in dogs and cats. Vet Comp Oncol. 2015;15(2):273-288. doi:10.1111/vco.12167.', relevance: '心臟腫瘤分類與流行病學（online-first 2015，印刷 vol 15(2)）' },
+    { type: 'journal', citation: 'Case JB, Maxwell M, Aman A, et al. Outcome evaluation of a thoracoscopic pericardial window procedure or subphrenic pericardiectomy via thoracoscopy for management of pericardial effusion in dogs. J Am Vet Med Assoc. 2013;242(4):493-498. doi:10.2460/javma.242.4.493.', relevance: '胸腔鏡心包膜開窗/切除術治療復發性 PE 的結果' },
+    { type: 'journal', citation: 'Chun R, Kellihan HB, Henik RA, Stepien RL. Comparison of plasma cardiac troponin I concentrations among dogs with cardiac hemangiosarcoma, noncardiac hemangiosarcoma, other neoplasms, and pericardial effusion of nonhemangiosarcoma origin. J Am Vet Med Assoc. 2010;237(7):806-811. doi:10.2460/javma.237.7.806.', relevance: 'cTnI 於 HSA vs 非 HSA 心包膜積液的鑑別價值' },
   ],
   is_current: true,
   created_at: now,
@@ -1545,7 +1572,7 @@ const contentHeartworm: NodeContent = {
 | Class 1-2 三劑法 | 治療成功率 > 95% | AHS 2024 |
 | Class 3 治療 | 成功率 70-85%（風險↑） | 多項回顧性研究 |
 | Class 4 手術取蟲 | 死亡率 15-40% | Ishihara et al. |
-| Class 4 不治療 | 致死率 ~100% |，|
+| Class 4 不治療 | 致死率 ~100% |—|
 | 預防（全年） | 近100%有效 | AHS consensus |
 
 ## 六、人醫借鑑 (Translational Insights)
@@ -1756,7 +1783,7 @@ const contentCardiacAnatomy: NodeContent = {
 const contentCardiacElectrophysiology: NodeContent = {
   id: 'CONTENT-L1-002',
   node_id: 'CARDIO-L1-002',
-  version: 1,
+  version: 2,
   summary: '心臟電生理學探討心肌細胞的電氣活動與傳導系統。竇房結（SA node）為正常心律的節律點，電氣訊號經由心房、房室結（AV node）、His 束、束支與 Purkinje 纖維傳導至心室。理解動作電位與傳導系統是 ECG 判讀與心律不整診斷治療的基石。',
   learning_objectives: [
     '描述心肌細胞動作電位五個階段（Phase 0-4）的離子機轉',
@@ -1779,7 +1806,7 @@ const contentCardiacElectrophysiology: NodeContent = {
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-
+心臟電生理探討心肌細胞的動作電位與傳導系統——這是 ECG 判讀與所有心律不整診療的基礎。
 
 ### 心肌細胞動作電位
 ### 快反應細胞（心房肌、心室肌、Purkinje 纖維）
@@ -1839,7 +1866,16 @@ SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），�
 | 犬竇性心律不整是否在所有品種都為正常 | 短頭犬種的迷走神經張力模式可能不同 | Level IV |
 | 貓 QT interval 正常範圍與校正公式 | 缺乏大規模貓 QTc 標準化數據 | Level IV |
 | 犬 Holter VPC 閾值何時啟動治療 | >300 VPC/24h 常被引用，但證據基礎薄弱 | Level III |
-| AliveCor/穿戴式 ECG 在獸醫臨床的診斷準確度 | 部分研究顯示與標準 ECG 一致性良好，但假陽性率待評估 | Level III |`,
+| AliveCor/穿戴式 ECG 在獸醫臨床的診斷準確度 | 部分研究顯示與標準 ECG 一致性良好，但假陽性率待評估 | Level III |
+
+## 五、近期實證更新 (Recent Evidence)
+
+- **穿戴式/智慧型手機 ECG 進入居家心律監測**：智慧型手機 ECG 已從單導程走向**六導程**裝置（Alibrandi 2024），讓居家、陣發性心律不整的偵測更可行、提高捕捉率；惟定位為篩檢/監測工具，確診仍需標準多導程 ECG 與 Holter。
+- **Holter 時長決定偵測率**：單日（24h）Holter 可能漏掉陣發性 VPC——杜賓犬 DCM 篩檢顯示**多日（7 日）Holter** 較單日更能達到心律不整預測準則（Gunasekaran 2020）；故單日 Holter 陰性**不能排除**潛在疾病，呼應 §四的 VPC 閾值爭議。
+- **心房顫動以速率控制為主、且有實證推進**：犬 AF 多採速率控制（diltiazem±digoxin 減緩 AV 結傳導）而非節律控制/整流；ORCA II 等研究（Pedro 2024）推進最佳心室速率目標與追蹤。AF 基質多源於 MMVD/DCM 造成的左心房擴大（Keene 2019）。
+- **AI-ECG 與品種基因篩檢**：人醫 AI-ECG（AF/結構性心臟病預測）外推獸醫仍在研究；杜賓 DCM（PDK4、titin/TTN 等變異）、拳師 ARVC（striatin 變異）已有品種特異基因標記，惟外顯率不全、預測力有限，**不取代 Holter 篩檢**。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '犬的竇性心律不整（sinus arrhythmia）是由呼吸引起的迷走神經張力變化所致，吸氣時迷走神經抑制減弱、心率加快；呼氣時迷走神經張力增強、心率減慢。這是犬的正常現象，但在貓身上幾乎不存在。如果貓出現明顯心律不整，應高度警覺為病理性。',
   common_mistakes: [
     '混淆 SA node 與 AV node 的細胞類型，兩者都是慢反應細胞（Ca²⁺ 依賴），而非快反應細胞',
@@ -1861,8 +1897,11 @@ SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），�
   references: [
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016.', relevance: '獸醫心電圖與電生理標準教材' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 2: Cardiac Electrophysiology.', relevance: '心臟電生理基礎' },
-    { type: 'journal', citation: 'Santilli RA et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018.', relevance: '犬貓心電圖進階教材' },
-    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
+    { type: 'textbook', citation: 'Santilli RA, Perego M, et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018.', relevance: '犬貓心電圖進階教材（修正 v1 type 誤標 journal→textbook）' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488', relevance: 'MMVD→左心房擴大為房顫基質、含 AF 處置（現行 ACVIM 共識）' },
+    { type: 'journal', citation: 'Pedro B, Mavropoulou A, Oyama MA, Linney C. "Longitudinal analysis of echocardiographic and cardiac biomarker variables in dogs with atrial fibrillation: The optimal rate control in dogs with atrial fibrillation II study." J Vet Intern Med. 2024;38(4):2076-2088. doi:10.1111/jvim.17120', relevance: '犬 AF 速率控制（ORCA II）近期實證' },
+    { type: 'journal', citation: 'Alibrandi L, Tognetti R, Domenech O, Croce M. "Smartphone-based six-lead ECG: A new device for electrocardiographic recording in dogs." Vet J. 2024;303:106043. doi:10.1016/j.tvjl.2023.106043', relevance: '智慧型手機六導程 ECG 居家心律監測' },
+    { type: 'journal', citation: 'Gunasekaran T, Olivier NB, Sanders RA. "Comparison of single- versus seven-day Holter analysis for the identification of dilated cardiomyopathy predictive criteria in apparently healthy Doberman Pinscher dogs." J Vet Cardiol. 2020;27:78-87. doi:10.1016/j.jvc.2020.01.003', relevance: '單日 vs 7 日 Holter 偵測率（VPC 閾值爭議）' },
   ],
   is_current: true,
   created_at: now,
@@ -2370,7 +2409,7 @@ Frank-Starling 定律描述心搏量與前負荷的關係：在生理範圍內�
 const contentEchocardiography: NodeContent = {
   id: 'CONTENT-L4-002',
   node_id: 'CARDIO-L4-002',
-  version: 1,
+  version: 2,
   summary: '心臟超音波（echocardiography）是獸醫心臟科的確診金標準工具。透過 2D、M-mode 與 Doppler 三種模式，可評估心臟結構、腔室大小、心肌收縮功能、瓣膜功能與血流動力學。標準化切面包含右側胸骨旁長軸/短軸與左側心尖四腔室切面。正確的測量與判讀是 MMVD 分期、DCM 診斷與 HCM 確認的基礎。',
   learning_objectives: [
     '執行犬貓心臟超音波標準切面的獲取（右胸骨旁長軸/短軸、左心尖四腔室）',
@@ -2469,7 +2508,21 @@ const contentEchocardiography: NodeContent = {
 | STE strain 在獸醫臨床的實用性 | 正常參考值因設備廠牌差異大，標準化不足 | Level III |
 | 犬 E/A ratio 與舒張功能評估的可靠性 | 犬心率變異大影響 E/A 測量一致性 | Level IV |
 
-[圖片:犬心臟超音波標準切面示意圖，右胸骨旁長軸與短軸]`,
+[圖片:犬心臟超音波標準切面示意圖，右胸骨旁長軸與短軸]
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+### 心超驅動的 MMVD B2 分期與治療啟動
+EPIC 試驗（Boswood 2016）以心超 LA/Ao≥1.6 + LVIDDN≥1.7（加上合格心雜音與 VHS 閾值）定義臨床前 B2，並證實此時啟動 pimobendan 顯著延後充血性心衰、延長無症狀期——使「精準量測」直接連結到「何時開始治療」（Keene 2019 共識採用）。
+
+### 進階心肌功能評估
+斑點追蹤心超（STE）之心肌應變（strain/strain rate）可在 FS 仍正常時偵測亞臨床心肌功能障礙（如 DCM 早期、化療心毒性、貓 HCM）；惟參考值因設備而異、標準化仍不足。
+
+### POCUS／重點式心臟超音波
+非心臟專科亦可用重點式心臟超音波（FCU）於急診快速回答「是不是心因性」（粗估 LA/Ao、心包膜積液、整體收縮力），加速分診；確診與分期仍須完整心超。
+
+### 判讀陷阱再提醒：貓的假性肥厚
+貓在脫水/容積不足時左心室腔變小、室壁相對「增厚」為假性肥厚（pseudohypertrophy），與真正 HCM 不同；應在補液、心率穩定後複評，避免過度診斷 HCM。`,
   clinical_pearl: 'LA/Ao ratio 的測量方法要標準化：在右胸骨旁短軸心底水平切面，主動脈呈圓形時取第一幀（早期舒張期），Ao 測量從右冠狀瓣尖根部到對側非冠狀瓣-左冠狀瓣交界處，LA 從同一幀以平行線法測量。測量不標準化是臨床上 LA/Ao ratio 變異大的主要原因，建議每次使用相同方法與時機點。',
   common_mistakes: [
     'M-mode 游標未垂直於心室中隔與後壁，傾斜切割導致 LVIDd 高估',
@@ -2517,8 +2570,9 @@ const contentEchocardiography: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Boon JA. Veterinary Echocardiography, 2nd ed. Wiley-Blackwell, 2011.', relevance: '獸醫心臟超音波標準教材' },
-    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for MMVD. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 心超分期標準' },
-    { type: 'journal', citation: 'Cornell CC et al. Allometric scaling of M-mode cardiac measurements in normal adult dogs. J Vet Intern Med. 2004;18(3):311-321.', relevance: '犬心超測量值體重標準化（LVIDDN）方法' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488.', relevance: 'MMVD 心超分期標準（B2 啟動治療）' },
+    { type: 'journal', citation: 'Cornell CC, Kittleson MD, Della Torre P, et al. Allometric scaling of M-mode cardiac measurements in normal adult dogs. J Vet Intern Med. 2004;18(3):311-321. doi:10.1111/j.1939-1676.2004.tb02551.x.', relevance: '犬心超測量值體重標準化（LVIDDN）方法' },
+    { type: 'journal', citation: 'Boswood A, Häggström J, Gordon SG, et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease and cardiomegaly: the EPIC study. J Vet Intern Med. 2016;30(6):1765-1779. doi:10.1111/jvim.14586.', relevance: 'EPIC 試驗：心超定義 B2 並啟動 pimobendan 的關鍵 RCT' },
   ],
   is_current: true,
   created_at: now,
@@ -2528,7 +2582,7 @@ const contentEchocardiography: NodeContent = {
 const contentECG: NodeContent = {
   id: 'CONTENT-L4-003',
   node_id: 'CARDIO-L4-003',
-  version: 1,
+  version: 2,
   summary: '心電圖（ECG/EKG）把心臟的電氣活動投影到體表，是心律不整診斷的金標準。標準六肢導程裡 Lead II 是主要分析導程。讀 ECG 要照順序：心率、節律、P 波、PR interval、QRS、T 波，一個都不能跳。間歇性的心律不整光做幾分鐘抓不到，得靠 Holter 連續監測 24 小時，沒做這一步常常會漏。',
   learning_objectives: [
     '執行犬貓標準六肢導程 ECG 的正確操作',
@@ -2637,6 +2691,15 @@ const contentECG: NodeContent = {
 | Holter 監測在非杜賓犬品種的篩檢價值 | 成本效益與觸發閾值缺乏非杜賓品種的系統性數據 | Level IV |
 | 穿戴式 ECG 取代 Holter 的可行性 | 居家操作方便性高但記錄時間與品質受限 | Level III |
 
+## 六、近期實證更新 (Recent Evidence Updates)
+
+- **智慧型手機/穿戴式 ECG 驗證**：Vezzosi 等人（2016）以標準六肢導程 ECG 為對照，證實智慧型手機心電圖儀（AliveCor/Kardia）在犬具高診斷準確度，可供飼主居家擷取 30 秒 ECG 傳送獸醫遠端判讀，特別適合捕捉陣發性、間歇性心律不整。〔Evidence Level III〕
+- **AI 輔助 ECG 自動判讀**：承襲人醫 AI-ECG（Mayo/Google）進展，獸醫專用心律不整自動分類模型正在開發，部分商業軟體已具初步 VPC/AF 偵測，但臨床獨立判讀仍須獸醫覆核。〔Evidence Level IV〕
+- **延長心律監測角色擴張**：標準 ECG 僅數分鐘、易漏間歇事件；24 小時 Holter 仍是杜賓犬/拳師犬隱匿型 DCM/ARVC 篩檢與不明原因暈厥評估的標準，穿戴式/植入式 loop recorder 逐步補足更長時間窗的監測缺口。〔Evidence Level III〕
+- **走紙速度與導程**：獸醫慣例維持六肢導 + 50 mm/s（犬）走紙；胸前導程或 12 導程化的增量診斷價值仍缺乏系統性實證。〔Evidence Level IV〕
+
+> ⚠️ 上述更新（特別是 AI 自動判讀與穿戴式裝置的臨床定位）仍待 DVM 依個案與最新器材驗證資料覆核後採用。
+
 [圖片:犬正常 ECG 與各種心律不整 ECG 波形對比]`,
   clinical_pearl: '心房顫動在犬的臨床判斷關鍵：(1) 大型犬（> 20 kg）合併 DCM 時最常見；(2) 小型犬出現 AF 幾乎都代表嚴重左心房擴大；(3) 犬 AF 的治療目標是心率控制（target HR < 140-160 bpm at rest），而非節律轉復，電復律或藥物轉復在犬的復發率極高。Diltiazem 或 Digoxin 是心率控制的首選。',
   common_mistakes: [
@@ -2685,8 +2748,9 @@ const contentECG: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016.', relevance: '獸醫心電圖標準教材' },
     { type: 'textbook', citation: 'Santilli RA et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018.', relevance: '犬貓心電圖進階判讀教材' },
-    { type: 'journal', citation: 'Meurs KM et al. Use of ambulatory electrocardiography for detection of ventricular premature complexes in healthy dogs. J Am Vet Med Assoc. 2001;218(8):1291-1292.', relevance: 'Holter 監測在犬的正常值參考' },
-    { type: 'guideline', citation: 'Thomas WP, Gaber CE, Jacobs GJ, et al. "Recommendations for standards in transthoracic two-dimensional echocardiography in the dog and cat." J Vet Intern Med. 1993;7(4):247-252.', relevance: '犬貓心臟超音波標準化建議' },
+    { type: 'journal', citation: 'Meurs KM, Spier AW, Wright NA, Hamlin RL. Use of ambulatory electrocardiography for detection of ventricular premature complexes in healthy dogs. J Am Vet Med Assoc. 2001;218(8):1291-1292. doi:10.2460/javma.2001.218.1291', relevance: 'Holter 監測在犬的 VPC 正常值參考' },
+    { type: 'journal', citation: 'Vezzosi T, Buralli C, Marchesotti F, et al. Diagnostic accuracy of a smartphone electrocardiograph in dogs: Comparison with standard 6-lead electrocardiography. Vet J. 2016;216:33-37. doi:10.1016/j.tvjl.2016.06.013', relevance: '智慧型手機 ECG（AliveCor）在犬的診斷準確度驗證' },
+    { type: 'guideline', citation: 'Thomas WP, Gaber CE, Jacobs GJ, et al. Recommendations for standards in transthoracic two-dimensional echocardiography in the dog and cat. J Vet Intern Med. 1993;7(4):247-252. doi:10.1111/j.1939-1676.1993.tb01015.x', relevance: '犬貓心臟影像檢查標準化建議（記錄規範淵源）' },
   ],
   is_current: true,
   created_at: now,
@@ -2696,7 +2760,7 @@ const contentECG: NodeContent = {
 const contentThoracicRadiograph: NodeContent = {
   id: 'CONTENT-L4-004',
   node_id: 'CARDIO-L4-004',
-  version: 1,
+  version: 2,
   summary: '胸腔 X 光是心臟病評估中最基礎且廣泛可用的影像工具。標準三視圖（右側臥、左側臥、DV/VD）可評估心臟大小（VHS）、各腔室增大徵象、肺血管變化與肺實質病變（肺水腫、胸水）。VHS（Vertebral Heart Score）是客觀量化心臟大小的標準方法。X 光在 CHF 診斷、治療反應評估與 MMVD 分期中扮演重要角色。',
   learning_objectives: [
     '執行標準胸腔三視圖的正確拍攝與品質評估',
@@ -2800,7 +2864,21 @@ Vertebral Heart Score (VHS)：
 | VHS 品種特異性正常值完整性 | 僅部分品種有發表的 VHS 參考值，台灣流行品種數據不足 | Level III |
 | X 光 vs 肺超音波（POCUS B-lines）偵測早期肺水腫的優劣比較 | B-lines 可能更敏感但特異度待確認 | Level III |
 | 數位 X 光曝光寬容度是否影響 VHS 測量一致性 | 數位系統可後處理調整，但測量標準化仍待研究 | Level IV |
-| 胸腔 X 光在 MMVD B1 vs B2 分期中的判定權重 | 部分病例 VHS 與心超結果不一致時的決策依據不明確 | Level II |`,
+| 胸腔 X 光在 MMVD B1 vs B2 分期中的判定權重 | 部分病例 VHS 與心超結果不一致時的決策依據不明確 | Level II |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+### VLAS：放射線評估左心房的新工具
+椎體左心房尺寸（Vertebral Left Atrial Size, VLAS；Malcolm 2018）以椎體數量化側面觀左心房大小，與左心房擴大及 CHF 風險相關；VLAS ≥ ~3 vertebrae 提示 LA 增大，補足 VHS（量整體心臟）對「左心房」的專一性，協助 MMVD 分期與咳嗽鑑別。
+
+### AI 自動判讀 VHS／心臟擴大
+深度學習可自動量測 VHS、偵測心臟擴大（Burti 2020），減少操作者間變異、加速篩檢；人醫胸片 AI 已達放射科醫師水準，獸醫模型驗證中。
+
+### 放射線在 MMVD 分期的定位
+ACVIM 2019（Keene）以 VHS（≥10.5，部分採 ≥11.5）+ VLAS + 心超共同界定 B2；放射線於「肺水腫偵測與治療追蹤」不可取代，但「結構分期」仍以心超為準。
+
+### POCUS 肺超音波互補
+床邊肺超音波 B-lines 對心因性肺水腫可能較 X 光更早偵測；急診常 X 光 + POCUS 並用，惟 B-line 特異度（心因 vs 非心因）仍待釐清。`,
   clinical_pearl: '臨床上區分「心因性咳嗽」與「呼吸道咳嗽」的關鍵在胸腔 X 光：MMVD 犬的咳嗽可能來自 (1) 肺水腫（CHF）或 (2) 左心房擴大壓迫左主支氣管。若 X 光顯示肺野清晰但左主支氣管明顯被壓迫抬高，咳嗽可能是機械性壓迫而非 CHF，此時增加利尿劑無效，反而應考慮止咳藥。這個區分直接影響治療決策。',
   common_mistakes: [
     '呼氣相拍攝導致心影假性增大與肺野假性不透明，務必確認吸氣相充足',
@@ -2848,8 +2926,10 @@ Vertebral Heart Score (VHS)：
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier, 2018. Chapter 33: The Heart and Pulmonary Vessels.', relevance: '獸醫胸腔影像標準教材' },
-    { type: 'journal', citation: 'Buchanan JW, Bucheler J. Vertebral scale system to measure canine heart size in radiographs. J Am Vet Med Assoc. 1995;206(2):194-199.', relevance: 'VHS 測量法原始文獻' },
-    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for MMVD. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 分期中 X 光標準的角色' },
+    { type: 'journal', citation: 'Buchanan JW, Bücheler J. Vertebral scale system to measure canine heart size in radiographs. J Am Vet Med Assoc. 1995;206(2):194-199. doi:10.2460/javma.1995.206.02.194.', relevance: 'VHS 測量法原始文獻' },
+    { type: 'journal', citation: 'Malcolm EL, Visser LC, Phillips KL, et al. Diagnostic value of vertebral left atrial size as determined from thoracic radiographs for assessment of left atrial size in dogs. J Am Vet Med Assoc. 2018;253(8):1038-1045. doi:10.2460/javma.253.8.1038.', relevance: 'VLAS 放射線評估左心房大小（新工具）' },
+    { type: 'journal', citation: 'Burti S, Longhin Osti V, Zotti A, et al. Use of deep learning to detect cardiomegaly on thoracic radiographs in dogs. Vet J. 2020;262:105505. doi:10.1016/j.tvjl.2020.105505.', relevance: 'AI 深度學習自動偵測犬心臟擴大' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488.', relevance: 'MMVD 分期中 VHS/VLAS 與心超的角色' },
   ],
   is_current: true,
   created_at: now,
@@ -2859,7 +2939,7 @@ Vertebral Heart Score (VHS)：
 const contentHeartFailureTreatment: NodeContent = {
   id: 'CONTENT-L5-001',
   node_id: 'CARDIO-L5-001',
-  version: 1,
+  version: 2,
   summary: '心臟衰竭（CHF）治療是獸醫心臟科的核心臨床技能。犬 CHF 治療以「三合一」為基礎：Pimobendan（正性肌力+血管擴張）、Furosemide（利尿）與 ACE inhibitor（抗神經荷爾蒙）。急性 CHF 需氧氣支持與靜脈利尿劑穩定，慢性管理需個別化藥物調整與居家監測。貓 CHF 以胸水引流與利尿劑為主，用藥選擇與犬有重要差異。',
   learning_objectives: [
     '制定犬急性 CHF（肺水腫）的緊急處理步驟',
@@ -2978,6 +3058,15 @@ const contentHeartFailureTreatment: NodeContent = {
 | Furosemide CRI vs bolus 在急性 CHF 的優劣 | 人醫 DOSE 試驗無明顯差異，獸醫缺乏比較研究 | Level IV |
 | 飲食鈉限制在犬 CHF 的角色 | 傳統建議限鈉，但嚴格限鈉可能後續活化 RAAS | Level IV |
 
+## 七、近期實證更新 (Recent Evidence Updates)
+
+1. **Pimobendan 臨床前期（EPIC, Boswood 2016）**：MMVD B2（心臟擴大）犬給 pimobendan 可延後 CHF 發生約 15 個月，為 B2 標準治療（ACVIM 2019 Keene 共識）。
+2. **Torsemide（TEST, Chetboul 2017）**：長效、較強效之環利尿劑，短期療效不劣於 furosemide，適用於利尿劑阻抗；劑量約為 furosemide 的 1/10-1/20。
+3. **Sequential nephron blockade**：furosemide + thiazide／spironolactone 用於難治性水腫。
+4. **新機轉藥研究中**：ARNI（sacubitril/valsartan）、SGLT2i、vericiguat 等人醫進展，獸醫數據累積中（非標準）。
+5. **居家呼吸速率監測**：sleeping/resting RR（穩定 <30/min）為驗證有效的早期失代償偵測工具。
+> 心衰竭藥物選擇、劑量與升級須由獸醫依物種、分期與個案、現行 ACVIM 共識調整。
+
 [圖片:犬 CHF 治療藥物階梯式方案流程圖]`,
   clinical_pearl: '利尿劑的「黃金法則」：使用最低有效劑量。Furosemide 過度使用會導致前腎性氮血症、低鉀血症與脫水，反而啟動 RAAS 活化形成惡性循環（「利尿劑阻抗」現象）。當 BUN/Cre 上升時，優先考慮降低 Furosemide 而非停用 ACEi，ACEi 的腎保護作用在長期管理中更為重要。',
   common_mistakes: [
@@ -2999,10 +3088,11 @@ const contentHeartFailureTreatment: NodeContent = {
   ],
   drug_api_links: ['Pimobendan', 'Furosemide', 'Enalapril', 'Benazepril', 'Spironolactone', 'Sildenafil', 'Amlodipine', 'Digoxin', 'Dobutamine', 'Clopidogrel'],
   references: [
-    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD CHF 治療指引' },
-    { type: 'journal', citation: 'Boswood A et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease (EPIC study). J Vet Intern Med. 2016;30(6):1765-1779.', relevance: 'Pimobendan 在心衰竭前期的關鍵證據' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488.', relevance: 'ACVIM 犬 MMVD 診療共識（CHF 治療）' },
+    { type: 'journal', citation: 'Boswood A, Häggström J, Gordon SG, et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease and cardiomegaly: the EPIC study. J Vet Intern Med. 2016;30(6):1765-1779. doi:10.1111/jvim.14586.', relevance: 'Pimobendan 臨床前期 MMVD 關鍵 RCT（EPIC）' },
+    { type: 'journal', citation: 'Chetboul V, Pouchelon JL, Menard J, et al. Short-term efficacy and safety of torasemide and furosemide in 366 dogs with degenerative mitral valve disease: the TEST study. J Vet Intern Med. 2017;31(6):1629-1642. doi:10.1111/jvim.14841.', relevance: 'Torsemide vs Furosemide RCT（近期實證）' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 3: Heart Failure Management.', relevance: '心臟衰竭管理完整教材' },
-    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement on cardiomyopathies in cats. J Vet Intern Med. 2020;34(1):3-32.', relevance: '貓心肌病 CHF 治療共識' },
+    { type: 'guideline', citation: 'Luis Fuentes V, Abbott J, Chetboul V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745.', relevance: '貓心肌病分類/診斷/管理 ACVIM 共識' },
   ],
   is_current: true,
   created_at: now,
@@ -3516,8 +3606,8 @@ PDA 病理：導管壁平滑肌對氧氣收縮反應異常 + 內膜增生不足 
 const contentCongenitalHD: NodeContent = {
   id: 'CONTENT-L3-006',
   node_id: 'CARDIO-L3-006',
-  version: 1,
-  summary: '犬先天性心臟病以動脈導管未閉（PDA）、肺動脈瓣狹窄（PS）與主動脈下狹窄（SAS）為三大最常見缺陷。PDA 為持續性左→右分流導致左心容量過載，特徵為左腋下連續性「機械樣」雜音，外科結紮或 ACDO 導管封堵為治療標準。PS 以收縮期噴射雜音表現，嚴重者（壓力梯度 > 80 mmHg）建議球囊擴張術。SAS 預後最差，目前以 atenolol 控制心率與降低猝死風險為主。',
+  version: 2,
+  summary: '犬先天性心臟病以動脈導管未閉（PDA）、肺動脈瓣狹窄（PS）與主動脈下狹窄（SAS）為三大最常見缺陷。PDA 為持續性左→右分流導致左心容量過載，特徵為左腋下連續性「機械樣」雜音，外科結紮或 ACDO 導管封堵為治療標準。PS 以收縮期噴射雜音表現，嚴重者（壓力梯度 > 80 mmHg）建議球囊擴張術。SAS 預後最差，目前以 atenolol 控制症狀與心律不整為主（β-blocker 延長存活的證據不足，Eason 2014）。',
   learning_objectives: [
     '辨識 PDA、PS、SAS 各自的特徵性心雜音位置與性質',
     '描述 PDA 手術與介入治療的適應症與預期結果',
@@ -3532,7 +3622,7 @@ const contentCongenitalHD: NodeContent = {
     'PS 嚴重度分級：輕度（梯度 <50 mmHg）→ 追蹤；中度（50-80）→ 個別化；重度（>80）→ 球囊擴張術',
     'PS 好發品種：英國鬥牛犬（多為 dysplastic type）、拳師犬、法國鬥牛犬、比格犬',
     'SAS 好發品種：金毛犬、紐芬蘭犬、拳師犬；離散型纖維環為最常見型態',
-    'SAS 治療：Atenolol 0.5-1 mg/kg PO BID（降低心率、減少心肌氧需求、降低猝死風險），球囊擴張效果有限且短暫',
+    'SAS 治療：Atenolol 0.5-1 mg/kg PO BID 控制症狀與心律不整（β-blocker 延長存活證據不足，Eason 2014），球囊擴張效果有限且短暫',
     'SAS 預後：重度（梯度 >80 mmHg）中位存活約 19 個月；輕度長期預後良好',
   ],
   body: `# 先天性心臟病：PDA / PS / SAS (Congenital Heart Disease)
@@ -3651,7 +3741,7 @@ ACDO（Amplatz Canine Duct Occluder）操作要點：經股動脈入路→血管
 | 外科切除 | 開心手術切除纖維環，高風險 | Level IV |
 | 運動限制 | 避免激烈運動降低猝死風險 | Level V |
 
-Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈灌注；(2) 降低心肌氧需求；(3) 減少心律不整風險。Corcoran et al. 研究顯示 atenolol 可能延長重度 SAS 犬的存活時間，但缺乏前瞻性 RCT。
+Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈灌注；(2) 降低心肌氧需求；(3) 減少心律不整風險。**惟現有證據顯示 β-blocker 並未顯著延長重度 SAS 犬的存活（Eason et al. 2014 回顧性研究）；atenolol 角色限於控制症狀與心律不整，不應宣稱延長壽命。**
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -3670,6 +3760,13 @@ Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈
 | 輕度 SAS 的繁殖限制 | OFA 建議確診即不繁殖 | 輕度 SAS 與功能性雜音鑑別困難 | Level III |
 | PDA 犬術後是否需終身追蹤 | 早期閉合且重塑良好者可解除 | 偶見遲發性併發症（如 hemolysis） | Level IV |
 | PS Type B 是否仍應嘗試 BV | 部分案例有改善 | 效果不可預期，可能加重瓣膜關閉不全 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+1. **重度 SAS 與 β-blocker（Eason 2014）**：回顧性研究顯示 atenolol／β-blocker **並未顯著延長**重度 SAS 犬存活；角色限於控制症狀與心律不整，不應宣稱延長壽命。
+2. **SAS 抗心律不整策略仍演進（2023）**：sotalol vs atenolol 與存活關聯之研究（J Vet Cardiol 2023）提示最佳藥物選擇尚無定論，重度者建議 Holter 評估。
+3. **PDA 長期預後（Saunders 2014，520 例）**：早期經導管或外科閉合預後佳、心臟可逆重塑；ACDO 介入術式持續改良。
+> 先天性心臟病的介入決策建議轉診心臟專科；藥物與術式須依個案與現行文獻評估、由獸醫師覆核。
 
 [圖片:PDA/PS/SAS 心臟超音波特徵比較圖]`,
   clinical_pearl: 'PDA 的「1-2-3 法則」有助於快速臨床判斷：(1) 1 個特徵性雜音，連續性機械樣雜音（continuous machinery murmur）在左腋下最響，(2) 2 個觸診發現，跳躍脈（bounding pulse）+ 心前區搏動增強（hyperdynamic precordium），(3) 3 個月內應完成治療，越早閉合 PDA，心臟重塑可逆性越高。對於馬爾濟斯、博美等台灣常見小型犬品種，獸醫在幼犬首次就診時發現左腋下連續性雜音，應高度懷疑 PDA 並立即轉診。ACDO 導管封堵在台灣已有多家教學醫院可執行，成功率高且恢復快。',
@@ -3701,7 +3798,7 @@ Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈
     ],
     diagnostic_workup: '1. 理學檢查（聽診特徵、脈搏品質、黏膜色澤）→ 2. 胸腔 X 光（心臟大小、肺血管紋路）→ 3. 心臟超音波（確診：直接觀察缺陷+杜卜勒測量壓力梯度/分流量）→ 4. ECG（評估心律不整風險，SAS 尤其重要）→ 5. 血管攝影（PDA ACDO 術前 sizing 必需）',
     treatment_protocol: '【PDA】ACDO 導管封堵（首選，體重 >2.5 kg，成功率 >95%）或外科結紮。越早治療越好，CHF 前閉合預後最佳。已有 CHF 者先穩定再閉合。Reverse PDA 為手術禁忌。\n\n【PS】輕度（<50 mmHg）：追蹤。中度（50-80）：個別化。重度（>80）：球囊擴張術（BV），Type A 效果佳，Type B 效果有限。\n\n【SAS】[藥物:Atenolol] 0.5-1 mg/kg PO BID 為主要治療。運動限制。球囊擴張僅暫時效果，不推薦為常規治療。重度者建議 Holter 評估心律不整風險。',
-    prognosis: 'PDA：早期閉合（CHF 前）預後極佳，壽命接近正常；未治療者 60% 在 1 歲前死於 CHF。PS：輕度預後良好；重度 BV 後多可維持良好生活品質。SAS：輕度預後良好；重度中位存活約 19 個月，猝死為主要死因；Atenolol 可能延長存活但缺乏 RCT 證據。',
+    prognosis: 'PDA：早期閉合（CHF 前）預後極佳，壽命接近正常；未治療者 60% 在 1 歲前死於 CHF。PS：輕度預後良好；重度 BV 後多可維持良好生活品質。SAS：輕度預後良好；重度中位存活約 19 個月，猝死為主要死因；β-blocker 延長存活的證據不足（Eason 2014 回顧未顯示存活益處），atenolol 用於症狀/心律不整控制。',
     monitoring: 'PDA 術後：24-48h 心超確認無殘餘分流，1 個月、6 個月、12 個月回診心超追蹤心臟重塑。PS BV 後：3 個月心超重測梯度。SAS：每 6 個月心超追蹤梯度變化 + 年度 Holter（重度者）。所有先天性心臟病犬建議不繁殖。',
     owner_communication: '先天性心臟病的關鍵訊息：(1) PDA，早期治療預後極佳，手術/介入是治癒性的；(2) PS，重度需介入治療，術後多可維持良好生活品質；(3) SAS，誠實告知預後，重度者有猝死風險，藥物治療以改善生活品質為目標。所有先天性心臟病犬強烈建議不繁殖以減少下一代發生率。台灣 ACDO 技術已成熟，費用雖較高但效果確切。',
   },
@@ -3716,11 +3813,11 @@ Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈
   ],
   drug_api_links: ['Atenolol', 'Sildenafil'],
   references: [
-    { type: 'journal', citation: 'Schrope DP. Prevalence of congenital heart disease in 76,301 mixed-breed dogs and 57,025 mixed-breed cats. J Vet Cardiol. 2015;17(3):192-202.', relevance: '犬先天性心臟病盛行率與類型分布大規模研究' },
-    { type: 'journal', citation: 'Bussadori C, DeMadron E, Santilli RA, Borgarelli M. Balloon valvuloplasty in 30 dogs with pulmonic stenosis: effect of valve morphology and annular size on initial and 1-year outcome. J Vet Intern Med. 2009;23(4):867-874.', relevance: 'PS 球囊擴張術療效與瓣膜型態關聯' },
+    { type: 'journal', citation: 'Schrope DP. Prevalence of congenital heart disease in 76,301 mixed-breed dogs and 57,025 mixed-breed cats. J Vet Cardiol. 2015;17(3):192-202. doi:10.1016/j.jvc.2015.06.001.', relevance: '犬先天性心臟病盛行率與類型分布大規模研究' },
+    { type: 'journal', citation: 'Bussadori C, DeMadron E, Santilli RA, et al. Balloon valvuloplasty in 30 dogs with pulmonic stenosis: effect of valve morphology and annular size on initial and 1-year outcome. J Vet Intern Med. 2001;15(6):553-558. doi:10.1111/j.1939-1676.2001.tb01590.x.', relevance: 'PS 球囊擴張術療效與瓣膜型態關聯' },
+    { type: 'journal', citation: 'Eason BD, et al. Influence of beta blockers on survival in dogs with severe subaortic stenosis. J Vet Intern Med. 2014;28(3):857-862. doi:10.1111/jvim.12339.', relevance: '重度 SAS β-blocker 對存活之影響（未顯示存活益處）' },
+    { type: 'journal', citation: 'Saunders AB, Gordon SG, et al. Long-term outcome in dogs with patent ductus arteriosus: 520 cases (1994-2009). J Vet Intern Med. 2014;28(2):401-410. doi:10.1111/jvim.12267.', relevance: 'PDA 長期預後大型回顧（520 例）' },
     { type: 'textbook', citation: 'Tobias AH, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018. Chapter: Congenital Heart Disease.', relevance: '先天性心臟病外科與介入治療教材' },
-    { type: 'journal', citation: 'Corcoran BM, Martin MW, Darke PG, et al. Atenolol in the treatment of congenital subaortic stenosis in the dog. J Small Anim Pract. 2002;43(12):533-536.', relevance: 'Atenolol 治療犬 SAS 的臨床研究' },
-    { type: 'guideline', citation: 'Estrada A, Meurs KM, Oyama MA, et al. ACVIM Consensus Statement: Guidelines for the Diagnosis and Treatment of Canine Patent Ductus Arteriosus. J Vet Intern Med. 2021;35(5):2299-2317.', relevance: 'ACVIM 犬 PDA 診斷與治療共識聲明' },
   ],
   is_current: true,
   created_at: now,
@@ -3730,7 +3827,7 @@ Atenolol 的作用：(1) 降低心率 → 延長舒張期 → 改善冠狀動脈
 const contentClinicalArrhythmias: NodeContent = {
   id: 'CONTENT-L3-007',
   node_id: 'CARDIO-L3-007',
-  version: 1,
+  version: 2,
   summary: '臨床心律不整包含上心室性頻脈（SVT）、心室頻脈（VT）、心房顫動（AF）與病竇症候群（SSS）。犬 VT 以杜賓犬 DCM 與拳師犬 ARVC 最具臨床意義，緊急處理以 IV lidocaine 為首選。AF 好發於大型犬合併 DCM，以 diltiazem + digoxin 心率控制為主。SSS 好發迷你雪納瑞與西高地白梗，嚴重者需永久性心律調節器。',
   learning_objectives: [
     '辨識 SVT、VT、AF、SSS 的 ECG 特徵與臨床表現',
@@ -3913,6 +4010,14 @@ VT 為源於 His 束以下（心室）的連續三個以上心室早期收縮（
 | SSS 犬 Theophylline 的價值 | 可增加竇房結自動性 | 效果不穩定且可能誘發快速心律 | Level IV |
 | 拳師犬 ARVC 的 Sotalol vs Mexiletine+Sotalol | 單藥方案較簡單 | 合併用藥可能更有效控制 VPC | Level III |
 
+## 六、近期實證更新 (Recent Evidence Updates)
+
+1. **杜賓犬隱性 DCM 篩檢（ESVC, Wess 2017）**：建議自約 3 歲起年度 Holter（>300 VPC/24h 或成對/連發具臨床意義）+ 心超；PROTECT 試驗顯示 pimobendan 可延緩隱性 DCM 進展為 CHF/猝死。
+2. **拳師犬 ARVC（Meurs 2002）**：sotalol 或 mexiletine+sotalol 可顯著減少 VPC（>80%），但無法完全消除猝死風險；flecainide 等新選項研究中。
+3. **AF 仍以心率控制為主軸**：diltiazem（含急性 CRI）+ digoxin 控制靜息心率 <140-160 bpm；電擊/藥物轉復律在犬幾乎必復發，少用。
+4. **節律裝置與電燒**：無導線心律調節器、AF 電燒為人醫標準，獸醫處個案/研究階段。
+> 抗心律不整藥物治療窗窄、具致心律不整風險，劑量與監測（ECG/Holter/電解質）須由獸醫（心臟專科）依個案執行。
+
 [圖片:四種心律不整 ECG 特徵比較圖，SVT/VT/AF/SSS]`,
   clinical_pearl: 'VT 的「穩定 vs 不穩定」快速評估決定處理急迫性：血流動力學不穩定（低血壓、蒼白黏膜、意識改變、脈搏弱）= 緊急給予 Lidocaine IV。血流動力學穩定的 VT 仍需處理，但可有更多時間準備，先確認電解質（低鉀、低鎂加重心律不整）、評估心率（犬 VT 心率 <180 bpm 較穩定），再決定 IV 或直接口服 Sotalol。「不確定 SVT 或 VT 時按 VT 處理」是安全的臨床原則。\n\n【台灣臨床現況】台灣多家教學醫院已可執行永久性心律調節器植入。杜賓犬在台灣飼養量相對較少，但 DCM 篩檢意識正在提升。Holter 監測在台灣已有數家專科醫院提供租借服務。',
   common_mistakes: [
@@ -3959,10 +4064,10 @@ VT 為源於 His 束以下（心室）的連續三個以上心室早期收縮（
   drug_api_links: ['Lidocaine', 'Diltiazem', 'Sotalol', 'Digoxin', 'Procainamide', 'Atenolol'],
   references: [
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016.', relevance: '小動物 ECG 判讀與心律不整診斷完整教材' },
-    { type: 'journal', citation: 'Meurs KM et al. Comparison of the effects of four antiarrhythmic treatments for familial ventricular arrhythmias in Boxers. J Am Vet Med Assoc. 2002;221(4):522-527.', relevance: '拳師犬心律不整治療比較研究' },
+    { type: 'journal', citation: 'Meurs KM, et al. Comparison of the effects of four antiarrhythmic treatments for familial ventricular arrhythmias in Boxers. J Am Vet Med Assoc. 2002;221(4):522-527. doi:10.2460/javma.2002.221.522.', relevance: '拳師犬心律不整治療比較研究' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Cardiac Arrhythmias.', relevance: '臨床心律不整診斷與治療教材' },
-    { type: 'journal', citation: 'Calvert CA, Hall G, Jacobs G, Pickus C. Clinical and pathologic findings in Doberman Pinschers with occult cardiomyopathy that died suddenly or developed congestive heart failure: 54 cases (1984-2004). J Am Vet Med Assoc. 2006;228(11):1723-1730.', relevance: '杜賓犬 DCM 伴心律不整的臨床病理研究' },
-    { type: 'guideline', citation: 'Meurs KM, Stern JA, Sisson DD, et al. ACVIM Consensus Statement: Guidelines for the Identification, Evaluation, and Management of Systolic Myocardial Dysfunction in Dogs. J Vet Intern Med. 2019;33(1):11-29.', relevance: 'ACVIM 犬心肌功能障礙管理共識聲明（含心律不整管理）' },
+    { type: 'journal', citation: 'Calvert CA, Hall G, Jacobs G, Pickus C. Clinical and pathologic findings in Doberman Pinschers with occult cardiomyopathy that died suddenly or developed congestive heart failure: 54 cases. J Am Vet Med Assoc. 1997;210(4):505-511. doi:10.2460/javma.1997.210.04.505.', relevance: '杜賓犬 DCM 伴心律不整的臨床病理研究' },
+    { type: 'guideline', citation: 'Wess G, Domenech O, Dukes-McEwan J, et al. European Society of Veterinary Cardiology screening guidelines for dilated cardiomyopathy in Doberman Pinschers. J Vet Cardiol. 2017;19(5):405-415. doi:10.1016/j.jvc.2017.08.006.', relevance: 'ESVC 杜賓犬 DCM 篩檢指引（Holter/VPC 標準）' },
   ],
   is_current: true,
   created_at: now,
@@ -3972,7 +4077,7 @@ VT 為源於 His 束以下（心室）的連續三個以上心室早期收縮（
 const contentEndocarditis: NodeContent = {
   id: 'CONTENT-L3-008',
   node_id: 'CARDIO-L3-008',
-  version: 1,
+  version: 2,
   summary: '感染性心內膜炎（Infective Endocarditis, IE）是心臟瓣膜或心內膜表面的微生物感染，以主動脈瓣與二尖瓣最常受侵犯。犬好發於中大型犬（德國牧羊犬為高風險品種），貓極罕見。診斷依賴血液培養（3 組不同部位取樣）與心臟超音波偵測贅生物（vegetation）。治療需長期靜脈注射抗生素（4-6 週），預後不良。',
   learning_objectives: [
     '描述感染性心內膜炎的病理生理機轉與易感因子',
@@ -3988,7 +4093,8 @@ const contentEndocarditis: NodeContent = {
     '感染來源：口腔感染、泌尿道感染、皮膚傷口、椎間盤炎、前列腺炎',
     '診斷三要素：(1) 血培養 3 組不同部位取樣 (2) 心超偵測贅生物 (3) 臨床表現（發燒+新雜音+栓塞現象）',
     '治療：長期靜脈抗生素 4-6 週（經驗性：Ampicillin + Enrofloxacin，依培養結果調整）',
-    '預後不良：中位存活約 3-6 個月，主動脈瓣受侵犯與嚴重瓣膜破壞預後更差',
+    '預後不良：中位存活約 3-6 個月，主動脈瓣受侵犯與嚴重瓣膜破壞傳統上視為更差',
+    '近期實證（Reagan 2022, JVIM 113 例）：CHF/血栓栓塞/AKI 才是死亡風險因子，瓣膜位置與菌種未與預後相關；抗血栓治療與較長存活相關',
   ],
   body: `# 感染性心內膜炎 (Infective Endocarditis, IE)
 
@@ -4095,7 +4201,18 @@ const contentEndocarditis: NodeContent = {
 | 培養陰性 IE 的治療方向 | 經驗性涵蓋 Bartonella（台灣為流行區） | PCR/血清學確認後再針對治療 | Level IV |
 | 治療終點判斷 | 臨床症狀+CRP/白血球正常化 4-6 週 | 缺乏明確生物標記定義治癒 | Level IV |
 
-[圖片:感染性心內膜炎心超贅生物影像與瓣膜破壞示意圖]`,
+[圖片:感染性心內膜炎心超贅生物影像與瓣膜破壞示意圖]
+
+## 六、近期實證更新 (Recent Evidence Update)
+
+**犬 IE 最大宗近期世代研究（Reagan et al 2022, JVIM——113 例, 2005-2020）**，幾個發現會修正舊教條：
+- **整體預後依舊嚴峻**：出院存活 70%、1 個月存活 54%、中位存活僅約 72 天。
+- **真正驅動死亡的是「併發症」，不是瓣膜或菌種**：多變項分析中，與死亡相關的是 **充血性心衰竭（OR 11.8）、血栓栓塞事件（OR 5.7）、急性腎損傷（OR 6.2）**；而 **受侵犯的瓣膜（主動脈 vs 二尖瓣）與致病菌種，在這個世代裡並未與預後相關**——與「主動脈瓣／Staphylococcus 一定比較慘」的傳統說法不完全一致，提醒別只用「哪個瓣膜」來預判預後。
+- **抗血栓治療與較長存活相關**：有用抗血栓藥的犬存活時間明顯較長（未用組中位存活 92 天，有用組在研究期間未達中位）。雖屬回溯性、關聯非因果，但呼應「IE 的栓塞併發症是預後關鍵」，臨床上值得把抗血栓策略納入考量。
+
+**人醫指引更新到 2023 ESC（Delgado et al, Eur Heart J 2023）**：取代 2015 版，把進階影像（心臟 CT、18F-FDG PET/CT）納入診斷主要準則、更新抗生素療程與牙科預防建議。獸醫沿用改良 Duke 準則時可參考其演進方向，但須留意獸醫缺乏進階核醫影像與專屬準則。
+
+**台灣落地**：Bartonella（跳蚤媒介）在台灣是培養陰性 IE 的重要病原體，遇到「發燒＋新雜音＋血培養陰性」務必 PCR/血清學排除；而 Reagan 2022 的訊息——盯緊 CHF／栓塞／AKI 這三個併發症、必要時抗血栓——比糾結菌種更能影響存活。`,
   clinical_pearl: '感染性心內膜炎的診斷陷阱：血培養陰性率高達 20-30%，主要原因為 (1) 抗生素已先使用 (2) Bartonella spp. 為難培養病原。台灣為 Bartonella 流行區（跳蚤媒介），對於「培養陰性 IE」應積極以 PCR 或血清學排除 Bartonella。另外，心超贅生物偵測有限制，小於 2-3 mm 的贅生物可能無法偵測，早期 IE 心超可能正常。所以「心超正常不排除 IE」，臨床高度懷疑時應重複心超並持續血培養。',
   common_mistakes: [
     '僅取 1 組血培養即下結論，需 3 組不同部位取樣以區分真正菌血症與皮膚污染',
@@ -4125,7 +4242,7 @@ const contentEndocarditis: NodeContent = {
     ],
     diagnostic_workup: '1. 血液檢查（CBC：白血球增多伴左移；生化：低白蛋白、高球蛋白、腎指數異常；CRP 升高）→ 2. 尿液分析（血尿、蛋白尿、細菌尿）→ 3. 血液培養 × 3 組（不同部位取樣，需氧+厭氧）→ 4. 心臟超音波（贅生物偵測、瓣膜破壞評估、新瓣膜關閉不全）→ 5. Bartonella PCR/血清學（培養陰性時）→ 6. 腹部超音波（脾/腎梗塞篩檢）→ 7. 關節液分析（多發性關節炎時）',
     treatment_protocol: '經驗性抗生素（培養結果前）：[藥物:Ampicillin] 22 mg/kg IV q6-8h + [藥物:Enrofloxacin] 10 mg/kg IV q24h。培養結果後依藥敏調整為最佳殺菌性方案。總療程 4-6 週靜脈注射（穩定後部分轉口服）。Bartonella 確認時：Azithromycin 5 mg/kg PO q24h + Doxycycline 5 mg/kg PO BID。併發 CHF：加入 Furosemide + Pimobendan 標準治療。嚴重瓣膜破壞考慮轉診外科評估（獸醫可行性極有限）。',
-    prognosis: '整體預後不良。中位存活約 3-6 個月。主動脈瓣受侵犯預後較二尖瓣差。影響預後因子：(1) 瓣膜破壞嚴重度（急性嚴重關閉不全→急性 CHF）(2) 栓塞併發症（腎/腦梗塞）(3) 致病菌種（Staphylococcus 預後較差）(4) 治療反應（血培養持續陽性代表治療失敗）。長期存活者需終身心臟病管理。',
+    prognosis: '整體預後不良。中位存活約 3-6 個月（近期世代 Reagan 2022 中位約 72 天）。傳統認為主動脈瓣受侵犯預後較二尖瓣差，但近期 113 例世代研究中瓣膜位置與菌種並未與預後相關。較一致的死亡風險因子為：(1) 充血性心衰竭（瓣膜急性嚴重關閉不全）(2) 血栓栓塞併發症（腎/腦/肢端梗塞）(3) 急性腎損傷 (4) 治療反應差（血培養持續陽性代表治療失敗）。近期證據另顯示抗血栓治療與較長存活相關（回溯性、關聯非因果）。長期存活者需終身心臟病管理。',
     monitoring: '治療期間：每日體溫監測。第 3-5 天重複血培養（確認抗生素有效）。每週 CBC + CRP 追蹤感染指標。每 1-2 週心超追蹤贅生物大小與瓣膜功能。腎功能每週監測。治療結束後 1 週重複血培養確認根除。出院後每月回診 × 3 個月，之後每 3 個月。',
     owner_communication: '感染性心內膜炎是嚴重疾病，需誠實告知預後不良。治療需長期住院（靜脈抗生素 4-6 週），費用可觀。即使治療成功清除感染，瓣膜破壞可能為永久性，需長期心臟病管理。部分犬可能因嚴重瓣膜破壞、栓塞併發症或感染無法控制而預後極差。及早發現與積極治療是改善預後的關鍵。',
   },
@@ -4140,10 +4257,11 @@ const contentEndocarditis: NodeContent = {
   ],
   drug_api_links: ['Ampicillin', 'Enrofloxacin', 'Metronidazole'],
   references: [
-    { type: 'journal', citation: 'Sykes JE, Kittleson MD, Pesavento PA, et al. Evaluation of the relationship between causative organisms and clinical characteristics of infective endocarditis in dogs: 71 cases (1992-2005). J Am Vet Med Assoc. 2006;228(11):1723-1734.', relevance: '犬 IE 大規模回溯研究，致病菌與臨床特徵關聯' },
+    { type: 'journal', citation: 'Reagan KL, Visser LC, Epstein SE, Stern JA, Johnson LR. "Outcome and prognostic factors in infective endocarditis in dogs: 113 cases." J Vet Intern Med. 2022;36(2):429-440. doi:10.1111/jvim.16380', relevance: '近期最大宗犬 IE 世代：併發症（CHF/栓塞/AKI）驅動死亡、抗血栓與較長存活相關、瓣膜/菌種未與預後相關' },
+    { type: 'journal', citation: 'Sykes JE, Kittleson MD, Pesavento PA, et al. "Evaluation of the relationship between causative organisms and clinical characteristics of infective endocarditis in dogs." J Am Vet Med Assoc. 2006;228(11):1723-1734. doi:10.2460/javma.228.11.1723', relevance: '犬 IE 大規模回溯研究，致病菌與臨床特徵關聯' },
+    { type: 'journal', citation: 'MacDonald KA, Chomel BB, Kittleson MD, et al. "A Prospective Study of Canine Infective Endocarditis in Northern California: emergence of Bartonella as a prevalent etiologic agent." J Vet Intern Med. 2004;18(1):56-64. doi:10.1111/j.1939-1676.2004.tb00136.x', relevance: 'Bartonella 作為犬 IE 新興病原的重要研究' },
+    { type: 'guideline', citation: 'Delgado V, Ajmone Marsan N, de Waha S, et al. "2023 ESC Guidelines for the management of endocarditis." Eur Heart J. 2023;44(39):3948-4042. doi:10.1093/eurheartj/ehad193', relevance: '人醫 IE 最新指引（影像準則更新），獸醫參考使用' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Infective Endocarditis.', relevance: 'IE 診斷與治療完整教材' },
-    { type: 'journal', citation: 'MacDonald KA, Chomel BB, Kittleson MD, et al. A prospective study of canine infective endocarditis in northern California (1999-2001): emergence of Bartonella as a prevalent etiologic agent. J Vet Intern Med. 2004;18(1):56-64.', relevance: 'Bartonella 作為犬 IE 新興病原的重要研究' },
-    { type: 'guideline', citation: 'Habib G et al. 2015 ESC Guidelines for the management of infective endocarditis. Eur Heart J. 2015;36(44):3075-3128.', relevance: '人醫 IE 治療指引，獸醫參考使用' },
   ],
   is_current: true,
   created_at: now,
@@ -4331,7 +4449,7 @@ PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
 const contentFelineATE: NodeContent = {
   id: 'CONTENT-L3-010',
   node_id: 'CARDIO-L3-010',
-  version: 1,
+  version: 2,
   summary: '貓動脈血栓栓塞症（Feline Arterial Thromboembolism, FATE/ATE）是貓心肌病最嚴重的併發症，約 90% 與心肌病相關（HCM 最常見）。血栓最常阻塞於主動脈分叉處（saddle thrombus），導致急性後肢癱瘓。臨床表現為 5 Ps（Pain、Pulselessness、Pallor、Paralysis、Poikilothermia）。存活出院率僅 30-40%。Clopidogrel 18.75 mg/cat PO SID 為二級預防首選。',
   learning_objectives: [
     '描述貓 ATE 的血栓形成機轉（Virchow triad 在貓心肌病的體現）',
@@ -4477,6 +4595,15 @@ LA 擴大（LA/Ao ≥ 2.0）或左心耳 smoke/血栓 → 開始 Clopidogrel 18.
 | 一級預防何時開始 | LA/Ao ≥ 2.0 + smoke → 立即開始 | 低風險貓長期用藥的成本效益不確定 | Level III |
 | DOAC vs Clopidogrel | DOAC 同時抗凝+抗血小板 | 貓的安全劑量尚未確立 | Level IV |
 
+## 七、近期實證更新 (Recent Evidence Updates)
+
+- **FAT CAT 確立 Clopidogrel 為二級預防首選**：Hogan 等人（2015）雙盲 RCT 證實 clopidogrel 顯著優於 aspirin（復發/死亡中位時間 443 vs 192 天），已改變臨床實務。〔Evidence Level I〕
+- **DOAC（rivaroxaban）與雙重抗栓療法興起**：Lo 等人（2022）報告 clopidogrel + rivaroxaban 雙重療法用於貓血栓栓塞疾病；factor Xa 抑制劑為 clopidogrel 之外的新選項，但最佳劑量、單用 vs 併用仍待確立。〔Evidence Level III〕
+- **ACVIM 2020 貓心肌病共識的一級預防建議**：Luis Fuentes 等人（2020）建議對高風險貓（顯著 LA 擴大、左心耳 smoke、或曾發生 ATE）給予抗血栓預防（clopidogrel ± 其他）。〔Evidence Level III〕
+- **溶栓與取栓仍非常規**：tPA/取栓的再灌流損傷致死風險高、未顯示存活改善，僅於嚴選個案或具設備中心考量；止痛與支持仍是急性期核心。〔Evidence Level III〕
+
+> ⚠️ 上述更新（特別是 rivaroxaban 劑量與雙重抗栓的取捨）仍待 DVM 依個案出血風險與最新實證覆核後採用。
+
 [圖片:貓 ATE 5 Ps 臨床評估圖，肉墊顏色比較與脈搏觸診]`,
   clinical_pearl: '貓 ATE 的急診「30 分鐘規則」：到院後 30 分鐘內必須完成 (1) 止痛，ATE 是極度疼痛的急症，止痛為第一優先 (2) 5 Ps 快速評估 (3) 初步預後判斷（單側 vs 雙側、體溫、是否合併 CHF）。許多飼主在知道預後後會選擇安樂死，不要在未充分止痛的情況下進行冗長的討論。先止痛，再討論。\n\n【台灣臨床現況】台灣貓飼養量持續增長，HCM 為最常見貓心肌病。Clopidogrel 在台灣可取得人用劑型（75 mg），需分切為 1/4 錠（18.75 mg/cat）。FAT CAT 研究已改變臨床實務，Clopidogrel 已取代 Aspirin 成為 ATE 預防首選。',
   common_mistakes: [
@@ -4522,9 +4649,10 @@ LA 擴大（LA/Ao ≥ 2.0）或左心耳 smoke/血栓 → 開始 Clopidogrel 18.
   ],
   drug_api_links: ['Clopidogrel', 'Heparin', 'Aspirin'],
   references: [
-    { type: 'journal', citation: 'Hogan DF, Fox PR, Jacob K, et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: The double-blind, randomized, positive-controlled feline arterial thromboembolism; clopidogrel vs. aspirin trial (FAT CAT). J Vet Cardiol. 2015;17(Suppl 1):S306-S317.', relevance: 'FAT CAT 研究，Clopidogrel vs Aspirin 二級預防 RCT' },
-    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(1):3-32.', relevance: 'ACVIM 貓心肌病共識，包含 ATE 預防建議' },
-    { type: 'journal', citation: 'Smith SA, Tobias AH, Jacob KA, et al. Arterial thromboembolism in cats: acute crisis in 127 cases (1992-2001) and long-term management with low-dose aspirin in 24 cases. J Vet Intern Med. 2003;17(1):73-83.', relevance: '貓 ATE 大規模回溯研究，臨床表現與預後分析' },
+    { type: 'journal', citation: 'Hogan DF, Fox PR, Jacob K, et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: The double-blind, randomized, positive-controlled feline arterial thromboembolism; clopidogrel vs. aspirin trial (FAT CAT). J Vet Cardiol. 2015;17(Suppl 1):S306-S317. doi:10.1016/j.jvc.2015.10.004', relevance: 'FAT CAT 研究，Clopidogrel vs Aspirin 二級預防 RCT' },
+    { type: 'guideline', citation: 'Luis Fuentes V, Abbott J, Chetboul V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745', relevance: 'ACVIM 貓心肌病共識，包含 ATE 預防建議' },
+    { type: 'journal', citation: 'Smith SA, Tobias AH, Jacob KA, et al. Arterial thromboembolism in cats: acute crisis in 127 cases (1992-2001) and long-term management with low-dose aspirin in 24 cases. J Vet Intern Med. 2003;17(1):73-83. doi:10.1111/j.1939-1676.2003.tb01326.x', relevance: '貓 ATE 大規模回溯研究，臨床表現與預後分析' },
+    { type: 'journal', citation: 'Lo ST, Walker AL, Georges CJ, et al. Dual therapy with clopidogrel and rivaroxaban in cats with thromboembolic disease. J Feline Med Surg. 2022;24(4):277-283. doi:10.1177/1098612x211013736', relevance: 'Clopidogrel + rivaroxaban 雙重抗栓於貓血栓栓塞（近期實證）' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Thromboembolic Disease.', relevance: '血栓栓塞疾病診斷與治療教材' },
   ],
   is_current: true,
@@ -4740,7 +4868,7 @@ HCM 特殊考量：
 const contentCardiacBiomarkers: NodeContent = {
   id: 'CONTENT-CARDIO-L4-005',
   node_id: 'CARDIO-L4-005',
-  version: 1,
+  version: 2,
   summary: '心臟生物標記物（cardiac biomarkers）是輔助心臟病診斷、分期與監測的血液檢查工具，分為心肌負荷標記物和心肌損傷標記物兩類。NT-proBNP（N端B型利鈉肽前體）反映心肌牽張與心腔壓力，是 ACVIM 分期輔助指標：犬 NT-proBNP > 1500 pmol/L 提示心臟重塑，與 MMVD B2 期標準高度相關。心肌旋轉蛋白 I（Troponin I, cTnI）是心肌細胞損傷的特異性指標，升高見於急性心肌損傷、心肌炎、嚴重 CHF、心包膜炎及全身性疾病（敗血症、腎衰竭）的繼發性心肌損傷。兩者聯合使用可區分心因性呼吸困難與非心因性呼吸困難（急診分診）、識別 occult 心肌病（治療前篩查）、監測疾病進展及評估療效。',
   learning_objectives: [
     '區分 NT-proBNP 與 Troponin I 的生理意義與臨床適應症',
@@ -4826,7 +4954,38 @@ cTnI 為心肌肌纖維調節蛋白，心肌細胞損傷 → 釋放至血液中�
 | 嚴重 CHF 治療反應 | ✓ | - | 治療後 1-2 週複測，降低代表有效 |
 
 [圖片：NT-proBNP 決策樹示意圖（急診呼吸困難分診）]
-`,
+
+## 四、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| BNP/NT-proBNP 於人類心衰分級與預後 | 犬貓 CHF 診斷/分期/急診鑑別的概念來源 | 人醫心臟標記物標準，獸醫已採用犬貓專屬 assay |
+| 高敏感性肌鈣蛋白（hs-cTn） | 更早偵測微量心肌損傷、預後分層 | 人醫常規，獸醫高敏感 assay 漸引入 |
+| Point-of-care BNP 快檢 | 診間/急診快速分診（SNAP Feline proBNP） | 人醫 POC BNP 成熟，獸醫貓 POC proBNP 已商業化（Machen 2014） |
+| 多標記策略（galectin-3、ST2） | 心衰風險分層與心肌纖維化評估 | 人醫心衰新興標記，獸醫研究階段 |
+
+## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| NT-proBNP 切點跨 assay/實驗室不一致 | 無通用閾值，須依各廠商；檢體穩定性/冷鏈影響結果 | Level III |
+| NT-proBNP 能否取代心超做 B2 分期 | ACVIM/EPIC 以心超（LA/Ao、LVIDDN）為準，NT-proBNP 為輔助、非取代 | Level II |
+| 無症狀貓 proBNP 篩檢的 PPV/成本效益 | 低盛行率族群偽陽性偏多，POC 適合 rule-out 而非確診 | Level III |
+| cTnI 缺乏治療導向切點 | 主要用於預後與鑑別，無明確介入閾值 | Level III |
+
+## 六、近期實證更新 (Recent Evidence Updates)
+
+### Point-of-care 貓 NT-proBNP 改寫篩檢與分診
+SNAP Feline proBNP 等 POC 快檢經多中心驗證（Machen 2014），可於診間快速 rule-out 心因性呼吸困難、篩檢無症狀貓的隱匿性心肌病；陽性者再轉心超確診（高敏感、特異性較低）。
+
+### NT-proBNP 在 MMVD 分期的「輔助」定位
+EPIC 試驗以心超 LA/Ao≥1.6 + LVIDDN≥1.7 定義 B2 並啟動 pimobendan；NT-proBNP（如 >1500 pmol/L）為支持證據而非取代心超（Keene 2019）。臨床上 NT-proBNP 高 NPV 最適急診 rule-out CHF。
+
+### 高敏感肌鈣蛋白與連續監測
+高敏 cTn assay 提升微量心肌損傷的偵測；化療（doxorubicin）心毒性、心肌炎以連續監測 cTnI 動態趨勢比單點更具預後意義。
+
+### 腎臟與分析前因素
+NT-proBNP 經腎清除，腎病可致假性升高；判讀須同步 BUN/Cre，並注意檢體穩定性與冷鏈對 NT-proBNP 數值的影響。`,
   clinical_pearl: 'NT-proBNP 最強的臨床用途是「排除」：值正常（< 900 pmol/L）時幾乎可排除 CHF 作為急性呼吸困難的原因（高 NPV）。在急診，胸腔積液 + NT-proBNP 升高 → 心因性積液優先；NT-proBNP 正常 + 積液 → 先懷疑腫瘤/乳糜/膿胸。注意腎功能不全時需調整解讀。',
   common_mistakes: [
     '在腎功能不全動物中 NT-proBNP 升高直接診斷 CHF，忽略腎臟清除率影響',
@@ -4844,10 +5003,11 @@ cTnI 為心肌肌纖維調節蛋白，心肌細胞損傷 → 釋放至血液中�
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'guideline', citation: 'Boswood A et al. The use of cardiac biomarkers in dogs and cats. J Vet Cardiol. 2008;10(2):97-111.', relevance: 'NT-proBNP 和 cTnI 臨床應用早期指引，奠定犬貓生物標記物使用基礎' },
-    { type: 'journal', citation: 'Oyama MA et al. Prospective screening for occult cardiomyopathy in dogs by measurement of plasma atrial natriuretic peptide, B-type natriuretic peptide, and cardiac troponin-I concentrations. Am J Vet Res. 2007;68(1):42-47.', relevance: '隱匿性心肌病篩查 NT-proBNP 閾值研究' },
-    { type: 'journal', citation: 'Connolly DJ, Soares Magalhaes RJ, Fuentes VL, et al. Assessment of the diagnostic accuracy of circulating natriuretic peptide concentrations to distinguish between cats with cardiac and non-cardiac causes of respiratory distress. J Vet Cardiol. 2009;11 Suppl 1:S41-50.', relevance: '貓 NT-proBNP 鑑別心因性 vs 非心因性呼吸困難準確度評估' },
-    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'ACVIM 2019 MMVD 共識，NT-proBNP 在 B2 期分期中的地位' },
+    { type: 'journal', citation: 'Boswood A. Biomarkers in cardiovascular disease: beyond natriuretic peptides. J Vet Cardiol. 2009;11(Suppl 1):S23-S32. doi:10.1016/j.jvc.2009.01.003.', relevance: '犬貓心血管生物標記物臨床應用回顧（奠定使用基礎）' },
+    { type: 'journal', citation: 'Oyama MA, Sisson DD, Solter PF. Prospective screening for occult cardiomyopathy in dogs by measurement of plasma atrial natriuretic peptide, B-type natriuretic peptide, and cardiac troponin-I concentrations. Am J Vet Res. 2007;68(1):42-47. doi:10.2460/ajvr.68.1.42.', relevance: '隱匿性心肌病篩查的利鈉肽/troponin 閾值研究' },
+    { type: 'journal', citation: 'Connolly DJ, Soares Magalhaes RJ, Fuentes VL, et al. Assessment of the diagnostic accuracy of circulating natriuretic peptide concentrations to distinguish between cats with cardiac and non-cardiac causes of respiratory distress. J Vet Cardiol. 2009;11(Suppl 1):S41-S50. doi:10.1016/j.jvc.2009.03.001.', relevance: '貓 NT-proBNP 鑑別心因性 vs 非心因性呼吸困難之準確度' },
+    { type: 'journal', citation: 'Machen MC, Oyama MA, Gordon SG, et al. Multi-centered investigation of a point-of-care NT-proBNP ELISA assay to detect moderate to severe occult (pre-clinical) feline heart disease in cats referred for cardiac evaluation. J Vet Cardiol. 2014;16(4):245-255. doi:10.1016/j.jvc.2014.09.002.', relevance: 'SNAP 貓 NT-proBNP POC 快檢多中心驗證（隱匿性心肌病篩檢）' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488.', relevance: 'ACVIM 2019 MMVD 共識，NT-proBNP 在 B2 期分期中的輔助地位' },
   ],
   is_current: true,
   created_at: now,
@@ -4857,7 +5017,7 @@ cTnI 為心肌肌纖維調節蛋白，心肌細胞損傷 → 釋放至血液中�
 const contentAntithromboticTherapy: NodeContent = {
   id: 'CONTENT-CARDIO-L5-005',
   node_id: 'CARDIO-L5-005',
-  version: 1,
+  version: 2,
   summary: '抗血栓治療（antithrombotic therapy）在小動物心臟科主要應用於貓 HCM 的 ATE 一級與二級預防，以及高血栓風險病例的長期管理。目前最重要的臨床依據來自 FATCAT 試驗（2015），顯示 clopidogrel 在防止貓 ATE 復發的效果優於 aspirin（中位存活 192 天 vs 43 天，p<0.01）。Clopidogrel 18.75 mg/貓/天 PO 是目前最廣泛使用的一線方案。新型口服抗凝劑 rivaroxaban（Xarelto）有初步使用報告，但仍缺乏大型 RCT 支持。犬心臟病（MMVD、DCM）血栓風險相對較低，常規抗血栓治療尚無明確適應症；感染性心內膜炎和嚴重心衰可考慮。',
   learning_objectives: [
     '說明 FATCAT 試驗的設計與結論，了解 clopidogrel 優於 aspirin 的臨床依據',
@@ -4944,11 +5104,38 @@ ATE 存活後急性期穩定後：
 ## 五、犬的抗血栓治療
 
 犬心臟病血栓風險遠低於貓，常規抗血栓治療尚無明確適應症：
-- 感染性心內膜炎（IE）：推薦低劑量 aspirin + 抗生素
-- DCM 合併 AF：心率控制後評估，部分建議低劑量 aspirin
+- 感染性心內膜炎（IE）：抗血栓使用具爭議——贅生物存在時出血風險升高，**並非常規推薦**，僅在合併血栓栓塞證據時個案評估（核心治療為長療程殺菌性抗生素）
+- DCM 合併心房顫動（AF）：抗血栓證據有限、不常規使用；以心率控制與心衰管理為主，個案評估
 - MMVD：不推薦常規抗血栓治療
 
 [圖片：貓 ATE 血栓形成機制示意圖 + FATCAT 試驗存活曲線]
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 房顫抗凝風險分層（CHA₂DS₂-VASc）+ DOAC 取代 warfarin | 貓 ATE 風險分層工具化、以 Factor Xa 抑制劑（rivaroxaban/apixaban）抗凝 | 人醫已標準化；獸醫 rivaroxaban 個案報告漸增，尚無等效評分系統 |
+| Clopidogrel 藥物基因體學（CYP2C19 功能缺失→反應不良） | 解釋部分貓對 clopidogrel 反應不一；未來基因型／血小板功能導向用藥 | 人醫已有 CYP2C19 檢測指引；貓反應變異已知但無常規檢測 |
+| 左心耳封堵術（LAA occlusion） | 概念對應——貓 LA 血栓多形成於左心耳 | 人醫用於高出血風險房顫；獸醫無對應器械 |
+| 黏彈性凝血檢測（TEG/ROTEM） | 偵測貓／犬高凝狀態、個體化抗血栓 | 人醫床邊常規；獸醫研究性、判讀標準未統一 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 高風險／SEC 陽性貓最佳方案：clopidogrel 單用 vs +rivaroxaban 雙重 | 雙重療法理論更強但出血風險升高、缺前瞻數據 | Level IV |
+| 一級預防的 LA/Ao 啟動切點（1.6 vs 2.0） | 多採「LA 明顯擴大即治療」，精確切點未定 | Level IV |
+| Clopidogrel 反應變異／「抗藥」 | 貓存在反應不一，但無常規血小板功能檢測指導劑量 | Level IV |
+| 急性 ATE 溶栓（tPA）vs 支持療法 | 再灌流傷害（高血鉀、酸鹼劇變）與高死亡率，不建議常規溶栓 | Level III |
+| 犬心臟病的抗血栓適應症 | 除合併血栓栓塞證據之特定情境外，無明確證據支持常規使用 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+| 主題 | 實證更新 | 臨床意涵 | 來源 |
+|------|---------|---------|------|
+| ACVIM 2020 貓心肌病共識 | Luis Fuentes 等 2020 將 ATE 風險分層（LA 明顯擴大、自發顯影 SEC、LA 血栓、LA 功能下降、既往 ATE）正式納入，建議高風險貓使用 clopidogrel、必要時加 Factor Xa 抑制劑（rivaroxaban） | 風險分層標準化；高風險即啟動抗血小板預防 | Luis Fuentes 2020 |
+| ACVECC CURATIVE 2019 抗血栓共識 | Goggs 等 2019 多領域共識將貓心肌病列為「高血栓風險」應抗血栓；clopidogrel 為貓 ATE 一線，必要時加 Factor Xa 抑制劑 | 跨科一致的抗血栓使用框架 | Goggs 2019 |
+| 高凝與預後實證 | Stokol 等 2008 證實貓心肌病確有高凝狀態（支持預防理論）；Borgeat 等 2014（250 貓 ATE）確立 ATE 預後不良但部分可存活，存活者二級預防 clopidogrel 為標準 | 對飼主誠實溝通預後；存活即長期抗血小板 | Stokol 2008、Borgeat 2014 |
 `,
   clinical_pearl: 'FATCAT 試驗的關鍵訊息：clopidogrel 把 ATE 再發中位生存期從 43 天延長至 192 天。但注意這是「再發預防」的數字，不代表 clopidogrel 能讓 HCM 貓長期生存良好。飼主最常問的是「這個藥能讓牠活多久」——正確答案是：不知道，但能顯著延後下次 ATE 的發生時間。LA/Ao ≥ 2.0 是開始一級預防的主要切點。',
   common_mistakes: [
@@ -4969,10 +5156,12 @@ ATE 存活後急性期穩定後：
   ],
   drug_api_links: ['Clopidogrel', 'Aspirin', 'Rivaroxaban'],
   references: [
-    { type: 'journal', citation: 'Hogan DF et al. Secondary prevention of cardiogenic arterial thromboembolism in the cat: the double-blind, randomized, positive-controlled feline arterial thromboembolism: clopidogrel vs. aspirin trial (FATCAT). J Vet Cardiol. 2015;17 Suppl 1:S306-17.', relevance: 'FATCAT 試驗 — clopidogrel 優於 aspirin 預防貓 ATE 復發的最高等級臨床證據' },
-    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(3):1062-1077.', relevance: 'ACVIM 2020 貓心肌病共識，包含抗血栓治療適應症指引' },
-    { type: 'journal', citation: 'Welles EG et al. Hemostatic abnormalities in cats with cardiomyopathy. Am J Vet Res. 1994;55(12):1611-1616.', relevance: '貓心肌病高凝狀態的血液學基礎研究' },
-    { type: 'journal', citation: 'Borgeat K et al. Longitudinal hemostatic changes in cats with hypertrophic cardiomyopathy. Vet J. 2016;211:24-29.', relevance: '貓 HCM 血栓前狀態縱向追蹤研究' },
+    { type: 'journal', citation: 'Hogan DF et al. "Secondary prevention of cardiogenic arterial thromboembolism in the cat: the double-blind, randomized, positive-controlled feline arterial thromboembolism: clopidogrel vs. aspirin trial (FATCAT)." J Vet Cardiol. 2015;17 Suppl 1:S306-17. doi:10.1016/j.jvc.2015.10.004', relevance: 'FATCAT 試驗 — clopidogrel 優於 aspirin 預防貓 ATE 復發的最高等級臨床證據' },
+    { type: 'guideline', citation: 'Luis Fuentes V et al. "ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats." J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745', relevance: 'ACVIM 2020 貓心肌病共識，含 ATE 風險分層與抗血栓適應症' },
+    { type: 'guideline', citation: 'Goggs R, Blais MC, Brainard BM, et al. "American College of Veterinary Emergency and Critical Care (ACVECC) Consensus on the Rational Use of Antithrombotics in Veterinary Critical Care (CURATIVE) guidelines: Small animal." J Vet Emerg Crit Care. 2019;29(1):12-36. doi:10.1111/vec.12801', relevance: 'ACVECC CURATIVE 2019 抗血栓共識：貓心肌病列為高血栓風險' },
+    { type: 'journal', citation: 'Stokol T et al. "Hypercoagulability in Cats with Cardiomyopathy." J Vet Intern Med. 2008;22(3):546-552. doi:10.1111/j.1939-1676.2008.0098.x', relevance: '貓心肌病高凝狀態的實證基礎' },
+    { type: 'journal', citation: 'Borgeat K et al. "Arterial Thromboembolism in 250 Cats in General Practice: 2004-2012." J Vet Intern Med. 2014;28(1):102-108. doi:10.1111/jvim.12249', relevance: '貓 ATE 流行病學與預後（250 例）' },
+    { type: 'journal', citation: 'Welles EG et al. "Platelet function and antithrombin, plasminogen, and fibrinolytic activities in cats with heart disease." Am J Vet Res. 1994;55(5):619-627. doi:10.2460/ajvr.1994.55.05.619', relevance: '貓心臟病血小板功能與纖溶活性的早期研究' },
   ],
   is_current: true,
   created_at: now,

@@ -9,6 +9,26 @@ type RouteHandler = (
   context?: { params: Promise<Record<string, string>> }
 ) => Promise<NextResponse>;
 
+// ─── Request body size guard ───
+
+/** 公開 POST 端點的 JSON body 上限（bytes），防止記憶體耗竭 DoS。 */
+export const MAX_JSON_BODY_BYTES = 64_000;
+
+/**
+ * 在呼叫 request.json() 前依 content-length 檢查 body 大小。
+ * 超過上限回傳 413 response；未超限回傳 null（呼叫端續行）。
+ */
+export function enforceJsonBodyLimit(
+  request: NextRequest,
+  max: number = MAX_JSON_BODY_BYTES
+): NextResponse | null {
+  const contentLength = Number(request.headers.get('content-length') ?? 0);
+  if (contentLength > max) {
+    return NextResponse.json({ error: 'Request body too large' }, { status: 413 });
+  }
+  return null;
+}
+
 // ─── Auth: API Key Check ───
 
 /**

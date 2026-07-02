@@ -236,7 +236,7 @@ CPR 過程的併發症：肋骨骨折（小型犬貓特別容易）、氣胸（�
 const contentTriage: NodeContent = {
   id: 'CONTENT-ECC-L4-001',
   node_id: 'ECC-L4-001',
-  version: 1,
+  version: 2,
   summary: '走進急診門，分診就是第一道過濾。ABCDE 走一輪，60 秒之內把會殺死動物的問題挑出來：氣道、呼吸、循環、神經、暴露。挑完之後分四級：紅是現在就要動的、黃是嚴重但還能撐、綠是穩可以等、黑是回不來了。先抓問題、再排順序，不是先做完整檢查。',
   learning_objectives: [
     '運用 ABCDE 系統在 60 秒內完成初級評估',
@@ -257,7 +257,7 @@ const contentTriage: NodeContent = {
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
-
+分診的目的是用最短時間（60 秒 ABCDE）找出會立刻致命的問題、依嚴重度排序處置——先抓問題、再排順序，不是先做完整檢查。
 
 ### 概述
 急診分診要做的事很單純：用最短時間找出會殺死動物的問題，照嚴重度排隊處理。ABCDE 就是把這件事流程化，誰來做都跑得出來同樣結果。
@@ -331,7 +331,16 @@ const contentTriage: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬 POCUS TFAST/AFAST 的標準化訓練與能力認證 | 操作者依賴性高，獸醫 POCUS 認證制度尚未統一 | Level IV |
-| 犬血氣分析 Stewart approach vs Henderson-Hasselbalch | 物理化學方法理論更完整，但臨床實用性爭議 | Level III |`,
+| 犬血氣分析 Stewart approach vs Henderson-Hasselbalch | 物理化學方法理論更完整，但臨床實用性爭議 | Level III |
+
+## 六、近期實證更新 (Recent Evidence)
+
+- **POCUS 進初級評估**：床邊超音波已是急診分診標配。**Vet BLUE 肺超音波**（B-lines、glide sign）協助鑑別呼吸窘迫的型態——肺水腫 vs 胸水 vs 氣胸 vs 肺實質病變（Cole 2021）；AFAST/TFAST 偵測體腔游離液/氣（外傷情境下提示出血、積液或氣胸）。POCUS 強化 B/C 評估、但偵測的是型態而非確診，且高度依賴操作者訓練。
+- **代償性休克要主動抓**：呼應 §三——年輕動物代償能力強，血壓會撐到失代償才掉。早期辨識靠心率、脈搏品質、CRT、黏膜、乳酸與 POCUS 的綜合，而非單看血壓。
+- **分診與 RECOVER 的銜接**：CPR 以 **RECOVER 2024 更新指引** 為現行依據（Burkitt-Creedon 2024）。**注意：紅級 ≠ 自動進 CPR**——只有真正心肺驟停/瀕停的病患才啟動 RECOVER 復甦演算法；分診的角色是及早辨識、把這類病患無縫接入。
+- **分診工具標準化仍是缺口**：從人醫五級分診改良（Ruys 2012）到客觀指標（shock index 等）輔助，但操作者依賴與 POCUS 能力認證尚未統一（呼應 §五）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '分診的重點就是快，初級評估 60 秒之內結束。不要在這階段做完整理學檢查，那是穩定下來之後的事。記住一句話：你不是在診斷，你是在找出接下來幾分鐘會殺死這隻動物的東西。',
   common_mistakes: [
     '初級評估拖太久（要壓在 60 秒內），急救處置就被你延後',
@@ -385,8 +394,9 @@ const contentTriage: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Aldrich J. Global Assessment of the Emergency Patient. In: Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022.', relevance: '急診評估標準教材' },
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022.', relevance: 'ECC 核心參考教材' },
-    { type: 'journal', citation: 'Ruys LJ, Gunning M, Teske E, et al. Evaluation of a veterinary triage list modified from a human five-point triage system. JVECC. 2012;22(3):280-286.', relevance: '獸醫分診系統驗證研究' },
-    { type: 'guideline', citation: 'Fletcher DJ, Boller M, Brainard BM, et al. RECOVER evidence and knowledge gap analysis on veterinary CPR. Part 7: Clinical guidelines. JVECC. 2012;22(s1):S102-S131.', relevance: 'RECOVER 指引中急診初級評估與分診流程' },
+    { type: 'journal', citation: 'Ruys LJ, Gunning M, Teske E, et al. "Evaluation of a veterinary triage list modified from a human five-point triage system." J Vet Emerg Crit Care. 2012;22(3):303-312. doi:10.1111/j.1476-4431.2012.00736.x', relevance: '獸醫五級分診系統驗證研究（修正 v1 誤標頁碼 280-286→303-312）' },
+    { type: 'journal', citation: 'Cole L, Pivetta M, Humm K. "Diagnostic accuracy of a lung ultrasound protocol (Vet BLUE) for detection of pleural fluid, pneumothorax and lung pathology in dogs and cats." J Small Anim Pract. 2021;62(3):178-186. doi:10.1111/jsap.13271', relevance: 'Vet BLUE 肺超音波於急診呼吸評估的診斷準確度（近期）' },
+    { type: 'guideline', citation: 'Burkitt-Creedon JM, Boller M, Fletcher DJ, Brainard BM, et al. "2024 RECOVER Guidelines: Updated treatment recommendations for CPR in dogs and cats." J Vet Emerg Crit Care. 2024;34(S1):104-123. doi:10.1111/vec.13391', relevance: 'RECOVER 2024 現行 CPR 指引（分診紅級/瀕停病患銜接）；更新自 v1 的 RECOVER 2012' },
   ],
   is_current: true,
   created_at: now,
@@ -396,7 +406,7 @@ const contentTriage: NodeContent = {
 const contentAnaphylaxis: NodeContent = {
   id: 'CONTENT-ECC-L3-001',
   node_id: 'ECC-L3-001',
-  version: 1,
+  version: 2,
   summary: '過敏性休克是急性全身性的嚴重過敏反應，幾分鐘就能讓心血管崩掉。犬貓不一樣：犬的標的器官是肝臟（肝靜脈痙攣 → 門脈高壓），貓是呼吸道（支氣管痙攣加肺水腫）。常見的引爆點就那幾個：疫苗、抗生素、NSAIDs、蜂螫、食物。Epinephrine 是唯一救得回來的藥，拖到才打死亡率就上去。台灣這邊蜂螫跟蛇咬引發的特別多，疫苗反應也不少見。',
   learning_objectives: [
     '描述犬貓過敏性休克的物種差異性病理生理機轉',
@@ -460,6 +470,9 @@ const contentAnaphylaxis: NodeContent = {
 
 ### 貓
 貓主要打呼吸道：急性呼吸窘迫、喘鳴、支氣管痙攣。皮膚上是頭頸部劇烈搔癢、耳朵紅腫。消化道有嘔吐、流口水，但血便比犬少見。心血管特別注意，貓會低血壓加心搏過緩，跟犬的代償性心搏過速反過來。
+
+### 診斷線索（犬）
+過敏性休克是臨床診斷（暴露史 + 表現 + 對 epinephrine 的反應），但犬常伴特徵性實驗室/影像線索：**ALT 急性升高 + 腹部超音波膽囊壁水腫（"halo" / double-rim sign）+ 肝腫大、少量腹腔游離液**，反映肝靜脈鬱血，有助與其他休克鑑別（Quantz 2009）。約半數重症犬為多器官受累、且**過半無皮膚徵象**（勿因無蕁麻疹而排除）。血中 histamine/tryptase 升高可回溯佐證但院內少見。
 
 ## 三、治療策略 (Treatment)
 
@@ -540,8 +553,8 @@ const contentAnaphylaxis: NodeContent = {
   drug_api_links: ['Epinephrine', 'Diphenhydramine', 'Famotidine', 'Dexamethasone', 'Terbutaline', 'Dopamine', 'Norepinephrine'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Anaphylaxis.', relevance: 'ECC 核心教材過敏性休克章節' },
-    { type: 'journal', citation: 'Shmuel DL, Cortes Y. Anaphylaxis in dogs and cats. JVECC. 2013;23(4):377-394.', relevance: '犬貓過敏性休克綜合回顧' },
-    { type: 'journal', citation: 'Quantz JE, Miles MS, Reed AL, et al. Elevation of alanine transaminase and gallbladder wall abnormalities as biomarkers of anaphylaxis in canine hypersensitivity patients. JVECC. 2009;19(6):536-544.', relevance: '犬過敏性休克的肝臟生物標記' },
+    { type: 'journal', citation: 'Shmuel DL, Cortes Y. Anaphylaxis in dogs and cats. J Vet Emerg Crit Care. 2013;23(4):377-394. doi:10.1111/vec.12066.', relevance: '犬貓過敏性休克綜合回顧' },
+    { type: 'journal', citation: 'Quantz JE, Miles MS, Reed AL, et al. Elevation of alanine transaminase and gallbladder wall abnormalities as biomarkers of anaphylaxis in canine hypersensitivity patients. J Vet Emerg Crit Care. 2009;19(6):536-544. doi:10.1111/j.1476-4431.2009.00474.x.', relevance: '犬過敏性休克的肝臟/膽囊生物標記（gallbladder halo sign）' },
     { type: 'guideline', citation: 'WSAVA Vaccination Guidelines Group. Guidelines for the vaccination of dogs and cats. J Small Anim Pract. 2016;57(1):E1-E45.', relevance: '疫苗相關過敏反應預防指引' },
   ],
   is_current: true,
@@ -552,7 +565,7 @@ const contentAnaphylaxis: NodeContent = {
 const contentDKA: NodeContent = {
   id: 'CONTENT-ECC-L3-002',
   node_id: 'ECC-L3-002',
-  version: 1,
+  version: 2,
   summary: 'DKA 是糖尿病最兇的急性併發症：高血糖、代謝性酸中毒、酮體上去、嚴重脫水四個一起來。犬貓都會發生，誘因常常是感染、胰臟炎，或飼主沒有規律打胰島素。治療就靠四根柱子：靜脈輸液、Regular insulin CRI、電解質矯正（尤其是鉀）、找誘因。血糖下降速度別超過 50-75 mg/dL/hr，掉太快會腦水腫。台灣犬糖尿病盛行率 0.3-0.5%，臨床上很多 DKA 都是飼主沒乖乖打胰島素誘發出來的。',
   learning_objectives: [
     '描述 DKA 的病理生理機轉與代謝失衡',
@@ -645,7 +658,7 @@ DKA 就是胰島素絕對或相對不足造成的代謝急症。胰島素不夠�
 | 連續血糖監測（CGM, Freestyle Libre） | 犬貓 DKA 住院期間即時看血糖趨勢，減少反覆採血 | 人醫 DKA 管理標配，獸醫已經有成功應用的報告 |
 | Closed-loop insulin delivery（人工胰臟） | 犬 DKA 的自動化血糖加胰島素 CRI 調控 | 人醫 Type 1 DM 已經商業化，獸醫因為物種差異還沒引入 |
 | Beta-hydroxybutyrate POC meter | 犬貓床邊即時測酮體，比尿液酮體試紙準 | 人用 handheld meter 獸醫已經廣泛借用，準確度不錯 |
-| SGLT2 抑制劑（如 Dapagliflozin） | 貓糖尿病的輔助治療，降低胰島素需求 | 人醫 T2DM 標準治療，獸醫貓用研究初步結果正面但有 DKA 風險 |
+| SGLT2 抑制劑（貓用 bexagliflozin / velagliflozin） | 非胰島素依賴貓糖尿病的口服單一療法，免每日皮下注射 | 人醫 T2DM 標準治療；貓用 Bexacat（2022 FDA）/ Senvelgo（2024）已上市，但帶 euglycemic DKA 風險、現症 DKA 禁用 |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
@@ -654,7 +667,21 @@ DKA 就是胰島素絕對或相對不足造成的代謝急症。胰島素不夠�
 | 犬 DKA 的 insulin CRI protocol，0.05 vs 0.1 U/kg/hr 起始劑量 | 低劑量方案低血糖風險小，但血糖控制速度比較慢，沒有 RCT 直接比較 | Level III |
 | DKA 輸液首選，0.9% NaCl vs 平衡液（LRS/Plasmalyte） | 0.9% NaCl 大量使用會帶來高氯性酸中毒，平衡液含少量 K+ 可能更符合生理，獸醫尚無比較試驗 | Level IV |
 | NaHCO3 在 DKA 嚴重酸中毒（pH < 6.9）的角色 | 人醫 RCT 顯示 pH > 6.9 時 NaHCO3 沒幫助甚至有害，獸醫資料少但普遍跟同樣的閾值走 | Level II |
-| 貓 DKA 併發胰臟炎的最佳診斷，fPLI vs 超音波 vs 兩者結合 | fPLI 敏感度有限，超音波看操作者，聯合診斷策略還沒標準化 | Level III |`,
+| 貓 DKA 併發胰臟炎的最佳診斷，fPLI vs 超音波 vs 兩者結合 | fPLI 敏感度有限，超音波看操作者，聯合診斷策略還沒標準化 | Level III |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### SGLT2 抑制劑改寫貓糖尿病版圖——但對 DKA 是兩面刃
+貓用口服 SGLT2 抑制劑近年正式上市：bexagliflozin（Bexacat，2022 FDA 核准）與 velagliflozin（Senvelgo，2024 SENSATION 研究），讓「其他方面健康、非胰島素依賴」的新診斷糖尿病貓有了免每日注射的口服選項（Hadd 2023；Behrend 2024）。但對 DKA 來說這是兩面刃：SGLT2i 把葡萄糖從尿液大量排掉，血糖看起來漂亮，酮體卻可能默默飆高——也就是 **euglycemic DKA（血糖不高的酮酸中毒）**。臨床鐵則：① 現症酮症或 DKA 的貓**禁用** SGLT2i；② 已在用 SGLT2i 的貓只要來診精神食慾變差、嘔吐，**就算血糖正常也一定要驗血酮（BHB）跟血氣**，不能因血糖正常就排除 DKA；③ 確診後立刻停藥，照常規 DKA 流程（輸液＋Regular insulin CRI＋電解質）救治，別被「血糖不高」誤導而延誤胰島素。
+
+### 酮體監測：血中 BHB 取代尿酮
+床邊 handheld β-hydroxybutyrate（BHB）meter 比尿酮試紙更早、更準反映酮體負荷。尿酮試紙測的是 acetoacetate，治療初期 BHB 轉成 acetoacetate 時，尿酮反而會「看起來變嚴重」造成誤判；改用血 BHB 趨勢追蹤酮體清除才是現行標準，治療終點看 BHB 下降而非尿酮轉陰。
+
+### 輸液：平衡晶體液 vs 0.9% NaCl
+人醫近年多項試驗顯示，DKA 用平衡晶體液（LRS/Plasmalyte）相較 0.9% NaCl 可能更快緩解酸中毒、縮短住院（避開大量生理食鹽水造成的高氯性酸中毒）。獸醫尚無大型 RCT，0.9% NaCl 仍是傳統首選，但「平衡晶體液同樣安全、甚至更生理」的觀念已逐漸被接受；初始血鈉異常需控制矯正速度時，個體化選液優於一律 NaCl。
+
+### 指引更新
+2026 AAHA 貓糖尿病管理指南（Bugbee 2026）更新了貓糖尿病的分類與 SGLT2 抑制劑的臨床定位，強調用藥前嚴格篩選（排除 DKA 風險、確認非胰島素依賴）與居家酮體監測，與上述 euDKA 警訊一致。`,
   clinical_pearl: 'DKA 治療最會出人命的就是低鉀。入院時血鉀正常甚至偏高都不能放心，那是酸中毒把 K+ 推到細胞外的假象，體內總鉀其實已經嚴重不夠。胰島素一打下去，K+ 被趕回細胞，血鉀可能 1-2 小時就掉到致命的水平。規則就一條：K+ < 3.5 不要啟動 insulin；啟動之後前 6 小時每 2 小時驗一次 K+。',
   common_mistakes: [
     '急著上胰島素，沒先把脫水跟低鉀處理好，insulin 在低灌流下效果差又加重低鉀',
@@ -662,10 +689,11 @@ DKA 就是胰島素絕對或相對不足造成的代謝急症。胰島素不夠�
     '拿 Glargine/Detemir 這種長效 insulin 治急性 DKA，急性期就是 Regular insulin CRI',
     '只處理代謝失衡，沒去找誘因，隱匿性 UTI 一直在燒就一直不會好',
     'NaHCO3 亂打積極矯酸，大部分情況輸液復甦就會自己改善，NaHCO3 反而會造成矛盾性 CNS 酸中毒',
+    '看到正在用 SGLT2 抑制劑（Bexacat/Senvelgo）的貓精神變差就只看血糖，血糖正常便排除 DKA——SGLT2i 會造成 euglycemic DKA，必須驗血酮（BHB）與血氣',
   ],
   disease_data: {
     signalment: '犬：中老年（平均 8-9 歲），母犬比例略多。貓：中老年（平均 9-11 歲），肥胖的公貓風險高。大部分是已知糖尿病控制不好的，大約 20-40% 是第一次因為 DKA 來才確診糖尿病。',
-    etiology: '胰島素絕對不足（沒診斷或沒治療的糖尿病）或相對不足（併發疾病讓胰島素抗性升高）。常見誘因：UTI 最常見，再來是胰臟炎、犬庫欣氏症、貓甲亢、飼主用藥不規律、glucocorticoids 或 progestins 這類藥物。',
+    etiology: '胰島素絕對不足（沒診斷或沒治療的糖尿病）或相對不足（併發疾病讓胰島素抗性升高）。常見誘因：UTI 最常見，再來是胰臟炎、犬庫欣氏症、貓甲亢、飼主用藥不規律、glucocorticoids 或 progestins 這類藥物。近年新增的貓專屬誘因是 SGLT2 抑制劑（bexagliflozin/velagliflozin）治療下的 euglycemic DKA。',
     pathogenesis: '胰島素不足，葡萄糖進不了細胞，血糖飆高，腎臟開始滲透性利尿，水跟電解質一起流失。同時脂肪分解加速，游離脂肪酸跑到肝臟做 beta-oxidation，產出大量酮體（beta-hydroxybutyrate、acetoacetate、acetone），結果就是高 anion gap 的代謝性酸中毒。反調節荷爾蒙（glucagon、cortisol、catecholamines）再火上加油，繼續推高血糖跟脂肪分解。',
     clinical_signs: [
       { sign: '多飲多尿加劇', category: 'primary', description: '高血糖造成的滲透性利尿' },
@@ -702,9 +730,12 @@ DKA 就是胰島素絕對或相對不足造成的代謝急症。胰島素不夠�
   drug_api_links: ['Regular Insulin', 'Maropitant', 'Potassium Chloride'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Diabetic Ketoacidosis.', relevance: 'DKA 急診處置核心教材' },
-    { type: 'journal', citation: 'Hume DZ, Drobatz KJ, Hess RS. Outcome of dogs with diabetic ketoacidosis: 127 dogs (1993-2003). J Vet Intern Med. 2006;20(3):547-555.', relevance: '犬 DKA 大型回顧性預後研究' },
-    { type: 'journal', citation: 'Cooper RL, Drobatz KJ, Lennon EM, et al. Retrospective evaluation of risk factors and outcome predictors in cats with diabetic ketoacidosis (1997-2013). JVECC. 2015;25(2):263-272.', relevance: '貓 DKA 預後因子研究' },
-    { type: 'guideline', citation: 'Behrend E, Holford A, Lathan P, et al. AAHA diabetes management guidelines for dogs and cats. JAAHA. 2018;54(1):1-21.', relevance: 'AAHA 糖尿病管理指引' },
+    { type: 'journal', citation: 'Hume DZ, Drobatz KJ, Hess RS. Outcome of dogs with diabetic ketoacidosis: 127 dogs (1993-2003). J Vet Intern Med. 2006;20(3):547-555. doi:10.1111/j.1939-1676.2006.tb02895.x.', relevance: '犬 DKA 大型回顧性預後研究（存活率與預後因子）' },
+    { type: 'journal', citation: 'Cooper RL, Drobatz KJ, Lennon EM, Hess RS. Retrospective evaluation of risk factors and outcome predictors in cats with diabetic ketoacidosis (1997-2007): 93 cases. J Vet Emerg Crit Care. 2015;25(2):263-272. doi:10.1111/vec.12298.', relevance: '貓 DKA 風險與預後因子研究' },
+    { type: 'guideline', citation: 'Behrend E, Holford A, Lathan P, et al. 2018 AAHA Diabetes Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2018;54(1):1-21. doi:10.5326/jaaha-ms-6822.', relevance: 'AAHA 犬貓糖尿病管理指引（含 DKA 處置框架）' },
+    { type: 'guideline', citation: 'Bugbee AC, Rucinsky R, Alvarez L, et al. 2026 AAHA Diabetes Management Guidelines for Cats. J Am Anim Hosp Assoc. 2026;62(3):65-93. doi:10.5326/jaaha-ms-7572.', relevance: '2026 貓糖尿病管理新指南（更新 SGLT2i 定位、貓糖尿病分類與居家酮體監測）' },
+    { type: 'journal', citation: 'Hadd MJ, Bienhoff SE, Little SE, et al. Safety and effectiveness of the sodium-glucose cotransporter inhibitor bexagliflozin in cats newly diagnosed with diabetes mellitus. J Vet Intern Med. 2023;37(3):915-924. doi:10.1111/jvim.16730.', relevance: 'Bexacat（bexagliflozin）貓糖尿病上市關鍵研究；含治療中酮酸中毒不良事件，呼應 euglycemic DKA 風險' },
+    { type: 'journal', citation: 'Behrend EN, Ward CR, Chukwu V, et al. Velagliflozin, a once-daily, liquid, oral SGLT2 inhibitor, is effective as a stand-alone therapy for feline diabetes mellitus: the SENSATION study. J Am Vet Med Assoc. 2024;262(10):1343-1353. doi:10.2460/javma.24.03.0174.', relevance: 'Senvelgo（velagliflozin）貓糖尿病單一療法 SENSATION 研究' },
   ],
   is_current: true,
   created_at: now,
@@ -714,7 +745,7 @@ DKA 就是胰島素絕對或相對不足造成的代謝急症。胰島素不夠�
 const contentHeatStroke: NodeContent = {
   id: 'CONTENT-ECC-L3-003',
   node_id: 'ECC-L3-003',
-  version: 1,
+  version: 2,
   summary: '中暑就是體溫調節整個崩掉：核心體溫飆過 41°C（106°F），加上 CNS 功能障礙。犬比貓常見得多，短頭種、肥胖犬、工作犬是高風險族群。台灣這種氣候全年都可能遇到，夏天當然最兇。治療核心是快速降溫（30-60 分鐘內降到 39.5°C 就停手），同時要防 DIC、AKI、ARDS 這些續發傷害。到院時體溫 > 41.7°C 跟 DIC 是最強的預後不良因子。',
   learning_objectives: [
     '描述中暑的病理生理機轉與熱傷害的級聯效應',
@@ -814,7 +845,21 @@ DIC：瘀斑、止不住的出血、PT/aPTT 拉長。AKI：少尿或無尿、BUN
 | 犬中暑最佳降溫方法，室溫水 vs 冷水（15°C）vs 冰水浸泡 | 傳統觀點避免冰水，但近年人醫跟軍醫研究顯示冰水浸泡可能更快達標，獸醫缺乏比較數據 | Level III |
 | 中暑犬預防性抗凝血治療的時機跟藥物選擇 | DIC 發生率 30-50%，但早期預防性 heparin 能不能改善預後沒有 RCT 數據 | Level IV |
 | 台灣亞熱帶環境下短頭種犬的中暑風險閾值，環境溫度跟濕度指數 | 台灣高濕度讓人醫 WBGT 標準需要修正，獸醫犬種特異性閾值還沒建立 | Level IV |
-| 中暑後腸道屏障功能恢復時間跟益生菌介入 | 腸道細菌移位是中暑惡化關鍵，但恢復時程跟益生菌效益缺乏獸醫證據 | Level IV |`,
+| 中暑後腸道屏障功能恢復時間跟益生菌介入 | 腸道細菌移位是中暑惡化關鍵，但恢復時程跟益生菌效益缺乏獸醫證據 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### 大型流病學重塑風險認知（VetCompass）
+英國 VetCompass 研究（Hall 2020）顯示中暑不只發生在「車內」——運動性（exertional）熱傷害佔比高，且犬種風險差異大（鬥牛犬類風險最高）；改變「只防車內中暑」的舊觀念，強調運動/環境並重。
+
+### 降溫方法的再辯論：冰水浸泡未必禁忌
+傳統避免冰水（怕周邊血管收縮），但人醫/軍醫實證支持積極冷水浸泡更快達標、改善預後；獸醫意見漸轉向「快速降溫優先（cool first, transport second）」，惟仍缺犬種特異 RCT（見上爭議）。
+
+### DIC／止血是預後核心
+Bruchim 2017 顯示自然發生中暑犬普遍有止血異常，DIC 與死亡高度相關；入院即評估凝血、早期 FFP/支持為關鍵。TEG/ROTEM 提供更完整的凝血全貌。
+
+### 院前降溫與氣候變遷
+飼主到院前降溫顯著改善存活——衛教是預防醫學重點；氣候變遷下中暑發生率預期上升，亞熱帶台灣全年皆須警覺（高濕降低喘氣散熱效率）。`,
   clinical_pearl: '中暑降溫最常踩的雷就是用冰水或冰袋。冰一下去周邊血管收縮，熱反而被鎖在核心散不出來。正確做法是室溫水淋全身加風扇吹，靠蒸發散熱。另一個關鍵是「知道什麼時候停」：降到 39.5°C 就停手，因為體溫還會慣性往下掉（thermal afterdrop），降過頭變低體溫一樣會出人命。',
   common_mistakes: [
     '用冰水或冰袋降溫，周邊血管收縮反而妨礙散熱',
@@ -859,10 +904,11 @@ DIC：瘀斑、止不住的出血、PT/aPTT 拉長。AKI：少尿或無尿、BUN
   drug_api_links: ['Omeprazole', 'Sucralfate', 'Diazepam', 'Levetiracetam'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Heat Stroke.', relevance: 'ECC 核心教材中暑章節' },
-    { type: 'journal', citation: 'Bruchim Y, Horowitz M, Aroch I. Pathophysiology of heatstroke in dogs，revisited. Temperature. 2017;4(4):356-370.', relevance: '犬中暑病理生理綜合回顧' },
-    { type: 'journal', citation: 'Bruchim Y, Loeb E, Saragusty J, et al. Pathological findings in dogs with fatal heatstroke. J Comp Pathol. 2009;140(2-3):97-104.', relevance: '致死性中暑病理學研究' },
-    { type: 'journal', citation: 'Hall EJ, Carter AJ, O\'Neill DG. Incidence and risk factors for heat-related illness (heatstroke) in UK dogs under primary veterinary care in 2016. Sci Rep. 2020;10:9128.', relevance: '犬中暑流行病學與風險因子' },
-    { type: 'guideline', citation: 'Bruchim Y, Kelmer E, Cohen A, et al. ACVECC consensus，hemostatic and thermoregulatory management of heatstroke in dogs: clinical practice guidelines. JVECC. 2017;27(3):315-324.', relevance: 'ACVECC 犬中暑止血跟體溫管理臨床實務指引' },
+    { type: 'journal', citation: 'Bruchim Y, Horowitz M, Aroch I. Pathophysiology of heatstroke in dogs - revisited. Temperature. 2017;4(4):356-370. doi:10.1080/23328940.2017.1367457.', relevance: '犬中暑病理生理綜合回顧' },
+    { type: 'journal', citation: 'Bruchim Y, Loeb E, Saragusty J, et al. Pathological findings in dogs with fatal heatstroke. J Comp Pathol. 2009;140(2-3):97-104. doi:10.1016/j.jcpa.2008.07.011.', relevance: '致死性中暑病理學研究' },
+    { type: 'journal', citation: 'Hall EJ, Carter AJ, O\'Neill DG. Incidence and risk factors for heat-related illness (heatstroke) in UK dogs under primary veterinary care in 2016. Sci Rep. 2020;10:9128. doi:10.1038/s41598-020-66015-8.', relevance: '犬中暑流行病學與風險因子（VetCompass）' },
+    { type: 'journal', citation: 'Bruchim Y, Aroch I, Saragusty J, et al. Hemostatic abnormalities in dogs with naturally occurring heatstroke. J Vet Emerg Crit Care. 2017;27(3):315-324. doi:10.1111/vec.12590.', relevance: '自然發生中暑犬之止血異常/DIC（預後核心）' },
+    { type: 'journal', citation: 'Hall EJ, Carter AJ, O\'Neill DG. Dogs Don\'t Die Just in Hot Cars—Exertional Heat-Related Illness (Heatstroke) Is a Greater Threat to UK Dogs than Environmental Heatstroke. Animals. 2020;10(8):1324. doi:10.3390/ani10081324.', relevance: '運動性 vs 環境性熱傷害流病學（重塑風險認知）' },
   ],
   is_current: true,
   created_at: now,
@@ -872,7 +918,7 @@ DIC：瘀斑、止不住的出血、PT/aPTT 拉長。AKI：少尿或無尿、BUN
 const contentFUO: NodeContent = {
   id: 'CONTENT-ECC-L3-004',
   node_id: 'ECC-L3-004',
-  version: 1,
+  version: 2,
   summary: 'FUO（feline urethral obstruction）是公貓最常見的泌尿道急症。尿道狹窄處被結石、黏液栓或痙攣卡住，動物尿不出來。24-48 小時不處理就會高血鉀爆掉，心律不整加急性腎後性腎衰竭整套來。治療優先順序很清楚：先穩心血管（壓高血鉀）、再解阻塞（放尿道導管）、最後盯著別再阻塞。大約 25-40% 的貓會在 6 個月內復發。台灣公貓 FUO 很常見，跟室內飼養、乾飼料為主這兩件事關係很深。',
   learning_objectives: [
     '辨識貓尿道阻塞的臨床徵象與高血鉀的心電圖變化',
@@ -947,6 +993,9 @@ FUO 是公貓的泌尿道急症。公貓尿道又細又長，陰莖骨那段直�
 
 治療流程很清楚。先穩患畜：K+ > 7-8 mEq/L 威脅到生命，先 Regular Insulin 0.5 U/kg IV 加 Dextrose 2 g/U insulin、10% Calcium gluconate 0.5-1 mL/kg slow IV 把心穩住。然後尿道疏通：鎮靜或麻醉下用 3.5 Fr 紅色橡膠導管逆行沖洗，不要硬通過阻塞物。導尿管留 24-72 小時，尿量密切看，post-obstructive diuresis 期尿量可以衝到維持量的 2-4 倍。靜脈輸液修脫水跟電解質。止痛用 Buprenorphine 0.01-0.03 mg/kg。
 
+### 保守療法（不插導管，經篩選病例）
+依 Cooper 2010（JAVMA，15 貓 11 隻自行排尿）：對**血鉀已穩、膀胱可耐受**的病例，可採鎮靜鎮痛（acepromazine + buprenorphine）+ 間歇減壓性膀胱穿刺 + 暗靜籠休息，部分公貓於 72 小時內自行排尿，免除導管相關尿道創傷與院內 UTI。須嚴格篩選並密切監測，**不適用於嚴重高血鉀或膀胱極度過脹者**。
+
 ## 四、併發症與監控 (Complications & Monitoring)
 
 併發症一個個看。高血鉀帶來的心律不整，ECG 進展依序是 T 波高尖、P 波消失、QRS 變寬、心室纖維顫動。Post-obstructive diuresis 會把貓搞到嚴重脫水跟低血鉀，輸液要跟尿量走。導管操作不當會搞出尿道損傷或破裂。拔導管後 24-72 小時再阻塞的機率 15-25%。膀胱感染逆流上去就是敗血症。監控頻率：電解質每 6-12 小時、尿量每 4 小時、ECG 一路接到 K+ 回正常。
@@ -974,7 +1023,22 @@ FUO 是公貓的泌尿道急症。公貓尿道又細又長，陰莖骨那段直�
 | FUO 導尿管留置最佳時間，24 vs 48 vs 72 小時 | 留得短可以減少 UTI 風險，但拔太早再阻塞率就上去，沒有 RCT 比較 | Level III |
 | Prazosin 真的能降低 FUO 復發率嗎 | 一項 RCT（Reineke 2017）顯示 Prazosin 沒有明顯降低復發率，但臨床還是廣泛使用 | Level II |
 | 解除阻塞前膀胱穿刺減壓（decompressive cystocentesis）的安全性 | 部分研究支持穿刺減壓可以快速降腹壓跟鉀，但有膀胱損傷或尿液外滲的風險 | Level III |
-| FIC/FUO 的最佳長期飲食策略，濕食 vs 處方飲食 vs 兩者結合 | 增加水分攝取是共識，但處方泌尿道飲食 vs 單純濕食誰好還沒有比較數據 | Level III |`,
+| FIC/FUO 的最佳長期飲食策略，濕食 vs 處方飲食 vs 兩者結合 | 增加水分攝取是共識，但處方泌尿道飲食 vs 單純濕食誰好還沒有比較數據 | Level III |
+
+## 八、近期實證更新（待 DVM 覆核）
+
+**1. 不插導管的保守療法是經篩選病例的選項（Cooper 2010, JAVMA）**
+鎮靜鎮痛 + 間歇減壓性膀胱穿刺 + 暗靜環境，15 隻中 11 隻於 72 小時內自行排尿。適用於血鉀已穩、財務或麻醉受限的病例，可避免導管相關尿道損傷與院內感染；惟需嚴格篩選與密切監測。
+
+**2. 高血鉀分層處置之臨床證據（Jones 2022, JFMS；50 公貓 2002–2017）**
+回顧確立分層策略：Ca gluconate 穩定心肌（不降鉀）、insulin+dextrose 為主力降鉀、嚴重者輔以 bicarbonate；多數貓在阻塞解除與內科處置後血鉀迅速回正。
+
+**3. 減壓性膀胱穿刺於導管前的角色（Hall 2015, JVECC；47 貓）**
+導管前先行減壓性膀胱穿刺安全性可接受、併發症低，可快速降腹內壓、改善 GFR、並取得無菌尿樣；惟膀胱嚴重過脹時仍須謹慎。
+
+**4. Prazosin 的負向證據（Reineke 2017, JVECC, 前瞻研究）**
+未顯示 prazosin 顯著降低再阻塞率——儘管臨床仍廣泛使用，應據此調整療效期待，把復發預防重點放在多模式環境管理（MEMO）與增加飲水。
+> 臨床內容與所有劑量需獸醫師依現行指引與仿單核對。`,
   clinical_pearl: '高血鉀是 FUO 的頭號殺手。不要急著放導管，先看 ECG！T 波高尖或 QRS 變寬，先給 Calcium gluconate 把心肌穩住。這是「買時間」的藥，效果馬上來但只撐 20-30 分鐘。然後 insulin 加 dextrose 才是真正在降鉀。心血管穩了才鎮靜放導管。順序搞反，麻醉誘導那一下就可能心跳停止。',
   common_mistakes: [
     '高血鉀還沒處理就急著放導管，鎮靜或麻醉時可能心跳停止',
@@ -1019,10 +1083,12 @@ FUO 是公貓的泌尿道急症。公貓尿道又細又長，陰莖骨那段直�
   ],
   drug_api_links: ['Calcium Gluconate', 'Regular Insulin', 'Dextrose', 'Terbutaline', 'Buprenorphine', 'Prazosin'],
   references: [
+    { type: 'journal', citation: 'Cooper ES, Owens TJ, Chew DJ, Buffington CAT. A protocol for managing urethral obstruction in male cats without urethral catheterization. J Am Vet Med Assoc. 2010;237(11):1261-1266. doi:10.2460/javma.237.11.1261.', relevance: '不插導管之保守療法奠基研究（15 貓 11 隻自行排尿）' },
+    { type: 'journal', citation: 'Jones JM, Burkitt-Creedon JM, Epstein SE. Treatment strategies for hyperkalemia secondary to urethral obstruction in 50 male cats: 2002-2017. J Feline Med Surg. 2022;24(12):e580-e587. doi:10.1177/1098612X221127234.', relevance: '高血鉀分層處置之臨床證據（50 公貓）' },
+    { type: 'journal', citation: 'Hall J, Hall K, Powell LL, et al. Outcome of male cats managed for urethral obstruction with decompressive cystocentesis and urinary catheterization: 47 cats. J Vet Emerg Crit Care. 2015;25(2):256-262. doi:10.1111/vec.12254.', relevance: '減壓性膀胱穿刺於導管前之安全性與結果' },
+    { type: 'journal', citation: 'Reineke EL, Thomas EK, Syring RS, et al. The effect of prazosin on outcome in feline urethral obstruction. J Vet Emerg Crit Care. 2017;27(4):387-396. doi:10.1111/vec.12611.', relevance: 'Prazosin 對 FUO 再阻塞之負向前瞻證據' },
+    { type: 'guideline', citation: 'Westropp JL, Delgado M, Buffington CAT. Chronic lower urinary tract signs in cats: current understanding of pathophysiology and management. Vet Clin North Am Small Anim Pract. 2019;49(2):187-209. doi:10.1016/j.cvsm.2018.11.001.', relevance: '貓下泌尿道疾病病理與管理綜合回顧' },
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Urethral Obstruction in Cats.', relevance: 'ECC 核心教材貓尿道阻塞章節' },
-    { type: 'journal', citation: 'Hall J, Hall K, Powell LL, et al. Outcome of male cats managed for urethral obstruction with decompressive cystocentesis and urinary catheterization: 47 cats (2009-2012). JVECC. 2015;25(2):256-263.', relevance: '貓 FUO 治療結果回顧研究' },
-    { type: 'journal', citation: 'Reineke EL, Thomas EK, Syring RS, et al. The effect of prazosin on outcome in feline urethral obstruction. JVECC. 2017;27(4):387-396.', relevance: 'Prazosin 用於 FUO 的預後影響' },
-    { type: 'guideline', citation: 'Westropp JL, Delgado M, Buffington CAT. Chronic lower urinary tract signs in cats: current understanding of pathophysiology and management. Vet Clin North Am Small Anim Pract. 2019;49(2):187-209.', relevance: '貓下泌尿道疾病管理綜合指引' },
   ],
   is_current: true,
   created_at: now,
@@ -1210,7 +1276,7 @@ const contentToxEmergency: NodeContent = {
 const contentSE: NodeContent = {
   id: 'CONTENT-ECC-L3-006',
   node_id: 'ECC-L3-006',
-  version: 1,
+  version: 2,
   summary: '癲癇重積狀態（Status Epilepticus, SE）的定義：連續癲癇 > 5 分鐘，或兩次發作之間意識沒恢復。這是神經急診裡死亡率最高的狀況之一，持續性全身性癲癇會造成腦損傷、高體溫、橫紋肌溶解、多重器官衰竭。治療走階梯式：第一線 Diazepam/Midazolam → 第二線 Levetiracetam/Phenobarbital IV → 第三線 Propofol/Ketamine CRI。早一點開始（前 5 分鐘內給藥）預後就明顯比較好。台灣臨床很多 SE 是中毒（有機磷、鼠藥、百合花）誘發的，本土急診統計顯示特發性癲癇跟中毒是最常見的兩種原因。',
   learning_objectives: [
     '定義癲癇重積狀態與叢集性癲癇並說明其危險性',
@@ -1232,7 +1298,7 @@ const contentSE: NodeContent = {
 
 ## 一、病理機制 (Pathophysiology)
 
-
+SE 是死亡率最高的神經急症之一：發作越久、GABA-A 受體越內化、benzodiazepine 越無效，NMDA 上調＋興奮性毒性殺死神經元——所以「時間就是腦」、要早給藥。
 
 ### 概述
 SE 是神經急症。癲癇發作的內在終止機制壞掉，神經元就一直異常放電。發作時間一長，GABA-A 受體從突觸膜內化，benzodiazepine 越來越沒效，所以早給藥才會這麼重要。同時 NMDA 受體上調，谷氨酸過度刺激造成興奮性毒性（excitotoxicity），神經元就死掉了。
@@ -1317,7 +1383,16 @@ SE 整體存活率大約 60-70%。預後看幾件事：發作持續時間（< 30
 | SE 第二線藥物首選，Levetiracetam IV vs Phenobarbital IV | Levetiracetam 安全性比較好（沒有呼吸抑制）但效力有爭議；Phenobarbital 效力明確但有呼吸跟肝臟抑制風險 | Level III |
 | Propofol vs Ketamine CRI 用在難治性 SE 的療效比較 | Propofol 增強 GABA 但要插管；Ketamine 是 NMDA 拮抗劑，在晚期 SE（GABA 受體內化之後）理論上更有效，但缺乏 RCT | Level IV |
 | 犬特發性癲癇 SE 後要不要終身抗癲癇藥物 | 一次 SE 夠不夠當啟動長期 AED 治療的指標，不同指引講法不一 | Level III |
-| 貓癲癇的最佳長期管理，Phenobarbital vs Levetiracetam vs 合併治療 | 貓對 Phenobarbital 代謝特殊（肝毒性風險），Levetiracetam 單藥療效證據有限 | Level III |`,
+| 貓癲癇的最佳長期管理，Phenobarbital vs Levetiracetam vs 合併治療 | 貓對 Phenobarbital 代謝特殊（肝毒性風險），Levetiracetam 單藥療效證據有限 | Level III |
+
+## 八、近期實證更新 (Recent Evidence)
+
+- **2024 ACVIM SE/叢集共識為現行依據**：更新定義與**分階治療**——一線 benzodiazepine（IV/IM/鼻內/直腸）、二線 IV levetiracetam 或 phenobarbital、三線麻醉劑 CRI（propofol/ketamine 等）；強調**「5 分鐘即治療」**，因發作越久 GABA-A 受體內化、BZD 越無效（Charalambous & Muñana 2024）。
+- **IV levetiracetam 有 RCT 支持**：雙盲安慰劑對照試驗支持 IV levetiracetam 用於犬 SE/急性反覆發作，**耐受佳、不抑制呼吸**，已成常用二線（Hardy 2012）；與 phenobarbital 的頭對頭效力比較仍有限。
+- **NMDA 拮抗（ketamine）用於晚期/難治 SE**：GABA 受體內化後 ketamine 理論更有效、臨床採用增加，但犬貓 RCT 證據仍稀少。
+- **居家急救縮短發作**：飼主**鼻內 midazolam 或直腸 diazepam** 在 IV 前即可介入、縮短發作與到院前時間（犬證據較強，貓較有限）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '癲癇重積的黃金法則就是「時間就是腦」。每多一分鐘癲癇活動，GABA 受體就多一些被內化，benzodiazepine 就越打越沒效。前 5 分鐘內給 Diazepam 或 Midazolam 的成功率超過 80%，超過 30 分鐘就掉到 30% 以下。飼主打電話來說動物在抽搐，第一句問「幾點開始的」，第二句問「直腸 Diazepam 家裡有沒有」。',
   common_mistakes: [
     'Benzodiazepine 重複超過 2-3 次還不升級到第二線藥物，受體都內化了再給也沒用',
@@ -1363,9 +1438,11 @@ SE 整體存活率大約 60-70%。預後看幾件事：發作持續時間（< 30
   drug_api_links: ['Diazepam', 'Midazolam', 'Levetiracetam', 'Phenobarbital', 'Propofol', 'Ketamine', 'Mannitol'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Status Epilepticus.', relevance: 'ECC 核心教材癲癇重積章節' },
-    { type: 'journal', citation: 'Charalambous M, Brodbelt D, Volk HA. Treatment in canine epilepsy，a systematic review. BMC Vet Res. 2014;10:257.', relevance: '犬癲癇治療系統性回顧' },
-    { type: 'guideline', citation: 'Podell M, Volk HA, Berendt M, et al. 2015 ACVIM small animal consensus statement on seizure management in dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 犬癲癇管理共識聲明' },
-    { type: 'journal', citation: 'Patterson EE. Canine epilepsy: an underappreciated disease in veterinary medicine. Vet J. 2014;200(1):65-72.', relevance: '犬癲癇臨床概述' },
+    { type: 'journal', citation: 'Charalambous M, Brodbelt D, Volk HA. "Treatment in canine epilepsy – a systematic review." BMC Vet Res. 2014;10:257. doi:10.1186/s12917-014-0257-9', relevance: '犬癲癇治療系統性回顧（修正 v1 全形逗號 garble）' },
+    { type: 'guideline', citation: 'Podell M, Volk HA, Berendt M, et al. "2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs." J Vet Intern Med. 2016;30(2):477-490. doi:10.1111/jvim.13841', relevance: 'ACVIM 犬癲癇管理共識' },
+    { type: 'journal', citation: 'Patterson EE. "Status Epilepticus and Cluster Seizures." Vet Clin North Am Small Anim Pract. 2014;44(6):1103-1112. doi:10.1016/j.cvsm.2014.07.007', relevance: 'SE 與叢集發作臨床回顧（取代 v1 查無的「Patterson canine epilepsy underappreciated」捏造引用）' },
+    { type: 'guideline', citation: 'Charalambous M, Muñana K, et al. "ACVIM Consensus Statement on the management of status epilepticus and cluster seizures in dogs and cats." J Vet Intern Med. 2024;38(1):19-40. doi:10.1111/jvim.16928', relevance: '2024 ACVIM SE/叢集共識（現行分階治療）' },
+    { type: 'journal', citation: 'Hardy B, Patterson EE, Cloyd J, et al. "Double-Masked, Placebo-Controlled Study of Intravenous Levetiracetam for the Treatment of Status Epilepticus and Acute Repetitive Seizures in Dogs." J Vet Intern Med. 2012;26(2):334-340. doi:10.1111/j.1939-1676.2011.00868.x', relevance: 'IV levetiracetam 治療犬 SE 的 RCT 證據' },
   ],
   is_current: true,
   created_at: now,
@@ -1375,7 +1452,7 @@ SE 整體存活率大約 60-70%。預後看幾件事：發作持續時間（< 30
 const contentCommonTox: NodeContent = {
   id: 'CONTENT-ECC-L3-007',
   node_id: 'ECC-L3-007',
-  version: 1,
+  version: 2,
   summary: '這節整理犬貓最常遇到的六大中毒：巧克力或可可鹼（犬）、木糖醇（犬）、抗凝血鼠藥（犬貓）、百合（貓）、Acetaminophen（貓）、葡萄或葡萄乾（犬）。每種毒物都有自己的標的器官、毒性劑量、臨床時程、處置要點。物種差異很重要：犬對木糖醇超敏感（低血糖加急性肝壞死），貓對 Acetaminophen 超敏感（methemoglobinemia 加肝壞死）。',
   learning_objectives: [
     '列出犬貓各自最常見的三種中毒物質並描述毒性機轉',
@@ -1540,7 +1617,15 @@ Lilium（真百合屬）與 Hemerocallis（萱草屬）所有部位（花瓣、�
 | 催吐時間窗要不要延長到 4-6 小時（緩釋劑型） | 傳統 2 小時規則不是每種毒物都適用，緩釋型藥物可能要延長催吐窗 | Level III |
 | 多劑量活性炭（MDAC）的適應症跟風險 | Theophylline、Carbamazepine 適用，但腸阻塞風險要個案評估 | Level II |
 | 葡萄中毒的毒性成分跟個體差異機轉 | 酒石酸假說（2021）還有爭議，為什麼有些犬完全不受影響也不清楚 | Level III |
-| 木糖醇中毒 NAC 預防性保肝的時機跟效益 | 所有攝入木糖醇的犬都該預防性給 NAC，還是只給高劑量攝入的，目前沒結論 | Level IV |`,
+| 木糖醇中毒 NAC 預防性保肝的時機跟效益 | 所有攝入木糖醇的犬都該預防性給 NAC，還是只給高劑量攝入的，目前沒結論 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+1. **葡萄/葡萄乾＝酒石酸（~2021）**：酒石酸／酒石酸氫鉀為腎毒主成分，可解釋個體與品種差異（酒石酸含量不一）；任何攝入仍按潛在中毒處置（積極輸液＋腎功能監測）。
+2. **脂肪乳劑（ILE）救援**：對脂溶性毒物（permethrin、ivermectin、baclofen、部分 NSAID）輔助解毒應用增加（Markert 2023 回顧 313 犬/100 貓）；劑量與適應症仍多依經驗。
+3. **去汙更新**：催吐藥犬用 apomorphine、貓用 dexmedetomidine（α2 致效，效果較不一致）；緩釋劑型可延長催吐時間窗；多劑量活性炭限特定毒物（methylxanthine、theophylline）。
+4. **貓三大死敵提醒**：百合、acetaminophen、permethrin（除蟲菊精）——permethrin 中毒以 methocarbamol 控制顫搐 + ILE + 支持治療。
+> 中毒處置以暴露史、毒物特異性解毒與監測為核心；不確定毒性劑量時建議諮詢毒物中心並由獸醫判斷。`,
   clinical_pearl: '記住三個「貓的死敵」：百合、Acetaminophen、Permethrin。對獸醫是基本常識，對飼主可能完全沒概念。百合在花市便宜又常見，很多貓家庭都擺。Acetaminophen 是台灣家庭最常備的止痛藥。Permethrin 是犬用除蚤商品的常見成分。每次貓飼主初診時花 30 秒提醒這三樣，可能救一條命。',
   common_mistakes: [
     '用巧克力總重量算毒性，沒換算成 theobromine 含量。白巧克力跟烘焙巧克力差 100 倍',
@@ -1587,8 +1672,9 @@ Lilium（真百合屬）與 Hemerocallis（萱草屬）所有部位（花瓣、�
   references: [
     { type: 'textbook', citation: 'Hovda LR, Brutlag AG, Poppenga RH, et al. Blackwell\'s Five-Minute Veterinary Consult Clinical Companion: Small Animal Toxicology, 2nd ed. Wiley-Blackwell, 2016.', relevance: '小動物毒理學快速參考（各論）' },
     { type: 'journal', citation: 'Gwaltney-Brant SM. Chocolate intoxication. Vet Med. 2001;96(2):108-111.', relevance: '巧克力中毒臨床處置' },
-    { type: 'journal', citation: 'Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. JAVMA. 2006;229(7):1113-1117.', relevance: '木糖醇致犬急性肝壞死' },
-    { type: 'journal', citation: 'Bennett AJ, Reineke EL. Outcome following gastrointestinal tract decontamination and intravenous fluid diuresis in cats with known lily ingestion: 25 cases (2001-2010). JAVMA. 2013;242(8):1110-1116.', relevance: '貓百合中毒治療結果' },
+    { type: 'journal', citation: 'Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. J Am Vet Med Assoc. 2006;229(7):1113-1117. doi:10.2460/javma.229.7.1113.', relevance: '木糖醇致犬急性肝壞死' },
+    { type: 'journal', citation: 'Bennett AJ, Reineke EL. Outcome following gastrointestinal tract decontamination and intravenous fluid diuresis in cats with known lily ingestion: 25 cases (2001-2010). J Am Vet Med Assoc. 2013;242(8):1110-1116. doi:10.2460/javma.242.8.1110.', relevance: '貓百合中毒治療結果' },
+    { type: 'journal', citation: 'Markert C, Heilmann RM, Kiwitz D, et al. Intravenous lipid emulsion for the treatment of poisonings in 313 dogs and 100 cats. Front Vet Sci. 2023;10:1272705. doi:10.3389/fvets.2023.1272705.', relevance: '脂肪乳劑（ILE）解毒大型回顧（近期實證）' },
     { type: 'guideline', citation: 'ASPCA APCC. Top toxicoses in dogs and cats annual data report.', relevance: '犬貓最常見中毒年度統計資料' },
   ],
   is_current: true,
@@ -1917,7 +2003,7 @@ ECC 專科知識用六層架構組織：
 const contentShockPhysiology: NodeContent = {
   id: 'CONTENT-ECC-L1-001',
   node_id: 'ECC-L1-001',
-  version: 1,
+  version: 2,
   summary: '休克的定義很簡單：組織氧供（DO2）跟不上組織氧需（VO2），細胞缺氧、器官功能就垮了。依病因分四大類：低血容性、分布性、心因性、阻塞性。最坑的是休克的代償期血壓還正常，但組織灌流已經不夠（隱匿性休克），所以不能只看血壓判斷。乳酸是全身組織灌流不足的敏感指標，> 2.5 mmol/L 就代表組織缺氧。',
   learning_objectives: [
     '定義休克並描述氧供跟氧需失衡的核心概念',
@@ -2006,7 +2092,16 @@ DO2 = CO × CaO2
 | 犬休克復甦的輸液量：自由給予 vs 限制性策略 | 傳統 shock rate 可能導致液體過負荷，限制性策略在特定情境可能優於自由給予 | Level II |
 | 休克復甦液體選擇：平衡晶體液 vs 0.9% NaCl | 人醫 SMART/SALT-ED 試驗支持平衡晶體液，獸醫缺乏大型比較數據 | Level III |
 | 貓休克的最佳輸液速率與終點指標 | 貓 shock rate（10-15 mL/kg bolus）主要基於專家共識，缺乏前瞻性研究 | Level IV |
-| 乳酸正常化作為復甦終點的可靠性 | 乳酸清除率比絕對值更重要，但部分休克（如 type B 高乳酸）乳酸無法指導輸液 | Level III |`,
+| 乳酸正常化作為復甦終點的可靠性 | 乳酸清除率比絕對值更重要，但部分休克（如 type B 高乳酸）乳酸無法指導輸液 | Level III |
+
+## 五、近期實證更新 (Recent Evidence Updates)
+
+| 主題 | 實證更新 | 臨床意涵 | 來源 |
+|------|---------|---------|------|
+| 高乳酸分型 | Rosenstein 等 2018（兩部回顧）將高乳酸分為 type A（灌流不足／缺氧性，無氧糖解）與 type B（非缺氧性：腫瘤、肝衰竭、毒素/藥物、先天代謝異常）。**惟敗血／重症的乳酸常為「混合型」**——同時存在灌流不足與兒茶酚胺驅動的有氧糖解／粒線體功能障礙。 | 不可把重症高乳酸一律當 type A 狂打輸液，也不可逕自歸為 type B 而忽略；須結合臨床情境與動態趨勢判讀。 | Rosenstein 2018 (Part 1+2) |
+| 乳酸清除率 vs 單值 | 乳酸的「下降趨勢／清除率」（如 6 小時內下降 > 50%）比單次絕對值更具預後價值；敗血性腹膜炎犬研究亦支持序列乳酸監測。 | 復甦監測看趨勢、不看單點；初始乳酸高不等於預後差，能快速清除者預後較佳。 | Rosenstein 2018、Cortellini 2015 |
+| 限制性輸液（人醫橋接） | CLASSIC 試驗（Meyhoff 2022, NEJM）：成人 ICU 敗血性休克，限制性 vs 自由輸液在 90 天死亡率無顯著差異。 | 證據支持「避免過度輸液」，但未證明限制性更優；獸醫無等效 RCT，套用人醫趨勢須謹慎、個體化滴定終點。 | Meyhoff 2022 |
+| 早期升壓劑 | 分布性休克在輸液復甦「同時」（而非用盡 bolus 之後）即早期使用 norepinephrine，越來越被支持以限制總輸液量、減少液體過負荷。 | 敗血性休克勿一味追加 bolus；及早併用升壓劑可降低液體過負荷風險（須中心靜脈或審慎周邊給予）。 | Silverstein & Hopper 2022 |`,
   clinical_pearl: '休克最致命的陷阱是「代償期」。血壓還正常，看起來「還好」，但組織已經在缺氧。不要等血壓掉下來才動手。要學會看早期訊號：CRT 輕度延長、脈搏品質微弱、乳酸微升、精神略差。貓更要小心，貓在代償期幾乎看不出來，一進失代償就是心搏過緩加低體溫加瀕死。',
   common_mistakes: [
     '只用血壓判斷有沒有休克。代償期血壓可能正常，要同時看乳酸跟灌流指標',
@@ -2025,9 +2120,12 @@ DO2 = CO × CaO2
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Shock.', relevance: 'ECC 核心教材休克章節' },
-    { type: 'journal', citation: 'Boag AK, Hughes D. Assessment and treatment of perfusion abnormalities in the emergency patient. Vet Clin North Am Small Anim Pract. 2005;35(2):319-342.', relevance: '急診灌流評估與治療' },
-    { type: 'journal', citation: 'Cortellini S, Seth M, Kellett-Gregory LM. Plasma lactate concentrations in septic peritonitis: a retrospective study of 83 dogs (2007-2012). JVECC. 2015;25(3):388-395.', relevance: '乳酸與敗血症預後研究' },
-    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP fluid therapy guidelines for dogs and cats. JAAHA. 2013;49(3):149-159.', relevance: 'AAHA/AAFP 輸液指引，提供休克復甦的液體選擇跟劑量' },
+    { type: 'journal', citation: 'Boag AK, Hughes D. "Assessment and treatment of perfusion abnormalities in the emergency patient." Vet Clin North Am Small Anim Pract. 2005;35(2):319-342. doi:10.1016/j.cvsm.2004.10.010', relevance: '急診灌流評估與治療' },
+    { type: 'journal', citation: 'Cortellini S, Seth M, Kellett-Gregory LM. "Plasma lactate concentrations in septic peritonitis: a retrospective study of 83 dogs (2007-2012)." J Vet Emerg Crit Care. 2015;25(3):388-395. doi:10.1111/vec.12234', relevance: '乳酸與敗血症預後研究' },
+    { type: 'journal', citation: 'Rosenstein PG, Tennent-Brown BS, Hughes D. "Clinical use of plasma lactate concentration. Part 1: Physiology, pathophysiology, and measurement." J Vet Emerg Crit Care. 2018;28(2):85-105. doi:10.1111/vec.12708', relevance: '乳酸生理與量測近期回顧' },
+    { type: 'journal', citation: 'Rosenstein PG, Tennent-Brown BS, Hughes D. "Clinical use of plasma lactate concentration. Part 2: Prognostic and diagnostic utility and the clinical management of hyperlactatemia." J Vet Emerg Crit Care. 2018;28(2):106-121. doi:10.1111/vec.12706', relevance: '高乳酸分型/清除率/預後近期回顧' },
+    { type: 'journal', citation: 'Meyhoff TL, Hjortrup PB, Wetterslev J, et al. "Restriction of Intravenous Fluid in ICU Patients with Septic Shock." N Engl J Med. 2022;386(26):2459-2470. doi:10.1056/NEJMoa2202707', relevance: '限制性輸液 RCT（人醫橋接，對應自由 vs 限制爭議）' },
+    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. "2013 AAHA/AAFP fluid therapy guidelines for dogs and cats." J Am Anim Hosp Assoc. 2013;49(3):149-159. doi:10.5326/JAAHA-MS-5868', relevance: 'AAHA/AAFP 輸液指引，休克復甦液體選擇與劑量' },
   ],
   is_current: true,
   created_at: now,
@@ -2037,7 +2135,7 @@ DO2 = CO × CaO2
 const contentFluidElectrolyte: NodeContent = {
   id: 'CONTENT-ECC-L1-002',
   node_id: 'ECC-L1-002',
-  version: 1,
+  version: 2,
   summary: '體液跟電解質平衡是 ECC 的基礎課。體液分布在細胞內液（ICF, 60%）跟細胞外液（ECF, 40%），ECF 又分血漿（25%）跟間質液（75%）。電解質一旦亂掉，尤其 Na+、K+、Ca2+，就會直接要命。鈉決定水的分布（滲透壓），鉀決定心臟跟肌肉的興奮性。急診裡最致命的電解質異常就兩個：高血鉀（心律不整走心跳停止）跟嚴重低血鈣（癲癇加心律不整）。',
   learning_objectives: [
     '描述體液分佈（ICF/ECF/血漿/間質液）及其臨床意義',
@@ -2061,7 +2159,7 @@ const contentFluidElectrolyte: NodeContent = {
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-
+體液與電解質恆定是所有急重症處置的地基——輸液復甦、電解質矯正、酸鹼調整都建立在這套生理之上。
 
 ### 體液分佈
 | 區間 | 佔體重比例 | 佔 TBW 比例 | 臨床意義 |
@@ -2129,7 +2227,17 @@ const contentFluidElectrolyte: NodeContent = {
 | 高血鈉矯正速率上限：0.5 vs 1.0 mEq/L/hr | 兩種速率均有文獻支持，過快致腦水腫的閾值在犬貓缺乏精確數據 | Level III |
 | 產後低血鈣（Eclampsia）Calcium Gluconate 維持治療的最佳方案 | Bolus + CRI vs 口服鈣補充的轉換時機與劑量缺乏標準化 | Level IV |
 | 貓尿道阻塞後高血鉀的最佳急性矯正方案順序 | Calcium gluconate → insulin/dextrose → NaHCO3 的選擇順序與組合方式因中心而異 | Level III |
-| 大量 0.9% NaCl 輸注引起高氯性酸中毒的臨床重要性 | 人醫 SMART 試驗支持平衡晶體液，獸醫對高氯性酸中毒的臨床影響缺乏比較數據 | Level III |`,
+| 大量 0.9% NaCl 輸注引起高氯性酸中毒的臨床重要性 | 人醫 SMART 試驗支持平衡晶體液，獸醫對高氯性酸中毒的臨床影響缺乏比較數據 | Level III |
+
+## 五、近期實證更新 (Recent Evidence)
+
+- **從「靜態脫水估計」走向「動態輸液反應性」**：傳統靠皮膚彈性、CRT、黏膜濕潤度估脫水，主觀且在老瘦/肥胖動物失準。近年導入床邊超音波的**後腔靜脈塌陷指數（caudal vena cava collapsibility index, CVCCI）**輔助預測犬的輸液反應性（Donati 2020），協助判斷「再給液體會不會真的提升心輸出量」；惟操作者依賴性高，定位為臨床評估的補充而非取代。
+- **輸液過量是會傷人的**：過度復甦造成間質/肺水腫、腹內壓上升、預後變差，已是現代重症共識。實務改為**目標導向、滴定式復甦**，初期穩定後即重新評估、必要時主動「降階輸液（de-resuscitation）」，而非一路大量灌（Silverstein & Hopper 2022）。
+- **平衡晶體液成為預設復甦液**：大量 0.9% NaCl 會造成高氯性代謝性酸中毒；人醫 SMART/BaSICS/PLUS 系列 RCT 支持平衡等張晶體液（LRS、Plasma-Lyte）作為常規首選，0.9% NaCl 保留給低血鈉、低血氯性鹼中毒、高血鈣等特定情境。獸醫實務已朝此對齊。
+- **低 Na:K 比值不等於就是愛迪生氏症**：Na:K < 27 經典上指向腎上腺皮質機能低下（hypoadrenocorticism），但**非專一**——腸胃道疾病、腎/泌尿道疾病、體腔積液等都可壓低此比值；近期犬貓回顧（Oriel 2026）量化各疾病機轉的盛行率與預後，提醒低比值應觸發廣泛鑑別而非直接定診。
+- **指引時效**：犬貓輸液仍以 **2013 AAHA/AAFP 輸液指引** 為現行框架（維持/脫水/復甦速率），但「平衡晶體液優先＋避免輸液過量＋動態反應性評估」已是其後重症文獻的主流更新方向。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '急診裡最常被忽略的電解質異常就是低血鉀。DKA 治療中胰島素把鉀趕進細胞、嘔吐腹瀉一直流失鉀、輸液又把鉀稀釋掉，三管齊下血鉀 1-2 小時就能從正常暴跌到致命水平。規則：任何大量輸液或開始胰島素治療的病患，前 6 小時每 2-4 小時驗一次 K+。',
   common_mistakes: [
     '只用皮膚彈性評估脫水。老年消瘦動物皮膚彈性本來就差，肥胖動物根本看不出脫水',
@@ -2152,7 +2260,9 @@ const contentFluidElectrolyte: NodeContent = {
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Fluid, Electrolyte, and Acid-Base Disturbances.', relevance: 'ECC 核心教材體液電解質章節' },
     { type: 'textbook', citation: 'DiBartola SP. Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice, 4th ed. Elsevier, 2012.', relevance: '體液電解質專論教材' },
     { type: 'journal', citation: 'Hansen BD. Technical aspects of fluid therapy: daily maintenance, dehydration, and volume resuscitation. In: Fluid, Electrolyte, and Acid-Base Disorders. 2012:351-370.', relevance: '輸液技術層面參考' },
-    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP fluid therapy guidelines for dogs and cats. JAAHA. 2013;49(3):149-159.', relevance: 'AAHA/AAFP 輸液指引，含電解質矯正跟維持輸液標準' },
+    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. "2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2013;49(3):149-159. doi:10.5326/JAAHA-MS-5868', relevance: 'AAHA/AAFP 輸液現行指引（維持/脫水/復甦速率與電解質矯正）' },
+    { type: 'journal', citation: 'Donati PA, Guevara JM, Ardiles V, Guillemi EC. "Caudal vena cava collapsibility index as a tool to predict fluid responsiveness in dogs." J Vet Emerg Crit Care. 2020;30(6):677-686. doi:10.1111/vec.13009', relevance: '床邊超音波動態輸液反應性評估（犬）' },
+    { type: 'journal', citation: 'Oriel J, Hopper K, Epstein SE. "Prevalence, Associated Disease Mechanisms, and Outcome of Dogs and Cats With Low Blood Sodium-to-Potassium Ratio." J Vet Emerg Crit Care. 2026;36(2):261-267. doi:10.1111/vec.70106', relevance: '低 Na:K 比值非愛迪生氏症專屬、應廣泛鑑別' },
   ],
   is_current: true,
   created_at: now,
@@ -2276,7 +2386,7 @@ AG = Na+ - (Cl- + HCO3-)
 const contentSIRS: NodeContent = {
   id: 'CONTENT-ECC-L2-001',
   node_id: 'ECC-L2-001',
-  version: 1,
+  version: 2,
   summary: 'SIRS 是免疫系統對嚴重侵害的全身性非特異性發炎反應，感染（敗血症）或非感染因素（創傷、胰臟炎、中暑、燒傷）都會觸發。核心機轉就是促炎細胞激素（TNF-alpha、IL-1、IL-6）大量釋放，全身性內皮活化、血管通透性升高、凝血級聯一起啟動，最後是組織灌流障礙。控制不住就會走到 MODS，死亡率隨受累器官數倍增。犬 SIRS 標準：心率 > 120、呼吸 > 20、體溫 > 39.2 或 < 37.8、WBC > 16000 或 < 6000，符合 ≥ 2 項。',
   learning_objectives: [
     '定義 SIRS 並列出犬貓的診斷標準',
@@ -2299,7 +2409,7 @@ const contentSIRS: NodeContent = {
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-
+SIRS 是全身性非特異發炎反應，感染（敗血症）或非感染（胰臟炎/創傷/中暑）皆可觸發；促炎細胞激素風暴→內皮活化＋凝血啟動→灌流障礙，失控即走向 MODS。
 
 ### 定義
 | 名詞 | 定義 |
@@ -2364,7 +2474,16 @@ SIRS 跟敗血症是 ICU 患者死亡的主因之一。犬 SIRS 診斷標準要�
 | 犬 SIRS 標準是否仍有臨床價值（vs SOFA-like 評分） | 犬 SIRS 標準敏感度高但特異度低，人醫已改用 qSOFA/SOFA，獸醫尚無共識替代方案 | Level III |
 | 犬敗血症經驗性抗生素選擇：廣效 vs 窄效起始 | 嚴重敗血症應該廣效起始，但太廣效會增加抗藥性，獸醫缺乏指引 | Level II |
 | 犬敗血症輸液復甦量：30 mL/kg 一律給予 vs 個體化滴定 | 人醫 SSC 2021 已改為個體化評估取代固定 30 mL/kg，獸醫尚未有對應指引 | Level III |
-| 犬 CRP 作為敗血症預後指標的閾值與追蹤頻率 | CRP 在犬 SIRS/Sepsis 有預後價值，但最佳追蹤時間點與判讀閾值缺乏標準化 | Level III |`,
+| 犬 CRP 作為敗血症預後指標的閾值與追蹤頻率 | CRP 在犬 SIRS/Sepsis 有預後價值，但最佳追蹤時間點與判讀閾值缺乏標準化 | Level III |
+
+## 五、近期實證更新 (Recent Evidence)
+
+- **敗血症定義在演進、SIRS 退場中**：人醫 Sepsis-3（2016）已用 **SOFA/qSOFA 取代 SIRS**（SIRS 敏感高、特異低、非感染也常符合）；獸醫尚無公認替代，**APPLE score** 等用於重症預後分級。SIRS 標準在獸醫仍為實務「紅旗」、但非感染專屬、亦非診斷工具。
+- **SSC 2021 更新重點**：初期低灌流/休克仍**建議約 30 mL/kg 起始輸液**，但更強調**之後以動態指標個體化重新評估**、避免盲目重複固定 bolus；早期 1 小時 bundle、廣效抗生素後依培養**降階**。獸醫改編方案陸續發表（Evans 2021）。
+- **早期抗生素是關鍵、但要分清感染**：確診敗血症抗生素延遲越久死亡率越高；但**非感染性 SIRS（胰臟炎/中暑/創傷）不需抗生素**——區分主要靠**感染源搜索與臨床判斷**，生物標記僅為輔助。
+- **生物標記與灌流指標**：犬 CRP 有預後價值、PCT 仍研究/驗證中；**乳酸與乳酸清除率**為灌流/復甦/預後指標（呼應休克生理節點）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: '記住一個核心：SIRS 不等於感染。胰臟炎的犬可以符合全部 4 項 SIRS 標準但完全沒有感染。反過來，免疫抑制的動物（像在化療的）可能有嚴重敗血症卻因為白血球低下不符合 SIRS。SIRS 標準是「紅旗」，提醒你要密切監測，但治療方向（用不用抗生素）取決於有沒有找到感染源。',
   common_mistakes: [
     '所有符合 SIRS 標準的動物都當敗血症處理。非感染性 SIRS 不需要抗生素',
@@ -2382,9 +2501,10 @@ SIRS 跟敗血症是 ICU 患者死亡的主因之一。犬 SIRS 診斷標準要�
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Systemic Inflammatory Response Syndrome.', relevance: 'ECC 核心教材 SIRS/Sepsis 章節' },
-    { type: 'journal', citation: 'Hauptman JG, Walshaw R, Olivier NB. Evaluation of the sensitivity and specificity of diagnostic criteria for sepsis in dogs. Vet Surg. 1997;26(5):393-397.', relevance: '犬 SIRS/Sepsis 診斷標準驗證' },
-    { type: 'journal', citation: 'Brady CA, Otto CM. Systemic inflammatory response syndrome, sepsis, and multiple organ dysfunction. Vet Clin North Am Small Anim Pract. 2001;31(6):1147-1162.', relevance: 'SIRS/MODS 綜合回顧' },
-    { type: 'guideline', citation: 'Rhodes A, Evans LE, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock: 2016. Intensive Care Med. 2017;43(3):304-377.', relevance: 'Surviving Sepsis Campaign 國際指引，獸醫改編敗血症管理的參考基礎' },
+    { type: 'journal', citation: 'Hauptman JG, Walshaw R, Olivier NB. "Evaluation of the sensitivity and specificity of diagnostic criteria for sepsis in dogs." Vet Surg. 1997;26(5):393-397. doi:10.1111/j.1532-950x.1997.tb01699.x', relevance: '犬 SIRS/Sepsis 診斷標準的敏感度/特異度驗證' },
+    { type: 'journal', citation: 'Brady CA, Otto CM. "Systemic inflammatory response syndrome, sepsis, and multiple organ dysfunction." Vet Clin North Am Small Anim Pract. 2001;31(6):1147-1162.', relevance: 'SIRS/Sepsis/MODS 綜合回顧（舊式含括號 DOI，依書目標題解析驗證）' },
+    { type: 'guideline', citation: 'Rhodes A, Evans LE, Alhazzani W, et al. "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock: 2016." Intensive Care Med. 2017;43(3):304-377. doi:10.1007/s00134-017-4683-6', relevance: 'SSC 2016 國際指引（bundle 概念奠基）' },
+    { type: 'guideline', citation: 'Evans L, Rhodes A, Alhazzani W, et al. "Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021." Intensive Care Med. 2021;47(11):1181-1247. doi:10.1007/s00134-021-06506-y', relevance: 'SSC 2021 現行更新（個體化輸液再評估、廣效後依培養降階）；獸醫改編參考' },
   ],
   is_current: true,
   created_at: now,
@@ -2515,7 +2635,7 @@ MODS 是急重症死亡的終末共同路徑，要看到 ≥ 2 個器官系統�
 const contentDIC: NodeContent = {
   id: 'CONTENT-ECC-L2-003',
   node_id: 'ECC-L2-003',
-  version: 1,
+  version: 2,
   summary: 'DIC（瀰漫性血管內凝血）是嚴重系統性疾病的併發症，特徵是全身性微血管血栓形成跟凝血因子或血小板消耗造成的出血傾向同時存在。DIC 不是獨立疾病，是併發症。常見的觸發疾病包括敗血症、中暑、免疫介導性溶血性貧血（IMHA）、腫瘤、嚴重創傷。診斷靠綜合評估，沒有單一金標準檢測。治療核心是處理根本病因加上補充被消耗掉的凝血因子（FFP）。',
   learning_objectives: [
     '描述 DIC 的病理生理機轉，凝血跟纖溶的失衡',
@@ -2538,7 +2658,7 @@ const contentDIC: NodeContent = {
 
 ## 一、核心概念與機轉 (Core Concept & Mechanism)
 
-
+DIC 不是原發病、是嚴重系統性疾病的併發症：組織因子大量釋放→凝血過度活化→微血管血栓＋因子/血小板消耗，**血栓與出血矛盾並存**；治療永遠先找並處理觸發病因。
 
 ### 定義
 DIC 是嚴重系統性疾病觸發的全身性凝血級聯過度活化，導致微血管內廣泛血栓形成，同時消耗凝血因子與血小板而引發出血傾向。
@@ -2621,7 +2741,16 @@ DIC 是急重症中最危險的凝血併發症，不當的凝血活化（微血�
 | 犬 DIC 高凝期要不要用 Heparin 預防性抗凝 | 理論支持中斷凝血級聯，但出血風險讓臨床應用很有爭議，LMWH vs UFH 效益不明 | Level III |
 | DIC 診斷：傳統凝血全套 vs TEG/ROTEM 的優劣 | TEG 可偵測高凝期（傳統檢查看不出），但標準化與正常值仍需要更多獸醫數據 | Level III |
 | Fibrinogen 在 DIC 早期的假性正常現象 | Fibrinogen 是急性期蛋白，DIC 初期可能「正常偏低」就被忽略，要動態追蹤趨勢 | Level II |
-| 犬 IMHA 合併 DIC 的最佳抗凝方案 | Unfractionated heparin、LMWH、Clopidogrel、低劑量 Aspirin 之間缺乏頭對頭比較 | Level III |`,
+| 犬 IMHA 合併 DIC 的最佳抗凝方案 | Unfractionated heparin、LMWH、Clopidogrel、低劑量 Aspirin 之間缺乏頭對頭比較 | Level III |
+
+## 五、近期實證更新 (Recent Evidence)
+
+- **黏彈性凝血檢測（TEG/ROTEM）補傳統凝血之不足**：標準 PT/aPTT 看不出**高凝期**；TEG/ROTEM 可動態評估高凝→低凝全貌，獸醫專科中心採用增加（自 Wiinberg 2005 犬 TEG 驗證起），惟標準化與正常值仍待更多獸醫數據。
+- **抗血栓使用走向共識化（CURATIVE）**：CURATIVE 共識（deLaforcade 2019）提供獸醫重症**抗血栓的理性使用框架與血栓風險分層**——高凝狀態（IMHA、蛋白流失腎/腸病、腫瘤等）依風險用抗凝/抗血小板（LMWH/clopidogrel），DIC **出血（低凝）期則一般不抗凝**；取代過去憑經驗的 heparin 使用。
+- **治療核心不變：先治根本病因**：FFP 補因子/AT 為支持性，**根本病因（敗血症/IMHA/中暑/HSA 破裂）才是關鍵**；D-dimer 為最敏感的早期 DIC 指標之一（但**非特異**，須結合其他指標），高風險病患入院即驗。
+- **診斷標準化仍是缺口**：DIC 無單一金標準，ISTH 評分的獸醫改編、以及 **fibrinogen 急性期假性正常**需動態追蹤趨勢，仍待更多數據（呼應 §四）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: 'DIC 最重要的觀念：治療 DIC 就是治療引起 DIC 的疾病。不解決根本病因（敗血症 → 抗生素加引流、IMHA → 免疫抑制、中暑 → 降溫），給再多 FFP 也只是短暫補充。另外，D-dimer 是最敏感的早期 DIC 指標，比 PT/aPTT 還早就會升高。高風險患者（敗血症、IMHA、中暑）入院當下就驗 D-dimer，能早一步抓到 DIC。',
   common_mistakes: [
     '只治 DIC 不治根本病因，FFP 只是暫時補充，源頭沒解決就會繼續被消耗',
@@ -2640,9 +2769,10 @@ DIC 是急重症中最危險的凝血併發症，不當的凝血活化（微血�
   drug_api_links: ['Enoxaparin'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Disseminated Intravascular Coagulation.', relevance: 'ECC 核心教材 DIC 章節' },
-    { type: 'journal', citation: 'Wiinberg B, Jensen AL, Rojkjaer R, et al. Validation of human recombinant tissue factor-activated thromboelastography on citrated whole blood from clinically healthy dogs. Vet Clin Pathol. 2005;34(4):389-393.', relevance: 'TEG 在犬凝血評估的應用' },
-    { type: 'journal', citation: 'Bruchim Y, Kelmer E, Cohen A, et al. Hemostatic abnormalities in dogs with naturally occurring heatstroke. JVECC. 2017;27(3):315-324.', relevance: '中暑犬 DIC 凝血異常研究' },
-    { type: 'guideline', citation: 'deLaforcade A, Bacek L, Bhatt S, et al. ACVIM consensus statement: 2022 update on the diagnosis of immune-mediated hemolytic anemia and immune-mediated thrombocytopenia in dogs. J Vet Intern Med. 2022;36(6):1895-1913.', relevance: 'ACVIM 共識，含 DIC 相關凝血障礙的診斷標準' },
+    { type: 'journal', citation: 'Wiinberg B, Jensen AL, Rojkjaer R, et al. "Validation of human recombinant tissue factor-activated thromboelastography on citrated whole blood from clinically healthy dogs." Vet Clin Pathol. 2005;34(4):389-393. doi:10.1111/j.1939-165x.2005.tb00066.x', relevance: 'TEG 在犬凝血評估的驗證' },
+    { type: 'journal', citation: 'Bruchim Y, Kelmer E, Cohen A, et al. "Hemostatic abnormalities in dogs with naturally occurring heatstroke." J Vet Emerg Crit Care. 2017;27(3):315-324. doi:10.1111/vec.12590', relevance: '中暑犬 DIC 凝血異常研究' },
+    { type: 'guideline', citation: 'deLaforcade A, Bacek L, Blais M, et al. "Consensus on the Rational Use of Antithrombotics in Veterinary Critical Care (CURATIVE): Domain 1—Defining populations at risk." J Vet Emerg Crit Care. 2019;29(1):37-48. doi:10.1111/vec.12797', relevance: 'CURATIVE 抗血栓理性使用共識（高凝風險分層）；取代 v1 查無的「deLaforcade 2022 IMHA 診斷更新」捏造引用' },
+    { type: 'journal', citation: 'Pavlick M, deLaforcade A, Penninck DG. "Evaluation of coagulation parameters in dogs with gallbladder mucoceles." J Vet Intern Med. 2021;35(4):1763-1772. doi:10.1111/jvim.16203', relevance: '犬高凝狀態凝血參數近期研究' },
   ],
   is_current: true,
   created_at: now,
@@ -2652,7 +2782,7 @@ DIC 是急重症中最危險的凝血併發症，不當的凝血活化（微血�
 const contentPOCUS: NodeContent = {
   id: 'CONTENT-ECC-L4-002',
   node_id: 'ECC-L4-002',
-  version: 1,
+  version: 2,
   summary: 'AFAST（Abdominal Focused Assessment with Sonography for Trauma/Triage）跟 TFAST（Thoracic FAST）是急診床邊超音波（POCUS）的核心，3-5 分鐘內就能快速看出腹腔積液、胸腔積液、心包積液、氣胸。AFAST 用四個標準化窗口（DH/SR/CC/HR），TFAST 用五個窗口（CTS/PCS 雙側加 DH）。Vet BLUE（Veterinary Bedside Lung Ultrasound Exam）再多看一層肺實質。POCUS 不能取代完整超音波檢查，但急診現場做快速決策的價值超高。',
   learning_objectives: [
     '描述 AFAST 四點掃查窗口的位置與正常/異常發現',
@@ -2675,7 +2805,7 @@ const contentPOCUS: NodeContent = {
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
-
+AFAST/TFAST/Vet BLUE 是急診床邊超音波（POCUS）核心：3-5 分鐘回答「有沒有腹腔/胸腔/心包積液、有沒有氣胸、肺乾或濕」，直接決定穿刺/減壓與輸液方向；是快速篩查、不取代完整影像。
 
 ### 概述
 POCUS 是急診醫學最有價值的床邊診斷工具之一，臨床醫師站在動物旁邊就能拿到關鍵影像資訊，不用把不穩定的患者搬到影像室。
@@ -2760,7 +2890,16 @@ POCUS 是急診醫學最有價值的床邊診斷工具之一，臨床醫師站�
 | AFAST AFS 的手術決策閾值：AFS ≥ 2 要不要一律手術探查 | AFS ≥ 2 加上血流動力學不穩通常建議手術，穩定的可以考慮連續追蹤 | Level III |
 | 貓 TFAST 氣胸偵測的敏感度跟特異度 | 犬研究比較多，貓因為體型小跟胸腔構造差異，TFAST 正常值跟判讀標準要獨立建立 | Level IV |
 | POCUS 操作者能力評估跟品質保證標準 | 獸醫 POCUS 缺乏統一的認證制度，操作者間判讀一致性還沒系統性評估 | Level IV |
-| 肺超音波 B-line 在犬區分心因性 vs 非心因性肺水腫的可靠性 | B-line 分布模式可以提供線索但不能確診，還要結合心臟超音波跟 NT-proBNP | Level III |`,
+| 肺超音波 B-line 在犬區分心因性 vs 非心因性肺水腫的可靠性 | B-line 分布模式可以提供線索但不能確診，還要結合心臟超音波跟 NT-proBNP | Level III |
+
+## 六、近期實證更新 (Recent Evidence)
+
+- **肺超音波（Vet BLUE）的診斷準確度已被評估**：Cole 2021 以 CT 為判準評估 Vet BLUE 偵測胸水/氣胸/肺病變——對部分發現（如胸水）表現佳、對其他較不一致，**偵測的是型態而非確診**、且依操作者訓練；B-lines 協助鑑別呼吸窘迫成因但不能單獨確診。
+- **動態輸液反應性（CVC）補容量評估**：後腔靜脈塌陷指數可協助預測犬的輸液反應性（Donati 2020），補 AFAST「有無積液」之外的容量/灌流評估；惟技術與正常值仍待標準化。
+- **POCUS 整合流程（Global FAST）**：AFAST + TFAST + Vet BLUE 可整合為單一系統性流程（Global FAST），用於休克/呼吸窘迫的快速鑑別與連續監測。
+- **能力認證仍是缺口**：獸醫 POCUS 操作者依賴、缺統一認證與品保標準，觀察者間判讀一致性仍待系統評估（呼應 §五）。
+
+> 臨床內容與藥物劑量需獸醫師依現行仿單與指引核對；本節點為 AI 接地生成，停於 review 狀態待 DVM 簽核。`,
   clinical_pearl: 'AFAST/TFAST 的價值不在「精確診斷」而在「快速決策」。創傷犬到院，ABCDE 完成後 3 分鐘內做完 AFAST/TFAST，問四個問題：有腹腔積液嗎？有胸腔積液嗎？有心包積液嗎？有氣胸嗎？這四個答案直接決定下一步要不要腹腔穿刺、胸腔穿刺、心包穿刺、減壓。不需要完美影像，只需要回答「有沒有」。',
   common_mistakes: [
     '花太多時間追求完美影像延誤急救。FAST 的重點是快不是美',
@@ -2816,10 +2955,12 @@ POCUS 是急診醫學最有價值的床邊診斷工具之一，臨床醫師站�
   ],
   drug_api_links: [],
   references: [
-    { type: 'journal', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. JVECC. 2011;21(2):104-122.', relevance: 'AFAST/TFAST 原始描述與驗證' },
+    { type: 'journal', citation: 'Lisciandro GR. "Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals." J Vet Emerg Crit Care. 2011;21(2):104-122. doi:10.1111/j.1476-4431.2011.00626.x', relevance: 'AFAST/TFAST 原始描述與驗證' },
     { type: 'textbook', citation: 'Lisciandro GR. Focused Ultrasound Techniques for the Small Animal Practitioner. Wiley-Blackwell, 2014.', relevance: 'FAST 技術完整教材' },
-    { type: 'journal', citation: 'Boysen SR, Lisciandro GR. The use of ultrasound for dogs and cats in the emergency room: AFAST and TFAST. Vet Clin North Am Small Anim Pract. 2013;43(4):773-797.', relevance: 'AFAST/TFAST 急診應用綜合回顧' },
-    { type: 'guideline', citation: 'McMurray J, Boysen S, Chalhoub S. Focused assessment with sonography in nontraumatized dogs and cats in the emergency and critical care setting. JVECC. 2016;26(1):64-73.', relevance: '急診 POCUS 標準化操作指引' },
+    { type: 'journal', citation: 'Boysen SR, Lisciandro GR. "The Use of Ultrasound for Dogs and Cats in the Emergency Room: AFAST and TFAST." Vet Clin North Am Small Anim Pract. 2013;43(4):773-797. doi:10.1016/j.cvsm.2013.03.011', relevance: 'AFAST/TFAST 急診應用綜合回顧' },
+    { type: 'guideline', citation: 'McMurray J, Boysen S, Chalhoub S. "Focused assessment with sonography in nontraumatized dogs and cats in the emergency and critical care setting." J Vet Emerg Crit Care. 2016;26(1):64-73. doi:10.1111/vec.12376', relevance: '非創傷急診 POCUS 標準化操作' },
+    { type: 'journal', citation: 'Cole L, Pivetta M, Humm K. "Diagnostic accuracy of a lung ultrasound protocol (Vet BLUE) for detection of pleural fluid, pneumothorax and lung pathology in dogs and cats." J Small Anim Pract. 2021;62(3):178-186. doi:10.1111/jsap.13271', relevance: 'Vet BLUE 肺超音波診斷準確度（近期，以 CT 為判準）' },
+    { type: 'journal', citation: 'Donati PA, Guevara JM, Ardiles V, Guillemi EC. "Caudal vena cava collapsibility index as a tool to predict fluid responsiveness in dogs." J Vet Emerg Crit Care. 2020;30(6):677-686. doi:10.1111/vec.13009', relevance: '後腔靜脈塌陷指數預測輸液反應性' },
   ],
   is_current: true,
   created_at: now,
@@ -2829,7 +2970,7 @@ POCUS 是急診醫學最有價值的床邊診斷工具之一，臨床醫師站�
 const contentIVFluid: NodeContent = {
   id: 'CONTENT-ECC-L5-001',
   node_id: 'ECC-L5-001',
-  version: 1,
+  version: 2,
   summary: '靜脈液體治療是 ECC 最基本、用最多的治療。輸液目的有三：容量復甦（休克）、脫水矯正、維持。液體分晶體液（等張、低張、高張）跟膠體液（合成、天然），看患者需求選。休克復甦用 shock rate bolus（犬 20-30 mL/kg、貓 10-15 mL/kg），脫水矯正則是缺損量加維持量。但灌過頭（fluid overload）也很危險，會造成肺水腫跟組織水腫，要走目標導向。',
   learning_objectives: [
     '分類常用輸液種類並描述其成分與適應症',
@@ -2948,7 +3089,21 @@ const contentIVFluid: NodeContent = {
 | 犬休克輸液復甦量：傳統 shock rate vs 限制性 bolus | 傳統 60-90 mL/kg/hr 可能過量，20 mL/kg incremental bolus + 重新評估的策略逐漸被接受 | Level II |
 | 合成膠體液（HES）在獸醫急診的角色 | 人醫因為 AKI 跟凝血異常疑慮已大幅減少使用，獸醫爭議還在但趨於保守 | Level I |
 | 人白蛋白在犬低白蛋白血症的安全性 | 首次使用通常安全，重複使用過敏反應風險上升，犬專用白蛋白製劑缺乏 | Level III |
-| 體重增加 > 10% 當液體過負荷指標準不準 | 方便但可能不夠精確，POCUS 肺超音波 B-line 可能是更早期的偵測工具 | Level III |`,
+| 體重增加 > 10% 當液體過負荷指標準不準 | 方便但可能不夠精確，POCUS 肺超音波 B-line 可能是更早期的偵測工具 | Level III |
+
+## 七、近期實證更新 (Recent Evidence Updates)
+
+### 平衡晶體液成為新常規
+人醫大型試驗（SMART、SALT-ED）支持平衡晶體液（LRS/Plasmalyte）相較 0.9% NaCl 可減少主要腎臟不良事件與高氯性酸中毒；獸醫已逐漸以平衡晶體液為犬貓常規首選，0.9% NaCl 保留給高血鉀、低血鈉需慢矯、代謝性鹼中毒等特定情境。
+
+### 從「越多越好」到限制性復甦與「去復甦」
+休克輸液觀念由傳統大量 shock dose 轉向「小量 bolus + 反覆評估」的滴定式策略。人醫敗血症的 CLASSIC、CLOVERS 試驗顯示自由 vs 限制性給液結果相近 → 強調個體化。臨床框架採 ROSE（Resuscitation→Optimization→Stabilization→**Evacuation／去復甦**）：復甦後若已液體過負荷，應主動移除多餘液體（利尿／限液），而非持續灌注。
+
+### 合成膠體（HES）退場
+人醫 CHEST、6S 試驗因 AKI 與死亡率疑慮使 HES 用量大減；獸醫亦累積警訊——Boyd 2021 犬前瞻盲性 RCT 顯示 6% HES 130/0.4 對腎臟生物標記的不利影響。臨床使用趨於保守，優先以晶體液復甦、必要時改用天然膠體（白蛋白／血漿）。
+
+### 動態輸液反應性評估取代靜態 CVP
+靜態指標（單次 CVP）預測輸液反應性差。趨勢改用動態方法：POCUS 評估後腔靜脈（caudal vena cava）塌陷指數、被動抬腿試驗（PLR）、肺超音波 B-line 監測早期間質水腫，協助判斷「再給液會不會有效、會不會過量」。`,
   clinical_pearl: '輸液治療最常犯的錯就是「開了就忘了」。輸液開始後一定要持續監測反應。每次 bolus 後摸脈搏、看 CRT、追乳酸。2-3 次 bolus 後灌流還是沒改善，不是繼續加量，是要想「是不是不只是低血容性休克？」心因性？阻塞性？分布性需要升壓劑？另外，貓比犬對容量敏感很多，犬的 shock rate 直接套用在貓身上很容易 fluid overload。',
   common_mistakes: [
     '所有休克病患都用犬的 shock rate。貓 shock rate 只有犬的一半',
@@ -2970,8 +3125,9 @@ const contentIVFluid: NodeContent = {
   drug_api_links: ['Furosemide', 'Hetastarch'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Fluid Therapy.', relevance: 'ECC 核心教材輸液治療章節' },
-    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP fluid therapy guidelines for dogs and cats. JAAHA. 2013;49(3):149-159.', relevance: 'AAHA/AAFP 犬貓輸液治療指引' },
-    { type: 'journal', citation: 'Cazzolli D, Prittie J. The crystalloid-colloid debate: consequences of resuscitation fluid selection in veterinary critical care. JVECC. 2015;25(1):6-19.', relevance: '晶體液 vs 膠體液辯論回顧' },
+    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2013;49(3):149-159. doi:10.5326/jaaha-ms-5868.', relevance: 'AAHA/AAFP 犬貓輸液治療指引' },
+    { type: 'journal', citation: 'Cazzolli D, Prittie J. The crystalloid-colloid debate: consequences of resuscitation fluid selection in veterinary critical care. J Vet Emerg Crit Care. 2015;25(1):6-19. doi:10.1111/vec.12281.', relevance: '晶體液 vs 膠體液辯論回顧' },
+    { type: 'journal', citation: "Boyd CJ, Claus MA, Raisis AL, et al. Prospective randomized controlled blinded clinical trial evaluating biomarkers of acute kidney injury following 6% hydroxyethyl starch 130/0.4 or Hartmann's solution in dogs. J Vet Emerg Crit Care. 2021;31(3):306-314. doi:10.1111/vec.13056.", relevance: '犬 HES vs 平衡液腎損傷生物標記前瞻性 RCT，支持 HES 使用趨保守' },
   ],
   is_current: true,
   created_at: now,
@@ -3531,7 +3687,7 @@ const contentTraumaHemorrhage: NodeContent = {
 const contentHemoabdomen: NodeContent = {
   id: 'CONTENT-ECC-L3-009',
   node_id: 'ECC-L3-009',
-  version: 1,
+  version: 2,
   summary: '腹腔出血（Hemoabdomen）分創傷性（鈍傷或穿刺傷）跟非創傷性（脾臟血管肉瘤、肝臟腫瘤、凝血病）。AFAST 超音波評分可以快速看出腹腔游離液，腹水 PCV > 20% 就提示明顯出血。犬脾臟腫塊大約 2/3 是惡性（HSA 最常見），所以老年大型犬的非創傷性腹腔出血要高度懷疑 HSA。治療策略包含血流動力學穩定、自體輸血評估、緊急脾臟切除的適應症判斷。台灣老年犬脾臟腫塊破裂是急診常見的非創傷性腹腔出血原因，AFAST 超音波技術也已廣泛應用。台灣犬血庫資源有限，自體輸血技術在大型動物醫院的臨床價值很高。',
   learning_objectives: [
     '區分創傷性與非創傷性腹腔出血的常見病因',
@@ -3609,7 +3765,15 @@ AFAST 評分系統：每個象限有/無游離液，0-4 分。≥ 1 分即有意
 |---------|------|---------------|
 | HSA 腹腔出血的自體輸血是否加速腫瘤擴散 | 回顧性研究未顯示自體輸血組存活率更差，但缺乏前瞻性數據 | Level III |
 | 術前影像能否可靠區分脾臟良惡性腫塊 | 超音波特徵（如 double rim sign）有一定提示意義，但準確度不足以取代病理 | Level III |
-| 非創傷性腹腔出血犬的最佳手術時機（早期 vs 穩定後） | 臨床實務多為穩定後盡早手術，但「多早」缺乏標準化定義 | Level IV |`,
+| 非創傷性腹腔出血犬的最佳手術時機（早期 vs 穩定後） | 臨床實務多為穩定後盡早手術，但「多早」缺乏標準化定義 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+1. **「三分之二法則」再評估**：脾臟腫塊惡性比例隨族群而異，近期部分研究顯示良性比例可能更高（尤其無轉移、較小腫塊）；術前影像仍無法可靠區分良惡性，**病理為準**，勿據統計貿然安樂。
+2. **抗纖溶（tranexamic acid, TXA）**：作為出血輔助（外推自人醫 CRASH-2），獸醫療效證據仍有限/累積中。
+3. **自體輸血（Hirst 2012）**：腹腔回收血回輸於無菌、非腫瘤性出血可行且省血庫；HSA 之腫瘤擴散疑慮回顧性未顯示明顯存活劣勢。
+4. **連續 AFAST 評分**：序列監測腹腔積液量與復甦反應，優於單次評估。
+> 腹腔出血為外科急症；損傷控制復甦、手術時機與輸血策略由獸醫依個案評估，勿單憑統計決定預後。`,
   clinical_pearl: '老年德國牧羊犬或金毛犬突發虛脫加腹腔積液，就是 HSA until proven otherwise。AFAST 做完 30 秒內就能知道有沒有腹腔出血，但不要只看有沒有液體，要抽出來測 PCV。腹水 PCV > 25% 又接近周邊血 PCV 就是正在活動出血。還有個重要觀念：這些狗術後 24-72 小時一定要持續 ECG 監測，脾臟腫瘤犬太容易出室性心律不整，Lidocaine 要備好。',
   common_mistakes: [
     '只憑超音波判斷脾臟腫塊良惡性。超音波區分不了，要靠病理',
@@ -3654,10 +3818,10 @@ AFAST 評分系統：每個象限有/無游離液，0-4 分。≥ 1 分即有意
   drug_api_links: ['Fentanyl', 'Lidocaine', 'Doxorubicin'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Abdominal Hemorrhage.', relevance: 'ECC 核心教材腹腔出血章節' },
-    { type: 'journal', citation: 'Lisciandro GR, Lagutchik MS, Mann KA, et al. Evaluation of an abdominal fluid scoring system determined using abdominal focused assessment with sonography for trauma in 101 dogs with motor vehicle trauma. JVECC. 2009;19(5):426-437.', relevance: 'AFAST 評分系統在犬創傷的驗證研究' },
-    { type: 'journal', citation: 'Spangler WL, Kass PH. Pathologic factors affecting postsplenectomy survival in dogs. J Vet Intern Med. 1997;11(3):166-171.', relevance: '犬脾臟切除後存活率與病理因素分析' },
-    { type: 'journal', citation: 'Pintar J, Breitschwerdt EB, Hardie EM, et al. Acute nontraumatic hemoabdomen in the dog: a retrospective analysis of 39 cases (1987-2001). JAAHA. 2003;39(6):518-522.', relevance: '犬非創傷性腹腔出血回顧性分析' },
-    { type: 'guideline', citation: 'Holowaychuk MK, Hanel RM, Englar RE, et al. VECCS Consensus Statement on Canine and Feline Blood Donor Screening and Transfusion Medicine. JVECC. 2014;24(4):387-395.', relevance: 'VECCS 犬貓輸血醫學共識聲明，提供腹腔出血輸血管理' },
+    { type: 'journal', citation: 'Lisciandro GR, Lagutchik MS, Mann KA, et al. Evaluation of an abdominal fluid scoring system determined using abdominal focused assessment with sonography for trauma in 101 dogs with motor vehicle trauma. J Vet Emerg Crit Care. 2009;19(5):426-437. doi:10.1111/j.1476-4431.2009.00459.x.', relevance: 'AFAST 評分系統在犬創傷的驗證研究' },
+    { type: 'journal', citation: 'Spangler WL, Kass PH. Pathologic factors affecting postsplenectomy survival in dogs. J Vet Intern Med. 1997;11(3):166-171. doi:10.1111/j.1939-1676.1997.tb00085.x.', relevance: '犬脾臟切除後存活率與病理因素分析' },
+    { type: 'journal', citation: 'Pintar J, Breitschwerdt EB, Hardie EM, et al. Acute nontraumatic hemoabdomen in the dog: a retrospective analysis of 39 cases (1987-2001). J Am Anim Hosp Assoc. 2003;39(6):518-522. doi:10.5326/0390518.', relevance: '犬非創傷性腹腔出血回顧性分析' },
+    { type: 'journal', citation: 'Hirst C, Adamantos S. Autologous blood transfusion following red blood cell salvage for the management of blood loss in three dogs with hemoperitoneum. J Vet Emerg Crit Care. 2012;22(3):355-360. doi:10.1111/j.1476-4431.2012.00747.x.', relevance: '腹腔出血自體輸血臨床應用' },
   ],
   is_current: true,
   created_at: now,
@@ -3667,7 +3831,7 @@ AFAST 評分系統：每個象限有/無游離液，0-4 分。≥ 1 分即有意
 const contentPneumothorax: NodeContent = {
   id: 'CONTENT-ECC-L3-010',
   node_id: 'ECC-L3-010',
-  version: 1,
+  version: 2,
   summary: '氣胸（Pneumothorax）就是空氣跑到胸膜腔，把肺壓塌、呼吸功能整個受影響。依病因分創傷性（胸壁穿刺、肺實質撕裂）、自發性（肺大泡破裂）、張力性氣胸（單向活瓣讓胸腔壓力一直升高）。TFAST 超音波看「肺滑動徵」（lung sliding）有沒有，是快速診斷的依據。張力性氣胸是立刻會要命的急症，要緊急胸腔穿刺減壓。胸管置放用在持續或復發性氣胸。台灣都市犬貓的 HBC 跟高處墜落是創傷性氣胸的常見原因，TFAST 超音波技術在台灣急診獸醫院已經普及。自發性氣胸在本土大型犬偶有報告。',
   learning_objectives: [
     '分類創傷性、自發性與張力性氣胸的病因與病理機轉',
@@ -3748,7 +3912,16 @@ const contentPneumothorax: NodeContent = {
 |---------|------|---------------|
 | 犬自發性氣胸保守治療 vs 早期手術的最佳策略 | 復發率高支持早期手術，但部分病例保守治療即可痊癒 | Level III |
 | CT vs 超音波在犬氣胸的診斷敏感度比較 | CT 為金標準但需鎮靜/麻醉（呼吸困難犬風險高），TFAST 床邊即做但可能遺漏小量氣胸 | Level II |
-| 犬胸管拔除最佳時機（引流量閾值） | 一般以 < 2 mL/kg/day 氣體引流為拔管標準，但缺乏前瞻性驗證 | Level IV |`,
+| 犬胸管拔除最佳時機（引流量閾值） | 一般以 < 2 mL/kg/day 氣體引流為拔管標準，但缺乏前瞻性驗證 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+- **胸腔鏡（VATS）為自發性氣胸的確定性微創治療**：Case 等人（2015）評估 VATS 治療犬自發性氣胸與肺大泡，微創切除可顯著降低復發（保守治療復發約 50%）；人醫自發性氣胸首選 VATS，獸醫專科中心日益採用。〔Evidence Level III〕
+- **POCUS/TFAST 已整合急診流程**：床邊胸腔超音波（缺 lung sliding）診斷氣胸快於 X 光，納入創傷 E-FAST/TFAST 標準流程（Lisciandro 2008）；惟對小量氣胸敏感度有限，CT 仍為金標準（需權衡呼吸困難犬鎮靜風險）。〔Evidence Level II〕
+- **小口徑導引式胸管漸取代大口徑**：modified Seldinger 小口徑（wire-guided/pigtail）胸管疼痛較少、置放併發症低、引流效果相當，逐步取代傳統 trocar 大口徑胸管。〔Evidence Level III〕
+- **頑固性持續漏氣的輔助處置**：自體血液貼片胸膜固定術（autologous blood-patch pleurodesis）等被研究用於頑固性持續漏氣，作為手術前/替代選項，證據仍有限。〔Evidence Level IV〕
+
+> ⚠️ 上述更新（特別是 VATS 與小口徑胸管的可近性、血液貼片的適應症）仍待 DVM 依個案與所在院所設備覆核後採用。`,
   clinical_pearl: '張力性氣胸是急診室最不能猶豫的診斷。看到呼吸極度困難加一側聽診呼吸音消失加低血壓，不要等 X 光，直接穿刺。穿刺時大量空氣噴出來、患者立刻改善，診斷就確定了。另一個臨床技巧：TFAST 看不到 lung sliding 就是氣胸，比等 X 光快 10 倍。但記住，創傷犬氣胸經常是雙側的，一側穿刺改善不夠就穿對側。',
   common_mistakes: [
     '張力性氣胸等 X 光才處理。可能在等的那幾分鐘內就死了',
@@ -3793,8 +3966,9 @@ const contentPneumothorax: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Pneumothorax.', relevance: 'ECC 核心教材氣胸章節' },
-    { type: 'journal', citation: 'Puerto DA, Brockman DJ, Lindquist C, et al. Surgical and nonsurgical management of and selected risk factors for spontaneous pneumothorax in dogs: 64 cases (1986-1999). JAVMA. 2002;220(11):1670-1674.', relevance: '犬自發性氣胸的手術與保守治療比較' },
-    { type: 'journal', citation: 'Lisciandro GR, Fosgate GT, Romero LA, et al. Thoracic ultrasonography for the diagnosis of pneumothorax in dogs. JVECC. 2014;24(2):205-212.', relevance: 'TFAST 超音波診斷犬氣胸的驗證研究' },
+    { type: 'journal', citation: 'Puerto DA, Brockman DJ, Lindquist C, et al. Surgical and nonsurgical management of and selected risk factors for spontaneous pneumothorax in dogs: 64 cases (1986-1999). J Am Vet Med Assoc. 2002;220(11):1670-1674. doi:10.2460/javma.2002.220.1670', relevance: '犬自發性氣胸的手術與保守治療比較' },
+    { type: 'journal', citation: 'Lisciandro GR, Lagutchik MS, Mann KA, et al. Evaluation of a thoracic focused assessment with sonography for trauma (TFAST) protocol to detect pneumothorax and concurrent thoracic injury in 145 traumatized dogs. J Vet Emerg Crit Care. 2008;18(3):258-269. doi:10.1111/j.1476-4431.2008.00312.x', relevance: 'TFAST 超音波診斷犬氣胸的原始驗證研究' },
+    { type: 'journal', citation: 'Case JB, Mayhew PD, Singh A. Evaluation of video-assisted thoracic surgery for treatment of spontaneous pneumothorax and pulmonary bullae in dogs. Vet Surg. 2015;44(Suppl 1):31-38. doi:10.1111/j.1532-950x.2014.12288.x', relevance: '犬自發性氣胸/肺大泡的胸腔鏡(VATS)微創治療' },
     { type: 'guideline', citation: 'Rozanski EA, Rush JE. Small Animal Emergency and Critical Care Medicine. Manson Publishing, 2013. Chapter: Respiratory Emergencies.', relevance: '小動物呼吸急症處置指引' },
   ],
   is_current: true,
@@ -3805,7 +3979,7 @@ const contentPneumothorax: NodeContent = {
 const contentSepsis: NodeContent = {
   id: 'CONTENT-ECC-L3-011',
   node_id: 'ECC-L3-011',
-  version: 1,
+  version: 2,
   summary: '敗血症（Sepsis）的定義就是感染引發的全身性發炎反應（SIRS 加 confirmed 或 suspected infection），可以進展到敗血性休克跟多重器官衰竭。犬 SIRS 標準：體溫 > 39.7°C 或 < 37.8°C、心率 > 160 bpm、呼吸頻率 > 40 bpm、白血球 > 18,000 或 < 5,000/μL，符合 ≥ 2 項。治療核心就是「1 小時 bundle」：乳酸量測、血液培養、經驗性廣效抗生素、輸液復甦、血管升壓劑（Norepinephrine 第一線）。感染源控制是預後最關鍵的因素。台灣亞熱帶氣候下，犬子宮蓄膿跟腸道穿孔是常見的敗血症感染源，高溫多濕讓傷口感染風險升高。台灣急診動物醫院已經有乳酸量測跟血液培養能力，「1 小時 bundle」概念在本土急重症醫學中逐步推廣。',
   learning_objectives: [
     '定義 SIRS、Sepsis、嚴重敗血症與敗血性休克的診斷標準',
@@ -3818,9 +3992,9 @@ const contentSepsis: NodeContent = {
     '犬 SIRS 標準（≥ 2/4）：T > 39.7 或 < 37.8°C、HR > 160、RR > 40、WBC > 18k 或 < 5k（band > 3%）',
     '貓 SIRS 標準（≥ 3/4）：T > 40.0 或 < 37.8°C、HR > 225 或 < 140、RR > 40、WBC > 19.5k 或 < 5k',
     'Sepsis = SIRS + confirmed or suspected infection',
-    '敗血性休克 = Sepsis + 輸液復甦無效的持續低血壓（需要血管升壓劑維持 MAP ≥ 65 mmHg）',
+    '敗血性休克 = Sepsis + 輸液復甦無效的持續低血壓（需血管升壓劑維持 MAP ≥ 60-65 mmHg 或 SAP ≥ 90 mmHg；MAP≥65 源自人醫 Sepsis-3）',
     'Lactate > 2.5 mmol/L 為組織低灌流指標，是早期辨識嚴重敗血症的關鍵',
-    '經驗性抗生素辨識敗血症後 1 小時內就要給。每延遲 1 小時死亡率增加大約 7%',
+    '經驗性抗生素：敗血性休克或高度懷疑者 1 小時內給（休克性低血壓每延遲 1 小時死亡率約↑7%，Kumar 2006）；可能但無休克者快速評估、疑慮持續則 3 小時內給',
     '初始輸液：等張晶體液 bolus 犬 10-20 mL/kg、貓 5-10 mL/kg，評估反應後再重複',
     'Norepinephrine 是敗血性休克第一線血管升壓劑（0.1-1 mcg/kg/min CRI）',
     '感染源控制（Source control）：引流膿瘍、手術清創、移除感染裝置，越早越好',
@@ -3837,7 +4011,7 @@ const contentSepsis: NodeContent = {
 | SIRS | 全身性發炎反應症候群，感染或非感染因素都可能觸發 |
 | Sepsis | SIRS + confirmed/suspected infection |
 | 嚴重敗血症（Severe Sepsis） | Sepsis + 器官功能障礙（低血壓、高乳酸、少尿、意識改變） |
-| 敗血性休克（Septic Shock） | Sepsis + 輸液復甦無效的持續低血壓，需血管升壓劑維持 MAP ≥ 65 mmHg |
+| 敗血性休克（Septic Shock） | Sepsis + 輸液復甦無效的持續低血壓，需血管升壓劑維持 MAP ≥ 60-65 mmHg（或 SAP ≥ 90 mmHg；MAP≥65 為人醫 Sepsis-3 框架） |
 
 ### SIRS 標準
 | 參數 | 犬 | 貓 |
@@ -3847,6 +4021,8 @@ const contentSepsis: NodeContent = {
 | 呼吸頻率 | > 40 bpm | > 40 bpm |
 | 白血球 | > 18,000 或 < 5,000/μL | > 19,500 或 < 5,000/μL |
 | 判定 | ≥ 2/4 項 | ≥ 3/4 項（較嚴格，避免過度診斷） |
+
+> 註：SIRS 數值閾值各文獻略有差異（此為獸醫 ECC 常用一組）；SIRS 敏感但不特異，須結合感染證據判讀。
 
 ### 病理生理
 感染 → PAMPs（病原相關分子模式）活化先天免疫 → 促炎細胞因子風暴（TNF-α、IL-1β、IL-6）→ 全身性血管擴張 + 血管通透性增加 + 微血栓形成 → 組織灌流不足 → 細胞缺氧 → 器官功能障礙 → MODS
@@ -3868,7 +4044,7 @@ Lactate > 2.5 mmol/L（敏感指標）、血液培養（給抗生素前抽）、
 ### 敗血症 1 小時 Bundle（Surviving Sepsis Campaign 獸醫改編）
 1. 測量 Lactate，基線值跟追蹤（每 2-4 小時）
 2. 血液培養，給抗生素前抽取（但不要為了等培養而延遲抗生素）
-3. 經驗性廣效抗生素，1 小時內給
+3. 經驗性廣效抗生素：敗血性休克／高度懷疑者 1 小時內給；可能但無休克者快速評估、疑慮持續則 3 小時內（SSC 2021）
 4. 輸液復甦：低血壓或 Lactate > 4 mmol/L 就要做
 5. 血管升壓劑：輸液復甦無效時啟動
 
@@ -3881,7 +4057,7 @@ Lactate > 2.5 mmol/L（敏感指標）、血液培養（給抗生素前抽）、
 | 肺炎 | [藥物:Ampicillin-Sulbactam] + [藥物:Enrofloxacin] | 考慮吸入性肺炎可能 |
 
 ### 血流動力學支持
-初始輸液：等張晶體液 10-20 mL/kg（犬）/ 5-10 mL/kg（貓）bolus，30 分鐘內，評估反應（血壓、乳酸、CRT），可重複至 40-60 mL/kg（犬）。輸液無效（MAP 仍 < 65 mmHg）→ [藥物:Norepinephrine] 0.1-1 mcg/kg/min CRI（第一線）。二線：[藥物:Vasopressin] 0.5-5 mU/kg/min CRI 合併 Norepinephrine。Dobutamine 2.5-10 mcg/kg/min CRI 用於心肌抑制（CO↓）。
+初始輸液：等張晶體液 10-20 mL/kg（犬）/ 5-10 mL/kg（貓）bolus，30 分鐘內，評估反應（血壓、乳酸、CRT），可重複至 40-60 mL/kg（犬）。輸液無效（MAP 仍 < 60-65 mmHg）→ [藥物:Norepinephrine] 0.1-1 mcg/kg/min CRI（第一線）。二線：[藥物:Vasopressin] 0.5-5 mU/kg/min CRI 合併 Norepinephrine。Dobutamine 2.5-10 mcg/kg/min CRI 用於心肌抑制（CO↓）。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -3906,7 +4082,15 @@ Lactate > 2.5 mmol/L（敏感指標）、血液培養（給抗生素前抽）、
 |---------|------|---------------|
 | 犬敗血症最佳輸液量（自由 vs 限制性策略） | 人醫 CLASSIC 試驗顯示限制性策略不劣於自由策略，獸醫無大型比較數據 | Level III |
 | Albumin 輸注在犬敗血性休克的角色 | 低白蛋白血症犬要不要補 Albumin 還有爭議，人類白蛋白在犬有過敏風險 | Level III |
-| 犬敗血症糖皮質激素輔助治療 | 人醫 ADRENAL/APROCCHSS 試驗結果不一，犬 CIRCI 診斷與 Hydrocortisone 使用缺乏共識 | Level IV |`,
+| 犬敗血症糖皮質激素輔助治療 | 人醫 ADRENAL/APROCCHSS 試驗結果不一，犬 CIRCI 診斷與 Hydrocortisone 使用缺乏共識 | Level IV |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+1. **輸液趨向保守 + 早用升壓劑**：人醫 CLASSIC/CLOVERS 顯示限制性輸液＋早期 norepinephrine 不劣於大量輸液；犬貓宜小量 bolus（犬 10-20、貓 5-10 mL/kg）反覆評估，避免容量過載（Montealegre & Lyons 2021 回顧）。
+2. **平衡晶體液優先**：人醫 SMART 試驗支持平衡液（LRS/Plasma-Lyte）優於 0.9% NaCl（減少高氯性酸中毒／AKI），獸醫逐步採用。
+3. **目標血壓為獸醫框架**：MAP ≥ 65 源自人醫 Sepsis-3；獸醫常用 MAP ≥ 60-65 或 SAP ≥ 90，並以乳酸清除率、尿量等多重灌流終點導向。
+4. **生物標記演進**：PCT、qSOFA 之獸醫改編驗證進行中，尚未取代臨床＋乳酸判斷。
+> 敗血症處置須個別化，所有藥物劑量與閾值由獸醫師依現行指引與個案覆核。`,
   clinical_pearl: '敗血症「Golden Hour」是指辨識敗血症後的第一個小時，決定生死。三件事不能等：抽血培養然後立刻給抗生素（不是等培養結果才給！），測乳酸（這是你最好的嚴重度指標），還有輸液 bolus 開始。另外，犬早期敗血性休克的黏膜是「磚紅色」（brick red），不是蒼白。很多人把這充血的黏膜當成「灌流很好」就延遲治療，那其實是血管過度擴張的分布性休克表現。',
   common_mistakes: [
     '等血液培養結果才給抗生素。培養前先抽血沒錯，但抗生素不能等，1 小時內就要給',
@@ -3923,7 +4107,7 @@ Lactate > 2.5 mmol/L（敏感指標）、血液培養（給抗生素前抽）、
       { sign: '發燒或低體溫', category: 'primary', description: '犬：T > 39.7°C（早期）或 < 37.8°C（晚期/貓）' },
       { sign: '心搏過速', category: 'primary', description: '犬 HR > 160 bpm，為代償性反應' },
       { sign: '黏膜磚紅色或蒼白', category: 'primary', description: '早期高動力期充血（磚紅），晚期低動力期蒼白' },
-      { sign: '低血壓', category: 'primary', description: 'MAP < 65 mmHg，定義敗血性休克的關鍵指標' },
+      { sign: '低血壓', category: 'primary', description: 'MAP < 60-65 mmHg（或 SAP < 90），敗血性休克的關鍵指標' },
       { sign: '嗜睡/精神沉鬱', category: 'primary', description: '腦灌流不足與全身性發炎反應' },
       { sign: '少尿', category: 'secondary', description: '尿量 < 1 mL/kg/hr，提示腎灌流不足' },
       { sign: '嘔吐/腹瀉', category: 'secondary', description: '腸道灌流不足或腹腔感染直接影響' },
@@ -3954,9 +4138,10 @@ Lactate > 2.5 mmol/L（敏感指標）、血液培養（給抗生素前抽）、
   drug_api_links: ['Norepinephrine', 'Vasopressin', 'Dobutamine', 'Ampicillin-Sulbactam', 'Enrofloxacin', 'Metronidazole', 'Ampicillin'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Sepsis and Septic Shock.', relevance: 'ECC 核心教材敗血症章節' },
-    { type: 'guideline', citation: 'Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021;49(11):e1063-e1143.', relevance: 'SSC 2021 國際敗血症管理指引，獸醫改編的基礎' },
-    { type: 'journal', citation: 'Bentley AM, Otto CM, Shofer FS. Comparison of dogs with septic peritonitis: 1988-1993 versus 1999-2003. JVECC. 2007;17(4):391-398.', relevance: '犬敗血性腹膜炎預後比較研究' },
-    { type: 'journal', citation: 'Kenney EM, Rozanski EA, Rush JE, et al. Association between outcome and organ system dysfunction in dogs with sepsis: 114 cases (2003-2007). JAVMA. 2010;236(1):83-87.', relevance: '犬敗血症器官衰竭與預後關係' },
+    { type: 'guideline', citation: 'Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021;49(11):e1063-e1143. doi:10.1097/CCM.0000000000005337.', relevance: 'SSC 2021 國際敗血症管理指引（人醫；獸醫改編的基礎）' },
+    { type: 'journal', citation: 'Bentley AM, Otto CM, Shofer FS. Comparison of dogs with septic peritonitis: 1988-1993 versus 1999-2003. J Vet Emerg Crit Care. 2007;17(4):391-398. doi:10.1111/j.1476-4431.2007.00251.x.', relevance: '犬敗血性腹膜炎預後比較研究' },
+    { type: 'journal', citation: 'Kenney EM, Rozanski EA, Rush JE, et al. Association between outcome and organ system dysfunction in dogs with sepsis: 114 cases (2003-2007). J Am Vet Med Assoc. 2010;236(1):83-87. doi:10.2460/javma.236.1.83.', relevance: '犬敗血症器官衰竭與預後關係' },
+    { type: 'journal', citation: 'Montealegre F, Lyons BM. Fluid Therapy in Dogs and Cats With Sepsis. Front Vet Sci. 2021;8:622127. doi:10.3389/fvets.2021.622127.', relevance: '犬貓敗血症輸液治療回顧（近期實證）' },
   ],
   is_current: true,
   created_at: now,
@@ -4417,7 +4602,7 @@ VCV 保證送氣量但壓力不可控（順應性差時高壓傷風險）；PCV 
 const contentAcuteAbdomen: NodeContent = {
   id: 'CONTENT-ECC-L3-014',
   node_id: 'ECC-L3-014',
-  version: 1,
+  version: 2,
   summary: '急性腹部（Acute Abdomen）是犬貓急診中最具挑戰性的臨床情境之一，核心決策在於區分「外科腹部」（surgical abdomen）與「內科腹部」（medical abdomen）。關鍵診斷工具包括 AFAST、腹腔穿刺（DPL/Abdominocentesis）與腹腔液分析。敗血性腹膜炎（腹腔液葡萄糖比血液低 > 20 mg/dL）為最緊急的外科適應症。台灣流浪犬創傷性腹部急症盛行率高。',
   learning_objectives: [
     '區分外科腹部與內科腹部的關鍵臨床指標',
@@ -4521,7 +4706,39 @@ const contentAcuteAbdomen: NodeContent = {
 - 流浪犬車禍/打架導致的腹部穿刺傷為台灣常見急性腹部原因
 - 膽囊黏液囊腫（gallbladder mucocele）在台灣老年犬有增加趨勢
 - TNR（Trap-Neuter-Return）犬貓的術後併發症（罕見但可見腹腔內出血）
-- 夏季蛇咬導致的凝血障礙可繼發腹腔出血`,
+- 夏季蛇咬導致的凝血障礙可繼發腹腔出血
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 創傷 eFAST / POCUS 分診 | 急診快速偵測腹腔游離液/氣（AFAST/TFAST） | 人醫創傷標準，獸醫 AFAST/TFAST 已採用（Lisciandro） |
+| Surviving Sepsis 早期源頭控制＋抗生素 bundle | 敗血性腹膜炎早期手術源頭控制＋廣效抗生素 | 人醫敗血症 bundle 成熟，獸醫採其原則 |
+| 損傷控制手術／開放腹腔（damage control / open abdomen） | 重度瀰漫性腹膜炎分階段手術、開放引流／負壓 | 人醫創傷外科成熟，獸醫開放引流/VAC 漸用（Buote 2012） |
+| 腹水生化梯度（SAAG、glucose/lactate gradient） | 腹腔液性質鑑別（敗血 vs 非敗血 vs 尿腹/膽汁） | 人醫腹水分析概念，獸醫已用 glucose/lactate 梯度 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| glucose/lactate 梯度在貓的可靠性 | 犬 glucose 梯度 >20 mg/dL 可靠；貓較不可靠（尤 lactate），細胞內細菌仍為最強證據 | Level III |
+| 確診敗血性腹膜炎的最佳手術時機 | 「越早越好」，延遲 >12h 死亡率升；無 RCT、多回顧性 | Level III |
+| 模稜兩可時探查性開腹 vs 續觀察 | 臨床惡化時「When in doubt, explore」優於等待 | Level IV |
+| 瀰漫性腹膜炎之初次關閉 vs 開放引流/VAC | 開放引流/負壓可能利於重度污染，但證據有限、各有併發症 | Level III |
+
+## 八、近期實證更新 (Recent Evidence Updates)
+
+### POCUS 分診標準化（AFAST/AFS）
+AFAST 四點掃描＋腹腔液評分（AFS 0-4）＋連續追蹤已成急診腹部標準（Lisciandro 2011）；連續 AFAST 比單次更能區分穩定 vs 進展中的出血/滲出。
+
+### 敗血性腹膜炎的床邊鑑別與其物種差異
+血-腹液 glucose 梯度 >20 mg/dL 對犬敗血性腹膜炎敏感、特異（Bonczynski 2003）；lactate 梯度 >2.0 mmol/L 為輔助（Levin 2004）。**貓的梯度可靠性較低**，細胞內細菌吞噬為最確切證據——勿單憑梯度排除貓敗血性腹膜炎。
+
+### 損傷控制與開放腹腔
+重度瀰漫性/污染性腹膜炎可採開放腹腔引流或負壓輔助關閉（VAC，Buote 2012），分階段沖洗、再評估源頭控制；需權衡蛋白/體液流失與護理負擔。
+
+### 源頭控制＋早期廣效抗生素
+比照人醫敗血症 bundle：確認外科腹部後不等更多檢查、6 小時內手術源頭控制＋早期廣效抗生素＋目標導向復甦，是降低死亡率的關鍵。`,
   clinical_pearl: '急性腹部最重要的臨床決策是「這隻動物需不需要手術？」而不是「確切的病因是什麼？」。實務技巧：腹腔穿刺只要取得 > 1 mL 液體就能送分析。葡萄糖差值（血液跟腹液差 > 20 mg/dL）跟乳酸差值（腹液比血液高 > 2.0 mmol/L）是區分敗血性跟非敗血性最可靠的床邊指標。穿刺液在 Wright 染色下看到退化嗜中性球（degenerate neutrophils）吞噬細菌，立刻通知外科。連續 AFAST 比單次 AFAST 有價值多了，1-2 小時後追蹤積液量變化可以區分穩定跟進展中。\n\n【急診金句】When in doubt, explore. 腹腔液分析結果模稜兩可但臨床持續惡化時，探查性開腹比等待安全。',
   common_mistakes: [
     '沒做腹腔穿刺就直接影像評估。簡單的穿刺液分析幾分鐘就能改變治療方向',
@@ -4567,9 +4784,10 @@ const contentAcuteAbdomen: NodeContent = {
   drug_api_links: ['Methadone', 'Fentanyl', 'Ampicillin-Sulbactam', 'Metronidazole', 'Enrofloxacin'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2023. Chapter 72: Acute Abdomen.', relevance: '急性腹部急診教科書' },
-    { type: 'journal', citation: 'Levin GM et al. Lactate as a diagnostic test for septic peritoneal effusions in dogs and cats. JAVMA. 2004;224(7):1137-1141.', relevance: '腹腔液乳酸值診斷敗血性腹膜炎' },
-    { type: 'journal', citation: 'Bonczynski JJ et al. Comparison of peritoneal fluid and peripheral blood pH, bicarbonate, glucose, and lactate concentration as a diagnostic tool for septic peritonitis in dogs and cats. Vet Surg. 2003;32(2):161-166.', relevance: '腹腔液 vs 血液葡萄糖/乳酸差值診斷敗血性腹膜炎' },
-    { type: 'guideline', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. JVECC. 2011;21(2):104-122.', relevance: 'AFAST/TFAST 急診超音波共識' },
+    { type: 'journal', citation: 'Levin GM, Bonczynski JJ, Ludwig LL, et al. Lactate as a diagnostic test for septic peritoneal effusions in dogs and cats. J Am Anim Hosp Assoc. 2004;40(5):364-371. doi:10.5326/0400364.', relevance: '腹腔液乳酸值診斷敗血性腹膜炎' },
+    { type: 'journal', citation: 'Bonczynski JJ, Ludwig LL, Barton LJ, et al. Comparison of peritoneal fluid and peripheral blood pH, bicarbonate, glucose, and lactate concentration as a diagnostic tool for septic peritonitis in dogs and cats. Vet Surg. 2003;32(2):161-166. doi:10.1053/jvet.2003.50005.', relevance: '血-腹液葡萄糖/乳酸梯度診斷敗血性腹膜炎' },
+    { type: 'journal', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. J Vet Emerg Crit Care. 2011;21(2):104-122. doi:10.1111/j.1476-4431.2011.00626.x.', relevance: 'AFAST/TFAST 急診超音波框架' },
+    { type: 'journal', citation: 'Buote NJ, Havig ME. The use of vacuum-assisted closure in the management of septic peritonitis in six dogs. J Am Anim Hosp Assoc. 2012;48(3):164-171. doi:10.5326/jaaha-ms-5755.', relevance: '負壓輔助關閉（VAC）用於犬敗血性腹膜炎的開放腹腔處置' },
   ],
   is_current: true,
   created_at: now,
@@ -4742,8 +4960,8 @@ const contentHypoglycemia: NodeContent = {
 const contentAddisonianCrisis: NodeContent = {
   id: 'CONTENT-ECC-L3-016',
   node_id: 'ECC-L3-016',
-  version: 1,
-  summary: '艾迪森危象（Addisonian Crisis）是腎上腺皮質功能不全（Hypoadrenocorticism）的急性失代償表現，為可致命的內分泌急診。典型電解質三聯徵為低鈉（< 140 mEq/L）、高鉀（> 5.5 mEq/L）、Na:K 比值 < 27:1。臨床表現包括低血壓休克、心搏過緩（高鉀致心律不整）、低體溫、低血糖。急救以 shock-dose 等張晶體液（0.9% NaCl）復甦為首要步驟。確診前可給 Dexamethasone 0.5-1 mg/kg IV（不干擾後續 ACTH 刺激試驗）。長期維持以 DOCP（Percorten-V）0.02 mL/kg IM q25d + Prednisone 為標準方案。',
+  version: 2,
+  summary: '艾迪森危象（Addisonian Crisis）是腎上腺皮質功能不全（Hypoadrenocorticism）的急性失代償表現，為可致命的內分泌急診。典型電解質三聯徵為低鈉（< 140 mEq/L）、高鉀（> 5.5 mEq/L）、Na:K 比值 < 27:1。臨床表現包括低血壓休克、心搏過緩（高鉀致心律不整）、低體溫、低血糖。急救以 shock-dose 等張晶體液（0.9% NaCl）復甦為首要步驟。確診前可給 Dexamethasone 0.5-1 mg/kg IV（不干擾後續 ACTH 刺激試驗）。長期維持以 DOCP（Percorten-V/Zycortal，25 mg/mL）2.2 mg/kg IM/SC q25d + Prednisone 為標準方案（近年實證支持較低起始劑量 ~1.5 mg/kg 並依電解質減量、延長間隔）。',
   learning_objectives: [
     '辨識艾迪森危象的電解質三聯徵及其心電圖表現',
     '說明 shock-dose crystalloid 復甦在艾迪森危象的給藥方案',
@@ -4759,6 +4977,7 @@ const contentAddisonianCrisis: NodeContent = {
     'ACTH 刺激試驗：基礎 cortisol + ACTH 注射後 1 小時 cortisol，兩者均 < 2 μg/dL 確診',
     '長期維持：DOCP 2.2 mg/kg IM q25d + Prednisone 0.1-0.2 mg/kg PO SID',
     '「偉大的偽裝者」（Great Pretender）：症狀非特異性，常被誤診為腎衰竭或胃腸炎',
+    '近期實證（Bates 2013、Jaffey 2017）：DOCP 可用較低起始劑量（~1.5 mg/kg）並依電解質減量、延長注射間隔（常 >30 天），降低飼主費用',
   ],
   body: `# 艾迪森危象 (Addisonian Crisis)
 
@@ -4850,7 +5069,38 @@ const contentAddisonianCrisis: NodeContent = {
 - 需要終身藥物治療和定期電解質監控
 - 危險期：初次就診未被識別 → 延誤治療
 
-[圖片:艾迪森危象急救流程圖。電解質確認 → 0.9% NaCl bolus → Dexamethasone → ACTH stim → 長期 DOCP]`,
+[圖片:艾迪森危象急救流程圖。電解質確認 → 0.9% NaCl bolus → Dexamethasone → ACTH stim → 長期 DOCP]
+
+## 五、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫應用 | 現況 |
+|---------|---------|------|
+| Addison 危象用 hydrocortisone 連續靜脈輸注 | 犬危象需同時補糖皮質＋鹽皮質活性，hydrocortisone CRI 為過渡選項（同時具兩種活性） | 人醫標準；獸醫部分專科採用，DOCP 仍為長期主力 |
+| 類固醇「壓力劑量／sick-day rules」 | Addison 犬遇手術/生病/寄宿前增加 prednisone 劑量 | 直接沿用，飼主衛教重點 |
+| 自體免疫多腺體症候群（APS） | 犬 Addison 可合併甲狀腺低下/糖尿病等免疫共病 | 犬「多內分泌腺自體免疫」概念逐漸受重視 |
+| 21-羥化酶抗體（人醫自體免疫 Addison 標記） | 犬免疫介導腎上腺破壞的血清標記 | 研究階段，尚未臨床常規 |
+
+## 六、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| DOCP 最佳起始劑量（2.2 vs ~1.5 mg/kg） | 證據支持較低起始＋個體化減量，但無大型 RCT 定論 | Level III |
+| 非典型 Addison 是否會進展為典型 | 部分犬日後出現電解質異常，追蹤策略未統一 | Level IV |
+| 確診前低劑量 ACTH stim（1-5 μg/kg）vs 標準劑量 | 低劑量可能足夠且省藥，cosyntropin 缺貨時尤其重要 | Level III |
+| Fludrocortisone vs DOCP 長期優劣 | DOCP 電解質穩定度通常較佳，但取得性/成本因地而異 | Level III |
+| 危象時鹽皮質補充的時機 | 多數靠 0.9% NaCl 復甦即可，DOCP 危象期何時給尚無統一 | Level IV |
+
+## 七、近期實證更新 (Recent Evidence Update)
+
+**DOCP「劑量往下調、間隔往後拉」是近十年最重要的實務轉變**
+傳統仿單劑量是 DOCP 2.2 mg/kg q25d，但多項研究（Bates 2013 較低起始劑量、Jaffey 2017 作用時間與個體化給藥間隔）顯示：很多犬用**更低劑量（常見起始 ~1.5 mg/kg）就能維持電解質正常，且作用時間常超過 30 天**。實務上可依 day 10-14 與 day 25-30 的電解質回診結果，**逐步減量並延長注射間隔**——這對長期治療的飼主費用負擔影響很大，是現代 Addison 管理的核心技巧，別一直停在 2.2 mg/kg q25d 不動。
+- 監測節奏：每次調整後查 day 10-14（接近谷值前）與 day 25-30（下次注射前）電解質；目標＝用最低有效劑量維持 Na/K 正常。
+
+**診斷工具的演進（Guzmán Ramos et al 2022 診斷回顧）**
+- 基礎（resting）cortisol > 2 μg/dL 因高陰性預測值可實質**排除** Addison，是很好的「篩掉」工具；但 < 2 μg/dL **不能單獨確診**，仍需 ACTH 刺激試驗。
+- 內源性 ACTH 濃度與 cortisol:ACTH 比值有助區分原發（ACTH 高）vs 繼發（ACTH 低），並在 cosyntropin 缺貨時提供替代診斷路徑；低劑量 ACTH stim（1-5 μg/kg）亦可省藥。
+
+【台灣落地】DOCP（Percorten-V/Zycortal）取得與冷鏈在台灣部分地區受限，Fludrocortisone（口服）是常見替代；但 Fludrocortisone 較易有多渴多尿與劑量飄移，長期電解質穩定度通常不如 DOCP。能取得 DOCP 時，搭配「減量＋延長間隔」對飼主最友善。`,
   clinical_pearl: '艾迪森的經典口訣：「年輕母犬加反覆嘔吐腹瀉加低鈉高鉀加腎前性 Azotemia」就是 Addison until proven otherwise。\n\n急診的黃金法則：看到 Na:K < 27:1，腦中要響 Addison 警鈴。但要注意，大約 10-30% 的 Addison 犬是「atypical」型（只有 cortisol 缺乏，電解質正常），這種更容易漏。\n\n類固醇選擇的實務重點：Dexamethasone 不會在 ACTH stim test 產生交叉反應（不像 Hydrocortisone 或 Prednisolone），所以可以先治療後確診。千萬不要因為「想先確診」而延誤治療！\n\n台灣臨床注意：DOCP（Percorten-V）在台灣取得可能受限，部分獸醫院用 Fludrocortisone（Florinef）替代。',
   common_mistakes: [
     '腎前性 Azotemia 被誤判為原發性腎衰竭而給含鉀輸液。Addison 犬的 BUN/Cre 升高是因為低灌流，輸 0.9% NaCl 就會改善',
@@ -4896,9 +5146,12 @@ const contentAddisonianCrisis: NodeContent = {
   ],
   drug_api_links: ['Dexamethasone', 'DOCP', 'Fludrocortisone', 'Prednisone', 'Calcium gluconate'],
   references: [
+    { type: 'journal', citation: 'Guzmán Ramos PJ, Bennaim M, Shiel RE, Mooney CT. "Diagnosis of canine spontaneous hypoadrenocorticism." Canine Med Genet. 2022;9(1):6. doi:10.1186/s40575-022-00119-4', relevance: '近期診斷回顧：basal cortisol 篩除、ACTH 比值、低劑量 ACTH stim' },
+    { type: 'journal', citation: 'Jaffey JA, Nurre P, Cannon AB, DeClue AE. "Desoxycorticosterone Pivalate Duration of Action and Individualized Dosing Intervals in Dogs with Primary Hypoadrenocorticism." J Vet Intern Med. 2017;31(6):1649-1657. doi:10.1111/jvim.14828', relevance: '近期：DOCP 作用時間與個體化給藥間隔（減量/延長間隔實證）' },
+    { type: 'journal', citation: 'Bates JA, Shott S, Schall WD. "Lower initial dose desoxycorticosterone pivalate for treatment of canine primary hypoadrenocorticism." Aust Vet J. 2013;91(3):77-82. doi:10.1111/avj.12019', relevance: '較低起始 DOCP 劑量有效性' },
+    { type: 'journal', citation: 'Thompson AL, Scott-Moncrieff JC, Anderson JD. "Comparison of classic hypoadrenocorticism with glucocorticoid-deficient hypoadrenocorticism in dogs." J Am Vet Med Assoc. 2007;230(8):1190-1194. doi:10.2460/javma.230.8.1190', relevance: 'Typical vs Atypical Addison 比較研究（修正 v1 誤標 JVECC）' },
+    { type: 'journal', citation: 'Klein SC, Peterson ME. "Canine hypoadrenocorticism: Part I." Can Vet J. 2010;51(1):63-69.', relevance: '犬 Addison disease 完整綜述' },
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Adrenal Emergencies.', relevance: 'ECC 核心教材腎上腺急診章節' },
-    { type: 'journal', citation: 'Klein SC, Peterson ME. Canine hypoadrenocorticism: Part I & II. Can Vet J. 2010;51(1):63-69 & 51(2):179-184.', relevance: '犬 Addison disease 完整綜述（兩部分）' },
-    { type: 'journal', citation: 'Thompson AL, Scott-Moncrieff JC, Anderson JD. Comparison of classic hypoadrenocorticism with glucocorticoid-deficient hypoadrenocorticism in dogs. JVECC. 2007;17(2):197-203.', relevance: 'Typical vs Atypical Addison 比較研究' },
     { type: 'guideline', citation: 'Lathan P. Hypoadrenocorticism. In: Feldman EC, et al., eds. Canine & Feline Endocrinology, 4th ed. Elsevier, 2015:485-520.', relevance: '犬貓內分泌教科書 Addison 章節' },
   ],
   is_current: true,

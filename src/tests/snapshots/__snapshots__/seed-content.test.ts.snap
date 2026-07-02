@@ -43,7 +43,7 @@ exports[`seed-content snapshot: 核心節點 contents 鎖定 > CARDIO-L4-001 的
   ],
   "learning_objectives_count": 4,
   "node_id": "CARDIO-L4-001",
-  "references_count": 3,
+  "references_count": 5,
   "summary": "聽診是獸醫做心臟評估時最基本的工具，也是看門診一定要做的動作。聽得熟之後，S1、S2 是不是正常，有沒有 S3、S4 跑出來，雜音落在哪、節律穩不穩，幾秒鐘大概就有底。後面要不要安排心超、X 光，多半就靠這一手判斷。",
 }
 `;
@@ -71,7 +71,7 @@ exports[`seed-content snapshot: 核心節點 contents 鎖定 > IM-L3-001 的核�
   ],
   "learning_objectives_count": 5,
   "node_id": "IM-L3-001",
-  "references_count": 4,
+  "references_count": 6,
   "summary": "犬腎上腺皮質機能亢進（Cushing 症候群）是犬最常見的內分泌疾病之一，原因說起來簡單，就是身體長期被太多 cortisol 泡著。其中 80-85% 來自腦下垂體（PDH），15-20% 來自腎上腺腫瘤（ADH）。ACVIM 共識建議篩檢用 LDDST，治療之後追蹤再回去用 ACTH stimulation test。藥物選擇上，Trilostane 是現在的首選。",
 }
 `;
@@ -129,7 +129,7 @@ exports[`seed-content snapshot: 核心節點 contents 鎖定 > SURG-L5-006 的�
 exports[`seed-content snapshot: 結構性指標 > node_type 分佈穩定 1`] = `
 {
   "concept": 36,
-  "diagnostic": 43,
+  "diagnostic": 45,
   "disease": 127,
   "mechanism": 34,
   "procedure": 5,
@@ -139,11 +139,11 @@ exports[`seed-content snapshot: 結構性指標 > node_type 分佈穩定 1`] = `
 
 exports[`seed-content snapshot: 結構性指標 > relation_type 分佈穩定（邊類型） 1`] = `
 {
-  "builds_on": 56,
+  "builds_on": 58,
   "clinical_apply": 439,
   "complication": 76,
   "cross_specialty": 5,
-  "differential": 54,
+  "differential": 56,
   "drug_related": 21,
   "prerequisite": 196,
   "same_system": 16,
@@ -156,7 +156,7 @@ exports[`seed-content snapshot: 結構性指標 > 每 layer 節點數量穩定 1
   "L1": 28,
   "L2": 33,
   "L3": 130,
-  "L4": 43,
+  "L4": 45,
   "L5": 39,
 }
 `;
@@ -167,7 +167,7 @@ exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分
   "CPATH": 22,
   "DERM": 35,
   "ECC": 33,
-  "IM": 55,
+  "IM": 57,
   "NEURO": 35,
   "ONCO": 34,
   "SURG": 39,
@@ -176,9 +176,9 @@ exports[`seed-content snapshot: 結構性指標 > 每個專科的節點數量分
 
 exports[`seed-content snapshot: 結構性指標 > 總節點數 + 邊數 + 路徑數 維持穩定 1`] = `
 {
-  "contents": 281,
-  "edges": 863,
-  "nodes": 281,
+  "contents": 283,
+  "edges": 867,
+  "nodes": 283,
   "paths": 47,
   "questions": 2001,
 }

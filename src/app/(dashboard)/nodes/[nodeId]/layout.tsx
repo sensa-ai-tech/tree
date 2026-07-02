@@ -34,6 +34,9 @@ export async function generateMetadata({ params }: NodeLayoutProps): Promise<Met
   return {
     title,
     description,
+    alternates: {
+      canonical: `/nodes/${nodeId}`,
+    },
     openGraph: {
       title: `${title} | VetKnowledgeTree`,
       description,
