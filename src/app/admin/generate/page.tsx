@@ -105,6 +105,12 @@ export default function AdminGeneratePage() {
 
   return (
     <div className="space-y-6">
+      <div
+        role="note"
+        className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800"
+      >
+        示範模式 Demo — 此頁目前為前端示範，尚未接上 AI 生成後端；產出的骨架為範例、不會寫入資料庫。
+      </div>
       <div className="flex items-center gap-2">
         <Sparkles className="h-6 w-6 text-indigo-600" />
         <h1 className="text-2xl font-bold text-gray-900">AI 生成管理</h1>

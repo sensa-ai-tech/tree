@@ -29,7 +29,7 @@
 | 內容渲染 | react-markdown + remark-gfm + rehype-raw + **rehype-sanitize** + DOMPurify + Mermaid（strict） |
 | 資料庫 | Supabase（Postgres + Auth + RLS）— **上線才接；本機用 seed** |
 | AI | `@anthropic-ai/sdk`（內容生成管線，含 mock 模式） |
-| 測試 | Vitest（832 測試）+ Testing Library + fast-check（property）+ MSW；Playwright、Stryker 已備 |
+| 測試 | Vitest（847 測試）+ Testing Library + fast-check（property）+ MSW；Playwright、Stryker 已備 |
 | 部署 | Vercel + Upstash Redis（rate-limit）+ 選配 Sentry |
 
 ---
@@ -108,7 +108,7 @@ npm run verify:citations # 引用完整性
 
 ## 8. 上線接線（摘要，完整見 `DEPLOY-CHECKLIST.md`）
 
-1. **Supabase**：建 project、跑 migrations、啟用 custom access token hook + `handle_new_user` trigger、設 URL 白名單；**接上 SSR session（實作 `updateSession` + cookie-aware server client）並退役前端 mock auth store**。
+1. **Supabase**：建 project、跑 migrations、啟用 custom access token hook + `handle_new_user` trigger、設 URL 白名單。✅ **程式面已接線（2026-07-03）**：`updateSession` + cookie-aware `createServerClient` 已實作、`auth-store` 雙模式（設 env→真 Auth／未設→mock），故上線只需設 Supabase 專案端 + 環境變數，不需再改 code。
 2. **環境變數**：`VKT_ADMIN_PASSWORD` 用 `sha256:` 格式、`VKT_JWT_SECRET`(≥32)、`ADMIN_API_KEY`；確認值不含換行。
 3. **Upstash Redis**：rate-limit 跨 instance 共享。
 4. **（選）Sentry**：錯誤上報。
@@ -120,7 +120,7 @@ npm run verify:citations # 引用完整性
 ## 9. 已知限制與注意事項
 
 - **圖譜箭頭**：headless 預覽無法繪製 React Flow 的 SVG 邊，但資料層 727 條邊正常、arrowhead marker 已註冊 → 需真桌面瀏覽器確認（DEPLOY-CHECKLIST #12）。
-- **後台動作頁為 Demo**：`/admin/generate`（0 後端呼叫）、`/admin/review`（永久空）、`/admin/analytics`（假數據，總節點數顯示 342≠283）。上線前決定接後端或標示 Demo。
+- **後台動作頁為 Demo（已標示）**：`/admin/generate`（0 後端呼叫）、`/admin/review`（永久空）、`/admin/analytics`（活躍/完成數仍為示範值）——三頁均已加「示範資料 Demo」橫幅；analytics 的「總節點數」已改讀真實 `TOTAL_KNOWLEDGE_NODES`（283）。上線前若要真正可用，仍需把 generate/review 接上 `/api/generate/*` + 持久層。
 - **`/admin/analytics` dev loading hang**：間歇性、dev 專屬（production build 不受影響）；最簡解為移除 `admin/loading.tsx`。
 - **Next.js 16**：`middleware` 慣例已 deprecated（提示改 `proxy`），build 有警告但尚不阻斷。
 
@@ -132,7 +132,8 @@ npm run verify:citations # 引用完整性
 |---|---|
 | `docs/QUICKSTART.md` | 實測者 10 分鐘上手 |
 | `docs/BLUEPRINT.md`（本檔） | 工程藍圖 / 系統總覽 |
-| `docs/PRE-LAUNCH-ASSESSMENT-2026-07-02.md` | 上線前總體檢評測 + 競爭評估表 |
+| `docs/PRE-LAUNCH-RETEST-2026-07-04.md` | 第二輪複測（50 代理對抗式）+ 刷新競爭表 |
+| `docs/PRE-LAUNCH-ASSESSMENT-2026-07-02.md` | 首輪上線前總體檢 + 競爭評估表 |
 | `docs/CONTENT-STANDARD-V2.md` | v2 內容 rubric |
 | `docs/ADD-NODE-SOP.md` | 新增節點流程 |
 | `docs/DEPLOY-CHECKLIST.md` | 上線接線清單 |

@@ -205,12 +205,12 @@ async function upsertBatch<T extends Record<string, unknown>>(
   let inserted = 0;
   for (let i = 0; i < data.length; i += CHUNK) {
     const chunk = data.slice(i, i + CHUNK);
-    const { error } = await supabase.from(table).upsert(chunk, { onConflict: 'id' });
+    const { error } = await supabase.from(table).upsert(chunk as never, { onConflict: 'id' });
     if (error) {
       console.error(`  ERROR in ${label} chunk ${i}-${i + chunk.length}:`, error.message);
       // Try one by one to find the problematic record
       for (const item of chunk) {
-        const { error: singleErr } = await supabase.from(table).upsert(item, { onConflict: 'id' });
+        const { error: singleErr } = await supabase.from(table).upsert(item as never, { onConflict: 'id' });
         if (singleErr) {
           console.error(`    Failed record:`, (item as Record<string, unknown>).id, singleErr.message);
         } else {

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, GitBranch } from 'lucide-react';
 import type { KnowledgeNode, KnowledgeEdge } from '@/types/knowledge';
-import { LAYER_COLORS, type Layer } from '@/types/knowledge';
+import { LAYER_COLORS } from '@/types/knowledge';
 import { cn } from '@/lib/utils/cn';
 
 const EDGE_TYPE_LABELS: Record<string, string> = {
@@ -72,7 +72,7 @@ export function RelatedNodes({ currentNodeId, edges, allNodes, className }: Rela
 
       <div className="grid gap-2 sm:grid-cols-2">
         {relatedItems.slice(0, 6).map(({ node, edgeType, direction }) => {
-          const layerColor = LAYER_COLORS[node.layer as Layer] ?? '#6b7280';
+          const layerColor = LAYER_COLORS[node.layer] ?? '#6b7280';
           return (
             <Link
               key={node.id}

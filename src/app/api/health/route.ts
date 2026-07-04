@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createServerClient } from '@/lib/supabase/server';
+import { createAnonServerClient } from '@/lib/supabase/server';
 
 /**
  * Health check endpoint，給 uptime 監控與 Vercel deployment 自動偵測用。
@@ -29,7 +29,7 @@ export async function GET() {
   if (hasSupabase) {
     const t0 = Date.now();
     try {
-      const client = createServerClient();
+      const client = createAnonServerClient();
       const { error } = await client.from('knowledge_nodes').select('id').limit(1);
       const latencyMs = Date.now() - t0;
       if (error) {

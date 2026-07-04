@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient as createSSRBrowserClient } from '@supabase/ssr';
 import type { Database } from './types';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -9,6 +10,8 @@ export const isMockMode = !supabaseUrl || !supabaseAnonKey;
 function createMockClient() {
   const handler: ProxyHandler<Record<string, unknown>> = {
     get(_target, prop) {
+      // 真實 Supabase client 並非 thenable；排除 'then' 避免未來被 await 誤判 hang。
+      if (prop === 'then') return undefined;
       if (prop === 'from') {
         return () =>
           new Proxy({} as Record<string, unknown>, {
@@ -47,9 +50,14 @@ export function createBrowserClient() {
   if (isMockMode) {
     return createMockClient();
   }
-  // Live createClient path requires a real NEXT_PUBLIC_SUPABASE_URL; mock-mode test env can't exercise it.
+  // Live SSR path requires a real NEXT_PUBLIC_SUPABASE_URL; mock-mode test env can't exercise it.
+  // @supabase/ssr 的 browser client 把 session 存在 cookie（非 localStorage），
+  // 伺服器端（middleware / route handler）才讀得到 session（SUPABASE-AUTH-SPEC §5）。
   /* istanbul ignore next */
-  return createClient<Database>(supabaseUrl!, supabaseAnonKey!);
+  return createSSRBrowserClient<Database>(supabaseUrl!, supabaseAnonKey!, {
+    // retest LOW: production 下 session cookie 帶 Secure 旗標。
+    cookieOptions: { secure: process.env.NODE_ENV === 'production' },
+  });
 }
 
 let browserClient: ReturnType<typeof createBrowserClient> | null = null;

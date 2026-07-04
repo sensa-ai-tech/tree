@@ -35,7 +35,7 @@ export async function DELETE(request: NextRequest): Promise<NextResponse> {
     );
   }
 
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
   const {
     data: { user },
     error: authError,
@@ -46,6 +46,22 @@ export async function DELETE(request: NextRequest): Promise<NextResponse> {
       { error: 'Unauthorized' },
       { status: 401 }
     );
+  }
+
+  // retest MEDIUM: 真實部署設了 URL+anon 但缺 SUPABASE_SERVICE_ROLE_KEY 時，
+  // createServiceRoleClient() 會回 mock proxy，其 .from().delete().eq() 無法串接 →
+  // 未捕捉 TypeError 讓刪除流程炸成 500。此處明確回 503（可用性訊息、不洩內部）。
+  /* istanbul ignore next -- real-Supabase-without-service-key path; mock-mode CI 走 401 早退 */
+  {
+    const hasSupabaseEnv =
+      !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (hasSupabaseEnv && !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      console.error('[account-delete] SUPABASE_SERVICE_ROLE_KEY missing in a real deployment');
+      return NextResponse.json(
+        { error: 'account deletion temporarily unavailable; please contact support' },
+        { status: 503 }
+      );
+    }
   }
 
   const userId = user.id;

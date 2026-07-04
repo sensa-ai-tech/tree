@@ -1,7 +1,13 @@
 // @vitest-environment node
 import { NextRequest, NextResponse } from 'next/server';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { withAuth, withRateLimit, _resetDegradedFallback } from '@/lib/api/middleware';
+import {
+  withAuth,
+  withRateLimit,
+  _resetDegradedFallback,
+  enforceJsonBodyLimit,
+  MAX_JSON_BODY_BYTES,
+} from '@/lib/api/middleware';
 import {
   InMemoryRateLimitStore,
   getRateLimitStore,
@@ -21,6 +27,46 @@ function makeRequest(
 async function readJson(response: NextResponse): Promise<unknown> {
   return JSON.parse(await response.text());
 }
+
+describe('enforceJsonBodyLimit', () => {
+  // NOTE: `content-length` is a fetch-spec *forbidden* request header, so a
+  // JS-constructed NextRequest silently drops it — a real request can't carry it
+  // in tests. In production the HTTP layer supplies content-length, so the guard
+  // works there; here we drive the guard's logic with a minimal header-bearing stub.
+  function reqWithLength(len?: string): NextRequest {
+    return {
+      headers: {
+        get: (k: string) => (k.toLowerCase() === 'content-length' ? len ?? null : null),
+      },
+    } as unknown as NextRequest;
+  }
+
+  it('returns null when there is no content-length header (treated as 0)', () => {
+    expect(enforceJsonBodyLimit(reqWithLength())).toBeNull();
+  });
+
+  it('returns null when content-length equals the limit (boundary, inclusive)', () => {
+    expect(enforceJsonBodyLimit(reqWithLength(String(MAX_JSON_BODY_BYTES)))).toBeNull();
+  });
+
+  it('returns a 413 response when content-length exceeds the limit by one byte', async () => {
+    const res = enforceJsonBodyLimit(reqWithLength(String(MAX_JSON_BODY_BYTES + 1)));
+    expect(res).not.toBeNull();
+    expect(res!.status).toBe(413);
+    expect(await readJson(res!)).toMatchObject({ error: 'Request body too large' });
+  });
+
+  it('honors a custom max argument on both sides of the boundary', () => {
+    expect(enforceJsonBodyLimit(reqWithLength('100'), 50)).not.toBeNull();
+    expect(enforceJsonBodyLimit(reqWithLength('100'), 200)).toBeNull();
+  });
+
+  it('treats a non-numeric content-length as 0 (documented fail-open → allowed)', () => {
+    // Number('not-a-number' ?? 0) === NaN; NaN > max is false → null. Pins the
+    // fail-open semantics the retest flagged as unspecified.
+    expect(enforceJsonBodyLimit(reqWithLength('not-a-number'))).toBeNull();
+  });
+});
 
 describe('withAuth', () => {
   const originalEnv = { ...process.env };

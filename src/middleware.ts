@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
+import { updateSession } from '@/lib/supabase/middleware';
 
 /**
  * Middleware — Admin auth + CSP nonce + Supabase session
@@ -54,6 +55,11 @@ export async function middleware(request: NextRequest) {
   const response = NextResponse.next({
     request: { headers: requestHeaders },
   });
+
+  // P0-1: Supabase session 刷新（SUPABASE-AUTH-SPEC §5）。
+  // 把本 middleware 的 response 傳入，刷新後的 session cookie 直接綁在同一個
+  // response 上（避免雙 response 合併掉 header）。mock 模式為 no-op。
+  await updateSession(request, response);
 
   // SEC-R2-002: report-uri is deprecated; Chrome M96+ prefers Reporting API.
   // Advertise both Report-To (legacy Reporting API) and Reporting-Endpoints (current spec)

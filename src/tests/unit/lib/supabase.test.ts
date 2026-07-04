@@ -7,6 +7,17 @@
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
+// P0-1: 攔截 @supabase/ssr — live-mode 測試不可打真網路。
+// mock-mode 測試不受影響（mock 路徑從不呼叫 SSR client）。
+const { mockGetUser } = vi.hoisted(() => ({
+  mockGetUser: vi.fn(),
+}));
+
+vi.mock('@supabase/ssr', () => ({
+  createServerClient: vi.fn(() => ({ auth: { getUser: mockGetUser } })),
+  createBrowserClient: vi.fn(() => ({})),
+}));
+
 // ─── client.ts ───────────────────────────────────────────────────────────────
 
 describe('lib/supabase/client — mock mode', () => {
@@ -99,7 +110,7 @@ describe('lib/supabase/client — mock mode', () => {
 describe('lib/supabase/server — mock mode', () => {
   it('createServerClient() returns an object in mock mode', async () => {
     const { createServerClient } = await import('@/lib/supabase/server');
-    const client = createServerClient();
+    const client = await createServerClient();
     expect(client).toBeDefined();
   });
 
@@ -109,23 +120,36 @@ describe('lib/supabase/server — mock mode', () => {
     expect(client).toBeDefined();
   });
 
+  it('createAnonServerClient() returns an object in mock mode', async () => {
+    const { createAnonServerClient } = await import('@/lib/supabase/server');
+    const client = createAnonServerClient();
+    expect(client).toBeDefined();
+  });
+
+  it('anon server mock client from() query resolves with expected shape', async () => {
+    const { createAnonServerClient } = await import('@/lib/supabase/server');
+    const client = createAnonServerClient();
+    const result = await (client as any).from('nodes').select();
+    expect(result).toMatchObject({ data: [], error: null, count: 0 });
+  });
+
   it('server mock client from() query resolves with expected shape', async () => {
     const { createServerClient } = await import('@/lib/supabase/server');
-    const client = createServerClient();
+    const client = await createServerClient();
     const result = await (client as any).from('nodes').select();
     expect(result).toMatchObject({ data: [], error: null, count: 0 });
   });
 
   it('server mock client auth.getSession() resolves', async () => {
     const { createServerClient } = await import('@/lib/supabase/server');
-    const client = createServerClient();
+    const client = await createServerClient();
     const { data } = await (client as any).auth.getSession();
     expect(data.session).toBeNull();
   });
 
   it('server mock client auth.getUser() resolves', async () => {
     const { createServerClient } = await import('@/lib/supabase/server');
-    const client = createServerClient();
+    const client = await createServerClient();
     const { data } = await (client as any).auth.getUser();
     expect(data.user).toBeNull();
   });
@@ -140,7 +164,7 @@ describe('lib/supabase/server — mock mode', () => {
   it('server mock client unknown property returns { data: null, error: null }', async () => {
     // covers server.ts line 30: default proxy handler for properties other than 'from' or 'auth'
     const { createServerClient } = await import('@/lib/supabase/server');
-    const client = createServerClient();
+    const client = await createServerClient();
     const result = await (client as any).unknownProp();
     expect(result).toMatchObject({ data: null, error: null });
   });
@@ -167,21 +191,40 @@ describe('lib/supabase/middleware — live mode updateSession', () => {
   beforeEach(() => {
     vi.resetModules();
     vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://test-project.supabase.co');
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'test-anon-key');
+    mockGetUser.mockReset();
+    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
   });
 
   afterEach(() => {
     vi.unstubAllEnvs();
   });
 
-  it('updateSession() reaches line 16 (non-mock return) when SUPABASE_URL is set', async () => {
-    // MOCK_MODE = !process.env.NEXT_PUBLIC_SUPABASE_URL = false → skips mock early-return
-    // → covers middleware.ts line 16: `return response`
+  it('updateSession() builds an SSR client and calls getUser() to refresh the session', async () => {
+    // MOCK_MODE = false（URL + anon key 均設）→ 走 live 路徑：
+    // createSSRServerClient（已被 vi.mock 攔截）→ await supabase.auth.getUser()
     const { updateSession } = await import('@/lib/supabase/middleware');
     const mockRequest = {
       headers: new Headers({ 'x-test': '1' }),
-    } as Parameters<typeof updateSession>[0];
+      cookies: { getAll: () => [] },
+    } as unknown as Parameters<typeof updateSession>[0];
+
     const response = await updateSession(mockRequest);
     expect(response).toBeDefined();
-    expect(typeof response).toBe('object');
+    expect(mockGetUser).toHaveBeenCalledTimes(1);
+  });
+
+  it('updateSession() returns the caller-provided response object (cookie binding target)', async () => {
+    const { updateSession } = await import('@/lib/supabase/middleware');
+    const { NextResponse } = await import('next/server');
+    const mockRequest = {
+      headers: new Headers(),
+      cookies: { getAll: () => [] },
+    } as unknown as Parameters<typeof updateSession>[0];
+    const provided = NextResponse.next();
+
+    const response = await updateSession(mockRequest, provided);
+    // root middleware 依賴這個不變式：回傳的必須是同一個 response 物件
+    expect(response).toBe(provided);
   });
 });

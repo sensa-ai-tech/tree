@@ -160,28 +160,43 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
       </Card>
 
       {/* Progress */}
-      <div className="flex items-center gap-1 overflow-x-auto pb-2">
-        {caseData.steps.map((s, i) => (
-          <div
+      <ol className="flex items-center gap-1 overflow-x-auto pb-2" aria-label="病例挑戰進度">
+        {caseData.steps.map((s, i) => {
+          const isCurrent = i === currentStep;
+          const isDone = stepResults.has(i);
+          const isCorrect = isDone && stepResults.get(i);
+          const stateLabel = isCurrent
+            ? '（目前）'
+            : isCorrect
+              ? '（已答對）'
+              : isDone
+                ? '（已答錯）'
+                : '（未開始）';
+          const typeLabel = STEP_TYPE_LABELS[s.step_type] ?? s.step_type;
+          return (
+          <li
             key={s.step_number}
+            aria-current={isCurrent ? 'step' : undefined}
+            aria-label={`步驟 ${s.step_number} ${typeLabel}${stateLabel}`}
             className={`flex items-center gap-1 text-xs whitespace-nowrap ${
-              i === currentStep ? 'text-indigo-600 font-semibold' :
-              stepResults.has(i) ? (stepResults.get(i) ? 'text-green-600' : 'text-red-500') :
+              isCurrent ? 'text-indigo-600 font-semibold' :
+              isDone ? (isCorrect ? 'text-green-600' : 'text-red-500') :
               'text-gray-400'
             }`}
           >
-            <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium ${
-              i === currentStep ? 'bg-indigo-100 text-indigo-700' :
-              stepResults.has(i) ? (stepResults.get(i) ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700') :
+            <span aria-hidden="true" className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium ${
+              isCurrent ? 'bg-indigo-100 text-indigo-700' :
+              isDone ? (isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700') :
               'bg-gray-100 text-gray-500'
             }`}>
-              {s.step_number}
+              {isCorrect ? '✓' : isDone ? '✗' : s.step_number}
             </span>
-            <span className="hidden sm:inline">{STEP_TYPE_LABELS[s.step_type] ?? s.step_type}</span>
-            {i < totalSteps - 1 && <ChevronRight className="h-3 w-3 text-gray-300 mx-1" />}
-          </div>
-        ))}
-      </div>
+            <span className="hidden sm:inline" aria-hidden="true">{typeLabel}</span>
+            {i < totalSteps - 1 && <ChevronRight className="h-3 w-3 text-gray-300 mx-1" aria-hidden="true" />}
+          </li>
+          );
+        })}
+      </ol>
 
       {/* Current Step */}
       {step && (

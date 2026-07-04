@@ -16,7 +16,9 @@
 
 ## 1. 🔴 必做：Supabase 正式專案 + 真實 Auth
 
-> 目前 `auth-store` 是 mock（前端決定 role）。上線必須換成真實 Supabase Auth。
+> ✅ **程式面已接線（2026-07-03）**：`auth-store` 改為雙模式——偵測到 `NEXT_PUBLIC_SUPABASE_URL` + `ANON_KEY` 就走真實 `supabase.auth.signInWithPassword`（role 只認 JWT `app_metadata.role`，前端不再決定），沒設則退回本機 mock。`middleware.ts` 已呼叫 `updateSession` 刷新 session cookie；`/api/account` 用 cookie-aware `createServerClient`、`/api/health` 用不綁 cookie 的 `createAnonServerClient`。已新增 `@supabase/ssr` 依賴（`supabase-js` 隨之升到 2.110，仍在 `^2.95.3` 範圍內）。
+>
+> **因此以下純粹是 Supabase 專案端 + 環境變數設定，不需再改任何 app code。** 設了 env → 自動切真 Auth；沒設 → 維持 mock。
 
 - [ ] supabase.com 建 project
 - [ ] SQL Editor 跑 `supabase/migrations/001_initial_schema.sql`
@@ -46,6 +48,20 @@
 - [ ] Vercel Dashboard → 確認所有環境變數值**不含換行 `\n`**（`vercel env pull` 曾寫入損壞值）
 - [ ] `VKT_ADMIN_PASSWORD` 改成 `sha256:<雜湊>` 格式（production 拒絕明文；產生：`node -e "console.log('sha256:'+require('crypto').createHash('sha256').update('你的密碼').digest('hex'))"`）
 - [ ] 確認 `VKT_JWT_SECRET`（≥32 字元）、`ADMIN_API_KEY` 已設
+
+---
+
+## 3.5 🔴 必做：金鑰輪替（本機 .env.local 已外顯 live secrets）
+
+> 本機 `.env.local` 目前含真實 live secrets（Anthropic API key、Supabase service-role key、admin 密碼、JWT secret、Vercel OIDC token）。已 gitignore、未進版控，但上線前一律輪替，且勿在任何測試指引／訊息外流。
+
+- [ ] Anthropic Console 重簽 `ANTHROPIC_API_KEY`，撤銷舊 key
+- [ ] Supabase Dashboard → Settings → API 重簽 `service_role` key（`SUPABASE_SERVICE_ROLE_KEY`）；anon key 如曾外流一併輪替
+- [ ] `VKT_ADMIN_PASSWORD` 改新密碼並轉 `sha256:` 格式（見 §3）
+- [ ] `VKT_JWT_SECRET` 重新產生 ≥32 字元：`node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"`
+- [ ] `ADMIN_API_KEY` 重新產生
+- [ ] 全部更新到 Vercel 環境變數 → redeploy；本機 `.env.local` 同步新值
+- **驗收**：用舊 key 呼叫 API 應被拒；新 key 正常
 
 ---
 

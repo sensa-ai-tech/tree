@@ -49,6 +49,12 @@ export default function AdminReviewPage() {
 
   return (
     <div className="space-y-6">
+      <div
+        role="note"
+        className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800"
+      >
+        示範模式 Demo — 審核佇列尚未接上資料來源，目前為空；核准／退回操作僅暫存於前端、不會持久化。
+      </div>
       <div className="flex items-center gap-2">
         <ClipboardCheck className="h-6 w-6 text-indigo-600" />
         <h1 className="text-2xl font-bold text-gray-900">內容審核</h1>

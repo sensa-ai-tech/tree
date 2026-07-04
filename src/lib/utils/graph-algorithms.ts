@@ -13,7 +13,6 @@ function filterDependencyEdges(edges: KnowledgeEdge[]): KnowledgeEdge[] {
     // Filter at the source + warn in dev so authoring CI surfaces the bad data.
     if (e.source_node_id === e.target_node_id) {
       if (process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
         console.warn(
           `[graph-algorithms] Dropped self-loop edge ${e.id} on node ${e.source_node_id}`
         );
