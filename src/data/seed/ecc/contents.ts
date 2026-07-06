@@ -4317,7 +4317,7 @@ HBC 犬整體存活率大約 75-85%。ATT 評分 < 5 分存活率 > 90%；≥ 5 
 const contentRespiratoryDistress: NodeContent = {
   id: 'CONTENT-ECC-L3-013',
   node_id: 'ECC-L3-013',
-  version: 1,
+  version: 2,
   summary: '急性呼吸窘迫是急診最常見且最危急的主訴之一，需在數分鐘內判斷解剖定位並啟動治療。依氣道解剖分為四大類：上呼吸道（喉麻痺、BOAS、異物）、下呼吸道（氣喘、肺炎）、肺實質（肺水腫、ARDS、肺挫傷）與胸膜腔（積液、氣胸）。氧氣支持方式依嚴重度選擇（flow-by、鼻導管、氧氣籠），嚴重呼吸困難患者鎮靜首選 Butorphanol ± Acepromazine（低劑量）。緊急氣切適用於上呼吸道完全阻塞。台灣短頭種犬（法國鬥牛犬、英國鬥牛犬、巴哥）飼養量近年大幅增加，BOAS 相關上呼吸道阻塞為本土犬呼吸急診的重要病因；台灣高溫多濕氣候使短頭種犬在夏季更易發生呼吸窘迫，貓氣喘在本土盛行率亦偏高。',
   learning_objectives: [
     '依呼吸型態與聽診快速定位呼吸困難的解剖層級',
@@ -4327,13 +4327,13 @@ const contentRespiratoryDistress: NodeContent = {
     '列出緊急氣管切開術的適應症與基本步驟',
   ],
   key_points: [
-    '呼吸困難解剖定位：吸氣性喘鳴（stridor）= 上呼吸道；呼氣性喘鳴（wheeze）= 下呼吸道；快淺呼吸 = 肺實質/胸膜腔',
+    '呼吸困難解剖定位：吸氣性喘鳴（stridor 喉/上氣管、stertor 鼻咽）= 上呼吸道；呼氣性哮鳴（wheeze）= 下呼吸道；快淺（限制型）= 肺實質；胸膜腔則以「反常/不同步呼吸＋肺音減弱」為指標（非單純快淺，Sigrist 2011）',
     '上呼吸道阻塞：犬喉麻痺（老年 Labrador）、BOAS（短頭種）、喉/氣管異物、喉水腫',
     '下呼吸道：貓氣喘（呼氣費力 + wheeze）、犬慢性支氣管炎、感染性肺炎',
     '肺實質：心因性肺水腫（左心衰竭）、非心因性肺水腫（ARDS、電擊、溺水）、肺挫傷',
     '胸膜腔：胸腔積液（膿胸、乳糜胸、血胸）、氣胸',
     '氧氣支持方式：flow-by（最快最簡單）、面罩、鼻導管（50-100 mL/kg/min）、氧氣籠（FiO2 40-60%）',
-    '呼吸困難犬貓鎮靜：Butorphanol 0.2-0.4 mg/kg IV/IM ± Acepromazine 0.005-0.02 mg/kg IM',
+    '呼吸困難犬貓鎮靜：Butorphanol 0.1-0.4 mg/kg IV/IM（貓首選、不穩定者由 0.1 起始）± 低劑量 Acepromazine 0.005-0.02 mg/kg IM——⚠️ 已低血壓/血容不足/不穩定者避免 ACP（α1 阻斷致低血壓）',
     '緊急氣切適應症：上呼吸道完全阻塞且氣管插管失敗',
     '呼吸困難患者處理原則：最少壓力（hands-off approach）、先穩定再診斷、避免仰躺/強制約束',
   ],
@@ -4391,19 +4391,19 @@ const contentRespiratoryDistress: NodeContent = {
 ### 各類型特異性治療
 上呼吸道阻塞處理。鎮靜降低焦躁跟氧需求：[藥物:Butorphanol] 0.2-0.4 mg/kg IV。降溫（高體溫時）。喉水腫給 [藥物:Dexamethasone] 0.1-0.2 mg/kg IV。喉麻痺嚴重的氣管插管。完全阻塞又插不上去就緊急氣切。
 
-貓氣喘：(1) 氧氣支持；(2) [藥物:Terbutaline] 0.01 mg/kg SC/IM（支氣管擴張劑，第一線）；(3) [藥物:Dexamethasone SP] 0.1-0.2 mg/kg IV/IM；(4) 霧化 [藥物:Salbutamol]（Albuterol）via spacer/面罩。
+貓氣喘急性發作：(1) 氧氣支持；(2) 快速支氣管擴張劑 [藥物:Terbutaline] 0.01 mg/kg SC/IM/IV（第一線，10-30 分內改善）；(3) 短效注射型糖皮質素 [藥物:Dexamethasone SP] **0.15-1 mg/kg IV/IM**（status asthmaticus 常用 0.5-1）；(4) 霧化 [藥物:Salbutamol]（Albuterol）via spacer/面罩——**僅為輔助、非單一療法**（外消旋 albuterol 之 S-鏡像異構物具促發炎性，須併糖皮質素；吸入型類固醇起效慢、不用於急性危象）。
 
-心因性肺水腫處理。[藥物:Furosemide] 2-4 mg/kg IV（犬）、1-2 mg/kg IV（貓）。氧氣。鎮靜用 [藥物:Butorphanol] 0.2 mg/kg IV。坐姿或胸骨臥就好，不要強制側臥。
+心因性肺水腫處理。[藥物:Furosemide]（ACVIM 2019 MMVD 共識）：犬 2 mg/kg IV/IM 起始、每 1 小時重複 2 mg/kg 至呼吸速率/費力明顯改善或 4 小時累積上限 8 mg/kg，重症可改 CRI 0.66-1 mg/kg/h；貓 1-2 mg/kg IV（較敏感、可低至 0.5 起始）。氧氣。鎮靜用 [藥物:Butorphanol] 0.2 mg/kg IV。坐姿或胸骨臥就好，不要強制側臥。
 
 胸腔積液/氣胸：胸腔穿刺引流。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
-併發症。呼吸衰竭：SpO2 持續 < 90% 或 PaO2 < 60 mmHg 就要考慮機械通氣。高氧毒性：FiO2 > 60% 超過 24 小時可能造成氧自由基肺損傷。吸入性肺炎：嘔吐或喉麻痺犬的常見併發症。再擴張性肺水腫：大量胸腔積液快速引流後跑出來。監控：SpO2 持續監測（目標 > 94%）、呼吸速率跟型態、聽診、嚴重時做血氣分析、胸腔 X 光追蹤。
+併發症。呼吸衰竭需考慮機械通氣的三大判準：(1) 於高 FiO2（>60%）下 PaO2 仍持續 < 60 mmHg（或 SpO2 < 90%）；(2) PaCO2 > 60 mmHg（通氣衰竭）；(3) 呼吸做功過大/瀕臨呼吸肌疲勞（前述須為對原發病治療後仍無法矯正者）。高氧毒性：FiO2 與暴露時間呈反比——以 FiO2 > 60% 為警戒，持續 >24-48 小時（近 100% 純氧約 12-24 小時內）即可能經氧自由基造成肺損傷，故應儘速將 FiO2 降至 ≤ 0.6。吸入性肺炎：嘔吐或喉麻痺犬的常見併發症。再擴張性肺水腫：大量胸腔積液快速引流後跑出來。監控：SpO2 持續監測（目標 > 94%）、呼吸速率跟型態、聽診、嚴重時做血氣分析、胸腔 X 光追蹤。
 
 ## 五、預後與預後因子 (Prognosis)
 
-依病因差異很大。貓氣喘急性發作經治療通常很快改善，長期管理可以控制得不錯。心因性肺水腫預後看心臟病嚴重度。上呼吸道阻塞經手術矯正（喉成形術或 BOAS 矯正術）預後好。ARDS 最難救，犬死亡率 50-80%，常常要機械通氣。
+依病因差異很大。貓氣喘急性發作經治療通常很快改善，長期管理可以控制得不錯。心因性肺水腫預後看心臟病分期——MMVD 進入 stage C（CHF 發作後）中位存活約 **9-15 個月**（常引用約 11-12 個月；QUEST 複合終點 pimobendan ~267 天）。上呼吸道阻塞經手術矯正預後多良好：BOAS 矯正術圍手術期死亡率約 2.6-7%（短期存活 93-97%，隨喉塌陷分級/品種變差）；喉麻痺單側 tie-back 可使 >90% 犬功能立即改善、中位存活約 5 年，但**終生吸入性肺炎風險約 10-24%**為主要併發症（術後 megaesophagus 為風險因子）。ARDS 最難救——犬死亡率高達約 **84-90%**，幾乎必須機械通氣。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -4411,7 +4411,7 @@ const contentRespiratoryDistress: NodeContent = {
 |-------------|-------------|------|
 | High-flow nasal oxygen（HFNO） | 犬貓中重度低氧血症的無創氧氣支持，比傳統鼻導管有效 | 人醫呼吸衰竭常規使用，獸醫研究跟應用快速增加 |
 | 肺部超音波（LUS）取代 X 光 | 犬貓床邊肺部疾病快速鑑別：B-lines（肺水腫）vs A-lines（正常或氣胸） | 人醫 ICU 已標準化，獸醫 Vet BLUE protocol 發展中 |
-| Berlin definition of ARDS | 犬 ARDS 標準化定義與嚴重度分級 | 人醫 2012 Berlin definition，獸醫版改編 2007 提出但需更新 |
+| ARDS 標準化定義與分級 | 犬 ARDS 診斷/嚴重度統一 | 人醫 2012 Berlin definition（廢除「ALI」、以 PaO2/FiO2 分 mild/moderate/severe）；獸醫 2007 版（Wilkins/Havemeyer）已於 **2025 年由「ARDSVet Definitions」（Balakrishnan 等, JVECC）取代** |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
@@ -4419,7 +4419,13 @@ const contentRespiratoryDistress: NodeContent = {
 |---------|------|---------------|
 | 犬貓呼吸困難最佳鎮靜方案（Butorphanol vs Alfaxalone vs 其他） | Butorphanol 為傳統首選但鎮靜效力有限，Alfaxalone 提供更深鎮靜但有呼吸抑制風險 | Level III |
 | HFNO 在犬貓的最佳流量設定與臨床效益 | 犬 2 L/kg/min 為常見起始流量，但不同體型最佳化設定缺乏數據 | Level III |
-| 肺部超音波 vs 胸腔 X 光在犬貓呼吸窘迫的診斷準確度 | 超音波對肺水腫敏感度高但對支氣管疾病有限，兩者互補而非取代 | Level II |`,
+| 肺部超音波 vs 胸腔 X 光在犬貓呼吸窘迫的診斷準確度 | 超音波對肺水腫敏感度高但對支氣管疾病有限，兩者互補而非取代 | Level II |
+
+## 八、近期實證更新 (Recent Updates)
+
+- **獸醫 ARDS 定義更新（Balakrishnan 2025, JVECC）**：2007 年 Wilkins/Havemeyer 共識（VetALI PaO2/FiO2 ≤300、VetARDS ≤200）已被新版「ARDSVet Definitions」取代——採 5 項必要條件（風險因子、1 週內急性發作、排除左心衰竭/容量過負荷、影像瀰漫性浸潤、氧合障礙），非插管動物並用 PaO2/FiO2 與 SpO2/FiO2，嚴重度兩層（>100 且 ≤300 vs ≤100）。
+- **高流量鼻氧（HFNOT）用於犬（Jagodich 2020, JVECC）**：對傳統氧療無效之急性低血氧呼吸衰竭犬，HFNOT（約 2 L/kg/min）可改善氧合、延遲或避免插管，為機械通氣前的有效無創選項。
+- **呼吸定位以研究實證化（Sigrist 2011）**：吸氣費力/喘鳴→上（胸腔外）氣道、呼氣費力→下氣道、反常呼吸＋肺音減弱→胸膜腔；單純「快淺呼吸」不能可靠指向胸膜腔——聽診＋呼吸型態仍是床邊定位核心。`,
   clinical_pearl: '呼吸困難的動物最怕「壓力」。你越想約束牠做檢查，牠越喘，越喘越缺氧，可能就在你手上死掉。第一步永遠是給氧、減少壓力、觀察呼吸型態。花 30 秒觀察是吸氣困難還是呼氣困難，就能縮小一半的鑑別診斷。貓要特別注意：開口呼吸的貓是真的很嚴重，不要再量體溫或驗血了，先給氧、鎮靜、氧氣籠，穩定後再做其他。',
   common_mistakes: [
     '對呼吸困難動物過度約束做檢查。壓力會造成急性失代償死亡，先穩定再診斷',
@@ -4449,8 +4455,8 @@ const contentRespiratoryDistress: NodeContent = {
       { condition: '橫膈裂孔', key_differentiator: '胸腔聽到腸蠕動音，X 光見腹腔器官於胸腔' },
     ],
     diagnostic_workup: '1. 觀察呼吸型態（吸氣 vs 呼氣困難）+ 快速聽診 → 2. 即時 SpO2 → 3. 給氧 + 鎮靜（必要時）→ 4. 穩定後：胸腔 X 光（兩視圖）→ 5. TFAST/心臟超音波（鑑別心因性 vs 非心因性）→ 6. 血氣分析 → 7. 依病因：氣管沖洗（下呼吸道）、胸水分析（胸腔積液）、心臟超音波（肺水腫）',
-    treatment_protocol: '【所有類型共通】(1) 氧氣支持（flow-by → 鼻導管/氧氣籠）；(2) 最少壓力原則；(3) 鎮靜：Butorphanol 0.2-0.4 mg/kg IV/IM ± Acepromazine 0.005-0.02 mg/kg（低劑量）。【上呼吸道】Dexamethasone 0.1-0.2 mg/kg IV + 降溫 + 必要時氣管插管/緊急氣切。【貓氣喘】Terbutaline 0.01 mg/kg SC/IM + Dexamethasone SP 0.1-0.2 mg/kg IV/IM ± 霧化 Salbutamol。【心因性肺水腫】Furosemide 2-4 mg/kg IV（犬）/ 1-2 mg/kg IV（貓）+ 氧氣 + 限制輸液。【胸腔積液/氣胸】胸腔穿刺。【ARDS/嚴重低氧】考慮 HFNO 或機械通氣。',
-    prognosis: '依病因而異。上呼吸道阻塞：手術矯正後預後良好（BOAS 矯正存活率 > 95%，喉麻痺 tieback 術存活率約 90%）。貓氣喘：急性控制預後佳，長期需吸入性類固醇管理。心因性肺水腫：取決於心臟病分期（MMVD B2→C，中位存活約 12-18 個月）。ARDS：預後最差，犬死亡率 50-80%。吸入性肺炎：死亡率 20-30%，合併 ARDS 者更差。',
+    treatment_protocol: '【所有類型共通】(1) 氧氣支持（flow-by → 鼻導管/氧氣籠）；(2) 最少壓力原則；(3) 鎮靜：Butorphanol 0.1-0.4 mg/kg IV/IM（貓首選）± 低劑量 Acepromazine 0.005-0.02 mg/kg（低血壓/血容不足者避免）。【上呼吸道】喉水腫 Dexamethasone 0.1-0.2 mg/kg IV + 降溫 + 必要時氣管插管/緊急氣切。【貓氣喘】Terbutaline 0.01 mg/kg SC/IM/IV（第一線）+ Dexamethasone SP 0.15-1 mg/kg IV/IM（status asthmaticus 0.5-1）± 霧化 Salbutamol（僅輔助、須併類固醇）。【心因性肺水腫】Furosemide（ACVIM 2019）犬 2 mg/kg IV 起始、q1h 至改善或 4h 上限 8 mg/kg（重症 CRI 0.66-1 mg/kg/h）/ 貓 1-2 mg/kg IV（可低至 0.5）+ 氧氣 + 限制輸液。【胸腔積液/氣胸】胸腔穿刺。【ARDS/嚴重低氧】考慮 HFNOT（Jagodich 2020）或機械通氣。',
+    prognosis: '依病因而異。上呼吸道阻塞：手術矯正後預後多良好——BOAS 矯正圍手術期死亡率約 2.6-7%（短期存活 93-97%）；喉麻痺單側 tie-back >90% 犬功能立即改善、中位存活約 5 年，但終生吸入性肺炎風險約 10-24%。貓氣喘：急性控制預後佳，長期需吸入性類固醇管理。心因性肺水腫：取決於心臟病分期，MMVD 進入 stage C（CHF）後中位存活約 9-15 個月（常引用 11-12 個月）。ARDS：預後最差，犬死亡率約 84-90%。吸入性肺炎：死亡率約 18-25%（Kogan 2008/Tart 2010），合併 ARDS 者驟升至 84-90%+。',
     monitoring: 'SpO2 持續監測（目標 > 94%）。呼吸速率/型態每 15-30 分鐘（急性期）。嚴重者：血氣分析（PaO2、PaCO2）。治療反應評估：給氧/藥物後 30-60 分鐘重新評估。胸腔 X 光：初始穩定後 + 6-12 小時追蹤。心因性肺水腫：呼吸頻率（RR < 30 為目標）、尿量（Furosemide 反應）。',
     owner_communication: '您的寵物目前呼吸非常困難。我們會先給氧並減少壓力，過度檢查反而可能讓呼吸更糟。我們會看呼吸型態初步判斷問題在哪裡（上呼吸道堵塞、肺部問題、或胸腔積液），然後針對性治療。呼吸困難是急症，要先穩定再做完整檢查。如果需要緊急處置（像抽胸水、氣管插管），我會立刻告訴您。',
   },
@@ -4460,14 +4466,19 @@ const contentRespiratoryDistress: NodeContent = {
     { position: '解剖定位表格後', type: 'flowchart', description: '呼吸困難解剖定位鑑別診斷決策樹' },
     { position: '氧氣支持方式表格', type: 'comparison_table', description: '各種氧氣支持方式比較圖' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '解剖定位表格後', type: 'interactive_quiz', description: '呼吸型態/聽診情境定位：由吸氣vs呼氣費力、喘鳴/哮鳴/反常呼吸判定上呼吸道/下呼吸道/肺實質/胸膜腔' },
+  ],
   drug_api_links: ['Butorphanol', 'Acepromazine', 'Dexamethasone', 'Terbutaline', 'Salbutamol', 'Furosemide'],
   references: [
-    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Respiratory Emergencies.', relevance: 'ECC 核心教材呼吸急症章節' },
-    { type: 'textbook', citation: 'Rozanski EA, Rush JE. Small Animal Emergency and Critical Care Medicine. Manson Publishing, 2013. Chapter: Approach to the Dyspneic Patient.', relevance: '呼吸困難患者的系統性處理方法' },
-    { type: 'journal', citation: 'Sumner C, Rozanski EA. Management of respiratory emergencies in small animals. Vet Clin North Am Small Anim Pract. 2013;43(4):799-815.', relevance: '小動物呼吸急症管理綜合回顧' },
-    { type: 'journal', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. JVECC. 2011;21(2):104-122.', relevance: 'FAST 超音波在胸腔急症的應用' },
-    { type: 'guideline', citation: 'Hopper K, Haskins SC, Kass PH, et al. VECCS Consensus Statement on Indications for Mechanical Ventilation in Dogs and Cats with Respiratory Failure. JVECC. 2007;17(2):182-194.', relevance: 'VECCS 犬貓呼吸衰竭機械通氣指引共識聲明' },
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. St. Louis: Elsevier; 2022. Chapter: Respiratory Emergencies.', relevance: 'ECC 核心教材呼吸急症章節' },
+    { type: 'textbook', citation: 'Rozanski EA, Rush JE. Small Animal Emergency and Critical Care Medicine. London: Manson Publishing; 2013. Chapter: Approach to the Dyspneic Patient.', relevance: '呼吸困難患者的系統性處理方法' },
+    { type: 'journal', citation: 'Sumner C, Rozanski E. Management of respiratory emergencies in small animals. Vet Clin North Am Small Anim Pract. 2013;43(4):799-815. doi:10.1016/j.cvsm.2013.03.005.', relevance: '小動物呼吸急症管理綜合回顧（含氧療/鎮靜劑量）' },
+    { type: 'journal', citation: 'Sigrist NE, Adamik KN, Doherr MG, Spreng DE. Evaluation of respiratory parameters at presentation as clinical indicators of the respiratory localization in dogs and cats with respiratory distress. J Vet Emerg Crit Care. 2011;21(1):13-23. doi:10.1111/j.1476-4431.2010.00589.x.', relevance: '呼吸型態/聽診定位之實證研究（胸膜腔非單純快淺）' },
+    { type: 'journal', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. J Vet Emerg Crit Care. 2011;21(2):104-122. doi:10.1111/j.1476-4431.2011.00626.x.', relevance: 'FAST/肺部超音波在胸腔急症的應用' },
+    { type: 'guideline', citation: 'Wilkins PA, Otto CM, Baumgardner JE, et al. Acute lung injury and acute respiratory distress syndromes in veterinary medicine: consensus definitions: The Dorothy Russell Havemeyer Working Group on ALI and ARDS in Veterinary Medicine. J Vet Emerg Crit Care. 2007;17(4):333-339. doi:10.1111/j.1476-4431.2007.00238.x.', relevance: '2007 獸醫 ALI/ARDS 共識定義（取代 v1 誤植之 VECCS 機械通氣共識）' },
+    { type: 'guideline', citation: 'Balakrishnan A, Silverstein DC, Bedenice D, et al. Acute respiratory distress syndrome in veterinary medicine—the ARDSVet definitions. J Vet Emerg Crit Care. 2025;35:e70016. doi:10.1111/vec.70016.', relevance: '2025 ARDSVet 新版共識定義（取代 2007 版；近期權威）' },
+    { type: 'journal', citation: 'Jagodich TA, Bersenas AME, Bateman SW, Kerr CL. High-flow nasal cannula oxygen therapy in acute hypoxemic respiratory failure in 22 dogs requiring oxygen support escalation. J Vet Emerg Crit Care. 2020;30(4):364-375. doi:10.1111/vec.12970.', relevance: 'HFNOT 於犬急性低血氧呼吸衰竭之臨床研究（近期）' },
   ],
   is_current: true,
   created_at: now,
