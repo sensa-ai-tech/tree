@@ -7818,8 +7818,8 @@ ACVIM 2019 犬慢性肝炎共識核心：**肝切片＋組織學＋銅定量決�
 const contentMegaesophagus: NodeContent = {
   id: 'CONTENT-IM-L3-027',
   node_id: 'IM-L3-027',
-  version: 1,
-  summary: '巨食道症是食道擴張加上蠕動功能變差或完全沒有，結果食物卡在食道裡、反流（regurgitation）跑出來，吸入性肺炎的風險就一直懸在頭上。分先天性（幼犬）跟後天性兩種，後天性的一定要篩重症肌無力（MG）、甲低、Addison 這些可治療的基礎病因。治療核心是 Bailey chair 姿勢餵食。吸入性肺炎是最常見的致死併發症。',
+  version: 2,
+  summary: '巨食道症是食道體部（犬全段為橫紋肌）蠕動障礙導致食道擴張、食物滯留與反流（regurgitation），吸入性肺炎的風險持續存在且為最主要致死原因。分先天特發性（幼犬，部分可自發改善）、後天特發性（成犬最常見）與後天繼發性；後天性一定要篩重症肌無力（MG，最常見可辨識病因），甲低關聯薄弱但仍可篩。治療核心是姿勢性餵食（Bailey chair）＋吸入性肺炎防治；sildenafil（1 mg/kg BID）可輔助降低下食道括約肌張力。',
   learning_objectives: [
     '區分反流（regurgitation）與嘔吐（vomiting）的臨床特徵與鑑別意義',
     '列出後天性巨食道症的可逆性病因並制定系統性排查計畫',
@@ -7828,54 +7828,61 @@ const contentMegaesophagus: NodeContent = {
     '評估吸入性肺炎在巨食道症預後中的角色',
   ],
   key_points: [
-    '反流（regurgitation）vs 嘔吐（vomiting）鑑別：反流為被動、無腹部收縮、食物未消化',
-    '後天性需篩檢可逆病因：重症肌無力（AChR 抗體）、甲低、Addison、鉛中毒',
-    '胸腔 X 光可見食道擴張、充氣；鋇劑造影確認食道蠕動障礙',
-    'Bailey chair 姿勢進食（直立 10-15 分鐘）為管理核心',
-    '吸入性肺炎為最常見死因（發生率 30-50%）',
-    '先天性好發品種：Great Dane、GSD、Irish Setter、Shar Pei',
+    '反流 vs 嘔吐鑑別最可靠依據為「前驅噁心＋腹部用力收縮」，而非 pH 或時間（反流被動、無腹肌收縮、食物未消化）',
+    '後天性需篩可逆病因：重症肌無力（AChR 抗體，最常見可辨識病因、約佔後天 26%）、Addison、多發性肌炎、鉛中毒（甲低關聯薄弱、仍可篩）',
+    '成犬以後天特發性最常見；「先天 25%／後天特發 50%／後天繼發 25%」配比無一手依據，勿引用',
+    '胸腔 X 光見食道擴張；動態評估首選 videofluoroscopic swallow study（VFSS）；疑吸入時改用碘造影劑',
+    'Bailey chair 直立進食 10-15 分鐘為管理核心；重症營養不良可用胃造口管',
+    'Sildenafil 1 mg/kg PO q12h（BID、liquid、空腹餐前）降 LES 張力，RCT 對先天與後天/全身性皆有效（Quintavalla 2017、Mehain 2022）',
+    '吸入性肺炎為最主要死因（診斷時盛行率約 38%、中位存活約 90 天）；抗生素依 ISCAID 分層、巨食道採腸道外給藥',
+    '先天性好發 GSD（發生率最高）、Great Dane、Mini Schnauzer、Wire Fox Terrier、Irish Setter、Shar Pei、Newfoundland、Labrador；約 20-46% 於 1 歲前自發改善',
     '台灣地區巨食道症以犬為主，飼主衛教 Bailey Chair 方法時需考量居住空間較小的在地狀況',
   ],
   body: `# 巨食道症 (Megaesophagus)
 
 ## 一、病理機制 (Pathophysiology)
 
-巨食道症的核心為食道體部蠕動功能障礙，導致食道擴張與食物滯留。食道由橫紋肌組成（犬全段為橫紋肌；貓遠端 1/3 為平滑肌），蠕動受迷走神經與食道神經叢控制。
+巨食道症的核心為食道體部蠕動功能障礙，導致食道擴張與食物滯留。**犬食道體部全段為橫紋（骨骼）肌**（貓則近端約 2/3 橫紋肌、遠端約 1/3 平滑肌），蠕動受迷走神經與食道神經叢控制；目前認為特發性巨食道與**食道傳入（感覺）神經功能異常**有關，非單純運動神經問題。
 
 ### 分類與病因
+依病因分三型；**成犬以後天特發性最常見**（文獻多描述為成年病例之多數），但目前**無可靠一手族群研究**支持「先天 25%／後天特發 50%／後天繼發 25%」這類精確配比，故不採用具體百分比。
 
-| 類型 | 病因 | 特徵 | 佔比 |
-|------|------|------|------|
-| 先天性 | 食道神經肌肉發育異常 | 幼犬斷奶後發病；部分可隨成長改善 | ~25% |
-| 後天特發性 | 不明（可能為神經退化） | 成犬，排除所有已知病因 | ~50% |
-| 後天繼發性 | 可逆性基礎病因 | 治療基礎病因後可能改善 | ~25% |
+| 類型 | 病因 | 特徵 |
+|------|------|------|
+| 先天特發性 | 食道神經肌肉（傳入神經）發育/成熟異常 | 幼犬斷奶引入固體食物後發病；約 20-46% 可於 1 歲齡前隨成熟自發改善 |
+| 後天特發性（原發） | 不明（推測食道傳入神經退化） | 成犬最常見型；排除所有已知病因後之診斷 |
+| 後天繼發性 | 可辨識/可逆基礎病因 | 治療基礎病因後**部分**可能改善 |
 
 ### 後天繼發性病因（需系統性排查）
+重症肌無力（MG）為後天性巨食道**最常見的可辨識病因**，約佔後天/特發性巨食道的 **26%（至少 25%）**（Shelton 1990，152 隻中 40 隻 AChR 抗體陽性）。
 
-| 病因 | 機轉 | 篩檢方法 |
-|------|------|---------|
-| 重症肌無力 (MG) | AChR 抗體 → 神經肌肉傳導障礙 → 食道橫紋肌無力 | AChR 抗體滴度 |
-| 甲狀腺機能低下 | 甲低 → 神經肌肉功能異常 | T4/TSH |
-| Addison's disease | 電解質異常 → 肌肉功能障礙 | ACTH 刺激試驗 |
-| 多發性肌炎 | 肌肉發炎 → 食道肌肉受累 | CK、肌肉切片 |
-| 鉛中毒 | 鉛 → 神經毒性 | 血鉛濃度 |
-| SLE（全身性紅斑狼瘡） | 免疫複合物 → 多器官損傷 | ANA |
-| 胸腔腫瘤/淋巴結腫大 | 食道外壓迫 | 胸腔 X 光/CT |
+| 病因 | 機轉 | 篩檢方法 | 備註 |
+|------|------|---------|------|
+| 重症肌無力 (MG) | AChR 抗體 → NMJ 傳導障礙 → 食道橫紋肌無力 | AChR 抗體滴度 | 最重要可辨識病因（~26%）；治療後巨食道**未必**消退（見預後）|
+| 甲狀腺機能低下 | 關聯**薄弱/未證實** | T4/TSH（仍建議篩）| ⚠️ Gaynor 1997 case-control 顯示甲低**與巨食道無顯著關聯**；補充 levothyroxine 多數不使巨食道消退（Jaggy 1994：4 隻補充後影像巨食道皆持續），全消退僅零星個案、多屬偶合 |
+| Addison's disease | 電解質異常 → 肌肉功能障礙 | ACTH 刺激試驗 | |
+| 多發性肌炎 | 肌肉發炎 → 食道肌肉受累 | CK、肌肉切片、2M 抗體 | |
+| 鉛中毒 | 神經毒性 | 血鉛濃度 | |
+| SLE（全身性紅斑狼瘡）| 免疫複合物 → 多器官 | ANA | |
+| 食道外壓迫（縱膈腫瘤/淋巴結）| 機械壓迫 | 胸腔 X 光/CT | |
 
 ### 吸入性肺炎機轉
-食道擴張 → 食物/液體滯留 → 反流 → 咽喉保護反射不足 → 內容物誤吸入氣管 → 化學性 + 細菌性肺炎 → 呼吸窘迫
+食道擴張 → 食物/液體滯留 → 反流 → 咽喉保護反射不足 → 內容物誤吸入氣管 → 化學性 + 細菌性肺炎 → 呼吸窘迫。**吸入性肺炎是本病最主要的致死/安樂死原因。**
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
 ### 反流 vs 嘔吐鑑別
+**最可靠依據是「有無前驅噁心徵象與腹部用力收縮」，而非 pH 或時間：**
 
 | 特徵 | 反流 (Regurgitation) | 嘔吐 (Vomiting) |
 |------|---------------------|-----------------|
-| 腹部收縮 | 無（被動） | 有（主動、乾嘔） |
-| 時間與進食關係 | 進食後數分至數小時 | 任何時間 |
-| 內容物 | 未消化食物/黏液、管狀形狀 | 消化中食物/膽汁 |
-| pH | 中性（6-7） | 酸性（< 5） |
-| 前驅症狀 | 無 | 噁心、流涎、躁動 |
+| 腹部收縮 | 無（被動） | 有（主動乾嘔、腹肌用力）|
+| 前驅噁心（流涎/舔唇/不安）| 無 | 有 |
+| 內容物 | 未消化食物/黏液、可呈管狀 | 消化中食物 ± 膽汁 |
+| pH（輔助、可靠度有限）| 多偏中性，但反流性食道炎可呈酸性 | 多酸性(<5)，但含十二指腸液可中性/偏鹼 |
+| 與進食時間關係 | 不可靠（數分至數小時皆可）| 不可靠 |
+
+> ⚠️ pH 與進食時間**皆為不可靠的單一判準**（Gallagher 2012；Washabau & Day 2013）；鑑別應以「前驅噁心＋腹部用力」為主。
 
 ### 臨床表現
 
@@ -7889,66 +7896,104 @@ const contentMegaesophagus: NodeContent = {
 | 發燒 | ~25% | 吸入性肺炎繼發 |
 
 ### 診斷
-
-| 檢查 | 發現 | 意義 |
-|------|------|------|
-| 胸腔 X 光 | 食道擴張（充氣或充液）；腹背位可見氣管條紋與食道重疊 | 初步診斷 |
-| 鋇劑造影/螢光透視 | 鋇劑滯留食道 + 蠕動減弱或消失 | 確認蠕動障礙 |
-| AChR 抗體 | 陽性 | 重症肌無力確診 |
-| T4/TSH | 低 T4 + 高 TSH | 甲狀腺機能低下 |
-| ACTH 刺激試驗 | 低皮質醇反應 | Addison's disease |
-| CK | 升高 | 多發性肌炎 |
+- **影像學**：胸腔 X 光見食道擴張（充氣/充液）、腹背位氣管條紋與食道重疊。**動態評估首選 videofluoroscopic swallow study (VFSS)**——比靜態鋇劑造影更能評估蠕動與吸入風險；靜態鋇劑造影仍可確認擴張與滯留，但**疑吸入時應改用碘造影劑**（避免鋇劑誤吸）。
+- **病因排查**：AChR 抗體（排 MG）、T4/TSH、ACTH 刺激試驗、CK/2M 抗體、血鉛、ANA、CBC/生化，依臨床線索取捨。
 
 ## 三、治療策略 (Treatment)
 
-### 營養管理（核心治療）
+> 核心：**姿勢性餵食管理 + 積極處理/預防吸入性肺炎 + 治療可逆病因**。目前無藥物能恢復犬橫紋肌食道體部的蠕動。
+
+### 營養與姿勢管理（核心）
 
 | 措施 | 方法 | 目的 |
 |------|------|------|
 | Bailey chair | 進食時犬以直立姿勢坐於特製椅中，維持 10-15 分鐘 | 利用重力幫助食物通過食道進入胃 |
-| 飲食稠度調整 | 嘗試不同稠度（泥狀 vs 液態 vs 小丸狀），找到個體最佳反應 | 每隻犬反應不同，需個體化調整 |
+| 飲食稠度調整 | 嘗試不同稠度（泥狀 vs 液態 vs 小丸狀），找個體最佳反應 | 每隻犬反應不同，需個體化 |
 | 少量多餐 | 每日 3-4 餐 | 減少每次食道負荷 |
 | 高熱量飲食 | 熱量密集飲食 | 以最少體積提供足夠營養 |
+| 胃造口管（重症）| 反覆吸入/嚴重營養不良者，經 PEG/胃造口管繞過食道餵食 | 降低吸入、維持營養 |
 
 ### 藥物治療
 
-| 藥物 | 劑量 | 適應症 |
+| 藥物 | 劑量 | 適應症/備註 |
 |------|------|--------|
-| [藥物:Sildenafil] | 1-2 mg/kg PO TID | 降低下食道括約肌壓力（部分病例有效） |
-| [藥物:Metoclopramide] | 0.2-0.5 mg/kg PO TID | 促進胃排空（減少胃食道反流），注意：對食道體部蠕動無效 |
-| [藥物:Sucralfate] | 0.5-1 g PO TID | 食道炎保護 |
-| [藥物:Pyridostigmine] | 0.5-3 mg/kg PO BID-TID | 重症肌無力（AChE 抑制劑） |
-| 基礎病因治療 |—| 甲低：Levothyroxine；Addison：DOCP + Prednisolone |
+| [藥物:Sildenafil] | **1 mg/kg PO q12h（BID）**，建議 liquid/口服懸液、空腹餐前約 1 小時 | PDE5 抑制 → 降 LES 張力、助食道排空。RCT：Quintavalla 2017（先天性特發性）、**Mehain 2022（後天/全身性亦有效）**；**非僅限先天性**。文獻無 2 mg/kg 或 TID 依據 |
+| [藥物:Metoclopramide] | — | ⚠️ **對犬食道體部蠕動無效**（橫紋肌非平滑肌）；「提高 LES 張力」在犬未獲直接證實（Kempf 2014 測壓：口服 metoclopramide 未顯著升 LES 壓）。欲提 LES 張力用 [藥物:Cisapride] 較有依據 |
+| [藥物:Sucralfate] | 0.5-1 g PO q8h（懸液）| 併發食道炎之黏膜保護 |
+| [藥物:Pyridostigmine] | 0.5-3 mg/kg PO BID-TID | 確診 MG 時（AChE 抑制劑）|
+| 基礎病因治療 |—| 甲低：[藥物:Levothyroxine]（惟巨食道多不因此消退）；Addison：DOCP + Prednisolone |
 
-### 吸入性肺炎處理
+### 吸入性肺炎處理（依 ISCAID 2017 分層）
+- **因巨食道存在食道動力障礙，ISCAID 明確建議「腸道外（parenteral）給藥」；口服不宜為首選（吸入/吸收風險）。**
+- **輕度、無敗血症**：可觀察或單用 β-lactam（ampicillin、ampicillin-sulbactam 或第一代頭孢 cefazolin，腸道外）。
+- **有敗血症徵象或疑革蘭氏陰性菌**：加 fluoroquinolone（enrofloxacin 或 marbofloxacin）併用具革蘭氏陽性/厭氧覆蓋之藥（ampicillin 或 clindamycin）。
+- ⚠️ **amoxicillin-clavulanate 並非 ISCAID 對下呼吸道肺炎之首選**（僅為犬傳染性呼吸道疾病複合症／上呼吸道之 doxycycline 替代）。
+- 理想上以氣管沖洗採樣培養/藥敏導向降階；併氧氣支持（SpO2 < 94%）、霧化 + coupage、急性期暫停口服。
 
-| 措施 | 詳述 |
-|------|------|
-| 廣譜抗生素 | Ampicillin + Enrofloxacin IV（或 Amoxicillin-clavulanate PO 輕症）|
-| 氧氣支持 | SpO2 < 94% 時給氧 |
-| 霧化治療 | Saline 霧化 + coupage |
-| 禁食 | 急性期暫停口服進食 |
+## 四、併發症與監控 (Complications & Monitoring)
 
-## 四、預後 (Prognosis)
+### 常見併發症
+- **吸入性肺炎**：最主要致死/安樂死原因；診斷時盛行率約 38%（Thomson 2008）。
+- **反流性食道炎**：食物滯留與胃內容反流刺激；可加重不適、續發狹窄。
+- **營養不良/消瘦**：攝入不足。
+- **食道念珠菌症（esophageal candidiasis）**：滯留＋黏膜損傷/長期用藥下之少見續發感染（近期有病例報告）。
 
-| 類型 | 預後 | 備註 |
-|------|------|------|
-| 先天性（幼犬） | 警戒至良好 | 部分可隨成長自發改善（~20-40%） |
-| 後天繼發性（可逆病因） | 依基礎病因 | MG 治療後 ~50% 可改善；甲低補充後可能恢復 |
-| 後天特發性 | 謹慎至不良 | 終生管理；吸入性肺炎風險持續存在 |
+### 監控計畫
+| 時間點 | 監測項目 | 目標 |
+|--------|---------|------|
+| 每 2-4 週 | 體重與體態評分（BCS） | 維持理想體態、無持續消瘦 |
+| 每 1-2 個月 或 症狀變化時 | 胸腔 X 光（吸入性肺炎） | 早期發現吸入性肺炎 |
+| MG 患者 | AChR 抗體滴度追蹤 | 監測免疫緩解（惟巨食道未必同步消退）|
+| 每日（飼主） | 呼吸狀況、反流頻率、精神食慾 | 及早察覺吸入性肺炎徵兆 |
 
-吸入性肺炎為最常見死因（30-50% 的巨食道症犬會發生）。飼主的長期護理配合度是影響存活的最關鍵因素。`,
-  clinical_pearl: '區分反流與嘔吐是診斷巨食道症的第一步，反流是被動的、無腹部收縮的、排出未消化食物。後天性巨食道症一定要篩檢重症肌無力（AChR 抗體），因為 MG 治療後食道功能可能部分或完全恢復。Bailey chair 管理中，「維持直立 10-15 分鐘」比食物稠度更重要。',
+## 五、預後與預後因子 (Prognosis)
+
+- **整體預後謹慎**：中位存活約 **90 天（1-3 個月）**、整體致死率可達約 **74%**（McBrearty 2011, n=71；Merck）。
+- **最重要的獨立預後因子（McBrearty 2011）**：**影像學吸入性肺炎**（有 AP 者死前死亡風險約增 7.7 倍）與**發病年齡**——為僅有的兩個顯著關聯因子。
+- **先天性（幼犬）**：約 20-46% 於 1 歲齡前自發改善（Bell 2022；雪納瑞、剛毛獵狐㹴預後較佳）。
+- **後天繼發性**：取決於基礎病因；MG 免疫緩解後**巨食道未必消退**（影像消退僅見於部分經治療複查者，Dos Santos 2025 為 13/28≈46%，但食道功能未必恢復），有食道無力者存活顯著較短。
+- **後天特發性**：謹慎至不良，需終生管理。
+- **飼主長期照護配合度是最關鍵的可改變預後因子。**
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 高解析度食道測壓 (HRM) | 客觀量化 LES 壓力與蠕動、指導藥物選擇 | 犬研究用（Kempf 2014）；臨床尚未普及 |
+| Videofluoroscopic swallow study (VFSS) | 動態評估吞嚥/蠕動/誤吸風險 | 獸醫轉診中心漸增，優於靜態鋇劑造影 |
+| PDE5 抑制劑（sildenafil）降 LES | 藥物性協助食道排空 | 已有犬 RCT（Quintavalla 2017、Mehain 2022）|
+| 食道內留置管抽吸滯留內容 | 降低反覆吸入性肺炎 | 已有犬個案報告（居家間歇抽吸／食道造口管）|
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Sildenafil 的角色與適應範圍 | 先天性（Quintavalla 2017 RCT）與後天/全身性（Mehain 2022 交叉 RCT）皆顯示減少逆流、增重；惟樣本小、長期存活效益未證 | Level II |
+| 甲狀腺機能低下與巨食道的因果關聯 | Case-control 未見關聯（Gaynor 1997）、補充後多不消退（Jaggy 1994）；仍建議篩檢但因果薄弱 | Level III |
+| MG 治療後巨食道是否消退 | 影像消退見於部分治療反應者（Dos Santos 2025 ~46%），但功能恢復有限、常持續終生 | Level III |
+| 促動力藥（metoclopramide/cisapride）於犬巨食道 | 對橫紋肌食道體部無效；cisapride 對 LES/胃排空或有助益但無法恢復食道體部蠕動 | Level III |
+| Bethanechol 等膽鹼性促動力藥 | 缺乏犬對照證據，僅屬經驗性/個案，不建議常規使用 | Level IV |
+
+## 八、近期實證更新 (Recent Updates)
+
+- **Sildenafil 擴及後天/全身性巨食道（Mehain 2022, AJVR）**：compounded liquid sildenafil 1 mg/kg PO q12h 交叉 RCT（10 隻全身性巨食道犬）顯著減少每週逆流並增重——證據不再限於先天性特發性；標準劑量為 **1 mg/kg BID**（非 1-2 mg/kg TID），liquid、空腹餐前給。
+- **先天性巨食道的遺傳學（Bell 2022, PLOS Genetics）**：德國牧羊犬先天性特發性巨食道為**性別差異性狀**，與 CFA12 上 **MCHR2** 基因內含子 VNTR 相關；並整合文獻指出約 20-46% 先天病例於 1 歲齡前自發緩解。
+- **MG 相關巨食道的預後再認識（Dos Santos 2025, JVIM）**：pyridostigmine 治療後複查約 46%（13/28）出現巨食道影像消失，但食道/球部無力於初診與複查間無顯著差異，且食道無力為存活與緩解的負向預測因子（有食道無力時中位存活僅約 65 天）——「MG 治療→巨食道消退」不宜過度樂觀。
+- **抗生素選擇對齊 ISCAID（Lappin 2017）**：吸入性肺炎依嚴重度分層、巨食道者採腸道外給藥；amoxicillin-clavulanate 非下呼吸道肺炎首選。`,
+  clinical_pearl: '區分反流與嘔吐是診斷巨食道症的第一步，靠的是「有沒有前驅噁心與腹部用力」而不是 pH（pH 其實不可靠）——反流是被動、無腹肌收縮、排出未消化食物。後天性巨食道一定要篩重症肌無力（AChR 抗體），但要提醒飼主：即使 MG 免疫緩解，巨食道也常不會跟著消退，吸入性肺炎的風險是長期的。Bailey chair「維持直立 10-15 分鐘」比食物稠度更關鍵。',
   common_mistakes: [
-    '將反流誤判為嘔吐而使用止吐藥（止吐藥對反流無效）',
-    '後天性巨食道症未篩檢 MG、甲低、Addison（錯失可逆病因）',
-    'Bailey chair 進食時間不足（應至少直立 10-15 分鐘）',
+    '將反流誤判為嘔吐而使用止吐藥（止吐藥對反流無效）；用 pH／進食時間當唯一鑑別（皆不可靠）',
+    '後天性巨食道症未篩檢 MG（AChR 抗體）等可逆病因',
+    '把甲低當「治療就會好」的可逆病因（因果薄弱、補充後巨食道多不消退）',
+    'Sildenafil 劑量錯用 1-2 mg/kg TID（正確為 1 mg/kg BID、liquid、空腹餐前）',
+    '對犬用 metoclopramide 想恢復食道體部蠕動（橫紋肌無效）',
+    '吸入性肺炎以口服 amoxicillin-clavulanate 為首選（巨食道應腸道外給藥、依 ISCAID 分層）',
     '忽視吸入性肺炎的早期徵兆（輕微咳嗽、低燒、呼吸加速）',
   ],
   disease_data: {
-    signalment: '先天性：幼犬斷奶後發病，好發品種 Great Dane、GSD、Irish Setter、Shar Pei、Wire Fox Terrier。後天性：成年至老年犬，任何品種。犬遠多於貓。',
-    etiology: '先天性：食道神經肌肉發育異常。後天特發性：推測為食道神經退化，病因不明。後天繼發性：重症肌無力（最重要可逆病因）、甲低、Addison、多發性肌炎、鉛中毒、SLE、胸腔腫瘤壓迫。',
-    pathogenesis: '食道蠕動功能障礙 → 食道體部擴張 → 食物/液體滯留 → 反流 → 營養不良 + 吸入性肺炎風險。MG 機轉：AChR 自體抗體 → 神經肌肉接合處傳導障礙 → 食道橫紋肌收縮無力。',
+    signalment: '先天性：幼犬斷奶引入固體食物後發病，好發 German Shepherd（發生率最高，與 CFA12 MCHR2 VNTR 相關、性別差異性狀）、Great Dane、Miniature Schnauzer（體染色體顯性）、Wire-haired Fox Terrier（體染色體隱性）、Irish Setter、Chinese Shar-Pei、Newfoundland、Labrador Retriever。後天性：成年至老年犬，任何品種。犬遠多於貓。',
+    etiology: '先天特發性：食道傳入神經/神經肌肉成熟異常（GSD 與 CFA12 MCHR2 VNTR 相關，Bell 2022）。後天特發性：推測食道傳入神經退化，成犬最常見。後天繼發性：重症肌無力（最常見可辨識病因，約佔後天 26%，Shelton 1990）、Addison、多發性肌炎、鉛中毒、SLE、縱膈壓迫；甲狀腺機能低下與巨食道之因果關聯薄弱（Gaynor 1997 case-control 未見關聯）。',
+    pathogenesis: '食道體部蠕動障礙（犬全段橫紋肌，可能涉食道傳入神經功能異常）→ 食道擴張 → 食物/液體滯留 → 反流 → 營養不良 + 吸入性肺炎風險。MG 機轉：AChR 自體抗體 → 神經肌肉接合處傳導障礙 → 食道橫紋肌收縮無力；惟免疫緩解後巨食道未必消退。',
     clinical_signs: [
       { sign: '反流', category: 'primary', description: '進食後被動排出未消化食物，無腹部收縮' },
       { sign: '體重減輕', category: 'primary', description: '營養攝入不足導致消瘦' },
@@ -7964,10 +8009,10 @@ const contentMegaesophagus: NodeContent = {
       { condition: '食道腫瘤', key_differentiator: '內視鏡可見腫塊；好發老年犬' },
       { condition: '胃食道反流 (GERD)', key_differentiator: '食道大小正常；反流物為酸性' },
     ],
-    diagnostic_workup: '1. 病史（反流 vs 嘔吐鑑別）→ 2. 胸腔 X 光（食道擴張）→ 3. 鋇劑造影/螢光透視確認 → 4. AChR 抗體（排查 MG）→ 5. T4/TSH、ACTH 刺激試驗、CK → 6. CBC/生化排查系統性疾病',
-    treatment_protocol: '營養管理：Bailey chair 直立進食 10-15 min + 飲食稠度個體化調整 + 少量多餐 + 高熱量飲食。藥物：Sildenafil 1-2 mg/kg TID（可選）。MG：Pyridostigmine 0.5-3 mg/kg BID-TID。基礎病因治療。吸入性肺炎：廣譜抗生素 + 氧氣。',
-    prognosis: '先天性部分可自發改善。繼發性取決於基礎病因控制（MG 治療後約 50% 可改善）。特發性預後謹慎至不良，需終生管理。吸入性肺炎為最常見死因。飼主長期配合度是最關鍵預後因子。',
-    monitoring: '每 2-4 週評估體重與營養狀態。胸腔 X 光監測吸入性肺炎。MG 患者追蹤 AChR 抗體滴度。教導飼主識別吸入性肺炎早期徵兆（咳嗽增加、呼吸費力、發燒、精神沉鬱）。',
+    diagnostic_workup: '1. 病史（反流 vs 嘔吐，靠前驅噁心/腹部用力鑑別，非 pH）→ 2. 胸腔 X 光（食道擴張、吸入性肺炎）→ 3. 動態吞嚥評估：videofluoroscopic swallow study（優於靜態鋇劑；疑吸入改碘造影劑）→ 4. AChR 抗體（排查 MG）→ 5. T4/TSH、ACTH 刺激試驗、CK/2M 抗體、血鉛、ANA → 6. CBC/生化排查系統性疾病',
+    treatment_protocol: '姿勢性餵食：Bailey chair 直立 10-15 min + 稠度個體化 + 少量多餐 + 高熱量；重症營養不良可用胃造口管。藥物：Sildenafil 1 mg/kg PO q12h（liquid、空腹餐前；先天與後天/全身性皆有 RCT 證據）。MG：Pyridostigmine 0.5-3 mg/kg BID-TID。Metoclopramide 對橫紋肌食道體部無效（欲提 LES 張力用 cisapride）。吸入性肺炎依 ISCAID 分層、腸道外給藥（β-lactam；敗血症才加 FQ），非口服 amox-clav 首選。',
+    prognosis: '整體謹慎：中位存活約 90 天、致死率可達約 74%（McBrearty 2011, n=71）。影像學吸入性肺炎與發病年齡為僅有的兩個顯著預後因子（有 AP 死亡風險增約 7.7 倍）。先天性約 20-46% 於 1 歲前自發改善。MG 免疫緩解後巨食道常持續（影像消退僅見於部分治療反應者，Dos Santos 2025 ~46%）。飼主長期配合度是最關鍵的可改變預後因子。',
+    monitoring: '每 2-4 週評估體重與 BCS。每 1-2 月或症狀變化時胸腔 X 光監測吸入性肺炎（含少見的食道念珠菌症）。MG 患者追蹤 AChR 抗體滴度（惟巨食道未必同步消退）。教導飼主識別吸入性肺炎早期徵兆（咳嗽增加、呼吸費力、發燒、精神沉鬱）。',
     owner_communication: '巨食道症飼主的配合很關鍵，是一場長期戰。Bailey chair 餵食目前是最有效的方法。要盯的是吸入性肺炎這個最大的雷，呼吸狀況要每天看。如果是其他病引起的繼發型，把原本的病處理好，部分狗會明顯好轉。',
   },
   diagnostic_data: null,
@@ -7976,14 +8021,24 @@ const contentMegaesophagus: NodeContent = {
     { position: '反流 vs 嘔吐鑑別表後', type: 'comparison_table', description: '反流 vs 嘔吐臨床表現比較圖' },
     { position: 'Bailey chair 段落後', type: 'flowchart', description: 'Bailey chair 姿勢進食示意圖與管理流程' },
   ],
-  interactive_placeholders: [],
-  drug_api_links: ['Sildenafil', 'Metoclopramide', 'Sucralfate', 'Pyridostigmine'],
+  interactive_placeholders: [
+    { position: '反流 vs 嘔吐段落後', type: 'interactive_quiz', description: '反流 vs 嘔吐情境判別 + 後天性巨食道可逆病因排查決策練習' },
+  ],
+  drug_api_links: ['Sildenafil', 'Metoclopramide', 'Cisapride', 'Sucralfate', 'Pyridostigmine', 'Levothyroxine'],
   references: [
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 55: Diseases of the Esophagus.', relevance: '食道疾病病理與臨床管理教材' },
-    { type: 'journal', citation: 'Gaynor AR, Shofer FS, Washabau RJ. "Risk factors for acquired megaesophagus in dogs." J Am Vet Med Assoc. 1997;211(11):1406-1412.', relevance: '後天性巨食道症危險因子流行病學' },
-    { type: 'journal', citation: 'Shelton GD. "Myasthenia gravis and disorders of neuromuscular transmission." Vet Clin North Am Small Anim Pract. 2002;32(1):189-206.', relevance: '重症肌無力與巨食道症的關聯' },
-    { type: 'journal', citation: 'McBrearty AR, Ramsey IK, Courcier EA, et al. "Clinical factors associated with death before discharge and overall survival time in dogs with generalized megaesophagus." J Am Vet Med Assoc. 2011;238(12):1622-1628. doi:10.2460/javma.238.12.1622.', relevance: '巨食道症預後因子分析' },
-    { type: 'journal', citation: 'Haines JM. Survey of owners on population characteristics, diagnosis, and environmental, health, and disease associations in dogs with megaesophagus. Res Vet Sci. 2019;123:1-6. doi:10.1016/j.rvsc.2018.11.026.', relevance: '犬巨食道症族群特徵、診斷與環境/健康關聯之飼主調查' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. St. Louis: Elsevier; 2017. Chapter 55: Diseases of the Esophagus.', relevance: '食道疾病病理與臨床管理教材' },
+    { type: 'journal', citation: 'Gaynor AR, Shofer FS, Washabau RJ. Risk factors for acquired megaesophagus in dogs. J Am Vet Med Assoc. 1997;211(11):1406-1412. doi:10.2460/javma.1997.211.11.1406.', relevance: '後天性巨食道症危險因子 case-control（甲低與巨食道無關聯之來源）' },
+    { type: 'journal', citation: 'Shelton GD, Willard MD, Cardinet GH 3rd, Lindstrom J. Acquired myasthenia gravis: selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 1990;4(6):281-284. doi:10.1111/j.1939-1676.1990.tb03124.x.', relevance: 'MG 約佔特發性巨食道 26%（40/152）之原始出處' },
+    { type: 'journal', citation: 'Shelton GD. Myasthenia gravis and disorders of neuromuscular transmission. Vet Clin North Am Small Anim Pract. 2002;32(1):189-206. doi:10.1016/s0195-5616(03)00085-8.', relevance: '重症肌無力與巨食道症的關聯回顧' },
+    { type: 'journal', citation: 'Bell SM, Evans JM, Evans KM, et al. Congenital idiopathic megaesophagus in the German shepherd dog is a sex-differentiated trait and is associated with an intronic VNTR in Melanin-Concentrating Hormone Receptor 2. PLoS Genet. 2022;18(3):e1010044. doi:10.1371/journal.pgen.1010044.', relevance: '先天性巨食道遺傳學（GSD MCHR2 VNTR）與 20-46% 自發緩解' },
+    { type: 'journal', citation: 'McBrearty AR, Ramsey IK, Courcier EA, et al. Clinical factors associated with death before discharge and overall survival time in dogs with generalized megaesophagus. J Am Vet Med Assoc. 2011;238(12):1622-1628. doi:10.2460/javma.238.12.1622.', relevance: '預後因子（吸入性肺炎與發病年齡）與中位存活約 90 天' },
+    { type: 'journal', citation: 'Quintavalla C, Menozzi A, Pozzoli C, et al. Sildenafil improves clinical signs and radiographic features in dogs with congenital idiopathic megaoesophagus: a randomised controlled trial. Vet Rec. 2017;180(16):404. doi:10.1136/vr.103832.', relevance: 'Sildenafil 對先天性特發性巨食道之 RCT（1 mg/kg BID）' },
+    { type: 'journal', citation: 'Mehain SO, Haines JM, Guess SC. A randomized crossover study of compounded liquid sildenafil for treatment of generalized megaesophagus in dogs. Am J Vet Res. 2022;83(4):317-323. doi:10.2460/ajvr.21.02.0030.', relevance: 'Sildenafil 對後天/全身性巨食道亦有效之交叉 RCT（近期）' },
+    { type: 'journal', citation: 'Kempf J, Lewis F, Reusch CE, Kook PH. High-resolution manometric evaluation of the effects of cisapride and metoclopramide hydrochloride administered orally on lower esophageal sphincter pressure in awake dogs. Am J Vet Res. 2014;75(4):361-366. doi:10.2460/ajvr.75.4.361.', relevance: '口服 metoclopramide 未顯著提升犬 LES 壓、cisapride 有效' },
+    { type: 'journal', citation: 'Jaggy A, Oliver JE, Ferguson DC, Mahaffey EA. Neurological manifestations of hypothyroidism: a retrospective study of 29 dogs. J Vet Intern Med. 1994;8(5):328-336. doi:10.1111/j.1939-1676.1994.tb03245.x.', relevance: '甲低犬補充後巨食道多持續（4 隻皆未消退）' },
+    { type: 'guideline', citation: 'Lappin MR, Blondeau J, Boothe D, et al. Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats: Antimicrobial Guidelines Working Group of the ISCAID. J Vet Intern Med. 2017;31(2):279-294. doi:10.1111/jvim.14627.', relevance: 'ISCAID 呼吸道感染指引（吸入性肺炎依嚴重度分層、巨食道採腸道外給藥）' },
+    { type: 'journal', citation: 'Haines JM. Survey of owners on population characteristics, diagnosis, and environmental, health, and disease associations in dogs with megaesophagus. Res Vet Sci. 2019;123:1-6. doi:10.1016/j.rvsc.2018.11.026.', relevance: '犬巨食道症族群特徵與飼主調查' },
+    { type: 'journal', citation: 'Tu Y, Chung C, Lin L. Using sildenafil to treat a dog with idiopathic megaesophagus. Taiwan Vet J. 2020;46(1):1-6. doi:10.1142/s1682648520720014.', relevance: '台灣本土 sildenafil 治療特發性巨食道之個案報告' },
   ],
   is_current: true,
   created_at: now,
