@@ -618,7 +618,7 @@ IRIS CKD 分期以 creatinine 與 SDMA 為基礎。
 const contentCytology: NodeContent = {
   id: 'CONTENT-CPATH-L4-003',
   node_id: 'CPATH-L4-003',
-  version: 1,
+  version: 2,
   summary: '細胞學是用 FNA 或壓印抹片拿到細胞，染色後上顯微鏡看形態。摸到腫塊要快速分類、先看到底是什麼方向，這是第一線工具。',
   learning_objectives: [
     '描述 FNA 的正確操作技術與抹片製作方法',
@@ -632,7 +632,7 @@ const contentCytology: NodeContent = {
     '樣本充足性是第一關。細胞不夠（non-diagnostic）就要重抽',
     '細胞學第一刀分三類：發炎、增生、腫瘤',
     '腫瘤再分上皮（carcinoma）、間質（sarcoma）、圓細胞',
-    '惡性標準看核：核仁大小不一、數量多、形狀亂、N:C ratio 大、有絲分裂像多',
+    '惡性標準看核：核大小不一(anisokaryosis)、核仁大小不一(anisonucleoliosis)/數量多/形狀亂、染色質粗、N:C ratio 大、有絲分裂多',
     '圓細胞腫瘤（lymphoma、MCT、histiocytoma、TVT、plasmacytoma）最適合細胞學',
     'Diff-Quik 三分鐘搞定，院內判讀；Wright-Giemsa 細節好但慢',
     'Sarcoma 細胞抽不太到、又分散，常常要送組織病理',
@@ -647,23 +647,25 @@ const contentCytology: NodeContent = {
 ### 非抽吸技術（Non-aspiration / Woodpecker technique）
 適合血管豐富的組織，減少血液汙染：
 1. 使用 22-25G 針頭，不接注射器
-2. 快速進出腫塊（woodpecker motion）5-10 次
+2. 快速進出腫塊（woodpecker motion）數次（約 3-8 次，斜面不完全退出組織；過度穿刺反增細胞損傷與出血）
 3. 改變角度重複以取得代表性樣本
 4. 用 10 mL 注射器將針頭內容物吹至載玻片
 
 ### 抹片製作
-- Squash prep（壓片法）：最常用，適合大部分 FNA 樣本
-- Starfish / pull-apart technique：適合液態樣本
-- Line smear：適合液態樣本的濃縮
+- Squash prep（壓片法/壓抹法）：最常用，適合大部分「實質腫塊」FNA 樣本；「pull-apart」為其雙玻片變體（同屬實質抽吸物）
+- Starfish（星狀針拖法）：亦為「實質」FNA 抽吸物之替代技術（黏稠/脆弱樣本，減少細胞破裂）——非液態樣本用
+- 液態樣本：blood/wedge smear（血抹片/楔形法）製作大部分積液抹片；Line smear（線抹法）用於細胞稀疏的清澈液態（低細胞積液、BAL、關節液）以濃縮細胞
 
 ### 細胞學模式分類
+> 判讀第一刀先分「發炎 vs 非發炎（組織細胞）族群」；非發炎再分正常/增生（良性，兩者常無法在細胞學區分）/惡性腫瘤。
+
 | 模式 | 主要細胞 | 提示 |
 |------|---------|------|
-| 化膿性發炎 | 退化嗜中性球 | 細菌感染 |
-| 肉芽腫性發炎 | 巨噬細胞為主 | 黴菌、分枝桿菌、異物 |
-| 上皮性腫瘤 | 細胞團簇、高 N:C ratio | Carcinoma |
+| 化膿性發炎（suppurative） | 嗜中性球 > 85% | 退化+胞內細菌=敗血性；無退化/無菌=免疫媒介或尿/膽刺激 |
+| 肉芽腫性發炎 | 巨噬細胞 > 50% | 黴菌、分枝桿菌、異物 |
+| 上皮性腫瘤 | 細胞黏附成團簇（cohesive，胞間 desmosome）、圓/多角形 | Carcinoma（N:C 依細胞型別而異、非定義特徵） |
 | 間質性腫瘤 | 梭形細胞、個別分散 | Sarcoma |
-| 圓細胞腫瘤 | 均勻圓形/卵圓形 | Lymphoma, MCT 等 |
+| 圓細胞腫瘤 | 均勻圓形/卵圓形、離散 | Lymphoma, MCT 等 |
 
 ### 惡性標準（Criteria of Malignancy）
 ### 一般標準
@@ -671,11 +673,12 @@ const contentCytology: NodeContent = {
 - N:C ratio 增大
 - 有絲分裂像增多或異常有絲分裂
 
-### 核的標準（最重要）
-- 核仁大小不一（anisokaryosis）
-- 核仁數量增多或形狀不規則
+### 核的標準（最重要——核標準是惡性主要指標）
+- **核大小不一（anisokaryosis）**：指細胞核（nucleus）大小顯著變異——**非核仁**
+- 核仁大小不一（anisonucleoliosis）、核仁數量增多或形狀不規則（角狀）
 - 染色質粗糙或分布不均
 - 核膜不規則
+- 巨大核仁、多核、核質比（N:C ratio）增大
 
 ## 二、判讀要點 (Interpretation)
 
@@ -692,6 +695,14 @@ const contentCytology: NodeContent = {
 
 ## 三、常見陷阱 (Pitfalls)
 
+- **術語誤植**：anisokaryosis 是「核」大小不一（非核仁）；核仁大小不一為 anisonucleoliosis，勿混淆
+- **高 N:C ratio ≠ 上皮性辨識特徵**：高 N:C 是「惡性判準」之一，上皮性的定義特徵是「黏附成團簇」
+- **血液汙染**：血管豐富腫塊用抽吸易整片血，改非抽吸；過度穿刺反增出血
+- **Diff-Quik 漏染 MCT 顆粒**：水性快速 Romanowsky 對肥大細胞異染顆粒染色不穩定（可能淡染或呈透明空泡），疑 MCT 應加 toluidine blue 或 Wright-Giemsa
+- **反應性淋巴結誤判**：反應性增生中大淋巴球比例上升易被當淋巴瘤；低惡性度/小細胞淋巴瘤則是細胞學盲點（敏感度僅約 67%）
+- **化膿性 ≠ 敗血性**：化膿性定義是嗜中性球 > 85%，須另見退化+胞內菌才是敗血；勿見化膿即斷定感染
+- **Sarcoma 信心過高**：間質性腫瘤細胞剝離差、分級困難，多需組織病理
+
 ## 四、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
@@ -704,9 +715,17 @@ const contentCytology: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬貓 FNA 細胞學 vs 組織病理的整體一致率 | 組織類型差異很大：淋巴結 FNA 準確度 > 90%，脾臟、肝臟 FNA 只有 60-70% | Level II |
-| 犬 MCT 細胞學分級是否可取代組織病理分級 | 細胞學可提示 high-grade，但 Kiupel/Patnaik 系統需組織病理，細胞學分級標準尚未統一 | Level III |
-| FNA 抽吸技術（aspiration）vs 非抽吸技術（non-aspiration）的診斷效能比較 | 非抽吸技術血液汙染較少，但對纖維性腫瘤細胞量可能不足，最佳策略因腫瘤類型而異 | Level III |`,
+| 犬貓 FNA 細胞學 vs 組織病理的整體一致率 | 隨器官差異大：皮膚/皮下約 90%（Ghisleni 2006）、淋巴結對「淋巴瘤」偵測 >90% 但整體腫瘤一致率約 65-77%（Ku 2017）、脾臟約 60-72%、**肝臟最低僅約 30%（犬）/51%（貓）（Wang 2004）**——非籠統的 60-70% | Level II |
+| 犬 MCT 細胞學分級是否可取代組織病理分級 | 細胞學可提示 high-grade，但 Kiupel（二級）/Patnaik（三級）系統皆為「組織學」分級需切片，細胞學分級標準尚未統一 | Level III |
+| FNA 抽吸技術（aspiration）vs 非抽吸技術（non-aspiration）的診斷效能比較 | 非抽吸血液汙染較少，但對纖維性腫瘤細胞量可能不足，最佳策略因腫瘤類型而異 | Level III |
+
+## 六、近期更新 (Recent Updates)
+
+- **術語正名**：anisokaryosis＝核大小不一（Merck/Raskin & Meyer 明列「核標準為惡性主要指標」）；核仁大小不一為 anisonucleoliosis。
+- **器官別準確率**：肝臟 FNA 一致率最低（Wang 2004 犬約 30%/貓約 51%），非「60-70%」；淋巴結對低惡性度淋巴瘤是盲點（Ku 2017 敏感度約 67%）。
+- **MCT FNA 安全性**：皮膚/皮下 MCT 之 FNA 為安全首選（去顆粒化多輕微、自限、非禁忌，Sabattini 2018 細胞-組織一致約 85%）；「內臟型」MCT 抽吸才需抗組織胺預防。
+- **MCT 分級**：Kiupel 2011 二級（低/高）與 Patnaik 三級皆為組織學分級、需切片；細胞學僅能提示 high-grade（Sabattini 2024 續驗二級系統之預後價值）。
+- **AI/數位細胞學**：digital cytology 與電腦輔助惡性判讀研究漸增。`,
   clinical_pearl: '圓細胞腫瘤是細胞學最會抓的一類。淋巴瘤 FNA 準確率 90% 以上。Sarcoma 反過來，細胞量不夠又分散，常常抽不到、看不準，最後還是要組織病理。',
   common_mistakes: [
     '血管很多的腫塊還用抽吸技術，整片血',
@@ -718,7 +737,7 @@ const contentCytology: NodeContent = {
   disease_data: null,
   diagnostic_data: {
     indication: ['體表腫塊初步診斷', '淋巴結腫大評估', '體腔積液分析', '關節液分析', '術中壓印抹片'],
-    contraindication: ['凝血功能嚴重異常（相對禁忌）', '高度血管性腫瘤如血管肉瘤（出血風險）', '疑似肥大細胞瘤時需謹慎（穿刺可能引發去顆粒化反應）'],
+    contraindication: ['凝血功能嚴重異常（相對禁忌）', '高度血管性腫瘤如血管肉瘤（出血風險）', '疑似「內臟型」肥大細胞瘤（脾/肝/腸胃道）抽吸前建議給抗組織胺（去顆粒化風險）；皮膚/皮下 MCT 之 FNA 為安全首選、去顆粒化多輕微自限、非禁忌'],
     technique: '使用 22-25G 針頭，非抽吸技術（woodpecker）或輕度抽吸。取得樣本後以 squash prep 製作抹片，風乾後以 Diff-Quik 或 Wright-Giemsa 染色。低倍掃描評估細胞量，高倍評估細胞形態。',
     normal_findings: [
       { finding: '正常淋巴結', description: '小淋巴球為主（>90%）+ 少量中/大淋巴球 + 漿細胞 + 巨噬細胞', significance: '正常淋巴組織' },
@@ -737,7 +756,7 @@ const contentCytology: NodeContent = {
       'Diff-Quik 對 mast cell granules 有時候染不出來',
       '反應性淋巴結裡中型大淋巴球變多被當淋巴瘤',
     ],
-    sensitivity_specificity: '圓細胞腫瘤敏感度 85-95%（淋巴瘤特別準）。Sarcoma 只有 50-70%，特異度更低。整體 FNA 準確率 70-90%，看腫瘤類型跟操作品質。',
+    sensitivity_specificity: '圓細胞腫瘤敏感度高（高惡性度淋巴瘤 >90%，但低惡性度/小細胞淋巴瘤是盲點、敏感度約 67%；Ku 2017）。器官別一致率差異大：皮膚/皮下約 90%、脾臟 60-72%、肝臟最低約 30%(犬)/51%(貓)（Wang 2004）。Sarcoma 多僅能作「肉瘤」通稱、與組織學分級一致約 50-60%。',
     cost_benefit: '幾乎零成本、結果馬上拿到、微創。腫塊評估的第一線。但 sarcoma 跟分級需求都要送組織病理。',
   },
   procedure_data: null,
@@ -750,10 +769,11 @@ const contentCytology: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '細胞學判讀權威教材與圖譜' },
-    { type: 'textbook', citation: 'Cowell RL et al. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. Elsevier, 2014.', relevance: '犬貓細胞學診斷教材' },
-    { type: 'journal', citation: 'Ghisleni G et al. "Correlation between fine-needle aspiration cytology and histopathology in the evaluation of cutaneous and subcutaneous masses from dogs and cats." Vet Clin Pathol 2006;35(1):24-30.', relevance: '細胞學與組織病理的相關性研究' },
-    { type: 'guideline', citation: 'ASVCP Guidelines Committee. "Guidelines for cytologic preparation techniques and criteria for evaluation of samples." Vet Clin Pathol. 2017;46(1):15-28.', relevance: 'ASVCP 細胞學樣本製備與品質評估指引' },
+    { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. St. Louis: Elsevier, 2016.', relevance: '細胞學判讀權威教材與圖譜（惡性標準、模式分類、抹片製作）' },
+    { type: 'textbook', citation: 'Cowell RL, Tyler RD, Meinkoth JH, DeNicola DB. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. St. Louis: Elsevier Mosby, 2014.', relevance: '犬貓細胞學診斷教材' },
+    { type: 'journal', citation: 'Ghisleni G, Roccabianca P, Ceruti R, et al. Correlation between fine-needle aspiration cytology and histopathology in the evaluation of cutaneous and subcutaneous masses from dogs and cats. Vet Clin Pathol. 2006;35(1):24-30. doi:10.1111/j.1939-165x.2006.tb00084.x', relevance: '皮膚/皮下腫塊細胞學與組織病理一致率約 90%' },
+    { type: 'journal', citation: 'Kiupel M, Webster JD, Bailey KL, et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155. doi:10.1177/0300985810386469', relevance: 'MCT 二級組織學分級系統（取代 v1 捏造之「ASVCP cytologic preparation guidelines 2017」幻影引用）' },
+    { type: 'journal', citation: 'Sabattini S, Brocanelli A, Zaccone R, et al. The 2-tier grading system identifies canine cutaneous and/or subcutaneous mast cell tumors with aggressive biological behavior regardless of growth model. Vet Pathol. 2024;61(6):874-881. doi:10.1177/03009858241240443', relevance: '近期：二級分級系統之預後驗證' },
   ],
   is_current: true,
   created_at: now,
