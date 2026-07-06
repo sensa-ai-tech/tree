@@ -953,7 +953,7 @@ const contentPolyradiculoneuritis: NodeContent = {
 const contentMG: NodeContent = {
   id: 'CONTENT-NEURO-L3-006',
   node_id: 'NEURO-L3-006',
-  version: 1,
+  version: 2,
   summary: '重症肌無力（Myasthenia Gravis, MG）是犬最常見的神經肌肉接合（NMJ）疾病，分為先天型和後天型。後天型 MG 為自體免疫性疾病，由抗乙醯膽鹼受體（AChR）抗體引起。臨床表現為運動誘發性肌肉無力（exercise-induced weakness），局灶型以巨食道（megaesophagus）為最常見表現。診斷依賴 AChR 抗體檢測（金標準）與 Edrophonium test。治療以抗膽鹼酯酶藥物（Pyridostigmine）為基礎，併發吸入性肺炎為最主要的致死原因。',
   learning_objectives: [
     '區分先天型與後天型 MG 的病理機轉與臨床特徵',
@@ -969,7 +969,7 @@ const contentMG: NodeContent = {
     '診斷金標準：血清 AChR 抗體效價（> 0.6 nmol/L）',
     'Edrophonium test（Tensilon test）：短效抗膽鹼酯酶藥，陽性 = 注射後肌力短暫改善',
     '治療：Pyridostigmine 0.5-3 mg/kg PO BID-TID + 巨食道管理 + 吸入性肺炎預防',
-    '約 87% 後天型 MG 犬可自發緩解（中位時間 6-8 個月），但吸入性肺炎致死率高',
+    '自發緩解為犬 MG 特徵：抗膽鹼酯酶單藥世代約 89%（47/53）於平均 6.4 個月緩解（Shelton & Lindstrom 2001，未緩解者多有腫瘤）；惟免疫抑制、較嚴格緩解定義的世代僅約 31% 臨床緩解（Forgash 2021），吸入性肺炎為最主要致死原因',
   ],
   body: `# 重症肌無力 (Myasthenia Gravis)
 
@@ -989,8 +989,8 @@ const contentMG: NodeContent = {
 
 ### 後天型 MG
 - 自體免疫性：抗 AChR 抗體
-- 可伴隨胸腺腫瘤（thymoma）：約 3-5% 的犬 MG 有胸腺腫瘤
-- 雙峰年齡分布：1-4 歲與 9-13 歲
+- 可伴隨胸腺腫瘤（thymoma）：約 3-5% 的犬 MG 有胸腺腫瘤（Shelton 1997 約 3.4%；轉診世代可達 ~9%）。反向關係更強——胸腺瘤犬約 40-47% 併發副腫瘤性 MG
+- 雙峰年齡分布：年輕成犬約 1-4 歲與高齡犬約 9-13 歲。臨床上最常受影響為 German Shepherd、Golden Retriever、Labrador；Akita 相對風險最高，Newfoundland（及 Great Dane）與家族性早發型相關
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -1000,7 +1000,7 @@ const contentMG: NodeContent = {
 - 嚴重時無法站立或行走
 
 ### 局灶型（Focal）
-- 巨食道（Megaesophagus）：最常見的局灶表現（約 40% 的後天型 MG）
+- 巨食道（Megaesophagus）：局灶型最主要的表現；局灶型約佔後天型 MG 的 35%（Dewey 1997；Dos Santos 2025）。**注意勿與巨食道整體盛行率混淆**——巨食道（跨全身型＋局灶型）見於約 80-90% 的後天型 MG（Dos Santos 2025 全體 84%、全身型 85%；Dewey 全身型 ~83%），為誘發反流與吸入性肺炎的關鍵
 - 食道肌肉無力，食道擴張，反流（regurgitation）
 - 面部肌肉/咽喉肌無力：咀嚼困難、聲音改變
 - 可無明顯四肢無力
@@ -1012,7 +1012,7 @@ const contentMG: NodeContent = {
 - 需緊急處置，預後較差
 
 ### 診斷
-- AChR 抗體效價（金標準）：> 0.6 nmol/L 為陽性。約 2% 為血清陰性 MG
+- AChR 抗體效價（免疫沉澱 RIA，金標準；全身型敏感度約 98%）：犬 > 0.6 nmol/L 為陽性（**貓閾值不同，> 0.3 nmol/L，勿混用**）。血清陰性（AChR 抗體陰性）MG 比例依判準與族群而異：實驗室轉診族群約 2%（Shelton 2010），但明確臨床世代可達約 20-22%（Dos Santos 2025，37/167）——效價低於閾值**不能排除** MG
 - Edrophonium (Tensilon) test：[藥物:Edrophonium] 0.1-0.2 mg/kg IV 快速注射，陽性 = 30-60 秒內肌力改善持續 2-5 分鐘。備 Atropine 以防膽鹼激性危象
 - 胸腔 X 光：評估 megaesophagus 與胸腺腫塊、吸入性肺炎
 - EMG/重複神經刺激（RNS）：漸減反應（decremental response）> 10% 支持 NMJ 疾病
@@ -1030,7 +1030,7 @@ const contentMG: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- 吸入性肺炎：MG 犬最主要的致死原因（約 40%），巨食道導致反流後食物誤吸入氣道
+- 吸入性肺炎：MG 犬最主要的致死/安樂死原因，約佔死亡的一半（Forgash 2021 為 48.5%、Dos Santos 2025 為 52.1%）；巨食道導致反流後食物誤吸入氣道（勿與「1 年整體死亡率約 40-60%」此不同指標混淆）
 - 膽鹼激性危象：Pyridostigmine 過量引發，症狀與 MG 加重相似（肌肉無力），伴流涎、嘔吐、腹瀉、瞳孔縮小
 - 急性暴發型危象：快速進展的全身性癱瘓 + 呼吸衰竭，需緊急氣管插管與呼吸支持
 - 免疫抑制副作用：合併使用 Prednisolone 初期可能暫時加重肌肉無力（謹慎低劑量起始）
@@ -1045,7 +1045,7 @@ const contentMG: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- 後天型（自發緩解型）：預後中等至良好，約 87% 犬可在 6-8 個月內自發緩解，AChR 抗體效價降至正常後可逐漸停藥
+- 後天型（自發緩解型）：預後中等至良好——抗膽鹼酯酶單藥（未免疫抑制）世代約 89%（47/53）於平均 6.4 個月自發臨床與免疫緩解（Shelton & Lindstrom 2001；未緩解 6 犬皆有腫瘤），AChR 抗體效價降至正常後可逐漸停藥。惟以免疫抑制、採較嚴格緩解定義的較新大型世代（Forgash 2021, 94 犬）僅約 31% 達臨床緩解、59% 免疫緩解，故 89% 不宜當作普遍期望值
 - 局灶型（僅巨食道）：預後中等，需長期巨食道管理，吸入性肺炎風險為最大威脅
 - 急性暴發型：預後差，快速全身性癱瘓合併呼吸衰竭，死亡率高
 - 預後良好因子：全身型（非暴發型）、AChR 抗體效價逐月下降、無巨食道、飼主良好配合直立餵食
@@ -1065,10 +1065,17 @@ const contentMG: NodeContent = {
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
 | 犬 MG 初始即加入免疫抑制劑 vs 僅 Pyridostigmine | 免疫抑制可能加速緩解但初期高劑量類固醇可暫時加重無力 | Level III |
-| 血清陰性 MG（AChR Ab 陰性）的診斷與管理 | 約 2% 的犬 MG 為血清陰性，可能涉及其他 NMJ 抗體（如 anti-MuSK） | Level IV |
+| 血清陰性 MG（AChR Ab 陰性）的診斷與管理 | 比例依族群而異（轉診族群約 2%、明確臨床世代達約 20-22%，Dos Santos 2025）；可能涉及其他 NMJ 抗體（如 anti-MuSK/LRP4）或 RIA 敏感度限制，須靠 RNS/SFEMG 與臨床藥理試驗輔助診斷 | Level IV |
 | 胸腺切除術在犬 MG 的療效 | 人 MG 中胸腺切除為標準治療，犬胸腺腫瘤應切除，但無腫瘤時切除效果不明 | Level III |
-| 犬 MG 自發緩解後是否需維持治療 | AChR 抗體正常化後停藥時機與復發風險的資料有限 | Level IV |`,
-  clinical_pearl: '犬 MG 的最大陷阱是「局灶型」，約 40% 的後天型 MG 犬僅表現巨食道而無明顯四肢無力。所以，任何新診斷的犬巨食道都應納入 MG 的鑑別診斷，並檢測 AChR 抗體。另一個重要觀念是：約 87% 的後天型 MG 犬可在 6-8 個月內自發緩解，但在等待緩解期間，吸入性肺炎是最主要的致死原因，所以巨食道的管理和飼主衛教不能省。\n\n【台灣流行病學】重症肌無力在台灣犬為少見但重要的神經肌肉接合疾病。台灣犬 MG 的好發品種包括金毛獵犬、德國牧羊犬等大型犬。AChR 抗體檢測目前需送國外實驗室，台灣臨床上多依靠 Edrophonium（Tensilon）試驗做初步評估。台灣潮濕亞熱帶氣候下巨食道犬的吸入性肺炎風險尤其高，飼主衛教（直立進食、食物質地調整）在台灣臨床管理中不能省。',
+| 犬 MG 自發緩解後是否需維持治療 | AChR 抗體正常化後停藥時機與復發風險的資料有限 | Level IV |
+
+## 八、近期更新 (Recent Updates)
+
+- **分類架構（Mignan 2020, JVIM）**：現行回顧明確區分「先天性肌無力症候群（CMS，遺傳性、AChR 抗體陰性）」與「後天型自體免疫 MG」，後天型再分全身型、局灶型、急性暴發型與血清陰性型；有助於 AChR 抗體陰性時不過早排除 MG。
+- **血清陰性犬的再認識（Dos Santos 2025, JVIM）**：167 犬病例系列顯示血清陰性型可達約 22%（遠高於歷史文獻的 ~2%），凸顯重複神經刺激（RNS）、單纖維肌電圖（SFEMG）與 Edrophonium 藥理試驗在 AChR 抗體陰性個案的診斷價值；食道無力（見於約 82% 之犬）顯著縮短存活。
+- **預後數據更新（Forgash 2021, JVIM 94 犬）**：以免疫抑制為主、採較嚴格緩解定義的大型世代，臨床緩解約 31%、免疫緩解約 59%，吸入性肺炎為最主要致死原因（48.5%）——與 Shelton 2001「抗膽鹼酯酶單藥約 89% 自發緩解」互補，提醒緩解率高度取決於族群與判準。
+- **人醫新藥的轉譯前景**：人全身型 MG 已有 FcRn 拮抗劑（efgartigimod，2021 FDA 核准）與補體 C5 抑制劑（eculizumab/ravulizumab）等標靶治療，可快速清除致病性 IgG 或阻斷補體介導破壞；犬 MG 尚無臨床研究，且因犬多可自發緩解，這類昂貴標靶藥於犬的定位仍待評估。`,
+  clinical_pearl: '犬 MG 的最大陷阱是「局灶型」，約 40% 的後天型 MG 犬僅表現巨食道而無明顯四肢無力。所以，任何新診斷的犬巨食道都應納入 MG 的鑑別診斷，並檢測 AChR 抗體。另一個重要觀念是：多數後天型 MG 犬可自發緩解（單用抗膽鹼酯酶世代約 89%、平均 6.4 個月，Shelton 2001；但免疫抑制世代以較嚴格標準約 31%，Forgash 2021），而在等待緩解期間，吸入性肺炎是最主要的致死原因（約佔死亡一半），所以巨食道的管理和飼主衛教不能省。\n\n【台灣流行病學】重症肌無力在台灣犬為少見但重要的神經肌肉接合疾病。台灣犬 MG 的好發品種包括金毛獵犬、德國牧羊犬等大型犬。AChR 抗體檢測目前需送國外實驗室，台灣臨床上多依靠 Edrophonium（Tensilon）試驗做初步評估。台灣潮濕亞熱帶氣候下巨食道犬的吸入性肺炎風險尤其高，飼主衛教（直立進食、食物質地調整）在台灣臨床管理中不能省。',
   common_mistakes: [
     '新診斷的犬巨食道未檢測 AChR 抗體（約 25-30% 的犬巨食道由 MG 引起）',
     '執行 Edrophonium test 時未準備 Atropine（膽鹼激性危象可致心搏過慢）',
@@ -1096,9 +1103,9 @@ const contentMG: NodeContent = {
     ],
     diagnostic_workup: '先收詳細病史（運動誘發性無力、反流跟嘔吐怎麼分），做完整神經學檢查（運動後無力會加重、反射通常正常），接著測 AChR 抗體效價（金標準，超過 0.6 nmol/L 算陽性）跟 Edrophonium test（記得備 Atropine）。胸腔 X 光看 megaesophagus、胸腺腫塊、吸入性肺炎。EMG 加重複神經刺激抓漸減反應（超過 10%）。基礎血檢加 T4 把甲狀腺功能低下排掉。',
     treatment_protocol: '基礎治療：Pyridostigmine 0.5-3 mg/kg PO BID-TID，從低劑量開始逐漸調整。巨食道管理：Bailey chair 直立餵食 10-15 分鐘、小量多餐、食物球狀（facilitates esophageal transit）。難治/嚴重型加入免疫抑制：Prednisolone（低劑量起始 0.5 mg/kg QOD 漸增，避免初期高劑量加重無力）、Azathioprine 2 mg/kg PO QOD、Mycophenolate 10-20 mg/kg PO BID。胸腺腫瘤者建議手術切除。',
-    prognosis: '約 87% 的後天型 MG 犬可在治療後自發緩解，中位時間約 6-8 個月。AChR 抗體效價下降至正常後可逐漸減藥。吸入性肺炎為最主要的致死/安樂死原因（約 40% 的死亡原因）。急性暴發型預後最差。局灶型（僅巨食道）預後較好。',
+    prognosis: '自發緩解為犬後天型 MG 的核心特徵：單用抗膽鹼酯酶（未免疫抑制）世代約 89%（47/53）於平均 6.4 個月自發臨床與免疫緩解（Shelton & Lindstrom 2001，未緩解者多有腫瘤）；惟以免疫抑制、較嚴格緩解定義的較新世代（Forgash 2021, 94 犬）約 31% 臨床緩解、59% 免疫緩解，緩解率高度取決於族群與判準。AChR 抗體效價下降至正常後可逐漸減藥。吸入性肺炎為最主要的致死/安樂死原因（約佔死亡一半，48-52%）。急性暴發型預後最差。局灶型（僅巨食道）預後較好。',
     monitoring: '每月測 AChR 抗體效價追蹤治療反應（下降趨勢為良好指標）。定期胸腔 X 光監測 megaesophagus 程度和吸入性肺炎。Pyridostigmine 劑量調整依臨床反應。使用免疫抑制時監測 CBC/BCS。飼主記錄反流頻率和運動耐受度。',
-    owner_communication: '重症肌無力是可治療的疾病，約 87% 的犬可在治療後進入緩解。巨食道管理（直立餵食）是治療的關鍵，吸入性肺炎是 MG 犬最主要的致死原因，而正確的餵食管理可以大幅降低風險。教導飼主辨識反流 vs 嘔吐、記錄頻率。強調按時給藥的重要性，並教導辨識膽鹼激性危象的症狀（過度流涎、嘔吐、腹瀉、瞳孔縮小）。',
+    owner_communication: '重症肌無力是可治療的疾病，多數犬可在治療後進入緩解（單用抗膽鹼酯酶世代約 89%）。巨食道管理（直立餵食）是治療的關鍵，吸入性肺炎是 MG 犬最主要的致死原因，而正確的餵食管理可以大幅降低風險。教導飼主辨識反流 vs 嘔吐、記錄頻率。強調按時給藥的重要性，並教導辨識膽鹼激性危象的症狀（過度流涎、嘔吐、腹瀉、瞳孔縮小）。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -1106,14 +1113,19 @@ const contentMG: NodeContent = {
     { position: 'NMJ 病理段落', type: 'annotated_image', description: '正常 NMJ vs MG 的 AChR 密度比較圖' },
     { position: '治療段落後', type: 'flowchart', description: 'MG 治療決策流程圖（全身型 vs 局灶型 vs 暴發型）' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '診斷段落後', type: 'interactive_overlay', description: 'MG 診斷決策樹：運動不耐/巨食道 → AChR 抗體（犬 >0.6 nmol/L）→ 陰性則 RNS/SFEMG/Edrophonium 試驗 → 分型（全身/局灶/暴發/血清陰性）' },
+  ],
   drug_api_links: ['Pyridostigmine', 'Edrophonium', 'Prednisolone', 'Azathioprine', 'Mycophenolate', 'Atropine'],
   references: [
-    { type: 'journal', citation: 'Shelton GD. Myasthenia gravis and disorders of neuromuscular transmission. Vet Clin North Am Small Anim Pract. 2002;32(1):189-206.', relevance: '犬 MG 綜合回顧' },
-    { type: 'journal', citation: 'Dewey CW et al. Clinical forms of acquired myasthenia gravis in dogs: 25 cases (1988-1995). J Vet Intern Med. 1997;11(2):50-57.', relevance: '犬後天型 MG 臨床表現型分析' },
-    { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: 'NMJ 疾病章節' },
-    { type: 'journal', citation: 'Shelton GD et al. Acquired myasthenia gravis: Selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 1990;4(6):281-284.', relevance: '局灶型 MG 早期文獻' },
-    { type: 'guideline', citation: 'Shelton GD. ACVIM Consensus: Myasthenia Gravis in Dogs and Cats，Diagnosis and Treatment Recommendations. J Vet Intern Med. 2016;30(4):1131.', relevance: '犬貓 MG 診斷與治療共識建議' },
+    { type: 'guideline', citation: 'Mignan T, Targett M, Lowrie M. Classification of myasthenia gravis and congenital myasthenic syndromes in dogs and cats. J Vet Intern Med. 2020;34(5):1707-1717. doi:10.1111/jvim.15855.', relevance: '犬貓 MG 與先天性肌無力症候群現行分類（近期權威）' },
+    { type: 'journal', citation: 'Forgash JT, Chang YM, Mittelman NS, et al. Clinical features and outcome of acquired myasthenia gravis in 94 dogs. J Vet Intern Med. 2021;35(5):2315-2326. doi:10.1111/jvim.16223.', relevance: '2021 大型世代：臨床特徵與預後（緩解率、致死原因）' },
+    { type: 'journal', citation: 'Dos Santos RX, Waelkens J, Crawford AH, et al. Case series of canine myasthenia gravis: a classification approach with consideration of seronegative dogs. J Vet Intern Med. 2025;39(3):e70113. doi:10.1111/jvim.70113.', relevance: '2025 病例系列：血清陰性犬比例與分類（近期）' },
+    { type: 'journal', citation: 'Shelton GD, Lindstrom JM. Spontaneous remission in canine myasthenia gravis: implications for assessing human MG therapies. Neurology. 2001;57(11):2139-2141. doi:10.1212/wnl.57.11.2139.', relevance: '犬後天型 MG 自發緩解原始文獻（47/53，平均 6.4 個月）' },
+    { type: 'journal', citation: 'Dewey CW, Bailey CS, Shelton GD, Kass PH, Cardinet GH 3rd. Clinical forms of acquired myasthenia gravis in dogs: 25 cases (1988-1995). J Vet Intern Med. 1997;11(2):50-57. doi:10.1111/j.1939-1676.1997.tb00073.x.', relevance: '犬後天型 MG 三種臨床表現型分析' },
+    { type: 'journal', citation: 'Shelton GD, Willard MD, Cardinet GH 3rd, Lindstrom J. Acquired myasthenia gravis: selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 1990;4(6):281-284. doi:10.1111/j.1939-1676.1990.tb03124.x.', relevance: '局灶型 MG（食道/咽/面肌選擇性侵犯）經典文獻' },
+    { type: 'journal', citation: 'Shelton GD. Myasthenia gravis and disorders of neuromuscular transmission. Vet Clin North Am Small Anim Pract. 2002;32(1):189-206. doi:10.1016/s0195-5616(03)00085-8.', relevance: '犬貓 NMJ 疾病綜合回顧' },
+    { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. Gloucester: BSAVA; 2013.', relevance: 'NMJ 疾病章節（教科書）' },
   ],
   is_current: true,
   created_at: now,
