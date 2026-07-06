@@ -84,9 +84,11 @@ interface VerifyResult {
 // ─── 引用字串解析 ───
 
 function extractDoi(citation: string): string | null {
-  const m = citation.match(/\b10\.\d{4,9}\/[^\s"'<>)\]]+/i);
+  // 允許 DOI 內含括號（Elsevier S-DOI，如 10.1016/S0195-5616(03)00057-3）；
+  // 中段的 ) 保留、尾端包裹用的 ) 由下方尾綴清除處理。
+  const m = citation.match(/\b10\.\d{4,9}\/[^\s"'<>\]]+/i);
   if (!m) return null;
-  // 去掉常見尾綴標點
+  // 去掉常見尾綴標點（含尾端包裹用的 )）
   return m[0].replace(/[.,;)\]]+$/, '').toLowerCase();
 }
 
