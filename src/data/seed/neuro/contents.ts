@@ -2151,7 +2151,7 @@ const contentSeizurePathophysiology: NodeContent = {
 const contentSpinalCompression: NodeContent = {
   id: 'CONTENT-NEURO-L2-002',
   node_id: 'NEURO-L2-002',
-  version: 1,
+  version: 2,
   summary: '脊髓壓迫（Spinal Cord Compression）是犬貓最常見的脊髓損傷機轉，病因包括椎間盤突出（IVDD）、脊椎腫瘤、脊椎骨折/脫位、寰樞關節不穩定與退化性腰薦椎狹窄。壓迫導致的損傷分為原發性（mechanical compression + contusion）與繼發性（缺血、水腫、興奮毒性、自由基損傷）。神經功能喪失的順序遵循纖維直徑規則：本體感覺、自主運動、淺痛覺、深痛覺。',
   learning_objectives: [
     '描述脊髓壓迫的原發性與繼發性損傷機轉',
@@ -2163,11 +2163,11 @@ const contentSpinalCompression: NodeContent = {
   key_points: [
     '原發性損傷：機械壓迫（compression）+ 挫傷（contusion），發生於壓迫當下',
     '繼發性損傷：缺血，最後細胞水腫，接著興奮毒性，跟著ROS，細胞凋亡，持續數天至數週',
-    '纖維直徑規則：大直徑有髓纖維（本體感覺）最先受損，小直徑無髓纖維（深痛覺）最後受損',
+    '功能喪失順序主由「路徑解剖位置（淺表 vs 深部）」決定、纖維直徑為輔；深痛覺因雙側多突觸深部配置而最後喪失（非單一纖維直徑規則）',
     '臨床喪失順序：本體感覺，自主運動，最後淺痛覺，接著深痛覺（最後喪失 = 最嚴重）',
     '急性壓迫損傷遠大於慢性壓迫（脊髓對慢性壓迫有一定適應能力）',
-    '進行性脊髓軟化（PMM）：最嚴重的繼發損傷，脊髓自溶性壞死向頭尾端擴展，致死',
-    '深痛覺喪失代表脊髓最深層纖維受損，Grade V IVDD 的預後指標',
+    '進行性脊髓軟化（PMM）：deep-pain-negative（Grade V）犬約 10-15%（法鬥達 33%）、確認後致死率近 100%；非舊述 2-5%',
+    '深痛覺喪失（Grade 5）為 IVDD 最重要預後指標；手術減壓後恢復行走約 50-61%，且無「48 小時硬時間窗」（ACVIM 2022）',
   ],
   body: `# 脊髓壓迫機轉
 
@@ -2182,7 +2182,7 @@ const contentSpinalCompression: NodeContent = {
 - 壓迫程度與速度決定原發損傷嚴重度
 
 ### 繼發性損傷（Secondary Injury）
-發生於原發損傷後數小時至數天：
+於原發損傷後「數分鐘內」即啟動（出血、離子位移、麩胺酸釋放），急性期主要在 0-48 小時累積、並可持續數週（膠質瘢痕於數週至數月形成）：
 1. 血管損傷與缺血：微血管破裂、血管痙攣，跟著脊髓灰質缺血
 2. 細胞水腫：Na⁺/K⁺-ATPase 失效，細胞毒性水腫
 3. 興奮毒性：Glutamate 大量釋放，Ca²⁺ 過載
@@ -2190,33 +2190,36 @@ const contentSpinalCompression: NodeContent = {
 5. 發炎反應：嗜中性球與巨噬細胞浸潤
 6. 細胞凋亡：延遲性程序性細胞死亡
 
-### 纖維直徑與功能喪失順序
-脊髓受壓時，大直徑有髓纖維最先受影響，小直徑無髓纖維最後受影響：
+### 功能喪失順序（位置為主、纖維直徑為輔）
+脊髓受壓時功能喪失依「本體感覺 → 自主運動 → 淺痛覺 → 深痛覺」順序出現。此順序**主要由傳導路徑在脊髓白質內的解剖位置（淺表/周邊 vs 深部/中央）決定，纖維直徑為次要輔助因素**（並非單一「纖維直徑規則」）：
 
-| 喪失順序 | 功能 | 纖維特性 | 臨床對應 |
+| 喪失順序 | 功能 | 解剖/纖維特性 | 臨床對應 |
 |---------|------|---------|---------|
-| 1（最先） | 本體感覺 | 大直徑有髓 | 共濟失調、knuckling |
-| 2 | 自主運動 | 中直徑有髓 | 輕癱，接著癱瘓 |
-| 3 | 淺痛覺 | 小直徑有髓 | 皮膚痛覺減退 |
-| 4（最後） | 深痛覺 | 小直徑無髓 C 纖維 | Grade V IVDD |
+| 1（最先） | 本體感覺 | 背側/背外側白質「淺表」路徑（大直徑有髓較易受損為附加因素） | 共濟失調、knuckling |
+| 2 | 自主運動 | 淺-中層下行運動徑 | 輕癱，接著癱瘓 |
+| 3 | 淺痛覺 | 較淺層痛徑（臨床少單獨測試） | 皮膚痛覺減退 |
+| 4（最後） | 深痛覺 | **雙側、瀰漫、多突觸深部路徑**（外側/腹側索、小直徑 Aδ/C 纖維） | Grade V IVDD |
+
+> 深痛覺最耐受壓迫的關鍵在於其「深藏、雙側、多突觸冗餘」的解剖配置——需近乎橫斷全脊髓才會消失，故最後喪失、也是最重要的預後指標。
 
 ### 急性 vs 慢性壓迫
 - 急性壓迫（如 Hansen Type I）：脊髓無時間適應，挫傷嚴重，繼發損傷明顯
 - 慢性壓迫（如 Hansen Type II）：脊髓逐漸適應，可容忍較大程度壓迫而維持功能
 
 ### 進行性脊髓軟化 (PMM)
-- 發生率：Grade V IVDD 約 2-5%
+- 發生率：**深痛覺喪失（Grade V）犬約 10-15%（Balducci 2017 為 14.5%，文獻範圍 9-17.5%）；跨所有分級的整體發生率才約 2%**。法國鬥牛犬風險特別高，可達約 33%（Aikawa 2014）。（舊述「2-5%」低估了 Grade V 的真實風險。）
 - 機轉：繼發損傷的極端情況，脊髓自溶性壞死向頭尾端擴展
 - 臨床徵兆：術後神經功能持續惡化（LMN 徵象擴展至前肢）、panniculus 截斷面持續上移
 - 預後：一旦確認為 PMM，致死率接近 100%
 
 ## 二、臨床意義 (Clinical Significance)
 
-- IVDD 分級系統指導手術決策：纖維直徑規則是 IVDD 5 級分級系統的病理基礎，Grade I（僅痛覺），跟著Grade V（深痛覺喪失），Grade IV-V 為手術急症，Grade V 且深痛覺喪失 > 48 小時者預後急劇下降至 < 5%
-- 繼發損傷的時間窗概念：原發壓迫後的繼發損傷（缺血、水腫、興奮毒性、自由基）在 24-72 小時內持續累積，這是 Grade V IVDD 強調早期手術減壓（< 24-48 hr）的核心理據
-- 急慢性壓迫的預後差異：Hansen Type I（急性核髓脫出）因脊髓無適應時間，挫傷嚴重且繼發損傷明顯；Hansen Type II（慢性環纖維突出）脊髓可逐步適應，同等壓迫程度下功能保留較好，這影響手術時機的急迫性判斷
-- PMM 的早期辨識：進行性脊髓軟化（PMM）是 IVDD 術後最致命的併發症，panniculus 截斷面持續顱側移動、前肢出現 LMN 徵象為早期警訊，一旦確認 PMM，應立即與飼主討論人道考量
-- 物種差異：犬以 IVDD 為最常見脊髓壓迫病因（尤其軟骨營養不良品種），貓則以淋巴瘤脊髓外壓迫與纖維軟骨栓塞（FCE）相對常見
+- IVDD 分級與手術決策：臨床常用「改良 Frankel 分級（modified Frankel score, MFS）」。⚠️ 文獻存在「兩套相反編號」易混淆——臨床嚴重度 1-5 級（Levine：Grade 1 僅脊椎痛 → Grade 5 截癱且深痛覺喪失），與標準化 MFS 0-5 級（方向相反、0 最重）。手術減壓建議適用於「所有不能行走」的壓迫性病例（即 Grade 3 以上，非僅 IV-V）；深痛覺喪失（Grade 5）因 PMM 風險最高、預後最差而最急迫。
+- **手術時機——「時間窗」迷思已被 ACVIM 2022 推翻**：ACVIM 2022 胸腰椎 IVDE 共識（Olby & Moore, JVIM）明確指出「現有文獻不支持設定明確的緊急手術時間窗，即使就診時已癱瘓且深痛覺陰性亦然」。早期減壓的機轉理據在於繼發損傷持續累積，但實證上早期手術較可能影響「恢復速度」而非「最終恢復率」。**「深痛覺喪失 > 48 小時預後 < 5%」為錯誤**——48 小時並非硬截點；舊述「< 5%」對應的是延遲至約 1 週手術，且近年資料顯示此上限亦被個案突破（DPP 喪失 > 1 週手術仍有恢復行走者），故不應僅因癱瘓時間長就拒絕手術。
+- **Grade V（deep-pain-negative）預後**：經手術減壓後恢復行走率約 50-61%（ACVIM 2022 n=502 約 61%），但高度取決於病因（外傷近乎 0%）與品種（法國鬥牛犬僅約 6-19%）；返回深痛覺與術後 2 週神經狀態是更可靠的預後指標。（注意：文獻中約 59% 的較高數字指「未恢復深痛覺」的脊髓性行走 spinal walking，屬不同終點勿混。）
+- 急慢性壓迫的預後差異：Hansen Type I（急性核髓脫出）脊髓無適應時間，挫傷嚴重且繼發損傷明顯；Hansen Type II（慢性環纖維突出）脊髓可逐步適應，同等壓迫程度下功能保留較好。
+- PMM 的早期辨識：進行性脊髓軟化（PMM）是 deep-pain-negative 犬最致命的併發症，panniculus 截斷面持續顱側移動、前肢出現 LMN 徵象為早期警訊，一旦確認 PMM 應立即與飼主討論人道考量。
+- **物種差異**：犬以 IVDD 為最常見脊髓壓迫病因（盛行率約 2%、遠高於貓 0.02-0.12%，尤其軟骨營養不良品種）。**貓則不同**：整體最常見脊髓病變為發炎/感染性（以 FIP 為單一最常見）；就「壓迫性/占位性」病灶而言，以硬膜外淋巴瘤（常與 FeLV 相關、好發年輕貓）與椎體腫瘤為主。**FCE（纖維軟骨栓塞）在貓其實少見**（Marioni-Henry 2004 血管性僅約 9%、且多非典型 FCE）——不應描述為「相對常見」。
 
 ## 三、人醫借鑒 (Translational Insights)
 
@@ -2230,14 +2233,23 @@ const contentSpinalCompression: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬 IVDD 術後高劑量類固醇的神經保護效果 | 人 SCI 已否定 Methylprednisolone 方案，犬同樣趨向不推薦但仍有使用者 | Level II |
-| PMM 的早期預測指標 | 目前依賴臨床觀察，缺乏可靠的 MRI 或生物標記早期預警 | Level IV |`,
+| 犬 IVDD 高劑量類固醇（MPSS）的神經保護 | 人 SCI 已不支持 MPSS 常規使用；ACVIM 2022 於急性期「不建議常規使用糖皮質固醇」（獲益證據不足、且低等級證據示可能增加併發症/復發），為 phase-specific 不建議而非全面禁用 | Level II |
+| PMM 的早期預測指標 | 目前依賴臨床觀察，缺乏可靠的 MRI 或生物標記早期預警 | Level IV |
+
+## 五、近期更新 (Recent Updates)
+
+- **ACVIM 2022 胸腰椎 IVDE 共識（Olby & Moore, JVIM 36:1570-1596）**：不支持「特定緊急手術時間窗」（含 48 小時），即使深痛覺陰性犬亦然；deep-pain-negative 犬手術恢復行走率約 61%（n=502）；糖皮質固醇急性期不建議常規使用。
+- **PMM 風險量化**：Balducci 2017（JVIM）Grade V 犬 PMM ~14.5%、Castel 2017/2019 界定風險因子（範圍 9-17.5%，法鬥可達 33%）——修正舊「2-5%」低估。
+- **預後判斷去時間窗化**：多篇研究（Laitinen 2005、Vicens 2023）顯示手術時機與 deep-pain-negative 犬最終恢復率無穩健關聯；返回深痛覺與術後 2 週狀態才是關鍵指標。
+- **機轉再認識**：功能喪失順序主由「路徑解剖位置」決定、纖維直徑為輔（de Lahunta）；深痛覺耐受源於雙側多突觸深部冗餘配置。`,
   clinical_pearl: '在評估 IVDD Grade V 患者時，最關鍵的概念是「時間窗」。繼發損傷在原發損傷後持續數天，早期手術減壓可以減少繼發損傷的嚴重度。這是為什麼深痛覺喪失被視為「與時間賽跑」的緊急情況，每延遲一小時，脊髓繼發損傷就多一分累積。',
   common_mistakes: [
     '低估繼發損傷的嚴重性，術後神經功能可能因繼發損傷持續惡化',
     '將 Hansen Type II 的慢性壓迫用急性壓迫的預後標準評估',
-    '忽略 PMM 的早期徵兆，panniculus 截斷面持續上移是重要警訊',
-    '未區分急性與慢性脊髓壓迫的手術急迫性，Hansen Type I 急性壓迫需緊急手術，Type II 慢性壓迫可允許較充分的術前評估',
+    '忽略 PMM 的早期徵兆，panniculus 截斷面持續上移是重要警訊；並低估 Grade V 犬 PMM 發生率（~10-15% 非 2-5%）',
+    '以固定「48 小時時間窗」決定是否手術：ACVIM 2022 不支持任何緊急手術時間截點，深痛覺喪失 >48h 甚至 >1 週仍應提供手術',
+    '把功能喪失順序當成單純「纖維直徑規則」：主由路徑解剖位置決定、纖維直徑為輔；深痛覺耐受源於雙側多突觸深部配置',
+    '把貓的脊髓壓迫比照犬想成 IVDD/FCE 常見：貓以 FIP（整體）與硬膜外淋巴瘤（占位性）為主，FCE 少見',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2245,13 +2257,18 @@ const contentSpinalCompression: NodeContent = {
   visual_placeholders: [
     { position: '纖維直徑表格後', type: 'annotated_image', description: '脊髓橫切面纖維分布與壓迫損傷順序圖' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '臨床意義段落', type: 'decision_tool', description: 'IVDD 分級→預後互動：選臨床 grade（1-5）與是否有深痛覺 → 回傳手術建議（所有不能行走者建議減壓）與 deep-pain-negative 恢復率（~50-61%）；強調無 48 小時硬時間窗、PMM 風險（Grade V ~14.5%）' },
+  ],
   drug_api_links: [],
   references: [
-    { type: 'journal', citation: 'Jeffery ND et al. Intervertebral disk degeneration in dogs: consequences, diagnosis, treatment, and future directions. J Vet Intern Med. 2013;27(6):1318-1333.', relevance: '脊髓壓迫機轉與 IVDD' },
-    { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '脊髓損傷病理生理' },
-    { type: 'journal', citation: 'Olby N. The pathogenesis and treatment of acute spinal cord injuries in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):791-807.', relevance: '急性脊髓損傷繼發機轉' },
-    { type: 'guideline', citation: 'Moore SA et al. ACVIM Consensus Statement on thoracolumbar intervertebral disc disease. J Vet Intern Med. 2020;34(5):1684-1699.', relevance: 'ACVIM IVDD 共識，脊髓壓迫病理生理' },
+    { type: 'journal', citation: 'Jeffery ND, Levine JM, Olby NJ, et al. Intervertebral disk degeneration in dogs: consequences, diagnosis, treatment, and future directions. J Vet Intern Med. 2013;27(6):1318-1333. doi:10.1111/jvim.12183', relevance: '脊髓壓迫機轉與 IVDD 總論' },
+    { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. Gloucester: BSAVA, 2013.', relevance: '脊髓損傷病理生理與功能喪失順序（解剖位置）' },
+    { type: 'journal', citation: 'Olby NJ. The pathogenesis and treatment of acute spinal cord injuries in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):791-807. doi:10.1016/j.cvsm.2010.05.007', relevance: '急性脊髓損傷繼發損傷級聯' },
+    { type: 'guideline', citation: 'Olby NJ, Moore SA, Brisson B, et al. ACVIM consensus statement on diagnosis and management of acute canine thoracolumbar intervertebral disc extrusion. J Vet Intern Med. 2022;36(5):1570-1596. doi:10.1111/jvim.16480', relevance: '現行 ACVIM 共識：手術時機去時間窗化、DPN 恢復率、類固醇立場（取代 v1 誤植的 Moore 2020 幻影引用）' },
+    { type: 'journal', citation: 'Balducci F, Canal S, Contiero B, Bernardini M. Prevalence and risk factors for presumptive ascending/descending myelomalacia in dogs after thoracolumbar intervertebral disk herniation. J Vet Intern Med. 2017;31(2):498-504. doi:10.1111/jvim.14656', relevance: 'PMM 發生率：Grade V 犬 14.5%（修正舊 2-5% 低估）' },
+    { type: 'journal', citation: 'Castel A, Olby NJ, Mariani CL, et al. Clinical characteristics of dogs with progressive myelomalacia following acute intervertebral disc extrusion. J Vet Intern Med. 2017;31(6):1782-1789. doi:10.1111/jvim.14829', relevance: 'PMM 臨床特徵與範圍 9-17.5%' },
+    { type: 'journal', citation: 'Marioni-Henry K, Vite CH, Newton AL, Van Winkle TJ. Prevalence of diseases of the spinal cord of cats. J Vet Intern Med. 2004;18(6):851-858. doi:10.1111/j.1939-1676.2004.tb02632.x', relevance: '貓脊髓病變分布：FIP/淋巴瘤為主、FCE 少見（修正 v1「FCE 相對常見」）' },
   ],
   is_current: true,
   created_at: now,
@@ -4452,7 +4469,7 @@ DLSS 為多因素疾病，壓迫來自多個方向：
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '腰薦椎疾病病理與手術基礎' },
     { type: 'journal', citation: 'Meij BP, Bergknut N. Degenerative lumbosacral stenosis in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):983-1009.', relevance: 'DLSS 綜合回顧與治療策略' },
     { type: 'journal', citation: 'Suwankong N et al. Review of the surgical management and outcome of lumbosacral stenosis in dogs. Vet Comp Orthop Traumatol. 2008;21(5):382-391.', relevance: '腰薦椎手術預後回顧研究' },
-    { type: 'guideline', citation: 'Worth AJ, Thompson DJ, Hartman AC. Degenerative lumbosacral stenosis in working dogs: current concepts and review. NZ Vet J. 2009;57(6):319-330. (Consensus review on DLSS diagnosis and surgical management)', relevance: '退化性腰薦椎狹窄診斷與手術管理共識回顧' },
+    { type: 'guideline', citation: 'Worth AJ, Thompson DJ, Hartman AC. Degenerative lumbosacral stenosis in working dogs: current concepts and review. NZ Vet J. 2009;57(6):319-330. doi:10.1080/00480169.2009.64719', relevance: '退化性腰薦椎狹窄診斷與手術管理共識回顧' },
   ],
   is_current: true,
   created_at: now,
