@@ -5923,8 +5923,8 @@ const contentSA: NodeContent = {
 const contentDLE: NodeContent = {
   id: 'CONTENT-DERM-L3-017',
   node_id: 'DERM-L3-017',
-  version: 1,
-  summary: '盤狀紅斑性狼瘡（Discoid Lupus Erythematosus, DLE）是犬最常見的自體免疫皮膚病，只影響皮膚，不會掃到全身器官（這跟 SLE 不一樣）。典型表現是鼻平面（nasal planum）去色素化、紅斑、結痂跟潰瘍，又叫「Collie nose」。紫外線暴露是重要的加重因子。診斷靠組織病理學（界面皮膚炎、基底膜帶免疫複合物沉積）。一線治療是 tacrolimus 0.1% 外用加上 doxycycline 跟 niacinamide 組合，再強調紫外線防護。',
+  version: 2,
+  summary: '盤狀紅斑性狼瘡（Discoid Lupus Erythematosus, DLE；現行分類稱**顏面型 facial DLE/FDLE**）是犬**最常見的皮膚型紅斑性狼瘡（CLE）變異、也是次於落葉型天疱瘡（PF）的第二常見自體免疫皮膚病**。只影響皮膚、不累及全身器官（與 SLE 不同）。典型是鼻平面（nasal planum）去色素化、紅斑、結痂、潰瘍（俗稱「Collie nose」）。組織病理為**介面皮膚炎（細胞毒性 T 細胞攻擊基底角質細胞，非 Type III 免疫複合物）**。光防護（避日曬）為治療基石；一線治療：外用 tacrolimus 0.1% ＋ doxycycline/niacinamide ＋ 嚴格 UV 防護。',
   learning_objectives: [
     '辨識 DLE 的典型臨床表現與好發品種',
     '區分 DLE 與全身性紅斑性狼瘡（SLE）的差異',
@@ -5933,11 +5933,11 @@ const contentDLE: NodeContent = {
     '規劃 DLE 的多模式治療策略（UV 防護 + 局部 + 全身性）',
   ],
   key_points: [
-    'DLE 是犬最常見的自體免疫皮膚病，僅限皮膚（不同於 SLE 的全身累及）',
+    '⚠️ DLE（現行稱 facial DLE/FDLE）是犬**最常見的皮膚型紅斑性狼瘡變異**、第二常見自體免疫皮膚病（**最常見為落葉型天疱瘡 PF**）；僅限皮膚、不同於 SLE 全身累及',
     '典型表現：鼻平面去色素化 → 紅斑 → 結痂 → 潰瘍，病程從鼻尖向鼻樑擴展',
-    '好發品種：柯利犬（Collie）、德國牧羊犬、西伯利亞哈士奇、喜樂蒂牧羊犬',
-    '紫外線暴露為重要加重因子，病情常有夏重冬輕的季節性',
-    '組織病理特徵：界面皮膚炎（interface dermatitis），基底層液化變性、色素失禁',
+    '好發品種：**德國牧羊犬及混種最具代表**（Olivry 2018 FDLE 世代占 31%）；傳統「Collie nose」列柯利犬/喜樂蒂/哈士奇（此三者現行更常見於 VCLE）；發病 1-12 歲（中位 ~7）',
+    '紫外線為加重因子（機轉多外推自人 CLE）；夏重冬輕的明確證據在 VCLE 較強，DLE 仍以「需光防護」為共識',
+    '組織病理：**介面皮膚炎**——細胞毒性 T 淋巴球（CD8+）攻擊基底角質細胞→凋亡/液化變性、色素失禁；BMZ IgG/C3（lupus band）為可變診斷標記、非致病機轉（**非 Type III**）',
     '一線治療：Tacrolimus 0.1% 外用 BID + Doxycycline 5 mg/kg PO BID + Niacinamide 250-500 mg PO BID-TID',
     '紫外線防護為治療基石：避免正午陽光、寵物用防曬乳、環境遮蔽',
     'DLE 不需要全身性免疫抑制（不同於 SLE），預後良好',
@@ -5953,25 +5953,22 @@ const contentDLE: NodeContent = {
 - DLE 的 ANA 檢測通常陰性或低滴度，這跟 SLE 常陽性不一樣。
 - 兩個是獨立疾病，DLE 極少轉化成 SLE。
 
-### 免疫病理
-- 自體抗體靶向基底膜帶（basement membrane zone）的成分。
-- Type III 免疫反應：免疫複合物沉積在表真皮交界處。
-- 補體活化造成基底層角質細胞損傷（液化變性 liquefaction degeneration）。
-- 色素細胞（melanocyte）被破壞，跑去色素化（最早可見的臨床徵兆）。
-- 紫外線加重機轉：UV-B 誘導角質細胞凋亡，釋放核抗原，自體免疫反應就更強。
+### 免疫病理（介面皮膚炎，非 Type III）
+- DLE/FDLE 屬**細胞毒性介面皮膚炎（interface dermatitis）**：以**細胞毒性 T 淋巴球（CD8+、Type IV 細胞介導、干擾素驅動）**攻擊基底層角質細胞為主 → 角質細胞凋亡、基底層液化（水腫性）變性。
+- **並非以 Type III 免疫複合物／補體活化為主要機轉**——Olivry 2018 明言 DLE 病灶「未見活化補體沉積」。
+- 基底膜帶 IgG/IgM/C3 沉積（lupus band test）是**可變、非特異的診斷輔助標記**，不是致病機轉。
+- 基底層角質細胞受損連帶破壞其間的色素細胞 → 去色素化（最早可見徵兆）。
 
-### 紫外線的角色
-- UV-B 是主要的致病波段（280-315 nm）。
-- UV 誘導角質細胞表面的核抗原（Ro/La）外露。
-- UV 促進促炎細胞因子（TNF-α、IL-1）的釋放。
-- 臨床表現是夏重冬輕，戶外犬比室內犬嚴重。
+### 紫外線的角色（多外推自人 CLE，犬缺專屬證據）
+- UV-B（280-315 nm）為**人 CLE** 公認致病/加重波段；誘導角質細胞凋亡、核抗原（Ro/SSA）外露於凋亡小體、促炎細胞因子（TNF-α、IL-1）釋放（Kim & Werth 2013）。
+- 臨床「夏重冬輕、戶外犬較嚴重」為傳統獸醫觀察（源自舊「鼻部日光性皮膚炎」概念）；Olivry 2018 將明確的 UV 誘導/夏季發作歸於 **VCLE**，對 DLE 僅強調「需光防護」。
 
 ## 二、臨床表現與診斷 (Clinical Features & Diagnosis)
 
 ### 好發品種與特徵
-- 柯利犬（Collie）：最具代表性（「Collie nose」）
-- 德國牧羊犬、西伯利亞哈士奇、喜樂蒂牧羊犬、布列塔尼獵犬
-- 發病年齡通常 3-6 歲，無明顯性別差異
+- **德國牧羊犬及其混種最具代表**（Olivry 2018 FDLE 104 犬世代占 31%）
+- 傳統「Collie nose」文獻另列柯利犬、喜樂蒂牧羊犬、西伯利亞哈士奇——**此三者在現行分類中更常見於 VCLE（非 FDLE）**
+- 發病年齡 **1-12 歲（FDLE 中位約 7 歲；GDLE 中位約 9 歲）**，無明顯性別差異
 
 ### 典型臨床進程
 1. 第一階段（早期）：鼻平面正常的鵝卵石紋理（cobblestone pattern）消失 → 表面變光滑
@@ -6011,7 +6008,7 @@ const contentDLE: NodeContent = {
 
 ### 第一步：紫外線防護（所有病例的基石）
 - 避開正午（10:00-16:00）的陽光暴露
-- 寵物用防曬乳（SPF 30+，不要用含 zinc oxide 的，犬舔到會中毒）
+- 寵物用防曬乳（SPF 30+）；含 zinc oxide 者犬舔食主要造成**腸胃不適**（ZnO 經腸道吸收差，全身性鋅中毒罕見、多來自金屬鋅異物）——仍建議寵物專用配方、塗後短時間防舔
 - 鼻部紋身（深色色素沉著術），部分獸醫會用但效果撐不久
 - 環境遮蔽：給充足的遮蔭，考慮改成室內飼養
 
@@ -6047,13 +6044,13 @@ const contentDLE: NodeContent = {
     '把 DLE 跟 SLE 搞混，結果用了過度的全身性免疫抑制治療',
     '沒做活檢確診就直接治療（可能漏掉 SCC 或天疱瘡）',
     '忽略紫外線防護。藥物治療沒搭 UV 防護，效果會被打折',
-    '用含 zinc oxide 的防曬乳（犬舔到會鋅中毒）',
+    '把「含 zinc oxide 防曬乳＝鋅中毒」講得過重——ZnO 經腸道吸收差、舔食多僅腸胃不適，全身性鋅中毒罕見（多來自金屬鋅異物）；仍建議寵物專用配方、避免大量舔食',
     '把鼻頭去色素化當成正常老化，結果診斷被拖延',
   ],
   disease_data: {
     signalment: '好發品種：柯利犬（Collie）、德國牧羊犬、西伯利亞哈士奇、喜樂蒂牧羊犬、布列塔尼獵犬。發病年齡通常 3-6 歲。無明顯性別差異。貓極罕見。',
-    etiology: '自體免疫：自體抗體靶向基底膜帶的成分，紫外線是重要的環境觸發或加重因子。有遺傳易感性（品種好發）。DLE 是獨立疾病，不是 SLE 的皮膚表現。',
-    pathogenesis: '遺傳易感性 + 紫外線觸發 → 自體抗體產生（靶向基底膜帶）→ Type III 免疫反應（免疫複合物沉積於表真皮交界處）→ 補體活化 → 基底層角質細胞液化變性（interface dermatitis）→ 色素細胞破壞（去色素化）→ 進行性組織損傷（紅斑→結痂→潰瘍）。UV-B 促進角質細胞凋亡與核抗原外露加重自體免疫循環。',
+    etiology: '細胞毒性介面皮膚炎（CD8+ T 細胞攻擊基底角質細胞、干擾素驅動；非 Type III 免疫複合物）。紫外線為環境加重因子（機轉多外推自人 CLE）。有遺傳易感性（品種好發）。DLE/FDLE 是獨立的皮膚型狼瘡，非 SLE 的皮膚表現。',
+    pathogenesis: '遺傳易感性 + 紫外線加重 → **細胞毒性 T 淋巴球（CD8+、Type IV）攻擊基底層角質細胞 → 凋亡與液化（水腫性）變性（介面皮膚炎）** → 連帶色素細胞破壞（去色素化）→ 進行性組織損傷（紅斑→結痂→潰瘍）。基底膜帶 IgG/C3（lupus band）為可變診斷標記、非主要機轉；Olivry 2018 未見活化補體沉積。UV 機轉多外推自人 CLE。',
     clinical_signs: [
       { sign: '鼻平面去色素化', category: 'primary', description: '最早徵兆：黑色鼻頭出現灰/粉色斑塊，cobblestone pattern 消失' },
       { sign: '鼻平面紅斑與結痂', category: 'primary', description: '去色素化區域出現紅斑、鱗屑、結痂' },
@@ -6085,10 +6082,11 @@ const contentDLE: NodeContent = {
   ],
   drug_api_links: ['Tacrolimus', 'Doxycycline', 'Niacinamide', 'Prednisolone', 'Cyclosporine', 'Vitamin E'],
   references: [
-    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 9: Autoimmune and Immune-Mediated Dermatoses，Discoid Lupus Erythematosus.", relevance: 'DLE 臨床診斷與治療的經典教材參考' },
-    { type: 'journal', citation: 'Banovic F et al. Discoid lupus erythematosus in dogs: report of 45 cases. Vet Dermatol. 2015;26(1):23-e7.', relevance: '犬 DLE 最大規模臨床回顧研究' },
-    { type: 'journal', citation: 'Oberkirchner U et al. Successful treatment of canine discoid lupus erythematosus with topical tacrolimus: a prospective study. Vet Dermatol. 2012;23(6):513-e98.', relevance: 'Tacrolimus 治療犬 DLE 的前瞻性研究' },
-    { type: 'guideline', citation: 'Mueller RS et al. Treatment of autoimmune skin diseases in dogs and cats. J Small Anim Pract. 2006;47(9):511-516.', relevance: '自體免疫皮膚病治療共識指引' },
+    { type: 'journal', citation: 'Olivry T, Linder KE, Banovic F. Cutaneous lupus erythematosus in dogs: a comprehensive review. BMC Vet Res. 2018;14(1):132. doi:10.1186/s12917-018-1446-8.', relevance: '現行權威綜述：犬皮膚型紅斑性狼瘡分類（含 facial DLE/FDLE、GDLE、VCLE、ECLE、MCLE）、病理與治療' },
+    { type: 'journal', citation: 'Griffies JD, et al. Topical 0.1% Tacrolimus for the Treatment of Discoid Lupus Erythematosus and Pemphigus Erythematosus in Dogs. J Am Anim Hosp Assoc. 2004;40(1):29-41. doi:10.5326/0400029.', relevance: '外用 tacrolimus 0.1% 治療犬 DLE/PE 臨床研究（一線局部治療實證）' },
+    { type: 'journal', citation: 'Banovic F, et al. Clinical and microscopic features of generalized discoid lupus erythematosus in dogs. Vet Dermatol. 2016;27(6):488. doi:10.1111/vde.12389.', relevance: '犬泛發型盤狀狼瘡（GDLE）臨床與組織學特徵' },
+    { type: 'journal', citation: 'Olivry T, et al. Mucocutaneous lupus erythematosus in dogs (21 cases). Vet Dermatol. 2015;26(4):256. doi:10.1111/vde.12217.', relevance: '犬黏膜皮膚型紅斑性狼瘡（MCLE）21 例（皮膚狼瘡變異型對照）' },
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology. 7th ed. Elsevier; 2013.", relevance: '皮膚科經典教材，自體免疫/免疫介導皮膚病章節' },
   ],
   is_current: true,
   created_at: now,
