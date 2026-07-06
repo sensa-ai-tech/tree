@@ -28,16 +28,16 @@ const FEATURES = [
 
 export default function HomePage() {
   const router = useRouter();
-  const { user, _hasHydrated } = useAuthStore();
+  const { user, _hasHydrated, sessionVerified } = useAuthStore();
   const [redirecting, setRedirecting] = useState(false);
 
   // 已登入使用者自動導向 Dashboard
   useEffect(() => {
-    if (_hasHydrated && user) {
+    if (_hasHydrated && sessionVerified && user) {
       setRedirecting(true);
       router.replace('/home');
     }
-  }, [user, _hasHydrated, router]);
+  }, [user, _hasHydrated, sessionVerified, router]);
 
   if (!_hasHydrated || redirecting) {
     return (

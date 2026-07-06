@@ -16,12 +16,14 @@ interface AuthState {
   isLoading: boolean;
   error: string | null;
   _hasHydrated: boolean;
+  sessionVerified: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   setUser: (user: User | null) => void;
   clearError: () => void;
   setHasHydrated: (state: boolean) => void;
+  setSessionVerified: (state: boolean) => void;
 }
 
 /**
@@ -62,6 +64,9 @@ export const useAuthStore = create<AuthState>()(
       isLoading: false,
       error: null,
       _hasHydrated: false,
+      // A2: real 模式在 INITIAL_SESSION 前為 false，避免過期 session 的「已登入 UI 閃現→彈回」；
+      // mock 模式在 onRehydrateStorage 立即設 true（持久化 user 即權威）。
+      sessionVerified: false,
 
       login: async (email: string, password: string) => {
         set({ isLoading: true, error: null });
@@ -85,7 +90,7 @@ export const useAuthStore = create<AuthState>()(
             set({ error: message, isLoading: false });
             return;
           }
-          set({ user: sessionToUser(data.session), isLoading: false });
+          set({ user: sessionToUser(data.session), isLoading: false, sessionVerified: true });
           return;
         }
 
@@ -142,10 +147,11 @@ export const useAuthStore = create<AuthState>()(
             set({
               error: '註冊成功，驗證信已寄出——請至信箱點擊連結完成驗證後再登入',
               isLoading: false,
+              sessionVerified: true,
             });
             return;
           }
-          set({ user: sessionToUser(data.session), isLoading: false });
+          set({ user: sessionToUser(data.session), isLoading: false, sessionVerified: true });
           return;
         }
 
@@ -166,12 +172,13 @@ export const useAuthStore = create<AuthState>()(
         if (isRealAuthMode()) {
           await getSupabaseBrowserClient().auth.signOut();
         }
-        set({ user: null, isLoading: false, error: null });
+        set({ user: null, isLoading: false, error: null, sessionVerified: true });
       },
 
       setUser: (user) => set({ user }),
       clearError: () => set({ error: null }),
       setHasHydrated: (state) => set({ _hasHydrated: state }),
+      setSessionVerified: (state) => set({ sessionVerified: state }),
     }),
     {
       name: 'vet-auth-storage',
@@ -179,6 +186,11 @@ export const useAuthStore = create<AuthState>()(
       partialize: (state) => ({ user: state.user }),
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);
+        // A2: mock 模式持久化 user 即權威，rehydrate 後立即視為已驗證；
+        // real 模式等下方 onAuthStateChange 的 INITIAL_SESSION 才設 true。
+        if (!isRealAuthMode()) {
+          state?.setSessionVerified(true);
+        }
       },
     }
   )
@@ -190,6 +202,6 @@ export const useAuthStore = create<AuthState>()(
 /* istanbul ignore next -- requires live Supabase (mock-mode CI can't exercise) */
 if (typeof window !== 'undefined' && isRealAuthMode()) {
   getSupabaseBrowserClient().auth.onAuthStateChange((_event, session) => {
-    useAuthStore.setState({ user: sessionToUser(session) });
+    useAuthStore.setState({ user: sessionToUser(session), sessionVerified: true });
   });
 }

@@ -12,7 +12,7 @@ import { showToast } from '@/components/ui/Toast';
 
 export default function RegisterPage() {
   const router = useRouter();
-  const { register, isLoading, error, clearError, user, _hasHydrated } = useAuthStore();
+  const { register, isLoading, error, clearError, user, _hasHydrated, sessionVerified } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -24,10 +24,10 @@ export default function RegisterPage() {
 
   // 已登入使用者直接導向 dashboard（與 app/page.tsx 的根目錄 redirect 一致）
   useEffect(() => {
-    if (_hasHydrated && user) {
+    if (_hasHydrated && sessionVerified && user) {
       router.replace('/home');
     }
-  }, [user, _hasHydrated, router]);
+  }, [user, _hasHydrated, sessionVerified, router]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();

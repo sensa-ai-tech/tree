@@ -14,7 +14,50 @@
 4. 無權限操作 → 寫 Obsidian `BLOCKED-OPERATIONS.md`，繼續巡航不卡關。
 5. 持續迭代直到使用者介入或擴充全完成；不每步問。
 
-## master 路線圖
+---
+
+## 🚀 COMMANDER CRUISE v2 — 全功能開發巡航（renewed 2026-07-04）
+
+> **新授權（2026-07-04）**：使用者交付全權指揮官，把專案推進到可上線完整狀態，直到主動介入或所有擴充功能完成。條件同上 5 條。**Resume 只需讀「現況快照 v2 + NEXT-UP v2」即可接續。** 下方舊「內容巡航（iter 1-144）」為歷史背景。
+
+### 現況快照 v2（最後更新：2026-07-04 / commander-iter 0 setup）
+- 兩輪上線前總體檢完成、已 push（origin/main `d7e7e2d`）。綠燈基準：tsc 0 / **847 tests** / lint 0 err（20 warn）/ build ✓。
+- P0 真實 Auth 程式已接線（雙模式 auth-store + SSR session），待營運端啟用（設 env 自動切真）。
+- 283 節點 / 156 v2 / 103 病例。報告：`docs/PRE-LAUNCH-RETEST-2026-07-04.md`（最新）、`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`、`BLUEPRINT.md`。
+
+### v2 路線圖（feature / tech-debt）
+- **Phase A — 技術債清理（P1，安全可驗證，先做）**
+  - A1 ✅ middleware→proxy 遷移（`src/proxy.ts`；build 棄用警告清除；admin auth gate 瀏覽器驗證通過；847 tests / build ✓）
+  - A2 ✅ persisted-user auth-flash（`sessionVerified` 旗標：mock 於 rehydrate 即 true、real 等 `INITIAL_SESSION`；layout + landing/login/register 皆 gate 之）。mock 登入/reload 瀏覽器驗證無回歸；847 tests / build ✓
+- **Phase B — 後台功能化（讓 demo 變真）**
+  - B1 ⬜ admin generate 接 `/api/generate/skeleton`
+  - B2 ⬜ admin review 接資料源 + 持久化 approve/reject
+  - B3 ⬜ admin analytics 各專科分佈改真實 seed 計數
+- **Phase C — 內容正確性**
+  - C1 ⬜ 回填 2 個 v2 NOT_FOUND DOI（CARDIO-L3-001 DELAY、ECC-L3-007 chocolate）
+  - C2 ⬜ open-access-resources 重建或移除（dead data，零 UI 消費者）
+  - C3 ⬜ v1→v2 升級（127 節點，長期，產出待 DVM 簽核）
+- **Phase D — 新價值**：A–C 收斂後評估。
+
+### NEXT-UP v2（依序，每迭代取最上）
+1. **B3 analytics 各專科分佈改真實 seed 計數（最小、安全）** ← 下一個
+2. C1 回填 2 DOI（CARDIO-L3-001、ECC-L3-007）
+3. B1 / B2 後台功能化（generate 接 /api/generate/skeleton；review 接資料源）
+4. C2 dead data 處理（open-access-resources）
+5. Phase A 收尾 → checkpoint commit（A1+A2，待授權）
+
+### commander-iter 進度（append-only）
+- iter 0（2026-07-04）：接任、建立本 v2 錨點 + 路線圖。
+- iter 1（2026-07-04）：**A1 完成** — `middleware.ts`→`proxy.ts`（函式 middleware→proxy，config/matcher/邏輯不變）。build 棄用警告清除；admin auth gate 瀏覽器實測（未登入 /admin/analytics → /admin/login）通過。綠燈：tsc 0 / 847 tests / build ✓。變更未 commit（累積至 Phase A 收尾一起 checkpoint）。
+- iter 2（2026-07-04）：**A2 完成** — persisted-user auth-flash。auth-store 加 `sessionVerified`（mock：onRehydrateStorage 立即 true；real：onAuthStateChange/登入/註冊/登出設 true）；`(dashboard)/layout.tsx` loading gate + landing/login/register 的「已登入→/home」redirect 皆改為需 `sessionVerified`。**mock 行為零變更**：mock 登入→/home、reload /home 皆瀏覽器實測通過、console 無錯。綠燈：tsc 0 / 847 tests / build ✓。**Phase A 全完成**（A1+A2）。
+
+### 待使用者（營運/簽核，詳見 Obsidian `BLOCKED-OPERATIONS.md`）
+- Supabase 專案 + migrations + auth hook + bootstrap admin；Vercel env；金鑰輪替；Upstash。
+- v2 內容 DVM 簽核；git push 時機（可授權時代推）。
+
+---
+
+## master 路線圖（舊·內容巡航 iter 1-144，歷史背景）
 - **Phase 1 — 正確性地基（收尾中）**
   - 1a ✅ 引用驗證器 `scripts/verify-citations.ts`（`npm run verify:citations`）+ 全 8 科基線 + 6 條錯誤 DOI 修復 + Alopecia X 2 條。
   - 1b ⏳ 修 2 筆捏造 open-access MUO 條目（本迭代）。

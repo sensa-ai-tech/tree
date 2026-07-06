@@ -14,19 +14,21 @@ import { cn } from '@/lib/utils/cn';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const { user, _hasHydrated } = useAuthStore();
+  const { user, _hasHydrated, sessionVerified } = useAuthStore();
   const [isChecking, setIsChecking] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    if (!_hasHydrated) return;
+    // A2: 真實模式等 session 驗證（INITIAL_SESSION）後才判定，避免過期 session
+    // 的「已登入 UI 閃現→彈回」；mock 模式 sessionVerified 於 hydrate 後即 true。
+    if (!_hasHydrated || !sessionVerified) return;
 
     if (!user) {
       router.replace('/login');
     } else {
       setIsChecking(false);
     }
-  }, [user, _hasHydrated, router]);
+  }, [user, _hasHydrated, sessionVerified, router]);
 
   const handleOpenSidebar = useCallback(() => {
     setSidebarOpen(true);
@@ -40,7 +42,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   useAchievementTracker();
 
   // 等待 hydration 完成 + auth check
-  if (!_hasHydrated || isChecking) {
+  if (!_hasHydrated || !sessionVerified || isChecking) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50" role="status" aria-live="polite">
         <div className="flex flex-col items-center gap-3">

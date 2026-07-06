@@ -3,7 +3,10 @@ import { jwtVerify } from 'jose';
 import { updateSession } from '@/lib/supabase/middleware';
 
 /**
- * Middleware — Admin auth + CSP nonce + Supabase session
+ * Proxy — Admin auth + CSP nonce + Supabase session
+ *
+ * (Next 16：原 `middleware` 慣例已棄用，改用 `proxy` 檔名 + `proxy` 函式；
+ *  config/matcher、簽名、行為不變。見 nextjs.org/docs/messages/middleware-to-proxy)
  *
  * 安全策略：
  * - /admin/* 路由需要有效的 JWT cookie（/admin/login 除外）
@@ -32,7 +35,7 @@ async function verifyAdminCookie(token: string): Promise<boolean> {
   }
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // --- Admin route protection ---
@@ -57,7 +60,7 @@ export async function middleware(request: NextRequest) {
   });
 
   // P0-1: Supabase session 刷新（SUPABASE-AUTH-SPEC §5）。
-  // 把本 middleware 的 response 傳入，刷新後的 session cookie 直接綁在同一個
+  // 把本 proxy 的 response 傳入，刷新後的 session cookie 直接綁在同一個
   // response 上（避免雙 response 合併掉 header）。mock 模式為 no-op。
   await updateSession(request, response);
 
