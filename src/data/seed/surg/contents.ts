@@ -6198,9 +6198,9 @@ Porphyromonas（P. gulae）等牙周致病菌與宿主發炎反應為破壞主�
 const contentFelineToothResorption: NodeContent = {
   id: 'CONTENT-SURG-L3-021',
   node_id: 'SURG-L3-021',
-  version: 1,
+  version: 2,
   summary:
-    '貓牙齒吸收（Tooth Resorption, TR；舊稱 FORL）是由破牙質細胞（odontoclast）介導的牙齒硬組織進行性破壞，為貓最常見的口腔疾病之一，盛行率隨年齡上升、依族群與診斷方式約 20–75%。病灶具疼痛性但常無明顯臨床表現，多數僅能靠全口牙科 X 光確診。AVDC 依放射影像分為第 1、2、3 型，治療方式完全取決於分型，與牙周病為不同疾病。',
+    '貓牙齒吸收（Tooth Resorption, TR；舊稱 FORL）是破牙質細胞（odontoclast，與破骨細胞近乎相同）介導的牙齒硬組織進行性破壞，典型起始於根面牙骨質、晚期才波及牙釉質，為貓最常見的口腔疾病之一，盛行率隨年齡上升、依族群與診斷方式約 25–75%。病灶具疼痛性但常無明顯臨床表現，多數僅能靠全口牙科 X 光確診。AVDC 依放射影像分為第 1、2、3 型（純影像定義），治療方式取決於分型（屬臨床共識），與牙周病為不同疾病。',
   learning_objectives: [
     '說明 TR 為破牙質細胞介導的牙齒硬組織進行性吸收，並與牙周病明確區分',
     '正確區辨 AVDC 第 1 / 2 / 3 型的放射影像特徵（PDL 與根部放射密度）',
@@ -6210,14 +6210,15 @@ const contentFelineToothResorption: NodeContent = {
     '辨識常見錯誤（無 X 光即冠部截除、漏診齦下病灶、「會吃就不痛」迷思）並提出多模式止痛',
   ],
   key_points: [
-    'TR 由破牙質細胞介導，為貓最常見口腔疾病之一，疼痛且進行性，盛行率隨年齡上升（約 20–75%）',
-    '病因大多為特發性；第 1 型與局部發炎（牙周病、口炎）相關；第 2 型的維生素 D／硬食假說尚未證實',
+    'TR 由破牙質細胞（odontoclast，近乎破骨細胞）介導，起始於根面牙骨質、晚期波及牙釉質，為貓最常見口腔疾病之一，盛行率約 25–75%、隨年齡上升',
+    '病因大多特發性；第 1 型與局部發炎（牙周病、口炎）相關；第 2 型病因未證實。維生素 D 假說證據「矛盾」（Reiter 2005 報 TR 貓 25-OH-D 較高、Girard 2010 反而較低）、硬食 abfraction 亦未證實',
     '第 1 型：局部放射透亮，牙根放射密度正常、PDL 完整',
     '第 2 型：PDL 變窄或消失、牙根放射影像模糊（替代性吸收／齒槽骨沾黏 ankylosis）',
     '第 3 型：同一顆牙同時具第 1 型與第 2 型特徵',
-    '全口牙科 X 光是確診與分型的必要工具——分型決定治療',
-    '第 1 型需完整拔除整個牙根；第 2 型在影像確認嚴重根部替代且無牙周／牙髓／口炎／FIV-FeLV 相關發炎時，方可冠部截除保留牙根',
-    '冠部截除具爭議，必須以 X 光為依據、絕不可盲目施行；FCGS／牙周病為禁忌症',
+    '全口牙科 X 光是確診與分型的必要工具——AVDC「型」為純放射影像定義；「分型決定治療」屬臨床共識',
+    '第 1 型需完整拔除整個牙根；第 2 型仍以完整拔除為首選，僅在影像確認嚴重根部替代且無牙周／牙髓／口炎／FIV-FeLV 相關發炎時，方可冠部截除保留牙根',
+    '冠部截除具爭議且因較拔牙簡便而易被濫用，必須以 X 光為依據、絕不可盲做；FCGS／牙周病為禁忌症',
+    '具品種傾向但為「品種專一性」：Girard 2008 純種 70% vs 混種 38%；Vapalahti 2024 顯示 Cornish Rex/European/Ragdoll 風險高、Exotic-Persian 反為保護、Turkish Van/Devon Rex 未見',
   ],
   body: `# 貓牙齒吸收 (Feline Tooth Resorption, TR)
 
@@ -6225,22 +6226,25 @@ const contentFelineToothResorption: NodeContent = {
 
 ## 一、定義與盛行率 (Definition & Prevalence)
 
-貓牙齒吸收（TR；舊稱 FORL、neck lesion、cervical line lesion）是**破牙質細胞（odontoclast）介導的牙齒硬組織進行性破壞**（牙骨質、牙本質、牙釉質）。負責正常牙齒重塑的破牙質細胞異常活化且無法適時下調，吸收牙齒結構。
+貓牙齒吸收（TR；舊稱 FORL、neck lesion、cervical line lesion）是**破牙質細胞（odontoclast，與破骨細胞近乎相同的多核細胞）介導的牙齒硬組織進行性破壞**。典型**起始於根面牙骨質**、沿牙本質小管擴展至牙本質，**晚期才波及牙釉質**（牙釉質受累屬晚期/次要）。負責正常牙齒重塑的破牙質細胞異常活化且無法適時下調，吸收牙齒結構。
 - 為**貓最常見口腔疾病之一**，**疼痛且進行性**。
-- 盛行率依族群、年齡、診斷方式差異大，約 **20–75%**（如某 944 隻芬蘭受檢亞族群獸醫診斷約 21%；某 109 隻族群純種 70% vs 混種 38%）。
-- **盛行率隨年齡上升**；因病灶常始於齦下/牙根，放射影像研究盛行率遠高於目視檢查。
+- 盛行率依族群、年齡、診斷方式差異大，約 **25–75%**（一般臨床族群偏低端、牙科/轉診族群偏高端；如 Ingham 2001 臨床健康貓約 29%、Girard 2008 colony 純種 70% vs 混種 38%、AAHA 2019 引 27–72%）。
+- **盛行率與風險隨年齡上升**（Vapalahti 2024：最年輕組約 15% → 最年長組約 25%）；因病灶常始於齦下/牙根，納入放射影像的研究盛行率遠高於目視檢查——惟 AVDC Stage 1 早期病灶可能臨床可見卻放射陰性，故**放射與探診應併用**。
 
 > **本節點與牙周病為不同疾病**（已分開）。TR 是硬組織吸收性疾病，非以牙菌斑為主的牙周發炎；惟兩者常並存，第 1 型與局部發炎相關。
 
 ## 二、病因 (Etiology)
 - 大多**特發性**，觸發破牙質細胞異常活化的原因不明。
 - **第 1 型**與局部發炎（牙周炎、齦炎、口炎）相關——發炎為已知共因子。
-- **第 2 型**病因未證實，過量飲食維生素 D 與硬食微創傷（abfraction）為**尚未證實之假說**。
-- **年齡**為最一致的相關因子；有品種傾向報告。
+- **第 2 型**病因未證實，多見於「其餘健康的口腔」。
+- **維生素 D 假說證據矛盾**：Reiter 2005（AJVR）報告 TR 貓血清 25-OH-D **較高**（→ 過量維生素 D 假說），但 Girard 2010（J Vet Dent）在乾食貓群發現方向**相反**（TR 貓 25-OH-D 反而較低），明確不支持該假說。硬食微創傷（abfraction）亦為**未證實假說**。
+- **年齡**為最一致的相關因子；**具品種傾向**（品種專一性，見預後與近期更新）。
 
 ## 三、AVDC 分類 (Classification)
 
-**型（Type，放射影像——決定治療）**
+> AVDC 的「型（Type）」定義**純屬放射影像**；「型決定治療」（Type 1 拔除／Type 2 可冠部截除）屬**臨床/共識層級**之延伸（AAHA 2019、DuPont、Reiter），非 AVDC 型定義本身的文字。型與「期（Stage）」為兩個獨立軸。
+
+**型（Type，放射影像；臨床上據以選擇術式）**
 - **第 1 型**：局部/多灶放射透亮，**牙根放射密度與 PDL 正常**（常伴牙周炎/發炎）。
 - **第 2 型**：**PDL 變窄或消失、部分牙齒放射密度降低**，牙根被取代而**放射影像模糊**（替代性吸收／齒槽骨沾黏）。
 - **第 3 型**：同一顆牙**兼具第 1 型與第 2 型**特徵。
@@ -6266,7 +6270,7 @@ const contentFelineToothResorption: NodeContent = {
 
 ## 六、治療 — 依分型 (Type-dependent Treatment)
 - **第 1 型（牙根完整、PDL 正常）**：**完整拔除整個牙根**。PDL 與牙根完整者不會自行吸收，殘根會持續疼痛/感染。
-- **第 2 型（嚴重替代性吸收/沾黏）**：**冠部截除＋刻意保留牙根**僅在**全數**條件成立時可接受：① X 光確認嚴重根部替代（牙根放射模糊、無可辨識根管、沾黏）；② 無牙周炎、牙髓/根尖病變、口炎、尾側黏膜炎；③ 無 FIV/FeLV 相關或其他口腔發炎。**具爭議、嚴格 X 光導向、絕不可盲做**（基層常過度使用；專科僅保留給嚴重/完全根部替代者）。
+- **第 2 型（嚴重替代性吸收/沾黏）**：**完整拔除仍為公認首選**；**冠部截除＋刻意保留牙根**為可接受的替代方案，僅在**全數**條件成立時：① X 光確認嚴重根部替代（牙根放射模糊、無可辨識根管、PDL 消失/沾黏）；② 無牙周炎、牙髓/根尖病變、口炎、尾側黏膜炎；③ 無 FIV/FeLV 相關發炎；④ 能拍攝口內 X 光。**具爭議、且因較拔牙簡便而易被濫用，須嚴格 X 光導向、絕不可盲做**（DuPont 1995/2002；AAHA 2019；基層常過度使用）。
 - **第 3 型**：依各區分型分別處置。
 - **止痛**：多模式（局部/區域神經阻斷、適用時 NSAID、圍術期鴉片類）。TR 即使會吃仍會痛。目前**無已證實之預防療法**。
 
@@ -6275,11 +6279,33 @@ const contentFelineToothResorption: NodeContent = {
 - **牙周病**（獨立節點）常**並存**且與第 1 型相關，其存在同樣**禁忌**刻意保留牙根。
 - **複查 X 光**：冠部截除後與後續牙科檢查時複查，確認保留根持續吸收、無病理反應、並偵測新發病灶。
 
-## 八、常見錯誤與臨床要訣
-見 common_mistakes。**要訣**：分型決定治療，而只有 X 光能判定分型——沒有全口 X 光就沒有可靠的 TR 決策；冠部截除是放射影像為據、條件嚴格的例外，不是困難拔牙的捷徑。
+## 八、人醫借鑒 (Translational Insights)
+
+| 人醫概念 | 獸醫對應/應用 | 現況 |
+|---------|-------------|------|
+| 人牙外/置換性吸收（external/replacement root resorption）與 dentoalveolar ankylosis | 與貓 Type 2 TR 的置換性吸收/沾黏機轉相通 | 病理機轉高度相似，惟人以牙外傷後為主、貓多特發 |
+| Cone-beam CT（CBCT）分型與體積評估 | 更精準判讀齦下/牙根病灶與分型 | 人牙科常規；獸醫轉診中心漸增，優於二維牙片 |
+| 破骨/破牙細胞抑制（bisphosphonate、RANKL 抑制） | 抑制 odontoclast 活化之潛在藥物策略 | 概念性；貓 TR 尚無實證預防/治療藥物 |
+
+## 九、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 維生素 D 與 TR 的關聯 | 觀察性關聯存在但**方向矛盾**（Reiter 2005 較高 vs Girard 2010 較低）、因果未確立 | Level III |
+| 冠部截除（保留牙根）的角色 | 對放射確認之 Type 2、無發炎禁忌者為可接受替代；但爭議且易被濫用，長期資料有限 | Level III |
+| Type 2 TR 的病因 | 特發、機轉未明；abfraction/硬食、免疫、遺傳等假說均未證實 | Level IV |
+| 是否有可預防措施 | 特發型無已證實預防法；控制牙周/牙髓發炎或可延緩續發型進展（屬治療基礎病、非一級預防） | Level IV |
+
+## 十、近期實證更新 (Recent Updates)
+
+- **品種傾向為「品種專一性」（Vapalahti 2024, Vet J）**：8115 隻問卷之 case-control 子族群（202 例 vs 742 對照）顯示 Cornish Rex、European、Ragdoll 風險升高（OR 約 2.4–3.0），Exotic-Persian 反為保護（OR ~0.28），Turkish Van、Devon Rex 未觀察到病例——**並非所有純種一律高於混種**；支持遺傳因素參與，惟遺傳模式未明。
+- **血液參數關聯（Whyte 2021, Animals）**：西班牙大學醫院回溯 case-control 探討 TR 與血液參數之關聯，延續病因研究，尚未確立可用之預測/預防指標。
+- **命名與分型現況**：AVDC 現行標準用語為「Tooth Resorption」（取代 FORL/neck lesion）；Type（放射影像 1/2/3）與 Stage（嚴重度 1–5，含 4a/4b/4c）為兩個獨立軸，Type 決定術式選擇（臨床共識）、Stage 描述嚴重度。
+
+**要訣**：分型決定治療，而只有 X 光能判定分型——沒有全口 X 光就沒有可靠的 TR 決策；冠部截除是放射影像為據、條件嚴格且首選仍為完整拔除的例外，不是困難拔牙的捷徑。
 `,
   clinical_pearl:
-    '「分型決定治療，而只有 X 光能判定分型。」沒有全口牙科 X 光，就沒有可靠的 TR 治療決策。冠部截除是以放射影像為依據、條件嚴格的例外處置，絕非困難拔牙的捷徑。麻醉下用探針觸碰 CEJ 病灶時，貓出現下頜顫動（jaw chattering）是典型疼痛徵象。',
+    '「分型決定治療，而只有 X 光能判定分型。」沒有全口牙科 X 光，就沒有可靠的 TR 治療決策。冠部截除是以放射影像為依據、條件嚴格的例外處置（首選仍為完整拔除），絕非困難拔牙的捷徑。麻醉下用探針觸碰 CEJ 病灶時，貓出現下頜顫動（jaw chattering）——本質為三叉神經介導、二腹肌收縮的「開頜反射（jaw-opening reflex）」——是疼痛/敏感病灶的特徵性徵象（可協助定位，但非 TR 獨有）。',
   common_mistakes: [
     '未拍牙科 X 光即執行冠部截除——最嚴重錯誤，可能留下疼痛／感染的牙根，或在牙根完整的第 1 型牙上誤行保留',
     '僅靠目視與探診，漏診齦下或僅侷限於牙根的病灶',
@@ -6289,9 +6315,9 @@ const contentFelineToothResorption: NodeContent = {
   ],
   disease_data: {
     signalment:
-      '各年齡層貓皆可發生，盛行率隨年齡上升，中老年貓最常見；純種貓可能風險較高。無明顯性別偏好。常與牙周病、FCGS 並存。',
+      '各年齡層貓皆可發生，盛行率與風險隨年齡上升，中老年貓最常見。品種傾向為「品種專一性」：Cornish Rex、European、Ragdoll 風險較高，Exotic-Persian 反為保護，Turkish Van/Devon Rex 少見（Vapalahti 2024）；Girard 2008 colony 純種 70% vs 混種 38%。無明顯性別偏好。常與牙周病、FCGS 並存。',
     etiology:
-      '大多為特發性，破牙質細胞異常活化的觸發原因不明。第 1 型與局部發炎（牙周病、齦炎、口炎）相關；第 2 型病因未證實，過量飲食維生素 D 與硬食微創傷（abfraction）均為尚未證實之假說。年齡為最一致的相關因子。',
+      '大多為特發性，破牙質細胞異常活化的觸發原因不明。第 1 型與局部發炎（牙周病、齦炎、口炎）相關；第 2 型病因未證實。維生素 D 假說證據矛盾（Reiter 2005 報 TR 貓 25-OH-D 較高、Girard 2010 反而較低），硬食微創傷（abfraction）亦未證實。年齡為最一致相關因子；具品種專一性傾向（Vapalahti 2024）。',
     pathogenesis:
       '破牙質細胞（負責正常牙齒重塑）異常活化且無法適時下調，進行性吸收牙骨質、牙本質乃至牙釉質。第 1 型保有正常 PDL 與牙根放射密度；第 2 型發生替代性吸收，PDL 消失、牙根被骨樣組織取代並與齒槽骨沾黏（ankylosis），放射影像上牙根逐漸模糊。',
     clinical_signs: [
@@ -6339,14 +6365,21 @@ const contentFelineToothResorption: NodeContent = {
     { position: 'AVDC 分類段落後', type: 'annotated_image', description: 'TR Type 1/2/3 放射影像對照（PDL 與牙根放射密度差異）' },
     { position: '治療段落後', type: 'flowchart', description: 'TR 治療決策：全口 X 光分型 → Type 1 完整拔除 / Type 2 條件式冠部截除' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: 'AVDC 分類段落後', type: 'interactive_quiz', description: 'TR 放射影像判讀：由 PDL 與牙根放射密度判定 Type 1/2/3 並選擇術式（完整拔除 vs 條件式冠部截除）' },
+  ],
   drug_api_links: [],
   references: [
     { type: 'guideline', citation: 'American Veterinary Dental College (AVDC). Tooth Resorption — AVDC Nomenclature (Types 1–3; Stages 1–5). avdc.org/avdc-nomenclature/.', relevance: 'TR 分型/分期權威命名標準；本節 Type 與 Stage 定義依此來源' },
-    { type: 'guideline', citation: 'Bellows J, Berg ML, Dennis S, et al. 2019 AAHA Dental Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2019;55(2):49-69. doi:10.5326/JAAHA-MS-6933.', relevance: '確立麻醉下逐齒探診＋全口牙內 X 光為照護標準，為 TR 診斷依據（2020 前奠基性指引）' },
-    { type: 'journal', citation: 'Gorrel C. Tooth resorption in cats: Pathophysiology and treatment options. J Feline Med Surg. 2015;17(1):37-43. doi:10.1177/1098612X14560098.', relevance: 'JFMS TR 病理生理與治療選項回顧（2020 前奠基性文獻）' },
-    { type: 'journal', citation: 'DuPont GA. Crown amputation with intentional root retention for dental resorptive lesions in cats. J Vet Dent. 2002;19(2):107-110. doi:10.1177/089875640201900206.', relevance: '冠部截除＋刻意保留牙根的奠基性臨床證據與選例條件（2020 前文獻；須符合嚴格放射條件）' },
-    { type: 'journal', citation: 'Ingham KE, Gorrel C, et al. Prevalence of tooth resorption in a colony of cats (pure-breed 70.0% vs mixed-breed 38.0%). (PMID 19025137).', relevance: '具名族群盛行率數據（純種 vs 混種），支持盛行率區間' },
+    { type: 'guideline', citation: 'Bellows J, Berg ML, Dennis S, et al. 2019 AAHA Dental Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2019;55(2):49-69. doi:10.5326/JAAHA-MS-6933.', relevance: '確立麻醉下逐齒探診＋全口牙內 X 光為照護標準，為 TR 診斷依據' },
+    { type: 'journal', citation: 'Gorrel C. Tooth resorption in cats: pathophysiology and treatment options. J Feline Med Surg. 2015;17(1):37-43. doi:10.1177/1098612X14560098.', relevance: 'JFMS TR 病理生理與治療選項回顧（奠基性文獻）' },
+    { type: 'journal', citation: 'DuPont GA. Crown amputation with intentional root retention for dental resorptive lesions in cats. J Vet Dent. 2002;19(2):107-110. doi:10.1177/089875640201900206.', relevance: '冠部截除＋刻意保留牙根的奠基性臨床證據與選例條件（須符合嚴格放射條件）' },
+    { type: 'journal', citation: 'Ingham KE, Gorrel C, Blackburn J, et al. Prevalence of odontoclastic resorptive lesions in a population of clinically healthy cats. J Small Anim Pract. 2001;42(9):439-443. doi:10.1111/j.1748-5827.2001.tb02497.x.', relevance: '臨床健康貓族群 TR 盛行率原始研究（約 29%）' },
+    { type: 'journal', citation: 'Girard N, Servet E, Biourge V, Hennet P. Feline tooth resorption in a colony of 109 cats. J Vet Dent. 2008;25(3):166-174. doi:10.1177/089875640802500302.', relevance: 'colony 盛行率（純種 70% vs 混種 38%）——修正 v1 誤植為 Ingham 之來源' },
+    { type: 'journal', citation: 'Reiter AM, Lyon KF, Nachreiner RF, Shofer FS. Evaluation of calciotropic hormones in cats with odontoclastic resorptive lesions. Am J Vet Res. 2005;66(8):1446-1452. doi:10.2460/ajvr.2005.66.1446.', relevance: '維生素 D 假說之一手證據（TR 貓 25-OH-D 較高）' },
+    { type: 'journal', citation: 'Girard N, Servet E, Hennet P, Biourge V. Tooth resorption and vitamin D3 status in cats fed premium dry diets. J Vet Dent. 2010;27(3):142-147. doi:10.1177/089875641002700301.', relevance: '維生素 D 假說之相反證據（TR 貓 25-OH-D 反而較低）——證據矛盾' },
+    { type: 'journal', citation: 'Whyte A, Tejedor MT, Whyte J, et al. Blood parameters and feline tooth resorption: a retrospective case control study from a Spanish university hospital. Animals (Basel). 2021;11(7):2125. doi:10.3390/ani11072125.', relevance: '2021 血液參數與 TR 關聯之回溯 case-control（近期）' },
+    { type: 'journal', citation: 'Vapalahti K, Neittaanmäki H, Lohi H, Virtala A. A large case-control study indicates a breed-specific predisposition to feline tooth resorption. Vet J. 2024;305:106133. doi:10.1016/j.tvjl.2024.106133.', relevance: '2024 大型 case-control：品種專一性傾向與年齡風險（近期權威）' },
   ],
   is_current: true,
   created_at: now,
