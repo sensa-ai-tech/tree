@@ -1713,8 +1713,8 @@ M. gypseum 已更名為 **Nannizzia gypsea**（de Hoog 等 2017 分類更新）�
 const contentScabies: NodeContent = {
   id: 'CONTENT-DERM-L3-009',
   node_id: 'DERM-L3-009',
-  version: 1,
-  summary: '疥蟎症（Sarcoptic Mange）由犬疥蟎（Sarcoptes scabiei var. canis）引起，是犬最會癢的皮膚病之一。這隻蟎蟲在表皮角質層裡面挖隧道，引發 Type I 跟 Type IV 混合型的過敏反應，所以癢得不得了。傳染性很強，可以暫時感染人類（人畜共通）。診斷不容易，淺層皮膚刮搔敏感度只有 20-50%，臨床上常常要靠經驗性治療（isoxazoline）做治療性診斷。典型好發部位是耳翼邊緣、肘部、踝部。',
+  version: 2,
+  summary: '疥蟎症（Sarcoptic Mange）由犬疥蟎（Sarcoptes scabiei var. canis）引起，是犬最會癢的皮膚病之一。這隻蟎蟲在表皮角質層裡面挖隧道，引發「以 Type I 為主、合併 Type IV」的複合型過敏反應，所以癢得不得了、且與蟲量不成比例。傳染性很強，可暫時感染人類（人畜共通、自限性）。診斷不易，淺層皮膚刮搔敏感度僅 30-50%（陰性不能排除），臨床常靠耳翼-踏足反射（敏感度約 80%、特異度約 94%）與 isoxazoline 治療性診斷。典型好發部位是耳翼邊緣、肘部、踝部、腹側。治療首選 isoxazoline（fluralaner 單劑、sarolaner/afoxolaner 每月），治癒率近 100%。',
   learning_objectives: [
     '描述 Sarcoptes scabiei 的生活史與傳播途徑',
     '辨識疥蟎症的典型好發部位與臨床特徵',
@@ -1722,13 +1722,13 @@ const contentScabies: NodeContent = {
     '規劃疥蟎症的治療方案（包括同居動物與環境處理）',
   ],
   key_points: [
-    '犬疥蟎穴行於角質層，完成生活史需 17-21 天',
-    '劇烈搔癢是最突出的特徵。即使少量蟎蟲也會因為過敏反應引起嚴重搔癢',
-    '典型好發部位：耳翼邊緣（最早）、肘部、踝部、腹側',
-    '耳翼-踏足反射（pinnal-pedal reflex）：搔刮耳翼邊緣引發後腿搔抓反射，敏感度約 80%',
-    '淺層皮膚刮搔敏感度僅 20-50%，刮搔陰性不能排除',
-    'Isoxazoline（fluralaner, sarolaner）為目前首選治療，單劑即可有效',
-    '人畜共通但自限性。犬疥蟎沒辦法在人類皮膚上完成生活史',
+    '犬疥蟎穴行於角質層，完整生活史約 17-21 天；雌蟲每天產卵 2-4 顆',
+    '劇烈搔癢是最突出的特徵。即使少量蟎蟲也會因為過敏反應引起嚴重搔癢（以 Type I 為主、合併 Type IV）',
+    '典型好發部位：耳翼邊緣、肘部外側、踝部外側、腹側（稀毛區），背側通常留待泛發',
+    '耳翼-踏足反射（pinnal-pedal reflex）：搔刮耳翼邊緣引發後腿搔抓，敏感度約 80%（81.8%, Mueller 2001）、特異度約 94%',
+    '淺層皮膚刮搔敏感度僅 30-50%（範圍 20-50%），刮搔陰性不能排除',
+    'Isoxazoline 為首選治療：fluralaner 單劑、sarolaner/afoxolaner 每月，治癒率近 100% 且無 MDR1 疑慮',
+    '人畜共通但自限性：犬疥蟎在人皮膚無法建立自我維持感染，去除接觸後 2-4 週自行消退',
   ],
   body: `# 疥蟎症 (Sarcoptic Mange)
 
@@ -1740,16 +1740,16 @@ const contentScabies: NodeContent = {
 疥蟎症是 Sarcoptes scabiei var. canis 引起的高傳染性皮膚病。蟎蟲在角質層裡面挖隧道產卵，宿主就跑出強烈的過敏反應。這個病在犬舍、收容所、流浪犬群裡很常見。
 
 ### 生活史
-- 雌蟲鑽進角質層產卵，一天下 2-3 顆。
-- 從卵到幼蟲到若蟲到成蟲，整個 17-21 天。
-- 離開宿主可以活 3-21 天，看環境溫濕度。
+- 雌蟲鑽進角質層產卵，一天下 2-4 顆（終生約 40-50 顆）。
+- 從卵到幼蟲到若蟲到成蟲，完整生活史約 17-21 天（受控最適條件下最短約 10-13 天）。
+- 離開宿主可以活約 2 天到 3 週，看環境溫濕度（低溫高濕存活較久，室溫多為 2-6 天）。
 - 傳播以直接接觸為主，也可以靠寢具、美容工具間接傳播。
 
 ### 病理機轉
-蟎蟲的隧道加上排泄物跟分泌物把宿主免疫激起來：
-1. Type I 過敏：IgE 介導即時型反應，幾分鐘內就開始癢。
-2. Type IV 過敏：T 細胞介導遲發型反應，24-48 小時後跑出發炎。
-3. 致敏之後，少少幾隻蟎蟲就能引起劇烈搔癢，跟蟲量完全不成比例。
+蟎蟲的隧道加上排泄物、唾液、角質層抗原把宿主免疫激起來，形成「複合型過敏反應」：
+1. Type I 過敏（主要）：IgE 介導即時型反應（IgE、肥大細胞、嗜酸性球升高），幾分鐘內就開始癢。
+2. Type IV 過敏：T 細胞介導遲發型反應，真皮 T 淋巴球浸潤（部分文獻另提及 Type III 免疫複合體）。
+3. 臨床犬約於感染後 4-5 週血清轉陽；一旦致敏，少少幾隻蟎蟲就能引起與蟲量完全不成比例的劇烈搔癢。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -1761,13 +1761,13 @@ const contentScabies: NodeContent = {
 
 ### 診斷
 ### 臨床線索
-- 耳翼-踏足反射（pinnal-pedal reflex）：敏感度約 80%。
-- 癢得很厲害加上耳翼、肘部好發，類固醇效果差。
+- 耳翼-踏足反射（pinnal-pedal reflex，搔刮耳翼邊緣引發同側後腿搔抓）：敏感度約 80%（Mueller 2001 原始研究 81.8%，n=588）、特異度高達約 94%——陽性具高度提示性，但陰性不能排除。
+- 癢得很厲害加上耳翼、肘部好發，類固醇僅「部分/不完全」反應（非完全無效，仍是與 CAD 鑑別的重要線索）。
 - 家裡其他動物或飼主也跟著癢。
 
 ### 淺層皮膚刮搔
-- 多點取樣（耳翼邊緣、肘部）。
-- 敏感度只有 20-50%，陰性不能排除。
+- 多點取樣（耳翼邊緣、肘部）、塗礦物油、大範圍淺刮。
+- 敏感度低（一般約 30-50%，文獻範圍 20-50%；Curtis 2004），陰性不能排除。
 - 看到蟎蟲、蟲卵或蟲糞就是確診。
 
 ### 經驗性治療（治療性診斷）
@@ -1780,12 +1780,13 @@ const contentScabies: NodeContent = {
 ## 三、治療策略 (Treatment)
 
 ### 首選：Isoxazoline 類
-- [藥物:Fluralaner] 25-56 mg/kg PO 單劑（多數病例單劑即可）
-- [藥物:Sarolaner] 2 mg/kg PO，建議連續 2 個月每月投藥
+- [藥物:Fluralaner] 25-56 mg/kg PO 單劑（Taenzler 2016：單劑第 28 天蟎蟲清除率 100%；多數病例單劑即可）
+- [藥物:Sarolaner] 2 mg/kg PO 每月 × 2-3 次（Becskei 2016 於 day 0/30/60 給藥）；afoxolaner、lotilaner 同屬有效
+- 治癒率（寄生蟲學治癒）幾乎 100%；此類兼具跳蚤/壁蝨防治且無 MDR1 疑慮，已取代傳統大環內酯成首選
 
-### 替代方案
-- [藥物:Selamectin] spot-on 每 2 週 × 3 次
-- [藥物:Ivermectin] 0.2-0.4 mg/kg SC 每 2 週 × 3 次（MDR1 突變犬禁用）
+### 替代方案（核准之大環內酯／off-label）
+- [藥物:Selamectin] spot-on 6-12 mg/kg，標準為 day 0 與 day 30（每月 × 2，仿單核准）；欲加速緩解可 off-label 採 day 0/14/30
+- [藥物:Ivermectin] 0.2 mg/kg（200 µg/kg）PO 或 SC 每 2 週 1 次、共 2-4 次（0.3-0.4 為 off-label 高劑量，CAPC 不建議常規使用）；**MDR1/ABCB1 突變之牧羊犬類（柯利、澳洲牧羊犬、喜樂蒂）禁用，此類犬 0.1 mg/kg 即可能中毒**
 
 ### 配套措施
 - 所有同居犬必須同時治療
@@ -1797,9 +1798,9 @@ const contentScabies: NodeContent = {
 ## 四、併發症與監控 (Complications & Monitoring)
 
 ### 常見併發症
-- 人畜共通感染：Sarcoptes scabiei var. canis 可以暫時感染人類（叫做「假性疥瘡」），人類身上會跑出搔癢性丘疹（主要在跟犬接觸的手臂或軀幹）。不過這隻蟲沒辦法在人類身上完成生活史，犬治好之後人類的症狀也會自行消退。
+- 人畜共通感染：Sarcoptes scabiei var. canis 可以暫時感染人類（叫做「假性疥瘡 pseudoscabies」），接觸部位（軀幹、腹部、前臂、大腿；典型不侵犯指間與生殖器，與人型疥蟎相反）跑出搔癢性丘疹。此為自限性——犬疥蟎在人皮膚通常無法建立「可持續繁殖」的族群（註：實驗顯示極少數情況蟲體曾短暫存活產卵，故宜說「無法建立自我維持感染」而非絕對「無法繁殖」），犬治好或去除接觸後人類症狀多在 2-4 週內自行消退，人本身常不需另行治療。
 - 繼發膿皮症：抓太兇把表皮抓破，Staphylococcus 就趁機進來。
-- 耳廓邊緣結痂性皮膚炎：疥蟎症的特徵病灶，pinnal-pedal reflex（耳廓-後腿反射）陽性率 75-90%。
+- 耳廓邊緣結痂性皮膚炎：疥蟎症的特徵病灶；耳翼-踏足反射敏感度約 80%（特異度約 94%，見上）。
 - 淋巴結腫大：反應性淋巴結腫大很常見，這是免疫反應不是轉移。
 
 ### 監控計畫
@@ -1810,7 +1811,7 @@ const contentScabies: NodeContent = {
 | 治療後 6-8 週 | 追蹤回診 | 確認痊癒、沒有復發 |
 
 ### 注意事項
-- 蟎蟲死掉後搔癢還可以持續 2-4 週（殘留的過敏反應），不代表治療失敗。
+- 蟎蟲清除後（多數犬治療後約 4 週已無蟎），因殘留的過敏反應，搔癢通常於治療後 2 週開始下降、3-4 週明顯改善，但完全緩解可能需 4-6 週（少數更久），不代表治療失敗。
 - 家裡所有犬都要同時治療，就算沒症狀也是（可能是潛伏期或低蟲量感染）。
 
 ## 五、預後與預後因子 (Prognosis)
@@ -1835,7 +1836,14 @@ const contentScabies: NodeContent = {
 |---------|------|---------------|
 | 疥蟎症刮搔假陰性率極高（~50%），經驗性治療是否應為標準做法 | 多數皮膚科醫師建議高度懷疑即治療（治療性診斷） | Level III |
 | Isoxazoline 單劑 vs 連續 2 劑治療疥蟎的比較 | Fluralaner 單劑多數有效，但嚴重病例可能需第 2 劑 | Level II |
-| 疥蟎症合併犬異位性皮膚炎的鑑別挑戰 | 臨床表現高度重疊，建議所有新發搔癢犬先排除疥蟎 | Level III |`,
+| 疥蟎症合併犬異位性皮膚炎的鑑別挑戰 | 臨床表現高度重疊，建議所有新發搔癢犬先排除疥蟎 | Level III |
+
+## 八、近期更新 (Recent Updates)
+
+- **Isoxazoline 成為第一線**：Taenzler 2016（Parasit Vectors）證實單劑口服/外用 fluralaner 於第 28 天達 100% 殺蟎；Becskei 2016（Vet Parasitol）sarolaner、Hampel 2018（Parasite）afoxolaner、Chiummo 2020（Parasit Vectors）田野 fluralaner 均高效，已取代傳統大環內酯成為首選，兼具跳蚤/壁蝨防治且無 MDR1 疑慮。
+- **CAPC 立場**：不建議常規使用 off-label 高劑量 ivermectin，優先選核准產品（selamectin、moxidectin/imidacloprid、isoxazolines）。
+- **人畜共通再認識**：Moroni 2022（Pathogens）統合回顧指出「動物型疥蟎無法在人繁殖」屬傳統假設，實驗顯示犬源疥蟎曾在少數受試者存活產卵——臨床仍為自限性，但機轉表述宜保守（改用「無法建立自我維持感染」）。
+- **診斷**：血清 IgG ELISA（Lower 2001，敏感度約 84%）與 isoxazoline 治療試驗是刮搔陰性時的主要輔助；皮膚鏡偵測蟎蟲/隧道應用漸增。`,
   clinical_pearl: '疥蟎症是那種「看一眼就知道」的病。一隻犬走進診間癢個不停，檢查發現耳翼邊緣結痂、肘部丘疹，pinnal-pedal reflex 陽性，你腦中應該馬上跳出疥蟎兩個字。不要因為刮搔陰性就把它排掉。在台灣，流浪犬被收養後跑出劇烈搔癢的第一鑑別就是疥蟎，isoxazoline 治療性診斷是最實用的做法。',
   common_mistakes: [
     '淺層皮膚刮搔陰性即排除疥蟎症（敏感度僅 20-50%）',
@@ -1845,9 +1853,9 @@ const contentScabies: NodeContent = {
     '對 MDR1 突變品種使用 ivermectin',
   ],
   disease_data: {
-    signalment: '犬為主，任何品種、年齡、性別。流浪犬、收容所犬、犬舍犬風險高。幼犬與免疫低下犬可發展為嚴重結痂型（Norwegian scabies 相當於人類的結痂型疥瘡）。貓極罕見（有物種特異性）。',
-    etiology: 'Sarcoptes scabiei var. canis 感染。主要靠直接接觸傳播，汙染的寢具跟美容工具也可以間接傳。蟎蟲離開宿主可以活 3-21 天。人畜共通但自限性，這隻蟎在人類身上沒辦法完成生活史，人類症狀通常在犬治療後 2-4 週自行消退。',
-    pathogenesis: '蟎蟲在角質層挖隧道、產卵、排泄，蟲體抗原跟排泄物引發宿主過敏反應（Type I IgE 介導加 Type IV T 細胞介導）。肥大細胞脫顆粒跟 T 細胞浸潤一起搞，造成劇烈搔癢，抓下去屏障又被破壞，還可能繼發細菌感染。一旦致敏，就算只有少量蟎蟲也會跑出跟蟲量完全不成比例的嚴重搔癢。',
+    signalment: '犬為主，任何品種、年齡、性別。流浪犬、收容所犬、犬舍犬風險高。幼犬、老齡犬與免疫低下犬（如利什曼原蟲病、營養不良、醫源性免疫抑制）可發展為嚴重結痂型（Norwegian/crusted scabies），蟲量極高；此重症型多呈廣泛病灶但搔癢反而輕微，與典型疥蟎的劇烈搔癢相反。貓極罕見（有物種特異性）。',
+    etiology: 'Sarcoptes scabiei var. canis 感染。主要靠直接接觸傳播，汙染的寢具跟美容工具也可以間接傳。蟎蟲離開宿主可以活約 2 天到 3 週（依溫濕度）。人畜共通但自限性，犬疥蟎在人皮膚通常無法建立可持續繁殖的族群（宜表述為「無法建立自我維持感染」而非絕對「無法繁殖」），人類症狀通常在犬治療或去除接觸後 2-4 週自行消退。',
+    pathogenesis: '蟎蟲在角質層挖隧道、產卵、排泄，蟲體抗原（角質層、唾液、糞便蛋白）引發宿主複合型過敏反應——以 Type I（IgE 介導，IgE/肥大細胞/嗜酸性球升高）為主，合併 Type IV（T 細胞介導）、部分文獻另含 Type III 免疫複合體。造成劇烈搔癢，抓下去屏障又被破壞，還可能繼發細菌感染。約感染後 4-5 週血清轉陽；一旦致敏，就算只有少量蟎蟲也會跑出跟蟲量完全不成比例的嚴重搔癢。',
     clinical_signs: [
       { sign: '劇烈搔癢', category: 'primary', description: '最突出的症狀，強度超高，類固醇效果差' },
       { sign: '耳翼邊緣丘疹結痂', category: 'primary', description: '最早也最典型的好發部位' },
@@ -1864,8 +1872,8 @@ const contentScabies: NodeContent = {
       { condition: '馬拉色菌皮膚炎', key_differentiator: '油脂樣皮膚與特徵異味，細胞學見酵母菌' },
     ],
     diagnostic_workup: '先做臨床評估（看好發部位、搔癢程度、接觸史），加上 Pinnal-pedal reflex 測試。然後多點做淺層皮膚刮搔（耳翼邊緣、肘部）。刮搔陰性但高度懷疑就直接給經驗性 isoxazoline 跑 4 週。也可以做 Sarcoptes IgG ELISA，不過要感染 5 週後才驗得出來。',
-    treatment_protocol: '首選 isoxazoline：Fluralaner 25-56 mg/kg PO 單劑，或 Sarolaner 2 mg/kg PO 連續 2 個月。替代選項是 Selamectin spot-on q2w 跑 3 次。家裡所有犬要同時治療。環境清潔做寢具 60°C 清洗、清潔美容工具。急性搔癢短期用 Prednisolone 0.5 mg/kg 跑 5-7 天。有繼發感染就照感染處理。',
-    prognosis: '預後超好。Isoxazoline 治療下幾乎 100% 治癒。搔癢通常治療後 2-4 週內就會明顯改善（過敏反應要時間退）。不治療可以拖好幾個月甚至幾年。家裡的人在犬治療後 2-4 週症狀也會自行消退。',
+    treatment_protocol: '首選 isoxazoline：Fluralaner 25-56 mg/kg PO 單劑（Taenzler 2016 第 28 天殺蟎 100%），或 Sarolaner 2 mg/kg PO 每月 × 2-3 次（afoxolaner/lotilaner 同屬有效）。替代（核准大環內酯/off-label）：Selamectin 6-12 mg/kg spot-on day 0 與 day 30（加速可 off-label day 0/14/30）；Ivermectin 0.2 mg/kg PO/SC q2w × 2-4（MDR1 牧羊犬類禁用）。家裡所有犬要同時治療。環境清潔做寢具 60°C 清洗、清潔美容工具。急性搔癢短期用 Prednisolone 0.5 mg/kg 跑 5-7 天。有繼發感染就照感染處理。',
+    prognosis: '預後超好。Isoxazoline 治療下寄生蟲學治癒率近 100%。蟎蟲多於治療後約 4 週清除，但搔癢因殘留過敏反應，通常 2 週開始下降、3-4 週明顯改善、完全緩解可能需 4-6 週。不治療可以拖好幾個月甚至幾年。家裡的人在犬治療或去除接觸後 2-4 週症狀也會自行消退。',
     monitoring: '治療後 2-4 週回診看搔癢改善程度。4 週的時候搔癢應該要改善超過 80%。如果沒改善完全，要想是不是合併其他過敏疾病（CAD 跟疥蟎共存）。治療後 6-8 週可以做皮膚刮搔確認清除。',
     owner_communication: '疥蟎是高傳染性的蟎蟲感染，蟎蟲在皮膚裡面挖隧道造成劇烈搔癢。這種蟲可以暫時傳染給人（但不會長期住在人身上）。治療用口服殺蟲藥，效果非常好。家裡所有犬要一起治療。治療後搔癢可能還要 2-4 週才完全退，這是正常的。寢具跟環境要清洗消毒。',
   },
@@ -1880,10 +1888,14 @@ const contentScabies: NodeContent = {
   ],
   drug_api_links: ['Fluralaner', 'Sarolaner', 'Selamectin', 'Ivermectin', 'Prednisolone'],
   references: [
-    { type: 'journal', citation: 'Terada Y, et al. (2010). Efficacy of selamectin against sarcoptic mange in dogs. Veterinary Therapeutics, 11(1), E1-6.', relevance: '疥蟎治療選項比較' },
-    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '疥蟎症完整章節' },
-    { type: 'journal', citation: 'Becskei C et al. Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparica), for the treatment of sarcoptic mange in dogs. Vet Parasitol. 2016;222:56-61.', relevance: 'Sarolaner 治療疥蟎的臨床研究' },
-    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 診斷指引中疥蟎排除流程' },
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller & Kirk's Small Animal Dermatology, 7th ed. St. Louis: Elsevier, 2013. Parasitic Skin Disease.", relevance: '疥蟎症診斷/好發部位/治療完整章節' },
+    { type: 'journal', citation: 'Taenzler J, Liebenberg J, Roepke RKA, et al. Efficacy of fluralaner administered either orally or topically for the treatment of naturally acquired Sarcoptes scabiei var. canis infestations in dogs. Parasit Vectors. 2016;9:392. doi:10.1186/s13071-016-1670-7', relevance: 'Fluralaner 單劑第 28 天殺蟎 100%（一線證據）' },
+    { type: 'journal', citation: 'Becskei C, De Bock F, Illambas J, et al. Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparica), for the treatment of sarcoptic mange in dogs. Vet Parasitol. 2016;222:56-61. doi:10.1016/j.vetpar.2016.02.017', relevance: 'Sarolaner day 0/30/60 治療疥蟎臨床研究' },
+    { type: 'journal', citation: 'Chiummo R, Petersen I, Plehn C, et al. Efficacy of orally and topically administered fluralaner (Bravecto) for treatment of client-owned dogs with sarcoptic mange under field conditions. Parasit Vectors. 2020;13:524. doi:10.1186/s13071-020-04395-6', relevance: '近期：田野條件 fluralaner 療效與搔癢緩解時程' },
+    { type: 'journal', citation: 'Hampel V, Knaus M, Schäfer J, et al. Treatment of canine sarcoptic mange with afoxolaner and afoxolaner plus milbemycin oxime chewable tablets: efficacy under field conditions. Parasite. 2018;25:63. doi:10.1051/parasite/2018064', relevance: 'Afoxolaner 田野療效' },
+    { type: 'journal', citation: 'Mueller RS, Bettenay SV, Shipstone M. Value of the pinnal-pedal reflex in the diagnosis of canine scabies. Vet Rec. 2001;148(20):621-623. doi:10.1136/vr.148.20.621', relevance: '耳翼-踏足反射敏感度 81.8%/特異度 93.8%（n=588）原始研究' },
+    { type: 'journal', citation: 'Lower KS, Medleau L, Hnilica K, Bigler B. Evaluation of an enzyme-linked immunosorbant assay (ELISA) for the serological diagnosis of sarcoptic mange in dogs. Vet Dermatol. 2001;12(6):315-320. doi:10.1046/j.0959-4493.2001.00265.x', relevance: 'Sarcoptes IgG ELISA 敏感度 84.2%/特異度 89.5%' },
+    { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196. doi:10.1186/s12917-015-0515-5', relevance: 'Favrot 標準（耳翼邊緣不受累）與疥蟎排除流程' },
   ],
   is_current: true,
   created_at: now,
@@ -2195,7 +2207,7 @@ const contentDermOverview: NodeContent = {
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '小動物皮膚科最權威教材' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017.', relevance: '皮膚科臨床圖譜與治療指南' },
-    { type: 'journal', citation: 'Hill PB et al. Survey of the prevalence, diagnosis and treatment of dermatological conditions in small animals in general practice. Vet Rec. 2006;158(16):533-539.', relevance: '小動物皮膚病一般診療盛行率調查' },
+    { type: 'journal', citation: 'Hill PB et al. Survey of the prevalence, diagnosis and treatment of dermatological conditions in small animals in general practice. Vet Rec. 2006;158(16):533-539. doi:10.1136/vr.158.16.533', relevance: '小動物皮膚病一般診療盛行率調查' },
     { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 國際指引，皮膚科領域最重要的臨床共識' },
   ],
   is_current: true,
@@ -2460,7 +2472,7 @@ T 細胞：
   drug_api_links: ['Oclacitinib', 'Lokivetmab', 'Cyclosporine'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 2: Immunology.", relevance: '皮膚免疫學完整章節' },
-    { type: 'journal', citation: 'Marsella R, De Benedetto A. Atopic dermatitis in animals and people: an update and comparative review. Vet Sci. 2017;4(3):37.', relevance: '犬異位性皮膚炎的免疫學比較回顧' },
+    { type: 'journal', citation: 'Marsella R, De Benedetto A. Atopic dermatitis in animals and people: an update and comparative review. Vet Sci. 2017;4(3):37. doi:10.3390/vetsci4030037', relevance: '犬異位性皮膚炎的免疫學比較回顧' },
     { type: 'journal', citation: 'Gonzales AJ et al. Interleukin-31: its role in canine pruritus and naturally occurring canine atopic dermatitis. Vet Dermatol. 2013;24(1):48-e12.', relevance: 'IL-31 在犬瘙癢與 CAD 中角色的關鍵研究' },
     { type: 'guideline', citation: 'Mueller RS, Nuttall T, Prost C, et al. Treatment of the canine atopic dermatitis，2023 updated guidelines from ICADA. Vet Dermatol. 2023;34(4):297-316.', relevance: 'ICADA 2023 更新指引中免疫機轉與治療靶點' },
   ],
@@ -2608,7 +2620,7 @@ Exogen（脫落期）：
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Structure and Function of the Skin.", relevance: '犬貓毛囊結構與毛髮週期基礎' },
     { type: 'journal', citation: 'Diaz SF, Torres SM, Dunstan RW, Jessen C. "The effect of body region on the canine hair cycle as defined by unit area trichogram." Vet Dermatol. 2004;15(4):225-229.', relevance: '犬不同體表區域毛髮週期差異的定量研究' },
-    { type: 'journal', citation: 'Frank LA. "Comparative Dermatology -- Canine Endocrine Dermatoses." Clin Dermatol. 2006;24(4):317-325.', relevance: '犬內分泌脫毛的毛髮週期病理' },
+    { type: 'journal', citation: 'Frank LA. "Comparative Dermatology -- Canine Endocrine Dermatoses." Clin Dermatol. 2006;24(4):317-325. doi:10.1016/j.clindermatol.2006.04.007', relevance: '犬內分泌脫毛的毛髮週期病理' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017. Chapter 9: Endocrine and Metabolic Diseases.', relevance: '毛髮週期異常與內分泌疾病的臨床對照' },
     { type: 'journal', citation: 'Cerundolo R, Lloyd DH, Persechino A, et al. Treatment of canine Alopecia X with trilostane. Vet Dermatol. 2004;15(5):285-293. doi:10.1111/j.1365-3164.2004.00403.x.', relevance: 'Alopecia X 以 trilostane 治療之臨床研究' },
   ],
@@ -4111,7 +4123,7 @@ Azathioprine 骨髓抑制：犬發生率 5-15%，通常在開始治療後 2-8 �
     { type: 'journal', citation: 'Mueller RS et al. Treatment of pemphigus foliaceus and pemphigus vulgaris in dogs. Vet Dermatol. 2006;17:279-290.', relevance: '天疱瘡免疫抑制治療方案回顧' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '免疫調節藥物完整藥理學' },
     { type: 'journal', citation: 'Viviano KR. Update on immunosuppressive therapies for dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):1149-1170.', relevance: '犬貓免疫抑制治療更新' },
-    { type: 'journal', citation: 'Rosenkrantz W. Pemphigus: current therapy. Vet Dermatol. 2004;15:90-98.', relevance: '天疱瘡治療實務' },
+    { type: 'journal', citation: 'Rosenkrantz W. Pemphigus: current therapy. Vet Dermatol. 2004;15:90-98. doi:10.1111/j.1365-3164.2004.00360.x', relevance: '天疱瘡治療實務' },
     { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 指引中 cyclosporine 與免疫調節劑用藥建議' },
   ],
   is_current: true,
