@@ -24,6 +24,7 @@
 - 兩輪總體檢已 push（origin/main `d7e7e2d`）；巡航 **Phase A 本地 checkpoint `b3dbcd7`（未 push）**。綠燈基準：tsc 0 / **847 tests** / lint 0 err（20 warn）/ build ✓。
 - P0 真實 Auth 程式已接線（雙模式 auth-store + SSR session），待營運端啟用（設 env 自動切真）。
 - 283 節點 / 156 v2 / 103 病例。報告：`docs/PRE-LAUNCH-RETEST-2026-07-04.md`（最新）、`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`、`BLUEPRINT.md`。
+- 🎯 **C1b 引用正確性 sweep 完成（iter 4-9）**：揪修 **4 條 v1 捏造/誤植引用**（Schrauwen/Harris/Nguyen/Garden→Swann）＋回填 **5 條 Crossref 驗證 DOI**；cardio/neuro/onco/cpath **4 科 0 suspect**；殘餘僅 2 條 pre-DOI 真實文。
 
 ### v2 路線圖（feature / tech-debt）
 - **Phase A — 技術債清理（P1，安全可驗證，先做）**
@@ -40,14 +41,16 @@
 - **Phase D — 新價值**：A–C 收斂後評估。
 
 ### NEXT-UP v2（依序，每迭代取最上）
-1. **C1b 最終掃尾：ONCO-L5-006 Weishaar 2018 JVIM 補真實 DOI、cpath 殘 1 查核（皆真實文，Crossref 回填/標記）→ 完成即 C1b 全清** ← 下一個
-2. C3（長期）：v1→v2 內容升級 pilot（uplift-queue 選 v1、依 CONTENT-STANDARD-V2、產出待 DVM）
+1. **C3 pilot：v1→v2 內容升級 1 個節點（uplift-queue 選最高 prio v1、依 CONTENT-STANDARD-V2、每 DOI Crossref 驗、version→2、產出待 DVM）** ← 下一個
+2. C3 續：依 pilot 成效逐節點升級（~127 個 v1，長期，DVM）
+> ✅ **C1b 完成**（4 捏造/誤植修正 + 5 DOI 回填；cardio/neuro/onco/cpath 4 科 0 suspect；殘餘 2 條 pre-DOI 真實文 im-Laflamme/ecc-chocolate 已標記）。
 > ⛔ **B1/B2（後台 generate/review 功能化）移至 BLOCKED**：需 Supabase 持久層 ＋ 真 Claude API 花費決策 ＋ auth-path（cookie vs API-key）安全設計，非自主可安全完成 → 見 Obsidian `BLOCKED-OPERATIONS.md`，待使用者定調。
 
 ### commander-iter 進度（append-only）
 - iter 0（2026-07-04）：接任、建立本 v2 錨點 + 路線圖。
 - iter 1（2026-07-04）：**A1 完成** — `middleware.ts`→`proxy.ts`（函式 middleware→proxy，config/matcher/邏輯不變）。build 棄用警告清除；admin auth gate 瀏覽器實測（未登入 /admin/analytics → /admin/login）通過。綠燈：tsc 0 / 847 tests / build ✓。變更未 commit（累積至 Phase A 收尾一起 checkpoint）。
 - iter 2（2026-07-04）：**A2 完成** — persisted-user auth-flash。auth-store 加 `sessionVerified`（mock：onRehydrateStorage 立即 true；real：onAuthStateChange/登入/註冊/登出設 true）；`(dashboard)/layout.tsx` loading gate + landing/login/register 的「已登入→/home」redirect 皆改為需 `sessionVerified`。**mock 行為零變更**：mock 登入→/home、reload /home 皆瀏覽器實測通過、console 無錯。綠燈：tsc 0 / 847 tests / build ✓。**Phase A 全完成**（A1+A2）→ 本地 checkpoint commit `b3dbcd7`（未 push）。
+- iter 9（2026-07-04）：**🎯 C1b 完成** — 最終掃尾。**✅ ONCO-L5-006 Weishaar 2018 JVIM c-Kit MCT**：補真實 DOI `10.1111/jvim.14889` + 標題對齊（實為「…Treated with Prednisone and Toceranib or Vinblastine」）。**✅ CPATH-L1-003（第 4 條誤植）**：v1「Garden OA … treatment of IMHA … 33(3):1141-1172」第一作者誤標——該治療共識實為 **Swann JW**（Garden 為診斷共識 33(2) 之第一作者）→ 修正 Swann JW + 真實 DOI `10.1111/jvim.15463`。**onco、cpath 重驗＝0 suspect。** 綠燈 tsc 0 / 848 / build ✓。**C1b 總成果：揪修 4 條 v1 捏造/誤植引用（Schrauwen→Greer、Harris→Burkert、Nguyen 移除、Garden→Swann）＋回填 5 條 Crossref 驗證 DOI（DELAY、Nabity2015、Kenney、Weishaar、Swann）；cardio/neuro/onco/cpath 4 科 0 suspect；殘餘 NOT_FOUND 僅 2 條 pre-DOI 真實文（IM Laflamme 1997、ECC chocolate 2001，已標記可接受）。內容改動待 DVM。**
 - iter 8（2026-07-04）：**C1b 收尾（第一批）** — **✅ ONCO-L4-003：查實「Nguyen 2015 staging, Vet Comp Oncol 13(4):369-383」＝捏造（Crossref 查無；真實 Nguyen 2015＝VCOG RECIST 反應評估 13(3):176-183 vco.12032，非分期）→ 移除（節點保留 WHO TNM Owen 1980 權威分期來源）。＝本巡航第 3 條捏造/誤植引用。** **✅ ECC-L2-002：Kenney 2010 JAVMA 補真實 DOI `10.2460/javma.236.1.83`（Crossref 確認）→ 解決。** 綠燈 tsc 0 / 848 / build ✓。**殘餘（皆真實文、非捏造，僅待 DOI 回填/標記）**：ONCO-L5-006 Weishaar 2018 JVIM c-Kit MCT toceranib、cpath 1（疑 Nabity 2023 consensus DOI-less）、ECC-L3-007 chocolate（已標記 pre-DOI 真實）。**內容改動待 DVM。**
 - iter 7（2026-07-04）：**C1b 續 — 2 條疑捏造引用查實並修正（Crossref DOI 標題比對為最終裁決）**。**✅ NEURO-L3-015**：確認「Schrauwen I … BMC Genomics 2014;15:349」＝捏造/誤植（Isabelle Schrauwen 為人類遺傳學者、Crossref 查無此 Pug-NME 文）→ **以真實奠基研究 Greer KA et al. 2010 Tissue Antigens 76(2):110-118 `10.1111/j.1399-0039.2010.01484.x` 取代**（DLA class II × Pug NME）。**✅ NEURO-L3-011**：確認「Harris 69 cases (1986-2006);359-363」為張冠李戴（該 JAVMA 242(3):359 座標實為 Harris 23-cases MRI 文；節點需大規模研究）→ **以真實大規模回顧 Burkert BA et al. 2005 JAVMA 227(2):268-275 `10.2460/javma.2005.227.268`（513 例）取代**。**neuro 重驗＝0 suspect（NOT_FOUND 2→0 / TITLE_MISMATCH 0 / ERROR 0）**。綠燈 tsc 0 / 848 / build ✓。本地 checkpoint（不 push）。**⚠️ 內容改動待 DVM。殘餘 C1b**：ONCO-L4-003 Nguyen、cpath 1 NOT_FOUND、ECC-L2-002。**（累計揪修 v1 捏造/張冠李戴引用再 +2。）**
 - iter 6（2026-07-04）：**C1b 部分（子集）** — 殘餘 NOT_FOUND DOI sweep 第一批。**✅ CPATH-L1-002 Nabity 2015 SDMA**：補真實 DOI `10.1111/jvim.12835` + 標題對齊真名（與 im 版一致）→ VERIFIED_DOI、cpath TITLE_MISMATCH 0。**✅ IM-L3-031 Laflamme BCS 1997**：Canine/Feline Practice＝pre-DOI 真實文獻 → 註記真實無-DOI（不硬塞）。綠燈 tsc 0 / 848 / build ✓。**⚠️⚠️ 揪出待 careful 驗證（Crossref 429 暫緩，下輪逐篇查、勿捏造）**：**(1) NEURO-L3-015 Schrauwen「BMC Genomics 2014;15:349 DLA class II Pug NME」＝Crossref 查無 Schrauwen 此文，真實對應為 Greer et al. 2010 Tissue Antigens（DLA class II × Pug NME）→ 疑捏造/misattribution，擬以 Greer 取代**；**(2) NEURO-L3-011 Harris「discospondylitis 69 cases (1986-2006);359-363」＝該 JAVMA 242(3):359 座標實為 Harris「diskospondylitis 23 cases (1997-2010);359-365」MRI 研究（DOI 10.2460/javma.242.3.359）→ 疑細節錯/张冠李戴**。**殘餘**：ONCO-L4-003 Nguyen（429 未查）、cpath 另 1 NOT_FOUND、ECC-L2-002。本地 checkpoint（不 push）。**內容改動待 DVM。**

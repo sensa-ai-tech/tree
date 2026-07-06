@@ -2790,7 +2790,7 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
     { type: 'textbook', citation: 'Tizard IR. Veterinary Immunology: An Introduction, 10th ed. Elsevier, 2018.', relevance: '獸醫免疫學經典教科書，涵蓋先天性與後天性免疫全貌' },
     { type: 'textbook', citation: 'Day MJ, Schultz RD. Veterinary Immunology: Principles and Practice, 2nd ed. CRC Press, 2014.', relevance: '獸醫免疫學臨床應用參考' },
     { type: 'guideline', citation: 'Day MJ et al. "WSAVA Guidelines for the Vaccination of Dogs and Cats." J Small Anim Pract 2016;57(1):E1-E45.', relevance: '犬貓疫苗免疫學基礎與接種指引' },
-    { type: 'journal', citation: 'Garden OA et al. "ACVIM consensus statement on the treatment of immune-mediated hemolytic anemia in dogs." J Vet Intern Med 2019;33(3):1141-1172.', relevance: 'IMHA 免疫機制與治療共識' },
+    { type: 'journal', citation: 'Swann JW, et al. ACVIM consensus statement on the treatment of immune-mediated hemolytic anemia in dogs. J Vet Intern Med. 2019;33(3):1141-1172. doi:10.1111/jvim.15463.', relevance: 'IMHA 免疫機制與治療共識（修正 v1 誤標第一作者 Garden→實為 Swann JW；補真實 DOI）' },
   ],
   is_current: true,
   created_at: now,
