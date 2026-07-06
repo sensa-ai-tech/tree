@@ -4271,23 +4271,23 @@ const contentEndocarditis: NodeContent = {
 const contentPulmonaryHTN: NodeContent = {
   id: 'CONTENT-L3-009',
   node_id: 'CARDIO-L3-009',
-  version: 1,
-  summary: '肺動脈高壓（Pulmonary Hypertension, PH）是肺動脈壓力持續升高（估計收縮壓 >30 mmHg 或三尖瓣逆流速度 >2.8 m/s）的病理狀態。ACVIM 共識將 PH 分為六大病因群（前毛細管性、後毛細管性、合併型等）。台灣因亞熱帶氣候，心絲蟲症為 PH 最常見原因之一。Sildenafil（PDE5 inhibitor）1-2 mg/kg BID-TID 為目前主要治療藥物。',
+  version: 2,
+  summary: '肺動脈高壓（PH）是肺動脈壓持續升高的病理狀態。**ACVIM 2020 共識以「PH 機率（高/中/低）」心超判讀取代舊的單一壓力閾值**：臨床有意義的 PH 對應中/高機率（三尖瓣逆流壓力梯度 >46 mmHg、即 TRV >3.4 m/s），依 TRV 加三個解剖部位徵象數目綜合判定。病因分六大群組（G1 肺動脈性含先天分流、G2 左心疾病、G3 呼吸道/缺氧、G4 肺栓塞、G5 寄生蟲/心絲蟲、G6 多因子）。台灣為心絲蟲流行區，病因追查應納入心絲蟲檢測。一線藥物為 PDE5 抑制劑 sildenafil（1-3 mg/kg PO q8-12h，非肺選擇性、須監測血壓）。',
   learning_objectives: [
-    '描述肺動脈高壓的 ACVIM 病因分類系統',
-    '列舉犬貓 PH 的常見病因（心絲蟲、左心疾病、呼吸道疾病）',
-    '運用三尖瓣逆流速度（TRV）估算肺動脈收縮壓',
-    '制定 Sildenafil 為主的 PH 治療方案',
-    '說明 PH 的預後因子與長期監測計畫',
+    '描述肺動脈高壓的 ACVIM 2020 六大病因群組分類（並正確歸位心絲蟲=G5、先天分流=G1）',
+    '列舉犬貓 PH 的常見病因（整體以 G2 左心疾病最多；流行區重視 G5 心絲蟲）',
+    '運用 ACVIM 2020 機率式心超判讀（TRV ＋ 三解剖部位徵象數）評估 PH 機率',
+    '制定以 PDE5 抑制劑（sildenafil）為一線的 PH 治療方案並監測全身低血壓',
+    '說明 PH 依病因分層的預後與長期監測計畫',
   ],
   key_points: [
-    'PH 定義：肺動脈收縮壓估計值 >30 mmHg 或 TRV >2.8 m/s',
-    '嚴重度分級：輕度（TRV 2.8-3.5 m/s）、中度（3.5-4.3 m/s）、重度（>4.3 m/s）',
-    '最常見病因：左心疾病（MMVD/DCM 合併 PH，後毛細管性）、心絲蟲症（前毛細管性）、慢性呼吸道疾病',
-    '台灣流行病學：心絲蟲是 PH 最大宗的前毛細管性病因，預防工作絕對不能省',
-    '心超診斷關鍵：TRV 測量（modified Bernoulli equation：ΔP = 4V²）+ 右心擴大/肥大評估',
-    'Sildenafil（PDE5 抑制劑）1-2 mg/kg PO BID-TID 為一線治療，選擇性擴張肺血管',
-    '替代/輔助藥物：Pimobendan（改善右心功能）、Tadalafil（長效 PDE5i）',
+    'PH 判讀（ACVIM 2020）：以「機率（低/中/高）」取代單一閾值；**臨床有意義 PH ＝ 中/高機率（TR PG >46 mmHg / TRV >3.4 m/s）**',
+    '⚠️ 舊「TRV 數值分輕/中/重度」已被 ACVIM 2020 廢除（評為武斷）；改依 TRV（≤3.0 / 3.0-3.4 / >3.4 m/s）＋三部位徵象數（心室、肺動脈、右心房/後大靜脈）判機率',
+    '整體最常見為左心疾病（G2，MMVD/DCM）；G5 心絲蟲（機轉多因子：內膜炎＋栓塞＋肺實質炎）在流行區重要；G3 慢性呼吸道疾病亦常見',
+    '台灣為心絲蟲流行區（盛行率高），為重要且可預防的 PH 病因；流行區 PH 病因追查應納入心絲蟲抗原/微絲蟲檢測',
+    '心超判讀：連續波測 TRV（ΔP = 4V²）＋三部位徵象；ACVIM 建議直接報 TRV/PG、勿換算 PASP（重度右房高壓會低估）；**測不到 TR 不代表無 PH**',
+    'Sildenafil（PDE5 抑制劑）1-3 mg/kg PO q8-12h 為一線；**非肺選擇性**、會降全身血壓，須監測低血壓',
+    'Tadalafil（長效 PDE5i、每日一次）為替代；Pimobendan 非 ACVIM PH 一線，僅合併心肌收縮不全/右心衰時輔助',
   ],
   body: `# 肺動脈高壓 (Pulmonary Hypertension, PH)
 
@@ -4297,12 +4297,14 @@ const contentPulmonaryHTN: NodeContent = {
 
 | 群組 | 類型 | 代表病因 | 機轉 |
 |------|------|---------|------|
-| Group 1 | 肺動脈性 PH（PAH） | 原發性/特發性 | 肺小動脈重塑（中膜肥厚+內膜增生） |
-| Group 2 | 左心疾病（後毛細管性） | MMVD、DCM、HCM | 左心房壓↑→肺靜脈壓↑→被動性肺動脈壓↑ |
-| Group 3 | 呼吸道疾病/缺氧 | 慢性支氣管炎、肺纖維化 | 缺氧性肺血管收縮（HPV） |
-| Group 4 | 肺血管阻塞 | 心絲蟲症、肺血栓栓塞 | 血管腔物理性阻塞 |
-| Group 5 | 寄生蟲相關 | Dirofilaria immitis | 蟲體+免疫反應→血管內膜損傷 |
-| Group 6 | 多因子/不明 | 先天性分流（PDA/VSD Eisenmenger） | 肺過度灌流→血管重塑 |
+| Group 1 | 肺動脈性高壓（PAH） | 特發性、藥物/毒物、**先天性左→右分流（PDA/VSD → Eisenmenger）** | 肺小動脈重塑（中膜肥厚+內膜增生） |
+| Group 2 | 左心疾病 | MMVD、DCM、HCM | 左心房壓↑→肺靜脈壓↑→被動性肺動脈壓↑（可續發反應性重塑） |
+| Group 3 | 呼吸道疾病/缺氧 | 慢性支氣管炎、肺纖維化、氣管塌陷 | 缺氧性肺血管收縮（HPV） |
+| Group 4 | 肺栓塞/血栓（PTE） | 肺血栓栓塞（**不含心絲蟲**） | 血管腔物理性阻塞 |
+| Group 5 | 寄生蟲相關 | **心絲蟲 Dirofilaria immitis**、Angiostrongylus | 動脈內膜炎＋肺血栓栓塞＋肺實質發炎（多因子） |
+| Group 6 | 多因子/機轉不明 | 多重機轉並存 | — |
+
+> ⚠️ 名詞更正（ACVIM 2020）：**心絲蟲屬 G5 寄生蟲**（非 G4；G4 為非寄生蟲性肺栓塞）；**先天分流屬 G1（PAH）**，非 G6。v1 常見錯誤是把心絲蟲同時列 G4/G5。
 
 ### 病理生理核心
 
@@ -4316,29 +4318,33 @@ const contentPulmonaryHTN: NodeContent = {
 
 ### 臨床表現
 
-| 表現 | 發生率 | 機轉 |
+| 表現 | 提示強度（ACVIM 2020） | 機轉 |
 |------|--------|------|
-| 運動不耐 | 60-80% | 心輸出量下降 |
-| 咳嗽 | 40-60% | 肺動脈擴大壓迫氣管或合併呼吸道疾病 |
-| 呼吸困難 | 30-50% | 右心衰竭或合併肺水腫 |
-| 暈厥 | 20-30% | 運動時心輸出量驟降 |
-| 腹水 | 20-40% | 右心衰竭 |
-| 發紺 | 10-20% | 嚴重低氧血症（右→左分流或 V/Q 不匹配） |
+| 運動性暈厥 | 強烈提示 | 運動時心輸出量驟降 → 腦灌流不足 |
+| 休息時呼吸窘迫/費力 | 強烈提示 | 右心衰竭或合併肺病 |
+| 右心衰竭徵象（腹水） | 強烈提示 | 體循環鬱血 |
+| 發紺/黏膜蒼白 | 強烈提示 | 嚴重低氧或右→左分流 |
+| 運動不耐、活動後持續呼吸急促 | 可能提示 | 心輸出量下降 |
+| 咳嗽 | **多反映基礎呼吸道疾病、非 PH 直接徵象** | 合併呼吸道疾病 |
 
-### 心超診斷
+> ⚠️ ACVIM 2020 未提供各症狀量化發生率；上表為「提示強度」定性分層（原 v1 的百分比無出處，已移除）。
 
-三尖瓣逆流速度（TRV）是估算肺動脈收縮壓的關鍵指標：
+### 心超診斷：ACVIM 2020 機率式判讀
 
-PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
+**ACVIM 2020 已不用單一 TRV/PASP 閾值定義 PH，也不再用固定 TRV 值分「輕/中/重度」**（舊分級被共識評為「武斷、可能誤導」）。改採 **PH 機率（低/中/高）**：綜合**三尖瓣逆流尖峰速度（TRV）**與**三個解剖部位的 PH 心超徵象數目**。
 
-| 嚴重度 | TRV (m/s) | 估計 PASP (mmHg) | 臨床意義 |
-|--------|-----------|-----------------|---------|
-| 正常 | <2.8 | <36 | 無 PH |
-| 輕度 | 2.8-3.5 | 36-55 | 可能無症狀 |
-| 中度 | 3.5-4.3 | 55-79 | 症狀出現 |
-| 重度 | >4.3 | >79 | 右心衰竭風險高 |
+三個解剖部位徵象：
+1. **心室**：RV:LV 比增大、收縮期中隔平坦化（D-shape）、RV 肥大、LV 充盈不足
+2. **肺動脈**：PA/Ao > 1.0、肺動脈血流加速時間（AT）縮短或 AT:ET 下降、RPAD < 30%
+3. **右心房/後大靜脈**：右心房擴大、後大靜脈擴張
 
-其他心超指標：右心室擴大/肥大、心室中隔平坦化（D-sign）、肺動脈幹擴大、主肺動脈與主動脈比（PA/Ao）升高。
+| TRV（PG） | 0 徵象 | 1 徵象 | 2 徵象 | 3 徵象 |
+|-----------|:---:|:---:|:---:|:---:|
+| ≤ 3.0 m/s（PG ≤36）或測不到 | 低 | 低 | 中 | 高 |
+| 3.0–3.4 m/s（PG 36–46） | 中 | 中 | 高 | 高 |
+| > 3.4 m/s（PG >46） | 中 | 高 | 高 | 高 |
+
+> **臨床有意義的 PH ＝ 中或高機率**（相當於 TR PG > 46 mmHg / TRV > 3.4 m/s）。**測不到 TR 不代表沒有 PH**——此時靠解剖部位徵象數目判機率。ACVIM 建議直接報 **TRV/PG**、不換算 PASP（嚴重右心房高壓時 PASP 會被低估）。血流動力學參考標準為右心導管 mPAP ≥ 25 mmHg（犬極少執行）。
 
 ### 病因追查
 
@@ -4354,12 +4360,12 @@ PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
 
 ### 藥物治療
 
-| 藥物 | 劑量 | 機轉 | 適用群組 |
+| 藥物 | 劑量* | 機轉/定位 | 備註 |
 |------|------|------|---------|
-| [藥物:Sildenafil] | 1-2 mg/kg PO BID-TID | PDE5 抑制→cGMP↑→肺血管舒張 | 所有群組（前毛細管為主） |
-| [藥物:Tadalafil] | 1 mg/kg PO SID | 長效 PDE5 抑制 | Sildenafil 替代 |
-| [藥物:Pimobendan] | 0.25-0.3 mg/kg PO BID | 改善右心收縮功能 | 合併右心功能障礙 |
-| Furosemide | 2-4 mg/kg PO BID-TID | 容量控制（右心衰腹水） | 合併右心衰竭 |
+| [藥物:Sildenafil]（**一線**） | 1-3 mg/kg PO q8-12h（保守起始 0.5 mg/kg q8h；短半衰期偏好 q8h/TID） | PDE5 抑制→cGMP↑→肺血管舒張 | **非肺選擇性**、會降全身血壓 → **監測低血壓** |
+| [藥物:Tadalafil]（替代） | 長效、每日一次；文獻報告約 1-2 mg/kg q24h（Jaffey 2019 tadalafil vs sildenafil 前驅比較） | 長效 PDE5 抑制 | 依從性佳（ACVIM 2020 認可 q24h、未給 mg/kg） |
+| [藥物:Pimobendan]（輔助，非一線） | 0.25-0.3 mg/kg PO BID（左心衰仿單劑量，Plumb's） | **ACVIM 未列為 PH 一線**；僅合併心肌收縮不全/右心衰時輔助 | 共識未主張其「改善右心收縮功能」 |
+| Furosemide | 2-4 mg/kg PO q8-12h | 容量控制（右心衰腹水） | 合併右心衰竭 |
 
 ### 病因導向治療
 
@@ -4372,7 +4378,7 @@ PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
 
 ### 治療要點
 - Group 2（左心疾病）PH：優先治療基礎左心疾病，降低 LA 壓可有效緩解 PH
-- Group 4/5（心絲蟲）：Sildenafil 在心絲蟲殺滅前可暫時緩解症狀
+- Group 5（心絲蟲）：Sildenafil 在心絲蟲殺滅前可暫時緩解症狀
 - 氧氣支持：短期可緩解 HPV，但長期不切實際
 
 ## 四、人醫借鑒 (Translational Insights)
@@ -4393,16 +4399,18 @@ PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
 | PH 犬運動建議 | 適度活動可維持心肺功能 | 嚴重 PH 運動可誘發暈厥/猝死 | Level V |
 
 [圖片:肺動脈高壓心超 TRV 測量與右心評估示意圖]`,
-  clinical_pearl: '台灣臨床實務中，PH 的病因追查第一步應為心絲蟲抗原/抗體檢測，台灣為心絲蟲高流行區，即使有良好預防史的犬也不應遺漏。心絲蟲導致的 PH（Group 4/5）在殺蟲治療後可能改善，但嚴重肺血管損傷可能為永久性。\n\n判讀技巧：TRV 測量需確保取得最佳三尖瓣逆流血流訊號（最高速度方向應與超音波光束平行）。低估 TRV 是最常見錯誤，TRV < 2.8 m/s 不代表無 PH，可能是取角度不佳或逆流量太小。其他右心指標（RV 擴大、中隔平坦化）可輔助判斷。',
+  clinical_pearl: '台灣為心絲蟲高流行區，PH 病因追查應納入心絲蟲抗原/微絲蟲檢測，即使有良好預防史也不應遺漏。心絲蟲 PH 屬 Group 5（寄生蟲，機轉多因子），殺蟲後可能改善但嚴重肺血管損傷可為永久性。\n\n判讀技巧（ACVIM 2020）：連續波 TRV 需取最佳逆流訊號（血流方向與光束平行）。**低估 TRV 是常見錯誤，且「測不到 TR」不代表無 PH**——此時改靠三個解剖部位徵象（心室 D-shape、肺動脈 PA/Ao>1.0 或 AT 縮短、右心房/後大靜脈擴大）數目判機率。ACVIM 建議直接報 TRV/PG、勿換算 PASP（重度右房高壓會低估）。',
   common_mistakes: [
-    '忽略在台灣犬 PH 中排除心絲蟲，心絲蟲為台灣最重要的前毛細管性 PH 病因',
-    'TRV 測量角度不佳導致低估肺動脈壓，需多切面嘗試取得最高 TRV 值',
-    '對 Group 2（左心疾病）PH 僅使用 Sildenafil 而未治療基礎左心疾病，本末倒置',
-    '將 PH 犬的運動限制放鬆，嚴重 PH 犬運動時心輸出量無法增加，可誘發暈厥或猝死',
+    '沿用舊「TRV>2.8 定義 PH」或「TRV 數值分輕/中/重度」——ACVIM 2020 已改機率式（中/高機率＝TR PG>46 mmHg / TRV>3.4 m/s）',
+    'TRV 測量角度不佳導致低估；且「測不到 TR」不代表無 PH——須靠三解剖部位徵象數判機率',
+    '流行區（台灣）忽略排除心絲蟲（G5 寄生蟲、多因子機轉、可預防）',
+    '把 sildenafil 當「肺選擇性」而忽略全身低血壓監測',
+    '對 Group 2（左心疾病）PH 僅用 Sildenafil 而未治療基礎左心疾病，本末倒置',
+    '把 PH 犬運動限制放鬆——中/高機率 PH 運動時心輸出量無法增加，可誘發暈厥或猝死',
   ],
   disease_data: {
     signalment: '犬各品種與年齡均可發生，病因不同則好發族群不同。心絲蟲相關 PH：台灣未預防犬。左心疾病相關 PH：MMVD 好發品種老年犬。呼吸道疾病相關 PH：短頭犬種、慢性支氣管炎老年犬。貓 PH 少見但可發生於 HCM 或心絲蟲感染。',
-    etiology: 'Group 1（肺動脈性）：原發性/特發性，犬極罕見。Group 2（左心疾病）：MMVD、DCM 合併 LA 壓升高，最常見。Group 3（呼吸道/缺氧）：慢性支氣管炎、肺纖維化、氣管塌陷。Group 4/5（血管阻塞/寄生蟲）：心絲蟲症為台灣最重要病因。Group 6（多因子）：先天性左→右分流（PDA/VSD）長期肺過度灌流。',
+    etiology: 'Group 1（PAH）：特發性、藥物/毒物、先天性左→右分流（PDA/VSD→Eisenmenger）。Group 2（左心疾病）：MMVD、DCM 合併 LA 壓升高，整體最常見。Group 3（呼吸道/缺氧）：慢性支氣管炎、肺纖維化、氣管塌陷。Group 4（PTE）：非寄生蟲性肺血栓栓塞。Group 5（寄生蟲）：心絲蟲（Dirofilaria）/Angiostrongylus，機轉多因子（動脈內膜炎＋栓塞＋肺實質炎），流行區（台灣）重要。Group 6：多因子/機轉不明。',
     pathogenesis: '肺動脈壓持續升高→右心室壓力過載→同心性肥大→舒張功能障礙→進展為收縮功能障礙→三尖瓣逆流惡化→右心衰竭（腹水、肝鬱血、頸靜脈怒張）。Group 2 特殊路徑：LA 壓↑→肺靜脈壓↑→被動性肺動脈壓↑→長期可誘發反應性血管重塑（合併前+後毛細管性）。',
     clinical_signs: [
       { sign: '運動不耐', category: 'primary', description: '心輸出量下降最常見表現，活動力明顯衰退' },
@@ -4412,34 +4420,36 @@ PASP ≈ 4 × TRV² + RAP（右心房壓，通常估計 5 mmHg）
       { sign: '腹水', category: 'secondary', description: '右心衰竭導致體循環鬱血' },
       { sign: '發紺', category: 'secondary', description: '嚴重 V/Q 不匹配或右→左分流（Eisenmenger）' },
     ],
-    staging: { system: 'ACVIM PH severity (TRV-based)', stages: ['Normal: TRV <2.8 m/s', 'Mild: TRV 2.8-3.5 m/s (PASP 36-55 mmHg)', 'Moderate: TRV 3.5-4.3 m/s (PASP 55-79 mmHg)', 'Severe: TRV >4.3 m/s (PASP >79 mmHg)'] },
+    staging: { system: 'ACVIM 2020 PH 機率（低/中/高；取代舊 TRV 嚴重度分級）', stages: ['低機率：TRV ≤3.0 m/s（或測不到）＋ 0-1 個解剖部位徵象', '中機率：TRV ≤3.0＋2 部位、或 TRV 3.0-3.4＋≤1 部位、或 TRV >3.4＋0 部位', '高機率：3 部位、或 TRV 3.0-3.4＋≥2 部位、或 TRV >3.4＋≥1 部位', '臨床有意義 PH ＝ 中/高機率（TR PG >46 mmHg / TRV >3.4 m/s）；三部位＝心室、肺動脈、右心房/後大靜脈'] },
     differential_diagnosis: [
       { condition: '右心衰竭（其他原因）', key_differentiator: '三尖瓣發育不良、右心心肌病，TRV 可能不升高（逆流量大但壓力不高）' },
       { condition: '心包膜積液', key_differentiator: '心超直接可見心包膜積液，右心壓迫為外因性' },
       { condition: '腹腔疾病伴腹水', key_differentiator: '肝硬化、腹腔腫瘤，心臟評估正常' },
       { condition: '呼吸道疾病（無 PH）', key_differentiator: '咳嗽原因需鑑別，心超 TRV 正常排除 PH 貢獻' },
     ],
-    diagnostic_workup: '1. 心臟超音波（核心）→ TRV 測量 + 右心型態評估 + 左心評估 → 2. 心絲蟲抗原/抗體檢測（台灣必檢）→ 3. 胸腔 X 光（心臟大小、肺部疾病、肺動脈擴大）→ 4. CBC + 生化 + 尿液（全身評估）→ 5. 動脈血氧分析（缺氧程度）→ 6. NT-proBNP（輔助嚴重度評估）→ 7. 進階：D-dimer、CT 血管攝影（肺栓塞疑慮時）',
-    treatment_protocol: '一線治療：[藥物:Sildenafil] 1-2 mg/kg PO BID-TID（從低劑量開始，每 3-5 天遞增，監測血壓）。替代：[藥物:Tadalafil] 1 mg/kg PO SID（長效，依從性較佳）。輔助治療：[藥物:Pimobendan] 0.25-0.3 mg/kg PO BID（改善右心功能）。右心衰竭時加 Furosemide + Spironolactone。\n\n病因導向：心絲蟲→殺蟲治療 + 限制運動；左心疾病→標準 MMVD/DCM 治療；呼吸道疾病→支氣管擴張劑 + 氧氣。運動限制：中重度 PH 避免激烈運動。',
-    prognosis: '取決於基礎病因與嚴重度。左心疾病相關 PH：治療基礎疾病可改善 PH，預後取決於 MMVD/DCM 分期。心絲蟲相關 PH：成功殺蟲後可能改善，但嚴重血管損傷為永久性。嚴重 PH（TRV >4.3 m/s）預後較差。Sildenafil 可改善症狀與生活品質，但長期存活數據有限。Kellihan HB 研究顯示 Sildenafil 治療犬中位存活約 8-14 個月（依病因而異）。',
+    diagnostic_workup: '1. 心臟超音波（核心）→ TRV/PG 測量 + 三解剖部位徵象（心室、肺動脈、右心房/後大靜脈）→ ACVIM 2020 機率判讀 + 左心評估 → 2. 心絲蟲抗原/微絲蟲檢測（台灣流行區必檢）→ 3. 胸腔 X 光（心臟大小、肺部疾病、肺動脈擴大）→ 4. CBC + 生化 + 尿液 → 5. 動脈血氧分析 → 6. NT-proBNP（輔助）→ 7. 進階：D-dimer、CT 血管攝影（肺栓塞疑慮時）',
+    treatment_protocol: '一線：[藥物:Sildenafil]（PDE5 抑制劑）1-3 mg/kg PO q8-12h（保守起始 0.5 mg/kg q8h，短半衰期偏好 q8h；每 3-5 天遞增）——非肺選擇性、會降全身血壓，須監測低血壓。替代：[藥物:Tadalafil] 長效每日一次（文獻劑量不一，1 mg/kg q24h 起始～2 mg/kg q24h）。輔助（非一線）：[藥物:Pimobendan] 0.25-0.3 mg/kg PO BID 僅在合併心肌收縮不全/右心衰時（ACVIM 未列 PH 一線）。右心衰竭加 Furosemide。劑量須依仿單與獸醫核對。\n\n病因導向：心絲蟲→殺蟲＋限制運動；左心疾病→標準 MMVD/DCM 治療（優先，降 LA 壓）；呼吸道疾病→支氣管擴張劑＋氧氣。中/高機率 PH 避免激烈運動。',
+    prognosis: '高度依病因而異，且 sildenafil 的存活效益未經證實。呼吸道/肺病相關 PH 預後最差（Johnson & Stern 2020：整體約 6 個月）；MMVD 續發 PH 存活較長（惟一項研究顯示 sildenafil 未改善存活）；成功殺蟲的心絲蟲 PH 可能改善但嚴重血管損傷為永久性。ACVIM 2020 明言缺乏前瞻性長期存活數據。Sildenafil 主要目標為改善症狀與生活品質。（原「8-14 個月中位存活」無出處，已移除）',
     monitoring: 'Sildenafil 啟始後 1-2 週回診：臨床症狀改善？血壓（排除低血壓）。1 個月後心超重測 TRV 評估治療反應。穩定後每 3-6 個月心超追蹤。右心衰竭犬同時監測腹水量、體重變化、腎功能。居家監測：睡眠呼吸次數、活動力、食慾。',
     owner_communication: '肺動脈高壓是慢性進行性疾病，治療目標為改善症狀與生活品質而非治癒。Sildenafil 是目前最主要的治療藥物，需長期服用。找出並治療根本原因（如心絲蟲、左心疾病）是最重要的。中重度 PH 犬需限制激烈運動以降低暈厥與猝死風險。藥物費用（Sildenafil）在台灣已有學名藥選項，相對可負擔。',
   },
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: '分類段落', type: 'comparison_table', description: 'ACVIM PH 六大群組病因分類比較表' },
-    { position: '診斷段落', type: 'annotated_image', description: '心超 TRV 測量操作與右心評估標註圖' },
+    { position: '分類段落', type: 'comparison_table', description: 'ACVIM 2020 PH 六大群組病因分類比較表（心絲蟲=G5、先天分流=G1）' },
+    { position: '診斷段落', type: 'annotated_image', description: '心超 TRV 測量與三解剖部位徵象（心室 D-shape、肺動脈 PA/Ao、右心房/後大靜脈）標註圖' },
   ],
   interactive_placeholders: [
-    { position: '嚴重度分級段落', type: 'interactive_staging', description: '輸入 TRV 值自動計算 PASP 並分級嚴重度' },
+    { position: '心超診斷段落', type: 'decision_tree', description: '互動：輸入 TRV 分帶（≤3.0 / 3.0-3.4 / >3.4 m/s）＋勾選三部位徵象數 → 自動判 PH 低/中/高機率（ACVIM 2020）' },
   ],
   drug_api_links: ['Sildenafil', 'Pimobendan', 'Tadalafil'],
   references: [
-    { type: 'guideline', citation: 'Reinero C, Visser LC, Kellihan HB, et al. ACVIM consensus statement guidelines for the diagnosis, classification, treatment, and monitoring of pulmonary hypertension in dogs. J Vet Intern Med. 2020;34(2):549-573.', relevance: 'ACVIM PH 診斷治療共識指引' },
-    { type: 'journal', citation: 'Kellihan HB, Waller KR, Pinkos A, et al. Acute resolution of pulmonary alveolar infiltrates in 10 dogs with pulmonary hypertension treated with sildenafil citrate: 2005-2014. J Vet Cardiol. 2015;17(3):182-191.', relevance: 'Sildenafil 治療犬 PH 臨床研究' },
-    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Pulmonary Hypertension.', relevance: 'PH 診斷與治療完整教材' },
-    { type: 'journal', citation: 'Johnson LR, Stern JA. Clinical features and outcome in 25 dogs with respiratory-associated pulmonary hypertension treated with sildenafil. J Vet Intern Med. 2020;34(1):65-73.', relevance: '呼吸道疾病相關 PH 的 Sildenafil 治療結果' },
+    { type: 'guideline', citation: 'Reinero C, Visser LC, Kellihan HB, et al. ACVIM consensus statement guidelines for the diagnosis, classification, treatment, and monitoring of pulmonary hypertension in dogs. J Vet Intern Med. 2020;34(2):549-573. doi:10.1111/jvim.15725.', relevance: '現行權威指引：ACVIM 2020 PH 共識（機率式心超判讀、分類、治療、監測）' },
+    { type: 'journal', citation: 'Kellihan HB, Waller KR, Pinkos A, et al. Acute resolution of pulmonary alveolar infiltrates in 10 dogs with pulmonary hypertension treated with sildenafil citrate: 2005-2014. J Vet Cardiol. 2015;17(3):182-191. doi:10.1016/j.jvc.2015.04.002.', relevance: 'Sildenafil 治療犬 PH 臨床研究' },
+    { type: 'journal', citation: 'Johnson LR, Stern JA. Clinical features and outcome in 25 dogs with respiratory-associated pulmonary hypertension treated with sildenafil. J Vet Intern Med. 2020;34(1):65-73. doi:10.1111/jvim.15679.', relevance: '呼吸道疾病相關 PH 的 Sildenafil 治療結果（整體約 6 個月存活，預後溯源）' },
+    { type: 'journal', citation: 'Bach JF, et al. Retrospective Evaluation of Sildenafil Citrate as a Therapy for Pulmonary Hypertension in Dogs. J Vet Intern Med. 2006;20(5):1132-1135. doi:10.1111/j.1939-1676.2006.tb00711.x.', relevance: '首篇 sildenafil 治療犬 PH 回顧（中位存活約 91 天，症狀改善溯源）' },
+    { type: 'journal', citation: 'Jaffey JA, et al. Clinical efficacy of tadalafil compared to sildenafil in treatment of moderate to severe canine pulmonary hypertension: a pilot study. J Vet Cardiol. 2019;24:7-19. doi:10.1016/j.jvc.2019.05.001.', relevance: 'tadalafil vs sildenafil 前驅比較（長效替代溯源）' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing; 2011.', relevance: 'PH 診斷與治療教材' },
   ],
   is_current: true,
   created_at: now,
