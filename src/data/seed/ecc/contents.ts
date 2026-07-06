@@ -1098,7 +1098,7 @@ FUO 是公貓的泌尿道急症。公貓尿道又細又長，陰莖骨那段直�
 const contentToxEmergency: NodeContent = {
   id: 'CONTENT-ECC-L3-005',
   node_id: 'ECC-L3-005',
-  version: 1,
+  version: 2,
   summary: '中毒急診處置就照「穩定 → 除汙 → 增排 → 解毒 → 支持」五步走。最重要的原則是 ABCDE 穩定先做。催吐有它的適應症跟禁忌（攝入 < 2 小時、意識清楚、不是腐蝕性或揮發性物質），活性炭能減少 GI 吸收但不是每種毒物都適用。犬貓代謝差很多，貓缺乏 glucuronidation 所以對很多東西特別敏感。ASPCA APCC 是北美最大的動物中毒諮詢資源。',
   learning_objectives: [
     '運用中毒急診五步架構（穩定 → 除汙 → 增排 → 解毒 → 支持）系統性處置',
@@ -1112,8 +1112,8 @@ const contentToxEmergency: NodeContent = {
     '催吐適應症：攝入 < 2 小時、意識清楚、能保護氣道、非腐蝕性/揮發性物質',
     '催吐藥物：犬用 3% H2O2 1-2 mL/kg PO（max 45 mL）或 Apomorphine 0.03 mg/kg IV；貓用 Dexmedetomidine 7 mcg/kg IM',
     '活性炭 1-2 g/kg PO（with sorbitol 首劑），不適用於：腐蝕劑、重金屬、醇類、石油產品',
-    '犬最常見中毒：巧克力、木糖醇、NSAIDs、鼠藥（anticoagulant rodenticide）、葡萄/葡萄乾',
-    '貓最常見中毒：百合（Lilium spp.）、NSAIDs（尤其 Acetaminophen）、精油、Permethrin',
+    '犬常見重要毒物（示例，非嚴格 APCC 排序）：巧克力、木糖醇、NSAIDs、抗凝血鼠藥、葡萄/葡萄乾',
+    '貓常見重要毒物（示例）：犬用 permethrin（誤用，APCC 貓通報首位）、百合（Lilium/Hemerocallis，急性腎損傷）、acetaminophen（缺 glucuronidation 致命）、精油/液體香氛',
     'Toxidrome 辨識：膽鹼激性（SLUDGE）、抗膽鹼性、交感神經促進性、鎮靜性',
   ],
   body: `# 中毒急診通論 (Toxicological Emergencies)
@@ -1128,7 +1128,7 @@ const contentToxEmergency: NodeContent = {
 ### 中毒急診五步架構
 ### Step 1：穩定（Stabilize），永遠最優先
 - ABCDE 初級評估
-- 癲癇控制：[藥物:Diazepam] 0.5-1 mg/kg IV
+- 癲癇控制：[藥物:Diazepam] 0.5-1 mg/kg IV（單劑上限約 20 mg；⚠️ 貓避免重複/口服 diazepam，有特異性急性肝壞死風險）
 - 低血壓：IV 輸液復甦
 - 心律不整：ECG 監測，必要時抗心律不整藥
 - 低血糖：50% Dextrose 0.5-1 mL/kg IV（稀釋後）
@@ -1136,20 +1136,21 @@ const contentToxEmergency: NodeContent = {
 
 ### Step 2：除汙（Decontaminate）
 #### 催吐（Emesis）
-適應症：攝入 < 2 小時、意識清楚、能保護氣道、非腐蝕性/揮發性物質
-禁忌症：意識不清/癲癇、腐蝕性物質（酸/鹼）、揮發性碳氫化合物、尖銳異物、已嘔吐過
+適應症：一般攝入後約 1-2 小時內、意識清楚、能保護氣道（有正常吞嚥/嘔吐反射）、非腐蝕性/非揮發性物質。
+**時間窗非絕對**：延緩胃排空的毒物（水楊酸鹽、鴉片類、抗膽鹼藥、三環抗鬱劑 TCA）或會形成胃結石/濃縮團塊者（鐵劑、大量咀嚼式維他命、骨粉/血粉）可延長至 4-6 小時；大量/食物性攝入（巧克力、葡萄乾）或併吞異物（包裝紙）且影像見胃內容物、患者無症狀時，6-12 小時仍可能有效。
+禁忌症：意識不清/癲癇或已出現症狀（共濟失調、沉鬱）、吞嚥/氣道保護反射喪失或高吸入風險（巨食道、喉麻痺、嚴重短吻犬種）、腐蝕性酸鹼、揮發性碳氫化合物/石油餾出物、尖銳異物、已自行嘔吐。
 
 | 物種 | 藥物 | 劑量 | 備註 |
 |------|------|------|------|
-| 犬 | 3% H2O2 | 1-2 mL/kg PO（max 45 mL）| 可在家執行 |
-| 犬 | [藥物:Apomorphine] | 0.03 mg/kg IV 或 0.04 mg/kg IM | 院內首選 |
-| 貓 | [藥物:Dexmedetomidine] | 7 mcg/kg IM | 催吐效果佳，可用 Atipamezole 拮抗 |
-| 貓 | 禁用 H2O2 | 不適用 | 會引起嚴重出血性胃炎 |
+| 犬 | 3% H2O2 | 1-2 mL/kg PO（max 45 mL）| 可在家執行，無效可 10-15 分後再一次 |
+| 犬 | [藥物:Apomorphine] | 0.03 mg/kg IV 或 0.04 mg/kg IM（或結膜下）| 院內首選，IV 最快 |
+| 貓 | [藥物:Dexmedetomidine] | 7 µg/kg IM（催吐率 ~80%）| 貓首選催吐藥，可用 Atipamezole 拮抗；Xylazine 0.44-1.1 mg/kg 為替代 |
+| 貓 | ⚠️ 禁用 H2O2 / apomorphine / ropinirole | — | H2O2 致嚴重出血性胃炎；貓催吐為 α2-腎上腺素性（非 D2-多巴胺性），故 apomorphine 效果差 |
 
 #### 活性炭（Activated Charcoal）
-- 劑量：1-2 g/kg PO（首劑含 sorbitol 促進排出）
+- 劑量：1-2 g/kg PO；**僅首劑含 sorbitol（cathartic）**，重複劑量須用「不含 cathartic」的純活性炭（~1 g/kg q6-8h），避免 cathartic 誘發高血鈉/脫水
 - 適用：大部分有機毒物
-- 不適用：腐蝕劑、重金屬（鐵、鋰、鉛）、醇類（乙二醇、甲醇）、石油產品
+- 不適用：腐蝕劑、重金屬（鐵、鋰、鉛）、醇類（乙二醇、甲醇）、石油產品（吸附差）
 
 #### 皮膚/眼睛除汙
 - 大量清水沖洗至少 15-20 分鐘
@@ -1170,6 +1171,10 @@ const contentToxEmergency: NodeContent = {
 | 乙二醇（防凍液） | [藥物:Fomepizole] 或 Ethanol |
 | Opioids | [藥物:Naloxone] |
 | Benzodiazepines | [藥物:Flumazenil] |
+
+> ⚠️ **兩點物種/機轉重點（生命攸關）**：
+> - **Fomepizole 用於「貓」乙二醇中毒時，犬的常規劑量無效**——貓須高劑量仿單外用法（125 mg/kg IV 首劑，之後 31.25 mg/kg 於 12/24/36 小時），且須「極早」給藥（攝入後約 3 小時內）；4 小時以上給藥不論 fomepizole 或 ethanol 皆易致命性腎衰（Connally 2010）；高劑量 fomepizole 優於 ethanol。
+> - **Pralidoxime（2-PAM）僅用於有機磷、且須及早給予（酶老化前約 24-48 小時內，20-50 mg/kg）**；單純氨基甲酸鹽（carbamate）中毒「不應」使用 2-PAM（carbamate 對 AChE 之抑制可自行回復），僅在有機磷＋carbamate 混合中毒時才可能有益。
 
 ### Step 5：支持療法（Supportive Care）
 - 輸液維持水合狀態與腎灌流
@@ -1221,7 +1226,14 @@ const contentToxEmergency: NodeContent = {
 | 催吐時間窗，嚴格 2 小時 vs 延長到 4-6 小時（特定毒物） | 傳統 2 小時是標準，但緩釋劑型、巧克力這種胃排空慢的毒物可能延長有效窗口 | Level III |
 | 活性炭多次劑量（MDAC）的適應症跟風險效益比 | 有腸肝循環的毒物（像 Theobromine）理論上會受益，但吸入性肺炎風險跟實際效益缺乏獸醫 RCT | Level III |
 | 貓催吐藥物最佳選擇，Dexmedetomidine vs Xylazine vs 其他 | Dexmedetomidine 7 mcg/kg IM 催吐效果好又能拮抗，但心血管影響要考量，Xylazine 逐漸被取代 | Level III |
-| 犬葡萄或葡萄乾中毒的致腎毒性物質，酒石酸假說 | 2021 年 ASPCA 提出酒石酸是致毒物質，但還沒完全確認，也沒辦法解釋所有個體差異 | Level IV |`,
+| 犬葡萄或葡萄乾中毒的致腎毒性物質，酒石酸假說 | 主流假說為酒石酸及其鉀鹽（酒石酸氫鉀/塔塔粉）；ASPCA Wegenast 等 2021 JAVMA 讀者投書首提、2022 JVECC 6 例病例系列支持（塔塔粉、羅望子亦致相同腎小管損傷），惟機轉未證實、仍為假說、且無法解釋個體差異 | Level IV |
+
+## 八、近期更新 (Recent Updates)
+
+- **葡萄/葡萄乾致毒物質**：ASPCA APCC 提出「酒石酸（tartaric acid）／酒石酸氫鉀」假說（Wegenast 2021 JAVMA 投書 → 2022 JVECC 6 例病例系列；塔塔粉、羅望子亦致相同腎小管損傷）；仍為未證實假說。
+- **貓催吐藥**：dexmedetomidine（7 µg/kg IM）已取代 xylazine 成貓首選（Thawley 2015、Willey 2016）；口服 dexmedetomidine 亦在探索（Maxwell 2024）。
+- **脂肪乳劑（ILE）**：對脂溶性毒物（permethrin、ivermectin、局麻藥、部分鈣通道/β 阻斷劑）之運用已成獸醫急診常規（Gwaltney-Brant & Meadows 2012）。
+- **APCC 年度毒物榜**：近年以「犬貓合併、按大類別」呈現（OTC 藥物、人用食品、處方藥、巧克力…），非單一物質犬/貓專屬排名——引用時勿當成嚴格排序。`,
   clinical_pearl: '中毒病患最容易踩的雷就是太執著於「是什麼毒物」，反而忘了先穩定。穩定永遠第一。除汙有時效（2 小時），但不是每種中毒都要催吐或活性炭。毒物不明的時候，靠 toxidrome approach 從臨床表現歸類，比想要精確鑑定毒物實用得多。ASPCA APCC（888-426-4435）是最好的諮詢資源。',
   common_mistakes: [
     '對意識不清或癲癇的動物催吐，吸入性肺炎風險超高',
@@ -1232,7 +1244,7 @@ const contentToxEmergency: NodeContent = {
   ],
   disease_data: {
     signalment: '犬貓都常見，犬因為不挑食的個性中毒比貓多。幼犬幼貓好奇心強，風險特別高。貓因為缺 UDP-glucuronosyltransferase，對很多化合物比犬敏感很多（像 Acetaminophen、Permethrin、精油）。',
-    etiology: '攝入（最常見）、皮膚接觸、吸入、注射（蛇咬、昆蟲叮咬）。犬最常見的毒物：巧克力、木糖醇、NSAIDs、抗凝血鼠藥、葡萄或葡萄乾。貓最常見：百合（Lilium 跟 Hemerocallis 屬）、Acetaminophen、Permethrin（犬用除蚤藥）、精油。',
+    etiology: '攝入（最常見）、皮膚接觸、吸入、注射（蛇咬、昆蟲叮咬）。犬常見重要毒物（示例，非嚴格 APCC 排序）：巧克力、木糖醇、NSAIDs、抗凝血鼠藥、葡萄或葡萄乾。貓常見重要毒物：犬用 permethrin（誤用/接觸，APCC 貓通報首位）、百合（Lilium 跟 Hemerocallis 屬）、Acetaminophen、精油/液體香氛。（ASPCA APCC 年度榜為犬貓合併、按大類別呈現，非單一物質排名。）',
     pathogenesis: '看毒物而定。共通的原則：毒物吸收，分布到標的器官，造成器官特異性損傷。犬肝臟代謝能力強但 GI 吸收快，貓缺 glucuronidation 讓很多藥半衰期拉長、毒性加重。腎臟排泄型毒物在腎功能不全時毒性會放大。',
     clinical_signs: [
       { sign: 'GI 症狀（嘔吐、腹瀉、流口水）', category: 'primary', description: '最常見的初始表現，大部分攝入性中毒都會這樣' },
@@ -1249,8 +1261,8 @@ const contentToxEmergency: NodeContent = {
       { condition: '異物阻塞', key_differentiator: '嘔吐但影像看得到阻塞，沒有全身性毒性' },
     ],
     diagnostic_workup: '1. 詳細暴露史（物質、量、時間、體重）→ 2. ABCDE 穩定 → 3. 基礎血檢（CBC、生化、電解質、血氣）→ 4. 凝血功能（疑似鼠藥要做）→ 5. 尿液分析看結晶跟 pH → 6. ECG → 7. 特異性檢測（乙二醇試紙、血中藥物濃度）→ 8. 嘔吐物或可疑物質留下來送檢',
-    treatment_protocol: '【Primary care，穩定跟初步處置】ABCDE 穩定。攝入 < 2 小時且符合條件就催吐。活性炭 1-2 g/kg（適用毒物）。IV 輸液打上。已知毒物就給特效解毒劑。打給毒物諮詢中心（ASPCA APCC）。【Specialty care，ICU 階段】持續 ECG 跟血壓監測。標的器官持續追蹤：腎毒性看 BUN/Cre q6-8h；肝毒性看 ALT/AST q12h；凝血毒看 PT q12-24h。脂溶性毒物用脂肪乳劑。腸肝循環的毒物用重複活性炭。48-72 小時密切觀察延遲性器官損傷。',
-    prognosis: '因毒物種類跟劑量差異很大。早期除汙（攝入 < 1 小時內催吐）的預後明顯改善。有特效解毒劑的中毒（像鼠藥配 Vitamin K1）預後不錯。沒有特效解毒劑但支持療法管理（像百合中毒的貓），早期積極輸液治療存活率超過 80%。',
+    treatment_protocol: '【Primary care，穩定跟初步處置】ABCDE 穩定。攝入 < 2 小時且符合條件就催吐。活性炭 1-2 g/kg（適用毒物）。IV 輸液打上。已知毒物就給特效解毒劑。打給毒物諮詢中心（ASPCA APCC）。【Specialty care，ICU 階段】持續 ECG 跟血壓監測。標的器官持續追蹤：腎毒性看 BUN/Cre q6-8h；肝毒性看 ALT/AST q12h；凝血毒看 PT q12-24h。脂溶性毒物用脂肪乳劑。腸肝循環的毒物用重複活性炭（純活性炭、不含 cathartic）。48-72 小時密切觀察延遲性器官損傷。解毒劑須注意物種差異：貓乙二醇中毒 fomepizole 須高劑量且攝入 3 小時內給藥（Connally 2010）；Pralidoxime 僅用有機磷、單純 carbamate 不用。催吐時間窗一般 1-2 小時，特定毒物（緩釋/胃排空延遲/食物性）可延長至 4-12 小時。',
+    prognosis: '因毒物種類跟劑量差異很大。早期除汙（攝入 < 1 小時內催吐）的預後明顯改善。有特效解毒劑的中毒（像鼠藥配 Vitamin K1）預後不錯。沒有特效解毒劑但支持療法管理（像百合中毒的貓），早期（攝入後、進展至無尿性腎衰前）積極靜脈輸液治療存活率極佳、可達近 100%；但一旦進展至無尿性急性腎損傷，即使血液透析預後仍差。',
     monitoring: '看毒物標的器官調整。共通原則：前 24 小時至少 q4-6h 監測生命徵象跟相關指標。腎毒性：BUN/Cre q6-8h 持續 48-72 小時。肝毒性：ALT/AST q12h。凝血毒：PT/aPTT q12-24h。神經毒：神經學檢查 q4-6h。所有中毒出院後 48-72 小時回診追蹤。',
     owner_communication: '中毒的處置效果跟時間直接相關，越早就醫越好。如果可以，請把包裝、嘔吐物或可疑物質帶來。治療會看毒物種類，但原則就是穩定狀況、減少吸收、加速排出、有解毒劑就用。家裡很多東西對動物都有毒（巧克力、木糖醇、百合、某些藥物），居家防護要做好。',
   },
@@ -1260,13 +1272,19 @@ const contentToxEmergency: NodeContent = {
     { position: '五步架構段落前', type: 'flowchart', description: '中毒急診五步架構流程圖' },
     { position: 'Toxidrome 表格後', type: 'comparison_table', description: '四大 Toxidrome 臨床特徵比較表' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: 'Toxidrome 表格後', type: 'decision_tool', description: '中毒處置互動決策：輸入毒物類別/toxidrome → 回傳催吐適應性（含時間窗 1-2h vs 延長）、活性炭是否適用、對應解毒劑與物種劑量差異（fomepizole 貓高劑量、pralidoxime carbamate 禁用）' },
+  ],
   drug_api_links: ['Apomorphine', 'Dexmedetomidine', 'Diazepam', 'Vitamin K1', 'N-Acetylcysteine', 'Atropine', 'Pralidoxime', 'Fomepizole', 'Naloxone', 'Flumazenil'],
   references: [
-    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Section: Toxicological Emergencies.', relevance: 'ECC 核心教材中毒急診章節' },
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. St. Louis: Elsevier, 2022. Section: Toxicological Emergencies.', relevance: 'ECC 核心教材中毒急診章節' },
     { type: 'textbook', citation: 'Hovda LR, Brutlag AG, Poppenga RH, et al. Blackwell\'s Five-Minute Veterinary Consult Clinical Companion: Small Animal Toxicology, 2nd ed. Wiley-Blackwell, 2016.', relevance: '小動物毒理學快速參考' },
-    { type: 'journal', citation: 'Gwaltney-Brant SM. Veterinary toxicology: basic and clinical principles, 3rd ed. Academic Press, 2018.', relevance: '獸醫毒理學基礎與臨床原則' },
-    { type: 'guideline', citation: 'ASPCA Animal Poison Control Center (APCC). Annual report data on most common toxicoses in dogs and cats.', relevance: '犬貓最常見中毒物質年度統計' },
+    { type: 'textbook', citation: 'Gupta RC (ed.). Veterinary Toxicology: Basic and Clinical Principles, 3rd ed. London: Academic Press, 2018.', relevance: '獸醫毒理學基礎與臨床原則（原 v1 誤植作者為 Gwaltney-Brant，實為 Gupta 主編之教科書）' },
+    { type: 'journal', citation: 'Thawley VJ, Drobatz KJ. Assessment of dexmedetomidine and other agents for emesis induction in cats: 43 cases (2009-2014). J Am Vet Med Assoc. 2015;247(12):1415-1418. doi:10.2460/javma.247.12.1415', relevance: '貓催吐首選 dexmedetomidine 7 µg/kg IM 一手證據' },
+    { type: 'journal', citation: 'Connally HE, Thrall MA, Hamar DW. Safety and efficacy of high-dose fomepizole compared with ethanol as therapy for ethylene glycol intoxication in cats. J Vet Emerg Crit Care. 2010;20(2):191-206. doi:10.1111/j.1476-4431.2009.00492.x', relevance: '貓乙二醇中毒須高劑量 fomepizole 且極早給藥（3h 內）之關鍵研究' },
+    { type: 'journal', citation: 'Gwaltney-Brant SM, Meadows I. Use of intravenous lipid emulsions for treating certain poisoning cases in small animals. Vet Clin North Am Small Anim Pract. 2012;42(2):251-262. doi:10.1016/j.cvsm.2011.12.001', relevance: '脂肪乳劑（ILE）治療脂溶性毒物中毒之獸醫依據' },
+    { type: 'journal', citation: 'Wegenast CA, Meadows ID, Anderson RE, et al. Acute kidney injury in dogs following ingestion of cream of tartar and tamarinds and the connection to tartaric acid as the proposed toxic principle in grapes and raisins. J Vet Emerg Crit Care. 2022;32(6):812-816. doi:10.1111/vec.13234', relevance: '近期：葡萄/葡萄乾致毒物質酒石酸假說之病例系列證據' },
+    { type: 'guideline', citation: 'ASPCA Animal Poison Control Center (APCC). Annual Top 10 Toxins reports (combined dogs & cats, by category). aspca.org / aspcapro.org.', relevance: '犬貓中毒物質年度統計（按大類別、非單一物質排名）' },
   ],
   is_current: true,
   created_at: now,
