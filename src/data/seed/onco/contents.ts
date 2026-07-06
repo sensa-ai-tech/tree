@@ -2713,8 +2713,7 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '各腫瘤 TNM 定義參考' },
-    { type: 'guideline', citation: 'Owen LN. TNM Classification of Tumours in Domestic Animals. WHO, 1st ed. 1980.', relevance: 'WHO 獸醫 TNM 分期原始文獻' },
-    { type: 'journal', citation: 'Nguyen SM et al. Proposing a standardized approach for staging of canine and feline solid tumors. Vet Comp Oncol. 2015;13(4):369-383.', relevance: '獸醫腫瘤分期標準化提案' },
+    { type: 'guideline', citation: 'Owen LN. TNM Classification of Tumours in Domestic Animals. WHO, 1st ed. 1980.', relevance: 'WHO 獸醫 TNM 分期原始文獻（現行權威分期來源；已移除 v1 疑捏造之「Nguyen 2015 staging, Vet Comp Oncol 13(4):369-383」——Crossref 查無此文，真實 Nguyen 2015 為 VCOG RECIST 反應評估標準 13(3):176-183，非分期）' },
   ],
   is_current: true,
   created_at: now,

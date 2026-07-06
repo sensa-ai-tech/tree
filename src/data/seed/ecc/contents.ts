@@ -2624,7 +2624,7 @@ MODS 是急重症死亡的終末共同路徑，要看到 ≥ 2 個器官系統�
   drug_api_links: ['Norepinephrine', 'Vasopressin'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Multiple Organ Dysfunction Syndrome.', relevance: 'ECC 核心教材 MODS 章節' },
-    { type: 'journal', citation: 'Kenney EM, Rozanski EA, Rush JE, et al. Association between outcome and organ system dysfunction in dogs with sepsis: 114 cases (2003-2007). JAVMA. 2010;236(1):83-87.', relevance: '犬敗血症器官衰竭與預後' },
+    { type: 'journal', citation: 'Kenney EM, Rozanski EA, Rush JE, et al. Association between outcome and organ system dysfunction in dogs with sepsis: 114 cases (2003-2007). J Am Vet Med Assoc. 2010;236(1):83-87. doi:10.2460/javma.236.1.83.', relevance: '犬敗血症器官衰竭與預後' },
     { type: 'journal', citation: 'Brady CA, Otto CM. Systemic inflammatory response syndrome, sepsis, and multiple organ dysfunction. Vet Clin North Am Small Anim Pract. 2001;31(6):1147-1162.', relevance: 'SIRS/MODS 綜合回顧' },
     { type: 'guideline', citation: 'Rhodes A, Evans LE, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock: 2016. Intensive Care Med. 2017;43(3):304-377.', relevance: 'Surviving Sepsis Campaign 指引，MODS 預防跟器官支持策略' },
   ],
