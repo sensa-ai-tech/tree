@@ -5376,151 +5376,226 @@ Vincristine 機轉：(1) 促進骨髓巨核球碎裂→加速釋放血小板（2
 const contentLepto: NodeContent = {
   id: 'CONTENT-IM-L3-016',
   node_id: 'IM-L3-016',
-  version: 1,
-  summary: '鉤端螺旋體病由 Leptospira interrogans 引起，是會傳人的疾病，重要性不能忽略。犬最常碰到的血清型有 Canicola、Icterohaemorrhagiae、Pomona、Grippotyphosa。臨床上長相是急性腎衰竭加肝損傷加血管炎。台灣是流行區，颱風淹水後尤其要警覺。',
+  version: 2,
+  summary:
+    '鉤端螺旋體病是致病性 Leptospira（螺旋體）引起的人畜共通感染，犬為易感宿主、貓少見發病。核心病理為全身血管炎導致的急性腎損傷（AKI）合併肝損傷與黃疸，重症可出現肺泡出血（LPHS）與 DIC。診斷以 MAT 配對血清（參考標準）加急性期 PCR，治療以 doxycycline 為現行全程首選抗生素（依 2023 ACVIM 更新共識）。台灣屬亞熱帶、颱風洪水頻繁且鼠患普遍，為地方性流行區；犬多價疫苗可降低嚴重度與腎臟排菌但不涵蓋所有血清群。人的鉤端螺旋體病為台灣第四類法定傳染病，接觸疑似病例務必落實人員防護。',
   learning_objectives: [
-    '列舉犬主要感染的鉤端螺旋體血清型及其臨床特徵',
-    '說明鉤端螺旋體的傳播途徑與致病機轉（血管炎與器官損傷）',
-    '正確判讀 MAT（顯微凝集試驗）結果並理解其限制',
-    '制定鉤端螺旋體的急性期與清除期抗生素治療方案',
-    '說明鉤端螺旋體的人畜共通風險與預防措施',
+    '說明致病性 Leptospira 的傳播途徑與「血管炎 → 多器官損傷」的致病機轉',
+    '連結犬常見感染血清群、保毒宿主、器官傾向與台灣在地流行病學',
+    '依現行證據選用並判讀 MAT（配對血清）與 PCR（血液/尿液），避開疫苗抗體與採檢時機造成的偽陰/偽陽',
+    '制定符合 2023 ACVIM 更新共識的抗生素方案（doxycycline 全程首選，嘔吐時先靜脈 penicillin 類再轉換）與 AKI 支持治療',
+    '辨識預後不良指標（LPHS、DIC、少尿性 AKI）並規劃住院監控計畫',
+    '執行人畜共通防護與飼主衛教，理解台灣人端（第四類）與動物端通報規範差異',
   ],
   key_points: [
-    '病原：Leptospira interrogans，>250 血清型，犬主要為 Canicola, Icterohaemorrhagiae, Pomona, Grippotyphosa',
-    '傳播：接觸受感染動物尿液或汙染水源 → 經黏膜/皮膚傷口進入 → 螺旋體血症 → 肝/腎/肺定殖',
-    '臨床三聯：急性腎衰竭 + 肝損傷（黃疸）+ 血管炎（出血傾向）',
-    '診斷金標準：MAT（Microscopic Agglutination Test）≥ 1:800 或配對血清 4 倍升高；PCR 用於急性期',
-    '治療兩階段：急性期 Ampicillin 22 mg/kg IV q8h → 穩定後 Doxycycline 5 mg/kg PO BID × 14 天（清除腎臟帶原）',
-    '⚠️ 人畜共通：處理疑似感染犬時需戴手套，避免接觸尿液',
-    '台灣流行病學：亞熱帶氣候+颱風季節洪水 → 高風險。犬四價疫苗可用。',
+    '病原：致病性 Leptospira（L. interrogans、L. kirschneri 等），逾 250 血清型；犬常見血清群 Canicola、Icterohaemorrhagiae、Pomona、Grippotyphosa，亞洲另見 Australis/Bratislava',
+    '致病核心是全身「血管炎」→ 內皮損傷 → 腎小管直接毒性（AKI）＋ 肝內膽汁淤積（黃疸）＋ 肺泡出血（LPHS）＋ 凝血活化（DIC）',
+    '典型犬臨床：急性腎損傷/氮血症（azotemia 80–90%、腎受累達 80–100%）±黃疸±發燒±肌痛；貓少見發病但可血清陽性並排菌',
+    '診斷：MAT 配對血清 4 倍上升為參考標準（單次 ≥1:800 具提示性）；急性期血液 PCR、之後尿液 PCR 可在血清轉陽前確診，且須在給抗生素前採檢',
+    '⚠️ 舊觀念已更正：doxycycline 5 mg/kg PO q12h × 2 週為「全程首選」（依 2023 ACVIM 更新共識，僅明列口服），非僅清除期用藥；嘔吐無法口服時先用靜脈 penicillin 類（IRIS-4 加倍間隔）再轉 doxycycline',
+    '人畜共通（人為台灣第四類法定傳染病）：感染犬尿液排菌數週，處理需戴手套/護目，環境以稀釋漂白水消毒',
+    '台灣脈絡：亞熱帶氣候＋颱風洪水＋鼠患 → 地方性流行；都市小型犬同樣會發病（勿以體型排除），疫苗降低嚴重度與排菌但不涵蓋所有血清群',
   ],
   body: `# 鉤端螺旋體病 (Leptospirosis)
 
+> 犬最重要的人畜共通感染性 AKI 病因之一。台灣為地方性流行區——任何「急性腎損傷 ± 黃疸」的犬，尤其有雨季/涉水史，都應把鉤端螺旋體列為首要鑑別並儘早經驗性治療，**不要等血清學結果**。本節立場對齊 **2011 ACVIM 共識** 與 **2023 ACVIM 更新共識**。
+
 ## 一、病理機制 (Pathophysiology)
 
-感染路徑：汙染水源/尿液 → 經黏膜（結膜、口腔）或皮膚傷口進入 → 螺旋體血症（leptospiremia，持續 4-12 天）→ 全身散布至靶器官
+感染路徑：接觸受感染動物尿液或汙染水/土 → 經黏膜（結膜、口腔、鼻腔）或皮膚破損進入 → **螺旋體血症（leptospiremia，約 4–12 天）** → 全身散布至腎、肝、肺、眼、腦膜。
 
-血管炎為核心機轉：Leptospira 直接損傷血管內皮細胞 → 血管壁通透性增加 → 組織水腫與出血 → 同時激活凝血/纖溶系統
+核心機轉為**全身血管炎**：Leptospira 的外膜蛋白與脂多醣損傷血管內皮 → 血管通透性上升、組織水腫與出血，並活化凝血/纖溶 → 嚴重時進展為 DIC。
 
-| 靶器官 | 損傷機轉 | 臨床表現 |
+| 靶器官 | 損傷機轉 | 臨床對應 |
 |--------|---------|---------|
-| 腎臟 | 腎小管上皮直接毒性 + 間質腎炎 | 急性腎衰竭（AKI Grade III-V）|
-| 肝臟 | 肝細胞損傷 + 膽管內膽汁淤積 | 黃疸、ALT/ALP↑ |
-| 肺臟 | 肺泡出血（leptospiral pulmonary hemorrhage syndrome, LPHS） | 呼吸困難、咳血 |
-| 凝血系統 | 血管炎 + DIC | 瘀斑、出血 |
+| 腎臟 | 腎小管上皮直接毒性 + 間質性腎炎 | 急性腎損傷（AKI，IRIS Grade II–V），少尿或多尿 |
+| 肝臟 | 肝細胞損傷 + 肝內膽汁淤積（非大量壞死） | 黃疸、ALT/ALP↑、膽紅素↑ |
+| 肺臟 | 肺泡毛細血管炎 → 出血 | 鉤端螺旋體肺出血症候群（LPHS），咳血、呼吸窘迫 |
+| 凝血 | 血管炎 + 血小板消耗 | 瘀點瘀斑、DIC |
 
-### 血清型與臨床表現
+> AKI 之所以最一致，是因為腎臟同時是**損傷靶器官**與**帶原/排菌器官**——螺旋體在近曲小管定殖，即使全身清除後仍可持續排菌，這也是療程必須足量足時的原因。
 
-| 血清型 | 保毒宿主 | 主要靶器官 | 台灣相關性 |
+[圖片:leptospirosis-pathogenesis-flow]（感染 → 螺旋體血症 → 血管炎 → 腎/肝/肺多器官損傷的機轉流程圖）
+
+### 血清群、宿主與器官傾向
+
+| 血清群 (serogroup) | 主要保毒宿主 | 器官傾向 | 台灣相關性 |
 |--------|---------|-----------|-----------|
-| Canicola | 犬 | 腎臟 | 常見 |
-| Icterohaemorrhagiae | 鼠 | 肝臟（黃疸） | 常見 |
-| Pomona | 豬/牛 | 腎 + 肝 | 農村地區 |
-| Grippotyphosa | 小型齧齒類 | 腎 + 肝 | 較少見 |
+| Canicola | 犬 | 腎臟 | 疫苗涵蓋；流浪犬循環 |
+| Icterohaemorrhagiae | 鼠 | 肝（黃疸重） | 都市鼠患高，常見 |
+| Pomona | 豬/牛 | 腎 + 肝 | 農牧區 |
+| Grippotyphosa | 齧齒/野生動物 | 腎 + 肝 | 較少見 |
+| Australis / Bratislava | 多種宿主 | 不定 | 亞洲報告增加，疫苗未必涵蓋 |
+
+> 名詞時效：分類上以**血清群/血清型（serogroup/serovar）**描述抗原，與**基因種（genomospecies，如 L. interrogans、L. kirschneri）**是兩套並行系統；MAT 報告的是血清群反應，**不可靠地預測**實際感染的血清群或基因種（確切分型需序列分型）。上表常見血清群清單依 2010 ACVIM 共識與近年血清流行病學統合分析（Ricardo 2024）。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-| 表現 | 頻率 | 描述 |
-|------|------|------|
-| 急性腎衰竭 | 85-90% | AKI Grade II-V，少尿或多尿 |
-| 嘔吐/厭食 | 80-90% | 尿毒症 + 肝損傷 |
-| 黃疸 | 40-70% | Icterohaemorrhagiae 型較常見 |
-| 發燒 | 40-60% | 急性期，可能自行退熱 |
-| 肌肉疼痛 | 30-50% | 肌肉內螺旋體 + 炎症 |
-| 出血 | 20-40% | 血管炎 + DIC |
-| 呼吸困難 | 10-20% | LPHS，預後不良指標 |
+### 臨床表現（犬 vs 貓）
 
-### 診斷工具
+| 表現 | 犬頻率 | 說明 |
+|------|------|------|
+| 急性腎損傷（氮血症） | 80–100% | 最一致表現；azotemia 約 80–90%，AKI/腎受累達 80–100%（IRIS Grade II–V），少尿/多尿 |
+| 嘔吐/厭食/沉鬱 | 80–90% | 尿毒 + 肝損傷 |
+| 黃疸/肝酵素升高 | ~30–50% | Icterohaemorrhagiae 群較常見；臨床黃疸為其子集 |
+| 發燒 | 病程早期常見 | 未有可靠盛行率百分比 |
+| 肌肉疼痛/僵硬 | 30–50% | 肌肉內螺旋體 + 炎症 |
+| 出血傾向 | 20–40% | 血管炎、血小板下降、DIC |
+| 呼吸窘迫/咳血（嚴重 LPHS） | 10–20% | 死亡率高；胸腔影像異常更常見（可達 ~70%） |
+
+貓：自然感染下臨床發病罕見，多為血清陽性/亞臨床帶原，但可排菌，具公衛意義。
+
+### 診斷工具與時機
 
 | 檢查 | 敏感度 | 特異度 | 最佳時機 | 備註 |
 |------|--------|--------|---------|------|
-| MAT | 高（配對血清） | 高 | 感染 7-10 天後 | 金標準；≥1:800 或 4 倍升高 |
-| PCR（血液） | 高 | 極高 | 螺旋體血症期（前 10 天） | 抗生素前採檢 |
-| PCR（尿液） | 中-高 | 極高 | 感染 7-14 天後 | 排菌期 |
-| IgM ELISA | 中 | 中 | 急性期 | 快篩用，需 MAT 確認 |
+| MAT（配對血清） | 高（配對） | 高 | 發病 7–10 天後 + 2 週複檢 | **參考標準**；4 倍上升確診；單次 ≥1:800 具提示性 |
+| MAT（單次） | 中 | 中 | 任何時點 | 疫苗/早期偽陰、交叉反應限制判讀 |
+| PCR（血液） | 高（早期） | 高 | 螺旋體血症期（前 ~10 天、抗生素前） | 早於血清轉陽即可陽性 |
+| PCR（尿液） | 中–高 | 高 | 發病 ~7–14 天後（排菌期） | 抗生素後迅速轉陰 |
+| 血液生化/CBC | — | — | 初診 | AKI、膽紅素↑、血小板↓、發炎象 |
 
-注意：疫苗接種可導致低效價 MAT 陽性（通常 < 1:400）；需配對血清比較。
+判讀陷阱：
+- **疫苗抗體**可造成 MAT 陽性，效價多偏低但**可偏高**（文獻可達 ≥1:1600）；因 MAT 交叉反應，陽性血清群**未必對應**疫苗涵蓋之血清群，**不能藉血清群型態區分疫苗 vs 感染**。效價多於接種後約 4 個月遞減、多數一年內轉陰（持續野外暴露則可維持高效價）→ 需配對血清與接種病史判讀。
+- **抗生素**會快速降低 PCR 陽性率 → PCR 檢體務必在首劑前採。
+- 早期（血清轉陽前）**單靠 MAT 會偽陰** → 高度懷疑時併用 PCR 並經驗性治療。
+
+[互動:lepto-diagnostic-algorithm]（互動式診斷流程：依「發病天數 × 是否已用抗生素」決定先做 PCR 或 MAT、何時複檢配對血清）
 
 ## 三、治療策略 (Treatment)
 
-| 階段 | 藥物 | 劑量 | 療程 | 目的 |
-|------|------|------|------|------|
-| 急性期（住院） | [藥物:Ampicillin] | 22 mg/kg IV q8h | 至臨床改善 | 殺死螺旋體、控制螺旋體血症 |
-| 清除期 | [藥物:Doxycycline] | 5 mg/kg PO BID | 14 天 | 清除腎臟帶原、防止持續排菌 |
-| 替代（嘔吐無法口服） | [藥物:Penicillin G] | 25,000-40,000 U/kg IV q12h | 急性期 | Ampicillin 替代 |
+**抗生素（依 2023 ACVIM 更新共識，doxycycline 為全程首選）：**
 
-支持療法：
-- 積極靜脈輸液（AKI 管理同前）
-- 止吐：Maropitant 1 mg/kg SC SID
-- 高鉀處理：Calcium gluconate + Insulin-Dextrose
-- 嚴重少尿/無尿：考慮血液透析
-- DIC 管理：FFP + 支持性
+| 情境 | 藥物 | 常用劑量* | 療程 | 說明 |
+|------|------|------|------|------|
+| 可口服/耐受 | [藥物:Doxycycline] | 5 mg/kg PO q12h | 14 天 | 現行**首選全程用藥**：同時清除螺旋體血症與腎臟帶原（2023 ACVIM 僅明列口服；IV doxycycline 劑量屬外推、非共識條列） |
+| 嘔吐/無法口服（初期） | [藥物:Ampicillin] | 20–30 mg/kg IV q6–8h | 至可口服 | 快速控制螺旋體血症；穩定後**轉 doxycycline 完成 14 天** |
+| 初期替代 | [藥物:Penicillin G] | 25,000–40,000 U/kg IV q6–8h | 至可口服 | Ampicillin 替代 |
+| 初期替代 | [藥物:Amoxicillin] | 20–30 mg/kg IV q6–8h | 至可口服 | 之後仍需 doxycycline 清除帶原 |
+
+*劑量為臨床常用範圍，**須依現行仿單／Plumb's 與獸醫師核對**、依腎功能調整；**penicillin 類於 IRIS Grade 4 AKI 建議加倍給藥間隔**（2023 ACVIM）。
+
+> 舊觀念更正：早期教材的「先 penicillin 類殺菌、再 doxycycline 清除」兩階段式並非必要；**只要能口服，doxycycline 自始即可全程使用**（2023 ACVIM）。penicillin 類的角色限縮為「無法口服時的過渡」。
+
+**AKI 與支持治療：**
+- 積極但**目標導向**的靜脈輸液，避免容量過載（少尿期尤其）；監測體重、尿量、灌流指標。
+- 少尿/無尿且對輸液無反應 → 及早考慮**血液透析/腹膜透析**（有透析可用時顯著改善重症存活）。
+- 止吐：[藥物:Maropitant] 1 mg/kg IV/SC q24h；併胃保護。
+- 電解質：高血鉀依標準流程（鈣、葡萄糖-胰島素）。
+- LPHS：氧氣治療，重症正壓通氣；輸血/FFP 依 DIC 與出血狀況。
 
 ## 四、併發症與監控
 
-| 併發症 | 頻率 | 處理 |
+| 併發症 | 頻率 | 處置 |
 |--------|------|------|
-| 慢性腎病（AKI → CKD） | 30-40% | 長期腎臟追蹤 |
-| 肺出血（LPHS） | 10-20% | 氧氣支持、嚴重者機械通氣 |
-| DIC | 10-15% | FFP + 支持性治療 |
-| 慢性肝炎 | 少見 | 肝臟支持 |
+| AKI → 慢性腎病（CKD） | 存活犬約 30% | 出院後長期腎臟追蹤 |
+| 肺出血（LPHS） | 10–20% | 氧氣/通氣支持；預後不良指標 |
+| DIC | 10–15% | FFP、輸血、治療原發 |
+| 容量過載/肺水腫 | 治療相關 | 輸液再評估、利尿/透析 |
 
-監測：治療中每 24-48 hr 腎功能 + 肝功能 + 電解質。出院後每 1-2 週追蹤至穩定。3-6 個月後評估是否發展為 CKD。
+**住院監控計畫：**
 
-## 五、預防與公共衛生
+| 時間點 | 項目 | 目標/警訊 |
+|--------|------|----------|
+| 每 4–6 h | 尿量、血壓、呼吸 | 尿量 ≥1–2 mL/kg/h；呼吸窘迫 → 查 LPHS |
+| 每 12–24 h | BUN/Cre、電解質（K⁺）、血比容 | Cre 下降趨勢；K⁺ 正常化 |
+| 每 24–48 h | 肝指數/膽紅素、血小板、凝血 | 黃疸與血小板回升 |
+| 出院後 1–2 週 | 腎功能複查 | 穩定；評估殘餘腎損 |
+| 3–6 個月 | IRIS CKD 分級 | 早期發現 CKD |
 
-犬疫苗：四價疫苗（Canicola, Icterohaemorrhagiae, Pomona, Grippotyphosa），年度接種。保護力約 12 個月。不能 100% 預防但降低臨床疾病嚴重度。
+## 五、預後與預後因子
 
-人畜共通風險：
-- 感染犬的尿液含活螺旋體（可排菌數週至數月）
-- 獸醫/畜主處理時需戴手套
-- 環境消毒（10% 漂白水有效）
-- 台灣為法定傳染病，需通報`,
-  clinical_pearl: '在台灣，颱風/暴雨後 2-4 週是鉤端螺旋體病的高峰期。洪水中混合了老鼠尿液中的螺旋體，犬隻涉水後經黏膜感染。任何犬出現急性腎衰竭 + 肝指數升高，尤其在雨季後，都應將鉤端螺旋體列為首要鑑別。不要等 MAT 結果，在採血/尿 PCR 後即可開始經驗性 Ampicillin 治療。延遲治療明顯增加死亡率。',
+- 早期積極治療（含透析可用）整體存活率約 **70–85%**；透析病例系列（Ioannou 2024，22 犬）出院存活約 73%、6 個月約 75%。
+- 預後不良因子：**LPHS**、少尿/無尿性 AKI、DIC、就診延遲、嚴重高膽紅素。
+- 約 **30–40%** AKI 存活犬遺留不同程度 CKD → 需長期追蹤（ACVIM 共識僅定性描述「部分存活犬有殘餘腎損傷」，百分比源自病例系列/回顧）。
+- 上述數字為病例系列/回顧（Evidence Level II–III），受透析可近性與就診時機影響大。
+
+## 六、人醫借鑒 (Translational Insights)
+
+鉤端螺旋體病是典型 One Health 疾病，人醫工具與觀念可直接對照：
+
+| 人醫工具/觀念 | 獸醫應用 | 現況 |
+|--------------|---------|------|
+| Weil's disease（重症黃疸型）管理、AKI 透析 | 犬重症 AKI 早期透析 | 已用於有透析設備的轉診中心 |
+| 人重症肺出血型呼吸支持 | 犬 LPHS 氧氣/正壓通氣 | 應用中，證據多為外推 |
+| lipL32 即時 PCR | 犬急性期血液/尿液 PCR | 已商化，為早期診斷主力 |
+| 側流免疫層析 IgM 快篩 | 犬院內快篩 | 部分可得，仍需 MAT/PCR 確認 |
+| WHO/WOAH 人畜共通監測與通報 | 台灣人端第四類法定傳染病通報 | 制度化（動物端未常規化） |
+
+## 七、臨床爭議與知識空缺
+
+| 議題 | 現況 | Evidence Level |
+|------|------|----------------|
+| 單次 MAT 判讀閾值（1:800）是否可靠 | 受疫苗、早期偽陰、實驗室與地方血清群差異影響；配對血清較可靠 | III（專家共識/實驗室依賴）|
+| doxycycline 全程 vs 兩階段抗生素 | 2023 共識傾向 doxycycline 全程首選；比較性 RCT 有限 | III |
+| 糖皮質素/免疫調節在 LPHS 的角色 | 部分人醫與個案支持，犬缺對照證據，常規不建議 | III（外推/個案）|
+| 疫苗跨血清群保護與保護期 | 降低嚴重度與排菌，交叉保護有限、非終身 | II |
+| 台灣在地血清群分布與最佳疫苗組成 | 資料有限，Australis 群等是否漏網待監測 | II–III |
+
+## 八、近期實證更新
+
+- **2023 ACVIM 更新共識取代 2011 版**：重申 **doxycycline 為全程首選**；強化 **PCR（血液早期、尿液稍後）** 在血清轉陽前的角色；更新疫苗建議（多價、年度接種、降低排菌）。
+- **舊教條更正**：
+  - 「鉤端螺旋體只發生在大型/農村犬」→ 都市小型犬同樣會（都市鼠患、公園積水、狗公園）。
+  - 「有打疫苗就不會得」→ 疫苗未涵蓋的血清群仍可感染，且保護非終身。
+  - 「先 penicillin 再 doxycycline 的兩階段」→ 能口服即 doxycycline 全程。
+- **命名/分類時效**：致病性 Leptospira 以**基因種**（L. interrogans、L. kirschneri 等）與**血清群/血清型**兩套系統並行描述；MAT 反映血清群、不等於基因種。
+- **台灣**：屬地方性流行區，颱風/暴雨後約 **1–2 週**為感染高峰（診斷確診可延後至 2–4 週；依 Su 2011 台灣颱風相關鉤端螺旋體病 EID 報告與人流行病學）。**通報**：人的鉤端螺旋體病為**第四類法定傳染病**（傳染病防治法），由醫療端通報疾管署；動物端列為**乙類動物傳染病（B056）**且屬人畜共通，獸醫師依《動物傳染病防治條例》第 17 條對「重大人畜共通乙類」負 24 小時通報義務，惟目前對犬病例尚無常規化通報/統計機制。臨床仍以人員防護與飼主衛教為主。`,
+  clinical_pearl:
+    '在台灣，颱風或暴雨後約 1–2 週為鉤端螺旋體病的感染高峰（確診可能延後至 2–4 週）：洪水混入鼠尿中的螺旋體，犬涉水後經黏膜或皮膚破損感染。任何「急性腎損傷 ± 黃疸」的犬，尤其有雨季/涉水史，都應把本病列為首要鑑別，並在採好「給藥前」PCR/血清檢體後立即經驗性 doxycycline（口服）治療——不要等 MAT 轉陽（需 7–10 天），延遲治療明顯增加死亡率。同時第一時間啟動人員防護與飼主衛教（人的鉤端螺旋體病屬台灣第四類法定傳染病）。',
   common_mistakes: [
-    '等待 MAT 結果才開始治療（MAT 需 7-10 天才轉陽，延遲治療增加死亡率）',
-    '僅用 Doxycycline 而未先用 Ampicillin 靜脈注射控制急性螺旋體血症',
-    'Doxycycline 療程不足 14 天（未能完全清除腎臟帶原，犬持續排菌感染人類）',
-    '忽略人畜共通風險，未告知飼主防護措施',
-    '疫苗接種犬就排除鉤端螺旋體（疫苗非 100% 保護，且可能感染疫苗未涵蓋的血清型）',
+    '等 MAT 結果才開始治療——MAT 需 7–10 天轉陽，延遲抗生素顯著增加死亡率；應在採檢後即經驗性治療',
+    '在給抗生素之後才採 PCR 檢體——抗生素快速降低 PCR 陽性率，檢體務必在首劑前採集',
+    '沿用「先 penicillin 再 doxycycline」兩階段觀念——現行 2023 ACVIM 為「能口服即 doxycycline 全程首選」，penicillin 類僅為無法口服時的過渡',
+    'doxycycline 療程不足 14 天——未清除腎臟帶原，犬持續排菌並成為人的感染源',
+    '把疫苗史或單次 MAT 當定論（不論當「陰性排除」或「陽性即感染」）——疫苗抗體可高可低且跨血清群交叉反應、早期又會偽陰，須配對血清＋PCR＋病史綜合判讀',
+    '忽略人畜共通防護與法定通報——處理尿液未戴手套、未衛教飼主，也未依規定通報',
   ],
   disease_data: {
-    signalment: '任何年齡、品種犬均可感染。大型犬、戶外犬、工作犬、農村犬風險較高。台灣南部/東部洪水頻繁區域風險更高。貓感染罕見但可帶原。',
-    etiology: 'Leptospira interrogans（革蘭氏陰性螺旋體）。主要血清型：Canicola, Icterohaemorrhagiae, Pomona, Grippotyphosa。傳播途徑：接觸受汙染水源或感染動物尿液，經黏膜或皮膚傷口進入。保毒宿主：鼠、豬、牛、其他犬。',
-    pathogenesis: '螺旋體經黏膜/皮膚進入 → 螺旋體血症（4-12 天）→ 全身血管內皮損傷 → 血管炎 + 器官定殖（腎/肝/肺）→ 腎小管直接毒性 → AKI + 肝細胞損傷 → 黃疸 + 肺泡出血（嚴重者）。免疫複合體沉積加重腎損傷。',
+    signalment: '任何年齡、品種犬皆可感染。傳統上大型/戶外/工作/農村犬風險較高，但都市小型犬（都市鼠患、公園積水、狗公園）同樣會發病，勿以體型排除。台灣南部/東部及颱風洪水頻繁區風險更高。貓自然發病罕見但可血清陽性並排菌。',
+    etiology: '致病性 Leptospira（基因種如 L. interrogans、L. kirschneri），逾 250 血清型。犬常見血清群：Canicola、Icterohaemorrhagiae、Pomona、Grippotyphosa，亞洲另見 Australis/Bratislava。傳播：接觸感染動物尿液或汙染水/土，經黏膜或皮膚破損進入。保毒宿主：鼠、豬、牛、其他犬。',
+    pathogenesis: '螺旋體經黏膜/皮膚進入 → 螺旋體血症（約 4–12 天）→ 全身血管內皮損傷（血管炎）→ 器官定殖（腎/肝/肺）→ 腎小管直接毒性（AKI）＋ 肝內膽汁淤積（黃疸）＋ 肺泡出血（LPHS）＋ 凝血活化（DIC）。腎近曲小管定殖使犬即使全身清除後仍持續排菌。',
     clinical_signs: [
-      { sign: '急性腎衰竭', category: 'primary', description: 'AKI Grade II-V，少尿或多尿' },
+      { sign: '急性腎損傷', category: 'primary', description: 'AKI IRIS Grade II–V，少尿或多尿；最一致表現' },
       { sign: '嘔吐/厭食', category: 'primary', description: '尿毒症與肝損傷' },
-      { sign: '黃疸', category: 'primary', description: 'Icterohaemorrhagiae 型較常見，膽紅素升高' },
-      { sign: '發燒', category: 'secondary', description: '急性期 39.5-41°C' },
-      { sign: '肌肉疼痛/跛行', category: 'secondary', description: '肌肉內螺旋體與炎症' },
-      { sign: '呼吸困難', category: 'secondary', description: 'LPHS，預後不良指標' },
+      { sign: '黃疸', category: 'primary', description: 'Icterohaemorrhagiae 群較常見，膽紅素升高' },
+      { sign: '發燒', category: 'secondary', description: '急性期 39.5–41°C，可能自行退' },
+      { sign: '肌肉疼痛/僵硬', category: 'secondary', description: '肌肉內螺旋體與炎症' },
+      { sign: '呼吸窘迫/咳血', category: 'secondary', description: 'LPHS，預後不良指標' },
     ],
     staging: null,
     differential_diagnosis: [
-      { condition: '其他 AKI 病因', key_differentiator: '無肝損傷合併、無流行病學暴露' },
-      { condition: '急性肝炎/膽管炎', key_differentiator: '腎功能正常、無血管炎' },
+      { condition: '其他病因 AKI（缺血/腎毒性）', key_differentiator: '無肝損傷合併、無涉水/雨季暴露史' },
+      { condition: '急性肝炎/膽管炎', key_differentiator: '腎功能正常、無血管炎/出血傾向' },
       { condition: '免疫介導溶血性貧血', key_differentiator: '球形紅血球/Coombs 陽性、腎功能通常正常' },
-      { condition: '鼠藥中毒（抗凝血劑）', key_differentiator: 'PT 極度延長、維生素 K 反應性出血' },
+      { condition: '鼠藥中毒（抗凝血劑）', key_differentiator: 'PT/PTT 極度延長、維生素 K 反應性出血' },
     ],
-    diagnostic_workup: '1. CBC + 生化（BUN/Cre/肝指數/膽紅素/電解質）→ 2. 尿液分析（糖尿 + 管型）→ 3. 凝血功能 → 4. MAT + PCR（血液與尿液）→ 5. 腹腔超音波（腎臟大小/皮髓質交界/腎盂）→ 6. 胸腔 X 光（排除 LPHS）',
-    treatment_protocol: '急性期：Ampicillin 22 mg/kg IV q8h 至臨床改善。穩定後轉 Doxycycline 5 mg/kg PO BID × 14 天。支持療法：積極 IV 輸液、止吐（Maropitant）、高鉀處理。嚴重少尿/無尿考慮血液透析。LPHS 需氧氣支持。',
-    prognosis: '早期積極治療：存活率 80-90%。延遲治療或出現 LPHS/DIC：存活率 50-60%。AKI 存活者約 30% 發展為 CKD。Icterohaemorrhagiae 型預後較 Canicola 型差。',
-    monitoring: '住院期：每 24-48 hr 腎功能/肝功能/電解質。尿量 q4-6h。出院後每 1-2 週追蹤至穩定。3-6 個月後評估 CKD 發展。Doxycycline 完成後可考慮 PCR 確認清除。',
-    owner_communication: '鉤端螺旋體會傳給人，要當心。治療期間清狗狗的尿都要戴手套，不要徒手碰。環境消毒用 10% 漂白水。建議每年打疫苗。台灣颱風淹水之後一定要管好狗，不要讓他去踩積水。飼主自己如果開始發燒、肌肉痠，就醫的時候記得跟醫師講家裡有狗確診過。',
+    diagnostic_workup: '1. CBC＋生化（BUN/Cre、ALT/ALP、膽紅素、電解質）＋尿檢（糖尿/管型）→ 2. 凝血功能/血小板 → 3. **給抗生素前**採血液 PCR＋（稍後）尿液 PCR → 4. MAT 配對血清（發病 7–10 天＋2 週複檢，4 倍上升確診）→ 5. 腹部超音波（腎大小/皮髓交界/腎盂）→ 6. 胸腔 X 光（評估 LPHS）',
+    treatment_protocol: '首選：能口服/耐受即 Doxycycline 5 mg/kg PO q12h × 14 天全程（依 2023 ACVIM 更新共識；共識僅明列口服，IV 劑量屬外推）。嘔吐/無法口服時先 Ampicillin 或 Amoxicillin 20–30 mg/kg IV q6–8h、或 Penicillin G 25,000–40,000 U/kg IV q6–8h（IRIS Grade 4 AKI 加倍給藥間隔），可口服後轉 doxycycline 完成 14 天。支持：目標導向 IV 輸液（防容量過載）、止吐（Maropitant 1 mg/kg IV/SC q24h，依仿單）、高鉀處理；少尿/無尿無反應者及早透析；LPHS 氧氣/通氣。劑量須依仿單與獸醫核對並按腎功能調整。',
+    prognosis: '早期積極治療（含可用透析）整體存活率約 70–85%（透析病例系列 Ioannou 2024：出院約 73%、6 個月約 75%）。預後不良因子：LPHS、少尿/無尿性 AKI、DIC、就診延遲、嚴重高膽紅素。約 30–40% AKI 存活犬遺留不同程度 CKD（ACVIM 共識僅定性描述，百分比源自病例系列/回顧），需長期追蹤。',
+    monitoring: '住院：尿量/血壓 q4–6h；BUN/Cre、電解質（K⁺）q12–24h；肝指數/膽紅素、血小板、凝血 q24–48h。出院後 1–2 週複查腎功能，3–6 個月以 IRIS 分級評估 CKD。療程完成後可 PCR 確認清除。',
+    owner_communication: '鉤端螺旋體會傳給人，要當心。治療期間清狗狗的尿都要戴手套，不要徒手碰。環境消毒用稀釋漂白水。建議每年打疫苗（但疫苗不是萬能，涵蓋不到的血清群還是可能感染）。台灣颱風淹水之後一定要管好狗，不要讓牠去踩積水。飼主自己如果開始發燒、肌肉痠，就醫時記得跟醫師講家裡有狗確診過。',
   },
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: '血清型表後', type: 'comparison_table', description: '鉤端螺旋體血清型與臨床表現對照表' },
+    { position: '一、病理機制 機轉段後', type: 'flowchart', description: '感染 → 螺旋體血症 → 血管炎 → 腎/肝/肺多器官損傷的機轉流程圖' },
+    { position: '血清群表後', type: 'comparison_table', description: '鉤端螺旋體血清群、保毒宿主、器官傾向與台灣相關性對照表' },
   ],
-  interactive_placeholders: [],
-  drug_api_links: ['Ampicillin', 'Doxycycline', 'Penicillin G', 'Maropitant'],
+  interactive_placeholders: [
+    { position: '二、臨床表現與診斷 診斷工具段後', type: 'decision_tree', description: '互動式診斷流程：依「發病天數 × 是否已用抗生素」決定先做 PCR 或 MAT、何時複檢配對血清' },
+  ],
+  drug_api_links: ['Doxycycline', 'Ampicillin', 'Penicillin G', 'Amoxicillin', 'Maropitant'],
   references: [
-    { type: 'guideline', citation: 'Sykes JE et al. "2010 ACVIM Small Animal Consensus Statement on Leptospirosis: Diagnosis, Epidemiology, Treatment, and Prevention." J Vet Intern Med. 2011;25(1):1-13.', relevance: '鉤端螺旋體診斷與治療共識' },
-    { type: 'journal', citation: 'Reagan KL, Sykes JE. "Diagnosis of canine leptospirosis." Vet Clin North Am Small Anim Pract. 2019;49(4):719-731.', relevance: '鉤端螺旋體診斷最新回顧' },
-    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 94: Leptospirosis.', relevance: '鉤端螺旋體病教材' },
-    { type: 'journal', citation: 'Schuller S et al. "European consensus statement on leptospirosis in dogs and cats." J Small Anim Pract. 2015;56(3):159-179.', relevance: '歐洲鉤端螺旋體共識' },
+    { type: 'guideline', citation: 'Sykes JE, et al. Updated ACVIM consensus statement on leptospirosis in dogs. J Vet Intern Med. 2023;37(6):1966-1982. doi:10.1111/jvim.16903.', relevance: '現行權威指引（2023 ACVIM 更新共識）：doxycycline 全程首選、PCR 早期診斷、疫苗建議' },
+    { type: 'guideline', citation: 'Sykes JE, et al. 2010 ACVIM Small Animal Consensus Statement on Leptospirosis: Diagnosis, Epidemiology, Treatment, and Prevention. J Vet Intern Med. 2011;25(1):1-13. doi:10.1111/j.1939-1676.2010.0654.x.', relevance: '原始 ACVIM 共識（2011），本病診療架構基礎' },
+    { type: 'journal', citation: 'Reagan KL, Sykes JE. Diagnosis of Canine Leptospirosis. Vet Clin North Am Small Anim Pract. 2019;49(4):719-731. doi:10.1016/j.cvsm.2019.02.008.', relevance: 'MAT 與 PCR 診斷判讀與時機回顧' },
+    { type: 'guideline', citation: 'Schuller S, et al. European consensus statement on leptospirosis in dogs and cats. J Small Anim Pract. 2015;56(3):159-179. doi:10.1111/jsap.12328.', relevance: '歐洲共識，血清群分布與疫苗觀點對照' },
+    { type: 'journal', citation: 'Hsu, et al. Seroepidemiologic Survey of Canine Leptospirosis in Northern Taiwan During 2008-2015. Taiwan Vet J. 2018;44(3):141-149. doi:10.1142/S1682648518500038.', relevance: '台灣在地流行病學：北台灣犬鉤端螺旋體血清流行病學調查' },
+    { type: 'journal', citation: 'Su, et al. Typhoon-related Leptospirosis and Melioidosis, Taiwan, 2009. Emerg Infect Dis. 2011;17(7):1322-1324. doi:10.3201/eid1707.101050.', relevance: '台灣颱風後鉤端螺旋體病流行時序（人流行病學，支持颱風後高峰）' },
+    { type: 'journal', citation: 'Ioannou, et al. Retrospective evaluation of 22 dogs with leptospirosis treated with extracorporeal renal replacement therapies (2018-2021). J Vet Intern Med. 2024. doi:10.1111/jvim.16998.', relevance: '透析治療犬鉤端螺旋體病預後（存活率/CKD 數字溯源）' },
+    { type: 'journal', citation: 'Ricardo, et al. Seroprevalence of pathogenic Leptospira serogroups in asymptomatic domestic dogs and cats: systematic review and meta-analysis. Front Vet Sci. 2024;11:1301959. doi:10.3389/fvets.2024.1301959.', relevance: '近年犬貓血清群統合分析（常見血清群清單溯源）' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine. 6th ed. Elsevier; 2020.', relevance: '小動物內科教科書，鉤端螺旋體病章節（教材）' },
   ],
   is_current: true,
   created_at: now,
