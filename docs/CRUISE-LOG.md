@@ -41,7 +41,11 @@
 - **Phase D — 新價值**：A–C 收斂後評估。
 
 ### NEXT-UP v2（依序，每迭代取最上）
-1. **C3 pilot：v1→v2 內容升級 1 個節點（uplift-queue 選最高 prio v1、依 CONTENT-STANDARD-V2、每 DOI Crossref 驗、version→2、產出待 DVM）** ← 下一個
+1. **C3 pilot（下一迭代單獨執行，勿跨 context 邊界寫 body）：升級 `IM-L3-016 鉤端螺旋體病` v1→v2** ← 下一個
+   - 選它理由：prio 9/10、disease/L3（可驗證完整 8 段模板＝DERM-L3-008 gold）、台灣地方性（氣候/人畜共通/疫苗）、有現行權威指引可錨定。
+   - 錨定引用（**寫入前一律 Crossref 驗 DOI+標題，勿信記憶**）：ACVIM 鉤端螺旋體共識 Sykes 2011 JVIM + 2023 更新版；近 5 年台灣/亞洲流行病學或血清型文獻 1 條；診斷（MAT/PCR）＋治療（doxycycline/penicillin）各 1 條真實文。
+   - 依 §2 疾病八段 + §1 欄位最低要求（disease_data 11 欄全填、references ≥5 全 VERIFIED、drug_api_links、≥1 visual + ≥1 interactive placeholder）。version→2、保留 v1 版本史。
+   - 驗收：`verify:citations --specialty im` 該節點 0 suspect → tsc 0 → test → build ✓ → 本地 commit（不 push，內容待 DVM）。
 2. C3 續：依 pilot 成效逐節點升級（~127 個 v1，長期，DVM）
 > ✅ **C1b 完成**（4 捏造/誤植修正 + 5 DOI 回填；cardio/neuro/onco/cpath 4 科 0 suspect；殘餘 2 條 pre-DOI 真實文 im-Laflamme/ecc-chocolate 已標記）。
 > ⛔ **B1/B2（後台 generate/review 功能化）移至 BLOCKED**：需 Supabase 持久層 ＋ 真 Claude API 花費決策 ＋ auth-path（cookie vs API-key）安全設計，非自主可安全完成 → 見 Obsidian `BLOCKED-OPERATIONS.md`，待使用者定調。
