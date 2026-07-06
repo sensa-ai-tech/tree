@@ -82,7 +82,7 @@
 
 ## 6. 資料與內容
 
-- **Seed**：`src/data/seed/<專科>/{nodes,edges,contents}.ts` + `open-access-resources.ts`（⚠️ dead data，未接 UI，67% 連結失效，接 UI 前須重建/刪除）。
+- **Seed**：`src/data/seed/<專科>/{nodes,edges,contents}.ts`。（原 `open-access-resources.ts` 為零消費者 dead data／67% 連結失效，已於 2026-07-04 連同其唯一 audit 腳本 `scripts/verify-resources.ts` 移除。）
 - **節點 ID 格式**：`<專科>-L<層級>-<序號>`，例：`CARDIO-L3-001`（心臟科 L3 第 1 個，MMVD）。層級 L0（總覽）→ L5（進階/治療）。
 - **內容標準**：`docs/CONTENT-STANDARD-V2.md` 定義 v2 的 8 段 rubric（病理機制/臨床診斷/治療/併發監控/預後/人醫借鑑/爭議與空缺/近期實證）+ 每條 reference 附真實 DOI + Evidence Level。
 - **內容狀態機**：節點內容有 `status`（draft → review → published）與 `version`（1/2）。目前全部停在 `review`，等 DVM 簽核才 `published`。
