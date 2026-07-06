@@ -4156,7 +4156,7 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 13: Infectious & Inflammatory Diseases of the Spine.', relevance: 'Discospondylitis 臨床診斷與治療標準教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '脊椎感染鑑別診斷基礎' },
     { type: 'journal', citation: 'Tipold A, Stein VM. Inflammatory diseases of the spine in small animals. Vet Clin North Am Small Anim Pract. 2010;40(5):871-879.', relevance: '犬脊椎炎症性疾病綜合回顧' },
-    { type: 'journal', citation: 'Harris JM et al. Clinical features and outcome of dogs with discospondylitis: 69 cases (1986-2006). J Am Vet Med Assoc. 2013;242(3):359-363.', relevance: 'Discospondylitis 大規模回顧研究與預後因子' },
+    { type: 'journal', citation: 'Burkert BA, Kerwin SC, et al. Signalment and clinical features of diskospondylitis in dogs: 513 cases (1980-2001). J Am Vet Med Assoc. 2005;227(2):268-275. doi:10.2460/javma.2005.227.268.', relevance: 'Discospondylitis 大規模回顧與臨床特徵（修正 v1 疑張冠李戴引用「Harris 69 cases」→ 真實大規模研究 Burkert 2005 513 例）' },
     { type: 'guideline', citation: 'Sykes JE, Hartmann K, Lunn KF, et al. ACVIM Consensus Statement: 2010 ACVIM Small Animal Consensus Statement on Leptospirosis，Diagnosis, Epidemiology, Treatment, and Prevention. J Vet Intern Med. 2011;25(1):1-13.', relevance: 'ACVIM 鉤端螺旋體共識聲明（discospondylitis 重要鑑別感染源）' },
   ],
   is_current: true,
@@ -4890,7 +4890,7 @@ const contentNME: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 7: Encephalitis & Meningitis.', relevance: 'NME/NLE 病理與臨床診斷標準教材' },
     { type: 'journal', citation: 'Granger N, Smith PM, Jeffery ND. Clinical findings and treatment of non-infectious meningoencephalomyelitis in dogs: a systematic review of 457 published cases from 1962 to 2008. Vet J. 2010;184(3):290-297.', relevance: 'MUO 大規模系統回顧與治療成效分析' },
-    { type: 'journal', citation: 'Schrauwen I, et al. Genome-wide association study identifies DLA class II haplotype in Pug dog necrotizing meningoencephalitis. BMC Genomics. 2014;15:349.', relevance: 'DLA class II 基因與巴哥犬 NME 遺傳關聯性研究' },
+    { type: 'journal', citation: 'Greer KA, Wong AK, Liu H, Famula TR, Pedersen NC. Necrotizing meningoencephalitis of Pug Dogs associates with dog leukocyte antigen class II and resembles acute variant forms of multiple sclerosis. Tissue Antigens. 2010;76(2):110-118. doi:10.1111/j.1399-0039.2010.01484.x.', relevance: 'DLA class II 基因與巴哥犬 NME 遺傳關聯（修正 v1 疑捏造引用「Schrauwen BMC Genomics 2014;15:349」→ 真實奠基研究 Greer 2010）' },
     { type: 'journal', citation: 'Lowrie M, et al. The role of cytosine arabinoside as an add-on therapy for MUO in dogs. J Small Anim Pract. 2016;57(5):263-270.', relevance: 'Cytarabine 治療 MUO 的臨床療效研究' },
     { type: 'journal', citation: 'Jeffery N, Granger N. New insights into the treatment of meningoencephalomyelitis of unknown origin since 2009: a review of 671 cases. Front Vet Sci. 2023;10:1114798. doi:10.3389/fvets.2023.1114798.', relevance: 'MUO 治療新見解：2009 年後 671 例系統性回顧' },
   ],
