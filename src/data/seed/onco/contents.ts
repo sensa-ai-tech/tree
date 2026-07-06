@@ -827,8 +827,8 @@ const contentHSA: NodeContent = {
 const contentOralMelanoma: NodeContent = {
   id: 'CONTENT-ONCO-L3-005',
   node_id: 'ONCO-L3-005',
-  version: 1,
-  summary: '犬口腔黑色素瘤（Oral Melanoma）是犬口腔最常見的惡性腫瘤。不管色素沉著程度如何，口腔黑色素瘤一律視為惡性。局部侵襲性很強，常侵犯骨組織，加上轉移率高（肺、區域淋巴結）。治療以積極手術切除為主，搭配化療或免疫治療。犬黑色素瘤疫苗（Oncept）是第一個獲 USDA 核准的獸醫治療性腫瘤疫苗。',
+  version: 2,
+  summary: '犬口腔黑色素瘤（Oral Melanoma）是犬口腔最常見的惡性腫瘤（約占惡性口腔腫瘤 30-40%）。多數呈惡性、局部侵襲性強（常侵犯骨）、轉移率高（肺、區域淋巴結），但並非「一律惡性」——組織學高分化型（HWDMN）可呈良性行為，現行以「位置＋組織學分級（有絲分裂數口腔 ≥4/10 HPF、Ki-67）」共同判讀。治療以積極手術（軟組織切緣 ≥2cm）為主，輔以粗分割放療、化療（反應率有限）或免疫治療。Oncept 疫苗是首個獲 USDA 核准的治療性腫瘤疫苗（2010 完全核准），但其存活獲益在獨立回顧研究中未獲證實。',
   learning_objectives: [
     '說明犬口腔黑色素瘤的 WHO 臨床分期系統',
     '描述口腔黑色素瘤的典型臨床表現與好發部位',
@@ -837,13 +837,13 @@ const contentOralMelanoma: NodeContent = {
     '列出影響口腔黑色素瘤預後的關鍵因子',
   ],
   key_points: [
-    '犬口腔最常見的惡性腫瘤，好發小型犬（尤其深色素品種）',
-    '不管色素沉著程度如何，口腔部位的黑色素瘤一律視為惡性（這點跟皮膚型不同）',
-    'WHO 分期看腫瘤最大直徑：I 是不到 2 cm、II 是 2 到 4 cm、III 是超過 4 cm 或有淋巴結轉移、IV 是遠端轉移',
-    '局部侵襲性強，常侵犯下頷骨或上頷骨骨組織',
-    '治療首選：積極手術切除（部分下頷骨或上頷骨切除）加輔助治療',
-    'Oncept 黑色素瘤疫苗是人 tyrosinase DNA 疫苗，目的是打破免疫耐受',
-    '腫瘤大小是最重要的預後因子：不到 2 cm 中位存活超過 12 個月；超過 4 cm 中位存活不到 6 個月',
+    '犬口腔最常見的惡性腫瘤（約占惡性口腔腫瘤 30-40%），好發中老年小型犬（口腔黏膜深色素品種風險較高）',
+    '多數惡性、預後較皮膚型差，但「非一律惡性」——組織學高分化型（HWDMN）可良性行為；惡性度以位置＋組織學分級（有絲分裂數、核異型性、Ki-67）判讀',
+    'WHO 分期依腫瘤最大直徑：I <2cm、II 2-4cm、III >4cm 或任何大小合併淋巴結轉移(N1)、IV 遠端轉移',
+    '局部侵襲性強，常侵犯下頷骨/上頷骨；約 1/3 為無色素（amelanotic），確診常需 IHC（Melan-A/PNL2/S-100/tyrosinase）',
+    '治療首選積極手術（軟組織切緣 ≥2cm、骨 1-2cm），輔以粗分割放療；化療反應率有限（~18-28%）且不延長存活',
+    'Oncept 是異種人 tyrosinase DNA 疫苗（打破免疫耐受），2010 完全核准；但存活獲益在獨立回顧研究（Ottnod 2013）未獲證實',
+    '腫瘤大小/分期是最重要預後因子（Stage I MST ~17-18 個月、Stage III ~3-6 個月）；不良預後 MI ≥4/10 HPF（口腔閾值，非皮膚型的 ≥3）',
   ],
   body: `# 口腔黑色素瘤 (Oral Melanoma)
 
@@ -852,10 +852,10 @@ const contentOralMelanoma: NodeContent = {
 
 
 ### 概述
-犬口腔黑色素瘤是犬口腔最常見的惡性腫瘤，大約占所有犬口腔腫瘤 30 到 40%。跟皮膚黑色素瘤不一樣，口腔黑色素瘤不管組織學表現如何都視為惡性，局部侵襲性跟轉移潛力都很強。
+犬口腔黑色素瘤是犬口腔「最常見的惡性腫瘤」，約占所有犬口腔「惡性」腫瘤 30 到 40%（其次為鱗狀細胞癌 SCC 17 到 25%、纖維肉瘤 8 到 25%）。⚠️ 此「居首」排序取決於是否納入扁桃體 SCC——納入時 SCC（約 41%）可反超黑色素瘤（約 37%），排除扁桃體 SCC 時黑色素瘤才明確居首（約 46%）。多數口腔黑色素瘤呈惡性、局部侵襲性強、轉移潛力高，預後一般較皮膚型差；但現行共識（OPWG 2022）已把舊「口腔＝一律惡性」二分法修正為「解剖位置＋組織學分級共同判讀」——少數組織學高分化型（HWDMN：有絲分裂數 ≤3/10 HPF、核異型性極小）可呈良性行為（Esplin 2008：中位存活約 34 個月、復發率約 3%）。
 
 ### 好發部位與特徵
-口腔內任何部位都可能長，牙齦最常見，其他像唇黏膜、舌、硬顎、扁桃腺也有。外觀可以是色素性（黑色或棕色），或無色素性（amelanotic，粉紅色）。無色素性大約占 1/3，常會被誤認為其他腫瘤。
+口腔內任何部位都可能長，牙齦最常見，其他像唇黏膜、舌、硬顎、扁桃腺也有。外觀可以是色素性（黑色或棕色），或無色素性（amelanotic，粉紅色）。無色素性約占 1/3，因缺乏黑色素顆粒常在細胞學/H&E 下被誤認為低分化癌或肉瘤，確診常需免疫組化（IHC）標記：Melan-A、PNL2、S-100、tyrosinase；無色素型的生物行為與有色素型相同。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -864,23 +864,25 @@ const contentOralMelanoma: NodeContent = {
 |------|------|
 | I | 腫瘤最大直徑 < 2 cm，無轉移 |
 | II | 腫瘤最大直徑 2-4 cm，無轉移 |
-| III | 腫瘤最大直徑 > 4 cm 和/或有區域淋巴結轉移 |
+| III | 腫瘤最大直徑 > 4 cm 和/或有區域淋巴結轉移（N1） |
 | IV | 有遠端轉移 |
+
+> 註：任何大小腫瘤只要有區域淋巴結轉移（N1）即上修為 Stage III（不限 >4 cm）。分期依 WHO / Owen 1980 TNM，Polton 2024 共識沿用。
 
 ## 三、治療策略 (Treatment)
 
 ### 治療
 ### 手術（首選）
-切緣要積極，至少 1 到 2 cm。常常需要做部分下頷骨切除（mandibulectomy）或上頷骨切除（maxillectomy）。多數犬術後進食、飲水功能恢復良好。
+切緣要積極：軟組織切緣建議 ≥ 2 cm、骨切緣 1 到 2 cm 健康骨質（依 CT 規劃節段性 mandibulectomy 下頷骨切除或 maxillectomy 上頷骨切除）。完整切除局部復發率約 15 到 22%，不完整切除可高達約 65%。功能預後：多數犬術後進食飲水恢復良好、飼主滿意度高（Bull 2023：約 71% 於 4 週內正常進食、90% 願再次選擇；Fox 1997：85% 滿意），但仍有相當比例（約 29 到 44%）出現暫時或持續進食困難，術前須與飼主充分溝通。
 
 ### 放射治療
-術後輔助或沒辦法手術時當姑息治療用。粗分割放射 4 × 8-9 Gy，每週一次。黑色素瘤對大劑量分割放射反應比較好。
+術後輔助或無法手術時當姑息/減積治療用。黑色素瘤對大劑量分割（hypofractionated）放射反應較好。常用粗分割方案：8 Gy × 4（=32 Gy，現行常用）或 Proulx 2003 經典的 9 Gy × 4（=36 Gy），每週一次；其他如 6 Gy × 6。整體反應率高（常 > 70% 可見腫瘤縮小），但局部控制不持久，且不改變遠端轉移主導的整體存活。
 
 ### 免疫治療
-[藥物:Oncept] 犬黑色素瘤疫苗是人 tyrosinase DNA 疫苗，機轉是引發對黑色素細胞特異抗原的免疫反應。療程是每 2 週注射 × 4 次，之後每 6 個月追加一次。適應症是 WHO Stage II 到 III，局部控制好之後當輔助治療用。
+[藥物:Oncept] 犬黑色素瘤疫苗是「異種（xenogeneic）人 tyrosinase 質體 DNA 疫苗」，以無針經皮裝置（VET JET）肌肉給藥，機轉是打破對黑色素細胞抗原（tyrosinase）的免疫耐受。療程：初始每 2 週 × 4 次、之後每 6 個月追加；適應症為 WHO Stage II 到 III、局部控制良好後之輔助治療。核准：2007 年 USDA 條件性核准、2010 年 2 月升為完全核准，為首個獲 USDA 核准的治療性腫瘤疫苗。⚠️ 存活獲益有爭議：廠商相關研究（Grosenbaugh 2011）提示改善存活，但獨立回顧性研究（Ottnod 2013）未能證實存活獲益——詳見第七節爭議。
 
 ### 化療
-反應率有限，大概 20 到 30%。常用方案是 [藥物:Carboplatin] 或 [藥物:Melphalan]。
+對肉眼可見腫瘤反應率有限（約 18 到 28%，完全緩解少見且不持久）。證據最充分者為 [藥物:Carboplatin]（300 到 350 mg/m² IV q3wk，反應率約 28%；Rassnick 2001）；cisplatin + piroxicam 約 18%；[藥物:Melphalan] 為次要選項、非與 carboplatin 並列首選；toceranib（Palladia）僅零星病例報告活性、無確立反應率。⚠️ 多項研究顯示化療加於手術/放療並未延長存活，角色有限。
 
 [圖片:口腔黑色素瘤色素性與無色素性臨床照片對比]
 
@@ -890,14 +892,14 @@ const contentOralMelanoma: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-口腔黑色素瘤是高度惡性腫瘤。WHO Stage I（不到 2 cm）中位存活約 17 到 18 個月，Stage II（2 到 4 cm）約 6 個月，Stage III（超過 4 cm 或有淋巴結轉移）約 3 個月。不良預後因子包括：腫瘤大小超過 2 cm、骨侵犯、有絲分裂指數高（MI 超過 4/10 HPF）、Ki-67 增殖指數高、診斷時已經有遠端轉移。Oncept 疫苗可能可以延長無病存活期。
+口腔黑色素瘤多為高度惡性腫瘤，腫瘤大小/分期是最重要的預後因子。以手術治療，WHO Stage I（< 2 cm）中位存活約 17 到 18 個月（MacEwen 1986：511 天），Stage II（2 到 4 cm）約 5 到 6 個月（MacEwen 1986：160 天），Stage III（> 4 cm 或淋巴結轉移）教科書標竿常引約 3 個月（惟 MacEwen 1986 手術組實為 168 天、約 5.6 個月，數值依世代/治療而異），Stage IV（遠端轉移）預後最差。不良預後因子：腫瘤 > 2 cm/分期高、骨侵犯（溶骨）、有絲分裂指數達統計閾值 **≥ 4/10 HPF**（4 即屬不良；Bergin/Smedley 2011、OPWG 2022；注意 ≥ 3/10 HPF 是「皮膚型」的良惡分界、不適用口腔型）、Ki-67 高（> 19.5）、診斷時已有淋巴結或遠端轉移。Oncept 疫苗對存活的實際獲益尚未在獨立研究中確認（見爭議）。
 
 ## 六、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 免疫檢查點抑制劑（anti-PD-1/anti-CTLA-4） | 犬口腔黑色素瘤的免疫治療，PD-L1 高表達腫瘤 | 犬 anti-PD-L1 抗體初步臨床數據已發表 |
-| Oncept 黑色素瘤疫苗（xenogeneic tyrosinase DNA） | 犬口腔黑色素瘤 WHO Stage II-III 的免疫輔助治療 | USDA 條件性核准，長期療效數據持續累積中 |
+| 免疫檢查點抑制劑（anti-PD-1/anti-CTLA-4） | 犬口腔黑色素瘤的免疫治療，PD-L1 高表達腫瘤 | 犬用抗 PD-L1 抗體（c4G12）初步臨床療效已發表（Maekawa 2023） |
+| Oncept 黑色素瘤疫苗（xenogeneic tyrosinase DNA） | 犬口腔黑色素瘤 WHO Stage II-III 的免疫輔助治療 | USDA 2007 條件性、2010 完全核准；廠商研究提示獲益，惟獨立回顧研究（Ottnod 2013）未證實存活優勢 |
 | BRAF/NRAS 標靶治療 | 犬黑色素瘤可能攜帶可治療性突變，精準醫療 | 犬黑色素瘤突變圖譜研究進行中 |
 | 腫瘤浸潤淋巴球（TIL）治療 | 犬黑色素瘤的個體化細胞免疫治療 | 人醫黑色素瘤已有突破，犬尚在早期研究 |
 
@@ -905,20 +907,30 @@ const contentOralMelanoma: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| Oncept 疫苗的實際存活獲益 | 初始研究顯示延長 OS，但後續大型回顧性研究結果不一致 | Level II |
-| 無色素性（amelanotic）黑色素瘤的預後是否更差 | 部分研究提示更具侵襲性，但尚未有定論 | Level III |
-| 粗分割放療（4 × 8-9 Gy）vs 標準分割在口腔黑色素瘤的最佳方案 | 粗分割反應率佳且麻醉次數少，但長期局部控制率的比較數據有限 | Level III |
-| 手術切緣 1 cm vs 2 cm 對局部復發率的影響 | 口腔解剖限制下常無法達到 2 cm，現有數據支持 1 cm 在小腫瘤可能足夠 | Level III |`,
+| Oncept 疫苗的實際存活獲益 | 廠商相關研究（Grosenbaugh 2011 AJVR）提示改善存活並支持 USDA 核准，但獨立回顧性研究（Ottnod 2013 VCO）未能證實存活獲益；Polton 2024 共識視為「可考慮」之輔助治療、獲益證據仍不一致 | Level II |
+| 口腔黑色素瘤惡性度判定 | 舊「口腔＝一律惡性」二分法已修正；OPWG 2022 主張以有絲分裂數（口腔 ≥ 4/10 HPF）、核異型性、Ki-67 分級，HWDMN 為良性行為變異型 | Level II |
+| 無色素性（amelanotic）黑色素瘤的預後是否更差 | 生物行為與有色素型相同；部分研究提示更具侵襲性，但尚未有定論 | Level III |
+| 粗分割放療（8-9 Gy × 4）vs 標準分割在口腔黑色素瘤的最佳方案 | 粗分割反應率佳且麻醉次數少，但長期局部控制率的比較數據有限 | Level III |
+| 手術切緣 1 cm vs 2 cm 對局部復發率的影響 | 軟組織建議 ≥ 2 cm、骨 1-2 cm；口腔解剖限制下小腫瘤 1 cm 軟組織可能足夠 | Level III |
+
+## 八、近期更新 (Recent Updates)
+
+- **Polton 2024（Front Vet Sci 犬貓黑色素瘤共識與指引）**：整合手術切緣（軟組織 ≥ 2 cm、骨 1-2 cm）、TNM 分期與輔助治療建議；將 Oncept 定位為「可考慮」而非必然獲益之輔助治療。
+- **OPWG 2022（Smedley 等，Vet Comp Oncol）**：確立犬黑色素細胞腫瘤組織學預後分級——口腔/唇有絲分裂數 ≥ 4/10 HPF、核異型性 ≥ 30%、Ki-67、色素 ≥ 50%、骨/血管侵犯；並強調「單靠解剖位置無法預測預後」，修正舊二分法。
+- **anti-PD-L1 免疫檢查點治療**：Maekawa 2023（PLOS ONE）發表犬用抗 PD-L1 抗體（c4G12）於晚期惡性腫瘤（含口腔黑色素瘤）之安全性與臨床療效初步數據，為犬黑色素瘤免疫治療新方向。
+- **Oncept 存活獲益再評估**：多篇獨立回顧性研究（Ottnod 2013 等）未複製出廠商研究的存活優勢，其臨床價值仍待前瞻對照試驗釐清。`,
   clinical_pearl: '口腔黑色素瘤有兩大陷阱要小心。第一是大約 1/3 是無色素性（amelanotic），外觀是粉紅色，很容易被誤認為良性增生或其他口腔腫瘤，所以任何口腔腫塊都要 FNA 或活檢。第二是口腔黑色素瘤常侵犯骨組織，手術前一定要拍 X 光或 CT 評估骨侵犯程度，不然切緣可能不夠。腫瘤型態跟生物行為先確認，術前 CT 對手術計畫很重要。\n\n【台灣流行病學】口腔黑色素瘤在台灣是犬常見的口腔惡性腫瘤，好發中老年小型犬，台灣常見的迷你型犬像貴賓、雪納瑞都有報告。飼主通常等到犬進食困難或口臭加重才就醫，這時候腫瘤多半已經偏大，所以推廣定期口腔檢查對早期發現很有幫助。Oncept 黑色素瘤疫苗在台灣取得管道有限，但放射治療在部分教學醫院都有提供。',
   common_mistakes: [
-    '將無色素性口腔黑色素瘤誤認為良性增生而延誤診斷',
-    '手術切緣不足，口腔黑色素瘤常浸潤深層骨組織，需考慮骨切除',
-    '未進行區域淋巴結（下頷/咽後淋巴結）FNA 評估',
-    '拿皮膚黑色素瘤的預後類比口腔黑色素瘤：口腔型預後其實差很多',
+    '將無色素性口腔黑色素瘤誤認為良性增生而延誤診斷（約 1/3 為 amelanotic，確診常需 IHC）',
+    '手術切緣不足：軟組織應 ≥2cm、骨 1-2cm，口腔黑色素瘤常浸潤深層骨組織需考慮骨切除',
+    '未進行區域淋巴結（下頷/咽後淋巴結）FNA 評估（N1 會把任何大小腫瘤上修為 Stage III）',
+    '拿皮膚黑色素瘤的預後類比口腔黑色素瘤：口腔型預後差很多（但少數口腔 HWDMN 為良性變異型，勿反向一律當高度惡性）',
+    '用皮膚型的有絲分裂閾值（≥3/10 HPF）判口腔型：口腔型統計預後閾值是 ≥4/10 HPF',
+    '把 Oncept 疫苗當成確定能延長存活：獨立回顧研究（Ottnod 2013）未證實存活獲益，屬可考慮之輔助治療',
     '忽略術前影像評估骨侵犯，未拍攝頭顱 X 光或 CT 就安排手術',
   ],
   disease_data: {
-    signalment: '中老年犬（中位年齡 10-12 歲）。好發品種：Scottish Terrier、Cocker Spaniel、Golden Retriever、Poodle、Chow Chow、Dachshund。小型犬和口腔色素沉著較深的品種風險較高。雄性可能略多於雌性。',
+    signalment: '中老年犬（中位年齡約 11 歲、多在 10-12 歲）。好發品種：Scottish Terrier、Cocker Spaniel、Golden Retriever、Poodle（含迷你型）、Chow Chow、Dachshund。小型犬和口腔黏膜色素沉著較深的品種（如 Chow Chow）風險較高。性別傾向未有定論——最大宗回顧（Ramos-Vara 2000, n=338）未見性別差異，僅早期小型研究曾提示雄性略多。',
     etiology: '確切病因不明。口腔黑色素細胞的惡性轉化可能與慢性刺激、遺傳易感性相關。BRAF 突變在犬口腔黑色素瘤中的角色正在研究中。',
     pathogenesis: '口腔黑色素細胞惡性增殖 → 局部浸潤（黏膜下層 → 骨膜 → 骨組織）→ 區域淋巴結轉移（下頷淋巴結、咽後淋巴結）→ 遠端血行性轉移（肺為主，其次肝、腦）。無色素性黑色素瘤的生物學行為可能更具侵襲性。',
     clinical_signs: [
@@ -929,12 +941,12 @@ const contentOralMelanoma: NodeContent = {
       { sign: '面部腫脹', category: 'secondary', description: '腫瘤侵犯骨組織導致面部不對稱腫脹' },
     ],
     staging: {
-      system: 'WHO Clinical Staging for Canine Oral Melanoma',
+      system: 'WHO Clinical Staging for Canine Oral Melanoma（Owen 1980 TNM；Polton 2024 共識沿用）',
       stages: [
-        'Stage I：腫瘤最大直徑 < 2 cm，無淋巴結或遠端轉移',
-        'Stage II：腫瘤最大直徑 2-4 cm，無淋巴結或遠端轉移',
-        'Stage III：腫瘤最大直徑 > 4 cm 和/或有區域淋巴結轉移',
-        'Stage IV：有遠端轉移（肺、肝等）',
+        'Stage I：腫瘤最大直徑 < 2 cm（T1），無淋巴結或遠端轉移',
+        'Stage II：腫瘤最大直徑 2-4 cm（T2），無淋巴結或遠端轉移',
+        'Stage III：腫瘤最大直徑 > 4 cm（T3），或任何大小合併區域淋巴結轉移（N1）',
+        'Stage IV：有遠端轉移（肺、肝等，M1）',
       ],
     },
     differential_diagnosis: [
@@ -944,8 +956,8 @@ const contentOralMelanoma: NodeContent = {
       { condition: '棘皮瘤性棘狀瘤（Acanthomatous ameloblastoma）', key_differentiator: '局部侵襲骨組織但不轉移，手術切除後預後極佳' },
     ],
     diagnostic_workup: '1. 口腔檢查（腫塊大小、位置、是否固定於骨）→ 2. FNA 細胞學或楔形活檢 → 3. 區域淋巴結 FNA → 4. 頭顱 X 光或 CT（評估骨侵犯範圍，手術計畫必需）→ 5. 胸腔 X 光三面投射 → 6. 腹部超音波 → 7. CBC/BCS',
-    treatment_protocol: '手術為首選：mandibulectomy/maxillectomy 確保切緣乾淨。術後輔助：粗分割放射治療 4 × 8-9 Gy q1 week（切緣不淨或無法手術時）。Oncept 黑色素瘤疫苗：局部控制良好後，每 2 週 × 4 次，之後每 6 個月追加（WHO Stage II-III）。化療效果有限：Carboplatin 300 mg/m² IV q3 weeks 或 Melphalan 可考慮。',
-    prognosis: 'WHO Stage I（< 2 cm）+ 手術切緣乾淨：中位存活 > 12-17 個月。Stage II（2-4 cm）：中位存活 5-6 個月。Stage III（> 4 cm 或淋巴結轉移）：中位存活 3 個月。Stage IV：中位存活 < 3 個月。Oncept 疫苗在 Stage II-III 可能延長存活至 12 個月以上（部分研究）。無色素性可能較具侵襲性。',
+    treatment_protocol: '手術為首選：mandibulectomy/maxillectomy，軟組織切緣 ≥ 2 cm、骨 1-2 cm（依 CT 規劃）；完整切除復發率約 15-22%。術後輔助：粗分割放射 8-9 Gy × 4 q1week（切緣不淨或無法手術時）。Oncept 疫苗：局部控制良好後 q2wk × 4、之後 q6mo（WHO Stage II-III；存活獲益未經獨立研究證實）。化療效果有限（反應率約 18-28%）：Carboplatin 300-350 mg/m² IV q3wk 為首選細胞毒藥、但不延長存活。',
+    prognosis: '以手術治療，WHO Stage I（< 2 cm）中位存活約 17-18 個月（MacEwen 1986: 511 天）、Stage II（2-4 cm）約 5-6 個月（160 天）、Stage III（> 4 cm 或 N1）教科書常引約 3 個月（MacEwen 手術組實 168 天，約 5.6 個月）、Stage IV 最差。最重要預後因子為腫瘤大小/分期；其他不良因子：骨侵犯、有絲分裂指數 ≥ 4/10 HPF（口腔閾值，非皮膚型的 ≥3）、Ki-67 > 19.5、診斷時已轉移。Oncept 疫苗對存活的實際獲益未在獨立回顧研究（Ottnod 2013）中確認。',
     monitoring: '術後 2 週回診評估傷口。每月口腔檢查和區域淋巴結觸診。每 2-3 個月胸腔 X 光監測肺轉移。Oncept 療程每 6 個月追加。注意口腔功能（進食、飲水能力）。',
     owner_communication: '口腔黑色素瘤是犬口腔最常見的惡性腫瘤。手術是最重要的治療，部分下頷骨或上頷骨切除聽起來會嚇到飼主，但多數犬術後功能恢復良好還能正常進食。腫瘤大小是最重要的預後因子，早期發現跟治療不能省。建議飼主定期檢查犬的口腔。黑色素瘤疫苗是獸醫腫瘤學的新進展，可以考慮當手術後的輔助治療。',
   },
@@ -954,13 +966,20 @@ const contentOralMelanoma: NodeContent = {
   visual_placeholders: [
     { position: 'WHO 分期表格後', type: 'flowchart', description: '口腔黑色素瘤治療決策流程圖' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: 'WHO 分期表格後', type: 'staging_tool', description: 'WHO 分期/預後互動計算器：輸入腫瘤最大直徑與淋巴結/遠端轉移狀態 → 回傳 Stage 與對應手術治療中位存活（I ~17-18mo、II ~5-6mo、III ~3-6mo）；並示範 N1 上修任何大小為 Stage III' },
+  ],
   drug_api_links: ['Carboplatin', 'Melphalan', 'Oncept'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '口腔黑色素瘤完整章節' },
-    { type: 'journal', citation: 'Bergman PJ et al. Long-term survival of dogs with advanced malignant melanoma after DNA vaccination with xenogeneic human tyrosinase. Clin Cancer Res. 2003;9(4):1284-1290.', relevance: 'Oncept 疫苗原始研究' },
-    { type: 'journal', citation: 'Tuohy JL et al. Outcome following curative-intent surgery for oral melanoma in dogs: 113 cases (1997-2012). J Am Vet Med Assoc. 2014;245(11):1266-1273.', relevance: '口腔黑色素瘤手術預後大型研究' },
-    { type: 'guideline', citation: 'Owen LN. TNM Classification of Tumours in Domestic Animals. WHO, 1st ed. 1980.', relevance: 'WHO 口腔腫瘤 TNM 分期標準' },
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Thamm DH, Liptak JM, eds. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. St. Louis: Elsevier, 2020. Melanoma & Oral Tumors chapters.', relevance: '口腔黑色素瘤流行病學/分期/治療/預後完整章節' },
+    { type: 'guideline', citation: 'Polton G, Borrego JF, Clemente-Vicario F, Clifford CA, et al. Melanoma of the dog and cat: consensus and guidelines. Front Vet Sci. 2024;11:1359426. doi:10.3389/fvets.2024.1359426', relevance: '近期：犬貓黑色素瘤共識——切緣/分期/輔助治療與 Oncept 定位' },
+    { type: 'journal', citation: 'Smedley RC, Sebastian K, Kiupel M, et al. Diagnosis and histopathologic prognostication of canine melanocytic neoplasms: A consensus of the Oncology-Pathology Working Group. Vet Comp Oncol. 2022;20(4):739-751. doi:10.1111/vco.12827', relevance: '近期：OPWG 組織學預後分級（口腔有絲分裂數 ≥4/10 HPF、Ki-67）' },
+    { type: 'journal', citation: 'Esplin DG. Survival of dogs following surgical excision of histologically well-differentiated melanocytic neoplasms of the mucous membranes of the lips and oral cavity. Vet Pathol. 2008;45(6):889-896. doi:10.1354/vp.45-6-889', relevance: 'HWDMN 良性行為變異型（MST ~34mo、低復發），佐證「非一律惡性」' },
+    { type: 'journal', citation: 'Bergman PJ, McKnight J, Novosad A, et al. Long-term survival of dogs with advanced malignant melanoma after DNA vaccination with xenogeneic human tyrosinase: a phase I trial. Clin Cancer Res. 2003;9(4):1284-1290.', relevance: 'Oncept 疫苗原始研究（xenogeneic tyrosinase 機轉）' },
+    { type: 'journal', citation: 'Grosenbaugh DA, Leard AT, Bergman PJ, et al. Safety and efficacy of a xenogeneic DNA vaccine encoding for human tyrosinase as adjunctive treatment for oral malignant melanoma in dogs following surgical excision of the primary tumor. Am J Vet Res. 2011;72(12):1631-1638. doi:10.2460/ajvr.72.12.1631', relevance: 'Oncept 支持 USDA 核准之廠商相關療效研究' },
+    { type: 'journal', citation: 'Ottnod JM, Smedley RC, Walshaw R, et al. A retrospective analysis of the efficacy of Oncept vaccine for the adjunct treatment of canine oral malignant melanoma. Vet Comp Oncol. 2013;11(3):219-229. doi:10.1111/vco.12057', relevance: '獨立回顧研究：Oncept 未證實存活獲益（爭議核心）' },
+    { type: 'journal', citation: 'Tuohy JL, Selmic LE, Worley DR, et al. Outcome following curative-intent surgery for oral melanoma in dogs: 70 cases (1998-2011). J Am Vet Med Assoc. 2014;245(11):1266-1273. doi:10.2460/javma.245.11.1266', relevance: '口腔黑色素瘤根治性手術預後（70 例）' },
+    { type: 'journal', citation: 'Maekawa N, Konnai S, Hosoya K, et al. Safety and clinical efficacy of an anti-PD-L1 antibody (c4G12) in dogs with advanced malignant tumours. PLoS One. 2023;18(9):e0291727. doi:10.1371/journal.pone.0291727', relevance: '近期：犬用抗 PD-L1 抗體免疫治療臨床數據' },
   ],
   is_current: true,
   created_at: now,
@@ -1684,7 +1703,7 @@ const contentTumorImmunology: NodeContent = {
   id: 'CONTENT-ONCO-L1-002',
   node_id: 'ONCO-L1-002',
   version: 1,
-  summary: '腫瘤免疫學研究的是免疫系統跟腫瘤之間的交互作用。免疫監視（immunosurveillance）理論指出免疫系統可以辨識並消滅腫瘤細胞，但是腫瘤會透過很多機制逃脫免疫攻擊。Cancer Immunoediting 三階段模型（消滅、平衡、逃脫）描述了腫瘤跟免疫系統的動態關係。在獸醫腫瘤科，犬黑色素瘤疫苗（Oncept）是第一個獲 USDA 條件性核准的治療性腫瘤疫苗，是腫瘤免疫治療在獸醫領域的重要突破。',
+  summary: '腫瘤免疫學研究的是免疫系統跟腫瘤之間的交互作用。免疫監視（immunosurveillance）理論指出免疫系統可以辨識並消滅腫瘤細胞，但是腫瘤會透過很多機制逃脫免疫攻擊。Cancer Immunoediting 三階段模型（消滅、平衡、逃脫）描述了腫瘤跟免疫系統的動態關係。在獸醫腫瘤科，犬黑色素瘤疫苗（Oncept）是第一個獲 USDA 核准的治療性腫瘤疫苗（2007 條件性、2010 完全核准），是腫瘤免疫治療在獸醫領域的重要突破。',
   learning_objectives: [
     '說明免疫監視（immunosurveillance）與免疫逃脫（immune escape）的概念',
     '描述 Cancer Immunoediting 的三個階段：消滅、平衡、逃脫',
@@ -3560,7 +3579,7 @@ CAF 是 TME 中主要的基質細胞，由正常纖維母細胞在腫瘤信號�
 1. 抗血管新生：Toceranib（VEGFR-TKI）已 FDA 核准用於犬 MCT，同時抑制腫瘤血管新生
 2. 免疫檢查點抑制：犬 PD-1 抗體、犬 CTLA-4 抗體，多個獸醫免疫治療臨床試驗進行中
 3. 節拍式化療：低劑量 cyclophosphamide 可選擇性減少 Treg + 抗血管新生效應
-4. 腫瘤疫苗：犬口腔黑色素瘤 DNA 疫苗（ONCEPT），USDA 條件性核准
+4. 腫瘤疫苗：犬口腔黑色素瘤 DNA 疫苗（ONCEPT），USDA 核准（2007 條件性、2010 完全核准）
 
 ## 五、「熱腫瘤」vs「冷腫瘤」
 
