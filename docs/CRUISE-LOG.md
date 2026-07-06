@@ -34,21 +34,22 @@
   - B2 ⬜ admin review 接資料源 + 持久化 approve/reject
   - B3 ✅ admin analytics 各專科分佈改真實 seed 計數（`NODES_BY_SPECIALTY` 常數 + drift 測試；瀏覽器驗證 8 專科真實數字）＋**附帶修復 #13 admin loading hang（移除 `admin/loading.tsx`）**
 - **Phase C — 內容正確性**
-  - C1 ⬜ 回填 2 個 v2 NOT_FOUND DOI（CARDIO-L3-001 DELAY、ECC-L3-007 chocolate）
+  - C1 ✅ 回填 DOI：CARDIO-L3-001 DELAY `10.1016/j.jvc.2019.12.002`＋標題對齊→VERIFIED_DOI（cardio 0 suspect）；ECC-L3-007 chocolate 為 pre-DOI 真實文獻（保留+註記）＋加可驗證 companion Cortinovis 2016 `10.3389/fvets.2016.00026`
   - C2 ⬜ open-access-resources 重建或移除（dead data，零 UI 消費者）
   - C3 ⬜ v1→v2 升級（127 節點，長期，產出待 DVM 簽核）
 - **Phase D — 新價值**：A–C 收斂後評估。
 
 ### NEXT-UP v2（依序，每迭代取最上）
-1. **C1 回填 2 DOI（CARDIO-L3-001 DELAY、ECC-L3-007 chocolate）** ← 下一個
-2. B1 / B2 後台功能化（generate 接 /api/generate/skeleton；review 接資料源）
-3. C2 dead data 處理（open-access-resources）
-4. Phase B/C 段落 → checkpoint commit（本地、不 push）
+1. **C2 dead data 處理（open-access-resources，安全自足）** ← 下一個
+2. C1b（低優先）：ECC-L2-002 pre-existing NOT_FOUND 引用查核
+3. C3（長期）：v1→v2 內容升級（產出待 DVM）
+> ⛔ **B1/B2（後台 generate/review 功能化）移至 BLOCKED**：需 Supabase 持久層 ＋ 真 Claude API 花費決策 ＋ auth-path（cookie vs API-key）安全設計，非自主可安全完成 → 見 Obsidian `BLOCKED-OPERATIONS.md`，待使用者定調。
 
 ### commander-iter 進度（append-only）
 - iter 0（2026-07-04）：接任、建立本 v2 錨點 + 路線圖。
 - iter 1（2026-07-04）：**A1 完成** — `middleware.ts`→`proxy.ts`（函式 middleware→proxy，config/matcher/邏輯不變）。build 棄用警告清除；admin auth gate 瀏覽器實測（未登入 /admin/analytics → /admin/login）通過。綠燈：tsc 0 / 847 tests / build ✓。變更未 commit（累積至 Phase A 收尾一起 checkpoint）。
 - iter 2（2026-07-04）：**A2 完成** — persisted-user auth-flash。auth-store 加 `sessionVerified`（mock：onRehydrateStorage 立即 true；real：onAuthStateChange/登入/註冊/登出設 true）；`(dashboard)/layout.tsx` loading gate + landing/login/register 的「已登入→/home」redirect 皆改為需 `sessionVerified`。**mock 行為零變更**：mock 登入→/home、reload /home 皆瀏覽器實測通過、console 無錯。綠燈：tsc 0 / 847 tests / build ✓。**Phase A 全完成**（A1+A2）→ 本地 checkpoint commit `b3dbcd7`（未 push）。
+- iter 4（2026-07-04）：**C1 完成** — NOT_FOUND DOI 回填。**CARDIO-L3-001 DELAY**：Crossref 確認 DOI `10.1016/j.jvc.2019.12.002`（標題比對相符），補入並把引用標題對齊真名（原 paraphrase「Spironolactone and benazepril…」會觸發 TITLE_MISMATCH）→ **VERIFIED_DOI**（cardio 重驗：VERIFIED_DOI 52 / TITLE_MISMATCH 0 / NOT_FOUND 0 / ERROR 0）。**ECC-L3-007 chocolate**：Gwaltney-Brant Vet Med 2001＝pre-DOI 真實文獻、Crossref 無索引→不硬塞、引用註記，並**新增可驗證 companion** Cortinovis & Caloni 2016 Front Vet Sci `10.3389/fvets.2016.00026`（VERIFIED_DOI）覆蓋甲基黃嘌呤毒性。綠燈：tsc 0 / 848 tests / build ✓。**⚠️ 內容改動待 DVM 簽核。** 附帶發現：ECC-L2-002 有 pre-existing NOT_FOUND（非本輪範圍→ C1b 低優先）。
 - iter 3（2026-07-04）：**B3 完成** — admin/analytics NODE_DISTRIBUTION 假完成數 → 真實 per-specialty 節點數（新 `NODES_BY_SPECIALTY` 於 content-stats，drift 測試守護→848 tests；banner 更新為「總節點數＋各專科分佈為真實」）。**附帶修復 DEPLOY-CHECKLIST #13**：移除 `admin/loading.tsx`（admin 頁皆 client-static、不需 segment Suspense 骨架，正是 dev 卡住根源）→ 瀏覽器驗證 hard-nav + sidebar in-app nav 皆乾淨渲染（animate-pulse 0、8 專科真實數字：內科57/外科39/皮膚35/神經35/腫瘤34/急診33/心臟28/病理22、console 無錯）。綠燈：tsc 0 / 848 tests / build ✓。變更未 commit（累積至 Phase B/C 段落）。
 
 ### 待使用者（營運/簽核，詳見 Obsidian `BLOCKED-OPERATIONS.md`）

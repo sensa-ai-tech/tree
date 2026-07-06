@@ -1671,7 +1671,8 @@ Lilium（真百合屬）與 Hemerocallis（萱草屬）所有部位（花瓣、�
   drug_api_links: ['N-Acetylcysteine', 'Vitamin K1', 'SAMe'],
   references: [
     { type: 'textbook', citation: 'Hovda LR, Brutlag AG, Poppenga RH, et al. Blackwell\'s Five-Minute Veterinary Consult Clinical Companion: Small Animal Toxicology, 2nd ed. Wiley-Blackwell, 2016.', relevance: '小動物毒理學快速參考（各論）' },
-    { type: 'journal', citation: 'Gwaltney-Brant SM. Chocolate intoxication. Vet Med. 2001;96(2):108-111.', relevance: '巧克力中毒臨床處置' },
+    { type: 'journal', citation: 'Gwaltney-Brant SM. Chocolate intoxication. Vet Med. 2001;96(2):108-111.', relevance: '巧克力中毒臨床處置（真實文獻；Vet Med 2001 為 pre-DOI 期刊，Crossref 無 DOI 索引）' },
+    { type: 'journal', citation: 'Cortinovis C, Caloni F. Household Food Items Toxic to Dogs and Cats. Front Vet Sci. 2016;3:26. doi:10.3389/fvets.2016.00026.', relevance: '巧克力/甲基黃嘌呤等居家食品毒性同儕審查回顧（可驗證 DOI 來源）' },
     { type: 'journal', citation: 'Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. J Am Vet Med Assoc. 2006;229(7):1113-1117. doi:10.2460/javma.229.7.1113.', relevance: '木糖醇致犬急性肝壞死' },
     { type: 'journal', citation: 'Bennett AJ, Reineke EL. Outcome following gastrointestinal tract decontamination and intravenous fluid diuresis in cats with known lily ingestion: 25 cases (2001-2010). J Am Vet Med Assoc. 2013;242(8):1110-1116. doi:10.2460/javma.242.8.1110.', relevance: '貓百合中毒治療結果' },
     { type: 'journal', citation: 'Markert C, Heilmann RM, Kiwitz D, et al. Intravenous lipid emulsion for the treatment of poisonings in 313 dogs and 100 cats. Front Vet Sci. 2023;10:1272705. doi:10.3389/fvets.2023.1272705.', relevance: '脂肪乳劑（ILE）解毒大型回顧（近期實證）' },
