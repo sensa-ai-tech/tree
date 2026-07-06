@@ -4781,12 +4781,12 @@ const contentSCC: NodeContent = {
 const contentInsulinoma: NodeContent = {
   id: 'CONTENT-ONCO-L3-015',
   node_id: 'ONCO-L3-015',
-  version: 1,
+  version: 2,
   summary: '胰島素瘤（Insulinoma）是犬最常見的功能性胰臟內分泌腫瘤，起源於胰臟 β 細胞，會過度分泌胰島素造成低血糖。中大型犬好發，中位年齡 9 到 10 歲。臨床表現是發作性虛弱、癲癇、collapse，符合 Whipple\'s triad（低血糖加低血糖症狀加給糖後症狀緩解）。診斷依據是禁食低血糖伴不適當的高胰島素。手術切除是首選治療，術後中位存活 12 到 18 個月。內科管理包括 Diazoxide 跟頻繁小餐。',
   learning_objectives: [
     '說明 Insulinoma 的病理生理機轉（β 細胞胰島素過度分泌 → 低血糖）',
     '描述 Whipple\'s triad 並應用於臨床診斷',
-    '解釋 Amended Insulin-to-Glucose Ratio（AIGR）的計算與臨床意義',
+    '說明現行診斷（配對低血糖＋不適當胰島素），並理解 AIGR 已列為過時、不建議單獨使用',
     '擬定 Insulinoma 的診斷檢查流程（禁食試驗、影像學定位）',
     '比較手術治療與內科管理的適應症和預後',
     '掌握低血糖急救的處理步驟（dextrose bolus）',
@@ -4797,9 +4797,9 @@ const contentInsulinoma: NodeContent = {
     'Whipple\'s triad：(1) 空腹或運動後低血糖症狀、(2) 血糖 < 60 mg/dL、(3) 給糖後症狀緩解',
     '低血糖 + 血清胰島素不適當偏高（insulin > 正常下限 when glucose < 60 mg/dL）為診斷關鍵',
     '手術為首選治療：胰臟部分切除（partial pancreatectomy），術中肉眼檢查+觸診定位腫瘤',
-    'Diazoxide（benzothiadiazine）為首選內科藥物，抑制胰島素分泌、促進肝醣分解和糖質新生',
-    '低血糖急救：50% dextrose 稀釋成 12.5-25% 緩慢 IV bolus（0.5-1 mL/kg），避免快速推注（刺激更多胰島素分泌）',
-    '約 50% 為惡性（regional/distant metastasis），肝轉移最常見',
+    'Diazoxide 為首選內科藥物（起始 5 mg/kg PO q12h、可上調至最高 30 mg/kg q12h）：抑制胰島素分泌、促糖質新生/肝醣分解、抑組織攝糖',
+    '低血糖急救：dextrose 稀釋（約 1:2-1:4，達 ~10-25%）緩慢 IV、給控制症狀所需最小量、不追求血糖正常化；避免快速大量（刺激更多胰島素分泌）',
+    '絕大多數為惡性（>95%，與人類 ~80% 良性相反）；約 40-50% 確診時已有可見轉移，最常見於區域淋巴結與肝臟（Buishand 2022）',
   ],
   body: `# 胰島素瘤 (Insulinoma)
 
@@ -4851,14 +4851,14 @@ Insulinoma 的臨床表現具有間歇性和發作性的特點，症狀常在空
 
 ### 實驗室檢查
 - 血糖：禁食後（或發作時）血糖 < 60 mg/dL。注意：隨機血糖可能正常（因 counter-regulatory hormones）
-- 血清胰島素：在低血糖時同步測量，若胰島素 > 正常下限（不適當偏高），高度支持 insulinoma
-- AIGR（Amended Insulin-to-Glucose Ratio）：= [血清胰島素 (μU/mL) × 100] ÷ [血糖 (mg/dL) - 30]。AIGR > 30 高度支持 insulinoma。注意：血糖 ≤ 30 mg/dL 時公式不適用
-- 禁食試驗：若隨機血糖正常，可進行 12-72 小時禁食試驗（住院監控下），每 1-2 小時測血糖和胰島素，直到血糖 < 60 mg/dL
+- **血清胰島素（配對取樣，現行金標準）**：低血糖時（血糖 <60 mg/dL / <3.5 mmol/L）同步測胰島素，若不適當偏高（>正常下限；Buishand 建議 >10 μU/mL）高度支持 insulinoma——不需絕對值很高
+- ⚠️ **AIGR（Amended Insulin-to-Glucose Ratio）已過時、不建議單獨使用**：公式 = [胰島素(μU/mL)×100]÷[血糖(mg/dL)−30]，AIGR>30 曾為傳統閾值；但現行文獻（Buishand 2022）認為各種 insulin:glucose 比值**特異性差、偽陽性高**（肝病、敗血症、非胰島腫瘤皆可升高，且部分 insulinoma 犬 AIGR 反而正常），禁食計算過程亦有誘發低血糖風險，已列為 obsolete。現行以**配對取樣**診斷（見上）。
+- 禁食試驗：若隨機血糖正常，可進行 12-72 小時禁食試驗（住院監控下），每 1-2 小時測血糖和胰島素，直到血糖 < 60 mg/dL（<3.5 mmol/L）時配對測胰島素
 
 ### 影像學定位
-- 腹部超音波：可偵測胰臟腫塊，但 insulinoma 通常很小（< 1-2 cm），超音波偵測率僅約 30-50%
-- CT（雙期增強掃描）：偵測率高於超音波（約 50-70%），動脈期增強為特徵。也可評估肝臟轉移
-- 術中肉眼檢查/觸診：為定位的最可靠方法，仔細檢查整個胰臟和肝臟
+- 腹部超音波：偵測率約 25-40%（文獻 23-75%、操作者依賴），腫瘤常很小（< 1-2 cm）
+- 增強 CT（首選**三相 triple-phase**）：原發瘤偵測率約 **96%**（傳統單/雙相約 71%）；惟腫瘤在胰內的精確定位準確率僅約 50%；淋巴結轉移敏感度約 67%、肝轉移約 75%（Buishand 2022）
+- 術中觸診/探查性剖腹：**偵測原發及轉移病灶最可靠的方法**，仔細檢查整個胰臟和肝臟
 
 ### 排除其他低血糖原因
 - 肝功能不全（低白蛋白、BUN 降低、膽酸升高）
@@ -4880,23 +4880,23 @@ Insulinoma 的臨床表現具有間歇性和發作性的特點，症狀常在空
 適用於不宜手術、拒絕手術、術後復發或轉移性患犬：
 
 - 飲食管理：頻繁小餐（每天 4-6 餐），高蛋白質、高脂肪、高複合碳水化合物飲食。避免單純糖類（刺激更多胰島素分泌）。避免空腹和劇烈運動
-- Diazoxide：5-10 mg/kg PO BID，首選內科藥物。機轉：抑制 β 細胞胰島素分泌 + 促進肝醣分解 + 促進糖質新生。副作用：嘔吐、腹瀉、食慾下降
+- Diazoxide：**起始 5 mg/kg PO q12h，依需要上調至最高 30 mg/kg q12h（≈60 mg/kg/day）**，首選內科藥物。機轉：抑制 β 細胞胰島素分泌 + 促糖質新生/肝醣分解 + 抑制組織攝糖。副作用：嘔吐、腹瀉、食慾下降
 - Prednisone/Prednisolone：0.25-0.5 mg/kg PO BID。機轉：促進糖質新生、拮抗胰島素作用。長期使用的副作用：PU/PD、肌肉萎縮、醫源性 Cushing
 - Octreotide（Somatostatin analogue）：10-40 μg/dog SC BID-TID。抑制胰島素分泌，但療效個體差異大
 - Streptozotocin：針對 β 細胞的化療藥物，需大量生理食鹽水利尿防止腎毒性。使用經驗有限，不是常規推薦
 
 ### 低血糖急救
-- 緊急處理：50% dextrose 稀釋為 12.5-25%，IV bolus 0.5-1 mL/kg 的 25% dextrose，緩慢推注（5-10 分鐘）
+- 緊急處理：dextrose **稀釋（約 1:2-1:4，達 ~10-25%）緩慢 IV（5-10 分鐘）**，給**控制症狀所需最小量、不追求血糖正常化**（Buishand 2022：20% glucose 1 mL/kg over 5-10 min）
 - 維持輸液：2.5-5% dextrose in 0.9% NaCl CRI，維持血糖 60-120 mg/dL
-- 注意：避免快速推注高濃度 dextrose，可能刺激腫瘤 β 細胞分泌更多胰島素，造成反彈性低血糖
+- 注意：避免快速大量高濃度 dextrose，會刺激（腫瘤）胰島素分泌更多、造成反彈性低血糖
 - 居家急救：飼主可給予少量 corn syrup / honey 塗抹牙齦
 
 ## 六、預後 (Prognosis)
 
 ### 手術預後
-- 無轉移（Stage I）：手術後中位存活 12-18 個月
-- 有轉移（Stage II/III）：手術 + 內科管理，中位存活 6-12 個月
-- 手術成功後：約 50-70% 會在 6-18 個月後復發（低血糖重現）
+- 術後 MST 與分期強相關（Cleland 2020，n=49）：**Stage I 約 766 天（~25 個月）；Stage II 約 574 天（~19 個月）；Stage III 約 182 天（~6 個月）；整體 MST 561 天**（早期 Caywood 1988：Stage I ~18 個月、Stage III ~6 個月）。**⚠️ Stage II 存活接近 Stage I，勿與 Stage III 混為一談**。
+- 手術+內科（復發時加 prednisolone）可延長存活（Polton 2007：手術 785 天、加 prednisolone 1316 天）。
+- 手術後低血糖初期多緩解，但長期預後保守：**約 40-45% 於術後 2 年內復發**（中位無病間隔 ~9-16 個月）。
 
 ### 臨床分期（Modified WHO）
 - Stage I：胰臟腫瘤，無轉移
@@ -4913,22 +4913,22 @@ Insulinoma 的臨床表現具有間歇性和發作性的特點，症狀常在空
 
 - 台灣犬隻以中大型犬（Labrador、Golden Retriever、German Shepherd）為多，insulinoma 並非罕見
 - 需與其他低血糖原因鑑別：幼犬/toy breed 低血糖、Addison's disease、肝功能不全
-- Diazoxide 在台灣取得管道有限，需透過專案進口或動物醫院自行調劑
+- **口服 Diazoxide（Proglycem 口服懸浮液）在台灣未取得一般藥證**，屬罕見疾病專案進口藥（經食藥署專案進口、由罕病物流中心配送，人用適應症為 PHHI）；台灣核准的 diazoxide 多為注射劑（高血壓危象用），非本適應症所需劑型。實務上多依賴專案進口人用製劑或專門調劑藥局配製
 - 腹部超音波為初步定位工具，CT 增強掃描在大型教學醫院可執行
 - 飼主教育重點：頻繁小餐、避免空腹和劇烈運動、居家低血糖急救處理
 
 [圖片:Insulinoma 診斷與治療決策流程圖，低血糖鑑別 → 禁食試驗 → 影像定位 → 手術/內科管理]`,
-  clinical_pearl: '「低血糖時胰島素卻不低」是 insulinoma 的核心診斷概念。正常低血糖時胰島素應被抑制至極低；若低血糖時胰島素仍 > 正常下限（即使不是特別高），即屬「不適當偏高」，高度支持 insulinoma。不需要胰島素絕對值很高才能診斷。\n\n低血糖急救的陷阱：避免快速推注高濃度 dextrose（50%），這會刺激腫瘤性 β 細胞分泌更多胰島素，造成反彈性低血糖。應稀釋為 12.5-25% 後緩慢推注。\n\n【台灣流行病學】台灣中大型犬飼養比例高，insulinoma 並非少見。許多患犬初期以「癲癇」或「後肢無力」就診被誤導至神經科方向，測量血糖是低成本高收益的篩檢步驟。任何中老年大型犬的新發癲癇都應先排除低血糖。',
+  clinical_pearl: '「低血糖時胰島素卻不低」是 insulinoma 的核心診斷概念。正常低血糖時胰島素應被抑制至極低；若低血糖時胰島素仍 > 正常下限（即使不是特別高），即屬「不適當偏高」，高度支持 insulinoma。不需要胰島素絕對值很高才能診斷。\n\n低血糖急救的陷阱：避免快速大量推注高濃度 dextrose（50%），會刺激（腫瘤）胰島素分泌更多、造成反彈性低血糖。應稀釋（約 1:2-1:4，~10-25%）後緩慢推注、給控制症狀所需最小量。\n\n【台灣流行病學】台灣中大型犬飼養比例高，insulinoma 並非少見。許多患犬初期以「癲癇」或「後肢無力」就診被誤導至神經科方向，測量血糖是低成本高收益的篩檢步驟。任何中老年大型犬的新發癲癇都應先排除低血糖。',
   common_mistakes: [
     '中老年犬新發癲癇直接進行腦部 MRI 而未先測血糖，insulinoma 是可治療的低血糖原因',
     '隨機血糖正常即排除 insulinoma，需在低血糖發作時同步測胰島素，或進行禁食試驗',
     '快速靜脈推注 50% dextrose，刺激更多胰島素分泌造成反彈性低血糖，應稀釋後緩慢給予',
-    '術後血糖正常即認為治癒，約 50-70% 會在 6-18 個月後復發，需長期監控',
+    '術後血糖正常即認為治癒——約 40-45% 於 2 年內復發（中位無病間隔 ~9-16 個月），需長期監控',
     '餵食單純糖類（果糖、蜂蜜大量給予）來治療慢性低血糖，會刺激更多胰島素分泌，應用複合碳水化合物和蛋白質',
   ],
   disease_data: {
     signalment: '中大型犬，中位年齡 9-10 歲（範圍 3-14 歲）。German Shepherd、Irish Setter、Golden Retriever、Boxer、Standard Poodle 較常見。無明顯性別偏好。貓極罕見。',
-    etiology: '確切病因不明。胰臟 β 細胞發生腫瘤性轉化，可能涉及 MEN1 基因或其他腫瘤抑制基因突變。約 50% 為惡性（有轉移能力），約 50% 為良性（局限於胰臟）。',
+    etiology: '確切病因不明。胰臟 β 細胞發生腫瘤性轉化，可能涉及 MEN1 等基因。犬 insulinoma 絕大多數為惡性（>95%，與人類 ~80% 良性腺瘤相反）；約 40-50% 確診/手術時已有可見轉移，最常見於區域（胰周/腹腔）淋巴結與肝臟（Buishand 2022）。',
     pathogenesis: '胰臟 β 細胞腫瘤性轉化 → 喪失血糖負回饋調控 → 不受調節地持續分泌胰島素 → 持續性低血糖 → 神經性低血糖症狀（大腦能量不足）+ 腎上腺素代償反應 → 反覆發作性虛弱/癲癇/collapse',
     clinical_signs: [
       { sign: '發作性虛弱/無力', category: 'primary', description: '最常見症狀（65-80%），空腹或運動後出現，數分鐘內可自行緩解' },
@@ -4954,9 +4954,9 @@ Insulinoma 的臨床表現具有間歇性和發作性的特點，症狀常在空
       { condition: '幼犬/Toy breed 低血糖', key_differentiator: '幼齡或極小型犬，肝醣儲存不足；禁食即發作，給糖即緩解' },
       { condition: '外源性胰島素過量', key_differentiator: '病史（糖尿病治療中犬）、胰島素極高但 C-peptide 低（外源性 insulin 不含 C-peptide）' },
     ],
-    diagnostic_workup: '工作流程：先做 CBC/BCS（基礎評估、排除肝病），接著空腹血糖（小於 60 mg/dL 時同步測血清 insulin），如果隨機血糖正常就住院禁食 12 到 72 小時做禁食試驗監控，再算 AIGR，腹超定位胰臟腫塊並篩檢肝轉移，CT 雙期增強做精準定位跟分期，最後胸腔 X 光看遠端轉移。',
-    treatment_protocol: '首選手術：partial pancreatectomy ± 肝轉移灶活檢/切除。術前穩定血糖（dextrose CRI）。術後監控血糖 48 小時。內科管理（不宜手術者）：頻繁小餐 + Diazoxide 5-10 mg/kg PO BID + Prednisone 0.25-0.5 mg/kg PO BID。低血糖急救：25% dextrose 0.5-1 mL/kg slow IV bolus + 2.5-5% dextrose CRI。',
-    prognosis: 'Stage I 手術後：MST 12-18 個月。Stage II/III：MST 6-12 個月（手術 + 內科）。僅內科管理：MST 約 6-12 個月。約 50-70% 術後 6-18 個月復發。術後血糖正常化為良好預後指標。',
+    diagnostic_workup: '工作流程：先做 CBC/生化（基礎評估、排除肝病），接著空腹血糖（<60 mg/dL / <3.5 mmol/L 時**配對同步測血清 insulin**，不適當偏高即支持）；隨機血糖正常則住院禁食 12-72 小時試驗；**AIGR 已過時、不建議單獨使用**；腹超初步定位＋三相增強 CT 精準定位/分期（術中觸診/剖腹最可靠），胸腔 X 光/CT 看遠端轉移。',
+    treatment_protocol: '首選手術：partial pancreatectomy ± 肝轉移灶活檢/切除。術前穩定血糖（dextrose CRI）。術後監控血糖 48 小時。內科管理（不宜手術者）：頻繁小餐 + Diazoxide（起始 5 mg/kg PO q12h，上調至最高 30 mg/kg q12h）+ Prednisolone 0.25-0.5 mg/kg PO BID。低血糖急救：稀釋 dextrose（~10-25%）緩慢 IV、給最小必要量 + 2.5-5% dextrose CRI。劑量須依仿單與獸醫核對。',
+    prognosis: '術後 MST 與分期強相關（Cleland 2020，n=49）：Stage I ~766 天(~25mo)、Stage II ~574 天(~19mo，接近 Stage I)、Stage III ~182 天(~6mo)，整體 561 天。手術+內科（復發加 prednisolone）可延長（Polton 2007：手術 785 天、加 pred 1316 天）。約 40-45% 於術後 2 年內復發（中位無病間隔 ~9-16 個月）。術後血糖正常化為良好預後指標。',
     monitoring: '術後：每 2-4 小時測血糖共 48 小時 → 穩定後每 1-2 個月追蹤空腹血糖 → 每 3 個月腹部超音波（胰臟復發/肝轉移）→ 低血糖復發時重新評估手術或調整內科藥物。內科管理者：每 2-4 週追蹤血糖和症狀，漸進調整 Diazoxide 劑量。',
     owner_communication: 'Insulinoma 是可以治療但通常沒辦法治癒的腫瘤。手術可以明顯延長存活時間、改善生活品質。飼主要學居家低血糖急救（corn syrup 塗抹牙齦）。飲食管理是長期照護的關鍵：少量多餐、避免空腹跟劇烈運動。內科藥物可以有效控制低血糖，但可能要慢慢加量。要定期回診監控。',
   },
@@ -4966,13 +4966,16 @@ Insulinoma 的臨床表現具有間歇性和發作性的特點，症狀常在空
     { position: '病理生理段落後', type: 'flowchart', description: 'Insulinoma 低血糖病理機轉示意圖' },
     { position: '治療段落後', type: 'flowchart', description: 'Insulinoma 診斷與治療決策流程圖' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '診斷段落後', type: 'decision_tree', description: '互動：中老年犬發作性虛弱/新發癲癇 → 測血糖 → 低血糖時配對測胰島素（不適當偏高）→ 影像定位（超音波/CT）→ 手術 vs 內科' },
+  ],
   drug_api_links: ['Diazoxide', 'Prednisone', 'Dextrose', 'Octreotide'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 24: Tumors of the Endocrine System，Insulinoma Section.', relevance: 'Insulinoma 完整章節' },
-    { type: 'journal', citation: 'Polton GA et al. Survival analysis of dogs with advanced insulinoma treated with surgery and medical therapy. J Vet Intern Med. 2007;21(5):1060-1065.', relevance: '犬 insulinoma 手術與內科治療存活分析' },
-    { type: 'journal', citation: 'Tobin RL et al. Outcome of surgical versus medical treatment of dogs with beta cell neoplasia: 39 cases (1990-1997). J Am Vet Med Assoc. 1999;215(2):226-230.', relevance: '犬 insulinoma 手術 vs 內科比較' },
-    { type: 'guideline', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 53: Disorders of the Endocrine Pancreas，Insulinoma.', relevance: '內科教科書 insulinoma 章節' },
+    { type: 'journal', citation: 'Buishand FO. Current Trends in Diagnosis, Treatment and Prognosis of Canine Insulinoma. Vet Sci. 2022;9(10):540. doi:10.3390/vetsci9100540.', relevance: '現行綜述（≤5年）：犬 insulinoma 診斷/治療/預後（含診斷方法演變）' },
+    { type: 'journal', citation: 'Cleland NT, et al. Outcome after surgical management of canine insulinoma in 49 cases. Vet Comp Oncol. 2020;19(3):428-441. doi:10.1111/vco.12628.', relevance: '近年犬 insulinoma 手術治療結果（49 例，預後溯源）' },
+    { type: 'journal', citation: 'Tobin RL, et al. Outcome of surgical versus medical treatment of dogs with beta cell neoplasia: 39 cases (1990-1997). J Am Vet Med Assoc. 1999;215(2):226-230. doi:10.2460/javma.1999.215.02.226.', relevance: '犬 insulinoma 手術 vs 內科治療比較（39 例）' },
+    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology. 6th ed. Elsevier; 2020.', relevance: '腫瘤科教科書，內分泌腫瘤/insulinoma 章節' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine. 6th ed. Elsevier; 2020.', relevance: '內科教科書，內分泌胰臟疾病/insulinoma 章節' },
   ],
   is_current: true,
   created_at: now,
