@@ -5281,8 +5281,8 @@ Massive 型以局部侵犯為主，轉移率低（0 到 5%），手術切除可�
 const contentMultipleMyeloma: NodeContent = {
   id: 'CONTENT-ONCO-L3-017',
   node_id: 'ONCO-L3-017',
-  version: 1,
-  summary: '多發性骨髓瘤（Multiple Myeloma）是犬第二常見的造血系統腫瘤（僅次於淋巴瘤），由骨髓漿細胞惡性增殖引起。臨床上會看到「四病」：骨溶解性病變、單株免疫球蛋白血症（M spike）、Bence Jones 蛋白尿、骨髓漿細胞浸潤。診斷至少要符合兩項。高鈣血症跟高黏滯度症候群是常見也有臨床意義的副腫瘤表現。標準治療方案是 Melphalan 0.1 mg/kg PO SID × 10 天（後續脈衝療法）加 Prednisone。',
+  version: 2,
+  summary: '多發性骨髓瘤（Multiple Myeloma, MM）是相對少見的犬造血系統腫瘤（約占造血腫瘤 8%、遠少於淋巴瘤；「第二常見」是人醫排序、不適用於犬），由骨髓漿細胞惡性克隆性增殖引起。診斷採「四取二」非加權準則：骨溶解性病變、單株免疫球蛋白血症（SPE M spike）、Bence Jones 蛋白尿、骨髓漿細胞 > 20%（高鈣血症與高黏滯度為副腫瘤表現、非診斷準則）。首選治療為 Melphalan（0.1 mg/kg PO SID × 7-10 天誘導、後降 0.05 mg/kg 維持）＋ Prednisone；整體反應率約 92%（CR 43%＋PR 49%）、MST 約 540 天。犬無經驗證的臨床分期系統，改以預後因子（高鈣、Bence Jones 蛋白尿、治療反應）分層。',
   learning_objectives: [
     '說明犬多發性骨髓瘤的四項診斷標準',
     '描述血清蛋白電泳 M spike 的診斷意義',
@@ -5291,25 +5291,25 @@ const contentMultipleMyeloma: NodeContent = {
     '比較骨髓瘤與淋巴瘤在造血系統腫瘤鑑別中的差異',
   ],
   key_points: [
-    '犬第二常見的造血系統腫瘤（僅次於淋巴瘤），中老年犬好發',
-    '診斷四標準（至少符合兩項）：骨溶解性病變、M spike、Bence Jones 蛋白尿、骨髓漿細胞 > 20%',
-    '血清蛋白電泳（SPE）可見 M spike（monoclonal gammopathy）為關鍵診斷工具',
-    '高鈣血症（15-20%）和高黏滯度症候群為重要副腫瘤表現',
-    'Melphalan 0.1 mg/kg PO SID × 10 天，後續 0.05 mg/kg SID 脈衝療法 + Prednisone',
-    '治療反應率 43-93%，中位存活時間 540 天（約 18 個月）',
+    '相對少見的犬造血系統腫瘤（約占造血腫瘤 8%、遠少於淋巴瘤），中老年犬好發；「第二常見」是人醫排序、不適用於犬',
+    '診斷四取二（非加權）：骨溶解性病變、SPE M spike、Bence Jones 蛋白尿、骨髓漿細胞 > 20%；高鈣與高黏滯度為副腫瘤、非診斷準則',
+    '血清蛋白電泳（SPE）見單株 M spike 為關鍵診斷工具；犬 IgG≈IgA（各約 40-50%），非以 IgG 為主（人醫數據勿直接套用）',
+    '高黏滯度症候群單分子關聯強度 IgM > IgA > IgG；但犬 IgM 罕見，臨床最常伴 HVS 的是 IgA',
+    'Melphalan 0.1 mg/kg PO SID × 7-10 天誘導 → 0.05 mg/kg SID 維持（或 7 mg/m² × 5 天脈衝，Fernández 2018 相當）＋ Prednisone',
+    '整體反應率約 92%（CR 43%＋PR 49%）、MST 約 540 天；犬無經驗證分期系統，以預後因子分層',
   ],
   body: `# 多發性骨髓瘤 (Multiple Myeloma)
 
 ## 一、病理機制 (Pathophysiology)
 
 ### 概述
-多發性骨髓瘤起源於骨髓中成熟漿細胞（plasma cell）的惡性增殖。是犬第二常見的造血系統腫瘤（占所有造血腫瘤 8%），中老年犬好發（中位年齡 8 到 9 歲），德國牧羊犬發病率可能比較高。
+多發性骨髓瘤（MM）起源於骨髓中成熟漿細胞（plasma cell）的惡性克隆性增殖。它其實是「相對少見」的造血系統腫瘤——約占犬所有造血（淋巴網狀）系統腫瘤的 8%、占所有惡性腫瘤 < 1%（另約占原發＋繼發性骨腫瘤 3.6%）。犬造血系統惡性腫瘤中，淋巴瘤獨占約 83%，MM 遠少於淋巴瘤，並非「第二常見」（該排序是人醫的分類，不可直接套用於犬）。好發於中老年犬（中位年齡 8 到 9 歲）；德國牧羊犬在多個回顧性病例系列被觀察到通報比例較高，但成因不明、屬觀察性關聯（可能部分反映品種普及度／轉診偏差），並非量化驗證過的品種傾向。
 
 ### 病理機轉
-惡性漿細胞在骨髓中克隆性增殖，跑出四大病理效應。第一是單株免疫球蛋白過度分泌（M protein），造成高蛋白血症跟高黏滯度症候群。第二是骨髓基質破壞（分泌 RANKL、MIP-1α），跑出骨溶解性病變、病理性骨折跟高鈣血症。第三是正常造血被抑制，跑出貧血、血小板減少、免疫低下。第四是免疫球蛋白輕鏈過量分泌，跑出 Bence Jones 蛋白尿、腎小管損傷、腎衰竭。
+惡性漿細胞在骨髓中克隆性增殖，造成四大病理效應。第一是單株免疫球蛋白過度分泌（M protein），造成高蛋白血症跟高黏滯度症候群。第二是骨髓基質破壞（分泌 RANKL、MIP-1α 等活化破骨細胞），跑出骨溶解性病變、病理性骨折跟高鈣血症。第三是正常造血被排擠/抑制，跑出貧血、血小板減少、免疫球蛋白正常組分下降（免疫低下）。第四是免疫球蛋白輕鏈過量分泌，跑出 Bence Jones 蛋白尿、腎小管損傷、腎衰竭。
 
 ### 免疫球蛋白分型
-最常見的是 IgG（60 到 70%）跟 IgA（20 到 30%）。少見的有 IgM（Waldenstrom macroglobulinemia）、輕鏈型。IgA 型高黏滯度症候群發生率比較高（因為 IgA 容易多聚合）。
+犬 MM 以 IgG 型與 IgA 型「兩者大致等比」（各約占 40 到 50% 病例）——並非以 IgG 為主。常見錯誤是把人醫數據（IgG 約 60 到 70%、IgA 約 20 到 30%）直接搬到犬身上；犬的實況是 IgG≈IgA。IgM 型（巨球蛋白血症／Waldenström）罕見，純輕鏈型（Bence Jones only）myeloma 亦僅零星報告。（貓則以 IgG 型為主，約 80%。）
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -5319,79 +5319,129 @@ const contentMultipleMyeloma: NodeContent = {
 | 骨痛/跛行 | 骨溶解性病變 | 50-60% |
 | 嗜睡/虛弱 | 貧血、高鈣 | 常見 |
 | PU/PD | 高鈣血症、腎損傷 | 25-40% |
-| 出血傾向 | M protein 干擾凝血 | 20-30% |
+| 出血傾向 | M protein 干擾血小板/凝血因子 | 20-30% |
 | 視覺障礙 | 高黏滯度→視網膜血管病變 | 10-15% |
-| 神經症狀 | 高黏滯度、脊椎骨溶解 | 少見 |
+| 神經症狀 | 高黏滯度、脊椎骨溶解壓迫 | 少見 |
 
-### 高黏滯度症候群（Hyperviscosity Syndrome）
-- 發生率：約 20%（IgA > IgM > IgG）
-- 表現：眼底出血/視網膜剝離、鼻出血、心衰竭、神經症狀
-- 緊急處理：plasmapheresis（血漿置換）或放血後輸注等量晶體液
+### 高黏滯度症候群（Hyperviscosity Syndrome, HVS）
+- 發生率：犬 MM 約 20%
+- **同型關聯（重要，勿倒置）**：以「單分子黏滯度／關聯強度」排序為 **IgM > IgA > IgG**。IgM 為五聚體（約 950 到 970 kDa），單分子黏滯度最高、是 HVS 最經典成因（人醫 Waldenström 巨球蛋白血症即為代表）；IgA（約 320 kDa）因可形成二聚體並聚合而居中；IgG（約 180 kDa 單體）最低、通常要極高濃度才引發。但因犬 IgM 骨髓瘤罕見、而 IgA 與 IgG 骨髓瘤發生率相當，所以在犬 MM 病例中，臨床「最常伴隨 HVS」的同型是 IgA。務必區分「同型引發 HVS 的單分子傾向」（IgM 最高）與「同型在犬 MM 中的出現頻率」（IgA 較顯著）——舊敘述把 IgM 與 IgA 順序顛倒是錯的。
+- 表現：眼底出血/視網膜剝離、鼻出血、心衰竭、神經症狀、意識改變
+- 緊急處理：plasmapheresis（血漿置換）或治療性放血（10 到 20 mL/kg）後輸注等量晶體液；同時啟動化療降低 M protein
 
-### 診斷標準（至少符合兩項）
+### 診斷準則（四項中至少符合兩項）
+> 犬 MM 採「四取二」非加權準則（MacEwen & Hurvitz 1977 提出、沿用至今）：
 1. 骨溶解性病變：全身骨骼 X 光可見「打孔式」（punched-out）溶骨性病灶
 2. 單株免疫球蛋白血症：血清蛋白電泳（SPE）見 M spike
 3. Bence Jones 蛋白尿：尿液蛋白電泳檢測免疫球蛋白輕鏈
 4. 骨髓漿細胞增生 > 20%：骨髓穿刺/活檢確認
 
+**閾值註記**：骨髓漿細胞閾值歷史上非固定——最早的 Matus 1986 系列以 > 5% 漿細胞＋單株 gammopathy 診斷，部分回顧引用 > 10 到 20%，現行主流採 > 20%。
+**⚠️ 高鈣血症與高黏滯度症候群「不是」診斷準則**：兩者是副腫瘤（paraneoplastic）表現（PTHrP／破骨細胞骨吸收／高球蛋白），屬預後/併發症範疇，不可拿來湊「四取二」。（與 CPATH 骨髓抹片節點一致。）
+
 ### 診斷流程
-1. CBC/BCS：貧血、高蛋白（globulin 升高）、高鈣血症
-2. 血清蛋白電泳（SPE）：M spike 確認
-3. 尿液蛋白電泳：Bence Jones 蛋白
-4. 全身骨骼 X 光：溶骨性病灶（脊椎、骨盆、四肢長骨）
+1. CBC/生化：貧血、高蛋白（globulin 選擇性升高）、高鈣血症、氮血症
+2. 血清蛋白電泳（SPE）：確認單株 M spike（區分 monoclonal vs polyclonal）
+3. 尿液蛋白電泳：Bence Jones（輕鏈）蛋白
+4. 全身骨骼 X 光：溶骨性病灶（脊椎、骨盆、肋骨、四肢長骨）
 5. 骨髓穿刺：漿細胞比例 > 20%
+> 台灣現況：SPE 於大型轉診/教學醫院可執行；Bence Jones 尿液蛋白電泳多外送人醫實驗室；骨髓穿刺常取髂骨翼或肱骨近端，需適當鎮靜。
 
 ## 三、治療策略 (Treatment)
 
-### 化學治療（首選）
-Melphalan + Prednisone 方案：
-- 誘導期：Melphalan 0.1 mg/kg PO SID × 10 天 + Prednisone 0.5 mg/kg PO SID
-- 維持期：Melphalan 0.05 mg/kg PO SID（持續給藥）或脈衝療法（0.1 mg/kg × 10 天，每 3 週一個週期）
-- 監控：每 2 週 CBC（骨髓毒性，嗜中性球減少、血小板減少）
-- 替代方案：Cyclophosphamide 可替代 Melphalan 用於不耐受病例
+### 化學治療（首選）— Melphalan + Prednisone
+- **誘導期**：Melphalan 0.1 mg/kg PO SID × 7 到 10 天 ＋ Prednisone 0.5 mg/kg PO SID × 10 天
+- **維持期**：Melphalan 降為 0.05 mg/kg PO SID 持續給藥（至復發或骨髓抑制）；Prednisone 於 10 天後改 0.5 mg/kg PO 隔日（EOD）給 30 到 60 天後停，melphalan 則持續
+- **脈衝式替代**：Melphalan 7 mg/m² PO SID × 連續 5 天、每 21 天一循環——Fernández 2018 JVIM 顯示每日與脈衝方案療效/耐受性相當
+- **監控**：每 2 週 CBC；劑量限制毒性是骨髓抑制，尤其「延遲性血小板減少」
+- **復發/抗性 rescue**：cyclophosphamide、chlorambucil、lomustine（CCNU）、VAD、thalidomide、bortezomib（犬資料有限）
+> 台灣現況：Melphalan 需透過藥局調劑或專案進口，開立前確認取得管道。
 
-### 高鈣血症處理
-- 靜脈輸液（0.9% NaCl）促進鈣排泄
-- Furosemide 2-4 mg/kg IV（促進尿鈣排泄）
-- Prednisone（抑制骨吸收和腫瘤細胞）
-- Bisphosphonates（Pamidronate 1-2 mg/kg IV over 2-4 hr）
+### 高鈣血症處理（依序，勿顛倒）
+1. **先**以 0.9% NaCl IV 補足血管內容積、矯正脫水
+2. **待容積補足後**再給 Furosemide 2 到 4 mg/kg IV 促進鈣尿排泄（切勿在脫水未矯正前先利尿——會降低 GFR 與鈣清除、反而惡化高鈣），並於利尿期間持續輸液維持水合
+3. Prednisone 輔助降鈣（抑制骨吸收與腫瘤細胞）
+4. Bisphosphonate：Pamidronate 1 到 2 mg/kg（犬文獻範圍 0.65 到 2.0）稀釋於 0.9% NaCl、IV 緩慢輸注約 2 小時（可延長至 2 到 4 小時）；現多改用效價更高、輸注更短的 zoledronate
 
-### 高黏滯度緊急處理
-- Plasmapheresis（最有效但設備受限）
-- 放血（10-20 mL/kg）後等量晶體液置換
-- 同時啟動化療降低 M protein 分泌
+## 四、併發症與監控 (Complications & Monitoring)
 
-## 四、預後 (Prognosis)
+### 主要併發症
+- **腎衰竭**：輕鏈腎病＋高鈣＋高黏滯度多重打擊，為主要死因之一
+- **病理性骨折**：承重長骨/脊椎溶骨，脊椎病灶可壓迫脊髓
+- **敗血症/反覆感染**：正常免疫球蛋白下降＋化療骨髓抑制
+- **出血傾向**：M protein 干擾血小板功能與凝血因子
+- **高黏滯度危象**：視網膜剝離失明、心衰竭、神經症狀
 
-| 治療 | 反應率 | 中位存活時間 |
-|------|--------|------------|
-| Melphalan + Prednisone | 43-93% | 540 天（~18 個月） |
-| 未治療 |—| < 6 個月 |
+### 監控計畫
+| 時間點 | 項目 | 目標/警訊 |
+|--------|------|-----------|
+| 每 2 週 | CBC | 骨髓毒性（嗜中性球/血小板減少，尤其延遲性血小板↓）；血小板 < 100k 或嗜中性球 < 2000 需調藥 |
+| 每 4 到 6 週 | SPE M spike 高度 | 治療反應；M protein 下降 ≥ 50% 為部分緩解 |
+| 每 3 個月 | 腎功能、離子鈣 | 早期抓腎損傷/高鈣復發 |
+| 每 6 個月 | 全身骨骼 X 光 | 追蹤溶骨病灶穩定或新增 |
 
-### 預後因子
-- 不良因子：高鈣血症、Bence Jones 蛋白尿嚴重、骨髓浸潤廣泛、IgA 型
-- 良好因子：對化療快速反應（M protein 下降 > 50%）、IgG 型
-- 治療反應評估：每 4-6 週追蹤 SPE 中 M spike 高度
+## 五、預後 (Prognosis)
 
-## 五、台灣臨床相關性 (Taiwan Clinical Relevance)
+### ⚠️ 犬 MM「沒有」經驗證的臨床分期系統
+坊間常見的 Stage I/II/III 表其實是「人醫 Durie-Salmon 分期」的改編，Durie-Salmon 本身也從未在犬隻驗證，不應以「已建立之分期系統」呈現。權威立場（Vail, Withrow & MacEwen）：犬 MM「曾有人提出分期系統，但至今未賦予其預後意義」。犬改以「離散的預後因子」（非分期）做風險分層。
 
-- SPE（血清蛋白電泳）在台灣大型轉診醫院和部分教學醫院可執行
-- Melphalan 需透過藥局調劑或專案進口
-- Bence Jones 蛋白尿檢測：可外送至人醫實驗室
-- 骨髓穿刺：髂骨翼或肱骨近端穿刺，需適當鎮靜
-- 台灣臨床最常見的就診主訴為骨痛/跛行 + 高蛋白血症的意外發現
+### 預後因子（Matus 1986）
+- **負向因子**：高鈣血症、Bence Jones（輕鏈）蛋白尿、廣泛骨溶解
+- **最具預測力**：對治療的反應（M protein 下降幅度）
 
-[圖片:多發性骨髓瘤診斷與治療流程圖，SPE M spike + 骨溶解 + 骨髓穿刺 → Melphalan/Pred]`,
+### 存活數據
+| 情境 | 反應/存活 |
+|------|-----------|
+| Melphalan + Prednisone | 整體反應率約 92%（完全緩解 CR 約 43%＋部分緩解 PR 約 49%），MST 約 540 天（~18 個月） |
+| Fernández 2018 JVIM | MST 可達約 930 天 |
+| 僅 Prednisone / 未治療 | 單用 prednisone MST 約 220 天；未治療多僅數週至數月 |
+| IMWG 反應判定（Moore 2021 JVIM） | M protein 下降 ≥ 90% 者存活較長（630 天 vs 284 天） |
+
+> **勿把「43-93%」當反應率區間**：43% 是完全緩解率（CR）、不是區間下限；整體反應率約 92%（CR 43%＋PR 49%）。
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具 | 獸醫應用 | 現況 |
+|----------|----------|------|
+| 蛋白酶體抑制劑 bortezomib、免疫調節劑 thalidomide/lenalidomide | 難治性 MM 的 rescue | 犬僅少量報告，未成標準 |
+| 血清游離輕鏈（sFLC）定量 | 監控輕鏈型/微量殘留 | 犬尚未驗證，臨床仍靠 SPE |
+| IMWG 治療反應判定準則 | 客觀量化緩解程度 | Moore 2021 已回溯應用於犬（非診斷分期） |
+| 自體幹細胞移植（ASCT） | 人醫鞏固治療主力 | 犬不實際、未採用 |
+| 高效價 bisphosphonate（zoledronate） | 骨病變/高鈣控制 | 獸醫使用漸增，取代 pamidronate |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 主題 | 現況 | Evidence Level |
+|------|------|----------------|
+| 骨髓漿細胞診斷閾值（> 5% vs > 10-20% vs > 20%） | 現行主流 > 20%，但歷史值不一，缺前瞻驗證 | III（專家/教科書） |
+| 犬 MM 臨床分期系統 | 無經驗證系統，改以預後因子分層 | III |
+| Melphalan 每日 vs 脈衝式給藥 | Fernández 2018 顯示相當，但為回顧性 | II（回顧性對照） |
+| 新型藥物（bortezomib/IMiDs）在犬的角色 | 僅零星報告，療效/安全未定 | III |
+| 孤立性骨性漿細胞瘤（SOP）進展為 MM 的風險 | 犬近期小型系列 0/13 進展，與人醫不同 | III（小樣本病例系列） |
+
+## 八、近期更新 (Recent Updates)
+
+- **Moore 2021（JVIM）**：首度將人醫 IMWG「治療反應」判定準則回溯應用於犬分泌型 MM，M protein 下降 ≥ 90% 與較長存活相關（630 vs 284 天）——為犬 MM 提供客觀反應量化工具（非診斷分期）。
+- **Fernández 2018（JVIM）**：比較兩種 melphalan 方案（每日 vs 脈衝），療效與耐受性相當，MST 可達約 930 天，優於早期報告。
+- **Reising 2021（JSAP）**：孤立性骨性漿細胞瘤（SOP）13 例，0/13 進展為 MM、中位存活 912 天且對放療反應佳——顯示犬 SOP→MM 的進展風險遠低於人醫傳統認知。
+- **趨勢**：zoledronate 漸取代 pamidronate；蛋白酶體抑制劑於犬 MM 的探索性使用增加。
+
+[圖片:多發性骨髓瘤四大病理效應示意圖，M protein/骨溶解/造血抑制/輕鏈腎病]
+[圖片:犬骨髓瘤診斷與治療流程，SPE M spike + 骨溶解 + Bence Jones + 骨髓漿細胞>20% →（四取二）→ Melphalan/Prednisone]
+[互動:診斷準則自我檢核——勾選 4 項準則（溶骨/M spike/Bence Jones/骨髓漿細胞>20%），達 2 項即符合診斷；高鈣與高黏滯度標為「副腫瘤、非準則」]`,
   clinical_pearl: '看到老年犬有「不明原因的高蛋白血症」（total protein 超過 9 g/dL，主要是 globulin 升高）加上貧血加骨痛，腦中就要浮現「多發性骨髓瘤」這幾個字。下一步是做血清蛋白電泳（SPE），如果看到明確的 M spike，幾乎就確診了。\n\n高黏滯度症候群有個小技巧：眼底檢查是快速篩檢高黏滯度的方法，如果看到視網膜血管擴張扭曲、出血、視網膜剝離，就要高度懷疑。另外，驗血時離心後如果血清看起來異常濃稠（試管傾斜時流動很慢），也是高黏滯度的非正式線索。\n\n治療的好消息：犬骨髓瘤對 Melphalan 反應率很高，而且化療副作用相對可控（主要是骨髓抑制），很多飼主可以接受「口服藥回家吃」的治療模式。',
   common_mistakes: [
     '高蛋白血症只想到脫水：脫水是 albumin 跟 globulin 同時升高，骨髓瘤是 globulin 選擇性極度升高',
     '沒做血清蛋白電泳就排除骨髓瘤：total protein 可能「正常偏高」但 SPE 已經有 M spike',
     '骨痛或跛行只想到骨科問題：老年犬骨溶解性病變要做全身骨骼 X 光排除骨髓瘤',
-    '忽略 Melphalan 的骨髓毒性監控：沒每 2 週驗 CBC 會導致嚴重嗜中性球減少',
-    '把骨髓瘤跟漿細胞瘤（solitary plasmacytoma）混淆：後者是局部腫瘤、手術可以治癒',
+    '忽略 Melphalan 的骨髓毒性監控：沒每 2 週驗 CBC 會導致嚴重（尤其延遲性）血小板/嗜中性球減少',
+    '把骨髓瘤跟漿細胞瘤（solitary/extramedullary plasmacytoma）混淆：後者多為局部良性、手術切除治癒率約 90-95%，且犬 EMP 進展為 MM 屬罕見',
+    '把高鈣血症或高黏滯度當「診斷準則」湊四取二：兩者是副腫瘤表現、不在四項診斷準則內',
+    '照搬人醫數據：犬 IgG≈IgA（非 IgG 佔多數）、HVS 單分子傾向 IgM 最高（非 IgA）、且犬無經驗證的 Durie-Salmon 式臨床分期系統',
+    '高鈣血症在脫水未矯正前就先打 Furosemide：會降低 GFR 與鈣清除、反而惡化高鈣——必須先補容積再利尿',
   ],
   disease_data: {
-    signalment: '中老年犬，中位年齡 8 到 9 歲（範圍 2 到 15 歲）。德國牧羊犬發病率可能比較高。沒有明顯性別偏好。貓罕見。',
+    signalment: '中老年犬，中位年齡 8 到 9 歲（範圍 2 到 15 歲）。德國牧羊犬在多個回顧性系列被觀察到通報比例較高（觀察性關聯、成因不明，非量化驗證的品種傾向，可能部分反映品種普及度/轉診偏差）。無明顯性別偏好。貓罕見（且貓以 IgG 型為主，約 80%）。',
     etiology: '確切病因還不清楚。跟人類骨髓瘤相似，可能跟慢性抗原刺激導致漿細胞失控增殖、基因突變有關。',
     pathogenesis: '骨髓漿細胞克隆性增殖之後大量分泌單株免疫球蛋白（M protein），跑出高蛋白血症跟高黏滯度。同時骨質被破壞（RANKL/OPG 失衡）造成骨溶解跟高鈣血症。正常造血被抑制造成貧血、感染、出血。輕鏈腎病造成腎衰竭。最後跑出多器官功能障礙。',
     clinical_signs: [
@@ -5403,11 +5453,12 @@ Melphalan + Prednisone 方案：
       { sign: '反覆感染', category: 'secondary', description: '正常免疫球蛋白被抑制（免疫低下）' },
     ],
     staging: {
-      system: '犬多發性骨髓瘤臨床分期',
+      system: '犬 MM 無經驗證的臨床分期系統（坊間 Stage I/II/III 表屬人醫 Durie-Salmon 分期改編、從未在犬驗證；Vail: 曾有人提出分期但未賦予預後意義）。改以「離散預後因子」做風險分層。',
       stages: [
-        'Stage I：骨髓漿細胞增生但無全身症狀，< 2 處骨溶解',
-        'Stage II：介於 I 和 III 之間',
-        'Stage III：貧血 + 高鈣 + > 3 處骨溶解 + 腎衰竭',
+        '負向預後因子：高鈣血症',
+        '負向預後因子：Bence Jones（輕鏈）蛋白尿',
+        '負向預後因子：廣泛骨溶解',
+        '最具預測力：對治療的反應（M protein 下降幅度；Moore 2021 IMWG ≥90% 下降者存活 630 vs 284 天）',
       ],
     },
     differential_diagnosis: [
@@ -5418,8 +5469,8 @@ Melphalan + Prednisone 方案：
       { condition: '反應性漿細胞增生', key_differentiator: '多株增生（polyclonal），骨髓漿細胞通常 < 10%' },
     ],
     diagnostic_workup: '流程：CBC/BCS（看高蛋白、貧血、高鈣），血清蛋白電泳（M spike），尿液蛋白電泳（Bence Jones 蛋白），全身骨骼 X 光（溶骨性病灶），骨髓穿刺（漿細胞超過 20%），凝血功能（評估出血傾向），腎功能（Bence Jones 腎病）。',
-    treatment_protocol: '首選 Melphalan 0.1 mg/kg PO SID × 10 天（誘導），接著 0.05 mg/kg PO SID 或脈衝 0.1 mg/kg × 10 天 q3w（維持），加 Prednisone 0.5 mg/kg PO SID。每 2 週 CBC 監控骨髓毒性。高鈣血症用 0.9% NaCl IV 加 Furosemide 2 到 4 mg/kg 加 Pamidronate。高黏滯度用 plasmapheresis 或放血加晶體液置換。',
-    prognosis: 'Melphalan 加 Prednisone 治療反應率 43 到 93%，MST 大約 540 天（18 個月）。未治療 MST 不到 6 個月。預後不良因子有高鈣血症、嚴重 Bence Jones 蛋白尿、腎衰竭、IgA 型。',
+    treatment_protocol: '首選 Melphalan 0.1 mg/kg PO SID × 7 到 10 天（誘導）→ 0.05 mg/kg PO SID 維持（至復發或骨髓抑制），或脈衝式 7 mg/m² PO SID × 5 天 q21d（Fernández 2018 顯示與每日方案療效/耐受性相當），加 Prednisone 0.5 mg/kg PO SID × 10 天後改隔日（EOD）。每 2 週 CBC 監控骨髓毒性（尤其延遲性血小板減少）。復發/抗性 rescue：cyclophosphamide/chlorambucil/lomustine/thalidomide/bortezomib（犬資料有限）。高鈣血症依序：先 0.9% NaCl IV 補容積、待再水化後再給 Furosemide 2 到 4 mg/kg（勿在脫水未矯正前利尿）＋ Prednisone ＋ Pamidronate 1 到 2 mg/kg IV over ~2 hr（或改用 zoledronate）。高黏滯度用 plasmapheresis 或治療性放血加晶體液置換。',
+    prognosis: 'Melphalan 加 Prednisone 整體反應率約 92%（完全緩解 CR 約 43% ＋ 部分緩解 PR 約 49%），MST 約 540 天（18 個月）；Fernández 2018 報告 MST 可達約 930 天。單用 prednisone MST 約 220 天，未治療多僅數週至數月。犬無經驗證的臨床分期系統，負向預後因子有高鈣血症、Bence Jones（輕鏈）蛋白尿、廣泛骨溶解；最具預測力者為對治療的反應（Moore 2021：M protein 下降 ≥ 90% 者存活 630 天 vs 284 天）。註：勿把「43-93%」當反應率區間——43% 是 CR 率、不是下限。',
     monitoring: '每 2 週做 CBC（監控骨髓毒性），每 4 到 6 週做 SPE 追蹤 M spike 高度（評估治療反應），每 3 個月測腎功能跟鈣離子，每 6 個月拍全身骨骼 X 光。M spike 下降超過 50% 算部分緩解。',
     owner_communication: '多發性骨髓瘤是骨髓漿細胞的惡性腫瘤，會造成骨骼破壞跟蛋白質異常。好消息是這種腫瘤對化療反應通常很好，治療後平均可以活 1.5 年以上。治療主要是口服藥物（Melphalan 加 Prednisone），可以在家給藥，但是要每 2 週回診驗血監控藥物副作用。骨痛通常治療後就會明顯改善。',
   },
@@ -5429,13 +5480,18 @@ Melphalan + Prednisone 方案：
     { position: '病理機轉段落後', type: 'flowchart', description: '骨髓瘤四大病理效應示意圖' },
     { position: '骨骼 X 光段落', type: 'annotated_image', description: '犬骨髓瘤溶骨性病變 X 光影像（punched-out lesions）' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '診斷準則段落', type: 'checklist', description: '四取二診斷準則自我檢核：勾選（1）溶骨性病變（2）SPE M spike（3）Bence Jones 蛋白尿（4）骨髓漿細胞>20%，達 2 項即符合診斷；高鈣與高黏滯度標為「副腫瘤、非準則」不計入' },
+  ],
   drug_api_links: ['Melphalan', 'Prednisone', 'Cyclophosphamide', 'Pamidronate', 'Furosemide'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 33: Plasma Cell Tumors.', relevance: '犬漿細胞腫瘤完整章節' },
-    { type: 'journal', citation: 'Matus RE, Leifer CE, MacEwen EG, et al. Prognostic factors for multiple myeloma in the dog. JAVMA. 1986;188(11):1288-1292.', relevance: '犬多發性骨髓瘤預後因子經典研究' },
-    { type: 'journal', citation: 'Vail DM. Plasma cell neoplasms. In: Vail DM, Thamm DH, Liptak JM, eds. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020:688-704.', relevance: '漿細胞腫瘤治療方案與預後' },
-    { type: 'guideline', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter: Multiple Myeloma.', relevance: '骨髓瘤診斷標準與內科管理' },
+    { type: 'textbook', citation: 'Vail DM. Plasma Cell Neoplasms & Myeloma-Related Disorders. In: Withrow SJ, Vail DM, Thamm DH, Liptak JM, eds. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. St. Louis: Elsevier, 2020.', relevance: '犬漿細胞腫瘤診斷準則/同型分型（IgG≈IgA）/治療/無經驗證分期的權威章節' },
+    { type: 'journal', citation: 'Matus RE, Leifer CE, MacEwen EG, Hurvitz AI. Prognostic factors for multiple myeloma in the dog. J Am Vet Med Assoc. 1986;188(11):1288-1292. doi:10.2460/javma.1986.188.11.1288', relevance: '60 犬經典世代：預後因子（高鈣/Bence Jones/治療反應）＋MST 540 天＋整體反應率 92%（CR 43%/PR 49%）' },
+    { type: 'journal', citation: 'Moore AR, Harris A, Jeffries C, et al. Retrospective evaluation of the use of the International Myeloma Working Group response criteria in dogs with secretory multiple myeloma. J Vet Intern Med. 2021;35(1):442-450. doi:10.1111/jvim.15967', relevance: '近期：IMWG 反應判定回溯應用於犬，M protein 下降 ≥90% 者存活較長（630 vs 284 天）' },
+    { type: 'journal', citation: 'Fernández R, Chon E. Comparison of two melphalan protocols and evaluation of outcome and prognostic factors in multiple myeloma in dogs. J Vet Intern Med. 2018;32(3):1060-1069. doi:10.1111/jvim.15084', relevance: '每日 vs 脈衝式 melphalan 療效相當、MST 可達約 930 天' },
+    { type: 'journal', citation: 'Hostutler RA, Chew DJ, Jaeger JQ, et al. Uses and effectiveness of pamidronate disodium for treatment of dogs and cats with hypercalcemia. J Vet Intern Med. 2005;19(1):29-33. doi:10.1111/j.1939-1676.2005.tb02654.x', relevance: '犬貓惡性高鈣 pamidronate 劑量/療效一手依據' },
+    { type: 'journal', citation: 'Reising AJ, Donnelly LL, Flesner BK, et al. Solitary osseous plasmacytomas in dogs: 13 cases (2004-2019). J Small Anim Pract. 2021;62(12):1114-1121. doi:10.1111/jsap.13411', relevance: '近期：犬孤立性骨性漿細胞瘤 0/13 進展為 MM、MST 912 天（與人醫傳統認知不同）' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. St. Louis: Elsevier, 2020. Multiple Myeloma & Monoclonal Gammopathies.', relevance: '骨髓瘤內科診斷與管理補充' },
   ],
   is_current: true,
   created_at: now,
