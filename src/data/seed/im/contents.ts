@@ -7272,95 +7272,155 @@ const contentAirwayInflammation: NodeContent = {
 const contentEPI: NodeContent = {
   id: 'CONTENT-IM-L3-024',
   node_id: 'IM-L3-024',
-  version: 1,
-  summary: 'EPI 就是胰臟腺泡細胞掛掉，消化酵素（脂肪酶、澱粉酶、蛋白酶）做不出來，吸收不良就跑出來。犬最常見的根源是胰腺腺泡萎縮（PAA），好發在德國牧羊犬（GSD）。確診靠血清的 cTLI < 2.5 μg/L。治療就是吃一輩子的胰酶替代品。',
+  version: 2,
+  summary: 'EPI 是胰臟腺泡細胞功能喪失、消化酵素分泌不足（需喪失 >90% 才發病）造成的吸收不良症候群。犬最常見病因為胰腺腺泡萎縮（PAA），好發德國牧羊犬；貓則多為慢性胰臟炎終末期。典型是「食慾正常/增加卻持續消瘦＋大量脂肪便」。確診靠空腹血清 cTLI ≤ 5.5 μg/L（現行參考值；舊 2.5 因商用 assay 位移已上修，見內文；與胰臟炎用的 cPLI 是不同檢驗）。治療為終生胰酶替代（PERT）＋矯正 cobalamin 缺乏——近年證實口服 cobalamin 亦有效，非僅皮下注射。台灣以 GSD 為主、混種犬占比上升。',
   learning_objectives: [
-    '說明 EPI 的兩大病因（PAA vs 慢性胰臟炎終末期）及其差異',
-    '運用 cTLI 檢驗正確診斷 EPI 並解釋結果判讀',
-    '制定 EPI 的完整治療計畫（胰酶替代 + Cobalamin + 飲食調整）',
-    '列出 EPI 與慢性腸病（CE）及慢性胰臟炎的鑑別要點',
-    '說明 Cobalamin 缺乏在 EPI 中的臨床意義與補充方案',
+    '說明 EPI 兩大病因（PAA vs 慢性胰臟炎終末期）與犬貓差異',
+    '正確運用空腹 cTLI 診斷 EPI，並區分 cTLI（腺泡功能）與 cPLI（胰臟炎）之不同',
+    '制定 PERT（胰酶替代）＋ cobalamin 矯正＋飲食的完整治療計畫',
+    '說明 cobalamin 缺乏的意義與現行「口服 vs 注射」補充選擇（近年更新）',
+    '列出 EPI 與慢性腸病（CE）、慢性胰臟炎、PLE 的鑑別要點',
+    '規劃治療反應評估與監控，辨識反應不佳的可矯正因子',
   ],
   key_points: [
-    'cTLI < 2.5 μg/L（犬）為確診標準；2.5-5.7 μg/L 為灰色地帶需追蹤',
-    '犬 EPI 最常見病因為胰腺腺泡萎縮（PAA），推測為免疫介導機轉',
-    'GSD（德國牧羊犬）和 Rough-coated Collie 為高風險品種',
-    '治療核心：胰酶替代（Pancreatin/Viokase）每餐混食',
-    'Cobalamin（維生素 B12）缺乏發生率 > 80%，需皮下注射補充',
-    '預後良好但需終生治療；約 60% 犬對治療反應佳',
-    '台灣地區 GSD（德國牧羊犬）仍為最常見 EPI 品種，近年混種犬比例上升',
+    'cTLI（空腹）**≤ 5.5 μg/L（犬）＝確診**；5.6–7.5 灰色地帶（無法排除、複檢）；≥ 10.9 正常（現行參考值 Cridge 2024；舊 ≤2.5 因商用 assay 位移已上修，用舊值會漏診）',
+    '⚠️ cTLI（反映腺泡分泌）≠ cPLI（胰脂肪酶，用於胰臟炎）——EPI 診斷用 cTLI，勿混用',
+    '犬最常見病因為胰腺腺泡萎縮（PAA），好發 GSD、Rough Collie；貓主因為慢性胰臟炎',
+    '治療三支柱：胰酶替代（PERT，粉劑不需預孵育）＋ cobalamin 矯正 ＋ 飲食個別化，終生治療',
+    '⚠️ cobalamin 更新：**每日口服 cyanocobalamin 亦有效**（Chang 2022、Toresson 2021），非僅 SC 注射',
+    '預後：達臨床緩解者可長期存活（Batchelor 2007）；主要負擔為費用與配合度',
+    '台灣：GSD 仍為最常見品種，近年混種犬占比上升',
   ],
   body: `# 胰外分泌不全 (Exocrine Pancreatic Insufficiency, EPI)
 
+> 犬慢性吸收不良的重要**可治**病因；典型是「食慾正常/增加卻持續消瘦＋大量脂肪便」。犬最常見病因為**胰腺腺泡萎縮（PAA）**，好發德國牧羊犬。確診靠**空腹血清 cTLI < 2.5 μg/L**（Williams & Batt 定義的參考標準）。治療是終生**胰酶替代（PERT）**＋矯正 **cobalamin 缺乏**（近年證實**口服 cobalamin 亦有效**，非僅注射）。
+
 ## 一、病理機制 (Pathophysiology)
 
-EPI 的核心為胰臟腺泡細胞功能喪失，導致脂肪酶（lipase）、澱粉酶（amylase）、蛋白酶（trypsin/chymotrypsin）等消化酵素分泌嚴重不足（需喪失 > 90% 功能才出現臨床症狀）。
+胰臟腺泡細胞功能喪失 → 脂肪酶、澱粉酶、蛋白酶分泌嚴重不足（需喪失 **>90%** 分泌功能才出現臨床症狀，故病程常隱匿）。
 
 ### 病因分類
 
 | 病因 | 機轉 | 好發 | 佔比 |
 |------|------|------|------|
-| 胰腺腺泡萎縮 (PAA) | 推測為自體免疫性淋巴球性胰臟炎→腺泡進行性萎縮→纖維化取代 | 犬（GSD、Rough Collie）1-5 歲 | 犬 ~60-70% |
-| 慢性胰臟炎終末期 | 反覆發炎→纖維化→腺泡組織破壞殆盡 | 犬貓，中老年 | 犬 ~15-20%；貓主因 |
-| 胰管阻塞 | 胰管結石或腫瘤壓迫→腺泡萎縮 | 貓較多 | 少見 |
-| 先天性 | 胰臟發育不全 | 幼犬 | 罕見 |
+| 胰腺腺泡萎縮 (PAA) | 淋巴球性胰臟炎 → 腺泡進行性萎縮/纖維化 | 犬（GSD、Rough Collie）1–5 歲 | 犬最主要 |
+| 慢性胰臟炎終末期 | 反覆發炎 → 纖維化 → 腺泡破壞殆盡 | 犬貓中老年 | 犬次要；**貓主因** |
+| 胰管阻塞 | 結石/腫瘤壓迫 → 腺泡萎縮 | 貓較多 | 少見 |
+| 先天性胰臟發育不全 | 腺泡發育不良 | 幼犬 | 罕見 |
 
-PAA 免疫病理假說：T 淋巴球浸潤 → 腺泡細胞凋亡 → 進行性萎縮。部分犬在亞臨床期可偵測到淋巴球浸潤（preclinical phase），此時 cTLI 可能尚在灰色地帶。
+> PAA 免疫病理：亞臨床期可見 T 淋巴球浸潤腺泡（preclinical/subclinical phase），此時 cTLI 可能仍在灰色地帶、尚未達確診值——故單次灰色地帶值需追蹤複檢。
 
 ### 吸收不良機轉鏈
-胰酶分泌不足 → 脂肪/蛋白質/碳水化合物消化障礙 → 營養吸收不良 → 滲透性腹瀉 → 小腸細菌過度生長 (SIBO) → Cobalamin 吸收受損（需要胰臟分泌的 intrinsic factor）→ 全身營養不良
 
-## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
+胰酶不足 → 脂肪/蛋白質/醣類消化障礙 → 吸收不良、滲透性腹瀉 → **小腸菌叢失衡/過度生長** → cobalamin（維生素 B12）吸收受損（胰臟分泌的 intrinsic factor 對犬 B12 吸收關鍵）→ 全身營養不良、脂溶性維生素缺乏。
 
-| 臨床表現 | 頻率 | 描述 |
+[圖片:epi-malabsorption-cascade]（EPI 吸收不良機轉鏈：酵素不足→消化障礙→菌叢失衡→B12 缺乏→營養不良）
+
+## 二、臨床表現與診斷
+
+### 臨床表現
+
+| 表現 | 頻率 | 描述 |
 |---------|------|------|
-| 體重減輕（食慾正常或增加） | > 90% | 典型「吃不胖」表現 |
-| 脂肪便 (steatorrhea) | > 80% | 大量、黃灰色、油膩惡臭糞便 |
-| 多食症 (polyphagia) | ~70% | 營養吸收不良導致飢餓感增強 |
-| 糞便量增加 | ~80% | 未消化食物增加糞便體積 |
-| 被毛品質差 | ~50% | 脂溶性維生素缺乏 |
-| 腸鳴音增加/排氣 | ~40% | SIBO 產氣 |
-| 食糞 (coprophagia) | ~30% | 營養缺乏行為 |
+| 體重減輕（食慾正常/增加） | >90% | 典型「吃不胖」 |
+| 脂肪便（steatorrhea） | 常見 | 大量、黃灰、油膩惡臭、難沖洗 |
+| 多食（polyphagia） | 常見 | 吸收不良的飢餓 |
+| 糞量增加/軟便 | 常見 | 未消化食物 |
+| 被毛品質差 | 常見 | 脂溶性維生素缺乏 |
+| 排氣/腸鳴、食糞 | 部分 | 菌叢失衡、營養缺乏行為 |
 
-### 確診檢查
+### 確診（cTLI 為參考標準）
 
-| 檢測 | 敏感度 | 特異度 | 判讀 |
-|------|--------|--------|------|
-| cTLI（犬） | > 95% | > 95% | < 2.5 μg/L = 確診；2.5-5.7 = 灰色地帶；> 5.7 = 正常 |
-| fTLI（貓） | ~80% | ~90% | < 8 μg/L = 確診；8-12 = 可疑 |
-| Cobalamin（血清 B12） | N/A | N/A | 低值支持 EPI 診斷；< 200 ng/L 需積極補充 |
-| Folate | N/A | N/A | 升高提示 SIBO |
+| 檢測 | 判讀 | 備註 |
+|------|------|------|
+| **cTLI（犬，空腹 12 h）** | **≤ 5.5 μg/L = 確診**；5.6–7.5 = 灰色地帶（無法排除 EPI，複檢）；7.6–10.8 = 不太可能；≥ 10.9 = 正常 | 現行參考實驗室值（Cridge 2024）；**舊 ≤2.5 因 assay 位移已上修**；非空腹可偽高 |
+| fTLI（貓，空腹） | < 8 μg/L 支持診斷 | 貓 EPI 診斷 |
+| 血清 Cobalamin（B12） | 低值支持並須補充 | EPI 犬缺乏率高 |
+| 血清 Folate | 升高提示小腸菌叢失衡 | 輔助 |
 
-重要：cTLI 需空腹 12 小時採血，非空腹樣本可偽性升高。
+> **要點**：cTLI 直接反映胰臟腺泡功能（分泌的 trypsinogen），**與 cPLI（胰脂肪酶，用於胰臟炎）是不同檢驗**，勿混用；EPI 診斷用 **cTLI**，不是 cPLI。
 
-## 三、治療策略 (Treatment)
+[互動:epi-diagnostic-flow]（互動：慢性腹瀉/消瘦 → cTLI 判讀（確診/灰色地帶/正常）→ 灰色地帶追蹤 vs 轉查 CE/胰臟炎的決策）
 
-| 治療 | 藥物/措施 | 劑量 | 備註 |
-|------|----------|------|------|
-| 胰酶替代 | [藥物:Pancreatin] 粉劑 | 1-2 茶匙/餐（隨體重調整） | 每餐混入食物，不需預孵育 |
-| Cobalamin 補充 | [藥物:Cyanocobalamin] | 犬：250-1500 μg SC q1wk × 6 wk → q2wk × 6 wk → q1mo | > 80% EPI 犬有 B12 缺乏 |
-| 飲食調整 | 高消化性、低脂飲食 |—| 部分犬對低脂反應佳；部分可正常飲食 |
-| 抗生素（SIBO） | [藥物:Tylosin] 或 [藥物:Metronidazole] | Tylosin 25 mg/kg PO BID × 4-6 wk | 僅在 SIBO 確認或治療反應不佳時使用 |
-| 胃酸抑制 | [藥物:Omeprazole] | 1 mg/kg PO SID | 可減少胃酸對胰酶的破壞（可選） |
+## 三、治療策略
 
-治療反應評估：2-4 週內應見糞便品質改善與體重增加。約 60% 犬反應良好，20% 部分反應，20% 反應不佳（需調整劑量或排查共病）。
+### 三大支柱
 
-## 四、預後 (Prognosis)
+| 支柱 | 措施 | 劑量/方式 | 備註 |
+|------|------|----------|------|
+| 胰酶替代（PERT） | [藥物:Pancreatin]（pancrelipase）粉劑 | 依產品，每餐混食（起始約 1 茶匙/10 kg，依反應調整） | **不需預孵育**；粉劑優於錠劑；生胰臟為替代 |
+| Cobalamin 矯正 | [藥物:Cyanocobalamin] | **每日口服**或注射 SC（見下） | 近年證實**口服亦有效** |
+| 飲食 | 高消化性；脂肪量個別化 | — | 不必一律極低脂；依反應調整 |
 
-| 因素 | 良好預後 | 不良預後 |
-|------|---------|---------|
-| 病因 | PAA | 胰臟腫瘤 |
-| Cobalamin | 及時補充 | 嚴重缺乏未補充 |
-| 飼主配合度 | 終生每餐加酶 | 不規律用藥 |
-| 共病 | 無 | 合併 IBD/CE |
+**Cobalamin 途徑更新（Chang 2022、Toresson 2021）：**
+- 傳統：SC 注射（犬 250–1500 μg，依體型，每週 → 漸減）。
+- **現行證據：每日口服 cyanocobalamin 亦能有效正常化血清 B12**（犬 CE/EPI），為注射的有效替代；依複檢 B12 調整。
 
-中位存活時間：治療反應佳者可存活數年；需終生治療，費用為主要考量。`,
-  clinical_pearl: 'cTLI 是 EPI 確診的金標準，但必須在空腹 12 小時後採血。最常見的診斷延誤原因是未想到 EPI，任何年輕 GSD 出現慢性腹瀉 + 體重減輕 + 食慾正常或增加，應首先排除 EPI。治療初期 Cobalamin 補充與胰酶補充同等重要。',
+### 輔助
+- 小腸菌叢失衡/治療反應不佳：試 [藥物:Tylosin]（或 [藥物:Metronidazole]）一療程。
+- 胃酸抑制（[藥物:Omeprazole]）可減少胃酸對酵素破壞——**證據有限、非常規**。
+- 反應評估：2–4 週應見糞質改善與增重。
+
+## 四、併發症與監控
+
+| 議題 | 處置 |
+|------|------|
+| Cobalamin（B12）缺乏 | 常見（~67%）且為獨立預後（存活）不良因子 → 測量並補充/複檢 |
+| 治療反應不佳（犬） | 主因為合併 CE/IBD、菌叢失衡、酶量/劑型、飲食（非單純未補 B12）→ 逐項排查 |
+| 口腔黏膜刺激（高劑量生胰酶粉） | 減量、混勻、給後清潔口腔 |
+| 脂溶性維生素/凝血異常（罕見） | 嚴重者評估補充 |
+
+**監控計畫：**
+
+| 時間點 | 項目 | 目標 |
+|--------|------|------|
+| 2–4 週 | 糞質、體重、食慾 | 糞質改善、體重回升 |
+| 每 4–12 週（初期） | 血清 cobalamin | 正常化後拉長間隔 |
+| 穩定後 | 嘗試最低有效酶量 | 兼顧療效與成本 |
+| 反應不佳 | 排查 B12、CE、菌叢、劑量/配合度 | 找出可矯正因子 |
+
+## 五、預後與預後因子
+
+- **達到臨床緩解者預後佳、可長期存活**（Batchelor 2007：clinical remission 達成則 prolonged survival likely）。
+- **低血清 cobalamin（及 folate）為獨立預後不良因子**（Soetart 2019，299 犬世代）→ 應測量並矯正。
+- 需**終生**治療；主要負擔為**費用與每餐給藥的配合度**。
+- 不良因子：低 cobalamin、合併 CE/IBD、飼主配合差、腫瘤性病因。
+- 上述預後數字/因子來自病例系列/世代研究（Evidence Level II–III）。
+
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/觀念 | 獸醫應用 | 現況 |
+|--------------|---------|------|
+| PERT（胰酶替代）與腸溶微球劑型 | 犬粉劑 PERT；劑型/酸抑制研究 | 應用中 |
+| 口服 vs 注射維生素 B12 對等性 | 犬口服 cobalamin 取代注射 | 已有犬證據（Chang 2022） |
+| 囊性纖維化/胰切除後 EPI 管理 | 病理生理對照 | 概念借鑒 |
+| 糞便彈性蛋白酶（human FE-1） | 犬應用受限、以 cTLI 為準 | 人用為主、犬不採 |
+
+## 七、臨床爭議與知識空缺
+
+| 議題 | 現況 | Evidence Level |
+|------|------|----------------|
+| Cobalamin 口服 vs 注射 | 犬證據支持口服有效；長期/重症資料續累積 | II |
+| 最佳胰酶劑型/劑量與酸抑制加乘 | 個別化調整，缺標準化 RCT | III |
+| 飲食脂肪含量（低脂是否必要） | 個別反應差異大，非一律極低脂 | III |
+| PAA 免疫病理與早期免疫調節 | 假說為免疫介導；早期介入證據不足 | III |
+| 灰色地帶 cTLI 的處置 | 追蹤複檢；臨界值判讀仍有變異 | III |
+
+## 八、近期實證更新
+
+- **Cobalamin 可口服**：每日口服 cyanocobalamin 能有效正常化 EPI/CE 犬的血清 B12（Chang 2022、Toresson 2021）→ 不再只有 SC 注射；依複檢調整。
+- **診斷閾值更新**：cTLI 因商用 assay 位移，**EPI 診斷值由舊 ≤2.5 上修至 ≤5.5 μg/L**（灰色地帶 5.6–7.5、正常 ≥10.9；現行參考實驗室/Cridge 2024）——用舊 <2.5 會漏診。cTLI（空腹）仍是參考標準（Williams & Batt 為原始 assay 驗證）；**cTLI ≠ cPLI**（cPLI 用於胰臟炎）勿混用。
+- **PERT**：粉劑不需預孵育、亦不需常規併用制酸劑（Szkopek 2024 回顧）；依反應個別化。
+- **綜合回顧**：Cridge 2024（JAVMA）更新犬貓 EPI 診療全貌。
+- **台灣**：GSD 仍為最常見品種，近年混種犬占比上升；PERT/生胰臟與 cobalamin 的長期取得與費用為在地照護重點；建議定期複檢 B12。`,
+  clinical_pearl: '任何年輕 GSD（或 Rough Collie）出現「慢性腹瀉＋大量脂肪便＋食慾正常/增加卻消瘦」，第一個要想到並排除 EPI——診斷延誤最常見原因就是沒想到它。確診靠**空腹 12 小時**的 cTLI（非空腹會偽性正常而漏診）；別把 cPLI（那是驗胰臟炎的）當成 EPI 檢驗。治療初期 cobalamin 矯正與胰酶同等重要——而且現在有證據支持**每日口服 B12** 就能有效，不一定要一直挨針。',
   common_mistakes: [
-    '未空腹採血做 cTLI 導致偽正常結果',
-    '僅給胰酶但忽略 Cobalamin 補充（導致治療反應不佳）',
-    '將 EPI 誤診為 IBD/CE 而進行不必要的免疫抑制治療',
-    '以為胰酶需要與食物預孵育（現已證實不需要）',
+    '未空腹採血做 cTLI → 偽性正常而漏診',
+    '拿 cPLI（胰脂肪酶）當 EPI 檢驗 → cPLI 是驗胰臟炎的，EPI 要用 cTLI',
+    '只驗胰酶、不測/不矯正 cobalamin——低 B12 常見（~67%）且為獨立預後（存活）不良因子，需測量並補充；但犬反應不佳更常因合併 CE/菌叢失衡/酶量/飲食，非單純未補 B12',
+    '把 EPI 誤當 IBD/CE 而做不必要的免疫抑制',
+    '以為胰酶粉需與食物預孵育（現已證實不需要）',
+    '認定 cobalamin 只能注射 → 近年證據支持每日口服亦有效，可依複檢調整',
   ],
   disease_data: {
     signalment: '犬最常見，尤其 GSD（德國牧羊犬）和 Rough-coated Collie，好發年齡 1-5 歲（PAA）。貓少見但多因慢性胰臟炎，好發中老年。',
@@ -7380,24 +7440,31 @@ PAA 免疫病理假說：T 淋巴球浸潤 → 腺泡細胞凋亡 → 進行性�
       { condition: '小腸淋巴瘤', key_differentiator: '超音波腸壁增厚/淋巴結腫大；需切片確診' },
       { condition: '蛋白質流失性腸病 (PLE)', key_differentiator: '低白蛋白血症為特徵；cTLI 正常' },
     ],
-    diagnostic_workup: '1. 空腹 12 hr 採血 cTLI（犬 < 2.5 μg/L 確診）→ 2. 同時測 Cobalamin/Folate → 3. CBC/生化排查共病 → 4. 腹腔超音波評估胰臟萎縮 → 5. 糞便浮游法排除寄生蟲',
-    treatment_protocol: '核心：每餐添加胰酶粉（Pancreatin 1-2 茶匙/餐）。Cobalamin 補充（250-1500 μg SC q1wk × 6 wk）。低脂高消化性飲食。SIBO 時加 Tylosin 25 mg/kg BID × 4-6 wk。終生治療。',
-    prognosis: '治療反應佳者預後良好，可存活數年。約 60% 犬對初始治療反應良好。Cobalamin 補充與胰酶同等重要。治療失敗最常見原因：未補充 B12、合併 IBD/CE、飼主配合度差。',
-    monitoring: '治療 2-4 週評估糞便品質與體重。每 3-6 個月追蹤 Cobalamin 與體重。治療穩定後可嘗試最低有效胰酶劑量。',
-    owner_communication: 'EPI 是終身的事，每餐都要加胰酶粉，治療成本要先想清楚。多數狗對治療反應不錯，生活品質可以維持得很好。剛開始那段時間，B12 注射不能省。',
+    diagnostic_workup: '1. 空腹 12 hr 採血 cTLI（犬 ≤ 5.5 μg/L 確診，5.6–7.5 灰色地帶複檢；現行參考值，舊 ≤2.5 因 assay 位移已上修；注意 cTLI≠cPLI，後者用於胰臟炎）→ 2. 同時測血清 Cobalamin/Folate → 3. CBC/生化排查共病 → 4. 腹腔超音波評估胰臟萎縮/排除腫瘤 → 5. 糞便檢查排除寄生蟲；反應不佳時排查 CE/IBD',
+    treatment_protocol: '三支柱、終生治療：(1) 胰酶替代 PERT（Pancreatin/pancrelipase 粉劑每餐混食，不需預孵育，依反應調量）；(2) Cobalamin 矯正——每日口服 cyanocobalamin 或 SC 注射（250-1500 μg 依體型），近年證實口服亦有效，依複檢 B12 調整；(3) 高消化性飲食、脂肪量個別化（不必一律極低脂）。小腸菌叢失衡/反應不佳時試 Tylosin（或 metronidazole）一療程。反應 2-4 週見糞質改善與增重。劑量須依仿單與獸醫核對。',
+    prognosis: '達臨床緩解者預後佳、可長期存活（Batchelor 2007）；低血清 cobalamin/folate 為獨立預後不良因子（Soetart 2019，299 犬）。需終生治療，主要負擔為費用與配合度。犬反應不佳最常見原因為合併 CE/IBD、菌叢失衡、酶量/劑型、飲食（非單純未補 B12，惟 B12 仍應矯正）；腫瘤性病因預後較差。',
+    monitoring: '治療 2-4 週評估糞質、體重、食慾。初期每 4-12 週複檢血清 cobalamin 至正常化再拉長間隔。穩定後嘗試最低有效胰酶劑量兼顧療效與成本。反應不佳者排查 B12、CE、菌叢、劑量與配合度。',
+    owner_communication: 'EPI 是終身的事，每餐都要加胰酶粉，治療成本要先想清楚。多數狗對治療反應不錯，生活品質可以維持得很好。維生素 B12 的矯正很重要，好消息是現在有證據支持「每天口服」就有效，不一定要一直挨針，可以跟醫師討論。定期回診複檢 B12 與體重。',
   },
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: '吸收不良機轉鏈段落後', type: 'flowchart', description: 'EPI 吸收不良機轉鏈流程圖：酵素不足→消化障礙→SIBO→B12缺乏' },
+    { position: '吸收不良機轉鏈段落後', type: 'flowchart', description: 'EPI 吸收不良機轉鏈流程圖：酵素不足→消化障礙→菌叢失衡→B12缺乏→營養不良' },
   ],
-  interactive_placeholders: [],
-  drug_api_links: ['Pancreatin', 'Cyanocobalamin', 'Tylosin', 'Omeprazole'],
+  interactive_placeholders: [
+    { position: '二、臨床表現與診斷 確診段後', type: 'decision_tree', description: '互動：慢性腹瀉/消瘦 → cTLI 判讀（確診/灰色地帶/正常）→ 灰色地帶追蹤 vs 轉查 CE/胰臟炎' },
+  ],
+  drug_api_links: ['Pancreatin', 'Cyanocobalamin', 'Tylosin', 'Metronidazole', 'Omeprazole'],
   references: [
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 61: Exocrine Pancreatic Disease.', relevance: 'EPI 病理生理與臨床管理教材' },
-    { type: 'journal', citation: 'Westermarck E, Wiberg M. "Exocrine pancreatic insufficiency in dogs." Vet Clin North Am Small Anim Pract. 2003;33(5):1165-1179.', relevance: 'EPI 病因、診斷與治療綜合回顧' },
-    { type: 'journal', citation: 'Batchelor DJ, Noble PJ, Cripps PJ, et al. "Breed associations for canine exocrine pancreatic insufficiency." J Vet Intern Med. 2007;21(2):207-214.', relevance: 'EPI 品種好發性流行病學' },
-    { type: 'guideline', citation: 'Xenoulis PG, Steiner JM. "Canine and feline pancreatic lipase immunoreactivity." Vet Clin Pathol. 2012;41(3):312-324.', relevance: 'cTLI/cPLI 檢驗判讀指引' },
+    { type: 'journal', citation: 'Williams DA, Batt RM. Sensitivity and specificity of radioimmunoassay of serum trypsin-like immunoreactivity for the diagnosis of canine exocrine pancreatic insufficiency. J Am Vet Med Assoc. 1988;192(2):195-201. doi:10.2460/javma.1988.192.02.195.', relevance: 'cTLI 診斷 EPI 的敏感/特異度定義（參考標準經典）' },
+    { type: 'journal', citation: 'Cridge H, Steiner JM. Exocrine pancreatic insufficiency in dogs and cats. J Am Vet Med Assoc. 2024;262(2):246-255. doi:10.2460/javma.23.09.0505.', relevance: '近年（≤5年）犬貓 EPI 診療綜合回顧' },
+    { type: 'journal', citation: 'Chang H, et al. Effect of oral or injectable supplementation with cobalamin in dogs with hypocobalaminemia caused by chronic enteropathy or exocrine pancreatic insufficiency. J Vet Intern Med. 2022;36(5):1607-1621. doi:10.1111/jvim.16528.', relevance: '口服 vs 注射 cobalamin 補充（口服有效性溯源）' },
+    { type: 'journal', citation: 'Batchelor DJ, et al. Breed Associations for Canine Exocrine Pancreatic Insufficiency. J Vet Intern Med. 2007;21(2):207-214. doi:10.1111/j.1939-1676.2007.tb02950.x.', relevance: 'EPI 品種好發流行病學' },
+    { type: 'journal', citation: 'Batchelor DJ, et al. Prognostic Factors in Canine Exocrine Pancreatic Insufficiency: Prolonged Survival is Likely if Clinical Remission is Achieved. J Vet Intern Med. 2007;21(1):54-60. doi:10.1111/j.1939-1676.2007.tb02928.x.', relevance: '預後因子（達臨床緩解則長期存活）' },
+    { type: 'journal', citation: 'Westermarck E, Wiberg M. Exocrine pancreatic insufficiency in dogs. Vet Clin North Am Small Anim Pract. 2003;33(5):1165-1179. doi:10.1016/S0195-5616(03)00057-3.', relevance: 'EPI 病因/診斷/治療綜合回顧' },
+    { type: 'journal', citation: 'Soetart N, et al. Serum cobalamin and folate as prognostic factors in canine exocrine pancreatic insufficiency: An observational cohort study of 299 dogs. Vet J. 2019;243:15-20. doi:10.1016/j.tvjl.2018.11.003.', relevance: 'cobalamin/folate 為 EPI 獨立預後因子（299 犬世代，預後溯源）' },
+    { type: 'journal', citation: 'Szkopek D, et al. A review: Pancreatic enzymes in the treatment of chronic pancreatic insufficiency in companion animals. J Vet Intern Med. 2024;38(4):2026-2033. doi:10.1111/jvim.17096.', relevance: '近年（≤5年）PERT 胰酶治療回顧（含不需預孵育）' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine. 8th ed. Elsevier; 2017.', relevance: '內科教科書，胰外分泌疾病章節（教材）' },
   ],
   is_current: true,
   created_at: now,
