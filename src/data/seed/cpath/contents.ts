@@ -1280,7 +1280,7 @@ const contentBodyFluid: NodeContent = {
 const contentBoneMarrow: NodeContent = {
   id: 'CONTENT-CPATH-L4-007',
   node_id: 'CPATH-L4-007',
-  version: 1,
+  version: 2,
   summary: '骨髓抹片在看造血的質跟量。非再生性貧血、持續性血球減少、白血病、MDS 都靠這個確診。aspiration smear 跟 core biopsy 要一起看，不能只挑一個。',
   learning_objectives: [
     '列舉骨髓採樣的適應症與常用採樣部位',
@@ -1292,11 +1292,12 @@ const contentBoneMarrow: NodeContent = {
   key_points: [
     '採樣時機：非再生性貧血或血球減少、疑似白血病、不明發熱加血球異常',
     '犬貓採樣部位：肱骨近端、髂骨翼、股骨粗隆',
-    '正常 M:E ratio：犬 0.75-2.5:1、貓 1.0-3.0:1',
-    'M:E ↑：骨髓系增生（感染、CML）或紅血球系減少（PRCA）',
-    'M:E ↓：紅血球系增生（再生性貧血代償）或骨髓系減少',
-    '巨核細胞每個 10x 視野正常 2-5 個',
-    'Blast cells > 20% 是急性白血病的 WHO 標準',
+    '正常 M:E ratio：犬 0.75-2.5:1、貓 1.0-3.0:1（教材值；資料驅動之犬區間較寬 0.45-2.87，Mischke 2002）——須結合 cellularity 與 CBC 判讀',
+    'M:E ↑（約 >3:1）：骨髓系增生（感染、CML）或紅血球系減少/再生不良（PRCA）',
+    'M:E ↓（約 <0.75:1）：紅血球系增生（再生性貧血代償）或骨髓系減少',
+    '巨核細胞為半定量：正常約每 spicule/顆粒 2-7 個（squash 每低倍視野 2-4 個），>5/顆粒提示增生；精確定量以 core biopsy 為準',
+    'Blast ≥ 20% 為急性白血病現行閾值（2016 WHO；舊 FAB/Jain 1991 為 ≥30%）；分母一般為有核細胞(ANC)，紅系 ≥50% 時改以非紅系細胞(NEC)計',
+    '⚠️ 物種差異：正常貓骨髓「幾乎無」可染儲存鐵（Prussian blue），故貓不能用骨髓鐵判斷缺鐵（見鐵反可排除缺鐵）；正常犬骨髓有可見儲存鐵',
     'Aspiration 看細胞形態，core biopsy 看 architecture 跟細胞量，要一起做',
   ],
   body: `# 骨髓抹片判讀 (Bone Marrow Evaluation)
@@ -1324,9 +1325,10 @@ const contentBoneMarrow: NodeContent = {
 3. Particle crush prep：骨髓顆粒壓片，兼具兩者優點
 
 ### 鐵質評估
-- Prussian blue 染色評估儲存鐵
+- Prussian blue（Perls）染色評估儲存鐵（含鐵巨噬細胞的 hemosiderin）
 - 缺鐵：儲存鐵消失 + 小球性低色素性貧血
-- 慢性疾病貧血：儲存鐵正常或增加
+- 慢性疾病貧血（ACD）：鐵被 hepcidin/apoferritin 扣留於巨噬細胞 → 骨髓儲存鐵正常或增加、血清鐵下降（紅血球多為正球正色）
+- ⚠️ **物種差異**：正常「貓」骨髓通常**無**可染儲存鐵（Perls 陰性；反應偵測不到 ferritin，可能為貓骨髓主要儲鐵形式），故**貓不能以骨髓鐵判斷缺鐵**（在貓見到骨髓鐵反而異常、可用來「排除」缺鐵）；正常「犬」骨髓則有可見儲存鐵，其消失為缺鐵的有效指標。
 
 ## 二、判讀要點 (Interpretation)
 
@@ -1351,11 +1353,20 @@ const contentBoneMarrow: NodeContent = {
 - 成熟停滯（maturation arrest）：某階段以後的細胞明顯減少
 
 ### Step 5：異常細胞辨識
-- Blast cells > 20% → 急性白血病
-- 異常顆粒、雙核、環形鐵母細胞 → 骨髓增生異常症候群（MDS）
+- Blast ≥ 20% → 急性白血病（2016 WHO 現行閾值；舊 FAB/Jain 1991 為 ≥30%）。**分母**：一般 AML 以「所有有核細胞（ANC）」計，惟紅系前驅 ≥50% 時改以「非紅系細胞（NEC）」計（用以區分 M6 紅血球白血病）
+- dysplasia（≥10% 某系細胞）、異常顆粒、雙核、環形鐵母細胞（Perls 下每顆 ≥5 鐵顆粒且環繞 ≥1/3 核周） → 骨髓增生異常症候群（MDS，blast <20%）
 - 轉移性腫瘤細胞：成團的非造血細胞
+- 漿細胞增多（>20% 有核細胞）→ 疑多發性骨髓瘤（診斷需四取二，見近期更新；**高鈣血症非診斷準則、屬伴隨/預後表現**）
 
 ## 三、常見陷阱 (Pitfalls)
+
+- **血液稀釋（hemodilution）**：見到骨髓後仍持續抽 → 周邊血混入 → cellularity 被低估、M:E ratio 偏向周邊血而失真。一見紅色物質即釋放負壓、抽 0.5-1.0 mL 已足夠。
+- **Dry tap（抽不到骨髓液）**：可能為骨髓纖維化、packed marrow（極度增生）或技術問題 → **core biopsy 更不能省**。
+- **只做 aspiration 不做 core biopsy**：漏掉纖維化、architecture 異常與局灶性腫瘤浸潤。
+- **未做鐵染色**：犬缺鐵性貧血漏診；且**勿在貓以骨髓鐵判斷缺鐵**（正常貓本就無可染鐵）。
+- **未評估巨核細胞數量/形態**：ITP 的骨髓代償或白血病浸潤會被漏掉。
+- **採樣時機過早**：急性失血/溶血 <3-5 天可能為「假性非再生（preregenerative）」；宜待貧血持續且約 5-7 天仍無網狀紅血球增生、確認為真正非再生後再採。
+- **未先做周邊血 CBC＋抹片**：骨髓判讀必須有同步周邊血作為比較基準。
 
 ## 四、人醫借鑒 (Translational Insights)
 
@@ -1371,38 +1382,47 @@ const contentBoneMarrow: NodeContent = {
 |---------|------|---------------|
 | 犬貓骨髓抹片判讀的觀察者間一致性 | M:E ratio 與 cellularity 的主觀評估在不同判讀者間差異大，標準化計數方法待建立 | Level IV |
 | 犬 MDS 的診斷標準與分類系統 | 人醫 WHO 標準在犬的適用性有限，犬專用 MDS 分類仍缺乏國際共識 | Level IV |
-| 骨髓 core biopsy vs aspiration 的相對必要性 | 部分學者認為 aspiration 品質佳時可免 core biopsy，但 core 對纖維化和 architecture 評估不可替代 | Level III |`,
-  clinical_pearl: '骨髓 aspiration 最大的坑是血液稀釋。抽超過 0.5 mL，周邊血會大量混進來，M:E ratio 就不能用了。正確做法是 0.3-0.5 mL 就停手，馬上抹片。如果是 dry tap 抽不到，那 core biopsy 就更不能省。',
+| 骨髓 core biopsy vs aspiration 的相對必要性 | 部分學者認為 aspiration 品質佳時可免 core biopsy，但 core 對纖維化和 architecture 評估不可替代 | Level III |
+
+## 六、近期實證更新 (Recent Updates)
+
+- **急性白血病 blast 閾值統一為 ≥20%（沿用 2016 WHO）**：獸醫已由舊 FAB/Jain 1991 的 ≥30% 修訂為 ≥20% 以區分 AML 與 MDS；分母一般為有核細胞（ANC），惟紅系前驅 ≥50% 時改以非紅系細胞（NEC）計（區分 M6）。犬 MDS/AML 標準化評估與預後研究（Meredith 2024/2025, Vet Pathol）採 dysplasia ≥10%、blast <20%（MDS）vs ≥20%（AML）。
+- **流式細胞術＋分子分型（Harris 2022, Vet Comp Oncol）**：以數位 RNA 計數建立 CD34+ 犬急性白血病亞型的流式診斷準則，補足單靠形態學難以區分 AML/ALL lineage 的限制；犬白血病 flow cytometry 已有商業服務。
+- **參考區間資料化**：資料驅動之犬骨髓 M:E 參考區間（Mischke & Busse 2002）較傳統教材寬（0.45-2.87），且取樣部位會影響 M:E（Gal 2018）——比值須結合 cellularity 與 CBC 判讀、勿死守單一切點。
+- **多發性骨髓瘤診斷準則**：犬需四取二——骨髓漿細胞 >20%（早期 Matus 1986 採 >5%）、單株 γ球蛋白病、骨溶解病灶、Bence-Jones（輕鏈）蛋白尿；高鈣血症為伴隨/預後表現而非診斷準則。貓閾值 ≥20%（有異型漿細胞時放寬至 ≥10%，Patel 2005）。`,
+  clinical_pearl: '骨髓 aspiration 最大的坑是血液稀釋——關鍵不是固定容量，而是「一見到骨髓（紅色物質）進入針筒就釋放負壓、不要繼續抽」。一般抽到 0.5-1.0 mL 已足夠，抽過量（持續抽、遠超 1-2 mL）才會嚴重稀釋使 M:E ratio 不可信。若是 dry tap 抽不到，core biopsy 就更不能省。另一個常被忽略的重點：**貓的骨髓正常就「沒有」可染儲存鐵，所以貓不能用骨髓鐵判斷缺鐵**（在貓見到骨髓鐵反而異常）。',
   common_mistakes: [
-    '骨髓抽太多（> 1 mL），嚴重血液稀釋，M:E ratio 不能信',
+    '骨髓抽過量（見到骨髓後仍持續抽），嚴重血液稀釋使 M:E ratio 不能信（一般 0.5-1.0 mL 已足夠）',
     '只做 aspiration 不做 core biopsy，骨髓纖維化或腫瘤浸潤漏掉',
     '採骨髓前沒先做周邊血 CBC 跟抹片，沒有比較基準',
     '巨核細胞數量跟形態沒評估，ITP 骨髓代償或白血病浸潤就漏了',
-    '非再生性貧血不到 3-5 天就採骨髓，此時骨髓還沒充分反應',
+    '急性貧血過早採骨髓（<3-5 天可能為 preregenerative 假性非再生；宜待 ~5-7 天確認真正非再生）',
+    '在貓以「骨髓無可染鐵」判斷缺鐵（正常貓本就無可染儲存鐵，此判讀無效）',
   ],
   disease_data: null,
   diagnostic_data: {
     indication: ['非再生性血球減少症', '疑似白血病', '不明原因全血球減少（pancytopenia）', '多發性骨髓瘤疑似', '不明原因發熱合併血球異常', '鐵質狀態評估'],
     contraindication: ['嚴重凝血障礙（相對禁忌，需先矯正）', '採樣部位感染'],
-    technique: '在鎮靜或全身麻醉下，使用 Illinois 或 Jamshidi 骨髓穿刺針。先做 aspiration（快速抽吸 0.3-0.5 mL），立即製作 squash prep 抹片。再用 Jamshidi 針取 core biopsy（≥ 1 cm）。Aspiration 以 Wright-Giemsa 染色，core biopsy 以 H&E 染色。',
+    technique: '在鎮靜或全身麻醉下，使用 Illinois 或 Jamshidi 骨髓穿刺針。先做 aspiration（快速抽吸 0.5-1.0 mL，一見骨髓即釋放負壓以減少稀釋），立即製作 squash prep 抹片。再用 Jamshidi 針取 core biopsy（≥ 1 cm）。Aspiration 以 Wright-Giemsa 染色，core biopsy 以 H&E 染色，鐵質以 Prussian blue（貓正常無可染鐵）。',
     normal_findings: [
-      { finding: 'Cellularity', description: '成年犬 25-75%（年輕動物較高）', significance: '骨髓造血活性指標' },
-      { finding: 'M:E ratio', description: '犬 0.75-2.5:1，貓 1.0-3.0:1', significance: '骨髓系與紅血球系的相對比例' },
-      { finding: '巨核細胞', description: '2-5 個/低倍視野', significance: '血小板生成能力' },
-      { finding: '儲存鐵', description: 'Prussian blue 染色可見含鐵巨噬細胞', significance: '鐵質儲備狀態' },
+      { finding: 'Cellularity', description: '成年犬 25-75%（與年齡呈反比，中年概估~50%）', significance: '骨髓造血活性指標' },
+      { finding: 'M:E ratio', description: '犬 0.75-2.5:1，貓 1.0-3.0:1（資料驅動犬區間較寬 0.45-2.87）', significance: '骨髓系與紅血球系相對比例，須結合 CBC' },
+      { finding: '巨核細胞', description: '約 2-7 個/spicule（squash 每低倍視野 2-4 個），半定量', significance: '血小板生成能力' },
+      { finding: '儲存鐵', description: '正常犬 Prussian blue 可見含鐵巨噬細胞；⚠️ 正常貓幾乎無可染鐵', significance: '鐵質儲備狀態（貓不適用骨髓鐵評估缺鐵）' },
     ],
     abnormal_findings: [
-      { finding: 'Blast cells > 20%', description: '大量幼稚細胞，核仁明顯', significance: '急性白血病（AML 或 ALL）' },
+      { finding: 'Blast ≥ 20%', description: '大量幼稚細胞，核仁明顯（分母 ANC；紅系≥50% 時改 NEC）', significance: '急性白血病（AML 或 ALL）；2016 WHO 閾值（舊 FAB 為 ≥30%）' },
       { finding: 'Maturation arrest', description: '某成熟階段後細胞驟減', significance: '白血病前期、藥物毒性、感染（如 Parvovirus）' },
       { finding: 'Hypocellular marrow', description: '細胞量 < 25%', significance: '再生不良性貧血、骨髓毒性（化療、Ehrlichia）' },
       { finding: '骨髓纖維化', description: 'Core biopsy 見大量膠原纖維', significance: '骨髓纖維化症、繼發於腫瘤浸潤' },
     ],
     interpretation_guide: '看骨髓的順序：先確認樣本品質（顆粒夠、沒被稀釋過頭）。低倍看 cellularity 跟巨核細胞。算 M:E ratio。高倍看各系列成熟序列。找異常細胞（blast、轉移瘤）。最後對周邊血結果。',
     pitfalls: [
-      '血液稀釋讓細胞量被低估，M:E ratio 偏向周邊血',
+      '血液稀釋讓細胞量被低估，M:E ratio 偏向周邊血（見骨髓即釋放負壓、抽 0.5-1.0 mL）',
       'Dry tap 抽不到骨髓液，可能是骨髓纖維化或 packed marrow',
-      '沒做鐵染色，缺鐵性貧血漏掉',
+      '沒做鐵染色，犬缺鐵性貧血漏掉；且勿在貓以骨髓鐵判斷缺鐵（正常貓無可染鐵）',
       '只看 aspiration 不看 core biopsy 的 architecture',
+      '急性貧血過早採樣（preregenerative 假性非再生，宜待 ~5-7 天確認）',
     ],
     sensitivity_specificity: '骨髓是造血系統疾病的金標準。急性白血病確診率很高（blast > 20%）。MDS 早期看判讀者經驗。',
     cost_benefit: '要鎮靜或麻醉，侵入性中等，成本中高。但非再生性血球減少跟白血病的確診沒得替代。',
@@ -1417,10 +1437,11 @@ const contentBoneMarrow: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Weiss DJ, Wardrop KJ. Schalm\'s Veterinary Hematology, 6th ed. Wiley-Blackwell, 2010.', relevance: '骨髓判讀權威參考教材' },
-    { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. Elsevier, 2012.', relevance: '骨髓細胞形態辨識圖譜' },
-    { type: 'journal', citation: 'Raskin RE. "Bone marrow cytologic and histologic biopsies: indications, technique, and evaluation." Vet Clin North Am Small Anim Pract 2012;42(1):23-42.', relevance: '骨髓採樣技術與判讀指引' },
-    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 共識，骨髓評估在免疫介導血球減少的角色' },
+    { type: 'textbook', citation: 'Brooks MB, Harr KE, Seelig DM, Wardrop KJ, Weiss DJ, eds. Schalm\'s Veterinary Hematology, 7th ed. Hoboken, NJ: Wiley-Blackwell; 2022.', relevance: '骨髓判讀權威參考教材（現行 7 版）' },
+    { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. St. Louis: Elsevier; 2012.', relevance: '骨髓細胞形態辨識圖譜（含犬貓骨髓鐵物種差異）' },
+    { type: 'journal', citation: 'Raskin RE, Messick JB. Bone marrow cytologic and histologic biopsies: indications, technique, and evaluation. Vet Clin North Am Small Anim Pract. 2012;42(1):23-42. doi:10.1016/j.cvsm.2011.10.001.', relevance: '骨髓採樣技術與判讀指引（巨核細胞/cellularity 參考）' },
+    { type: 'journal', citation: 'Harris RA, Rout ED, Yoshimoto JA, et al. Using digital RNA counting to establish flow cytometry diagnostic criteria for subtypes of CD34+ canine acute leukaemia. Vet Comp Oncol. 2022;20(3):710-719. doi:10.1111/vco.12825.', relevance: '犬急性白血病流式＋分子分型（近期；補足形態學 lineage 限制）' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334. doi:10.1111/jvim.15441.', relevance: 'ACVIM 診斷共識，骨髓評估在免疫介導血球減少的角色' },
   ],
   is_current: true,
   created_at: now,
