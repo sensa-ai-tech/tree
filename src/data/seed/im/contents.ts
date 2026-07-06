@@ -6383,25 +6383,28 @@ const contentFelineAsthma: NodeContent = {
 const contentBacterialPneumonia: NodeContent = {
   id: 'CONTENT-IM-L3-021',
   node_id: 'IM-L3-021',
-  version: 1,
-  summary: '細菌性肺炎在犬貓門診常見，能要命，犬的發生率明顯比貓高。最常見的型態是吸入性肺炎，多半繼發於嘔吐、巨食道、喉麻痺，或全身麻醉之後。致病菌大多是口腔的常駐菌（Pasteurella、E. coli、Streptococcus、Bordetella），通常是混合感染。診斷靠胸腔 X 光看到肺泡型浸潤加上 BAL 細菌培養。抗生素一打就是 3-6 週，經驗性或者鎖定培養結果用藥。',
+  version: 2,
+  summary: '細菌性肺炎在犬常見且可致命、貓少見但常較嚴重。最常見型態是吸入性，多繼發於嘔吐/反流、巨食道、喉麻痺或全身麻醉；致病菌多為口腔常駐菌（Pasteurella、E. coli、Streptococcus、Bordetella，貓 Mycoplasma），常為混合感染。診斷靠胸腔 X 光肺泡型浸潤＋BAL/TTW 培養藥敏。抗生素依 ISCAID 2017 依嚴重度分層（輕度 doxycycline；吸入無敗血症可不給藥或非經口 β-lactam；敗血症 fluoroquinolone＋ampicillin/clindamycin），FQ 非經驗一線、培養導向；**以臨床痊癒（非 X 光完全消退）決定停藥**。台灣濕熱、犬舍密度高、流浪犬暴露多，建議積極培養導向用藥。',
   learning_objectives: [
-    '列出犬貓細菌性肺炎的主要原因與危險因子',
-    '說明吸入性肺炎的病理機轉與好發情境',
-    '正確判讀細菌性肺炎的胸腔 X 光特徵（肺泡型浸潤、支氣管空氣像）',
-    '制定經驗性抗生素方案並說明 BAL 培養指引治療的重要性',
-    '說明犬貓細菌性肺炎的預後因子與監測計畫',
+    '列出犬貓細菌性肺炎的主要原因、危險因子與常見病原，並區分犬貓差異',
+    '說明吸入的「化學性肺炎 vs 細菌性肺炎」雙重損傷機轉，及其對是否用抗生素的意涵',
+    '判讀細菌性肺炎胸腔 X 光（肺泡型浸潤、air bronchogram、重力依賴分布）與 BAL/TTW 培養的角色',
+    '依 ISCAID 2017 抗菌管理原則制定經驗性與培養導向抗生素方案（含貓 fluoroquinolone 安全）',
+    '說明以臨床痊癒（非影像）為停藥依據的現行療程觀念與其證據限制',
+    '規劃監控與併發症處置，並辨識與矯正反覆吸入的基礎原因',
   ],
   key_points: [
-    '吸入性肺炎是犬最常見的肺炎類型，好發於右中葉和右前葉（重力依賴）',
-    '危險因子：嘔吐/反流、巨食道、喉麻痺、全身麻醉、氣管插管、口咽疾病、意識不清',
-    '常見菌種：Pasteurella spp.、E. coli、Bordetella bronchiseptica、Streptococcus spp.、Mycoplasma spp.（貓）',
-    '胸腔 X 光：肺泡型浸潤（air bronchogram）、好發於腹側肺葉（吸入性）或多葉分布（血行性）',
-    '經驗性抗生素：Amoxicillin-clavulanate ± Fluoroquinolone（社區型）；重症加 Metronidazole（厭氧菌覆蓋）',
-    '治療療程：臨床改善後至少再治療 1-2 週，總療程通常 3-6 週；以 X 光改善為停藥依據',
-    '貓肺炎較罕見但嚴重，Mycoplasma 為重要病原，需特殊培養',
+    '吸入性是犬最常見肺炎，好發右中葉/右前葉（重力依賴）；貓少見但常較嚴重（Mycoplasma 重要）',
+    '危險因子：嘔吐/反流、巨食道、喉麻痺、全身麻醉、口咽/吞嚥疾病、意識不清、短頭品種',
+    '吸入為雙重損傷：胃酸化學灼傷（pneumonitis）＋口腔菌感染（pneumonia）——**單純吸入事件未必需抗生素**',
+    '診斷：胸腔 X 光肺泡型浸潤＋air bronchogram；BAL/TTW（給藥前採）培養藥敏為金標準、指引降階',
+    '抗生素（ISCAID 2017 依嚴重度）：輕度 doxycycline、吸入無敗血症可不給藥或非經口 β-lactam、敗血症 FQ＋ampicillin/clindamycin；**FQ 非經驗一線**（保留重症/培養革蘭氏陰性）；metronidazole 非常規',
+    '⚠️ 療程觀念更新：**以臨床痊癒為停藥依據，非等 X 光完全消退**（影像落後）；未併發社區型療程可較舊「3–6 週」教條短',
+    '⚠️ 貓 fluoroquinolone：enrofloxacin >5 mg/kg 致視網膜毒性/失明 → 貓優先 pradofloxacin/marbofloxacin',
   ],
   body: `# 犬貓細菌性肺炎 (Bacterial Pneumonia)
+
+> 犬常見、可致命的下呼吸道感染；貓少見但常較嚴重。最常見為**吸入性**，多繼發於嘔吐/反流、巨食道、喉麻痺或全身麻醉。抗生素選擇與療程對齊 **ISCAID 2017 呼吸道抗菌使用指引（Lappin 2017）** 的抗菌管理（stewardship）：**培養導向、避免不必要廣譜、以臨床痊癒（非單看 X 光）決定停藥**。
 
 ## 一、病理機制 (Pathophysiology)
 
@@ -6410,94 +6413,160 @@ const contentBacterialPneumonia: NodeContent = {
 | 途徑 | 機轉 | 代表情境 | 好發肺葉 |
 |------|------|---------|---------|
 | 吸入性（最常見） | 口腔/胃內容物吸入 | 嘔吐、反流、麻醉後、巨食道 | 右中葉、右前葉（重力依賴） |
-| 吸入性（感染性） | 上呼吸道感染下行 | Bordetella、犬舍咳 | 前葉為主 |
+| 吸入性（感染下行） | 上呼吸道感染下行 | Bordetella、犬舍咳 | 前葉為主 |
 | 血行性 | 菌血症經肺血管播散 | 感染性心內膜炎、IV 導管感染 | 後葉、瀰漫性 |
-| 外傷性 | 穿刺性胸壁損傷 | 咬傷、異物 | 損傷對側 |
+| 外傷性 | 穿刺性胸壁損傷 | 咬傷、異物 | 損傷處 |
 
-### 吸入性肺炎病理機轉
+### 吸入的雙重損傷
 
-雙重損傷：
-1. 化學性損傷：胃酸（pH < 2.5）→ 肺泡上皮與內皮細胞直接灼傷 → 通透性增加 → 肺水腫 → 表面活性劑失活 → 肺泡塌陷
-2. 細菌感染：口腔常駐菌（厭氧菌 + 兼性厭氧菌）隨吸入物進入 → 黏液纖毛清除已被破壞 → 細菌增殖 → 嗜中性球浸潤 → 化膿性肺炎
+1. **化學性（吸入性肺炎 vs 純吸入的區別）**：胃酸（pH < 2.5）直接灼傷肺泡上皮/內皮 → 通透性↑、肺水腫、表面活性劑失活 → 肺泡塌陷。**此為化學性肺炎（pneumonitis），未必等於細菌感染**。
+2. **細菌性**：口腔常駐菌（厭氧＋兼性厭氧）隨吸入物進入、黏液纖毛清除受損 → 細菌增殖 → 嗜中性球浸潤 → 化膿性肺炎。
 
-危險因子：
+> 臨床意涵：**單純吸入「事件」（化學性肺炎）不一定需要抗生素**；抗生素針對「已建立的細菌感染（pneumonia）」。是否用藥依臨床/影像/培養而非「有吸入就給」（見 §八）。
+
+[圖片:aspiration-pneumonia-mechanism]（吸入 → 化學灼傷＋細菌定殖 → 化膿性肺泡炎的雙重損傷流程圖）
+
+### 危險因子
+
 | 危險因子 | 機轉 | 犬/貓 |
 |---------|------|--------|
-| 巨食道 | 食物滯留 + 反流 | 犬為主 |
+| 巨食道 | 食物滯留＋反流 | 犬為主 |
 | 喉麻痺 | 喉閉合不全 → 吸入 | 犬（老年大型犬） |
-| 全身麻醉 | 喉反射抑制 + 胃反流 | 犬貓 |
-| 持續嘔吐 | 反覆吸入機會 | 犬貓 |
-| 口咽疾病 | 吞嚥困難 | 犬貓 |
+| 全身麻醉 | 喉反射抑制＋胃反流 | 犬貓 |
+| 持續嘔吐 | 反覆吸入 | 犬貓 |
+| 口咽/吞嚥疾病 | 吞嚥困難 | 犬貓 |
 | 意識不清/癲癇 | 保護性反射喪失 | 犬貓 |
+| 短頭品種 | 上呼吸道解剖異常、反流 | 犬 |
 
 ## 二、臨床表現與診斷
 
-### 臨床表現
+### 臨床表現（犬 vs 貓）
 
-| 臨床表現 | 頻率 | 描述 |
+| 表現 | 頻率 | 描述 |
 |---------|------|------|
-| 濕咳（productive cough） | 常見 | 有痰咳嗽，可能咳出膿性分泌物 |
-| 發燒 | 60-80% | > 39.5°C，但重症可能低體溫 |
+| 濕咳（有痰） | 常見（犬） | 可咳出膿性分泌物；貓咳嗽較不明顯 |
+| 發燒 | ~60–80% | > 39.5°C；重症敗血症可反而**低體溫** |
 | 呼吸急促/困難 | 常見 | 取決於浸潤範圍 |
-| 精神沉鬱/食慾下降 | 常見 | 全身性發炎反應 |
-| 鼻腔分泌物 | 變異 | 黏膿性 |
-| 聽診異常 | 常見 | 囉音（crackles）、支氣管呼吸音（tubular breath sounds） |
+| 精神沉鬱/食慾↓ | 常見 | 全身性發炎 |
+| 聽診囉音/支氣管呼吸音 | 常見 | crackles、tubular breath sounds |
+
+貓：臨床較隱匿（咳嗽少、以呼吸費力/沉鬱表現），常較嚴重；Mycoplasma 為重要病原。
 
 ### 診斷
 
 | 檢查 | 發現 | 臨床價值 |
 |------|------|---------|
-| 胸腔 X 光（三視角） | 肺泡型浸潤（air bronchogram）、好發腹側葉 | 首選影像，評估範圍與嚴重度 |
-| CBC | 嗜中性球增多（可能左移）| 支持感染但非特異 |
-| BAL 細胞學 + 培養 | 嗜中性球為主 + 細胞內細菌 + 培養定菌 | 金標準，指引抗生素選擇 |
-| 經氣管沖洗（TTW） | 替代 BAL，無需全身麻醉 | 適合無法麻醉的重症患者 |
-| 血液氣體 | PaO2 下降、A-a gradient 增加 | 評估氧合嚴重度 |
+| 胸腔 X 光（三視角） | 肺泡型浸潤＋air bronchogram，好發腹側/重力依賴葉 | 首選影像；**影像變化落後臨床** |
+| CBC/生化 | 嗜中性球增多±左移；CRP↑ | 支持感染但非特異 |
+| **BAL/TTW 細胞學＋需氧/厭氧培養＋藥敏** | 嗜中性球為主＋細胞內菌＋定菌 | **金標準**，指引抗生素（ISCAID 力薦，尤重症/反應不佳/貓） |
+| 肺 FNA＋培養 | 局部實質病灶取樣 | 替代取樣（Preibisz 2025：14 犬 2 貓可行） |
+| 血氧/血氣 | PaO₂↓、A-a gradient↑ | 評估氧合 |
+
+> 取樣時機：**盡量在首劑抗生素前**採檢做培養（抗生素會降低培養陽性率）。
+
+[互動:pneumonia-antibiotic-decision]（互動：依「社區型 vs 吸入性 vs 重症/院內」× 是否有培養結果，決定經驗性用藥與是否降階/升階）
 
 ## 三、治療策略
 
-### 抗生素選擇
+### 抗生素（依 ISCAID 2017，依嚴重度分層——非單一口服首選）
 
-| 情境 | 經驗性抗生素 | 療程 | 備註 |
-|------|------------|------|------|
-| 社區型（輕-中度） | Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID | 3-6 週 | 涵蓋大部分口腔菌 |
-| 社區型（需廣譜） | Amoxicillin-Clav + Fluoroquinolone | 4-6 週 | 加強革蘭氏陰性覆蓋 |
-| 吸入性（厭氧菌） | Amoxicillin-Clav + Metronidazole 10 mg/kg PO BID | 4-6 週 | 厭氧菌覆蓋 |
-| 重症/住院 | Ampicillin-Sulbactam IV + Enrofloxacin IV | 至穩定後轉 PO | 依培養結果調整 |
-| 貓（Mycoplasma 疑慮） | Doxycycline 5-10 mg/kg PO SID | 3-4 週 | Mycoplasma 對 β-lactam 無效 |
+| 情境 | ISCAID 2017 建議 | 常用劑量* | 備註 |
+|------|------|----------|------|
+| 輕度、疑 Bordetella/Mycoplasma、無全身症狀 | [藥物:Doxycycline]（合理經驗首選） | 5 mg/kg PO q12h（或 10 mg/kg q24h） | 貓給藥後**餵水/食物防食道炎** |
+| 吸入、無敗血症 | **不給藥** 或 非經口 β-lactam：[藥物:Ampicillin]／[藥物:Ampicillin-Sulbactam]／[藥物:Cefazolin] | ampicillin(-sulbactam) 20–30 mg/kg IV q6–8h | 純化學性吸入未必需抗生素 |
+| 敗血症/重症 | (enrofloxacin 或 marbofloxacin) ＋ (ampicillin 或 [藥物:Clindamycin])，非經口 | 犬 [藥物:Enrofloxacin] 5–20 mg/kg IV q24h；貓 ≤5 mg/kg/日 | FQ 補革蘭氏陰性；另一藥補革蘭氏陽性/厭氧 |
+| 住院（任何嚴重度） | 一律先非經口，穩定/出院轉口服（培養導向） | — | ISCAID：住院不論嚴重度先靜脈 |
+| 門診口服選項 | [藥物:Amoxicillin-Clavulanate]（Plumb's 實務；ISCAID 列為 URI 首選、非肺炎指名藥） | 犬 11／貓 12.5 mg/kg PO q12h（Plumb's 實務可達 ~12.5–25） | 涵蓋多數口腔菌含許多厭氧 |
+
+*劑量為臨床常用範圍，**須依現行仿單／Plumb's 與獸醫師核對**、依腎功能調整。
+**⚠️ 貓 fluoroquinolone 安全**：enrofloxacin 於貓 **>5 mg/kg/日** 可致急性視網膜變性/失明；貓優先用 [藥物:Pradofloxacin] 或 [藥物:Marbofloxacin]，enrofloxacin 若用須 ≤5 mg/kg/日。
+
+> **抗菌管理（stewardship）**：ISCAID **不把 fluoroquinolone 當經驗一線**；FQ 保留給**敗血症/重症或培養證實的革蘭氏陰性**。革蘭氏陽性/厭氧覆蓋以 **ampicillin 或 clindamycin**；**metronidazole 非常規**，僅疑/證實 Bacteroides 且 clindamycin 可能無效時考慮。
+
+### 療程（ISCAID 2017）
+
+- 經驗 doxycycline 約 7–10 天；若臨床改善，**治療至臨床緩解後再約 1 週**，**≤10–14 天重新評估**是否停藥。
+- **以臨床痊癒為停藥主依據**（胸腔 X 光變化落後臨床、可殘留數週，不宜單以影像完全消退決定）。
+- 反覆/併發（巨食道未矯正、多重抗藥）則個別化延長。
 
 ### 支持療法
 
-- 氧氣：SpO2 < 93% → 鼻管 (50-100 mL/kg/min)、氧氣籠或 flow-by
-- 霧化療法 (Nebulization)：生理食鹽水霧化 15-20 分鐘 Q6-8H → 稀釋分泌物
-- 叩擊排痰 (Coupage)：霧化後胸壁叩擊 5-10 分鐘 → 鬆動分泌物
-- 輸液：維持水合但避免過度（加重肺水腫）
-- 營養：維持足夠熱量攝取，吸入性肺炎患者考慮暫時禁食並以食管管灌食
+- 氧氣：SpO₂ < 93% → 鼻導管、氧氣籠或 flow-by。
+- **霧化（生理食鹽水）＋叩擊排痰（coupage）** Q6–8H：稀釋鬆動分泌物（被低估的輔助）。
+- 輸液維持水合，**避免過度**（加重肺水腫）。
+- 營養：維持熱量；反覆吸入者評估暫時禁食/管灌並處理基礎原因。
+- **避免鎮咳藥**（需咳出分泌物）。
 
-## 四、預後
+## 四、併發症與監控
 
-| 預後因子 | 良好 | 不良 |
-|---------|------|------|
-| 肺葉數 | 1-2 葉受累 | ≥ 3 葉或瀰漫性 |
+| 併發症 | 處置 |
+|--------|------|
+| 敗血症/敗血性休克 | 積極支持、依藥敏抗生素 |
+| 急性呼吸窘迫（ARDS 樣） | 氧氣、重症正壓通氣 |
+| 肺膿瘍/壞死性肺炎 | 延長療程、必要時手術 |
+| 反覆吸入（基礎病未解） | 處理巨食道/喉麻痺根因 |
+
+**監控計畫：**
+
+| 時間點 | 項目 | 目標/警訊 |
+|--------|------|----------|
+| 48–72 h | 體溫、呼吸頻率/費力、食慾、SpO₂ | 臨床改善；惡化→重評/升階、查併發 |
+| 每 1–2 週 | 胸腔 X 光 | 追蹤消退（但**不以影像單獨決定停藥**） |
+| 停藥前 | 臨床痊癒評估（±影像近消退） | 以臨床為主 |
+| 反覆者 | 基礎原因檢查（吞嚥透視、喉檢、重症肌無力抗體） | 根因矯正 |
+
+## 五、預後與預後因子
+
+| 因子 | 良好 | 不良 |
+|------|------|------|
+| 受累肺葉 | 1–2 葉 | ≥3 葉/瀰漫 |
 | 基礎原因 | 可矯正（一次性吸入） | 不可矯正（巨食道） |
-| 培養結果 | 敏感菌株 | 多重抗藥菌 |
-| 氧合狀態 | SpO2 > 90% | 需機械通氣 |
-| 整體存活率 | 77-89%（社區型） | 50-68%（吸入性） |
+| 培養/藥敏 | 敏感菌 | 多重抗藥 |
+| 氧合/病情 | SpO₂ > 90% | 敗血症、ARDS、需機械通氣 |
 
-### 台灣臨床注意事項
+- 存活率整體多在 **~77–90%**：吸入性最大病例系列（Kogan 2008 outcome，88 犬）約 **77–82%**；社區型幼犬（Radhakrishnan 2007，65 犬）約 **88%**。跨研究範圍較廣（~30–82%），**敗血症、ARDS、需正壓通氣者顯著較差**。
+- 上述為病例系列/回顧（Evidence Level II–III）。
 
-台灣屬亞熱帶氣候，高溫高濕的環境增加了吸入性肺炎的風險，濕熱環境下食物腐敗快速，嘔吐相關的吸入事件相對常見。台灣流浪犬族群因長期戶外暴露、營養不良與免疫力低下，細菌性肺炎的盛行率較家犬為高。台灣常見致病菌以 Pasteurella spp.、E. coli、Streptococcus spp. 為主，與國際報告一致，但因抗生素使用習慣差異，部分區域的抗藥性模式可能不同，建議積極進行 BAL 培養與藥敏試驗以指導治療。另外，台灣犬舍環境密度較高，Bordetella bronchiseptica 相關的群聚感染需特別留意。`,
-  clinical_pearl: '吸入性肺炎最重要的臨床線索是「在嘔吐/麻醉事件後出現的急性呼吸症狀」加上「胸腔 X 光右中葉/右前葉（重力依賴部位）的肺泡型浸潤」。在等待培養結果期間，經驗性抗生素必須涵蓋厭氧菌，因為口腔常駐菌中厭氧菌佔很大比例。Amoxicillin-Clavulanate 為首選，不需要額外加 Metronidazole 除非是嚴重的壞死性肺炎。另外，「coupage + nebulization」是被低估的輔助療法，每 6-8 小時生理食鹽水霧化後叩擊排痰可明顯加速痊癒。',
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/觀念 | 獸醫應用 | 現況 |
+|--------------|---------|------|
+| CAP 抗菌管理與縮短療程（human stewardship） | 犬貓以臨床痊癒導向、避免過長療程 | 趨勢一致，證據仍在累積 |
+| 吸入「肺炎 vs 肺炎（pneumonitis）」區分 | 化學性吸入未必需抗生素 | 觀念採用中 |
+| 肺部超音波輔助診斷/監測（POCUS） | 犬貓評估實質化與積液 | 應用漸增 |
+| 定量培養/藥敏導向降階 | BAL/TTW 培養降階窄譜 | ISCAID 力薦 |
+
+## 七、臨床爭議與知識空缺
+
+| 議題 | 現況 | Evidence Level |
+|------|------|----------------|
+| 最佳療程長度 | 趨勢縮短、以臨床痊癒為準；犬貓比較性 RCT 有限 | II–III |
+| 是否以 X 光消退決定停藥 | 影像落後臨床，不建議單以影像；共識轉向臨床 | III |
+| 吸入事件後預防性抗生素 | 純化學性肺炎不建議常規預防；僅感染建立才用 | III |
+| 常規加 metronidazole 覆蓋厭氧 | amox-clav 多已涵蓋，常規加藥缺實證 | III |
+| 經驗性 fluoroquinolone 為一線 | 抗菌管理反對；ISCAID 保留 FQ 給敗血症/重症/培養革蘭氏陰性 | II–III（指引） |
+
+## 八、近期實證更新
+
+- **ISCAID 2017 抗菌管理（Lappin）——依嚴重度分層**：輕度疑 Bordetella/Mycoplasma → doxycycline；吸入無敗血症 → 不給藥或非經口 β-lactam（ampicillin/ampicillin-sulbactam/cefazolin）；敗血症 → (enrofloxacin 或 marbofloxacin)＋(ampicillin 或 clindamycin)。**fluoroquinolone 非經驗一線**、保留敗血症/重症/培養革蘭氏陰性；**amoxicillin-clavulanate 是 ISCAID 的 URI 首選、非肺炎指名藥**。力薦 BAL/TTW 培養導向降階。
+- **療程觀念（ISCAID 2017）**：治療至臨床緩解後約 1 週、**≤10–14 天重評**；**以臨床痊癒（非 X 光完全消退）決定停藥**（影像落後）。
+- **吸入性肺炎 ≠ 每次吸入都給藥**：區分化學性肺炎（pneumonitis）與細菌性肺炎；抗生素針對感染。
+- **貓 fluoroquinolone 安全**：enrofloxacin >5 mg/kg 於貓致視網膜毒性/失明 → 貓優先 pradofloxacin/marbofloxacin。
+- **診斷取樣**：肺 FNA＋培養/藥敏為 BAL/TTW 之外可行取樣（Preibisz 2025，犬貓病例）。
+- **台灣**：亞熱帶高溫高濕、犬舍密度高（Bordetella 群聚）、流浪犬暴露多；在地抗藥模式差異大 → **積極 BAL 培養/藥敏導向用藥**，避免經驗性廣譜濫用。`,
+  clinical_pearl: '吸入性肺炎最有力的線索是「嘔吐/麻醉事件後的急性呼吸症狀」＋「胸腔 X 光重力依賴部位（右中葉/右前葉）的肺泡型浸潤」。關鍵觀念更新有二：(1) **停藥看臨床痊癒、不是等 X 光完全乾淨**——影像變化落後臨床數週，硬要治到影像消退＝過度用藥；(2) 貓別用高劑量 enrofloxacin（>5 mg/kg 會讓貓視網膜變性失明），要 FQ 就用 pradofloxacin/marbofloxacin。另外 amoxicillin-clavulanate 已涵蓋多數口腔厭氧菌，多數病例不必再加 metronidazole；被低估的是「霧化＋叩擊排痰」，每 6–8 小時能明顯加速痊癒。',
   common_mistakes: [
-    '吸入性肺炎抗生素未覆蓋厭氧菌，口腔常駐菌中厭氧菌為重要成分',
-    '抗生素療程太短（僅 7-10 天），細菌性肺炎通常需 3-6 週，以 X 光改善為停藥依據',
-    '未做 BAL/TTW 培養就長期使用經驗性抗生素，培養敏感性指引可避免抗藥性',
-    '過度積極輸液，肺炎患者過度水合可加重肺水腫',
-    '忽略吸入性肺炎的基礎原因（巨食道、喉麻痺），不處理根本原因會反覆發作',
+    '對每次「吸入事件」都給抗生素——純化學性肺炎（pneumonitis）未必需要，抗生素針對已建立的細菌感染',
+    '硬把療程拖到 X 光完全消退才停藥——影像落後臨床，應以臨床痊癒為停藥依據，避免過度用藥',
+    '把 fluoroquinolone 當經驗一線——ISCAID 保留 FQ 給敗血症/重症/培養革蘭氏陰性；輕度用 doxycycline、吸入無敗血症用非經口 β-lactam 或不給藥（並非以 amox-clav 為肺炎首選）',
+    '⚠️ 貓用 enrofloxacin >5 mg/kg——致視網膜變性失明；貓應改 pradofloxacin/marbofloxacin',
+    '未在給抗生素前採 BAL/TTW 培養就長期經驗性用藥——失去藥敏導向、助長抗藥',
+    '只治肺炎不找/不矯正基礎原因（巨食道、喉麻痺）——會反覆吸入復發',
   ],
   disease_data: {
     signalment: '犬遠多於貓。犬：中大型犬更常見吸入性肺炎。幼犬（社會化階段、犬舍環境）好發 Bordetella 肺炎。老年大型犬（喉麻痺、巨食道）好發吸入性肺炎。貓：較罕見，但 Mycoplasma 為重要病原。短頭犬種因上呼吸道解剖異常風險較高。',
     etiology: '最常見為吸入性（胃內容物或口腔分泌物吸入）。致病菌：Pasteurella spp.、E. coli、Klebsiella spp.、Bordetella bronchiseptica、Streptococcus spp.、Staphylococcus spp.、厭氧菌（Bacteroides、Fusobacterium）。貓：Mycoplasma spp.、Bordetella、Pasteurella。常為混合感染。',
-    pathogenesis: '吸入性：胃酸化學灼傷肺泡上皮 + 口腔常駐菌隨吸入物進入下呼吸道 → 黏液纖毛清除已被破壞 → 細菌增殖 → 嗜中性球大量浸潤 → 化膿性肺泡炎 → 肺實質化（consolidation）→ 嚴重者壞死與膿瘍形成。血行性：菌血症 → 肺毛細管菌栓 → 多發性肺炎。',
+    pathogenesis: '吸入性為雙重損傷：(1) 化學性——胃酸（pH<2.5）灼傷肺泡上皮/內皮 → 通透性↑、肺水腫、表面活性劑失活（此為化學性肺炎 pneumonitis，未必等於感染）；(2) 細菌性——口腔常駐菌（厭氧＋兼性厭氧）隨吸入物進入、黏液纖毛清除受損 → 細菌增殖 → 嗜中性球浸潤 → 化膿性肺泡炎 → 實質化（consolidation）→ 嚴重者壞死/膿瘍。血行性：菌血症 → 肺毛細管菌栓 → 多發性肺炎。',
     clinical_signs: [
       { sign: '濕性咳嗽', category: 'primary', description: '有痰咳嗽，可能咳出膿性分泌物' },
       { sign: '發燒', category: 'primary', description: '> 39.5°C，但重症敗血症可能低體溫' },
@@ -6514,11 +6583,11 @@ const contentBacterialPneumonia: NodeContent = {
       { condition: '肺黴菌感染', key_differentiator: '慢性病程、結節狀/腔洞性病灶、培養確診' },
       { condition: '肺出血', key_differentiator: '凝血異常、BAL 血性、中毒史（鼠藥）' },
     ],
-    diagnostic_workup: '1. 理學檢查（聽診：crackles、tubular breath sounds）→ 2. 胸腔 X 光三視角（肺泡型浸潤、air bronchogram）→ 3. CBC + 生化（白血球增多、CRP 升高）→ 4. SpO2/血液氣體 → 5. BAL 或 TTW（細胞學 + 需氧/厭氧培養 + 敏感性試驗 + Mycoplasma 培養）→ 6. 評估基礎原因（鋇劑吞嚥/透視 for 巨食道、喉檢查）',
-    treatment_protocol: '經驗性抗生素：Amoxicillin-Clavulanate 12.5-25 mg/kg PO BID ± Enrofloxacin 5 mg/kg PO SID（犬），療程 3-6 週。吸入性加 Metronidazole 10 mg/kg PO BID。重症：IV Ampicillin-Sulbactam + Enrofloxacin。貓疑似 Mycoplasma：Doxycycline 5-10 mg/kg PO SID。支持療法：氧氣（SpO2 < 93%）、霧化 + coupage Q6-8H、輸液維持水合、營養支持。',
-    prognosis: '社區型輕中度：存活率 77-89%，預後良好至謹慎。吸入性肺炎：存活率 50-68%，取決於基礎原因可否矯正。反覆吸入性（巨食道未矯正）：預後謹慎至不良。多重抗藥菌感染：預後不良。早期適當抗生素治療明顯改善預後。',
-    monitoring: '治療開始後 48-72 小時評估臨床反應（體溫、呼吸頻率、食慾）。每 1-2 週追蹤胸腔 X 光直到完全消退。停藥前需 X 光確認浸潤完全或近完全消退。反覆發作者需評估與處理基礎原因。',
-    owner_communication: '細菌性肺炎抗生素要吃很久，通常 3-6 週，不能因為看起來好了就提早停。如果是吸入性的，要找出根本原因（像巨食道）並處理掉，不然會一直復發。居家請適度活動，不要劇烈跑跳，但也不用整天躺著。每天觀察一下呼吸快不快、吃不吃。萬一呼吸更喘、開口呼吸、開始拒食，馬上回診。',
+    diagnostic_workup: '1. 理學檢查（聽診：crackles、tubular breath sounds）→ 2. 胸腔 X 光三視角（肺泡型浸潤、air bronchogram、重力依賴分布）→ 3. CBC + 生化（白血球增多、CRP 升高）→ 4. SpO2/血液氣體 → 5. **首劑抗生素前**採 BAL 或 TTW（細胞學 + 需氧/厭氧培養 + 藥敏 + Mycoplasma 培養）；局部病灶可肺 FNA 培養 → 6. 評估基礎原因（鋇劑吞嚥/透視 for 巨食道、喉檢查、重症肌無力抗體）',
+    treatment_protocol: '依 ISCAID 2017 依嚴重度分層：輕度疑 Bordetella/Mycoplasma → Doxycycline 5 mg/kg PO q12h（或 10 q24h）；吸入無敗血症 → 不給藥或非經口 β-lactam（Ampicillin/Ampicillin-Sulbactam 20-30 mg/kg IV q6-8h 或 Cefazolin）；敗血症/重症 → (犬 Enrofloxacin 5-20 mg/kg IV q24h 或 Marbofloxacin)＋(Ampicillin 或 Clindamycin)。住院一律先非經口、穩定轉口服（培養導向）。門診口服選項 Amoxicillin-Clavulanate（犬 11/貓 12.5 mg/kg PO q12h，Plumb 實務可達 ~12.5-25；ISCAID 列為 URI 首選、非肺炎指名藥）。Metronidazole 非常規（僅疑 Bacteroides）。⚠️ 貓避免 enrofloxacin >5 mg/kg（視網膜毒性）→ 優先 pradofloxacin/marbofloxacin。貓 Doxycycline 給藥後餵水防食道炎。療程：治療至臨床緩解後約 1 週、≤10-14 天重評，以臨床（非影像完全消退）停藥。支持：氧氣（SpO2<93%）、霧化+coupage Q6-8H、輸液避免過度、避免鎮咳。劑量須依仿單與獸醫核對。',
+    prognosis: '存活率整體多在 ~77-90%：吸入性最大病例系列（Kogan 2008 outcome，88 犬）約 77-82%；社區型幼犬（Radhakrishnan 2007，65 犬）約 88%。跨研究範圍較廣（~30-82%），敗血症/ARDS/需機械通氣者顯著較差。反覆吸入（巨食道未矯正）預後謹慎；早期適當治療與矯正基礎原因改善預後。',
+    monitoring: '治療開始後 48-72 小時評估臨床反應（體溫、呼吸頻率/費力、食慾、SpO2）；惡化則重評、查併發、依藥敏升階。每 1-2 週追蹤胸腔 X 光觀察消退，但**停藥以臨床痊癒為主、不單以影像完全消退決定**（影像落後臨床）。反覆發作者評估與矯正基礎原因（巨食道、喉麻痺、重症肌無力）。',
+    owner_communication: '細菌性肺炎抗生素通常要吃好幾週，實際長短由醫師依恢復情況判斷（看狗狗實際好起來、不是硬等 X 光完全乾淨），請務必按時吃完、不要自己提早停。如果是吸入性的，要找出並處理根本原因（像巨食道），不然會一直復發。居家適度活動即可。每天看一下呼吸快不快、吃不吃。萬一更喘、開口呼吸、拒食，馬上回診。',
   },
   diagnostic_data: null,
   procedure_data: null,
@@ -6526,13 +6595,18 @@ const contentBacterialPneumonia: NodeContent = {
     { position: '感染途徑表後', type: 'flowchart', description: '細菌性肺炎感染途徑與病理機轉流程圖' },
     { position: '治療策略段落後', type: 'comparison_table', description: '不同情境的抗生素選擇決策表' },
   ],
-  interactive_placeholders: [],
-  drug_api_links: ['Amoxicillin-Clavulanate', 'Enrofloxacin', 'Metronidazole', 'Doxycycline', 'Ampicillin-Sulbactam'],
+  interactive_placeholders: [
+    { position: '二、臨床表現與診斷 診斷段後', type: 'decision_tree', description: '互動式抗生素決策：社區型 vs 吸入性 vs 重症/院內 × 有無培養結果 → 經驗性用藥與降階/升階' },
+  ],
+  drug_api_links: ['Doxycycline', 'Ampicillin', 'Ampicillin-Sulbactam', 'Cefazolin', 'Amoxicillin-Clavulanate', 'Enrofloxacin', 'Marbofloxacin', 'Pradofloxacin', 'Clindamycin', 'Metronidazole'],
   references: [
-    { type: 'journal', citation: 'Dear JD. "Bacterial pneumonia in dogs and cats: An update." Vet Clin North Am Small Anim Pract. 2020;50(2):447-465.', relevance: '犬貓細菌性肺炎最新回顧' },
-    { type: 'journal', citation: 'Kogan DA et al. "Clinical, clinicopathologic, and radiographic findings in dogs with aspiration pneumonia: 88 cases (2004-2006)." J Am Vet Med Assoc. 2008;233(11):1742-1747.', relevance: '犬吸入性肺炎臨床研究' },
-    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2020. Chapter 22: Lower Respiratory Tract Disorders.', relevance: '下呼吸道疾病教材' },
-    { type: 'guideline', citation: 'Lappin MR et al. "Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats." J Vet Intern Med. 2017;31(2):279-294.', relevance: '呼吸道感染抗生素使用指引' },
+    { type: 'guideline', citation: 'Lappin MR, et al. Antimicrobial use Guidelines for Treatment of Respiratory Tract Disease in Dogs and Cats: Antimicrobial Guidelines Working Group of the International Society for Companion Animal Infectious Diseases. J Vet Intern Med. 2017;31(2):279-294. doi:10.1111/jvim.14627.', relevance: '現行權威指引：ISCAID 呼吸道抗菌使用（依嚴重度分層、FQ 非經驗一線、培養導向、療程以臨床痊癒停藥）' },
+    { type: 'journal', citation: 'Dear JD. Bacterial Pneumonia in Dogs and Cats. Vet Clin North Am Small Anim Pract. 2020;50(2):447-465. doi:10.1016/j.cvsm.2019.10.007.', relevance: '犬貓細菌性肺炎回顧（病理/診斷/治療、影像落後臨床）' },
+    { type: 'journal', citation: 'Kogan DA, et al. Clinical, clinicopathologic, and radiographic findings in dogs with aspiration pneumonia: 88 cases (2004-2006). J Am Vet Med Assoc. 2008;233(11):1742-1747. doi:10.2460/javma.233.11.1742.', relevance: '犬吸入性肺炎臨床/影像特徵、好發肺葉（findings paper）' },
+    { type: 'journal', citation: 'Kogan DA, et al. Etiology and clinical outcome in dogs with aspiration pneumonia: 88 cases (2004-2006). J Am Vet Med Assoc. 2008;233(11):1748-1755. doi:10.2460/javma.233.11.1748.', relevance: '犬吸入性肺炎病原與預後（存活率溯源，outcome paper）' },
+    { type: 'journal', citation: 'Radhakrishnan A, et al. Community-acquired infectious pneumonia in puppies: 65 cases (1993-2002). J Am Vet Med Assoc. 2007;230(10):1493-1497. doi:10.2460/javma.230.10.1493.', relevance: '幼犬社區型感染性肺炎預後（社區型存活率溯源）' },
+    { type: 'journal', citation: 'Preibisz, et al. Transthoracic fine-needle aspiration of the lungs, and bacterial culture with antimicrobial susceptibility testing used in diagnosing bacterial pneumonia in dogs and cats: 14 dogs and 2 cats (2009-2021). Front Vet Sci. 2025;12:1521793. doi:10.3389/fvets.2025.1521793.', relevance: '近年（≤5年）犬貓肺 FNA 培養/藥敏診斷' },
+    { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine. 6th ed. Elsevier; 2020.', relevance: '小動物內科教科書，下呼吸道疾病章節（教材）' },
   ],
   is_current: true,
   created_at: now,
