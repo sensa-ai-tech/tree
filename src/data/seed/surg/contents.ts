@@ -6356,7 +6356,7 @@ const contentFelineToothResorption: NodeContent = {
 const contentFCGS: NodeContent = {
   id: 'CONTENT-SURG-L3-022',
   node_id: 'SURG-L3-022',
-  version: 1,
+  version: 2,
   summary:
     '貓慢性齦口腔炎（FCGS，又稱尾側口腔炎）是一種嚴重、慢性、免疫介導的口腔黏膜發炎疾病，典型為雙側對稱性發炎並向尾側口腔（舌顎弓／磨牙後黏膜）延伸——此「尾側黏膜炎」是與單純牙周性齒齦炎最重要的鑑別點。患貓常有劇烈口腔疼痛、流涎、惡臭、進食困難與體重下降。實證最強的治療是全口或部分（犬齒以後全部）拔牙，約六到八成可痊癒或顯著改善；難治型可考慮環孢素、干擾素及新興的間質幹細胞療法（證據有限）。',
   learning_objectives: [
@@ -6369,12 +6369,12 @@ const contentFCGS: NodeContent = {
   ],
   key_points: [
     '標誌性病灶是尾側／舌顎弓黏膜的增生潰瘍性發炎，發炎範圍超出齒齦本身',
-    '病理為淋巴漿細胞浸潤，本質是對牙菌斑生物膜等慢性抗原的過度免疫反應',
+    '病理為淋巴漿細胞浸潤，本質是對持續性口腔抗原之過度/失調免疫反應；抗原本質未明、多因子（牙菌斑細菌、FCV 等病毒、免疫失調、遺傳皆為候選）',
     '拔牙（全口或犬齒以後全部）是實證最強的首選治療，而非最後手段',
     'Jennings 2015（n=95）：約 28% 完全緩解、約 39% 顯著改善（合計約 67%），全口與部分拔牙無顯著差異',
     'FCV 帶原在患貓中很常見，但 FCV 病毒量不能預測嚴重度或預後（Druet & Hennet 2017）',
     '切片的重要目的之一是排除鱗狀細胞癌（SCC），尤其單側／腫塊樣病灶',
-    '殘留牙根是治療失敗最常見原因；判定難治前須重照 X 光並重新手術',
+    '殘留牙根是可矯正的常見治療失敗原因（Farcas 2014）；判定難治前先重照全口 X 光排除殘根、必要時重新手術（惟即使完整拔牙仍約 1/3 為免疫介導性難治）',
     '難治型（約 20–30%）可用環孢素（監測血中谷值）、干擾素、短期類固醇；間質幹細胞療法為新興、證據有限',
   ],
   body: `# 貓慢性齦口腔炎 (Feline Chronic Gingivostomatitis, FCGS)
@@ -6387,7 +6387,7 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
 
 ## 二、病理機轉 (Pathophysiology)
 
-主流模型為**對慢性抗原刺激（以牙菌斑生物膜為主要驅動抗原）之異常、過度黏膜免疫反應**——這正是「拔牙優先（移除牙菌斑滯留面）」的治療邏輯。組織學見固有層／黏膜下密集**淋巴漿細胞浸潤**（以漿細胞與 T 淋巴球為主），伴免疫失調（CD4/CD8 比例改變、免疫球蛋白變化）。
+主流模型為**對持續性口腔抗原刺激之異常、過度且失調的黏膜免疫反應**；**抗原本質仍未明、可能多因子**（牙菌斑細菌、FCV 等病毒、免疫失調、遺傳皆為候選）。組織學見固有層／黏膜下密集**淋巴漿細胞浸潤**（以漿細胞與 T 淋巴球為主），伴免疫失調（CD4/CD8 比例改變、免疫球蛋白變化）。拔牙之推定機轉為**移除齦下微生物棲位（含牙菌斑滯留面）以降低慢性抗原負荷**，惟確切機制（尤其與 FCV 清除的關聯）尚不明確——這正是「拔牙優先」的治療邏輯。
 
 共因子（皆為**相關性而非已證實因果**）：
 - **貓卡里西病毒（FCV）**：高度相關、患貓帶原常見（部分族群近乎全陽）；但因果未確立，且 FCV 病毒量**不能**預測嚴重度或預後（Druet & Hennet 2017）。
@@ -6396,7 +6396,7 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
 
 ## 三、流行病學與病患 (Epidemiology)
 
-一般族群盛行率約 **0.7–4%**（各文獻不一，須查證）；無強烈品種/性別偏好（部分研究純種比例較高），中年貓常見但年齡範圍廣。患貓 FCV 帶原比例高。
+一般族群盛行率文獻常引 **0.7–12%**（美國/歐洲；Winer 2016 綜整；英國初診研究低端約 0.7%，部分族群報告更高）；無強烈品種/性別偏好（部分研究純種比例較高），中年貓常見但年齡範圍廣。患貓 FCV 帶原比例高。
 
 ## 四、臨床表現 (Clinical Signs)
 - **尾側／舌顎弓黏膜增生潰瘍性發炎（尾側口腔炎）= 標誌病灶**。
@@ -6417,18 +6417,18 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
 
 **拔牙是實證最強的首選治療**：行**全口拔牙**或**拔除犬齒以後全部（前臼齒＋臼齒）**，並以 X 光確認**完整移除所有牙根碎片**（殘根是失敗常見原因）。
 - **Jennings 2015（JAVMA，n=95）**：約 28% 完全緩解、約 39% 顯著改善（合計約 **67%**），約 26% 改善有限需持續內科、約 6% 難治；**全口與部分拔牙無顯著差異**。
-- Winer 2016 系統性回顧：拔牙後約 **80%** 痊癒或顯著改善（臨床常引用 60–80%）。
+- 系統性回顧（Winer 2016）綜整多個原始世代：拔牙後約 **60–80%** 痊癒或顯著改善（該 ~80% 主要來自 Hennet 1997 n=30、Bellei 2008 n=21 等原始研究，非單一 Winer 結果）。
 
 **難治／不完全反應者（約 20–30%）—— 內科（證據較弱）**：
 - **環孢素（ciclosporin）**：最受支持的內科輔助，**監測血中谷值**（常見目標約 ≥300 ng/mL；劑量/目標須依現行文獻與獸醫師確認）。
 - **貓重組 omega 干擾素**（及人 IFN-α）：證據變異/有限。
-- **類固醇**：可短期緩解，但**不治本、不建議長期使用**（影響日後手術與糖尿病風險）；僅作橋接。
+- **類固醇**：僅短期緩解（Soltero-Rivera：約 23% 明顯改善、其中僅 ~7% 達緩解），**不治本、不建議長期**（糖尿病、效果遞減；且**先前使用類固醇會降低日後環孢素反應**，Lommer 2013：69% vs 45%）；僅作為疼痛/免疫療法無效時的救援/漸減用藥。
 - **間質幹細胞（MSC）療法——新興、證據有限（小型無對照前驅試驗）**：Arzi 2016（自體脂肪 MSC，完成 7 隻，約 5/7 有反應）、Arzi 2017（異體，4/7 約 57% 有反應、反應較慢）。定位為難治型之新興選項。
 - 全程**多模式止痛**；**抗生素角色有限**（至多短暫改善，非治癒，不能取代拔牙）。
 
 ## 七、預後、監測與溝通 (Prognosis & Communication)
 
-完整拔牙後多數顯著改善、相當比例可痊癒；少數需長期內科。**殘留牙根為失敗最常見原因 → 判定難治前先重照 X 光並重新手術**。對飼主說明：此為**長期、疼痛**之疾病，**拔牙為第一線（非最後手段）**，反應可能需數週至數月，部分貓需長期治療；避免以長期類固醇拖延根本治療。
+完整拔牙後多數顯著改善、相當比例可痊癒；少數需長期內科。**殘留牙根為常見且可矯正的失敗原因（Farcas 2014）→ 判定難治前先重照全口 X 光排除殘根、必要時重新手術；惟即使完整拔牙仍約 1/3 貓為免疫介導性難治**。對飼主說明：此為**長期、疼痛**之疾病，**拔牙為第一線（非最後手段）**，反應可能需數週至數月，部分貓需長期治療；避免以長期類固醇拖延根本治療。
 
 ## 八、常見錯誤
 見 common_mistakes。**要訣**：毛髮糾結、不再理毛、張口疼痛的貓，把尾側口腔炎放鑑別前段——最有效的介入是**完整拔牙**，不是再開一輪類固醇；判定難治前先用全口 X 光確認沒有殘根。
@@ -6436,7 +6436,7 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
   clinical_pearl:
     '一隻毛髮糾結、不再理毛、且張口時明顯疼痛的貓，應立刻把「尾側口腔炎」放進鑑別清單前段——而現有最有效的介入是完整拔除牙齒，不是再開一輪類固醇。判定難治之前，先用全口 X 光確認沒有殘留牙根。',
   common_mistakes: [
-    '以長期類固醇取代拔牙：壓住症狀、延誤根本治療，並增加日後手術與糖尿病風險',
+    '以長期類固醇取代拔牙：壓住症狀、延誤根本治療；長期有糖尿病/效果遞減風險，且會降低日後環孢素反應（Lommer 2013）',
     '未做切片排除鱗狀細胞癌（SCC），尤其忽略單側或腫塊樣病灶',
     '止痛不足：低估此病疼痛程度，未給予多模式止痛',
     '拔牙不完整／殘留牙根，卻直接把病例貼上「難治」標籤',
@@ -6444,11 +6444,11 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
   ],
   disease_data: {
     signalment:
-      '中年貓常見（但年齡範圍廣）；無強烈品種或性別偏好（部分研究報告純種貓比例較高）。患貓 FCV 帶原比例高。一般族群盛行率約 0.7–4%（各文獻數字不一，需查證）。',
+      '中年貓常見（但年齡範圍廣）；無強烈品種或性別偏好（部分研究報告純種貓比例較高）。患貓 FCV 帶原比例高。一般族群盛行率文獻常引 0.7–12%（英國初診研究低端約 0.7%，部分族群報告更高）。',
     etiology:
       '病因未明，目前視為對慢性抗原刺激（以牙菌斑生物膜為主要驅動抗原）之免疫介導異常反應。FCV、FIV、FeLV、Bartonella 為相關性因子，非已證實之因果。',
     pathogenesis:
-      '口腔黏膜固有層出現以漿細胞與 T 淋巴球為主的密集淋巴漿細胞浸潤，伴隨局部與全身免疫失調（CD4/CD8 比例改變、免疫球蛋白變化）。對牙菌斑等持續抗原刺激產生過度且失調的黏膜免疫反應，故移除牙菌斑滯留面（拔牙）為治療核心邏輯。',
+      '口腔黏膜固有層出現以漿細胞與 T 淋巴球為主的密集淋巴漿細胞浸潤，伴隨局部與全身免疫失調（CD4/CD8 比例改變、免疫球蛋白變化）。對持續口腔抗原刺激（抗原本質未明、多因子：牙菌斑細菌、FCV 等病毒、免疫失調、遺傳）產生過度且失調的黏膜免疫反應；拔牙推定藉移除齦下微生物棲位降低抗原負荷，確切機制未明。',
     clinical_signs: [
       { sign: '尾側／舌顎弓黏膜增生潰瘍性發炎（尾側口腔炎）', category: 'primary', description: '標誌性病灶，發炎超出齒齦本身' },
       { sign: '嚴重口腔疼痛、張口困難、拒絕觸碰口部', category: 'primary', description: '常為主導表現' },
@@ -6475,9 +6475,9 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
     diagnostic_workup:
       '1) 全身麻醉下完整口腔檢查；2) 代表性病灶切片以確診淋巴漿細胞性口腔炎並排除 SCC 等腫瘤；3) 全口牙科 X 光（或 CBCT）評估殘根、齒吸收、齒槽骨流失並規劃完整拔牙；4) 評估 FCV／FIV／FeLV 狀態（必要時 Bartonella）；5) 與嗜酸性、牙周、齒吸收、自體免疫等病因鑑別。',
     treatment_protocol:
-      '第一線：拔牙（全口，或拔除犬齒以後全部前臼齒與臼齒），務必以 X 光確認無殘根。難治型（約 20–30%）：環孢素（監測血中谷值，常見目標約 ≥300 ng/mL，需依現行文獻與獸醫師確認劑量）、貓重組 omega 干擾素、短期類固醇（僅作橋接，不可長期）、間質幹細胞療法（自體或異體脂肪來源 MSC，新興且證據有限，多於專科／研究環境）。全程多模式止痛；抗生素角色有限，非治癒性。所有臨床劑量與方案須由具執照獸醫師依現行藥品標示與當地法規確認。',
+      '第一線：拔牙（全口，或拔除犬齒以後全部前臼齒與臼齒），務必以 X 光確認無殘根。難治型（約 20–30%）：環孢素（監測血中谷值，常見目標約 ≥300 ng/mL，需依現行文獻與獸醫師確認劑量）、貓重組 omega 干擾素、短期類固醇（救援/漸減用，不可長期；先前用藥會降低日後環孢素反應，Lommer 2013）、間質幹細胞療法（自體或異體脂肪來源 MSC，新興且證據有限，多於專科／研究環境）。全程多模式止痛；抗生素角色有限，非治癒性。所有臨床劑量與方案須由具執照獸醫師依現行藥品標示與當地法規確認。',
     prognosis:
-      '完整拔牙後多數顯著改善、相當比例可痊癒（Jennings 2015：約 67% 痊癒或顯著改善）；少數需長期內科管理。殘留牙根為失敗最常見原因，判定難治前應重照 X 光並重新手術。',
+      '完整拔牙後多數顯著改善、相當比例可痊癒（Jennings 2015：約 67% 痊癒或顯著改善）；少數需長期內科管理。殘留牙根為常見且可矯正的失敗原因（Farcas 2014），判定難治前應重照 X 光排除殘根；惟即使完整拔牙仍約 1/3 為免疫介導性難治。',
     monitoring:
       '追蹤疼痛、食慾與體重、病灶消退情形；難治型監測環孢素血中谷值；持續評估反轉錄病毒等共病。療效可能需數週至數月顯現。',
     owner_communication:
@@ -6489,15 +6489,20 @@ FCGS 是一種嚴重、慢性、**免疫介導**的貓口腔黏膜發炎疾病�
     { position: '臨床表現段落後', type: 'annotated_image', description: '尾側口腔炎（舌顎弓）病灶標註圖，對比牙周性齒齦炎' },
     { position: '治療段落後', type: 'flowchart', description: 'FCGS 處置：切片排除 SCC → 全口/部分拔牙 → 難治型階梯式內科（環孢素/IFN/MSC）' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '治療段落後', type: 'decision_tree', description: '互動：確診（切片排 SCC）→ 全口/尾側拔牙（X 光確認無殘根）→ 反應不佳先查殘根 → 難治型階梯內科（環孢素 → IFN → MSC），全程多模式止痛' },
+  ],
   drug_api_links: ['Cyclosporine', 'Prednisolone'],
   references: [
-    { type: 'journal', citation: 'Jennings MW, Lewis JR, Soltero-Rivera MM, Brown DC, Reiter AM. Effect of tooth extraction on stomatitis in cats: 95 cases (2000-2013). J Am Vet Med Assoc. 2015;246(6):654-660.', relevance: '拔牙療效關鍵實證：95 隻貓約 28% 完全緩解+39% 顯著改善（合計約 67%），全口與部分拔牙無顯著差異（基礎文獻）' },
+    { type: 'journal', citation: 'Jennings MW, Lewis JR, Soltero-Rivera MM, Brown DC, Reiter AM. Effect of tooth extraction on stomatitis in cats: 95 cases (2000-2013). J Am Vet Med Assoc. 2015;246(6):654-660. doi:10.2460/javma.246.6.654.', relevance: '拔牙療效關鍵實證：95 隻貓約 28% 完全緩解+39% 顯著改善（合計約 67%），全口與部分拔牙無顯著差異（基礎文獻）' },
     { type: 'journal', citation: 'Winer JN, Arzi B, Verstraete FJM. Therapeutic Management of Feline Chronic Gingivostomatitis: A Systematic Review of the Literature. Front Vet Sci. 2016;3:54. doi:10.3389/fvets.2016.00054.', relevance: '系統性回顧：拔牙後約 80% 痊癒或顯著改善，並評析內科療法證據品質（基礎文獻）' },
     { type: 'journal', citation: 'Arzi B, Mills-Ko E, Verstraete FJM, et al. Therapeutic Efficacy of Fresh, Autologous Mesenchymal Stem Cells for Severe Refractory Gingivostomatitis in Cats. Stem Cells Transl Med. 2016;5(1):75-86. doi:10.5966/sctm.2015-0127.', relevance: '難治型 FCGS 自體脂肪 MSC 小型前驅試驗（約 5/7 有反應）；新興療法、證據等級低（基礎文獻）' },
     { type: 'journal', citation: 'Arzi B, Clark KC, Sundaram A, et al. Therapeutic Efficacy of Fresh, Allogeneic Mesenchymal Stem Cells for Severe Refractory Feline Chronic Gingivostomatitis. Stem Cells Transl Med. 2017;6(8):1710-1722.', relevance: '異體脂肪 MSC 試驗（4/7 約 57% 有反應，反應較慢）；佐證 MSC 為難治型新興但證據有限選項（基礎文獻）' },
     { type: 'journal', citation: 'Druet I, Hennet P. Relationship between Feline calicivirus Load, Oral Lesions, and Outcome in Feline Chronic Gingivostomatitis (Caudal Stomatitis): Retrospective Study in 104 Cats. Front Vet Sci. 2017;4:209. doi:10.3389/fvets.2017.00209.', relevance: '104 隻全 FCV 陽性，但病毒量與嚴重度/預後無相關；支持「FCV 為相關非因果」（基礎文獻）' },
     { type: 'guideline', citation: 'Bellows J, Berg ML, Dennis S, et al. 2019 AAHA Dental Care Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2019;55(2):49-69. doi:10.5326/JAAHA-MS-6933.', relevance: '麻醉下口腔檢查、全口牙科 X 光、完整拔牙原則之實務依據（基礎指引）' },
+    { type: 'journal', citation: 'Soltero-Rivera M, et al. Feline Chronic Gingivostomatitis Diagnosis and Treatment through Transcriptomic Insights. Pathogens. 2024;13(3):192. doi:10.3390/pathogens13030192.', relevance: '近年（≤5年）FCGS 診療回顧與轉錄體洞見（現行綜述）' },
+    { type: 'journal', citation: 'Lommer MJ. Efficacy of Cyclosporine for Chronic, Refractory Stomatitis in Cats: A Randomized, Placebo-Controlled, Double-Blinded Clinical Study. J Vet Dent. 2013;30(1):8-17. doi:10.1177/089875641303000101.', relevance: '難治型環孢素 RCT：谷值 ≥300 ng/mL 較高反應；先前類固醇降低環孢素療效（69% vs 45%）' },
+    { type: 'journal', citation: 'Farcas N, et al. Dental radiographic findings in cats with chronic gingivostomatitis (2002-2012). J Am Vet Med Assoc. 2014;244(3):339-345. doi:10.2460/javma.244.3.339.', relevance: '殘留牙根等牙科影像與難治口炎之關聯（殘根為可矯正失敗原因出處）' },
   ],
   is_current: true,
   created_at: now,
