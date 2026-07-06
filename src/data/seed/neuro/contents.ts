@@ -4196,7 +4196,7 @@ Discospondylitis 是椎間盤與鄰近椎體終板的感染性發炎（infection
 const contentHydrocephalus: NodeContent = {
   id: 'CONTENT-NEURO-L3-012',
   node_id: 'NEURO-L3-012',
-  version: 1,
+  version: 2,
   summary: '水腦症（Hydrocephalus）是腦脊髓液（CSF）於腦室系統中異常蓄積導致腦室擴張的疾病。分為先天性（Congenital）與後天性（Acquired）。先天性水腦症好發於玩具犬品種（Chihuahua、Yorkshire Terrier、Pomeranian、Maltese），特徵為開放前囟門（open fontanelle）、圓頂狀頭蓋骨（dome-shaped skull）、腹外側斜視（ventrolateral strabismus）。後天性水腦症多因腫瘤、發炎或出血阻塞 CSF 循環通路所致。診斷依據超音波（經前囟門）或 MRI。治療分內科（Omeprazole 降低 CSF 產生、Prednisolone 減少腦水腫、Acetazolamide 抑制 CSF 分泌）與外科（腦室腹腔引流管 VP shunt）。',
   learning_objectives: [
     '區分先天性與後天性水腦症的病因與病理機轉',
@@ -4211,7 +4211,7 @@ const contentHydrocephalus: NodeContent = {
     '水腦症分類：阻塞性/非交通性（Obstructive/Non-communicating，CSF 腦室系統內阻塞，如導水管狹窄）vs 交通性（Communicating，CSF 吸收障礙或過度產生）',
     '超音波經前囟門：無需麻醉的快速篩檢工具，可即時評估腦室大小',
     'MRI 確認診斷：腦室擴張程度量化（V/B ratio）、評估阻塞位置、排除腫瘤/發炎等續發原因',
-    '內科治療：Omeprazole 1 mg/kg PO BID（降低脈絡叢 CSF 產生，研究顯示可減少 CSF 產生率約 26%）+ Prednisolone 0.5-1 mg/kg/day（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑，減少 CSF 分泌）',
+    '內科治療：Prednisolone 0.5-1 mg/kg/day（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑）±Omeprazole 1 mg/kg PO BID（傳統用於降 CSF，但口服療效未經證實、屬實驗性——「26%」為 Javaheri 1997 急性實驗值，Girod 2016 口服未見下降）',
     '外科治療：腦室腹腔引流管（VP shunt），適用於內科治療反應不佳或嚴重/進行性神經功能缺損的病例，併發症包括阻塞、感染、過度引流',
   ],
   body: `# 水腦症 (Hydrocephalus)
@@ -4220,15 +4220,16 @@ const contentHydrocephalus: NodeContent = {
 
 
 
-### CSF 循環路徑
-CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生，接著經室間孔（foramen of Monro）至第三腦室。經中腦導水管（mesencephalic aqueduct）至第四腦室，經側孔（foramen of Luschka）與正中孔（foramen of Magendie）至蛛網膜下腔然後經蛛網膜絨毛（arachnoid villi）吸收至靜脈竇。此循環中任何環節阻塞或吸收障礙均可導致水腦症。
+### CSF 循環路徑（犬）
+CSF 由側腦室、第三腦室與第四腦室脈絡叢（choroid plexus）產生，接著經室間孔（foramen of Monro）至第三腦室，經中腦導水管（mesencephalic aqueduct）至第四腦室，再經「成對的側孔（lateral apertures，相當於人的 Luschka 孔）」流入蛛網膜下腔，最後主要由蛛網膜絨毛/顆粒（arachnoid villi/granulations）吸收至靜脈竇（另有神經根袖、腦膜淋巴管等旁路）。⚠️ **物種差異：人類特有的「正中孔（foramen of Magendie）」在犬、貓、兔、山羊皆缺如**（Coben 1967），故犬第四腦室對外的主要通道即為此對側孔，一旦阻塞即造成阻塞性內水腦。此循環中任何環節阻塞或吸收障礙均可導致水腦症。
 
 ### 分類
-- 阻塞性/非交通性水腦症（Obstructive/Non-communicating）：CSF 循環在腦室系統內阻塞，最常見阻塞位置為中腦導水管（先天性狹窄或腫瘤壓迫），最後側腦室與第三腦室擴張，第四腦室正常
+- 阻塞性/非交通性水腦症（Obstructive/Non-communicating）：CSF 循環在腦室系統內阻塞，最典型/最常被引述的阻塞位置為中腦導水管（先天性狹窄或腫瘤壓迫），阻塞吻側之側腦室與第三腦室擴張、第四腦室正常
 - 交通性水腦症（Communicating）：CSF 可自由流通至蛛網膜下腔，但吸收障礙（蛛網膜絨毛功能不良）或過度產生（脈絡叢乳頭瘤 CPP），接著所有腦室均勻擴張
+- 註：犬先天性水腦「整體」最常見型態其實為特發性交通性內水腦，離散型導水管狹窄在犬僅零星報告（Schmidt & Ondreka 2019）——故「導水管狹窄最常見」宜限定於阻塞性亞型
 
 ### 先天性水腦症
-- 多為導水管發育異常（aqueductal stenosis）導致的阻塞性水腦症
+- 最常被辨識的阻塞性病因為「中腦上丘融合（fusion of rostral colliculi）」繼發之導水管阻塞（非獨立的原發性導水管閉鎖 atresia）；惟相當多先天病例找不到明確阻塞點（特發性），且玩具/短吻犬品種有相當比例為交通性（CSF 吸收障礙/蛛網膜絨毛發育不良/顱腔容積不足）
 - 玩具犬品種遺傳易感性高
 - 顱骨癒合不全，跟著前囟門持續開放（正常犬出生後數週即閉合）
 - 腦室擴張壓迫腦皮質，皮質變薄，然後認知功能障礙
@@ -4242,13 +4243,13 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生，接著經�
 ## 二、判讀要點 (Clinical Signs & Diagnosis)
 
 ### 先天性水腦症典型表現
-- 外觀特徵：圓頂狀頭蓋骨（dome-shaped calvarium）、開放前囟門（可觸診到顱骨頂部軟性缺損）、腹外側斜視（"setting sun sign"，因中腦 tectum 壓迫導致眼球腹外側偏位）
+- 外觀特徵：圓頂狀頭蓋骨（dome-shaped calvarium）、開放前囟門（可觸診到顱骨頂部軟性缺損）、雙側腹外側斜視（"setting sun sign"，divergent strabismus）。⚠️ **斜視機轉為顱腔擴張造成骨性眼眶（orbit）變形之「骨骼發育異常」機械性眼位偏移（Dewey/Thomas），並非中腦 tectum 壓迫**（人醫嬰兒落日徵的上視麻痺才與背側中腦/Parinaud 受壓有關，不可套用於犬的腹外側斜視）
 - 神經功能障礙：學習能力差（house-training 困難）、遲鈍、盲目行走、迴轉行為（circling）、癲癇發作
 - 症狀嚴重度與皮質殘餘厚度相關，不一定與腦室大小完全成正比
 
 ### 診斷工具
 - 超音波（經前囟門）：開放前囟門犬的快速篩檢，無需麻醉，可即時測量腦室大小
-- MRI（金標準）：精確量化腦室擴張（V/B ratio > 0.6 提示明顯擴張）、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質厚度
+- MRI（金標準）：量化腦室/腦（V/B, ventricle:brain）index、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質厚度。**V/B 意義須正確理解**：Laubner 2015 以 ROC 求得的切點約 0.6（0.605、特異度約 92%）是用來「區分具臨床意義的內水腦（高腦室內壓）vs 無症狀腦室擴大 ventriculomegaly」，並非單純「明顯擴張」——無症狀腦室擴大平均約 0.54（可達 0.65）、臨床相關水腦平均約 0.73。腦室大小隨品種/個體差異甚大、V/B 無單一「正常上限」，須合併其他徵象（胼胝體上抬、丘腦間黏合扁平、腦室周邊水腫、嗅隱窩擴張、腦溝變薄）綜合判讀，不可僅憑比值單獨診斷
 - CT：可替代 MRI 評估腦室大小與骨性結構
 
 ## 三、常見陷阱 (Common Pitfalls)
@@ -4271,10 +4272,18 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生，接著經�
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| Omeprazole 降低 CSF 產生的長期療效 | 短期研究顯示減少約 26% CSF 產生，但長期療效與安全性數據有限 | Level III |
+| Omeprazole 降低 CSF 產生的療效 | 「26%」源自 Javaheri 1997 犬「急性腦室灌流/IV」實驗（且效應與 H⁺-K⁺-ATPase 無關）；口服前瞻研究（Girod 2016，15 隻健康犬）未見 CSF 生成顯著下降，臨床僅一篇未對照病例系列（Pelegrini 2019）。口服 omeprazole 臨床療效未經證實、屬實驗性 | Level IV |
 | VP shunt 最佳手術時機 | 內科治療反應不佳時轉手術的時間點未標準化 | Level IV |
-| 亞臨床腦室擴張的處理 | 許多玩具犬有無症狀性腦室擴張，是否需預防性治療或僅追蹤觀察無共識 | Level IV |`,
-  clinical_pearl: '評估玩具犬品種的水腦症時，最重要的臨床判斷是區分「需要治療的水腦症」與「亞臨床腦室擴張」。許多 Chihuahua 與 Yorkshire Terrier 在 MRI 上可見輕度至中度腦室擴張但完全無臨床症狀，這些犬不需要治療。治療的決定應基於進行性神經功能障礙（癲癇頻率增加、行為持續退化、新發神經功能缺損），而非單純影像上的腦室大小。Omeprazole 1 mg/kg BID 是近年被引入的內科治療選擇，機轉為抑制脈絡叢質子泵從而降低 CSF 分泌，部分犬對此反應良好。\n\n【台灣流行病學】Chihuahua、Yorkshire Terrier、Pomeranian 等玩具犬品種在台灣飼養數量龐大，先天性水腦症在台灣臨床並不少見。經前囟門超音波為基層動物醫院可執行的快速篩檢。VP shunt 手術需轉介至具備神經外科能力的醫院。',
+| 亞臨床腦室擴張的處理 | 許多玩具犬有無症狀性腦室擴張，是否需預防性治療或僅追蹤觀察無共識 | Level IV |
+
+## 六、近期更新 (Recent Updates)
+
+- **Omeprazole 療效存疑**：Girod 2016（Vet J）前瞻試驗顯示口服 omeprazole 未降低犬 CSF 生成；舊「26%」為 Javaheri 1997 急性實驗值且機轉與質子泵無關——內科降 CSF 生成療法證據薄弱。
+- **V/B index 意義釐清**：Laubner 2015（BMC Vet Res）確立 V/B ≈0.6 為「臨床相關水腦 vs 無症狀腦室擴大」的區分點（非正常/異常分界）；腦室大小單獨不足以判斷是否有症狀。
+- **VP shunt 為主要外科手段**：Schmidt 2019（JVIM）示分流後腦室容積下降與臨床改善相關；de Stefani/Shihab 系列成功率約 72-93%、併發症 ~20-30%。
+- **CSF 動力學新工具**：Farke 2024（Front Vet Sci）以 2D cine 相位對比 MRI 量測犬中腦導水管 CSF 流，為阻塞評估提供新方法。
+- **解剖正名**：犬第四腦室無正中孔（Magendie），僅經成對側孔（Luschka）出流（Coben 1967）；側孔阻塞亦可致阻塞性水腦（Kent 2016）。`,
+  clinical_pearl: '評估玩具犬品種的水腦症時，最重要的臨床判斷是區分「需要治療的水腦症」與「亞臨床腦室擴張」。許多 Chihuahua 與 Yorkshire Terrier 在 MRI 上可見輕度至中度腦室擴張但完全無臨床症狀，這些犬不需要治療。治療的決定應基於進行性神經功能障礙（癲癇頻率增加、行為持續退化、新發神經功能缺損），而非單純影像上的腦室大小。Omeprazole 曾被引入作為降 CSF 生成的內科選擇，但療效證據薄弱——「降 26%」來自 Javaheri 1997 的急性灌流實驗（且與質子泵 H+-K+-ATPase 無關），口服前瞻研究（Girod 2016）未見 CSF 生成下降，臨床僅未對照病例系列，應視為實驗性療法。\n\n【台灣流行病學】Chihuahua、Yorkshire Terrier、Pomeranian 等玩具犬品種在台灣飼養數量龐大，先天性水腦症在台灣臨床並不少見。經前囟門超音波為基層動物醫院可執行的快速篩檢。VP shunt 手術需轉介至具備神經外科能力的醫院。',
   common_mistakes: [
     '將所有有開放前囟門的玩具犬都診斷為水腦症，前囟門開放在玩具犬品種中常見且可能無臨床意義',
     '僅依據 MRI 腦室大小決定治療，臨床症狀嚴重度與進行性才是治療決策的關鍵',
@@ -4296,12 +4305,12 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生，接著經�
     staging: null,
     differential_diagnosis: [
       { condition: '門體分流（PSS）', key_differentiator: '小型犬幼犬行為異常的重要鑑別，餐後血氨升高、膽汁酸異常、肝臟小，症狀與進食相關' },
-      { condition: '犬認知障礙症候群（CDS）', key_differentiator: '老年犬（> 11 歲），進行性行為改變，MRI 無腦室明顯擴張' },
+      { condition: '幼犬其他病因（幼年性低血糖、幼年性/特發性癲癇、溶酶體儲積症）', key_differentiator: '玩具犬幼犬行為/神經異常的重要鑑別；CDS 為高齡犬（≥8 歲）退化病、不適合列為幼犬鑑別（僅高齡犬新發水腦才需並列 CDS）' },
       { condition: '腦膜腦炎（MUO）', key_differentiator: '小型犬年輕至中年，CSF 炎症性變化，MRI 多灶性或彌漫性病灶' },
       { condition: '顱內腫瘤伴續發水腦', key_differentiator: 'MRI 可見原發腫塊 + 阻塞性腦室擴張，中老年犬' },
     ],
     diagnostic_workup: '1. 理學與神經學檢查（開放前囟門觸診、腹外側斜視辨識），2. 超音波經前囟門（快速篩檢，無需麻醉，可即時評估腦室大小）。3. MRI（金標準：量化腦室擴張 V/B ratio、評估阻塞位置、排除腫瘤/發炎原因、評估腦皮質殘餘厚度），4. 基礎血檢排除代謝性病因（肝功能、血氨、膽汁酸，排除 PSS）。 CSF 分析（排除發炎性疾病，注意 ICP 升高時腰穿風險）',
-    treatment_protocol: '內科治療（輕度至中度症狀）：Omeprazole 1 mg/kg PO BID（降低脈絡叢 CSF 產生）+ Prednisolone 0.5-1 mg/kg/day tapering 至最低有效劑量（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑，減少 CSF 分泌）。癲癇控制：Levetiracetam 20 mg/kg PO TID 或 Phenobarbital 2-5 mg/kg PO BID。外科治療（內科反應不佳或嚴重/進行性病例）：腦室腹腔引流管（VP shunt），將 CSF 從側腦室引流至腹腔吸收。VP shunt 併發症怎麼處理？阻塞最常見，要修正或更換；感染就移除加抗生素；過度引流（slit ventricle syndrome）用可調壓閥處理。',
+    treatment_protocol: '內科治療（輕度至中度症狀）：Prednisolone 0.5-1 mg/kg/day tapering 至最低有效劑量（減少腦水腫）+ Acetazolamide 10 mg/kg PO TID（碳酸酐酶抑制劑，減少 CSF 分泌）±Omeprazole 1 mg/kg PO BID（傳統用於降 CSF、惟口服療效未經證實屬實驗性，Girod 2016 前瞻試驗未見下降）。癲癇控制：Levetiracetam 20 mg/kg PO TID 或 Phenobarbital 2-5 mg/kg PO BID。外科治療（內科反應不佳或嚴重/進行性病例）：腦室腹腔引流管（VP shunt），將 CSF 從側腦室引流至腹腔吸收。VP shunt 併發症怎麼處理？阻塞最常見，要修正或更換；感染就移除加抗生素；過度引流（slit ventricle syndrome）用可調壓閥處理。',
     prognosis: '先天性水腦症（輕度）：內科治療可穩定多數犬的神經功能，生活品質可接受。先天性水腦症（中重度）：VP shunt 手術成功率約 70-80%，術後神經功能可改善但可能殘留認知缺陷。VP shunt 併發症發生率約 20-30%（阻塞為主）。後天性水腦症：取決於原發病因的可治療性。預後良好因子：輕度臨床症狀、內科治療反應良好、腦皮質厚度 > 10 mm。預後不良因子：嚴重皮質變薄、持續進行性惡化、多重神經功能缺損、VP shunt 反覆阻塞。',
     monitoring: '內科治療：每 2-4 週臨床評估神經功能變化 + 癲癇頻率記錄。Acetazolamide 使用期間：每月電解質與血氣監測。VP shunt 術後：每月神經學檢查（前 3 個月），之後每 3-6 個月。注意 shunt 阻塞徵兆（症狀突然惡化、前囟門膨隆感增加）。MRI 追蹤：術後 3 個月與 6 個月評估腦室大小變化。長期：癲癇藥物血藥濃度監測。',
     owner_communication: '水腦症是腦脊髓液在腦中蓄積過多導致腦室擴張的疾病。先天性水腦症在玩具犬品種中較常見。輕度病例可透過藥物治療（降低腦脊髓液產生的藥物 + 癲癇藥物）控制症狀。藥物反應不佳的中重度病例可考慮腦室引流管手術（VP shunt），手術成功率約 70-80%，但引流管阻塞是常見的長期併發症。治療目標為控制症狀、維持生活品質，而非治癒。部分犬即使接受治療仍可能有學習能力較差或輕度行為異常等殘留缺陷。',
@@ -4317,11 +4326,14 @@ CSF 由側腦室與第三腦室脈絡叢（choroid plexus）產生，接著經�
   ],
   drug_api_links: ['Omeprazole', 'Prednisolone', 'Acetazolamide'],
   references: [
-    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 16: Congenital & Developmental Diseases.', relevance: '先天性水腦症臨床診斷與治療' },
-    { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '水腦症病理與治療基礎' },
-    { type: 'journal', citation: 'Javaheri S et al. Effect of omeprazole on canine cerebrospinal fluid production. Brain Res. 1997;766(1-2):255-258.', relevance: 'Omeprazole 降低 CSF 產生的實驗基礎' },
-    { type: 'journal', citation: 'Shihab N et al. Ventriculoperitoneal shunting for hydrocephalus in dogs: 81 cases. J Small Anim Pract. 2011;52(10):521-526.', relevance: '犬 VP shunt 大規模回顧研究與術後併發症' },
-    { type: 'guideline', citation: 'Driver CJ, Rusbridge C, Cross HR, et al. BSAVA Scientific Committee Guidelines on Management of Congenital Hydrocephalus in Dogs. J Small Anim Pract. 2019;60(6):345-356.', relevance: 'BSAVA 犬先天性水腦症管理指引' },
+    { type: 'journal', citation: 'Estey CM. Congenital Hydrocephalus. Vet Clin North Am Small Anim Pract. 2016;46(2):217-229. doi:10.1016/j.cvsm.2015.10.003', relevance: '犬先天性水腦權威回顧（取代 v1 捏造之「Driver BSAVA Congenital Hydrocephalus Guidelines」幻影引用）' },
+    { type: 'journal', citation: 'Thomas WB. Hydrocephalus in Dogs and Cats. Vet Clin North Am Small Anim Pract. 2010;40(1):143-159. doi:10.1016/j.cvsm.2009.09.008', relevance: '水腦分類、斜視機轉（眼眶變形）、腦室擴大 vs 臨床水腦' },
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Ames: Wiley-Blackwell, 2016. Congenital & Developmental Diseases.', relevance: '先天性水腦臨床診斷與治療；斜視為眼眶骨骼變形' },
+    { type: 'journal', citation: 'Javaheri S, Corbett WS, Simbartl LA, et al. Different effects of omeprazole and Sch 28080 on canine cerebrospinal fluid production. Brain Res. 1997;754(1-2):321-324. doi:10.1016/s0006-8993(97)00175-3', relevance: 'Omeprazole「降 CSF 26%」的急性實驗來源（效應與 H+-K+-ATPase 無關）；v1 卷期頁誤植已修正' },
+    { type: 'journal', citation: 'Girod M, Allerton F, Gommeren K, et al. Evaluation of the effect of oral omeprazole on canine cerebrospinal fluid production: A pilot study. Vet J. 2016;209:119-124. doi:10.1016/j.tvjl.2015.10.045', relevance: '口服 omeprazole 前瞻試驗未見 CSF 生成下降（療效存疑）' },
+    { type: 'journal', citation: 'Shihab N, Davies E, Kenny PJ, et al. Treatment of hydrocephalus with ventriculoperitoneal shunting in twelve dogs. Vet Surg. 2011;40(4):477-484. doi:10.1111/j.1532-950x.2011.00832.x', relevance: '犬 VP shunt 療效與併發症（v1 誤植為 JSAP 81 例，實為 Vet Surg 12 例，已修正）' },
+    { type: 'journal', citation: 'Schmidt MJ, Hartmann A, Farke D, et al. Association between improvement of clinical signs and decrease of ventricular volume after ventriculoperitoneal shunting in dogs with internal hydrocephalus. J Vet Intern Med. 2019;33(3):1368-1375. doi:10.1111/jvim.15468', relevance: 'VP shunt 後腦室容積下降與臨床改善相關' },
+    { type: 'journal', citation: 'Farke D, Dörn B, Schaub S, et al. CSF flow measurement in the mesencephalic aqueduct using 2D cine phase-contrast MRI in dogs. Front Vet Sci. 2024;11:1473778. doi:10.3389/fvets.2024.1473778', relevance: '近期：犬導水管 CSF 流量測新工具' },
   ],
   is_current: true,
   created_at: now,
@@ -4631,7 +4643,7 @@ RNS 遞減反應是 MG 的重要電生理證據，但金標準仍為血清 AChR 
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013. Chapter 5: Electrodiagnostics.', relevance: '神經電生理診斷標準教材' },
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 5: Electrodiagnostic Evaluation.', relevance: '電生理檢查實務指南' },
     { type: 'journal', citation: 'Cuddon PA. Electrophysiology in neuromuscular disease. Vet Clin North Am Small Anim Pract. 2002;32(1):31-62.', relevance: '獸醫神經肌肉疾病電生理檢查綜述' },
-    { type: 'guideline', citation: 'Shelton GD et al. Acquired myasthenia gravis: selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 2000;14(2):179-184.', relevance: '犬 MG 電生理與血清學診斷比較' },
+    { type: 'journal', citation: 'Shelton GD, Willard MD, Cardinet GH 3rd, Lindstrom J. Acquired myasthenia gravis: selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 1990;4(6):281-284. doi:10.1111/j.1939-1676.1990.tb03124.x', relevance: '局灶型 MG（食道/咽/面肌選擇性侵犯）經典文獻（v1 誤植為 2000;14(2):179-184，實為 1990;4(6):281-284）' },
   ],
   is_current: true,
   created_at: now,
