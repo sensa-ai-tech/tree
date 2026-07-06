@@ -91,16 +91,23 @@ function extractDoi(citation: string): string | null {
 }
 
 function citationYear(citation: string): number | null {
-  // 抓 19xx/20xx（取最後一個 4 位年，通常是出版年）
-  // 先剝除 DOI 字串：DOI 內常含「指派年」樣數字（如 j.tvjl.2007.08.022），常≠出版年，會誤判
+  // 抓 19xx/20xx（出版年）。DOI 內含「指派年」樣數字（如 j.tvjl.2007.08.022）會誤判，先剝除。
   const noDoi = citation
     .replace(/\b10\.\d{4,9}\/\S+/g, ' ')
     .replace(/doi:\s*/gi, ' ');
-  // 過濾不可能的年份：出版年不會超過今年（排除 2000s 4 位頁碼如 2084-2092 被誤判為年份）
   const nowYear = new Date().getFullYear();
+  const inRange = (y: number) => y >= 1900 && y <= nowYear;
+  // 優先：Vancouver 樣式「年;卷」的出版年（緊接分號）。
+  // 避開 4 位頁碼（如 37(6):1966-1982）落在年份範圍時被誤當成出版年 → 假性年份不符。
+  const semi = noDoi.match(/\b(19|20)\d{2}\b(?=\s*;)/g);
+  if (semi) {
+    const ys = semi.map(Number).filter(inRange);
+    if (ys.length) return ys[ys.length - 1];
+  }
+  // fallback：取最後一個合理年份（排除 >今年 的 4 位頁碼如 2084-2092 被誤判）
   const matches = noDoi.match(/\b(19|20)\d{2}\b/g);
   if (!matches) return null;
-  const years = matches.map(Number).filter((y) => y >= 1900 && y <= nowYear);
+  const years = matches.map(Number).filter(inRange);
   if (!years.length) return null;
   return years[years.length - 1];
 }
