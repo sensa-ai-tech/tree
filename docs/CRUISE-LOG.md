@@ -23,8 +23,9 @@
 ### 現況快照 v2（最後更新：2026-07-04 / commander-iter 0 setup）
 - 兩輪總體檢已 push（origin/main `d7e7e2d`）；巡航 **Phase A 本地 checkpoint `b3dbcd7`（未 push）**。綠燈基準：tsc 0 / **847 tests** / lint 0 err（20 warn）/ build ✓。
 - P0 真實 Auth 程式已接線（雙模式 auth-store + SSR session），待營運端啟用（設 env 自動切真）。
-- 283 節點 / 156 v2 / 103 病例。報告：`docs/PRE-LAUNCH-RETEST-2026-07-04.md`（最新）、`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`、`BLUEPRINT.md`。
+- 283 節點 / **157 v2** / 103 病例。報告：`docs/PRE-LAUNCH-RETEST-2026-07-04.md`（最新）、`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`、`BLUEPRINT.md`。
 - 🎯 **C1b 引用正確性 sweep 完成（iter 4-9）**：揪修 **4 條 v1 捏造/誤植引用**（Schrauwen/Harris/Nguyen/Garden→Swann）＋回填 **5 條 Crossref 驗證 DOI**；cardio/neuro/onco/cpath **4 科 0 suspect**；殘餘僅 2 條 pre-DOI 真實文。
+- 🚀 **C3 pilot 完成（iter 10）**：IM-L3-016 鉤端螺旋體病 v1→v2（156→157 v2）。**新流程定型**：每節點升級後跑「12-agent 對抗式主張查核 workflow」逐條擷原文反駁——本次揪修 **5 條 DOI 驗證抓不到的實質錯誤**（劑量 q12h→q6-8h、azotemia≠AKI 頻率、疫苗-MAT、台灣通報人/動物拆分、doxycycline PO-only），另修 verify-citations 出版年抽取假陽性。**DOI 對得上 ≠ 主張對得上——內容主張須獨立對抗式查核。**
 
 ### v2 路線圖（feature / tech-debt）
 - **Phase A — 技術債清理（P1，安全可驗證，先做）**
@@ -37,16 +38,15 @@
 - **Phase C — 內容正確性**
   - C1 ✅ 回填 DOI：CARDIO-L3-001 DELAY `10.1016/j.jvc.2019.12.002`＋標題對齊→VERIFIED_DOI（cardio 0 suspect）；ECC-L3-007 chocolate 為 pre-DOI 真實文獻（保留+註記）＋加可驗證 companion Cortinovis 2016 `10.3389/fvets.2016.00026`
   - C2 ✅ open-access-resources 移除（零消費者 dead data／67% 死連結，連同唯一 audit 腳本 verify-resources.ts git rm；docs 同步；tsc/848/build 綠）
-  - C3 ⬜ v1→v2 升級（127 節點，長期，產出待 DVM 簽核）
+  - C3 🔄 v1→v2 升級（**pilot IM-L3-016 ✅**，剩 ~126 節點，長期，產出待 DVM）。**流程**：queue 選最高 prio v1 → 錨定引用 Crossref 驗 → 依 §2 八段改寫 → **對抗式主張查核 workflow** → verify:citations/gate → 本地 commit。
 - **Phase D — 新價值**：A–C 收斂後評估。
 
 ### NEXT-UP v2（依序，每迭代取最上）
-1. **C3 pilot（下一迭代單獨執行，勿跨 context 邊界寫 body）：升級 `IM-L3-016 鉤端螺旋體病` v1→v2** ← 下一個
-   - 選它理由：prio 9/10、disease/L3（可驗證完整 8 段模板＝DERM-L3-008 gold）、台灣地方性（氣候/人畜共通/疫苗）、有現行權威指引可錨定。
-   - 錨定引用（**寫入前一律 Crossref 驗 DOI+標題，勿信記憶**）：ACVIM 鉤端螺旋體共識 Sykes 2011 JVIM + 2023 更新版；近 5 年台灣/亞洲流行病學或血清型文獻 1 條；診斷（MAT/PCR）＋治療（doxycycline/penicillin）各 1 條真實文。
-   - 依 §2 疾病八段 + §1 欄位最低要求（disease_data 11 欄全填、references ≥5 全 VERIFIED、drug_api_links、≥1 visual + ≥1 interactive placeholder）。version→2、保留 v1 版本史。
-   - 驗收：`verify:citations --specialty im` 該節點 0 suspect → tsc 0 → test → build ✓ → 本地 commit（不 push，內容待 DVM）。
-2. C3 續：依 pilot 成效逐節點升級（~127 個 v1，長期，DVM）
+1. **C3 續（下一迭代，單獨執行，勿跨 context 邊界寫 body）：升級下一個 v1 節點** ← 下一個
+   - 候選（跑 uplift-queue 確認；最高 prio 非 GOLD、優先 disease/L3）：`IM-L3-021 犬貓細菌性肺炎`（ISCAID 2017 呼吸道感染指引可錨定）或 `ECC-L3-005 中毒急診`。
+   - **既定流程（iter 10 定型）**：queue 選節點 → Crossref 驗錨定引用（勿信記憶）→ 依 §2 八段 + §1 欄位改寫 → **跑對抗式主張查核 workflow（12+ skeptic 擷原文反駁、修正實質錯誤）** → `verify:citations --specialty <x>`（該節點 0 suspect）→ tsc/test/build ✓ → 本地 commit（不 push，內容待 DVM）。
+   - ⚠️ pre-existing IM DOI-less biblio NOT_FOUND（IM-L2-006、IM-L3-024）於各自升級時一併 DOI 溯源。
+2. C3 續×N：逐節點升級（~126 個 v1，長期，DVM）
 > ✅ **C1b 完成**（4 捏造/誤植修正 + 5 DOI 回填；cardio/neuro/onco/cpath 4 科 0 suspect；殘餘 2 條 pre-DOI 真實文 im-Laflamme/ecc-chocolate 已標記）。
 > ⛔ **B1/B2（後台 generate/review 功能化）移至 BLOCKED**：需 Supabase 持久層 ＋ 真 Claude API 花費決策 ＋ auth-path（cookie vs API-key）安全設計，非自主可安全完成 → 見 Obsidian `BLOCKED-OPERATIONS.md`，待使用者定調。
 
@@ -54,6 +54,7 @@
 - iter 0（2026-07-04）：接任、建立本 v2 錨點 + 路線圖。
 - iter 1（2026-07-04）：**A1 完成** — `middleware.ts`→`proxy.ts`（函式 middleware→proxy，config/matcher/邏輯不變）。build 棄用警告清除；admin auth gate 瀏覽器實測（未登入 /admin/analytics → /admin/login）通過。綠燈：tsc 0 / 847 tests / build ✓。變更未 commit（累積至 Phase A 收尾一起 checkpoint）。
 - iter 2（2026-07-04）：**A2 完成** — persisted-user auth-flash。auth-store 加 `sessionVerified`（mock：onRehydrateStorage 立即 true；real：onAuthStateChange/登入/註冊/登出設 true）；`(dashboard)/layout.tsx` loading gate + landing/login/register 的「已登入→/home」redirect 皆改為需 `sessionVerified`。**mock 行為零變更**：mock 登入→/home、reload /home 皆瀏覽器實測通過、console 無錯。綠燈：tsc 0 / 847 tests / build ✓。**Phase A 全完成**（A1+A2）→ 本地 checkpoint commit `b3dbcd7`（未 push）。
+- iter 10（2026-07-06）：**🚀 C3 pilot 完成** — IM-L3-016 鉤端螺旋體病 v1→v2（依 §2 疾病八段；version 1→2；156→157 v2）。錨定引用 Crossref 全驗：Sykes 2011/2023 ACVIM 共識、Reagan 2019、Schuller 2015、Hsu 2018 台灣血清流行病學。**新流程：對抗式主張查核 workflow（12 skeptic 各擷原文反駁）** 揪修 5 條 DOI 驗證抓不到的實質錯誤——(C10)penicillin G q12h→q6-8h、amoxicillin→20-30 IV q6-8h＋IRIS-4 加倍間隔；(C1)doxycycline 共識僅口服→移除「或 IV」；(C5)疫苗-MAT 可高效價、交叉非疫苗血清群；(C6)80-90% 實為 azotemia（AKI 80-100%）、發燒刪未溯源數字、LPHS 10-20% 為嚴重臨床（影像異常~70%）；(C11)台灣通報拆人（第四類）/動物（乙類 B056、無常規化）。+3 條 Crossref 驗證新引用（Su 2011 EID 颱風時序、Ioannou 2024 透析預後、Ricardo 2024 血清群統合）＝references 增至 9。另修 `verify-citations` 出版年抽取假陽性（頁碼 1966-1982 被當年份 → 優先「年;卷」）。**IM-L3-016 verify 0 suspect；tsc 0 / 848 / build ✓。** 3 commit（gate-fix `bfb6ee8`、content `611f481`、本 log）。**內容改動待 DVM。** 殘 IM NOT_FOUND（IM-L2-006/L3-024/L3-031）皆 pre-existing 非本節點，待各自升級溯源。
 - iter 9（2026-07-04）：**🎯 C1b 完成** — 最終掃尾。**✅ ONCO-L5-006 Weishaar 2018 JVIM c-Kit MCT**：補真實 DOI `10.1111/jvim.14889` + 標題對齊（實為「…Treated with Prednisone and Toceranib or Vinblastine」）。**✅ CPATH-L1-003（第 4 條誤植）**：v1「Garden OA … treatment of IMHA … 33(3):1141-1172」第一作者誤標——該治療共識實為 **Swann JW**（Garden 為診斷共識 33(2) 之第一作者）→ 修正 Swann JW + 真實 DOI `10.1111/jvim.15463`。**onco、cpath 重驗＝0 suspect。** 綠燈 tsc 0 / 848 / build ✓。**C1b 總成果：揪修 4 條 v1 捏造/誤植引用（Schrauwen→Greer、Harris→Burkert、Nguyen 移除、Garden→Swann）＋回填 5 條 Crossref 驗證 DOI（DELAY、Nabity2015、Kenney、Weishaar、Swann）；cardio/neuro/onco/cpath 4 科 0 suspect；殘餘 NOT_FOUND 僅 2 條 pre-DOI 真實文（IM Laflamme 1997、ECC chocolate 2001，已標記可接受）。內容改動待 DVM。**
 - iter 8（2026-07-04）：**C1b 收尾（第一批）** — **✅ ONCO-L4-003：查實「Nguyen 2015 staging, Vet Comp Oncol 13(4):369-383」＝捏造（Crossref 查無；真實 Nguyen 2015＝VCOG RECIST 反應評估 13(3):176-183 vco.12032，非分期）→ 移除（節點保留 WHO TNM Owen 1980 權威分期來源）。＝本巡航第 3 條捏造/誤植引用。** **✅ ECC-L2-002：Kenney 2010 JAVMA 補真實 DOI `10.2460/javma.236.1.83`（Crossref 確認）→ 解決。** 綠燈 tsc 0 / 848 / build ✓。**殘餘（皆真實文、非捏造，僅待 DOI 回填/標記）**：ONCO-L5-006 Weishaar 2018 JVIM c-Kit MCT toceranib、cpath 1（疑 Nabity 2023 consensus DOI-less）、ECC-L3-007 chocolate（已標記 pre-DOI 真實）。**內容改動待 DVM。**
 - iter 7（2026-07-04）：**C1b 續 — 2 條疑捏造引用查實並修正（Crossref DOI 標題比對為最終裁決）**。**✅ NEURO-L3-015**：確認「Schrauwen I … BMC Genomics 2014;15:349」＝捏造/誤植（Isabelle Schrauwen 為人類遺傳學者、Crossref 查無此 Pug-NME 文）→ **以真實奠基研究 Greer KA et al. 2010 Tissue Antigens 76(2):110-118 `10.1111/j.1399-0039.2010.01484.x` 取代**（DLA class II × Pug NME）。**✅ NEURO-L3-011**：確認「Harris 69 cases (1986-2006);359-363」為張冠李戴（該 JAVMA 242(3):359 座標實為 Harris 23-cases MRI 文；節點需大規模研究）→ **以真實大規模回顧 Burkert BA et al. 2005 JAVMA 227(2):268-275 `10.2460/javma.2005.227.268`（513 例）取代**。**neuro 重驗＝0 suspect（NOT_FOUND 2→0 / TITLE_MISMATCH 0 / ERROR 0）**。綠燈 tsc 0 / 848 / build ✓。本地 checkpoint（不 push）。**⚠️ 內容改動待 DVM。殘餘 C1b**：ONCO-L4-003 Nguyen、cpath 1 NOT_FOUND、ECC-L2-002。**（累計揪修 v1 捏造/張冠李戴引用再 +2。）**
