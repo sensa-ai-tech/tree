@@ -1686,23 +1686,23 @@ Lilium（真百合屬）與 Hemerocallis（萱草屬）所有部位（花瓣、�
 const contentSnakeToad: NodeContent = {
   id: 'CONTENT-ECC-L3-008',
   node_id: 'ECC-L3-008',
-  version: 1,
-  summary: '台灣四大毒蛇（百步蛇、龜殼花、雨傘節、眼鏡蛇）跟盤古蟾蜍（Bufo bankorensis）中毒是台灣獸醫急診的特色議題。毒蛇分兩派：出血毒型（百步蛇、龜殼花）走局部腫脹壞死加 DIC；神經毒型（雨傘節）走漸進性神經肌肉麻痺加呼吸衰竭。盤古蟾蜍的 bufotoxin 有強心苷樣作用，會讓犬出嚴重心律不整。蛇咬傷治療核心是抗蛇毒血清，台灣疾管署有凍乾抗蛇毒血清，獸醫院得透過鄰近人醫急診調用。',
+  version: 2,
+  summary: '台灣醫療上重要的毒蛇有六種（出血性：百步蛇、龜殼花、赤尾青竹絲；神經性：眼鏡蛇、雨傘節；混合性：鎖鏈蛇）與盤古蟾蜍（Bufo bankorensis）中毒，是台灣獸醫急診的特色議題。出血毒型走局部腫脹壞死加凝血病/DIC；神經毒型（雨傘節）走漸進性神經肌肉麻痺加呼吸衰竭。盤古蟾蜍 bufotoxin 有強心苷樣作用，致嚴重心律不整。蛇咬治療核心是抗蛇毒血清——台灣疾管署備有四支凍晶血清（抗出血性=龜殼花+赤尾青竹絲、抗神經性=雨傘節+眼鏡蛇、單價抗百步蛇、單價抗鎖鏈蛇），獸醫院透過鄰近人醫急診調用。',
   learning_objectives: [
-    '辨識台灣四大毒蛇的咬傷特徵與毒素類型（出血毒 vs 神經毒）',
+    '辨識台灣六種重要毒蛇的咬傷特徵與毒素類型（出血毒 vs 神經毒 vs 混合毒）',
     '描述百步蛇與龜殼花（出血毒）咬傷的臨床表現與 DIC 管理',
     '描述雨傘節（神經毒）咬傷的臨床表現與呼吸支持策略',
     '正確處置盤古蟾蜍中毒的心律不整',
     '說明台灣抗蛇毒血清的取得途徑與使用原則',
   ],
   key_points: [
-    '台灣毒蛇咬傷以龜殼花（Protobothrys mucrosquamatus）最常見，百步蛇（Deinagkistrodon acutus）致死率最高',
+    '台灣毒蛇咬傷以龜殼花（Protobothrops mucrosquamatus）與赤尾青竹絲（Viridovipera stejnegeri）出血性咬傷最常見；未及時抗蛇毒血清時百步蛇（Deinagkistrodon acutus）致死率最高、雨傘節次之（流行病學主要引自人醫資料）',
     '出血毒型（蝮蛇科：百步蛇、龜殼花）：局部劇烈腫脹壞死 + 全身性凝血病 + DIC',
     '神經毒型（蝙蝠蛇科：雨傘節 Bungarus multicinctus）：進行性神經肌肉麻痺，可致呼吸肌麻痺而死',
     '蛇咬傷急救不做：不切開、不吸毒、不綁止血帶、不冰敷',
-    '抗蛇毒血清（antivenom）是蛇咬傷最關鍵的治療，台灣疾管署供應，獸醫院得透過人醫體系調用',
-    '盤古蟾蜍中毒：bufotoxin 似 digitalis，致心搏過緩、AV block、VPC',
-    '蟾蜍中毒處置：口腔沖洗 + Atropine（心搏過緩）+ Lidocaine（VPC）+ 脂肪乳劑（Intralipid）',
+    '抗蛇毒血清是蛇咬最關鍵治療；台灣疾管署備 **4 支**凍晶血清（抗出血性=龜殼花+赤尾青竹絲、抗神經性=雨傘節+眼鏡蛇、單價抗百步蛇、單價抗鎖鏈蛇），獸醫院透過人醫體系調用',
+    '盤古蟾蜍中毒：bufotoxin 似 digitalis，致心搏過緩、AV block、VPC/VT',
+    '蟾蜍中毒處置：口腔沖洗（5-10 分）+ 抗心律不整（心搏過緩 Atropine、室性 Lidocaine、室上性 β-blocker）；難治重症考慮 digoxin-specific Fab（Intralipid 僅機轉外推、無獸醫個案證據，非常規）',
   ],
   body: `# 蛇咬傷與蟾蜍中毒（台灣特有急診）
 
@@ -1711,14 +1711,18 @@ const contentSnakeToad: NodeContent = {
 
 
 ### 第一部分：蛇咬傷
-### 台灣四大毒蛇概覽
+### 台灣六種醫療重要毒蛇概覽
 
-| 蛇種 | 學名 | 毒素類型 | 棲息地 | 咬傷特徵 |
+| 蛇種 | 學名 | 毒素類型 | 對應抗蛇毒血清 | 咬傷特徵 |
 |------|------|---------|--------|---------|
-| 百步蛇 | Deinagkistrodon acutus | 出血毒（含 metalloproteinase） | 中低海拔山區 | 大型牙痕（1-2 cm 間距），劇烈腫脹 |
-| 龜殼花 | Protobothrys mucrosquamatus | 出血毒（含 metalloproteinase） | 低海拔至平地，都會近郊 | 台灣最常見，中型牙痕，漸進腫脹 |
-| 雨傘節 | Bungarus multicinctus | 神經毒（alpha-bungarotoxin） | 低海拔水域附近 | 牙痕小/不明顯，初期疼痛輕微 |
-| 眼鏡蛇 | Naja atra | 混合毒（神經+細胞毒） | 平地至低海拔 | 局部壞死 + 神經症狀 |
+| 百步蛇 | Deinagkistrodon acutus | 出血毒（metalloproteinase） | **單價抗百步蛇血清** | 大型牙痕，劇烈腫脹；相對少見但致死率最高 |
+| 龜殼花 | Protobothrops mucrosquamatus | 出血毒（metalloproteinase） | 抗出血性血清（＋赤尾青竹絲） | 台灣最常見，中型牙痕，漸進腫脹 |
+| 赤尾青竹絲 | Viridovipera stejnegeri（舊 Trimeresurus） | 出血毒 | 抗出血性血清（＋龜殼花） | 常見，局部腫脹疼痛、瘀斑 |
+| 眼鏡蛇 | Naja atra | 混合毒（神經＋細胞毒） | 抗神經性血清（＋雨傘節） | 局部壞死 ＋ 神經症狀 |
+| 雨傘節 | Bungarus multicinctus | 神經毒（α-/β-bungarotoxin） | 抗神經性血清（＋眼鏡蛇） | 牙痕小/不明顯，初期疼痛輕微 |
+| 鎖鏈蛇 | Daboia siamensis | 混合毒（出血＋神經＋腎毒） | **單價抗鎖鏈蛇血清** | 局部＋全身性凝血病、急性腎損傷 |
+
+> 名詞：赤尾青竹絲屬名現用 *Viridovipera stejnegeri*（舊 *Trimeresurus stejnegeri*）。台灣「四大毒蛇」為舊框架；現公認醫療重要毒蛇為上述**六種**（Mao 2024）。
 
 ### 出血毒型蛇咬（百步蛇、龜殼花）
 
@@ -1730,9 +1734,9 @@ const contentSnakeToad: NodeContent = {
 #### 治療
 1. 初步穩定：ABCDE → IV 通路 → 採血（CBC、凝血、生化）
 2. 不做：不切開傷口、不吸毒、不綁止血帶、不冰敷
-3. 抗蛇毒血清（最關鍵！）：
-   - 台灣疾管署出血性蛇毒血清（抗百步蛇、龜殼花）
-   - 劑量：看嚴重度 1-3 vial，先稀釋於生理食鹽水 slow IV
+3. 抗蛇毒血清（最關鍵！依蛇種選）：
+   - 龜殼花/赤尾青竹絲 → **抗出血性蛇毒血清（FHAV）**；**百步蛇 → 專屬「單價抗百步蛇血清」（不與龜殼花同支）**；鎖鏈蛇 → 單價抗鎖鏈蛇血清
+   - 劑量：看嚴重度給 vial，先稀釋於生理食鹽水 slow IV，依臨床/凝血反應追加
    - 過敏反應預處置：[藥物:Diphenhydramine] 2 mg/kg IM + [藥物:Dexamethasone] 0.1 mg/kg IV
    - [藥物:Epinephrine] 備好，處理 antivenom 過敏反應
 4. 輸液復甦：晶體液維持灌流
@@ -1751,22 +1755,25 @@ const contentSnakeToad: NodeContent = {
 危急期（12-24 小時）：沒治療就是呼吸肌麻痺、呼吸衰竭、死亡。Alpha-bungarotoxin 不可逆結合 nicotinic AChR，所以一旦受體被占了就回不來。
 
 #### 治療
-1. 抗蛇毒血清：台灣疾管署的神經性蛇毒血清（抗雨傘節）
+1. 抗蛇毒血清：**抗神經性蛇毒血清（FNAV，涵蓋雨傘節＋眼鏡蛇）**
    - 越早越好，alpha-bungarotoxin 結合後不可逆
    - Antivenom 主要是中和還沒結合的游離毒素
 2. 呼吸支持（這才是核心）：
    - 早期氣管插管，不要等呼吸衰竭才動
    - 機械通氣可能要幾天到幾週
    - 呼吸力量盯著：胸廓擴張幅度、SpO2、ETCO2
-3. 抗膽鹼酯酶試驗：[藥物:Neostigmine] 0.02-0.04 mg/kg IV，搭配 [藥物:Atropine] 預防膽鹼危機
-   - 部分雨傘節毒素是 presynaptic（beta-bungarotoxin），對 Neostigmine 反應差
+3. 抗膽鹼酯酶（**僅診斷性試驗、非確立療法**）：[藥物:Neostigmine] 0.02 mg/kg IV（借用重症肌無力挑戰劑量）；[藥物:Atropine] 0.02-0.04 mg/kg **備用**以應付膽鹼激性危象/心搏過緩（非常規併用）
+   - **Neostigmine 對雨傘節神經毒未經證實**：僅對「可逆性突觸後阻斷」毒素可能有效；雨傘節部分為 presynaptic（β-bungarotoxin）不可逆、反應差，**絕不可取代抗蛇毒血清與呼吸支持**
 4. ICU 看到呼吸功能完全恢復為止
 
 ### 抗蛇毒血清取得（台灣特殊流程）
 
-- 台灣疾管署各區管制藥品管理中心儲備
-- 獸醫院可以透過鄰近人醫急診調用，要說明是動物用
-- 分兩種：出血性蛇毒血清（抗百步蛇、龜殼花）跟神經性蛇毒血清（抗雨傘節、眼鏡蛇）
+- 台灣疾管署各區儲備；獸醫院透過鄰近人醫急診調用，須說明為動物用。
+- **台灣現有 4 支凍晶抗蛇毒血清（依蛇種選用）**：
+  - **抗出血性蛇毒血清（FHAV）**：龜殼花 ＋ 赤尾青竹絲
+  - **抗神經性蛇毒血清（FNAV）**：雨傘節 ＋ 眼鏡蛇
+  - **單價抗百步蛇血清**：百步蛇（專屬一支，不與龜殼花同支）
+  - **單價抗鎖鏈蛇血清**：鎖鏈蛇
 - 儲存條件：2-8°C 冷藏
 
 ---
@@ -1788,24 +1795,25 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
 
 ### 緊急處置
 
-1. 口腔除汙：大量清水往外沖（不要讓牠吞進去），沖 10-15 分鐘
+1. 口腔除汙：大量清水往外沖（頭略朝下、勿讓牠吞入），沖約 **5-10 分鐘**
 2. ECG 監測（馬上！）
 3. 心搏過緩：[藥物:Atropine] 0.02-0.04 mg/kg IV
-4. 心室性心律不整：[藥物:Lidocaine] 2 mg/kg IV bolus → 25-80 mcg/kg/min CRI（犬）
-5. 脂肪乳劑：[藥物:Intralipid] 20%，1.5 mL/kg IV bolus → 0.25 mL/kg/min CRI 跑 30-60 分鐘。Lipid rescue 可以螯合脂溶性 bufadienolides
-6. 電解質矯正：高血鉀的處理跟 FUO 一樣（Calcium gluconate 加 insulin/dextrose）
-7. 不催吐：嘔吐反射通常已經發生，而且毒素主要從口腔黏膜吸收不是從 GI
-8. 活性炭效果有限，因為毒素吸收太快
+4. 心室性心律不整：[藥物:Lidocaine] 2 mg/kg IV bolus（累積上限 8 mg/kg）→ 25-80 mcg/kg/min CRI（犬）
+5. 室上性心搏過速：β-blocker（[藥物:Propranolol] 或 esmolol）
+6. **難治性重症**：考慮 digoxin-specific Fab fragments（人醫用於強心苷中毒；對 bufadienolides 中和力較 digoxin 弱、成本高、取得困難）
+7. **脂肪乳劑（[藥物:Intralipid] 20%）**：僅為**機轉外推**（bufadienolides 親脂、理論上 lipid sink）——**目前無犬貓蟾蜍中毒之 ILE 個案證據**，定位為未經驗證之末線輔助，不可取代上述標準處置
+8. 電解質矯正：高血鉀處理（Calcium gluconate＋insulin/dextrose）
+9. 不催吐（神經症狀可能快速發作、易誤吸）；因毒素主要「沾附口腔」而非吞食、且出現 CNS 症狀時活性炭為禁忌，活性炭於典型病例助益有限（若確有吞食且無 CNS 症狀，活性炭 2-4 g/kg 可考慮）
 
 ### 預後
 
 輕度（只有口腔症狀加流涎）：預後好。中度（心搏過緩加偶發 VPC）：積極治療預後 OK。重度（VT/VF）：預後差，要積極抗心律不整加 lipid rescue。整體存活率：輕中度 > 80%，重度心律不整 < 50%。
 
-[圖片:台灣四大毒蛇辨識圖與咬傷局部表現]
+[圖片:台灣六種醫療重要毒蛇辨識圖與咬傷局部表現]
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-台灣常見蛇咬依蛇種分類。出血毒：赤尾鑌（Trimeresurus stejnegeri）跟龜殼花，臨床上看到局部腫脹疼痛、瘀斑、凝血異常（PT/aPTT 延長、Fibrinogen 下降）。神經毒：雨傘節跟眼鏡蛇，進行性肌無力、呼吸肌麻痺、瞳孔散大。混合毒：百步蛇，出血毒加上組織壞死兩個都有。蟾蜍中毒：犬舔食蟾蜍後出現大量流涎、黏膜發紅、心律不整（蟾蜍毒素有洋地黃樣作用）。診斷靠臨床表現、咬傷部位、加上蛇種鑑定。
+台灣常見蛇咬依毒素分類。出血毒：龜殼花與赤尾青竹絲（Viridovipera stejnegeri）及百步蛇——局部腫脹疼痛、瘀斑、組織壞死、凝血異常（PT/aPTT 延長、Fibrinogen 下降）。神經毒：雨傘節與眼鏡蛇——進行性肌無力、呼吸肌麻痺、瞳孔散大（眼鏡蛇另有局部細胞毒壞死）。混合毒：鎖鏈蛇——出血＋神經＋急性腎損傷。蟾蜍中毒：犬舔食蟾蜍後大量流涎、黏膜發紅、心律不整（bufotoxin 有洋地黃樣作用）。診斷靠臨床表現、咬傷部位/牙痕、加上蛇種鑑定。
 
 ## 三、治療策略 (Treatment)
 
@@ -1817,7 +1825,7 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
 
 ## 五、預後與預後因子 (Prognosis)
 
-蛇咬預後因子幾個：蛇種，神經毒蛇沒及時治療致死率高，但抗蛇毒血清反應通常不錯。蛇毒注入量，「乾咬」（dry bite）大約占 20-30%，預後超好。就診時間，越早給抗蛇毒血清越好。動物體型，小型犬因為體重比蛇毒小，預後比較不利。台灣蛇咬只要及時給適當的抗蛇毒血清整體預後都不差。蟾蜍中毒只要及時沖洗加心律監控預後 OK。
+蛇咬預後因子幾個：蛇種，神經毒蛇沒及時治療致死率高，但抗蛇毒血清反應通常不錯。蛇毒注入量：「乾咬」（dry bite，未注入毒液）在**蝮蛇科/pit viper** 約占 20-30%（蛇科/眼鏡蛇科約 50%）；此比例主要源自北美資料，台灣本土蛇種尚無對應流行病學數據。真乾咬預後佳，但**初診無法判定乾咬**——症狀可能延遲數小時，所有疑似毒蛇咬傷須**觀察至少 24 小時、預設已注入毒液**處理，勿因無立即症狀提早放行。就診時間，越早給抗蛇毒血清越好。動物體型，小型犬因為體重比蛇毒小，預後比較不利。台灣蛇咬只要及時給適當的抗蛇毒血清整體預後都不差。蟾蜍中毒只要及時沖洗加心律監控預後 OK。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1834,7 +1842,7 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
 |---------|------|---------------|
 | 台灣犬蛇咬抗蛇毒血清的最佳劑量與重複給藥標準 | 人醫劑量難以直接套用犬隻，缺乏台灣蛇種特異性犬劑量研究 | Level IV |
 | 預防性抗生素在蛇咬傷口的角色 | 蛇口腔細菌會不會造成臨床上明顯感染還有爭議，常規預防性抗生素效益不明 | Level III |
-| 蟾蜍中毒 Intralipid（ILE）rescue 的最佳時機與劑量 | 個案報告支持 ILE 對 bufadienolides 有效，但缺乏比較研究 | Level IV |
+| 蟾蜍中毒 Intralipid（ILE）的角色 | 僅機轉外推（親脂性毒素），**無獸醫個案證據**；標準為抗心律不整＋支持，難治性用 digoxin-Fab | Level IV（外推） |
 | 雨傘節咬傷早期 Neostigmine 試驗的預測價值 | 部分病例對 Neostigmine 有反應（presynaptic 恢復），但反應不一致，無法取代 antivenom | Level III |`,
   clinical_pearl: '雨傘節咬傷是台灣蛇咬最大的陷阱。一開始幾乎不痛、牙痕小到看不見，飼主常以為沒事。但 alpha-bungarotoxin 是不可逆的 nAChR 拮抗劑，一旦神經肌肉接合點被占滿就回不來，只能靠呼吸機撐到新受體合成（可能要幾週）。兩個黃金原則：第一，蛇出沒的季節，犬突然出現眼瞼下垂加瞳孔散大就要想到雨傘節；第二，抗蛇毒血清越早給越好，不要等神經症狀全跑出來才給。',
   common_mistakes: [
@@ -1846,7 +1854,7 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
   ],
   disease_data: {
     signalment: '蛇咬傷：犬遠多於貓，犬好奇追咬蛇，貓比較謹慎。戶外活動犬、田園犬風險最高。台灣 4-10 月（溫暖潮濕季節）是高峰期。蟾蜍中毒：以犬為主（舔咬蟾蜍），小型犬因為劑量相對高，風險更大。台灣雨季（5-9 月）蟾蜍活動最頻繁。',
-    etiology: '蛇咬傷：被毒蛇主動或被動攻擊。台灣最常見的是龜殼花（大約 60%），接著是百步蛇（20%）、雨傘節（10%）、眼鏡蛇（10%）。蟾蜍中毒：犬舔咬或叼咬盤古蟾蜍（Bufo bankorensis），耳後腺分泌的 bufotoxin 從口腔黏膜快速吸收。',
+    etiology: '蛇咬傷：被毒蛇攻擊。台灣以龜殼花（Protobothrops mucrosquamatus）與赤尾青竹絲（Viridovipera stejnegeri）出血性咬傷最常見（合計約七成）；百步蛇咬傷相對少見（約 <1%）但未及時治療致死率最高；眼鏡蛇、雨傘節、鎖鏈蛇各佔少數（流行病學主要引自人醫資料）。蟾蜍中毒：犬舔咬盤古蟾蜍（Bufo bankorensis），耳後腺 bufotoxin 經口腔黏膜快速吸收。',
     pathogenesis: '【出血毒蛇（百步蛇、龜殼花）】蛇毒 metalloproteinase 傷血管內皮造成組織壞死；蛇毒磷脂酶 A2 造成血小板功能障礙；蛇毒凝血酶樣物質造成消耗性凝血病走 DIC。【神經毒蛇（雨傘節）】alpha-bungarotoxin 不可逆結合 postsynaptic nAChR，神經肌肉接合點阻斷，骨骼肌麻痺包括呼吸肌。beta-bungarotoxin 破壞 presynaptic terminal，ACh 釋放障礙。【蟾蜍毒素】Bufadienolides 抑制 Na+/K+-ATPase，細胞內 Na+ 升高，Na+/Ca2+ 交換器反轉，細胞內 Ca2+ 升高，心肌自動節律異常，最後就是心律不整。',
     clinical_signs: [
       { sign: '咬傷處腫脹、壞死（出血毒）', category: 'primary', description: '百步蛇最兇，腫脹可以擴到整肢' },
@@ -1865,7 +1873,7 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
       { condition: 'Digitalis 中毒', key_differentiator: '跟蟾蜍中毒 ECG 表現很像，要確認暴露史（蟾蜍 vs 毛地黃植物或藥物）' },
     ],
     diagnostic_workup: '【蛇咬傷】1. 辨識蛇種（照片或描述）→ 2. ABCDE → 3. 咬傷處評估（牙痕型態、腫脹範圍標記追蹤）→ 4. 基礎血檢加凝血全套（出血毒 q4-6h）→ 5. 血氣 → 6. 尿液分析（血紅素尿、肌球蛋白尿）→ 7. ECG 【蟾蜍中毒】1. 暴露史確認 → 2. ECG（馬上！）→ 3. 電解質（K+）→ 4. 基礎血檢',
-    treatment_protocol: '【Primary care，穩定跟初步處置】蛇咬傷：ABCDE 穩定。不切開、不吸毒、不止血帶。IV 通路打上加採血。止痛用 opioid，不要用 NSAIDs。腫脹範圍邊界記錄起來。聯繫能提供抗蛇毒血清的醫院。蟾蜍：大量清水沖洗口腔 15 分鐘。ECG 監測。心搏過緩給 Atropine 0.02-0.04 mg/kg IV。轉到有 ICU 設備的醫院。【Specialty care，ICU 階段】蛇咬傷：抗蛇毒血清（看蛇種選出血性或神經性）slow IV，Epinephrine 備好處理過敏。出血毒型：凝血 q4-6h，給 FFP，傷口清創。雨傘節：早期插管加機械通氣，做 Neostigmine 試驗，可能要通氣支持幾天到幾週。蟾蜍：Lidocaine 2 mg/kg IV（VPC/VT），Intralipid 20% lipid rescue，電解質矯正，ECG 監測 24 小時。',
+    treatment_protocol: '【Primary care】蛇咬傷：ABCDE 穩定。不切開、不吸毒、不止血帶、不冰敷。IV 通路加採血。止痛用 opioid（避 NSAIDs）。標記腫脹邊界。聯繫可提供抗蛇毒血清的醫院。蟾蜍：大量清水沖洗口腔約 5-10 分鐘。ECG 監測。心搏過緩 Atropine 0.02-0.04 mg/kg IV。轉 ICU。【Specialty care】蛇咬傷：依蛇種選台灣 4 支抗蛇毒血清之一（抗出血性=龜殼花+赤尾青竹絲／抗神經性=雨傘節+眼鏡蛇／單價抗百步蛇／單價抗鎖鏈蛇）slow IV，Epinephrine 備好處理過敏。出血毒型：凝血 q4-6h、FFP、傷口清創。雨傘節：早期插管＋機械通氣（呼吸支持才是核心；Neostigmine 未經證實、不可取代 antivenom），通氣可能數天至數週。蟾蜍：Lidocaine（VPC/VT）、室上性用 β-blocker、難治性考慮 digoxin-specific Fab；Intralipid 僅機轉外推無獸醫證據；電解質矯正、ECG 監測 24 小時。',
     prognosis: '龜殼花咬傷：適當治療存活率 > 95%。百步蛇咬傷：存活率大約 80-85%（看蛇毒量跟就醫時間），局部壞死可能要多次清創。雨傘節咬傷：早期 antivenom 加呼吸支持存活率 > 80%；拖到完全呼吸肌麻痺就要長期通氣。蟾蜍中毒：輕中度存活率 > 80%，重度心律不整（VT/VF）存活率 < 50%。',
     monitoring: '出血毒型蛇咬：凝血功能（PT/aPTT/fibrinogen/D-dimer）q4-6h 跑 48 小時。腫脹範圍 q2-4h 標記追蹤。BUN/Cre q12h（肌球蛋白腎病）。PCV/TP q6-8h。雨傘節：呼吸力量、SpO2、ETCO2 持續監測。神經學檢查 q4-6h。通氣參數追蹤。蟾蜍：ECG 持續監測至少 24 小時。電解質 q4-6h。',
     owner_communication: '蛇咬傷在台灣不算少見，尤其郊區跟山區。懷疑被蛇咬，盡量拍照辨識蛇種，不要去抓蛇或自己處理傷口，馬上送醫。出血毒型（百步蛇、龜殼花）需要抗蛇毒血清跟凝血治療；神經毒型（雨傘節）可能要呼吸機支持。蟾蜍中毒，看到狗在舔或咬蟾蜍，馬上用大量清水沖洗口腔然後送醫。預防最重要：散步注意蛇出沒區、雨季傍晚注意庭院蟾蜍。',
@@ -1873,18 +1881,22 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
   diagnostic_data: null,
   procedure_data: null,
   visual_placeholders: [
-    { position: '四大毒蛇表格後', type: 'annotated_image', description: '台灣四大毒蛇外觀辨識圖（含牙痕對照）' },
+    { position: '六種毒蛇表格後', type: 'annotated_image', description: '台灣六種醫療重要毒蛇外觀辨識圖（含牙痕對照）' },
     { position: '蟾蜍段落前', type: 'annotated_image', description: '盤古蟾蜍外觀與耳後腺位置標示圖' },
-    { position: '治療段落後', type: 'flowchart', description: '蛇咬傷急診處置決策流程圖（出血毒 vs 神經毒）' },
+    { position: '治療段落後', type: 'flowchart', description: '蛇咬傷急診處置決策流程圖（出血毒 vs 神經毒，含 4 支抗蛇毒血清選擇）' },
   ],
-  interactive_placeholders: [],
-  drug_api_links: ['Atropine', 'Lidocaine', 'Neostigmine', 'Diphenhydramine', 'Dexamethasone', 'Epinephrine', 'Buprenorphine'],
+  interactive_placeholders: [
+    { position: '治療段落', type: 'decision_tree', description: '互動：蛇種/毒素判定（出血毒 vs 神經毒 vs 蟾蜍）→ 抗蛇毒血清選擇 / 呼吸支持 / 心律處置分流' },
+  ],
+  drug_api_links: ['Atropine', 'Lidocaine', 'Propranolol', 'Neostigmine', 'Intralipid', 'Diphenhydramine', 'Dexamethasone', 'Epinephrine', 'Buprenorphine'],
   references: [
-    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Envenomation.', relevance: 'ECC 核心教材蛇咬傷章節' },
-    { type: 'journal', citation: 'Peterson ME. Snake bite: pit vipers. Clin Tech Small Anim Pract. 2006;21(4):174-182.', relevance: '蝮蛇科蛇咬傷臨床處置' },
-    { type: 'guideline', citation: '台灣疾病管制署。台灣蛇咬傷急救指引。衛生福利部疾病管制署出版。', relevance: '台灣官方蛇咬傷急救指引（含抗蛇毒血清使用）' },
-    { type: 'journal', citation: 'Mirtschin PJ, Dunstan N, Hough B, et al. Venom yields from Australian and some other species of snakes. Ecotoxicology. 2006;15(6):531-538.', relevance: '蛇毒產量研究' },
-    { type: 'journal', citation: 'Gwaltney-Brant SM, Dunayer EK, Youssef HY. Terrestrial zootoxins. In: Veterinary Toxicology, 3rd ed. Academic Press, 2018.', relevance: '蟾蜍中毒獸醫毒理學參考' },
+    { type: 'journal', citation: 'Mao YC, et al. Clinical Characteristics of Snakebite Envenomings in Taiwan. Toxins. 2025;17(1). doi:10.3390/toxins17010014.', relevance: '台灣蛇咬傷臨床流行病學（六種毒蛇、血清用量，在地脈絡）' },
+    { type: 'journal', citation: 'Peterson ME. Snake Bite: Pit Vipers. Clin Tech Small Anim Pract. 2006;21(4):174-182. doi:10.1053/j.ctsap.2006.10.008.', relevance: '蝮蛇科（出血毒/pit viper）蛇咬傷臨床處置' },
+    { type: 'journal', citation: 'Peterson ME. Snake Bite: Coral Snakes. Clin Tech Small Anim Pract. 2006;21(4):183-186. doi:10.1053/j.ctsap.2006.10.005.', relevance: '神經毒型（elapid）蛇咬傷處置（對照雨傘節/眼鏡蛇）' },
+    { type: 'journal', citation: 'Morris JS, et al. Mechanical ventilation in snake envenomation of dogs and cats. Front Vet Sci. 2023;10:1071257. doi:10.3389/fvets.2023.1071257.', relevance: '近年（≤5年）犬貓神經毒蛇咬機械通氣（呼吸支持核心）' },
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine. 3rd ed. Elsevier; 2022.', relevance: 'ECC 核心教材（envenomation/毒物暴露章節）' },
+    { type: 'textbook', citation: 'Gwaltney-Brant SM, Dunayer EK, Youssef HY. Terrestrial Zootoxins. In: Veterinary Toxicology. 3rd ed. Academic Press; 2018.', relevance: '蟾蜍（bufotoxin）等陸生動物毒素獸醫毒理' },
+    { type: 'label', citation: '衛生福利部疾病管制署（Taiwan CDC）凍晶抗蛇毒血清仿單與供應資訊（抗出血性、抗神經性等）。', relevance: '台灣官方抗蛇毒血清產品仿單與取得途徑（人醫體系調用）' },
   ],
   is_current: true,
   created_at: now,
