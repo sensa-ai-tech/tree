@@ -344,7 +344,7 @@ const contentChemBasics: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '臨床化學基礎核心教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '器官相關生化指標臨床意義' },
-    { type: 'journal', citation: 'Nabity MB et al. "IRIS Canine GFR Working Group，SDMA as a biomarker." J Vet Intern Med 2015;29(4):1036-1044.', relevance: 'SDMA 作為早期腎功能指標的實證' },
+    { type: 'journal', citation: 'Nabity MB, Lees GE, Boggess MM, Yerramilli M, et al. Symmetric Dimethylarginine Assay Validation, Stability, and Evaluation as a Marker for the Early Detection of Chronic Kidney Disease in Dogs. J Vet Intern Med. 2015;29(4):1036-1044. doi:10.1111/jvim.12835.', relevance: 'SDMA 作為早期腎功能指標的實證（IRIS Canine GFR Working Group）' },
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (modified 2023)." iris-kidney.com.', relevance: 'IRIS CKD 分期指引，腎功能生化指標臨床應用標準' },
   ],
   is_current: true,
