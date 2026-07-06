@@ -5175,8 +5175,8 @@ const contentAddisonianCrisis: NodeContent = {
 const contentTransfusionReactions: NodeContent = {
   id: 'CONTENT-ECC-L3-017',
   node_id: 'ECC-L3-017',
-  version: 1,
-  summary: '輸血反應（Transfusion Reactions）是輸血醫學裡不能輕忽的併發症，分免疫性跟非免疫性。犬最重要的血型是 DEA 1.1（陽性大約 40-45%），DEA 1.1 陰性犬第二次接受 DEA 1.1 陽性血就會走急性溶血反應。貓的血型系統更危險：B 型貓天生有高效價 anti-A 抗體，連首次輸 A 型血都可能致命性急性溶血。所以貓任何輸血前都要做血型鑑定加交叉配血。處理就是立刻停止輸血、抗組織胺、類固醇、積極液體治療。',
+  version: 2,
+  summary: '輸血反應（Transfusion Reactions）是輸血醫學不可輕忽的併發症，分免疫性與非免疫性。犬最重要的血型是 DEA 1（陽性率因族群約 40-60%、變異大、勿假設固定比例），DEA 1 陰性犬致敏後第二次輸 DEA 1 陽性血會急性溶血。貓血型（A/B/AB＋Mik）盛行率有強烈地區/品種差異：B 型貓天生具高效價 anti-A，首次輸 A 型血即可致命，故貓任何輸血前都要血型鑑定加交叉配血。處置核心是立即停止輸血、依反應類型支持治療（類過敏以 epinephrine 為第一線；不建議常規以抗組織胺/類固醇預防）。',
   learning_objectives: [
     '比較犬（DEA 系統）和貓（AB 系統）血型的臨床意義差異',
     '說明為何 B 型貓首次輸入 A 型血即可致命',
@@ -5185,126 +5185,153 @@ const contentTransfusionReactions: NodeContent = {
     '說明交叉配血（crossmatch）的適應症和執行方式',
   ],
   key_points: [
-    '犬 DEA 1.1：最重要的臨床血型，DEA 1.1 陰性犬第二次輸 DEA 1.1 陽性血 → 急性溶血',
-    '貓 AB 系統：B 型貓有天然高效價 anti-A 抗體，首次輸 A 型血即可致命',
-    '貓任何輸血前必須做血型鑑定 + 交叉配血',
-    '犬首次輸血可不做交叉配血（無天然 anti-DEA 1.1），但第二次以後必須',
-    '急性溶血性反應：發燒、震顫、嘔吐、血紅蛋白尿、DIC → 立即停止輸血',
-    '發熱非溶血性反應（FNHTR）：最常見的輸血反應（白血球抗體引起）',
-    '過敏性反應：蕁麻疹、面部水腫、罕見過敏性休克',
+    '犬 DEA 1（舊稱 DEA 1.1）：最重要血型，陽性率約 40-60%（變異大、勿假設固定比例）；致敏後第二次輸 DEA 1 陽性血 → 急性溶血（RBC 存活 <12h）',
+    'DEA 1 陰性 ≠「universal donor」：理想供血犬應對 DEA 1/DEA 4（及 Dal/Kai）分型且盡量陰性，輸血前仍建議交叉配血',
+    '貓 A/B/AB＋Mik；血型比例有強烈地區/品種差異（美國 A~95-99%，但英國 B 可達 35-40%、部分品種 B 30-60%）——勿依品種/地區推估',
+    '貓：B 型貓天然高效價 anti-A，首次輸 A 型血即可致命（分鐘內溶血＋類過敏，Giger 1991）；貓任何輸血前必做血型＋交叉配血',
+    '犬交叉配血：曾輸血/史不明者「每次再輸血前」都做（4 天規則已過時，Herter 2022 同種抗體最早 12h 出現）',
+    '含紅血球製劑最常見反應為 FNHTR（犬~4%、貓~5.7%）；血漿製劑則以過敏最常見（Hall 2024/2025）',
+    '類過敏處置 epinephrine 為第一線（抗組織胺僅輔助）；⚠️ 不建議常規 premedication 或對過敏反應用類固醇（TRACS 2021）',
+    'Dal 非 Dalmatian 專屬（~98% 犬陽性；風險在 Dal 陰性者，好發 Dalmatian/Doberman/Shih Tzu）',
   ],
   body: `# 輸血反應 (Transfusion Reactions)
 
 ## 一、血型系統 (Blood Type Systems)
 
 ### 犬血型（DEA 系統）
-- DEA 1.1：臨床最重要的血型（Dog Erythrocyte Antigen 1.1）
-  - DEA 1.1 陽性：約 40-45%（台灣犬隻比例類似）
-  - DEA 1.1 陰性：約 55-60% → 「理想全效供血犬」
-- 天然抗體：犬對 DEA 1.1 無天然抗體 → 首次輸血通常安全
-- 致敏：DEA 1.1 陰性犬接受 DEA 1.1 陽性血後產生 anti-DEA 1.1 抗體 → 第二次輸血致急性溶血（半衰期縮短至 < 12 小時）
-- 其他 DEA 型（3, 4, 5, 7）：臨床意義較低
-- Dal 抗原：Dalmatian 特有血型系統，需注意
+- **DEA 1**（舊稱 DEA 1.1/1.2，現視為同一抗原不同表現量）：臨床最重要、最具免疫原性的血型。
+  - 陽性盛行率因品種/地區差異大，文獻多落在**約 40-60%**（部分族群陽性者為多數，如義大利 ~61%、美國加州 ~61%）；**不可假設固定比例**，台灣尚無大型公開資料。
+- 天然抗體：犬對 DEA 1 無臨床顯著天然抗體 → 首次輸血通常（但非絕對）安全。
+- 致敏：DEA 1 陰性犬接受 DEA 1 陽性血後產生 anti-DEA 1 IgG → 再次輸 DEA 1 陽性血致急性溶血（不相容 RBC 存活縮短至 <12 小時；正常約 21 天）。
+- 其他 DEA（3, 4, 5, 7）：DEA 4 有臨床意義——急性溶血亦可發生於 DEA 1「與」DEA 4 皆陰性之犬（理想供血犬應 DEA 4 陽性、DEA 1 陰性）。
+- **Dal 抗原**：⚠️ **並非 Dalmatian「特有」**——Dal 是絕大多數犬（約 98%）都帶有的高頻抗原；臨床風險在少數 **Dal 陰性個體**（在 Dalmatian ~12%、Doberman、Shih Tzu 較常見），可於首次輸血後 ~4 天致敏、抗體持續達 2 年（Goulet 2017）。
+- **Kai 1/2**：另一組具臨床意義之抗原。
 
-### 貓血型（AB 系統）
-- A 型：約 95-99%（台灣貓大多為 A 型）
-- B 型：約 1-5%（英短、波斯等品種較高比例 10-25%）
-- AB 型：極罕見
-- 關鍵差異：B 型貓天生具有高效價 anti-A 抗體
-  - B 型貓首次輸入 A 型血 → 嚴重急性溶血反應（可致命！）
-  - A 型貓有低效價 anti-B 抗體 → 輸 B 型血致輕度溶血（RBC 半衰期縮短至 2 天）
-- Mik 抗原：近年發現的貓新血型系統
+> **「universal donor（全效供血犬）」是過度簡化**：DEA 1 陰性只是最低門檻；理想供血犬應對 DEA 1、DEA 4（及盡量 Dal、Kai）分型並盡量陰性，且**輸血前仍建議交叉配血**（研究顯示約 25% 初次輸血犬即有主側配血不相容）。
+
+### 貓血型（AB 系統 + Mik）
+- **血型盛行率有強烈地區差異**：A/B/AB 三型。
+  - 美國等地區：A ~95-99%、B ~1-5%、AB <1%——**此比例不可當通則**。
+  - 英國 B ~35-40%、澳洲 26-36%、土耳其/希臘 ~20-25%、南歐 10-15%。
+- 品種變異大：Persian ~14%、Abyssinian ~16% 中等；**British Shorthair、Devon Rex、Cornish Rex、Turkish Van（~60%）、Turkish Angora、American Curl 為高 B 型品種（血清學可達 ~30-60%）**；Siamese、Burmese 幾乎無 B 型。
+- 關鍵差異（抗體天然存在）：
+  - **B 型貓具高效價 anti-A** → 首次輸入 A 型血即可引發**可致命**的急性溶血伴全身性類過敏（低血壓、心搏過緩、呼吸暫停）；A 型 RBC 於分鐘至數小時內被破壞（Giger & Bücheler 1991，平均約 1.3 小時）。
+  - A 型貓具**弱效價 anti-B**（IgM，通常 ≤32）→ 輸 B 型血致輕度溶血，B 型 RBC 平均半衰期約 2.1 天。
+- **Mik 抗原**：2007 年於家貓描述的獨立紅血球抗原（Weinstein 2007）；缺 Mik 的貓可有天然 anti-Mik → 即使 AB 相符仍可急性溶血 → 故 AB 相符仍建議交叉配血。
 
 ## 二、輸血反應分類 (Classification)
 
 ### 免疫性反應
 | 類型 | 時程 | 機轉 | 臨床表現 |
 |------|------|------|---------|
-| 急性溶血性（AHTR） | 數分鐘-數小時 | 抗體介導 RBC 破壞（type II 超敏反應） | 發燒、震顫、嘔吐、血紅蛋白血症/尿、低血壓、DIC |
-| 延遲性溶血性（DHTR） | 2-21 天 | 記憶性免疫反應 | PCV 未預期下降、黃疸、Coombs 陽性 |
-| 發熱非溶血性（FNHTR） | 1-6 小時 | 白血球抗體或細胞激素 | 僅發燒（體溫升高 > 1°C），無溶血 |
-| 過敏性 | 數分鐘-數小時 | 對血漿蛋白的 type I 超敏反應 | 蕁麻疹、面部水腫、搔癢、罕見過敏性休克 |
-| 輸血相關急性肺損傷（TRALI） | 1-6 小時 | 供血者抗白血球抗體 | 急性呼吸窘迫、非心因性肺水腫 |
+| 急性溶血性（AHTR） | 數分鐘-數小時 | 抗體介導 RBC 破壞（type II 超敏） | 發燒、震顫、嘔吐、血紅蛋白血症/尿、低血壓、DIC |
+| 延遲性溶血性（DHTR） | 2-21 天 | 記憶性免疫反應（如 DEA 3/5/7 遲發型，RBC 存活 ~4-5 天） | PCV 未預期下降、黃疸 |
+| 發熱非溶血性（FNHTR） | 輸血中-4 小時 | 白血球抗體或儲存細胞激素 | 僅發燒（升溫 > 1°C），無溶血 |
+| 過敏性 | 數分鐘-數小時 | 對血漿蛋白的 type I 超敏 | 蕁麻疹、面部水腫、搔癢、罕見過敏性休克 |
+| 輸血相關急性肺損傷（TRALI） | 輸血中-6 小時 | 抗白血球抗體/生物活性脂質 | 急性呼吸窘迫、非心因性肺水腫 |
+
+> **發生率（AVHTM TRACS 2021 定義之前瞻研究）**：含紅血球製劑（pRBC/全血）以 **FNHTR 最常見**（犬 ~4%、貓 ~5.7%，Hall 2024/2025）；但輸注**血漿製劑時以過敏反應最常見**（非 FNHTR）。
 
 ### 非免疫性反應
 | 類型 | 原因 | 臨床表現 |
 |------|------|---------|
-| 體積過負荷（TACO） | 輸注速度過快/量過多 | 呼吸困難、肺水腫（尤其貓和心臟病犬） |
+| 輸血相關循環過負荷（TACO） | 輸注速度過快/量過多 | 呼吸困難、肺水腫（尤其貓、心臟病犬） |
 | 細菌污染 | 血品儲存/處理不當 | 敗血症、高燒、休克 |
 | 低體溫 | 未回溫血品 | 體溫下降 |
-| 枸櫞酸毒性 | 大量輸血中枸櫞酸螯合 Ca²⁺ | 低鈣血症、心搏過緩（大量快速輸血時） |
+| 枸櫞酸毒性 | 大量快速輸血中枸櫞酸螯合離子鈣（±鎂） | 顫抖、搐搦、嘔吐；心電圖 QT 延長、嚴重時**心室性心律不整**（高劑量下心搏過速，⚠️ **非**心搏過緩）|
 
 ## 三、交叉配血 (Crossmatch)
 
 ### 適應症
-- 犬：第二次以上輸血、距前次輸血 > 4 天、輸血史不明
-- 貓：任何輸血前都必須做（因 B 型貓天然抗體致命風險）
-- 急診無法做交叉配血時：至少做血型鑑定
+- **犬**：任何曾接受輸血者（第二次以上）、輸血史不明/不確定者，均應於**每次再輸血前**做 major crossmatch。傳統「距前次 > 4 天」規則已**不建議作為可略過配血的安全界線**——同種抗體最早可於輸血後 12 小時-1 天出現（Herter 2022），第 4 天已逾半數犬陽性。
+- **貓**：**任何輸血前都必須**做血型鑑定 + 交叉配血（含 Mik 風險）。
+- TRACS：距前次輸血 3 個月內或史不確定者，配血檢體應採自 72 小時內。
+- 急診無法配血時：至少做血型鑑定。
 
 ### 主/次側交叉配血
-- 主側（Major crossmatch）：受血者血清 + 供血者 RBC → 檢查受血者有無 anti-供血者 RBC 抗體
-- 次側（Minor crossmatch）：供血者血清 + 受血者 RBC → 檢查供血者有無 anti-受血者 RBC 抗體
-- 判讀：凝集或溶血 = 不相容 → 禁止輸血
+- 主側（Major）：受血者血漿 + 供血者 RBC → 檢查受血者有無 anti-供血者 RBC 抗體（最重要）。
+- 次側（Minor）：供血者血漿 + 受血者 RBC。
+- 判讀：凝集或溶血 = 不相容 → 禁止輸血。
 
 ## 四、治療策略 (Treatment)
 
-### 急性溶血性輸血反應（AHTR）處理
-1. 立即停止輸血（最重要的第一步！）
-2. 維持 IV 通路，更換輸液管路、開始 0.9% NaCl
-3. 積極液體治療：2-3 倍維持速率（維持腎灌流，預防血紅蛋白腎病）
-4. Diphenhydramine：1-2 mg/kg IM
-5. Dexamethasone：0.5-1 mg/kg IV（嚴重時）
-6. Epinephrine：0.01-0.02 mg/kg IV/IM（過敏性休克時）
-7. DIC 監控與處理：PT/aPTT、FDP/D-dimer
-8. 尿量監控：目標 > 1-2 mL/kg/hr（預防腎衰竭）
+> 依 AVHTM TRACS 2021（Part 3, Odunayo）處置。**核心：立即停止輸血 + 依反應類型處置。**
+
+### 急性溶血性輸血反應（AHTR）
+1. **立即停止輸血**（最重要第一步），保留 IV 通路、更換管路、開始 0.9% NaCl。
+2. 積極晶體液維持腎灌流、預防血紅蛋白腎病；尿量目標 > 1-2 mL/kg/hr。
+3. 支持性處置：低血壓給液體 ± 升壓；DIC 監控（PT/aPTT、D-dimer）。
+4. 出現類過敏成分（尤 B 型貓輸 A 血）時見下。
+
+### 過敏性 / 類過敏反應
+- 暫停輸血。**Epinephrine 為第一線**（0.01-0.02 mg/kg IM；嚴重/休克 0.01-0.1 mg/kg IV，接 0.05-0.1 mcg/kg/min CRI）。
+- **Diphenhydramine 為輔助（不可取代 epinephrine）**：犬 1-4 mg/kg IM、貓 0.5-2 mg/kg IM。
+- ⚠️ **皮質類固醇不建議常規用於過敏性輸血反應**（TRACS：證據不足＋不良反應，且無法改善即時症狀）；若使用，dexamethasone-SP 0.1-0.5 mg/kg IV（非 0.5-1）。
 
 ### FNHTR（發熱非溶血性）
-- 暫時減速或暫停輸血
-- 確認不是急性溶血（檢查血漿顏色、PCV 變化）
-- Diphenhydramine 1-2 mg/kg IM
-- 發燒消退後可考慮以較慢速度恢復輸注
-- 下次輸血：使用 leukoreduced 血品
+- 暫時減速或暫停；確認非溶血（離心看血漿顏色、比較 PCV）。發燒消退後可較慢速恢復。
+- 下次輸血：可考慮 leukoreduced 血品。
 
-### 過敏性反應
-- 暫停輸血
-- Diphenhydramine 1-2 mg/kg IM
-- 輕微蕁麻疹/面部水腫：症狀控制後可恢復輸注
-- 嚴重過敏性休克：Epinephrine + 液體復甦
+### TACO（循環過負荷）
+- 停止或大幅減速；Furosemide 1-2 mg/kg IV；氧氣支持。
 
-### TACO（體積過負荷）
-- 停止或大幅減速輸血
-- Furosemide 1-2 mg/kg IV
-- 氧氣支持
-- 貓和心臟病犬輸血速率不超過 3-5 mL/kg/hr
-
-## 五、預防 (Prevention)
+## 五、預防與監控 (Prevention & Monitoring)
 
 | 措施 | 說明 |
 |------|------|
-| 血型鑑定 | 犬：DEA 1.1 型；貓：AB 型 |
-| 交叉配血 | 犬第二次以上必做；貓每次必做 |
-| 輸血速率控制 | 前 15-30 分鐘慢速（0.5-1 mL/kg/hr）觀察 |
-| 監控 vital signs | 每 15-30 分鐘：體溫、HR、RR、黏膜顏色 |
-| 血品品管 | 儲存溫度、保存期限、無菌操作 |
+| 血型鑑定 | 犬：DEA 1（理想加 DEA 4/Dal/Kai）；貓：AB 型 |
+| 交叉配血 | 犬曾輸血/史不明者每次必做；貓每次必做 |
+| 輸血速率 | 前 15-30 分鐘慢速（0.25-1 mL/kg/hr）觀察；常速犬 ~2-10、貓 ~3-5 mL/kg/hr；整袋 4 小時內完成。TACO 高風險（失代償心臟病/腎不全）宜 ≤ ~4 mL/kg/hr、分 4-6 小時 |
+| 監控 vital signs | 前 1 小時每 15 分鐘，之後每 30 分鐘：T、HR、RR、黏膜 |
+| 血品品管 | 儲存溫度、效期、無菌 |
+| ⚠️ 例行 premedication | **不建議**常規以抗組織胺/類固醇作為預防性 premedication（TRACS Part 2：人醫 meta-analysis 顯示無效）|
 
 ## 六、預後 (Prognosis)
 
-- FNHTR 和輕度過敏反應：預後極佳
-- AHTR 早期識別並處理：存活率 > 70%
-- AHTR 合併 DIC：預後差
-- 貓 B 型輸 A 型血（未鑑定）：死亡率極高
+- FNHTR 與輕度過敏反應：預後極佳。
+- AHTR：預後取決於嚴重度與是否早期識別/停止輸血；合併 DIC 或急性腎損傷者預後較差。
+- 貓 B 型輸 A 型血（未鑑定）：可於分鐘內致命，死亡率極高。
+- TRALI：支持治療下多數可恢復。
+- 整體急性輸血反應多為輕度（FNHTR/輕度過敏），嚴重致死性反應少見但**可預防**——關鍵在血型鑑定＋交叉配血＋密切監控。
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 血液監測系統（haemovigilance） | 系統性通報/分析輸血反應以持續改善安全 | AVHTM TRACS 2021 統一定義；Hall 2024/2025 前瞻多中心建立犬貓發生率基線 |
+| Leukoreduction（去白血球） | 降低 FNHTR 與同種免疫 | 人醫常規；獸醫部分血庫可行 |
+| 病人血液管理（PBM）/限制性輸血閾值 | 減少不必要輸血、降低反應風險 | 概念引入中 |
+| 分子/基因型血型鑑定 | 精準血型（如貓 b 對偶基因、犬 Dal） | 研究/商業檢測漸增 |
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| 例行抗組織胺/類固醇 premedication | TRACS 不建議常規使用（人醫 meta-analysis 無效）；獸醫前瞻證據有限 | Level II |
+| 「4 天規則」是否安全 | Herter 2022 顯示同種抗體最早 12 小時出現 → 建議每次再輸血前配血，4 天規則過時 | Level III |
+| 過敏性反應是否給類固醇 | TRACS 建議避免（證據不足＋不良反應）；臨床仍常用 | Level III |
+| 預防 TACO 的最佳輸血速率 | TRACS：無實證速率可推薦；近期資料顯示無心臟病者 TACO 少見 | Level III |
+
+## 九、近期實證更新 (Recent Updates)
+
+- **AVHTM TRACS 2021（JVECC 三部曲）**：統一輸血反應定義/分類（Part 1）、預防與監控（Part 2）、診斷與治療（Part 3）；關鍵立場——不建議常規 premedication、過敏反應避免類固醇、epinephrine 為類過敏第一線、無實證速率預防 TACO。
+- **發生率基線（Hall 2024 犬 / 2025 貓, JVIM）**：以 TRACS 定義之前瞻多中心研究，含紅血球製劑 FNHTR 最常見（犬 ~4%、貓 ~5.7%），血漿製劑則以過敏最常見。
+- **交叉配血時機（Herter 2022, JVIM）**：同種抗體最早於輸血後 12 小時-1 天出現，支持「曾輸血犬每次再輸血前配血」，取代舊 4 天規則。
+- **血型再認識**：DEA 1.1/1.2 合為 DEA 1；Dal 為高頻抗原（風險在 Dal 陰性個體，非 Dalmatian 專屬，Goulet 2017）；貓 Mik 抗原與地區/品種 B 型高變異提醒「勿依品種/地區推估、務必個別鑑定」。
 
 [圖片:輸血反應分類與處置決策樹。免疫性 vs 非免疫性 → 各亞型對應處置]`,
-  clinical_pearl: '「前 15 分鐘」是輸血反應的黃金監控期。大多數急性溶血反應在輸血開始後 15 分鐘內就會出現徵兆。所以任何輸血在前 15-30 分鐘都要低速（0.5-1 mL/kg/hr）跑，同時密切監控體溫、心率、呼吸頻率。\n\n貓的輸血比犬危險很多。記住一個簡單規則：「貓每次輸血前一定要做血型加交叉配血，沒有例外」。B 型貓看起來很少，但你不篩檢就永遠不知道，而給 B 型貓輸 A 型血可以在幾分鐘內致命。\n\n如何快速判斷是溶血還是 FNHTR？輸血中發燒時，抽一管血離心。血漿（或血清）呈粉紅色或紅色就是血管內溶血、就是 AHTR！血漿透明就可能只是 FNHTR。',
+  clinical_pearl: '「前 15 分鐘」是輸血反應的黃金監控期，大多數急性溶血反應在開始後 15 分鐘內就出現徵兆，所以前 15-30 分鐘要低速（0.25-1 mL/kg/hr）跑並密切監控體溫、心率、呼吸頻率。\n\n貓的輸血比犬危險：記住「貓每次輸血前一定要做血型加交叉配血，沒有例外」——B 型貓看似少，但不篩就不知道，給 B 型貓輸 A 型血可在幾分鐘內致命。\n\n如何快速判斷溶血還是 FNHTR？輸血中發燒時抽一管血離心：血漿呈粉紅/紅色＝血管內溶血（AHTR）；血漿透明可能只是 FNHTR。\n\n兩個常被忽略的觀念：(1) 常規用抗組織胺/類固醇「預防」輸血反應並無實證（TRACS 2021 不建議），類過敏第一線是 epinephrine；(2) 別把「DEA 1.1 陰性」當萬用供血犬——DEA 4/Dal/Kai 與交叉配血都要顧。',
   common_mistakes: [
-    '犬首次輸血就大意，連血型鑑定都不做。雖然犬首次輸血通常安全，但沒紀錄會讓第二次輸血更危險',
-    '貓沒做血型就輸血。B 型貓首次輸 A 型血就致命，這是不可原諒的疏忽',
-    '輸血反應時只是減速沒停止。急性溶血性反應一定要立刻停止輸血',
-    'FNHTR 被誤判為 AHTR 而永久放棄輸血。FNHTR 是最常見的反應，下次用 leukoreduced 血品就好',
-    '忘了在輸血後監控尿量。AHTR 的血紅蛋白會堵塞腎小管造成急性腎損傷',
+    '犬首次輸血就大意，連血型鑑定都不做（沒紀錄會讓第二次輸血更危險）',
+    '貓沒做血型/交叉配血就輸血（B 型貓首次輸 A 型血即致命，不可原諒）',
+    '把「DEA 1.1 陰性」當萬用供血犬（忽略 DEA 4/Dal/Kai 與交叉配血——約 25% 初次輸血犬仍配血不相容）',
+    '依「4 天規則」略過配血（同種抗體最早 12 小時出現，曾輸血犬每次都該配）',
+    '輸血反應時只減速沒停止（急性溶血一定要立刻停止輸血）',
+    '常規以抗組織胺/類固醇「預防」反應或對過敏反應給類固醇（TRACS 不建議；類過敏第一線是 epinephrine）',
+    '忘了輸血後監控尿量（AHTR 血紅蛋白堵塞腎小管致 AKI）',
   ],
   disease_data: {
-    signalment: '所有犬貓均有風險。犬：DEA 1.1 陰性犬接受第二次 DEA 1.1 陽性血風險最高。貓：B 型貓（英短、波斯等品種比例較高）風險最高。',
+    signalment: '所有犬貓均有風險。犬：DEA 1 陰性犬（致敏後）接受第二次 DEA 1 陽性血風險最高；Dal 陰性個體（好發 Dalmatian、Doberman、Shih Tzu）為 Dal 致敏高風險。貓：B 型貓風險最高——B 型比例有強烈地區/品種差異（英國、British Shorthair、Devon/Cornish Rex、Turkish Van/Angora 等較高），不可依品種/地區推估、務必個別鑑定。',
     etiology: '免疫性：抗紅血球抗體（天然或致敏後產生）介導的 RBC 破壞。非免疫性：輸注過量、血品污染、溫度異常、枸櫞酸毒性。',
     pathogenesis: 'AHTR：抗體結合供血者 RBC → 補體活化 → 血管內溶血 → 游離血紅蛋白 → 腎小管損傷 + DIC 啟動 → 腎衰竭 + 出血。FNHTR：受血者白血球抗體與供血者殘留白血球反應 → 細胞激素釋放 → 發燒。過敏性：IgE 介導對血漿蛋白的 type I 超敏反應。',
     clinical_signs: [
@@ -5323,8 +5350,8 @@ const contentTransfusionReactions: NodeContent = {
       { condition: 'DIC（其他原因）', key_differentiator: '基礎疾病引起，非輸血直接導致' },
     ],
     diagnostic_workup: '1. 立即停止輸血 → 2. 抽血離心看血漿顏色（溶血判斷）→ 3. PCV/TP（與輸血前比較）→ 4. 尿液顏色（血紅蛋白尿）→ 5. 體溫趨勢 → 6. PT/aPTT、FDP/D-dimer（DIC 評估）→ 7. Coombs test → 8. 供血者血品檢查（細菌培養）',
-    treatment_protocol: '【AHTR】立即停止輸血 → 0.9% NaCl 2-3 倍維持速率 → Diphenhydramine 1-2 mg/kg IM → Dexamethasone 0.5-1 mg/kg IV → 尿量監控 > 1-2 mL/kg/hr → DIC 處理。【FNHTR】暫停 → 確認非溶血 → Diphenhydramine → 可慢速恢復。【過敏】暫停 → Diphenhydramine → 輕微可恢復 / 嚴重：Epinephrine 0.01 mg/kg IV。【TACO】停止 + Furosemide 1-2 mg/kg IV。',
-    prognosis: 'FNHTR 和輕度過敏：預後極佳。AHTR 早期處理：存活率 > 70%。AHTR + DIC：預後差。貓 B→A 不相容輸血：死亡率極高。TRALI：支持治療後多數可恢復。',
+    treatment_protocol: '【AHTR】立即停止輸血 → 換管路、0.9% NaCl → 維持腎灌流、尿量 > 1-2 mL/kg/hr → DIC 監控。【過敏/類過敏（含 B 貓輸 A）】暫停 → Epinephrine 第一線 0.01-0.02 mg/kg IM（嚴重 0.01-0.1 IV＋CRI）；Diphenhydramine 輔助（犬 1-4、貓 0.5-2 mg/kg IM）；⚠️ 不建議常規類固醇（若用 dexamethasone-SP 0.1-0.5 mg/kg IV）。【FNHTR】暫停/減速 → 確認非溶血 → 慢速恢復。【TACO】停止 + Furosemide 1-2 mg/kg IV + 氧氣。依 AVHTM TRACS 2021。',
+    prognosis: 'FNHTR 與輕度過敏：預後極佳。AHTR：取決於嚴重度與是否早期識別/停止輸血，合併 DIC 或急性腎損傷者預後較差。貓 B→A 不相容（未鑑定）：可分鐘內致命、死亡率極高。TRALI：支持治療下多數可恢復。整體急性反應多為輕度、嚴重致死反應少見但可預防（血型鑑定＋交叉配血＋監控）。',
     monitoring: '輸血中：每 15 分鐘（前 1 小時）和每 30 分鐘（之後）監控 T、HR、RR、黏膜。AHTR 後：每 2-4 小時 PCV/TP、尿量、凝血功能 × 24-48 小時。DHTR：輸血後 1-2 週追蹤 PCV。',
     owner_communication: '您的寵物在輸血過程中出現了輸血反應。我們已經停止輸血並開始治療。輸血反應有不同嚴重程度，從輕微的發燒到嚴重的紅血球破壞。我們會密切監控各項指標，確保腎臟功能正常。如果未來需要再次輸血，我們會更仔細地篩選血品和做交叉配血測試。',
   },
@@ -5334,13 +5361,23 @@ const contentTransfusionReactions: NodeContent = {
     { position: '血型系統段落後', type: 'comparison_table', description: '犬 DEA vs 貓 AB 血型系統對照圖' },
     { position: '輸血反應分類表後', type: 'flowchart', description: '輸血反應類型鑑別與處置決策樹' },
   ],
-  interactive_placeholders: [],
+  interactive_placeholders: [
+    { position: '交叉配血段落後', type: 'interactive_quiz', description: '血型情境判讀 + 交叉配血結果判讀（相容/不相容）互動練習' },
+  ],
   drug_api_links: ['Diphenhydramine', 'Dexamethasone', 'Epinephrine', 'Furosemide'],
   references: [
-    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Transfusion Medicine & Transfusion Reactions.', relevance: 'ECC 核心教材輸血醫學與反應章節' },
-    { type: 'journal', citation: 'Tocci LJ, Ewing PJ. Increasing patient safety in veterinary transfusion medicine: an overview of pretransfusion testing. JVECC. 2009;19(1):66-73.', relevance: '輸血前檢查與安全性綜述' },
-    { type: 'journal', citation: 'Weingart C, Giger U, Kohn B. Whole blood transfusions in 91 cats: a clinical evaluation. JFMS. 2004;6(3):139-148.', relevance: '貓全血輸血臨床評估，含貓血型重要性' },
-    { type: 'guideline', citation: 'Holowaychuk MK, et al. VECCS Consensus Statement on Canine and Feline Blood Donor Screening and Transfusion Medicine. JVECC. 2014;24(4):387-395.', relevance: 'VECCS 犬貓輸血醫學共識聲明' },
+    { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. St. Louis: Elsevier; 2022. Chapter: Transfusion Medicine & Transfusion Reactions.', relevance: 'ECC 核心教材輸血醫學與反應章節' },
+    { type: 'guideline', citation: 'Davidow EB, Blois SL, Goy-Thollot I, et al. Association of Veterinary Hematology and Transfusion Medicine (AVHTM) Transfusion Reaction Small Animal Consensus Statement (TRACS). Part 1: Definitions and clinical signs. J Vet Emerg Crit Care. 2021;31(2):141-166. doi:10.1111/vec.13044.', relevance: '輸血反應現行定義與分類共識（近期權威）' },
+    { type: 'guideline', citation: 'Davidow EB, Blois SL, Goy-Thollot I, et al. AVHTM Transfusion Reaction Small Animal Consensus Statement (TRACS). Part 2: Prevention and monitoring. J Vet Emerg Crit Care. 2021;31(2):167-188. doi:10.1111/vec.13045.', relevance: '輸血反應預防與監控共識（premedication、速率、TACO）' },
+    { type: 'guideline', citation: 'Odunayo A, Nash KJ, Davidow EB, et al. AVHTM Transfusion Reaction Small Animal Consensus Statement (TRACS). Part 3: Diagnosis and treatment. J Vet Emerg Crit Care. 2021;31(2):189-203. doi:10.1111/vec.13043.', relevance: '輸血反應診斷與治療共識（epinephrine 第一線、避免類固醇）' },
+    { type: 'guideline', citation: 'Taylor S, Spada E, Callan MB, et al. 2021 ISFM Consensus Guidelines on the Collection and Administration of Blood and Blood Products in Cats. J Feline Med Surg. 2021;23(5):410-432. doi:10.1177/1098612x211007071.', relevance: '2021 ISFM 貓血品採集與輸注共識（近期權威）' },
+    { type: 'guideline', citation: 'Wardrop KJ, Birkenheuer A, Blais MC, et al. Update on canine and feline blood donor screening for blood-borne pathogens: ACVIM consensus statement. J Vet Intern Med. 2016;30(1):15-35. doi:10.1111/jvim.13823.', relevance: 'ACVIM 供血者感染篩檢共識（取代 v1 誤植之 VECCS 共識）' },
+    { type: 'journal', citation: 'Giger U, Bücheler J. Transfusion of type-A and type-B blood to cats. J Am Vet Med Assoc. 1991;198(3):411-418. doi:10.2460/javma.1991.198.03.411.', relevance: 'B 貓輸 A 血致命性溶血與 B→A 半衰期 2.1 天之原始文獻' },
+    { type: 'journal', citation: 'Herter L, Weingart C, Merten N, Bock N. Alloimmunization in dogs after transfusion: a serial cross-match study. J Vet Intern Med. 2022;36(5):1660-1668. doi:10.1111/jvim.16521.', relevance: '同種抗體最早 12h 出現，支持每次再輸血前配血（推翻 4 天規則）' },
+    { type: 'journal', citation: 'Hall GBF, Birkbeck R, Brainard BM, et al. A prospective multicenter observational study assessing incidence and risk factors for acute blood transfusion reactions in dogs. J Vet Intern Med. 2024;38(5):2495-2506. doi:10.1111/jvim.17175.', relevance: '犬急性輸血反應發生率基線（FNHTR 最常見；近期）' },
+    { type: 'journal', citation: 'Weinstein NM, Blais MC, Harris K, et al. A newly recognized blood group in domestic shorthair cats: the Mik red cell antigen. J Vet Intern Med. 2007;21(2):287-292. doi:10.1111/j.1939-1676.2007.tb02962.x.', relevance: '貓 Mik 抗原：AB 相符仍可急性溶血之原始文獻' },
+    { type: 'journal', citation: 'Goulet S, Giger U, Arsenault J, et al. Prevalence and mode of inheritance of the Dal blood group in dogs in North America. J Vet Intern Med. 2017;31(3):751-758. doi:10.1111/jvim.14693.', relevance: 'Dal 為高頻抗原、風險在 Dal 陰性個體（非 Dalmatian 專屬）' },
+    { type: 'journal', citation: 'Weingart C, Giger U, Kohn B. Whole blood transfusions in 91 cats: a clinical evaluation. J Feline Med Surg. 2004;6(3):139-148. doi:10.1016/j.jfms.2004.01.005.', relevance: '貓全血輸血臨床評估，含貓血型重要性' },
   ],
   is_current: true,
   created_at: now,
