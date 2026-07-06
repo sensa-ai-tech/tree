@@ -21,7 +21,7 @@
 > **新授權（2026-07-04）**：使用者交付全權指揮官，把專案推進到可上線完整狀態，直到主動介入或所有擴充功能完成。條件同上 5 條。**Resume 只需讀「現況快照 v2 + NEXT-UP v2」即可接續。** 下方舊「內容巡航（iter 1-144）」為歷史背景。
 
 ### 現況快照 v2（最後更新：2026-07-04 / commander-iter 0 setup）
-- 兩輪上線前總體檢完成、已 push（origin/main `d7e7e2d`）。綠燈基準：tsc 0 / **847 tests** / lint 0 err（20 warn）/ build ✓。
+- 兩輪總體檢已 push（origin/main `d7e7e2d`）；巡航 **Phase A 本地 checkpoint `b3dbcd7`（未 push）**。綠燈基準：tsc 0 / **847 tests** / lint 0 err（20 warn）/ build ✓。
 - P0 真實 Auth 程式已接線（雙模式 auth-store + SSR session），待營運端啟用（設 env 自動切真）。
 - 283 節點 / 156 v2 / 103 病例。報告：`docs/PRE-LAUNCH-RETEST-2026-07-04.md`（最新）、`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`、`BLUEPRINT.md`。
 
@@ -32,7 +32,7 @@
 - **Phase B — 後台功能化（讓 demo 變真）**
   - B1 ⬜ admin generate 接 `/api/generate/skeleton`
   - B2 ⬜ admin review 接資料源 + 持久化 approve/reject
-  - B3 ⬜ admin analytics 各專科分佈改真實 seed 計數
+  - B3 ✅ admin analytics 各專科分佈改真實 seed 計數（`NODES_BY_SPECIALTY` 常數 + drift 測試；瀏覽器驗證 8 專科真實數字）＋**附帶修復 #13 admin loading hang（移除 `admin/loading.tsx`）**
 - **Phase C — 內容正確性**
   - C1 ⬜ 回填 2 個 v2 NOT_FOUND DOI（CARDIO-L3-001 DELAY、ECC-L3-007 chocolate）
   - C2 ⬜ open-access-resources 重建或移除（dead data，零 UI 消費者）
@@ -40,16 +40,16 @@
 - **Phase D — 新價值**：A–C 收斂後評估。
 
 ### NEXT-UP v2（依序，每迭代取最上）
-1. **B3 analytics 各專科分佈改真實 seed 計數（最小、安全）** ← 下一個
-2. C1 回填 2 DOI（CARDIO-L3-001、ECC-L3-007）
-3. B1 / B2 後台功能化（generate 接 /api/generate/skeleton；review 接資料源）
-4. C2 dead data 處理（open-access-resources）
-5. Phase A 收尾 → checkpoint commit（A1+A2，待授權）
+1. **C1 回填 2 DOI（CARDIO-L3-001 DELAY、ECC-L3-007 chocolate）** ← 下一個
+2. B1 / B2 後台功能化（generate 接 /api/generate/skeleton；review 接資料源）
+3. C2 dead data 處理（open-access-resources）
+4. Phase B/C 段落 → checkpoint commit（本地、不 push）
 
 ### commander-iter 進度（append-only）
 - iter 0（2026-07-04）：接任、建立本 v2 錨點 + 路線圖。
 - iter 1（2026-07-04）：**A1 完成** — `middleware.ts`→`proxy.ts`（函式 middleware→proxy，config/matcher/邏輯不變）。build 棄用警告清除；admin auth gate 瀏覽器實測（未登入 /admin/analytics → /admin/login）通過。綠燈：tsc 0 / 847 tests / build ✓。變更未 commit（累積至 Phase A 收尾一起 checkpoint）。
-- iter 2（2026-07-04）：**A2 完成** — persisted-user auth-flash。auth-store 加 `sessionVerified`（mock：onRehydrateStorage 立即 true；real：onAuthStateChange/登入/註冊/登出設 true）；`(dashboard)/layout.tsx` loading gate + landing/login/register 的「已登入→/home」redirect 皆改為需 `sessionVerified`。**mock 行為零變更**：mock 登入→/home、reload /home 皆瀏覽器實測通過、console 無錯。綠燈：tsc 0 / 847 tests / build ✓。**Phase A 全完成**（A1+A2）。
+- iter 2（2026-07-04）：**A2 完成** — persisted-user auth-flash。auth-store 加 `sessionVerified`（mock：onRehydrateStorage 立即 true；real：onAuthStateChange/登入/註冊/登出設 true）；`(dashboard)/layout.tsx` loading gate + landing/login/register 的「已登入→/home」redirect 皆改為需 `sessionVerified`。**mock 行為零變更**：mock 登入→/home、reload /home 皆瀏覽器實測通過、console 無錯。綠燈：tsc 0 / 847 tests / build ✓。**Phase A 全完成**（A1+A2）→ 本地 checkpoint commit `b3dbcd7`（未 push）。
+- iter 3（2026-07-04）：**B3 完成** — admin/analytics NODE_DISTRIBUTION 假完成數 → 真實 per-specialty 節點數（新 `NODES_BY_SPECIALTY` 於 content-stats，drift 測試守護→848 tests；banner 更新為「總節點數＋各專科分佈為真實」）。**附帶修復 DEPLOY-CHECKLIST #13**：移除 `admin/loading.tsx`（admin 頁皆 client-static、不需 segment Suspense 骨架，正是 dev 卡住根源）→ 瀏覽器驗證 hard-nav + sidebar in-app nav 皆乾淨渲染（animate-pulse 0、8 專科真實數字：內科57/外科39/皮膚35/神經35/腫瘤34/急診33/心臟28/病理22、console 無錯）。綠燈：tsc 0 / 848 tests / build ✓。變更未 commit（累積至 Phase B/C 段落）。
 
 ### 待使用者（營運/簽核，詳見 Obsidian `BLOCKED-OPERATIONS.md`）
 - Supabase 專案 + migrations + auth hook + bootstrap admin；Vercel env；金鑰輪替；Upstash。

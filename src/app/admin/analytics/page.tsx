@@ -3,7 +3,7 @@
 import { BarChart3, Users, BookOpen, TrendingUp, Activity } from 'lucide-react';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Progress } from '@/components/ui/Progress';
-import { TOTAL_KNOWLEDGE_NODES } from '@/lib/constants/content-stats';
+import { TOTAL_KNOWLEDGE_NODES, NODES_BY_SPECIALTY } from '@/lib/constants/content-stats';
 
 // Mock analytics data (示範用；唯「總節點數」取自真實 seed 常數)
 const MOCK_STATS = {
@@ -13,15 +13,6 @@ const MOCK_STATS = {
   avgSessionMinutes: 23,
 };
 
-const NODE_DISTRIBUTION = [
-  { specialty: '小動物內科', count: 85, total: 100 },
-  { specialty: '外科', count: 62, total: 80 },
-  { specialty: '皮膚科', count: 45, total: 60 },
-  { specialty: '心臟科', count: 38, total: 50 },
-  { specialty: '神經科', count: 32, total: 50 },
-  { specialty: '腫瘤科', count: 28, total: 40 },
-] as const;
-
 export default function AdminAnalyticsPage() {
   return (
     <div className="space-y-6">
@@ -29,7 +20,7 @@ export default function AdminAnalyticsPage() {
         role="note"
         className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800"
       >
-        示範資料 Demo data — 除「總節點數」外，活躍使用者、今日完成、各專科分佈等數字為示範用途，尚未接上真實後端。
+        示範資料 Demo data —「總節點數」與「各專科節點數分佈」為真實 seed 數字；活躍使用者、今日完成、平均學習時長為示範用途，尚未接上真實後端。
       </div>
       <div className="flex items-center gap-2">
         <BarChart3 className="h-6 w-6 text-indigo-600" />
@@ -87,23 +78,21 @@ export default function AdminAnalyticsPage() {
         </Card>
       </div>
 
-      {/* Node Completion Distribution */}
+      {/* Per-specialty node distribution — real seed counts (B3) */}
       <Card>
         <CardHeader>
-          <h2 className="text-lg font-semibold text-gray-900">各專科節點完成分佈</h2>
+          <h2 className="text-lg font-semibold text-gray-900">各專科節點數分佈</h2>
         </CardHeader>
         <CardBody className="space-y-4">
-          {NODE_DISTRIBUTION.map((item) => (
-            <div key={item.specialty} className="space-y-1">
+          {NODES_BY_SPECIALTY.map((item) => (
+            <div key={item.code} className="space-y-1">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-700">{item.specialty}</span>
-                <span className="text-gray-500">
-                  {item.count} / {item.total}
-                </span>
+                <span className="text-gray-700">{item.label}</span>
+                <span className="text-gray-500">{item.count} 節點</span>
               </div>
               <Progress
                 value={item.count}
-                max={item.total}
+                max={NODES_BY_SPECIALTY[0].count}
                 variant="mastery"
                 size="sm"
               />

@@ -121,7 +121,7 @@ npm run verify:citations # 引用完整性
 
 - **圖譜箭頭**：headless 預覽無法繪製 React Flow 的 SVG 邊，但資料層 727 條邊正常、arrowhead marker 已註冊 → 需真桌面瀏覽器確認（DEPLOY-CHECKLIST #12）。
 - **後台動作頁為 Demo（已標示）**：`/admin/generate`（0 後端呼叫）、`/admin/review`（永久空）、`/admin/analytics`（活躍/完成數仍為示範值）——三頁均已加「示範資料 Demo」橫幅；analytics 的「總節點數」已改讀真實 `TOTAL_KNOWLEDGE_NODES`（283）。上線前若要真正可用，仍需把 generate/review 接上 `/api/generate/*` + 持久層。
-- **`/admin/analytics` dev loading hang**：間歇性、dev 專屬（production build 不受影響）；最簡解為移除 `admin/loading.tsx`。
+- ~~`/admin/analytics` dev loading hang~~ ✅ 已修（2026-07-04）：移除 `admin/loading.tsx`（admin 頁 client-static，不需 segment 骨架）。
 - **Next.js 16**：`middleware` 慣例已 deprecated（提示改 `proxy`），build 有警告但尚不阻斷。
 
 ---

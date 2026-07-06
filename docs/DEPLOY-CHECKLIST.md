@@ -95,7 +95,7 @@
 ## 7. 🟡 待人工驗證 / 已知 LOW issue（非阻塞）
 
 - [ ] **#12**：用真實桌面瀏覽器開 `/graph` → 心臟科，確認節點間有箭頭連線（headless 預覽下測不出，但資料層 806 條 edge 正常）。沒連線才需 debug。
-- [ ] **#13**（LOW）：`/admin/analytics` 在 dev 卡載入骨架（mock 資料頁，admin-only）。已排除 stale-build / client-server / Progress / 頁面源碼；根因在 App-Router segment-loading.tsx Suspense 層。候選修法見 BLOCKED-OPERATIONS.md #13。
+- [x] **#13**（LOW，✅ 2026-07-04 已修）：`/admin/analytics` dev 卡載入骨架。根因＝admin segment `loading.tsx` 的 Suspense fallback 在 dev 不解除；**已移除 `src/app/admin/loading.tsx`**（admin 頁皆 client-static、instant render，不需骨架），瀏覽器驗證 hard-nav + sidebar in-app nav 皆乾淨渲染。
 
 ---
 

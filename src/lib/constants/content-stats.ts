@@ -25,3 +25,20 @@ export const TOTAL_CASE_CHALLENGES = 103;
 
 /** Total clinical specialties: CARDIO, IM, DERM, SURG, NEURO, ONCO, ECC, CPATH. */
 export const TOTAL_SPECIALTIES = 8;
+
+/**
+ * Per-specialty knowledge-node counts (real; must sum to TOTAL_KNOWLEDGE_NODES).
+ * `code` = seed specialty code (node.specialty); `label` = 繁中顯示名。排序：多→少。
+ * Drift-guarded by content-stats.test.ts against ALL_NODES grouped by specialty —
+ * kept as a primitive constant (not an ALL_NODES import) so client bundles stay tiny.
+ */
+export const NODES_BY_SPECIALTY = [
+  { code: 'IM', label: '內科', count: 57 },
+  { code: 'SURG', label: '外科', count: 39 },
+  { code: 'DERM', label: '皮膚科', count: 35 },
+  { code: 'NEURO', label: '神經科', count: 35 },
+  { code: 'ONCO', label: '腫瘤科', count: 34 },
+  { code: 'ECC', label: '急診加護', count: 33 },
+  { code: 'CARDIO', label: '心臟科', count: 28 },
+  { code: 'CPATH', label: '臨床病理', count: 22 },
+] as const;
