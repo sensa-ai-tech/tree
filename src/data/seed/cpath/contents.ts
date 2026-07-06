@@ -1087,8 +1087,8 @@ AG = Na⁺ - (Cl⁻ + HCO₃⁻)
 const contentBodyFluid: NodeContent = {
   id: 'CONTENT-CPATH-L4-006',
   node_id: 'CPATH-L4-006',
-  version: 1,
-  summary: '胸水、腹水、心包液、關節液、CSF 的物理性狀、化學跟細胞學評估。把體液分對類（transudate vs exudate）是找病因的第一步。',
+  version: 2,
+  summary: '胸水、腹水、心包液、關節液、CSF 的物理性狀、化學與細胞學評估。傳統上先把體腔積液分為漏出液/變性漏出液/滲出液（TP+TNCC），但各類別重疊大、鑑別力有限；現行趨勢改以蛋白為基礎（protein-poor/protein-rich）與機制導向，並輔以 Light-like 多參數與細胞學/培養定病因。',
   learning_objectives: [
     '將體腔積液分類為 pure transudate、modified transudate 與 exudate',
     '判讀體液 TP、TNCC、比重與細胞學的綜合意義',
@@ -1097,87 +1097,129 @@ const contentBodyFluid: NodeContent = {
     '說明關節液分析在多關節炎鑑別中的角色',
   ],
   key_points: [
-    'Pure transudate：TP < 2.5 g/dL、TNCC < 1500/μL，低白蛋白或早期門脈高壓',
-    'Modified transudate：TP 2.5-5.0、TNCC 1000-7000，CHF、腫瘤、肝病',
-    'Exudate：TP > 3.0、TNCC > 7000，感染、FIP、腫瘤、膽汁或尿液外漏',
-    '貓 FIP 積液：高蛋白（> 3.5 g/dL）、細胞數低、A:G < 0.4、Rivalta test 陽性',
-    'Septic exudate 看到退化嗜中性球加細胞內細菌，馬上引流加抗生素',
-    'CSF 正常：TP < 25 mg/dL、TNCC < 5/μL；蛋白跟細胞一起升就是發炎',
-    '關節液 TNCC > 3000/μL 就是關節炎；> 50,000 加退化嗜中性球就是 septic arthritis',
-    'Uroabdomen 確診：腹水 creatinine 是血清的 2 倍以上',
+    'Pure transudate：TP < 2.5 g/dL、TNCC < 1,500/μL（部分教材採 < 1,000）；低白蛋白或早期門脈高壓',
+    'Modified/high-protein transudate：TP ~2.5-3.5（部分至 5.0）、TNCC ~1,000-5,000/μL；CHF、腫瘤、肝病。傳統三分類重疊大、鑑別力有限（Hazuchova 2023：傳統法準確度僅約 48%）',
+    'Exudate：TP > 3.0、TNCC 明顯升高（依教材 > 5,000 或 > 7,000/μL）；感染、FIP、腫瘤、膽汁/尿液外漏',
+    '貓 FIP 積液：高蛋白（> 3.5 g/dL、球蛋白為主）、細胞數低（膿性肉芽腫）、A:G < 0.4 提示（0.4-0.8 不確定、> 0.8 幾乎排除）；A:G 長於「排除」而非確診',
+    'Rivalta test 對 FIP：敏感度高（~91%）、特異度僅約 66%（NPV~93%/PPV~58%，Fischer 2012）——適合排除、不能單獨確診（淋巴瘤/細菌性積液偽陽）',
+    'Septic effusion 確診＝細胞內細菌（intracellular bacteria）；退化性嗜中性球為支持性非必要；培養為金標準（細胞學 Se~75%）',
+    'Septic peritonitis 生化：血液-積液 glucose 差 > 20 mg/dL（犬 100%/100%、貓 86%/100%，Bonczynski 2003）',
+    'Uroabdomen 確診：腹水 creatinine : 血清 > 2:1、腹水 K+ : 血清 > 1.4:1（犬，Schmiedt 2001；貓沿用犬切點）',
+    'CSF 正常依部位/物種：TNCC 犬 < 5、貓 < 8/μL；TP cisternal < 25-30、lumbar < 45 mg/dL',
+    '關節液：正常 TNCC < 3,000/μL；septic 與 IMPA 的 TNCC 大量重疊（IMPA 可達十餘萬），單靠 TNCC 不能區分，須培養＋找細胞內菌',
   ],
   body: `# 體液分析 (Body Fluid Analysis)
 
-## 一、檢查原理與適應症 (Principles & Indications)
+## 一、適應症與禁忌 (Indications & Contraindications)
 
+### 適應症
+- 體腔積液（胸水/腹水/心包液）的病因鑑別
+- 關節積液評估（跛行、多關節腫脹、不明發熱）
+- CSF 分析（癲癇、共濟失調、頸背疼痛等神經症狀）
+- 疑似貓 FIP（滲出型）
+- 腹腔創傷/急腹症評估（uroabdomen、bile peritonitis、septic peritonitis）
 
+### 禁忌與注意
+- CSF 採集：顱內壓升高、枕骨大孔疝脫風險為相對禁忌（先做影像評估）
+- 嚴重凝血障礙時體腔穿刺需謹慎，必要時先矯正
+- 心包穿刺建議超音波導引以降低風險
 
-### 體腔積液分類
+## 二、採樣、器材與檢體處理 (Sampling & Handling)
+
+- 體腔穿刺（thoracocentesis / abdominocentesis）或超音波導引採集；心包穿刺建議影像導引。
+- **分裝**：EDTA 管（細胞學/TNCC）＋ 無添加劑管（生化：TP、creatinine、bilirubin、triglyceride、glucose、lactate）＋ 需要時培養瓶（好氧＋厭氧）。
+- **同步採血**：凡需算比值（creatinine、K⁺、bilirubin、glucose、lactate 的血-液梯度）務必同時抽周邊血。
+- **時效**：所有體液 30-60 分鐘內處理；細胞會隨時間退化（尤其 CSF），延遲會低估 TNCC 並造成人工退化假象。CSF 細胞數低，建議加自體血清或立即製抹片。
+- CSF 經枕大池（cisternal）或腰椎（lumbar）採 0.5-1 mL；務必記錄採集部位（影響蛋白參考值）。
+
+## 三、判讀 (Interpretation)
+
+### 3-1 體腔積液分類（傳統 TP+TNCC，注意其限制）
 | 類型 | TP (g/dL) | TNCC (/μL) | 常見原因 |
 |------|-----------|------------|---------|
-| Pure transudate | < 2.5 | < 1500 | 低白蛋白、早期門脈高壓 |
-| Modified transudate | 2.5-5.0 | 1000-7000 | CHF、腫瘤、肝病 |
-| Exudate（非化膿性） | > 3.0 | > 7000 | FIP、腫瘤 |
-| Exudate（化膿性） | > 3.0 | > 7000 | 細菌感染（pyothorax/peritonitis） |
-| Hemorrhagic | > 3.0 | 類似血液 | 創傷、腫瘤出血、凝血障礙 |
+| Pure transudate | < 2.5 | < 1,500（部分採 < 1,000） | 低白蛋白、早期門脈高壓 |
+| Modified / high-protein transudate | ~2.5-3.5（部分至 5.0） | ~1,000-5,000 | CHF、腫瘤、肝病、心包疾病 |
+| Exudate | > 3.0 | 依教材 > 5,000 或 > 7,000 | 感染、FIP、腫瘤、膽汁/尿外漏 |
+| Hemorrhagic | 類似血液 | 類似血液 | 創傷、腫瘤出血、凝血障礙 |
 
-### 特殊體液類型
-### Chylothorax（乳糜胸）
-- 外觀乳白色
-- Triglyceride（胸水）> 血清 triglyceride
-- Cholesterol（胸水）< 血清 cholesterol
+> ⚠️ **框架時效**：傳統三分類（transudate / modified transudate / exudate）各類別數值大量重疊、對病因鑑別力有限。現行權威（eClinpath/Cornell、Stockham & Scott 第 3 版）已改採以蛋白為基礎的 **protein-poor vs protein-rich transudate + exudate** 與機制導向分類；Hazuchova 等 2023 顯示貓積液以「簡化 Light's criteria＋急性期蛋白」判病因準確度（~79-82%）遠優於傳統 TNCC+TP 三分類（~48%）。故分類僅為起點，務必結合細胞學型態、培養與臨床。
 
-### Uroabdomen（尿腹）
-- 腹水 creatinine / 血清 creatinine > 2:1
-- 腹水 K⁺ > 血清 K⁺
+### 3-2 特殊體液的化學判準
+- **Uroabdomen（尿腹）**：腹水 creatinine : 血清 creatinine > 2:1（犬特異度 100%、敏感度 86%，Schmiedt 2001）；腹水 K⁺ : 血清 K⁺ > 1.4:1（犬敏感度與特異度皆 100%）。⚠️ Schmiedt 為純犬研究；貓常沿用犬切點——文獻常引的貓「1.9」實為 Aumann 1998 的描述性平均值（非驗證切點）。膀胱剛破時尚未平衡、早期比值可能偏低，高度懷疑時隔 1-2 小時重抽。
+- **Bile peritonitis（膽汁性腹膜炎）**：腹水 bilirubin > 2 倍血清 bilirubin（教科書標準，Stockham & Scott）為強力支持；確診仍需細胞學/肉眼見膽色素。
+- **Chylous effusion（乳糜）**：積液 triglyceride 明顯高於血清 TG（常為數倍以上、絕對值多 > 100 mg/dL），且**積液內 cholesterol : triglyceride 比值 < 1**（關鍵鑑別，Fossum 1986）。假性乳糜（pseudochylous）相反：chol:TG > 1、TG 偏低。⚠️「積液 cholesterol 低於血清 cholesterol」並非有效判準（乳糜與非乳糜積液的 cholesterol 無差異）。
+- **Septic effusion（生化輔助）**：血液-積液 glucose 差 > 20 mg/dL（血糖高於積液）——犬敏感度/特異度 100%/100%、貓 86%/100%（Bonczynski 2003）；血-液 lactate 差 < -2.0 mmol/L（積液 lactate 較高）——僅犬驗證（100%/100%，n=7）。⚠️ POC 血糖儀測全血-積液差敏感度較低（~41%，Koenig 2015），且腫瘤/胰臟炎/尿腹/膽汁積液也可出現類似梯度，須併細胞學＋培養。
 
-### Bile peritonitis（膽汁性腹膜炎）
-- 腹水 bilirubin / 血清 bilirubin > 2:1
+### 3-3 貓 FIP 積液
+- 高蛋白（總蛋白 > 3.5 g/dL、球蛋白為主 > 50%），黏稠、淡黃色
+- 細胞數低（TNCC < 5 × 10⁹/L，膿性肉芽腫性：非退化嗜中性球＋巨噬細胞）
+- A:G ratio：**< 0.4 高度提示、0.4-0.8 不確定、> 0.8 幾乎可排除**；A:G 的價值在「排除」大於「確診」（低盛行率族群 A:G < 0.8 之 NPV 近 100%、PPV 僅約 12.5%，Jeffery 2012），且非所有確診 FIP 都 < 0.4
+- Rivalta test：敏感度 ~91%、特異度僅約 66%（NPV ~93%、PPV ~58%，Fischer 2012）——陰性有助排除，陽性不能單獨確診（淋巴瘤、細菌性積液常偽陽）。確診依現行 FIP 指引（積液 FCoV RT-qPCR、巨噬細胞免疫染色）；見 2022 AAFP/EveryCat 指引。
 
-### 貓 FIP 積液特徵
-- 高蛋白（> 3.5 g/dL），黏稠、淡黃色
-- 低細胞數（以巨噬細胞/嗜中性球為主）
-- A:G ratio < 0.4（高度提示 FIP）
-- Rivalta test 陽性（1 滴積液於 8% 醋酸中不溶解）
-
-## 二、判讀要點 (Interpretation)
-
-### 腦脊髓液（CSF）分析
-| 參數 | 正常 | 異常提示 |
+### 3-4 腦脊髓液（CSF）
+| 參數 | 正常（依部位/物種） | 異常提示 |
 |------|------|---------|
-| TP | < 25 mg/dL | 升高：發炎、腫瘤 |
-| TNCC | < 5/μL | 升高：meningitis/encephalitis |
-| 細胞型態 | 小淋巴球為主 | 嗜中性球↑=化膿性；單核球↑=肉芽腫性/病毒性 |
+| TNCC | 犬 < 5、貓 < 8/μL | 升高＝pleocytosis（腦膜腦炎/腫瘤） |
+| TP（microprotein） | cisternal < 25-30、lumbar < 45 mg/dL | 升高：發炎、腫瘤、出血 |
+| 細胞型態 | 小淋巴球為主 | 嗜中性球↑=化膿性；單核/巨噬↑=肉芽腫/病毒；嗜酸↑=寄生蟲/原蟲 |
 
-### 關節液分析
-- 正常：TNCC < 3000/μL，黏稠度高，透明
-- 非感染性關節炎：TNCC 3000-50,000，非退化嗜中性球
-- Septic arthritis：TNCC > 50,000，退化嗜中性球 ± 細胞內細菌
+> Albuminocytologic dissociation＝蛋白升高但細胞正常（見於壓迫性/退化性病變）。務必依採樣部位選對蛋白參考值（cisternal < lumbar）。
 
-## 三、常見陷阱 (Pitfalls)
+### 3-5 關節液
+- 正常：TNCC < 3,000/μL（多數健康犬更低，常 < 1,500；貓 < 1,000），高黏稠度、透明
+- 發炎性（含 septic 與 IMPA）：TNCC 常 > 3,000-5,000/μL、以嗜中性球為主
+- ⚠️ **septic 與免疫介導性多關節炎（IMPA）的 TNCC 大量重疊**（犬 IMPA 可達 ~3,700-170,000/μL，常超過 septic），**單靠 TNCC 無法區分**；犬貓 septic 關節嗜中性球**常為非退化性**、細胞內菌也常看不到。確診須培養＋尋找細胞內菌，且培養陰性（可達 50%）仍不能排除 septic。
 
-## 四、人醫借鑒 (Translational Insights)
+## 四、常見陷阱 (Pitfalls)
+
+- 只看外觀/顏色就分類，未測 TP 與 TNCC。
+- 把傳統三分類當絕對切點，忽略重疊與框架已朝機制/蛋白導向取代。
+- 高蛋白積液全歸感染，忘記 FIP 與腫瘤性滲出。
+- 未同步採血，算不出 creatinine/K⁺/bilirubin/glucose 血-液比值。
+- 乳糜誤用「積液 cholesterol < 血清 cholesterol」，未算積液內 chol:TG 比值。
+- Rivalta 陽性就當 FIP 確診（特異度僅約 66%）。
+- 關節液單以 TNCC 或「退化嗜中性球」區分 septic vs IMPA。
+- CSF 延遲處理（> 30-60 分）致細胞退化、TNCC 被低估。
+- 血液污染使 TP/TNCC 假性偏高。
+
+## 五、診斷效能 (Diagnostic Performance)
+
+- 體液分類抓病因「方向」很好用，但確診常需影像、培養與其他檢查佐證。
+- 關鍵驗證數據：Rivalta（FIP）Se ~91%/Sp ~66%（Fischer 2012）；血-液 glucose 差 > 20 mg/dL（septic peritonitis）犬 100%/100%、貓 86%/100%（Bonczynski 2003）；uroabdomen creatinine > 2:1（犬 Sp 100%/Se 86%）、K⁺ > 1.4:1（犬 100%/100%，Schmiedt 2001）；septic 積液細胞學對比培養 Se ~75%/Sp ~93%（Medardo 2024）。
+- 多數單一指標「特異度高、敏感度中等」→ 陽性有意義、陰性不能排除，須組合判讀。
+
+## 六、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| 自動化體液分析儀（Sysmex BF mode） | 犬貓體液 TNCC 與分類計數自動化，減少人工計數誤差 | 人醫已常規使用 body fluid mode，獸醫初步驗證顯示犬貓體液適用 |
-| Biomarker panel（procalcitonin、lactate、glucose ratio） | 區分犬貓感染性 vs 非感染性滲出液，提升 septic effusion 診斷速度 | 人醫胸/腹水 glucose ratio 與 LDH 已納入 Light's criteria，獸醫驗證中 |
-| 腦脊髓液 neurofilament light chain（NfL） | 犬貓 CNS 疾病活動度與預後評估的非侵入性生物標記 | 人醫 MS/AD 研究熱門，獸醫犬 CSF NfL 初步研究顯示與 CNS 疾病嚴重度相關 |
+| Light's criteria（TP、LDH 血-液比值） | 取代重疊大的傳統三分類、提升 exudate 判別 | 貓積液研究（Hazuchova 2023）顯示簡化 Light's + 急性期蛋白準確度優於傳統法 |
+| 自動化體液分析（Sysmex body fluid mode） | 犬貓 TNCC/分類計數自動化、減少人工誤差 | 人醫常規；獸醫初步驗證犬貓體液適用 |
+| 生物標記（procalcitonin、CRP、lactate/glucose 梯度） | 加速 septic vs 非 septic 積液鑑別 | 人醫已納入；獸醫驗證中（特異度仍待確立） |
+| CSF neurofilament light chain（NfL） | CNS 疾病活動度/預後的非侵入標記 | 人醫熱門；獸醫犬 CSF 初步研究與嚴重度相關 |
 
-## 五、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬貓體腔積液三分類（transudate/modified transudate/exudate）的適用性 | 此傳統分類有大量重疊區，部分學者主張改用類似人醫 Light's criteria 的多參數分類 | Level III |
-| 貓 FIP 積液 Rivalta test 的診斷效能 | 敏感度高（> 90%）但特異度因研究而異（70-98%），單獨使用不足以確診 | Level II |
-| CSF 採樣最佳時機：腦 MRI 前 vs 後 | MRI 後採 CSF 可能受對比劑影響蛋白質濃度，但先 MRI 可避免不必要的 CSF 採集 | Level IV |`,
-  clinical_pearl: '判斷腹水是不是 uroabdomen，腹水 creatinine 跟血清 creatinine 比值 > 2:1 最可靠。但要注意膀胱剛破時腹水還沒平衡，早期比值可能還沒拉到 2。臨床高度懷疑就隔 1-2 小時再抽一次。',
+| 傳統三分類 vs 蛋白/機制導向 vs Light's criteria | 傳統 TNCC+TP 三分類重疊大、準確度僅約 48%（貓，Hazuchova 2023）；蛋白導向與簡化 Light's（~79-82%）漸成主流，但缺跨物種大型前瞻驗證 | Level II |
+| Rivalta test 的定位 | 敏感度高、特異度僅約 66%（Fischer 2012），偽陽於淋巴瘤/細菌性積液；宜作排除用，確診靠 FCoV RT-qPCR/免疫染色 | Level II |
+| Septic 積液 glucose/lactate 血-液梯度的可靠度 | 原始研究近完美（Bonczynski 2003）但樣本小、POC 儀器敏感度僅約 41%（Koenig 2015），非感染狀況亦可出現梯度 | Level III |
+| 關節液區分 septic vs IMPA | TNCC 與細胞型態大量重疊、培養敏感度有限（陰性率可達 50%），缺可靠單一鑑別指標 | Level III |
+
+## 八、近期實證更新 (Recent Updates)
+
+- **分類框架轉向（Hazuchova 2023, Animals）**：貓體腔積液以「簡化 Light's criteria（積液:血清 TP、LDH 比值）＋急性期蛋白」判病因，準確度約 79-82%，顯著優於傳統三分類（約 48%）；「modified transudate」一詞漸被「high-protein transudate」取代，Stockham & Scott 第 3 版改採 protein-poor/protein-rich 命名。
+- **Rivalta 定位再校準（Fischer 2012；2022 AAFP/EveryCat FIP 指引）**：Rivalta 特異度被舊教材（曾稱可達 98%）高估，一手大型研究僅約 66%；現行 FIP 診斷以積液 A:G、細胞學搭配 FCoV RT-qPCR 與巨噬細胞免疫染色為主，Rivalta 僅作篩檢/排除輔助。
+- **Septic 積液診斷多模式化（Medardo 2024, Animals）**：以細菌培養為金標準，細胞學（找細胞內菌）敏感度約 75%、特異度約 93%；退化嗜中性球為支持性、非必要；建議細胞學＋培養＋生化（血-液 glucose/lactate 梯度）併用。`,
+  clinical_pearl: '判斷腹水是不是 uroabdomen，腹水 creatinine 跟血清 creatinine 比值 > 2:1 最可靠（犬特異度 100%，Schmiedt 2001）。但膀胱剛破時腹水還沒平衡，早期比值可能還沒拉到 2，臨床高度懷疑就隔 1-2 小時再抽一次。另一個常被誤用的是 Rivalta test：它對貓 FIP 敏感度高（~91%）、特異度卻只有約 66%（Fischer 2012），所以「陰性」有助排除、但「陽性」不能單獨確診（淋巴瘤、細菌性積液都會偽陽），仍需 A:G、細胞學與 FCoV RT-qPCR 佐證。',
   common_mistakes: [
     '光看顏色就分類體液，沒測 TP 跟 TNCC',
+    '把傳統三分類當絕對切點——各類別重疊大，且框架已朝蛋白/機制導向與 Light\'s criteria 演進',
     '高蛋白體液全歸感染，忘記 FIP 跟腫瘤性滲出',
-    '沒算胸水/血清 triglyceride 比值就把 chylothorax 排除',
-    'CSF 採完沒馬上看（超過 30 分鐘細胞就退化），TNCC 被低估',
-    '關節液沒區分退化性跟非退化性嗜中性球，septic 跟 immune-mediated 分不出來',
+    '乳糜判斷用「積液 cholesterol < 血清 cholesterol」（無效），正確是積液內 cholesterol:triglyceride 比值 < 1',
+    'Rivalta 陽性就當 FIP 確診（特異度僅約 66%，須併 A:G/細胞學/FCoV RT-qPCR）',
+    '關節液只憑 TNCC 或「退化嗜中性球」區分 septic 與 IMPA（大量重疊，須培養＋找細胞內菌）',
+    'CSF 採完沒馬上處理（超過 30-60 分鐘細胞退化），TNCC 被低估',
   ],
   disease_data: null,
   diagnostic_data: {
@@ -1185,24 +1227,25 @@ const contentBodyFluid: NodeContent = {
     contraindication: ['CSF 採集禁忌：顱內壓升高、枕骨大孔疝脫風險', '嚴重凝血障礙時體腔穿刺需謹慎'],
     technique: '體腔穿刺（thoracocentesis/abdominocentesis）採集體液。分裝：EDTA 管（細胞學）+ 無添加劑管（化學分析）+ 培養瓶（如疑感染）。CSF 經枕骨大孔或腰椎穿刺採集 0.5-1 mL。所有體液需 30 分鐘內處理分析。',
     normal_findings: [
-      { finding: '正常腹膜液', description: '少量、TP < 2.5 g/dL，TNCC < 1500/μL', significance: '無明顯積液' },
-      { finding: '正常 CSF', description: 'TP < 25 mg/dL，TNCC < 5/μL，透明無色', significance: '無中樞神經發炎' },
-      { finding: '正常關節液', description: 'TNCC < 3000/μL，高黏稠度，透明', significance: '無關節發炎' },
+      { finding: '正常腹膜液', description: '少量、TP < 2.5 g/dL、TNCC < 1,500/μL（部分教材採 < 1,000）', significance: '無明顯積液' },
+      { finding: '正常 CSF', description: 'TNCC 犬 < 5、貓 < 8/μL；TP cisternal < 25-30、lumbar < 45 mg/dL；透明無色', significance: '無中樞神經發炎（依採樣部位/物種選參考值）' },
+      { finding: '正常關節液', description: 'TNCC < 3,000/μL（多數健康犬更低，常 < 1,500）、高黏稠度、透明', significance: '無關節發炎' },
     ],
     abnormal_findings: [
-      { finding: 'Septic exudate', description: '退化嗜中性球為主 + 細胞內細菌', significance: '細菌感染，需緊急引流與抗生素' },
-      { finding: 'FIP effusion', description: '高蛋白 + 低細胞數 + A:G < 0.4', significance: '高度支持 FIP 診斷' },
-      { finding: 'Chylous effusion', description: '乳白色 + 胸水 TG > 血清 TG', significance: '乳糜胸，需查原因（心病、腫瘤、特發性）' },
-      { finding: 'CSF pleocytosis', description: 'TNCC > 5/μL', significance: '中樞神經發炎，需鑑別感染性 vs 免疫介導' },
+      { finding: 'Septic effusion', description: '嗜中性球內見細胞內細菌（definitive）；退化性嗜中性球為支持性非必要；培養為金標準', significance: '細菌感染，需緊急引流與抗生素；細胞學未見菌不能排除（Se ~75%）' },
+      { finding: 'FIP effusion', description: '高蛋白（>3.5 g/dL 球蛋白為主）+ 低細胞數（膿性肉芽腫）+ A:G < 0.4', significance: '支持 FIP；A:G 長於排除（<0.4 提示、>0.8 幾乎排除），確診靠 FCoV RT-qPCR/免疫染色' },
+      { finding: 'Chylous effusion', description: '乳白色 + 積液 TG > 血清 TG + 積液內 chol:TG 比值 < 1', significance: '乳糜胸/腹，需查原因（心病、腫瘤、特發性）' },
+      { finding: 'CSF pleocytosis', description: 'TNCC 犬 > 5、貓 > 8/μL', significance: '中樞神經發炎，須鑑別感染性 vs 免疫介導' },
     ],
     interpretation_guide: '看體液順序：先外觀（顏色、透明度、黏稠度）。測 TP 跟 TNCC 分類。細胞學看細胞型態。必要時做化學比較（creatinine、bilirubin、triglyceride ratio）。最後對臨床。',
     pitfalls: [
       '採樣時血液汙染，TP 跟 TNCC 都假性偏高',
-      'CSF 延遲處理，細胞退化、TNCC 被低估',
-      '沒同時抽血做化學比較，沒辦法算 ratio',
-      'EDTA 管採不夠或凝掉，細胞學做不出來',
+      'CSF 延遲處理（>30-60 分），細胞退化、TNCC 被低估',
+      '沒同時抽血做化學比較，算不出 creatinine/K⁺/bilirubin/glucose 血-液比值',
+      '把傳統三分類當絕對切點；乳糜誤用「積液 vs 血清 cholesterol」而非積液內 chol:TG < 1',
+      'Rivalta 陽性當 FIP 確診（特異度僅約 66%）；關節液單憑 TNCC 分 septic vs IMPA',
     ],
-    sensitivity_specificity: '體液分類抓病因方向很好用，最後確診常常要影像學跟其他檢查補。CSF 分析抓 CNS 發炎敏感度高，特異度看細胞學模式。',
+    sensitivity_specificity: '各指標多為「特異度高、敏感度中等」→ 陽性有意義、陰性不能排除。關鍵數據：Rivalta（FIP）Se ~91%/Sp ~66%（Fischer 2012）；血-液 glucose 差 >20 mg/dL（septic peritonitis）犬 100%/100%、貓 86%/100%（Bonczynski 2003）；uroabdomen creatinine >2:1（犬 Sp100%/Se86%）、K⁺ >1.4:1（犬 100%/100%，Schmiedt 2001）；septic 積液細胞學 vs 培養 Se ~75%/Sp ~93%（Medardo 2024）。',
     cost_benefit: '採樣簡單、分析便宜。體腔積液病人第一線必做，CP 值極高。',
   },
   procedure_data: null,
@@ -1215,10 +1258,19 @@ const contentBodyFluid: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '體液分析核心教材' },
-    { type: 'textbook', citation: 'Cowell RL et al. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. Elsevier, 2014.', relevance: '體液細胞學判讀參考' },
-    { type: 'journal', citation: 'Dempsey SM, Ewing PJ. "A review of the pathophysiology, classification, and analysis of canine and feline cavitary effusions." J Am Anim Hosp Assoc 2011;47(1):1-11.', relevance: '體腔積液分類的病理生理學回顧' },
-    { type: 'guideline', citation: 'WSAVA Liver Standardization Group. "WSAVA Standards for Clinical and Histological Diagnosis of Canine and Feline Liver Diseases." J Comp Pathol. 2006;134(Suppl 2):S1-S36.', relevance: 'WSAVA 肝臟疾病標準化指引，腹水分析在肝病中的應用' },
+    { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Ames, IA: Blackwell; 2008.', relevance: '體液分析與體腔積液分類核心教材' },
+    { type: 'textbook', citation: 'Cowell RL, Valenciano AC, eds. Diagnostic Cytology and Hematology of the Dog and Cat, 4th ed. St. Louis: Elsevier; 2014.', relevance: '體液細胞學判讀參考教材' },
+    { type: 'journal', citation: 'Dempsey SM, Ewing PJ. A review of the pathophysiology, classification, and analysis of canine and feline cavitary effusions. J Am Anim Hosp Assoc. 2011;47(1):1-11. doi:10.5326/jaaha-ms-5558.', relevance: '體腔積液病理生理與傳統分類回顧（含重疊限制）' },
+    { type: 'journal', citation: 'Hazuchova K, Held S, Klemm I, Bauer N. Simplified Light\'s criteria and acute phase proteins reflect aetiology of feline body cavity effusions better than the traditional classification scheme. Animals (Basel). 2023;13(12):1918. doi:10.3390/ani13121918.', relevance: '簡化 Light\'s criteria 準確度優於傳統三分類（框架轉向，2023 近期）' },
+    { type: 'journal', citation: 'Fischer Y, Sauter-Louis C, Hartmann K. Diagnostic accuracy of the Rivalta test for feline infectious peritonitis. Vet Clin Pathol. 2012;41(4):558-567. doi:10.1111/j.1939-165x.2012.00464.x.', relevance: 'Rivalta test 對貓 FIP 的敏感度/特異度原始數據（Se91%/Sp66%）' },
+    { type: 'journal', citation: 'Jeffery U, Deitz K, Hostetter S. Positive predictive value of albumin:globulin ratio for feline infectious peritonitis in a mid-western referral hospital population. J Feline Med Surg. 2012;14(12):903-905. doi:10.1177/1098612x12454862.', relevance: '積液 A:G ratio 對 FIP 的預測值（PPV~12.5%、NPV~100%），強於排除' },
+    { type: 'guideline', citation: 'Thayer V, Gogolski S, Felten S, et al. 2022 AAFP/EveryCat Feline Infectious Peritonitis Diagnosis Guidelines. J Feline Med Surg. 2022;24(9):905-933. doi:10.1177/1098612x221118761.', relevance: '2022 FIP 診斷指引（積液 A:G、Rivalta 定位、確診檢測；近期權威）' },
+    { type: 'journal', citation: 'Fossum TW, Jacobs RM, Birchard SJ. Evaluation of cholesterol and triglyceride concentrations in differentiating chylous and nonchylous pleural effusions in dogs and cats. J Am Vet Med Assoc. 1986;188(1):49-51. doi:10.2460/javma.1986.188.01.49.', relevance: '乳糜積液 cholesterol:triglyceride 比值 < 1 判準原始文獻' },
+    { type: 'journal', citation: 'Schmiedt C, Tobias KM, Otto CM. Evaluation of abdominal fluid: peripheral blood creatinine and potassium ratios for diagnosis of uroperitoneum in dogs. J Vet Emerg Crit Care. 2001;11(4):275-280. doi:10.1111/j.1476-4431.2001.tb00066.x.', relevance: 'Uroabdomen 腹水:血清 creatinine/K⁺ 比值診斷閾值（犬）' },
+    { type: 'journal', citation: 'Aumann M, Worth LT, Drobatz KJ. Uroperitoneum in cats: 26 cases (1986-1995). J Am Anim Hosp Assoc. 1998;34(4):315-324. doi:10.5326/15473317-34-4-315.', relevance: '貓尿腹病例系列（貓「1.9」平均比值來源，非驗證切點）' },
+    { type: 'journal', citation: 'Bonczynski JJ, Ludwig LL, Barton LJ, Loar A, Peterson ME. Comparison of peritoneal fluid and peripheral blood pH, bicarbonate, glucose, and lactate concentration as a diagnostic tool for septic peritonitis in dogs and cats. Vet Surg. 2003;32(2):161-166. doi:10.1053/jvet.2003.50005.', relevance: '血-腹水 glucose/lactate 差診斷 septic peritonitis 關鍵研究' },
+    { type: 'journal', citation: 'Koenig A, Verlander LL. Usefulness of whole blood, plasma, peritoneal fluid, and peritoneal fluid supernatant glucose concentrations obtained by a veterinary point-of-care glucometer to identify septic peritonitis in dogs with peritoneal effusion. J Am Vet Med Assoc. 2015;247(9):1027-1032. doi:10.2460/javma.247.9.1027.', relevance: 'POC 血糖儀測血-腹水 glucose 差辨識 septic peritonitis 敏感度較低（~41%）' },
+    { type: 'journal', citation: 'Medardo M, Capozza P, Bertazzolo W, et al. Diagnosis of septic body cavity effusion in dogs and cats: cytology vs. bacterial culture. Animals (Basel). 2024;14(12):1762. doi:10.3390/ani14121762.', relevance: 'Septic 積液細胞學 vs 培養（培養金標準；細胞學 Se~75%/Sp~93%，2024 近期）' },
   ],
   is_current: true,
   created_at: now,
