@@ -4673,7 +4673,7 @@ LA 擴大（LA/Ao ≥ 2.0）或左心耳 smoke/血栓 → 開始 Clopidogrel 18.
 const contentCardiacStaging: NodeContent = {
   id: 'CONTENT-L5-004',
   node_id: 'CARDIO-L5-004',
-  version: 1,
+  version: 2,
   summary: '心臟病分期系統是指導治療決策與飼主溝通的核心工具。ACVIM 分期系統（Stage A-D）適用於犬 MMVD 與 DCM，貓心肌病則依 ACVIM 2020 共識分為 preclinical/clinical/ATE 三階段。長期管理涵蓋藥物調整、居家監測（sleeping RR）、飲食建議（低鈉）、運動建議、定期追蹤計畫與飼主預後溝通。',
   learning_objectives: [
     '應用 ACVIM 分期系統對犬 MMVD 與 DCM 進行正確分期',
@@ -4684,11 +4684,11 @@ const contentCardiacStaging: NodeContent = {
   ],
   key_points: [
     'ACVIM MMVD 分期：A（高風險無病變）→ B1（雜音但無重塑）→ B2（有重塑）→ C（臨床CHF）→ D（難治性CHF）',
-    'B1 vs B2 關鍵指標（ACVIM 2019 Keene，三項皆須符合）：心雜音 ≥3/6 + LA/Ao ≥1.6（右側短軸）+ LVIDDN ≥1.7 → B2；VHS ≥10.5 是 EPIC 試驗的入組門檻而非分期條件',
-    'B2 開始 Pimobendan（EPIC 研究，Level I 證據），B1 無需藥物治療',
-    'DCM 分期：Occult（Holter + 心超篩檢）→ Overt（CHF 發生）→ 犬種特異性篩檢建議',
-    'HCM 監測要點：LV 壁厚追蹤 + LA 大小 + Clopidogrel 預防 ATE（LA/Ao ≥2.0）',
-    'Sleeping RR <30 次/分是最簡單且最早偵測 CHF 復發的居家指標',
+    'B2 診斷（ACVIM 2019 Keene，理想上四項皆符合）：心雜音 ≥3/6 + LA/Ao ≥1.6（右側短軸）+ LVIDDN ≥1.7 + VHS >10.5——VHS>10.5 本身即為 B2 標準之一（源自 EPIC 入組閾值、經共識納入分期），非僅 EPIC 入組條件',
+    'B2 開始 Pimobendan 0.25-0.3 mg/kg PO q12h（EPIC 雙盲 RCT；ACVIM 2019 Class I 推薦），B1 無需藥物治療',
+    'DCM 分期：Occult（Holter + 心超篩檢）→ Overt（CHF 發生）；杜賓犬自 3 歲起年度篩檢（Wess 2017）',
+    'HCM 監測：LV 壁厚 + LA 大小 + Clopidogrel 預防 ATE（依 ACVIM 2020 質性風險：中重度 LA 擴大＋低 LA FS%/低流速/自發顯影 smoke/血栓，非固定 LA/Ao ≥2.0）',
+    'Sleeping RR <30 次/分是最簡單且最早偵測 CHF 復發的居家指標（>30 持續或較自身基線上升 ~20% 即警訊，勿等到 40）',
     '飲食建議：Stage C 以上適度限鈉，但嚴格限鈉可能反向活化 RAAS',
     '生活品質評估工具（QoL scoring）輔助安樂死時機討論',
   ],
@@ -4702,7 +4702,7 @@ const contentCardiacStaging: NodeContent = {
 |------|------|---------|------|
 | A | 高風險品種，無病變 | 好發品種，無雜音，心超正常 | 年度聽診篩檢 |
 | B1 | 有雜音，無心臟重塑 | 雜音+心超 LA/Ao <1.6, LVIDDN 正常 | 每 12 月心超追蹤 |
-| B2 | 有雜音(≥3/6)，有心臟重塑 | 同時滿足三項（ACVIM 2019 Keene）：心雜音 ≥3/6 + LA/Ao ≥1.6（右側短軸）+ LVIDDN ≥1.7（VHS ≥10.5 為 EPIC 入組標準） | Pimobendan 開始；每 6 月追蹤 |
+| B2 | 有雜音(≥3/6)，有心臟重塑 | 理想上四項皆符合（ACVIM 2019 Keene）：心雜音 ≥3/6 + LA/Ao ≥1.6（右側短軸）+ LVIDDN ≥1.7 + VHS >10.5（VHS>10.5 為 B2 標準之一，源自 EPIC 入組閾值經共識納入，非僅入組條件） | Pimobendan 0.25-0.3 mg/kg q12h；每 6 月追蹤 |
 | C | 臨床心衰竭 | 肺水腫（X光）± sleeping RR >30 | 三合一治療；每 1-3 月追蹤 |
 | D | 難治性心衰竭 | 標準三合一治療反應不佳 | 藥物升級；每 2-4 週追蹤 |
 
@@ -4712,20 +4712,22 @@ const contentCardiacStaging: NodeContent = {
 |------|-----|-----|------|
 | LA/Ao | <1.6 | ≥1.6 | 右胸骨旁短軸切面 |
 | LVIDDN | <1.7（<20 kg 犬） | ≥1.7 | 品種校正正常化內徑 |
-| VHS | <10.5 | >10.5 | 胸腔 X 光（品種差異需注意） |
-| NT-proBNP | 通常 <900 pmol/L | 通常 >900 pmol/L | 輔助，非決定性 |
+| VHS | <10.5 | >10.5 | 胸腔 X 光（品種差異需注意）；為 B2 四項標準之一 |
+| NT-proBNP | — | — | ⚠️ **非分期切點**：B1/B2 由心超定義。>900 pmol/L 為篩檢門檻（建議做心超）、已確診 MMVD 者 >1500 提示 6-12 月內 CHF 風險；單獨判別 B2 準確度僅中等（AUC ~0.75，Wilshaw/Ogawa 2021），不能取代心超 |
 
 ### 犬 DCM，篩檢與分期
 
 | 階段 | 定義 | 篩檢方法 | 建議 |
 |------|------|---------|------|
-| Occult DCM | 無症狀但已有心肌變化 | Holter（VPC >50/24h）+ 心超（EF↓, ESVI↑） | 杜賓犬 ≥4 歲年度篩檢 |
-| Overt DCM | CHF 症狀出現 | X 光肺水腫 + 心超確認 | 三合一 + Sotalol（如有 VT） |
+| Occult DCM | 無症狀但已有心肌變化 | Holter（>300 VPC/24h，或一年內兩次各 50-300）+ 心超 SMOD（EDVI>95, ESVI>55 mL/m², EF<40%） | 杜賓犬 ≥3 歲年度篩檢 |
+| Overt DCM | CHF 症狀出現 | X 光肺水腫 + 心超確認 | 三合一 + 抗心律不整（持續/快速 VT 時 Sotalol） |
 
-杜賓犬 Occult DCM 篩檢建議：
-- ≥4 歲開始年度 Holter + 心超
-- Holter 異常（VPC >50/24h）但心超正常 → arrhythmic form → 開始 Sotalol
-- 心超異常（FS <25%, ESVI >80 mL/m²）→ 開始 Pimobendan
+杜賓犬 Occult DCM 篩檢建議（ESVC / Wess 2017）：
+- **自 3 歲起**每年同時做 Holter + 心超（單次陰性不能排除日後發病）
+- Holter 判準：**>300 VPC/24h**，或一年內兩次記錄各 50-300 VPC/24h（<50 視為正常但出現任何 VPC 仍須警覺）
+- 心超以 Simpson 法（SMOD）為首選：EDVI >95、ESVI >55 mL/m²、EF(SMOD) <40%（⚠️ 杜賓犬 FS 常落在 20% 上下、**FS 為不可靠指標**，不宜以 FS<25% 為主要判準）
+- **arrhythmic form**（Holter 達標、心超正常）：抗心律不整（Sotalol）**非常規建議**——未證實可降低猝死、且具致心律不整性/負性肌力，須依惡性標記（持續/快速 VT、暈厥、極高 VPC 負荷）逐案判斷；隱匿期具實證的疾病修飾用藥為 Pimobendan（PROTECT）
+- 心超陽性 occult DCM → **Pimobendan**（PROTECT 研究）
 
 ### 貓心肌病，ACVIM 2020 分期框架
 
@@ -4735,10 +4737,10 @@ const contentCardiacStaging: NodeContent = {
 | Clinical（有症狀） | CHF（肺水腫/胸水）或 ATE | Furosemide ± Pimobendan（非 LVOTO）|
 | End-stage | 收縮功能下降 + 難治性 CHF | 強化支持療法；QoL 評估 |
 
-HCM 特殊考量：
-- Atenolol：有 SAM（收縮期前移運動）+ LVOTO 時使用
-- Pimobendan 禁忌：HCM 伴 LVOTO（可能加重阻塞）；僅用於 end-stage 收縮功能下降
-- Clopidogrel 預防 ATE：LA/Ao ≥2.0 或 LA 內有 smoke/血栓 → 啟動一級預防
+HCM 特殊考量（ACVIM 2020 貓心肌病共識，Luis Fuentes 等）：
+- Atenolol：對 stage B1 且嚴重 DLVOTO（含 SAM）者「可考慮使用」（may be considered，LOE low），並用於複雜心室早搏（6.25 mg/貓 q12h）；⚠️ 無症狀 HCM 未證實改善 5 年存活率、亦無證據顯示 DLVOTO 增加死亡率，**不常規建議**
+- Pimobendan：伴臨床相關 LVOTO/DLVOTO 為**相對禁忌**（理論上正性肌力＋降後負荷可能加重動態阻塞），共識建議「僅在無臨床相關 LVOTO 時考慮」，並在頑固性 CHF 合併整體左心室收縮功能下降時「建議使用」（皆 LOE low）；惟近期證據（Ward 2020）顯示阻塞型貓亦耐受良好，不宜表述為絕對禁忌
+- Clopidogrel 預防 ATE（一級預防）：依**質性風險評估**——中重度 LA 擴大（stage B2）＋任一風險因子（低 LA FS%、低 LA 耳流速、自發顯影 smoke）或見血栓時啟動；⚠️ ACVIM 2020 **未指定 LA/Ao ≥2.0 等數值切點**（「LA/Ao ≥2.0」屬 HCM 存活預後研究之指標，非共識用藥閾值）
 
 ## 二、長期監測計畫 (Long-term Monitoring)
 
@@ -4746,7 +4748,7 @@ HCM 特殊考量：
 
 | 指標 | 目標 | 方法 | 異常處置 |
 |------|------|------|---------|
-| Sleeping RR | <30 次/分 | 睡眠中計數 15 秒 ×4 | >40/min 持續 → 立即就醫 |
+| Sleeping RR | <30 次/分（健康犬~13、貓~19-21） | 睡眠中計數 15 秒 ×4 | >30/min 持續，或較自身基線上升 ~20% → 立即就醫 |
 | 體重 | 穩定 | 每週同一時間秤重 | 急速下降→食慾/惡病質；急速上升→水腫 |
 | 食慾/活動力 | 穩定 | 飼主日誌記錄 | 明顯下降 → 回診評估 |
 
@@ -4767,7 +4769,7 @@ HCM 特殊考量：
 |------|---------|------|
 | Furosemide | BUN/Cre/K⁺/體重 | 啟始 5-7 天，穩定後 q3-6m |
 | ACEi | BUN/Cre/K⁺/BP | 啟始 5-7 天，穩定後 q3-6m |
-| Digoxin | 血中谷值濃度 0.8-1.2 ng/mL | 啟始 7-10 天，穩定後 q6m |
+| Digoxin | 谷值（服藥後 8h）0.8-1.5 ng/mL（保守可 0.6-1.0；≥2-2.5 中毒，ACVIM 2019）| 啟始 7-10 天，穩定後 q6m |
 | Sotalol | ECG（QT 間距） | 啟始後 + 每次調量 |
 | Clopidogrel | 無常規監測 | 臨床觀察出血傾向 |
 
@@ -4802,7 +4804,7 @@ HCM 特殊考量：
 |------|---------|------------|
 | B1 | 「目前無需治療，但需定期追蹤」 | 多久會惡化？→ 可能數年 |
 | B2 | 「開始藥物可延緩惡化」 | 可以不吃藥嗎？→ 不建議，EPIC 研究證據 |
-| C | 「可有效管理但無法治癒」 | 還能活多久？→ 中位 9-12 月，個體差異大 |
+| C | 「可有效管理但無法治癒」 | 還能活多久？→ 中位約 6-14 月（QUEST pimobendan ~267 天≈9 月），個體差異極大 |
 | D | 「坦誠討論生活品質」 | 什麼時候該放手？→ QoL 評估工具 |
 
 ### 生活品質評估 (QoL Assessment)
@@ -4843,12 +4845,21 @@ HCM 特殊考量：
 | 貓 HCM 無症狀期是否需要 Atenolol | 降低心率+減少 SAM | 無 RCT 證實改善預後 | Level III |
 | 生活品質評估的標準化 | 結構化 QoL 工具有助客觀判斷 | 個體差異大，工具難以涵蓋所有面向 | Level V |
 
+## 七、近期實證更新 (Recent Updates)
+
+- **NT-proBNP 非分期切點（跨章節澄清）**：ACVIM 2019 以心超（LA:Ao ≥1.6 且 LVIDDN ≥1.7 + VHS >10.5）定義 B2；NT-proBNP >900（篩檢→建議做心超）、>1500（已確診 MMVD 者 6-12 月內 CHF 風險）皆為實驗室解讀而非分期閾值，單獨判別 B2 準確度僅中等（AUC ~0.75，Wilshaw/Ogawa 2021）。
+- **杜賓犬 DCM 篩檢（Wess 2017 ESVC）**：自 3 歲起、Holter >300 VPC/24h（或一年內兩次 50-300）為 occult 診斷；FS 於杜賓犬不可靠，改用 SMOD 容積（EDVI>95/ESVI>55 mL/m²、EF<40%）。隱匿期疾病修飾用藥為 pimobendan（PROTECT）；抗心律不整藥未證實降低猝死、僅依惡性標記個別使用。
+- **貓 HCM（ACVIM 2020）**：clopidogrel 一級預防依「質性風險」（中重度 LA 擴大＋低 LA FS%/低流速/smoke/血栓）而非固定 LA/Ao 切點；pimobendan 於 LVOTO 為相對禁忌但近期證據（Ward 2020）顯示耐受良好；atenolol 於無症狀 HCM 未改善 5 年存活、不常規建議。
+- **限鈉與 RAAS**：<100 mg Na/100 kcal 為 Freeman/Rush 之中度限鈉建議（ACVIM 僅定性），嚴格限鈉會活化 RAAS；心臟惡病質時營養/熱量優先於限鈉，B2 起可輕度限鈉。
+- **B2 藥物與預後**：Pimobendan 0.25-0.3 mg/kg q12h（EPIC，延後 CHF ~15 月）；B2 加 RAASi（spironolactone+benazepril）之 DELAY 研究（Borgarelli 2020）延遲效益未達顯著。Stage C（CHF 後）中位存活約 6-14 月（QUEST pimobendan ~267 天）。
+
 [圖片:ACVIM 分期流程決策圖，從診斷到治療管理]`,
   clinical_pearl: '「Sleeping RR 比任何血液檢查都能更早偵測 CHF 復發」，這是臨床心臟科最重要的居家監測訊息。教導飼主：(1) 每天在貓/犬深睡時計數 15 秒胸壁起伏次數 ×4 = RR/min (2) 記錄在日誌或手機 App (3) 基線值通常 15-25/min (4) 連續 2 次 >30/min → 立即就醫。這個簡單指標在 EPIC 研究與多項臨床驗證中被證實為最敏感的 CHF 早期復發指標，且完全免費、無需專業設備、飼主依從性佳。\n\n【台灣臨床現況】台灣飼主對心臟病用藥依從性整體良好，但「何時該放手」的溝通仍是獸醫面臨的最大挑戰。建議引入結構化 QoL 評估表，將主觀判斷轉化為可追蹤的數據，幫助飼主與獸醫共同做出更好的決定。',
   common_mistakes: [
     'B1 即開始 Pimobendan，EPIC 研究僅支持 B2 以上，B1 不需要藥物治療',
     '忽略 sleeping RR 的教育，許多飼主不知道如何在家監測，錯失 CHF 早期復發的黃金處理時間',
-    '對 HCM 貓常規使用 Pimobendan，伴 LVOTO 時禁忌，可能加重動態阻塞',
+    '把「VHS >10.5」當成 EPIC 入組門檻而非 B2 分期標準之一（實為 B2 四項標準之一）；或把 NT-proBNP 900/1500 當作 B1/B2 分期切點（實為篩檢/CHF 風險門檻，B2 由心超定義）',
+    '對 HCM 貓常規使用 Pimobendan、或把 LVOTO 當絕對禁忌——實為相對禁忌（無臨床相關 LVOTO 才考慮，Ward 2020 顯示阻塞型亦耐受；頑固 CHF 合併收縮功能下降則建議用）',
     '嚴格限鈉而導致食慾下降，心臟惡病質比高鈉更危險，營養攝取優先於限鈉',
     '避免討論安樂死，延遲 QoL 對話可能導致動物在不適中受苦更久',
   ],
@@ -4865,10 +4876,12 @@ HCM 特殊考量：
   ],
   drug_api_links: ['Pimobendan', 'Furosemide', 'Enalapril', 'Benazepril', 'Spironolactone', 'Clopidogrel', 'Atenolol', 'Sotalol'],
   references: [
-    { type: 'guideline', citation: 'Keene BW et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD ACVIM 分期與治療共識指引' },
-    { type: 'guideline', citation: 'Luis Fuentes V et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(1):3-32.', relevance: '貓心肌病分期與管理共識' },
-    { type: 'journal', citation: 'Boswood A et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease and cardiomegaly: the EPIC study. J Vet Intern Med. 2016;30(6):1765-1779.', relevance: 'Pimobendan B2 期治療關鍵證據與 sleeping RR 監測' },
-    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Chronic Management of Heart Disease.', relevance: '心臟病長期管理教材' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488.', relevance: 'MMVD ACVIM 分期（A/B1/B2/C/D）與治療共識指引' },
+    { type: 'guideline', citation: 'Luis Fuentes V, Abbott J, Chetboul V, et al. ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats. J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745.', relevance: '貓心肌病分期與管理共識（clopidogrel 質性風險、pimobendan/atenolol 定位）' },
+    { type: 'journal', citation: 'Boswood A, Häggström J, Gordon SG, et al. Effect of pimobendan in dogs with preclinical myxomatous mitral valve disease and cardiomegaly: the EPIC study—a randomized clinical trial. J Vet Intern Med. 2016;30(6):1765-1779. doi:10.1111/jvim.14586.', relevance: 'Pimobendan B2 期治療關鍵 RCT（延後 CHF ~15 月）與 B2 影像入組閾值' },
+    { type: 'guideline', citation: 'Wess G, Domenech O, Dukes-McEwan J, et al. European Society of Veterinary Cardiology screening guidelines for dilated cardiomyopathy in Doberman Pinschers. J Vet Cardiol. 2017;19(5):405-415. doi:10.1016/j.jvc.2017.08.006.', relevance: '杜賓犬 DCM 篩檢指引（3 歲起、Holter >300 VPC、SMOD 心超判準）' },
+    { type: 'journal', citation: 'Borgarelli M, Ferasin L, Lamb K, et al. DELay of Appearance of sYmptoms of canine degenerative mitral valve disease treated with spironolactone and benazepril: the DELAY study. J Vet Cardiol. 2020;27:34-53. doi:10.1016/j.jvc.2019.12.002.', relevance: 'B2 期加 RAASi（spironolactone+benazepril）延遲效益未達顯著（近期）' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. London: Manson Publishing; 2011. Chapter: Chronic Management of Heart Disease.', relevance: '心臟病長期管理教材' },
   ],
   is_current: true,
   created_at: now,
