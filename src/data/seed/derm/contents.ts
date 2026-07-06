@@ -1133,8 +1133,8 @@ const contentPyoderma: NodeContent = {
 const contentMalassezia: NodeContent = {
   id: 'CONTENT-DERM-L3-006',
   node_id: 'DERM-L3-006',
-  version: 1,
-  summary: '馬拉色菌皮膚炎是嗜脂酵母菌 Malassezia pachydermatis 過度增殖引起的犬常見皮膚感染。M. pachydermatis 本來就是犬皮膚的正常菌群，皮膚微環境一變（潮濕、皮脂分泌增加、有過敏性皮膚病），它就趁機過度增殖。典型表現是油膩膩的皮膚、特殊的酸臭味、紅斑跟苔蘚化，好發在皮膚皺褶、指間跟耳道。診斷主要靠皮膚細胞學，膠帶壓貼看到花生形酵母菌就確診。治療包含全身性抗黴菌藥跟局部藥浴。',
+  version: 2,
+  summary: '馬拉色菌皮膚炎是嗜脂酵母菌 Malassezia pachydermatis 過度增殖引起的犬常見皮膚感染，與細菌性膿皮症同為犬最常見的續發性皮膚感染之一。M. pachydermatis 本來就是犬皮膚的正常菌群，皮膚微環境一變（潮濕、皮脂分泌增加、有過敏性皮膚病），它就趁機過度增殖，且幾乎總是「續發於」潛在病因（過敏/角化異常/內分泌）。典型表現是油膩膩的皮膚、特殊的酸臭味、紅斑跟苔蘚化，好發在皮膚皺褶、指間跟耳道。診斷靠皮膚細胞學＋相符臨床（WAVD 2020 無普世計數閾值）。治療以局部抗黴菌藥浴為第一線，嚴重/廣泛時才加全身性抗黴菌藥（首選 itraconazole）。',
   learning_objectives: [
     '描述 M. pachydermatis 從正常共生到致病性過度增殖的條件',
     '辨識馬拉色菌皮膚炎的典型臨床特徵與好發部位',
@@ -1142,13 +1142,13 @@ const contentMalassezia: NodeContent = {
     '規劃全身性與局部性抗黴菌治療方案',
   ],
   key_points: [
-    'M. pachydermatis 是犬皮膚正常共生酵母菌，過度增殖時致病',
-    '最常繼發於過敏性皮膚病（CAD/FAD/AFR）。只治馬拉色菌不控制過敏會反覆復發',
+    'M. pachydermatis 是犬皮膚正常共生酵母菌（Malassezia 屬中「唯一」非脂質依賴種，可長於未加脂質之 SDA；近年基因體研究顯示此為培養表型例外），過度增殖時致病',
+    '最常繼發於過敏性皮膚病（CAD 為首，其次 FAD/食物過敏），其次角化異常、內分泌病。只治馬拉色菌不控制潛在病因會反覆復發',
     '典型三徵：油脂樣皮膚 + 特徵性酸臭異味 + 瘙癢',
     '好發部位：指間、腹側皮膚皺褶、頸腹側、耳道、口唇皺褶',
-    '皮膚細胞學：膠帶壓貼法見花生形/瓶形酵母菌，每 HPF ≥ 2-3 個即有臨床意義',
-    '全身性治療首選：Ketoconazole 5-10 mg/kg PO SID 或 Itraconazole 5 mg/kg PO SID',
-    '局部治療：含 miconazole + chlorhexidine 的藥浴每週 2 次',
+    '皮膚細胞學見花生/瓶形酵母菌（3-8 μm、廣基單極出芽）；⚠️ WAVD 2020 **無普世計數閾值**，「≥2-3/HPF」僅經驗參考、須結合相符臨床（耳道 ≥5/犬、≥12/貓 源自 Ginel 2002 單一研究）',
+    '**第一線為外用**（2% chlorhexidine + 2% miconazole 洗劑 2x/週、接觸 5-10 分，WAVD 強證據）；全身性僅用於嚴重/廣泛或外用無效，**首選 Itraconazole** 5 mg/kg PO q24h（或每週連續 2 天脈衝）',
+    'Ketoconazole 5-10 mg/kg PO q24h 僅為替代（因肝毒性 FDA/EMA 2013 警示、貓禁用而受限）',
   ],
   body: `# 馬拉色菌皮膚炎 (Malassezia Dermatitis)
 
@@ -1157,7 +1157,7 @@ const contentMalassezia: NodeContent = {
 
 
 ### 概述
-馬拉色菌皮膚炎是犬第二常見的皮膚感染，僅次於膿皮症。M. pachydermatis 本來就是犬皮膚正常菌群的一份子，特定條件下才會大量增殖搞出事。台灣高溫多濕，剛好就是它愛的環境。
+馬拉色菌皮膚炎是犬最常見的黴菌性/微生物性皮膚病之一，與細菌性膿皮症並列為犬最常見的兩種「續發性」皮膚感染（現行 WAVD 2020 共識並未給出明確名次，故不宜稱「第二常見」）。M. pachydermatis 本來就是犬皮膚正常菌群的一份子——它是 Malassezia 屬中「唯一」非脂質依賴的種（可長於未添加脂質的 Sabouraud 培養基；惟基因體研究顯示其實仍缺脂肪酸合成酶、僅利用培養基之微量脂質，故此「非脂質依賴」標籤屬培養表型上的例外）——特定條件下才會大量增殖搞出事。台灣高溫多濕，剛好就是它愛的環境。
 
 ### 病理機轉
 平常宿主免疫（嗜中性球、補體、脂質代謝）會壓住馬拉色菌的數量。以下這幾件事會打破平衡：
@@ -1177,23 +1177,23 @@ const contentMalassezia: NodeContent = {
 - 好發部位：指間、腋下、腹股溝、頸腹側、口唇皺褶、耳道。
 
 ### 診斷
-1. 皮膚細胞學是首選：膠帶壓貼，Diff-Quik 染色，用油浸鏡（100x）看。
-   - 看到花生形或瓶形的酵母菌（3-5 μm）。
-   - 每 HPF 看到 2-3 個以上就有臨床意義（正常皮膚偶爾才會看到 0-1 個）。
-2. 耳道拭子細胞學：每 HPF 5 個以上才有臨床意義。
-3. 培養通常不需要：Sabouraud 培養基，37°C 培養會長乳白色菌落。
+1. 皮膚細胞學是首選：膠帶壓貼，Diff-Quik 染色，用 50x 或 100x 油浸鏡看。
+   - 花生/足印形（histopathology 常呈瓶形）酵母菌，廣基單極出芽（broad-based monopolar budding），直徑約 3-8 μm。
+   - ⚠️ **WAVD 2020：無經驗證的普世計數閾值**——「每視野超過 X 個」本質上任意，數量因部位、品種、採樣法與宿主免疫而大幅變動，過敏體質犬可在極低菌量即出現症狀。常引用之「皮膚 ≥2-3/HPF」僅為經驗參考，**須結合相符臨床（並輔以抗黴菌治療反應）**判定，勿僅憑固定計數斷點。
+2. 耳道拭子細胞學：常引用犬 ≥5、貓 ≥12 個/高倍視野（源自 Ginel 2002 單一半定量研究，非普世斷點）。
+3. 培養通常不需要：Sabouraud 培養基，37°C 培養會長乳白色菌落（M. pachydermatis 為 Malassezia 屬中唯一可不加脂質生長者）。
 
 ## 三、治療策略 (Treatment)
 
-### 全身性
-- [藥物:Ketoconazole] 5-10 mg/kg PO SID 跑 3-4 週
-- [藥物:Itraconazole] 5 mg/kg PO SID 跑 3-4 週（肝毒性較低）
-- 要跟食物一起吃，吸收會比較好。
-- 注意：Ketoconazole 是強效 CYP3A4 抑制劑，跟 Cyclosporine 併用會把 Cyclosporine 血中濃度推高 2-4 倍，要嘛減量、要嘛改用 Itraconazole。
-
-### 局部
-- Miconazole 2% + Chlorhexidine 2% 藥浴：每週 2 次，接觸時間 10 分鐘
+### 局部（第一線，WAVD 2020 強證據）
+- **Miconazole 2% + Chlorhexidine 2% 藥浴：每週 2 次，接觸至少 5-10 分鐘**（輕度/局部病灶可單用外用即足）
 - 含 ketoconazole 或 climbazole 的洗耳液（耳道感染時）
+
+### 全身性（僅用於嚴重/廣泛病灶，或外用無效/不切實際時）
+- **首選 [藥物:Itraconazole] 5 mg/kg PO q24h，或 5 mg/kg 每週連續 2 天脈衝給藥**（可間歇給藥、耐受性較佳）
+- [藥物:Ketoconazole] 5-10 mg/kg PO q24h 為**替代選項**（Negre 2009 建議取低劑量 5 mg/kg 以減副作用）；因肝毒性（人醫 FDA/EMA 2013 警示）與**貓禁用**而受限
+- 與食物一起吃吸收較好；療程約 2-4 週，達臨床緩解後再續 7-10 天，起始後 3-4 週回診複驗（臨床＋細胞學雙重終點）
+- ⚠️ **Cyclosporine 交互作用**：ketoconazole 為強效 CYP3A4 抑制劑，併用會降 cyclosporine 清除（犬清除率約降 60-65%），臨床上約可讓 cyclosporine 減量 50-75%。**注意 itraconazole 本身也是強效 CYP3A4 抑制劑、同樣會升高 cyclosporine 濃度，並不能藉「改用 itraconazole」規避此交互作用**——不論用哪種 azole 都須減量＋治療藥物監測（TDM）；改用 itraconazole 的理由是其肝毒性較低，而非避免交互作用。
 
 [圖片:馬拉色菌皮膚細胞學典型影像（花生形酵母菌）]
 
@@ -1209,7 +1209,7 @@ const contentMalassezia: NodeContent = {
 | 時間點 | 監測項目 | 目標 |
 |--------|---------|------|
 | 治療第 2 週 | 搔癢評估 + 氣味改善 | 初步療效（Malassezia 減少 → 氣味快速改善） |
-| 治療第 4 週 | 皮膚細胞學（透明膠帶/直接壓片） | 確認 Malassezia 數量明顯減少（< 2 個/油鏡視野） |
+| 治療第 3-4 週回診 | 皮膚細胞學＋臨床評估 | Malassezia 明顯減少＋臨床緩解（臨床＋細胞學雙重終點，勿僅憑固定計數）|
 | 穩定後每 2-3 月 | 皮膚細胞學 + 臨床評估 | 早期偵測復發 |
 | 根本原因控制中 | 依原發病監控計畫 | CAD、甲狀腺低下等需同步管理 |
 
@@ -1221,7 +1221,7 @@ const contentMalassezia: NodeContent = {
 
 - 根本原因可控：預後不錯。Malassezia 本身用外用或口服抗黴菌藥就壓得住。
 - 復發率超高：Malassezia 是犬皮膚正常共生菌。根本原因（CAD、脂漏症、皮膚皺褶）沒處理掉，停藥後幾乎一定回來。
-- 品種好發：西高地白梗、巴吉度獵犬、可卡犬、鬥牛犬。這些品種要嘛皮脂腺很活躍，要嘛皮膚皺褶多，常常要終生間歇性抗黴菌維持。
+- 品種好發（WAVD 2020）：西高地白梗、巴吉度、美國可卡犬、西施犬、貴賓犬、拳師犬、查理士王小獵犬、德國牧羊犬、臘腸犬。好發主要與並存的過敏/角化異常/內分泌病相關；鬥牛犬等皺褶多品種則好發「局部型」皮膚皺褶炎（intertrigo）內的馬拉色菌繼發增生（非典型全身型好發品種）。常需終生間歇性抗黴菌維持。
 - 長期管理策略：每週 1-2 次含 chlorhexidine 加 miconazole 或 ketoconazole 的藥浴，可以有效預防復發，成本低、副作用少。
 
 ## 六、人醫借鑒 (Translational Insights)
@@ -1239,7 +1239,14 @@ const contentMalassezia: NodeContent = {
 | 犬皮膚細胞學馬拉色菌的「有意義」閾值 | 傳統 ≥ 2-3/HPF（油浸鏡），但閾值因取樣部位與犬種而異 | Level III |
 | Ketoconazole vs Itraconazole 作為全身性抗 Malassezia 首選 | Ketoconazole 便宜但肝毒性較高，itraconazole 更安全但成本高 | Level II |
 | Malassezia 對 azole 類抗黴菌藥的抗藥性趨勢 | 近年個案報告增加但系統性監測不足，台灣缺乏本地數據 | Level IV |
-| Malassezia 作為 CAD 過敏原（IgE 致敏）的臨床意義 | 部分 CAD 犬對 Malassezia 蛋白致敏，但治療意義待釐清 | Level III |`,
+| Malassezia 作為 CAD 過敏原（IgE 致敏）的臨床意義 | 部分 CAD 犬對 Malassezia 蛋白致敏，但治療意義待釐清 | Level III |
+
+## 八、近期實證更新 (Recent Updates)
+
+- **治療首選外用、全身首選 itraconazole（WAVD 2020 共識, Bond 等）**：2% chlorhexidine + 2% miconazole 洗劑（每週 2 次、接觸 5-10 分）為第一線（強證據）；全身性 azole 保留給嚴重/廣泛病灶，首選 itraconazole（可脈衝給藥），ketoconazole 因肝毒性（FDA/EMA 2013）與貓禁用而退居替代。
+- **細胞學無普世閾值**：WAVD 2020 明言「每視野超過 X 個」的定義本質任意，須結合部位/品種/臨床判讀；耳道 ≥5（犬）/≥12（貓）源自 Ginel 2002 單一研究。
+- **azole 抗藥性受關注（Peano 2020）**：M. pachydermatis 對 azole 敏感度下降之個案增加（含 ERG11 變異），惟系統性監測與臨床斷點尚未建立，台灣缺本地數據。
+- **馬拉色菌過敏之免疫光譜**：宿主反應涵蓋 immediate(IgE)／delayed(第四型)／接觸型，常為混合；馬拉色菌為 CAD 之惡化/續發因子（約 1/3 異位性犬併發），非原發病因；過敏原專一性免疫治療（ASIT）對部分致敏犬可降搔癢（初步證據）。`,
   clinical_pearl: '「鼻子」是診斷馬拉色菌皮膚炎最被低估的工具。馬拉色菌爆量會跑出特殊的酸臭、發酵味，經驗多的皮膚科醫師在動物剛走進診間就能聞到。聞到這味道就直接做膠帶壓貼細胞學確認。另外，如果一隻犬又癢又苔蘚化、抗生素卻怎麼用都沒起色，麻煩一定要記得檢查馬拉色菌。',
   common_mistakes: [
     '僅治療馬拉色菌而未排查潛在過敏性皮膚病（復發率極高）',
@@ -1249,7 +1256,7 @@ const contentMalassezia: NodeContent = {
     '將馬拉色菌引起的苔蘚化/色素沉著誤判為皮膚腫瘤',
   ],
   disease_data: {
-    signalment: '犬為主，好發品種：西高地白梗、巴吉度、可卡犬、英國雪達犬、拳師犬、臘腸犬。皮膚皺褶多的品種（沙皮犬、鬥牛犬）易感。無明顯年齡或性別偏好。台灣潮濕氣候發病率高。',
+    signalment: '犬為主，好發品種（WAVD 2020）：西高地白梗、巴吉度、美國可卡犬、西施犬、貴賓犬、拳師犬、查理士王小獵犬、德國牧羊犬、臘腸犬。皮膚皺褶多的品種（沙皮犬、鬥牛犬）好發「局部型」皮膚皺褶炎（intertrigo）內之馬拉色菌繼發增生。無明顯年齡或性別偏好。台灣潮濕氣候發病率高。',
     etiology: 'M. pachydermatis 本來就住在犬皮膚上（耳道、指間、皮膚皺褶特別多）。會大量增殖通常是因為：過敏性皮膚病（最常見）、角化異常、內分泌疾病（甲低）、長期吃抗生素、環境太潮濕。部分犬還會對馬拉色菌跑出 IgE 介導過敏反應。',
     pathogenesis: '潛在病因把皮膚微環境改掉（變潮濕、皮脂變多、pH 改變），M. pachydermatis 就趁機大量增殖，分泌脂肪酶把皮脂分解成促炎脂質，引發發炎跟癢。一抓屏障又被弄壞，惡性循環。少數犬還會跑出抗馬拉色菌 IgE，變成馬拉色菌過敏（Type I），癢得更厲害。',
     clinical_signs: [
@@ -1267,7 +1274,7 @@ const contentMalassezia: NodeContent = {
       { condition: '甲狀腺低下', key_differentiator: '非瘙癢性對稱脫毛、嗜睡、肥胖、T4 降低' },
     ],
     diagnostic_workup: '皮膚細胞學是第一線：膠帶壓貼指間、皮膚皺褶、腋下這些地方，Diff-Quik 染色後用油浸鏡看。同時也要看有沒有合併細菌感染。然後把潛在病因翻一遍：過敏檢查、T4/TSH、皮膚刮搔。',
-    treatment_protocol: '全身性抗黴菌：Ketoconazole 5-10 mg/kg PO SID 或 Itraconazole 5 mg/kg PO SID 跑 3-4 週。局部藥浴：Miconazole 2% 加 Chlorhexidine 2% 每週 2 次，泡沫要停留 10 分鐘。耳道感染就用含抗黴菌成分的洗耳液。同時要把潛在過敏性皮膚病控制好。合併膿皮症就要同時加抗生素。注意：Ketoconazole 是強效 CYP3A4 抑制劑，跟 Cyclosporine 併用會把 Cyclosporine 血中濃度推高 2-4 倍，要嘛減量、要嘛改用 Itraconazole。',
+    treatment_protocol: '第一線為外用（WAVD 2020 強證據）：Miconazole 2% + Chlorhexidine 2% 藥浴每週 2 次、接觸 5-10 分鐘（輕度/局部可單用）。全身性僅用於嚴重/廣泛或外用無效，首選 Itraconazole 5 mg/kg PO q24h（或每週連 2 天脈衝）；Ketoconazole 5-10 mg/kg q24h 為替代（肝毒性、貓禁用）。療程 2-4 週、臨床緩解後續 7-10 天，3-4 週回診複驗（臨床＋細胞學雙重終點）。同時控制潛在過敏；合併膿皮症加抗生素。⚠️ 與 Cyclosporine 併用：ketoconazole 與 itraconazole 皆為強效 CYP3A4 抑制劑、皆會升高 cyclosporine 濃度（須減量 50-75% ＋ TDM）——改用 itraconazole 不能規避此交互作用（其優點為肝毒性較低）。',
     prognosis: '單次發作治療預後不錯，3-4 週可以臨床痊癒。但如果潛在的過敏沒有控制，復發率會超高。跟 CAD 共存的犬，常常要長期間歇性局部抗黴菌治療。',
     monitoring: '治療 2 週後回診做皮膚細胞學。治療要到細胞學陰性後再多用 1 週。穩定後要盯潛在過敏的控制。反覆復發的話，考慮長期每週 1-2 次維持性藥浴。',
     owner_communication: '馬拉色菌本來就住在狗皮膚上，特定條件下（過敏、潮濕）才會大量增殖造成皮膚病。治療要靠口服抗黴菌藥跟藥浴。藥浴的泡沫要停留至少 10 分鐘才有效。同時要把潛在的過敏問題控制好，不然就會反覆發作。台灣潮濕的環境裡，保持皮膚乾燥很重要，特別是皮膚皺褶跟指間。',
@@ -1278,13 +1285,16 @@ const contentMalassezia: NodeContent = {
     { position: '診斷段落後', type: 'annotated_image', description: '馬拉色菌皮膚細胞學：花生形酵母菌高倍鏡影像' },
     { position: '臨床表現段落後', type: 'annotated_image', description: '馬拉色菌皮膚炎典型病灶分佈圖' },
   ],
-  interactive_placeholders: [],
-  drug_api_links: ['Ketoconazole', 'Itraconazole', 'Chlorhexidine'],
+  interactive_placeholders: [
+    { position: '治療段落後', type: 'interactive_quiz', description: '馬拉色菌皮膚炎情境：由病灶範圍/嚴重度選擇外用 vs 全身性治療，並排查潛在病因（過敏/內分泌）' },
+  ],
+  drug_api_links: ['Itraconazole', 'Ketoconazole', 'Miconazole', 'Chlorhexidine'],
   references: [
-    { type: 'journal', citation: 'Bond R et al. Biology, diagnosis and treatment of Malassezia dermatitis in dogs and cats. Vet Dermatol. 2020;31(1):28-e4.', relevance: '馬拉色菌皮膚炎最新綜合回顧' },
-    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '馬拉色菌皮膚炎完整章節' },
-    { type: 'journal', citation: 'Negre A et al. Evidence-based veterinary dermatology: a systematic review of interventions for Malassezia dermatitis in dogs. Vet Dermatol. 2009;20(1):1-12.', relevance: '馬拉色菌治療的循證系統性回顧' },
-    { type: 'guideline', citation: 'Noli C, Saridomichelakis MN, Gervais F, et al. WAVD/ESVD guidelines for the treatment of Malassezia dermatitis in dogs. Vet Dermatol. 2014;25(5):437-e72.', relevance: 'WAVD 馬拉色菌皮膚炎治療指引' },
+    { type: 'guideline', citation: 'Bond R, Morris DO, Guillot J, et al. Biology, diagnosis and treatment of Malassezia dermatitis in dogs and cats: clinical consensus guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2020;31(1):28-e4. doi:10.1111/vde.12834.', relevance: 'WAVD 2020 馬拉色菌現行臨床共識（診斷/治療首選/無普世閾值）' },
+    { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. St. Louis: Elsevier; 2013.", relevance: '馬拉色菌皮膚炎完整章節' },
+    { type: 'journal', citation: 'Negre A, Bensignor E, Guillot J. Evidence-based veterinary dermatology: a systematic review of interventions for Malassezia dermatitis in dogs. Vet Dermatol. 2009;20(1):1-12. doi:10.1111/j.1365-3164.2008.00721.x.', relevance: '治療循證系統性回顧（外用 2% chlorhexidine+miconazole 最高證據）' },
+    { type: 'journal', citation: 'Peano A, Johnson E, Chiavassa E, et al. Antifungal resistance regarding Malassezia pachydermatis: where are we now? J Fungi (Basel). 2020;6(2):93. doi:10.3390/jof6020093.', relevance: '2020 M. pachydermatis 對 azole 抗藥性回顧（近期）' },
+    { type: 'journal', citation: 'Nardoni S, Dini M, Taccini F, Mancianti F. Occurrence, distribution and population size of Malassezia pachydermatis on skin and mucosae of atopic dogs. Vet Microbiol. 2007;122(1-2):172-177. doi:10.1016/j.vetmic.2006.12.023.', relevance: '異位性犬馬拉色菌菌量分布（支持部位/計數判讀之族群差異）' },
   ],
   is_current: true,
   created_at: now,
