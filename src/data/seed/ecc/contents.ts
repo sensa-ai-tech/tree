@@ -4182,8 +4182,8 @@ Lactate > 2.5 mmol/L（敏感指標）、血液培養（給抗生素前抽）、
 const contentPolytrauma: NodeContent = {
   id: 'CONTENT-ECC-L3-012',
   node_id: 'ECC-L3-012',
-  version: 1,
-  summary: '多發性創傷（Polytrauma）最常見的原因就是車禍（HBC），涉及兩個以上解剖區域的嚴重損傷，要走系統性的 ABCDE 初級評估加 CRASH PLAN 次級評估。創傷嚴重度用 ATT（Animal Trauma Triage）評分量化。全身影像檢查（三視圖胸腔 X 光、腹部 FAST 掃描、脊椎評估）是標準流程。損傷控制手術（DCS）優先處理止血跟汙染控制，確定性修復延後做。疼痛管理用 opioids 第一線，要警覺遲發性器官損傷（急性肺損傷、AKI）。台灣都市交通密度高，犬貓 HBC 是本土多發性創傷最常見的原因。貓高處墜落（high-rise syndrome）在台灣高樓公寓飼養環境的盛行率偏高，臨床流行病學顯示犬貓創傷急診量在夏季跟節慶期間明顯增加。',
+  version: 2,
+  summary: '多發性創傷（Polytrauma）最常見的原因就是車禍（HBC），涉及兩個以上解剖區域的嚴重損傷，要走系統性初級評估（現行 VetCOT 標準已由 ABCDE 更新為 XABCDE，X＝優先止外部大出血）加「A CRASH PLAN」次級評估。創傷嚴重度用 ATT（Animal Trauma Triage）評分量化（每增 1 分死亡勝算比約 2.0）。全身影像檢查（三視圖胸腔 X 光、腹部 FAST 掃描、脊椎評估）是標準流程。伴未控制出血者採「允許性低血壓＋損傷控制復甦」（勿一味大量晶體液）；損傷控制手術（DCS）優先止血跟汙染控制、確定性修復延後。疼痛管理用 opioids 第一線，要警覺遲發性器官損傷（急性肺損傷、AKI）與致死三角。台灣都市交通密度高，犬貓 HBC 是本土多發性創傷最常見的原因。貓高處墜落（high-rise syndrome）在台灣高樓公寓飼養環境的盛行率偏高。',
   learning_objectives: [
     '執行 ABCDE 初級評估並辨識立即威脅生命的損傷',
     '運用 CRASH PLAN 系統完成次級評估',
@@ -4193,13 +4193,14 @@ const contentPolytrauma: NodeContent = {
   ],
   key_points: [
     'HBC（hit by car）是犬貓多發性創傷最常見原因，其次為高處墜落（high-rise syndrome，貓）',
-    'ABCDE 初級評估：Airway → Breathing → Circulation → Disability（神經）→ Exposure（全身檢查/體溫）',
-    'CRASH PLAN 次級評估：Cardiac、Respiratory、Abdomen、Spine、Head、Pelvis、Limbs、Arteries/veins、Nerves',
-    'ATT（Animal Trauma Triage）評分：6 個系統各 0-3 分，總分 0-18，≥ 5 分死亡率明顯增加',
+    '初級評估（primary survey）：VetCOT 現行標準為 XABCDE——X＝eXsanguination（優先止外部致命大出血）→ Airway → Breathing → Circulation → Disability → Exposure/Environment',
+    '次級評估（secondary survey）：「A CRASH PLAN」（首字母 A＝Airway）：A-Cardiovascular-Respiratory-Abdomen-Spine-Head-Pelvis-Limbs-Arteries/veins-Nerves',
+    'ATT（Animal Trauma Triage）評分：6 系統（灌流/心臟/呼吸/眼-肌-皮膚 integument/骨骼 skeletal/神經）各 0-3、總分 0-18；每增 1 分死亡勝算比約 2.0（Hall 2014/Ash 2018），ATT ≥ 5 為常用高風險門檻（sens 83%/spec 91%）',
     '全身影像三件套：三視圖胸腔 X 光 + AFAST/TFAST + 骨盆/脊椎 X 光',
-    '損傷控制手術（DCS）：止血加汙染控制 → ICU 穩定（糾正致死三角）→ 24-72 小時後確定性手術',
+    '未控制出血者：允許性低血壓（MAP ~60-80 mmHg）＋損傷控制復甦（早期血品、勿大量晶體液沖淡凝血）；DCS：止血+汙染控制 → ICU 糾正致死三角 → 24-72h 確定性手術',
     '疼痛管理：Fentanyl 2-5 mcg/kg IV bolus（首選）→ CRI 2-10 mcg/kg/hr。NSAIDs 不要用（脫水或出血都是禁忌）',
-    '遲發性器官損傷：創傷後 24-72 小時需監測急性肺損傷（ALI/ARDS）、AKI、DIC',
+    'TXA（tranexamic acid）抗纖溶：人醫 CRASH-2 支持傷後 3h 內給予降出血死亡；犬貓應用新興、證據有限',
+    '遲發性器官損傷：創傷後 24-72 小時需監測急性肺損傷（ALI/ARDS）、AKI、DIC、致死三角',
   ],
   body: `# 多發性創傷 (Polytrauma)
 
@@ -4210,29 +4211,31 @@ const contentPolytrauma: NodeContent = {
 ### 定義
 多發性創傷指同時涉及兩個以上解剖區域的嚴重創傷，其中至少一處損傷可能危及生命。犬貓最常見原因為 HBC（車禍），其次為高處墜落、咬傷、踩踏。
 
-### 初級評估 (Primary Survey)：ABCDE
+### 初級評估 (Primary Survey)：XABCDE
+> 現行 VetCOT／Merck 標準已由 ABCDE 更新為 **XABCDE**，於最前端加上 X＝eXsanguination（優先控制外部致命性大出血），呼應人醫 ATLS 近年前置致命外出血。
 | 步驟 | 評估內容 | 立即處置 |
 |------|---------|---------|
-| A: Airway | 氣道通暢性 | 清除異物、氣管插管、緊急氣切 |
+| X: eXsanguination | 外部致命性大出血 | 直接加壓、止血帶、止血敷料 |
+| A: Airway | 氣道通暢性（含頸椎保護） | 清除異物、氣管插管、緊急氣切 |
 | B: Breathing | 通氣功能 | 氧氣支持、胸腔穿刺（氣胸或血胸） |
 | C: Circulation | 循環灌流 | IV 通路、輸液、止血、輸血 |
 | D: Disability | 神經狀態 | 瞳孔反射、意識評估（AVPU） |
-| E: Exposure | 全身暴露檢查 | 體溫測量、保溫、傷口暫時覆蓋 |
+| E: Exposure/Environment | 全身暴露找傷 + 防低體溫 | 體溫測量、保溫、傷口暫時覆蓋 |
 
-### 次級評估 (Secondary Survey)：CRASH PLAN
-C (Cardiac)、R (Respiratory)、A (Abdomen)、S (Spine)、H (Head)、P (Pelvis)、L (Limbs)、A (Arteries/veins)、N (Nerves)，逐一系統性評估。
+### 次級評估 (Secondary Survey)：A CRASH PLAN
+在初級 XABC 穩定後，以「**A CRASH PLAN**」（首字母 A＝Airway，共 10 字母）逐一系統性理學檢查：**A** (Airway 呼吸道)、**C** (Cardiovascular)、**R** (Respiratory)、**A** (Abdomen)、**S** (Spine)、**H** (Head/EENT)、**P** (Pelvis)、**L** (Legs/Limbs)、**A** (Arteries/veins)、**N** (Nerves)。（此為通用急診助憶詞，非分級式共識。）
 
-### ATT (Animal Trauma Triage) 評分
+### ATT (Animal Trauma Triage) 評分（Rockar 1994；6 系統各 0-3 分）
 | 系統 | 0 分 | 1 分 | 2 分 | 3 分 |
 |------|------|------|------|------|
-| 灌流 | 正常 | 輕度↑HR | 心搏過速+CRT↑ | 休克/瀕死 |
-| 心臟 | 正常 | 心律不整但穩定 | 持續心律不整 | 無脈搏/CPR |
-| 呼吸 | 正常 | 輕度呼吸急促 | 呼吸困難 | 呼吸停止 |
-| 眼/肌/骨 | 無損傷 | 輕度損傷 | 骨折/脫臼 | 多重骨折/脊椎損傷 |
-| 皮膚 | 無損傷 | 擦傷 | 撕裂傷/穿刺傷 | 大面積撕脫傷 |
-| 神經 | 正常 | 輕度抑鬱 | 無意識但有反射 | 昏迷/無反射 |
+| 灌流 Perfusion | 正常 | 輕度↑HR | 心搏過速+CRT↑ | 休克/瀕死 |
+| 心臟 Cardiac | 正常 | 心律不整但穩定 | 持續心律不整 | 無脈搏/CPR |
+| 呼吸 Respiratory | 正常 | 輕度呼吸急促 | 呼吸困難 | 呼吸停止 |
+| 眼/肌/皮膚 Eye-muscle-integument | 無損傷 | 擦傷 | 撕裂傷/穿刺傷 | 大面積撕脫傷 |
+| 骨骼 Skeletal | 無損傷 | 輕度損傷 | 骨折/脫臼 | 多重骨折/脊椎損傷 |
+| 神經 Neurologic | 正常 | 輕度抑鬱 | 無意識但有反射 | 昏迷/無反射 |
 
-總分 0-18：≥ 5 分死亡率明顯增加，≥ 10 分預後極差。
+總分 0-18：**每增加 1 分死亡勝算比約 2.0**（Hall 2014 OR 2.0；Ash 2018 VetCOT OR 2.07）。ATT ≥ 5 為 Hall/VetCOT 系列常用的高風險門檻（對非存活敏感度約 83%、特異度約 91%，AUC 0.91）——非源自 Rockar 1994、亦非官方硬 cut-off；ATT ≥ 10 預後極差。
 
 ### 損傷控制手術 (DCS)
 Phase 1（手術室）：止血加汙染控制 → Phase 2（ICU）：復甦糾正致死三角（低體溫、酸血症、凝血病）→ Phase 3（24-72 hr 後）：確定性手術修復
@@ -4247,7 +4250,11 @@ HBC 犬典型：肺挫傷加氣胸或血胸加腹腔出血加骨盆骨折加皮�
 
 ## 三、治療策略 (Treatment)
 
-優先處置順序。氣道跟呼吸：氣胸穿刺減壓、血胸引流、氧氣支持。循環：IV bolus 10-20 mL/kg，出血控制（加壓止血、止血帶、手術），必要時輸血。疼痛：[藥物:Fentanyl] 2-5 mcg/kg IV bolus → CRI。骨折：暫時固定（Robert Jones bandage），穩定後再做確定性修復。損傷控制原則：先保命後治傷。
+優先處置順序。氣道跟呼吸：氣胸穿刺減壓、血胸引流、氧氣支持。
+
+**循環（現代創傷輸液策略）**：伴「未控制出血」者採「**允許性低血壓（permissive hypotension）＋損傷控制復甦（DCR）**」——在出血控制前以「低-正常」終點復甦（目標 MAP 約 60-80 mmHg，貓避免過度），小量晶體液試探性 bolus（犬 10-20 mL/kg、貓 5-10 mL/kg，滴定至反應）並**早期使用血液製品**，避免大量晶體液沖淡凝血因子/推高血壓致再出血。出血控制（加壓止血、止血帶、手術）為根本。**TXA（tranexamic acid）**：人醫 CRASH-2 支持傷後 3h 內給予降出血死亡，犬貓應用新興、證據有限（Osekavage 2018 藥動）。頭部創傷者不採允許性低血壓（需維持腦灌流）。
+
+疼痛：[藥物:Fentanyl] 2-5 mcg/kg IV bolus → CRI。骨折：暫時固定（Robert Jones bandage），穩定後再做確定性修復。損傷控制原則：先保命後治傷。
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
@@ -4255,7 +4262,9 @@ HBC 犬典型：肺挫傷加氣胸或血胸加腹腔出血加骨盆骨折加皮�
 
 ## 五、預後與預後因子 (Prognosis)
 
-HBC 犬整體存活率大約 75-85%。ATT 評分 < 5 分存活率 > 90%；≥ 5 分掉到 60-70%；≥ 10 分預後極差（< 30%）。貓 high-rise syndrome 存活率意外不錯（約 90%），跟墜落高度不是線性關係，超過 7 樓反而因為身體有時間調整姿勢損傷比較輕。預後負面因子：頭部創傷合併意識喪失、嚴重肺挫傷需機械通氣、多器官衰竭。
+犬創傷整體存活率視族群而定：大型前瞻登錄（Hall 2014 JAVMA，315 犬）整體存活達 **90.5%**、VetCOT 登錄（Ash 2018，3,599 犬）達 **92.7%**（惟含因費用安樂死之死亡）；需 ICU 的嚴重鈍傷/HBC 子群存活較低，臨床粗估約 75-85%。ATT 與存活呈負相關：**ATT < 5 存活約 84-90%、≥ 5 降至約 55-70%、= 9 約 50%、≥ 10 預後極差（< 30%）**。
+
+貓 high-rise syndrome 存活率約 90%（Whitney 1987；此為「已就診/接受治療」貓的數字，未計現場即死者）。**「超過 7 樓損傷反而較輕」的 paradox 屬經典但證據薄弱**——Whitney 1987 之推論來自小樣本次族群（>7 樓 22 隻僅 1 死）且為 referral/存活者偏誤；後續研究不一致，迄今最大宗 Candela Andrade 2025（n=1,125，存活 87%）呈損傷隨高度「線性」上升、**直接推翻此 paradox**。臨床上不應假設高樓墜落必較輕。預後負面因子：頭部創傷合併意識喪失、嚴重肺挫傷需機械通氣、多器官衰竭、ATT ≥ 10、乳酸持續 > 6 mmol/L。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -4269,9 +4278,17 @@ HBC 犬整體存活率大約 75-85%。ATT 評分 < 5 分存活率 > 90%；≥ 5 
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬創傷 ATT 評分的最佳 cut-off 值預測死亡率 | 不同研究報告 5 分 vs 8 分 cut-off，尚無標準化共識 | Level III |
+| 犬創傷 ATT 評分的最佳 cut-off 值預測死亡率 | ATT ≥ 5 為最常用高風險門檻（Hall 2014 sens 83%/spec 91%）；每增 1 分死亡 OR 約 2.0；Ash 2018 建議可去除「眼-肌-皮膚」類別（改 0-15） | Level II |
 | 犬多發性創傷早期 CT vs 傳統 X 光系列的診斷效益 | CT 可偵測更多損傷但需鎮靜，不穩定患者風險高 | Level III |
-| 創傷後預防性抗生素的適應症與最佳方案 | 開放骨折/穿刺傷需要抗生素，但閉合傷不明確 | Level III |`,
+| 創傷後預防性抗生素的適應症與最佳方案 | 開放骨折/穿刺傷需要抗生素，但閉合傷不明確 | Level III |
+
+## 八、近期更新 (Recent Updates)
+
+- **初級評估更新為 XABCDE**：VetCOT／Merck 現行建議在 ABCDE 前加 X＝eXsanguination（優先止外部致命大出血），與人醫 ATLS 前置致命外出血一致。
+- **允許性低血壓 + 損傷控制復甦（DCR）**：伴未控制出血者，現代策略為低-正常血壓終點（MAP ~60-80 mmHg）＋早期血液製品，避免大量晶體液沖淡凝血因子——取代舊式積極晶體液復甦（頭部創傷例外）。
+- **TXA（tranexamic acid）**：人醫 CRASH-2/CRASH-3 支持傷後 3h 內給予降出血/顱內出血死亡；犬藥動已建立（Osekavage 2018 AJVR），但臨床療效證據仍有限、屬新興。
+- **ATT 驗證與修訂**：Ash 2018（VetCOT，3,599 犬）確立每分死亡 OR 2.07、AUROC 0.92，並建議去除「眼-肌-皮膚」類別成修訂版（0-15）；Lapsley 2019 完成貓 ATT 驗證。
+- **貓 high-rise「7 樓 paradox」被推翻**：Candela Andrade 2025（n=1,125）呈損傷隨高度線性上升，推翻 Whitney 1987 之小樣本 paradox。`,
   clinical_pearl: 'HBC 的狗進急診室，第一件事不是拍 X 光，是 ABCDE。30 秒內判斷：氣道通嗎？呼吸穩嗎？循環灌流？意識清楚嗎？體溫正常嗎？然後處理最致命的問題。另外一個重要觀念：肺挫傷在受傷後 12-24 小時才到最嚴重，所以第一張胸腔 X 光「看起來還好」不代表沒事，12-24 小時後一定要追蹤。最後不要忘記止痛，Fentanyl IV 是多發性創傷最好的止痛選擇。',
   common_mistakes: [
     '跳過系統性評估直接處理最明顯的傷口。皮膚撕裂傷很嚇人但不一定致命，內部出血才是',
@@ -4293,10 +4310,10 @@ HBC 犬整體存活率大約 75-85%。ATT 評分 < 5 分存活率 > 90%；≥ 5 
       { sign: '意識改變', category: 'secondary', description: '頭部創傷致腦損傷，瞳孔不對稱為嚴重徵象' },
     ],
     staging: {
-      system: 'ATT (Animal Trauma Triage) Score',
+      system: 'ATT (Animal Trauma Triage) Score（每增 1 分死亡 OR 約 2.0）',
       stages: [
-        '0-4 分：輕度創傷，存活率 > 90%',
-        '5-9 分：中度創傷，存活率 60-70%，需密切監測',
+        '0-4 分：輕度創傷，存活率約 84-90%',
+        '5-9 分：中度創傷，存活率約 55-70%（ATT=9 約 50%），需密切監測',
         '10-18 分：重度創傷，存活率 < 30%，預後極差',
       ],
     },
@@ -4307,8 +4324,8 @@ HBC 犬整體存活率大約 75-85%。ATT 評分 < 5 分存活率 > 90%；≥ 5 
       { condition: '蛇咬傷', key_differentiator: '咬傷部位腫脹、凝血異常、可能見咬痕' },
     ],
     diagnostic_workup: '1. ABCDE 初級評估 → 2. CRASH PLAN 次級評估 → 3. AFAST + TFAST → 4. 三視圖胸腔 X 光 → 5. 基礎血檢（PCV/TP、乳酸、血糖、電解質）→ 6. 凝血全套 → 7. 穩定後：骨盆/脊椎 X 光、四肢 X 光、腹部超音波、尿液分析（評估膀胱完整性）',
-    treatment_protocol: '【Primary care，穩定】(1) ABCDE 處理致命問題：氣道確保、氣胸穿刺、出血控制、IV 輸液 10-20 mL/kg bolus。(2) 止痛：Fentanyl 2-5 mcg/kg IV → CRI 2-10 mcg/kg/hr。(3) 保溫。(4) 開放傷口清潔覆蓋。【Specialty care，DCS 原則】Phase 1：止血加汙染控制（損傷控制手術）。Phase 2：ICU 復甦糾正致死三角。Phase 3：24-72 小時後確定性手術（骨折固定、軟組織修復）。輸血：PCV < 20% 或持續出血就上 pRBC，必要時加 FFP。',
-    prognosis: 'HBC 犬整體存活率 75-85%。ATT < 5 分存活率 > 90%，≥ 10 分掉到 < 30%。貓 high-rise syndrome 存活率大約 90%。負面預後因子：頭部創傷合併意識喪失、嚴重肺挫傷、多器官衰竭、ATT ≥ 10、乳酸持續 > 6 mmol/L 超過 24 小時。',
+    treatment_protocol: '【Primary care，穩定】(1) XABCDE 處理致命問題：先止外部大出血（X）、氣道確保、氣胸穿刺、循環。伴未控制出血採「允許性低血壓＋損傷控制復甦」——低-正常血壓終點（MAP ~60-80 mmHg）、小量晶體液滴定（犬 10-20、貓 5-10 mL/kg）＋早期血品，勿大量晶體液沖淡凝血（頭部創傷例外）。TXA 傷後 3h 內可考慮（獸醫證據有限）。(2) 止痛：Fentanyl 2-5 mcg/kg IV → CRI 2-10 mcg/kg/hr。(3) 保溫。(4) 開放傷口清潔覆蓋。【Specialty care，DCS 原則】Phase 1：止血加汙染控制。Phase 2：ICU 復甦糾正致死三角。Phase 3：24-72 小時後確定性手術。輸血：PCV < 20% 或持續出血就上 pRBC，必要時加 FFP。',
+    prognosis: '犬創傷整體存活率視族群而定：大型前瞻登錄（Hall 2014，315 犬）達 90.5%、VetCOT（Ash 2018，3,599 犬）達 92.7%（含因費用安樂死）；需 ICU 的嚴重鈍傷/HBC 子群約 75-85%。ATT < 5 存活約 84-90%、≥ 5 約 55-70%、≥ 10 < 30%（每增 1 分死亡 OR 約 2.0）。貓 high-rise syndrome 存活約 90%（就診貓）；「>7 樓損傷較輕」paradox 證據薄弱、已被 Candela Andrade 2025（線性關係）推翻。負面預後因子：頭部創傷合併意識喪失、嚴重肺挫傷、多器官衰竭、ATT ≥ 10、乳酸持續 > 6 mmol/L 超過 24 小時。',
     monitoring: '急性期：每 1-2 小時生命徵象加乳酸加疼痛評分。每 4-6 小時 PCV/TP。連續 ECG 看創傷性心律不整。每 12-24 小時胸腔 X 光追蹤肺挫傷變化。每 12-24 小時 CBC、生化、凝血。骨盆骨折的要監測尿量。頭部創傷的每 4-6 小時做神經學評估。',
     owner_communication: '您的寵物多處受傷，我們正在做系統性評估。目前最優先是穩定呼吸跟循環。創傷動物的傷勢可能比外觀看起來更嚴重，內部出血跟肺部損傷要特別留意。初步穩定後我們會做更詳細的檢查。部分損傷（像肺挫傷）可能 12-24 小時後才到最嚴重，所以要住院密切監測。我們會根據檢查結果一步一步說明治療計畫跟預後。',
   },
@@ -4322,10 +4339,12 @@ HBC 犬整體存活率大約 75-85%。ATT 評分 < 5 分存活率 > 90%；≥ 5 
   drug_api_links: ['Fentanyl'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Trauma.', relevance: 'ECC 核心教材創傷章節' },
-    { type: 'journal', citation: 'Rockar RA, Drobatz KS, Shofer FS. Development of a scoring system for the veterinary trauma patient. JVECC. 1994;4(2):77-83.', relevance: 'ATT 創傷評分系統的開發與驗證' },
-    { type: 'journal', citation: 'Hall KE, Holowaychuk MK, Sharp CR, et al. Multicenter prospective evaluation of dogs with trauma. JAVMA. 2014;244(3):300-308.', relevance: '犬創傷多中心前瞻性研究' },
+    { type: 'journal', citation: 'Rockar RA, Drobatz KJ, Shofer FS. Development of a scoring system for the veterinary trauma patient. J Vet Emerg Crit Care. 1994;4(2):77-83. doi:10.1111/j.1476-4431.1994.tb00118.x', relevance: 'ATT 創傷評分系統的開發' },
+    { type: 'journal', citation: 'Hall KE, Holowaychuk MK, Sharp CR, et al. Multicenter prospective evaluation of dogs with trauma. J Am Vet Med Assoc. 2014;244(3):300-308. doi:10.2460/javma.244.3.300', relevance: '犬創傷多中心前瞻登錄（ATT OR≈2.0、≥5 門檻）' },
+    { type: 'journal', citation: 'Whitney WO, Mehlhaff CJ. High-rise syndrome in cats. J Am Vet Med Assoc. 1987;191(11):1399-1403. doi:10.2460/javma.1987.191.11.1399', relevance: '貓高處墜落症候群（132 貓、7 樓 paradox 原始觀察）' },
+    { type: 'journal', citation: 'Stillion JR, Fletcher DJ. Admission base excess as a predictor of transfusion requirement and mortality in dogs with blunt trauma: 52 cases (2007-2010). J Vet Emerg Crit Care. 2012;22(5):588-594. doi:10.1111/j.1476-4431.2012.00798.x', relevance: '犬鈍傷 base excess 預測輸血與死亡（取代 v1 誤標之 RECOVER-CPR 引用）' },
+    { type: 'journal', citation: 'Osekavage KE, Brainard BM, Lane SL, et al. Pharmacokinetics of tranexamic acid in healthy dogs and assessment of its antifibrinolytic properties in canine blood. Am J Vet Res. 2018;79(10):1057-1063. doi:10.2460/ajvr.79.10.1057', relevance: 'TXA 於犬之藥動與抗纖溶性質' },
     { type: 'textbook', citation: 'Rozanski EA, Rush JE. Small Animal Emergency and Critical Care Medicine. Manson Publishing, 2013. Chapter: Trauma Management.', relevance: '小動物急診創傷管理' },
-    { type: 'guideline', citation: 'Stillion JR, Fletcher DJ. RECOVER Evidence and Knowledge Gap Analysis on Veterinary CPR: Monitoring and Post-Cardiac Arrest Care，Applied to Polytrauma. JVECC. 2012;22(S1):S102-S131.', relevance: 'RECOVER 獸醫多發性創傷處置共識，含創傷評分跟監測' },
   ],
   is_current: true,
   created_at: now,
