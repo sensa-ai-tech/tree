@@ -4236,8 +4236,8 @@ const contentNasalTumor: NodeContent = {
 const contentHistiocyticSarcoma: NodeContent = {
   id: 'CONTENT-ONCO-L3-012',
   node_id: 'ONCO-L3-012',
-  version: 1,
-  summary: '犬組織球肉瘤（Histiocytic Sarcoma, HS）是源自樹突狀細胞（DC）或巨噬細胞系的高度侵襲性惡性腫瘤。分為局部型（localized）和播散型（disseminated / hemophagocytic）兩種形式。伯恩山犬（Bernese Mountain Dog）和平毛獵犬（Flat-Coated Retriever）有極高的品種易感性。Lomustine（CCNU）為主的化療方案是目前的標準治療，但整體預後不良（中位存活 3-6 個月）。',
+  version: 2,
+  summary: '犬組織球肉瘤（Histiocytic Sarcoma, HS）是高度侵襲性惡性腫瘤——局部型與播散型源自「間質樹突狀細胞（interstitial DC）」，噬血細胞型源自「脾紅髓/骨髓巨噬細胞」。伯恩山犬（Bernese Mountain Dog）與平毛獵犬（Flat-Coated Retriever）品種易感性極高（BMD 相較他犬約 225 倍）。免疫表型依來源不同：DC 型為 CD1a+/CD11c+/CD18+/MHCII+（CD11d 陰性），噬血細胞型為 CD11d+/CD18+（CD11d 非通用 HS 標記）。Lomustine（CCNU）為主要化療，整體預後不良——局部型手術+CCNU 可達 ~18 個月，播散型反應者 ~5-6 個月，噬血細胞型 <7 週。',
   learning_objectives: [
     '區分局部型與播散型組織球肉瘤的臨床特徵與預後差異',
     '說明伯恩山犬和平毛獵犬的品種易感性及遺傳背景',
@@ -4246,14 +4246,15 @@ const contentHistiocyticSarcoma: NodeContent = {
     '辨識組織球肉瘤與其他組織球增生性疾病的鑑別診斷',
   ],
   key_points: [
-    '組織球肉瘤源自樹突狀細胞（DC-origin）或巨噬細胞（macrophage-origin）',
-    '兩種形式：局部型（四肢關節周圍、皮膚、肺等）和播散型（多器官同時受累）',
-    '伯恩山犬 HS 終生風險高達 25%，CDKN2A/B、MTAP 基因缺失為已知風險位點',
-    '平毛獵犬也是高風險品種，HS 為此品種最常見的致死性腫瘤',
-    '免疫組織化學診斷：CD18+、CD11d+、MHCII+、E-cadherin-（區分於 Langerhans 細胞組織球瘤）',
-    '噬血細胞性組織球肉瘤（Hemophagocytic HS）：源自紅脾髓巨噬細胞，伴隨嚴重貧血和血小板低下',
-    'Lomustine（CCNU）60-90 mg/m² PO q3w 為主要化療方案，反應率約 40-50%',
-    '預後不良：局部型中位存活 4-6 個月（有治療），播散型 < 3 個月',
+    '細胞來源：局部型/播散型源自「間質樹突狀細胞（DC）」；噬血細胞型源自「脾紅髓/骨髓巨噬細胞」',
+    '兩種形式：局部型（四肢關節周圍、皮膚、肺、脾等）與播散型（多器官同時受累）',
+    '伯恩山犬品種易感性極高（約 225 倍風險）；「25%」是 Padgett 1995 之腫瘤占比（非終生罹病率），族群約每 7 隻有 1 隻死於 HS',
+    '遺傳：MTAP-CDKN2A/B 位點（CFA11q16）——生殖細胞為「易感單倍型（調控性）」（Shearin 2012），腫瘤為「體細胞缺失」（Hedan 2011），勿混為一談',
+    '平毛獵犬也是高風險品種，HS 為此品種最常見致死性腫瘤，好發「關節周圍（periarticular）HS」',
+    '⚠️ 免疫表型依來源分：DC 型 HS＝CD1a+/CD11c+/CD18+/MHCII+（CD11d 陰性）；噬血細胞型＝CD11d+/CD18+（CD1/CD11c 低）。CD18 為泛組織球標記，CD11d 專屬噬血細胞型、非通用 HS 標記。E-cadherin 陰性支持（非證實）間質 DC 來源',
+    '噬血細胞型 HS：源自脾紅髓巨噬細胞，再生性溶血性貧血（Coombs 陰性）+ 血小板低下 + 低白蛋白/低膽固醇；似 IMHA 但免疫抑制無效',
+    'Lomustine（CCNU）60-90 mg/m² PO q3w 為主要化療，可測病灶反應率約 46%（Skorupski 2007）',
+    '預後：局部型手術+CCNU ~18 個月（Skorupski 2009；關節周圍無轉移可達 ~32 月），播散型反應者 ~5-6 月，噬血細胞型 <7 週',
   ],
   body: `# 組織球肉瘤 (Histiocytic Sarcoma, HS)
 
@@ -4303,12 +4304,11 @@ const contentHistiocyticSarcoma: NodeContent = {
 ## 四、診斷 (Diagnosis)
 
 ### 免疫組織化學（IHC）是確診關鍵
-細胞學見大型多形性組織球樣細胞，但確認需 IHC：
-- CD18+（泛組織球標記）
-- CD11d+（DC/巨噬細胞）
-- MHCII+
-- E-cadherin-（排除 Langerhans 細胞組織球瘤）
-- CD11c 和 CD1a 可再分亞型
+細胞學見大型多形性組織球樣細胞，但確認需 IHC——**標記依細胞來源不同，CD11d 並非通用 HS 標記**：
+- **CD18+**：泛白血球 β2 整合素，兩型皆陽性，為真正的「泛組織球」共同標記。
+- **樹突狀細胞來源型（局部/播散型，較常見）**：CD1a+、**CD11c+**、MHCII+、ICAM-1+，且 **CD11d 陰性**。
+- **噬血細胞型（macrophage/脾紅髓來源）**：**CD11d+**/CD18+、MHCII+，但 CD1a、CD11c 低表現或陰性。⚠️ CD11d 專屬於此型、用來與 DC 型「鑑別」，不可當作所有 HS 的通用陽性標記。
+- **E-cadherin**：LC 之 lineage-associated（非 lineage-specific）標記——E-cadherin 陰性「支持（非證實）」間質 DC 來源；但陰性不能可靠排除 LC 來源，且已有 E-cadherin **陽性**的 HS 病例（Ramos-Vara 2011：5/5 HS 陽性；Hirako 2015 皮膚 HS），MCT/上皮嗜性淋巴瘤/漿細胞瘤亦常陽性，須置於完整 panel（含 MUM1/KIT/CD3/CD79a）判讀。
 
 ### 分期檢查
 1. 原發部位組織活檢 + IHC
@@ -4360,19 +4360,43 @@ const contentHistiocyticSarcoma: NodeContent = {
 - 體重和生活品質評估
 - 噬血細胞型：每週 CBC 監測貧血和血小板
 
+## 八、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 犬 HS 為人類組織細胞肉瘤（histiocytic/dendritic cell sarcoma）之自然發生模型 | MTAP-CDKN2A/9p21 缺失、PTPN11/BRAF 路徑於跨物種比較腫瘤學研究 | 犬 HS 已成為人類罕見組織球腫瘤之比較模型 |
+| BRAF/MAPK 抑制劑（人類組織球疾病如 ECD/LCH 之標靶治療） | 犬 HS 部分帶 PTPN11/MAPK 路徑活化，探索標靶治療 | 犬 HS 之 PTPN11 突變已報告，標靶治療研究初期 |
+| 液態活檢/循環腫瘤 DNA（ctDNA）偵測 CDKN2A 缺失 | 高風險品種（BMD/FCR）早期偵測與復發監測 | 概念階段 |
+
+## 九、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Toceranib（TKI）於犬 HS 的角色 | 部分病例有反應，但缺乏大型前瞻試驗確立其地位 | Level III |
+| CCNU + doxorubicin 或其他多藥方案是否優於 CCNU 單藥 | 回顧性資料提示可能較高反應率，尚無隨機對照 | Level III |
+| 播散型 HS 何時應轉為緩和照護 | 預後極差時的治療 vs 生活品質權衡缺乏客觀指標 | Level IV |
+| 高風險品種（BMD/FCR）之基因篩檢與繁殖建議 | MTAP-CDKN2A 易感單倍型可檢測，但外顯率與臨床應用尚未標準化 | Level III |
+
+## 十、近期更新 (Recent Updates)
+
+- **免疫表型分型釐清**：CD11d 專屬「噬血細胞型（macrophage）HS」（Moore 2006），DC 型 HS 為 CD11d 陰性、以 CD1a/CD11c/MHCII 陽性為主；CD18 才是泛組織球標記——舊教材把 CD11d 當通用標記為錯誤。
+- **遺傳學雙層機轉**：Shearin 2012（MTAP-CDKN2A 易感單倍型，調控性、非缺失）與 Hedan 2011（腫瘤體細胞 CDKN2A/B+MTAP 缺失，並常伴 RB1/PTEN 缺失）——生殖細胞「易感」與體細胞「缺失」為不同層面。
+- **局部/關節周圍 HS 存活**：Skorupski 2009（VCO，局部 HS 手術+CCNU MST 568 天）、Klahn 2011（關節周圍 HS 無轉移 MST 980 天）確立積極治療之意義。
+- **E-cadherin 非 LC 專一**：Ramos-Vara & Miller 2011 證實 E-cadherin 於 MCT/淋巴瘤/漿細胞瘤/HS 皆可陽性，不能單獨鑑別組織球瘤，須置於完整 panel。
+
 [圖片:犬組織球增生性疾病分類鑑別圖]`,
   clinical_pearl: '組織球肉瘤的診斷陷阱：四肢關節周圍的局部型 HS 常常被誤診為骨關節炎或韌帶損傷，延誤好幾個月。伯恩山犬或平毛獵犬出現不明原因跛行加關節腫脹時，要把 HS 列入鑑別診斷，做影像學跟活檢。另一個常見陷阱：噬血細胞型 HS 會被誤診為 IMHA，兩者都表現為 Coombs 陰性溶血性貧血，但是 HS 對免疫抑制治療沒反應。脾臟超音波跟骨髓穿刺是區分的關鍵。\n\n【台灣流行病學】伯恩山犬跟平毛獵犬在台灣飼養數量雖然沒歐美多，但還是有一定族群。Lomustine 在台灣獸醫市場的取得性要確認一下。組織球肉瘤的 IHC 確診要送到有免疫組化服務的病理實驗室。台灣臨床上要提高對中大型犬不明原因跛行或多器官病變時 HS 的警覺性。',
   common_mistakes: [
     '把四肢關節周圍的 HS 誤診為骨關節炎或韌帶損傷：伯恩山犬或平毛獵犬跛行要考慮 HS',
-    '沒做 IHC 就用細胞學「組織球樣細胞」診斷：要用 CD18/CD11d/MHCII 確認',
+    '沒做 IHC 就用細胞學「組織球樣細胞」診斷：確認要用 CD18（泛組織球）+ 依來源分（DC 型 CD1a/CD11c、噬血細胞型 CD11d）——勿把 CD11d 當通用 HS 標記',
     '把噬血細胞型 HS 誤診為 IMHA 而長期用免疫抑制治療',
     '對播散型 HS 過度積極治療而忽略生活品質評估：預後極差時姑息照護可能比較適當',
     'Lomustine 治療第 3 週沒監測 CBC：延遲性骨髓抑制會致命',
   ],
   disease_data: {
-    signalment: '中老年犬，中位年齡 7 到 9 歲。高風險品種：伯恩山犬（Bernese Mountain Dog，終生風險大約 25%）、平毛獵犬（Flat-Coated Retriever）。黃金、拉布拉多、羅威納發病率也偏高。性別差異不大。',
-    etiology: '確切病因還沒搞清楚，但是有強烈的遺傳背景。伯恩山犬的 CDKN2A/B 跟 MTAP 基因座缺失已經確認是風險位點。平毛獵犬的 HS 發病率很高，被認為有複雜的多基因遺傳模式。',
-    pathogenesis: '樹突狀細胞或巨噬細胞惡性轉化，CDKN2A（p16）/CDKN2B（p15）腫瘤抑制基因失活造成不受控增殖。局部型在單一部位浸潤性生長，播散型則多器官轉移（肺、肝、脾、骨髓）。噬血細胞型是脾臟紅髓巨噬細胞惡性增殖，造成噬血現象，跑出溶血性貧血、血小板低下、低蛋白血症。',
+    signalment: '中老年犬，中位年齡約 6-7 歲。高風險品種：伯恩山犬（BMD，相較他犬約 225 倍風險——常引的「25%」為 Padgett 1995 之腫瘤診斷占比、非終生罹病率；族群約每 7 隻有 1 隻死於 HS）、平毛獵犬。黃金、拉布拉多、羅威納發病率也偏高。性別差異不大。',
+    etiology: '確切病因未完全確立，但有強烈遺傳背景。關鍵位點為 MTAP-CDKN2A/CDKN2B 區域（CFA11q16，對應人類 9p21）——生殖細胞層面為「易感單倍型（CA haplotype，調控 CDKN2A/B 表現，非缺失）」（Shearin 2012），腫瘤層面為「體細胞缺失」（CDKN2A/B+MTAP，約 62.8% 腫瘤，常伴 RB1/PTEN 缺失，Hedan 2011）。平毛獵犬有複雜多基因遺傳模式。',
+    pathogenesis: '間質樹突狀細胞（局部/播散型）或脾紅髓/骨髓巨噬細胞（噬血細胞型）惡性轉化，CDKN2A（p16）/CDKN2B（p15）等腫瘤抑制基因體細胞失活造成不受控增殖。局部型在單一部位浸潤性生長，播散型則多器官轉移（肺、肝、脾、骨髓）。噬血細胞型是脾紅髓巨噬細胞（CD11d+）惡性增殖，造成噬血現象，跑出再生性溶血性貧血（Coombs 陰性）、血小板低下、低白蛋白/低膽固醇血症。',
     clinical_signs: [
       { sign: '四肢跛行/關節腫脹', category: 'primary', description: '局部型好發在關節周圍（肘、膝），常被誤診為骨關節炎' },
       { sign: '快速生長的腫塊', category: 'primary', description: '皮膚或皮下局部型，堅實、浸潤性' },
@@ -4387,7 +4411,7 @@ const contentHistiocyticSarcoma: NodeContent = {
       { condition: '淋巴瘤', key_differentiator: '主要表現是全身淋巴結腫大，FNA 看到均質淋巴球，IHC 是 CD3/CD79a+' },
       { condition: '免疫介導性溶血性貧血（IMHA）', key_differentiator: '跟噬血細胞型 HS 鑑別：IMHA 通常 Coombs 陽性、對免疫抑制有反應；HS 要靠影像加活檢確認' },
     ],
-    diagnostic_workup: '流程：原發部位 FNA 或活檢，免疫組織化學（CD18、CD11d、MHCII、E-cadherin），CBC 加全套生化，胸腔 X 光，腹超看肝脾跟淋巴結，骨髓穿刺（播散型或噬血細胞型），全身 CT 做手術規劃。',
+    diagnostic_workup: '流程：原發部位 FNA 或活檢，免疫組織化學（CD18 泛組織球；DC 型加 CD1a/CD11c、噬血細胞型加 CD11d；E-cadherin 於完整 panel 內判讀），CBC 加全套生化，胸腔 X 光，腹超看肝脾跟淋巴結，骨髓穿刺（播散型或噬血細胞型），全身 CT 做手術規劃。',
     treatment_protocol: '局部型：手術（完全切除）加 Lomustine (CCNU) 60 到 90 mg/m² PO q3w × 4 到 6 cycles。播散型或不可切除：Lomustine 單獨，或 Lomustine 加 Doxorubicin 聯合。Toceranib 可以當替代。噬血細胞型預後極差，以支持療法（輸血）為主。Lomustine 要監測延遲性骨髓抑制（第 3 週 CBC）跟肝毒性。',
     prognosis: '局部型（手術加 Lomustine）中位存活 12 到 18 個月。局部型（手術單獨）4 到 6 個月。播散型（Lomustine）3 到 6 個月。噬血細胞型不到 7 週。整體來說 HS 預後不好，特別是播散型跟噬血細胞型。品種跟有沒有完全手術切除是關鍵預後因子。',
     monitoring: 'Lomustine 化療：第 3 週 CBC（監測 nadir）加每次給藥前肝指數（ALT、ALP）。每個月影像追蹤（胸腔 X 光加腹超）。每次回診評估體重跟生活品質。噬血細胞型每週 CBC。',
@@ -4402,11 +4426,13 @@ const contentHistiocyticSarcoma: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Lomustine', 'Doxorubicin', 'Toceranib'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 31: Histiocytic Diseases.', relevance: '組織球肉瘤完整章節' },
-    { type: 'journal', citation: 'Affolter VK, Moore PF. Localized and disseminated histiocytic sarcoma of dendritic cell origin in dogs. Vet Pathol. 2002;39(1):74-83.', relevance: '組織球肉瘤 DC 起源分類的經典文獻' },
-    { type: 'journal', citation: 'Skorupski KA et al. CCNU for the treatment of dogs with histiocytic sarcoma. J Vet Intern Med. 2007;21(1):121-126.', relevance: 'Lomustine 治療 HS 的臨床研究' },
-    { type: 'journal', citation: 'Abadie J et al. Epidemiology, pathology, and genetics of histiocytic sarcoma in the Bernese mountain dog，a review. Vet Pathol. 2009;46(3):385-397.', relevance: '伯恩山犬 HS 流行病學、病理和遺傳學回顧' },
-    { type: 'guideline', citation: 'Moore PF. A review of histiocytic diseases of dogs and cats. Vet Pathol. 2014;51(1):167-184. doi:10.1177/0300985813510413 (ACVP/ASVCP consensus on histiocytic disease classification)', relevance: 'ACVP/ASVCP 犬貓組織球疾病分類共識回顧' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM (eds). Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. St. Louis: Elsevier, 2019. Chapter: Histiocytic Diseases.', relevance: '組織球肉瘤完整章節' },
+    { type: 'journal', citation: 'Affolter VK, Moore PF. Localized and disseminated histiocytic sarcoma of dendritic cell origin in dogs. Vet Pathol. 2002;39(1):74-83. doi:10.1354/vp.39-1-74', relevance: 'HS 樹突狀細胞起源分類與免疫表型（CD1+/CD11c+/CD11d-）之經典文獻' },
+    { type: 'journal', citation: 'Moore PF, Affolter VK, Vernau W. Canine hemophagocytic histiocytic sarcoma: a proliferative disorder of CD11d+ macrophages. Vet Pathol. 2006;43(5):632-645. doi:10.1354/vp.43-5-632', relevance: '噬血細胞型 HS＝CD11d+ 巨噬細胞（CD11d 專屬此型、非通用標記）' },
+    { type: 'journal', citation: 'Skorupski KA, Clifford CA, Paoloni MC, et al. CCNU for the treatment of dogs with histiocytic sarcoma. J Vet Intern Med. 2007;21(1):121-126. doi:10.1111/j.1939-1676.2007.tb02937.x', relevance: 'Lomustine 治療 HS（可測病灶反應率 46%）' },
+    { type: 'journal', citation: 'Skorupski KA, Rodriguez CO, Krick EL, et al. Long-term survival in dogs with localized histiocytic sarcoma treated with CCNU as an adjuvant to local therapy. Vet Comp Oncol. 2009;7(2):139-144. doi:10.1111/j.1476-5829.2009.00186.x', relevance: '局部型 HS 手術+CCNU 之長期存活（MST 568 天）' },
+    { type: 'journal', citation: 'Abadie J, Hédan B, Cadieu E, et al. Epidemiology, pathology, and genetics of histiocytic sarcoma in the Bernese mountain dog breed. J Hered. 2009;100(Suppl 1):S19-S27. doi:10.1093/jhered/esp039', relevance: '伯恩山犬 HS 流行病學/病理/遺傳（v1 誤植為 Vet Pathol 46(3):385-397）' },
+    { type: 'journal', citation: 'Moore PF. A review of histiocytic diseases of dogs and cats. Vet Pathol. 2014;51(1):167-184. doi:10.1177/0300985813510413', relevance: '犬貓組織球疾病分類權威綜述（UC Davis Moore/Affolter 體系；為單一作者 review，非 ACVP/ASVCP 共識）' },
   ],
   is_current: true,
   created_at: now,
