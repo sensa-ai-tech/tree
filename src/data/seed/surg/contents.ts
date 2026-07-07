@@ -1144,8 +1144,8 @@ Ventral Slot（頸椎）：
 const contentPerinealHernia: NodeContent = {
   id: 'CONTENT-SURG-L3-006',
   node_id: 'SURG-L3-006',
-  version: 1,
-  summary: '會陰疝氣是犬好發的後軀外科疾病，幾乎都發生在未絕育雄犬（> 95%），好發年齡 7-9 歲。病因是骨盆隔膜肌肉（特別是提肛肌跟尾骨肌）萎縮弱化，骨盆腔內容物（直腸、前列腺、膀胱、骨盆脂肪）就疝到會陰部去了。手術修補是確定性治療，常用 internal obturator muscle transposition 加 polypropylene mesh。建議同時去勢（castration），可以把復發率從 40-50% 拉到 10-15%。',
+  version: 2,
+  summary: '會陰疝氣是犬好發的後軀外科疾病，多數發生於未去勢中老年雄犬（雄性約占 8-9 成以上、非精確 >95%；好發約 7-10 歲、中位約 9-10 歲），去勢雄犬與母犬亦可能但少見。病因為「多因子且尚未完全確立」——骨盆隔膜（提肛肌、尾骨肌）退化萎縮為共通終末路徑，荷爾蒙（雄性激素/relaxin）角色仍屬假說（Mann 1989 血清睪固酮無差異）。以單側較常見（雙側約 1/3）。手術修補（首選閉孔內肌翻轉術 IOT）為確定性治療。指引建議同時去勢，但「去勢降復發」證據不一致——復發率主要取決於術式（約 10-46%），近期最大樣本（Sangmanee 2025）顯示去勢與否無顯著差異。',
   learning_objectives: [
     '列舉會陰疝氣的解剖學基礎與風險因子',
     '辨識會陰疝氣的臨床表現與可能的膀胱疝入急診',
@@ -1153,14 +1153,15 @@ const contentPerinealHernia: NodeContent = {
     '說明去勢對降低復發率的重要性',
     '處理會陰疝氣的常見併發症',
   ],
-  key_points: [
-    '95% 以上是未絕育雄犬，雄性激素把骨盆隔膜肌肉慢慢吃掉',
-    '好發年齡 7-9 歲，品種偏好：柯基犬、波士頓梗、柯利牧羊犬、老英國牧羊犬、北京犬',
-    '最常見的疝出內容物：骨盆脂肪、直腸偏位或膨出、前列腺',
-    '膀胱後翻（retroflexion of bladder）是最危險的狀況，可能直接尿路阻塞',
-    '手術修補加去勢是標準治療，復發率 10-15%',
-    '不去勢的復發率衝到 40-50%',
-    '雙側發生率大約 40-50%',
+    key_points: [
+    '多數為未去勢中老年雄犬（雄性約 8-9 成以上、非精確 >95%；中位年齡約 9-10 歲）；去勢雄犬/母犬少見',
+    '病因多因子且未完全確立：骨盆隔膜（提肛肌 levator ani、尾骨肌 coccygeus）退化萎縮為共通路徑；荷爾蒙（雄性激素/relaxin）角色仍屬假說（Mann 1989 血清睪固酮無差異）',
+    '品種偏好（reported，非量化 OR）：柯基犬、波士頓梗、拳師犬、柯利牧羊犬、Kelpie、臘腸犬、迷你貴賓、老英國牧羊犬、北京犬',
+    '最常見疝出內容物：骨盆/腹膜後脂肪 > 漿液 > 直腸偏位/膨出 > 前列腺 > 膀胱 > 小腸',
+    '膀胱後翻（retroflexion of bladder）是最危險的狀況，尿路阻塞→後腎性氮血症/高血鉀，為急診',
+    '首選閉孔內肌翻轉術（IOT）：復發率文獻差異大（0-28%，最佳現代系列 Shaughnessy 2015 一年 27.4%），較傳統對合修補（10-46%）低',
+    '⚠️ 「去勢降復發 40-50%→10-15%」未獲一手支持、且混淆術式 vs 去勢——復發主要取決於術式；Sangmanee 2025（n=315）去勢 13.6% vs 未去勢 16.8%（p=0.5，無顯著差異）。指引仍建議同時去勢（移除推測性荷爾蒙影響+治前列腺病）',
+    '以「單側」較常見（約 50-66%），雙側約 1/3（約 33-40%，非 40-50%）',
   ],
   body: `# 會陰疝氣 (Perineal Hernia)
 
@@ -1169,15 +1170,18 @@ const contentPerinealHernia: NodeContent = {
 
 
 ### 概述
-會陰疝氣是中老年未絕育雄犬特有的外科疾病，由骨盆隔膜（pelvic diaphragm）肌肉萎縮弱化造成。本身不會立刻要命，但膀胱疝進去時就會急性尿路阻塞，這時就是外科急診。
+會陰疝氣好發於中老年未去勢雄犬，由骨盆隔膜（pelvic diaphragm）肌肉萎縮弱化造成。本身不會立刻要命，但膀胱疝進去時就會急性尿路阻塞，這時就是外科急診。
 
 ### 解剖學基礎
-骨盆隔膜由幾條肌肉組成：
-- 提肛肌（levator ani）：最常萎縮的肌肉
+**骨盆隔膜由提肛肌（levator ani）與尾骨肌（coccygeus）構成**（外肛門括約肌 external anal sphincter 為另一條參與會陰支持的肌肉，構成尾側缺損的內側邊界）：
+- 提肛肌（levator ani）：最常被強調萎縮/缺失的肌肉（Sjollema 1993：40 犬尾側部全數缺失）
 - 尾骨肌（coccygeus）
-- 外肛門括約肌（external anal sphincter）
+- 外肛門括約肌（external anal sphincter，會陰支持）
 
-雄性激素（testosterone 跟 relaxin 受體）讓這些肌肉一直退化萎縮，骨盆腔跟會陰之間就跑出缺口。
+**最常見缺損為「尾側型（caudal）」**，位於外肛門括約肌（內側）、提肛肌/尾骨肌與閉孔內肌（腹外側）之間。
+
+### 病因（多因子、尚未完全確立）
+會陰疝氣為多因子疾病，肌肉退化萎縮（可能為神經源性）是共通終末路徑，誘因包括慢性裡急後重/前列腺疾病、便秘、肌病、直腸異常。**荷爾蒙（雄性激素/relaxin）角色仍屬「假說」而非已確立機轉**——Mann 1989 實測患犬與正常犬血清睪固酮/雌二醇「無顯著差異」，relaxin 之連結（Niebauer 2005）僅為「possibly a local factor」的相關性推論。臨床上未去勢公犬發生率較高、去勢可能降復發，屬風險相關性/臨床觀察，不等於已證實荷爾蒙直接造成肌肉萎縮。
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
@@ -1207,20 +1211,19 @@ const contentPerinealHernia: NodeContent = {
 5. 必要時合併 polypropylene mesh 加強
 
 ### 同時去勢
-- 所有未絕育雄犬都建議同時去勢
-- 去勢可以把復發率從 40-50% 拉到 10-15%
-- 也能讓前列腺縮小，少占骨盆腔空間
+- 主流指引（ACVS/Merck）建議未去勢雄犬修補時同時去勢：移除推測性的荷爾蒙（雄性激素/relaxin，機轉仍為假說）影響、並治療併發的前列腺疾病（縮小前列腺、少占骨盆腔空間）。
+- ⚠️ **但「去勢降低復發率」的證據其實不一致**：復發率主要取決於「術式」（傳統對合修補 10-46%、IOT 較低），而非去勢與否。早期回溯（Weaver 1981）提示去勢者約 13% vs 未去勢 20%（相對差異小）；**近期最大樣本（Sangmanee 2025，n=315）去勢 13.6% vs 未去勢 16.8%，p=0.5 無顯著差異**，且未去勢組復發率遠低於常被引用的「40-50%」。切勿把「40-50%→10-15%」當作已確立的去勢因果數字（該對比混淆了手術技術效應）。
 
 [互動:會陰疝氣手術步驟流程]
 
 ## 四、併發症與監控 (Complications & Monitoring)
 
-### 常見併發症
-- 傷口感染：會陰區就在肛門旁邊，汙染風險高，SSI 發生率 8-26%
-- 暫時性大便失禁：術中肛門括約肌或 pudendal nerve 被拉到，發生率 10-20%，多半是暫時的
-- 直腸脫垂：術後努責排便會把直腸推出來，發生率 5-8%
-- 復發：手術加去勢復發率 10-15%；不去勢的 40-50%
-- 坐骨神經損傷：術中辨識不夠仔細就可能造成永久性後肢跛行，少見但嚴重
+> 併發症率隨術式與研究世代差異極大，無單一定值——以下為區間（整體併發症率跨研究約 20-61%）。
+- 傷口感染（SSI）：會陰區近肛門、汙染風險高——約 5-45%（傳統縫合 5-29%；經典 IOT 系列 Sjollema 1989 高達 45%，現代系列 Hatch 2025 低至 7%）。
+- 大便失禁：約 10-15%（部分文獻達 33%）。**注意：相當比例源自「疾病本身」（陰部/尾直腸神經功能障礙、術前即存在的括約肌麻痺，Sjollema 1989 中 15 例失禁有 9 例術前已存在），未必為手術所致、也未必可逆**，不宜一概當「暫時性」。
+- 直腸脫垂：公認併發症，量級約個位數百分比（缺乏穩定匯總率）。
+- 復發：主要取決於術式（IOT 0-28%、傳統對合 10-46%），去勢與否影響不顯著（見治療段）。
+- 坐骨（及陰部）神經損傷/卡壓：罕見但嚴重（Sjollema 1989 之 100 例為 0%），可致永久性後肢跛行。
 
 ### 監控計畫
 | 時間點 | 監測項目 | 目標 |
@@ -1234,12 +1237,10 @@ const contentPerinealHernia: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- 手術修補加去勢：成功率 85-90%，復發率 10-15%
-- 手術修補但沒去勢：復發率衝到 40-50%
-- 膀胱後翻合併嚴重高血鉀或氮血症：術前穩定化是關鍵
-- 雙側同時修補：技術可行但術後腫脹跟疼痛比較大
-- 預後好的條件：同時去勢、單側而且組織缺損不嚴重、用閉孔內肌翻轉術、早期治療
-- 預後不好的條件：沒去勢、雙側嚴重缺損要 mesh、膀胱後翻加代謝紊亂、坐骨神經損傷
+- **復發率主要取決於術式**：IOT 文獻差異大（0-28%；最佳現代系列 Shaughnessy & Monnet 2015 之 34 例一年復發 27.4%，中位復發時間 28 天；經典 Sjollema 1989 約 5%），傳統對合修補約 10-46%。整體長期成功率常被引為 >90%，但最佳現代 IOT 系列一年無復發僅約 72%。
+- **去勢與否對復發影響不顯著**（Sangmanee 2025 n=315：去勢 13.6% vs 未去勢 16.8%，p=0.5）——勿寫「去勢 10-15%、不去勢 40-50%」。
+- 膀胱後翻合併嚴重高血鉀或氮血症：術前穩定化是關鍵。
+- 預後不良因子：術前/術後大便失禁（Hatch 2025 復發風險 3.4 倍）、術前已去勢者（4.4 倍）、裡急後重（Shaughnessy 2015 HR 2.29）、雙側嚴重缺損、膀胱後翻加代謝紊亂、坐骨神經損傷。
 
 ## 六、人醫借鑒 (Translational Insights)
 
@@ -1257,19 +1258,28 @@ const contentPerinealHernia: NodeContent = {
 | 合成 mesh vs 自體組織修補 | Polypropylene mesh 可加強修補但感染率較高，自體閉孔內肌翻轉術為首選但缺損過大時不足 | Level III |
 | 雙側同時修補 vs 分期手術 | 同時修補可減少麻醉次數，但術後腫脹疼痛較大且感染風險可能增加 | Level IV |
 | 生物補片（biologic mesh）的角色 | SIS（small intestinal submucosa）等生物補片減少感染但費用高，長期數據有限 | Level III |
-| 已去勢犬的會陰疝氣病因 | 少數（< 5%）已去勢犬仍發生會陰疝氣，可能與其他荷爾蒙或結構因素有關 | Level IV |`,
-  clinical_pearl: '會陰疝氣術後最讓飼主煩惱的併發症是暫時性大便失禁（fecal incontinence）。術中操作離肛門括約肌跟支配神經（pudendal nerve）都很近，短期排便控制可能會跑掉。術前要先跟飼主把話講清楚：通常是暫時的（1-4 週內會改善），少數會拖久一點。手術時別過度拉扯外肛門括約肌可以降低風險。\n\n【台灣流行病學】會陰疝氣在台灣以未去勢中老年公犬最常見，跟台灣公犬去勢率還不算高有關。台灣流浪犬 TNR 主要做母犬絕育，公犬去勢比例相對低。常見品種如臘腸犬、波士頓梗、混種犬都是好發族群。修補手術一定要同時去勢，這樣才能把復發率壓下來。',
+| 已去勢犬的會陰疝氣病因 | 少數已去勢犬仍發生會陰疝氣，支持病因多因子（非單純荷爾蒙） | Level IV |
+| 去勢是否真能降低復發率 | 指引建議同時去勢，但證據不一致：早期回溯提示去勢者復發較低（相對），最大樣本 Sangmanee 2025（n=315）卻顯示去勢 vs 未去勢無顯著差異（13.6% vs 16.8%）；復發主要由術式決定 | Level III |
+| 荷爾蒙（雄性激素/relaxin）在病因中的角色 | Mann 1989 血清睪固酮/雌二醇無差異、relaxin 僅相關性推論——荷爾蒙為假說而非證實機轉 | Level III |
+
+## 八、近期更新 (Recent Updates)
+
+- **去勢降復發之證據受質疑**：Sangmanee 2025（Animals，n=315 未去勢公犬回溯）顯示去勢組復發 13.6% vs 未去勢 16.8%（p=0.5，無顯著差異）；復發率主要取決於「術式」而非去勢——推翻「去勢 10-15% vs 不去勢 40-50%」的舊敘述。
+- **術前已去勢/失禁為復發風險因子**：Hatch 2025（JAVMA，84 犬）顯示術後失禁者復發風險 3.4 倍、術前已去勢者 4.4 倍——去勢「時機」與潛在混淆使簡單因果更複雜。
+- **IOT 復發率的現代校準**：Shaughnessy & Monnet 2015（JAVMA，34 犬）之一年復發率達 27.4%（中位 28 天），高於舊教材常引的 <15%；裡急後重為復發風險因子（HR 2.29）。
+- **病因為多因子**：Gill & Barstad 2018（JAAHA 綜述）將荷爾蒙失衡、裡急後重/前列腺病、肌病、直腸異常列為「proposed」因素；受累肌肉以提肛肌為主（Sjollema 1993 神經源性萎縮）。`,
+  clinical_pearl: '會陰疝氣術後常見的併發症是大便失禁（fecal incontinence）。要注意：失禁不全是「手術造成的暫時性」——文獻（Sjollema 1989）顯示相當比例的失禁犬「術前即已存在」，源自疾病本身的陰部/尾直腸神經功能障礙（神經源性），未必可逆。術中操作離肛門括約肌跟支配神經（pudendal nerve）也近，可再加一層手術性風險。術前務必跟飼主把話講清楚：術後失禁若為術中牽拉所致多在數週改善，但若術前已有神經源性失禁則可能持續。手術時別過度拉扯外肛門括約肌可降低手術性風險。\n\n【台灣流行病學】會陰疝氣在台灣以未去勢中老年公犬最常見，跟台灣公犬去勢率還不算高有關。台灣流浪犬 TNR 主要做母犬絕育，公犬去勢比例相對低。常見品種如臘腸犬、波士頓梗、混種犬都是好發族群。修補手術一定要同時去勢，這樣才能把復發率壓下來。',
   common_mistakes: [
-    '沒同時去勢，復發率就從 10-15% 跳到 40-50%',
+    '把「去勢降復發 40-50%→10-15%」當定論（該對比混淆術式；Sangmanee 2025 去勢與否無顯著差異）——去勢仍建議做（移除推測荷爾蒙+治前列腺病），但別誇大其復發效益',
     '膀胱後翻時沒先解除尿路阻塞就急著動手術，要先把高血鉀跟氮血症穩住',
-    '只修補有症狀的一側，忽略對側早期缺損，雙側發生率有 40-50%',
+    '術式選擇不當導致高復發（傳統對合修補難覆蓋腹側缺損，IOT 較能降張力/覆蓋——復發主要取決於術式）',
     '手術時辨識坐骨神經（sciatic nerve）不夠仔細，弄傷就是永久性後肢跛行',
-    '術後沒好好限制活動，修補區一裂就早期復發',
+    '把大便失禁一律當「手術暫時併發症」（相當比例為疾病本身的神經源性、術前即存在、未必可逆）',
   ],
   disease_data: {
-    signalment: '幾乎都在未絕育雄犬身上（> 95%），好發年齡 7-9 歲。品種偏好：威爾斯柯基犬、波士頓梗、柯利牧羊犬、老英國牧羊犬、北京犬、拳師犬。雌犬極少見。貓罕見。',
-    etiology: '多因子疾病。雄性激素一直作用，骨盆隔膜肌肉（提肛肌、尾骨肌）就慢慢萎縮。前列腺肥大把骨盆腔壓力推高，慢性排便努責（便秘、前列腺疾病）也會加重。遺傳因素可能也有，品種傾向就是線索。',
-    pathogenesis: '雄性激素持續作用，提肛肌跟尾骨肌神經肌肉退化萎縮，骨盆隔膜弱化跑出缺損（通常在提肛肌跟外肛門括約肌之間）。腹壓把骨盆腔內容物（脂肪、直腸壁、前列腺，偶爾膀胱）從缺損推到會陰皮下。直腸偏位或膨出（rectal deviation/sacculation）造成排便困難；膀胱後翻就直接尿路阻塞。',
+    signalment: '多數為未去勢中老年雄犬（雄性約占 8-9 成以上，非精確 >95%；好發約 7-10 歲、中位約 9-10 歲）；去勢雄犬與母犬亦可能但少見。品種偏好（reported，非量化 OR）：威爾斯柯基犬、波士頓梗、拳師犬、柯利牧羊犬、Kelpie、臘腸犬、迷你貴賓、老英國牧羊犬、北京犬。貓罕見。',
+    etiology: '多因子疾病、確切病因尚未完全確立。骨盆隔膜肌肉（提肛肌、尾骨肌）退化萎縮（可能為神經源性）為共通終末路徑，誘因包括前列腺肥大/疾病、慢性排便努責（便秘）、肌病、直腸異常。荷爾蒙（雄性激素/relaxin）角色屬「假說」——Mann 1989 患犬血清睪固酮/雌二醇與正常犬無差異；relaxin 僅為相關性推論。品種傾向提示可能有遺傳成分。',
+    pathogenesis: '骨盆隔膜（主要提肛肌、尾骨肌）神經肌肉退化萎縮，骨盆隔膜弱化跑出缺損（最常見為尾側型：外肛門括約肌內側、提肛肌/尾骨肌與閉孔內肌腹外側之間）。腹壓把骨盆腔內容物（脂肪、漿液、直腸壁、前列腺，偶爾膀胱）從缺損推到會陰皮下。直腸偏位或膨出（rectal deviation/sacculation）造成排便困難；膀胱後翻就直接尿路阻塞。',
     clinical_signs: [
       { sign: '會陰部腫脹', category: 'primary', description: '單側或雙側會陰部可還原性腫脹，站立或努責時更明顯' },
       { sign: '排便困難', category: 'primary', description: '努責排便（tenesmus）、糞便變扁或帶狀，有時要用手指輔助排便' },
@@ -1286,7 +1296,7 @@ const contentPerinealHernia: NodeContent = {
     ],
     diagnostic_workup: '先做理學檢查跟直腸指診，評估骨盆隔膜完整性跟缺損位置。接著會陰區超音波看疝入內容物。腹部 X 光配合膀胱造影確認膀胱位置。CBC/生化要看 BUN/Cre/K+，膀胱後翻時特別重要。最後做前列腺評估，超音波看大小跟有沒有囊腫或膿瘍。',
     treatment_protocol: '手術修補是確定性治療，首選 internal obturator muscle transposition 加同時去勢。膀胱後翻急診處理：先導尿或膀胱穿刺、矯正高血鉀（如果有）、輸液穩住，再安排手術。雙側缺損可以同時或分期修補。嚴重缺損可以加 polypropylene mesh。術後：軟便飲食 2-4 週、限制活動 4-6 週、[藥物:Lactulose] 0.5 mL/kg PO BID-TID 維持軟便。Primary care：診斷、膀胱後翻急診穩定化、轉診手術。Specialty care：手術修補加去勢。',
-    prognosis: '手術修補加去勢的成功率大約 85-90%，復發率 10-15%。沒去勢的復發率 40-50%。膀胱後翻合併嚴重氮血症或高血鉀的病例術前風險高。最常見的術後併發症：傷口感染（8-26%）、暫時性大便失禁（10-20%，通常會自己好）、直腸脫垂（5-8%）。',
+    prognosis: '復發率主要取決於術式：IOT 文獻差異大（0-28%；最佳現代系列 Shaughnessy & Monnet 2015 一年 27.4%，經典 Sjollema 1989 約 5%），傳統對合修補 10-46%；長期成功率常引 >90% 但最佳現代 IOT 一年無復發僅約 72%。去勢與否對復發影響不顯著（Sangmanee 2025：去勢 13.6% vs 未去勢 16.8%，p=0.5，勿寫 10-15% vs 40-50%）。膀胱後翻合併嚴重氮血症或高血鉀者術前風險高。併發症率隨術式/世代差異大：SSI 約 5-45%、大便失禁約 10-15%（相當比例為疾病本身神經源性/術前已存在）、直腸脫垂個位數%、坐骨神經損傷罕見。',
     monitoring: '術後 24-48 小時盯排便跟排尿功能。2 週拆線。4-6 週內限制活動。術後 1-2 個月回診評估修補完整性。長期追對側有沒有新的疝氣。去勢後追前列腺大小。',
     owner_communication: '會陰疝氣要手術修補，同時去勢是降低復發的關鍵。膀胱後翻是緊急狀況，要立刻就醫。術後可能有暫時性排便控制異常，通常幾週內會好。預防方面：早點去勢就能有效預防。術後飲食要維持軟便 2-4 週，別讓努責影響修補區癒合。',
   },
@@ -1301,11 +1311,13 @@ const contentPerinealHernia: NodeContent = {
   ],
   drug_api_links: ['Lactulose'],
   references: [
-    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter 22: Surgery of the Perineum, Rectum, and Anus.', relevance: '會陰疝氣手術技術標準教材' },
-    { type: 'journal', citation: 'Bellenger CR, Canfield RB. Perineal hernia. In: Slatter D, ed. Textbook of Small Animal Surgery, 3rd ed. Saunders, 2003:487-498.', relevance: '會陰疝氣完整外科參考' },
-    { type: 'journal', citation: 'Szabo S et al. Perineal hernia in the dog: a review of 104 cases. Vet Surg. 2007;36(7):E14.', relevance: '會陰疝氣大型回顧性研究' },
-    { type: 'journal', citation: 'Grand JG et al. Use of the internal obturator muscle for perineal herniorrhaphy in the dog. Vet Surg. 2013;42(6):652-659.', relevance: '閉孔內肌翻轉術技術與結果研究' },
-    { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021. Chapter: Perineal Surgery.', relevance: '會陰手術最佳實務指引' },
+    { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019. Chapter: Surgery of the Perineum, Rectum, and Anus.', relevance: '會陰疝氣手術技術標準教材' },
+    { type: 'journal', citation: 'Gill SS, Barstad RD. A review of the surgical management of perineal hernias in dogs. J Am Anim Hosp Assoc. 2018;54(4):179-187. doi:10.5326/jaaha-ms-6490', relevance: '會陰疝氣外科管理綜述（多因子病因、荷爾蒙為假說）' },
+    { type: 'journal', citation: 'Hardie EM, Kolata RJ, Earley TD, et al. Evaluation of internal obturator muscle transposition in treatment of perineal hernia in dogs. Vet Surg. 1983;12(2):69-72. doi:10.1111/j.1532-950x.1983.tb00709.x', relevance: 'IOT 術式原始評估' },
+    { type: 'journal', citation: 'Shaughnessy M, Monnet E. Internal obturator muscle transposition for treatment of perineal hernia in dogs: 34 cases (1998-2012). J Am Vet Med Assoc. 2015;246(3):321-326. doi:10.2460/javma.246.3.321', relevance: 'IOT 現代病例系列（一年復發 27.4%；v1 誤植為 Grand 2013）' },
+    { type: 'journal', citation: 'Grand JG, Bureau S, Monnet E. Effects of urinary bladder retroflexion and surgical technique on postoperative complication rates and long-term outcome in dogs with perineal hernia: 41 cases (2002-2009). J Am Vet Med Assoc. 2013;243(10):1442-1447. doi:10.2460/javma.243.10.1442', relevance: '膀胱後翻與術式對預後之影響（v1 誤植為 Vet Surg 42(6):652-659）' },
+    { type: 'journal', citation: 'Szabo S, Wilkens B, Radasch RM. Use of polypropylene mesh in addition to internal obturator transposition: a review of 59 cases (2000-2004). J Am Anim Hosp Assoc. 2007;43(3):136-142. doi:10.5326/0430136', relevance: 'polypropylene mesh 加強 IOT（v1 誤植為 Vet Surg 36(7):E14）' },
+    { type: 'journal', citation: 'Sangmanee P, Kovitvadhi A, Sutthiprapa W, et al. Canine perineal hernia associated with prostatic disorders: is castration really beneficial? A retrospective study. Animals (Basel). 2025;15(9):1206. doi:10.3390/ani15091206', relevance: '去勢對復發影響之最新回溯（n=315，無顯著差異）' },
   ],
   is_current: true,
   created_at: now,
