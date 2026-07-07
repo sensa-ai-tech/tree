@@ -2168,8 +2168,8 @@ const contentMyocardialRemodeling: NodeContent = {
 const contentArrhythmiaMechanism: NodeContent = {
   id: 'CONTENT-L2-003',
   node_id: 'CARDIO-L2-003',
-  version: 1,
-  summary: '心律不整的發生機轉分為三大類：自律性異常（enhanced/abnormal automaticity）、觸發活動（triggered activity）與折返（re-entry）。自律性異常來自節律細胞的固有放電頻率改變；觸發活動由後去極化（EAD/DAD）引發；折返則需要單向傳導阻滯、傳導延遲與可激動間隙。理解這三大機轉是選擇抗心律不整藥物的關鍵。',
+  version: 2,
+  summary: '心律不整的發生機轉可依「衝動形成異常」與「衝動傳導異常」兩大層級，臨床上再細分為三類：自律性異常（enhanced/abnormal automaticity）、觸發活動（triggered activity，由 EAD/DAD 引發）與折返（re-entry，需單向傳導阻滯、傳導延遲與可激動間隙）。折返為臨床上最常見的機轉。理解這些機轉是選擇抗心律不整藥物的關鍵。犬顯著室性心律不整以杜賓犬 DCM 與拳師犬 ARVC 兩大品種心肌病為原型；犬心房顫動以心房基質/多重小波折返為主（非人類的肺靜脈局灶觸發）。',
   learning_objectives: [
     '區分三大心律不整機轉：自律性異常、觸發活動與折返',
     '說明早期後去極化（EAD）與延遲後去極化（DAD）的離子基礎與臨床關聯',
@@ -2183,9 +2183,9 @@ const contentArrhythmiaMechanism: NodeContent = {
     'EAD（Early Afterdepolarization）：Phase 2-3 期間的異常去極化，與 QT 延長、低鉀血症相關',
     'DAD（Delayed Afterdepolarization）：Phase 4 的異常去極化，與細胞內 Ca²⁺ 過載相關（Digoxin 中毒）',
     '折返（Re-entry）三條件：(1) 解剖或功能性雙通路 (2) 單向傳導阻滯 (3) 傳導延遲使組織恢復可激動性',
-    '心房顫動（AF）的機轉：心房肌的多重小波折返（multiple wavelet re-entry）+ 自律性灶（肺靜脈口）',
+    '心房顫動（AF）的機轉：需足夠「臨界心房質量」的心房肌多重小波折返（multiple wavelet re-entry），多為續發於結構性心臟病+心房擴大；「肺靜脈口局灶」為人類陣發性 AF 概念、非犬 AF 主導機轉',
     'Vaughan-Williams 分類對應機轉：Class I（Na⁺ 阻滯，降低傳導速度）、Class III（K⁺ 阻滯，延長 ERP）主要作用於折返迴路',
-    '犬 VPC/VT 最常見於 DCM（杜賓犬），主要機轉為疤痕周圍的折返 + 異常自律性',
+    '犬顯著 VPC/VT 兩大原型：杜賓犬 DCM 與拳師犬 ARVC；機轉為纖維（脂肪）替代提供折返基質 + calstabin2/RyR2 鈣漏出致 DAD 觸發活動（異常自律性為次要）',
   ],
   body: `# 心律不整機轉 (Arrhythmia Pathogenesis)
 
@@ -2217,9 +2217,9 @@ const contentArrhythmiaMechanism: NodeContent = {
 
 ### 延遲後去極化 (DAD - Delayed Afterdepolarization)
 - 發生於 Phase 4（完全再極化後）
-- 離子基礎：細胞內 Ca²⁺ 過載 → SR 異常 Ca²⁺ 釋放 → NCX（Na⁺/Ca²⁺ exchanger）產生內向電流 → DAD
-- 臨床關聯：Digoxin 中毒、兒茶酚胺過量、心肌缺血/再灌流
-- 若 DAD 達到閾值 → 觸發性心搏
+- 離子基礎：細胞內 Ca²⁺ 過載 → SR（RyR2）自發性 Ca²⁺ 釋放 → 活化「正向」NCX（Na⁺/Ca²⁺ exchanger，3Na⁺ in/1Ca²⁺ out）產生電生性內向電流（transient inward current, Iti）→ DAD
+- 臨床關聯：Digoxin 中毒、兒茶酚胺過量、心肌缺血/再灌流；**Digoxin 機轉鏈**＝抑制 Na⁺/K⁺-ATPase → 細胞內 Na⁺ 上升 → 正向 NCX 之 Ca²⁺ 外排下降 → 細胞質 Ca²⁺ 累積、經 SERCA 使 SR Ca²⁺ 過載 → DAD（勿誤稱「NCX 反向」——DAD 內向電流由正向 NCX 產生）
+- 若 DAD 達到閾值 → 觸發性心搏（如拳師犬 ARVC 之 calstabin2/FKBP12.6 缺乏致 RyR2 舒張期鈣漏出）
 
 ## 機轉三：折返 (Re-entry)
 
@@ -2234,8 +2234,12 @@ const contentArrhythmiaMechanism: NodeContent = {
 |------|------|---------|
 | 解剖性大迴路 | AV node + 旁路 | 房室折返性心搏過速（AVRT） |
 | 解剖性小迴路 | AV node 雙通路 | 房室結折返性心搏過速（AVNRT） |
-| 功能性微迴路 | 心房肌多重小波 | 心房顫動（AF） |
-| 疤痕周圍折返 | 心室纖維化區域 | 心室頻脈（VT, 如 DCM） |
+| 功能性微迴路 | 心房肌多重小波（需臨界心房質量） | 心房顫動（AF） |
+| 疤痕周圍折返 | 心室纖維（脂肪）替代區域 | 心室頻脈（VT，如杜賓犬 DCM、拳師犬 ARVC） |
+
+> **犬心房顫動（AF）**：主導機轉為「需足夠臨界心房質量的多重小波折返」，絕大多數續發於結構性心臟病＋心房擴大；少數大型/巨型犬（愛爾蘭獵狼犬、大丹、杜賓）因基礎心房體積已達臨界質量可發生 lone/primary AF。「肺靜脈口局灶自律性觸發」主要是**人類陣發性 AF** 概念（Haïssaguerre 1998），非犬 AF 的主導維持機轉。
+>
+> **犬顯著室性心律不整**：兩大原型為杜賓犬 DCM 與拳師犬 ARVC。機轉為多重性——纖維（脂肪）替代（尤其拳師犬右心室）提供**折返基質**，而 calstabin2（FKBP12.6）缺乏致 RyR2 舒張期鈣漏出 → **DAD 觸發活動**（Oyama 2008）；異常自律性為次要貢獻。
 
 ## 二、臨床意義 (Clinical Significance)
 
@@ -2263,16 +2267,24 @@ const contentArrhythmiaMechanism: NodeContent = {
 | 犬「良性」VPC 與「惡性」VPC 的分界標準 | Holter VPC 數量、型態、複雜度均為考量，缺乏統一標準 | Level III |
 | 犬 AF 的藥物轉復是否值得嘗試 | 大型犬 AF 藥物/電復律復發率極高，目前共識為心率控制 | Level II |
 | 抗心律不整藥物的促心律不整風險量化 | 缺乏犬特異性的 proarrhythmia 風險評分工具 | Level IV |
-| 拳師犬 ARVC 的最佳長期藥物方案 | Sotalol vs Mexiletine+Sotalol 合併療法的比較數據有限 | Level III |
+| 拳師犬 ARVC 的最佳長期藥物方案 | Meurs 2002 四臂 RCT 證實有效者為「Sotalol 單藥」與「Mexiletine+Atenolol」（非 Sotalol）；Mexiletine+Sotalol 合併之優勢係後續研究（Gelzer 2010 德牧犬交叉試驗、小型拳師犬研究）所支持，比較數據仍有限 | Level III |
+
+## 五、近期更新 (Recent Updates)
+
+- **杜賓犬 DCM 猝死預測**：Klüser 2016（JVIM）顯示「總 VPC 數」對 SCD 無統計顯著預測力，真正預測因子為「VT 存在」與「最快 VPC 速率 ≥ 260 bpm」——治療決策應重型態/速率而非單純數量。ESVC 2017（Wess）篩檢標準（> 300 VPC/24h 或兩次 50-300）為「診斷 occult DCM」門檻，須與治療門檻區分。
+- **拳師犬 ARVC 分子機轉**：Oyama 2008（JVC）確立 calstabin2（FKBP12.6）缺乏 → RyR2 舒張期鈣漏出 → DAD 觸發活動；striatin 基因突變（Meurs）為部分家系病因——支持「折返基質＋觸發活動」雙機轉框架。
+- **犬 AF 治療**：Pedro 2018（JVIM）等支持「心率控制」為主（目標平均心率降低與存活相關），節律控制（藥物/電復律）復發率高；犬 AF 以心房基質/多重小波為主，肺靜脈消融之人醫策略於犬證據有限。
+- **抗心律不整藥與猝死**：至今無任何抗心律不整藥（含 Sotalol、mexiletine、amiodarone）被證實可降低犬室性心律不整之猝死率；合併療法（mexiletine+sotalol）抑制 VPC 效果優於單一用藥（Gelzer 2010）。
 
 [圖片:三大心律不整機轉示意圖，自律性、觸發活動、折返]`,
-  clinical_pearl: '臨床上最重要的判斷：心室早期收縮（VPC）何時需要治療？杜賓犬 DCM 相關的 VPC 若 Holter 顯示 > 300 VPC/24h、出現連續 VPC（couplets/triplets）、R-on-T 現象或心室頻脈，則需抗心律不整治療。Sotalol（Class III，延長 ERP）是杜賓犬 VPC 的首選，因為其疤痕周圍折返機轉對延長不反應期反應良好。',
+  clinical_pearl: '杜賓犬 DCM 的 Holter 判讀要區分「診斷」與「治療」兩個閾值——常被混淆：診斷面（ESVC 2017 Wess 篩檢標準）判定隱匿期 DCM 為「單次 > 300 VPC/24h」或「一年內兩次各 50-300 VPC/24h」（正常犬 < 50 VPC/24h）——這是「診斷 occult DCM」的門檻，不是啟動抗心律不整藥的門檻。治療面則以較高負荷（一般 > 1000 VPC/24h）合併惡性節律判準——連續 VPC（couplets/triplets）、R-on-T、非持續性/持續性 VT，尤其「最快 VPC 速率 ≥ 260 bpm」與「VT 存在」才是猝死最佳預測因子（Klüser 2016：總 VPC 數本身對 SCD 無統計顯著）。用藥可選 Sotalol（1.5-3.5 mg/kg PO q12h）或 Mexiletine + β-blocker，兩者為對等有效選項。關鍵告知飼主：目前無任何抗心律不整藥（含 Sotalol）被證實可降低猝死率；Sotalol 具強效 β-blocker 作用，於充血性心衰竭或左心收縮功能顯著低下者須謹慎或避免。',
   common_mistakes: [
-    '將所有心室早期收縮（VPC）都視為需要立即治療，孤立的 VPC 若無臨床症狀且頻率低，可能僅需追蹤',
+    '把杜賓犬「> 300 VPC/24h」的「診斷 occult DCM」門檻誤當成「啟動抗心律不整藥」的治療門檻（治療看型態/速率：VT、R-on-T、最快 ≥260 bpm）',
     '混淆 EAD 與 DAD，EAD 發生於 Phase 2-3（再極化過程中），DAD 發生於 Phase 4（再極化完成後）',
     '忽略電解質異常在心律不整中的角色，低鉀、低鎂是許多心律不整的可糾正原因',
     '對犬心房顫動使用抗心律不整藥物嘗試轉復，犬 AF（尤其大型犬）通常為永久性，治療目標是心率控制而非節律控制',
-    '未區分窄 QRS 與寬 QRS 心搏過速的機轉差異，影響藥物選擇安全性',
+    '把「肺靜脈口局灶」當犬 AF 主導機轉（那是人類陣發性 AF 概念；犬 AF 以心房基質/多重小波折返為主）',
+    '以為抗心律不整藥可降低猝死率（至今未證實；Sotalol 於 CHF/低 LVEF 須謹慎）',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -2287,9 +2299,13 @@ const contentArrhythmiaMechanism: NodeContent = {
   drug_api_links: ['Sotalol', 'Mexiletine', 'Lidocaine', 'Diltiazem', 'Atenolol', 'Digoxin'],
   references: [
     { type: 'textbook', citation: 'Tilley LP, Smith FWK. Electrocardiography in Small Animal Practice, 5th ed. Elsevier, 2016. Chapter 2: Mechanisms of Arrhythmias.', relevance: '心律不整機轉標準教材' },
-    { type: 'journal', citation: 'Wess G et al. Prevalence of dilated cardiomyopathy and ventricular arrhythmias in Doberman Pinschers. J Vet Intern Med. 2010;24(6):1358-1364.', relevance: '杜賓犬 DCM 相關心律不整流行病學' },
-    { type: 'textbook', citation: 'Santilli RA et al. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018. Chapter 3: Arrhythmia Mechanisms.', relevance: '獸醫心律不整機轉進階教材' },
-    { type: 'guideline', citation: 'Côté E, MacDonald KA, Meurs KM, et al. "Feline Cardiology." Wiley-Blackwell, 2011.', relevance: '貓心臟病病理機轉參考' },
+    { type: 'textbook', citation: 'Santilli RA, Moïse NS, Pariaut R, Perego M. Electrocardiography of the Dog and Cat, 2nd ed. Edra, 2018. Chapter: Arrhythmia Mechanisms.', relevance: '獸醫心律不整機轉進階教材' },
+    { type: 'journal', citation: 'Wess G, Schulze A, Butz V, et al. Prevalence of dilated cardiomyopathy in Doberman Pinschers in various age groups. J Vet Intern Med. 2010;24(3):533-538. doi:10.1111/j.1939-1676.2010.0479.x', relevance: '杜賓犬 DCM 盛行率（v1 誤植卷期/題名，已依 Crossref 更正 24(6):1358-1364→24(3):533-538）' },
+    { type: 'journal', citation: 'Meurs KM. Arrhythmogenic right ventricular cardiomyopathy in the Boxer dog. Vet Clin North Am Small Anim Pract. 2017;47(5):1103-1111. doi:10.1016/j.cvsm.2017.04.007', relevance: '拳師犬 ARVC 綜述（另一室性心律不整原型）' },
+    { type: 'journal', citation: 'Oyama MA, Reiken S, Lehnart SE, et al. Arrhythmogenic right ventricular cardiomyopathy in Boxer dogs is associated with calstabin2 deficiency. J Vet Cardiol. 2008;10(1):1-10. doi:10.1016/j.jvc.2008.04.003', relevance: 'ARVC 之 calstabin2/RyR2 鈣漏出→DAD 觸發活動細胞機轉' },
+    { type: 'journal', citation: 'Meurs KM, Spier AW, Wright NA, et al. Comparison of the effects of four antiarrhythmic treatments for familial ventricular arrhythmias in Boxers. J Am Vet Med Assoc. 2002;221(4):522-527. doi:10.2460/javma.2002.221.522', relevance: '拳師犬 ARVC 抗心律不整四臂 RCT（Sotalol、Mexiletine+Atenolol 有效）' },
+    { type: 'journal', citation: 'Klüser L, Holler PJ, Simak J, et al. Predictors of sudden cardiac death in Doberman Pinschers with dilated cardiomyopathy. J Vet Intern Med. 2016;30(3):722-732. doi:10.1111/jvim.13941', relevance: '杜賓犬 SCD 預測因子（VT/最快速率而非總 VPC 數）' },
+    { type: 'journal', citation: 'Pedro B, López-Alvarez J, Fonfara S, et al. Retrospective evaluation of the effect of heart rate on survival in dogs with atrial fibrillation. J Vet Intern Med. 2018;32(1):86-92. doi:10.1111/jvim.14896', relevance: '犬 AF 心率控制與存活' },
   ],
   is_current: true,
   created_at: now,
