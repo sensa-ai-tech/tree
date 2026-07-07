@@ -2672,8 +2672,8 @@ const contentJointDegeneration: NodeContent = {
 const contentPreopImaging: NodeContent = {
   id: 'CONTENT-SURG-L4-001',
   node_id: 'SURG-L4-001',
-  version: 1,
-  summary: '術前影像評估是外科手術計畫的基礎，包括X光（放射線攝影）、超音波、CT與MRI。腹腔手術主要依賴腹部超音波與X光，骨科手術依賴雙正交X光與CT（複雜骨折），脊椎手術依賴MRI。急診影像評估（AFAST/TFAST）可在數分鐘內提供關鍵決策資訊。',
+  version: 2,
+  summary: '術前影像評估是外科手術計畫的基礎，包括X光（放射線攝影）、超音波、CT與MRI。腹腔手術主要依賴腹部超音波與X光，骨科手術依賴雙正交X光與CT（複雜骨折），脊椎手術依賴MRI。急診影像評估（AFAST/TFAST POCUS）可在數分鐘內提供關鍵決策資訊——但陽性/陰性均須結合臨床，且積液性質、脾腫塊良惡性、氣胸確立都不能單憑一次掃描定論。',
   learning_objectives: [
     '為不同手術類型選擇適當的術前影像工具',
     '執行 AFAST/TFAST 快速評估並解讀結果',
@@ -2681,11 +2681,12 @@ const contentPreopImaging: NodeContent = {
     '說明 CT 在複雜骨折與關節手術術前規劃中的價值',
   ],
   key_points: [
-    'AFAST：4 個標準位置快速偵測腹腔積液，< 2 分鐘完成',
-    'TFAST：胸腔超音波快速評估心包積液、氣胸與胸腔積液',
-    '骨折 X 光原則：兩正交位（AP + lateral）、包含上下關節',
-    '腹部超音波：脾臟腫塊、子宮蓄膿、膽囊疾病的首選影像',
-    '胸腔 X 光三視角：右臥、左臥、VD/DV，評估肺轉移與心臟大小',
+    'AFAST 計分視窗＝DH／SR／CC／SIU（原 HRU）4 個；另 HR 為第 5 bonus 視窗（評分但不計入總分）',
+    'AFAST 陽性只代表「有積液」；性質（出血/尿/膿）須靠腹腔穿刺＋液體分析，AFS 0–4 半定量估量',
+    'TFAST：氣胸不能只憑「glide sign 消失」（僅提示徵象），確立須找到 lung point',
+    '骨折 X 光原則：兩正交位（獸醫為 ML + CrCd，非人醫 AP）、包含骨折上下各一關節',
+    '腹部超音波：脾臟腫塊、子宮蓄膿、膽囊疾病的首選影像（但影像外觀無法鑑別脾腫塊良惡性）',
+    '胸腔 X 光三視角：右臥、左臥、VD/DV，肺轉移分期（陰性不排除微轉移，CT 更敏感）',
     'CT 優勢：3D 重建用於複雜關節內骨折、TPLO TPA 測量、脊椎骨折評估',
     'MRI：脊髓疾病金標準，術前精確定位壓迫段',
   ],
@@ -2693,57 +2694,67 @@ const contentPreopImaging: NodeContent = {
 
 ## 一、檢查原理與適應症 (Principles & Indications)
 
+術前影像的目的是「為手術決策服務」：確認病灶位置與範圍、評估可切除性與分期、選擇入路與固定方式，並在急診情境下快速篩檢危及生命的積液/氣胸。工具由快到慢、由篩檢到精確依序為 FAST/POCUS 超音波 → X 光 → 完整腹部超音波 → CT / MRI。
 
+### 急診影像（POCUS / FAST 掃描）
 
-### 急診影像（FAST 掃描）
-### AFAST（Abdominal Focused Assessment with Sonography for Trauma）
-四個標準位置：
-1. DH（Diaphragmatic-hepatic）：右側肝腎間
-2. SR（Spleno-renal）：左側脾腎間
-3. CC（Cysto-colic）：膀胱周圍
-4. HR（Hepato-renal）：肝腎間
+#### AFAST（Abdominal Focused Assessment with Sonography for Trauma）
+AFAST3／Global FAST 的**腹腔積液評分**採 4 個標準視窗（右側臥為主）：
+1. **DH（Diaphragmatico-Hepatic，膈-肝）**：劍突下、肝與橫膈交界處（*非*右側肝腎區——此處常被誤植成 HR）。
+2. **SR（Spleno-Renal，脾腎）**：左側脾腎交界。
+3. **CC（Cysto-Colic，膀胱-結腸）**：膀胱頂／膀胱-結腸交界（最重力依賴，少量積液最先積聚）。
+4. **SIU（Spleno-Intestino-Umbilical，脾-腸-臍）**：原稱 HRU（Hepato-Renal Umbilical），後由 Lisciandro 更名為 SIU。
 
-陽性 = 無回音液體 → 腹腔積液（出血、尿液、腹膜炎滲出液）
+> **另有 HR（Hepato-Renal，肝腎／右腎後腹膜）第 5「bonus」視窗**：會單獨評分但**不計入**腹腔積液總分。故完整 AFAST3 實際掃描 5 個位置（4 個計分 + HR bonus），而非固定 4 個。
 
-### TFAST（Thoracic FAST）
-- 心包積液（PE）
-- 氣胸（absence of glide sign）
-- 胸腔積液
+- **陽性**＝任一視窗見游離液體（急性積液典型呈無回音/低回音）→ 判定為腹腔積液。**但積液性質**（出血、尿液、敗血性/滲出性腹膜炎、漏出液）**無法僅憑 AFAST 判定**，須搭配腹腔穿刺與液體分析（PCV/TP、肌酐、細胞學、培養）確認。
+- **AFS（Abdominal Fluid Score，腹腔積液評分）**：半定量 0–4 分＝陽性視窗數（Lisciandro 2009 驗證；AFS 3–4 屬大量出血，與較低 PCV/TP 及較高輸血需求相關）。
+
+#### TFAST（Thoracic FAST）
+標準三視窗：**雙側 CTS（Chest Tube Site，第 7–9 肋間）＋雙側 PCS（Pericardial Site，第 5–6 肋間）＋單一 DH 視窗**，評估：
+- **心包積液、胸腔（肋膜）積液**（PCS / DH）。
+- **氣胸**（CTS）：以「肺滑動 glide sign」存在／lung pulse／B-lines 來**排除**氣胸；**「glide sign 消失」僅為提示徵象、非單獨診斷依據**（肺沾黏、單側支氣管插管、呼吸暫停、嚴重肺實質病變亦可使肺滑動消失）；**確立氣胸須找到「肺點 lung point」**——肺滑動與無滑動的交界（Lichtenstein 報告對氣胸 100% 特異、敏感度約 66%，全肺塌陷時不出現），並可據其位置估計氣胸範圍。
 
 ### 軟組織手術影像
 | 手術類型 | 首選影像 | 輔助影像 |
 |---------|---------|---------|
 | GDV | 右側臥腹部 X 光 | 無（需緊急手術） |
-| 脾臟腫瘤 | 腹部超音波 + AFAST | 胸腔 X 光（轉移評估） |
+| 脾臟腫瘤 | 腹部超音波 + AFAST | 三視角胸腔 X 光（分期） |
 | 子宮蓄膿 | 腹部超音波 | 腹部 X 光 |
 | 腸道異物 | 三視角腹部 X 光 | 超音波 |
 | 膽囊疾病 | 腹部超音波 | |
 
 ### 骨科手術影像
-### X 光標準原則
-- 兩正交位（AP + lateral）
-- 包含骨折上下各一個關節
-- 對側正常肢作比較（幼犬生長板評估）
 
-### CT 適應症
-- 複雜關節內骨折術前 3D 規劃
-- TPLO 術前 TPA 精確測量
-- 肘關節 MCD（medial coronoid disease）
-- 脊椎骨折/脫位評估
+#### X 光標準原則
+- **兩正交位**：獸醫四肢採 **mediolateral（ML）＋ craniocaudal（CrCd）**（腕/跗以遠改 dorsopalmar/plantar）——*非*人醫的 AP（anteroposterior）。
+- 影像須**包含骨折上下各一個關節**（否則漏關節內延伸或第二處骨折）。
+- 幼犬照**對側正常肢**作比較（生長板評估）。
+
+#### CT 適應症
+- 複雜關節內骨折術前 3D 規劃。
+- TPLO 術前脛骨平台角（TPA）測量（CT 之 landmark 辨識與觀察者間一致性優於 X 光，測量更可靠）。
+- 肘關節內側喙突病（MCD, medial coronoid disease）。
+- 脊椎骨折/脫位評估。
+
+#### MRI
+脊髓/椎間盤疾病的**診斷金標準**（胸腰椎 IVDH 敏感度約 98.5%），術前可精確定位壓迫節段與側化，指導椎板切除入路。
 
 ## 二、判讀要點 (Interpretation)
 
 術前影像的判讀重點是「為手術決策服務」，不是放射科式的全面描述：
-- **AFAST/TFAST 是動態、可重複的篩檢**：陽性（無回音游離液）要結合臨床——出血性休克＋AFAST 陽性＝考慮急診剖腹；但少量積液不一定要開刀，要看血流動力學與抽液性質（PCV/TP、肌酐、細胞學）。AFAST 陰性不排除腹膜後或局限性病灶。
-- **影像分期決定手術範圍**：脾臟腫塊術前一定要照胸腔（三視角）評估肺轉移、做 AFAST 看腹腔出血；轉移與否直接改變「要不要開、開多大、術前談什麼預後」。
+- **AFAST/TFAST 是動態、可重複的篩檢**：陽性（游離液）要結合臨床——出血性休克＋AFAST 陽性＝考慮急診剖腹；但少量積液不一定要開刀，要看血流動力學與抽液性質（PCV/TP、肌酐、細胞學）。AFAST 陰性不排除腹膜後、超急性或局限性病灶，臨床高度懷疑要重複掃或進階影像。
+- **影像分期決定手術範圍**：脾臟腫塊術前做三視角胸腔 X 光評估肺轉移、做 AFAST 看腹腔出血；轉移與否影響「開多大、術前談什麼預後」（但胸腔 X 光陰性不排除微轉移，脾切除仍為控制出血所必需）。
 - **骨科：兩正交位＋含上下關節是底線**：只照一個方向會漏移位/旋轉；骨折一定要含上下各一關節，否則漏掉關節內延伸或第二處骨折。幼犬照對側比較生長板。
 - **CT 用在「X 光講不清楚」時**：複雜關節內骨折 3D 規劃、TPLO 的 TPA 測量、肘關節 MCD、脊椎骨折——這些 X 光容易低估，CT 才能精準術前規劃。
 
 ## 三、常見陷阱 (Pitfalls)
 
-- **把 AFAST 陰性當「沒事」**：超急性出血、腹膜後出血、局限性病灶可能 AFAST 陰性，臨床高度懷疑要重複掃或進階影像。
-- **GDV 拖去做超音波/CT**：GDV 是臨床＋一張右側臥腹部 X 光（compartmentalization / double bubble）就夠，先穩定減壓再手術，別為影像延誤。
-- **脾臟腫塊沒照胸腔就開刀**：漏掉肺轉移會誤判預後、影響飼主決策（HSA 轉移率高）。
+- **把「glide sign 消失」直接當成氣胸**：肺沾黏、單側支氣管插管、呼吸暫停、嚴重肺實質病變都會使肺滑動消失卻無氣胸；要找到 lung point 才能確立。
+- **把 AFAST 陰性當「沒事」**：超急性出血、腹膜後出血、局限性病灶可能 AFAST 陰性，臨床高度懷疑要重複掃或進階影像。偵測下限約 2–6.6 mL/kg（Henley 1989），優於 X 光的約 8.8 mL/kg，但極少量積液仍可能漏。
+- **GDV 拖去做超音波/CT**：GDV 是臨床＋一張右側臥腹部 X 光（compartmentalization / double bubble / Popeye arm）就夠。**理想上應在減壓前拍攝**（病況穩定許可時，減壓後氣體變化會降低診斷率）；但病人不穩時先減壓復甦優先，別為影像延誤手術。
+- **脾臟腫塊沒照胸腔就開刀**：HSA 轉移率高（分期用；陰性不排除微轉移）。
+- **想用影像外觀鑑別脾腫塊良惡性**：B 型超音波沒有任何特徵能穩定預測惡性，血管肉瘤與良性血腫在影像上高度重疊，確診須組織病理。
 - **骨折只照單一方向或不含關節**：漏移位、漏關節內延伸、漏第二骨折——術中才發現就被動。
 - **過度依賴影像、忽略臨床/血流動力學**：影像是輔助，休克病人先穩定（ABC）再追影像，不是反過來。
 
@@ -2760,21 +2771,29 @@ const contentPreopImaging: NodeContent = {
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 犬脾臟腫塊的術前影像能否區分良性 vs 惡性 | 超音波特徵（回音性、均勻度）鑑別良惡性準確率約 50-65%，CT contrast enhancement pattern 可能稍優但仍不可靠 | Level III |
+| 犬脾臟腫塊的術前影像能否區分良性 vs 惡性 | 傳統 B 型超音波/CT **無法可靠鑑別**——B 型超音波各參數與惡性無顯著關聯（Maronezi 2022, Sci Rep，各參數 P>0.05），血管肉瘤與良性血腫影像重疊，確診須組織病理；進階技術如 ARFI 彈性成像（準確率約 97%）、MRI（約 94%）有前景但非常規配備 | Level III |
 | AFAST 腹腔積液半定量評分（AFS）的臨床效用 | AFS 評分與積液量相關但對指導手術決策的閾值未確立，是否優於 serial AFAST 重複掃描尚待驗證 | Level III |
-| 犬急性腹痛的影像診斷起手式：X 光 vs 超音波 vs 兩者並行 | 超音波對軟組織病變敏感度較高但技術依賴性強，X 光對游離氣體與異物優勢明確，急診最佳起手組合缺乏成本效益分析 | Level III |`,
+| 犬急性腹痛的影像診斷起手式：X 光 vs 超音波 vs 兩者並行 | 超音波對軟組織病變敏感度較高但技術依賴性強，X 光對游離氣體與異物優勢明確，急診最佳起手組合缺乏成本效益分析 | Level III |
+
+## 六、近期更新 (Recent Updates)
+
+- **AFAST 命名標準化（Lisciandro）**：四個計分視窗定名為 DH／SR／CC／SIU（原 HRU 更名為 SIU），並確立 HR（肝腎）為第 5「bonus」視窗（評分但不計入總分）；AFS 精修為含 1/2「弱陽性」與 <3 小量／≥3 大量出血之分級，但仍為 0–4 半定量系統。
+- **Global FAST 概念**：AFAST＋TFAST＋Vet BLUE（肺部超音波）整合為全身 POCUS；氣胸判讀強調「多徵象演算法」（glide sign／lung pulse／B-lines／lung point）優於單一 glide sign（Lisciandro 2021, Vet Clin North Am）。
+- **CT 漸取代部分 X 光角色**：胸腔 CT 對肺轉移敏感度高於三視角 X 光，資源允許時用於高風險腫瘤分期；TPLO 之 TPA 測量 CT 較 X 光可靠。
+- **脾臟腫塊影像研究**：Maronezi 2022（Sci Rep）確立 B 型超音波無法預測惡性、ARFI 彈性成像準確率約 97%，但後者仍非常規配備——術前影像用於分期與手術規劃，不可替代組織病理鑑別良惡性。`,
   clinical_pearl: 'GDV 診斷影像有一個很特定的要求：必須拍「右側臥位」（right lateral recumbency）腹部 X 光。這個體位才看得到特徵性的「雙氣泡徵」或「Popeye arm sign」，幽門軟組織密度帶把胃分成兩個充氣腔室。左側臥位可能就拍不清楚這個徵象。但要記住：影像確認不能拖到急診穩定化處理之後再做。',
   common_mistakes: [
-    'GDV 拍左側臥位 X 光，錯過典型影像特徵',
+    'GDV 拍左側臥位 X 光，錯過典型影像特徵（雙氣泡/Popeye arm）',
+    '把 TFAST「glide sign 消失」直接當氣胸，沒找 lung point 確立',
     '骨折 X 光只拍一個視角或沒含鄰近關節',
     'AFAST 假陰性，少量積液可能被漏掉，臨床高度懷疑就要重複檢查',
-    '只用 X 光評估軟組織腹腔疾病，沒加做超音波',
+    '想用超音波/CT 影像外觀鑑別脾腫塊良惡性（實際須組織病理）',
   ],
   disease_data: null,
   diagnostic_data: {
     indication: ['任何計畫性或急診手術的術前評估', '創傷評估（AFAST/TFAST）', '腫瘤分期（胸腔X光+腹部超音波）', '骨折術前固定方式規劃'],
     contraindication: ['CT/MRI 需全身麻醉，嚴重不穩定患者要先穩定', 'X 光禁忌：沒絕對禁忌，但懷孕動物要評估效益風險'],
-    technique: 'AFAST：右側臥位，線性或曲面探頭掃描 4 個標準位置。腹部X光：三視角（右臥、左臥、VD）。骨折X光：兩正交位含上下關節。CT：全身麻醉，薄層掃描 + 3D 重建。',
+    technique: 'AFAST：右側臥位，微凸/線陣探頭掃描 4 個計分視窗（DH/SR/CC/SIU）＋ HR bonus。腹部X光：三視角（右臥、左臥、VD）。骨折X光：兩正交位（ML + CrCd）含上下關節。CT：全身麻醉，薄層掃描 + 3D 重建。',
     normal_findings: [
       { finding: 'AFAST 四點無積液', description: '四個位置都沒看到無回音液體', significance: '可以排除明顯腹腔積液，少量還是有可能漏' },
       { finding: '腹部X光正常氣體分布', description: '胃與腸道少量氣體，分布均勻', significance: '排除腸阻塞與 GDV' },
@@ -2785,8 +2804,8 @@ const contentPreopImaging: NodeContent = {
       { finding: '骨折線可見', description: '骨皮質不連續性', significance: '骨折確診，需評估分型' },
     ],
     interpretation_guide: '1. 急診先做 FAST → 2. 穩定後依手術類型選擇適當影像 → 3. 系統性判讀 → 4. 結合臨床做手術決策。',
-    pitfalls: ['AFAST 對少量積液（< 10 mL/kg）敏感度有限', '非透光異物X光可能正常', '體型極小的動物超音波評估困難'],
-    sensitivity_specificity: 'AFAST 對中等量以上腹腔積液敏感度 > 90%。X光對不透光異物敏感度高但對軟組織異物低。CT 對骨折細節的敏感度接近 100%。',
+    pitfalls: ['AFAST 對極少量積液（約 <2–4 mL/kg）敏感度受限，且依操作者與是否掃最重力依賴視窗（CC/SIU）而定', '「glide sign 消失」非氣胸確診依據，須找 lung point', '非透光異物X光可能正常', '體型極小的動物超音波評估困難'],
+    sensitivity_specificity: 'AFAST 偵測腹腔游離液整體敏感度約 96%、特異度 100%（Boysen 2004, 100 隻鈍傷犬；為整體數值而非依積液量分層）；超音波偵測下限約 2–6.6 mL/kg（Henley 1989），優於 X 光的約 8.8 mL/kg。X光對不透光異物敏感度高但對軟組織異物低。CT 對骨折細節的敏感度接近 100%。',
     cost_benefit: 'AFAST 免費又快（< 2 分鐘），應該列為創傷急診的標準步驟。X 光費用低、普及率高。CT/MRI 費用比較高但複雜病例就是少不了。',
   },
   procedure_data: null,
@@ -2796,10 +2815,14 @@ const contentPreopImaging: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'journal', citation: 'Boysen SR et al. Evaluation of a focused assessment with sonography for trauma protocol to detect free abdominal fluid in dogs involved in motor vehicle accidents. J Am Vet Med Assoc. 2004;225(8):1198-1204.', relevance: 'AFAST 原始驗證研究' },
+    { type: 'journal', citation: 'Boysen SR, Rozanski EA, Tidwell AS, Holm JL, Shaw SP, Rush JE. Evaluation of a focused assessment with sonography for trauma protocol to detect free abdominal fluid in dogs involved in motor vehicle accidents. J Am Vet Med Assoc. 2004;225(8):1198-1204. doi:10.2460/javma.2004.225.1198', relevance: 'AFAST 原始驗證研究（敏感度 96%/特異度 100%）' },
+    { type: 'journal', citation: 'Lisciandro GR, Lagutchik MS, Mann KA, et al. Evaluation of an abdominal fluid scoring system determined using abdominal focused assessment with sonography for trauma in 101 dogs with motor vehicle trauma. J Vet Emerg Crit Care. 2009;19(5):426-437. doi:10.1111/j.1476-4431.2009.00459.x', relevance: 'AFS 腹腔積液評分系統之驗證與四視窗計分' },
+    { type: 'journal', citation: 'Lisciandro GR. Abdominal and thoracic focused assessment with sonography for trauma, triage, and monitoring in small animals. J Vet Emerg Crit Care. 2011;21(2):104-122. doi:10.1111/j.1476-4431.2011.00626.x', relevance: 'AFAST/TFAST 視窗、氣胸判讀與臨床應用綜論' },
+    { type: 'journal', citation: 'Lisciandro GR, Lisciandro SC. TFAST Accurate Diagnosis of Pleural and Pericardial Effusion, Caudal Vena Cava in Dogs and Cats. Vet Clin North Am Small Anim Pract. 2021;51(6):1169-1182. doi:10.1016/j.cvsm.2021.07.004', relevance: 'TFAST 近期回顧（Global FAST、lung point）' },
+    { type: 'journal', citation: 'Henley RK, Hager DA, Ackerman N. A comparison of two-dimensional ultrasonography and radiography for the detection of small amounts of free peritoneal fluid in the dog. Vet Radiol. 1989;30(3):121-124. doi:10.1111/j.1740-8261.1989.tb00758.x', relevance: '游離腹水超音波偵測下限（約 2–6.6 mL/kg）' },
+    { type: 'journal', citation: 'Maronezi MC, Simões APR, Uscategui RAR, et al. Accuracy of B-mode ultrasound and ARFI elastography in predicting malignancy of canine splenic lesions. Sci Rep. 2022;12(1):4602. doi:10.1038/s41598-022-08317-7', relevance: '脾臟腫塊 B 型超音波無法鑑別良惡性、ARFI 準確率約 97%' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '術前影像評估' },
     { type: 'textbook', citation: 'Thrall DE. Textbook of Veterinary Diagnostic Radiology, 7th ed. Elsevier, 2018.', relevance: '獸醫放射學教材' },
-    { type: 'guideline', citation: 'Lisciandro GR. AFAST and TFAST Clinical Pet Protocols. In: Point-of-Care Ultrasound Techniques for the Small Animal Practitioner, 2nd ed. Wiley-Blackwell, 2021.', relevance: 'AFAST/TFAST 臨床標準化掃描指引' },
   ],
   is_current: true,
   created_at: now,
