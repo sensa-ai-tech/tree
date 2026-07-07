@@ -1905,8 +1905,8 @@ const contentScabies: NodeContent = {
 const contentPemphigus: NodeContent = {
   id: 'CONTENT-DERM-L3-010',
   node_id: 'DERM-L3-010',
-  version: 1,
-  summary: '天疱瘡（Pemphigus）是一組自體免疫性水泡性皮膚病，犬貓裡面最常看到的是落葉型天疱瘡（Pemphigus Foliaceus, PF）。病理機轉是自體抗體（主要針對 desmoglein-1）攻擊表皮細胞間的橋粒（desmosome），跑出棘層鬆解（acantholysis）跟表皮內膿皰。臨床上的特徵是面部（鼻樑、耳翼）對稱性的膿皰、結痂跟脫屑。皮膚細胞學看到棘層鬆解細胞（acantholytic cells）是關鍵線索，確診要靠皮膚切片病理學。治療核心是免疫抑制，長期管理難度很高。台灣秋田犬飼養量大，犬 PF 病例相對常見；貓 PF 則要特別注意 methimazole 觸發型（台灣甲亢貓用 methimazole 的比例很高）。',
+  version: 2,
+  summary: '天疱瘡（Pemphigus）是一組自體免疫性水泡性皮膚病，犬貓裡面最常看到的是落葉型天疱瘡（Pemphigus Foliaceus, PF）。病理機轉是自體抗體攻擊表皮細胞間的橋粒（desmosome）——**犬 PF 的主要自體抗原為 desmocollin-1（DSC1），而非人醫 PF 的 desmoglein-1**（Dsg1 在犬僅為次要抗原，這是關鍵物種差異）——造成棘層鬆解（acantholysis）跟表皮內膿皰。臨床上的特徵是面部（鼻樑、耳翼）對稱性的膿皰、結痂跟脫屑。皮膚細胞學看到棘層鬆解細胞（acantholytic cells）是關鍵線索，確診要靠皮膚切片病理學。治療核心是免疫抑制，長期管理難度很高。台灣秋田犬飼養量大，犬 PF 病例相對常見；貓 PF 則要特別注意 methimazole 觸發型（台灣甲亢貓用 methimazole 的比例很高）。',
   learning_objectives: [
     '描述落葉型天疱瘡的棘層松解病理機轉',
     '辨識 PF 的典型臨床分佈與病灶特徵',
@@ -1915,13 +1915,14 @@ const contentPemphigus: NodeContent = {
     '區分 PF 與膿皮症的臨床與細胞學差異',
   ],
   key_points: [
-    'PF 是犬貓最常見的自體免疫性皮膚病',
-    '病理核心：自體抗體攻擊 desmoglein-1 → 棘層松解 → 表皮內膿皰',
-    '典型分佈：鼻樑、耳翼、眼周（面部對稱性）；可擴展至足墊、爪甲',
-    '足墊病灶（角化過度、裂隙）在犬 PF 中具有高度特異性',
-    '細胞學關鍵：膿皰中見大量棘層松解細胞（圓形角質細胞，無退化嗜中性球吞噬細菌）',
-    '確診需要皮膚切片：表皮內（角質層下/顆粒層）膿皰含棘層松解細胞',
-    '治療首選：Prednisolone 免疫抑制劑量 + Azathioprine 或 Mycophenolate 作為節約類固醇劑',
+    'PF 是犬貓最常見的自體免疫性皮膚病；深層天疱瘡（PV 等）相對罕見',
+    '病理核心：自體抗體攻擊橋粒 cadherin（犬 PF 主要為 desmocollin-1，非人醫的 desmoglein-1）→ 棘層鬆解 → 表皮內膿皰',
+    '棘層鬆解為抗體直接介導：不需補體/Fc/蛋白酶（steric hindrance + p38MAPK 訊息傳遞）',
+    '典型分佈：鼻樑/鼻鏡、耳翼、眼周（面部對稱性）＋軀幹；犬約 35% 及足墊；爪甲侵犯主要見於貓',
+    '足墊病灶（角化過度、裂隙）具提示性、有助與腹側好發的膿皮症鑑別，但非高度特異（須組織病理確診）',
+    '細胞學：成團棘層鬆解細胞（圓形角質細胞）＋非退化嗜中性球（煎蛋外觀），通常無菌——但非絕對（膿皮症亦可少量出現、PF 約 5% 可見菌）',
+    '確診需皮膚切片：表皮內（角質層下/顆粒層）棘層鬆解性膿皰（DIF 非必需、偽陰性常見）',
+    '治療首選：Prednisolone 免疫抑制劑量 + Azathioprine（犬）或 Mycophenolate 作為節約類固醇劑（貓禁用 azathioprine）',
   ],
   body: `# 天疱瘡 (Pemphigus)
 
@@ -1930,19 +1931,19 @@ const contentPemphigus: NodeContent = {
 
 
 ### 概述
-天疱瘡是自體抗體攻擊角質細胞間黏附結構（橋粒）造成的自體免疫性水泡或膿皰性皮膚病。犬貓裡面以落葉型天疱瘡（PF）最常見，超過 90%，其他亞型（尋常型 PV、增殖型、紅斑型）很少看到。
+天疱瘡是自體抗體攻擊角質細胞間黏附結構（橋粒）造成的自體免疫性水泡或膿皰性皮膚病。犬貓裡面以落葉型天疱瘡（PF）最常見（絕大多數天疱瘡病例），其他深層亞型（尋常型 PV、增殖型、副腫瘤型）相對罕見。
 
-### 分型
-- 落葉型天疱瘡（PF）：最常見，攻擊 desmoglein-1，跑表淺膿皰。
-- 尋常型天疱瘡（PV）：很罕見，攻擊 desmoglein-3，跑深層水泡，口腔黏膜也會被影響。
+### 分型與自體抗原（⚠️ 物種差異）
+- 落葉型天疱瘡（PF）：最常見，跑表淺膿皰。**犬 PF 主要自體抗原為 desmocollin-1（DSC1）**——注意人類 PF 的主要標靶是 desmoglein-1，但 Dsg1 在犬 PF 僅為次要抗原（約 6% 血清陽性，Olivry 2006），勿把人醫抗原套用到犬。**貓 PF 的標靶抗原尚未確立。**
+- 尋常型天疱瘡（PV）：罕見，攻擊 desmoglein-3，基底上（suprabasal）裂隙（殘留一排「墓碑狀」基底細胞），口腔黏膜也會被影響。
 - 紅斑型天疱瘡（PE）：PF 的局部變體，只影響面部。
 - 藥物誘發型：某些藥物（例如 methimazole）會觸發。
 
 ### 病理機轉
-1. 免疫耐受失敗，跑出抗 desmoglein-1 的自體抗體（IgG）。
-2. 自體抗體結上表皮角質細胞表面的 desmoglein-1。
-3. 直接效應：抗體結合後橋粒功能就壞掉，細胞之間黏不住。
-4. 間接效應：補體被活化，蛋白酶釋出來加速橋粒破壞。
+1. 免疫耐受失敗，跑出抗橋粒 cadherin（犬 PF 為 DSC1）的自體抗體（IgG）。
+2. 自體抗體結上表皮角質細胞表面的 DSC1。
+3. 棘層鬆解為**抗體直接介導**，兩種非互斥機轉：(a) 直接位阻抑制（steric hindrance）cadherin 反式結合；(b) 細胞內訊息傳遞（p38MAPK/EGFR、desmoglein 群聚—內吞—去除）。
+4. **注意：此棘層鬆解不需補體、不需 Fc、不需蛋白酶**（單價 Fab'/scFv 片段即可重現病灶）——故勿把「補體/蛋白酶活化」列為致病機轉。
 5. 棘層鬆解（acantholysis），角質細胞彼此分離。
 6. 跑出表皮內膿皰（位置在角質層下或顆粒層）。
 7. 膿皰裡面裝的是棘層鬆解細胞加上嗜中性球，不是感染。
@@ -1950,16 +1951,16 @@ const contentPemphigus: NodeContent = {
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
 ### 犬
-- 面部：鼻樑、耳翼、眼周對稱性的膿皰、結痂、脫屑。
-- 足墊：角化過度、裂隙、疼痛，這個表現特異性很高。
-- 爪甲：甲床炎、爪甲脫落。
-- 全身性：嚴重病例會擴到軀幹跟腹股溝。
+- 面部：鼻樑/鼻鏡、耳翼（含內耳翼）、眼周對稱性的膿皰、結痂、脫屑。
+- 軀幹：常見侵犯（Mueller 2006 n=91：軀幹 > 內耳翼 > 面部 > 足墊）。
+- 足墊：角化過度、裂隙、疼痛（約 35% 犬）。**具提示性、有助與腹側好發的膿皮症鑑別，但非高度特異／非病理性專一**——足墊主導型 PF 可擬態「hard pad disease」，仍須組織病理鑑別 SLE/犬瘟熱/肝皮症候群/鋅反應性皮膚病。
+- 爪甲：甲床炎、爪甲脫落——**犬 PF 少見，主要為貓 PF 之特徵**（勿列為犬 PF 常規表現）。
 
 ### 貓
-- 面部：鼻樑、耳翼、眼周。
-- 乳頭周圍：貓特有的分佈。
-- 爪甲皺褶：甲溝炎。
-- 足墊。
+- 面部/頭部：耳廓常最先受累、鼻/口吻、眼周。
+- 爪甲皺褶：甲溝炎（paronychia）——可從爪甲皺褶擠出**厚實黃色乾酪樣分泌物（caseous paronychia），為貓 PF 特有的特徵性表現**。
+- 乳頭/乳腺周圍（periareolar）：約 25% 病例的好發部位（貓常見預測位置，但非貓獨有）。
+- 足墊、趾間。
 
 ### 重要特徵
 - 膿皰很脆，很容易破，常常看到的就是結痂。
@@ -1967,15 +1968,15 @@ const contentPemphigus: NodeContent = {
 - PF 的黏膜通常不會被影響，PV 才會。
 
 ### 診斷
-### 皮膚細胞學（關鍵的第一步）
+### 皮膚細胞學（初步線索，非確診）
 - 膿皰穿刺或從結痂底下取樣。
-- 看到大量棘層鬆解細胞：圓形深染的角質細胞，外面被嗜中性球包圍（形成「煎蛋」外觀）。
-- 跟膿皮症最大的差異：PF 看不到退化嗜中性球吞噬球菌。
+- 看到成團（rafts）棘層鬆解細胞：圓形深染的角質細胞，外面被「非退化」嗜中性球（±嗜酸性球）包圍（形成「煎蛋」外觀）。
+- 跟膿皮症的差異：膿皮症常見退化嗜中性球吞噬球菌，PF 通常無菌。**但此鑑別非絕對**——棘層鬆解細胞並非 PF 專屬（膿皮症、皮癬菌病亦可少量出現），且 PF 約 5% 病例可見菌（可合併次發感染）。較可靠的量化依據為「≥5 個圓形棘層鬆解細胞/×500 視野」（對 PF 敏感度 84-100%、特異度 95-97%，Spriggs/Bizikova 2024），rafts 與嗜酸性球在 PF 較常見。
 
-### 皮膚切片（確診）
+### 皮膚切片（確診金標準）
 - 取完整的膿皰，或新鮮病灶的邊緣。
-- 組織病理：表皮內（角質層下）膿皰，裡面有棘層鬆解細胞跟嗜中性球。
-- 免疫螢光或免疫組化：角質細胞之間有 IgG 沉積（網狀模式）。
+- 組織病理：表皮內（角質層下 subcorneal／顆粒層 intragranular）棘層鬆解性膿皰，裡面有棘層鬆解細胞跟嗜中性球（±嗜酸性球）。**此為診斷金標準。**
+- 直接免疫螢光（DIF）：可見角質細胞間 IgG 網狀沉積，**但對犬 PF 非專一、非確診必需、偽陰性常見、臨床少常規使用**（僅屬研究/輔助工具，不能取代組織病理）。
 
 ## 三、治療策略 (Treatment)
 
@@ -1992,9 +1993,9 @@ const contentPemphigus: NodeContent = {
 - 節約類固醇劑通常需長期維持
 
 ### 難治性病例
-- Cyclosporine 5-10 mg/kg PO SID
-- 人類免疫球蛋白（hIVIG）
-- Rituximab（實驗性）
+- **Ciclosporine 5-10 mg/kg PO SID——僅作為「與 glucocorticoid 併用」的節約類固醇佐劑**（單獨使用經證實對犬 PF 無效，5 隻犬失敗；modified ciclosporin 併用 GC → 9/11 完全緩解，Chong/Banovic 2022），勿當有效單方。
+- 人類靜脈免疫球蛋白（hIVIG）：個案報告支持之搶救/佐劑療法。
+- **Rituximab（抗人類 CD20）：人醫 PV 一線（Ritux 3, 2017；FDA 2018 核准），但於犬藥理上無效**——人類 rituximab 不與犬 CD20 結合、無法清除犬 B 細胞（Impellizeri 2006），故犬 PF 並無有效之 rituximab 案例；犬類替代為「抗犬 CD20 單株抗體」（species-specific，目前僅淋巴瘤之實驗性研究）。
 
 [圖片:PF 面部典型病灶與足墊病變照片]
 
@@ -2024,7 +2025,7 @@ const contentPemphigus: NodeContent = {
 
 ## 五、預後與預後因子 (Prognosis)
 
-- 天疱瘡落葉型（PF）：預後要保留到還算可以。大概 50% 的犬可以達到長期緩解（用低劑量維持或停藥），20-30% 要終生免疫抑制，10-15% 會因為治療副作用（繼發感染）死亡或安樂死。
+- 天疱瘡落葉型（PF）：預後要保留到還算可以。約 50% 的犬可達緩解（Mueller 2006：過半緩解、另約 25% 顯著改善；回顧：完全緩解約 52%、部分緩解約 35%），**但其中「大多數」需終生低劑量免疫抑制維持（減量至最低有效劑量），只有「少數」能完全停藥後長期不復發**（並非約半數皆可停藥）。約 10-15%（Mueller 13%）因治療失敗、無法接受的副作用或生活品質不佳而安樂死。**注意：一手文獻並未指出「繼發感染」為單一最常見致死原因**（Mueller 安樂死原因：治療無反應約 36%、副作用約 18%、與天疱瘡無關/不明約 46%）；長期免疫抑制導致的繼發感染/敗血症確為重要致命併發症，但不宜稱為「最常見致死原因」。（早期世代 Gomez 2004 預後較差：致死率約 60.5%、1 年存活約 53%。）
 - 天疱瘡尋常型（PV）：預後差。口腔加皮膚都嚴重潰瘍，對治療反應比 PF 差，常常要積極用多種免疫抑制藥。
 - 藥物誘發型：預後不錯。停掉致敏藥物（例如 methimazole）後多半會自行緩解，或只要短期免疫抑制就好。
 - 預後好的條件：早期診斷（病程不到 3 個月）、對初始 prednisolone 反應好、沒有嚴重繼發感染。
@@ -2036,7 +2037,7 @@ const contentPemphigus: NodeContent = {
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
 | Rituximab（抗 CD20 單抗） | 頑固性犬天疱瘡的 B 細胞耗竭治療 | 人醫已為 PV 一線治療，獸醫僅個案報告 |
-| 抗 Desmoglein 抗體定量（ELISA） | 治療反應監測與復發預測的客觀指標 | 人醫常規，獸醫 anti-Dsg1 ELISA 初步驗證中 |
+| 抗自體抗原抗體定量（ELISA） | 治療反應監測與復發預測的客觀指標 | 人醫用 anti-Dsg1；**犬應用之標靶為 anti-desmocollin-1（DSC1）**（抗體效價隨臨床改善下降，Bizikova 2012），初步驗證中 |
 | Mycophenolate mofetil | 犬天疱瘡的節約類固醇劑選擇 | 人醫二線，獸醫使用經驗逐漸累積 |
 
 ## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
@@ -2046,8 +2047,16 @@ const contentPemphigus: NodeContent = {
 | Prednisolone 最佳起始劑量：2 vs 4 mg/kg/day | 嚴重病例傾向高劑量，但高劑量副作用更多；缺乏 RCT | Level IV |
 | Azathioprine vs Mycophenolate 作為犬 PF 首選節約劑 | Azathioprine 使用歷史長；MMF 可能起效更快但成本高 | Level III |
 | 貓 PF 最佳免疫抑制方案 | Chlorambucil + Prednisolone 為主流，但缺乏大型比較研究 | Level IV |
-| 犬 PF 停藥標準與復發預測因子 | 何時可嘗試停藥尚無共識，anti-Dsg1 抗體定量可能有助預測 | Level IV |`,
-  clinical_pearl: '在細胞學上分辨天疱瘡跟膿皮症是每位獸醫都應該會的技能。關鍵差異：PF 膿皰裡面看到的是棘層鬆解細胞被嗜中性球包圍，但嗜中性球不是退化的，也沒有吞噬細菌。膿皮症則是退化嗜中性球裡面有吞噬的球菌。看到「大量游離的圓形角質細胞 + 非退化嗜中性球 + 沒有細菌」這個組合，就要想到天疱瘡，馬上安排皮膚切片確診。',
+| 犬 PF 停藥標準與復發預測因子 | 何時可嘗試停藥尚無共識，anti-desmocollin-1（DSC1）抗體定量可能有助預測 | Level IV |
+
+## 八、近期更新 (Recent Updates)
+
+- **犬 PF 自體抗原確立為 desmocollin-1**：Olivry 2006 證實 Dsg1 在犬 PF 僅為次要抗原（約 6% 血清陽性），Bizikova 2012 確立 DSC1 為主要標靶（約 86% IIF 陽性血清含 anti-DSC1 IgG）——與人類 PF（Dsg1）不同，屬關鍵物種差異；抗 DSC1 效價隨臨床改善下降，具監測潛力。**貓 PF 的標靶抗原尚未確立。**
+- **棘層鬆解機轉更新**：天疱瘡棘層鬆解為抗體直接介導、Fc/補體/蛋白酶「非必需」（單價 Fab'/scFv 即可重現），機轉為 steric hindrance ＋ p38MAPK/EGFR 訊息傳遞與 desmoglein 去除——舊教材「補體/蛋白酶活化」的敘述已被修正。
+- **細胞學量化鑑別**：Spriggs/Bizikova 2024（Vet Dermatol）證實棘層鬆解細胞非 PF 專屬、PF 約 5% 可見菌；提出「≥5 圓形棘層鬆解細胞/×500 視野」之量化 cut-off（敏感度 84-100%、特異度 95-97%）以與膿皮症鑑別。
+- **Ciclosporin 僅為佐劑**：Chong/Banovic 2022 顯示 ciclosporin 單獨對犬 PF 無效、須與 GC 併用（9/11 完全緩解）。
+- **Rituximab 於犬無效**：人類 rituximab 不與犬 CD20 結合（Impellizeri 2006），犬類需 species-specific 抗犬 CD20 單抗（實驗性）。`,
+  clinical_pearl: '在細胞學上分辨天疱瘡跟膿皮症是每位獸醫都應該會的技能。關鍵差異：PF 膿皰裡面看到的是成團棘層鬆解細胞被「非退化」嗜中性球包圍（±嗜酸性球），通常無菌；膿皮症則是退化嗜中性球裡面有吞噬的球菌。看到「大量圓形棘層鬆解細胞 + 非退化嗜中性球 + 無菌」就要想到天疱瘡，馬上安排皮膚切片確診。但要記住這不是絕對——棘層鬆解細胞在膿皮症/皮癬菌病也可能少量出現，PF 約 5% 也可見菌（合併次發感染）；較可靠是量化「≥5 個棘層鬆解細胞/×500 視野」，最終仍以組織病理為準。',
   common_mistakes: [
     '將 PF 的膿皰/結痂誤診為膿皮症而長期使用抗生素（PF 對抗生素無效）',
     '皮膚切片取樣不當：應取完整膿皰或新鮮病灶邊緣，避免取慢性結痂或苔蘚化區域',
@@ -2057,12 +2066,12 @@ const contentPemphigus: NodeContent = {
   ],
   disease_data: {
     signalment: '犬：中年犬最常見（中位年齡 4-6 歲），品種偏好秋田犬、鬆獅犬、臘腸犬、紐芬蘭犬、英國鬥牛犬。貓：沒有明顯品種偏好，中老年貓比較多。性別沒差異。台灣秋田犬飼養量大，犬 PF 病例相對常見；貓 PF 則要特別留意 methimazole 觸發型，因為台灣甲亢貓用 methimazole 的比例很高。',
-    etiology: '自體免疫疾病：免疫耐受失敗，跑出抗 desmoglein-1（PF）或抗 desmoglein-3（PV）的 IgG 自體抗體。觸發因素可能有藥物（methimazole、cephalexin）、紫外線暴露、慢性皮膚病。多數是特發性。台灣日照強，可能是部分鼻部 PF 加重的原因。',
-    pathogenesis: '免疫耐受失敗後跑出抗 desmoglein-1 IgG 自體抗體，這抗體結上角質細胞表面的 desmoglein-1，橋粒功能就壞掉（既直接抑制黏附，又改變細胞內信號）。然後跑棘層鬆解（acantholysis），角質細胞分離，表皮內就跑出膿皰（位於角質層下或顆粒層）。嗜中性球被招來進膿皰，膿皰破掉就變結痂。',
+    etiology: '自體免疫疾病：免疫耐受失敗，跑出攻擊橋粒 cadherin 的 IgG 自體抗體——**犬 PF 主要為抗 desmocollin-1（DSC1，非人醫的 desmoglein-1；Dsg1 在犬僅次要）**；PV 為抗 desmoglein-3；貓 PF 標靶未確立。觸發因素可能有藥物（methimazole 疑似觸發，除 doxycycline 外多未經再投藥證實）、紫外線暴露、慢性皮膚病。多數是特發性。台灣日照強，可能是部分鼻部 PF 加重的原因。',
+    pathogenesis: '免疫耐受失敗後跑出抗 DSC1（犬 PF）IgG 自體抗體，這抗體結上角質細胞表面的 DSC1，透過直接位阻抑制黏附與細胞內訊息傳遞（p38MAPK/EGFR、desmoglein 去除）造成橋粒功能壞掉——此過程「不需補體/Fc/蛋白酶」。然後跑棘層鬆解（acantholysis），角質細胞分離，表皮內就跑出膿皰（位於角質層下或顆粒層）。嗜中性球被招來進膿皰，膿皰破掉就變結痂。',
     clinical_signs: [
       { sign: '面部對稱性膿皰與結痂', category: 'primary', description: '鼻樑、耳翼、眼周。膿皰很脆容易破，臨床上常看到的就是結痂' },
-      { sign: '足墊角化過度', category: 'primary', description: '足墊變厚、有裂隙、會痛，這是犬 PF 特異性很高的表現' },
-      { sign: '爪甲病變', category: 'secondary', description: '甲床炎、甲溝炎、爪甲脫落（onychomadesis）' },
+      { sign: '足墊角化過度', category: 'primary', description: '足墊變厚、有裂隙、會痛（約 35% 犬）；具提示性但非高度特異，須組織病理鑑別 SLE/肝皮症候群等' },
+      { sign: '爪甲病變', category: 'secondary', description: '甲床炎、甲溝炎、爪甲脫落（onychomadesis）——主要見於貓 PF（乾酪樣甲溝炎），犬少見' },
       { sign: '全身性結痂脫屑', category: 'secondary', description: '嚴重病例擴到軀幹跟腹股溝' },
       { sign: '貓乳頭周圍病變', category: 'secondary', description: '貓特有的分佈，乳頭結痂跟脫屑' },
     ],
@@ -2090,11 +2099,12 @@ const contentPemphigus: NodeContent = {
   ],
   drug_api_links: ['Prednisolone', 'Azathioprine', 'Mycophenolate', 'Chlorambucil', 'Cyclosporine'],
   references: [
-    { type: 'journal', citation: 'Olivry T. A review of autoimmune skin diseases in domestic animals: I - Superficial pemphigus. Vet Dermatol. 2006;17(5):291-305.', relevance: '表淺型天疱瘡（PF）的全面回顧' },
+    { type: 'journal', citation: 'Olivry T. A review of autoimmune skin diseases in domestic animals: I – Superficial pemphigus. Vet Dermatol. 2006;17(5):291-305. doi:10.1111/j.1365-3164.2006.00540.x', relevance: '表淺型天疱瘡（PF）的全面回顧（Dsg1 為犬次要抗原）' },
+    { type: 'journal', citation: 'Bizikova P, Dean GA, Hashimoto T, Olivry T. Cloning and establishment of canine desmocollin-1 as a major autoantigen in canine pemphigus foliaceus. Vet Immunol Immunopathol. 2012;149(3-4):197-207. doi:10.1016/j.vetimm.2012.06.025', relevance: '犬 PF 主要自體抗原 desmocollin-1 之確立（物種差異）' },
+    { type: 'journal', citation: 'Mueller RS, Krebs I, Power HT, Fieseler KV. Pemphigus foliaceus in 91 dogs. J Am Anim Hosp Assoc. 2006;42(3):189-196. doi:10.5326/0420189', relevance: '犬 PF 91 例：病灶分佈、治療反應與預後' },
+    { type: 'journal', citation: 'Bizikova P, Olivry T. Feline pemphigus foliaceus: original case series and a comprehensive literature review. BMC Vet Res. 2019;15(1):22. doi:10.1186/s12917-018-1739-y', relevance: '貓 PF 病例系列與文獻回顧（分佈/caseous paronychia/methimazole）' },
+    { type: 'journal', citation: 'Bizikova P, Linder KE, Olivry T. Oral glucocorticoid pulse therapy for induction of treatment of canine pemphigus foliaceus – a comparative study. Vet Dermatol. 2015;26(5):354-e77. doi:10.1111/vde.12241', relevance: '犬 PF 口服糖皮質激素脈衝療法誘導' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '天疱瘡完整章節' },
-    { type: 'journal', citation: 'Bizikova P et al. Review: Clinical and histological manifestations of canine pemphigus foliaceus. Vet Dermatol. 2014;25(4):299-e75.', relevance: '犬 PF 臨床與組織病理表現的系統性回顧' },
-    { type: 'journal', citation: 'Mueller RS et al. Treatment of pemphigus foliaceus and pemphigus vulgaris in dogs. Vet Dermatol. 2006;17:279-290.', relevance: '天疱瘡治療方案的循證回顧' },
-    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 指引中自體免疫皮膚病鑑別診斷' },
   ],
   is_current: true,
   created_at: now,
