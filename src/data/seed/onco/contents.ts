@@ -2549,8 +2549,8 @@ const contentStagingWorkup: NodeContent = {
 const contentTNM: NodeContent = {
   id: 'CONTENT-ONCO-L4-003',
   node_id: 'ONCO-L4-003',
-  version: 1,
-  summary: 'TNM 分期系統是國際通用的腫瘤分期標準，由 WHO 制定。T（Tumor）描述原發腫瘤大小和浸潤程度、N（Node）描述區域淋巴結轉移狀態、M（Metastasis）描述遠端轉移。獸醫腫瘤學中，不同腫瘤類型有各自的 TNM 定義（如口腔黑色素瘤以直徑為 T 分級，MCT 以數量和位置，膀胱 TCC 以浸潤深度）。TNM 分期是治療計畫制定和預後評估的基礎。',
+  version: 2,
+  summary: 'TNM 分期系統是國際通用的腫瘤分期標準，獸醫版原始文獻為 Owen 1980 WHO《TNM Classification of Tumours in Domestic Animals》（迄今無正式第二版）。T（Tumor）描述原發腫瘤大小/浸潤、N（Node）描述區域淋巴結、M（Metastasis）描述遠端轉移。各腫瘤 T/N 定義依部位而異（口腔腫瘤以直徑、膀胱 TCC 以臨床肉眼描述、乳腺以直徑），且部分腫瘤另用專屬系統（犬淋巴瘤 WHO 臨床 Stage I-V、犬骨肉瘤 Enneking/MSTS 外科分期）。分期須與組織學分級（Grade）分開判讀，兩者為互補而各自獨立的預後維度。',
   learning_objectives: [
     '解釋 TNM 分期系統的基本結構：T、N、M 各自的定義',
     '比較不同犬貓腫瘤的 TNM 分級標準差異',
@@ -2560,12 +2560,13 @@ const contentTNM: NodeContent = {
   ],
   key_points: [
     'T（Tumor）：原發腫瘤大小/範圍。T0（無腫瘤）→ T1-T4（由小到大/由淺到深）',
-    'N（Node）：區域淋巴結。N0（無轉移）→ N1（同側轉移）→ N2（對側/雙側）→ N3（固定/遠端淋巴結）',
+    'N（Node）：區域淋巴結（口腔/皮膚方案）。N0（無轉移）→ N1（可移動同側）→ N2（可移動對側/雙側）→ N3（固定的區域淋巴結）；遠端淋巴結轉移歸 M 而非 N3',
     'M（Metastasis）：遠端轉移。M0（無）→ M1（有遠端轉移）',
+    'N 定義依腫瘤而異：MCT 臨床分期把淋巴結併入整體 Stage、犬淋巴瘤用解剖 Stage I-V，非皆用 N0-N3',
     'cTNM：臨床分期（術前影像和檢查）；pTNM：病理分期（術後組織病理確認）',
-    '各腫瘤 T 的定義不同：口腔黑色素瘤（直徑 < 2/2-4/ > 4 cm）、MCT（數量+位置）、TCC（浸潤深度）、OSA（骨皮質內外）',
-    'TNM 組合為 Stage：如口腔黑色素瘤 T1N0M0 = Stage I，任何 T N1 M0 = Stage III',
-    'WHO Clinical Stage：Stage I（局限）→ Stage II（局部進展）→ Stage III（區域擴散）→ Stage IV（遠端轉移）',
+    '各腫瘤 T 定義不同：口腔腫瘤（直徑 < 2/2-4/ > 4 cm）、MCT（數量+位置）、TCC（臨床肉眼描述，非組織層次深度）、OSA（Enneking 骨皮質內外）、乳腺（直徑）',
+    '口腔腫瘤 Stage 分組：I=T1N0M0、II=T2N0M0、III=T1N1M0/T2N1M0/T3N0M0、IV=任何 M1（淋巴結陽性僅 T1/T2 才是 Stage III）',
+    'Grade（組織學惡性度）≠ Stage（解剖範圍）：兩者獨立、須分別評估',
   ],
   body: `# TNM 分期系統 (TNM Staging System)
 
@@ -2583,15 +2584,18 @@ TNM 是由世界衛生組織（WHO）建立的腫瘤分期框架，適用於所�
 - T1 → T4：腫瘤大小或浸潤程度遞增
 
 ### N，區域淋巴結（Regional Lymph Nodes）
+> ⚠️ N 分級**非單一通用定義，依腫瘤部位而異**。下列為 WHO（Owen 1980）口腔／皮膚腫瘤方案：
 - NX：無法評估區域淋巴結
-- N0：無區域淋巴結轉移
-- N1：同側區域淋巴結轉移
-- N2：對側或雙側淋巴結轉移
-- N3：固定的區域淋巴結或遠端淋巴結
+- N0：無區域淋巴結轉移證據
+- N1：可移動的**同側**區域淋巴結（N1a 無腫瘤細胞／N1b 有腫瘤細胞）
+- N2：可移動的**對側或雙側**區域淋巴結（N2a／N2b）
+- N3：**固定的**區域淋巴結
+
+注意：**N3 指「固定」而非「遠端」**——遠端淋巴結轉移歸類於 M（遠端轉移），不算 N3。其他腫瘤的 N 定義不同：WHO 犬 MCT 臨床分期不使用獨立 N0-N3、而將淋巴結狀態併入整體 Stage；犬淋巴瘤採解剖 Stage I-V；部分系統僅分 N0／N1。
 
 ### M，遠端轉移（Distant Metastasis）
 - M0：無遠端轉移
-- M1：有遠端轉移
+- M1：有遠端轉移（含遠端淋巴結轉移）
 
 ### Clinical vs Pathological Stage
 | 類型 | 代碼 | 資料來源 | 時機 |
@@ -2609,7 +2613,11 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
 | T2 | 最大直徑 2-4 cm |
 | T3 | 最大直徑 > 4 cm |
 
-→ Stage I: T1N0M0 | Stage II: T2N0M0 | Stage III: T3N0M0 或任何 T N1 M0 | Stage IV: 任何 M1
+N0＝無淋巴結轉移、N1＝細胞學/組織學證實淋巴結轉移、N2＝固著淋巴結。
+
+→ **Stage I**: T1N0M0 | **Stage II**: T2N0M0 | **Stage III**: T1N1M0 或 T2N1M0 或 T3N0M0 | **Stage IV**: 任何 M1
+
+> ⚠️ 淋巴結陽性只有在 **T1 或 T2** 時才是 Stage III（T1N1M0／T2N1M0）；**並非「任何 T 只要 N1 就是 Stage III」**——T3N1M0 不在 WHO Stage III 明列組合內。（Bergman 黑色素瘤共識重製 WHO 口腔腫瘤分期表）
 
 ### 犬 MCT（修訂版）
 | Stage | 定義 |
@@ -2620,21 +2628,25 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
 | III | 多發性皮膚腫塊或大型浸潤性，±N1M0 |
 | IV | 遠端轉移（任何 T/N，M1） |
 
-### 犬膀胱 TCC
+### 犬膀胱 TCC/UC（WHO Owen 1980，臨床肉眼描述，非組織層次深度）
 | T | 定義 |
 |---|------|
 | Tis | 原位癌 |
-| T1 | 黏膜/黏膜下層浸潤 |
-| T2 | 肌層浸潤 |
-| T3 | 鄰近器官浸潤（前列腺、子宮、陰道） |
+| T0 | 無原發腫瘤證據 |
+| T1 | 表淺乳頭狀腫瘤（superficial papillary tumor） |
+| T2 | 侵犯膀胱壁並伴硬結（invading bladder wall with induration；已涵蓋肌層浸潤） |
+| T3 | 侵犯鄰近器官（前列腺、子宮、陰道、骨盆腔） |
 
-### 犬附肢 OSA
+> ⚠️ 犬 WHO 系統**不像人類 AJCC 那樣區分黏膜／黏膜下／肌層**；勿把 T1 當「黏膜浸潤」、T2 當「肌層浸潤」（此為人醫 AJCC 定義）。臨床上多數犬 TCC 診斷時已達 T2（約 78%）（Knapp 2014）。
+
+### 犬附肢 OSA（Enneking/MSTS 外科分期，非 WHO TNM）
+> 骨肉瘤沿用 **Enneking（1980）肌肉骨骼腫瘤外科分期**（G 分級＋T 腔室＋M 轉移），非 Owen WHO TNM：
 | Stage | 定義 |
 |-------|------|
-| I | 低度分級（G1），無轉移 |
-| IIA | 高度分級（G2），未超出骨皮質（T1）N0M0 |
-| IIB | 高度分級，超出骨皮質（T2）N0M0 |
-| III | 任何分級，有遠端轉移（M1） |
+| I | 低度惡性（G1），無轉移（IA 腔室內 T1／IB 腔室外 T2） |
+| IIA | 高度惡性（G2），腔室內（intracompartmental，T1）N0M0 |
+| IIB | 高度惡性（G2），腔室外（extracompartmental，T2）N0M0 |
+| III | 任何分級，有轉移（區域或遠端，M1） |
 
 ### 犬淋巴瘤（WHO Clinical Stage）
 | Stage | 定義 |
@@ -2678,9 +2690,18 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
 |---------|------|---------------|
 | 獸醫 TNM 分期系統是否需要從 1980 年 WHO 版本全面更新 | 現行 Owen 1980 版已過時，部分腫瘤（MCT、淋巴瘤）已有修訂版但非全面統一 | Level IV |
 | cTNM 與 pTNM 不一致時的臨床決策，升期後是否改變治療計畫 | 術後發現淋巴結微轉移（cN0→pN1）的臨床意義因腫瘤類型而異，指引不一致 | Level III |
-| 犬 MCT 的最佳分期系統，Patnaik 三級 vs Kiupel 二級 vs 修訂版臨床分期 | Kiupel 二級制預後區分力較佳，但與臨床 TNM 分期的整合方式尚未標準化 | Level II |
-| 犬腫瘤分期是否應納入分子生物標記（如 Ki-67、c-KIT 突變）作為獨立變項 | 分子標記提供額外預後資訊，但其是否應正式整合至分期系統仍有爭議 | Level III |`,
-  clinical_pearl: 'TNM 分期的臨床價值不僅在於分類，更在於它標準化了不同病例之間的比較。在與飼主溝通預後時，引用的存活數據都是基於特定 TNM 分期的，例如「口腔黑色素瘤 Stage I（< 2 cm）手術後中位存活 > 12 個月，Stage III（> 4 cm 或淋巴結轉移）中位存活僅 3 個月」。所以準確的分期是精確預後溝通的基礎。另外要記住 cTNM 和 pTNM 可能不同，術後病理可能發現術前未偵測到的淋巴結微轉移而升期。',
+| 犬 MCT WHO 臨床分期的預後排序矛盾 | WHO MCT 臨床分期把「多發性皮膚腫塊（Stage III）」排在「單發+淋巴結轉移（Stage II）」之後，但多發性但無淋巴結轉移者預後常反而優於單發但淋巴結陽性者；且該分期不納入組織學 grade 與確實的淋巴結狀態 | Level II |
+| 犬 MCT 的最佳分期系統，Patnaik 三級 vs Kiupel 二級 vs 修訂版臨床分期 | Kiupel 二級制預後區分力較佳；2024 年 Marconato 等提出納入 grade 的 UBo pTNM 修訂系統，但整合方式尚未標準化 | Level II |
+| 犬腫瘤分期是否應納入分子生物標記（如 Ki-67、c-KIT 突變）作為獨立變項 | 分子標記提供額外預後資訊，但其是否應正式整合至分期系統仍有爭議 | Level III |
+
+## 六、近期更新 (Recent Updates)
+
+- **WHO 獸醫 TNM（Owen 1980）仍無正式第二版**：現行臨床分期以 Owen 1980 為骨幹、由 Withrow & MacEwen's Small Animal Clinical Oncology（第 6 版，2019）之重製版與各腫瘤專屬系統補充；被視為部分過時（尤其 MCT 分期）。
+- **犬 MCT 分期修訂（UBo pTNM）**：Marconato 2024（VCO）提出把組織學 grade（Kiupel 二級）與生物變數納入的 UBo pTNM 系統，回應 WHO MCT 臨床分期「不含 grade／淋巴結狀態、Stage II/III 排序矛盾」的長期批評。
+- **淋巴結分期走向細胞學/流式細胞**：Fournier 2018（Vet Clin Pathol）量化淋巴結 FNA 對各腫瘤轉移的敏感度差異；流式細胞（Iamone 2024）與 HN0/HN1-3（淋巴結轉移的組織學分級，MCT）提升淋巴結微轉移偵測。
+- **胸腔分期以 CT 為準**：多篇犬研究（Nemanic 2006；Eberle 2011；Armbrust 2012）證實胸腔 CT 對肺轉移敏感度顯著高於三視角 X 光（X 光僅見約 9% 的 CT 可見結節），資源允許時 CT 漸成高風險腫瘤 M 分期標準。
+- **犬淋巴瘤 substage 判定標準化**：Barber 2014（VCO）調查獸醫腫瘤科醫師對 substage a/b（有無全身症狀）的判定準則，減少主觀差異。`,
+  clinical_pearl: 'TNM 分期的臨床價值不僅在於分類，更在於它標準化了不同病例之間的比較。在與飼主溝通預後時，引用的存活數據都是基於特定 TNM 分期的，例如犬口腔黑色素瘤單純手術後的中位存活：Stage I（< 2 cm）約 17-18 個月、Stage II（2-4 cm）約 5-6 個月、Stage III（> 4 cm 或淋巴結轉移）約 3 個月（MacEwen 等；Withrow & MacEwen 教科書）；現代 curative-intent 手術，低分期（I-II）中位存活可達 2 年以上（Boston 2014）。所以準確的分期是精確預後溝通的基礎。另外要記住 cTNM 和 pTNM 可能不同，術後病理可能發現術前未偵測到的淋巴結微轉移而升期。',
   common_mistakes: [
     '不同腫瘤使用相同的 T 定義，每種腫瘤的 T 分級標準不同',
     '忽略淋巴結評估（N）而僅關注原發腫瘤（T），N 是許多腫瘤最重要的預後因子之一',
@@ -2718,7 +2739,7 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
       '犬淋巴瘤使用 WHO Clinical Stage 而非標準 TNM 框架',
       'X 光可見的肺結節不一定是轉移，肺部肉芽腫、原發肺腫瘤需鑑別',
     ],
-    sensitivity_specificity: 'TNM 分期的精確度取決於使用的檢查工具。cTNM 的 T 評估：理學檢查+影像（敏感度依工具而異，CT > 超音波 > 觸診）。N 評估：FNA 細胞學敏感度約 70-90%，組織病理為金標準。M 評估：胸腔 X 光（> 8 mm 結節敏感度約 90%），CT（> 1-2 mm 敏感度 > 90%）。',
+    sensitivity_specificity: 'TNM 分期精確度取決於檢查工具。T 評估：理學檢查+影像（CT > 超音波 > 觸診）。N 評估：淋巴結 FNA 細胞學敏感度「高度依腫瘤類型」，非一律 70-90%——癌/圓細胞瘤約 100%、肥大細胞瘤約 75%、肉瘤約 67%、黑色素瘤約 63%（Fournier 2018，特異度 83-96%，約 25% 抽吸不具診斷性），組織病理為金標準。M 評估：胸腔 X 光的「7-9 mm」是「可偵測結節最小尺寸門檻」而非臨床敏感度，其對肺轉移真實敏感度變異大且常被高估（僅約 9% 的 CT 可見結節能在 X 光看到，Nemanic 2006；犬骨肉瘤 X 光 5% vs CT 28%，Eberle 2011；Armbrust 2012 X 光敏感度 71-95%）；胸腔 CT 可偵測約 1 mm 結節、顯著優於 X 光但仍非 100%。',
     cost_benefit: 'TNM 分期系統本身無額外成本，它是一個分類框架。成本取決於進行哪些分期檢查（見 ONCO-L4-002 腫瘤分期檢查）。精確分期的價值在於避免對已有遠端轉移的病例進行不必要的根治性手術，以及確保局限性腫瘤獲得適當的積極治療。',
   },
   procedure_data: null,
@@ -2731,8 +2752,14 @@ pTNM 通常更精確，因為可直接評估腫瘤浸潤深度和淋巴結微轉
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '各腫瘤 TNM 定義參考' },
-    { type: 'guideline', citation: 'Owen LN. TNM Classification of Tumours in Domestic Animals. WHO, 1st ed. 1980.', relevance: 'WHO 獸醫 TNM 分期原始文獻（現行權威分期來源；已移除 v1 疑捏造之「Nguyen 2015 staging, Vet Comp Oncol 13(4):369-383」——Crossref 查無此文，真實 Nguyen 2015 為 VCOG RECIST 反應評估標準 13(3):176-183，非分期）' },
+    { type: 'guideline', citation: 'Owen LN (ed.). TNM Classification of Tumours in Domestic Animals. 1st ed. Geneva: World Health Organization, 1980.', relevance: 'WHO 獸醫 TNM 分期原始/基礎文獻（現行權威分期來源，迄今無正式第二版；已移除 v1 疑捏造之「Nguyen 2015 staging, Vet Comp Oncol 13(4):369-383」——Crossref 查無此文，真實 Nguyen 2015 為 VCOG RECIST 反應評估標準 13(3):176-183，非分期）' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM (eds). Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. St. Louis: Elsevier, 2019.', relevance: '各腫瘤 TNM/分期定義之現行臨床標準重製版' },
+    { type: 'journal', citation: 'MacEwen EG, Hayes AA, Harvey HJ, et al. Prognostic factors for feline mammary tumors. J Am Vet Med Assoc. 1984;185(2):201-204. doi:10.2460/javma.1984.185.02.201', relevance: '貓乳腺腫瘤 T 分期切點（2/3 cm）之預後驗證' },
+    { type: 'journal', citation: 'Armbrust LJ, Biller DS, Bamford A, et al. Comparison of three-view thoracic radiography and computed tomography for detection of pulmonary nodules in dogs with neoplasia. J Am Vet Med Assoc. 2012;240(9):1088-1094. doi:10.2460/javma.240.9.1088', relevance: 'M 分期：胸腔 X 光敏感度變異大、CT 顯著較優' },
+    { type: 'journal', citation: 'Fournier Q, Cazzini P, Bavcar S, et al. Investigation of the utility of lymph node fine-needle aspiration cytology for the staging of malignant solid tumors in dogs. Vet Clin Pathol. 2018;47(3):489-500. doi:10.1111/vcp.12636', relevance: 'N 分期：淋巴結 FNA 敏感度依腫瘤類型差異' },
+    { type: 'journal', citation: 'Marconato L, Faroni E, Del Magno S, et al. Incorporation of biologic variables into the staging for canine cutaneous and subcutaneous mast cell tumours: proposal of the UBo pTNM system. Vet Comp Oncol. 2024;22(4):513-522. doi:10.1111/vco.13000', relevance: 'MCT 分期修訂提案（納入 grade），回應 WHO MCT 分期排序矛盾' },
+    { type: 'journal', citation: 'Barber LG, Weishaar KM. Criteria for designation of clinical substage in canine lymphoma: a survey of veterinary oncologists. Vet Comp Oncol. 2014;14(S1):32-39. doi:10.1111/vco.12086', relevance: '犬淋巴瘤 substage a/b 判定標準化' },
+    { type: 'journal', citation: 'Kiupel M, Webster JD, Bailey KL, et al. Proposal of a 2-tier histologic grading system for canine cutaneous mast cell tumors to more accurately predict biological behavior. Vet Pathol. 2011;48(1):147-155. doi:10.1177/0300985810386469', relevance: 'MCT 組織學分級（Grade≠Stage）' },
   ],
   is_current: true,
   created_at: now,
