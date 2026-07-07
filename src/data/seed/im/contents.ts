@@ -3856,7 +3856,7 @@ const contentAbdoUS: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Penninck D, d\'Anjou MA. Atlas of Small Animal Ultrasonography, 2nd ed. Wiley-Blackwell, 2015.', relevance: '小動物超音波影像圖譜' },
     { type: 'textbook', citation: 'Mattoon JS, Nyland TG. Small Animal Diagnostic Ultrasound, 3rd ed. Elsevier, 2015.', relevance: '小動物超音波診斷教科書' },
-    { type: 'journal', citation: 'Gaschen L. "Ultrasonography of small intestinal inflammatory and neoplastic diseases in dogs and cats." Vet Clin North Am Small Anim Pract. 2011;41(2):329-344.', relevance: '腸道超音波判讀回顧' },
+    { type: 'journal', citation: 'Gaschen L. "Ultrasonography of small intestinal inflammatory and neoplastic diseases in dogs and cats." Vet Clin North Am Small Anim Pract. 2011;41(2):329-344. doi:10.1016/j.cvsm.2011.01.002', relevance: '腸道超音波判讀回顧' },
     { type: 'guideline', citation: 'Nelson RW, Couto CG. "Small Animal Internal Medicine." 6th ed. Elsevier, 2020.', relevance: '小動物內科教科書' },
   ],
   is_current: true,
@@ -7618,7 +7618,7 @@ const contentGBMucocele: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 63: Diseases of the Gallbladder and Extrahepatic Biliary System.', relevance: '膽囊疾病病理與臨床管理教材' },
     { type: 'journal', citation: 'Aguirre AL, Center SA, Randolph JF, et al. "Gallbladder disease in Shetland Sheepdogs: 38 cases (1995-2005)." J Am Vet Med Assoc. 2007;231(1):79-88.', relevance: 'Shetland Sheepdog 膽囊黏液囊腫品種傾向' },
-    { type: 'journal', citation: 'Parkanzky M, Grimes J, Schmiedt C, et al. "Long-term survival of dogs treated for gallbladder mucocele by cholecystectomy, medical management, or both." J Vet Intern Med. 2019;33(5):2057-2066.', relevance: '膽囊切除 vs 內科管理預後比較' },
+    { type: 'journal', citation: 'Parkanzky M, Grimes J, Schmiedt C, et al. "Long-term survival of dogs treated for gallbladder mucocele by cholecystectomy, medical management, or both." J Vet Intern Med. 2019;33(5):2057-2066. doi:10.1111/jvim.15611', relevance: '膽囊切除 vs 內科管理預後比較' },
     { type: 'guideline', citation: 'Jaffey JA, Graham A, VanEerde E, et al. "Gallbladder mucocele: variables associated with outcome and the utility of ultrasonography to identify gallbladder rupture in 219 dogs." J Vet Intern Med. 2018;32(1):195-200.', relevance: '超音波診斷與預後因子分析' },
   ],
   is_current: true,
@@ -8599,7 +8599,7 @@ const contentMDR1Toxicity: NodeContent = {
 const contentObesity: NodeContent = {
   id: 'CONTENT-IM-L3-031',
   node_id: 'IM-L3-031',
-  version: 1,
+  version: 2,
   summary:
     '肥胖是犬貓最常見的營養性疾病，本質為一種伴隨慢性低度發炎的慢性疾病，定義為體重超過理想值約 30% 以上（九分制 BCS 8–9 分）。多數族群中約半數以上的成年犬貓過重或肥胖，且肥胖與骨關節炎、糖尿病（尤其貓）、呼吸道負擔及壽命縮短直接相關。治療核心為「處方減重飲食＋以理想體重計算熱量的限食＋運動與飼主配合」，而非單純少餵維持期飼料。',
   learning_objectives: [
@@ -8612,13 +8612,13 @@ const contentObesity: NodeContent = {
   ],
   key_points: [
     '肥胖＝慢性低度發炎疾病，2018 年 AVMA（與 Global Pet Obesity Initiative）已正式認定其為疾病（共識定義：超過理想體重約 30%）',
-    '九分制 BCS 理想為 5/9；每多 1 分約多 10% 體重；BCS 8–9 為肥胖表型',
+    '九分制 BCS 理想為 5/9；每多 1 分約多 10-15% 體重（BCS 9 ≈ 超過理想 40%）；BCS 8–9 為肥胖表型',
     'BCS 評脂肪、MCS 評肌肉，兩者需分開評估；肥胖動物也可能合併嚴重肌肉流失',
     '脂肪組織分泌 leptin、TNF-α、IL-6 上升、adiponectin 下降，導致發炎與胰島素阻抗',
     'Kealy 2002 拉布拉多終生限食研究：精瘦組中位壽命顯著較長（約多 1.8 年）並延後骨關節炎發生',
     '熱量以「理想體重」計算 RER ＝ 70 ×（BWkg）^0.75，犬貓僅餵其 60–70%（待 DVM 依個案確認）',
-    '安全減重速率：犬約每週 1–2%、貓約每週 0.5–1%，貓絕不可超過每週 2%（肝臟脂質沉積風險）',
-    '藥物（dirlotapide／mitratapide）多已停售，飲食＋運動仍為主軸（區域供應需查證）',
+    '安全減重速率：犬 1-2%/週、貓 0.5-2%/週（上限同犬）；肝脂質沉積主因是完全拒食/厭食（非控制飲食下的週減重率），關鍵是確保持續攝食',
+    '減重藥（MTP 抑制劑 dirlotapide/mitratapide）皆已停售/撤銷，飲食＋運動仍為主軸',
   ],
   body: `# 犬貓肥胖症 (Canine & Feline Obesity)
 
@@ -8631,13 +8631,13 @@ const contentObesity: NodeContent = {
 
 ## 二、體態評估工具 (Body Assessment)
 
-- **九分制 BCS**：最具驗證、WSAVA 採用的量表。理想＝5/9；每超過 1 分約等於多 10% 體重（BCS 9 ≈ 超過理想 40%）。原始驗證為 Laflamme 1997（犬、貓分別與 DEXA 對照，基礎文獻）。
+- **九分制 BCS**：最具驗證、WSAVA 採用的量表。理想＝5/9（4-5 皆可接受）；每超過 1 分約等於多 10-15% 體重（body fat 每分約 +5%；BCS 9 ≈ 超過理想 40%、體脂 >40%）。原始驗證為 Laflamme 1997（犬 Canine Practice 22(4)、貓 Feline Practice，與 DEXA 對照）。
 - **肌肉評分（MCS）**：**獨立於脂肪**評估肌肉量，觸診顳骨、肩胛、肋骨、腰椎、骨盆，分為正常／輕／中／重度肌肉流失。肥胖動物可同時有嚴重肌肉流失——兩者都要評。
-- **形態測量／理想體重估計**：常由 BCS 回推（每超過 5 分以上 1 分 ≈ 多 10%）或以過去精瘦體重為基準。
+- **形態測量／理想體重估計**：常由 BCS 回推（每超過 5 分以上 1 分 ≈ 多 10-15%）或以過去精瘦體重為基準。
 
 ## 三、病理機轉與後果 (Pathophysiology & Consequences)
 
-脂肪組織是**活躍的內分泌器官**，分泌上百種脂肪激素。脂肪細胞肥大／缺氧後轉為促發炎分泌型態：**leptin↑、TNF-α↑、IL-6↑、CRP↑；adiponectin↓** → 慢性低度發炎＋**胰島素阻抗**。
+脂肪組織是**活躍的內分泌器官**，分泌上百種脂肪激素。脂肪細胞肥大／缺氧後轉為促發炎分泌型態：**leptin↑、adiponectin↓**（犬貓證據最一致、最強），**TNF-α↑、IL-6↑**（多為脂肪組織/浸潤巨噬細胞來源，循環濃度較不穩定）→ 慢性低度發炎＋**胰島素阻抗**。⚠️ **CRP 有物種差異**：犬肥胖與 CRP 關聯不一致（部分研究反而下降），貓 CRP 僅為次要急性期蛋白（主要為 SAA、α1-酸性醣蛋白），故 CRP 不宜當作犬貓肥胖發炎的可靠指標。
 相關／惡化之共病：**骨關節炎**（機械＋發炎）、**糖尿病**（尤其貓）、**呼吸道負擔／惡化 BOAS**、**下泌尿道疾病**、**腫瘤風險上升**、**壽命縮短**。
 
 - **壽命里程碑證據**：Kealy 等 2002（JAVMA 220(9):1315-1320）——48 隻拉布拉多配對餵食、終生限食 25%，精瘦組中位壽命顯著較長（後續報告約多 1.8 年）並**延後包含骨關節炎在內的慢性病**發生。
@@ -8648,11 +8648,11 @@ const contentObesity: NodeContent = {
 
 ## 五、管理 (Management)
 
-- **處方減重飲食，而非「少餵維持期飼料」**：專門配方為**高蛋白**（保留瘦肉、增加飽足）、**增加纖維**（飽足、降能量密度）、**控制能量**，且蛋白質／維生素／礦物質相對熱量提高，使病患在熱量赤字中仍營養充足。單純少餵維持期飼料會造成**營養素稀釋 → 相對蛋白質／微量營養素不足**。
-- **熱量計算**：RER ＝ **70 ×（BWkg）^0.75**（標準異速公式，適用所有體重）。以**理想（目標）體重**計算 RER，再餵其分數：犬通常 ~60–70%、貓更保守（~70%、避免驟降）。
-- **安全減重速率**：犬 ~1–2%/週；貓 ~0.5–1%/週，**絕不超過 2%/週**——過度限食或厭食的貓有**肝臟脂質沉積（hepatic lipidosis）**風險。
+- **處方減重飲食，而非「少餵維持期飼料」**：專門配方為**高蛋白**（保留瘦肉、增加飽足）、**增加纖維**（飽足、降能量密度）、**控制能量**，且營養素相對熱量密度提高，使病患在熱量赤字中仍營養充足。單純減量餵食維持期飼料會造成**營養素稀釋**——實證上最易不足的是微量營養素與特定胺基酸/脂肪酸（膽鹼、硒、甲硫胺酸、EPA/DHA、B 群），而**非蛋白質**（治療性減重飲食通常反而提高蛋白質密度）；此風險同樣適用於市售 OTC「體重管理」飼料（Gaylord 2018、German 2015）。
+- **熱量計算**：RER ＝ **70 ×（BWkg）^0.75**（標準異速公式；線性近似 30×BW+70 僅適用約 2–45 kg）。以**理想（目標）體重**計算 RER，再餵其分數作為起始量：犬約 60–70%（部分指引以 80% 起始）、貓約 70–80%（起始「較不激進」而非更低）；未經獸醫營養師指導不應低於 70% RER。
+- **安全減重速率**：犬 1–2%/週；**貓 0.5–2%/週（AAHA 建議範圍，上限同犬）**——臨床上飼主家貓實際多 <1%/週（為觀察值、非下限）。⚠️ **肝臟脂質沉積（hepatic lipidosis）的主因是完全拒食/自發性厭食造成的饑餓性負能量平衡，而非「控制飲食下的每週減重率」**——關鍵安全措施是確保貓持續攝食足量蛋白質與熱量、循序漸進並定期監測，而非把 2%/週當硬性上限。
 - **非飲食面**：結構化運動（犬）、環境豐富化＋遊戲＋**益智／覓食餵食器**（貓）、定量分餐（不自由採食）、多寵分開餵食，以及**飼主配合定期量體重**（每 2–4 週）。
-- **藥物輔助（須查證）**：dirlotapide（Slentrol）、mitratapide（Yarvitan）為 MTP 抑制劑，曾有犬減重適應症，但**現多已停售**（美國 Slentrol 停產、歐盟兩者撤銷）——區域供應請先查證。**飲食＋運動仍為主軸。**
+- **藥物輔助**：dirlotapide（Slentrol，2007 FDA 首個犬肥胖藥）、mitratapide（Yarvitan）為 MTP 抑制劑（減重主要來自局部腸道 MTP 抑制之飽足/食慾抑制約 90%、非脂肪吸收阻斷），曾有犬減重適應症，但**兩藥現皆已停售/撤回上市許可**（美國 Slentrol ~2013 停產、歐盟兩者撤回）。**飲食＋運動仍為主軸。**
 - **復胖／維持**：達標後轉維持／輕量飼料，熱量設在體重穩定點略下方，並持續定期量體重——缺乏結構容易復胖。
 
 ## 六、預後、監測與溝通 (Prognosis, Monitoring & Communication)
@@ -8666,6 +8666,23 @@ const contentObesity: NodeContent = {
 | 減重藥物角色 | dirlotapide/mitratapide 多已停售，飲食＋運動為主；新藥有限 | Level III |
 | 最佳減重飲食巨量營養素比例 | 高蛋白＋高纖有共識，最佳比例仍研究中 | Level II |
 | 貓肥胖與糖尿病可逆性 | 減重可改善胰島素敏感性、部分貓糖尿病可緩解 | Level II |
+
+## 八、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| GLP-1 受體促效劑（semaglutide 等）| 犬貓減重之藥理新標的 | 人醫肥胖治療突破，獸醫尚無核准藥、研究早期 |
+| 客觀體脂量化（DEXA、生物電阻抗）| 取代主觀 BCS 之精確體脂評估 | 人醫常規，獸醫多用於研究 |
+| 肥胖為「慢性發炎性疾病」框架 | 以疾病（非飼主過失）框定，改善醫病溝通與依從性 | AVMA/GPOI 2018 已認定為疾病 |
+| 行為經濟學/助推（nudge）飼主依從 | 結構化回診、量化點心、獎勵小進步 | 依從性為成敗關鍵，行為介入研究漸增 |
+
+## 九、近期更新 (Recent Updates)
+
+- **盛行率再確認**：Montoya 2025（Prev Vet Med，Banfield ~490 萬犬/~134 萬貓）示成熟期犬 50.1%+12.6%、貓 44.8%+21.7% 過重/肥胖，貓負擔更重、且盛行率於成熟期達峰。
+- **貓減重速率去教條化**：AAHA 建議貓 0.5-2%/週（上限同犬）；肝脂質沉積主因是「完全拒食/厭食」而非控制飲食下的週減重率——關鍵是確保持續攝食。
+- **營養素稀釋實證**：Gaylord 2018/German 2015 顯示限食下最易不足者為微量營養素（膽鹼、硒、B 群、EPA/DHA），非蛋白質；OTC 體重管理飼料亦有風險——支持使用治療性高密度減重飲食。
+- **CRP 物種差異**：CRP 非犬貓肥胖發炎的可靠指標（犬關聯不一致、貓為次要急性期蛋白）；leptin↑/adiponectin↓ 才是最一致的變化。
+- **減重藥退場**：MTP 抑制劑 dirlotapide/mitratapide 皆已停售/撤銷，飲食+運動仍為主軸；GLP-1 類為研究方向。
 `,
   clinical_pearl:
     '減重熱量一定要用「理想體重」而非「目前體重」來計算 RER；同時，肥胖貓減重期間務必密集量體重，一旦每週減重超過約 2% 或出現厭食，應立即介入——過快、厭食的貓即是潛在的肝臟脂質沉積急症。',
@@ -8682,7 +8699,7 @@ const contentObesity: NodeContent = {
     etiology:
       '能量攝取長期大於消耗。風險因子包含絕育（代謝率下降、食慾上升）、年齡、品種、室內低活動、自由採食、高熱量飲食與點心，以及飼主餵食行為與對體態的低估。',
     pathogenesis:
-      '過量白色脂肪堆積使脂肪細胞肥大、缺氧，轉為促發炎分泌型態（leptin、TNF-α、IL-6、CRP 上升，adiponectin 下降），形成全身慢性低度發炎並導致胰島素阻抗，進而誘發或惡化多種共病。',
+      '過量白色脂肪堆積使脂肪細胞肥大、缺氧，轉為促發炎分泌型態（leptin↑、adiponectin↓ 最一致；TNF-α、IL-6 傾向上升；CRP 有物種差異、非可靠指標），形成全身慢性低度發炎並導致胰島素阻抗，進而誘發或惡化多種共病。',
     clinical_signs: [
       { sign: '體重與 BCS 上升（8–9/9）', category: 'primary', description: '客觀體態評分達肥胖表型' },
       { sign: '肋骨、腰椎不易觸及、腰線消失、腹部下垂', category: 'primary', description: '脂肪堆積之理學特徵' },
@@ -8702,11 +8719,11 @@ const contentObesity: NodeContent = {
     diagnostic_workup:
       '完整病史（飲食、點心、活動）＋體重、九分制 BCS、MCS；測量並記錄基準體重；必要時生化與內分泌檢查（T4／TSH、ACTH 刺激或低劑量 dexamethasone 抑制試驗）以排除甲低與庫欣；計算理想體重與目標熱量。',
     treatment_protocol:
-      '採用處方減重飲食（高蛋白、增加纖維、控制能量）；以理想體重計算 RER ＝ 70 ×（BWkg）^0.75，犬餵 60–70%、貓約 70% 並保守調整；搭配運動（犬）與環境豐富化、益智餵食器、定量分餐（貓）；每 2–4 週回診量體重並依減重速率微調熱量；達標後轉維持期飲食並持續追蹤防止復胖。【所有熱量與速率須由具執照獸醫師依個案確認】',
+      '採用處方減重飲食（高蛋白、增加纖維、控制能量）；以理想體重計算 RER ＝ 70 ×（BWkg）^0.75，犬餵 60–70%、貓約 70-80%（起始較不激進、不低於 70% RER）；搭配運動（犬）與環境豐富化、益智餵食器、定量分餐（貓）；每 2–4 週回診量體重並依減重速率微調熱量；達標後轉維持期飲食並持續追蹤防止復胖。【所有熱量與速率須由具執照獸醫師依個案確認】',
     prognosis:
       '減重可逆轉胰島素阻抗、改善關節負擔並延長壽命，預後良好，但高度取決於飼主長期配合度；多數失敗源於依從性不足而非生理因素，且停止管理後復胖常見。',
     monitoring:
-      '定期量體重、計算每週減重百分比（犬 1–2%、貓 0.5–1%，貓不超過 2%）、重新評分 BCS／MCS；偏離目標時調整熱量約 10–20%；貓需警覺厭食與肝臟脂質沉積。',
+      '定期量體重、計算每週減重百分比（犬 1–2%、貓 0.5–2%）、重新評分 BCS／MCS；偏離目標時調整熱量約 10–20%；貓需警覺「完全拒食/厭食」——此為肝臟脂質沉積的主要風險（非控制飲食下的週減重率）。',
     owner_communication:
       '以非批判方式說明肥胖是可治療的醫療問題而非飼主過失；設定務實、漸進的目標，量化點心熱量並納入總量，肯定每一次小進步以維持長期配合。',
   },
@@ -8722,9 +8739,9 @@ const contentObesity: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'journal', citation: 'Kealy RD, Lawler DF, Ballam JM, et al. Effects of diet restriction on life span and age-related changes in dogs. J Am Vet Med Assoc. 2002;220(9):1315-1320. doi:10.2460/javma.2002.220.1315.', relevance: '經典終生研究：精瘦組中位壽命顯著較長（約多 1.8 年）並延後骨關節炎；證明維持理想體態可延壽（基礎里程碑）' },
-    { type: 'journal', citation: 'Laflamme DP. Development and validation of a body condition score system for dogs / for cats. Canine Practice. 1997;22(1):10-15 / Feline Practice. 1997;25:13-18.', relevance: '九分制 BCS 原始開發與 DEXA 驗證來源，WSAVA 採用之標準（真實基礎文獻；Canine/Feline Practice 1997 為 pre-DOI 期刊、Crossref 無 DOI 索引）' },
+    { type: 'journal', citation: 'Laflamme DP. Development and validation of a body condition score system for dogs / for cats. Canine Practice. 1997;22(4):10-15 / Feline Practice. 1997;25(5-6):13-18.', relevance: '九分制 BCS 原始開發與 DEXA 驗證來源，WSAVA 採用之標準（真實基礎文獻；Canine/Feline Practice 為 pre-DOI 期刊、Crossref 無 DOI 索引，卷期已由 v1 之 22(1) 更正為 22(4)）' },
     { type: 'journal', citation: 'Montoya M, Péron F, Hookey T, et al. Overweight and obese body condition in ~4.9 million dogs and ~1.3 million cats across the USA: prevalences by life stage. Prev Vet Med. 2025;235:106398. doi:10.1016/j.prevetmed.2024.106398.', relevance: '近期大規模流行病學：成熟期犬 50.1% 過重+12.6% 肥胖、貓 44.8%+21.7%，貓負擔更重' },
-    { type: 'guideline', citation: 'WSAVA Global Nutrition Committee. Global Nutrition Guidelines & Toolkit (BCS + MCS, the 5th vital assessment). (Freeman L, et al. J Small Anim Pract. 2011;52(7):385-396.)', relevance: '確立營養評估為第五項生命徵象，提供 BCS/MCS 標準工具與評分定義' },
+    { type: 'guideline', citation: 'Freeman L, Becvarova I, Cave N, et al. (WSAVA Nutritional Assessment Guidelines Task Force). WSAVA Nutritional Assessment Guidelines. J Small Anim Pract. 2011;52(7):385-396. doi:10.1111/j.1748-5827.2011.01079.x', relevance: '確立營養評估為第五項生命徵象，提供 BCS/MCS 標準工具與評分定義' },
     { type: 'journal', citation: 'Loftus JP, Wakshlag JJ. Canine and feline obesity: a review of pathophysiology, epidemiology, and clinical management. Vet Med (Auckl). 2014;6:49-60. doi:10.2147/VMRR.S40868.', relevance: '整合性綜述：脂肪內分泌與發炎機轉、RER 熱量計算、犬餵理想體重 RER 之 60–70%、貓保守限食避免肝脂質沉積' },
     { type: 'reference', citation: 'Global Pet Obesity Initiative Position Statement (Ward E, Churchill J, German AJ, et al.); endorsed by AVMA Board of Directors, June 2018.', relevance: '正式將犬貓肥胖認定為疾病、採用 ~30% 超出理想體重之統一定義（注意：AVMA＋GPOI，非 WSAVA）' },
     { type: 'journal', citation: 'Radin MJ, Sharkey LC, Holycross BJ. Adipokines: a review of biological and analytical principles and an update in dogs, cats, and horses. Vet Clin Pathol. 2009;38(2):136-156. doi:10.1111/j.1939-165X.2009.00133.x.', relevance: '詳述 leptin/adiponectin 與發炎細胞激素在犬貓之角色，支持脂肪為內分泌器官之病理基礎' },
