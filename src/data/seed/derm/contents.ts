@@ -5021,8 +5021,8 @@ const contentAlopeciaX: NodeContent = {
 const contentCTCL: NodeContent = {
   id: 'CONTENT-DERM-L3-013',
   node_id: 'DERM-L3-013',
-  version: 1,
-  summary: '皮膚 T 細胞淋巴瘤（Cutaneous T-Cell Lymphoma, CTCL）是犬最常見的皮膚淋巴瘤類型，主要亞型是蕈樣肉芽腫（Mycosis Fungoides, MF）。CTCL 的特徵是嗜表皮性的腫瘤性 T 淋巴球浸潤，臨床上跑 patch、plaque、tumor 三階段的漸進病程。Sézary syndrome 是它的白血病變異型。診斷靠皮膚切片組織病理學跟免疫組化（CD3+/CD8− 或 CD4+）。治療以 CCNU（lomustine）為一線化療藥，但長期預後不好。台灣犬 CTCL 在臨床上常常被誤診為慢性皮膚炎或黴菌感染，警覺度要提高。CCNU 在台灣獸醫腫瘤科可以取得，組織病理跟免疫組化要送專業病理實驗室。',
+  version: 2,
+  summary: '皮膚嗜表皮性 T 細胞淋巴瘤（Cutaneous Epitheliotropic T-Cell Lymphoma, CETL；即蕈樣肉芽腫 Mycosis Fungoides, MF）是犬最常見的原發皮膚淋巴瘤。⚠️ 關鍵物種差異：犬 MF 的腫瘤細胞主要為 CD3+/CD8+/CD4−（細胞毒型 T 細胞，約 80%），與人類 MF（以 CD4+ 輔助型為主）恰好相反。臨床表現高度多樣（有「偽裝大師」之稱），常一開始即為多型或泛發性病灶，不一定依人醫「patch→plaque→tumor」的順序漸進。診斷靠皮膚多處切片＋免疫組化（CD3+/CD8+），組織病理以表皮/附屬器嗜性為主、Pautrier microabscess 具特徵性但僅約 1/4 病例可見且非專一。治療以 CCNU（lomustine）為主要單劑化療（反應率約 78-83%，但多為部分緩解、持續期短），整體預後不良、自診斷起中位存活約 6 個月。台灣臨床上早期 CETL 常被誤診為慢性過敏性皮膚炎或黴菌感染，警覺度要提高；CCNU 在台灣獸醫腫瘤科可取得，組織病理與免疫組化須送專業病理實驗室。',
   learning_objectives: [
     '區分皮膚淋巴瘤的嗜表皮型（epitheliotropic）與非嗜表皮型（non-epitheliotropic）',
     '描述蕈樣肉芽腫（MF）patch → plaque → tumor 三階段臨床進程',
@@ -5032,14 +5032,15 @@ const contentCTCL: NodeContent = {
     '向飼主說明 CTCL 的預後與生活品質管理',
   ],
   key_points: [
-    '犬皮膚淋巴瘤以嗜表皮型（epitheliotropic）T 細胞淋巴瘤（MF）最常見',
-    '典型三階段進程：patch（紅斑/脫屑斑）→ plaque（浸潤性斑塊）→ tumor（結節/腫塊），可能跨數月至數年',
-    '黏膜皮膚交界處（口腔、眼結膜、鼻鏡、肛周）受累為 MF 特徵',
-    'Pautrier microabscess（表皮內腫瘤性淋巴球群聚）為組織病理學診斷標記',
-    '免疫組化：腫瘤細胞通常為 CD3+/CD8− (CD4+) T 細胞',
-    'Sézary syndrome：CTCL 白血病變異型，末梢血液中見 Sézary cells（腦回樣核 T 細胞）',
-    'CCNU（lomustine）30 mg/m² PO q3w 為一線化療，反應率約 75-80%',
-    '預後不良：中位存活時間 6-12 個月，腫瘤期與 Sézary syndrome 預後更差',
+    '犬原發皮膚淋巴瘤以嗜表皮型（epitheliotropic，MF）最常見',
+    '⚠️ 免疫表型：犬 MF 腫瘤細胞主要為 CD3+/CD8+/CD4−（細胞毒型 T 細胞，約 80%），其餘多為 CD3+/CD4−/CD8− 雙陰性；此與人類 MF（以 CD4+ 輔助型為主，約 90%）恰好相反——勿把人醫 CD4+ 表型與「CD4 型預後較好」套到犬',
+    '臨床高度多樣（「偽裝大師」），常同時多型或一開始即泛發（剝脫性紅皮症/黏膜皮膚交界病灶/斑塊結節/口腔潰瘍四大表現型）；人醫「patch→plaque→tumor」有序三階段不宜當作犬的必然病程',
+    '約 50% 犬 MF 涉及黏膜皮膚交界或黏膜（含口腔）（Fontaine 2010 50%、Moore 2009 57%）',
+    '組織病理：表皮/附屬器嗜性（毛囊上皮約 87%、汗腺約 70%）為最一致特徵；Pautrier microabscess 具特徵性但僅約 23% 病例可見、且非專一（良性海綿樣皮膚炎亦可見）',
+    'CCNU（lomustine）60-70 mg/m² PO q3w 為主要單劑化療，反應率約 78-83%（Williams 2006 n=36 78%、Risbon 2006 n=46 83%），但多為部分緩解、中位反應期僅約 94-106 天',
+    '⚠️ 犬 CETL 缺乏經預後驗證的臨床分期系統；常見的 T1-T4 實為人類 ISCL/EORTC TNMB 分期（Olsen 2007），於犬僅供描述、未驗證',
+    'Sézary syndrome：MF 白血病變異型（皮膚＋末梢血皆見腦回樣核 Sézary cells），於犬極罕見（約 6 例）、預後最差',
+    '預後不良：自診斷起整體中位存活約 6 個月（Fontaine 2010；Dettwiler 2023 n=176 約 95 天）；分期別存活數字（12-24 月等）為人醫 MF 數據、不適用於犬',
   ],
   body: `# 皮膚 T 細胞淋巴瘤 (Cutaneous T-Cell Lymphoma, CTCL)
 
@@ -5048,22 +5049,24 @@ const contentCTCL: NodeContent = {
 ### 分類
 犬皮膚淋巴瘤依組織病理學分成：
 - 嗜表皮型（Epitheliotropic）：腫瘤性淋巴球嗜表皮浸潤，代表的就是蕈樣肉芽腫（Mycosis Fungoides, MF）。佔犬皮膚淋巴瘤大多數。
-- 非嗜表皮型（Non-epitheliotropic）：腫瘤性淋巴球浸潤真皮到皮下，不侵犯表皮。預後比嗜表皮型還差。
+- 非嗜表皮型（Non-epitheliotropic）：腫瘤性淋巴球浸潤真皮到皮下、不侵犯表皮，為異質性族群（從可局部控制的孤立/惰性病灶，到侵襲性周邊 T 細胞淋巴瘤 PTCL-NOS/間變性大 T 細胞淋巴瘤皆有）。⚠️ 兩型預後孰優尚無定論——唯一直接對照研究（Azuma 2022, VCO, n=46）反而顯示**嗜表皮型中位存活較短（141 天 vs 非嗜表皮型 374 天）**，故不應斷言「非嗜表皮型比嗜表皮型預後更差」。
 
-這節聚焦在嗜表皮型 CTCL（MF）。
+這節聚焦在嗜表皮型 CETL（MF）。
 
-### 細胞起源
+### 細胞起源（⚠️ 關鍵物種差異）
 - MF 起源於成熟皮膚歸巢性 T 細胞（skin-homing memory T cells）。
-- 免疫表型大多是 CD3+/CD4+/CD8−（輔助型 T 細胞）。
-- 少數是 CD3+/CD4−/CD8+（細胞毒性 T 細胞），預後可能更差。
-- T 細胞受體（TCR）基因重排分析可以確認克隆性（clonality）。
+- **犬 MF 的免疫表型主要為 CD3+/CD8+/CD4−（細胞毒型 T 細胞），約佔 80%**（Moore 1994 Am J Pathol 19/23≈83%；Moore/Affolter 2009 Vet Dermatol 44/55=80%；Fontaine 2009 綜述）；其餘多為 CD3+/CD4−/CD8− 雙陰性（memory 表型）。
+- **這與人類 MF（以 CD4+ 輔助型為主，約 90%）恰好相反**——犬以 CD4+ 輔助型主導的病例極罕見。臨床與病理判讀切勿把人醫的 CD4+ 表型、或「CD4 型預後較好」的框架套到犬。
+- T 細胞受體（TCR）基因重排（PARR/clonality）分析可輔助確認克隆性，但須與組織病理併判，非單獨確診工具。
 
 ### 病理機制
-腫瘤性 T 細胞異常表現皮膚歸巢受體（CLA、CCR4），選擇性遷移到表皮，在表皮微環境裡增殖，形成 Pautrier microabscess（表皮內腫瘤性 T 細胞群聚）。隨著疾病進展，腫瘤細胞失去嗜表皮性，往深層真皮浸潤，最後就會跑到淋巴結跟內臟轉移。
+腫瘤性 T 細胞異常表現皮膚歸巢受體（CLA、CCR4），選擇性遷移到表皮與附屬器上皮（epidermotropism / adnexotropism），在表皮微環境裡增殖，可形成 Pautrier microabscess（表皮內腫瘤性 T 細胞群聚）——此為具特徵性但非必然出現、且非專一的所見（犬僅約 23% 病例可見；真正最一致的是毛囊/汗腺上皮嗜性）。隨著疾病進展，腫瘤細胞失去嗜表皮性，往深層真皮浸潤，最後可跑到淋巴結與內臟轉移。
 
 ## 二、臨床表現 (Clinical Features)
 
-### 典型三階段進程（MF）
+> ⚠️ 犬 MF 的臨床表現「高度多樣（polymorphic）」，故有「偽裝大師」之稱；犬病例常同時呈現多型病灶、或一開始即為泛發性（剝脫性紅皮症）。文獻多把犬 MF 分為四大**同時並存**的表現型（剝脫性紅皮症；黏膜皮膚交界紅斑/脫色/潰瘍；單發或多發斑塊/結節；口腔黏膜潰瘍性病灶），而非依序演進的階段。下述「patch→plaque→tumor」三階段是借自**人類** Alibert-Bazin 型 MF 的概念，僅為鬆散的一般化描述，不宜當作犬的必然病程。
+
+### 三階段進程（借自人醫 MF 之概念性描述）
 
 #### Patch 期（斑期）
 - 最早期的表現，很容易被忽略或誤診。
@@ -5084,33 +5087,34 @@ const contentCTCL: NodeContent = {
 - 可能伴周邊淋巴結腫大。
 - 全身症狀跑出來（消瘦、食慾不振）。
 
-### 口腔黏膜型
-- 約 25-40% 的 MF 犬會涉及口腔黏膜。
-- 紅斑、糜爛、潰瘍、增生性斑塊。
+### 黏膜皮膚交界/口腔黏膜型
+- 約 **50%** 的犬 MF 涉及黏膜皮膚交界或黏膜（含口腔）（Fontaine 2010 50%、Moore 2009 57%；文獻多述 up to 50%）。
+- 紅斑、脫色、糜爛、潰瘍、增生性斑塊。
 - 可能是唯一或首發的表現。
-- 要跟其他口腔疾病做鑑別。
+- 要跟其他口腔疾病（免疫媒介性口炎、口腔腫瘤等）做鑑別。
 
-### Sézary Syndrome
-- CTCL 的白血病變異型。
+### Sézary Syndrome（於犬極罕見）
+- MF 的白血病變異型（依 REAL 分類＝MF 合併白血病：腫瘤性 T 細胞同時見於皮膚與末梢血）。
 - 全身性紅皮症（erythroderma）：全身瀰漫性紅斑、脫屑。
 - 劇烈搔癢。
 - 末梢血液裡會跑出 Sézary cells（腦回樣 / cerebriform 核的異常 T 細胞）。
-- 全身淋巴結腫大。
-- 預後極差。
+- 週邊淋巴結腫大。
+- 為三種 CETL 亞型中預後最差者（多存活僅數日至數月）；於犬極罕見（迄今僅約 6 例報告，首例 Thrall 1984）。
 
 ## 三、診斷方法 (Diagnostic Approach)
 
 ### 皮膚切片組織病理學（確定診斷）
-- 嗜表皮性淋巴球浸潤：大量異常 T 淋巴球浸潤表皮（epidermotropism）
-- Pautrier microabscess：表皮內腫瘤性淋巴球群聚，為 MF 最具特徵性的組織病理標記
-- 帶狀真皮淋巴球浸潤（lichenoid band）
-- 腫瘤期：密集真皮浸潤伴嗜表皮性喪失
+- 表皮/附屬器嗜性淋巴球浸潤（epidermotropism / adnexotropism）：**最一致的組織病理特徵**（毛囊上皮侵犯約 87%、汗腺約 70%，Fontaine 2010）。
+- Pautrier microabscess：表皮內腫瘤性淋巴球群聚，具特徵性但**非必然出現、且非專一**——犬僅約 23%（7/30，Fontaine 2010）病例可見，屬 uncommon；良性海綿樣/發炎性皮膚炎亦可見類似聚集，故非 pathognomonic。當存在時支持診斷，缺乏並不能排除。
+- 帶狀真皮淋巴球浸潤（lichenoid band）。
+- 腫瘤期：密集真皮浸潤伴嗜表皮性喪失。
+- 取樣要點：MF 分布不均，須多處（至少 2-3 處不同型態病灶）取樣。
 
 ### 免疫組化 (Immunohistochemistry)
-- CD3+（T 細胞標記）：確認 T 細胞來源
-- CD4+ 或 CD8+：亞型分類
-- CD18+、CD45+：白血球共通標記
-- Ki-67 增殖指數：評估增殖活性
+- CD3+（泛 T 細胞標記）：確認 T 細胞來源。
+- **CD8+（且 CD4−）：犬 MF 之主要表型（約 80%）**；CD4/CD8 併做以確認細胞毒型——勿預期人醫的 CD4+ 表型（見「細胞起源」物種差異）。
+- CD18+、CD45+：白血球共通標記。
+- Ki-67 增殖指數 / 有絲分裂數：評估增殖活性（與預後相關，見預後段）。
 
 ### 分期檢查
 1. 完整理學檢查與皮膚病灶記錄（分布、數量、型態）
@@ -5119,28 +5123,30 @@ const contentCTCL: NodeContent = {
 4. 胸腔 X 光 + 腹部超音波（評估內臟轉移）
 5. 必要時：骨髓穿刺、TCR 基因重排分析
 
-### 分期系統（改良 WHO 分期）
-| 期別 | 定義 |
+### 分期系統（⚠️ 借自人類 MF、於犬未經預後驗證）
+> **犬 CETL 目前缺乏經正式驗證、與預後連結的臨床分期系統。** 下表 T1-T4 實為**人類**皮膚 T 細胞淋巴瘤的 ISCL/EORTC TNMB 分期（Olsen 2007, Blood 110(6):1713-1722），並非犬用的「改良 WHO 分期」（犬淋巴瘤整體採用的 WHO 分期是**解剖部位**為基礎的 I-V 五期系統，非皮膚腫瘤負荷分期）。於犬此表僅可作**描述性**用途、不可據以預測存活；犬的預後分層應改以已驗證的形態學/組織學因子（見預後段）。
+
+| 期別（人類 ISCL/EORTC TNMB） | 定義 |
 |------|------|
 | T1 | Patch/plaque，< 10% 體表面積 |
 | T2 | Patch/plaque，≥ 10% 體表面積 |
 | T3 | 一個或多個 tumor（結節/腫塊）|
-| T4 | 紅皮症（erythroderma / Sézary）|
+| T4 | 紅皮症（erythroderma / Sézary，≥ 80% BSA）|
 | N0/N1 | 淋巴結未/已受累 |
 | M0/M1 | 無/有內臟轉移 |
 
 ## 四、治療策略 (Treatment Strategy)
 
 ### 一線化療：CCNU (Lomustine)
-- 劑量：60-70 mg/m² PO q3 週（建議起始 60 mg/m²）。
-- 反應率：約 75-80%（CR 加 PR），中位反應時間 1-3 個月。
+- 劑量：60-70 mg/m² PO q3 週（一般犬 CCNU 範圍 60-90 mg/m²）。
+- 反應率：約 **78-83%**（CR+PR；Williams 2006 n=36 ORR 78%、CR 17%；Risbon 2006 n=46 ORR 83%、CR ~33%），但**多為部分緩解（PR）、中位反應期僅約 94-106 天**——控制效果好但短暫，非治癒性。
 - 注意：CCNU 是烷化劑，累積性骨髓毒性跟肝毒性是主要的劑量限制毒性。
 - 監測：每次給藥前 CBC 加肝指數（ALT、ALP）。ANC < 2000/μL 或 ALT > 3 倍 ULN 就延遲或調整劑量。
 - 最大建議累積劑量：300-400 mg/m² 左右（個體差異很大）。
 
 ### 替代或輔助化療
 - Prednisolone：1-2 mg/kg PO SID 可以暫時控制早期病灶跟搔癢，但不是長期方案。
-- Retinoids（isotretinoin、acitretin）：單獨用或跟 CCNU 合用，反應率約 40-50%。
+- Retinoids：犬的臨床證據是 **isotretinoin/etretinate「單獨使用」**（White 1993 約 42%、Ramos 2022 12 犬 33% CR/整體 58%）。⚠️ **acitretin 缺乏犬 CETL 專屬數據**（其為 etretinate 活性代謝物，非犬證據藥物）；且**無 retinoid＋CCNU 併用的反應率研究**——上述數字係單藥數據，不應套用於未經研究的併用方案。
 - L-asparaginase：可以當救援方案。
 - Mechlorethamine（氮芥）局部外用：Patch / plaque 期的局部治療選項（國外）。
 
@@ -5156,37 +5162,82 @@ const contentCTCL: NodeContent = {
 
 ## 五、預後與飼主溝通 (Prognosis & Communication)
 
-### 預後
-| 期別 | 中位存活時間 |
-|------|------------|
-| Patch/Plaque (T1-T2) | 約 12-24 個月 |
-| Tumor (T3) | 約 6-12 個月 |
-| Erythroderma/Sézary (T4) | 約 3-6 個月 |
-| 淋巴結/內臟轉移 | < 3 個月 |
+### 預後（以犬一手數據表述，非人醫分期）
+> ⚠️ 目前**沒有**依 T1-T4 分期的犬科分期別存活數字——舊教材常見的「T1-T2 約 12-24 個月、T3 約 6-12 個月、T4 約 3-6 個月」實為**人類 MF（ISCL/EORTC）**之數據，早期 12-24 個月對犬明顯過度樂觀，不應套用於犬。
 
-### 預後因素
-- 診斷時的期別是最重要的預後因子。
-- CD4+ 型預後可能比 CD8+ 型好。
-- 口腔黏膜受累可能預後比較差。
+| 犬科一手數據 | 中位存活時間 |
+|------|------------|
+| 整體（Fontaine 2010, n=30） | 自診斷起約 6 個月（用 lomustine 或 prednisolone 差異不大）|
+| 整體（Dettwiler 2023, n=176） | 約 95 天（≈3 個月）|
+| 未治療 | 約 3-5 個月 |
+| 依病灶部位（Chan/Moore 2018, n=148） | 皮膚型 130 天 vs 黏膜皮膚型 491 天 |
+
+### 預後因素（犬已驗證/報告者）
+- **病灶型態/部位**：黏膜皮膚型優於純皮膚型（491 vs 130 天，Chan/Moore 2018）；出現結節/潰瘍者較差。
+- **組織學指標**：有絲分裂數 ≥ 7/HPF、腫瘤細胞/核徑增大者存活較短（Dettwiler 2023）。
+- **末梢血受累/血小板低下**：預後較差（Azuma 2022）。
 - CCNU 反應好的存活比較長。
+- ⚠️ 「CD4+ 型比 CD8+ 型預後好」為**人醫外推**，犬 CD4+ 主導病例罕見，不宜列為犬的預後因子。
 
 ### 飼主溝通重點
-- CTCL 是進行性的皮膚腫瘤，目前沒辦法治癒。
+- CETL 是進行性的皮膚腫瘤，目前沒辦法治癒。
 - 治療目的是延長有品質的生命（palliative intent）。
 - CCNU 化療可以有效控制症狀好幾個月，但有骨髓跟肝臟毒性，要定期監測。
-- 要跟飼主討論生活品質評估，還有安寧照護的時機。`,
-  clinical_pearl: 'CTCL 早期（patch 期）是最容易被誤診的皮膚腫瘤，看起來就跟普通的過敏性皮膚炎或皮膚癬菌症一樣。關鍵線索是：標準治療都沒反應，病灶卻持續進展的「慢性皮膚炎」。一個臨床規則：任何對類固醇反應不好、或反覆復發的皮膚紅斑或斑塊，尤其是中老年犬，都應該做皮膚切片。另外，口腔黏膜的紅斑或糜爛病灶治療沒反應的，永遠要想到 CTCL。',
+- 要跟飼主討論生活品質評估，還有安寧照護的時機。
+
+## 六、併發症與監控 (Complications & Monitoring)
+
+### 疾病相關併發症
+- 繼發性細菌/酵母菌（Malassezia）皮膚感染：屏障破壞＋搔抓所致，常需併行抗感染。
+- 頑固搔癢與疼痛：影響生活品質，尤其紅皮症/潰瘍型。
+- 進展期：淋巴結與內臟（肝、脾、肺）轉移；口腔型可致採食困難。
+
+### CCNU 化療監控
+- **每次給藥前 CBC**（延遲性/累積性骨髓抑制；ANC ≥ 2000/μL 方可給藥）。
+- **肝毒性監測**：每次給藥前 ALT/ALP；CCNU 可致慢性累積性肝病，建議併用 SAMe/silybin 肝臟保護並定期追蹤。ALT > 3-5× ULN 需延遲或停藥。
+- 累積劑量記錄（個體差異大）。
+- 每 4-6 週皮膚病灶評估（拍照記錄範圍/型態變化）；每 2-3 個月重新評估淋巴結與影像。
+- 生活品質量表定期評估，適時轉緩和照護。
+
+## 七、人醫借鑒 (Translational Insights)
+
+| 人醫 MF/CTCL 工具 | 獸醫應用潛力 | 現況 |
+|---|---|---|
+| 犬 MF 為人類 CTCL 之自然發生模型（惟表型相反：犬 CD8+ vs 人 CD4+） | 比較腫瘤學、細胞毒型 CTCL 病生理研究 | 犬 CD8+ 表型使其成為人類少見 CD8+ MF 之潛在模型 |
+| 標靶/生物製劑（brentuximab vedotin 抗 CD30、mogamulizumab 抗 CCR4、HDAC 抑制劑） | 探索犬 CTCL 標靶治療 | 犬多數研究初期；CCR4 於犬 CTCL 表現待確認 |
+| 局部治療（外用 mechlorethamine/bexarotene、窄波 UVB、全皮電子束 TSEBT） | 局限型病灶之皮膚導向治療 | 犬多毛覆蓋限制光療；外用氮芥國外有用 |
+| JAK 抑制劑（近期人醫/個案探索） | 搔癢與部分反應 | 犬 Sézary 個案對 oclacitinib 有劑量相關反應之報告 |
+
+## 八、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---|---|---|
+| 犬 CETL 缺乏經驗證的臨床分期系統 | 沿用人類 ISCL/EORTC TNMB 僅供描述、未經犬預後驗證 | Level IV |
+| CCNU 是否真正延長存活 | 反應率高但多為短暫 PR；Fontaine 2010 顯示化療 vs prednisolone 存活差異不大，Laprais 2016 CAT 質疑其存活效益 | Level III |
+| 嗜表皮型 vs 非嗜表皮型何者預後較差 | 唯一直接對照（Azuma 2022）反顯示嗜表皮型較短，過往「非嗜表皮型較差」說法無據 | Level III |
+| retinoid（isotretinoin）之角色與 CCNU 併用 | 單藥約 42-58% 反應，但併用方案無反應率研究 | Level III |
+| 早期診斷（患病至確診中位約 5 個月）延誤 | 高度依賴臨床警覺與多處切片，缺乏非侵入性早期標記 | Level IV |
+
+## 九、近期更新 (Recent Updates)
+
+- **免疫表型物種差異確立**：犬 MF 以 CD3+/CD8+/CD4−（約 80%）為主（Moore 1994；Moore/Affolter 2009），與人類 CD4+ 輔助型 MF 相反——舊教材把人醫 CD4+ 表型套到犬為系統性錯誤。
+- **預後分層改以形態學/組織學因子**：Chan/Moore 2018（n=148，皮膚型 130d vs 黏膜皮膚型 491d）、Dettwiler 2023（n=176，有絲分裂數/細胞徑為預後因子），取代無據的分期別存活數字。
+- **嗜表皮 vs 非嗜表皮預後對照**：Azuma 2022（n=46）首個直接對照，嗜表皮型中位存活反較短（141d vs 374d）。
+- **CCNU 存活效益受質疑**：Laprais & Olivry 2016（BMC Vet Res，critically appraised topic）指出 CCNU 雖有反應率但缺乏延長存活的高品質證據。
+- **分期系統認知釐清**：常見 T1-T4 為人類 ISCL/EORTC TNMB（Olsen 2007），於犬未經驗證、僅供描述。`,
+  clinical_pearl: '早期 CETL 是最容易被誤診的皮膚腫瘤，看起來就跟普通的過敏性皮膚炎或皮膚癬菌症一樣。關鍵線索是：標準治療都沒反應、病灶卻持續進展的「慢性皮膚炎」——尤其中老年犬對類固醇反應不好、或反覆復發的紅斑/斑塊，或治療無反應的口腔黏膜紅斑/糜爛，都該做皮膚多處切片。免疫組化判讀要記住物種差異：犬 MF 以 CD3+/CD8+（細胞毒型）為主，與人類 CD4+ MF 相反——看到 CD8+ 不要當成「非典型」而排除 MF。',
   common_mistakes: [
-    '早期 CTCL（patch 期）被長期當作過敏性皮膚炎治療，診斷被拖很久',
+    '早期 CETL（patch 期）被長期當作過敏性皮膚炎治療，診斷被拖很久',
     '皮膚切片取樣不夠。MF 分布不均勻，要多處取樣（至少 2-3 處不同型態的病灶）',
-    '沒做免疫組化就下確定診斷（要確認 T 細胞來源跟亞型）',
+    '沒做免疫組化就下確定診斷（要確認 T 細胞來源；且犬以 CD8+ 為主，勿預期人醫 CD4+）',
     'CCNU 治療時沒監測 CBC 跟肝指數（累積性骨髓或肝毒性會出人命）',
+    '把人醫框架套到犬：用 T1-T4「分期別存活」預測犬預後（該分期為人類 ISCL/EORTC、於犬未驗證）、或誤信「CD4+ 型/非嗜表皮型預後較好或較差」',
     '忽略分期檢查。淋巴結 FNA、血液抹片、影像學對預後判斷跟治療決策都不能省',
   ],
   disease_data: {
-    signalment: '中老年犬（中位發病年齡 9-11 歲），無明顯品種偏好，但 Cocker Spaniel、Golden Retriever 有報告較多。無性別差異。貓的皮膚淋巴瘤較少見。',
+    signalment: '中老年犬（中位發病年齡約 10 歲，範圍約 4-15 歲），無性別偏好。文獻中最常過度代表（over-represented）的品種為 English Cocker Spaniel 與 Boxer；Fontaine 2010 的 30 例另見 Bichon Frisé 偏多，Golden Retriever、Scottish Terrier 等 retriever/terrier 類亦有報告——惟多為病例系列觀察、尚無病例對照證實真正品種傾向。貓的皮膚嗜表皮性淋巴瘤較少見。',
     etiology: '確切病因不明。推測與慢性抗原刺激導致 T 細胞克隆性增殖有關。部分假說包括：慢性皮膚炎症環境促進 T 細胞轉化、皮膚微環境中的細胞因子（IL-2, IL-7, IL-15）促進腫瘤性 T 細胞存活與增殖、腫瘤抑制基因（p53）突變。',
-    pathogenesis: '皮膚歸巢性記憶 T 細胞異常克隆增殖 → 表現皮膚歸巢受體（CLA, CCR4, CCR10）→ 選擇性遷移至表皮（epidermotropism）→ 表皮內增殖形成 Pautrier microabscess → 早期侷限於皮膚（patch/plaque）→ 隨基因不穩定性增加，嗜表皮性喪失 → 深層真皮浸潤（tumor 期）→ 淋巴管/血管侵犯 → 淋巴結與內臟轉移。',
+    pathogenesis: '皮膚歸巢性記憶 T 細胞（犬以 CD8+ 細胞毒型為主，約 80%，與人類 CD4+ MF 相反）異常克隆增殖 → 表現皮膚歸巢受體（CLA, CCR4）→ 選擇性遷移至表皮與附屬器上皮（epidermotropism/adnexotropism）→ 可形成 Pautrier microabscess（僅約 1/4 病例）→ 早期侷限於皮膚 → 隨基因不穩定性增加，嗜表皮性喪失 → 深層真皮浸潤 → 淋巴管/血管侵犯 → 淋巴結與內臟轉移。',
     clinical_signs: [
       { sign: '紅斑性斑塊', category: 'primary', description: 'Patch/plaque 期：單發或多發紅斑、脫屑、輕度脫毛，好發軀幹與腹股溝' },
       { sign: '浸潤性斑塊', category: 'primary', description: 'Plaque 期：界線清楚的隆起性紅色斑塊，表面脫屑或糜爛' },
@@ -5195,7 +5246,7 @@ const contentCTCL: NodeContent = {
       { sign: '全身紅皮症', category: 'secondary', description: 'Sézary syndrome：全身瀰漫紅斑、脫屑、劇烈瘙癢' },
       { sign: '淋巴結腫大', category: 'secondary', description: '周邊淋巴結增大，腫瘤期與晚期常見' },
     ],
-    staging: { system: '改良 WHO 分期', stages: ['T1：Patch/plaque < 10% BSA', 'T2：Patch/plaque ≥ 10% BSA', 'T3：一個或多個 tumor（結節/腫塊）', 'T4：紅皮症/Sézary syndrome', 'N0/N1：淋巴結未受累/受累', 'M0/M1：無/有內臟轉移'] },
+    staging: { system: '人類 ISCL/EORTC TNMB（犬借用、未經預後驗證；犬 CETL 無正式臨床分期）', stages: ['T1：Patch/plaque < 10% BSA', 'T2：Patch/plaque ≥ 10% BSA', 'T3：一個或多個 tumor（結節/腫塊）', 'T4：紅皮症/Sézary（≥ 80% BSA）', 'N0/N1：淋巴結未受累/受累', 'M0/M1：無/有內臟轉移'] },
     differential_diagnosis: [
       { condition: '犬異位性皮膚炎（CAD）', key_differentiator: '好發年輕犬、對免疫調節劑反應佳、皮膚切片見嗜酸球/肥大細胞而非異型淋巴球' },
       { condition: '皮膚癬菌症（Dermatophytosis）', key_differentiator: 'Wood 燈/培養陽性、毛髮 KOH 見孢子、抗黴菌治療有效' },
@@ -5203,9 +5254,9 @@ const contentCTCL: NodeContent = {
       { condition: '脂漏性皮膚炎', key_differentiator: '全身性脂漏、油脂味、通常有潛在病因（過敏/內分泌）、組織病理無異型淋巴球' },
       { condition: '組織球瘤/肥大細胞瘤', key_differentiator: '細胞學與免疫組化可明確區分細胞來源' },
     ],
-    diagnostic_workup: '1. 詳細皮膚病灶描述（分布、數量、型態、是否涉及黏膜）→ 2. 皮膚切片（多處取樣，≥ 2-3 處不同型態病灶）→ 3. 組織病理學（嗜表皮淋巴球浸潤、Pautrier microabscess）→ 4. 免疫組化（CD3、CD4、CD8、CD18、Ki-67）→ 5. 分期：周邊淋巴結 FNA + CBC（含血抹片找 Sézary cells）+ 胸腔 X 光 + 腹部超音波 → 6. 進階（視需要）：TCR clonality、骨髓穿刺',
-    treatment_protocol: '1. 一線 CCNU (Lomustine) 60-70 mg/m² PO q3 週，給藥前監測 CBC + ALT/ALP。2. 輔助 Prednisolone 1 mg/kg PO SID 控制早期症狀。3. 替代：Retinoids（isotretinoin 1-2 mg/kg PO SID）單獨或合用。4. 局部治療：外用糖皮質激素（patch 期）、放射線（孤立腫塊）。5. Sézary syndrome：CCNU + prednisolone ± L-asparaginase。6. 支持：瘙癢管理、繼發感染控制、營養支持、疼痛管理。',
-    prognosis: '整體預後不良。Patch/plaque 期中位存活 12-24 個月，tumor 期 6-12 個月，Sézary syndrome 3-6 個月。CCNU 反應率高（75-80%）但反應持續時間有限。部分犬對治療反應良好可存活 > 2 年。治療目的為延長有品質的生命（palliative intent），非治癒。',
+    diagnostic_workup: '1. 詳細皮膚病灶描述（分布、數量、型態、是否涉及黏膜）→ 2. 皮膚切片（多處取樣，≥ 2-3 處不同型態病灶）→ 3. 組織病理學（表皮/附屬器嗜性為主；Pautrier microabscess 具特徵性但僅約 23%、非專一）→ 4. 免疫組化（CD3+；犬 MF 主要 CD8+/CD4−，約 80%；加 CD18、Ki-67；勿預期人醫 CD4+）→ 5. 分期：周邊淋巴結 FNA + CBC（含血抹片找 Sézary cells）+ 胸腔 X 光 + 腹部超音波 → 6. 進階（視需要）：TCR clonality（PARR）、骨髓穿刺',
+    treatment_protocol: '1. 一線 CCNU (Lomustine) 60-70 mg/m² PO q3 週（ORR 78-83%，多為短暫 PR），給藥前監測 CBC + ALT/ALP。2. 輔助 Prednisolone 1 mg/kg PO SID 控制早期症狀與搔癢。3. Retinoids（isotretinoin/etretinate 單藥，犬證據約 42-58%；acitretin 無犬證據、亦無 retinoid+CCNU 併用反應率研究）。4. 局部治療：外用糖皮質激素（早期）、放射線（孤立腫塊）。5. Sézary syndrome：CCNU + prednisolone ± L-asparaginase。6. 支持：搔癢管理、繼發感染控制、營養支持、疼痛管理。',
+    prognosis: '整體預後不良，自診斷起中位存活約 6 個月（Fontaine 2010, n=30；Dettwiler 2023 n=176 約 95 天；未治療 3-5 個月）；依部位皮膚型約 130 天 vs 黏膜皮膚型約 491 天（Chan/Moore 2018）。CCNU 反應率高（78-83%）但多為部分緩解、持續期短（中位 94-106 天）。⚠️ 舊教材「分期別存活（12-24 月等）」為人類 MF（ISCL/EORTC）數據、不適用於犬。治療目的為延長有品質的生命（palliative intent），非治癒。',
     monitoring: 'CCNU 治療：每次給藥前 CBC（ANC ≥ 2000/μL 方可給藥）+ ALT/ALP。累積劑量記錄（建議 < 300-400 mg/m²）。每 4-6 週皮膚病灶評估（拍照記錄）。每 2-3 個月重新分期（淋巴結、影像學）。生活品質量表定期評估。出現嚴重骨髓抑制（ANC < 1000）或肝毒性（ALT > 5x ULN）需停藥或調整。',
     owner_communication: '皮膚淋巴瘤是一種從皮膚開始的惡性腫瘤。目前無法治癒，但化療藥物（CCNU）可有效控制病情數月。治療目的是讓狗狗在剩餘時間保持良好生活品質。CCNU 化療需要定期抽血監測（每 3 週），確保肝臟和血球沒有受到藥物傷害。我們會一起持續評估狗狗的生活品質，在適當時機討論安寧照護的選項。',
   },
@@ -5221,9 +5272,16 @@ const contentCTCL: NodeContent = {
   drug_api_links: ['Lomustine', 'Prednisolone', 'Isotretinoin'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 20: Cutaneous Lymphoma.", relevance: '皮膚淋巴瘤分類、臨床特徵與治療的經典參考' },
-    { type: 'journal', citation: 'Fontaine J et al. Canine cutaneous epitheliotropic T-cell lymphoma: a review of 30 cases. Vet Dermatol. 2010;21(3):267-275.', relevance: '犬嗜表皮 T 細胞淋巴瘤大型回顧性研究' },
-    { type: 'journal', citation: 'Williams LE et al. CCNU in the treatment of canine epitheliotropic lymphoma. J Vet Intern Med. 2006;20(6):1384-1388.', relevance: 'CCNU 治療犬皮膚淋巴瘤的療效與毒性評估' },
-    { type: 'guideline', citation: 'Vail DM et al. Veterinary Cooperative Oncology Group，Common Terminology Criteria for Adverse Events (VCOG-CTCAE v2). Vet Comp Oncol. 2021;19(2):311-352.', relevance: '化療不良反應分級標準' },
+    { type: 'journal', citation: 'Fontaine J, Heimann M, Day MJ. Canine cutaneous epitheliotropic T-cell lymphoma: a review of 30 cases. Vet Dermatol. 2010;21(3):267-275. doi:10.1111/j.1365-3164.2009.00793.x', relevance: '犬嗜表皮 T 細胞淋巴瘤 30 例回顧（臨床多樣性、Pautrier 23%、黏膜皮膚 50%、MST 6 月）' },
+    { type: 'journal', citation: 'Fontaine J, Bovens C, Bettenay S, Mueller RS. Canine cutaneous epitheliotropic T-cell lymphoma: a review. Vet Comp Oncol. 2009;7(1):1-14. doi:10.1111/j.1476-5829.2008.00176.x', relevance: '綜述：犬 80% CD8+/CD4− vs 人類 90% CD4+；四大臨床表現型' },
+    { type: 'journal', citation: 'Moore PF, Affolter VK, Graham PS, Hirt B. Canine epitheliotropic cutaneous T-cell lymphoma: an investigation of T-cell receptor immunophenotype, lesion topography and molecular clonality. Vet Dermatol. 2009;20(5-6):569-576. doi:10.1111/j.1365-3164.2009.00814.x', relevance: '免疫表型/克隆性：44/55=80% CD8+；黏膜皮膚受累 57%' },
+    { type: 'journal', citation: 'Williams LE, Rassnick KM, Power HT, et al. CCNU in the Treatment of Canine Epitheliotropic Lymphoma. J Vet Intern Med. 2006;20(1):136-143. doi:10.1111/j.1939-1676.2006.tb02833.x', relevance: 'CCNU n=36：ORR 78%（v1 誤植為 20(6):1384-1388）' },
+    { type: 'journal', citation: 'Risbon RE, de Lorimier LP, Skorupski K, et al. Response of Canine Cutaneous Epitheliotropic Lymphoma to Lomustine (CCNU): A Retrospective Study of 46 Cases (1999-2004). J Vet Intern Med. 2006;20(6):1389-1397. doi:10.1111/j.1939-1676.2006.tb00756.x', relevance: 'CCNU 46 例：ORR 83%、中位反應期 94 天' },
+    { type: 'journal', citation: 'White SD, Rosychuk RAW, Scott KV, et al. Use of isotretinoin and etretinate for the treatment of benign cutaneous neoplasia and cutaneous lymphoma in dogs. J Am Vet Med Assoc. 1993;202(3):387-391. doi:10.2460/javma.1993.202.03.387', relevance: 'Retinoid 單藥治療犬皮膚淋巴瘤（約 42%）' },
+    { type: 'journal', citation: 'Chan CM, Frimberger AE, Moore AS. Clinical outcome and prognosis of dogs with histopathological features consistent with epitheliotropic lymphoma: a retrospective study of 148 cases (2003-2015). Vet Dermatol. 2018;29(2):154-e59. doi:10.1111/vde.12504', relevance: '148 例預後：皮膚型 130 天 vs 黏膜皮膚型 491 天' },
+    { type: 'journal', citation: 'Dettwiler M, Mauldin EA, Jastrebski S, et al. Prognostic clinical and histopathological features of canine cutaneous epitheliotropic T-cell lymphoma. Vet Pathol. 2023;60(2):162-171. doi:10.1177/03009858221140818', relevance: '176 例形態學/組織學預後因子（有絲分裂數、細胞徑）' },
+    { type: 'journal', citation: 'Azuma S, Ohmi A, Goto-Koshino Y, et al. Outcomes and prognostic factors in canine epitheliotropic and nonepitheliotropic cutaneous T-cell lymphomas. Vet Comp Oncol. 2022;20(1):118-126. doi:10.1111/vco.12752', relevance: '唯一直接對照：嗜表皮型 MST 141 天 vs 非嗜表皮型 374 天' },
+    { type: 'journal', citation: 'Olsen E, Vonderheid E, Pimpinelli N, et al. Revisions to the staging and classification of mycosis fungoides and Sezary syndrome. Blood. 2007;110(6):1713-1722. doi:10.1182/blood-2007-03-055749', relevance: '人類 ISCL/EORTC TNMB 分期（犬 T1-T4 之真實出處，對照用）' },
   ],
   is_current: true,
   created_at: now,
