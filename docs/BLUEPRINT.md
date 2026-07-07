@@ -1,8 +1,8 @@
 # VetKnowledgeTree — 工程藍圖與使用說明書
 
 > 本檔是專案的**單一權威技術總覽**：任何人（工程/內容/營運）讀完即可知道系統怎麼運作、怎麼跑、怎麼用、怎麼上線。
-> 內部規則細節見 `CLAUDE.md`（根目錄）；巡航進度見 `docs/CRUISE-LOG.md`；上線前評測見 `docs/PRE-LAUNCH-ASSESSMENT-2026-07-02.md`。
-> 最後更新：2026-07-02（上線前總體檢後）
+> 內部規則細節見 `CLAUDE.md`（根目錄）；巡航進度見 `docs/CRUISE-LOG.md`；最新上線前評測見 `docs/PRE-LAUNCH-ASSESSMENT-2026-07-07.md`（第三輪）。
+> 最後更新：2026-07-07（第三輪上線前總體檢後）
 
 ---
 
@@ -13,7 +13,7 @@
 - **283 個知識節點** × 8 專科（內科/外科/皮膚/神經/腫瘤/急診/臨床病理/心臟），以**知識圖譜**呈現節點間的前置依賴與跨科關聯（**727 條邊**）。
 - **103 個互動病例**：模擬真實臨床決策流程（問診 → 檢查 → 診斷 → 治療）。
 - **學習系統**：FSRS 間隔重複 + 遊戲化（XP/等級/成就）+ 結構化學習路徑。
-- **內容正確性為最高原則**：每一條參考文獻經 `verify:citations` 對 Crossref 驗證（0 捏造引用）。內容分 v1（基礎）/ v2（精通級 8 段結構），目前 **156/283 為 v2（55%）**。
+- **內容正確性為最高原則**：每一條參考文獻經 `verify:citations` 對 Crossref 驗證（0 捏造引用）。內容分 v1（基礎）/ v2（精通級 8 段結構），目前 **194/283 為 v2（68.6%）**（2026-07-07；1271 unique 引用，0 標題不符 / 0 DOI 解不出）。
 
 ---
 
@@ -29,7 +29,7 @@
 | 內容渲染 | react-markdown + remark-gfm + rehype-raw + **rehype-sanitize** + DOMPurify + Mermaid（strict） |
 | 資料庫 | Supabase（Postgres + Auth + RLS）— **上線才接；本機用 seed** |
 | AI | `@anthropic-ai/sdk`（內容生成管線，含 mock 模式） |
-| 測試 | Vitest（847 測試）+ Testing Library + fast-check（property）+ MSW；Playwright、Stryker 已備 |
+| 測試 | Vitest（848 測試）+ Testing Library + fast-check（property）+ MSW；Playwright、Stryker 已備 |
 | 部署 | Vercel + Upstash Redis（rate-limit）+ 選配 Sentry |
 
 ---
@@ -85,7 +85,7 @@
 - **Seed**：`src/data/seed/<專科>/{nodes,edges,contents}.ts`。（原 `open-access-resources.ts` 為零消費者 dead data／67% 連結失效，已於 2026-07-04 連同其唯一 audit 腳本 `scripts/verify-resources.ts` 移除。）
 - **節點 ID 格式**：`<專科>-L<層級>-<序號>`，例：`CARDIO-L3-001`（心臟科 L3 第 1 個，MMVD）。層級 L0（總覽）→ L5（進階/治療）。
 - **內容標準**：`docs/CONTENT-STANDARD-V2.md` 定義 v2 的 8 段 rubric（病理機制/臨床診斷/治療/併發監控/預後/人醫借鑑/爭議與空缺/近期實證）+ 每條 reference 附真實 DOI + Evidence Level。
-- **內容狀態機**：節點內容有 `status`（draft → review → published）與 `version`（1/2）。目前全部停在 `review`，等 DVM 簽核才 `published`。
+- **內容狀態機（2026-07-07 更正）**：狀態欄位 `status`（`draft → review → published`）在 **`KnowledgeNode`** 上（非 `NodeContent`）；`NodeContent` 用的是 `is_current: boolean`。**實測：283 節點全部為 `status:'published'`**（seed 原始預設，非巡航變更），全部 `is_current:true`。v1→v2 的升級進度**只由 `content.version`（1/2）追蹤**，不經 status 轉移。⚠️ 若前端把 `published` 當「對使用者可見」，則 89 個 v1 節點已可見——DVM 簽核閘門實務上落在「內容巡航 + `verify:citations`」，而非 status 欄位。（另注：`node.version` 多數仍為 1，權威 v2 判定請讀 `content.version`。）
 - **正確性閘門**：新增/更新任何 reference 後跑 `npm run verify:citations`；`SUSPECT_*` = 錯/捏造 DOI，commit 前必修。報告落在 `reports/`。
 
 ---
@@ -121,8 +121,10 @@ npm run verify:citations # 引用完整性
 
 - **圖譜箭頭**：headless 預覽無法繪製 React Flow 的 SVG 邊，但資料層 727 條邊正常、arrowhead marker 已註冊 → 需真桌面瀏覽器確認（DEPLOY-CHECKLIST #12）。
 - **後台動作頁為 Demo（已標示）**：`/admin/generate`（0 後端呼叫）、`/admin/review`（永久空）、`/admin/analytics`（活躍/完成數仍為示範值）——三頁均已加「示範資料 Demo」橫幅；analytics 的「總節點數」已改讀真實 `TOTAL_KNOWLEDGE_NODES`（283）。上線前若要真正可用，仍需把 generate/review 接上 `/api/generate/*` + 持久層。
-- ~~`/admin/analytics` dev loading hang~~ ✅ 已修（2026-07-04）：移除 `admin/loading.tsx`（admin 頁 client-static，不需 segment 骨架）。
-- **Next.js 16**：`middleware` 慣例已 deprecated（提示改 `proxy`），build 有警告但尚不阻斷。
+- ~~`/admin/analytics` dev loading hang~~ ✅ 已修（2026-07-04）：移除 `admin/loading.tsx`（admin 頁 client-static，不需 segment 骨架）。analytics 並於 2026-07-07 前改為真實「各專科節點數分佈」（`NODES_BY_SPECIALTY`，有 drift-guard 測試）。
+- ~~**Next.js 16 `middleware` deprecated**~~ ✅ 已遷移（2026-07-07）：`src/middleware.ts → src/proxy.ts`（Next 16 慣例），CSP／安全標頭／admin JWT 閘門逐字保留；`next build` 已無 deprecation 警告，輸出 `ƒ Proxy (Middleware)`。安全稽核確認為乾淨改名、安全層完整。
+- ~~持久化 user auth-flash~~ ✅ 已修（2026-07-07）：新增 `sessionVerified` 旗標（`auth-store.ts`），real 模式等 `INITIAL_SESSION` 才信任 user，且不寫入 localStorage（無法經竄改繞過）。
+- **殘留（P1/P2，非阻斷）**：3 條 v1 神經節點幻影「Moore 2020 ACVIM」引用待掃除（改 Olby 2022 `10.1111/jvim.16480`）；dev 腳本 `scripts/audit-fullstack.ts:119` 仍指向已刪的 `middleware.ts`（1 行）。
 
 ---
 
@@ -132,6 +134,7 @@ npm run verify:citations # 引用完整性
 |---|---|
 | `docs/QUICKSTART.md` | 實測者 10 分鐘上手 |
 | `docs/BLUEPRINT.md`（本檔） | 工程藍圖 / 系統總覽 |
+| `docs/PRE-LAUNCH-ASSESSMENT-2026-07-07.md` | **第三輪總體檢（最新）**：proxy 遷移 + auth-flash 驗證、v2 68.6%、修跨科邊碰撞 + 刷新競爭表 |
 | `docs/PRE-LAUNCH-RETEST-2026-07-04.md` | 第二輪複測（50 代理對抗式）+ 刷新競爭表 |
 | `docs/PRE-LAUNCH-ASSESSMENT-2026-07-02.md` | 首輪上線前總體檢 + 競爭評估表 |
 | `docs/CONTENT-STANDARD-V2.md` | v2 內容 rubric |

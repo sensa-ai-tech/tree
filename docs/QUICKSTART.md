@@ -3,8 +3,8 @@
 > 歡迎加入 VetKnowledgeTree 獸醫專科知識樹平台的實測！
 > 本指南幫助你在 10 分鐘內完成環境設定並開始測試。
 >
-> 📌 **現況（2026-07-04 第二輪複測後）**：283 節點 / 156 v2 / 103 病例；本機 Mock 模式即可完整體驗前台。P0 真實 Auth 程式已接線（設 Supabase env 自動切換）。
-> 最新複測見 [`PRE-LAUNCH-RETEST-2026-07-04.md`](./PRE-LAUNCH-RETEST-2026-07-04.md)；首輪基線 [`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`](./PRE-LAUNCH-ASSESSMENT-2026-07-02.md)；系統架構 [`BLUEPRINT.md`](./BLUEPRINT.md)。
+> 📌 **現況（2026-07-07 第三輪總體檢後）**：283 節點 / **194 v2（68.6%）** / 103 病例；本機 Mock 模式即可完整體驗前台。P0 真實 Auth 程式已接線（設 Supabase env 自動切換）。判定 GO-with-conditions，阻斷項集中於營運端接線。
+> 最新評測見 [`PRE-LAUNCH-ASSESSMENT-2026-07-07.md`](./PRE-LAUNCH-ASSESSMENT-2026-07-07.md)（第三輪）；前次 [`PRE-LAUNCH-RETEST-2026-07-04.md`](./PRE-LAUNCH-RETEST-2026-07-04.md)；首輪 [`PRE-LAUNCH-ASSESSMENT-2026-07-02.md`](./PRE-LAUNCH-ASSESSMENT-2026-07-02.md)；系統架構 [`BLUEPRINT.md`](./BLUEPRINT.md)。
 
 ---
 
@@ -154,7 +154,7 @@ src/
 # 啟動開發伺服器
 npm run dev
 
-# 執行測試（847 個測試 / 56 檔）
+# 執行測試（848 個測試 / 56 檔）
 npx vitest run
 
 # 引用完整性驗證（對 Crossref 驗每一條 DOI）
