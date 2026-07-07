@@ -3599,7 +3599,7 @@ const contentNutrition: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Nutritional Support of Critical Illness.', relevance: 'ECC 核心教材營養支持章節' },
-    { type: 'journal', citation: 'Liu DT, Brown DC, Silverstein DC. Early nutritional support is associated with decreased length of hospitalization in dogs with septic peritonitis: a retrospective study of 45 cases (2000-2009). JVECC. 2012;22(4):453-459.', relevance: '早期營養支持與住院天數關係' },
+    { type: 'journal', citation: 'Liu DT, Brown DC, Silverstein DC. Early nutritional support is associated with decreased length of hospitalization in dogs with septic peritonitis: a retrospective study of 45 cases (2000-2009). J Vet Emerg Crit Care. 2012;22(4):453-459. doi:10.1111/j.1476-4431.2012.00771.x', relevance: '早期營養支持與住院天數關係' },
     { type: 'guideline', citation: 'Chan DL. Nutritional requirements of the critically ill patient. Clin Tech Small Anim Pract. 2004;19(1):1-5.', relevance: '重症營養需求指引' },
   ],
   is_current: true,
@@ -4839,8 +4839,8 @@ AFAST 四點掃描＋腹腔液評分（AFS 0-4）＋連續追蹤已成急診腹�
 const contentHypoglycemia: NodeContent = {
   id: 'CONTENT-ECC-L3-015',
   node_id: 'ECC-L3-015',
-  version: 1,
-  summary: '低血糖急診是小動物急診中常見且可致命的代謝緊急狀況。Toy breed 幼犬（< 6 月齡）為最高風險群，其他原因包括胰島素瘤、敗血症、肝功能不全、腎上腺皮質不全和木糖醇中毒。血糖 < 60 mg/dL 即需警覺，< 40 mg/dL 為嚴重低血糖可致癲癇和腦損傷。急救以 IV dextrose 0.5 g/kg bolus（25% dextrose 2 mL/kg）為首選，之後以 2.5-5% dextrose CRI 維持。Insulinoma 相關低血糖需避免快速推注高濃度 dextrose（反彈效應）。木糖醇中毒需 48-72 小時持續監控。',
+  version: 2,
+  summary: '低血糖急診是小動物急診中常見且可致命的代謝緊急狀況。Toy breed 幼犬（典型 < 3-4 月齡、可延伸至約 6 月齡）為最高風險群，其他原因包括胰島素瘤、敗血症、肝功能不全、腎上腺皮質不全和木糖醇中毒。正常血糖約 70-120 mg/dL，< 60 mg/dL 定義為低血糖並需警覺，< 40 mg/dL 為嚴重低血糖可致癲癇。急救以 IV dextrose 0.25-0.5 g/kg bolus（50% dextrose 需稀釋後緩推）為首選，之後以 2.5-5% dextrose CRI 維持——目標為「消除症狀」，insulinoma 者尤其避免正常化血糖（反彈效應）。Insulinoma 診斷已不用 AIGR 比值，改以「低血糖當下 insulin 未受抑制」判定。木糖醇中毒發作約 30-60 分鐘、肝指數監控至少 72 小時（貓不受影響）。',
   learning_objectives: [
     '列出犬貓低血糖的常見原因並按急診處置優先級分類',
     '說明 Toy breed 幼犬低血糖的病理機轉與高風險因素',
@@ -4849,12 +4849,12 @@ const contentHypoglycemia: NodeContent = {
     '說明木糖醇中毒致低血糖的機轉與監控時程',
   ],
   key_points: [
-    '血糖 < 60 mg/dL 需警覺，< 40 mg/dL 為嚴重低血糖（癲癇風險）',
-    'Toy breed 幼犬為最高風險群（肝醣儲存不足 + 高代謝率）',
-    'IV dextrose 0.5 g/kg bolus（= 25% dextrose 2 mL/kg slow IV over 5-10 min）',
-    'Insulinoma：不要快速推注 50% dextrose，會刺激更多胰島素分泌造成反彈性低血糖',
-    '木糖醇中毒：15-30 分鐘內即可致嚴重低血糖，需 48-72 小時監控',
-    'Insulin:glucose ratio > 50 μU/mL per mg/dL 高度懷疑 insulinoma',
+    '正常血糖約 70-120 mg/dL；< 60 mg/dL 即低血糖需警覺、< 40 mg/dL 為嚴重（癲癇風險）',
+    'Toy breed 幼犬為最高風險群（肝醣儲存不足 + 高代謝率 + 糖質新生未成熟）',
+    'IV dextrose 0.25-0.5 g/kg bolus（50% dextrose 1 mL/kg 稀釋 1:2-1:4 後 slow IV；不稀釋直推致靜脈炎）',
+    'Insulinoma：不要快速推注 50% dextrose，會刺激更多胰島素分泌造成反彈性低血糖；急救以「消除症狀」為目標、勿正常化血糖',
+    '木糖醇中毒：發作約 30-60 分鐘（可延遲 12-18h）；血糖每 1-2h 監控 12-24h、肝指數至少 72h（貓不受影響）',
+    'Insulinoma 診斷：「低血糖當下」測 insulin 未受抑制（> 10 μU/mL）＝不當分泌；AIGR 比值已過時、不再推薦',
     '長期低血糖管理：Diazoxide 5-30 mg/kg PO BID',
   ],
   body: `# 低血糖急診 (Hypoglycemic Emergency)
@@ -4862,7 +4862,7 @@ const contentHypoglycemia: NodeContent = {
 ## 一、病理機制 (Pathophysiology)
 
 ### 血糖調節
-正常血糖維持在 60-120 mg/dL（3.3-6.7 mmol/L），由胰島素（降血糖）和反調節激素（glucagon、cortisol、epinephrine、GH）之間的平衡維持。低血糖發生時，大腦（glucose-dependent organ）最先受影響。
+正常血糖約維持在 70-120 mg/dL（3.9-6.7 mmol/L，多以 90-100 為中心），由胰島素（降血糖）和反調節激素（glucagon、cortisol、epinephrine、GH）之間的平衡維持。**血糖 < 60 mg/dL 即定義為低血糖**（60 為警戒切點而非正常下限）。低血糖發生時，大腦（glucose-dependent organ）最先受影響。
 
 ### 低血糖分類
 | 類別 | 原因 | 機轉 |
@@ -4882,44 +4882,47 @@ const contentHypoglycemia: NodeContent = {
 
 ## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
-### 臨床表現（與血糖濃度相關）
+### 臨床表現（與血糖濃度相關，個體差異大）
 | 血糖範圍 | 症狀 | 機轉 |
 |---------|------|------|
 | 50-60 mg/dL | 顫抖、焦躁、心搏過速 | 腎上腺素代償反應 |
 | 40-50 mg/dL | 虛弱、共濟失調、嗜睡 | 神經低血糖（neuroglycopenia） |
 | < 40 mg/dL | 癲癇、昏迷 | 嚴重腦能量不足 |
-| < 20 mg/dL | 腦死風險 | 不可逆腦損傷 |
+| < 20 mg/dL（且持續） | 不可逆腦損傷風險 | 需「深度 × 持續時間」，非瞬間 |
+
+> ⚠️ 症狀閾值有個體差異：癲癇可在約 < 50 mg/dL 任何值發生；**慢性低血糖（如 insulinoma）動物可耐受至約 35 mg/dL 才出現症狀**（腦部代償適應）。不可逆腦損傷/腦死需血糖 < ~20 mg/dL 且**持續一段時間**（腦電圖趨於靜止，約 30 分鐘），並非跨過某數值即刻發生；此 20 mg/dL 屬外推自人類/實驗數據、非犬貓特異驗證值。
 
 ### 診斷流程
 1. 快速血糖（glucometer point-of-care）：確認低血糖
-2. 同步血清 insulin（低血糖時抽血）：insulin:glucose ratio > 50 高度懷疑 insulinoma
-3. 基礎血檢：CBC、BCS（肝功能、腎功能、電解質、cortisol）
+2. **同步血清 insulin（低血糖當下抽血）**：判讀見下方「insulinoma 診斷」
+3. 基礎血檢：CBC、生化（肝功能、腎功能、電解質、cortisol）
 4. 病史和信號：年齡、品種、用藥史（外源性 insulin）、暴露史（xylitol）
 
-### Insulin:Glucose Ratio（AIGR）
-- 公式：Blood insulin (μU/mL) × 100 / Blood glucose (mg/dL)
-- 正常犬：< 30
-- > 50：高度懷疑 insulinoma
+### Insulinoma 診斷：低血糖當下測 insulin（AIGR 已過時）
+> ⚠️ **Amended Insulin:Glucose Ratio（AIGR）已不再推薦、視為過時**——升高的 AIGR 對 insulinoma 既不敏感也不特異（健康/飢餓犬可偽陽性、確診 insulinoma 犬可偽陰性）（Buishand 2022）。
+- **現行標準**：先記錄到低血糖（血糖 < 60-63 mg/dL，即 < 3.5 mmol/L），並在「**同一次低血糖當下**」測得「不當偏高或未受抑制」的血中 insulin（通常 > 10 μU/mL，或高於參考區間 ~2-21 μU/mL）。
+- 生理上低血糖時 insulin 應被抑制；若未被抑制＝不當的胰島素分泌，支持 insulinoma。
+- 再輔以影像（腹部超音波/CT）與組織病理確診（見 ONCO-L3-015）。
 
 ## 三、治療策略 (Treatment)
 
 ### 急性低血糖急救
-1. IV Dextrose bolus：0.5 g/kg（= 25% dextrose 2 mL/kg 或 50% dextrose 1 mL/kg 稀釋為 25%）slow IV over 5-10 min
-2. 維持輸液：2.5-5% dextrose in 0.9% NaCl CRI，目標血糖 80-120 mg/dL
+1. IV Dextrose bolus：**0.25-0.5 g/kg**（50% dextrose 0.5-1 mL/kg，**稀釋 1:2-1:4** 於 0.9% NaCl 後 slow IV over 5-10 min）。50% dextrose 滲透壓 ~2500 mOsm/L，**不稀釋直推會致嚴重靜脈炎**。
+2. 維持輸液：**2.5-5% dextrose** in 0.9% NaCl CRI（**濃度 > 5% 須經中心靜脈**，末梢靜脈上限 10%）。**目標依病因而定**：一般病因（幼犬/敗血症/木糖醇/Addison）恢復並維持正常血糖（~80-120 mg/dL；新生兒可 90-140）；**insulinoma 則以「消除症狀」為目標、維持 ~50-100 mg/dL 即可，勿正常化血糖**（避免刺激腫瘤分泌更多胰島素）。
 3. 血糖監控：每 1-2 小時，直到穩定
-4. 癲癇控制：Diazepam 0.5-1 mg/kg IV（如有癲癇）
+4. 癲癇控制：**先給 dextrose 矯正血糖**（低血糖性癲癇的根本處置）；矯正後仍持續抽搐才用 Diazepam 0.5-1 mg/kg IV
 
 ### Insulinoma 相關低血糖特殊處理
 - 避免快速推注 50% dextrose：刺激腫瘤 β 細胞分泌更多胰島素 → 反彈性低血糖
-- 使用稀釋 dextrose（12.5-25%）緩慢推注
-- 維持低濃度 dextrose CRI
-- 長期管理：Diazoxide 5-30 mg/kg PO BID（抑制胰島素分泌）
+- 給予「能消除症狀的最小量」稀釋 dextrose（1:3-1:5 稀釋，緩慢推注），**不追求正常化血糖**
+- 維持低濃度 dextrose CRI；難治者可加 glucagon CRI（Datte 2016）
+- 長期管理：Diazoxide 5-30 mg/kg PO BID（K-ATP 通道開啟劑，抑制胰島素分泌）
 
 ### 木糖醇（Xylitol）中毒
-- 機轉：犬體內 xylitol 強效刺激胰島素分泌（人類無此反應）
-- 毒性劑量：> 0.1 g/kg 可致低血糖，> 0.5 g/kg 可致急性肝衰竭
-- 時程：攝入後 15-30 分鐘即可出現低血糖
-- 監控：48-72 小時持續血糖和肝指數監控
+- 機轉：犬體內 xylitol 強效刺激胰島素分泌（靜脈注射使胰島素高峰達等量葡萄糖 ~2 倍）；**人類、貓、大鼠、馬、猴等無此反應——貓不會因木糖醇低血糖或肝損傷**（Kuzuya 1971）
+- 毒性劑量：**> 0.1 g/kg**（100 mg/kg）可致低血糖（傳統界值；已有低至 ~0.03 g/kg 之案例），**> 0.5 g/kg**（500 mg/kg）可致急性肝衰竭（Dunayer 2006）
+- 時程：攝入後**通常 30-60 分鐘**出現低血糖；緩釋型基質（如部分口香糖）可**延遲至 12-18 小時**
+- 監控（**兩個窗口分開**）：血糖每 1-2 小時監測至少 **12-24 小時**；肝指數（ALT/ALP）每 24 小時、持續至少 **72 小時**
 
 ### Toy Breed 幼犬
 - IV dextrose 穩定後，儘早開始頻繁小餐
@@ -4940,18 +4943,44 @@ const contentHypoglycemia: NodeContent = {
 ## 五、預後 (Prognosis)
 
 - Toy breed 幼犬：糾正低血糖後預後極佳，隨年齡增長風險下降
-- Insulinoma：手術後 MST 12-18 個月（見 ONCO-L3-015）
+- **Insulinoma：手術後存活高度取決於分期/是否轉移**，非單一數字。整體 MST 約 12-26 個月（各研究 372-785 天）：Del Busto 2020 整體約 372 天、Polton 2007 手術組約 785 天（復發後加 prednisolone 可延至約 1316 天）；Stage I MST 約 21 個月 vs Stage II/III 約 10 個月；術後恢復正常/高血糖為重要正向預後因子（見 ONCO-L3-015）
 - 木糖醇中毒：僅低血糖者預後良好，合併肝衰竭者預後差
 - 敗血症相關：取決於基礎疾病治療
 
+## 六、人醫借鑒 (Translational Insights)
+
+| 人醫工具/概念 | 獸醫應用潛力 | 現況 |
+|-------------|-------------|------|
+| 連續血糖監測（CGM，如 FreeStyle Libre 皮下感測器） | 難治性低血糖（insulinoma、脆性糖尿病）之居家/住院趨勢監測，減少反覆採血 | 犬貓 CGM 已臨床採用，低血糖區間準確度仍需校正 |
+| 靜脈輸注 glucagon（人醫難治低血糖） | 犬 insulinoma 難治低血糖之 glucagon CRI 輔助（5-40 ng/kg/min） | 已有病例系列（Datte 2016），非第一線 |
+| 「消除症狀」而非「正常化血糖」的治療哲學 | 慢性低血糖（insulinoma）避免過度補糖引發反彈 | 已為獸醫內分泌共識 |
+| 人醫低血糖無感知（hypoglycemia unawareness） | 解釋慢性低血糖犬可耐受極低血糖（腦部代償適應） | 概念沿用，機轉一致 |
+
+## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+
+| 爭議議題 | 現況 | Evidence Level |
+|---------|------|---------------|
+| Insulinoma 之最佳診斷閾值（insulin 判讀） | AIGR 比值已淘汰；改以低血糖當下 insulin 未受抑制判定，但各實驗室 insulin 參考區間與判讀切點未統一 | Level III |
+| 木糖醇低血糖之最低中毒劑量 | 傳統 0.1 g/kg，但已有低至 ~0.03 g/kg 案例，個體差異與產品含量標示不清使風險評估困難 | Level IV |
+| 難治性 insulinoma 低血糖之藥物選擇 | Diazoxide 一線，但 toceranib、everolimus、octreotide、glucagon CRI 之相對效益缺乏對照試驗 | Level III |
+| 急救 dextrose 是否加重 insulinoma 反彈 | 反彈概念廣為接受但缺量化研究，「給最小量、勿正常化」為經驗共識 | Level IV |
+
+## 八、近期更新 (Recent Updates)
+
+- **AIGR 淘汰**：insulin:glucose 比值（含 amended AIGR）因敏感度/特異度不足已不再推薦；現行以「低血糖當下 insulin 未受抑制（> 10 μU/mL）」判定 insulinoma（Buishand 2022 Vet Sci）。
+- **Insulinoma 存活分期依賴**：Del Busto 2020（JVIM，48 犬）確立分期為主要預後因子（Stage I MST ~652 天 vs II/III ~320 天），術後高血糖為正向指標。
+- **木糖醇流行病學**：DuHadway 2015（JVECC，192 犬）與 Murphy 2012 綜述更新劑量-反應、發作時程（30-60 分鐘、可延遲）與監控原則；台灣無糖食品普及使此中毒漸增。
+- **glucagon CRI 輔助**：難治性 insulinoma 低血糖可用 glucagon CRI 作為 dextrose/diazoxide 外的輔助（Datte 2016 JVECC）。
+
 [圖片:低血糖急診處置流程圖。血糖確認 → dextrose bolus → 病因鑑別 → 維持治療]`,
-  clinical_pearl: '急診最容易犯的錯：中老年犬因為「癲癇」送來，直接給 Diazepam 抗癲癇，卻沒先測血糖。測血糖只要 5 秒鐘加一滴血，是急診 SOP 投報比最高的第一步。任何精神異常、虛弱、癲癇的犬貓都要先排除低血糖。\n\n木糖醇中毒是台灣越來越常見的中毒，因為含木糖醇的口香糖、無糖糖果、烘焙食品越來越多。犬只要吃 1-2 顆含木糖醇的口香糖就可能致命性低血糖。一定要問暴露史！\n\n【實務小技巧】沒有靜脈通路時（小型幼犬血管難找），可以拿 50% dextrose 稀釋後滴在舌下或牙齦（buccal absorption），或骨內注射（IO）給 dextrose。',
+  clinical_pearl: '急診最容易犯的錯：中老年犬因為「癲癇」送來，直接給 Diazepam 抗癲癇，卻沒先測血糖。測血糖只要 5 秒鐘加一滴血，是急診 SOP 投報比最高的第一步。任何精神異常、虛弱、癲癇的犬貓都要先排除低血糖。\n\n木糖醇中毒是台灣越來越常見的中毒，因為含木糖醇的口香糖、無糖糖果、烘焙食品越來越多。犬只要吃 1-2 顆含木糖醇的口香糖就可能致命性低血糖。一定要問暴露史！（貓不受影響。）\n\n【實務小技巧】沒有靜脈通路時（小型幼犬血管難找），最可靠的替代途徑是「骨內注射（IO）」給 dextrose。至於把糖漿/dextrose 抹在牙齦——要注意「葡萄糖經口腔黏膜（舌下/頰）的吸收其實極少」，主要靠吞入胃腸道才生效；因此僅適用於「仍能吞嚥」的清醒動物，**意識不清或抽搐者抹口內有吸入性肺炎風險、不應餵食**，應改走 IV/IO。',
   common_mistakes: [
     '癲癇犬沒先測血糖就直接給抗癲癇藥。低血糖是最容易快速矯正的癲癇原因',
-    '快速推注 50% dextrose 給 insulinoma 患犬。會造成反彈性低血糖更危險',
+    '快速推注未稀釋 50% dextrose：對 insulinoma 致反彈性低血糖，且高滲透壓致靜脈炎（須稀釋 1:2-1:4）',
+    '用 AIGR insulin:glucose 比值診斷 insulinoma（已過時）。應以低血糖當下 insulin 未受抑制判定',
     '糾正低血糖後沒去找病因。低血糖是症狀不是診斷，要找根本原因',
-    '木糖醇中毒血糖正常就放心出院。肝毒性可能 12-72 小時後才出現，要持續監控',
-    'Toy breed 幼犬低血糖後沒教育飼主。沒強調頻繁餵食的重要性就會反覆就診',
+    '木糖醇中毒血糖正常就放心出院。肝毒性可能延遲出現，肝指數要監控至少 72 小時',
+    '意識不清動物把糖漿抹口內（口腔黏膜吸收極少 + 吸入風險）。應走 IV/IO',
   ],
   disease_data: {
     signalment: 'Toy breed 幼犬（Chihuahua、Yorkshire Terrier、Pomeranian）< 6 月齡最高風險。Insulinoma：中老年大型犬。木糖醇中毒：不分品種年齡。',
@@ -4967,15 +4996,15 @@ const contentHypoglycemia: NodeContent = {
     ],
     staging: null,
     differential_diagnosis: [
-      { condition: 'Insulinoma', key_differentiator: '中老年犬、反覆發作、低血糖時 insulin 不適當升高、insulin:glucose ratio > 50' },
+      { condition: 'Insulinoma', key_differentiator: '中老年犬、反覆發作、低血糖當下 insulin 不適當升高/未受抑制（> 10 μU/mL；勿用過時的 AIGR 比值）' },
       { condition: '敗血症', key_differentiator: '發燒或低體溫、白血球異常（左移）、明確感染源' },
       { condition: '肝功能不全/PSS', key_differentiator: '低白蛋白、低 BUN、膽酸升高、肝萎縮' },
       { condition: 'Addison\'s disease', key_differentiator: '低鈉高鉀、Na:K < 27:1、ACTH 刺激試驗異常' },
       { condition: '木糖醇中毒', key_differentiator: '暴露史明確、急性發作（15-30 分鐘內）、可續發肝衰竭' },
     ],
-    diagnostic_workup: '1. 快速血糖（glucometer）→ 2. 低血糖時同步抽血測 insulin（送檢前先治療！）→ 3. CBC/BCS + 電解質 → 4. 肝功能（膽酸、NH3）→ 5. Cortisol（排除 Addison）→ 6. 暴露史詢問（木糖醇、insulin 注射史）',
-    treatment_protocol: '【急性處理】25% dextrose 2 mL/kg slow IV bolus（5-10 min）→ 2.5-5% dextrose CRI → 每 1-2 小時血糖監控 → 癲癇時 Diazepam 0.5 mg/kg IV。【Insulinoma】避免快速 50% dextrose，用稀釋 dextrose 緩推。長期：Diazoxide 5-30 mg/kg PO BID。【木糖醇】IV dextrose + 48-72 小時肝指數監控。【Toy breed 幼犬】穩定後儘早頻繁小餐。',
-    prognosis: 'Toy breed 幼犬：糾正後預後極佳。Insulinoma：手術後 MST 12-18 個月。木糖醇僅低血糖：預後良好。木糖醇合併肝衰竭：預後差。敗血症相關：取決於基礎疾病。',
+    diagnostic_workup: '1. 快速血糖（glucometer）→ 2. 低血糖當下同步抽血測 insulin（未受抑制/> 10 μU/mL 支持 insulinoma；AIGR 比值已過時勿用）→ 3. CBC/生化 + 電解質 → 4. 肝功能（膽酸、NH3）→ 5. Cortisol（排除 Addison）→ 6. 暴露史詢問（木糖醇、insulin 注射史）',
+    treatment_protocol: '【急性處理】0.25-0.5 g/kg dextrose（50% dextrose 0.5-1 mL/kg 稀釋 1:2-1:4）slow IV bolus（5-10 min）→ 2.5-5% dextrose CRI（>5% 走中心靜脈）→ 每 1-2 小時血糖監控 → 低血糖性癲癇先矯正血糖、仍抽搐才 Diazepam 0.5 mg/kg IV。【Insulinoma】避免快速 50% dextrose，用稀釋 dextrose 緩推、以消除症狀為目標（勿正常化血糖）。長期：Diazoxide 5-30 mg/kg PO BID。【木糖醇】IV dextrose + 血糖 12-24h、肝指數至少 72h 監控（貓不受影響）。【Toy breed 幼犬】穩定後儘早頻繁小餐。',
+    prognosis: 'Toy breed 幼犬：糾正後預後極佳。Insulinoma：手術後存活依分期而異，整體 MST 約 12-26 個月（Stage I ~21 月 vs II/III ~10 月；Del Busto 2020、Polton 2007）。木糖醇僅低血糖：預後良好。木糖醇合併肝衰竭：預後差。敗血症相關：取決於基礎疾病。',
     monitoring: '急性期：每 1-2 小時血糖直到穩定 > 80 mg/dL × 12 小時。木糖醇：48-72 小時肝指數（ALT/ALP）+ 血糖。Insulinoma：見 ONCO-L3-015 監控計畫。',
     owner_communication: '您的狗狗血糖過低，這可能造成腦部損傷和癲癇。我們正在靜脈給予糖分來穩定血糖。接下來需要找出低血糖的原因（幼犬進食不足/腫瘤/中毒等）。如果是幼犬，請務必每 4-6 小時餵食，不要讓牠長時間空腹。',
   },
@@ -4990,9 +5019,13 @@ const contentHypoglycemia: NodeContent = {
   drug_api_links: ['Dextrose', 'Diazoxide', 'Diazepam'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Hypoglycemia.', relevance: 'ECC 核心教材低血糖章節' },
-    { type: 'journal', citation: 'Koenig A. Endocrine emergencies in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(4):869-897.', relevance: '犬貓內分泌急診綜述' },
-    { type: 'journal', citation: 'Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. JAVMA. 2006;229(7):1113-1117.', relevance: '木糖醇致犬急性肝衰竭經典報告' },
-    { type: 'guideline', citation: 'ASPCA Animal Poison Control Center. Xylitol Toxicosis in Dogs，Clinical Management Guidelines, 2023.', relevance: '木糖醇中毒處置指南' },
+    { type: 'journal', citation: 'Koenig A. Endocrine emergencies in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(4):869-897. doi:10.1016/j.cvsm.2013.03.004', relevance: '犬貓內分泌急診綜述（低血糖急救原則）' },
+    { type: 'journal', citation: 'Buishand FO. Current trends in diagnosis, treatment and prognosis of canine insulinoma. Vet Sci. 2022;9(10):540. doi:10.3390/vetsci9100540', relevance: 'Insulinoma 診斷（AIGR 已過時、改測低血糖當下 insulin）與預後綜述' },
+    { type: 'journal', citation: 'Del Busto I, German AJ, Treggiari E, et al. Incidence of postoperative complications and outcome of 48 dogs undergoing surgical management of insulinoma. J Vet Intern Med. 2020;34(3):1135-1143. doi:10.1111/jvim.15751', relevance: 'Insulinoma 手術存活之分期依賴（Stage I vs II/III）' },
+    { type: 'journal', citation: 'Dunayer EK, Gwaltney-Brant SM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. J Am Vet Med Assoc. 2006;229(7):1113-1117. doi:10.2460/javma.229.7.1113', relevance: '木糖醇致犬急性肝衰竭經典報告（>0.5 g/kg 肝毒閾值）' },
+    { type: 'journal', citation: 'Murphy LA, Coleman AE. Xylitol toxicosis in dogs. Vet Clin North Am Small Anim Pract. 2012;42(2):307-312. doi:10.1016/j.cvsm.2011.12.003', relevance: '木糖醇中毒機轉/劑量/監控綜述' },
+    { type: 'journal', citation: 'DuHadway MR, Sharp CR, Meyers KE, et al. Retrospective evaluation of xylitol ingestion in dogs: 192 cases (2007-2012). J Vet Emerg Crit Care. 2015;25(5):646-654. doi:10.1111/vec.12350', relevance: '木糖醇中毒大型回溯（發作時程/劑量-反應）' },
+    { type: 'guideline', citation: 'ASPCA Animal Poison Control Center. Xylitol Toxicosis in Dogs, Clinical Management Guidelines, 2023.', relevance: '木糖醇中毒處置指南' },
   ],
   is_current: true,
   created_at: now,
