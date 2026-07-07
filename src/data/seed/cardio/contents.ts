@@ -1911,7 +1911,7 @@ SA node 與 AV node 的 Phase 0 依賴 L-type Ca²⁺ 通道（非 Na⁺），�
 const contentValvularDegeneration: NodeContent = {
   id: 'CONTENT-L2-001',
   node_id: 'CARDIO-L2-001',
-  version: 1,
+  version: 2,
   summary: '瓣膜退化是犬最常見的心臟病變基礎。二尖瓣黏液瘤性退化（myxomatous degeneration）涉及瓣膜基質中糖胺聚醣（GAGs）異常沉積、膠原纖維斷裂與瓣膜間質細胞表型轉變。此過程導致瓣膜增厚、脫垂與閉鎖不全，最終引發容量過載與充血性心衰竭。遺傳因素、機械應力與 serotonin 訊號通路均參與致病。',
   learning_objectives: [
     '描述瓣膜黏液瘤性退化的組織病理特徵（GAGs 沉積、膠原纖維破壞）',
@@ -1923,12 +1923,12 @@ const contentValvularDegeneration: NodeContent = {
   key_points: [
     '黏液瘤性退化的核心：瓣膜基質中 GAGs 與蛋白多醣異常堆積，取代正常膠原纖維',
     '瓣膜正常三層結構（atrialis-spongiosa-fibrosa）被破壞，spongiosa 層異常擴張',
-    '瓣膜間質細胞（VIC）從靜止型轉變為活化型（myofibroblast-like），分泌過量基質金屬蛋白酶（MMPs）',
+    'VIC 從靜止型(qVIC)活化為肌纖維母細胞型(aVIC)；犬瓣膜 MMP-2/MMP-14 上調但 MMP-9 測不到，TIMP-2/3 上調致「抑制性催化、ECM 累積」（非膠原淨降解）',
     'Serotonin (5-HT) 訊號通路活化促進瓣膜增生與纖維化，與類癌症候群瓣膜病相似',
     'TGF-β 與 Endothelin-1 在瓣膜退化的基質重塑中扮演重要調節角色',
     '腱索退化：黏液樣變性導致腱索延長、變細，最終可斷裂造成急性瓣膜脫垂',
     '小型犬品種的遺傳易感性強，CKCS 品種可早在 1-2 歲即出現瓣膜病變',
-    '二尖瓣受累最多（~62%），二尖瓣+三尖瓣同時受累約 33%，僅三尖瓣約 1%',
+    '二尖瓣受累最多（~62%），二尖瓣+三尖瓣同時受累約 33%，僅三尖瓣約 1%（Buchanan 1977 屍檢）',
   ],
   body: `# 瓣膜退化機轉 (Valvular Degeneration Pathogenesis)
 
@@ -1940,30 +1940,31 @@ const contentValvularDegeneration: NodeContent = {
 
 ### 正常瓣膜結構
 
-正常房室瓣（二尖瓣與三尖瓣）由三層組成：
-1. Atrialis（心房面）：富含彈性纖維，承受血流衝擊
-2. Spongiosa（中間層）：含 GAGs 與蛋白多醣，提供緩衝
-3. Fibrosa（心室面）：密實膠原纖維，提供結構強度
+正常房室瓣（二尖瓣與三尖瓣）由心房面（inflow）至心室面（outflow）分層組成：
+1. Atrialis（心房面）：富含彈性纖維（放射狀排列），承受血流衝擊
+2. Spongiosa（中間層）：含 GAGs 與蛋白多醣，提供剪應力緩衝
+3. Fibrosa（心室面）：密實環狀膠原纖維（type I/III），最厚承力層，並延伸與腱索相連
+
+> 註：最嚴謹的獸醫組織學（Aupperle & Disatian 2012）常再描述第四層——薄且不恆定的 ventricularis（心室面彈性纖維），故層數應述為「3（常簡化）至 4 層」；勿與半月瓣（主動脈/肺動脈瓣）之分層方案混用。
 
 ## 黏液瘤性退化的病理變化
 
 ### 基質層級
-- Spongiosa 層異常增生，GAGs（特別是 hyaluronic acid、dermatan sulfate）過度沉積
-- Fibrosa 層的 type I/III 膠原纖維斷裂、排列紊亂
-- 彈性纖維（elastin）碎片化
+- Spongiosa 層異常增生擴張，**蛋白聚醣（proteoglycans，尤其 versican、decorin、biglycan，帶 chondroitin/dermatan sulfate 側鏈）**與 GAGs 過度沉積（⚠️ 透明質酸 hyaluronan 絕對量未必顯著上升，但其內吞受體下降、周轉代謝失衡；Gupta 2009）
+- Fibrosa 層的 type I/III（及 VI）膠原纖維斷裂、變薄、排列紊亂
+- 彈性纖維（elastin）碎片化並呈顆粒狀
 - 整體結構：瓣膜增厚、變形、失去正常透亮度
 
 ### 細胞層級
-- 瓣膜間質細胞（VIC）從靜止表型（quiescent phenotype）活化為 myofibroblast-like 表型
-- 活化的 VIC 分泌過量 MMP-1, MMP-9, MMP-13 → 膠原降解
-- 同時分泌過量 GAGs 與蛋白多醣 → 基質異常堆積
-- TIMP/MMP 失衡是基質重塑的關鍵
+- 瓣膜間質細胞（VIC）從靜止表型（qVIC）活化為 myofibroblast-like 表型（aVIC）
+- 犬瓣膜組織上調者主要為 MMP-2（基因）與 MMP-14/MT1-MMP（MMP-1/MMP-13 部分升高）；⚠️ **MMP-9 在瓣膜測不到、進展期血漿反而下降（非升高）**
+- ⚠️ **TIMP/MMP 方向為「TIMP 主導、抑制性催化（depressed catabolism）」**：TIMP-2/TIMP-3 隨嚴重度上調 → 以蛋白聚醣/GAG 為主的 ECM「累積」與 spongiosa 擴張（非膠原淨降解），並伴局部膠原/彈性纖維斷裂紊亂（Aupperle 2009）
 
 ### 訊號通路
-- Serotonin (5-HT)：5-HT2B 受體活化促進 VIC 增殖與基質分泌
-- TGF-β：促進 VIC 活化與 epithelial-mesenchymal transition (EMT)
-- Endothelin-1：血管收縮肽，促進瓣膜纖維化
-- BMP/Wnt 訊號：發育相關通路在退化過程中異常再活化
+- Serotonin (5-HT)：5-HT2B 受體（瓣膜中約 4 倍上調）活化促進 VIC 增殖與基質分泌
+- TGF-β（兩個不同過程）：(1) 誘導瓣膜「內皮」細胞（VEC）發生 **EndMT（endothelial-to-mesenchymal transition，內皮-間質轉化）**——經 Ras/Mek/Erk、可被 SB431542 阻斷；(2) 經 Smad2/3 活化 qVIC→aVIC 肌纖維母細胞。⚠️ 正確術語為 **EndMT（非 EMT/上皮-間質轉化）**——瓣膜內皮源自心內膜內皮譜系而非上皮
+- Endothelin-1：血管收縮肽，可能促進瓣膜纖維化（證據較弱）
+- BMP/Wnt 訊號：發育相關通路（瓣膜發生 valvulogenesis）在退化過程中異常再活化（證據較強）
 
 ## 二、臨床意義 (Clinical Significance)
 
@@ -1974,9 +1975,9 @@ const contentValvularDegeneration: NodeContent = {
 ### 腱索退化
 
 腱索（chordae tendineae）同樣受黏液瘤性退化影響：
-- 腱索基質 GAGs 沉積 → 延長、變細
-- 腱索斷裂（chordal rupture）→ 急性嚴重 MR → 急性肺水腫
-- 第一級腱索（primary chordae，連接瓣尖與乳頭肌）斷裂後果最嚴重
+- 腱索基質 GAGs/蛋白聚醣沉積、膠原（I→III 型）碎裂重塑 → 進行性「腫脹增厚」並可能延長、抗張強度下降（⚠️ 為增厚而非「變細」）
+- 腱索斷裂（chordal rupture）→ 急性嚴重 MR → 急性肺水腫（暴發性左心衰竭）
+- 斷裂最常發生於 first-order（marginal，游離緣）腱索；primary chord 斷裂列為可致猝死/暴發性心衰的嚴重併發症
 
 ## 三、人醫借鑑 (Translational Insights)
 
@@ -1995,6 +1996,14 @@ const contentValvularDegeneration: NodeContent = {
 | 瓣膜退化是否可藥物逆轉 | 目前無疾病修飾療法（disease-modifying therapy），僅對症治療 | Level V |
 | CKCS 品種篩檢最佳年齡與頻率 | 各國繁殖指南不同（1 歲 vs 2.5 歲開始），缺乏成本效益分析 | Level IV |
 | 三尖瓣同時退化的臨床權重 | TR 對 MMVD 預後的獨立影響尚待釐清 | Level III |
+
+## 五、近期更新 (Recent Updates)
+
+- **術語正名（EndMT）**：TGF-β 誘導的是瓣膜內皮細胞的 EndMT（內皮-間質轉化），非 EMT（上皮-間質轉化）——瓣膜內皮屬內皮譜系（Tang 2022 Front Cardiovasc Med；Oyama 2020）。
+- **MMP/TIMP 方向**：犬 MMVD 為 TIMP 主導的「抑制性催化」、ECM（蛋白聚醣）累積，非膠原淨降解；MMP-9 於瓣膜測不到（Aupperle 2009）。
+- **基質沉積主角**：以蛋白聚醣（versican/decorin/biglycan）為主，透明質酸絕對量未顯著上升（Gupta 2009）。
+- **瓣膜受累分布**：二尖瓣 62%/二尖瓣+三尖瓣 33%/僅三尖瓣 1% 之一手來源為 Buchanan 1977 屍檢研究（非 Whitney，後者為受累頻率遞減排序）。
+- **疾病修飾療法**：仍無有效藥物；5-HT2B 拮抗劑、TGF-β 標靶為研究方向；經導管/開心瓣膜修復於犬探索中。
 
 [圖片:二尖瓣黏液瘤性退化組織病理對比，正常 vs 輕度 vs 重度]`,
   clinical_pearl: 'CKCS 品種的瓣膜退化有獨特的遺傳基礎，多基因遺傳模式使得部分 CKCS 在 1-2 歲即可出現雜音。英國 CKCS 繁殖指南建議：5 歲前出現雜音的犬不應用於繁殖。台灣 CKCS 族群由於基因庫較小，瓣膜退化的盛行率可能更高，建議及早進行心臟篩檢。',
@@ -2017,10 +2026,13 @@ const contentValvularDegeneration: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'journal', citation: 'Oyama MA, Bhatt K. Molecular mechanisms of myxomatous mitral valve disease. Vet Clin North Am Small Anim Pract. 2022;52(3):571-583.', relevance: 'MMVD 分子機轉最新綜述' },
-    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 7: Acquired Valvular Disease.', relevance: '瓣膜退化病理學教材' },
-    { type: 'journal', citation: 'Connell PS et al. Serotonin 5-HT2B receptor signaling and valve disease. J Vet Cardiol. 2012;14(1):277-287.', relevance: 'Serotonin 在瓣膜退化中的角色' },
-    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
+    { type: 'journal', citation: 'Oyama MA, Elliott C, Loughran KA, et al. Comparative pathology of human and canine myxomatous mitral valve degeneration: 5HT and TGF-β mechanisms. Cardiovasc Pathol. 2020;46:107196. doi:10.1016/j.carpath.2019.107196', relevance: 'MMVD 分子機轉（5-HT/TGF-β、EndMT）權威回顧（取代 v1 誤植之 Oyama-Bhatt 2022 Vet Clin 引用）' },
+    { type: 'journal', citation: 'Aupperle H, Disatian S. Pathology, protein expression and signaling in myxomatous mitral valve degeneration: comparison of dogs and humans. J Vet Cardiol. 2012;14(1):59-71. doi:10.1016/j.jvc.2012.01.005', relevance: '瓣膜三/四層結構、蛋白聚醣沉積、犬 vs 人病理比較' },
+    { type: 'journal', citation: 'Aupperle H, Thielebein J, Kiefer B, et al. An immunohistochemical study of the role of matrix metalloproteinases and their tissue inhibitors in chronic mitral valvular disease (valvular endocardiosis) in dogs. Vet J. 2009;180(1):88-94. doi:10.1016/j.tvjl.2007.11.011', relevance: 'MMP/TIMP 方向：MMP-2↓/MMP-9 測不到、TIMP-2/3↑ 致 ECM 累積' },
+    { type: 'journal', citation: 'Cremer SE, Singletary GE, Olsen LH, et al. Serotonin concentrations in platelets, plasma, mitral valve leaflet, and left ventricular myocardial tissue in dogs with myxomatous mitral valve disease. J Vet Intern Med. 2014;28(5):1534-1540. doi:10.1111/jvim.12420', relevance: 'Serotonin 在犬 MMVD 的角色（取代 v1 誤植之 Connell 2012 題名/頁碼）' },
+    { type: 'journal', citation: 'Tang Q, McNair AJ, Phadwal K, et al. The role of transforming growth factor-β signaling in myxomatous mitral valve degeneration. Front Cardiovasc Med. 2022;9:872288. doi:10.3389/fcvm.2022.872288', relevance: '近期：TGF-β/EndMT 訊號回顧' },
+    { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. London: Manson Publishing, 2011. Acquired Valvular Disease.', relevance: '瓣膜退化病理學教材' },
+    { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs. J Vet Intern Med. 2019;33(3):1127-1140. doi:10.1111/jvim.15488', relevance: 'MMVD 診斷與治療共識指引（與 CARDIO-L5-004 一致）' },
   ],
   is_current: true,
   created_at: now,
