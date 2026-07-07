@@ -3785,8 +3785,8 @@ const contentBrainTumor: NodeContent = {
 const contentWobbler: NodeContent = {
   id: 'CONTENT-NEURO-L3-009',
   node_id: 'NEURO-L3-009',
-  version: 1,
-  summary: '頸椎脊髓病變（Cervical Spondylomyelopathy, CSM），俗稱 Wobbler Syndrome，是犬頸椎脊髓壓迫性疾病的統稱。分為兩種主要形式：椎間盤相關型（Disc-Associated, DA-CSM，好發 Doberman 中年犬）與骨性相關型（Osseous-Associated, OA-CSM，好發 Great Dane 幼/年輕犬）。典型表現為可行走的後肢痙攣性共濟失調（ambulatory spastic paraparesis）伴寬步態（long-strided gait），頸痛程度不等。MRI 為診斷金標準。治療分保守（NSAIDs + 限制活動）與手術（ventral slot、distraction-fusion）。',
+  version: 2,
+  summary: '頸椎脊髓病變（Cervical Spondylomyelopathy, CSM），俗稱 Wobbler Syndrome，是犬頸椎脊髓壓迫性疾病的統稱。分為兩種主要形式：椎間盤相關型（Disc-Associated, DA-CSM，好發 Doberman 中年至老年犬，以腹側壓迫為主）與骨性相關型（Osseous-Associated, OA-CSM，好發 Great Dane 幼/年輕犬）；兩型壓迫皆好發於尾側頸段（C5-C6、C6-C7）。典型表現為可行走的後肢痙攣性共濟失調（後肢長步幅較嚴重＋前肢短步）＝two-engine gait，頸痛程度不等。MRI 為首選/最準確診斷工具。治療分保守（限制活動+胸帶+止痛）與手術（ventral slot、distraction-stabilization）——但 da Costa 2008 顯示兩者長期預後無顯著差異。',
   learning_objectives: [
     '區分 DA-CSM 與 OA-CSM 的病因、好發品種與年齡',
     '描述 Wobbler Syndrome 的典型步態異常（後肢痙攣性共濟失調 + 前肢短步）',
@@ -3794,14 +3794,15 @@ const contentWobbler: NodeContent = {
     '比較保守治療與手術治療的適應症與預後',
     '辨識多節段壓迫（multi-level compression）的挑戰',
   ],
-  key_points: [
-    'DA-CSM（椎間盤相關型）：Doberman Pinscher 好發（占 Doberman CSM > 80%），中年犬（5-9 歲），椎間盤膨出 + 韌帶肥厚導致腹背壓迫',
-    'OA-CSM（骨性相關型）：Great Dane 好發，年輕犬（< 2 歲），椎體/關節突畸形導致椎管狹窄，營養過剩可能為風險因子',
-    '典型步態：後肢長步幅痙攣性共濟失調（long-strided spastic ataxia）+ 前肢短步（short-strided choppy gait）= 經典 two-engine gait',
-    '頸痛程度不等：DA-CSM 常有頸痛，OA-CSM 可無明顯疼痛',
-    'MRI 金標準：矢狀面評估壓迫位置與範圍 + 橫切面評估壓迫方向（腹背 vs 側方 vs 環形）+ T2 高訊號提示脊髓損傷',
-    '保守治療：NSAIDs + Gabapentin + 限制活動（避免頸部過度屈伸）+ 使用胸帶而非頸圈，約 50% 短期改善但長期易惡化',
-    '手術治療：ventral slot（單節段腹側壓迫）、distraction-fusion（多節段或椎體不穩定）；術後改善率約 80%，但鄰接節段病變（adjacent segment disease, domino effect）為長期風險',
+    key_points: [
+    'DA-CSM（椎間盤相關型）：Doberman Pinscher 好發，中年至老年犬（典型約 7 歲），椎間盤膨出（Hansen II）以「腹側」壓迫為主（± 背側韌帶肥厚為次要），好發 C6-C7 > C5-C6',
+    'OA-CSM（骨性相關型）：Great Dane 好發，年輕/幼齡巨型犬（< 2-3 歲），關節突/椎弓骨性增生致椎管狹窄，好發「尾側頸段」C5-C6/C6-C7（非 C3-C5），營養過剩為提出的關聯（非確立病因）',
+    '典型步態：後肢長步幅痙攣性共濟失調（較嚴重）+ 前肢短步/choppy 步態 = 經典 two-engine gait',
+    '頸痛程度不等：DA-CSM 約半數（49-70%）有頸痛，OA-CSM 頸痛較不明顯；兩型主徵皆為步態異常而非疼痛',
+    'MRI 首選/最準確：矢狀面評估壓迫位置與範圍 + 橫切面評估壓迫方向 + T2 高訊號提示脊髓損傷 + 動態/牽引 MRI 評估動態成分',
+    '保守治療：限制活動 + 胸帶（非頸圈）+ 止痛（gabapentin/NSAID/± 短期 prednisone），約 50% 短期改善但長期易惡化',
+    '手術治療：ventral slot（腹側減壓）、distraction-stabilization（動態壓迫/不穩定）；短期改善約 80%（da Costa 2008 手術組 81%），但術後鄰接節段病變（domino effect，約 20%）為長期風險',
+    '⚠️ 保守 vs 手術長期預後「無顯著差異」（da Costa 2008 JAVMA，104 犬，兩組中位存活皆約 36 月）——缺乏前瞻隨機試驗證明手術較優',
   ],
   body: `# 頸椎脊髓病變，Wobbler Syndrome (Cervical Spondylomyelopathy)
 
@@ -3813,16 +3814,16 @@ const contentWobbler: NodeContent = {
 CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通點為頸椎椎管有效空間減少導致脊髓壓迫與神經功能障礙。
 
 ### DA-CSM（椎間盤相關型）
-- 好發 Doberman Pinscher 中年犬（5-9 歲），占該品種 CSM > 80%
-- 病理：頸椎椎間盤慢性退化膨出（Hansen Type II）+ 背側纖維環/黃韌帶肥厚，接著腹背方向脊髓壓迫
-- 最常見壓迫位置：C5-C6、C6-C7
+- 好發 Doberman Pinscher 中年至老年犬（典型發病約 7 歲，多數 4-10 歲；亦見於 Rottweiler 等大型犬）
+- 病理：頸椎椎間盤慢性退化膨出（Hansen Type II）造成「腹側」脊髓壓迫**為主**；部分病例合併背側韌帶（黃韌帶/interarcuate ligament）肥厚或先天椎管狹窄而有次要背側壓迫（伸展時可加劇成 pincer effect）
+- 最常見壓迫位置：**C6-C7 > C5-C6**（約 20-50% 為多節段）
 - 可為單節段或多節段壓迫
 
 ### OA-CSM（骨性相關型）
-- 好發 Great Dane 年輕犬（< 2 歲），也見於 Mastiff、Rottweiler
-- 病理：椎體畸形（vertebral body malformation）、關節突增生（articular process hypertrophy）、椎弓畸形，跟著椎管狹窄
-- 可能與快速生長、營養過剩（高鈣高蛋白飲食）有關
-- 最常見位置：C3-C5
+- 好發 Great Dane 年輕/幼齡巨型犬（< 2-3 歲，含幼年犬），也見於 Mastiff、Rottweiler、Newfoundland
+- 病理：關節突增生（articular process proliferation）、椎弓/椎弓根骨性增生，造成椎管狹窄與（背外側）脊髓壓迫
+- 可能與快速生長、營養過剩（高鈣、過度餵食）有關——屬提出的**關聯/假說，尚未確立為明確病因**
+- 最常見位置：**尾側頸段 C5-C6、C6-C7（非頭側/中頸段 C3-C5；C2-C3 關節突型為少見變異）**
 
 ### 脊髓損傷機轉
 - 慢性壓迫，脊髓白質去髓鞘與軸突退化（Wallerian degeneration）
@@ -3861,9 +3862,16 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| 保守 vs 手術治療的最佳時機 | 缺乏前瞻性隨機試驗比較兩者長期預後 | Level III |
-| Distraction-fusion vs ventral slot 的選擇 | 回顧性研究結果不一致，缺乏直接比較 | Level III |
-| 營養因素在 OA-CSM 中的角色 | 流行病學關聯但因果關係未確立 | Level IV |`,
+| 保守 vs 手術治療孰優 | **da Costa 2008（JAVMA，104 犬）顯示兩者長期結果與存活「無顯著差異」（中位存活皆約 36 月）**；缺乏前瞻性隨機試驗證明手術較優，選擇應個別化（依嚴重度、進展速度、飼主意願） | Level III |
+| Distraction-fusion vs ventral slot 的選擇 | 逾 20 種術式、回顧性研究結果不一致、缺乏直接比較；動態壓迫成分傾向撐開固定，靜態單節段可減壓 | Level III |
+| 營養因素在 OA-CSM 中的角色 | 流行病學關聯但因果關係未確立 | Level IV |
+
+## 六、近期更新 (Recent Updates)
+
+- **保守 vs 手術長期預後無顯著差異**：da Costa 2008（JAVMA 233(8):1284-1290，104 犬，37 手術/67 內科）為關鍵回顧研究，兩組結果與中位存活（約 36 月）皆無統計顯著差異——推翻「手術一定較優」的直覺，治療決策應個別化。
+- **Doberman 亞臨床壓迫盛行率修正**：約 **25-30%**（非 50%）臨床正常 Doberman 有影像上沉默的脊髓壓迫（da Costa 2006 AJVR 4/16≈25%；da Costa 2010 綜述整合 25-30%）；50% 為另一指標（電生理異常）。
+- **OA-CSM 壓迫位置**：Gasper 2014（27 例）、Bonelli & da Costa 2019（幼齡犬）證實 OA-CSM 壓迫以「尾側頸段 C5-C6/C6-C7」為主（非頭側 C3-C5）；C2-C3 關節突型為少見變異（Cooper 2015）。
+- **鄰接節段病變（domino）機轉爭議**：約 20% 手術成功者於 2-3 年內發生；機轉有二說（固定改變生物力學 vs 底層椎間盤病本身多節段進展），且在 ventral slot 與撐開固定術後發生率「相近」——不應獨歸咎於 distraction-fusion；動作保留術式（arthroplasty）理論可減少但未證實。`,
   clinical_pearl: 'Wobbler Syndrome 的步態評估是診斷的第一步。典型的 two-engine gait（後肢長步幅痙攣性共濟失調 + 前肢短步幅 choppy 步態）在走廊上讓犬慢速行走時最明顯。評估時讓犬在平滑地面直線行走，並觀察轉圈時的後肢交叉（crossing over）。記住 Doberman 中年犬出現進行性四肢共濟失調，CSM 是最優先的鑑別診斷。\n\n【台灣流行病學】Doberman 在台灣飼養量不高但仍有固定族群，CSM 為該品種最重要的神經疾病。Great Dane 在台灣較少見。台灣具備頸椎 MRI 與 ventral slot/distraction-fusion 手術能力的轉介中心主要集中在台北、台中、台南。',
   common_mistakes: [
     '僅觀察後肢步態而忽略前肢短步幅，前後肢步幅不一致是 CSM 的重要診斷線索',
@@ -3874,7 +3882,7 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
   ],
   disease_data: {
     signalment: 'DA-CSM：Doberman Pinscher 最好發（占 CSM 犬 > 50%），5-9 歲中年犬，雄性略多。OA-CSM：Great Dane（< 2 歲）、Mastiff、Rottweiler。其他品種亦可發生但較少見。',
-    etiology: 'DA-CSM：頸椎椎間盤慢性退化（Hansen Type II）合併背側韌帶肥厚，可能有品種遺傳易感性（Doberman CSM 發病率高達 50%）。OA-CSM：先天/發育性椎體畸形 + 關節突增生，可能與快速生長期營養過剩（高鈣、高蛋白飲食）有關。兩型均涉及慢性動態與靜態脊髓壓迫。',
+    etiology: 'DA-CSM：頸椎椎間盤慢性退化（Hansen Type II）以腹側壓迫為主、± 背側韌帶肥厚，有品種遺傳易感性（約 25-30% 臨床正常 Doberman 有影像沉默的脊髓壓迫，da Costa 2006/2010；非 50%）。OA-CSM：先天/發育性關節突增生 + 椎弓骨性增生致椎管狹窄，可能與快速生長期營養過剩（過量鈣、過度餵食）有關（屬關聯/假說）。兩型均涉及慢性動態與靜態脊髓壓迫。',
     pathogenesis: '椎間盤退化膨出或椎體畸形以後，頸椎椎管有效空間就少了，慢性脊髓壓迫接著來（腹側被椎間盤跟椎體壓，背側被黃韌帶跟關節突壓）。白質去髓鞘加軸突 Wallerian 退化，外側索跟腹側索最先受累，後肢 UMN 長纖維束功能掉下去，最後出現痙攣性共濟失調。頸部屈伸動作會加重壓迫（這就是動態壓迫成分）。',
     clinical_signs: [
       { sign: '後肢痙攣性共濟失調', category: 'primary', description: '長步幅（long-strided）搖擺步態，本體感覺定位反應延遲，後肢交叉（crossing over）' },
@@ -3892,7 +3900,7 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
     ],
     diagnostic_workup: '1. 步態評估（two-engine gait 辨識）+ 神經學檢查（後肢 UMN 徵兆、前肢可 UMN 或 LMN），2. 頸椎 X 光（椎間隙狹窄、椎體畸形，但敏感度與特異度有限）。 MRI（金標準：矢狀面定位壓迫 + 橫切面評估壓迫方向 + T2 高訊號評估脊髓損傷 + 動態 MRI 評估屈伸時壓迫變化），4. CSF 分析（排除發炎性疾病），5. 電生理檢查（SSEP 可評估脊髓傳導功能，但臨床使用有限）',
     treatment_protocol: '保守治療（輕度病例或飼主選擇）：NSAIDs（Meloxicam 0.1 mg/kg SID）+ Gabapentin（5-10 mg/kg TID）+ Tramadol（2-5 mg/kg BID-TID）+ 限制活動（避免跑跳）+ 永久改用胸帶 + 短期 Prednisolone（急性惡化時 0.5-1 mg/kg/day tapering）。手術治療（中重度或保守治療失敗）：ventral slot（單節段腹側壓迫）、distraction-fusion with locking plate（多節段或不穩定）、dorsal laminectomy（背側壓迫為主）。術後復健（水療、被動關節運動）加速恢復。',
-    prognosis: '保守治療：約 50% 短期改善但多數長期進行性惡化。手術治療：整體改善率約 80%，Doberman DA-CSM ventral slot 術後步態改善率約 80%，但術後鄰接節段病變（domino effect）發生率約 20%。OA-CSM（Great Dane）手術預後較 DA-CSM 差，可能因多節段畸形。預後不良因子：MRI T2 脊髓高訊號廣泛、多節段壓迫、不可行走、症狀持續時間長。',
+    prognosis: '保守治療：約 50% 短期改善但多數長期進行性惡化。手術治療：短期改善率約 80%（da Costa 2008 手術組 81% 改善），但術後鄰接節段病變（domino effect）發生率約 20%（於 ventral slot 與撐開固定術後發生率相近）。⚠️ **關鍵：da Costa 2008（JAVMA，104 犬）顯示保守與手術兩組長期結果與中位存活（皆約 36 月）無顯著差異**——治療選擇宜個別化，勿預設手術較優。OA-CSM（Great Dane）手術預後可能較 DA-CSM 差（多節段畸形）。預後不良因子：MRI T2 脊髓高訊號廣泛、多節段壓迫、不可行走、症狀持續時間長。',
     monitoring: '保守治療：每月神經學檢查評估是否進展。手術後：2 週傷口檢查，4 週神經學評估，3 個月 MRI 追蹤融合情況。長期：每 3-6 個月神經學追蹤，注意鄰接節段病變徵兆（新節段壓迫症狀）。Gabapentin/NSAIDs 長期使用需監測肝腎功能。',
     owner_communication: 'Wobbler Syndrome 是一種慢性進行性的頸椎疾病，好發於 Doberman 與 Great Dane。輕度病例可先嘗試保守治療（止痛藥 + 限制活動 + 改用胸帶），但多數犬長期會惡化。手術可改善約 80% 犬的步態，但術後仍有 20% 可能在其他頸椎節段出現新的壓迫。治療目標為維持行走能力與生活品質。日常照護重點：永久使用胸帶、避免頸部過度活動、防滑地墊減少跌倒。',
   },
@@ -3906,11 +3914,12 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
   ],
   drug_api_links: ['Gabapentin', 'Prednisolone', 'Tramadol'],
   references: [
-    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 12: Cervical Spondylomyelopathy.', relevance: 'CSM 分類與治療標準教材' },
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter: Cervical Spondylomyelopathy.', relevance: 'CSM 分類與治療標準教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '頸椎脊髓疾病診斷與手術基礎' },
-    { type: 'journal', citation: 'da Costa RC et al. Morphology and morphometry of the caudal cervical vertebral column in the Doberman Pinscher and Great Dane. Vet Radiol Ultrasound. 2006;47(1):1-8.', relevance: 'Doberman 與 Great Dane 頸椎形態學研究' },
-    { type: 'journal', citation: 'De Decker S et al. Surgical treatment of disk-associated wobbler syndrome by a distractable vertebral titanium cage in seven dogs. Vet Surg. 2012;41(2):248-258.', relevance: 'CSM 手術新技術（titanium cage distraction-fusion）' },
-    { type: 'guideline', citation: 'da Costa RC. Cervical spondylomyelopathy (wobbler syndrome) in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):881-913. (ACVIM review consensus on CSM classification and management)', relevance: 'ACVIM CSM 分類與管理共識回顧' },
+    { type: 'journal', citation: 'da Costa RC, Parent JM, Partlow G, et al. Morphologic and morphometric magnetic resonance imaging features of Doberman Pinschers with and without clinical signs of cervical spondylomyelopathy. Am J Vet Res. 2006;67(9):1601-1612. doi:10.2460/ajvr.67.9.1601', relevance: 'Doberman DA-CSM 形態計量（含 25% 亞臨床壓迫；v1 誤植為 Vet Radiol Ultrasound 47(1):1-8）' },
+    { type: 'journal', citation: 'da Costa RC, Parent JM, Holmberg DL, et al. Outcome of medical and surgical treatment in dogs with cervical spondylomyelopathy: 104 cases (1998-2004). J Am Vet Med Assoc. 2008;233(8):1284-1290. doi:10.2460/javma.233.8.1284', relevance: '保守 vs 手術長期預後無顯著差異之關鍵研究' },
+    { type: 'journal', citation: 'De Decker S, Caemaert J, Tshamala MC, et al. Surgical treatment of disk-associated wobbler syndrome by a distractable vertebral titanium cage in seven dogs. Vet Surg. 2011;40(5):544-554. doi:10.1111/j.1532-950X.2011.00839.x', relevance: 'CSM 撐開固定術（titanium cage；v1 誤植為 2012;41(2):248-258）' },
+    { type: 'journal', citation: 'da Costa RC. Cervical spondylomyelopathy (wobbler syndrome) in dogs. Vet Clin North Am Small Anim Pract. 2010;40(5):881-913. doi:10.1016/j.cvsm.2010.06.003', relevance: 'CSM 分類與管理綜述（單一作者 review，非 ACVIM 共識；PubMed Publication Type: Review）' },
   ],
   is_current: true,
   created_at: now,
