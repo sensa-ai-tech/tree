@@ -1523,7 +1523,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
 
   // ─── IM ↔ ONCO（疫苗注射部位 ↔ 貓注射部位肉瘤，2026-06-15 新增節點連結） ───
   {
-    id: 'CROSS-IM-ONCO-001',
+    id: 'CROSS-IM-ONCO-003',
     source_node_id: 'IM-L5-005',    // 疫苗接種與預防醫學
     target_node_id: 'ONCO-L3-008',  // 貓注射部位肉瘤 (FISS)
     relation_type: 'complication',
@@ -1535,7 +1535,7 @@ export const CROSS_SPECIALTY_EDGES: KnowledgeEdge[] = [
 
   // ─── IM ↔ DERM（抗菌藥物管理 ↔ 皮膚科抗生素/MRSP，2026-06-15 新增節點連結） ───
   {
-    id: 'CROSS-IM-DERM-001',
+    id: 'CROSS-IM-DERM-005',
     source_node_id: 'IM-L5-006',    // 抗生素合理用藥
     target_node_id: 'DERM-L5-006',  // 皮膚科抗生素治療（MRSP）
     relation_type: 'clinical_apply',
