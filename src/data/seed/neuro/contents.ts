@@ -942,7 +942,7 @@ const contentPolyradiculoneuritis: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '周邊神經疾病章節' },
     { type: 'journal', citation: 'Cuddon PA. Acquired canine peripheral neuropathies. Vet Clin North Am Small Anim Pract. 2002;32(1):207-249.', relevance: '犬後天性周邊神經病變綜合回顧' },
-    { type: 'journal', citation: 'Holt N et al. Acute canine polyradiculoneuritis following suspected Coxiella burnetii infection. J Vet Intern Med. 2011;25(6):1428-1432.', relevance: '多發性神經根炎病例報告與病因探討' },
+    { type: 'journal', citation: 'Holt N, Murray M, Cuddy LC, Lappin MR. Seroprevalence of Various Infectious Agents in Dogs with Suspected Acute Canine Polyradiculoneuritis. J Vet Intern Med. 2011;25(2):261-266. doi:10.1111/j.1939-1676.2011.0692.x', relevance: '多發性神經根炎之感染性病因血清盛行率研究（v1 誤植題名/卷期為 25(6):1428-1432 之「Coxiella burnetii」）' },
     { type: 'guideline', citation: 'Granger N et al. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013. Clinical guidelines: Peripheral nerve disorders.', relevance: '周邊神經疾病臨床指引' },
   ],
   is_current: true,
@@ -1874,7 +1874,7 @@ const contentNeurophysiology: NodeContent = {
     { type: 'textbook', citation: 'Cunningham JG, Klein BG. Textbook of Veterinary Physiology, 6th ed. Elsevier, 2020.', relevance: '獸醫生理學神經系統章節' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '神經生理臨床應用' },
     { type: 'guideline', citation: 'Podell M et al. 2015 ACVIM Small Animal Consensus Statement on Seizure Management in Dogs. J Vet Intern Med. 2016;30(2):477-490.', relevance: 'ACVIM 共識，神經生理機轉基礎與 AED 作用靶點' },
-    { type: 'journal', citation: 'Bhatt M et al. International veterinary epilepsy task force consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176.', relevance: 'IVETF 藥物治療共識，神經傳遞與藥理基礎' },
+    { type: 'guideline', citation: 'Bhatti SFM, De Risio L, Muñana K, Penderis J, et al. International Veterinary Epilepsy Task Force consensus proposal: medical treatment of canine epilepsy in Europe. BMC Vet Res. 2015;11:176. doi:10.1186/s12917-015-0464-z', relevance: 'IVETF 藥物治療共識，神經傳遞與藥理基礎（v1 誤植首作 Bhatt M，實為 Bhatti SFM）' },
   ],
   is_current: true,
   created_at: now,
@@ -3929,8 +3929,8 @@ CSM 是犬頸椎脊髓壓迫的統稱，涵蓋多種病理機轉。核心共通�
 const contentFCE: NodeContent = {
   id: 'CONTENT-NEURO-L3-010',
   node_id: 'NEURO-L3-010',
-  version: 1,
-  summary: '纖維軟骨栓塞（Fibrocartilaginous Embolism, FCE）是犬常見的脊髓血管疾病，由椎間盤纖維軟骨物質栓塞脊髓供血動脈（或靜脈）導致急性脊髓梗塞。典型特徵為超急性發作（數分鐘至數小時內達最嚴重程度）、初始事件後通常無疼痛（non-painful after initial event）、以及側化的不對稱神經功能缺損（lateralized/asymmetric deficit）。大型犬與巨型犬好發。MRI 顯示符合血管分佈區域的脊髓內病灶（intramedullary lesion matching vascular territory）。無手術治療適應症，以支持性照護與復健為主。保留自主運動功能者預後良好。台灣大型犬飼養比例逐年增加（Labrador、Golden Retriever 為熱門犬種），FCE 在本土神經科急診中需與 IVDD 鑑別；台灣多家動物醫院已配備 MRI 設備，可即時確診並啟動復健計畫。',
+  version: 2,
+  summary: '纖維軟骨栓塞性脊髓病（Fibrocartilaginous Embolic Myelopathy, FCE）是犬缺血性脊髓病最常見的病因，由纖維軟骨物質栓塞脊髓供血血管（動脈或靜脈）導致急性脊髓梗塞。典型特徵為超急性發作（<6 小時達最嚴重、24-48 小時後不再進展）、初始事件後通常無疼痛（non-painful）、以及側化不對稱的神經功能缺損（lateralized，53-87%）。好發大型/巨型非軟骨失養犬（中位年齡約 4-6 歲），但小型犬亦佔相當比例（Bartholomew 2016：24%，Miniature Schnauzer 為最常見單一品種）。MRI 顯示符合血管分佈的脊髓內灰質為主 T2 高訊號、無壓迫、急性期通常無增強。無手術適應症，以支持照護與積極復健為主、不建議類固醇。⚠️ 預後依深痛覺分層：保留自主運動者約 85-90% 恢復，但**深痛覺喪失者預後嚴重不良（恢復率 <10%）**，非舊教材所稱 25-50%。需與 ANNPE（急性非壓迫性髓核擠出，舊稱 Hansen Type III 已不建議）鑑別。台灣多家動物醫院已配備 MRI 可即時確診並啟動復健計畫。',
   learning_objectives: [
     '描述 FCE 的病因假說與病理機轉',
     '辨識 FCE 的三大臨床特徵：超急性、非疼痛、不對稱',
@@ -3939,22 +3939,21 @@ const contentFCE: NodeContent = {
     '評估 FCE 的預後因子',
   ],
   key_points: [
-    '超急性發作：數分鐘至數小時內達最嚴重程度，多數在運動或玩耍中發病',
-    '初始事件後無疼痛：初始可能有短暫尖叫/疼痛反應，但之後脊髓觸診無痛，與 IVDD 的持續疼痛形成鮮明對比',
-    '不對稱/側化神經功能缺損：一側肢體比另一側嚴重（lateralized），符合單側血管分佈',
-    '好發犬種：大型/巨型犬（Labrador、GSD、Greyhound、Irish Wolfhound），但小型犬（Miniature Schnauzer、Shetland Sheepdog）亦可發生',
-    '非進行性：達最嚴重後不再惡化（通常 12-24 小時後穩定），有別於 IVDD 的可能進行性惡化',
-    'MRI 特徵：T2WI 脊髓內高訊號（intramedullary hyperintensity），符合特定血管灌流區域（通常為灰質或灰白質交界），無壓迫性病灶，無對比增強（急性期）',
-    '無手術治療：支持性照護（尿路管理、褥瘡預防）+ 積極復健（水療、被動/主動關節運動、站立訓練）為核心',
+    '臨床三大特徵：超急性發作（<6h 達最嚴重）、初始事件後非疼痛、不對稱/側化（53-87%）——與 IVDD 的持續疼痛、較對稱形成對比',
+    '非進行性：達最嚴重後 24-48 小時內穩定，不再惡化',
+    'MRI 特徵：脊髓內灰質為主的 T2WI 高訊號、符合血管灌流區、無壓迫、急性期通常無增強；超急性期常規 MRI 可能陰性（約 21%），DWI 可較早偵測（惟技術要求高、非常規）',
+    '灰質選擇性易損：因代謝需求高＋依賴側枝循環不佳的中央溝終末動脈，非「微血管密度高」所致',
+    '好發大型/巨型非軟骨失養犬（Labrador、GSD、Greyhound、Golden、Rottweiler），中位年齡約 4-6 歲；小型犬亦佔 24%（Bartholomew 2016），Miniature Schnauzer 為最常見單一品種',
+    '無手術適應症：支持照護（尿路/褥瘡）＋積極復健為核心；⚠️ 無證據支持類固醇/高劑量 MPSS，現行共識不建議',
+    '⚠️ 預後依深痛覺分層：保留自主運動約 85-90% 恢復；深痛覺陽性截癱約 50-65%；深痛覺喪失者恢復率 <10%（嚴重不良，非舊稱 25-50%）',
+    '須與 ANNPE（急性非壓迫性髓核擠出；舊稱 Hansen Type III 已不建議）鑑別——為不同疾病，多數 MRI 可區分',
   ],
   body: `# 纖維軟骨栓塞 (Fibrocartilaginous Embolism, FCE)
 
-## 一、主要內容 (Pathophysiology)
-
-
+## 一、病理機制 (Pathophysiology)
 
 ### 概述
-FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾病的 24%。椎間盤纖維軟骨物質（組織學上與椎間盤 nucleus pulposus 成分相同）進入脊髓供血血管（動脈或靜脈），造成急性脊髓梗塞。
+FCE 是**犬缺血性（血管性）脊髓病最常見的病因**，為造成急性、非進行性、通常無疼痛且常呈不對稱之脊髓病的重要鑑別診斷之一（De Risio & Platt 2010；De Risio 2015）。椎間盤纖維軟骨物質（組織學上與 nucleus pulposus 成分相同）進入脊髓供血血管（動脈或靜脈），造成急性脊髓梗塞。（註：文獻常引的「24%」實為 Bartholomew 2016 之 393 例系統性回顧中「小型犬占 FCE 病例的比例」，並非「FCE 占急性非進行性脊髓病的比例」——後者無一手數據支持，勿混用。）
 
 ### 病因假說
 確切機轉尚未完全釐清，主要假說包括：
@@ -3963,14 +3962,14 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
 - 異常血管通道（殘存胚胎血管）提供纖維軟骨物質進入脊髓血管的途徑
 
 ### 脊髓梗塞機轉
-纖維軟骨栓子，接著脊髓節段動脈（segmental artery）或中央動脈（central artery）阻塞。灰質（grey matter）首先受累（代謝需求高、微血管密度高），缺血壞死然後灰質軟化（myelomalacia）。梗塞範圍取決於栓塞血管大小與側支循環能力。
+纖維軟骨栓子阻塞脊髓節段動脈或中央/溝動脈（central/sulcal artery）。**灰質（grey matter）通常比白質受累更嚴重**，其選擇性易損性主要源自兩點：(1) 灰質（神經元胞體與突觸）**代謝需求高、對缺血極度敏感**（血流量約 50 vs 白質 30 mL/100g/min）；(2) 灰質主要由**中央溝動脈這類側枝循環不佳的終末動脈（end-arteries）**以離心方式供應，栓子易滯留於此、造成以中央灰質為主的梗塞。（灰質微血管密度雖高於白質，但那是高代謝需求的相關表現、甚至為保護因子，並非其易損的主要成因。）缺血壞死續發灰質軟化（myelomalacia）。梗塞範圍取決於栓塞血管大小與側支循環能力。
 
-## 二、判讀要點 (Clinical Signs & Diagnosis)
+## 二、臨床表現與診斷 (Clinical Signs & Diagnosis)
 
 ### 臨床三大特徵
-1. 超急性發作：通常在運動中突然發病，數分鐘至數小時內達最嚴重程度
-2. 非疼痛性（初始事件後）：犬可能在發病瞬間尖叫，但之後脊髓觸診不引起疼痛反應
-3. 不對稱/側化：一側肢體明顯比另一側嚴重，反映單側血管灌流區域梗塞
+1. 超急性發作（peracute，<6 小時）：通常在運動或創傷/興奮中突然發病，數分鐘至數小時內達最嚴重程度，之後 24-48 小時多不再進展
+2. 非疼痛性（初始事件後）：犬可能在發病瞬間尖叫，但之後脊髓觸診不引起疼痛反應（脊椎痛覺過敏 uncommon）
+3. 不對稱/側化：一側肢體明顯比另一側嚴重（文獻報告側化率 53-87%），反映單側血管灌流區域梗塞；對稱性症狀反為預後不良因子
 
 ### MRI 表現
 - T2WI：脊髓內高訊號（intramedullary hyperintensity），通常在灰質或灰白質交界處
@@ -3981,42 +3980,73 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
 ### 鑑別診斷關鍵
 | 鑑別 | FCE 特徵 | 鑑別疾病特徵 |
 |------|---------|-------------|
-| IVDD Hansen Type I | 無痛、非進行性、不對稱 | 疼痛持續、可進行性、較對稱、MRI 見壓迫 |
-| IVDD Hansen Type III | 極相似，兩者可能難以區分 | MRI 可見少量突出物 |
+| IVDD Hansen Type I（壓迫性椎間盤外突） | 無痛、非進行性、不對稱、MRI 無壓迫 | 疼痛持續、可進行性、較對稱、MRI 見壓迫性突出物 |
+| **ANNPE**（急性非壓迫性髓核擠出；舊稱 Hansen Type III／創傷性椎間盤，此舊名現已不建議） | 髓內 T2 高訊號較瀰漫、不固定於某椎間盤上方、無硬膜外髓核物質 | 臨床極相似但為**不同疾病**；MRI 多可鑑別：受累椎間盤間隙變窄、T2 高訊號正位於椎間盤上方、該處背側硬膜外可見髓核訊號與脂肪破壞 |
 | 脊椎骨折/脫位 | 無外傷史 | 有明確外傷史，X 光/CT 見骨折 |
-| 出血性脊髓梗塞 | MRI 無出血訊號 | MRI 見出血訊號（T1 高訊號、gradient echo 低訊號） |
+| 出血性脊髓梗塞/IIVDE | MRI 通常無明顯出血訊號（惟梗塞區偶帶出血成分） | MRI 見出血訊號（T2*/GRE blooming） |
 
-## 三、常見陷阱 (Common Pitfalls)
+## 三、治療策略 (Treatment)
 
-- 將所有急性脊髓病變都當作 IVDD，FCE 的無痛、不對稱、非進行性特徵可鑑別
-- FCE 初始發病時可能有短暫疼痛（尖叫），不應所以排除 FCE，關鍵是之後的持續非疼痛性
-- 小型犬也可以發生 FCE，Miniature Schnauzer 與 Shetland Sheepdog 有報告
-- FCE 超急性期（< 12 小時）MRI 可能尚無明顯 T2 高訊號，若臨床高度懷疑但首次 MRI 正常，24-48 小時後重複 MRI
+FCE **無手術適應症**（無壓迫性病灶，減壓手術無益），屬保守治療。核心為：
+- **支持性/護理照護**：膀胱管理（擠壓或導尿、預防尿路感染）、褥瘡預防（翻身、軟墊）、營養支持。
+- **積極物理復健（治療核心）**：水中跑步機、被動關節運動（PROM）、主動輔助運動、站立平衡訓練、神經肌肉電刺激（NMES）；穩定後（約 24-48 小時）盡早開始。
+- **止痛/抗發炎**：僅對有脊椎痛覺過敏者給抗發炎/止痛藥。
+- ⚠️ **類固醇/高劑量 MPSS：無任何前瞻性對照試驗證據支持用於 FCE，現行共識不建議常規使用**（缺乏療效且有消化道出血/穿孔風險）。註：現行相關共識為 2022 ACVIM 急性胸腰椎椎間盤突出（IVDE）共識（Olby & Moore 2022），雖針對 IVDE 而非 FCE，但「不建議 MPSS/類固醇」之原則同樣適用於缺血性脊髓病。
 
-## 四、人醫借鑒 (Translational Insights)
+## 四、預後 (Prognosis)
+
+FCE 預後**依神經嚴重度分層**（深痛覺/nociception 為最強預後因子）：
+
+| 嚴重度 | 恢復率 | 依據 |
+|--------|--------|------|
+| 保留自主運動、深痛覺完整 | 良好至極佳，約 **85-90%** 恢復行走（多數 2-3 週內），惟約半數留殘餘缺損 | Bartholomew 2016（393 例，~85% 恢復、~49% 殘餘）；Gandini 2003 |
+| 截癱但深痛覺陽性 | 謹慎，約 **50-65%** 恢復獨立行走 | Togawa 2024（深痛覺陽性 9/14＝64%）；De Risio & Platt 2010 |
+| **深痛覺喪失（nociception-negative）** | ⚠️ **預後不良至嚴重不良，恢復率極低（約 <10%）** | De Risio & Platt 2010（43 隻深痛喪失犬 42 隻於約一週內安樂死、僅 1 隻恢復）；Togawa 2024（1/12＝8.3%，且唯一恢復者實為 ANNPE） |
+
+> ⚠️ 舊教材常寫「深痛覺喪失者 25-50% 可恢復」屬**過度樂觀且危險**——實際深痛覺喪失之真正 FCE 恢復率 <10%。
+
+**預後不良因子**（依證據強度）：深痛覺喪失（最強）、MRI 上 T2 縱向高訊號範圍過大（De Risio 2007：病灶長/椎體長比 >2.0 對不良結果敏感度 100%）、對稱性症狀（Gandini 2003）。脊髓膨大（intumescence/LMN）病灶：Gandini 2003 列為負向因子，惟 De Risio 2007/2008 未能證實其與結果相關，屬文獻尚未一致之因子。
+
+## 五、併發症與監控 (Complications & Monitoring)
+
+- **併發症**：長期臥床之尿路感染、褥瘡、肌肉萎縮；LMN 膀胱之尿滯留；吸入性肺炎（頸段病例）。
+- **監控**：急性期（1-3 天）每 12 小時神經學評估確認非進行性；亞急性期（1-4 週）每週步態追蹤；復健期每 2 週評估調整。膀胱管理期間定期尿檢/培養。
+- FCE 復發罕見，恢復後通常無需長期追蹤。
+
+## 六、人醫借鑒 (Translational Insights)
 
 | 人醫工具/概念 | 獸醫應用潛力 | 現況 |
 |-------------|-------------|------|
-| DWI/ADC MRI 序列 | 犬 FCE 超急性期偵測（早於常規 T2WI） | 人醫腦中風常規使用 DWI，犬脊髓 DWI 研究起步中 |
-| 急性脊髓梗塞復健策略 | 犬 FCE 循證復健計畫 | 人醫脊髓復健證據增加，可轉譯至犬 |
+| DWI/ADC MRI 序列 | 犬 FCE 超急性期偵測（早於常規 T2WI，實驗約 1 小時即現 restricted diffusion） | 人醫腦/脊髓中風常規使用 DWI；犬脊髓 DWI 技術要求高、非常規，研究起步中 |
+| 急性脊髓梗塞循證復健 | 犬 FCE 復健計畫 | 人醫脊髓復健證據增加，可轉譯至犬 |
+| 缺血性脊髓病之神經保護 | 尚無經證實有效之藥物 | 人醫急性脊髓梗塞亦無確立神經保護藥；FCE 勿依賴類固醇 |
 
-## 五、臨床爭議 (Controversies & Knowledge Gaps)
+## 七、臨床爭議 (Controversies & Knowledge Gaps)
 
 | 爭議議題 | 現況 | Evidence Level |
 |---------|------|---------------|
-| FCE vs Hansen Type III 的鑑別 | 兩者臨床與 MRI 表現可極度相似，部分學者認為兩者為同一疾病譜系的不同端 | Level IV |
+| FCE vs ANNPE 的區分 | 兩者臨床與 MRI 可極相似、臨床常合併討論，但為**兩個不同疾病**（FCE 血管性、ANNPE 機械性）；多數病例 MRI 可鑑別。舊稱「Hansen Type III」已不建議使用（Fenn 2020） | Level III |
 | FCE 的確切栓塞路徑 | 動脈 vs 靜脈 vs 混合，纖維軟骨如何進入血管仍有爭議 | Level IV |
-| 急性期類固醇使用 | 目前無證據支持類固醇對 FCE 有益，部分神經科醫師仍經驗性使用短期 Dexamethasone | Level IV |`,
-  clinical_pearl: 'FCE 的臨床診斷三要素，超急性、非疼痛、不對稱，是在急診中與 IVDD Hansen Type I 鑑別的關鍵。一隻大型犬在運動中突然後肢癱瘓，一側明顯比另一側嚴重，脊椎觸診不痛，高度懷疑 FCE。而臘腸犬急性後肢癱瘓伴嚴重背痛與較對稱的神經功能缺損，高度懷疑 IVDD。FCE 確診後最重要的訊息是告訴飼主：這不是 IVDD，不需要手術，積極復健是最佳治療。保留自主運動功能的犬預後良好，多數可在 6-12 週內恢復行走能力。',
+| 急性期類固醇使用 | 無證據支持類固醇/MPSS 對 FCE 有益，現行共識不建議；仍有醫師經驗性使用 | Level IV |
+| 脊髓膨大/LMN 病灶是否為預後不良因子 | Gandini 2003 支持、De Risio 2007/2008 未證實，尚無定論 | Level IV |
+
+## 八、近期更新 (Recent Updates)
+
+- **深痛覺喪失預後釐清**：深痛覺喪失之真正 FCE 恢復率 <10%（De Risio & Platt 2010；Togawa 2024），推翻舊教材「25-50%」的樂觀說法。
+- **ANNPE 術語標準化**：Fenn 等 2020 之椎間盤疾病分類確立以 ANNPE 取代「Hansen Type III／創傷性椎間盤」等舊名，並將 FCE 與 ANNPE 明確分為兩個實體。
+- **系統性回顧**：Bartholomew 2016（393 例）確立整體恢復率 ~85%（~49% 留殘餘缺損），並發現小型犬占 24%、Miniature Schnauzer 為最常被報告之單一品種。
+- **治療共識**：2022 ACVIM 急性胸腰椎 IVDE 共識（Olby & Moore 2022）不建議高劑量 MPSS/常規類固醇——此「不用類固醇」原則同樣適用於 FCE。`,
+  clinical_pearl: 'FCE 的臨床三要素——超急性、非疼痛、不對稱——是在急診中與壓迫性 IVDD 鑑別的關鍵。一隻大型犬運動中突然後肢癱瘓、一側明顯較重、脊椎觸診不痛，高度懷疑 FCE；臘腸犬急性後肢癱瘓伴嚴重背痛與較對稱缺損，則傾向 IVDD。確診 FCE 後最重要的訊息是：這不是壓迫性 IVDD，不需手術，積極復健是最佳治療。但預後溝通必須誠實分層——**深痛覺（nociception）是最強預後因子**：保留自主運動者多在 2-3 週內開始改善、約 85-90% 恢復行走；而**深痛覺喪失者預後嚴重不良（恢復率 <10%）**，切勿以「FCE 比 IVDD 好」而給飼主過度樂觀的期待。',
   common_mistakes: [
-    '將 FCE 誤診為 IVDD 並進行不必要的減壓手術，FCE 無壓迫性病灶，手術無益',
-    '忽略 FCE 的不對稱性，IVDD 通常較對稱，明顯側化的急性脊髓病變應優先考慮 FCE',
-    '因初始發病時的短暫疼痛（尖叫）而排除 FCE，FCE 的特徵是持續性非疼痛，非完全無疼痛',
-    '在 FCE 急性期使用高劑量類固醇，無證據支持療效，且可能引起消化道併發症',
-    '對深痛覺喪失的 FCE 犬過早放棄，FCE 預後優於同等嚴重度的 IVDD，應給予更長的恢復觀察期',
+    '將 FCE 誤診為壓迫性 IVDD 並進行不必要的減壓手術，FCE 無壓迫性病灶，手術無益',
+    '忽略 FCE 的不對稱性，明顯側化的急性脊髓病變應優先考慮 FCE',
+    '因初始發病時的短暫疼痛（尖叫）而排除 FCE，FCE 的特徵是「初始事件後」持續性非疼痛，非完全無疼痛',
+    '在 FCE 急性期使用高劑量類固醇/MPSS，無證據支持療效、且有消化道出血/穿孔風險，現行共識不建議',
+    '對深痛覺喪失的 FCE 犬給飼主過度樂觀期待：深痛覺喪失之真正 FCE 恢復率 <10%（非舊稱 25-50%），應誠實溝通嚴重不良之預後',
+    '把 ANNPE（舊稱 Hansen Type III）與 FCE 當成同一疾病：兩者臨床相似但為不同實體，多數 MRI 可鑑別',
   ],
   disease_data: {
-    signalment: '大型/巨型犬好發：Labrador Retriever、German Shepherd Dog、Greyhound、Irish Wolfhound。小型犬亦可發生（Miniature Schnauzer、Shetland Sheepdog）。犬：成年（中位年齡 5-6 歲），貓少見但有報告。無明顯性別偏好，部分研究顯示雄性略多。',
+    signalment: '好發大型/巨型「非軟骨失養（non-chondrodystrophic）」犬：Labrador Retriever、German Shepherd Dog、Greyhound、Irish Wolfhound、Golden Retriever、Rottweiler。小型犬亦佔相當比例——Bartholomew 2016（393 例）中小型犬佔 24%，Miniature Schnauzer 為單一最常被報告品種（Shetland Sheepdog、Yorkshire Terrier 亦常見）。中位年齡約 4-6 歲（中年為主，但亦可見於未成年犬），貓少見但有報告。無明顯性別偏好，部分研究顯示雄性略多。',
     etiology: '椎間盤纖維軟骨物質（成分與 nucleus pulposus 相同）栓塞脊髓節段動脈或靜脈。確切進入血管的路徑未完全釐清。多數在運動或劇烈活動中發病，提示急性椎間盤內壓力變化可能為觸發因素。',
     pathogenesis: '纖維軟骨栓子跑進脊髓血管以後，造成節段性動脈或靜脈阻塞，脊髓灰質先缺血（代謝需求高，最敏感）。接著就是缺血性壞死（myelomalacia），梗塞範圍看栓塞血管大小跟側支循環，臨床上多半是單側為主的不對稱脊髓損傷。這病不會進展，栓塞一旦發生就固定下來，不會繼續擴大。',
     clinical_signs: [
@@ -4029,14 +4059,14 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
     staging: null,
     differential_diagnosis: [
       { condition: 'IVDD Hansen Type I', key_differentiator: '持續疼痛、較對稱、可為進行性、MRI 見壓迫性病灶（突出的椎間盤物質）' },
-      { condition: 'IVDD Hansen Type III', key_differentiator: '與 FCE 極度相似，兩者可能無法 MRI 鑑別，Type III 可見少量突出物，FCE 完全無壓迫' },
+      { condition: 'ANNPE（急性非壓迫性髓核擠出；舊稱 Hansen Type III，此名已不建議）', key_differentiator: '臨床極相似但為不同疾病；多數 MRI 可鑑別——ANNPE 見受累椎間盤間隙變窄、T2 高訊號正位於某椎間盤上方、該處背側硬膜外可見髓核訊號，FCE 缺如' },
       { condition: '脊椎骨折/脫位', key_differentiator: '有外傷史，X 光/CT 見明確骨折或脫位' },
       { condition: '出血性脊髓梗塞', key_differentiator: 'MRI 見出血訊號（T1 高訊號、gradient echo blooming artifact）' },
       { condition: '主動脈血栓栓塞（ATE，貓）', key_differentiator: '貓：後肢冰冷、股動脈脈搏消失、趾甲切面無出血，常伴 HCM' },
     ],
     diagnostic_workup: '1. 神經學檢查（評估不對稱性、定位脊髓節段、確認非疼痛性），2. 基礎血檢排除凝血異常與系統性疾病。3. MRI（金標準：T2WI 脊髓內高訊號、無壓迫性病灶、符合血管分佈區域；注意超急性期 < 12h 可能尚無明顯變化）。4. CSF 分析（排除發炎性疾病，FCE 通常正常或輕度蛋白升高），5. 確診需組織病理學（臨床以推定診斷為主：典型臨床表現 + MRI 支持 + 排除其他病因）',
     treatment_protocol: '無手術適應症。支持性照護：尿路管理（擠壓膀胱或導尿，預防尿路感染）、褥瘡預防（翻身、軟墊）、營養支持。積極復健為核心治療：水療（underwater treadmill）、被動關節運動（PROM）、主動輔助運動、站立平衡訓練、電刺激（NMES）。復健應在穩定後盡早開始（24-48 小時內）。急性期無證據支持類固醇或其他神經保護藥物。',
-    prognosis: '整體預後優於同等嚴重度的 IVDD。保留自主運動功能（能自主移動肢體）者預後良好，85-90% 可恢復行走能力（通常 6-12 週）。深痛覺存在但無自主運動者：約 50-60% 可恢復行走。深痛覺喪失者：預後謹慎但仍優於 IVDD Grade V（約 25-50% 可恢復）。預後良好因子：保留自主運動、小面積梗塞、早期積極復健。預後不良因子：深痛覺喪失、廣泛脊髓 T2 高訊號（> 2 椎體長度）、LMN 損傷為主。',
+    prognosis: '依神經嚴重度分層（深痛覺為最強預後因子）：保留自主運動、深痛覺完整者預後良好至極佳，約 85-90% 恢復行走（多數 2-3 週內開始改善，約半數留殘餘缺損；Bartholomew 2016）；截癱但深痛覺陽性者約 50-65% 恢復（Togawa 2024）；⚠️ 深痛覺喪失（nociception-negative）者預後嚴重不良、恢復率 <10%（De Risio & Platt 2010：43 隻僅 1 隻恢復；Togawa 2024：1/12 且該例實為 ANNPE）——舊教材「25-50%」屬過度樂觀。預後不良因子：深痛覺喪失（最強）、T2 高訊號病灶長/椎體長比 >2.0（De Risio 2007 敏感度 100%）、對稱性症狀。脊髓膨大/LMN 病灶為預後因子尚無定論（Gandini 2003 支持、De Risio 未證實）。',
     monitoring: '急性期（1-3 天）：每 12 小時神經學評估確認非進行性。亞急性期（1-4 週）：每週神經學與步態評估追蹤恢復進度。復健期（1-3 個月）：每 2 週評估復健成效並調整計畫。長期：FCE 復發少見，恢復後通常無需長期追蹤。膀胱管理期間每週尿液培養監測感染。',
     owner_communication: 'FCE 是一種脊髓血管意外（類似人的中風），不是椎間盤突出（IVDD），不需要手術。好消息是 FCE 不會持續惡化，發病後穩定即為最差狀態，之後只會改善或維持。積極復健（水療、物理治療）是最重要的治療。保留肢體自主運動能力的犬，絕大多數可在 6-12 週內恢復行走。即使深痛覺喪失的犬，FCE 的恢復機會也比 IVDD 更高，請不要太早放棄。復健期間需要耐心，進步可能是緩慢但持續的。',
   },
@@ -4051,11 +4081,16 @@ FCE 是犬最常見的脊髓血管疾病，約占犬急性非進行性脊髓疾�
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter 13: Vascular Diseases of the Spinal Cord.', relevance: 'FCE 病理與臨床標準教材' },
+    { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016. Chapter: Vascular Diseases of the Spinal Cord.', relevance: 'FCE 病理與臨床標準教材' },
     { type: 'textbook', citation: 'Platt SR, Olby NJ. BSAVA Manual of Canine and Feline Neurology, 4th ed. BSAVA, 2013.', relevance: '脊髓血管疾病診斷基礎' },
-    { type: 'journal', citation: 'De Risio L et al. Fibrocartilaginous embolism in small animals. Vet J. 2009;179(2):171-178.', relevance: 'FCE 綜合回顧與預後因子分析' },
-    { type: 'journal', citation: 'Gandini G et al. Fibrocartilaginous embolism in 75 dogs: clinical findings and factors influencing the recovery rate. J Small Anim Pract. 2003;44(2):76-80.', relevance: 'FCE 大規模回顧研究與恢復率' },
-    { type: 'guideline', citation: 'Olby NJ, Levine JM, Harris T, et al. ACVIM Consensus Statement: Long-Term Functional Outcome in Dogs with Spinal Cord Injury. J Vet Intern Med. 2020;34(6):2255-2269.', relevance: 'ACVIM 犬脊髓損傷長期功能預後共識聲明（含 FCE 復健指引）' },
+    { type: 'journal', citation: 'De Risio L, Platt SR. Fibrocartilaginous Embolic Myelopathy in Small Animals. Vet Clin North Am Small Anim Pract. 2010;40(5):859-869. doi:10.1016/j.cvsm.2010.05.003', relevance: 'FCE 權威綜述（v1 誤植為 Vet J 2009;179(2):171-178，該卷期實為貓膿胸文獻）' },
+    { type: 'journal', citation: 'De Risio L. A Review of Fibrocartilaginous Embolic Myelopathy and Different Types of Peracute Non-Compressive Intervertebral Disk Extrusions in Dogs and Cats. Front Vet Sci. 2015;2:24. doi:10.3389/fvets.2015.00024', relevance: 'FCE 與 ANNPE 區分、病理/MRI/預後綜述' },
+    { type: 'journal', citation: 'Gandini G, Cizinauskas S, Lang J, Fatzer R, Jaggy A. Fibrocartilaginous embolism in 75 dogs: clinical findings and factors influencing the recovery rate. J Small Anim Pract. 2003;44(2):76-80. doi:10.1111/j.1748-5827.2003.tb00124.x', relevance: 'FCE 75 例：預後因子（深痛覺/對稱性/膨大）' },
+    { type: 'journal', citation: 'De Risio L, Adams V, Dennis R, McConnell F, Platt S. Magnetic Resonance Imaging Findings and Clinical Associations in 52 Dogs with Suspected Ischemic Myelopathy. J Vet Intern Med. 2007;21(6):1290-1298. doi:10.1892/06-273.1', relevance: 'MRI 特徵與預後（病灶長/椎體長比 >2.0 敏感度 100%）' },
+    { type: 'journal', citation: 'Bartholomew KA, Stover KE, Olby NJ, Moore SA. Clinical characteristics of canine fibrocartilaginous embolic myelopathy (FCE): a systematic review of 393 cases (1973-2013). Vet Rec. 2016;179(25):650. doi:10.1136/vr.103863', relevance: '393 例系統性回顧：恢復率 ~85%、小型犬 24%、Miniature Schnauzer 最常見' },
+    { type: 'journal', citation: 'Togawa G, Lewis MJ, Devathasan D. Outcome in paraplegic dogs with or without pain perception due to thoracolumbar fibrocartilaginous embolic myelopathy or acute non-compressive nucleus pulposus extrusion. Front Vet Sci. 2024;11:1406843. doi:10.3389/fvets.2024.1406843', relevance: '深痛覺分層預後（陽性 64% vs 陰性 8.3%）' },
+    { type: 'journal', citation: 'Fenn J, Drees R, Volk HA, De Decker S. Classification of Intervertebral Disc Disease. Front Vet Sci. 2020;7:579025. doi:10.3389/fvets.2020.579025', relevance: '椎間盤疾病分類：ANNPE 取代舊稱 Hansen Type III' },
+    { type: 'journal', citation: 'Olby NJ, Levine J, Harris T, Muñana K, et al. Long-term functional outcome of dogs with severe injuries of the thoracolumbar spinal cord: 87 cases (1996-2001). J Am Vet Med Assoc. 2003;222(6):762-769. doi:10.2460/javma.2003.222.762', relevance: '脊髓損傷長期功能預後（v1 誤標為不存在的「Olby 2020 ACVIM 共識 JVIM 34(6):2255-2269」）' },
   ],
   is_current: true,
   created_at: now,
