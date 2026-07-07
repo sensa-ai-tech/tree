@@ -3056,8 +3056,8 @@ HPT 軸（甲亢 / 甲低的基礎）
 const contentRenalInjury: NodeContent = {
   id: 'CONTENT-IM-L2-001',
   node_id: 'IM-L2-001',
-  version: 1,
-  summary: '腎損傷機轉涵蓋急性與慢性腎臟損傷的病理生理。急性腎損傷（AKI）以腎小管壞死和缺血-再灌流損傷為核心，慢性腎損傷以腎元漸進性喪失、腎小管間質纖維化和 RAAS 過度活化的惡性循環為核心。理解這些機轉是制定腎臟保護策略（ACEI/ARB、飲食管理）的理論基礎。',
+  version: 2,
+  summary: '腎損傷機轉涵蓋急性與慢性腎臟損傷的病理生理。急性腎損傷（AKI）以缺血性/腎毒性腎小管壞死和缺血-再灌流損傷為核心，慢性腎損傷（CKD）以腎元漸進性喪失、殘餘腎元高過濾、腎小管間質纖維化（TGF-β 為核心）和 RAAS 過度活化的惡性循環為核心。這些機轉直接連到臨床：IRIS 分期、SDMA 早期偵測、UPC 蛋白尿亞分期、以及 RAAS 抑制劑（ACEI/ARB）與飲食的腎保護策略。',
   learning_objectives: [
     '描述急性腎小管壞死（ATN）的缺血性與腎毒性機轉',
     '解釋缺血-再灌流損傷中活性氧（ROS）和發炎反應的角色',
@@ -3071,8 +3071,9 @@ const contentRenalInjury: NodeContent = {
     '腎毒性損傷：aminoglycosides（近曲小管蓄積）、NSAIDs（前列腺素抑制→腎血流減少）、ethylene glycol（草酸鈣結晶沉積）、lily（貓特異性腎毒性）',
     'CKD 惡性循環：腎元喪失 → 殘餘腎元代償性高灌流/高壓 → 腎小球硬化 → 更多腎元喪失',
     'RAAS 在 CKD 中的角色：Angiotensin II → 出球小動脈收縮 → 腎小球高壓 → 蛋白尿 → 腎小管毒性 → 纖維化',
-    '腎小管間質纖維化：TGF-β 為核心促纖維化因子 → 纖維母細胞活化 → 膠原蛋白沉積 → 腎功能不可逆喪失',
-    '蛋白尿本身具有腎毒性：過濾的蛋白質被近曲小管再吸收 → 溶酶體過載 → 發炎因子釋放 → 間質纖維化',
+    '腎小管間質纖維化：TGF-β 為核心（非唯一）促纖維化因子 → myofibroblast（主要源自駐留纖維母細胞/周細胞）活化 → 膠原蛋白沉積 → 腎功能不可逆喪失；間質纖維化程度為 CKD 進展最佳組織學預測因子',
+    '蛋白尿與腎損傷進展密切相關：過濾蛋白經近曲小管再吸收 → 溶酶體過載 → 發炎因子釋放 → 間質纖維化（人醫/實驗證據充分；犬貓確立為獨立預後危險因子，直接致腎毒性仍屬外推）',
+    'SDMA 為早期 CKD 標記：約 40%（最低 ~25%）GFR 下降即上升、creatinine 需約 75%，且不受肌肉量影響；IRIS 2019 納入分期（須與 creatinine 併同判讀）',
   ],
   body: `# 腎損傷機轉
 
@@ -3081,7 +3082,9 @@ const contentRenalInjury: NodeContent = {
 ### 急性腎損傷（AKI）
 
 缺血性 ATN 機轉鏈：
-腎血流減少（休克、脫水、麻醉低血壓）→腎小管上皮細胞缺氧（S3 段和 mTAL 最脆弱）→ATP 耗竭→Na-K-ATPase 失能→細胞腫脹→細胞骨架崩解→刷狀緣脫落→管腔阻塞→再灌流損傷：血流恢復→ROS 爆發 + 嗜中性球浸潤→又補一刀
+腎血流減少（休克、脫水、麻醉低血壓）→腎小管上皮細胞缺氧（外髓質最脆弱：近曲小管 S3 段與 Henle 上行粗支 mTAL，因主動運輸耗能高、無氧糖解儲備有限）→ATP 耗竭→Na-K-ATPase 失能並喪失極性→細胞腫脹→細胞骨架崩解→刷狀緣脫落→管腔阻塞（管型形成）→再灌流損傷：血流恢復→ROS 爆發 + 嗜中性球浸潤→又補一刀
+
+> 註：S3 vs mTAL 的相對權重具模型依賴性——活體夾閉再灌流（I/R）模型以 S3 段損傷為主、遠端腎元相對耐受（Bonventre & Yang 2011）；mTAL 主要在離體灌流/低氧型模型受損（Brezis & Rosen）。
 
 腎毒性損傷
 
@@ -3089,13 +3092,15 @@ const contentRenalInjury: NodeContent = {
 |------|------|------|
 | Aminoglycosides | 近曲小管細胞內蓄積 → 溶酶體損傷 | PCT |
 | NSAIDs | 前列腺素抑制 → 入球小動脈收縮 | 腎小球灌流 |
-| Ethylene glycol | 代謝物草酸 → CaOx 結晶沉積 | 腎小管 |
-| Lily（貓） | 未知毒素 → 近曲小管壞死 | PCT（貓特異性） |
+| Ethylene glycol | 肝 ADH 代謝：乙二醇→glycolaldehyde→glycolic acid（致嚴重代謝性酸中毒）→glyoxylate→oxalate → CaOx 結晶沉積 | 腎小管 |
+| Lily（僅貓，犬不受影響） | 水溶性毒素（成分未完全確認）→ 近曲小管壞死；全株（花/葉/花粉/花瓶水）皆毒、少量即致 AKI | PCT（貓特異性） |
 | Cisplatin | DNA 交聯 → 細胞凋亡 | PCT |
 
 ### 慢性腎損傷
 
-腎元喪失的惡性循環：起始損傷→部分腎元喪失→殘餘腎元代償性肥大→單一腎元 GFR 增加 (hyperfiltration)→腎小球毛細管壓力增加→GBM 損傷→蛋白尿→腎小球硬化→更多腎元喪失→循環加速
+腎元喪失的惡性循環（Brenner hyperfiltration 假說）：起始損傷→部分腎元喪失→殘餘腎元代償性肥大→單一腎元 GFR 增加 (hyperfiltration)→腎小球毛細管壓力增加→GBM 損傷→蛋白尿→腎小球硬化→更多腎元喪失→循環加速
+
+> 註：殘餘腎元高過濾致進行性損傷在犬（remnant kidney 模型）證據充分；貓 CKD 以腎小管間質病變為主，高過濾機轉在貓的直接證據較有限、部分為外推。
 
 RAAS 在 CKD 進展中的角色：
 - 腎元減少→腎臟灌流不足感知→Renin 釋放
@@ -3103,28 +3108,53 @@ RAAS 在 CKD 進展中的角色：
 - Angiotensin II：直接促纖維化（TGF-β upregulation）
 - ACEI/ARB 的腎保護機轉：降低腎小球內壓 + 減少蛋白尿 + 抗纖維化
 
-腎小管間質纖維化：蛋白尿→近曲小管過載→NF-κB 活化→趨化因子→巨噬細胞浸潤→TGF-β→myofibroblast 轉化→膠原蛋白 I/III 沉積→間質纖維化→腎小管萎縮→微血管稀少化→缺氧→纖維化加速
+腎小管間質纖維化：蛋白尿→近曲小管過載→NF-κB 活化→趨化因子（MCP-1/RANTES）→巨噬細胞浸潤→**TGF-β（核心但非唯一，另有 PDGF、CTGF、Wnt/β-catenin 並行）**→myofibroblast 轉化（主要源自駐留間質纖維母細胞/周細胞，EMT 直接貢獻現多認為次要）→膠原蛋白 I/III 沉積→間質纖維化→腎小管萎縮→微血管稀少化→缺氧→纖維化加速。**腎小管間質纖維化程度為 CKD 進展/預後的最佳組織學預測因子。**
 
-## 六、人醫借鑑 (Translational Insights)
+## 二、機轉如何連到臨床 (Clinical Correlation)
+
+### 分期：機轉決定了我們怎麼分期
+- **IRIS AKI 分期（Grade I-V）**：以血清 creatinine 絕對值與變化、尿量、是否需腎替代治療分級——對應「損傷嚴重度 × 腎功能喪失」機轉。
+- **IRIS CKD 分期（Stage 1-4）**：以穩定的血清 creatinine（±SDMA）分期，再以 **UPC 蛋白尿亞分期**與**血壓亞分期**細分——直接對應「腎元喪失量 × 蛋白尿腎毒性 × 腎小球高壓」三個機轉軸。
+
+### 早期偵測：SDMA
+- **SDMA（對稱二甲基精胺酸）**於平均約 **40%**（最低可達 ~25%）GFR 下降即上升，而血清 creatinine 一般需約 **75%** GFR 下降才超標（Hall 2016 犬資料；數值以「GFR 較健康均值下降%」表述較精確）。
+- SDMA **不受肌肉量影響**（creatinine 生成主要取決於肌肉量，肌少者可假性偏低）——故對老貓、惡病質病患特別有用。
+- IRIS 已於 **2019** 將 SDMA 納入 CKD 分期輔助（持續 SDMA >14 µg/dL 支持 Stage 1）。**惟須與 creatinine 併同判讀、非取代**（近期研究對其專一性優勢有質疑，非氮血症犬偽陽性率不低）。
+
+### 治療靶點：機轉即靶點
+- **蛋白尿 → RAAS 抑制劑**：ACEI（benazepril）與 ARB（telmisartan）降低腎小球內壓（優先擴張出球小動脈）+ 減少蛋白尿 + 抗纖維化；核准狀態依地區而異（見人醫借鑑/近期更新）。
+- **高過濾/高血壓 → 血壓控制 + 限磷/限鈉飲食**；**氧化壓力 → 抗氧化/omega-3**；**AKI → 矯正灌流、停腎毒物、必要時腎替代治療**。
+
+## 三、人醫借鑑 (Translational Insights)
 
 - 人醫 KDIGO AKI 分期 (Stage 1-3) 基於 Creatinine 變化和尿量，獸醫 IRIS AKI 分期借鑑此框架
 - 人醫 AKI-to-CKD transition 概念，AKI 後腎臟可能表面恢復但留下纖維化「疤痕」→長期發展為 CKD。獸醫應長期追蹤 AKI 存活者
 - 人醫腎毒性藥物的 therapeutic drug monitoring (TDM) 策略（aminoglycoside 用藥後谷值監測）可直接應用於獸醫
 - 人醫 renal replacement therapy (RRT) 技術進步（CRRT）在獸醫有限度應用
 
-## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+## 四、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
 | AKI 生物標記 (NGAL, KIM-1) | 研究階段，臨床化初期 | Level III | 獸醫特異性 cutoff 驗證 |
+| SDMA 對 creatinine 的專一性優勢 | 敏感度較高但專一性優勢受質疑（偽陽性） | Level II | 應與 creatinine 併用而非取代 |
+| 蛋白尿：marker vs mediator | 犬貓確立為獨立預後因子；直接致腎毒性屬外推 | Level II | 犬貓因果證據 |
 | AKI 輸液最佳方案 | 矯正脫水為首要 | Level II | 最佳輸液速率與晶體液選擇 |
 | NSAIDs 在健康動物的腎臟安全性 | 短期使用相對安全 | Level II | 長期使用的累積腎損傷？ |
-| 幹細胞治療 AKI | 初步研究有希望 | Level IV | 最佳時機/劑量/途徑 |`,
-  clinical_pearl: 'CKD 管理裡有一個觀念非常重要：蛋白尿本身就是腎毒。蛋白被過濾出來、又被近曲小管重新吸收的時候，會引發一連串的發炎反應，催化腎小管間質纖維化。這就是為什麼 IRIS 分期特別把蛋白尿做亞分期（UPC）。哪怕 Creatinine 完全穩定，只要 UPC 一直爬，預後就是不好。Benazepril 跟 Telmisartan 之所以能讓 CKD 進展變慢，不是只因為把腎小球壓力降下來，更關鍵是把蛋白尿減少，近曲小管那邊的毒性負擔才能跟著減。',
+| 幹細胞治療 AKI | 初步研究有希望 | Level IV | 最佳時機/劑量/途徑 |
+
+## 五、近期更新 (Recent Updates)
+
+- **SDMA 納入 IRIS 分期（2019）**：SDMA 較 creatinine 早偵測腎功能下降（~40% vs ~75% GFR 下降），不受肌肉量影響；但定位為 creatinine 的**輔助**（併同判讀），近期研究對其專一性優勢有保留（Nabity 2015、Hall 2014）。
+- **RAAS 抑制劑核准與頭對頭比較**：telmisartan（Semintra）於歐盟/英國/加拿大/澳洲核准降低貓 CKD 相關蛋白尿，美國 FDA 僅核准貓全身性高血壓（蛋白尿為 off-label）；benazepril（Fortekor）於歐盟/澳洲/加拿大核准用於蛋白尿性貓 CKD、美國無獸醫用核准。Sent 2015（JVIM，n=224）顯示 telmisartan 對 benazepril **非劣性**、且各時點顯著降 UP/C（benazepril 未達顯著），但未正式證實 superior。
+- **IRIS AKI 共識更新**：IRIS 發布 AKI 診斷與管理最佳實務共識，強調早期分級（Grade I 即含亞臨床肌酐上升）與 AKI-to-CKD 追蹤。
+- **AKI-to-CKD transition**：AKI 存活者即使肌酐表面恢復，纖維化「疤痕」仍可致長期 CKD，須長期追蹤 SDMA/UPC。`,
+  clinical_pearl: 'CKD 管理裡有一個觀念非常重要：蛋白尿是強力的獨立預後因子（在犬貓已由 Jacob 2005、Syme 2006 確立），而機轉上「蛋白過載」會讓近曲小管溶酶體負荷過重、釋放發炎與促纖維化介質，催化腎小管間質纖維化（此直接致腎毒性主要來自人醫/實驗，犬貓為外推——marker vs mediator 之爭）。這就是為什麼 IRIS 分期特別把蛋白尿做 UPC 亞分期。哪怕 Creatinine 完全穩定，只要 UPC 一直爬，預後就是不好。Benazepril（ACEI）與 Telmisartan（ARB）的價值在於降低腎小球內壓 + 減少蛋白尿；Sent 2015 頭對頭研究顯示 telmisartan 對 benazepril 非劣性且降 UP/C 更一致。要注意：貓的 RAAS 抑制劑「延緩 CKD 進展/延長存活」尚未被前瞻研究確證（Fortekor 貓仿單即載明未證實），核准適應症也依地區而異（美國 telmisartan 僅核准貓高血壓，蛋白尿屬 off-label）。',
   common_mistakes: [
     '將 AKI 和 CKD 視為完全不同的實體，AKI 可以轉變為 CKD（AKI-to-CKD transition）',
-    '忽略 NSAIDs 的腎毒性（抑制前列腺素 → 入球小動脈收縮 → 腎血流減少，尤其在脫水或低血壓時）',
-    '不理解蛋白尿的腎毒性，僅將其視為診斷指標而非治療靶標',
+    '忽略 NSAIDs 的腎毒性（抑制前列腺素 → 入球小動脈收縮 → 腎血流減少，尤其在脫水或低血壓時；ACEI 則作用於出球）',
+    '把蛋白尿僅視為診斷指標而非預後因子/治療靶標（UPC 持續升高即使 creatinine 穩定仍預後不良）',
+    '把 SDMA 當成 creatinine 的取代品單獨判讀（應併同判讀；SDMA 專一性優勢受質疑、有偽陽性）',
     '忘記缺血-再灌流損傷的概念，血流恢復後的 ROS 爆發可能比原始缺血造成更大損傷',
   ],
   disease_data: null,
@@ -3137,10 +3167,14 @@ RAAS 在 CKD 進展中的角色：
   interactive_placeholders: [],
   drug_api_links: ['Benazepril', 'Telmisartan'],
   references: [
-    { type: 'journal', citation: 'Ross L. "Acute kidney injury in dogs and cats." Vet Clin North Am Small Anim Pract. 2011;41(1):1-14.', relevance: 'AKI 病理生理回顧' },
-    { type: 'journal', citation: 'Brown SA. "Oxidative stress and chronic kidney disease." Vet Clin North Am Small Anim Pract. 2008;38(1):157-166.', relevance: 'CKD 氧化壓力機轉' },
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '腎損傷病理生理教材' },
-    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 分期與治療指引' },
+    { type: 'journal', citation: 'Ross L. Acute kidney injury in dogs and cats. Vet Clin North Am Small Anim Pract. 2011;41(1):1-14. doi:10.1016/j.cvsm.2010.09.003', relevance: 'AKI 病理生理回顧（三分類、缺血/腎毒性機轉）' },
+    { type: 'journal', citation: 'Brown SA. Oxidative stress and chronic kidney disease. Vet Clin North Am Small Anim Pract. 2008;38(1):157-166. doi:10.1016/j.cvsm.2007.11.001', relevance: 'CKD 氧化壓力機轉' },
+    { type: 'journal', citation: 'Bartges JW. Chronic kidney disease in dogs and cats. Vet Clin North Am Small Anim Pract. 2012;42(4):669-692. doi:10.1016/j.cvsm.2012.04.008', relevance: 'CKD 機轉/分期綜述' },
+    { type: 'journal', citation: 'Nabity MB, Lees GE, Boggess MM, et al. Symmetric dimethylarginine assay validation, stability, and evaluation as a marker for the early detection of chronic kidney disease in dogs. J Vet Intern Med. 2015;29(4):1036-1044. doi:10.1111/jvim.12835', relevance: 'SDMA 早期偵測 CKD（犬，~40% GFR 下降即上升）' },
+    { type: 'journal', citation: 'Hall JA, Yerramilli M, Obare E, et al. Comparison of serum concentrations of symmetric dimethylarginine and creatinine as kidney function biomarkers in cats with chronic kidney disease. J Vet Intern Med. 2014;28(6):1676-1683. doi:10.1111/jvim.12445', relevance: 'SDMA vs creatinine（貓，SDMA 平均早 17 個月）' },
+    { type: 'journal', citation: 'Sent U, Gössl R, Elliott J, et al. Comparison of efficacy of long-term oral treatment with telmisartan and benazepril in cats with chronic kidney disease. J Vet Intern Med. 2015;29(6):1479-1487. doi:10.1111/jvim.13639', relevance: 'telmisartan vs benazepril 抗蛋白尿頭對頭（非劣性）' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '腎損傷病理生理教材' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Staging of CKD (Modified 2023) & IRIS Grading of AKI. iris-kidney.com.', relevance: 'CKD/AKI 分期與治療指引（含 SDMA/UPC 亞分期）' },
   ],
   is_current: true,
   created_at: now,
