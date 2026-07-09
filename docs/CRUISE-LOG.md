@@ -49,8 +49,19 @@
    - ⚠️ **給 DVM：SURG-L0-001 的 Burn 2020 引用疑似捏造/誤植**（Crossref 查無「Burn CC, Vet Surg 2020, 獸醫手術結果系統性回顧」；Burn 作者僅見人醫）。已在該 ref relevance 標記，請查證後決定保留或移除。
 2. 續：各專科 L0 → L1 基礎科學 → 再回填 L2-L5 疾病（L2-L5 涉具體劑量/療程，風險較高，建議 DVM 更積極參與）。
 
+### 🔴 DVM 引用查證佇列（自動閘門漏抓、需人工判定；本 session 累積）
+> 這些引用**通過了自動 `verify:citations`（loose biblio-resolve），但我逐條 Crossref 查真時發現問題**。已在各節點 relevance 加 ⚠️ 標記、未刪除，待 DVM 定奪（保留/移除/替換）。
+- **疑似捏造/誤植（3，待查證）**：
+  1. `SURG-L0-001` — Burn CC「systematic review of veterinary surgical outcomes」Vet Surg 2020;49(Suppl1):O8-O17（Crossref 查無此獸醫外科文獻）。
+  2. `IM-L1-001` — Hall JA「Biomarkers of kidney function and damage」Vet Clin NA 2022;52(3):547-567（Crossref 查無；同 issue 真實文為 Ross/Viviano）。
+  3. `CPATH`（node 待標，line 3210 附近）— Nabity MB「IRIS Canine GFR Working Group SDMA consensus」JVIM 2023（Crossref 查無；疑為 Nabity 2015 SDMA validation `10.1111/jvim.12835` 之誤植）。
+- **已修正誤植（2）**：ONCO-L0-001 Withrow 教科書編者（→Vail/Thamm/Liptak）、DERM-L0-001 Olivry 期刊名（BMC Vet Dermatol→BMC Vet Res）。
+- **已補 DOI 強化（引用真偽稽核，確認真實）**：CPATH Weese `10.1111/jvim.12562`、Moriello `10.1111/vde.12440`。
+- **稽核範圍**：全 seed 有 **189 條無-DOI journal 引用**（loose-resolve 類），為潛在藏匿處。已完成 CPATH 部分（3/7 查訖）；餘 CPATH 4 條（Braun/Wiinberg/Knoll/Tvedten）+ 其他 7 科待逐輪稽核。
+
 ### 內容 iter 進度（append-only）
 - content iter 1（2026-07-09）：接任內容軌道、建立 v5 錨點 + 89 v1 佇列 + L0/L1 優先策略。全量 verify:citations 1271 引用 0 捏造（唯 2 已知真實無-DOI 老引用）。內容基線 checkpoint `99b0ecd`。
+- content iter 10（2026-07-09）：**🔍 啟動系統性引用真偽稽核（CPATH 首批）** — 全 seed 189 條無-DOI journal 引用逐科查真。CPATH：Weese ACVIM 抗生素共識 ✅補 DOI `10.1111/jvim.12562`、Moriello 皮癬菌共識 ✅補 DOI `10.1111/vde.12440`、**Nabity「2023 IRIS GFR SDMA 共識」🚩 疑捏造/誤植**（Crossref 查無；疑 Nabity 2015 SDMA validation 之誤植）→ 標記待 DVM。建立「DVM 引用查證佇列」（見上）。verify:citations（cpath）0 suspect / tsc 0。**待 DVM、未 push。**
 - content iter 9（2026-07-09）：**IM-L1-001（腎臟生理學）改善（暫留 v1）+ 第 2 條疑似捏造引用** — 轉入 L1 基礎科學首站。(1) 加驗證引用 **Pelander L et al. SDMA/cystatin C/creatinine 診斷 GFR 下降（犬）** JVIM 2019;33(2):630-639 `10.1111/jvim.15445`；(2) **揪出 Hall 2022「Biomarkers of kidney function and damage」Vet Clin NA 52(3):547-567 疑似捏造/誤植**——Crossref 查無（同 issue 真實文為 Ross AKI 659-672、Viviano 797-817），加 ⚠️ 待 DVM、暫留 v1。**🔴 浮現重要模式：多個既有 v1 節點藏自動閘門（loose biblio-resolve）抓不到的疑似捏造 journal 引用——已發現 2 條（SURG Burn 2020、IM-L1-001 Hall 2022）+ 2 處誤植（ONCO Withrow、DERM Olivry）。建議排一次「系統性引用真偽稽核」pass。** verify:citations（im）待確認。**待 DVM、未 push。**
 - content iter 8（2026-07-09）：**DERM-L0-001（皮膚科總覽）v1→v2 — 7 科 L0 收官** — references 4→5：(1) **修正 Olivry 2015 ICADA 治療指引誤植**（期刊名「BMC Vet Dermatol」＝非真實期刊→BMC Vet Res、卷 26→11，補 DOI `10.1186/s12917-015-0514-6`）；(2) 新增 **Hensel 2015 ICADA 診斷/過敏原辨識指引** `10.1186/s12917-015-0515-5`（與治療指引成對）。首作者+et al.。version 1→2。verify:citations（derm）待確認。**🎉 7 個專科 L0 新手入口地基全部處理完畢。待 DVM、未 push。**
 - content iter 7（2026-07-09）：**NEURO-L0-001（神經科總覽）v1→v2** — body 扎實（七大神經定位、IVDD 分級/預後、MUO、品種好發）；references 4→5：新增 **Olby NJ et al. ACVIM 急性胸腰椎 IVDD 診斷/處置共識** JVIM 2022;36(5):1570-1596 `10.1111/jvim.16480`（現行權威、支撐節點 IVDD 分級與深痛覺/手術時效預後主張）。首作者+et al.。version 1→2。verify:citations（neuro）待確認。**待 DVM、未 push。**
