@@ -28,16 +28,20 @@
 ### UX-BACKLOG（co-dev，依序）
 - **U1 ✅ 新用戶第一印象**（commit `c5c198f`）：中文歡迎標題 + onboarding 初學者引導 + home 副標情境化。preview 實測。
 - **U2 ✅ demo 進度污染**（#4-core，commit `c7eb761`）：`initializeDemoData` 加 isDemoStudent 判定，進度/XP 只給 demo 學生；真人登入乾淨起步。+2 回歸測試。**preview 實測：真人登入→0完成+「歡迎加入🌱」；U1+U2 合力修好 #4。**
-- **U3 ⬜ L0/L1 層級黑話**（#7）：圖譜/節點頁加 Layer 白話說明或圖例。
-- **U4 ⬜ 登入/落地 demo 提示**（#1/#2）：落地頁訪客試用 + 登入頁示範模式提示。
-- **U5 ⛔ 圖譜連線**（#8）→ **需使用者真瀏覽器確認**（BLOCKED-OPS #12），非自主。
-- （後續）#9 節點自我測驗入口、#10 新手跨科入門路徑/難度標示。
+- **U3 ✅ L0/L1 層級黑話**（#7，commit `0727994`）：新增 `lib/constants/layers.ts` LAYER_SCALE_HINT；圖譜選定專科後 legend + 節點頁 Layer badge tooltip。preview 實測。
+- **U4 ✅ 登入/落地 demo 提示**（#1/#2，commit `b215ca7`）：落地頁 CTA 下 + 登入頁表單上，isMockMode() 限定提示。preview 實測。
+- **U5 ⛔ 圖譜連線**（#8）→ **需使用者真瀏覽器確認**（Obsidian BLOCKED UX-1 / BLOCKED-OPS #12），非自主。
+- **（後續候選）U6 #9 節點自我測驗入口、U7 #10 新手跨科入門路徑/難度標示** — 較大、待排。
+
+> **UX 軌道現況（co-dev iter 4 後）**：可自主的新手阻礙 **U1-U4 全部完成並本地 commit**（未 push）。U5 需你真瀏覽器確認圖譜連線。剩 U6/U7 為較大功能，待你定調或下輪。
 
 ### co-dev 進度（append-only）
 - co-dev iter 0（2026-07-09）：新手走查、建立 v4 錨點 + UX-BACKLOG + U1-U5 任務。checkpoint `5238b6d`。
 - co-dev iter 1（2026-07-09）：**U1 ✅** — Codex 負責分析（確認 home 變數名 `completedCount`、給出精確 before/after）；但 **Codex MCP 兩次失敗**（workspace-write 寫入被拒 → 改 approval-policy:never 重開 → 連線中斷 -32000）→ 依 co-dev 降級規則 **Claude 介入實作**。commit `c5c198f`。綠燈 tsc 0/865/build✓/preview。
 - co-dev iter 2（2026-07-09）：**U2 ✅** — Codex **兩次獨立驗證邏輯正確**（isDemoStudent 包 step3/4、step2 無條件），但本機 Codex MCP **強制 read-only、無法寫檔**（且輸出的中文註解有編碼亂碼）→ Claude 實作（精準 Edit 保留原註解）。+2 回歸測試。commit `c7eb761`。綠燈 tsc 0/867/build✓/preview 實測真人乾淨起步。
 - **⚠️ co-dev 模式現況**：本機 Codex MCP **只能分析/覆核、無法寫檔**（sandbox 被強制 read-only + 連線不穩）。已連續 2 step 需 Claude 介入實作 → 依規則第 3 step 起**正式切換為「Codex 覆核（可選）+ Claude 實作」混合模式**。此為環境限制、非流程問題。**已回報使用者。**
+- co-dev iter 3（2026-07-09）：**U4 ✅** — 落地/登入頁 isMockMode() 限定 demo 提示。Claude 實作（混合模式）。commit `b215ca7`。綠燈 tsc0/867/build✓/preview。
+- co-dev iter 4（2026-07-09）：**U3 ✅** — 層級黑話說明（新常數 + 圖譜 legend + 節點 tooltip）。Claude 實作。commit `0727994`。綠燈 tsc0/867/build✓/preview。**UX U1-U4 收官；U5 待你真瀏覽器確認圖譜連線。**
 
 ---
 
