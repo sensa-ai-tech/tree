@@ -26,8 +26,8 @@
 - 阻礙清單（→ UX-BACKLOG）：#1 點「開始學習」直接撞登入牆無訪客入口；#2 登入頁無 demo 提示（隨便打密碼就進）；#3 歡迎視窗英文標題；**#4 全新帳號卻「歡迎回到」+ 顯示 demo 的 5 完成/930XP/連續1天（demo 進度污染）**；#5/#6 onboarding/首頁多對等入口、無「新手從這開始」、圖譜先逼選專科「283 節點」勸退；#7 節點「L0/L1」黑話、L0 總覽連 L1「前置知識」順序困惑；**#8 知識「樹」headless 下 0 edges（需真瀏覽器確認，BLOCKED-OPS #12）**；#9 節點頁無自我測驗入口；#10 學習路徑全標「適合實習/住院獸醫」且全分科、無跨科新手線。
 
 ### UX-BACKLOG（co-dev，依序）
-- **U1 🔄 新用戶第一印象**：WelcomeOnboarding 英文標題→中文(#3)；home「歡迎回到」→情境化(completedCount===0→歡迎加入)(#4-copy)；onboarding step2 標「推薦新手」(#5/#6)。檔案：`components/features/WelcomeOnboarding.tsx`、`app/(dashboard)/home/page.tsx`。
-- **U2 ⬜ demo 進度污染**（#4-core）：`data/seed/index.ts initializeDemoData` 現在無論誰登入都灌 SEED_PROGRESS(5完成)+SEED_EXPERIENCE(930XP)（只檢查 progress.size/total_xp）。改為**只在 auto demo-student 情境灌**（真人用自己 email 登入→乾淨起步）。含測試。
+- **U1 ✅ 新用戶第一印象**（commit `c5c198f`）：中文歡迎標題 + onboarding 初學者引導 + home 副標情境化。preview 實測。
+- **U2 ✅ demo 進度污染**（#4-core，commit `c7eb761`）：`initializeDemoData` 加 isDemoStudent 判定，進度/XP 只給 demo 學生；真人登入乾淨起步。+2 回歸測試。**preview 實測：真人登入→0完成+「歡迎加入🌱」；U1+U2 合力修好 #4。**
 - **U3 ⬜ L0/L1 層級黑話**（#7）：圖譜/節點頁加 Layer 白話說明或圖例。
 - **U4 ⬜ 登入/落地 demo 提示**（#1/#2）：落地頁訪客試用 + 登入頁示範模式提示。
 - **U5 ⛔ 圖譜連線**（#8）→ **需使用者真瀏覽器確認**（BLOCKED-OPS #12），非自主。
@@ -35,7 +35,9 @@
 
 ### co-dev 進度（append-only）
 - co-dev iter 0（2026-07-09）：新手走查、建立 v4 錨點 + UX-BACKLOG + U1-U5 任務。checkpoint `5238b6d`。
-- co-dev iter 1（2026-07-09）：**U1** — Codex 負責分析（確認 home 變數名 `completedCount`、給出精確 before/after）；但 **Codex MCP 兩次失敗**（workspace-write 寫入被拒 → 改 approval-policy:never 重開 → 連線中斷 -32000）→ 依 co-dev 降級規則 **Claude 介入實作**。三處：WelcomeOnboarding 英文標題→「歡迎使用 獸醫知識樹」、onboarding step2 加初學者引導句、home 副標情境化（completedCount===0→歡迎加入🌱）+ 同步更新 feature-components 測試斷言。**教訓：本機 Codex MCP 寫檔不穩，co-dev 實作階段可能需 Claude 執行；Codex 適合當分析/覆核角色。**
+- co-dev iter 1（2026-07-09）：**U1 ✅** — Codex 負責分析（確認 home 變數名 `completedCount`、給出精確 before/after）；但 **Codex MCP 兩次失敗**（workspace-write 寫入被拒 → 改 approval-policy:never 重開 → 連線中斷 -32000）→ 依 co-dev 降級規則 **Claude 介入實作**。commit `c5c198f`。綠燈 tsc 0/865/build✓/preview。
+- co-dev iter 2（2026-07-09）：**U2 ✅** — Codex **兩次獨立驗證邏輯正確**（isDemoStudent 包 step3/4、step2 無條件），但本機 Codex MCP **強制 read-only、無法寫檔**（且輸出的中文註解有編碼亂碼）→ Claude 實作（精準 Edit 保留原註解）。+2 回歸測試。commit `c7eb761`。綠燈 tsc 0/867/build✓/preview 實測真人乾淨起步。
+- **⚠️ co-dev 模式現況**：本機 Codex MCP **只能分析/覆核、無法寫檔**（sandbox 被強制 read-only + 連線不穩）。已連續 2 step 需 Claude 介入實作 → 依規則第 3 step 起**正式切換為「Codex 覆核（可選）+ Claude 實作」混合模式**。此為環境限制、非流程問題。**已回報使用者。**
 
 ---
 
