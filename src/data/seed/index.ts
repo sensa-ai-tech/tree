@@ -191,6 +191,10 @@ export function initializeDemoData(): void {
       role: DEMO_STUDENT.role,
     });
   }
+  // 只對 demo 學生注入個人進度/XP；真人用自己 email 登入則乾淨起步，
+  // 避免全新帳號一進首頁就看到 demo 的 5 完成/930XP/「歡迎回到」。
+  // 重新 getState 以反映上面可能的 setUser（未登入→剛設為 demo→true；真人登入→id≠demo→false）。
+  const isDemoStudent = useAuthStore.getState().user?.id === DEMO_STUDENT.id;
 
   // 2. Knowledge，節點、邊、路徑
   // STORE-RESET-001 (iter 5): always re-populate from ALL_NODES — no length-guard.
@@ -203,20 +207,24 @@ export function initializeDemoData(): void {
   knowledgeStore.setEdges(ALL_EDGES);
   knowledgeStore.setPaths(ALL_PATHS);
 
-  // 3. Learning，學習進度
-  const learningStore = useLearningStore.getState();
-  const hasProgress = learningStore.progress.size > 0;
-  if (!hasProgress) {
-    for (const p of SEED_PROGRESS) {
-      learningStore.setProgress(p.node_id, p);
+  // 3. Learning，學習進度（僅 demo 學生）
+  if (isDemoStudent) {
+    const learningStore = useLearningStore.getState();
+    const hasProgress = learningStore.progress.size > 0;
+    if (!hasProgress) {
+      for (const p of SEED_PROGRESS) {
+        learningStore.setProgress(p.node_id, p);
+      }
     }
   }
 
-  // 4. Gamification，XP、成就、事件
-  const gamStore = useGamificationStore.getState();
-  if (gamStore.experience.total_xp === 0) {
-    gamStore.setExperience(SEED_EXPERIENCE);
-    gamStore.setAchievements(SEED_ACHIEVEMENTS);
-    gamStore.setRecentXPEvents(SEED_XP_EVENTS);
+  // 4. Gamification，XP、成就、事件（僅 demo 學生）
+  if (isDemoStudent) {
+    const gamStore = useGamificationStore.getState();
+    if (gamStore.experience.total_xp === 0) {
+      gamStore.setExperience(SEED_EXPERIENCE);
+      gamStore.setAchievements(SEED_ACHIEVEMENTS);
+      gamStore.setRecentXPEvents(SEED_XP_EVENTS);
+    }
   }
 }
