@@ -6,7 +6,7 @@ const now = '2026-02-15T00:00:00Z';
 const contentOverview: NodeContent = {
   id: 'CONTENT-L0-001',
   node_id: 'CARDIO-L0-001',
-  version: 1,
+  version: 2,
   summary: '獸醫心臟科從聽診、影像、藥物到長期追蹤都要顧。犬貓心臟病的盛行率大概落在一成到一成五，犬最常見的是 MMVD（二尖瓣退化），貓則以 HCM 為主。台灣亞熱帶氣候蚊子整年都在飛，心絲蟲在門診一直是繞不過去的問題。',
   learning_objectives: [
     '說明獸醫心臟科的範疇與六層知識架構',
@@ -98,6 +98,7 @@ const contentOverview: NodeContent = {
     '聽到雜音就斷嚴重心臟病（功能性雜音其實很常見）',
     '貓的心臟病常常沒症狀，直到急性發作才被注意到',
     '台灣是心絲蟲高盛行區，預防工作別忘了跟飼主提',
+    '對無症狀的 MMVD B1 犬過早投藥——僅 B2（心臟已擴大）有 EPIC 研究的 Level I 證據支持 Pimobendan，B1 尚無 RCT 佐證',
   ],
   disease_data: null,
   diagnostic_data: null,
@@ -111,6 +112,8 @@ const contentOverview: NodeContent = {
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed.', relevance: '心臟科基礎教材' },
     { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
     { type: 'journal', citation: 'Atkins C et al. Guidelines for the diagnosis and treatment of canine chronic valvular heart disease. J Vet Intern Med. 2009;23(6):1142-1150.', relevance: '犬慢性瓣膜性心臟病診斷與治療文獻' },
+    { type: 'guideline', citation: 'Luis Fuentes V, et al. "ACVIM consensus statement guidelines for the classification, diagnosis, and management of cardiomyopathies in cats." J Vet Intern Med. 2020;34(3):1062-1077. doi:10.1111/jvim.15745', relevance: '貓心肌病（含 HCM）分類、診斷與管理現行共識指引（Crossref 驗證）' },
+    { type: 'journal', citation: 'Boswood A, et al. "Effect of Pimobendan in Dogs with Preclinical Myxomatous Mitral Valve Disease and Cardiomegaly: The EPIC Study—A Randomized Clinical Trial." J Vet Intern Med. 2016;30(6):1765-1779. doi:10.1111/jvim.14586', relevance: '關鍵 RCT（EPIC）：B2 MMVD 提早投 Pimobendan 延長無症狀期，Level I 證據（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,

@@ -44,11 +44,12 @@
 5. `verify:citations --specialty <x>`（0 suspect）→ tsc/test/build ✓ → **本地 commit（不 push，待 DVM）**。
 
 ### NEXT-UP（依序，每迭代取最上）
-1. **下一個：另一個專科 L0 總覽**（6 個仍 v1：CARDIO/DERM/ECC/NEURO/ONCO/SURG-L0-001）——overview 型、claim 密度低、autonomous 驗證風險小、新手入口。建議 CARDIO-L0-001 或換科分散。
+1. **下一個：另一個專科 L0 總覽**（5 個仍 v1：DERM/ECC/NEURO/ONCO/SURG-L0-001；已完成 IM✅ CARDIO✅）——overview 型、低風險、新手入口。建議 ECC-L0-001 或 SURG-L0-001。
 2. 續：各專科 L0 → L1 基礎科學 → 再回填 L2-L5 疾病（L2-L5 涉具體劑量/療程，風險較高，建議 DVM 更積極參與）。
 
 ### 內容 iter 進度（append-only）
 - content iter 1（2026-07-09）：接任內容軌道、建立 v5 錨點 + 89 v1 佇列 + L0/L1 優先策略。全量 verify:citations 1271 引用 0 捏造（唯 2 已知真實無-DOI 老引用）。內容基線 checkpoint `99b0ecd`。
+- content iter 3（2026-07-09）：**CARDIO-L0-001（心臟科總覽）v1→v2** — body 本已扎實；補齊 v2 缺口：common_mistakes 3→4（加「B1 過早投藥、僅 B2 有 EPIC Level I 證據」，與所引用文獻相符）+ **新增 2 條 Crossref 驗證 landmark 引用**（Luis Fuentes 2020 ACVIM 貓心肌病共識 `10.1111/jvim.15745`、Boswood 2016 EPIC RCT `10.1111/jvim.14586`＝節點原本提到的「EPIC/B2 Level I」出處）。verify:citations（cardio）**0 suspect**；tsc 0 / 867 / build ✓。**待 DVM、未 push。**
 - content iter 2（2026-07-09）：**IM-L0-001（內科學總覽）v1→v2** — 修引用缺陷（移除重複誤標的 Nelson「guideline」）+ **新增 2 條 Crossref 驗證近期文獻**（Cockcroft 2026 EBM `10.18849/ve.v11i3.754`、Giaretta 2026「The Path to Diagnosis」`10.1016/j.cvsm.2026.01.006`）+ 章節編號 一/二/三。**未新增醫療主張（overview 型、低風險），故本節點以引用+結構升級為主。** verify:citations（im）0 標題不符/0 DOI 解不出（唯 IM-L3-031 Laflamme 為既有已知無-DOI）；tsc 0 / 867 / build（收尾）。**內容改動待 DVM 簽核、未 push。**
 
 ---
