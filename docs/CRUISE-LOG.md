@@ -16,7 +16,29 @@
 
 ---
 
-## 🔧 COMMANDER CRUISE v3 — Engineering Hardening（工程強化巡航，2026-07-09 啟動）★ 最新活躍軌道
+## 🎓 COMMANDER CRUISE v4 — New-Learner UX（菜鳥 UX 巡航 · co-dev，2026-07-09 啟動）★ 最新活躍軌道
+
+> **授權（2026-07-09）**：使用者用 fable-5 扮「剛畢業獸醫系學生」實測 app → 我列出新手阻礙 → 使用者交付全權指揮官 + **`/co-dev` 模式**（Claude 寫 Spec、Codex 執行、Claude 驗收）持續迭代。條件同 5 條。
+> **Resume 讀「UX-BACKLOG + co-dev 進度」即可接續。** 綠燈基準：tsc 0 / 865 tests / build ✓（起點 origin/main `55f7180`，工作區乾淨）。
+
+### 新手實測阻礙（2026-07-09 fable-5 走查 landing→login→home→graph→node→paths）
+- 全程 **0 console error、不會壞、內容扎實**（臨床珍珠/常見錯誤/參考文獻齊全）。
+- 阻礙清單（→ UX-BACKLOG）：#1 點「開始學習」直接撞登入牆無訪客入口；#2 登入頁無 demo 提示（隨便打密碼就進）；#3 歡迎視窗英文標題；**#4 全新帳號卻「歡迎回到」+ 顯示 demo 的 5 完成/930XP/連續1天（demo 進度污染）**；#5/#6 onboarding/首頁多對等入口、無「新手從這開始」、圖譜先逼選專科「283 節點」勸退；#7 節點「L0/L1」黑話、L0 總覽連 L1「前置知識」順序困惑；**#8 知識「樹」headless 下 0 edges（需真瀏覽器確認，BLOCKED-OPS #12）**；#9 節點頁無自我測驗入口；#10 學習路徑全標「適合實習/住院獸醫」且全分科、無跨科新手線。
+
+### UX-BACKLOG（co-dev，依序）
+- **U1 🔄 新用戶第一印象**：WelcomeOnboarding 英文標題→中文(#3)；home「歡迎回到」→情境化(completedCount===0→歡迎加入)(#4-copy)；onboarding step2 標「推薦新手」(#5/#6)。檔案：`components/features/WelcomeOnboarding.tsx`、`app/(dashboard)/home/page.tsx`。
+- **U2 ⬜ demo 進度污染**（#4-core）：`data/seed/index.ts initializeDemoData` 現在無論誰登入都灌 SEED_PROGRESS(5完成)+SEED_EXPERIENCE(930XP)（只檢查 progress.size/total_xp）。改為**只在 auto demo-student 情境灌**（真人用自己 email 登入→乾淨起步）。含測試。
+- **U3 ⬜ L0/L1 層級黑話**（#7）：圖譜/節點頁加 Layer 白話說明或圖例。
+- **U4 ⬜ 登入/落地 demo 提示**（#1/#2）：落地頁訪客試用 + 登入頁示範模式提示。
+- **U5 ⛔ 圖譜連線**（#8）→ **需使用者真瀏覽器確認**（BLOCKED-OPS #12），非自主。
+- （後續）#9 節點自我測驗入口、#10 新手跨科入門路徑/難度標示。
+
+### co-dev 進度（append-only）
+- co-dev iter 0（2026-07-09）：新手走查、建立 v4 錨點 + UX-BACKLOG + U1-U5 任務。Codex MCP 確認可用。開始 U1（threadId 待建）。
+
+---
+
+## 🔧 COMMANDER CRUISE v3 — Engineering Hardening（工程強化巡航，2026-07-09 啟動，已收官）
 
 > **新授權（2026-07-09）**：使用者要求先做全方位安全性 × 功能性審查（四路平行 agent 已完成），再交付全權指揮官，逐項落實審查發現的**安全修補與功能缺陷**，持續迭代到主動介入或擴充全完成。條件同上 5 條。
 > **本軌道 vs v2 內容軌道之分工**：v3=**程式碼/工程**（可自主完成、綠燈可驗、本地 commit 當 checkpoint 不 push）；v2=**醫療內容 v1→v2**（產出待 DVM 簽核，暫緩）。兩軌不衝突。
