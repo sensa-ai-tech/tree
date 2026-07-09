@@ -2114,7 +2114,7 @@ const contentPemphigus: NodeContent = {
 const contentDermOverview: NodeContent = {
   id: 'CONTENT-DERM-L0-001',
   node_id: 'DERM-L0-001',
-  version: 1,
+  version: 2,
   summary: '獸醫皮膚科（Veterinary Dermatology）是專門處理犬貓皮膚、毛髮、爪甲跟耳道疾病的臨床專科。皮膚病佔小動物一般門診量的 20-25%，是最常見的就診原因之一。本專科涵蓋過敏性皮膚病、感染性皮膚病（細菌、黴菌、寄生蟲）、自體免疫性皮膚病、內分泌相關皮膚病、腫瘤性皮膚病跟耳科疾病。台灣亞熱帶氣候，過敏性皮膚病跟黴菌感染的盛行率特別高。',
   learning_objectives: [
     '描述獸醫皮膚科的範疇與主要疾病分類',
@@ -2218,7 +2218,8 @@ const contentDermOverview: NodeContent = {
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '小動物皮膚科最權威教材' },
     { type: 'textbook', citation: 'Hnilica KA, Patterson AP. Small Animal Dermatology: A Color Atlas and Therapeutic Guide, 4th ed. Elsevier, 2017.', relevance: '皮膚科臨床圖譜與治療指南' },
     { type: 'journal', citation: 'Hill PB et al. Survey of the prevalence, diagnosis and treatment of dermatological conditions in small animals in general practice. Vet Rec. 2006;158(16):533-539. doi:10.1136/vr.158.16.533', relevance: '小動物皮膚病一般診療盛行率調查' },
-    { type: 'guideline', citation: 'Olivry T et al. Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA). BMC Vet Dermatol. 2015;26:210-e49.', relevance: 'ICADA 國際指引，皮膚科領域最重要的臨床共識' },
+    { type: 'guideline', citation: 'Olivry T, et al. "Treatment of canine atopic dermatitis: 2015 updated guidelines from the International Committee on Allergic Diseases of Animals (ICADA)." BMC Vet Res. 2015;11:210. doi:10.1186/s12917-015-0514-6', relevance: 'ICADA 犬異位性皮膚炎「治療」國際共識（更正原誤植期刊名 BMC Vet Dermatol→BMC Vet Res、卷 26→11；Crossref 驗證）' },
+    { type: 'guideline', citation: 'Hensel P, et al. "Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification." BMC Vet Res. 2015;11:196. doi:10.1186/s12917-015-0515-5', relevance: 'ICADA 犬異位性皮膚炎「診斷與過敏原辨識」國際共識，與上方治療指引成對（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
