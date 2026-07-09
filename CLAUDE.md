@@ -44,7 +44,7 @@
 ## 6. Zustand store conventions (src/stores/)
 
 - Stores: `useAuthStore`, `useKnowledgeStore`, `useLearningStore`, `useGamificationStore`.
-- Heavy components (KnowledgeGraph: 264 nodes + edges) MUST use `useShallow` selector to avoid re-mount on unrelated `set()` broadcasts. Canonical exemplar: `src/app/(dashboard)/graph/page.tsx`. Other callsites (home, paths, NavbarSearch, etc.) still destructure-without-selector — wins are smaller there but pattern is the same. Iter 2+ should sweep them.
+- Heavy components (KnowledgeGraph: 283 nodes + edges) MUST use `useShallow` selector to avoid re-mount on unrelated `set()` broadcasts. Canonical exemplar: `src/app/(dashboard)/graph/page.tsx`. The sweep is essentially DONE — `home`, `paths`, `paths/[pathId]`, `nodes/[nodeId]`, `NavbarSearch`, `SupabaseDataProvider` all use `useShallow` now. New store-consuming components should follow the same pattern.
 - `getX()` selector functions on the store should be stable (defined once in `create`), NOT recreated per render.
 
 ## 7. Observability (src/lib/observability/error-reporter.ts)
@@ -77,7 +77,7 @@
 ## 11. Build & verify checklist
 
 1. `npx tsc --noEmit` — 0 errors
-2. `npm test` — all pass (current: 817+ tests)
+2. `npm test` — all pass (current: 865+ tests)
 3. `npm run test:cov` — no threshold drop
 4. `npm run lint` — 0 errors (warnings tolerated in test files only)
 5. **`npm run build` — MANDATORY GATE, never skip.** tsc + vitest do NOT exercise the Tailwind v4 production class-scan, so a 100%-green test suite can coexist with a 100%-broken deploy. This actually happened: a self-evolve loop declared "converged" while `next build` was failing on a Tailwind Oxide scanner RangeError (`String.fromCodePoint(2551915)` from a fabricated `\26F4AB` CSS escape on CJK-heavy source). `next dev` worked, masking it. Fix was tailwindcss 4.1.18 → 4.3.0. Treat build success as a hard requirement before any "done"/"converged" claim.

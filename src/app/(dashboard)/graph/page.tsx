@@ -29,7 +29,7 @@ const SPECIALTIES = [
 export default function GraphPage() {
   // useShallow: only re-render when one of these specific keys changes (Object.is per-key),
   // not on every unrelated set() — prevents broadcast re-renders that would re-mount the heavy
-  // KnowledgeGraph (264 nodes + edges) on any setNodeContent/setLoading/etc. call elsewhere.
+  // KnowledgeGraph (283 nodes + edges) on any setNodeContent/setLoading/etc. call elsewhere.
   const { nodes, edges, filters, isLoading, setFilters, getFilteredNodes } = useKnowledgeStore(
     useShallow((s) => ({
       nodes: s.nodes,
@@ -75,7 +75,7 @@ export default function GraphPage() {
   }
 
   function handleSelectAll(): void {
-    // 「綜覽全圖」：顯示所有 264 節點，用 search='*' 通過判斷邏輯但不過濾
+    // 「綜覽全圖」：顯示所有 283 節點，用 search='*' 通過判斷邏輯但不過濾
     setFilters({ specialty: null, search: '*' });
   }
 

@@ -43,7 +43,7 @@
 - **E8 admin client 端 gate（F4）**：`/admin/*` 三頁目前無未登入轉址（後端 `/api/generate/*` 有 withAuth 保護、無外洩，屬體驗落差）。可加 admin layout cookie 檢查轉址，或文件明述為公開 demo。
 - **E9 useShallow sweep 收尾（CLAUDE.md §6）**：多數 callsite 已用 useShallow（比文件記載更完整）；掃剩餘裸解構點。低效益。
 - **E10 findShortestPath ghost-edge guard（F6）**：iter4 新增、目前無 runtime 消費者；接入 UI 前補 nodeIds 白名單參數。
-- **E11 文件漂移**：graph/page.tsx 註解「264 節點」→283；CLAUDE.md §6 useShallow 進度更新；`scripts/audit-fullstack.ts:119` 仍讀已刪的 middleware.ts（1 行改指 proxy.ts）。
+- ~~**E11 文件漂移**~~ ✅ eng-iter 8：graph/page.tsx 264→283；CLAUDE.md §6 useShallow 現況（sweep 已完成）+ 測試數 817→865；`audit-fullstack.ts` 讀 middleware.ts→proxy.ts（**順修真實 dev-audit 假陰性**：CSP 在 proxy.ts、原會誤報 Missing CSP）。
 - **E12 Mermaid 去 unsafe-eval（長期）**：評估 worker/預編譯移除 CSP `unsafe-eval`。
 - ⛔ **需使用者操作（非自主，已在 Obsidian BLOCKED-OPERATIONS.md）**：接 Supabase 後 progress/review/gamification 加 session+RLS（S4）、production 強制 Upstash（S5）、換部署平台重驗 IP header 信任（S6）、上線前輪替 live secrets、Sentry DSN。：`auth-store.ts:184` partialize 存整個 user(含 email PII)→只存 id；註冊/登入訊息可列舉 email→中性化。
 - **E4 ⬜ 時區日界**：`learning-store.ts:7` getTodayKey 用 UTC→台灣 08:00 才換日；抽 `getLocalDayKey(Asia/Taipei)` 統一 learning-store/gamification-store/`use-achievement-tracker.ts:47`＋vi.useFakeTimers 邊界測試。
@@ -60,7 +60,8 @@
 - eng-iter 4（2026-07-09）：**E4 ✅** — 時區日界。新建 `lib/utils/date.ts`（getLocalDayKey/Asia/Taipei）；learning-store/gamification-store/use-achievement-tracker/api-gamification 四處 UTC 日界→在地日界；+date.test.ts（6 邊界測試）+ 更新 gamification-store 測試期望值。855 tests。commit `9ae1033`。綠燈 tsc 0 / 855 / build ✓。
 - eng-iter 5（2026-07-09）：**E5 ✅** — CRUD 錯誤泛化。nodes/nodes[nodeId]/cases/cases[caseId]/paths/progress/review/gamification 共 12 catch 由回 `error.message`→`reportError(error,{scope})`+`Internal server error`（接 Supabase 後防 PostgREST/SQL 洩漏）；三個 malformed-JSON 500 測試仍過。commit `37f0d9d`。綠燈 tsc 0 / 855 / build ✓。
 - eng-iter 6（2026-07-09）：**E6 ✅** — generate 上限 + PII 遮罩。validators 五陣列 `.max()`；generate 5 路由 `enforceJsonBodyLimit`（edges 2MB、餘 64KB）；`error-reporter.scrubPii()`（email/Bearer/sk-/JWT）套 buildEvent message+tags，+3 測試（858 tests）。commit `a4e2681`。綠燈 tsc 0 / lint 0 / 858 / build ✓。
-- eng-iter 7（2026-07-09）：**E7 ✅ — ENG-BACKLOG 收官** — 測試補強。`api-account.test.ts`（6：403×2/401/503/500/204，vi.mock supabase 覆蓋 istanbul-ignored 刪除分支）+`cases-page-degradation.test.tsx`（chunk-fail error UI）。**865 tests / cov Stmts 71.41 Branch 62.56 Funcs 70.57 Lines 72.39（四項高於門檻、較上線前微升）**。綠燈 tsc 0 / 865 / build（收尾中）。**E1-E7 全部完成，等使用者統一 review/push。**
+- eng-iter 7（2026-07-09）：**E7 ✅ — ENG-BACKLOG 收官** — 測試補強。`api-account.test.ts`（6：403×2/401/503/500/204，vi.mock supabase 覆蓋 istanbul-ignored 刪除分支）+`cases-page-degradation.test.tsx`（chunk-fail error UI）。**865 tests / cov Stmts 71.41 Branch 62.56 Funcs 70.57 Lines 72.39（四項高於門檻、較上線前微升）**。commit `7bfd200`。綠燈 tsc 0 / 865 / build ✓。**E1-E7 全部完成，等使用者統一 review/push。**
+- eng-iter 8（2026-07-09）：**E11 ✅ 文件漂移** — graph 264→283、CLAUDE.md §6 useShallow 現況+測試數、audit-fullstack middleware.ts→proxy.ts（順修 CSP 假陰性）。綠燈 tsc 0 / 865 / build（收尾中）。**Obsidian PROGRESS/BLOCKED + 記憶體已更新（條件 1&4）。**
 
 ---
 
