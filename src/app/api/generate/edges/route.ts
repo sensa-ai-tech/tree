@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth, withRateLimit } from '@/lib/api/middleware';
+import { withAuth, withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
 import { callClaude, isAIMockMode } from '@/lib/ai/claude-client';
 import { buildEdgesPrompt } from '@/lib/ai/prompts/edges';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
@@ -9,6 +9,10 @@ import type { EdgeOutput, KnowledgeNode } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
   try {
+    // edges 的 all_nodes 攜帶整個專科的完整節點物件，故上限放寬至 2MB（其餘 generate
+    // 路由用預設 64KB）；all_nodes 陣列另有 .max(500) 限制元素數。
+    const tooLarge = enforceJsonBodyLimit(request, 2_000_000);
+    if (tooLarge) return tooLarge;
     const raw = await request.json();
     const inputValidation = validate(edgeGenerationInputSchema, raw);
     if (!inputValidation.success) {

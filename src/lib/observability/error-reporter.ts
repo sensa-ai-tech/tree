@@ -82,6 +82,24 @@ interface SentryEvent {
 type SentryFrame = { filename?: string; function?: string; lineno?: number; colno?: number };
 
 /**
+ * 防禦性 PII/secret 遮罩。呼叫端目前皆只傳非 PII 的 scope/tags，但 error message
+ * 未來可能夾帶使用者輸入或上游 header；在送出前對 message 與 tag 值做一層 scrub，
+ * 避免 email／Bearer token／API key／JWT 隨上報外流（defense-in-depth，非主邊界）。
+ */
+const PII_PATTERNS: Array<[RegExp, string]> = [
+  [/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '[redacted-email]'],
+  [/\bBearer\s+[\w.\-+/=]+/gi, 'Bearer [redacted]'],
+  [/\bsk-[A-Za-z0-9_-]{8,}/g, '[redacted-key]'],
+  [/\beyJ[A-Za-z0-9_-]{6,}\.[A-Za-z0-9_-]{6,}\.[A-Za-z0-9_-]{6,}/g, '[redacted-jwt]'],
+];
+
+export function scrubPii(text: string): string {
+  let out = text;
+  for (const [re, repl] of PII_PATTERNS) out = out.replace(re, repl);
+  return out;
+}
+
+/**
  * Parse a V8-style `err.stack` string into Sentry-shaped frames.
  *
  * Handles two common shapes per line:
@@ -113,11 +131,11 @@ function buildEvent(error: unknown, context: ErrorContext, env: ReturnType<typeo
   const err = error instanceof Error ? error : new Error(String(error));
   const eventId = crypto.randomUUID().replace(/-/g, '');
 
-  // 把 tags 全部轉成字串（Sentry 要求 string 值）
+  // 把 tags 全部轉成字串（Sentry 要求 string 值）並過 PII 遮罩
   const tags: Record<string, string> = {};
   if (context.tags) {
     for (const [k, v] of Object.entries(context.tags)) {
-      tags[k] = String(v);
+      tags[k] = scrubPii(String(v));
     }
   }
 
@@ -134,7 +152,7 @@ function buildEvent(error: unknown, context: ErrorContext, env: ReturnType<typeo
       values: [
         {
           type: err.name || 'Error',
-          value: err.message,
+          value: scrubPii(err.message),
           ...(err.stack && { stacktrace: { frames } }),
         },
       ],
@@ -212,4 +230,4 @@ export function reportError(error: unknown, context: ErrorContext = {}): void {
 }
 
 /** Test-only — 確認 DSN 解析邏輯正確。 */
-export const _internal = { parseDsn, buildEvent, parseStackFrames };
+export const _internal = { parseDsn, buildEvent, parseStackFrames, scrubPii };

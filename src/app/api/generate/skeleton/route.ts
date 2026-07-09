@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth, withRateLimit } from '@/lib/api/middleware';
+import { withAuth, withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
 import { callClaude } from '@/lib/ai/claude-client';
 import { buildSkeletonPrompt } from '@/lib/ai/prompts/skeleton';
 import { safeParseJson } from '@/lib/ai/parsers/json-parser';
@@ -9,6 +9,8 @@ import type { SkeletonOutput } from '@/types/knowledge';
 
 async function handlePost(request: NextRequest) {
   try {
+    const tooLarge = enforceJsonBodyLimit(request);
+    if (tooLarge) return tooLarge;
     const raw = await request.json();
     const inputValidation = validate(skeletonInputSchema, raw);
     if (!inputValidation.success) {

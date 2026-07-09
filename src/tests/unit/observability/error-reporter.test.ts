@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { reportError, _internal } from '@/lib/observability/error-reporter';
 
-const { parseDsn, buildEvent } = _internal;
+const { parseDsn, buildEvent, scrubPii } = _internal;
 
 describe('parseDsn', () => {
   it('parses a valid Sentry DSN', () => {
@@ -106,6 +106,31 @@ describe('buildEvent', () => {
   it('includes tags field only when context.tags is non-empty', () => {
     const event = buildEvent(new Error('x'), { tags: { k: 'v' } }, { dsn: 'x', release: undefined, environment: 'test' });
     expect(event.tags).toEqual({ k: 'v' });
+  });
+
+  it('scrubs PII from error message before building event', () => {
+    const err = new Error('login failed for user alice@example.com with Bearer abc.def.ghi');
+    const event = buildEvent(err, {}, { dsn: 'x', release: undefined, environment: 'test' });
+    const value = event.exception.values[0]?.value ?? '';
+    expect(value).not.toContain('alice@example.com');
+    expect(value).toContain('[redacted-email]');
+    expect(value).toContain('Bearer [redacted]');
+  });
+
+  it('scrubs PII from tag values', () => {
+    const event = buildEvent(new Error('x'), { tags: { detail: 'key=sk-ant-abcdef123456' } }, { dsn: 'x', release: undefined, environment: 'test' });
+    expect(event.tags?.detail).toContain('[redacted-key]');
+    expect(event.tags?.detail).not.toContain('sk-ant-abcdef123456');
+  });
+});
+
+describe('scrubPii', () => {
+  it('redacts email / Bearer / sk- key / JWT, leaves plain text', () => {
+    expect(scrubPii('contact bob@vet.tw now')).toBe('contact [redacted-email] now');
+    expect(scrubPii('Authorization: Bearer xyz.123-abc')).toContain('Bearer [redacted]');
+    expect(scrubPii('key sk-ant-api03-XYZ_abc')).toContain('[redacted-key]');
+    expect(scrubPii('token eyJhbGciOi.eyJzdWIiOi.SflKxwRJSM')).toContain('[redacted-jwt]');
+    expect(scrubPii('no secrets here, status 500')).toBe('no secrets here, status 500');
   });
 });
 

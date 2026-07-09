@@ -170,7 +170,8 @@ export const skeletonInputSchema = z.object({
 
 /** POST /api/generate/content */
 export const contentGenerationInputSchema = z.object({
-  node_ids: z.array(z.string().min(1)).min(1, '至少需要一個 node_id'),
+  // .max() 上限防止已認證呼叫端送超大陣列造成記憶體／token 放大（見安全審查 LOW-1）
+  node_ids: z.array(z.string().min(1)).min(1, '至少需要一個 node_id').max(500, 'node_ids 最多 500 個'),
   batch_size: z.number().int().min(1).max(20, '批次大小最多 20'),
   priority: z.enum(['learning_path', 'clinical_relevance', 'sequential']),
 });
@@ -178,15 +179,15 @@ export const contentGenerationInputSchema = z.object({
 /** POST /api/generate/edges — all_nodes uses passthrough to accept full KnowledgeNode objects */
 export const edgeGenerationInputSchema = z.object({
   specialty_abbr: z.string().min(1).max(10),
-  all_nodes: z.array(knowledgeNodeSchema.passthrough()).min(1, '至少需要一個節點'),
-  existing_edges: z.array(edgeSchema).optional(),
+  all_nodes: z.array(knowledgeNodeSchema.passthrough()).min(1, '至少需要一個節點').max(500, 'all_nodes 最多 500 個'),
+  existing_edges: z.array(edgeSchema).max(2000, 'existing_edges 最多 2000 條').optional(),
 });
 
 /** POST /api/generate/questions */
 export const questionsInputSchema = z.object({
   node_id: z.string().min(1, 'node_id 為必填'),
   content_summary: z.string().min(1, '內容摘要為必填'),
-  key_points: z.array(z.string()).min(1, '至少需要一個重點'),
+  key_points: z.array(z.string()).min(1, '至少需要一個重點').max(100, 'key_points 最多 100 個'),
 });
 
 /** POST /api/generate/cases */
@@ -194,7 +195,7 @@ export const caseGenerationInputSchema = z.object({
   specialty: z.string().min(1, '專科為必填'),
   difficulty: z.number().int().min(1).max(5),
   species: z.string().min(1, '物種為必填'),
-  related_node_ids: z.array(z.string().min(1)).min(1, '至少需要一個關聯節點'),
+  related_node_ids: z.array(z.string().min(1)).min(1, '至少需要一個關聯節點').max(100, 'related_node_ids 最多 100 個'),
 });
 
 // --- 通用驗證函數 ---
