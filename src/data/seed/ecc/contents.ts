@@ -1924,7 +1924,7 @@ GI：嘔吐（其實對排出毒素有幫助）、腹瀉。
 const contentECCOverview: NodeContent = {
   id: 'CONTENT-ECC-L0-001',
   node_id: 'ECC-L0-001',
-  version: 1,
+  version: 2,
   summary: '急診與加護醫學（Emergency and Critical Care, ECC）是獸醫學裡專門處理會要命的急性病症的專科，把這些動物從穩定、診斷一路帶到治療結束。範圍很廣：急診分診、休克復甦、重症監護、中毒處置、創傷管理、CPR 都算。哲學核心就一句「時間就是生命」，靠系統性評估（ABCDE）、先處理最致命的問題、團隊協作這三件事在跑。DACVECC 是美國獸醫急診暨重症醫學的專科認證。',
   learning_objectives: [
     '描述 ECC 專科的範疇、核心理念與臨床角色',
@@ -2025,6 +2025,7 @@ ECC 專科知識用六層架構組織：
     { type: 'textbook', citation: 'Drobatz KJ, Hopper K, Rozanski EA, Silverstein DC. Textbook of Small Animal Emergency Medicine. Wiley-Blackwell, 2019.', relevance: '小動物急診醫學教材' },
     { type: 'guideline', citation: 'Fletcher DJ, Boller M, Brainard BM, et al. RECOVER evidence and knowledge gap analysis on veterinary CPR. JVECC. 2012;22(s1).', relevance: 'RECOVER CPR 循證指引' },
     { type: 'journal', citation: 'Hall K, Holowaychuk M, Sharp CR, et al. Multicenter prospective evaluation of dogs with trauma. JAVMA. 2014;244(3):300-308.', relevance: '犬急診創傷多中心前瞻性研究' },
+    { type: 'journal', citation: 'Harmon SM, et al. "Factors Associated With Return of Spontaneous Circulation and Survival to Hospital Discharge in Dogs and Cats Undergoing Cardiopulmonary Resuscitation Using the Reassessment Campaign on Veterinary Resuscitation (RECOVER) Database." J Vet Emerg Crit Care. 2025;35(3):258-268. doi:10.1111/vec.13473', relevance: '近期 RECOVER 登錄處資料分析：ROSC 與出院存活的影響因子，即本節點 CPR 存活率數據的出處（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
