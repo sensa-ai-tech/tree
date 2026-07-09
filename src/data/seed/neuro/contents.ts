@@ -1539,7 +1539,7 @@ const contentLocalization: NodeContent = {
 const contentNeuroOverview: NodeContent = {
   id: 'CONTENT-NEURO-L0-001',
   node_id: 'NEURO-L0-001',
-  version: 1,
+  version: 2,
   summary: '獸醫神經科（Veterinary Neurology）涵蓋犬貓中樞與周邊神經系統疾病的診斷與治療。神經科臨床推理的核心在於「神經定位診斷」，透過系統性神經學檢查將病灶定位至特定解剖區域，再結合進階影像（MRI）與實驗室檢查（CSF 分析）建立確診。常見疾病包括癲癇、椎間盤疾病、腦膜腦炎、前庭症候群與神經肌肉疾病。',
   learning_objectives: [
     '描述獸醫神經科的範疇與常見疾病類別',
@@ -1629,6 +1629,7 @@ const contentNeuroOverview: NodeContent = {
     { type: 'textbook', citation: 'Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology, 3rd ed. Wiley-Blackwell, 2016.', relevance: '神經科實務指南' },
     { type: 'journal', citation: 'Muñana KR. Update on the approach to seizures in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):xi-xii.', relevance: '犬貓癲癇管理更新' },
     { type: 'guideline', citation: 'Berendt M et al. International veterinary epilepsy task force consensus report on epilepsy definition, classification and terminology in companion animals. BMC Vet Res. 2015;11:182.', relevance: 'IVETF 癲癇定義與分類共識，神經科核心指引' },
+    { type: 'guideline', citation: 'Olby NJ, et al. "ACVIM consensus statement on diagnosis and management of acute canine thoracolumbar intervertebral disc extrusion." J Vet Intern Med. 2022;36(5):1570-1596. doi:10.1111/jvim.16480', relevance: '現行 ACVIM 急性胸腰椎 IVDD 診斷與處置共識，支撐本節點 IVDD 分級與預後（如深痛覺喪失/手術時效）主張（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,

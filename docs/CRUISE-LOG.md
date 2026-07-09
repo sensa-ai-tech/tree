@@ -44,12 +44,13 @@
 5. `verify:citations --specialty <x>`（0 suspect）→ tsc/test/build ✓ → **本地 commit（不 push，待 DVM）**。
 
 ### NEXT-UP（依序，每迭代取最上）
-1. **下一個：另一個專科 L0 總覽**（DERM/NEURO-L0-001 仍 v1；已完成 IM✅ CARDIO✅ ECC✅ ONCO✅；SURG-L0-001 改善但暫留 v1、Burn 2020 待 DVM）——建議 NEURO-L0-001 或 DERM-L0-001。
+1. **下一個：DERM-L0-001（最後一個專科 L0 總覽）**——完成後 7 科新手入口地基集滿。已完成 IM✅ CARDIO✅ ECC✅ ONCO✅ NEURO✅；SURG-L0-001 改善暫留 v1、Burn 2020 待 DVM。之後轉 L1 基礎科學（仍相對低風險），再到疾病節點（L2-L5，建議 DVM 更積極參與）。
    - ⚠️ **給 DVM：SURG-L0-001 的 Burn 2020 引用疑似捏造/誤植**（Crossref 查無「Burn CC, Vet Surg 2020, 獸醫手術結果系統性回顧」；Burn 作者僅見人醫）。已在該 ref relevance 標記，請查證後決定保留或移除。
 2. 續：各專科 L0 → L1 基礎科學 → 再回填 L2-L5 疾病（L2-L5 涉具體劑量/療程，風險較高，建議 DVM 更積極參與）。
 
 ### 內容 iter 進度（append-only）
 - content iter 1（2026-07-09）：接任內容軌道、建立 v5 錨點 + 89 v1 佇列 + L0/L1 優先策略。全量 verify:citations 1271 引用 0 捏造（唯 2 已知真實無-DOI 老引用）。內容基線 checkpoint `99b0ecd`。
+- content iter 7（2026-07-09）：**NEURO-L0-001（神經科總覽）v1→v2** — body 扎實（七大神經定位、IVDD 分級/預後、MUO、品種好發）；references 4→5：新增 **Olby NJ et al. ACVIM 急性胸腰椎 IVDD 診斷/處置共識** JVIM 2022;36(5):1570-1596 `10.1111/jvim.16480`（現行權威、支撐節點 IVDD 分級與深痛覺/手術時效預後主張）。首作者+et al.。version 1→2。verify:citations（neuro）待確認。**待 DVM、未 push。**
 - content iter 6（2026-07-09）：**ONCO-L0-001（腫瘤科總覽）v1→v2** — references 3→5：(1) **修 Withrow 教科書編者誤植**（6th ed 實為 Vail/Thamm/Liptak，非 Withrow/Page；同巡航 iter45 在 ONCO-L3-012 的更正）；(2) 新增 **Nguyen SM et al. VCOG 犬 RECIST 反應評估準則** `10.1111/vco.12032`（與既有 VCOG-CTCAE 毒性分級互補）；(3) 新增 **Ahn 2026 犬貓比較腫瘤學物種感知框架** `10.3390/life16030430`（近期）。首作者+et al.、不杜撰共同作者。version 1→2。**Nguyen 引用初驗觸發 TITLE_MISMATCH＝純年份 gate 假陽性**（標題 100% 相符，online-first 2013 vs 印刷 2015 年差）→ 改標 online 年 2013 通過。verify:citations（onco）0 suspect。**待 DVM、未 push。**
 - content iter 5（2026-07-09）：**SURG-L0-001（外科學總覽）改善（暫留 v1）+ 內容整合度發現** — 節點欄位數本已達標；(1) 替換裸網址「ACVS Available at: acvs.org」為真實 Schmökel 2023 SSI/抗生素 stewardship（`10.1002/vetr.2976`，Crossref 驗證）；(2) **揪出疑似捏造/誤植引用 Burn 2020**（Crossref 以作者+期刊+年份查無此獸醫外科系統回顧文獻，Burn 作者僅見人醫骨科/心臟；title「benefit of the doubt」較像 C. Burn 動物福祉主題）→ 加 ⚠️ relevance 待 DVM 查證、**不刪除亦不宣稱 v2**。tsc 0；verify:citations（surg）待確認。**教訓：欄位數達標≠內容乾淨；overview 也可能藏 supplement-page-format（O8-O17）的可疑引用。**
 - content iter 4（2026-07-09）：**ECC-L0-001（急診加護總覽）v1→v2** — body 扎實（台灣蛇咬/蟾蜍/中暑、RECOVER）；補 references 4→5：**Harmon 2025 RECOVER 登錄處 ROSC/存活分析 `10.1111/vec.13473`**（＝節點原文「ROSC ~45%、出院存活 ~5-10%」的確切出處，Crossref 驗證）。verify:citations（ecc）待確認；version 1→2。**待 DVM、未 push。**
