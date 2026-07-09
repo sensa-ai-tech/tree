@@ -93,7 +93,9 @@ export default function DashboardHomePage() {
           你好，{displayName} 👋
         </h1>
         <p className="mt-1 text-sm text-gray-500">
-          歡迎回到獸醫知識樹學習平台
+          {completedCount === 0
+            ? '歡迎加入獸醫知識樹學習平台，開始你的學習之旅 🌱'
+            : '歡迎回到獸醫知識樹學習平台'}
         </p>
       </div>
 

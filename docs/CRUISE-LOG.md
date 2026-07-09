@@ -34,7 +34,8 @@
 - （後續）#9 節點自我測驗入口、#10 新手跨科入門路徑/難度標示。
 
 ### co-dev 進度（append-only）
-- co-dev iter 0（2026-07-09）：新手走查、建立 v4 錨點 + UX-BACKLOG + U1-U5 任務。Codex MCP 確認可用。開始 U1（threadId 待建）。
+- co-dev iter 0（2026-07-09）：新手走查、建立 v4 錨點 + UX-BACKLOG + U1-U5 任務。checkpoint `5238b6d`。
+- co-dev iter 1（2026-07-09）：**U1** — Codex 負責分析（確認 home 變數名 `completedCount`、給出精確 before/after）；但 **Codex MCP 兩次失敗**（workspace-write 寫入被拒 → 改 approval-policy:never 重開 → 連線中斷 -32000）→ 依 co-dev 降級規則 **Claude 介入實作**。三處：WelcomeOnboarding 英文標題→「歡迎使用 獸醫知識樹」、onboarding step2 加初學者引導句、home 副標情境化（completedCount===0→歡迎加入🌱）+ 同步更新 feature-components 測試斷言。**教訓：本機 Codex MCP 寫檔不穩，co-dev 實作階段可能需 Claude 執行；Codex 適合當分析/覆核角色。**
 
 ---
 

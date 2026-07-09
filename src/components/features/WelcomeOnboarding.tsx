@@ -77,7 +77,7 @@ export function WelcomeOnboarding() {
               <Map className="h-7 w-7 text-indigo-600" />
             </div>
             <h2 className="text-xl font-bold text-gray-900">
-              Welcome to VetKnowledgeTree
+              歡迎使用 獸醫知識樹
             </h2>
             <p className="mt-2 text-sm text-gray-500">
               結構化的獸醫專科互動學習平台，幫助你系統性地掌握臨床知識。
@@ -104,7 +104,7 @@ export function WelcomeOnboarding() {
         <div className="space-y-4">
           <div className="text-center">
             <h2 className="text-lg font-bold text-gray-900">建議的學習路徑</h2>
-            <p className="mt-1 text-sm text-gray-500">從以下任一入口開始你的學習之旅：</p>
+            <p className="mt-1 text-sm text-gray-500">剛畢業或初學者，建議先從「選擇學習路徑」跟著系統一步步走；想自由探索再用知識圖譜。</p>
           </div>
           <div className="space-y-2">
             <Link

@@ -16,13 +16,13 @@ describe('WelcomeOnboarding', () => {
 
   it('shows modal on first visit', () => {
     render(<WelcomeOnboarding />);
-    expect(screen.getByText('Welcome to VetKnowledgeTree')).toBeInTheDocument();
+    expect(screen.getByText('歡迎使用 獸醫知識樹')).toBeInTheDocument();
   });
 
   it('does not show modal when already completed', () => {
     localStorage.setItem('vet-onboarding-completed', 'true');
     render(<WelcomeOnboarding />);
-    expect(screen.queryByText('Welcome to VetKnowledgeTree')).not.toBeInTheDocument();
+    expect(screen.queryByText('歡迎使用 獸醫知識樹')).not.toBeInTheDocument();
   });
 
   it('advances to step 2 on next button click', async () => {
