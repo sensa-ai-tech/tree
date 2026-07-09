@@ -1450,7 +1450,7 @@ doxorubicin/carboplatin 的存活益處在回顧性研究結果不一致，多�
 const contentOncoOverview: NodeContent = {
   id: 'CONTENT-ONCO-L0-001',
   node_id: 'ONCO-L0-001',
-  version: 1,
+  version: 2,
   summary: '獸醫腫瘤科是專門研究和治療伴侶動物腫瘤的臨床專科。隨著犬貓壽命延長，腫瘤已成為老年伴侶動物最主要的死因之一。犬的腫瘤發生率約為人的 10 倍，貓的某些腫瘤（如注射處肉瘤）則具物種特異性。獸醫腫瘤科涵蓋腫瘤的診斷、分期、多模式治療（手術、化療、放療、免疫治療）及緩和醫療。比較腫瘤學（Comparative Oncology）使犬貓腫瘤成為人類腫瘤研究的重要自然發生模型。',
   learning_objectives: [
     '描述獸醫腫瘤科的範疇與伴侶動物常見腫瘤的流行病學概況',
@@ -1556,9 +1556,11 @@ const contentOncoOverview: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '獸醫腫瘤科主要教科書' },
-    { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '化療副作用分級標準' },
-    { type: 'journal', citation: 'Paoloni M, Khanna C. Translation of new cancer treatments from pet dogs to humans. Nat Rev Cancer. 2008;8(2):147-156.', relevance: '比較腫瘤學概念與價值' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '獸醫腫瘤科主要教科書（6th ed 編者更正：Vail/Thamm/Liptak；Withrow/Page 為 5th ed 編者）' },
+    { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '化療副作用分級標準（毒性分級）' },
+    { type: 'guideline', citation: 'Nguyen SM, et al. "Response evaluation criteria for solid tumours in dogs (v1.0): a Veterinary Cooperative Oncology Group (VCOG) consensus document." Vet Comp Oncol. 2013;13(3):176-183. doi:10.1111/vco.12032', relevance: '犬實體腫瘤反應評估準則（VCOG 版 RECIST），與上方 CTCAE 併用評估療效與毒性；標示 online-first 年 2013（印刷 vol 13(3)=2015），Crossref 驗證' },
+    { type: 'journal', citation: 'Paoloni M, Khanna C. Translation of new cancer treatments from pet dogs to humans. Nat Rev Cancer. 2008;8(2):147-156.', relevance: '比較腫瘤學概念與價值（奠基文獻）' },
+    { type: 'journal', citation: 'Ahn, et al. "Comparative Cancer Genetics and Veterinary Therapeutics in Dogs and Cats: A Species-Aware Framework for Comparative Oncology." Life. 2026;16(3):430. doi:10.3390/life16030430', relevance: '2026 近期綜述：犬貓比較腫瘤學的物種感知框架（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
