@@ -22,8 +22,8 @@
 > **本軌道 vs v2 內容軌道之分工**：v3=**程式碼/工程**（可自主完成、綠燈可驗、本地 commit 當 checkpoint 不 push）；v2=**醫療內容 v1→v2**（產出待 DVM 簽核，暫緩）。兩軌不衝突。
 > **Resume 只需讀「現況快照 v3 + ENG-BACKLOG」即可接續。**
 
-### 現況快照 v3（最後更新：2026-07-09 / eng-iter 8 完成，工程軌道 WIND-DOWN）
-- 綠燈基準：tsc 0 / **865 tests** / lint 0 err / build ✓ / cov 四項高於門檻。本 session 起點 clean tree `db48c07`；已本地 commit（8 個，**未 push**，等使用者統一 review）：E1 `fd22c85`、E2 `6be4fb4`、E3 `f2db333`、E4 `9ae1033`、E5 `37f0d9d`、E6 `a4e2681`、E7 `7bfd200`、E11/eng-iter8 `8598e1c`。
+### 現況快照 v3（最後更新：2026-07-09 / eng-iter 8 完成，工程軌道 WIND-DOWN，已 push）
+- 綠燈基準：tsc 0 / **865 tests** / lint 0 err / build ✓ / cov 四項高於門檻。**本 session 全部 commit 已於 2026-07-09 push 到 origin/main（`db48c07`→`c3dbe3d`，9 commits，使用者授權）。** E1 `fd22c85`、E2 `6be4fb4`、E3 `f2db333`、E4 `9ae1033`、E5 `37f0d9d`、E6 `a4e2681`、E7 `7bfd200`、E11 `8598e1c`、docs `c3dbe3d`。
 - **✅ 2026-07-09 安全審查 ENG-BACKLOG E1-E7 全數完成**（依賴弱點、cases 載入降級、成就分母、Node 版本、客戶端 PII、列舉抗性、時區日界、CRUD 錯誤泛化、generate 上限、PII 遮罩、account/cases 測試補強）。無上線阻斷級漏洞；接真實 Supabase 前的潛伏缺口（S4 session+RLS、S5 Upstash 強制、S6 IP header）已記於 Obsidian BLOCKED-OPERATIONS.md 待使用者。
 - **審查成果**（四路 agent：後端 API / 前端 XSS / 功能完整性 / 組態依賴）：安全架構經逐行驗證屬實、**無上線阻斷級漏洞**；風險集中在「依賴弱點」與「接真實 Supabase 前的潛伏缺口」。完整報告見本 session 對話（未另存檔，摘要見 ENG-BACKLOG）。
 - **eng-iter 1（✅）**：E1 依賴——dompurify 3.4.5→3.4.11（解 4 弱點）＋`npm audit fix`（9→4，殘餘全 dev-only：postcss-in-next/qs-in-stryker/undici-in-jsdom，不進 prod bundle）＋next 16.2.6→16.2.10。tailwind 守 4.3.0。commit `fd22c85`。
