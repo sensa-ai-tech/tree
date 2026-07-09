@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
+import { getLocalDayKey } from '@/lib/utils/date';
 import type {
   UserExperience,
   UserAchievement,
@@ -107,7 +108,7 @@ async function handlePost(request: NextRequest) {
       total_xp: input.amount,
       current_level: 1,
       streak_days: 1,
-      last_active_date: new Date().toISOString().split('T')[0],
+      last_active_date: getLocalDayKey(),
       specialties_explored: [],
     };
 

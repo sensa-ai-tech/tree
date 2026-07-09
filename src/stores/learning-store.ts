@@ -3,8 +3,10 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserNodeProgress, ProgressStatus } from '@/types/gamification';
+import { getLocalDayKey } from '@/lib/utils/date';
 
-const getTodayKey = (): string => new Date().toISOString().split('T')[0];
+// 以 Asia/Taipei 日界計算「今天」，取代舊的 UTC 日期（見 lib/utils/date.ts）。
+const getTodayKey = (): string => getLocalDayKey();
 
 interface LearningState {
   progress: Map<string, UserNodeProgress>;

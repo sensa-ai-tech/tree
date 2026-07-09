@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
 import { checkNewAchievements } from '@/lib/gamification/achievements';
+import { getLocalDayKey } from '@/lib/utils/date';
 
 /**
  * Auto-checks achievements and updates streak on learning state changes.
@@ -44,7 +45,7 @@ export function useAchievementTracker(): void {
   useEffect(() => {
     if (completedCount === 0 && todayReviewCount === 0) return;
 
-    const today = new Date().toISOString().split('T')[0];
+    const today = getLocalDayKey();
     const lastActive = experience.last_active_date;
 
     if (lastActive === today) return; // Already updated today

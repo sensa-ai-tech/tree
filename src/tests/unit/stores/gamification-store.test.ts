@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { useGamificationStore } from '@/stores/gamification-store';
+import { getLocalDayKey } from '@/lib/utils/date';
 import type { XPEvent, UserExperience, UserAchievement } from '@/types/gamification';
 
 function getState() {
@@ -119,8 +120,9 @@ describe('gamification-store: updateStreak', () => {
   it('updates streak_days and last_active_date', () => {
     getState().updateStreak(7);
     expect(getState().experience.streak_days).toBe(7);
-    const today = new Date().toISOString().split('T')[0];
-    expect(getState().experience.last_active_date).toBe(today);
+    // last_active_date 以 Asia/Taipei 日界計（見 lib/utils/date.ts）；
+    // 用同一函式算期望值，避免在台灣凌晨時段（UTC 日 ≠ 在地日）flaky。
+    expect(getState().experience.last_active_date).toBe(getLocalDayKey());
   });
 
   it('overwrites previous streak value', () => {

@@ -4,6 +4,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserExperience, XPEvent, UserAchievement } from '@/types/gamification';
 import { getLevelInfo } from '@/lib/gamification/level-system';
+import { getLocalDayKey } from '@/lib/utils/date';
 
 interface GamificationState {
   experience: UserExperience;
@@ -81,7 +82,7 @@ export const useGamificationStore = create<GamificationState>()(
           experience: {
             ...state.experience,
             streak_days: days,
-            last_active_date: new Date().toISOString().split('T')[0],
+            last_active_date: getLocalDayKey(),
           },
         })),
 
