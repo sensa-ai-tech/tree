@@ -22,15 +22,16 @@
 > **本軌道 vs v2 內容軌道之分工**：v3=**程式碼/工程**（可自主完成、綠燈可驗、本地 commit 當 checkpoint 不 push）；v2=**醫療內容 v1→v2**（產出待 DVM 簽核，暫緩）。兩軌不衝突。
 > **Resume 只需讀「現況快照 v3 + ENG-BACKLOG」即可接續。**
 
-### 現況快照 v3（最後更新：2026-07-09 / eng-iter 1 進行中）
-- 綠燈基準：tsc 0 / **848 tests** / build ✓（本 session 起點，clean tree `db48c07`）。
+### 現況快照 v3（最後更新：2026-07-09 / eng-iter 2 完成）
+- 綠燈基準：tsc 0 / **848 tests** / lint 0 err / build ✓。本 session 起點 clean tree `db48c07`；已本地 commit：E1 `fd22c85`、E2（待 build 收尾後 commit）。**未 push**。
 - **審查成果**（四路 agent：後端 API / 前端 XSS / 功能完整性 / 組態依賴）：安全架構經逐行驗證屬實、**無上線阻斷級漏洞**；風險集中在「依賴弱點」與「接真實 Supabase 前的潛伏缺口」。完整報告見本 session 對話（未另存檔，摘要見 ENG-BACKLOG）。
-- **eng-iter 1（進行中）**：E1 依賴弱點——dompurify 3.4.5→3.4.11（解 4 弱點）＋`npm audit fix`（9→4 弱點，殘餘全 dev-only：postcss-in-next/qs-in-stryker/undici-in-jsdom，不進 prod bundle）＋next patch 16.2.6→16.2.10。tailwind 守 4.3.0。
+- **eng-iter 1（✅）**：E1 依賴——dompurify 3.4.5→3.4.11（解 4 弱點）＋`npm audit fix`（9→4，殘餘全 dev-only：postcss-in-next/qs-in-stryker/undici-in-jsdom，不進 prod bundle）＋next 16.2.6→16.2.10。tailwind 守 4.3.0。commit `fd22c85`。
+- **eng-iter 2（✅）**：E2——(1) cases/[caseId] 兩頁動態 import 加 `.catch/.finally` + cancel guard + error UI（修 chunk 失敗永久 loading）；(2) achievements 分母 `!hidden` 子集→`ACHIEVEMENTS.length`（grid 渲染全 20 含 hidden placeholder，分子含已解鎖 hidden→避免分子>分母；preview 實測「2/20」與 20 卡一致）；(3) package.json 加 `engines.node=24.x` + CI node 20→24（消除與 Vercel 24.x 漂移）。preview 實測 cases 列表/詳情 happy path 正常、console 無錯。
 
 ### ENG-BACKLOG（依序，每迭代取最上未完成；來源＝2026-07-09 安全審查）
-- **E1 🔄 依賴弱點修補**（進行中）：dompurify↑ + audit fix，驗 tailwind/build。
-- **E2 ⬜ cases 載入降級 + 成就分母 + engines**：`cases/page.tsx:25`/`cases/[caseId]:42` 動態 import 無 catch→chunk 失敗永久 loading，加 try/catch/finally（範本＝`review/page.tsx` try/finally）；`achievements/page.tsx:70` 分母排除 hidden、分子含 hidden→分子>分母，對齊；`package.json` 無 engines→加 `"node":"24.x"` + CI `.github/workflows/ci.yml` node 20→24。
-- **E3 ⬜ 客戶端 PII + 使用者列舉**：`auth-store.ts:184` partialize 存整個 user(含 email PII)→只存 id；註冊/登入訊息可列舉 email→中性化。
+- **E1 ✅ 依賴弱點修補**：dompurify↑ + audit fix，驗 tailwind/build。commit `fd22c85`。
+- **E2 ✅ cases 載入降級 + 成就分母 + engines**：三項全做完並 preview 實測。
+- **E3 ⬜ 客戶端 PII + 使用者列舉** ← 下一個：`auth-store.ts:184` partialize 存整個 user(含 email PII)→只存 id；註冊/登入訊息可列舉 email→中性化。
 - **E4 ⬜ 時區日界**：`learning-store.ts:7` getTodayKey 用 UTC→台灣 08:00 才換日；抽 `getLocalDayKey(Asia/Taipei)` 統一 learning-store/gamification-store/`use-achievement-tracker.ts:47`＋vi.useFakeTimers 邊界測試。
 - **E5 ⬜ CRUD 錯誤泛化**：nodes/cases/paths/progress/review/gamification 8 條 catch 直接回 `error.message`→原始入 log、對外泛化（接 Supabase 前的防洩，比照 generate/*）。
 - **E6 ⬜ generate 上限 + error-reporter PII 遮罩**：validators 陣列加 `.max()`＋套 `enforceJsonBodyLimit`；`error-reporter.ts buildEvent` 加 email/token 遮罩層。
@@ -39,7 +40,8 @@
 
 ### eng-iter 進度（append-only）
 - eng-iter 0（2026-07-09）：接任、四路安全審查完成、建立本 v3 錨點 + ENG-BACKLOG + 任務清單 E1-E7。
-- eng-iter 1（2026-07-09）：**E1 進行中** — 見現況快照 v3。
+- eng-iter 1（2026-07-09）：**E1 ✅** — 依賴弱點 9→4（殘餘 dev-only）。commit `fd22c85`。綠燈 tsc 0 / 848 / build ✓。
+- eng-iter 2（2026-07-09）：**E2 ✅** — cases 載入降級 + 成就分母 + engines/CI Node 對齊。preview 實測 cases 列表/詳情/achievements 皆正常、console 無錯。綠燈 tsc 0 / 848 / lint 0 / build（收尾中）。
 
 ---
 

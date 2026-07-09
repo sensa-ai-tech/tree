@@ -31,6 +31,7 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   const router = useRouter();
   const [allCases, setAllCases] = useState<CaseChallenge[]>([]);
   const [isLoadingCases, setIsLoadingCases] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedActions, setSelectedActions] = useState<Set<string>>(new Set());
   const [showFeedback, setShowFeedback] = useState(false);
@@ -40,10 +41,21 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
   const addSpecialty = useGamificationStore((s) => s.addSpecialty);
 
   useEffect(() => {
-    import('@/data/seed/case-lookup').then(({ ALL_CASES }) => {
-      setAllCases(ALL_CASES);
-      setIsLoadingCases(false);
-    });
+    let cancelled = false;
+    import('@/data/seed/case-lookup')
+      .then(({ ALL_CASES }) => {
+        if (!cancelled) setAllCases(ALL_CASES);
+      })
+      .catch(() => {
+        // chunk 載入失敗（ChunkLoadError）不可讓頁面永久停在「病例載入中」
+        if (!cancelled) setLoadError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoadingCases(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const caseData = useMemo(
@@ -83,6 +95,17 @@ export default function CaseDetailPage({ params }: CaseDetailPageProps) {
     return (
       <div className="flex h-64 items-center justify-center">
         <p className="text-sm text-gray-600">病例載入中...</p>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="flex h-64 flex-col items-center justify-center gap-3 text-center" role="alert">
+        <p className="text-sm text-gray-600">病例載入失敗，請稍後再試或重新整理頁面</p>
+        <Link href="/cases" className="text-sm font-medium text-indigo-600 hover:underline">
+          返回病例列表
+        </Link>
       </div>
     );
   }

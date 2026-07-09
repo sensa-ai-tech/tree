@@ -19,14 +19,26 @@ const DIFFICULTY_LABELS: Record<number, string> = {
 export default function CasesPage() {
   const [cases, setCases] = useState<CaseChallenge[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null);
 
   useEffect(() => {
-    import('@/data/seed/case-lookup').then(({ ALL_CASES }) => {
-      setCases(ALL_CASES);
-      setIsLoading(false);
-    });
+    let cancelled = false;
+    import('@/data/seed/case-lookup')
+      .then(({ ALL_CASES }) => {
+        if (!cancelled) setCases(ALL_CASES);
+      })
+      .catch(() => {
+        // chunk 載入失敗（弱網／部署換版 ChunkLoadError）不可讓頁面永久停在骨架
+        if (!cancelled) setLoadError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const filteredCases = cases.filter((c) => {
@@ -83,6 +95,13 @@ export default function CasesPage() {
             <CardSkeleton key={i} />
           ))}
         </div>
+      ) : loadError ? (
+        <Card role="alert">
+          <CardBody className="text-center">
+            <p className="font-semibold text-gray-900">病例載入失敗</p>
+            <p className="mt-1 text-sm text-gray-600">請稍後再試或重新整理頁面</p>
+          </CardBody>
+        </Card>
       ) : filteredCases.length === 0 ? (
         <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-gray-300 bg-white">
           <div className="text-center">

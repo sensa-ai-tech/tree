@@ -67,7 +67,9 @@ export default function AchievementsPage() {
     [achievements]
   );
 
-  const totalAchievements = ACHIEVEMENTS.filter((a) => !a.hidden).length;
+  // 分母用全部成就數：grid 會把 hidden 成就也渲染成「隱藏成就」placeholder，
+  // 且 unlockedCount 含已解鎖的 hidden 成就；用非 hidden 子集當分母會出現分子 > 分母。
+  const totalAchievements = ACHIEVEMENTS.length;
   const unlockedCount = achievements.length;
 
   return (
