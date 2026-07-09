@@ -8,6 +8,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { Card, CardBody } from '@/components/ui/Card';
 import { GraphSkeleton } from '@/components/ui/Skeleton';
 import { SpecialtyGrid } from '@/components/features/SpecialtyGrid';
+import { LAYER_SCALE_HINT } from '@/lib/constants/layers';
 
 const KnowledgeGraph = dynamic(
   () => import('@/components/features/KnowledgeGraph').then(m => m.KnowledgeGraph),
@@ -161,6 +162,9 @@ export default function GraphPage() {
               })}
             </div>
           </div>
+
+          {/* 新手層級說明：解釋節點上的 L0–L5 是什麼 */}
+          <p className="text-xs text-gray-500">💡 {LAYER_SCALE_HINT}</p>
 
           {/* 搜尋清除提示（'*' 是綜覽全圖 sentinel，不顯示為搜尋字串） */}
           {filters.search && filters.search !== '*' && (

@@ -16,6 +16,7 @@ import { ReferenceList } from '@/components/features/ReferenceList';
 import { RelatedNodes } from '@/components/features/RelatedNodes';
 import { ProcedureLinks } from '@/components/features/ProcedureLinks';
 import { useShallow } from 'zustand/react/shallow';
+import { LAYER_SCALE_HINT } from '@/lib/constants/layers';
 import { useKnowledgeStore } from '@/stores/knowledge-store';
 import { useLearningStore } from '@/stores/learning-store';
 import { useGamificationStore } from '@/stores/gamification-store';
@@ -183,7 +184,9 @@ export default function NodeDetailPage({ params }: NodeDetailPageProps) {
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <Badge variant="nodeType" nodeType={node.node_type}>{node.node_type}</Badge>
-          <Badge variant="layer" layer={node.layer}>Layer {node.layer}</Badge>
+          <span title={LAYER_SCALE_HINT} className="inline-flex cursor-help">
+            <Badge variant="layer" layer={node.layer}>Layer {node.layer}</Badge>
+          </span>
           <Badge variant="difficulty" difficulty={node.difficulty}>
             難度 {node.difficulty}
           </Badge>
