@@ -2547,7 +2547,7 @@ CE 診斷正從「靠組織學嚴重度」往「臨床＋生物標記＋菌相�
 const contentIMOverview: NodeContent = {
   id: 'CONTENT-IM-L0-001',
   node_id: 'IM-L0-001',
-  version: 1,
+  version: 2,
   summary: '獸醫內科學（Veterinary Internal Medicine）處理小動物所有不需要動刀的病，腎臟泌尿、內分泌、消化、免疫、感染病這幾大塊都在裡面。這份總覽把從基礎科學一路到臨床應用的學習地圖鋪出來，強調用證據（EBM）跟以問題為導向的思考方式來做診斷。',
   learning_objectives: [
     '描述獸醫內科學的範疇與主要次專科領域',
@@ -2601,14 +2601,14 @@ const contentIMOverview: NodeContent = {
 - 飼主餵食習慣：自製鮮食比例較高，需注意營養均衡
 - 用藥可及性：部分藥物（如 DOCP）取得不易
 
-## 六、人醫借鑑 (Translational Insights)
+## 二、人醫借鑑 (Translational Insights)
 
 - 人醫的專科分化（腎臟科、內分泌科、消化科、免疫科）遠比獸醫精細，獸醫內科醫師需涵蓋人醫多個專科的知識
 - 人醫 循證醫學 (EBM) 架構（GRADE 系統、Cochrane 回顧）逐漸被獸醫界採用，但獸醫的高品質 RCT 數量仍遠少於人醫
 - 人醫 精準醫學 (Precision Medicine) 趨勢（基因檢測導向治療）在獸醫處於起步階段，犬品種基因多型性研究為潛在突破口
 - 人醫的 多專科會診 (MDT) 模式可借鑑至獸醫轉診體系
 
-## 七、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
+## 三、臨床爭議與知識空缺 (Controversies & Knowledge Gaps)
 
 | 爭議主題 | 目前立場 | 證據等級 | 研究方向 |
 |---------|---------|---------|---------|
@@ -2635,8 +2635,9 @@ const contentIMOverview: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017.', relevance: '獸醫內科學權威教科書' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine, 6th ed. Elsevier, 2019.', relevance: '小動物內科學基礎教材' },
-    { type: 'journal', citation: 'Cockcroft PD, Holmes MA. "Evidence-based veterinary medicine 1. Why is it important and what skills are needed?" In Practice. 2004;26(1):28-33.', relevance: '循證獸醫學概論' },
-    { type: 'guideline', citation: 'Nelson RW, Couto CG. "Small Animal Internal Medicine." 6th ed. Elsevier, 2020.', relevance: '小動物內科教科書' },
+    { type: 'journal', citation: 'Cockcroft PD, Holmes MA. "Evidence-based veterinary medicine 1. Why is it important and what skills are needed?" In Practice. 2004;26(1):28-33.', relevance: '循證獸醫學概論（EBM 為何重要、需要哪些技能）' },
+    { type: 'journal', citation: 'Cockcroft P. "Evidence-based veterinary medicine and contextualised care." Veterinary Evidence. 2026;11(3):754. doi:10.18849/ve.v11i3.754', relevance: '近期 EBM 觀點：證據需結合情境化照護（contextualised care）方能落地臨床（Crossref 驗證）' },
+    { type: 'journal', citation: 'Giaretta PR. "The Path to Diagnosis." Vet Clin North Am Small Anim Pract. 2026;56(3):731-746. doi:10.1016/j.cvsm.2026.01.006', relevance: '近期綜述：診斷路徑與臨床推理，呼應本節點的問題導向診斷邏輯（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
