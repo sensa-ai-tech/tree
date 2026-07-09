@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/Input';
 import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { useAuthStore } from '@/stores/auth-store';
 import { showToast } from '@/components/ui/Toast';
+import { isMockMode } from '@/data/seed/mock-mode';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -83,6 +84,11 @@ export default function LoginPage() {
           </div>
         </CardHeader>
         <CardBody>
+          {isMockMode() && (
+            <div className="mb-4 rounded-lg border border-indigo-100 bg-indigo-50 p-3 text-sm text-indigo-700">
+              示範模式：輸入任意 Email 與密碼（至少 6 字元）即可直接體驗，無需真實帳號。
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               label="Email"

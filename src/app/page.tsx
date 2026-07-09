@@ -7,6 +7,7 @@ import { Map, Stethoscope, Gamepad2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
 import { useAuthStore } from '@/stores/auth-store';
+import { isMockMode } from '@/data/seed/mock-mode';
 
 const FEATURES = [
   {
@@ -70,6 +71,11 @@ export default function HomePage() {
             </Button>
           </a>
         </div>
+        {isMockMode() && (
+          <p className="mt-5 text-sm text-gray-500">
+            🔓 示範模式 · 無需註冊，點「開始學習」即可用任意 Email 直接體驗
+          </p>
+        )}
       </section>
 
       {/* Features */}
