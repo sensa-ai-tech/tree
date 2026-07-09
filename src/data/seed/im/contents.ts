@@ -2741,8 +2741,9 @@ Henle 環（Loop of Henle）
   references: [
     { type: 'textbook', citation: 'Reece WO. Dukes\' Physiology of Domestic Animals, 13th ed. Wiley-Blackwell, 2015. Chapters on Renal Physiology.', relevance: '動物腎臟生理學基礎教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Section on Urinary System.', relevance: '腎臟生理與疾病整合教材' },
-    { type: 'journal', citation: 'Hall JA et al. "Biomarkers of kidney function and damage in dogs and cats." Vet Clin North Am Small Anim Pract. 2022;52(3):547-567.', relevance: '腎功能生物標記物回顧' },
-    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 分期與治療指引' },
+    { type: 'journal', citation: 'Hall JA et al. "Biomarkers of kidney function and damage in dogs and cats." Vet Clin North Am Small Anim Pract. 2022;52(3):547-567.', relevance: '⚠️ 待 DVM 查證：Crossref 以作者+期刊+年份查無此文（同 issue 52(3) 真實文獻為 Ross AKI 659-672、Viviano 797-817，未見 Hall 547-567）；疑捏造或誤植，DVM 確認前不宜視為已驗證來源' },
+    { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 分期與治療指引（IRIS 官方網路發布標準）' },
+    { type: 'journal', citation: 'Pelander L, et al. "Comparison of the diagnostic value of symmetric dimethylarginine, cystatin C, and creatinine for detection of decreased glomerular filtration rate in dogs." J Vet Intern Med. 2019;33(2):630-639. doi:10.1111/jvim.15445', relevance: '比較 SDMA/cystatin C/creatinine 偵測 GFR 下降的診斷價值（犬），支撐本節點腎功能評估（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
