@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { CaseChallenge, CaseResult, CaseStepResult } from '@/types/case';
 
 interface CaseSubmitInput {
@@ -42,8 +43,8 @@ async function handleGet(
 
     return NextResponse.json({ data });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ data: null, error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/cases/[caseId]' });
+    return NextResponse.json({ data: null, error: 'Internal server error' }, { status: 500 });
   }
 }
 
@@ -135,8 +136,8 @@ async function handlePost(
 
     return NextResponse.json({ data: result });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/cases/[caseId]' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 

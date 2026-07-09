@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit } from '@/lib/api/middleware';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { KnowledgeNode } from '@/types/knowledge';
 
 interface NodeDetailResponse {
@@ -38,8 +39,8 @@ async function handleGet(
 
     return NextResponse.json(response, { status: 404 });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ data: null, error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/nodes/[nodeId]' });
+    return NextResponse.json({ data: null, error: 'Internal server error' }, { status: 500 });
   }
 }
 

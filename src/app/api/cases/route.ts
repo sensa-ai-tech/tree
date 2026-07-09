@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit } from '@/lib/api/middleware';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { CaseChallenge } from '@/types/case';
 
 async function handleGet(request: NextRequest) {
@@ -29,8 +30,8 @@ async function handleGet(request: NextRequest) {
 
     return NextResponse.json({ data });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/cases' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 

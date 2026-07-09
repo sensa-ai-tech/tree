@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { UserNodeProgress, ProgressStatus } from '@/types/gamification';
 
 interface ProgressUpdateInput {
@@ -18,8 +19,8 @@ async function handleGet(_request: NextRequest) {
 
     return NextResponse.json({ data });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/progress' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
@@ -87,8 +88,8 @@ async function handlePost(request: NextRequest) {
 
     return NextResponse.json({ data: updatedProgress });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/progress' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 

@@ -22,8 +22,8 @@
 > **本軌道 vs v2 內容軌道之分工**：v3=**程式碼/工程**（可自主完成、綠燈可驗、本地 commit 當 checkpoint 不 push）；v2=**醫療內容 v1→v2**（產出待 DVM 簽核，暫緩）。兩軌不衝突。
 > **Resume 只需讀「現況快照 v3 + ENG-BACKLOG」即可接續。**
 
-### 現況快照 v3（最後更新：2026-07-09 / eng-iter 4 完成）
-- 綠燈基準：tsc 0 / **855 tests** / lint 0 err / build ✓。本 session 起點 clean tree `db48c07`；已本地 commit：E1 `fd22c85`、E2 `6be4fb4`、E3 `f2db333`、E4（待 build 收尾後 commit）。**未 push**。
+### 現況快照 v3（最後更新：2026-07-09 / eng-iter 5 完成）
+- 綠燈基準：tsc 0 / **855 tests** / lint 0 err / build ✓。本 session 起點 clean tree `db48c07`；已本地 commit：E1 `fd22c85`、E2 `6be4fb4`、E3 `f2db333`、E4 `9ae1033`、E5（待 build 收尾後 commit）。**未 push**。
 - **審查成果**（四路 agent：後端 API / 前端 XSS / 功能完整性 / 組態依賴）：安全架構經逐行驗證屬實、**無上線阻斷級漏洞**；風險集中在「依賴弱點」與「接真實 Supabase 前的潛伏缺口」。完整報告見本 session 對話（未另存檔，摘要見 ENG-BACKLOG）。
 - **eng-iter 1（✅）**：E1 依賴——dompurify 3.4.5→3.4.11（解 4 弱點）＋`npm audit fix`（9→4，殘餘全 dev-only：postcss-in-next/qs-in-stryker/undici-in-jsdom，不進 prod bundle）＋next 16.2.6→16.2.10。tailwind 守 4.3.0。commit `fd22c85`。
 - **eng-iter 2（✅）**：E2——(1) cases/[caseId] 兩頁動態 import 加 `.catch/.finally` + cancel guard + error UI（修 chunk 失敗永久 loading）；(2) achievements 分母 `!hidden` 子集→`ACHIEVEMENTS.length`（grid 渲染全 20 含 hidden placeholder，分子含已解鎖 hidden→避免分子>分母；preview 實測「2/20」與 20 卡一致）；(3) package.json 加 `engines.node=24.x` + CI node 20→24（消除與 Vercel 24.x 漂移）。preview 實測 cases 列表/詳情 happy path 正常、console 無錯。
@@ -33,7 +33,10 @@
 - **E2 ✅ cases 載入降級 + 成就分母 + engines**：三項全做完並 preview 實測。
 - **E3 ✅ 客戶端 PII + 使用者列舉**：real 模式 partialize 回 `{}`（PII 不落地，+1 測試）；register 列舉抗性（新舊 Email 同訊息）。login「Email not confirmed」提示**刻意保留**（中和會讓未驗證者收到誤導的「密碼錯誤」、UX 代價 > LOW 級風險；real 模式未上線、上線前使用者自審）。
 - **E4 ✅ 時區日界**：新建 `src/lib/utils/date.ts`（`getLocalDayKey`/`APP_TIME_ZONE=Asia/Taipei`，Intl 換算）；改 learning-store getTodayKey、gamification-store updateStreak、use-achievement-tracker today、api/gamification route 四處 UTC 日界→在地日界；tracker 的 streak 差值為純日期字串算術、同源即正確。+date.test.ts 邊界測試（打台灣午夜 UTC 16:00 證明破口）+ 更新 gamification-store 測試改用 getLocalDayKey 算期望值避免凌晨 flaky。**其餘 toISOString() 是時間戳（瞬間、時區無關）未動。**
-- **E5 ⬜ CRUD 錯誤泛化** ← 下一個：`auth-store.ts:184` partialize 存整個 user(含 email PII)→只存 id；註冊/登入訊息可列舉 email→中性化。
+- **E5 ✅ CRUD 錯誤泛化**：12 個 catch（8 路由）改 `reportError(error,{scope})` + 對外 `Internal server error`；三個 malformed-JSON 500 測試仍過（只斷言 status）。
+- **E6 ⬜ generate 上限 + error-reporter PII 遮罩** ← 下一個
+  - validators 陣列加 `.max()`：node_ids/all_nodes/key_points/related_node_ids/existing_edges（`validators.ts:173/181/189/197/182`）；generate 5 路由套 `enforceJsonBodyLimit`（現無）。
+  - `error-reporter.ts buildEvent`：`err.message`(:137)/`err.stack` frames(:124) 原樣送 Sentry、tags 值(:120) 僅 String()——加 email/token/Bearer 等 PII pattern 遮罩層（呼叫端目前皆乾淨、屬 defense-in-depth）。：`auth-store.ts:184` partialize 存整個 user(含 email PII)→只存 id；註冊/登入訊息可列舉 email→中性化。
 - **E4 ⬜ 時區日界**：`learning-store.ts:7` getTodayKey 用 UTC→台灣 08:00 才換日；抽 `getLocalDayKey(Asia/Taipei)` 統一 learning-store/gamification-store/`use-achievement-tracker.ts:47`＋vi.useFakeTimers 邊界測試。
 - **E5 ⬜ CRUD 錯誤泛化**：nodes/cases/paths/progress/review/gamification 8 條 catch 直接回 `error.message`→原始入 log、對外泛化（接 Supabase 前的防洩，比照 generate/*）。
 - **E6 ⬜ generate 上限 + error-reporter PII 遮罩**：validators 陣列加 `.max()`＋套 `enforceJsonBodyLimit`；`error-reporter.ts buildEvent` 加 email/token 遮罩層。
@@ -45,7 +48,8 @@
 - eng-iter 1（2026-07-09）：**E1 ✅** — 依賴弱點 9→4（殘餘 dev-only）。commit `fd22c85`。綠燈 tsc 0 / 848 / build ✓。
 - eng-iter 2（2026-07-09）：**E2 ✅** — cases 載入降級 + 成就分母 + engines/CI Node 對齊。preview 實測 cases 列表/詳情/achievements 皆正常、console 無錯。commit `6be4fb4`。綠燈 tsc 0 / 848 / lint 0 / build ✓。
 - eng-iter 3（2026-07-09）：**E3 ✅** — 客戶端 PII + 使用者列舉。`auth-store.ts` partialize real 模式回 `{}`（email PII 不落地 localStorage；mock 維持原樣、測試不受影響）+ 新增 real-mode PII 測試（849 tests）；register 已註冊/pending-confirm 回相同列舉抗性訊息。login 未驗證提示刻意保留（見快照）。commit `f2db333`。綠燈 tsc 0 / 849 / build ✓。
-- eng-iter 4（2026-07-09）：**E4 ✅** — 時區日界。新建 `lib/utils/date.ts`（getLocalDayKey/Asia/Taipei）；learning-store/gamification-store/use-achievement-tracker/api-gamification 四處 UTC 日界→在地日界；+date.test.ts（6 邊界測試）+ 更新 gamification-store 測試期望值。855 tests。綠燈 tsc 0 / 855 / build（收尾中）。
+- eng-iter 4（2026-07-09）：**E4 ✅** — 時區日界。新建 `lib/utils/date.ts`（getLocalDayKey/Asia/Taipei）；learning-store/gamification-store/use-achievement-tracker/api-gamification 四處 UTC 日界→在地日界；+date.test.ts（6 邊界測試）+ 更新 gamification-store 測試期望值。855 tests。commit `9ae1033`。綠燈 tsc 0 / 855 / build ✓。
+- eng-iter 5（2026-07-09）：**E5 ✅** — CRUD 錯誤泛化。nodes/nodes[nodeId]/cases/cases[caseId]/paths/progress/review/gamification 共 12 catch 由回 `error.message`→`reportError(error,{scope})`+`Internal server error`（接 Supabase 後防 PostgREST/SQL 洩漏）；三個 malformed-JSON 500 測試仍過。綠燈 tsc 0 / 855 / build（收尾中）。
 
 ---
 

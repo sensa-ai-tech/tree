@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit, enforceJsonBodyLimit } from '@/lib/api/middleware';
+import { reportError } from '@/lib/observability/error-reporter';
 import { getLocalDayKey } from '@/lib/utils/date';
 import type {
   UserExperience,
@@ -51,8 +52,8 @@ async function handleGet(_request: NextRequest) {
 
     return NextResponse.json({ data: response });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/gamification' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
@@ -120,8 +121,8 @@ async function handlePost(request: NextRequest) {
       },
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    reportError(error, { scope: 'route:/api/gamification' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit } from '@/lib/api/middleware';
+import { reportError } from '@/lib/observability/error-reporter';
 import type { KnowledgeNode, NodeType, NodeStatus } from '@/types/knowledge';
 
 interface NodeListResponse {
@@ -72,8 +73,9 @@ async function handleGet(request: NextRequest) {
 
     return NextResponse.json(response);
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    // 原始錯誤入 log（接 Supabase 後避免 PostgREST/SQL 片段外洩），對外回泛化訊息
+    reportError(error, { scope: 'route:/api/nodes' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
