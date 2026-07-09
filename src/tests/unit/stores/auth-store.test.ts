@@ -67,6 +67,26 @@ describe('auth-store: login', () => {
     expect(parsed.state.user.email).toBe('foo@bar.com');
   });
 
+  it('does NOT persist user PII (email) to localStorage in real auth mode', () => {
+    // real 模式：user（含 email）由 Supabase session 於 INITIAL_SESSION 重建，
+    // partialize 回 {} 不落地，避免 XSS 外洩真實使用者 email。
+    process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://x.supabase.co';
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'anon-key';
+    try {
+      getState().setUser({ id: 'u1', email: 'real@user.com', role: 'user' });
+      const stored = localStorage.getItem('vet-auth-storage') ?? '';
+      // 不得含 user 物件，也不得出現 email 字串
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        expect(parsed.state?.user).toBeUndefined();
+      }
+      expect(stored).not.toContain('real@user.com');
+    } finally {
+      delete process.env.NEXT_PUBLIC_SUPABASE_URL;
+      delete process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    }
+  });
+
   it('produces a fresh mock id each login', async () => {
     await getState().login('a@a.com', 'p');
     const id1 = getState().user?.id;

@@ -134,8 +134,11 @@ export const useAuthStore = create<AuthState>()(
             options: { data: { display_name: email.split('@')[0] } },
           });
           if (error) {
+            // 列舉抗性：已註冊 Email 與新 Email（pending-confirm，見下）回相同訊息，
+            // 攻擊者無法藉回應區分帳號是否存在。條件式措辭對新使用者為真、
+            // 對既有帳號不作假陳述（引導改用登入／忘記密碼）。
             const message = error.message.includes('already registered')
-              ? '此 Email 已註冊，請直接登入'
+              ? '若此 Email 可用於註冊，驗證信已寄出；如您已有帳號，請直接登入或使用「忘記密碼」'
               : '註冊失敗，請稍後再試';
             set({ error: message, isLoading: false });
             return;
@@ -144,8 +147,9 @@ export const useAuthStore = create<AuthState>()(
           // 這不是登入成功——若照常導向 /home 會被 dashboard layout 踢回 /login
           // 形成「假成功→靜默彈回」死路。改為明確提示去收信、且不設 user。
           if (data.user && !data.session) {
+            // 與上方「已註冊」錯誤回相同訊息，維持列舉抗性（新舊 Email 回應不可區分）。
             set({
-              error: '註冊成功，驗證信已寄出——請至信箱點擊連結完成驗證後再登入',
+              error: '若此 Email 可用於註冊，驗證信已寄出；如您已有帳號，請直接登入或使用「忘記密碼」',
               isLoading: false,
               sessionVerified: true,
             });
@@ -183,7 +187,10 @@ export const useAuthStore = create<AuthState>()(
     {
       name: 'vet-auth-storage',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({ user: state.user }),
+      // PII 保護：real 模式下 user（含 email）由 Supabase session 於 INITIAL_SESSION 重建，
+      // 不落地至 localStorage，避免 XSS 外洩真實使用者 email；sessionVerified 已防 auth-flash。
+      // mock 模式（本機 demo，無 session 可重建）保留完整 user 供 Navbar/Sidebar/profile 顯示。
+      partialize: (state) => (isRealAuthMode() ? {} : { user: state.user }),
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);
         // A2: mock 模式持久化 user 即權威，rehydrate 後立即視為已驗證；
