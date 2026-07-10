@@ -77,7 +77,7 @@
 ### D2. 已「標記 ⚠️ 待查證」（Crossref 查無、疑捏造 → 交 DVM 裁定，citation 未刪）
 | 節點 | 疑似捏造引用 | Crossref 證據 |
 |---|---|---|
-| DERM ×6 | Bizikova / Noli / Mueller / Marsella×2 / Perego | 標題/卷期經三法查證無對應（詳見各 ref `relevance` 註記） |
+| DERM **5✅已解決 / 1待決** | Bizikova / Noli / Mueller / Marsella×2（✅）、Perego（待決） | **iter21 已以 Crossref 驗證真實文替換 5 條**：Mueller→PF in 91 dogs JAAHA `10.5326/0420189`；Marsella-1→2011 skin barrier `10.1111/j.1365-3164.2011.00967.x`；Marsella-2→2009 house dust mites `10.1111/j.1365-3164.2009.00809.x`；Bizikova→2014 drug-triggered PF `10.1111/vde.12117`（同作者）；Noli→**Yager 2014 EM/SJS/TEN 綜述** `10.1111/vde.12142`（作者由 Noli 改為真實 Yager）。**Perego「商業飼料治 demodicosis」主張無文獻支持→維持旗標，建議 DVM 移除**（真實 Perego 2019 為治療綜述 BMC Vet Res `10.1186/s12917-018-1767-7`，不涉飼料）|
 | ~~CARDIO~~ **✅已解決** | ~~Chetboul「貓心超參考值 systematic review & meta-analysis」JVIM 2012;26(4):773-788~~ | 48 篇 Chetboul 文獻皆無此篇 → **iter18 已替換為 Crossref 驗證真實文** Schober K 2017 貓 2D 心超參考值 `10.1292/jvms.17-0250`（＋補犬 Cornell 2004 `10.1111/j.1939-1676.2004.tb02551.x`）|
 | ~~ECC~~ **✅已解決** | ~~Holowaychuk「Transfusion medicine…」JVECC 2014;24(2):135-153~~ | 該作者當年 JVECC 僅 24(1)/24(5) → **iter19 已以 2 真實文替換**：Davidow B. 2013 CVSM 43(4):735-756 `10.1016/j.cvsm.2013.03.007`（標題來源、完整回顧）＋ 真實 Holowaychuk 2014 JAVMA 244(4):431-437 `10.2460/javma.244.4.431`（作者來源、pRBC 輸血風險因子）|
 

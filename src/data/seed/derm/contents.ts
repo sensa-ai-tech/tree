@@ -944,7 +944,7 @@ Isoxazolines 避開 amitraz 的 α2 副作用（心搏過緩、鎮靜、低血�
     { type: 'journal', citation: 'Petersen I, Chiummo R, Zschiesche E, et al. A European field assessment of the efficacy of fluralaner (Bravecto) chewable and spot-on formulations for treatment of dogs with generalized demodicosis. Parasit Vectors. 2020;13:304. doi:10.1186/s13071-020-04159-2.', relevance: '最大規模田野試驗（124 隻臨床犬）：單次 fluralaner 98% 無活蟎，幼年/成年型療效相當' },
     { type: 'journal', citation: 'Fourie JJ et al. Efficacy of orally administered fluralaner (Bravecto) or topically applied imidacloprid/moxidectin (Advocate) against generalized demodicosis in dogs. Parasit Vectors. 2015;8:187. doi:10.1186/s13071-015-0775-8.', relevance: 'Fluralaner 治療廣泛型蠕形蟎症的關鍵研究（開啟 isoxazoline 典範轉移）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '蠕形蟎症完整章節' },
-    { type: 'journal', citation: 'Perego R et al. Trial of the efficacy of a commercial diet in the treatment of canine generalized demodicosis associated with a deep pyoderma. Vet Res Commun. 2019;43:55-61.', relevance: '⚠️ 待 DVM 查證：Crossref 4 種查法皆查無此篇（同作者群同期刊同年有其他真實文）；無可靠替代候選，疑捏造/誤植，請 DVM 回查原始出處或移除' },
+    { type: 'journal', citation: 'Perego R et al. Trial of the efficacy of a commercial diet in the treatment of canine generalized demodicosis associated with a deep pyoderma. Vet Res Commun. 2019;43:55-61.', relevance: '⚠️ 待 DVM 查證/建議移除：Crossref 查無此「商業飼料治療犬全身性 demodicosis」文，且此主張本身無真實文獻支持（demodicosis 標準治療為 isoxazoline/巨環內酯類，非飼料）。真實 Perego 2019 文為治療綜述：Perego R et al. Critically appraised topic for the most effective and safe treatment for canine generalised demodicosis. BMC Vet Res. 2019;15(1):17. doi:10.1186/s12917-018-1767-7（不涉飼料）。建議 DVM 刪除此飼料主張或改引真實治療綜述' },
   ],
   is_current: true,
   created_at: now,
@@ -2349,7 +2349,7 @@ const contentSkinAnatomy: NodeContent = {
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 1: Structure and Function of the Skin.", relevance: '犬貓皮膚解剖與生理完整章節' },
     { type: 'textbook', citation: 'Ackerman AB et al. Histologic Diagnosis of Inflammatory Skin Diseases, 3rd ed. Ardor Scribendi, 2005.', relevance: '皮膚組織學標準參考' },
-    { type: 'journal', citation: 'Marsella R et al. Current understanding of the role of the skin barrier in atopic dermatitis. Ann Allergy Asthma Immunol. 2013;110:S5-S8.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此確切標題（該刊 2013 vol110 無 S5-S8、無 Marsella 此文）；疑對應真實文 Marsella「Current evidence of skin barrier dysfunction in human and canine atopic dermatitis」Vet Dermatol 2011;22(3):239-248 `10.1111/j.1365-3164.2011.00967.x`（期刊/年/卷頁/標題皆不同）；DVM 覆核' },
+    { type: 'journal', citation: 'Marsella R et al. Current evidence of skin barrier dysfunction in human and canine atopic dermatitis. Vet Dermatol. 2011;22(3):239-248. doi:10.1111/j.1365-3164.2011.00967.x', relevance: '犬與人異位性皮膚炎之皮膚屏障功能障礙實證。Crossref 驗證真實，已取代原疑捏造之引用' },
     { type: 'guideline', citation: 'Hensel P, Santoro D, Favrot C, et al. Canine atopic dermatitis: detailed guidelines for diagnosis and allergen identification. BMC Vet Res. 2015;11:196.', relevance: 'ICADA 指引中皮膚結構與屏障功能的臨床意義' },
   ],
   is_current: true,
@@ -2920,7 +2920,7 @@ const contentKeratinization: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 11: Keratinization Defects.", relevance: '角化異常完整章節' },
-    { type: 'journal', citation: 'Marsella R et al. Current understanding of the role of the skin barrier in atopic dermatitis. Ann Allergy Asthma Immunol. 2013;110:S5-S8.', relevance: '⚠️ 待 DVM 查證：同前一條 Marsella，Crossref 查無此確切標題；疑對應 Marsella 2011 Vet Dermatol 22(3):239-248 `10.1111/j.1365-3164.2011.00967.x`；DVM 覆核（此為重複引用）' },
+    { type: 'journal', citation: 'Marsella R et al. Unravelling the skin barrier: a new paradigm for atopic dermatitis and house dust mites. Vet Dermatol. 2009;20(5-6):533-540. doi:10.1111/j.1365-3164.2009.00809.x', relevance: '皮膚屏障與塵蟎在異位性皮膚炎的新典範。Crossref 驗證真實，已取代原疑捏造之重複引用（與他節點之 Marsella 2011 為不同真實文，避免重複）' },
     { type: 'journal', citation: 'Credille KM et al. The effects of thyroid hormones on the skin of Beagle dogs. J Vet Intern Med. 2001;15(6):539-546.', relevance: '甲狀腺激素對皮膚角化的影響' },
     { type: 'guideline', citation: 'Noli C, Colombo S, Cornegliani L, et al. Quality of life of dogs with skin diseases and their owners. Part 2: Administration of a questionnaire in various skin diseases and correlation to efficacy of therapy. Vet Dermatol. 2011;22(4):344-351.', relevance: 'WAVD 生活品質評估指引：角化異常對生活品質的影響' },
   ],
@@ -3051,7 +3051,7 @@ const contentAutoimmuneMechanism: NodeContent = {
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 9: Autoimmune and Immune-Mediated Dermatoses.", relevance: '自體免疫皮膚病完整章節' },
     { type: 'journal', citation: 'Olivry T. A review of autoimmune skin diseases in domestic animals: I - Superficial pemphigus. Vet Dermatol. 2006;17(5):291-305.', relevance: '天疱瘡免疫機轉詳細回顧' },
-    { type: 'journal', citation: 'Bizikova P et al. Review: Clinical and histological manifestations of canine pemphigus foliaceus. Vet Dermatol. 2014;25(4):299-e75.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此篇；同標題模板真實文主題為 atopic dermatitis（Bizikova 2015 Vet Dermatol 26(2):79-e24 `10.1111/vde.12196`），疑主題被改為 pemphigus foliaceus；DVM 確認前不宜視為已驗證' },
+    { type: 'journal', citation: 'Bizikova P, Linder KE, Olivry T. Fipronil-amitraz-S-methoprene-triggered pemphigus foliaceus in 21 dogs: clinical, histological and immunological characteristics. Vet Dermatol. 2014;25(2):103-e30. doi:10.1111/vde.12117', relevance: '犬（藥物誘發型）落葉型天疱瘡之臨床、組織學與免疫學特徵（21 例）。Crossref 驗證真實（同作者 Bizikova），已取代原疑捏造之引用；如需通論式 PF 綜述可另補 Jordan 2025 CVSM 更新版' },
     { type: 'guideline', citation: 'Mueller RS, Nuttall T, Prost C, et al. Treatment of the canine atopic dermatitis，2023 updated guidelines from ICADA. Vet Dermatol. 2023;34(4):297-316.', relevance: 'ICADA 指引中免疫調節治療的機轉基礎' },
   ],
   is_current: true,
@@ -4131,7 +4131,7 @@ Azathioprine 骨髓抑制：犬發生率 5-15%，通常在開始治療後 2-8 �
   ],
   drug_api_links: ['Prednisolone', 'Cyclosporine', 'Azathioprine', 'Mycophenolate', 'Chlorambucil'],
   references: [
-    { type: 'journal', citation: 'Mueller RS et al. Treatment of pemphigus foliaceus and pemphigus vulgaris in dogs. Vet Dermatol. 2006;17:279-290.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此篇；犬 PF 真實文獻可用同檔既有的 Mueller「Pemphigus foliaceus in 91 dogs」JAAHA 2006 或 Rosenkrantz「Pemphigus: current therapy」；疑捏造/誤植，DVM 確認前不宜視為已驗證' },
+    { type: 'journal', citation: 'Mueller RS, Krebs I, Power HT, Fieseler KV. Pemphigus foliaceus in 91 dogs. J Am Anim Hosp Assoc. 2006;42(3):189-196. doi:10.5326/0420189', relevance: '犬 PF 91 例：病灶分佈、治療反應與預後。Crossref 驗證真實，已取代原疑捏造之「PF/PV 治療」引用（原指涉之 PV 治療請 DVM 另補真實來源）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '免疫調節藥物完整藥理學' },
     { type: 'journal', citation: 'Viviano KR. Update on immunosuppressive therapies for dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):1149-1170.', relevance: '犬貓免疫抑制治療更新' },
     { type: 'journal', citation: 'Rosenkrantz W. Pemphigus: current therapy. Vet Dermatol. 2004;15:90-98. doi:10.1111/j.1365-3164.2004.00360.x', relevance: '天疱瘡治療實務' },
@@ -4831,7 +4831,7 @@ Type B 反應走幾條免疫路徑：
   drug_api_links: ['Prednisolone', 'Cyclosporine', 'Diphenhydramine'],
   references: [
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013. Chapter 9: Drug Eruptions.", relevance: '藥物不良反應分類、臨床表現與診斷的經典參考' },
-    { type: 'journal', citation: 'Noli C et al. Erythema multiforme, Stevens-Johnson syndrome and toxic epidermal necrolysis in the dog: A retrospective study of 13 cases (2001-2015). Vet Dermatol. 2017;28(5):e93.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此篇（author=Noli 命中 0）；獸醫此主題權威真實文為 Yager 2014 綜述 Vet Dermatol 25(5):406-e64 `10.1111/vde.12142`（非 13 例回顧）；疑捏造，DVM 確認前不宜視為已驗證' },
+    { type: 'journal', citation: 'Yager JA. Erythema multiforme, Stevens-Johnson syndrome and toxic epidermal necrolysis: a comparative review. Vet Dermatol. 2014;25(5):406-e64. doi:10.1111/vde.12142', relevance: '犬貓 EM/SJS/TEN 比較性綜述（該主題最權威真實文）。Crossref 驗證真實，已取代原疑捏造之 Noli「13 例回顧」引用（作者由 Noli 更正為真實作者 Yager；已確認 body 未依賴該 13 例數據、無失據）' },
     { type: 'journal', citation: 'Trepanier LA. Idiosyncratic drug toxicity affecting the liver, skin, and bone marrow in dogs and cats. Vet Clin North Am Small Anim Pract. 2013;43(5):1055-1066.', relevance: 'Sulfonamide 與 phenobarbital 特異質反應機轉' },
     { type: 'guideline', citation: 'Favrot C et al. ESVD/ECVD Task Force on Drug Eruptions: Adverse cutaneous drug reactions in dogs and cats，An update. Vet Dermatol. 2020;31(S1):27.', relevance: '歐洲獸醫皮膚科學會藥物反應診斷更新共識' },
   ],
