@@ -3451,8 +3451,9 @@ NSAIDs 急診禁忌：脫水或休克（腎灌流不足）、腎病、GI 出血�
   drug_api_links: ['Methadone', 'Hydromorphone', 'Fentanyl', 'Buprenorphine', 'Butorphanol', 'Meloxicam', 'Carprofen', 'Ketamine', 'Lidocaine', 'Bupivacaine'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Analgesia and Sedation.', relevance: 'ECC 核心教材止痛章節' },
-    { type: 'guideline', citation: 'Epstein ME, Rodan I, Griffenhagen G, et al. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. JAAHA. 2015;51(2):67-84.', relevance: 'AAHA/AAFP 疼痛管理指引' },
-    { type: 'journal', citation: 'Evangelista MC, Watanabe R, Leung VSY, et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. Sci Rep. 2019;9:19128.', relevance: 'Feline Grimace Scale 開發與驗證' },
+    { type: 'guideline', citation: 'Gruen ME, et al. 2022 AAHA Pain Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2022;58(2):55-76. doi:10.5326/jaaha-ms-7292', relevance: 'AAHA 疼痛管理指引現行版（2022，取代 2015 為主要依據；Crossref 驗證）' },
+    { type: 'guideline', citation: 'Epstein ME, Rodan I, Griffenhagen G, et al. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2015;51(2):67-84.', relevance: 'AAHA/AAFP 疼痛管理指引（2015；已由 2022 版更新）' },
+    { type: 'journal', citation: 'Evangelista MC, Watanabe R, Leung VSY, et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. Sci Rep. 2019;9:19128. doi:10.1038/s41598-019-55693-8', relevance: 'Feline Grimace Scale 開發與驗證（Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
