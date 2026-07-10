@@ -7185,7 +7185,7 @@ V/Q 匹配：
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Cunningham JG, Klein BG. Textbook of Veterinary Physiology, 6th ed. Elsevier, 2020. Section IV: Respiratory Physiology.', relevance: '動物呼吸生理學基礎教材' },
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Section on Respiratory System.', relevance: '呼吸系統生理與疾病整合教材' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Section on Respiratory System.', relevance: '呼吸系統生理與疾病整合教材' },
     { type: 'journal', citation: 'Rozanski E. "Canine chronic bronchitis." Vet Clin North Am Small Anim Pract. 2020;50(2):393-404.', relevance: '犬慢性支氣管疾病與呼吸生理' },
     { type: 'guideline', citation: 'Sumner C, Rozanski E. "Management of respiratory emergencies in small animals." Vet Clin North Am Small Anim Pract. 2013;43(4):799-815.', relevance: '呼吸急診中的生理學應用' },
   ],
@@ -7295,7 +7295,7 @@ const contentAirwayInflammation: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 46: Diseases of the Lower Respiratory Tract.', relevance: '下呼吸道疾病病理生理教材' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 46: Diseases of the Lower Respiratory Tract.', relevance: '下呼吸道疾病病理生理教材' },
     { type: 'journal', citation: 'Reinero CR. "Advances in the understanding of pathogenesis, and diagnostics and therapeutics for feline allergic asthma." Vet J. 2011;190(1):28-33.', relevance: '貓哮喘免疫病理機轉' },
     { type: 'journal', citation: 'Trzil JE. "Feline Asthma: Diagnostic and Treatment Update." Vet Clin North Am Small Anim Pract. 2020;50(2):375-391.', relevance: '貓哮喘發炎與重塑最新知識' },
     { type: 'guideline', citation: 'Hawkins EC. "Chronic bronchitis in dogs." In: Bonagura JD, Twedt DC, eds. Kirk\'s Current Veterinary Therapy XV. Elsevier, 2014:672-678.', relevance: '犬慢性支氣管炎臨床指引' },
@@ -7500,7 +7500,7 @@ const contentEPI: NodeContent = {
     { type: 'journal', citation: 'Westermarck E, Wiberg M. Exocrine pancreatic insufficiency in dogs. Vet Clin North Am Small Anim Pract. 2003;33(5):1165-1179. doi:10.1016/S0195-5616(03)00057-3.', relevance: 'EPI 病因/診斷/治療綜合回顧' },
     { type: 'journal', citation: 'Soetart N, et al. Serum cobalamin and folate as prognostic factors in canine exocrine pancreatic insufficiency: An observational cohort study of 299 dogs. Vet J. 2019;243:15-20. doi:10.1016/j.tvjl.2018.11.003.', relevance: 'cobalamin/folate 為 EPI 獨立預後因子（299 犬世代，預後溯源）' },
     { type: 'journal', citation: 'Szkopek D, et al. A review: Pancreatic enzymes in the treatment of chronic pancreatic insufficiency in companion animals. J Vet Intern Med. 2024;38(4):2026-2033. doi:10.1111/jvim.17096.', relevance: '近年（≤5年）PERT 胰酶治療回顧（含不需預孵育）' },
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine. 8th ed. Elsevier; 2017.', relevance: '內科教科書，胰外分泌疾病章節（教材）' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine. 8th ed. Elsevier; 2017.', relevance: '內科教科書，胰外分泌疾病章節（教材）' },
   ],
   is_current: true,
   created_at: now,
@@ -7652,7 +7652,7 @@ const contentGBMucocele: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Ursodeoxycholic acid', 'SAMe'],
   references: [
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 63: Diseases of the Gallbladder and Extrahepatic Biliary System.', relevance: '膽囊疾病病理與臨床管理教材' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 63: Diseases of the Gallbladder and Extrahepatic Biliary System.', relevance: '膽囊疾病病理與臨床管理教材' },
     { type: 'journal', citation: 'Aguirre AL, Center SA, Randolph JF, et al. "Gallbladder disease in Shetland Sheepdogs: 38 cases (1995-2005)." J Am Vet Med Assoc. 2007;231(1):79-88.', relevance: 'Shetland Sheepdog 膽囊黏液囊腫品種傾向' },
     { type: 'journal', citation: 'Parkanzky M, Grimes J, Schmiedt C, et al. "Long-term survival of dogs treated for gallbladder mucocele by cholecystectomy, medical management, or both." J Vet Intern Med. 2019;33(5):2057-2066. doi:10.1111/jvim.15611', relevance: '膽囊切除 vs 內科管理預後比較' },
     { type: 'guideline', citation: 'Jaffey JA, Graham A, VanEerde E, et al. "Gallbladder mucocele: variables associated with outcome and the utility of ultrasonography to identify gallbladder rupture in 219 dogs." J Vet Intern Med. 2018;32(1):195-200.', relevance: '超音波診斷與預後因子分析' },
@@ -7844,7 +7844,7 @@ ACVIM 2019 犬慢性肝炎共識核心：**肝切片＋組織學＋銅定量決�
     { type: 'guideline', citation: 'Webster CRL, Center SA, Cullen JM, Penninck DG, et al. "ACVIM consensus statement on the diagnosis and treatment of chronic hepatitis in dogs." J Vet Intern Med. 2019;33(3):1173-1200. doi:10.1111/jvim.15467', relevance: 'ACVIM 犬慢性肝炎診斷與治療共識聲明' },
     { type: 'journal', citation: 'Hoffmann G, van den Ingh TSGAM, Bode P, Rothuizen J. "Copper-Associated Chronic Hepatitis in Labrador Retrievers." J Vet Intern Med. 2006;20(4):856-861. doi:10.1111/j.1939-1676.2006.tb01798.x', relevance: 'Labrador 銅蓄積性肝炎品種研究' },
     { type: 'journal', citation: 'Poldervaart JH, Favier RP, Penning LC, van den Ingh TSGAM, Rothuizen J. "Primary Hepatitis in Dogs: A Retrospective Review." J Vet Intern Med. 2009;23(1):72-80. doi:10.1111/j.1939-1676.2008.0215.x', relevance: '犬原發性肝炎回顧性研究' },
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 62: Chronic Hepatitis in Dogs.', relevance: '犬慢性肝炎病理與臨床管理教材' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 62: Chronic Hepatitis in Dogs.', relevance: '犬慢性肝炎病理與臨床管理教材' },
   ],
   is_current: true,
   created_at: now,
@@ -8062,7 +8062,7 @@ const contentMegaesophagus: NodeContent = {
   ],
   drug_api_links: ['Sildenafil', 'Metoclopramide', 'Cisapride', 'Sucralfate', 'Pyridostigmine', 'Levothyroxine'],
   references: [
-    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Cote E. Textbook of Veterinary Internal Medicine, 8th ed. St. Louis: Elsevier; 2017. Chapter 55: Diseases of the Esophagus.', relevance: '食道疾病病理與臨床管理教材' },
+    { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. St. Louis: Elsevier; 2017. Chapter 55: Diseases of the Esophagus.', relevance: '食道疾病病理與臨床管理教材' },
     { type: 'journal', citation: 'Gaynor AR, Shofer FS, Washabau RJ. Risk factors for acquired megaesophagus in dogs. J Am Vet Med Assoc. 1997;211(11):1406-1412. doi:10.2460/javma.1997.211.11.1406.', relevance: '後天性巨食道症危險因子 case-control（甲低與巨食道無關聯之來源）' },
     { type: 'journal', citation: 'Shelton GD, Willard MD, Cardinet GH 3rd, Lindstrom J. Acquired myasthenia gravis: selective involvement of esophageal, pharyngeal, and facial muscles. J Vet Intern Med. 1990;4(6):281-284. doi:10.1111/j.1939-1676.1990.tb03124.x.', relevance: 'MG 約佔特發性巨食道 26%（40/152）之原始出處' },
     { type: 'journal', citation: 'Shelton GD. Myasthenia gravis and disorders of neuromuscular transmission. Vet Clin North Am Small Anim Pract. 2002;32(1):189-206. doi:10.1016/s0195-5616(03)00085-8.', relevance: '重症肌無力與巨食道症的關聯回顧' },
