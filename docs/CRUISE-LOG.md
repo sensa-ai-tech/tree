@@ -49,7 +49,8 @@
    - ⚠️ **給 DVM：SURG-L0-001 的 Burn 2020 引用疑似捏造/誤植**（Crossref 查無「Burn CC, Vet Surg 2020, 獸醫手術結果系統性回顧」；Burn 作者僅見人醫）。已在該 ref relevance 標記，請查證後決定保留或移除。
 2. 續：各專科 L0 → L1 基礎科學 → 再回填 L2-L5 疾病（L2-L5 涉具體劑量/療程，風險較高，建議 DVM 更積極參與）。
 
-### 🔴 DVM 引用查證佇列（自動閘門漏抓、需人工判定；本 session 累積）
+### 🔴 DVM 引用查證佇列 → **完整報告見 `docs/CITATION-INTEGRITY-AUDIT-2026-07-09.md`**
+> 平行 agent（IM/ONCO/SURG）+ 主 thread（CPATH）稽核 189 條無-DOI journal 引用。**已找到 ≥6 條疑捏造 + ≥8 處誤植**（全通過自動閘門）。下方為早期摘要，最新完整清單與覆核狀態見上述報告。
 > 這些引用**通過了自動 `verify:citations`（loose biblio-resolve），但我逐條 Crossref 查真時發現問題**。已在各節點 relevance 加 ⚠️ 標記、未刪除，待 DVM 定奪（保留/移除/替換）。
 - **疑似捏造/誤植（3，待查證）**：
   1. `SURG-L0-001` — Burn CC「systematic review of veterinary surgical outcomes」Vet Surg 2020;49(Suppl1):O8-O17（Crossref 查無此獸醫外科文獻）。
@@ -61,6 +62,7 @@
 
 ### 內容 iter 進度（append-only）
 - content iter 1（2026-07-09）：接任內容軌道、建立 v5 錨點 + 89 v1 佇列 + L0/L1 優先策略。全量 verify:citations 1271 引用 0 捏造（唯 2 已知真實無-DOI 老引用）。內容基線 checkpoint `99b0ecd`。
+- content iter 12（2026-07-09）：**🔴 平行 agent 引用稽核（IM/ONCO/SURG）+ 主 thread 覆核** — 派 3 個 read-only agent 逐條 Crossref 查真三科無-DOI journal 引用（IM 35/ONCO 26/SURG 28），主 thread 依鐵則**自行覆核每條 SUSPECT**。**確認並處置**：ONCO Simpson 更正為真實 Simpson 2004 JAVMA `10.2460/javma.2004.224.236`、ONCO Boston/Worth 標記、IM Bennett/Abraham 標記（皆 Crossref 覆核確認）。**建立完整報告 `docs/CITATION-INTEGRITY-AUDIT-2026-07-09.md`**（A 已處置 / B SURG 待覆核 / C inconclusive / D 未稽核）。SURG 批（de Battisti/Bardet/Turk/Mayhew 疑捏造 + 6 誤植）待後續逐條覆核套用。**累計：≥6 疑捏造 + ≥8 誤植。** verify:citations 待確認 / tsc 0。**待 DVM、未 push。**
 - content iter 11（2026-07-09）：**引用稽核 CPATH 收官** — 完成 CPATH 全 7 條無-DOI journal 引用查真：Wiinberg ✅修誤植（標題+22(4):826-832→真實 22(2):357-365 `10.1111/j.1939-1676.2008.0058.x`）；Braun/Knoll ⚠️inconclusive（Crossref 無法確認、無捏造正面證據→不加節點旗標、僅記 log 待 DVM）；Tvedten＝書章。CPATH 稽核統計：7 條→ 3 補DOI/修誤植確認真實、1 捏造(Nabity)、2 inconclusive、1 書章。verify:citations（cpath）0 suspect / tsc 0。**待 DVM、未 push。**
 - content iter 10（2026-07-09）：**🔍 啟動系統性引用真偽稽核（CPATH 首批）** — 全 seed 189 條無-DOI journal 引用逐科查真。CPATH：Weese ACVIM 抗生素共識 ✅補 DOI `10.1111/jvim.12562`、Moriello 皮癬菌共識 ✅補 DOI `10.1111/vde.12440`、**Nabity「2023 IRIS GFR SDMA 共識」🚩 疑捏造/誤植**（Crossref 查無；疑 Nabity 2015 SDMA validation 之誤植）→ 標記待 DVM。建立「DVM 引用查證佇列」（見上）。verify:citations（cpath）0 suspect / tsc 0。**待 DVM、未 push。**
 - content iter 9（2026-07-09）：**IM-L1-001（腎臟生理學）改善（暫留 v1）+ 第 2 條疑似捏造引用** — 轉入 L1 基礎科學首站。(1) 加驗證引用 **Pelander L et al. SDMA/cystatin C/creatinine 診斷 GFR 下降（犬）** JVIM 2019;33(2):630-639 `10.1111/jvim.15445`；(2) **揪出 Hall 2022「Biomarkers of kidney function and damage」Vet Clin NA 52(3):547-567 疑似捏造/誤植**——Crossref 查無（同 issue 真實文為 Ross AKI 659-672、Viviano 797-817），加 ⚠️ 待 DVM、暫留 v1。**🔴 浮現重要模式：多個既有 v1 節點藏自動閘門（loose biblio-resolve）抓不到的疑似捏造 journal 引用——已發現 2 條（SURG Burn 2020、IM-L1-001 Hall 2022）+ 2 處誤植（ONCO Withrow、DERM Olivry）。建議排一次「系統性引用真偽稽核」pass。** verify:citations（im）待確認。**待 DVM、未 push。**

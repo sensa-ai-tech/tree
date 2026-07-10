@@ -5051,7 +5051,7 @@ RRT 適應症：無尿 > 6-12 hr 不反應利尿劑、K > 8 mEq/L、嚴重代謝
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Grading of Acute Kidney Injury. Available at: http://www.iris-kidney.com/', relevance: 'AKI 分級標準' },
     { type: 'journal', citation: 'Langston C. "Acute uremia." In: Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. pp 1969-1985.', relevance: 'AKI 診斷與治療教材' },
     { type: 'guideline', citation: 'Sykes JE, et al. 2010 ACVIM Small Animal Consensus Statement on Leptospirosis: diagnosis, epidemiology, treatment, and prevention. J Vet Intern Med. 2011;25(1):1-13. doi:10.1111/j.1939-1676.2010.0654.x.', relevance: '鉤端螺旋體（犬 AKI 重要可逆/人畜共通病因）ACVIM 共識' },
-    { type: 'journal', citation: 'Bennett SL, Abraham LA. "Treatment of acute kidney injury." Vet Clin North Am Small Anim Pract. 2022;52(3):601-612.', relevance: 'AKI 治療最新回顧' },
+    { type: 'journal', citation: 'Bennett SL, Abraham LA. "Treatment of acute kidney injury." Vet Clin North Am Small Anim Pract. 2022;52(3):601-612.', relevance: '⚠️ 待 DVM 查證：CVSM 52(3) 該期查無此篇（頁 601-612 與真實排版衝突：Olin 581-608、Michael 609-629；該期 AKI 主文為 Ross 659-672 `10.1016/j.cvsm.2022.01.005`）；疑捏造/誤植，DVM 確認前不宜視為已驗證' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 311: Acute Kidney Injury.', relevance: 'AKI 診斷與治療標準教科書' },
   ],
   is_current: true,

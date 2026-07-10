@@ -3054,7 +3054,7 @@ const contentSurgicalOncology: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 8: Surgical Oncology.', relevance: '腫瘤外科原則完整章節' },
     { type: 'journal', citation: 'Ehrhart NP, Culp WTN. Principles of surgical oncology. In: Veterinary Surgical Oncology. Wiley-Blackwell, 2022.', relevance: '獸醫腫瘤外科專著' },
-    { type: 'journal', citation: 'Simpson S et al. Comparative review of surgical margins in canine mast cell tumor excision. Vet Surg. 2019;48(7):1108-1116.', relevance: 'MCT 手術切緣比較研究' },
+    { type: 'journal', citation: 'Simpson AM, et al. "Evaluation of surgical margins required for complete excision of cutaneous mast cell tumors in dogs." J Am Vet Med Assoc. 2004;224(2):236-240. doi:10.2460/javma.2004.224.236', relevance: 'MCT 手術切緣（引用真偽稽核：原「Simpson S, Vet Surg 2019;48(7):1108-1116」Crossref 查無、疑捏造 → 更正為真實奠基文獻 Simpson 2004 JAVMA + DOI）' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Surgical Oncology: Guidelines for First Surgery Principles. Vet Comp Oncol. 2015.', relevance: '腫瘤外科首次手術指引' },
   ],
   is_current: true,
@@ -3362,7 +3362,7 @@ const contentRadiationTherapy: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 10: Radiation Therapy.', relevance: '放射治療完整章節' },
     { type: 'journal', citation: 'Larue SM, Gordon IK. Radiation therapy. In: Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed.', relevance: '獸醫放射治療基礎' },
-    { type: 'journal', citation: 'Boston SE et al. Outcomes of eight dogs with appendicular osteosarcoma treated with palliative radiation therapy: 2-3 fraction protocols. Vet Radiol Ultrasound. 2007;48(2):141-145.', relevance: 'OSA 姑息性放療止痛研究' },
+    { type: 'journal', citation: 'Boston SE et al. Outcomes of eight dogs with appendicular osteosarcoma treated with palliative radiation therapy: 2-3 fraction protocols. Vet Radiol Ultrasound. 2007;48(2):141-145.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此篇（VRU 2007 已完整索引 DOI，Boston 其他真實文可查、獨缺此篇）；疑捏造/嚴重誤引，DVM 確認前不宜視為已驗證' },
     { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引，放射治療角色與轉介建議' },
   ],
   is_current: true,
@@ -4619,7 +4619,7 @@ const contentThyroidCarcinoma: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 23: Tumors of the Endocrine System，Thyroid Section.', relevance: '甲狀腺癌完整章節' },
     { type: 'journal', citation: 'Theon AP et al. Prognostic factors and patterns of treatment failure in dogs with unresectable differentiated thyroid carcinomas treated with megavoltage irradiation. J Am Vet Med Assoc. 2000;216(11):1775-1779.', relevance: '犬甲狀腺癌放療預後因子' },
-    { type: 'journal', citation: 'Worth AJ et al. Thyroidectomy as a treatment for canine thyroid carcinoma: 12 cases. N Z Vet J. 2005;53(4):228-233.', relevance: '犬甲狀腺切除術臨床結果' },
+    { type: 'journal', citation: 'Worth AJ et al. Thyroidectomy as a treatment for canine thyroid carcinoma: 12 cases. N Z Vet J. 2005;53(4):228-233.', relevance: '⚠️ 待 DVM 查證：N Z Vet J 2005 查無此篇；Worth 2005 真實甲狀腺癌文為 Aust Vet J 2005;83(4):208-214（放射碘 131I，非甲狀腺切除，主題/期刊被混植）；疑捏造/誤引，DVM 確認前不宜視為已驗證' },
     { type: 'guideline', citation: 'Campos M et al. Thyroid tumours in dogs and cats. In: BSAVA Manual of Canine and Feline Oncology, 4th ed. BSAVA, 2024.', relevance: '犬貓甲狀腺腫瘤臨床指引' },
   ],
   is_current: true,
