@@ -3647,7 +3647,7 @@ Step 5：撰寫報告與建議
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell Publishing, 2008.', relevance: '整合判讀與疾病模式辨識的核心教材' },
     { type: 'textbook', citation: 'Thrall MA et al. Veterinary Hematology and Clinical Chemistry, 2nd ed. Wiley-Blackwell, 2012.', relevance: '血液學與生化整合判讀參考' },
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD." iris-kidney.com, 2023.', relevance: 'CKD 分期整合判讀指引' },
-    { type: 'journal', citation: 'Wiinberg B et al. "Tissue factor and thromboelastography in canine DIC." J Vet Intern Med 2008;22(4):826-832.', relevance: 'DIC 模式辨識與凝血整合判讀' },
+    { type: 'journal', citation: 'Wiinberg B et al. "Thromboelastographic Evaluation of Hemostatic Function in Dogs with Disseminated Intravascular Coagulation." J Vet Intern Med. 2008;22(2):357-365. doi:10.1111/j.1939-1676.2008.0058.x', relevance: 'DIC 模式辨識與凝血整合判讀（引用真偽稽核：原誤植標題/22(4):826-832 → 更正為真實文 22(2):357-365 + DOI，Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
