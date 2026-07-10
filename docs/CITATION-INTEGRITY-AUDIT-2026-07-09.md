@@ -113,7 +113,8 @@
 3. 建議 DVM **逐條裁定所有 ⚠️ 標記**（A2 六條 + D2 八條，共 ~14 條疑捏造）之保留/移除/替換；誤植（A1 + D1）已更正為真實文+DOI，可覆核確認。
 4. ~~長期建議：把 `verify-citations.ts` 增強…~~ **✅ iter23 已實作**：`verifyByBiblio` 現於「標題重疊過關」後，**再於前 8 筆 Crossref 結果中尋找「標題+作者雙符」者**；找不到任何作者相符者、且引用以個人作者起首、標題重疊 ≥0.75 → 判新 verdict **`SUSPECT_AUTHOR_MISMATCH`**。此即堵住 Holowaychuk 型盲點（捏造引用 biblio-resolve 到標題近似的異作者真文而被誤判 VERIFIED）。設計要點：joint 標題+作者比對避免誤殺真實 landmark 文（Boswood EPIC/Berendt IVETF/Holcomb PROPPR 等），機構署名（AAHA/ACVS guideline）與短姓氏亦豁免。
 
-### D5. 增強閘門（iter23）新揪出之問題（人工稽核曾漏）— 待下輪處理
-- **NEURO-L5-002 / L5-003**：`Moore SA et al. ACVIM Consensus…thoracolumbar IVDD. JVIM 2020;34(5):1684-1699` — Crossref 查無此 JVIM 2020 共識；真實 Moore 2020 為 **Front Vet Sci「Current Approaches to Management of Acute Thoracolumbar Disc Extrusion」**（非共識），真正 ACVIM IVDD 共識為 **Olby NJ 2022 JVIM 36(5):1570-1596 `10.1111/jvim.16480`**（NEURO-L0-001 已引）→ 誤植/張冠李戴，待 flag/更正。
-- **ONCO-L3-011**：`Sfiligoi G et al. …dogs with nasal tumors…IMRT. VRU 2007;48(4):370-375` — 真實 Sfiligoi 2007 為 **貓鼻淋巴瘤放化療 VRU 48(4):388-393 `10.1111/j.1740-8261.2007.00262.x`**（非犬鼻腫瘤 IMRT，species/主題/頁碼全誤）→ 待 flag、另尋真實犬鼻腫瘤 IMRT 文。
-- **殘餘假陽性（2，已知 D3 盲區）**：Shaw/Rush（Compendium）、Klein/Peterson（Can Vet J 2010）為真實但未被 Crossref 索引之文，增強閘門會持續報 AUTHOR_MISMATCH，屬已知可容忍雜訊（未加 allowlist 以免遮蔽未來真捏造）。
+### D5. 增強閘門（iter23）新揪出之問題（人工稽核曾漏）— ✅ iter24 已處置
+- **✅ NEURO-L5-002 / L5-003（＋另揪出 L5 acute-SCI 節點共 3 條 Moore 2020 幻影）**：`Moore SA et al. ACVIM Consensus…JVIM 2020;34(5)` 系列 — Crossref 查無此 JVIM 2020 共識（line 2269 早已註記「Moore 2020 幻影」但漏改此 3 節點）。**全數更正為真實 Olby NJ 2022 ACVIM IVDE 共識 JVIM 36(5):1570-1596 `10.1111/jvim.16480`**。
+- **✅ ONCO-L3-011**：`Sfiligoi…dogs nasal tumors IMRT VRU 2007;48(4):370-375` — 真實 Sfiligoi 2007 實為**貓鼻淋巴瘤** 48(4):388-393。**更正為真實 Fox-Alvarez S 2020「犬鼻癌 IMRT-based SRT」VRU 61(3):370-378 `10.1111/vru.12854`**（Crossref 驗證）。
+- **殘餘假陽性（2，已知 D3 盲區，維持）**：Shaw/Rush（Compendium）、Klein/Peterson（Can Vet J 2010）為真實但未被 Crossref 索引之文，增強閘門持續報 AUTHOR_MISMATCH，屬已知可容忍雜訊（未加 allowlist 以免遮蔽未來真捏造）。
+- **閘門穩定末態**：全 seed SUSPECT_AUTHOR_MISMATCH = **4**（Bentley、Boston＝已知捏造待 DVM；Shaw-Rush、Klein-Peterson＝已知未索引真文）＋ SUSPECT_NOT_FOUND = 1（Gwaltney-Brant pre-DOI）。皆已記錄、無未知殘留。

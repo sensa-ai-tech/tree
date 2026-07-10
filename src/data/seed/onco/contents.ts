@@ -4228,7 +4228,7 @@ const contentNasalTumor: NodeContent = {
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 22: Tumors of the Respiratory System，Nasal Tumors Section.', relevance: '鼻腔腫瘤完整章節' },
     { type: 'journal', citation: 'Adams WM et al. Radiotherapy of malignant nasal tumors in 67 dogs. J Am Vet Med Assoc. 1987;191(3):311-315.', relevance: '犬鼻腔腫瘤放療經典文獻，Adams 分期原始資料' },
     { type: 'journal', citation: 'Theon AP et al. Megavoltage irradiation of neoplasms of the nasal and paranasal cavities in 77 dogs. J Am Vet Med Assoc. 1993;202(9):1469-1475.', relevance: '犬鼻腔腫瘤放療預後因子分析' },
-    { type: 'guideline', citation: 'Sfiligoi G et al. Outcome of dogs with nasal tumors treated with intensity-modulated radiation therapy. Vet Radiol Ultrasound. 2007;48(4):370-375.', relevance: 'IMRT 用於犬鼻腔腫瘤的現代放療技術' },
+    { type: 'journal', citation: 'Fox-Alvarez S et al. Outcome of intensity-modulated radiation therapy-based stereotactic radiation therapy for treatment of canine nasal carcinomas. Vet Radiol Ultrasound. 2020;61(3):370-378. doi:10.1111/vru.12854', relevance: '犬鼻腔癌 IMRT-based SRT 現代放療結果研究（Crossref 驗證真實）。取代原誤植之 Sfiligoi 2007——該文實為貓鼻淋巴瘤放化療（VRU 48(4):388-393），非犬鼻腫瘤 IMRT' },
   ],
   is_current: true,
   created_at: now,
