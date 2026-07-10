@@ -27,7 +27,7 @@
 | SURG-L0-001 | Burn CC「systematic review of veterinary surgical outcomes」Vet Surg 2020;49(Suppl1):O8-O17 | 查無此獸醫外科文；Burn 作者僅見人醫 |
 | IM-L1-001 | Hall JA「Biomarkers of kidney function and damage」CVSM 2022;52(3):547-567 | 該期真實文為 Ross 659-672 等，無 Hall 547-567 |
 | IM | Bennett SL, Abraham LA「Treatment of acute kidney injury」CVSM 2022;52(3):601-612 | 頁碼與真實排版衝突（Olin 581-608/Michael 609-629）；該期 AKI 主文為 Ross 659-672 |
-| CPATH | Nabity「IRIS Canine GFR Working Group SDMA consensus」JVIM 2023 | 查無；真實者為 2013 IRIS Canine **GN** Study Group（主題不同）；疑 Nabity 2015 SDMA validation 之誤植 |
+| ~~CPATH~~ **✅已解決** | ~~Nabity「IRIS Canine GFR Working Group SDMA consensus」JVIM 2023~~ | 查無 → **iter20 已以真實 Nabity 2015 SDMA assay validation（JVIM 29(4):1036-1044 `10.1111/jvim.12835`）替換**（原 relevance 述「SDMA 方法學驗證」正指此真實文；同作者、主題吻合）|
 | ONCO | Boston SE「palliative radiation…2-3 fraction」VRU 2007;48(2):141-145 | VRU 2007 已完整索引，獨缺此篇 |
 | ONCO | Worth AJ「Thyroidectomy…12 cases」N Z Vet J 2005;53(4):228-233 | Worth 2005 真實文為 Aust Vet J 83(4):208-214（放射碘，主題/期刊被混植） |
 

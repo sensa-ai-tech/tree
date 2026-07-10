@@ -3207,7 +3207,7 @@ const contentMethodology: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell Publishing, 2008.', relevance: '獸醫實驗室方法學與儀器原理核心教材' },
     { type: 'textbook', citation: 'Weiser G. "Laboratory Technology for Veterinary Medicine." In: Thrall MA et al. Veterinary Hematology and Clinical Chemistry, 2nd ed. Wiley-Blackwell, 2012:3-33.', relevance: '獸醫血液學與生化分析儀器技術章節' },
     { type: 'guideline', citation: 'Flatland B et al. "ASVCP quality assurance guidelines: control of preanalytical and analytical factors for hematology for mammalian and non-mammalian species, general chemistry, and urinalysis." Vet Clin Pathol 2010;39(4):441-448.', relevance: 'ASVCP 分析品質管控指引' },
-    { type: 'journal', citation: 'Nabity MB et al. "IRIS Canine GFR Working Group consensus recommendations for use of SDMA as a nephropathy biomarker in dogs." J Vet Intern Med 2023.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此「2023 IRIS Canine GFR Working Group SDMA 共識」（真實者為 2013 IRIS Canine GN Study Group 腎絲球疾病共識，主題不同）；relevance 描述（SDMA 方法學驗證）疑指真實的 Nabity 2015 SDMA validation（JVIM 29(4):1036-1044），疑citation誤植/捏造，DVM 確認前不宜視為已驗證' },
+    { type: 'journal', citation: 'Nabity MB, Lees GE, Boggess MM, Yerramilli M, et al. Symmetric Dimethylarginine Assay Validation, Stability, and Evaluation as a Marker for the Early Detection of Chronic Kidney Disease in Dogs. J Vet Intern Med. 2015;29(4):1036-1044. doi:10.1111/jvim.12835', relevance: 'SDMA assay 分析驗證與穩定性（方法學驗證實證）。Crossref 驗證真實，已取代原疑捏造之「2023 IRIS Canine GFR SDMA 共識」引用' },
   ],
   is_current: true,
   created_at: now,
