@@ -8202,9 +8202,10 @@ CBC 是即時又便宜的關鍵：WBC < 2000 配上典型病史，臨床診斷�
   drug_api_links: ['Maropitant', 'Ondansetron', 'Ampicillin-sulbactam', 'Cefoxitin', 'Metronidazole'],
   references: [
     { type: 'guideline', citation: 'WSAVA Vaccination Guidelines for the Owners and Breeders of Dogs and Cats (2024).', relevance: '最新核心疫苗與母源抗體建議' },
-    { type: 'guideline', citation: 'ABCD (European Advisory Board on Cat Diseases) — Feline Panleukopenia Virus Infection (2022).', relevance: '貓 FPV 診斷與治療共識' },
+    { type: 'guideline', citation: 'Truyen U, et al. Feline panleukopenia: ABCD guidelines on prevention and management. J Feline Med Surg. 2009;11(7):538-546. doi:10.1016/j.jfms.2009.05.002', relevance: 'ABCD 歐洲貓病委員會 FPV 預防與管理指引（同儕審查版；Crossref 驗證）' },
     { type: 'textbook', citation: 'Greene CE. Infectious Diseases of the Dog and Cat, 4th ed. Elsevier, 2012.', relevance: '感染症教科書' },
-    { type: 'journal', citation: 'Litster A, Benjanirut C. Case series of feline panleukopenia virus in an animal shelter. J Feline Med Surg. 2014;16(4):346-353.', relevance: '收容所群聚案例' },
+    { type: 'journal', citation: 'Litster A, Benjanirut C. Case series of feline panleukopenia virus in an animal shelter. J Feline Med Surg. 2014;16(4):346-353. doi:10.1177/1098612X13497738', relevance: '收容所 FPV 群聚案例系列（Crossref 驗證）' },
+    { type: 'journal', citation: 'Stuetzer B, Hartmann K. Feline parvovirus infection and associated diseases. Vet J. 2014;201(2):150-155. doi:10.1016/j.tvjl.2014.05.027', relevance: 'FPV 感染與相關疾病之綜述（病理/臨床/預防；Crossref 驗證）' },
   ],
   is_current: true,
   created_at: now,
