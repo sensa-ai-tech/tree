@@ -2,7 +2,9 @@
 
 > **給 DVM：** 本報告列出 v1 seed 中**通過自動 `verify:citations`（loose biblio-resolve）、但逐條 Crossref 查真後發現有問題**的 journal 引用。自動閘門只驗「DOI 解得開 + 標題相符」，抓不到「來源錯配 / 卷期頁誤植 / 整條捏造」——這些需人工判定。
 >
-> **稽核方法**：抽出全 seed **189 條無-DOI journal 引用**（loose-resolve 類，最可能藏問題），逐條打 Crossref REST API 以「作者 + 期刊 + 年 + 標題」查證。已完成 **CPATH（主 thread）+ IM/ONCO/SURG（平行 agent 稽核 + 主 thread 覆核）**。
+> **稽核方法**：抽出全 seed **~189 條無-DOI journal 引用**（loose-resolve 類，最可能藏問題），逐條打 Crossref REST API 以「作者 + 期刊 + 年 + 標題」查證。**✅ 全 8 科（IM / ONCO / SURG / CPATH / DERM / NEURO / ECC / CARDIO）已稽核完畢**——CPATH/IM/ONCO/SURG 為第一批，DERM/NEURO/ECC/CARDIO 為第二批（平行 agent 稽核 + 主 thread 每條 Crossref 二次覆核）。
+>
+> **最終統計**：共揪出 **~18 條疑捏造（⚠️ 標記待裁）+ ~15 處誤植（已更正為真實文+DOI）**，全部是自動 `verify:citations` 閘門**放行**的問題引用。
 >
 > **重要原則**：所有標記 `⚠️` 的引用**均未刪除**，只在該 ref 的 `relevance` 加註記；請 DVM 逐條裁定「保留／移除／替換」。
 
@@ -31,9 +33,9 @@
 
 ---
 
-## B. 平行 agent 標記、待主 thread 逐條覆核後處置（SURG，尚未動 code）
+## B. SURG 批 — ✅ 已於後續迭代逐條覆核並套用
 
-> 以下由 SURG 稽核 agent 提出、附 Crossref 理由；**主 thread 尚未逐條覆核，暫未改 code**。將於後續迭代逐條 Crossref 確認後套用（修正或標記）。
+> 以下由 SURG 稽核 agent 提出、附 Crossref 理由；**主 thread 已逐條 Crossref 覆核完成**：誤植者已更正為真實文+DOI，疑捏造者已 ⚠️ 標記（citation 不刪）。狀態如各條所示。
 
 **疑捏造（Crossref 查無對應文）**
 - de Battisti「Lactate…GDV」JAVMA 2009;235(1):46-52 → 疑為 **de Papp 1999 JAVMA 215(1):49-52**（`10.2460/javma.1999.215.01.49`）之訛誤。
@@ -59,12 +61,34 @@
 
 ---
 
-## D. 尚未稽核（後續迭代）
-- 其他 5 科的無-DOI journal 引用：DERM(24)、NEURO(27)、ECC(14)、CARDIO(18) 大部分、IM/ONCO/SURG 的 VERIFIED 條（可選擇性補 DOI 強化）。
+## D. 第二批稽核結果（DERM / NEURO / ECC / CARDIO）— ✅ 完成
+
+### D1. 已「更正」為真實文獻（誤植 → Crossref 驗證真實文 + DOI）
+| 節點 | 原（有問題）引用 | 更正為 |
+|---|---|---|
+| NEURO（IVDD） | Suwankong「Steinberg VCOT…」卷期誤 | Suwankong VCOT **2008;21(3):285-293** `10.1055/s-0037-1617374` |
+| NEURO（MUO） | Lowrie「…meningoencephalitis…」卷期誤 | Lowrie **Vet J 2016;213:1-5** `10.1016/j.tvjl.2016.03.026` |
+| DERM（秋田犬 VKH-like） | Reichler 標題/卷期誤 | Reichler Vet Dermatol 2001 `10.1046/j.0959-4493.2001.00251.x` |
+| DERM（哈瓦那犬） | Frazer 卷期誤 | Frazer Vet Dermatol 2011 `10.1111/j.1365-3164.2010.00942.x` |
+| DERM（醫源性庫欣） | Frank hypercortisolemia 頁碼誤 | Frank JAVMA 2001;218:214-216 `10.2460/javma.2001.218.214` |
+| CARDIO（心絲蟲） | Fan 台灣心絲蟲 97(3):203-210 | Fan Vet Parasitol **2001;102(1-2):113-120** `10.1016/S0304-4017(01)00511-8` |
+| CARDIO（心包積液） | Stafford Johnson「29 cases;546-553」 | 真實 143-dog 世代 **546-552** `10.1111/j.1748-5827.2004.tb00202.x` |
+
+### D2. 已「標記 ⚠️ 待查證」（Crossref 查無、疑捏造 → 交 DVM 裁定，citation 未刪）
+| 節點 | 疑似捏造引用 | Crossref 證據 |
+|---|---|---|
+| DERM ×6 | Bizikova / Noli / Mueller / Marsella×2 / Perego | 標題/卷期經三法查證無對應（詳見各 ref `relevance` 註記） |
+| CARDIO | Chetboul「貓心超參考值 systematic review & meta-analysis」JVIM 2012;26(4):773-788 | 48 篇 Chetboul 文獻皆無此篇 |
+| ECC | Holowaychuk「Transfusion medicine…」JVECC 2014;24(2):135-153 | 該作者當年 JVECC 僅 24(1)/24(5)；附真實近似替代 Davidow 2013 CVSM `10.1016/j.cvsm.2013.03.007` 供裁定 |
+
+### D3. Inconclusive（Crossref 盲區、無捏造證據，維持原樣）
+- ECC：Gwaltney-Brant「Chocolate intoxication」Vet Med 2001、Klein/Peterson Can Vet J 2010（均 pre-DOI/未索引真實文；`verify:citations` 會持續報 SUSPECT_NOT_FOUND，屬已知假陽性）。
+- CARDIO：Shaw/Rush ×2（Compend Contin Educ Vet 2007，Compendium 未被 Crossref 索引）。
 
 ---
 
 ## 結論與建議
-1. **v1 seed 確實散落著自動閘門抓不到的捏造/誤植引用**——本次已於 IM/ONCO/SURG/CPATH 4 科找到 **≥6 條疑捏造 + ≥8 處誤植**。這對「100% 正確全書」是根基性風險。
-2. 建議 DVM **優先裁定 A2 的 6 條疑捏造**（保留/移除/替換），並覆核 B 的 SURG 批。
-3. 長期建議：把 `verify-citations.ts` 增強為「對無-DOI 的 journal 引用，額外做作者+期刊+年 Crossref 存在性檢查」，讓此類問題未來能被自動攔下。
+1. **v1 seed 確實散落著自動閘門抓不到的捏造/誤植引用**——全 8 科稽核共找到 **~18 條疑捏造（⚠️ 待裁）+ ~15 處誤植（已更正）**。這對「100% 正確全書」是根基性風險，且已系統性排查完畢。
+2. **關鍵發現**：捏造引用常被 `verify:citations` 的 loose biblio-resolve **放行**（biblio-resolve 到鄰近真實文即判 VERIFIED）——例如 ECC Holowaychuk 捏造篇通過自動閘門，只有人工 Crossref 覆核才揪出。**⚠️ 人工標記不可省。**
+3. 建議 DVM **逐條裁定所有 ⚠️ 標記**（A2 六條 + D2 八條，共 ~14 條疑捏造）之保留/移除/替換；誤植（A1 + D1）已更正為真實文+DOI，可覆核確認。
+4. 長期建議：把 `verify-citations.ts` 增強為「對無-DOI 的 journal 引用，額外做作者+期刊+年 Crossref 存在性檢查」，讓此類問題未來能被自動攔下（並維護一份 pre-DOI 真實文 allowlist 以抑制 D3 類假陽性）。
