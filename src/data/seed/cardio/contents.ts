@@ -1672,7 +1672,7 @@ const contentHeartworm: NodeContent = {
     { type: 'journal', citation: 'Jacobson LS, DiGangi BA. An Accessible Alternative to Melarsomine: "Moxi-Doxy" for Treatment of Adult Heartworm Infection in Dogs. Front Vet Sci. 2021;8:702018. doi:10.3389/fvets.2021.702018.', relevance: '緩殺法定位為「melarsomine 無法取得時的最小傷害替代」，明確非首選' },
     { type: 'journal', citation: 'Savadelis MD, Ohmes CM, Hostetler JA, et al. Assessment of parasitological findings in heartworm-infected beagles treated with imidacloprid/moxidectin and doxycycline. Parasit Vectors. 2017;10(1):245. doi:10.1186/s13071-017-2190-9.', relevance: 'moxi-doxy 殺成蟲效力主要實證（實驗感染約 95.9%、需時長）——緩殺法效力的原始數據' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter: Heartworm Disease.', relevance: '心絲蟲病完整教材' },
-    { type: 'journal', citation: 'Fan CK et al. Seroepidemiology of Dirofilaria immitis infection among pet dogs in Taiwan. Vet Parasitol. 2001;97(3):203-210.', relevance: '台灣犬心絲蟲血清流行病學調查' },
+    { type: 'journal', citation: 'Fan CK, Su KE, Lin YH, et al. Seroepidemiologic survey of Dirofilaria immitis infection among domestic dogs in Taipei City and mountain aboriginal districts in Taiwan (1998-1999). Vet Parasitol. 2001;102(1-2):113-120. doi:10.1016/S0304-4017(01)00511-8', relevance: '台灣犬心絲蟲血清流行病學調查' },
   ],
   is_current: true,
   created_at: now,
@@ -1775,7 +1775,7 @@ const contentCardiacAnatomy: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Evans HE, de Lahunta A. Miller\'s Anatomy of the Dog, 4th ed. Elsevier, 2013. Chapter 11: The Heart and Arteries.', relevance: '犬心臟解剖標準教材' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 1: Normal Cardiovascular Anatomy and Physiology.', relevance: '獸醫心臟科臨床解剖' },
-    { type: 'journal', citation: 'Chetboul V et al. Echocardiographic reference values for domestic cats: a systematic review and meta-analysis. J Vet Intern Med. 2012;26(4):773-788.', relevance: '貓心臟正常超音波解剖參考值' },
+    { type: 'journal', citation: 'Chetboul V et al. Echocardiographic reference values for domestic cats: a systematic review and meta-analysis. J Vet Intern Med. 2012;26(4):773-788.', relevance: '貓心臟正常超音波解剖參考值 ⚠️ 待DVM查證：此引用經 Crossref 逐條查證（48 篇 Chetboul 文獻）不存在，卷期/標題/作者三法皆無對應，疑捏造，請以真實貓心超音波參考值文獻替換後移除本註記' },
     { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,
@@ -3463,7 +3463,7 @@ const contentPericardiocentesis: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter: Pericardial Disease and Pericardiocentesis.', relevance: '心包膜穿刺術標準操作教材' },
     { type: 'journal', citation: 'Shaw SP, Rush JE. Canine pericardial effusion: diagnosis, treatment, and prognosis. Compend Contin Educ Vet. 2007;29(7):405-411.', relevance: '犬心包膜穿刺術臨床操作指南' },
-    { type: 'journal', citation: 'Stafford Johnson M et al. Pericardial effusion in dogs: 29 cases. J Small Anim Pract. 2004;45(11):546-553.', relevance: '犬心包膜穿刺術臨床結果回溯分析' },
+    { type: 'journal', citation: 'Stafford Johnson M, Martin M, Binns S, Henley WE. A retrospective study of clinical findings, treatment and outcome in 143 dogs with pericardial effusion. J Small Anim Pract. 2004;45(11):546-552. doi:10.1111/j.1748-5827.2004.tb00202.x', relevance: '犬心包積液臨床結果回溯分析（143 例大型世代，含穿刺處置與預後）' },
     { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,

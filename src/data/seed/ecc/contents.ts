@@ -3707,7 +3707,7 @@ const contentTraumaHemorrhage: NodeContent = {
   drug_api_links: ['Tranexamic acid'],
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Trauma and Hemorrhagic Shock.', relevance: 'ECC 核心教材創傷與出血休克章節' },
-    { type: 'journal', citation: 'Holowaychuk MK, Hanel RM, Englar RE, et al. Transfusion medicine in small animal critical care. JVECC. 2014;24(2):135-153.', relevance: '小動物急重症輸血醫學回顧' },
+    { type: 'journal', citation: 'Holowaychuk MK, Hanel RM, Englar RE, et al. Transfusion medicine in small animal critical care. JVECC. 2014;24(2):135-153.', relevance: '小動物急重症輸血醫學回顧 ⚠️ 待DVM查證：Crossref 確認該作者 2014 JVECC 僅 24(1)、24(5) 兩篇、無 24(2):135-153，此篇疑捏造；真實近似回顧可用 Davidow B. Transfusion Medicine in Small Animals. Vet Clin North Am Small Anim Pract. 2013;43(4):735-756. doi:10.1016/j.cvsm.2013.03.007（異作者，替換前請 DVM 確認）' },
     { type: 'journal', citation: 'Holcomb JB, Tilley BC, Baraniuk S, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio and mortality in patients with severe trauma: the PROPPR randomized clinical trial. JAMA. 2015;313(5):471-482.', relevance: '人醫 PROPPR 試驗，MTP 血品比例的循證依據' },
     { type: 'guideline', citation: 'Spahn DR, Bouillon B, Cerny V, et al. The European guideline on management of major bleeding and coagulopathy following trauma: fifth edition. Crit Care. 2019;23:98.', relevance: '歐洲創傷出血管理指引：損傷控制復甦原則' },
   ],
