@@ -8,6 +8,10 @@
  * 方法（依引用是否帶 DOI 分流）：
  *   - 帶 DOI            → Crossref /works/{doi} 精確查詢，比對標題 token 重疊 + 年份
  *   - 無 DOI 但像期刊   → Crossref 書目查詢 (query.bibliographic)，找最佳標題匹配（可回填 DOI）
+ *                         **並加驗第一作者**：比中文獻的第一作者姓氏須出現在引用字串，否則
+ *                         判 SUSPECT_AUTHOR_MISMATCH——堵住「標題近似即放行」的捏造盲點
+ *                         （真實案例：捏造的 Holowaychuk 輸血引用曾 biblio-resolve 到標題近似的
+ *                          Davidow 真文而被誤判 VERIFIED；作者不符才是關鍵訊號）。
  *   - FDA 仿單 / 登錄處 → 標記 MANUAL_REGISTRY（需人工對登錄處核對）
  *   - 教科書           → 標記 MANUAL_TEXTBOOK（幻覺風險低，人工確認）
  *
@@ -49,11 +53,15 @@ const MAILTO = 'ai@senbio.tech';
 const UA = `vet-knowledge-tree-citation-audit/1.0 (mailto:${MAILTO})`;
 const CONCURRENCY = 5;
 const TITLE_MATCH_THRESHOLD = 0.6; // 顯著 token 重疊比例
+// 作者不符降級（SUSPECT_AUTHOR_MISMATCH）只在「高標題重疊」時啟動：捏造引用會照抄真文標題→高分；
+// 中低分（0.6–0.75）多為 biblio 對未索引真文的雜訊命中，不宜以作者不符判捏造（避免誤殺）。
+const AUTHOR_CHECK_TITLE_MIN = 0.75;
 
 type Verdict =
   | 'VERIFIED_DOI'
   | 'VERIFIED_BIBLIO'
   | 'SUSPECT_TITLE_MISMATCH'
+  | 'SUSPECT_AUTHOR_MISMATCH'
   | 'SUSPECT_DOI_UNRESOLVED'
   | 'SUSPECT_NOT_FOUND'
   | 'MANUAL_REGISTRY'
@@ -207,6 +215,38 @@ function workYear(w: CrossrefWork): number | null {
   return typeof y === 'number' ? y : null;
 }
 
+/** 取姓氏主 token（末段），處理「de Papp」→papp、「Stafford Johnson」→johnson、「van der Berg」→berg。 */
+function surnameCoreToken(family: string): string {
+  const toks = family
+    .toLowerCase()
+    .replace(/[^a-z\s-]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+  return toks.length ? toks[toks.length - 1] : family.toLowerCase();
+}
+
+/**
+ * 引用是否以「個人作者 Surname Initials」樣式起首（含兩段姓氏 Stafford Johnson M）。
+ * 用來排除機構署名引用（AAHA/ACVS/WSAVA guideline、會議 proceedings）——這類本就不列個人作者，
+ * 不應因「Crossref 第一作者未出現」而被誤判捏造。
+ */
+function startsWithPersonalAuthor(citation: string): boolean {
+  return /^[A-Z][a-z]+(?:\s[A-Z][a-z]+)?\s+[A-Z]{1,3}\b/.test(citation.trim());
+}
+
+/**
+ * 比中文獻的第一作者姓氏是否出現在引用字串（詞邊界比對，避免短姓氏如 Lee 誤命中 spleen）。
+ * 無作者資料 / 姓氏過短（<3）→ 回 true（不判，避免誤殺真實引用）。
+ */
+function citationMentionsAuthor(citation: string, w: CrossrefWork): boolean {
+  const fam = w.author?.[0]?.family;
+  if (!fam) return true;
+  const core = surnameCoreToken(fam);
+  if (core.length < 3) return true;
+  const esc = core.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`\\b${esc}\\b`, 'i').test(citation);
+}
+
 async function fetchJson(url: string, tries = 3): Promise<unknown> {
   for (let attempt = 1; attempt <= tries; attempt++) {
     try {
@@ -262,29 +302,65 @@ async function verifyByDoi(doi: string, citation: string): Promise<Partial<Verif
 async function verifyByBiblio(citation: string): Promise<Partial<VerifyResult>> {
   const q = encodeURIComponent(citation.slice(0, 400));
   const data = (await fetchJson(
-    `https://api.crossref.org/works?query.bibliographic=${q}&rows=5&select=title,author,published,DOI`,
+    `https://api.crossref.org/works?query.bibliographic=${q}&rows=8&select=title,author,published,DOI`,
   )) as { message?: { items?: CrossrefWork[] }; __error?: string; __status?: number };
   if (data.__error) return { verdict: 'ERROR', detail: `crossref error: ${data.__error}` };
   const items = data.message?.items ?? [];
-  let best: { score: number; w: CrossrefWork } | null = null;
+
+  // 逐筆評分：標題最高分者（bestTitle）＋「標題達門檻且作者亦相符」者（bestMatch）。
+  // 關鍵：真實引用之原文若被 Crossref 索引，必在結果中以「標題+作者雙符」現身（縱使非首筆）；
+  // 唯有捏造（原文根本不存在）才會前 8 筆皆無任一作者相符者 → 才判 AUTHOR_MISMATCH。
+  let bestTitle: { score: number; w: CrossrefWork } | null = null;
+  let bestMatch: { score: number; w: CrossrefWork } | null = null;
   for (const w of items) {
     const score = bidirectionalTitleScore(w.title?.[0] ?? '', citation);
-    if (!best || score > best.score) best = { score, w };
+    if (!bestTitle || score > bestTitle.score) bestTitle = { score, w };
+    if (score >= TITLE_MATCH_THRESHOLD && citationMentionsAuthor(citation, w)) {
+      if (!bestMatch || score > bestMatch.score) bestMatch = { score, w };
+    }
   }
-  if (best && best.score >= TITLE_MATCH_THRESHOLD) {
+
+  // 1) 標題+作者雙符 → 通過（最穩健，第一作者不必為首筆）
+  if (bestMatch) {
     return {
       verdict: 'VERIFIED_BIBLIO',
-      detail: `書目查詢命中（標題重疊 ${(best.score * 100).toFixed(0)}%）`,
-      crossrefTitle: best.w.title?.[0],
-      crossrefYear: workYear(best.w) ?? undefined,
-      backfillDoi: best.w.DOI?.toLowerCase(),
-      titleScore: best.score,
+      detail: `書目查詢命中（標題重疊 ${(bestMatch.score * 100).toFixed(0)}%、第一作者相符）`,
+      crossrefTitle: bestMatch.w.title?.[0],
+      crossrefYear: workYear(bestMatch.w) ?? undefined,
+      backfillDoi: bestMatch.w.DOI?.toLowerCase(),
+      titleScore: bestMatch.score,
     };
   }
+
+  // 2) 高標題重疊 + 引用以個人作者起首 + 前 8 筆皆無作者相符 → 疑捏造/誤植
+  if (bestTitle && bestTitle.score >= AUTHOR_CHECK_TITLE_MIN && startsWithPersonalAuthor(citation)) {
+    return {
+      verdict: 'SUSPECT_AUTHOR_MISMATCH',
+      detail: `標題重疊 ${(bestTitle.score * 100).toFixed(0)}% 但前 8 筆結果皆無「引用所列作者」相符者（最近似之 Crossref 第一作者為「${bestTitle.w.author?.[0]?.family ?? '?'}」）；疑作者誤植/捏造，非同一文`,
+      crossrefTitle: bestTitle.w.title?.[0],
+      crossrefYear: workYear(bestTitle.w) ?? undefined,
+      backfillDoi: bestTitle.w.DOI?.toLowerCase(),
+      titleScore: bestTitle.score,
+    };
+  }
+
+  // 3) 標題達門檻但作者無法比對（機構署名 / 無作者資料）→ 通過
+  if (bestTitle && bestTitle.score >= TITLE_MATCH_THRESHOLD) {
+    return {
+      verdict: 'VERIFIED_BIBLIO',
+      detail: `書目查詢命中（標題重疊 ${(bestTitle.score * 100).toFixed(0)}%）`,
+      crossrefTitle: bestTitle.w.title?.[0],
+      crossrefYear: workYear(bestTitle.w) ?? undefined,
+      backfillDoi: bestTitle.w.DOI?.toLowerCase(),
+      titleScore: bestTitle.score,
+    };
+  }
+
+  // 4) 無足夠匹配
   return {
     verdict: 'SUSPECT_NOT_FOUND',
-    detail: `書目查詢無足夠匹配（最佳重疊 ${best ? (best.score * 100).toFixed(0) : '0'}%）`,
-    titleScore: best?.score,
+    detail: `書目查詢無足夠匹配（最佳重疊 ${bestTitle ? (bestTitle.score * 100).toFixed(0) : '0'}%）`,
+    titleScore: bestTitle?.score,
   };
 }
 
@@ -381,8 +457,8 @@ async function main() {
   // 4) 統計
   const tally: Record<Verdict, number> = {
     VERIFIED_DOI: 0, VERIFIED_BIBLIO: 0, SUSPECT_TITLE_MISMATCH: 0,
-    SUSPECT_DOI_UNRESOLVED: 0, SUSPECT_NOT_FOUND: 0, MANUAL_REGISTRY: 0,
-    MANUAL_TEXTBOOK: 0, ERROR: 0,
+    SUSPECT_AUTHOR_MISMATCH: 0, SUSPECT_DOI_UNRESOLVED: 0, SUSPECT_NOT_FOUND: 0,
+    MANUAL_REGISTRY: 0, MANUAL_TEXTBOOK: 0, ERROR: 0,
   };
   let occVerified = 0, occSuspect = 0, occManual = 0;
   for (const r of results) {
