@@ -1775,7 +1775,8 @@ const contentCardiacAnatomy: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Evans HE, de Lahunta A. Miller\'s Anatomy of the Dog, 4th ed. Elsevier, 2013. Chapter 11: The Heart and Arteries.', relevance: '犬心臟解剖標準教材' },
     { type: 'textbook', citation: 'Ware WA. Cardiovascular Disease in Small Animal Medicine. Manson Publishing, 2011. Chapter 1: Normal Cardiovascular Anatomy and Physiology.', relevance: '獸醫心臟科臨床解剖' },
-    { type: 'journal', citation: 'Chetboul V et al. Echocardiographic reference values for domestic cats: a systematic review and meta-analysis. J Vet Intern Med. 2012;26(4):773-788.', relevance: '貓心臟正常超音波解剖參考值 ⚠️ 待DVM查證：此引用經 Crossref 逐條查證（48 篇 Chetboul 文獻）不存在，卷期/標題/作者三法皆無對應，疑捏造，請以真實貓心超音波參考值文獻替換後移除本註記' },
+    { type: 'journal', citation: 'Cornell CC, Kittleson MD, Della Torre P, et al. Allometric scaling of M-mode cardiac measurements in normal adult dogs. J Vet Intern Med. 2004;18(3):311-321. doi:10.1111/j.1939-1676.2004.tb02551.x', relevance: '犬 M-mode 心超正常參考值與體型校正（經典犬心超參考文獻，Crossref 驗證）' },
+    { type: 'journal', citation: 'Schober K et al. Reference intervals and allometric scaling of two-dimensional echocardiographic measurements in 150 healthy cats. J Vet Med Sci. 2017;79(11):1764-1771. doi:10.1292/jvms.17-0250', relevance: '貓 2D 心超正常參考值與體型 allometric scaling（150 隻健康貓）。本文經 Crossref 驗證真實，已取代原疑捏造之 Chetboul 2012 引用' },
     { type: 'guideline', citation: 'Keene BW, Atkins CE, Bonagura JD, et al. "ACVIM consensus guidelines for the diagnosis and treatment of myxomatous mitral valve disease in dogs." J Vet Intern Med. 2019;33(3):1127-1140.', relevance: 'MMVD 診斷與治療共識指引' },
   ],
   is_current: true,

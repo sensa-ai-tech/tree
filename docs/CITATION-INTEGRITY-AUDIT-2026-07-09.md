@@ -78,7 +78,7 @@
 | 節點 | 疑似捏造引用 | Crossref 證據 |
 |---|---|---|
 | DERM ×6 | Bizikova / Noli / Mueller / Marsella×2 / Perego | 標題/卷期經三法查證無對應（詳見各 ref `relevance` 註記） |
-| CARDIO | Chetboul「貓心超參考值 systematic review & meta-analysis」JVIM 2012;26(4):773-788 | 48 篇 Chetboul 文獻皆無此篇 |
+| ~~CARDIO~~ **✅已解決** | ~~Chetboul「貓心超參考值 systematic review & meta-analysis」JVIM 2012;26(4):773-788~~ | 48 篇 Chetboul 文獻皆無此篇 → **iter18 已替換為 Crossref 驗證真實文** Schober K 2017 貓 2D 心超參考值 `10.1292/jvms.17-0250`（＋補犬 Cornell 2004 `10.1111/j.1939-1676.2004.tb02551.x`）|
 | ECC | Holowaychuk「Transfusion medicine…」JVECC 2014;24(2):135-153 | 該作者當年 JVECC 僅 24(1)/24(5)；附真實近似替代 Davidow 2013 CVSM `10.1016/j.cvsm.2013.03.007` 供裁定 |
 
 ### D3. Inconclusive（Crossref 盲區、無捏造證據，維持原樣）
