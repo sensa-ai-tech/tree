@@ -4481,8 +4481,9 @@ Itraconazole：主要副作用是厭食跟嘔吐，長期使用偶爾會肝酵�
   ],
   drug_api_links: ['Itraconazole', 'Ketoconazole', 'Terbinafine', 'Chlorhexidine'],
   references: [
-    { type: 'guideline', citation: 'Moriello KA et al. Diagnosis and treatment of dermatophytosis in dogs and cats: Clinical Consensus Guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2017;28(3):266-e68.', relevance: 'WAVD 皮膚癬菌症診斷治療共識指引' },
-    { type: 'journal', citation: 'Negre A et al. Evidence-based veterinary dermatology: a systematic review of interventions for Malassezia dermatitis in dogs. Vet Dermatol. 2009;20(1):1-12.', relevance: '馬拉色菌治療的循證系統性回顧' },
+    { type: 'guideline', citation: 'Moriello KA et al. Diagnosis and treatment of dermatophytosis in dogs and cats: Clinical Consensus Guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2017;28(3):266-e68. doi:10.1111/vde.12440', relevance: 'WAVD 皮膚癬菌症診斷治療共識指引（Crossref 驗證）' },
+    { type: 'guideline', citation: 'Bond R et al. Biology, diagnosis and treatment of Malassezia dermatitis in dogs and cats: Clinical Consensus Guidelines of the World Association for Veterinary Dermatology. Vet Dermatol. 2020;31(1):27-e4. doi:10.1111/vde.12809', relevance: 'WAVD 馬拉色菌皮膚炎現行診療共識（2020；Crossref 驗證）' },
+    { type: 'journal', citation: 'Negre A et al. Evidence-based veterinary dermatology: a systematic review of interventions for Malassezia dermatitis in dogs. Vet Dermatol. 2009;20(1):1-12. doi:10.1111/j.1365-3164.2008.00721.x', relevance: '馬拉色菌治療的循證系統性回顧（Crossref 驗證）' },
     { type: 'textbook', citation: "Miller WH, Griffin CE, Campbell KL. Muller and Kirk's Small Animal Dermatology, 7th ed. Elsevier, 2013.", relevance: '抗黴菌藥物藥理學完整章節' },
   ],
   is_current: true,
