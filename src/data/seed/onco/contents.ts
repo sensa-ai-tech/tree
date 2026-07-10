@@ -167,7 +167,7 @@ Substage 分兩種：a 是沒有全身症狀，b 是有全身症狀，像體重�
     { type: 'journal', citation: 'Parker AS, Burton JH, Curran KM, Wolf-Ringwall A, Thamm DH. Early progression during/after CHOP indicates poor outcome with rescue protocols in dogs with multicentric lymphoma. J Vet Intern Med. 2024;38(4):2282-2292. doi:10.1111/jvim.17139.', relevance: '是否積極救援的預後判斷依據：第一線 CHOP 早期進展者各類 rescue 反應均差' },
     { type: 'journal', citation: 'McLinden GP, Avery AC, Gardner HL, et al. Safety and biologic activity of a canine anti-CD20 monoclonal antibody in dogs with diffuse large B-cell lymphoma. J Vet Intern Med. 2024;38(3):1666-1674. doi:10.1111/jvim.17080.', relevance: '新一代犬抗 CD20 mAb 早期安全/活性數據；說明犬目前尚無已上市 rituximab 等效藥' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2.', relevance: '化療副作用分級標準' },
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤科主要教科書' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤科主要教科書' },
     { type: 'journal', citation: 'Garrett LD et al. Evaluation of a 6-month chemotherapy protocol with no maintenance therapy for dogs with lymphoma. J Vet Intern Med. 2002;16(6):704-709.', relevance: '犬淋巴瘤 CHOP 方案臨床研究' },
   ],
   is_current: true,
@@ -327,7 +327,7 @@ const contentTumorCytology: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤細胞學基礎章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '腫瘤細胞學基礎章節' },
     { type: 'textbook', citation: 'Cowell RL, Tyler RD, Meinkoth JH, DeNicola DB. Diagnostic Cytology and Hematology of the Dog and Cat, 5th ed. Elsevier, 2020.', relevance: '獸醫細胞學主要參考教材' },
     { type: 'textbook', citation: 'Raskin RE, Meyer DJ. Canine and Feline Cytology: A Color Atlas and Interpretation Guide, 3rd ed. Elsevier, 2016.', relevance: '犬貓細胞學圖譜與判讀指引' },
     { type: 'guideline', citation: 'Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) following chemotherapy or biological antineoplastic therapy in dogs and cats v1.1. Vet Comp Oncol. 2016;14(4):417-446. doi:10.1111/vco.283.', relevance: '腫瘤治療不良事件標準化術語（v1.1）' },
@@ -653,7 +653,7 @@ X 光會看到侵襲性骨溶解（osteolysis）加上新骨增生（periosteal 
   interactive_placeholders: [],
   drug_api_links: ['Carboplatin', 'Doxorubicin', 'Gabapentin', 'Tramadol'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'OSA 完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'OSA 完整章節' },
     { type: 'journal', citation: 'Selmic LE, Burton JH, Thamm DH, et al. Comparison of carboplatin and doxorubicin-based chemotherapy protocols in 470 dogs after amputation for treatment of appendicular osteosarcoma. J Vet Intern Med. 2014;28(2):554-563. doi:10.1111/jvim.12313.', relevance: '化療方案比較大型研究（470 犬）' },
     { type: 'journal', citation: 'Szewczyk M, Lechowski R, Zabielska K. What do we know about canine osteosarcoma treatment? Vet Res Commun. 2015;39(1):61-67. doi:10.1007/s11259-014-9623-0.', relevance: 'OSA 治療綜合回顧' },
     { type: 'journal', citation: 'Fan TM, de Lorimier LP, Charney SC, et al. Evaluation of intravenous pamidronate administration in 33 cancer-bearing dogs with primary or secondary bone involvement. J Vet Intern Med. 2005;19(1):74-80. doi:10.1111/j.1939-1676.2005.tb02661.x.', relevance: '雙磷酸鹽（pamidronate）骨腫瘤緩和止痛' },
@@ -813,7 +813,7 @@ const contentHSA: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Doxorubicin', 'Cyclophosphamide', 'Vincristine', 'Piroxicam'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter: Hemangiosarcoma.', relevance: 'HSA 完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter: Hemangiosarcoma.', relevance: 'HSA 完整章節' },
     { type: 'journal', citation: 'Wendelburg KM, Price LL, Burgess KE, et al. Survival time of dogs with splenic hemangiosarcoma treated by splenectomy with or without adjuvant chemotherapy: 208 cases (2001-2012). J Am Vet Med Assoc. 2015;247(4):393-403. doi:10.2460/javma.247.4.393.', relevance: '脾臟 HSA 脾切±化療存活大型回顧' },
     { type: 'journal', citation: 'Lana S, U\'ren L, Plaza S, et al. Continuous low-dose oral chemotherapy for adjuvant therapy of splenic hemangiosarcoma in dogs. J Vet Intern Med. 2007;21(4):764-769. doi:10.1111/j.1939-1676.2007.tb03019.x.', relevance: '脾臟 HSA 節拍式化療（近期實證）' },
     { type: 'journal', citation: 'Borgatti A, Koopmeiners JS, Sarver AL, et al. Safe and effective sarcoma therapy through bispecific targeting of EGFR and uPAR. Mol Cancer Ther. 2017;16(5):956-965. doi:10.1158/1535-7163.MCT-16-0637.', relevance: 'eBAT 雙特異標靶毒素治療犬 HSA/肉瘤（近期實證）' },
@@ -1131,7 +1131,7 @@ Lumpectomy 適合小於 0.5 cm、活動性強、看起來偏良性的腫塊。�
   interactive_placeholders: [],
   drug_api_links: ['Doxorubicin', 'Carboplatin'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '乳腺腫瘤完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '乳腺腫瘤完整章節' },
     { type: 'journal', citation: 'Sorenmo KU, Kristiansen VM, Cofone MA, et al. Canine mammary gland tumours; a histological continuum from benign to malignant; clinical and histopathological evidence. Vet Comp Oncol. 2009;7(3):162-172. doi:10.1111/j.1476-5829.2009.00184.x', relevance: '犬乳腺腫瘤良性至惡性的組織學連續體' },
     { type: 'journal', citation: 'Kristiansen VM, Peña L, Díez Córdova L, et al. Effect of ovariohysterectomy at the time of tumor removal in dogs with mammary carcinomas: a randomized controlled trial. J Vet Intern Med. 2016;30(1):230-241. doi:10.1111/jvim.13812', relevance: '乳腺癌切除時同時 OHE 的 RCT（對總存活無顯著助益）' },
     { type: 'journal', citation: 'Beauvais W, Cardwell JM, Brodbelt DC. The effect of neutering on the risk of mammary tumours in dogs - a systematic review. J Small Anim Pract. 2012;53(6):314-322. doi:10.1111/j.1748-5827.2011.01220.x', relevance: '絕育與犬乳腺腫瘤風險的系統性回顧（指出證據強度有限）' },
@@ -1296,7 +1296,7 @@ const contentTCC: NodeContent = {
     { type: 'journal', citation: 'Mochizuki H, Kennedy K, Shapiro SG, Breen M. "BRAF Mutations in Canine Cancers." PLoS One. 2015;10(6):e0129534. doi:10.1371/journal.pone.0129534', relevance: 'BRAF V595E 突變在犬 TCC 的發現' },
     { type: 'journal', citation: 'Knapp DW, Ramos-Vara JA, Moore GE, Dhawan D, et al. "Urinary Bladder Cancer in Dogs, a Naturally Occurring Model for Cancer Biology and Drug Development." ILAR J. 2014;55(1):100-118. doi:10.1093/ilar/ilu018', relevance: '犬 TCC 作為人膀胱癌模型（修正 v1 garbled 引用）' },
     { type: 'guideline', citation: 'Biller B, Berg J, Garrett L, et al. "2016 AAHA Oncology Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2016;52(4):181-204. doi:10.5326/jaaha-ms-6570', relevance: 'AAHA 腫瘤科指引，TCC 診斷與管理' },
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'TCC 完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'TCC 完整章節' },
   ],
   is_current: true,
   created_at: now,
@@ -1437,7 +1437,7 @@ doxorubicin/carboplatin 的存活益處在回顧性研究結果不一致，多�
   drug_api_links: ['Doxorubicin', 'Carboplatin'],
   references: [
     { type: 'guideline', citation: 'Vaccine-Associated Feline Sarcoma Task Force. The current understanding and management of vaccine-associated sarcomas in cats. J Am Vet Med Assoc. 2005;226(11):1821-1842. doi:10.2460/javma.2005.226.1821.', relevance: 'VAFSTF 官方指引' },
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'FISS 完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: 'FISS 完整章節' },
     { type: 'journal', citation: 'Ladlow J. Injection site-associated sarcoma in the cat: treatment recommendations and results to date. J Feline Med Surg. 2013;15(5):409-418. doi:10.1177/1098612x13483239.', relevance: 'FISS 治療建議與預後數據' },
     { type: 'guideline', citation: 'Stone AE, Brummet GO, Carozza EM, et al. 2020 AAHA/AAFP Feline Vaccination Guidelines. J Feline Med Surg. 2020;22(9):813-830. doi:10.1177/1098612x20941784.', relevance: '貓疫苗指引：注射部位與非佐劑疫苗降低 FISS 風險' },
     { type: 'journal', citation: 'Spugnini EP, Baldi A. Combination of bleomycin and cisplatin as adjuvant electrochemotherapy protocol for the treatment of feline injection-site sarcomas. Open Vet J. 2020;10(3):267-271. doi:10.4314/ovj.v10i3.4.', relevance: '電化學療法（ECT）輔助治療貓 FISS' },
@@ -1800,7 +1800,7 @@ const contentTumorImmunology: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 11: Tumor Immunology and Immunotherapy.', relevance: '獸醫腫瘤免疫學基礎' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 11: Tumor Immunology and Immunotherapy.', relevance: '獸醫腫瘤免疫學基礎' },
     { type: 'journal', citation: 'Bergman PJ et al. Long-term survival of dogs with advanced malignant melanoma after DNA vaccination with xenogeneic human tyrosinase. Clin Cancer Res. 2003;9(4):1284-1290.', relevance: 'Oncept 疫苗原始研究' },
     { type: 'journal', citation: 'Maekawa N et al. A canine chimeric monoclonal antibody targeting PD-L1 and its clinical efficacy in canine oral malignant melanoma or undifferentiated sarcoma. Sci Rep. 2017;7(1):8951.', relevance: '犬 PD-L1 抗體初步研究' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '免疫治療相關副作用評估標準' },
@@ -1929,7 +1929,7 @@ GWAS（全基因組關聯分析）研究已辨識出多個與犬腫瘤易感性�
   interactive_placeholders: [],
   drug_api_links: ['Toceranib'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology and Metastasis.', relevance: '腫瘤遺傳學基礎章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology and Metastasis.', relevance: '腫瘤遺傳學基礎章節' },
     { type: 'journal', citation: 'Mochizuki H et al. BRAF mutations in canine cancers. PLoS One. 2015;10(6):e0129534.', relevance: 'BRAF 突變在犬腫瘤的發現與臨床應用' },
     { type: 'journal', citation: 'Schiffman JD, Breen M. Comparative oncology: what dogs and other species can teach us about humans with cancer. Philos Trans R Soc Lond B Biol Sci. 2015;370(1673):20140231.', relevance: '犬腫瘤基因組學比較研究' },
     { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引，分子檢測與標靶治療概述' },
@@ -2069,7 +2069,7 @@ EMT 是上皮細胞失去極性和細胞間黏附、獲得間質細胞表型的�
   interactive_placeholders: [],
   drug_api_links: ['Carboplatin', 'Doxorubicin'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology and Metastasis.', relevance: '腫瘤轉移機轉完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology and Metastasis.', relevance: '腫瘤轉移機轉完整章節' },
     { type: 'journal', citation: 'Paget S. "The distribution of secondary growths in cancer of the breast." Lancet. 1889;133(3421):571-573.', relevance: 'Seed-and-soil 理論經典文獻（1889；以 biblio 解析）' },
     { type: 'journal', citation: 'Fidler IJ. "The pathogenesis of cancer metastasis: the \'seed and soil\' hypothesis revisited." Nat Rev Cancer. 2003;3(6):453-458. doi:10.1038/nrc1098', relevance: '轉移機轉現代回顧' },
     { type: 'journal', citation: 'Flory A, Kruglyak KM, Tynan JA, et al. "Clinical validation of a next-generation sequencing-based multi-cancer early detection \'liquid biopsy\' blood test in over 1,000 dogs using an independent testing set: The CANcer Detection in Dogs (CANDiD) study." PLoS One. 2022;17(4):e0266623. doi:10.1371/journal.pone.0266623', relevance: '犬 cfDNA 液態生檢臨床驗證（近期實證）' },
@@ -2208,7 +2208,7 @@ const contentParaneoplastic: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Furosemide', 'Dexamethasone', 'Pamidronate'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 5: Paraneoplastic Syndromes.', relevance: '副腫瘤症候群完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 5: Paraneoplastic Syndromes.', relevance: '副腫瘤症候群完整章節' },
     { type: 'journal', citation: 'Bergman PJ. Paraneoplastic syndromes. In: Vail DM et al., eds. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. 2020:83-97.', relevance: '獸醫副腫瘤症候群全面回顧' },
     { type: 'guideline', citation: 'Schenck PA et al. Disorders of calcium. In: DiBartola SP, ed. Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice, 4th ed. Elsevier, 2012.', relevance: '高血鈣症診斷與治療指引' },
   ],
@@ -2354,7 +2354,7 @@ const contentDrugResistance: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Doxorubicin', 'Vincristine', 'Vinblastine', 'Cyclophosphamide', 'Carboplatin', 'Lomustine'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy.', relevance: '化療抗藥性機轉章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy.', relevance: '化療抗藥性機轉章節' },
     { type: 'journal', citation: 'Zandvliet M, Teske E. Mechanisms of drug resistance in veterinary oncology: a review with an emphasis on canine lymphoma. Vet Sci. 2015;2(3):150-184.', relevance: '獸醫腫瘤抗藥性全面回顧' },
     { type: 'journal', citation: 'Price GS et al. Multidrug resistance gene (MDR1) expression and effect on treatment response in canine lymphoma. J Vet Intern Med. 1991;5(2):96.', relevance: 'P-gp 在犬淋巴瘤抗藥性的研究' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '化療抗藥後毒性分級與劑量調整指引' },
@@ -2536,7 +2536,7 @@ const contentStagingWorkup: NodeContent = {
   ],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 4: Staging and Diagnosis.', relevance: '腫瘤分期完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 4: Staging and Diagnosis.', relevance: '腫瘤分期完整章節' },
     { type: 'journal', citation: 'Nemanic S, London CA, Wisner ER. "Comparison of Thoracic Radiographs and Single Breath-Hold Helical CT for Detection of Pulmonary Nodules in Dogs with Metastatic Neoplasia." J Vet Intern Med. 2006;20(3):508-515. doi:10.1111/j.1939-1676.2006.tb02889.x', relevance: '胸腔 X 光 vs 螺旋 CT 偵測肺結節（CT 較敏感；修正 v1 誤標期刊/標題）' },
     { type: 'guideline', citation: 'Thamm DH, Vail DM. Staging and initial treatment decisions. In: Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020.', relevance: '分期與治療決策章節' },
     { type: 'journal', citation: 'Lapsley J, Hayes GM, Janvier V, Newman AW. "Influence of locoregional lymph node aspiration cytology vs sentinel lymph node mapping and biopsy on disease stage assignment in dogs with integumentary mast cell tumors." Vet Surg. 2020;50(1):133-141. doi:10.1111/vsu.13537', relevance: '前哨淋巴結定位改變 MCT 分期（最近節未必前哨）' },
@@ -2910,7 +2910,7 @@ const contentChemotherapy: NodeContent = {
   ],
   drug_api_links: ['Cyclophosphamide', 'Chlorambucil', 'Lomustine', 'Doxorubicin', 'Mitoxantrone', 'Vincristine', 'Vinblastine', 'Carboplatin', 'Toceranib', 'L-Asparaginase', 'Maropitant', 'Metoclopramide'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy.', relevance: '化學治療基礎完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy.', relevance: '化學治療基礎完整章節' },
     { type: 'guideline', citation: 'Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) following chemotherapy or biological antineoplastic therapy in dogs and cats v1.1. Vet Comp Oncol. 2016;14(4):417-446. doi:10.1111/vco.283.', relevance: 'VCOG-CTCAE 化療毒性分級標準（v1.1）' },
     { type: 'journal', citation: 'Thamm DH, Vail DM. Aftershocks of cancer chemotherapy: managing adverse effects. J Am Anim Hosp Assoc. 2007;43(1):1-7. doi:10.5326/0430001.', relevance: '化療副作用管理實務' },
     { type: 'journal', citation: 'Elmslie RE, Glawe P, Dow SW. Metronomic therapy with cyclophosphamide and piroxicam effectively delays tumor recurrence in dogs with incompletely resected soft tissue sarcomas. J Vet Intern Med. 2008;22(6):1373-1379. doi:10.1111/j.1939-1676.2008.0179.x.', relevance: '節拍式化療延緩軟組織肉瘤復發（近期實證）' },
@@ -3052,7 +3052,7 @@ const contentSurgicalOncology: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 8: Surgical Oncology.', relevance: '腫瘤外科原則完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 8: Surgical Oncology.', relevance: '腫瘤外科原則完整章節' },
     { type: 'journal', citation: 'Ehrhart NP, Culp WTN. Principles of surgical oncology. In: Veterinary Surgical Oncology. Wiley-Blackwell, 2022.', relevance: '獸醫腫瘤外科專著' },
     { type: 'journal', citation: 'Simpson AM, et al. "Evaluation of surgical margins required for complete excision of cutaneous mast cell tumors in dogs." J Am Vet Med Assoc. 2004;224(2):236-240. doi:10.2460/javma.2004.224.236', relevance: 'MCT 手術切緣（引用真偽稽核：原「Simpson S, Vet Surg 2019;48(7):1108-1116」Crossref 查無、疑捏造 → 更正為真實奠基文獻 Simpson 2004 JAVMA + DOI）' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Surgical Oncology: Guidelines for First Surgery Principles. Vet Comp Oncol. 2015.', relevance: '腫瘤外科首次手術指引' },
@@ -3216,7 +3216,7 @@ OSA 骨痛除 NSAID＋gabapentin 外，雙磷酸鹽（pamidronate，Fan 2007；z
   ],
   drug_api_links: ['Meloxicam', 'Carprofen', 'Piroxicam', 'Gabapentin', 'Tramadol', 'Amantadine', 'Buprenorphine', 'Pamidronate'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 14: Cancer Pain Management.', relevance: '腫瘤疼痛管理完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 14: Cancer Pain Management.', relevance: '腫瘤疼痛管理完整章節' },
     { type: 'journal', citation: 'Villalobos A. Quality of life scale helps make final call. Veterinary Practice News. 2004;Sept:9-11.', relevance: 'HHHHHMM 生活品質量表原始文獻（業界刊物，無 DOI）' },
     { type: 'guideline', citation: 'Epstein ME, Rodan I, Griffenhagen G, et al. 2015 AAHA/AAFP Pain Management Guidelines for Dogs and Cats. J Feline Med Surg. 2015;17(3):251-272. doi:10.1177/1098612x15572062.', relevance: '犬貓疼痛管理指引（2015 AAHA/AAFP）' },
     { type: 'guideline', citation: 'Monteiro BP, Lascelles BDX, Murrell J, et al. 2022 WSAVA guidelines for the recognition, assessment and treatment of pain. J Small Anim Pract. 2023;64(4):177-254. doi:10.1111/jsap.13566.', relevance: 'WSAVA 全球疼痛管理指引（多模式止痛權威依據）' },
@@ -3360,7 +3360,7 @@ const contentRadiationTherapy: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: [],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 10: Radiation Therapy.', relevance: '放射治療完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 10: Radiation Therapy.', relevance: '放射治療完整章節' },
     { type: 'journal', citation: 'Larue SM, Gordon IK. Radiation therapy. In: Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed.', relevance: '獸醫放射治療基礎' },
     { type: 'journal', citation: 'Pagano C et al. Safety and toxicity of an accelerated coarsely fractionated radiation protocol for treatment of appendicular osteosarcoma in 14 dogs: 10 Gy x 2 fractions. Vet Radiol Ultrasound. 2016;57(5):551-556. doi:10.1111/vru.12389', relevance: '犬四肢骨肉瘤加速粗分次緩和放療（10 Gy×2）之安全性與毒性。Crossref 驗證真實，取代原疑捏造之 Boston「8 dogs 2-3 fraction」引用（VRU 2007 查無該篇）' },
     { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引，放射治療角色與轉介建議' },
@@ -3512,7 +3512,7 @@ const contentMetronomicChemo: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Cyclophosphamide', 'Piroxicam', 'Chlorambucil', 'Meloxicam', 'Toceranib'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy，Metronomic Section.', relevance: '節拍式化療章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 9: Chemotherapy，Metronomic Section.', relevance: '節拍式化療章節' },
     { type: 'journal', citation: 'Leach TN et al. Prospective trial of metronomic chlorambucil chemotherapy in dogs with naturally occurring cancer. Vet Comp Oncol. 2012;10(2):102-112.', relevance: '節拍式 Chlorambucil 前瞻性試驗' },
     { type: 'journal', citation: 'Burton JH et al. Low-dose cyclophosphamide selectively decreases regulatory T cells and inhibits angiogenesis in dogs with soft tissue sarcoma. J Vet Intern Med. 2011;25(4):920-926.', relevance: '犬低劑量 Cyclophosphamide 的免疫調節和抗血管新生機轉' },
     { type: 'guideline', citation: 'VCOG，Veterinary Cooperative Oncology Group. Common Terminology Criteria for Adverse Events (VCOG-CTCAE) v2. Vet Comp Oncol. 2016;14(4):417-446.', relevance: '節拍式化療副作用分級與監測標準' },
@@ -3644,7 +3644,7 @@ CAF 是 TME 中主要的基質細胞，由正常纖維母細胞在腫瘤信號�
   interactive_placeholders: [],
   drug_api_links: ['Toceranib', 'Cyclophosphamide'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology，Tumor Microenvironment Section.', relevance: '腫瘤微環境基礎章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 2: Tumor Biology，Tumor Microenvironment Section.', relevance: '腫瘤微環境基礎章節' },
     { type: 'journal', citation: 'Maekawa N et al. A canine chimeric monoclonal antibody targeting PD-L1 and its clinical efficacy in canine oral malignant melanoma or undifferentiated sarcoma. Sci Rep. 2017;7(1):8951.', relevance: '犬 PD-L1 抗體臨床效果' },
     { type: 'journal', citation: 'Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 2011;144(5):646-674.', relevance: '癌症標誌，腫瘤微環境作為新興標誌' },
     { type: 'guideline', citation: 'Bergman PJ et al. Development of a xenogeneic DNA vaccine program for canine malignant melanoma at the Animal Medical Center. Vaccine. 2006;24(21):4582-4585.', relevance: '犬黑色素瘤 DNA 疫苗，TME 免疫調節策略' },
@@ -3839,7 +3839,7 @@ Elmslie 2008 RCT 證實 cyclophosphamide + piroxicam 節拍式化療能顯著延
   interactive_placeholders: [],
   drug_api_links: ['Doxorubicin', 'Cyclophosphamide', 'Piroxicam'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 21: Soft Tissue Sarcomas.', relevance: 'STS 完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 21: Soft Tissue Sarcomas.', relevance: 'STS 完整章節' },
     { type: 'journal', citation: 'Kuntz CA, Dernell WS, Powers BE, et al. Prognostic factors for surgical treatment of soft-tissue sarcomas in dogs: 75 cases (1986-1996). J Am Vet Med Assoc. 1997;211(9):1147-1151. doi:10.2460/javma.1997.211.09.1147.', relevance: 'STS 分級與預後經典文獻' },
     { type: 'journal', citation: 'McSporran KD. Histologic grade predicts recurrence for marginally excised canine subcutaneous soft tissue sarcomas. Vet Pathol. 2009;46(5):928-933. doi:10.1354/vp.08-vp-0277-m-fl.', relevance: 'STS 切緣與分級對復發的預測' },
     { type: 'journal', citation: 'Elmslie RE, Glawe P, Dow SW. Metronomic therapy with cyclophosphamide and piroxicam effectively delays tumor recurrence in dogs with incompletely resected soft tissue sarcomas. J Vet Intern Med. 2008;22(6):1373-1379. doi:10.1111/j.1939-1676.2008.0179.x.', relevance: '節拍式化療延遲不完全切除 STS 復發的 RCT' },
@@ -4040,7 +4040,7 @@ toceranib（Palladia）對 AGASACA 有臨床獲益/部分反應（Heaton 2020）
   interactive_placeholders: [],
   drug_api_links: ['Carboplatin', 'Mitoxantrone', 'Cyclophosphamide', 'Toceranib', 'Furosemide', 'Pamidronate'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter: Tumors of the Anal Sac.', relevance: 'ASAC 完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter: Tumors of the Anal Sac.', relevance: 'ASAC 完整章節' },
     { type: 'journal', citation: 'Williams LE, Gliatto JM, Dernell WS, et al. Carcinoma of the apocrine glands of the anal sac in dogs: 113 cases (1985-1995). J Am Vet Med Assoc. 2003;223(6):825-831. doi:10.2460/javma.2003.223.825.', relevance: 'ASAC 大型回顧性研究，預後因子分析' },
     { type: 'journal', citation: 'Polton GA, Brearley MJ. Clinical stage, therapy, and prognosis in canine anal sac gland carcinoma. J Vet Intern Med. 2007;21(2):274-280. doi:10.1111/j.1939-1676.2007.tb02960.x.', relevance: 'ASAC 臨床分期、治療與預後（含淋巴結/手術）' },
     { type: 'journal', citation: 'Heaton CM, Fernandes AFA, Jark PC, et al. Evaluation of toceranib for treatment of apocrine gland anal sac adenocarcinoma in dogs. J Vet Intern Med. 2020;34(2):873-881. doi:10.1111/jvim.15706.', relevance: 'toceranib 治療 AGASACA 的療效評估（近期實證）' },
@@ -4225,7 +4225,7 @@ const contentNasalTumor: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Carboplatin', 'Doxorubicin', 'Cyclophosphamide', 'Vincristine', 'Prednisone'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 22: Tumors of the Respiratory System，Nasal Tumors Section.', relevance: '鼻腔腫瘤完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 22: Tumors of the Respiratory System，Nasal Tumors Section.', relevance: '鼻腔腫瘤完整章節' },
     { type: 'journal', citation: 'Adams WM et al. Radiotherapy of malignant nasal tumors in 67 dogs. J Am Vet Med Assoc. 1987;191(3):311-315.', relevance: '犬鼻腔腫瘤放療經典文獻，Adams 分期原始資料' },
     { type: 'journal', citation: 'Theon AP et al. Megavoltage irradiation of neoplasms of the nasal and paranasal cavities in 77 dogs. J Am Vet Med Assoc. 1993;202(9):1469-1475.', relevance: '犬鼻腔腫瘤放療預後因子分析' },
     { type: 'journal', citation: 'Fox-Alvarez S et al. Outcome of intensity-modulated radiation therapy-based stereotactic radiation therapy for treatment of canine nasal carcinomas. Vet Radiol Ultrasound. 2020;61(3):370-378. doi:10.1111/vru.12854', relevance: '犬鼻腔癌 IMRT-based SRT 現代放療結果研究（Crossref 驗證真實）。取代原誤植之 Sfiligoi 2007——該文實為貓鼻淋巴瘤放化療（VRU 48(4):388-393），非犬鼻腫瘤 IMRT' },
@@ -4617,7 +4617,7 @@ const contentThyroidCarcinoma: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Doxorubicin', 'Toceranib', 'Levothyroxine'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 23: Tumors of the Endocrine System，Thyroid Section.', relevance: '甲狀腺癌完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 23: Tumors of the Endocrine System，Thyroid Section.', relevance: '甲狀腺癌完整章節' },
     { type: 'journal', citation: 'Theon AP et al. Prognostic factors and patterns of treatment failure in dogs with unresectable differentiated thyroid carcinomas treated with megavoltage irradiation. J Am Vet Med Assoc. 2000;216(11):1775-1779.', relevance: '犬甲狀腺癌放療預後因子' },
     { type: 'journal', citation: 'Worth AJ et al. Thyroidectomy as a treatment for canine thyroid carcinoma: 12 cases. N Z Vet J. 2005;53(4):228-233.', relevance: '⚠️ 待 DVM 查證：N Z Vet J 2005 查無此篇；Worth 2005 真實甲狀腺癌文為 Aust Vet J 2005;83(4):208-214（放射碘 131I，非甲狀腺切除，主題/期刊被混植）；疑捏造/誤引，DVM 確認前不宜視為已驗證' },
     { type: 'guideline', citation: 'Campos M et al. Thyroid tumours in dogs and cats. In: BSAVA Manual of Canine and Feline Oncology, 4th ed. BSAVA, 2024.', relevance: '犬貓甲狀腺腫瘤臨床指引' },
@@ -4840,7 +4840,7 @@ const contentSCC: NodeContent = {
   interactive_placeholders: [],
   drug_api_links: ['Carboplatin', 'Piroxicam', 'Toceranib'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 20: Tumors of the Alimentary Tract，Oral Tumors Section; Chapter 19: Tumors of the Skin and Subcutaneous Tissues，SCC Section.', relevance: 'SCC 完整章節（口腔與皮膚）' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 20: Tumors of the Alimentary Tract，Oral Tumors Section; Chapter 19: Tumors of the Skin and Subcutaneous Tissues，SCC Section.', relevance: 'SCC 完整章節（口腔與皮膚）' },
     { type: 'journal', citation: 'Bilgic O, et al. Feline Oral Squamous Cell Carcinoma: Clinical Manifestations and Literature Review. J Vet Dent. 2015;32(1):30-40. doi:10.1177/089875641503200104.', relevance: '貓口腔 SCC 臨床表現與文獻回顧' },
     { type: 'journal', citation: 'Dos Anjos C, et al. Comparison of two different doses of bleomycin in electrochemotherapy protocols for feline cutaneous squamous cell carcinoma. Sci Rep. 2020;10. doi:10.1038/s41598-020-75472-0.', relevance: '貓皮膚 SCC 電化療（bleomycin）劑量比較' },
     { type: 'journal', citation: 'Berlato D, et al. Response, disease-free interval and overall survival of cats with nasal planum squamous cell carcinoma treated with strontium-90 plesiotherapy. J Feline Med Surg. 2018. doi:10.1177/1098612X18773913.', relevance: '貓鼻平面 SCC 鍶-90 近接放療之反應與存活' },
@@ -5048,7 +5048,7 @@ Insulinoma 的臨床表現具有間歇性和發作性的特點，症狀常在空
     { type: 'journal', citation: 'Buishand FO. Current Trends in Diagnosis, Treatment and Prognosis of Canine Insulinoma. Vet Sci. 2022;9(10):540. doi:10.3390/vetsci9100540.', relevance: '現行綜述（≤5年）：犬 insulinoma 診斷/治療/預後（含診斷方法演變）' },
     { type: 'journal', citation: 'Cleland NT, et al. Outcome after surgical management of canine insulinoma in 49 cases. Vet Comp Oncol. 2020;19(3):428-441. doi:10.1111/vco.12628.', relevance: '近年犬 insulinoma 手術治療結果（49 例，預後溯源）' },
     { type: 'journal', citation: 'Tobin RL, et al. Outcome of surgical versus medical treatment of dogs with beta cell neoplasia: 39 cases (1990-1997). J Am Vet Med Assoc. 1999;215(2):226-230. doi:10.2460/javma.1999.215.02.226.', relevance: '犬 insulinoma 手術 vs 內科治療比較（39 例）' },
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology. 6th ed. Elsevier; 2020.', relevance: '腫瘤科教科書，內分泌腫瘤/insulinoma 章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology. 6th ed. Elsevier; 2020.', relevance: '腫瘤科教科書，內分泌腫瘤/insulinoma 章節' },
     { type: 'textbook', citation: 'Nelson RW, Couto CG. Small Animal Internal Medicine. 6th ed. Elsevier; 2020.', relevance: '內科教科書，內分泌胰臟疾病/insulinoma 章節' },
   ],
   is_current: true,
@@ -5186,7 +5186,7 @@ TKI 為小分子藥物，競爭性結合 RTK 的 ATP 結合位點，阻斷下游
   references: [
     { type: 'journal', citation: 'London CA et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (Palladia, SU11654), a receptor tyrosine kinase inhibitor, for the treatment of dogs with recurrent (either local or distant) mast cell tumor following surgical excision. Clin Cancer Res. 2009;15(11):3856-3865.', relevance: 'Toceranib FDA 核准臨床試驗（MCT）' },
     { type: 'journal', citation: 'Hahn KA et al. Masitinib is safe and effective for the treatment of canine mast cell tumors. J Vet Intern Med. 2008;22(6):1301-1309.', relevance: 'Masitinib 犬 MCT 臨床試驗' },
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 18: Targeted Therapy.', relevance: '獸醫腫瘤靶向治療教材' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow and MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 18: Targeted Therapy.', relevance: '獸醫腫瘤靶向治療教材' },
     { type: 'journal', citation: 'Weishaar KM, et al. c-Kit Mutation and Localization Status as Response Predictors in Mast Cell Tumors in Dogs Treated with Prednisone and Toceranib or Vinblastine. J Vet Intern Med. 2018;32(1):394-405. doi:10.1111/jvim.14889.', relevance: 'c-KIT 突變與 TKI 治療反應預測' },
     { type: 'journal', citation: 'London CA, Malpas PB, Wood-Follis SL, et al. Multi-center, placebo-controlled, double-blind, randomized study of oral toceranib phosphate (SU11654) for the treatment of dogs with recurrent mast cell tumor following surgical excision. Clin Cancer Res. 2009;15(11):3856-3865. doi:10.1158/1078-0432.CCR-08-1860.', relevance: '酪胺酸激酶抑制劑 toceranib 樞紐 RCT' },
   ],
@@ -5341,7 +5341,7 @@ Massive 型以局部侵犯為主，轉移率低（0 到 5%），手術切除可�
   interactive_placeholders: [],
   drug_api_links: ['Toceranib', 'Cyclophosphamide'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 24: Hepatobiliary Tumors.', relevance: '犬肝臟腫瘤完整章節' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 24: Hepatobiliary Tumors.', relevance: '犬肝臟腫瘤完整章節' },
     { type: 'journal', citation: 'Liptak JM, Dernell WS, Monnet E, et al. Massive hepatocellular carcinoma in dogs: 48 cases (1992-2002). JAVMA. 2004;225(8):1225-1230.', relevance: '犬 massive HCC 最大型回顧研究，MST > 1460 天' },
     { type: 'journal', citation: 'Patnaik AK, Hurvitz AI, Lieberman PH. Canine hepatic neoplasms: a clinicopathologic study. Vet Pathol. 1980;17(5):553-564.', relevance: '犬肝臟腫瘤分類與臨床病理經典研究' },
     { type: 'journal', citation: 'Matsuyama A, Poirier VJ, Bhatt A, et al. Outcome of dogs with hepatocellular carcinoma treated with hepatic lobectomy: 52 cases. JAVMA. 2022;260(10):1172-1179.', relevance: 'HCC 肝葉切除最新預後數據' },
