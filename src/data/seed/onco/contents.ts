@@ -3362,7 +3362,7 @@ const contentRadiationTherapy: NodeContent = {
   references: [
     { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 10: Radiation Therapy.', relevance: '放射治療完整章節' },
     { type: 'journal', citation: 'Larue SM, Gordon IK. Radiation therapy. In: Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed.', relevance: '獸醫放射治療基礎' },
-    { type: 'journal', citation: 'Boston SE et al. Outcomes of eight dogs with appendicular osteosarcoma treated with palliative radiation therapy: 2-3 fraction protocols. Vet Radiol Ultrasound. 2007;48(2):141-145.', relevance: '⚠️ 待 DVM 查證：Crossref 查無此篇（VRU 2007 已完整索引 DOI，Boston 其他真實文可查、獨缺此篇）；疑捏造/嚴重誤引，DVM 確認前不宜視為已驗證' },
+    { type: 'journal', citation: 'Pagano C et al. Safety and toxicity of an accelerated coarsely fractionated radiation protocol for treatment of appendicular osteosarcoma in 14 dogs: 10 Gy x 2 fractions. Vet Radiol Ultrasound. 2016;57(5):551-556. doi:10.1111/vru.12389', relevance: '犬四肢骨肉瘤加速粗分次緩和放療（10 Gy×2）之安全性與毒性。Crossref 驗證真實，取代原疑捏造之 Boston「8 dogs 2-3 fraction」引用（VRU 2007 查無該篇）' },
     { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引，放射治療角色與轉介建議' },
   ],
   is_current: true,

@@ -2441,7 +2441,7 @@ const contentAbdominalPathology: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '腹腔外科病理基礎' },
-    { type: 'journal', citation: 'Bentley AM et al. Septic peritonitis in dogs and cats: a retrospective study of 140 cases. J Vet Emerg Crit Care. 2007;17(3):46.', relevance: '⚠️ 待 DVM 查證：標題「140 cases」與卷期頁 17(3):46 對不上；同作者同年真實 JVECC 文為「Comparison of dogs with septic peritonitis: 1988-1993 vs 1999-2003」17(4):391-398 `10.1111/j.1476-4431.2007.00251.x`；疑誤植，DVM 覆核原意圖' },
+    { type: 'journal', citation: 'Bentley AM, Otto CM, Shofer FS. Comparison of dogs with septic peritonitis: 1988-1993 versus 1999-2003. J Vet Emerg Crit Care. 2007;17(4):391-398. doi:10.1111/j.1476-4431.2007.00251.x', relevance: '犬敗血性腹膜炎兩時期病例比較（病因、處置、預後）。Crossref 驗證真實（同作者 Bentley），更正原「140 cases / 17(3):46」誤植' },
     { type: 'textbook', citation: 'Tobias KM, Johnston SA. Veterinary Surgery: Small Animal, 2nd ed. Elsevier, 2018.', relevance: '腹腔外科病理生理' },
     { type: 'guideline', citation: 'BSAVA Manual of Canine and Feline Abdominal Surgery, 2nd ed. Bray J, Kirby B, eds. BSAVA, 2021.', relevance: '腹腔外科手術指引' },
   ],
