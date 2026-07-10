@@ -1691,9 +1691,9 @@ const contentTumorBiology: NodeContent = {
   ],
   drug_api_links: ['Vincristine', 'Cyclophosphamide', 'Doxorubicin'],
   references: [
-    { type: 'textbook', citation: 'Withrow SJ, Vail DM, Page RL. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 1: The Biology of Cancer.', relevance: '腫瘤生物學基礎章節' },
-    { type: 'journal', citation: 'Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 2011;144(5):646-674.', relevance: 'Hallmarks of Cancer 經典文獻' },
-    { type: 'journal', citation: 'Schiffman JD, Breen M. Comparative oncology: what dogs and other species can teach us about humans with cancer. Philos Trans R Soc Lond B Biol Sci. 2015;370(1673):20140231.', relevance: '比較腫瘤學與犬腫瘤遺傳學' },
+    { type: 'textbook', citation: 'Vail DM, Thamm DH, Liptak JM. Withrow & MacEwen\'s Small Animal Clinical Oncology, 6th ed. Elsevier, 2020. Chapter 1: The Biology of Cancer.', relevance: '腫瘤生物學基礎章節（更正 6th ed 編者：Withrow/Page 為 5th ed，6th ed 實為 Vail/Thamm/Liptak）' },
+    { type: 'journal', citation: 'Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 2011;144(5):646-674. doi:10.1016/j.cell.2011.02.013', relevance: 'Hallmarks of Cancer 經典文獻' },
+    { type: 'journal', citation: 'Schiffman JD, Breen M. Comparative oncology: what dogs and other species can teach us about humans with cancer. Philos Trans R Soc Lond B Biol Sci. 2015;370(1673):20140231. doi:10.1098/rstb.2014.0231', relevance: '比較腫瘤學與犬腫瘤遺傳學' },
     { type: 'guideline', citation: 'AAHA Oncology Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2016;52(4):181-204.', relevance: 'AAHA 腫瘤科指引，腫瘤生物學基本概念' },
   ],
   is_current: true,
