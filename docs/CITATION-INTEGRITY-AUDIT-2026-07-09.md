@@ -85,6 +85,26 @@
 - ECC：Gwaltney-Brant「Chocolate intoxication」Vet Med 2001、Klein/Peterson Can Vet J 2010（均 pre-DOI/未索引真實文；`verify:citations` 會持續報 SUSPECT_NOT_FOUND，屬已知假陽性）。
 - CARDIO：Shaw/Rush ×2（Compend Contin Educ Vet 2007，Compendium 未被 Crossref 索引）。
 
+### D4. SURG / IM / ONCO 殘餘旗標查證（iter22，唯讀 agent + 主 thread 逐條 Crossref 覆核）
+
+**已解決（2，IM，主 thread 覆核 body 無依賴後替換）**
+| 節點 | 原捏造引用 | 已替換為（Crossref 驗證真實文）|
+|---|---|---|
+| IM 腎生物標記 | Hall JA「Biomarkers of kidney function…CVSM 2022;52(3):547-567」 | **Hall JA 2016 犬 SDMA** JVIM 30(3):794-802 `10.1111/jvim.13942`（同作者真實文）|
+| IM AKI | Bennett/Abraham「Treatment of AKI CVSM 2022;52(3):601-612」 | **Ross L. Acute Kidney Injury in Dogs and Cats** CVSM 2022;52(3):659-672 `10.1016/j.cvsm.2022.01.005`（該期真實 AKI 主文；作者由捏造之 Bennett/Abraham 更正為真實 Ross）|
+
+**維持旗標交 DVM（6，含驗證後之候選與警示——皆因異作者/主題位移/物種不符/數字失據/無原型，不宜自動替換）**
+| 節點 | 疑捏造引用 | Crossref 查證結論（供 DVM 裁定）|
+|---|---|---|
+| SURG Burn（L0） | Burn CC「Systematic review of veterinary surgical outcomes」Vet Surg 2020;49(S1):O8-O17 | **NONE——查無真實原型**。Burn 於 Crossref 僅人醫外科；真實獸醫 Charlotte Burn 著作全為動物福利。**建議 DVM 移除**或改引真實 SSI 文 |
+| SURG Bardet | Bardet「Radiographic assessment of fracture healing: a review」VCOT 2010;23(6):379-388 | **NONE——查無真實原型**。座標查無、Bardet 名下無此文。**建議 DVM 移除** |
+| SURG Turk | Turk「Antimicrobial prophylaxis…systematic review」Vet Surg 2015;44(4):385-396 | 真實 Turk 2015 文為 **SSI surveillance 44(1):2-8**（本檔他處已收錄，屬**不同主題**）。此「prophylaxis 系統回顧」疑捏造 → DVM 移除或另尋真實抗生素預防文 |
+| SURG Mayhew | Mayhew「Comparison of three techniques for ovariectomy」Vet Surg 2012;41(5):629-634 | 座標查無。同作者最接近真實文為 **Culp/Mayhew 2009「lap vs open ovariectomy」Vet Surg 38(7):811-817 `10.1111/j.1532-950x.2009.00572.x`**——但為**二術式非三術式**，主題位移，DVM 決定 |
+| ONCO Boston | Boston「8 dogs osteosarcoma palliative RT 2-3 fraction」VRU 2007;48(2):141-145 | 座標查無。主題最接近真實文為 **Pagano 2016「14 dogs, 10 Gy×2」VRU 57(5):551-556 `10.1111/vru.12389`**——但**病例數不同（8 vs 14）**，若 body 引用「8 例」數據會失據，DVM 需併同 body 校 |
+| ONCO Worth | Worth「Thyroidectomy…canine thyroid carcinoma: 12 cases」N Z Vet J 2005;53(4):228-233 | 座標查無。⚠️ agent 建議之 Naan 2006 為**貓甲亢**（101 cats）**≠ 節點之犬甲狀腺癌**，物種+疾病皆不符、**不可採用**。DVM 需另尋真實犬甲狀腺癌手術文或移除 |
+
+> 另兩條 SURG（Bentley 敗血性腹膜炎、Stanley 喉麻痺）之誤植/含糊旗標已於 iter14 附真實候選，維持交 DVM。
+
 ---
 
 ## 結論與建議

@@ -2741,7 +2741,7 @@ Henle 環（Loop of Henle）
   references: [
     { type: 'textbook', citation: 'Reece WO. Dukes\' Physiology of Domestic Animals, 13th ed. Wiley-Blackwell, 2015. Chapters on Renal Physiology.', relevance: '動物腎臟生理學基礎教材' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Section on Urinary System.', relevance: '腎臟生理與疾病整合教材' },
-    { type: 'journal', citation: 'Hall JA et al. "Biomarkers of kidney function and damage in dogs and cats." Vet Clin North Am Small Anim Pract. 2022;52(3):547-567.', relevance: '⚠️ 待 DVM 查證：Crossref 以作者+期刊+年份查無此文（同 issue 52(3) 真實文獻為 Ross AKI 659-672、Viviano 797-817，未見 Hall 547-567）；疑捏造或誤植，DVM 確認前不宜視為已驗證來源' },
+    { type: 'journal', citation: 'Hall JA et al. Serum concentrations of symmetric dimethylarginine and creatinine in dogs with naturally occurring chronic kidney disease. J Vet Intern Med. 2016;30(3):794-802. doi:10.1111/jvim.13942', relevance: '犬 SDMA 與 creatinine 作為腎功能生物標記之比較（Crossref 驗證真實，同作者 Hall JA）。已取代原疑捏造之「Hall CVSM 2022 生物標記綜述」引用；如需 dogs+cats 廣泛綜述，該 CVSM 2022;52(3) 真實對應為 Michael et al. 609-629，供 DVM 補充' },
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). "IRIS Staging of CKD (Modified 2023)." iris-kidney.com.', relevance: 'CKD 分期與治療指引（IRIS 官方網路發布標準）' },
     { type: 'journal', citation: 'Pelander L, et al. "Comparison of the diagnostic value of symmetric dimethylarginine, cystatin C, and creatinine for detection of decreased glomerular filtration rate in dogs." J Vet Intern Med. 2019;33(2):630-639. doi:10.1111/jvim.15445', relevance: '比較 SDMA/cystatin C/creatinine 偵測 GFR 下降的診斷價值（犬），支撐本節點腎功能評估（Crossref 驗證）' },
   ],
@@ -5051,7 +5051,7 @@ RRT 適應症：無尿 > 6-12 hr 不反應利尿劑、K > 8 mEq/L、嚴重代謝
     { type: 'guideline', citation: 'IRIS (International Renal Interest Society). IRIS Grading of Acute Kidney Injury. Available at: http://www.iris-kidney.com/', relevance: 'AKI 分級標準' },
     { type: 'journal', citation: 'Langston C. "Acute uremia." In: Ettinger SJ, Feldman EC. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. pp 1969-1985.', relevance: 'AKI 診斷與治療教材' },
     { type: 'guideline', citation: 'Sykes JE, et al. 2010 ACVIM Small Animal Consensus Statement on Leptospirosis: diagnosis, epidemiology, treatment, and prevention. J Vet Intern Med. 2011;25(1):1-13. doi:10.1111/j.1939-1676.2010.0654.x.', relevance: '鉤端螺旋體（犬 AKI 重要可逆/人畜共通病因）ACVIM 共識' },
-    { type: 'journal', citation: 'Bennett SL, Abraham LA. "Treatment of acute kidney injury." Vet Clin North Am Small Anim Pract. 2022;52(3):601-612.', relevance: '⚠️ 待 DVM 查證：CVSM 52(3) 該期查無此篇（頁 601-612 與真實排版衝突：Olin 581-608、Michael 609-629；該期 AKI 主文為 Ross 659-672 `10.1016/j.cvsm.2022.01.005`）；疑捏造/誤植，DVM 確認前不宜視為已驗證' },
+    { type: 'journal', citation: 'Ross L. Acute kidney injury in dogs and cats. Vet Clin North Am Small Anim Pract. 2022;52(3):659-672. doi:10.1016/j.cvsm.2022.01.005', relevance: '犬貓急性腎損傷（AKI）診斷與治療綜述（該 CVSM 2022;52(3) 期真實 AKI 主文）。Crossref 驗證真實，已取代原疑捏造之 Bennett/Abraham「AKI 治療」引用（該作者組合查無此文；已確認 body 未依賴其特定數據）' },
     { type: 'textbook', citation: 'Ettinger SJ, Feldman EC, Côté E. Textbook of Veterinary Internal Medicine, 8th ed. Elsevier, 2017. Chapter 311: Acute Kidney Injury.', relevance: 'AKI 診斷與治療標準教科書' },
   ],
   is_current: true,
