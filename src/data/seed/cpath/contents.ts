@@ -3043,9 +3043,10 @@ Gram 染色是細菌快速分類的基石，決定經驗性抗生素選擇：
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Greene CE, Sykes JE. Infectious Diseases of the Dog and Cat, 4th ed. Elsevier, 2012.', relevance: '犬貓感染性疾病與微生物學核心教科書' },
-    { type: 'guideline', citation: 'Hillier A et al. "Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (ISCAID)." Vet Dermatol 2014;25(3):163-e43.', relevance: '犬膿皮症抗生素使用指引' },
+    { type: 'guideline', citation: 'Hillier A et al. "Guidelines for the diagnosis and antimicrobial therapy of canine superficial bacterial folliculitis (ISCAID)." Vet Dermatol 2014;25(3):163-e43. doi:10.1111/vde.12118', relevance: '犬膿皮症抗生素使用指引（ISCAID；Crossref 驗證、補 DOI）' },
     { type: 'journal', citation: 'Weese JS et al. "ACVIM consensus statement on therapeutic antimicrobial use in animals and antimicrobial resistance." J Vet Intern Med 2015;29(2):487-498. doi:10.1111/jvim.12562', relevance: '伴侶動物抗微生物抗藥性與用藥共識（引用真偽稽核：Crossref 確認、補 DOI）' },
     { type: 'journal', citation: 'Moriello KA et al. "Diagnosis and treatment of dermatophytosis in dogs and cats: Clinical Consensus Guidelines." Vet Dermatol 2017;28(3):266-e68. doi:10.1111/vde.12440', relevance: '犬貓皮癬菌診治共識（引用真偽稽核：Crossref 確認、補 DOI）' },
+    { type: 'guideline', citation: 'Weese JS et al. International Society for Companion Animal Infectious Diseases (ISCAID) guidelines for the diagnosis and management of bacterial urinary tract infections in dogs and cats. Vet J. 2019;247:8-25. doi:10.1016/j.tvjl.2019.02.008', relevance: 'ISCAID 犬貓細菌性泌尿道感染診治指引（Crossref 驗證；支撐本節點「貓無症狀菌尿是否治療」爭議與負責任用藥原則）' },
   ],
   is_current: true,
   created_at: now,
