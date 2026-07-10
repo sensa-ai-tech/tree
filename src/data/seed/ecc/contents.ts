@@ -2407,8 +2407,8 @@ AG = Na+ - (Cl- + HCO3-)
   references: [
     { type: 'textbook', citation: 'Silverstein DC, Hopper K. Small Animal Critical Care Medicine, 3rd ed. Elsevier, 2022. Chapter: Acid-Base Disorders.', relevance: 'ECC 核心教材酸鹼章節' },
     { type: 'textbook', citation: 'DiBartola SP. Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice, 4th ed. Elsevier, 2012.', relevance: '酸鹼障礙專論教材' },
-    { type: 'journal', citation: 'Hopper K, Haskins SC, Kass PH, et al. Indications, management, and outcome of long-term positive-pressure ventilation in dogs and cats: 148 cases (1990-2001). JAVMA. 2007;230(1):64-75.', relevance: '呼吸性酸鹼障礙與通氣管理' },
-    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP fluid therapy guidelines for dogs and cats. JAAHA. 2013;49(3):149-159.', relevance: 'AAHA/AAFP 指引：酸鹼障礙的液體治療策略' },
+    { type: 'journal', citation: 'Hopper K, Haskins SC, Kass PH, et al. Indications, management, and outcome of long-term positive-pressure ventilation in dogs and cats: 148 cases (1990-2001). J Am Vet Med Assoc. 2007;230(1):64-75. doi:10.2460/javma.230.1.64', relevance: '呼吸性酸鹼障礙與通氣管理' },
+    { type: 'guideline', citation: 'Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP fluid therapy guidelines for dogs and cats. J Am Anim Hosp Assoc. 2013;49(3):149-159. doi:10.5326/jaaha-ms-5868', relevance: 'AAHA/AAFP 指引：酸鹼障礙的液體治療策略' },
   ],
   is_current: true,
   created_at: now,
