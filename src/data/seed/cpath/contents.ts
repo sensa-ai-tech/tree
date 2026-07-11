@@ -242,7 +242,7 @@ const contentHemaBasics: NodeContent = {
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '血液學基礎核心教材' },
     { type: 'textbook', citation: 'Weiss DJ, Wardrop KJ. Schalm\'s Veterinary Hematology, 6th ed. Wiley-Blackwell, 2010.', relevance: '造血系統與血球形態學權威參考' },
     { type: 'textbook', citation: 'Harvey JW. Veterinary Hematology: A Diagnostic Guide and Color Atlas. Elsevier, 2012.', relevance: '血球形態辨識圖譜' },
-    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334.', relevance: 'ACVIM 免疫介導溶血性貧血診斷共識，血液學基礎應用' },
+    { type: 'guideline', citation: 'Garden OA, Kidd L, Mexas AM, et al. ACVIM consensus statement on the diagnosis of immune-mediated hemolytic anemia in dogs and cats. J Vet Intern Med. 2019;33(2):313-334. doi:10.1111/jvim.15441', relevance: 'ACVIM 免疫介導溶血性貧血診斷共識，血液學基礎應用' },
     { type: 'journal', citation: 'Knoll JS, Rowell SL. Clinical hematology: In-clinic analysis, quality assurance, and clinical decision-making. Vet Clin North Am Small Anim Pract. 2012;42(1):1-11.', relevance: '臨床血液學品管與決策制定' },
     { type: 'guideline', citation: 'Friedrichs KR et al. ASVCP reference interval guidelines: determination of de novo reference intervals in veterinary species and other related topics. Vet Clin Pathol. 2012;41(4):441-453. doi:10.1111/vcp.12006', relevance: 'ASVCP 參考區間建立方法學指引（Crossref 驗證；支撐本節點「品種特異性參考區間」爭議——如何正確建立與應用族群 RI，為所有 CBC/生化判讀之量化基礎）' },
   ],
@@ -451,7 +451,7 @@ const contentPreAnalytical: NodeContent = {
   drug_api_links: [],
   references: [
     { type: 'textbook', citation: 'Stockham SL, Scott MA. Fundamentals of Veterinary Clinical Pathology, 2nd ed. Blackwell, 2008.', relevance: '分析前因素與品質控管核心教材' },
-    { type: 'journal', citation: 'Braun JP et al. "Preanalytical variables in veterinary clinical pathology." Vet Clin Pathol 2015;44(1):8-25.', relevance: '獸醫分析前誤差的系統性回顧' },
+    { type: 'journal', citation: 'Braun JP et al. "Preanalytical variables in veterinary clinical pathology." Vet Clin Pathol 2015;44(1):8-25. doi:10.1111/vcp.12206', relevance: '獸醫分析前誤差的系統性回顧' },
     { type: 'guideline', citation: 'ASVCP Quality Assurance and Laboratory Standards Committee. "Guidelines for veterinary laboratory quality assurance." Vet Clin Pathol 2009;38(2):141-149.', relevance: '獸醫實驗室品管指引' },
   ],
   is_current: true,
@@ -2884,7 +2884,7 @@ B 細胞在抗原刺激後分化為漿細胞（Plasma Cell），產生抗體（I
   references: [
     { type: 'textbook', citation: 'Tizard IR. Veterinary Immunology: An Introduction, 10th ed. Elsevier, 2018.', relevance: '獸醫免疫學經典教科書，涵蓋先天性與後天性免疫全貌' },
     { type: 'textbook', citation: 'Day MJ, Schultz RD. Veterinary Immunology: Principles and Practice, 2nd ed. CRC Press, 2014.', relevance: '獸醫免疫學臨床應用參考' },
-    { type: 'guideline', citation: 'Day MJ et al. "WSAVA Guidelines for the Vaccination of Dogs and Cats." J Small Anim Pract 2016;57(1):E1-E45.', relevance: '犬貓疫苗免疫學基礎與接種指引' },
+    { type: 'guideline', citation: 'Day MJ et al. "WSAVA Guidelines for the Vaccination of Dogs and Cats." J Small Anim Pract 2016;57(1):E1-E45. doi:10.1111/jsap.2_12431', relevance: '犬貓疫苗免疫學基礎與接種指引' },
     { type: 'journal', citation: 'Swann JW, et al. ACVIM consensus statement on the treatment of immune-mediated hemolytic anemia in dogs. J Vet Intern Med. 2019;33(3):1141-1172. doi:10.1111/jvim.15463.', relevance: 'IMHA 免疫機制與治療共識（修正 v1 誤標第一作者 Garden→實為 Swann JW；補真實 DOI）' },
   ],
   is_current: true,
