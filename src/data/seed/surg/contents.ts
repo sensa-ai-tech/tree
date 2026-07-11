@@ -2674,7 +2674,7 @@ const contentJointDegeneration: NodeContent = {
     { type: 'journal', citation: 'Anderson KL et al. Prevalence, duration and risk factors for appendicular osteoarthritis in a UK dog population under primary veterinary care. Sci Rep. 2018;8(1):5641. doi:10.1038/s41598-018-23940-z', relevance: '犬 OA 流行病學' },
     { type: 'textbook', citation: 'Fossum TW. Small Animal Surgery, 5th ed. Elsevier, 2019.', relevance: '關節疾病病理基礎' },
     { type: 'journal', citation: 'Impellizeri JA et al. Effect of weight reduction on clinical signs of lameness in dogs with hip osteoarthritis. J Am Vet Med Assoc. 2000;216(7):1089-1091. doi:10.2460/javma.2000.216.1089', relevance: '減重對 OA 跛行的影響' },
-    { type: 'guideline', citation: 'AAHA Weight Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2014;50(1):1-11.', relevance: '犬貓體重管理指引（OA 管理重要一環）' },
+    { type: 'guideline', citation: 'AAHA Weight Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc. 2014;50(1):1-11. doi:10.5326/jaaha-ms-6331', relevance: '犬貓體重管理指引（OA 管理重要一環）' },
   ],
   is_current: true,
   created_at: now,

@@ -3047,7 +3047,7 @@ HPT 軸（甲亢 / 甲低的基礎）
   references: [
     { type: 'textbook', citation: 'Feldman EC et al. Canine and Feline Endocrinology, 4th ed. Elsevier, 2015.', relevance: '犬貓內分泌學權威教科書' },
     { type: 'textbook', citation: 'Reece WO. Dukes\' Physiology of Domestic Animals, 13th ed. Wiley-Blackwell, 2015. Chapters on Endocrine System.', relevance: '動物內分泌生理基礎教材' },
-    { type: 'journal', citation: 'Behrend EN et al. "Diagnosis of Spontaneous Canine Hyperadrenocorticism: 2012 ACVIM Consensus Statement." J Vet Intern Med. 2013;27(6):1292-1304.', relevance: 'HPA 軸動態試驗的臨床應用' },
+    { type: 'journal', citation: 'Behrend EN et al. "Diagnosis of Spontaneous Canine Hyperadrenocorticism: 2012 ACVIM Consensus Statement." J Vet Intern Med. 2013;27(6):1292-1304. doi:10.1111/jvim.12192', relevance: 'HPA 軸動態試驗的臨床應用' },
     { type: 'guideline', citation: 'Behrend E, Holford A, Lathan P, et al. "2018 AAHA Diabetes Management Guidelines for Dogs and Cats." J Am Anim Hosp Assoc. 2018;54(1):1-21. doi:10.5326/jaaha-ms-6822', relevance: '犬貓糖尿病管理指引' },
   ],
   is_current: true,
