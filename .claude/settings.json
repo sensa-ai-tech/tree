@@ -1,13 +1,3 @@
 {
-  "permissions": {
-    "defaultMode": "bypassPermissions",
-    "allow": [
-      "Bash(*)",
-      "Read(*)",
-      "Write(*)",
-      "Edit(*)",
-      "MultiEdit(*)"
-    ],
-    "deny": []
-  }
+  "permissions": {}
 }
