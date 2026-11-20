@@ -24,6 +24,7 @@
 - [ ] SQL Editor 跑 `supabase/migrations/001_initial_schema.sql`
 - [ ] 跑 `docs/SUPABASE-AUTH-SPEC.md` §2.1 的 `custom_access_token_hook`
 - [ ] 跑 §4 的 `handle_new_user` trigger
+- [ ] SQL Editor 跑 `supabase/migrations/003_lock_user_profile_role.sql`（使用者不能自己改 `user_profiles.role`；回滾檔在 `supabase/rollbacks/`）
 - [ ] Authentication → Hooks → 啟用 `Custom Access Token`
 - [ ] Authentication → URL Configuration → 加 `*.vercel.app`、`http://localhost:3001`
 - [ ] 註冊一個 email 帳號（給 bootstrap admin 用）
