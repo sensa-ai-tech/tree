@@ -12,6 +12,10 @@
 --   2. 自我 UPDATE 政策補 WITH CHECK (auth.uid() = id)，不能把列改成別人的 id。
 --
 -- 成對回滾：supabase/rollbacks/003_lock_user_profile_role_ROLLBACK.sql
+--
+-- 適用範圍：只給從 001 建起的全新專案。現行正式庫（共用池 iizotzzzfhqswjmcotil）的
+-- public.user_profiles 不是 001 的結構（role 預設 'free'），知識庫寫入政策只給 service_role，
+-- 沒有東西讀 user_profiles.role，不要套：INSERT trigger 會擋掉該表的 'free' 自建列。（2026-11-26 唯讀核對）
 
 CREATE OR REPLACE FUNCTION public.user_profiles_guard_privileged_columns()
 RETURNS trigger
